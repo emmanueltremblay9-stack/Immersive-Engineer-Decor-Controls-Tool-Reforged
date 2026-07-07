@@ -17,6 +17,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -62,7 +63,7 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {
-      super((MenuType)ModMenus.typeFor(kind).get(), id);
+      super((MenuType)resolveMenuType(kind), id);
       checkContainerSize(container, 27);
       checkContainerDataCount(data, 16);
       this.kind = kind;
@@ -87,6 +88,14 @@ public class MachineMenu extends AbstractContainerMenu {
       }
 
       this.addDataSlots(data);
+   }
+
+   private static MenuType<?> resolveMenuType(MachineKind kind) {
+      DeferredHolder<MenuType<?>, MenuType<MachineMenu>> menuType = ModMenus.typeFor(kind);
+      if (menuType == null) {
+         throw new IllegalStateException("No machine menu registered for kind: " + kind);
+      }
+      return menuType.get();
    }
 
    public MachineKind kind() {

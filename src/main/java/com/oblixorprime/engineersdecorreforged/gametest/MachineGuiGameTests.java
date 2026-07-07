@@ -6,8 +6,10 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.ModItems;
 import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.ModRecipeSerializers;
+import com.oblixorprime.engineersdecorreforged.ReforgedConfig;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.LabeledCrateLabelPayload;
+import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsModule;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
@@ -106,6 +108,14 @@ public final class MachineGuiGameTests {
          "old REDIA Tool item id should alias to the renamed mod id"
       );
       helper.assertTrue(
+         BuiltInRegistries.BLOCK.get(legacyId("industrial_lever")) == BuiltInRegistries.BLOCK.get(currentId("industrial_lever")),
+         "old industrial lever block id should alias after controls initialize"
+      );
+      helper.assertTrue(
+         BuiltInRegistries.ITEM.get(legacyId("industrial_lever")) == BuiltInRegistries.ITEM.get(currentId("industrial_lever")),
+         "old industrial lever item id should alias after controls initialize"
+      );
+      helper.assertTrue(
          BuiltInRegistries.BLOCK_ENTITY_TYPE.get(legacyId("machine")) == ModBlockEntities.MACHINE.get(),
          "old machine block entity id should alias to the renamed mod id"
       );
@@ -120,8 +130,44 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void feature_config_defaults_keep_registry_content_stable(GameTestHelper helper) {
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_DECOR_BLOCKS, "decor block visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_UTILITY_BLOCKS, "utility block visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_REDSTONE_CONTROLS, "redstone control visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_GAUGES, "gauge visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_INDICATORS, "indicator visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_SENSORS, "sensor visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_WIRELESS_CONTROLS, "wireless control visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_SOUND_INDICATORS, "sound indicator visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_STYLE_INDUSTRIAL, "industrial style visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_STYLE_RETRO_INDUSTRIAL, "retro industrial style visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_STYLE_RUSTIC, "rustic style visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_STYLE_OLD_FANCY, "old fancy style visibility");
+      assertDefaultTrue(helper, ReforgedConfig.ENABLE_STYLE_GLASS, "glass style visibility");
+      helper.assertValueEqual(MachineKind.values().length, ModMenus.machineTypes().size(), "utility menus should stay registered for world compatibility");
+      for (MachineKind kind : MachineKind.values()) {
+         helper.assertTrue(ModMenus.typeFor(kind) != null, kind.registryName() + " menu should stay registered");
+      }
+      helper.assertValueEqual(
+         ControlsModule.configuredControlCount(), ControlsModule.CONTROLS.size(), "redstone controls should stay registered regardless of visibility config"
+      );
+      helper.assertTrue(ReforgedConfig.isUtilityBlockItem("metal_crafting_table"), "metal crafting table should be classified as utility content");
+      helper.assertTrue(ControlsModule.isControlContent("industrial_lever"), "industrial lever should be classified as redstone control content");
+      helper.assertTrue(ControlsModule.isControlContent("switchlink_pearl"), "switchlink pearl should follow wireless control visibility");
+      helper.succeed();
+   }
+
+   private static ResourceLocation currentId(String path) {
+      return ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID, path);
+   }
+
    private static ResourceLocation legacyId(String path) {
       return ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.LEGACY_MOD_ID, path);
+   }
+
+   private static void assertDefaultTrue(GameTestHelper helper, net.neoforged.neoforge.common.ModConfigSpec.BooleanValue value, String name) {
+      helper.assertTrue(value.getDefault(), name + " config default should be true");
    }
 
    private MachineGuiGameTests() {

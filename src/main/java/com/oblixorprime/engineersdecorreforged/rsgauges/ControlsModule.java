@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.rsgauges;
 
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.ModItems;
+import com.oblixorprime.engineersdecorreforged.ReforgedConfig;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -76,120 +77,209 @@ public final class ControlsModule {
    private static final Set<String> SWITCHLINK_CASED_RECEIVERS = Set.of("industrial_switchlink_cased_receiver");
    private static final Set<String> SWITCHLINK_PULSE_RECEIVERS = Set.of("industrial_switchlink_pulse_receiver");
    private static final Set<String> SWITCHLINK_CASED_PULSE_RECEIVERS = Set.of("industrial_switchlink_cased_pulse_receiver");
+   private static final List<String> CONTROL_NAMES = List.of(
+      "arrow_target",
+      "door_sensor_switch",
+      "elevator_button",
+      "glass_button",
+      "glass_contact_mat",
+      "glass_day_timer",
+      "glass_door_contact_mat",
+      "glass_entity_detector",
+      "glass_interval_timer",
+      "glass_linear_entity_detector",
+      "glass_rotary_switch",
+      "glass_small_button",
+      "glass_touch_button",
+      "glass_touch_switch",
+      "glass_vertical_bar_gauge",
+      "industrial_alarm_lamp",
+      "industrial_alarm_siren",
+      "industrial_analog_angular_gauge",
+      "industrial_analog_horizontal_gauge",
+      "industrial_blinking_led",
+      "industrial_block_detector",
+      "industrial_button",
+      "industrial_comparator_switch",
+      "industrial_contact_mat",
+      "industrial_day_timer",
+      "industrial_dimmer",
+      "industrial_door_contact_mat",
+      "industrial_double_pole_button",
+      "industrial_entity_detector",
+      "industrial_estop_switch",
+      "industrial_fallthrough_detector",
+      "industrial_fenced_button",
+      "industrial_foot_button",
+      "industrial_green_blinking_led",
+      "industrial_green_led",
+      "industrial_high_sensitive_trapdoor",
+      "industrial_hopper_switch",
+      "industrial_interval_timer",
+      "industrial_knock_button",
+      "industrial_knock_switch",
+      "industrial_lever",
+      "industrial_light_sensor",
+      "industrial_lightning_sensor",
+      "industrial_linear_entity_detector",
+      "industrial_machine_switch",
+      "industrial_pull_handle",
+      "industrial_rain_sensor",
+      "industrial_red_blinking_led",
+      "industrial_red_led",
+      "industrial_rotary_lever",
+      "industrial_rotary_machine_switch",
+      "industrial_shock_sensitive_contact_mat",
+      "industrial_shock_sensitive_trapdoor",
+      "industrial_small_digital_gauge",
+      "industrial_small_lever",
+      "industrial_switchlink_cased_pulse_receiver",
+      "industrial_switchlink_cased_receiver",
+      "industrial_switchlink_pulse_receiver",
+      "industrial_switchlink_pulse_relay",
+      "industrial_switchlink_receiver",
+      "industrial_switchlink_receiver_analog",
+      "industrial_switchlink_relay",
+      "industrial_switchlink_relay_analog",
+      "industrial_tube_gauge",
+      "industrial_vertical_bar_gauge",
+      "industrial_white_blinking_led",
+      "industrial_white_led",
+      "industrial_yellow_blinking_led",
+      "industrial_yellow_led",
+      "industrialswitch",
+      "light_switch",
+      "oldfancy_bistableswitch1",
+      "oldfancy_bistableswitch2",
+      "oldfancy_button",
+      "oldfancy_small_button",
+      "oldfancy_spring_reset_chain",
+      "orange_sensitiveglass",
+      "red_power_plant",
+      "rustic_angular_lever",
+      "rustic_button",
+      "rustic_contact_plate",
+      "rustic_door_contact_plate",
+      "rustic_fallthrough_detector",
+      "rustic_high_sensitive_trapdoor",
+      "rustic_lever",
+      "rustic_nail_button",
+      "rustic_nail_lever",
+      "rustic_semaphore",
+      "rustic_shock_sensitive_plate",
+      "rustic_shock_sensitive_trapdoor",
+      "rustic_small_button",
+      "rustic_spring_reset_chain",
+      "rustic_two_hinge_lever",
+      "sensitive_glass_block",
+      "stained_sensitiveglass",
+      "valve_wheel_switch",
+      "yellow_power_plant"
+   );
+   private static final Set<String> WIRELESS_CONTROLS = Set.of(
+      "switchlink_pearl",
+      "industrial_switchlink_receiver",
+      "industrial_switchlink_receiver_analog",
+      "industrial_switchlink_cased_receiver",
+      "industrial_switchlink_pulse_receiver",
+      "industrial_switchlink_pulse_relay",
+      "industrial_switchlink_relay",
+      "industrial_switchlink_relay_analog",
+      "industrial_switchlink_cased_pulse_receiver"
+   );
+   private static final Set<String> RETRO_INDUSTRIAL_CONTROLS = Set.of("industrialswitch", "light_switch", "valve_wheel_switch");
    private static final List<DeferredBlock<? extends Block>> MUTABLE_CONTROLS = new ArrayList<>();
    public static final List<DeferredBlock<? extends Block>> CONTROLS = Collections.unmodifiableList(MUTABLE_CONTROLS);
    public static final DeferredItem<Item> SWITCHLINK_PEARL = ModItems.registerItem("switchlink_pearl", () -> new SwitchLinkPearlItem(new Properties()));
+   private static boolean initialized;
 
    private ControlsModule() {
    }
 
    public static void init() {
+      if (!initialized) {
+         initialized = true;
+         registerAll();
+      }
    }
 
    private static void registerAll() {
-      String[] names = new String[]{
-         "arrow_target",
-         "door_sensor_switch",
-         "elevator_button",
-         "glass_button",
-         "glass_contact_mat",
-         "glass_day_timer",
-         "glass_door_contact_mat",
-         "glass_entity_detector",
-         "glass_interval_timer",
-         "glass_linear_entity_detector",
-         "glass_rotary_switch",
-         "glass_small_button",
-         "glass_touch_button",
-         "glass_touch_switch",
-         "glass_vertical_bar_gauge",
-         "industrial_alarm_lamp",
-         "industrial_alarm_siren",
-         "industrial_analog_angular_gauge",
-         "industrial_analog_horizontal_gauge",
-         "industrial_blinking_led",
-         "industrial_block_detector",
-         "industrial_button",
-         "industrial_comparator_switch",
-         "industrial_contact_mat",
-         "industrial_day_timer",
-         "industrial_dimmer",
-         "industrial_door_contact_mat",
-         "industrial_double_pole_button",
-         "industrial_entity_detector",
-         "industrial_estop_switch",
-         "industrial_fallthrough_detector",
-         "industrial_fenced_button",
-         "industrial_foot_button",
-         "industrial_green_blinking_led",
-         "industrial_green_led",
-         "industrial_high_sensitive_trapdoor",
-         "industrial_hopper_switch",
-         "industrial_interval_timer",
-         "industrial_knock_button",
-         "industrial_knock_switch",
-         "industrial_lever",
-         "industrial_light_sensor",
-         "industrial_lightning_sensor",
-         "industrial_linear_entity_detector",
-         "industrial_machine_switch",
-         "industrial_pull_handle",
-         "industrial_rain_sensor",
-         "industrial_red_blinking_led",
-         "industrial_red_led",
-         "industrial_rotary_lever",
-         "industrial_rotary_machine_switch",
-         "industrial_shock_sensitive_contact_mat",
-         "industrial_shock_sensitive_trapdoor",
-         "industrial_small_digital_gauge",
-         "industrial_small_lever",
-         "industrial_switchlink_cased_pulse_receiver",
-         "industrial_switchlink_cased_receiver",
-         "industrial_switchlink_pulse_receiver",
-         "industrial_switchlink_pulse_relay",
-         "industrial_switchlink_receiver",
-         "industrial_switchlink_receiver_analog",
-         "industrial_switchlink_relay",
-         "industrial_switchlink_relay_analog",
-         "industrial_tube_gauge",
-         "industrial_vertical_bar_gauge",
-         "industrial_white_blinking_led",
-         "industrial_white_led",
-         "industrial_yellow_blinking_led",
-         "industrial_yellow_led",
-         "industrialswitch",
-         "light_switch",
-         "oldfancy_bistableswitch1",
-         "oldfancy_bistableswitch2",
-         "oldfancy_button",
-         "oldfancy_small_button",
-         "oldfancy_spring_reset_chain",
-         "orange_sensitiveglass",
-         "red_power_plant",
-         "rustic_angular_lever",
-         "rustic_button",
-         "rustic_contact_plate",
-         "rustic_door_contact_plate",
-         "rustic_fallthrough_detector",
-         "rustic_high_sensitive_trapdoor",
-         "rustic_lever",
-         "rustic_nail_button",
-         "rustic_nail_lever",
-         "rustic_semaphore",
-         "rustic_shock_sensitive_plate",
-         "rustic_shock_sensitive_trapdoor",
-         "rustic_small_button",
-         "rustic_spring_reset_chain",
-         "rustic_two_hinge_lever",
-         "sensitive_glass_block",
-         "stained_sensitiveglass",
-         "valve_wheel_switch",
-         "yellow_power_plant"
-      };
-
-      for (String name : names) {
+      for (String name : CONTROL_NAMES) {
          register(name, factory(name));
       }
+   }
+
+   public static boolean isControlContent(String name) {
+      return "switchlink_pearl".equals(name) || CONTROL_NAMES.contains(name);
+   }
+
+   public static boolean shouldShowInCreativeTab(String name) {
+      if (!isControlContent(name)) {
+         return true;
+      }
+
+      if (!ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_REDSTONE_CONTROLS)) {
+         return false;
+      }
+      if (!isStyleEnabled(name)) {
+         return false;
+      }
+      if (GAUGES.contains(name) && !ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_GAUGES)) {
+         return false;
+      }
+      if (INDICATORS.contains(name) && !ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_INDICATORS)) {
+         return false;
+      }
+      if (isWirelessControl(name) && !ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_WIRELESS_CONTROLS)) {
+         return false;
+      }
+      if (isSoundIndicator(name) && !ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_SOUND_INDICATORS)) {
+         return false;
+      }
+      if (isSensor(name) && !ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_SENSORS)) {
+         return false;
+      }
+      return true;
+   }
+
+   public static int configuredControlCount() {
+      return CONTROL_NAMES.size();
+   }
+
+   private static boolean isSensor(String name) {
+      return name.contains("day_timer")
+         || name.contains("rain_sensor")
+         || name.contains("lightning_sensor")
+         || name.contains("light_sensor")
+         || name.contains("player_detector")
+         || name.contains("linear_entity_detector")
+         || name.contains("entity_detector")
+         || name.contains("block_detector")
+         || name.contains("interval_timer")
+         || "door_sensor_switch".equals(name);
+   }
+
+   private static boolean isSoundIndicator(String name) {
+      return "industrial_alarm_siren".equals(name);
+   }
+
+   private static boolean isWirelessControl(String name) {
+      return WIRELESS_CONTROLS.contains(name);
+   }
+
+   private static boolean isStyleEnabled(String name) {
+      if (name.startsWith("industrial_")) {
+         return ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_STYLE_INDUSTRIAL);
+      } else if (name.startsWith("oldfancy_")) {
+         return ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_STYLE_OLD_FANCY);
+      } else if (name.startsWith("rustic_")) {
+         return ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_STYLE_RUSTIC);
+      } else if (name.startsWith("glass_") || SENSITIVE_GLASS.contains(name)) {
+         return ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_STYLE_GLASS);
+      } else if (RETRO_INDUSTRIAL_CONTROLS.contains(name)) {
+         return ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_STYLE_RETRO_INDUSTRIAL);
+      }
+      return true;
    }
 
    private static Supplier<? extends Block> factory(String name) {
@@ -260,7 +350,8 @@ public final class ControlsModule {
    }
 
    private static <T extends Block> void register(String name, Supplier<T> supplier) {
-      MUTABLE_CONTROLS.add(ModBlocks.registerWithItem(name, supplier));
+      DeferredBlock<? extends Block> block = ModBlocks.registerWithItem(name, supplier);
+      MUTABLE_CONTROLS.add(block);
    }
 
    private static net.minecraft.world.level.block.state.BlockBehaviour.Properties controlProperties() {
@@ -283,9 +374,5 @@ public final class ControlsModule {
          .sound(SoundType.GLASS)
          .noOcclusion()
          .lightLevel(state -> state.hasProperty(ControlsBlockTypes.POWERED) && state.getValue(ControlsBlockTypes.POWERED) ? 8 : 0);
-   }
-
-   static {
-      registerAll();
    }
 }

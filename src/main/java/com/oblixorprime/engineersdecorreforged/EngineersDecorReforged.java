@@ -8,9 +8,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -23,6 +26,7 @@ import net.neoforged.neoforge.capabilities.Capabilities.EnergyStorage;
 import net.neoforged.neoforge.capabilities.Capabilities.FluidHandler;
 import net.neoforged.neoforge.capabilities.Capabilities.ItemHandler;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
@@ -37,13 +41,16 @@ public final class EngineersDecorReforged {
       () -> CreativeModeTab.builder()
          .title(Component.translatable("itemGroup.immersive_engineer_decor_controls_tool_reforged"))
          .withTabsBefore(new ResourceKey[]{CreativeModeTabs.BUILDING_BLOCKS})
-         .icon(() -> new ItemStack((ItemLike)ModBlocks.CLINKER_BRICK_BLOCK.get()))
-         .displayItems((parameters, output) -> ModItems.ORDERED_ITEMS.forEach(item -> output.accept((ItemLike)item.get())))
+         .icon(EngineersDecorReforged::creativeTabIcon)
+         .displayItems((parameters, output) -> ModItems.ORDERED_ITEMS.stream()
+            .filter(EngineersDecorReforged::shouldShowInCreativeTab)
+            .forEach(item -> output.accept((ItemLike)item.get())))
          .build()
    );
 
    public EngineersDecorReforged(IEventBus modEventBus, ModContainer modContainer) {
       NeoForgeMod.enableMilkFluid();
+      modContainer.registerConfig(Type.COMMON, ReforgedConfig.SPEC);
       ControlsModule.init();
       EngineerToolsModule.init();
       addLegacyRegistryAliases();
@@ -56,13 +63,15 @@ public final class EngineersDecorReforged {
       modEventBus.addListener(this::commonSetup);
       modEventBus.addListener(this::registerCapabilities);
       modEventBus.addListener(ModNetworking::register);
-      modContainer.registerConfig(Type.COMMON, ReforgedConfig.SPEC);
    }
 
    private static void addLegacyRegistryAliases() {
       ModBlocks.BLOCKS.getEntries().forEach(holder -> ModBlocks.BLOCKS.addAlias(legacyId(holder.getId()), holder.getId()));
       ModItems.ITEMS.getEntries().forEach(holder -> ModItems.ITEMS.addAlias(legacyId(holder.getId()), holder.getId()));
-      ModBlockEntities.BLOCK_ENTITY_TYPES.addAlias(legacyId(ModBlockEntities.MACHINE.getId()), ModBlockEntities.MACHINE.getId());
+      ModBlockEntities.BLOCK_ENTITY_TYPES.addAlias(
+         legacyId(ResourceLocation.fromNamespaceAndPath(MOD_ID, "machine")),
+         ResourceLocation.fromNamespaceAndPath(MOD_ID, "machine")
+      );
       ModMenus.machineTypes().values().forEach(holder -> ModMenus.MENU_TYPES.addAlias(legacyId(holder.getId()), holder.getId()));
       ModRecipeSerializers.RECIPE_SERIALIZERS.addAlias(legacyId(ModRecipeSerializers.REDIA_TOOL_REPAIR.getId()), ModRecipeSerializers.REDIA_TOOL_REPAIR.getId());
       CREATIVE_TABS.addAlias(legacyId(MAIN_TAB.getId()), MAIN_TAB.getId());
@@ -74,7 +83,7 @@ public final class EngineersDecorReforged {
 
    private void commonSetup(FMLCommonSetupEvent event) {
       LOGGER.info(
-         "Loaded Engineer's Decor & Controls Reforged with {} enabled blocks and {} enabled items.",
+         "Loaded Engineer's Decor & Controls Reforged with {} registered blocks and {} registered items.",
          ModBlocks.ORDERED_BLOCKS.size(),
          ModItems.ORDERED_ITEMS.size()
       );
@@ -84,5 +93,29 @@ public final class EngineersDecorReforged {
       event.registerBlockEntity(ItemHandler.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.itemHandler(side));
       event.registerBlockEntity(FluidHandler.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.fluidHandler(side));
       event.registerBlockEntity(EnergyStorage.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.energyStorage(side));
+   }
+
+   private static ItemStack creativeTabIcon() {
+      if (ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_DECOR_BLOCKS)) {
+         return new ItemStack((ItemLike)ModBlocks.CLINKER_BRICK_BLOCK.get());
+      }
+      if (ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_UTILITY_BLOCKS)) {
+         return new ItemStack((ItemLike)ModBlocks.METAL_CRAFTING_TABLE.get());
+      }
+      return new ItemStack((ItemLike)Items.STONE);
+   }
+
+   private static boolean shouldShowInCreativeTab(DeferredItem<? extends Item> item) {
+      String name = item.getId().getPath();
+      if (ControlsModule.isControlContent(name)) {
+         return ControlsModule.shouldShowInCreativeTab(name);
+      }
+      if (!(item.get() instanceof BlockItem)) {
+         return true;
+      }
+      if (ReforgedConfig.isUtilityBlockItem(name)) {
+         return ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_UTILITY_BLOCKS);
+      }
+      return ReforgedConfig.isEnabled(ReforgedConfig.ENABLE_DECOR_BLOCKS);
    }
 }
