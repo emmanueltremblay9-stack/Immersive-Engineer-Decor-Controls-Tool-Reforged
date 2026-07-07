@@ -1,5 +1,5 @@
 Coarse Iron Grit
-Crushed iron feed
-<&recipe>Coarse Iron Grit is produced by crushing raw iron or iron ore variants with the Ore Crushing Hammer.<br>
+Legacy crushed iron feed
+<&recipe>Coarse Iron Grit is retained for existing worlds that already contain the old hammer output.<br>
 <br>
-Usage: Smelt or blast it into iron ingots. The hammer-based recipes also support iron ore and deepslate iron ore variants.
+Usage: Smelt or blast it into iron ingots. New Ore Crushing Hammer recipes now produce Immersive Engineering iron dust instead.

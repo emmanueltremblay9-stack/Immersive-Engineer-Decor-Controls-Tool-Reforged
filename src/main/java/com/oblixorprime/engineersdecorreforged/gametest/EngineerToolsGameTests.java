@@ -741,6 +741,17 @@ public final class EngineerToolsGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
+   public static void crushing_hammer_outputs_immersive_engineering_dusts(GameTestHelper helper) {
+      assertRecipeResult(helper, "iron_grit_from_iron_ore", "immersiveengineering", "dust_iron", 2);
+      assertRecipeResult(helper, "iron_grit_from_deepslate_iron_ore", "immersiveengineering", "dust_iron", 2);
+      assertRecipeResult(helper, "iron_grit_from_raw_iron", "immersiveengineering", "dust_iron", 2);
+      assertRecipeResult(helper, "gold_grit_from_gold_ore", "immersiveengineering", "dust_gold", 2);
+      assertRecipeResult(helper, "gold_grit_from_deepslate_gold_ore", "immersiveengineering", "dust_gold", 2);
+      assertRecipeResult(helper, "gold_grit_from_raw_gold", "immersiveengineering", "dust_gold", 2);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
    public static void crushing_hammer_entity_hit_cancels_vanilla_attack(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.SURVIVAL);
       ItemStack hammer = new ItemStack((ItemLike)EngineerToolsModule.CRUSHING_HAMMER.get());
@@ -813,5 +824,15 @@ public final class EngineerToolsGameTests {
    private static void assertRecipe(GameTestHelper helper, String name) {
       ResourceLocation id = ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", name);
       helper.assertTrue(helper.getLevel().getRecipeManager().byKey(id).isPresent(), "missing recipe " + id);
+   }
+
+   private static void assertRecipeResult(GameTestHelper helper, String name, String expectedNamespace, String expectedPath, int expectedCount) {
+      ResourceLocation id = ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", name);
+      var recipe = helper.getLevel().getRecipeManager().byKey(id);
+      helper.assertTrue(recipe.isPresent(), "missing recipe " + id);
+      ItemStack result = recipe.get().value().getResultItem(helper.getLevel().registryAccess());
+      ResourceLocation expectedItem = ResourceLocation.fromNamespaceAndPath(expectedNamespace, expectedPath);
+      helper.assertValueEqual(expectedItem, BuiltInRegistries.ITEM.getKey(result.getItem()), "wrong output item for recipe " + id);
+      helper.assertValueEqual(expectedCount, result.getCount(), "wrong output count for recipe " + id);
    }
 }

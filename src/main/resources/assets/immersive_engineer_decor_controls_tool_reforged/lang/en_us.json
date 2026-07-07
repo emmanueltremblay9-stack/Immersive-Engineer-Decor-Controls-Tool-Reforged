@@ -473,7 +473,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.nolapis": "No lapis lazuli in inventory.",
   "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.noxp": "No experience level available.",
   "item.immersive_engineer_decor_controls_tool_reforged.crushing_hammer": "Ore Crushing Hammer",
-  "item.immersive_engineer_decor_controls_tool_reforged.crushing_hammer.help": "Manual handheld ore crushing\n hammer. Craft with raw iron, raw\n gold, or matching ores to make\n coarse grit. The hammer takes\n durability damage and is not\n consumed until it breaks.",
+  "item.immersive_engineer_decor_controls_tool_reforged.crushing_hammer.help": "Manual handheld ore crushing\n hammer. Craft with raw iron, raw\n gold, or matching ores to make\n Immersive Engineering dust. The\n hammer takes durability damage\n and is not consumed until it\n breaks.",
   "item.immersive_engineer_decor_controls_tool_reforged.diving_capsule": "Diving Air Capsule",
   "item.immersive_engineer_decor_controls_tool_reforged.diving_capsule.help": "Restores air when you are about\n to drown. It works from inventory\n with a cooldown and can also be\n used manually.",
   "item.immersive_engineer_decor_controls_tool_reforged.gold_grit": "Coarse Gold Grit",

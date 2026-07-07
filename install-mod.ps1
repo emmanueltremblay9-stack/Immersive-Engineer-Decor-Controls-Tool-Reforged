@@ -74,9 +74,11 @@ function Read-ModMetadata([string]$JarPath) {
       return $null
    }
 
-   $modId = [regex]::Match($toml, '(?m)^\s*modId\s*=\s*"([^"]+)"')
-   $version = [regex]::Match($toml, '(?m)^\s*version\s*=\s*"([^"]+)"')
-   $displayName = [regex]::Match($toml, '(?m)^\s*displayName\s*=\s*"([^"]+)"')
+   $modsBlock = [regex]::Match($toml, '(?ms)^\s*\[\[mods\]\]\s*(.*?)(?=^\s*\[\[|^\s*\[|\z)')
+   $metadataText = if ($modsBlock.Success) { $modsBlock.Groups[1].Value } else { $toml }
+   $modId = [regex]::Match($metadataText, '(?m)^\s*modId\s*=\s*"([^"]+)"')
+   $version = [regex]::Match($metadataText, '(?m)^\s*version\s*=\s*"([^"]+)"')
+   $displayName = [regex]::Match($metadataText, '(?m)^\s*displayName\s*=\s*"([^"]+)"')
    [pscustomobject]@{
       ModId = if ($modId.Success) { $modId.Groups[1].Value } else { $null }
       Version = if ($version.Success) { $version.Groups[1].Value } else { $null }

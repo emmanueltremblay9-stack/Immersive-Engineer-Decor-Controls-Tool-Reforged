@@ -1,5 +1,5 @@
 Coarse Gold Grit
-Crushed gold feed
-<&recipe>Coarse Gold Grit is produced by crushing raw gold or gold ore variants with the Ore Crushing Hammer.<br>
+Legacy crushed gold feed
+<&recipe>Coarse Gold Grit is retained for existing worlds that already contain the old hammer output.<br>
 <br>
-Usage: Smelt or blast it into gold ingots. The hammer-based recipes also support gold ore and deepslate gold ore variants.
+Usage: Smelt or blast it into gold ingots. New Ore Crushing Hammer recipes now produce Immersive Engineering gold dust instead.

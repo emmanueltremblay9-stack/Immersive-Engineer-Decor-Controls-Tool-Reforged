@@ -12,7 +12,9 @@ Sneak-use it against a stable face while carrying torches to place a torch marke
 <np>
 Ore Crushing Hammer
 Hand crushing tool
-<&crushing_hammer>The Ore Crushing Hammer crushes raw iron, raw gold, iron ore, deepslate iron ore, gold ore, and deepslate gold ore into coarse grit through crafting recipes.<br>
+<&crushing_hammer>The Ore Crushing Hammer crushes raw iron, raw gold, iron ore, deepslate iron ore, gold ore, and deepslate gold ore into Immersive Engineering dust through crafting recipes.<br>
+<br>
+The resulting iron and gold dust can be used anywhere Immersive Engineering dusts are accepted.<br>
 <br>
 The hammer takes durability damage and returns to the grid until it breaks. It also wears from hard mining and can shove close threats away.
 <np>
@@ -77,13 +79,13 @@ Stored experience
 Craft a Mind Squeezer first; Charged Lapis is produced by using that tool with lapis and XP available.
 <np>
 Coarse Iron Grit
-Crushed iron feed
-<&iron_grit>Use the Ore Crushing Hammer with raw iron or iron ore variants to make Coarse Iron Grit.<br>
+Legacy crushed iron feed
+<&iron_grit>Coarse Iron Grit is kept for existing worlds that already contain the old hammer output.<br>
 <br>
-Smelt or blast the grit into iron ingots.
+Smelt or blast legacy grit into iron ingots.
 <np>
 Coarse Gold Grit
-Crushed gold feed
-<&gold_grit>Use the Ore Crushing Hammer with raw gold or gold ore variants to make Coarse Gold Grit.<br>
+Legacy crushed gold feed
+<&gold_grit>Coarse Gold Grit is kept for existing worlds that already contain the old hammer output.<br>
 <br>
-Smelt or blast the grit into gold ingots.
+Smelt or blast legacy grit into gold ingots.

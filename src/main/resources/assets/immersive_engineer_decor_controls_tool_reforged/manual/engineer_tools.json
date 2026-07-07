@@ -49,10 +49,10 @@
   },
   "iron_grit": {
     "type": "crafting",
-    "recipe": "immersive_engineer_decor_controls_tool_reforged:iron_grit_from_raw_iron"
+    "recipe": "immersive_engineer_decor_controls_tool_reforged:iron_grit_smelting"
   },
   "gold_grit": {
     "type": "crafting",
-    "recipe": "immersive_engineer_decor_controls_tool_reforged:gold_grit_from_raw_gold"
+    "recipe": "immersive_engineer_decor_controls_tool_reforged:gold_grit_smelting"
   }
 }

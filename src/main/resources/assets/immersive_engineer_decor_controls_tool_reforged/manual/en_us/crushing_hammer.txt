@@ -2,6 +2,6 @@ Ore Crushing Hammer
 Hand crushing tool
 <&recipe>The Ore Crushing Hammer is a manual processing tool for early iron and gold work.<br>
 <br>
-Usage: Craft it with raw iron, raw gold, iron ore, deepslate iron ore, gold ore, or deepslate gold ore to produce coarse grit. The hammer takes durability damage and returns to the crafting grid until it breaks.<br>
+Usage: Craft it with raw iron, raw gold, iron ore, deepslate iron ore, gold ore, or deepslate gold ore to produce Immersive Engineering iron or gold dust. The hammer takes durability damage and returns to the crafting grid until it breaks.<br>
 <br>
 It also wears down from mining and can knock targets back in close combat.
