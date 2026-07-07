@@ -43,6 +43,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -73,6 +74,7 @@ public final class PortedBlocks {
    public static final EnumProperty<PortedBlocks.SlidingDoorPairSide> PAIR_SIDE = EnumProperty.create(
       "pair_side", PortedBlocks.SlidingDoorPairSide.class
    );
+   private static final double BORDER_PLACEMENT_BAND = 0.25D;
    private static final VoxelShape FLOOR_GRATING_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
    private static final VoxelShape CATWALK_FLOOR_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
    private static final VoxelShape RAISED_CATWALK_SHAPE = Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 16.0);
@@ -95,6 +97,49 @@ public final class PortedBlocks {
    );
 
    private PortedBlocks() {
+   }
+
+   private static Direction catwalkStairPlacementFacing(BlockPlaceContext context) {
+      return resolveHorizontalFacingFromClickedFaceBorder(context, context.getHorizontalDirection());
+   }
+
+   private static Direction resolveHorizontalFacingFromClickedFaceBorder(BlockPlaceContext context, Direction fallback) {
+      Direction clickedFace = context.getClickedFace();
+      if (clickedFace != Direction.UP && clickedFace != Direction.DOWN) {
+         return clickedFace.getAxis().isHorizontal() ? clickedFace : fallback;
+      }
+
+      Vec3 hit = context.getClickLocation();
+      BlockPos clickedPos = context.getClickedPos();
+      double localX = hit.x - clickedPos.getX();
+      double localZ = hit.z - clickedPos.getZ();
+      double north = localZ;
+      double south = 1.0D - localZ;
+      double west = localX;
+      double east = 1.0D - localX;
+      double nearest = BORDER_PLACEMENT_BAND;
+      Direction result = fallback;
+
+      if (north <= nearest) {
+         nearest = north;
+         result = Direction.NORTH;
+      }
+
+      if (south < nearest) {
+         nearest = south;
+         result = Direction.SOUTH;
+      }
+
+      if (west < nearest) {
+         nearest = west;
+         result = Direction.WEST;
+      }
+
+      if (east < nearest) {
+         result = Direction.EAST;
+      }
+
+      return result;
    }
 
    private static VoxelShape centeredAxisShape(Direction facing, double min, double max) {
@@ -339,7 +384,7 @@ public final class PortedBlocks {
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         Direction facing = context.getHorizontalDirection().getOpposite();
+         Direction facing = PortedBlocks.catwalkStairPlacementFacing(context);
          return this.withSideRailings(
             (BlockState)((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing))
                .setValue(PortedBlocks.WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER),

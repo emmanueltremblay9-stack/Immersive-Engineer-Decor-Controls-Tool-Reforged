@@ -109,6 +109,49 @@ public final class AccesswayBlockGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void catwalk_stairs_center_placement_uses_vanilla_stair_facing(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      Block stairs = (Block)ModBlocks.STEEL_CATWALK_STAIRS.get();
+      for (float yaw : new float[]{0.0F, 90.0F, 180.0F, 270.0F}) {
+         player.setYRot(yaw);
+         BlockPlaceContext context = placementContext(helper, player, stairs, LOWER_POS, 0.5, 1.0, 0.5, Direction.UP);
+         BlockState state = stairs.getStateForPlacement(context);
+         helper.assertTrue(state != null, "catwalk stair center placement state should not be null");
+         helper.assertValueEqual(
+            state.getValue(PortedBlocks.HORIZONTAL_FACING),
+            context.getHorizontalDirection(),
+            "catwalk stairs should ascend in the same direction as vanilla stair placement"
+         );
+      }
+
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void catwalk_stairs_collision_ascends_toward_facing_and_keeps_center_headroom(GameTestHelper helper) {
+      Block stairs = (Block)ModBlocks.STEEL_CATWALK_STAIRS.get();
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         BlockState state = (BlockState)stairs.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing);
+         assertCatwalkStairTreads(helper, state.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS)), facing);
+
+         BlockState railed = (BlockState)((BlockState)state.setValue(PortedBlocks.LEFT_RAILING, true)).setValue(PortedBlocks.RIGHT_RAILING, true);
+         assertShapeDoesNotIntersect(
+            helper,
+            railed.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+            6.0,
+            12.0,
+            6.0,
+            10.0,
+            16.0,
+            10.0,
+            "catwalk stair side railings should not block center headroom for " + facing
+         );
+      }
+
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 80)
    public static void steel_double_t_support_updates_beam_and_pole_connectors(GameTestHelper helper) {
       Block support = (Block)ModBlocks.STEEL_DOUBLE_T_SUPPORT.get();
@@ -381,6 +424,15 @@ public final class AccesswayBlockGameTests {
       return block.getStateForPlacement(context);
    }
 
+   private static BlockPlaceContext placementContext(
+      GameTestHelper helper, Player player, Block block, BlockPos pos, double localX, double localY, double localZ, Direction face
+   ) {
+      BlockPos absolutePos = helper.absolutePos(pos);
+      Vec3 hitLocation = new Vec3(absolutePos.getX() + localX, absolutePos.getY() + localY, absolutePos.getZ() + localZ);
+      BlockHitResult hit = new BlockHitResult(hitLocation, face, absolutePos, false);
+      return new BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, new ItemStack(block), hit);
+   }
+
    private static BlockState placeDoorFromItem(GameTestHelper helper, Player player, DoorBlock door, BlockPos lowerPos) {
       BlockPos absolutePos = helper.absolutePos(lowerPos);
       Vec3 hitLocation = new Vec3(absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 0.5);
@@ -396,6 +448,32 @@ public final class AccesswayBlockGameTests {
 
    private static void assertClimbable(GameTestHelper helper, Block block, String name) {
       helper.assertTrue(block.defaultBlockState().is(BlockTags.CLIMBABLE), name + " should be in minecraft:climbable for ladder movement");
+   }
+
+   private static void assertCatwalkStairTreads(GameTestHelper helper, VoxelShape shape, Direction facing) {
+      switch (facing) {
+         case NORTH -> {
+            assertShapeIntersects(helper, shape, 2.0, 4.5, 10.0, 14.0, 4.9, 14.0, "north catwalk stairs should have a low south entry tread");
+            assertShapeIntersects(helper, shape, 2.0, 9.5, 2.0, 14.0, 9.9, 6.0, "north catwalk stairs should have a high north exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 2.0, 9.5, 10.0, 14.0, 9.9, 14.0, "north catwalk stairs should not put the high tread on the entry side");
+         }
+         case SOUTH -> {
+            assertShapeIntersects(helper, shape, 2.0, 4.5, 2.0, 14.0, 4.9, 6.0, "south catwalk stairs should have a low north entry tread");
+            assertShapeIntersects(helper, shape, 2.0, 9.5, 10.0, 14.0, 9.9, 14.0, "south catwalk stairs should have a high south exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 2.0, 9.5, 2.0, 14.0, 9.9, 6.0, "south catwalk stairs should not put the high tread on the entry side");
+         }
+         case WEST -> {
+            assertShapeIntersects(helper, shape, 10.0, 4.5, 2.0, 14.0, 4.9, 14.0, "west catwalk stairs should have a low east entry tread");
+            assertShapeIntersects(helper, shape, 2.0, 9.5, 2.0, 6.0, 9.9, 14.0, "west catwalk stairs should have a high west exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 10.0, 9.5, 2.0, 14.0, 9.9, 14.0, "west catwalk stairs should not put the high tread on the entry side");
+         }
+         case EAST -> {
+            assertShapeIntersects(helper, shape, 2.0, 4.5, 2.0, 6.0, 4.9, 14.0, "east catwalk stairs should have a low west entry tread");
+            assertShapeIntersects(helper, shape, 10.0, 9.5, 2.0, 14.0, 9.9, 14.0, "east catwalk stairs should have a high east exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 2.0, 9.5, 2.0, 6.0, 9.9, 14.0, "east catwalk stairs should not put the high tread on the entry side");
+         }
+         default -> throw new IllegalArgumentException("Unsupported catwalk stair facing " + facing);
+      }
    }
 
    private static int variantFor(BlockPos pos) {
