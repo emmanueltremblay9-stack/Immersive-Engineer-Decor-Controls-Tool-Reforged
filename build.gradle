@@ -63,6 +63,8 @@ neoForge {
 
 dependencies {
     implementation "blusunrize.immersiveengineering:ImmersiveEngineering:${immersive_engineering_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 }
 
 tasks.named('processResources', ProcessResources).configure {

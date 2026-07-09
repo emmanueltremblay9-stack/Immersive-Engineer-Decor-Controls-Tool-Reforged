@@ -2,6 +2,28 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.41-reconstructed] - 2026-07-09
+
+### Validation
+
+- Confirmed `compileJava` passes after adding isolated optional JEI support.
+- Confirmed `clean build` passes and produces `build/libs/immersive_engineer_decor_controls_tool_reforged-1.1.41-reconstructed.jar`.
+- Confirmed `runGameTestServer` passes with all 182 required GameTests.
+- Confirmed the rebuilt jar is 2,679,330 bytes with SHA-256 `B295003D72B45B880E36BD41AAD1AEC14E5CDA33F2508E61ACA49900FD44BB95`.
+- Confirmed JEI imports are isolated to `com.oblixorprime.engineersdecorreforged.compat.jei`.
+- Confirmed the rebuilt jar does not bundle JEI classes and marks JEI as an optional NeoForge dependency.
+
+### Added
+
+- Added optional JEI integration using `mezz.jei:jei-1.21.1-neoforge-api` as `compileOnly` and `mezz.jei:jei-1.21.1-neoforge` as `runtimeOnly`.
+- Registered JEI catalysts for the Metal Crafting Table, Small Lab Furnace, and Small Electrical Furnace.
+- Added JEI ingredient info pages for the reconstructed engineer tools and the main workshop, fluid, power, and factory machines.
+- Added safe JEI smelting click areas for the Small Lab Furnace and Small Electrical Furnace screens.
+
+### Changed
+
+- Declared JEI as an optional NeoForge dependency instead of a required runtime dependency.
+
 ## [1.1.28-reconstructed] - 2026-06-28
 
 ### Validation

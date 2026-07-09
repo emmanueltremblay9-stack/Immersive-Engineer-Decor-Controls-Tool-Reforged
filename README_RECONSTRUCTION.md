@@ -69,3 +69,4 @@ Additional bug hunt fixes:
 - Machine menu shift-click handling now ignores negative and out-of-range slot indices instead of throwing from malformed menu input.
 - REDIA Tool now uses the original MIT Engineer's Tools 3D item model instead of a flat generated item model.
 - REDIA Tool durability-dependent Efficiency and Fortune decay curves now match the effective original 1.16 config defaults.
+- Optional JEI support is isolated in a compatibility package and adds crafting/smelting catalysts, concise item and machine info pages, and GUI smelting click areas without making JEI a required runtime dependency.
