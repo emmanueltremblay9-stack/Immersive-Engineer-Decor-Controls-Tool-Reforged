@@ -2,6 +2,38 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.53-reconstructed] - 2026-08-11
+
+### Validation
+
+- Confirmed `validateManualResources` passes for 223 manual sources and 424 named crafting widgets.
+- Confirmed `validateProjectMetadata`, `compileJava`, and `processResources` pass.
+- Confirmed `runGameTestServer` passes with all 179 required GameTests in three consecutive post-review runs.
+- Confirmed `clean build` passes; the JVM unit-test task is `NO-SOURCE`.
+- Confirmed a local development-client smoke test opens the EDCT Engineer's Tools index and renders both Coarse Iron Grit and Coarse Gold Grit pages; the resulting `latest.log` contains no error, exception, `ManualRecipeRef`, or manual-initialization failure matches.
+- Confirmed the runtime jar is 2,670,995 bytes with SHA-256 `CD92F95870EFE059775FD600C6619C2B355C7C87BF4A66A2CEE852FB54CF0735`.
+- Confirmed the built jar contains version `1.1.53-reconstructed`, mod id `immersive_engineer_decor_controls_tool_reforged`, matching MIT attribution, safe grit manual widgets, and all 199 mining-tool assignments.
+- `runData` is not exposed by this reconstruction; `processResources` plus the two deterministic resource validators were used as the non-mutating equivalent.
+- No Prism installation was performed; the client check used the isolated Gradle development runtime only.
+
+### Fixed
+
+- Replaced the two Engineer's Manual widgets that incorrectly cast smelting recipes as crafting recipes, while preserving the legacy Iron Grit and Gold Grit pages.
+- Restored active Small Solar Panel FE output to receivers below or on the four horizontal sides, with one shared 256 FE transfer budget and no night generation.
+- Restored iron open/close sounds and game events for the Metal Sliding Door and Iron Hatch while preserving hand operation.
+- Added conventional pickaxe, axe, and shovel tags for every public block so normal vanilla tools receive correct speed and drop behavior instead of leaving REDIA as the practical universal option.
+
+### Added
+
+- Added exhaustive GameTests for creative-item routing, conventional mining tools, material sound families, solar output accounting, and sided FE behavior.
+- Added deterministic manual-resource and repository-metadata validators to the Gradle `check` lifecycle.
+- Added root MIT attribution files, GitHub issue forms, README support guidance, and NeoForge issue/repository metadata.
+- Added CI execution of the dedicated GameTest server.
+
+### Changed
+
+- Synchronized release metadata to `1.1.53-reconstructed`.
+
 ## [1.1.41-reconstructed] - 2026-07-09
 
 ### Validation

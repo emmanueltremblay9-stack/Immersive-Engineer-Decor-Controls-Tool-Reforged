@@ -621,10 +621,12 @@ public final class PortedBlocks {
    }
 
    public static class HatchBlock extends HorizontalDirectionalBlock {
-      public static final MapCodec<PortedBlocks.HatchBlock> CODEC = simpleCodec(PortedBlocks.HatchBlock::new);
+      public static final MapCodec<PortedBlocks.HatchBlock> CODEC = simpleCodec(properties -> new PortedBlocks.HatchBlock(BlockSetType.IRON, properties));
+      private final BlockSetType type;
 
-      public HatchBlock(Properties properties) {
+      public HatchBlock(BlockSetType type, Properties properties) {
          super(properties);
+         this.type = type;
          this.registerDefaultState(
             (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                   .setValue(PortedBlocks.OPEN, false))
@@ -634,6 +636,10 @@ public final class PortedBlocks {
 
       protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
          return CODEC;
+      }
+
+      public BlockSetType type() {
+         return this.type;
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
@@ -652,7 +658,7 @@ public final class PortedBlocks {
          if (!level.isClientSide) {
             boolean open = (Boolean)state.getValue(PortedBlocks.POWERED) || !(Boolean)state.getValue(PortedBlocks.OPEN);
             if (open != (Boolean)state.getValue(PortedBlocks.OPEN)) {
-               this.setOpen(level, pos, state, open);
+               this.setOpen(player, level, pos, state, open);
             }
          }
 
@@ -663,14 +669,26 @@ public final class PortedBlocks {
          if (!level.isClientSide) {
             boolean powered = level.hasNeighborSignal(pos);
             if (powered != (Boolean)state.getValue(PortedBlocks.POWERED)) {
-               this.setOpen(level, pos, (BlockState)state.setValue(PortedBlocks.POWERED, powered), powered);
+               this.setOpen(null, level, pos, (BlockState)state.setValue(PortedBlocks.POWERED, powered), powered);
             }
          }
       }
 
-      private void setOpen(Level level, BlockPos pos, BlockState state, boolean open) {
+      private void setOpen(@Nullable Entity entity, Level level, BlockPos pos, BlockState state, boolean open) {
+         boolean changed = (Boolean)state.getValue(PortedBlocks.OPEN) != open;
          level.setBlock(pos, (BlockState)state.setValue(PortedBlocks.OPEN, open), 10);
          level.updateNeighborsAt(pos, this);
+         if (changed) {
+            level.playSound(
+               entity,
+               pos,
+               open ? this.type.trapdoorOpen() : this.type.trapdoorClose(),
+               SoundSource.BLOCKS,
+               1.0F,
+               level.getRandom().nextFloat() * 0.1F + 0.9F
+            );
+            level.gameEvent(entity, open ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
+         }
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1010,7 +1028,7 @@ public final class PortedBlocks {
    }
 
    public static class SlidingDoorBlock extends DoorBlock {
-      public static final MapCodec<PortedBlocks.SlidingDoorBlock> CODEC = simpleCodec(properties -> new PortedBlocks.SlidingDoorBlock(BlockSetType.OAK, properties));
+      public static final MapCodec<PortedBlocks.SlidingDoorBlock> CODEC = simpleCodec(properties -> new PortedBlocks.SlidingDoorBlock(BlockSetType.IRON, properties));
       private static final int UPDATE_FLAGS = 10;
       private static final VoxelShape CLOSED_NORTH_SOUTH_SHAPE = Shapes.or(
          Block.box(0.0, 0.0, 7.0, 16.0, 16.0, 9.0),
@@ -1072,10 +1090,6 @@ public final class PortedBlocks {
 
       @Override
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-         if (!this.type().canOpenByHand()) {
-            return InteractionResult.PASS;
-         }
-
          if (!level.isClientSide) {
             BlockPos lowerPos = lowerPos(pos, state);
             BlockState lowerState = level.getBlockState(lowerPos);

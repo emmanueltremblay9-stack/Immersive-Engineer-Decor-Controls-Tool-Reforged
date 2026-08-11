@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "immersive_engineer_decor_controls_tool_reforged:old_industrial_wood_planks",
+    "immersive_engineer_decor_controls_tool_reforged:old_industrial_wood_slab",
+    "immersive_engineer_decor_controls_tool_reforged:old_industrial_wood_stairs",
+    "immersive_engineer_decor_controls_tool_reforged:old_industrial_wood_slabslice",
+    "immersive_engineer_decor_controls_tool_reforged:old_industrial_wood_door",
+    "immersive_engineer_decor_controls_tool_reforged:treated_wood_pole",
+    "immersive_engineer_decor_controls_tool_reforged:treated_wood_pole_head",
+    "immersive_engineer_decor_controls_tool_reforged:treated_wood_pole_support",
+    "immersive_engineer_decor_controls_tool_reforged:treated_wood_table",
+    "immersive_engineer_decor_controls_tool_reforged:treated_wood_stool",
+    "immersive_engineer_decor_controls_tool_reforged:labeled_crate"
+  ]
+}

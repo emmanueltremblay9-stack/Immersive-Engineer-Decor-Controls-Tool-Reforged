@@ -2,6 +2,10 @@
 
 This is a separate reconstruction workspace created from the published CurseForge `engineers_decor_reforged-1.1.jar` artifact.
 
+Recovered base artifact SHA-256: `422EDB90047C6B1E188BC204DAA2C926DB11DC07DE527B269377369871465DE7`.
+
+The exact historical CurseForge distribution URL/file ID was not present in the recovered evidence and is intentionally not guessed here.
+
 Original recovered artifacts remain untouched in:
 
 `C:\Users\Emmanuel Tremblay\AI Depot\Codex Documents\Engineer Decor Controls Reforged Recovery\artifacts`

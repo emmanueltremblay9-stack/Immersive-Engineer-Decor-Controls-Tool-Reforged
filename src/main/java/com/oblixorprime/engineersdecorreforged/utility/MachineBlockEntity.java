@@ -80,6 +80,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private static final int FUNNEL_TRANSFER = 250;
    private static final int SOLAR_CAPACITY = 64000;
    private static final int SOLAR_ITEM_TRANSFER = 256;
+   private static final Direction[] SOLAR_OUTPUT_DIRECTIONS = new Direction[]{
+      Direction.DOWN, Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST
+   };
    private static final int METAL_TABLE_HAMMER = 0;
    private static final int METAL_TABLE_GRID_FIRST = 1;
    private static final int METAL_TABLE_GRID_END = 10;
@@ -1948,33 +1951,69 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private void tickSolarPanel() {
       if (this.level != null && this.tickCounter % 20 == 0) {
          int exposure = 0;
-         if (this.level.dimensionType().hasSkyLight() && this.level.canSeeSky(this.worldPosition.above())) {
-            exposure = this.level.isDay() ? 4 : 1;
+         if (this.level.dimensionType().hasSkyLight() && this.level.isDay() && this.level.canSeeSky(this.worldPosition.above())) {
+            exposure = 4;
             if (this.level.isRainingAt(this.worldPosition.above())) {
                exposure = Math.max(1, exposure - 2);
             }
 
-            this.energy = Math.min(64000, this.energy + exposure * 8);
+            this.energy = Math.min(SOLAR_CAPACITY, this.energy + exposure * 8);
          }
 
-         this.chargeSolarCell();
+         int transferBudget = SOLAR_ITEM_TRANSFER;
+         transferBudget -= this.chargeSolarCell(transferBudget);
+         this.pushSolarEnergy(transferBudget);
          this.setIntProperty(MachineBlocks.EXPOSITION, exposure);
          this.setChanged();
          this.updateComparator();
       }
    }
 
-   private void chargeSolarCell() {
-      if (this.energy > 0) {
+   private int chargeSolarCell(int maxTransfer) {
+      if (this.energy > 0 && maxTransfer > 0) {
          ItemStack cell = (ItemStack)this.items.get(0);
          IEnergyStorage cellEnergy = (IEnergyStorage)cell.getCapability(EnergyStorage.ITEM);
          if (cellEnergy != null && cellEnergy.canReceive()) {
-            int received = cellEnergy.receiveEnergy(Math.min(256, this.energy), false);
+            int received = Mth.clamp(cellEnergy.receiveEnergy(Math.min(maxTransfer, this.energy), false), 0, Math.min(maxTransfer, this.energy));
             if (received > 0) {
                this.energy -= received;
             }
+
+            return received;
          }
       }
+
+      return 0;
+   }
+
+   private int pushSolarEnergy(int maxTransfer) {
+      if (this.level == null || this.level.isClientSide || this.energy <= 0 || maxTransfer <= 0) {
+         return 0;
+      }
+
+      int transferred = 0;
+      for (Direction direction : SOLAR_OUTPUT_DIRECTIONS) {
+         int remaining = Math.min(maxTransfer - transferred, this.energy);
+         if (remaining <= 0) {
+            break;
+         }
+
+         IEnergyStorage receiver = this.level.getCapability(EnergyStorage.BLOCK, this.worldPosition.relative(direction), direction.getOpposite());
+         if (receiver == null || !receiver.canReceive()) {
+            continue;
+         }
+
+         int simulated = Mth.clamp(receiver.receiveEnergy(remaining, true), 0, remaining);
+         if (simulated <= 0) {
+            continue;
+         }
+
+         int accepted = Mth.clamp(receiver.receiveEnergy(simulated, false), 0, simulated);
+         this.energy -= accepted;
+         transferred += accepted;
+      }
+
+      return transferred;
    }
 
    private void tickMilkingMachine(boolean powered) {

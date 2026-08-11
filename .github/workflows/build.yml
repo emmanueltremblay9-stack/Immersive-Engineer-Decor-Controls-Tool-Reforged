@@ -37,6 +37,10 @@ jobs:
         shell: bash
         run: ./gradlew test --stacktrace
 
+      - name: Run dedicated GameTests
+        shell: bash
+        run: ./gradlew runGameTestServer --stacktrace
+
       - name: Build
         shell: bash
         run: ./gradlew build --stacktrace

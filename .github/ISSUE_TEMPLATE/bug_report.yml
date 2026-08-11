@@ -1,0 +1,72 @@
+name: Bug report
+description: Report a reproducible defect in this unofficial reconstruction fork.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Please attach logs and report fork-specific defects here, not to the original upstream authors.
+  - type: input
+    id: mod_version
+    attributes:
+      label: Mod version
+      placeholder: 1.1.53-reconstructed
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Minecraft, NeoForge, and Java versions
+      placeholder: Minecraft 1.21.1, NeoForge 21.1.230, Java 21
+    validations:
+      required: true
+  - type: input
+    id: dependencies
+    attributes:
+      label: Immersive Engineering and optional dependency versions
+      placeholder: Immersive Engineering 12.4.2-194; JEI version if installed
+    validations:
+      required: true
+  - type: textarea
+    id: mod_list
+    attributes:
+      label: Complete mod list
+      description: Paste the complete loaded-mod list or attach a launcher-generated list.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Give the smallest reliable sequence that triggers the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or crash report
+      description: Drag and drop latest.log or debug.log and any crash report here. Remove credentials or private data first.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I searched existing issues for this defect.
+          required: true
+        - label: I reproduced this with the version listed above.
+          required: true

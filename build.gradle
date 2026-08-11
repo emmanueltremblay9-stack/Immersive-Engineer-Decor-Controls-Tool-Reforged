@@ -71,6 +71,152 @@ tasks.named('processResources', ProcessResources).configure {
     duplicatesStrategy = DuplicatesStrategy.FAIL
 }
 
+tasks.register('validateManualResources') {
+    group = 'verification'
+    description = 'Validates Engineer\'s Manual autoload parity, entry resources, and crafting-recipe type safety.'
+    inputs.dir(layout.projectDirectory.dir("src/main/resources/assets/${mod_id}/manual"))
+    inputs.file(layout.projectDirectory.file('src/main/resources/assets/immersiveengineering/manual/autoload.json'))
+    inputs.dir(layout.projectDirectory.dir("src/main/resources/data/${mod_id}/recipe"))
+
+    doLast {
+        def json = new groovy.json.JsonSlurper()
+        def authoritativeAutoload = file('src/main/resources/assets/immersiveengineering/manual/autoload.json')
+        def mirrorAutoload = file("src/main/resources/assets/${mod_id}/manual/autoload.json")
+        def manualRoot = file("src/main/resources/assets/${mod_id}/manual")
+        def recipeRoot = file("src/main/resources/data/${mod_id}/recipe")
+
+        if (!authoritativeAutoload.isFile() || !mirrorAutoload.isFile()) {
+            throw new GradleException('Both Engineer\'s Manual autoload files must exist')
+        }
+        if (!java.util.Arrays.equals(authoritativeAutoload.bytes, mirrorAutoload.bytes)) {
+            throw new GradleException('Engineer\'s Manual autoload files have drifted apart')
+        }
+
+        def sources = []
+        Closure collectSources
+        collectSources = { Object value ->
+            if (value instanceof Map) {
+                if (value['source'] instanceof String) {
+                    sources.add(value['source'])
+                }
+                value.values().each { collectSources(it) }
+            } else if (value instanceof Collection) {
+                value.each { collectSources(it) }
+            }
+        }
+        collectSources(json.parse(authoritativeAutoload))
+        if (sources.toSet().size() != sources.size()) {
+            throw new GradleException('Engineer\'s Manual autoload contains duplicate source entries')
+        }
+
+        sources.each { String source ->
+            def parts = source.split(':', 2)
+            if (parts.length != 2 || parts[0] != mod_id) {
+                throw new GradleException("Manual source must be qualified with ${mod_id}: ${source}")
+            }
+            def entryJson = new File(manualRoot, "${parts[1]}.json")
+            def entryText = new File(new File(manualRoot, 'en_us'), "${parts[1]}.txt")
+            if (!entryJson.isFile() || !entryText.isFile()) {
+                throw new GradleException("Manual source is incomplete: ${source}")
+            }
+        }
+
+        int namedCraftingReferences = 0
+        Closure validateWidgets
+        validateWidgets = { Object value, File entryFile ->
+            if (value instanceof Map) {
+                if (value['type'] == 'crafting') {
+                    if (!(value['recipe'] instanceof String) || value['recipe'].trim().isEmpty()) {
+                        throw new GradleException("Crafting widget has no valid recipe id in ${entryFile}")
+                    }
+                    namedCraftingReferences++
+                    String recipeId = value['recipe']
+                    def parts = recipeId.split(':', 2)
+                    if (parts.length != 2) {
+                        throw new GradleException("Unqualified crafting recipe in ${entryFile}: ${recipeId}")
+                    }
+                    if (parts[0] == mod_id) {
+                        def recipeFile = new File(recipeRoot, "${parts[1]}.json")
+                        if (!recipeFile.isFile()) {
+                            throw new GradleException("Manual crafting recipe is missing in ${entryFile}: ${recipeId}")
+                        }
+                        def recipeType = json.parse(recipeFile)['type']
+                        if (!(recipeType instanceof String) || !recipeType.startsWith('minecraft:crafting_')) {
+                            throw new GradleException("Manual crafting widget points at non-crafting recipe ${recipeId} (${recipeType}) in ${entryFile}")
+                        }
+                    }
+                }
+                value.values().each { validateWidgets(it, entryFile) }
+            } else if (value instanceof Collection) {
+                value.each { validateWidgets(it, entryFile) }
+            }
+        }
+        fileTree(manualRoot) {
+            include '**/*.json'
+            exclude 'autoload.json'
+        }.files.sort().each { File entryFile -> validateWidgets(json.parse(entryFile), entryFile) }
+
+        logger.lifecycle("Validated ${sources.size()} Engineer's Manual sources and ${namedCraftingReferences} named crafting widgets")
+    }
+}
+
+tasks.register('validateProjectMetadata') {
+    group = 'verification'
+    description = 'Validates release version, attribution, support links, and issue-reporting metadata.'
+    inputs.files(
+            'LICENSE', 'NOTICE.md', 'CREDITS.md', 'README.md', 'README_RECONSTRUCTION.md', 'CHANGELOG.md',
+            'src/main/resources/META-INF/LICENSE', 'src/main/resources/META-INF/NOTICE.md',
+            'src/main/resources/META-INF/CREDITS.md', 'src/main/resources/META-INF/neoforge.mods.toml',
+            '.github/ISSUE_TEMPLATE/bug_report.yml', '.github/ISSUE_TEMPLATE/config.yml'
+    )
+
+    doLast {
+        [
+                'LICENSE'   : 'src/main/resources/META-INF/LICENSE',
+                'NOTICE.md' : 'src/main/resources/META-INF/NOTICE.md',
+                'CREDITS.md': 'src/main/resources/META-INF/CREDITS.md'
+        ].each { String rootPath, String packagedPath ->
+            def rootFile = file(rootPath)
+            def packagedFile = file(packagedPath)
+            if (!rootFile.isFile() || !packagedFile.isFile() || !java.util.Arrays.equals(rootFile.bytes, packagedFile.bytes)) {
+                throw new GradleException("Root and packaged attribution must match: ${rootPath}")
+            }
+        }
+
+        def issueUrl = 'https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues'
+        def repositoryUrl = 'https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged'
+        def readme = file('README.md').getText('UTF-8')
+        def toml = file('src/main/resources/META-INF/neoforge.mods.toml').getText('UTF-8')
+        if (!readme.contains('## Bug reports') || !readme.contains(issueUrl)) {
+            throw new GradleException('README must expose this fork\'s GitHub issue-reporting surface')
+        }
+        if (!toml.contains("issueTrackerURL=\"${issueUrl}\"") || !toml.contains("displayURL=\"${repositoryUrl}\"")) {
+            throw new GradleException('NeoForge metadata must expose repository and issue URLs')
+        }
+        if (!file('.github/ISSUE_TEMPLATE/bug_report.yml').isFile() || !file('.github/ISSUE_TEMPLATE/config.yml').isFile()) {
+            throw new GradleException('GitHub issue templates are required')
+        }
+
+        def versionMatcher = toml =~ /(?m)^version="([^"]+)"$/
+        if (!versionMatcher.find() || versionMatcher.group(1) != mod_version.toString()) {
+            throw new GradleException("NeoForge version must match gradle.properties (${mod_version})")
+        }
+        if (!file('CHANGELOG.md').getText('UTF-8').contains("## [${mod_version}]")) {
+            throw new GradleException("CHANGELOG.md must contain a ${mod_version} release heading")
+        }
+        if (!file('README_RECONSTRUCTION.md').getText('UTF-8').contains('422EDB90047C6B1E188BC204DAA2C926DB11DC07DE527B269377369871465DE7')) {
+            throw new GradleException('Reconstruction provenance must retain the recovered base-artifact SHA-256')
+        }
+
+        logger.lifecycle("Validated attribution, support metadata, and release version ${mod_version}")
+    }
+}
+
+tasks.named('check').configure {
+    dependsOn tasks.named('validateManualResources')
+    dependsOn tasks.named('validateProjectMetadata')
+}
+
 tasks.named('jar', Jar).configure {
     manifest {
         attributes([

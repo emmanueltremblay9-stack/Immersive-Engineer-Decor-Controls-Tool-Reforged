@@ -48,11 +48,19 @@
     "recipe": "immersive_engineer_decor_controls_tool_reforged:charged_lapis_squeezer"
   },
   "iron_grit": {
-    "type": "crafting",
-    "recipe": "immersive_engineer_decor_controls_tool_reforged:iron_grit_smelting"
+    "type": "item_display",
+    "items": [
+      {
+        "id": "immersive_engineer_decor_controls_tool_reforged:iron_grit"
+      }
+    ]
   },
   "gold_grit": {
-    "type": "crafting",
-    "recipe": "immersive_engineer_decor_controls_tool_reforged:gold_grit_smelting"
+    "type": "item_display",
+    "items": [
+      {
+        "id": "immersive_engineer_decor_controls_tool_reforged:gold_grit"
+      }
+    ]
   }
 }

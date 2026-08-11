@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Bug-report guidance
+    url: https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged#bug-reports
+    about: Review the required versions, reproduction steps, and log guidance before filing.

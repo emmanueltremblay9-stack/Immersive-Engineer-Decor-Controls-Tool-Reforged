@@ -105,7 +105,7 @@ public final class EngineersDecorReforged {
       return new ItemStack((ItemLike)Items.STONE);
    }
 
-   private static boolean shouldShowInCreativeTab(DeferredItem<? extends Item> item) {
+   public static boolean shouldShowInCreativeTab(DeferredItem<? extends Item> item) {
       String name = item.getId().getPath();
       if (ControlsModule.isControlContent(name)) {
          return ControlsModule.shouldShowInCreativeTab(name);

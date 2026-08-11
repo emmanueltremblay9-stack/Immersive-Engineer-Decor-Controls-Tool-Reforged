@@ -588,6 +588,89 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_solar_panel_auto_outputs_to_adjacent_receiver(GameTestHelper helper) {
+      MachineBlockEntity solar = placeMachine(helper, ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL);
+      MachineBlockEntity receiver = placeMachineAt(
+         helper, TEST_POS.east(), ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE
+      );
+      solar.dataAccessForTests().set(3, 10);
+      tickMachine(helper, solar, 20);
+      int generated = solar.getBlockState().getValue(MachineBlocks.EXPOSITION) * 8;
+      helper.assertValueEqual(receiver.energyStorage(null).getEnergyStored(), 256, "solar panel should actively push FE into an adjacent receiver");
+      helper.assertValueEqual(
+         solar.energyStorage(null).getEnergyStored(), 1000 + generated - 256, "solar output should preserve generated FE and debit one transfer budget"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_solar_panel_output_budget_prevents_duplication(GameTestHelper helper) {
+      MachineBlockEntity solar = placeMachine(helper, ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL);
+      MachineBlockEntity westReceiver = placeMachineAt(
+         helper, TEST_POS.west(), ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE
+      );
+      MachineBlockEntity eastReceiver = placeMachineAt(
+         helper, TEST_POS.east(), ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE
+      );
+      solar.dataAccessForTests().set(3, 10);
+      tickMachine(helper, solar, 20);
+      int generated = solar.getBlockState().getValue(MachineBlocks.EXPOSITION) * 8;
+      int received = westReceiver.energyStorage(null).getEnergyStored() + eastReceiver.energyStorage(null).getEnergyStored();
+      helper.assertValueEqual(received, 256, "all adjacent receivers should share one 256 FE solar transfer budget");
+      helper.assertValueEqual(
+         solar.energyStorage(null).getEnergyStored(), 1000 + generated - received, "multiple receivers must not duplicate or void solar FE"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_solar_panel_cell_and_block_share_transfer_budget(GameTestHelper helper) {
+      MachineBlockEntity solar = placeMachine(helper, ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL);
+      MachineBlockEntity receiver = placeMachineAt(
+         helper, TEST_POS.east(), ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE
+      );
+      Item capacitor = (Item)BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", "capacitor_lv"));
+      solar.setItem(0, new ItemStack(capacitor));
+      solar.dataAccessForTests().set(3, 10);
+      tickMachine(helper, solar, 20);
+      int generated = solar.getBlockState().getValue(MachineBlocks.EXPOSITION) * 8;
+      IEnergyStorage cell = (IEnergyStorage)solar.getItem(0).getCapability(EnergyStorage.ITEM);
+      helper.assertTrue(cell != null, "solar test capacitor should expose FE storage");
+      helper.assertValueEqual(cell.getEnergyStored(), 256, "solar panel should charge its cell first within the shared transfer budget");
+      helper.assertValueEqual(receiver.energyStorage(null).getEnergyStored(), 0, "cell charging should consume the cycle budget before block output");
+      helper.assertValueEqual(
+         solar.energyStorage(null).getEnergyStored(), 1000 + generated - 256, "shared cell and block output must not duplicate or void FE"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_solar_panel_does_not_output_upward(GameTestHelper helper) {
+      MachineBlockEntity solar = placeMachine(helper, ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL);
+      MachineBlockEntity receiver = placeMachineAt(
+         helper, TEST_POS.above(), ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE
+      );
+      solar.dataAccessForTests().set(3, 10);
+      tickMachine(helper, solar, 20);
+      int generated = solar.getBlockState().getValue(MachineBlocks.EXPOSITION) * 8;
+      helper.assertValueEqual(receiver.energyStorage(null).getEnergyStored(), 0, "solar panel should keep its sky-facing top as a non-output side");
+      helper.assertValueEqual(solar.energyStorage(null).getEnergyStored(), 1000 + generated, "an upward receiver must not drain the solar buffer");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_solar_panel_exposes_registered_energy_capability_on_every_side(GameTestHelper helper) {
+      placeMachine(helper, ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL);
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+      for (Direction direction : Direction.values()) {
+         IEnergyStorage storage = (IEnergyStorage)helper.getLevel().getCapability(EnergyStorage.BLOCK, absolutePos, direction);
+         helper.assertTrue(storage != null && storage.canExtract(), "solar panel should expose its pull capability on " + direction);
+      }
+
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void small_solar_panel_menu_reports_full_energy_capacity(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_SOLAR_PANEL, MachineKind.SMALL_SOLAR_PANEL);

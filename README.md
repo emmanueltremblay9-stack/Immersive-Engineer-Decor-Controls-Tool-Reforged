@@ -12,18 +12,19 @@ This workspace was rebuilt from the published `engineers_decor_reforged-1.1.jar`
 .\gradlew.bat clean build
 ```
 
-Latest local validation before publishing:
+Latest local validation for `1.1.53-reconstructed`:
 
-- `compileJava` passed.
-- `runGameTestServer` passed with 182/182 required GameTests.
-- `clean build` passed.
-- Latest rebuilt jar observed locally: `build/libs/immersive_engineer_decor_controls_tool_reforged-1.1.41-reconstructed.jar`, 2,679,330 bytes, SHA-256 `B295003D72B45B880E36BD41AAD1AEC14E5CDA33F2508E61ACA49900FD44BB95`.
-- `scripts/audit-resource-parity.ps1` passed: every deleted `engineers_decor_reforged` resource has an equivalent `immersive_engineer_decor_controls_tool_reforged` replacement, and current resource roots contain no legacy namespace references.
-- Prism LAB installation passed as `Immersive Engineer Decor&Controls&Tool Reforged.jar` with matching SHA-256 `B295003D72B45B880E36BD41AAD1AEC14E5CDA33F2508E61ACA49900FD44BB95`.
+- `compileJava` and the `processResources` datagen-equivalent gate passed.
+- `runGameTestServer` passed with all 179 required GameTests in three consecutive post-review runs.
+- `clean build` passed; JVM unit tests are `NO-SOURCE` because regression coverage is implemented as NeoForge GameTests.
+- Runtime jar: `build/libs/immersive_engineer_decor_controls_tool_reforged-1.1.53-reconstructed.jar`, 2,670,995 bytes, SHA-256 `CD92F95870EFE059775FD600C6619C2B355C7C87BF4A66A2CEE852FB54CF0735`.
+- `validateManualResources` rejects missing manual pages and crafting widgets that point at non-crafting recipes.
+- `validateProjectMetadata` checks version parity, public support links, issue templates, and root/packaged attribution parity.
+- No Prism instance is modified by the normal build workflow.
 
 ## Config status
 
-The existing COMMON config flags are registered, but they are not currently used to disable registered blocks, items, menus, or other content. Do not treat them as functional content toggles until that behavior is implemented and validated.
+The COMMON config flags keep registry content stable and control which groups are shown in the mod's Creative tab. They do not remove registered blocks, items, menus, or saved-world content.
 
 ## Optional JEI support
 
@@ -34,6 +35,16 @@ The mod has isolated optional JEI integration for Minecraft 1.21.1 / NeoForge us
 - Registered catalysts: Metal Crafting Table for crafting, Small Lab Furnace for smelting, and Small Electrical Furnace for smelting.
 - Registered info pages cover the reconstructed engineer tools and the main workshop/fluid/factory machines.
 - JEI imports are isolated to `com.oblixorprime.engineersdecorreforged.compat.jei`.
+
+## Bug reports
+
+Report problems through [this fork's GitHub Issues form](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/new/choose). Include the exact mod, Minecraft, NeoForge, Java, and Immersive Engineering versions; reproduction steps; expected and actual behavior; the complete mod list; `latest.log` or `debug.log`; and any crash report.
+
+This is an unofficial reconstruction and fusion fork. Please do not send fork-specific defects to the original Engineer's Decor, RsGauges, Engineer's Tools, or Immersive Engineering authors.
+
+## Licensing and provenance
+
+This repository is distributed under the MIT License. See `LICENSE`, `NOTICE.md`, and `CREDITS.md` at the repository root; byte-equivalent copies are packaged under `META-INF` in release jars. Reconstruction provenance and the recovered base-artifact hash are recorded in `README_RECONSTRUCTION.md`.
 
 ## Notes
 
