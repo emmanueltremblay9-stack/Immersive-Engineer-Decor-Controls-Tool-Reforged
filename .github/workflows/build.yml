@@ -14,16 +14,16 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
         with:
           distribution: temurin
           java-version: 21
 
       - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
 
       - name: Prepare Gradle wrapper
         shell: bash
@@ -45,11 +45,31 @@ jobs:
         shell: bash
         run: ./gradlew build --stacktrace
 
-      - name: Upload jars
-        uses: actions/upload-artifact@v4
+      - name: Read release coordinates
+        shell: bash
+        run: |
+          mod_id="$(sed -n 's/^mod_id=//p' gradle.properties)"
+          mod_version="$(sed -n 's/^mod_version=//p' gradle.properties)"
+          test -n "$mod_id"
+          test -n "$mod_version"
+          echo "MOD_ID=$mod_id" >> "$GITHUB_ENV"
+          echo "MOD_VERSION=$mod_version" >> "$GITHUB_ENV"
+
+      - name: Upload runtime jar
+        id: upload-runtime-jar
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: mod-jars
-          path: |
-            build/libs/*.jar
-            gradle-project/build/libs/*.jar
+          name: ${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
+          path: build/libs/${{ env.MOD_ID }}-${{ env.MOD_VERSION }}.jar
           if-no-files-found: error
+          retention-days: 30
+
+      - name: Record artifact digest
+        shell: bash
+        env:
+          ARTIFACT_DIGEST: ${{ steps.upload-runtime-jar.outputs.artifact-digest }}
+        run: |
+          test -n "$ARTIFACT_DIGEST"
+          echo "Artifact SHA-256: $ARTIFACT_DIGEST"
+          echo "### Uploaded artifact" >> "$GITHUB_STEP_SUMMARY"
+          echo "SHA-256: \`$ARTIFACT_DIGEST\`" >> "$GITHUB_STEP_SUMMARY"
