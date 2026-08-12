@@ -1,7 +1,14 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTest;
@@ -35,6 +42,7 @@ public final class AccesswayBlockGameTests {
    private static final String TEMPLATE = "empty";
    private static final BlockPos LOWER_POS = new BlockPos(1, 1, 1);
    private static final BlockPos UPPER_POS = LOWER_POS.above();
+   private static final String ASSET_ROOT = "/assets/immersive_engineer_decor_controls_tool_reforged/";
 
    private AccesswayBlockGameTests() {
    }
@@ -224,14 +232,37 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void open_iron_hatch_collision_matches_visible_side_plate(GameTestHelper helper) {
+   public static void iron_hatch_outline_and_collision_match_all_horizontal_states(GameTestHelper helper) {
       Block hatch = (Block)ModBlocks.IRON_HATCH.get();
-      BlockState openNorth = (BlockState)((BlockState)hatch.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
-         .setValue(PortedBlocks.OPEN, true);
-      VoxelShape collision = openNorth.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
-      assertShapeBounds(helper, collision, 0.0, 0.0, 0.0, 16.0, 16.0, 2.0, "open north iron hatch collision should match its visible side plate");
-      assertShapeIntersects(helper, collision, 1.0, 4.0, 0.25, 15.0, 12.0, 1.75, "open iron hatch should collide with its visible side plate");
-      assertShapeDoesNotIntersect(helper, collision, 1.0, 4.0, 4.0, 15.0, 12.0, 12.0, "open iron hatch should not block the center passage");
+      AABB centeredPlayer = new AABB(0.2, 0.0, 0.2, 0.8, 1.8, 0.8);
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         for (boolean powered : new boolean[]{false, true}) {
+            BlockState base = (BlockState)((BlockState)hatch.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing))
+               .setValue(PortedBlocks.POWERED, powered);
+            BlockState closed = (BlockState)base.setValue(PortedBlocks.OPEN, false);
+            VoxelShape closedOutline = closed.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+            VoxelShape closedCollision = closed.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+            assertShapeBounds(helper, closedOutline, 0.0, 0.0, 0.0, 16.0, 3.0, 16.0, "closed iron hatch outline should match the lower model for " + facing);
+            assertShapeBounds(
+               helper, closedCollision, 0.0, 0.0, 0.0, 16.0, 3.0, 16.0, "closed iron hatch collision should match the lower model for " + facing
+            );
+            assertShapesEqual(helper, closedOutline, closedCollision, "closed iron hatch outline and collision should match for " + facing);
+            assertShapeIntersects(helper, closedCollision, centeredPlayer, "closed iron hatch should block a centered player for " + facing);
+            assertShapeWithinBlock(helper, closedCollision, "closed iron hatch collision should remain within block bounds for " + facing);
+            helper.assertTrue(shapeVolume(closedCollision) < 1.0, "closed iron hatch collision should not become a full cube for " + facing);
+
+            BlockState open = (BlockState)base.setValue(PortedBlocks.OPEN, true);
+            VoxelShape openOutline = open.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+            VoxelShape openCollision = open.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+            assertOpenHatchOutlineBounds(helper, openOutline, facing);
+            assertShapeWithinBlock(helper, openOutline, "open iron hatch outline should remain within block bounds for " + facing);
+            helper.assertTrue(!openOutline.isEmpty(), "open iron hatch outline should remain selectable for " + facing);
+            assertShapesEqual(helper, openOutline, openCollision, "open iron hatch solid leaf should remain collisionable for " + facing);
+            assertShapeDoesNotIntersect(helper, openCollision, centeredPlayer, "open iron hatch should allow a centered player path for " + facing);
+            assertOpenHatchSolidLeaf(helper, openCollision, facing);
+         }
+      }
+
       helper.succeed();
    }
 
@@ -338,6 +369,124 @@ public final class AccesswayBlockGameTests {
       assertShapeDoesNotIntersect(
          helper, openWestLeft, 7.0, 4.0, 7.0, 9.0, 12.0, 9.0, "rotated open sliding door should also clear the human-height center passage"
       );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void metal_sliding_door_open_collision_allows_player_path_all_facings_and_halves(GameTestHelper helper) {
+      DoorBlock door = (DoorBlock)ModBlocks.METAL_SLIDING_DOOR.get();
+      double referenceVolume = -1.0;
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         for (DoorHingeSide hinge : DoorHingeSide.values()) {
+            for (DoubleBlockHalf half : DoubleBlockHalf.values()) {
+               BlockState open = slidingDoorState(door, facing, hinge, half, true);
+               VoxelShape outline = open.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+               VoxelShape collision = open.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+               VoxelShape expectedOutline = expectedSlidingDoorModelShape(facing, hinge, half, true);
+               VoxelShape expectedCollision = expectedSlidingDoorCollisionShape(facing, hinge, half, true);
+               assertShapesEqual(helper, outline, expectedOutline, "open sliding door outline should match model components for " + facing + " " + hinge + " " + half);
+               assertShapesEqual(
+                  helper, collision, expectedCollision, "open sliding door collision should retain only solid non-track components for " + facing + " " + hinge + " " + half
+               );
+               AABB playerPath = centeredPlayerPathForHalf(half);
+               assertShapeDoesNotIntersect(
+                  helper, collision, playerPath, "open metal sliding door should allow a centered 0.6 x 1.8 player for " + facing + " " + hinge + " " + half
+               );
+               assertSlidingDoorStackCollision(helper, collision, slidingDoorStackSide(facing, hinge), facing + " " + hinge + " " + half);
+               assertShapeWithinBlock(helper, collision, "open sliding door collision should remain within block bounds for " + facing + " " + hinge + " " + half);
+               helper.assertTrue(shapeVolume(collision) < 1.0, "open sliding door collision should not become a full cube for " + facing + " " + hinge + " " + half);
+               double volume = shapeVolume(collision);
+               if (half == DoubleBlockHalf.LOWER && referenceVolume < 0.0) {
+                  referenceVolume = volume;
+               } else if (half == DoubleBlockHalf.LOWER) {
+                  helper.assertTrue(close(volume, referenceVolume), "open sliding door collision volume should be rotation-invariant; actual=" + volume);
+               }
+            }
+         }
+      }
+
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_sliding_door_open_world_collision_allows_real_player_sweep(GameTestHelper helper) {
+      DoorBlock door = (DoorBlock)ModBlocks.METAL_SLIDING_DOOR.get();
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      BlockPos lowerRelative = new BlockPos(3, 1, 3);
+      BlockPos lowerAbsolute = helper.absolutePos(lowerRelative);
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         for (DoorHingeSide hinge : DoorHingeSide.values()) {
+            BlockState openLower = slidingDoorState(door, facing, hinge, DoubleBlockHalf.LOWER, true);
+            BlockState openUpper = slidingDoorState(door, facing, hinge, DoubleBlockHalf.UPPER, true);
+            helper.setBlock(lowerRelative, openLower);
+            helper.setBlock(lowerRelative.above(), openUpper);
+            for (int sample = 0; sample <= 32; sample++) {
+               double progress = sample / 32.0;
+               double centerX = lowerAbsolute.getX() + (facing.getAxis() == Direction.Axis.Z ? 0.5 : -0.4 + 1.8 * progress);
+               double centerZ = lowerAbsolute.getZ() + (facing.getAxis() == Direction.Axis.Z ? -0.4 + 1.8 * progress : 0.5);
+               AABB candidate = new AABB(centerX - 0.3, lowerAbsolute.getY(), centerZ - 0.3, centerX + 0.3, lowerAbsolute.getY() + 1.8, centerZ + 0.3);
+               helper.assertTrue(
+                  helper.getLevel().noCollision(player, candidate),
+                  "open sliding door should allow the real 0.6 x 1.8 player AABB sweep for " + facing + " " + hinge + " sample=" + sample
+               );
+            }
+
+            helper.setBlock(lowerRelative, slidingDoorState(door, facing, hinge, DoubleBlockHalf.LOWER, false));
+            helper.setBlock(lowerRelative.above(), slidingDoorState(door, facing, hinge, DoubleBlockHalf.UPPER, false));
+            AABB closedMidpoint = new AABB(
+               lowerAbsolute.getX() + 0.2,
+               lowerAbsolute.getY(),
+               lowerAbsolute.getZ() + 0.2,
+               lowerAbsolute.getX() + 0.8,
+               lowerAbsolute.getY() + 1.8,
+               lowerAbsolute.getZ() + 0.8
+            );
+            helper.assertTrue(
+               !helper.getLevel().noCollision(player, closedMidpoint), "closed sliding door should block the real player AABB for " + facing + " " + hinge
+            );
+         }
+      }
+
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void metal_sliding_door_closed_collision_preserves_panel_all_facings_and_halves(GameTestHelper helper) {
+      DoorBlock door = (DoorBlock)ModBlocks.METAL_SLIDING_DOOR.get();
+      double referenceVolume = -1.0;
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         for (DoorHingeSide hinge : DoorHingeSide.values()) {
+            for (DoubleBlockHalf half : DoubleBlockHalf.values()) {
+               BlockState closed = slidingDoorState(door, facing, hinge, half, false);
+               VoxelShape outline = closed.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+               VoxelShape collision = closed.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+               VoxelShape expected = expectedSlidingDoorModelShape(facing, hinge, half, false);
+               assertShapesEqual(helper, outline, expected, "closed sliding door outline should match model components for " + facing + " " + hinge + " " + half);
+               assertShapesEqual(helper, collision, expected, "closed sliding door collision should match solid model components for " + facing + " " + hinge + " " + half);
+               assertShapeIntersects(
+                  helper,
+                  collision,
+                  centeredPlayerPathForHalf(half),
+                  "closed metal sliding door should preserve the solid center panel for " + facing + " " + hinge + " " + half
+               );
+               assertShapeWithinBlock(helper, collision, "closed sliding door collision should remain within block bounds for " + facing + " " + hinge + " " + half);
+               helper.assertTrue(shapeVolume(collision) < 1.0, "closed sliding door collision should not become a full cube for " + facing + " " + hinge + " " + half);
+               if (facing.getAxis() == Direction.Axis.Z) {
+                  assertShapeIntersects(helper, collision, 3.2, 2.0, 7.25, 12.8, 14.0, 8.75, "closed north/south sliding door should keep its panel");
+               } else {
+                  assertShapeIntersects(helper, collision, 7.25, 2.0, 3.2, 8.75, 14.0, 12.8, "closed east/west sliding door should keep its panel");
+               }
+
+               double volume = shapeVolume(collision);
+               if (half == DoubleBlockHalf.LOWER && referenceVolume < 0.0) {
+                  referenceVolume = volume;
+               } else if (half == DoubleBlockHalf.LOWER) {
+                  helper.assertTrue(close(volume, referenceVolume), "closed sliding door collision volume should be rotation-invariant; actual=" + volume);
+               }
+            }
+         }
+      }
+
       helper.succeed();
    }
 
@@ -507,6 +656,194 @@ public final class AccesswayBlockGameTests {
       helper.assertBlockProperty(lowerPos.above(), PortedBlocks.PAIR_SIDE, pairSide);
    }
 
+   private static BlockState slidingDoorState(
+      DoorBlock door, Direction facing, DoorHingeSide hinge, DoubleBlockHalf half, boolean open
+   ) {
+      return (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)door.defaultBlockState().setValue(DoorBlock.FACING, facing))
+                     .setValue(DoorBlock.HINGE, hinge))
+                  .setValue(DoorBlock.HALF, half))
+               .setValue(DoorBlock.POWERED, false))
+            .setValue(DoorBlock.OPEN, open);
+   }
+
+   private static AABB centeredPlayerPathForHalf(DoubleBlockHalf half) {
+      return new AABB(0.2, 0.0, 0.2, 0.8, half == DoubleBlockHalf.LOWER ? 1.0 : 0.8, 0.8);
+   }
+
+   private static Direction slidingDoorStackSide(Direction facing, DoorHingeSide hinge) {
+      return switch (facing) {
+         case NORTH -> hinge == DoorHingeSide.RIGHT ? Direction.EAST : Direction.WEST;
+         case SOUTH -> hinge == DoorHingeSide.LEFT ? Direction.EAST : Direction.WEST;
+         case EAST -> hinge == DoorHingeSide.RIGHT ? Direction.SOUTH : Direction.NORTH;
+         case WEST -> hinge == DoorHingeSide.LEFT ? Direction.SOUTH : Direction.NORTH;
+         default -> throw new IllegalArgumentException("Unsupported sliding door facing " + facing);
+      };
+   }
+
+   private static VoxelShape expectedSlidingDoorModelShape(
+      Direction facing, DoorHingeSide hinge, DoubleBlockHalf half, boolean open
+   ) {
+      return slidingDoorShapeFromResources(facing, hinge, half, open, false);
+   }
+
+   private static VoxelShape expectedSlidingDoorCollisionShape(
+      Direction facing, DoorHingeSide hinge, DoubleBlockHalf half, boolean open
+   ) {
+      return slidingDoorShapeFromResources(facing, hinge, half, open, true);
+   }
+
+   private static VoxelShape slidingDoorShapeFromResources(
+      Direction facing, DoorHingeSide hinge, DoubleBlockHalf half, boolean open, boolean collisionOnly
+   ) {
+      JsonObject blockstate = readJsonResource(ASSET_ROOT + "blockstates/metal_sliding_door.json");
+      JsonObject apply = null;
+      for (JsonElement partElement : blockstate.getAsJsonArray("multipart")) {
+         JsonObject part = partElement.getAsJsonObject();
+         JsonObject when = part.getAsJsonObject("when");
+         if (when.get("facing").getAsString().equals(facing.getName())
+            && when.get("hinge").getAsString().equals(hinge.getSerializedName())
+            && when.get("half").getAsString().equals(half.getSerializedName())
+            && when.get("open").getAsString().equals(Boolean.toString(open))) {
+            if (apply != null) {
+               throw new IllegalStateException("Multiple sliding-door model mappings matched " + facing + " " + hinge + " " + half + " open=" + open);
+            }
+
+            apply = part.getAsJsonObject("apply");
+         }
+      }
+
+      if (apply == null) {
+         throw new IllegalStateException("Missing sliding-door model mapping for " + facing + " " + hinge + " " + half + " open=" + open);
+      }
+
+      String modelId = apply.get("model").getAsString();
+      int separator = modelId.indexOf(':');
+      if (separator < 1 || separator == modelId.length() - 1) {
+         throw new IllegalStateException("Invalid sliding-door model id " + modelId);
+      }
+
+      JsonObject model = readJsonResource("/assets/" + modelId.substring(0, separator) + "/models/" + modelId.substring(separator + 1) + ".json");
+      VoxelShape shape = Shapes.empty();
+      for (JsonElement elementValue : model.getAsJsonArray("elements")) {
+         JsonObject element = elementValue.getAsJsonObject();
+         JsonArray from = element.getAsJsonArray("from");
+         JsonArray to = element.getAsJsonArray("to");
+         double minY = from.get(1).getAsDouble();
+         double maxY = to.get(1).getAsDouble();
+         if (collisionOnly && open && maxY - minY <= 1.0) {
+            continue;
+         }
+
+         shape = Shapes.or(
+            shape,
+            Block.box(
+               from.get(0).getAsDouble(),
+               minY,
+               from.get(2).getAsDouble(),
+               to.get(0).getAsDouble(),
+               maxY,
+               to.get(2).getAsDouble()
+            )
+         );
+      }
+
+      int rotation = apply.has("y") ? apply.get("y").getAsInt() : 0;
+      if (rotation % 90 != 0) {
+         throw new IllegalStateException("Sliding-door model rotation is not a multiple of 90: " + rotation);
+      }
+
+      return rotateShapeClockwise(shape, Math.floorMod(rotation / 90, 4));
+   }
+
+   private static JsonObject readJsonResource(String resourcePath) {
+      InputStream stream = AccesswayBlockGameTests.class.getResourceAsStream(resourcePath);
+      if (stream == null) {
+         throw new IllegalStateException("Missing GameTest resource " + resourcePath);
+      }
+
+      try (InputStream input = stream; InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+         return JsonParser.parseReader(reader).getAsJsonObject();
+      } catch (Exception exception) {
+         throw new IllegalStateException("Could not read GameTest resource " + resourcePath, exception);
+      }
+   }
+
+   private static VoxelShape rotateShapeClockwise(VoxelShape shape, int steps) {
+      VoxelShape rotated = shape;
+      for (int step = 0; step < steps; step++) {
+         VoxelShape next = Shapes.empty();
+         for (AABB box : rotated.toAabbs()) {
+            next = Shapes.or(next, Shapes.create(1.0 - box.maxZ, box.minY, box.minX, 1.0 - box.minZ, box.maxY, box.maxX));
+         }
+
+         rotated = next;
+      }
+
+      return rotated;
+   }
+
+   private static void assertSlidingDoorStackCollision(GameTestHelper helper, VoxelShape collision, Direction side, String stateDescription) {
+      switch (side) {
+         case NORTH -> assertShapeIntersects(
+            helper, collision, 7.0, 4.0, 0.25, 9.0, 12.0, 1.0, "open sliding door should preserve its north solid stack for " + stateDescription
+         );
+         case SOUTH -> assertShapeIntersects(
+            helper, collision, 7.0, 4.0, 15.0, 9.0, 12.0, 15.75, "open sliding door should preserve its south solid stack for " + stateDescription
+         );
+         case WEST -> assertShapeIntersects(
+            helper, collision, 0.25, 4.0, 7.0, 1.0, 12.0, 9.0, "open sliding door should preserve its west solid stack for " + stateDescription
+         );
+         case EAST -> assertShapeIntersects(
+            helper, collision, 15.0, 4.0, 7.0, 15.75, 12.0, 9.0, "open sliding door should preserve its east solid stack for " + stateDescription
+         );
+         default -> throw new IllegalArgumentException("Unsupported sliding door stack side " + side);
+      }
+   }
+
+   private static void assertOpenHatchOutlineBounds(GameTestHelper helper, VoxelShape outline, Direction facing) {
+      switch (facing) {
+         case NORTH -> assertShapeBounds(helper, outline, 0.0, 0.0, 0.0, 16.0, 16.0, 2.875, "open north hatch outline should match its model");
+         case SOUTH -> assertShapeBounds(helper, outline, 0.0, 0.0, 13.125, 16.0, 16.0, 16.0, "open south hatch outline should match its model");
+         case WEST -> assertShapeBounds(helper, outline, 0.0, 0.0, 0.0, 2.875, 16.0, 16.0, "open west hatch outline should match its model");
+         case EAST -> assertShapeBounds(helper, outline, 13.125, 0.0, 0.0, 16.0, 16.0, 16.0, "open east hatch outline should match its model");
+         default -> throw new IllegalArgumentException("Unsupported hatch facing " + facing);
+      }
+   }
+
+   private static void assertOpenHatchSolidLeaf(GameTestHelper helper, VoxelShape collision, Direction facing) {
+      switch (facing) {
+         case NORTH -> assertShapeIntersects(helper, collision, 4.0, 4.0, 2.25, 12.0, 12.0, 2.75, "open north hatch should retain solid leaf collision");
+         case SOUTH -> assertShapeIntersects(helper, collision, 4.0, 4.0, 13.25, 12.0, 12.0, 13.75, "open south hatch should retain solid leaf collision");
+         case WEST -> assertShapeIntersects(helper, collision, 2.25, 4.0, 4.0, 2.75, 12.0, 12.0, "open west hatch should retain solid leaf collision");
+         case EAST -> assertShapeIntersects(helper, collision, 13.25, 4.0, 4.0, 13.75, 12.0, 12.0, "open east hatch should retain solid leaf collision");
+         default -> throw new IllegalArgumentException("Unsupported hatch facing " + facing);
+      }
+   }
+
+   private static void assertShapeWithinBlock(GameTestHelper helper, VoxelShape shape, String message) {
+      for (AABB box : shape.toAabbs()) {
+         helper.assertTrue(
+            box.minX >= 0.0 && box.minY >= 0.0 && box.minZ >= 0.0 && box.maxX <= 1.0 && box.maxY <= 1.0 && box.maxZ <= 1.0,
+            message + "; offending AABB=" + box
+         );
+      }
+   }
+
+   private static void assertShapesEqual(GameTestHelper helper, VoxelShape left, VoxelShape right, String message) {
+      helper.assertTrue(
+         !Shapes.joinIsNotEmpty(left, right, BooleanOp.ONLY_FIRST) && !Shapes.joinIsNotEmpty(left, right, BooleanOp.ONLY_SECOND), message
+      );
+   }
+
+   private static double shapeVolume(VoxelShape shape) {
+      double volume = 0.0;
+      for (AABB box : shape.toAabbs()) {
+         volume += (box.maxX - box.minX) * (box.maxY - box.minY) * (box.maxZ - box.minZ);
+      }
+
+      return volume;
+   }
+
    private static void assertShapeBounds(
       GameTestHelper helper, VoxelShape shape, double minX, double minY, double minZ, double maxX, double maxY, double maxZ, String message
    ) {
@@ -528,10 +865,18 @@ public final class AccesswayBlockGameTests {
       helper.assertTrue(shapeIntersects(shape, minX, minY, minZ, maxX, maxY, maxZ), message);
    }
 
+   private static void assertShapeIntersects(GameTestHelper helper, VoxelShape shape, AABB probe, String message) {
+      helper.assertTrue(Shapes.joinIsNotEmpty(shape, Shapes.create(probe), BooleanOp.AND), message);
+   }
+
    private static void assertShapeDoesNotIntersect(
       GameTestHelper helper, VoxelShape shape, double minX, double minY, double minZ, double maxX, double maxY, double maxZ, String message
    ) {
       helper.assertTrue(!shapeIntersects(shape, minX, minY, minZ, maxX, maxY, maxZ), message);
+   }
+
+   private static void assertShapeDoesNotIntersect(GameTestHelper helper, VoxelShape shape, AABB probe, String message) {
+      helper.assertTrue(!Shapes.joinIsNotEmpty(shape, Shapes.create(probe), BooleanOp.AND), message);
    }
 
    private static boolean shapeIntersects(VoxelShape shape, double minX, double minY, double minZ, double maxX, double maxY, double maxZ) {
