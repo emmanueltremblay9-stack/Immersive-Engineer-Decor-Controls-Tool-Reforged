@@ -56,11 +56,15 @@
     "MachineGuiGameTests.java": "E1B00D73B7D7BD35897A86451308344A48FD46AE4FB7F9CDB5491F20E3E12AC1"
   },
   "publication": {
-    "github_release": "PENDING_READBACK",
+    "github_release": "PASS",
+    "github_release_url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/tag/v1.1.54-reconstructed",
+    "github_release_jar_redownload_sha256": "80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29",
+    "github_supersession_1_1_53": "PASS",
     "curseforge_project_id": 1555214,
     "curseforge_file_id": null,
     "curseforge": "BLOCKED_BY_MISSING_CONFIGURATION",
-    "notion": "PENDING_READBACK"
+    "notion": "PASS",
+    "notion_page_url": "https://app.notion.com/p/38155c71723380939727f07575d5a98e?pvs=204"
   },
   "computer_use_invoked": false
 }
