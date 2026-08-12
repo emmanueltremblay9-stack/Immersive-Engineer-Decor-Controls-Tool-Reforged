@@ -18,8 +18,9 @@ All notable reconstruction, repair, and validation changes for this project are 
 ### Validation
 
 - Reproduced the `1.1.53-reconstructed` regression with 4 dedicated required GameTest failures while the other 178 tests remained green.
-- Confirmed the first corrected run passes all 182 required GameTests; full repeated validation, reproducibility, Prism traversal, dedicated server, CI, and public readbacks are recorded in the 1.1.54 evidence pack as each gate completes.
-- Audio was not recaptured. User status remains `AUDIO_USER_OBSERVED: GOOD`; objective audio capture remains `NOT_OBJECTIVELY_OBSERVABLE`.
+- Confirmed two fresh corrected runs pass all 182 required GameTests, the `main` CI artifact matches the local build byte-for-byte, the exact JAR starts and stops on a packaged NeoForge server, and the Prism install matches while 50 unrelated JARs remain unchanged.
+- Prism client world entry was blocked by an unresolved transient loopback failure; deterministic Java loopback probes and the packaged-server RCON loopback later passed, so the incident is not assigned to a proven Windows, JDK, or mod root cause.
+- Audio was not recaptured. User status remains `AUDIO_USER_OBSERVED: GOOD`; objective audio capture is `NOT_PERFORMED` for this no-capture closure.
 
 ### Changed
 

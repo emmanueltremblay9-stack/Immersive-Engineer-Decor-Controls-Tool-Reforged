@@ -15,9 +15,9 @@ This workspace was rebuilt from the published `engineers_decor_reforged-1.1.jar`
 Latest local validation for `1.1.54-reconstructed`:
 
 - `validateManualResources`, `validateProjectMetadata`, `compileJava`, and the `processResources` datagen-equivalent gate passed.
-- The first post-fix `runGameTestServer` passed all 182 required GameTests, including exact hatch/sliding-door geometry and a real-player collision sweep; repeated local and CI gates are recorded in the release evidence.
+- Two fresh post-fix `runGameTestServer` runs passed all 182 required GameTests, including exact hatch/sliding-door geometry and a real-player collision sweep; the final `main` CI gate also passed.
 - `clean build` passed; JVM unit tests are `NO-SOURCE` because regression coverage is implemented as NeoForge GameTests.
-- Runtime JAR size/SHA-256, reproducibility, Prism traversal, dedicated-server smoke, and public download integrity are recorded in `release-evidence/1.1.54-reconstructed` after each gate completes.
+- Runtime JAR size/SHA-256, reproducibility, exact Prism installation, packaged dedicated-server smoke, CI provenance, and external publication readbacks are recorded in `release-evidence/1.1.54-reconstructed`. Prism client world entry is explicitly separated because its loopback incident remains unresolved.
 - `validateManualResources` rejects missing manual pages and crafting widgets that point at non-crafting recipes.
 - `validateProjectMetadata` checks version parity, public support links, issue templates, and root/packaged attribution parity.
 - The normal build workflow does not modify Prism; release qualification uses an explicit hash-verified LAB installation procedure.

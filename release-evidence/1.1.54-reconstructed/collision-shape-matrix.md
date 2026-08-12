@@ -9,9 +9,9 @@
 
 | Registry ID | Intended full cube | Actual full cube | State-dependent | Rotated | Runtime checked | Test added | Result |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `iron_hatch` | no | no | yes | yes | pending live 1.1.54 | yes | first 182-test run PASS |
-| `metal_sliding_door` | no | no | yes | yes | pending live 1.1.54 | yes | first 182-test run PASS |
+| `iron_hatch` | no | no | yes | yes | automated all-state GameTest | yes | two fresh 182-test runs PASS |
+| `metal_sliding_door` | no | no | yes | yes | automated real-player AABB sweep | yes | two fresh 182-test runs PASS |
 | `steel_mesh_fence_gate` | no | no | yes | yes | no new live check | existing all-state collision tests | PASS in 182-test run |
 | `old_industrial_wood_door` | no | no | vanilla `DoorBlock` | vanilla | targeted prior runtime | existing open/redstone tests | PASS in 182-test run |
 
-`HatchBlock` and `SlidingDoorBlock` each have exactly one public registry user. `SimpleDoorLikeBlock` has no registration. Legitimate full-cube blocks were not altered.
+`HatchBlock` and `SlidingDoorBlock` each have exactly one public registry user. `SimpleDoorLikeBlock` has no registration. Legitimate full-cube blocks were not altered. Client walking was not used as a gate because this closure prohibited visual interaction; the collision substitute is the real-world `Level.noCollision` player sweep plus solid-component probes.

@@ -14,4 +14,12 @@ This release fixes collision traversal for `iron_hatch` and `metal_sliding_door`
 
 GitHub Issues: https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues
 
-Final JAR SHA-256 candidate: `80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29` (publication still requires committed two-build and GitHub redownload equality).
+Canonical JAR SHA-256: `80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29`.
+
+License: MIT
+
+Source: https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged
+
+Issues: https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues
+
+Automated publication status: `BLOCKED_BY_MISSING_CONFIGURATION`. This bundle is prepared without requesting a manual click or credential in chat.
