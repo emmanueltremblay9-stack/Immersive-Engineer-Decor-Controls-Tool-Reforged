@@ -1,6 +1,6 @@
 # 1.1.53 supersession readback
 
-The immutable `v1.1.53-reconstructed` tag and its assets remain present and unchanged.
+The `v1.1.53-reconstructed` tag and its assets remain present and were retained unchanged.
 
 The published 1.1.53 GitHub Release body now begins with:
 
