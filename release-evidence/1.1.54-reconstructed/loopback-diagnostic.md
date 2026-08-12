@@ -20,7 +20,7 @@ Probe results SHA-256: `5557DFA678F775B13A0424CA282E3D5D69731427ECAC38DFEF1FBA0C
 
 The later packaged NeoForge server also bound loopback, reached `Done`, accepted an authenticated loopback RCON command, and stopped cleanly. These controls show no persistent Java/Windows loopback failure, but they cannot identify the cause of the earlier incidents.
 
-`LOOPBACK_ROOT_CAUSE: UNRESOLVED_TRANSIENT`
+`LOOPBACK_ROOT_CAUSE: UNRESOLVED`
 
 `CLIENT_LOOPBACK_CAUSATION: UNRESOLVED`
 

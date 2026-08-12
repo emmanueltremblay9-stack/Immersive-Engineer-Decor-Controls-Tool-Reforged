@@ -11,7 +11,7 @@ Qualification status on 2026-08-12: the collision correction is verified by auto
 - CI: `main` run `31598329191`, artifact `9142044566`, conclusion `success`, same JAR hash as the fresh local build.
 - Packaged server: NeoForge 21.1.230 with Immersive Engineering 12.4.2-194 reached `Done`, then stopped and saved through authenticated loopback RCON; no relevant failure or orphan process remained.
 - Prism LAB: the committed post-install manifest records exactly one canonical target JAR; the other 50 JARs match the pre-install manifest by name, size, and SHA-256.
-- Client world entry: `BLOCKED_BY_EXTERNAL_ENVIRONMENT`; `CLIENT_LOOPBACK_CAUSATION: UNRESOLVED`. The crash logs have no target-mod stack frame, while later minimal Java probes pass on the same Prism Java and JVM arguments, but no client A/B control proves or excludes target-mod causation.
+- Client world entry: `BLOCKED_BY_UNRESOLVED_CLIENT_LOOPBACK_FAILURE`; `CLIENT_LOOPBACK_CAUSATION: UNRESOLVED`. The crash logs have no target-mod stack frame, while later minimal Java probes pass on the same Prism Java and JVM arguments, but no client A/B control proves or excludes target-mod causation.
 - Audio: user reported it sounded good before this closure. No new objective audio capture was performed because this mission prohibited audio/video capture.
 - Ruflo: `NOT_APPLICABLE`; not activated.
 - Modrinth: `NOT_PERFORMED`; this mission did not authorize a new Modrinth publication path.

@@ -44,9 +44,9 @@
     "prism_install": "PASS",
     "prism_other_jars_unchanged": 50,
     "prism_post_install_manifest": "release-evidence/1.1.54-reconstructed/prism-post-install-manifest.json",
-    "prism_client_world_entry": "BLOCKED_BY_EXTERNAL_ENVIRONMENT",
+    "prism_client_world_entry": "BLOCKED_BY_UNRESOLVED_CLIENT_LOOPBACK_FAILURE",
     "client_loopback_causation": "UNRESOLVED",
-    "loopback_root_cause": "UNRESOLVED_TRANSIENT",
+    "loopback_root_cause": "UNRESOLVED",
     "loopback_probe_sha256": "5557DFA678F775B13A0424CA282E3D5D69731427ECAC38DFEF1FBA0CD39630D6"
   },
   "source_hashes": {
