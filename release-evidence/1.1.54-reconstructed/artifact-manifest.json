@@ -4,6 +4,7 @@
   "version": "1.1.54-reconstructed",
   "mod_id": "immersive_engineer_decor_controls_tool_reforged",
   "artifact_commit": "0d766573aeb563be3467dfb2df213e95b56f843a",
+  "qualification_documentation_commit": "07f1ab489f8a94675815e4a9fd15211778212c1e",
   "target_tag": "v1.1.54-reconstructed",
   "qualification_date_utc": "2026-08-12",
   "java": "Eclipse Adoptium 21.0.11+10-LTS",
