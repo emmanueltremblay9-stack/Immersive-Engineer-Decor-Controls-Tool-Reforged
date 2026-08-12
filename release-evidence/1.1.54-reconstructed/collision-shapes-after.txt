@@ -1,0 +1,32 @@
+Coordinates are model pixels in [0,16]; these canonical bases are rotated by the blockstate model rotation.
+
+iron_hatch closed outline/collision
+0 0 0 16 3 16
+
+iron_hatch open outline/collision base north
+0 0 0 16 16 2.875
+
+metal_sliding_door lower closed outline/collision
+0 0 7 16 16 9
+15 0 6 16 16 7
+15 0 9 16 16 10
+0 0 6 15 0.25 7
+0 0 9 15 0.25 10
+
+metal_sliding_door upper closed outline/collision
+0 0 7 16 16 9
+15 0 6 16 16 7
+15 0 9 16 16 10
+0 15.5 6 15 16 7
+0 15.5 9 15 16 10
+
+metal_sliding_door lower open collision (outline additionally retains lower tracks)
+14.75 0.25 7 15 16 9
+15 0 6 16 16 10
+
+metal_sliding_door upper open collision (outline additionally retains upper tracks)
+14.75 0 7 16 16 9
+15 0 6 16 16 7
+15 0 9 16 16 10
+
+Corrected exact visual parity: 32/32 sliding-door FACING x HINGE x HALF x OPEN states by GameTest symmetric-difference checks.

@@ -1,0 +1,20 @@
+Coordinates are model pixels in [0,16].
+
+iron_hatch closed outline/collision
+0 14 0 16 16 16
+
+iron_hatch open outline/collision base north
+0 0 0 16 16 2
+
+metal_sliding_door prior closed base (used for both HALF values)
+0 0 7 16 16 9
+15 0 6 16 16 7
+15 0 9 16 16 10
+0 0 6 15 0.25 7
+0 0 9 15 0.25 10
+
+metal_sliding_door prior open base (used for both HALF values)
+14.75 0 6 16 16 10
+0 0 6 15 0.25 10
+
+Prior exact visual parity: 4/32 sliding-door FACING x HINGE x HALF x OPEN states.

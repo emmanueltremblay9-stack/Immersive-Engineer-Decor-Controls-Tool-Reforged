@@ -2,6 +2,30 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.54-reconstructed] - 2026-08-12
+
+### Fixed
+
+- Corrected `immersive_engineer_decor_controls_tool_reforged:iron_hatch` so its closed outline/collision occupies the model's lower `Y=0..3` plate instead of an inverted `Y=14..16` plate, and its open leaf reaches the model's `2.875`-pixel depth in every horizontal facing.
+- Corrected `immersive_engineer_decor_controls_tool_reforged:metal_sliding_door` to select model-exact lower/upper geometry for every `FACING`, `HINGE`, `HALF`, and `OPEN` combination.
+- Removed decorative lower/upper track components from open sliding-door movement collision while retaining selectable outline geometry and solid side-stack collision.
+
+### Added
+
+- Added GameTests for all hatch facings, open/closed and powered states, exact sliding-door component parity across all 32 state combinations, collision bounds/full-cube guards, rotation-volume invariance, solid-component probes, and a 33-position world-space sweep of a real `0.6 x 1.8` player AABB.
+- Added compact collision root-cause, before/after geometry, RED/green test, build, runtime, server, CI, publication, and supersession evidence under `release-evidence/1.1.54-reconstructed`.
+
+### Validation
+
+- Reproduced the `1.1.53-reconstructed` regression with 4 dedicated required GameTest failures while the other 178 tests remained green.
+- Confirmed the first corrected run passes all 182 required GameTests; full repeated validation, reproducibility, Prism traversal, dedicated server, CI, and public readbacks are recorded in the 1.1.54 evidence pack as each gate completes.
+- Audio was not recaptured. User status remains `AUDIO_USER_OBSERVED: GOOD`; objective audio capture remains `NOT_OBJECTIVELY_OBSERVABLE`.
+
+### Changed
+
+- Synchronized release metadata to `1.1.54-reconstructed`.
+- `1.1.53-reconstructed` is a preserved historical release and is not eligible for CurseForge propagation; its GitHub release is marked superseded only after 1.1.54 is publicly available.
+
 ## [1.1.53-reconstructed] - 2026-08-11
 
 ### Validation

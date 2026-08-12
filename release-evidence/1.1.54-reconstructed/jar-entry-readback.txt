@@ -1,0 +1,21 @@
+JAR immersive_engineer_decor_controls_tool_reforged-1.1.54-reconstructed.jar
+SIZE 2678440
+SHA256 80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29
+ENTRY_COUNT 2980
+MOD_ID immersive_engineer_decor_controls_tool_reforged
+VERSION 1.1.54-reconstructed
+LICENSE MIT
+DEPENDENCY immersiveengineering required [12.4.2-194,)
+DEPENDENCY jei optional [19.32.0.359,)
+ENTRY META-INF/neoforge.mods.toml PRESENT
+ENTRY META-INF/LICENSE PRESENT
+ENTRY META-INF/NOTICE.md PRESENT
+ENTRY META-INF/CREDITS.md PRESENT
+ENTRY PortedBlocks$HatchBlock.class PRESENT
+ENTRY PortedBlocks$SlidingDoorBlock.class PRESENT
+ENTRY AccesswayBlockGameTests.class PRESENT
+ENTRY metal_sliding_door blockstate/model resources PRESENT
+ENTRY iron_hatch model resources PRESENT
+ROOT_PACKAGED_LICENSE_HASH_MATCH true
+ROOT_PACKAGED_NOTICE_HASH_MATCH true
+ROOT_PACKAGED_CREDITS_HASH_MATCH true
