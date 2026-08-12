@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "project": "Immersive Engineer Decor&Controls&Tool Reforged",
+  "version": "1.1.54-reconstructed",
+  "mod_id": "immersive_engineer_decor_controls_tool_reforged",
+  "source_commit": "a38a7ae73ba0fd8c7f788d5760bf4597c3e4f32d",
+  "target_tag": "v1.1.54-reconstructed",
+  "qualification_branch": "codex/1.1.54-collision-fix",
+  "qualification_date_utc": "2026-08-12",
+  "java": "Eclipse Adoptium 21.0.11+10-LTS",
+  "gradle": "9.2.1",
+  "minecraft": "1.21.1",
+  "neoforge_build": "21.1.230",
+  "neoforge_client": "21.1.233",
+  "immersive_engineering": "12.4.2-194",
+  "optional_jei_client": "19.39.0.368",
+  "registry_ids": [
+    "immersive_engineer_decor_controls_tool_reforged:iron_hatch",
+    "immersive_engineer_decor_controls_tool_reforged:metal_sliding_door"
+  ],
+  "root_cause": "State/model mismatch plus decorative sliding-door tracks inherited as movement collision",
+  "gametests": {
+    "baseline_required": 179,
+    "current_required": 182,
+    "red_failed": 4,
+    "first_post_fix_failed": 0
+  },
+  "jar": {
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.54-reconstructed.jar",
+    "size_bytes": 2678440,
+    "sha256": "80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29",
+    "entry_count": 2980,
+    "reproducible": true,
+    "origin": "qualification build and two independent no-remote clean builds from source commit a38a7ae73ba0fd8c7f788d5760bf4597c3e4f32d"
+  },
+  "workflow": {
+    "run_id": 31597224783,
+    "job_id": 94115578732,
+    "artifact_id": 9141595838,
+    "conclusion": "SUCCESS"
+  },
+  "runtime": {
+    "prism_install": "PENDING",
+    "live_traversal": "PENDING",
+    "dedicated_server_smoke": "PENDING"
+  },
+  "publication": {
+    "github_release": "PENDING",
+    "curseforge_project_id": 1555214,
+    "curseforge_file_id": null,
+    "curseforge": "PENDING_AUTHENTICATED_SESSION_CHECK",
+    "modrinth": "BLOCKED_BY_MISSING_CONFIGURATION"
+  },
+  "audio": {
+    "user_observed": "GOOD",
+    "objective_capture": "NOT_OBJECTIVELY_OBSERVABLE"
+  }
+}

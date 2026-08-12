@@ -622,6 +622,8 @@ public final class PortedBlocks {
 
    public static class HatchBlock extends HorizontalDirectionalBlock {
       public static final MapCodec<PortedBlocks.HatchBlock> CODEC = simpleCodec(properties -> new PortedBlocks.HatchBlock(BlockSetType.IRON, properties));
+      private static final VoxelShape CLOSED_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
+      private static final double OPEN_SHAPE_THICKNESS = 2.875;
       private final BlockSetType type;
 
       public HatchBlock(BlockSetType type, Properties properties) {
@@ -693,8 +695,8 @@ public final class PortedBlocks {
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return state.getValue(PortedBlocks.OPEN)
-            ? PortedBlocks.horizontalPlateShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING), 2.0)
-            : Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 16.0);
+            ? PortedBlocks.horizontalPlateShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING), OPEN_SHAPE_THICKNESS)
+            : CLOSED_SHAPE;
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1030,20 +1032,49 @@ public final class PortedBlocks {
    public static class SlidingDoorBlock extends DoorBlock {
       public static final MapCodec<PortedBlocks.SlidingDoorBlock> CODEC = simpleCodec(properties -> new PortedBlocks.SlidingDoorBlock(BlockSetType.IRON, properties));
       private static final int UPDATE_FLAGS = 10;
-      private static final VoxelShape CLOSED_NORTH_SOUTH_SHAPE = Shapes.or(
+      private static final VoxelShape LOWER_CLOSED_MODEL_SHAPE = Shapes.or(
          Block.box(0.0, 0.0, 7.0, 16.0, 16.0, 9.0),
          Block.box(15.0, 0.0, 6.0, 16.0, 16.0, 7.0),
          Block.box(15.0, 0.0, 9.0, 16.0, 16.0, 10.0),
          Block.box(0.0, 0.0, 6.0, 15.0, 0.25, 7.0),
          Block.box(0.0, 0.0, 9.0, 15.0, 0.25, 10.0)
       );
-      private static final VoxelShape CLOSED_EAST_WEST_SHAPE = rotateClockwise(CLOSED_NORTH_SOUTH_SHAPE);
-      private static final VoxelShape OPEN_EAST_STACK_SHAPE = Shapes.or(
-         Block.box(14.75, 0.0, 6.0, 16.0, 16.0, 10.0), Block.box(0.0, 0.0, 6.0, 15.0, 0.25, 10.0)
+      private static final VoxelShape UPPER_CLOSED_MODEL_SHAPE = Shapes.or(
+         Block.box(0.0, 0.0, 7.0, 16.0, 16.0, 9.0),
+         Block.box(15.0, 0.0, 6.0, 16.0, 16.0, 7.0),
+         Block.box(15.0, 0.0, 9.0, 16.0, 16.0, 10.0),
+         Block.box(0.0, 15.5, 6.0, 15.0, 16.0, 7.0),
+         Block.box(0.0, 15.5, 9.0, 15.0, 16.0, 10.0)
       );
-      private static final VoxelShape OPEN_SOUTH_STACK_SHAPE = rotateClockwise(OPEN_EAST_STACK_SHAPE);
-      private static final VoxelShape OPEN_WEST_STACK_SHAPE = rotateClockwise(OPEN_SOUTH_STACK_SHAPE);
-      private static final VoxelShape OPEN_NORTH_STACK_SHAPE = rotateClockwise(OPEN_WEST_STACK_SHAPE);
+      private static final VoxelShape LOWER_OPEN_MODEL_SHAPE = Shapes.or(
+         Block.box(14.75, 0.25, 7.0, 15.0, 16.0, 9.0),
+         Block.box(15.0, 0.0, 6.0, 16.0, 16.0, 10.0),
+         Block.box(0.0, 0.0, 6.0, 15.0, 0.25, 7.0),
+         Block.box(0.0, 0.0, 9.0, 15.0, 0.25, 10.0),
+         Block.box(0.0, 0.0, 7.0, 15.0, 0.0625, 9.0)
+      );
+      private static final VoxelShape UPPER_OPEN_MODEL_SHAPE = Shapes.or(
+         Block.box(14.75, 0.0, 7.0, 16.0, 16.0, 9.0),
+         Block.box(15.0, 0.0, 6.0, 16.0, 16.0, 7.0),
+         Block.box(15.0, 0.0, 9.0, 16.0, 16.0, 10.0),
+         Block.box(0.0, 15.5, 6.0, 15.0, 16.0, 7.0),
+         Block.box(0.0, 15.75, 7.0, 15.0, 16.0, 9.0),
+         Block.box(0.0, 15.5, 9.0, 15.0, 16.0, 10.0)
+      );
+      private static final VoxelShape LOWER_OPEN_COLLISION_SHAPE = Shapes.or(
+         Block.box(14.75, 0.25, 7.0, 15.0, 16.0, 9.0), Block.box(15.0, 0.0, 6.0, 16.0, 16.0, 10.0)
+      );
+      private static final VoxelShape UPPER_OPEN_COLLISION_SHAPE = Shapes.or(
+         Block.box(14.75, 0.0, 7.0, 16.0, 16.0, 9.0),
+         Block.box(15.0, 0.0, 6.0, 16.0, 16.0, 7.0),
+         Block.box(15.0, 0.0, 9.0, 16.0, 16.0, 10.0)
+      );
+      private static final VoxelShape[] LOWER_CLOSED_MODEL_SHAPES = rotatedShapes(LOWER_CLOSED_MODEL_SHAPE);
+      private static final VoxelShape[] UPPER_CLOSED_MODEL_SHAPES = rotatedShapes(UPPER_CLOSED_MODEL_SHAPE);
+      private static final VoxelShape[] LOWER_OPEN_MODEL_SHAPES = rotatedShapes(LOWER_OPEN_MODEL_SHAPE);
+      private static final VoxelShape[] UPPER_OPEN_MODEL_SHAPES = rotatedShapes(UPPER_OPEN_MODEL_SHAPE);
+      private static final VoxelShape[] LOWER_OPEN_COLLISION_SHAPES = rotatedShapes(LOWER_OPEN_COLLISION_SHAPE);
+      private static final VoxelShape[] UPPER_OPEN_COLLISION_SHAPES = rotatedShapes(UPPER_OPEN_COLLISION_SHAPE);
 
       public SlidingDoorBlock(BlockSetType type, Properties properties) {
          super(type, properties);
@@ -1164,7 +1195,12 @@ public final class PortedBlocks {
 
       @Override
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return state.getValue(OPEN) ? openShape(state) : closedShape(state);
+         return state.getValue(OPEN) ? openModelShape(state) : closedModelShape(state);
+      }
+
+      @Override
+      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return state.getValue(OPEN) ? openCollisionShape(state) : closedModelShape(state);
       }
 
       private void finishPairingAfterPlacement(Level level, BlockPos lowerPos, BlockState lowerState) {
@@ -1366,30 +1402,37 @@ public final class PortedBlocks {
          );
       }
 
-      private static VoxelShape closedShape(BlockState state) {
-         return state.getValue(FACING).getAxis() == Axis.X ? CLOSED_EAST_WEST_SHAPE : CLOSED_NORTH_SOUTH_SHAPE;
+      private static VoxelShape closedModelShape(BlockState state) {
+         VoxelShape[] shapes = state.getValue(HALF) == DoubleBlockHalf.LOWER ? LOWER_CLOSED_MODEL_SHAPES : UPPER_CLOSED_MODEL_SHAPES;
+         return shapes[modelRotationSteps(state)];
       }
 
-      private static VoxelShape openShape(BlockState state) {
-         return switch (openStackSide(state)) {
-            case NORTH -> OPEN_NORTH_STACK_SHAPE;
-            case SOUTH -> OPEN_SOUTH_STACK_SHAPE;
-            case WEST -> OPEN_WEST_STACK_SHAPE;
-            case EAST -> OPEN_EAST_STACK_SHAPE;
-            default -> OPEN_EAST_STACK_SHAPE;
-         };
+      private static VoxelShape openModelShape(BlockState state) {
+         VoxelShape[] shapes = state.getValue(HALF) == DoubleBlockHalf.LOWER ? LOWER_OPEN_MODEL_SHAPES : UPPER_OPEN_MODEL_SHAPES;
+         return shapes[modelRotationSteps(state)];
       }
 
-      private static Direction openStackSide(BlockState state) {
+      private static VoxelShape openCollisionShape(BlockState state) {
+         VoxelShape[] shapes = state.getValue(HALF) == DoubleBlockHalf.LOWER ? LOWER_OPEN_COLLISION_SHAPES : UPPER_OPEN_COLLISION_SHAPES;
+         return shapes[modelRotationSteps(state)];
+      }
+
+      private static int modelRotationSteps(BlockState state) {
          Direction facing = state.getValue(FACING);
          DoorHingeSide hinge = state.getValue(HINGE);
          return switch (facing) {
-            case NORTH -> hinge == DoorHingeSide.RIGHT ? Direction.EAST : Direction.WEST;
-            case SOUTH -> hinge == DoorHingeSide.LEFT ? Direction.EAST : Direction.WEST;
-            case EAST -> hinge == DoorHingeSide.RIGHT ? Direction.SOUTH : Direction.NORTH;
-            case WEST -> hinge == DoorHingeSide.LEFT ? Direction.SOUTH : Direction.NORTH;
-            default -> Direction.EAST;
+            case SOUTH -> hinge == DoorHingeSide.LEFT ? 0 : 2;
+            case WEST -> hinge == DoorHingeSide.LEFT ? 1 : 3;
+            case NORTH -> hinge == DoorHingeSide.LEFT ? 2 : 0;
+            case EAST -> hinge == DoorHingeSide.LEFT ? 3 : 1;
+            default -> 0;
          };
+      }
+
+      private static VoxelShape[] rotatedShapes(VoxelShape shape) {
+         VoxelShape clockwise = rotateClockwise(shape);
+         VoxelShape opposite = rotateClockwise(clockwise);
+         return new VoxelShape[]{shape, clockwise, opposite, rotateClockwise(opposite)};
       }
 
       private static VoxelShape rotateClockwise(VoxelShape shape) {

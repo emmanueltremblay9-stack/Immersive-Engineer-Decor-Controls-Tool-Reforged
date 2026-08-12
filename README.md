@@ -12,14 +12,12 @@ This workspace was rebuilt from the published `engineers_decor_reforged-1.1.jar`
 .\gradlew.bat clean build
 ```
 
-Latest local validation for `1.1.53-reconstructed`:
+Latest local validation for `1.1.54-reconstructed`:
 
 - `validateManualResources`, `validateProjectMetadata`, `compileJava`, and the `processResources` datagen-equivalent gate passed.
-- `runGameTestServer` passed with all 179 required GameTests in repeated local and CI runs.
+- The first post-fix `runGameTestServer` passed all 182 required GameTests, including exact hatch/sliding-door geometry and a real-player collision sweep; repeated local and CI gates are recorded in the release evidence.
 - `clean build` passed; JVM unit tests are `NO-SOURCE` because regression coverage is implemented as NeoForge GameTests.
-- Runtime jar: `build/libs/immersive_engineer_decor_controls_tool_reforged-1.1.53-reconstructed.jar`, 2,670,951 bytes, SHA-256 `7F357843ACD1E8A9D85D03B979315E3E19058223EC6C10B156375479321BFE98`.
-- Two clean local builds and the downloaded CI artifact produced the same runtime-JAR SHA-256.
-- The verified JAR was installed into the NeoForge 1.21.1 Prism LAB, exercised in client smoke tests, and started/stopped cleanly in a dedicated-server smoke test.
+- Runtime JAR size/SHA-256, reproducibility, Prism traversal, dedicated-server smoke, and public download integrity are recorded in `release-evidence/1.1.54-reconstructed` after each gate completes.
 - `validateManualResources` rejects missing manual pages and crafting widgets that point at non-crafting recipes.
 - `validateProjectMetadata` checks version parity, public support links, issue templates, and root/packaged attribution parity.
 - The normal build workflow does not modify Prism; release qualification uses an explicit hash-verified LAB installation procedure.
