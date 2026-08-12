@@ -8,13 +8,15 @@ All notable reconstruction, repair, and validation changes for this project are 
 
 - Confirmed `validateManualResources` passes for 223 manual sources and 424 named crafting widgets.
 - Confirmed `validateProjectMetadata`, `compileJava`, and `processResources` pass.
-- Confirmed `runGameTestServer` passes with all 179 required GameTests in three consecutive post-review runs.
+- Confirmed `runGameTestServer` passes with all 179 required GameTests in repeated local and CI runs.
 - Confirmed `clean build` passes; the JVM unit-test task is `NO-SOURCE`.
-- Confirmed a local development-client smoke test opens the EDCT Engineer's Tools index and renders both Coarse Iron Grit and Coarse Gold Grit pages; the resulting `latest.log` contains no error, exception, `ManualRecipeRef`, or manual-initialization failure matches.
-- Confirmed the runtime jar is 2,670,995 bytes with SHA-256 `CD92F95870EFE059775FD600C6619C2B355C7C87BF4A66A2CEE852FB54CF0735`.
+- Confirmed a Prism LAB client smoke opens the EDCT Engineer's Tools index, renders Coarse Iron Grit and Coarse Gold Grit, navigates to an IE-native entry and back, validates Small Solar Panel output on downward and horizontal faces, exercises metal door and hatch state transitions, inspects the Creative tab, and opens a JEI crafting page.
+- Confirmed conventional mining with a vanilla diamond pickaxe, axe, and shovel using paired server-side present-before/absent-after block queries.
+- Confirmed a dedicated server discovers the mod, loads a world, reaches `Done`, and stops cleanly without client-only class-loading failures.
+- Confirmed two clean local builds and the downloaded CI artifact produce the same 2,670,951-byte runtime jar with SHA-256 `7F357843ACD1E8A9D85D03B979315E3E19058223EC6C10B156375479321BFE98`.
 - Confirmed the built jar contains version `1.1.53-reconstructed`, mod id `immersive_engineer_decor_controls_tool_reforged`, matching MIT attribution, safe grit manual widgets, and all 199 mining-tool assignments.
 - `runData` is not exposed by this reconstruction; `processResources` plus the two deterministic resource validators were used as the non-mutating equivalent.
-- No Prism installation was performed; the client check used the isolated Gradle development runtime only.
+- Installed exactly one hash-matching release JAR in the `1.21.1 TesT LaB` Prism instance; all unrelated LAB mods and configuration files were restored after the minimal-stack smoke tests.
 
 ### Fixed
 

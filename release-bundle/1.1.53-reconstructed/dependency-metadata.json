@@ -1,0 +1,17 @@
+{
+  "minecraft": "1.21.1",
+  "loader": "NeoForge",
+  "neoforge_minimum": "21.1.230",
+  "required": [
+    {
+      "mod_id": "immersiveengineering",
+      "minimum": "12.4.2-194"
+    }
+  ],
+  "optional": [
+    {
+      "mod_id": "jei",
+      "minimum": "19.32.0.359"
+    }
+  ]
+}

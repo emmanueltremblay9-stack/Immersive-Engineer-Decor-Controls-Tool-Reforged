@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "project": "Immersive Engineer Decor&Controls&Tool Reforged",
+  "version": "1.1.53-reconstructed",
+  "mod_id": "immersive_engineer_decor_controls_tool_reforged",
+  "source_commit": "0bda63097e61dbcfa1ffba24641a6ae87a6882b1",
+  "target_tag": "v1.1.53-reconstructed",
+  "qualification_branch": "codex/release-1.1.53-closure",
+  "qualification_date_utc": "2026-08-12",
+  "java": "Eclipse Adoptium 21.0.11+10-LTS",
+  "gradle": "9.2.1",
+  "minecraft": "1.21.1",
+  "neoforge_build": "21.1.230",
+  "neoforge_client": "21.1.233",
+  "immersive_engineering": "12.4.2-194",
+  "optional_jei_client": "19.39.0.368",
+  "jar": {
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.53-reconstructed.jar",
+    "size_bytes": 2670951,
+    "sha256": "7F357843ACD1E8A9D85D03B979315E3E19058223EC6C10B156375479321BFE98",
+    "entry_count": 2980,
+    "origin": "byte-identical independent local builds and downloaded GitHub Actions artifact"
+  },
+  "workflow": {
+    "run_id": 31547104501,
+    "job_id": 93961850797,
+    "artifact_id": 9122933427,
+    "transport_zip_size_bytes": 1820737,
+    "transport_zip_sha256": "0549143DFCF0C69798B6F54E07A94B249C86B8988ECDF8852AB63DD3ADB65D1C",
+    "conclusion": "success"
+  },
+  "gametests": {
+    "required": 179,
+    "failed": 0,
+    "ci_result": "PASS",
+    "final_commit_runs": "recorded in validation-results.md"
+  },
+  "runtime": {
+    "prism_install": "PASS",
+    "client_smoke": "PASS_WITH_OBJECTIVE_AUDIO_LIMITATION",
+    "dedicated_server_smoke": "PASS"
+  },
+  "licensing": {
+    "declared": "MIT",
+    "root_and_packaged_notice_hashes_match": true,
+    "provenance_documented": true
+  },
+  "publication": {
+    "github_release": "pending_final_gates",
+    "curseforge": "BLOCKED_BY_MISSING_CONFIGURATION",
+    "modrinth": "BLOCKED_BY_MISSING_CONFIGURATION"
+  }
+}

@@ -1,0 +1,40 @@
+Runtime JAR: immersive_engineer_decor_controls_tool_reforged-1.1.53-reconstructed.jar
+Size: 2670951 bytes
+SHA-256: 7F357843ACD1E8A9D85D03B979315E3E19058223EC6C10B156375479321BFE98
+Total entries: 2980
+
+Required metadata and attribution entries:
+META-INF/neoforge.mods.toml
+META-INF/LICENSE
+META-INF/NOTICE.md
+META-INF/CREDITS.md
+
+Regression implementation/test entry:
+com/oblixorprime/engineersdecorreforged/gametest/ContentRegressionGameTests.class
+
+Manual entries/resources:
+assets/immersive_engineer_decor_controls_tool_reforged/manual/autoload.json
+assets/immersive_engineer_decor_controls_tool_reforged/manual/engineer_tools.json
+assets/immersive_engineer_decor_controls_tool_reforged/manual/gold_grit.json
+assets/immersive_engineer_decor_controls_tool_reforged/manual/iron_grit.json
+assets/immersiveengineering/manual/autoload.json
+
+Conventional mining tags:
+data/minecraft/tags/block/mineable/axe.json
+data/minecraft/tags/block/mineable/pickaxe.json
+data/minecraft/tags/block/mineable/shovel.json
+
+`META-INF/neoforge.mods.toml` readback:
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+issueTrackerURL="https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues"
+modId="immersive_engineer_decor_controls_tool_reforged"
+version="1.1.53-reconstructed"
+Minecraft dependency="[1.21.1]"
+NeoForge dependency="[21.1.230,)"
+Immersive Engineering dependency="[12.4.2-194,)"
+JEI dependency type="optional", range="[19.32.0.359,)"
+
+The complete sorted entry listing used for readback is retained outside Git with
+SHA-256 76147FFA682BB9B7850B7973225E6B60D98DCFCE3BDAE35680476C56A061A292.
