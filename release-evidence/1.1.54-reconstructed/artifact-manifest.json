@@ -34,10 +34,10 @@
     "origin": "qualification build and two independent no-remote clean builds from source commit a38a7ae73ba0fd8c7f788d5760bf4597c3e4f32d"
   },
   "workflow": {
-    "run_id": null,
-    "job_id": null,
-    "artifact_id": null,
-    "conclusion": "PENDING"
+    "run_id": 31597224783,
+    "job_id": 94115578732,
+    "artifact_id": 9141595838,
+    "conclusion": "SUCCESS"
   },
   "runtime": {
     "prism_install": "PENDING",
