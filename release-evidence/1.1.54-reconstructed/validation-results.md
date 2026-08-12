@@ -16,8 +16,8 @@
 | JAR metadata/resources | PASS | 2,980 entries; mod id/version/license/dependencies and changed classes/resources present. |
 | Targeted non-regressions | PASS | Default creative routing, conventional mining, iron sound families, solar FE conservation, manual resources, and JEI wiring are covered structurally/GameTest. |
 | Packaged dedicated server | PASS | Exact JAR reached `Done`; controlled RCON stop; clean save/exit; no relevant failure/orphan. |
-| Prism installation | PASS | One exact target JAR; canonical hash; 50 unrelated JARs unchanged. |
-| Prism client world entry | BLOCKED | Earlier loopback incidents remain `UNRESOLVED_TRANSIENT`; no visual interaction was allowed. |
+| Prism installation | PASS | Committed post-install manifest: one exact target JAR, canonical hash, and 50 unrelated JARs unchanged. |
+| Prism client world entry | BLOCKED | `BLOCKED_BY_EXTERNAL_ENVIRONMENT`; loopback causation remains unresolved and no visual interaction was allowed. |
 | Computer Use | NOT_PERFORMED | Explicitly prohibited and not invoked. |
 
 Fresh validation ledger SHA-256: `4F669BE86C6757C2A31D20AF127837968055B52C340D5B5150CF70E56A120B1F`.

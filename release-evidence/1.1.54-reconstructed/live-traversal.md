@@ -6,4 +6,4 @@ The automated GameTest world verifies 33 world-space positions of a real standin
 
 This is accepted as the collision gate only. It does not claim client visual, audio, manual UI, or general UX validation.
 
-Prism client world entry remains `BLOCKED_BY_UNRESOLVED_TRANSIENT_LOOPBACK`; see `loopback-diagnostic.md`.
+Prism client world entry remains `BLOCKED_BY_EXTERNAL_ENVIRONMENT`; the loopback causation is unresolved. See `loopback-diagnostic.md`.
