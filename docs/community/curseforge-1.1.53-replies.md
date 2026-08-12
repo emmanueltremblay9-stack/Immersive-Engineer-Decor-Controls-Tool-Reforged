@@ -6,7 +6,7 @@ Thank you for reporting the Engineer's Manual regression. Version `1.1.53-recons
 
 ## dinospino_779
 
-Thank you for the solar-panel report. Version `1.1.53-reconstructed` restores automatic Small Solar Panel output to the receiver below or on an allowed horizontal side, with one shared 256 FE/t transfer limit. If it still fails with this version, please provide the new mod list and logs at https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues.
+Thank you for the solar-panel report. Version `1.1.53-reconstructed` restores automatic Small Solar Panel output to the receiver below or on an allowed horizontal side, with one shared 256 FE budget per 20-tick output cycle. If it still fails with this version, please provide the new mod list and logs at https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues.
 
 ## TipsyTheCat
 
