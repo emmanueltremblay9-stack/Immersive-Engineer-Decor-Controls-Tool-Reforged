@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "readback_date_utc": "2026-08-12T10:43:56Z",
+  "public_project_found": false,
+  "authenticated_dashboard_project_found": false,
+  "account_prerequisite": "A registered email address is required before project creation.",
+  "historical_project_excluded": "https://modrinth.com/mod/engineersdecor",
+  "canonical_jar": {
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.53-reconstructed.jar",
+    "size_bytes": 2670951,
+    "sha256": "7F357843ACD1E8A9D85D03B979315E3E19058223EC6C10B156375479321BFE98",
+    "uploaded": false
+  },
+  "dependency_ids": {
+    "immersive_engineering": {
+      "project_id": "tIm2nV03",
+      "slug": "immersiveengineering",
+      "relation": "required"
+    },
+    "jei": {
+      "project_id": "u6dRKJwZ",
+      "slug": "jei",
+      "relation": "optional"
+    }
+  },
+  "status": "FAIL",
+  "reason": "Project creation was authentication-blocked, and publication was additionally halted after the canonical JAR failed live collision QA."
+}

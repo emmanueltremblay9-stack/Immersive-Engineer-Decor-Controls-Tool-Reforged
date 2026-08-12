@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "readback_date_utc": "2026-08-12T10:43:56Z",
+  "project": {
+    "id": 1555214,
+    "slug": "immersive-engineers-decor-controls-tools-reforged",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged",
+    "public_owner": "DirtStudYo"
+  },
+  "authentication": {
+    "owner_session_observed": true,
+    "secret_recorded": false
+  },
+  "public_state": {
+    "main_file": "immersive_engineer_decor_controls_tool_reforged-1.1.41-reconstructed.jar",
+    "main_file_id": 8420050,
+    "version_1_1_53_present": false,
+    "license": "All Rights Reserved",
+    "canonical_artifact_license": "MIT",
+    "license_alignment": "FAIL - public project metadata was not changed",
+    "immersive_engineering_relation": "required dependency",
+    "jei_relation": "absent"
+  },
+  "canonical_jar": {
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.53-reconstructed.jar",
+    "size_bytes": 2670951,
+    "sha256": "7F357843ACD1E8A9D85D03B979315E3E19058223EC6C10B156375479321BFE98",
+    "uploaded": false
+  },
+  "mutation_state": {
+    "metadata_saved": false,
+    "file_submitted": false,
+    "comments_posted": false
+  },
+  "status": "FAIL",
+  "reason": "Publication stopped after live testing of the exact canonical JAR revealed incorrect door and hatch collision behavior. The public project license remains inconsistent with the canonical repository and JAR metadata."
+}
