@@ -1,0 +1,32 @@
+{
+  "schema": "internal_release_metadata_template_v1",
+  "api_validated": false,
+  "status": "DO_NOT_SUBMIT_1_1_53",
+  "reason": "Canonical 1.1.53 JAR failed live collision QA; retain this internal metadata template only as planning input for a corrected version. It is not a Modrinth API submission payload.",
+  "project": {
+    "title": "Immersive Engineer Decor&Controls&Tool Reforged",
+    "project_type": "mod",
+    "slug_candidate": "immersive-engineer-decor-controls-tool-reforged",
+    "summary": "Community-maintained NeoForge 1.21.1 reforged continuation combining industrial decor, workshop utilities, redstone controls, and selected engineering tools for Immersive Engineering-style builds.",
+    "license_id": "MIT",
+    "client_side": "required",
+    "server_side": "required",
+    "loaders": ["neoforge"],
+    "game_versions": ["1.21.1"],
+    "source_url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged",
+    "issues_url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues"
+  },
+  "dependencies": [
+    {
+      "project_id": "tIm2nV03",
+      "slug": "immersiveengineering",
+      "dependency_type": "required"
+    },
+    {
+      "project_id": "u6dRKJwZ",
+      "slug": "jei",
+      "dependency_type": "optional"
+    }
+  ],
+  "next_version_requirement": "Build a fresh platform-valid submission payload around a fully qualified 1.1.54-reconstructed artifact; do not submit this internal template."
+}
