@@ -7,7 +7,8 @@ Status at evidence-pack creation: engineering implementation is green in the fir
 - Objective 1.1.53 reproduction: the canonical 2,670,951-byte JAR has SHA-256 `7F357843ACD1E8A9D85D03B979315E3E19058223EC6C10B156375479321BFE98`; the final test-only RED run executed 182 tests and failed exactly four new collision tests while the other 178 passed.
 - Root cause: hatch shape coordinates/thickness disagreed with its models; sliding-door outline/collision ignored `HALF`, ignored hinge-specific model rotation in some states, and treated decorative tracks as open movement collision.
 - Fix: immutable state-aware hatch shapes and cached model-derived sliding-door shapes, with open movement collision limited to solid retracted components.
-- First post-fix result: all 182 required GameTests passed.
+- Final local result: two consecutive 182/182 GameTest runs passed on the stabilized 1.1.54 state, followed by a clean build.
+- Reproducibility: two independent no-remote clones of source-bearing commit `a38a7ae73ba0fd8c7f788d5760bf4597c3e4f32d` were built with `clean build --no-build-cache`; both matched the qualification JAR byte-for-byte at 2,678,440 bytes and SHA-256 `80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29`.
 - Ruflo: `NOT_APPLICABLE`; not activated.
 - Modrinth: `BLOCKED_BY_MISSING_CONFIGURATION`; templates only, no project creation.
 

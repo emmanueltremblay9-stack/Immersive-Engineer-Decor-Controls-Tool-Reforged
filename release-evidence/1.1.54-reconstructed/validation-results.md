@@ -14,7 +14,7 @@
 | `clean build` | PASS | Exit 0; JVM `test` is `NO-SOURCE`. |
 | `git diff --check` | PASS | Latest pre-commit check exit 0. |
 | First runtime JAR readback | PASS | 2,678,440 bytes; SHA-256 `80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29`; 2,980 entries. |
-| Two-build reproducibility | PENDING | Awaiting final committed source state. |
+| Two-build reproducibility | PASS | Two no-remote clones of `a38a7ae73ba0fd8c7f788d5760bf4597c3e4f32d`, both `clean build --no-build-cache`, plus qualification build: identical size, 2,980 entries, and SHA-256. |
 | Prism install/traversal | PENDING | Exact 1.1.53 remains installed until final JAR qualification. |
 | Dedicated server | PENDING | Awaiting final JAR. |
 | CI | PENDING | Awaiting PR. |

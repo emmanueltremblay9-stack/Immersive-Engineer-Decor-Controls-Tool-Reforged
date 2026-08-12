@@ -3,7 +3,7 @@
   "project": "Immersive Engineer Decor&Controls&Tool Reforged",
   "version": "1.1.54-reconstructed",
   "mod_id": "immersive_engineer_decor_controls_tool_reforged",
-  "source_commit": "PENDING_FINAL_COMMIT",
+  "source_commit": "a38a7ae73ba0fd8c7f788d5760bf4597c3e4f32d",
   "target_tag": "v1.1.54-reconstructed",
   "qualification_branch": "codex/1.1.54-collision-fix",
   "qualification_date_utc": "2026-08-12",
@@ -30,7 +30,8 @@
     "size_bytes": 2678440,
     "sha256": "80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29",
     "entry_count": 2980,
-    "reproducible": "PENDING_COMMITTED_TWO_BUILD_CHECK"
+    "reproducible": true,
+    "origin": "qualification build and two independent no-remote clean builds from source commit a38a7ae73ba0fd8c7f788d5760bf4597c3e4f32d"
   },
   "workflow": {
     "run_id": null,
