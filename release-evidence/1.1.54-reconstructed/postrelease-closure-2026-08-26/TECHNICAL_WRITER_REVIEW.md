@@ -41,3 +41,9 @@ Residual nonblocking gaps are the pending commit/PR/CI, CurseForge publication/r
 The reviewer confirmed that the new upload-label versus catalog-lookup explanation matches the code, manifest, and regression test. The first pass correctly identified stale 27/27 counts, prior publisher/test hashes, and a missing `gameVersionLookupNames` evidence-manifest field. Those items were refreshed to the 28-test correction anchored at commit `0f2117d1153d8122ca371f0a3478761fa7c89789`. Final readback also corrected the authenticated-run wording so it states that GitHub Actions consumed the secret for preflight while this evidence retains only its name and masked use.
 
 `PREFLIGHT_FIX_TECHNICAL_WRITER_GATE: PASS`
+
+## Multi-record correction evidence
+
+The evidence now records PR 4, its two successful Build checks, exact merged dry-run readback, the second safe `main` prepare stop, and the secret-safe diagnostic classification. Current documentation states that multiple exact-name records can exist under distinct game-version types and that only their validated deterministic ID set is bound into intent; the upload continues to use the unchanged name labels. Final readback also corrected the null file-ID wording so only the numeric artifact count is described as zero.
+
+`MULTI_RECORD_FIX_TECHNICAL_WRITER_GATE: PASS`

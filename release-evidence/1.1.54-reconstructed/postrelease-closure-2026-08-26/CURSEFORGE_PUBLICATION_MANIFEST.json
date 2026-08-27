@@ -4,12 +4,13 @@
   "tag": "v1.1.54-reconstructed",
   "version": "1.1.54-reconstructed",
   "sourceRevision": {
-    "state": "PREFLIGHT_FIX_COMMITTED_PENDING_PR_CI",
+    "state": "MULTI_RECORD_FIX_COMMITTED_PENDING_PR_CI",
     "baseImplementationCommit": "2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715",
-    "commit": "0f2117d1153d8122ca371f0a3478761fa7c89789",
+    "preflightSplitCommit": "0f2117d1153d8122ca371f0a3478761fa7c89789",
+    "commit": "0b3ced31b54444b312577fb23485a1e4eac132cc",
     "localSourceHashes": {
-      "publisherSha256": "1166020C86B92D1A7739D68172B1889977DF5A284B8A8E42201DD24DEF499236",
-      "publisherTestsSha256": "709C3E0238B97D2EA1D32C84CE55C4EE86BABD11EA6A77362A82962941D0CB22",
+      "publisherSha256": "26EE738543047549973C621E67687486B48B85550C63A5005D85AD296F725960",
+      "publisherTestsSha256": "E2413A0F32F44EF79C61A07592DC8F2F69FD258426B27E73A8A51112AD17BACF",
       "workflowSha256": "BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88"
     }
   },
@@ -77,7 +78,12 @@
     "implementationMergeCommit": "1b3d4db1ae2215deb754ed8c37ce9352aa428c67",
     "buildRunIds": [33040937740, 33040964379],
     "mergedDryRunId": 33041164651,
-    "mergedDryRunArtifactId": 9633912553
+    "mergedDryRunArtifactId": 9633912553,
+    "preflightSplitPullRequest": 4,
+    "preflightSplitMergeCommit": "316a864ce6d54a26bfe435def6fe4ce4da23fe77",
+    "preflightSplitBuildRunIds": [33042249389, 33042263714],
+    "preflightSplitDryRunId": 33042387761,
+    "preflightSplitDryRunArtifactId": 9634352015
   },
   "publicationAttempts": [
     {
@@ -85,6 +91,29 @@
       "sourceCommit": "1b3d4db1ae2215deb754ed8c37ce9352aa428c67",
       "status": "CURSEFORGE_GAME_VERSION_UNRESOLVED",
       "exitCode": 7,
+      "intentPersisted": false,
+      "uploadStepExecuted": false,
+      "artifactCount": 0,
+      "uploadAttempted": false,
+      "fileId": null
+    },
+    {
+      "workflowRunId": 33042452350,
+      "sourceCommit": "316a864ce6d54a26bfe435def6fe4ce4da23fe77",
+      "status": "CURSEFORGE_GAME_VERSION_UNRESOLVED",
+      "exitCode": 7,
+      "intentPersisted": false,
+      "uploadStepExecuted": false,
+      "artifactCount": 0,
+      "uploadAttempted": false,
+      "fileId": null
+    },
+    {
+      "workflowRunId": 33042661545,
+      "sourceCommit": "d2d9afe2b1da97ee333c628abe0694cfa8d0d28b",
+      "status": "CURSEFORGE_GAME_VERSION_AMBIGUOUS",
+      "exitCode": 7,
+      "diagnosticStopBeforeIntentConfigured": true,
       "intentPersisted": false,
       "uploadStepExecuted": false,
       "artifactCount": 0,

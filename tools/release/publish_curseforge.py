@@ -708,7 +708,7 @@ class Publisher:
             )
         return self._validate_public_release(matching[0], work_dir)
 
-    def _resolve_game_version_ids(self, token: str) -> dict[str, int]:
+    def _resolve_game_version_ids(self, token: str) -> dict[str, list[int]]:
         try:
             result = self.http.get_json(
                 f"{self.upload_api}/api/game/versions",
@@ -735,15 +735,32 @@ class Publisher:
                 "CURSEFORGE_GAME_VERSIONS_INVALID",
                 "CurseForge game-version response is invalid",
             )
-        resolved: dict[str, int] = {}
+        resolved: dict[str, list[int]] = {}
         for expected_name in self.cf["gameVersionLookupNames"]:
-            matches = [item for item in values if item.get("name") == expected_name]
-            if len(matches) != 1 or not isinstance(matches[0].get("id"), int):
+            matches = [
+                item
+                for item in values
+                if isinstance(item, dict) and item.get("name") == expected_name
+            ]
+            if not matches:
                 raise PublicationError(
-                    "CURSEFORGE_GAME_VERSION_UNRESOLVED",
-                    f"CurseForge game version could not be resolved uniquely: {expected_name}",
+                    "CURSEFORGE_GAME_VERSION_MISSING",
+                    f"CurseForge game version is absent from the catalog: {expected_name}",
                 )
-            resolved[expected_name] = matches[0]["id"]
+            ids: list[int] = []
+            for match in matches:
+                game_version_id = match.get("id")
+                if (
+                    not isinstance(game_version_id, int)
+                    or isinstance(game_version_id, bool)
+                    or game_version_id <= 0
+                ):
+                    raise PublicationError(
+                        "CURSEFORGE_GAME_VERSION_ID_INVALID",
+                        f"CurseForge game-version ID is invalid: {expected_name}",
+                    )
+                ids.append(game_version_id)
+            resolved[expected_name] = sorted(set(ids))
         return resolved
 
     def _state_artifact_prefix(self) -> str:
@@ -1099,7 +1116,7 @@ class Publisher:
         metadata_sha256: str,
         multipart_sha256: str,
         multipart_size: int,
-        resolved_game_versions: dict[str, int],
+        resolved_game_versions: dict[str, list[int]],
     ) -> None:
         if not isinstance(intent_report, dict):
             raise PublicationError(
