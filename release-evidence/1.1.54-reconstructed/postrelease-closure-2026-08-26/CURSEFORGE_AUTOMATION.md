@@ -66,7 +66,7 @@ All four approved public relations are required in public readback. The three `I
 - Metadata SHA-256: `14886AF9E71407D12E664B853A21EF221715CD37349EA0B45A6BBC3981EFBE43`.
 - Multipart SHA-256: `ABB81B6E0ED9B4586306ACE4B4E167E1C51C2631CF9B1ED4F24F6248F1271597`; 2,681,730 bytes.
 
-The original implementation was integrated by PR 3, the upload-label/catalog split by PR 4, and the multi-record correction by PR 5. PR 5 merged at `f29c73370e586df33c0c0036603a816c53082903`; both Build checks and merged dry-run 33043386837 succeeded. The 29-test accepted-file resume correction is commit `06f88fbf7ed734d400067511de587249251d2a8e`; [PR 6](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6) is open with final-head CI pending at this snapshot.
+The original implementation was integrated by PR 3, the upload-label/catalog split by PR 4, and the multi-record correction by PR 5. PR 5 merged at `f29c73370e586df33c0c0036603a816c53082903`; both Build checks and merged dry-run 33043386837 succeeded. The 29-test accepted-file resume correction is commit `06f88fbf7ed734d400067511de587249251d2a8e`; [PR 6](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6) merged at `da3aca4dedc76253a12f9a1bfb24b5f603641ae3` after final-head Build runs 33048567765 and 33048570171 passed.
 
 ## Integrated workflow and first authenticated attempt
 

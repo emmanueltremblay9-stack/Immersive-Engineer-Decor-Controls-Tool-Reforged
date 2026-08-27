@@ -14,9 +14,9 @@ The variable was scoped to each command process and restored immediately afterwa
 | Process-local mitigated `gradlew.bat check --console=plain` | 0 | `BUILD SUCCESSFUL`; metadata/manual-resource checks passed |
 | Process-local mitigated `gradlew.bat clean build --console=plain` | 0 | `BUILD SUCCESSFUL` |
 | Process-local mitigated `gradlew.bat runGameTestServer --console=plain` | 0 | Fresh final-revision run: 182/182 required GameTests passed in 3.142 s |
-| Publisher unit/mock tests with `ResourceWarning` as error | 0 | Fresh final pre-PR run: 29/29 passed in 15.797 s |
+| Publisher unit/mock tests with `ResourceWarning` as error | 0 | Fresh final pre-commit run: 29/29 passed in 15.861 s |
 | actionlint 1.7.12 | 0 | Fresh corrected invocation passed all workflows |
-| gitleaks 8.30.1 working-directory scan | 0 | Fresh final pre-PR run: ~28.90 MB scanned; no leaks found |
+| gitleaks 8.30.1 working-directory scan | 0 | Fresh final pre-commit run: ~28.91 MB scanned; no leaks found |
 | Targeted known-token/private-key prefix scan | 0 | zero matches |
 | Live publisher dry run | 0 | `AUTOMATION_READY_DRY_RUN`; project/file relation baselines matched; retained report SHA-256 `5F10F226C988C6E55FE7D1FAAF7FA30C9ACE7C5D24A2DE8A608830E6DADBBD20`; no upload |
 | Public file 8744461 redownload/readback | 0 | Exact 2,678,440-byte JAR/hash/mod ID/version and approved metadata; relation mismatch retained as blocker |
