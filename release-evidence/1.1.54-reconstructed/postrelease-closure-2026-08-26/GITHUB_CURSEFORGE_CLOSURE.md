@@ -42,3 +42,17 @@ Local correction proof:
 `CURSEFORGE_UPLOAD_POST_ATTEMPTED: NO`
 
 `CURSEFORGE_PUBLICATION_STATE: NOT_PERFORMED_SAFE_PREFLIGHT_STOP`
+
+## PR 4 integration and multi-record diagnosis
+
+PR [#4](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/4) merged the upload-label/catalog split at `316a864ce6d54a26bfe435def6fe4ce4da23fe77` on 2026-08-27T05:23:56Z. Build runs 33042249389 and 33042263714 both succeeded. Merged dry-run [33042387761](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/33042387761) succeeded from that exact `main` commit; downloaded artifact 9634352015 reproduced the canonical 1,904-byte report, report SHA-256 `5F10F226C988C6E55FE7D1FAAF7FA30C9ACE7C5D24A2DE8A608830E6DADBBD20`, and unchanged request hashes.
+
+Authenticated `main` run [33042452350](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/33042452350) again stopped in prepare with the original generic unresolved status. Intent persistence and upload were skipped; artifact count was zero and no file ID was returned.
+
+A dedicated diagnostic branch made the catalog outcomes distinct and included an explicit forced stop immediately after a hypothetical exact match. Authenticated diagnostic run [33042661545](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/33042661545) returned `CURSEFORGE_GAME_VERSION_AMBIGUOUS`. The persistence/upload steps were skipped and artifact count was zero. This proves that `1.21.1` exists as multiple exact-name catalog records; no response body, token, or other catalog names were logged.
+
+Commit `0b3ced31b54444b312577fb23485a1e4eac132cc` therefore treats one-or-more same-name records as valid only when every ID is a positive non-boolean integer. It binds a sorted unique ID list into both prepare and publish durable-intent comparisons. Missing and invalid-ID records still fail before persistence/POST; upload metadata remains unchanged because the official request uses `gameVersionNames`.
+
+`MULTI_RECORD_CORRECTIVE_PR_CI: PENDING`
+
+`ALL_AUTHENTICATED_RUNS_UPLOAD_POST_ATTEMPTED: NO`

@@ -69,5 +69,11 @@ Commands containing user-specific paths are retained because those paths are alr
 | 063 | 2026-08-27 01:15 | Independent read-only code and documentation review | 60 s bounded polls | n/a | Code gate passed; documentation reviewer identified only stale evidence counts/hashes/lookup field | `POINCARE_REVIEW.md`; `TECHNICAL_WRITER_REVIEW.md` |
 | 064 | 2026-08-27 01:16 | Commit reviewed catalog-lookup correction | 30 s | 0 | Atomic correction commit `0f2117d1153d8122ca371f0a3478761fa7c89789` created | Git commit readback |
 | 065 | 2026-08-27 01:21 | Final independent evidence readback and secret-use wording correction | 60 s bounded polls | n/a | Current counts, hashes, lookup contract, chronology, and masked-secret wording passed documentation review | `TECHNICAL_WRITER_REVIEW.md` |
+| 066 | 2026-08-27 01:24 | Push PR 4, inspect two Build checks, and merge | 5 min | 0 | PR 4 merged at `316a864ce6d54a26bfe435def6fe4ce4da23fe77`; both Build checks succeeded | `GITHUB_CURSEFORGE_CLOSURE.md` |
+| 067 | 2026-08-27 01:25 | Dispatch and inspect exact-merge secret-free dry run | 30 s | 0 | Run 33042387761 and artifact 9634352015 passed with canonical report/request hashes | `GITHUB_CURSEFORGE_CLOSURE.md` |
+| 068 | 2026-08-27 01:26 | Dispatch second authenticated `main` publication workflow | 30 s | 1 | Safe prepare failure; persistence/POST skipped; zero artifacts | `GITHUB_CURSEFORGE_CLOSURE.md` |
+| 069 | 2026-08-27 01:30 | Run forced-stop authenticated catalog-shape diagnostic | 30 s | 1 | `CURSEFORGE_GAME_VERSION_AMBIGUOUS`; persistence/POST skipped; zero artifacts | `GITHUB_CURSEFORGE_CLOSURE.md` |
+| 070 | 2026-08-27 01:31 | Implement and validate typed multi-record catalog binding | 30 s each | 0 each | 28/28 tests; compile/JSON/diff/actionlint/live dry-run/gitleaks passed; request bytes unchanged | `LOCAL_VALIDATION.md` |
+| 071 | 2026-08-27 01:34 | Independent read-only multi-record code review and atomic commit | 60 s bounded polls | 0 | Review passed; commit `0b3ced31b54444b312577fb23485a1e4eac132cc` created | `POINCARE_REVIEW.md` |
 
 This ledger is append-only during the mission. `n/a` denotes a classified multi-run action or a file-edit/review action without one aggregate process exit code; it is not represented as command success evidence.

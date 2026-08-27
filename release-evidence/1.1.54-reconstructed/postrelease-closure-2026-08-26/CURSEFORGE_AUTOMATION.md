@@ -59,14 +59,14 @@ All four approved public relations are required in public readback. The three `I
 - Covered: documented relation schema plus wrong-schema rejection, zero-based pagination, request-byte parity, exact duplicate, divergent duplicate, missing/rejected/forbidden token, catalog-backed lookup distinct from upload labels, project denial, durable intent validation, mutated intent rejection, stale intent-as-result rejection, missing/expired state after a persisted intent, processing resume, non-retried server/transport/JSON/missing-ID ambiguity, unexpected upload/poll failures, file-ID preservation, public metadata/dependency/hash readback, and secret non-disclosure.
 - actionlint 1.7.12 archive SHA-256: `6E7241B51E6817EA6A047693D8E6FED13B31819C9A0DD6C5A726E1592D22F6E9`.
 - actionlint result: exit 0 for all workflows.
-- Current publisher/workflow/test SHA-256 values: `1166020C86B92D1A7739D68172B1889977DF5A284B8A8E42201DD24DEF499236`, `BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88`, and `709C3E0238B97D2EA1D32C84CE55C4EE86BABD11EA6A77362A82962941D0CB22`.
+- Current publisher/workflow/test SHA-256 values: `26EE738543047549973C621E67687486B48B85550C63A5005D85AD296F725960`, `BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88`, and `E2413A0F32F44EF79C61A07592DC8F2F69FD258426B27E73A8A51112AD17BACF`.
 - Live dry-run status: `AUTOMATION_READY_DRY_RUN`, exit 0, no upload.
 - The live dry run also matched all four project-level dependencies and all four relations on approved baseline file 8420050. The four newest public files expose the same full relation set; the three older files predate the project-level `Include` configuration.
 - Retained report: `CURSEFORGE_DRY_RUN_REPORT.json`; SHA-256 `5F10F226C988C6E55FE7D1FAAF7FA30C9ACE7C5D24A2DE8A608830E6DADBBD20`.
 - Metadata SHA-256: `14886AF9E71407D12E664B853A21EF221715CD37349EA0B45A6BBC3981EFBE43`.
 - Multipart SHA-256: `ABB81B6E0ED9B4586306ACE4B4E167E1C51C2631CF9B1ED4F24F6248F1271597`; 2,681,730 bytes.
 
-The original implementation was integrated by PR 3. The catalog-lookup correction and current 28-test result are anchored to isolated-branch commit `0f2117d1153d8122ca371f0a3478761fa7c89789` and remain pending corrective PR/CI. A live dry-run is preflight proof, not upload or publication proof.
+The original implementation was integrated by PR 3 and the upload-label/catalog split by PR 4. The multi-record correction and current 28-test result are anchored to isolated-branch commit `0b3ced31b54444b312577fb23485a1e4eac132cc` and remain pending corrective PR/CI. A live dry-run is preflight proof, not upload or publication proof.
 
 ## Integrated workflow and first authenticated attempt
 
@@ -75,6 +75,9 @@ The original implementation was integrated by PR 3. The catalog-lookup correctio
 - Authenticated run 33041227322 failed closed in prepare with `CURSEFORGE_GAME_VERSION_UNRESOLVED` because the preflight incorrectly required the environment/loader labels to exist in the game-version catalog.
 - In that run, `Persist upload intent before any POST` and `Submit exact persisted request once` were both skipped; the run retained zero artifacts and returned no file ID. No upload was attempted.
 - The correction separates the full upload-label list from `gameVersionLookupNames: ["1.21.1"]`. The metadata and multipart hashes remain unchanged.
+- PR 4 merged that split at `316a864ce6d54a26bfe435def6fe4ce4da23fe77`; both Build checks and merged dry-run 33042387761 succeeded.
+- Authenticated `main` run 33042452350 again failed before persistence/POST. A diagnostic branch guaranteed to stop before persistence classified the live lookup as `CURSEFORGE_GAME_VERSION_AMBIGUOUS` in run 33042661545. Both runs retained zero artifacts.
+- Multiple same-name catalog entries are legitimate records under different game-version types. The current correction validates every positive numeric ID, deduplicates and sorts the ID set, and requires prepare/publish to recompute the same set before POST.
 
 ## Authority and publication state
 
@@ -86,6 +89,6 @@ The original implementation was integrated by PR 3. The catalog-lookup correctio
 - Real upload POST attempted at this snapshot: no; prepare stopped before intent persistence and upload
 - Public file ID at this snapshot: none
 
-`CURSEFORGE_AUTOMATION_VERDICT: PREFLIGHT_FIX_READY_PENDING_PR_CI`
+`CURSEFORGE_AUTOMATION_VERDICT: MULTI_RECORD_FIX_READY_PENDING_PR_CI`
 
 `CURSEFORGE_PUBLICATION_VERDICT: NOT_PERFORMED_SAFE_PREFLIGHT_STOP`

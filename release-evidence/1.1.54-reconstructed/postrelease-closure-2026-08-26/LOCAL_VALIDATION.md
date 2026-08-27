@@ -22,7 +22,7 @@ The variable was scoped to each command process and restored immediately afterwa
 | Evidence JSON parse | 0 | all compact JSON valid |
 | `git diff --check` | 0 | no whitespace errors |
 
-The final publisher regressions specifically prove that an intent report cannot be accepted as a result, a successful persisted-intent workflow step blocks when state artifacts are missing or expired, an unexpected failure after CurseForge returns a file ID preserves that ID while producing `UPLOAD_OUTCOME_UNKNOWN`, and authenticated catalog lookup resolves only the configured `1.21.1` record while retaining all four upload labels.
+The final publisher regressions specifically prove that an intent report cannot be accepted as a result, a successful persisted-intent workflow step blocks when state artifacts are missing or expired, an unexpected failure after CurseForge returns a file ID preserves that ID while producing `UPLOAD_OUTCOME_UNKNOWN`, and authenticated catalog lookup accepts multiple `1.21.1` type records only when every ID is a positive non-boolean integer, binds a sorted unique ID set, rejects missing/invalid records before POST, and retains all four upload labels.
 
 ## Build artifact
 

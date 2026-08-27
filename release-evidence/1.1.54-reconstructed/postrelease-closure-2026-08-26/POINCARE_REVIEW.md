@@ -60,3 +60,9 @@ Residual nonblocking gaps are the conditional GitHub metadata horizon, absence o
 After merged run 33041227322 stopped before intent persistence or POST, the reviewer inspected the four-file correction that separates the complete upload labels from the authenticated catalog lookup. The reviewer confirmed that `gameVersionLookupNames` is a validated non-empty subset, prepare and publish bind the same resolved map into durable intent validation, multipart metadata and final public readback retain all four labels, and unresolved catalog records still fail before POST. The reviewer reran 28/28 tests, a live tokenless dry run, and `git diff --check`.
 
 `PREFLIGHT_FIX_REVIEW_GATE: PASS`
+
+## Multi-record catalog correction re-review
+
+The live diagnostic established an ambiguous exact-name result without crossing the intent-persistence boundary. The reviewer confirmed that the correction accepts multiple records only when every ID is a positive non-boolean integer, deduplicates and sorts IDs deterministically, persists that mapping in prepare, recomputes and compares it in publish, and preserves the single-POST/token-secrecy controls. The 28-test suite covers sorted multi-record results, missing records, invalid IDs, zero POST on failures, and the verified one-POST success path.
+
+`MULTI_RECORD_FIX_REVIEW_GATE: PASS`
