@@ -1362,6 +1362,11 @@ class Publisher:
                             EXIT_TOKEN_MISSING,
                         )
                     resolved = self._resolve_game_version_ids(curseforge_token)
+                    if self.cf.get("diagnosticStopAfterGameVersionLookup") is True:
+                        raise PublicationError(
+                            "CURSEFORGE_CATALOG_DIAGNOSTIC_EXACT_MATCH",
+                            "Diagnostic branch resolved the configured catalog record and stopped before intent persistence",
+                        )
                     report.update(
                         {
                             "status": "UPLOAD_INTENT_READY",

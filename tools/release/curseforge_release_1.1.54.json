@@ -29,6 +29,7 @@
     "gameVersionLookupNames": [
       "1.21.1"
     ],
+    "diagnosticStopAfterGameVersionLookup": true,
     "uploadRelations": [
       {
         "projectID": 231951,
