@@ -6,6 +6,8 @@ out/
 *.log
 hs_err_pid*
 replay_pid*
+__pycache__/
+*.py[cod]
 
 .classpath
 .project

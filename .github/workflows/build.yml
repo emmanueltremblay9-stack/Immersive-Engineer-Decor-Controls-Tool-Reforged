@@ -22,6 +22,15 @@ jobs:
           distribution: temurin
           java-version: 21
 
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+
+      - name: Test guarded CurseForge publisher
+        shell: bash
+        run: python -W error::ResourceWarning -m unittest discover -s tools/release -p 'test_*.py' -v
+
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
 
@@ -55,6 +64,18 @@ jobs:
           echo "MOD_ID=$mod_id" >> "$GITHUB_ENV"
           echo "MOD_VERSION=$mod_version" >> "$GITHUB_ENV"
 
+      - name: Record runtime JAR SHA-256
+        id: runtime-jar
+        shell: bash
+        run: |
+          jar="build/libs/${MOD_ID}-${MOD_VERSION}.jar"
+          test -f "$jar"
+          runtime_sha256="$(sha256sum "$jar" | awk '{print $1}')"
+          test "${#runtime_sha256}" -eq 64
+          echo "sha256=$runtime_sha256" >> "$GITHUB_OUTPUT"
+          echo "path=$jar" >> "$GITHUB_OUTPUT"
+          echo "Runtime JAR SHA-256: $runtime_sha256"
+
       - name: Upload runtime jar
         id: upload-runtime-jar
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -64,12 +85,16 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
-      - name: Record artifact digest
+      - name: Record runtime and Actions archive digests
         shell: bash
         env:
-          ARTIFACT_DIGEST: ${{ steps.upload-runtime-jar.outputs.artifact-digest }}
+          ACTIONS_ARCHIVE_DIGEST: ${{ steps.upload-runtime-jar.outputs.artifact-digest }}
+          RUNTIME_JAR_SHA256: ${{ steps.runtime-jar.outputs.sha256 }}
         run: |
-          test -n "$ARTIFACT_DIGEST"
-          echo "Artifact SHA-256: $ARTIFACT_DIGEST"
+          test -n "$ACTIONS_ARCHIVE_DIGEST"
+          test -n "$RUNTIME_JAR_SHA256"
+          echo "Runtime JAR SHA-256: $RUNTIME_JAR_SHA256"
+          echo "Actions archive digest: $ACTIONS_ARCHIVE_DIGEST"
           echo "### Uploaded artifact" >> "$GITHUB_STEP_SUMMARY"
-          echo "SHA-256: \`$ARTIFACT_DIGEST\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Runtime JAR SHA-256: \`$RUNTIME_JAR_SHA256\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Actions archive digest: \`$ACTIONS_ARCHIVE_DIGEST\`" >> "$GITHUB_STEP_SUMMARY"
