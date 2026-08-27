@@ -22,7 +22,7 @@ During re-review, the reviewer found one additional workflow defect: Python corr
 - An authenticated prepare phase performs no POST and emits an exact upload-intent report.
 - GitHub Actions persists the intent artifact before publish. Publish verifies the exact artifact ID/name and request hashes before one non-retried POST.
 - Prior unmatched intent and post-POST transport, server, invalid-JSON, or missing-ID ambiguity become `UPLOAD_OUTCOME_UNKNOWN` and block another POST.
-- Positive processing IDs are durably recorded and resumed without a token or second upload.
+- Positive processing IDs are durably recorded and resumed without a CurseForge token or second upload.
 - File enumeration uses bounded zero-based `pageIndex` pagination.
 - Dry-run has no CurseForge secret in its environment. Sanitized intent/result reports are retained as workflow artifacts.
 - Build CI records the runtime JAR SHA-256 separately from the GitHub Actions transport-archive digest.
@@ -47,17 +47,17 @@ The following frozen read-only pass confirmed those two fixes and then identifie
 - Durability wording is now conditional on matching GitHub run/job metadata remaining queryable; administrative history deletion is an external trust boundary, and expired result metadata cannot recover a processing file ID.
 - Current suite: 27/27 tests passed; actionlint exit 0; live dry-run exit 0; gitleaks found no leaks.
 
-## Final read-only verdict
+## Historical pre-publication read-only verdict
 
-No blocking finding remained. The reviewer independently matched the manifest hashes to the current publisher, test module, and workflow; reran 27/27 tests and the secret-free live dry run; confirmed file-ID preservation and `UPLOAD_OUTCOME_UNKNOWN` after an unexpected post-ID polling failure; and directly verified the separate intent/result orchestration.
+No blocking finding remained. The reviewer independently matched the manifest hashes to the current publisher, test module, and workflow; reran 27/27 tests and the live dry run without `CURSEFORGE_API_TOKEN`; confirmed file-ID preservation and `UPLOAD_OUTCOME_UNKNOWN` after an unexpected post-ID polling failure; and directly verified the separate intent/result orchestration.
 
 Residual nonblocking gaps are the conditional GitHub metadata horizon, absence of a dedicated static unit test for embedded workflow scripts, and the still-unperformed real upload/public readback.
 
-`FINAL_REVIEW_GATE: PASS`
+`PRE_PUBLICATION_FINAL_REVIEW_GATE: PASS`
 
 ## Catalog-lookup correction re-review
 
-After merged run 33041227322 stopped before intent persistence or POST, the reviewer inspected the four-file correction that separates the complete upload labels from the authenticated catalog lookup. The reviewer confirmed that `gameVersionLookupNames` is a validated non-empty subset, prepare and publish bind the same resolved map into durable intent validation, multipart metadata and final public readback retain all four labels, and unresolved catalog records still fail before POST. The reviewer reran 28/28 tests, a live tokenless dry run, and `git diff --check`.
+After merged run 33041227322 stopped before intent persistence or POST, the reviewer inspected the four-file correction that separates the complete upload labels from the authenticated catalog lookup. The reviewer confirmed that `gameVersionLookupNames` is a validated non-empty subset, prepare and publish bind the same resolved map into durable intent validation, multipart metadata and final public readback retain all four labels, and unresolved catalog records still fail before POST. The reviewer reran 28/28 tests, a live dry run without `CURSEFORGE_API_TOKEN`, and `git diff --check`.
 
 `PREFLIGHT_FIX_REVIEW_GATE: PASS`
 
@@ -66,3 +66,31 @@ After merged run 33041227322 stopped before intent persistence or POST, the revi
 The live diagnostic established an ambiguous exact-name result without crossing the intent-persistence boundary. The reviewer confirmed that the correction accepts multiple records only when every ID is a positive non-boolean integer, deduplicates and sorts IDs deterministically, persists that mapping in prepare, recomputes and compares it in publish, and preserves the single-POST/token-secrecy controls. The 28-test suite covers sorted multi-record results, missing records, invalid IDs, zero POST on failures, and the verified one-POST success path.
 
 `MULTI_RECORD_FIX_REVIEW_GATE: PASS`
+
+## Accepted-file resume correction review
+
+After file 8744461 became public, CurseForge-token-free resume first encountered mutable project-level dependency drift. The reviewer required accepted-file verification to avoid that aggregate without weakening any immutable or exact-file gate. An initial correction covered explicit resume but missed automatic durable resume; a second ordering briefly moved durable-history reconciliation too early and could have preempted definitive `ALREADY_PUBLISHED` proof.
+
+The final reviewed ordering is:
+
+1. explicit positive resume validates that exact file directly and cannot POST;
+2. otherwise, one exact public duplicate is authoritative before durable-history reconciliation;
+3. a durable processing file ID skips only mutable project aggregation;
+4. approved baseline-file relations and exact target filename/display name, status, labels, relations, size, hash, mod ID, and version remain mandatory;
+5. project aggregation remains mandatory before every path on which a new upload can still occur.
+
+The final 29-test suite includes explicit no-list resume, project-drift durable resume, exact-public precedence over stale history, and zero-POST assertions. Python compilation and `git diff --check` passed. No update-file endpoint or repair workflow remains.
+
+`ACCEPTED_FILE_RESUME_REVIEW_GATE: PASS`
+
+## Rejected relation-repair review
+
+The reviewer compared the proposed `Include` to `embeddedLibrary` conversion against current official CurseForge contracts. The public API enum defines `EmbeddedLibrary` and `Include` as distinct values, while the documented upload/update write enum accepts `embeddedLibrary` but not `Include`. Therefore the proposed metadata update could not safely guarantee the approved public `Include` postcondition.
+
+The reviewer required a fail-closed stop before POST. The prototype, tests, workflow, and documentation claims were removed. No relation update and no second upload were attempted.
+
+`RELATION_REPAIR_REVIEW_GATE: BLOCKED_BY_UNPROVEN_RELATION_TRANSLATION`
+
+`FINAL_REVIEW_GATE: PASS_FOR_RESUME_FIX`
+
+`PUBLICATION_COMPLETION_REVIEW_GATE: BLOCKED_PUBLIC_RELATION_MISMATCH`

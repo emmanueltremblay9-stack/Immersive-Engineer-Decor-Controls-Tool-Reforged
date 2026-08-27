@@ -13,7 +13,7 @@ The repository can publish only the reviewed `v1.1.54-reconstructed` GitHub rele
 - The publish phase reconstructs the request, verifies the persisted artifact ID/name and all request hashes, repeats public duplicate checks, then sends one non-retried POST.
 - Each later production prepare reads the publication workflow history and the exact `Persist upload intent before any POST` step conclusion. If an earlier attempt reached that successful step but has no active result artifact, including after artifact expiry while matching run/job metadata remains queryable, the attempt is `UPLOAD_OUTCOME_UNKNOWN` and another POST is refused. This blocks rather than reconstructs an expired result, so a processing file ID cannot be recovered from workflow metadata alone.
 - An intent without a result, a transport failure after POST, a server error after POST, invalid response JSON, a missing positive file ID, or an unexpected failure after upload code begins is `UPLOAD_OUTCOME_UNKNOWN`. A later run refuses another POST.
-- A returned processing file ID is durably recorded and later polled without a token or second POST.
+- A returned processing file ID is durably recorded and later polled without a CurseForge token or second POST.
 - Once a positive file ID is durably recorded, resume does not let mutable project-level dependency aggregation block polling that exact accepted file. It still validates the immutable GitHub source, approved baseline file, and every relation/hash/metadata field on the resumed file before passing.
 - Publication passes only after public file metadata, approved status, game-version labels, dependencies, size, SHA-256, mod ID, and version all match.
 

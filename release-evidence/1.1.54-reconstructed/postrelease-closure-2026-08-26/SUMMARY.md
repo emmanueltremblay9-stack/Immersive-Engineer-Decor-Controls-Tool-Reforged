@@ -17,12 +17,14 @@ This directory is the authoritative entry point for the client-loopback diagnosi
 
 - Project: 1555214.
 - Canonical source: the existing public GitHub `v1.1.54-reconstructed` JAR, 2,678,440 bytes, SHA-256 `80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29`.
-- Guarded publisher tests: 28/28 passed locally, including the catalog-backed game-version lookup regression.
-- The GitHub Actions secret name `CURSEFORGE_API_TOKEN` exists; its value was never read or printed. The user confirmed it contains a newly generated replacement for the token previously exposed in chat.
-- The final workflow separates secret-free dry-run from authenticated prepare/publish, keeps intent and result reports physically separate, persists an exact upload intent before the one non-retried POST, and uses workflow-run/job metadata—while GitHub keeps it queryable—to block when result artifacts are missing or expired.
-- PR 3 merged the guarded workflow to `main` at `1b3d4db1ae2215deb754ed8c37ce9352aa428c67`; both Build checks and the first merged secret-free dry run passed.
-- Two authenticated `main` workflow runs stopped during prepare with `CURSEFORGE_GAME_VERSION_UNRESOLVED`. In both, intent persistence and upload were skipped and zero artifacts were retained. A secret-safe diagnostic run then classified the live catalog as `CURSEFORGE_GAME_VERSION_AMBIGUOUS`, again before persistence or POST. Commit `0b3ced31b54444b312577fb23485a1e4eac132cc` accepts one-or-more same-name records only when all IDs are valid, then binds their sorted unique set into the durable intent; PR/CI remain pending.
-- Real-publication status and file ID will be recorded here only after public metadata, dependency, size, JAR identity, and SHA-256 readbacks pass.
+- Guarded publisher tests: 29/29 passed locally after adding accepted-file precedence and explicit/durable resume regressions.
+- The GitHub Actions secret name `CURSEFORGE_API_TOKEN` exists. Codex never read or printed its value; GitHub Actions consumed the masked secret during authenticated prepare/publish. The user confirmed it contains a newly generated replacement for the token previously exposed in chat.
+- The final workflow separates a dry run without `CURSEFORGE_API_TOKEN` from authenticated prepare/publish, keeps intent and result reports physically separate, persists an exact upload intent before the one non-retried POST, and uses workflow-run/job metadata—while GitHub keeps it queryable—to block when result artifacts are missing or expired.
+- PRs 3, 4, and 5 merged the guarded workflow and both catalog corrections. PR 5 merged at `f29c73370e586df33c0c0036603a816c53082903`; both Build checks and merged dry-run 33043386837 passed.
+- Authenticated run 33043440815 persisted intent artifact 9634723269, issued exactly one non-retried upload POST, received file ID 8744461, and retained `UPLOADED_PROCESSING` result artifact 9634910382. No second upload POST occurred.
+- Public file 8744461 is approved with exact filename/display name, release type, labels, size, redownload SHA-256, NeoForge mod ID, and embedded version. The public artifact itself matches the canonical GitHub release JAR.
+- Public file/project relation readback contains only Immersive Engineering `RequiredDependency`; the three approved public `Include` relations are missing. The official write API does not accept `Include`, and the public enum distinguishes it from `EmbeddedLibrary`. Independent review therefore blocked the proposed metadata repair before any update POST.
+- Commit `06f88fbf7ed734d400067511de587249251d2a8e` keeps explicit, exact-public, and durable accepted-file resume paths read-only while preserving every file-level relation/hash/metadata gate. Integration PR/CI for that narrow fix remains pending at this snapshot.
 
 ## Proof taxonomy
 
@@ -31,7 +33,7 @@ This directory is the authoritative entry point for the client-loopback diagnosi
 3. An accepted upload response proves only that CurseForge returned a file ID; it is not public-release proof.
 4. Public-release proof requires a public file readback, all expected game-version labels and relations, approved status, exact size, exact SHA-256, and embedded NeoForge mod ID/version.
 
-The upload API supports only the explicit Immersive Engineering `requiredDependency` relation used here. The three existing public `Include` relations cannot be transmitted by that API contract. Live preflight confirms all three are currently project-level dependencies and appear on each of the four newest public files, but their appearance on the new file remains unverified until real post-upload readback.
+The upload API supports only the explicit Immersive Engineering `requiredDependency` relation used here. The three existing public `Include` relations cannot be transmitted by that API contract. They appeared on the approved baseline and four newest historical files, but post-upload readback proves they did not appear on file 8744461.
 
 ## Preservation
 
@@ -47,9 +49,10 @@ The upload API supports only the explicit Immersive Engineering `requiredDepende
 - Java/JVM probes: `LOOPBACK_PROBES.md`, `JAVA_JVM_MANIFEST.md`
 - Historical crash and static target audit: `CRASH_AUDIT.md`
 - Publisher design and publication state: `CURSEFORGE_AUTOMATION.md`, `CURSEFORGE_PUBLICATION_MANIFEST.json`
+- Public artifact/readback and blocker: `CURSEFORGE_PUBLIC_READBACK.json`, `CURSEFORGE_RELATION_BLOCKER.md`
 - GitHub integration and guarded-attempt chronology: `GITHUB_CURSEFORGE_CLOSURE.md`
 - Local build/test/scanner gates: `LOCAL_VALIDATION.md`
 - Original and Prism preservation: `PRESERVATION_POSTFLIGHT.md`, `PRISM_INVENTORY.md`
 - Sanitized commands: `COMMAND_LEDGER.md`
 
-`CLOSURE_STATUS: IN_PROGRESS_PENDING_INTEGRATION_AND_PUBLIC_READBACK`
+`CLOSURE_STATUS: BLOCKED_BY_CURSEFORGE_INCLUDE_RELATION_API_GAP`

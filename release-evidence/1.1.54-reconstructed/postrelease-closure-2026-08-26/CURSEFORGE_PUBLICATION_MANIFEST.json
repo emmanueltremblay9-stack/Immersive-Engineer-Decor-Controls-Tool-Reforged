@@ -1,16 +1,17 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "projectId": 1555214,
   "tag": "v1.1.54-reconstructed",
   "version": "1.1.54-reconstructed",
   "sourceRevision": {
-    "state": "MULTI_RECORD_FIX_COMMITTED_PENDING_PR_CI",
+    "state": "PUBLIC_FILE_RELATION_BLOCKED_RESUME_FIX_PENDING_PR_CI",
     "baseImplementationCommit": "2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715",
     "preflightSplitCommit": "0f2117d1153d8122ca371f0a3478761fa7c89789",
-    "commit": "0b3ced31b54444b312577fb23485a1e4eac132cc",
+    "multiRecordCommit": "0b3ced31b54444b312577fb23485a1e4eac132cc",
+    "commit": "06f88fbf7ed734d400067511de587249251d2a8e",
     "localSourceHashes": {
-      "publisherSha256": "26EE738543047549973C621E67687486B48B85550C63A5005D85AD296F725960",
-      "publisherTestsSha256": "E2413A0F32F44EF79C61A07592DC8F2F69FD258426B27E73A8A51112AD17BACF",
+      "publisherSha256": "41AB04476D7AEDD6483C017DD4D9615045AC6AAE25BC4EFF86C3044982B25B9A",
+      "publisherTestsSha256": "BC89130B57166A4C6C5C616ACE95F3FAB158325761EE29815F86BDD82E8EF4BE",
       "workflowSha256": "BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88"
     }
   },
@@ -62,6 +63,8 @@
     "multipartSize": 2681730,
     "reportPath": "CURSEFORGE_DRY_RUN_REPORT.json",
     "reportSha256": "5F10F226C988C6E55FE7D1FAAF7FA30C9ACE7C5D24A2DE8A608830E6DADBBD20",
+    "workflowRunId": 33043386837,
+    "artifactId": 9634702716,
     "uploadAttempted": false
   },
   "authorization": {
@@ -83,7 +86,14 @@
     "preflightSplitMergeCommit": "316a864ce6d54a26bfe435def6fe4ce4da23fe77",
     "preflightSplitBuildRunIds": [33042249389, 33042263714],
     "preflightSplitDryRunId": 33042387761,
-    "preflightSplitDryRunArtifactId": 9634352015
+    "preflightSplitDryRunArtifactId": 9634352015,
+    "multiRecordPullRequest": 5,
+    "multiRecordMergeCommit": "f29c73370e586df33c0c0036603a816c53082903",
+    "multiRecordBuildRunIds": [33043252946, 33043264510],
+    "multiRecordDryRunId": 33043386837,
+    "multiRecordDryRunArtifactId": 9634702716,
+    "resumeFixCommit": "06f88fbf7ed734d400067511de587249251d2a8e",
+    "resumeFixPullRequestState": "PENDING"
   },
   "publicationAttempts": [
     {
@@ -119,15 +129,54 @@
       "artifactCount": 0,
       "uploadAttempted": false,
       "fileId": null
+    },
+    {
+      "workflowRunId": 33043440815,
+      "sourceCommit": "f29c73370e586df33c0c0036603a816c53082903",
+      "status": "UPLOADED_PROCESSING",
+      "exitCode": 4,
+      "intentPersisted": true,
+      "intentArtifactId": 9634723269,
+      "uploadStepExecuted": true,
+      "uploadAttempted": true,
+      "uploadPostCount": 1,
+      "resultArtifactId": 9634910382,
+      "resolvedGameVersions": {"1.21.1": [11779, 12735, 16115]},
+      "fileId": 8744461
+    },
+    {
+      "workflowRunId": 33044033312,
+      "sourceCommit": "f29c73370e586df33c0c0036603a816c53082903",
+      "status": "CURSEFORGE_PROJECT_RELATION_MISMATCH",
+      "exitCode": 6,
+      "intentPersisted": false,
+      "uploadStepExecuted": false,
+      "uploadAttempted": false,
+      "resultArtifactId": 9634930848,
+      "resumeFileId": 8744461
     }
   ],
   "publication": {
-    "status": "NOT_PERFORMED_SAFE_PREFLIGHT_STOP",
-    "uploadAttempted": false,
-    "fileId": null,
-    "publicSize": null,
-    "publicSha256": null,
-    "publicHashMatch": null,
-    "publicRelationsVerified": false
+    "status": "BLOCKED_PUBLIC_RELATION_MISMATCH",
+    "uploadAttempted": true,
+    "uploadPostCount": 1,
+    "additionalUploadAttempted": false,
+    "fileId": 8744461,
+    "publicApproved": true,
+    "publicSize": 2678440,
+    "publicSha256": "80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29",
+    "publicHashMatch": true,
+    "publicJarIdentityMatch": true,
+    "publicRelationsVerified": false,
+    "actualRelations": [
+      {"projectId": 231951, "slug": "immersive-engineering", "type": "RequiredDependency"}
+    ],
+    "missingRelations": [
+      {"projectId": 296686, "slug": "redstone-gauges-and-switches", "type": "Include"},
+      {"projectId": 313866, "slug": "engineers-decor", "type": "Include"},
+      {"projectId": 319716, "slug": "engineers-tools", "type": "Include"}
+    ],
+    "relationUpdateAttempted": false,
+    "blocker": "BLOCKED_BY_CURSEFORGE_INCLUDE_RELATION_API_GAP"
   }
 }

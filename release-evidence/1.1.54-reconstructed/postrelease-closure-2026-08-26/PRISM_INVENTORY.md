@@ -13,6 +13,8 @@
 
 The original LAB configuration and installed target artifact match preflight exactly.
 
+At the final 2026-08-27 03:00 EDT closure recheck, both configuration hashes still matched, the active mods tree contained 51 JARs and exactly one target JAR with the recorded SHA-256, the four-instance name-set hash still matched, no mission-prefixed instance remained, and no Java, JavaW, or Prism Launcher process was running. The read-only check exited 0 with `PRISM_PRESERVATION_RECHECK=PASS`.
+
 ## Instance-list restoration
 
 Before mission temporary instances:

@@ -24,3 +24,9 @@ origin https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Contr
 ```
 
 No clean, reset, stash, switch, commit, fetch, merge, or write was performed in the original worktree.
+
+## Final closure recheck
+
+On 2026-08-27 at 03:00 EDT, a fresh read-only comparison again matched the recorded branch, HEAD, one-worktree count, 149-line porcelain-v2 status, normalized status SHA-256, `.git/config`, all five protected Gradle-file hashes, and both origin remote lines. The corrected comparison command exited 0 with `ORIGINAL_PRESERVATION_RECHECK=PASS`.
+
+The first comparison invocation exited 42 solely because its in-memory expected `build.gradle` literal was transcribed incorrectly in the verification command. The observed repository hash was the unchanged baseline value; correcting only the expected command literal produced the passing result above. No repository file was written by either invocation.

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "observedAtUtc": "2026-08-27T06:38:31Z",
+  "projectId": 1555214,
+  "file": {
+    "id": 8744461,
+    "dateCreated": "2026-08-27T05:44:38.56Z",
+    "dateModified": "2026-08-27T05:54:01.287Z",
+    "fileName": "immersive_engineer_decor_controls_tool_reforged-1.1.54-reconstructed.jar",
+    "displayName": "immersive_engineer_decor_controls_tool_reforged-1.1.54-reconstructed.jar",
+    "projectId": 1555214,
+    "status": 4,
+    "releaseType": 1,
+    "gameVersions": ["1.21.1", "Client", "NeoForge", "Server"],
+    "size": 2678440,
+    "sha256": "80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29",
+    "hashMatchesCanonicalGitHubAsset": true,
+    "embeddedModId": "immersive_engineer_decor_controls_tool_reforged",
+    "embeddedVersion": "1.1.54-reconstructed"
+  },
+  "actualFileRelations": [
+    {
+      "projectId": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    }
+  ],
+  "actualProjectRelations": [
+    {
+      "projectId": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    }
+  ],
+  "expectedFileRelations": [
+    {
+      "projectId": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    },
+    {
+      "projectId": 296686,
+      "slug": "redstone-gauges-and-switches",
+      "type": "Include"
+    },
+    {
+      "projectId": 313866,
+      "slug": "engineers-decor",
+      "type": "Include"
+    },
+    {
+      "projectId": 319716,
+      "slug": "engineers-tools",
+      "type": "Include"
+    }
+  ],
+  "missingFileRelations": [
+    {
+      "projectId": 296686,
+      "slug": "redstone-gauges-and-switches",
+      "type": "Include"
+    },
+    {
+      "projectId": 313866,
+      "slug": "engineers-decor",
+      "type": "Include"
+    },
+    {
+      "projectId": 319716,
+      "slug": "engineers-tools",
+      "type": "Include"
+    }
+  ],
+  "documentedWriteRelationTypes": [
+    "embeddedLibrary",
+    "incompatible",
+    "optionalDependency",
+    "requiredDependency",
+    "tool"
+  ],
+  "publicRelationEnumDistinguishesEmbeddedLibraryFromInclude": true,
+  "additionalUploadPostAttempted": false,
+  "relationUpdatePostAttempted": false,
+  "verdict": "BLOCKED_BY_CURSEFORGE_INCLUDE_RELATION_API_GAP"
+}
