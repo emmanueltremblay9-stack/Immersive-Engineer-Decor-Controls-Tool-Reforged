@@ -560,7 +560,7 @@ class PublisherTests(unittest.TestCase):
                 github_token="github-secret",
                 run_key="101-1",
             )
-        self.assertEqual("CURSEFORGE_GAME_VERSION_UNRESOLVED", raised.exception.status)
+        self.assertEqual("CURSEFORGE_GAME_VERSION_MISSING", raised.exception.status)
         self.assertEqual(0, self.state.post_count)
 
     def test_transport_timeout_fails_closed(self) -> None:

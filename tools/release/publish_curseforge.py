@@ -738,10 +738,20 @@ class Publisher:
         resolved: dict[str, int] = {}
         for expected_name in self.cf["gameVersionLookupNames"]:
             matches = [item for item in values if item.get("name") == expected_name]
-            if len(matches) != 1 or not isinstance(matches[0].get("id"), int):
+            if not matches:
                 raise PublicationError(
-                    "CURSEFORGE_GAME_VERSION_UNRESOLVED",
-                    f"CurseForge game version could not be resolved uniquely: {expected_name}",
+                    "CURSEFORGE_GAME_VERSION_MISSING",
+                    f"CurseForge game version is absent from the catalog: {expected_name}",
+                )
+            if len(matches) > 1:
+                raise PublicationError(
+                    "CURSEFORGE_GAME_VERSION_AMBIGUOUS",
+                    f"CurseForge game version has multiple catalog records: {expected_name}",
+                )
+            if not isinstance(matches[0].get("id"), int):
+                raise PublicationError(
+                    "CURSEFORGE_GAME_VERSION_ID_INVALID",
+                    f"CurseForge game-version ID is invalid: {expected_name}",
                 )
             resolved[expected_name] = matches[0]["id"]
         return resolved
