@@ -97,6 +97,10 @@ Commit `06f88fbf7ed734d400067511de587249251d2a8e` keeps accepted-file verificati
 
 The final suite is 29/29, Python compilation and `git diff --check` pass, actionlint 1.7.12 passes, and gitleaks scans approximately 28.87 MB with no leak. Independent code and documentation reviews pass this reduced diff.
 
+[PR 6](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6) was opened from `codex/curseforge-resume-after-project-drift` against exact base `f29c73370e586df33c0c0036603a816c53082903`. Its initial evidence-bearing head was `816229e69115902ce99e81da699f36bd9cd5e98d`; the final evidence-anchor follow-up and final-head CI remain pending at this snapshot.
+
+`ACCEPTED_FILE_RESUME_PR_CI_AT_THIS_SNAPSHOT: OPEN_PENDING`
+
 A proposed metadata-only relation repair was removed before commit or POST. Official CurseForge documentation does not accept `Include` in upload/update writes, and its public enum distinguishes `Include` from `EmbeddedLibrary`; submitting `embeddedLibrary` could produce materially different metadata. Computer Use is prohibited, so no legacy/dashboard editor was used.
 
 `CURSEFORGE_UPLOAD_POST_COUNT: 1`
