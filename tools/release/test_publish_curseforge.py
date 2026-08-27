@@ -105,6 +105,10 @@ class FakeState:
         self.list_page_size = 0
         self.requested_page_indexes: list[int] = []
         self.project_relations = public_relations()
+        self.game_versions = [
+            {"id": 33, "gameVersionTypeID": 2, "name": "1.21.1"},
+            {"id": 3, "gameVersionTypeID": 1, "name": "1.21.1"},
+        ]
 
     @staticmethod
     def prior_file() -> dict:
@@ -191,7 +195,7 @@ class Handler(BaseHTTPRequestHandler):
             if token == "forbidden-secret":
                 self._json({"error": "forbidden"}, 403)
                 return
-            self._json([{"id": 3, "name": "1.21.1"}])
+            self._json(self.state.game_versions)
             return
         artifacts_path = "/repos/test-owner/test-repo/actions/artifacts"
         workflow_runs_path = (
@@ -549,7 +553,7 @@ class PublisherTests(unittest.TestCase):
             run_key="100-1",
         )
         self.assertEqual("UPLOAD_INTENT_READY", report["status"])
-        self.assertEqual({"1.21.1": 3}, report["resolvedGameVersions"])
+        self.assertEqual({"1.21.1": [3, 33]}, report["resolvedGameVersions"])
         self.assertEqual(0, self.state.post_count)
 
         self.manifest["curseforge"]["gameVersionLookupNames"] = ["1.21.1", "Client"]
@@ -560,7 +564,19 @@ class PublisherTests(unittest.TestCase):
                 github_token="github-secret",
                 run_key="101-1",
             )
-        self.assertEqual("CURSEFORGE_GAME_VERSION_UNRESOLVED", raised.exception.status)
+        self.assertEqual("CURSEFORGE_GAME_VERSION_MISSING", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+        self.manifest["curseforge"]["gameVersionLookupNames"] = ["1.21.1"]
+        self.state.game_versions = [{"id": "not-an-integer", "name": "1.21.1"}]
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher(
+                mode="prepare-publish",
+                token="valid-secret",
+                github_token="github-secret",
+                run_key="102-1",
+            )
+        self.assertEqual("CURSEFORGE_GAME_VERSION_ID_INVALID", raised.exception.status)
         self.assertEqual(0, self.state.post_count)
 
     def test_transport_timeout_fails_closed(self) -> None:
