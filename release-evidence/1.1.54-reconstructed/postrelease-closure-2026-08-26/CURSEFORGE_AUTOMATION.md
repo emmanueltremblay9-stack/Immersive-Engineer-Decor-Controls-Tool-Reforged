@@ -40,7 +40,7 @@ All four approved public relations are required in public readback. The three `I
 - Exact-match idempotency and hard conflict for divergent or ambiguous version reuse.
 - Deterministic metadata and multipart bytes shared by dry-run, prepare, and publish.
 - Secret-free dry-run workflow step.
-- Authenticated prepare phase that resolves current game-version names but performs no POST.
+- Authenticated prepare phase that resolves the configured catalog-backed `gameVersionLookupNames` subset but performs no POST; the complete `gameVersionNames` upload labels remain unchanged.
 - Separate ephemeral intent and result files; an intent-only report can never be uploaded under a result artifact name.
 - Immutable GitHub Actions upload-intent artifact persisted before POST.
 - Prior workflow-run attempts and job-step conclusions are reconciled; while matching GitHub metadata remains queryable, a successful intent-persistence step without an active result, including after artifact expiry, blocks another POST. It cannot recover an expired processing file ID.
@@ -55,18 +55,26 @@ All four approved public relations are required in public readback. The three `I
 
 ## Validation snapshot
 
-- Publisher unit/mock tests: 27/27 passed with `ResourceWarning` promoted to error.
-- Covered: documented relation schema plus wrong-schema rejection, zero-based pagination, request-byte parity, exact duplicate, divergent duplicate, missing/rejected/forbidden token, project denial, durable intent validation, mutated intent rejection, stale intent-as-result rejection, missing/expired state after a persisted intent, processing resume, non-retried server/transport/JSON/missing-ID ambiguity, unexpected upload/poll failures, file-ID preservation, public metadata/dependency/hash readback, and secret non-disclosure.
+- Publisher unit/mock tests: 28/28 passed with `ResourceWarning` promoted to error.
+- Covered: documented relation schema plus wrong-schema rejection, zero-based pagination, request-byte parity, exact duplicate, divergent duplicate, missing/rejected/forbidden token, catalog-backed lookup distinct from upload labels, project denial, durable intent validation, mutated intent rejection, stale intent-as-result rejection, missing/expired state after a persisted intent, processing resume, non-retried server/transport/JSON/missing-ID ambiguity, unexpected upload/poll failures, file-ID preservation, public metadata/dependency/hash readback, and secret non-disclosure.
 - actionlint 1.7.12 archive SHA-256: `6E7241B51E6817EA6A047693D8E6FED13B31819C9A0DD6C5A726E1592D22F6E9`.
 - actionlint result: exit 0 for all workflows.
-- Current publisher/workflow/test SHA-256 values: `6A59D46067E0D97D2B8B25EB6A44477F4877640786ABF07E4F41DF4735E38010`, `BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88`, and `8CD93ECAD89B02FBEF4149C9C4422F4DDD0F851E994F0BE4193BEAC8FF221935`.
+- Current publisher/workflow/test SHA-256 values: `1166020C86B92D1A7739D68172B1889977DF5A284B8A8E42201DD24DEF499236`, `BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88`, and `709C3E0238B97D2EA1D32C84CE55C4EE86BABD11EA6A77362A82962941D0CB22`.
 - Live dry-run status: `AUTOMATION_READY_DRY_RUN`, exit 0, no upload.
 - The live dry run also matched all four project-level dependencies and all four relations on approved baseline file 8420050. The four newest public files expose the same full relation set; the three older files predate the project-level `Include` configuration.
 - Retained report: `CURSEFORGE_DRY_RUN_REPORT.json`; SHA-256 `5F10F226C988C6E55FE7D1FAAF7FA30C9ACE7C5D24A2DE8A608830E6DADBBD20`.
 - Metadata SHA-256: `14886AF9E71407D12E664B853A21EF221715CD37349EA0B45A6BBC3981EFBE43`.
 - Multipart SHA-256: `ABB81B6E0ED9B4586306ACE4B4E167E1C51C2631CF9B1ED4F24F6248F1271597`; 2,681,730 bytes.
 
-This validation is anchored to isolated-branch implementation commit `2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715` and remains unmerged until PR/CI integration is recorded. A live dry-run is preflight proof, not upload or publication proof.
+The original implementation was integrated by PR 3. The catalog-lookup correction and current 28-test result are anchored to isolated-branch commit `0f2117d1153d8122ca371f0a3478761fa7c89789` and remain pending corrective PR/CI. A live dry-run is preflight proof, not upload or publication proof.
+
+## Integrated workflow and first authenticated attempt
+
+- PR 3 merged at `1b3d4db1ae2215deb754ed8c37ce9352aa428c67`; both Build checks succeeded.
+- Merged dry-run 33041164651 succeeded and retained sanitized result artifact 9633912553.
+- Authenticated run 33041227322 failed closed in prepare with `CURSEFORGE_GAME_VERSION_UNRESOLVED` because the preflight incorrectly required the environment/loader labels to exist in the game-version catalog.
+- In that run, `Persist upload intent before any POST` and `Submit exact persisted request once` were both skipped; the run retained zero artifacts and returned no file ID. No upload was attempted.
+- The correction separates the full upload-label list from `gameVersionLookupNames: ["1.21.1"]`. The metadata and multipart hashes remain unchanged.
 
 ## Authority and publication state
 
@@ -74,9 +82,10 @@ This validation is anchored to isolated-branch implementation commit `2d186c5fdf
 - Repository Actions secret name `CURSEFORGE_API_TOKEN`: present; names-only update timestamp `2026-08-27T03:50:33Z`
 - User confirmation: the repository secret contains a completely new replacement token
 - Secret value read, printed, copied, or logged by Codex: no
-- Real upload attempted at this snapshot: no
+- Authenticated publication workflow dispatched: yes, run 33041227322
+- Real upload POST attempted at this snapshot: no; prepare stopped before intent persistence and upload
 - Public file ID at this snapshot: none
 
-`CURSEFORGE_AUTOMATION_VERDICT: READY_PENDING_PR_CI`
+`CURSEFORGE_AUTOMATION_VERDICT: PREFLIGHT_FIX_READY_PENDING_PR_CI`
 
-`CURSEFORGE_PUBLICATION_VERDICT: NOT_PERFORMED_PENDING_MERGED_WORKFLOW`
+`CURSEFORGE_PUBLICATION_VERDICT: NOT_PERFORMED_SAFE_PREFLIGHT_STOP`

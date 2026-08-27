@@ -1,14 +1,15 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "projectId": 1555214,
   "tag": "v1.1.54-reconstructed",
   "version": "1.1.54-reconstructed",
   "sourceRevision": {
-    "state": "COMMITTED_PENDING_PR_CI",
-    "commit": "2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715",
+    "state": "PREFLIGHT_FIX_COMMITTED_PENDING_PR_CI",
+    "baseImplementationCommit": "2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715",
+    "commit": "0f2117d1153d8122ca371f0a3478761fa7c89789",
     "localSourceHashes": {
-      "publisherSha256": "6A59D46067E0D97D2B8B25EB6A44477F4877640786ABF07E4F41DF4735E38010",
-      "publisherTestsSha256": "8CD93ECAD89B02FBEF4149C9C4422F4DDD0F851E994F0BE4193BEAC8FF221935",
+      "publisherSha256": "1166020C86B92D1A7739D68172B1889977DF5A284B8A8E42201DD24DEF499236",
+      "publisherTestsSha256": "709C3E0238B97D2EA1D32C84CE55C4EE86BABD11EA6A77362A82962941D0CB22",
       "workflowSha256": "BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88"
     }
   },
@@ -41,6 +42,8 @@
   },
   "uploadContract": {
     "gameVersionField": "gameVersionNames",
+    "gameVersionNames": ["Client", "Server", "1.21.1", "NeoForge"],
+    "gameVersionLookupNames": ["1.21.1"],
     "relationsShape": "relations.projects",
     "uploadedRelations": [
       {"projectID": 231951, "slug": "immersive-engineering", "type": "requiredDependency"}
@@ -69,8 +72,28 @@
     "secretValueInspected": false,
     "userConfirmedNewReplacement": true
   },
+  "integration": {
+    "implementationPullRequest": 3,
+    "implementationMergeCommit": "1b3d4db1ae2215deb754ed8c37ce9352aa428c67",
+    "buildRunIds": [33040937740, 33040964379],
+    "mergedDryRunId": 33041164651,
+    "mergedDryRunArtifactId": 9633912553
+  },
+  "publicationAttempts": [
+    {
+      "workflowRunId": 33041227322,
+      "sourceCommit": "1b3d4db1ae2215deb754ed8c37ce9352aa428c67",
+      "status": "CURSEFORGE_GAME_VERSION_UNRESOLVED",
+      "exitCode": 7,
+      "intentPersisted": false,
+      "uploadStepExecuted": false,
+      "artifactCount": 0,
+      "uploadAttempted": false,
+      "fileId": null
+    }
+  ],
   "publication": {
-    "status": "NOT_PERFORMED_PENDING_MERGED_WORKFLOW",
+    "status": "NOT_PERFORMED_SAFE_PREFLIGHT_STOP",
     "uploadAttempted": false,
     "fileId": null,
     "publicSize": null,

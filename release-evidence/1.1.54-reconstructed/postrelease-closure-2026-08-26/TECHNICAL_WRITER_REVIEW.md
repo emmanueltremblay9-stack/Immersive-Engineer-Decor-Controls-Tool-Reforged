@@ -35,3 +35,9 @@ No blocking documentation finding remained. The reviewer confirmed that the 27-t
 Residual nonblocking gaps are the pending commit/PR/CI, CurseForge publication/readback, and Notion anchors, plus the fact that the executable prompt is named as authority but is not bundled or hash-pinned in this evidence snapshot.
 
 `FINAL_TECHNICAL_WRITER_GATE: PASS`
+
+## Catalog-lookup correction review
+
+The reviewer confirmed that the new upload-label versus catalog-lookup explanation matches the code, manifest, and regression test. The first pass correctly identified stale 27/27 counts, prior publisher/test hashes, and a missing `gameVersionLookupNames` evidence-manifest field. Those items were refreshed to the 28-test correction anchored at commit `0f2117d1153d8122ca371f0a3478761fa7c89789`. Final readback also corrected the authenticated-run wording so it states that GitHub Actions consumed the secret for preflight while this evidence retains only its name and masked use.
+
+`PREFLIGHT_FIX_TECHNICAL_WRITER_GATE: PASS`

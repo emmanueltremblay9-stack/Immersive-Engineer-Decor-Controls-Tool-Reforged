@@ -14,7 +14,7 @@ The variable was scoped to each command process and restored immediately afterwa
 | Process-local mitigated `gradlew.bat check --console=plain` | 0 | `BUILD SUCCESSFUL`; metadata/manual-resource checks passed |
 | Process-local mitigated `gradlew.bat clean build --console=plain` | 0 | `BUILD SUCCESSFUL` |
 | Process-local mitigated `gradlew.bat runGameTestServer --console=plain` | 0 | Fresh final-revision run: 182/182 required GameTests passed in 3.142 s |
-| Publisher unit/mock tests with `ResourceWarning` as error | 0 | Fresh final-revision run: 27/27 passed |
+| Publisher unit/mock tests with `ResourceWarning` as error | 0 | Fresh preflight-fix run: 28/28 passed |
 | actionlint 1.7.12 | 0 | all workflows passed |
 | gitleaks 8.30.1 working-directory scan | 0 | Fresh final-revision run: ~28.85 MB scanned; no leaks found |
 | Targeted known-token/private-key prefix scan | 0 | zero matches |
@@ -22,7 +22,7 @@ The variable was scoped to each command process and restored immediately afterwa
 | Evidence JSON parse | 0 | all compact JSON valid |
 | `git diff --check` | 0 | no whitespace errors |
 
-The final publisher regressions specifically prove that an intent report cannot be accepted as a result, a successful persisted-intent workflow step blocks when state artifacts are missing or expired, and an unexpected failure after CurseForge returns a file ID preserves that ID while producing `UPLOAD_OUTCOME_UNKNOWN`.
+The final publisher regressions specifically prove that an intent report cannot be accepted as a result, a successful persisted-intent workflow step blocks when state artifacts are missing or expired, an unexpected failure after CurseForge returns a file ID preserves that ID while producing `UPLOAD_OUTCOME_UNKNOWN`, and authenticated catalog lookup resolves only the configured `1.21.1` record while retaining all four upload labels.
 
 ## Build artifact
 

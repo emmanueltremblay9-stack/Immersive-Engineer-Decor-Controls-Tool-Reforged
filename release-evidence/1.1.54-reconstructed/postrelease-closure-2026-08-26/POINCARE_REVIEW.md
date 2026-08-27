@@ -54,3 +54,9 @@ No blocking finding remained. The reviewer independently matched the manifest ha
 Residual nonblocking gaps are the conditional GitHub metadata horizon, absence of a dedicated static unit test for embedded workflow scripts, and the still-unperformed real upload/public readback.
 
 `FINAL_REVIEW_GATE: PASS`
+
+## Catalog-lookup correction re-review
+
+After merged run 33041227322 stopped before intent persistence or POST, the reviewer inspected the four-file correction that separates the complete upload labels from the authenticated catalog lookup. The reviewer confirmed that `gameVersionLookupNames` is a validated non-empty subset, prepare and publish bind the same resolved map into durable intent validation, multipart metadata and final public readback retain all four labels, and unresolved catalog records still fail before POST. The reviewer reran 28/28 tests, a live tokenless dry run, and `git diff --check`.
+
+`PREFLIGHT_FIX_REVIEW_GATE: PASS`
