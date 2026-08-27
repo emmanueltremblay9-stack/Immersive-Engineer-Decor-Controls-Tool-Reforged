@@ -1,0 +1,72 @@
+{
+  "asset": {
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.54-reconstructed.jar",
+    "sha256": "80f6ff3364a7ecff96d8ea4c4f7ecbf165793a35d145ed7b3acbb6863e660e29",
+    "size": 2678440
+  },
+  "curseForgeBaseline": {
+    "previousFileId": 8420050,
+    "previousFileRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 296686,
+        "slug": "redstone-gauges-and-switches",
+        "type": "Include"
+      },
+      {
+        "projectId": 313866,
+        "slug": "engineers-decor",
+        "type": "Include"
+      },
+      {
+        "projectId": 319716,
+        "slug": "engineers-tools",
+        "type": "Include"
+      }
+    ],
+    "projectRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 296686,
+        "slug": "redstone-gauges-and-switches",
+        "type": "Include"
+      },
+      {
+        "projectId": 313866,
+        "slug": "engineers-decor",
+        "type": "Include"
+      },
+      {
+        "projectId": 319716,
+        "slug": "engineers-tools",
+        "type": "Include"
+      }
+    ]
+  },
+  "exitCode": 0,
+  "githubRelease": {
+    "assetDigest": "sha256:80f6ff3364a7ecff96d8ea4c4f7ecbf165793a35d145ed7b3acbb6863e660e29",
+    "assetId": 511687758,
+    "sourceHashMatch": true
+  },
+  "metadataSha256": "14886af9e71407d12e664b853a21ef221715cd37349ea0b45a6bbc3981efbe43",
+  "mode": "dry-run",
+  "multipartSha256": "abb81b6e0ed9b4586306ace4b4e167e1c51c2631cf9b1ed4f24f6248f1271597",
+  "multipartSize": 2681730,
+  "postRequired": false,
+  "projectId": 1555214,
+  "publicHashMatch": null,
+  "schemaVersion": 1,
+  "status": "AUTOMATION_READY_DRY_RUN",
+  "tag": "v1.1.54-reconstructed",
+  "verdict": "PASS",
+  "version": "1.1.54-reconstructed"
+}

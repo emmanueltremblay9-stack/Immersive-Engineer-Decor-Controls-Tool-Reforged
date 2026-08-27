@@ -1,5 +1,7 @@
 # Notion readback
 
+> Historical connector readback (2026-08-12). The post-release closure records a separate dated Notion update and readback.
+
 - Page: [Immersive Engineer Decor&Controls&Tool Reforged - Project Notes](https://app.notion.com/p/38155c71723380939727f07575d5a98e?pvs=204)
 - Updated: `2026-08-12`
 - Result: `PASS`

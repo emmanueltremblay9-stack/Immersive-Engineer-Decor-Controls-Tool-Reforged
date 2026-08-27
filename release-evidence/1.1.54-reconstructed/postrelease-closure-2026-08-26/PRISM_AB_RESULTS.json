@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "worldSha256": "394BD1F52D5598416EFAD600BBCBF1C7CAD26D028648A13794F75028C5A70EFB",
+  "unmitigatedJvmProfileSha256": "AE9266E8A139EFB36C7FA8753CBC1CD971AB5C75141A17EB79EF871B600CC32C",
+  "mitigatedJvmProfileSha256": "8EE604616F41CE5FE310F312A4035EFA3B8BE6032402C07CFE465B7DA78835CC",
+  "runs": [
+    {"sequence": 1, "runId": "IEDCT-CLOSURE-T-20260826", "arm": "TREATMENT", "targetVersion": "1.1.54-reconstructed", "mitigated": false, "marker": "LOOPBACK_SIGNATURE", "primaryLogSha256": "9E7D061983D3EF4DEEC60D17F45B744CD7CE1D9F04E041BF93480F2619051615"},
+    {"sequence": 2, "runId": "IEDCT-U-C0-R1B-826", "arm": "CONTROL-0", "targetVersion": null, "mitigated": false, "marker": "LOOPBACK_SIGNATURE", "primaryLogSha256": "8A6D63AF3C082B15DF478B3B1D9D2AC673A74F740C4346D0B193908986617B4F"},
+    {"sequence": 3, "runId": "IEDCT-U-C1-R1-826", "arm": "CONTROL-1", "targetVersion": "1.1.53-reconstructed", "mitigated": false, "marker": "LOOPBACK_SIGNATURE", "primaryLogSha256": "4FDBC3DB508F2A5BD19D0E00008EEE2308D8D82807E1E5A82AAEE7612AEA69BA"},
+    {"sequence": 4, "runId": "IEDCT-U-C0-R2-826", "arm": "CONTROL-0", "targetVersion": null, "mitigated": false, "marker": "LOOPBACK_SIGNATURE", "primaryLogSha256": "9B4D1ABD25B90EEDDDA6C096F3CC828138E2A137B83457E64B0ECAF2888DF6D8"},
+    {"sequence": 5, "runId": "IEDCT-U-T-R2-826", "arm": "TREATMENT", "targetVersion": "1.1.54-reconstructed", "mitigated": false, "marker": "LOOPBACK_SIGNATURE", "primaryLogSha256": "BFBE8637F45FF22E04BB5FCA7BF6BA0E5FEB951E63559776EB7CFB58F47CE500"},
+    {"sequence": 6, "runId": "IEDCT-U-C1-R2-826", "arm": "CONTROL-1", "targetVersion": "1.1.53-reconstructed", "mitigated": false, "marker": "LOOPBACK_SIGNATURE", "primaryLogSha256": "82805862D3EDE12295B7827DBC91F290BFF3B3CAA5D172F02990301CC7C594EE"},
+    {"sequence": 7, "runId": "IEDCT-M-T-R1-826", "arm": "TREATMENT", "targetVersion": "1.1.54-reconstructed", "mitigated": true, "marker": "PLAYER_JOINED_WORLD", "primaryLogSha256": "ECD21244138E785D21F1DCD51ABAB43ED0A4773949B166942DA4F7DF7BBCC7EF"},
+    {"sequence": 8, "runId": "IEDCT-M-C0-R1-826", "arm": "CONTROL-0", "targetVersion": null, "mitigated": true, "marker": "PLAYER_JOINED_WORLD", "primaryLogSha256": "D7CB36D54586288DD3A619D152D96D7778CB03B06A54FFABC4338B9AF617F771"},
+    {"sequence": 9, "runId": "IEDCT-M-C1-R1-826", "arm": "CONTROL-1", "targetVersion": "1.1.53-reconstructed", "mitigated": true, "marker": "PLAYER_JOINED_WORLD", "primaryLogSha256": "BEB345F748E6A85F059C23ECBD5699D55F34AC5FCAAA5E992421A28C5050509A"},
+    {"sequence": 10, "runId": "IEDCT-M-C0-R2-826", "arm": "CONTROL-0", "targetVersion": null, "mitigated": true, "marker": "PLAYER_JOINED_WORLD", "primaryLogSha256": "1287C58C6AA6138FE528AF3F4ADD96B2B2BB328152205EC67667C3514C33FD8A"},
+    {"sequence": 11, "runId": "IEDCT-M-T-R2-826", "arm": "TREATMENT", "targetVersion": "1.1.54-reconstructed", "mitigated": true, "marker": "PLAYER_JOINED_WORLD", "primaryLogSha256": "2076A6E4D4E840EFF5F3FBB78407B5702F72EBB83AAA2E742CF9CBD7E5D2026E"},
+    {"sequence": 12, "runId": "IEDCT-M-C1-R2-826", "arm": "CONTROL-1", "targetVersion": "1.1.53-reconstructed", "mitigated": true, "marker": "PLAYER_JOINED_WORLD", "primaryLogSha256": "D055383AEAA2A2A7DBBC8FADBCF5FEB4294F892508365043AB4BBFCD63107A82"}
+  ],
+  "unmitigatedLoopbackSignatureCount": 6,
+  "mitigatedWorldEntryCount": 6,
+  "javaOrphansAfterRuns": 0,
+  "prismOrphansAfterRuns": 0,
+  "unredactedAccessTokenLines": 0
+}

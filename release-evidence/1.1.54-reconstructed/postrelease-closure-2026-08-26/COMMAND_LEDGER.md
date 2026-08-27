@@ -1,0 +1,64 @@
+# Sanitized command ledger
+
+Commands containing user-specific paths are retained because those paths are already part of the authorized task. No account token, access token, cookie, or credential value is recorded.
+
+| ID | Time (America/Toronto) | Sanitized command/action | Timeout | Exit | Result | Evidence |
+|---:|---|---|---:|---:|---|---|
+| 001 | 2026-08-26 21:47 | Read executable closure prompt | 10 s | 0 | Prompt loaded in full | Authorized prompt path |
+| 002 | 2026-08-26 21:48 | Fingerprint original Git worktree, status, config, and Gradle files | 10 s | 0 | Dirty original captured; no write | `BASELINE.md` |
+| 003 | 2026-08-26 21:50 | `git clone <official-origin> <isolated-checkout>` | 120 s | 0 | Fresh checkout created outside original | `BASELINE.md` |
+| 004 | 2026-08-26 21:50 | `git fetch --all --tags --prune` | 120 s | 0 | Remote refs and tags refreshed | external shell record |
+| 005 | 2026-08-26 21:50 | `git switch -c codex/postrelease-loopback-curseforge-closure origin/main` | 30 s | 0 | Dedicated branch at `aae119f...` | `BASELINE.md` |
+| 006 | 2026-08-26 21:51 | Index isolated checkout with non-persistent Codebase Memory | 120 s | 0 | Ready: 31,676 nodes / 38,341 edges | `CRASH_AUDIT.md` |
+| 007 | 2026-08-26 21:52 | Targeted graph search for Java networking, Netty, selectors, pipes, and custom executors | 30 s | 0 | No target source network hook found; one test-only Netty import | `CRASH_AUDIT.md` |
+| 008 | 2026-08-26 21:53 | Read Prism instance config, component manifest, Java version, and mod inventory | 30 s | 0 | Java/NeoForge/51-mod baseline captured | `BASELINE.md`; `PRISM_AB_MANIFEST.md` |
+| 009 | 2026-08-26 21:54 | Search historical Prism crash reports for loopback signatures | 30 s | 0 | Exact `PipeImpl`/selector/Unix-domain `connect` signature found | `CRASH_AUDIT.md` |
+| 010 | 2026-08-26 21:55 | Read official Prism CLI and CurseForge upload documentation | 30 s | 0 | Native `--world` route and official upload contract identified | source citations in final report |
+| 011 | 2026-08-26 21:56 | Create isolated evidence directories | 10 s | 0 | Repository compact evidence and external full-log roots created | filesystem readback |
+| 012 | 2026-08-26 21:58 | Audit 14 historical loopback crash reports by target version, Java vendor, and stack ownership | 30 s | 0 | Shared signature across four target versions/two vendors; zero target frames | `CRASH_AUDIT.md` |
+| 013 | 2026-08-26 22:00 | `jdeps --ignore-missing-deps --multi-release 21 -verbose:class <public-1.1.54.jar>` plus targeted source/graph audit | 30 s | 0 | 2,973 lines; zero target dependencies on failing network path | `CRASH_AUDIT.md` |
+| 014 | 2026-08-26 22:02 | Compile and run standalone selector/TCP/pipe and AF_UNIX path probes on three Java installations | 120 s | 0/2 captured per probe | Selector and temp-path-specific failure reproduced; expected failing probes exited 2 | `LOOPBACK_PROBES.md` |
+| 015 | 2026-08-26 22:05 | Download hash-verified Mojang 1.21.1 server, generate neutral world, send `stop` on stdin | 180 s | 0 | 14-file neutral snapshot created and fingerprinted | `PRISM_AB_MANIFEST.md` |
+| 016 | 2026-08-26 22:08 | Download GitHub public 1.1.53 and 1.1.54 release assets and manifests | 60 s | 0 | Sizes and SHA-256 values matched public metadata | `PRISM_AB_MANIFEST.md` |
+| 017 | 2026-08-26 22:11 | Build target-free Prism template and three differential arms | 120 s | 0 | Non-target manifests equal; original instance untouched | `PRISM_AB_MANIFEST.md` |
+| 018 | 2026-08-26 22:13 | Launch unmitigated Prism matrix through native CLI | 15 min/run bound | n/a | Six bounded runs classified; all three arms reproduced the exact loopback signature twice | `PRISM_AB_RUNS.md` |
+| 019 | 2026-08-26 22:30 | Launch process-local mitigated Prism matrix through native CLI | 15 min/run bound | n/a | Six bounded runs classified; all three arms entered the neutral world twice and held 15 s | `PRISM_AB_RUNS.md` |
+| 020 | 2026-08-26 22:45 | Read GitHub release/assets and CurseForge public files/dependencies | 30 s | 0 | Canonical source and approved metadata baseline captured | `CURSEFORGE_AUTOMATION.md` |
+| 021 | 2026-08-26 22:52 | Implement initial deterministic publisher, manifest, pinned workflow, tests, and documentation | n/a | n/a | Changes confined to isolated branch | repository diff |
+| 022 | 2026-08-26 23:03 | `python -W error::ResourceWarning -m unittest discover -s tools/release -p 'test_*.py' -v` | 30 s | 0 | Initial 12/12 tests passed | historical command output |
+| 023 | 2026-08-26 23:04 | Run hash-verified actionlint 1.7.12 against all workflows | 30 s | 0 | Initial workflow static checks passed | historical command output |
+| 024 | 2026-08-26 23:05 | Initial live publisher `--dry-run` against public GitHub/CurseForge state | 30 s | 0 | `AUTOMATION_READY_DRY_RUN`; no upload | historical report superseded by `CURSEFORGE_DRY_RUN_REPORT.json` |
+| 025 | 2026-08-26 23:06 | Re-run standalone probes after matrix, including 1,500-cycle mitigation | 120 s | n/a | Expected unmitigated failure; process-local property passed 1,500/1,500 with zero residue | `LOOPBACK_PROBES.md` |
+| 026 | 2026-08-26 23:11 | Check process-token presence boolean and names-only repository Actions secrets | 30 s | 0 | Token absent; no repository secrets; upload forbidden | `CURSEFORGE_AUTOMATION.md` |
+| 027 | 2026-08-26 23:14 | Move 15 exact mission-owned Prism instances to recoverable external evidence after permanent-delete safety rejection | 30 s | 0 | Prism restored to four original instances; mission-prefixed count 0 | `PRISM_INVENTORY.md` |
+| 028 | 2026-08-26 23:15 | Re-hash original dirty repository and original Prism LAB instance | 30 s | 0 | All recorded identities, statuses, configs, and artifact hashes match preflight | `PRESERVATION_POSTFLIGHT.md`; `PRISM_INVENTORY.md` |
+| 029 | 2026-08-26 23:18 | Run hash-verified gitleaks 8.30.1 working-directory scan | 30 s | 0 | ~5.24 MB scanned; no leaks found | `LOCAL_VALIDATION.md` |
+| 030 | 2026-08-26 23:19 | `gradlew.bat check --console=plain` without mitigation | 120 s | 1 | Gradle daemon reproduced exact host loopback failure before tasks | `LOCAL_VALIDATION.md` |
+| 031 | 2026-08-26 23:20 | Process-local mitigated `gradlew.bat check --console=plain` | 120 s | 0 | Build/check passed | `LOCAL_VALIDATION.md` |
+| 032 | 2026-08-26 23:21 | Process-local mitigated `gradlew.bat clean build --console=plain` | 120 s | 0 | Clean build passed; canonical JAR reproduced byte-for-byte | `LOCAL_VALIDATION.md` |
+| 033 | 2026-08-26 23:22 | Process-local mitigated `gradlew.bat runGameTestServer --console=plain` | 15 min | 0 | All 182 required GameTests passed | `LOCAL_VALIDATION.md` |
+| 034 | 2026-08-26 23:23 | Independent code and documentation reviews of initial publisher/evidence | 30 s | n/a | Both gates failed with actionable schema, idempotency, workflow, and evidence findings | `POINCARE_REVIEW.md`; technical-writer notification |
+| 035 | 2026-08-26 23:30 | Re-read current official CurseForge upload contract and probe live file-list pagination | 30 s | 0 | Confirmed `relations.projects`, `gameVersionNames`, manual-release flag, and zero-based `pageIndex` | `CURSEFORGE_AUTOMATION.md` |
+| 036 | 2026-08-26 23:50 | Names-only `gh secret list` readback | 30 s | 0 | `CURSEFORGE_API_TOKEN` present; value not read; user confirmed a new replacement token | `CURSEFORGE_AUTOMATION.md` |
+| 037 | 2026-08-26 23:57 | Rerun hardened publisher unit/mock suite | 30 s | 0 | 21/21 passed with warning promotion | `CURSEFORGE_AUTOMATION.md` |
+| 038 | 2026-08-27 00:02 | Run hash-verified actionlint 1.7.12 after workflow hardening | 30 s | 0 | All workflows passed | `CURSEFORGE_AUTOMATION.md` |
+| 039 | 2026-08-27 00:04 | Re-read official CurseForge Upload API modified 2026-05-27 | 30 s | 0 | Current upload fields and supported relation types confirmed | `CURSEFORGE_AUTOMATION.md` |
+| 040 | 2026-08-27 00:06 | Final-revision live publisher `--dry-run` against public GitHub/CurseForge state | 30 s | 0 | `AUTOMATION_READY_DRY_RUN`; retained sanitized report; no upload | `CURSEFORGE_DRY_RUN_REPORT.json` |
+| 041 | 2026-08-27 00:09 | Reconcile evidence entry point, proof taxonomy, historical snapshots, and Prism byte arithmetic | n/a | n/a | Documentation-only changes in isolated branch | `SUMMARY.md`; `PRISM_AB_MANIFEST.md` |
+| 042 | 2026-08-27 00:11 | Final publisher tests, actionlint, gitleaks, JSON parse, and `git diff --check` | 30 s each | 0 each | Initial final pass: 21/21 tests; all workflows/JSON/diff valid; ~20.93 MB scanned with no leak | `LOCAL_VALIDATION.md` |
+| 043 | 2026-08-27 00:12 | Process-local mitigated `gradlew.bat check --console=plain` | 120 s | 0 | `BUILD SUCCESSFUL`; metadata and 223 manual sources / 424 widgets validated | `LOCAL_VALIDATION.md` |
+| 044 | 2026-08-27 00:13 | Process-local mitigated `gradlew.bat clean build --console=plain` | 120 s | 0 | `BUILD SUCCESSFUL`; canonical JAR reproduced byte-for-byte | `LOCAL_VALIDATION.md` |
+| 045 | 2026-08-27 00:13 | Process-local mitigated `gradlew.bat runGameTestServer --console=plain` | 15 min | 0 | Fresh 182/182 required GameTests passed in 3.142 s | `LOCAL_VALIDATION.md` |
+| 046 | 2026-08-27 00:14 | Hash final local JAR/GameTest log and inspect Java/Prism processes | 30 s | 0 | Canonical JAR hash matched; no Java/Prism process remained | `LOCAL_VALIDATION.md` |
+| 047 | 2026-08-27 00:16 | Independent reviewer terminal-success path check and sole-writer correction | 30 s | n/a | `ALREADY_PUBLISHED` and automatic resume now end successfully without intent/POST | `POINCARE_REVIEW.md` |
+| 048 | 2026-08-27 00:19 | Read all seven public CurseForge file relation sets and project-level dependencies | 30 s | 0 | Project plus four newest files expose all four expected relations | `CURSEFORGE_AUTOMATION.md` |
+| 049 | 2026-08-27 00:21 | Add project-relation preflight and rerun publisher tests/live dry-run | 30 s each | 0 each | 22/22 tests; current project/file baselines matched; no upload | `CURSEFORGE_DRY_RUN_REPORT.json` |
+| 050 | 2026-08-27 00:34 | Separate intent/result report paths and add retained workflow-run/job reconciliation | 30 s each | 0 each | 26/26 tests; stale, missing, and expired durable-state regressions passed; actionlint/live dry-run/gitleaks passed | `POINCARE_REVIEW.md`; `LOCAL_VALIDATION.md` |
+| 051 | 2026-08-27 00:43 | Independent read-only code/documentation re-review | 60 s bounded polls | n/a | Core durability fixes confirmed; unexpected post-ID polling failure and stale evidence counts identified | `POINCARE_REVIEW.md`; `TECHNICAL_WRITER_REVIEW.md` |
+| 052 | 2026-08-27 00:45 | Normalize all unexpected post-boundary failures, preserve file ID, and rerun affected gates | 30 s each | 0 each | 27/27 tests; Python compile, actionlint, live dry-run, JSON parse, diff check, and ~28.84 MB gitleaks scan passed | `LOCAL_VALIDATION.md`; `CURSEFORGE_AUTOMATION.md` |
+| 053 | 2026-08-27 00:48 | Bound metadata-retention claims and anchor automatic-release authority | n/a | n/a | Guard is conditional on queryable run/job metadata; waiver classified as scope-derived from user-authorized `# PROMPT CODEX — IEDCT — Fermeture autonome des éc.md` and replacement-token confirmation | `CURSEFORGE_AUTOMATION.md`; `TECHNICAL_WRITER_REVIEW.md` |
+| 054 | 2026-08-27 00:49 | Rerun publisher suite and live dry-run against the hash-anchored final local source | 30 s each | 0 each | 27/27 tests; `AUTOMATION_READY_DRY_RUN`; no upload; publisher/test/workflow hashes recorded | `CURSEFORGE_AUTOMATION.md`; `CURSEFORGE_PUBLICATION_MANIFEST.json` |
+| 055 | 2026-08-27 00:53 | Final independent read-only code and documentation reviews | 60 s bounded polls | n/a | Both gates passed with no blocking findings; residual platform and external-readback gaps retained | `POINCARE_REVIEW.md`; `TECHNICAL_WRITER_REVIEW.md` |
+| 056 | 2026-08-27 00:55 | Commit reviewed publisher/workflow implementation | 30 s | 0 | Atomic implementation commit `2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715` created on isolated branch | Git commit readback; `CURSEFORGE_PUBLICATION_MANIFEST.json` |
+
+This ledger is append-only during the mission. `n/a` denotes a classified multi-run action or a file-edit/review action without one aggregate process exit code; it is not represented as command success evidence.
