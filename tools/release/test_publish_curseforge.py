@@ -615,6 +615,26 @@ class PublisherTests(unittest.TestCase):
         self.assertIs(False, report["postRequired"])
         self.assertEqual(0, self.state.post_count)
 
+    def test_exact_public_file_precedes_stale_history_and_project_aggregation(self) -> None:
+        existing_id = 9000001
+        self.state.files[existing_id] = self.state.current_file(existing_id)
+        self.state.downloads[existing_id] = self.jar_bytes
+        self.state.project_relations = self.state.project_relations[-1:]
+        self.record_persisted_intent_step("99-1")
+        report = self.run_publisher(
+            mode="prepare-publish",
+            token="unused-secret",
+            github_token="github-secret",
+            run_key="100-1",
+        )
+        self.assertEqual("ALREADY_PUBLISHED", report["status"])
+        self.assertEqual(existing_id, report["fileId"])
+        self.assertEqual(
+            "SKIPPED_ACCEPTED_FILE_RESUME",
+            report["curseForgeBaseline"]["projectRelationsCheck"],
+        )
+        self.assertEqual(0, self.state.post_count)
+
     def test_duplicate_scan_uses_zero_based_page_index_across_all_pages(self) -> None:
         older_id = 8999999
         existing_id = 9000001
@@ -828,6 +848,7 @@ class PublisherTests(unittest.TestCase):
             ]
         )
         self.state.publish_visible = True
+        self.state.project_relations = self.state.project_relations[-1:]
         report = self.run_publisher(
             mode="prepare-publish",
             token="valid-secret",
@@ -837,6 +858,10 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual("RESUMED_PUBLICATION_VERIFIED", report["status"])
         self.assertTrue(report["durableStateResume"])
         self.assertIs(False, report["postRequired"])
+        self.assertEqual(
+            "SKIPPED_ACCEPTED_FILE_RESUME",
+            report["curseForgeBaseline"]["projectRelationsCheck"],
+        )
         self.assertEqual(NEW_FILE_ID, report["fileId"])
         self.assertEqual(0, self.state.post_count)
 
@@ -907,12 +932,18 @@ class PublisherTests(unittest.TestCase):
 
     def test_resume_file_id_polls_without_token_intent_or_second_upload(self) -> None:
         self.state.publish_visible = True
+        self.state.project_relations = self.state.project_relations[-1:]
         report = self.run_publisher(mode="publish", resume_file_id=NEW_FILE_ID)
         self.assertEqual("RESUMED_PUBLICATION_VERIFIED", report["status"])
         self.assertEqual(NEW_FILE_ID, report["fileId"])
         self.assertEqual(self.asset_sha, report["publicSha256"])
+        self.assertEqual(
+            "SKIPPED_ACCEPTED_FILE_RESUME",
+            report["curseForgeBaseline"]["projectRelationsCheck"],
+        )
         self.assertIs(False, report["postRequired"])
         self.assertEqual(0, self.state.post_count)
+        self.assertEqual([], self.state.requested_page_indexes)
 
 
 if __name__ == "__main__":

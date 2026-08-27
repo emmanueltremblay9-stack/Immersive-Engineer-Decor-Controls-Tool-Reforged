@@ -14,15 +14,18 @@ The variable was scoped to each command process and restored immediately afterwa
 | Process-local mitigated `gradlew.bat check --console=plain` | 0 | `BUILD SUCCESSFUL`; metadata/manual-resource checks passed |
 | Process-local mitigated `gradlew.bat clean build --console=plain` | 0 | `BUILD SUCCESSFUL` |
 | Process-local mitigated `gradlew.bat runGameTestServer --console=plain` | 0 | Fresh final-revision run: 182/182 required GameTests passed in 3.142 s |
-| Publisher unit/mock tests with `ResourceWarning` as error | 0 | Fresh preflight-fix run: 28/28 passed |
-| actionlint 1.7.12 | 0 | all workflows passed |
-| gitleaks 8.30.1 working-directory scan | 0 | Fresh final-revision run: ~28.85 MB scanned; no leaks found |
+| Publisher unit/mock tests with `ResourceWarning` as error | 0 | Fresh final pre-PR run: 29/29 passed in 15.797 s |
+| actionlint 1.7.12 | 0 | Fresh corrected invocation passed all workflows |
+| gitleaks 8.30.1 working-directory scan | 0 | Fresh final pre-PR run: ~28.90 MB scanned; no leaks found |
 | Targeted known-token/private-key prefix scan | 0 | zero matches |
 | Live publisher dry run | 0 | `AUTOMATION_READY_DRY_RUN`; project/file relation baselines matched; retained report SHA-256 `5F10F226C988C6E55FE7D1FAAF7FA30C9ACE7C5D24A2DE8A608830E6DADBBD20`; no upload |
+| Public file 8744461 redownload/readback | 0 | Exact 2,678,440-byte JAR/hash/mod ID/version and approved metadata; relation mismatch retained as blocker |
 | Evidence JSON parse | 0 | all compact JSON valid |
 | `git diff --check` | 0 | no whitespace errors |
 
-The final publisher regressions specifically prove that an intent report cannot be accepted as a result, a successful persisted-intent workflow step blocks when state artifacts are missing or expired, an unexpected failure after CurseForge returns a file ID preserves that ID while producing `UPLOAD_OUTCOME_UNKNOWN`, and authenticated catalog lookup accepts multiple `1.21.1` type records only when every ID is a positive non-boolean integer, binds a sorted unique ID set, rejects missing/invalid records before POST, and retains all four upload labels.
+The first pre-PR batch used two incorrect local command shapes: test discovery ran from the repository root even though the suite imports its sibling publisher module, and actionlint was given unsupported `-color never` arguments. Those invocations exited 1 before evaluating the intended gates. Rerunning from `tools/release` and using `NO_COLOR=1` produced the passing results above. The compilation, JSON, gitleaks, and diff checks in the same first batch had already passed.
+
+The final publisher regressions specifically prove that an intent report cannot be accepted as a result, a successful persisted-intent workflow step blocks when state artifacts are missing or expired, an unexpected failure after CurseForge returns a file ID preserves that ID while producing `UPLOAD_OUTCOME_UNKNOWN`, and authenticated catalog lookup accepts multiple `1.21.1` type records only when every ID is a positive non-boolean integer, binds a sorted unique ID set, rejects missing/invalid records before POST, and retains all four upload labels. They also prove that explicit accepted-file resume performs no version-list scan or POST, exact public proof precedes stale history and mutable aggregation, durable resume skips only that aggregate, and all new-upload paths still require it.
 
 ## Build artifact
 
