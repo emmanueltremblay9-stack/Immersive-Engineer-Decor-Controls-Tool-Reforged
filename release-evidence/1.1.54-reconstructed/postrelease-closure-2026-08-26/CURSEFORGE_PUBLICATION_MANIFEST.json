@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 2,
+  "projectId": 1555214,
+  "tag": "v1.1.54-reconstructed",
+  "version": "1.1.54-reconstructed",
+  "sourceRevision": {
+    "state": "COMMITTED_PENDING_PR_CI",
+    "commit": "2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715",
+    "localSourceHashes": {
+      "publisherSha256": "6A59D46067E0D97D2B8B25EB6A44477F4877640786ABF07E4F41DF4735E38010",
+      "publisherTestsSha256": "8CD93ECAD89B02FBEF4149C9C4422F4DDD0F851E994F0BE4193BEAC8FF221935",
+      "workflowSha256": "BD280594358BFE5CE87CC9CFECD34A79FF0A38DEEB3E2935572069DA948A9B88"
+    }
+  },
+  "asset": {
+    "githubReleaseId": 369309975,
+    "githubAssetId": 511687758,
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.54-reconstructed.jar",
+    "size": 2678440,
+    "sha256": "80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29"
+  },
+  "previousPublicBaseline": {
+    "fileId": 8420050,
+    "version": "1.1.41-reconstructed",
+    "releaseType": "release",
+    "gameVersionNames": [
+      "Client",
+      "Server",
+      "1.21.1",
+      "NeoForge"
+    ],
+    "relations": [
+      {"projectId": 313866, "slug": "engineers-decor", "type": "Include"},
+      {"projectId": 319716, "slug": "engineers-tools", "type": "Include"},
+      {"projectId": 296686, "slug": "redstone-gauges-and-switches", "type": "Include"},
+      {"projectId": 231951, "slug": "immersive-engineering", "type": "RequiredDependency"}
+    ],
+    "projectLevelRelationsVerified": true,
+    "newestFilesWithFullRelationSet": [8420050, 8304433, 8275637, 8261418],
+    "olderFilesBeforeIncludeConfiguration": [8221954, 8216068, 8152310]
+  },
+  "uploadContract": {
+    "gameVersionField": "gameVersionNames",
+    "relationsShape": "relations.projects",
+    "uploadedRelations": [
+      {"projectID": 231951, "slug": "immersive-engineering", "type": "requiredDependency"}
+    ],
+    "isMarkedForManualRelease": false,
+    "postRetries": 0,
+    "durableIntentRequired": true
+  },
+  "liveDryRun": {
+    "proofLevel": "LIVE_DRY_RUN",
+    "status": "AUTOMATION_READY_DRY_RUN",
+    "exitCode": 0,
+    "metadataSha256": "14886AF9E71407D12E664B853A21EF221715CD37349EA0B45A6BBC3981EFBE43",
+    "multipartSha256": "ABB81B6E0ED9B4586306ACE4B4E167E1C51C2631CF9B1ED4F24F6248F1271597",
+    "multipartSize": 2681730,
+    "reportPath": "CURSEFORGE_DRY_RUN_REPORT.json",
+    "reportSha256": "5F10F226C988C6E55FE7D1FAAF7FA30C9ACE7C5D24A2DE8A608830E6DADBBD20",
+    "uploadAttempted": false
+  },
+  "authorization": {
+    "authoritySource": "User-authorized executable autonomous no-computer-use closure prompt and later replacement-token confirmation",
+    "externalPrepublicationQuarantineDecision": "SCOPE_DERIVED_WAIVER",
+    "repositorySecretName": "CURSEFORGE_API_TOKEN",
+    "repositorySecretNamePresent": true,
+    "secretUpdatedAt": "2026-08-27T03:50:33Z",
+    "secretValueInspected": false,
+    "userConfirmedNewReplacement": true
+  },
+  "publication": {
+    "status": "NOT_PERFORMED_PENDING_MERGED_WORKFLOW",
+    "uploadAttempted": false,
+    "fileId": null,
+    "publicSize": null,
+    "publicSha256": null,
+    "publicHashMatch": null,
+    "publicRelationsVerified": false
+  }
+}

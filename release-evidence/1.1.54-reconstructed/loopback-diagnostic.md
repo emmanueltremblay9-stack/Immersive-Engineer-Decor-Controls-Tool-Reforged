@@ -1,5 +1,7 @@
 # Loopback diagnostic
 
+> Historical diagnostic snapshot (2026-08-12). Superseded by the controlled A/B evidence and decision in [postrelease-closure-2026-08-26/CLIENT_LOOPBACK_CAUSALITY.md](postrelease-closure-2026-08-26/CLIENT_LOOPBACK_CAUSALITY.md).
+
 Two Prism/Minecraft failures reported `Unable to establish loopback connection`, `WEPollSelectorImpl`, and `SocketException: Invalid argument: connect`. The local crash report SHA-256 is `41789BC67B5BB76E49C316F0B353CD7C2A48A3279ED6AFEC5537589AD008059A`; the downloaded `KPZt3HP` log SHA-256 is `6019C980225F8B1B15B626BAD0E869B25281B2784E34C3CCDC4051282CEB88D0`.
 
 Direct findings:

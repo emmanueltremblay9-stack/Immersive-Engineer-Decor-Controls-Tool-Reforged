@@ -1,5 +1,7 @@
 # Release evidence summary — 1.1.54-reconstructed
 
+> Historical qualification snapshot (2026-08-12). Its loopback and CurseForge statements, and the corresponding fields in `artifact-manifest.json`, are retained as evidence of what was known then. Current status is maintained in the [2026-08-26 post-release closure](postrelease-closure-2026-08-26/SUMMARY.md).
+
 Qualification status on 2026-08-12: the collision correction is verified by automated tests, a reproducible canonical JAR, a packaged NeoForge server smoke, and exact Prism installation readback. GitHub publication, supersession, and Notion connector readbacks passed; CurseForge publication is blocked by missing authorized configuration.
 
 - Artifact commit and tag target: `0d766573aeb563be3467dfb2df213e95b56f843a`.

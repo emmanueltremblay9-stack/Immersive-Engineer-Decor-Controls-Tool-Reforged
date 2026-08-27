@@ -1,5 +1,7 @@
 # CurseForge publication readback
 
+> Historical configuration snapshot (2026-08-12). Current automation and publication status is maintained in [postrelease-closure-2026-08-26/SUMMARY.md](postrelease-closure-2026-08-26/SUMMARY.md).
+
 Project ID: `1555214`.
 
 Configuration audit:
