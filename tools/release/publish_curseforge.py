@@ -540,7 +540,9 @@ class Publisher:
             for project_id, slug, relation_type in actual
         ]
 
-    def _validate_previous_public_baseline(self) -> dict[str, Any]:
+    def _validate_previous_public_baseline(
+        self, *, validate_project_relations: bool = True
+    ) -> dict[str, Any]:
         previous_id = int(self.cf["previousPublicFileId"])
         previous = self._public_file(previous_id)
         if set(previous.get("gameVersions", [])) != set(self.cf["gameVersionNames"]):
@@ -554,11 +556,17 @@ class Publisher:
                 "CURSEFORGE_BASELINE_RELEASE_TYPE_DRIFTED",
                 "Previous public file release type drifted",
             )
-        return {
+        baseline = {
             "previousFileId": previous_id,
             "previousFileRelations": self._validate_expected_relations(previous_id),
-            "projectRelations": self._validate_expected_project_relations(),
         }
+        if validate_project_relations:
+            baseline["projectRelations"] = self._validate_expected_project_relations()
+            baseline["projectRelationsCheck"] = "MATCHED"
+        else:
+            baseline["projectRelations"] = None
+            baseline["projectRelationsCheck"] = "SKIPPED_ACCEPTED_FILE_RESUME"
+        return baseline
 
     def _list_public_files(self) -> list[dict[str, Any]]:
         project = self.cf["projectId"]
@@ -1271,28 +1279,15 @@ class Publisher:
                     work_dir, github_token
                 )
                 changelog = self._changelog()
-                report["curseForgeBaseline"] = self._validate_previous_public_baseline()
                 report["githubRelease"] = {
                     "assetId": github_asset.get("id"),
                     "assetDigest": github_asset.get("digest"),
                     "sourceHashMatch": source_sha == self.release["assetSha256"],
                 }
-                existing = self._find_existing_release(work_dir)
-                if existing is not None:
-                    report.update(
-                        {
-                            "status": "ALREADY_PUBLISHED",
-                            "verdict": "PASS",
-                            "fileId": existing["fileId"],
-                            "publicReadback": existing,
-                            "publicSize": existing["size"],
-                            "publicSha256": existing["sha256"],
-                            "publicHashMatch": True,
-                            "postRequired": False,
-                        }
-                    )
-                    return report
                 if resume_file_id is not None:
+                    report["curseForgeBaseline"] = self._validate_previous_public_baseline(
+                        validate_project_relations=False
+                    )
                     report["fileId"] = resume_file_id
                     observed = self._poll_public(
                         resume_file_id, work_dir, poll_attempts, poll_interval
@@ -1304,6 +1299,25 @@ class Publisher:
                             "publicReadback": observed,
                             "publicSize": observed["size"],
                             "publicSha256": observed["sha256"],
+                            "publicHashMatch": True,
+                            "postRequired": False,
+                        }
+                    )
+                    return report
+
+                existing = self._find_existing_release(work_dir)
+                if existing is not None:
+                    report["curseForgeBaseline"] = self._validate_previous_public_baseline(
+                        validate_project_relations=False
+                    )
+                    report.update(
+                        {
+                            "status": "ALREADY_PUBLISHED",
+                            "verdict": "PASS",
+                            "fileId": existing["fileId"],
+                            "publicReadback": existing,
+                            "publicSize": existing["size"],
+                            "publicSha256": existing["sha256"],
                             "publicHashMatch": True,
                             "postRequired": False,
                         }
@@ -1328,6 +1342,7 @@ class Publisher:
                     }
                 )
                 if mode == "dry-run":
+                    report["curseForgeBaseline"] = self._validate_previous_public_baseline()
                     report.update(
                         {
                             "status": "AUTOMATION_READY_DRY_RUN",
@@ -1345,6 +1360,9 @@ class Publisher:
                         github_token, run_key
                     )
                     if prior_file_id is not None:
+                        report["curseForgeBaseline"] = self._validate_previous_public_baseline(
+                            validate_project_relations=False
+                        )
                         report["fileId"] = prior_file_id
                         observed = self._poll_public(
                             prior_file_id, work_dir, poll_attempts, poll_interval
@@ -1362,6 +1380,7 @@ class Publisher:
                             }
                         )
                         return report
+                    report["curseForgeBaseline"] = self._validate_previous_public_baseline()
                     if not curseforge_token:
                         raise PublicationError(
                             "BLOCKED_BY_MISSING_CURSEFORGE_API_TOKEN",
@@ -1379,6 +1398,7 @@ class Publisher:
                     )
                     return report
 
+                report["curseForgeBaseline"] = self._validate_previous_public_baseline()
                 if not curseforge_token:
                     raise PublicationError(
                         "BLOCKED_BY_MISSING_CURSEFORGE_API_TOKEN",
