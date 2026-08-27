@@ -191,14 +191,7 @@ class Handler(BaseHTTPRequestHandler):
             if token == "forbidden-secret":
                 self._json({"error": "forbidden"}, 403)
                 return
-            self._json(
-                [
-                    {"id": 1, "name": "Client"},
-                    {"id": 2, "name": "Server"},
-                    {"id": 3, "name": "1.21.1"},
-                    {"id": 4, "name": "NeoForge"},
-                ]
-            )
+            self._json([{"id": 3, "name": "1.21.1"}])
             return
         artifacts_path = "/repos/test-owner/test-repo/actions/artifacts"
         workflow_runs_path = (
@@ -386,6 +379,7 @@ class PublisherTests(unittest.TestCase):
                 "releaseType": "release",
                 "isMarkedForManualRelease": False,
                 "gameVersionNames": ["Client", "Server", "1.21.1", "NeoForge"],
+                "gameVersionLookupNames": ["1.21.1"],
                 "uploadRelations": UPLOAD_RELATIONS,
                 "expectedPublicRelations": EXPECTED_RELATIONS,
             },
@@ -546,6 +540,28 @@ class PublisherTests(unittest.TestCase):
                 self.assertEqual(expected, raised.exception.status)
                 self.assertEqual(EXIT_AUTHORIZATION, raised.exception.exit_code)
                 self.assertNotIn(token, str(raised.exception))
+
+    def test_prepare_resolves_only_configured_lookup_names(self) -> None:
+        report = self.run_publisher(
+            mode="prepare-publish",
+            token="valid-secret",
+            github_token="github-secret",
+            run_key="100-1",
+        )
+        self.assertEqual("UPLOAD_INTENT_READY", report["status"])
+        self.assertEqual({"1.21.1": 3}, report["resolvedGameVersions"])
+        self.assertEqual(0, self.state.post_count)
+
+        self.manifest["curseforge"]["gameVersionLookupNames"] = ["1.21.1", "Client"]
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher(
+                mode="prepare-publish",
+                token="valid-secret",
+                github_token="github-secret",
+                run_key="101-1",
+            )
+        self.assertEqual("CURSEFORGE_GAME_VERSION_UNRESOLVED", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
 
     def test_transport_timeout_fails_closed(self) -> None:
         client = HttpClient(timeout=0.01, get_attempts=1)

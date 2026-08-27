@@ -26,6 +26,9 @@
       "1.21.1",
       "NeoForge"
     ],
+    "gameVersionLookupNames": [
+      "1.21.1"
+    ],
     "uploadRelations": [
       {
         "projectID": 231951,

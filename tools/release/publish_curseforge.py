@@ -264,8 +264,29 @@ def load_manifest(path: Path) -> dict[str, Any]:
             "curseforge.isMarkedForManualRelease must be an explicit boolean",
         )
     names = curseforge.get("gameVersionNames")
-    if not isinstance(names, list) or not names or len(set(names)) != len(names):
-        raise PublicationError("MANIFEST_INVALID", "gameVersionNames must be unique")
+    if (
+        not isinstance(names, list)
+        or not names
+        or not all(isinstance(name, str) and name for name in names)
+        or len(set(names)) != len(names)
+    ):
+        raise PublicationError(
+            "MANIFEST_INVALID", "gameVersionNames must be non-empty unique strings"
+        )
+    lookup_names = curseforge.get("gameVersionLookupNames")
+    if (
+        not isinstance(lookup_names, list)
+        or not lookup_names
+        or not all(isinstance(name, str) and name for name in lookup_names)
+        or len(set(lookup_names)) != len(lookup_names)
+    ):
+        raise PublicationError(
+            "MANIFEST_INVALID", "gameVersionLookupNames must be non-empty unique strings"
+        )
+    if not set(lookup_names).issubset(names):
+        raise PublicationError(
+            "MANIFEST_INVALID", "gameVersionLookupNames must be present in gameVersionNames"
+        )
     for relation in curseforge.get("uploadRelations", []):
         if relation.get("type") not in SUPPORTED_UPLOAD_RELATIONS:
             raise PublicationError(
@@ -687,7 +708,7 @@ class Publisher:
             )
         return self._validate_public_release(matching[0], work_dir)
 
-    def _resolve_game_version_ids(self, token: str) -> list[int]:
+    def _resolve_game_version_ids(self, token: str) -> dict[str, int]:
         try:
             result = self.http.get_json(
                 f"{self.upload_api}/api/game/versions",
@@ -714,15 +735,15 @@ class Publisher:
                 "CURSEFORGE_GAME_VERSIONS_INVALID",
                 "CurseForge game-version response is invalid",
             )
-        resolved: list[int] = []
-        for expected_name in self.cf["gameVersionNames"]:
+        resolved: dict[str, int] = {}
+        for expected_name in self.cf["gameVersionLookupNames"]:
             matches = [item for item in values if item.get("name") == expected_name]
             if len(matches) != 1 or not isinstance(matches[0].get("id"), int):
                 raise PublicationError(
                     "CURSEFORGE_GAME_VERSION_UNRESOLVED",
                     f"CurseForge game version could not be resolved uniquely: {expected_name}",
                 )
-            resolved.append(matches[0]["id"])
+            resolved[expected_name] = matches[0]["id"]
         return resolved
 
     def _state_artifact_prefix(self) -> str:
@@ -1330,8 +1351,7 @@ class Publisher:
                             "CURSEFORGE_API_TOKEN is not configured",
                             EXIT_TOKEN_MISSING,
                         )
-                    game_version_ids = self._resolve_game_version_ids(curseforge_token)
-                    resolved = dict(zip(self.cf["gameVersionNames"], game_version_ids, strict=True))
+                    resolved = self._resolve_game_version_ids(curseforge_token)
                     report.update(
                         {
                             "status": "UPLOAD_INTENT_READY",
@@ -1359,8 +1379,7 @@ class Publisher:
                     intent_artifact_id,
                     multipart_sha256,
                 )
-                game_version_ids = self._resolve_game_version_ids(curseforge_token)
-                resolved = dict(zip(self.cf["gameVersionNames"], game_version_ids, strict=True))
+                resolved = self._resolve_game_version_ids(curseforge_token)
                 self._validate_intent_report(
                     intent_report,
                     run_key=run_key,
