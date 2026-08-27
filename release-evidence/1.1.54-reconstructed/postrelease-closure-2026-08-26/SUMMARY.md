@@ -17,9 +17,11 @@ This directory is the authoritative entry point for the client-loopback diagnosi
 
 - Project: 1555214.
 - Canonical source: the existing public GitHub `v1.1.54-reconstructed` JAR, 2,678,440 bytes, SHA-256 `80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29`.
-- Guarded publisher tests: 27/27 passed locally.
+- Guarded publisher tests: 28/28 passed locally, including the catalog-backed game-version lookup regression.
 - The GitHub Actions secret name `CURSEFORGE_API_TOKEN` exists; its value was never read or printed. The user confirmed it contains a newly generated replacement for the token previously exposed in chat.
 - The final workflow separates secret-free dry-run from authenticated prepare/publish, keeps intent and result reports physically separate, persists an exact upload intent before the one non-retried POST, and uses workflow-run/job metadata—while GitHub keeps it queryable—to block when result artifacts are missing or expired.
+- PR 3 merged the guarded workflow to `main` at `1b3d4db1ae2215deb754ed8c37ce9352aa428c67`; both Build checks and the first merged secret-free dry run passed.
+- The first authenticated workflow run stopped during prepare with `CURSEFORGE_GAME_VERSION_UNRESOLVED`. Intent persistence and upload steps were skipped, the run produced no artifact, and public state remained without a 1.1.54 file. The corrective implementation is commit `0f2117d1153d8122ca371f0a3478761fa7c89789`, pending PR/CI.
 - Real-publication status and file ID will be recorded here only after public metadata, dependency, size, JAR identity, and SHA-256 readbacks pass.
 
 ## Proof taxonomy
@@ -45,6 +47,7 @@ The upload API supports only the explicit Immersive Engineering `requiredDepende
 - Java/JVM probes: `LOOPBACK_PROBES.md`, `JAVA_JVM_MANIFEST.md`
 - Historical crash and static target audit: `CRASH_AUDIT.md`
 - Publisher design and publication state: `CURSEFORGE_AUTOMATION.md`, `CURSEFORGE_PUBLICATION_MANIFEST.json`
+- GitHub integration and guarded-attempt chronology: `GITHUB_CURSEFORGE_CLOSURE.md`
 - Local build/test/scanner gates: `LOCAL_VALIDATION.md`
 - Original and Prism preservation: `PRESERVATION_POSTFLIGHT.md`, `PRISM_INVENTORY.md`
 - Sanitized commands: `COMMAND_LEDGER.md`
