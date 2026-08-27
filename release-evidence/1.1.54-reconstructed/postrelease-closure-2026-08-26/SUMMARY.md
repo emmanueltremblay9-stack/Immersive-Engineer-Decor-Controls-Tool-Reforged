@@ -24,7 +24,8 @@ This directory is the authoritative entry point for the client-loopback diagnosi
 - Authenticated run 33043440815 persisted intent artifact 9634723269, issued exactly one non-retried upload POST, received file ID 8744461, and retained `UPLOADED_PROCESSING` result artifact 9634910382. No second upload POST occurred.
 - Public file 8744461 is approved with exact filename/display name, release type, labels, size, redownload SHA-256, NeoForge mod ID, and embedded version. The public artifact itself matches the canonical GitHub release JAR.
 - Public file/project relation readback contains only Immersive Engineering `RequiredDependency`; the three approved public `Include` relations are missing. The official write API does not accept `Include`, and the public enum distinguishes it from `EmbeddedLibrary`. Independent review therefore blocked the proposed metadata repair before any update POST.
-- Commit `06f88fbf7ed734d400067511de587249251d2a8e` keeps explicit, exact-public, and durable accepted-file resume paths read-only while preserving every file-level relation/hash/metadata gate. Integration [PR 6](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6) is open; final-head CI remains pending at this snapshot.
+- Commit `06f88fbf7ed734d400067511de587249251d2a8e` keeps explicit, exact-public, and durable accepted-file resume paths read-only while preserving every file-level relation/hash/metadata gate. Integration [PR 6](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6) merged at `da3aca4dedc76253a12f9a1bfb24b5f603641ae3`; both final-head Build runs passed and that immutable merge tree is byte-identical to the final PR head.
+- The existing Notion project-notes page was updated with this split engineering/publication verdict and read back successfully. The external register does not promote the missing `Include` relations to PASS.
 
 ## Proof taxonomy
 
@@ -52,6 +53,7 @@ The upload API supports only the explicit Immersive Engineering `requiredDepende
 - Public artifact/readback and blocker: `CURSEFORGE_PUBLIC_READBACK.json`, `CURSEFORGE_RELATION_BLOCKER.md`
 - GitHub integration and guarded-attempt chronology: `GITHUB_CURSEFORGE_CLOSURE.md`
 - Local build/test/scanner gates: `LOCAL_VALIDATION.md`
+- Independent final verdict and claim boundaries: `REALITY_CHECK.md`
 - Original and Prism preservation: `PRESERVATION_POSTFLIGHT.md`, `PRISM_INVENTORY.md`
 - Sanitized commands: `COMMAND_LEDGER.md`
 

@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "observedAtUtc": "2026-08-27T06:38:31Z",
+  "finalRecheckAtUtc": "2026-08-27T07:17:23Z",
   "projectId": 1555214,
   "file": {
     "id": 8744461,
@@ -15,6 +16,7 @@
     "size": 2678440,
     "sha256": "80F6FF3364A7ECFF96D8EA4C4F7ECBF165793A35D145ED7B3ACBB6863E660E29",
     "hashMatchesCanonicalGitHubAsset": true,
+    "finalPublicRedownloadHashMatch": true,
     "embeddedModId": "immersive_engineer_decor_controls_tool_reforged",
     "embeddedVersion": "1.1.54-reconstructed"
   },

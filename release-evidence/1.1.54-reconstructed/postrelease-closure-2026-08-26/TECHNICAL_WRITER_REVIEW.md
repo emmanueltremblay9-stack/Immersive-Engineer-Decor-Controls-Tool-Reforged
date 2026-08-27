@@ -59,3 +59,13 @@ Earlier prototype wording that treated `embeddedLibrary` as an official name for
 `ACCEPTED_FILE_RESUME_TECHNICAL_WRITER_GATE: PASS`
 
 `PUBLICATION_DOCUMENTATION_VERDICT: BLOCKED_PUBLIC_RELATION_MISMATCH`
+
+## Final external-evidence review and correction
+
+The final read-only external-evidence review first found that `CURSEFORGE_PUBLICATION_MANIFEST.json` used the ambiguous field name `updatedAt` for a locally observed Notion readback time. The evidence owner corrected it to `readbackObservedAtUtc` and separately recorded the connector-reported `pageSourceAsOfUtc=2026-08-27T07:23:02.686Z`. Direct Notion fetch readback matched that source time and every required merge, CI, file/hash, token-boundary, preservation, and blocked-publication anchor.
+
+The follow-up review confirmed the timestamp correction but found that command-ledger row 093 cited this review file before the correction was recorded here. This section closes that evidence-chain gap. It also records that PR 6 merged final head `af4a209b6347aeb5633b196950287c7f226e502f` as `da3aca4dedc76253a12f9a1bfb24b5f603641ae3`, both final-head Build runs passed, current Notion wiki fields no longer report missing configuration, and historical dated snapshots remain preserved.
+
+The public artifact remains exact and approved, while three required public `Include` relations remain absent. No documentation statement promotes the CurseForge publication verdict beyond `BLOCKED_PUBLIC_RELATION_MISMATCH`.
+
+`FINAL_EXTERNAL_EVIDENCE_TECHNICAL_WRITER_GATE: PASS`

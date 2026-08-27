@@ -95,11 +95,15 @@ Commit `06f88fbf7ed734d400067511de587249251d2a8e` keeps accepted-file verificati
 4. the approved baseline file and exact target-file metadata, relations, size, hash, mod ID, and version remain mandatory;
 5. project-level aggregation remains mandatory whenever a new upload path is still possible.
 
-The final suite is 29/29, Python compilation and `git diff --check` pass, actionlint 1.7.12 passes, and gitleaks scans approximately 28.87 MB with no leak. Independent code and documentation reviews pass this reduced diff.
+The final suite is 29/29, Python compilation and `git diff --check` pass, actionlint 1.7.12 passes, and gitleaks scans approximately 28.91 MB with no leak. Independent code and documentation reviews pass this reduced diff.
 
-[PR 6](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6) was opened from `codex/curseforge-resume-after-project-drift` against exact base `f29c73370e586df33c0c0036603a816c53082903`. Its initial evidence-bearing head was `816229e69115902ce99e81da699f36bd9cd5e98d`; the final evidence-anchor follow-up and final-head CI remain pending at this snapshot.
+[PR 6](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6) merged the final head `af4a209b6347aeb5633b196950287c7f226e502f` at `da3aca4dedc76253a12f9a1bfb24b5f603641ae3` on 2026-08-27T07:11:20Z. Final-head Build runs [33048567765](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/33048567765) and [33048570171](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/33048570171) both passed. A fresh `origin/main` fetch proved the PR head is an ancestor and its tree is byte-identical to the merge tree.
 
-`ACCEPTED_FILE_RESUME_PR_CI_AT_THIS_SNAPSHOT: OPEN_PENDING`
+The existing Notion page [Immersive Engineer Decor&Controls&Tool Reforged - Project Notes](https://app.notion.com/p/38155c71723380939727f07575d5a98e) was updated with the exact merge, CI, public file/hash, token-handling boundary, preservation result, and relation blocker. Direct fetch readback found every anchor and retained `BLOCKED_PUBLIC_RELATION_MISMATCH`.
+
+`ACCEPTED_FILE_RESUME_PR_CI: PASS`
+
+`NOTION_READBACK: PASS`
 
 A proposed metadata-only relation repair was removed before commit or POST. Official CurseForge documentation does not accept `Include` in upload/update writes, and its public enum distinguishes `Include` from `EmbeddedLibrary`; submitting `embeddedLibrary` could produce materially different metadata. Computer Use is prohibited, so no legacy/dashboard editor was used.
 

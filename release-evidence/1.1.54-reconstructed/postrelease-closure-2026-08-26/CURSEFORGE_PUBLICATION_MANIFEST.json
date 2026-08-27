@@ -4,7 +4,7 @@
   "tag": "v1.1.54-reconstructed",
   "version": "1.1.54-reconstructed",
   "sourceRevision": {
-    "state": "PUBLIC_FILE_RELATION_BLOCKED_RESUME_FIX_PR6_OPEN_CI_PENDING",
+    "state": "PUBLIC_FILE_RELATION_BLOCKED_RESUME_FIX_MERGED",
     "baseImplementationCommit": "2d186c5fdfcc082c5cb7b350eb5694ff5ee9f715",
     "preflightSplitCommit": "0f2117d1153d8122ca371f0a3478761fa7c89789",
     "multiRecordCommit": "0b3ced31b54444b312577fb23485a1e4eac132cc",
@@ -95,7 +95,32 @@
     "resumeFixCommit": "06f88fbf7ed734d400067511de587249251d2a8e",
     "resumeFixPullRequest": 6,
     "resumeFixPullRequestUrl": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/6",
-    "resumeFixPullRequestState": "OPEN_CI_PENDING"
+    "resumeFixPullRequestHead": "af4a209b6347aeb5633b196950287c7f226e502f",
+    "resumeFixPullRequestState": "MERGED",
+    "resumeFixMergeCommit": "da3aca4dedc76253a12f9a1bfb24b5f603641ae3",
+    "resumeFixBuildRunIds": [33048567765, 33048570171],
+    "resumeFixMergedAt": "2026-08-27T07:11:20Z"
+  },
+  "notionReadback": {
+    "pageId": "38155c71-7233-8093-9727-f07575d5a98e",
+    "url": "https://app.notion.com/p/38155c71723380939727f07575d5a98e",
+    "readbackObservedAtUtc": "2026-08-27T07:23:17Z",
+    "pageSourceAsOfUtc": "2026-08-27T07:23:02.686Z",
+    "readbackVerified": true,
+    "canonicalWikiFieldsUpdated": true,
+    "publicationStatus": "BLOCKED_PUBLIC_RELATION_MISMATCH",
+    "blocker": "BLOCKED_BY_CURSEFORGE_INCLUDE_RELATION_API_GAP"
+  },
+  "realityCheck": {
+    "engineeringVerdict": "PASS",
+    "automationVerdict": "PASS_WITH_SCOPED_GAPS",
+    "publicationVerdict": "BLOCKED_PUBLIC_RELATION_MISMATCH",
+    "evidenceGate": "PASS_FOR_BLOCKED_VERDICT",
+    "reviewGate": "PASS",
+    "executionGate": "PASS",
+    "publicationPostcondition": "FAIL",
+    "finalVerdict": "BLOCKED",
+    "reportPath": "REALITY_CHECK.md"
   },
   "publicationAttempts": [
     {
