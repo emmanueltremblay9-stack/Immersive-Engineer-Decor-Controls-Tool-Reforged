@@ -1,0 +1,19 @@
+{
+  "schema": "iedct-prism-preservation-comparison-v1",
+  "compared_at_utc": "2026-09-05T03:42:34.0945536Z",
+  "pre_manifest": "C:\\AI-Work\\iedct-residual-gaps-20260904-232647\\prism-preservation\\prism-pre.json",
+  "post_manifest": "C:\\AI-Work\\iedct-residual-gaps-20260904-232647\\prism-preservation\\prism-post.json",
+  "pre_jar_count": 51,
+  "post_jar_count": 51,
+  "pre_unrelated_count": 50,
+  "post_unrelated_count": 50,
+  "missing_unrelated": [],
+  "added_unrelated": [],
+  "changed_unrelated": [],
+  "unchanged_unrelated_count": 50,
+  "target_count": 1,
+  "target_name": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+  "target_size": 2689752,
+  "target_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+  "verdict": "PASS"
+}

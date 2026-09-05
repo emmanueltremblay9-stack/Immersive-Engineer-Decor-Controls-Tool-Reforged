@@ -1,0 +1,19 @@
+{
+  "schema": "iedct-interrupted-process-postflight-v1",
+  "captured_at_utc": "2026-09-05T04:49:54.6520692Z",
+  "historical_pids": [
+    {
+      "pid": 9976,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 9452,
+      "state": "ABSENT"
+    }
+  ],
+  "current_java_prism_processes": [],
+  "interrupted_client_process_state": "ALREADY_EXITED",
+  "disposable_minecraft_process": "ALREADY_EXITED",
+  "prism_general_process": "NOT_RUNNING",
+  "unrelated_processes_terminated": 0
+}

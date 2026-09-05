@@ -1,0 +1,3 @@
+# Preserve acquired JSON evidence byte-for-byte so recorded SHA-256 values remain portable.
+# The acquired manifests use CRLF; classify CR as part of the line ending for whitespace checks.
+*.json -text whitespace=cr-at-eol

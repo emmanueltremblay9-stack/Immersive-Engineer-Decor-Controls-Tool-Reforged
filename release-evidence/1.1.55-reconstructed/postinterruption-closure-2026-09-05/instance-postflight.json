@@ -1,0 +1,40 @@
+{
+  "schema": "iedct-disposable-instance-postflight-v1",
+  "captured_at_utc": "2026-09-05T04:49:56.8422597Z",
+  "instance_path": "C:\\Users\\Emmanuel Tremblay\\AppData\\Roaming\\PrismLauncher\\instances\\IEDCT-VISUAL-115-20260904",
+  "instance_created_utc": "2026-09-05T03:43:28.2685127Z",
+  "instance_last_write_utc": "2026-09-05T03:59:10.7104773Z",
+  "base_template": "C:\\AI-Work\\iedct-postrelease-closure-20260826-215006-external\\prism\\instance-template-control0",
+  "base_template_non_target_count": 50,
+  "instance_non_target_union_count": 50,
+  "base_missing": [],
+  "base_added": [],
+  "base_changed": [],
+  "base_identity_match": true,
+  "active_mod_count": 3,
+  "disabled_mod_count": 48,
+  "world_name": "neutral-world",
+  "world_file_count": 14,
+  "world_tree_sha256": "394BD1F52D5598416EFAD600BBCBF1C7CAD26D028648A13794F75028C5A70EFB",
+  "screenshot_count": 0,
+  "target_count": 1,
+  "target_name": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+  "target_size": 2689752,
+  "target_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+  "log_copies": {
+    "minecraft-latest.log": {
+      "size": 27080,
+      "sha256": "71750E30AF3ADB82C898F70108A7A999AF9CAE40743EF90F662EBB880A0FEDA1"
+    },
+    "minecraft-debug.log": {
+      "size": 193322,
+      "sha256": "963876BBB82717F8F7A579225634ED2DCE6581C6208DA455F2C0B8DE68A5338D"
+    },
+    "instance.cfg": {
+      "size": 4451,
+      "sha256": "214D3EEF75FD4EFE0710A417418A41720D028775053835DEB66AB57CFD38982F"
+    }
+  },
+  "unique_evidence_copied": true,
+  "cleanup_eligibility": "CONCLUSIVELY_DISPOSABLE_AFTER_EVIDENCE_COPY"
+}

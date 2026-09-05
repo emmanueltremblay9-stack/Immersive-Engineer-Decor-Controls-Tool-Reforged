@@ -1,0 +1,20 @@
+{
+  "schema": "iedct-disposable-instance-cleanup-v1",
+  "captured_at_utc": "2026-09-05T04:57:19.2912800Z",
+  "deletion_attempt": "BLOCKED_BEFORE_EXECUTION_BY_TOOL_POLICY",
+  "fallback": "RECOVERABLE_QUARANTINE_MOVE",
+  "original_instance_path": "C:\\Users\\Emmanuel Tremblay\\AppData\\Roaming\\PrismLauncher\\instances\\IEDCT-VISUAL-115-20260904",
+  "original_instance_absent": true,
+  "quarantine_path": "C:\\AI-Work\\iedct-residual-gaps-20260904-232647\\quarantine\\IEDCT-VISUAL-115-20260904",
+  "quarantine_present": true,
+  "quarantined_file_count": 346,
+  "quarantined_byte_count": 508237710,
+  "original_temp_path": "C:\\AI-Work\\iedct-tmp-visual-20260904",
+  "original_temp_absent": true,
+  "temp_quarantine_path": "C:\\AI-Work\\iedct-residual-gaps-20260904-232647\\quarantine\\iedct-tmp-visual-20260904",
+  "temp_quarantine_present": true,
+  "java_or_prism_process_count": 0,
+  "unrelated_processes_terminated": 0,
+  "deleted": false,
+  "recovery": "Move the quarantined directories back to their exact original paths while Prism and Java are stopped."
+}
