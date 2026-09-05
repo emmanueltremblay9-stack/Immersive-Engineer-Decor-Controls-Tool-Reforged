@@ -1,0 +1,24 @@
+JAR: immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar
+Size: 2689752 bytes
+SHA-256: 956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C
+Entry count: 2984
+
+PRESENT META-INF/MANIFEST.MF
+PRESENT META-INF/neoforge.mods.toml
+PRESENT com/oblixorprime/engineersdecorreforged/block/PortedBlocks$DirectionalShapeBlock.class
+PRESENT com/oblixorprime/engineersdecorreforged/block/PortedBlocks$OppositeFaceLightBlock.class
+PRESENT com/oblixorprime/engineersdecorreforged/block/PortedBlocks$HorizontalLookLightBlock.class
+PRESENT com/oblixorprime/engineersdecorreforged/block/PortedBlocks$SteelFramedWindowBlock.class
+PRESENT assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_decor.json
+PRESENT assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_defense.json
+
+Specification-Version: 1.1.55-reconstructed
+Implementation-Version: 1.1.55-reconstructed
+modId: immersive_engineer_decor_controls_tool_reforged
+embedded version: 1.1.55-reconstructed
+NeoForge: required [21.1.230,)
+Minecraft: required [1.21.1]
+Immersive Engineering: required [12.4.2-194,)
+JEI: optional [19.32.0.359,)
+
+Both sign item resources use parent item/generated, gui_light front, one front-texture layer, explicit identity GUI/head transforms, and no volumetric elements.
