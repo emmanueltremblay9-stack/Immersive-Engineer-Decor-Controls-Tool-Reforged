@@ -456,7 +456,7 @@ class PublisherTests(unittest.TestCase):
         )
         return report, artifact_id
 
-    def record_persisted_intent_step(self, run_key: str) -> None:
+    def record_persisted_intent_step(self, run_key: str, tag: str = TAG) -> None:
         run_id_text, attempt_text = run_key.split("-", 1)
         run_id = int(run_id_text)
         attempt = int(attempt_text)
@@ -464,7 +464,13 @@ class PublisherTests(unittest.TestCase):
         if matches:
             matches[0]["run_attempt"] = max(matches[0]["run_attempt"], attempt)
         else:
-            self.state.workflow_runs.append({"id": run_id, "run_attempt": attempt})
+            self.state.workflow_runs.append(
+                {
+                    "id": run_id,
+                    "run_attempt": attempt,
+                    "display_title": f"CurseForge {tag} :: publish",
+                }
+            )
         self.state.workflow_jobs[(run_id, attempt)] = [
             {
                 "steps": [
@@ -760,6 +766,55 @@ class PublisherTests(unittest.TestCase):
             )
         self.assertEqual("UPLOAD_OUTCOME_UNKNOWN", raised.exception.status)
         self.assertEqual(EXIT_CONFLICT, raised.exception.exit_code)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_prior_persisted_state_for_another_tag_does_not_block(self) -> None:
+        prior_tag = "v1.1.53-reconstructed"
+        run_key = "99-1"
+        prior_prefix = f"iedct-cf-{prior_tag}--"
+        self.record_persisted_intent_step(run_key, tag=prior_tag)
+        self.state.artifacts.extend(
+            [
+                {
+                    "id": 7000,
+                    "name": f"{prior_prefix}{run_key}--intent--abcdef123456",
+                    "expired": False,
+                },
+                {
+                    "id": 7001,
+                    "name": (
+                        f"{prior_prefix}{run_key}--result--"
+                        f"UPLOADED_PROCESSING--{NEW_FILE_ID}"
+                    ),
+                    "expired": False,
+                },
+            ]
+        )
+
+        report = self.run_publisher(
+            mode="prepare-publish",
+            token="valid-secret",
+            github_token="github-secret",
+            run_key="100-1",
+        )
+
+        self.assertEqual("UPLOAD_INTENT_READY", report["status"])
+        self.assertIs(True, report["postRequired"])
+        self.assertNotIn("durableStateResume", report)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_workflow_history_without_display_title_fails_closed(self) -> None:
+        self.state.workflow_runs.append({"id": 99, "run_attempt": 1})
+
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher(
+                mode="prepare-publish",
+                token="valid-secret",
+                github_token="github-secret",
+                run_key="100-1",
+            )
+
+        self.assertEqual("GITHUB_WORKFLOW_HISTORY_INVALID", raised.exception.status)
         self.assertEqual(0, self.state.post_count)
 
     def test_stale_intent_cannot_be_accepted_as_result(self) -> None:
