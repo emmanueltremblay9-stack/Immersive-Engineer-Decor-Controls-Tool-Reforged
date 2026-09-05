@@ -43,6 +43,17 @@ public final class AccesswayBlockGameTests {
    private static final BlockPos LOWER_POS = new BlockPos(1, 1, 1);
    private static final BlockPos UPPER_POS = LOWER_POS.above();
    private static final String ASSET_ROOT = "/assets/immersive_engineer_decor_controls_tool_reforged/";
+   private static final VoxelShape UPSTREAM_INSET_LIGHT_SHAPE = Block.box(5.2, 5.2, 0.0, 10.8, 10.8, 0.3);
+   private static final VoxelShape UPSTREAM_FLOOR_EDGE_LIGHT_SHAPE = Block.box(5.0, 0.0, 0.0, 11.0, 2.0, 0.5);
+   private static final VoxelShape UPSTREAM_CEILING_EDGE_LIGHT_SHAPE = Shapes.or(
+      Block.box(0.0, 15.5, 0.0, 16.0, 16.0, 2.0),
+      Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 0.5),
+      Block.box(0.0, 14.0, 0.0, 1.0, 16.0, 2.0),
+      Block.box(15.0, 14.0, 0.0, 16.0, 16.0, 2.0)
+   );
+   private static final VoxelShape UPSTREAM_BULB_LIGHT_SHAPE = Shapes.or(
+      Block.box(6.5, 6.5, 1.0, 9.5, 9.5, 4.0), Block.box(6.0, 6.0, 0.0, 10.0, 10.0, 1.0)
+   );
 
    private AccesswayBlockGameTests() {
    }
@@ -308,16 +319,271 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void surface_mounted_blocks_drop_when_support_is_removed(GameTestHelper helper) {
-      BlockPos supportPos = new BlockPos(2, 2, 2);
-      BlockPos lightPos = supportPos.north();
-      Block light = (Block)ModBlocks.IRON_BULB_LIGHT.get();
-      helper.setBlock(supportPos, Blocks.STONE);
-      helper.setBlock(lightPos, (BlockState)light.defaultBlockState().setValue(PortedBlocks.FACING, Direction.NORTH));
-      helper.assertTrue(helper.getBlockState(lightPos).is(light), "surface-mounted fixture should start attached to its support");
-      helper.setBlock(supportPos, Blocks.AIR);
+   public static void steel_framed_window_uses_centered_axis_shape(GameTestHelper helper) {
+      Block window = (Block)ModBlocks.STEEL_FRAMED_WINDOW.get();
+      for (Direction facing : Direction.values()) {
+         BlockState state = (BlockState)window.defaultBlockState().setValue(PortedBlocks.FACING, facing);
+         VoxelShape outline = state.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+         switch (facing.getAxis()) {
+            case X -> assertShapeBounds(helper, outline, 7.5, 0.0, 0.0, 8.5, 16.0, 16.0, "window should be centered on the X axis");
+            case Y -> assertShapeBounds(helper, outline, 0.0, 7.5, 0.0, 16.0, 8.5, 16.0, "window should be centered on the Y axis");
+            case Z -> assertShapeBounds(helper, outline, 0.0, 0.0, 7.5, 16.0, 16.0, 8.5, "window should be centered on the Z axis");
+         }
+      }
+
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void steel_framed_window_placement_follows_view_and_neighbor_alignment(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      Block window = (Block)ModBlocks.STEEL_FRAMED_WINDOW.get();
+      for (float yaw : new float[]{0.0F, 90.0F, 180.0F, 270.0F}) {
+         player.setYRot(yaw);
+         BlockPlaceContext context = placementContext(helper, player, window, LOWER_POS, 0.5, 0.5, 0.5, Direction.UP);
+         BlockState state = window.getStateForPlacement(context);
+         helper.assertTrue(state != null, "window placement state should not be null");
+         helper.assertValueEqual(
+            state.getValue(PortedBlocks.FACING), context.getHorizontalDirection(), "window should orient in the player's horizontal look direction"
+         );
+      }
+
+      for (float pitch : new float[]{-90.0F, 90.0F}) {
+         player.setXRot(pitch);
+         BlockPlaceContext context = placementContext(helper, player, window, LOWER_POS, 0.5, 0.5, 0.5, Direction.NORTH);
+         BlockState state = window.getStateForPlacement(context);
+         helper.assertTrue(state != null, "vertical window placement state should not be null");
+         helper.assertValueEqual(
+            state.getValue(PortedBlocks.FACING), context.getNearestLookingDirection(), "a steep view should orient the window on a horizontal plane"
+         );
+      }
+
+      player.setXRot(0.0F);
+      BlockPos continuationPos = new BlockPos(4, 2, 4);
+      helper.setBlock(
+         continuationPos.east(), (BlockState)window.defaultBlockState().setValue(PortedBlocks.FACING, Direction.WEST)
+      );
+      BlockPlaceContext continuationContext = placementContext(
+         helper, player, window, continuationPos, 0.5, 0.5, 0.5, Direction.UP
+      );
+      BlockState continuationState = window.getStateForPlacement(continuationContext);
+      helper.assertTrue(continuationState != null, "continued window placement state should not be null");
+      helper.assertValueEqual(
+         continuationState.getValue(PortedBlocks.FACING), Direction.WEST, "a neighboring window should preserve the pane axis"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 60)
+   public static void steel_framed_window_survives_support_and_unrelated_neighbor_removal(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      Block window = (Block)ModBlocks.STEEL_FRAMED_WINDOW.get();
+      BlockPos[] windowPositions = new BlockPos[]{
+         new BlockPos(2, 3, 2),
+         new BlockPos(5, 3, 2),
+         new BlockPos(2, 3, 6),
+         new BlockPos(5, 3, 6),
+         new BlockPos(2, 3, 10),
+         new BlockPos(5, 3, 10)
+      };
+      Direction[] supportDirections = Direction.values();
+      BlockState[] placedStates = new BlockState[supportDirections.length];
+
+      for (int i = 0; i < supportDirections.length; ++i) {
+         Direction supportDirection = supportDirections[i];
+         Direction unrelatedDirection = supportDirection == Direction.EAST ? Direction.WEST : Direction.EAST;
+         BlockPos windowPos = windowPositions[i];
+         BlockPos supportPos = windowPos.relative(supportDirection);
+         BlockPos unrelatedPos = windowPos.relative(unrelatedDirection);
+         helper.setBlock(supportPos, Blocks.STONE);
+         helper.setBlock(unrelatedPos, Blocks.STONE);
+         BlockPlaceContext context = placementContext(
+            helper, player, window, supportPos, 0.5, 0.5, 0.5, supportDirection.getOpposite()
+         );
+         BlockState state = window.getStateForPlacement(context);
+         helper.assertTrue(state != null, "window placement state should not be null for support " + supportDirection);
+         helper.assertValueEqual(context.getClickedPos(), helper.absolutePos(windowPos), "window test context should target the expected position");
+         placedStates[i] = state;
+         helper.getLevel().setBlock(context.getClickedPos(), state, 3);
+         helper.setBlock(unrelatedPos, Blocks.AIR);
+         helper.assertValueEqual(
+            helper.getBlockState(windowPos), placedStates[i], "unrelated neighbor removal should not alter the window for " + supportDirection
+         );
+         helper.setBlock(supportPos, Blocks.AIR);
+      }
+
       helper.runAfterDelay(1L, () -> {
-         helper.assertTrue(helper.getBlockState(lightPos).isAir(), "surface-mounted fixture should drop when its supporting face is removed");
+         for (int i = 0; i < supportDirections.length; ++i) {
+            helper.assertValueEqual(
+               helper.getBlockState(windowPositions[i]),
+               placedStates[i],
+               "window state should remain after removing its " + supportDirections[i] + " neighbor"
+            );
+         }
+
+         helper.succeed();
+      });
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void opposite_face_lights_invert_the_clicked_face(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      Block[] lights = new Block[]{(Block)ModBlocks.IRON_BULB_LIGHT.get(), (Block)ModBlocks.IRON_INSET_LIGHT.get()};
+      for (Block light : lights) {
+         for (Direction clickedFace : Direction.values()) {
+            BlockState state = placementState(helper, player, light, LOWER_POS, 0.5, clickedFace);
+            helper.assertTrue(state != null, "opposite-face light placement state should not be null");
+            helper.assertValueEqual(
+               state.getValue(PortedBlocks.FACING),
+               clickedFace.getOpposite(),
+               light.getDescriptionId() + " should face back toward the clicked surface"
+            );
+         }
+      }
+
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void edge_lights_follow_horizontal_player_look(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      Block[] lights = new Block[]{(Block)ModBlocks.IRON_FLOOR_EDGE_LIGHT.get(), (Block)ModBlocks.IRON_CEILING_EDGE_LIGHT.get()};
+      for (float yaw : new float[]{0.0F, 90.0F, 180.0F, 270.0F}) {
+         player.setYRot(yaw);
+         for (Block light : lights) {
+            for (Direction clickedFace : Direction.values()) {
+               BlockPlaceContext context = placementContext(helper, player, light, LOWER_POS, 0.5, 0.5, 0.5, clickedFace);
+               BlockState state = light.getStateForPlacement(context);
+               helper.assertTrue(state != null, "edge-light placement state should not be null");
+               helper.assertValueEqual(
+                  state.getValue(PortedBlocks.FACING),
+                  context.getHorizontalDirection(),
+                  light.getDescriptionId() + " should use horizontal look independently of the clicked face"
+               );
+            }
+         }
+      }
+
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void decor_light_shapes_match_upstream_geometry(GameTestHelper helper) {
+      assertDirectionalLightShapes(
+         helper, (Block)ModBlocks.IRON_INSET_LIGHT.get(), UPSTREAM_INSET_LIGHT_SHAPE, false, "iron inset light"
+      );
+      assertDirectionalLightShapes(
+         helper, (Block)ModBlocks.IRON_BULB_LIGHT.get(), UPSTREAM_BULB_LIGHT_SHAPE, false, "iron bulb light"
+      );
+      assertDirectionalLightShapes(
+         helper, (Block)ModBlocks.IRON_FLOOR_EDGE_LIGHT.get(), UPSTREAM_FLOOR_EDGE_LIGHT_SHAPE, true, "iron floor edge light"
+      );
+      assertDirectionalLightShapes(
+         helper,
+         (Block)ModBlocks.IRON_CEILING_EDGE_LIGHT.get(),
+         UPSTREAM_CEILING_EDGE_LIGHT_SHAPE,
+         true,
+         "iron ceiling edge light"
+      );
+
+      Block inset = (Block)ModBlocks.IRON_INSET_LIGHT.get();
+      assertShapesEqual(
+         helper,
+         ((BlockState)inset.defaultBlockState().setValue(PortedBlocks.FACING, Direction.DOWN))
+            .getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         Block.box(5.2, 0.0, 5.2, 10.8, 0.3, 10.8),
+         "iron inset light DOWN outline should match the literal upstream rotation"
+      );
+      assertShapesEqual(
+         helper,
+         ((BlockState)inset.defaultBlockState().setValue(PortedBlocks.FACING, Direction.UP))
+            .getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         Block.box(5.2, 15.7, 5.2, 10.8, 16.0, 10.8),
+         "iron inset light UP outline should match the literal upstream rotation"
+      );
+
+      Block floorEdge = (Block)ModBlocks.IRON_FLOOR_EDGE_LIGHT.get();
+      assertShapesEqual(
+         helper,
+         ((BlockState)floorEdge.defaultBlockState().setValue(PortedBlocks.FACING, Direction.WEST))
+            .getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         Block.box(0.0, 0.0, 5.0, 0.5, 2.0, 11.0),
+         "iron floor edge light WEST outline should match the literal upstream rotation"
+      );
+      assertShapesEqual(
+         helper,
+         ((BlockState)floorEdge.defaultBlockState().setValue(PortedBlocks.FACING, Direction.EAST))
+            .getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         Block.box(15.5, 0.0, 5.0, 16.0, 2.0, 11.0),
+         "iron floor edge light EAST outline should match the literal upstream rotation"
+      );
+
+      Block ceilingEdge = (Block)ModBlocks.IRON_CEILING_EDGE_LIGHT.get();
+      assertShapesEqual(
+         helper,
+         ((BlockState)ceilingEdge.defaultBlockState().setValue(PortedBlocks.FACING, Direction.WEST))
+            .getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         Shapes.or(
+            Block.box(0.0, 15.5, 0.0, 2.0, 16.0, 16.0),
+            Block.box(0.0, 14.0, 0.0, 0.5, 16.0, 16.0),
+            Block.box(0.0, 14.0, 15.0, 2.0, 16.0, 16.0),
+            Block.box(0.0, 14.0, 0.0, 2.0, 16.0, 1.0)
+         ),
+         "iron ceiling edge light WEST outline should match literal upstream boxes"
+      );
+      assertShapesEqual(
+         helper,
+         ((BlockState)ceilingEdge.defaultBlockState().setValue(PortedBlocks.FACING, Direction.EAST))
+            .getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         Shapes.or(
+            Block.box(14.0, 15.5, 0.0, 16.0, 16.0, 16.0),
+            Block.box(15.5, 14.0, 0.0, 16.0, 16.0, 16.0),
+            Block.box(14.0, 14.0, 0.0, 16.0, 16.0, 1.0),
+            Block.box(14.0, 14.0, 15.0, 16.0, 16.0, 16.0)
+         ),
+         "iron ceiling edge light EAST outline should match literal upstream boxes"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 60)
+   public static void decor_lights_survive_support_removal(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      Block[] lights = new Block[]{
+         (Block)ModBlocks.IRON_BULB_LIGHT.get(),
+         (Block)ModBlocks.IRON_INSET_LIGHT.get(),
+         (Block)ModBlocks.IRON_FLOOR_EDGE_LIGHT.get(),
+         (Block)ModBlocks.IRON_CEILING_EDGE_LIGHT.get()
+      };
+      Direction[] supportDirections = new Direction[]{Direction.DOWN, Direction.UP, Direction.NORTH, Direction.SOUTH};
+      BlockPos[] lightPositions = new BlockPos[]{
+         new BlockPos(2, 3, 2), new BlockPos(5, 3, 2), new BlockPos(2, 3, 6), new BlockPos(5, 3, 6)
+      };
+      BlockState[] placedStates = new BlockState[lights.length];
+
+      for (int i = 0; i < lights.length; ++i) {
+         Direction supportDirection = supportDirections[i];
+         BlockPos lightPos = lightPositions[i];
+         BlockPos supportPos = lightPos.relative(supportDirection);
+         helper.setBlock(supportPos, Blocks.STONE);
+         BlockPlaceContext context = placementContext(
+            helper, player, lights[i], supportPos, 0.5, 0.5, 0.5, supportDirection.getOpposite()
+         );
+         BlockState state = lights[i].getStateForPlacement(context);
+         helper.assertTrue(state != null, "light placement state should not be null for " + lights[i].getDescriptionId());
+         helper.assertValueEqual(context.getClickedPos(), helper.absolutePos(lightPos), "light test context should target the expected position");
+         placedStates[i] = state;
+         helper.getLevel().setBlock(context.getClickedPos(), state, 3);
+         helper.setBlock(supportPos, Blocks.AIR);
+      }
+
+      helper.runAfterDelay(1L, () -> {
+         for (int i = 0; i < lights.length; ++i) {
+            helper.assertValueEqual(
+               helper.getBlockState(lightPositions[i]), placedStates[i], lights[i].getDescriptionId() + " should survive support removal unchanged"
+            );
+         }
+
          helper.succeed();
       });
    }
@@ -818,6 +1084,52 @@ public final class AccesswayBlockGameTests {
          case EAST -> assertShapeIntersects(helper, collision, 13.25, 4.0, 4.0, 13.75, 12.0, 12.0, "open east hatch should retain solid leaf collision");
          default -> throw new IllegalArgumentException("Unsupported hatch facing " + facing);
       }
+   }
+
+   private static void assertDirectionalLightShapes(
+      GameTestHelper helper, Block light, VoxelShape upstreamNorthShape, boolean horizontalRotation, String name
+   ) {
+      for (Direction facing : Direction.values()) {
+         BlockState state = (BlockState)light.defaultBlockState().setValue(PortedBlocks.FACING, facing);
+         VoxelShape actual = state.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+         VoxelShape expected = upstreamOrientedShape(upstreamNorthShape, facing, horizontalRotation);
+         assertShapesEqual(helper, actual, expected, name + " outline should match upstream for " + facing);
+         helper.assertTrue(
+            state.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS)).isEmpty(), name + " collision should remain empty for " + facing
+         );
+      }
+   }
+
+   private static VoxelShape upstreamOrientedShape(VoxelShape northShape, Direction facing, boolean horizontalRotation) {
+      VoxelShape oriented = Shapes.empty();
+      for (AABB box : northShape.toAabbs()) {
+         AABB transformed = horizontalRotation ? rotateHorizontalUpstreamBox(box, facing) : rotateDirectionalUpstreamBox(box, facing);
+         oriented = Shapes.or(oriented, Shapes.create(transformed));
+      }
+
+      return oriented.optimize();
+   }
+
+   private static AABB rotateHorizontalUpstreamBox(AABB box, Direction facing) {
+      return switch (facing) {
+         case DOWN, UP, NORTH -> box;
+         case SOUTH -> new AABB(1.0 - box.maxX, box.minY, 1.0 - box.maxZ, 1.0 - box.minX, box.maxY, 1.0 - box.minZ);
+         case WEST -> new AABB(box.minZ, box.minY, 1.0 - box.maxX, box.maxZ, box.maxY, 1.0 - box.minX);
+         case EAST -> new AABB(1.0 - box.maxZ, box.minY, box.minX, 1.0 - box.minZ, box.maxY, box.maxX);
+      };
+   }
+
+   private static AABB rotateDirectionalUpstreamBox(AABB box, Direction facing) {
+      return switch (facing) {
+         case DOWN -> new AABB(1.0 - box.maxX, box.minZ, box.minY, 1.0 - box.minX, box.maxZ, box.maxY);
+         case UP -> new AABB(
+            1.0 - box.maxX, 1.0 - box.maxZ, 1.0 - box.maxY, 1.0 - box.minX, 1.0 - box.minZ, 1.0 - box.minY
+         );
+         case NORTH -> box;
+         case SOUTH -> new AABB(1.0 - box.maxX, box.minY, 1.0 - box.maxZ, 1.0 - box.minX, box.maxY, 1.0 - box.minZ);
+         case WEST -> new AABB(box.minZ, box.minY, 1.0 - box.maxX, box.maxZ, box.maxY, 1.0 - box.minX);
+         case EAST -> new AABB(1.0 - box.maxZ, box.minY, box.minX, 1.0 - box.minZ, box.maxY, box.maxX);
+      };
    }
 
    private static void assertShapeWithinBlock(GameTestHelper helper, VoxelShape shape, String message) {

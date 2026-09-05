@@ -151,6 +151,15 @@ public final class PortedBlocks {
       };
    }
 
+   private static VoxelShape centeredPlaneShape(Direction facing, double min, double max) {
+      return switch (facing.getAxis()) {
+         case X -> Block.box(min, 0.0, 0.0, max, 16.0, 16.0);
+         case Y -> Block.box(0.0, min, 0.0, 16.0, max, 16.0);
+         case Z -> Block.box(0.0, 0.0, min, 16.0, 16.0, max);
+         default -> throw new MatchException(null, null);
+      };
+   }
+
    private static VoxelShape facePlateShape(Direction facing, double min, double max, double thickness) {
       return switch (facing) {
          case NORTH -> Block.box(min, min, 16.0 - thickness, max, max, 16.0);
@@ -160,6 +169,32 @@ public final class PortedBlocks {
          case UP -> Block.box(min, 0.0, min, max, thickness, max);
          case DOWN -> Block.box(min, 16.0 - thickness, min, max, 16.0, max);
          default -> throw new MatchException(null, null);
+      };
+   }
+
+   private static VoxelShape orientedNorthShape(VoxelShape northShape, Direction facing, boolean horizontalRotation) {
+      VoxelShape oriented = Shapes.empty();
+      for (AABB box : northShape.toAabbs()) {
+         oriented = Shapes.or(oriented, Shapes.create(orientedNorthBox(box, facing, horizontalRotation)));
+      }
+
+      return oriented.optimize();
+   }
+
+   private static AABB orientedNorthBox(AABB box, Direction facing, boolean horizontalRotation) {
+      if (horizontalRotation && !facing.getAxis().isHorizontal()) {
+         return box;
+      }
+
+      return switch (facing) {
+         case DOWN -> new AABB(1.0 - box.maxX, box.minZ, box.minY, 1.0 - box.minX, box.maxZ, box.maxY);
+         case UP -> new AABB(
+            1.0 - box.maxX, 1.0 - box.maxZ, 1.0 - box.maxY, 1.0 - box.minX, 1.0 - box.minZ, 1.0 - box.minY
+         );
+         case NORTH -> box;
+         case SOUTH -> new AABB(1.0 - box.maxX, box.minY, 1.0 - box.maxZ, 1.0 - box.minX, box.maxY, 1.0 - box.minZ);
+         case WEST -> new AABB(box.minZ, box.minY, 1.0 - box.maxX, box.maxZ, box.maxY, 1.0 - box.minX);
+         case EAST -> new AABB(1.0 - box.maxZ, box.minY, box.minX, 1.0 - box.minZ, box.maxY, box.maxX);
       };
    }
 
@@ -926,6 +961,79 @@ public final class PortedBlocks {
          }
 
          return beam;
+      }
+
+      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return this.getShape(state, level, pos, context);
+      }
+   }
+
+   public abstract static class DirectionalShapeBlock extends PortedBlocks.DirectionalPortBlock {
+      private final VoxelShape[] shapes = new VoxelShape[Direction.values().length];
+      private final boolean emptyCollision;
+
+      protected DirectionalShapeBlock(Properties properties, VoxelShape northShape, boolean horizontalRotation, boolean emptyCollision) {
+         super(properties);
+         this.emptyCollision = emptyCollision;
+         for (Direction facing : Direction.values()) {
+            this.shapes[facing.ordinal()] = PortedBlocks.orientedNorthShape(northShape, facing, horizontalRotation);
+         }
+      }
+
+      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return this.shapes[((Direction)state.getValue(FACING)).ordinal()];
+      }
+
+      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return this.emptyCollision ? Shapes.empty() : this.getShape(state, level, pos, context);
+      }
+   }
+
+   public static class OppositeFaceLightBlock extends PortedBlocks.DirectionalShapeBlock {
+      public OppositeFaceLightBlock(Properties properties, VoxelShape northShape) {
+         super(properties, northShape, false, true);
+      }
+
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace().getOpposite());
+      }
+   }
+
+   public static class HorizontalLookLightBlock extends PortedBlocks.DirectionalShapeBlock {
+      public HorizontalLookLightBlock(Properties properties, VoxelShape northShape) {
+         super(properties, northShape, true, true);
+      }
+
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
+      }
+   }
+
+   public static class SteelFramedWindowBlock extends PortedBlocks.DirectionalPortBlock {
+      public SteelFramedWindowBlock(Properties properties) {
+         super(properties);
+      }
+
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         Direction facing = context.getHorizontalDirection();
+         Player player = context.getPlayer();
+         if (player != null && Math.abs(player.getLookAngle().y) > 0.9) {
+            facing = context.getNearestLookingDirection();
+         } else {
+            for (Direction direction : Direction.values()) {
+               BlockState neighbor = context.getLevel().getBlockState(context.getClickedPos().relative(direction));
+               if (neighbor.is(this)) {
+                  facing = (Direction)neighbor.getValue(FACING);
+                  break;
+               }
+            }
+         }
+
+         return (BlockState)this.defaultBlockState().setValue(FACING, facing);
+      }
+
+      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return PortedBlocks.centeredPlaneShape((Direction)state.getValue(FACING), 7.5, 8.5);
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
