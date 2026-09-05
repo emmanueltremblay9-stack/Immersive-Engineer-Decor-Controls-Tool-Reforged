@@ -12,12 +12,17 @@ This workspace was rebuilt from the published `engineers_decor_reforged-1.1.jar`
 .\gradlew.bat clean build
 ```
 
-Latest local validation for `1.1.54-reconstructed`:
+Latest qualified and publicly released version: `1.1.55-reconstructed`.
 
-- `validateManualResources`, `validateProjectMetadata`, `compileJava`, and the `processResources` datagen-equivalent gate passed.
-- Two fresh post-fix `runGameTestServer` runs passed all 182 required GameTests, including exact hatch/sliding-door geometry and a real-player collision sweep; the final `main` CI gate also passed.
+- `validateManualResources`, `validateProjectMetadata`, `validateSignItemModels`, compilation, and the final `main` CI gates passed.
+- Three NeoForge matrices passed all 188 required GameTests: minimum versions without JEI, minimum versions with JEI, and the reporter versions with JEI.
+- Three clean builds produced the same 2,689,752-byte runtime JAR with SHA-256 `956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C`.
+- GitHub issues [#8](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/8), [#9](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/9), and [#10](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/10) are resolved and closed.
+- The [GitHub release](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/tag/v1.1.55-reconstructed) and [CurseForge file 8810946](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/8810946) are public and hash-verified. CurseForge declares Immersive Engineering as the sole `RequiredDependency`; the three fused source projects are provenance, not install dependencies.
+- Modrinth publication is `BLOCKED_BY_MISSING_CONFIGURATION`; no project or dependency identifier was guessed.
+- Runtime JAR inspection, reproducibility, Prism LAB installation, development dedicated-server smoke, CI provenance, publication, and issue-closure readbacks are recorded in `release-evidence/1.1.55-reconstructed`.
+- Patched-client inventory/JEI screenshots and the full unrelated-Prism-JAR pre/post hash comparison are `NOT_PERFORMED`. The previously reported loopback incident is classified `SHARED_ENVIRONMENT_FAILURE` / `HOST_TEMP_DIRECTORY_AF_UNIX_CONNECT_FAILURE`, not an unresolved mod-runtime defect.
 - `clean build` passed; JVM unit tests are `NO-SOURCE` because regression coverage is implemented as NeoForge GameTests.
-- Runtime JAR size/SHA-256, reproducibility, exact Prism installation, packaged dedicated-server smoke, CI provenance, and external publication readbacks are recorded in `release-evidence/1.1.54-reconstructed`. Prism client world entry is explicitly separated because its loopback incident remains unresolved.
 - `validateManualResources` rejects missing manual pages and crafting widgets that point at non-crafting recipes.
 - `validateProjectMetadata` checks version parity, public support links, issue templates, and root/packaged attribution parity.
 - The normal build workflow does not modify Prism; release qualification uses an explicit hash-verified LAB installation procedure.

@@ -1,10 +1,12 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "project": "Immersive Engineer Decor&Controls&Tool Reforged",
   "version": "1.1.55-reconstructed",
   "mod_id": "immersive_engineer_decor_controls_tool_reforged",
   "artifact_source_commit": "7de4cc704272a7bc5b1877333c06f43ba8ff893a",
   "source_base_main_commit": "5e03b3e66d700abf1745a802a8ba0bd879511cf3",
+  "release_tag_commit": "a2c2eff1bbe924354133ef38aa8705fc7c8255b3",
+  "publication_automation_commit": "13f8464515c622592d6e193fb9ab01ea3a73f567",
   "target_tag": "v1.1.55-reconstructed",
   "qualification_date_local": "2026-09-04",
   "java": "Eclipse Adoptium 21.0.11+10-LTS",
@@ -38,7 +40,8 @@
     "manual_resources": "PASS: 223 sources, 424 widgets",
     "project_metadata": "PASS",
     "sign_item_models": "PASS",
-    "publisher_tests": "PASS: 29/29"
+    "publisher_tests_release_candidate": "PASS: 29/29",
+    "publisher_tests_after_cross_tag_state_fix": "PASS: 31/31"
   },
   "runtime": {
     "development_dedicated_server": "PASS",
@@ -58,12 +61,76 @@
   "dependencies": {
     "required_project": "Immersive Engineering",
     "optional_integration": "JEI",
-    "incorporated_provenance_projects": ["Engineer's Decor", "Engineer's Tools", "Redstone Gauges and Switches"]
+    "incorporated_provenance_projects": ["Engineer's Decor", "Engineer's Tools", "Redstone Gauges and Switches"],
+    "curseforge_include_relations": "NOT_REQUIRED_PROVENANCE_METADATA",
+    "provenance_coverage": ["CREDITS.md", "NOTICE.md", "CurseForge project description"]
   },
   "publication": {
-    "ci_final_head": "PENDING",
-    "github_release": "NOT_PERFORMED",
-    "curseforge": "NOT_PERFORMED",
-    "modrinth": "BLOCKED_BY_MISSING_CONFIGURATION"
+    "release_ci": {
+      "result": "PASS",
+      "run_id": 33937057791,
+      "commit": "a2c2eff1bbe924354133ef38aa8705fc7c8255b3"
+    },
+    "publisher_hotfix": {
+      "result": "PASS",
+      "pull_request": 14,
+      "commit": "13f8464515c622592d6e193fb9ab01ea3a73f567",
+      "post_merge_ci_run_id": 33937942443,
+      "publisher_tests": "31/31"
+    },
+    "github_release": {
+      "result": "PASS",
+      "release_id": 383098584,
+      "tag": "v1.1.55-reconstructed",
+      "tag_commit": "a2c2eff1bbe924354133ef38aa8705fc7c8255b3",
+      "draft": false,
+      "prerelease": false,
+      "url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/tag/v1.1.55-reconstructed",
+      "asset_id": 545205479,
+      "asset_size_bytes": 2689752,
+      "asset_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+      "download_hash_match": true
+    },
+    "curseforge": {
+      "result": "PASS",
+      "project_id": 1555214,
+      "file_id": 8810946,
+      "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/8810946",
+      "public_status": 4,
+      "release_type": 1,
+      "game_versions": ["1.21.1", "Client", "NeoForge", "Server"],
+      "required_relations": [
+        {"project_id": 231951, "slug": "immersive-engineering", "type": "RequiredDependency"}
+      ],
+      "asset_size_bytes": 2689752,
+      "asset_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+      "download_hash_match": true,
+      "dry_run_id": 33938064413,
+      "upload_run_id": 33938108941,
+      "resume_run_id": 33938637770,
+      "upload_post_count": 1,
+      "final_publisher_status": "RESUMED_PUBLICATION_VERIFIED"
+    },
+    "modrinth": {
+      "result": "BLOCKED",
+      "blocker": "BLOCKED_BY_MISSING_CONFIGURATION",
+      "guessed_identifiers": false
+    }
+  },
+  "issue_closure": {
+    "result": "PASS",
+    "issues": [8, 9, 10],
+    "state": "closed",
+    "state_reason": "completed"
+  },
+  "remaining_limitations": {
+    "patched_client_inventory_and_jei_visual_screenshots": "NOT_PERFORMED",
+    "full_unrelated_prism_jar_pre_post_hash_comparison": "NOT_PERFORMED",
+    "modrinth_publication": "BLOCKED_BY_MISSING_CONFIGURATION"
+  },
+  "prior_loopback_incident": {
+    "classification": "SHARED_ENVIRONMENT_FAILURE",
+    "cause": "HOST_TEMP_DIRECTORY_AF_UNIX_CONNECT_FAILURE",
+    "mod_runtime_defect": false
   }
 }

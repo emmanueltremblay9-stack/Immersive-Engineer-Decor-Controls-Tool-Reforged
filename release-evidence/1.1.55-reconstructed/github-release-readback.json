@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-05T02:25:18.802Z",
+  "repository": "emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged",
+  "release": {
+    "id": 383098584,
+    "name": "1.1.55-reconstructed",
+    "tag": "v1.1.55-reconstructed",
+    "tag_type": "lightweight",
+    "tag_commit": "a2c2eff1bbe924354133ef38aa8705fc7c8255b3",
+    "target_commitish": "a2c2eff1bbe924354133ef38aa8705fc7c8255b3",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-05T01:48:11Z",
+    "url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/tag/v1.1.55-reconstructed"
+  },
+  "asset": {
+    "id": 545205479,
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+    "size_bytes": 2689752,
+    "api_digest": "sha256:956fc45e04675427ab98a79bb82f22e28f55e7d13ebdcd54f86260515a63167c",
+    "download_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+    "canonical_hash_match": true,
+    "url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/download/v1.1.55-reconstructed/immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar"
+  },
+  "release_commit_ci": {
+    "run_id": 33937057791,
+    "head_sha": "a2c2eff1bbe924354133ef38aa8705fc7c8255b3",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/33937057791"
+  },
+  "verdict": "PASS"
+}
