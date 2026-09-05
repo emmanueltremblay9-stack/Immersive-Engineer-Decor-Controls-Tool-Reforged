@@ -33,9 +33,9 @@ Canonical size/SHA-256: `2,689,752` bytes / `956FC45E04675427AB98A79BB82F22E28F5
 
 ## Evidence boundary
 
-- Patched-client inventory and JEI visual screenshots are `NOT_PERFORMED`; no visual-runtime result is claimed.
+- Patched-client inventory and JEI visual screenshots are `BLOCKED_BY_USER_INTERRUPTED_COMPUTER_USE`; the disposable client and target mod reached resource reload, but no world-join or admissible visual evidence was captured. This is neither a product failure nor a visual PASS.
 - The first dedicated-server launch reached `Done` but its piped stop command was rejected by PowerShell parameter binding. The exact test was repeated with a PTY and passed cleanly; the failed control-channel attempt is retained in `dedicated-server-smoke.md`.
-- Full unrelated-Prism-JAR pre/post hash comparison is `NOT_PERFORMED`; the installer report identifies only the superseded 1.1.54 JAR as deleted.
+- The original 1.1.55 installation's full unrelated-Prism-JAR pre/post comparison remains `NOT_PERFORMED` and cannot be recovered retroactively because its pre-install baseline is unavailable. A distinct fresh postpublication comparison now passes for all 50 unrelated JARs and the canonical target; see `postinterruption-closure-2026-09-05/SUMMARY.md`.
 - Modrinth publication is `BLOCKED_BY_MISSING_CONFIGURATION`; no project or dependency identifiers were guessed.
 - The previous loopback incident is currently classified `SHARED_ENVIRONMENT_FAILURE` / `HOST_TEMP_DIRECTORY_AF_UNIX_CONNECT_FAILURE`, not an unresolved mod-runtime defect. Historical evidence remains unchanged.
 - The historical `release-evidence/1.1.54-reconstructed` tree was not modified.

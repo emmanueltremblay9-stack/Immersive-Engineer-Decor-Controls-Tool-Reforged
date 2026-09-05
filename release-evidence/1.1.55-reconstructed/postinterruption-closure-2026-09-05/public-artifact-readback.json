@@ -1,0 +1,36 @@
+{
+  "schema": "iedct-public-artifact-readback-v1",
+  "observed_at_utc": "2026-09-05T04:56:13.9201519Z",
+  "method": "GET_ONLY_NO_POST",
+  "canonical": {
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+    "size_bytes": 2689752,
+    "sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C"
+  },
+  "github": {
+    "release_id": 383098584,
+    "tag": "v1.1.55-reconstructed",
+    "tag_commit": "a2c2eff1bbe924354133ef38aa8705fc7c8255b3",
+    "draft": false,
+    "prerelease": false,
+    "api_asset_size_bytes": 2689752,
+    "api_asset_digest": "sha256:956fc45e04675427ab98a79bb82f22e28f55e7d13ebdcd54f86260515a63167c",
+    "fresh_download_http_status": 200,
+    "fresh_download_size_bytes": 2689752,
+    "fresh_download_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+    "verdict": "PASS"
+  },
+  "curseforge": {
+    "project_id": 1555214,
+    "file_id": 8810946,
+    "public_status": 4,
+    "release_type": 1,
+    "game_versions": ["Client", "1.21.1", "NeoForge", "Server"],
+    "api_file_size_bytes": 2689752,
+    "fresh_download_http_status": 200,
+    "fresh_download_size_bytes": 2689752,
+    "fresh_download_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+    "verdict": "PASS"
+  },
+  "verdict": "PASS"
+}
