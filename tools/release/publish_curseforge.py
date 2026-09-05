@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic, fail-closed CurseForge publisher for the 1.1.54 release."""
+"""Deterministic, fail-closed CurseForge release publisher."""
 
 from __future__ import annotations
 
@@ -1478,7 +1478,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--manifest",
         type=Path,
-        default=Path("tools/release/curseforge_release_1.1.54.json"),
+        default=Path("tools/release/curseforge_release_1.1.55.json"),
     )
     parser.add_argument("--tag", required=True)
     parser.add_argument("--resume-file-id", type=int)

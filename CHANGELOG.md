@@ -2,6 +2,26 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.55-reconstructed] - 2026-09-04
+
+### Fixed
+
+- Restored the four Engineer's Decor light variants to their intended placement orientation and model-matched outline geometry: wall-mounted bulb and inset lights face back toward the clicked surface, while floor and ceiling edge lights follow the player's horizontal look.
+- Restored `steel_framed_window` as a centered, independently surviving pane whose axis follows player view and neighboring window alignment instead of behaving like a support-mounted plate.
+- Replaced the volumetric inventory parents for `sign_decor` and `sign_defense` with flat `item/generated` models so inventory and JEI GUI rendering use the front artwork without exposing a colored block edge.
+
+### Added
+
+- Added seven required GameTests covering light placement, literal rotated light-shape oracles, support removal, steel-window axis/neighbor placement, centered geometry, and independent survival. The required suite now contains 188 tests.
+- Added `validateSignItemModels` to the normal `check` lifecycle, validating each sign item's parent, texture, element absence, GUI lighting, and display transforms.
+- Added a guarded Windows Gradle launcher that keeps the verified temporary-directory loopback workaround process-local and transports dotted project-property overrides safely.
+
+### Compatibility and evidence boundary
+
+- Qualified against Minecraft 1.21.1, Java 21, NeoForge 21.1.230 and 21.1.248, Immersive Engineering 12.4.2-194, and optional JEI 19.32.0.359 and 19.44.0.406 lanes.
+- Engineer's Decor, Engineer's Tools, and Redstone Gauges and Switches are incorporated source projects, not runtime dependencies. Immersive Engineering is the sole required project dependency; JEI remains optional integration metadata.
+- Objective resource validation covers the sign item models. A live automated JEI screenshot remains `NOT_PERFORMED`; this release does not claim visual-runtime capture.
+
 ## [1.1.54-reconstructed] - 2026-08-12
 
 ### Fixed

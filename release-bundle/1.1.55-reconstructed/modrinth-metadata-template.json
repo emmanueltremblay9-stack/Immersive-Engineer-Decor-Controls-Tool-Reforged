@@ -1,0 +1,15 @@
+{
+  "project_id": "BLOCKED_BY_MISSING_CONFIGURATION",
+  "version_number": "1.1.55-reconstructed",
+  "version_title": "1.1.55-reconstructed",
+  "version_type": "release",
+  "game_versions": ["1.21.1"],
+  "loaders": ["neoforge"],
+  "featured": true,
+  "dependencies": [
+    {"project_id": "PENDING_AUTHORIZED_IMMERSIVE_ENGINEERING_PROJECT_ID", "dependency_type": "required"},
+    {"project_id": "PENDING_AUTHORIZED_JEI_PROJECT_ID", "dependency_type": "optional"}
+  ],
+  "file": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+  "sha256": "956fc45e04675427ab98a79bb82f22e28f55e7d13ebdcd54f86260515a63167c"
+}
