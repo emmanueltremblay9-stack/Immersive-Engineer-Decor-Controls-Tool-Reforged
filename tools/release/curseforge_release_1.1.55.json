@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "repository": {
+    "owner": "emmanueltremblay9-stack",
+    "name": "Immersive-Engineer-Decor-Controls-Tool-Reforged"
+  },
+  "release": {
+    "tag": "v1.1.55-reconstructed",
+    "version": "1.1.55-reconstructed",
+    "modId": "immersive_engineer_decor_controls_tool_reforged",
+    "assetName": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+    "assetSize": 2689752,
+    "assetSha256": "956fc45e04675427ab98a79bb82f22e28f55e7d13ebdcd54f86260515a63167c",
+    "changelogPath": "docs/releases/1.1.55-reconstructed.md",
+    "changelogSha256": "b23fe63d8a1af1582a2173184957bbc11292ecece2b7bd7a1ad79237f8f48f13"
+  },
+  "curseforge": {
+    "projectId": 1555214,
+    "previousPublicFileId": 8744461,
+    "displayName": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+    "releaseType": "release",
+    "isMarkedForManualRelease": false,
+    "gameVersionNames": [
+      "Client",
+      "Server",
+      "1.21.1",
+      "NeoForge"
+    ],
+    "gameVersionLookupNames": [
+      "1.21.1"
+    ],
+    "uploadRelations": [
+      {
+        "projectID": 231951,
+        "slug": "immersive-engineering",
+        "type": "requiredDependency"
+      }
+    ],
+    "expectedPublicRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      }
+    ]
+  }
+}

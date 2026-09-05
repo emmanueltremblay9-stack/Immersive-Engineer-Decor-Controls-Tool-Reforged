@@ -1,0 +1,69 @@
+{
+  "schema_version": 3,
+  "project": "Immersive Engineer Decor&Controls&Tool Reforged",
+  "version": "1.1.55-reconstructed",
+  "mod_id": "immersive_engineer_decor_controls_tool_reforged",
+  "artifact_source_commit": "7de4cc704272a7bc5b1877333c06f43ba8ff893a",
+  "source_base_main_commit": "5e03b3e66d700abf1745a802a8ba0bd879511cf3",
+  "target_tag": "v1.1.55-reconstructed",
+  "qualification_date_local": "2026-09-04",
+  "java": "Eclipse Adoptium 21.0.11+10-LTS",
+  "gradle": "9.2.1",
+  "minecraft": "1.21.1",
+  "runtime_lanes": [
+    {"name": "A", "neoforge": "21.1.230", "immersive_engineering": "12.4.2-194", "jei": null, "required_gametests": 188, "result": "PASS"},
+    {"name": "B", "neoforge": "21.1.230", "immersive_engineering": "12.4.2-194", "jei": "19.32.0.359", "required_gametests": 188, "result": "PASS"},
+    {"name": "C", "neoforge": "21.1.248", "immersive_engineering": "12.4.2-194", "jei": "19.44.0.406", "required_gametests": 188, "result": "PASS"}
+  ],
+  "jar": {
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+    "size_bytes": 2689752,
+    "sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+    "entry_count": 2984,
+    "mod_id": "immersive_engineer_decor_controls_tool_reforged",
+    "version": "1.1.55-reconstructed",
+    "license": "MIT"
+  },
+  "reproducibility": {
+    "fresh_clean_build_exit_codes": [0, 0, 0],
+    "fresh_sizes_bytes": [2689752, 2689752, 2689752],
+    "fresh_sha256": [
+      "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+      "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+      "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C"
+    ],
+    "result": "PASS"
+  },
+  "validators": {
+    "manual_resources": "PASS: 223 sources, 424 widgets",
+    "project_metadata": "PASS",
+    "sign_item_models": "PASS",
+    "publisher_tests": "PASS: 29/29"
+  },
+  "runtime": {
+    "development_dedicated_server": "PASS",
+    "prism_install": "PASS_WITH_UNRELATED_JAR_HASH_COMPARISON_GAP",
+    "prism_install_evidence": "release-evidence/1.1.55-reconstructed/prism-install.md",
+    "patched_client_inventory_and_jei_visual_screenshots": "NOT_PERFORMED"
+  },
+  "source_hashes": {
+    "src/main/java/com/oblixorprime/engineersdecorreforged/ModBlocks.java": "39F2FF5AABDD67E61C8895E345242CB05C74F50BBB0D437AF54828BB18AA01DC",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/block/PortedBlocks.java": "4826AF4160A601840B0DC2476751CC20B493F2AE7743FF680D4A45F561C27436",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/gametest/AccesswayBlockGameTests.java": "68ACAC09F938012F5706C7A80B982F353067FA0686DF78D83FB8A0F747D3E8E5",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_decor.json": "4FE17C8C19CEF23734430F1716E984A0163B3580A0C19CD90616323B1B0A2182",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_defense.json": "9650BF00A437CE451815F6D07535A4F9478F17D89508E5ED48E5F7026FCE7A76",
+    "gradle.properties": "EEC2A3693F0104086F983EB21728E1DA8D8BC4F83061345E81A6DC546F1DBEB9",
+    "src/main/resources/META-INF/neoforge.mods.toml": "14B4DB32462BE0FF28924D692C2030ED643F198F202FD97601466697FA1F60E4"
+  },
+  "dependencies": {
+    "required_project": "Immersive Engineering",
+    "optional_integration": "JEI",
+    "incorporated_provenance_projects": ["Engineer's Decor", "Engineer's Tools", "Redstone Gauges and Switches"]
+  },
+  "publication": {
+    "ci_final_head": "PENDING",
+    "github_release": "NOT_PERFORMED",
+    "curseforge": "NOT_PERFORMED",
+    "modrinth": "BLOCKED_BY_MISSING_CONFIGURATION"
+  }
+}

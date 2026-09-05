@@ -8,7 +8,7 @@ on:
         description: Reviewed GitHub release tag
         required: true
         type: string
-        default: v1.1.54-reconstructed
+        default: v1.1.55-reconstructed
       dry_run:
         description: Validate all public inputs without uploading
         required: true
@@ -35,6 +35,7 @@ jobs:
     timeout-minutes: 30
     env:
       RUN_KEY: ${{ github.run_id }}-${{ github.run_attempt }}
+      MANIFEST_PATH: tools/release/curseforge_release_1.1.55.json
 
     steps:
       - name: Checkout
@@ -67,6 +68,7 @@ jobs:
           python tools/release/publish_curseforge.py \
             --dry-run \
             --repo-root "$GITHUB_WORKSPACE" \
+            --manifest "$MANIFEST_PATH" \
             --tag "$REQUESTED_TAG" \
             --report "$RESULT_REPORT_PATH"
           status=$?
@@ -86,6 +88,7 @@ jobs:
           python tools/release/publish_curseforge.py \
             --prepare-publish \
             --repo-root "$GITHUB_WORKSPACE" \
+            --manifest "$MANIFEST_PATH" \
             --tag "$REQUESTED_TAG" \
             --run-key "$RUN_KEY" \
             --report "$PREPARE_REPORT_PATH"
@@ -140,6 +143,7 @@ jobs:
           python tools/release/publish_curseforge.py \
             --publish \
             --repo-root "$GITHUB_WORKSPACE" \
+            --manifest "$MANIFEST_PATH" \
             --tag "$REQUESTED_TAG" \
             --run-key "$RUN_KEY" \
             --intent-report "$PREPARE_REPORT_PATH" \
@@ -164,6 +168,7 @@ jobs:
           python tools/release/publish_curseforge.py \
             --publish \
             --repo-root "$GITHUB_WORKSPACE" \
+            --manifest "$MANIFEST_PATH" \
             --tag "$REQUESTED_TAG" \
             --resume-file-id "$RESUME_FILE_ID" \
             --report "$RESULT_REPORT_PATH"

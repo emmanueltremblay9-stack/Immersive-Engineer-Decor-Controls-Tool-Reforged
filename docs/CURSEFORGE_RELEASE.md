@@ -1,6 +1,6 @@
 # Guarded CurseForge publication
 
-The repository can publish only the reviewed `v1.1.54-reconstructed` GitHub release asset described by `tools/release/curseforge_release_1.1.54.json`. The publisher downloads that asset and never builds, rewrites, renames, or replaces the JAR.
+The repository can publish only the reviewed `v1.1.55-reconstructed` GitHub release asset described by `tools/release/curseforge_release_1.1.55.json`. The publisher downloads that asset and never builds, rewrites, renames, or replaces the JAR.
 
 ## Safety model
 
@@ -37,7 +37,7 @@ The request uses the documented `gameVersionNames` field and the documented nest
 
 `gameVersionNames` is the complete upload-label contract (`Client`, `Server`, `1.21.1`, and `NeoForge`). The authenticated `/api/game/versions` preflight has a narrower purpose: it proves that the configured catalog-backed Minecraft version exists. The manifest therefore keeps `gameVersionLookupNames` as an explicit non-empty subset of the upload labels; for this release it resolves only `1.21.1`. A name can legitimately have records under multiple game-version types, so the publisher validates every matching positive numeric ID and binds the sorted unique ID set into both prepare and publish intent checks. Loader and environment labels remain in the upload request and final public readback, but are not incorrectly required to appear as records in the game-version catalog.
 
-JEI is optional in NeoForge metadata and is not added to CurseForge metadata. The previous approved CurseForge file also exposes three `Include` relations for Engineers Decor, Engineers Tools, and Redstone Gauges and Switches. `Include` is not an accepted upload relation type, so those entries are not transmitted. Before upload, the publisher requires the live project-level dependency endpoint and the approved baseline file to expose all four expected relations. Historical live readback also found the same four relations on each of the four newest files. A real publication is accepted as complete only if all four appear on the new file; unit tests and historical inheritance cannot replace that post-upload proof.
+JEI is optional in NeoForge metadata and is not submitted as a CurseForge project relation. Engineer's Decor, Engineer's Tools, and Redstone Gauges and Switches were ported and incorporated into this single mod; they are provenance projects, not runtime dependencies. Their historical `Include` relations are therefore not transmitted or required by the 1.1.55 public-readback contract. Provenance remains recorded in `CREDITS.md`, `NOTICE.md`, the source metadata, and the project description. Immersive Engineering is the sole CurseForge `RequiredDependency`, and a real publication is accepted as complete only when that relation and every other hash, version, loader, game-version, status, and file-integrity field pass live readback.
 
 `isMarkedForManualRelease` is explicitly `false`. This is deliberate: the documented API says `true` holds an approved file for a later manual release choice, but documents no API operation for making that held file public. This is a scope-derived decision from the user-authorized autonomous, no-computer-use release mandate; it waives an external pre-publication metadata quarantine. Internal source/hash/duplicate/intent gates remain fail-closed, but public readback is necessarily post-publication verification and can detect a platform-side metadata mismatch only after the file is public.
 
@@ -55,7 +55,7 @@ The `Publish CurseForge` workflow is manual-only, tag-scoped by a non-cancelling
 
 ```powershell
 python -W error::ResourceWarning -m unittest discover -s tools/release -p 'test_*.py' -v
-python tools/release/publish_curseforge.py --dry-run --tag v1.1.54-reconstructed --report curseforge-publication-report.json
+python tools/release/publish_curseforge.py --dry-run --manifest tools/release/curseforge_release_1.1.55.json --tag v1.1.55-reconstructed --report curseforge-publication-report.json
 ```
 
 The second command performs live public readbacks but does not upload. Production prepare/publish is intentionally orchestrated by GitHub Actions so the secret and durable state never enter a local command line.
