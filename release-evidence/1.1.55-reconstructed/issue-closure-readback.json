@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-05T02:25:18.802Z",
+  "repository": "emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged",
+  "issues": [
+    {
+      "number": 8,
+      "title": "[Bug]: Lights are offset",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2026-09-05T02:19:19Z",
+      "url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/8"
+    },
+    {
+      "number": 9,
+      "title": "[Bug]: Steel Framed Window",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2026-09-05T02:19:21Z",
+      "url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/9"
+    },
+    {
+      "number": 10,
+      "title": "[Bug]: Signs rotated in inventory and JEI",
+      "state": "closed",
+      "state_reason": "completed",
+      "closed_at": "2026-09-05T02:19:23Z",
+      "url": "https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/10"
+    }
+  ],
+  "closure_gate": "AFTER_MERGE_QUALIFICATION_AND_PUBLICATION",
+  "verdict": "PASS"
+}

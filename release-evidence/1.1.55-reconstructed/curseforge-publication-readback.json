@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-05T02:25:18.802Z",
+  "project": {
+    "id": 1555214,
+    "slug": "immersive-engineers-decor-controls-tools-reforged"
+  },
+  "file": {
+    "id": 8810946,
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.55-reconstructed.jar",
+    "public_status": 4,
+    "release_type": 1,
+    "game_versions": ["1.21.1", "Client", "NeoForge", "Server"],
+    "size_bytes": 2689752,
+    "download_sha256": "956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C",
+    "canonical_hash_match": true,
+    "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/8810946"
+  },
+  "relations": [
+    {
+      "project_id": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    }
+  ],
+  "relation_interpretation": {
+    "runtime_dependencies_to_install": ["Immersive Engineering"],
+    "incorporated_source_projects": ["Engineer's Decor", "Engineer's Tools", "Redstone Gauges and Switches"],
+    "include_relations": "NOT_REQUIRED_PROVENANCE_METADATA",
+    "provenance_coverage": ["CREDITS.md", "NOTICE.md", "CurseForge project description"]
+  },
+  "automation": {
+    "dry_run": {
+      "run_id": 33938064413,
+      "conclusion": "success",
+      "status": "AUTOMATION_READY_DRY_RUN"
+    },
+    "upload": {
+      "run_id": 33938108941,
+      "workflow_conclusion": "failure",
+      "publisher_exit_code": 4,
+      "publisher_status": "UPLOADED_PROCESSING",
+      "file_id": 8810946,
+      "post_count": 1,
+      "intent_artifact_id": 9960850303,
+      "result_artifact_id": 9961004829
+    },
+    "resume": {
+      "run_id": 33938637770,
+      "workflow_conclusion": "success",
+      "publisher_exit_code": 0,
+      "publisher_status": "RESUMED_PUBLICATION_VERIFIED",
+      "file_id": 8810946,
+      "post_required": false,
+      "result_artifact_id": 9961024661
+    },
+    "publication_automation_commit": "13f8464515c622592d6e193fb9ab01ea3a73f567",
+    "post_merge_ci_run_id": 33937942443,
+    "publisher_tests": "PASS: 31/31"
+  },
+  "public_jar_inspection": {
+    "mod_id": "immersive_engineer_decor_controls_tool_reforged",
+    "version": "1.1.55-reconstructed",
+    "loader": "NeoForge",
+    "minecraft": "1.21.1",
+    "immersive_engineering": "required",
+    "jei": "optional",
+    "fixed_runtime_classes_present": true,
+    "corrected_sign_item_resources_present": true
+  },
+  "verdict": "PASS"
+}
