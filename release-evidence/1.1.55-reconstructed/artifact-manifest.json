@@ -53,7 +53,7 @@
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_decor.json": "4FE17C8C19CEF23734430F1716E984A0163B3580A0C19CD90616323B1B0A2182",
     "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_defense.json": "9650BF00A437CE451815F6D07535A4F9478F17D89508E5ED48E5F7026FCE7A76",
     "gradle.properties": "EEC2A3693F0104086F983EB21728E1DA8D8BC4F83061345E81A6DC546F1DBEB9",
-    "neoforge.mods.toml": "14B4DB32462BE0FF28924D692C2030ED643F198F202FD97601466697FA1F60E4"
+    "src/main/resources/META-INF/neoforge.mods.toml": "14B4DB32462BE0FF28924D692C2030ED643F198F202FD97601466697FA1F60E4"
   },
   "dependencies": {
     "required_project": "Immersive Engineering",
