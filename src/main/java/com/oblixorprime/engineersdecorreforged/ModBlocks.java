@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredRegister.Blocks;
@@ -250,8 +251,8 @@ public final class ModBlocks {
    public static final DeferredBlock<MachineBlocks.PipeValveBlock> STRAIGHT_PIPE_VALVE_REDSTONE_ANALOG = registerWithItem(
       "straight_pipe_valve_redstone_analog", () -> new MachineBlocks.PipeValveBlock(machineMetal(), true)
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> STEEL_FRAMED_WINDOW = registerWithItem(
-      "steel_framed_window", () -> new PortedBlocks.SurfaceMountedBlock(glass(), 0.0, 16.0, 2.0, false)
+   public static final DeferredBlock<PortedBlocks.SteelFramedWindowBlock> STEEL_FRAMED_WINDOW = registerWithItem(
+      "steel_framed_window", () -> new PortedBlocks.SteelFramedWindowBlock(glass())
    );
    public static final DeferredBlock<DoorBlock> METAL_SLIDING_DOOR = registerWithItem(
       "metal_sliding_door", () -> new PortedBlocks.SlidingDoorBlock(BlockSetType.IRON, metal().noOcclusion())
@@ -259,17 +260,29 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.HatchBlock> IRON_HATCH = registerWithItem(
       "iron_hatch", () -> new PortedBlocks.HatchBlock(BlockSetType.IRON, metal().noOcclusion())
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> IRON_BULB_LIGHT = registerWithItem(
-      "iron_bulb_light", () -> new PortedBlocks.SurfaceMountedBlock(light(), 5.0, 11.0, 3.0, true)
+   public static final DeferredBlock<PortedBlocks.OppositeFaceLightBlock> IRON_BULB_LIGHT = registerWithItem(
+      "iron_bulb_light",
+      () -> new PortedBlocks.OppositeFaceLightBlock(
+         light(), Shapes.or(Block.box(6.5, 6.5, 1.0, 9.5, 9.5, 4.0), Block.box(6.0, 6.0, 0.0, 10.0, 10.0, 1.0))
+      )
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> IRON_CEILING_EDGE_LIGHT = registerWithItem(
-      "iron_ceiling_edge_light", () -> new PortedBlocks.SurfaceMountedBlock(light(), 2.0, 14.0, 2.0, true)
+   public static final DeferredBlock<PortedBlocks.HorizontalLookLightBlock> IRON_CEILING_EDGE_LIGHT = registerWithItem(
+      "iron_ceiling_edge_light",
+      () -> new PortedBlocks.HorizontalLookLightBlock(
+         light(),
+         Shapes.or(
+            Block.box(0.0, 15.5, 0.0, 16.0, 16.0, 2.0),
+            Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 0.5),
+            Block.box(0.0, 14.0, 0.0, 1.0, 16.0, 2.0),
+            Block.box(15.0, 14.0, 0.0, 16.0, 16.0, 2.0)
+         )
+      )
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> IRON_FLOOR_EDGE_LIGHT = registerWithItem(
-      "iron_floor_edge_light", () -> new PortedBlocks.SurfaceMountedBlock(light(), 2.0, 14.0, 2.0, true)
+   public static final DeferredBlock<PortedBlocks.HorizontalLookLightBlock> IRON_FLOOR_EDGE_LIGHT = registerWithItem(
+      "iron_floor_edge_light", () -> new PortedBlocks.HorizontalLookLightBlock(light(), Block.box(5.0, 0.0, 0.0, 11.0, 2.0, 0.5))
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> IRON_INSET_LIGHT = registerWithItem(
-      "iron_inset_light", () -> new PortedBlocks.SurfaceMountedBlock(light(), 3.0, 13.0, 2.0, true)
+   public static final DeferredBlock<PortedBlocks.OppositeFaceLightBlock> IRON_INSET_LIGHT = registerWithItem(
+      "iron_inset_light", () -> new PortedBlocks.OppositeFaceLightBlock(light(), Block.box(5.2, 5.2, 0.0, 10.8, 10.8, 0.3))
    );
    public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> SIGN_CAUTION = registerWithItem(
       "sign_caution", () -> new PortedBlocks.SurfaceMountedBlock(sign(), 1.0, 15.0, 1.0, true)
