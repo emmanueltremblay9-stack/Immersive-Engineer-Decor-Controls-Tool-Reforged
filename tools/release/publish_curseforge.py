@@ -825,6 +825,7 @@ class Publisher:
             )
 
         persisted: set[str] = set()
+        expected_display_title = f"CurseForge {self.release['tag']} :: publish"
         for workflow_run in workflow_runs:
             if not isinstance(workflow_run, dict):
                 raise PublicationError(
@@ -843,6 +844,14 @@ class Publisher:
                     "GITHUB_WORKFLOW_HISTORY_INVALID",
                     "GitHub publication workflow history contains an invalid run identity",
                 )
+            display_title = workflow_run.get("display_title")
+            if not isinstance(display_title, str):
+                raise PublicationError(
+                    "GITHUB_WORKFLOW_HISTORY_INVALID",
+                    "GitHub publication workflow history contains an invalid display title",
+                )
+            if display_title != expected_display_title:
+                continue
             for attempt in range(1, run_attempt + 1):
                 run_key = f"{run_id}-{attempt}"
                 if run_key == current_run_key:
