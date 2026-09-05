@@ -42,14 +42,16 @@
   },
   "runtime": {
     "development_dedicated_server": "PASS",
-    "automated_jei_visual_capture": "NOT_PERFORMED"
+    "prism_install": "PASS_WITH_UNRELATED_JAR_HASH_COMPARISON_GAP",
+    "prism_install_evidence": "release-evidence/1.1.55-reconstructed/prism-install.md",
+    "patched_client_inventory_and_jei_visual_screenshots": "NOT_PERFORMED"
   },
   "source_hashes": {
-    "ModBlocks.java": "39F2FF5AABDD67E61C8895E345242CB05C74F50BBB0D437AF54828BB18AA01DC",
-    "PortedBlocks.java": "4826AF4160A601840B0DC2476751CC20B493F2AE7743FF680D4A45F561C27436",
-    "AccesswayBlockGameTests.java": "68ACAC09F938012F5706C7A80B982F353067FA0686DF78D83FB8A0F747D3E8E5",
-    "sign_decor.json": "4FE17C8C19CEF23734430F1716E984A0163B3580A0C19CD90616323B1B0A2182",
-    "sign_defense.json": "9650BF00A437CE451815F6D07535A4F9478F17D89508E5ED48E5F7026FCE7A76",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/ModBlocks.java": "39F2FF5AABDD67E61C8895E345242CB05C74F50BBB0D437AF54828BB18AA01DC",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/block/PortedBlocks.java": "4826AF4160A601840B0DC2476751CC20B493F2AE7743FF680D4A45F561C27436",
+    "src/main/java/com/oblixorprime/engineersdecorreforged/gametest/AccesswayBlockGameTests.java": "68ACAC09F938012F5706C7A80B982F353067FA0686DF78D83FB8A0F747D3E8E5",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_decor.json": "4FE17C8C19CEF23734430F1716E984A0163B3580A0C19CD90616323B1B0A2182",
+    "src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/models/item/sign_defense.json": "9650BF00A437CE451815F6D07535A4F9478F17D89508E5ED48E5F7026FCE7A76",
     "gradle.properties": "EEC2A3693F0104086F983EB21728E1DA8D8BC4F83061345E81A6DC546F1DBEB9",
     "neoforge.mods.toml": "14B4DB32462BE0FF28924D692C2030ED643F198F202FD97601466697FA1F60E4"
   },
