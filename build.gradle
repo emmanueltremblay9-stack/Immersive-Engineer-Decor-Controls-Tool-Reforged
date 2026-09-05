@@ -64,11 +64,85 @@ neoForge {
 dependencies {
     implementation "blusunrize.immersiveengineering:ImmersiveEngineering:${immersive_engineering_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
-    runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    if (providers.gradleProperty('include_jei_runtime').map { it.toBoolean() }.getOrElse(true)) {
+        runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    }
 }
 
 tasks.named('processResources', ProcessResources).configure {
     duplicatesStrategy = DuplicatesStrategy.FAIL
+}
+
+tasks.register('validateSignItemModels') {
+    group = 'verification'
+    description = 'Validates that full-panel signs use centered flat item geometry without changing their world models.'
+    inputs.files(
+            "src/main/resources/assets/${mod_id}/models/item/sign_decor.json",
+            "src/main/resources/assets/${mod_id}/models/item/sign_defense.json",
+            "src/main/resources/assets/${mod_id}/models/block/sign/sign_decor_model.json",
+            "src/main/resources/assets/${mod_id}/textures/block/sign/engineersdecor-logo.png",
+            "src/main/resources/assets/${mod_id}/textures/block/sign/sign_defense_texture.png"
+    )
+
+    doLast {
+        def json = new groovy.json.JsonSlurper()
+        def expectedTextures = [
+                sign_decor  : "${mod_id}:block/sign/engineersdecor-logo",
+                sign_defense: "${mod_id}:block/sign/sign_defense_texture"
+        ]
+        def worldModel = json.parse(file("src/main/resources/assets/${mod_id}/models/block/sign/sign_decor_model.json"))
+        def preservedContexts = ['thirdperson_righthand', 'firstperson_righthand', 'ground', 'fixed']
+        def expectedHead = [
+                rotation   : [0, 0, 0],
+                translation: [0, 0, 0],
+                scale      : [1, 1, 1]
+        ]
+        def expectedGui = [
+                rotation   : [0, 0, 0],
+                translation: [0, 0.5, 0],
+                scale      : [1, 1, 1]
+        ]
+        def expectedContexts = (preservedContexts + ['head', 'gui']) as Set
+
+        expectedTextures.each { String itemId, String expectedTexture ->
+            def modelFile = file("src/main/resources/assets/${mod_id}/models/item/${itemId}.json")
+            def model = json.parse(modelFile)
+            if (model['parent'] != 'item/generated') {
+                throw new GradleException("${itemId} must use item/generated instead of inheriting volumetric world geometry")
+            }
+            if (model['gui_light'] != 'front') {
+                throw new GradleException("${itemId} must use flat GUI lighting")
+            }
+            if (model.containsKey('elements')) {
+                throw new GradleException("${itemId} must let item/generated create centered item geometry")
+            }
+            if (!(model['textures'] instanceof Map) || model['textures']['layer0'] != expectedTexture) {
+                throw new GradleException("${itemId} layer0 must be ${expectedTexture}")
+            }
+            if (!(model['display'] instanceof Map) || model['display'].keySet() != expectedContexts) {
+                throw new GradleException("${itemId} must preserve the complete expected display-transform set")
+            }
+            preservedContexts.each { String context ->
+                if (model['display'][context] != worldModel['display'][context]) {
+                    throw new GradleException("${itemId} ${context} must match the established world-model item transform")
+                }
+            }
+            if (model['display']['head'] != expectedHead) {
+                throw new GradleException("${itemId} head must remain an identity transform")
+            }
+            if (model['display']['gui'] != expectedGui) {
+                throw new GradleException("${itemId} gui must be an explicit identity rotation and scale with the established translation")
+            }
+
+            def texturePath = expectedTexture.split(':', 2)[1]
+            def textureFile = file("src/main/resources/assets/${mod_id}/textures/${texturePath}.png")
+            if (!textureFile.isFile()) {
+                throw new GradleException("${itemId} layer0 texture is missing: ${textureFile}")
+            }
+        }
+
+        logger.lifecycle('Validated flat GUI item models and preserved transforms for sign_decor and sign_defense')
+    }
 }
 
 tasks.register('validateManualResources') {
@@ -215,6 +289,7 @@ tasks.register('validateProjectMetadata') {
 tasks.named('check').configure {
     dependsOn tasks.named('validateManualResources')
     dependsOn tasks.named('validateProjectMetadata')
+    dependsOn tasks.named('validateSignItemModels')
 }
 
 tasks.named('jar', Jar).configure {
