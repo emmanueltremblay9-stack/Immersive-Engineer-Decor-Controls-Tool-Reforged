@@ -1,1 +1,37 @@
-{ "parent": "immersive_engineer_decor_controls_tool_reforged:block/sign/sign_decor_model" }
+{
+  "parent": "item/generated",
+  "gui_light": "front",
+  "textures": {
+    "layer0": "immersive_engineer_decor_controls_tool_reforged:block/sign/engineersdecor-logo"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [-1, -78, -10],
+      "translation": [-2.75, -1.25, -1.5],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "firstperson_righthand": {
+      "rotation": [2, -68, 8],
+      "translation": [0.5, 0, -0.25],
+      "scale": [0.35, 0.35, 0.35]
+    },
+    "head": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 0, 0],
+      "scale": [1, 1, 1]
+    },
+    "ground": {
+      "translation": [0, 1.75, 2.5],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    "gui": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 0.5, 0],
+      "scale": [1, 1, 1]
+    },
+    "fixed": {
+      "rotation": [0, 180, 0],
+      "translation": [0, 0, -7.8]
+    }
+  }
+}
