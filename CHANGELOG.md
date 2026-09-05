@@ -2,7 +2,7 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
-## [1.1.55-reconstructed] - UNRELEASED
+## [1.1.55-reconstructed] - 2026-09-04
 
 ### Fixed
 
