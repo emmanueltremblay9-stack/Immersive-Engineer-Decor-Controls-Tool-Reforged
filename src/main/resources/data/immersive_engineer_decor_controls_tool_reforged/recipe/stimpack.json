@@ -8,7 +8,7 @@
   ],
   "key": {
     "F": {
-      "tag": "minecraft:carpets"
+      "tag": "minecraft:wool_carpets"
     },
     "P": {
       "item": "minecraft:water_bucket"
