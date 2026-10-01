@@ -1,4 +1,4 @@
-Injetor automático de estimulantes
+Injetor automático
 Injetor de emergência
 <&recipe>O pacote estimulante automático é um item médico de emergência.<br>
 <br>

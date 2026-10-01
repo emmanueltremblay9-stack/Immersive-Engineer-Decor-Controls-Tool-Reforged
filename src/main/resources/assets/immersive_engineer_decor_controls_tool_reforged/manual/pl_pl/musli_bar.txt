@@ -1,4 +1,4 @@
-Baton energetyczny z mieszanki musli
+Baton energetyczny musli
 Szybka przekąska warsztatowa
 <&recipe>Baton Muslee Melange to kompaktowe jedzenie z chleba, nasion i owoców.<br>
 <br>
