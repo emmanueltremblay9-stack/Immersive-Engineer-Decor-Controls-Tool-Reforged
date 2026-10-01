@@ -41,6 +41,7 @@ import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -819,6 +820,41 @@ public final class EngineerToolsGameTests {
       for (int i = 0; i < inventory.items.size(); i++) {
          inventory.items.set(i, new ItemStack(item, maxStackSize));
       }
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void stimpack_and_sleeping_bag_craft_with_every_wool_carpet(GameTestHelper helper) {
+      Item[] carpets = {
+         Items.WHITE_CARPET, Items.ORANGE_CARPET, Items.MAGENTA_CARPET, Items.LIGHT_BLUE_CARPET,
+         Items.YELLOW_CARPET, Items.LIME_CARPET, Items.PINK_CARPET, Items.GRAY_CARPET,
+         Items.LIGHT_GRAY_CARPET, Items.CYAN_CARPET, Items.PURPLE_CARPET, Items.BLUE_CARPET,
+         Items.BROWN_CARPET, Items.GREEN_CARPET, Items.RED_CARPET, Items.BLACK_CARPET
+      };
+      String[] names = {"stimpack", "sleeping_bag"};
+      Item[] outputs = {EngineerToolsModule.STIMPACK.get(), EngineerToolsModule.SLEEPING_BAG.get()};
+      for (Item carpet : carpets) {
+         CraftingInput[] inputs = {
+            CraftingInput.of(3, 3, List.of(
+               new ItemStack(carpet), new ItemStack(Items.WATER_BUCKET), new ItemStack(Items.IRON_INGOT),
+               new ItemStack(carpet), new ItemStack(Items.GLISTERING_MELON_SLICE), new ItemStack(Items.GOLDEN_APPLE),
+               ItemStack.EMPTY, new ItemStack(Items.IRON_NUGGET), ItemStack.EMPTY
+            )),
+            CraftingInput.of(3, 2, List.of(
+               new ItemStack(Items.IRON_NUGGET), new ItemStack(Items.IRON_NUGGET), new ItemStack(carpet),
+               new ItemStack(carpet), new ItemStack(carpet), new ItemStack(carpet)
+            ))
+         };
+         for (int i = 0; i < names.length; i++) {
+            ResourceLocation id = ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", names[i]);
+            var recipe = helper.getLevel().getRecipeManager().getRecipeFor(RecipeType.CRAFTING, inputs[i], helper.getLevel());
+            helper.assertTrue(recipe.isPresent(), id + " should match " + carpet);
+            helper.assertValueEqual(id, recipe.get().id(), "wrong recipe for " + carpet);
+            ItemStack result = recipe.get().value().assemble(inputs[i], helper.getLevel().registryAccess());
+            helper.assertTrue(result.is(outputs[i]), id + " should craft its registered item with " + carpet);
+            helper.assertValueEqual(1, result.getCount(), id + " should produce one item");
+         }
+      }
+      helper.succeed();
    }
 
    private static void assertRecipe(GameTestHelper helper, String name) {
