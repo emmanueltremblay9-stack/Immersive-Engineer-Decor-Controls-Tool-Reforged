@@ -1,4 +1,4 @@
-Paquete de estimulante automático
+Estimulante automático
 Inyector de emergencia
 <&recipe>El Paquete de estimulante automático es un objeto de recuperación para trabajos de mantenimiento peligrosos.<br>
 <br>

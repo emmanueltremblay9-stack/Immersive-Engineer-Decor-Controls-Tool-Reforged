@@ -1,4 +1,4 @@
-Marteau de concassage de minerais
+Marteau de concassage
 Outil de concassage manuel
 <&recipe>Le marteau de concassage de minerais est un outil manuel destiné aux premiers travaux sur le fer et l’or.<br>
 <br>

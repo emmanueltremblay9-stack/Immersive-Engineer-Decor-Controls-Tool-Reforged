@@ -1,5 +1,5 @@
 Autoinjector estimulant
 Injector d’urgéncia
-<&recipe>Lo paquet estimulant automatic es un objècte medical durgéncia.<br>
+<&recipe>Lo paquet estimulant automatic es un objècte medical d'urgéncia.<br>
 <br>
-Emplegatz-lo manualament per sonhar, protegir brèvament e accelerar. Dins linventari se desencadena amb pauc de vida e refreja. Gardatz-ne un pels endreches dangieroses.
+Emplegatz-lo manualament per sonhar, protegir brèvament e accelerar. Dins l'inventari se desencadena amb pauc de vida e refreja. Gardatz-ne un pels endreches dangieroses.

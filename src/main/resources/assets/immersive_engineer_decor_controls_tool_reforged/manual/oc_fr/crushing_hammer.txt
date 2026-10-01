@@ -2,4 +2,4 @@ Martèl de trissatge de minerals
 Aisina de trissatge manual
 <&recipe>Lo martèl trissador de mineral es una aisina manuala pel trabalh inicial del fèrre e de lor.<br>
 <br>
-Emplegatz-lo amb fèrre brut, aur brut, mineral de fèrre o daur e lors variants de deepslate per de polsa Immersive Engineering. Perd de durabilitat, torna a la grasilha fins a se rompre, susa en minant e rebuta las ciblas.
+Emplegatz-lo amb fèrre brut, aur brut, mineral de fèrre o d'aur e lors variants de deepslate per de polsa Immersive Engineering. Perd de durabilitat, torna a la grasilha fins a se rompre, susa en minant e rebuta las ciblas.

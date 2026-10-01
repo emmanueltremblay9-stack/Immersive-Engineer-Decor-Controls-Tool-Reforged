@@ -1,5 +1,5 @@
 Autoinjector estimulant
 Injector d’emergència
-<&recipe>El paquet estimulant automàtic és un objecte mèdic demergència.<br>
+<&recipe>El paquet estimulant automàtic és un objecte mèdic d'emergència.<br>
 <br>
-Useu-lo manualment per curar, protegir breument i accelerar. A linventari sactiva amb poca salut i després es refreda. Tingueu-ne un en llocs perillosos.
+Useu-lo manualment per curar, protegir breument i accelerar. A l'inventari s'activa amb poca salut i després es refreda. Tingueu-ne un en llocs perillosos.

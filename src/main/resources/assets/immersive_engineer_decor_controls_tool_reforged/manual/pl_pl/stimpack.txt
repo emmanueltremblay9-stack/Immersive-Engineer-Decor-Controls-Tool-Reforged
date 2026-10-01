@@ -1,4 +1,4 @@
-Automatyczny wstrzykiwacz stymulantów
+Automatyczny stymulator
 Awaryjny wstrzykiwacz
 <&recipe>Automatyczny stymulator to awaryjny przedmiot medyczny do niebezpiecznej pracy.<br>
 <br>

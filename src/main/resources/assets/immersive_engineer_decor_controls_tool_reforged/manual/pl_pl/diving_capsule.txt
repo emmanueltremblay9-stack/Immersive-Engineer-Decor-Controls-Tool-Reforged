@@ -1,4 +1,4 @@
-Kapsuła powietrza do nurkowania
+Kapsuła powietrzna
 Awaryjny zapas powietrza
 <&recipe>Kapsuła powietrzna to awaryjny zapas do pracy pod wodą.<br>
 <br>

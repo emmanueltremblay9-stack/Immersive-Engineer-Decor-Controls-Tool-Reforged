@@ -1,5 +1,5 @@
 Martell triturador de menes
 Ferramenta de trituració manual
-<&recipe>El martell triturador de mineral és una ferramenta manual per al processament inicial del ferro i lor.<br>
+<&recipe>El martell triturador de mineral és una ferramenta manual per al processament inicial del ferro i l'or.<br>
 <br>
-Useu-lo amb ferro cru, or cru, mineral de ferro o dor i les variants de pissarra profunda per a pols Immersive Engineering. Perd durabilitat, torna a la graella fins que es trenca, es desgasta minant i repel·lix objectius.
+Useu-lo amb ferro cru, or cru, mineral de ferro o d'or i les variants de pissarra profunda per a pols Immersive Engineering. Perd durabilitat, torna a la graella fins que es trenca, es desgasta minant i repel·lix objectius.

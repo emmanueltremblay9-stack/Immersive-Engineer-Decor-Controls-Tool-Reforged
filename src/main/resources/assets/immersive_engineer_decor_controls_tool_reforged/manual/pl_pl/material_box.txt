@@ -4,4 +4,4 @@ Skrzynka na materiały budowlane
 <br>
 Trzymaj skrzynkę w głównej ręce, a stos w drugiej, aby go schować; użyj skrzynki z pustą drugą ręką, aby wyjąć jeden stos.<br>
 <br>
-Mieści do 512 przedmiotów jednego typu, odrzuca inne skrzynki, niestapialny sprzęt i zmodyfikowane stosy oraz pokazuje zawartość w podpowiedzi.
+Mieści do 512 przedmiotów jednego typu, odrzuca inne skrzynki, sprzęt, którego nie można układać w stosy, i zmodyfikowane stosy oraz pokazuje zawartość w podpowiedzi.

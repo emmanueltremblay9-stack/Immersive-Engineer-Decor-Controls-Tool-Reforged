@@ -1,3 +1,3 @@
 Fragments grossiers de fer
-Matériau d'outil d'ingénieur utilisé par l'ensemble de recettes reconstitué.
+Matériau d'outil d'ingénieur
 <&recipe>Peuvent être fondus en lingots<br>de fer, mais ne conviennent pas<br>au traitement avancé des matériaux.

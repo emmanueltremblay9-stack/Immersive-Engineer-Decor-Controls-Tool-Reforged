@@ -481,7 +481,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit": "거친 철 가루",
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit.help": "제련하면 철 주괴가\n되지만 고급 재료\n가공에는 적합하지 않습니다.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box": "자재 보관함",
-  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "건축 자재 상자는 단순하고 변경되지 않은 한 종류의\n쌓을 수 있는 건축 자재를 대량으로 운반합니다. 상자를\n주 손에, 자재 묶음을 보조 손에 들고 사용해\n넣습니다. 보조 손을 비운 채 상자를 사용하면 한 묶음을 꺼냅니다.",
+  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "일반 건축 자재 한 종류를 대량 보관합니다.\n변경되지 않고 쌓을 수 있어야 합니다.\n주 손의 상자에 보조 손 자재를 넣으세요.\n보조 손을 비우고 한 묶음을 꺼내세요.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.empty": "자재 보관함이 비어 있습니다.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.full": "자재 보관함이 가득 찼습니다.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.mainhand": "자재 보관함을 주로 쓰는 손에 드세요.",

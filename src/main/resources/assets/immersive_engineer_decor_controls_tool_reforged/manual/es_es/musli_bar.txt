@@ -1,4 +1,4 @@
-Barrita energética Muslee Melange
+Barrita energética Muslee
 Tentempié rápido de taller
 <&recipe>La Barrita energética Muslee Melange es un alimento compacto hecho con pan, semillas y fruta.<br>
 <br>

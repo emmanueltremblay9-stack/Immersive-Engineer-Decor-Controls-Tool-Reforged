@@ -1,7 +1,7 @@
 Sac de dormir
 Equip portàtil de descans
-<&recipe>El sac de dormir és equip resistent al temps per descansar lluny dun llit.<br>
+<&recipe>El sac de dormir és equip resistent al temps per descansar lluny d'un llit.<br>
 <br>
-Useu-lo de nit a lOverworld per descansar fins al matí sense canviar el punt de reaparició.<br>
+Useu-lo de nit a l'Overworld per descansar fins al matí sense canviar el punt de reaparició.<br>
 <br>
 No funciona de dia, prop de monstres o en dimensions inadequades. Cada descans el desgasta.

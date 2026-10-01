@@ -481,7 +481,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit": "Granulado grosso de ferro",
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit.help": "Pode ser fundido em lingotes de\nferro, mas não serve para\nprocessamento avançado de materiais.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box": "Caixa de materiais",
-  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "A caixa de materiais carrega uma grande reserva de um único\nmaterial de construção comum, inalterado e empilhável. Segure a caixa na\nmão principal e o material na outra para guardá-lo; use-a com\na outra mão vazia para retirar uma pilha.",
+  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Grande estoque de um só material de construção\ncomum, inalterado e empilhável. Caixa na mão\nprincipal e material na outra: guardar. Outra\nmão vazia: retirar uma pilha.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.empty": "A caixa de materiais está vazia.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.full": "A caixa de materiais está cheia.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.mainhand": "Segure a caixa de materiais na mão principal.",
