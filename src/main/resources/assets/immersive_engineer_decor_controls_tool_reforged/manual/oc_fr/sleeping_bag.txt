@@ -1,7 +1,7 @@
 Sac de dormir
 Equipament de repaus portatiu
-<&recipe>Lo sac de dormir es un equipament resistent al temps per se pausar luènh dun lièch.<br>
+<&recipe>Lo sac de dormir es un equipament resistent al temps per se pausar luènh d'un lièch.<br>
 <br>
-Emplegatz-lo de nuèch dins lOverworld per pausar fins al matin sens cambiar lo punt de reaparicion.<br>
+Emplegatz-lo de nuèch dins l'Overworld per pausar fins al matin sens cambiar lo punt de reaparicion.<br>
 <br>
 Fonciona pas de jorn, prèp dels monstres ni dins de dimensions inadaptadas. Cada pausa lo susa.

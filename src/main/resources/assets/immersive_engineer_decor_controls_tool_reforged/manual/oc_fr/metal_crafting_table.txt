@@ -2,6 +2,6 @@ Taula de trabalh del metal
 Pòste de fabricacion de placas
 <&recipe>La taula de metal a un emplaçament de martèl, una grasilha 3x3 e una sortida.<br>
 <br>
-Emplegatz la grasilha coma una taula normala. Per las placas IE, botatz lo martèl denginhaire dins lemplaçament, lo material dins la grasilha e prenètz la placa a la sortida.<br>
+Emplegatz la grasilha coma una taula normala. Per las placas IE, botatz lo martèl d'enginhaire dins l'emplaçament, lo material dins la grasilha e prenètz la placa a la sortida.<br>
 <br>
-Las decoracions dacièr emplegan de placas formadas sus aquesta taula.
+Las decoracions d'acièr emplegan de placas formadas sus aquesta taula.

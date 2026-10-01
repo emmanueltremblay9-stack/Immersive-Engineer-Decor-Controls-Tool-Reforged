@@ -2,6 +2,6 @@ Premsa de barretes Muslee
 Premsa d’aliments
 <&recipe>La premsa Muslee transforma aliments comuns en racions compactes.<br>
 <br>
-Porteu pa, una poma i llavors de blat, meló, carabassa, remolatxa o cànem industrial i useu la premsa. Consumix una de cada, comprova lespai, crea quatre barres i danya la premsa.<br>
+Porteu pa, una poma i llavors de blat, meló, carabassa, remolatxa o cànem industrial i useu la premsa. Consumix una de cada, comprova l'espai, crea quatre barres i danya la premsa.<br>
 <br>
 Si falta res o no hi ha espai, no consumix res.

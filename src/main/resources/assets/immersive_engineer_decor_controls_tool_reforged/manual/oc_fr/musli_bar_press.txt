@@ -1,6 +1,6 @@
 Premsa de barras Muslee
 Premsa d’aliments
-<&recipe>La premsa Muslee transforma daliments comuns en racions compactas.<br>
+<&recipe>La premsa Muslee transforma d'aliments comuns en racions compactas.<br>
 <br>
 Portatz de pan, una poma e de granas de blat, melon, coja, bledarava o cambre industrial e emplegatz la premsa. Consomís un de cada, verifica la plaça, fa quatre barras e susa la premsa.<br>
 <br>

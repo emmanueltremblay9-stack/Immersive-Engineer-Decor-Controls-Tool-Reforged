@@ -14,13 +14,13 @@ Martèl de trissatge de minerals
 Aisina de trissatge manual
 <&crushing_hammer>Lo martèl trissador de mineral es una aisina manuala pel trabalh inicial del fèrre e de lor.<br>
 <br>
-Emplegatz-lo amb fèrre brut, aur brut, mineral de fèrre o daur e lors variants de deepslate per de polsa Immersive Engineering. Perd de durabilitat, torna a la grasilha fins a se rompre, susa en minant e rebuta las ciblas.
+Emplegatz-lo amb fèrre brut, aur brut, mineral de fèrre o d'aur e lors variants de deepslate per de polsa Immersive Engineering. Perd de durabilitat, torna a la grasilha fins a se rompre, susa en minant e rebuta las ciblas.
 <np>
 Localizador
 Marca de posicion memorizada
-<&tracker>Lo traçador garda la posicion dun blòt dins lobjècte.<br>
+<&tracker>Lo traçador garda la posicion d'un blòt dins l'objècte.<br>
 <br>
-Clicatz un blòt per gardar dimension e coordenadas. Linfobulla mòstra la posicion. Emplegatz-lo acoconat per escafar la cibla.<br>
+Clicatz un blòt per gardar dimension e coordenadas. L'infobulla mòstra la posicion. Emplegatz-lo acoconat per escafar la cibla.<br>
 <br>
 Marcatz maquinas, tunèls, comandas a distància o bastiments inacabats.
 <np>
@@ -32,35 +32,35 @@ Lo Carbon d’Ariadna es una aisina de marcacion reutilizabla de 100 utilizacion
 <np>
 Autoinjector estimulant
 Injector d’urgéncia
-<&stimpack>Lo paquet estimulant automatic es un objècte medical durgéncia.<br>
+<&stimpack>Lo paquet estimulant automatic es un objècte medical d'urgéncia.<br>
 <br>
-Emplegatz-lo manualament per sonhar, protegir brèvament e accelerar. Dins linventari se desencadena amb pauc de vida e refreja. Gardatz-ne un pels endreches dangieroses.
+Emplegatz-lo manualament per sonhar, protegir brèvament e accelerar. Dins l'inventari se desencadena amb pauc de vida e refreja. Gardatz-ne un pels endreches dangieroses.
 <np>
 Sac de dormir
 Equipament de repaus portatiu
-<&sleeping_bag>Lo sac de dormir es un equipament resistent al temps per se pausar luènh dun lièch.<br>
+<&sleeping_bag>Lo sac de dormir es un equipament resistent al temps per se pausar luènh d'un lièch.<br>
 <br>
-Emplegatz-lo de nuèch dins lOverworld per pausar fins al matin sens cambiar lo punt de reaparicion.<br>
+Emplegatz-lo de nuèch dins l'Overworld per pausar fins al matin sens cambiar lo punt de reaparicion.<br>
 <br>
 Fonciona pas de jorn, prèp dels monstres ni dins de dimensions inadaptadas. Cada pausa lo susa.
 <np>
 Caissa de depaus de materials
 Caissa de provesiment de construccion
-<&material_box>La caissa de materials pòrta una granda resèrva dun sol material de bastiment simple, pas modificat e apilable.<br>
+<&material_box>La caissa de materials pòrta una granda resèrva d'un sol material de bastiment simple, pas modificat e apilable.<br>
 <br>
-Tenètz la caissa en man principala e lo material dins lautra per lo cargar; amb lautra man voida tiratz una pila.<br>
+Tenètz la caissa en man principala e lo material dins l'autra per lo cargar; amb l'autra man voida tiratz una pila.<br>
 <br>
-Ten 512 objèctes dun tipe, refusa autras caissas, equipament non apilable e pilas modificadas e mòstra lo contengut dins linfobulla.
+Ten 512 objèctes d'un tipe, refusa autras caissas, equipament non apilable e pilas modificadas e mòstra lo contengut dins l'infobulla.
 <np>
 Capsula d’aire de cabussada
 Resèrva d’aire d’urgéncia
-<&diving_capsule>La capsula daire es una resèrva durgéncia pel trabalh jos laiga.<br>
+<&diving_capsule>La capsula d'aire es una resèrva d'urgéncia pel trabalh jos l'aiga.<br>
 <br>
-Emplegatz-la manualament per recuperar daire. Dins linventari se desencadena quand laire es gaireben agotat, puèi refreja. Portatz-la dins las minas negadas e prèp dels tudèls immergits.
+Emplegatz-la manualament per recuperar d'aire. Dins l'inventari se desencadena quand l'aire es gaireben agotat, puèi refreja. Portatz-la dins las minas negadas e prèp dels tudèls immergits.
 <np>
 Premsa de barras Muslee
 Premsa d’aliments
-<&musli_bar_press>La premsa Muslee transforma daliments comuns en racions compactas.<br>
+<&musli_bar_press>La premsa Muslee transforma d'aliments comuns en racions compactas.<br>
 <br>
 Portatz de pan, una poma e de granas de blat, melon, coja, bledarava o cambre industrial e emplegatz la premsa. Consomís un de cada, verifica la plaça, fa quatre barras e susa la premsa.<br>
 <br>
