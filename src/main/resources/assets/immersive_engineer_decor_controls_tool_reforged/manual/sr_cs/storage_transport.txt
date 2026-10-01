@@ -1,0 +1,41 @@
+Skladištenje i prevoz
+Delovi za inventar i protok
+Delovi za čuvanje i prevoz obuhvataju sanduke, burad, levke i ventile za kompaktne fabričke vodove.<br>
+<br>
+Koristi ove stranice pri planiranju skladišta, cevovoda, servisnih rezervoara i kontrolisanih vodova tečnosti.
+<np>
+Sanduk sa natpisom
+Izmenljiv natpis zaliha
+<&labeled_crate>Ovaj sanduk sa natpisom služi jasnom razvrstavanju u skladištu. Njegova prednja tablica može se uređivati kao mali radionički znak.<br>
+<br>
+Upotreba: klikni desnim dugmetom na tablicu da urediš natpis. Desnim klikom na ostatak sanduka otvori skladište okova, delova i zaliha za održavanje.<br>
+<np>
+Bure za tečnosti
+Oprema za vodove tečnosti
+<&fluid_barrel>Ovaj kompaktni deo služi malim rezervoarima, cevovodima, mestima sakupljanja i protoku kojim upravlja redstoun.<br>
+<br>
+Upotreba: postavi ga tako da cevi ili kofe mogu doseći stranu rezervoara.<br>
+<np>
+Levak za tečnosti
+Oprema za vodove tečnosti
+<&small_fluid_funnel>Mali levak za sakupljanje tečnosti je kompaktan deo za male rezervoare, cevovode, mesta sakupljanja i protok kojim upravlja redstoun.<br>
+<br>
+Upotreba: postavi ga ispod mesta sakupljanja tečnosti i usmeri sačuvani sadržaj u rezervoare ili cevi ispod.<br>
+<np>
+Nepovratni ventil za tečnosti
+Oprema za vodove tečnosti
+<&straight_pipe_valve>Nepovratni ventil za tečnosti je kompaktan deo za male rezervoare, cevovode, mesta sakupljanja i protok kojim upravlja redstoun.<br>
+<br>
+Upotreba: poravnaj ventil sa željenim smerom protoka.<br>
+<np>
+Redstoun ventil za tečnosti
+Oprema za vodove tečnosti
+<&straight_pipe_valve_redstone>Redstoun ventil za tečnosti je kompaktan deo za male rezervoare, cevovode, mesta sakupljanja i protok kojim upravlja redstoun.<br>
+<br>
+Upotreba: poravnaj ventil sa željenim smerom protoka.<br>
+<np>
+Analogni ventil za tečnosti
+Oprema za vodove tečnosti
+<&straight_pipe_valve_redstone_analog>Analogni ventil za tečnosti je kompaktan deo za male rezervoare, cevovode, mesta sakupljanja i protok kojim upravlja redstoun.<br>
+<br>
+Upotreba: poravnaj ventil sa željenim smerom protoka.<br>

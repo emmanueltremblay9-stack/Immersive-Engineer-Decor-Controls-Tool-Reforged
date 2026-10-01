@@ -1,0 +1,7 @@
+Indicator tip voltmetru
+Indicator de semnal
+<&recipe>Un indicator compact pentru camera de comandă afișează clar intensitatea redstone pe un panou.<br>
+<br>
+Utilizare: Montează-l acolo unde semnalul redstone din apropiere trebuie verificat dintr-o privire.<br>
+<br>
+Observații: Citește intensitatea redstone din apropiere, de la 0 la 15.

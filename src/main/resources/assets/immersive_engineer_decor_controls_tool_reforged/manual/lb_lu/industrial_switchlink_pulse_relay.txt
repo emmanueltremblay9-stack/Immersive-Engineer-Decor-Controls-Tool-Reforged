@@ -1,0 +1,7 @@
+Impulsverbindungsrelais
+Verbonne Steierung
+<&recipe>E Baudeel am Relaisstil bitt Steierbrieder e kompakte lokale Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten. Benotz Empfängerbléck, wann s du eng Aktivéierung mat enger verbonnener Pärel brauchs.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.

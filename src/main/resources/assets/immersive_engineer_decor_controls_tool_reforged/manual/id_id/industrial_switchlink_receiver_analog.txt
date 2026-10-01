@@ -1,0 +1,7 @@
+Penerima Tautan Analog
+Kendali tertaut
+<&recipe>Penerima tertaut memberi panel kendali sasaran jarak jauh yang terlihat.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Gunakan mutiara itu sambil menyelinap untuk mengaktifkan penerima dari jarak jauh.<br>
+<br>
+Catatan: penerima ini mengeluarkan sinyal redstone penuh saat dipicu.

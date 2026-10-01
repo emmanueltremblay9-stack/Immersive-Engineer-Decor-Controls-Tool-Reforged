@@ -1,0 +1,5 @@
+Kubbur úr dökku spónaþaki
+Veðraður þakhluti
+<&recipe>Þessi kubbur myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>

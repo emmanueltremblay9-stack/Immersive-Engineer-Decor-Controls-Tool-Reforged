@@ -1,0 +1,7 @@
+Vonalirányú entitásérzékelő
+Jelérzékelés
+<&recipe>Az entitásérzékelő látható padlólap nélkül figyeli a közeli mozgást.<br>
+<br>
+Használat: kösd ajtókhoz, lámpákhoz, riasztókhoz vagy gépek biztonsági reteszeléséhez.<br>
+<br>
+Megjegyzés: a blokk körül kis területet vizsgál.

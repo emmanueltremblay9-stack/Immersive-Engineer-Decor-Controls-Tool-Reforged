@@ -1,0 +1,5 @@
+Gömul iðnaðarhurð úr viði
+Gamall verkstæðisviður
+<&recipe>Þessi kubbur bætir við gömlum verkstæðisviði fyrir gólf, þrep, hurðir og hlýlega innanhússkanta.<br>
+<br>
+Notkun: Notaðu hann í gömul verkstæðisgólf, tröppur, hurðir og kanta.<br>

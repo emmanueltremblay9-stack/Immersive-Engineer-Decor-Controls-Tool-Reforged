@@ -1,0 +1,7 @@
+Schakelkoppelingsontvanger
+Gekoppelde bediening
+<&recipe>Een gekoppelde ontvanger geeft bedieningspanelen op afstand een redstonedoel op volle sterkte.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Rechtsklik rechtstreeks op de ontvanger om hem met de hand om te schakelen.<br>
+<br>
+Opmerking: een gekoppelde parel schakelt deze ontvanger om wanneer je de parel sluipend gebruikt.

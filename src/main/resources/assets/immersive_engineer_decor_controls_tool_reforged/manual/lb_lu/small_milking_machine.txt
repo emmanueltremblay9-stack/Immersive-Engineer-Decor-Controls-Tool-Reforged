@@ -1,0 +1,5 @@
+Mëllechmaschinn
+Hëllefsmëttel um Ateliersbuedem
+<&recipe>Déi kleng Mëllechmaschinn ass en Ateliersnotzblock fir Handwierk, Lagerung, Plazéierung, Ofbau, Sammelen oder kompakt Automatiséierung.<br>
+<br>
+Benotzung: Setz se bei Kéi a suerg fir eng Méiglechkeet, Mëllechbehälter oder Flëssegkeet erauszehuelen.<br>

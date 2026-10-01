@@ -1,0 +1,5 @@
+Pasiŭny fluid
+Abstalavannie fluidnych linij
+<&recipe>Pasiŭny nazapašvalnik fluidaŭ — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: staŭ jaho pobač z prydatnymi krynicami vady i pakidaj miesca dla advodu fluidu.<br>

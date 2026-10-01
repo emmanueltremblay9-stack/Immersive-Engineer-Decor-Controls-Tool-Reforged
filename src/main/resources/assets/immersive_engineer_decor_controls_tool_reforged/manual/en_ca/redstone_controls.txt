@@ -1,0 +1,789 @@
+Redstone Controls
+Gauges and signal fittings
+Control hardware turns hidden redstone into readable factory panels, sensors, indicators, switches, alarms, and linked signal fittings.<br>
+<br>
+Use these pages when building operator stations, signal boards, safety circuits, and remote controls.
+<np>
+Arrow Target
+Momentary pulse
+<&arrow_target>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Door sensor
+Redstone control
+<&door_sensor_switch>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Elevator Button
+Redstone control
+<&elevator_button>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Glass Button
+Redstone control
+<&glass_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Glass Button
+Redstone control
+<&glass_small_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Glass Touch Button
+Redstone control
+<&glass_touch_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Machine Button
+Redstone control
+<&industrial_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Button
+Redstone control
+<&industrial_double_pole_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Fenced Machine Button
+Redstone control
+<&industrial_fenced_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Knock Button
+Redstone control
+<&industrial_knock_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Old Fancy Button
+Redstone control
+<&oldfancy_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Old Fancy Button
+Redstone control
+<&oldfancy_small_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Old Fancy Chain Button
+Momentary pulse
+<&oldfancy_spring_reset_chain>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Rustic Button
+Redstone control
+<&rustic_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Rustic Nail Button
+Redstone control
+<&rustic_nail_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Rustic Small Button
+Redstone control
+<&rustic_small_button>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Rustic Chain Button
+Momentary pulse
+<&rustic_spring_reset_chain>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.
+<np>
+Glass Contact Plate
+Pressure pulse
+<&glass_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Glass Door Contact
+Pressure pulse
+<&glass_door_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Contact Mat
+Pressure pulse
+<&industrial_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Door Contact Mat
+Pressure pulse
+<&industrial_door_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Fall-Through Detector
+Signal sensing
+<&industrial_fallthrough_detector>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Foot Button
+Redstone control
+<&industrial_foot_button>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Industrial Shock Door
+Pressure pulse
+<&industrial_high_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Shock Contact Mat
+Pressure pulse
+<&industrial_shock_sensitive_contact_mat>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Shock Trapdoor
+Pressure pulse
+<&industrial_shock_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Red power plant
+Pressure pulse
+<&red_power_plant>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Rustic Pressure Plate
+Pressure pulse
+<&rustic_contact_plate>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Rustic Door Pressure
+Pressure pulse
+<&rustic_door_contact_plate>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Rustic Fall Detector
+Signal sensing
+<&rustic_fallthrough_detector>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Rustic Shock Door
+Pressure pulse
+<&rustic_high_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Rustic Shock Plate
+Pressure pulse
+<&rustic_shock_sensitive_plate>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Rustic Shock Door
+Pressure pulse
+<&rustic_shock_sensitive_trapdoor>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Yellow power plant
+Pressure pulse
+<&yellow_power_plant>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.
+<np>
+Glass Day Timer Clock
+Daylight signal
+<&glass_day_timer>A timer switch follows the daytime part of the world cycle.<br>
+<br>
+Usage: Use it for yard lamps, shutters, and day-only factory controls.<br>
+<br>
+Notes: Requires a dimension with skylight.
+<np>
+Glass Entity Detector
+Signal sensing
+<&glass_entity_detector>An entity detector watches nearby movement without a visible floor plate.<br>
+<br>
+Usage: Route it into doors, lamps, alarms, or machine interlocks.<br>
+<br>
+Notes: Scans a small area around the block.
+<np>
+Glass Interval Signal
+Timed pulse
+<&glass_interval_timer>A compact timer switch provides a scheduled redstone pulse.<br>
+<br>
+Usage: Use it where a small mechanism needs periodic or delayed control.<br>
+<br>
+Notes: Uses scheduled redstone pulses.
+<np>
+Glass Line Detector
+Signal sensing
+<&glass_linear_entity_detector>An entity detector watches nearby movement without a visible floor plate.<br>
+<br>
+Usage: Route it into doors, lamps, alarms, or machine interlocks.<br>
+<br>
+Notes: Scans a small area around the block.
+<np>
+Block Detector
+Signal sensing
+<&industrial_block_detector>A block detector checks whether the facing space is occupied.<br>
+<br>
+Usage: Point it at the machine face, buffer, or guarded space to watch.<br>
+<br>
+Notes: Powers when the facing block is not air.
+<np>
+Day Timer Clock
+Daylight signal
+<&industrial_day_timer>A timer switch follows the daytime part of the world cycle.<br>
+<br>
+Usage: Use it for yard lamps, shutters, and day-only factory controls.<br>
+<br>
+Notes: Requires a dimension with skylight.
+<np>
+Entity Detector
+Signal sensing
+<&industrial_entity_detector>An entity detector watches nearby movement without a visible floor plate.<br>
+<br>
+Usage: Route it into doors, lamps, alarms, or machine interlocks.<br>
+<br>
+Notes: Scans a small area around the block.
+<np>
+Interval Timer
+Timed pulse
+<&industrial_interval_timer>A compact timer switch provides a scheduled redstone pulse.<br>
+<br>
+Usage: Use it where a small mechanism needs periodic or delayed control.<br>
+<br>
+Notes: Uses scheduled redstone pulses.
+<np>
+Light Sensor
+Signal sensing
+<&industrial_light_sensor>A light sensor converts local brightness into redstone control.<br>
+<br>
+Usage: Use it for automatic lamps, shutters, and visibility circuits.<br>
+<br>
+Notes: Powers at raw brightness 8 or higher.
+<np>
+Storm Detector
+Signal sensing
+<&industrial_lightning_sensor>A storm sensor drives warnings during thunder conditions.<br>
+<br>
+Usage: Place it under open sky and route it to lamps or alarms.<br>
+<br>
+Notes: Requires thunder and sky access.
+<np>
+Line Entity Detector
+Signal sensing
+<&industrial_linear_entity_detector>An entity detector watches nearby movement without a visible floor plate.<br>
+<br>
+Usage: Route it into doors, lamps, alarms, or machine interlocks.<br>
+<br>
+Notes: Scans a small area around the block.
+<np>
+Rain Sensor
+Signal sensing
+<&industrial_rain_sensor>A weather sensor turns rainfall at its position into redstone.<br>
+<br>
+Usage: Mount it where the block above can receive rain.<br>
+<br>
+Notes: Checks rain above the sensor.
+<np>
+Bistable Glass Switch
+Redstone control
+<&glass_rotary_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Bistable Glass Touch
+Redstone control
+<&glass_touch_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Orange Sensitiveglass
+Signal glass
+<&orange_sensitiveglass>A redstone-reactive glass block keeps sightlines while showing signal state.<br>
+<br>
+Usage: Use it in control-room windows, lit panels, and guarded factory glass.<br>
+<br>
+Notes: Changes state from nearby redstone power.
+<np>
+Lit Sensitive Glass
+Signal glass
+<&sensitive_glass_block>A redstone-reactive glass block keeps sightlines while showing signal state.<br>
+<br>
+Usage: Use it in control-room windows, lit panels, and guarded factory glass.<br>
+<br>
+Notes: Changes state from nearby redstone power.
+<np>
+Coloured Sensitive Glass
+Signal glass
+<&stained_sensitiveglass>A redstone-reactive glass block keeps sightlines while showing signal state.<br>
+<br>
+Usage: Use it in control-room windows, lit panels, and guarded factory glass.<br>
+<br>
+Notes: Changes state from nearby redstone power.
+<np>
+Glass Bar Gauge
+Signal gauge
+<&glass_vertical_bar_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<br>
+Usage: Mount it where neighbouring redstone power can be checked at a glance.<br>
+<br>
+Notes: Reads nearby redstone strength from 0 to 15.
+<np>
+Analog Gauge
+Signal gauge
+<&industrial_analog_angular_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<br>
+Usage: Mount it where neighbouring redstone power can be checked at a glance.<br>
+<br>
+Notes: Reads nearby redstone strength from 0 to 15.
+<np>
+Voltmeter Gauge
+Signal gauge
+<&industrial_analog_horizontal_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<br>
+Usage: Mount it where neighbouring redstone power can be checked at a glance.<br>
+<br>
+Notes: Reads nearby redstone strength from 0 to 15.
+<np>
+Digital Gauge
+Readable signal strength
+<&industrial_small_digital_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<br>
+Usage: Mount it where neighbouring redstone power can be checked at a glance.<br>
+<br>
+Notes: Reads nearby redstone strength from 0 to 15.
+<np>
+Glass Tube Gauge
+Signal gauge
+<&industrial_tube_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<br>
+Usage: Mount it where neighbouring redstone power can be checked at a glance.<br>
+<br>
+Notes: Reads nearby redstone strength from 0 to 15.
+<np>
+Analog Bar Gauge
+Signal gauge
+<&industrial_vertical_bar_gauge>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<br>
+Usage: Mount it where neighbouring redstone power can be checked at a glance.<br>
+<br>
+Notes: Reads nearby redstone strength from 0 to 15.
+<np>
+Alarm Lamp
+Signal feedback
+<&industrial_alarm_lamp>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Alarm Siren
+Signal feedback
+<&industrial_alarm_siren>The Alarm Siren is a face-mounted redstone indicator. It changes powered state from the signal supplied by the block it is attached to.<br>
+<br>
+Usage: Attach it to a solid face and power it to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: The siren refreshes once per second while its attached signal remains active.
+<np>
+Blinking Led
+Signal feedback
+<&industrial_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Green Blinking LED
+Signal feedback
+<&industrial_green_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Green LED
+Signal feedback
+<&industrial_green_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Red LED
+Signal feedback
+<&industrial_red_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Red LED
+Signal feedback
+<&industrial_red_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+White Blinking LED
+Signal feedback
+<&industrial_white_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+White LED
+Signal feedback
+<&industrial_white_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Yellow Blinking LED
+Signal feedback
+<&industrial_yellow_blinking_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Yellow LED
+Signal feedback
+<&industrial_yellow_led>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Rustic Semaphore
+Signal feedback
+<&rustic_semaphore>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.
+<np>
+Comparator Switch
+Attached signal
+<&industrial_comparator_switch>A compact sensor switch reads the block it is mounted on and turns that reading into a simple panel output.<br>
+<br>
+Usage: Mount it on inventories, tanks, or redstone hardware. When the attached block reports comparator, container, or redstone output, the switch emits full-strength redstone.<br>
+<br>
+Notes: Use it to turn storage levels or hidden wiring into clear on/off control lines.
+<np>
+Dimmer
+Variable signal
+<&industrial_dimmer>A rotary control dials redstone strength from a compact panel face.<br>
+<br>
+Usage: Right-click it to step the output upward, then back to zero after full strength.<br>
+<br>
+Notes: Outputs strength from 0 to 15.
+<np>
+ESTOP Button
+Redstone control
+<&industrial_estop_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Hopper Blocker
+Redstone control
+<&industrial_hopper_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Knock Switch
+Redstone control
+<&industrial_knock_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Lever
+Redstone control
+<&industrial_lever>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Two-Btn. Machine Switch
+Redstone control
+<&industrial_machine_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Pull Handle
+Redstone control
+<&industrial_pull_handle>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Rotary Lever
+Redstone control
+<&industrial_rotary_lever>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Rotary Machine Switch
+Redstone control
+<&industrial_rotary_machine_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Contact Lever
+Redstone control
+<&industrial_small_lever>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Switch
+Redstone control
+<&industrialswitch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Light Switch
+Redstone control
+<&light_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Valve Switch
+Redstone control
+<&valve_wheel_switch>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Cased Pulse Receiver
+Linked control
+<&industrial_switchlink_cased_pulse_receiver>A cased linked pulse receiver gives remote panels a short redstone trigger.<br>
+<br>
+Usage: Click it with an Ender Pearl to create a linked pearl. Right-click it or trigger the linked pearl to emit a short pulse.<br>
+<br>
+Notes: The pulse resets itself after its scheduled duration.
+<np>
+Cased Link Receiver
+Linked control
+<&industrial_switchlink_cased_receiver>A cased linked receiver gives remote panels a rugged redstone target.<br>
+<br>
+Usage: Click it with an Ender Pearl to create a linked pearl. Right-click the receiver directly to toggle it by hand.<br>
+<br>
+Notes: A linked pearl toggles this receiver when sneak-used.
+<np>
+Pulse Link Receiver
+Linked control
+<&industrial_switchlink_pulse_receiver>A linked pulse receiver gives remote panels a short redstone trigger.<br>
+<br>
+Usage: Click it with an Ender Pearl to create a linked pearl. Right-click it or trigger the linked pearl to emit a short pulse.<br>
+<br>
+Notes: The pulse resets itself after its scheduled duration.
+<np>
+Pulse Link Relay
+Linked control
+<&industrial_switchlink_pulse_relay>A relay-styled fitting gives panel builds a compact local switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits. Use receiver blocks when you need linked pearl activation.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Switch Link Receiver
+Linked control
+<&industrial_switchlink_receiver>A linked receiver gives remote panels a full-strength redstone target.<br>
+<br>
+Usage: Click it with an Ender Pearl to create a linked pearl. Right-click the receiver directly to toggle it by hand.<br>
+<br>
+Notes: A linked pearl toggles this receiver when sneak-used.
+<np>
+Analog Link Receiver
+Linked control
+<&industrial_switchlink_receiver_analog>A linked receiver gives control panels a visible remote target.<br>
+<br>
+Usage: Click it with an Ender Pearl to create a linked pearl. Sneak-use that pearl to activate the receiver remotely.<br>
+<br>
+Notes: This receiver emits a full redstone signal when triggered.
+<np>
+Switch Link Relay
+Linked control
+<&industrial_switchlink_relay>A relay-styled fitting gives panel builds a compact local switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits. Use receiver blocks when you need linked pearl activation.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Analog Link Relay
+Linked control
+<&industrial_switchlink_relay_analog>A relay-styled fitting gives panel builds a compact local switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits. Use receiver blocks when you need linked pearl activation.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Switch Link Pearl
+Linked control
+<&switchlink_pearl>A linked pearl stores a receiver target for remote factory controls.<br>
+<br>
+Usage: Click a Switch Link receiver with an Ender Pearl to create one. Sneak-use the linked pearl to activate the stored receiver.<br>
+<br>
+Notes: The target must be loaded, in the same dimension, and within range.
+<np>
+Old Fancy Lever
+Redstone control
+<&oldfancy_bistableswitch1>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Old Fancy Rotary Lever
+Redstone control
+<&oldfancy_bistableswitch2>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Rustic Rotary Lever
+Redstone control
+<&rustic_angular_lever>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Rustic Lever
+Redstone control
+<&rustic_lever>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Rustic Nail Lever
+Redstone control
+<&rustic_nail_lever>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.
+<np>
+Rustic Two-Hinge Lever
+Redstone control
+<&rustic_two_hinge_lever>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.

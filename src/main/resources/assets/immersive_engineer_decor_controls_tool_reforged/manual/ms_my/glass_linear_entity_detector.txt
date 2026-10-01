@@ -1,0 +1,7 @@
+Pengesan Garisan Kaca
+Penderiaan isyarat
+<&recipe>Pengesan entiti memantau pergerakan berdekatan tanpa plat lantai yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan kepada pintu, lampu, penggera atau saling kunci mesin.<br>
+<br>
+Nota: Mengimbas kawasan kecil di sekitar blok.

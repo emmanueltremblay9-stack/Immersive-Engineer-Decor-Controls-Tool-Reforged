@@ -1,0 +1,5 @@
+Máy phá khối
+Tiện ích sàn xưởng
+<&recipe>Máy phá khối nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Đặt mặt làm việc hướng về khối cần bỏ.<br>

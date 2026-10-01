@@ -1,0 +1,5 @@
+Factory suckin' device
+Gear fer the workshop deck
+<&recipe>This block shifts stacks o' loot through a tighter factory casing.<br>
+<br>
+Orders: Face her along the loot-bag line, then set range, stack count, timing and redstone orders on her screen.<br>

@@ -1,0 +1,7 @@
+Porthole-glass daylight clock
+Signal by daylight
+<&recipe>A timer switch follows the daylight part o' the world's cycle.<br>
+<br>
+Orders: Use her fer yard lamps, shutters and factory controls that work only by day.<br>
+<br>
+Mind ye: Her dimension must have skylight.

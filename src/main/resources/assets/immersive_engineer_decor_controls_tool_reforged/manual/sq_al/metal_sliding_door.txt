@@ -1,0 +1,5 @@
+Derë metalike rrëshqitëse
+Pikë hyrjeje industriale
+<&recipe>Ky bllok jep një hyrje të fortë për dhoma shërbimi, puse, çati dhe mbulesa makinerish.<br>
+<br>
+Përdorimi: instaloje aty ku ndërtesa kërkon një hapje të kontrolluar mirëmbajtjeje.<br>

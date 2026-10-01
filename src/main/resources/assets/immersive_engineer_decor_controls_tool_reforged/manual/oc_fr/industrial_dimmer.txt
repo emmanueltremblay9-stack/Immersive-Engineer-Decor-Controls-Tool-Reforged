@@ -1,0 +1,7 @@
+Variador
+Senhal variable
+<&recipe>Una comanda rotativa règla la poténcia de redstone dempuèi la fàcia d’un panèl compacte.<br>
+<br>
+Utilizacion : fai un clic drech per aumentar progressivament la sortida ; après la poténcia maximala, torna a zèro.<br>
+<br>
+Nòta : la poténcia de sortida va de 0 a 15.

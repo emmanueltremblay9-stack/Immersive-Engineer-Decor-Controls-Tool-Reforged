@@ -1,0 +1,5 @@
+Avouillette d'uzine
+Outil de sol d'atelier
+<&recipe>Çu blloqe dépllâce des pilées de bezaignes den eune bouéte d'uzine pus serrée.<br>
+<br>
+Empllai : Miréz-le devers la ligne de renabls, pis regléz la portée, le nombr des pilées, le temp e le mode redstone den son écran.<br>

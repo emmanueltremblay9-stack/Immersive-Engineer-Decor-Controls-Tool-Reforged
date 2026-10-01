@@ -1,0 +1,161 @@
+Klinkeris ir mūras
+Plytų ir betono apvalkalai
+Klinkeris, šlako plytos, gelžbetonis ir šarvuotas stiklas suteikia masyvius paviršius karštoms patalpoms, dirbtuvėms ir apsaugotoms matymo angoms.<br>
+<br>
+Naudok derančius pusblokius, laiptus, plokšteles ir sienas kraštams užbaigti, išlaikydamas tą patį fabriko medžiagų stilių.
+<np>
+Klinkerio plytų blokas
+Suodžiais patamsintas mūras
+<&clinker_brick_block>Šis blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Klinkerio plytų pusblokis
+Suodžiais patamsintas mūras
+<&clinker_brick_slab>Šis blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Klinkerio plytų laiptai
+Suodžiais patamsintas mūras
+<&clinker_brick_stairs>Šis blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Klinkerio plytų siena
+Suodžiais patamsintas mūras
+<&clinker_brick_wall>Šis blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Purvinas klinkerio blokas
+Suodžiais patamsintas mūras
+<&clinker_brick_stained_block>Purvinas klinkerio plytų blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Purvinas klinkerio pusblokis
+Suodžiais patamsintas mūras
+<&clinker_brick_stained_slab>Purvinas klinkerio plytų pusblokis suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Purvini klinkerio laiptai
+Suodžiais patamsintas mūras
+<&clinker_brick_stained_stairs>Purvini klinkerio plytų laiptai suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Puošta klinkerio plyta
+Suodžiais patamsintas mūras
+<&clinker_brick_sastor_corner_block>Smiltainiu puošta klinkerio plyta suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Įgilinta klinkerio plyta
+Suodžiais patamsintas mūras
+<&clinker_brick_recessed>Šis blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Klinkerio plytos su plyšiais
+Suodžiais patamsintas mūras
+<&clinker_brick_vertically_slit>Klinkerio plytos su vertikaliais plyšiais suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Vertikalus klinkerio pusblokis
+Suodžiais patamsintas mūras
+<&clinker_brick_vertical_slab_structured>Raštuotas vertikalus klinkerio pusblokis suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Klinkerio plytų pusblokis
+Suodžiais patamsintas mūras
+<&halfslab_clinker_brick>Šis blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>
+<np>
+Šlako plytų blokas
+Tankus fabriko mūras
+<&slag_brick_block>Šis blokas suteikia tankų pilkai rudą mūrą pamatams, atraminėms sienoms ir senesnėms dirbtuvėms.<br>
+<br>
+Naudojimas: naudok seniems pamatams, atraminėms sienoms ir purvinoms gamyklos grindims.<br>
+<np>
+Šlako plytų pusblokis
+Tankus fabriko mūras
+<&slag_brick_slab>Šis blokas suteikia tankų pilkai rudą mūrą pamatams, atraminėms sienoms ir senesnėms dirbtuvėms.<br>
+<br>
+Naudojimas: naudok seniems pamatams, atraminėms sienoms ir purvinoms gamyklos grindims.<br>
+<np>
+Šlako plytų laiptai
+Tankus fabriko mūras
+<&slag_brick_stairs>Šis blokas suteikia tankų pilkai rudą mūrą pamatams, atraminėms sienoms ir senesnėms dirbtuvėms.<br>
+<br>
+Naudojimas: naudok seniems pamatams, atraminėms sienoms ir purvinoms gamyklos grindims.<br>
+<np>
+Šlako plytų siena
+Tankus fabriko mūras
+<&slag_brick_wall>Šis blokas suteikia tankų pilkai rudą mūrą pamatams, atraminėms sienoms ir senesnėms dirbtuvėms.<br>
+<br>
+Naudojimas: naudok seniems pamatams, atraminėms sienoms ir purvinoms gamyklos grindims.<br>
+<np>
+Gelžbetonio blokas
+Gelžbetonis
+<&rebar_concrete>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Gelžbetonio pusblokis
+Gelžbetonis
+<&rebar_concrete_slab>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Gelžbetonio laiptai
+Gelžbetonis
+<&rebar_concrete_stairs>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Gelžbetonio siena
+Gelžbetonis
+<&rebar_concrete_wall>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Plona gelžbetonio plokštelė
+Gelžbetonis
+<&halfslab_rebar_concrete>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Gelžbetonio plytelė
+Gelžbetonis
+<&rebar_concrete_tile>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Gelžbetonio plytelių pusblokis
+Gelžbetonis
+<&rebar_concrete_tile_slab>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Gelžbetonio plytelė
+Gelžbetonis
+<&rebar_concrete_tile_stairs>Gelžbetonio plytelių laiptai yra sukietėjusio betono dalys mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>
+<np>
+Šarvuoto stiklo blokas
+Apsaugota matymo linija
+<&panzerglass_block>Šis blokas leidžia matyti kiaurai ir kartu dera prie sutvirtintų fabriko konstrukcijų.<br>
+<br>
+Naudojimas: naudok ten, kur žaidėjai turėtų matyti mašinas pro apsauginę pertvarą.<br>
+<np>
+Šarvuoto stiklo pusblokis
+Apsaugota matymo linija
+<&panzerglass_slab>Šis blokas leidžia matyti kiaurai ir kartu dera prie sutvirtintų fabriko konstrukcijų.<br>
+<br>
+Naudojimas: naudok ten, kur žaidėjai turėtų matyti mašinas pro apsauginę pertvarą.<br>

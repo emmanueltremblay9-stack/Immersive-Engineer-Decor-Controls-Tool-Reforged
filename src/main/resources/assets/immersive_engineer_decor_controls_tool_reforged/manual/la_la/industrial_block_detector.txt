@@ -1,0 +1,7 @@
+Detector cuborum
+Sensus signorum
+<&recipe>Detector cuborum inspicit num spatium ante se occupatum sit.<br>
+<br>
+Usus: ad faciem machinae, receptaculum aut spatium custoditum observandum dirige.<br>
+<br>
+Notae: signum emittit si cubus ante se aer non est.

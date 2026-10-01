@@ -1,0 +1,5 @@
+Barril de fluidos
+Equipamiento de tuberías de fluidos
+<&recipe>Este elemento compacto forma parte de las conducciones de fluidos para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Colocalo donde las tuberías o los baldes puedan acceder a la cara del depósito.<br>

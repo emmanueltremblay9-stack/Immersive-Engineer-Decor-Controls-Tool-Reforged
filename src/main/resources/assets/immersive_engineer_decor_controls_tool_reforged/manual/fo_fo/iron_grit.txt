@@ -1,0 +1,3 @@
+Grovt jarngrús
+Tilfar til verkfrøðingaamboð, brúkt av endurgjørdu evningaruppskriftunum.
+<&recipe>Kann bræðast til<br>jarnstengur, men hóskar ikki<br>til framkomna tilfarsviðgerð.

@@ -1,0 +1,7 @@
+Schaltlinkempfänga
+Verbundene Steuerung
+<&recipe>A verbundener Empfänga gibt entfernten Paneele a Redstone-Ziel mit voller Stärk.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Rechtsklick direkt auf'n Empfänga zum Umschaltn mit da Hand.<br>
+<br>
+Hinweis: A verbundene Perle schaltet den Empfänga um, wennst's beim Schleichn benutzt.

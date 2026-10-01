@@ -1,0 +1,93 @@
+Aisinas de l’engenhaire
+Equipament d’obrador portatiu
+L’ensemble de las Aisinas de l’engenhaire apond d’equipaments de man, de marcas de mina, de consomables d’urgéncia, de manjar pel terren e de pichonas aisinas de tractament dels materials al meteis manual que presenta los blòcs de decòr e de comanda.<br>
+<br>
+Aquestas aisinas son previstas pel trabalh luènh d’un obrador plan equipat : marcar lo camin, portar de provisions, se remetre dels accidents e acabar de pichons trabalhs de tractament sus plaça.
+<np>
+Aisina REDIA
+Aisina utilitària cobèrta de diamant
+<&redia_tool>L’Aisina REDIA es una aisina de terren duradissa pels trabalhs rapids del sòl. Utiliza-la sus un sòl que se pòt trabalhar per crear de tèrra laurada.<br>
+<br>
+Aplica-la sus una fàcia establa en portant d’entòrchas per pausar una entòrcha de ton inventari sens gastar REDIA. Lo trabalh del sòl, la tonsura, lo trabalh de pigassa e l’abatatge dels arbres consoman de durabilitat.
+<np>
+Martèl de trissatge de minerals
+Aisina de trissatge manual
+<&crushing_hammer>Lo martèl trissador de mineral es una aisina manuala pel trabalh inicial del fèrre e de lor.<br>
+<br>
+Emplegatz-lo amb fèrre brut, aur brut, mineral de fèrre o daur e lors variants de deepslate per de polsa Immersive Engineering. Perd de durabilitat, torna a la grasilha fins a se rompre, susa en minant e rebuta las ciblas.
+<np>
+Localizador
+Marca de posicion memorizada
+<&tracker>Lo traçador garda la posicion dun blòt dins lobjècte.<br>
+<br>
+Clicatz un blòt per gardar dimension e coordenadas. Linfobulla mòstra la posicion. Emplegatz-lo acoconat per escafar la cibla.<br>
+<br>
+Marcatz maquinas, tunèls, comandas a distància o bastiments inacabats.
+<np>
+Carbon d’Ariadna
+Marca de camin de mina
+<&ariadne_coal>Lo Carbon d’Ariadna pausa lèu de sagetas negras sus las fàcias establas de las minas. Utiliza-lo sus una fàcia solida per marcar lo viratge venent, una sortida o una bifurcacion ; la marca admet uèch direccions sus la fàcia clicada, dont las diagonalas.<br>
+<br>
+Lo Carbon d’Ariadna es una aisina de marcacion reutilizabla de 100 utilizacions. Cada marca pausada amb succès còsta un ponch de durabilitat. Las fàcias que convenon pas son refusadas sens gastar l’objècte.
+<np>
+Autoinjector estimulant
+Injector d’urgéncia
+<&stimpack>Lo paquet estimulant automatic es un objècte medical durgéncia.<br>
+<br>
+Emplegatz-lo manualament per sonhar, protegir brèvament e accelerar. Dins linventari se desencadena amb pauc de vida e refreja. Gardatz-ne un pels endreches dangieroses.
+<np>
+Sac de dormir
+Equipament de repaus portatiu
+<&sleeping_bag>Lo sac de dormir es un equipament resistent al temps per se pausar luènh dun lièch.<br>
+<br>
+Emplegatz-lo de nuèch dins lOverworld per pausar fins al matin sens cambiar lo punt de reaparicion.<br>
+<br>
+Fonciona pas de jorn, prèp dels monstres ni dins de dimensions inadaptadas. Cada pausa lo susa.
+<np>
+Caissa de depaus de materials
+Caissa de provesiment de construccion
+<&material_box>La caissa de materials pòrta una granda resèrva dun sol material de bastiment simple, pas modificat e apilable.<br>
+<br>
+Tenètz la caissa en man principala e lo material dins lautra per lo cargar; amb lautra man voida tiratz una pila.<br>
+<br>
+Ten 512 objèctes dun tipe, refusa autras caissas, equipament non apilable e pilas modificadas e mòstra lo contengut dins linfobulla.
+<np>
+Capsula d’aire de cabussada
+Resèrva d’aire d’urgéncia
+<&diving_capsule>La capsula daire es una resèrva durgéncia pel trabalh jos laiga.<br>
+<br>
+Emplegatz-la manualament per recuperar daire. Dins linventari se desencadena quand laire es gaireben agotat, puèi refreja. Portatz-la dins las minas negadas e prèp dels tudèls immergits.
+<np>
+Premsa de barras Muslee
+Premsa d’aliments
+<&musli_bar_press>La premsa Muslee transforma daliments comuns en racions compactas.<br>
+<br>
+Portatz de pan, una poma e de granas de blat, melon, coja, bledarava o cambre industrial e emplegatz la premsa. Consomís un de cada, verifica la plaça, fa quatre barras e susa la premsa.<br>
+<br>
+Se manca quicòm o de plaça, res es consomit.
+<np>
+Barra energetica Muslee Melange
+Collacion rapida d’obrador
+<&musli_bar>La barra Muslee Melange es un aliment compacte de pan, granas e frucha.<br>
+<br>
+Manjatz-la sul terren en installant comandas, tudèls, plataformas o linhas de maquinas.
+<np>
+Espremedor mental
+Condensador d’experiéncia
+<&charged_lapis_squeezer>L’Espremedor mental transforma un lapislazuli e un nivèl d’experiéncia de ton inventari en Lapislazuli cargat.<br>
+<br>
+Cada conversion capitada nafra l’utilizaire, provòca un agotament alimentari e l’avugla un brèu moment. L’aparelh refusa de foncionar sens lapislazuli, sens XP o quand l’utilizaire es tròp pròche de la mòrt.
+<np>
+Lapislazuli cargat
+Experiéncia servada
+<&charged_lapis>Lo Lapislazuli cargat sèrva un nivèl d’experiéncia. Consoma-lo per recuperar lo nivèl, suprimir los efièches actius e te rendre un pauc de santat.<br>
+<br>
+Fabrica primièr un Espremedor mental ; lo Lapislazuli cargat se produsís en utilizant aquesta aisina amb de lapislazuli e d’XP disponibles.
+<np>
+Granulat grossièr de fèrre
+Material d’aisina d’engenhaire utilizat per l’ensemble de recèptas reconstituit.
+<&iron_grit>Se pòt fondre en lingòts de<br>fèrre, mas conven pas al<br>tractament avançat dels materials.
+<np>
+Granulat grossièr d’aur
+Material d’aisina d’engenhaire utilizat per l’ensemble de recèptas reconstituit.
+<&gold_grit>Se pòt fondre en lingòts d’aur,<br>mas conven pas al tractament<br>avançat dels materials.

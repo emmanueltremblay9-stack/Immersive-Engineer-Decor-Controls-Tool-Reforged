@@ -1,0 +1,108 @@
+Industriell konstruksjon
+Fabrikkvegger og kantar
+Allmenne byggjedelar omfattar dører, vindauge, lys, varselskilt, kantar og konstruksjonsdelar som ikkje høyrer til ein meir særskild del.<br>
+<br>
+Bruk desse sidene til fabrikkrom, servicegangar, faremerking og praktiske industridetaljar.
+<np>
+Jarnlampe
+Kompakt arbeidslys
+<&iron_bulb_light>Denne blokka gjev kompakt industrilys til gangar, gangbruer og arbeidsbåsar.<br>
+<br>
+Bruk: monter henne i tak, på vegger eller langs kantar der rommet treng tydeleg arbeidslys.<br>
+<np>
+Takkantlampe
+Kompakt arbeidslys
+<&iron_ceiling_edge_light>Denne blokka gjev kompakt industrilys til gangar, gangbruer og arbeidsbåsar.<br>
+<br>
+Bruk: monter henne i tak, på vegger eller langs kantar der rommet treng tydeleg arbeidslys.<br>
+<np>
+Innfelt golvkantlampe
+Kompakt arbeidslys
+<&iron_floor_edge_light>Denne blokka gjev kompakt industrilys til gangar, gangbruer og arbeidsbåsar.<br>
+<br>
+Bruk: monter henne i tak, på vegger eller langs kantar der rommet treng tydeleg arbeidslys.<br>
+<np>
+Innfelt lampe
+Kompakt arbeidslys
+<&iron_inset_light>Denne blokka gjev kompakt industrilys til gangar, gangbruer og arbeidsbåsar.<br>
+<br>
+Bruk: monter henne i tak, på vegger eller langs kantar der rommet treng tydeleg arbeidslys.<br>
+<np>
+Skilt «Allmenn åtvaring»
+Faremerking
+<&sign_caution>Skiltet «Allmenn åtvaring» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Fareskilt
+Faremerking
+<&sign_danger>Skiltet «Åtvaring, verkeleg farleg» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Dekorskilt
+Faremerking
+<&sign_decor>Skiltplata frå Engineer's Decor merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Forsvarsskilt
+Faremerking
+<&sign_defense>Skiltet «Åtvaring, forsvarssystem» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Utgangsskilt
+Faremerking
+<&sign_exit>Dette skiltet merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Brannfareskilt
+Faremerking
+<&sign_firehazard>Skiltet «Brannfare» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Frostvarselskilt
+Faremerking
+<&sign_frost>Skiltet «Frostvarsel» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Skilt for varm overflate
+Faremerking
+<&sign_hotsurface>Skiltet «Åtvaring, varm overflate» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Skilt for straumførande leidning
+Faremerking
+<&sign_hotwire>Skiltet «Åtvaring, straumførande leidning» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Laserfareskilt
+Faremerking
+<&sign_laser>Skiltet «Laserfare» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Skilt for magisk fare
+Faremerking
+<&sign_magichazard>Skiltet «Åtvaring, magisk fare» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Magnetfeltskilt
+Faremerking
+<&sign_magneticfield>Skiltet «Åtvaring, sterkt magnetfelt» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>
+Skilt for radioaktiv fare
+Faremerking
+<&sign_radioactive>Skiltet «Radioaktiv fare» merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>
+<np>

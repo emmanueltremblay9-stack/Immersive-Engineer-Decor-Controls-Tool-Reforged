@@ -1,0 +1,5 @@
+Blokbreker
+Werkswinkelnutsmiddel
+<&recipe>Die Klein Blokbreker is ’n werkswinkelnutsblok vir vervaardiging, berging, plasing, breekwerk, versameling of kompakte outomatisering.<br>
+<br>
+Gebruik: rig die werkvlak na die blok wat verwyder moet word.<br>

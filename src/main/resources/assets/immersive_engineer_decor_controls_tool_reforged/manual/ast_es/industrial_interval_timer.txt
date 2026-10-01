@@ -1,0 +1,7 @@
+Temporizador d’intervalos
+Pulsu temporizáu
+<&recipe>Un interruptor temporizáu compactu emite un pulsu de redstone programáu.<br>
+<br>
+Usu: úsalu onde un mecanismu pequeñu precise un control periódicu o con retrasu.<br>
+<br>
+Notes: usa pulsos de redstone programaos.

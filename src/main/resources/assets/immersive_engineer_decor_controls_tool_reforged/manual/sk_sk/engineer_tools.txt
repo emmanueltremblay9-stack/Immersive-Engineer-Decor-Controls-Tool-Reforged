@@ -1,0 +1,93 @@
+Inžinierske nástroje
+Prenosné dielenské vybavenie
+Súprava „Inžinierske nástroje“ pridáva ručné vybavenie, banské značky, núdzové spotrebné predmety, jedlo do terénu a malé pomôcky na spracovanie materiálu do tej istej príručky, ktorá opisuje dekoratívne a ovládacie bloky.<br>
+<br>
+Tieto nástroje sú určené na prácu mimo plne vybavenej dielne: označ trasu, prenášaj zásoby, naprav následky chýb a dokonči menšie spracovanie priamo na mieste.
+<np>
+Nástroj REDIA
+Nástroj s diamantovým povlakom
+<&redia_tool>Nástroj REDIA je odolný pomocník na rýchlu prácu s pôdou v teréne. Použi ho na obrábateľnej pôde a vytvor zoranú pôdu.<br>
+<br>
+Ak máš pri sebe fakle, použi ho na pevnej ploche a polož značkovaciu fakľu z inventára bez opotrebovania REDIA. Práca s pôdou, strihanie, používanie sekery a rúbanie stromov spotrebúvajú odolnosť.
+<np>
+Kladivo na drvenie rúd
+Ručný drviaci nástroj
+<&crushing_hammer>Kladivo na drvenie rudy je ručný nástroj na skoré spracovanie železa a zlata.<br>
+<br>
+Použite ho s hrubým železom, hrubým zlatom, železnou alebo hlbinnou železnou rudou, zlatou alebo hlbinnou zlatou rudou na prach Immersive Engineering. Kladivo stráca odolnosť, vracia sa do mriežky do zlomenia, opotrebúva sa pri ťažbe a odhadzuje ciele.
+<np>
+Stopovač
+Značka uloženej polohy
+<&tracker>Sledovač ukladá pozíciu bloku priamo do predmetu.<br>
+<br>
+Kliknite na blok na uloženie dimenzie a súradníc. Popis ukazuje pozíciu. Použite ho v prikrčení na vymazanie cieľa.<br>
+<br>
+Označujte stroje, tunely, diaľkové ovládače alebo nedokončené stavby.
+<np>
+Ariadnino uhlie
+Značka banskej cesty
+<&ariadne_coal>Ariadnino uhlie rýchlo kreslí čierne smerové šípky na pevné banské povrchy. Použi ho na plnej ploche a označ ďalšiu odbočku, východ alebo rozvetvenie. Podporuje osem smerov podľa miesta kliknutia vrátane uhlopriečnych.<br>
+<br>
+Ariadnino uhlie je opakovane použiteľný značkovací nástroj na 100 použití. Každá úspešná značka spotrebuje jeden bod odolnosti. Nepodporované plochy odmietne namiesto opotrebovania predmetu.
+<np>
+Automatický stimulátor
+Núdzový injektor
+<&stimpack>Automatický stimulátor je núdzový liečebný predmet.<br>
+<br>
+Použite ho ručne na liečenie, krátku ochranu a zrýchlenie. V inventári sa spustí automaticky pri nízkom zdraví a potom sa obnovuje. Majte ho poruke na nebezpečných miestach.
+<np>
+Spací vak
+Prenosná výbava na odpočinok
+<&sleeping_bag>Spací vak je výbava odolná voči počasiu na odpočinok ďaleko od postele.<br>
+<br>
+Použite ho v noci v Overworlde na odpočinok do rána bez zmeny miesta znovuzrodenia.<br>
+<br>
+Nefunguje cez deň, pri blízkych príšerách ani v nevhodných dimenziách. Každý úspešný odpočinok ho opotrebuje.
+<np>
+Debna na materiál
+Debna na stavebné zásoby
+<&material_box>Debna na materiál nesie veľkú zásobu jedného obyčajného, nezmeneného a stohovateľného stavebného materiálu.<br>
+<br>
+Držte debnu v hlavnej ruke a materiál v druhej na uloženie; s prázdnou druhou rukou vyberiete jeden stoh.<br>
+<br>
+Pojme 512 kusov jedného typu, odmieta iné debny, nestohovateľnú výbavu a zmenené stohy a ukazuje obsah v popise.
+<np>
+Potápačská vzduchová kapsula
+Núdzová zásoba vzduchu
+<&diving_capsule>Potápačská kapsula je núdzová zásoba vzduchu na prácu pod vodou.<br>
+<br>
+Použite ju ručne na obnovenie vzduchu. V inventári sa spustí automaticky, keď vzduch takmer dôjde, potom sa obnovuje. Vezmite ju do zaplavených baní a k ponoreným potrubiam.
+<np>
+Lis na müsli tyčinky
+Lis na jedlo
+<&musli_bar_press>Lis Muslee mení bežné potraviny na kompaktné poľné dávky.<br>
+<br>
+Majte chlieb, jablko a semená pšenice, melóna, tekvice, repy alebo technického konope a použite lis. Spotrebuje po jednej surovine, skontroluje miesto, vytvorí štyri tyčinky a poškodí lis.<br>
+<br>
+Ak niečo chýba alebo nie je miesto, nič sa nespotrebuje.
+<np>
+Energetická tyčinka zo zmesi müsli
+Rýchla dielenská desiata
+<&musli_bar>Tyčinka Muslee Melange je kompaktné jedlo z chleba, semien a ovocia.<br>
+<br>
+Jedzte ju ako poľnú stravu pri stavbe ovládačov, potrubí, plošín alebo strojových hál.
+<np>
+Žmýkač mysle
+Kondenzátor skúseností
+<&charged_lapis_squeezer>Žmýkač mysle premení jeden lazurit a jednu úroveň skúseností z inventára na nabitý lazurit.<br>
+<br>
+Každá úspešná premena používateľa zraní, vyčerpá a nakrátko oslepí. Nespustí sa bez lazuritu, skúseností alebo ak je používateľ príliš blízko smrti.
+<np>
+Nabitý lazurit
+Uložené skúsenosti
+<&charged_lapis>Nabitý lazurit uchováva jednu úroveň skúseností. Spotrebovaním obnovíš úroveň, odstrániš aktívne účinky a získaš späť trochu zdravia.<br>
+<br>
+Najprv vyrob žmýkač mysle. Nabitý lazurit vzniká použitím tohto nástroja s dostupným lazuritom a skúsenosťami.
+<np>
+Hrubá železná drvina
+Materiál inžinierskych nástrojov používaný obnovenou súpravou výrobných receptov.
+<&iron_grit>Dá sa pretaviť na železné<br>tehličky, ale nie je vhodná na<br>pokročilé spracovanie materiálov.
+<np>
+Hrubá zlatá drvina
+Materiál inžinierskych nástrojov používaný obnovenou súpravou výrobných receptov.
+<&gold_grit>Dá sa pretaviť na zlaté tehličky,<br>ale nie je vhodná na pokročilé<br>spracovanie materiálov.

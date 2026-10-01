@@ -1,0 +1,7 @@
+İmpuls bağlantısı relesi
+Bağlantılı idarəetmə
+<&recipe>Rele üslublu element panel quruluşlarında yığcam yerli açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin. Bağlanmış inci ilə işəsalma lazım olduqda qəbuledici bloklardan istifadə edin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.

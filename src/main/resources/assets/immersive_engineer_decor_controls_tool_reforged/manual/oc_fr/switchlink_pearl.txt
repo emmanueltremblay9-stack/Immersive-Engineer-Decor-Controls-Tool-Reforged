@@ -1,0 +1,7 @@
+Pèrla de ligam d’interruptors
+Comanda ligada
+<&recipe>Una pèrla ligada sèrva la cibla d’un receptor per las comandas de fabrica a distància.<br>
+<br>
+Utilizacion : clica sus un receptor de ligam d’interruptors amb una pèrla d’Ender per ne crear una. Utiliza la pèrla ligada en t’agrovant per activar lo receptor memorizat.<br>
+<br>
+Nòta : la cibla deu èsser cargada, dins la meteissa dimension e a portada.

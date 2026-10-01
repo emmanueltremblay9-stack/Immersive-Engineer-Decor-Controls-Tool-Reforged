@@ -1,0 +1,7 @@
+Diennakts taimeris
+Dienas gaismas signāls
+<&recipe>Taimera slēdzis seko pasaules cikla dienas daļai.<br>
+<br>
+Lietošana: izmanto pagalma lampām, slēģiem un rūpnīcas vadībai, kas vajadzīga tikai dienā.<br>
+<br>
+Piezīmes: vajadzīga dimensija ar debesu gaismu.

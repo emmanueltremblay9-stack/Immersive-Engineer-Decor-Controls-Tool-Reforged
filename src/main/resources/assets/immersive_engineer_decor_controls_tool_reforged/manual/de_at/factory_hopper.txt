@@ -1,0 +1,5 @@
+Fabrik-Trichta
+Hüfsgerät für de Werkstatt
+<&recipe>Der Block bewegt Gegnstandsstapl durch a engers Industrieghäus.<br>
+<br>
+Verwendung: Richt eam zur Inventarstreckn aus und stöll Reichweite, Staplmenge, Zeitverhalten und Redstone-Modus in da Oberfläche ein.<br>

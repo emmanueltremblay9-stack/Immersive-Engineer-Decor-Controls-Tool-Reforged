@@ -1,0 +1,7 @@
+Pemalap
+Isyarat boleh ubah
+<&recipe>Kawalan putar melaras kekuatan redstone dari muka panel padat.<br>
+<br>
+Penggunaan: Klik kanan untuk menaikkan output berperingkat, kemudian kembali kepada sifar selepas kekuatan penuh.<br>
+<br>
+Nota: Mengeluarkan kekuatan dari 0 hingga 15.

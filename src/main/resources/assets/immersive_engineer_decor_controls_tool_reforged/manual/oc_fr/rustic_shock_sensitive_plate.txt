@@ -1,0 +1,7 @@
+Placa rustica de tust
+Impulsion de pression
+<&recipe>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.

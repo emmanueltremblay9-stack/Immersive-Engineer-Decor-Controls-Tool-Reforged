@@ -1,0 +1,7 @@
+Senzor dežja
+Zaznavanje za signalizacijo
+<&recipe>Vremenski senzor pretvarja padavine na svojem položaju v signal redstone.<br>
+<br>
+Uporaba: Namesti ga tam, kjer lahko na blok nad njim pada dež.<br>
+<br>
+Opombe: Preverja dež nad senzorjem.

@@ -1,0 +1,7 @@
+Materialekasse
+Byggeforsyninger
+<&recipe>Rummer et stort lager af ét almindeligt, uændret og stabelbart byggemateriale.<br>
+<br>
+Brug: Kasse i hovedhånden og materiale i den anden for at fylde. Tom anden hånd tager én stak ud.<br>
+<br>
+Rummer 512 genstande af én type og afviser indlejrede kasser, ikke-stabelbart udstyr og ændrede stakke; indholdet vises i tippet.

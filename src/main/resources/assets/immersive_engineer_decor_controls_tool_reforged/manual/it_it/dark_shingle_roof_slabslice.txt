@@ -1,0 +1,5 @@
+Lastra di tetto in scandole scure
+Accessorio per tetti usurati
+<&recipe>Lo strato di lastra per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>

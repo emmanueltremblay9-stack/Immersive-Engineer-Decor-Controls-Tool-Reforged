@@ -1,0 +1,5 @@
+Fabrički izbacivač
+Oprema fabričke hale
+<&recipe>Ovaj blok izbacuje pohranjene predmete kroz usmjerenu stranu.<br>
+<br>
+Upotreba: Usmjerite prednju stranu prema mjestu izbacivanja, napunite unutrašnja mjesta i u interfejsu podesite snagu, ugao, kašnjenje, logiku filtera i redstone način.<br>

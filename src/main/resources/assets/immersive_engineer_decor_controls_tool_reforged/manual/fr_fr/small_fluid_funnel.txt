@@ -1,0 +1,5 @@
+Entonnoir à fluides
+Équipement de réseau de fluides
+<&recipe>Le petit entonnoir de collecte de fluides est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : placez-le sous le point de collecte de fluide et dirigez son contenu vers des réservoirs ou des conduites situés plus bas.<br>

@@ -1,0 +1,5 @@
+Soidhne slighe a-mach
+Comharra cunnart
+<&recipe>Comharraichidh an soidhne seo cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>

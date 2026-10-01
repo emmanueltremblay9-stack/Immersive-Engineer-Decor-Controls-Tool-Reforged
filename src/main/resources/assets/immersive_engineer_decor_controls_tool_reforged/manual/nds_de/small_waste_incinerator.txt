@@ -1,0 +1,5 @@
+Affallbrennaven
+Lütte Verarbeitungseenheit
+<&recipe>De Affallbrennaven vernicht Saken, de du nich mehr wullt, op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Föhr bloots Saken, de weg köönt, in sien Reeg in.<br>

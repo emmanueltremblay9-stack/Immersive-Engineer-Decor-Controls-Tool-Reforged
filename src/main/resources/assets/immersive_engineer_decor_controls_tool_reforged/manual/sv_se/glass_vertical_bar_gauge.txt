@@ -1,0 +1,7 @@
+Glasstapelmätare
+Signalmätare
+<&recipe>En kompakt mätare för kontrollrum visar redstonestyrkan tydligt på panelen.<br>
+<br>
+Användning: Montera den där styrkan hos närliggande redstone ska kunna avläsas med en blick.<br>
+<br>
+Anmärkning: Läser närliggande redstonestyrka från 0 till 15.

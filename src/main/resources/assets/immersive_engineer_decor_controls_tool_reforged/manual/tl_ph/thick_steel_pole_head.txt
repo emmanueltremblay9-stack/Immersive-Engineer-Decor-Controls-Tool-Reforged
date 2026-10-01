@@ -1,0 +1,5 @@
+Ulo ng Makapal na Poste
+Bahagi ng balangkas
+<&recipe>Ang Ulo/Paa ng Tuwid na Makapal na Aserong Poste ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>

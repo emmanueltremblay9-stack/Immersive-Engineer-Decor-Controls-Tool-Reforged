@@ -1,0 +1,7 @@
+Ladet lasurstein
+Lagret erfaring
+<&recipe>Ladet lasurstein lagrer ett erfaringsnivå ved hjelp av tankepressen.<br>
+<br>
+Bruk: forbruk den for å få tilbake ett nivå, fjerne aktive effekter og gjenopprette litt helse.<br>
+<br>
+Oppskriftsvisningen viser tankepressen fordi ladet lasurstein lages ved å bruke dette verktøyet med lasurstein og erfaring tilgjengelig.

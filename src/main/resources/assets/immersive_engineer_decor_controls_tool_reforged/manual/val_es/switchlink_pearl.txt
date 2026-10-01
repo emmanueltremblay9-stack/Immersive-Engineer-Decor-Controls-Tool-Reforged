@@ -1,0 +1,7 @@
+Perla d’enllaç d’interruptors
+Control enllaçat
+<&recipe>Una perla enllaçada guarda un receptor de destí per a controls remots de fàbrica.<br>
+<br>
+Ús: fes clic amb una perla d’Ender en un receptor d’enllaç d’interruptors per a crear-ne una. Usa la perla enllaçada mentre estàs acatxat per a activar el receptor guardat.<br>
+<br>
+Notes: el destí ha d’estar carregat, en la mateixa dimensió i dins de l’abast.

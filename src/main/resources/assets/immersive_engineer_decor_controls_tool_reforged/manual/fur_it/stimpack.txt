@@ -1,0 +1,7 @@
+Autoinietôr stimolant
+Inietôr di emergjence
+<&recipe>L'Auto Stim Pack al è un imprest medic di emergjence pai lavôrs di manutenzion pericolôs.<br>
+<br>
+Ûs: Ativil a man par vuarîti, vê une protezion curte e un piçul slanç di moviment. Tal inventari al pues ancje ativâsi in automatic cu la salût basse, po al va in cooldown.<br>
+<br>
+Ten un autoinietôr pront prime di provâ puescj alts, fîi scuvierts o percors di miniere ostii.

@@ -1,0 +1,5 @@
+Iron Bulb Light
+Compact work light
+<&recipe>This block provides compact industrial lighting for corridors, catwalks, and work bays.<br>
+<br>
+Usage: Mount it on ceilings, walls, or edges where the room needs clear work lighting.<br>

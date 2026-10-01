@@ -1,0 +1,7 @@
+Analogong Relay ng Kawing
+Nakakawing na kontrol
+<&recipe>Nagbibigay ang kagamitang mukhang relay ng maliit na lokal na lugar ng paglipat sa mga panel.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito. Gumamit ng mga blokeng tagatanggap kapag kailangan ng pagpapaandar sa pamamagitan ng nakakawing na mutya.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.

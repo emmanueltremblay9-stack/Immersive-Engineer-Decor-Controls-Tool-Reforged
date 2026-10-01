@@ -1,0 +1,7 @@
+Ladattu lasuriitti
+Varastoitu kokemus
+<&recipe>Ladattu lasuriitti varastoi mielipuristimella tuotetun yhden kokemustason.<br>
+<br>
+Käyttö: Nauti saadaksesi yhden tason takaisin, poistaaksesi aktiiviset vaikutukset ja palauttaaksesi hieman terveyttä.<br>
+<br>
+Reseptinäyttö näyttää mielipuristimen, koska ladattua lasuriittia tuotetaan käyttämällä sitä, kun lasuriittia ja XP:tä on saatavilla.

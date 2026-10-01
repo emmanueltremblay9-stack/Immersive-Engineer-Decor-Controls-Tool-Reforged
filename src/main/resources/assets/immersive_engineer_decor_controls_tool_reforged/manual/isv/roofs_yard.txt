@@ -1,0 +1,101 @@
+Strěhy i dvor
+Vněšnje fabrične dodatky
+Strěšne bloky, dvorovy drobok i stare promyslove drěvene česti pomagajut zakončiti vněšnje šupy, rabotne dvory, nakladne oblasti i pogodoj postarěle fabrične kraje.<br>
+<br>
+Směšaj te česti s murom i pristupnymi putjami dlja jasnogo izgleda vněšnjih promyslovyh budynkov iz daljiny.
+<np>
+Temna šindelna strěha
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof>Sej blok tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Strěšna sněžna ograda
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_metallized>Sněžna ograda temnoj šindelnoj strěhy tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Temna šindelna strěha
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_skylight>Strěšno okno temnoj šindelnoj strěhy tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Osnova strěšnogo komina
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_chimneytrunk>Osnova komina temnoj šindelnoj strěhy tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Strěšny kabelny provod
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_wireconduit>Kabelny provod temnoj šindelnoj strěhy tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Temna šindelna strěha
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_chimney>Komin temnoj šindelnoj strěhy tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Blok temnoj šindelnoj strěhy
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_block>Sej blok tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Platform temnoj šindelnoj strěhy
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_slab>Sej blok tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Platform temnoj šindelnoj strěhy
+Pogodoj postarěly strěšny dodatok
+<&dark_shingle_roof_slabslice>Sloj platforma temnoj šindelnoj strěhy tvori temne, praktične strěšne linije dlja rabotilnj i promyslovyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi česti vměstě dlja tvorjenja věrohodnyh strěšnyh profilov.<br>
+<np>
+Utlačena zemja s kamenčikami
+Pokrytije rabotnoj zemje
+<&dense_grit_dirt_block>Sej blok davaje vněšnjim rabotnym oblastjam utlačenu, utoptanu povrhnost.<br>
+<br>
+Upotrěbjenje: Polagaj go okolo nakladnyh dverij, vněšnjih rezervuarov i mašinnyh dvorov.<br>
+<np>
+Utlačeny pěsok s kamenčikami
+Pokrytije rabotnoj zemje
+<&dense_grit_sand_block>Sej blok davaje vněšnjim rabotnym oblastjam utlačenu, utoptanu povrhnost.<br>
+<br>
+Upotrěbjenje: Polagaj go okolo nakladnyh dverij, vněšnjih rezervuarov i mašinnyh dvorov.<br>
+<np>
+Stare drěvene desky
+Postarělo drěvo rabotilnje
+<&old_industrial_wood_planks>Stare promyslove drěvene desky dodavajut postarělo drěvo rabotilnje dlja podlog, stupenij, dverij i teploj vnutrišnjej obrobky.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh podlog, stupenišč, dverij i obrobky rabotilnje.<br>
+<np>
+Stary promyslovy drěveny platform
+Postarělo drěvo rabotilnje
+<&old_industrial_wood_slab>Sej blok dodavaje postarělo drěvo rabotilnje dlja podlog, stupenij, dverij i teploj vnutrišnjej obrobky.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh podlog, stupenišč, dverij i obrobky rabotilnje.<br>
+<np>
+Stare drěvene stupenišče
+Postarělo drěvo rabotilnje
+<&old_industrial_wood_stairs>Stare promyslove drěvene stupenišče dodavajut postarělo drěvo rabotilnje dlja podlog, stupenij, dverij i teploj vnutrišnjej obrobky.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh podlog, stupenišč, dverij i obrobky rabotilnje.<br>
+<np>
+Sloj starogo drěvenogo platforma
+Postarělo drěvo rabotilnje
+<&old_industrial_wood_slabslice>Sloj starogo promyslovogo drěvenogo platforma dodavaje postarělo drěvo rabotilnje dlja podlog, stupenij, dverij i teploj vnutrišnjej obrobky.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh podlog, stupenišč, dverij i obrobky rabotilnje.<br>
+<np>
+Stare promyslove drěvene dveri
+Postarělo drěvo rabotilnje
+<&old_industrial_wood_door>Sej blok dodavaje postarělo drěvo rabotilnje dlja podlog, stupenij, dverij i teploj vnutrišnjej obrobky.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh podlog, stupenišč, dverij i obrobky rabotilnje.<br>

@@ -1,0 +1,7 @@
+Glasentitetsdetektor
+Signalføling
+<&recipe>Ein entitetsdetektor vaktar rørsle i nærleiken utan ei synleg golvplate.<br>
+<br>
+Bruk: kople han til dører, lamper, alarmar eller maskinforriglingar.<br>
+<br>
+Merknad: skannar eit lite område kring blokka.

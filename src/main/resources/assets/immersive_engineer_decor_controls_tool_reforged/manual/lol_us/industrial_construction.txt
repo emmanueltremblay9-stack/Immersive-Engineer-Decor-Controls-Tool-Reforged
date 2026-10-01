@@ -1,0 +1,108 @@
+Factory Buildinz
+Factory wallz an trimz
+General buildin partz include doorz, windowz, lightz, warning signz, trim, an structural pieces dat dun belong in a more specific section, kitty.<br>
+<br>
+Use dese pages fer factory roomz, service corridors, hazard markers, an practical factory detailz, meow.
+<np>
+Irun Glowy Bulb
+Lil work glowies
+<&iron_bulb_light>Dis bluk gives compact factory lighting fer corridors, catwalkz, an work bayz, kitty.<br>
+<br>
+How to: Mount on ceilingz, wallz, or edges where da room needs clear work light, meow.<br>
+<np>
+Ceiling-Edge Glow Thing
+Lil work glowies
+<&iron_ceiling_edge_light>Dis bluk gives compact factory lighting fer corridors, catwalkz, an work bayz, kitty.<br>
+<br>
+How to: Mount on ceilingz, wallz, or edges where da room needs clear work light, meow.<br>
+<np>
+Sneaky Floor-Edge Glow Thing
+Lil work glowies
+<&iron_floor_edge_light>Dis bluk gives compact factory lighting fer corridors, catwalkz, an work bayz, kitty.<br>
+<br>
+How to: Mount on ceilingz, wallz, or edges where da room needs clear work light, meow.<br>
+<np>
+Tucked-In Glow Thing
+Lil work glowies
+<&iron_inset_light>Dis bluk gives compact factory lighting fer corridors, catwalkz, an work bayz, kitty.<br>
+<br>
+How to: Mount on ceilingz, wallz, or edges where da room needs clear work light, meow.<br>
+<np>
+Sign "Watch Ur Paws"
+Danger-marker thingz
+<&sign_caution>Da "Watch Ur Paws" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Dangerz Sign
+Danger-marker thingz
+<&sign_danger>Da "Srsly, Big Danger Over Dere" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Decorative Sign Thing
+Danger-marker thingz
+<&sign_decor>Da Blank Sign Plate (Engineer's Decor) marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Defensez Sign
+Danger-marker thingz
+<&sign_defense>Da "Careful, Defense Thingz Ahead" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Way-Out Signz
+Danger-marker thingz
+<&sign_exit>Dis sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Sign "Fire Can Haz Ouch"
+Danger-marker thingz
+<&sign_firehazard>Da "Fire Can Haz Ouch" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Sign "Brrr, Freezy Danger"
+Danger-marker thingz
+<&sign_frost>Da "Brrr, Freezy Danger" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Hot-Surfacez Sign
+Danger-marker thingz
+<&sign_hotsurface>Da "Careful, Hot Surfacez" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Zappy-Wire Sign
+Danger-marker thingz
+<&sign_hotwire>Da "Careful, Zappy Wire" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Sign "Lazer Ouchie"
+Danger-marker thingz
+<&sign_laser>Da "Lazer Ouchie" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Magic-Ouchie Sign
+Danger-marker thingz
+<&sign_magichazard>Da "Careful, Magic Ouchie" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Magnet-Fieldz Sign
+Danger-marker thingz
+<&sign_magneticfield>Da "Careful, Strong Magnet Fieldz" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>
+Sign "Radioactive Ouchie"
+Danger-marker thingz
+<&sign_radioactive>Da "Radioactive Ouchie" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>
+<np>

@@ -1,0 +1,5 @@
+Llum encastat de vora de terra
+Llum de treball compacte
+<&recipe>Aquest bloc proporciona il·luminació industrial compacta per a passadissos, passarel·les i zones de treball.<br>
+<br>
+Ús: munta’l en sostres, parets o vores on calgui una bona il·luminació de treball.<br>

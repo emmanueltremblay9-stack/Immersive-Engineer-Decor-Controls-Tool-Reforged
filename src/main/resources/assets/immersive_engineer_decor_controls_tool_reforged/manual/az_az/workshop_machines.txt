@@ -1,0 +1,107 @@
+Emalatxana maşınları
+Maşınlar və emalatxana giriş-çıxışları
+Emalatxana maşınları bir blokluq sahədə yığcam hazırlama, əşya hərəkəti, əritmə, məhvetmə, toplama və yardımçı işlər görür.<br>
+<br>
+Hər maşının resepti, görünüşü, hekayəsi və praktik istifadə qeydləri üçün aşağıdakı səhifələri açın.
+<np>
+Polad masa
+Emalatxana mebeli
+<&steel_table>Bu blok iş otaqları və texniki xidmət guşələri üçün praktik emalatxana mebelidir.<br>
+<br>
+İstifadə: İş masalarının, yeşiklərin və yığcam maşınların yanına qoyun.<br>
+<np>
+Emal edilmiş ağac masa
+Emalatxana mebeli
+<&treated_wood_table>Bu blok iş otaqları və texniki xidmət guşələri üçün praktik emalatxana mebelidir.<br>
+<br>
+İstifadə: İş masalarının, yeşiklərin və yığcam maşınların yanına qoyun.<br>
+<np>
+Emal edilmiş ağac kətil
+Emalatxana mebeli
+<&treated_wood_stool>Bu blok iş otaqları və texniki xidmət guşələri üçün praktik emalatxana mebelidir.<br>
+<br>
+İstifadə: İş masalarının, yeşiklərin və yığcam maşınların yanına qoyun.<br>
+<np>
+Metal hazırlama masası
+Lövhə hazırlama yeri
+<&metal_crafting_table>Metal hazırlama masası çəkic yuvası, 3x3 hazırlama şəbəkəsi və aydın çıxış yuvası olan möhkəmləndirilmiş emalatxana iş yeridir.<br>
+<br>
+İstifadə: Adi hazırlama üçün şəbəkədən istifadə edin. IE lövhələri üçün nəticəni götürməzdən əvvəl alət yuvasına Mühəndis çəkici, şəbəkəyə isə lövhə materialını qoyun. Polad bəzəklərdə dirəklər, keçidlər, pəncərələr, qapılar, məhəccərlər və başqa polad hissələr üçün polad lövhələr işlədilir.<br>
+<np>
+Zavod süzgəci
+Emalatxana yardımçısı
+<&factory_hopper>Bu blok əşya yığınlarını daha yığcam sənaye gövdəsi içindən ötürür.<br>
+<br>
+İstifadə: İnventar xəttinə yönəldin, sonra ekranda məsafəni, yığın sayını, vaxtlamanı və qızıl daş rejimini təyin edin.<br>
+<np>
+Zavod buraxıcısı
+Emalatxana yardımçısı
+<&factory_dropper>Bu blok saxlanılan əşyaları yönəldilmiş üzdən buraxır.<br>
+<br>
+İstifadə: Ön üzü buraxma nöqtəsinə yönəldin, daxili yuvaları doldurun və ekranda qüvvə, bucaq, gecikmə, süzgəc məntiqi və qızıl daş rejimini ayarlayın.<br>
+<np>
+Zavod blok yerləşdiricisi
+Emalatxana yardımçısı
+<&factory_placer>Bu blok işə salındıqda daxili ehtiyatından bloklar yerləşdirir.<br>
+<br>
+İstifadə: İşçi üzü hədəf boşluğa yönəldib yerləşdirilə bilən yığınlarla doldurun.<br>
+<np>
+Blok qırıcı
+Emalatxana yardımçısı
+<&small_block_breaker>Kiçik blok qırıcı hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: İşçi üzü götürüləcək bloka yönəldin.<br>
+<np>
+Tullantı yandırıcısı
+Yığcam emal qurğusu
+<&small_waste_incinerator>Tullantı yandırıcısı emalatxanada kiçik yer tutaraq istənməyən əşyaları məhv edir.<br>
+<br>
+İstifadə: Növbəsinə yalnız istənməyən əşyalar əlavə edin.<br>
+<np>
+Laboratoriya sobası
+Yığcam emal qurğusu
+<&small_lab_furnace>Laboratoriya sobası emalatxanada kiçik yer tutaraq bərk yanacaqla yığcam əritmə işləri görür.<br>
+<br>
+İstifadə: Kiçik əritmə dəstələri üçün bərk yanacaq istifadə edin.<br>
+<np>
+Elektrik sobası
+Yığcam emal qurğusu
+<&small_electrical_furnace>Elektrik sobası emalatxanada kiçik yer tutaraq FE enerjisi ilə yığcam əritmə işləri görür.<br>
+<br>
+İstifadə: FE və uyğun əritmə materialı verin.<br>
+<np>
+Mineral əridici
+Yığcam emal qurğusu
+<&small_mineral_smelter>Mineral əridici emalatxanada kiçik yer tutaraq yüksək istiliklə mineral emalı aparır.<br>
+<br>
+İstifadə: Yüksək istiliklə əritmə üçün mineral bloklar və enerji verin.<br>
+<np>
+Su dondurucu
+Yığcam emal qurğusu
+<&small_freezer>Su dondurucu enerjili maye sistemlərində yığcam soyutma işləri görür.<br>
+<br>
+İstifadə: Mərhələli buz istehsalı üçün su və enerji verin.<br>
+<np>
+Passiv maye
+Maye xətti avadanlığı
+<&passive_fluid_accumulator>Passiv maye toplayıcısı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Uyğun su mənbələrinə bitişik yerləşdirin və maye çıxarılması üçün yer saxlayın.<br>
+<np>
+Günəş paneli
+Emalatxana yardımçısı
+<&small_solar_panel>Kiçik günəş paneli hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: Üstünü səmaya açıq saxlayın və az enerji tələb edən avadanlıq qoşun.<br>
+<np>
+Sağım maşını
+Emalatxana yardımçısı
+<&small_milking_machine>Kiçik sağım maşını hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: İnəklərin yaxınlığına qoyun və süd qablarının və ya mayenin çıxarılmasına imkan yaradın.<br>
+<np>
+Ağackəsən
+Emalatxana yardımçısı
+<&small_tree_cutter>Kiçik ağackəsən hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: Böyümüş ağaclara yönəldin və düşən əşyaları ayrıca toplayın.<br>

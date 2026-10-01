@@ -1,0 +1,7 @@
+Analoog relais foar skeakelferbiningen
+Keppele bestjoering
+<&recipe>In ûnderdiel yn relaisstyl jout panielkonstruksjes in kompakt pleatslik skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten. Brûk ûntfangerblokken as aktivearring mei in keppele pearel nedich is.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.

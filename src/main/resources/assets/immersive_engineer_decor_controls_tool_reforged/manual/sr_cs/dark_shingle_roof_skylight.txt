@@ -1,0 +1,5 @@
+Tamni krov od šindre
+Istrošen krovni deo
+<&recipe>Krovni prozor za tamni krov od šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>

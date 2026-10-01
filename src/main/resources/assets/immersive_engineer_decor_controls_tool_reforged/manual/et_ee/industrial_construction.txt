@@ -1,0 +1,108 @@
+Tööstusehitus
+Tehase seinad ja kaunistused
+Üldised ehitusosad hõlmavad uksi, aknaid, valgusteid, hoiatussilte, kaunistusi ja konstruktsiooniosi, mis ei kuulu kitsamasse jaotisse.<br>
+<br>
+Kasuta neid lehti tehase ruumide, hoolduskoridoride, ohumärgistuse ja praktiliste tööstusdetailide jaoks.
+<np>
+Rauast pirnvalgusti
+Kompaktne töövalgusti
+<&iron_bulb_light>See plokk annab kompaktse tööstusvalgustuse koridoridele, käigusildadele ja töökohtadele.<br>
+<br>
+Kasutamine: Kinnita lakke, seintele või servadele, kus ruum vajab selget töövalgustust.<br>
+<np>
+Laeserva valgusti
+Kompaktne töövalgusti
+<&iron_ceiling_edge_light>See plokk annab kompaktse tööstusvalgustuse koridoridele, käigusildadele ja töökohtadele.<br>
+<br>
+Kasutamine: Kinnita lakke, seintele või servadele, kus ruum vajab selget töövalgustust.<br>
+<np>
+Süvistatud põrandaserva valgusti
+Kompaktne töövalgusti
+<&iron_floor_edge_light>See plokk annab kompaktse tööstusvalgustuse koridoridele, käigusildadele ja töökohtadele.<br>
+<br>
+Kasutamine: Kinnita lakke, seintele või servadele, kus ruum vajab selget töövalgustust.<br>
+<np>
+Süvistatud valgusti
+Kompaktne töövalgusti
+<&iron_inset_light>See plokk annab kompaktse tööstusvalgustuse koridoridele, käigusildadele ja töökohtadele.<br>
+<br>
+Kasutamine: Kinnita lakke, seintele või servadele, kus ruum vajab selget töövalgustust.<br>
+<np>
+Silt: üldine hoiatus
+Ohumärgis
+<&sign_caution>Üldine hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Ohusilt
+Ohumärgis
+<&sign_danger>Tõeliselt ohtliku ala hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Decori silt
+Ohumärgis
+<&sign_decor>Engineer's Decori sildiplaat tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Kaitsesüsteemi silt
+Ohumärgis
+<&sign_defense>Eesoleva kaitsesüsteemi hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Väljapääsusilt
+Ohumärgis
+<&sign_exit>See silt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Silt: tuleoht
+Ohumärgis
+<&sign_firehazard>Tuleohusilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Silt: külmahoiatus
+Ohumärgis
+<&sign_frost>Külmahoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Kuuma pinna silt
+Ohumärgis
+<&sign_hotsurface>Kuuma pinna hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Pingestatud juhtme silt
+Ohumärgis
+<&sign_hotwire>Pingestatud juhtme hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Silt: laserioht
+Ohumärgis
+<&sign_laser>Laseriohusilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Maagilise ohu silt
+Ohumärgis
+<&sign_magichazard>Maagilise ohu hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Magnetvälja silt
+Ohumärgis
+<&sign_magneticfield>Tugeva magnetvälja hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>
+Silt: radioaktiivne oht
+Ohumärgis
+<&sign_radioactive>Radioaktiivse ohu silt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>
+<np>

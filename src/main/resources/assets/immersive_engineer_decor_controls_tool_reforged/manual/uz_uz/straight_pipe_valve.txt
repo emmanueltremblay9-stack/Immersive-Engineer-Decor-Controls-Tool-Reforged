@@ -1,0 +1,5 @@
+Suyuqlik quvurining bir yo'nalishli klapani
+Suyuqlik liniyasi jihozi
+<&recipe>Suyuqlikning bir yo'nalishli klapani kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: klapanni kerakli oqim yo'nalishiga tekislang.<br>

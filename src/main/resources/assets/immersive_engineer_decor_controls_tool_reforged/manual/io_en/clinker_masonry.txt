@@ -1,0 +1,161 @@
+Klinkero e masonuro
+Brikala e betonala sheli
+Klinkero, skoriobriki, plufortigita betono e blindizita vitro furnisas masiva surfaci por varmega chambri, laboreyi e protektita vidlinii.<br>
+<br>
+Uzez la kongruanta plaki, eskaleri, tranchi e muri por finar bordi sen chanjar la materiala stilo di la fabriko.
+<np>
+Bloko di klinkerbriki
+Masonuro obskurigita per fulgo
+<&clinker_brick_block>Ca bloko donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Plako di klinkerbriki
+Masonuro obskurigita per fulgo
+<&clinker_brick_slab>Ca bloko donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Eskalero di klinkerbriki
+Masonuro obskurigita per fulgo
+<&clinker_brick_stairs>Ca bloko donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Muro di klinkerbriki
+Masonuro obskurigita per fulgo
+<&clinker_brick_wall>Ca bloko donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Makulizita klinkerbloko
+Masonuro obskurigita per fulgo
+<&clinker_brick_stained_block>La Makulizita bloko di klinkerbriki donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Makulizita klinkerplako
+Masonuro obskurigita per fulgo
+<&clinker_brick_stained_slab>La Makulizita plako di klinkerbriki donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Makulizita klinkereskalero
+Masonuro obskurigita per fulgo
+<&clinker_brick_stained_stairs>La Makulizita eskalero di klinkerbriki donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Ornita klinkerbriko
+Masonuro obskurigita per fulgo
+<&clinker_brick_sastor_corner_block>La Klinkerbriko ornita per greso donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Enkavigita klinkerbriko
+Masonuro obskurigita per fulgo
+<&clinker_brick_recessed>Ca bloko donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Fendita klinkerbriki
+Masonuro obskurigita per fulgo
+<&clinker_brick_vertically_slit>La Klinkerbriki kun vertikala fendi donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Vertikala klinkerplako
+Masonuro obskurigita per fulgo
+<&clinker_brick_vertical_slab_structured>La Strukturizita vertikala klinkerplako donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Duonplako di klinkerbriki
+Masonuro obskurigita per fulgo
+<&halfslab_clinker_brick>Ca bloko donas masonuro obskurigita per fulgo por furnazohalei, fumotubobazi e servomuri.<br>
+<br>
+Uzo: Uzez ol kom muro, borduro o shelo di varmozono cirkum furnazi e kaldieri.<br>
+<np>
+Bloko di skoriobriki
+Densa fabrikmasonuro
+<&slag_brick_block>Ca bloko adjuntas densa grizbruna masonuro por fundamenti, retenomuri e plu olda laborhangari.<br>
+<br>
+Uzo: Uzez ol por plu olda fundamenti, retenomuri e sordida fabrikplanki.<br>
+<np>
+Plako di skoriobriki
+Densa fabrikmasonuro
+<&slag_brick_slab>Ca bloko adjuntas densa grizbruna masonuro por fundamenti, retenomuri e plu olda laborhangari.<br>
+<br>
+Uzo: Uzez ol por plu olda fundamenti, retenomuri e sordida fabrikplanki.<br>
+<np>
+Eskalero di skoriobriki
+Densa fabrikmasonuro
+<&slag_brick_stairs>Ca bloko adjuntas densa grizbruna masonuro por fundamenti, retenomuri e plu olda laborhangari.<br>
+<br>
+Uzo: Uzez ol por plu olda fundamenti, retenomuri e sordida fabrikplanki.<br>
+<np>
+Muro di skoriobriki
+Densa fabrikmasonuro
+<&slag_brick_wall>Ca bloko adjuntas densa grizbruna masonuro por fundamenti, retenomuri e plu olda laborhangari.<br>
+<br>
+Uzo: Uzez ol por plu olda fundamenti, retenomuri e sordida fabrikplanki.<br>
+<np>
+Bloko di armizita betono
+Plufortigita betono
+<&rebar_concrete>Ca bloko esas hardigita betonopeco por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Plako di armizita betono
+Plufortigita betono
+<&rebar_concrete_slab>Ca bloko esas hardigita betonopeco por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Eskalero di armizita betono
+Plufortigita betono
+<&rebar_concrete_stairs>Ca bloko esas hardigita betonopeco por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Muro di armizita betono
+Plufortigita betono
+<&rebar_concrete_wall>Ca bloko esas hardigita betonopeco por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Trancho di armizita betono
+Plufortigita betono
+<&halfslab_rebar_concrete>Ca bloko esas hardigita betonopeco por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Kahelo di armizita betono
+Plufortigita betono
+<&rebar_concrete_tile>Ca bloko esas hardigita betonopeco por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Plako di armizita betonokareli
+Plufortigita betono
+<&rebar_concrete_tile_slab>Ca bloko esas hardigita betonopeco por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Kahelo di armizita betono
+Plufortigita betono
+<&rebar_concrete_tile_stairs>La eskaleri di armizita betonokareli esas hardigita betonopeci por mashinbazi, eksplozoprotektomuri e planki di kargorampi.<br>
+<br>
+Uzo: Uzez ol sub mashini, apud servokoridori o irgaloke ube la konstrukto bezonas plufortigita bazo.<br>
+<np>
+Bloko di blindizita vitro
+Protektita vidlinio
+<&panzerglass_block>Ca bloko konservas apertita vidlinii dum ol kongruas kun plufortigita fabrikkonstrukto.<br>
+<br>
+Uzo: Uzez ol ube ludanti devas vidar mashini tra protektita barilo.<br>
+<np>
+Plako di blindizita vitro
+Protektita vidlinio
+<&panzerglass_slab>Ca bloko konservas apertita vidlinii dum ol kongruas kun plufortigita fabrikkonstrukto.<br>
+<br>
+Uzo: Uzez ol ube ludanti devas vidar mashini tra protektita barilo.<br>

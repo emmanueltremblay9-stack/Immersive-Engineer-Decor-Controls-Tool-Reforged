@@ -1,0 +1,127 @@
+Pristupni putevi
+Staze i nosači
+Čelični stubovi, stubovi od tretiranog drveta, rešetke, servisne staze, zaštitne ograde, ljestve, vrata, prozori i poklopci čine kompaktne pristupne puteve kroz unutrašnjost fabrike.<br>
+<br>
+Čelični dijelovi pristupnih puteva koriste čelične ploče. Napravite ili postavite sto za obradu metala, umetnite Immersive Engineering čekić, a zatim čekićem pretvorite čelične poluge u ploče za stubove, servisne staze, prozore, vrata, zaštitne ograde i ostale čelične ukrase.<br>
+<br>
+Postavite ih gdje mašinama trebaju pristup za održavanje, povišene staze, servisni šahtovi ili sigurniji rubovi.
+<np>
+Debeli čelični stub
+Dio nosećeg okvira
+<&thick_steel_pole>Ravni debeli čelični stub daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Glava debelog stuba
+Dio nosećeg okvira
+<&thick_steel_pole_head>Glava/postolje ravnog debelog čeličnog stuba daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Tanki čelični stub
+Dio nosećeg okvira
+<&thin_steel_pole>Ravni tanki čelični stub daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Glava tankog stuba
+Dio nosećeg okvira
+<&thin_steel_pole_head>Glava/postolje ravnog tankog čeličnog stuba daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Stub od tretiranog drveta
+Dio nosećeg okvira
+<&treated_wood_pole>Ravni stub od tretiranog drveta daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Glava stuba od tretiranog drveta
+Dio nosećeg okvira
+<&treated_wood_pole_head>Glava/postolje ravnog stuba od tretiranog drveta daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Nosač stuba od tretiranog drveta
+Dio nosećeg okvira
+<&treated_wood_pole_support>Nosač ravnog stuba od tretiranog drveta daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Čelični dvostruki T nosač
+Dio nosećeg okvira
+<&steel_double_t_support>Ovaj blok daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>
+<np>
+Čelična podna rešetka
+Dio pristupa za održavanje
+<&steel_floor_grating>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Čelična servisna staza
+Dio pristupa za održavanje
+<&steel_catwalk>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Stepenice čelične servisne staze
+Dio pristupa za održavanje
+<&steel_catwalk_stairs>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Podignuta čelična servisna staza
+Dio pristupa za održavanje
+<&steel_catwalk_ta>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Čelična zaštitna ograda
+Dio pristupa za održavanje
+<&steel_railing>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Ograda od čelične mreže
+Dio pristupa za održavanje
+<&steel_mesh_fence>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Vrata za ogradu od čelične mreže
+Dio pristupa za održavanje
+<&steel_mesh_fence_gate>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Ljestve s metalnim prečkama
+Dio pristupa za održavanje
+<&metal_rung_ladder>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Naizmjenične metalne stepenice
+Dio pristupa za održavanje
+<&metal_rung_steps>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>
+<np>
+Prozor s čeličnim okvirom
+Zaštićen pogled
+<&steel_framed_window>Ovaj blok čuva preglednost i istovremeno odgovara ojačanoj fabričkoj gradnji.<br>
+<br>
+Upotreba: Postavite ga u zidni otvor veličine 1 bloka, gdje igrači trebaju vidjeti mašine kroz zaštitnu barijeru.<br>
+<np>
+Metalna klizna vrata
+Industrijski pristup
+<&metal_sliding_door>Ovaj blok pruža čvrst pristup servisnim prostorijama, šahtovima, krovovima i kućištima mašina.<br>
+<br>
+Upotreba: Ugradite ga gdje građevini treba kontrolisani otvor za održavanje.<br>
+<np>
+Gvozdeni pristupni poklopac
+Industrijski pristup
+<&iron_hatch>Ovaj blok pruža čvrst pristup servisnim prostorijama, šahtovima, krovovima i kućištima mašina.<br>
+<br>
+Upotreba: Ugradite ga gdje građevini treba kontrolisani otvor za održavanje.<br>

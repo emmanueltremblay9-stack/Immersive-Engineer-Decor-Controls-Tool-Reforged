@@ -1,0 +1,7 @@
+Pemerah Minda
+Pemampat pengalaman
+<&recipe>Pemerah minda menukar lapis lazuli dan pengalaman menjadi lapis lazuli bercas.<br>
+<br>
+Penggunaan: Bawa lapis lazuli dan sekurang-kurangnya satu aras pengalaman, kemudian gunakan alat. Perahan berjaya menggunakan satu aras dan satu lapis lazuli, menyakiti pengguna, menghauskan pemerah dan menghasilkan satu lapis lazuli bercas.<br>
+<br>
+Alat menolak operasi apabila pengguna kekurangan lapis lazuli, kekurangan pengalaman atau terlalu hampir mati.

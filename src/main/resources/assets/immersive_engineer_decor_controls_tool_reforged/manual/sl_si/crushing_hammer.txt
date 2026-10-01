@@ -1,0 +1,5 @@
+Kladivo za drobljenje rude
+Ročno orodje za drobljenje
+<&recipe>Kladivo za drobljenje rude je ročno orodje za zgodnjo obdelavo železa in zlata.<br>
+<br>
+Uporabite ga s surovim železom, surovim zlatom, železovo ali globinsko železovo rudo, zlato ali globinsko zlato rudo za prah Immersive Engineering. Kladivo izgublja trpežnost, se vrača v mrežo do zloma, obrablja pri rudarjenju in odbija tarče.

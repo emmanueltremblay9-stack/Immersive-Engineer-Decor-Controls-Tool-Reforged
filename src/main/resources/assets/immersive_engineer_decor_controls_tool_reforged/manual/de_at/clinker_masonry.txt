@@ -1,0 +1,161 @@
+Klinker und Mauerwerk
+Hülln aus Ziagl und Beton
+Klinker, Schlacknziagl, Stahlbeton und Panzerglos ergeben schwere Oberflächen für heiße Räume, Werkstätten und gschützte Sichtbereiche.<br>
+<br>
+Moch de Kantn mit passenden Stufn, Treppn, Viertlstufn und Mauern fertig, damit de Materialien in da Fabrik zsammpassen.
+<np>
+Klinkerziaglblock
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_block>Mit dem Block kriagn Ofnhalln, Rauchfongsockl und Betriebswänd a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Klinkerziaglstufn
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_slab>Mit dem Block kriagn Ofnhalln, Rauchfongsockl und Betriebswänd a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Klinkerziagltreppn
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_stairs>Mit dem Block kriagn Ofnhalln, Rauchfongsockl und Betriebswänd a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Klinkerziaglmaua
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_wall>Mit dem Block kriagn Ofnhalln, Rauchfongsockl und Betriebswänd a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Dreckiger Klinkerblock
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_stained_block>Da dreckige Klinkerziaglblock gibt Ofnhalln, Rauchfongsockln und Betriebswändn a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Dreckige Klinkerstufn
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_stained_slab>De dreckige Klinkerziaglstufn gibt Ofnhalln, Rauchfongsockln und Betriebswändn a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Dreckige Klinkertreppn
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_stained_stairs>De dreckige Klinkerziagltreppn gibt Ofnhalln, Rauchfongsockln und Betriebswändn a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Verzierter Klinkerziagl
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_sastor_corner_block>Da Klinkerziagl mit Sondstoaverzierung gibt Ofnhalln, Rauchfongsockln und Betriebswändn a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Vertiefta Klinkerziagl
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_recessed>Mit dem Block kriagn Ofnhalln, Rauchfongsockl und Betriebswänd a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Gschlitzte Klinkerziagl
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_vertically_slit>De senkrecht gschlitzten Klinkerziagl geben Ofnhalln, Rauchfongsockln und Betriebswändn a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Senkrechte Klinkerstufn
+Rußdunkls Ziaglmauerwerk
+<&clinker_brick_vertical_slab_structured>De strukturierte senkrechte Klinkerstufn gibt Ofnhalln, Rauchfongsockln und Betriebswändn a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Klinkerziaglviertlstufn
+Rußdunkls Ziaglmauerwerk
+<&halfslab_clinker_brick>Mit dem Block kriagn Ofnhalln, Rauchfongsockl und Betriebswänd a rußdunkls Ziaglmauerwerk.<br>
+<br>
+Verwendung: Nimm eam für Wänd, Einfassungen oda heiße Verkleidungsbereiche rund um Öfn und Kessl.<br>
+<np>
+Schlacknziaglblock
+Massivs Fabrikmauerwerk
+<&slag_brick_block>Der Block bringt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppn.<br>
+<br>
+Verwendung: Nimm eam für oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Schlacknziaglstufn
+Massivs Fabrikmauerwerk
+<&slag_brick_slab>Der Block bringt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppn.<br>
+<br>
+Verwendung: Nimm eam für oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Schlacknziagltreppn
+Massivs Fabrikmauerwerk
+<&slag_brick_stairs>Der Block bringt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppn.<br>
+<br>
+Verwendung: Nimm eam für oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Schlacknziaglmaua
+Massivs Fabrikmauerwerk
+<&slag_brick_wall>Der Block bringt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppn.<br>
+<br>
+Verwendung: Nimm eam für oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Stahlbetonblock
+Stahlbewehrter Beton
+<&rebar_concrete>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Stahlbetonstufn
+Stahlbewehrter Beton
+<&rebar_concrete_slab>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Stahlbetontreppn
+Stahlbewehrter Beton
+<&rebar_concrete_stairs>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Stahlbetonmaua
+Stahlbewehrter Beton
+<&rebar_concrete_wall>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Stahlbetonviertlstufn
+Stahlbewehrter Beton
+<&halfslab_rebar_concrete>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Stahlbetonfliesn
+Stahlbewehrter Beton
+<&rebar_concrete_tile>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Stahlbetonfliesnstufn
+Stahlbewehrter Beton
+<&rebar_concrete_tile_slab>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Stahlbetonfliesn
+Stahlbewehrter Beton
+<&rebar_concrete_tile_stairs>De Stahlbetonfliesntreppn besteht aus gehärteten Betonteiln für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>
+<np>
+Panzerglosblock
+Gschützter Einblick
+<&panzerglass_block>Mit dem Block bleibt de Sicht frei, und er passt trotzdem zur verstärkten Fabrikbauweise.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Spieler Maschinen hinter ana gschützten Barriere sehn solln.<br>
+<np>
+Panzerglosstufn
+Gschützter Einblick
+<&panzerglass_slab>Mit dem Block bleibt de Sicht frei, und er passt trotzdem zur verstärkten Fabrikbauweise.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Spieler Maschinen hinter ana gschützten Barriere sehn solln.<br>

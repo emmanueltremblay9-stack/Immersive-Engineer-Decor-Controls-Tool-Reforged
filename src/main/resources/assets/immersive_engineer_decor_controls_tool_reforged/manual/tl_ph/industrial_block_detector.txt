@@ -1,0 +1,7 @@
+Pantukoy ng Bloke
+Pagdama ng signal
+<&recipe>Sinusuri ng pantukoy ng bloke kung may laman ang espasyong kaharap nito.<br>
+<br>
+Paggamit: Itutok sa mukha ng makina, imbakan o binabantayang espasyo.<br>
+<br>
+Tandaan: Nagbibigay ng signal kapag hindi hangin ang blokeng kaharap.

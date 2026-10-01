@@ -1,0 +1,7 @@
+Reloxo programador diario
+Sinal diúrno
+<&recipe>Un interruptor temporizado segue a parte diúrna do ciclo do mundo.<br>
+<br>
+Uso: úsao para luces de patio, persianas e controis de fábrica que só deban funcionar de día.<br>
+<br>
+Notas: require unha dimensión con luz do ceo.

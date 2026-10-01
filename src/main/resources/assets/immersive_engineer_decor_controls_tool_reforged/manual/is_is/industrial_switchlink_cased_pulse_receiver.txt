@@ -1,0 +1,7 @@
+Púlsmóttakari í hylki
+Tengd stýring
+<&recipe>Tengdur púlsmóttakari í hylki veitir fjarstjórnborðum stutta roðsteinskveikju.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Hægrismelltu á hann eða virkjaðu tengdu perluna til að gefa stuttan púls.<br>
+<br>
+Athugasemdir: Púlsinn endurstillist sjálfur þegar stilltur tími hans er liðinn.

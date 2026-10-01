@@ -1,0 +1,5 @@
+Klinkertrap
+Roetdonker metselwerk
+<&recipe>Dit blok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>

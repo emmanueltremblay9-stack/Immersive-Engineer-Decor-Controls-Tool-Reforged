@@ -1,0 +1,5 @@
+Tovarniški postavljalnik blokov
+Tovarniški pripomoček
+<&recipe>Ta blok ob aktivaciji postavlja bloke iz notranje zaloge.<br>
+<br>
+Uporaba: Delovno ploskev usmeri proti ciljnemu prostoru in naloži sklade predmetov, ki jih je mogoče postaviti.<br>

@@ -1,0 +1,5 @@
+Sammenpresset grusjord
+Belægning til arbejdspladser
+<&recipe>Denne blok giver udendørs arbejdsområder en sammenpresset og nedtrådt overflade.<br>
+<br>
+Brug: Læg den omkring læsseporte, udendørs tanke og maskinpladser.<br>

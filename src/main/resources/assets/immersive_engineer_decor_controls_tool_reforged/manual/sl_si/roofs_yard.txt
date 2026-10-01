@@ -1,0 +1,101 @@
+Strehe in dvorišče
+Zunanji tovarniški elementi
+Strešni bloki, dvoriščni drobir in stari industrijski leseni deli dopolnjujejo zunanje lope, delovna dvorišča, nakladalna območja in postarane tovarniške robove.<br>
+<br>
+Te dele kombiniraj z zidovjem in prehodi, da bodo zunanje industrijske zgradbe razločne tudi od daleč.
+<np>
+Streha iz temnih skodel
+Postaran strešni element
+<&dark_shingle_roof>Ta blok oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Strešni snegolov
+Postaran strešni element
+<&dark_shingle_roof_metallized>Snegolov za streho iz temnih skodel oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Streha iz temnih skodel
+Postaran strešni element
+<&dark_shingle_roof_skylight>Strešno okno za streho iz temnih skodel oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Trup strešnega dimnika
+Postaran strešni element
+<&dark_shingle_roof_chimneytrunk>Trup dimnika za streho iz temnih skodel oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Strešna kabelska cev
+Postaran strešni element
+<&dark_shingle_roof_wireconduit>Kabelska cev za streho iz temnih skodel oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Streha iz temnih skodel
+Postaran strešni element
+<&dark_shingle_roof_chimney>Dimnik za streho iz temnih skodel oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Strešni blok iz temnih skodel
+Postaran strešni element
+<&dark_shingle_roof_block>Ta blok oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Strešna plošča iz temnih skodel
+Postaran strešni element
+<&dark_shingle_roof_slab>Ta blok oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Strešna plošča iz temnih skodel
+Postaran strešni element
+<&dark_shingle_roof_slabslice>Tanka strešna plošča iz temnih skodel oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>
+<np>
+Zbita zemlja z drobirjem
+Talna obloga delovišča
+<&dense_grit_dirt_block>Ta blok daje zunanjim deloviščem zbito, poteptano površino.<br>
+<br>
+Uporaba: Položi ga okoli nakladalnih vrat, zunanjih rezervoarjev in strojnih dvorišč.<br>
+<np>
+Zbit pesek z drobirjem
+Talna obloga delovišča
+<&dense_grit_sand_block>Ta blok daje zunanjim deloviščem zbito, poteptano površino.<br>
+<br>
+Uporaba: Položi ga okoli nakladalnih vrat, zunanjih rezervoarjev in strojnih dvorišč.<br>
+<np>
+Stare lesene deske
+Postaran delavniški les
+<&old_industrial_wood_planks>Stare industrijske lesene deske dodajajo postaran delavniški les za tla, stopnice, vrata in tople notranje obrobe.<br>
+<br>
+Uporaba: Uporabi ga za stara delavniška tla, stopnice, vrata in obrobe.<br>
+<np>
+Stara industrijska lesena plošča
+Postaran delavniški les
+<&old_industrial_wood_slab>Ta blok dodaja postaran delavniški les za tla, stopnice, vrata in tople notranje obrobe.<br>
+<br>
+Uporaba: Uporabi ga za stara delavniška tla, stopnice, vrata in obrobe.<br>
+<np>
+Stare lesene stopnice
+Postaran delavniški les
+<&old_industrial_wood_stairs>Stare industrijske lesene stopnice dodajajo postaran delavniški les za tla, stopnice, vrata in tople notranje obrobe.<br>
+<br>
+Uporaba: Uporabi ga za stara delavniška tla, stopnice, vrata in obrobe.<br>
+<np>
+Stara tanka lesena plošča
+Postaran delavniški les
+<&old_industrial_wood_slabslice>Stara industrijska tanka lesena plošča dodaja postaran delavniški les za tla, stopnice, vrata in tople notranje obrobe.<br>
+<br>
+Uporaba: Uporabi ga za stara delavniška tla, stopnice, vrata in obrobe.<br>
+<np>
+Stara industrijska lesena vrata
+Postaran delavniški les
+<&old_industrial_wood_door>Ta blok dodaja postaran delavniški les za tla, stopnice, vrata in tople notranje obrobe.<br>
+<br>
+Uporaba: Uporabi ga za stara delavniška tla, stopnice, vrata in obrobe.<br>

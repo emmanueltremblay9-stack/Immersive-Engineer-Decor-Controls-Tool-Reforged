@@ -1,0 +1,7 @@
+Pratilac
+Oznaka sačuvanog položaja
+<&recipe>Čuva položaj bloka u predmetu.<br>
+<br>
+Upotreba: Kliknite blok za dimenziju i koordinate. Opis pokazuje položaj. Koristite čučeći za brisanje.<br>
+<br>
+Označite mašine, grane tunela, daljinske kontrole ili nedovršena gradilišta.

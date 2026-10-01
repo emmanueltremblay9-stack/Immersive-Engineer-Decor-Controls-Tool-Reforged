@@ -1,0 +1,7 @@
+Uyku Tulumu
+Taşınabilir dinlenme takımı
+<&recipe>Uyku tulumu yataktan uzakta çalışmak için hava koşullarına dayanıklı dinlenme setidir.<br>
+<br>
+Doğma noktasını değiştirmeden sabaha kadar dinlenmek için Overworldde gece kullanın.<br>
+<br>
+Gündüz, yakında canavar varken veya uygunsuz boyutlarda çalışmaz. Her başarılı dinlenme tulumu aşındırır.

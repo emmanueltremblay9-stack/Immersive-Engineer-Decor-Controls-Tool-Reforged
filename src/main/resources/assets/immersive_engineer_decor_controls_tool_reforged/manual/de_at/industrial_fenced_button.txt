@@ -1,0 +1,7 @@
+Eingzäunter Maschinenknopf
+Redstone-Steuerung
+<&recipe>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.

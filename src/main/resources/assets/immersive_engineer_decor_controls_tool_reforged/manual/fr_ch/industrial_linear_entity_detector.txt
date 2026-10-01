@@ -1,0 +1,7 @@
+Détecteur linéaire d'entité
+Détection de signal
+<&recipe>Un détecteur d'entité surveille les mouvements proches sans plaque visible au sol.<br>
+<br>
+Utilisation : reliez-le aux portes, lampes, alarmes ou verrouillages de sécurité des machines.<br>
+<br>
+Remarque : surveille une petite zone autour du bloc.

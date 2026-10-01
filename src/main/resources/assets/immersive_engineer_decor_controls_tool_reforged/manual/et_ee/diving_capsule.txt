@@ -1,0 +1,7 @@
+Sukeldumisõhukapsel
+Hädaõhuvaru
+<&recipe>Hädaõhk veealuseks tööks.<br>
+<br>
+Kasutus: Taasta õhk käsitsi. Seljakotis käivitub automaatselt, kui õhk peaaegu lõpeb, ja siis jahtub.<br>
+<br>
+Võta üleujutatud kaevandustesse, veealuste torude ja pumbajaamade juurde.

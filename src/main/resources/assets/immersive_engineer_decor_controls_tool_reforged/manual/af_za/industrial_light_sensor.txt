@@ -1,0 +1,7 @@
+Ligsensor
+Seinwaarneming
+<&recipe>’n Ligsensor omskep plaaslike helderheid in redstone-beheer.<br>
+<br>
+Gebruik: gebruik dit vir outomatiese lampe, luike en sigbaarheidstroombane.<br>
+<br>
+Nota: gee krag wanneer die rou helderheid 8 of hoër is.

@@ -1,0 +1,5 @@
+Tērauda galds
+Darbnīcas mēbele
+<&recipe>Šis bloks ir praktiska darbnīcas mēbele darba telpām un apkopes stūriem.<br>
+<br>
+Lietošana: novieto blakus darbagaldiem, kastēm un kompaktām mašīnām.<br>

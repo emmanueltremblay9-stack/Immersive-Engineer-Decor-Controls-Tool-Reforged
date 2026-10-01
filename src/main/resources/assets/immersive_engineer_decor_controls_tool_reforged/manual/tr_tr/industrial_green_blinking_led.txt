@@ -1,0 +1,7 @@
+Yeşil Yanıp Sönen LED
+Sinyal geri bildirimi
+<&recipe>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.

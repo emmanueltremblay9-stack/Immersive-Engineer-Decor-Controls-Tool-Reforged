@@ -1,0 +1,7 @@
+Trevogova sirena
+Povratna informacija signala
+<&recipe>Trevogova sirena jest redstounovy pokazatelj, pričěpljeny k strani bloka. Jej napojeno stanje slěduje signal bloka, k kojemu je pričěpljena.<br>
+<br>
+Upotrěbjenje: Pričěpi ju k tverdoj straně i podaj signal dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Sirena se obnovjaje raz na sekundu, dokolě jej pripojeny signal ostavaje aktivny.

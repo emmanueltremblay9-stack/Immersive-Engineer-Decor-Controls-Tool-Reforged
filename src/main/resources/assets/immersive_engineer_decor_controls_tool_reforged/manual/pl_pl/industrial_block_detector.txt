@@ -1,0 +1,7 @@
+Wykrywacz bloków
+Wykrywanie sygnałów
+<&recipe>Wykrywacz bloków sprawdza, czy miejsce przed nim jest zajęte.<br>
+<br>
+Użycie: Skieruj go ku ścianie maszyny, buforowi lub chronionemu obszarowi, który chcesz obserwować.<br>
+<br>
+Uwagi: Włącza sygnał, gdy blok przed nim nie jest powietrzem.

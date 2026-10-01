@@ -1,0 +1,7 @@
+Riċevitur tar-rabta f'kaxxa
+Kontroll marbut
+<&recipe>Riċevitur marbut f'kaxxa jagħti mira robusta tar-Redstone lil pannelli remoti.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Ikklikkja r-riċevitur direttament bil-lemin biex taqilbu bl-idejn.<br>
+<br>
+Noti: perla marbuta taqleb dan ir-riċevitur meta tintuża waqt li timxi nkiss inkiss.

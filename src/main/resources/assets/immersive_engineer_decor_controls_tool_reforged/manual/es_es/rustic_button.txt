@@ -1,0 +1,7 @@
+Botón rústico
+Control por redstone
+<&recipe>Un interruptor momentáneo produce un pulso claro de redstone a máxima intensidad.<br>
+<br>
+Uso: Úsalo para arrancar máquinas, desbloquear puertas, activar alarmas o accionar circuitos de un solo disparo.<br>
+<br>
+Notas: Se restablece después del pulso programado.

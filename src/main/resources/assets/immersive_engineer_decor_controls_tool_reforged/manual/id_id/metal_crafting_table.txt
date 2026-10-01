@@ -1,0 +1,7 @@
+Meja Kerajinan Logam
+Meja kerja pelat
+<&recipe>Meja kerja logam dengan slot khusus palu, kisi perakitan 3x3, dan slot keluaran.<br>
+<br>
+Penggunaan: gunakan kisi seperti meja kerajinan biasa. Untuk membentuk pelat IE, letakkan palu insinyur di slot perkakas dan bahan pelat dalam kisi, lalu ambil pelat yang terbentuk dari keluaran.<br>
+<br>
+Dekorasi baja menggunakan pelat baja. Masukkan palu Immersive Engineering, tempa baja batangan menjadi pelat baja, lalu gunakan pelat untuk membuat tiang, jalur servis, jendela, pintu, pagar pengaman, dan dekorasi baja lainnya.<br>

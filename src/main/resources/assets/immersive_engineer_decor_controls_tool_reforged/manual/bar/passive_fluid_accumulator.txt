@@ -1,0 +1,5 @@
+Passive Flüssigkeit
+Bauteil fia Flüssigkeitsleitungen
+<&recipe>Da passive Flüssigkeitssammler is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Setz'n an passende Wossaquellen und lass Platz zum Abnehma vo da Flüssigkeit.<br>

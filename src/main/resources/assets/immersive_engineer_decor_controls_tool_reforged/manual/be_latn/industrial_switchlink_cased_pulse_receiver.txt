@@ -1,0 +1,7 @@
+Impulsny pryjomnik u korpusie
+Kiravannie praz suviaź
+<&recipe>Zviazany impulsny pryjomnik u korpusie daje addalenym panelam karotki redstonavy puskavy sihnał.<br>
+<br>
+Vykarystannie: pstrykni pa im ender-žamčužynaj, kab stvaryć zviazanuju žamčužynu. Pstrykni pa im pravaj knopkaj abo aktyvuj zviazanuju žamčužynu, kab padać karotki impuls.<br>
+<br>
+Zaŭvahi: impuls samastojna skidajecca pasla zadadzienaha času.

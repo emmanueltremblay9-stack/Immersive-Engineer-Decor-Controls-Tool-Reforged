@@ -1,0 +1,7 @@
+Interval Signal of Glass
+Pulse at an Appointed Time
+<&recipe>A compact time switch sends a redstone pulse at an appointed time.<br>
+<br>
+Use: Govern a little mechanism at intervals or after a delay.<br>
+<br>
+Note: Its redstone pulses follow appointed times.

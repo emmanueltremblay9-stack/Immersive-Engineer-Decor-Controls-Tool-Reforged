@@ -1,0 +1,5 @@
+Sekač drveća
+Oprema za fabričku halu
+<&recipe>Mali sekač drveća pripada radioničkoj opremi za izradu, čuvanje, postavljanje, razbijanje, sakupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: usmeri ga na izraslo drveće, a ispale predmete sakupljaj posebno.<br>

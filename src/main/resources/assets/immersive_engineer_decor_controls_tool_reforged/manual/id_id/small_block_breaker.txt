@@ -1,0 +1,5 @@
+Pemecah Blok
+Peralatan lantai bengkel
+<&recipe>Pemecah blok kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: arahkan sisi kerja ke blok yang akan disingkirkan.<br>

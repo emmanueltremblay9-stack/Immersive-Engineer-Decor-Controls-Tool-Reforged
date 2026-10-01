@@ -1,0 +1,5 @@
+Laje de vidro blindado
+Visibilidade protegida
+<&recipe>Este bloco mantém a visão desobstruída sem destoar da construção reforçada da fábrica.<br>
+<br>
+Uso: Usa-o onde os jogadores devem conseguir ver as máquinas através de uma barreira protetora.<br>

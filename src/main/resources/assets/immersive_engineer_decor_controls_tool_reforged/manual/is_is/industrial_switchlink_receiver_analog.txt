@@ -1,0 +1,7 @@
+Hliðrænn tengimóttakari
+Tengd stýring
+<&recipe>Tengdur móttakari veitir stjórnborðum sýnilegt fjarstýrt mark.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Notaðu perluna á meðan þú læðist til að virkja móttakarann úr fjarlægð.<br>
+<br>
+Athugasemdir: Þessi móttakari gefur roðsteinsmerki á fullum styrk þegar hann er virkjaður.

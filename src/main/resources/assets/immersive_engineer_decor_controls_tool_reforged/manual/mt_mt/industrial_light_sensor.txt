@@ -1,0 +1,7 @@
+Sensur tad-dawl
+Sejbien tas-sinjal
+<&recipe>Sensur tad-dawl jibdel il-luminożità lokali f'kontroll tar-Redstone.<br>
+<br>
+Użu: użah għal lampi awtomatiċi, persjani u ċirkwiti tal-viżibbiltà.<br>
+<br>
+Noti: jagħti l-enerġija b'luminożità mhux ipproċessata ta' 8 jew aktar.

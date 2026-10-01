@@ -1,0 +1,7 @@
+Udarovy poklop
+Tlakovy impuls
+<&recipe>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.

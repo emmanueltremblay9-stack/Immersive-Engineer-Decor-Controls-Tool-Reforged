@@ -1,0 +1,5 @@
+Fornu eléctricu
+Unidá compacta de procesamientu
+<&recipe>El fornu eléctricu encárgase de trabayos compactos de fundición con enerxía FE y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: apurre FE y materiales válidos pa fundir.<br>

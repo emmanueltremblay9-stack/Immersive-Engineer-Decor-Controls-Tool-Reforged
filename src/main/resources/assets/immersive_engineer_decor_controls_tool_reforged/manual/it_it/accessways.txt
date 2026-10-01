@@ -1,0 +1,127 @@
+Vie d’accesso
+Passaggi e sostegni
+Pali d’acciaio, pali in legno trattato, grigliati, passerelle, ringhiere, scale a pioli, porte, finestre e botole formano percorsi di servizio compatti negli interni delle fabbriche.<br>
+<br>
+Le parti d’acciaio delle vie d’accesso richiedono piastre d’acciaio. Fabbrica o posa un banco per la lavorazione dei metalli, inserisci un martello di Immersive Engineering e martella lingotti d’acciaio per ottenere piastre per pali, passerelle, finestre, porte, ringhiere e altre decorazioni d’acciaio.<br>
+<br>
+Posale dove i macchinari richiedono accessi di servizio, passaggi rialzati, pozzi di manutenzione o bordi più sicuri.
+<np>
+Palo d’acciaio spesso
+Elemento di telaio strutturale
+<&thick_steel_pole>Il palo d’acciaio spesso e diritto fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Testa per palo spesso
+Elemento di telaio strutturale
+<&thick_steel_pole_head>La base/testa per palo d’acciaio spesso e diritto fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Palo d’acciaio sottile
+Elemento di telaio strutturale
+<&thin_steel_pole>Il palo d’acciaio sottile e diritto fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Testa per palo sottile
+Elemento di telaio strutturale
+<&thin_steel_pole_head>La base/testa per palo d’acciaio sottile e diritto fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Palo in legno trattato
+Elemento di telaio strutturale
+<&treated_wood_pole>Il palo diritto in legno trattato fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Testa per palo trattato
+Elemento di telaio strutturale
+<&treated_wood_pole_head>La base/testa per palo diritto in legno trattato fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Sostegno per palo trattato
+Elemento di telaio strutturale
+<&treated_wood_pole_support>Il sostegno per palo diritto in legno trattato fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Sostegno d’acciaio a doppia T
+Elemento di telaio strutturale
+<&steel_double_t_support>Questo blocco fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>
+<np>
+Grigliato d’acciaio per pavimenti
+Accessorio per accessi di servizio
+<&steel_floor_grating>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Passerella d’acciaio
+Accessorio per accessi di servizio
+<&steel_catwalk>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Scalini per passerella d’acciaio
+Accessorio per accessi di servizio
+<&steel_catwalk_stairs>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Passerella d’acciaio rialzata
+Accessorio per accessi di servizio
+<&steel_catwalk_ta>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Ringhiera d’acciaio
+Accessorio per accessi di servizio
+<&steel_railing>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Recinzione in rete d’acciaio
+Accessorio per accessi di servizio
+<&steel_mesh_fence>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Cancello in rete d’acciaio
+Accessorio per accessi di servizio
+<&steel_mesh_fence_gate>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Scala a pioli metallici
+Accessorio per accessi di servizio
+<&metal_rung_ladder>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Gradini metallici sfalsati
+Accessorio per accessi di servizio
+<&metal_rung_steps>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>
+<np>
+Finestra con telaio d’acciaio
+Visuale protetta
+<&steel_framed_window>Questo blocco lascia libera la visuale mantenendo lo stile rinforzato della fabbrica.<br>
+<br>
+Uso: posalo in un’apertura della parete larga un blocco, dove i giocatori devono vedere i macchinari attraverso una barriera protetta.<br>
+<np>
+Porta scorrevole metallica
+Accesso industriale
+<&metal_sliding_door>Questo blocco offre un accesso robusto a locali di servizio, pozzi, tetti e vani dei macchinari.<br>
+<br>
+Uso: installalo dove la costruzione richiede un’apertura di manutenzione controllata.<br>
+<np>
+Botola in ferro
+Accesso industriale
+<&iron_hatch>Questo blocco offre un accesso robusto a locali di servizio, pozzi, tetti e vani dei macchinari.<br>
+<br>
+Uso: installalo dove la costruzione richiede un’apertura di manutenzione controllata.<br>

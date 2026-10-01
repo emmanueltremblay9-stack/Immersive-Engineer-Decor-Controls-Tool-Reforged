@@ -1,0 +1,41 @@
+Emmagatzematge i transport
+Accessoris d’inventari i cabal
+Els accessoris d’emmagatzematge i transport inclouen caixons, barrils, embuts i vàlvules per a circuits compactes de fàbrica.<br>
+<br>
+Fes servir aquestes pàgines per distribuir magatzems, canonades, dipòsits de servei i conduccions de fluids controlades.
+<np>
+Caixó etiquetat
+Etiqueta d’emmagatzematge editable
+<&labeled_crate>Aquest caixó etiquetat està pensat per ordenar clarament el magatzem. La placa frontal es pot editar com un petit cartell de taller.<br>
+<br>
+Ús: fes clic dret a la placa per editar l’etiqueta del caixó. Fes clic dret a la resta del caixó per obrir l’emmagatzematge d’accessoris, peces i subministraments de manteniment.<br>
+<np>
+Barril de líquids
+Equipament de canonades de fluids
+<&fluid_barrel>Aquest accessori és una peça compacta de conducció de fluids per a petits dipòsits, canonades, punts de recollida i cabals controlats per redstone.<br>
+<br>
+Ús: col·loca’l on les canonades o les galledes puguin arribar a la cara del dipòsit.<br>
+<np>
+Embut de líquids
+Equipament de canonades de fluids
+<&small_fluid_funnel>L’embut petit de recollida de líquids és una peça compacta de conducció de fluids per a petits dipòsits, canonades, punts de recollida i cabals controlats per redstone.<br>
+<br>
+Ús: posa’l sota el punt de recollida de fluids i condueix-ne el contingut emmagatzemat cap a dipòsits o canonades inferiors.<br>
+<np>
+Vàlvula antiretorn per a canonades de líquids
+Equipament de canonades de fluids
+<&straight_pipe_valve>La vàlvula antiretorn per a canonades de líquids és una peça compacta de conducció de fluids per a petits dipòsits, canonades, punts de recollida i cabals controlats per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció de cabal prevista.<br>
+<np>
+Vàlvula de líquids de redstone
+Equipament de canonades de fluids
+<&straight_pipe_valve_redstone>La vàlvula de líquids controlada per redstone és una peça compacta de conducció de fluids per a petits dipòsits, canonades, punts de recollida i cabals controlats per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció de cabal prevista.<br>
+<np>
+Vàlvula analògica de líquids
+Equipament de canonades de fluids
+<&straight_pipe_valve_redstone_analog>La vàlvula analògica de líquids de redstone és una peça compacta de conducció de fluids per a petits dipòsits, canonades, punts de recollida i cabals controlats per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció de cabal prevista.<br>

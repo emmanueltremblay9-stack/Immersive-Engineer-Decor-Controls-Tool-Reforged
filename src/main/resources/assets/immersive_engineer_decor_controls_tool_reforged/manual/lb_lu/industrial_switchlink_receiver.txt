@@ -1,0 +1,7 @@
+Empfänger fir Schaltverbindungen
+Verbonne Steierung
+<&recipe>E verbonnen Empfänger bitt Fernsteierbrieder e Redstone-Zil mat voller Stäerkt.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Maach direkt e Rietsklick op den Empfänger fir e mat der Hand ëmzeschalten.<br>
+<br>
+Hiweiser: Eng verbonne Pärel schalt dësen Empfänger ëm, wann se beim Schläiche benotzt gëtt.

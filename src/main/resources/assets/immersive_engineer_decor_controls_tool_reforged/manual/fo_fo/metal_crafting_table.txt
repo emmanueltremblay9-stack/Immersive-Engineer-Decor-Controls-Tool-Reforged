@@ -1,0 +1,7 @@
+Málmarbeiðsborð
+Arbeiðsstaður til plátur
+<&recipe>Metalsmíðiborð við serligum hamarplássi, 3x3 smíðirúti og úttaksplássi.<br>
+<br>
+Nýtsla: Brúka rutuna eins og eitt vanligt arbeiðsborð. Fyri at gera IE-plátur skalt tú seta ein verkfrøðingahamara í amboðsplássið og plátutilfarið í rutuna; tak síðani gjørdu plátuna úr úttakinum.<br>
+<br>
+Stálprýði brúkar stálplátur. Set ein hamara frá Immersive Engineering í, hamra stálstengur til stálplátur og brúka síðani pláturnar til stólpar, gongubrýr, vindeygu, hurðar, gelendarar og annað stálprýði.<br>

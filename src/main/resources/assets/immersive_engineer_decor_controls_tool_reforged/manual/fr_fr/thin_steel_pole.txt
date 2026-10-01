@@ -1,0 +1,5 @@
+Poteau fin en acier
+Élément d'ossature
+<&recipe>Le poteau droit fin en acier forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>

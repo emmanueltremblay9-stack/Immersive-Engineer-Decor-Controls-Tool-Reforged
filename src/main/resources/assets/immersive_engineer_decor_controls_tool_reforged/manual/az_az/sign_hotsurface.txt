@@ -1,0 +1,5 @@
+İsti səth nişanı
+Təhlükə nişanı
+<&recipe>"Diqqət, isti səth" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>

@@ -1,0 +1,5 @@
+Fabrikako jaurtigailua
+Lantegiko tresneria
+<&recipe>Bloke honek gordetako objektuak zuzendutako aurpegi batetik askatzen ditu.<br>
+<br>
+Erabilera: zuzendu aurrealdea askatze-punturantz, bete barneko zirrikituak eta doitu indarra, angelua, atzerapena, iragazki-logika eta redstone-modua bere pantailan.<br>

@@ -1,0 +1,5 @@
+Slag Tile Stairs
+Hard-packed workstead stonework
+<&recipe>This clot adds thick gray-brown stonework for footings, earth-holding walls and older worksheds.<br>
+<br>
+Use: Build old footings, earth-holding walls and grimy workstead floors.<br>

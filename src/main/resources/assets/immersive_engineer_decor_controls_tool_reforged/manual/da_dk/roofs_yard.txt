@@ -1,0 +1,101 @@
+Tage og gårdsplads
+Udendørs fabriksudstyr
+Tagblokke, gårdsgrus og gamle industritrædele hjælper med at færdiggøre udvendige skure, arbejdspladser, læsseområder og vejrbidte fabrikskanter.<br>
+<br>
+Bland delene med murværk og adgangsveje, så udendørs industribyggerier også er tydelige på afstand.
+<np>
+Mørkt spåntag
+Vejrbidt tagdel
+<&dark_shingle_roof>Denne blok skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Snefang til tag
+Vejrbidt tagdel
+<&dark_shingle_roof_metallized>Snefanget til mørkt spåntag skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Mørkt spåntag
+Vejrbidt tagdel
+<&dark_shingle_roof_skylight>Ovenlysvinduet til mørkt spåntag skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Skorstensstamme til tag
+Vejrbidt tagdel
+<&dark_shingle_roof_chimneytrunk>Skorstensstammen til mørkt spåntag skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Ledningsgennemføring til tag
+Vejrbidt tagdel
+<&dark_shingle_roof_wireconduit>Ledningsgennemføringen til mørkt spåntag skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Mørkt spåntag
+Vejrbidt tagdel
+<&dark_shingle_roof_chimney>Skorstenen til mørkt spåntag skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Mørk spåntagsblok
+Vejrbidt tagdel
+<&dark_shingle_roof_block>Denne blok skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Mørk spåntagsflise
+Vejrbidt tagdel
+<&dark_shingle_roof_slab>Denne blok skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Mørk spåntagsflise
+Vejrbidt tagdel
+<&dark_shingle_roof_slabslice>Den tynde mørke spåntagsflise skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>
+<np>
+Sammenpresset grusjord
+Belægning til arbejdspladser
+<&dense_grit_dirt_block>Denne blok giver udendørs arbejdsområder en sammenpresset og nedtrådt overflade.<br>
+<br>
+Brug: Læg den omkring læsseporte, udendørs tanke og maskinpladser.<br>
+<np>
+Sammenpresset grussand
+Belægning til arbejdspladser
+<&dense_grit_sand_block>Denne blok giver udendørs arbejdsområder en sammenpresset og nedtrådt overflade.<br>
+<br>
+Brug: Læg den omkring læsseporte, udendørs tanke og maskinpladser.<br>
+<np>
+Gamle træplanker
+Ældet værkstedstræ
+<&old_industrial_wood_planks>De gamle industritræplanker giver ældet værkstedstræ til gulve, trin, døre og varm indvendig udsmykning.<br>
+<br>
+Brug: Brug den til gamle værkstedsgulve, trapper, døre og udsmykning.<br>
+<np>
+Gammel industritræflise
+Ældet værkstedstræ
+<&old_industrial_wood_slab>Denne blok giver ældet værkstedstræ til gulve, trin, døre og varm indvendig udsmykning.<br>
+<br>
+Brug: Brug den til gamle værkstedsgulve, trapper, døre og udsmykning.<br>
+<np>
+Gammel trætrappe
+Ældet værkstedstræ
+<&old_industrial_wood_stairs>Den gamle industritrætrappe giver ældet værkstedstræ til gulve, trin, døre og varm indvendig udsmykning.<br>
+<br>
+Brug: Brug den til gamle værkstedsgulve, trapper, døre og udsmykning.<br>
+<np>
+Tynd gammel træflise
+Ældet værkstedstræ
+<&old_industrial_wood_slabslice>Den tynde gamle industritræflise giver ældet værkstedstræ til gulve, trin, døre og varm indvendig udsmykning.<br>
+<br>
+Brug: Brug den til gamle værkstedsgulve, trapper, døre og udsmykning.<br>
+<np>
+Gammel industritrædør
+Ældet værkstedstræ
+<&old_industrial_wood_door>Denne blok giver ældet værkstedstræ til gulve, trin, døre og varm indvendig udsmykning.<br>
+<br>
+Brug: Brug den til gamle værkstedsgulve, trapper, døre og udsmykning.<br>

@@ -1,0 +1,5 @@
+Redstonu valdomas skysčių vožtuvas
+Skysčių linijos įranga
+<&recipe>Redstonu valdomas skysčių vožtuvas yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: pasuk vožtuvą pagal numatytą srauto kryptį.<br>

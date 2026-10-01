@@ -1,0 +1,7 @@
+Kytkinyhteysvastaanotin
+Yhteysohjaus
+<&recipe>Yhteysvastaanotin antaa etäpaneeleille täysivahvuisen redstone-kohteen.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Vaihda vastaanottimen tilaa käsin napsauttamalla sitä suoraan oikealla painikkeella.<br>
+<br>
+Huomaa: Yhteyshelmi vaihtaa tämän vastaanottimen tilaa, kun sitä käytetään hiipien.

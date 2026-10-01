@@ -1,0 +1,5 @@
+Tekučinova voronka
+Pribor tekučinovoj linije
+<&recipe>Mala tekučinova voronka jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Postavi ju pod město sbiranja tekučiny i prěpravi jej uloženo sodržanje v rezervuary ili nižše truby.<br>

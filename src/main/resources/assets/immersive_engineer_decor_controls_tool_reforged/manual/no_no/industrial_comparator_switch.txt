@@ -1,0 +1,7 @@
+Sammenlignerbryter
+Signal fra festeblokken
+<&recipe>En kompakt sensorbryter leser blokken den er montert på og gjør avlesningen om til en enkel panelutgang.<br>
+<br>
+Bruk: monter den på lagre, tanker eller redstoneutstyr. Når festeblokken rapporterer sammenligner-, beholder- eller redstoneutgang, gir bryteren redstone med full styrke.<br>
+<br>
+Merknad: bruk den til å gjøre lagernivåer eller skjulte ledninger om til tydelige av/på-styrelinjer.

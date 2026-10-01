@@ -1,0 +1,7 @@
+Banco par łaorar i metałi
+Postasion par far piastre
+<&recipe>El banco de metal ga un posto par martelo, griglia 3x3 completa e uscita.<br>
+<br>
+Dopara la griglia come un banco normale. Par piastre IE meti el martelo del ingegnere nel posto, material in griglia e ciapa la piastra da uscita.<br>
+<br>
+Le decorasion de aciaro dopara piastre formà su sto banco.

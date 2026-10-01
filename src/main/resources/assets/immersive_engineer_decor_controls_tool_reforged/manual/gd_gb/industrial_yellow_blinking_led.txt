@@ -1,0 +1,7 @@
+LED buidhe priobach
+Fios-air-ais chomharran
+<&recipe>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.

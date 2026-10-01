@@ -1,0 +1,41 @@
+Storage & Transport
+Inventory and flow fittings
+Storage and transport fittings handle crates, barrels, funnels, and valves for compact factory routing.<br>
+<br>
+Use these pages when laying out stockrooms, pipe runs, service tanks, and controlled fluid lines.
+<np>
+Labelled Crate
+Editable stock label
+<&labeled_crate>This labelled crate is built for clear stockroom sorting. Its front plate can be edited like a small workshop sign.<br>
+<br>
+Usage: Right-click the label plate to edit the crate label. Right-click the rest of the crate to open storage for fittings, parts, and maintenance supplies.<br>
+<np>
+Fluid Barrel
+Fluid line hardware
+<&fluid_barrel>This fitting is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Place it where pipes or buckets can reach the tank face.<br>
+<np>
+Fluid Funnel
+Fluid line hardware
+<&small_fluid_funnel>The Small Fluid Funnel is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Put it below the fluid collection point and route its stored contents into tanks or lower pipework.<br>
+<np>
+Fluid Pipe Check Valve
+Fluid line hardware
+<&straight_pipe_valve>Fluid Check Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Align the valve with the intended flow direction.<br>
+<np>
+Redstone Fluid Valve
+Fluid line hardware
+<&straight_pipe_valve_redstone>The Redstone Fluid Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Align the valve with the intended flow direction.<br>
+<np>
+Analog Fluid Valve
+Fluid line hardware
+<&straight_pipe_valve_redstone_analog>The Analog Fluid Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Align the valve with the intended flow direction.<br>

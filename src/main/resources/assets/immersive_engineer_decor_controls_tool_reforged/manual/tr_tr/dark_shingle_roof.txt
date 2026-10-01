@@ -1,0 +1,5 @@
+Koyu Şıngıl Çatı
+Eskimiş çatı parçası
+<&recipe>Bu blok, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>

@@ -1,0 +1,93 @@
+Ingenieurswergzeusch
+Dragbares Wergschdaddzeig
+De Ingenieurswergzeuschsammlung bringd Handgeräde, Grubenmargieror, Nodvorbrauchszeig, Undorwägsessn un gleene Maderialhilfn ins selbe Handbuch wie de Zier- un Schdeuorblögge.<br>
+<br>
+Das Wergzeusch is für Arbeed fern von eenor voll ausgerisddn Wergschdadd gedachd: Margier’n Wäg, nimm Vorräde mid, erhol dich von Fehlorn un erledige gleene Vorarbeedungen vor Ord.
+<np>
+REDIA-Wergzeusch
+Allzwegghilfe mid Diamandbelag
+<&redia_tool>Das REDIA-Wergzeusch is ä haldbare Hilfe für schnälle Bodnarbeed vor Ord. Nimm’s uff bearbeidbarer Ährde, um Aggorbodn zu machn.<br>
+<br>
+Nuddz’s uff eenor fesdn Fläche, wenn de Faggln dabeihasd, um eene Fagglmargierung aus deim Invendar zu seddzn, ohne REDIA abzunuddzn. Bodnarbeed, Schärn, Aggsdarbeed un Baumfälln brauchn Haldbarkeed.
+<np>
+Ärdsmahlhammor
+Handmahlwergzeusch
+<&crushing_hammer>De Erzquetschhamer is en Handwarktüüch för de fröhe Bearbeitung vun Iesen un Gold.<br>
+<br>
+Bruuk em mit Rohiesen, Rohgold, Iesen- oder Golderz un de Deepslate-Sorten för Immersive-Engineering-Stoff. De Hamer verleert Holtborheit, kümmt bit to Breken torüch, slitt bi Bargwark un stööt Teelen weg.
+<np>
+Schbursuchor
+Geschbeichorde Ordsmargierung
+<&tracker>De Tracker wohrt en Blocksteed in dat Item.<br>
+<br>
+Klick en Block för Dimension un Koordinaten. De Tipp toont de Steed. Bruuk em sluukend, üm dat Teel to löschen.<br>
+<br>
+Markeer Maschinen, Tunnels, Feernstüern oder unfardige Buusteden.
+<np>
+Ariadne-Gohle
+Grubenwegmargieror
+<&ariadne_coal>Ariadne-Gohle seddzd schnäll schworze Pfeile uff fesde Grubnseidn. Nimm se uff eenor fesdn Fläche, um de nächste Biegung, än Ausgang oddor ä Abzweigung zu margiern. De Margierung gännd achd Richdungen uff dor angegliggdn Fläche, ooch schräg.<br>
+<br>
+Ariadne-Gohle is ä wiedorvorwendbares Margierwergzeusch mid 100 Benuddzungen. Jede erfolgreiche Margierung brauchd een Haldbarkeedsbungd. Unbassnde Seidn wärn abgelehnd, anschdadd’s Ding abzunuddzn.
+<np>
+Automad’sches Schdimulationspäggl
+Nodschbridze
+<&stimpack>Dat automaatsche Stimpack is en Nootmedizin-Item.<br>
+<br>
+Bruuk dat vun Hand för Heelen, kort Schutz un Gauheit. In Inventar lööst dat bi wenig Leven automaatsch ut un köhlt af. Holl dat an gefährliche Steden praat.
+<np>
+Schlafsagg
+Dragbares Ruhezeig
+<&sleeping_bag>De Slaapsack is en weerfast Rusttüüch för Wark wiet vun en Bett.<br>
+<br>
+Bruuk em nachts in Overworld bit Morgen, ahn den Spawnpunkt to ännern.<br>
+<br>
+He warkt nich dags, bi Monsters in Neegde oder in falsche Dimensionen. Elke gode Rust slitt em.
+<np>
+Maderiallagerdruhe
+Druhe für Bauvorrad
+<&material_box>De Materiaalkist dreegt vele vun een eenfach, nich ännert un stapelbor Buumateriaal.<br>
+<br>
+Holl de Kist in de Hööfthand un dat Materiaal in de anner Hand to Laden; mit leddige anner Hand kummt een Stapel rut.<br>
+<br>
+Se höllt 512 vun een Sort, wiest anner Kisten, nich stapelbor Tüüch un ännert Stapeln af un toont den Inholt in Tipp.
+<np>
+Dauchlufdgabsel
+Nodlufdvorrad
+<&diving_capsule>De Duukluftkapsel is en Nootvörraat för Wark ünner Water.<br>
+<br>
+Bruuk ehr vun Hand för Luft. In Inventar lööst se automaatsch ut, wenn de Luft meist all is, un geiht denn op Afköhltiet. Nimm se in överflöödte Bargwarken un to Waterrohren.
+<np>
+Muslee-Rieglbrässe
+Essnsbrässe
+<&musli_bar_press>De Muslee-Pers maakt ut Eten kompakte Feldkost.<br>
+<br>
+Holl Brood, en Appel un Weet-, Meloon-, Kürbis-, Rootbeet- oder Industriehanfsaat un bruuk de Pers. Se nimmt een vun elke, prüüvt Platz, maakt veer Riegel un warrt beschädigt.<br>
+<br>
+Fehlt wat oder Platz, warrt nix bruukt.
+<np>
+Muslee Melange Graftriegl
+Schnällor Wergschdaddimbiss
+<&musli_bar>De Muslee-Melange-Riegel is kompakt Eten ut Brood, Saat un Frucht.<br>
+<br>
+Eet em bi Wark an Stüern, Rohren, Plattformen oder lange Maschinenreegen.
+<np>
+Gedangnbrässe
+Erfahrungsvordichdor
+<&charged_lapis_squeezer>De Gedangnbrässe machd aus eem Labisladsuli un eem Erfahrungslevel aus deim Invendar geladnen Labisladsuli.<br>
+<br>
+Jede erfolgreiche Umwandlung dud’m Nuddzor weh, erschöpft’n, was Hunger auslösd, un machd’n gorz blind. Ohne Labisladsuli, ohne XP oddor wenn or zu nah am Dod is, gehd’s nich.
+<np>
+Geladnor Labisladsuli
+Geschbeichorde Erfahrung
+<&charged_lapis>Geladnor Labisladsuli schbeichord een Erfahrungslevel. Vorbrauch’n, um’s Level zuriggzugriegn, aggdive Effegde loszuwärn un ä bissl Gesundheed zuriggzubegomm.<br>
+<br>
+Bau zuersd ä Gedangnbrässe. Geladnor Labisladsuli endschdehd beim Nuddzn von däm Wergzeusch mid Labisladsuli un XP.
+<np>
+Grobor Eisngrus
+Ingenieurswergzeuschmaderial für de wiedorhergeschdelldn Handwerschrezäbde.
+<&iron_grit>Lässd sich zu Eisnbarrn<br>schmelzn, daugd abor nich für<br>weidorführende Maderialvorarbeedung.
+<np>
+Grobor Goldgrus
+Ingenieurswergzeuschmaderial für de wiedorhergeschdelldn Handwerschrezäbde.
+<&gold_grit>Lässd sich zu Goldbarrn<br>schmelzn, daugd abor nich für<br>weidorführende Maderialvorarbeedung.

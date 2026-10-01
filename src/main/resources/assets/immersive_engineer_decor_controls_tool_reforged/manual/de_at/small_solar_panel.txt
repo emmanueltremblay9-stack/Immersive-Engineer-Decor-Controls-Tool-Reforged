@@ -1,0 +1,5 @@
+Solarpaneel
+Hüfsgerät für de Werkstatt
+<&recipe>Des kloane Solarpaneel is a Werkstatthüfsblock für Herstellung, Lagern, Setzn, Obbau, Sammeln oda kompakte Automation.<br>
+<br>
+Verwendung: Gib eam freien Himmel und schließ Geräte mit wenig Verbrauch on.<br>

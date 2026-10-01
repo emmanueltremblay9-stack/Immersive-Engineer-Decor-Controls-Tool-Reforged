@@ -1,0 +1,7 @@
+Mála Codlata
+Fearas scíthe iniompartha
+<&recipe>Is trealamh scíthe síondíonach é an mála codlata d’obair i bhfad ó leaba.<br>
+<br>
+Úsáid: Úsáid san oíche san Overworld é chun scíth a ligean go maidin. Ní shocraíonn ná ní bhogann sé do phointe athghiniúna.<br>
+<br>
+Diúltaíonn sé úsáid sa lá, timpeallacht chontúirteach le harrachtaí in aice láimhe agus toisí nach n-oireann do scíth shábháilte. Caitheann gach scíth rathúil an mála.

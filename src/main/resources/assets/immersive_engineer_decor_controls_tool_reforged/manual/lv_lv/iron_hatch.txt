@@ -1,0 +1,5 @@
+Dzelzs apkopes lūka
+Rūpnieciskas piekļuves vieta
+<&recipe>Šis bloks nodrošina izturīgu piekļuves vietu apkopes telpām, šahtām, jumtiem un mašīnu korpusiem.<br>
+<br>
+Lietošana: uzstādi tur, kur būvē vajadzīga kontrolējama apkopes atvere.<br>

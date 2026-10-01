@@ -1,0 +1,7 @@
+Kaca Peka Bercahaya
+Kaca sinyal
+<&recipe>Blok kaca yang bereaksi terhadap redstone mempertahankan pandangan terbuka sambil menampilkan keadaan sinyal.<br>
+<br>
+Penggunaan: gunakan pada jendela ruang kendali, panel bercahaya, dan kaca pelindung pabrik.<br>
+<br>
+Catatan: berubah keadaan akibat daya redstone di dekatnya.

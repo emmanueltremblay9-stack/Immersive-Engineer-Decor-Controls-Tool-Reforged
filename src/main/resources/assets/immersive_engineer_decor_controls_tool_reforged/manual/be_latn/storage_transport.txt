@@ -1,0 +1,41 @@
+Zachoŭvannie i pieravozka
+Schoviščy i elemienty patoku
+Elemienty zachoŭvannia i pieravozki achoplivajuć skryni, bočki, varonki i kłapany dla kampaktnych fabryčnych linij.<br>
+<br>
+Vykarystoŭvaj hetyja staronki pry płanavanni składoŭ, trubapravodaŭ, słužbovych reziervuaraŭ i kiravanych fluidnych linij.
+<np>
+Skrynia z podpisam
+Redahavany składski podpis
+<&labeled_crate>Hetaja skrynia z podpisam pryznačana dla zrazumiełaha sartavannia na składzie. Jaje piaredniuju tabličku možna redahavać, jak mały znak u majsterni.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj pa tabličcy, kab zmianić podpis skryni. Pstrykni pravaj knopkaj pa astatniaj častcy skryni, kab adkryć schovišča dla abstalavannia, detalaŭ i prypasaŭ dla absłuhoŭvannia.<br>
+<np>
+Bočka dla fluidaŭ
+Abstalavannie fluidnych linij
+<&fluid_barrel>Hety elemient — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie truby abo viodry mohuć dasiahnuć hrani reziervuara.<br>
+<np>
+Varonka dla fluidaŭ
+Abstalavannie fluidnych linij
+<&small_fluid_funnel>Małaja varonka dla fluidaŭ — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: pastaŭ jaje pad punktam zboru fluidu i nakiruj zachavanaje zmiesciva ŭ reziervuary abo nižnija trubapravody.<br>
+<np>
+Zvarotny kłapan dla fluidaŭ
+Abstalavannie fluidnych linij
+<&straight_pipe_valve>Zvarotny kłapan dla fluidaŭ — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: sumiasci kłapan z patrebnym kirunkam patoku.<br>
+<np>
+Redstonavy kłapan dla fluidaŭ
+Abstalavannie fluidnych linij
+<&straight_pipe_valve_redstone>Redstonavy kłapan dla fluidaŭ — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: sumiasci kłapan z patrebnym kirunkam patoku.<br>
+<np>
+Anałahavy kłapan dla fluidaŭ
+Abstalavannie fluidnych linij
+<&straight_pipe_valve_redstone_analog>Anałahavy kłapan dla fluidaŭ — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: sumiasci kłapan z patrebnym kirunkam patoku.<br>

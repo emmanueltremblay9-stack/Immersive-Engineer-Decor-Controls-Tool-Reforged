@@ -1,0 +1,7 @@
+Swiċċ tal-valv
+Kontroll tar-Redstone
+<&recipe>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.

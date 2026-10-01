@@ -1,0 +1,7 @@
+Fémmegmunkáló asztal
+Lemezmegmunkáló állomás
+<&recipe>Fém munkapad külön kalapácshellyel, 3x3-as barkácsráccsal és kimeneti hellyel.<br>
+<br>
+Használat: a rácsot hagyományos barkácsasztalként használd. IE-lemez készítéséhez helyezz mérnöki kalapácsot a szerszámhelyre és lemezanyagot a rácsba, majd vedd ki a kész lemezt a kimenetről.<br>
+<br>
+Az acéldíszek acéllemezekből készülnek. Helyezz be Immersive Engineering kalapácsot, kalapálj acélrudakat acéllemezzé, majd a lemezekből készíts oszlopokat, szerelőjárdákat, ablakokat, ajtókat, korlátokat és más acéldíszeket.<br>

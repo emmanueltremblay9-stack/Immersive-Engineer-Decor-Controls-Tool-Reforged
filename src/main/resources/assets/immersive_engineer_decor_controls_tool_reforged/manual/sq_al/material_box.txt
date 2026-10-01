@@ -1,0 +1,7 @@
+Kuti magazinimi materialesh
+Kuti furnizimi ndërtimi
+<&recipe>Kutia e materialeve mban shumë nga një material i vetëm ndërtimi, i zakonshëm, i pandryshuar dhe i grumbullueshëm.<br>
+<br>
+Mbajeni kutinë në dorën kryesore dhe materialin në tjetrën për ta futur; me dorën tjetër bosh nxirrni një grumbull.<br>
+<br>
+Mban 512 sende të një lloji, refuzon kuti të tjera, pajisje të pagrumbullueshme e grumbuj të ndryshuar dhe e tregon përmbajtjen në përshkrim.

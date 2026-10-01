@@ -1,0 +1,5 @@
+Tynn stålstolpe
+Del til bærende ramme
+<&recipe>Den rette tynne stålstolpen gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>

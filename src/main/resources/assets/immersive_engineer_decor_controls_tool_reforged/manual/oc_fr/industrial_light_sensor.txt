@@ -1,0 +1,7 @@
+Captador de lutz
+Deteccion de senhal
+<&recipe>Un captador de lutz transforma la luminositat locala en comanda de redstone.<br>
+<br>
+Utilizacion : emplega-lo per las lampas automaticas, los contravents e los circuits de visibilitat.<br>
+<br>
+Nòta : s’alimenta a una luminositat bruta de 8 o mai.

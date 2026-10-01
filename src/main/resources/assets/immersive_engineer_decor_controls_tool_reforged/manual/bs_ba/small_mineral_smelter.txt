@@ -1,0 +1,5 @@
+Topionica minerala
+Kompaktna jedinica za obradu
+<&recipe>Topionica minerala obrađuje minerale na visokoj temperaturi, zauzimajući malo mjesta u radionici.<br>
+<br>
+Upotreba: Dovedite mineralne blokove i energiju za topljenje na visokoj temperaturi.<br>

@@ -1,0 +1,5 @@
+Old Industrial Wood Door
+Aged shop timber
+<&recipe>This block adds aged shop timber for floors, steps, doors, and warm interior trim.<br>
+<br>
+Usage: Use it for old shop floors, stairs, doors, and trim.<br>

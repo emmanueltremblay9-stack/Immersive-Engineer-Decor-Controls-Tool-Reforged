@@ -1,0 +1,7 @@
+Saco de dormir
+Conjunto portátil para descanso
+<&recipe>O saco de dormir é um kit resistente ao tempo para trabalho longe de uma cama.<br>
+<br>
+Use-o à noite no Mundo Superior para descansar até a manhã sem definir o ponto de renascimento.<br>
+<br>
+Ele não funciona de dia, com monstros próximos ou em dimensões impróprias. Cada descanso bem-sucedido o desgasta.

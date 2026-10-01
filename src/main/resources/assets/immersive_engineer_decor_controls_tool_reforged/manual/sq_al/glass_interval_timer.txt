@@ -1,0 +1,7 @@
+Sinjal me intervale prej xhami
+Puls i kohëzuar
+<&recipe>Një çelës kompakt me kohëmatës jep një puls redstoni sipas orarit.<br>
+<br>
+Përdorimi: përdore kur një mekanizëm i vogël kërkon kontroll periodik ose të vonuar.<br>
+<br>
+Shënim: përdor pulse të planifikuara redstoni.

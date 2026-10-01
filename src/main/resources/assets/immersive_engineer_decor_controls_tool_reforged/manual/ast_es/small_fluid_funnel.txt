@@ -1,0 +1,5 @@
+Embudu de líquidos
+Accesorios de conducción de líquidos
+<&recipe>L’embudu de líquidos pequeñu ye un elementu compactu de conducción de líquidos pa depósitos pequeños, tendíos de tuberíes, puntos de recoyida y control del caudal por redstone.<br>
+<br>
+Usu: ponlu debaxo del puntu de recoyida de líquidos y conduz el conteníu almacenáu a depósitos o tuberíes más baxes.<br>

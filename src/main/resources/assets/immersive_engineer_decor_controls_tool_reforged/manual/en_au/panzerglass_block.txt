@@ -1,0 +1,5 @@
+Panzer Glass Block
+Protected sightline
+<&recipe>This block keeps sightlines open while still matching reinforced factory construction.<br>
+<br>
+Usage: Use it where players should see machinery through a protected barrier.<br>

@@ -1,0 +1,5 @@
+Tanki sloj stare drvene ploče
+Ostarela radionička građa
+<&recipe>Tanki sloj stare industrijske drvene ploče dodaje ostarelu radioničku građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>

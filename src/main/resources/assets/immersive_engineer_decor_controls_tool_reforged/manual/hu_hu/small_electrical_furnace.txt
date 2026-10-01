@@ -1,0 +1,5 @@
+Elektromos kemence
+Kompakt feldolgozóegység
+<&recipe>Az elektromos kemence kis helyigény mellett végez kompakt, FE-energiával működő olvasztási feladatokat a műhelyben.<br>
+<br>
+Használat: biztosíts FE-t és megfelelő olvasztási alapanyagot.<br>

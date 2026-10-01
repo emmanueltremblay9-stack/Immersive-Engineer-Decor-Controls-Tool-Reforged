@@ -1,0 +1,7 @@
+Material-kutxa
+Eraikuntza-hornidurak
+<&recipe>Material arrunt, aldatu gabe eta pilagarri bakarraren erreserba handia darama.<br>
+<br>
+Erabilera: Kutxa esku nagusian eta materiala bestean kargatzeko. Beste eskua hutsik, pila bat ateratzeko.<br>
+<br>
+Mota bakarreko 512 elementu gordetzen ditu eta kutxa habiaratuak, pilaezinak eta aldatutako pilak baztertzen ditu; edukia argibidean dago.

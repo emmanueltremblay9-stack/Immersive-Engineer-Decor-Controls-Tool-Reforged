@@ -1,0 +1,5 @@
+Seann doras fiodha gnìomhachais
+Seann fhiodh bùth-obrach
+<&recipe>Cuiridh am bloca seo seann fhiodh bùth-obrach ri làir, ceumannan, dorsan agus oir-sgeadachadh blàth a-staigh.<br>
+<br>
+Cleachdadh: cleachd e airson seann làir bùth-obrach, staidhrichean, dorsan agus oir-sgeadachadh.<br>

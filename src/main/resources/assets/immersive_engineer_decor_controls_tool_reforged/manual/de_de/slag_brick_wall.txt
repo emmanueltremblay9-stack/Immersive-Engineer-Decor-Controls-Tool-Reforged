@@ -1,0 +1,5 @@
+Schlackenziegelmauer
+Massives Fabrikmauerwerk
+<&recipe>Dieser Block ergänzt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppen.<br>
+<br>
+Verwendung: Nutze ihn für ältere Fundamente, Stützmauern und schmutzige Fabrikböden.<br>

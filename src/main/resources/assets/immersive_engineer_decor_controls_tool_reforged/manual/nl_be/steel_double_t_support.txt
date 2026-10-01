@@ -1,0 +1,5 @@
+Stalen dubbel-T-balk
+Onderdeel van een draagconstructie
+<&recipe>Dit blok vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>

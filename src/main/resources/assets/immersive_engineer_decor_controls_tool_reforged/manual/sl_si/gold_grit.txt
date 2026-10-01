@@ -1,0 +1,3 @@
+Grob zlat drobljenec
+Material za inženirska orodja, uporabljen v obnovljenem naboru receptov.
+<&recipe>Lahko ga stališ v zlate<br>palice, vendar ni primeren<br>za napredno obdelavo materialov.

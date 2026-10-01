@@ -1,0 +1,5 @@
+Bezak belgisi
+Xavf belgisi
+<&recipe>Belgi lavhasi (Engineer's Decor) xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>

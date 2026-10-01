@@ -1,0 +1,5 @@
+Továrenský vyhadzovač
+Vybavenie výrobnej haly
+<&recipe>Tento blok vypúšťa uložené predmety z namierenej strany.<br>
+<br>
+Použitie: Namier prednú stranu na miesto vypúšťania, naplň vnútorné pozície a v rozhraní nastav silu, uhol, prestávku, logiku filtrov a redstonový režim.<br>

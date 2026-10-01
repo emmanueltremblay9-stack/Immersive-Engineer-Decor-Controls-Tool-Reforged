@@ -1,0 +1,5 @@
+Ukrašena klinker opeka
+Opeka potamnjela od čađe
+<&recipe>Klinker opeka ukrašena pješčenjakom donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>

@@ -1,0 +1,5 @@
+Thin slice o' reinforced concrete
+Concrete reinforced fer strength
+<&recipe>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>

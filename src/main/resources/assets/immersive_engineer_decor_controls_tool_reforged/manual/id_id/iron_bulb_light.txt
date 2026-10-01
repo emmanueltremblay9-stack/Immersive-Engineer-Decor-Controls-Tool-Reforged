@@ -1,0 +1,5 @@
+Lampu Bohlam Besi
+Lampu kerja ringkas
+<&recipe>Blok ini menyediakan penerangan industri ringkas untuk lorong, jalur servis, dan ruang kerja.<br>
+<br>
+Penggunaan: pasang pada langit-langit, tembok, atau tepi tempat ruangan membutuhkan penerangan kerja yang jelas.<br>

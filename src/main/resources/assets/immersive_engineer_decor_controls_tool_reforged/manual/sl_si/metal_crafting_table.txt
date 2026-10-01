@@ -1,0 +1,7 @@
+Miza za obdelavo kovin
+Delovno mesto za plošče
+<&recipe>Kovinska delovna miza ima režo za kladivo, polno mrežo 3x3 in izhod.<br>
+<br>
+Mrežo uporabite kot navadno mizo. Za plošče IE vstavite inženirsko kladivo v režo, material v mrežo in vzemite ploščo iz izhoda.<br>
+<br>
+Jekleni okraski uporabljajo jeklene plošče, oblikovane na tej mizi.

@@ -1,0 +1,5 @@
+Post fiodha làimhsichte
+Pàirt frèam structair
+<&recipe>Bheir am Post dìreach fiodha làimhsichte structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>

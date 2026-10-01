@@ -1,0 +1,3 @@
+Gruby granulat żelaza
+Materiał narzędzi inżyniera używany w odtworzonym zestawie receptur.
+<&recipe>Można przetopić na sztabki żelaza,<br>ale nie nadaje się do zaawansowanego<br>przetwarzania materiałów.

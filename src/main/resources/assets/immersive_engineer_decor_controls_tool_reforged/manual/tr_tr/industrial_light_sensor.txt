@@ -1,0 +1,7 @@
+Işık Algılayıcısı
+Sinyal algılama
+<&recipe>Işık algılayıcısı, yerel parlaklığı redstone kontrolüne dönüştürür.<br>
+<br>
+Kullanım: Otomatik lambalar, panjurlar ve görüş devreleri için kullanın.<br>
+<br>
+Notlar: Ham parlaklık 8 veya daha yüksek olduğunda güç verir.

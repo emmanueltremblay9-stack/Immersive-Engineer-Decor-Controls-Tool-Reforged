@@ -1,0 +1,161 @@
+Klinker un Muurwiärk
+Hüllen ut Tegel un Beton
+Klinker, Slackentegel, Stahlbeton un Panzerglas maakt swore Flachen för hete Ruum, Wiärksteden un schützt Dörchkieken.<br>
+<br>
+Bruuk de passenden Platen, Trappen, dünnen Schichten un Muern, üm Kanten fardig to maken, ahn den Materialstil vun de Fabrik to ännern.
+<np>
+Klinkertegelblock
+Sootdüüster Muurwiärk
+<&clinker_brick_block>Disse Block bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Klinkertegelplaat
+Sootdüüster Muurwiärk
+<&clinker_brick_slab>Disse Block bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Klinkertegeltrapp
+Sootdüüster Muurwiärk
+<&clinker_brick_stairs>Disse Block bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Klinkertegelmuur
+Sootdüüster Muurwiärk
+<&clinker_brick_wall>Disse Block bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Fleckt Klinkerblock
+Sootdüüster Muurwiärk
+<&clinker_brick_stained_block>De fleckte Klinkertegelblock bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Fleckte Klinkerplaat
+Sootdüüster Muurwiärk
+<&clinker_brick_stained_slab>De fleckte Klinkertegelplaat bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Fleckte Klinkertrapp
+Sootdüüster Muurwiärk
+<&clinker_brick_stained_stairs>De fleckte Klinkertegeltrapp bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Prunkte Klinkertegel
+Sootdüüster Muurwiärk
+<&clinker_brick_sastor_corner_block>De Klinkertegel mit Sandsteenprunk bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Vertieft Klinkertegel
+Sootdüüster Muurwiärk
+<&clinker_brick_recessed>Disse Block bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Slitzte Klinkertegel
+Sootdüüster Muurwiärk
+<&clinker_brick_vertically_slit>De loodrecht slitzten Klinkertegel bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Loodrechte Klinkerplaat
+Sootdüüster Muurwiärk
+<&clinker_brick_vertical_slab_structured>De struktureerte loodrechte Klinkerplaat bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Halve Klinkertegelplaat
+Sootdüüster Muurwiärk
+<&halfslab_clinker_brick>Disse Block bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>
+<np>
+Slackentegelblock
+Dicht Fabrikmuurwiärk
+<&slag_brick_block>Disse Block gifft dicht griesbruun Muurwiärk för Fundamenten, Stüttmuern un öllere Wiärkschüün.<br>
+<br>
+Bruuk: Bruuk em för ole Fundamenten, Stüttmuern un dreckige Fabrikböden.<br>
+<np>
+Slackentegelplaat
+Dicht Fabrikmuurwiärk
+<&slag_brick_slab>Disse Block gifft dicht griesbruun Muurwiärk för Fundamenten, Stüttmuern un öllere Wiärkschüün.<br>
+<br>
+Bruuk: Bruuk em för ole Fundamenten, Stüttmuern un dreckige Fabrikböden.<br>
+<np>
+Slackentegeltrapp
+Dicht Fabrikmuurwiärk
+<&slag_brick_stairs>Disse Block gifft dicht griesbruun Muurwiärk för Fundamenten, Stüttmuern un öllere Wiärkschüün.<br>
+<br>
+Bruuk: Bruuk em för ole Fundamenten, Stüttmuern un dreckige Fabrikböden.<br>
+<np>
+Slackentegelmuur
+Dicht Fabrikmuurwiärk
+<&slag_brick_wall>Disse Block gifft dicht griesbruun Muurwiärk för Fundamenten, Stüttmuern un öllere Wiärkschüün.<br>
+<br>
+Bruuk: Bruuk em för ole Fundamenten, Stüttmuern un dreckige Fabrikböden.<br>
+<np>
+Stahlbetonblock
+Stahlbeton
+<&rebar_concrete>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Stahlbetonplaat
+Stahlbeton
+<&rebar_concrete_slab>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Stahlbetontrapp
+Stahlbeton
+<&rebar_concrete_stairs>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Stahlbetonmuur
+Stahlbeton
+<&rebar_concrete_wall>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Dünne Stahlbetonschicht
+Stahlbeton
+<&halfslab_rebar_concrete>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Stahlbetonflees
+Stahlbeton
+<&rebar_concrete_tile>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Stahlbetonfleesenplaat
+Stahlbeton
+<&rebar_concrete_tile_slab>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Stahlbetonflees
+Stahlbeton
+<&rebar_concrete_tile_stairs>De Stahlbetonfleesentrapp is en harte Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>
+<np>
+Panzerglasblock
+Schützt Dörchkiek
+<&panzerglass_block>Disse Block lett di dörchkieken un passt liekers to verstarkte Fabrikbauten.<br>
+<br>
+Bruuk: Bruuk em dor, wo Spelers dörch en Schutzwand na Maschinen kieken schüllt.<br>
+<np>
+Panzerglasplaat
+Schützt Dörchkiek
+<&panzerglass_slab>Disse Block lett di dörchkieken un passt liekers to verstarkte Fabrikbauten.<br>
+<br>
+Bruuk: Bruuk em dor, wo Spelers dörch en Schutzwand na Maschinen kieken schüllt.<br>

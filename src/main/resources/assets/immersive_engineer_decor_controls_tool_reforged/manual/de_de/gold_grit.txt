@@ -1,0 +1,3 @@
+Grober Goldgrus
+Werkzeugmaterial des Ingenieurs für die rekonstruierten Handwerksrezepte.
+<&recipe>Kann zu Goldbarren geschmolzen<br>werden, eignet sich jedoch nicht für<br>weiterführende Materialverarbeitung.

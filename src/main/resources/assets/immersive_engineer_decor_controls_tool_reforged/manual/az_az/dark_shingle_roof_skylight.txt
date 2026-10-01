@@ -1,0 +1,5 @@
+Tünd şingil dam
+Hava təsirindən köhnəlmiş dam elementi
+<&recipe>Tünd şingil damın işıqlığı emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>

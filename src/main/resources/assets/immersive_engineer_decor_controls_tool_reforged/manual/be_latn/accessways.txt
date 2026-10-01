@@ -1,0 +1,127 @@
+Prachody
+Prachody i apory
+Stalovyja słupy, stojki z apracavanaj draŭniny, rašotki, słužbovyja mastki, parenčy, lesvicy, dzviery, vokny i luki ŭtvarajuć kampaktnyja šlachi absłuhoŭvannia ŭnutry fabryk.<br>
+<br>
+Stalovyja detali prachodaŭ vyrablajucca sa stalovych płascin. Zrabi abo ŭstaluj varštat dla mietałaapracoŭki, ustaŭ mołat Immersive Engineering, a zatym vykuj sa stalovych zlitkaŭ płasciny dla słupoŭ, słužbovych mastkoŭ, voknaŭ, dzviarej, parenčaŭ i inšych stalovych upryhožvanniaŭ.<br>
+<br>
+Ustaloŭvaj ich tam, dzie mašynam patrebny dostup dla absłuhoŭvannia, uzniatyja prachody, słužbovyja šachty abo biaspiečniejšyja krai.
+<np>
+Toŭsty stalovy słup
+Detal apornaha karkasa
+<&thick_steel_pole>Pramy toŭsty stalovy słup nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Viaršok toŭstaha słupa
+Detal apornaha karkasa
+<&thick_steel_pole_head>Viaršok/padnožža pramoha toŭstaha stalovaha słupa nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Tonki stalovy słup
+Detal apornaha karkasa
+<&thin_steel_pole>Pramy tonki stalovy słup nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Viaršok tonkaha słupa
+Detal apornaha karkasa
+<&thin_steel_pole_head>Viaršok/padnožža pramoha tonkaha stalovaha słupa nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Słup z apracavanaj draŭniny
+Detal apornaha karkasa
+<&treated_wood_pole>Pramy słup z apracavanaj draŭniny nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Viaršok słupa z apracavanaj draŭniny
+Detal apornaha karkasa
+<&treated_wood_pole_head>Viaršok/padnožža pramoha słupa z apracavanaj draŭniny nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Apora słupa z apracavanaj draŭniny
+Detal apornaha karkasa
+<&treated_wood_pole_support>Apora pramoha słupa z apracavanaj draŭniny nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Stalovaja padvojnaja T-apora
+Detal apornaha karkasa
+<&steel_double_t_support>Hety błok nadaje bačny karkas mašynnym załam i ramam prachodaŭ.<br>
+<br>
+Vykarystannie: pavaročvaj i staŭ jaho jak bačnyja raskosy dla belek, słupoŭ i krajoŭ płatform.<br>
+<np>
+Stalovaja padłohavaja rašotka
+Elemient dostupu dla absłuhoŭvannia
+<&steel_floor_grating>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Stalovy słužbovy mastok
+Elemient dostupu dla absłuhoŭvannia
+<&steel_catwalk>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Prystupki stalovaha słužbovaha mastka
+Elemient dostupu dla absłuhoŭvannia
+<&steel_catwalk_stairs>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Uzniaty stalovy słužbovy mastok
+Elemient dostupu dla absłuhoŭvannia
+<&steel_catwalk_ta>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Stalovyja parenčy
+Elemient dostupu dla absłuhoŭvannia
+<&steel_railing>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Płot sa stalovaj sietki
+Elemient dostupu dla absłuhoŭvannia
+<&steel_mesh_fence>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Bramka płota sa stalovaj sietki
+Elemient dostupu dla absłuhoŭvannia
+<&steel_mesh_fence_gate>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Lesvica z mietaličnymi pierakładzinami
+Elemient dostupu dla absłuhoŭvannia
+<&metal_rung_ladder>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Pačarhovyja mietaličnyja prystupki
+Elemient dostupu dla absłuhoŭvannia
+<&metal_rung_steps>Hety błok utvaraje zrazumiełyja słužbovyja maršruty vakoł mašyn.<br>
+<br>
+Vykarystannie: staŭ jaho dla dostupu pry absłuhoŭvanni mašyn, vierchnich pavierchaŭ i słužbovych šacht.<br>
+<np>
+Akno ŭ stalovaj ramie
+Abaronieny ahlad
+<&steel_framed_window>Hety błok zachoŭvaje adkryty ahlad i pasuje da ŭzmocnienaj fabryčnaj kanstrukcyi.<br>
+<br>
+Vykarystannie: pastaŭ jaho ŭ prajom sciany pamieram 1 błok tam, dzie hulcy pavinny bačyć mašyny praz achoŭnuju pieraškodu.<br>
+<np>
+Mietaličnyja rassoŭnyja dzviery
+Pramysłovy punkt dostupu
+<&metal_sliding_door>Hety błok stvaraje tryvały punkt dostupu da słužbovych pamiaškanniaŭ, šacht, dachaŭ i aharodžanych mašyn.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie pabudovie patrebny kantralavany prajom dla absłuhoŭvannia.<br>
+<np>
+Žalezny luk
+Pramysłovy punkt dostupu
+<&iron_hatch>Hety błok stvaraje tryvały punkt dostupu da słužbovych pamiaškanniaŭ, šacht, dachaŭ i aharodžanych mašyn.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie pabudovie patrebny kantralavany prajom dla absłuhoŭvannia.<br>

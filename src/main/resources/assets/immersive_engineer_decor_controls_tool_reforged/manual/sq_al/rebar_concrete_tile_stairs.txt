@@ -1,0 +1,5 @@
+Pllakë betoni të armuar
+Beton i përforcuar
+<&recipe>Shkallaret e pllakave të betonit të armuar janë pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>

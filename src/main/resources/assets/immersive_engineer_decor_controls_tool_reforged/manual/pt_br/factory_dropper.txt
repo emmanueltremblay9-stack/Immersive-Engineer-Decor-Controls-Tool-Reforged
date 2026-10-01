@@ -1,0 +1,5 @@
+Liberador de fábrica
+Utilidade de oficina
+<&recipe>Este bloco libera itens armazenados por uma face direcionada.<br>
+<br>
+Uso: Aponte a frente para o local de liberação, carregue os espaços internos e ajuste força, ângulo, intervalo, lógica de filtros e modo de redstone na tela.<br>

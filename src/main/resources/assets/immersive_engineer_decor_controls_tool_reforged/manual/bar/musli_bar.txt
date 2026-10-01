@@ -1,0 +1,5 @@
+Muslee-Melange-Energieriegl
+Schnella Werkstattimbiss
+<&recipe>Da Muslee-Melange-Energieriegl is a kompakte Speis aus Brot, Samen und Obst.<br>
+<br>
+Benutzung: Als Feldkost essn beim Setzn von Steuerungen, Rohren, Plattformen oda langn Maschinenraumstreckn.

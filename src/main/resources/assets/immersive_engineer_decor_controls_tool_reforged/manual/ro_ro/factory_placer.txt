@@ -1,0 +1,5 @@
+Amplasator de blocuri de fabrică
+Echipament util în hală
+<&recipe>Acest bloc amplasează blocuri din stocul său intern atunci când este activat.<br>
+<br>
+Utilizare: Orientează fața de lucru spre spațiul țintă și încarcă stive de blocuri care pot fi amplasate.<br>

@@ -1,0 +1,5 @@
+Jezteko makina
+Lantegiko tresneria
+<&recipe>Jezteko makina txikia lantegiko erabilera anitzeko blokea da: fabrikaziorako, biltegiratzeko, jartzeko, hausteko, biltzeko edo automatizazio trinkorako.<br>
+<br>
+Erabilera: jarri behien ondoan eta eskaini esne-ontziak edo fluidoa ateratzeko bidea.<br>

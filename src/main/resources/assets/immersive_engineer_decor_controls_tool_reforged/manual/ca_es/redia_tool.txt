@@ -1,0 +1,7 @@
+Eina REDIA
+Utilitat recoberta de diamant
+<&recipe>L’eina REDIA és una multieina resistent de categoria diamant per a treballs de camp en instal·lacions temporals, tallers i entrades de mines.<br>
+<br>
+Ús: fes-la servir mentre duus torxes per col·locar una torxa de l’inventari sense desgastar la REDIA. Ajup-te i fes-la servir per tallar plantes o alternar el sòl entre terra, terra de cultiu, terra seca i camí de terra. La funció alternativa original de destral s’aplica des de la cara inferior. Ajup-te mentre trenques troncs per talar els blocs connectats de l’arbre.<br>
+<br>
+Repara-la amb diamants. Reparar una eina REDIA ja completament reparada més enllà del màxim recupera la progressió original d’Eficiència i Fortuna.

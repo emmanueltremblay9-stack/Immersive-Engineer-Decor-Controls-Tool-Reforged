@@ -1,0 +1,5 @@
+Fabričny stavjač blokov
+Pribor fabričnoj haly
+<&recipe>Sej blok stavi bloky iz svojih vnutrišnjih zalih pri aktivovanju.<br>
+<br>
+Upotrěbjenje: Usměri rabotnu stranu na cěljevy prostor i naloži kupy stavimyh prědmetov.<br>

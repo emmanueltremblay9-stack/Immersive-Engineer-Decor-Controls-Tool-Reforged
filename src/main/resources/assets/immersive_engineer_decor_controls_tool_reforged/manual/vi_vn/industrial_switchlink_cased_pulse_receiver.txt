@@ -1,0 +1,7 @@
+Bộ nhận xung có vỏ
+Điều khiển liên kết
+<&recipe>Bộ nhận xung liên kết có vỏ cung cấp kích hoạt redstone ngắn cho các bảng điều khiển từ xa.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Nhấp phải vào bộ nhận hoặc kích hoạt viên ngọc liên kết để phát xung ngắn.<br>
+<br>
+Ghi chú: Xung tự đặt lại sau thời lượng đã hẹn.

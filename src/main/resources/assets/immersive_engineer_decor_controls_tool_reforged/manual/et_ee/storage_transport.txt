@@ -1,0 +1,41 @@
+Hoiustamine ja transport
+Lao- ja vooluseadmed
+Hoiu- ja transpordiosad hõlmavad kaste, tünne, lehtreid ning ventiile tehase kompaktsete liinide jaoks.<br>
+<br>
+Kasuta neid lehti laoruumide, torujuhtmete, hooldusmahutite ja juhitavate vedelikuliinide kavandamisel.
+<np>
+Sildiga kast
+Muudetav laosilt
+<&labeled_crate>See sildiga kast on mõeldud laoruumi selgeks sorteerimiseks. Selle esiplaati saab muuta nagu väikest töökojasilti.<br>
+<br>
+Kasutamine: Kasti sildi muutmiseks paremklõpsa sildiplaadil. Kasti ülejäänud osal paremklõpsates avaneb tarvikute, osade ja hooldusvarude ladu.<br>
+<np>
+Vedelikutünn
+Vedelikutrassi seadmed
+<&fluid_barrel>See kompaktne vedelikutrassi osa sobib väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Paigalda sinna, kus torud või ämbrid pääsevad mahuti pinnani.<br>
+<np>
+Vedelikulehter
+Vedelikutrassi seadmed
+<&small_fluid_funnel>Väike vedelikukogumislehter on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Pane see vedeliku kogumispunkti alla ning juhi salvestatud sisu mahutitesse või madalamatesse torudesse.<br>
+<np>
+Vedelikutoru tagasilöögiklapp
+Vedelikutrassi seadmed
+<&straight_pipe_valve>Vedelikutoru tagasilöögiklapp on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Joonda ventiil soovitud voolusuunaga.<br>
+<np>
+Redstone'i vedelikuventiil
+Vedelikutrassi seadmed
+<&straight_pipe_valve_redstone>Redstone'iga juhitav vedelikuventiil on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Joonda ventiil soovitud voolusuunaga.<br>
+<np>
+Analoogvedelikuventiil
+Vedelikutrassi seadmed
+<&straight_pipe_valve_redstone_analog>Analoogvedelikuventiil on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Joonda ventiil soovitud voolusuunaga.<br>

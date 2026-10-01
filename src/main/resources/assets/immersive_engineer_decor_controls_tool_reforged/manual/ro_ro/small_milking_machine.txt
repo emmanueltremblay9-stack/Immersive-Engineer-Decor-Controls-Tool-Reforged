@@ -1,0 +1,5 @@
+Aparat de muls
+Echipament util în hală
+<&recipe>Aparatul mic de muls este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Amplasează-l lângă vaci și asigură o cale de extragere a recipientelor cu lapte sau a fluidului.<br>

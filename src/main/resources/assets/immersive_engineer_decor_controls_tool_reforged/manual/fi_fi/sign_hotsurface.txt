@@ -1,0 +1,5 @@
+Kuuman pinnan kyltti
+Vaaramerkki
+<&recipe>Kuumasta pinnasta varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>

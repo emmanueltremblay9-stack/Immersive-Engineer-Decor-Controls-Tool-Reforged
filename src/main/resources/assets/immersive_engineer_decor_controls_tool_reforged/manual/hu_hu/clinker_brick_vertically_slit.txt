@@ -1,0 +1,5 @@
+Réselt klinkertéglák
+Koromtól sötét téglafal
+<&recipe>A függőlegesen réselt klinkertéglák koromtól sötét téglafalazatot adnak kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>

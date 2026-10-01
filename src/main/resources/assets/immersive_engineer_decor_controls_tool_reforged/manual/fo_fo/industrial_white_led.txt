@@ -1,0 +1,7 @@
+Hvít LED
+Afturmelding um tekin
+<&recipe>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.

@@ -1,0 +1,7 @@
+Vidrio sensible luminoso
+Vidrio de señalización
+<&recipe>Un bloque de vidrio reactivo a la redstone mantiene la visibilidad y muestra el estado de la señal.<br>
+<br>
+Uso: Usalo en ventanas de salas de control, paneles iluminados y acristalamientos de protección industrial.<br>
+<br>
+Notas: Cambia de estado con la señal de redstone cercana.

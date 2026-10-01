@@ -1,0 +1,5 @@
+Soporte de acero en doble T
+Pieza de estructura
+<&recipe>Este bloque aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>

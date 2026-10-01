@@ -1,0 +1,5 @@
+Fuçi lëngjesh
+Pajisje linjash lëngjesh
+<&recipe>Kjo pajisje është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: vendose ku tubat ose kovat mund të arrijnë faqen e depozitës.<br>

@@ -1,0 +1,5 @@
+Fourneau électrique
+Unité de traitement compacte
+<&recipe>Le fourneau électrique assure de petits travaux de cuisson alimentés en FE dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : fournissez des FE et un ingrédient de cuisson valide.<br>

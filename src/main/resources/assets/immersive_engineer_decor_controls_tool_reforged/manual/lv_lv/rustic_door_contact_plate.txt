@@ -1,0 +1,7 @@
+Lauku stila durvju spiediena plātne
+Spiediena impulss
+<&recipe>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.

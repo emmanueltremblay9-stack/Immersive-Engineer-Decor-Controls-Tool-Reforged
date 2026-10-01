@@ -1,0 +1,7 @@
+Ricevidor a inpulso de ligamento
+Comanda ligada
+<&recipe>Un ricevidor ligà a inpulso el dà ai panełi distanti un curto avio de redstone.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Fa clic a destra sul ricevidor o ativa ła perla ligada par mandar un inpulso curto.<br>
+<br>
+Da saver: l’inpulso el se ferma da soło dopo ła durada inpostada.

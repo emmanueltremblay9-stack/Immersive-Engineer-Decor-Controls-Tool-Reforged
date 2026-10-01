@@ -1,0 +1,5 @@
+Fabrieksleweraar
+Werkswinkelnutsmiddel
+<&recipe>Hierdie blok laat gestoorde items vanaf ’n gerigte vlak uit.<br>
+<br>
+Gebruik: rig die voorkant na die uitlaatpunt, vul sy interne gleuwe en stel krag, hoek, vertraging, filterlogika en redstone-modus op sy skerm in.<br>

@@ -1,0 +1,7 @@
+Naładowany lazuryt
+Zmagazynowane doświadczenie
+<&recipe>Naładowany lazuryt przechowuje jeden poziom doświadczenia uzyskany za pomocą wyciskacza umysłu.<br>
+<br>
+Użycie: Zużyj go, aby odzyskać jeden poziom, usunąć aktywne efekty i przywrócić niewielką ilość zdrowia.<br>
+<br>
+Widok receptury pokazuje wyciskacz umysłu, ponieważ naładowany lazuryt powstaje podczas używania tego narzędzia, gdy dostępne są lazuryt i doświadczenie.

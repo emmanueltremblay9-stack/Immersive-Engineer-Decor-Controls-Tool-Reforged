@@ -1,0 +1,7 @@
+Komparaattorikytkin
+Kiinnityspinnan signaali
+<&recipe>Pieni anturikytkin lukee kiinnityskuutionsa ja muuttaa lukeman yksinkertaiseksi paneelilähdöksi.<br>
+<br>
+Käyttö: Asenna varastoihin, säiliöihin tai redstone-laitteisiin. Kun kiinnityskuutio antaa komparaattorin, säiliön tai redstonen lähtösignaalin, kytkin lähettää täysivahvuista redstonea.<br>
+<br>
+Huomaa: Käytä muuttamaan varastotasot tai piilojohdotukset selkeiksi päällä/pois-ohjauslinjoiksi.

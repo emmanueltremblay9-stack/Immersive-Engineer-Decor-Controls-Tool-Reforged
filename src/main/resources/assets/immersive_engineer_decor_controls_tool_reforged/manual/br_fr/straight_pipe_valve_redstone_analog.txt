@@ -1,0 +1,5 @@
+Valv houlif analogel
+Dafar linennoù houlif
+<&recipe>Ar valv houlif analogel Redstone zo un tamm linenn houlif bihan evit beolioù bihan, hentoù korzennoù, poentoù dastum ha red renet gant Redstone.<br>
+<br>
+Implij: Reizhit ar valv gant tu ar red a fell deoc'h kaout.<br>

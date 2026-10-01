@@ -1,0 +1,7 @@
+Auto-Stimpack
+Notinjektor
+<&recipe>Da Auto-Stimpack is a Notfall-Heilgegenstand für gefährliche Wartungsarbeit.<br>
+<br>
+Benutzung: Manuell heiln, kurz Schutz und Bewegungsschub kriegn. Im Inventar kann er bei wenig Gsundheit automatisch auslösn und geht dann in Abklingzeit.<br>
+<br>
+Oans bereithaltn vor Höhen, offener Verdrahtung oda feindlichen Grubnwegen.

@@ -1,0 +1,7 @@
+Yağış sensoru
+Siqnalın aşkar edilməsi
+<&recipe>Hava sensoru olduğu yerdəki yağışı qızıl daş siqnalına çevirir.<br>
+<br>
+İstifadə: Üstündəki blokun yağış ala biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Sensorun üstündə yağış olub-olmadığını yoxlayır.

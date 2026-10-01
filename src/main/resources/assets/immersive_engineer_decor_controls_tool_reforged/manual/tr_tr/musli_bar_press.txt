@@ -1,0 +1,7 @@
+Muslee Bar Presi
+Yiyecek presi
+<&recipe>Muslee presi sıradan yiyecekleri kompakt arazi tayınına dönüştürür.<br>
+<br>
+Ekmek, elma ve buğday, karpuz, balkabağı, pancar veya endüstriyel kenevir tohumu taşıyıp presi kullanın. Her birinden bir tane harcar, yeri denetler, dört bar üretir ve pres hasar alır.<br>
+<br>
+Malzeme veya yer eksikse hiçbir şey harcanmaz.

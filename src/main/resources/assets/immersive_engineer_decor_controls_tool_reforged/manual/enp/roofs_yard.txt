@@ -1,0 +1,101 @@
+Roofs and Yard
+Outdoor workstead fittings
+Roof clots, yard grit and old workstead wood bits help finish outdoor sheds, work yards, loading spots and weathered workstead edges.<br>
+<br>
+Mix these bits with stonework and walkways to make outdoor workstead builds clear from afar.
+<np>
+Dark Shingle Roof
+Weathered roof fitting
+<&dark_shingle_roof>This clot builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Roof Snowstop
+Weathered roof fitting
+<&dark_shingle_roof_metallized>The Dark Shingle Roof Snowstop builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Dark Shingle Roof
+Weathered roof fitting
+<&dark_shingle_roof_skylight>The Dark Shingle Roof Skylight builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Roof Smokestack Foot
+Weathered roof fitting
+<&dark_shingle_roof_chimneytrunk>The Dark Shingle Roof Smokestack Foot builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Roof Wireway
+Weathered roof fitting
+<&dark_shingle_roof_wireconduit>The Dark Shingle Roof Wireway builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Dark Shingle Roof
+Weathered roof fitting
+<&dark_shingle_roof_chimney>The Dark Shingle Roof Smokestack builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Dark Shingle Roof Clot
+Weathered roof fitting
+<&dark_shingle_roof_block>This clot builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Dark Shingle Roof Halfclot
+Weathered roof fitting
+<&dark_shingle_roof_slab>This clot builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Dark Shingle Roof Halfclot
+Weathered roof fitting
+<&dark_shingle_roof_slabslice>The Dark Shingle Roof Sliver builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>
+<np>
+Hard-Packed Grit Dirt
+Workstead ground layer
+<&dense_grit_dirt_block>This clot gives outdoor work spots a hard-packed, trampled ground.<br>
+<br>
+Use: Lay it around loading doors, outdoor vats and loom yards.<br>
+<np>
+Hard-Packed Grit Sand
+Workstead ground layer
+<&dense_grit_sand_block>This clot gives outdoor work spots a hard-packed, trampled ground.<br>
+<br>
+Use: Lay it around loading doors, outdoor vats and loom yards.<br>
+<np>
+Old Wood Boards
+Aged workshop timber
+<&old_industrial_wood_planks>Old Workstead Wood Boards add aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>
+<np>
+Old Workstead Wood Halfclot
+Aged workshop timber
+<&old_industrial_wood_slab>This clot adds aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>
+<np>
+Old Wood Stairs
+Aged workshop timber
+<&old_industrial_wood_stairs>Old Workstead Wood Stairs add aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>
+<np>
+Old Wood Sliver
+Aged workshop timber
+<&old_industrial_wood_slabslice>The Old Workstead Wood Sliver adds aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>
+<np>
+Old Workstead Wood Door
+Aged workshop timber
+<&old_industrial_wood_door>This clot adds aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>

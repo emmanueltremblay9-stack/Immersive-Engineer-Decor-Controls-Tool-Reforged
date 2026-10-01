@@ -1,0 +1,7 @@
+Stikla skārienpoga
+Redstone vadība
+<&recipe>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.

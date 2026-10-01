@@ -1,0 +1,5 @@
+Vanhat puulankut
+Vanha työpajapuu
+<&recipe>Vanhat tehdaspuulankut tuovat vanhentunutta työpajapuuta lattioihin, askelmiin, oviin ja lämpimän sävyiseen sisäkoristeluun.<br>
+<br>
+Käyttö: Käytä vanhoihin työpajalattioihin, portaisiin, oviin ja koristeisiin.<br>

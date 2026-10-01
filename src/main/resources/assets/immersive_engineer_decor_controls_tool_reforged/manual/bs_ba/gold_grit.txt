@@ -1,0 +1,3 @@
+Krupan zlatni granulat
+Materijal za inženjerske alate koji koristi obnovljeni skup recepata.
+<&recipe>Može se istopiti u zlatne<br>poluge, ali nije pogodan<br>za naprednu obradu materijala.

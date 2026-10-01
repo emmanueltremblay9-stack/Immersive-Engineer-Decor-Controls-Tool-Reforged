@@ -1,0 +1,7 @@
+Metaalwurkbank
+Wurkplak foar platen
+<&recipe>Metalen wurkbank mei in aparte hammergleuf, in 3x3 craftingroaster en in útfiergleuf.<br>
+<br>
+Gebrûk: Brûk it roaster lykas in gewoane wurkbank. Set foar IE-platen in yngenieurshammer yn it arkfak en it plaatmateriaal yn it roaster; nim dêrnei de foarme plaat út de útfier.<br>
+<br>
+Stielen fersieringen brûke stielplaten. Set der in hammer fan Immersive Engineering yn, hammer stielen stêven ta stielplaten en brûk de platen dêrnei om peallen, rinbrêgen, finsters, doarren, leuningen en oare stielen fersieringen te meitsjen.<br>

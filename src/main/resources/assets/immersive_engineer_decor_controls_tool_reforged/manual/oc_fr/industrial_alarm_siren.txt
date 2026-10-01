@@ -1,0 +1,7 @@
+Sirèna d’alarma
+Indicacion del senhal
+<&recipe>La sirèna dalarma es un indicador redstone montat sus la fàcia dun blòt. Son estat alimentat seguís lo senhal del blòt que la pòrta.<br>
+<br>
+Fixatz-la sus una fàcia solida e alimentatz-la per susvelhar pòrtas, maquinas, alarmas o panèls.<br>
+<br>
+La sirèna se refresca un còp per segonda mentre lo senhal demòra actiu.

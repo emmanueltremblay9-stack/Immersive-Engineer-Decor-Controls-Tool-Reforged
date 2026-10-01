@@ -1,0 +1,5 @@
+Klinkertégla féllap
+Koromtól sötét téglafal
+<&recipe>Ez a blokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>

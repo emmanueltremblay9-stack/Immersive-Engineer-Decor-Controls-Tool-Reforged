@@ -1,0 +1,7 @@
+Marrës analog lidhjeje
+Kontroll i lidhur
+<&recipe>Një marrës i lidhur u jep paneleve të kontrollit një objektiv të dukshëm në largësi.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Përdore perlën duke u përkulur për të aktivizuar marrësin në largësi.<br>
+<br>
+Shënim: ky marrës jep sinjal të plotë redstoni kur aktivizohet.

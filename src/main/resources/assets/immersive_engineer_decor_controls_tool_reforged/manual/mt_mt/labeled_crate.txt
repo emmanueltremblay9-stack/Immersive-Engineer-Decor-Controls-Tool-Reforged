@@ -1,0 +1,5 @@
+Kaxxa bit-tikketta
+Tikketta editabbli tal-ħażna
+<&recipe>Din il-kaxxa bit-tikketta nbniet għal tqassim ċar fil-maħżen. Il-plakka ta' quddiem tagħha tista' tiġi editjata bħal sinjal żgħir tal-ħanut tax-xogħol.<br>
+<br>
+Użu: ikklikkja l-plakka tat-tikketta bil-lemin biex teditja t-tikketta tal-kaxxa. Ikklikkja l-bqija tal-kaxxa bil-lemin biex tiftaħ il-ħażna għat-tagħmir, partijiet u provvisti tal-manutenzjoni.<br>

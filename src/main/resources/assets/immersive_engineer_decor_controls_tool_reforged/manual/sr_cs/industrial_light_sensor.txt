@@ -1,0 +1,7 @@
+Senzor svetla
+Otkrivanje signala
+<&recipe>Senzor svetla pretvara lokalnu osvetljenost u redstoun upravljanje.<br>
+<br>
+Upotreba: koristi ga za automatske lampe, kapke i kola za vidljivost.<br>
+<br>
+Napomene: daje signal pri neobrađenoj osvetljenosti 8 ili većoj.

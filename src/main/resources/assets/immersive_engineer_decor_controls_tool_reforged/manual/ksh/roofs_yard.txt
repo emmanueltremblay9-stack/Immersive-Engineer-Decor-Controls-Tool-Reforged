@@ -1,0 +1,101 @@
+Dächer un Hof
+Fabrikbauteile för druße
+Daachblöck, Hofsplitt un ahle Industrieholzteile helfe, Ußeschoppe, Werkhöv, Laadeplätz un verwedderte Fabrikkante fädich ze maache.<br>
+<br>
+Misch die Teile met Muurwerk un Zojäng, domet Industrieboute druße och vun wigger fott jot ze erkenne sin.
+<np>
+Düster Schindeldaach
+Verweddert Daachteil
+<&dark_shingle_roof>Heh dä Block mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Daachschneefang
+Verweddert Daachteil
+<&dark_shingle_roof_metallized>Dä Schneefang för e düster Schindeldaach mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Düster Schindeldaach
+Verweddert Daachteil
+<&dark_shingle_roof_skylight>Et Daachfinster för e düster Schindeldaach mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Daachschornsteinfuß
+Verweddert Daachteil
+<&dark_shingle_roof_chimneytrunk>Dä Schornsteinfuß för e düster Schindeldaach mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Daachkabelrohr
+Verweddert Daachteil
+<&dark_shingle_roof_wireconduit>Et Kabelrohr för e düster Schindeldaach mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Düster Schindeldaach
+Verweddert Daachteil
+<&dark_shingle_roof_chimney>Dä Schornstein för e düster Schindeldaach mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Block för e düster Schindeldaach
+Verweddert Daachteil
+<&dark_shingle_roof_block>Heh dä Block mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Stuf för e düster Schindeldaach
+Verweddert Daachteil
+<&dark_shingle_roof_slab>Heh dä Block mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Stuf för e düster Schindeldaach
+Verweddert Daachteil
+<&dark_shingle_roof_slabslice>De dünn Schiev för e düster Schindeldaach mäht düstere, zweckmäßije Daachlinie för Werkstätte un Industrieschoppe.<br>
+<br>
+Bruuch: Bruch de Teile zesamme, öm jlauvwürdije Daachforme ze boue.<br>
+<np>
+Verdichte Splittäd
+Baustellebode
+<&dense_grit_dirt_block>Heh dä Block jit Arbeitsplätz druße en verdichte, zertrampelte Fläch.<br>
+<br>
+Bruuch: Leij en öm Laadedüre, Ußetanks un Maschinehöv.<br>
+<np>
+Verdichte Splittsand
+Baustellebode
+<&dense_grit_sand_block>Heh dä Block jit Arbeitsplätz druße en verdichte, zertrampelte Fläch.<br>
+<br>
+Bruuch: Leij en öm Laadedüre, Ußetanks un Maschinehöv.<br>
+<np>
+Ahl Holzbredder
+Ahl Werkstattholz
+<&old_industrial_wood_planks>De ahle Industrieholzbredder ergänze ahl Werkstattholz för Böde, Tritt, Düre un warme Ennezier.<br>
+<br>
+Bruuch: Nimm en för ahle Werkstattböde, Trappe, Düre un Kante.<br>
+<np>
+Ahl Industrieholzstof
+Ahl Werkstattholz
+<&old_industrial_wood_slab>Heh dä Block ergänzt ahl Werkstattholz för Böde, Tritt, Düre un warme Ennezier.<br>
+<br>
+Bruuch: Nimm en för ahle Werkstattböde, Trappe, Düre un Kante.<br>
+<np>
+Ahl Holztrapp
+Ahl Werkstattholz
+<&old_industrial_wood_stairs>De ahl Industrieholztrapp ergänzt ahl Werkstattholz för Böde, Tritt, Düre un warme Ennezier.<br>
+<br>
+Bruuch: Nimm en för ahle Werkstattböde, Trappe, Düre un Kante.<br>
+<np>
+Dünn ahl Holzschiev
+Ahl Werkstattholz
+<&old_industrial_wood_slabslice>De dünn Schiev us ahlem Industrieholz ergänzt ahl Werkstattholz för Böde, Tritt, Düre un warme Ennezier.<br>
+<br>
+Bruuch: Nimm en för ahle Werkstattböde, Trappe, Düre un Kante.<br>
+<np>
+Ahl Industrieholzdür
+Ahl Werkstattholz
+<&old_industrial_wood_door>Heh dä Block ergänzt ahl Werkstattholz för Böde, Tritt, Düre un warme Ennezier.<br>
+<br>
+Bruuch: Nimm en för ahle Werkstattböde, Trappe, Düre un Kante.<br>

@@ -1,0 +1,99 @@
+Imprescj dal inzegnîr
+Ecuipament di oficine di puartâ daûr
+Il grup di Imprescj dal inzegnîr al zonte aparechis di man, segns di miniere, consumabii di emergjence, mangjâ di cantîr e piçui jutoris pe lavorazion dai materiâi al stes manuâl che al trate i blocs decoratîfs e di control.<br>
+<br>
+Chescj imprescj a coventin par lavorâ lontan di une oficine ben ecuipade: segnâ la strade, puartâ scortis, rimediâ ai erôrs e finî piçuis lavorazions sul puest.
+<np>
+Imprest REDIA
+Utilitât cuvierte di diamant
+<&redia_tool>L’Imprest REDIA al è un imprest resistent par lavôrs svelts sul teren. Doprilu suntun teren lavorabil par fâ teren agricul.<br>
+<br>
+Doprilu cuintri di une muse stabile intant che tu puartis torcis, par meti une torce dal inventari come segn cence consumâ REDIA. Lavorâ il teren, tosorâ, doprâ la manarie e taiâ arbui a consumin durabilitât.
+<np>
+Martiel par frantumâ minerâi
+Imprest par frantumâ a man
+<&crushing_hammer>Il martiel par sdrumâ minerâi al è un imprest a man pe prime lavorazion di fier e aur.<br>
+<br>
+Ûs: Combine cun fier crût, aur crût, minerâl di fier, minerâl di fier di ardesie profonde, minerâl di aur o minerâl di aur di ardesie profonde par produsi polvar di fier o aur di Immersive Engineering. Il martiel al pierd durade e al torne te gridele fin che al si spacche.<br>
+<br>
+Si consume ancje scjavant in miniere e al pues mandâ indaûr i bersais tal combatiment di dongje.
+<np>
+Localizadôr
+Segn di posizion conservade
+<&tracker>Il localizadôr al memorize la posizion di un bloc diretementri tal ogjet.<br>
+<br>
+Ûs: Fâs clic suntun bloc par salvâ dimension e coordenadis. Il tooltip al mostre la posizion salvade. Dopre il localizadôr intant che tu sês pleât par scancelâ la destinazion.<br>
+<br>
+Doprilu par segnâ machinis, incrosaments di galariis, controi a distance o cantîrs no finîts prime di tornâ cun imprescj e materiâi.
+<np>
+Cjarbon di Ariane
+Segn di percors pe miniere
+<&ariadne_coal>Il Cjarbon di Ariane al met in presse frecis neris par segnâ la strade su musis stabilis di miniere. Doprilu suntune muse solide par segnâ la prossime voltade, jessude o incrosament; il segn al supuarte vot direzions su la muse clicade, compresis lis diagonâls.<br>
+<br>
+Il Cjarbon di Ariane al è un imprest di tornâ a doprâ, cun 100 utilizazions. Ogni segn metût ben al coste un pont di durabilitât. Al refude lis musis no adatis invezit di consumâ l’ogjet.
+<np>
+Autoinietôr stimolant
+Inietôr di emergjence
+<&stimpack>L'Auto Stim Pack al è un imprest medic di emergjence pai lavôrs di manutenzion pericolôs.<br>
+<br>
+Ûs: Ativil a man par vuarîti, vê une protezion curte e un piçul slanç di moviment. Tal inventari al pues ancje ativâsi in automatic cu la salût basse, po al va in cooldown.<br>
+<br>
+Ten un autoinietôr pront prime di provâ puescj alts, fîi scuvierts o percors di miniere ostii.
+<np>
+Sac par durmî
+Ecuipament par polsâ in zîr
+<&sleeping_bag>Il sac di durmî al è un kit di polse resistent al timp pai lavôrs lontan di un jet.<br>
+<br>
+Ûs: Dopril di gnot tal Overworld par polsâ fin ae matine. Nol stabilìs e nol sposte il pont di nassite.<br>
+<br>
+Al refude l'ûs di dì, puescj pericolôs cun mostris dongje e dimensions no adatis a une polse sigure. Ogni polse rivade e consume il sac.
+<np>
+Casse pai materiâi
+Casse di scortis pe costruzion
+<&material_box>La scjatule dai materiâi e puarte une grande risierve di un sôl materiâl di costruzion sempliç, no modificât e impilabil.<br>
+<br>
+Ûs: Ten la scjatule te man principâl e une pile di materiâl te altre man par cjariâle. Doprele cu la altre man vueide par tirâ fûr une pile.<br>
+<br>
+E ten fin a 512 ogjets di un sôl gjenar. E refude scjatulis une dentri di chê altre, furniment no impilabil e pilis tornadis a nomenâ o cun dâts modificâts; il tooltip al mostre il contignût.
+<np>
+Capsule di aiar par lâ sot aghe
+Risierve di aiar di emergjence
+<&diving_capsule>La capsule di aiar di imersion e je une risierve di emergjence pai lavôrs sot aghe.<br>
+<br>
+Ûs: Doprele a man par tornâ a jemplâ l'aiar. Se e je tal inventari, e pues ancje ativâsi in automatic cuant che l'aiar al è cuasi finît, po e va in cooldown.<br>
+<br>
+Puartile pes minieris inundadis, i tubui sot aghe e lis riparazions tes salis des pompis.
+<np>
+Presse par baretis Muslee
+Presse par mangjâ
+<&musli_bar_press>La presse pes baretis Muslee e trasforme aliments comuns in razions compatis di cjamp.<br>
+<br>
+Ûs: Puarte pan, une pome e semencis di forment, melon, coce, rave rosse o Industrial Hemp, po dopre la presse. Une pressade rivade e consume un di ogni ingredient, e controle il puest, e cree cuatri baretis Muslee Melange e e ruvine la presse.<br>
+<br>
+Se al mancje un ingredient o nol è puest tal inventari, nuie nol ven consumât.
+<np>
+Barete di energjie Muslee Melange
+Boconut rapid di oficine
+<&musli_bar>La barete energjetiche Muslee Melange e je un aliment compât fat di pan, semencis e pome.<br>
+<br>
+Ûs: mangjile sul cantîr intant che tu metis controi, tubui, plateformis o liniis lungjis tes salis des machinis.
+<np>
+Strucadôr mentâl
+Condensadôr di esperience
+<&charged_lapis_squeezer>Il Strucadôr mentâl al transforme un lapislazuli e un nivel di esperience dal to inventari in Lapislazuli cjariât.<br>
+<br>
+Ogni trasformazion che e va ben e fâs mâl, e cause strachece alimentâr e e fâs deventâ vuarp par pôc timp cui che dopre l’imprest. Nol funzione cence lapislazuli, cence XP o cuant che cui che lu dopre al è masse dongje de muart.
+<np>
+Lapislazuli cjariât
+Esperience conservade
+<&charged_lapis>Il Lapislazuli cjariât al conserve un nivel di esperience. Consumilu par tornâ a vê il nivel, gjavâ i efiets atîfs e recuperâ un pôc di salût.<br>
+<br>
+Fabriche prime un Strucadôr mentâl: il Lapislazuli cjariât al ven prodot doprant chest imprest cun lapislazuli e XP a disposizion.
+<np>
+Granulât grês di fier
+Materiâl par imprescj di inzegnîr doprât dal grup di ricetis ricostruît.
+<&iron_grit>Si pues fondilu in lingots di<br>fier, ma nol è adat pe lavorazion<br>avanzade dai materiâi.
+<np>
+Granulât grês di aur
+Materiâl par imprescj di inzegnîr doprât dal grup di ricetis ricostruît.
+<&gold_grit>Si pues fondilu in lingots di<br>aur, ma nol è adat pe lavorazion<br>avanzade dai materiâi.

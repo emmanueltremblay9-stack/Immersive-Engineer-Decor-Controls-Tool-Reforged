@@ -1,0 +1,5 @@
+Lempeng Bata Terak
+Pasangan batu pabrik padat
+<&recipe>Blok ini menambahkan pasangan batu padat abu-abu kecokelatan untuk fondasi, tembok penahan, dan gudang kerja tua.<br>
+<br>
+Penggunaan: gunakan untuk fondasi tua, tembok penahan, dan lantai pabrik kotor.<br>

@@ -1,0 +1,3 @@
+Grubi željezni granulat
+Materijal inženjerskih alata koji se koristi u rekonstruiranim receptima.
+<&recipe>Može se istaliti u željezne poluge,<br>ali nije prikladan za naprednu<br>obradu materijala.

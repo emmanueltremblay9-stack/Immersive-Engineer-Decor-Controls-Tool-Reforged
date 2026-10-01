@@ -1,0 +1,5 @@
+Trappe en fer
+Point d'accès industriel
+<&recipe>Ce bloc offre un accès robuste aux locaux techniques, puits, toitures et enceintes de machines.<br>
+<br>
+Utilisation : installez-le lorsqu'une ouverture de maintenance contrôlée est nécessaire.<br>

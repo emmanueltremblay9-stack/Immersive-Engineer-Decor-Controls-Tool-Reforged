@@ -1,0 +1,101 @@
+Tellados e patio
+Accesorios exteriores de fábrica
+Os bloques de tellado, o granulado de patio e as pezas de madeira industrial vella axudan a rematar alpendres exteriores, patios de traballo, zonas de carga e bordos envellecidos de fábrica.<br>
+<br>
+Combina estas pezas coa albanelaría e as vías de acceso para que as construcións industriais exteriores se poidan interpretar ben desde lonxe.
+<np>
+Tellado de tellas escuras
+Peza de tellado envellecida
+<&dark_shingle_roof>Este bloque crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Paraneves de tellado
+Peza de tellado envellecida
+<&dark_shingle_roof_metallized>O paraneves de tellado de tellas escuras crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Tellado de tellas escuras
+Peza de tellado envellecida
+<&dark_shingle_roof_skylight>A claraboia de tellado de tellas escuras crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Base de cheminea de tellado
+Peza de tellado envellecida
+<&dark_shingle_roof_chimneytrunk>A base de cheminea de tellado de tellas escuras crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Conduto de cables de tellado
+Peza de tellado envellecida
+<&dark_shingle_roof_wireconduit>O conduto de cables de tellado de tellas escuras crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Tellado de tellas escuras
+Peza de tellado envellecida
+<&dark_shingle_roof_chimney>A cheminea de tellado de tellas escuras crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Bloque de tellado de tellas escuras
+Peza de tellado envellecida
+<&dark_shingle_roof_block>Este bloque crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Lastra de tellado de tellas escuras
+Peza de tellado envellecida
+<&dark_shingle_roof_slab>Este bloque crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Lastra de tellado de tellas escuras
+Peza de tellado envellecida
+<&dark_shingle_roof_slabslice>A lámina de tellado de tellas escuras crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>
+<np>
+Terra compactada con cascallo
+Pavimento de obra
+<&dense_grit_dirt_block>Este bloque dálle ás zonas de traballo exteriores unha superficie compactada e pisada.<br>
+<br>
+Uso: colócao arredor de portas de carga, depósitos exteriores e patios de máquinas.<br>
+<np>
+Area compactada con cascallo
+Pavimento de obra
+<&dense_grit_sand_block>Este bloque dálle ás zonas de traballo exteriores unha superficie compactada e pisada.<br>
+<br>
+Uso: colócao arredor de portas de carga, depósitos exteriores e patios de máquinas.<br>
+<np>
+Táboas de madeira vella
+Madeira envellecida de obradoiro
+<&old_industrial_wood_planks>As táboas de madeira industrial vella achegan madeira envellecida de obradoiro para chans, chanzos, portas e remates interiores acolledores.<br>
+<br>
+Uso: úsao en chans, escaleiras, portas e remates de obradoiros antigos.<br>
+<np>
+Lastra de madeira industrial vella
+Madeira envellecida de obradoiro
+<&old_industrial_wood_slab>Este bloque engade madeira envellecida de obradoiro para chans, chanzos, portas e remates interiores acolledores.<br>
+<br>
+Uso: úsao en chans, escaleiras, portas e remates de obradoiros antigos.<br>
+<np>
+Escaleiras de madeira vella
+Madeira envellecida de obradoiro
+<&old_industrial_wood_stairs>As escaleiras de madeira industrial vella achegan madeira envellecida de obradoiro para chans, chanzos, portas e remates interiores acolledores.<br>
+<br>
+Uso: úsao en chans, escaleiras, portas e remates de obradoiros antigos.<br>
+<np>
+Lámina de madeira vella
+Madeira envellecida de obradoiro
+<&old_industrial_wood_slabslice>A lámina de madeira industrial vella achega madeira envellecida de obradoiro para chans, chanzos, portas e remates interiores acolledores.<br>
+<br>
+Uso: úsao en chans, escaleiras, portas e remates de obradoiros antigos.<br>
+<np>
+Porta de madeira industrial vella
+Madeira envellecida de obradoiro
+<&old_industrial_wood_door>Este bloque engade madeira envellecida de obradoiro para chans, chanzos, portas e remates interiores acolledores.<br>
+<br>
+Uso: úsao en chans, escaleiras, portas e remates de obradoiros antigos.<br>

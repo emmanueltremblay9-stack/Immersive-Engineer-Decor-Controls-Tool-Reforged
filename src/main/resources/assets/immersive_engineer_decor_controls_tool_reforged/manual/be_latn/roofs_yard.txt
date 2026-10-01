@@ -1,0 +1,101 @@
+Dachi i dvor
+Vonkavaje fabryčnaje abstalavannie
+Dachavyja błoki, dvarovy druz i staryja pramysłovyja draŭlanyja detali dapamahajuć zaviaršyć vonkavyja pavieci, rabočyja dvary, pahruzačnyja placoŭki i abvietranyja krai fabryk.<br>
+<br>
+Spałučaj hetyja detali z muram i prachodami, kab vonkavyja pramysłovyja pabudovy zastavalisia zrazumiełymi zdalok.
+<np>
+Dach z ciomnaj honty
+Abvietrany elemient dachu
+<&dark_shingle_roof>Hety błok stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Dachavy sniehazatrymalnik
+Abvietrany elemient dachu
+<&dark_shingle_roof_metallized>Sniehazatrymalnik dla dachu z ciomnaj honty stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Dach z ciomnaj honty
+Abvietrany elemient dachu
+<&dark_shingle_roof_skylight>Dachavaje akno dla dachu z ciomnaj honty stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Stvoł dachavaha komina
+Abvietrany elemient dachu
+<&dark_shingle_roof_chimneytrunk>Stvoł komina dla dachu z ciomnaj honty stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Dachavaja kabielnaja truba
+Abvietrany elemient dachu
+<&dark_shingle_roof_wireconduit>Kabielnaja truba dla dachu z ciomnaj honty stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Dach z ciomnaj honty
+Abvietrany elemient dachu
+<&dark_shingle_roof_chimney>Komin dla dachu z ciomnaj honty stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Dachavy błok z ciomnaj honty
+Abvietrany elemient dachu
+<&dark_shingle_roof_block>Hety błok stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Dachavaja plita z ciomnaj honty
+Abvietrany elemient dachu
+<&dark_shingle_roof_slab>Hety błok stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Dachavaja plita z ciomnaj honty
+Abvietrany elemient dachu
+<&dark_shingle_roof_slabslice>Tonkaja dachavaja plita z ciomnaj honty stvaraje ciomnyja praktyčnyja linii dachu dla majsterań i pramysłovych pavieciaŭ.<br>
+<br>
+Vykarystannie: spałučaj hetyja detali, kab atrymać praŭdapadobnyja profili dachu.<br>
+<np>
+Utrambavanaja ziamla z druzam
+Pakryccio rabočaj placoŭki
+<&dense_grit_dirt_block>Hety błok stvaraje ŭtrambavanuju, vytaptanuju pavierchniu dla adkrytych rabočych placovak.<br>
+<br>
+Vykarystannie: układvaj jaho kala pahruzačnych dzviarej, vonkavych reziervuaraŭ i mašynnych dvaroŭ.<br>
+<np>
+Utrambavany piasok z druzam
+Pakryccio rabočaj placoŭki
+<&dense_grit_sand_block>Hety błok stvaraje ŭtrambavanuju, vytaptanuju pavierchniu dla adkrytych rabočych placovak.<br>
+<br>
+Vykarystannie: układvaj jaho kala pahruzačnych dzviarej, vonkavych reziervuaraŭ i mašynnych dvaroŭ.<br>
+<np>
+Staryja draŭlanyja doški
+Staraja draŭnina majsterni
+<&old_industrial_wood_planks>Staryja pramysłovyja draŭlanyja doški dadajuć staruju draŭninu majsterni dla padłoh, prystupak, dzviarej i ciopłaha ŭnutranaha azdablennia.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padłohi majsterni, prystupki, dzviery i azdablennie.<br>
+<np>
+Staraja pramysłovaja draŭlanaja plita
+Staraja draŭnina majsterni
+<&old_industrial_wood_slab>Hety błok dadaje staruju draŭninu majsterni dla padłoh, prystupak, dzviarej i ciopłaha ŭnutranaha azdablennia.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padłohi majsterni, prystupki, dzviery i azdablennie.<br>
+<np>
+Staryja draŭlanyja prystupki
+Staraja draŭnina majsterni
+<&old_industrial_wood_stairs>Staryja pramysłovyja draŭlanyja prystupki dadajuć staruju draŭninu majsterni dla padłoh, prystupak, dzviarej i ciopłaha ŭnutranaha azdablennia.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padłohi majsterni, prystupki, dzviery i azdablennie.<br>
+<np>
+Staraja tonkaja draŭlanaja plita
+Staraja draŭnina majsterni
+<&old_industrial_wood_slabslice>Staraja pramysłovaja tonkaja draŭlanaja plita dadaje staruju draŭninu majsterni dla padłoh, prystupak, dzviarej i ciopłaha ŭnutranaha azdablennia.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padłohi majsterni, prystupki, dzviery i azdablennie.<br>
+<np>
+Staryja pramysłovyja draŭlanyja dzviery
+Staraja draŭnina majsterni
+<&old_industrial_wood_door>Hety błok dadaje staruju draŭninu majsterni dla padłoh, prystupak, dzviarej i ciopłaha ŭnutranaha azdablennia.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padłohi majsterni, prystupki, dzviery i azdablennie.<br>

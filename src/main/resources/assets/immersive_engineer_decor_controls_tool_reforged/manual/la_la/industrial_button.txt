@@ -1,0 +1,7 @@
+Bulla machinae
+Moderatio redstone
+<&recipe>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.

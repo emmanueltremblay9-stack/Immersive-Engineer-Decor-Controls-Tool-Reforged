@@ -1,0 +1,5 @@
+Spalvalnik adchodaŭ
+Kampaktnaja pierapracoŭčaja pryłada
+<&recipe>Spalvalnik adchodaŭ zniščaje niepatrebnyja pradmiety, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: padavaj u jaho čarhu tolki niepatrebnyja pradmiety.<br>

@@ -1,0 +1,5 @@
+Passerelle en acier surélevée
+Élément de voie de service
+<&recipe>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>

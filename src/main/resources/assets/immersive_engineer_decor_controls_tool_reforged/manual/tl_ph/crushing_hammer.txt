@@ -1,0 +1,5 @@
+Martilyong Pandurog ng Dukalin
+Mano-manong kasangkapang pandurog
+<&recipe>Ang martilyong pandurog ng ore ay gamit-kamay para sa maagang pagproseso ng bakal at ginto.<br>
+<br>
+Gamitin sa raw iron, raw gold, iron o gold ore at mga deepslate variant upang gumawa ng Immersive Engineering dust. Nauubos ang tibay, bumabalik sa crafting grid hanggang masira, napupudpod sa pagmimina at nagtutulak ng kalaban.

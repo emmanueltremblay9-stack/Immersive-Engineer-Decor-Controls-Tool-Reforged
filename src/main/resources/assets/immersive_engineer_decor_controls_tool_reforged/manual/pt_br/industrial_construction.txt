@@ -1,0 +1,108 @@
+Construção industrial
+Paredes e acabamentos de fábrica
+Os elementos gerais de construção incluem portas, janelas, luzes, placas de advertência, acabamentos e peças estruturais que não pertencem a uma seção mais específica.<br>
+<br>
+Consulte estas páginas para salas de fábrica, corredores de manutenção, sinalização de perigos e detalhes industriais práticos.
+<np>
+Lâmpada de ferro
+Luz de trabalho compacta
+<&iron_bulb_light>Este bloco fornece iluminação industrial compacta para corredores, passarelas e postos de trabalho.<br>
+<br>
+Uso: Instale em tetos, paredes ou bordas onde o ambiente precisar de iluminação clara para trabalhar.<br>
+<np>
+Luz de borda de teto
+Luz de trabalho compacta
+<&iron_ceiling_edge_light>Este bloco fornece iluminação industrial compacta para corredores, passarelas e postos de trabalho.<br>
+<br>
+Uso: Instale em tetos, paredes ou bordas onde o ambiente precisar de iluminação clara para trabalhar.<br>
+<np>
+Luz embutida de borda de piso
+Luz de trabalho compacta
+<&iron_floor_edge_light>Este bloco fornece iluminação industrial compacta para corredores, passarelas e postos de trabalho.<br>
+<br>
+Uso: Instale em tetos, paredes ou bordas onde o ambiente precisar de iluminação clara para trabalhar.<br>
+<np>
+Luz embutida
+Luz de trabalho compacta
+<&iron_inset_light>Este bloco fornece iluminação industrial compacta para corredores, passarelas e postos de trabalho.<br>
+<br>
+Uso: Instale em tetos, paredes ou bordas onde o ambiente precisar de iluminação clara para trabalhar.<br>
+<np>
+Placa de atenção geral
+Sinalização de perigo
+<&sign_caution>A placa de atenção geral identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de perigo
+Sinalização de perigo
+<&sign_danger>A placa "Atenção: perigo extremo" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa decorativa
+Sinalização de perigo
+<&sign_decor>A placa de sinalização de Engineer's Decor identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de defesa
+Sinalização de perigo
+<&sign_defense>A placa "Atenção: sistema de defesa à frente" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de saída
+Sinalização de perigo
+<&sign_exit>Esta placa identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de risco de incêndio
+Sinalização de perigo
+<&sign_firehazard>A placa de risco de incêndio identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de alerta de geada
+Sinalização de perigo
+<&sign_frost>A placa de alerta de geada identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de superfície quente
+Sinalização de perigo
+<&sign_hotsurface>A placa "Atenção: superfície quente" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de fio energizado
+Sinalização de perigo
+<&sign_hotwire>A placa "Atenção: fio energizado" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de risco de laser
+Sinalização de perigo
+<&sign_laser>A placa de risco de laser identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de perigo mágico
+Sinalização de perigo
+<&sign_magichazard>A placa "Atenção: perigo mágico" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de campo magnético
+Sinalização de perigo
+<&sign_magneticfield>A placa "Atenção: campo magnético intenso" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Placa de perigo radioativo
+Sinalização de perigo
+<&sign_radioactive>A placa de perigo radioativo identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>

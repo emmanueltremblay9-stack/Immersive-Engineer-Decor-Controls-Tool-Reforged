@@ -1,0 +1,7 @@
+Ok Hedefi
+Anlık darbe
+<&recipe>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.

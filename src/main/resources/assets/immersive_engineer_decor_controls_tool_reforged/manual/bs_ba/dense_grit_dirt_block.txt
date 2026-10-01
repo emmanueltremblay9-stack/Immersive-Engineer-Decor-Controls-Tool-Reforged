@@ -1,0 +1,5 @@
+Zbijena zemlja sa sitnim šljunkom
+Podloga radilišta
+<&recipe>Ovaj blok daje vanjskim radnim prostorima zbijenu, ugaženu površinu.<br>
+<br>
+Upotreba: Postavite ga oko utovarnih vrata, vanjskih spremnika i mašinskih dvorišta.<br>

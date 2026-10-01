@@ -1,0 +1,7 @@
+Tragač
+Oznaka zapamćenog položaja
+<&recipe>Tragač čuva položaj bloka u predmetu.<br>
+<br>
+Kliknite blok da sačuvate dimenziju i koordinate. Opis prikazuje položaj. Koristite ga šunjajući se da obrišete cilj.<br>
+<br>
+Označite mašine, tunele, daljinske kontrole ili nedovršena gradilišta.

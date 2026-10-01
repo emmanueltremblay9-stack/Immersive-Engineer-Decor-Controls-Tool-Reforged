@@ -1,0 +1,5 @@
+Teulada de teules fosques
+Peça de teulada envellida
+<&recipe>Este bloc forma perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per a crear perfils de teulada creïbles.<br>

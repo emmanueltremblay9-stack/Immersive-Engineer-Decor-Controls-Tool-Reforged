@@ -1,0 +1,7 @@
+Dimmer
+Fariabel sinjaal
+<&recipe>In draaiknop stelt de redstonesterkte yn fan in kompakt panielflak ôf.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier stap foar stap te ferheegjen en nei folle sterkte wer op nul te bringen.<br>
+<br>
+Opmerking: Jout in sterkte fan 0 oant 15 út.

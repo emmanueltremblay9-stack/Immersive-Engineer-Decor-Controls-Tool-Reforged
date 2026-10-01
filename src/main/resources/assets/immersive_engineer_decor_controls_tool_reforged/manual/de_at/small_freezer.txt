@@ -1,0 +1,5 @@
+Wossagefrierer
+Kompakte Verarbeitungseinheit
+<&recipe>Da Wossagefrierer erledigt kompakte Kühlarbeitn in energieversorgten Flüssigkeitsanlogn.<br>
+<br>
+Verwendung: Gib eam Wossa und Energie, damit Eis stufenweise entsteht.<br>

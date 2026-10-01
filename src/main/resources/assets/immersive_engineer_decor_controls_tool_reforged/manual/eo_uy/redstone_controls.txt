@@ -1,0 +1,789 @@
+Redstone’aj regiloj
+Mezuriloj kaj signalaj ekipaĵoj
+Regaparatoj transformas kaŝitan redstone’on en legeblajn fabrikajn panelojn, sensilojn, indikilojn, ŝaltilojn, alarmojn kaj ligitajn signalajn ekipaĵojn.<br>
+<br>
+Uzu ĉi tiujn paĝojn dum konstruado de stirpostenoj, signaltabuloj, sekurecaj cirkvitoj kaj foraj regiloj.
+<np>
+Sagoceltabulo
+Momenta pulso
+<&arrow_target>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Pordsensilo
+Redstone’a regado
+<&door_sensor_switch>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Liftbutono
+Redstone’a regado
+<&elevator_button>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Vitra butono
+Redstone’a regado
+<&glass_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Vitra butono
+Redstone’a regado
+<&glass_small_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Vitra tuŝbutono
+Redstone’a regado
+<&glass_touch_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Maŝinbutono
+Redstone’a regado
+<&industrial_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Butono
+Redstone’a regado
+<&industrial_double_pole_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Ĉirkaŭbarita maŝinbutono
+Redstone’a regado
+<&industrial_fenced_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Frapbutono
+Redstone’a regado
+<&industrial_knock_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Malnova ornama butono
+Redstone’a regado
+<&oldfancy_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Malnova ornama butono
+Redstone’a regado
+<&oldfancy_small_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Malnova ornama ĉenbutono
+Momenta pulso
+<&oldfancy_spring_reset_chain>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Rustika butono
+Redstone’a regado
+<&rustic_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Rustika najlobutono
+Redstone’a regado
+<&rustic_nail_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Rustika malgranda butono
+Redstone’a regado
+<&rustic_small_button>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Rustika ĉenbutono
+Momenta pulso
+<&rustic_spring_reset_chain>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.
+<np>
+Vitra kontaktplato
+Prema pulso
+<&glass_contact_mat>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Vitra pordkontakto
+Prema pulso
+<&glass_door_contact_mat>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Kontakttapiŝo
+Prema pulso
+<&industrial_contact_mat>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Porda kontakttapiŝo
+Prema pulso
+<&industrial_door_contact_mat>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Trafaldetektilo
+Signala sentado
+<&industrial_fallthrough_detector>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Piedbutono
+Redstone’a regado
+<&industrial_foot_button>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Industria frappordo
+Prema pulso
+<&industrial_high_sensitive_trapdoor>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Frapkontakttapiŝo
+Prema pulso
+<&industrial_shock_sensitive_contact_mat>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Frapklappordo
+Prema pulso
+<&industrial_shock_sensitive_trapdoor>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Ruĝa signalplanto
+Prema pulso
+<&red_power_plant>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Rustika premplato
+Prema pulso
+<&rustic_contact_plate>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Rustika pordpremo
+Prema pulso
+<&rustic_door_contact_plate>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Rustika faldetektilo
+Signala sentado
+<&rustic_fallthrough_detector>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Rustika frappordo
+Prema pulso
+<&rustic_high_sensitive_trapdoor>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Rustika frapplato
+Prema pulso
+<&rustic_shock_sensitive_plate>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Rustika frappordo
+Prema pulso
+<&rustic_shock_sensitive_trapdoor>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Flava signalplanto
+Prema pulso
+<&yellow_power_plant>Kontaktŝaltilo sendas mallongan signalon pro moviĝo sur la planko aŭ klappordo.<br>
+<br>
+Uzado: metu ĝin kie estaĵoj trairas prizorgan koridoron, ŝarĝilon aŭ gardatan vojon.<br>
+<br>
+Notoj: ĝi mallonge pulsas post kontakto de estaĵo.
+<np>
+Vitra taghorloĝa ŝaltilo
+Tagluma signalo
+<&glass_day_timer>Tempa ŝaltilo sekvas la tagan parton de la monda ciklo.<br>
+<br>
+Uzado: uzu ĝin por kortlampoj, fenestroŝutroj kaj fabrikaj regiloj funkciantaj nur tage.<br>
+<br>
+Notoj: ĝi bezonas dimension kun ĉiela lumo.
+<np>
+Vitra estaĵdetektilo
+Signala sentado
+<&glass_entity_detector>Estaĵdetektilo observas proksiman moviĝon sen videbla plankplato.<br>
+<br>
+Uzado: konektu ĝin al pordoj, lampoj, alarmoj aŭ maŝinaj sekurinterligoj.<br>
+<br>
+Notoj: ĝi skanas malgrandan areon ĉirkaŭ la bloko.
+<np>
+Vitra intervala signalo
+Tempigita pulso
+<&glass_interval_timer>Kompakta tempŝaltilo provizas planitan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin kie malgranda mekanismo bezonas periodan aŭ prokrastitan regadon.<br>
+<br>
+Notoj: ĝi uzas planitajn redstone’ajn pulsojn.
+<np>
+Vitra linidetektilo
+Signala sentado
+<&glass_linear_entity_detector>Estaĵdetektilo observas proksiman moviĝon sen videbla plankplato.<br>
+<br>
+Uzado: konektu ĝin al pordoj, lampoj, alarmoj aŭ maŝinaj sekurinterligoj.<br>
+<br>
+Notoj: ĝi skanas malgrandan areon ĉirkaŭ la bloko.
+<np>
+Blokdetektilo
+Signala sentado
+<&industrial_block_detector>Blokdetektilo kontrolas ĉu la spaco antaŭ ĝi estas okupita.<br>
+<br>
+Uzado: direktu ĝin al la observota maŝinflanko, bufro aŭ gardata spaco.<br>
+<br>
+Notoj: ĝi eligas signalon kiam la bloko antaŭ ĝi ne estas aero.
+<np>
+Taghorloĝa ŝaltilo
+Tagluma signalo
+<&industrial_day_timer>Tempa ŝaltilo sekvas la tagan parton de la monda ciklo.<br>
+<br>
+Uzado: uzu ĝin por kortlampoj, fenestroŝutroj kaj fabrikaj regiloj funkciantaj nur tage.<br>
+<br>
+Notoj: ĝi bezonas dimension kun ĉiela lumo.
+<np>
+Estaĵdetektilo
+Signala sentado
+<&industrial_entity_detector>Estaĵdetektilo observas proksiman moviĝon sen videbla plankplato.<br>
+<br>
+Uzado: konektu ĝin al pordoj, lampoj, alarmoj aŭ maŝinaj sekurinterligoj.<br>
+<br>
+Notoj: ĝi skanas malgrandan areon ĉirkaŭ la bloko.
+<np>
+Intervala tempigilo
+Tempigita pulso
+<&industrial_interval_timer>Kompakta tempŝaltilo provizas planitan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin kie malgranda mekanismo bezonas periodan aŭ prokrastitan regadon.<br>
+<br>
+Notoj: ĝi uzas planitajn redstone’ajn pulsojn.
+<np>
+Lumsensilo
+Signala sentado
+<&industrial_light_sensor>Lumsensilo transformas lokan helecon en redstone’an regadon.<br>
+<br>
+Uzado: uzu ĝin por aŭtomataj lampoj, fenestroŝutroj kaj videblecaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas signalon ĉe kruda heleco 8 aŭ pli.
+<np>
+Ŝtormdetektilo
+Signala sentado
+<&industrial_lightning_sensor>Ŝtormsensilo ekigas avertojn dum fulmotondrado.<br>
+<br>
+Uzado: metu ĝin sub liberan ĉielon kaj konektu ĝin al lampoj aŭ alarmoj.<br>
+<br>
+Notoj: ĝi bezonas tondradon kaj aliron al la ĉielo.
+<np>
+Linia estaĵdetektilo
+Signala sentado
+<&industrial_linear_entity_detector>Estaĵdetektilo observas proksiman moviĝon sen videbla plankplato.<br>
+<br>
+Uzado: konektu ĝin al pordoj, lampoj, alarmoj aŭ maŝinaj sekurinterligoj.<br>
+<br>
+Notoj: ĝi skanas malgrandan areon ĉirkaŭ la bloko.
+<np>
+Pluvosensilo
+Signala sentado
+<&industrial_rain_sensor>Vetersensilo transformas pluvon ĉe sia loko en redstone’an signalon.<br>
+<br>
+Uzado: muntu ĝin kie la bloko super ĝi povas ricevi pluvon.<br>
+<br>
+Notoj: ĝi kontrolas pluvon super la sensilo.
+<np>
+Dustabila vitra ŝaltilo
+Redstone’a regado
+<&glass_rotary_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Dustabila vitra tuŝregilo
+Redstone’a regado
+<&glass_touch_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Oranĝkolora sentema vitro
+Signalvitro
+<&orange_sensitiveglass>Vitra bloko reaganta al redstone’o konservas vidliniojn dum ĝi montras la signalstaton.<br>
+<br>
+Uzado: uzu ĝin en stirejaj fenestroj, lumigitaj paneloj kaj protektita fabrika vitro.<br>
+<br>
+Notoj: ĝi ŝanĝas staton pro proksima redstone’a signalo.
+<np>
+Lumanta sentema vitro
+Signalvitro
+<&sensitive_glass_block>Vitra bloko reaganta al redstone’o konservas vidliniojn dum ĝi montras la signalstaton.<br>
+<br>
+Uzado: uzu ĝin en stirejaj fenestroj, lumigitaj paneloj kaj protektita fabrika vitro.<br>
+<br>
+Notoj: ĝi ŝanĝas staton pro proksima redstone’a signalo.
+<np>
+Kolora sentema vitro
+Signalvitro
+<&stained_sensitiveglass>Vitra bloko reaganta al redstone’o konservas vidliniojn dum ĝi montras la signalstaton.<br>
+<br>
+Uzado: uzu ĝin en stirejaj fenestroj, lumigitaj paneloj kaj protektita fabrika vitro.<br>
+<br>
+Notoj: ĝi ŝanĝas staton pro proksima redstone’a signalo.
+<np>
+Vitra stangmezurilo
+Signalmezurilo
+<&glass_vertical_bar_gauge>Kompakta stireja mezurilo montras redstone’an forton kiel klaran panelan valoron.<br>
+<br>
+Uzado: muntu ĝin kie eblas tuj kontroli proksiman redstone’an signalforton.<br>
+<br>
+Notoj: ĝi legas proksiman redstone’an forton de 0 ĝis 15.
+<np>
+Analoga mezurilo
+Signalmezurilo
+<&industrial_analog_angular_gauge>Kompakta stireja mezurilo montras redstone’an forton kiel klaran panelan valoron.<br>
+<br>
+Uzado: muntu ĝin kie eblas tuj kontroli proksiman redstone’an signalforton.<br>
+<br>
+Notoj: ĝi legas proksiman redstone’an forton de 0 ĝis 15.
+<np>
+Voltmetra mezurilo
+Signalmezurilo
+<&industrial_analog_horizontal_gauge>Kompakta stireja mezurilo montras redstone’an forton kiel klaran panelan valoron.<br>
+<br>
+Uzado: muntu ĝin kie eblas tuj kontroli proksiman redstone’an signalforton.<br>
+<br>
+Notoj: ĝi legas proksiman redstone’an forton de 0 ĝis 15.
+<np>
+Cifereca mezurilo
+Klare legebla signalforto
+<&industrial_small_digital_gauge>Kompakta stireja mezurilo montras redstone’an forton kiel klaran panelan valoron.<br>
+<br>
+Uzado: muntu ĝin kie eblas tuj kontroli proksiman redstone’an signalforton.<br>
+<br>
+Notoj: ĝi legas proksiman redstone’an forton de 0 ĝis 15.
+<np>
+Vitrotuba mezurilo
+Signalmezurilo
+<&industrial_tube_gauge>Kompakta stireja mezurilo montras redstone’an forton kiel klaran panelan valoron.<br>
+<br>
+Uzado: muntu ĝin kie eblas tuj kontroli proksiman redstone’an signalforton.<br>
+<br>
+Notoj: ĝi legas proksiman redstone’an forton de 0 ĝis 15.
+<np>
+Analoga stangmezurilo
+Signalmezurilo
+<&industrial_vertical_bar_gauge>Kompakta stireja mezurilo montras redstone’an forton kiel klaran panelan valoron.<br>
+<br>
+Uzado: muntu ĝin kie eblas tuj kontroli proksiman redstone’an signalforton.<br>
+<br>
+Notoj: ĝi legas proksiman redstone’an forton de 0 ĝis 15.
+<np>
+Alarmlampo
+Signala montrado
+<&industrial_alarm_lamp>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Alarma sireno
+Signala indikilo
+<&industrial_alarm_siren>La Alarma sireno estas redstone-indikilo muntita sur blokflanko. Ĝia elektra stato sekvas la signalon de la bloko, al kiu ĝi estas fiksita.<br>
+<br>
+Uzo: Fiksu al solida flanko kaj elektrigu por kontroli pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Noto: La sireno refreŝiĝas unufoje sekunde dum la signalo restas aktiva.
+<np>
+Palpebruma LED
+Signala montrado
+<&industrial_blinking_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Verda palpebruma LED
+Signala montrado
+<&industrial_green_blinking_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Verda LED
+Signala montrado
+<&industrial_green_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Ruĝa LED
+Signala montrado
+<&industrial_red_blinking_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Ruĝa LED
+Signala montrado
+<&industrial_red_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Blanka palpebruma LED
+Signala montrado
+<&industrial_white_blinking_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Blanka LED
+Signala montrado
+<&industrial_white_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Flava palpebruma LED
+Signala montrado
+<&industrial_yellow_blinking_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Flava LED
+Signala montrado
+<&industrial_yellow_led>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Rustika semaforo
+Signala montrado
+<&rustic_semaphore>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.
+<np>
+Komparila ŝaltilo
+Konektita signalo
+<&industrial_comparator_switch>Kompakta sensila ŝaltilo legas la blokon sur kiu ĝi estas muntita kaj transformas tiun legon en simplan panelan eligon.<br>
+<br>
+Uzado: muntu ĝin sur inventaroj, tankoj aŭ redstone’aj aparatoj. Kiam la konektita bloko raportas komparilan, ujan aŭ redstone’an eligon, la ŝaltilo eligas plenfortan redstone’an signalon.<br>
+<br>
+Notoj: uzu ĝin por transformi stoknivelojn aŭ kaŝitajn dratojn en klarajn ŝaltajn/malŝaltajn regliniojn.
+<np>
+Signalreguligilo
+Variebla signalo
+<&industrial_dimmer>Turna regilo agordas redstone’an forton de kompakta panelflanko.<br>
+<br>
+Uzado: dekstre klaku ĝin por paŝe pliigi la eligon; post plena forto ĝi revenas al nulo.<br>
+<br>
+Notoj: ĝi eligas forton de 0 ĝis 15.
+<np>
+Kriza haltbutono
+Redstone’a regado
+<&industrial_estop_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Funelblokilo
+Redstone’a regado
+<&industrial_hopper_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Frapŝaltilo
+Redstone’a regado
+<&industrial_knock_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Levilo
+Redstone’a regado
+<&industrial_lever>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Dubutona maŝinŝaltilo
+Redstone’a regado
+<&industrial_machine_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Tirtenilo
+Redstone’a regado
+<&industrial_pull_handle>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Turnlevilo
+Redstone’a regado
+<&industrial_rotary_lever>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Turna maŝinŝaltilo
+Redstone’a regado
+<&industrial_rotary_machine_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Kontaktlevilo
+Redstone’a regado
+<&industrial_small_lever>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Ŝaltilo
+Redstone’a regado
+<&industrialswitch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Lumŝaltilo
+Redstone’a regado
+<&light_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Valvoŝaltilo
+Redstone’a regado
+<&valve_wheel_switch>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Enkestigita pulsa ricevilo
+Ligita regado
+<&industrial_switchlink_cased_pulse_receiver>Enkestigita ligita pulsa ricevilo donas mallongan redstone’an ekigon al foraj paneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Dekstre klaku ĝin aŭ ekigu la ligitan perlon por eligi mallongan pulson.<br>
+<br>
+Notoj: la pulso mem ĉesas post la agordita daŭro.
+<np>
+Enkestigita liga ricevilo
+Ligita regado
+<&industrial_switchlink_cased_receiver>Enkestigita ligita ricevilo donas fortikan redstone’an celon al foraj paneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Dekstre klaku la ricevilon mem por mane baskulŝalti ĝin.<br>
+<br>
+Notoj: ligita perlo baskulŝaltas ĉi tiun ricevilon kiam oni uzas ĝin kaŭrante.
+<np>
+Pulsa liga ricevilo
+Ligita regado
+<&industrial_switchlink_pulse_receiver>Ligita pulsa ricevilo donas mallongan redstone’an ekigon al foraj paneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Dekstre klaku ĝin aŭ ekigu la ligitan perlon por eligi mallongan pulson.<br>
+<br>
+Notoj: la pulso mem ĉesas post la agordita daŭro.
+<np>
+Pulsa liga relajso
+Ligita regado
+<&industrial_switchlink_pulse_relay>Relajsstila regilo donas kompaktan lokan ŝaltpunkton al panelaj konstruaĵoj.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj. Uzu ricevilajn blokojn kiam vi bezonas aktivigon per ligita perlo.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Ŝaltilliga ricevilo
+Ligita regado
+<&industrial_switchlink_receiver>Ligita ricevilo donas plenfortan redstone’an celon al foraj paneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Dekstre klaku la ricevilon mem por mane baskulŝalti ĝin.<br>
+<br>
+Notoj: ligita perlo baskulŝaltas ĉi tiun ricevilon kiam oni uzas ĝin kaŭrante.
+<np>
+Analoga liga ricevilo
+Ligita regado
+<&industrial_switchlink_receiver_analog>Ligita ricevilo donas videblan foran celon al regpaneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Uzu tiun perlon kaŭrante por fore aktivigi la ricevilon.<br>
+<br>
+Notoj: ĉi tiu ricevilo eligas plenfortan redstone’an signalon kiam ekigita.
+<np>
+Ŝaltilliga relajso
+Ligita regado
+<&industrial_switchlink_relay>Relajsstila regilo donas kompaktan lokan ŝaltpunkton al panelaj konstruaĵoj.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj. Uzu ricevilajn blokojn kiam vi bezonas aktivigon per ligita perlo.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Analoga liga relajso
+Ligita regado
+<&industrial_switchlink_relay_analog>Relajsstila regilo donas kompaktan lokan ŝaltpunkton al panelaj konstruaĵoj.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj. Uzu ricevilajn blokojn kiam vi bezonas aktivigon per ligita perlo.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Ŝaltilliga perlo
+Ligita regado
+<&switchlink_pearl>Ligita perlo konservas ricevilan celon por foraj fabrikaj regiloj.<br>
+<br>
+Uzado: klaku ŝaltilligan ricevilon per Enderperlo por fari unu. Uzu la ligitan perlon kaŭrante por aktivigi la konservitan ricevilon.<br>
+<br>
+Notoj: la celo devas esti ŝargita en la mondo, en la sama dimensio kaj ene de atingo.
+<np>
+Malnova ornama levilo
+Redstone’a regado
+<&oldfancy_bistableswitch1>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Malnova ornama turnlevilo
+Redstone’a regado
+<&oldfancy_bistableswitch2>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Rustika turnlevilo
+Redstone’a regado
+<&rustic_angular_lever>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Rustika levilo
+Redstone’a regado
+<&rustic_lever>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Rustika najlolevilo
+Redstone’a regado
+<&rustic_nail_lever>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.
+<np>
+Rustika duĉarnira levilo
+Redstone’a regado
+<&rustic_two_hinge_lever>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.

@@ -1,0 +1,5 @@
+Poste de madeira tratada
+Peça de estrutura
+<&recipe>O poste reto de madeira tratada fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>

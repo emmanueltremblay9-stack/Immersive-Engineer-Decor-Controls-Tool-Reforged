@@ -1,0 +1,5 @@
+Laborofn
+Kloane Verarbeitungseinheit
+<&recipe>Da Laborofn erledigt kloane Schmelzarbeiten mit festem Brennstoff und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Nimm festen Brennstoff fia kloane Schmelzladungen.<br>

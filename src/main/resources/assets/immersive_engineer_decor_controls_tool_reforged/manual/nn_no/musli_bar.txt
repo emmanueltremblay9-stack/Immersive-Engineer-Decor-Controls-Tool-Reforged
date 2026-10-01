@@ -1,0 +1,5 @@
+Muslee Melange-energibar
+Rask verkstedmat
+<&recipe>Muslee Melange-energibaren er kompakt mat laget av brød, frø og frukt.<br>
+<br>
+Spis den som feltmat når du bygger kontroller, rør, plattformer eller lange maskinrom.

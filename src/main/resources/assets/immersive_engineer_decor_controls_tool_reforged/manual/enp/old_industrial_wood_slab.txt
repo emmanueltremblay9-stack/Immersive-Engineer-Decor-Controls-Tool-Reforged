@@ -1,0 +1,5 @@
+Old Workstead Wood Halfclot
+Aged workshop timber
+<&recipe>This clot adds aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>

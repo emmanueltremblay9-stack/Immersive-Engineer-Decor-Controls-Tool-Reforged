@@ -1,0 +1,5 @@
+Rambu Bahaya
+Penanda bahaya
+<&recipe>Rambu “Awas, Sangat Berbahaya” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>

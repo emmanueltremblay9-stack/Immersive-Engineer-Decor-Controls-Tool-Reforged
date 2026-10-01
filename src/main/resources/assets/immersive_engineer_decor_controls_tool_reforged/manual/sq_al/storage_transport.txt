@@ -1,0 +1,41 @@
+Ruajtje dhe transport
+Pajisje inventari dhe rrjedhjeje
+Pajisjet e ruajtjes dhe transportit përfshijnë arka, fuçi, hinka dhe valvula për rrugëzim kompakt në fabrikë.<br>
+<br>
+Përdori këto faqe gjatë planifikimit të magazinave, tubacioneve, depozitave të shërbimit dhe linjave të kontrolluara të lëngjeve.
+<np>
+Arkë me etiketë
+Etiketë rezerve e ndryshueshme
+<&labeled_crate>Kjo arkë me etiketë shërben për renditje të qartë në magazinë. Pllaka përpara mund të ndryshohet si një tabelë e vogël punishteje.<br>
+<br>
+Përdorimi: kliko djathtas pllakën e etiketës për të ndryshuar tekstin e arkës. Kliko djathtas pjesën tjetër për të hapur ruajtjen e pajisjeve, pjesëve dhe furnizimeve të mirëmbajtjes.<br>
+<np>
+Fuçi lëngjesh
+Pajisje linjash lëngjesh
+<&fluid_barrel>Kjo pajisje është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: vendose ku tubat ose kovat mund të arrijnë faqen e depozitës.<br>
+<np>
+Hinkë lëngjesh
+Pajisje linjash lëngjesh
+<&small_fluid_funnel>Hinka e vogël e lëngjeve është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: vendose nën pikën e mbledhjes së lëngut dhe dërgo përmbajtjen e ruajtur në depozita ose tubacione më poshtë.<br>
+<np>
+Valvul moskthimi për tub lëngjesh
+Pajisje linjash lëngjesh
+<&straight_pipe_valve>Valvula e moskthimit të lëngjeve është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: rreshtoje valvulën me drejtimin e synuar të rrjedhjes.<br>
+<np>
+Valvul lëngjesh me redston
+Pajisje linjash lëngjesh
+<&straight_pipe_valve_redstone>Valvula e lëngjeve me redston është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: rreshtoje valvulën me drejtimin e synuar të rrjedhjes.<br>
+<np>
+Valvul analoge lëngjesh
+Pajisje linjash lëngjesh
+<&straight_pipe_valve_redstone_analog>Valvula analoge e lëngjeve është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: rreshtoje valvulën me drejtimin e synuar të rrjedhjes.<br>

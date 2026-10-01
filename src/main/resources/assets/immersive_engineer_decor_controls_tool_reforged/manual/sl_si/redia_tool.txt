@@ -1,0 +1,7 @@
+Orodje REDIA
+Diamantna prevleka za uporabnost
+<&recipe>Orodje REDIA je vzdržljivo večnamensko orodje diamantne kakovosti za terensko delo na začasnih deloviščih, v delavnicah in ob vhodih v rudnike.<br>
+<br>
+Uporaba: Uporabi ga, ko imaš pri sebi bakle, da postaviš eno baklo iz inventarja, ne da bi obrabil REDIA. Uporabi ga med tihotapljenjem, da ostrižeš rastline ali krožno spreminjaš tla med zemljo, zorano zemljo, grobo zemljo in zemeljsko potjo. Izvirno nadomestno dejanje sekire se uporabi na spodnji ploskvi. Med tihotapljenjem razbij debla, da podreš povezane drevesne bloke.<br>
+<br>
+Popravi ga z diamanti. Popravljanje že povsem popravljenega orodja REDIA prek polne vzdržljivosti obnovi izvirno napredovanje Učinkovitosti in Bogastva.

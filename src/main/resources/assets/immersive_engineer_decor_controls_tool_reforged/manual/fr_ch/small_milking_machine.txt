@@ -1,0 +1,5 @@
+Machine à traire
+Équipement d'atelier
+<&recipe>La petite machine à traire est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : placez-la près des vaches et prévoyez l'extraction des récipients de lait ou du fluide.<br>

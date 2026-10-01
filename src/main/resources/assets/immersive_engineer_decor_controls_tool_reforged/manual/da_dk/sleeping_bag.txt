@@ -1,0 +1,7 @@
+Sovepose
+Bærbart hvilesæt
+<&recipe>Vejrbestandigt sæt til arbejde langt fra en seng.<br>
+<br>
+Brug: Om natten i Oververdenen hviler du til morgen uden at sætte eller flytte genoplivningspunkt.<br>
+<br>
+Afviser dag, nærliggende monstre og uegnede dimensioner. Hvert vellykket hvil slider den.

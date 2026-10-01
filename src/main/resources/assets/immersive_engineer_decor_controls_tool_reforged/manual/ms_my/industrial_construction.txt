@@ -1,0 +1,108 @@
+Pembinaan Industri
+Dinding dan hiasan tepi kilang
+Kelengkapan pembinaan umum meliputi pintu, tingkap, lampu, papan tanda amaran, hiasan tepi dan bahagian struktur yang tidak tergolong dalam bahagian lebih khusus.<br>
+<br>
+Gunakan halaman ini untuk bilik kilang, koridor servis, penandaan bahaya dan kerja butiran industri praktikal.
+<np>
+Lampu Mentol Besi
+Lampu kerja padat
+<&iron_bulb_light>Blok ini menyediakan pencahayaan industri padat untuk koridor, laluan servis dan ruang kerja.<br>
+<br>
+Penggunaan: Pasang pada siling, dinding atau tepi yang memerlukan pencahayaan kerja jelas.<br>
+<np>
+Lampu Tepi Siling
+Lampu kerja padat
+<&iron_ceiling_edge_light>Blok ini menyediakan pencahayaan industri padat untuk koridor, laluan servis dan ruang kerja.<br>
+<br>
+Penggunaan: Pasang pada siling, dinding atau tepi yang memerlukan pencahayaan kerja jelas.<br>
+<np>
+Lampu Terbenam Tepi Lantai
+Lampu kerja padat
+<&iron_floor_edge_light>Blok ini menyediakan pencahayaan industri padat untuk koridor, laluan servis dan ruang kerja.<br>
+<br>
+Penggunaan: Pasang pada siling, dinding atau tepi yang memerlukan pencahayaan kerja jelas.<br>
+<np>
+Lampu Terbenam
+Lampu kerja padat
+<&iron_inset_light>Blok ini menyediakan pencahayaan industri padat untuk koridor, laluan servis dan ruang kerja.<br>
+<br>
+Penggunaan: Pasang pada siling, dinding atau tepi yang memerlukan pencahayaan kerja jelas.<br>
+<np>
+Papan Tanda «Amaran Umum»
+Penanda bahaya
+<&sign_caution>Papan tanda «Amaran Umum» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Bahaya
+Penanda bahaya
+<&sign_danger>Papan tanda «Awas, Sangat Berbahaya di Sana» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Hiasan
+Penanda bahaya
+<&sign_decor>Plat papan tanda Engineer's Decor menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Pertahanan
+Penanda bahaya
+<&sign_defense>Papan tanda «Awas, Sistem Pertahanan di Hadapan» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Keluar
+Penanda bahaya
+<&sign_exit>Papan tanda ini menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Bahaya Kebakaran
+Penanda bahaya
+<&sign_firehazard>Papan tanda «Bahaya Kebakaran» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Amaran Fros
+Penanda bahaya
+<&sign_frost>Papan tanda «Amaran Fros» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Permukaan Panas
+Penanda bahaya
+<&sign_hotsurface>Papan tanda «Awas, Permukaan Panas» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Wayar Hidup
+Penanda bahaya
+<&sign_hotwire>Papan tanda «Awas, Wayar Hidup» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Bahaya Laser
+Penanda bahaya
+<&sign_laser>Papan tanda «Bahaya Laser» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Bahaya Sihir
+Penanda bahaya
+<&sign_magichazard>Papan tanda «Awas, Bahaya Sihir» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Medan Magnet
+Penanda bahaya
+<&sign_magneticfield>Papan tanda «Awas, Medan Magnet Kuat» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>
+Papan Tanda Bahaya Radioaktif
+Penanda bahaya
+<&sign_radioactive>Papan tanda «Bahaya Radioaktif» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>
+<np>

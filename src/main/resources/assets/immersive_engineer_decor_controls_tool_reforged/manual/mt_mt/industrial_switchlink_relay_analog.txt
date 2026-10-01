@@ -1,0 +1,7 @@
+Rilej analogu tar-rabta
+Kontroll marbut
+<&recipe>Tagħmir bi stil ta' rilej jagħti punt kompatt ta' swiċċjar lokali lill-bini tal-pannelli.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib. Uża blokok riċevituri meta jkollok bżonn attivazzjoni bil-perla marbuta.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.

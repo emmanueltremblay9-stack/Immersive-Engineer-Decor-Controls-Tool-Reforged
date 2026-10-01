@@ -1,0 +1,5 @@
+Barril de fluidos
+Componentes de tubagem de fluidos
+<&recipe>Este componente compacto integra linhas de fluidos para pequenos depósitos, tubagens, pontos de recolha e caudal controlado por redstone.<br>
+<br>
+Uso: Coloca onde os tubos ou baldes possam alcançar a face do depósito.<br>

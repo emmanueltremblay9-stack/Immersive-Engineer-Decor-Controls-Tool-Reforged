@@ -1,0 +1,5 @@
+Tallador d’arbres
+Equipament de terra de taller
+<&recipe>El tallador d’arbres xicotet és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: apunta’l cap a arbres crescuts i recull el botí per separat.<br>

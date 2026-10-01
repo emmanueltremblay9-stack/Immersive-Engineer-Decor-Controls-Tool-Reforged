@@ -1,0 +1,7 @@
+Vendilschaldor
+Redstone-Schdeuorung
+<&recipe>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.

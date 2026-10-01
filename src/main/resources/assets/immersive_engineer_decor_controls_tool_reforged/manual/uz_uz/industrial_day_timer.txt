@@ -1,0 +1,7 @@
+Kun taymeri
+Kunduzgi yorug'lik signali
+<&recipe>Taymer kaliti dunyo siklining kunduzgi qismiga ergashadi.<br>
+<br>
+Ishlatish: hovli chiroqlari, yopqichlar va faqat kunduzi ishlaydigan zavod boshqaruvlarida foydalaning.<br>
+<br>
+Eslatma: osmon yorug'ligi bor o'lcham talab qilinadi.

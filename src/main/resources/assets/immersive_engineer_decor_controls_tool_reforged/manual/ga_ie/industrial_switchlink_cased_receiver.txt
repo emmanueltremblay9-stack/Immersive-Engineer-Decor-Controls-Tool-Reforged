@@ -1,0 +1,7 @@
+Glacadóir Naisc i gCásáil
+Rialú nasctha
+<&recipe>Tugann glacadóir nasctha i gcásáil sprioc láidir Redstone do phainéil chianda.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Deaschliceáil go díreach ar an nglacadóir chun é a scoránú de láimh.<br>
+<br>
+Nótaí: scoránaíonn péarla nasctha an glacadóir seo nuair a úsáidtear é agus tú ag téaltú.

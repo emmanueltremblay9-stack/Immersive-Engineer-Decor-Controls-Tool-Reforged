@@ -1,0 +1,7 @@
+Blocksensor
+Signalerkennung
+<&recipe>Ene Blocksensor pröf, of dä Ruum vür ihm beleijt es.<br>
+<br>
+Bruuch: Richt en op de Maschinesigg, dä Puffer udder dä jeschötzte Ruum, dä de em Ooch halde wells.<br>
+<br>
+Henwies: Jit Energie, wann dä Block vür ihm kein Luff es.

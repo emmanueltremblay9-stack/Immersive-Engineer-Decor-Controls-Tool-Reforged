@@ -1,0 +1,5 @@
+Fut a liqides
+Éqhipement de ligne a liqides
+<&recipe>Ç'te pièce compacte de ligne a liqides sert ao petits réservouers, ao lignes de tuyaux, ao pouints de collecte e au débit contrôlë par redstone.<br>
+<br>
+Empllai : Pllacéz-la la où qe les tuyaux ou les seilles peuvent ateindr la face du réservouer.<br>

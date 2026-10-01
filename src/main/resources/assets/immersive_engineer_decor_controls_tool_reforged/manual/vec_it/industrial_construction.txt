@@ -1,0 +1,108 @@
+Costrusion industrial
+Muri e finidure de fàbrica
+I equipamenti generałi da costrusion i conprende porte, finestre, łuse, cartełi de aviso, finidure e tochi de strutura che no i va inte na sesion pì precisa.<br>
+<br>
+Dòpara ste pàjine par locali de fàbrica, coridori de servisio, segni de perìcolo e detaji industriałi pràteghi.
+<np>
+Lanpadina de fero
+Łuse conpata da łaoro
+<&iron_bulb_light>Sto bloco el dà iluminasion industrial conpata par coridori, pasarełe e posti de łaoro.<br>
+<br>
+Uso: mòntalo su sofiti, muri o bordi dove serve far ciaro par łaorar.<br>
+<np>
+Łuse da bordo de sofito
+Łuse conpata da łaoro
+<&iron_ceiling_edge_light>Sto bloco el dà iluminasion industrial conpata par coridori, pasarełe e posti de łaoro.<br>
+<br>
+Uso: mòntalo su sofiti, muri o bordi dove serve far ciaro par łaorar.<br>
+<np>
+Łuse incassada da bordo de pavimento
+Łuse conpata da łaoro
+<&iron_floor_edge_light>Sto bloco el dà iluminasion industrial conpata par coridori, pasarełe e posti de łaoro.<br>
+<br>
+Uso: mòntalo su sofiti, muri o bordi dove serve far ciaro par łaorar.<br>
+<np>
+Łuse incassada
+Łuse conpata da łaoro
+<&iron_inset_light>Sto bloco el dà iluminasion industrial conpata par coridori, pasarełe e posti de łaoro.<br>
+<br>
+Uso: mòntalo su sofiti, muri o bordi dove serve far ciaro par łaorar.<br>
+<np>
+Cartel « Ocio »
+Segno de perìcolo
+<&sign_caution>El Cartel « Ocio » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel de perìcolo
+Segno de perìcolo
+<&sign_danger>El Cartel « Ocio, là xe davero pericoloso » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel decorativo
+Segno de perìcolo
+<&sign_decor>Ła Piaca par cartełi (Engineer's Decor) ła segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel de difesa
+Segno de perìcolo
+<&sign_defense>El Cartel « Ocio, sistema de difesa davanti » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel de usita
+Segno de perìcolo
+<&sign_exit>Sto cartel el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel « Perìcolo de fogo »
+Segno de perìcolo
+<&sign_firehazard>El Cartel « Perìcolo de fogo » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel « Ocio al gelo »
+Segno de perìcolo
+<&sign_frost>El Cartel « Ocio al gelo » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel de superfise calda
+Segno de perìcolo
+<&sign_hotsurface>El Cartel « Ocio, superfise calda » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel de cao in tension
+Segno de perìcolo
+<&sign_hotwire>El Cartel « Ocio, cao in tension » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel « Perìcolo laser »
+Segno de perìcolo
+<&sign_laser>El Cartel « Perìcolo laser » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel de perìcolo màjego
+Segno de perìcolo
+<&sign_magichazard>El Cartel « Ocio, perìcolo màjego » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel de canpo magnètego
+Segno de perìcolo
+<&sign_magneticfield>El Cartel « Ocio, canpo magnètego forte » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>
+Cartel « Perìcolo radioativo »
+Segno de perìcolo
+<&sign_radioactive>El Cartel « Perìcolo radioativo » el segna perìcoli, usite e zone de łaoro co un aviso visìbiłe par ła sicuresa de fàbrica.<br>
+<br>
+Uso: mètelo visin a perìcoli, usite, machine e zone a acesso limità.<br>
+<np>

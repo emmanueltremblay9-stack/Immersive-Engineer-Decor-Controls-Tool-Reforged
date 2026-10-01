@@ -1,0 +1,7 @@
+Paquete de estimulante automático
+Inyector de emergencia
+<&recipe>El Paquete de estimulante automático es un objeto de recuperación para trabajos de mantenimiento peligrosos.<br>
+<br>
+Uso: Úsalo manualmente para curarte, obtener protección breve y un impulso de movimiento corto. En el inventario también puede activarse solo con poca salud y después entra en recarga.<br>
+<br>
+Ten uno listo antes de probar alturas, cableado expuesto o rutas mineras hostiles.

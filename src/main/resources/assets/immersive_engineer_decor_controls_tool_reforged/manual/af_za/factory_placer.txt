@@ -1,0 +1,5 @@
+Fabrieksblokplaser
+Werkswinkelnutsmiddel
+<&recipe>Hierdie blok plaas blokke uit sy interne voorraad wanneer dit geaktiveer word.<br>
+<br>
+Gebruik: rig die werkvlak na die teikenruimte en laai stapels wat geplaas kan word.<br>

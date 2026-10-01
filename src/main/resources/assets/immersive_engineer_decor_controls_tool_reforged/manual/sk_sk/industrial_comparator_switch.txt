@@ -1,0 +1,7 @@
+Komparátorový spínač
+Signál pripojeného bloku
+<&recipe>Kompaktný snímací spínač číta blok, na ktorom je pripevnený, a mení jeho údaj na jednoduchý panelový výstup.<br>
+<br>
+Použitie: Pripevni ho na inventáre, nádrže alebo redstonové zariadenia. Keď pripojený blok ohlási výstup komparátora, kontajnera alebo redstonu, spínač vyšle redstone plnej sily.<br>
+<br>
+Poznámky: Použi ho na prevod úrovne zásob alebo skrytých rozvodov na prehľadné ovládacie vedenia zapnuté/vypnuté.

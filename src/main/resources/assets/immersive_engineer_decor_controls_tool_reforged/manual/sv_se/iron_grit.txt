@@ -1,0 +1,3 @@
+Grovt järngrus
+Ingenjörsverktygsmaterial som används i den rekonstruerade receptuppsättningen.
+<&recipe>Kan smältas till<br>järntackor men passar inte för<br>avancerad materialbearbetning.

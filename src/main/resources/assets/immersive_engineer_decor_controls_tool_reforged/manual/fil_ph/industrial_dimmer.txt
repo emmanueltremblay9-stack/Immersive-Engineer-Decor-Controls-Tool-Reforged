@@ -1,0 +1,7 @@
+Panghina ng Signal
+Nababagong signal
+<&recipe>Itinatakda ng umiikot na kontrol ang lakas ng redstone mula sa harap ng maliit na panel.<br>
+<br>
+Paggamit: Iklik nang kanan upang unti-unting itaas ang signal, saka bumalik sa sero matapos ang buong lakas.<br>
+<br>
+Tandaan: Naglalabas ng lakas mula 0 hanggang 15.

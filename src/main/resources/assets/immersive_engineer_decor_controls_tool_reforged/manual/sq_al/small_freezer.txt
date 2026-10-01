@@ -1,0 +1,5 @@
+Ngrirës uji
+Njësi kompakte përpunimi
+<&recipe>Ngrirësi i ujit kryen ftohje kompakte për sisteme lëngjesh me energji.<br>
+<br>
+Përdorimi: jep ujë dhe energji për prodhimin e akullit me faza.<br>

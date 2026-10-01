@@ -1,0 +1,7 @@
+Materiālu glabāšanas kaste
+Būvniecības krājumu kaste
+<&recipe>Materiālu kaste pārnēsā lielu viena vienkārša, nemainīta un kraujama būvmateriāla krājumu.<br>
+<br>
+Lietošana: Turi kasti galvenajā rokā un materiāla kaudzi otrā rokā, lai to ielādētu. Izmanto kasti ar tukšu otru roku, lai izņemtu vienu kaudzi.<br>
+<br>
+Tā glabā līdz 512 viena veida priekšmetiem. Tā nepieņem ligzdotas kastes, nekraujamu aprīkojumu un pārdēvētas vai datos mainītas kaudzes; paskaidre rāda saturu.

@@ -1,0 +1,127 @@
+Prístupové cesty
+Lávky a podpery
+Oceľové stĺpy, ošetrené stĺpiky, rošty, lávky, zábradlia, rebríky, dvere, okná a poklopy vytvárajú kompaktné servisné trasy cez vnútro tovární.<br>
+<br>
+Oceľové diely prístupových ciest používajú oceľové pláty. Vyrob alebo umiestni stôl na spracovanie kovov, vlož kladivo Immersive Engineering a vyklep z oceľových tehličiek pláty na stĺpy, lávky, okná, dvere, zábradlia a ďalšie oceľové dekorácie.<br>
+<br>
+Umiestni ich tam, kde stroje potrebujú servisný prístup, vyvýšené trasy, údržbové šachty alebo bezpečnejšie okraje.
+<np>
+Hrubý oceľový stĺp
+Diel nosného rámu
+<&thick_steel_pole>Rovný hrubý oceľový stĺp dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Hlavica hrubého stĺpa
+Diel nosného rámu
+<&thick_steel_pole_head>Pätka/hlavica rovného hrubého oceľového stĺpa dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Tenký oceľový stĺp
+Diel nosného rámu
+<&thin_steel_pole>Rovný tenký oceľový stĺp dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Hlavica tenkého stĺpa
+Diel nosného rámu
+<&thin_steel_pole_head>Pätka/hlavica rovného tenkého oceľového stĺpa dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Stĺp z ošetreného dreva
+Diel nosného rámu
+<&treated_wood_pole>Rovný stĺp z ošetreného dreva dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Hlavica ošetreného stĺpa
+Diel nosného rámu
+<&treated_wood_pole_head>Pätka/hlavica rovného stĺpa z ošetreného dreva dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Podpera ošetreného stĺpa
+Diel nosného rámu
+<&treated_wood_pole_support>Podpera rovného stĺpa z ošetreného dreva dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Oceľová podpera z profilu I
+Diel nosného rámu
+<&steel_double_t_support>Tento blok dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>
+<np>
+Oceľový podlahový rošt
+Prvok servisného prístupu
+<&steel_floor_grating>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Oceľová lávka
+Prvok servisného prístupu
+<&steel_catwalk>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Schody oceľovej lávky
+Prvok servisného prístupu
+<&steel_catwalk_stairs>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Zvýšená oceľová lávka
+Prvok servisného prístupu
+<&steel_catwalk_ta>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Oceľové zábradlie
+Prvok servisného prístupu
+<&steel_railing>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Oceľový pletivový plot
+Prvok servisného prístupu
+<&steel_mesh_fence>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Bránka oceľového pletivového plota
+Prvok servisného prístupu
+<&steel_mesh_fence_gate>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Rebrík s kovovými priečkami
+Prvok servisného prístupu
+<&metal_rung_ladder>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Striedavé kovové stupne
+Prvok servisného prístupu
+<&metal_rung_steps>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>
+<np>
+Okno v oceľovom ráme
+Chránený výhľad
+<&steel_framed_window>Tento blok ponecháva voľný výhľad a zároveň ladí so zosilnenou továrenskou stavbou.<br>
+<br>
+Použitie: Umiestni ho do otvoru v stene s veľkosťou jedného bloku, kde majú hráči vidieť stroje cez ochrannú bariéru.<br>
+<np>
+Kovové posuvné dvere
+Priemyselný prístupový bod
+<&metal_sliding_door>Tento blok poskytuje odolný prístup do servisných miestností, šácht, striech a strojových krytov.<br>
+<br>
+Použitie: Nainštaluj ho tam, kde stavba potrebuje ovládateľný otvor na údržbu.<br>
+<np>
+Železný výklopný poklop
+Priemyselný prístupový bod
+<&iron_hatch>Tento blok poskytuje odolný prístup do servisných miestností, šácht, striech a strojových krytov.<br>
+<br>
+Použitie: Nainštaluj ho tam, kde stavba potrebuje ovládateľný otvor na údržbu.<br>

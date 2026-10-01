@@ -1,0 +1,5 @@
+Zhutněná hlína se štěrkem
+Povrch pracoviště
+<&recipe>Tento blok dodává venkovním pracovištím zhutněný udusaný povrch.<br>
+<br>
+Použití: Polož jej kolem nakládacích vrat, venkovních nádrží a strojních dvorů.<br>

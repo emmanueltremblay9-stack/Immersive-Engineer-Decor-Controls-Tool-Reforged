@@ -1,0 +1,5 @@
+Blockbrecher
+Werkstatthölp
+<&recipe>Dä kleine Blockbrecher es ene Werkstatthölpsblock för Handwerk, Lajere, Setze, Breche, Sammele udder kleine Automatisierung.<br>
+<br>
+Bruuch: Richt de Arbeitssigg op dä Block, dä fott soll.<br>

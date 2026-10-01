@@ -1,0 +1,5 @@
+Forn electric
+Unitat de tractament compacta
+<&recipe>Lo Forn electric realiza de trabalhs de fusion alimentats en FE en ocupant pauc de plaça dins l’obrador.<br>
+<br>
+Utilizacion : fornís de FE e un objècte valid per la fusion.<br>

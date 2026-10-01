@@ -1,0 +1,7 @@
+Niršanas gaisa kapsula
+Avārijas gaisa rezerve
+<&recipe>Niršanas gaisa kapsula ir ārkārtas gaisa rezerve darbam zem ūdens.<br>
+<br>
+Lietošana: Izmanto to manuāli, lai atjaunotu gaisu. Inventārā tā var automātiski aktivizēties, kad gaiss gandrīz beidzies, un pēc tam sākas atdzišanas laiks.<br>
+<br>
+Ņem to līdzi uz applūdušām raktuvēm, zemūdens cauruļvadu trasēm un sūkņu telpu remontiem.

@@ -1,0 +1,5 @@
+Incinerator de deșeuri
+Unitate compactă de prelucrare
+<&recipe>Incineratorul de deșeuri distruge obiectele nedorite, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Introdu în coada sa doar obiecte nedorite.<br>

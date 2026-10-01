@@ -1,0 +1,7 @@
+Lookout fer blocks
+Sensin' a signal
+<&recipe>A block lookout checks whether the space she faces be occupied.<br>
+<br>
+Orders: Aim her at the machine face, buffer or guarded space ye want watched.<br>
+<br>
+Mind ye: She powers on when the block ahead ain't air.

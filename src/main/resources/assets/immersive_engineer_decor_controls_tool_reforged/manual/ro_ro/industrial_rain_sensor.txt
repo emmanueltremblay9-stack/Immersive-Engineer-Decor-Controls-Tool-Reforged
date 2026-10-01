@@ -1,0 +1,7 @@
+Senzor de ploaie
+Detectarea semnalelor
+<&recipe>Un senzor meteorologic transformă ploaia din poziția sa în semnal redstone.<br>
+<br>
+Utilizare: Montează-l acolo unde blocul de deasupra poate primi ploaie.<br>
+<br>
+Observații: Verifică ploaia deasupra senzorului.

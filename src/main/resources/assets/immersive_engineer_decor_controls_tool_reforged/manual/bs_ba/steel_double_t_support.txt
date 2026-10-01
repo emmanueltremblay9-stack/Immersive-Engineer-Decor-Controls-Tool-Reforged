@@ -1,0 +1,5 @@
+Čelični dvostruki T nosač
+Dio nosećeg okvira
+<&recipe>Ovaj blok daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>

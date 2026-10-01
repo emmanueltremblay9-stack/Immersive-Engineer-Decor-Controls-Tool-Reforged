@@ -1,0 +1,7 @@
+Intervalni tajmer
+Vremenski impuls
+<&recipe>Kompaktni vremenski prekidač daje zakazani redstone impuls.<br>
+<br>
+Upotreba: Koristite ga gdje malom mehanizmu treba periodično ili odgođeno upravljanje.<br>
+<br>
+Napomene: Koristi zakazane redstone impulse.

@@ -1,0 +1,5 @@
+Træfælder
+Hjælpemiddel til værkstedsgulvet
+<&recipe>Den lille træfælder er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Ret den mod udvoksede træer, og saml de tabte genstande op separat.<br>

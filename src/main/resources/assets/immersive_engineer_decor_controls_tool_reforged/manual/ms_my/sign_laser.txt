@@ -1,0 +1,5 @@
+Papan Tanda Bahaya Laser
+Penanda bahaya
+<&recipe>Papan tanda «Bahaya Laser» menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>

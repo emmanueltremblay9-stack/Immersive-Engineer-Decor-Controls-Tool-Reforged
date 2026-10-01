@@ -1,0 +1,7 @@
+Myrskyntunnistin
+Signaalin tunnistus
+<&recipe>Myrskyanturi käynnistää varoitukset ukkosen aikana.<br>
+<br>
+Käyttö: Aseta avoimen taivaan alle ja kytke valoihin tai hälytyksiin.<br>
+<br>
+Huomaa: Vaatii ukkosta ja avoimen yhteyden taivaalle.

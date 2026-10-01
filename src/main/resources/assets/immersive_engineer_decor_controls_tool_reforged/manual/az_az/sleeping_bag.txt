@@ -1,0 +1,7 @@
+Yuxu kisəsi
+Daşınan istirahət dəsti
+<&recipe>Yuxu kisəsi yataqdan uzaq sahə işi üçün havaya davamlı istirahət dəstidir.<br>
+<br>
+İstifadə: Üst Dünyada gecə istifadə edərək səhərə qədər dincəlin. Doğulma nöqtəsini təyin etmir və dəyişmir.<br>
+<br>
+Gündüz istifadəsini, yaxınlıqdakı canavarlarla təhlükəli mühiti və təhlükəsiz istirahətə uyğun olmayan ölçüləri rədd edir. Hər uğurlu istirahət kisəni köhnəldir.

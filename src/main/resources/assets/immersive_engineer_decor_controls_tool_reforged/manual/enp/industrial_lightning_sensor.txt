@@ -1,0 +1,7 @@
+Storm Watcher
+Sensing tokens
+<&recipe>A storm watcher starts warnings during thunder.<br>
+<br>
+Use: Set it under open sky and link it to lights or warnings.<br>
+<br>
+Mind: Needs thunder and an open way to the sky.

@@ -1,0 +1,789 @@
+Reyðgrýtisstýringar
+Mátarar og teknapartar
+Stýriútgerð ger fjalt reyðgrýti til avlesilig verksmiðjupanel, nemar, vísarar, rofar, ávaringar og bundnar teknapartar.<br>
+<br>
+Brúka hesar síðurnar, tá ið tú byggir stýristøð, teknatalvur, trygdarrásir og fjarstýringar.
+<np>
+Ørvamál
+Stuttur pulsur
+<&arrow_target>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Hurðarnemi
+Reyðgrýtisstýring
+<&door_sensor_switch>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Lyftuknøttur
+Reyðgrýtisstýring
+<&elevator_button>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Glasknøttur
+Reyðgrýtisstýring
+<&glass_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Glasknøttur
+Reyðgrýtisstýring
+<&glass_small_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Glas-nertiknøttur
+Reyðgrýtisstýring
+<&glass_touch_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Maskinuknøttur
+Reyðgrýtisstýring
+<&industrial_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Knøttur
+Reyðgrýtisstýring
+<&industrial_double_pole_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Maskinuknøttur við verjuboga
+Reyðgrýtisstýring
+<&industrial_fenced_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Bankiknøttur
+Reyðgrýtisstýring
+<&industrial_knock_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Gamal prýðiligur knøttur
+Reyðgrýtisstýring
+<&oldfancy_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Gamal prýðiligur knøttur
+Reyðgrýtisstýring
+<&oldfancy_small_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Gamal prýðiligur ketuknøttur
+Stuttur pulsur
+<&oldfancy_spring_reset_chain>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Bygdarligur knøttur
+Reyðgrýtisstýring
+<&rustic_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Bygdarligur seymaknøttur
+Reyðgrýtisstýring
+<&rustic_nail_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Lítil bygdarligur knøttur
+Reyðgrýtisstýring
+<&rustic_small_button>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Bygdarligur ketuknøttur
+Stuttur pulsur
+<&rustic_spring_reset_chain>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.
+<np>
+Glas-kontaktpláta
+Trýstpulsur
+<&glass_contact_mat>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Glas-hurðarkontakt
+Trýstpulsur
+<&glass_door_contact_mat>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Kontaktmotta
+Trýstpulsur
+<&industrial_contact_mat>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Hurðarkontaktmotta
+Trýstpulsur
+<&industrial_door_contact_mat>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Gjøgnumfallsnemi
+Teknaskynjan
+<&industrial_fallthrough_detector>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Fótknøttur
+Reyðgrýtisstýring
+<&industrial_foot_button>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Ídnaðar-stoytlemmur
+Trýstpulsur
+<&industrial_high_sensitive_trapdoor>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Stoytkontaktmotta
+Trýstpulsur
+<&industrial_shock_sensitive_contact_mat>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Stoytlemmur
+Trýstpulsur
+<&industrial_shock_sensitive_trapdoor>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Reyð orkuplanta
+Trýstpulsur
+<&red_power_plant>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Bygdarlig trýstpláta
+Trýstpulsur
+<&rustic_contact_plate>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Bygdarlig hurðartrýstpláta
+Trýstpulsur
+<&rustic_door_contact_plate>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Bygdarligur gjøgnumfallsnemi
+Teknaskynjan
+<&rustic_fallthrough_detector>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Bygdarligur stoytlemmur
+Trýstpulsur
+<&rustic_high_sensitive_trapdoor>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Bygdarlig stoytpláta
+Trýstpulsur
+<&rustic_shock_sensitive_plate>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Bygdarligur stoytlemmur
+Trýstpulsur
+<&rustic_shock_sensitive_trapdoor>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Gul orkuplanta
+Trýstpulsur
+<&yellow_power_plant>Ein kontaktrofi sendir eitt stutt tekin frá rørslu á gólvi ella í einum lemmi.<br>
+<br>
+Nýtsla: Set hann, har eindir fara gjøgnum eina viðlíkahaldsgongd, eitt fermipláss ella eina varda leið.<br>
+<br>
+Viðmerking: Gevur ein stuttan puls eftir samband við eina eind.
+<np>
+Glas-dagtíðarklokka
+Dagsljóstekin
+<&glass_day_timer>Ein tíðarrofi fylgir dagsljóspartinum av heimsins tíðarringrás.<br>
+<br>
+Nýtsla: Brúka hann til túnlampur, lúkur og verksmiðjustýringar, sum bert skulu virka um dagin.<br>
+<br>
+Viðmerking: Krevur eina vídd við himmalljósi.
+<np>
+Glas-eindanemi
+Teknaskynjan
+<&glass_entity_detector>Ein eindanemi heldur eyga við rørslu nærhendis uttan eina sjónliga gólvplátu.<br>
+<br>
+Nýtsla: Bind hann til hurðar, lampur, ávaringar ella trygdarlæsingar hjá maskinum.<br>
+<br>
+Viðmerking: Kannar eitt lítið øki kring kubban.
+<np>
+Glas-millumbilstekin
+Tíðarstýrdur pulsur
+<&glass_interval_timer>Ein lítil tíðarrofi gevur ein ásettan reyðgrýtispuls.<br>
+<br>
+Nýtsla: Brúka hann, har einum lítlum mekanismi tørvar regluliga ella seinkaða stýring.<br>
+<br>
+Viðmerking: Brúkar ásettar reyðgrýtispulsar.
+<np>
+Glas-linjunemi
+Teknaskynjan
+<&glass_linear_entity_detector>Ein eindanemi heldur eyga við rørslu nærhendis uttan eina sjónliga gólvplátu.<br>
+<br>
+Nýtsla: Bind hann til hurðar, lampur, ávaringar ella trygdarlæsingar hjá maskinum.<br>
+<br>
+Viðmerking: Kannar eitt lítið øki kring kubban.
+<np>
+Kubbanemi
+Teknaskynjan
+<&industrial_block_detector>Ein kubbanemi kannar, um rúmið framman fyri hann er upptikið.<br>
+<br>
+Nýtsla: Vend honum móti maskinusíðuni, millumgoymsluni ella varda rúminum, sum tú vilt hava eftirlit við.<br>
+<br>
+Viðmerking: Gevur orku, tá ið kubbin frammanfyri ikki er luft.
+<np>
+Dagtíðarklokka
+Dagsljóstekin
+<&industrial_day_timer>Ein tíðarrofi fylgir dagsljóspartinum av heimsins tíðarringrás.<br>
+<br>
+Nýtsla: Brúka hann til túnlampur, lúkur og verksmiðjustýringar, sum bert skulu virka um dagin.<br>
+<br>
+Viðmerking: Krevur eina vídd við himmalljósi.
+<np>
+Eindanemi
+Teknaskynjan
+<&industrial_entity_detector>Ein eindanemi heldur eyga við rørslu nærhendis uttan eina sjónliga gólvplátu.<br>
+<br>
+Nýtsla: Bind hann til hurðar, lampur, ávaringar ella trygdarlæsingar hjá maskinum.<br>
+<br>
+Viðmerking: Kannar eitt lítið øki kring kubban.
+<np>
+Millumbilstímari
+Tíðarstýrdur pulsur
+<&industrial_interval_timer>Ein lítil tíðarrofi gevur ein ásettan reyðgrýtispuls.<br>
+<br>
+Nýtsla: Brúka hann, har einum lítlum mekanismi tørvar regluliga ella seinkaða stýring.<br>
+<br>
+Viðmerking: Brúkar ásettar reyðgrýtispulsar.
+<np>
+Ljósnemi
+Teknaskynjan
+<&industrial_light_sensor>Ein ljósnemi ger staðbundnu ljósstyrkina til reyðgrýtisstýring.<br>
+<br>
+Nýtsla: Brúka hann til sjálvvirkandi lampur, lúkur og sýnisrásir.<br>
+<br>
+Viðmerking: Gevur orku við óviðgjørdari ljósstyrki 8 ella hægri.
+<np>
+Torunemi
+Teknaskynjan
+<&industrial_lightning_sensor>Ein torunemi gevur ávaringar í toruveðri.<br>
+<br>
+Nýtsla: Set hann undir opnum himli og bind hann til lampur ella ávaringar.<br>
+<br>
+Viðmerking: Krevur toru og atgongd til himmalin.
+<np>
+Linjurættur eindanemi
+Teknaskynjan
+<&industrial_linear_entity_detector>Ein eindanemi heldur eyga við rørslu nærhendis uttan eina sjónliga gólvplátu.<br>
+<br>
+Nýtsla: Bind hann til hurðar, lampur, ávaringar ella trygdarlæsingar hjá maskinum.<br>
+<br>
+Viðmerking: Kannar eitt lítið øki kring kubban.
+<np>
+Regnnemi
+Teknaskynjan
+<&industrial_rain_sensor>Ein veðurnemi ger regn á sínum staði til reyðgrýti.<br>
+<br>
+Nýtsla: Fest hann, har regn kann raka kubban oman fyri hann.<br>
+<br>
+Viðmerking: Kannar regn oman fyri neman.
+<np>
+Tvístøðugur glasrofi
+Reyðgrýtisstýring
+<&glass_rotary_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Tvístøðugur glas-nertirofi
+Reyðgrýtisstýring
+<&glass_touch_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Appilsingult viðkvæmt glas
+Teknaglas
+<&orange_sensitiveglass>Ein reyðgrýtisviðkvæmur glaskubbi varðveitir útsýnið og vísir samstundis teknastøðuna.<br>
+<br>
+Nýtsla: Brúka hann í stýrirúmsvindeygum, lýsandi panelum og vardum verksmiðjuglasi.<br>
+<br>
+Viðmerking: Skiftir støðu við reyðgrýti nærhendis.
+<np>
+Lýsandi viðkvæmt glas
+Teknaglas
+<&sensitive_glass_block>Ein reyðgrýtisviðkvæmur glaskubbi varðveitir útsýnið og vísir samstundis teknastøðuna.<br>
+<br>
+Nýtsla: Brúka hann í stýrirúmsvindeygum, lýsandi panelum og vardum verksmiðjuglasi.<br>
+<br>
+Viðmerking: Skiftir støðu við reyðgrýti nærhendis.
+<np>
+Litað viðkvæmt glas
+Teknaglas
+<&stained_sensitiveglass>Ein reyðgrýtisviðkvæmur glaskubbi varðveitir útsýnið og vísir samstundis teknastøðuna.<br>
+<br>
+Nýtsla: Brúka hann í stýrirúmsvindeygum, lýsandi panelum og vardum verksmiðjuglasi.<br>
+<br>
+Viðmerking: Skiftir støðu við reyðgrýti nærhendis.
+<np>
+Glas-stabbamátari
+Teknamátari
+<&glass_vertical_bar_gauge>Ein lítil mátari til stýrirúmið vísir reyðgrýtisstyrkina sum eina greiða panelavlesing.<br>
+<br>
+Nýtsla: Fest hann, har tú vilt kunna kanna reyðgrýti nærhendis við einum eygnabrái.<br>
+<br>
+Viðmerking: Lesur reyðgrýtisstyrki nærhendis frá 0 til 15.
+<np>
+Analogur mátari
+Teknamátari
+<&industrial_analog_angular_gauge>Ein lítil mátari til stýrirúmið vísir reyðgrýtisstyrkina sum eina greiða panelavlesing.<br>
+<br>
+Nýtsla: Fest hann, har tú vilt kunna kanna reyðgrýti nærhendis við einum eygnabrái.<br>
+<br>
+Viðmerking: Lesur reyðgrýtisstyrki nærhendis frá 0 til 15.
+<np>
+Voltmátari
+Teknamátari
+<&industrial_analog_horizontal_gauge>Ein lítil mátari til stýrirúmið vísir reyðgrýtisstyrkina sum eina greiða panelavlesing.<br>
+<br>
+Nýtsla: Fest hann, har tú vilt kunna kanna reyðgrýti nærhendis við einum eygnabrái.<br>
+<br>
+Viðmerking: Lesur reyðgrýtisstyrki nærhendis frá 0 til 15.
+<np>
+Talgildur mátari
+Avlesilig teknastyrki
+<&industrial_small_digital_gauge>Ein lítil mátari til stýrirúmið vísir reyðgrýtisstyrkina sum eina greiða panelavlesing.<br>
+<br>
+Nýtsla: Fest hann, har tú vilt kunna kanna reyðgrýti nærhendis við einum eygnabrái.<br>
+<br>
+Viðmerking: Lesur reyðgrýtisstyrki nærhendis frá 0 til 15.
+<np>
+Glasrørsmátari
+Teknamátari
+<&industrial_tube_gauge>Ein lítil mátari til stýrirúmið vísir reyðgrýtisstyrkina sum eina greiða panelavlesing.<br>
+<br>
+Nýtsla: Fest hann, har tú vilt kunna kanna reyðgrýti nærhendis við einum eygnabrái.<br>
+<br>
+Viðmerking: Lesur reyðgrýtisstyrki nærhendis frá 0 til 15.
+<np>
+Analogur stabbamátari
+Teknamátari
+<&industrial_vertical_bar_gauge>Ein lítil mátari til stýrirúmið vísir reyðgrýtisstyrkina sum eina greiða panelavlesing.<br>
+<br>
+Nýtsla: Fest hann, har tú vilt kunna kanna reyðgrýti nærhendis við einum eygnabrái.<br>
+<br>
+Viðmerking: Lesur reyðgrýtisstyrki nærhendis frá 0 til 15.
+<np>
+Ávaringarlampa
+Afturmelding um tekin
+<&industrial_alarm_lamp>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Ávaringarsirena
+Afturmelding um tekin
+<&industrial_alarm_siren>Ávaringarhorn er ein redstone-vísari, sum verður festur á eina síðu. Tendra støðan fylgir signalinum frá kubbanum, ið hann er festur á.<br>
+<br>
+Nýtsla: Fest hana á eina fasta síðu og gev henni orku fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Sirenan verður endurnýggjað eina ferð um sekundið, so leingi bundna teknið er virkið.
+<np>
+Blinkandi LED
+Afturmelding um tekin
+<&industrial_blinking_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Grøn blinkandi LED
+Afturmelding um tekin
+<&industrial_green_blinking_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Grøn LED
+Afturmelding um tekin
+<&industrial_green_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Reyð LED
+Afturmelding um tekin
+<&industrial_red_blinking_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Reyð LED
+Afturmelding um tekin
+<&industrial_red_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Hvít blinkandi LED
+Afturmelding um tekin
+<&industrial_white_blinking_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Hvít LED
+Afturmelding um tekin
+<&industrial_white_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Gul blinkandi LED
+Afturmelding um tekin
+<&industrial_yellow_blinking_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Gul LED
+Afturmelding um tekin
+<&industrial_yellow_led>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Bygdarligur semaforur
+Afturmelding um tekin
+<&rustic_semaphore>Ein lítil vísari ger fjalt reyðgrýti til sjónliga afturmelding í verksmiðjuni.<br>
+<br>
+Nýtsla: Bind hann til við síðuna av tekninum fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Skiftir støðu, tá ið reyðgrýti er nærhendis.
+<np>
+Samanberarofi
+Tekin frá festikubbanum
+<&industrial_comparator_switch>Ein lítil nemarofi lesur kubban, hann er festur á, og ger avlesingina til eitt einfalt panelúttak.<br>
+<br>
+Nýtsla: Fest hann á goymslur, tangar ella reyðgrýtisútgerð. Tá ið festikubbin boðar frá samanbera-, ílats- ella reyðgrýtisúttaki, sendir rofin reyðgrýti við fullari styrki.<br>
+<br>
+Viðmerking: Brúka hann til at gera goymslustig ella fjaldar leidningar til greiðar á-/avstýrileiðingar.
+<np>
+Dimari
+Broytiligt tekin
+<&industrial_dimmer>Ein snúningsstýring stillar reyðgrýtisstyrkina av einari lítlari panelframsíðu.<br>
+<br>
+Nýtsla: Høgraklikk fyri at økja úttakið stig fyri stig og fara aftur til null eftir fulla styrki.<br>
+<br>
+Viðmerking: Gevur styrki frá 0 til 15.
+<np>
+Neyðstoppknøttur
+Reyðgrýtisstýring
+<&industrial_estop_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Traktstongjari
+Reyðgrýtisstýring
+<&industrial_hopper_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Bankirofi
+Reyðgrýtisstýring
+<&industrial_knock_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Handtak
+Reyðgrýtisstýring
+<&industrial_lever>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Maskinurofi við tveimum knøttum
+Reyðgrýtisstýring
+<&industrial_machine_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Toghandtak
+Reyðgrýtisstýring
+<&industrial_pull_handle>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Snúningshandtak
+Reyðgrýtisstýring
+<&industrial_rotary_lever>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Snúningsrofi til maskinur
+Reyðgrýtisstýring
+<&industrial_rotary_machine_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Kontakthandtak
+Reyðgrýtisstýring
+<&industrial_small_lever>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Rofi
+Reyðgrýtisstýring
+<&industrialswitch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Ljósrofi
+Reyðgrýtisstýring
+<&light_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Ventilrofi
+Reyðgrýtisstýring
+<&valve_wheel_switch>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Pulsmóttakari í húsi
+Bundin stýring
+<&industrial_switchlink_cased_pulse_receiver>Ein bundin pulsmóttakari í húsi gevur fjarpanelum eina stutta reyðgrýtisvirking.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Høgraklikk á hann ella virkja bundnu perluna fyri at geva ein stuttan puls.<br>
+<br>
+Viðmerking: Pulsurin sløknar av sær sjálvum eftir ásettu tíðina.
+<np>
+Sambandsmóttakari í húsi
+Bundin stýring
+<&industrial_switchlink_cased_receiver>Ein bundin móttakari í húsi gevur fjarpanelum eitt sterkt reyðgrýtismál.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Høgraklikk beinleiðis á móttakaran fyri at tendra ella sløkkja hann við hond.<br>
+<br>
+Viðmerking: Ein bundin perla tendrar ella sløkkir henda móttakaran, tá ið hon verður brúkt sníkjandi.
+<np>
+Pulsmóttakari til rofasambond
+Bundin stýring
+<&industrial_switchlink_pulse_receiver>Ein bundin pulsmóttakari gevur fjarpanelum eina stutta reyðgrýtisvirking.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Høgraklikk á hann ella virkja bundnu perluna fyri at geva ein stuttan puls.<br>
+<br>
+Viðmerking: Pulsurin sløknar av sær sjálvum eftir ásettu tíðina.
+<np>
+Pulsrelé til rofasambond
+Bundin stýring
+<&industrial_switchlink_pulse_relay>Ein partur í reléstíli gevur panelbygging eitt lítið staðbundið rofapunkt.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis. Brúka móttakarakubbar, tá ið tær tørvar virking við bundnari perlu.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Móttakari til rofasambond
+Bundin stýring
+<&industrial_switchlink_receiver>Ein bundin móttakari gevur fjarpanelum eitt reyðgrýtismál við fullari styrki.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Høgraklikk beinleiðis á móttakaran fyri at tendra ella sløkkja hann við hond.<br>
+<br>
+Viðmerking: Ein bundin perla tendrar ella sløkkir henda móttakaran, tá ið hon verður brúkt sníkjandi.
+<np>
+Analogur móttakari til rofasambond
+Bundin stýring
+<&industrial_switchlink_receiver_analog>Ein bundin móttakari gevur stýripanelum eitt sjónligt fjarmál.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Brúka hesa perluna, meðan tú sníkir teg, fyri at virkja móttakaran úr fjarstøðu.<br>
+<br>
+Viðmerking: Hesin móttakarin sendir eitt fult reyðgrýtistekin, tá ið hann verður virkjaður.
+<np>
+Relé til rofasambond
+Bundin stýring
+<&industrial_switchlink_relay>Ein partur í reléstíli gevur panelbygging eitt lítið staðbundið rofapunkt.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis. Brúka móttakarakubbar, tá ið tær tørvar virking við bundnari perlu.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Analogt relé til rofasambond
+Bundin stýring
+<&industrial_switchlink_relay_analog>Ein partur í reléstíli gevur panelbygging eitt lítið staðbundið rofapunkt.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis. Brúka móttakarakubbar, tá ið tær tørvar virking við bundnari perlu.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Rofasambandsperla
+Bundin stýring
+<&switchlink_pearl>Ein bundin perla goymir eitt móttakaramál til fjarstýring av verksmiðjum.<br>
+<br>
+Nýtsla: Klikk á ein móttakara til rofasambond við einari Enderperlu fyri at gera eina. Brúka bundnu perluna, meðan tú sníkir teg, fyri at virkja goymda móttakaran.<br>
+<br>
+Viðmerking: Málið má vera innlisið, í somu vídd og innan røkkivídd.
+<np>
+Gamalt prýðiligt handtak
+Reyðgrýtisstýring
+<&oldfancy_bistableswitch1>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Gamalt prýðiligt snúningshandtak
+Reyðgrýtisstýring
+<&oldfancy_bistableswitch2>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Bygdarligt snúningshandtak
+Reyðgrýtisstýring
+<&rustic_angular_lever>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Bygdarligt handtak
+Reyðgrýtisstýring
+<&rustic_lever>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Bygdarligt seymahandtak
+Reyðgrýtisstýring
+<&rustic_nail_lever>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.
+<np>
+Bygdarligt handtak við tveimum hongslum
+Reyðgrýtisstýring
+<&rustic_two_hinge_lever>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.

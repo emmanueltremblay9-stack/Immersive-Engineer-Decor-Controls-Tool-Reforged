@@ -1,0 +1,5 @@
+Cedule „Nebezpečí laseru“
+Značka nebezpečí
+<&recipe>Cedule „Nebezpečí laseru“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>

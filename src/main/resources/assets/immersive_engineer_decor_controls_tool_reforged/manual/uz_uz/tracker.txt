@@ -1,0 +1,7 @@
+Iz topgich
+Saqlangan joy belgisi
+<&recipe>Kuzatuvchi blok joyini buyum ichida saqlaydi.<br>
+<br>
+Olcham va koordinatani saqlash uchun blokni bosing. Maslahat joyni korsatadi. Nishonni ochirish uchun egilib ishlating.<br>
+<br>
+Mashina, tunnel, masofaviy boshqaruv yoki tugamagan qurilishni belgilang.

@@ -1,0 +1,7 @@
+Dimmer
+Verängerbar Signal
+<&recipe>Ene Dreihregler stellt vun en kleine Paneelfläch de Redstone-Stärk en.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav schrettweis huh ze setze un noh voller Stärk widder bei null aanzefange.<br>
+<br>
+Henwies: Jit en Stärk vun 0 bes 15.

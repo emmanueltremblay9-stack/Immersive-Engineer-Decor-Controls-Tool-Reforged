@@ -1,0 +1,5 @@
+Corpo de chaminé de telhado
+Elemento de telhado envelhecido
+<&recipe>O corpo de chaminé de telhado de telhas escuras cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>

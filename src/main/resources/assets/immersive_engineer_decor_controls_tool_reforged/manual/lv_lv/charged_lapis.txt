@@ -1,0 +1,7 @@
+Uzlādēts lazurīts
+Uzkrāta pieredze
+<&recipe>Uzlādēts lazurīts glabā vienu pieredzes līmeni, kas iegūts ar prāta spiedi.<br>
+<br>
+Lietošana: patērē to, lai atgūtu vienu līmeni, noņemtu aktīvos efektus un atjaunotu nedaudz veselības.<br>
+<br>
+Receptes logrīks rāda prāta spiedi, jo uzlādētu lazurītu iegūst, lietojot šo rīku, kad pieejams lazurīts un pieredze.

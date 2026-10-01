@@ -1,0 +1,5 @@
+Cabeça de poste de madeira tratada
+Peça de estrutura
+<&recipe>A cabeça/base de poste reto de madeira tratada fornece estrutura visível para galpões de máquinas e armações de acesso.<br>
+<br>
+Uso: Gire e coloque como reforço visível de vigas, postes e bordas de plataformas.<br>

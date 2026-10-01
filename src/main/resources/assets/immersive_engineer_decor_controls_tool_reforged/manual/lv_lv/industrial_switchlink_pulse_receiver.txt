@@ -1,0 +1,7 @@
+Impulsu saites uztvērējs
+Sasaistīta vadība
+<&recipe>Sasaistīts impulsu uztvērējs dod attāliem paneļiem īsu Redstone ierosinājumu.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Noklikšķini uz uztvērēja ar labo peles pogu vai aktivizē sasaistīto pērli, lai izvadītu īsu impulsu.<br>
+<br>
+Piezīmes: impulss pats beidzas pēc iestatītā ilguma.

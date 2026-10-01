@@ -1,0 +1,107 @@
+Radionički strojevi
+Strojevi te ulazi i izlazi radionice
+Radionički strojevi omogućuju kompaktnu izradu, premještanje predmeta, taljenje, odlaganje, skupljanje i pomoćne poslove u prostoru jednog bloka.<br>
+<br>
+Otvori sljedeće stranice za recepte, slike, pozadinske opise i praktične napomene o uporabi svakog stroja.
+<np>
+Čelični stol
+Radionički namještaj
+<&steel_table>Ovaj je blok praktični radionički namještaj za radne prostorije i kutke za održavanje.<br>
+<br>
+Uporaba: postavi ga uz klupe, sanduke i kompaktne strojeve.<br>
+<np>
+Stol od obrađenog drva
+Radionički namještaj
+<&treated_wood_table>Ovaj je blok praktični radionički namještaj za radne prostorije i kutke za održavanje.<br>
+<br>
+Uporaba: postavi ga uz klupe, sanduke i kompaktne strojeve.<br>
+<np>
+Tabure od obrađenog drva
+Radionički namještaj
+<&treated_wood_stool>Ovaj je blok praktični radionički namještaj za radne prostorije i kutke za održavanje.<br>
+<br>
+Uporaba: postavi ga uz klupe, sanduke i kompaktne strojeve.<br>
+<np>
+Stol za obradu metala
+Radna stanica za ploče
+<&metal_crafting_table>Stol za obradu metala ojačana je radionička stanica s mjestom za čekić, mrežom za izradu 3x3 i jasnim izlaznim mjestom.<br>
+<br>
+Uporaba: koristi mrežu za običnu izradu. Za IE ploče stavi Inženjerski čekić na mjesto za alat i materijal ploče u mrežu prije preuzimanja rezultata. Čelični ukrasi koriste čelične ploče za stupove, servisne staze, prozore, vrata, ograde i druge čelične dijelove.<br>
+<np>
+Tvornički lijevak
+Oprema tvorničkog poda
+<&factory_hopper>Ovaj blok premješta hrpe predmeta kroz kompaktnije industrijsko kućište.<br>
+<br>
+Uporaba: usmjeri ga prema nizu inventara te u sučelju podesi domet, broj predmeta u hrpi, vrijeme i redstone način.<br>
+<np>
+Tvornički izbacivač
+Oprema tvorničkog poda
+<&factory_dropper>Ovaj blok ispušta pohranjene predmete iz usmjerene strane.<br>
+<br>
+Uporaba: usmjeri prednju stranu prema mjestu ispuštanja, napuni unutarnja mjesta te u sučelju podesi silu, kut, odgodu, logiku filtara i redstone način.<br>
+<np>
+Tvornički postavljač blokova
+Oprema tvorničkog poda
+<&factory_placer>Ovaj blok pri aktivaciji postavlja blokove iz unutarnjih zaliha.<br>
+<br>
+Uporaba: usmjeri radnu stranu prema ciljnom prostoru i umetni hrpe koje se mogu postaviti.<br>
+<np>
+Razbijač blokova
+Oprema tvorničkog poda
+<&small_block_breaker>Mali razbijač blokova pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: usmjeri radnu stranu prema bloku koji treba ukloniti.<br>
+<np>
+Spalionica otpada
+Kompaktna jedinica za obradu
+<&small_waste_incinerator>Spalionica otpada uništava neželjene predmete, zauzimajući malo prostora u radionici.<br>
+<br>
+Uporaba: u red čekanja stavljaj samo neželjene predmete.<br>
+<np>
+Laboratorijska peć
+Kompaktna jedinica za obradu
+<&small_lab_furnace>Laboratorijska peć obavlja kompaktno taljenje na kruto gorivo na maloj površini radionice.<br>
+<br>
+Uporaba: koristi kruto gorivo za manje serije taljenja.<br>
+<np>
+Električna peć
+Kompaktna jedinica za obradu
+<&small_electrical_furnace>Električna peć obavlja kompaktno taljenje na FE energiju na maloj površini radionice.<br>
+<br>
+Uporaba: dovedi FE i valjanu sirovinu za taljenje.<br>
+<np>
+Talionica minerala
+Kompaktna jedinica za obradu
+<&small_mineral_smelter>Talionica minerala obrađuje minerale na visokoj temperaturi, zauzimajući malo prostora u radionici.<br>
+<br>
+Uporaba: dovedi mineralne blokove i energiju za taljenje na visokoj temperaturi.<br>
+<np>
+Zamrzivač vode
+Kompaktna jedinica za obradu
+<&small_freezer>Zamrzivač vode obavlja kompaktno hlađenje za napajane sustave tekućina.<br>
+<br>
+Uporaba: dovedi vodu i energiju za postupnu proizvodnju leda.<br>
+<np>
+Pasivno skupljanje tekućine
+Oprema vodova tekućine
+<&passive_fluid_accumulator>Pasivni sakupljač tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: postavi ga uz odgovarajuće izvore vode i ostavi prostor za odvod tekućine.<br>
+<np>
+Solarna ploča
+Oprema tvorničkog poda
+<&small_solar_panel>Mala solarna ploča pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: omogući joj otvoren pogled na nebo i spoji opremu male potrošnje.<br>
+<np>
+Muzilica
+Oprema tvorničkog poda
+<&small_milking_machine>Mala muzilica pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: postavi je blizu krava i osiguraj odvod posuda s mlijekom ili same tekućine.<br>
+<np>
+Sjekač drveća
+Oprema tvorničkog poda
+<&small_tree_cutter>Mali sjekač drveća pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: usmjeri ga prema odraslim stablima i ispuštene predmete skupljaj zasebno.<br>

@@ -1,0 +1,5 @@
+Trencaire de blòcs
+Equipament utilitari d’obrador
+<&recipe>Lo Pichon trencaire de blòcs es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : orienta sa fàcia de trabalh cap al blòc de tirar.<br>

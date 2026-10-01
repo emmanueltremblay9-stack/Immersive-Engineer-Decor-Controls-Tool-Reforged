@@ -1,0 +1,7 @@
+Rustykalny semafor
+Sygnalizacja stanu
+<&recipe>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.

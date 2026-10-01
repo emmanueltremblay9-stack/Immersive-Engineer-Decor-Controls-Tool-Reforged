@@ -1,0 +1,5 @@
+Peti Berlabel
+Label stok yang dapat diedit
+<&recipe>Peti berlabel ini dibuat untuk penataan ruang penyimpanan yang jelas. Pelat depannya dapat diedit seperti papan kecil di bengkel.<br>
+<br>
+Penggunaan: klik kanan pelat label untuk mengedit label peti. Klik kanan bagian peti lainnya untuk membuka penyimpanan perlengkapan, suku cadang, dan pasokan perawatan.<br>

@@ -1,0 +1,5 @@
+Rozbíječ bloků
+Vybavení provozu
+<&recipe>Malý rozbíječ bloků patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Namiř pracovní stranu na blok, který chceš odstranit.<br>

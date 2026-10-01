@@ -1,0 +1,7 @@
+Lapis chargé
+Expérience stockée
+<&recipe>Le lapis chargé stocke un niveau d'expérience obtenu avec le presse-esprit.<br>
+<br>
+Utilisation : consommez-le pour récupérer un niveau, supprimer les effets actifs et restaurer un peu de santé.<br>
+<br>
+L'affichage de recette présente le presse-esprit, car le lapis chargé s'obtient en utilisant cet outil avec du lapis et de l'XP disponibles.

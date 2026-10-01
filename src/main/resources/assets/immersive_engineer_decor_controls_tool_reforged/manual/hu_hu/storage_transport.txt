@@ -1,0 +1,41 @@
+Tárolás és szállítás
+Tárolási és áramlási szerelvények
+A tárolási és szállítási szerelvények ládákat, hordókat, tölcséreket és szelepeket foglalnak magukba kompakt gyári útvonalakhoz.<br>
+<br>
+Ezeket az oldalakat raktárak, csőszakaszok, üzemi tartályok és szabályozott folyadékvezetékek tervezésekor használd.
+<np>
+Feliratozható láda
+Szerkeszthető készletfelirat
+<&labeled_crate>Ez a feliratozható láda a raktári készletek egyértelmű rendezésére készült. Elülső táblája kis műhelytáblaként szerkeszthető.<br>
+<br>
+Használat: jobb kattintás a felirattáblára a ládafelirat szerkesztéséhez. A láda többi részére kattintva megnyitod a szerelvények, alkatrészek és karbantartási készletek tárolóját.<br>
+<np>
+Folyadékhordó
+Folyadékvezeték-szerelvények
+<&fluid_barrel>Ez kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: olyan helyre tedd, ahol csövek vagy vödrök elérik a tartály oldalát.<br>
+<np>
+Folyadékgyűjtő tölcsér
+Folyadékvezeték-szerelvények
+<&small_fluid_funnel>A kis folyadékgyűjtő tölcsér kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: tedd a folyadékgyűjtő pont alá, és vezesd a tárolt tartalmat tartályokba vagy alacsonyabban lévő csövekbe.<br>
+<np>
+Folyadékcső-visszacsapó szelep
+Folyadékvezeték-szerelvények
+<&straight_pipe_valve>A folyadékcső-visszacsapó szelep kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: igazítsd a szelepet a kívánt áramlási irányhoz.<br>
+<np>
+Redstone-folyadékszelep
+Folyadékvezeték-szerelvények
+<&straight_pipe_valve_redstone>A redstone-folyadékszelep kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: igazítsd a szelepet a kívánt áramlási irányhoz.<br>
+<np>
+Analóg folyadékszelep
+Folyadékvezeték-szerelvények
+<&straight_pipe_valve_redstone_analog>Az analóg folyadékszelep kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: igazítsd a szelepet a kívánt áramlási irányhoz.<br>

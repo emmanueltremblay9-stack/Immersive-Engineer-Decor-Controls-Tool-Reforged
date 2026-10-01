@@ -1,0 +1,5 @@
+Željezni poklopac
+Industrijska pristupna točka
+<&recipe>Ovaj blok pruža čvrstu pristupnu točku za servisne prostorije, okna, krovove i kućišta strojeva.<br>
+<br>
+Uporaba: ugradi ga gdje je potreban kontroliran otvor za održavanje.<br>

@@ -1,0 +1,7 @@
+Analogni prijemnik veze
+Upravljanje preko veze
+<&recipe>Prijemnik veze daje upravljačkim panelima vidljiv udaljeni cilj.<br>
+<br>
+Upotreba: Kliknite ga Ender biserom da napravite upareni biser. Upotrijebite taj biser dok se šunjate da daljinski aktivirate prijemnik.<br>
+<br>
+Napomene: Ovaj prijemnik daje redstone signal najveće jačine kada se aktivira.

@@ -1,0 +1,5 @@
+Forno eléctrico
+Unidade compacta de procesamento
+<&recipe>O forno eléctrico fai traballos de fundición alimentados con FE nun espazo reducido de obradoiro.<br>
+<br>
+Uso: subministra FE e materiais de entrada aptos para fundir.<br>

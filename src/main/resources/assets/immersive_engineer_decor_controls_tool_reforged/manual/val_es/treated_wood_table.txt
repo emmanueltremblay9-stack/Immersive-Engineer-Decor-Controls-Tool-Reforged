@@ -1,0 +1,5 @@
+Taula de fusta tractada
+Mobles de taller
+<&recipe>Este bloc és un moble pràctic de taller per a sales de treball i racons de manteniment.<br>
+<br>
+Ús: posa’l al costat de bancs, caixons i màquines compactes.<br>

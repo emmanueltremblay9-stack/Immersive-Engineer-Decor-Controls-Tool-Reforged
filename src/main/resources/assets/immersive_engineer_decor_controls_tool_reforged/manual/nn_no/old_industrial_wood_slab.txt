@@ -1,0 +1,5 @@
+Gammal fabrikkhelle av tre
+Gammalt verkstadtre
+<&recipe>Denne blokka gjev gammalt verkstadtre til golv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: nytt henne til gamle verkstadgolv, trapper, dører og listverk.<br>

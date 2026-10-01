@@ -1,0 +1,7 @@
+Ljussensor
+Signalavkänning
+<&recipe>En ljussensor omvandlar den lokala ljusstyrkan till redstonestyrning.<br>
+<br>
+Användning: Använd den för automatiska lampor, jalusier och kretsar som reagerar på sikten.<br>
+<br>
+Anmärkning: Ger signal vid en rå ljusstyrka på 8 eller högre.

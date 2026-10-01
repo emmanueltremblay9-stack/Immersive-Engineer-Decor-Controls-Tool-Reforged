@@ -1,0 +1,5 @@
+Stockerl aus imprägniertem Hoiz
+Werkstatteinrichtung
+<&recipe>Der Block is a praktische Werkstatteinrichtung für Arbeitsräume und Wartungseckn.<br>
+<br>
+Verwendung: Stell eam neben Werkbänke, Kistn und kompakte Maschinen.<br>

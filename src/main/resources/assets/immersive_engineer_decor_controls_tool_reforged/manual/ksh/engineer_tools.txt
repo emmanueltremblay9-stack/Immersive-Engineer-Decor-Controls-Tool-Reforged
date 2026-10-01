@@ -1,0 +1,99 @@
+Ingenieurswerkzüch
+Draachbar Werkstattzüch
+De Ingenieurswerkzüch-Sammlung brängk Handjeräte, Minemarkierer, Notverbruchsdinge, Esse för ongerwäächs un kleine Materialhölpe en dat selve Handbooch wie de Zier- un Stüerblöck.<br>
+<br>
+Dat Werkzüch es för Arbeit wigg vun en voll usjeröste Werkstatt jedaach: markier dä Wääch, nimm Vürrod met, erhol dich vun Fehler un erledig kleine Verarbeitungsarbeite vür Ort.
+<np>
+REDIA-Werkzüch
+Allzweckhölp met Dijamantbelaach
+<&redia_tool>Et REDIA-Werkzüch es en haltbare Hölp för flöcke Boddearbeit vür Ort. Bruch et op bearbeitbare Äd, öm Ackeräd ze maache.<br>
+<br>
+Bruch et aan en feste Fläch, wann de Tootsche bei der häs, öm en Tootschmarkierung us dingem Enventaar ze setze, ohne REDIA avzenutze. Boddearbeit, Schere, Axarbeit un Boomfälle bruche Haldbarkeit.
+<np>
+Ärzmahlhammer
+Handmahlwerkzüch
+<&crushing_hammer>Dä Ärz-Knötschhammer es e Handjering för et fröhe Verarbeide vun Iese un Jold.<br>
+<br>
+Jebruch: Maach en met ruuem Iese, ruuem Jold, Ieseärz, Deepslate-Ieseärz, Joldärz udder Deepslate-Joldärz, öm Immersive Engineering Iese- udder Joldstaub ze maache. Dä Hammer verliert Haltbarkeet un kütt zeröck en et Craftingjitter, bes hä kapott jeiht.<br>
+<br>
+Hä weed och beim Avbaue avjenutz un kann Ziele em Nohkampf zoröckstoße.
+<np>
+Spuursöker
+Jespeicherte Plätzmarkierung
+<&tracker>Dä Spuursöker speichert de Position vun einem Block direk em Jäjestand.<br>
+<br>
+Jebruch: Klick op ene Block, öm Dimension un Koordinate ze speichere. Dä Tooltip zeijt dä Platz. Bruch dä Spuursöker beim Schleiche, öm et Ziel ze lösche.<br>
+<br>
+Bruch en, öm Maschine, Tunnelavzweijunge, Fäänstüerunge udder onfädije Baustelle ze markiere, ih de met Werkzüch un Material zoröckkütts.
+<np>
+Ariadne-Koll
+Minewäächmarkierer
+<&ariadne_coal>Ariadne-Koll setz flöck schwatze Pile op feste Minesigge. Bruch se op en feste Fläch, öm de nächste Kurv, ene Ußjang udder en Avzweijung ze markiere. De Markierung kennt acht Richtunge op d'r aanjeklickte Fläch, och schräj.<br>
+<br>
+Ariadne-Koll es e widderverwendbar Markierwerkzüch met 100 Benutzunge. Jede erfoljreiche Markierung bruch eine Haldbarkeitspunkt. Unpassende Sigge wäde avjelehnt, anstatt dat Ding avzenutze.
+<np>
+Automatesch Stimulanzpäckche
+Notsprëtz
+<&stimpack>Dä Auto Stim Pack es e medezinesch Nootjering för jefohrlich Wartungsarbeid.<br>
+<br>
+Jebruch: Bruch en met de Hand för Heilung, koote Schutz un ene koote Bewegungsboost. Em Inventar kann hä bei wenig Jesundheet automatesch lossjonn un jeiht dann en de Afköhlzick.<br>
+<br>
+Hald eins parat, ih de huhe Plätz, freie Dräht udder jefährliche Minewääje uutprobeers.
+<np>
+Schlofsack
+Draachbar Rohzüch
+<&sleeping_bag>Dä Schlofsack es e wetterfest Ruhset för Arbeid wigg vum Bett.<br>
+<br>
+Jebruch: Bruch en en de Naach em Overworld, öm bes Morjens ze ruhe. Hä setz udder verschuuv dä Spawnpunkt nit.<br>
+<br>
+Hä refusesch Dag, unsechere Plätz met Monster noh draan un Dimensione, wo mer nit sech ruh kann. Jede jode Ruh verschleiß dä Sack.
+<np>
+Materialkeß
+Keß för Bouvürrod
+<&material_box>De Materialkess drät ene jroße Vorrat vun eine einfache, unveränderte un stapelbare Baustoff.<br>
+<br>
+Jebruch: Hald de Kess en de Haupthand un ene Materialstapel en de andere Hand, öm se ze lade. Bruch se met leerer anderer Hand, öm ene Stapel eruuszenehme.<br>
+<br>
+Se hält bes 512 Saache vun einer Zoot. Se refuseert Kesse en Kesse, nit stapelbar Uusröstung un ömjenannte udder data-jeänderte Stapel; dä Tooltip zeijt dä Ennhald.
+<np>
+Tauchluffkapsel
+Notluffvürrod
+<&diving_capsule>De Dauchloftkapsel es ene Nootvorrat aan Loft för Arbeid unger Wasser.<br>
+<br>
+Jebruch: Bruch se met de Hand, öm Loft opzevolle. Em Inventar kann se och automatesch lossjonn, wann de Loft bal alle es, un jeiht dann en de Afköhlzick.<br>
+<br>
+Nimm se met för övverflödde Mine, Rohrleitunge unger Wasser un Reparature en Pomperüüm.
+<np>
+Muslee-Riegelpräß
+Essenspräß
+<&musli_bar_press>De Muslee-Riejelpress määt us jewöhnlichem Äße kompakte Feldratione.<br>
+<br>
+Jebruch: Nemm Brot, ene Appel un Weize-, Mellune-, Kürbis-, Rude Beete- udder Industrial Hemp-Saame un bruch de Press. Ene jode Pressung verbroch vun allem eins, prüüf dä Platz, määt vier Muslee Melange-Riejel un deit de Press verschleiße.<br>
+<br>
+Wann jät fählt udder em Inventar kein Platz es, weed nix verbroch.
+<np>
+Muslee Melange Kraftriegel
+Flöcke Werkstatthappe
+<&musli_bar>Dä Muslee Melange Energieriejel es kompakte Äße us Brot, Sömereie un Obß.<br>
+<br>
+Bruuch: Iss en als Vürrod vür Ort, wann de Stüerunge, Rohre, Plattformen udder lange Maschineruumstrecke bous.
+<np>
+Jedankepräß
+Erfahrungsverdichter
+<&charged_lapis_squeezer>De Jedankepräß mäht us einem Lapislazoli un einer Erfahrungsstuf us dingem Enventaar jelade Lapislazoli.<br>
+<br>
+Jede erfoljreiche Ömwandlung deit däm Benutzer wieh, erschöppt en, wat Hunger uslöst, un mäht en koot blind. Ohne Lapislazoli, ohne XP udder wann hä ze noh am Dud es, jeiht et nit.
+<np>
+Jelade Lapislazoli
+Jespeicherte Erfahrung
+<&charged_lapis>Jelade Lapislazoli speichert ein Erfahrungsstuf. Verbruch en, öm de Stuf zoröckzekrieje, aktive Effekte fottzenemme un e besje Läve ze heile.<br>
+<br>
+Maach zoerscht en Jedankepräß. Jelade Lapislazoli entsteiht beim Bruche vun däm Werkzüch met Lapislazoli un XP.
+<np>
+Jrove Ieseschrot
+Ingenieurswerkzüchmaterial för de widderherjestallte Handwerksrezepte.
+<&iron_grit>Löht sich zo Iesebrikette<br>schmelze, tauch ävver nit för<br>wiggerföhrende Materialverarbeitung.
+<np>
+Jrove Joldschrot
+Ingenieurswerkzüchmaterial för de widderherjestallte Handwerksrezepte.
+<&gold_grit>Löht sich zo Joldbrikette<br>schmelze, tauch ävver nit för<br>wiggerföhrende Materialverarbeitung.

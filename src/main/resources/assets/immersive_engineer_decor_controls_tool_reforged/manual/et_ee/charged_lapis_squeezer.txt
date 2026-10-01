@@ -1,0 +1,7 @@
+Mõttepress
+Kogemuse tihendaja
+<&recipe>Mõttepress muudab lasuriidi ja kogemuse laetud lasuriidiks.<br>
+<br>
+Kasutamine: Hoia kaasas lasuriiti ja vähemalt üht kogemustaset ning kasuta tööriista. Õnnestunud pressimine kulutab ühe taseme ja ühe lasuriidi, teeb kasutajale haiget, kulutab pressi ning loob ühe laetud lasuriidi.<br>
+<br>
+See keeldub töötamast, kui kasutajal puudub lasuriit või XP või kui ta on surmale liiga lähedal.

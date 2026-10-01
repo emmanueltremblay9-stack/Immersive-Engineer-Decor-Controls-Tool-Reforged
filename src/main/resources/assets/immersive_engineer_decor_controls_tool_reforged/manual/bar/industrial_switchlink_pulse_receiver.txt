@@ -1,0 +1,7 @@
+Impulslinkempfänga
+Verbundene Steuerung
+<&recipe>A verbundener Impulsempfänga gibt entfernten Paneele an kurzen Redstone-Auslöser.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Rechtsklick auf'n Empfänga oder Auslösn vo da verbundenen Perle gibt an kurzen Impuls ab.<br>
+<br>
+Hinweis: Da Impuls setzt si nach seiner festgelegten Dauer selber zruck.

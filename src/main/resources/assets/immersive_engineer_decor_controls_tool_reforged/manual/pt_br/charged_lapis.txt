@@ -1,0 +1,7 @@
+Lápis-lazúli carregado
+Experiência armazenada
+<&recipe>O lápis-lazúli carregado armazena um nível de experiência criado com o espremedor de mentes.<br>
+<br>
+Uso: Consuma para recuperar um nível, remover efeitos ativos e restaurar um pouco de vida.<br>
+<br>
+O visor de receitas mostra o espremedor de mentes porque o lápis-lazúli carregado é produzido usando essa ferramenta com lápis-lazúli e experiência disponíveis.

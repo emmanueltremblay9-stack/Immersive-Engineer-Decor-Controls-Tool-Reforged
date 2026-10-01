@@ -1,0 +1,108 @@
+Construção industrial
+Paredes e remates de fábrica
+Os elementos gerais de construção incluem portas, janelas, luzes, tabuletas de advertência, remates e peças estruturais que não pertencem a uma secção mais específica.<br>
+<br>
+Consulta estas páginas para salas de fábrica, corredores de manutenção, sinalização de perigos e detalhes industriais práticos.
+<np>
+Lâmpada de ferro
+Luz de trabalho compacta
+<&iron_bulb_light>Este bloco fornece iluminação industrial compacta para corredores, passadiços e postos de trabalho.<br>
+<br>
+Uso: Instala-o em tetos, paredes ou rebordos onde é necessária iluminação de trabalho clara.<br>
+<np>
+Luz de rebordo de teto
+Luz de trabalho compacta
+<&iron_ceiling_edge_light>Este bloco fornece iluminação industrial compacta para corredores, passadiços e postos de trabalho.<br>
+<br>
+Uso: Instala-o em tetos, paredes ou rebordos onde é necessária iluminação de trabalho clara.<br>
+<np>
+Luz embutida de rebordo de piso
+Luz de trabalho compacta
+<&iron_floor_edge_light>Este bloco fornece iluminação industrial compacta para corredores, passadiços e postos de trabalho.<br>
+<br>
+Uso: Instala-o em tetos, paredes ou rebordos onde é necessária iluminação de trabalho clara.<br>
+<np>
+Luz embutida
+Luz de trabalho compacta
+<&iron_inset_light>Este bloco fornece iluminação industrial compacta para corredores, passadiços e postos de trabalho.<br>
+<br>
+Uso: Instala-o em tetos, paredes ou rebordos onde é necessária iluminação de trabalho clara.<br>
+<np>
+Tabuleta de atenção geral
+Sinalização de perigo
+<&sign_caution>A tabuleta de atenção geral identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de perigo
+Sinalização de perigo
+<&sign_danger>A tabuleta "Atenção: perigo extremo" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta decorativa
+Sinalização de perigo
+<&sign_decor>A tabuleta de sinalização de Engineer's Decor identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de defesa
+Sinalização de perigo
+<&sign_defense>A tabuleta "Atenção: sistema de defesa à frente" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de saída
+Sinalização de perigo
+<&sign_exit>Esta tabuleta identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de risco de incêndio
+Sinalização de perigo
+<&sign_firehazard>A tabuleta de risco de incêndio identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de alerta de geada
+Sinalização de perigo
+<&sign_frost>A tabuleta de alerta de geada identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de superfície quente
+Sinalização de perigo
+<&sign_hotsurface>A tabuleta "Atenção: superfície quente" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de fio sob tensão
+Sinalização de perigo
+<&sign_hotwire>A tabuleta "Atenção: fio sob tensão" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de risco de laser
+Sinalização de perigo
+<&sign_laser>A tabuleta de risco de laser identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de perigo mágico
+Sinalização de perigo
+<&sign_magichazard>A tabuleta "Atenção: perigo mágico" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de campo magnético
+Sinalização de perigo
+<&sign_magneticfield>A tabuleta "Atenção: campo magnético intenso" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>
+Tabuleta de perigo radioativo
+Sinalização de perigo
+<&sign_radioactive>A tabuleta de perigo radioativo identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>
+<np>

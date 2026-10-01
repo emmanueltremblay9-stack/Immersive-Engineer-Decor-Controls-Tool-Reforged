@@ -1,0 +1,7 @@
+Erco-dispremilo
+Mana ilo
+<&recipe>Mana ilo por frua laboro kun fero kaj oro.<br>
+<br>
+Uzo: Kun kruda fero, kruda oro, fererco, profundardeza fererco, orerco aŭ profundardeza orerco ĝi faras feran aŭ oran polvon de Immersive Engineering. Ĝi perdas daŭripovon kaj revenas al la krado ĝis rompiĝo.<br>
+<br>
+Ĝi ankaŭ eluziĝas dum minado kaj repuŝas en proksima batalo.

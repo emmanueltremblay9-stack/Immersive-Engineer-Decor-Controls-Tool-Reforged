@@ -1,0 +1,5 @@
+Teräspöytä
+Työpajan kaluste
+<&recipe>Tämä kuutio on käytännöllinen työpajakaluste työhuoneisiin ja huoltonurkkauksiin.<br>
+<br>
+Käyttö: Aseta penkkien, laatikoiden ja pienten koneiden viereen.<br>

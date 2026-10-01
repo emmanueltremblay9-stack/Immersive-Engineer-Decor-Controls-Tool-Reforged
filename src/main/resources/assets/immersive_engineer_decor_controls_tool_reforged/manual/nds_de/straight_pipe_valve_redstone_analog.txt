@@ -1,0 +1,5 @@
+Analog Flüssigkeitsventiel
+Deelen för Flüssigkeitsleitungen
+<&recipe>Dat analoge Redstone-Flüssigkeitsventiel is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Richt dat Ventiel na de wünschte Flussrichtung ut.<br>

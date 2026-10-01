@@ -1,0 +1,5 @@
+Tērauda sieta žoga vārti
+Apkopes piekļuves detaļa
+<&recipe>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>

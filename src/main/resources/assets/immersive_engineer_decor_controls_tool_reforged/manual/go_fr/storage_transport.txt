@@ -1,0 +1,41 @@
+Ranjement e transport
+Pièces de renabl e de débit
+Les pièces de ranjement e de transport comprenant les caisses, les futs, les entonous e les vanes servent a mener les choses den les petites instalaçons d'uzine.<br>
+<br>
+Empllayéz ces pajes pour arranger des salles de réserve, des lignes de tuyaux, des réservouers de service e des lignes de liqides contrôlées.
+<np>
+Caisse a étiqhette
+Étiqhette de réserve modifiable
+<&labeled_crate>Ç'te caisse a étiqhette ét faite pour trier les réserves cllèrement. N'en peut chanjer sa pllaqe de devant coume un ptit paniao d'atelier.<br>
+<br>
+Empllai : Fezéz un clic dret su la pllaqe d'étiqhette pour chanjer le nom de la caisse. Fezéz un clic dret su l'reste de la caisse pour ouvrir le ranjement de pièces d'installaçon, de composants e de fournitures d'entretien.<br>
+<np>
+Fut a liqides
+Éqhipement de ligne a liqides
+<&fluid_barrel>Ç'te pièce compacte de ligne a liqides sert ao petits réservouers, ao lignes de tuyaux, ao pouints de collecte e au débit contrôlë par redstone.<br>
+<br>
+Empllai : Pllacéz-la la où qe les tuyaux ou les seilles peuvent ateindr la face du réservouer.<br>
+<np>
+Entonou a liqides
+Éqhipement de ligne a liqides
+<&small_fluid_funnel>Le Petit entonou a ramasser les liqides ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Météz-le sous le pouint de collecte du liqide e menéz son contenu devers des réservouers ou des tuyaux pus bâs.<br>
+<np>
+Vane antir'tour de tuyau a liqides
+Éqhipement de ligne a liqides
+<&straight_pipe_valve>La Vane antir'tour de tuyau a liqides ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Alignéz la vane d'o le sens de débit voulu.<br>
+<np>
+Vane a liqides a redstone
+Éqhipement de ligne a liqides
+<&straight_pipe_valve_redstone>La Vane a liqides comandée par redstone ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Alignéz la vane d'o le sens de débit voulu.<br>
+<np>
+Vane a liqides analogiqe
+Éqhipement de ligne a liqides
+<&straight_pipe_valve_redstone_analog>La Vane a liqides analogiqe a redstone ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Alignéz la vane d'o le sens de débit voulu.<br>

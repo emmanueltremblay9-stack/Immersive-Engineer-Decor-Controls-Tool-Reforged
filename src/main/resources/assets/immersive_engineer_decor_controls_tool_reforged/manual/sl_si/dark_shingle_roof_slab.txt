@@ -1,0 +1,5 @@
+Strešna plošča iz temnih skodel
+Postaran strešni element
+<&recipe>Ta blok oblikuje temne, uporabne strešne linije za delavnice in industrijske lope.<br>
+<br>
+Uporaba: Kombiniraj dele, da ustvariš prepričljive strešne oblike.<br>

@@ -1,0 +1,5 @@
+Elektrische oven
+Compacte verwerkingseenheid
+<&recipe>De elektrische oven voert compacte smeltklussen op FE-energie uit en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: lever FE-energie en geschikt smeltmateriaal aan.<br>

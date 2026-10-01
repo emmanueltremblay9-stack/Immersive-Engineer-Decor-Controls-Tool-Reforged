@@ -1,0 +1,161 @@
+Klinkier i mur
+Caglanyja i bietonnyja abałonki
+Klinkier, šłakavaja cegła, armavany bieton i braniavoje škło stvarajuć masiŭnyja pavierchni dla haračych pamiaškanniaŭ, majsterań i abaronienaha ahladu.<br>
+<br>
+Vykarystoŭvaj adpaviednyja plity, prystupki, tonkija plity i mury, kab zaviaršyć krai, zachoŭvajučy fabryčny styl materyjałaŭ.
+<np>
+Błok klinkiernaj cegły
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_block>Hety błok dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Plita klinkiernaj cegły
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_slab>Hety błok dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Prystupki klinkiernaj cegły
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_stairs>Hety błok dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Mur klinkiernaj cegły
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_wall>Hety błok dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Błok zabrudžanaha klinkieru
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_stained_block>Błok zabrudžanaj klinkiernaj cegły dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Plita zabrudžanaha klinkieru
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_stained_slab>Plita zabrudžanaj klinkiernaj cegły dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Prystupki zabrudžanaha klinkieru
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_stained_stairs>Prystupki zabrudžanaj klinkiernaj cegły dadajuć paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Azdoblenaja klinkiernaja cegła
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_sastor_corner_block>Klinkiernaja cegła z azdobaj z piasčaniku dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Zahłyblenaja klinkiernaja cegła
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_recessed>Hety błok dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Klinkiernaja cegła z prarezami
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_vertically_slit>Klinkiernaja cegła z viertykalnymi prarezami dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Viertykalnaja klinkiernaja plita
+Caglany mur, paciamnieły ad sažy
+<&clinker_brick_vertical_slab_structured>Reljefnaja viertykalnaja klinkiernaja plita dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Klinkiernaja paŭplita
+Caglany mur, paciamnieły ad sažy
+<&halfslab_clinker_brick>Hety błok dadaje paciamnieły ad sažy caglany mur u piečavyja zały, asnovy kominaŭ i słužbovyja scieny.<br>
+<br>
+Vykarystannie: rabi z jaho scieny, azdablennie abo abałonku haračaj zony vakoł piečaŭ i katłoŭ.<br>
+<np>
+Błok šłakavaj cegły
+Ščylny fabryčny mur
+<&slag_brick_block>Hety błok dadaje ščylny šera-karyčnievy mur dla padmurkaŭ, padpornych scien i starych vytvorčych pavieciaŭ.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padmurki, padpornyja scieny i brudnyja fabryčnyja padłohi.<br>
+<np>
+Plita šłakavaj cegły
+Ščylny fabryčny mur
+<&slag_brick_slab>Hety błok dadaje ščylny šera-karyčnievy mur dla padmurkaŭ, padpornych scien i starych vytvorčych pavieciaŭ.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padmurki, padpornyja scieny i brudnyja fabryčnyja padłohi.<br>
+<np>
+Prystupki šłakavaj cegły
+Ščylny fabryčny mur
+<&slag_brick_stairs>Hety błok dadaje ščylny šera-karyčnievy mur dla padmurkaŭ, padpornych scien i starych vytvorčych pavieciaŭ.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padmurki, padpornyja scieny i brudnyja fabryčnyja padłohi.<br>
+<np>
+Mur šłakavaj cegły
+Ščylny fabryčny mur
+<&slag_brick_wall>Hety błok dadaje ščylny šera-karyčnievy mur dla padmurkaŭ, padpornych scien i starych vytvorčych pavieciaŭ.<br>
+<br>
+Vykarystannie: rabi z jaho staryja padmurki, padpornyja scieny i brudnyja fabryčnyja padłohi.<br>
+<np>
+Błok armavanaha bietonu
+Armavany bieton
+<&rebar_concrete>Hety błok — umacavanaja bietonnaja detal dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Plita armavanaha bietonu
+Armavany bieton
+<&rebar_concrete_slab>Hety błok — umacavanaja bietonnaja detal dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Prystupki armavanaha bietonu
+Armavany bieton
+<&rebar_concrete_stairs>Hety błok — umacavanaja bietonnaja detal dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Mur armavanaha bietonu
+Armavany bieton
+<&rebar_concrete_wall>Hety błok — umacavanaja bietonnaja detal dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Tonkaja plita armavanaha bietonu
+Armavany bieton
+<&halfslab_rebar_concrete>Hety błok — umacavanaja bietonnaja detal dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Plitka armavanaha bietonu
+Armavany bieton
+<&rebar_concrete_tile>Hety błok — umacavanaja bietonnaja detal dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Plita z armavanych bietonnych plitak
+Armavany bieton
+<&rebar_concrete_tile_slab>Hety błok — umacavanaja bietonnaja detal dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Plitka armavanaha bietonu
+Armavany bieton
+<&rebar_concrete_tile_stairs>Prystupki z armavanych bietonnych plitak — umacavanyja bietonnyja detali dla placovak pad mašyny, vybuchaachoŭnych scien i padłoh pahruzačnych adsiekaŭ.<br>
+<br>
+Vykarystannie: staŭ jaho pad mašynami, uzdoŭž słužbovych kalidoraŭ abo paŭsiul, dzie pabudovie patrebna ŭzmocnienaja asnova.<br>
+<np>
+Błok braniavoha škła
+Abaronieny ahlad
+<&panzerglass_block>Hety błok zachoŭvaje adkryty ahlad i pasuje da ŭzmocnienaj fabryčnaj kanstrukcyi.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie hulcy pavinny bačyć mašyny praz achoŭnuju pieraškodu.<br>
+<np>
+Plita braniavoha škła
+Abaronieny ahlad
+<&panzerglass_slab>Hety błok zachoŭvaje adkryty ahlad i pasuje da ŭzmocnienaj fabryčnaj kanstrukcyi.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie hulcy pavinny bačyć mašyny praz achoŭnuju pieraškodu.<br>

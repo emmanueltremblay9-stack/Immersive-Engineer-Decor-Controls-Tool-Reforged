@@ -1,0 +1,7 @@
+Glos-Zeitschaltuhr
+Tagesliachtsignal
+<&recipe>A Zeitschoita folgt dem Tagesabschnitt vom Wödzyklus.<br>
+<br>
+Verwendung: Nimm eam für Hofliachta, Rolläden und Fabriksteuerungen, de nur am Tag laufen solln.<br>
+<br>
+Hinweis: Braucht a Dimension mit Himmelsliacht.

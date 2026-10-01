@@ -1,0 +1,5 @@
+Forno de fusión de minerais
+Unidade compacta de procesamento
+<&recipe>O forno de fusión de minerais procesa minerais a alta temperatura nun espazo reducido de obradoiro.<br>
+<br>
+Uso: achega bloques minerais e enerxía para os traballos de fusión a alta temperatura.<br>

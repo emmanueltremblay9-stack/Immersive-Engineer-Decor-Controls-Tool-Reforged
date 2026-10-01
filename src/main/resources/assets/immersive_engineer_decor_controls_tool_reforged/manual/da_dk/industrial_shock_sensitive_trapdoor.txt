@@ -1,0 +1,7 @@
+Slagudløst lem
+Trykpuls
+<&recipe>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.

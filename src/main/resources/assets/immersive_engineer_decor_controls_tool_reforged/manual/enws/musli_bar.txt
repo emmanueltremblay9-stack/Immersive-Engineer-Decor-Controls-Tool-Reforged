@@ -1,0 +1,5 @@
+Muslee Melange Power Bar
+Fast shop snack
+<&recipe>Lo, the Muslee Melange Power Bar is a compact food item made from bread, seeds, and fruit.<br>
+<br>
+Usage: Thou shalt Eat it as field food whilst placing controls, pipes, platforms, or long machine-room runs.

@@ -1,0 +1,5 @@
+Gamle træplanker
+Ældet værkstedstræ
+<&recipe>De gamle industritræplanker giver ældet værkstedstræ til gulve, trin, døre og varm indvendig udsmykning.<br>
+<br>
+Brug: Brug den til gamle værkstedsgulve, trapper, døre og udsmykning.<br>

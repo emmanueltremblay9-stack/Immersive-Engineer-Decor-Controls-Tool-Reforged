@@ -1,0 +1,7 @@
+Kutija za materijal
+Kutija građevinskih zaliha
+<&recipe>Kutija za materijal nosi veliku zalihu jednog običnog, neizmenjenog i složivog građevinskog materijala.<br>
+<br>
+Držite kutiju u glavnoj ruci, a materijal u drugoj da ga ubacite; sa praznom drugom rukom izvadite jedan složaj.<br>
+<br>
+Prima 512 predmeta jedne vrste, odbija druge kutije, nesloživu opremu i izmenjene složaje i prikazuje sadržaj u opisu.

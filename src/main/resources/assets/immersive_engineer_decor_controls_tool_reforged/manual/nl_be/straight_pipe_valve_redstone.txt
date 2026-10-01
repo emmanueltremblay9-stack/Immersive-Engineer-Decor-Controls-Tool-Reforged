@@ -1,0 +1,5 @@
+Redstonegestuurd vloeistofventiel
+Onderdelen voor vloeistofleidingen
+<&recipe>Het redstonegestuurde vloeistofventiel is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: lijn de klep uit met de gewenste stroomrichting.<br>

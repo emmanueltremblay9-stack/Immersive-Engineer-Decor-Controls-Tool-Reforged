@@ -1,0 +1,7 @@
+Krāsains jutīgais stikls
+Signāla stikls
+<&recipe>Uz Redstone reaģējošs stikla bloks saglabā redzamību un rāda signāla stāvokli.<br>
+<br>
+Lietošana: izmanto vadības telpu logos, izgaismotos paneļos un aizsargājošā rūpnīcas stiklojumā.<br>
+<br>
+Piezīmes: maina stāvokli no tuvumā esošas Redstone barošanas.

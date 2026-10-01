@@ -1,0 +1,7 @@
+Lapis kargatua
+Gordetako esperientzia
+<&recipe>Lapis kargatuak adimen-zukugailuaren bidez sortutako esperientzia-maila bat gordetzen du.<br>
+<br>
+Erabilera: kontsumitu maila bat berreskuratzeko, efektu aktiboak kentzeko eta osasun kantitate txiki bat berreskuratzeko.<br>
+<br>
+Errezeta-widgetak adimen-zukugailua erakusten du, lapis kargatua tresna hori erabiliz sortzen baita, lapisa eta XP eskura dituzula.

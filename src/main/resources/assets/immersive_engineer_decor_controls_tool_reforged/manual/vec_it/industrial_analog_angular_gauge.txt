@@ -1,0 +1,7 @@
+Misurador anałòjego
+Misurador de segnal
+<&recipe>Un misurador conpato da sala controło el mostra ła potensa de redstone in modo ciaro sul paneło.<br>
+<br>
+Uso: mòntalo dove serve controlar ła potensa de redstone visina co un colpo de ocio.<br>
+<br>
+Da saver: el leze ła potensa de redstone visina da 0 a 15.

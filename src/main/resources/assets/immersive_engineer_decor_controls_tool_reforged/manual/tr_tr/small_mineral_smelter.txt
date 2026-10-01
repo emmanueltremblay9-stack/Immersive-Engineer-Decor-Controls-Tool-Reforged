@@ -1,0 +1,5 @@
+Mineral Eritici
+Küçük işleme birimi
+<&recipe>Mineral eritici, az atölye alanında yüksek sıcaklıklı mineral işleme yapar.<br>
+<br>
+Kullanım: Yüksek sıcaklıkta eritme için mineral blokları ve güç verin.<br>

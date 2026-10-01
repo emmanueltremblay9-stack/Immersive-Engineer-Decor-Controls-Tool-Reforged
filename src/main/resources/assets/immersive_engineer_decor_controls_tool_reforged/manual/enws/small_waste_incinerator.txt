@@ -1,0 +1,5 @@
+Refuse Incinerator
+Compact Processing Engine
+<&recipe>The Refuse Incinerator destroys unwanted items whilst taking little room in thy workshop.<br>
+<br>
+Use: Feed its queue with unwanted items alone.<br>

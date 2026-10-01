@@ -1,0 +1,5 @@
+Mineralschmelzor
+Gleene Vorarbeedungseenheed
+<&recipe>Dor Mineralschmelzor vorarbeeded Minerale bei hoher Hiddze uff wen’sch Wergschdaddpladdz.<br>
+<br>
+Nuddzung: Führ Mineralblögge un Energie für Schmelzarbeedn bei hoher Hiddze zu.<br>

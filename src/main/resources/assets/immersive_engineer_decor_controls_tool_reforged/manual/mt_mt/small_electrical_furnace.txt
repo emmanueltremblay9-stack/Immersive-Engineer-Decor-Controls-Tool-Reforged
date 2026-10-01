@@ -1,0 +1,5 @@
+Forn elettriku
+Unità kompatta tal-ipproċessar
+<&recipe>Il-forn elettriku jagħmel xogħol kompatt ta' tidwib b'FE, fi spazju żgħir fil-ħanut tax-xogħol.<br>
+<br>
+Użu: ipprovdi FE u materjal validu għat-tidwib.<br>

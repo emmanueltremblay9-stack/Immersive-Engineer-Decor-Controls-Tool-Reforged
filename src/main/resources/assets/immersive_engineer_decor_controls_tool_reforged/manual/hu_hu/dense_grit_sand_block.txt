@@ -1,0 +1,5 @@
+Tömör kavicsos homok
+Munkaterületi talajburkolat
+<&recipe>Ez a blokk tömörített, kitaposott felületet ad a kültéri munkaterületeknek.<br>
+<br>
+Használat: rakodóajtók, kültéri tartályok köré és gépudvarokra fektesd.<br>

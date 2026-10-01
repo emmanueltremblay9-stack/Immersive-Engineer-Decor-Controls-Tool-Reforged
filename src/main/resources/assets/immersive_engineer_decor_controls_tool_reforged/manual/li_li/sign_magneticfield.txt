@@ -1,0 +1,5 @@
+Magneetveldbörd
+Gevaormarkering
+<&recipe>'t Börd "Pas op, sjtèrk magneetveld" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>

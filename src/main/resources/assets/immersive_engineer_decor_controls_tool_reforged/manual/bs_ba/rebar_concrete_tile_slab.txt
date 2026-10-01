@@ -1,0 +1,5 @@
+Ploča od armiranih betonskih pločica
+Armirani beton
+<&recipe>Ovaj blok je dio od očvrslog betona za postolja mašina, zaštitne zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Upotreba: Koristite ga ispod mašina, duž servisnih hodnika ili bilo gdje građevini treba ojačana podloga.<br>

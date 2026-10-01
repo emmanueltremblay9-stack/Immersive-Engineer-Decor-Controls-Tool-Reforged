@@ -1,0 +1,5 @@
+Solcellepanel
+Hjelpemiddel på fabrikkgulvet
+<&recipe>Det lille solcellepanelet er en nytteblokk for fabrikkgulvet, innen håndverk, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: gi det åpen himmel og koble til utstyr med lavt forbruk.<br>

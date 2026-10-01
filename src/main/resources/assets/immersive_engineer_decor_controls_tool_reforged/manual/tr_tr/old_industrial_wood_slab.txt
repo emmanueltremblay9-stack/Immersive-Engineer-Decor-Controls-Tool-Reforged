@@ -1,0 +1,5 @@
+Eski Sanayi Tipi Ahşap Basamak
+Eskimiş atölye ahşabı
+<&recipe>Bu blok; zeminler, basamaklar, kapılar ve sıcak görünümlü iç süslemeler için eskimiş atölye ahşabı ekler.<br>
+<br>
+Kullanım: Eski atölye zeminlerinde, merdivenlerde, kapılarda ve süslemelerde kullanın.<br>

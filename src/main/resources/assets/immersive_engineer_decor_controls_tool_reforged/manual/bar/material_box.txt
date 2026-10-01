@@ -1,0 +1,7 @@
+Materialkistn
+Bauvorrat
+<&recipe>Die Materialkistn trägt an großn Vorrat von genau oan normalen, unveränderten, stapelbaren Baumaterial.<br>
+<br>
+Benutzung: Kistn in da Haupthand und Materialstapel in da Nebenhand zum Laden. Mit leerer Nebenhand oan Stapel ausnehma.<br>
+<br>
+Sie hält bis 512 Stück, nur oa Sorte, und verweigert verschachtelte Kistn, net stapelbare Ausrüstung und veränderte Stapel; Inhalt steht im Hinweis.

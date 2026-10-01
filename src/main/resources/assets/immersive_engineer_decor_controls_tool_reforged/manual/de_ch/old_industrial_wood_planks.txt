@@ -1,0 +1,5 @@
+Alti Holzbrätter
+Alts Werkstattholz
+<&recipe>D'alte Fabrikholzbrätter bringed gealterets Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>

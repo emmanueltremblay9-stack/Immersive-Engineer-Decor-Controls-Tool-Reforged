@@ -1,0 +1,7 @@
+Sensor gouloù
+Merzout signal
+<&recipe>Ur sensor gouloù a dro sklerijenn lec'hel da reolerezh Redstone.<br>
+<br>
+Implij: Implijit anezhañ evit gouloù emgefre, stalafioù ha kelc'hiadoù gwelusted.<br>
+<br>
+Notenn: Reiñ a ra energiezh pa'z eo ar sklerijenn diaoz 8 pe uheloc'h.

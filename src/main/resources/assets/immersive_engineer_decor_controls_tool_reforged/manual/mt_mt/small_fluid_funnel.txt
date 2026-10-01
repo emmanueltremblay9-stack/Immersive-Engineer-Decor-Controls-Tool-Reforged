@@ -1,0 +1,5 @@
+Lembut tal-fluwidu
+Tagħmir tal-linji tal-fluwidu
+<&recipe>Il-lembut żgħir tal-fluwidu hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: qiegħdu taħt il-punt tal-ġbir tal-fluwidu u mexxi l-kontenut maħżun tiegħu lejn tankijiet jew pajpijiet aktar baxxi.<br>

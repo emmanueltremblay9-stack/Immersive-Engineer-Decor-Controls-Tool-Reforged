@@ -1,0 +1,789 @@
+Redstone Controlz
+Meterz an signal fittingz
+Control hardware turns hidden redstone into readable factory panelz, sensorz, indicatorz, switchiez, alarmz, an linked signal fittingz, kitty.<br>
+<br>
+Use dese pages fer operator stations, signal boards, safety circuits, an remote controlz, meow.
+<np>
+Arrow-Hit Targetz
+Lil momentary pulsez
+<&arrow_target>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Doorway Kitty Spotter
+Redstone Controlz Here
+<&door_sensor_switch>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Elevator Poke Button
+Redstone Controlz Here
+<&elevator_button>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Glassy Poke Button
+Redstone Controlz Here
+<&glass_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Glassy Poke Button
+Redstone Controlz Here
+<&glass_small_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Glassy Touchy Button
+Redstone Controlz Here
+<&glass_touch_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Machine Poke Button
+Redstone Controlz Here
+<&industrial_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Poke Button Thing
+Redstone Controlz Here
+<&industrial_double_pole_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Guarded Machine Poke Button
+Redstone Controlz Here
+<&industrial_fenced_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Knocky Button
+Redstone Controlz Here
+<&industrial_knock_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Old Fancy Poke Button
+Redstone Controlz Here
+<&oldfancy_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Old Fancy Poke Button
+Redstone Controlz Here
+<&oldfancy_small_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Old Fancy Chain-Pull Button
+Lil momentary pulsez
+<&oldfancy_spring_reset_chain>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Rustic Poke Button
+Redstone Controlz Here
+<&rustic_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Rustic Nail-Poke Button
+Redstone Controlz Here
+<&rustic_nail_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Lil Rustic Poke Button
+Redstone Controlz Here
+<&rustic_small_button>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Rustic Chain-Pull Button
+Lil momentary pulsez
+<&rustic_spring_reset_chain>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.
+<np>
+Glassy Steppin Plate
+Pressy pulsez
+<&glass_contact_mat>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Glassy Doorway Contactz
+Pressy pulsez
+<&glass_door_contact_mat>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Steppin Mat Thing
+Pressy pulsez
+<&industrial_contact_mat>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Doorway Steppin Mat
+Pressy pulsez
+<&industrial_door_contact_mat>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Fall-Thru Spotter Thing
+Signal sniffin
+<&industrial_fallthrough_detector>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Foot-Poke Button Thing
+Redstone Controlz Here
+<&industrial_foot_button>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Factory Bump-Open Door
+Pressy pulsez
+<&industrial_high_sensitive_trapdoor>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Bump-Sensing Mat Thing
+Pressy pulsez
+<&industrial_shock_sensitive_contact_mat>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Bump-Open Trapdoor Thing
+Pressy pulsez
+<&industrial_shock_sensitive_trapdoor>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Reddy Powah Flower
+Pressy pulsez
+<&red_power_plant>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Rustic Steppin Plate
+Pressy pulsez
+<&rustic_contact_plate>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Rustic Doorway Pressy Thing
+Pressy pulsez
+<&rustic_door_contact_plate>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Rustic Fall Spotter
+Signal sniffin
+<&rustic_fallthrough_detector>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Rustic Bump-Open Door
+Pressy pulsez
+<&rustic_high_sensitive_trapdoor>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Rustic Bump Plate
+Pressy pulsez
+<&rustic_shock_sensitive_plate>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Rustic Bump-Open Door
+Pressy pulsez
+<&rustic_shock_sensitive_trapdoor>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Yellowy Powah Flower
+Pressy pulsez
+<&yellow_power_plant>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.
+<np>
+Glassy Daytime Tick-Tock
+Daytime signalz
+<&glass_day_timer>A timer switch follows da daytime part of da world cycle, kitty.<br>
+<br>
+How to: Use fer yard lampz, shutters, an factory controlz dat should only run by day, meow.<br>
+<br>
+Kitty note: Needs a dimension dat haz skylight.
+<np>
+Glassy Entity Spotter
+Signal sniffin
+<&glass_entity_detector>Entity spotter watches nearby movement without a visible floor plate, kitty.<br>
+<br>
+How to: Connect to doorz, lampz, alarmz, or machine interlocks, meow.<br>
+<br>
+Kitty note: Scans a lil area round da bluk.
+<np>
+Glassy Interval Signalz
+Timed pulsez
+<&glass_interval_timer>Lil timer switch gives a scheduled redstone pulse, kitty.<br>
+<br>
+How to: Use where a lil mechanism needs periodic or delayed controlz, meow.<br>
+<br>
+Kitty note: Uses scheduled redstone pulsez.
+<np>
+Glassy Line Spotter
+Signal sniffin
+<&glass_linear_entity_detector>Entity spotter watches nearby movement without a visible floor plate, kitty.<br>
+<br>
+How to: Connect to doorz, lampz, alarmz, or machine interlocks, meow.<br>
+<br>
+Kitty note: Scans a lil area round da bluk.
+<np>
+Bluk Spotter
+Signal sniffin
+<&industrial_block_detector>Bluk spotter checks whether da space it faces haz somethin in it, kitty.<br>
+<br>
+How to: Point at da machine face, buffer, or guarded space u wants to watch, meow.<br>
+<br>
+Kitty note: Powers up when da bluk it faces iz NOT air.
+<np>
+Daytime Tick-Tock Thing
+Daytime signalz
+<&industrial_day_timer>A timer switch follows da daytime part of da world cycle, kitty.<br>
+<br>
+How to: Use fer yard lampz, shutters, an factory controlz dat should only run by day, meow.<br>
+<br>
+Kitty note: Needs a dimension dat haz skylight.
+<np>
+Entity Spotter Thing
+Signal sniffin
+<&industrial_entity_detector>Entity spotter watches nearby movement without a visible floor plate, kitty.<br>
+<br>
+How to: Connect to doorz, lampz, alarmz, or machine interlocks, meow.<br>
+<br>
+Kitty note: Scans a lil area round da bluk.
+<np>
+Interval Tick-Tock Thing
+Timed pulsez
+<&industrial_interval_timer>Lil timer switch gives a scheduled redstone pulse, kitty.<br>
+<br>
+How to: Use where a lil mechanism needs periodic or delayed controlz, meow.<br>
+<br>
+Kitty note: Uses scheduled redstone pulsez.
+<np>
+Light Sniffer Thing
+Signal sniffin
+<&industrial_light_sensor>Light sensor turns local brightness into redstone controlz, kitty.<br>
+<br>
+How to: Use fer automatic lampz, shutters, an visibility circuits, meow.<br>
+<br>
+Kitty note: Powers up at raw brightness 8 or moar.
+<np>
+Storm Sniffer Thing
+Signal sniffin
+<&industrial_lightning_sensor>Storm sensor runs da warnings while thunder iz happenin, kitty.<br>
+<br>
+How to: Put under open sky an connect to lampz or alarmz, meow.<br>
+<br>
+Kitty note: Needs thunder AND open access to sky.
+<np>
+Line Entity Spotter
+Signal sniffin
+<&industrial_linear_entity_detector>Entity spotter watches nearby movement without a visible floor plate, kitty.<br>
+<br>
+How to: Connect to doorz, lampz, alarmz, or machine interlocks, meow.<br>
+<br>
+Kitty note: Scans a lil area round da bluk.
+<np>
+Rain Sniffer Thing
+Signal sniffin
+<&industrial_rain_sensor>Weather sensor turns rain fallin on its position into redstone, kitty.<br>
+<br>
+How to: Mount where da bluk above can get rained on, meow.<br>
+<br>
+Kitty note: Checks fer rain above da sensor.
+<np>
+Glassy Stay-Put Switch
+Redstone Controlz Here
+<&glass_rotary_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Glassy Stay-Put Touchy Thing
+Redstone Controlz Here
+<&glass_touch_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Stampy-Colur Sensitive Glassy Stuff
+Signal glassy stuffz
+<&orange_sensitiveglass>Redstone-reactive glass bluk keeps da view clear while showin signal state, kitty.<br>
+<br>
+How to: Use in control-room windowz, lit panelz, an guarded factory glass, meow.<br>
+<br>
+Kitty note: Changes state frum nearby redstone powah.
+<np>
+Glowy Sensitive Glassy Stuff
+Signal glassy stuffz
+<&sensitive_glass_block>Redstone-reactive glass bluk keeps da view clear while showin signal state, kitty.<br>
+<br>
+How to: Use in control-room windowz, lit panelz, an guarded factory glass, meow.<br>
+<br>
+Kitty note: Changes state frum nearby redstone powah.
+<np>
+Colorful Sensitive Glassy Stuff
+Signal glassy stuffz
+<&stained_sensitiveglass>Redstone-reactive glass bluk keeps da view clear while showin signal state, kitty.<br>
+<br>
+How to: Use in control-room windowz, lit panelz, an guarded factory glass, meow.<br>
+<br>
+Kitty note: Changes state frum nearby redstone powah.
+<np>
+Glassy Bar Meter
+Signal meterz
+<&glass_vertical_bar_gauge>Lil control-room meter shows redstone strength as a clear panel reading, kitty.<br>
+<br>
+How to: Mount where u can check neighboring redstone powah at a glance, meow.<br>
+<br>
+Kitty note: Reads nearby redstone strength frum 0 to 15.
+<np>
+Analog Meter Thing
+Signal meterz
+<&industrial_analog_angular_gauge>Lil control-room meter shows redstone strength as a clear panel reading, kitty.<br>
+<br>
+How to: Mount where u can check neighboring redstone powah at a glance, meow.<br>
+<br>
+Kitty note: Reads nearby redstone strength frum 0 to 15.
+<np>
+Voltmeter Thingy
+Signal meterz
+<&industrial_analog_horizontal_gauge>Lil control-room meter shows redstone strength as a clear panel reading, kitty.<br>
+<br>
+How to: Mount where u can check neighboring redstone powah at a glance, meow.<br>
+<br>
+Kitty note: Reads nearby redstone strength frum 0 to 15.
+<np>
+Digital Meter Thing
+Signal strength u can readz
+<&industrial_small_digital_gauge>Lil control-room meter shows redstone strength as a clear panel reading, kitty.<br>
+<br>
+How to: Mount where u can check neighboring redstone powah at a glance, meow.<br>
+<br>
+Kitty note: Reads nearby redstone strength frum 0 to 15.
+<np>
+Glassy Tube Meter
+Signal meterz
+<&industrial_tube_gauge>Lil control-room meter shows redstone strength as a clear panel reading, kitty.<br>
+<br>
+How to: Mount where u can check neighboring redstone powah at a glance, meow.<br>
+<br>
+Kitty note: Reads nearby redstone strength frum 0 to 15.
+<np>
+Analog Bar Meter Thing
+Signal meterz
+<&industrial_vertical_bar_gauge>Lil control-room meter shows redstone strength as a clear panel reading, kitty.<br>
+<br>
+How to: Mount where u can check neighboring redstone powah at a glance, meow.<br>
+<br>
+Kitty note: Reads nearby redstone strength frum 0 to 15.
+<np>
+Alarm Glow Thing
+Signal peekz
+<&industrial_alarm_lamp>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Alarm WEE-OO Thing
+Signal peekz
+<&industrial_alarm_siren>Alarm Siren iz face-mounted redstone indikatr. Its powered state followz da signal frum da bluk itz stuck to.<br>
+<br>
+How to: Attach to a solid face an gib powah fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Siren refreshes once each second while its attached signal stays active.
+<np>
+Blinky LEDz
+Signal peekz
+<&industrial_blinking_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Greeny Blinky LEDz
+Signal peekz
+<&industrial_green_blinking_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Greeny LEDz
+Signal peekz
+<&industrial_green_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Reddy LEDz
+Signal peekz
+<&industrial_red_blinking_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Reddy LEDz
+Signal peekz
+<&industrial_red_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Whitey Blinky LEDz
+Signal peekz
+<&industrial_white_blinking_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Whitey LEDz
+Signal peekz
+<&industrial_white_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Yellowy Blinky LEDz
+Signal peekz
+<&industrial_yellow_blinking_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Yellowy LEDz
+Signal peekz
+<&industrial_yellow_led>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Rustic Flag Signal Thing
+Signal peekz
+<&rustic_semaphore>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.
+<np>
+Comparator Switchy
+Attached signalz
+<&industrial_comparator_switch>Lil sensor switch reads da bluk it sits on an turns dat reading into simple panel output, kitty.<br>
+<br>
+How to: Mount on inventories, tankz, or redstone hardware. When da attached bluk reports comparator, container, or redstone output, switch gives full-strength redstone, meow.<br>
+<br>
+Kitty note: Turns storage levlz or hidden wiring into clear YISS/NAW control linez.
+<np>
+Dimmer Thingy
+Changeable signalz
+<&industrial_dimmer>Twisty control dials redstone strength frum a lil panel face, kitty.<br>
+<br>
+How to: Right-click fer stepping output upward, den back to zero after full strength, meow.<br>
+<br>
+Kitty note: Output strength goes frum 0 to 15.
+<np>
+STOP-NAO Button
+Redstone Controlz Here
+<&industrial_estop_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Huperr Stopper
+Redstone Controlz Here
+<&industrial_hopper_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Knocky Switch
+Redstone Controlz Here
+<&industrial_knock_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Flippy Lever Thing
+Redstone Controlz Here
+<&industrial_lever>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Two-Poke Machine Switchy
+Redstone Controlz Here
+<&industrial_machine_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Pull-Handle Thingy
+Redstone Controlz Here
+<&industrial_pull_handle>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Twisty Lever Thing
+Redstone Controlz Here
+<&industrial_rotary_lever>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Twisty Machine Switchy
+Redstone Controlz Here
+<&industrial_rotary_machine_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Contact Lever Thingy
+Redstone Controlz Here
+<&industrial_small_lever>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Switchy Thing
+Redstone Controlz Here
+<&industrialswitch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Light Switchy Thing
+Redstone Controlz Here
+<&light_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Valvee Switchy
+Redstone Controlz Here
+<&valve_wheel_switch>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Boxed Pulsy Receiver
+Linky controlz
+<&industrial_switchlink_cased_pulse_receiver>Boxed linked pulse receiver gives remote panelz a short redstone triggur, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Right-click da receiver or triggur da linked perl fer a short pulse, meow.<br>
+<br>
+Kitty note: Pulse resets itself after da scheduled length.
+<np>
+Boxed Linky Receiver
+Linky controlz
+<&industrial_switchlink_cased_receiver>Boxed linked receiver gives remote panelz a tough redstone target, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Right-click da receiver itself fer flipping it by paw, meow.<br>
+<br>
+Kitty note: Tiptoe-use da linked perl fer togglin dis receiver.
+<np>
+Pulsy Linky Receiver
+Linky controlz
+<&industrial_switchlink_pulse_receiver>Linked pulse receiver gives remote panelz a short redstone triggur, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Right-click da receiver or triggur da linked perl fer a short pulse, meow.<br>
+<br>
+Kitty note: Pulse resets itself after da scheduled length.
+<np>
+Pulsy Linky Relay Thing
+Linky controlz
+<&industrial_switchlink_pulse_relay>Relay-shaped fitting gives panel buildz a lil local switch spot, kitty.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits. Use receiver blukz when u needs linked-perl activation, meow.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Switchy Link Receiver Thing
+Linky controlz
+<&industrial_switchlink_receiver>Linked receiver gives remote panelz a full-strength redstone target, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Right-click da receiver itself fer flipping it by paw, meow.<br>
+<br>
+Kitty note: Tiptoe-use da linked perl fer togglin dis receiver.
+<np>
+Analog Linky Receiver
+Linky controlz
+<&industrial_switchlink_receiver_analog>Linked receiver gives control panelz a visible remote target, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Tiptoe-use dat perl fer activatin da receiver remotely, meow.<br>
+<br>
+Kitty note: Dis receiver gives a full redstone signal when triggered.
+<np>
+Switchy Link Relay Thing
+Linky controlz
+<&industrial_switchlink_relay>Relay-shaped fitting gives panel buildz a lil local switch spot, kitty.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits. Use receiver blukz when u needs linked-perl activation, meow.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Analog Linky Relay Thing
+Linky controlz
+<&industrial_switchlink_relay_analog>Relay-shaped fitting gives panel buildz a lil local switch spot, kitty.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits. Use receiver blukz when u needs linked-perl activation, meow.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Switchy Link Perl
+Linky controlz
+<&switchlink_pearl>Linked perl remembers a receiver target fer remote factory controlz, kitty.<br>
+<br>
+How to: Click a Switchy Link Receiver wif an Ender Perl fer makin one. Tiptoe-use da linked perl to activate da remembered receiver, meow.<br>
+<br>
+Kitty note: Target must be loaded, in da same dimension, AND within reach.
+<np>
+Old Fancy Flippy Lever
+Redstone Controlz Here
+<&oldfancy_bistableswitch1>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Old Fancy Twisty Lever
+Redstone Controlz Here
+<&oldfancy_bistableswitch2>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Rustic Twisty Lever
+Redstone Controlz Here
+<&rustic_angular_lever>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Rustic Flippy Lever
+Redstone Controlz Here
+<&rustic_lever>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Rustic Flippy Nail Lever
+Redstone Controlz Here
+<&rustic_nail_lever>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.
+<np>
+Rustic Two-Hinge Flippy Lever
+Redstone Controlz Here
+<&rustic_two_hinge_lever>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.

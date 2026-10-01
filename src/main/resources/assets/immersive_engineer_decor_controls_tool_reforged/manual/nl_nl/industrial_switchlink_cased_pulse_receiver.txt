@@ -1,0 +1,7 @@
+Pulsontvanger met behuizing
+Gekoppelde bediening
+<&recipe>Een gekoppelde pulsontvanger met behuizing geeft bedieningspanelen op afstand een korte redstonepuls.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Rechtsklik op de ontvanger of activeer de gekoppelde parel om een korte puls af te geven.<br>
+<br>
+Opmerking: de puls eindigt vanzelf na de ingestelde duur.

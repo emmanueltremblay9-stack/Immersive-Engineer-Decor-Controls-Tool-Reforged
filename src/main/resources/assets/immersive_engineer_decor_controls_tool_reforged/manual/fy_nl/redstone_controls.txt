@@ -1,0 +1,789 @@
+Redstonestjoeringen
+Mjitters en sinjaalûnderdielen
+Bestjoeringsapparatuer set ferburgen redstone om yn dúdlike fabrykspanielen, sensoren, oanwizers, skeakelers, alarmen en keppele sinjaalûnderdielen.<br>
+<br>
+Brûk dizze siden by it bouwen fan betsjinningsposten, sinjaalbuorden, feilichheidsskeakelingen en ôfstânsbestjoeringen.
+<np>
+Pylkdoel
+Koarte puls
+<&arrow_target>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Doarsensor
+Redstonestjoering
+<&door_sensor_switch>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Liftknop
+Redstonestjoering
+<&elevator_button>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Glêzen knop
+Redstonestjoering
+<&glass_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Glêzen knop
+Redstonestjoering
+<&glass_small_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Glêzen oanrekkingsknop
+Redstonestjoering
+<&glass_touch_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Masineknop
+Redstonestjoering
+<&industrial_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Knop
+Redstonestjoering
+<&industrial_double_pole_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Masineknop mei beskermbeugel
+Redstonestjoering
+<&industrial_fenced_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Klopknop
+Redstonestjoering
+<&industrial_knock_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Alde sierlike knop
+Redstonestjoering
+<&oldfancy_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Alde sierlike knop
+Redstonestjoering
+<&oldfancy_small_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Alde sierlike kettingknop
+Koarte puls
+<&oldfancy_spring_reset_chain>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Rustike knop
+Redstonestjoering
+<&rustic_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Rustike spikerknop
+Redstonestjoering
+<&rustic_nail_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Rustike lytse knop
+Redstonestjoering
+<&rustic_small_button>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Rustike kettingknop
+Koarte puls
+<&rustic_spring_reset_chain>In momintskeakeler jout in dúdlike redstonepuls op folle sterkte.<br>
+<br>
+Gebrûk: Brûk him om masines te starten, doarren te ûntsluten, alarmen ôfgean te litten of skeakelingen ien kear te aktivearjen.<br>
+<br>
+Opmerking: Set himsels werom nei syn ynplande puls.
+<np>
+Glêzen kontaktplaat
+Drukpuls
+<&glass_contact_mat>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Glêzen doarkontakt
+Drukpuls
+<&glass_door_contact_mat>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Kontaktmat
+Drukpuls
+<&industrial_contact_mat>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Doarkontaktmat
+Drukpuls
+<&industrial_door_contact_mat>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Trochfaldetektor
+Sinjaaldeteksje
+<&industrial_fallthrough_detector>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Foetknop
+Redstonestjoering
+<&industrial_foot_button>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Yndustrieel stjitfallûk
+Drukpuls
+<&industrial_high_sensitive_trapdoor>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Stjitkontaktmat
+Drukpuls
+<&industrial_shock_sensitive_contact_mat>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Stjitfallûk
+Drukpuls
+<&industrial_shock_sensitive_trapdoor>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Reade stroomplant
+Drukpuls
+<&red_power_plant>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Rustike drukplaat
+Drukpuls
+<&rustic_contact_plate>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Rustike doardrukplaat
+Drukpuls
+<&rustic_door_contact_plate>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Rustike trochfaldetektor
+Sinjaaldeteksje
+<&rustic_fallthrough_detector>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Rustyk stjitfallûk
+Drukpuls
+<&rustic_high_sensitive_trapdoor>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Rustike stjitplaat
+Drukpuls
+<&rustic_shock_sensitive_plate>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Rustyk stjitfallûk
+Drukpuls
+<&rustic_shock_sensitive_trapdoor>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Giele stroomplant
+Drukpuls
+<&yellow_power_plant>In kontaktskeakeler stjoert in koart sinjaal troch beweging op de flier of fan in fallûk.<br>
+<br>
+Gebrûk: Pleats him dêr't entiteiten troch in ûnderhâldspaad, in laadpunt of in bewekke rûte komme.<br>
+<br>
+Opmerking: Jout in koarte puls nei kontakt mei in entiteit.
+<np>
+Glêzen deitiidklok
+Deiljochtsinjaal
+<&glass_day_timer>In tiidskeakeler folget it deiljochtdiel fan de wrâldsyklus.<br>
+<br>
+Gebrûk: Brûk him foar lampen op it hiem, lûken en fabryksbestjoering dy't allinnich oerdeis wurkje moat.<br>
+<br>
+Opmerking: Hat in diminsje mei himelljocht nedich.
+<np>
+Glêzen entiteitsdetektor
+Sinjaaldeteksje
+<&glass_entity_detector>In entiteitsdetektor hâldt beweging tichteby yn de gaten sûnder in sichtbere flierplaat.<br>
+<br>
+Gebrûk: Ferbine him mei doarren, lampen, alarmen of masinefergrendelingen.<br>
+<br>
+Opmerking: Undersiket in lyts gebiet om it blok hinne.
+<np>
+Glêzen yntervalsinjaal
+Tiidpuls
+<&glass_interval_timer>In kompakte tiidskeakeler jout in ynplande redstonepuls.<br>
+<br>
+Gebrûk: Brûk him dêr't in lyts meganisme periodyk of mei fertraging bestjoerd wurde moat.<br>
+<br>
+Opmerking: Brûkt ynplande redstonepulsen.
+<np>
+Glêzen linedetektor
+Sinjaaldeteksje
+<&glass_linear_entity_detector>In entiteitsdetektor hâldt beweging tichteby yn de gaten sûnder in sichtbere flierplaat.<br>
+<br>
+Gebrûk: Ferbine him mei doarren, lampen, alarmen of masinefergrendelingen.<br>
+<br>
+Opmerking: Undersiket in lyts gebiet om it blok hinne.
+<np>
+Blokdetektor
+Sinjaaldeteksje
+<&industrial_block_detector>In blokdetektor kontrolearret oft de romte foar him beset is.<br>
+<br>
+Gebrûk: Rjochtsje him op de masinekant, buffer of bewekke romte dy'tst folgje wolst.<br>
+<br>
+Opmerking: Jout enerzjy as it blok foar him gjin loft is.
+<np>
+Deitiidklok
+Deiljochtsinjaal
+<&industrial_day_timer>In tiidskeakeler folget it deiljochtdiel fan de wrâldsyklus.<br>
+<br>
+Gebrûk: Brûk him foar lampen op it hiem, lûken en fabryksbestjoering dy't allinnich oerdeis wurkje moat.<br>
+<br>
+Opmerking: Hat in diminsje mei himelljocht nedich.
+<np>
+Entiteitsdetektor
+Sinjaaldeteksje
+<&industrial_entity_detector>In entiteitsdetektor hâldt beweging tichteby yn de gaten sûnder in sichtbere flierplaat.<br>
+<br>
+Gebrûk: Ferbine him mei doarren, lampen, alarmen of masinefergrendelingen.<br>
+<br>
+Opmerking: Undersiket in lyts gebiet om it blok hinne.
+<np>
+Yntervaltimer
+Tiidpuls
+<&industrial_interval_timer>In kompakte tiidskeakeler jout in ynplande redstonepuls.<br>
+<br>
+Gebrûk: Brûk him dêr't in lyts meganisme periodyk of mei fertraging bestjoerd wurde moat.<br>
+<br>
+Opmerking: Brûkt ynplande redstonepulsen.
+<np>
+Ljochtsensor
+Sinjaaldeteksje
+<&industrial_light_sensor>In ljochtsensor set de pleatslike helderheid om yn redstonestjoering.<br>
+<br>
+Gebrûk: Brûk him foar automatyske lampen, lûken en skeakelingen foar sichtberens.<br>
+<br>
+Opmerking: Jout enerzjy by in net oanpast ljochtnivo fan 8 of heger.
+<np>
+Tongerbuoidetektor
+Sinjaaldeteksje
+<&industrial_lightning_sensor>In tongerbuoisensor aktivearret warskôgingen by tongerwaar.<br>
+<br>
+Gebrûk: Pleats him ûnder de iepen loft en ferbine him mei lampen of alarmen.<br>
+<br>
+Opmerking: Hat tonger en frije tagong ta de himel nedich.
+<np>
+Lineêre entiteitsdetektor
+Sinjaaldeteksje
+<&industrial_linear_entity_detector>In entiteitsdetektor hâldt beweging tichteby yn de gaten sûnder in sichtbere flierplaat.<br>
+<br>
+Gebrûk: Ferbine him mei doarren, lampen, alarmen of masinefergrendelingen.<br>
+<br>
+Opmerking: Undersiket in lyts gebiet om it blok hinne.
+<np>
+Reinsensor
+Sinjaaldeteksje
+<&industrial_rain_sensor>In waarsensor set rein op syn posysje om yn redstone.<br>
+<br>
+Gebrûk: Montearje him dêr't it blok derboppe rein krije kin.<br>
+<br>
+Opmerking: Kontrolearret oft it boppe de sensor reint.
+<np>
+Bistabile glêzen skeakeler
+Redstonestjoering
+<&glass_rotary_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Bistabile glêzen oanrekkingsskeakeler
+Redstonestjoering
+<&glass_touch_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Oranje gefoelich glês
+Sinjaalglês
+<&orange_sensitiveglass>In redstonegefoelich glêsblok behâldt it útsjoch en lit tagelyk de sinjaalsteat sjen.<br>
+<br>
+Gebrûk: Brûk it yn finsters fan kontrôlekeamers, ferljochte panielen en beskerme fabryksglês.<br>
+<br>
+Opmerking: Feroaret fan steat troch redstone-enerzjy tichteby.
+<np>
+Ljochtjaand gefoelich glês
+Sinjaalglês
+<&sensitive_glass_block>In redstonegefoelich glêsblok behâldt it útsjoch en lit tagelyk de sinjaalsteat sjen.<br>
+<br>
+Gebrûk: Brûk it yn finsters fan kontrôlekeamers, ferljochte panielen en beskerme fabryksglês.<br>
+<br>
+Opmerking: Feroaret fan steat troch redstone-enerzjy tichteby.
+<np>
+Kleurd gefoelich glês
+Sinjaalglês
+<&stained_sensitiveglass>In redstonegefoelich glêsblok behâldt it útsjoch en lit tagelyk de sinjaalsteat sjen.<br>
+<br>
+Gebrûk: Brûk it yn finsters fan kontrôlekeamers, ferljochte panielen en beskerme fabryksglês.<br>
+<br>
+Opmerking: Feroaret fan steat troch redstone-enerzjy tichteby.
+<np>
+Glêzen balkmjitter
+Sinjaalmjitter
+<&glass_vertical_bar_gauge>In kompakte mjitter foar de kontrôlekeamer lit de redstonesterkte as in dúdlike panielwearde sjen.<br>
+<br>
+Gebrûk: Montearje him dêr'tst de redstone-enerzjy tichteby yn ien eachopslach kontrolearje kinst.<br>
+<br>
+Opmerking: Lêst de redstonesterkte tichteby fan 0 oant 15.
+<np>
+Analoge mjitter
+Sinjaalmjitter
+<&industrial_analog_angular_gauge>In kompakte mjitter foar de kontrôlekeamer lit de redstonesterkte as in dúdlike panielwearde sjen.<br>
+<br>
+Gebrûk: Montearje him dêr'tst de redstone-enerzjy tichteby yn ien eachopslach kontrolearje kinst.<br>
+<br>
+Opmerking: Lêst de redstonesterkte tichteby fan 0 oant 15.
+<np>
+Voltmjitter
+Sinjaalmjitter
+<&industrial_analog_horizontal_gauge>In kompakte mjitter foar de kontrôlekeamer lit de redstonesterkte as in dúdlike panielwearde sjen.<br>
+<br>
+Gebrûk: Montearje him dêr'tst de redstone-enerzjy tichteby yn ien eachopslach kontrolearje kinst.<br>
+<br>
+Opmerking: Lêst de redstonesterkte tichteby fan 0 oant 15.
+<np>
+Digitale mjitter
+Of te lêzen sinjaalsterkte
+<&industrial_small_digital_gauge>In kompakte mjitter foar de kontrôlekeamer lit de redstonesterkte as in dúdlike panielwearde sjen.<br>
+<br>
+Gebrûk: Montearje him dêr'tst de redstone-enerzjy tichteby yn ien eachopslach kontrolearje kinst.<br>
+<br>
+Opmerking: Lêst de redstonesterkte tichteby fan 0 oant 15.
+<np>
+Glêzen buismjitter
+Sinjaalmjitter
+<&industrial_tube_gauge>In kompakte mjitter foar de kontrôlekeamer lit de redstonesterkte as in dúdlike panielwearde sjen.<br>
+<br>
+Gebrûk: Montearje him dêr'tst de redstone-enerzjy tichteby yn ien eachopslach kontrolearje kinst.<br>
+<br>
+Opmerking: Lêst de redstonesterkte tichteby fan 0 oant 15.
+<np>
+Analoge balkmjitter
+Sinjaalmjitter
+<&industrial_vertical_bar_gauge>In kompakte mjitter foar de kontrôlekeamer lit de redstonesterkte as in dúdlike panielwearde sjen.<br>
+<br>
+Gebrûk: Montearje him dêr'tst de redstone-enerzjy tichteby yn ien eachopslach kontrolearje kinst.<br>
+<br>
+Opmerking: Lêst de redstonesterkte tichteby fan 0 oant 15.
+<np>
+Alarmlampe
+Sinjaalwerommelding
+<&industrial_alarm_lamp>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Alarmsirene
+Sinjaalwerommelding
+<&industrial_alarm_siren>De alarmsirene is in redstone-yndikator dy't oan in flak fêstsit. De aktive steat folget it sinjaal fan it blok dêr't er oan fêstsit.<br>
+<br>
+Gebrûk: Meitsje har oan in fêst flak fêst en jou har enerzjy om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: De sirene fernijt ien kear yn de sekonde salang't it sinjaal dêr't se op oansletten is aktyf bliuwt.
+<np>
+Knipperjende LED
+Sinjaalwerommelding
+<&industrial_blinking_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Griene knipperjende LED
+Sinjaalwerommelding
+<&industrial_green_blinking_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Griene LED
+Sinjaalwerommelding
+<&industrial_green_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Reade LED
+Sinjaalwerommelding
+<&industrial_red_blinking_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Reade LED
+Sinjaalwerommelding
+<&industrial_red_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Wite knipperjende LED
+Sinjaalwerommelding
+<&industrial_white_blinking_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Wite LED
+Sinjaalwerommelding
+<&industrial_white_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Giele knipperjende LED
+Sinjaalwerommelding
+<&industrial_yellow_blinking_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Giele LED
+Sinjaalwerommelding
+<&industrial_yellow_led>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Rustike semafoar
+Sinjaalwerommelding
+<&rustic_semaphore>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.
+<np>
+Fergelikerskeakeler
+Sinjaal fan it montageblok
+<&industrial_comparator_switch>In kompakte sensorskeakeler lêst it blok dêr't er op montearre is en set dy mjitting om yn in ienfâldige panielútfier.<br>
+<br>
+Gebrûk: Montearje him op ynventarissen, tanks of redstone-apparatuer. As it montageblok fergeliker-, kontener- of redstone-útfier meldt, jout de skeakeler redstone op folle sterkte út.<br>
+<br>
+Opmerking: Brûk him om foarriednivo's of ferburgen bedrading om te setten yn dúdlike oan-/útstjoerlinen.
+<np>
+Dimmer
+Fariabel sinjaal
+<&industrial_dimmer>In draaiknop stelt de redstonesterkte yn fan in kompakt panielflak ôf.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier stap foar stap te ferheegjen en nei folle sterkte wer op nul te bringen.<br>
+<br>
+Opmerking: Jout in sterkte fan 0 oant 15 út.
+<np>
+Needstopknop
+Redstonestjoering
+<&industrial_estop_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Trachterblokkearrer
+Redstonestjoering
+<&industrial_hopper_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Klopskeakeler
+Redstonestjoering
+<&industrial_knock_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Hânsel
+Redstonestjoering
+<&industrial_lever>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Masineskeakeler mei twa knoppen
+Redstonestjoering
+<&industrial_machine_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Lûkhânsel
+Redstonestjoering
+<&industrial_pull_handle>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Draaihânsel
+Redstonestjoering
+<&industrial_rotary_lever>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Draaiskeakeler foar masines
+Redstonestjoering
+<&industrial_rotary_machine_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Kontakthânsel
+Redstonestjoering
+<&industrial_small_lever>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Skeakeler
+Redstonestjoering
+<&industrialswitch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Ljochtskeakeler
+Redstonestjoering
+<&light_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Klepskeakeler
+Redstonestjoering
+<&valve_wheel_switch>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Pulsûntfanger yn kast
+Keppele bestjoering
+<&industrial_switchlink_cased_pulse_receiver>In keppele pulsûntfanger yn in kast jout panielen op ôfstân in koarte redstone-aktivearring.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Rjochtsklik op de ûntfanger of aktivearje de keppele pearel om in koarte puls te jaan.<br>
+<br>
+Opmerking: De puls set himsels werom nei syn ynplande doer.
+<np>
+Ferbiningsûntfanger yn kast
+Keppele bestjoering
+<&industrial_switchlink_cased_receiver>In keppele ûntfanger yn in kast jout panielen op ôfstân in stevich redstonedoel.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Rjochtsklik streekrjocht op de ûntfanger om him mei de hân oan of út te setten.<br>
+<br>
+Opmerking: In keppele pearel set dizze ûntfanger oan of út as se by it slûpen brûkt wurdt.
+<np>
+Pulsûntfanger foar skeakelferbiningen
+Keppele bestjoering
+<&industrial_switchlink_pulse_receiver>In keppele pulsûntfanger jout panielen op ôfstân in koarte redstone-aktivearring.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Rjochtsklik op de ûntfanger of aktivearje de keppele pearel om in koarte puls te jaan.<br>
+<br>
+Opmerking: De puls set himsels werom nei syn ynplande doer.
+<np>
+Pulsrelais foar skeakelferbiningen
+Keppele bestjoering
+<&industrial_switchlink_pulse_relay>In ûnderdiel yn relaisstyl jout panielkonstruksjes in kompakt pleatslik skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten. Brûk ûntfangerblokken as aktivearring mei in keppele pearel nedich is.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Ûntfanger foar skeakelferbiningen
+Keppele bestjoering
+<&industrial_switchlink_receiver>In keppele ûntfanger jout panielen op ôfstân in redstonedoel mei folle sterkte.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Rjochtsklik streekrjocht op de ûntfanger om him mei de hân oan of út te setten.<br>
+<br>
+Opmerking: In keppele pearel set dizze ûntfanger oan of út as se by it slûpen brûkt wurdt.
+<np>
+Analoge ûntfanger foar skeakelferbiningen
+Keppele bestjoering
+<&industrial_switchlink_receiver_analog>In keppele ûntfanger jout betsjinningspanielen in sichtber doel op ôfstân.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Brûk dy pearel by it slûpen om de ûntfanger op ôfstân te aktivearjen.<br>
+<br>
+Opmerking: Dizze ûntfanger jout in fol redstonesinjaal út as er aktivearre wurdt.
+<np>
+Relais foar skeakelferbiningen
+Keppele bestjoering
+<&industrial_switchlink_relay>In ûnderdiel yn relaisstyl jout panielkonstruksjes in kompakt pleatslik skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten. Brûk ûntfangerblokken as aktivearring mei in keppele pearel nedich is.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Analoog relais foar skeakelferbiningen
+Keppele bestjoering
+<&industrial_switchlink_relay_analog>In ûnderdiel yn relaisstyl jout panielkonstruksjes in kompakt pleatslik skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten. Brûk ûntfangerblokken as aktivearring mei in keppele pearel nedich is.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Skeakelferbiningspearel
+Keppele bestjoering
+<&switchlink_pearl>In keppele pearel bewarret in ûntfangerdoel foar fabryksbestjoering op ôfstân.<br>
+<br>
+Gebrûk: Klik mei in Ender-pearel op in ûntfanger foar skeakelferbiningen om sa'n pearel te meitsjen. Brûk de keppele pearel by it slûpen om de bewarre ûntfanger te aktivearjen.<br>
+<br>
+Opmerking: It doel moat laden wêze, yn deselde diminsje stean en binnen berik wêze.
+<np>
+Ald sierlik hânsel
+Redstonestjoering
+<&oldfancy_bistableswitch1>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Ald sierlik draaihânsel
+Redstonestjoering
+<&oldfancy_bistableswitch2>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Rustyk draaihânsel
+Redstonestjoering
+<&rustic_angular_lever>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Rustyk hânsel
+Redstonestjoering
+<&rustic_lever>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Rustyk spikerhânsel
+Redstonestjoering
+<&rustic_nail_lever>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.
+<np>
+Rustyk hânsel mei twa skarnieren
+Redstonestjoering
+<&rustic_two_hinge_lever>In kompakt betsjinningsûnderdiel jout fabryksgebouwen in dúdlik redstone-skeakelpunt.<br>
+<br>
+Gebrûk: Rjochtsklik derop om de útfier op folle sterkte foar skeakelingen tichteby oan of út te setten.<br>
+<br>
+Opmerking: Jout redstone op folle sterkte út salang't it oansetten is.

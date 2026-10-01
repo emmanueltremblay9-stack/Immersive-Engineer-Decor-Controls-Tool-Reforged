@@ -1,0 +1,99 @@
+Ingenieursgeschier
+Portabel Ateliersausrüstung
+D'Ingenieursgeschier ergänzt dat selwecht Handbuch, dat d'Dekoratiouns- a Steierbléck erkläert, ëm Handgeräter, Minnemarkéierer, Noutverbrauchsgidder, Iesse fir ënnerwee a kleng Hëllefsmëttel fir d'Materialveraarbechtung.<br>
+<br>
+Dëst Geschier ass fir d'Aarbecht ewech vun engem voll ekipéierten Atelier geduecht: Markéier de Wee, dro Virräter, erhuel dech vu Feeler a maach kleng Veraarbechtungsaarbechten direkt op der Plaz fäerdeg.
+<np>
+REDIA-Geschier
+Diamantbeschicht Notzhëllef
+<&redia_tool>D'REDIA-Geschier ass e robust Feldgeschier fir séier Buedemaarbechten. Benotz et op bearbechtbarem Buedem fir en zum Feld ze maachen.<br>
+<br>
+Benotz et op enger stabiler Säit, wärend s du Fakelen derbäi hues, fir eng Fakelmarkéierung aus dengem Inventar ze setzen, ouni REDIA ofzenotzen. Buedemaarbecht, Schieren, Aaxtaarbecht a Bamfälle verbrauchen Haltbarkeet.
+<np>
+Äerzmuelhummer
+Handgeschier fir Äerz ze muelen
+<&crushing_hammer>Den Äerzzerklenghamer ass en Handwierksgeschier fir déi fréi Veraarbechtung vun Eisen a Gold.<br>
+<br>
+Benotzung: Craft en mat réiem Eisen, réiem Gold, Eisenäerz, Déifschifer-Eisenäerz, Goldäerz oder Déifschifer-Goldäerz fir Eisen- oder Goldstëbs vun Immersive Engineering ze maachen. Den Hummer verléiert Haltbarkeet a kënnt an d'Craftinggitter zeréck, bis en brécht.<br>
+<br>
+En notzt sech och beim Ofbau of a ka Géigner am Nokampf zeréckstoussen.
+<np>
+Spuerer
+Gespäichert Positiounsmarkéierung
+<&tracker>De Spuerer späichert d'Positioun vun engem Block direkt am Géigestand.<br>
+<br>
+Benotzung: Klick op e Block fir Dimensioun a Koordinaten ze späicheren. Den Tooltip weist d'Positioun. Benotz de Spuerer beim Schleichen fir d'Zil ze läschen.<br>
+<br>
+Benotz en fir Maschinnen, Tunnelverzweigungen, Fernsteierungen oder onfäerdeg Chantieren ze markéieren, éier s du mat Geschier a Material zeréckkënns.
+<np>
+Ariadne-Kuel
+Weemarkéierung fir Minnen
+<&ariadne_coal>Ariadne-Kuel setzt séier schwaarz Weefeiler op stabil Minneflächen. Benotz se op enger fester Säit fir déi nächst Kéier, den Ausgang oder eng Verzweigung ze markéieren; d'Markéierung ënnerstëtzt aacht Richtungen op der ugeklickter Säit, och diagonal.<br>
+<br>
+Ariadne-Kuel ass e widderverwendbart Markéierungsgeschier mat 100 Notzungen. All erfollegräich Markéierung kascht ee Punkt Haltbarkeet. Net ënnerstëtzt Säite ginn ofgeleent, amplaz de Géigestand ofzenotzen.
+<np>
+Automatesche Stimulanzpak
+Noutinjektioun
+<&stimpack>Den Auto Stim Pack ass e medezinescht Noutgeschier fir geféierlech Ënnerhaltsaarbecht.<br>
+<br>
+Benotzung: Benotz en manuell fir ze heelen, kuerze Schutz an e kuerze Beweegungsboost ze kréien. Am Inventar kann en bei niddreger Gesondheet automatesch aktivéieren a geet dann an d'Ofkillzäit.<br>
+<br>
+Hal een disponibel, éier s du héich Plazen, fräiléiend Verkabelung oder feindlech Minneweeër ausprobéiers.
+<np>
+Schlofsak
+Portabelt Raschtset
+<&sleeping_bag>De Schlofsak ass e wiederfestt Rou-Set fir Aarbecht wäit vun engem Bett.<br>
+<br>
+Benotzung: Benotz en nuets am Overworld fir bis moies ze raschten. En setzt oder beweegt däi Spawnpunkt net.<br>
+<br>
+En refuséiert Dag, onsécher Plaze mat Monsteren an der Géigend an Dimensiounen, déi net fir sécher Rou passen. All erfollegräich Rou notzt de Sak of.
+<np>
+Materiallagerkëscht
+Këscht fir Baumaterial
+<&material_box>D'Materialkëscht dréit eng grouss Reserve vun engem einfachen, onverännerten a stapelbare Baumaterial.<br>
+<br>
+Benotzung: Hal d'Këscht an der Haapthand an e Materialstapel an der anerer Hand fir se ze lueden. Benotz se mat eidel anerer Hand fir ee Stapel erauszehuelen.<br>
+<br>
+Si hält bis 512 Saache vun enger Zort. Si refuséiert ageschachtelt Këschten, net stapelbar Ausrüstung an ëmbenannt oder dateverännert Stapelen; den Tooltip weist den Inhalt.
+<np>
+Tauchloftkapsel
+Noutloftreserve
+<&diving_capsule>D'Tauchloftkapsel ass eng Noutreserve vu Loft fir Aarbecht ënner Waasser.<br>
+<br>
+Benotzung: Benotz se manuell fir Loft opzefëllen. Am Inventar kann se och automatesch aktivéieren, wann d'Loft bal aus ass, an geet duerno an d'Ofkillzäit.<br>
+<br>
+Huel se fir iwwerschwemmt Minnen, Ënnerwaasserleitungen a Reparaturen am Pompelraum mat.
+<np>
+Muslee-Riegelpress
+Liewensmëttelpress
+<&musli_bar_press>D'Muslee-Barpress mécht aus normalem Iessen kompakt Feldratiounen.<br>
+<br>
+Benotzung: Huel Brout, en Apel a Weess-, Melounen-, Kürbis-, Rüben- oder Industrial Hemp-Som a benotz d'Press. Eng erfollegräich Pressung verbraucht ee vun all Zutat, kontrolléiert Plaz, mécht véier Muslee Melange-Baren a beschiedegt d'Press.<br>
+<br>
+Wann en Zutat feelt oder am Inventar keng Plaz ass, gëtt näischt verbraucht.
+<np>
+Muslee Melange Energieriegel
+Séieren Atelierssnack
+<&musli_bar>D'Muslee Melange-Energiebar ass kompakt Iessen aus Brout, Som a Friichten.<br>
+<br>
+Benotzung: Iess en ënnerwee beim Setze vu Steierungen, Päifen, Plattformen oder laange Leitungsstrecken am Maschinneraum.
+<np>
+Geeschtpress
+Erfarungsverdichter
+<&charged_lapis_squeezer>D'Geeschtpress mécht aus engem Lapislazuli an engem Erfarungslevel aus dengem Inventar opgeluedene Lapislazuli.<br>
+<br>
+De Prozess deet bei all erfollegräicher Ëmwandlung wéi, erhéicht d'Erschëpfung, déi Honger verursaacht, a mécht de Benotzer kuerz blann. E verweigert de Betrib ouni Lapislazuli, ouni XP oder wann de Benotzer ze no um Doud ass.
+<np>
+Opgeluede Lapislazuli
+Gespäichert Erfarung
+<&charged_lapis>Opgeluede Lapislazuli späichert een Erfarungslevel. Verbrauch en fir de Level zeréckzekréien, aktiv Effekter ze läschen an e bësse Liewen ze restauréieren.<br>
+<br>
+Stell fir d'éischt eng Geeschtpress hier; opgeluedene Lapislazuli entsteet duerch d'Notzung vun deem Geschier, wann Lapislazuli an XP disponibel sinn.
+<np>
+Graff Eisekären
+Ingenieursgeschiermaterial fir den rekonstruéierten Handwierkssaz.
+<&iron_grit>Kann zu Eisebarre geschmolt<br>ginn, eegent sech awer net fir<br>fortgeschratt Materialveraarbechtung.
+<np>
+Graff Goldkären
+Ingenieursgeschiermaterial fir den rekonstruéierten Handwierkssaz.
+<&gold_grit>Kann zu Goldbarre geschmolt<br>ginn, eegent sech awer net fir<br>fortgeschratt Materialveraarbechtung.

@@ -1,0 +1,7 @@
+Mejda tax-xogħol tal-metall
+Stazzjon tax-xogħol tal-pjanċi
+<&recipe>Il-mejda tal-metall għandha post għall-martell, gradilja 3x3 u ħruġ.<br>
+<br>
+Uża l-gradilja bħal mejda normali. Għal pjanċi IE poġġi l-martell tal-inġinier fil-post, il-materjal fil-gradilja u ħu l-pjanċa mill-ħruġ.<br>
+<br>
+Dekorazzjonijiet tal-azzar jużaw pjanċi ffurmati fuq din il-mejda.

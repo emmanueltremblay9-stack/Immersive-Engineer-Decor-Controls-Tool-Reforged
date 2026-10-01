@@ -1,0 +1,5 @@
+Stolpe av behandlat trä
+Del till bärande stomme
+<&recipe>Den raka stolpen av behandlat trä ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>

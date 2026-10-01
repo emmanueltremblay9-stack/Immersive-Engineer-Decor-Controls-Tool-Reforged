@@ -1,0 +1,3 @@
+Granell gross de ferr
+Material per arnea de inzegner dovrad del grup de ricete ricostruid.
+<&recipe>Se poeu fondell in lingot de<br>ferr, ma l’è minga adat a la<br>lavorazzion avanzada di materiai.

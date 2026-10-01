@@ -1,0 +1,789 @@
+Redstone vadības ierīces
+Mērītāji un signālu aprīkojums
+Vadības aprīkojums pārvērš slēptu Redstone skaidri nolasāmos rūpnīcas paneļos, sensoros, indikatoros, slēdžos, trauksmēs un sasaistītās signālu ierīcēs.<br>
+<br>
+Izmanto šīs lapas, būvējot operatoru darba vietas, signālu paneļus, drošības ķēdes un attālinātu vadību.
+<np>
+Bultu mērķis
+Īslaicīgs impulss
+<&arrow_target>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Durvju sensors
+Redstone vadība
+<&door_sensor_switch>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Lifta poga
+Redstone vadība
+<&elevator_button>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Stikla poga
+Redstone vadība
+<&glass_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Stikla poga
+Redstone vadība
+<&glass_small_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Stikla skārienpoga
+Redstone vadība
+<&glass_touch_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Mašīnas poga
+Redstone vadība
+<&industrial_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Poga
+Redstone vadība
+<&industrial_double_pole_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Nožogota mašīnas poga
+Redstone vadība
+<&industrial_fenced_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Klauvējiena poga
+Redstone vadība
+<&industrial_knock_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Sena grezna poga
+Redstone vadība
+<&oldfancy_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Sena grezna poga
+Redstone vadība
+<&oldfancy_small_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Sena grezna ķēdes poga
+Īslaicīgs impulss
+<&oldfancy_spring_reset_chain>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Lauku stila poga
+Redstone vadība
+<&rustic_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Lauku stila naglas poga
+Redstone vadība
+<&rustic_nail_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Maza lauku stila poga
+Redstone vadība
+<&rustic_small_button>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Lauku stila ķēdes poga
+Īslaicīgs impulss
+<&rustic_spring_reset_chain>Īslaicīgs slēdzis dod skaidru pilna stipruma Redstone impulsu.<br>
+<br>
+Lietošana: izmanto mašīnu palaišanai, durvju atbloķēšanai, trauksmēm vai vienreizējas darbības ķēdēm.<br>
+<br>
+Piezīmes: atgriežas sākumstāvoklī pēc paredzētā impulsa.
+<np>
+Stikla kontaktplātne
+Spiediena impulss
+<&glass_contact_mat>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Stikla durvju kontakts
+Spiediena impulss
+<&glass_door_contact_mat>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Kontakta paklājs
+Spiediena impulss
+<&industrial_contact_mat>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Durvju kontakta paklājs
+Spiediena impulss
+<&industrial_door_contact_mat>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Caurkrišanas detektors
+Signāla uztveršana
+<&industrial_fallthrough_detector>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Kājas poga
+Redstone vadība
+<&industrial_foot_button>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Rūpnieciska trieciena lūka
+Spiediena impulss
+<&industrial_high_sensitive_trapdoor>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Trieciena kontakta paklājs
+Spiediena impulss
+<&industrial_shock_sensitive_contact_mat>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Trieciena lūka
+Spiediena impulss
+<&industrial_shock_sensitive_trapdoor>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Sarkans enerģijas augs
+Spiediena impulss
+<&red_power_plant>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Lauku stila spiediena plātne
+Spiediena impulss
+<&rustic_contact_plate>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Lauku stila durvju spiediena plātne
+Spiediena impulss
+<&rustic_door_contact_plate>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Lauku stila krišanas detektors
+Signāla uztveršana
+<&rustic_fallthrough_detector>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Lauku stila trieciena lūka
+Spiediena impulss
+<&rustic_high_sensitive_trapdoor>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Lauku stila trieciena plātne
+Spiediena impulss
+<&rustic_shock_sensitive_plate>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Lauku stila trieciena lūka
+Spiediena impulss
+<&rustic_shock_sensitive_trapdoor>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Dzeltens enerģijas augs
+Spiediena impulss
+<&yellow_power_plant>Kontaktslēdzis nosūta īsu signālu pēc kustības uz grīdas vai lūkas.<br>
+<br>
+Lietošana: novieto tur, kur būtnes šķērso apkopes eju, iekraušanas ierīci vai apsargātu ceļu.<br>
+<br>
+Piezīmes: pēc saskares ar būtni dod īsu impulsu.
+<np>
+Stikla diennakts taimeris
+Dienas gaismas signāls
+<&glass_day_timer>Taimera slēdzis seko pasaules cikla dienas daļai.<br>
+<br>
+Lietošana: izmanto pagalma lampām, slēģiem un rūpnīcas vadībai, kas vajadzīga tikai dienā.<br>
+<br>
+Piezīmes: vajadzīga dimensija ar debesu gaismu.
+<np>
+Stikla būtņu detektors
+Signāla uztveršana
+<&glass_entity_detector>Būtņu detektors novēro kustību tuvumā bez redzamas grīdas plātnes.<br>
+<br>
+Lietošana: savieno ar durvīm, lampām, trauksmēm vai mašīnu drošības bloķēšanas ķēdēm.<br>
+<br>
+Piezīmes: pārbauda nelielu apgabalu ap bloku.
+<np>
+Stikla intervālu signāls
+Noteikta laika impulss
+<&glass_interval_timer>Kompakts taimera slēdzis nodrošina plānotu Redstone impulsu.<br>
+<br>
+Lietošana: izmanto tur, kur nelielam mehānismam vajadzīga periodiska vai aizkavēta vadība.<br>
+<br>
+Piezīmes: izmanto plānotus Redstone impulsus.
+<np>
+Stikla lineārais detektors
+Signāla uztveršana
+<&glass_linear_entity_detector>Būtņu detektors novēro kustību tuvumā bez redzamas grīdas plātnes.<br>
+<br>
+Lietošana: savieno ar durvīm, lampām, trauksmēm vai mašīnu drošības bloķēšanas ķēdēm.<br>
+<br>
+Piezīmes: pārbauda nelielu apgabalu ap bloku.
+<np>
+Bloku detektors
+Signāla uztveršana
+<&industrial_block_detector>Bloku detektors pārbauda, vai priekšā esošā vieta ir aizņemta.<br>
+<br>
+Lietošana: pavērs pret mašīnas pusi, buferi vai apsargājamo vietu, kas jānovēro.<br>
+<br>
+Piezīmes: izvada signālu, ja priekšā esošais bloks nav gaiss.
+<np>
+Diennakts taimeris
+Dienas gaismas signāls
+<&industrial_day_timer>Taimera slēdzis seko pasaules cikla dienas daļai.<br>
+<br>
+Lietošana: izmanto pagalma lampām, slēģiem un rūpnīcas vadībai, kas vajadzīga tikai dienā.<br>
+<br>
+Piezīmes: vajadzīga dimensija ar debesu gaismu.
+<np>
+Būtņu detektors
+Signāla uztveršana
+<&industrial_entity_detector>Būtņu detektors novēro kustību tuvumā bez redzamas grīdas plātnes.<br>
+<br>
+Lietošana: savieno ar durvīm, lampām, trauksmēm vai mašīnu drošības bloķēšanas ķēdēm.<br>
+<br>
+Piezīmes: pārbauda nelielu apgabalu ap bloku.
+<np>
+Intervālu taimeris
+Noteikta laika impulss
+<&industrial_interval_timer>Kompakts taimera slēdzis nodrošina plānotu Redstone impulsu.<br>
+<br>
+Lietošana: izmanto tur, kur nelielam mehānismam vajadzīga periodiska vai aizkavēta vadība.<br>
+<br>
+Piezīmes: izmanto plānotus Redstone impulsus.
+<np>
+Apgaismojuma sensors
+Signāla uztveršana
+<&industrial_light_sensor>Apgaismojuma sensors pārvērš vietējo spilgtumu Redstone vadībā.<br>
+<br>
+Lietošana: izmanto automātiskām lampām, slēģiem un redzamības ķēdēm.<br>
+<br>
+Piezīmes: izvada signālu, ja neapstrādātais spilgtuma līmenis ir 8 vai lielāks.
+<np>
+Negaisa detektors
+Signāla uztveršana
+<&industrial_lightning_sensor>Negaisa sensors darbina brīdinājumus pērkona laikā.<br>
+<br>
+Lietošana: novieto zem atklātām debesīm un pieslēdz lampām vai trauksmēm.<br>
+<br>
+Piezīmes: vajadzīgs pērkons un piekļuve debesīm.
+<np>
+Lineārais būtņu detektors
+Signāla uztveršana
+<&industrial_linear_entity_detector>Būtņu detektors novēro kustību tuvumā bez redzamas grīdas plātnes.<br>
+<br>
+Lietošana: savieno ar durvīm, lampām, trauksmēm vai mašīnu drošības bloķēšanas ķēdēm.<br>
+<br>
+Piezīmes: pārbauda nelielu apgabalu ap bloku.
+<np>
+Lietus sensors
+Signāla uztveršana
+<&industrial_rain_sensor>Laikapstākļu sensors pārvērš lietu savā atrašanās vietā Redstone signālā.<br>
+<br>
+Lietošana: uzstādi tur, kur virs tā esošo bloku var sasniegt lietus.<br>
+<br>
+Piezīmes: pārbauda lietu virs sensora.
+<np>
+Bistabils stikla slēdzis
+Redstone vadība
+<&glass_rotary_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Bistabils stikla skārienslēdzis
+Redstone vadība
+<&glass_touch_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Oranžs jutīgais stikls
+Signāla stikls
+<&orange_sensitiveglass>Uz Redstone reaģējošs stikla bloks saglabā redzamību un rāda signāla stāvokli.<br>
+<br>
+Lietošana: izmanto vadības telpu logos, izgaismotos paneļos un aizsargājošā rūpnīcas stiklojumā.<br>
+<br>
+Piezīmes: maina stāvokli no tuvumā esošas Redstone barošanas.
+<np>
+Gaismu izstarojošs jutīgais stikls
+Signāla stikls
+<&sensitive_glass_block>Uz Redstone reaģējošs stikla bloks saglabā redzamību un rāda signāla stāvokli.<br>
+<br>
+Lietošana: izmanto vadības telpu logos, izgaismotos paneļos un aizsargājošā rūpnīcas stiklojumā.<br>
+<br>
+Piezīmes: maina stāvokli no tuvumā esošas Redstone barošanas.
+<np>
+Krāsains jutīgais stikls
+Signāla stikls
+<&stained_sensitiveglass>Uz Redstone reaģējošs stikla bloks saglabā redzamību un rāda signāla stāvokli.<br>
+<br>
+Lietošana: izmanto vadības telpu logos, izgaismotos paneļos un aizsargājošā rūpnīcas stiklojumā.<br>
+<br>
+Piezīmes: maina stāvokli no tuvumā esošas Redstone barošanas.
+<np>
+Stikla joslas mērītājs
+Signāla mērītājs
+<&glass_vertical_bar_gauge>Kompakts vadības telpas mērītājs skaidri attēlo Redstone stiprumu panelī.<br>
+<br>
+Lietošana: uzstādi tur, kur blakus esošo Redstone barošanu var pārbaudīt ar vienu skatienu.<br>
+<br>
+Piezīmes: nolasa tuvumā esošā Redstone stiprumu no 0 līdz 15.
+<np>
+Analogais mērītājs
+Signāla mērītājs
+<&industrial_analog_angular_gauge>Kompakts vadības telpas mērītājs skaidri attēlo Redstone stiprumu panelī.<br>
+<br>
+Lietošana: uzstādi tur, kur blakus esošo Redstone barošanu var pārbaudīt ar vienu skatienu.<br>
+<br>
+Piezīmes: nolasa tuvumā esošā Redstone stiprumu no 0 līdz 15.
+<np>
+Voltmetra tipa mērītājs
+Signāla mērītājs
+<&industrial_analog_horizontal_gauge>Kompakts vadības telpas mērītājs skaidri attēlo Redstone stiprumu panelī.<br>
+<br>
+Lietošana: uzstādi tur, kur blakus esošo Redstone barošanu var pārbaudīt ar vienu skatienu.<br>
+<br>
+Piezīmes: nolasa tuvumā esošā Redstone stiprumu no 0 līdz 15.
+<np>
+Digitāls mērītājs
+Skaidri saskatāms signāla stiprums
+<&industrial_small_digital_gauge>Kompakts vadības telpas mērītājs skaidri attēlo Redstone stiprumu panelī.<br>
+<br>
+Lietošana: uzstādi tur, kur blakus esošo Redstone barošanu var pārbaudīt ar vienu skatienu.<br>
+<br>
+Piezīmes: nolasa tuvumā esošā Redstone stiprumu no 0 līdz 15.
+<np>
+Stikla caurulītes mērītājs
+Signāla mērītājs
+<&industrial_tube_gauge>Kompakts vadības telpas mērītājs skaidri attēlo Redstone stiprumu panelī.<br>
+<br>
+Lietošana: uzstādi tur, kur blakus esošo Redstone barošanu var pārbaudīt ar vienu skatienu.<br>
+<br>
+Piezīmes: nolasa tuvumā esošā Redstone stiprumu no 0 līdz 15.
+<np>
+Analogais joslas mērītājs
+Signāla mērītājs
+<&industrial_vertical_bar_gauge>Kompakts vadības telpas mērītājs skaidri attēlo Redstone stiprumu panelī.<br>
+<br>
+Lietošana: uzstādi tur, kur blakus esošo Redstone barošanu var pārbaudīt ar vienu skatienu.<br>
+<br>
+Piezīmes: nolasa tuvumā esošā Redstone stiprumu no 0 līdz 15.
+<np>
+Trauksmes lampa
+Signāla atgriezeniskā saite
+<&industrial_alarm_lamp>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Trauksmes sirēna
+Signāla atgriezeniskā saite
+<&industrial_alarm_siren>Trauksmes sirēna ir pie virsmas stiprināms redstone indikators. Tās ieslēgtais stāvoklis seko blokam, pie kura tā piestiprināta, pievadītajam signālam.<br>
+<br>
+Lietošana: piestiprini cietai virsmai un pievadi signālu, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: sirēna atjaunojas reizi sekundē, kamēr pievienotais signāls ir aktīvs.
+<np>
+Mirgojošs LED
+Signāla atgriezeniskā saite
+<&industrial_blinking_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Zaļš mirgojošs LED
+Signāla atgriezeniskā saite
+<&industrial_green_blinking_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Zaļš LED
+Signāla atgriezeniskā saite
+<&industrial_green_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Sarkans LED
+Signāla atgriezeniskā saite
+<&industrial_red_blinking_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Sarkans LED
+Signāla atgriezeniskā saite
+<&industrial_red_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Balts mirgojošs LED
+Signāla atgriezeniskā saite
+<&industrial_white_blinking_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Balts LED
+Signāla atgriezeniskā saite
+<&industrial_white_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Dzeltens mirgojošs LED
+Signāla atgriezeniskā saite
+<&industrial_yellow_blinking_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Dzeltens LED
+Signāla atgriezeniskā saite
+<&industrial_yellow_led>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Lauku stila semafors
+Signāla atgriezeniskā saite
+<&rustic_semaphore>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.
+<np>
+Salīdzinātāja slēdzis
+Pievienotā bloka signāls
+<&industrial_comparator_switch>Kompakts sensorslēdzis nolasa bloku, uz kura uzstādīts, un pārvērš nolasījumu vienkāršā paneļa izvadē.<br>
+<br>
+Lietošana: uzstādi uz krātuvēm, tvertnēm vai Redstone iekārtām. Ja pievienotais bloks dod salīdzinātāja, konteinera vai Redstone izvadi, slēdzis izvada pilna stipruma Redstone signālu.<br>
+<br>
+Piezīmes: izmanto, lai krājumu līmeni vai slēptos vadus pārvērstu skaidrās ieslēgšanas un izslēgšanas vadības līnijās.
+<np>
+Signāla regulators
+Mainīgs signāls
+<&industrial_dimmer>Grozāma vadības ierīce regulē Redstone stiprumu kompakta paneļa priekšpusē.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pakāpeniski palielinātu izvadi; pēc maksimālā stipruma tā atgriežas uz nulli.<br>
+<br>
+Piezīmes: izvada stiprumu no 0 līdz 15.
+<np>
+Avārijas apturēšanas poga
+Redstone vadība
+<&industrial_estop_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Piltuves bloķētājs
+Redstone vadība
+<&industrial_hopper_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Klauvējiena slēdzis
+Redstone vadība
+<&industrial_knock_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Svira
+Redstone vadība
+<&industrial_lever>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Divu pogu mašīnas slēdzis
+Redstone vadība
+<&industrial_machine_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Velkams rokturis
+Redstone vadība
+<&industrial_pull_handle>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Grozāma svira
+Redstone vadība
+<&industrial_rotary_lever>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Grozāms mašīnas slēdzis
+Redstone vadība
+<&industrial_rotary_machine_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Kontaktsvira
+Redstone vadība
+<&industrial_small_lever>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Slēdzis
+Redstone vadība
+<&industrialswitch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Gaismas slēdzis
+Redstone vadība
+<&light_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Vārsta slēdzis
+Redstone vadība
+<&valve_wheel_switch>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Impulsu uztvērējs korpusā
+Sasaistīta vadība
+<&industrial_switchlink_cased_pulse_receiver>Sasaistīts impulsu uztvērējs korpusā dod attāliem paneļiem īsu Redstone ierosinājumu.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Noklikšķini uz uztvērēja ar labo peles pogu vai aktivizē sasaistīto pērli, lai izvadītu īsu impulsu.<br>
+<br>
+Piezīmes: impulss pats beidzas pēc iestatītā ilguma.
+<np>
+Saites uztvērējs korpusā
+Sasaistīta vadība
+<&industrial_switchlink_cased_receiver>Sasaistīts uztvērējs korpusā dod attāliem paneļiem izturīgu Redstone mērķi.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Noklikšķini tieši uz uztvērēja ar labo peles pogu, lai pārslēgtu to manuāli.<br>
+<br>
+Piezīmes: lietojot sasaistīto pērli lavoties, šis uztvērējs pārslēdzas.
+<np>
+Impulsu saites uztvērējs
+Sasaistīta vadība
+<&industrial_switchlink_pulse_receiver>Sasaistīts impulsu uztvērējs dod attāliem paneļiem īsu Redstone ierosinājumu.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Noklikšķini uz uztvērēja ar labo peles pogu vai aktivizē sasaistīto pērli, lai izvadītu īsu impulsu.<br>
+<br>
+Piezīmes: impulss pats beidzas pēc iestatītā ilguma.
+<np>
+Impulsu saites relejs
+Sasaistīta vadība
+<&industrial_switchlink_pulse_relay>Releja izskata detaļa dod paneļiem kompaktu vietējo pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm. Ja vajadzīga aktivizēšana ar sasaistītu pērli, izmanto uztvērēju blokus.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Slēdža saites uztvērējs
+Sasaistīta vadība
+<&industrial_switchlink_receiver>Sasaistīts uztvērējs dod attāliem paneļiem pilna stipruma Redstone mērķi.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Noklikšķini tieši uz uztvērēja ar labo peles pogu, lai pārslēgtu to manuāli.<br>
+<br>
+Piezīmes: lietojot sasaistīto pērli lavoties, šis uztvērējs pārslēdzas.
+<np>
+Analogās saites uztvērējs
+Sasaistīta vadība
+<&industrial_switchlink_receiver_analog>Sasaistīts uztvērējs dod vadības paneļiem redzamu attālinātu mērķi.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Lieto šo pērli lavoties, lai attālināti aktivizētu uztvērēju.<br>
+<br>
+Piezīmes: pēc ierosinājuma šis uztvērējs izvada pilna stipruma Redstone signālu.
+<np>
+Slēdža saites relejs
+Sasaistīta vadība
+<&industrial_switchlink_relay>Releja izskata detaļa dod paneļiem kompaktu vietējo pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm. Ja vajadzīga aktivizēšana ar sasaistītu pērli, izmanto uztvērēju blokus.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Analogās saites relejs
+Sasaistīta vadība
+<&industrial_switchlink_relay_analog>Releja izskata detaļa dod paneļiem kompaktu vietējo pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm. Ja vajadzīga aktivizēšana ar sasaistītu pērli, izmanto uztvērēju blokus.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Slēdža saites pērle
+Sasaistīta vadība
+<&switchlink_pearl>Sasaistīta pērle glabā uztvērēja mērķi rūpnīcas attālinātai vadībai.<br>
+<br>
+Lietošana: noklikšķini uz slēdža saites uztvērēja ar Ender pērli, lai to izveidotu. Lieto sasaistīto pērli lavoties, lai aktivizētu saglabāto uztvērēju.<br>
+<br>
+Piezīmes: mērķim jābūt ielādētam, tajā pašā dimensijā un sasniedzamā attālumā.
+<np>
+Sena grezna svira
+Redstone vadība
+<&oldfancy_bistableswitch1>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Sena grezna grozāma svira
+Redstone vadība
+<&oldfancy_bistableswitch2>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Lauku stila grozāma svira
+Redstone vadība
+<&rustic_angular_lever>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Lauku stila svira
+Redstone vadība
+<&rustic_lever>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Lauku stila naglas svira
+Redstone vadība
+<&rustic_nail_lever>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.
+<np>
+Lauku stila divu eņģu svira
+Redstone vadība
+<&rustic_two_hinge_lever>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.

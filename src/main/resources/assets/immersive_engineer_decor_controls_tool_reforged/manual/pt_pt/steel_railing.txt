@@ -1,0 +1,5 @@
+Guarda-corpo de aço
+Elemento de acesso para manutenção
+<&recipe>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>

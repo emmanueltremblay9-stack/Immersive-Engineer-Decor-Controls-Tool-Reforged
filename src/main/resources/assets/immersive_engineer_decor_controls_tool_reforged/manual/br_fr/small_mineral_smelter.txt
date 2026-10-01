@@ -1,0 +1,5 @@
+Teuzer mineraloù
+Unanenn dretañ vihan
+<&recipe>An teuzer mineraloù a dret mineraloù gant gwrez uhel war nebeut a blas en atalier.<br>
+<br>
+Implij: Degasit bloc'hoù mineral hag energiezh evit labourioù teuziañ gant gwrez uhel.<br>

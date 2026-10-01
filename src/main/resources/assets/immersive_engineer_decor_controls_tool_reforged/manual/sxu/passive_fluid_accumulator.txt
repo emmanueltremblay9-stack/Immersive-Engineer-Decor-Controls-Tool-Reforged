@@ -1,0 +1,5 @@
+Passive Flissichgeed
+Flissichgeedsleidungsbaudeile
+<&recipe>Dor passive Flissichgeedssammlor is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Seddz’n an bassnde Wassorquelln un lass Raum, um Flissichgeed abzunehm.<br>

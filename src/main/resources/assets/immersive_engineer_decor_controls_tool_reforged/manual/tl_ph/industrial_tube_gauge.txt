@@ -1,0 +1,7 @@
+Salaming Tubong Panukat
+Panukat ng signal
+<&recipe>Ipinapakita ng maliit na panukat sa silid ng kontrol ang lakas ng redstone bilang malinaw na basa sa panel.<br>
+<br>
+Paggamit: Ikabit kung saan masusuri sa isang tingin ang lakas ng kalapit na redstone.<br>
+<br>
+Tandaan: Binabasa ang lakas ng kalapit na redstone mula 0 hanggang 15.

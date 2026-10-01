@@ -1,0 +1,5 @@
+Etiketita kesto
+Redaktebla stoketiketo
+<&recipe>Ca etiketita kesto destinesas a klara ordinaro en stokochambro. Lua avanplako povas redaktesar quale mikra laboreyshildo.<br>
+<br>
+Uzo: Klikez dextre la etiketoplako por redaktar la kestoetiketo. Klikez dextre la cetera parto di la kesto por apertar stokuyo por instaluri, peci e manutenoprovizi.<br>

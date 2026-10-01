@@ -1,0 +1,5 @@
+Alti Holzviertelstufe
+Alts Werkstattholz
+<&recipe>D'alti Fabrikholzviertelstufe bringt gealterets Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>

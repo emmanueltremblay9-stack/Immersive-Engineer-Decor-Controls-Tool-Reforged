@@ -1,0 +1,7 @@
+Palanca
+Control per redstone
+<&recipe>Una peça compacta de control dona a les construccions industrials un punt d’interrupció de redstone fàcil d’identificar.<br>
+<br>
+Ús: fes clic dret per a commutar una eixida a plena potència per als circuits pròxims.<br>
+<br>
+Notes: emet redstone a plena potència mentre està encés.

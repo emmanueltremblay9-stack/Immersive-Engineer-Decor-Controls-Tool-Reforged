@@ -1,0 +1,7 @@
+Vidre sensible de colors
+Vidre de senyalització
+<&recipe>Un bloc de vidre sensible a redstone permet vore a través seu mentre mostra l’estat del senyal.<br>
+<br>
+Ús: usa’l en finestres de sales de control, panells il·luminats i vidrieres protegides de fàbrica.<br>
+<br>
+Notes: canvia d’estat segons la potència de redstone pròxima.

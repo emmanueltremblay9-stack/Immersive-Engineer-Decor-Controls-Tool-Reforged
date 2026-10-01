@@ -1,0 +1,5 @@
+Coupou d'arbrs
+Outil de sol d'atelier
+<&recipe>Le Petit coupou d'arbrs ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Miréz-le devers des arbrs grandis e ramasséz les chutes a part.<br>

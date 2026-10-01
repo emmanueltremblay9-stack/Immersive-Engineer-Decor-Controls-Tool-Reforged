@@ -1,0 +1,7 @@
+Metallarbetsbänk
+Arbetsstation för plåtar
+<&recipe>Metallarbetsbordet har en hammarplats, ett fullt 3x3-rutnät och en utgång.<br>
+<br>
+Använd rutnätet som ett vanligt arbetsbord. För IE-plattor placerar du ingenjörshammaren i verktygsplatsen, materialet i rutnätet och tar plattan från utgången.<br>
+<br>
+Ståldekorationer använder stålplattor som formats vid detta bord.

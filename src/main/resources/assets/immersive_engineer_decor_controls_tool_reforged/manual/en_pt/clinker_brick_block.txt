@@ -1,0 +1,5 @@
+Block o' clinker bricks
+Brickwork dark with soot
+<&recipe>This block brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>

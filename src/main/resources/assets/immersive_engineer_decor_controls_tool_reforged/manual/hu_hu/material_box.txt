@@ -1,0 +1,7 @@
+Anyagtároló doboz
+Építési készletdoboz
+<&recipe>Az anyagládában egyetlen egyszerű, módosítatlan és halmozható építőanyag nagy készlete hordozható.<br>
+<br>
+Használat: Tartsd a ládát a fő kézben, az anyaghalmot a másikban a betöltéshez. Üres másik kézzel használd a ládát egy halom kivételéhez.<br>
+<br>
+Egyféle anyagból legfeljebb 512 darabot tárol. Nem fogad be másik ládát, nem halmozható felszerelést, átnevezett vagy adatában módosított halmot; a súgó mutatja a tartalmat.

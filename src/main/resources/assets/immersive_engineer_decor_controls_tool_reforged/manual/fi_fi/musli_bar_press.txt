@@ -1,0 +1,7 @@
+Muslee-patukkapuristin
+Ruokapuristin
+<&recipe>Muuttaa tavalliset elintarvikkeet tiiviiksi kenttäannoksiksi.<br>
+<br>
+Käyttö: Leipä, omena ja vehnän, melonin, kurpitsan, punajuuren tai teollisuushampun siemen. Onnistunut puristus kuluttaa yhden kutakin, tarkistaa tilan, tekee neljä patukkaa ja vaurioittaa puristinta.<br>
+<br>
+Jos aines tai tila puuttuu, mitään ei kulu.

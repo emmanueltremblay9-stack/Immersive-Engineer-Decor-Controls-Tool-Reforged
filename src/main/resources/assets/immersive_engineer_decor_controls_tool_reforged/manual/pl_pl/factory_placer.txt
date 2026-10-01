@@ -1,0 +1,5 @@
+Fabryczny ustawiacz bloków
+Urządzenie warsztatowe
+<&recipe>Po uruchomieniu ten blok stawia bloki z wewnętrznego zapasu.<br>
+<br>
+Użycie: Skieruj stronę roboczą ku docelowemu miejscu i załaduj stosy przedmiotów, które można postawić.<br>

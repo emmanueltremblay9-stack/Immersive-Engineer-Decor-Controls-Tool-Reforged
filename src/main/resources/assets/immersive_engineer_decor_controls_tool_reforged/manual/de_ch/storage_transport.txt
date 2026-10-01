@@ -1,0 +1,41 @@
+Lagere und Transport
+Lager- und Durchflussbauteil
+Bauteil für Lagere und Transport umfassed Chiste, Fässer, Trichter und Ventil für kompakti Wäg dur d'Fabrik.<br>
+<br>
+Nimm die Siite bim Plane vo Lagerrüüm, Rohrstrecke, Versorgigstanks und greglete Flüssigkeitsleitige.
+<np>
+Beschrifteti Chiste
+Änderbari Lagerbeschriftig
+<&labeled_crate>D'beschrifteti Chiste sorgt für Übersicht im Lager. S'Frontschild chasch wie es chliis Werkstattschild ändere.<br>
+<br>
+Verwendig: Rechtsklick ufs Frontschild änderet d'Beschriftig. Rechtsklick uf de Rescht vo de Chiste öffnet s'Lager für Teil, Zuebehör und Wartigsmaterial.<br>
+<np>
+Flüssigkeitsfass
+Bauteil für Flüssigkeitsleitige
+<&fluid_barrel>Das kompakte Leitigsteil passt für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Setz es so, dass Röhre oder Chübel a d'Tanksiite ane chömed.<br>
+<np>
+Flüssigkeitstrichter
+Bauteil für Flüssigkeitsleitige
+<&small_fluid_funnel>De chliine Flüssigkeitssammeltrichter isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Setz en under d'Sammelstell und leit sin Inhalt i Tanks oder tüüfer glägeni Röhre.<br>
+<np>
+Flüssigkeits-Rückschlagventil
+Bauteil für Flüssigkeitsleitige
+<&straight_pipe_valve>S'Flüssigkeits-Rückschlagventil isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Richt s'Ventil i die gwünschti Fliessrichtig uus.<br>
+<np>
+Redstone-Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitige
+<&straight_pipe_valve_redstone>S'Redstone-Flüssigkeitsventil isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Richt s'Ventil i die gwünschti Fliessrichtig uus.<br>
+<np>
+Analoges Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitige
+<&straight_pipe_valve_redstone_analog>S'analoge Flüssigkeitsventil isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Richt s'Ventil i die gwünschti Fliessrichtig uus.<br>

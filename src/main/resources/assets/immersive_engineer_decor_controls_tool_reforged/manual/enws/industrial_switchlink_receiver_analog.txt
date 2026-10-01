@@ -1,0 +1,7 @@
+Analogue Link Receiver
+Control through a Link
+<&recipe>A linked receiver affords control panels a visible target for use from afar.<br>
+<br>
+Use: Click it with an Ender Pearl to fashion a linked pearl. Sneak-use that pearl to set off the receiver from afar.<br>
+<br>
+Note: When triggered, this receiver sends redstone at full strength.

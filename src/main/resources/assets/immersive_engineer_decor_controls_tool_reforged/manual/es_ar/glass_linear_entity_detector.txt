@@ -1,0 +1,7 @@
+Detector lineal de vidrio
+Detección de señales
+<&recipe>Un detector de entidades vigila el movimiento cercano sin una placa de suelo visible.<br>
+<br>
+Uso: Conectalo a puertas, lámparas, alarmas o interbloqueos de máquinas.<br>
+<br>
+Notas: Explora una zona pequeña alrededor del bloque.

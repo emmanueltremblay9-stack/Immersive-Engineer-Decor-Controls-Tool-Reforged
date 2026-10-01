@@ -1,0 +1,7 @@
+Bloke-detektagailua
+Seinaleak hautematea
+<&recipe>Bloke-detektagailuak aurrez aurreko espazioa beteta dagoen egiaztatzen du.<br>
+<br>
+Erabilera: zuzendu behatu nahi duzun makinaren aurpegira, erreserbara edo zaindutako espaziora.<br>
+<br>
+Oharrak: aurrez aurreko blokea airea ez denean energia ematen du.

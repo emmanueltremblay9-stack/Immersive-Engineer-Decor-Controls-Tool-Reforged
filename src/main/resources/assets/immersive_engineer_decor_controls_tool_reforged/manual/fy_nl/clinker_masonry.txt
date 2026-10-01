@@ -1,0 +1,161 @@
+Klinkerstiennen en mitselwurk
+Omslutingen fan bakstien en beton
+Klinkerstien, slakstien, wapene beton en pânserglês jouwe hjitte romten, wurkpleatsen en beskerme útsichten swiere oerflakken.<br>
+<br>
+Brûk de byhearrende platen, treppen, tinne lagen en muorren om rânen ôf te wurkjen en deselde fabryksmaterialen oan te hâlden.
+<np>
+Klinkerstienblok
+Roetdonker mitselwurk
+<&clinker_brick_block>Dit blok bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Klinkerstiennen plaat
+Roetdonker mitselwurk
+<&clinker_brick_slab>Dit blok bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Klinkerstiennen trep
+Roetdonker mitselwurk
+<&clinker_brick_stairs>Dit blok bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Klinkerstiennen muorre
+Roetdonker mitselwurk
+<&clinker_brick_wall>Dit blok bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Flekkerich klinkerblok
+Roetdonker mitselwurk
+<&clinker_brick_stained_block>It flekkerige klinkerstienblok bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Flekkerige klinkerplaat
+Roetdonker mitselwurk
+<&clinker_brick_stained_slab>De flekkerige klinkerstiennen plaat bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Flekkerige klinkertrep
+Roetdonker mitselwurk
+<&clinker_brick_stained_stairs>De flekkerige klinkerstiennen trep bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Fersierde klinkerstien
+Roetdonker mitselwurk
+<&clinker_brick_sastor_corner_block>De mei sânstien fersierde klinkerstien bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Ferdjippe klinkerstien
+Roetdonker mitselwurk
+<&clinker_brick_recessed>Dit blok bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Ynsniene klinkerstiennen
+Roetdonker mitselwurk
+<&clinker_brick_vertically_slit>De fertikaal ynsniene klinkerstiennen bringe troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Fertikale klinkerplaat
+Roetdonker mitselwurk
+<&clinker_brick_vertical_slab_structured>De strukturearre fertikale klinkerplaat bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Heale klinkerstiennen plaat
+Roetdonker mitselwurk
+<&halfslab_clinker_brick>Dit blok bringt troch roet fertsjustere mitselwurk nei ovenhallen, skoarstienfuotten en ûnderhâldsmuorren.<br>
+<br>
+Gebrûk: Brûk it as muorre, râne of omsluting fan hjitte sônes om ovens en tsjettels hinne.<br>
+<np>
+Slakstienblok
+Ticht fabryksmitselwurk
+<&slag_brick_block>Dit blok foeget ticht griisbrún mitselwurk ta foar fûneminten, kearmuorren en âldere wurkskuorren.<br>
+<br>
+Gebrûk: Brûk it foar âldere fûneminten, kearmuorren en smoarge fabryksflierren.<br>
+<np>
+Slakstiennen plaat
+Ticht fabryksmitselwurk
+<&slag_brick_slab>Dit blok foeget ticht griisbrún mitselwurk ta foar fûneminten, kearmuorren en âldere wurkskuorren.<br>
+<br>
+Gebrûk: Brûk it foar âldere fûneminten, kearmuorren en smoarge fabryksflierren.<br>
+<np>
+Slakstiennen trep
+Ticht fabryksmitselwurk
+<&slag_brick_stairs>Dit blok foeget ticht griisbrún mitselwurk ta foar fûneminten, kearmuorren en âldere wurkskuorren.<br>
+<br>
+Gebrûk: Brûk it foar âldere fûneminten, kearmuorren en smoarge fabryksflierren.<br>
+<np>
+Slakstiennen muorre
+Ticht fabryksmitselwurk
+<&slag_brick_wall>Dit blok foeget ticht griisbrún mitselwurk ta foar fûneminten, kearmuorren en âldere wurkskuorren.<br>
+<br>
+Gebrûk: Brûk it foar âldere fûneminten, kearmuorren en smoarge fabryksflierren.<br>
+<np>
+Wapene betonblok
+Wapene beton
+<&rebar_concrete>Dit blok is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Wapene betonplaat
+Wapene beton
+<&rebar_concrete_slab>Dit blok is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Wapene betontrep
+Wapene beton
+<&rebar_concrete_stairs>Dit blok is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Wapene betonmuorre
+Wapene beton
+<&rebar_concrete_wall>Dit blok is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Tinne laach wapene beton
+Wapene beton
+<&halfslab_rebar_concrete>Dit blok is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Wapene betontegel
+Wapene beton
+<&rebar_concrete_tile>Dit blok is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Wapene betontegelplaat
+Wapene beton
+<&rebar_concrete_tile_slab>Dit blok is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Wapene betontegel
+Wapene beton
+<&rebar_concrete_tile_stairs>De wapene betontegeltrep is in ferhurde betonûnderdiel foar masinesokkels, eksploazjemuorren en flierren fan laadromten.<br>
+<br>
+Gebrûk: Brûk it ûnder masines, lâns ûnderhâldsgongen of oeral dêr't it gebou in fersterke ûndergrûn nedich hat.<br>
+<np>
+Pânserglêsblok
+Beskerme útsjoch
+<&panzerglass_block>Dit blok hâldt it útsjoch iepen en past tagelyk by fersterke fabrykskonstruksjes.<br>
+<br>
+Gebrûk: Brûk it dêr't spilers troch in beskermjende ôfskieding nei masines sjen kinne moatte.<br>
+<np>
+Pânserglêsplaat
+Beskerme útsjoch
+<&panzerglass_slab>Dit blok hâldt it útsjoch iepen en past tagelyk by fersterke fabrykskonstruksjes.<br>
+<br>
+Gebrûk: Brûk it dêr't spilers troch in beskermjende ôfskieding nei masines sjen kinne moatte.<br>

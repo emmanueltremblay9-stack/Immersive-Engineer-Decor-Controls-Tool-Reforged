@@ -1,0 +1,5 @@
+Slaggtegeltrappa
+Tätt fabriksmurverk
+<&recipe>Det här blocket ger tätt gråbrunt murverk till fundament, stödmurar och äldre verkstadsskjul.<br>
+<br>
+Användning: Använd det till äldre fundament, stödmurar och smutsiga fabriksgolv.<br>

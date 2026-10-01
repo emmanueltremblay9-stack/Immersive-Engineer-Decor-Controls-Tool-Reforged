@@ -1,0 +1,5 @@
+Šarvuoto stiklo blokas
+Apsaugota matymo linija
+<&recipe>Šis blokas leidžia matyti kiaurai ir kartu dera prie sutvirtintų fabriko konstrukcijų.<br>
+<br>
+Naudojimas: naudok ten, kur žaidėjai turėtų matyti mašinas pro apsauginę pertvarą.<br>

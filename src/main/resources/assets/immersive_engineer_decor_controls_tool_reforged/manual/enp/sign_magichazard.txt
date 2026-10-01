@@ -1,0 +1,5 @@
+Spellcraft Risk Markboard
+Risk marker
+<&recipe>The Beware of Spellcraft Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>

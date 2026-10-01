@@ -1,0 +1,7 @@
+Lapislàtzuli carregat
+Experiència emmagatzemada
+<&recipe>El lapislàtzuli carregat emmagatzema un nivell d’experiència mitjançant l’espremedor de ment.<br>
+<br>
+Ús: consumeix-lo per recuperar un nivell, eliminar els efectes actius i restaurar una petita quantitat de salut.<br>
+<br>
+El visor de receptes mostra l’espremedor de ment perquè el lapislàtzuli carregat es produeix fent servir aquesta eina quan disposes de lapislàtzuli i experiència.

@@ -1,0 +1,5 @@
+Inset Glowstone Light
+Little Working Light
+<&recipe>This block affords compact manufactory lighting for passages, walkways and working bays.<br>
+<br>
+Use: Mount it upon ceilings, walls or edges where thy chamber needs clear light for labour.<br>

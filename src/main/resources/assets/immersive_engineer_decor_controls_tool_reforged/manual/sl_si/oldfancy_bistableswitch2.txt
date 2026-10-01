@@ -1,0 +1,7 @@
+Stara okrasna vrtljiva ročica
+Krmiljenje z redstonom
+<&recipe>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.

@@ -1,0 +1,7 @@
+Stopovač
+Značka uloženej polohy
+<&recipe>Sledovač ukladá pozíciu bloku priamo do predmetu.<br>
+<br>
+Kliknite na blok na uloženie dimenzie a súradníc. Popis ukazuje pozíciu. Použite ho v prikrčení na vymazanie cieľa.<br>
+<br>
+Označujte stroje, tunely, diaľkové ovládače alebo nedokončené stavby.

@@ -1,0 +1,5 @@
+Escadas de tijolos de clínquer
+Tijolos escurecidos pela fuligem
+<&recipe>Este bloco acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Use em paredes, acabamentos ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>

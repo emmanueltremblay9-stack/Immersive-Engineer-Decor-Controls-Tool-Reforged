@@ -1,0 +1,7 @@
+Çelës drite
+Kontrolli me redston
+<&recipe>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.

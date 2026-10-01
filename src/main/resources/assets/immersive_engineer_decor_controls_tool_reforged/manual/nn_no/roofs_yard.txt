@@ -1,0 +1,101 @@
+Tak og uteområde
+Fabrikkdelar for utebruk
+Takblokker, grusdekke og gamle fabrikkdelar av tre hjelper med å gjere ferdig uteskur, arbeidsplassar, lasteområde og vêrslitne kantar på fabrikkbygg.<br>
+<br>
+Bland desse delane med murverk og tilkomstvegar for å halde industribygg ute tydelege på avstand.
+<np>
+Mørkt spontak
+Vêrsliten takdel
+<&dark_shingle_roof>Med denne blokka lagar du mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Snøfangar for tak
+Vêrsliten takdel
+<&dark_shingle_roof_metallized>Snøfangaren for mørkt spontak høver til mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Mørkt spontak
+Vêrsliten takdel
+<&dark_shingle_roof_skylight>Takvindauget for mørkt spontak høver til mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Takpipeskaft
+Vêrsliten takdel
+<&dark_shingle_roof_chimneytrunk>Pipeskaftet for mørkt spontak høver til mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Leidningsgjennomføring i tak
+Vêrsliten takdel
+<&dark_shingle_roof_wireconduit>Leidningsgjennomføringa for mørkt spontak høver til mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Mørkt spontak
+Vêrsliten takdel
+<&dark_shingle_roof_chimney>Pipa for mørkt spontak høver til mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Mørk spontakblokk
+Vêrsliten takdel
+<&dark_shingle_roof_block>Med denne blokka lagar du mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Mørk spontakhelle
+Vêrsliten takdel
+<&dark_shingle_roof_slab>Med denne blokka lagar du mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Mørk spontakhelle
+Vêrsliten takdel
+<&dark_shingle_roof_slabslice>Den tynne hella for mørkt spontak høver til mørke, praktiske takliner på verkstader og industriskur.<br>
+<br>
+Bruk: set delane saman til truverdige takformer.<br>
+<np>
+Samanpressa grusjord
+Dekke på arbeidsplassen
+<&dense_grit_dirt_block>Denne blokka gjev arbeidsområde ute ei samanpressa og nedtrakka overflate.<br>
+<br>
+Bruk: legg henne kring lasteportar, utetankar og maskinplassar.<br>
+<np>
+Samanpressa grussand
+Dekke på arbeidsplassen
+<&dense_grit_sand_block>Denne blokka gjev arbeidsområde ute ei samanpressa og nedtrakka overflate.<br>
+<br>
+Bruk: legg henne kring lasteportar, utetankar og maskinplassar.<br>
+<np>
+Gamle treplankar
+Gammalt verkstadtre
+<&old_industrial_wood_planks>Dei gamle fabrikkplankane gjev gammalt verkstadtre til golv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: nytt henne til gamle verkstadgolv, trapper, dører og listverk.<br>
+<np>
+Gammal fabrikkhelle av tre
+Gammalt verkstadtre
+<&old_industrial_wood_slab>Denne blokka gjev gammalt verkstadtre til golv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: nytt henne til gamle verkstadgolv, trapper, dører og listverk.<br>
+<np>
+Gammal tretrapp
+Gammalt verkstadtre
+<&old_industrial_wood_stairs>Den gamle fabrikktrappa av tre gjev gammalt verkstadtre til golv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: nytt henne til gamle verkstadgolv, trapper, dører og listverk.<br>
+<np>
+Tynn gammal trehelle
+Gammalt verkstadtre
+<&old_industrial_wood_slabslice>Den tynne gamle fabrikkhella av tre gjev gammalt verkstadtre til golv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: nytt henne til gamle verkstadgolv, trapper, dører og listverk.<br>
+<np>
+Gammal fabrikkdør av tre
+Gammalt verkstadtre
+<&old_industrial_wood_door>Denne blokka gjev gammalt verkstadtre til golv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: nytt henne til gamle verkstadgolv, trapper, dører og listverk.<br>

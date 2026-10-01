@@ -1,0 +1,5 @@
+Tehasepüüdja
+Töökoja abiseade
+<&recipe>See plokk liigutab esemevirnu läbi kompaktsema tööstuskorpuse.<br>
+<br>
+Kasutamine: Suuna see laoliini poole ja sea ekraanil ulatus, virnade arv, ajastus ning redstone'i režiim.<br>

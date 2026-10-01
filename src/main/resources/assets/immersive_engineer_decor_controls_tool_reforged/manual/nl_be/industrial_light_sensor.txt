@@ -1,0 +1,7 @@
+Lichtsensor
+Signaaldetectie
+<&recipe>Een lichtsensor zet de plaatselijke helderheid om in redstonebediening.<br>
+<br>
+Gebruik: gebruik hem voor automatische lampen, luiken en schakelingen die op zichtbaarheid reageren.<br>
+<br>
+Opmerking: geeft een signaal af bij een onbewerkte helderheidswaarde van 8 of hoger.

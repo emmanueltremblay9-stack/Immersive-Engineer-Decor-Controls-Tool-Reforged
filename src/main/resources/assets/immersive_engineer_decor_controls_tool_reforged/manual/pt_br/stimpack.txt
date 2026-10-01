@@ -1,0 +1,5 @@
+Injetor automático de estimulantes
+Injetor de emergência
+<&recipe>O pacote estimulante automático é um item médico de emergência.<br>
+<br>
+Use-o manualmente para curar, obter proteção breve e um curto aumento de movimento. No inventário, aciona-se automaticamente com pouca saúde e então entra em recarga. Mantenha um à mão em locais perigosos.

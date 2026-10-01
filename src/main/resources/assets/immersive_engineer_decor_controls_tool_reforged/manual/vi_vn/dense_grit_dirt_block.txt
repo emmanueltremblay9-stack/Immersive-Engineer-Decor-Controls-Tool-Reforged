@@ -1,0 +1,5 @@
+Đất sạn nén chặt
+Lớp phủ nền công trường
+<&recipe>Khối này tạo bề mặt nén chặt, bị giẫm nhiều cho khu làm việc ngoài trời.<br>
+<br>
+Cách dùng: Rải quanh cửa bốc dỡ, bể ngoài trời và sân máy.<br>

@@ -1,0 +1,5 @@
+Slakbaksteinplaat
+Dicht fabrieksmetselwerk
+<&recipe>Dees blok veugt dicht griesbroen metselwerk toe veur funderinge, keermoere en aajere werksjoppe.<br>
+<br>
+Gebroek: neem 'm veur aaj funderinge, keermoere en vuile fabrieksvloere.<br>

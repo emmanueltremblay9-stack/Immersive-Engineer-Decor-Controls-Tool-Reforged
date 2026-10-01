@@ -1,0 +1,7 @@
+Dimmer
+Variabelt Signal
+<&recipe>En Dréiregler stellt d'Redstone-Stäerkt op enger kompakter Steierfläch an.<br>
+<br>
+Benotzung: Maach e Rietsklick fir den Ausgang schrëttweis ze erhéijen. No der voller Stäerkt fänkt en erëm bei null un.<br>
+<br>
+Hiweiser: Gëtt eng Stäerkt vun 0 bis 15 aus.

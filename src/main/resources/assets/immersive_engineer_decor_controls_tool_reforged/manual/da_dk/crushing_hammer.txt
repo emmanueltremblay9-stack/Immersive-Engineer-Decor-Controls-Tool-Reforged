@@ -1,0 +1,7 @@
+Malmknusningshammer
+Manuelt værktøj
+<&recipe>Et manuelt værktøj til tidligt jern- og guldarbejde.<br>
+<br>
+Brug: Fremstil med råjern, råguld, jernmalm, dybskiferjernmalm, guldmalm eller dybskiferguldmalm for Immersive Engineering-jern- eller guldstøv. Hammeren mister holdbarhed og vender tilbage til gitteret, til den knækker.<br>
+<br>
+Den slides også ved minedrift og kan slå mål tilbage i nærkamp.

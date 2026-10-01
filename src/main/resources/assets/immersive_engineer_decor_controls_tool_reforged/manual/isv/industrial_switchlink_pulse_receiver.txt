@@ -1,0 +1,7 @@
+Vezany impulsny prijemnik
+Vezano upravljanje
+<&recipe>Vezany impulsny prijemnik davaje oddalenym panelam kratky redstounovy spustnik.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Klikni go pravoj knopkoj ili aktivuj vezanu perlu dlja izdavanja kratkogo impulsa.<br>
+<br>
+Primětky: Impuls se sam zaveršaje poslě zaplanovanogo trvanja.

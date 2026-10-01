@@ -1,0 +1,107 @@
+Wiärksteedmaschinen
+Maschinen un Wiärksteed-In-/Utgaav
+Wiärksteedmaschinen biedt Handwiärk, Saaktransport, Smölten, Affallverarbeiden, Sammeln un Hülpsarbeit op den Platz vun een Block.<br>
+<br>
+Maak de neegsten Sieden apen för Rezept, Bild, Achtergrund un praktische Bruukshülpen vun elkeen Maschien.
+<np>
+Stahltisch
+Wiärksteedmöbel
+<&steel_table>Disse Block is en nütt Möbel för Wiärkruum un Wartoongsecken.<br>
+<br>
+Bruuk: Sett em blangen Banken, Kisten un lütte Maschinen.<br>
+<np>
+Tisch ut behannelt Holt
+Wiärksteedmöbel
+<&treated_wood_table>Disse Block is en nütt Möbel för Wiärkruum un Wartoongsecken.<br>
+<br>
+Bruuk: Sett em blangen Banken, Kisten un lütte Maschinen.<br>
+<np>
+Höcker ut behannelt Holt
+Wiärksteedmöbel
+<&treated_wood_stool>Disse Block is en nütt Möbel för Wiärkruum un Wartoongsecken.<br>
+<br>
+Bruuk: Sett em blangen Banken, Kisten un lütte Maschinen.<br>
+<np>
+Metallwiärkbank
+Platenwiärksteed
+<&metal_crafting_table>De Metallwiärkbank is en verstarkte Wiärksteed mit Hamerfack, en 3x3-Handwiärksraster un en düütlich Utgaavfack.<br>
+<br>
+Bruuk: Bruuk dat Raster för normaal Handwiärk. För IE-Platen settst du en Ingenieurshamer in dat Wiärktüüchfack un dat Plaatmaterial in dat Raster, ehr du dat Utkamen nimmst. Stahlprunk bruukt Stahlplaten för Pöhl, Loopstegen, Finstern, Düörn, Gelänner un annere Stahlparts.<br>
+<np>
+Fabrikträchter
+Wiärksteedhülp
+<&factory_hopper>Disse Block verschufft Saakstapels dörch en engere Industriekast.<br>
+<br>
+Bruuk: Richt em na de Lagerreeg un stell denn Wied, Stapeltall, Tieden un Redstone-Hanterung op den Schirm in.<br>
+<np>
+Fabrikgiëwer
+Wiärksteedhülp
+<&factory_dropper>Disse Block gifft lagert Saken dörch en utrichte Siet rut.<br>
+<br>
+Bruuk: Richt de Vörsiet op de Utgaavsteed, füll de inneren Fäker un stell Stark, Winkel, Verzögerung, Filterlogik un Redstone-Hanterung op den Schirm in.<br>
+<np>
+Fabrikblocksetter
+Wiärksteedhülp
+<&factory_placer>Disse Block sett Blöck ut sien egen Vörraad, wenn he utlööst warrt.<br>
+<br>
+Bruuk: Richt de Wiärksiet op den Teelruum un laad Stapels in, de sik setten laat.<br>
+<np>
+Blockbreker
+Wiärksteedhülp
+<&small_block_breaker>De lütte Blockbreker is en Wiärksteedhülpsblock för Handwiärk, Lagern, Setten, Breken, Sammeln oder lütte Automatisering.<br>
+<br>
+Bruuk: Richt de Wiärksiet op den Block, de wegschall.<br>
+<np>
+Affallbrennaven
+Lütte Verarbeitungseenheit
+<&small_waste_incinerator>De Affallbrennaven vernicht Saken, de du nich mehr wullt, op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Föhr bloots Saken, de weg köönt, in sien Reeg in.<br>
+<np>
+Laboraven
+Lütte Verarbeitungseenheit
+<&small_lab_furnace>De Laboraven smölt lütte Mengden mit fasten Brennstoff op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Bruuk fasten Brennstoff för lütte Smöltladungen.<br>
+<np>
+Elektroaven
+Lütte Verarbeitungseenheit
+<&small_electrical_furnace>De Elektroaven smölt lütte Mengden mit FE-Energie op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Föhr FE un gültig Smöltmaterial to.<br>
+<np>
+Mineralsmölter
+Lütte Verarbeitungseenheit
+<&small_mineral_smelter>De Mineralsmölter verarbeit Mineralen mit hoge Hitzt op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Föhr Mineralblöck un Energie för Smöltarbeit bi hoge Hitzt to.<br>
+<np>
+Waterfrerer
+Lütte Verarbeitungseenheit
+<&small_freezer>De Waterfrerer maakt lütte Köhlarbeiten för Flüssigkeitsanlagen mit Energie.<br>
+<br>
+Bruuk: Föhr Water un Energie to, üm Ies in Stopen to maken.<br>
+<np>
+Passive Flüssigkeit
+Deelen för Flüssigkeitsleitungen
+<&passive_fluid_accumulator>De passive Flüssigkeitssammler is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Sett em an passende Waterbornen un laat Platz, üm Flüssigkeit aftonehmen.<br>
+<np>
+Sünnenpaneel
+Wiärksteedhülp
+<&small_solar_panel>Dat lütte Sünnenpaneel is en Wiärksteedhülpsblock för Handwiärk, Lagern, Setten, Breken, Sammeln oder lütte Automatisering.<br>
+<br>
+Bruuk: Giff dat frien Himmelskiek un sluut Apparaten mit lütten Verbruuk an.<br>
+<np>
+Melkmaschien
+Wiärksteedhülp
+<&small_milking_machine>De lütte Melkmaschien is en Wiärksteedhülpsblock för Handwiärk, Lagern, Setten, Breken, Sammeln oder lütte Automatisering.<br>
+<br>
+Bruuk: Sett ehr dicht bi Köh un sorg för en Weeg, üm Melkgefaten oder Flüssigkeit wegtonehmen.<br>
+<np>
+Boomfäller
+Wiärksteedhülp
+<&small_tree_cutter>De lütte Boomfäller is en Wiärksteedhülpsblock för Handwiärk, Lagern, Setten, Breken, Sammeln oder lütte Automatisering.<br>
+<br>
+Bruuk: Richt em op utwussen Bööm un sammel de fallen Saken extra.<br>

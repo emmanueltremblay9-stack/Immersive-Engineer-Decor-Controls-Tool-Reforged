@@ -1,0 +1,5 @@
+Müllverbrennungsanlog
+Kompakte Verarbeitungseinheit
+<&recipe>De Müllverbrennungsanlog vernichtet unerwünschte Gegnständ auf wenig Werkstattfläche.<br>
+<br>
+Verwendung: Gib nur unerwünschte Gegnständ in ihre Warteschlange.<br>

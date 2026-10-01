@@ -1,0 +1,5 @@
+Elektrische aove
+Kleine verwerkingseenheid
+<&recipe>De elektrische aove duit klein smeltwerk mèt FE-energie op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: voer FE en passend smeltmateriaal toe.<br>

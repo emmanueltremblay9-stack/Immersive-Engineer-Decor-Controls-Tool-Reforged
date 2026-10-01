@@ -1,0 +1,5 @@
+Trepte de lemn vechi
+Lemn de atelier învechit
+<&recipe>Treptele industriale vechi de lemn adaugă lemn de atelier învechit pentru podele, trepte, uși și ornamente interioare cu aspect cald.<br>
+<br>
+Utilizare: Folosește-l pentru podele, scări, uși și ornamente de atelier vechi.<br>

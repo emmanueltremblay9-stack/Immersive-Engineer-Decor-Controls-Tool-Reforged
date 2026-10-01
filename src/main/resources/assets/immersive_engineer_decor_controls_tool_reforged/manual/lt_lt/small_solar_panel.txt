@@ -1,0 +1,5 @@
+Saulės modulis
+Dirbtuvių pagalbininkas
+<&recipe>Mažas saulės modulis yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: užtikrink atvirą dangų ir prijunk mažai energijos naudojančią įrangą.<br>

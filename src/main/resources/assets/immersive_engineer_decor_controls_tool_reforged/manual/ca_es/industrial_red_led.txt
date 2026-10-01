@@ -1,0 +1,7 @@
+LED vermell
+Indicació del senyal
+<&recipe>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.

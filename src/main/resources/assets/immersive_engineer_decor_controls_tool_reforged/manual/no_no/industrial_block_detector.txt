@@ -1,0 +1,7 @@
+Blokkdetektor
+Signalføling
+<&recipe>En blokkdetektor undersøker om rommet foran er opptatt.<br>
+<br>
+Bruk: rett den mot maskinsiden, bufferen eller det sikrede rommet som skal overvåkes.<br>
+<br>
+Merknad: gir signal når blokken foran ikke er luft.

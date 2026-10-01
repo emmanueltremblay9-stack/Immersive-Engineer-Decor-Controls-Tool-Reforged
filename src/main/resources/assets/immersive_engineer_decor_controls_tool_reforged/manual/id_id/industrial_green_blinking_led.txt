@@ -1,0 +1,7 @@
+LED Hijau Berkedip
+Umpan balik sinyal
+<&recipe>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.

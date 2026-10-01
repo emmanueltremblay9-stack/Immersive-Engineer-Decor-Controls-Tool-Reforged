@@ -1,0 +1,7 @@
+Ljochtsensor
+Sinjaaldeteksje
+<&recipe>In ljochtsensor set de pleatslike helderheid om yn redstonestjoering.<br>
+<br>
+Gebrûk: Brûk him foar automatyske lampen, lûken en skeakelingen foar sichtberens.<br>
+<br>
+Opmerking: Jout enerzjy by in net oanpast ljochtnivo fan 8 of heger.

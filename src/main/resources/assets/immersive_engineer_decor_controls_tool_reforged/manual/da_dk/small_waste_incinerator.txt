@@ -1,0 +1,5 @@
+Affaldsforbrænder
+Kompakt bearbejdningsenhed
+<&recipe>Affaldsforbrænderen ødelægger uønskede genstande på begrænset værkstedsplads.<br>
+<br>
+Brug: Tilfør kun uønskede genstande til dens kø.<br>

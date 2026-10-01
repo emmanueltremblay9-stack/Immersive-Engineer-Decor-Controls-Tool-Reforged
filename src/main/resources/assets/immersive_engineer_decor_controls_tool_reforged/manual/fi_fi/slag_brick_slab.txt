@@ -1,0 +1,5 @@
+Kuonatiililaatta
+Tiivis tehdasmuuraus
+<&recipe>Tämä kuutio tarjoaa tiivistä harmaanruskeaa muurausta perustuksiin, tukimuureihin ja vanhempiin työvajoihin.<br>
+<br>
+Käyttö: Käytä vanhoihin perustuksiin, tukimuureihin ja likaisiin tehdaslattioihin.<br>

@@ -1,0 +1,7 @@
+Botón de parada de emerxencia
+Control por redstone
+<&recipe>Un compoñente de control compacto proporciona un punto de conmutación de redstone doado de identificar nas construcións de fábrica.<br>
+<br>
+Uso: fai clic dereito nel para activar ou desactivar a saída á máxima potencia para os circuítos próximos.<br>
+<br>
+Notas: emite redstone á máxima potencia mentres está acendido.

@@ -1,0 +1,5 @@
+Panell kinklañ
+Merker dañjer
+<&recipe>Ar blakenn banell (Engineer's decor) a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>

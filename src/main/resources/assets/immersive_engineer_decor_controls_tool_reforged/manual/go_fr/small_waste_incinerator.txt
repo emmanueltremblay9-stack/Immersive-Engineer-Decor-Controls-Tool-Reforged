@@ -1,0 +1,5 @@
+Brûlou de déchés
+Unitë de tratement compacte
+<&recipe>Le Brûlou de déchés détruit les bezaignes qe n'en veut pouint den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Ne météz den sa file qe les bezaignes qe vous voulez jeter.<br>

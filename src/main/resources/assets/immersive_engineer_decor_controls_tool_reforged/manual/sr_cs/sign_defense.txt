@@ -1,0 +1,5 @@
+Znak odbrane
+Oznaka opasnosti
+<&recipe>Znak „Oprez, odbrambeni sistem ispred“ obeležava opasnosti, izlaze i radne zone jasnom oznakom za fabričku bezbednost.<br>
+<br>
+Upotreba: postavi ga pored opasnosti, izlaza, mašina i zabranjenih zona.<br>

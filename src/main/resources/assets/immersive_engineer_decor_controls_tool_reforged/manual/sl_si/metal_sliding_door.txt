@@ -1,0 +1,5 @@
+Kovinska drsna vrata
+Industrijska dostopna točka
+<&recipe>Ta blok zagotavlja trpežen dostop do servisnih prostorov, jaškov, streh in ohišij strojev.<br>
+<br>
+Uporaba: Namesti ga tam, kjer gradnja potrebuje nadzorovano vzdrževalno odprtino.<br>

@@ -1,0 +1,7 @@
+Impulzný prijímač prepojenia
+Prepojené ovládanie
+<&recipe>Prepojený impulzný prijímač poskytuje vzdialeným panelom krátky redstonový spúšťací signál.<br>
+<br>
+Použitie: Kliknutím Ender perlou vytvor prepojenú perlu. Pravým kliknutím na prijímač alebo spustením prepojenej perly vyšleš krátky impulz.<br>
+<br>
+Poznámky: Impulz sa po nastavenej dobe sám skončí.

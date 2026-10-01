@@ -1,0 +1,99 @@
+Inženjerski alati
+Prenosiva radionička oprema
+Skup Inženjerski alati dodaje ručnu opremu, rudničke oznake, potrošne predmete za nuždu, terensku hranu i male pomoćne alate za obradu materijala u isti priručnik koji opisuje ukrasne i upravljačke blokove.<br>
+<br>
+Ovi alati služe za rad daleko od potpuno opremljene radionice: označite put, ponesite zalihe, oporavite se od grešaka i završite manje poslove obrade na licu mjesta.
+<np>
+Alat REDIA
+Korisnost obložena dijamantom
+<&redia_tool>Alat REDIA je izdržljivi terenski alat za brze radove na tlu. Upotrijebite ga na obradivom tlu da napravite polje.<br>
+<br>
+Upotrijebite ga na čvrstoj površini dok nosite baklje da postavite baklju za označavanje iz inventara bez trošenja REDIA alata. Rad na tlu, striženje, sječenje sjekirom i obaranje drveća troše izdržljivost.
+<np>
+Čekić za drobljenje rude
+Ručni alat
+<&crushing_hammer>Ručni alat za ranu obradu željeza i zlata.<br>
+<br>
+Upotreba: Kombinujte sa sirovim željezom, zlatom, željeznom rudom, dubokoskriljastom željeznom rudom, zlatnom rudom ili dubokoskriljastom zlatnom rudom za prašinu Immersive Engineeringa. Čekić gubi izdržljivost i vraća se u mrežu dok se ne slomi.<br>
+<br>
+Troši se i rudarenjem te odbacuje mete u bliskoj borbi.
+<np>
+Pratilac
+Oznaka sačuvanog položaja
+<&tracker>Čuva položaj bloka u predmetu.<br>
+<br>
+Upotreba: Kliknite blok za dimenziju i koordinate. Opis pokazuje položaj. Koristite čučeći za brisanje.<br>
+<br>
+Označite mašine, grane tunela, daljinske kontrole ili nedovršena gradilišta.
+<np>
+Arijadnin ugalj
+Oznaka rudničkog puta
+<&ariadne_coal>Arijadnin ugalj brzo postavlja crne strelice za označavanje puta na čvrstim površinama rudnika. Upotrijebite ga na čvrstoj strani da označite sljedeće skretanje, izlaz ili raskrsnicu; oznaka podržava osam smjerova na kliknutoj površini, uključujući dijagonale.<br>
+<br>
+Arijadnin ugalj je višekratni alat za označavanje sa 100 upotreba. Svaka uspješno postavljena oznaka troši jedan bod izdržljivosti. Nepodržane površine odbija umjesto da troši predmet.
+<np>
+Automatski stim-paket
+Hitna injekcija
+<&stimpack>Predmet za hitni oporavak pri opasnom održavanju.<br>
+<br>
+Upotreba: Ručno liječi, daje kratku zaštitu i ubrzanje. U inventaru se aktivira pri slabom zdravlju i zatim se hladi.<br>
+<br>
+Držite prije visina, otvorenih žica ili opasnih rudnika.
+<np>
+Vreća za spavanje
+Prenosivi komplet za odmor
+<&sleeping_bag>Komplet otporan na vrijeme za rad daleko od kreveta.<br>
+<br>
+Upotreba: Noću u Nadzemlju odmorite do jutra bez postavljanja mjesta stvaranja.<br>
+<br>
+Odbija dan, obližnja čudovišta i neprikladne dimenzije. Svaki uspješan odmor je troši.
+<np>
+Kutija za materijal
+Građevinske zalihe
+<&material_box>Nosi veliki zalih jednog običnog, neizmijenjenog materijala koji se slaže.<br>
+<br>
+Upotreba: Kutija u glavnoj, materijal u drugoj ruci za punjenje. Prazna druga ruka vadi jednu hrpu.<br>
+<br>
+Prima 512 predmeta jednog tipa i odbija ugniježđene kutije, opremu bez slaganja i izmijenjene hrpe; sadržaj je u opisu.
+<np>
+Ronilačka zračna kapsula
+Rezerva zraka
+<&diving_capsule>Predmet za hitni zrak pod vodom.<br>
+<br>
+Upotreba: Ručno vraća zrak. U inventaru se automatski aktivira kada je zrak pri kraju i zatim se hladi.<br>
+<br>
+Nosite za poplavljene rudnike, potopljene cijevi i popravke pumpi.
+<np>
+Presa za Muslee pločice
+Presa za hranu
+<&musli_bar_press>Običnu hranu pretvara u kompaktne terenske obroke.<br>
+<br>
+Upotreba: Hljeb, jabuka i sjemenka pšenice, lubenice, bundeve, cikle ili industrijske konoplje. Uspješno presovanje troši po jednu, provjerava mjesto, stvara četiri pločice i oštećuje presu.<br>
+<br>
+Ako nešto nedostaje ili nema mjesta, ništa se ne troši.
+<np>
+Muslee Melange energetska pločica
+Brza radionička užina
+<&musli_bar>Kompaktna hrana od hljeba, sjemenki i voća.<br>
+<br>
+Upotreba: Jedite tokom postavljanja kontrola, cijevi, platformi ili dugih mašinskih linija.
+<np>
+Cjedilo za um
+Kondenzator iskustva
+<&charged_lapis_squeezer>Cjedilo za um pretvara jedan Lapis Lazuli i jedan nivo iskustva iz vašeg inventara u napunjeni lapis.<br>
+<br>
+Pri svakoj uspješnoj pretvorbi postupak povređuje, iscrpljuje i nakratko zasljepljuje korisnika. Odbija raditi bez lapisa, bez iskustva ili kada je korisnik preblizu smrti.
+<np>
+Napunjeni lapis
+Pohranjeno iskustvo
+<&charged_lapis>Napunjeni lapis čuva jedan nivo iskustva. Potrošite ga da vratite nivo, uklonite aktivne efekte i obnovite malo zdravlja.<br>
+<br>
+Prvo napravite cjedilo za um; napunjeni lapis dobiva se upotrebom tog alata uz dostupan lapis i iskustvo.
+<np>
+Krupan gvozdeni granulat
+Materijal za inženjerske alate koji koristi obnovljeni skup recepata.
+<&iron_grit>Može se istopiti u<br>gvozdene poluge, ali nije<br>pogodan za naprednu obradu materijala.
+<np>
+Krupan zlatni granulat
+Materijal za inženjerske alate koji koristi obnovljeni skup recepata.
+<&gold_grit>Može se istopiti u zlatne<br>poluge, ali nije pogodan<br>za naprednu obradu materijala.

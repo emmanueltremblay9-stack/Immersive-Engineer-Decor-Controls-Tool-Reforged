@@ -1,0 +1,7 @@
+Impulsų imtuvas korpuse
+Susietas valdymas
+<&recipe>Susietas impulsų imtuvas korpuse suteikia nuotoliniams skydams trumpą redstono sužadinimą.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Spustelėk imtuvą dešiniuoju pelės mygtuku arba suaktyvink susietą perlą, kad išsiųstum trumpą impulsą.<br>
+<br>
+Pastabos: impulsas automatiškai baigiasi praėjus nustatytai trukmei.

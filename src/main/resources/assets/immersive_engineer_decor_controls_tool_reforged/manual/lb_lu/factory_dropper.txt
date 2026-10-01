@@ -1,0 +1,5 @@
+Fabrickspender
+Hëllefsmëttel um Ateliersbuedem
+<&recipe>Dëse Block gëtt gespäichert Géigestänn iwwer eng geriichte Säit eraus.<br>
+<br>
+Benotzung: Riicht déi viischt Säit op den Ausgabepunkt, fëll déi intern Fächer a stell Kraaft, Wénkel, Waardezäit, Filterlogik a Redstone-Modus am Interface an.<br>

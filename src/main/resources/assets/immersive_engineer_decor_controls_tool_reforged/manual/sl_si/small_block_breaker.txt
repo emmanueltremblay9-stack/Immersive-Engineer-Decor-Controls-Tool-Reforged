@@ -1,0 +1,5 @@
+Razbijalnik blokov
+Tovarniški pripomoček
+<&recipe>Majhen razbijalnik blokov je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Delovno ploskev usmeri proti bloku, ki ga želiš odstraniti.<br>

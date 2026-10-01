@@ -1,0 +1,5 @@
+Capa fina de losa de madera antigua
+Madera de taller envejecida
+<&recipe>La capa fina de losa industrial antigua de madera aporta madera de taller envejecida para suelos, peldaños, puertas y remates interiores cálidos.<br>
+<br>
+Uso: Úsalo para suelos, escaleras, puertas y remates de talleres antiguos.<br>

@@ -1,0 +1,7 @@
+Tapit tal-kuntatt
+Impuls tal-pressjoni
+<&recipe>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.

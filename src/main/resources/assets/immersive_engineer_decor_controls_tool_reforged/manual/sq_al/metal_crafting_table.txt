@@ -1,0 +1,7 @@
+Tavolinë përpunimi metali
+Stacion pune për pllaka
+<&recipe>Tavolina e metalit ka vend për çekiç, rrjetë të plotë 3x3 dhe dalje.<br>
+<br>
+Përdoreni rrjetën si tavolinë normale. Për pllaka IE, vendosni çekiçin e inxhinierit te vegla, materialin në rrjetë dhe merrni pllakën nga dalja.<br>
+<br>
+Dekorimet prej çeliku përdorin pllaka çeliku të formuara në këtë tavolinë.

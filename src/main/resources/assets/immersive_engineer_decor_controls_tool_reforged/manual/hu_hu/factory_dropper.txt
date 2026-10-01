@@ -1,0 +1,5 @@
+Gyári kidobó
+Műhelyi segédeszköz
+<&recipe>Ez a blokk az irányba állított oldalán adja ki a tárolt tárgyakat.<br>
+<br>
+Használat: fordítsd az elejét a kiadási pont felé, töltsd fel belső helyeit, majd a felületen állítsd az erőt, szöget, késleltetést, szűrőlogikát és redstone-módot.<br>

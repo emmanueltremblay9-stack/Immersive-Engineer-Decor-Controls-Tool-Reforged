@@ -1,0 +1,7 @@
+Detector linear de veire
+Deteccion de senhal
+<&recipe>Un detector d’entitats susvelha los movements pròches sens placa de sòl visibla.<br>
+<br>
+Utilizacion : liga-lo a de pòrtas, de lampas, d’alarmas o de mecanismes de blocatge de seguretat de maquinas.<br>
+<br>
+Nòta : susvelha una pichona zòna a l’entorn del blòc.

@@ -1,0 +1,5 @@
+Relau Makmal
+Unit pemprosesan padat
+<&recipe>Relau makmal menjalankan kerja peleburan padat menggunakan bahan api pepejal dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Gunakan bahan api pepejal untuk kelompok peleburan kecil.<br>

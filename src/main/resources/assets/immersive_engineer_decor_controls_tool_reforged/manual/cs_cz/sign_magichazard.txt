@@ -1,0 +1,5 @@
+Cedule magického nebezpečí
+Značka nebezpečí
+<&recipe>Cedule „Pozor, magické nebezpečí“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>

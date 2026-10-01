@@ -1,0 +1,7 @@
+Rilevador de tenporai
+Rilevamento de segnal
+<&recipe>Un sensor de tenporai el avia i avisi quando ghe xe troni.<br>
+<br>
+Uso: mètelo soto el ciel verto e colegalo a lànpade o alarmi.<br>
+<br>
+Da saver: ghe vol troni e acesso al ciel.

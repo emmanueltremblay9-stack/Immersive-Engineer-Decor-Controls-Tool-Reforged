@@ -1,0 +1,5 @@
+Assay Furnace
+Compact Processing Engine
+<&recipe>The Assay Furnace smelts with solid fuel whilst taking little room in thy workshop.<br>
+<br>
+Use: Burn solid fuel to smelt compact batches.<br>

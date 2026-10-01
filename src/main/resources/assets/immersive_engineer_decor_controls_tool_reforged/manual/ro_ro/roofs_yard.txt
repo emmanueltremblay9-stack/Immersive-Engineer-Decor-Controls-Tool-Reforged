@@ -1,0 +1,101 @@
+Acoperișuri și curți
+Echipamente exterioare de fabrică
+Blocurile de acoperiș, pietrișul de curte și piesele vechi de lemn industrial ajută la finisarea halelor exterioare, curților de lucru, zonelor de încărcare și marginilor învechite ale fabricilor.<br>
+<br>
+Combină aceste piese cu zidărie și căi de acces pentru a păstra construcțiile industriale exterioare ușor de identificat de la distanță.
+<np>
+Acoperiș din șindrilă închisă la culoare
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof>Acest bloc formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Opritor de zăpadă pentru acoperiș
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_metallized>Opritorul de zăpadă pentru acoperiș din șindrilă închisă formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Acoperiș din șindrilă închisă la culoare
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_skylight>Luminatorul pentru acoperiș din șindrilă închisă formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Corp de coș pentru acoperiș
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_chimneytrunk>Corpul de coș pentru acoperiș din șindrilă închisă formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Tub de cabluri pentru acoperiș
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_wireconduit>Tubul de cabluri pentru acoperiș din șindrilă închisă formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Acoperiș din șindrilă închisă la culoare
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_chimney>Coșul pentru acoperiș din șindrilă închisă formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Bloc de acoperiș din șindrilă închisă
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_block>Acest bloc formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Lespede de acoperiș din șindrilă închisă
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_slab>Acest bloc formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Lespede de acoperiș din șindrilă închisă
+Piesă de acoperiș cu aspect învechit
+<&dark_shingle_roof_slabslice>Placa subțire de acoperiș din șindrilă închisă formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>
+<np>
+Pământ compactat cu pietriș fin
+Suprafață de teren pentru șantier
+<&dense_grit_dirt_block>Acest bloc oferă zonelor de lucru în aer liber o suprafață compactată și bătătorită.<br>
+<br>
+Utilizare: Așază-l în jurul ușilor de încărcare, rezervoarelor exterioare și curților cu mașini.<br>
+<np>
+Nisip compactat cu pietriș fin
+Suprafață de teren pentru șantier
+<&dense_grit_sand_block>Acest bloc oferă zonelor de lucru în aer liber o suprafață compactată și bătătorită.<br>
+<br>
+Utilizare: Așază-l în jurul ușilor de încărcare, rezervoarelor exterioare și curților cu mașini.<br>
+<np>
+Scânduri vechi de lemn
+Lemn de atelier învechit
+<&old_industrial_wood_planks>Scândurile industriale vechi adaugă lemn de atelier învechit pentru podele, trepte, uși și ornamente interioare cu aspect cald.<br>
+<br>
+Utilizare: Folosește-l pentru podele, scări, uși și ornamente de atelier vechi.<br>
+<np>
+Lespede industrială veche de lemn
+Lemn de atelier învechit
+<&old_industrial_wood_slab>Acest bloc adaugă lemn de atelier învechit pentru podele, trepte, uși și ornamente interioare cu aspect cald.<br>
+<br>
+Utilizare: Folosește-l pentru podele, scări, uși și ornamente de atelier vechi.<br>
+<np>
+Trepte de lemn vechi
+Lemn de atelier învechit
+<&old_industrial_wood_stairs>Treptele industriale vechi de lemn adaugă lemn de atelier învechit pentru podele, trepte, uși și ornamente interioare cu aspect cald.<br>
+<br>
+Utilizare: Folosește-l pentru podele, scări, uși și ornamente de atelier vechi.<br>
+<np>
+Placă subțire de lemn vechi
+Lemn de atelier învechit
+<&old_industrial_wood_slabslice>Placa subțire industrială veche de lemn adaugă lemn de atelier învechit pentru podele, trepte, uși și ornamente interioare cu aspect cald.<br>
+<br>
+Utilizare: Folosește-l pentru podele, scări, uși și ornamente de atelier vechi.<br>
+<np>
+Ușă industrială veche de lemn
+Lemn de atelier învechit
+<&old_industrial_wood_door>Acest bloc adaugă lemn de atelier învechit pentru podele, trepte, uși și ornamente interioare cu aspect cald.<br>
+<br>
+Utilizare: Folosește-l pentru podele, scări, uși și ornamente de atelier vechi.<br>

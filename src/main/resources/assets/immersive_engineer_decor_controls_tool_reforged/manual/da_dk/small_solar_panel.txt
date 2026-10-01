@@ -1,0 +1,5 @@
+Solpanel
+Hjælpemiddel til værkstedsgulvet
+<&recipe>Det lille solpanel er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Giv det fri adgang til himlen, og tilslut udstyr med lavt forbrug.<br>

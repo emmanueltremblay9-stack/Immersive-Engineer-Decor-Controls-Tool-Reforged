@@ -1,0 +1,5 @@
+Dojací stroj
+Vybavenie výrobnej haly
+<&recipe>Malý dojací stroj patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Umiestni ho pri kravách a zabezpeč odoberanie nádob s mliekom alebo kvapaliny.<br>

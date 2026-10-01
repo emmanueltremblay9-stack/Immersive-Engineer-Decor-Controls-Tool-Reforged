@@ -1,0 +1,7 @@
+Analogové propojovací relé
+Propojené ovládání
+<&recipe>Prvek ve stylu relé poskytuje panelovým sestavám kompaktní místní spínací bod.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody. Pro spouštění propojenou perlou používej bloky přijímačů.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.

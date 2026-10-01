@@ -1,0 +1,5 @@
+Muxidora
+Equipamento de planta
+<&recipe>A muxidora pequena é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: colócaa preto das vacas e proporciona unha vía para retirar os recipientes de leite ou o fluído.<br>

@@ -1,0 +1,5 @@
+Metallist lükanduks
+Tööstuslik ligipääsupunkt
+<&recipe>See plokk loob tugeva ligipääsupunkti hooldusruumidele, šahtidele, katustele ja masinakorpustele.<br>
+<br>
+Kasutamine: Paigalda sinna, kus ehitis vajab kontrollitavat hooldusava.<br>

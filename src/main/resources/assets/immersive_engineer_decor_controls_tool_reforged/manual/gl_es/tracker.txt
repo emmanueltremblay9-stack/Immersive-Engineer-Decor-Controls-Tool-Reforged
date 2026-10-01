@@ -1,0 +1,7 @@
+Rastreador
+Marcador de posición gardada
+<&recipe>O rastreador garda a posición dun bloque directamente no obxecto.<br>
+<br>
+Uso: Fai clic nun bloque para gardar a dimensión e as coordenadas. A descrición mostra a posición. Usa o rastreador agachado para borrar o obxectivo.<br>
+<br>
+Úsao para marcar máquinas, ramificacións de túneles, controis remotos ou obras sen rematar antes de volver con ferramentas e materiais.

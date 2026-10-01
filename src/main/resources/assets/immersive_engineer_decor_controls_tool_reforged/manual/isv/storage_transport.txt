@@ -1,0 +1,41 @@
+Hranjenje i prěnos
+Dodatky orudovanja i toka
+Dodatky hranjenja i prěnosa obsluživajut skrinje, bočky, voronky i ventili dlja kompaktnyh fabričnyh putij.<br>
+<br>
+Upotrěbi te stranice pri razměščanju skladov, trubnih putij, obslužnyh rezervuarov i upravljanyh tekučinovyh linij.
+<np>
+Skrinja s etiketoj
+Redigujema skladova etiketa
+<&labeled_crate>Seja skrinja s etiketoj jest dlja jasnogo skladovogo sortiranja. Jej prědnju ploču možno redigovati kak maly znak rabotilnje.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj na ploču etikety dlja redigovanja etikety skrinje. Klikni pravoj knopkoj na ostatok skrinje dlja otvorjenja sklada dodatkov, čestij i obslužnyh zalih.<br>
+<np>
+Bočka dlja tekučin
+Pribor tekučinovoj linije
+<&fluid_barrel>Sej dodatok jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde truby ili vědra mogut dosegnuti stranu rezervuara.<br>
+<np>
+Tekučinova voronka
+Pribor tekučinovoj linije
+<&small_fluid_funnel>Mala tekučinova voronka jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Postavi ju pod město sbiranja tekučiny i prěpravi jej uloženo sodržanje v rezervuary ili nižše truby.<br>
+<np>
+Obratny ventil tekučinovoj truby
+Pribor tekučinovoj linije
+<&straight_pipe_valve>Obratny ventil tekučin jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Poravnaj ventil s želanym směrom toka.<br>
+<np>
+Redstounovy ventil tekučin
+Pribor tekučinovoj linije
+<&straight_pipe_valve_redstone>Redstounovy ventil tekučin jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Poravnaj ventil s želanym směrom toka.<br>
+<np>
+Analogovy ventil tekučin
+Pribor tekučinovoj linije
+<&straight_pipe_valve_redstone_analog>Analogovy ventil tekučin jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Poravnaj ventil s želanym směrom toka.<br>

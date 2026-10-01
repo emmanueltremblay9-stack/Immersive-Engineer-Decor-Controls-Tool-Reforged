@@ -1,0 +1,7 @@
+Findy Tracker Thing
+Remembered-position markerz
+<&recipe>Tracker storez a bluk position inside teh item.<br>
+<br>
+How 2 use: Click bluk 2 save dimension an coordinates. Tooltip showz saved spot. Sneak-use Tracker 2 clear target.<br>
+<br>
+Mark machinez, tunnel branches, remote controlz, or unfinished buildin sites before comin back wif toolz an materials, kitty.

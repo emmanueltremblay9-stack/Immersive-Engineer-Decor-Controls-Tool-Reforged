@@ -1,0 +1,3 @@
+Granulado groso de ouro
+Material para ferramentas de enxeñeiro que usa o conxunto reconstruído de receitas.
+<&recipe>Pódese fundir para obter lingotes<br>de ouro, pero non serve para o<br>procesamento avanzado de materiais.

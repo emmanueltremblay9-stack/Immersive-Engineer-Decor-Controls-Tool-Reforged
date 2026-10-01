@@ -1,0 +1,5 @@
+Spalarnia odpadów
+Kompaktowa jednostka przetwórcza
+<&recipe>Spalarnia odpadów niszczy niepotrzebne przedmioty, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Podawaj do kolejki wyłącznie niepotrzebne przedmioty.<br>

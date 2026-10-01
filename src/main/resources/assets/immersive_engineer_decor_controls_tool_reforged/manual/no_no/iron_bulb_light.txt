@@ -1,0 +1,5 @@
+Jernlampe
+Kompakt arbeidslys
+<&recipe>Denne blokken gir kompakt industribelysning til korridorer, gangbroer og arbeidsbåser.<br>
+<br>
+Bruk: monter den i tak, på vegger eller langs kanter der rommet trenger tydelig arbeidslys.<br>

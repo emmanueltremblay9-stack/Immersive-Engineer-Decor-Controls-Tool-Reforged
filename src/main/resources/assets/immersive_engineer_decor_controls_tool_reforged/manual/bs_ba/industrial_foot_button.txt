@@ -1,0 +1,7 @@
+Nožno dugme
+Upravljanje redstoneom
+<&recipe>Kontaktni prekidač šalje kratak signal pri kretanju po podu ili poklopcu.<br>
+<br>
+Upotreba: Postavite ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili nadziranim putem.<br>
+<br>
+Napomene: Kratko daje impuls nakon kontakta s entitetom.

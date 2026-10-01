@@ -1,0 +1,5 @@
+Steel-Bound Stonelime Tile
+Strengthened stonelime
+<&recipe>Steel-Bound Stonelime Tile Stairs are hardened stonelime fittings for loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>

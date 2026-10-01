@@ -1,0 +1,5 @@
+Lampă încastrată
+Lampă de lucru compactă
+<&recipe>Acest bloc oferă iluminat industrial compact pentru coridoare, pasarele și zone de lucru.<br>
+<br>
+Utilizare: Montează-l pe tavane, pereți sau margini unde încăperea are nevoie de lumină clară pentru lucru.<br>

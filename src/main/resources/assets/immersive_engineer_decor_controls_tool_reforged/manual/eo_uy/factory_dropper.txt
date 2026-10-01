@@ -1,0 +1,5 @@
+Fabrika donilo
+Metieja helpilo
+<&recipe>Ĉi tiu bloko elĵetas stokitajn objektojn el direktita flanko.<br>
+<br>
+Uzado: direktu la fronton al la elĵetejo, plenigu la internajn fakojn kaj agordu forton, angulon, prokraston, filtrilan logikon kaj redstone’an reĝimon per ĝia ekrano.<br>

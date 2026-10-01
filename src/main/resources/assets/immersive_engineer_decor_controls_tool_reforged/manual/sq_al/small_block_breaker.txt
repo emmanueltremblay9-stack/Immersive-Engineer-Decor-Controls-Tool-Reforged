@@ -1,0 +1,5 @@
+Thyes blloqesh
+Pajisje ndihmëse punishteje
+<&recipe>Thyesi i vogël i blloqeve është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: drejto faqen e punës te blloku që duhet hequr.<br>

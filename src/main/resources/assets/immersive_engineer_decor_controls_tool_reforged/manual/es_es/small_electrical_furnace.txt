@@ -1,0 +1,5 @@
+Horno eléctrico
+Unidad compacta de procesamiento
+<&recipe>El horno eléctrico realiza trabajos compactos de fundición alimentados con FE y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Suministra FE y materiales válidos para fundir.<br>

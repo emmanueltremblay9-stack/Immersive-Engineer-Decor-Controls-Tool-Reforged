@@ -1,0 +1,5 @@
+Fluido passivo
+Componenti per linee di fluidi
+<&recipe>L’accumulatore passivo di fluidi è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: posalo accanto a sorgenti d’acqua adatte e lascia spazio per estrarre il fluido.<br>

@@ -1,0 +1,5 @@
+Væskeoppsamlingstrekt
+Utstyr for væskeliner
+<&recipe>Den vesle væskeoppsamlingstrekta er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: set henne under væskeoppsamlingspunktet og før det lagra innhaldet til tankar eller røyr nedanfor.<br>

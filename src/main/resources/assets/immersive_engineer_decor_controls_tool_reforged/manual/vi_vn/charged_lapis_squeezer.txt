@@ -1,0 +1,7 @@
+Máy ép tâm trí
+Bộ cô đặc kinh nghiệm
+<&recipe>Máy ép tâm trí biến ngọc lưu ly và kinh nghiệm thành ngọc lưu ly tích năng.<br>
+<br>
+Cách dùng: Mang ngọc lưu ly và ít nhất một cấp kinh nghiệm rồi dùng dụng cụ. Lần ép thành công tiêu một cấp và một viên ngọc, làm đau người dùng, hao độ bền máy ép và tạo một ngọc lưu ly tích năng.<br>
+<br>
+Thiết bị từ chối hoạt động khi thiếu ngọc, thiếu kinh nghiệm hoặc người dùng quá gần cái chết.

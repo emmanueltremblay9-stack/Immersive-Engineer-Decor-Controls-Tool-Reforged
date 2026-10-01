@@ -1,0 +1,5 @@
+Tilbakeslagsventil for væskerøyr
+Utstyr for væskeliner
+<&recipe>Væsketilbakeslagsventilen er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: rett ventilen etter den ynskte straumretninga.<br>

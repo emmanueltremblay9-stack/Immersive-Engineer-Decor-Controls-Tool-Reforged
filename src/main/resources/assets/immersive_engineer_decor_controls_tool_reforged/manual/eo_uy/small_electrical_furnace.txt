@@ -1,0 +1,5 @@
+Elektra forno
+Kompakta prilabora unuo
+<&recipe>La elektra forno plenumas kompaktajn fandtaskojn per FE-energio en malgranda metieja spaco.<br>
+<br>
+Uzado: provizu FE-energion kaj validajn fandotaĵojn.<br>

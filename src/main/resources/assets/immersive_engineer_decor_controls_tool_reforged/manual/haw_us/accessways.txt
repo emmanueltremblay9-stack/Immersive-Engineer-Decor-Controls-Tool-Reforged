@@ -1,0 +1,127 @@
+Nā Ala Komo
+Nā ala hele a me nā kākoʻo
+Hana nā pou kila, nā pou lāʻau mālama ʻia, nā papahele puka, nā ala hele, nā kaola pale, nā alahaka, nā puka, nā puka aniani, a me nā puka luna i nā ala mālama paʻapu i loko o ka halehana.<br>
+<br>
+Hoʻohana nā ʻāpana ala komo kila i nā papa kila. E hana a i ʻole e kau i ka Papa Hanalima Metala, hoʻokomo i ka hāmare Immersive Engineering, a laila hāmare i nā ʻaukā kila i papa kila no nā pou, nā ala hele, nā puka aniani, nā puka, nā kaola pale, a me nā hoʻonani kila ʻē aʻe.<br>
+<br>
+E kau ma nā wahi e pono ai nā ala mālama mīkini, nā ala kiʻekiʻe, nā lua mālama, a i ʻole nā kae palekana aʻe.
+<np>
+Pou Kila Mānoanoa
+ʻĀpana iwi kūkulu
+<&thick_steel_pole>Na ka Pou Kila Mānoanoa Pololei, Pou Kila Mānoanoa, e hāʻawi i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Poʻo Pou Mānoanoa
+ʻĀpana iwi kūkulu
+<&thick_steel_pole_head>Na ke Poʻo/Wāwae Pou Kila Mānoanoa Pololei, Poʻo/Wāwae Pou Kila Mānoanoa, e hāʻawi i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Pou Kila Lahilahi
+ʻĀpana iwi kūkulu
+<&thin_steel_pole>Na ka Pou Kila Lahilahi Pololei, Pou Kila Lahilahi, e hāʻawi i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Poʻo Pou Lahilahi
+ʻĀpana iwi kūkulu
+<&thin_steel_pole_head>Na ke Poʻo/wāwae Pou Kila Lahilahi Pololei, Poʻo/Wāwae Pou Kila Lahilahi, e hāʻawi i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Pou Lāʻau Mālama ʻIa
+ʻĀpana iwi kūkulu
+<&treated_wood_pole>Na ka Pou Lāʻau Mālama ʻIa Pololei, Pou Lāʻau Mālama ʻIa, e hāʻawi i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Poʻo Pou Mālama ʻIa
+ʻĀpana iwi kūkulu
+<&treated_wood_pole_head>Na ke Poʻo/Wāwae Pou Lāʻau Mālama ʻIa Pololei, Poʻo/Wāwae Pou Lāʻau Mālama ʻIa, e hāʻawi i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Kākoʻo Pou Mālama ʻIa
+ʻĀpana iwi kūkulu
+<&treated_wood_pole_support>Na ke Kākoʻo Pou Lāʻau Mālama ʻIa Pololei, Kākoʻo Pou Lāʻau Mālama ʻIa, e hāʻawi i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Kākoʻo Kila T Pālua
+ʻĀpana iwi kūkulu
+<&steel_double_t_support>Hāʻawi kēia palaka i ke kūkulu ʻike ʻia no nā hale mīkini a me nā iwi ala komo.<br>
+<br>
+Hoʻohana: E hoʻohuli a kau ma ke ʻano he kākoʻo ʻike ʻia no nā kaola, nā pou, a me nā kae anuu.<br>
+<np>
+Papahele Kila Puka
+Lako ala komo mālama
+<&steel_floor_grating>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+Ala Hele Kila
+Lako ala komo mālama
+<&steel_catwalk>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+Alapiʻi Ala Hele Kila
+Lako ala komo mālama
+<&steel_catwalk_stairs>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+Ala Hele Kila Hoʻokiʻekiʻe
+Lako ala komo mālama
+<&steel_catwalk_ta>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+Kaola Pale Kila
+Lako ala komo mālama
+<&steel_railing>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+Pā ʻUpena Kila
+Lako ala komo mālama
+<&steel_mesh_fence>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+ʻĪpuka Pā ʻUpena Kila
+Lako ala komo mālama
+<&steel_mesh_fence_gate>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+Alahaka Kaola Metala
+Lako ala komo mālama
+<&metal_rung_ladder>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+ʻAnuʻu Metala Kāʻaloʻalo
+Lako ala komo mālama
+<&metal_rung_steps>Hana kēia palaka i nā ala mālama maʻalahi ke ʻike a puni nā mīkini.<br>
+<br>
+Hoʻohana: E kau ma ke ʻano he ala mālama a puni nā mīkini, nā papahele luna, a me nā lua mālama.<br>
+<np>
+Puka Aniani Iwi Kila
+Ala nānā pale ʻia
+<&steel_framed_window>Mālama kēia palaka i ka hāmama o ka nānā ʻana me ke kūlike nō me ke kūkulu halehana hoʻoikaika ʻia.<br>
+<br>
+Hoʻohana: E kau i ka hakahaka 1-palaka o ka pā ma kahi e ʻike ai nā mea pāʻani i nā mīkini ma ʻō aku o ka pale.<br>
+<np>
+ʻĪpuka Metala Hoʻoheʻe
+Wahi komo halehana
+<&metal_sliding_door>Hāʻawi kēia palaka i kahi komo paʻa no nā lumi mālama, nā lua, nā kaupaku, a me nā pā mīkini.<br>
+<br>
+Hoʻohana: E hoʻokomo ma kahi e pono ai ke kūkulu i ka puka mālama hoʻomalu ʻia.<br>
+<np>
+Puka Hao Luna
+Wahi komo halehana
+<&iron_hatch>Hāʻawi kēia palaka i kahi komo paʻa no nā lumi mālama, nā lua, nā kaupaku, a me nā pā mīkini.<br>
+<br>
+Hoʻohana: E hoʻokomo ma kahi e pono ai ke kūkulu i ka puka mālama hoʻomalu ʻia.<br>

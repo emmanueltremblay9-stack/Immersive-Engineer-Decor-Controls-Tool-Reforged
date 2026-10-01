@@ -1,0 +1,5 @@
+Minerala fandilo
+Kompakta prilabora unuo
+<&recipe>La minerala fandilo prilaboras mineralojn je alta varmo en kompakta metieja spaco.<br>
+<br>
+Uzado: enmetu mineralajn blokojn kaj provizu energion por altvarma fandado.<br>

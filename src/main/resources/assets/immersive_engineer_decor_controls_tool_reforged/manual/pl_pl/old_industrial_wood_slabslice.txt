@@ -1,0 +1,5 @@
+Cienka płyta ze starego drewna
+Postarzane drewno warsztatowe
+<&recipe>Cienka płyta ze starego drewna przemysłowego dodaje postarzane drewno warsztatowe na podłogi, stopnie, drzwi i przytulne wykończenia wnętrz.<br>
+<br>
+Użycie: Buduj z niego podłogi, schody, drzwi i wykończenia starych warsztatów.<br>

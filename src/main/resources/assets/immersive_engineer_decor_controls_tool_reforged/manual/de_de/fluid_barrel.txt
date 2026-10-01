@@ -1,0 +1,5 @@
+Flüssigkeitsfass
+Bauteil für Flüssigkeitsleitungen
+<&recipe>Dieses kompakte Leitungsteil eignet sich für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Platziere es so, dass Rohre oder Eimer die Tankseite erreichen können.<br>

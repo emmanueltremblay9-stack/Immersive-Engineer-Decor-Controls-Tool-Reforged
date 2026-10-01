@@ -1,0 +1,5 @@
+Caxón con etiqueta
+Etiqueta editable d’esistencies
+<&recipe>Esti caxón con etiqueta ta pensáu pa organizar claramente l’almacén. La placa delantera pue editase como un pequeñu lletreru de taller.<br>
+<br>
+Usu: fai clic derechu na placa de la etiqueta pa editar la etiqueta del caxón. Fai clic derechu nel restu del caxón p’abrir l’almacenamientu d’accesorios, pieces y suministros de caltenimientu.<br>

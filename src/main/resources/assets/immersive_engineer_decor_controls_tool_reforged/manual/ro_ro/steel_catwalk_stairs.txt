@@ -1,0 +1,5 @@
+Trepte de pasarelă de oțel
+Piesă pentru accesul la întreținere
+<&recipe>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>

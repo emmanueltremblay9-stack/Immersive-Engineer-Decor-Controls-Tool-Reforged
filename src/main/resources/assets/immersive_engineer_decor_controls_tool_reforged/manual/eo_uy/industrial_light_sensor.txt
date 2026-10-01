@@ -1,0 +1,7 @@
+Lumsensilo
+Signala sentado
+<&recipe>Lumsensilo transformas lokan helecon en redstone’an regadon.<br>
+<br>
+Uzado: uzu ĝin por aŭtomataj lampoj, fenestroŝutroj kaj videblecaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas signalon ĉe kruda heleco 8 aŭ pli.

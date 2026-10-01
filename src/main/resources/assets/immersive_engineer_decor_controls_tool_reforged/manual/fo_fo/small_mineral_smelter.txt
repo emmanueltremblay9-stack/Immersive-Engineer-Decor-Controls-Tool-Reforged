@@ -1,0 +1,5 @@
+Mineralbræðari
+Lítil viðgerðareind
+<&recipe>Mineralbræðarin viðger mineral við høgum hita og krevur lítið pláss á verkstaðnum.<br>
+<br>
+Nýtsla: Veit mineralkubbar og orku til bræðing við høgum hita.<br>

@@ -1,0 +1,5 @@
+Cassa etichettata
+Etichetta modificabile per scorte
+<&recipe>Questa cassa etichettata serve a organizzare chiaramente il magazzino. La targhetta anteriore si modifica come un piccolo cartello d’officina.<br>
+<br>
+Uso: fai clic destro sulla targhetta per modificare l’etichetta della cassa. Fai clic destro sul resto della cassa per aprire il deposito di accessori, componenti e materiali di manutenzione.<br>

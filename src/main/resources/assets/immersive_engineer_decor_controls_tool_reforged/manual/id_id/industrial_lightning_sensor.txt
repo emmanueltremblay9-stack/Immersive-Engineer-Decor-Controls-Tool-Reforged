@@ -1,0 +1,7 @@
+Pendeteksi Badai
+Pengindraan sinyal
+<&recipe>Sensor badai mengaktifkan peringatan selama kondisi petir.<br>
+<br>
+Penggunaan: pasang di bawah langit terbuka dan hubungkan ke lampu atau alarm.<br>
+<br>
+Catatan: memerlukan petir dan akses ke langit.

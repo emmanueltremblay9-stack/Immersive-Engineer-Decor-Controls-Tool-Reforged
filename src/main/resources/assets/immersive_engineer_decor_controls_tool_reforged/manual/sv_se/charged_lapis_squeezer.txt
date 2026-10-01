@@ -1,0 +1,7 @@
+Tankepress
+Erfarenhetskondensator
+<&recipe>Tankepressen omvandlar lapis och erfarenhet till laddad lapis.<br>
+<br>
+Användning: Ha lapis lazuli och minst en erfarenhetsnivå och använd sedan verktyget. En lyckad pressning förbrukar en nivå och en lapis, skadar användaren, sliter på pressen och skapar en laddad lapis.<br>
+<br>
+Den vägrar arbeta om användaren saknar lapis eller XP, eller är för nära döden.

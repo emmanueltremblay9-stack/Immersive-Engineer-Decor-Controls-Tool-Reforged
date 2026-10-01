@@ -1,0 +1,7 @@
+Contat bistabil de veder
+Control cont prejarossa
+<&recipe>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.

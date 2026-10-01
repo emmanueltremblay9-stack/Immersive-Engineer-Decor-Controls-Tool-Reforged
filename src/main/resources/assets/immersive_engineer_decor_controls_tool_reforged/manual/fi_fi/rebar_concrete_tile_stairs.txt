@@ -1,0 +1,5 @@
+Raudoitettu betonikaakeli
+Raudoitettu betoni
+<&recipe>Raudoitetut betonikaakeliportaat ovat kovetettuja betoniosia konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>

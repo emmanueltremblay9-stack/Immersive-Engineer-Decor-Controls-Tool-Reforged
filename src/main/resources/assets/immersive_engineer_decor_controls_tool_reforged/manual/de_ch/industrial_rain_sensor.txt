@@ -1,0 +1,7 @@
+Rägesensor
+Signalerfassig
+<&recipe>En Wättersensor macht usem Räge a sim Standort es Redstone-Signal.<br>
+<br>
+Verwendig: Montier en so, dass Räge de Block drüber erreiche cha.<br>
+<br>
+Hiwiis: Prüeft, ob's über em Sensor rägnet.

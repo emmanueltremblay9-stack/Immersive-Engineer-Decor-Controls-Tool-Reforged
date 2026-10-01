@@ -1,0 +1,7 @@
+Glacadóir Analógach Naisc
+Rialú nasctha
+<&recipe>Tugann glacadóir nasctha sprioc chianda infheicthe do phainéil rialaithe.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Úsáid an péarla sin agus tú ag téaltú chun an glacadóir a ghníomhachtú go cianda.<br>
+<br>
+Nótaí: astaíonn an glacadóir seo comhartha iomlán Redstone nuair a ghníomhachtaítear é.

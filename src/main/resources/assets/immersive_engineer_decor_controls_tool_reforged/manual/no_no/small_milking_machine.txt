@@ -1,0 +1,5 @@
+Melkemaskin
+Hjelpemiddel på fabrikkgulvet
+<&recipe>Den lille melkemaskinen er en nytteblokk for fabrikkgulvet, innen håndverk, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: plasser den nær kyr og sørg for å hente ut melkebeholdere eller væske.<br>

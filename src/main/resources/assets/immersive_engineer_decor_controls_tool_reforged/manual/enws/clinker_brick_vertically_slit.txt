@@ -1,0 +1,5 @@
+Clinker Bricks with Slits
+Brickwork Darkened by Soot
+<&recipe>Clinker Bricks with Upright Slits bring the hue of sooty brickwork to furnace halls, chimney bases and service walls.<br>
+<br>
+Use: Make walls, trim or a shell for the heated area about furnaces and boilers.<br>

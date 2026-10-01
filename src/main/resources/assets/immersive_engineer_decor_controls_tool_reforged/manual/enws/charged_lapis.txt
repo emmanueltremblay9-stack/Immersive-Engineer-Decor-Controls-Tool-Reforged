@@ -1,0 +1,7 @@
+Charged Lapis
+Experience in Store
+<&recipe>Charged Lapis keeps one experience level, made by means of the Mind Squeezer.<br>
+<br>
+Use: Consume it to regain one level, remove active effects and restore a little health.<br>
+<br>
+The recipe display shows the Mind Squeezer, for Charged Lapis is made by using that tool whilst lapis and XP are at hand.

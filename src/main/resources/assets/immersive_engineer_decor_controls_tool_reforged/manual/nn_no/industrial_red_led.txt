@@ -1,0 +1,7 @@
+Raud LED
+Signalvising
+<&recipe>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.

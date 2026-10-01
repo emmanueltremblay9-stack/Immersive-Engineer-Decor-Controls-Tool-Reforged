@@ -1,0 +1,7 @@
+Analoge Balknonzeig
+Signalmessgerät
+<&recipe>A kompakts Messgerät fürn Kontrollraum zeigt de Redstone-Stärke guat lesbor auf ana Tafl.<br>
+<br>
+Verwendung: Montier's, wo du de Redstone-Stärke nebenan auf an Blick prüfen willst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärke in da Nähe von 0 bis 15.

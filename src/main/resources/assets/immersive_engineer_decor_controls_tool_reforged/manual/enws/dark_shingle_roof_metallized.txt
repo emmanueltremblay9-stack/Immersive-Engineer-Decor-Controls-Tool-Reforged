@@ -1,0 +1,5 @@
+Snow Guard for a Roof
+Weathered Fitting for a Roof
+<&recipe>The Snow Guard for a Dark Shingle Roof forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>

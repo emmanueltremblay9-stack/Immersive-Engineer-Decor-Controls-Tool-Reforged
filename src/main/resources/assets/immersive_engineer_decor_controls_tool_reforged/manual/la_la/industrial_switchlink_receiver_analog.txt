@@ -1,0 +1,7 @@
+Receptor nexus analogicus
+Moderatio conexa
+<&recipe>Receptor conexus tabulis moderandis destinationem remotam visibilem dat.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Illa margarita furtim ambulans utere ut receptorem remote actives.<br>
+<br>
+Notae: hic receptor incitatus signum redstone plena vi emittit.

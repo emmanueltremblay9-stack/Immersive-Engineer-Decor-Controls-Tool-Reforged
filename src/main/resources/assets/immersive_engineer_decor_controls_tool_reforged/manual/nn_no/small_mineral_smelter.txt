@@ -1,0 +1,5 @@
+Mineralsmelteomn
+Kompakt handsamingseining
+<&recipe>Mineralsmelteomnen handsamar mineral ved høg varme på liten verkstadplass.<br>
+<br>
+Bruk: tilfør mineralblokker og straum til smelting ved høg temperatur.<br>

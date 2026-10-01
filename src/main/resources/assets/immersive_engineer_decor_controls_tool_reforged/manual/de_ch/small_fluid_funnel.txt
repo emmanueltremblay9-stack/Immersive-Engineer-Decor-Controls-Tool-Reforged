@@ -1,0 +1,5 @@
+Flüssigkeitstrichter
+Bauteil für Flüssigkeitsleitige
+<&recipe>De chliine Flüssigkeitssammeltrichter isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Setz en under d'Sammelstell und leit sin Inhalt i Tanks oder tüüfer glägeni Röhre.<br>

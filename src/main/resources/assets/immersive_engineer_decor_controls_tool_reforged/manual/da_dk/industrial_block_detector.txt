@@ -1,0 +1,7 @@
+Blokdetektor
+Signalregistrering
+<&recipe>En blokdetektor kontrollerer, om pladsen foran den er optaget.<br>
+<br>
+Brug: Ret den mod den maskinflade, buffer eller beskyttede plads, der skal overvåges.<br>
+<br>
+Bemærk: Giver strøm, når blokken foran den ikke er luft.

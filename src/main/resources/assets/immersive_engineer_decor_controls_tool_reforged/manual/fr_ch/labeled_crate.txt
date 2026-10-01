@@ -1,0 +1,5 @@
+Caisse étiquetée
+Étiquette de stock modifiable
+<&recipe>Cette caisse étiquetée facilite le tri des réserves. Sa plaque avant se modifie comme un petit panneau d'atelier.<br>
+<br>
+Utilisation : faites un clic droit sur la plaque pour modifier l'étiquette. Faites un clic droit sur le reste de la caisse pour accéder aux raccords, pièces et fournitures de maintenance stockés.<br>

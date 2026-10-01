@@ -1,0 +1,127 @@
+Ciągi komunikacyjne
+Pomosty i podpory
+Stalowe słupy, impregnowane słupki, kraty, pomosty, balustrady, drabiny, drzwi, okna i włazy tworzą zwarte ciągi serwisowe wewnątrz fabryk.<br>
+<br>
+Stalowe elementy ciągów komunikacyjnych wymagają stalowych blach. Wytwórz lub postaw stół do obróbki metalu, włóż młot Immersive Engineering i wykuj ze stalowych sztabek blachy na słupy, pomosty, okna, drzwi, balustrady i inne stalowe dekoracje.<br>
+<br>
+Stawiaj je tam, gdzie maszyny wymagają dostępu serwisowego, podwyższonych przejść, szybów technicznych lub zabezpieczonych krawędzi.
+<np>
+Gruby stalowy słup
+Element szkieletu konstrukcji
+<&thick_steel_pole>Prosty gruby stalowy słup tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Głowica grubego słupa
+Element szkieletu konstrukcji
+<&thick_steel_pole_head>Głowica lub podstawa prostego grubego stalowego słupa tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Cienki stalowy słup
+Element szkieletu konstrukcji
+<&thin_steel_pole>Prosty cienki stalowy słup tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Głowica cienkiego słupa
+Element szkieletu konstrukcji
+<&thin_steel_pole_head>Głowica lub podstawa prostego cienkiego stalowego słupa tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Słup z impregnowanego drewna
+Element szkieletu konstrukcji
+<&treated_wood_pole>Prosty słup z impregnowanego drewna tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Głowica impregnowanego słupa
+Element szkieletu konstrukcji
+<&treated_wood_pole_head>Głowica lub podstawa prostego słupa z impregnowanego drewna tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Wspornik impregnowanego słupa
+Element szkieletu konstrukcji
+<&treated_wood_pole_support>Wspornik prostego słupa z impregnowanego drewna tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Stalowy wspornik dwuteowy
+Element szkieletu konstrukcji
+<&steel_double_t_support>Ten blok tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>
+<np>
+Stalowa krata podłogowa
+Element dostępu serwisowego
+<&steel_floor_grating>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Stalowy pomost
+Element dostępu serwisowego
+<&steel_catwalk>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Schody stalowego pomostu
+Element dostępu serwisowego
+<&steel_catwalk_stairs>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Podwyższony stalowy pomost
+Element dostępu serwisowego
+<&steel_catwalk_ta>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Stalowa balustrada
+Element dostępu serwisowego
+<&steel_railing>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Stalowy płot siatkowy
+Element dostępu serwisowego
+<&steel_mesh_fence>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Stalowa furtka siatkowa
+Element dostępu serwisowego
+<&steel_mesh_fence_gate>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Drabina z metalowych prętów
+Element dostępu serwisowego
+<&metal_rung_ladder>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Naprzemienne metalowe stopnie
+Element dostępu serwisowego
+<&metal_rung_steps>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>
+<np>
+Okno w stalowej ramie
+Widoczność przez osłonę
+<&steel_framed_window>Ten blok zapewnia widoczność, zachowując wygląd wzmocnionej konstrukcji fabrycznej.<br>
+<br>
+Użycie: Wstaw go w jednoblokowy otwór w ścianie tam, gdzie gracze mają widzieć maszyny przez barierę ochronną.<br>
+<np>
+Metalowe drzwi przesuwne
+Przemysłowe przejście
+<&metal_sliding_door>Ten blok zapewnia wytrzymałe przejście do pomieszczeń serwisowych, szybów, dachów i osłon maszyn.<br>
+<br>
+Użycie: Zamontuj go tam, gdzie potrzebny jest kontrolowany otwór serwisowy.<br>
+<np>
+Żelazny właz
+Przemysłowe przejście
+<&iron_hatch>Ten blok zapewnia wytrzymałe przejście do pomieszczeń serwisowych, szybów, dachów i osłon maszyn.<br>
+<br>
+Użycie: Zamontuj go tam, gdzie potrzebny jest kontrolowany otwór serwisowy.<br>

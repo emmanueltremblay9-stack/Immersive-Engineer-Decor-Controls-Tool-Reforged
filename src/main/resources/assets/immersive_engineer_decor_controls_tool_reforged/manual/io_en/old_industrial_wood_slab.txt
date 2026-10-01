@@ -1,0 +1,5 @@
+Plako ek olda industriala ligno
+Oldigita laboreyligno
+<&recipe>Ca bloko adjuntas oldigita laboreyligno por planki, skaluni, pordi e varma internborduri.<br>
+<br>
+Uzo: Uzez ol por olda laboreyplanki, eskaleri, pordi e borduri.<br>

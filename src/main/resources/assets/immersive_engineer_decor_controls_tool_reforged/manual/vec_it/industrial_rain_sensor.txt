@@ -1,0 +1,7 @@
+Sensor de piova
+Rilevamento de segnal
+<&recipe>Un sensor de’l tenpo el transforma ła piova nel so posto in redstone.<br>
+<br>
+Uso: mòntalo dove el bloco sora el pol ciapar ła piova.<br>
+<br>
+Da saver: el controła ła piova sora el sensor.

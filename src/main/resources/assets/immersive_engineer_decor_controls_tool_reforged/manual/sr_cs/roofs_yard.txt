@@ -1,0 +1,101 @@
+Krovovi i dvorište
+Spoljni fabrički delovi
+Krovni blokovi, dvorišni šljunak i staro industrijsko drvo pomažu da dovršiš spoljne šupe, radna dvorišta, utovarna mesta i vremenom istrošene fabričke ivice.<br>
+<br>
+Kombinuj ove delove sa zidarstvom i pristupnim putevima da spoljne industrijske građevine ostanu prepoznatljive iz daljine.
+<np>
+Tamni krov od šindre
+Istrošen krovni deo
+<&dark_shingle_roof>Ovaj blok gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Krovni snegobran
+Istrošen krovni deo
+<&dark_shingle_roof_metallized>Snegobran za tamni krov od šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Tamni krov od šindre
+Istrošen krovni deo
+<&dark_shingle_roof_skylight>Krovni prozor za tamni krov od šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Stablo krovnog dimnjaka
+Istrošen krovni deo
+<&dark_shingle_roof_chimneytrunk>Stablo dimnjaka za tamni krov od šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Krovni kanal za žice
+Istrošen krovni deo
+<&dark_shingle_roof_wireconduit>Kanal za žice za tamni krov od šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Tamni krov od šindre
+Istrošen krovni deo
+<&dark_shingle_roof_chimney>Dimnjak za tamni krov od šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Blok tamnog krova od šindre
+Istrošen krovni deo
+<&dark_shingle_roof_block>Ovaj blok gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Ploča tamnog krova od šindre
+Istrošen krovni deo
+<&dark_shingle_roof_slab>Ovaj blok gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Ploča tamnog krova od šindre
+Istrošen krovni deo
+<&dark_shingle_roof_slabslice>Tanki sloj krovne ploče od tamne šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>
+<np>
+Zbijena šljunkovita zemlja
+Podna obloga gradilišta
+<&dense_grit_dirt_block>Ovaj blok daje spoljnim radnim površinama zbijen, ugažen izgled.<br>
+<br>
+Upotreba: postavi ga oko utovarnih vrata, spoljnih rezervoara i mašinskih dvorišta.<br>
+<np>
+Zbijeni šljunkoviti pesak
+Podna obloga gradilišta
+<&dense_grit_sand_block>Ovaj blok daje spoljnim radnim površinama zbijen, ugažen izgled.<br>
+<br>
+Upotreba: postavi ga oko utovarnih vrata, spoljnih rezervoara i mašinskih dvorišta.<br>
+<np>
+Stare drvene daske
+Ostarela radionička građa
+<&old_industrial_wood_planks>Stare industrijske drvene daske dodaju ostarelu radioničku građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>
+<np>
+Stara industrijska drvena ploča
+Ostarela radionička građa
+<&old_industrial_wood_slab>Ovaj blok dodaje ostarelu radioničku drvenu građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>
+<np>
+Stare drvene stepenice
+Ostarela radionička građa
+<&old_industrial_wood_stairs>Stare industrijske drvene stepenice dodaju ostarelu radioničku građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>
+<np>
+Tanki sloj stare drvene ploče
+Ostarela radionička građa
+<&old_industrial_wood_slabslice>Tanki sloj stare industrijske drvene ploče dodaje ostarelu radioničku građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>
+<np>
+Stara industrijska drvena vrata
+Ostarela radionička građa
+<&old_industrial_wood_door>Ovaj blok dodaje ostarelu radioničku drvenu građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>

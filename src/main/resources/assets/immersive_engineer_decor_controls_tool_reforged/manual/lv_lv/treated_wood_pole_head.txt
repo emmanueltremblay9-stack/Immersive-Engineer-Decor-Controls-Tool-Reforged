@@ -1,0 +1,5 @@
+Apstrādāta koka staba augša
+Konstrukcijas karkasa daļa
+<&recipe>Taisna apstrādāta koka staba augša/pamatne piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>

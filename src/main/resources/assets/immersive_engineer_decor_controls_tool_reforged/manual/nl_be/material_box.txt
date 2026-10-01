@@ -1,0 +1,7 @@
+Materiaalopslagkist
+Voorraadkist voor bouwwerkzaamheden
+<&recipe>De materiaalopslagkist draagt een grote voorraad van één gewoon, ongewijzigd en stapelbaar bouwmateriaal.<br>
+<br>
+Houd de kist in de hoofdhand en een materiaalstapel in de andere hand om die op te slaan; gebruik hem met een lege andere hand om één stapel terug te nemen.<br>
+<br>
+Hij bevat maximaal 512 voorwerpen, bewaart één materiaalsoort, weigert geneste kisten, niet-stapelbare uitrusting en gewijzigde stapels, en toont de inhoud in de tooltip.

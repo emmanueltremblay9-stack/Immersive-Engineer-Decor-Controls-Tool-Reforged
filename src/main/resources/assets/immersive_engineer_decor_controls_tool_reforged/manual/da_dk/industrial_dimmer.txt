@@ -1,0 +1,7 @@
+Dæmper
+Variabelt signal
+<&recipe>En drejeknap indstiller redstonestyrken på en kompakt panelfront.<br>
+<br>
+Brug: Højreklik for at øge udgangen trinvist. Efter fuld styrke går den tilbage til nul.<br>
+<br>
+Bemærk: Giver en styrke fra 0 til 15.

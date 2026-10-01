@@ -1,0 +1,7 @@
+Glacadair ceangail analagaich
+Smachd ceangailte
+<&recipe>Bheir glacadair ceangailte targaid iomallach fhaicsinneach do phanalan-smachd.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Cleachd an neamhnaid sin fhad 's a tha thu a' snàgadh gus an glacadair a ghnìomhachadh air astar.<br>
+<br>
+Nòtaichean: bheir an glacadair seo comharra redstone làn-neart nuair a bhrosnaichear e.

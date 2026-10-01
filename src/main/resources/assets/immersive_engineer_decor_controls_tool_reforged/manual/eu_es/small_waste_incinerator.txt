@@ -1,0 +1,5 @@
+Hondakin-erraustegia
+Prozesatze-unitate trinkoa
+<&recipe>Hondakin-erraustegiak nahi ez diren objektuak suntsitzen ditu lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: sartu nahi ez dituzun objektuak soilik haren ilaran.<br>

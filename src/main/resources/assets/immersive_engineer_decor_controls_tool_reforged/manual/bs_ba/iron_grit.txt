@@ -1,0 +1,3 @@
+Krupan gvozdeni granulat
+Materijal za inženjerske alate koji koristi obnovljeni skup recepata.
+<&recipe>Može se istopiti u<br>gvozdene poluge, ali nije<br>pogodan za naprednu obradu materijala.

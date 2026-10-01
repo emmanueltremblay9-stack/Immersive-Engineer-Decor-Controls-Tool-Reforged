@@ -1,0 +1,5 @@
+Svislý klinkerový půlblok
+Zdivo ztmavlé sazemi
+<&recipe>Svislý klinkerový půlblok s reliéfem přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>

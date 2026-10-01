@@ -1,0 +1,7 @@
+Stakleno dugme
+Upravljanje redstoneom
+<&recipe>Trenutni prekidač daje jasan redstone impuls najveće jačine.<br>
+<br>
+Upotreba: Koristite ga za pokretanje mašina, otključavanje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: Vraća se u početno stanje nakon predviđenog impulsa.

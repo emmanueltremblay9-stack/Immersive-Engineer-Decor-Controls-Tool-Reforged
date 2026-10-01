@@ -1,0 +1,7 @@
+Relé analóxicu d’enllaz
+Control enllazáu
+<&recipe>Una pieza con aspeutu de relé da a les construcciones de paneles un puntu d’interrupción local compactu.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos. Usa bloques receptores cuando precises activación per aciu d’una perlla enllazada.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.

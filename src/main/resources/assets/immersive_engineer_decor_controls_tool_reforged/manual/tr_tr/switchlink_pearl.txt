@@ -1,0 +1,7 @@
+Anahtar Bağlantısı İncisi
+Bağlantılı kontrol
+<&recipe>Bağlı inci, uzaktan fabrika kontrolleri için bir alıcı hedefi saklar.<br>
+<br>
+Kullanım: Oluşturmak için anahtar bağlantısı alıcısına Ender incisiyle tıklayın. Kayıtlı alıcıyı etkinleştirmek için bağlı inciyi eğilerek kullanın.<br>
+<br>
+Notlar: Hedef yüklenmiş, aynı boyutta ve menzil içinde olmalıdır.

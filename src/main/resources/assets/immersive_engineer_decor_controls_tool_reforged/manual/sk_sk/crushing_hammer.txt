@@ -1,0 +1,5 @@
+Kladivo na drvenie rúd
+Ručný drviaci nástroj
+<&recipe>Kladivo na drvenie rudy je ručný nástroj na skoré spracovanie železa a zlata.<br>
+<br>
+Použite ho s hrubým železom, hrubým zlatom, železnou alebo hlbinnou železnou rudou, zlatou alebo hlbinnou zlatou rudou na prach Immersive Engineering. Kladivo stráca odolnosť, vracia sa do mriežky do zlomenia, opotrebúva sa pri ťažbe a odhadzuje ciele.

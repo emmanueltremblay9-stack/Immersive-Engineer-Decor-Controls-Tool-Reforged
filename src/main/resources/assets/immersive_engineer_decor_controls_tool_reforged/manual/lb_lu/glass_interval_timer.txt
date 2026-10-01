@@ -1,0 +1,7 @@
+Glasintervallsignal
+Zäitgesteierten Impuls
+<&recipe>E kompakte Zäitschalter liwwert e geplangte Redstone-Impuls.<br>
+<br>
+Benotzung: Benotz en do, wou e klenge Mechanismus eng periodesch oder verzögert Steierung brauch.<br>
+<br>
+Hiweiser: Benotzt geplangte Redstone-Impulser.

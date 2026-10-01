@@ -1,0 +1,7 @@
+Regulador d’intensidá
+Señal variable
+<&recipe>Un control xiratoriu axusta la intensidá de redstone dende un frontal compactu de panel.<br>
+<br>
+Usu: fai clic derechu pa subir la salida un pasu cada vegada; dempués de la potencia máxima vuelve a cero.<br>
+<br>
+Notes: emite una potencia de 0 a 15.

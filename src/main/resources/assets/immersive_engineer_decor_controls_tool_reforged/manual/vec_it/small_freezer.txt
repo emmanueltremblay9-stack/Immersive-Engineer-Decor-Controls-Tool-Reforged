@@ -1,0 +1,5 @@
+Congelador de àcua
+Unità de łaorasion conpata
+<&recipe>El Congelador de àcua el fa łaori conpati de rafredamento par inpianti de fluidi alimentadi a energia.<br>
+<br>
+Uso: dàghe àcua e energia par far giaso in pì fasi.<br>

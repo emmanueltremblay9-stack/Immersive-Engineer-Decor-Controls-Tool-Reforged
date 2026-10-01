@@ -1,0 +1,7 @@
+Relotge programador diari de vidre
+Senyal de llum diürna
+<&recipe>Un interruptor temporitzat seguix la part diürna del cicle del món.<br>
+<br>
+Ús: usa’l per a làmpades de pati, porticons i controls de fàbrica que només funcionen de dia.<br>
+<br>
+Notes: requerix una dimensió amb llum del cel.

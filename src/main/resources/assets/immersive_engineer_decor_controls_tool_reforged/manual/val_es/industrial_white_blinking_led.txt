@@ -1,0 +1,7 @@
+LED blanc intermitent
+Indicació de senyal
+<&recipe>Un indicador compacte fa visible en la fàbrica un senyal de redstone ocult.<br>
+<br>
+Ús: cableja’l al costat del senyal per a vigilar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone prop.

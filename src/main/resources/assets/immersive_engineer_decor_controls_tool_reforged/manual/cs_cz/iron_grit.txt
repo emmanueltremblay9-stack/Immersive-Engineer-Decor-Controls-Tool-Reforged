@@ -1,0 +1,3 @@
+Hrubá železná drť
+Materiál inženýrských nástrojů používaný obnovenou sadou výrobních receptů.
+<&recipe>Lze přetavit na železné<br>ingoty, ale nehodí se k<br>pokročilému zpracování materiálů.

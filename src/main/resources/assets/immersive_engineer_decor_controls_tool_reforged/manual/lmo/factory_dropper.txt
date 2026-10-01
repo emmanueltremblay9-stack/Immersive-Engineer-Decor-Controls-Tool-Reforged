@@ -1,0 +1,5 @@
+Lassador de fabrica
+Arnea de servizzi per la fabrica
+<&recipe>Quell bloch chì el lassa foeura i oget conservad de una faccia pontada in de la direzzion scernida.<br>
+<br>
+Ponta el denanz vers el pont indove che gh’han de vegnì foeura i oget, impieniss i caselle de denter e regola forza, angol, speta, logica di filtri e manera de prejarossa in de la schermada.<br>

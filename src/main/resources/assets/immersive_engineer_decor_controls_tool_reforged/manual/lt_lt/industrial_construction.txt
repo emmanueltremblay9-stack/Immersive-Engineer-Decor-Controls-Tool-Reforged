@@ -1,0 +1,108 @@
+Pramoninė statyba
+Fabriko sienos ir apdaila
+Bendrosios statybinės dalys apima duris, langus, šviestuvus, įspėjamuosius ženklus, apdailą ir konstrukcines dalis, nepriklausančias konkretesniam skyriui.<br>
+<br>
+Naudok šiuos puslapius įrengdamas fabriko patalpas, aptarnavimo koridorius, žymėdamas pavojus ir kurdamas praktiškas pramonines detales.
+<np>
+Geležinis lemputės šviestuvas
+Kompaktiškas darbo šviestuvas
+<&iron_bulb_light>Šis blokas suteikia kompaktišką pramoninį apšvietimą koridoriams, aptarnavimo takams ir darbo vietoms.<br>
+<br>
+Naudojimas: montuok ant lubų, sienų arba kraštų, kur patalpai reikia aiškaus darbo apšvietimo.<br>
+<np>
+Lubų krašto šviestuvas
+Kompaktiškas darbo šviestuvas
+<&iron_ceiling_edge_light>Šis blokas suteikia kompaktišką pramoninį apšvietimą koridoriams, aptarnavimo takams ir darbo vietoms.<br>
+<br>
+Naudojimas: montuok ant lubų, sienų arba kraštų, kur patalpai reikia aiškaus darbo apšvietimo.<br>
+<np>
+Įleidžiamas grindų krašto šviestuvas
+Kompaktiškas darbo šviestuvas
+<&iron_floor_edge_light>Šis blokas suteikia kompaktišką pramoninį apšvietimą koridoriams, aptarnavimo takams ir darbo vietoms.<br>
+<br>
+Naudojimas: montuok ant lubų, sienų arba kraštų, kur patalpai reikia aiškaus darbo apšvietimo.<br>
+<np>
+Įleidžiamas šviestuvas
+Kompaktiškas darbo šviestuvas
+<&iron_inset_light>Šis blokas suteikia kompaktišką pramoninį apšvietimą koridoriams, aptarnavimo takams ir darbo vietoms.<br>
+<br>
+Naudojimas: montuok ant lubų, sienų arba kraštų, kur patalpai reikia aiškaus darbo apšvietimo.<br>
+<np>
+Bendro įspėjimo ženklas
+Pavojaus žymeklis
+<&sign_caution>Bendro įspėjimo ženklas žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Pavojaus ženklas
+Pavojaus žymeklis
+<&sign_danger>Ženklas „Tikrai pavojinga vieta“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Dekoratyvinis ženklas
+Pavojaus žymeklis
+<&sign_decor>Ženklo plokštė („Engineer's Decor“) žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Gynybos ženklas
+Pavojaus žymeklis
+<&sign_defense>Ženklas „Priekyje gynybos sistema“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Išėjimo ženklas
+Pavojaus žymeklis
+<&sign_exit>Šis ženklas žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Gaisro pavojaus ženklas
+Pavojaus žymeklis
+<&sign_firehazard>Ženklas „Gaisro pavojus“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Šalčio įspėjimo ženklas
+Pavojaus žymeklis
+<&sign_frost>Ženklas „Atsargiai, šaltis“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Karšto paviršiaus ženklas
+Pavojaus žymeklis
+<&sign_hotsurface>Ženklas „Karštas paviršius“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Įtampą turinčio laido ženklas
+Pavojaus žymeklis
+<&sign_hotwire>Ženklas „Laidas su įtampa“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Lazerio pavojaus ženklas
+Pavojaus žymeklis
+<&sign_laser>Ženklas „Lazerio pavojus“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Magijos pavojaus ženklas
+Pavojaus žymeklis
+<&sign_magichazard>Ženklas „Magijos pavojus“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Magnetinio lauko ženklas
+Pavojaus žymeklis
+<&sign_magneticfield>Ženklas „Stiprus magnetinis laukas“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>
+Radioaktyvumo pavojaus ženklas
+Pavojaus žymeklis
+<&sign_radioactive>Ženklas „Radioaktyvumo pavojus“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>
+<np>

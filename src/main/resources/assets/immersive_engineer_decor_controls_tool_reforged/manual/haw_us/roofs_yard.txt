@@ -1,0 +1,101 @@
+Nā Kaupaku a me ka Pā Hale
+Nā lako halehana waho
+Kōkua nā palaka kaupaku, ka ʻiliʻili pā hale, a me nā ʻāpana lāʻau halehana kahiko i ka hoʻopau ʻana i nā hale waho, nā pā hana, nā wahi hoʻouka, a me nā kae halehana kahiko i ke anilā.<br>
+<br>
+E hui i kēia mau ʻāpana me ka hana pōhaku a me nā ala komo i maʻalahi ke ʻike i nā kūkulu halehana waho mai kahi mamao.
+<np>
+Kaupaku Papa Uhi Pouli
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof>Hana kēia palaka i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Pale Hau Kaupaku
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_metallized>Hana ka Pale Hau Kaupaku Papa Uhi Pouli i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Kaupaku Papa Uhi Pouli
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_skylight>Hana ka Puka Aniani Kaupaku Papa Uhi Pouli i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Kumu Puka Uahi Kaupaku
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_chimneytrunk>Hana ke Kumu Puka Uahi Kaupaku Papa Uhi Pouli i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Ala Uea Kaupaku
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_wireconduit>Hana ke Ala Uea Kaupaku Papa Uhi Pouli i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Kaupaku Papa Uhi Pouli
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_chimney>ʻO ka Puka Uahi Kaupaku Papa Uhi Pouli. Hana ka Puka Uahi Kaupaku Papa Uhi Pouli i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Palaka Kaupaku Papa Uhi Pouli
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_block>Hana kēia palaka i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Paukū Kaupaku Papa Uhi Pouli
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_slab>Hana kēia palaka i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Paukū Kaupaku Papa Uhi Pouli
+Lako kaupaku kahiko i ke anilā
+<&dark_shingle_roof_slabslice>Hana ka ʻĀpana Lahilahi Paukū Kaupaku Papa Uhi Pouli i nā laina kaupaku pouli a kūpono no nā hale hana a me nā halehana.<br>
+<br>
+Hoʻohana: E hoʻohui i nā ʻāpana e hana i nā ʻano kaupaku hilinaʻi ʻia.<br>
+<np>
+Lepo ʻIliʻili Hoʻopipili Paʻa
+Uhi honua kahua hana
+<&dense_grit_dirt_block>Hāʻawi kēia palaka i ka ʻili hoʻopipili ʻia a hehi ʻia no nā wahi hana waho.<br>
+<br>
+Hoʻohana: E hoʻomoe a puni nā puka hoʻouka, nā pahu wai waho, a me nā pā mīkini.<br>
+<np>
+One ʻIliʻili Hoʻopipili Paʻa
+Uhi honua kahua hana
+<&dense_grit_sand_block>Hāʻawi kēia palaka i ka ʻili hoʻopipili ʻia a hehi ʻia no nā wahi hana waho.<br>
+<br>
+Hoʻohana: E hoʻomoe a puni nā puka hoʻouka, nā pahu wai waho, a me nā pā mīkini.<br>
+<np>
+Papalāʻau Kahiko
+Lāʻau hale hana kahiko
+<&old_industrial_wood_planks>Hoʻohui ka Papalāʻau Halehana Kahiko i ka lāʻau hale hana kahiko no nā papahele, nā ʻanuʻu, nā puka, a me nā kae hoʻonani pumehana o loko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā papahele hale hana kahiko, nā alapiʻi, nā puka, a me nā kae hoʻonani.<br>
+<np>
+Paukū Lāʻau Halehana Kahiko
+Lāʻau hale hana kahiko
+<&old_industrial_wood_slab>Hoʻohui kēia palaka i ka lāʻau hale hana kahiko no nā papahele, nā ʻanuʻu, nā puka, a me nā kae hoʻonani pumehana o loko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā papahele hale hana kahiko, nā alapiʻi, nā puka, a me nā kae hoʻonani.<br>
+<np>
+Alapiʻi Lāʻau Kahiko
+Lāʻau hale hana kahiko
+<&old_industrial_wood_stairs>Hoʻohui ka Alapiʻi Lāʻau Halehana Kahiko i ka lāʻau hale hana kahiko no nā papahele, nā ʻanuʻu, nā puka, a me nā kae hoʻonani pumehana o loko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā papahele hale hana kahiko, nā alapiʻi, nā puka, a me nā kae hoʻonani.<br>
+<np>
+ʻĀpana Lahilahi Paukū Lāʻau Kahiko
+Lāʻau hale hana kahiko
+<&old_industrial_wood_slabslice>Hoʻohui ka ʻĀpana Lahilahi Paukū Lāʻau Halehana Kahiko i ka lāʻau hale hana kahiko no nā papahele, nā ʻanuʻu, nā puka, a me nā kae hoʻonani pumehana o loko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā papahele hale hana kahiko, nā alapiʻi, nā puka, a me nā kae hoʻonani.<br>
+<np>
+ʻĪpuka Lāʻau Halehana Kahiko
+Lāʻau hale hana kahiko
+<&old_industrial_wood_door>Hoʻohui kēia palaka i ka lāʻau hale hana kahiko no nā papahele, nā ʻanuʻu, nā puka, a me nā kae hoʻonani pumehana o loko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā papahele hale hana kahiko, nā alapiʻi, nā puka, a me nā kae hoʻonani.<br>

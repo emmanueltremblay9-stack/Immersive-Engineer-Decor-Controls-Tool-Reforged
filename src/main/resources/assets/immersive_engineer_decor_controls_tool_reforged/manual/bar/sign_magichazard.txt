@@ -1,0 +1,5 @@
+Schuidl fia magische Gfahr
+Gfahrnmarkierung
+<&recipe>S'Schuidl „Obacht, magische Gfahr“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>

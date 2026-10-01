@@ -1,0 +1,7 @@
+Tauchloftkapsel
+Noutloftreserve
+<&recipe>D'Tauchloftkapsel ass eng Noutreserve vu Loft fir Aarbecht ënner Waasser.<br>
+<br>
+Benotzung: Benotz se manuell fir Loft opzefëllen. Am Inventar kann se och automatesch aktivéieren, wann d'Loft bal aus ass, an geet duerno an d'Ofkillzäit.<br>
+<br>
+Huel se fir iwwerschwemmt Minnen, Ënnerwaasserleitungen a Reparaturen am Pompelraum mat.

@@ -1,0 +1,7 @@
+Graded Link Relay
+Linked switchgear
+<&recipe>A relay-shaped fitting gives switchboard builds a small nearby switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops. For linked-mergroat starting, use catcher clots.<br>
+<br>
+Mind: Sends full-strength redstone while on.

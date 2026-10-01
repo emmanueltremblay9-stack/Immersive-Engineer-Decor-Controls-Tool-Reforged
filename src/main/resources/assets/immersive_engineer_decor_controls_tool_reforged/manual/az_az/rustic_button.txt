@@ -1,0 +1,7 @@
+Rustik düymə
+Qızıl daşla idarəetmə
+<&recipe>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.

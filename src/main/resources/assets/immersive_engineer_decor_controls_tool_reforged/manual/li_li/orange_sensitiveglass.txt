@@ -1,0 +1,7 @@
+Oranje gevoelig glaas
+Signaalglaas
+<&recipe>Ein glaasblok dat op redstone reageert, laot 't zich vriej en laot tegelijk de signaaltoestand zeen.<br>
+<br>
+Gebroek: neem 'm veur vinsters van bedieningsruumtes, verlechte panele en beschermd fabrieksglaas.<br>
+<br>
+Opmerking: verangert van toestand door redstone-energie in de buurt.

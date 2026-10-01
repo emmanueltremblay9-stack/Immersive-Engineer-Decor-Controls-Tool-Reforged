@@ -1,0 +1,5 @@
+Quebrador de blocos
+Utilidade de oficina
+<&recipe>O pequeno quebrador de blocos é uma utilidade de oficina para fabricação, armazenamento, colocação, quebra, coleta ou automação compacta.<br>
+<br>
+Uso: Aponte a face de trabalho para o bloco a remover.<br>

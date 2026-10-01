@@ -1,0 +1,7 @@
+Pengesan Ribut
+Penderiaan isyarat
+<&recipe>Sensor ribut mengaktifkan amaran semasa keadaan ribut petir.<br>
+<br>
+Penggunaan: Letakkan di bawah langit terbuka dan sambungkan kepada lampu atau penggera.<br>
+<br>
+Nota: Memerlukan guruh dan akses langit.

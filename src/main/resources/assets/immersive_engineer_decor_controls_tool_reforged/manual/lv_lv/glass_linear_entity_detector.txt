@@ -1,0 +1,7 @@
+Stikla lineārais detektors
+Signāla uztveršana
+<&recipe>Būtņu detektors novēro kustību tuvumā bez redzamas grīdas plātnes.<br>
+<br>
+Lietošana: savieno ar durvīm, lampām, trauksmēm vai mašīnu drošības bloķēšanas ķēdēm.<br>
+<br>
+Piezīmes: pārbauda nelielu apgabalu ap bloku.

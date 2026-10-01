@@ -1,0 +1,7 @@
+Punane LED
+Signaali tagasiside
+<&recipe>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.

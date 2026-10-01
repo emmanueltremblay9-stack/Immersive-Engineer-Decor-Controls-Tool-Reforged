@@ -1,0 +1,7 @@
+Ariadne-kool
+Routemarkering voor mijnen
+<&recipe>Met Ariadne-kool markeer je snel routes in schachten, vertakte mijngangen en tijdelijke ondergrondse werkplaatsen.<br>
+<br>
+Gebruik: klik op een stevig blokvlak om daar een zwarte pijl aan te brengen. De markering gebruikt het aangeklikte punt en ondersteunt acht richtingen, waaronder diagonalen. Zo markeer je bochten, uitgangen, doodlopende gangen en aanvoerroutes zonder aparte wegwijzers mee te nemen.<br>
+<br>
+Ariadne-kool is herbruikbaar markeringsgereedschap voor 100 markeringen. Elke geslaagde plaatsing kost één duurzaamheidspunt. Ongeschikte vlakken worden geweigerd zonder slijtage te veroorzaken.

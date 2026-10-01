@@ -1,0 +1,5 @@
+Máy đóng băng nước
+Thiết bị xử lý gọn
+<&recipe>Máy đóng băng nước thực hiện công việc làm lạnh gọn cho hệ thống chất lỏng dùng điện.<br>
+<br>
+Cách dùng: Cấp nước và năng lượng để tạo băng theo giai đoạn.<br>

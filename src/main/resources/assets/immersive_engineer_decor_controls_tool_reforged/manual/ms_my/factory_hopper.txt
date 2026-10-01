@@ -1,0 +1,5 @@
+Corong Tuang Kilang
+Kegunaan lantai bengkel
+<&recipe>Blok ini memindahkan tindanan item melalui sarung industri yang lebih padat.<br>
+<br>
+Penggunaan: Halakan ke laluan inventori, kemudian tetapkan julat, bilangan item dalam tindanan, masa dan mod redstone pada skrinnya.<br>

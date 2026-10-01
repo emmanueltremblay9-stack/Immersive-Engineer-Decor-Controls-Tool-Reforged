@@ -1,0 +1,7 @@
+Dagschakelklok
+Daglichtsignaal
+<&recipe>Een schakelklok volgt het daggedeelte van de wereldcyclus.<br>
+<br>
+Gebruik: gebruik hem voor terreinverlichting, luiken en fabrieksbediening die alleen overdag actief mag zijn.<br>
+<br>
+Opmerking: vereist een dimensie met hemellicht.

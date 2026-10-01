@@ -1,0 +1,7 @@
+Lapislazzuli caricato
+Esperienza conservata
+<&recipe>I lapislazzuli caricati conservano un livello d’esperienza ottenuto tramite lo spremimente.<br>
+<br>
+Uso: consumali per recuperare un livello, rimuovere gli effetti attivi e recuperare un po’ di salute.<br>
+<br>
+Il riquadro della ricetta mostra lo spremimente, perché i lapislazzuli caricati si ottengono usando quell’utensile con lapislazzuli ed esperienza disponibili.

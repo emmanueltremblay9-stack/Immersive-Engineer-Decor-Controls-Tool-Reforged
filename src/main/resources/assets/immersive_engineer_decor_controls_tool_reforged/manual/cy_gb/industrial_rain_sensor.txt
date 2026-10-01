@@ -1,0 +1,7 @@
+Synhwyrydd Glaw
+Synhwyro signal
+<&recipe>Mae synhwyrydd tywydd yn troi glaw yn ei safle yn Redstone.<br>
+<br>
+Defnydd: Gosodwch ef lle gall y bloc uwch ei ben dderbyn glaw.<br>
+<br>
+Nodiadau: Mae'n gwirio am law uwchben y synhwyrydd.

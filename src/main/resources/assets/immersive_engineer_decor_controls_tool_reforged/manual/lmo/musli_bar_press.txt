@@ -1,0 +1,7 @@
+Pressa di barete Muslee
+Pressa de mangià
+<&recipe>La pressa per barrette Muslee la trasforma el mangià comun in razion compatte da campagna.<br>
+<br>
+Dopra: Porta pan, un pomm e semenz de frument, melon, zucca, barbabietola o Industrial Hemp, poeu dopra la pressa. Una pressada bona la consuma vun de ogni ingredient, la controlla el spazio, la crea quatter barrette Muslee Melange e la rovina la pressa.<br>
+<br>
+Se manca un ingredient o gh'è minga spazio in l'inventari, se consuma nagott.

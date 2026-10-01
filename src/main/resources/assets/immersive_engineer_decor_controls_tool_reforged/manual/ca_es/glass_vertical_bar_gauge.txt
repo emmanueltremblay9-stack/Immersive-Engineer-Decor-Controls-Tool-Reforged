@@ -1,0 +1,7 @@
+Mesurador amb barra de vidre
+Mesurador de senyal
+<&recipe>Un mesurador compacte de sala de control mostra la força de redstone com una lectura clara al panell.<br>
+<br>
+Ús: munta’l on es pugui comprovar d’un cop d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llegeix la força de redstone propera entre 0 i 15.

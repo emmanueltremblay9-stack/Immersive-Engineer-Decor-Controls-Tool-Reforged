@@ -1,0 +1,7 @@
+Alarmsirenn
+Signalréckmeldung
+<&recipe>D'Alarmsirèn ass e Redstone-Indikator, deen un enger Säit befestegt gëtt. Hiren ugedriwwene Status follegt dem Signal vum Block, un deem se hänkt.<br>
+<br>
+Benotzung: Montéier se op enger fester Säit a versuerg se mat Stroum fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: D'Sirenn erneiert hiren Toun eemol pro Sekonn, soulaang hiert ugeschlossent Signal aktiv bleift.

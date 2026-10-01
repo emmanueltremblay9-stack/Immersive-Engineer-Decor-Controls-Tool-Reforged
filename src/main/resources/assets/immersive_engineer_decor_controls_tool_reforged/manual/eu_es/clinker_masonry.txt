@@ -1,0 +1,161 @@
+Klinkerra eta harlangaitza
+Adreiluzko eta hormigoizko estalkiak
+Klinkerrak, zepa-adreiluak, hormigoi armatuak eta beira blindatuak gainazal sendoak eskaintzen dituzte gela beroetarako, lantegietarako eta ikuslerro babestuetarako.<br>
+<br>
+Erabili material bereko lauzak, eskailerak, xaflak eta hormak ertzak amaitzeko, fabrikako materialen estiloa aldatu gabe.
+<np>
+Klinker-adreilu blokea
+Kedarrez belztutako adreilugintza
+<&clinker_brick_block>Bloke honek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-adreiluzko lauza
+Kedarrez belztutako adreilugintza
+<&clinker_brick_slab>Bloke honek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-adreiluzko eskailerak
+Kedarrez belztutako adreilugintza
+<&clinker_brick_stairs>Bloke honek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-adreiluzko horma
+Kedarrez belztutako adreilugintza
+<&clinker_brick_wall>Bloke honek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-bloke zikindua
+Kedarrez belztutako adreilugintza
+<&clinker_brick_stained_block>Klinker-adreilu zikinduen blokeak kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-lauza zikindua
+Kedarrez belztutako adreilugintza
+<&clinker_brick_stained_slab>Klinker-adreilu zikinduen lauzak kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-eskailera zikinduak
+Kedarrez belztutako adreilugintza
+<&clinker_brick_stained_stairs>Klinker-adreilu zikinduen eskailerek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-adreilu apaindua
+Kedarrez belztutako adreilugintza
+<&clinker_brick_sastor_corner_block>Hareharriz apaindutako klinker-adreiluak kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-adreilu hondoratua
+Kedarrez belztutako adreilugintza
+<&clinker_brick_recessed>Bloke honek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Artezkatutako klinker-adreiluak
+Kedarrez belztutako adreilugintza
+<&clinker_brick_vertically_slit>Artezka bertikaleko klinker-adreiluek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-lauza bertikala
+Kedarrez belztutako adreilugintza
+<&clinker_brick_vertical_slab_structured>Ehundura duen klinker-lauza bertikalak kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Klinker-adreiluaren erdilauza
+Kedarrez belztutako adreilugintza
+<&halfslab_clinker_brick>Bloke honek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>
+<np>
+Zepa-adreiluen blokea
+Fabrikako harlangaitz trinkoa
+<&slag_brick_block>Bloke honek harlangaitz gris-marroi trinkoa gehitzen du zimenduetarako, euste-hormetarako eta lantegi zaharragoetarako.<br>
+<br>
+Erabilera: erabili zimendu zaharretan, euste-hormetan eta fabrikako zoru zikinetan.<br>
+<np>
+Zepa-adreiluen lauza
+Fabrikako harlangaitz trinkoa
+<&slag_brick_slab>Bloke honek harlangaitz gris-marroi trinkoa gehitzen du zimenduetarako, euste-hormetarako eta lantegi zaharragoetarako.<br>
+<br>
+Erabilera: erabili zimendu zaharretan, euste-hormetan eta fabrikako zoru zikinetan.<br>
+<np>
+Zepa-adreiluen eskailerak
+Fabrikako harlangaitz trinkoa
+<&slag_brick_stairs>Bloke honek harlangaitz gris-marroi trinkoa gehitzen du zimenduetarako, euste-hormetarako eta lantegi zaharragoetarako.<br>
+<br>
+Erabilera: erabili zimendu zaharretan, euste-hormetan eta fabrikako zoru zikinetan.<br>
+<np>
+Zepa-adreiluen horma
+Fabrikako harlangaitz trinkoa
+<&slag_brick_wall>Bloke honek harlangaitz gris-marroi trinkoa gehitzen du zimenduetarako, euste-hormetarako eta lantegi zaharragoetarako.<br>
+<br>
+Erabilera: erabili zimendu zaharretan, euste-hormetan eta fabrikako zoru zikinetan.<br>
+<np>
+Hormigoi armatuzko blokea
+Hormigoi armatua
+<&rebar_concrete>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Hormigoi armatuzko lauza
+Hormigoi armatua
+<&rebar_concrete_slab>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Hormigoi armatuzko eskailerak
+Hormigoi armatua
+<&rebar_concrete_stairs>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Hormigoi armatuzko horma
+Hormigoi armatua
+<&rebar_concrete_wall>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Hormigoi armatuzko xafla
+Hormigoi armatua
+<&halfslab_rebar_concrete>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Hormigoi armatuzko baldosa
+Hormigoi armatua
+<&rebar_concrete_tile>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Hormigoi armatuzko baldosa-lauza
+Hormigoi armatua
+<&rebar_concrete_tile_slab>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Hormigoi armatuzko baldosa
+Hormigoi armatua
+<&rebar_concrete_tile_stairs>Hormigoi armatuzko baldosa-eskailerak hormigoi gogortuzko piezak dira makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>
+<np>
+Beira blindatuko blokea
+Ikuslerro babestua
+<&panzerglass_block>Bloke honek ikuslerroak irekita mantentzen ditu, fabrikako eraikuntza indartuarekin bat eginez.<br>
+<br>
+Erabilera: erabili jokalariek makineria hesi babestu baten bidez ikusi behar duten tokian.<br>
+<np>
+Beira blindatuko lauza
+Ikuslerro babestua
+<&panzerglass_slab>Bloke honek ikuslerroak irekita mantentzen ditu, fabrikako eraikuntza indartuarekin bat eginez.<br>
+<br>
+Erabilera: erabili jokalariek makineria hesi babestu baten bidez ikusi behar duten tokian.<br>

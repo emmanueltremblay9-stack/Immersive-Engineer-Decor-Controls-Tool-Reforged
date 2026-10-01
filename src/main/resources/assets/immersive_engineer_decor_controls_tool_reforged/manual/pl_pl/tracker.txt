@@ -1,0 +1,7 @@
+Lokalizator
+Znacznik zapamiętanego położenia
+<&recipe>Lokalizator zapisuje pozycję bloku bezpośrednio w przedmiocie.<br>
+<br>
+Kliknij blok, aby zapisać wymiar i współrzędne. Podpowiedź pokazuje pozycję. Użyj podczas skradania, aby usunąć cel.<br>
+<br>
+Oznaczaj nim maszyny, tunele, zdalne sterowanie i niedokończone budowy.

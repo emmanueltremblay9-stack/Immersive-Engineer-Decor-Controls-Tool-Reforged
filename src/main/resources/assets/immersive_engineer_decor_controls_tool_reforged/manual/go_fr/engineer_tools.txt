@@ -1,0 +1,99 @@
+Outils de l'anjénieur
+Éqhipement d'atelier portatif
+L'ensembll des Outils de l'anjénieur ajoute des outils a main, des marqous de mine, des consommablles de secours, du manger de chantier e de petites aides au tratement des matériaux den le méme manuel qe les blloqes de décor e de comande.<br>
+<br>
+Ces outils servent a travailler liain d'un atelier tout éqhipë : marqer le chemin, porter les fournitures, se rattraper aprés eune erreur e finir de petites bezaignes de tratement su pllace.
+<np>
+Outil REDIA
+Outil couvert de diamants
+<&redia_tool>L'Outil REDIA ét un outil de chantier durabl pour travailler vite le sol. Empllayéz-le su eune terre qe n'en peut mârer pour fére du garet.<br>
+<br>
+Empllayéz-le contr eune face solide en portant des torches pour pllacer eune torche de marqaije depés votr renabl sans uzer REDIA. La bezaigne du sol, la tonte, la bezaigne de hache e l'abattaije d'arbrs dépensent de la durance.
+<np>
+Martè a écraser le minerai
+Outil d'écrazaije a main
+<&crushing_hammer>Le martè a broyer les mineraos ét un outil a main pour le permier ouvraije du fer e de l'or.<br>
+<br>
+Usaije : Fêtes-le avèq du fer cru, de l'or cru, du minerai de fer, du minerai de fer de roche perfounde, du minerai d'or ou de l'or de roche perfounde pour fére de la poudre de fer ou d'or Immersive Engineering. Le martè perd de la durabilitë e retourne den la grille tant q'i n'ét pouint cassë.<br>
+<br>
+I s'uze etout en minant e peut erpousser les cibles den le combat de prés.
+<np>
+Suivou
+Marqou de position gardée
+<&tracker>Le suivou garde la position d'un blloqe directement den l'objet.<br>
+<br>
+Usaije : Cliqéz su un blloqe pour garder sa dimension e ses coordonnées. L'infobulle montre la position. Servez-vous du suivou en vous baissant pour ôter la cible.<br>
+<br>
+Empllayéz-le pour marqer des machines, des branches de tunnel, des comandes a distance ou des chantiers pouint finis avant de revenir d'o les outils e les matériaux.
+<np>
+Charbon d'Ariadne
+Marqou de chemin de mine
+<&ariadne_coal>Le Charbon d'Ariadne pllace vite des flèches naires su les faces solides des mines. Empllayéz-le su eune face solide pour marqer le prochin viraije, la sortie ou l'embranchement ; la marqe permet huit sens selon le clic su la face, o les diagonales.<br>
+<br>
+Le Charbon d'Ariadne ét un outil de marqaije réempllayabl o 100 empllais. Chaqe marqe bien pllaciée coûte eune unitë de durance. I refuse les faces qi ne tiennent pouint au lieu d'uzer la bezaigne.
+<np>
+Trousse d'injéction automatiqe
+Injectou de secours
+<&stimpack>L'Auto Stim Pack ét un outil de médecine d'urgence pour l'entretien dangëreu.<br>
+<br>
+Usaije : Servez-vous-en a la main pour vous soigner, avair eune courte protection e un petit coup de vitesse. Den l'inventaire i peut etout se décllencher tout seul avèq peu de santë, pis entrer en recharge.<br>
+<br>
+Gardéz-en eune disponible avant d'essayer les endrets en haoteur, les fils découverts ou les chemins de mine hostiles.
+<np>
+Sa a dormi
+Éqhipement portatif d'erpos
+<&sleeping_bag>Le sac a dormi ét un fourniment de repos contre le temps pour l'ouvraije loin d'un lit.<br>
+<br>
+Usaije : Servez-vous-en la net den l'Overworld pour vous reposer jusq'au matin. I ne fixe ni ne dépllaçe le pouint de réapparition.<br>
+<br>
+I refuse le jour, les endrets dangëreus avèq des monstres pres e les dimensions pouint convenabls au repos sûr. Chaqe bon repos use le sac.
+<np>
+Bouéte a matériaux
+Bouéte de fournitures de bâtisse
+<&material_box>La caesse de matérriaos porte eune grande réserve d'un seul matérriao de construccion simpll, pouint changë e empilabl.<br>
+<br>
+Usaije : Tenez la caesse den la main perméire e eune pile de matérriao den l'aotr main pour la charjer. Servez-vous de la caesse avèq l'aotr main vide pour tirer eune pile.<br>
+<br>
+Elle garde jusq'a 512 objets d'un seul genre. Elle refuse les caesses emboîtëes, les outils pouint empilabls e les piles renommëes ou changëes par des donnëes; l'infobulle montre le contenu.
+<np>
+Capsule d'ére de pllonjée
+Réserve d'ére de secours
+<&diving_capsule>La capsule d'air de pllonjëe ét eune réserve d'urgence pour l'ouvraije dessou l'iao.<br>
+<br>
+Usaije : Servez-vous-en a la main pour remettr l'air. Den l'inventaire, elle peut etout se décllencher toute soule cant l'air ét presq'épuisë, pis elle entre en recharge.<br>
+<br>
+Portez-la pour les mines noyées, les lignes de tuyaux sous l'iao e les racomodaijes des salles de pompes.
+<np>
+Presse de barres Muslee
+Presse a manger
+<&musli_bar_press>La presse a barres Muslee change la mangeaille commune en rations de champ compactes.<br>
+<br>
+Usaije : Prenez du pain, eune pomme e des graines de blë, melon, citrouille, bettrave ou Industrial Hemp, pis servez-vous de la presse. Eune bone pressëe use yun de chaqe, vérifie la pllaçe, fét qatr barres Muslee Melange e use la presse.<br>
+<br>
+Si yun des ingrédients manqe ou si l'inventaire n'a pouint de pllaçe, ren n'ét consommë.
+<np>
+Barre de force Muslee Melange
+Ptit manger d'atelier rapide
+<&musli_bar>La barre énergétiqe Muslee Melange ét eune mangeaille compacte féte de pain, de graines e de fruit.<br>
+<br>
+Empllai : Manjéz-la su le chantier en pllaçant des comandes, des tuyaux, des pllâteformes ou de longues lignes den les salles a machines.
+<np>
+Pressou d'esprit
+Condensatou d'expérience
+<&charged_lapis_squeezer>Le Pressou d'esprit mue un lapis-lazuli e un livè d'expérience de votr renabl en Lapis charjë.<br>
+<br>
+A chaqe conversion réussie, le processus fait du mâ, cause de l'épouizement qi fait monter la faim e aveuglle brièvement l'empllayou. I refuse de marcher sans lapis, sans XP ou cant qe l'empllayou ét trop proche de la mort.
+<np>
+Lapis charjë
+Expérience gardée
+<&charged_lapis>Le Lapis charjë garde un livè d'expérience. Manjéz-le pour ravoir le livè, ôter les effets actifs e regagner un ptit de santé.<br>
+<br>
+Fezéz en permier un Pressou d'esprit ; le Lapis charjë se fait en empllayant ç't'outil o du lapis e des XP disponibles.
+<np>
+Grosse poudraille de fèr
+Matériau d'outil d'anjénieur empllayë par l'ensembll de fezerie reconstruit.
+<&iron_grit>Peut étr fondue en moches de<br>fèr, meins ne convient pouint ao<br>tratements avancés des matériaux.
+<np>
+Grosse poudraille d'ôr
+Matériau d'outil d'anjénieur empllayë par l'ensembll de fezerie reconstruit.
+<&gold_grit>Peut étr fondue en moches d'ôr,<br>meins ne convient pouint ao<br>tratements avancés des matériaux.

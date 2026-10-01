@@ -1,0 +1,5 @@
+Passiv suyuqlik
+Suyuqlik liniyasi jihozi
+<&recipe>Passiv suyuqlik yig'gich kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: mos suv manbalariga taqab qo'ying va suyuqlik chiqarish uchun joy qoldiring.<br>

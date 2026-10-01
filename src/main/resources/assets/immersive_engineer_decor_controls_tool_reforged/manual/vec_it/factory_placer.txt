@@ -1,0 +1,5 @@
+Posador de blochi de fàbrica
+Utilità par l’ofisina
+<&recipe>Sto bloco el mete zo blochi da ła so scorta interna quando el vien ativà.<br>
+<br>
+Uso: punta ła fasa de łaoro verso el posto bersałio e càrega pile de roba che se pol meter zo.<br>

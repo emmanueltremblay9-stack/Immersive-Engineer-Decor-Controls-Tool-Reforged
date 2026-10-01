@@ -1,0 +1,5 @@
+Rheilen Ddur
+Elfen mynediad gwasanaethu
+<&recipe>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>

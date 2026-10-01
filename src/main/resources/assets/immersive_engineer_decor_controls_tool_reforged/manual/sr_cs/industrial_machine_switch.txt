@@ -1,0 +1,7 @@
+Mašinski prekidač sa dva dugmeta
+Redstoun upravljanje
+<&recipe>Kompaktan komandni deo daje fabričkim građevinama jasno prepoznatljivu tačku redstoun upravljanja.<br>
+<br>
+Upotreba: desnim klikom uključi ili isključi izlaz najveće snage za obližnja kola.<br>
+<br>
+Napomene: dok je uključen, emituje redstoun najveće snage.

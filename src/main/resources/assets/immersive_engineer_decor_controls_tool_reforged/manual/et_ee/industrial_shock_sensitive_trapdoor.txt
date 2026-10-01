@@ -1,0 +1,7 @@
+Löögiga avanev luuk
+Surveimpulss
+<&recipe>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.

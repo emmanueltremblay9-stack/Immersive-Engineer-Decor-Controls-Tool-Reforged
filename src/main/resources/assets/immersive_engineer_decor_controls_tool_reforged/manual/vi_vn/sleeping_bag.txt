@@ -1,0 +1,7 @@
+Túi ngủ
+Bộ nghỉ ngơi di động
+<&recipe>Túi ngủ là bộ nghỉ chịu thời tiết khi làm việc xa giường.<br>
+<br>
+Dùng ban đêm ở Overworld để nghỉ đến sáng mà không đổi điểm hồi sinh.<br>
+<br>
+Không dùng được ban ngày, gần quái vật hoặc ở chiều không phù hợp. Mỗi lần nghỉ thành công làm mòn túi.

@@ -1,0 +1,5 @@
+Stahlbetonfliese
+Stahlbewehrter Beton
+<&recipe>Die Stahlbetonfliesentreppe besteht aus gehärteten Betonteilen für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>

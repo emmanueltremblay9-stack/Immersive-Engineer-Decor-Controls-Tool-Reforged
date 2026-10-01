@@ -1,0 +1,41 @@
+Stokado e transporto
+Inventariala e fluoregala instaluri
+Stoko- e transportinstaluri inkluzas kesti, bareli, funeli e valvi por kompakta fabrikkonekti.<br>
+<br>
+Uzez ca pagini dum aranjo di stokochambri, tublinei, servorezervuyi e regata fluidolinei.
+<np>
+Etiketita kesto
+Redaktebla stoketiketo
+<&labeled_crate>Ca etiketita kesto destinesas a klara ordinaro en stokochambro. Lua avanplako povas redaktesar quale mikra laboreyshildo.<br>
+<br>
+Uzo: Klikez dextre la etiketoplako por redaktar la kestoetiketo. Klikez dextre la cetera parto di la kesto por apertar stokuyo por instaluri, peci e manutenoprovizi.<br>
+<np>
+Fluidobarelo
+Fluidotuba aparataro
+<&fluid_barrel>Ca instaluro esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Pozez ol ube tubi o siteli povas atingar la rezervuyofacio.<br>
+<np>
+Fluidofunelo
+Fluidotuba aparataro
+<&small_fluid_funnel>La Mikra funelo por fluidokolekto esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Pozez ol sub la fluidokolektopunkto e konduktez lua konservita kontenajo a rezervuyi o plu basa tubi.<br>
+<np>
+Unudireciona valvo por fluidotubo
+Fluidotuba aparataro
+<&straight_pipe_valve>La Unudireciona valvo por fluidotubo esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Alinez la valvo kun la dezirata fluodireciono.<br>
+<np>
+Redstonea fluidovalvo
+Fluidotuba aparataro
+<&straight_pipe_valve_redstone>La Fluidovalvo regata per redstoneo esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Alinez la valvo kun la dezirata fluodireciono.<br>
+<np>
+Analoga fluidovalvo
+Fluidotuba aparataro
+<&straight_pipe_valve_redstone_analog>La Analoga redstonea fluidovalvo esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Alinez la valvo kun la dezirata fluodireciono.<br>

@@ -1,0 +1,5 @@
+Wpuszczana lampa przy krawędzi podłogi
+Mała lampa robocza
+<&recipe>Ten blok zapewnia kompaktowe oświetlenie przemysłowe korytarzy, pomostów i stanowisk roboczych.<br>
+<br>
+Użycie: Montuj go na sufitach, ścianach i krawędziach wymagających jasnego oświetlenia do pracy.<br>

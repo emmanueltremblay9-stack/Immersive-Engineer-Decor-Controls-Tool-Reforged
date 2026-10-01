@@ -1,0 +1,7 @@
+Rustikaler Dopplgelenkhebl
+Redstone-Steuerung
+<&recipe>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.

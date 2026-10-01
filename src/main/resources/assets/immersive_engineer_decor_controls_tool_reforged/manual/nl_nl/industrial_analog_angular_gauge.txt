@@ -1,0 +1,7 @@
+Analoge meter
+Signaalmeter
+<&recipe>Een compacte meter voor controlekamers toont de redstonesterkte duidelijk op een paneel.<br>
+<br>
+Gebruik: monteer hem waar de redstonesterkte van nabijgelegen blokken in één oogopslag moet kunnen worden gecontroleerd.<br>
+<br>
+Opmerking: leest de redstonesterkte in de buurt van 0 tot 15.

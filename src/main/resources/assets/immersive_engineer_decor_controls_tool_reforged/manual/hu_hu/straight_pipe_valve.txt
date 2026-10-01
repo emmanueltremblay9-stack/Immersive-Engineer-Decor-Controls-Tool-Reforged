@@ -1,0 +1,5 @@
+Folyadékcső-visszacsapó szelep
+Folyadékvezeték-szerelvények
+<&recipe>A folyadékcső-visszacsapó szelep kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: igazítsd a szelepet a kívánt áramlási irányhoz.<br>

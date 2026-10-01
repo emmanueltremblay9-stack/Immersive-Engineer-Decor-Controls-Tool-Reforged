@@ -1,0 +1,7 @@
+Building-Stuff Box
+Building supply box
+<&recipe>Heed this: The Building-Stuff Box carries a large reserve of one plain, unmodified heapable building stuff.<br>
+<br>
+Usage: Hold the box in the main hand and a stuff heap in the offhand to load that stuff into the box. Use the box with an empty offhand to pull one heap back out.<br>
+<br>
+The box holds up to 512 things, keeps only one stuff type at a time, rejects nested boxes, non-heapable gear, and modified named or data-bearing heaps, and reports its stored contents in the helptext.

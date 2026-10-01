@@ -1,0 +1,5 @@
+Cabeza de poste delgado
+Pieza de estructura
+<&recipe>La cabeza o pie de poste de acero recto y delgado aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Girá y colocá la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>

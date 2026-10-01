@@ -1,0 +1,5 @@
+Mörk spåntaksplatta
+Väderbiten takdel
+<&recipe>Den tunna mörka spåntaksplattan skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>

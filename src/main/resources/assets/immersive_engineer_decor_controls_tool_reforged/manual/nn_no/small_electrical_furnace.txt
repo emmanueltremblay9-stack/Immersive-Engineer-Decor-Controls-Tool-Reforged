@@ -1,0 +1,5 @@
+Elektrisk omn
+Kompakt handsamingseining
+<&recipe>Den elektriske omnen gjer kompakte smeltejobbar med FE-straum på liten verkstadplass.<br>
+<br>
+Bruk: tilfør FE og gyldig smeltemateriale.<br>

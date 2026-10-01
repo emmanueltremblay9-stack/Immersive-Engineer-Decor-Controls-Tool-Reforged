@@ -1,0 +1,7 @@
+Blokdetector
+Signaolwaorneming
+<&recipe>Ein blokdetector controleert of de ruumte veur 'm bezèt is.<br>
+<br>
+Gebroek: richt 'm op de machinekant, buffer of beschermde ruumte die doe in 't oog wils haoje.<br>
+<br>
+Opmerking: geuf energie es 't blok veur 'm gein locht is.

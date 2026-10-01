@@ -1,0 +1,5 @@
+Głowica grubego słupa
+Element szkieletu konstrukcji
+<&recipe>Głowica lub podstawa prostego grubego stalowego słupa tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>

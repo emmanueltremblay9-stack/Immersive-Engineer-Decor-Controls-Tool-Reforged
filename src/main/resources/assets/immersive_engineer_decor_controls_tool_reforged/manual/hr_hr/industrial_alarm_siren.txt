@@ -1,0 +1,7 @@
+Alarmna sirena
+Povratna informacija o signalu
+<&recipe>Alarmna sirena je redstone pokazivač koji se postavlja na plohu. Njezino napajanje prati signal bloka na koji je pričvršćena.<br>
+<br>
+Uporaba: pričvrsti je na čvrstu stranu i dovedi signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: sirena se ponovno oglašava svake sekunde dok povezani signal ostaje aktivan.

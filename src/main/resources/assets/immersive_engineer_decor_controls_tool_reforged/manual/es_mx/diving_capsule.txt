@@ -1,0 +1,7 @@
+Cápsula de aire de buceo
+Reserva de aire de emergencia
+<&recipe>La Cápsula de aire de buceo es un objeto de emergencia para trabajar bajo el agua.<br>
+<br>
+Uso: Úsala manualmente para restaurar aire. En el inventario también puede activarse sola cuando el aire casi se agota y después entra en recarga.<br>
+<br>
+Llévala a minas inundadas, tuberías sumergidas y reparaciones de salas de bombas.

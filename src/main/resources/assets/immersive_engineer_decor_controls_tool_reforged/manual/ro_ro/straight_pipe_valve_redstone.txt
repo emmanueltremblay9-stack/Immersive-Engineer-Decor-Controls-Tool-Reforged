@@ -1,0 +1,5 @@
+Supapă de fluide cu redstone
+Echipament pentru circuite de fluide
+<&recipe>Supapa de fluide cu redstone este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Aliniază supapa cu direcția dorită a debitului.<br>

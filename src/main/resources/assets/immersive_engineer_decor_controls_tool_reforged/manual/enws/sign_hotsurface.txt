@@ -1,0 +1,5 @@
+Sign of a Heated Surface
+Mark of Peril
+<&recipe>The Sign "Beware the Heated Surface" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>

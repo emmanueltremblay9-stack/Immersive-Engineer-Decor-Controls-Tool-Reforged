@@ -1,0 +1,7 @@
+Analogur móttakari til rofasambond
+Bundin stýring
+<&recipe>Ein bundin móttakari gevur stýripanelum eitt sjónligt fjarmál.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Brúka hesa perluna, meðan tú sníkir teg, fyri at virkja móttakaran úr fjarstøðu.<br>
+<br>
+Viðmerking: Hesin móttakarin sendir eitt fult reyðgrýtistekin, tá ið hann verður virkjaður.

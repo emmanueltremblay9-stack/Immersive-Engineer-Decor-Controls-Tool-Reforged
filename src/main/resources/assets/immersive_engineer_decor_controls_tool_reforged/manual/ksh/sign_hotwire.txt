@@ -1,0 +1,5 @@
+Schild för Draht unger Strom
+Jefahrmarkierung
+<&recipe>Et Schild „Opjepaß, Draht unger Strom“ markiert Jefahre, Ußjäng un Arbeitsbereiche met enem klare Fabriksicherheitsteke.<br>
+<br>
+Bruuch: Setz et nevve Jefahre, Ußjäng, Maschine un jesperrte Bereiche.<br>

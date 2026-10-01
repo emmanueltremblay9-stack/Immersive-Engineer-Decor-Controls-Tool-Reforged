@@ -1,0 +1,5 @@
+Talilnik mineralov
+Kompaktna obdelovalna enota
+<&recipe>Talilnik mineralov obdeluje minerale pri visokih temperaturah in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: Za visokotemperaturno taljenje dovajaj mineralne bloke in energijo.<br>

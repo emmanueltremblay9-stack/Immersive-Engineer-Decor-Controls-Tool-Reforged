@@ -1,0 +1,7 @@
+Poplašná siréna
+Ukazatel signálu
+<&recipe>Poplašná siréna je redstone ukazatel upevněný na stěně bloku. Stav napájení sleduje signál bloku, ke kterému je připojena.<br>
+<br>
+Použití: Připevněte na pevnou stěnu a napájejte pro sledování dveří, strojů, poplachů či panelů.<br>
+<br>
+Poznámka: Při aktivním signálu se siréna obnovuje jednou za sekundu.

@@ -1,0 +1,5 @@
+Barra energética de mistura de müsli
+Lanche rápido de oficina
+<&recipe>A barra Muslee Melange é um alimento compacto feito de pão, sementes e frutas.<br>
+<br>
+Coma-a como ração de campo ao instalar controles, tubos, plataformas ou longas linhas de máquinas.

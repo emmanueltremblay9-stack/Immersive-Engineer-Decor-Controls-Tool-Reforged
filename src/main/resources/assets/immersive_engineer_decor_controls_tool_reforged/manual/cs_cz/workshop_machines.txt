@@ -1,0 +1,107 @@
+Dílenské stroje
+Stroje a dílenské vstupy/výstupy
+Dílenské stroje zajišťují výrobu, přesouvání předmětů, tavení, likvidaci, sběr a další pomocné práce na ploše jediného bloku.<br>
+<br>
+Otevři následující stránky pro recept, obrázek, popis a praktické poznámky k použití každého stroje.
+<np>
+Ocelový stůl
+Dílenský nábytek
+<&steel_table>Tento blok je praktický dílenský nábytek pro pracovní místnosti a údržbové kouty.<br>
+<br>
+Použití: Postav jej vedle pracovních stolů, beden a kompaktních strojů.<br>
+<np>
+Stůl z impregnovaného dřeva
+Dílenský nábytek
+<&treated_wood_table>Tento blok je praktický dílenský nábytek pro pracovní místnosti a údržbové kouty.<br>
+<br>
+Použití: Postav jej vedle pracovních stolů, beden a kompaktních strojů.<br>
+<np>
+Stolička z impregnovaného dřeva
+Dílenský nábytek
+<&treated_wood_stool>Tento blok je praktický dílenský nábytek pro pracovní místnosti a údržbové kouty.<br>
+<br>
+Použití: Postav jej vedle pracovních stolů, beden a kompaktních strojů.<br>
+<np>
+Pracovní stůl na kov
+Pracoviště na výrobu plátů
+<&metal_crafting_table>Pracovní stůl na kov je vyztužené dílenské pracoviště se slotem na kladivo, výrobní mřížkou 3x3 a přehledným výstupním slotem.<br>
+<br>
+Použití: Mřížku používej pro běžnou výrobu. Pro pláty IE vlož inženýrské kladivo do nástrojového slotu a materiál plátu do mřížky, potom odeber výsledek. Ocelové dekorace potřebují ocelové pláty na sloupy, lávky, okna, dveře, zábradlí a další ocelové díly.<br>
+<np>
+Tovární násypka
+Vybavení provozu
+<&factory_hopper>Tento blok přesouvá stohy předmětů v kompaktnějším průmyslovém plášti.<br>
+<br>
+Použití: Namiř jej směrem k řadě inventářů a v rozhraní nastav dosah, velikost stohu, časování a redstonový režim.<br>
+<np>
+Tovární podavač
+Vybavení provozu
+<&factory_dropper>Tento blok vypouští uložené předměty z namířené strany.<br>
+<br>
+Použití: Namiř přední stranu na místo vypouštění, naplň vnitřní sloty a v rozhraní nastav sílu, úhel, prodlevu, logiku filtrů a redstonový režim.<br>
+<np>
+Tovární pokladač bloků
+Vybavení provozu
+<&factory_placer>Tento blok při aktivaci pokládá bloky z vnitřní zásoby.<br>
+<br>
+Použití: Namiř pracovní stranu na cílový prostor a vlož stohy předmětů, které lze položit.<br>
+<np>
+Rozbíječ bloků
+Vybavení provozu
+<&small_block_breaker>Malý rozbíječ bloků patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Namiř pracovní stranu na blok, který chceš odstranit.<br>
+<np>
+Spalovna odpadu
+Kompaktní zpracovací jednotka
+<&small_waste_incinerator>Spalovna odpadu ničí nepotřebné předměty a v dílně zabírá málo místa.<br>
+<br>
+Použití: Do její fronty vkládej pouze nepotřebné předměty.<br>
+<np>
+Laboratorní pec
+Kompaktní zpracovací jednotka
+<&small_lab_furnace>Laboratorní pec zvládá malé tavicí úlohy na tuhé palivo a v dílně zabírá málo místa.<br>
+<br>
+Použití: K tavení malých dávek používej tuhé palivo.<br>
+<np>
+Elektrická pec
+Kompaktní zpracovací jednotka
+<&small_electrical_furnace>Elektrická pec zvládá malé tavicí úlohy na energii FE a v dílně zabírá málo místa.<br>
+<br>
+Použití: Přiveď FE a vhodnou surovinu k tavení.<br>
+<np>
+Pec na tavení minerálů
+Kompaktní zpracovací jednotka
+<&small_mineral_smelter>Pec na tavení minerálů zpracovává minerály za vysokých teplot a v dílně zabírá málo místa.<br>
+<br>
+Použití: Přiváděj minerální bloky a energii pro vysokoteplotní tavení.<br>
+<np>
+Zmrazovač vody
+Kompaktní zpracovací jednotka
+<&small_freezer>Zmrazovač vody zajišťuje drobné chladicí práce pro napájené kapalinové sestavy.<br>
+<br>
+Použití: Přiveď vodu a energii pro postupnou výrobu ledu.<br>
+<np>
+Pasivní kapalinové vybavení
+Vybavení kapalinových rozvodů
+<&passive_fluid_accumulator>Pasivní sběrač kapalin je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Umísti jej k vhodným zdrojům vody a ponech prostor pro odvádění kapaliny.<br>
+<np>
+Solární panel
+Vybavení provozu
+<&small_solar_panel>Malý solární panel patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Zajisti mu otevřené nebe a připoj zařízení s nízkou spotřebou.<br>
+<np>
+Dojicí stroj
+Vybavení provozu
+<&small_milking_machine>Malý dojicí stroj patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Umísti jej poblíž krav a zajisti odebírání nádob s mlékem nebo kapaliny.<br>
+<np>
+Kácí stroj
+Vybavení provozu
+<&small_tree_cutter>Malý kácí stroj patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Namiř jej na vzrostlé stromy a vypadlé předměty sbírej samostatně.<br>

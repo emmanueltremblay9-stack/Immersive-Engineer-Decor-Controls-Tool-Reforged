@@ -1,0 +1,5 @@
+Butoi pentru fluide
+Echipament pentru circuite de fluide
+<&recipe>Această piesă compactă de circuit de fluide este destinată rezervoarelor mici, traseelor de conducte, punctelor de colectare și debitului controlat prin redstone.<br>
+<br>
+Utilizare: Amplaseaz-o acolo unde conductele sau gălețile pot ajunge la fața rezervorului.<br>

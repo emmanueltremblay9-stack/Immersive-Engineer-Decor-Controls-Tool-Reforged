@@ -1,0 +1,5 @@
+Panel słoneczny
+Urządzenie warsztatowe
+<&recipe>Mały panel słoneczny należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Zapewnij mu otwarte niebo i podłącz urządzenia o małym poborze energii.<br>

@@ -1,0 +1,5 @@
+Cabeza de poste tratado
+Peza de armazón estrutural
+<&recipe>A cabeza ou base do poste recto de madeira tratada achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>

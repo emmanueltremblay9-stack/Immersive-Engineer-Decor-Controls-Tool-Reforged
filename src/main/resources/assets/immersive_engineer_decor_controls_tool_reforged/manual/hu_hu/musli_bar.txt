@@ -1,0 +1,5 @@
+Muslee Melange energiaszelet
+Gyors műhelyi harapnivaló
+<&recipe>A Muslee Melange energiaszelet kenyérből, magvakból és gyümölcsből készült tömör étel.<br>
+<br>
+Használat: terepi élelemként fogyaszd vezérlők, csövek, platformok vagy hosszú géptermi nyomvonalak telepítése közben.

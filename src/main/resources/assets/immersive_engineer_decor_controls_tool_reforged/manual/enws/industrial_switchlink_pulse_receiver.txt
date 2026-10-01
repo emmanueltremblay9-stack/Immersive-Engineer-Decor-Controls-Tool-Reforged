@@ -1,0 +1,7 @@
+Pulse Link Receiver
+Control through a Link
+<&recipe>A linked pulse receiver affords distant panels a brief redstone trigger.<br>
+<br>
+Use: Click it with an Ender Pearl to fashion a linked pearl. Right-click it, or trigger that pearl, to send a brief pulse.<br>
+<br>
+Note: The pulse resets of itself when its appointed span ends.

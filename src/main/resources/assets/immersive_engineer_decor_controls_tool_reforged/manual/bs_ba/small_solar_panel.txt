@@ -1,0 +1,5 @@
+Solarni panel
+Oprema fabričke hale
+<&recipe>Mali solarni panel je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Omogućite mu otvoreno nebo i povežite opremu male potrošnje.<br>

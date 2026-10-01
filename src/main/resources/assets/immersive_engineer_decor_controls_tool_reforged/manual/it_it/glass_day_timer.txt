@@ -1,0 +1,7 @@
+Temporizzatore giornaliero in vetro
+Segnale diurno
+<&recipe>Un temporizzatore segue la parte diurna del ciclo del mondo.<br>
+<br>
+Uso: impiegalo per lampade da cortile, imposte e comandi industriali attivi solo di giorno.<br>
+<br>
+Note: richiede una dimensione con luce del cielo.

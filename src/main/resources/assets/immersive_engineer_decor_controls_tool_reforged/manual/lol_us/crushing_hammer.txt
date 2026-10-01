@@ -1,0 +1,7 @@
+Ore-Bonkin Hammer
+Ore-bonkin by paw
+<&recipe>Ore Crushin Hamr iz manual tool fer early iron an gold werk.<br>
+<br>
+How 2 use: Craft wif raw iron, raw gold, iron ore, deepslate iron ore, gold ore, or deepslate gold ore 2 make Immersive Engineering iron or gold dust. Hamr loses durabilitee an returnz 2 craftin grid till it breakz.<br>
+<br>
+Minin wears down its durability too, an it can knock targets backwardz in close combat, meow.

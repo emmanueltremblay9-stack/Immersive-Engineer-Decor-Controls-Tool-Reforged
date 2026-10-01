@@ -1,0 +1,7 @@
+Iigzäunte Maschinechnopf
+Redstone-Stüürig
+<&recipe>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.

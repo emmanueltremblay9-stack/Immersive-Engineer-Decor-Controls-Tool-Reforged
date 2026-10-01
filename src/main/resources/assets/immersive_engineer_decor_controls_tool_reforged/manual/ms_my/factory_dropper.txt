@@ -1,0 +1,5 @@
+Penitis Kilang
+Kegunaan lantai bengkel
+<&recipe>Blok ini melepaskan item tersimpan dari muka yang diarahkan.<br>
+<br>
+Penggunaan: Halakan muka hadapan ke titik pelepasan, isi slot dalaman dan laraskan daya, sudut, sela masa, logik penapis dan mod redstone pada skrinnya.<br>

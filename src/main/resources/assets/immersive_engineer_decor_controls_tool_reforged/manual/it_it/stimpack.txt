@@ -1,0 +1,7 @@
+Stimolatore automatico
+Iniettore d’emergenza
+<&recipe>L'Auto Stim Pack è uno strumento medico d'emergenza per lavori di manutenzione pericolosi.<br>
+<br>
+Uso: Attivalo manualmente per curarti, ottenere una breve protezione e un breve aumento della velocità. Nell'inventario può anche attivarsi automaticamente quando la salute è bassa, quindi entra in ricarica.<br>
+<br>
+Tienine uno pronto prima di provare posti elevati, cablaggi esposti o percorsi pericolosi in miniera.

@@ -1,0 +1,7 @@
+Charged Lapis
+Stored experience
+<&recipe>Charged Lapis stores one experience level created through the Mind Squeezer.<br>
+<br>
+Usage: Consume it to restore one level, clear active effects, and recover a small amount of health.<br>
+<br>
+The recipe widget shows the Mind Squeezer because Charged Lapis is produced by using that tool with lapis and XP available.

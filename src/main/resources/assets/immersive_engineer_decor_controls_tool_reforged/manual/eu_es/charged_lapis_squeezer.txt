@@ -1,0 +1,7 @@
+Adimen-zukugailua
+Esperientzia-kondentsadorea
+<&recipe>Adimen-zukugailuak lapisa eta esperientzia lapis kargatu bihurtzen ditu.<br>
+<br>
+Erabilera: eraman lapis lazulia eta gutxienez esperientzia-maila bat, eta erabili tresna. Zukuketa on batek maila bat eta lapis bat kontsumitzen ditu, erabiltzaileari min ematen dio, zukugailua higatzen du eta lapis kargatu bat sortzen du.<br>
+<br>
+Erabiltzaileak lapisik edo XPrik ez badu, edo hiltzetik gertuegi badago, ez du funtzionatzen.

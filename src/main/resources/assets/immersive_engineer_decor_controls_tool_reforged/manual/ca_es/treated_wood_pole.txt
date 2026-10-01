@@ -1,0 +1,5 @@
+Pilar de fusta tractada
+Peça d’estructura
+<&recipe>El pilar recte de fusta tractada aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pilars i vores de plataformes.<br>

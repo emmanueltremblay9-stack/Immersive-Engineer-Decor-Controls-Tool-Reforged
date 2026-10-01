@@ -1,0 +1,3 @@
+Grovt jerngrus
+Materiale for ingeniørverktøy brukt i det rekonstruerte oppskriftssettet.
+<&recipe>Kan smeltes til<br>jernbarrer, men egner seg ikke<br>til avansert materialbehandling.

@@ -1,0 +1,5 @@
+Forn de fusió de minerals
+Unitat compacta de processament
+<&recipe>El forn de fusió de minerals processa minerals a alta temperatura i ocupa poc espai en el taller.<br>
+<br>
+Ús: alimenta el forn amb blocs minerals i energia per a treballs de fusió a alta temperatura.<br>

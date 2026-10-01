@@ -1,0 +1,5 @@
+Passivi Flüssigkeitssammlig
+Bauteil für Flüssigkeitsleitige
+<&recipe>De passive Flüssigkeitssammler isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Setz en a passendi Wasserquelle und lah Platz für d'Flüssigkeitsentnahm.<br>

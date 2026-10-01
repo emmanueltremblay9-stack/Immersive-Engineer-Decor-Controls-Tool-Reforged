@@ -1,0 +1,5 @@
+Tamni krov od šindre
+Istrošeni krovni dio
+<&recipe>Dimnjak za tamni krov od šindre oblikuje tamne, praktične krovove radionica i industrijskih šupa.<br>
+<br>
+Uporaba: koristi dijelove zajedno za uvjerljive oblike krova.<br>

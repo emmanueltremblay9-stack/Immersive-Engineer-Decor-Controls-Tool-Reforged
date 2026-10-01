@@ -1,0 +1,7 @@
+Capsula d’aria subacquea
+Riserva d’aria d’emergenza
+<&recipe>La capsula d'aria da immersione è una riserva d'emergenza per il lavoro subacqueo.<br>
+<br>
+Uso: Usala manualmente per ripristinare l'aria. Se è nell'inventario, può anche attivarsi automaticamente quando l'aria è quasi esaurita, quindi entra in ricarica.<br>
+<br>
+Portala nelle miniere allagate, lungo le tubature sommerse e durante le riparazioni nelle sale pompe.

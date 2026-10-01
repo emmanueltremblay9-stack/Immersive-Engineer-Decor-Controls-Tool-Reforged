@@ -1,0 +1,789 @@
+Rheolyddion Redstone
+Mesuryddion ac elfennau signal
+Mae offer rheoli yn troi Redstone cudd yn baneli ffatri darllenadwy, synwyryddion, dangosyddion, switshis, larymau ac elfennau signal cysylltiedig.<br>
+<br>
+Defnyddiwch y tudalennau hyn wrth adeiladu gorsafoedd gweithredwr, byrddau signal, cylchedau diogelwch a rheolyddion o bell.
+<np>
+Targed Saethau
+Pwls ennydol
+<&arrow_target>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Synhwyrydd Drws
+Rheoli Redstone
+<&door_sensor_switch>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Lifft
+Rheoli Redstone
+<&elevator_button>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Botwm Gwydr
+Rheoli Redstone
+<&glass_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Gwydr
+Rheoli Redstone
+<&glass_small_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Cyffwrdd Gwydr
+Rheoli Redstone
+<&glass_touch_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Peiriant
+Rheoli Redstone
+<&industrial_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm
+Rheoli Redstone
+<&industrial_double_pole_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Peiriant â Gwarchodwr
+Rheoli Redstone
+<&industrial_fenced_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Cnoc
+Rheoli Redstone
+<&industrial_knock_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Hen Fotwm Addurnol
+Rheoli Redstone
+<&oldfancy_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Hen Fotwm Addurnol
+Rheoli Redstone
+<&oldfancy_small_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Hen Fotwm Cadwyn Addurnol
+Pwls ennydol
+<&oldfancy_spring_reset_chain>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Gwledig
+Rheoli Redstone
+<&rustic_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Hoelen Gwledig
+Rheoli Redstone
+<&rustic_nail_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Gwledig Bach
+Rheoli Redstone
+<&rustic_small_button>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Botwm Cadwyn Gwledig
+Pwls ennydol
+<&rustic_spring_reset_chain>Mae switsh ennydol yn rhoi pwls Redstone glân ar gryfder llawn.<br>
+<br>
+Defnydd: Defnyddiwch ef i gychwyn peiriannau, rhyddhau drysau, canu larymau neu weithredu cylchedau unwaith yn unig.<br>
+<br>
+Nodiadau: Mae'n ailosod ar ôl ei bwls wedi'i amseru.
+<np>
+Plât Cyswllt Gwydr
+Pwls gwasgedd
+<&glass_contact_mat>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Cyswllt Drws Gwydr
+Pwls gwasgedd
+<&glass_door_contact_mat>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Mat Cyswllt
+Pwls gwasgedd
+<&industrial_contact_mat>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Mat Cyswllt Drws
+Pwls gwasgedd
+<&industrial_door_contact_mat>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Synhwyrydd Disgyn Trwodd
+Synhwyro signal
+<&industrial_fallthrough_detector>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Botwm Troed
+Rheoli Redstone
+<&industrial_foot_button>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Drws Trawiad Diwydiannol
+Pwls gwasgedd
+<&industrial_high_sensitive_trapdoor>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Mat Cyswllt Trawiad
+Pwls gwasgedd
+<&industrial_shock_sensitive_contact_mat>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Drws Cudd Trawiad
+Pwls gwasgedd
+<&industrial_shock_sensitive_trapdoor>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Planhigyn Pŵer Coch
+Pwls gwasgedd
+<&red_power_plant>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Plât Gwasgedd Gwledig
+Pwls gwasgedd
+<&rustic_contact_plate>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Gwasgedd Drws Gwledig
+Pwls gwasgedd
+<&rustic_door_contact_plate>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Synhwyrydd Disgyn Gwledig
+Synhwyro signal
+<&rustic_fallthrough_detector>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Drws Trawiad Gwledig
+Pwls gwasgedd
+<&rustic_high_sensitive_trapdoor>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Plât Trawiad Gwledig
+Pwls gwasgedd
+<&rustic_shock_sensitive_plate>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Drws Trawiad Gwledig
+Pwls gwasgedd
+<&rustic_shock_sensitive_trapdoor>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Planhigyn Pŵer Melyn
+Pwls gwasgedd
+<&yellow_power_plant>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.
+<np>
+Cloc Amserydd Dydd Gwydr
+Signal golau dydd
+<&glass_day_timer>Mae switsh amserydd yn dilyn rhan golau dydd cylch y byd.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer lampau iard, caeadau a rheolyddion ffatri sy'n gweithio yn ystod y dydd yn unig.<br>
+<br>
+Nodiadau: Mae angen dimensiwn â golau o'r awyr.
+<np>
+Synhwyrydd Endidau Gwydr
+Synhwyro signal
+<&glass_entity_detector>Mae synhwyrydd endidau'n gwylio symudiad cyfagos heb blât llawr gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef â drysau, lampau, larymau neu gydgloeon diogelwch peiriannau.<br>
+<br>
+Nodiadau: Mae'n sganio ardal fach o amgylch y bloc.
+<np>
+Signal Ysbeidiol Gwydr
+Pwls wedi'i amseru
+<&glass_interval_timer>Mae switsh amserydd cryno yn darparu pwls Redstone wedi'i amseru.<br>
+<br>
+Defnydd: Defnyddiwch ef lle mae angen rheolaeth gyfnodol neu oedi ar fecanwaith bach.<br>
+<br>
+Nodiadau: Mae'n defnyddio pylsiau Redstone wedi'u hamseru.
+<np>
+Synhwyrydd Llinol Gwydr
+Synhwyro signal
+<&glass_linear_entity_detector>Mae synhwyrydd endidau'n gwylio symudiad cyfagos heb blât llawr gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef â drysau, lampau, larymau neu gydgloeon diogelwch peiriannau.<br>
+<br>
+Nodiadau: Mae'n sganio ardal fach o amgylch y bloc.
+<np>
+Synhwyrydd Blociau
+Synhwyro signal
+<&industrial_block_detector>Mae synhwyrydd blociau'n gwirio a oes rhywbeth yn y gofod o'i flaen.<br>
+<br>
+Defnydd: Anelwch ef at wyneb y peiriant, y glustog neu'r gofod gwarchodedig i'w wylio.<br>
+<br>
+Nodiadau: Mae'n rhoi pŵer pan nad aer yw'r bloc o'i flaen.
+<np>
+Cloc Amserydd Dydd
+Signal golau dydd
+<&industrial_day_timer>Mae switsh amserydd yn dilyn rhan golau dydd cylch y byd.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer lampau iard, caeadau a rheolyddion ffatri sy'n gweithio yn ystod y dydd yn unig.<br>
+<br>
+Nodiadau: Mae angen dimensiwn â golau o'r awyr.
+<np>
+Synhwyrydd Endidau
+Synhwyro signal
+<&industrial_entity_detector>Mae synhwyrydd endidau'n gwylio symudiad cyfagos heb blât llawr gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef â drysau, lampau, larymau neu gydgloeon diogelwch peiriannau.<br>
+<br>
+Nodiadau: Mae'n sganio ardal fach o amgylch y bloc.
+<np>
+Amserydd Ysbeidiol
+Pwls wedi'i amseru
+<&industrial_interval_timer>Mae switsh amserydd cryno yn darparu pwls Redstone wedi'i amseru.<br>
+<br>
+Defnydd: Defnyddiwch ef lle mae angen rheolaeth gyfnodol neu oedi ar fecanwaith bach.<br>
+<br>
+Nodiadau: Mae'n defnyddio pylsiau Redstone wedi'u hamseru.
+<np>
+Synhwyrydd Golau
+Synhwyro signal
+<&industrial_light_sensor>Mae synhwyrydd golau'n troi disgleirdeb lleol yn reolaeth Redstone.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer lampau awtomatig, caeadau a chylchedau gwelededd.<br>
+<br>
+Nodiadau: Mae'n rhoi pŵer ar ddisgleirdeb crai o 8 neu uwch.
+<np>
+Synhwyrydd Stormydd
+Synhwyro signal
+<&industrial_lightning_sensor>Mae synhwyrydd stormydd yn sbarduno rhybuddion pan fo taranau.<br>
+<br>
+Defnydd: Gosodwch ef o dan awyr agored a'i gysylltu â lampau neu larymau.<br>
+<br>
+Nodiadau: Mae angen taranau a mynediad at yr awyr.
+<np>
+Synhwyrydd Endidau Llinol
+Synhwyro signal
+<&industrial_linear_entity_detector>Mae synhwyrydd endidau'n gwylio symudiad cyfagos heb blât llawr gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef â drysau, lampau, larymau neu gydgloeon diogelwch peiriannau.<br>
+<br>
+Nodiadau: Mae'n sganio ardal fach o amgylch y bloc.
+<np>
+Synhwyrydd Glaw
+Synhwyro signal
+<&industrial_rain_sensor>Mae synhwyrydd tywydd yn troi glaw yn ei safle yn Redstone.<br>
+<br>
+Defnydd: Gosodwch ef lle gall y bloc uwch ei ben dderbyn glaw.<br>
+<br>
+Nodiadau: Mae'n gwirio am law uwchben y synhwyrydd.
+<np>
+Switsh Gwydr Deusefydlog
+Rheoli Redstone
+<&glass_rotary_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Cyffwrdd Gwydr Deusefydlog
+Rheoli Redstone
+<&glass_touch_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Gwydr Sensitif Oren
+Gwydr signal
+<&orange_sensitiveglass>Mae bloc gwydr sy'n ymateb i Redstone yn cadw llinellau gweld yn agored gan ddangos cyflwr y signal.<br>
+<br>
+Defnydd: Defnyddiwch ef mewn ffenestri ystafelloedd rheoli, paneli goleuedig a gwydr ffatri gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr yn ôl pŵer Redstone cyfagos.
+<np>
+Gwydr Sensitif sy'n Goleuo
+Gwydr signal
+<&sensitive_glass_block>Mae bloc gwydr sy'n ymateb i Redstone yn cadw llinellau gweld yn agored gan ddangos cyflwr y signal.<br>
+<br>
+Defnydd: Defnyddiwch ef mewn ffenestri ystafelloedd rheoli, paneli goleuedig a gwydr ffatri gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr yn ôl pŵer Redstone cyfagos.
+<np>
+Gwydr Sensitif Lliw
+Gwydr signal
+<&stained_sensitiveglass>Mae bloc gwydr sy'n ymateb i Redstone yn cadw llinellau gweld yn agored gan ddangos cyflwr y signal.<br>
+<br>
+Defnydd: Defnyddiwch ef mewn ffenestri ystafelloedd rheoli, paneli goleuedig a gwydr ffatri gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr yn ôl pŵer Redstone cyfagos.
+<np>
+Mesurydd Bar Gwydr
+Mesurydd signal
+<&glass_vertical_bar_gauge>Mae mesurydd ystafell reoli cryno yn dangos cryfder Redstone fel darlleniad panel clir.<br>
+<br>
+Defnydd: Gosodwch ef lle gellir gwirio pŵer Redstone cyfagos ar gip.<br>
+<br>
+Nodiadau: Mae'n darllen cryfder Redstone cyfagos o 0 i 15.
+<np>
+Mesurydd Analog
+Mesurydd signal
+<&industrial_analog_angular_gauge>Mae mesurydd ystafell reoli cryno yn dangos cryfder Redstone fel darlleniad panel clir.<br>
+<br>
+Defnydd: Gosodwch ef lle gellir gwirio pŵer Redstone cyfagos ar gip.<br>
+<br>
+Nodiadau: Mae'n darllen cryfder Redstone cyfagos o 0 i 15.
+<np>
+Mesurydd Foltmedr
+Mesurydd signal
+<&industrial_analog_horizontal_gauge>Mae mesurydd ystafell reoli cryno yn dangos cryfder Redstone fel darlleniad panel clir.<br>
+<br>
+Defnydd: Gosodwch ef lle gellir gwirio pŵer Redstone cyfagos ar gip.<br>
+<br>
+Nodiadau: Mae'n darllen cryfder Redstone cyfagos o 0 i 15.
+<np>
+Mesurydd Digidol
+Cryfder signal darllenadwy
+<&industrial_small_digital_gauge>Mae mesurydd ystafell reoli cryno yn dangos cryfder Redstone fel darlleniad panel clir.<br>
+<br>
+Defnydd: Gosodwch ef lle gellir gwirio pŵer Redstone cyfagos ar gip.<br>
+<br>
+Nodiadau: Mae'n darllen cryfder Redstone cyfagos o 0 i 15.
+<np>
+Mesurydd Tiwb Gwydr
+Mesurydd signal
+<&industrial_tube_gauge>Mae mesurydd ystafell reoli cryno yn dangos cryfder Redstone fel darlleniad panel clir.<br>
+<br>
+Defnydd: Gosodwch ef lle gellir gwirio pŵer Redstone cyfagos ar gip.<br>
+<br>
+Nodiadau: Mae'n darllen cryfder Redstone cyfagos o 0 i 15.
+<np>
+Mesurydd Bar Analog
+Mesurydd signal
+<&industrial_vertical_bar_gauge>Mae mesurydd ystafell reoli cryno yn dangos cryfder Redstone fel darlleniad panel clir.<br>
+<br>
+Defnydd: Gosodwch ef lle gellir gwirio pŵer Redstone cyfagos ar gip.<br>
+<br>
+Nodiadau: Mae'n darllen cryfder Redstone cyfagos o 0 i 15.
+<np>
+Lamp Larwm
+Adborth signal
+<&industrial_alarm_lamp>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+Seiren larwm
+Dangosydd signal
+<&industrial_alarm_siren>Mae'r Seiren larwm yn ddangosydd redstone sydd wedi'i osod ar wyneb bloc. Mae ei chyflwr pŵer yn dilyn signal y bloc y mae ynghlwm wrtho.<br>
+<br>
+Defnydd: Gosodwch ar wyneb solet a'i phweru i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodyn: Mae'r seiren yn adnewyddu unwaith yr eiliad tra bo'r signal yn weithredol.
+<np>
+LED sy'n Fflachio
+Adborth signal
+<&industrial_blinking_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Gwyrdd sy'n Fflachio
+Adborth signal
+<&industrial_green_blinking_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Gwyrdd
+Adborth signal
+<&industrial_green_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Coch
+Adborth signal
+<&industrial_red_blinking_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Coch
+Adborth signal
+<&industrial_red_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Gwyn sy'n Fflachio
+Adborth signal
+<&industrial_white_blinking_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Gwyn
+Adborth signal
+<&industrial_white_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Melyn sy'n Fflachio
+Adborth signal
+<&industrial_yellow_blinking_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+LED Melyn
+Adborth signal
+<&industrial_yellow_led>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+Semaffor Gwledig
+Adborth signal
+<&rustic_semaphore>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.
+<np>
+Switsh Cymharydd
+Signal cysylltiedig
+<&industrial_comparator_switch>Mae switsh synhwyro cryno yn darllen y bloc y mae wedi'i osod arno ac yn troi'r darlleniad hwnnw yn allbwn panel syml.<br>
+<br>
+Defnydd: Gosodwch ef ar restrau eiddo, tanciau neu offer Redstone. Pan fo'r bloc cysylltiedig yn adrodd allbwn cymharydd, cynhwysydd neu Redstone, mae'r switsh yn allbynnu Redstone ar gryfder llawn.<br>
+<br>
+Nodiadau: Defnyddiwch ef i droi lefelau storio neu wifrau cudd yn llinellau rheoli ymlaen/i ffwrdd clir.
+<np>
+Pylwr
+Signal amrywiol
+<&industrial_dimmer>Mae rheolydd cylchdro yn addasu cryfder Redstone o wyneb panel cryno.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i godi'r allbwn fesul cam, ac yna'n ôl i sero ar ôl cryfder llawn.<br>
+<br>
+Nodiadau: Mae'n allbynnu cryfder o 0 i 15.
+<np>
+Botwm Stop Brys
+Rheoli Redstone
+<&industrial_estop_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Rhwystr Hopran
+Rheoli Redstone
+<&industrial_hopper_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Switsh Cnoc
+Rheoli Redstone
+<&industrial_knock_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Lifer
+Rheoli Redstone
+<&industrial_lever>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Switsh Peiriant Dau Fotwm
+Rheoli Redstone
+<&industrial_machine_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Dolen Dynnu
+Rheoli Redstone
+<&industrial_pull_handle>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Lifer Cylchdro
+Rheoli Redstone
+<&industrial_rotary_lever>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Switsh Peiriant Cylchdro
+Rheoli Redstone
+<&industrial_rotary_machine_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Lifer Cyswllt
+Rheoli Redstone
+<&industrial_small_lever>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Switsh
+Rheoli Redstone
+<&industrialswitch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Switsh Golau
+Rheoli Redstone
+<&light_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Switsh Falf
+Rheoli Redstone
+<&valve_wheel_switch>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Derbynnydd Pwls mewn Casin
+Rheolaeth gysylltiedig
+<&industrial_switchlink_cased_pulse_receiver>Mae derbynnydd pwls cysylltiedig mewn casin yn rhoi sbardun Redstone byr i baneli o bell.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Cliciwch ef â'r botwm de neu sbardunwch y berl gysylltiedig i allbynnu pwls byr.<br>
+<br>
+Nodiadau: Mae'r pwls yn ailosod ei hun ar ôl y cyfnod a osodwyd.
+<np>
+Derbynnydd Cyswllt mewn Casin
+Rheolaeth gysylltiedig
+<&industrial_switchlink_cased_receiver>Mae derbynnydd cysylltiedig mewn casin yn rhoi targed Redstone cadarn i baneli o bell.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Cliciwch y derbynnydd yn uniongyrchol â'r botwm de i'w newid â llaw.<br>
+<br>
+Nodiadau: Mae perl gysylltiedig yn troi'r derbynnydd hwn ymlaen neu i ffwrdd pan ddefnyddir hi wrth sleifio.
+<np>
+Derbynnydd Cyswllt Pwls
+Rheolaeth gysylltiedig
+<&industrial_switchlink_pulse_receiver>Mae derbynnydd pwls cysylltiedig yn rhoi sbardun Redstone byr i baneli o bell.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Cliciwch ef â'r botwm de neu sbardunwch y berl gysylltiedig i allbynnu pwls byr.<br>
+<br>
+Nodiadau: Mae'r pwls yn ailosod ei hun ar ôl y cyfnod a osodwyd.
+<np>
+Relái Cyswllt Pwls
+Rheolaeth gysylltiedig
+<&industrial_switchlink_pulse_relay>Mae elfen ar ffurf relái yn rhoi pwynt switsio lleol cryno i adeiladau paneli.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos. Defnyddiwch flociau derbyn pan fo angen gweithredu â pherl gysylltiedig.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Derbynnydd Cyswllt Switsh
+Rheolaeth gysylltiedig
+<&industrial_switchlink_receiver>Mae derbynnydd cysylltiedig yn rhoi targed Redstone cryfder llawn i baneli o bell.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Cliciwch y derbynnydd yn uniongyrchol â'r botwm de i'w newid â llaw.<br>
+<br>
+Nodiadau: Mae perl gysylltiedig yn troi'r derbynnydd hwn ymlaen neu i ffwrdd pan ddefnyddir hi wrth sleifio.
+<np>
+Derbynnydd Cyswllt Analog
+Rheolaeth gysylltiedig
+<&industrial_switchlink_receiver_analog>Mae derbynnydd cysylltiedig yn rhoi targed o bell gweladwy i baneli rheoli.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Defnyddiwch y berl honno wrth sleifio i weithredu'r derbynnydd o bell.<br>
+<br>
+Nodiadau: Mae'r derbynnydd hwn yn allbynnu signal Redstone llawn pan gaiff ei sbarduno.
+<np>
+Relái Cyswllt Switsh
+Rheolaeth gysylltiedig
+<&industrial_switchlink_relay>Mae elfen ar ffurf relái yn rhoi pwynt switsio lleol cryno i adeiladau paneli.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos. Defnyddiwch flociau derbyn pan fo angen gweithredu â pherl gysylltiedig.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Relái Cyswllt Analog
+Rheolaeth gysylltiedig
+<&industrial_switchlink_relay_analog>Mae elfen ar ffurf relái yn rhoi pwynt switsio lleol cryno i adeiladau paneli.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos. Defnyddiwch flociau derbyn pan fo angen gweithredu â pherl gysylltiedig.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Perl Cyswllt Switsh
+Rheolaeth gysylltiedig
+<&switchlink_pearl>Mae perl gysylltiedig yn cadw targed derbynnydd ar gyfer rheolyddion ffatri o bell.<br>
+<br>
+Defnydd: Cliciwch dderbynnydd Cyswllt Switsh â Pherl Ender i greu un. Defnyddiwch y berl gysylltiedig wrth sleifio i weithredu'r derbynnydd a gadwyd.<br>
+<br>
+Nodiadau: Rhaid i'r targed fod wedi'i lwytho, yn yr un dimensiwn ac o fewn ystod.
+<np>
+Hen Lifer Addurnol
+Rheoli Redstone
+<&oldfancy_bistableswitch1>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Hen Lifer Cylchdro Addurnol
+Rheoli Redstone
+<&oldfancy_bistableswitch2>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Lifer Cylchdro Gwledig
+Rheoli Redstone
+<&rustic_angular_lever>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Lifer Gwledig
+Rheoli Redstone
+<&rustic_lever>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Lifer Hoelen Gwledig
+Rheoli Redstone
+<&rustic_nail_lever>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.
+<np>
+Lifer Gwledig Dau Golfach
+Rheoli Redstone
+<&rustic_two_hinge_lever>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.

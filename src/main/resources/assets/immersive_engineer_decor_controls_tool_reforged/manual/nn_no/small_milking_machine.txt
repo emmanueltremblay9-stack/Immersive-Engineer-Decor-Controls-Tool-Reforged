@@ -1,0 +1,5 @@
+Mjølkemaskin
+Hjelpemiddel på fabrikkgolvet
+<&recipe>Den vesle mjølkemaskina er ei nytteblokk for fabrikkgolvet, innan emning, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: plasser henne nær kyr og sørg for uttak av mjølkebehaldarar eller væske.<br>

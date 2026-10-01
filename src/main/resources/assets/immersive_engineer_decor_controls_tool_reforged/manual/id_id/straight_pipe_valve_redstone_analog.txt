@@ -1,0 +1,5 @@
+Katup Cairan Analog
+Perlengkapan jalur cairan
+<&recipe>Katup cairan analog adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: sejajarkan katup dengan arah aliran yang diinginkan.<br>

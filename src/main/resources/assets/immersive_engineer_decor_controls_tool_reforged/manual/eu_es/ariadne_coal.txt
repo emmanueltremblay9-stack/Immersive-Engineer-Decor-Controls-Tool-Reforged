@@ -1,0 +1,7 @@
+Ariadnaren ikatza
+Meategiko ibilbide-markatzailea
+<&recipe>Ariadnaren ikatza ibilbideak azkar markatzeko balio du putzuetan, adar-meategietan eta lurpeko aldi baterako lanetan.<br>
+<br>
+Erabilera: erabili bloke baten aurpegi egonkorrean ertz horretan gezi beltzeko markatzailea jartzeko. Markatzaileak aurpegian klikatutako puntua irakurtzen du eta zortzi norabide onartzen ditu, diagonalak barne. Horrela bihurguneak, irteerak, irteerarik gabeko bideak eta hornidura-bideak marka ditzakezu, seinale-zutoin bereizirik eraman gabe.<br>
+<br>
+Ariadnaren ikatza 100 erabilerako markatze-tresna berrerabilgarria da. Markatzaile bat ondo jartzeak iraunkortasun-unitate bat gastatzen du; aurpegi desegokiak baztertu egiten dira objektua higatu gabe.

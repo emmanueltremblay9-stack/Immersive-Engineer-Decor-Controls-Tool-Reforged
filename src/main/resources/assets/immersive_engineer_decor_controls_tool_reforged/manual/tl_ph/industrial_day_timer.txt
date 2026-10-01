@@ -1,0 +1,7 @@
+Orasan ng Araw
+Signal ng liwanag ng araw
+<&recipe>Sinusundan ng swits na orasan ang araw na bahagi ng siklo ng mundo.<br>
+<br>
+Paggamit: Gamitin para sa mga ilaw sa bakuran, takip ng bintana at kontrol ng pabrika na para sa araw lamang.<br>
+<br>
+Tandaan: Nangangailangan ng dimensiyong may liwanag mula sa langit.

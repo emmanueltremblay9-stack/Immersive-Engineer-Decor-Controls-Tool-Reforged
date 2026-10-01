@@ -1,0 +1,5 @@
+Emal edilmiş ağac kətil
+Emalatxana mebeli
+<&recipe>Bu blok iş otaqları və texniki xidmət guşələri üçün praktik emalatxana mebelidir.<br>
+<br>
+İstifadə: İş masalarının, yeşiklərin və yığcam maşınların yanına qoyun.<br>

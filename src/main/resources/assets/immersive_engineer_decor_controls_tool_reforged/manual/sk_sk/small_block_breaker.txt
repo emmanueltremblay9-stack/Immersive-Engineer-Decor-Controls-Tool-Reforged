@@ -1,0 +1,5 @@
+Rozbíjač blokov
+Vybavenie výrobnej haly
+<&recipe>Malý rozbíjač blokov patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Namier pracovnú stranu na blok, ktorý chceš odstrániť.<br>

@@ -1,0 +1,93 @@
+Uneltele inginerului
+Echipament portabil de atelier
+Setul Uneltele inginerului adaugă echipament de mână, marcaje pentru mine, consumabile de urgență, hrană pentru teren și mici ajutoare de prelucrare a materialelor în același manual care descrie blocurile decorative și de comandă.<br>
+<br>
+Aceste unelte sunt destinate lucrului departe de un atelier complet echipat: marchează traseul, transportă provizii, remediază greșelile și încheie lucrări mici de prelucrare la fața locului.
+<np>
+Unealtă REDIA
+Utilitate acoperită cu diamant
+<&redia_tool>Unealta REDIA este o unealtă durabilă pentru lucrări rapide pe teren. Folosește-o pe sol potrivit pentru a-l transforma în teren agricol.<br>
+<br>
+Folosește-o pe o față stabilă în timp ce ai torțe la tine pentru a amplasa o torță de marcaj din inventar, fără a uza REDIA. Lucrările de teren, tunsul, lucrul cu toporul și doborârea copacilor consumă durabilitate.
+<np>
+Ciocan de zdrobit minereuri
+Unealtă de zdrobire manuală
+<&crushing_hammer>Ciocanul de zdrobit minereuri este o unealtă manuală pentru prelucrarea timpurie a fierului și aurului.<br>
+<br>
+Folosește-l cu fier brut, aur brut, minereu de fier, minereu de fier din ardezie adâncă, minereu de aur sau minereu de aur din ardezie adâncă pentru pulbere Immersive Engineering. Ciocanul pierde durabilitate, revine în grilă până se rupe, se uzează la minerit și respinge ținte.
+<np>
+Dispozitiv de urmărire
+Marcaj de poziție memorată
+<&tracker>Localizatorul stochează poziția unui bloc în obiect.<br>
+<br>
+Apasă pe un bloc pentru dimensiune și coordonate. Descrierea arată poziția. Folosește-l pe furiș pentru a șterge ținta.<br>
+<br>
+Marchează mașini, tuneluri, comenzi la distanță sau construcții neterminate.
+<np>
+Cărbunele Ariadnei
+Marcaj de traseu în mină
+<&ariadne_coal>Cărbunele Ariadnei amplasează rapid marcaje de traseu cu săgeți negre pe fețele stabile din mină. Folosește-l pe o față solidă pentru a marca următorul viraj, ieșirea sau ramificația; marcajul permite opt direcții pe fața apăsată, inclusiv diagonale.<br>
+<br>
+Cărbunele Ariadnei este o unealtă reutilizabilă de marcare cu 100 de utilizări. Fiecare marcaj amplasat cu succes consumă un punct de durabilitate. Refuză fețele neacceptate în loc să uzeze obiectul.
+<np>
+Injector automat de urgență
+Injector de urgență
+<&stimpack>Pachetul stimulant automat este un obiect medical de urgență.<br>
+<br>
+Folosește-l manual pentru vindecare, protecție scurtă și impuls de mișcare. În inventar se declanșează automat la sănătate scăzută, apoi intră în reîncărcare. Păstrează unul în locuri periculoase.
+<np>
+Sac de dormit
+Echipament portabil de odihnă
+<&sleeping_bag>Sacul de dormit este un set rezistent la vreme pentru lucru departe de pat.<br>
+<br>
+Folosește-l noaptea în Lumea de Suprafață pentru odihnă până dimineața fără a schimba punctul de reapariție.<br>
+<br>
+Nu funcționează ziua, lângă monștri sau în dimensiuni nepotrivite. Fiecare odihnă reușită îl uzează.
+<np>
+Cutie de materiale
+Cutie de provizii pentru construcții
+<&material_box>Cutia de materiale poartă o rezervă mare dintr-un singur material de construcție obișnuit, nemodificat și stivuibil.<br>
+<br>
+Ține cutia în mâna principală și materialul în cealaltă pentru a-l încărca; folosește-o cu cealaltă mână goală pentru a scoate o stivă.<br>
+<br>
+Ține 512 obiecte de un tip, respinge alte cutii, echipamentul nestivuibil și stivele modificate și arată conținutul în descriere.
+<np>
+Capsulă de aer pentru scufundări
+Rezervă de aer de urgență
+<&diving_capsule>Capsula de aer este o rezervă de urgență pentru lucrul sub apă.<br>
+<br>
+Folosește-o manual pentru aer. În inventar se declanșează automat când aerul aproape s-a terminat, apoi intră în reîncărcare. Ia-o în mine inundate, la conducte scufundate și în camere de pompe.
+<np>
+Presă de batoane cu musli
+Presă alimentară
+<&musli_bar_press>Presa Muslee transformă alimentele obișnuite în rații compacte.<br>
+<br>
+Ai nevoie de pâine, un măr și semințe de grâu, pepene, dovleac, sfeclă sau cânepă industrială. Presarea consumă câte una, verifică spațiul, creează patru batoane și uzează presa.<br>
+<br>
+Dacă lipsește ceva sau nu este loc, nu se consumă nimic.
+<np>
+Baton energizant cu amestec de musli
+Gustare rapidă în atelier
+<&musli_bar>Batonul Muslee Melange este hrană compactă din pâine, semințe și fructe.<br>
+<br>
+Mănâncă-l ca hrană de teren când instalezi comenzi, conducte, platforme sau linii lungi de mașini.
+<np>
+Storcător de minte
+Condensator de experiență
+<&charged_lapis_squeezer>Storcătorul de minte transformă un lapislazuli și un nivel de experiență din inventarul tău în lapis încărcat.<br>
+<br>
+Procesul rănește, epuizează și orbește pentru scurt timp utilizatorul la fiecare conversie reușită. Refuză să funcționeze fără lapis, fără experiență sau când utilizatorul este prea aproape de moarte.
+<np>
+Lapis încărcat
+Experiență stocată
+<&charged_lapis>Lapisul încărcat stochează un nivel de experiență. Consumă-l pentru a recupera nivelul, a elimina efectele active și a restabili o cantitate mică de sănătate.<br>
+<br>
+Fabrică mai întâi un storcător de minte; lapisul încărcat se produce folosind această unealtă atunci când ai lapis și experiență disponibile.
+<np>
+Granule grosiere de fier
+Material pentru uneltele inginerului, folosit de setul de rețete reconstruit.
+<&iron_grit>Pot fi topite în lingouri<br>de fier, dar nu sunt<br>potrivite pentru prelucrări avansate.
+<np>
+Granule grosiere de aur
+Material pentru uneltele inginerului, folosit de setul de rețete reconstruit.
+<&gold_grit>Pot fi topite în lingouri<br>de aur, dar nu sunt<br>potrivite pentru prelucrări avansate.

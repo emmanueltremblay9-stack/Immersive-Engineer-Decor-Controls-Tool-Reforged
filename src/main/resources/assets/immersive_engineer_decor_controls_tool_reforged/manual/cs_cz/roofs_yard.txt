@@ -1,0 +1,101 @@
+Střechy a dvory
+Venkovní tovární vybavení
+Střešní bloky, dvorní štěrk a díly ze starého průmyslového dřeva dotvářejí venkovní přístřešky, pracovní dvory, nakládací plochy a omšelé okraje továren.<br>
+<br>
+Kombinuj tyto díly se zdivem a přístupovými cestami, aby venkovní průmyslové stavby zůstaly přehledné i z dálky.
+<np>
+Tmavá šindelová střecha
+Omšelý střešní prvek
+<&dark_shingle_roof>Tento blok vytváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Střešní sněhová zábrana
+Omšelý střešní prvek
+<&dark_shingle_roof_metallized>Sněhová zábrana tmavé šindelové střechy dotváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Tmavá šindelová střecha
+Omšelý střešní prvek
+<&dark_shingle_roof_skylight>Světlík tmavé šindelové střechy dotváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Komínová základna střechy
+Omšelý střešní prvek
+<&dark_shingle_roof_chimneytrunk>Komínová základna tmavé šindelové střechy dotváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Střešní kabelová průchodka
+Omšelý střešní prvek
+<&dark_shingle_roof_wireconduit>Kabelová průchodka tmavé šindelové střechy dotváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Tmavá šindelová střecha
+Omšelý střešní prvek
+<&dark_shingle_roof_chimney>Komín tmavé šindelové střechy dotváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Blok tmavé šindelové střechy
+Omšelý střešní prvek
+<&dark_shingle_roof_block>Tento blok vytváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Půlblok tmavé šindelové střechy
+Omšelý střešní prvek
+<&dark_shingle_roof_slab>Tento blok vytváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Půlblok tmavé šindelové střechy
+Omšelý střešní prvek
+<&dark_shingle_roof_slabslice>Tenký plát tmavé šindelové střechy dotváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>
+<np>
+Zhutněná hlína se štěrkem
+Povrch pracoviště
+<&dense_grit_dirt_block>Tento blok dodává venkovním pracovištím zhutněný udusaný povrch.<br>
+<br>
+Použití: Polož jej kolem nakládacích vrat, venkovních nádrží a strojních dvorů.<br>
+<np>
+Zhutněný písek se štěrkem
+Povrch pracoviště
+<&dense_grit_sand_block>Tento blok dodává venkovním pracovištím zhutněný udusaný povrch.<br>
+<br>
+Použití: Polož jej kolem nakládacích vrat, venkovních nádrží a strojních dvorů.<br>
+<np>
+Stará prkna
+Staré dílenské dřevo
+<&old_industrial_wood_planks>Stará průmyslová prkna přidávají staré dílenské dřevo na podlahy, stupně, dveře a útulné vnitřní lemování.<br>
+<br>
+Použití: Hodí se na staré dílenské podlahy, schody, dveře a lemování.<br>
+<np>
+Půlblok ze starého průmyslového dřeva
+Staré dílenské dřevo
+<&old_industrial_wood_slab>Tento blok přidává staré dílenské dřevo na podlahy, stupně, dveře a útulné vnitřní lemování.<br>
+<br>
+Použití: Hodí se na staré dílenské podlahy, schody, dveře a lemování.<br>
+<np>
+Schody ze starého dřeva
+Staré dílenské dřevo
+<&old_industrial_wood_stairs>Schody ze starého průmyslového dřeva přidávají staré dílenské dřevo na podlahy, stupně, dveře a útulné vnitřní lemování.<br>
+<br>
+Použití: Hodí se na staré dílenské podlahy, schody, dveře a lemování.<br>
+<np>
+Tenký plát starého dřeva
+Staré dílenské dřevo
+<&old_industrial_wood_slabslice>Tenký plát starého průmyslového dřeva přidává staré dílenské dřevo na podlahy, stupně, dveře a útulné vnitřní lemování.<br>
+<br>
+Použití: Hodí se na staré dílenské podlahy, schody, dveře a lemování.<br>
+<np>
+Staré průmyslové dřevěné dveře
+Staré dílenské dřevo
+<&old_industrial_wood_door>Tento blok přidává staré dílenské dřevo na podlahy, stupně, dveře a útulné vnitřní lemování.<br>
+<br>
+Použití: Hodí se na staré dílenské podlahy, schody, dveře a lemování.<br>

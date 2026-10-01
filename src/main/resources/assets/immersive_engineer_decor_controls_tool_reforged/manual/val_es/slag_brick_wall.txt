@@ -1,0 +1,5 @@
+Mur de rajoles d’escòria
+Obra de paleta industrial compacta
+<&recipe>Este bloc afig obra de paleta compacta de color marró grisenc per a fonaments, murs de contenció i tallers antics.<br>
+<br>
+Ús: usa’l en fonaments antics, murs de contenció i sòls bruts de fàbrica.<br>

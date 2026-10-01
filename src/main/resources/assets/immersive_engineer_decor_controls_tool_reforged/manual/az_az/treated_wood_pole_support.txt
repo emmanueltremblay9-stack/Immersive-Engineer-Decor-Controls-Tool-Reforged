@@ -1,0 +1,5 @@
+Emal edilmiş dirək dayağı
+Konstruksiya karkasının hissəsi
+<&recipe>Düz emal edilmiş ağac dirəyin dayağı, yəni Emal edilmiş ağac dirəyin dayağı, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>

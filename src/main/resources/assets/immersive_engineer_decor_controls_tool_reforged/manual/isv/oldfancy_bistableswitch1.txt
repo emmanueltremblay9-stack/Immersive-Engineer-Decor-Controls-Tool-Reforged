@@ -1,0 +1,7 @@
+Stara ozdobna držka
+Redstounovo upravljanje
+<&recipe>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.

@@ -1,0 +1,7 @@
+Nyomkövető
+Tárolt helyzetjelölő
+<&recipe>A nyomkövető közvetlenül a tárgyban tárolja egy blokk helyét.<br>
+<br>
+Használat: Kattints egy blokkra a dimenzió és koordináták mentéséhez. A súgó mutatja a helyet. Lopakodva használd a nyomkövetőt a cél törléséhez.<br>
+<br>
+Jelölj vele gépeket, alagútelágazásokat, távoli vezérlőket vagy befejezetlen építési helyeket, mielőtt szerszámokkal és anyagokkal visszatérsz.

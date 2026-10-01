@@ -1,0 +1,7 @@
+Perle de liaison d'interrupteur
+Commande liée
+<&recipe>Une perle liée mémorise un récepteur cible pour commander l'usine à distance.<br>
+<br>
+Utilisation : cliquez sur un récepteur Switch Link avec une perle de l'Ender pour la créer. Utilisez la perle liée en vous accroupissant pour activer le récepteur mémorisé.<br>
+<br>
+Remarque : la cible doit être chargée, dans la même dimension et à portée.

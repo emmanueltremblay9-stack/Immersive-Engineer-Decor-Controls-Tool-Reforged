@@ -1,0 +1,7 @@
+Ferbiningsûntfanger yn kast
+Keppele bestjoering
+<&recipe>In keppele ûntfanger yn in kast jout panielen op ôfstân in stevich redstonedoel.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Rjochtsklik streekrjocht op de ûntfanger om him mei de hân oan of út te setten.<br>
+<br>
+Opmerking: In keppele pearel set dizze ûntfanger oan of út as se by it slûpen brûkt wurdt.

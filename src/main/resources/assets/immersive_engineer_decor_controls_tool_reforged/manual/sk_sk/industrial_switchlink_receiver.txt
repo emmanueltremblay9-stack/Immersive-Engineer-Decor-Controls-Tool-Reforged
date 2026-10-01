@@ -1,0 +1,7 @@
+Prijímač prepojenia spínačov
+Prepojené ovládanie
+<&recipe>Prepojený prijímač poskytuje vzdialeným panelom redstonový cieľ s plnou silou.<br>
+<br>
+Použitie: Kliknutím Ender perlou vytvor prepojenú perlu. Pravým kliknutím priamo na prijímač ho ručne prepneš.<br>
+<br>
+Poznámky: Prepojená perla pri použití počas zakrádania prepne tento prijímač.

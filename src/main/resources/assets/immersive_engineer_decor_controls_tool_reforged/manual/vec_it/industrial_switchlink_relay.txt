@@ -1,0 +1,7 @@
+Relè de ligamento de interutori
+Comanda ligada
+<&recipe>Un equipamento in forma de relè el dà ai panełi un ponto local de comutasion conpato.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini. Dòpara blochi ricevidori quando te ga bisogno de ativasion co na perla ligada.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.

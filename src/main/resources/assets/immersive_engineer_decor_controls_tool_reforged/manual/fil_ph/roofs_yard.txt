@@ -1,0 +1,101 @@
+Mga Bubong at Bakuran
+Mga kagamitan sa labas ng pabrika
+Tumutulong ang mga bloke ng bubong, graba ng bakuran at bahagi ng lumang kahoy ng pabrika sa pagtatapos ng mga gusali sa labas, bakuran ng trabaho, kargahan at nalumang gilid ng pabrika.<br>
+<br>
+Ihalo ang mga bahaging ito sa pagmamason at mga daanan upang manatiling malinaw mula sa malayo ang mga gusaling pang-industriya sa labas.
+<np>
+Maitim na Bubong na Tisa
+Nalumang bahagi ng bubong
+<&dark_shingle_roof>Bumubuo ang blokeng ito ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Harang sa Niyebe ng Bubong
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_metallized>Ang Harang sa Niyebe ng Madilim na Bubong na Tisa ay bumubuo ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Maitim na Bubong na Tisa
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_skylight>Ang Bintanang Pabubong ng Madilim na Bubong na Tisa ay bumubuo ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Katawan ng Tsimenea ng Bubong
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_chimneytrunk>Ang Katawan ng Tsimenea ng Madilim na Bubong na Tisa ay bumubuo ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Daanan ng Kawad sa Bubong
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_wireconduit>Ang Daanan ng Kawad sa Madilim na Bubong na Tisa ay bumubuo ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Maitim na Bubong na Tisa
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_chimney>Ang Tsimenea ng Madilim na Bubong na Tisa ay bumubuo ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Bloke ng Maitim na Bubong na Tisa
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_block>Bumubuo ang blokeng ito ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Dalig ng Maitim na Bubong na Tisa
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_slab>Bumubuo ang blokeng ito ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Dalig ng Maitim na Bubong na Tisa
+Nalumang bahagi ng bubong
+<&dark_shingle_roof_slabslice>Ang Manipis na Dalig ng Madilim na Bubong na Tisa ay bumubuo ng madilim at praktikal na hugis ng bubong para sa mga pagawaan at gusaling pang-industriya.<br>
+<br>
+Paggamit: Pagsamahin ang mga bahagi upang makagawa ng kapani-paniwalang hugis ng bubong.<br>
+<np>
+Siksik na Lupang May Butil
+Pantakip ng lupa sa lugar ng trabaho
+<&dense_grit_dirt_block>Nagbibigay ang blokeng ito ng siksik at natapakang ibabaw sa mga panlabas na lugar ng trabaho.<br>
+<br>
+Paggamit: Ilatag sa paligid ng mga pintuan ng kargahan, tangke sa labas at bakuran ng makina.<br>
+<np>
+Siksik na Buhanging May Butil
+Pantakip ng lupa sa lugar ng trabaho
+<&dense_grit_sand_block>Nagbibigay ang blokeng ito ng siksik at natapakang ibabaw sa mga panlabas na lugar ng trabaho.<br>
+<br>
+Paggamit: Ilatag sa paligid ng mga pintuan ng kargahan, tangke sa labas at bakuran ng makina.<br>
+<np>
+Mga Tabla ng Lumang Kahoy
+Lumang kahoy ng pagawaan
+<&old_industrial_wood_planks>Nagdaragdag ang mga Tabla ng Lumang Kahoy ng Pabrika ng lumang kahoy ng pagawaan para sa sahig, baytang, pinto at maaliwalas na gilid sa loob.<br>
+<br>
+Paggamit: Gamitin para sa lumang sahig, hagdanan, pinto at gilid ng pagawaan.<br>
+<np>
+Dalig ng Lumang Kahoy ng Pabrika
+Lumang kahoy ng pagawaan
+<&old_industrial_wood_slab>Nagdaragdag ang blokeng ito ng lumang kahoy ng pagawaan para sa sahig, baytang, pinto at maaliwalas na gilid sa loob.<br>
+<br>
+Paggamit: Gamitin para sa lumang sahig, hagdanan, pinto at gilid ng pagawaan.<br>
+<np>
+Hagdanan ng Lumang Kahoy
+Lumang kahoy ng pagawaan
+<&old_industrial_wood_stairs>Nagdaragdag ang Hagdanan ng Lumang Kahoy ng Pabrika ng lumang kahoy ng pagawaan para sa sahig, baytang, pinto at maaliwalas na gilid sa loob.<br>
+<br>
+Paggamit: Gamitin para sa lumang sahig, hagdanan, pinto at gilid ng pagawaan.<br>
+<np>
+Manipis na Dalig ng Lumang Kahoy
+Lumang kahoy ng pagawaan
+<&old_industrial_wood_slabslice>Nagdaragdag ang Manipis na Dalig ng Lumang Kahoy ng Pabrika ng lumang kahoy ng pagawaan para sa sahig, baytang, pinto at maaliwalas na gilid sa loob.<br>
+<br>
+Paggamit: Gamitin para sa lumang sahig, hagdanan, pinto at gilid ng pagawaan.<br>
+<np>
+Pinto ng Lumang Kahoy ng Pabrika
+Lumang kahoy ng pagawaan
+<&old_industrial_wood_door>Nagdaragdag ang blokeng ito ng lumang kahoy ng pagawaan para sa sahig, baytang, pinto at maaliwalas na gilid sa loob.<br>
+<br>
+Paggamit: Gamitin para sa lumang sahig, hagdanan, pinto at gilid ng pagawaan.<br>

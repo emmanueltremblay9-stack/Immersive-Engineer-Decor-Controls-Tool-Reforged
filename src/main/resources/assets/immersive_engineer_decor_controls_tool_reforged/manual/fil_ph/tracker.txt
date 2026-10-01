@@ -1,0 +1,7 @@
+Pangsundan
+Pananda ng nakaimbak na posisyon
+<&recipe>Direktang nag-iimbak ang tracker ng posisyon ng isang bloke sa item.<br>
+<br>
+Paggamit: I-click ang isang bloke upang itala ang dimensiyon at mga coordinate nito. Ipinapakita ng tooltip ang nakaimbak na posisyon. Sneak-use ang tracker upang burahin ang target.<br>
+<br>
+Gamitin upang markahan ang mga makina, sangahan ng lagusan, kontrol mula sa malayo o hindi tapos na lugar ng pagtatayo bago bumalik na may mga kasangkapan at materyal.

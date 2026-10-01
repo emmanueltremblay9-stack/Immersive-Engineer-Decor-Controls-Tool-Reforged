@@ -1,0 +1,7 @@
+Capsúl Aeir Tumadóireachta
+Cúltaca éigeandála aeir
+<&recipe>Is cúlchiste éigeandála aeir é an capsúl aeir tumadóireachta d’obair faoi uisce.<br>
+<br>
+Úsáid: Úsáid de láimh é chun aer a athshlánú. Nuair atá sé san fhardal, féadfaidh sé gníomhachtú go huathoibríoch agus an t-aer beagnach caite, ansin téann sé ar athluchtú.<br>
+<br>
+Iompair é do mhianaigh faoi thuile, píblínte báite agus deisiúcháin i seomraí caidéal.

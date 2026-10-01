@@ -1,0 +1,7 @@
+Rangli sezgir oyna
+Signal oynasi
+<&recipe>Redstonega javob beradigan oyna bloki signal holatini ko'rsatib, ko'rish yo'lini saqlaydi.<br>
+<br>
+Ishlatish: boshqaruv xonasi derazalari, yoritilgan panellar va himoyalangan zavod oynalarida foydalaning.<br>
+<br>
+Eslatma: yaqin redstone quvvati bilan holati o'zgaradi.

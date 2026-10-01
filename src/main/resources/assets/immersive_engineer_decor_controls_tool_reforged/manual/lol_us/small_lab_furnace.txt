@@ -1,0 +1,5 @@
+Lab Furnace Thing
+Lil processing gadget
+<&recipe>Lab Furnace does solid-fuel smeltin jobz in a lil patch of ur workshop, kitty.<br>
+<br>
+How to: Use solid fuel fer lil batches of smeltin, meow.<br>

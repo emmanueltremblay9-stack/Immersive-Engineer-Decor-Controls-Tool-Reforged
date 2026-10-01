@@ -1,0 +1,5 @@
+Cuptor electric
+Unitate compactă de prelucrare
+<&recipe>Cuptorul electric efectuează operații compacte de topire alimentate cu FE, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Furnizează FE și un material potrivit pentru topire.<br>

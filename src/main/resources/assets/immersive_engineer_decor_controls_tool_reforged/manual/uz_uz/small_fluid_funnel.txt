@@ -1,0 +1,5 @@
+Suyuqlik voronkasi
+Suyuqlik liniyasi jihozi
+<&recipe>Kichik suyuqlik voronkasi kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: suyuqlik yig'ish nuqtasi ostiga qo'ying va saqlangan tarkibini bak yoki pastdagi quvurlarga yo'naltiring.<br>

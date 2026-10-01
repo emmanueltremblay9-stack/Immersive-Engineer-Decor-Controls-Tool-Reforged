@@ -1,0 +1,127 @@
+Viae accessus
+Ambulacra et fulcra
+Pali chalybei, pali ligni tractati, crates, ambulacra, cancelli, scalae, ostia, fenestrae et opercula vias compactas curationis per interiores officinas efficiunt.<br>
+<br>
+Partes chalybeae viarum accessus laminis chalybeis utuntur. Mensam metallariam fabrica aut pone, malleum Immersive Engineering insere, deinde lateres chalybeos in laminas chalybeas mallea pro palis, ambulacris, fenestris, ostiis, cancellis et ceteris ornamentis chalybeis.<br>
+<br>
+Pone eas ubi machinae accessu ad curandum, viis elevatis, puteis refectionis aut marginibus tutioribus egent.
+<np>
+Palus chalybeus crassus
+Pars compagis structuralis
+<&thick_steel_pole>Palus chalybeus crassus rectus structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Caput pali crassi
+Pars compagis structuralis
+<&thick_steel_pole_head>Caput/pes pali chalybei crassi recti structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Palus chalybeus tenuis
+Pars compagis structuralis
+<&thin_steel_pole>Palus chalybeus tenuis rectus structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Caput pali tenuis
+Pars compagis structuralis
+<&thin_steel_pole_head>Caput/pes pali chalybei tenuis recti structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Palus ligni tractati
+Pars compagis structuralis
+<&treated_wood_pole>Palus rectus ligni tractati structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Caput pali ligni tractati
+Pars compagis structuralis
+<&treated_wood_pole_head>Caput/pes pali recti ligni tractati structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Fulcrum pali ligni tractati
+Pars compagis structuralis
+<&treated_wood_pole_support>Fulcrum pali recti ligni tractati structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Fulcrum chalybeum duplicis T
+Pars compagis structuralis
+<&steel_double_t_support>Hic cubus structuram visibilem aulis machinarum et compagibus accessus praebet.<br>
+<br>
+Usus: verte et pone ut fulcrum visibile trabium, palorum et marginum suggestorum.<br>
+<np>
+Cratis pavimenti chalybea
+Pars accessus curationis
+<&steel_floor_grating>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Ambulacrum chalybeum
+Pars accessus curationis
+<&steel_catwalk>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Scalae ambulacri chalybei
+Pars accessus curationis
+<&steel_catwalk_stairs>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Ambulacrum chalybeum elevatum
+Pars accessus curationis
+<&steel_catwalk_ta>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Cancellus chalybeus
+Pars accessus curationis
+<&steel_railing>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Saeptum reticulatum chalybeum
+Pars accessus curationis
+<&steel_mesh_fence>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Porta saepti reticulati chalybei
+Pars accessus curationis
+<&steel_mesh_fence_gate>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Scala graduum metallicorum
+Pars accessus curationis
+<&metal_rung_ladder>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Gradus metallici alterni
+Pars accessus curationis
+<&metal_rung_steps>Hic cubus vias claras curationis circa machinas format.<br>
+<br>
+Usus: pone ut accessum curationis circa machinas, tabulata superiora et puteos ministerii.<br>
+<np>
+Fenestra compage chalybea
+Prospectus munitus
+<&steel_framed_window>Hic cubus prospectum apertum servat et constructioni officinae firmatae congruit.<br>
+<br>
+Usus: in foramine muri 1 cubi pone, ubi lusores machinas per saeptum munitum videre debent.<br>
+<np>
+Ostium metallicum labens
+Aditus industrialis
+<&metal_sliding_door>Hic cubus aditum robustum conclavibus curationis, puteis, tectis et saeptis machinarum praebet.<br>
+<br>
+Usus: institue ubi aedificium foramine curationis moderato eget.<br>
+<np>
+Operculum ferreum
+Aditus industrialis
+<&iron_hatch>Hic cubus aditum robustum conclavibus curationis, puteis, tectis et saeptis machinarum praebet.<br>
+<br>
+Usus: institue ubi aedificium foramine curationis moderato eget.<br>

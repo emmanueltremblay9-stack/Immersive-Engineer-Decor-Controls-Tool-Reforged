@@ -1,0 +1,5 @@
+Laboratorieovn
+Kompakt bearbejdningsenhed
+<&recipe>Laboratorieovnen udfører kompakte smelteopgaver med fast brændsel på begrænset værkstedsplads.<br>
+<br>
+Brug: Brug fast brændsel til små smelteportioner.<br>

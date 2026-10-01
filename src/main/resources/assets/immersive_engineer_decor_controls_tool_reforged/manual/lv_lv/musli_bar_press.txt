@@ -1,0 +1,7 @@
+Muslee batoniņu spiede
+Pārtikas spiede
+<&recipe>Muslee batoniņu prese parastu pārtiku pārvērš kompaktās lauka devās.<br>
+<br>
+Lietošana: Paņem maizi, ābolu un kviešu, melones, ķirbja, biešu vai Industrial Hemp sēklu, tad izmanto presi. Veiksmīga spiešana patērē pa vienam, pārbauda vietu, izveido četrus Muslee Melange batoniņus un bojā presi.<br>
+<br>
+Ja trūkst sastāvdaļas vai inventārā nav vietas, nekas netiek patērēts.

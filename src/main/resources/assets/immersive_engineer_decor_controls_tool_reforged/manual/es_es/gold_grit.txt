@@ -1,0 +1,3 @@
+Granalla gruesa de oro
+Material de herramientas de ingeniero utilizado por el conjunto de recetas reconstruido.
+<&recipe>Se puede fundir en lingotes de<br>oro, pero no sirve para el<br>procesamiento avanzado de materiales.

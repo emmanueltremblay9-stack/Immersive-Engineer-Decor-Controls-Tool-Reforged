@@ -1,0 +1,7 @@
+Rilevatore di blocchi
+Rilevamento del segnale
+<&recipe>Un rilevatore di blocchi controlla se lo spazio davanti a esso è occupato.<br>
+<br>
+Uso: puntalo verso la faccia del macchinario, la riserva o lo spazio sorvegliato da controllare.<br>
+<br>
+Note: si attiva quando il blocco davanti non è aria.

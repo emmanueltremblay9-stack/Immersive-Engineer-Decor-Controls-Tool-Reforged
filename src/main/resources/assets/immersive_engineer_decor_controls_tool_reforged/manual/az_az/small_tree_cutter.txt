@@ -1,0 +1,5 @@
+Ağackəsən
+Emalatxana yardımçısı
+<&recipe>Kiçik ağackəsən hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: Böyümüş ağaclara yönəldin və düşən əşyaları ayrıca toplayın.<br>

@@ -1,0 +1,3 @@
+Granulat gruixut d’or
+Material per a eines d’enginyer que fa servir el conjunt reconstruït de receptes.
+<&recipe>Es pot fondre per obtenir lingots<br>d’or, però no és apte per al<br>processament avançat de materials.

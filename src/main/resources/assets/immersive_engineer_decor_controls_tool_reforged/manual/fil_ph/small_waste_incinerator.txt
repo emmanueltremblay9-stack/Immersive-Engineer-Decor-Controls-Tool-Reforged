@@ -1,0 +1,5 @@
+Insinerador ng Basura
+Maliit na yunit ng pagproseso
+<&recipe>Sinisira ng Insinerador ng Basura ang mga hindi kailangang bagay sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Mga hindi kailangang bagay lamang ang ipasok sa pila nito.<br>

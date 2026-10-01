@@ -1,0 +1,5 @@
+Suporte de aço em duplo T
+Peça de estrutura
+<&recipe>Este bloco fornece estrutura visível para galpões de máquinas e armações de acesso.<br>
+<br>
+Uso: Gire e coloque como reforço visível de vigas, postes e bordas de plataformas.<br>

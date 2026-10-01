@@ -1,0 +1,7 @@
+Carbon de Arianna
+Segna-strada de miniera
+<&recipe>El Carbon de Arianna el serviss per segnà in pressa i strade in di pozzi, in di miniere a ram e in di lavor provisori sota terra.<br>
+<br>
+Dovrel in su una faccia de bloch ferma per mett una flizza negra in sul so bord. El segn el legg el pont de la faccia indove che te gh’heet fad clic e el suporta vott direzzion, anca in diagonal. Inscì te poeudet segnà curve, sortide, fond cech e strade per portà materiai senza portà adree placard separad.<br>
+<br>
+L’arnea se poeu dovralla ancamò e la dura 100 dovrade. Ogni segn metud ben el consoma un pont de durada; i facce minga adate se refuden senza consomà l’arnea.

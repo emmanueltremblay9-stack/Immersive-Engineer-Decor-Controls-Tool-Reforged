@@ -1,0 +1,7 @@
+Détéctouer d'oraije
+Détection de signa
+<&recipe>Un mezurouer d'oraije fait marcher les avertissements durant le tonnerre.<br>
+<br>
+Empllai : Pllacéz-le sous le ciel ouvert e reliéz-le ao lampes ou ao alarmes.<br>
+<br>
+Notes : Demande du tonnerre e un accès au ciel.

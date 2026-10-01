@@ -1,0 +1,5 @@
+Vecas rūpnieciskas koka durvis
+Vecināts darbnīcu koks
+<&recipe>Šis bloks pievieno vecinātu darbnīcu koku grīdām, pakāpieniem, durvīm un siltai iekštelpu apdarei.<br>
+<br>
+Lietošana: izmanto vecām darbnīcu grīdām, kāpnēm, durvīm un apdarei.<br>

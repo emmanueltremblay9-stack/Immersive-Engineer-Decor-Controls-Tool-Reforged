@@ -1,0 +1,7 @@
+Dalğıc hava kapsulu
+Təcili hava ehtiyatı
+<&recipe>Dalğıc hava kapsulu sualtı iş üçün təcili hava əşyasıdır.<br>
+<br>
+İstifadə: Havanı bərpa etmək üçün əl ilə istifadə edin. İnventarda daşındıqda hava demək olar bitəndə avtomatik işə düşə, sonra soyuma müddətinə keçə bilər.<br>
+<br>
+Onu su basmış mədənlər, sualtı borular və nasos otağı təmiri üçün daşıyın.

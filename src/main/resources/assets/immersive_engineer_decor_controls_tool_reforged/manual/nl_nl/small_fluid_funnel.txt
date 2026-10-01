@@ -1,0 +1,5 @@
+Vloeistofopvangtrechter
+Onderdelen voor vloeistofleidingen
+<&recipe>De kleine vloeistofopvangtrechter is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: plaats hem onder het vloeistofverzamelpunt en voer de opgeslagen inhoud af naar tanks of lager gelegen leidingen.<br>

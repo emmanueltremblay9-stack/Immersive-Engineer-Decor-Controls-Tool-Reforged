@@ -1,0 +1,7 @@
+Sto za obradu metala
+Radno mesto za ploče
+<&recipe>Metalni radni sto ima otvor za čekić, punu mrežu 3x3 i izlaz.<br>
+<br>
+Koristite mrežu kao običan sto. Za IE ploče stavite inženjerski čekić u otvor, materijal u mrežu i uzmite ploču sa izlaza.<br>
+<br>
+Čelični ukrasi koriste čelične ploče oblikovane na ovom stolu.

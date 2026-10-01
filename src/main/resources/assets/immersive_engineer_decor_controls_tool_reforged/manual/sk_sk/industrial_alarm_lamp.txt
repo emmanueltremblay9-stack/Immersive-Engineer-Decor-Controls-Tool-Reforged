@@ -1,0 +1,7 @@
+Výstražné svetlo
+Spätná väzba signálu
+<&recipe>Kompaktná kontrolka premieňa skrytý redstone na viditeľnú továrenskú signalizáciu.<br>
+<br>
+Použitie: Zapoj ju vedľa signálu na sledovanie dverí, strojov, poplachov alebo panelov.<br>
+<br>
+Poznámky: Mení stav pri prítomnosti blízkeho redstonového signálu.

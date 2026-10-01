@@ -1,0 +1,101 @@
+Coèrti e corti
+Equipamenti de fàbrica par fora
+I blochi de coèrto, ła giaréta da corte e i tochi de vecio łenjo industrial i juta a finir capani esterni, corti da łaoro, zone da carico e bordi de fàbrica segnadi dal tenpo.<br>
+<br>
+Mèscola sti tochi co muradura e pasi de acesso parché łe costrusion industriałi fora łe se reconossa ben da distante.
+<np>
+Coèrto de scàndole scure
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof>Sto bloco el forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Fermaniéve da coèrto
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_metallized>El Fermaniéve de coèrto de scàndole scure el forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Coèrto de scàndole scure
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_skylight>Ła Luserna de coèrto de scàndole scure ła forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Cana de camin da coèrto
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_chimneytrunk>Ła Cana de camin de coèrto de scàndole scure ła forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Passacavi da coèrto
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_wireconduit>El Passacavi de coèrto de scàndole scure el forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Coèrto de scàndole scure
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_chimney>El Camin de coèrto de scàndole scure el forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Bloco de coèrto de scàndole scure
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_block>Sto bloco el forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Łiston de coèrto de scàndole scure
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_slab>Sto bloco el forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Łiston de coèrto de scàndole scure
+Toco de coèrto segnà dal tenpo
+<&dark_shingle_roof_slabslice>Ła Feta de łiston de coèrto de scàndole scure ła forma coèrti scuri e pràteghi par ofisine e capani industriałi.<br>
+<br>
+Uso: dòpara i tochi insieme par far profiłi de coèrto credìbiłi.<br>
+<np>
+Tera de giaréta pressà
+Rivestimento de teren da cantièr
+<&dense_grit_dirt_block>Sto bloco el dà ai posti de łaoro fora na superfise pressada e pestonada.<br>
+<br>
+Uso: mètelo torno łe porte da carico, i serbatoi fora e i piazałi de machine.<br>
+<np>
+Sabia de giaréta pressà
+Rivestimento de teren da cantièr
+<&dense_grit_sand_block>Sto bloco el dà ai posti de łaoro fora na superfise pressada e pestonada.<br>
+<br>
+Uso: mètelo torno łe porte da carico, i serbatoi fora e i piazałi de machine.<br>
+<np>
+Vecie ase de łenjo
+Łenjo invecià da ofisina
+<&old_industrial_wood_planks>Łe Vecie ase de łenjo industrial łe zonta łenjo invecià da ofisina par pavimenti, scałini, porte e finidure interne całe.<br>
+<br>
+Uso: dòparalo par veci pavimenti de ofisina, scałe, porte e finidure.<br>
+<np>
+Vecio łiston de łenjo industrial
+Łenjo invecià da ofisina
+<&old_industrial_wood_slab>Sto bloco el zonta łenjo invecià da ofisina par pavimenti, scałini, porte e finidure interne całe.<br>
+<br>
+Uso: dòparalo par veci pavimenti de ofisina, scałe, porte e finidure.<br>
+<np>
+Vecie scałe de łenjo
+Łenjo invecià da ofisina
+<&old_industrial_wood_stairs>Łe Vecie scałe de łenjo industrial łe zonta łenjo invecià da ofisina par pavimenti, scałini, porte e finidure interne całe.<br>
+<br>
+Uso: dòparalo par veci pavimenti de ofisina, scałe, porte e finidure.<br>
+<np>
+Feta de vecio łiston de łenjo
+Łenjo invecià da ofisina
+<&old_industrial_wood_slabslice>Ła Feta de vecio łiston de łenjo industrial ła zonta łenjo invecià da ofisina par pavimenti, scałini, porte e finidure interne całe.<br>
+<br>
+Uso: dòparalo par veci pavimenti de ofisina, scałe, porte e finidure.<br>
+<np>
+Vecia porta de łenjo industrial
+Łenjo invecià da ofisina
+<&old_industrial_wood_door>Sto bloco el zonta łenjo invecià da ofisina par pavimenti, scałini, porte e finidure interne całe.<br>
+<br>
+Uso: dòparalo par veci pavimenti de ofisina, scałe, porte e finidure.<br>

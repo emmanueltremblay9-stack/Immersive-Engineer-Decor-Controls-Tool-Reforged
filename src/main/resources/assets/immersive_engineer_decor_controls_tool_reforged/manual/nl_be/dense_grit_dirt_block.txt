@@ -1,0 +1,5 @@
+Verdichte grindgrond
+Terreinbedekking
+<&recipe>Dit blok geeft buitenwerkplekken een verdicht en vertrapt oppervlak.<br>
+<br>
+Gebruik: leg het rond laaddeuren, buitentanks en machineterreinen.<br>

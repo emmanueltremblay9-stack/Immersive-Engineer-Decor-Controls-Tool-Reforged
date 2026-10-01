@@ -1,0 +1,5 @@
+Zırhlı Cam Basamak
+Korunan görüş hattı
+<&recipe>Bu blok, güçlendirilmiş fabrika yapısına uyum sağlarken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Oyuncuların makineleri koruyucu bir engelin ardından görmesi gereken yerlerde kullanın.<br>

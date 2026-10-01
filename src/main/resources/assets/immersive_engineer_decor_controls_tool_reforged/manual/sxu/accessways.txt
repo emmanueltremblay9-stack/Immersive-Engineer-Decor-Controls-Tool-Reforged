@@ -1,0 +1,127 @@
+Zugangswege
+Laufwege un Schdiddzn
+Schdahlpfähle, behandelde Holzpfähle, Giddorrosd, Laufschdeege, Geländor, Leidorn, Diern, Fänsdor un Lugen machn gleene Wardungswege durch de Fabrig.<br>
+<br>
+Schdahlzugangsdeile brauchn Schdahlbladdn. Bau ä Medallwergbang oddor seddz eene hin, leg ä Hammor von Immersive Engineering nei un hammor Schdahlbarrn zu Schdahlbladdn für Pfähle, Laufschdeege, Fänsdor, Diern, Geländor un andre Schdahlzier.<br>
+<br>
+Seddz se dorthin, wo Maschinen Wardungszugang, heehre Wege, Wardungsschächde oddor sichere Ganddn brauchn.
+<np>
+Diggor Schdahlpfahl
+Deil vom Draachrahm
+<&thick_steel_pole>Dor grade digge Schdahlpfahl gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Gobb für än diggn Pfahl
+Deil vom Draachrahm
+<&thick_steel_pole_head>Dor Gobb/Fuß für än gradn diggn Schdahlpfahl gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Dinnor Schdahlpfahl
+Deil vom Draachrahm
+<&thin_steel_pole>Dor grade dinne Schdahlpfahl gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Gobb für än dinnen Pfahl
+Deil vom Draachrahm
+<&thin_steel_pole_head>Dor Gobb/Fuß für än gradn dinnen Schdahlpfahl gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Pfahl aus behandeldm Holz
+Deil vom Draachrahm
+<&treated_wood_pole>Dor grade Pfahl aus behandeldm Holz gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Gobb für än behandeldn Pfahl
+Deil vom Draachrahm
+<&treated_wood_pole_head>Dor Gobb/Fuß für än gradn Pfahl aus behandeldm Holz gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Schdiddze für än behandeldn Pfahl
+Deil vom Draachrahm
+<&treated_wood_pole_support>De Schdiddze für än gradn Pfahl aus behandeldm Holz gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Schdahl-Dobbld-T-Schdiddze
+Deil vom Draachrahm
+<&steel_double_t_support>Dieser Blogg gibd Maschinenhalln un Zugangsrahm ä sichdbare Draachschdrukdur.<br>
+<br>
+Nuddzung: Dreh’n un seddz’n als sichdbare Vorschdrebung für Balgn, Pfähle un Bladdformganddn.<br>
+<np>
+Schdahlbodnrosd
+Wardungszugang
+<&steel_floor_grating>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Schdahllaufschdeeg
+Wardungszugang
+<&steel_catwalk>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Schdahllaufschdeegdrebbe
+Wardungszugang
+<&steel_catwalk_stairs>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Erhöhdor Schdahllaufschdeeg
+Wardungszugang
+<&steel_catwalk_ta>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Schdahlgeländor
+Wardungszugang
+<&steel_railing>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Schdahlgiddorzaun
+Wardungszugang
+<&steel_mesh_fence>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Schdahlgiddorzaundor
+Wardungszugang
+<&steel_mesh_fence_gate>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Medallsprossnleidorr
+Wardungszugang
+<&metal_rung_ladder>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Vorsäddzde Medalldridde
+Wardungszugang
+<&metal_rung_steps>Dieser Blogg machd gud ergennbare Wardungswege um Maschinen.<br>
+<br>
+Nuddzung: Seddz’n als Wardungszugang um Maschinen, Oborgeschosse un Wardungsschächde.<br>
+<np>
+Fänsdor mid Schdahlrahm
+Geschiddzdor Durchbligg
+<&steel_framed_window>Dieser Blogg häld dän Durchbligg frei un bassd drodzdem zu vorschdärgdn Fabrigbaudn.<br>
+<br>
+Nuddzung: Seddz’n in ä Mauoröffnung von 1 Blogg, wo Schbielorr durch ä geschiddzde Wand uff Maschinen guggn solln.<br>
+<np>
+Medallschiebediere
+Indusdrieller Zugang
+<&metal_sliding_door>Dieser Blogg machd än robusdn Zugang zu Wardungsräum, Schächdn, Dächorn un Maschinenhülln.<br>
+<br>
+Nuddzung: Bau’n dort nei, wo ä gondrollierde Wardungsöffnung gebrauchd wird.<br>
+<np>
+Eisnluge
+Indusdrieller Zugang
+<&iron_hatch>Dieser Blogg machd än robusdn Zugang zu Wardungsräum, Schächdn, Dächorn un Maschinenhülln.<br>
+<br>
+Nuddzung: Bau’n dort nei, wo ä gondrollierde Wardungsöffnung gebrauchd wird.<br>

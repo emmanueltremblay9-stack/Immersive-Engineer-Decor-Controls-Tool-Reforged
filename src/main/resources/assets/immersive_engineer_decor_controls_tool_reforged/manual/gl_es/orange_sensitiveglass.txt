@@ -1,0 +1,7 @@
+Vidro sensible laranxa
+Vidro de sinal
+<&recipe>Un bloque de vidro reactivo á redstone conserva a visibilidade mentres mostra o estado do sinal.<br>
+<br>
+Uso: úsao en ventás de salas de control, paneis iluminados e vidros protexidos de fábrica.<br>
+<br>
+Notas: cambia de estado coa potencia de redstone próxima.

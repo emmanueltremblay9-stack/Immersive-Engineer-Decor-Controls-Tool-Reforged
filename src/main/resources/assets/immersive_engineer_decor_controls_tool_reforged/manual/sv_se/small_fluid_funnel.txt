@@ -1,0 +1,5 @@
+Vätskeuppsamlingstratt
+Utrustning för vätskeledningar
+<&recipe>Den lilla vätskeuppsamlingstratten är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Placera den under vätskans uppsamlingspunkt och led det lagrade innehållet till tankar eller lägre rörledningar.<br>

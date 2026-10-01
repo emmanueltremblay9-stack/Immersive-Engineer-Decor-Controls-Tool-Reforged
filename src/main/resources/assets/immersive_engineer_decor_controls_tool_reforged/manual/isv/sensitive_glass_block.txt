@@ -1,0 +1,7 @@
+Světleče čuvstvitelno steklo
+Signalno steklo
+<&recipe>Steklěny blok reagujuči na redstoun sohranjaje pogled i odnovremenno pokazyvaje stan signala.<br>
+<br>
+Upotrěbjenje: Upotrěbi go v oknah upravnyh komor, osvětljenyh panelah i zaščiščenom fabričnom steklu.<br>
+<br>
+Primětky: Měnja stan od blizkogo redstounovogo signala.

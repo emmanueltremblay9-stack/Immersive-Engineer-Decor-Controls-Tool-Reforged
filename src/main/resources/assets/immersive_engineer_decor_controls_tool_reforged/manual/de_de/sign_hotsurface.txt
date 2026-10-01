@@ -1,0 +1,5 @@
+Schild „Heiße Oberfläche“
+Gefahrenmarkierung
+<&recipe>Das Schild „Vorsicht, heiße Oberfläche“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>

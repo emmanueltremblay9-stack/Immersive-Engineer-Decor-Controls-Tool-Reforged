@@ -1,0 +1,7 @@
+Jlasintervallsignal
+Zickjestüerte Impuls
+<&recipe>Ene kleine Zickschalter jit ene festjelaate Redstone-Impuls.<br>
+<br>
+Bruuch: Nimm en, wann e kleine Mechanismus rejelmäßich udder verzögert jestüert wäde soll.<br>
+<br>
+Henwies: Brucht festjelaate Redstone-Impulse.

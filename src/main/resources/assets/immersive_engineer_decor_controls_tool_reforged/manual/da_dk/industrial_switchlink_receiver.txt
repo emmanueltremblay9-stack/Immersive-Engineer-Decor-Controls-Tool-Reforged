@@ -1,0 +1,7 @@
+Kontaktlinkmodtager
+Forbundet styring
+<&recipe>En linkmodtager giver fjernpaneler et redstonemål med fuld styrke.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Højreklik direkte på modtageren for at skifte dens tilstand manuelt.<br>
+<br>
+Bemærk: En tilknyttet perle skifter modtagerens tilstand, når den bruges, mens du sniger.

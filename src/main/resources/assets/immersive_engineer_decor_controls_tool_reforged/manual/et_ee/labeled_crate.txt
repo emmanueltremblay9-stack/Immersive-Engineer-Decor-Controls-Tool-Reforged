@@ -1,0 +1,5 @@
+Sildiga kast
+Muudetav laosilt
+<&recipe>See sildiga kast on mõeldud laoruumi selgeks sorteerimiseks. Selle esiplaati saab muuta nagu väikest töökojasilti.<br>
+<br>
+Kasutamine: Kasti sildi muutmiseks paremklõpsa sildiplaadil. Kasti ülejäänud osal paremklõpsates avaneb tarvikute, osade ja hooldusvarude ladu.<br>

@@ -1,0 +1,5 @@
+Skylt: frostvarning
+Riskmarkering
+<&recipe>Skylten för frostvarning markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>

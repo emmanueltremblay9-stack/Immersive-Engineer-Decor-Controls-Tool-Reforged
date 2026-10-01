@@ -1,0 +1,161 @@
+Clincer a Gwaith Maen
+Amgaeadau brics a choncrit
+Mae clincer, briciau sorod, concrit atgyfnerthiedig a gwydr arfog yn darparu arwynebau trwm ar gyfer ystafelloedd poeth, gweithdai a llinellau gweld gwarchodedig.<br>
+<br>
+Defnyddiwch y slabiau, grisiau, haenau a waliau cyfatebol i orffen yr ymylon gan gadw arddull deunyddiau'r ffatri.
+<np>
+Bloc Briciau Clincer
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_block>Mae'r bloc hwn yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Slab Briciau Clincer
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_slab>Mae'r bloc hwn yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Grisiau Briciau Clincer
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_stairs>Mae'r bloc hwn yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Wal Briciau Clincer
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_wall>Mae'r bloc hwn yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Bloc Clincer Budr
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_stained_block>Mae'r Bloc Briciau Clincer Budr yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Slab Clincer Budr
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_stained_slab>Mae'r Slab Briciau Clincer Budr yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Grisiau Clincer Budr
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_stained_stairs>Mae'r Grisiau Briciau Clincer Budr yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Bricsen Clincer Addurnedig
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_sastor_corner_block>Mae'r Fricsen Clincer ag Addurn Tywodfaen yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Bricsen Clincer Gilfachog
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_recessed>Mae'r bloc hwn yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Briciau Clincer â Holltau
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_vertically_slit>Mae'r Briciau Clincer â Holltau Fertigol yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Slab Clincer Fertigol
+Gwaith brics wedi'i dywyllu gan huddygl
+<&clinker_brick_vertical_slab_structured>Mae'r Slab Clincer Fertigol Patrymog yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Hanner Slab Briciau Clincer
+Gwaith brics wedi'i dywyllu gan huddygl
+<&halfslab_clinker_brick>Mae'r bloc hwn yn dod â gwaith brics wedi'i dywyllu gan huddygl i neuaddau ffwrneisi, seiliau simneiau a waliau gwasanaethu.<br>
+<br>
+Defnydd: Defnyddiwch ef fel wal, ymyl addurnol neu amgaead parth gwres o amgylch ffwrneisi a boeleri.<br>
+<np>
+Bloc Briciau Sorod
+Gwaith maen ffatri dwys
+<&slag_brick_block>Mae'r bloc hwn yn ychwanegu gwaith maen llwydfrown dwys ar gyfer sylfeini, waliau cynnal a hen weithdai.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer sylfeini hŷn, waliau cynnal a lloriau ffatri budr.<br>
+<np>
+Slab Briciau Sorod
+Gwaith maen ffatri dwys
+<&slag_brick_slab>Mae'r bloc hwn yn ychwanegu gwaith maen llwydfrown dwys ar gyfer sylfeini, waliau cynnal a hen weithdai.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer sylfeini hŷn, waliau cynnal a lloriau ffatri budr.<br>
+<np>
+Grisiau Briciau Sorod
+Gwaith maen ffatri dwys
+<&slag_brick_stairs>Mae'r bloc hwn yn ychwanegu gwaith maen llwydfrown dwys ar gyfer sylfeini, waliau cynnal a hen weithdai.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer sylfeini hŷn, waliau cynnal a lloriau ffatri budr.<br>
+<np>
+Wal Briciau Sorod
+Gwaith maen ffatri dwys
+<&slag_brick_wall>Mae'r bloc hwn yn ychwanegu gwaith maen llwydfrown dwys ar gyfer sylfeini, waliau cynnal a hen weithdai.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer sylfeini hŷn, waliau cynnal a lloriau ffatri budr.<br>
+<np>
+Bloc Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&rebar_concrete>Rhan goncrit galed yw'r bloc hwn, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Slab Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&rebar_concrete_slab>Rhan goncrit galed yw'r bloc hwn, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Grisiau Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&rebar_concrete_stairs>Rhan goncrit galed yw'r bloc hwn, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Wal Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&rebar_concrete_wall>Rhan goncrit galed yw'r bloc hwn, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Haen Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&halfslab_rebar_concrete>Rhan goncrit galed yw'r bloc hwn, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Teilsen Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&rebar_concrete_tile>Rhan goncrit galed yw'r bloc hwn, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Slab Teils Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&rebar_concrete_tile_slab>Rhan goncrit galed yw'r bloc hwn, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Teilsen Concrit Atgyfnerthiedig
+Concrit atgyfnerthiedig
+<&rebar_concrete_tile_stairs>Rhannau concrit caled yw'r Grisiau Teils Concrit Atgyfnerthiedig, ar gyfer seiliau peiriannau, waliau ffrwydrad a lloriau mannau llwytho.<br>
+<br>
+Defnydd: Defnyddiwch ef o dan beiriannau, ar hyd coridorau gwasanaethu neu ble bynnag y mae angen sylfaen atgyfnerthiedig.<br>
+<np>
+Bloc Gwydr Arfog
+Llinell weld warchodedig
+<&panzerglass_block>Mae'r bloc hwn yn cadw llinellau gweld yn agored ac yn cyd-fynd ag adeiladwaith ffatri atgyfnerthiedig.<br>
+<br>
+Defnydd: Defnyddiwch ef lle dylai chwaraewyr weld peiriannau drwy rwystr gwarchodedig.<br>
+<np>
+Slab Gwydr Arfog
+Llinell weld warchodedig
+<&panzerglass_slab>Mae'r bloc hwn yn cadw llinellau gweld yn agored ac yn cyd-fynd ag adeiladwaith ffatri atgyfnerthiedig.<br>
+<br>
+Defnydd: Defnyddiwch ef lle dylai chwaraewyr weld peiriannau drwy rwystr gwarchodedig.<br>

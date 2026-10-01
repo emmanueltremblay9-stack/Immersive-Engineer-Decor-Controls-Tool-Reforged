@@ -1,0 +1,7 @@
+Senzor kiše
+Otkrivanje signala
+<&recipe>Vremenski senzor pretvara kišu na svom položaju u redstoun.<br>
+<br>
+Upotreba: montiraj ga tamo gde blok iznad može primati kišu.<br>
+<br>
+Napomene: proverava kišu iznad senzora.

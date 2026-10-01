@@ -1,0 +1,7 @@
+Gewitterdetektor
+Signalerfassung
+<&recipe>Ein Gewittersensor löst während eines Gewitters Warnsignale aus.<br>
+<br>
+Verwendung: Platziere ihn unter freiem Himmel und verbinde ihn mit Leuchten oder Alarmen.<br>
+<br>
+Hinweis: Benötigt Gewitter und freien Himmelszugang.

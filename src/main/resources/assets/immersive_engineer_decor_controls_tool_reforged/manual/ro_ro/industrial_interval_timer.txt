@@ -1,0 +1,7 @@
+Temporizator de intervale
+Impuls temporizat
+<&recipe>Un comutator temporizat compact produce un impuls redstone programat.<br>
+<br>
+Utilizare: Folosește-l acolo unde un mecanism mic are nevoie de comandă periodică sau întârziată.<br>
+<br>
+Observații: Folosește impulsuri redstone programate.

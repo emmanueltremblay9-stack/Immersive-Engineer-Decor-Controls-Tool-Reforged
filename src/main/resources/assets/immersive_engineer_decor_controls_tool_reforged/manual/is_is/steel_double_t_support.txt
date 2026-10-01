@@ -1,0 +1,5 @@
+Tvöföld T-stoð úr stáli
+Burðargrindarhluti
+<&recipe>Þessi kubbur veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>

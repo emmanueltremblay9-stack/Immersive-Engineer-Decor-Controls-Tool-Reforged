@@ -1,0 +1,7 @@
+Glacadair ceangail ann an cèis
+Smachd ceangailte
+<&recipe>Bheir glacadair ceangailte ann an cèis targaid redstone làidir do phanalan iomallach.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Dèan briogadh deas dìreach air a' ghlacadair gus a thogladh le làimh.<br>
+<br>
+Nòtaichean: toglaichidh neamhnaid cheangailte an glacadair seo nuair a chleachdar i fhad 's a tha thu a' snàgadh.

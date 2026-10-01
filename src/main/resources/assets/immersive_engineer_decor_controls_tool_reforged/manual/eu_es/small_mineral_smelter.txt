@@ -1,0 +1,5 @@
+Mineralak urtzeko labea
+Prozesatze-unitate trinkoa
+<&recipe>Mineralak urtzeko labeak bero handiko mineral-prozesamendua egiten du lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: hornitu mineral-blokeak eta energia, bero handiz urtzeko lanetarako.<br>

@@ -1,0 +1,5 @@
+Verksmiðjukubbasetari
+Hjálpartól á verkstaðargólvinum
+<&recipe>Hesin kubbin setur kubbar úr sínum innbygda forða, tá ið hann verður virkjaður.<br>
+<br>
+Nýtsla: Vend arbeiðssíðuni móti málrúminum og fyll við stáplum, sum kunnu setast.<br>

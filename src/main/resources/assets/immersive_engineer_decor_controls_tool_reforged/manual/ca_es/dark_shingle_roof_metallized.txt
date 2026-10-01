@@ -1,0 +1,5 @@
+Paraneu de teulada
+Peça de teulada envellida
+<&recipe>El paraneu de teulada de teules fosques crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>

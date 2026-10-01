@@ -1,0 +1,107 @@
+Mekanikoù atalier
+Mekanikoù hag enankoù/ec'hankoù atalier
+Ar mekanikoù atalier a brof aozañ, dilec'hiañ elfennoù, teuziañ, distrujañ, dastum ha labourioù sikour war blas ur bloc'h hepken.<br>
+<br>
+Digorit ar pajennoù da heul evit rekipe, skeudenn, danvez istor ha notennoù implij pleustrek pep mekanik.
+<np>
+Taol dir
+Arrebeuri atalier
+<&steel_table>Ar bloc'h-mañ zo un arrebeur atalier talvoudus evit salioù labour ha kornioù trezalc'h.<br>
+<br>
+Implij: Lakait anezhañ e-kichen taolioù labour, koufroù ha mekanikoù bihan.<br>
+<np>
+Taol goad tretet
+Arrebeuri atalier
+<&treated_wood_table>Ar bloc'h-mañ zo un arrebeur atalier talvoudus evit salioù labour ha kornioù trezalc'h.<br>
+<br>
+Implij: Lakait anezhañ e-kichen taolioù labour, koufroù ha mekanikoù bihan.<br>
+<np>
+Skabell goad tretet
+Arrebeuri atalier
+<&treated_wood_stool>Ar bloc'h-mañ zo un arrebeur atalier talvoudus evit salioù labour ha kornioù trezalc'h.<br>
+<br>
+Implij: Lakait anezhañ e-kichen taolioù labour, koufroù ha mekanikoù bihan.<br>
+<np>
+Taol aozañ metal
+Lec'h labour plakennoù
+<&metal_crafting_table>An daol aozañ metal zo ur lec'h labour kreñvaet gant ul lec'hiad morzhol, ur c'hael aozañ 3x3 hag ul lec'hiad ec'hank sklaer.<br>
+<br>
+Implij: Implijit ar c'hael evit aozañ boutin. Evit plakennoù IE, lakait ur morzhol ijinour el lec'hiad ostilh hag an dafar plakenn er c'hael a-raok kemer an disoc'h. Ar c'hinkladurioù dir a implij plakennoù dir evit postoù, hentoù-gwenodennoù, prenestroù, dorioù, skorvelloù ha tammoù dir all.<br>
+<np>
+Founilh uzin
+Ardivink atalier
+<&factory_hopper>Ar bloc'h-mañ a dreuzkas bernioù elfennoù dre ur c'houfr greantel strishoc'h.<br>
+<br>
+Implij: Troit anezhañ war-du ar steud renabloù, ha reizhit an hed, niver ar bernioù, an amzerioù ha mod Redstone en e etrefas.<br>
+<np>
+Ingalerez uzin
+Ardivink atalier
+<&factory_dropper>Ar bloc'h-mañ a gas elfennoù stoket eus ur fas buket.<br>
+<br>
+Implij: Troit ar fas a-raok war-du al lec'h ec'hank, leugnit al lec'hiadoù diabarzh ha reizhit nerzh, korn, dale, poelloniezh ar siloù ha mod Redstone en e etrefas.<br>
+<np>
+Lakaerez bloc'hoù uzin
+Ardivink atalier
+<&factory_placer>Ar bloc'h-mañ a laka bloc'hoù eus e bourvez diabarzh pa vez delusket.<br>
+<br>
+Implij: Troit ar fas labour war-du al lec'h buket ha lakait bernioù a c'haller lakaat ennañ.<br>
+<np>
+Terrerez bloc'hoù
+Ardivink atalier
+<&small_block_breaker>An derrerez bloc'hoù vihan zo ur bloc'h skoazell atalier evit aozañ, stokañ, lakaat, terriñ, dastum pe emgefreekaat war nebeut a blas.<br>
+<br>
+Implij: Troit ar fas labour war-du ar bloc'h da dennañ.<br>
+<np>
+Loskerez lastez
+Unanenn dretañ vihan
+<&small_waste_incinerator>Ar loskerez lastez a zistruj an elfennoù diezhomm war nebeut a blas en atalier.<br>
+<br>
+Implij: Elfennoù diezhomm hepken a zleit lakaat en he lostad.<br>
+<np>
+Forn arnodva
+Unanenn dretañ vihan
+<&small_lab_furnace>Ar forn arnodva a ra labourioù teuziañ bihan gant trelosk solut war nebeut a blas en atalier.<br>
+<br>
+Implij: Implijit trelosk solut evit lodadoù teuziañ bihan.<br>
+<np>
+Forn tredan
+Unanenn dretañ vihan
+<&small_electrical_furnace>Ar forn tredan a ra labourioù teuziañ bihan gant energiezh FE war nebeut a blas en atalier.<br>
+<br>
+Implij: Degasit FE ha dafar teuziañ degemeret.<br>
+<np>
+Teuzer mineraloù
+Unanenn dretañ vihan
+<&small_mineral_smelter>An teuzer mineraloù a dret mineraloù gant gwrez uhel war nebeut a blas en atalier.<br>
+<br>
+Implij: Degasit bloc'hoù mineral hag energiezh evit labourioù teuziañ gant gwrez uhel.<br>
+<np>
+Skorner dour
+Unanenn dretañ vihan
+<&small_freezer>Ar skorner dour a ra labourioù yenaat bihan evit staliadurioù houlif gant energiezh.<br>
+<br>
+Implij: Degasit dour hag energiezh evit produiñ skorn dre stadoù.<br>
+<np>
+Houlif gouzañvat
+Dafar linennoù houlif
+<&passive_fluid_accumulator>An dastumer houlif gouzañvat zo un tamm linenn houlif bihan evit beolioù bihan, hentoù korzennoù, poentoù dastum ha red renet gant Redstone.<br>
+<br>
+Implij: Lakait anezhañ ouzh tarzhioù dour a glot ha lezit plas evit tennañ an houlif.<br>
+<np>
+Panell heol
+Ardivink atalier
+<&small_solar_panel>Ar panell heol bihan zo ur bloc'h skoazell atalier evit aozañ, stokañ, lakaat, terriñ, dastum pe emgefreekaat war nebeut a blas.<br>
+<br>
+Implij: Roit dezhañ un oabl digor ha kennaskit dafar a vevez nebeut.<br>
+<np>
+Mekanik goro
+Ardivink atalier
+<&small_milking_machine>Ar mekanik goro vihan zo ur bloc'h skoazell atalier evit aozañ, stokañ, lakaat, terriñ, dastum pe emgefreekaat war nebeut a blas.<br>
+<br>
+Implij: Lakait anezhi tost d'ar saout ha pourvezit un hent evit tennañ lestri laezh pe houlif.<br>
+<np>
+Diskarer gwez
+Ardivink atalier
+<&small_tree_cutter>An diskarer gwez bihan zo ur bloc'h skoazell atalier evit aozañ, stokañ, lakaat, terriñ, dastum pe emgefreekaat war nebeut a blas.<br>
+<br>
+Implij: Troit anezhañ war-du gwez kresket ha dastumit an elfennoù a gouezh a-ziforc'h.<br>

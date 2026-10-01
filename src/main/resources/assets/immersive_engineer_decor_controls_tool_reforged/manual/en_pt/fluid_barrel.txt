@@ -1,0 +1,5 @@
+Barrel o' fluid
+Gear fer fluid lines
+<&recipe>This compact fluid-line fitting serves small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Place her where pipes or buckets can reach the tank face.<br>

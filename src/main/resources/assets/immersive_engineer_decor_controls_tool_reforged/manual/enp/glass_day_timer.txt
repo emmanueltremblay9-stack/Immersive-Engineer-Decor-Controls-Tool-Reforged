@@ -1,0 +1,7 @@
+Glass Daytime Clock
+Daylight token
+<&recipe>A timer switch follows the daytime part of the world's round.<br>
+<br>
+Use: Run yard lights, shutters and daytime-only workstead switches.<br>
+<br>
+Mind: Needs a worldfold with skylight.

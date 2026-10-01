@@ -1,0 +1,7 @@
+Receptor de ligam d’interruptors
+Comanda ligada
+<&recipe>Un receptor ligat balha als panèls alunhats una cibla de redstone a plena poténcia.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Fai un clic drech dirèctament sul receptor per cambiar son estat a la man.<br>
+<br>
+Nòta : una pèrla ligada càmbia l’estat d’aqueste receptor quand l’utilizas en t’agrovant.

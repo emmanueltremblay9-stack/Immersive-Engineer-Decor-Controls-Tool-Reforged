@@ -1,0 +1,161 @@
+Clinker e muratura
+Involucri di mattoni e calcestruzzo
+Clinker, mattoni di scoria, calcestruzzo armato e vetro blindato offrono superfici massicce per locali caldi, officine e visuali protette.<br>
+<br>
+Usa lastre, scalini, strati e muri abbinati per rifinire i bordi mantenendo lo stesso stile di materiali della fabbrica.
+<np>
+Blocco di mattoni di clinker
+Muratura annerita dalla fuliggine
+<&clinker_brick_block>Questo blocco porta mattoni anneriti dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Lastra di mattoni di clinker
+Muratura annerita dalla fuliggine
+<&clinker_brick_slab>Questo blocco porta mattoni anneriti dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Scalini di mattoni di clinker
+Muratura annerita dalla fuliggine
+<&clinker_brick_stairs>Questo blocco porta mattoni anneriti dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Muro di mattoni di clinker
+Muratura annerita dalla fuliggine
+<&clinker_brick_wall>Questo blocco porta mattoni anneriti dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Blocco di clinker macchiato
+Muratura annerita dalla fuliggine
+<&clinker_brick_stained_block>Il blocco di mattoni di clinker macchiati porta muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Lastra di clinker macchiato
+Muratura annerita dalla fuliggine
+<&clinker_brick_stained_slab>La lastra di mattoni di clinker macchiati porta muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Scalini di clinker macchiato
+Muratura annerita dalla fuliggine
+<&clinker_brick_stained_stairs>Gli scalini di mattoni di clinker macchiati portano muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Mattone di clinker decorato
+Muratura annerita dalla fuliggine
+<&clinker_brick_sastor_corner_block>Il mattone di clinker decorato con arenaria porta muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Mattone di clinker incassato
+Muratura annerita dalla fuliggine
+<&clinker_brick_recessed>Questo blocco porta mattoni anneriti dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Mattoni di clinker fessurati
+Muratura annerita dalla fuliggine
+<&clinker_brick_vertically_slit>I mattoni di clinker con fessure verticali portano muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Lastra verticale di clinker
+Muratura annerita dalla fuliggine
+<&clinker_brick_vertical_slab_structured>La lastra verticale di clinker strutturata porta muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Mezza lastra di mattoni di clinker
+Muratura annerita dalla fuliggine
+<&halfslab_clinker_brick>Questo blocco porta mattoni anneriti dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>
+<np>
+Blocco di mattoni di scoria
+Muratura industriale compatta
+<&slag_brick_block>Questo blocco aggiunge muratura compatta grigio-marrone a fondamenta, muri di contenimento e vecchi capannoni.<br>
+<br>
+Uso: usalo per vecchie fondamenta, muri di contenimento e pavimenti industriali sporchi.<br>
+<np>
+Lastra di mattoni di scoria
+Muratura industriale compatta
+<&slag_brick_slab>Questo blocco aggiunge muratura compatta grigio-marrone a fondamenta, muri di contenimento e vecchi capannoni.<br>
+<br>
+Uso: usalo per vecchie fondamenta, muri di contenimento e pavimenti industriali sporchi.<br>
+<np>
+Scalini di mattoni di scoria
+Muratura industriale compatta
+<&slag_brick_stairs>Questo blocco aggiunge muratura compatta grigio-marrone a fondamenta, muri di contenimento e vecchi capannoni.<br>
+<br>
+Uso: usalo per vecchie fondamenta, muri di contenimento e pavimenti industriali sporchi.<br>
+<np>
+Muro di mattoni di scoria
+Muratura industriale compatta
+<&slag_brick_wall>Questo blocco aggiunge muratura compatta grigio-marrone a fondamenta, muri di contenimento e vecchi capannoni.<br>
+<br>
+Uso: usalo per vecchie fondamenta, muri di contenimento e pavimenti industriali sporchi.<br>
+<np>
+Blocco di calcestruzzo armato
+Calcestruzzo rinforzato
+<&rebar_concrete>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Lastra di calcestruzzo armato
+Calcestruzzo rinforzato
+<&rebar_concrete_slab>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Scalini di calcestruzzo armato
+Calcestruzzo rinforzato
+<&rebar_concrete_stairs>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Muro di calcestruzzo armato
+Calcestruzzo rinforzato
+<&rebar_concrete_wall>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Strato di calcestruzzo armato
+Calcestruzzo rinforzato
+<&halfslab_rebar_concrete>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Piastrella di calcestruzzo armato
+Calcestruzzo rinforzato
+<&rebar_concrete_tile>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Lastra di piastrelle di calcestruzzo armato
+Calcestruzzo rinforzato
+<&rebar_concrete_tile_slab>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Piastrella di calcestruzzo armato
+Calcestruzzo rinforzato
+<&rebar_concrete_tile_stairs>Gli scalini di piastrelle di calcestruzzo armato sono elementi rinforzati per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>
+<np>
+Blocco di vetro blindato
+Visuale protetta
+<&panzerglass_block>Questo blocco lascia libera la visuale mantenendo lo stile rinforzato della fabbrica.<br>
+<br>
+Uso: posalo dove i giocatori devono vedere i macchinari attraverso una barriera protetta.<br>
+<np>
+Lastra di vetro blindato
+Visuale protetta
+<&panzerglass_slab>Questo blocco lascia libera la visuale mantenendo lo stile rinforzato della fabbrica.<br>
+<br>
+Uso: posalo dove i giocatori devono vedere i macchinari attraverso una barriera protetta.<br>

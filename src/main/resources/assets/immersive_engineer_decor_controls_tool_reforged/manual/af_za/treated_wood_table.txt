@@ -1,0 +1,5 @@
+Behandeldehouttafel
+Werkswinkelmeubel
+<&recipe>Hierdie blok is ’n praktiese werkswinkelmeubel vir werkkamers en onderhoudshoeke.<br>
+<br>
+Gebruik: plaas dit langs banke, kratte en kompakte masjiene.<br>

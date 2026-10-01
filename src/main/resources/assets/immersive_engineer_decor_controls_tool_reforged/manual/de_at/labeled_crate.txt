@@ -1,0 +1,5 @@
+Beschriftete Kistn
+Änderbore Lagerbeschriftung
+<&recipe>De beschriftete Kistn sorgt für Übersicht im Lager. Des Frontschüd kannst wia a kloans Werkstattschüd ändern.<br>
+<br>
+Verwendung: Rechtsklick aufs Frontschüd ändert de Beschriftung. Rechtsklick aufn Rest von da Kistn öffnet's Lager für Teile, Zubehör und Wartungsmaterial.<br>

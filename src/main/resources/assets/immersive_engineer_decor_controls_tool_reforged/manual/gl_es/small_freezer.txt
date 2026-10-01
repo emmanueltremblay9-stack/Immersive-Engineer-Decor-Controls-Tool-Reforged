@@ -1,0 +1,5 @@
+Conxelador de auga
+Unidade compacta de procesamento
+<&recipe>O conxelador de auga fai traballos compactos de arrefriamento para instalacións de fluídos con alimentación eléctrica.<br>
+<br>
+Uso: subministra auga e enerxía para producir xeo por etapas.<br>

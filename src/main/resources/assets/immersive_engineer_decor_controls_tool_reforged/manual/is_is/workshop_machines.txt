@@ -1,0 +1,107 @@
+Verkstæðisvélar
+Vélar og inn-/úttak á verkstæði
+Verkstæðisvélar sinna smíði, hlutaflutningi, bræðslu, förgun, söfnun og nytjaverkum á plássi eins kubbs.<br>
+<br>
+Opnaðu eftirfarandi síður til að sjá uppskrift, mynd, bakgrunn og hagnýtar notkunarleiðbeiningar fyrir hverja vél.
+<np>
+Stálborð
+Verkstæðishúsgagn
+<&steel_table>Þessi kubbur er hagnýtt verkstæðishúsgagn fyrir vinnuherbergi og viðhaldshorn.<br>
+<br>
+Notkun: Settu hann við bekki, kassa og litlar vélar.<br>
+<np>
+Borð úr meðhöndluðum viði
+Verkstæðishúsgagn
+<&treated_wood_table>Þessi kubbur er hagnýtt verkstæðishúsgagn fyrir vinnuherbergi og viðhaldshorn.<br>
+<br>
+Notkun: Settu hann við bekki, kassa og litlar vélar.<br>
+<np>
+Kollur úr meðhöndluðum viði
+Verkstæðishúsgagn
+<&treated_wood_stool>Þessi kubbur er hagnýtt verkstæðishúsgagn fyrir vinnuherbergi og viðhaldshorn.<br>
+<br>
+Notkun: Settu hann við bekki, kassa og litlar vélar.<br>
+<np>
+Málmsmíðabekkur
+Vinnustöð fyrir plötur
+<&metal_crafting_table>Málmsmíðabekkurinn er styrkt verkstæðisstöð með hamarshólfi, 3x3 smíðareitum og skýru úttakshólfi.<br>
+<br>
+Notkun: Notaðu reitina fyrir venjulega smíði. Fyrir IE-plötur skaltu setja hamar verkfræðingsins í verkfærahólfið og plötuefnið í reitina áður en þú tekur afurðina. Stálskreytingar nota stálplötur fyrir staura, göngubrýr, glugga, hurðir, handrið og aðra stálhluta.<br>
+<np>
+Verksmiðjutrekt
+Verkstæðisbúnaður
+<&factory_hopper>Þessi kubbur flytur hlutastafla í gegnum þéttara iðnaðarhylki.<br>
+<br>
+Notkun: Beindu honum að geymslulínunni og stilltu síðan drægni, staflafjölda, tímasetningar og roðsteinsham í viðmótinu.<br>
+<np>
+Verksmiðjusleppir
+Verkstæðisbúnaður
+<&factory_dropper>Þessi kubbur sleppir geymdum hlutum út um stefnuvalda hlið.<br>
+<br>
+Notkun: Beindu framhliðinni að sleppistaðnum, fylltu innri hólfin og stilltu kraft, horn, bið, síurök og roðsteinsham í viðmótinu.<br>
+<np>
+Verksmiðjukubbaleggjari
+Verkstæðisbúnaður
+<&factory_placer>Þessi kubbur leggur kubba úr innri birgðum þegar hann er virkjaður.<br>
+<br>
+Notkun: Beindu vinnuhliðinni að markrýminu og fylltu hann af staflanlegum hlutum sem má leggja.<br>
+<np>
+Kubbabrjótur
+Verkstæðisbúnaður
+<&small_block_breaker>Litli kubbabrjóturinn er nytjakubbur á verkstæði fyrir smíði, geymslu, lagningu, brot, söfnun eða fyrirferðarlitla sjálfvirkni.<br>
+<br>
+Notkun: Beindu vinnuhliðinni að kubbnum sem á að fjarlægja.<br>
+<np>
+Sorpbrennsluofn
+Fyrirferðarlítil vinnslueining
+<&small_waste_incinerator>Sorpbrennsluofninn eyðir óæskilegum hlutum á litlu verkstæðisrými.<br>
+<br>
+Notkun: Settu aðeins óæskilega hluti í biðröðina.<br>
+<np>
+Rannsóknarstofuofn
+Fyrirferðarlítil vinnslueining
+<&small_lab_furnace>Rannsóknarstofuofninn sinnir bræðslu með föstu eldsneyti á litlu verkstæðisrými.<br>
+<br>
+Notkun: Notaðu fast eldsneyti fyrir litla bræðsluskammta.<br>
+<np>
+Rafmagnsofn
+Fyrirferðarlítil vinnslueining
+<&small_electrical_furnace>Rafmagnsofninn sinnir FE-knúinni bræðslu á litlu verkstæðisrými.<br>
+<br>
+Notkun: Gefðu honum FE og gilt bræðsluhráefni.<br>
+<np>
+Steinefnabræðsluofn
+Fyrirferðarlítil vinnslueining
+<&small_mineral_smelter>Steinefnabræðsluofninn sinnir háhitavinnslu steinefna á litlu verkstæðisrými.<br>
+<br>
+Notkun: Mataðu hann með steinefnakubbum og afli fyrir háhitabræðslu.<br>
+<np>
+Vatnsfrystir
+Fyrirferðarlítil vinnslueining
+<&small_freezer>Vatnsfrystirinn sinnir fyrirferðarlítilli kælivinnslu fyrir aflknúin vökvakerfi.<br>
+<br>
+Notkun: Gefðu honum vatn og afl fyrir ísframleiðslu í áföngum.<br>
+<np>
+Óknúinn vökvabúnaður
+Vökvalagnabúnaður
+<&passive_fluid_accumulator>Óknúni vökvasafnarinn er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Settu hann upp við hentugar vatnsuppsprettur og hafðu pláss til að fjarlægja vökva.<br>
+<np>
+Sólarsella
+Verkstæðisbúnaður
+<&small_solar_panel>Litla sólarsellan er nytjakubbur á verkstæði fyrir smíði, geymslu, lagningu, brot, söfnun eða fyrirferðarlitla sjálfvirkni.<br>
+<br>
+Notkun: Tryggðu opinn himin fyrir ofan hana og tengdu búnað sem þarf lítið afl.<br>
+<np>
+Mjaltavél
+Verkstæðisbúnaður
+<&small_milking_machine>Litla mjaltavélin er nytjakubbur á verkstæði fyrir smíði, geymslu, lagningu, brot, söfnun eða fyrirferðarlitla sjálfvirkni.<br>
+<br>
+Notkun: Settu hana nálægt kúm og tryggðu leið til að fjarlægja mjólkurílát eða vökva.<br>
+<np>
+Trjáfellingarvél
+Verkstæðisbúnaður
+<&small_tree_cutter>Litla trjáfellingarvélin er nytjakubbur á verkstæði fyrir smíði, geymslu, lagningu, brot, söfnun eða fyrirferðarlitla sjálfvirkni.<br>
+<br>
+Notkun: Beindu henni að fullvöxnum trjám og safnaðu föllnum hlutum sérstaklega.<br>

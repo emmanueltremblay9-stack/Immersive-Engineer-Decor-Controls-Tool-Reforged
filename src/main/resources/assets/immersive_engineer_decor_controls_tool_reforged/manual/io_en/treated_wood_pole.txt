@@ -1,0 +1,5 @@
+Stango ek traktita ligno
+Struktura kadropeco
+<&recipe>La Rekta stango ek traktita ligno furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>

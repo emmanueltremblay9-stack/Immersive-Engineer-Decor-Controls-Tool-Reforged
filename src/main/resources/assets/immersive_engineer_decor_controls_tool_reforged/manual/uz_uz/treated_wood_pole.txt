@@ -1,0 +1,5 @@
+Ishlov berilgan yog'och ustun
+Tayanch rom qismi
+<&recipe>Ishlov berilgan yog'ochdan to'g'ri ustun mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>

@@ -1,0 +1,5 @@
+Vàlvula analògica de líquids
+Accessoris de conducció de líquids
+<&recipe>La vàlvula analògica de líquids és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció desitjada del cabal.<br>

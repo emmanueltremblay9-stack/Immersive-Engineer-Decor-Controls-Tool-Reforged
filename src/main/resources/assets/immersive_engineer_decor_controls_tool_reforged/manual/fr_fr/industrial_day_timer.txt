@@ -1,0 +1,7 @@
+Horloge à minuterie de jour
+Signal diurne
+<&recipe>Une minuterie suit la phase diurne du cycle du monde.<br>
+<br>
+Utilisation : commandez des lampes de cour, des volets et des équipements d'usine actifs seulement le jour.<br>
+<br>
+Remarque : nécessite une dimension dotée de lumière du ciel.

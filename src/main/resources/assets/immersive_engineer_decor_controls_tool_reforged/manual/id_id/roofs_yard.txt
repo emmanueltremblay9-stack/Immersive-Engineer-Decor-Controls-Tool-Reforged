@@ -1,0 +1,101 @@
+Atap dan Halaman
+Perlengkapan pabrik luar ruangan
+Blok atap, kerikil halaman, dan bagian kayu industri tua membantu menyelesaikan gudang luar ruangan, halaman kerja, area bongkar muat, dan tepi pabrik yang lapuk.<br>
+<br>
+Gabungkan bagian ini dengan pasangan batu dan jalur akses agar bentuk bangunan industri luar ruangan tetap jelas dari kejauhan.
+<np>
+Atap Sirap Gelap
+Komponen atap lapuk
+<&dark_shingle_roof>Blok ini membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Penahan Salju Atap
+Komponen atap lapuk
+<&dark_shingle_roof_metallized>Penahan salju atap sirap gelap membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Atap Sirap Gelap
+Komponen atap lapuk
+<&dark_shingle_roof_skylight>Jendela atap sirap gelap membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Pangkal Cerobong Atap
+Komponen atap lapuk
+<&dark_shingle_roof_chimneytrunk>Pangkal cerobong atap sirap gelap membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Saluran Kabel Atap
+Komponen atap lapuk
+<&dark_shingle_roof_wireconduit>Saluran kabel atap sirap gelap membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Atap Sirap Gelap
+Komponen atap lapuk
+<&dark_shingle_roof_chimney>Cerobong atap sirap gelap membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Blok Atap Sirap Gelap
+Komponen atap lapuk
+<&dark_shingle_roof_block>Blok ini membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Lempeng Atap Sirap Gelap
+Komponen atap lapuk
+<&dark_shingle_roof_slab>Blok ini membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Lempeng Atap Sirap Gelap
+Komponen atap lapuk
+<&dark_shingle_roof_slabslice>Lapisan atap sirap gelap membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>
+<np>
+Tanah Berkerikil Padat
+Penutup tanah lokasi kerja
+<&dense_grit_dirt_block>Blok ini memberi permukaan padat dan terinjak pada area kerja luar ruangan.<br>
+<br>
+Penggunaan: pasang di sekitar pintu bongkar muat, tangki luar ruangan, dan halaman mesin.<br>
+<np>
+Pasir Berkerikil Padat
+Penutup tanah lokasi kerja
+<&dense_grit_sand_block>Blok ini memberi permukaan padat dan terinjak pada area kerja luar ruangan.<br>
+<br>
+Penggunaan: pasang di sekitar pintu bongkar muat, tangki luar ruangan, dan halaman mesin.<br>
+<np>
+Papan Kayu Tua
+Kayu bengkel tua
+<&old_industrial_wood_planks>Papan kayu industri tua menambahkan kayu bengkel tua untuk lantai, anak tangga, pintu, dan lis interior yang hangat.<br>
+<br>
+Penggunaan: gunakan untuk lantai bengkel tua, tangga, pintu, dan lis.<br>
+<np>
+Lempeng Kayu Industri Tua
+Kayu bengkel tua
+<&old_industrial_wood_slab>Blok ini menambahkan kayu bengkel tua untuk lantai, anak tangga, pintu, dan lis interior yang hangat.<br>
+<br>
+Penggunaan: gunakan untuk lantai bengkel tua, tangga, pintu, dan lis.<br>
+<np>
+Anak Tangga Kayu Tua
+Kayu bengkel tua
+<&old_industrial_wood_stairs>Anak tangga kayu industri tua menambahkan kayu bengkel tua untuk lantai, anak tangga, pintu, dan lis interior yang hangat.<br>
+<br>
+Penggunaan: gunakan untuk lantai bengkel tua, tangga, pintu, dan lis.<br>
+<np>
+Lapisan Lempeng Kayu Tua
+Kayu bengkel tua
+<&old_industrial_wood_slabslice>Lapisan lempeng kayu industri tua menambahkan kayu bengkel tua untuk lantai, anak tangga, pintu, dan lis interior yang hangat.<br>
+<br>
+Penggunaan: gunakan untuk lantai bengkel tua, tangga, pintu, dan lis.<br>
+<np>
+Pintu Kayu Industri Tua
+Kayu bengkel tua
+<&old_industrial_wood_door>Blok ini menambahkan kayu bengkel tua untuk lantai, anak tangga, pintu, dan lis interior yang hangat.<br>
+<br>
+Penggunaan: gunakan untuk lantai bengkel tua, tangga, pintu, dan lis.<br>

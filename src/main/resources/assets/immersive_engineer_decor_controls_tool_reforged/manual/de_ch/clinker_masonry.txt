@@ -1,0 +1,161 @@
+Klinker und Muurwärk
+Hülle us Ziegel und Beton
+Klinker, Schlackeziegel, Stahlbeton und Panzerglas ergäbed massivi Oberfläche für heissi Rüüm, Werkstätte und gschützti Sichtberiich.<br>
+<br>
+Mach d'Kante mit passende Stufe, Stäge, Viertelstufe und Muure fertig, demit d'Materialie ide Fabrik zämepassed.
+<np>
+Klinkerziegelblock
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_block>Mit dem Block überchömed Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Klinkerziegelstufe
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_slab>Mit dem Block überchömed Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Klinkerziegelstäge
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_stairs>Mit dem Block überchömed Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Klinkerziegelmuur
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_wall>Mit dem Block überchömed Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Dräckige Klinkerblock
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_stained_block>De dräckige Klinkerziegelblock git Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Dräckigi Klinkerstufe
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_stained_slab>D'dräckigi Klinkerziegelstufe git Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Dräckigi Klinkerstäge
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_stained_stairs>D'dräckigi Klinkerziegelstäge git Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Verzierte Klinkerziegel
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_sastor_corner_block>De Klinkerziegel mit Sandsteiverzierig git Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Vertüüfte Klinkerziegel
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_recessed>Mit dem Block überchömed Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Gschlitzti Klinkerziegel
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_vertically_slit>D'sänkrecht gschlitzte Klinkerziegel gäbed Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Sänkrechti Klinkerstufe
+Ruessdunkels Ziegelmuurwärk
+<&clinker_brick_vertical_slab_structured>D'strukturierte sänkrechti Klinkerstufe git Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Klinkerziegelviertelstufe
+Ruessdunkels Ziegelmuurwärk
+<&halfslab_clinker_brick>Mit dem Block überchömed Ofehalle, Chämisockel und Betriebswänd es ruessdunkels Ziegelmuurwärk.<br>
+<br>
+Verwendig: Nimm en für Wänd, Iifassige oder heissi Verchleidigsberiich rund um Öfe und Chessel.<br>
+<np>
+Schlackeziegelblock
+Massivs Fabrikmuurwärk
+<&slag_brick_block>Dä Block bringt dichts graubruuns Muurwärk für Fundamänt, Stützmuure und älteri Werkstattschuppe.<br>
+<br>
+Verwendig: Nimm en für alti Fundamänt, Stützmuure und dräckigi Fabrikböde.<br>
+<np>
+Schlackeziegelstufe
+Massivs Fabrikmuurwärk
+<&slag_brick_slab>Dä Block bringt dichts graubruuns Muurwärk für Fundamänt, Stützmuure und älteri Werkstattschuppe.<br>
+<br>
+Verwendig: Nimm en für alti Fundamänt, Stützmuure und dräckigi Fabrikböde.<br>
+<np>
+Schlackeziegelstäge
+Massivs Fabrikmuurwärk
+<&slag_brick_stairs>Dä Block bringt dichts graubruuns Muurwärk für Fundamänt, Stützmuure und älteri Werkstattschuppe.<br>
+<br>
+Verwendig: Nimm en für alti Fundamänt, Stützmuure und dräckigi Fabrikböde.<br>
+<np>
+Schlackeziegelmuur
+Massivs Fabrikmuurwärk
+<&slag_brick_wall>Dä Block bringt dichts graubruuns Muurwärk für Fundamänt, Stützmuure und älteri Werkstattschuppe.<br>
+<br>
+Verwendig: Nimm en für alti Fundamänt, Stützmuure und dräckigi Fabrikböde.<br>
+<np>
+Stahlbetonblock
+Stahlbewehrte Beton
+<&rebar_concrete>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Stahlbetonstufe
+Stahlbewehrte Beton
+<&rebar_concrete_slab>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Stahlbetonstäge
+Stahlbewehrte Beton
+<&rebar_concrete_stairs>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Stahlbetonmuur
+Stahlbewehrte Beton
+<&rebar_concrete_wall>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Stahlbetonviertelstufe
+Stahlbewehrte Beton
+<&halfslab_rebar_concrete>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Stahlbetonplättli
+Stahlbewehrte Beton
+<&rebar_concrete_tile>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Stahlbetonplättlistufe
+Stahlbewehrte Beton
+<&rebar_concrete_tile_slab>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Stahlbetonplättli
+Stahlbewehrte Beton
+<&rebar_concrete_tile_stairs>D'Stahlbetonplättlistäge bestaht us ghärtete Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>
+<np>
+Panzerglasblock
+Gschützte Iiblick
+<&panzerglass_block>Mit dem Block bliibt d'Sicht frei, und er passt trotzdem zur verstärkte Fabrikbauwiis.<br>
+<br>
+Verwendig: Setz en dert hii, wo Spieler Maschine hinter ere gschützte Barriere gseh sötted.<br>
+<np>
+Panzerglasstufe
+Gschützte Iiblick
+<&panzerglass_slab>Mit dem Block bliibt d'Sicht frei, und er passt trotzdem zur verstärkte Fabrikbauwiis.<br>
+<br>
+Verwendig: Setz en dert hii, wo Spieler Maschine hinter ere gschützte Barriere gseh sötted.<br>

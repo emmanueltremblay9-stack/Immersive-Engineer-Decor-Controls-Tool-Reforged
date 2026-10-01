@@ -1,0 +1,7 @@
+Jam Pengatur Harian
+Sinyal siang hari
+<&recipe>Sakelar waktu mengikuti bagian siang dalam siklus dunia.<br>
+<br>
+Penggunaan: gunakan untuk lampu halaman, penutup jendela, dan kendali pabrik yang hanya bekerja pada siang hari.<br>
+<br>
+Catatan: memerlukan dimensi dengan cahaya langit.

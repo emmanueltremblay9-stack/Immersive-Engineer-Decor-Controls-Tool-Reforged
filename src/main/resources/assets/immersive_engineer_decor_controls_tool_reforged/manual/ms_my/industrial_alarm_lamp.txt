@@ -1,0 +1,7 @@
+Lampu Penggera
+Maklum balas isyarat
+<&recipe>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.

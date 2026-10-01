@@ -1,0 +1,7 @@
+Metallwiärkbank
+Platenwiärksteed
+<&recipe>De Metaalwarkbank hett en Hamersteed, en 3x3-Warkraster un en Utgang.<br>
+<br>
+Bruuk dat Raster as en normale Warkbank. För IE-Platten kummt de Ingenieurshamer in de Tüüchsteed, Materiaal in Raster un de Plaat ut Utgang.<br>
+<br>
+Staaldeko bruukt Staalplatten, de an disse Warkbank maakt sünd.

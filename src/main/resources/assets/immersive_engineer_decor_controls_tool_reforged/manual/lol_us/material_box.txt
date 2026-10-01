@@ -1,0 +1,7 @@
+Buildin-Stuff Carry Box
+Buildin supply boxz
+<&recipe>Material Box carryz big stash of one plain, unchanged, stackable buildin material.<br>
+<br>
+How 2 use: Hold box in main paw an material stack in off paw 2 load it. Use box wif empty off paw 2 pull one stack out.<br>
+<br>
+Box holdz up 2 512 itemz of one type. It rejectz nested boxes, unstackable gear, an renamed or data-changed stacks; tooltip showz teh contents.

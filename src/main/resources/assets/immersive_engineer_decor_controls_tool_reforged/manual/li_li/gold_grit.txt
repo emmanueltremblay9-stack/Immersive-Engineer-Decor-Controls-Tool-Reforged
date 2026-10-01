@@ -1,0 +1,3 @@
+Grof goudgruis
+Ingenieursgereidsjapmateriaal veur de herstelde vervaardigingsset.
+<&recipe>Kin tot goudstave gesmólte<br>waere, mer is neet gesjik veur<br>geavanceerde materiaalverwerking.

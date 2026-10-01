@@ -1,0 +1,7 @@
+Tapeto de contato par colpi
+Inpulso da pression
+<&recipe>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.

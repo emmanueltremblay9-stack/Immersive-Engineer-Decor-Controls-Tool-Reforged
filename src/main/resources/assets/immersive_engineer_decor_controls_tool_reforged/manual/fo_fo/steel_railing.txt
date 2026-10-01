@@ -1,0 +1,5 @@
+Stálgelendari
+Viðlíkahaldsatgongd
+<&recipe>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>

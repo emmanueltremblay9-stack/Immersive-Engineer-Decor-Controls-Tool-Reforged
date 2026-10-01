@@ -1,0 +1,5 @@
+Melkmachine
+Hulpmiddel voor de fabrieksvloer
+<&recipe>De kleine melkmachine is een hulpmiddel voor de fabrieksvloer, uit een reeks blokken voor vervaardiging, opslag, plaatsing, breken, verzamelen en compacte automatisering.<br>
+<br>
+Gebruik: plaats hem bij koeien en zorg voor afvoer van melkverpakkingen of vloeibare melk.<br>

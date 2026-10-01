@@ -1,0 +1,161 @@
+Pōhakuʻula Hoʻomoʻa Paʻa a me ka Hana Pōhaku
+Nā iwi pōhakuʻula a pōhaku puna
+Hāʻawi ka pōhakuʻula hoʻomoʻa paʻa, ka pōhakuʻula koena hoʻoheheʻe, ka pōhaku puna hoʻoikaika ʻia, a me ke aniani pale ikaika i nā ʻili kaumaha no nā lumi wela, nā hale hana, a me nā ala nānā pale ʻia.<br>
+<br>
+E hoʻohana i nā paukū, nā alapiʻi, nā ʻāpana lahilahi, a me nā pā kūlike e hoʻopau i nā kae me ka hoʻololi ʻole ʻana i ke ʻano mea kūkulu o ka halehana.
+<np>
+Palaka Pōhakuʻula Hoʻomoʻa Paʻa
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_block>Lawe kēia palaka i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Paukū Pōhakuʻula Hoʻomoʻa Paʻa
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_slab>Lawe kēia palaka i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Alapiʻi Pōhakuʻula Hoʻomoʻa Paʻa
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_stairs>Lawe kēia palaka i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Pā Pōhakuʻula Hoʻomoʻa Paʻa
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_wall>Lawe kēia palaka i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Palaka Pōhakuʻula Hoʻomoʻa Paʻa Paumaʻele
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_stained_block>Lawe ka Palaka Pōhakuʻula Hoʻomoʻa Paʻa Paumaʻele i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Paukū Pōhakuʻula Hoʻomoʻa Paʻa Paumaʻele
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_stained_slab>Lawe ka Paukū Pōhakuʻula Hoʻomoʻa Paʻa Paumaʻele i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Alapiʻi Pōhakuʻula Hoʻomoʻa Paʻa Paumaʻele
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_stained_stairs>Lawe ka Alapiʻi Pōhakuʻula Hoʻomoʻa Paʻa Paumaʻele i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Pōhakuʻula Hoʻomoʻa Paʻa Hoʻonani
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_sastor_corner_block>Lawe ka Pōhakuʻula Hoʻomoʻa Paʻa Hoʻonani Kumuone i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Pōhakuʻula Hoʻomoʻa Paʻa Hoʻokomo Hohonu
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_recessed>Lawe kēia palaka i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Pōhakuʻula Hoʻomoʻa Paʻa Māwae
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_vertically_slit>Lawe ka Pōhakuʻula Hoʻomoʻa Paʻa Māwae Kū i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Paukū Pōhakuʻula Hoʻomoʻa Paʻa Kū
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&clinker_brick_vertical_slab_structured>Lawe ka Paukū Pōhakuʻula Hoʻomoʻa Paʻa Kū Kaha i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Hapalua Paukū Pōhakuʻula Hoʻomoʻa Paʻa
+Hana pōhakuʻula pouli i ka paʻu ahi
+<&halfslab_clinker_brick>Lawe kēia palaka i ka hana pōhakuʻula i hoʻopouli ʻia e ka paʻu ahi i nā hale umu, nā kumu puka uahi, a me nā pā mālama.<br>
+<br>
+Hoʻohana: E hoʻohana ma ke ʻano he pā, he kae hoʻonani, a i ʻole he iwi wahi wela a puni nā umu a me nā paila.<br>
+<np>
+Palaka Pōhakuʻula Koena Hoʻoheheʻe
+Hana pōhaku halehana paʻa
+<&slag_brick_block>Hoʻohui kēia palaka i ka hana pōhaku ʻāhinahina-mākuʻe paʻa no nā kahua, nā pā kāohi lepo, a me nā hale hana kahiko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kahua kahiko, nā pā kāohi lepo, a me nā papahele halehana lepo.<br>
+<np>
+Paukū Pōhakuʻula Koena Hoʻoheheʻe
+Hana pōhaku halehana paʻa
+<&slag_brick_slab>Hoʻohui kēia palaka i ka hana pōhaku ʻāhinahina-mākuʻe paʻa no nā kahua, nā pā kāohi lepo, a me nā hale hana kahiko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kahua kahiko, nā pā kāohi lepo, a me nā papahele halehana lepo.<br>
+<np>
+Alapiʻi Pōhakuʻula Koena Hoʻoheheʻe
+Hana pōhaku halehana paʻa
+<&slag_brick_stairs>Hoʻohui kēia palaka i ka hana pōhaku ʻāhinahina-mākuʻe paʻa no nā kahua, nā pā kāohi lepo, a me nā hale hana kahiko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kahua kahiko, nā pā kāohi lepo, a me nā papahele halehana lepo.<br>
+<np>
+Pā Pōhakuʻula Koena Hoʻoheheʻe
+Hana pōhaku halehana paʻa
+<&slag_brick_wall>Hoʻohui kēia palaka i ka hana pōhaku ʻāhinahina-mākuʻe paʻa no nā kahua, nā pā kāohi lepo, a me nā hale hana kahiko.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kahua kahiko, nā pā kāohi lepo, a me nā papahele halehana lepo.<br>
+<np>
+Palaka Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&rebar_concrete>He ʻāpana pōhaku puna paʻakikī kēia no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+Paukū Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&rebar_concrete_slab>He ʻāpana pōhaku puna paʻakikī kēia no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+Alapiʻi Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&rebar_concrete_stairs>He ʻāpana pōhaku puna paʻakikī kēia no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+Pā Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&rebar_concrete_wall>He ʻāpana pōhaku puna paʻakikī kēia no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+ʻĀpana Lahilahi Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&halfslab_rebar_concrete>He ʻāpana pōhaku puna paʻakikī kēia no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+Kile Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&rebar_concrete_tile>He ʻāpana pōhaku puna paʻakikī kēia no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+Paukū Kile Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&rebar_concrete_tile_slab>He ʻāpana pōhaku puna paʻakikī kēia no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+Kile Pōhaku Puna Hoʻoikaika Hao
+Pōhaku puna hoʻoikaika ʻia
+<&rebar_concrete_tile_stairs>He mau ʻāpana pōhaku puna paʻakikī nā Alapiʻi Kile Pōhaku Puna Hoʻoikaika Hao no nā kahua mīkini, nā pā pale pahū, a me nā papahele wahi hoʻouka.<br>
+<br>
+Hoʻohana: E hoʻohana ma lalo o nā mīkini, ma nā ala mālama, a i ʻole ma nā wahi e pono ai ke kūkulu i ke kahua hoʻoikaika ʻia.<br>
+<np>
+Palaka Aniani Pale Ikaika
+Ala nānā pale ʻia
+<&panzerglass_block>Mālama kēia palaka i ka hāmama o ka nānā ʻana me ke kūlike nō me ke kūkulu halehana hoʻoikaika ʻia.<br>
+<br>
+Hoʻohana: E hoʻohana ma kahi e ʻike ai nā mea pāʻani i nā mīkini ma ʻō aku o ka pale.<br>
+<np>
+Paukū Aniani Pale Ikaika
+Ala nānā pale ʻia
+<&panzerglass_slab>Mālama kēia palaka i ka hāmama o ka nānā ʻana me ke kūlike nō me ke kūkulu halehana hoʻoikaika ʻia.<br>
+<br>
+Hoʻohana: E hoʻohana ma kahi e ʻike ai nā mea pāʻani i nā mīkini ma ʻō aku o ka pale.<br>

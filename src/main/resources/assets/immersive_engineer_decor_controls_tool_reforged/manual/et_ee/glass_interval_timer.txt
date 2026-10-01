@@ -1,0 +1,7 @@
+Klaasist intervallsignaal
+Ajastatud impulss
+<&recipe>Kompaktne taimerlüliti annab ajastatud redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta seal, kus väike mehhanism vajab perioodilist või viivitatud juhtimist.<br>
+<br>
+Märkus: Kasutab ajastatud redstone'i impulsse.

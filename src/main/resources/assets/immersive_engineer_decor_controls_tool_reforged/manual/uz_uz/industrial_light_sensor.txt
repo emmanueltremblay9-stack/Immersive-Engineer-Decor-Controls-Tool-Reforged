@@ -1,0 +1,7 @@
+Yorug'lik sensori
+Signalni sezish
+<&recipe>Yorug'lik sensori mahalliy yorug'likni redstone boshqaruviga aylantiradi.<br>
+<br>
+Ishlatish: avtomatik chiroqlar, yopqichlar va ko'rinish sxemalarida foydalaning.<br>
+<br>
+Eslatma: xom yorug'lik darajasi 8 yoki undan yuqori bo'lsa, quvvat beradi.

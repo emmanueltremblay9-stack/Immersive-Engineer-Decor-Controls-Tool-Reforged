@@ -1,0 +1,5 @@
+Skrzynia z etykietą
+Edytowalna etykieta zapasów
+<&recipe>Ta skrzynia z etykietą ułatwia czytelne porządkowanie magazynu. Przednią płytkę można edytować jak małą tabliczkę warsztatową.<br>
+<br>
+Użycie: Kliknij płytkę etykiety prawym przyciskiem myszy, aby zmienić opis skrzyni. Kliknij prawym przyciskiem pozostałą część skrzyni, aby otworzyć magazyn elementów, części i materiałów konserwacyjnych.<br>

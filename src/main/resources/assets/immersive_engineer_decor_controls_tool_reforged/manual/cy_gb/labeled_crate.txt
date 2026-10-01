@@ -1,0 +1,5 @@
+Crât â Label
+Label stoc golygadwy
+<&recipe>Mae'r crât â label hwn wedi'i gynllunio i drefnu storfa'n glir. Gellir golygu ei blât blaen fel arwydd gweithdy bach.<br>
+<br>
+Defnydd: Cliciwch y plât label â'r botwm de i olygu label y crât. Cliciwch weddill y crât â'r botwm de i agor storfa ar gyfer elfennau gosod, rhannau a chyflenwadau cynnal a chadw.<br>

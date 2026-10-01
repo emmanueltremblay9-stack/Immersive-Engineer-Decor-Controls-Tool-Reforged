@@ -1,0 +1,7 @@
+Napunjeni lazulit
+Pohranjeno iskustvo
+<&recipe>Napunjeni lazulit pohranjuje jednu razinu iskustva stvorenu prešom za um.<br>
+<br>
+Uporaba: potroši ga za povrat jedne razine, uklanjanje aktivnih učinaka i obnovu malo zdravlja.<br>
+<br>
+Prikaz recepta pokazuje prešu za um jer se napunjeni lazulit dobiva uporabom tog alata uz dostupni lazulit i iskustvo.

@@ -1,0 +1,5 @@
+Shkrirës mineralesh
+Njësi kompakte përpunimi
+<&recipe>Shkrirësi i mineraleve kryen përpunim mineralesh me nxehtësi të lartë duke zënë pak vend në punishte.<br>
+<br>
+Përdorimi: furnizoje me blloqe mineralesh dhe energji për shkrirje me nxehtësi të lartë.<br>

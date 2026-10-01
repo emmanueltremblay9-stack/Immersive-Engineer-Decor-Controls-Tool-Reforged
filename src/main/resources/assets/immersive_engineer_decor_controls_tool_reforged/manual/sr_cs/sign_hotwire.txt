@@ -1,0 +1,5 @@
+Znak žice pod naponom
+Oznaka opasnosti
+<&recipe>Znak „Oprez, žica pod naponom“ obeležava opasnosti, izlaze i radne zone jasnom oznakom za fabričku bezbednost.<br>
+<br>
+Upotreba: postavi ga pored opasnosti, izlaza, mašina i zabranjenih zona.<br>

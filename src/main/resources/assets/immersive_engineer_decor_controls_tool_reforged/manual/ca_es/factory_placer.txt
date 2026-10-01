@@ -1,0 +1,5 @@
+Col·locador de blocs de fàbrica
+Equipament de planta
+<&recipe>Aquest bloc col·loca blocs de la reserva interna quan s’activa.<br>
+<br>
+Ús: apunta la cara de treball cap a l’espai de destinació i omple’l de piles que es puguin col·locar.<br>

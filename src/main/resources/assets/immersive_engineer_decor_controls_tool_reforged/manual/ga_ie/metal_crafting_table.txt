@@ -1,0 +1,7 @@
+Bord Ceardaíochta Miotail
+Stáisiún oibre plátaí
+<&recipe>Binse oibre miotail le sliotán casúir tiomnaithe, eangach cheardaíochta 3x3 agus sliotán aschuir.<br>
+<br>
+Úsáid: úsáid an ghreille mar a d'úsáidfeá gnáthbhord ceardaíochta. Chun plátaí IE a fhoirmiú, cuir Casúr an Innealtóra sa sliotán uirlise agus ábhar an phláta sa ghreille, ansin tóg an pláta foirmithe ón aschur.<br>
+<br>
+Úsáidtear plátaí cruach i maisiúcháin chruach. Cuir casúr Immersive Engineering isteach, casúir tinní cruach ina bplátaí cruach, agus ansin úsáid plátaí chun cuaillí, siúláin, fuinneoga, doirse, ráillí agus maisiúcháin chruach eile a dhéanamh.<br>

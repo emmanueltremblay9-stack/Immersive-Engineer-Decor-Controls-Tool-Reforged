@@ -1,0 +1,7 @@
+Gelaaje lapis
+Opgesjlage ervaring
+<&recipe>Gelaaje lapis sjleit ein ervaringsniveau op dat mèt de gedachtepers gemaakt weurt.<br>
+<br>
+Gebroek: verbroek 'm um ein niveau trök te kriege, actieve effecte weg te pakke en ein bietje gezóndheid te herstelle.<br>
+<br>
+De receptaanwiezer laot de gedachtepers zeen, umdet gelaaje lapis gemaak weurt door dat gereidsjap mèt lapis en XP te gebroeke.

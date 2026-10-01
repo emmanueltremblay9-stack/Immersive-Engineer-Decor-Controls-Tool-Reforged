@@ -1,0 +1,7 @@
+Medidor de barras de vidro
+Medidor de sinal
+<&recipe>Um medidor compacto de sala de controlo exibe a intensidade de redstone numa leitura clara no painel.<br>
+<br>
+Uso: Instala-o onde seja necessário verificar rapidamente o sinal de redstone dos blocos vizinhos.<br>
+<br>
+Observações: Lê a intensidade de redstone próxima, de 0 a 15.

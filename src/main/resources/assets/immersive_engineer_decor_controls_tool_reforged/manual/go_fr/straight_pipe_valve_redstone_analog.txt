@@ -1,0 +1,5 @@
+Vane a liqides analogiqe
+Éqhipement de ligne a liqides
+<&recipe>La Vane a liqides analogiqe a redstone ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Alignéz la vane d'o le sens de débit voulu.<br>

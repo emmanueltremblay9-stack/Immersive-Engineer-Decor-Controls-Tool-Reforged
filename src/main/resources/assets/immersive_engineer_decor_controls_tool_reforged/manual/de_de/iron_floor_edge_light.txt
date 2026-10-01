@@ -1,0 +1,5 @@
+Eingelassene Bodenkantenleuchte
+Kompakte Arbeitsleuchte
+<&recipe>Dieser Block bietet kompakte Industriebeleuchtung für Gänge, Laufstege und Arbeitsbuchten.<br>
+<br>
+Verwendung: Montiere ihn an Decken, Wänden oder Kanten, wo der Raum gute Arbeitsbeleuchtung benötigt.<br>

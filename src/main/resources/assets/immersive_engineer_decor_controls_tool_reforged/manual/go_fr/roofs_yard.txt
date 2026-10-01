@@ -1,0 +1,101 @@
+Téts e cour
+Éqhipements d'uzine du dehôrs
+Les blloqes de tét, la gravelle de cour e les pièces de vieû bouéz d'uzine aident a finir les remizes du dehôrs, les cours de bezaigne, les zones de charjement e les bords d'uzine vieillis.<br>
+<br>
+Méléz ces pièces o de la maçounnerie e des voies d'accès pour qe les bâtisses d'uzine du dehôrs restent lisiblles de liain.
+<np>
+Tét en petits bardeaos sombs
+Pièce de tét vieillie
+<&dark_shingle_roof>Çu blloqe fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Arét-naije de tét
+Pièce de tét vieillie
+<&dark_shingle_roof_metallized>L'Arét-naije de tét en petits bardeaos sombs fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Tét en petits bardeaos sombs
+Pièce de tét vieillie
+<&dark_shingle_roof_skylight>La Fenétr de tét en petits bardeaos sombs fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Souche de cheminée de tét
+Pièce de tét vieillie
+<&dark_shingle_roof_chimneytrunk>La Souche de cheminée de tét en petits bardeaos sombs fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Conduit de fi de tét
+Pièce de tét vieillie
+<&dark_shingle_roof_wireconduit>Le Conduit de fi de tét en petits bardeaos sombs fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Tét en petits bardeaos sombs
+Pièce de tét vieillie
+<&dark_shingle_roof_chimney>La Cheminée de tét en petits bardeaos sombs fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Blloqe de tét en petits bardeaos sombs
+Pièce de tét vieillie
+<&dark_shingle_roof_block>Çu blloqe fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Pavë de tét en petits bardeaos sombs
+Pièce de tét vieillie
+<&dark_shingle_roof_slab>Çu blloqe fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Pavë de tét en petits bardeaos sombs
+Pièce de tét vieillie
+<&dark_shingle_roof_slabslice>La Tranche de pavë de tét en petits bardeaos sombs fait des lignes de tét sombres e pratiqes pour les ateliers e les remizes d'uzine.<br>
+<br>
+Empllai : Empllayéz les pièces ensembll pour fére des formes de tét vraisemblablles.<br>
+<np>
+Terre a gravelle serrée
+Couverture de sol de chantier
+<&dense_grit_dirt_block>Çu blloqe doune eune surface serrée e pilée de piës ao endrets de bezaigne du dehôrs.<br>
+<br>
+Empllai : Pllacéz-le entoure des portes de charjement, des réservouers du dehôrs e des cours a machines.<br>
+<np>
+Sabl a gravelle serrée
+Couverture de sol de chantier
+<&dense_grit_sand_block>Çu blloqe doune eune surface serrée e pilée de piës ao endrets de bezaigne du dehôrs.<br>
+<br>
+Empllai : Pllacéz-le entoure des portes de charjement, des réservouers du dehôrs e des cours a machines.<br>
+<np>
+Pllanches de vieû bouéz
+Vieû bouéz d'atelier
+<&old_industrial_wood_planks>Les Pllanches de vieû bouéz d'uzine ajoutent du vieû bouéz d'atelier pour les sols, les marches, les portes e des bordures intérieures chaodeuses.<br>
+<br>
+Empllai : Empllayéz-le pour de vieû sols d'atelier, des degrës, des portes e des bordures.<br>
+<np>
+Pavë de vieû bouéz d'uzine
+Vieû bouéz d'atelier
+<&old_industrial_wood_slab>Çu blloqe ajoute du vieû bouéz d'atelier pour les sols, les marches, les portes e des bordures intérieures chaodeuses.<br>
+<br>
+Empllai : Empllayéz-le pour de vieû sols d'atelier, des degrës, des portes e des bordures.<br>
+<np>
+Degrë de vieû bouéz
+Vieû bouéz d'atelier
+<&old_industrial_wood_stairs>Le Degrë de vieû bouéz d'uzine ajoute du vieû bouéz d'atelier pour les sols, les marches, les portes e des bordures intérieures chaodeuses.<br>
+<br>
+Empllai : Empllayéz-le pour de vieû sols d'atelier, des degrës, des portes e des bordures.<br>
+<np>
+Tranche de pavë de vieû bouéz
+Vieû bouéz d'atelier
+<&old_industrial_wood_slabslice>La Tranche de pavë de vieû bouéz d'uzine ajoute du vieû bouéz d'atelier pour les sols, les marches, les portes e des bordures intérieures chaodeuses.<br>
+<br>
+Empllai : Empllayéz-le pour de vieû sols d'atelier, des degrës, des portes e des bordures.<br>
+<np>
+Porte de vieû bouéz d'uzine
+Vieû bouéz d'atelier
+<&old_industrial_wood_door>Çu blloqe ajoute du vieû bouéz d'atelier pour les sols, les marches, les portes e des bordures intérieures chaodeuses.<br>
+<br>
+Empllai : Empllayéz-le pour de vieû sols d'atelier, des degrës, des portes e des bordures.<br>

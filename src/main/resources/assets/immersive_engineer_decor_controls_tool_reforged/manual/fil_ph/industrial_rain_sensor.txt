@@ -1,0 +1,7 @@
+Pandama ng Ulan
+Pagdama ng signal
+<&recipe>Ginagawang redstone ng pandama ng panahon ang ulan sa kinalalagyan nito.<br>
+<br>
+Paggamit: Ikabit kung saan maaabot ng ulan ang bloke sa ibabaw.<br>
+<br>
+Tandaan: Sinusuri ang ulan sa ibabaw ng pandama.

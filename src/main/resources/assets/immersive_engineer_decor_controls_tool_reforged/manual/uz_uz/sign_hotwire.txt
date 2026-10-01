@@ -1,0 +1,5 @@
+Kuchlanishli sim belgisi
+Xavf belgisi
+<&recipe>"Diqqat, kuchlanishli sim" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>

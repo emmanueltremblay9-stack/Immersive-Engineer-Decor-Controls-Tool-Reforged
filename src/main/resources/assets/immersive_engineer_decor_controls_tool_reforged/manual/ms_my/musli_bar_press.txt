@@ -1,0 +1,7 @@
+Penekan Bar Tenaga Campuran Muslee
+Penekan makanan
+<&recipe>Penekan Muslee menukar makanan biasa menjadi bekalan lapangan padat.<br>
+<br>
+Bawa roti, epal dan biji gandum, tembikai, labu, ubi bit atau hem industri lalu gunakan penekan. Ia menggunakan satu setiap bahan, memeriksa ruang, menghasilkan empat bar dan merosakkan penekan.<br>
+<br>
+Jika bahan atau ruang tiada, tiada apa digunakan.

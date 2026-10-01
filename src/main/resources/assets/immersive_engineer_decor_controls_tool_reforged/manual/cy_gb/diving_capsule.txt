@@ -1,0 +1,7 @@
+Capsiwl aer plymio
+Cronfa aer brys
+<&recipe>Aer brys ar gyfer gwaith dan ddŵr.<br>
+<br>
+Defnydd: Adfer aer â llaw. Yn y rhestr mae'n cychwyn yn awtomatig pan fo aer bron ar ben, yna'n oeri.<br>
+<br>
+Cariwch i fwyngloddiau llifogydd, pibellau tanddwr ac ystafelloedd pwmp.

@@ -1,0 +1,5 @@
+Sammenpresset grussand
+Arbeidsplassdekke
+<&recipe>Denne blokken gir utendørs arbeidsområder en sammenpresset, nedtråkket overflate.<br>
+<br>
+Bruk: legg den rundt lasteporter, utendørstanker og maskinplasser.<br>

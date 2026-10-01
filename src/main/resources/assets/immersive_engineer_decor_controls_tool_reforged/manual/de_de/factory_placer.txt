@@ -1,0 +1,5 @@
+Fabrik-Blocksetzer
+Hilfsgerät für die Werkstatt
+<&recipe>Dieser Block platziert bei Aktivierung Blöcke aus seinem internen Vorrat.<br>
+<br>
+Verwendung: Richte die Arbeitsseite auf den Zielbereich und fülle platzierbare Stapel ein.<br>

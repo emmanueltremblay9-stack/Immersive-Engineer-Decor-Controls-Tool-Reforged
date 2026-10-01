@@ -1,0 +1,7 @@
+Detector de bloques
+Detección de sinais
+<&recipe>Un detector de bloques comproba se o espazo que ten diante está ocupado.<br>
+<br>
+Uso: apunta cara á cara da máquina, á reserva ou ao espazo vixiado que queiras observar.<br>
+<br>
+Notas: emite potencia cando o bloque diante del non é aire.

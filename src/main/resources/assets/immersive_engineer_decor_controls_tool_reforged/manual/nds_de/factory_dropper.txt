@@ -1,0 +1,5 @@
+Fabrikgiëwer
+Wiärksteedhülp
+<&recipe>Disse Block gifft lagert Saken dörch en utrichte Siet rut.<br>
+<br>
+Bruuk: Richt de Vörsiet op de Utgaavsteed, füll de inneren Fäker un stell Stark, Winkel, Verzögerung, Filterlogik un Redstone-Hanterung op den Schirm in.<br>

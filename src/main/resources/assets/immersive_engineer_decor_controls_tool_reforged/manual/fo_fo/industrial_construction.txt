@@ -1,0 +1,108 @@
+Ídnaðarbygging
+Verksmiðjuveggir og kantar
+Vanligir byggipartar fevna um hurðar, vindeygu, ljós, ávaringarskelti, kantprýði og berandi partar, sum ikki hoyra til ein meira ávísan part.<br>
+<br>
+Brúka hesar síðurnar til verksmiðjurúm, viðlíkahaldsgongir, vandamerking og nýtiligar ídnaðardetaljur.
+<np>
+Jarnperuljós
+Lítið arbeiðsljós
+<&iron_bulb_light>Hesin kubbin gevur ídnaðarlýsing á lítlum plássi til gongir, gongubrýr og arbeiðspláss.<br>
+<br>
+Nýtsla: Fest hann á loft, veggir ella kantar, har rúminum tørvar greitt arbeiðsljós.<br>
+<np>
+Loftkantljós
+Lítið arbeiðsljós
+<&iron_ceiling_edge_light>Hesin kubbin gevur ídnaðarlýsing á lítlum plássi til gongir, gongubrýr og arbeiðspláss.<br>
+<br>
+Nýtsla: Fest hann á loft, veggir ella kantar, har rúminum tørvar greitt arbeiðsljós.<br>
+<np>
+Innfeld gólvkantljós
+Lítið arbeiðsljós
+<&iron_floor_edge_light>Hesin kubbin gevur ídnaðarlýsing á lítlum plássi til gongir, gongubrýr og arbeiðspláss.<br>
+<br>
+Nýtsla: Fest hann á loft, veggir ella kantar, har rúminum tørvar greitt arbeiðsljós.<br>
+<np>
+Innfeld ljós
+Lítið arbeiðsljós
+<&iron_inset_light>Hesin kubbin gevur ídnaðarlýsing á lítlum plássi til gongir, gongubrýr og arbeiðspláss.<br>
+<br>
+Nýtsla: Fest hann á loft, veggir ella kantar, har rúminum tørvar greitt arbeiðsljós.<br>
+<np>
+Skelti „Almenn ávaring
+Vandamerking
+<&sign_caution>Skeltið „Almenn ávaring“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Vandaskelti
+Vandamerking
+<&sign_danger>Skeltið „Gev gætur, her er veruliga vandamikið“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Prýðisskelti
+Vandamerking
+<&sign_decor>Skeltisplátan (Engineer's decor) merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Verjuskelti
+Vandamerking
+<&sign_defense>Skeltið „Gev gætur, verjuskipan frammanfyri“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Útgongdarskelti
+Vandamerking
+<&sign_exit>Hetta skeltið merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Skelti „Eldvandi
+Vandamerking
+<&sign_firehazard>Skeltið „Eldvandi“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Skelti „Frostávaring
+Vandamerking
+<&sign_frost>Skeltið „Frostávaring“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Skelti fyri heitt yvirflati
+Vandamerking
+<&sign_hotsurface>Skeltið „Gev gætur, heitt yvirflati“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Skelti fyri spenning á leidningi
+Vandamerking
+<&sign_hotwire>Skeltið „Gev gætur, spenningur á leidningi“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Skelti „Lasaravandi
+Vandamerking
+<&sign_laser>Skeltið „Lasaravandi“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Gandavandaskelti
+Vandamerking
+<&sign_magichazard>Skeltið „Gev gætur, gandavandi“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Magnetfeltskelti
+Vandamerking
+<&sign_magneticfield>Skeltið „Gev gætur, sterkt magnetfelt“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>
+Skelti „Geislavandi
+Vandamerking
+<&sign_radioactive>Skeltið „Geislavandi“ merkir vandar, útgongdir og arbeiðsøki við einum greiðum trygdartekni til verksmiðjuna.<br>
+<br>
+Nýtsla: Set tað við vandar, útgongdir, maskinur og avmarkað øki.<br>
+<np>

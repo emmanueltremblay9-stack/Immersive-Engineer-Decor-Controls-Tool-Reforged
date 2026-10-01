@@ -1,0 +1,7 @@
+Martè a écraser le minerai
+Outil d'écrazaije a main
+<&recipe>Le martè a broyer les mineraos ét un outil a main pour le permier ouvraije du fer e de l'or.<br>
+<br>
+Usaije : Fêtes-le avèq du fer cru, de l'or cru, du minerai de fer, du minerai de fer de roche perfounde, du minerai d'or ou de l'or de roche perfounde pour fére de la poudre de fer ou d'or Immersive Engineering. Le martè perd de la durabilitë e retourne den la grille tant q'i n'ét pouint cassë.<br>
+<br>
+I s'uze etout en minant e peut erpousser les cibles den le combat de prés.

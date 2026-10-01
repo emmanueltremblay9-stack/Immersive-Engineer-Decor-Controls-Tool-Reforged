@@ -1,0 +1,5 @@
+Spărgător de blocuri
+Echipament util în hală
+<&recipe>Spărgătorul mic de blocuri este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Orientează fața de lucru spre blocul de îndepărtat.<br>

@@ -1,0 +1,7 @@
+Storcător de minte
+Condensator de experiență
+<&recipe>Storcătorul de minte transformă lapisul și experiența în lapis încărcat.<br>
+<br>
+Utilizare: Ia cu tine lapislazuli și cel puțin un nivel de experiență, apoi folosește unealta. O stoarcere reușită consumă un nivel și un lapis, rănește utilizatorul, uzează storcătorul și produce un lapis încărcat.<br>
+<br>
+Refuză să funcționeze dacă utilizatorul nu are lapis, nu are experiență sau este prea aproape de moarte.

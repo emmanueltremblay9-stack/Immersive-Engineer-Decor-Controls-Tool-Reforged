@@ -1,0 +1,5 @@
+Fabrikblocksetza
+Werkstatthilf
+<&recipe>Der Block setzt Blöck aus seim innern Vorrat, wenn er aktiviert wird.<br>
+<br>
+So geht's: Richt d'Arbeitsseit auf'n Zielraum und füll setzbare Stapl ei.<br>

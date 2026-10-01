@@ -1,0 +1,5 @@
+Emal edilmiş ağac dirək
+Konstruksiya karkasının hissəsi
+<&recipe>Düz emal edilmiş ağac dirək, yəni Emal edilmiş ağac dirək, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>

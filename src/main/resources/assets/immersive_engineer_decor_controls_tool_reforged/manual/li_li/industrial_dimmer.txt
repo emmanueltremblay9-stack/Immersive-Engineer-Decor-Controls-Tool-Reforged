@@ -1,0 +1,7 @@
+Dimmer
+Verangerbaar signaal
+<&recipe>Ein draeiregelaar stelt de redstonesjtèrkte vanaaf ein klein paneelvlak in.<br>
+<br>
+Gebroek: rechtsklik um de oetvoer sjtap veur sjtap te verhoege en nao volle sjtèrkte weer bie nul te beginne.<br>
+<br>
+Opmerking: geuf ein sjtèrkte van 0 tot 15.

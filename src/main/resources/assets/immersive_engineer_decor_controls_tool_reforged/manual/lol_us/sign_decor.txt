@@ -1,0 +1,5 @@
+Decorative Sign Thing
+Danger-marker thingz
+<&recipe>Da Blank Sign Plate (Engineer's Decor) marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>

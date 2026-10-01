@@ -1,0 +1,5 @@
+Fabrickblocksetzer
+Hëllefsmëttel um Ateliersbuedem
+<&recipe>Dëse Block setzt Bléck aus sengem interne Virrat, wann en aktivéiert gëtt.<br>
+<br>
+Benotzung: Riicht d'Aarbechtssäit op den Zilraum a fëll e mat Stapelen, déi gesat kënne ginn.<br>

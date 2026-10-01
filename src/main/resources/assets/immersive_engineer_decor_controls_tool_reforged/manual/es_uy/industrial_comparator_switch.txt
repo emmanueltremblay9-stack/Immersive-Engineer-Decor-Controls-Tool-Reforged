@@ -1,0 +1,7 @@
+Interruptor comparador
+Señal del bloque de soporte
+<&recipe>Un interruptor sensor compacto lee el bloque en el que está montado y convierte esa lectura en una salida sencilla de panel.<br>
+<br>
+Uso: Montalo en inventarios, depósitos o dispositivos de redstone. Cuando el bloque de soporte ofrece una salida de comparador, de contenedor o de redstone, el interruptor emite redstone a máxima intensidad.<br>
+<br>
+Notas: Usalo para convertir niveles de almacenamiento o cableado oculto en líneas claras de encendido y apagado.

@@ -1,0 +1,7 @@
+Paquet d'estimulant automàtic
+Injector d'emergència
+<&recipe>Objecte de recuperació per a manteniment perillós.<br>
+<br>
+Ús: Manualment cura, protegeix breument i accelera. A l'inventari s'activa amb poca salut i després es recarrega.<br>
+<br>
+Porta'n un abans de provar alçades, cablejat exposat o mines hostils.

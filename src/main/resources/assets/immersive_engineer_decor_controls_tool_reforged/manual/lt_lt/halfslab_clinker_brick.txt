@@ -1,0 +1,5 @@
+Klinkerio plytų pusblokis
+Suodžiais patamsintas mūras
+<&recipe>Šis blokas suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>

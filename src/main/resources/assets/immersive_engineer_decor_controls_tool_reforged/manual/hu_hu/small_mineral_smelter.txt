@@ -1,0 +1,5 @@
+Ásványolvasztó
+Kompakt feldolgozóegység
+<&recipe>Az ásványolvasztó magas hőmérsékletű ásványfeldolgozást végez kis műhelyi helyigénnyel.<br>
+<br>
+Használat: adagolj ásványblokkokat és energiát a magas hőmérsékletű olvasztáshoz.<br>

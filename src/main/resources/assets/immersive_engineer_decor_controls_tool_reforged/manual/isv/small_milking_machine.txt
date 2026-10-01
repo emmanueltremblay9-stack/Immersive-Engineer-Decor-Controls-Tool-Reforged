@@ -1,0 +1,5 @@
+Dojilna mašina
+Pribor fabričnoj haly
+<&recipe>Mala dojilna mašina jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Postavi ju blizko krav i obezpeči sposob odstranjenja posud s mlěkom ili tekučiny.<br>

@@ -1,0 +1,5 @@
+Su Dondurucu
+Küçük işleme birimi
+<&recipe>Su dondurucu, güç alan sıvı düzenekleri için küçük ölçekli soğutma işleri yapar.<br>
+<br>
+Kullanım: Aşamalı buz üretimi için su ve güç sağlayın.<br>

@@ -1,0 +1,5 @@
+Ploča od oklopnog stakla
+Zaštićen pogled
+<&recipe>Ovaj blok zadržava otvoren pogled i uklapa se u ojačanu tvorničku konstrukciju.<br>
+<br>
+Uporaba: koristi ga gdje igrači trebaju vidjeti strojeve kroz zaštitnu pregradu.<br>

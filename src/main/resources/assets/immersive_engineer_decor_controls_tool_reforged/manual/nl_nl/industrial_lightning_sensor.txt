@@ -1,0 +1,7 @@
+Onweersdetector
+Signaaldetectie
+<&recipe>Een onweerssensor stuurt waarschuwingen aan tijdens onweer.<br>
+<br>
+Gebruik: plaats hem onder de open hemel en verbind hem met lampen of alarmen.<br>
+<br>
+Opmerking: vereist onweer en vrij zicht op de hemel.

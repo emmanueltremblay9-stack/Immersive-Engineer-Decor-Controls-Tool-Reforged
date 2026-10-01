@@ -1,0 +1,5 @@
+Blockbrächer
+Hilfsgrät für d'Werkstatt
+<&recipe>De chliine Blockbrächer isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Richt d'Arbeitssiite uf de Block, wo wäg söll.<br>

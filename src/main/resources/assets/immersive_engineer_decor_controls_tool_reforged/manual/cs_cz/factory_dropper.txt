@@ -1,0 +1,5 @@
+Tovární podavač
+Vybavení provozu
+<&recipe>Tento blok vypouští uložené předměty z namířené strany.<br>
+<br>
+Použití: Namiř přední stranu na místo vypouštění, naplň vnitřní sloty a v rozhraní nastav sílu, úhel, prodlevu, logiku filtrů a redstonový režim.<br>

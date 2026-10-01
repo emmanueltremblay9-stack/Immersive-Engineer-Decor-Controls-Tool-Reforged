@@ -1,0 +1,161 @@
+Klinker dan Pasangan Batu
+Selubung bata dan beton
+Klinker, bata terak, beton bertulang, dan kaca lapis baja menyediakan permukaan berat untuk ruangan panas, bengkel, dan pandangan terlindungi.<br>
+<br>
+Gunakan lempeng, anak tangga, lapisan, dan tembok yang serasi untuk menyelesaikan tepi tanpa mengubah kesan bahan pabrik.
+<np>
+Blok Bata Klinker
+Pasangan bata gelap berjelaga
+<&clinker_brick_block>Blok ini menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Lempeng Bata Klinker
+Pasangan bata gelap berjelaga
+<&clinker_brick_slab>Blok ini menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Anak Tangga Bata Klinker
+Pasangan bata gelap berjelaga
+<&clinker_brick_stairs>Blok ini menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Tembok Bata Klinker
+Pasangan bata gelap berjelaga
+<&clinker_brick_wall>Blok ini menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Blok Klinker Bernoda
+Pasangan bata gelap berjelaga
+<&clinker_brick_stained_block>Blok bata klinker bernoda menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Lempeng Klinker Bernoda
+Pasangan bata gelap berjelaga
+<&clinker_brick_stained_slab>Lempeng bata klinker bernoda menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Anak Tangga Klinker Bernoda
+Pasangan bata gelap berjelaga
+<&clinker_brick_stained_stairs>Anak tangga bata klinker bernoda menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Bata Klinker Berhias
+Pasangan bata gelap berjelaga
+<&clinker_brick_sastor_corner_block>Bata klinker berhias batu pasir menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Bata Klinker Berlekuk
+Pasangan bata gelap berjelaga
+<&clinker_brick_recessed>Blok ini menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Bata Klinker Bercelah
+Pasangan bata gelap berjelaga
+<&clinker_brick_vertically_slit>Bata klinker bercelah tegak menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Lempeng Klinker Tegak
+Pasangan bata gelap berjelaga
+<&clinker_brick_vertical_slab_structured>Lempeng klinker tegak berstruktur menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Lempeng Setengah Bata Klinker
+Pasangan bata gelap berjelaga
+<&halfslab_clinker_brick>Blok ini menghadirkan pasangan bata gelap berjelaga pada ruang tungku, pangkal cerobong, dan tembok servis.<br>
+<br>
+Penggunaan: gunakan sebagai tembok, lis, atau selubung area panas di sekitar tungku dan ketel.<br>
+<np>
+Blok Bata Terak
+Pasangan batu pabrik padat
+<&slag_brick_block>Blok ini menambahkan pasangan batu padat abu-abu kecokelatan untuk fondasi, tembok penahan, dan gudang kerja tua.<br>
+<br>
+Penggunaan: gunakan untuk fondasi tua, tembok penahan, dan lantai pabrik kotor.<br>
+<np>
+Lempeng Bata Terak
+Pasangan batu pabrik padat
+<&slag_brick_slab>Blok ini menambahkan pasangan batu padat abu-abu kecokelatan untuk fondasi, tembok penahan, dan gudang kerja tua.<br>
+<br>
+Penggunaan: gunakan untuk fondasi tua, tembok penahan, dan lantai pabrik kotor.<br>
+<np>
+Anak Tangga Bata Terak
+Pasangan batu pabrik padat
+<&slag_brick_stairs>Blok ini menambahkan pasangan batu padat abu-abu kecokelatan untuk fondasi, tembok penahan, dan gudang kerja tua.<br>
+<br>
+Penggunaan: gunakan untuk fondasi tua, tembok penahan, dan lantai pabrik kotor.<br>
+<np>
+Tembok Bata Terak
+Pasangan batu pabrik padat
+<&slag_brick_wall>Blok ini menambahkan pasangan batu padat abu-abu kecokelatan untuk fondasi, tembok penahan, dan gudang kerja tua.<br>
+<br>
+Penggunaan: gunakan untuk fondasi tua, tembok penahan, dan lantai pabrik kotor.<br>
+<np>
+Blok Beton Bertulang
+Beton bertulang
+<&rebar_concrete>Blok ini merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Lempeng Beton Bertulang
+Beton bertulang
+<&rebar_concrete_slab>Blok ini merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Anak Tangga Beton Bertulang
+Beton bertulang
+<&rebar_concrete_stairs>Blok ini merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Tembok Beton Bertulang
+Beton bertulang
+<&rebar_concrete_wall>Blok ini merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Lapisan Beton Bertulang
+Beton bertulang
+<&halfslab_rebar_concrete>Blok ini merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Ubin Beton Bertulang
+Beton bertulang
+<&rebar_concrete_tile>Blok ini merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Lempeng Ubin Beton Bertulang
+Beton bertulang
+<&rebar_concrete_tile_slab>Blok ini merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Ubin Beton Bertulang
+Beton bertulang
+<&rebar_concrete_tile_stairs>Anak tangga ubin beton bertulang merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>
+<np>
+Blok Kaca Lapis Baja
+Pandangan terlindungi
+<&panzerglass_block>Blok ini mempertahankan pandangan terbuka sambil tetap cocok dengan konstruksi pabrik yang diperkuat.<br>
+<br>
+Penggunaan: gunakan agar pemain dapat melihat mesin melalui penghalang pelindung.<br>
+<np>
+Lempeng Kaca Lapis Baja
+Pandangan terlindungi
+<&panzerglass_slab>Blok ini mempertahankan pandangan terbuka sambil tetap cocok dengan konstruksi pabrik yang diperkuat.<br>
+<br>
+Penggunaan: gunakan agar pemain dapat melihat mesin melalui penghalang pelindung.<br>

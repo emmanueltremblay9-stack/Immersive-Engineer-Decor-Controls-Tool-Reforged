@@ -1,0 +1,108 @@
+Pang-industriyang Konstruksyon
+Mga pader at gilid ng pabrika
+Saklaw ng pangkalahatang kagamitan sa pagtatayo ang mga pinto, bintana, ilaw, karatulang babala, gilid at bahagi ng balangkas na hindi kabilang sa mas tiyak na seksiyon.<br>
+<br>
+Gamitin ang mga pahinang ito para sa mga silid ng pabrika, pasilyo ng pagpapanatili, pagmarka ng panganib at praktikal na detalyeng pang-industriya.
+<np>
+Bakal na Bombilya
+Maliit na ilaw sa trabaho
+<&iron_bulb_light>Nagbibigay ang blokeng ito ng maliit na pang-industriyang ilaw sa mga pasilyo, daang panserbisyo at lugar ng trabaho.<br>
+<br>
+Paggamit: Ikabit sa kisame, pader o gilid kung saan kailangan ng malinaw na ilaw sa trabaho.<br>
+<np>
+Ilaw sa Gilid ng Kisame
+Maliit na ilaw sa trabaho
+<&iron_ceiling_edge_light>Nagbibigay ang blokeng ito ng maliit na pang-industriyang ilaw sa mga pasilyo, daang panserbisyo at lugar ng trabaho.<br>
+<br>
+Paggamit: Ikabit sa kisame, pader o gilid kung saan kailangan ng malinaw na ilaw sa trabaho.<br>
+<np>
+Nakalubog na Ilaw sa Gilid ng Sahig
+Maliit na ilaw sa trabaho
+<&iron_floor_edge_light>Nagbibigay ang blokeng ito ng maliit na pang-industriyang ilaw sa mga pasilyo, daang panserbisyo at lugar ng trabaho.<br>
+<br>
+Paggamit: Ikabit sa kisame, pader o gilid kung saan kailangan ng malinaw na ilaw sa trabaho.<br>
+<np>
+Nakalubog na Ilaw
+Maliit na ilaw sa trabaho
+<&iron_inset_light>Nagbibigay ang blokeng ito ng maliit na pang-industriyang ilaw sa mga pasilyo, daang panserbisyo at lugar ng trabaho.<br>
+<br>
+Paggamit: Ikabit sa kisame, pader o gilid kung saan kailangan ng malinaw na ilaw sa trabaho.<br>
+<np>
+Karatulang "Pangkalahatang Babala
+Pananda ng panganib
+<&sign_caution>Minamarkahan ng Karatulang "Pangkalahatang Babala" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang Panganib
+Pananda ng panganib
+<&sign_danger>Minamarkahan ng Karatulang "Babala, Talagang Mapanganib Diyan" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang Palamuti
+Pananda ng panganib
+<&sign_decor>Minamarkahan ng Plaka ng Karatula ng Dekorasyon ng Inhinyero ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang Depensa
+Pananda ng panganib
+<&sign_defense>Minamarkahan ng Karatulang "Babala, May Sistema ng Depensa sa Unahan" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatula ng Labasan
+Pananda ng panganib
+<&sign_exit>Minamarkahan ng karatulang ito ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang "Panganib ng Sunog
+Pananda ng panganib
+<&sign_firehazard>Minamarkahan ng Karatulang "Panganib ng Sunog" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang "Babala sa Yelo
+Pananda ng panganib
+<&sign_frost>Minamarkahan ng Karatulang "Babala sa Yelo" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang Mainit na Ibabaw
+Pananda ng panganib
+<&sign_hotsurface>Minamarkahan ng Karatulang "Babala, Mainit na Ibabaw" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang Kawad na May Kuryente
+Pananda ng panganib
+<&sign_hotwire>Minamarkahan ng Karatulang "Babala, Kawad na May Kuryente" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang "Panganib ng Laser
+Pananda ng panganib
+<&sign_laser>Minamarkahan ng Karatulang "Panganib ng Laser" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang Panganib ng Mahika
+Pananda ng panganib
+<&sign_magichazard>Minamarkahan ng Karatulang "Babala, Panganib ng Mahika" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang Larangang Magnetiko
+Pananda ng panganib
+<&sign_magneticfield>Minamarkahan ng Karatulang "Babala, Malakas na Larangang Magnetiko" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>
+Karatulang "Panganib ng Radyasyon
+Pananda ng panganib
+<&sign_radioactive>Minamarkahan ng Karatulang "Panganib ng Radyasyon" ang mga panganib, labasan at lugar ng trabaho gamit ang nakikitang babalang pangkaligtasan sa pabrika.<br>
+<br>
+Paggamit: Ilagay sa tabi ng panganib, labasan, makina at ipinagbabawal na lugar.<br>
+<np>

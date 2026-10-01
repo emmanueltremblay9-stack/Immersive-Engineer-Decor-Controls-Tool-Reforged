@@ -1,0 +1,5 @@
+Piec laboratoryjny
+Kompaktowa jednostka przetwórcza
+<&recipe>Piec laboratoryjny wykonuje niewielkie zadania przetapiania na paliwo stałe, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Stosuj paliwo stałe do przetapiania niewielkich partii.<br>

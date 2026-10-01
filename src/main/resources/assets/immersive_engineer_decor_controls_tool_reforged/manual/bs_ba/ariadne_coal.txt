@@ -1,0 +1,7 @@
+Arijadnin ugalj
+Oznaka rudničkog puta
+<&recipe>Arijadnin ugalj služi za brzo označavanje puta u šahtovima, razgranatim rudnicima i privremenim podzemnim radovima.<br>
+<br>
+Upotreba: Upotrijebite ga na čvrstoj strani bloka da na taj rub postavite oznaku crne strelice. Oznaka uzima u obzir tačku klika na površini i podržava osam smjerova, uključujući dijagonale. Tako možete označiti skretanja, izlaze, slijepe ulice i puteve snabdijevanja bez nošenja posebnih putokaza.<br>
+<br>
+Arijadnin ugalj je višekratni alat za označavanje sa 100 upotreba. Svaka uspješno postavljena oznaka troši jedan bod izdržljivosti, a nepodržane površine odbijaju se bez trošenja predmeta.

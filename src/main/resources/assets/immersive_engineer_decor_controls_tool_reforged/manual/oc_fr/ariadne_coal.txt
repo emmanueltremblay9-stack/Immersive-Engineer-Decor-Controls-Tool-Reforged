@@ -1,0 +1,7 @@
+Carbon d’Ariadna
+Marca de camin de mina
+<&recipe>Lo Carbon d’Ariadna permet de marcar lèu los camins dins los passatges verticals de mina, las galariás ramificadas e los trabalhs sosterranhs provisòris.<br>
+<br>
+Utilizacion : aplica-lo sus una fàcia establa de blòc per i pausar una sageta negra. La marca legís lo ponch clicat sus la fàcia e admet uèch direccions, dont las diagonalas. Permet aital de marcar los viratges, las sortidas, los passatges sens sortida e los camins de provesiment sens portar de pancartas separadas.<br>
+<br>
+Lo Carbon d’Ariadna es una aisina de marcacion reutilizabla de 100 utilizacions. Cada marca pausada amb succès còsta un ponch de durabilitat ; las fàcias que convenon pas son refusadas sens gastar l’objècte.

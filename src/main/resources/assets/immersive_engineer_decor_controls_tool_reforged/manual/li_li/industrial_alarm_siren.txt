@@ -1,0 +1,7 @@
+Alarmsirene
+Signaaltrökmelding
+<&recipe>De alarmsireen is 'ne redstone-aanwiezer dae op ein zied vastzit. De ingesjakelde sjtand volleg 't signaal van 't blok woaraan hae vastzit.<br>
+<br>
+Gebroek: bevestig ze op ein vas vlak en geef energie um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: de sirene vernieut zich ein keer per seconde zolang 't aangesjlaote signaal actief blief.

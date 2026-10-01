@@ -1,0 +1,7 @@
+Analoge Linkempfanger
+Verbunnen Stüern
+<&recipe>En verbunnen Empfanger gifft Stüerpaneels en sichtbaar Teel in de Feern.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Bruuk de Parrel bi't Sliken, üm den Empfanger ut de Feern to bedenen.<br>
+<br>
+Anmarken: Disse Empfanger gifft en vull Redstone-Teken, wenn he utlööst warrt.

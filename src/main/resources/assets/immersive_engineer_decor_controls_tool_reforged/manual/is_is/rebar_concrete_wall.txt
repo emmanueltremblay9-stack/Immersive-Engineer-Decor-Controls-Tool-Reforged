@@ -1,0 +1,5 @@
+Járnbentur steinsteypuveggur
+Járnbent steinsteypa
+<&recipe>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>

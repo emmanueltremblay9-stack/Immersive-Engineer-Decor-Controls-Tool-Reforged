@@ -1,0 +1,5 @@
+Podignuta čelična servisna staza
+Dio servisnog pristupa
+<&recipe>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>

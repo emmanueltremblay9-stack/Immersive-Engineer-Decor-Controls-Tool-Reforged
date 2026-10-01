@@ -1,0 +1,5 @@
+Sliseag seann leice fiodha
+Seann fhiodh bùth-obrach
+<&recipe>Cuiridh an Sliseag seann leice fiodha gnìomhachais seann fhiodh bùth-obrach ri làir, ceumannan, dorsan agus oir-sgeadachadh blàth a-staigh.<br>
+<br>
+Cleachdadh: cleachd e airson seann làir bùth-obrach, staidhrichean, dorsan agus oir-sgeadachadh.<br>

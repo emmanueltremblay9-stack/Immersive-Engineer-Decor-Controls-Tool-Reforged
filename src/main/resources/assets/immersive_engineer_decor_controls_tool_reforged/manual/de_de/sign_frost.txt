@@ -1,0 +1,5 @@
+Schild „Frostwarnung“
+Gefahrenmarkierung
+<&recipe>Das Schild „Frostwarnung“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>

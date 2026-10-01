@@ -1,0 +1,5 @@
+Lastra de clínker manchado
+Ladrillos ennegrecidos pola feluxe
+<&recipe>A lastra de ladrillos de clínker manchados achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>

@@ -1,0 +1,7 @@
+Prigušivač
+Promenljiv signal
+<&recipe>Obrtna komanda podešava redstoun snagu sa kompaktne prednje strane panela.<br>
+<br>
+Upotreba: desnim klikom postepeno povećavaj izlaz; posle najveće snage vraća se na nulu.<br>
+<br>
+Napomene: daje snagu od 0 do 15.

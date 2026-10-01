@@ -1,0 +1,5 @@
+Tehdaspudottaja
+Työpajan apulaite
+<&recipe>Tämä kuutio vapauttaa varastoidut esineet suunnatulta etupinnaltaan.<br>
+<br>
+Käyttö: Suuntaa etupuoli vapautuskohtaan, täytä sisäiset paikat ja säädä voima, kulma, viive, suodatinlogiikka ja redstone-tila käyttöliittymästä.<br>

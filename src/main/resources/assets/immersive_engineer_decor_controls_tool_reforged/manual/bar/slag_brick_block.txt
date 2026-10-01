@@ -1,0 +1,5 @@
+Schlacknzieglblock
+Dichts Fabrikmauerwerk
+<&recipe>Der Block ergänzt dichts graubrauns Mauerwerk fia Fundamente, Stützmauern und ältere Werkhüttn.<br>
+<br>
+So geht's: Nutz'n fia oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>

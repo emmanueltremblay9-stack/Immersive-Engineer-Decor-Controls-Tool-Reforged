@@ -1,0 +1,5 @@
+Rompedor de bloques
+Equipamientu de suelu de taller
+<&recipe>El rompedor de bloques pequeñu ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: orienta la cara de trabayu escontra’l bloque que quieras quitar.<br>

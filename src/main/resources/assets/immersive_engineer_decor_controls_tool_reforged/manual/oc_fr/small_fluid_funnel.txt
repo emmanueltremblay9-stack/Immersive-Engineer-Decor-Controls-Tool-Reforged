@@ -1,0 +1,5 @@
+Embut de fluids
+Equipament de conducha de fluids
+<&recipe>Lo Pichon embut de recampatge de fluids es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : pausa-lo jos lo ponch de recampatge de fluids e mena son contengut servat cap a de cuvas o de conduchas mai bassas.<br>

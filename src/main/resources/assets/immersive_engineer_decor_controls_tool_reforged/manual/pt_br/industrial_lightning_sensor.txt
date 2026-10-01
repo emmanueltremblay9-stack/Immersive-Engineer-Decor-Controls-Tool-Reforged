@@ -1,0 +1,7 @@
+Detector de tempestades
+Detecção de sinais
+<&recipe>Um sensor de tempestades aciona avisos durante tempestades elétricas.<br>
+<br>
+Uso: Coloque a céu aberto e conecte a lâmpadas ou alarmes.<br>
+<br>
+Observações: Requer tempestade elétrica e exposição ao céu.

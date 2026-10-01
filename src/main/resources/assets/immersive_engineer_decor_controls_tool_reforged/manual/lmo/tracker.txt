@@ -1,0 +1,7 @@
+Localizador
+Segna-posizzion conservad
+<&recipe>El localizador el salva la posizzion d'un bloch direttament in l'oggett.<br>
+<br>
+Dopra: Fà clic su un bloch per salvà dimension e coordenade. El tooltip el mostra la posizzion salvada. Dopra el localizador mentre te seet piegaa per scancelà la destinazzion.<br>
+<br>
+Dovrel per segnà machine, ram de galeria, comands a distanza o cantier ancamò minga finid, prima de tornà cont arnea e materiai.

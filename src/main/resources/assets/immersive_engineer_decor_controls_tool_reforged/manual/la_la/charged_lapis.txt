@@ -1,0 +1,7 @@
+Lapis lazuli oneratus
+Experientia servata
+<&recipe>Lapis lazuli oneratus unum gradum experientiae prelo mentis creatum servat.<br>
+<br>
+Usus: consume ut unum gradum recipias, effectus activos tollas et paulum salutis restituas.<br>
+<br>
+Fenestella formulae prelum mentis ostendit, quia lapis lazuli oneratus illo instrumento efficitur dum lapis lazuli et experientia adsunt.

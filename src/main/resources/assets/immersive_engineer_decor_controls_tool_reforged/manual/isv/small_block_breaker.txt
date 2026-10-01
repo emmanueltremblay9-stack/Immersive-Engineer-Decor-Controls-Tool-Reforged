@@ -1,0 +1,5 @@
+Lomjač blokov
+Pribor fabričnoj haly
+<&recipe>Maly lomjač blokov jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Usměri rabotnu stranu k bloku, ktory hočeš odstraniti.<br>

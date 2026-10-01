@@ -1,0 +1,5 @@
+Barile per fluidi
+Componenti per linee di fluidi
+<&recipe>Questo raccordo è un elemento compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: posalo dove tubi o secchi possono raggiungere la faccia del serbatoio.<br>

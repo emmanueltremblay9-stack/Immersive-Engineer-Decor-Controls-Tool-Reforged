@@ -1,0 +1,7 @@
+Plonjoaerokapsulo
+Urja aerrezervo
+<&recipe>La submarsala aero-kapsulo esas urjanta rezervo di aero por laboro sub aquo.<br>
+<br>
+Uzo: Uzez ol manuale por restaurar aero. Kande ol esas en la inventario, ol povas anke aktivesar automatee kande aero preske mankas, pose eniras refrij-periodo.<br>
+<br>
+Portez ol por inundita mineyi, subaquala tubvoyi e repari en pumpchambri.

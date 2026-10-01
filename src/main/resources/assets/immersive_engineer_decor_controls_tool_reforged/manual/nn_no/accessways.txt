@@ -1,0 +1,127 @@
+Tilkomstvegar
+Gangvegar og støtter
+Stålstolpar, handsama trestolpar, rister, gangbruer, rekkverk, stigar, dører, vindauge og luker dannar kompakte vedlikehaldsvegar gjennom fabrikkbygga.<br>
+<br>
+Tilkomstdelar av stål krev stålplater. Lag eller plasser eit metallemningsbord, set inn ein hammar frå Immersive Engineering og hamre stålbarrar til plater. Platene blir til stolpar, gangbruer, vindauge, dører, rekkverk og annan ståldekor.<br>
+<br>
+Plasser delane der maskiner treng vedlikehaldstilkomst, heva gangvegar, servicesjakter eller tryggare kantar.
+<np>
+Tjukk stålstolpe
+Del til berande rammeverk
+<&thick_steel_pole>Den rette tjukke stålstolpen gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Topp for tjukk stolpe
+Del til berande rammeverk
+<&thick_steel_pole_head>Toppen eller foten for rette tjukke stålstolpar gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Tynn stålstolpe
+Del til berande rammeverk
+<&thin_steel_pole>Den rette tynne stålstolpen gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Topp for tynn stolpe
+Del til berande rammeverk
+<&thin_steel_pole_head>Toppen eller foten for rette tynne stålstolpar gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Stolpe av handsama tre
+Del til berande rammeverk
+<&treated_wood_pole>Den rette stolpen av handsama tre gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Topp for handsama stolpe
+Del til berande rammeverk
+<&treated_wood_pole_head>Toppen eller foten for rette stolpar av handsama tre gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Støtte for handsama stolpe
+Del til berande rammeverk
+<&treated_wood_pole_support>Støtta for rette stolpar av handsama tre gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Dobbel T-bjelke av stål
+Del til berande rammeverk
+<&steel_double_t_support>Denne blokka gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>
+<np>
+Stålgolvrist
+Del for vedlikehaldstilkomst
+<&steel_floor_grating>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Stålgangbru
+Del for vedlikehaldstilkomst
+<&steel_catwalk>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Stålgangbrutrapp
+Del for vedlikehaldstilkomst
+<&steel_catwalk_stairs>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Heva stålgangbru
+Del for vedlikehaldstilkomst
+<&steel_catwalk_ta>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Stålrekkverk
+Del for vedlikehaldstilkomst
+<&steel_railing>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Stålnettinggjerde
+Del for vedlikehaldstilkomst
+<&steel_mesh_fence>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Stålnettingport
+Del for vedlikehaldstilkomst
+<&steel_mesh_fence_gate>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Metallstige
+Del for vedlikehaldstilkomst
+<&metal_rung_ladder>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Forskyvde metalltrinn
+Del for vedlikehaldstilkomst
+<&metal_rung_steps>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>
+<np>
+Vindauge med stålramme
+Verna sikt
+<&steel_framed_window>Denne blokka held sikta open og høver samstundes til forsterka fabrikkonstruksjonar.<br>
+<br>
+Bruk: plasser henne i ei veggopning på éi blokk der spelarar skal sjå maskiner gjennom eit vern.<br>
+<np>
+Skyvedør av metall
+Industriell inngang
+<&metal_sliding_door>Denne blokka gjev ein solid inngang til servicerom, sjakter, tak og maskininnhegningar.<br>
+<br>
+Bruk: monter henne der bygget treng ei kontrollert vedlikehaldsopning.<br>
+<np>
+Jarnluke
+Industriell inngang
+<&iron_hatch>Denne blokka gjev ein solid inngang til servicerom, sjakter, tak og maskininnhegningar.<br>
+<br>
+Bruk: monter henne der bygget treng ei kontrollert vedlikehaldsopning.<br>

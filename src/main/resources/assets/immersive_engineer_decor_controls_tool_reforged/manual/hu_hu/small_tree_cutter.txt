@@ -1,0 +1,5 @@
+Fakivágó
+Műhelyi segédeszköz
+<&recipe>A kis fakivágó műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: irányítsd kifejlett fákra, és a kihulló tárgyakat külön gyűjtsd össze.<br>

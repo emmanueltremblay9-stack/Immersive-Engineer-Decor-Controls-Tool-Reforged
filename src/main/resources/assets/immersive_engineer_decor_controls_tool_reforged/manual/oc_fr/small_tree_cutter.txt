@@ -1,0 +1,5 @@
+Copaire d’arbres
+Equipament utilitari d’obrador
+<&recipe>Lo Pichon copaire d’arbres es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : orienta-lo cap a d’arbres adultes e recampa los objèctes tombats a despart.<br>

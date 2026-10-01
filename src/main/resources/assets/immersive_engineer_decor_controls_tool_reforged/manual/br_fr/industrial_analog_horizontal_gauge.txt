@@ -1,0 +1,7 @@
+Muzulier voltmetr
+Muzulier signal
+<&recipe>Ur muzulier bihan evit sal reoliñ a ziskouez nerzh Redstone dre ul lennadenn sklaer war banell.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'haller gwiriañ nerzh Redstone an amezegiezh gant ur sell.<br>
+<br>
+Notenn: Lenn a ra nerzh Redstone tost etre 0 ha 15.

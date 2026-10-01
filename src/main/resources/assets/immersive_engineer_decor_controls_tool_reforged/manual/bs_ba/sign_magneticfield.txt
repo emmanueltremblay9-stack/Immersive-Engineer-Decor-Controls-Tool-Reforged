@@ -1,0 +1,5 @@
+Znak magnetnog polja
+Oznaka opasnosti
+<&recipe>Znak „Oprez, jako magnetno polje” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>

@@ -1,0 +1,5 @@
+Panal grèine
+Goireas làir bùth-obrach
+<&recipe>Tha am Panal beag grèine na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: fàg an t-adhar fosgailte os a chionn agus ceangail uidheam nach iarr mòran cumhachd ris.<br>

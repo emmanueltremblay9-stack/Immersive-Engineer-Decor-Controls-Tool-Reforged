@@ -1,0 +1,5 @@
+Crematorium purgamentorum
+Unitas tractationis compacta
+<&recipe>Crematorium purgamentorum res inutiles delet, parvum spatium officinae occupans.<br>
+<br>
+Usus: solas res inutiles in ordinem eius insere.<br>

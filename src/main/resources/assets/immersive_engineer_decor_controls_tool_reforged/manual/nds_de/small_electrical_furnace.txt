@@ -1,0 +1,5 @@
+Elektroaven
+Lütte Verarbeitungseenheit
+<&recipe>De Elektroaven smölt lütte Mengden mit FE-Energie op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Föhr FE un gültig Smöltmaterial to.<br>

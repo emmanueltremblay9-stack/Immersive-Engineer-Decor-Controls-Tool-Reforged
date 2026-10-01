@@ -1,0 +1,7 @@
+Isyarat Bersela Kaca
+Denyutan bermasa
+<&recipe>Suis pemasa padat menyediakan denyutan redstone berjadual.<br>
+<br>
+Penggunaan: Gunakan apabila mekanisme kecil memerlukan kawalan berkala atau tertangguh.<br>
+<br>
+Nota: Menggunakan denyutan redstone berjadual.

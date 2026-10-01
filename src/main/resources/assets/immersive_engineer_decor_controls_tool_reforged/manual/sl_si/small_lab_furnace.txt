@@ -1,0 +1,5 @@
+Laboratorijska peč
+Kompaktna obdelovalna enota
+<&recipe>Laboratorijska peč opravlja kompaktna talilna dela na trdno gorivo in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: Za majhne serije taljenja uporabi trdno gorivo.<br>

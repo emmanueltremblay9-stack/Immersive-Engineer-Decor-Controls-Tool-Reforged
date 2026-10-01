@@ -1,0 +1,5 @@
+Pâlnie de fabrică
+Echipament util în hală
+<&recipe>Acest bloc deplasează stive de obiecte printr-o carcasă industrială mai compactă.<br>
+<br>
+Utilizare: Orientează-l spre linia de inventare, apoi setează raza, numărul de stive, temporizarea și modul redstone în ecranul său.<br>

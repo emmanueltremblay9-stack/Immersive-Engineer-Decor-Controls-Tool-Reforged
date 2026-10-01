@@ -1,0 +1,5 @@
+Malmknusehammer
+Verktøy for håndknusing
+<&recipe>Malmknuserhammeren er et manuelt verktøy for tidlig bearbeiding av jern og gull.<br>
+<br>
+Bruk den med råjern, rågull, jernmalm, dypbergjernmalm, gullmalm eller dypberggullmalm for å lage jern- eller gullstøv fra Immersive Engineering. Hammeren mister holdbarhet, returneres til ruten til den går i stykker, slites ved gruvedrift og kan slå mål tilbake.

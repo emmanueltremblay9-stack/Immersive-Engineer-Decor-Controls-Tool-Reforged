@@ -1,0 +1,107 @@
+Verkstadmaskiner
+Maskiner og inn- og utgangar i verkstaden
+Verkstadmaskiner gjev kompakt emning, gjenstandsflytting, smelting, avfallshandsaming, innsamling og nyttearbeid på éi blokk.<br>
+<br>
+Opne dei neste sidene for oppskrift, bilete, bakgrunn og praktiske bruksmerknader for kvar maskin.
+<np>
+Stålbord
+Verkstadmøbel
+<&steel_table>Denne blokka er eit praktisk verkstadmøbel for arbeidsrom og vedlikehaldshjørne.<br>
+<br>
+Bruk: set henne attmed benkar, kasser og kompakte maskiner.<br>
+<np>
+Bord av handsama tre
+Verkstadmøbel
+<&treated_wood_table>Denne blokka er eit praktisk verkstadmøbel for arbeidsrom og vedlikehaldshjørne.<br>
+<br>
+Bruk: set henne attmed benkar, kasser og kompakte maskiner.<br>
+<np>
+Krakk av handsama tre
+Verkstadmøbel
+<&treated_wood_stool>Denne blokka er eit praktisk verkstadmøbel for arbeidsrom og vedlikehaldshjørne.<br>
+<br>
+Bruk: set henne attmed benkar, kasser og kompakte maskiner.<br>
+<np>
+Metallemningsbord
+Arbeidsstasjon for plater
+<&metal_crafting_table>Metallemningsbordet er ein forsterka arbeidsstasjon med hammarplass, emningsrutenett på 3×3 og ein tydeleg utgangsplass.<br>
+<br>
+Bruk: nytt rutenettet til vanleg emning. For IE-plater set du ein ingeniørhammar på verktøyplassen og platematerialet i rutenettet før du tek resultatet. Ståldekor brukar stålplater til stolpar, gangbruer, vindauge, dører, rekkverk og andre ståldelar.<br>
+<np>
+Fabrikktrekt
+Hjelpemiddel på fabrikkgolvet
+<&factory_hopper>Denne blokka flyttar gjenstandsstablar gjennom ei kompakt industrikasse.<br>
+<br>
+Bruk: rett henne mot lagerlina og still rekkjevidde, stabelmengde, tid og redstone-modus på skjermen.<br>
+<np>
+Fabrikksleppar
+Hjelpemiddel på fabrikkgolvet
+<&factory_dropper>Denne blokka slepper ut lagra gjenstandar frå ei retta side.<br>
+<br>
+Bruk: rett fronten mot utsleppsstaden, fyll dei indre plassane og still kraft, vinkel, forseinking, filterlogikk og redstone-modus på skjermen.<br>
+<np>
+Fabrikkblokkplasserar
+Hjelpemiddel på fabrikkgolvet
+<&factory_placer>Denne blokka plasserer blokker frå det indre lageret sitt når ho blir aktivert.<br>
+<br>
+Bruk: rett arbeidssida mot målrommet og fyll på stablar som kan plasserast.<br>
+<np>
+Blokkbrytar
+Hjelpemiddel på fabrikkgolvet
+<&small_block_breaker>Den vesle blokkbrytaren er ei nytteblokk for fabrikkgolvet, innan emning, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: rett arbeidssida mot blokka som skal bort.<br>
+<np>
+Avfallsbrennomn
+Kompakt handsamingseining
+<&small_waste_incinerator>Avfallsbrennomnen øydelegg uønskte gjenstandar på liten verkstadplass.<br>
+<br>
+Bruk: legg berre uønskte gjenstandar i køen.<br>
+<np>
+Laboratorieomn
+Kompakt handsamingseining
+<&small_lab_furnace>Laboratorieomnen gjer kompakte smeltejobbar med fast brensel på liten verkstadplass.<br>
+<br>
+Bruk: nytt fast brensel til små smelteomgangar.<br>
+<np>
+Elektrisk omn
+Kompakt handsamingseining
+<&small_electrical_furnace>Den elektriske omnen gjer kompakte smeltejobbar med FE-straum på liten verkstadplass.<br>
+<br>
+Bruk: tilfør FE og gyldig smeltemateriale.<br>
+<np>
+Mineralsmelteomn
+Kompakt handsamingseining
+<&small_mineral_smelter>Mineralsmelteomnen handsamar mineral ved høg varme på liten verkstadplass.<br>
+<br>
+Bruk: tilfør mineralblokker og straum til smelting ved høg temperatur.<br>
+<np>
+Vassfrysar
+Kompakt handsamingseining
+<&small_freezer>Vassfrysaren gjer kompakt kjølearbeid for straumdrivne væskeanlegg.<br>
+<br>
+Bruk: tilfør vatn og straum for stegvis isproduksjon.<br>
+<np>
+Passiv væskeoppsamling
+Utstyr for væskeliner
+<&passive_fluid_accumulator>Den passive væskesamlaren er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: plasser han mot høvelege vasskjelder og lat det vere plass til væskeuttak.<br>
+<np>
+Solcellepanel
+Hjelpemiddel på fabrikkgolvet
+<&small_solar_panel>Det vesle solcellepanelet er ei nytteblokk for fabrikkgolvet, innan emning, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: gje det open himmel og kople til utstyr med lite forbruk.<br>
+<np>
+Mjølkemaskin
+Hjelpemiddel på fabrikkgolvet
+<&small_milking_machine>Den vesle mjølkemaskina er ei nytteblokk for fabrikkgolvet, innan emning, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: plasser henne nær kyr og sørg for uttak av mjølkebehaldarar eller væske.<br>
+<np>
+Trehoggar
+Hjelpemiddel på fabrikkgolvet
+<&small_tree_cutter>Den vesle trehoggaren er ei nytteblokk for fabrikkgolvet, innan emning, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: rett han mot fullvaksne tre og saml opp utbytet for seg.<br>

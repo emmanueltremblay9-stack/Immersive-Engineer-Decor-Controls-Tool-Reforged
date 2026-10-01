@@ -1,0 +1,7 @@
+Marrës lidhjeje çelësash
+Kontroll i lidhur
+<&recipe>Një marrës i lidhur u jep paneleve të largëta një objektiv redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Kliko djathtas drejtpërdrejt marrësin për ta ndezur ose fikur me dorë.<br>
+<br>
+Shënim: perla e lidhur e ndez ose fik këtë marrës kur përdoret duke u përkulur.

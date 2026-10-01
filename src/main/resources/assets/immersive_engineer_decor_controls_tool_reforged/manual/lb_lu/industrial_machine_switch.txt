@@ -1,0 +1,7 @@
+Maschinneschalter mat zwee Knäppercher
+Redstone-Steierung
+<&recipe>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.

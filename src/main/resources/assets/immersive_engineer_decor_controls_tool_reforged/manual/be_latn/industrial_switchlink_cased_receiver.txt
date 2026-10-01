@@ -1,0 +1,7 @@
+Pryjomnik suviazi ŭ korpusie
+Kiravannie praz suviaź
+<&recipe>Zviazany pryjomnik u korpusie daje addalenym panelam tryvałuju redstonavuju cel.<br>
+<br>
+Vykarystannie: pstrykni pa im ender-žamčužynaj, kab stvaryć zviazanuju žamčužynu. Pstrykni pravaj knopkaj niepasredna pa pryjomniku, kab pieraklučyć jaho ŭručnuju.<br>
+<br>
+Zaŭvahi: zviazanaja žamčužyna pieraklučaje hety pryjomnik, kali vykarystoŭvać jaje kradučysia.

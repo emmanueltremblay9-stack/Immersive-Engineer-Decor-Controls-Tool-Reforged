@@ -1,0 +1,5 @@
+Solar Panel
+Convenience for the Workshop Floor
+<&recipe>The Little Solar Panel is a workshop convenience for crafts, storage, placement, breaking, gathering or compact automatic works.<br>
+<br>
+Use: Grant it open sky and connect equipment of modest demand.<br>

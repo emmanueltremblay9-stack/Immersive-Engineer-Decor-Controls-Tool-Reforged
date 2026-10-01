@@ -1,0 +1,5 @@
+Strato di calcestruzzo armato
+Calcestruzzo rinforzato
+<&recipe>Questo blocco è un elemento di calcestruzzo rinforzato per basi di macchinari, pareti antiesplosione e pavimenti di baie di carico.<br>
+<br>
+Uso: posalo sotto i macchinari, lungo i corridoi di servizio o dove serve una base rinforzata.<br>

@@ -1,0 +1,7 @@
+Kasalı Darbe Alıcısı
+Bağlantılı kontrol
+<&recipe>Kasalı bağlantılı darbe alıcısı, uzak panellere kısa bir redstone tetiklemesi sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Kısa darbe vermek için alıcıya sağ tıklayın veya bağlı inciyi tetikleyin.<br>
+<br>
+Notlar: Darbe, zamanlanmış süresi dolduğunda kendini sıfırlar.

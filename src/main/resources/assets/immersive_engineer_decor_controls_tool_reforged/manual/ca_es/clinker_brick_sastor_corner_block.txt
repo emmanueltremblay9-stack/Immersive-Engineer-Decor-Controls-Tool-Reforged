@@ -1,0 +1,5 @@
+Maons de clínquer ornamentats
+Maçoneria enfosquida pel sutge
+<&recipe>Els maons de clínquer ornamentats amb gres aporten maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>

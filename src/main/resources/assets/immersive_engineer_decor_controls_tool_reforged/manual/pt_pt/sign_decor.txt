@@ -1,0 +1,5 @@
+Tabuleta decorativa
+Sinalização de perigo
+<&recipe>A tabuleta de sinalização de Engineer's Decor identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>

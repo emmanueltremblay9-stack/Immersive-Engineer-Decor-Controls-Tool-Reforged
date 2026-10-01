@@ -1,0 +1,7 @@
+Pultsu-loturaren hargailua
+Lotutako agintea
+<&recipe>Lotutako pultsu-hargailuak redstone-abiarazle laburra eskaintzen die urruneko panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Egin eskuineko klik hargailuan edo aktibatu lotutako perla pultsu laburra igortzeko.<br>
+<br>
+Oharrak: pultsua berez berrezartzen da programatutako iraupena amaitzean.

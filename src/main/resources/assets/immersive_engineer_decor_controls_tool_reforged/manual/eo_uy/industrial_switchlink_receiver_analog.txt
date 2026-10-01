@@ -1,0 +1,7 @@
+Analoga liga ricevilo
+Ligita regado
+<&recipe>Ligita ricevilo donas videblan foran celon al regpaneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Uzu tiun perlon kaŭrante por fore aktivigi la ricevilon.<br>
+<br>
+Notoj: ĉi tiu ricevilo eligas plenfortan redstone’an signalon kiam ekigita.

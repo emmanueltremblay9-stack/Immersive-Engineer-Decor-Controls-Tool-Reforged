@@ -1,0 +1,7 @@
+Gele led
+Signaalweergave
+<&recipe>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.

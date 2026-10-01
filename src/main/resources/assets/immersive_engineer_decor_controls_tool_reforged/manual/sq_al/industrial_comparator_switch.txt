@@ -1,0 +1,7 @@
+Çelës krahasues
+Sinjal i lidhur
+<&recipe>Një çelës kompakt me sensor lexon bllokun ku është montuar dhe e kthen leximin në dalje të thjeshtë paneli.<br>
+<br>
+Përdorimi: montoje në inventarë, depozita ose pajisje redstoni. Kur blloku i lidhur jep dalje krahasuesi, ene ose redstoni, çelësi jep redston me fuqi të plotë.<br>
+<br>
+Shënim: përdore për të kthyer nivelet e ruajtjes ose telat e fshehur në linja të qarta ndezjeje/fikjeje.

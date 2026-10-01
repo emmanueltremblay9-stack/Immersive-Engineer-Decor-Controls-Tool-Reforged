@@ -1,0 +1,7 @@
+Òrd pronnaidh mèinne
+Inneal pronnaidh làimhe
+<&recipe>’S e inneal-làimhe a th’ ann an t-òrd pronnadh mèinn airson iarann is òr a làimhseachadh tràth.<br>
+<br>
+Cleachdadh: Dèan ceàird leis bho iarann amh, òr amh, mèinn iarainn, mèinn iarainn domhainsglèata, mèinn òir no mèinn òir domhainsglèata gus duslach iarainn no òir Immersive Engineering a dhèanamh. Caillidh an t-òrd seasmhachd agus tillidh e dhan ghriod gus am bris e.<br>
+<br>
+Caithidh mèinneadh e cuideachd, agus putaidh e targaidean air ais ann an sabaid dlùth.

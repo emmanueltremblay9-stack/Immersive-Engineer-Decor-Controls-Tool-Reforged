@@ -1,0 +1,5 @@
+Vökvatunna
+Vökvalagnabúnaður
+<&recipe>Þessi búnaður er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Settu hann þar sem rör eða fötur ná að hlið geymisins.<br>

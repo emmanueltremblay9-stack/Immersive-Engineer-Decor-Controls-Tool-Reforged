@@ -1,0 +1,7 @@
+Przekaźnik połączenia przełączników
+Powiązany element sterujący
+<&recipe>Element o wyglądzie przekaźnika zapewnia mały lokalny punkt przełączania w panelu.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać wyjście o pełnej sile dla pobliskich obwodów. Do wyzwalania powiązanymi perłami używaj bloków odbiorników.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.

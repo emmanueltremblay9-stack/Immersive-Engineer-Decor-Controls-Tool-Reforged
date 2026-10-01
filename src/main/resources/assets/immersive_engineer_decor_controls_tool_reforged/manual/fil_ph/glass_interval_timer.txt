@@ -1,0 +1,7 @@
+Salaming Signal na May Agwat
+Nakatakdang pulso
+<&recipe>Nagbibigay ang maliit na swits na orasan ng nakatakdang pulso ng redstone.<br>
+<br>
+Paggamit: Gamitin kung kailangan ng maliit na mekanismo ng pana-panahon o naantalang kontrol.<br>
+<br>
+Tandaan: Gumagamit ng mga nakatakdang pulso ng redstone.

@@ -1,0 +1,7 @@
+Bwrdd crefftio metel
+Gorsaf platiau
+<&recipe>Gorsaf atgyfnerthiedig gyda slot morthwyl, grid 3x3 llawn ac allbwn.<br>
+<br>
+Defnydd: Fel bwrdd arferol. Ar gyfer platiau IE, rhowch Forthwyl y peiriannydd yn y slot a'r deunydd yn y grid; cymerwch y plât o'r allbwn.<br>
+<br>
+Mae addurniadau ffrâm ddur yn defnyddio platiau dur a ffurfiwyd yma.

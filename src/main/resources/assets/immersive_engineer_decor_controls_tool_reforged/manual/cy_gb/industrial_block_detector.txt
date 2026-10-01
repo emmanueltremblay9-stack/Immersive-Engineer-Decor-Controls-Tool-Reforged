@@ -1,0 +1,7 @@
+Synhwyrydd Blociau
+Synhwyro signal
+<&recipe>Mae synhwyrydd blociau'n gwirio a oes rhywbeth yn y gofod o'i flaen.<br>
+<br>
+Defnydd: Anelwch ef at wyneb y peiriant, y glustog neu'r gofod gwarchodedig i'w wylio.<br>
+<br>
+Nodiadau: Mae'n rhoi pŵer pan nad aer yw'r bloc o'i flaen.

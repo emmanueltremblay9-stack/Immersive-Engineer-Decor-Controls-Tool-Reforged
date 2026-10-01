@@ -1,0 +1,7 @@
+Derbynnydd Cyswllt Switsh
+Rheolaeth gysylltiedig
+<&recipe>Mae derbynnydd cysylltiedig yn rhoi targed Redstone cryfder llawn i baneli o bell.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Cliciwch y derbynnydd yn uniongyrchol â'r botwm de i'w newid â llaw.<br>
+<br>
+Nodiadau: Mae perl gysylltiedig yn troi'r derbynnydd hwn ymlaen neu i ffwrdd pan ddefnyddir hi wrth sleifio.

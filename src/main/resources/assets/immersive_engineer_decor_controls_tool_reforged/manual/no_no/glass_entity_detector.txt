@@ -1,0 +1,7 @@
+Glassentitetsdetektor
+Signalføling
+<&recipe>En entitetsdetektor overvåker bevegelse i nærheten uten en synlig gulvplate.<br>
+<br>
+Bruk: koble den til dører, lamper, alarmer eller maskinforriglinger.<br>
+<br>
+Merknad: skanner et lite område rundt blokken.

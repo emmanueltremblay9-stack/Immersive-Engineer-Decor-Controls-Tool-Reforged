@@ -1,0 +1,5 @@
+Platform iz armovanogo betona
+Ojačeny beton
+<&recipe>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>

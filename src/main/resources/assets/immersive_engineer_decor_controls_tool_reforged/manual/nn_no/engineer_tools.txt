@@ -1,0 +1,93 @@
+Ingeniørverktøy
+Berbart verkstadutstyr
+Ingeniørverktøya legg handhalde utstyr, gruvemerke, naudforbruksvarer, turmat og små hjelpemiddel for materialhandsaming til same handboka som dekor- og beteningsblokkene.<br>
+<br>
+Verktøya er laga for arbeid utanfor ein fullt utstyrt verkstad: merk ruta, ta med forsyningar, kom deg etter feil og gjer små handsamingsjobbar på staden.
+<np>
+REDIA-verktøy
+Allsidig verktøy med diamantdekke
+<&redia_tool>REDIA-verktøyet er eit haldbart feltverktøy for raskt jordarbeid. Bruk det på høveleg jord for å lage åker.<br>
+<br>
+Bruk det på ei stødig flate medan du har faklar med deg, for å plassere ein fakkel frå inventaret utan å slite på REDIA. Jordarbeid, klipping, øksearbeid og trefelling kostar haldbarheit.
+<np>
+Malmknusehammer
+Verktøy for håndknusing
+<&crushing_hammer>Malmknuserhammeren er et manuelt verktøy for tidlig bearbeiding av jern og gull.<br>
+<br>
+Bruk den med råjern, rågull, jernmalm, dypbergjernmalm, gullmalm eller dypberggullmalm for å lage jern- eller gullstøv fra Immersive Engineering. Hammeren mister holdbarhet, returneres til ruten til den går i stykker, slites ved gruvedrift og kan slå mål tilbake.
+<np>
+Sporingsenhet
+Lagret posisjonsmerke
+<&tracker>Sporeren lagrer en blokkposisjon direkte i gjenstanden.<br>
+<br>
+Klikk en blokk for å lagre dimensjon og koordinater. Verktøytipset viser posisjonen. Snikbruk sporeren for å slette målet.<br>
+<br>
+Bruk den til å merke maskiner, tunneler, fjernkontroller eller uferdige bygg.
+<np>
+Ariadne-kol
+Rutemerking i gruver
+<&ariadne_coal>Ariadne-kol set raskt svarte rutepiler på stødige gruveflater. Bruk kolet på ei solid flate for å merkje neste sving, utgang eller vegskilje. Merket støttar åtte retningar på den klikka flata, òg diagonalt.<br>
+<br>
+Ariadne-kol er eit gjenbrukbart merkeverktøy med 100 bruk. Kvart vellukka merke kostar eitt haldbarheitspoeng. Ueigna flater blir avviste i staden for å slite på verktøyet.
+<np>
+Automatisk stimpakke
+Nødinjektor
+<&stimpack>Den automatiske stim-pakken er et nødverktøy for farlig vedlikehold.<br>
+<br>
+Bruk den manuelt for å helbrede, få kort beskyttelse og en kort fartsøkning. I beholdningen utløses den automatisk ved lav helse og går deretter på nedkjøling. Ha én klar på farlige steder.
+<np>
+Sovepose
+Bærbart hvileutstyr
+<&sleeping_bag>Soveposen er et værbestandig hvilesett for feltarbeid langt fra en seng.<br>
+<br>
+Bruk den om natten i Overworld for å hvile til morgen uten å sette eller flytte startpunktet.<br>
+<br>
+Den nekter bruk på dagtid, ved monstre i nærheten og i uegnede dimensjoner. Hver vellykkede hvile sliter på posen.
+<np>
+Materialkasse
+Kasse for byggematerialer
+<&material_box>Materialkassen bærer en stor reserve av ett vanlig, uendret og stabelbart byggemateriale.<br>
+<br>
+Hold kassen i hovedhånden og materialet i den andre hånden for å fylle den; bruk den med tom andre hånd for å ta ut én stabel.<br>
+<br>
+Den rommer 512 gjenstander, én materialtype om gangen, avviser andre kasser, ustabelbart utstyr og endrede stabler, og viser innholdet i verktøytipset.
+<np>
+Dykkeluftkapsel
+Nødluftreserve
+<&diving_capsule>Dykkerluftkapselen er en nødreserve for arbeid under vann.<br>
+<br>
+Bruk den manuelt for å fylle luft. I beholdningen utløses den også automatisk når luften nesten er tom og går deretter på nedkjøling. Ta den med til oversvømte gruver, rør og pumperom.
+<np>
+Muslee-presse
+Matpresse
+<&musli_bar_press>Muslee-pressen gjør vanlige matvarer til kompakte feltrasjoner.<br>
+<br>
+Ha brød, et eple og hvete-, melon-, gresskar-, rødbete- eller industrihampfrø, og bruk pressen. Den bruker én av hver ingrediens, kontrollerer plassen, lager fire barer og skader pressen.<br>
+<br>
+Mangler noe eller finnes det ikke plass, brukes ingenting.
+<np>
+Muslee Melange-energibar
+Rask verkstedmat
+<&musli_bar>Muslee Melange-energibaren er kompakt mat laget av brød, frø og frukt.<br>
+<br>
+Spis den som feltmat når du bygger kontroller, rør, plattformer eller lange maskinrom.
+<np>
+Tankepresse
+Røynslekondensator
+<&charged_lapis_squeezer>Tankepressa gjer éin lasurstein og eitt røynslesteg frå inventaret ditt om til ladd lasurstein.<br>
+<br>
+Kvar vellukka omforming skadar og utmattar brukaren og gjer brukaren blind ei kort stund. Pressa verkar ikkje utan lasurstein eller røynsle, eller når brukaren er for nær døden.
+<np>
+Ladd lasurstein
+Lagra røynsle
+<&charged_lapis>Ladd lasurstein lagrar eitt røynslesteg. Bruk steinen for å få steget tilbake, fjerne aktive effektar og lækje litt helse.<br>
+<br>
+Lag ei tankepresse fyrst. Du lagar ladd lasurstein ved å bruke verktøyet medan du har lasurstein og røynsle tilgjengeleg.
+<np>
+Grovt jarngrus
+Materiale for ingeniørverktøy i det rekonstruerte oppskriftssettet.
+<&iron_grit>Kan smeltast til<br>jarnbarrar, men høver ikkje<br>til avansert materialhandsaming.
+<np>
+Grovt gullgrus
+Materiale for ingeniørverktøy i det rekonstruerte oppskriftssettet.
+<&gold_grit>Kan smeltast til<br>gullbarrar, men høver ikkje<br>til avansert materialhandsaming.

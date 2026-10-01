@@ -1,0 +1,3 @@
+Grean Garbh Óir
+Ábhar uirlisí innealtóra a úsáidtear sa tacar ceardaíochta athchruthaithe.
+<&recipe>Is féidir é a bhruithniú ina<br>thinní óir, ach níl sé<br>oiriúnach d'ardphróiseáil ábhar.

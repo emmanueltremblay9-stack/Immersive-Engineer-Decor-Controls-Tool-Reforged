@@ -1,0 +1,5 @@
+Fluida funelo
+Fluidliniaj ekipaĵoj
+<&recipe>La malgranda fluida funelo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: metu ĝin sub la fluidkolektopunkton kaj direktu ĝian stokitan enhavon al tankoj aŭ tuboj pli malsupre.<br>

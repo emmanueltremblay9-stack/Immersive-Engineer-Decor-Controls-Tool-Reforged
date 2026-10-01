@@ -1,0 +1,7 @@
+Dimmer
+Variabel signal
+<&recipe>Ett vridreglage ställer in redstonestyrkan på en kompakt panelfront.<br>
+<br>
+Användning: Högerklicka för att öka utgången stegvis. Efter full styrka återgår den till noll.<br>
+<br>
+Anmärkning: Ger en styrka mellan 0 och 15.

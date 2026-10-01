@@ -1,0 +1,5 @@
+Verschmutzte Klinkerstufe
+Rußdunkles Ziegelmauerwerk
+<&recipe>Die verschmutzte Klinkerziegelstufe verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>

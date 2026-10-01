@@ -1,0 +1,5 @@
+Manufactory Block Setter
+Convenience for the Workshop Floor
+<&recipe>When set off, this block places blocks from its inward stock.<br>
+<br>
+Use: Aim its working face at the target space and fill it with stacks that can be placed.<br>

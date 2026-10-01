@@ -1,0 +1,5 @@
+Barreta energètica Muslee Melange
+Snack ràpid de taller
+<&recipe>Aliment compacte fet amb pa, llavors i fruita.<br>
+<br>
+Ús: Menja'l com a aliment de camp mentre col·loques controls, canonades, plataformes o línies llargues de màquines.

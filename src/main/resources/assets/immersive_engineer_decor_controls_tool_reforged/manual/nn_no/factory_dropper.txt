@@ -1,0 +1,5 @@
+Fabrikksleppar
+Hjelpemiddel på fabrikkgolvet
+<&recipe>Denne blokka slepper ut lagra gjenstandar frå ei retta side.<br>
+<br>
+Bruk: rett fronten mot utsleppsstaden, fyll dei indre plassane og still kraft, vinkel, forseinking, filterlogikk og redstone-modus på skjermen.<br>

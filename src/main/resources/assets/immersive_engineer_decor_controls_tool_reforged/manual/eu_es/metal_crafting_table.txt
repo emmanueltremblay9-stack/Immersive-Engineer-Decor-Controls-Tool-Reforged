@@ -1,0 +1,7 @@
+Metal-fabrikazio mahaia
+Plaka-estazioa
+<&recipe>Mailu zirrikitua, 3x3 sareta osoa eta irteera dituen estazio sendotua.<br>
+<br>
+Erabilera: Mahai arrunt gisa. IE plaketarako, jarri Ingeniariaren mailua zirrikituan eta materiala saretan; hartu plaka irteeratik.<br>
+<br>
+Altzairuzko markodun apaingarriek hemen eratutako altzairuzko plakak erabiltzen dituzte.

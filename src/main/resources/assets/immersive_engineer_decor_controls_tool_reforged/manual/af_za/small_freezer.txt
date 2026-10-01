@@ -1,0 +1,5 @@
+Watervrieser
+Kompakte verwerkingseenheid
+<&recipe>Die Watervrieser verrig kompakte verkoelingswerk vir elektries aangedrewe vloeistofopstellings.<br>
+<br>
+Gebruik: verskaf water en krag vir ysproduksie in fases.<br>

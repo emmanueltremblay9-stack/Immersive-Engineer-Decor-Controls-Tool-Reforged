@@ -1,0 +1,5 @@
+Largueur d'usine
+Équipement d'atelier
+<&recipe>Ce bloc éjecte les objets stockés depuis une face orientable.<br>
+<br>
+Utilisation : visez le point de largage avec sa face avant, remplissez ses emplacements internes et réglez la force, l'angle, le délai, la logique des filtres et le mode redstone dans son interface.<br>

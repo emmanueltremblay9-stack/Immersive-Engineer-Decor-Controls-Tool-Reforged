@@ -1,0 +1,7 @@
+Materiallagerkiste
+Bauvorratskiste
+<&recipe>Die Materiallagerkiste enthält einen großen Vorrat genau eines einfachen, unveränderten und stapelbaren Baumaterials.<br>
+<br>
+Benutzung: Kiste in der Haupthand und Materialstapel in der Nebenhand halten, um zu laden. Mit leerer Nebenhand einen Stapel entnehmen.<br>
+<br>
+Die Kiste hält bis zu 512 Gegenstände, nur eine Materialsorte zugleich, und lehnt verschachtelte Kisten, nicht stapelbare Ausrüstung sowie veränderte, benannte oder datentragende Stapel ab; der Tooltip zeigt den Inhalt.

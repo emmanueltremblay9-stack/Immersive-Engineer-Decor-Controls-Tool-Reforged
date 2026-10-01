@@ -1,0 +1,5 @@
+Blockbrytare
+Hjälpmedel för verkstadsgolvet
+<&recipe>Den lilla blockbrytaren är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Rikta arbetsytan mot blocket som ska tas bort.<br>

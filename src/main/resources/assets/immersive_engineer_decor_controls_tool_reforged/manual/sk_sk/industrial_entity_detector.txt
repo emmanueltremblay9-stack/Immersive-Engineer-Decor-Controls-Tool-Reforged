@@ -1,0 +1,7 @@
+Detektor entít
+Snímanie signálu
+<&recipe>Detektor entít sleduje blízky pohyb bez viditeľnej podlahovej dosky.<br>
+<br>
+Použitie: Pripoj ho k dverám, lampám, poplachom alebo bezpečnostnému blokovaniu strojov.<br>
+<br>
+Poznámky: Sníma malú oblasť okolo bloku.

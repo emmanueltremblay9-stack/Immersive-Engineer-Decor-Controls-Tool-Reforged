@@ -1,0 +1,7 @@
+Peredup
+Sinyal variabel
+<&recipe>Kendali putar mengatur kekuatan redstone melalui bagian depan panel ringkas.<br>
+<br>
+Penggunaan: klik kanan untuk menaikkan keluaran secara bertahap, lalu kembali ke nol setelah kekuatan penuh.<br>
+<br>
+Catatan: mengeluarkan kekuatan dari 0 hingga 15.

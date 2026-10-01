@@ -1,0 +1,5 @@
+Peletak Blok Kilang
+Kegunaan lantai bengkel
+<&recipe>Blok ini meletakkan blok daripada stok dalaman apabila diaktifkan.<br>
+<br>
+Penggunaan: Halakan muka kerja ke ruang sasaran dan isi tindanan yang boleh diletakkan.<br>

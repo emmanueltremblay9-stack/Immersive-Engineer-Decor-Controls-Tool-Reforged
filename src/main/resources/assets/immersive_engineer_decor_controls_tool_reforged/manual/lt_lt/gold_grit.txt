@@ -1,0 +1,3 @@
+Stambūs aukso trupiniai
+Inžinieriaus įrankių medžiaga, naudojama atkurtame gaminimo rinkinyje.
+<&recipe>Galima išlydyti į aukso<br>liejinius, tačiau netinka<br>sudėtingesniam medžiagų apdorojimui.

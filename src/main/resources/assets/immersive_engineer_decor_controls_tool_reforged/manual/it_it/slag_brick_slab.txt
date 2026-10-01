@@ -1,0 +1,5 @@
+Lastra di mattoni di scoria
+Muratura industriale compatta
+<&recipe>Questo blocco aggiunge muratura compatta grigio-marrone a fondamenta, muri di contenimento e vecchi capannoni.<br>
+<br>
+Uso: usalo per vecchie fondamenta, muri di contenimento e pavimenti industriali sporchi.<br>

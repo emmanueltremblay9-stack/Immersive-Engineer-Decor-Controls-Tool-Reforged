@@ -1,0 +1,789 @@
+Kawalan Redstone
+Tolok dan kelengkapan isyarat
+Perkakasan kawalan menukar redstone tersembunyi kepada panel kilang yang jelas, sensor, penunjuk, suis, penggera dan kelengkapan isyarat berpaut.<br>
+<br>
+Gunakan halaman ini semasa membina stesen operator, papan isyarat, litar keselamatan dan kawalan jauh.
+<np>
+Sasaran Anak Panah
+Denyutan seketika
+<&arrow_target>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Sensor pintu
+Kawalan Redstone
+<&door_sensor_switch>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Lif
+Kawalan Redstone
+<&elevator_button>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Butang Kaca
+Kawalan Redstone
+<&glass_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Kaca
+Kawalan Redstone
+<&glass_small_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Sentuh Kaca
+Kawalan Redstone
+<&glass_touch_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Mesin
+Kawalan Redstone
+<&industrial_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang
+Kawalan Redstone
+<&industrial_double_pole_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Mesin Berpengadang
+Kawalan Redstone
+<&industrial_fenced_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Ketukan
+Kawalan Redstone
+<&industrial_knock_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Lama Berhias
+Kawalan Redstone
+<&oldfancy_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Lama Berhias
+Kawalan Redstone
+<&oldfancy_small_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Rantai Lama Berhias
+Denyutan seketika
+<&oldfancy_spring_reset_chain>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Desa
+Kawalan Redstone
+<&rustic_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Paku Desa
+Kawalan Redstone
+<&rustic_nail_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Kecil Desa
+Kawalan Redstone
+<&rustic_small_button>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Butang Rantai Desa
+Denyutan seketika
+<&rustic_spring_reset_chain>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.
+<np>
+Plat Sentuh Kaca
+Denyutan tekanan
+<&glass_contact_mat>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Sentuhan Pintu Kaca
+Denyutan tekanan
+<&glass_door_contact_mat>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Tikar Sentuh
+Denyutan tekanan
+<&industrial_contact_mat>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Tikar Sentuh Pintu
+Denyutan tekanan
+<&industrial_door_contact_mat>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Pengesan Jatuhan
+Penderiaan isyarat
+<&industrial_fallthrough_detector>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Butang Kaki
+Kawalan Redstone
+<&industrial_foot_button>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Pintu Kolong Hentakan Industri
+Denyutan tekanan
+<&industrial_high_sensitive_trapdoor>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Tikar Sentuh Hentakan
+Denyutan tekanan
+<&industrial_shock_sensitive_contact_mat>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Pintu Kolong Hentakan
+Denyutan tekanan
+<&industrial_shock_sensitive_trapdoor>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Bunga kuasa merah
+Denyutan tekanan
+<&red_power_plant>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Plat Tekanan Desa
+Denyutan tekanan
+<&rustic_contact_plate>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Tekanan Pintu Desa
+Denyutan tekanan
+<&rustic_door_contact_plate>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Pengesan Jatuhan Desa
+Penderiaan isyarat
+<&rustic_fallthrough_detector>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Pintu Kolong Hentakan Desa
+Denyutan tekanan
+<&rustic_high_sensitive_trapdoor>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Plat Hentakan Desa
+Denyutan tekanan
+<&rustic_shock_sensitive_plate>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Pintu Kolong Hentakan Desa
+Denyutan tekanan
+<&rustic_shock_sensitive_trapdoor>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Bunga kuasa kuning
+Denyutan tekanan
+<&yellow_power_plant>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.
+<np>
+Jam Pemasa Siang Kaca
+Isyarat siang
+<&glass_day_timer>Suis pemasa mengikuti bahagian siang dalam kitaran dunia.<br>
+<br>
+Penggunaan: Gunakan untuk lampu halaman, pengatup dan kawalan kilang yang hanya berjalan pada siang hari.<br>
+<br>
+Nota: Memerlukan dimensi dengan cahaya langit.
+<np>
+Pengesan Entiti Kaca
+Penderiaan isyarat
+<&glass_entity_detector>Pengesan entiti memantau pergerakan berdekatan tanpa plat lantai yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan kepada pintu, lampu, penggera atau saling kunci mesin.<br>
+<br>
+Nota: Mengimbas kawasan kecil di sekitar blok.
+<np>
+Isyarat Bersela Kaca
+Denyutan bermasa
+<&glass_interval_timer>Suis pemasa padat menyediakan denyutan redstone berjadual.<br>
+<br>
+Penggunaan: Gunakan apabila mekanisme kecil memerlukan kawalan berkala atau tertangguh.<br>
+<br>
+Nota: Menggunakan denyutan redstone berjadual.
+<np>
+Pengesan Garisan Kaca
+Penderiaan isyarat
+<&glass_linear_entity_detector>Pengesan entiti memantau pergerakan berdekatan tanpa plat lantai yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan kepada pintu, lampu, penggera atau saling kunci mesin.<br>
+<br>
+Nota: Mengimbas kawasan kecil di sekitar blok.
+<np>
+Pengesan Blok
+Penderiaan isyarat
+<&industrial_block_detector>Pengesan blok memeriksa sama ada ruang di hadapannya berisi.<br>
+<br>
+Penggunaan: Halakan ke muka mesin, penimbal atau ruang terkawal yang hendak dipantau.<br>
+<br>
+Nota: Mengeluarkan kuasa apabila blok di hadapan bukan udara.
+<np>
+Jam Pemasa Siang
+Isyarat siang
+<&industrial_day_timer>Suis pemasa mengikuti bahagian siang dalam kitaran dunia.<br>
+<br>
+Penggunaan: Gunakan untuk lampu halaman, pengatup dan kawalan kilang yang hanya berjalan pada siang hari.<br>
+<br>
+Nota: Memerlukan dimensi dengan cahaya langit.
+<np>
+Pengesan Entiti
+Penderiaan isyarat
+<&industrial_entity_detector>Pengesan entiti memantau pergerakan berdekatan tanpa plat lantai yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan kepada pintu, lampu, penggera atau saling kunci mesin.<br>
+<br>
+Nota: Mengimbas kawasan kecil di sekitar blok.
+<np>
+Pemasa Bersela
+Denyutan bermasa
+<&industrial_interval_timer>Suis pemasa padat menyediakan denyutan redstone berjadual.<br>
+<br>
+Penggunaan: Gunakan apabila mekanisme kecil memerlukan kawalan berkala atau tertangguh.<br>
+<br>
+Nota: Menggunakan denyutan redstone berjadual.
+<np>
+Sensor Cahaya
+Penderiaan isyarat
+<&industrial_light_sensor>Sensor cahaya menukar kecerahan setempat kepada kawalan redstone.<br>
+<br>
+Penggunaan: Gunakan untuk lampu automatik, pengatup dan litar keterlihatan.<br>
+<br>
+Nota: Mengeluarkan kuasa pada kecerahan mentah 8 atau lebih.
+<np>
+Pengesan Ribut
+Penderiaan isyarat
+<&industrial_lightning_sensor>Sensor ribut mengaktifkan amaran semasa keadaan ribut petir.<br>
+<br>
+Penggunaan: Letakkan di bawah langit terbuka dan sambungkan kepada lampu atau penggera.<br>
+<br>
+Nota: Memerlukan guruh dan akses langit.
+<np>
+Pengesan Entiti Garisan
+Penderiaan isyarat
+<&industrial_linear_entity_detector>Pengesan entiti memantau pergerakan berdekatan tanpa plat lantai yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan kepada pintu, lampu, penggera atau saling kunci mesin.<br>
+<br>
+Nota: Mengimbas kawasan kecil di sekitar blok.
+<np>
+Sensor Hujan
+Penderiaan isyarat
+<&industrial_rain_sensor>Sensor cuaca menukar hujan di lokasinya kepada redstone.<br>
+<br>
+Penggunaan: Pasang di tempat blok di atasnya boleh menerima hujan.<br>
+<br>
+Nota: Memeriksa hujan di atas sensor.
+<np>
+Suis Kaca Dwistabil
+Kawalan Redstone
+<&glass_rotary_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Sentuhan Kaca Dwistabil
+Kawalan Redstone
+<&glass_touch_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Kaca Peka Jingga
+Kaca isyarat
+<&orange_sensitiveglass>Blok kaca yang bertindak balas kepada redstone mengekalkan garis pandang sambil menunjukkan keadaan isyarat.<br>
+<br>
+Penggunaan: Gunakan pada tingkap bilik kawalan, panel bercahaya dan kaca kilang terlindung.<br>
+<br>
+Nota: Berubah keadaan mengikut kuasa redstone berdekatan.
+<np>
+Kaca Peka Bercahaya
+Kaca isyarat
+<&sensitive_glass_block>Blok kaca yang bertindak balas kepada redstone mengekalkan garis pandang sambil menunjukkan keadaan isyarat.<br>
+<br>
+Penggunaan: Gunakan pada tingkap bilik kawalan, panel bercahaya dan kaca kilang terlindung.<br>
+<br>
+Nota: Berubah keadaan mengikut kuasa redstone berdekatan.
+<np>
+Kaca Peka Berwarna
+Kaca isyarat
+<&stained_sensitiveglass>Blok kaca yang bertindak balas kepada redstone mengekalkan garis pandang sambil menunjukkan keadaan isyarat.<br>
+<br>
+Penggunaan: Gunakan pada tingkap bilik kawalan, panel bercahaya dan kaca kilang terlindung.<br>
+<br>
+Nota: Berubah keadaan mengikut kuasa redstone berdekatan.
+<np>
+Tolok Bar Kaca
+Tolok isyarat
+<&glass_vertical_bar_gauge>Tolok bilik kawalan padat memaparkan kekuatan redstone dengan bacaan panel yang jelas.<br>
+<br>
+Penggunaan: Pasang di tempat kuasa redstone bersebelahan dapat diperiksa sepintas lalu.<br>
+<br>
+Nota: Membaca kekuatan redstone berdekatan dari 0 hingga 15.
+<np>
+Tolok Analog
+Tolok isyarat
+<&industrial_analog_angular_gauge>Tolok bilik kawalan padat memaparkan kekuatan redstone dengan bacaan panel yang jelas.<br>
+<br>
+Penggunaan: Pasang di tempat kuasa redstone bersebelahan dapat diperiksa sepintas lalu.<br>
+<br>
+Nota: Membaca kekuatan redstone berdekatan dari 0 hingga 15.
+<np>
+Tolok Voltmeter
+Tolok isyarat
+<&industrial_analog_horizontal_gauge>Tolok bilik kawalan padat memaparkan kekuatan redstone dengan bacaan panel yang jelas.<br>
+<br>
+Penggunaan: Pasang di tempat kuasa redstone bersebelahan dapat diperiksa sepintas lalu.<br>
+<br>
+Nota: Membaca kekuatan redstone berdekatan dari 0 hingga 15.
+<np>
+Tolok Digital
+Kekuatan isyarat yang jelas
+<&industrial_small_digital_gauge>Tolok bilik kawalan padat memaparkan kekuatan redstone dengan bacaan panel yang jelas.<br>
+<br>
+Penggunaan: Pasang di tempat kuasa redstone bersebelahan dapat diperiksa sepintas lalu.<br>
+<br>
+Nota: Membaca kekuatan redstone berdekatan dari 0 hingga 15.
+<np>
+Tolok Tiub Kaca
+Tolok isyarat
+<&industrial_tube_gauge>Tolok bilik kawalan padat memaparkan kekuatan redstone dengan bacaan panel yang jelas.<br>
+<br>
+Penggunaan: Pasang di tempat kuasa redstone bersebelahan dapat diperiksa sepintas lalu.<br>
+<br>
+Nota: Membaca kekuatan redstone berdekatan dari 0 hingga 15.
+<np>
+Tolok Bar Analog
+Tolok isyarat
+<&industrial_vertical_bar_gauge>Tolok bilik kawalan padat memaparkan kekuatan redstone dengan bacaan panel yang jelas.<br>
+<br>
+Penggunaan: Pasang di tempat kuasa redstone bersebelahan dapat diperiksa sepintas lalu.<br>
+<br>
+Nota: Membaca kekuatan redstone berdekatan dari 0 hingga 15.
+<np>
+Lampu Penggera
+Maklum balas isyarat
+<&industrial_alarm_lamp>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+Siren Penggera
+Maklum balas isyarat
+<&industrial_alarm_siren>Siren penggera ialah penunjuk redstone yang dipasang pada muka blok. Keadaan kuasanya berubah mengikut isyarat blok tempat ia dilekatkan.<br>
+<br>
+Lekatkan pada muka pepejal dan bekalkan kuasa untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Siren dikemas kini sekali sesaat selagi isyarat kekal aktif.
+<np>
+LED Berkelip
+Maklum balas isyarat
+<&industrial_blinking_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Hijau Berkelip
+Maklum balas isyarat
+<&industrial_green_blinking_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Hijau
+Maklum balas isyarat
+<&industrial_green_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Merah
+Maklum balas isyarat
+<&industrial_red_blinking_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Merah
+Maklum balas isyarat
+<&industrial_red_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Putih Berkelip
+Maklum balas isyarat
+<&industrial_white_blinking_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Putih
+Maklum balas isyarat
+<&industrial_white_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Kuning Berkelip
+Maklum balas isyarat
+<&industrial_yellow_blinking_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+LED Kuning
+Maklum balas isyarat
+<&industrial_yellow_led>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+Semafor Desa
+Maklum balas isyarat
+<&rustic_semaphore>Penunjuk padat menukar redstone tersembunyi kepada maklum balas kilang yang kelihatan.<br>
+<br>
+Penggunaan: Sambungkan di sebelah isyarat untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Nota: Berubah keadaan apabila kuasa redstone berdekatan hadir.
+<np>
+Suis Pembanding
+Isyarat blok terpasang
+<&industrial_comparator_switch>Suis sensor padat membaca blok tempatnya dipasang dan menukar bacaan itu menjadi output panel ringkas.<br>
+<br>
+Penggunaan: Pasang pada inventori, tangki atau perkakasan redstone. Apabila blok tempatnya dipasang melaporkan output pembanding, bekas atau redstone, suis mengeluarkan redstone berkekuatan penuh.<br>
+<br>
+Nota: Gunakan untuk menukar aras simpanan atau pendawaian tersembunyi menjadi talian kawalan hidup/mati yang jelas.
+<np>
+Pemalap
+Isyarat boleh ubah
+<&industrial_dimmer>Kawalan putar melaras kekuatan redstone dari muka panel padat.<br>
+<br>
+Penggunaan: Klik kanan untuk menaikkan output berperingkat, kemudian kembali kepada sifar selepas kekuatan penuh.<br>
+<br>
+Nota: Mengeluarkan kekuatan dari 0 hingga 15.
+<np>
+Butang Henti Kecemasan
+Kawalan Redstone
+<&industrial_estop_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Penyekat Corong Tuang
+Kawalan Redstone
+<&industrial_hopper_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Suis Ketukan
+Kawalan Redstone
+<&industrial_knock_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil
+Kawalan Redstone
+<&industrial_lever>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Suis Mesin Dua Butang
+Kawalan Redstone
+<&industrial_machine_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Pemegang Tarik
+Kawalan Redstone
+<&industrial_pull_handle>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil Putar
+Kawalan Redstone
+<&industrial_rotary_lever>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Suis Mesin Putar
+Kawalan Redstone
+<&industrial_rotary_machine_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil Sentuh
+Kawalan Redstone
+<&industrial_small_lever>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Suis
+Kawalan Redstone
+<&industrialswitch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Suis Lampu
+Kawalan Redstone
+<&light_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Suis Injap
+Kawalan Redstone
+<&valve_wheel_switch>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Penerima Denyutan Bersarung
+Kawalan berpaut
+<&industrial_switchlink_cased_pulse_receiver>Penerima denyutan berpaut bersarung memberikan pencetus redstone singkat kepada panel jauh.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Klik kanan padanya atau cetuskan mutiara berpaut untuk mengeluarkan denyutan singkat.<br>
+<br>
+Nota: Denyutan menetap semula selepas tempoh yang dijadualkan.
+<np>
+Penerima Pautan Bersarung
+Kawalan berpaut
+<&industrial_switchlink_cased_receiver>Penerima berpaut bersarung memberikan sasaran redstone lasak kepada panel jauh.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Klik kanan terus pada penerima untuk menukarnya secara manual.<br>
+<br>
+Nota: Mutiara berpaut menukar penerima ini apabila digunakan sambil menyelinap.
+<np>
+Penerima Pautan Denyutan
+Kawalan berpaut
+<&industrial_switchlink_pulse_receiver>Penerima denyutan berpaut memberikan pencetus redstone singkat kepada panel jauh.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Klik kanan padanya atau cetuskan mutiara berpaut untuk mengeluarkan denyutan singkat.<br>
+<br>
+Nota: Denyutan menetap semula selepas tempoh yang dijadualkan.
+<np>
+Geganti Pautan Denyutan
+Kawalan berpaut
+<&industrial_switchlink_pulse_relay>Kelengkapan bergaya geganti memberikan titik suis setempat padat untuk binaan panel.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan. Gunakan blok penerima apabila perlu pengaktifan melalui mutiara berpaut.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Penerima Pautan Suis
+Kawalan berpaut
+<&industrial_switchlink_receiver>Penerima berpaut memberikan sasaran redstone berkekuatan penuh kepada panel jauh.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Klik kanan terus pada penerima untuk menukarnya secara manual.<br>
+<br>
+Nota: Mutiara berpaut menukar penerima ini apabila digunakan sambil menyelinap.
+<np>
+Penerima Pautan Analog
+Kawalan berpaut
+<&industrial_switchlink_receiver_analog>Penerima berpaut memberikan sasaran jauh yang kelihatan kepada panel kawalan.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Gunakan mutiara itu sambil menyelinap untuk mengaktifkan penerima dari jauh.<br>
+<br>
+Nota: Penerima ini mengeluarkan isyarat redstone penuh apabila dicetuskan.
+<np>
+Geganti Pautan Suis
+Kawalan berpaut
+<&industrial_switchlink_relay>Kelengkapan bergaya geganti memberikan titik suis setempat padat untuk binaan panel.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan. Gunakan blok penerima apabila perlu pengaktifan melalui mutiara berpaut.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Geganti Pautan Analog
+Kawalan berpaut
+<&industrial_switchlink_relay_analog>Kelengkapan bergaya geganti memberikan titik suis setempat padat untuk binaan panel.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan. Gunakan blok penerima apabila perlu pengaktifan melalui mutiara berpaut.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Mutiara Pautan Suis
+Kawalan berpaut
+<&switchlink_pearl>Mutiara berpaut menyimpan sasaran penerima untuk kawalan kilang jauh.<br>
+<br>
+Penggunaan: Klik penerima pautan suis dengan mutiara Ender untuk menghasilkannya. Gunakan mutiara berpaut sambil menyelinap untuk mengaktifkan penerima tersimpan.<br>
+<br>
+Nota: Sasaran mesti dimuatkan, berada dalam dimensi yang sama dan dalam julat.
+<np>
+Tuil Lama Berhias
+Kawalan Redstone
+<&oldfancy_bistableswitch1>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil Putar Lama Berhias
+Kawalan Redstone
+<&oldfancy_bistableswitch2>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil Putar Desa
+Kawalan Redstone
+<&rustic_angular_lever>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil Desa
+Kawalan Redstone
+<&rustic_lever>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil Paku Desa
+Kawalan Redstone
+<&rustic_nail_lever>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.
+<np>
+Tuil Dua Engsel Desa
+Kawalan Redstone
+<&rustic_two_hinge_lever>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.

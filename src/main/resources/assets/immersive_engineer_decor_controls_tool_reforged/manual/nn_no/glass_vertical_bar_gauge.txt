@@ -1,0 +1,7 @@
+Glasstolpemålar
+Signalmålar
+<&recipe>Ein kompakt kontrollromsmålar viser redstone-styrken tydeleg på eit panel.<br>
+<br>
+Bruk: monter han der du skal kunne lese av redstone i nærleiken med eitt blikk.<br>
+<br>
+Merknad: les redstone-styrke i nærleiken frå 0 til 15.

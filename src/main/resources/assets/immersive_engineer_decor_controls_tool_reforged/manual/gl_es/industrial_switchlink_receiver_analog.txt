@@ -1,0 +1,7 @@
+Receptor analóxico de ligazón
+Control ligado
+<&recipe>Un receptor ligado ofrece un punto receptor remoto visible para os paneis de control.<br>
+<br>
+Uso: fai clic nel cunha perla do Ender para crear unha perla ligada. Agóchate e usa esa perla para activar o receptor a distancia.<br>
+<br>
+Notas: este receptor emite un sinal de redstone á máxima potencia cando se activa.

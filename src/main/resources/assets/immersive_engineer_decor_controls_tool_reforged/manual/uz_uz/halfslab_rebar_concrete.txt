@@ -1,0 +1,5 @@
+Temir-betonning yupqa qatlami
+Mustahkamlangan beton
+<&recipe>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>

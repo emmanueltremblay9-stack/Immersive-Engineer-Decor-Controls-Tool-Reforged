@@ -1,0 +1,7 @@
+Rregullues fuqie
+Sinjal i ndryshueshëm
+<&recipe>Një kontroll rrotullues rregullon fuqinë e redstonit nga një faqe kompakte paneli.<br>
+<br>
+Përdorimi: kliko djathtas për të rritur daljen me hapa, pastaj për ta kthyer në zero pasi të arrijë fuqinë e plotë.<br>
+<br>
+Shënim: jep fuqi nga 0 deri në 15.

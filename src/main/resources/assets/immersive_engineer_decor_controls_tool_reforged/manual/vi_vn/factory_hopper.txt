@@ -1,0 +1,5 @@
+Phễu công nghiệp
+Tiện ích sàn xưởng
+<&recipe>Khối này chuyển các chồng đồ qua vỏ công nghiệp gọn hơn.<br>
+<br>
+Cách dùng: Hướng về tuyến kho đồ rồi đặt phạm vi, số lượng trong chồng, thời gian và chế độ redstone trong màn hình của nó.<br>

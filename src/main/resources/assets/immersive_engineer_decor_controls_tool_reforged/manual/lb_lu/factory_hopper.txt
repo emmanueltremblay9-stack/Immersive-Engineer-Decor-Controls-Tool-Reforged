@@ -1,0 +1,5 @@
+Fabricktriichter
+Hëllefsmëttel um Ateliersbuedem
+<&recipe>Dëse Block beweegt Géigestandsstapelen duerch e méi kompakt Industriegehäis.<br>
+<br>
+Benotzung: Riicht en op d'Inventarlinn a stell duerno Reechwäit, Stapelzuel, Zäitverhalen a Redstone-Modus am Interface an.<br>

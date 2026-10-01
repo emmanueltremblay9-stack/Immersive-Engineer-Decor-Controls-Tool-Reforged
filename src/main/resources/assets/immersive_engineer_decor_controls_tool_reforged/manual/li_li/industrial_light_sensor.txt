@@ -1,0 +1,7 @@
+Leechsensor
+Signaolwaorneming
+<&recipe>Ein leechsensor zèt de plaatselike helderheid in redstonebediening óm.<br>
+<br>
+Gebroek: neem 'm veur automatische lampe, vinsterloeke en zichtsjakelinge.<br>
+<br>
+Opmerking: geuf energie vanaaf ruwe helderheid 8.

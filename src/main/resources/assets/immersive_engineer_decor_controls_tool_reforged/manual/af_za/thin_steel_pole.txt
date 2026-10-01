@@ -1,0 +1,5 @@
+Dun Staalpaal
+Struktuurraamonderdeel
+<&recipe>Die Reguit Dun Staalpaal verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>

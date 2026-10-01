@@ -1,0 +1,127 @@
+Zugangswege
+Laufwege und Stützen
+Stahlpfosten, imprägnierte Holzpfosten, Gitterroste, Laufstege, Geländer, Leitern, Türen, Fenster und Luken bilden kompakte Wartungswege durch Fabrikgebäude.<br>
+<br>
+Zugangsteile aus Stahl benötigen Stahlplatten. Stelle eine Metallwerkbank her oder platziere sie, setze einen Hammer aus Immersive Engineering ein und hämmere Stahlbarren zu Stahlplatten für Pfosten, Laufstege, Fenster, Türen, Geländer und weitere Stahldekorationen.<br>
+<br>
+Platziere sie dort, wo Maschinen Wartungszugänge, erhöhte Wege, Wartungsschächte oder sichere Kanten benötigen.
+<np>
+Dicker Stahlpfosten
+Teil des Tragwerks
+<&thick_steel_pole>Der gerade dicke Stahlpfosten bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Kopf für dicken Stahlpfosten
+Teil des Tragwerks
+<&thick_steel_pole_head>Der Kopf/Fuß für gerade dicke Stahlpfosten bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Dünner Stahlpfosten
+Teil des Tragwerks
+<&thin_steel_pole>Der gerade dünne Stahlpfosten bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Kopf für dünnen Stahlpfosten
+Teil des Tragwerks
+<&thin_steel_pole_head>Der Kopf/Fuß für gerade dünne Stahlpfosten bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Pfosten aus imprägniertem Holz
+Teil des Tragwerks
+<&treated_wood_pole>Der gerade Pfosten aus imprägniertem Holz bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Kopf für imprägnierten Holzpfosten
+Teil des Tragwerks
+<&treated_wood_pole_head>Der Kopf/Fuß für gerade Pfosten aus imprägniertem Holz bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Stütze für imprägnierten Holzpfosten
+Teil des Tragwerks
+<&treated_wood_pole_support>Die Stütze für gerade Pfosten aus imprägniertem Holz bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Stahl-Doppel-T-Träger
+Teil des Tragwerks
+<&steel_double_t_support>Dieser Block bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>
+<np>
+Stahlgitterrost
+Bauteil für Wartungszugänge
+<&steel_floor_grating>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Stahllaufsteg
+Bauteil für Wartungszugänge
+<&steel_catwalk>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Stahllaufstegtreppe
+Bauteil für Wartungszugänge
+<&steel_catwalk_stairs>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Erhöhter Stahllaufsteg
+Bauteil für Wartungszugänge
+<&steel_catwalk_ta>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Stahlgeländer
+Bauteil für Wartungszugänge
+<&steel_railing>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Stahlgitterzaun
+Bauteil für Wartungszugänge
+<&steel_mesh_fence>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Stahlgitterzauntor
+Bauteil für Wartungszugänge
+<&steel_mesh_fence_gate>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Metallsprossenleiter
+Bauteil für Wartungszugänge
+<&metal_rung_ladder>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Versetzte Metalltritte
+Bauteil für Wartungszugänge
+<&metal_rung_steps>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>
+<np>
+Fenster mit Stahlrahmen
+Geschützter Einblick
+<&steel_framed_window>Dieser Block ermöglicht freie Sicht und passt zugleich zur verstärkten Bauweise einer Fabrik.<br>
+<br>
+Verwendung: Setze ihn in eine einen Block große Wandöffnung ein, durch die Spieler Maschinen hinter einer schützenden Barriere sehen sollen.<br>
+<np>
+Metallschiebetür
+Industrieller Zugang
+<&metal_sliding_door>Dieser Block bietet einen robusten Zugang zu Betriebsräumen, Schächten, Dächern und Maschinengehäusen.<br>
+<br>
+Verwendung: Baue ihn dort ein, wo eine kontrollierbare Wartungsöffnung benötigt wird.<br>
+<np>
+Eiserne Luke
+Industrieller Zugang
+<&iron_hatch>Dieser Block bietet einen robusten Zugang zu Betriebsräumen, Schächten, Dächern und Maschinengehäusen.<br>
+<br>
+Verwendung: Baue ihn dort ein, wo eine kontrollierbare Wartungsöffnung benötigt wird.<br>

@@ -1,0 +1,7 @@
+Aŭtomata stim-pako
+Kriza injektilo
+<&recipe>Kriza resanigilo por danĝera prizorgado.<br>
+<br>
+Uzo: Mane resanigas, protektas kaj rapidigas mallonge. En inventaro ekfunkcias ĉe malalta sano kaj poste atendas.<br>
+<br>
+Portu antaŭ altaĵoj, nudaj dratoj aŭ danĝeraj minejoj.

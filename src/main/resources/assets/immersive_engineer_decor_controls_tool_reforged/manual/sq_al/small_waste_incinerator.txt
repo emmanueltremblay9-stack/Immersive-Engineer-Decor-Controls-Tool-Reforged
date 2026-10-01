@@ -1,0 +1,5 @@
+Djegës mbeturinash
+Njësi kompakte përpunimi
+<&recipe>Djegësi i mbeturinave shkatërron objektet e padëshiruara duke zënë pak vend në punishte.<br>
+<br>
+Përdorimi: fut vetëm objekte të padëshiruara në radhën e tij.<br>

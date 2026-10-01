@@ -1,0 +1,5 @@
+Varonka dla fluidaŭ
+Abstalavannie fluidnych linij
+<&recipe>Małaja varonka dla fluidaŭ — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: pastaŭ jaje pad punktam zboru fluidu i nakiruj zachavanaje zmiesciva ŭ reziervuary abo nižnija trubapravody.<br>

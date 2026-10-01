@@ -1,0 +1,5 @@
+Zapuštěné světlo na hranu podlahy
+Kompaktní pracovní světlo
+<&recipe>Tento blok poskytuje kompaktní průmyslové osvětlení chodeb, lávek a pracovních prostor.<br>
+<br>
+Použití: Připevni jej na strop, stěny nebo hrany tam, kde místnost potřebuje jasné pracovní osvětlení.<br>

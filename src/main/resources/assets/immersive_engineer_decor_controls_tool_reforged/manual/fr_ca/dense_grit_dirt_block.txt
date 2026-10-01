@@ -1,0 +1,5 @@
+Terre graveleuse compactée
+Revêtement de chantier
+<&recipe>Ce bloc donne aux zones de travail extérieures une surface compactée et piétinée.<br>
+<br>
+Utilisation : posez-le autour des portes de chargement, des réservoirs extérieurs et des cours de machines.<br>

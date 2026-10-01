@@ -1,0 +1,7 @@
+Slaapsak
+Draagbare russtel
+<&recipe>Die Slaapsak is 'n weerbestande russtel vir veldwerk ver van 'n bed.<br>
+<br>
+Gebruik: Gebruik dit snags in die Oorwêreld om tot oggend te rus. Dit stel of verskuif nie jou kuitpunt nie.<br>
+<br>
+Die sak weier gebruik bedags, onveilige omgewings met monsters naby, en dimensies wat nie geskik is vir veilige veldrus nie. Elke suksesvolle rus laat die sak slyt.

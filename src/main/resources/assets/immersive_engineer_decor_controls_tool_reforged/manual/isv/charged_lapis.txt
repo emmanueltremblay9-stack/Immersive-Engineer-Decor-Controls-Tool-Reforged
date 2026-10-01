@@ -1,0 +1,7 @@
+Nabity lazurit
+Uloženy opyt
+<&recipe>Nabity lazurit hrani jedin urovnj opyta, stvorjeny umovoju iztiskivačeju.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja vrnjenja jednogo urovnja, odstranjenja aktivnyh efektov i obnovjenja malogo množstva zdravja.<br>
+<br>
+Element recepta pokazyvaje umovu iztiskivaču, zato že nabity lazurit se proizvodi upotrěbjenjem togo orudja pri dostupnosti lazurita i XP.

@@ -1,0 +1,7 @@
+Martell per sminuzzà mineraj
+Arnea per sminuzzà a man
+<&recipe>El martell per sfracassà i mineraj l'è un utensil manual per la prima lavorazzion de ferr e or.<br>
+<br>
+Dopra: Combinal col ferr cruu, l'or cruu, el mineral de ferr, el mineral de ferr de lavagna profonda, el mineral d'or o quel d'or de lavagna profonda per fà polver de ferr o d'or de Immersive Engineering. El martell el perd durata e el torna in la griglia fin che el se romp.<br>
+<br>
+El martell el consoma durada anca scavando e el poeu sburtà indree i bersai in del combatiment de vesin.

@@ -1,0 +1,7 @@
+Putan inneil
+Smachd redstone
+<&recipe>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.

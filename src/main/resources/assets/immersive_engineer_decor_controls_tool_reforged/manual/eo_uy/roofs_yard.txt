@@ -1,0 +1,101 @@
+Tegmentoj kaj korto
+Eksteraj fabrikaj ekipaĵoj
+Tegmentaj blokoj, korta gruzo kaj malnovaj industriaj lignopartoj helpas fini eksterajn ŝedojn, laborkortojn, ŝarĝareojn kaj veterumitajn fabrikrandojn.<br>
+<br>
+Kombinu ĉi tiujn partojn kun masonaĵo kaj alirvojoj por ke eksteraj industriaj konstruaĵoj restu klare rekoneblaj de malproksime.
+<np>
+Malhela ŝindotegmento
+Veterumita tegmenta parto
+<&dark_shingle_roof>Ĉi tiu bloko formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Tegmenta neĝbarilo
+Veterumita tegmenta parto
+<&dark_shingle_roof_metallized>La malhela ŝindotegmenta neĝbarilo formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Malhela ŝindotegmento
+Veterumita tegmenta parto
+<&dark_shingle_roof_skylight>La malhela ŝindotegmenta luko formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Tegmenta kamentubbazo
+Veterumita tegmenta parto
+<&dark_shingle_roof_chimneytrunk>La malhela ŝindotegmenta kamentubbazo formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Tegmenta dratkanalo
+Veterumita tegmenta parto
+<&dark_shingle_roof_wireconduit>La malhela ŝindotegmenta dratkanalo formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Malhela ŝindotegmento
+Veterumita tegmenta parto
+<&dark_shingle_roof_chimney>La malhela ŝindotegmenta kamentubo formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Malhela ŝindotegmenta bloko
+Veterumita tegmenta parto
+<&dark_shingle_roof_block>Ĉi tiu bloko formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Malhela ŝindotegmenta ŝtupo
+Veterumita tegmenta parto
+<&dark_shingle_roof_slab>Ĉi tiu bloko formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Malhela ŝindotegmenta ŝtupo
+Veterumita tegmenta parto
+<&dark_shingle_roof_slabslice>La malhela ŝindotegmenta tavoleto formas malhelajn praktikajn tegmentajn liniojn por metiejoj kaj industriaj ŝedoj.<br>
+<br>
+Uzado: kombinu la pecojn por fari kredindajn tegmentajn formojn.<br>
+<np>
+Kompakta gruza tero
+Laboreja grundkovraĵo
+<&dense_grit_dirt_block>Ĉi tiu bloko donas kompaktigitan surtretitan surfacon al eksteraj laborareoj.<br>
+<br>
+Uzado: metu ĝin ĉirkaŭ ŝarĝpordoj, eksteraj tankoj kaj maŝinkortoj.<br>
+<np>
+Kompakta gruza sablo
+Laboreja grundkovraĵo
+<&dense_grit_sand_block>Ĉi tiu bloko donas kompaktigitan surtretitan surfacon al eksteraj laborareoj.<br>
+<br>
+Uzado: metu ĝin ĉirkaŭ ŝarĝpordoj, eksteraj tankoj kaj maŝinkortoj.<br>
+<np>
+Malnovaj lignotabuloj
+Malnova metieja ligno
+<&old_industrial_wood_planks>La malnovaj industriaj lignotabuloj aldonas malnovan metiejan lignon por plankoj, ŝtupetoj, pordoj kaj varmaj internaj borderoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj metiejaj plankoj, ŝtuparoj, pordoj kaj borderoj.<br>
+<np>
+Malnova industria lignoŝtupo
+Malnova metieja ligno
+<&old_industrial_wood_slab>Ĉi tiu bloko aldonas malnovan metiejan lignon por plankoj, ŝtupetoj, pordoj kaj varmaj internaj borderoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj metiejaj plankoj, ŝtuparoj, pordoj kaj borderoj.<br>
+<np>
+Malnova lignoŝtuparo
+Malnova metieja ligno
+<&old_industrial_wood_stairs>La malnova industria lignoŝtuparo aldonas malnovan metiejan lignon por plankoj, ŝtupetoj, pordoj kaj varmaj internaj borderoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj metiejaj plankoj, ŝtuparoj, pordoj kaj borderoj.<br>
+<np>
+Malnova lignotavoleto
+Malnova metieja ligno
+<&old_industrial_wood_slabslice>La malnova industria lignotavoleto aldonas malnovan metiejan lignon por plankoj, ŝtupetoj, pordoj kaj varmaj internaj borderoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj metiejaj plankoj, ŝtuparoj, pordoj kaj borderoj.<br>
+<np>
+Malnova industria lignopordo
+Malnova metieja ligno
+<&old_industrial_wood_door>Ĉi tiu bloko aldonas malnovan metiejan lignon por plankoj, ŝtupetoj, pordoj kaj varmaj internaj borderoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj metiejaj plankoj, ŝtuparoj, pordoj kaj borderoj.<br>

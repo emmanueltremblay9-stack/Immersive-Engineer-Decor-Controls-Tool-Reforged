@@ -1,0 +1,7 @@
+Glassdøgnur
+Dagslyssignal
+<&recipe>Et tidsur følger den lyse delen av verdens døgnsyklus.<br>
+<br>
+Bruk: bruk det til utelys, luker og fabrikkstyring som bare skal virke om dagen.<br>
+<br>
+Merknad: krever en dimensjon med himmellys.

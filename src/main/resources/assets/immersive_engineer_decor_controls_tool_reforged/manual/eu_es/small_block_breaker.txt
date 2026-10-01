@@ -1,0 +1,5 @@
+Bloke-hausgailua
+Lantegiko tresneria
+<&recipe>Bloke-hausgailu txikia lantegiko erabilera anitzeko blokea da: fabrikaziorako, biltegiratzeko, jartzeko, hausteko, biltzeko edo automatizazio trinkorako.<br>
+<br>
+Erabilera: jarri laneko aurpegia kendu nahi duzun blokerantz.<br>

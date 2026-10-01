@@ -1,0 +1,5 @@
+Congelador de água
+Unidade compacta de processamento
+<&recipe>O congelador de água realiza trabalhos compactos de arrefecimento para instalações de fluidos alimentadas por energia.<br>
+<br>
+Uso: Fornece água e energia para produzir gelo em etapas.<br>

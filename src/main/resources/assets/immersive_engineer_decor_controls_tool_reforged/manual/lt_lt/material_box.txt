@@ -1,0 +1,7 @@
+Medžiagų dėžė
+Statybinių atsargų dėžė
+<&recipe>Medžiagų dėžė neša didelę vienos paprastos, nepakeistos ir kraunamos statybinės medžiagos atsargą.<br>
+<br>
+Naudojimas: Laikyk dėžę pagrindinėje rankoje, o medžiagų krūvą kitoje, kad ją pakrautum. Naudok dėžę tuščia kita ranka vienai krūvai išimti.<br>
+<br>
+Joje telpa iki 512 vienos rūšies daiktų. Ji nepriima įdėtų dėžių, nekraunamos įrangos ir pervadintų ar duomenimis pakeistų krūvų; paaiškinimas rodo turinį.

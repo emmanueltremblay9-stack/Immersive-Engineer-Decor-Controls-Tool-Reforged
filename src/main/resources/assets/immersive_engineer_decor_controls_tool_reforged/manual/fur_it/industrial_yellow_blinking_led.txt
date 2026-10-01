@@ -1,0 +1,7 @@
+LED zâl lampegiant
+Indicazion dal segnâl
+<&recipe>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.

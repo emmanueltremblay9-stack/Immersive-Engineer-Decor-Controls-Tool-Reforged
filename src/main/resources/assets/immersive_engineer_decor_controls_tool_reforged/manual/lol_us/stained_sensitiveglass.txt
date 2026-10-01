@@ -1,0 +1,7 @@
+Colorful Sensitive Glassy Stuff
+Signal glassy stuffz
+<&recipe>Redstone-reactive glass bluk keeps da view clear while showin signal state, kitty.<br>
+<br>
+How to: Use in control-room windowz, lit panelz, an guarded factory glass, meow.<br>
+<br>
+Kitty note: Changes state frum nearby redstone powah.

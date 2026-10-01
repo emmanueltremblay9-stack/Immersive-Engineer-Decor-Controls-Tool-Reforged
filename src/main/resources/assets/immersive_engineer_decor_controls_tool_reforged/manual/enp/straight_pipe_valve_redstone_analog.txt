@@ -1,0 +1,5 @@
+Graded Flowgate
+Flow-line gear
+<&recipe>The Graded Flowgate is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Line the flowgate up with the wanted flow way.<br>

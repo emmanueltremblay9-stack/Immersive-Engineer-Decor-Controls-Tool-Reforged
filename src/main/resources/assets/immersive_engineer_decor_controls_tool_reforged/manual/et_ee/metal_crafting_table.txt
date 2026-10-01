@@ -1,0 +1,7 @@
+Metallist valmistamislaud
+Plaaditöökoht
+<&recipe>Tugevdatud töökoht vasarapesa, 3x3 ruudustiku ja väljundiga.<br>
+<br>
+Kasutus: Nagu tavaline laud. IE plaatide jaoks pane Inseneri vasar pesasse ja materjal ruudustikku; võta plaat väljundist.<br>
+<br>
+Terasraamiga kaunistused kasutavad siin vormitud terasplaate.

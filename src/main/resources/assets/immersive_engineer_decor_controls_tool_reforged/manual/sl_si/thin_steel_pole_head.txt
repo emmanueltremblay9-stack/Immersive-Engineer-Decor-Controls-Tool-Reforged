@@ -1,0 +1,5 @@
+Glava tankega stebra
+Del nosilnega ogrodja
+<&recipe>Glava/podnožje ravnega tankega jeklenega stebra daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>

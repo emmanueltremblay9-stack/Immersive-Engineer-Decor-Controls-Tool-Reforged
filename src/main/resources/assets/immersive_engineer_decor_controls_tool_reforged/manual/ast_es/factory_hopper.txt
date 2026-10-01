@@ -1,0 +1,5 @@
+Embudu de fábrica
+Equipamientu de suelu de taller
+<&recipe>Esti bloque mueve piles d’oxetos al traviés d’una carcasa industrial más compacta.<br>
+<br>
+Usu: oriéntalu escontra la llinia d’inventarios y axusta l’alcance, la cantidá de la pila, los tiempos y el mou de redstone na so pantalla.<br>

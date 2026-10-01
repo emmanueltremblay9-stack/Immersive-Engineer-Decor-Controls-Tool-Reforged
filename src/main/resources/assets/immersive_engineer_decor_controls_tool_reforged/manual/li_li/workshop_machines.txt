@@ -1,0 +1,107 @@
+Werkplaatsmachines
+Machines en werkplaatsin-/oetvoer
+Werkplaatsmachines gaeve vervaardiging, veurwèrptransport, smelte, aafvoer, verzamele en hölpwerk op de plaats van ein blok.<br>
+<br>
+Maak de volgende bladzies ope veur 't recept, beeld, achtergrond en praktische gebroeksopmerkinge van elke machine.
+<np>
+Sjtaole taofel
+Werkplaatsmeubel
+<&steel_table>Dees blok is ein praktisch werkplaatsmeubel veur werkruumtes en ónnerhouwdshóuke.<br>
+<br>
+Gebroek: zèt 'm naeve werkbanke, kisse en kleine machines.<br>
+<np>
+Taofel van behandeld hout
+Werkplaatsmeubel
+<&treated_wood_table>Dees blok is ein praktisch werkplaatsmeubel veur werkruumtes en ónnerhouwdshóuke.<br>
+<br>
+Gebroek: zèt 'm naeve werkbanke, kisse en kleine machines.<br>
+<np>
+Krök van behandeld hout
+Werkplaatsmeubel
+<&treated_wood_stool>Dees blok is ein praktisch werkplaatsmeubel veur werkruumtes en ónnerhouwdshóuke.<br>
+<br>
+Gebroek: zèt 'm naeve werkbanke, kisse en kleine machines.<br>
+<np>
+Metaalwerkbank
+Platewerkstation
+<&metal_crafting_table>De metaalwerkbank is ein versterkt werkplaatsstation mèt ein haomervak, ein 3x3-vervaardigingsrooster en ein duidelik oetvoervak.<br>
+<br>
+Gebroek: neem 't rooster veur gewoene vervaardiging. Veur IE-plate zètste ein ingenieurshaomer in 't gereidsjapsvak en 't plaatmateriaal in 't rooster veur doe 't resultaat paks. Sjtaolversieringe gebroeke sjtaolplate veur pale, looppade, vinsters, deure, leuninge en angere sjtaoldiele.<br>
+<np>
+Fabriekstrechter
+Werkplaatshölp
+<&factory_hopper>Dees blok verplaatst veurwèrpsjtapels door ein smallere industriële kas.<br>
+<br>
+Gebroek: richt 'm op de opsjlaaglien en stel dan bereik, sjtapelaantal, tiede en redstonesjtand in 't menu in.<br>
+<np>
+Fabrieksdropper
+Werkplaatshölp
+<&factory_dropper>Dees blok geuf opgesjlage veurwèrpe oet ein gerichte kant aaf.<br>
+<br>
+Gebroek: richt de veurkant op 't aafgaafpunt, völ de interne vakke en stel krach, hook, vertraging, filterlogica en redstonesjtand in 't menu in.<br>
+<np>
+Fabrieksblokplaatser
+Werkplaatshölp
+<&factory_placer>Dees blok plaats blök oet zien interne veurraod es hae geactiveerd weurt.<br>
+<br>
+Gebroek: richt de werkkant op de doelruumte en völ plaatsbare sjtapels in.<br>
+<np>
+Blokbraeker
+Werkplaatshölp
+<&small_block_breaker>De kleine blokbraeker is ein werkplaatshölpblok veur vervaardige, opsjlaon, plaatse, breke, verzamele of kleine automatisering.<br>
+<br>
+Gebroek: richt de werkkant op 't blok dat weg moot.<br>
+<np>
+Aafvalverbrander
+Kleine verwerkingseenheid
+<&small_waste_incinerator>De aafvalverbrander vernietigt óngewilde veurwèrpe op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: voer allein óngewilde veurwèrpe aan zien wachtriej toe.<br>
+<np>
+Laboratoriumaove
+Kleine verwerkingseenheid
+<&small_lab_furnace>De laboratoriumaove duit klein smeltwerk mèt vaste brandstof op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: neem vaste brandstof veur kleine smeltporties.<br>
+<np>
+Elektrische aove
+Kleine verwerkingseenheid
+<&small_electrical_furnace>De elektrische aove duit klein smeltwerk mèt FE-energie op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: voer FE en passend smeltmateriaal toe.<br>
+<np>
+Mineraalsmelter
+Kleine verwerkingseenheid
+<&small_mineral_smelter>De mineraalsmelter verwerkt minerale bie hoeg hitte op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: voer mineraalblök en energie toe veur smeltwerk bie hoeg hitte.<br>
+<np>
+Watervriezer
+Kleine verwerkingseenheid
+<&small_freezer>De watervriezer duit klein koelwerk veur aangedraeve vloeistofinstallaties.<br>
+<br>
+Gebroek: voer water en energie toe um ies in fases te maake.<br>
+<np>
+Passieve vloeistof
+Vloeistofleidingóngerdaele
+<&passive_fluid_accumulator>De passieve vloeistofverzamelaar is ein klein vloeistofleidingdael veur kleine tanks, buisroutes, verzamelpunte en redstonegestuurde doorstroom.<br>
+<br>
+Gebroek: zèt 'm taege passende waterbronne en laot ruumte um vloeistof aaf te veure.<br>
+<np>
+Zonnepaneel
+Werkplaatshölp
+<&small_solar_panel>'t Kleine zonnepaneel is ein werkplaatshölpblok veur vervaardige, opsjlaon, plaatse, breke, verzamele of kleine automatisering.<br>
+<br>
+Gebroek: geef 't vriej zich op de himmel en sluit apparaat mèt weinig verbroek aan.<br>
+<np>
+Melkmachine
+Werkplaatshölp
+<&small_milking_machine>De kleine melkmachine is ein werkplaatshölpblok veur vervaardige, opsjlaon, plaatse, breke, verzamele of kleine automatisering.<br>
+<br>
+Gebroek: zèt ze bie koeje en zörg det melkhouwers of vloeistof aafgevoerd kinne waere.<br>
+<np>
+Boomsjniejer
+Werkplaatshölp
+<&small_tree_cutter>De kleine boomsjniejer is ein werkplaatshölpblok veur vervaardige, opsjlaon, plaatse, breke, verzamele of kleine automatisering.<br>
+<br>
+Gebroek: richt 'm op oetgegroeide buim en verzamel de gevalle veurwèrpe apart.<br>

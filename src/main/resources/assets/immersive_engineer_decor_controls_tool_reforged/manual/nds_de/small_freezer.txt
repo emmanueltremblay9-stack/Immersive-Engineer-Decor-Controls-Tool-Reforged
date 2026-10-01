@@ -1,0 +1,5 @@
+Waterfrerer
+Lütte Verarbeitungseenheit
+<&recipe>De Waterfrerer maakt lütte Köhlarbeiten för Flüssigkeitsanlagen mit Energie.<br>
+<br>
+Bruuk: Föhr Water un Energie to, üm Ies in Stopen to maken.<br>

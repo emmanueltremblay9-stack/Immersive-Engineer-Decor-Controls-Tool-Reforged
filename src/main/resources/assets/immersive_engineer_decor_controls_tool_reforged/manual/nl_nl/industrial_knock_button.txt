@@ -1,0 +1,7 @@
+Klopknop
+Redstonebesturing
+<&recipe>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.

@@ -1,0 +1,99 @@
+Ferramentas do enxeñeiro
+Equipamento portátil de obradoiro
+O conxunto de ferramentas do enxeñeiro engade equipamento de man, marcadores de minas, consumibles de emerxencia, comida para o traballo de campo e pequenas axudas para procesar materiais ao mesmo manual que describe os bloques decorativos e de control.<br>
+<br>
+Estas ferramentas están pensadas para traballar lonxe dun obradoiro ben equipado: marca a ruta, leva subministracións, recupérate dos erros e remata pequenas tarefas de procesamento no lugar de traballo.
+<np>
+Ferramenta REDIA
+Ferramenta recuberta de diamante
+<&redia_tool>A ferramenta REDIA é un útil resistente para facer traballos rápidos no terreo. Úsaa en solo apto para labrar terra de cultivo.<br>
+<br>
+Úsaa nunha cara estable mentres levas fachos para colocar un facho do inventario como marcador sen desgastar a REDIA. Traballar o terreo, rapar, cortar coa machada e talar árbores consome durabilidade.
+<np>
+Martelo triturador de minerais
+Ferramenta de trituración manual
+<&crushing_hammer>O martelo triturador de minerais é unha ferramenta manual para o procesamento inicial de ferro e ouro.<br>
+<br>
+Uso: Combínao con ferro en bruto, ouro en bruto, mineral de ferro, mineral de ferro de lousa profunda, mineral de ouro ou mineral de ouro de lousa profunda para producir po de ferro ou ouro de Immersive Engineering. O martelo perde durabilidade e volve á grade ata romper.<br>
+<br>
+Tamén se desgasta ao minar e pode repeler obxectivos no combate corpo a corpo.
+<np>
+Rastreador
+Marcador de posición gardada
+<&tracker>O rastreador garda a posición dun bloque directamente no obxecto.<br>
+<br>
+Uso: Fai clic nun bloque para gardar a dimensión e as coordenadas. A descrición mostra a posición. Usa o rastreador agachado para borrar o obxectivo.<br>
+<br>
+Úsao para marcar máquinas, ramificacións de túneles, controis remotos ou obras sen rematar antes de volver con ferramentas e materiais.
+<np>
+Carbón de Ariadna
+Marcador de rutas de mina
+<&ariadne_coal>O carbón de Ariadna coloca rapidamente frechas negras para marcar rutas en caras estables da mina. Úsao nunha cara sólida para indicar o seguinte xiro, saída ou cruzamento; o marcador admite oito direccións segundo onde fagas clic na cara, incluídas as diagonais.<br>
+<br>
+O carbón de Ariadna é unha ferramenta de marcado reutilizable con 100 usos. Cada marcador colocado correctamente consume un punto de durabilidade. Rexeita as caras non admitidas sen desgastar o obxecto.
+<np>
+Autoinxector estimulante
+Inxector de emerxencia
+<&stimpack>O Auto Stim Pack é unha ferramenta médica de emerxencia para mantemento perigoso.<br>
+<br>
+Uso: Actívao manualmente para curarte, obter protección breve e un pequeno impulso de movemento. No inventario tamén pode activarse automaticamente con pouca saúde e entrar logo en tempo de recarga.<br>
+<br>
+Ten un á man antes de probar lugares altos, cableado exposto ou rutas de mina con inimigos.
+<np>
+Saco de durmir
+Equipo de descanso portátil
+<&sleeping_bag>O saco de durmir é un equipo de descanso resistente á intemperie para traballos lonxe dunha cama.<br>
+<br>
+Uso: Utilízao pola noite no Overworld para descansar ata a mañá. Non fixa nin move o punto de aparición.<br>
+<br>
+Rexeita o uso diúrno, lugares perigosos con monstros próximos e dimensións inadecuadas para un descanso seguro. Cada descanso correcto desgasta o saco.
+<np>
+Caixa de materiais
+Caixa de subministracións de construción
+<&material_box>A caixa de materiais leva unha gran reserva dun único material de construción simple, sen modificar e apilable.<br>
+<br>
+Uso: Sostén a caixa na man principal e unha pila de material na secundaria para cargala. Usa a caixa coa man secundaria baleira para retirar unha pila.<br>
+<br>
+Garda ata 512 obxectos dun só tipo. Rexeita caixas aniñadas, equipamento non apilable e pilas renomeadas ou con datos modificados; a descrición mostra o contido.
+<np>
+Cápsula de aire para mergullo
+Reserva de aire de emerxencia
+<&diving_capsule>A cápsula de aire de mergullo é unha reserva de emerxencia para traballos baixo a auga.<br>
+<br>
+Uso: Utilízaa manualmente para recuperar aire. Se está no inventario, tamén pode activarse automaticamente cando case non queda aire e entra logo en tempo de recarga.<br>
+<br>
+Lévaa para traballar en minas inundadas, tubaxes mergulladas e reparacións de salas de bombas.
+<np>
+Prensa de barriñas Muslee
+Prensa de alimentos
+<&musli_bar_press>A prensa de barras Muslee converte alimentos comúns en racións de campo compactas.<br>
+<br>
+Uso: Leva pan, unha mazá e sementes de trigo, melón, cabaza, remolacha ou Industrial Hemp, e usa a prensa. Un prensado correcto consome unha de cada, comproba o espazo, crea catro barras Muslee Melange e dana a prensa.<br>
+<br>
+Se falta un ingrediente ou non hai espazo no inventario, non se consome nada.
+<np>
+Barriña enerxética Muslee Melange
+Petisco rápido de obradoiro
+<&musli_bar>A barra enerxética Muslee Melange é un alimento compacto feito con pan, sementes e froita.<br>
+<br>
+Uso: cómea como alimento de campo mentres colocas controis, tubaxes, plataformas ou longas instalacións nas salas de máquinas.
+<np>
+Espremedor mental
+Condensador de experiencia
+<&charged_lapis_squeezer>O espremedor mental converte unha unidade de lapislázuli e un nivel de experiencia do teu inventario en lapislázuli cargado.<br>
+<br>
+Cada conversión correcta fai dano ao usuario, provócalle esgotamento alimentario e déixao cego durante un intre. Non funciona sen lapislázuli, sen experiencia ou se o usuario está demasiado preto da morte.
+<np>
+Lapislázuli cargado
+Experiencia almacenada
+<&charged_lapis>O lapislázuli cargado almacena un nivel de experiencia. Consúmeo para recuperar o nivel, eliminar os efectos activos e restaurar unha pequena cantidade de saúde.<br>
+<br>
+Fabrica primeiro un espremedor mental; o lapislázuli cargado prodúcese ao usar esa ferramenta cando dispós de lapislázuli e experiencia.
+<np>
+Granulado groso de ferro
+Material para ferramentas de enxeñeiro que usa o conxunto reconstruído de receitas.
+<&iron_grit>Pódese fundir para obter lingotes<br>de ferro, pero non serve para o<br>procesamento avanzado de materiais.
+<np>
+Granulado groso de ouro
+Material para ferramentas de enxeñeiro que usa o conxunto reconstruído de receitas.
+<&gold_grit>Pódese fundir para obter lingotes<br>de ouro, pero non serve para o<br>procesamento avanzado de materiais.

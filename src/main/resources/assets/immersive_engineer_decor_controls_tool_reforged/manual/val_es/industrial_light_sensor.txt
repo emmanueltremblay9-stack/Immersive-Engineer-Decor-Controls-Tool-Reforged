@@ -1,0 +1,7 @@
+Sensor de llum
+Detecció de senyals
+<&recipe>Un sensor de llum convertix la brillantor local en control per redstone.<br>
+<br>
+Ús: usa’l per a làmpades automàtiques, porticons i circuits de visibilitat.<br>
+<br>
+Notes: emet energia amb un nivell de brillantor brut de 8 o més.

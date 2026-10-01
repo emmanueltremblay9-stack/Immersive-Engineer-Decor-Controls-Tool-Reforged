@@ -1,0 +1,108 @@
+Industriell konstruksjon
+Fabrikkvegger og kanter
+Generelle byggedeler omfatter dører, vinduer, lys, varselskilt, kanter og konstruksjonsdeler som ikke hører til en mer spesifikk del.<br>
+<br>
+Bruk disse sidene til fabrikkrom, servicekorridorer, faremerking og praktiske industridetaljer.
+<np>
+Jernlampe
+Kompakt arbeidslys
+<&iron_bulb_light>Denne blokken gir kompakt industribelysning til korridorer, gangbroer og arbeidsbåser.<br>
+<br>
+Bruk: monter den i tak, på vegger eller langs kanter der rommet trenger tydelig arbeidslys.<br>
+<np>
+Takkantlampe
+Kompakt arbeidslys
+<&iron_ceiling_edge_light>Denne blokken gir kompakt industribelysning til korridorer, gangbroer og arbeidsbåser.<br>
+<br>
+Bruk: monter den i tak, på vegger eller langs kanter der rommet trenger tydelig arbeidslys.<br>
+<np>
+Innfelt gulvkantlampe
+Kompakt arbeidslys
+<&iron_floor_edge_light>Denne blokken gir kompakt industribelysning til korridorer, gangbroer og arbeidsbåser.<br>
+<br>
+Bruk: monter den i tak, på vegger eller langs kanter der rommet trenger tydelig arbeidslys.<br>
+<np>
+Innfelt lampe
+Kompakt arbeidslys
+<&iron_inset_light>Denne blokken gir kompakt industribelysning til korridorer, gangbroer og arbeidsbåser.<br>
+<br>
+Bruk: monter den i tak, på vegger eller langs kanter der rommet trenger tydelig arbeidslys.<br>
+<np>
+Skilt «Generell advarsel»
+Faremerking
+<&sign_caution>Skiltet «Generell advarsel» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Fareskilt
+Faremerking
+<&sign_danger>Skiltet «Advarsel, virkelig farlig» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Dekorskilt
+Faremerking
+<&sign_decor>Skiltplaten fra Engineer's Decor merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Forsvarsskilt
+Faremerking
+<&sign_defense>Skiltet «Advarsel, forsvarssystem» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Utgangsskilt
+Faremerking
+<&sign_exit>Dette skiltet merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Brannfareskilt
+Faremerking
+<&sign_firehazard>Skiltet «Brannfare» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Frostvarselskilt
+Faremerking
+<&sign_frost>Skiltet «Frostvarsel» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Skilt for varm overflate
+Faremerking
+<&sign_hotsurface>Skiltet «Advarsel, varm overflate» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Skilt for strømførende ledning
+Faremerking
+<&sign_hotwire>Skiltet «Advarsel, strømførende ledning» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Laserfareskilt
+Faremerking
+<&sign_laser>Skiltet «Laserfare» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Skilt for magisk fare
+Faremerking
+<&sign_magichazard>Skiltet «Advarsel, magisk fare» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Magnetfeltskilt
+Faremerking
+<&sign_magneticfield>Skiltet «Advarsel, sterkt magnetfelt» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>
+Skilt for radioaktiv fare
+Faremerking
+<&sign_radioactive>Skiltet «Radioaktiv fare» merker farer, utganger og arbeidsområder med et gjenkjennelig sikkerhetssymbol for fabrikker.<br>
+<br>
+Bruk: plasser det ved farer, utganger, maskiner og områder med begrenset tilgang.<br>
+<np>

@@ -1,0 +1,7 @@
+Alarmlamp
+Seinterugvoer
+<&recipe>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.

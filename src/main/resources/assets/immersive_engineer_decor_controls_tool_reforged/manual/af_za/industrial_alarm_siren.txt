@@ -1,0 +1,7 @@
+Alarmsirene
+Seinterugvoer
+<&recipe>Die Alarmsirene is 'n rooisteen-aanwyser wat op 'n vlak aangebring word. Sy aangedrewe toestand verander volgens die sein van die blok waaraan dit geheg is.<br>
+<br>
+Gebruik: Heg dit aan 'n soliede vlak en dryf dit aan om deure, masjiene, alarms of panele te monitor.<br>
+<br>
+Notas: Die sirene verfris een keer per sekonde terwyl die aangehegte sein aktief bly.

@@ -1,0 +1,7 @@
+Sensor Cahaya
+Penderiaan isyarat
+<&recipe>Sensor cahaya menukar kecerahan setempat kepada kawalan redstone.<br>
+<br>
+Penggunaan: Gunakan untuk lampu automatik, pengatup dan litar keterlihatan.<br>
+<br>
+Nota: Mengeluarkan kuasa pada kecerahan mentah 8 atau lebih.

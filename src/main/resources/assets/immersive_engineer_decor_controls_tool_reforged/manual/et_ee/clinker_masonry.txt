@@ -1,0 +1,161 @@
+Klinkertellis ja müüritis
+Tellis- ja betoonümbrised
+Klinkertellis, räbutellis, raudbetoon ja soomusklaas annavad rasked pinnad kuumadele ruumidele, töökodadele ning kaitstud vaadetele.<br>
+<br>
+Servade viimistlemiseks kasuta sobivaid plaate, treppe, õhukesi plaate ja müüre, säilitades tehase materjalistiili.
+<np>
+Klinkertelliste plokk
+Tahmatume tellismüüritis
+<&clinker_brick_block>See plokk toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Klinkertellistest plaat
+Tahmatume tellismüüritis
+<&clinker_brick_slab>See plokk toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Klinkertellistest trepp
+Tahmatume tellismüüritis
+<&clinker_brick_stairs>See plokk toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Klinkertellistest müür
+Tahmatume tellismüüritis
+<&clinker_brick_wall>See plokk toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Määrdunud klinkerplokk
+Tahmatume tellismüüritis
+<&clinker_brick_stained_block>Määrdunud klinkertelliste plokk toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Määrdunud klinkerplaat
+Tahmatume tellismüüritis
+<&clinker_brick_stained_slab>Määrdunud klinkertellistest plaat toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Määrdunud klinkertrepp
+Tahmatume tellismüüritis
+<&clinker_brick_stained_stairs>Määrdunud klinkertellistest trepp toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Kaunistatud klinkertellis
+Tahmatume tellismüüritis
+<&clinker_brick_sastor_corner_block>Liivakivikaunistusega klinkertellis toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Süvistatud klinkertellis
+Tahmatume tellismüüritis
+<&clinker_brick_recessed>See plokk toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Piludega klinkertellised
+Tahmatume tellismüüritis
+<&clinker_brick_vertically_slit>Püstpiludega klinkertellised toovad tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Vertikaalne klinkerplaat
+Tahmatume tellismüüritis
+<&clinker_brick_vertical_slab_structured>Mustriline vertikaalne klinkerplaat toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Poolik klinkertellisplaat
+Tahmatume tellismüüritis
+<&halfslab_clinker_brick>See plokk toob tahmatumeda tellismüüritise ahjuhallidesse, korstnaalustele ja hooldusseintele.<br>
+<br>
+Kasutamine: Kasuta seinana, kaunistusena või kuumustsooni ümbrisena ahjude ja katelde ümber.<br>
+<np>
+Räbutelliste plokk
+Tihe tehasemüüritis
+<&slag_brick_block>See plokk lisab tihedat hallikaspruuni müüritist vundamentidele, tugimüüridele ja vanematele töökuuridele.<br>
+<br>
+Kasutamine: Kasuta vanemate vundamentide, tugimüüride ja määrdunud tehasepõrandate jaoks.<br>
+<np>
+Räbutellistest plaat
+Tihe tehasemüüritis
+<&slag_brick_slab>See plokk lisab tihedat hallikaspruuni müüritist vundamentidele, tugimüüridele ja vanematele töökuuridele.<br>
+<br>
+Kasutamine: Kasuta vanemate vundamentide, tugimüüride ja määrdunud tehasepõrandate jaoks.<br>
+<np>
+Räbutellistest trepp
+Tihe tehasemüüritis
+<&slag_brick_stairs>See plokk lisab tihedat hallikaspruuni müüritist vundamentidele, tugimüüridele ja vanematele töökuuridele.<br>
+<br>
+Kasutamine: Kasuta vanemate vundamentide, tugimüüride ja määrdunud tehasepõrandate jaoks.<br>
+<np>
+Räbutellistest müür
+Tihe tehasemüüritis
+<&slag_brick_wall>See plokk lisab tihedat hallikaspruuni müüritist vundamentidele, tugimüüridele ja vanematele töökuuridele.<br>
+<br>
+Kasutamine: Kasuta vanemate vundamentide, tugimüüride ja määrdunud tehasepõrandate jaoks.<br>
+<np>
+Raudbetooniplokk
+Raudbetoon
+<&rebar_concrete>See plokk on kõvastatud betoonosa masinaalustele, plahvatuskaitsemüüridele ja laadimisalade põrandatele.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Raudbetoonplaat
+Raudbetoon
+<&rebar_concrete_slab>See plokk on kõvastatud betoonosa masinaalustele, plahvatuskaitsemüüridele ja laadimisalade põrandatele.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Raudbetoontrepp
+Raudbetoon
+<&rebar_concrete_stairs>See plokk on kõvastatud betoonosa masinaalustele, plahvatuskaitsemüüridele ja laadimisalade põrandatele.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Raudbetoonmüür
+Raudbetoon
+<&rebar_concrete_wall>See plokk on kõvastatud betoonosa masinaalustele, plahvatuskaitsemüüridele ja laadimisalade põrandatele.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Õhuke raudbetoonplaat
+Raudbetoon
+<&halfslab_rebar_concrete>See plokk on kõvastatud betoonosa masinaalustele, plahvatuskaitsemüüridele ja laadimisalade põrandatele.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Raudbetoonkahhel
+Raudbetoon
+<&rebar_concrete_tile>See plokk on kõvastatud betoonosa masinaalustele, plahvatuskaitsemüüridele ja laadimisalade põrandatele.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Raudbetoonkahhliplaat
+Raudbetoon
+<&rebar_concrete_tile_slab>See plokk on kõvastatud betoonosa masinaalustele, plahvatuskaitsemüüridele ja laadimisalade põrandatele.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Raudbetoonkahhel
+Raudbetoon
+<&rebar_concrete_tile_stairs>Raudbetoonkahhlitrepp koosneb kõvastatud betoonosadest masinaaluste, plahvatuskaitsemüüride ja laadimisalade põrandate jaoks.<br>
+<br>
+Kasutamine: Kasuta masinate all, hoolduskoridorides või kõikjal, kus ehitis vajab tugevdatud alust.<br>
+<np>
+Soomusklaasiplokk
+Kaitstud vaade
+<&panzerglass_block>See plokk säilitab avatud vaate ning sobib samal ajal tugevdatud tehasekonstruktsiooniga.<br>
+<br>
+Kasutamine: Kasuta seal, kus mängijad peaksid nägema masinaid läbi kaitstud tõkke.<br>
+<np>
+Soomusklaasiplaat
+Kaitstud vaade
+<&panzerglass_slab>See plokk säilitab avatud vaate ning sobib samal ajal tugevdatud tehasekonstruktsiooniga.<br>
+<br>
+Kasutamine: Kasuta seal, kus mängijad peaksid nägema masinaid läbi kaitstud tõkke.<br>

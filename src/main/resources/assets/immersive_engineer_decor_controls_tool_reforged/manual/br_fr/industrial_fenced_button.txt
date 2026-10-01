@@ -1,0 +1,7 @@
+Bouton mekanik gwarezet
+Reoliñ Redstone
+<&recipe>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.

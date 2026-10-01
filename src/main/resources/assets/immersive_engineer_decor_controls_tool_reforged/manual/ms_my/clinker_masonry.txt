@@ -1,0 +1,161 @@
+Klinker dan Binaan Batu
+Sarung bata dan konkrit
+Klinker, bata sanga, konkrit bertetulang dan kaca berperisai menyediakan permukaan berat untuk bilik panas, bengkel dan garis pandang terlindung.<br>
+<br>
+Gunakan papak, tangga, hirisan dan dinding yang sepadan untuk menyudahkan tepi sambil mengekalkan keseragaman bahan kilang.
+<np>
+Blok Bata Klinker
+Binaan bata gelap berjelaga
+<&clinker_brick_block>Blok ini membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Papak Bata Klinker
+Binaan bata gelap berjelaga
+<&clinker_brick_slab>Blok ini membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Tangga Bata Klinker
+Binaan bata gelap berjelaga
+<&clinker_brick_stairs>Blok ini membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Dinding Bata Klinker
+Binaan bata gelap berjelaga
+<&clinker_brick_wall>Blok ini membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Blok Klinker Kotor
+Binaan bata gelap berjelaga
+<&clinker_brick_stained_block>Blok bata klinker kotor membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Papak Klinker Kotor
+Binaan bata gelap berjelaga
+<&clinker_brick_stained_slab>Papak bata klinker kotor membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Tangga Klinker Kotor
+Binaan bata gelap berjelaga
+<&clinker_brick_stained_stairs>Tangga bata klinker kotor membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Bata Klinker Berhias
+Binaan bata gelap berjelaga
+<&clinker_brick_sastor_corner_block>Bata klinker berhias batu pasir membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Bata Klinker Berlekuk
+Binaan bata gelap berjelaga
+<&clinker_brick_recessed>Blok ini membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Bata Klinker Bercelah
+Binaan bata gelap berjelaga
+<&clinker_brick_vertically_slit>Bata klinker bercelah tegak membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Papak Klinker Tegak
+Binaan bata gelap berjelaga
+<&clinker_brick_vertical_slab_structured>Papak klinker tegak bertekstur membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Separuh Papak Bata Klinker
+Binaan bata gelap berjelaga
+<&halfslab_clinker_brick>Blok ini membawa rupa bata gelap berjelaga ke dewan relau, tapak cerobong dan dinding servis.<br>
+<br>
+Penggunaan: Gunakan sebagai dinding, hiasan tepi atau sarung zon panas di sekitar relau dan dandang.<br>
+<np>
+Blok Bata Sanga
+Binaan batu kilang padat
+<&slag_brick_block>Blok ini menambah binaan batu kelabu perang padat untuk asas, tembok penahan dan bangsal kerja lama.<br>
+<br>
+Penggunaan: Gunakan untuk asas lama, tembok penahan dan lantai kilang kotor.<br>
+<np>
+Papak Bata Sanga
+Binaan batu kilang padat
+<&slag_brick_slab>Blok ini menambah binaan batu kelabu perang padat untuk asas, tembok penahan dan bangsal kerja lama.<br>
+<br>
+Penggunaan: Gunakan untuk asas lama, tembok penahan dan lantai kilang kotor.<br>
+<np>
+Tangga Bata Sanga
+Binaan batu kilang padat
+<&slag_brick_stairs>Blok ini menambah binaan batu kelabu perang padat untuk asas, tembok penahan dan bangsal kerja lama.<br>
+<br>
+Penggunaan: Gunakan untuk asas lama, tembok penahan dan lantai kilang kotor.<br>
+<np>
+Dinding Bata Sanga
+Binaan batu kilang padat
+<&slag_brick_wall>Blok ini menambah binaan batu kelabu perang padat untuk asas, tembok penahan dan bangsal kerja lama.<br>
+<br>
+Penggunaan: Gunakan untuk asas lama, tembok penahan dan lantai kilang kotor.<br>
+<np>
+Blok Konkrit Bertetulang
+Konkrit bertetulang
+<&rebar_concrete>Blok ini ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Papak Konkrit Bertetulang
+Konkrit bertetulang
+<&rebar_concrete_slab>Blok ini ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Tangga Konkrit Bertetulang
+Konkrit bertetulang
+<&rebar_concrete_stairs>Blok ini ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Dinding Konkrit Bertetulang
+Konkrit bertetulang
+<&rebar_concrete_wall>Blok ini ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Hirisan Konkrit Bertetulang
+Konkrit bertetulang
+<&halfslab_rebar_concrete>Blok ini ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Jubin Konkrit Bertetulang
+Konkrit bertetulang
+<&rebar_concrete_tile>Blok ini ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Papak Jubin Konkrit Bertetulang
+Konkrit bertetulang
+<&rebar_concrete_tile_slab>Blok ini ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Jubin Konkrit Bertetulang
+Konkrit bertetulang
+<&rebar_concrete_tile_stairs>Tangga jubin konkrit bertetulang ialah bahagian konkrit keras untuk tapak mesin, dinding tahan letupan dan lantai ruang pemunggahan.<br>
+<br>
+Penggunaan: Gunakan di bawah mesin, sepanjang koridor servis atau di mana-mana yang memerlukan tapak bertetulang.<br>
+<np>
+Blok Kaca Berperisai
+Garis pandang terlindung
+<&panzerglass_block>Blok ini mengekalkan pandangan terbuka sambil sepadan dengan binaan kilang bertetulang.<br>
+<br>
+Penggunaan: Gunakan di tempat pemain perlu melihat mesin melalui penghadang terlindung.<br>
+<np>
+Papak Kaca Berperisai
+Garis pandang terlindung
+<&panzerglass_slab>Blok ini mengekalkan pandangan terbuka sambil sepadan dengan binaan kilang bertetulang.<br>
+<br>
+Penggunaan: Gunakan di tempat pemain perlu melihat mesin melalui penghadang terlindung.<br>

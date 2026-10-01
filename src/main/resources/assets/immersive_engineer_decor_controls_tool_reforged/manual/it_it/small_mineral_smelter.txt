@@ -1,0 +1,5 @@
+Fornace di fusione minerale
+Unità di lavorazione compatta
+<&recipe>La fornace di fusione minerale lavora minerali ad alta temperatura in uno spazio d’officina ridotto.<br>
+<br>
+Uso: fornisci blocchi minerali ed energia per la fusione ad alta temperatura.<br>

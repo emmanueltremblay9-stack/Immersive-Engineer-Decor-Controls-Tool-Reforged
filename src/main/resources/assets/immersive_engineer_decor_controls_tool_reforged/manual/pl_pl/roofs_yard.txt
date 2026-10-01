@@ -1,0 +1,101 @@
+Dachy i place
+Zewnętrzne wyposażenie fabryki
+Bloki dachowe, żwir na place i stare drewniane elementy przemysłowe pomagają wykończyć zewnętrzne hale, place robocze, strefy załadunku i podniszczone obrzeża fabryk.<br>
+<br>
+Łącz te części z murami i ciągami komunikacyjnymi, aby zewnętrzne konstrukcje przemysłowe były czytelne z daleka.
+<np>
+Dach z ciemnego gontu
+Postarzany element dachu
+<&dark_shingle_roof>Ten blok pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Dachowy płotek przeciwśniegowy
+Postarzany element dachu
+<&dark_shingle_roof_metallized>Płotek przeciwśniegowy dachu z ciemnego gontu pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Dach z ciemnego gontu
+Postarzany element dachu
+<&dark_shingle_roof_skylight>Świetlik dachu z ciemnego gontu pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Korpus komina dachowego
+Postarzany element dachu
+<&dark_shingle_roof_chimneytrunk>Korpus komina dachu z ciemnego gontu pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Dachowy przepust przewodów
+Postarzany element dachu
+<&dark_shingle_roof_wireconduit>Przepust przewodów dachu z ciemnego gontu pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Dach z ciemnego gontu
+Postarzany element dachu
+<&dark_shingle_roof_chimney>Komin dachu z ciemnego gontu pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Blok dachu z ciemnego gontu
+Postarzany element dachu
+<&dark_shingle_roof_block>Ten blok pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Płyta dachu z ciemnego gontu
+Postarzany element dachu
+<&dark_shingle_roof_slab>Ten blok pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Płyta dachu z ciemnego gontu
+Postarzany element dachu
+<&dark_shingle_roof_slabslice>Cienka płyta dachu z ciemnego gontu pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>
+<np>
+Ubita ziemia ze żwirem
+Podłoże placu robót
+<&dense_grit_dirt_block>Ten blok nadaje zewnętrznym obszarom roboczym wygląd ubitej, wydeptanej nawierzchni.<br>
+<br>
+Użycie: Układaj go wokół bram załadunkowych, zbiorników na zewnątrz i placów maszynowych.<br>
+<np>
+Ubity piasek ze żwirem
+Podłoże placu robót
+<&dense_grit_sand_block>Ten blok nadaje zewnętrznym obszarom roboczym wygląd ubitej, wydeptanej nawierzchni.<br>
+<br>
+Użycie: Układaj go wokół bram załadunkowych, zbiorników na zewnątrz i placów maszynowych.<br>
+<np>
+Stare drewniane deski
+Postarzane drewno warsztatowe
+<&old_industrial_wood_planks>Stare przemysłowe deski dodają postarzane drewno warsztatowe na podłogi, stopnie, drzwi i przytulne wykończenia wnętrz.<br>
+<br>
+Użycie: Buduj z niego podłogi, schody, drzwi i wykończenia starych warsztatów.<br>
+<np>
+Płyta ze starego drewna przemysłowego
+Postarzane drewno warsztatowe
+<&old_industrial_wood_slab>Ten blok dodaje postarzane drewno warsztatowe na podłogi, stopnie, drzwi i przytulne wykończenia wnętrz.<br>
+<br>
+Użycie: Buduj z niego podłogi, schody, drzwi i wykończenia starych warsztatów.<br>
+<np>
+Schody ze starego drewna
+Postarzane drewno warsztatowe
+<&old_industrial_wood_stairs>Schody ze starego drewna przemysłowego dodają postarzane drewno warsztatowe na podłogi, stopnie, drzwi i przytulne wykończenia wnętrz.<br>
+<br>
+Użycie: Buduj z niego podłogi, schody, drzwi i wykończenia starych warsztatów.<br>
+<np>
+Cienka płyta ze starego drewna
+Postarzane drewno warsztatowe
+<&old_industrial_wood_slabslice>Cienka płyta ze starego drewna przemysłowego dodaje postarzane drewno warsztatowe na podłogi, stopnie, drzwi i przytulne wykończenia wnętrz.<br>
+<br>
+Użycie: Buduj z niego podłogi, schody, drzwi i wykończenia starych warsztatów.<br>
+<np>
+Stare przemysłowe drzwi drewniane
+Postarzane drewno warsztatowe
+<&old_industrial_wood_door>Ten blok dodaje postarzane drewno warsztatowe na podłogi, stopnie, drzwi i przytulne wykończenia wnętrz.<br>
+<br>
+Użycie: Buduj z niego podłogi, schody, drzwi i wykończenia starych warsztatów.<br>

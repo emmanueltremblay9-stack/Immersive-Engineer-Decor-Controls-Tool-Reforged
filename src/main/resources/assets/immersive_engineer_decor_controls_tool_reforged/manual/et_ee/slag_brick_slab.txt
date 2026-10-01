@@ -1,0 +1,5 @@
+Räbutellistest plaat
+Tihe tehasemüüritis
+<&recipe>See plokk lisab tihedat hallikaspruuni müüritist vundamentidele, tugimüüridele ja vanematele töökuuridele.<br>
+<br>
+Kasutamine: Kasuta vanemate vundamentide, tugimüüride ja määrdunud tehasepõrandate jaoks.<br>

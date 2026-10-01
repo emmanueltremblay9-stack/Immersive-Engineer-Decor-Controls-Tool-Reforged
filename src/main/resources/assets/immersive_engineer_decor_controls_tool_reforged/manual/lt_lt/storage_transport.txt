@@ -1,0 +1,41 @@
+Sandėliavimas ir gabenimas
+Sandėliavimo ir srauto įranga
+Sandėliavimo ir gabenimo įranga apima dėžes, statines, piltuvus ir vožtuvus kompaktiškiems fabriko srautams.<br>
+<br>
+Naudok šiuos puslapius planuodamas sandėlius, vamzdynus, aptarnavimo talpyklas ir valdomas skysčių linijas.
+<np>
+Dėžė su etikete
+Redaguojama atsargų etiketė
+<&labeled_crate>Ši dėžė su etikete skirta aiškiai rūšiuoti atsargas sandėlyje. Jos priekinę plokštelę galima redaguoti kaip mažą dirbtuvių ženklą.<br>
+<br>
+Naudojimas: dešiniuoju pelės mygtuku spustelėk etiketės plokštelę, kad redaguotum dėžės etiketę. Spustelėk likusią dėžės dalį, kad atidarytum įrangos, dalių ir priežiūros atsargų sandėlį.<br>
+<np>
+Skysčių statinė
+Skysčių linijos įranga
+<&fluid_barrel>Tai kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: statyk ten, kur vamzdžiai arba kibirai gali pasiekti talpyklos paviršių.<br>
+<np>
+Skysčių surinkimo piltuvas
+Skysčių linijos įranga
+<&small_fluid_funnel>Mažas skysčių surinkimo piltuvas yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: statyk po skysčių surinkimo vieta ir nukreipk sukauptą turinį į talpyklas arba žemiau esančius vamzdžius.<br>
+<np>
+Skysčių vamzdžio atbulinis vožtuvas
+Skysčių linijos įranga
+<&straight_pipe_valve>Skysčių vamzdžio atbulinis vožtuvas yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: pasuk vožtuvą pagal numatytą srauto kryptį.<br>
+<np>
+Redstonu valdomas skysčių vožtuvas
+Skysčių linijos įranga
+<&straight_pipe_valve_redstone>Redstonu valdomas skysčių vožtuvas yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: pasuk vožtuvą pagal numatytą srauto kryptį.<br>
+<np>
+Analoginis skysčių vožtuvas
+Skysčių linijos įranga
+<&straight_pipe_valve_redstone_analog>Analoginis skysčių vožtuvas yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: pasuk vožtuvą pagal numatytą srauto kryptį.<br>

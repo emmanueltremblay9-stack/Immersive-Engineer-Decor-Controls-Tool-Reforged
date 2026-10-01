@@ -1,0 +1,7 @@
+Málmsmíðabekkur
+Vinnustöð fyrir plötur
+<&recipe>Málmvinnuborð með sérstöku hamarsæti, 3x3 smíðareit og úttakssæti.<br>
+<br>
+Notkun: Notaðu reitina eins og venjulegan vinnubekk. Til að móta IE-plötur skaltu setja hamar verkfræðingsins í verkfærahólfið og plötuefnið í reitina og taka síðan mótuðu plötuna úr úttakinu.<br>
+<br>
+Stálskreytingar nota stálplötur. Settu í Immersive Engineering-hamar, hamraðu stálhleifa í stálplötur og notaðu síðan plöturnar til að smíða staura, göngubrýr, glugga, hurðir, handrið og aðrar stálskreytingar.<br>

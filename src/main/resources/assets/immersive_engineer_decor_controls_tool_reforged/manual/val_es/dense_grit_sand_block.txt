@@ -1,0 +1,5 @@
+Arena compactada amb grava
+Revestiment del terreny de treball
+<&recipe>Este bloc dona a les zones de treball exteriors una superfície compactada i xafada.<br>
+<br>
+Ús: estén-lo al voltant de portes de càrrega, depòsits exteriors i patis de màquines.<br>

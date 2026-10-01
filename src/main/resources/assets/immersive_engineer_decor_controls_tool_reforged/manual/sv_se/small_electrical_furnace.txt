@@ -1,0 +1,5 @@
+Elugn
+Kompakt bearbetningsenhet
+<&recipe>Elugnen utför kompakta, FE-drivna smältarbeten på liten verkstadsyta.<br>
+<br>
+Användning: Tillför FE och giltigt smältmaterial.<br>

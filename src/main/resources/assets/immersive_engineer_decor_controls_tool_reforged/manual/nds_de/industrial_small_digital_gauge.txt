@@ -1,0 +1,7 @@
+Digitale Meter
+Afleesbare Tekenstark
+<&recipe>En lütte Meter för den Stüerruum wiest de Redstone-Stark düütlich op en Paneel.<br>
+<br>
+Bruuk: Maak em dor fast, wo du dat Redstone dichtbi mit een Blick pröven wullt.<br>
+<br>
+Anmarken: Leest Redstone-Stark vun 0 bet 15 dichtbi af.

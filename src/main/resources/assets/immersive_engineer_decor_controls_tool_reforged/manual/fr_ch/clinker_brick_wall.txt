@@ -1,0 +1,5 @@
+Mur de briques de clinker
+Briques noircies par la suie
+<&recipe>Ce bloc apporte une maçonnerie assombrie par la suie aux salles de fourneaux, bases de cheminées et murs de service.<br>
+<br>
+Utilisation : construisez des murs, des bordures ou des enveloppes de zones chaudes autour des fourneaux et des chaudières.<br>

@@ -1,0 +1,7 @@
+Metall-Werkbank
+Plattenarbeitsplatz
+<&recipe>Die Metall-Werkbank ist eine verstärkte Station mit Hammerfach, vollständigem 3x3-Herstellungsraster und Ausgabefach.<br>
+<br>
+Benutzung: Das Raster wie eine normale Werkbank verwenden. Für IE-Platten einen Ingenieurshammer ins Werkzeugfach und das Plattenmaterial ins Raster legen, dann die geformte Platte aus der Ausgabe nehmen.<br>
+<br>
+Stahlgerahmte Dekorationen verwenden Stahlplatten, die an dieser Werkbank geformt werden.

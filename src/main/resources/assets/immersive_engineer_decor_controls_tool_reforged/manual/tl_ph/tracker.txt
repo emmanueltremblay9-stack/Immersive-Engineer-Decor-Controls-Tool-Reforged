@@ -1,0 +1,7 @@
+Pangsundan
+Pananda ng nakaimbak na posisyon
+<&recipe>Nagtatago ang tracker ng posisyon ng bloke sa item.<br>
+<br>
+I-click ang bloke upang i-save ang dimension at coordinates. Ipinapakita ng tooltip ang posisyon. Sneak-use upang burahin ang target.<br>
+<br>
+Markahan ang makina, lagusan, remote control o di-tapos na gusali.

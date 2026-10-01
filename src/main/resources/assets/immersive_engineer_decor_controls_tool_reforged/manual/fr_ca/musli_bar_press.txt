@@ -1,0 +1,7 @@
+Presse à barres de muesli
+Presse alimentaire
+<&recipe>La presse à barres de muesli transforme des aliments courants en rations de terrain compactes.<br>
+<br>
+Utilisation : emportez du pain, une pomme et des graines de blé, de pastèque, de citrouille, de betterave ou de chanvre industriel, puis utilisez la presse. Un pressage réussi consomme un exemplaire de chaque ingrédient, vérifie la place, crée quatre barres Muslee Melange et endommage la presse.<br>
+<br>
+S’il manque un ingrédient ou si l’inventaire n’a pas de place, rien n’est consommé.

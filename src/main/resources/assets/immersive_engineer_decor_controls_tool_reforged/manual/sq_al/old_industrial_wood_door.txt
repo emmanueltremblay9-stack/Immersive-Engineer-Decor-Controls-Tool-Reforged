@@ -1,0 +1,5 @@
+Derë e vjetër industriale prej druri
+Dru i vjetruar punishteje
+<&recipe>Ky bllok shton dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>

@@ -1,0 +1,5 @@
+Porta metálica de correr
+Ponto de acesso industrial
+<&recipe>Este bloco fornece um acesso robusto a salas de serviço, poços, telhados e recintos de máquinas.<br>
+<br>
+Uso: Instale onde a construção precisar de uma abertura controlada para manutenção.<br>

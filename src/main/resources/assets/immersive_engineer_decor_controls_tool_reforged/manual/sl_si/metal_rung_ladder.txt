@@ -1,0 +1,5 @@
+Lestev s kovinskimi prečkami
+Del servisnega dostopa
+<&recipe>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>

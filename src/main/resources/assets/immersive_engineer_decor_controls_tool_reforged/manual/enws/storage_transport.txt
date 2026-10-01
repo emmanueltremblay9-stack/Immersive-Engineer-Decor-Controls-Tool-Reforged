@@ -1,0 +1,41 @@
+Storage & Carriage
+Fittings for Inventory and Flow
+Storage and carriage fittings provide crates, barrels, funnels and valves for compact routing through the manufactory.<br>
+<br>
+Consult these pages when planning stockrooms, pipe runs, service tanks and governed liquid lines.
+<np>
+Labelled Crate
+Stock Label to Alter
+<&labeled_crate>This labelled crate serves clear sorting in thy stockroom. Its front plate may be altered as a little workshop sign.<br>
+<br>
+Use: Right-click the label plate to alter the crate’s label. Right-click the rest of the crate to open storage for fittings, parts and supplies for upkeep.<br>
+<np>
+Barrel for Liquids
+Fittings for Liquid Lines
+<&fluid_barrel>This compact fitting serves liquid lines for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Set it where pipes or buckets may reach the tank face.<br>
+<np>
+Funnel for Liquids
+Fittings for Liquid Lines
+<&small_fluid_funnel>The Little Funnel for Gathering Liquids is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Put it beneath the point of liquid gathering, and conduct its store into tanks or pipes below.<br>
+<np>
+One-Way Liquid Check Valve
+Fittings for Liquid Lines
+<&straight_pipe_valve>The One-Way Liquid Check Valve is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Align the valve with the direction in which thou wouldst have the liquid flow.<br>
+<np>
+Liquid Valve Governed by Redstone
+Fittings for Liquid Lines
+<&straight_pipe_valve_redstone>The Liquid Valve Governed by Redstone is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Align the valve with the direction in which thou wouldst have the liquid flow.<br>
+<np>
+Analogue Liquid Valve
+Fittings for Liquid Lines
+<&straight_pipe_valve_redstone_analog>The Analogue Liquid Valve is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Align the valve with the direction in which thou wouldst have the liquid flow.<br>

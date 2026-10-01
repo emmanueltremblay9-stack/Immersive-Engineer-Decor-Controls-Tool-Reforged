@@ -1,0 +1,7 @@
+Rustikinis kritimo jutiklis
+Signalo jutimas
+<&recipe>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.

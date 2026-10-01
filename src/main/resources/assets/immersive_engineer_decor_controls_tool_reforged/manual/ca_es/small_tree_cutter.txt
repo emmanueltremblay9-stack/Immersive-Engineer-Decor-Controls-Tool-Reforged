@@ -1,0 +1,5 @@
+Tallador d’arbres
+Equipament de planta
+<&recipe>El tallador d’arbres petit és un bloc d’equipament de planta per a elaboració, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: apunta’l cap a arbres crescuts i recull-ne els objectes obtinguts per separat.<br>

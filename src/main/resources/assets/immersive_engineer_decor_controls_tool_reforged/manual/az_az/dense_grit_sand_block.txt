@@ -1,0 +1,5 @@
+Sıx çınqıllı qum
+İş sahəsinin zəmin örtüyü
+<&recipe>Bu blok açıq iş sahələrinə sıxılmış, tapdalanmış səth verir.<br>
+<br>
+İstifadə: Yükləmə qapıları, açıq havadakı çənlər və maşın meydançaları ətrafına döşəyin.<br>

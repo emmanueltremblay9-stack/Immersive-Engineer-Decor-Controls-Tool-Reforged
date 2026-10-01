@@ -1,0 +1,5 @@
+Magic Hazard Sign
+Hazard marker
+<&recipe>The Sign "Caution Magical Hazard" Magic Hazard Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>

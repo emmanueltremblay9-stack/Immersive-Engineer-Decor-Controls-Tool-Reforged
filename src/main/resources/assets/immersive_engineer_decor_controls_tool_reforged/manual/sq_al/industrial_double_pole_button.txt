@@ -1,0 +1,7 @@
+Buton
+Kontrolli me redston
+<&recipe>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.

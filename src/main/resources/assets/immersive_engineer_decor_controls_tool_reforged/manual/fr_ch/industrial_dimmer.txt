@@ -1,0 +1,7 @@
+Gradateur
+Signal variable
+<&recipe>Une commande rotative règle la puissance redstone depuis un panneau compact.<br>
+<br>
+Utilisation : faites un clic droit pour augmenter la sortie par paliers ; après la puissance maximale, elle revient à zéro.<br>
+<br>
+Remarque : fournit une puissance de 0 à 15.

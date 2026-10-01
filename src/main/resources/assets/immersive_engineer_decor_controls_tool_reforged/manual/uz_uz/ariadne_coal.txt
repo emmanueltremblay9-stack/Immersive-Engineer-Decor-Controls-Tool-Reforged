@@ -1,0 +1,7 @@
+Ariadna ko'miri
+Kon yo'li belgisi
+<&recipe>Ariadna ko'miri shaxtalar, tarmoqlangan konlar va vaqtinchalik yerosti ishlarida yo'lni tez belgilash uchun xizmat qiladi.<br>
+<br>
+Ishlatish: mustahkam blok yuzasida ishlatib, uning chetiga qora o'q belgisi qo'ying. Belgi yuzadagi bosilgan nuqtani o'qib, diagonal ham qo'shilgan sakkiz yo'nalishni qo'llaydi. Alohida ko'rsatkich taxtalarini tashimasdan burilish, chiqish, berk yo'l va ta'minot yo'llarini belgilashga yordam beradi.<br>
+<br>
+Ariadna ko'miri qayta ishlatiladigan, 100 marta xizmat qiladigan belgilash asbobi. Har bir muvaffaqiyatli belgi bitta chidamlilik sarflaydi; mos bo'lmagan yuzalar buyumni eskirtirmasdan rad etiladi.

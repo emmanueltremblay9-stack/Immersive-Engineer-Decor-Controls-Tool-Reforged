@@ -1,0 +1,5 @@
+Ventá con marco de aceiro
+Visibilidade protexida
+<&recipe>Este bloque mantén a visibilidade sen desentoar coa construción reforzada da fábrica.<br>
+<br>
+Uso: úsao onde os xogadores deban ver as máquinas a través dunha barreira protectora.<br>

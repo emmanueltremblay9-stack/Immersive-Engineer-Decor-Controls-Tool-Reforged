@@ -1,0 +1,5 @@
+Čelični sto
+Radionički namještaj
+<&recipe>Ovaj blok je praktičan radionički namještaj za radne prostorije i kutke za održavanje.<br>
+<br>
+Upotreba: Postavite ga uz radne klupe, sanduke i kompaktne mašine.<br>

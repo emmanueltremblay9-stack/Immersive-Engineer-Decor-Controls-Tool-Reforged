@@ -1,0 +1,5 @@
+Burdinazko mantentze-tranpola
+Industria-sarbidea
+<&recipe>Bloke honek sarbide sendoa eskaintzen du mantentze-geletan, zuloetan, teilatuetan eta makinen itxituretan.<br>
+<br>
+Erabilera: instalatu eraikuntzak mantentze-irekidura kontrolatua behar duen tokian.<br>

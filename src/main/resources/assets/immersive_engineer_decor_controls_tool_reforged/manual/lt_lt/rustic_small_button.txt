@@ -1,0 +1,7 @@
+Mažas rustikinis mygtukas
+Valdymas redstonu
+<&recipe>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.

@@ -1,0 +1,7 @@
+Cápsula d'aire de bucéu
+Reserva d'aire d'emerxencia
+<&recipe>La Cápsula d'aire de bucéu ye un oxetu d'emerxencia pa trabayos baxo l'agua.<br>
+<br>
+Usu: Úsala manualmente pa recuperar aire. Si la lleves nel inventariu tamién pue activase sola cuando casi nun queda aire, y dempués entra en recarga.<br>
+<br>
+Llévala a mines inundaes, tuberíes somorguiaes y arreglos de sales de bombes.

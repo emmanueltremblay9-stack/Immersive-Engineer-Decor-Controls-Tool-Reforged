@@ -1,0 +1,5 @@
+Fluido passivo
+Componentes de tubulação de fluidos
+<&recipe>O acumulador passivo de fluidos é um componente compacto para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Coloque junto a fontes de água adequadas e deixe espaço para retirar o fluido.<br>

@@ -1,0 +1,41 @@
+Deposito e trasporto
+Dispositivi per inventari e flussi
+Gli accessori di deposito e trasporto comprendono casse, barili, imbuti e valvole per percorsi compatti nella fabbrica.<br>
+<br>
+Consulta queste pagine per progettare magazzini, tubature, serbatoi di servizio e linee di fluidi controllate.
+<np>
+Cassa etichettata
+Etichetta modificabile per scorte
+<&labeled_crate>Questa cassa etichettata serve a organizzare chiaramente il magazzino. La targhetta anteriore si modifica come un piccolo cartello d’officina.<br>
+<br>
+Uso: fai clic destro sulla targhetta per modificare l’etichetta della cassa. Fai clic destro sul resto della cassa per aprire il deposito di accessori, componenti e materiali di manutenzione.<br>
+<np>
+Barile per fluidi
+Componenti per linee di fluidi
+<&fluid_barrel>Questo raccordo è un elemento compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: posalo dove tubi o secchi possono raggiungere la faccia del serbatoio.<br>
+<np>
+Imbuto per fluidi
+Componenti per linee di fluidi
+<&small_fluid_funnel>Il piccolo imbuto raccoglifluidi è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: posalo sotto il punto di raccolta del fluido e convoglia il contenuto in serbatoi o tubature sottostanti.<br>
+<np>
+Valvola di non ritorno per fluidi
+Componenti per linee di fluidi
+<&straight_pipe_valve>La valvola di non ritorno per fluidi è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: allinea la valvola con la direzione desiderata del flusso.<br>
+<np>
+Valvola per fluidi a redstone
+Componenti per linee di fluidi
+<&straight_pipe_valve_redstone>La valvola per fluidi a redstone è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: allinea la valvola con la direzione desiderata del flusso.<br>
+<np>
+Valvola analogica per fluidi
+Componenti per linee di fluidi
+<&straight_pipe_valve_redstone_analog>La valvola analogica per fluidi è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: allinea la valvola con la direzione desiderata del flusso.<br>

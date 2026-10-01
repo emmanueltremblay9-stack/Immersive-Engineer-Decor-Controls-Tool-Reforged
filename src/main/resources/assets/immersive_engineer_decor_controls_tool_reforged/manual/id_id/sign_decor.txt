@@ -1,0 +1,5 @@
+Rambu Dekoratif
+Penanda bahaya
+<&recipe>Pelat rambu (Engineer's Decor) menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>

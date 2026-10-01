@@ -1,0 +1,7 @@
+Premsa de Barretes Muslee
+Premsa de menjar
+<&recipe>Converteix aliments comuns en racions compactes de camp.<br>
+<br>
+Ús: Pa, poma i llavors de blat, síndria, carbassa, remolatxa o cànem industrial. Una premsada correcta en consumeix una de cada, comprova l'espai, crea quatre barretes i danya la premsa.<br>
+<br>
+Si falta un ingredient o espai, no es consumeix res.

@@ -8,21 +8,23 @@ REDIA Tool
 Diamond-covered utility
 <&redia_tool>The REDIA Tool is a durable field utility for quick ground work. Use it on workable soil to till farmland.<br>
 <br>
-Sneak-use it against a stable face while carrying torches to place a torch marker from your inventory. Each successful operation wears the tool.
+Use it against a stable face while carrying torches to place a torch marker from your inventory without wearing REDIA. Ground work, shearing, axe work, and tree felling consume durability.
 <np>
 Ore Crushing Hammer
 Hand crushing tool
-<&crushing_hammer>The Ore Crushing Hammer crushes raw iron, raw gold, iron ore, deepslate iron ore, gold ore, and deepslate gold ore into Immersive Engineering dust through crafting recipes.<br>
+<&crushing_hammer>The Ore Crushing Hammer is a manual processing tool for early iron and gold work.<br>
 <br>
-The resulting iron and gold dust can be used anywhere Immersive Engineering dusts are accepted.<br>
+Usage: Craft it with raw iron, raw gold, iron ore, deepslate iron ore, gold ore, or deepslate gold ore to produce Immersive Engineering iron or gold dust. The hammer takes durability damage and returns to the crafting grid until it breaks.<br>
 <br>
-The hammer takes durability damage and returns to the grid until it breaks. It also wears from hard mining and can shove close threats away.
+It also wears down from mining and can knock targets back in close combat.
 <np>
 Tracker
 Stored position marker
-<&tracker>Click a block with the Tracker to store that block position and dimension in the item. Sneak-use the Tracker to clear the stored target.<br>
+<&tracker>The Tracker stores a block position directly in the item.<br>
 <br>
-The tooltip reports the saved coordinates, which makes it useful for marking machines, shafts, or cable endpoints before returning with materials.
+Usage: Click a block to save its dimension and coordinates. The tooltip shows the stored position. Sneak-use the Tracker to clear the target.<br>
+<br>
+Use it to mark machines, tunnel branches, remote controls, or unfinished construction sites before returning with tools and materials.
 <np>
 Ariadne Coal
 Mine route marker
@@ -32,39 +34,49 @@ Ariadne Coal is a reusable 100-use marker tool. Each successful marker placement
 <np>
 Auto Stim Pack
 Emergency injector
-<&stimpack>The Auto Stim Pack heals, briefly protects, and boosts movement when used manually. It can also trigger from inventory when health is low, then goes on cooldown.<br>
+<&stimpack>The Auto Stim Pack is an emergency recovery item for dangerous maintenance work.<br>
 <br>
-Keep one in your kit for emergency recovery during mine or factory work.
+Usage: Use it manually to heal, gain brief protection, and get a short movement boost. When carried in inventory, it can also trigger automatically at low health, then enters cooldown.<br>
+<br>
+Keep one available before testing high places, exposed wiring, or hostile mine routes.
 <np>
 Sleeping Bag
 Portable rest kit
-<&sleeping_bag>The Sleeping Bag lets an engineer rest through the night in the Overworld without setting a spawn point.<br>
+<&sleeping_bag>The Sleeping Bag is a weatherproof rest kit for field work far from a bed.<br>
 <br>
-Use it at night in a safe area. It refuses daytime use, unsafe monster-filled surroundings, and dimensions where a field rest would not be stable.
+Usage: Use it at night in the Overworld to rest until morning. It does not set or move your spawn point.<br>
+<br>
+The bag refuses daytime use, unsafe surroundings with nearby monsters, and dimensions that are not suitable for a safe field rest. Each successful rest wears the bag.
 <np>
 Material Storage Box
 Construction supply box
-<&material_box>The Material Storage Box stores one plain, unmodified stackable material type for construction runs.<br>
+<&material_box>The Material Storage Box carries a large reserve of one plain, unmodified stackable construction material.<br>
 <br>
-Hold the box in the main hand and a plain material stack in the offhand to store that material. Use the box again with an empty offhand to retrieve a stack. It holds up to 512 items and refuses mixed or modified stacks.
+Usage: Hold the box in the main hand and a material stack in the offhand to load that material into the box. Use the box with an empty offhand to pull one stack back out.<br>
+<br>
+The box holds up to 512 items, keeps only one material type at a time, rejects nested boxes, non-stackable gear, and modified named or data-bearing stacks, and reports its stored contents in the tooltip.
 <np>
 Diving Air Capsule
 Emergency air reserve
-<&diving_capsule>The Diving Air Capsule restores air when used manually. It can also trigger from inventory when air is nearly gone, then goes on cooldown.<br>
+<&diving_capsule>The Diving Air Capsule is an emergency air item for underwater work.<br>
 <br>
-Carry it for underwater repairs, flooded mines, or compact pump rooms.
+Usage: Use it manually to restore air. When carried in inventory, it can also trigger automatically when air is nearly gone, then enters cooldown.<br>
+<br>
+Carry it for flooded mines, submerged pipe runs, and pump-room repairs.
 <np>
 Muslee Bar Press
 Food press
-<&musli_bar_press>The Muslee Bar Press makes field rations from compact ingredients.<br>
+<&musli_bar_press>The Muslee Bar Press turns common food supplies into compact field rations.<br>
 <br>
-Use it with bread, an apple, and wheat, melon, pumpkin, beetroot, or Industrial Hemp seeds in your inventory to press four Muslee Melange Power Bars. The press consumes the ingredients atomically, checks for output space, and wears with each batch.
+Usage: Carry bread, an apple, and wheat, melon, pumpkin, beetroot, or Industrial Hemp seeds, then use the press. A successful press consumes one of each ingredient, checks that the output can fit, creates four Muslee Melange Power Bars, and damages the press.<br>
+<br>
+If an ingredient is missing or the inventory has no room for the bars, nothing is consumed.
 <np>
 Muslee Melange Power Bar
 Fast shop snack
-<&musli_bar>The Muslee Melange Power Bar is a fast food item made from bread, seeds, and fruit.<br>
+<&musli_bar>The Muslee Melange Power Bar is a compact food item made from bread, seeds, and fruit.<br>
 <br>
-Use it as compact field food while installing long cable runs, pipes, and factory fixtures.
+Usage: Eat it as field food while placing controls, pipes, platforms, or long machine-room runs.
 <np>
 Mind Squeezer
 Experience condenser

@@ -1,0 +1,789 @@
+Reolyow Rudhven
+Musurellow hag afinans arwodh
+Yma jynnweyth reoli ow treylya rudhven kudhys dhe banellow gweythva redadow, sensours, menegyoryow, skwychellow, gwarnyansow hag afinans arwodh kevrennys.<br>
+<br>
+Usya an folennow ma pan drehevydh gorsavow oberor, keusyllow arwodh, kelghyow sawder ha reolyow pell.
+<np>
+Amkan Seth
+Pols berrdermynek
+<&arrow_target>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Sensour daras
+Reolyans Rudhven
+<&door_sensor_switch>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Yskynnel
+Reolyans Rudhven
+<&elevator_button>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Boton Gweder
+Reolyans Rudhven
+<&glass_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Gweder
+Reolyans Rudhven
+<&glass_small_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Tochyans Gweder
+Reolyans Rudhven
+<&glass_touch_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Jynn
+Reolyans Rudhven
+<&industrial_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton
+Reolyans Rudhven
+<&industrial_double_pole_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Jynn Difresys
+Reolyans Rudhven
+<&industrial_fenced_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Knonk
+Reolyans Rudhven
+<&industrial_knock_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Hen Voton Afinel
+Reolyans Rudhven
+<&oldfancy_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Hen Voton Afinel
+Reolyans Rudhven
+<&oldfancy_small_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Hen Voton Chadenn Afinel
+Pols berrdermynek
+<&oldfancy_spring_reset_chain>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Powek
+Reolyans Rudhven
+<&rustic_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Kent Powek
+Reolyans Rudhven
+<&rustic_nail_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Powek Byghan
+Reolyans Rudhven
+<&rustic_small_button>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Boton Chadenn Powek
+Pols berrdermynek
+<&rustic_spring_reset_chain>Skwychell verrdermynek a ry pols rudhven kler a leun-grevder.<br>
+<br>
+Devnydh: usya hi rag dalleth jynnys, ygeri darasow, gwarnyansow po kelghyow unn-weyth.<br>
+<br>
+Notennow: yth omdhasset wosa hy fols ragdresys.
+<np>
+Plat Tochyans Gweder
+Pols gwaskedh
+<&glass_contact_mat>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Tochyans Daras Gweder
+Pols gwaskedh
+<&glass_door_contact_mat>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Mat Tochyans
+Pols gwaskedh
+<&industrial_contact_mat>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Mat Tochyans Daras
+Pols gwaskedh
+<&industrial_door_contact_mat>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Sensour Kodha Dre
+Sensya arwodh
+<&industrial_fallthrough_detector>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Boton Troos
+Reolyans Rudhven
+<&industrial_foot_button>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Daras Diwysyansel Gweythennys gans Bomm
+Pols gwaskedh
+<&industrial_high_sensitive_trapdoor>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Mat Tochyans Sensytyv dhe Vomm
+Pols gwaskedh
+<&industrial_shock_sensitive_contact_mat>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Lo an Jowl Gweythennys gans Bomm
+Pols gwaskedh
+<&industrial_shock_sensitive_trapdoor>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Plantenn galloes rudh
+Pols gwaskedh
+<&red_power_plant>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Plat Gwaskedh Powek
+Pols gwaskedh
+<&rustic_contact_plate>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Gwaskedh Daras Powek
+Pols gwaskedh
+<&rustic_door_contact_plate>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Sensour Kodh Powek
+Sensya arwodh
+<&rustic_fallthrough_detector>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Daras dhe Vomm Powek
+Pols gwaskedh
+<&rustic_high_sensitive_trapdoor>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Plat dhe Vomm Powek
+Pols gwaskedh
+<&rustic_shock_sensitive_plate>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Daras dhe Vomm Powek
+Pols gwaskedh
+<&rustic_shock_sensitive_trapdoor>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Plantenn galloes velyn
+Pols gwaskedh
+<&yellow_power_plant>Skwychell tochyans a dhanvon arwodh berr a vovyans leur po lo an jowl.<br>
+<br>
+Devnydh: gor e may tremeno ensow dre goridor gonis, kargyer po hyns difresys.<br>
+<br>
+Notennow: y ry pols berr wosa tochyans ens.
+<np>
+Klock Termyn Jydh Gweder
+Arwodh golow dydh
+<&glass_day_timer>Skwychell termynner a holy rann an dydh yn kelgh an bys.<br>
+<br>
+Devnydh: usya hi rag lugarnow kourt, kloesyow ha reolyow gweythva rag an jydh hepken.<br>
+<br>
+Notennow: res yw ment gans golow nev.
+<np>
+Sensour Ensow Gweder
+Sensya arwodh
+<&glass_entity_detector>Sensour ensow a arsylw movyans ogas heb plat leur gweladow.<br>
+<br>
+Devnydh: jun e orth darasow, lugarnow, gwarnyansow po ynterglowys jynnys.<br>
+<br>
+Notennow: y hwithr ranndir byghan a-dro dhe'n stock.
+<np>
+Arwodh Gweder gans Spasyow
+Pols ragdresys
+<&glass_interval_timer>Skwychell termynner gompakt a ry pols rudhven ragdresys.<br>
+<br>
+Devnydh: usya hi may fo res a reolyans termynek po gortosys rag jynnweyth byghan.<br>
+<br>
+Notennow: y tevnydh polsyow rudhven ragdresys.
+<np>
+Sensour Linek Gweder
+Sensya arwodh
+<&glass_linear_entity_detector>Sensour ensow a arsylw movyans ogas heb plat leur gweladow.<br>
+<br>
+Devnydh: jun e orth darasow, lugarnow, gwarnyansow po ynterglowys jynnys.<br>
+<br>
+Notennow: y hwithr ranndir byghan a-dro dhe'n stock.
+<np>
+Sensour Stockow
+Sensya arwodh
+<&industrial_block_detector>Sensour stockow a wir mar eus tra y'n spas a-rag.<br>
+<br>
+Devnydh: tro e dhe enep an jynn, gwithva po spas difresys rag y arsylwi.<br>
+<br>
+Notennow: y ry galloes pan nyns yw an stock a-rag ayr.
+<np>
+Klock Termyn Jydh
+Arwodh golow dydh
+<&industrial_day_timer>Skwychell termynner a holy rann an dydh yn kelgh an bys.<br>
+<br>
+Devnydh: usya hi rag lugarnow kourt, kloesyow ha reolyow gweythva rag an jydh hepken.<br>
+<br>
+Notennow: res yw ment gans golow nev.
+<np>
+Sensour Ensow
+Sensya arwodh
+<&industrial_entity_detector>Sensour ensow a arsylw movyans ogas heb plat leur gweladow.<br>
+<br>
+Devnydh: jun e orth darasow, lugarnow, gwarnyansow po ynterglowys jynnys.<br>
+<br>
+Notennow: y hwithr ranndir byghan a-dro dhe'n stock.
+<np>
+Termynner gans Spasyow
+Pols ragdresys
+<&industrial_interval_timer>Skwychell termynner gompakt a ry pols rudhven ragdresys.<br>
+<br>
+Devnydh: usya hi may fo res a reolyans termynek po gortosys rag jynnweyth byghan.<br>
+<br>
+Notennow: y tevnydh polsyow rudhven ragdresys.
+<np>
+Sensour Golow
+Sensya arwodh
+<&industrial_light_sensor>Sensour golow a dreyl splannder leel dhe reolyans rudhven.<br>
+<br>
+Devnydh: usya e rag lugarnow awtomatek, kloesyow ha kelghyow gweladewder.<br>
+<br>
+Notennow: y ry galloes pan yw gwerth splannder heb treylya 8 po moy.
+<np>
+Sensour Kewer
+Sensya arwodh
+<&industrial_lightning_sensor>Sensour kewer a weythenn gwarnyansow pan eus tarann.<br>
+<br>
+Devnydh: gor e a-dhann dhe nev ygor ha jun e orth lugarnow po gwarnyansow.<br>
+<br>
+Notennow: res yw tarann ha hedhas dhe'n nev.
+<np>
+Sensour Ensow Linek
+Sensya arwodh
+<&industrial_linear_entity_detector>Sensour ensow a arsylw movyans ogas heb plat leur gweladow.<br>
+<br>
+Devnydh: jun e orth darasow, lugarnow, gwarnyansow po ynterglowys jynnys.<br>
+<br>
+Notennow: y hwithr ranndir byghan a-dro dhe'n stock.
+<np>
+Sensour Glaw
+Sensya arwodh
+<&industrial_rain_sensor>Sensour kewer a dreyl glaw yn y le dhe rudhven.<br>
+<br>
+Devnydh: gor e may hallo an stock a-ugh derbyn glaw.<br>
+<br>
+Notennow: y wir glaw a-ugh dhe'n sensour.
+<np>
+Skwychell Gweder Dew-Stabel
+Reolyans Rudhven
+<&glass_rotary_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Tochyans Gweder Dew-Stabel
+Reolyans Rudhven
+<&glass_touch_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Gweder Sensytyv Rudhvelyn
+Gweder arwodh
+<&orange_sensitiveglass>Yma stock gweder a worthebis dhe rudhven ow kwitha gweles dredho hag ow tiskwedhes stad an arwodh.<br>
+<br>
+Devnydh: usya e yn fenestriow stevel reoli, panellow golowys ha gweder gwithys gweythva.<br>
+<br>
+Notennow: galloes rudhven yn ogas a janj y stad.
+<np>
+Gweder Sensytyv Golowys
+Gweder arwodh
+<&sensitive_glass_block>Yma stock gweder a worthebis dhe rudhven ow kwitha gweles dredho hag ow tiskwedhes stad an arwodh.<br>
+<br>
+Devnydh: usya e yn fenestriow stevel reoli, panellow golowys ha gweder gwithys gweythva.<br>
+<br>
+Notennow: galloes rudhven yn ogas a janj y stad.
+<np>
+Gweder Sensytyv Liwys
+Gweder arwodh
+<&stained_sensitiveglass>Yma stock gweder a worthebis dhe rudhven ow kwitha gweles dredho hag ow tiskwedhes stad an arwodh.<br>
+<br>
+Devnydh: usya e yn fenestriow stevel reoli, panellow golowys ha gweder gwithys gweythva.<br>
+<br>
+Notennow: galloes rudhven yn ogas a janj y stad.
+<np>
+Musurel Barr Gweder
+Musurel arwodh
+<&glass_vertical_bar_gauge>Musurel kompakt stevel reoli a dhiskwedh krevder rudhven avel redyans kler war panel.<br>
+<br>
+Devnydh: gor e may hallir gweles galloes rudhven ogas gans unn golok.<br>
+<br>
+Notennow: y red krevder rudhven ogas a 0 dhe 15.
+<np>
+Musurel Analog
+Musurel arwodh
+<&industrial_analog_angular_gauge>Musurel kompakt stevel reoli a dhiskwedh krevder rudhven avel redyans kler war panel.<br>
+<br>
+Devnydh: gor e may hallir gweles galloes rudhven ogas gans unn golok.<br>
+<br>
+Notennow: y red krevder rudhven ogas a 0 dhe 15.
+<np>
+Musurel Voltmetr
+Musurel arwodh
+<&industrial_analog_horizontal_gauge>Musurel kompakt stevel reoli a dhiskwedh krevder rudhven avel redyans kler war panel.<br>
+<br>
+Devnydh: gor e may hallir gweles galloes rudhven ogas gans unn golok.<br>
+<br>
+Notennow: y red krevder rudhven ogas a 0 dhe 15.
+<np>
+Musurel Niverel
+Krevder arwodh redadow
+<&industrial_small_digital_gauge>Musurel kompakt stevel reoli a dhiskwedh krevder rudhven avel redyans kler war panel.<br>
+<br>
+Devnydh: gor e may hallir gweles galloes rudhven ogas gans unn golok.<br>
+<br>
+Notennow: y red krevder rudhven ogas a 0 dhe 15.
+<np>
+Musurel Bibell Weder
+Musurel arwodh
+<&industrial_tube_gauge>Musurel kompakt stevel reoli a dhiskwedh krevder rudhven avel redyans kler war panel.<br>
+<br>
+Devnydh: gor e may hallir gweles galloes rudhven ogas gans unn golok.<br>
+<br>
+Notennow: y red krevder rudhven ogas a 0 dhe 15.
+<np>
+Musurel Barr Analog
+Musurel arwodh
+<&industrial_vertical_bar_gauge>Musurel kompakt stevel reoli a dhiskwedh krevder rudhven avel redyans kler war panel.<br>
+<br>
+Devnydh: gor e may hallir gweles galloes rudhven ogas gans unn golok.<br>
+<br>
+Notennow: y red krevder rudhven ogas a 0 dhe 15.
+<np>
+Lugarn Gwarnyans
+Daskorrans arwodh
+<&industrial_alarm_lamp>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+Siren Gwarnyans
+Daskorrans arwodh
+<&industrial_alarm_siren>Arwodhyans redstone gorrys war enep yw an syran alarm. Y studh gans nerth a holy an sinyal dhyworth an stock mayth yw stanchys orto.<br>
+<br>
+Devnydh: fast hi orth enep kales ha ri galloes dhi rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: an siren a dhassav unnweyth pub eylen hedre yw hy arwodh junys gweythrek.
+<np>
+LED Lankus
+Daskorrans arwodh
+<&industrial_blinking_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Gwyrdh Lankus
+Daskorrans arwodh
+<&industrial_green_blinking_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Gwyrdh
+Daskorrans arwodh
+<&industrial_green_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Rudh
+Daskorrans arwodh
+<&industrial_red_blinking_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Rudh
+Daskorrans arwodh
+<&industrial_red_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Gwynn Lankus
+Daskorrans arwodh
+<&industrial_white_blinking_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Gwynn
+Daskorrans arwodh
+<&industrial_white_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Melyn Lankus
+Daskorrans arwodh
+<&industrial_yellow_blinking_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+LED Melyn
+Daskorrans arwodh
+<&industrial_yellow_led>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+Semafor Powek
+Daskorrans arwodh
+<&rustic_semaphore>Menegyer kompakt a dreyl rudhven kudh dhe dhaskorrans gweladow yn gweythva.<br>
+<br>
+Devnydh: jun gwivrennow orthodho a-denewen dhe'n arwodh rag arsylwi darasow, jynnys, gwarnyansow po panellow.<br>
+<br>
+Notennow: y chanj stad pan eus galloes rudhven ogas.
+<np>
+Skwychell Komparyer
+Arwodh junys
+<&industrial_comparator_switch>Skwychell sensour gompakt a red an stock may yw gorrys hag a dreyl an redyans na dhe eskorrans panel sempel.<br>
+<br>
+Devnydh: gor hi war rolasow, tankys po daffar rudhven. Pan dhiskwedh an stock junys eskorrans komparyer, lestr po rudhven, an skwychell a ry rudhven a leun-grevder.<br>
+<br>
+Notennow: usya hi rag treyl nivelyow gwithva po gwivrennow kudh dhe lynennow reoli kler gweythrek/diweythrek.
+<np>
+Leher Galloes
+Arwodh chanjadow
+<&industrial_dimmer>Reoler trei a set krevder rudhven a dal panel kompakt.<br>
+<br>
+Devnydh: gwra klikya dyhow rag ynnia an eskorrans kamm ha kamm, ha dehweles dhe vann wosa leun-grevder.<br>
+<br>
+Notennow: y ry krevder a 0 dhe 15.
+<np>
+Boton Powes y'n Poran
+Reolyans Rudhven
+<&industrial_estop_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Lettyer Korn-Dinewi
+Reolyans Rudhven
+<&industrial_hopper_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Skwychell Knonk
+Reolyans Rudhven
+<&industrial_knock_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Kolpes
+Reolyans Rudhven
+<&industrial_lever>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Skwychell Jynn gans Dew Voton
+Reolyans Rudhven
+<&industrial_machine_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Dornell Denna
+Reolyans Rudhven
+<&industrial_pull_handle>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Kolpes Trei
+Reolyans Rudhven
+<&industrial_rotary_lever>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Skwychell Jynn Trei
+Reolyans Rudhven
+<&industrial_rotary_machine_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Kolpes Tochyans
+Reolyans Rudhven
+<&industrial_small_lever>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Skwychell
+Reolyans Rudhven
+<&industrialswitch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Skwychell Golow
+Reolyans Rudhven
+<&light_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Skwychell Valv
+Reolyans Rudhven
+<&valve_wheel_switch>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Derbynner Pols yn Kist
+Reolyans kevrennys
+<&industrial_switchlink_cased_pulse_receiver>Derbynner pols kevrennys yn kist a ry weythenni rudhven berr dhe banellow pell.<br>
+<br>
+Devnydh: gwra klikya gans Perl an Diwedh rag gul perl kevrennys. Gwra klikya dyhow warnodho po gweythenni an perl kevrennys rag ri pols berr.<br>
+<br>
+Notennow: an pols a omdhasset wosa y dermyn ragdresys.
+<np>
+Derbynner Kevren yn Kist
+Reolyans kevrennys
+<&industrial_switchlink_cased_receiver>Derbynner kevrennys yn kist a ry amkan rudhven krev dhe banellow pell.<br>
+<br>
+Devnydh: gwra klikya gans Perl an Diwedh rag gul perl kevrennys. Gwra klikya dyhow war an derbynner yn ewn rag y skwychya dre dhorn.<br>
+<br>
+Notennow: perl kevrennys a skwych an derbynner ma pan y'n dhevnydhir hag ow skolkya.
+<np>
+Derbynner Kevren Pols
+Reolyans kevrennys
+<&industrial_switchlink_pulse_receiver>Derbynner pols kevrennys a ry weythenni rudhven berr dhe banellow pell.<br>
+<br>
+Devnydh: gwra klikya gans Perl an Diwedh rag gul perl kevrennys. Gwra klikya dyhow warnodho po gweythenni an perl kevrennys rag ri pols berr.<br>
+<br>
+Notennow: an pols a omdhasset wosa y dermyn ragdresys.
+<np>
+Adhliveryer Kevren Pols
+Reolyans kevrennys
+<&industrial_switchlink_pulse_relay>Daffar yn gis adhliveryer a ry poynt skwychya leel kompakt dhe drehevansow panellow.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas. Usya stockow derbynner pan yw res dhis weythenni gans perl kevrennys.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Derbynner Kevren Skwychell
+Reolyans kevrennys
+<&industrial_switchlink_receiver>Derbynner kevrennys a ry amkan rudhven a leun-grevder dhe banellow pell.<br>
+<br>
+Devnydh: gwra klikya gans Perl an Diwedh rag gul perl kevrennys. Gwra klikya dyhow war an derbynner yn ewn rag y skwychya dre dhorn.<br>
+<br>
+Notennow: perl kevrennys a skwych an derbynner ma pan y'n dhevnydhir hag ow skolkya.
+<np>
+Derbynner Kevren Analog
+Reolyans kevrennys
+<&industrial_switchlink_receiver_analog>Derbynner kevrennys a ry amkan pell gweladow dhe banellow reoli.<br>
+<br>
+Devnydh: gwra klikya gans Perl an Diwedh rag gul perl kevrennys. Usya an perl na hag ow skolkya rag weythenni an derbynner a-bell.<br>
+<br>
+Notennow: an derbynner ma a ry arwodh rudhven a leun-grevder pan y'n weythennir.
+<np>
+Adhliveryer Kevren Skwychell
+Reolyans kevrennys
+<&industrial_switchlink_relay>Daffar yn gis adhliveryer a ry poynt skwychya leel kompakt dhe drehevansow panellow.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas. Usya stockow derbynner pan yw res dhis weythenni gans perl kevrennys.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Adhliveryer Kevren Analog
+Reolyans kevrennys
+<&industrial_switchlink_relay_analog>Daffar yn gis adhliveryer a ry poynt skwychya leel kompakt dhe drehevansow panellow.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas. Usya stockow derbynner pan yw res dhis weythenni gans perl kevrennys.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Perl Kevren Skwychell
+Reolyans kevrennys
+<&switchlink_pearl>Yma perl kevrennys ow kwitha amkan derbynner rag reolyow pell gweythva.<br>
+<br>
+Devnydh: gwra klikya war derbynner Kevren Skwychell gans Perl an Diwedh rag gul unn. Usya an perl kevrennys hag ow skolkya rag gweythreka an derbynner gwithys.<br>
+<br>
+Notennow: res yw bos an amkan kargys, y'n keth ment ha y'n kylles.
+<np>
+Hen Golpes Afinel
+Reolyans Rudhven
+<&oldfancy_bistableswitch1>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Hen Golpes Trei Afinel
+Reolyans Rudhven
+<&oldfancy_bistableswitch2>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Kolpes Trei Powek
+Reolyans Rudhven
+<&rustic_angular_lever>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Kolpes Powek
+Reolyans Rudhven
+<&rustic_lever>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Kolpes Kent Powek
+Reolyans Rudhven
+<&rustic_nail_lever>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.
+<np>
+Kolpes Powek gans Dew Jarn
+Reolyans Rudhven
+<&rustic_two_hinge_lever>Daffar reoli kompakt a ry poynt skwychya rudhven kler dhe drehevansow gweythva.<br>
+<br>
+Devnydh: gwra klikya dyhow rag chanjya eskorrans a leun-grevder rag kelghyow ogas.<br>
+<br>
+Notennow: yma e ow ri rudhven a leun-grevder hedre yw gweythrek.

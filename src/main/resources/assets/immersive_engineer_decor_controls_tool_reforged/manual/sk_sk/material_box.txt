@@ -1,0 +1,7 @@
+Debna na materiál
+Debna na stavebné zásoby
+<&recipe>Debna na materiál nesie veľkú zásobu jedného obyčajného, nezmeneného a stohovateľného stavebného materiálu.<br>
+<br>
+Držte debnu v hlavnej ruke a materiál v druhej na uloženie; s prázdnou druhou rukou vyberiete jeden stoh.<br>
+<br>
+Pojme 512 kusov jedného typu, odmieta iné debny, nestohovateľnú výbavu a zmenené stohy a ukazuje obsah v popise.

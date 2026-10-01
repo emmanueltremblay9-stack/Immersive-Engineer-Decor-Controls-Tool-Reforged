@@ -1,0 +1,5 @@
+Máy thả công nghiệp
+Tiện ích sàn xưởng
+<&recipe>Khối này thả các vật phẩm đã lưu ra từ mặt được nhắm.<br>
+<br>
+Cách dùng: Hướng mặt trước về điểm thả, nạp đồ vào các ô bên trong, rồi chỉnh lực, góc, độ trễ, logic bộ lọc và chế độ redstone trong màn hình của nó.<br>

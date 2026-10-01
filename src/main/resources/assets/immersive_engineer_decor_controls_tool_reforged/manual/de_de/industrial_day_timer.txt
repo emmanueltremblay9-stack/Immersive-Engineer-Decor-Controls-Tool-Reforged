@@ -1,0 +1,7 @@
+Zeitschaltuhr
+Tageslichtsignal
+<&recipe>Ein Zeitschalter folgt dem Tagesabschnitt des Weltzyklus.<br>
+<br>
+Verwendung: Nutze ihn für Hofleuchten, Rollläden und Fabriksteuerungen, die nur tagsüber aktiv sein sollen.<br>
+<br>
+Hinweis: Benötigt eine Dimension mit Himmelslicht.

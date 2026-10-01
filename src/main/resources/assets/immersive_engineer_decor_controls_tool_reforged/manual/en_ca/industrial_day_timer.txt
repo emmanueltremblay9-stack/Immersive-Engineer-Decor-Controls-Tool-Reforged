@@ -1,0 +1,7 @@
+Day Timer Clock
+Daylight signal
+<&recipe>A timer switch follows the daytime part of the world cycle.<br>
+<br>
+Usage: Use it for yard lamps, shutters, and day-only factory controls.<br>
+<br>
+Notes: Requires a dimension with skylight.

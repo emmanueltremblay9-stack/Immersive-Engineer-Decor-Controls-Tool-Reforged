@@ -1,0 +1,5 @@
+Sanduk s natpisom
+Izmjenjiva oznaka zaliha
+<&recipe>Ovaj sanduk s natpisom namijenjen je jasnom razvrstavanju u skladištu. Prednja ploča može se uređivati kao mali radionički znak.<br>
+<br>
+Upotreba: Desnim klikom na ploču s natpisom uredite oznaku sanduka. Desnim klikom na ostatak sanduka otvorite skladište za pribor, dijelove i zalihe za održavanje.<br>

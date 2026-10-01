@@ -1,0 +1,7 @@
+Receptor analogic de ligam
+Comanda ligada
+<&recipe>Un receptor ligat balha als panèls de comanda una cibla visibla a distància.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Utiliza aquela pèrla en t’agrovant per activar lo receptor a distància.<br>
+<br>
+Nòta : aqueste receptor manda un senhal de redstone a plena poténcia quand es activat.

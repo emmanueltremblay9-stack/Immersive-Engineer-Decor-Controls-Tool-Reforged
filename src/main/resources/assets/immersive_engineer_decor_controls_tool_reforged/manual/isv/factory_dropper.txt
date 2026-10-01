@@ -1,0 +1,5 @@
+Fabričny izdavač
+Pribor fabričnoj haly
+<&recipe>Sej blok vypuščaje uložene prědmety iz směrovanoj strany.<br>
+<br>
+Upotrěbjenje: Usměri prědnju stranu k městu vypuščenja, napolni vnutrišnje pozicije i nastroj silu, ugol, pauzu, logiku filtrov i redstounovy režim v jego ekranu.<br>

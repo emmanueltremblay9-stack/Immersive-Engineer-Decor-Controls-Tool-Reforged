@@ -1,0 +1,5 @@
+Cortador de árvores
+Utilidade de oficina
+<&recipe>O pequeno cortador de árvores é uma utilidade de oficina para fabricação, armazenamento, colocação, quebra, coleta ou automação compacta.<br>
+<br>
+Uso: Aponte para árvores crescidas e recolha os itens derrubados separadamente.<br>

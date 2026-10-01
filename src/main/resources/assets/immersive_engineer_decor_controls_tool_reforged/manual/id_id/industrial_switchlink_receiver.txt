@@ -1,0 +1,7 @@
+Penerima Tautan Sakelar
+Kendali tertaut
+<&recipe>Penerima tertaut memberi panel jarak jauh sasaran redstone berkekuatan penuh.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Klik kanan langsung pada penerima untuk mengganti keadaannya secara manual.<br>
+<br>
+Catatan: mutiara tertaut mengganti keadaan penerima ini jika digunakan sambil menyelinap.

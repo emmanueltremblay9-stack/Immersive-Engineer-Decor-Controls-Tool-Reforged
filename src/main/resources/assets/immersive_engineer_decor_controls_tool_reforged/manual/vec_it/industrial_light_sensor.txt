@@ -1,0 +1,7 @@
+Sensor de łuse
+Rilevamento de segnal
+<&recipe>Un sensor de łuse el transforma ła luminosità locale in comanda de redstone.<br>
+<br>
+Uso: dòparalo par lànpade automàteghe, scuri e circuiti de visibiłità.<br>
+<br>
+Da saver: el se inpisa co luminosità greza 8 o pì.

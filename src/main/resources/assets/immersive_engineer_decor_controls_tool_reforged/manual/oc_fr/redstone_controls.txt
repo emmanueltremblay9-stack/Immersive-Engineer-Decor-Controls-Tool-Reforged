@@ -1,0 +1,789 @@
+Comandas de redstone
+Aparelhs de mesura e equipaments de senhal
+Lo material de comanda transforma la redstone amagada en panèls de fabrica lisibles, captadors, indicadors, interruptors, alarmas e equipaments de senhal ligats.<br>
+<br>
+Utiliza aquestas paginas per bastir de pòstes d’operacion, de tablèus de senhalizacion, de circuits de seguretat e de comandas a distància.
+<np>
+Cibla de sagetas
+Impulsion momentànea
+<&arrow_target>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Detector de pòrta
+Comanda per redstone
+<&door_sensor_switch>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton d’ascensor
+Comanda per redstone
+<&elevator_button>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Boton de veire
+Comanda per redstone
+<&glass_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton de veire
+Comanda per redstone
+<&glass_small_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton tactil de veire
+Comanda per redstone
+<&glass_touch_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton de maquina
+Comanda per redstone
+<&industrial_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton
+Comanda per redstone
+<&industrial_double_pole_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton de maquina amb proteccion
+Comanda per redstone
+<&industrial_fenced_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton de deteccion de còps
+Comanda per redstone
+<&industrial_knock_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Vièlh boton ornamentat
+Comanda per redstone
+<&oldfancy_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Vièlh boton ornamentat
+Comanda per redstone
+<&oldfancy_small_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Vièlh boton de cadena ornamentat
+Impulsion momentànea
+<&oldfancy_spring_reset_chain>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton rustic
+Comanda per redstone
+<&rustic_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton rustic en forma de clavèl
+Comanda per redstone
+<&rustic_nail_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Pichon boton rustic
+Comanda per redstone
+<&rustic_small_button>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Boton rustic de cadena
+Impulsion momentànea
+<&rustic_spring_reset_chain>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.
+<np>
+Placa de contacte de veire
+Impulsion de pression
+<&glass_contact_mat>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Contacte de pòrta de veire
+Impulsion de pression
+<&glass_door_contact_mat>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Tapís de contacte
+Impulsion de pression
+<&industrial_contact_mat>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Tapís de contacte de pòrta
+Impulsion de pression
+<&industrial_door_contact_mat>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Detector de casuda
+Deteccion de senhal
+<&industrial_fallthrough_detector>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Boton de pè
+Comanda per redstone
+<&industrial_foot_button>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Trapa industriala de tust
+Impulsion de pression
+<&industrial_high_sensitive_trapdoor>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Tapís de contacte de tust
+Impulsion de pression
+<&industrial_shock_sensitive_contact_mat>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Trapa de tust
+Impulsion de pression
+<&industrial_shock_sensitive_trapdoor>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Planta de poténcia roja
+Impulsion de pression
+<&red_power_plant>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Placa de pression rustica
+Impulsion de pression
+<&rustic_contact_plate>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Pression rustica de pòrta
+Impulsion de pression
+<&rustic_door_contact_plate>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Detector rustic de casuda
+Deteccion de senhal
+<&rustic_fallthrough_detector>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Trapa rustica de tust
+Impulsion de pression
+<&rustic_high_sensitive_trapdoor>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Placa rustica de tust
+Impulsion de pression
+<&rustic_shock_sensitive_plate>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Trapa rustica de tust
+Impulsion de pression
+<&rustic_shock_sensitive_trapdoor>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Planta de poténcia jauna
+Impulsion de pression
+<&yellow_power_plant>Un interruptor de contacte manda un senhal brèu a partir d’un movement sul sòl o sus una trapa.<br>
+<br>
+Utilizacion : pausa-lo sul passatge de las entitats dins un passadís de servici, un cargador o un camin protegit.<br>
+<br>
+Nòta : manda una impulsion brèva après lo contacte amb una entitat.
+<np>
+Relòtge jornalièr de veire
+Senhal de jorn
+<&glass_day_timer>Un interruptor temporizat seguís la partida diürna del cicle del mond.<br>
+<br>
+Utilizacion : emplega-lo per las lampas de cort, los contravents e las comandas de fabrica que devon foncionar sonque de jorn.<br>
+<br>
+Nòta : demanda una dimension amb lutz del cèl.
+<np>
+Detector d’entitats de veire
+Deteccion de senhal
+<&glass_entity_detector>Un detector d’entitats susvelha los movements pròches sens placa de sòl visibla.<br>
+<br>
+Utilizacion : liga-lo a de pòrtas, de lampas, d’alarmas o de mecanismes de blocatge de seguretat de maquinas.<br>
+<br>
+Nòta : susvelha una pichona zòna a l’entorn del blòc.
+<np>
+Senhal intermitent de veire
+Impulsion temporizada
+<&glass_interval_timer>Un interruptor temporizat compacte fornís una impulsion de redstone programada.<br>
+<br>
+Utilizacion : emplega-lo quand un pichon mecanisme demanda una comanda periodica o retardada.<br>
+<br>
+Nòta : utiliza d’impulsions de redstone programadas.
+<np>
+Detector linear de veire
+Deteccion de senhal
+<&glass_linear_entity_detector>Un detector d’entitats susvelha los movements pròches sens placa de sòl visibla.<br>
+<br>
+Utilizacion : liga-lo a de pòrtas, de lampas, d’alarmas o de mecanismes de blocatge de seguretat de maquinas.<br>
+<br>
+Nòta : susvelha una pichona zòna a l’entorn del blòc.
+<np>
+Detector de blòcs
+Deteccion de senhal
+<&industrial_block_detector>Un detector de blòcs verifica se l’espaci davant sa fàcia es ocupat.<br>
+<br>
+Utilizacion : orienta-lo cap a la fàcia de maquina, la resèrva o l’espaci protegit de susvelhar.<br>
+<br>
+Nòta : s’alimenta quand lo blòc de davant es pas d’aire.
+<np>
+Relòtge jornalièr
+Senhal de jorn
+<&industrial_day_timer>Un interruptor temporizat seguís la partida diürna del cicle del mond.<br>
+<br>
+Utilizacion : emplega-lo per las lampas de cort, los contravents e las comandas de fabrica que devon foncionar sonque de jorn.<br>
+<br>
+Nòta : demanda una dimension amb lutz del cèl.
+<np>
+Detector d’entitats
+Deteccion de senhal
+<&industrial_entity_detector>Un detector d’entitats susvelha los movements pròches sens placa de sòl visibla.<br>
+<br>
+Utilizacion : liga-lo a de pòrtas, de lampas, d’alarmas o de mecanismes de blocatge de seguretat de maquinas.<br>
+<br>
+Nòta : susvelha una pichona zòna a l’entorn del blòc.
+<np>
+Temporizador intermitent
+Impulsion temporizada
+<&industrial_interval_timer>Un interruptor temporizat compacte fornís una impulsion de redstone programada.<br>
+<br>
+Utilizacion : emplega-lo quand un pichon mecanisme demanda una comanda periodica o retardada.<br>
+<br>
+Nòta : utiliza d’impulsions de redstone programadas.
+<np>
+Captador de lutz
+Deteccion de senhal
+<&industrial_light_sensor>Un captador de lutz transforma la luminositat locala en comanda de redstone.<br>
+<br>
+Utilizacion : emplega-lo per las lampas automaticas, los contravents e los circuits de visibilitat.<br>
+<br>
+Nòta : s’alimenta a una luminositat bruta de 8 o mai.
+<np>
+Detector d’auratge
+Deteccion de senhal
+<&industrial_lightning_sensor>Un captador d’auratge activa los avertiments quand i a de tròn.<br>
+<br>
+Utilizacion : pausa-lo jos lo cèl dobèrt e liga-lo a de lampas o d’alarmas.<br>
+<br>
+Nòta : demanda de tròn e un accès al cèl.
+<np>
+Detector linear d’entitats
+Deteccion de senhal
+<&industrial_linear_entity_detector>Un detector d’entitats susvelha los movements pròches sens placa de sòl visibla.<br>
+<br>
+Utilizacion : liga-lo a de pòrtas, de lampas, d’alarmas o de mecanismes de blocatge de seguretat de maquinas.<br>
+<br>
+Nòta : susvelha una pichona zòna a l’entorn del blòc.
+<np>
+Captador de pluèja
+Deteccion de senhal
+<&industrial_rain_sensor>Un captador meteorologic transforma la pluèja a son emplaçament en redstone.<br>
+<br>
+Utilizacion : monta-lo ont lo blòc de dessús pòt recebre la pluèja.<br>
+<br>
+Nòta : verifica la pluèja dessús lo captador.
+<np>
+Interruptor de veire bistable
+Comanda per redstone
+<&glass_rotary_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Contacte tactil bistable de veire
+Comanda per redstone
+<&glass_touch_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Veire sensible iranja
+Veire de senhal
+<&orange_sensitiveglass>Un blòc de veire reactiu a la redstone manten la vista desgatjada mentre mòstra l’estat del senhal.<br>
+<br>
+Utilizacion : emplega-lo per las fenèstras de sala de comanda, los panèls esclairats e las vitras protegidas de fabrica.<br>
+<br>
+Nòta : càmbia d’estat segon la poténcia de redstone vesina.
+<np>
+Veire sensible luminós
+Veire de senhal
+<&sensitive_glass_block>Un blòc de veire reactiu a la redstone manten la vista desgatjada mentre mòstra l’estat del senhal.<br>
+<br>
+Utilizacion : emplega-lo per las fenèstras de sala de comanda, los panèls esclairats e las vitras protegidas de fabrica.<br>
+<br>
+Nòta : càmbia d’estat segon la poténcia de redstone vesina.
+<np>
+Veire sensible colorat
+Veire de senhal
+<&stained_sensitiveglass>Un blòc de veire reactiu a la redstone manten la vista desgatjada mentre mòstra l’estat del senhal.<br>
+<br>
+Utilizacion : emplega-lo per las fenèstras de sala de comanda, los panèls esclairats e las vitras protegidas de fabrica.<br>
+<br>
+Nòta : càmbia d’estat segon la poténcia de redstone vesina.
+<np>
+Indicador de barra de veire
+Aparelh de mesura de senhal
+<&glass_vertical_bar_gauge>Un aparelh compacte de sala de comanda aficha clarament la poténcia de redstone sul panèl.<br>
+<br>
+Utilizacion : monta-lo ont cal verificar d’un còp d’uèlh la poténcia de redstone vesina.<br>
+<br>
+Nòta : legís la poténcia de redstone vesina de 0 a 15.
+<np>
+Aparelh de mesura analogic
+Aparelh de mesura de senhal
+<&industrial_analog_angular_gauge>Un aparelh compacte de sala de comanda aficha clarament la poténcia de redstone sul panèl.<br>
+<br>
+Utilizacion : monta-lo ont cal verificar d’un còp d’uèlh la poténcia de redstone vesina.<br>
+<br>
+Nòta : legís la poténcia de redstone vesina de 0 a 15.
+<np>
+Volt-mètre
+Aparelh de mesura de senhal
+<&industrial_analog_horizontal_gauge>Un aparelh compacte de sala de comanda aficha clarament la poténcia de redstone sul panèl.<br>
+<br>
+Utilizacion : monta-lo ont cal verificar d’un còp d’uèlh la poténcia de redstone vesina.<br>
+<br>
+Nòta : legís la poténcia de redstone vesina de 0 a 15.
+<np>
+Aparelh de mesura numeric
+Poténcia del senhal lisibla
+<&industrial_small_digital_gauge>Un aparelh compacte de sala de comanda aficha clarament la poténcia de redstone sul panèl.<br>
+<br>
+Utilizacion : monta-lo ont cal verificar d’un còp d’uèlh la poténcia de redstone vesina.<br>
+<br>
+Nòta : legís la poténcia de redstone vesina de 0 a 15.
+<np>
+Indicador de tub de veire
+Aparelh de mesura de senhal
+<&industrial_tube_gauge>Un aparelh compacte de sala de comanda aficha clarament la poténcia de redstone sul panèl.<br>
+<br>
+Utilizacion : monta-lo ont cal verificar d’un còp d’uèlh la poténcia de redstone vesina.<br>
+<br>
+Nòta : legís la poténcia de redstone vesina de 0 a 15.
+<np>
+Indicador analogic de barra
+Aparelh de mesura de senhal
+<&industrial_vertical_bar_gauge>Un aparelh compacte de sala de comanda aficha clarament la poténcia de redstone sul panèl.<br>
+<br>
+Utilizacion : monta-lo ont cal verificar d’un còp d’uèlh la poténcia de redstone vesina.<br>
+<br>
+Nòta : legís la poténcia de redstone vesina de 0 a 15.
+<np>
+Lampa d’alarma
+Indicacion del senhal
+<&industrial_alarm_lamp>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+Sirèna d’alarma
+Indicacion del senhal
+<&industrial_alarm_siren>La sirèna dalarma es un indicador redstone montat sus la fàcia dun blòt. Son estat alimentat seguís lo senhal del blòt que la pòrta.<br>
+<br>
+Fixatz-la sus una fàcia solida e alimentatz-la per susvelhar pòrtas, maquinas, alarmas o panèls.<br>
+<br>
+La sirèna se refresca un còp per segonda mentre lo senhal demòra actiu.
+<np>
+LED cluquejanta
+Indicacion del senhal
+<&industrial_blinking_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED verda cluquejanta
+Indicacion del senhal
+<&industrial_green_blinking_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED verda
+Indicacion del senhal
+<&industrial_green_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED roja
+Indicacion del senhal
+<&industrial_red_blinking_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED roja
+Indicacion del senhal
+<&industrial_red_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED blanca cluquejanta
+Indicacion del senhal
+<&industrial_white_blinking_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED blanca
+Indicacion del senhal
+<&industrial_white_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED jauna cluquejanta
+Indicacion del senhal
+<&industrial_yellow_blinking_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+LED jauna
+Indicacion del senhal
+<&industrial_yellow_led>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+Semafòr rustic
+Indicacion del senhal
+<&rustic_semaphore>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.
+<np>
+Interruptor comparator
+Senhal del blòc de sosten
+<&industrial_comparator_switch>Un interruptor captador compacte legís lo blòc ont es montat e transforma aquela lectura en una sortida simpla de panèl.<br>
+<br>
+Utilizacion : monta-lo sus d’inventaris, de cuvas o d’aparelhs de redstone. Quand lo blòc de sosten fornís una sortida de comparator, de recipient o de redstone, l’interruptor manda de redstone a plena poténcia.<br>
+<br>
+Nòta : utiliza-lo per transformar los nivèls de depaus o los cables amagats en de linhas de comanda claras de marcha e d’arrèst.
+<np>
+Variador
+Senhal variable
+<&industrial_dimmer>Una comanda rotativa règla la poténcia de redstone dempuèi la fàcia d’un panèl compacte.<br>
+<br>
+Utilizacion : fai un clic drech per aumentar progressivament la sortida ; après la poténcia maximala, torna a zèro.<br>
+<br>
+Nòta : la poténcia de sortida va de 0 a 15.
+<np>
+Boton d’arrèst d’urgéncia
+Comanda per redstone
+<&industrial_estop_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Blocaire d’embut
+Comanda per redstone
+<&industrial_hopper_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Interruptor de deteccion de còps
+Comanda per redstone
+<&industrial_knock_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Agre
+Comanda per redstone
+<&industrial_lever>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Interruptor de maquina de dos botons
+Comanda per redstone
+<&industrial_machine_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Ponhada de tirar
+Comanda per redstone
+<&industrial_pull_handle>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Agre rotatiu
+Comanda per redstone
+<&industrial_rotary_lever>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Interruptor rotatiu de maquina
+Comanda per redstone
+<&industrial_rotary_machine_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Agre de contacte
+Comanda per redstone
+<&industrial_small_lever>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Interruptor
+Comanda per redstone
+<&industrialswitch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Interruptor de lutz
+Comanda per redstone
+<&light_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Interruptor de vana
+Comanda per redstone
+<&valve_wheel_switch>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Receptor d’impulsion en bóstia
+Comanda ligada
+<&industrial_switchlink_cased_pulse_receiver>Un receptor d’impulsion ligat dins una bóstia balha als panèls alunhats un brèu desencadenament de redstone.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Fai un clic drech sul receptor o activa la pèrla ligada per mandar una impulsion brèva.<br>
+<br>
+Nòta : l’impulsion s’arrèsta tota sola après la durada programada.
+<np>
+Receptor de ligam en bóstia
+Comanda ligada
+<&industrial_switchlink_cased_receiver>Un receptor ligat dins una bóstia balha als panèls alunhats una cibla de redstone solida.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Fai un clic drech dirèctament sul receptor per cambiar son estat a la man.<br>
+<br>
+Nòta : una pèrla ligada càmbia l’estat d’aqueste receptor quand l’utilizas en t’agrovant.
+<np>
+Receptor d’impulsion de ligam
+Comanda ligada
+<&industrial_switchlink_pulse_receiver>Un receptor d’impulsion ligat balha als panèls alunhats un brèu desencadenament de redstone.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Fai un clic drech sul receptor o activa la pèrla ligada per mandar una impulsion brèva.<br>
+<br>
+Nòta : l’impulsion s’arrèsta tota sola après la durada programada.
+<np>
+Relai d’impulsion de ligam
+Comanda ligada
+<&industrial_switchlink_pulse_relay>Un equipament en forma de relai balha als panèls un ponch de commutacion local compacte.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins. Utiliza de blòcs receptors se te cal una activacion per pèrla ligada.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Receptor de ligam d’interruptors
+Comanda ligada
+<&industrial_switchlink_receiver>Un receptor ligat balha als panèls alunhats una cibla de redstone a plena poténcia.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Fai un clic drech dirèctament sul receptor per cambiar son estat a la man.<br>
+<br>
+Nòta : una pèrla ligada càmbia l’estat d’aqueste receptor quand l’utilizas en t’agrovant.
+<np>
+Receptor analogic de ligam
+Comanda ligada
+<&industrial_switchlink_receiver_analog>Un receptor ligat balha als panèls de comanda una cibla visibla a distància.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Utiliza aquela pèrla en t’agrovant per activar lo receptor a distància.<br>
+<br>
+Nòta : aqueste receptor manda un senhal de redstone a plena poténcia quand es activat.
+<np>
+Relai de ligam d’interruptors
+Comanda ligada
+<&industrial_switchlink_relay>Un equipament en forma de relai balha als panèls un ponch de commutacion local compacte.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins. Utiliza de blòcs receptors se te cal una activacion per pèrla ligada.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Relai analogic de ligam
+Comanda ligada
+<&industrial_switchlink_relay_analog>Un equipament en forma de relai balha als panèls un ponch de commutacion local compacte.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins. Utiliza de blòcs receptors se te cal una activacion per pèrla ligada.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Pèrla de ligam d’interruptors
+Comanda ligada
+<&switchlink_pearl>Una pèrla ligada sèrva la cibla d’un receptor per las comandas de fabrica a distància.<br>
+<br>
+Utilizacion : clica sus un receptor de ligam d’interruptors amb una pèrla d’Ender per ne crear una. Utiliza la pèrla ligada en t’agrovant per activar lo receptor memorizat.<br>
+<br>
+Nòta : la cibla deu èsser cargada, dins la meteissa dimension e a portada.
+<np>
+Vièlh agre ornamentat
+Comanda per redstone
+<&oldfancy_bistableswitch1>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Vièlh agre rotatiu ornamentat
+Comanda per redstone
+<&oldfancy_bistableswitch2>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Agre rotatiu rustic
+Comanda per redstone
+<&rustic_angular_lever>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Agre rustic
+Comanda per redstone
+<&rustic_lever>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Agre rustic en forma de clavèl
+Comanda per redstone
+<&rustic_nail_lever>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.
+<np>
+Agre rustic de doas carnièras
+Comanda per redstone
+<&rustic_two_hinge_lever>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.

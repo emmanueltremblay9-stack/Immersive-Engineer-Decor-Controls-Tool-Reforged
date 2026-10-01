@@ -1,0 +1,41 @@
+Almacenamento e transporte
+Accesorios de inventario e caudal
+Os accesorios de almacenamento e transporte abranguen caixóns, bocois, funís e válvulas para percorridos compactos de fábrica.<br>
+<br>
+Usa estas páxinas ao distribuír almacéns, tubaxes, depósitos de servizo e conducións de fluídos controladas.
+<np>
+Caixón etiquetado
+Etiqueta de existencias editable
+<&labeled_crate>Este caixón etiquetado está pensado para ordenar o almacén con claridade. A placa frontal pódese editar coma un pequeno sinal de obradoiro.<br>
+<br>
+Uso: fai clic dereito na placa para editar a etiqueta do caixón. Fai clic dereito no resto do caixón para abrir o almacenamento de accesorios, pezas e subministracións de mantemento.<br>
+<np>
+Bocoi de líquidos
+Equipamento de tubaxes de fluídos
+<&fluid_barrel>Este accesorio é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: colócao onde as tubaxes ou os baldes poidan chegar á cara do depósito.<br>
+<np>
+Funil de líquidos
+Equipamento de tubaxes de fluídos
+<&small_fluid_funnel>O funil pequeno de recollida de líquidos é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: pono debaixo do punto de recollida de líquidos e conduce o contido almacenado a depósitos ou tubaxes inferiores.<br>
+<np>
+Válvula antirretorno para tubaxe de líquidos
+Equipamento de tubaxes de fluídos
+<&straight_pipe_valve>A válvula antirretorno para tubaxe de líquidos é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: aliña a válvula coa dirección de caudal prevista.<br>
+<np>
+Válvula de líquidos de redstone
+Equipamento de tubaxes de fluídos
+<&straight_pipe_valve_redstone>A válvula de líquidos controlada por redstone é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: aliña a válvula coa dirección de caudal prevista.<br>
+<np>
+Válvula analóxica de líquidos
+Equipamento de tubaxes de fluídos
+<&straight_pipe_valve_redstone_analog>A válvula analóxica de líquidos de redstone é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: aliña a válvula coa dirección de caudal prevista.<br>

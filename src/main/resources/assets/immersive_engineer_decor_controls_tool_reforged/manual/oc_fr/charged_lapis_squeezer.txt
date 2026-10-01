@@ -1,0 +1,7 @@
+Espremedor mental
+Condensador d’experiéncia
+<&recipe>L’Espremedor mental transforma lo lapislazuli e l’experiéncia en Lapislazuli cargat.<br>
+<br>
+Utilizacion : pòrta de lapislazuli e al mens un nivèl d’experiéncia, puèi utiliza l’aisina. Cada conversion capitada consoma un nivèl e un lapislazuli, nafra l’utilizaire, gasta l’espremedor e crea un Lapislazuli cargat.<br>
+<br>
+Refusa de foncionar se l’utilizaire a pas de lapislazuli, a pas d’XP o es tròp pròche de la mòrt.

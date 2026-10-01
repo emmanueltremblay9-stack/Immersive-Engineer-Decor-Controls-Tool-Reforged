@@ -1,0 +1,7 @@
+Rustik mexaniki zərbə qapısı
+Təzyiq impulsu
+<&recipe>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.

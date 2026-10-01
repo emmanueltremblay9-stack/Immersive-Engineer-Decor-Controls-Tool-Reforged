@@ -1,0 +1,5 @@
+Pasivní kapalinové vybavení
+Vybavení kapalinových rozvodů
+<&recipe>Pasivní sběrač kapalin je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Umísti jej k vhodným zdrojům vody a ponech prostor pro odvádění kapaliny.<br>

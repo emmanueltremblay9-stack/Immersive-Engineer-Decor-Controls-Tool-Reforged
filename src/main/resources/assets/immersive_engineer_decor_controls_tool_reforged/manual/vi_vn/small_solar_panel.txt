@@ -1,0 +1,5 @@
+Tấm pin mặt trời
+Tiện ích sàn xưởng
+<&recipe>Tấm pin mặt trời nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Chừa trời thoáng phía trên và nối thiết bị tiêu thụ ít điện.<br>

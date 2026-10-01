@@ -1,0 +1,5 @@
+Verdichtete Kieserde
+Bodenbelag für Arbeitsbereiche
+<&recipe>Dieser Block verleiht Arbeitsbereichen im Freien eine verdichtete, zertrampelte Oberfläche.<br>
+<br>
+Verwendung: Verlege ihn vor Ladetoren, um Außentanks und auf Maschinenhöfen.<br>

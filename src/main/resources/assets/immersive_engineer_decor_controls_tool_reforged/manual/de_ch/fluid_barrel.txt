@@ -1,0 +1,5 @@
+Flüssigkeitsfass
+Bauteil für Flüssigkeitsleitige
+<&recipe>Das kompakte Leitigsteil passt für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Setz es so, dass Röhre oder Chübel a d'Tanksiite ane chömed.<br>

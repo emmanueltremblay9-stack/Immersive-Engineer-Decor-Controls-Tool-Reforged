@@ -1,0 +1,107 @@
+Dirbtuvių mašinos
+Mašinos ir dirbtuvių įvestys bei išvestys
+Dirbtuvių mašinos atlieka gaminimo, daiktų perkėlimo, lydymo, šalinimo, surinkimo ir pagalbinius darbus, užimdamos tik vieną bloką.<br>
+<br>
+Atverk tolesnius puslapius, kad rastum kiekvienos mašinos receptą, vaizdą, aprašymą ir praktines naudojimo pastabas.
+<np>
+Plieninis stalas
+Dirbtuvių baldas
+<&steel_table>Šis blokas yra praktiškas baldas darbo patalpoms ir priežiūros kampeliams.<br>
+<br>
+Naudojimas: statyk šalia darbastalių, dėžių ir kompaktiškų mašinų.<br>
+<np>
+Apdorotos medienos stalas
+Dirbtuvių baldas
+<&treated_wood_table>Šis blokas yra praktiškas baldas darbo patalpoms ir priežiūros kampeliams.<br>
+<br>
+Naudojimas: statyk šalia darbastalių, dėžių ir kompaktiškų mašinų.<br>
+<np>
+Apdorotos medienos taburetė
+Dirbtuvių baldas
+<&treated_wood_stool>Šis blokas yra praktiškas baldas darbo patalpoms ir priežiūros kampeliams.<br>
+<br>
+Naudojimas: statyk šalia darbastalių, dėžių ir kompaktiškų mašinų.<br>
+<np>
+Metalo darbastalis
+Plokščių gamybos stotis
+<&metal_crafting_table>Metalo darbastalis yra sutvirtinta dirbtuvių darbo vieta su plaktuko lizdu, 3x3 gaminimo tinkleliu ir aiškiai pažymėtu išvesties lizdu.<br>
+<br>
+Naudojimas: naudok tinklelį įprastam gaminimui. IE plokštėms įdėk inžinieriaus plaktuką į įrankio lizdą, o plokštės medžiagą – į tinklelį, tada paimk rezultatą. Plieninėms dekoracijoms naudojamos plieno plokštės: iš jų gaminami stulpai, aptarnavimo takai, langai, durys, turėklai ir kitos plieninės dalys.<br>
+<np>
+Fabriko piltuvas
+Dirbtuvių pagalbininkas
+<&factory_hopper>Šis blokas perkelia daiktų krūveles per kompaktiškesnį pramoninį korpusą.<br>
+<br>
+Naudojimas: nukreipk į sandėlių liniją, tada sąsajoje nustatyk nuotolį, krūvelių skaičių, laiką ir redstono režimą.<br>
+<np>
+Fabriko mėtytuvas
+Dirbtuvių pagalbininkas
+<&factory_dropper>Šis blokas išmeta sukauptus daiktus iš nukreipto paviršiaus.<br>
+<br>
+Naudojimas: nukreipk priekį į išmetimo vietą, pripildyk vidinius lizdus ir sąsajoje sureguliuok jėgą, kampą, delsą, filtro logiką bei redstono režimą.<br>
+<np>
+Fabriko blokų statytuvas
+Dirbtuvių pagalbininkas
+<&factory_placer>Suaktyvintas šis blokas stato blokus iš vidinių atsargų.<br>
+<br>
+Naudojimas: nukreipk darbinį paviršių į norimą vietą ir įdėk statomų daiktų krūvelių.<br>
+<np>
+Blokų laužytuvas
+Dirbtuvių pagalbininkas
+<&small_block_breaker>Mažas blokų laužytuvas yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: nukreipk darbinį paviršių į pašalintiną bloką.<br>
+<np>
+Atliekų degintuvas
+Kompaktiškas apdorojimo įrenginys
+<&small_waste_incinerator>Atliekų degintuvas sunaikina nereikalingus daiktus, užimdamas mažai vietos dirbtuvėse.<br>
+<br>
+Naudojimas: į jo eilę tiek tik nereikalingus daiktus.<br>
+<np>
+Laboratorinė krosnis
+Kompaktiškas apdorojimo įrenginys
+<&small_lab_furnace>Laboratorinė krosnis atlieka nedidelius kietu kuru maitinamus lydymo darbus, užimdama mažai vietos dirbtuvėse.<br>
+<br>
+Naudojimas: naudok kietą kurą mažoms lydymo partijoms.<br>
+<np>
+Elektrinė krosnis
+Kompaktiškas apdorojimo įrenginys
+<&small_electrical_furnace>Elektrinė krosnis atlieka nedidelius FE energija maitinamus lydymo darbus, užimdama mažai vietos dirbtuvėse.<br>
+<br>
+Naudojimas: tiek FE ir tinkamą lydymo žaliavą.<br>
+<np>
+Mineralų lydymo krosnis
+Kompaktiškas apdorojimo įrenginys
+<&small_mineral_smelter>Mineralų lydymo krosnis apdoroja mineralus aukštoje temperatūroje, užimdama mažai vietos dirbtuvėse.<br>
+<br>
+Naudojimas: tiek mineralų blokus ir energiją lydymui aukštoje temperatūroje.<br>
+<np>
+Vandens šaldiklis
+Kompaktiškas apdorojimo įrenginys
+<&small_freezer>Vandens šaldiklis atlieka kompaktiškus šaldymo darbus energija maitinamose skysčių sistemose.<br>
+<br>
+Naudojimas: tiek vandenį ir energiją etapinei ledo gamybai.<br>
+<np>
+Pasyvus skysčių kaupimas
+Skysčių linijos įranga
+<&passive_fluid_accumulator>Pasyvus skysčių kaupiklis yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: statyk prie tinkamų vandens šaltinių ir palik vietos skysčiui išvesti.<br>
+<np>
+Saulės modulis
+Dirbtuvių pagalbininkas
+<&small_solar_panel>Mažas saulės modulis yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: užtikrink atvirą dangų ir prijunk mažai energijos naudojančią įrangą.<br>
+<np>
+Melžimo mašina
+Dirbtuvių pagalbininkas
+<&small_milking_machine>Maža melžimo mašina yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: statyk prie karvių ir pasirūpink pieno indų arba skysčio išvedimu.<br>
+<np>
+Medžių kirtiklis
+Dirbtuvių pagalbininkas
+<&small_tree_cutter>Mažas medžių kirtiklis yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: nukreipk į užaugusius medžius ir iškritusius daiktus surink atskirai.<br>

@@ -1,0 +1,5 @@
+Phiến clinker lấm bẩn
+Tường gạch phủ muội đen
+<&recipe>Phiến gạch clinker lấm bẩn mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>

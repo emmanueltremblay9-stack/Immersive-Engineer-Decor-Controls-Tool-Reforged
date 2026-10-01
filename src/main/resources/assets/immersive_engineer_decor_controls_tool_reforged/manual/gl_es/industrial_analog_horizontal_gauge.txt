@@ -1,0 +1,7 @@
+Medidor con voltímetro
+Medidor de sinal
+<&recipe>Un medidor compacto de sala de control mostra a potencia de redstone como unha lectura clara no panel.<br>
+<br>
+Uso: móntao onde se poida comprobar dunha ollada a potencia de redstone próxima.<br>
+<br>
+Notas: le a potencia de redstone próxima entre 0 e 15.

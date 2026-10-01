@@ -1,0 +1,7 @@
+Braiteoir Báistí
+Brath comharthaí
+<&recipe>Tiontaíonn braiteoir aimsire báisteach ag a shuíomh ina Redstone.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir báisteach a fháil ar an mbloc os a chionn.<br>
+<br>
+Nótaí: seiceálann sé báisteach os cionn an bhraiteora.

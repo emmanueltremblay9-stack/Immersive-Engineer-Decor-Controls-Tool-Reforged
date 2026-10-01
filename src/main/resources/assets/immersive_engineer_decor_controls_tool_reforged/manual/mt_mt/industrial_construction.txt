@@ -1,0 +1,108 @@
+Kostruzzjoni industrijali
+Ħitan u borduri tal-fabbrika
+It-tagħmir ġenerali tal-bini jkopri bibien, twieqi, dwal, sinjali ta' twissija, borduri u partijiet strutturali li ma jaqgħux f'taqsima aktar speċifika.<br>
+<br>
+Uża dawn il-paġni għal kmamar tal-fabbrika, kurituri tal-manutenzjoni, marki tal-periklu u dettalji industrijali prattiċi.
+<np>
+Dawl tal-ħadid b'bozza
+Dawl kompatt tax-xogħol
+<&iron_bulb_light>Din il-blokka tipprovdi dawl industrijali kompatt għal kurituri, passaġġi u żoni tax-xogħol.<br>
+<br>
+Użu: immuntaha fuq soqfa, ħitan jew truf fejn il-kamra teħtieġ dawl ċar tax-xogħol.<br>
+<np>
+Dawl tat-tarf tas-saqaf
+Dawl kompatt tax-xogħol
+<&iron_ceiling_edge_light>Din il-blokka tipprovdi dawl industrijali kompatt għal kurituri, passaġġi u żoni tax-xogħol.<br>
+<br>
+Użu: immuntaha fuq soqfa, ħitan jew truf fejn il-kamra teħtieġ dawl ċar tax-xogħol.<br>
+<np>
+Dawl imdaħħal fit-tarf tal-art
+Dawl kompatt tax-xogħol
+<&iron_floor_edge_light>Din il-blokka tipprovdi dawl industrijali kompatt għal kurituri, passaġġi u żoni tax-xogħol.<br>
+<br>
+Użu: immuntaha fuq soqfa, ħitan jew truf fejn il-kamra teħtieġ dawl ċar tax-xogħol.<br>
+<np>
+Dawl imdaħħal
+Dawl kompatt tax-xogħol
+<&iron_inset_light>Din il-blokka tipprovdi dawl industrijali kompatt għal kurituri, passaġġi u żoni tax-xogħol.<br>
+<br>
+Użu: immuntaha fuq soqfa, ħitan jew truf fejn il-kamra teħtieġ dawl ċar tax-xogħol.<br>
+<np>
+Sinjal "Attenzjoni Ġenerali"
+Markatur tal-periklu
+<&sign_caution>Is-sinjal "Attenzjoni Ġenerali" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal tal-periklu
+Markatur tal-periklu
+<&sign_danger>Is-sinjal "Attenzjoni, Hemm Periklu Kbir" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal dekorattiv
+Markatur tal-periklu
+<&sign_decor>Il-plakka tas-sinjal dekorattiv (Dekor tal-Inġinier) timmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal tad-difiża
+Markatur tal-periklu
+<&sign_defense>Is-sinjal "Attenzjoni, Sistema ta' Difiża Quddiem" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal tal-ħruġ
+Markatur tal-periklu
+<&sign_exit>Dan is-sinjal jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal "Periklu ta' Nar"
+Markatur tal-periklu
+<&sign_firehazard>Is-sinjal "Periklu ta' Nar" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal "Twissija ta' Ġlata"
+Markatur tal-periklu
+<&sign_frost>Is-sinjal "Twissija ta' Ġlata" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal ta' wiċċ jaħraq
+Markatur tal-periklu
+<&sign_hotsurface>Is-sinjal "Attenzjoni, Wiċċ Jaħraq" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal ta' wajer ħaj
+Markatur tal-periklu
+<&sign_hotwire>Is-sinjal "Attenzjoni, Wajer Ħaj" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal "Periklu ta' Laser"
+Markatur tal-periklu
+<&sign_laser>Is-sinjal "Periklu ta' Laser" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal ta' periklu maġiku
+Markatur tal-periklu
+<&sign_magichazard>Is-sinjal "Attenzjoni, Periklu Maġiku" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal tal-kamp manjetiku
+Markatur tal-periklu
+<&sign_magneticfield>Is-sinjal "Attenzjoni, Kamp Manjetiku Qawwi" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>
+Sinjal "Periklu Radjuattiv"
+Markatur tal-periklu
+<&sign_radioactive>Is-sinjal "Periklu Radjuattiv" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>
+<np>

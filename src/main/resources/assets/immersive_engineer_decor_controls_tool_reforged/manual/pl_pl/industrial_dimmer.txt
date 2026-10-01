@@ -1,0 +1,7 @@
+Regulator sygnału
+Zmienny sygnał
+<&recipe>Obrotowy element sterujący reguluje siłę redstone z przodu niewielkiego panelu.<br>
+<br>
+Użycie: Klikaj prawym przyciskiem myszy, aby stopniowo zwiększać sygnał. Po osiągnięciu maksymalnej siły wartość wraca do zera.<br>
+<br>
+Uwagi: Wytwarza sygnał o sile od 0 do 15.

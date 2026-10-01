@@ -1,0 +1,7 @@
+Preša za Muslee pločice
+Preša za hranu
+<&recipe>Preša za pločice Muslee pretvara uobičajenu hranu u kompaktne terenske obroke.<br>
+<br>
+Uporaba: Ponesi kruh, jabuku i sjemenke pšenice, dinje, bundeve, cikle ili Industrial Hempa pa upotrijebi prešu. Uspješno prešanje troši po jedan sastojak, provjerava prostor, izrađuje četiri pločice Muslee Melange i oštećuje prešu.<br>
+<br>
+Ako sastojak nedostaje ili u inventaru nema mjesta, ništa se ne troši.

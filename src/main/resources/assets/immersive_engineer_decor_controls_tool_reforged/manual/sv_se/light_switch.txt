@@ -1,0 +1,7 @@
+Ljusbrytare
+Redstonestyrning
+<&recipe>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.

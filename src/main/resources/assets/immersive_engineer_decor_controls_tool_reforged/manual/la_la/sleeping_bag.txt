@@ -1,0 +1,7 @@
+Saccus dormiendi
+Instrumenta quietis portatilia
+<&recipe>Saccus dormitorius instrumentum quietis tempestatibus resistens est ad opera procul a lecto.<br>
+<br>
+Usus: Nocte in Overworld utere ut usque mane quiescas. Locum renascendi nec statuit nec movet.<br>
+<br>
+Usum diurnum, loca periculosa monstris proximis et dimensiones quieti securae ineptas recusat. Quaeque quies felix saccum deterit.

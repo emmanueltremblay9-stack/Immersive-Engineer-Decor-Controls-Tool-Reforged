@@ -1,0 +1,5 @@
+Kapsuła powietrza do nurkowania
+Awaryjny zapas powietrza
+<&recipe>Kapsuła powietrzna to awaryjny zapas do pracy pod wodą.<br>
+<br>
+Użyj jej ręcznie, aby odzyskać powietrze. W ekwipunku uruchamia się też automatycznie, gdy prawie brakuje powietrza, po czym ma czas odnowienia. Przydaje się w zalanych kopalniach i przy podwodnych rurach.

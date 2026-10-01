@@ -1,0 +1,5 @@
+Zapón abatible de ferro
+Punto de acceso industrial
+<&recipe>Este bloque proporciona un punto de acceso robusto a salas de servizo, pozos, tellados e recintos de máquinas.<br>
+<br>
+Uso: instálao onde a construción precise unha abertura de mantemento controlada.<br>

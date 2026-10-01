@@ -1,0 +1,7 @@
+Relé de enlace de interruptor
+Controle vinculado
+<&recipe>Um componente com aparência de relé fornece um ponto compacto de comutação local para painéis.<br>
+<br>
+Uso: Clique com o botão direito para ligar ou desligar a saída na intensidade máxima para circuitos próximos. Use blocos receptores quando precisar de acionamento por pérolas vinculadas.<br>
+<br>
+Observações: Emite redstone na intensidade máxima enquanto está ligado.

@@ -1,0 +1,7 @@
+Detector de tempestes
+Detecció de senyals
+<&recipe>Un sensor de tempestes activa avisos durant les tempestes elèctriques.<br>
+<br>
+Ús: col·loca’l a cel obert i connecta’l a llums o alarmes.<br>
+<br>
+Notes: requereix una tempesta elèctrica i accés al cel.

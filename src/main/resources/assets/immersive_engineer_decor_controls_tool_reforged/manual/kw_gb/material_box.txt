@@ -1,0 +1,7 @@
+Kist Gwitha Danvez
+Kist provians drehevel
+<&recipe>An kist daffar a wra don lies a unn daffar drehevel sempel, digemmys ha stackadow.<br>
+<br>
+Devnydh: Kell an gist y'n prif dhorn ha stack daffar y'n dorn aral rag y chargya. Devnydh an gist gans an dorn aral gwag rag tenna unn stack yn-mes.<br>
+<br>
+Y hyll synsi dhe 512 tra a unn eghen. Yth esa gostynges kystow yn y gilydh, daffar na yll bos stackys, ha stackys henwys po gans data gemmys; an tooltip a dhiskwedh an dalgh.

@@ -1,0 +1,7 @@
+Prijemnik vezanogo prěključanja
+Vezano upravljanje
+<&recipe>Vezany prijemnik davaje oddalenym panelam redstounovy cělj polnoj sily.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Klikni prěmo na prijemnik pravoj knopkoj dlja ručnogo prěključanja.<br>
+<br>
+Primětky: Vezana perla prěključaje sej prijemnik pri upotrěbjenju kraduči se.

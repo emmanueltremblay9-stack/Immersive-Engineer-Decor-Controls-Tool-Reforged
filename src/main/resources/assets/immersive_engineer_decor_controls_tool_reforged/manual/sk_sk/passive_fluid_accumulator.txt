@@ -1,0 +1,5 @@
+Pasívne kvapalinové vybavenie
+Vybavenie kvapalinových rozvodov
+<&recipe>Pasívny zberač kvapalín je kompaktný diel pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Umiestni ho k vhodným zdrojom vody a nechaj priestor na odoberanie kvapaliny.<br>

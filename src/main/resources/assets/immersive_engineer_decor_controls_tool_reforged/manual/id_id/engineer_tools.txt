@@ -1,0 +1,99 @@
+Perkakas Insinyur
+Peralatan bengkel portabel
+Kumpulan perkakas insinyur menambahkan peralatan genggam, penanda tambang, barang darurat habis pakai, makanan lapangan, dan alat bantu pemrosesan bahan kecil ke buku panduan yang juga membahas blok dekorasi serta kendali.<br>
+<br>
+Perkakas ini ditujukan untuk pekerjaan jauh dari bengkel lengkap: tandai rute, bawa pasokan, pulihkan diri dari kesalahan, dan selesaikan pemrosesan kecil di lokasi.
+<np>
+Perkakas REDIA
+Perkakas berlapis berlian
+<&redia_tool>Perkakas REDIA adalah alat lapangan tahan lama untuk pekerjaan tanah yang cepat. Gunakan pada tanah yang dapat diolah untuk menjadikannya tanah garapan.<br>
+<br>
+Gunakan pada sisi yang stabil sambil membawa obor untuk memasang obor penanda dari persediaan tanpa mengauskan REDIA. Pekerjaan tanah, pengguntingan, pekerjaan kapak, dan penebangan pohon mengurangi daya tahan.
+<np>
+Palu Penghancur Bijih
+Perkakas penghancur genggam
+<&crushing_hammer>Palu penghancur bijih adalah alat manual untuk pengolahan awal besi dan emas.<br>
+<br>
+Penggunaan: Rakit bersama besi mentah, emas mentah, bijih besi, bijih besi deepslate, bijih emas, atau bijih emas deepslate untuk menghasilkan debu besi atau emas Immersive Engineering. Ketahanan palu berkurang dan palu kembali ke kisi perakitan sampai rusak.<br>
+<br>
+Alat juga aus saat menambang dan dapat menghempaskan sasaran dalam pertarungan jarak dekat.
+<np>
+Pelacak
+Penanda posisi tersimpan
+<&tracker>Pelacak menyimpan posisi blok langsung di dalam item.<br>
+<br>
+Penggunaan: Klik blok untuk menyimpan dimensi dan koordinatnya. Tooltip menampilkan posisi tersimpan. Gunakan pelacak sambil menyelinap untuk menghapus sasaran.<br>
+<br>
+Gunakan untuk menandai mesin, percabangan terowongan, kendali jarak jauh, atau lokasi konstruksi yang belum selesai sebelum kembali membawa perkakas dan bahan.
+<np>
+Batu Bara Ariadne
+Penanda rute tambang
+<&ariadne_coal>Batu bara Ariadne memasang penanda rute berupa panah hitam dengan cepat pada sisi tambang yang stabil. Gunakan pada sisi padat untuk menandai belokan berikutnya, pintu keluar, atau percabangan; penanda mendukung delapan arah pada sisi yang diklik, termasuk diagonal.<br>
+<br>
+Batu bara Ariadne adalah perkakas penanda berulang pakai dengan 100 kali penggunaan. Setiap penanda yang berhasil dipasang mengurangi satu daya tahan. Sisi yang tidak didukung ditolak tanpa mengauskan barang.
+<np>
+Paket Stimulan Otomatis
+Penyuntik darurat
+<&stimpack>Auto Stim Pack adalah alat pemulihan darurat untuk pekerjaan perawatan berbahaya.<br>
+<br>
+Penggunaan: Pakai secara manual untuk memulihkan kesehatan, memperoleh perlindungan singkat, dan dorongan gerak sesaat. Saat dibawa dalam inventaris, alat juga dapat aktif otomatis ketika kesehatan rendah, lalu memasuki cooldown.<br>
+<br>
+Siapkan satu sebelum menguji tempat tinggi, kabel terbuka, atau rute tambang yang berbahaya.
+<np>
+Kantong Tidur
+Perlengkapan istirahat portabel
+<&sleeping_bag>Kantong tidur adalah perangkat istirahat tahan cuaca untuk pekerjaan jauh dari ranjang.<br>
+<br>
+Penggunaan: Pakai pada malam hari di Overworld untuk beristirahat sampai pagi. Ini tidak mengatur atau memindahkan titik kemunculanmu.<br>
+<br>
+Kantong menolak penggunaan siang hari, lingkungan berbahaya dengan monster di dekatnya, dan dimensi yang tidak cocok untuk istirahat aman. Setiap istirahat berhasil mengurangi ketahanannya.
+<np>
+Kotak Penyimpanan Bahan
+Kotak pasokan konstruksi
+<&material_box>Kotak material membawa persediaan besar dari satu jenis bahan konstruksi polos, tidak dimodifikasi, dan dapat ditumpuk.<br>
+<br>
+Penggunaan: Pegang kotak di tangan utama dan tumpukan material di tangan sekunder untuk memuatnya. Gunakan kotak dengan tangan sekunder kosong untuk mengambil satu tumpukan.<br>
+<br>
+Kotak menampung hingga 512 item, hanya satu jenis material, serta menolak kotak bersarang, perlengkapan tak dapat ditumpuk, dan tumpukan bernama atau berdata yang dimodifikasi. Isinya ditampilkan pada tooltip.
+<np>
+Kapsul Udara Selam
+Cadangan udara darurat
+<&diving_capsule>Kapsul udara selam adalah cadangan udara darurat untuk pekerjaan bawah air.<br>
+<br>
+Penggunaan: Pakai secara manual untuk memulihkan udara. Saat dibawa dalam inventaris, kapsul juga dapat aktif otomatis ketika udara hampir habis, lalu memasuki cooldown.<br>
+<br>
+Bawa untuk tambang tergenang, jalur pipa bawah air, dan perbaikan ruang pompa.
+<np>
+Pengepres Batang Muslee
+Pengepres makanan
+<&musli_bar_press>Muslee Bar Press mengubah bahan makanan biasa menjadi ransum lapangan yang ringkas.<br>
+<br>
+Penggunaan: Bawa roti, apel, dan biji gandum, melon, labu, bit, atau Industrial Hemp, lalu gunakan alat pres. Proses berhasil memakai satu dari tiap bahan, memeriksa ruang keluaran, menghasilkan empat Muslee Melange Power Bar, dan mengurangi ketahanan alat pres.<br>
+<br>
+Jika bahan kurang atau inventaris tidak muat menampung bar, tidak ada yang dikonsumsi.
+<np>
+Batang Energi Campuran Muslee
+Camilan bengkel cepat
+<&musli_bar>Muslee Melange Power Bar adalah makanan ringkas yang dibuat dari roti, biji-bijian, dan buah.<br>
+<br>
+Penggunaan: makan sebagai bekal lapangan saat memasang kendali, pipa, platform, atau jalur panjang di ruang mesin.
+<np>
+Pemeras Pikiran
+Pemadat pengalaman
+<&charged_lapis_squeezer>Pemeras pikiran mengubah satu lazuardi dan satu tingkat pengalaman dari persediaan menjadi lazuardi bermuatan.<br>
+<br>
+Setiap pengubahan yang berhasil melukai pengguna, menimbulkan kelelahan, dan membutakannya sesaat. Proses ditolak jika lazuardi atau pengalaman tidak tersedia, atau pengguna terlalu dekat dengan kematian.
+<np>
+Lazuardi Bermuatan
+Pengalaman tersimpan
+<&charged_lapis>Lazuardi bermuatan menyimpan satu tingkat pengalaman. Konsumsi untuk mengembalikan tingkat tersebut, menghapus efek aktif, dan memulihkan sedikit kesehatan.<br>
+<br>
+Buat pemeras pikiran terlebih dahulu; lazuardi bermuatan dihasilkan dengan memakai alat itu saat lazuardi dan pengalaman tersedia.
+<np>
+Butiran Besi Kasar
+Bahan perkakas insinyur yang dipakai dalam kumpulan resep hasil rekonstruksi.
+<&iron_grit>Dapat dilebur menjadi besi batangan,<br>tetapi tidak cocok untuk pemrosesan<br>bahan tingkat lanjut.
+<np>
+Butiran Emas Kasar
+Bahan perkakas insinyur yang dipakai dalam kumpulan resep hasil rekonstruksi.
+<&gold_grit>Dapat dilebur menjadi emas batangan,<br>tetapi tidak cocok untuk pemrosesan<br>bahan tingkat lanjut.

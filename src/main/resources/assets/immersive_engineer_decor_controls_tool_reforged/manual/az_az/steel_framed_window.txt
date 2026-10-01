@@ -1,0 +1,5 @@
+Polad çərçivəli pəncərə
+Qorunan görünüş
+<&recipe>Bu blok möhkəmləndirilmiş zavod tikintisinə uyğun olmaqla görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: Oyunçuların maşınları qoruyucu maneənin arxasından görməli olduğu yerlərdə istifadə edin.<br>

@@ -1,0 +1,7 @@
+Detector de blocos
+Detecção de sinais
+<&recipe>Um detector de blocos verifica se o espaço à sua frente está ocupado.<br>
+<br>
+Uso: Aponte para a face de máquina, reserva ou espaço protegido que deseja monitorar.<br>
+<br>
+Observações: Ativa quando o bloco à frente não é ar.

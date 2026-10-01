@@ -1,0 +1,7 @@
+Gwitterdetektor
+Signalerfassig
+<&recipe>En Gwittersensor löst Warnige während enem Gwitter uus.<br>
+<br>
+Verwendig: Setz en under de freie Himmel und verbind en mit Lüchte oder Alarm.<br>
+<br>
+Hiwiis: Bruucht Gwitter und freie Himmelszuegang.

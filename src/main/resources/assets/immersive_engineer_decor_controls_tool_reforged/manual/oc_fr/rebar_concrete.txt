@@ -1,0 +1,5 @@
+Blòc de beton armat
+Beton renforçat
+<&recipe>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>

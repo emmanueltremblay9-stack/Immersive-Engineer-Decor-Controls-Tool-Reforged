@@ -1,0 +1,93 @@
+Atresi de l’inzenier
+Equipamento de ofisina da portarse drio
+El grupo de Atresi de l’inzenier el zonta apareci da man, segni de mina, consumàbiłi de emergensa, magnar da cantièr e pìcoli aiuti par łaorar materiałi al steso manual che el parla de i blochi decorativi e de controło.<br>
+<br>
+Sti atresi i serve par łaorar lontan da na ofisina ben equipada: segnar ła strada, portar scorte, riméterse dai sbagli e finir pìcole łaorasion sul posto.
+<np>
+Atreso REDIA
+Utilità coerta de diamante
+<&redia_tool>L’Atreso REDIA el xe un atreso resistente par łaori svelti sul teren. Dòparalo su un teren che se pol łaorar par far tera sapada.<br>
+<br>
+Dòparalo contro na fasa stàbiłe mentre te porti torse, par meter na torsa da l’inventario come segno sensa consumar REDIA. Łaorar el teren, tondar, doparar ła manara e tajar àlbari i consuma durada.
+<np>
+Marteło par sbrisiolar minerałi
+Atreso da sbrisiolar a man
+<&crushing_hammer>El martelo spaca-mineral xe un atreso a man par lavorar ferro e oro al inizio.<br>
+<br>
+Doparalo con fero grezo, oro grezo, mineral de fero o oro e le varianti deepslate par polvere Immersive Engineering. El martelo perde durata, torna in griglia fin che se rompe, se consuma cavando e sbalza i bersagli.
+<np>
+Localizador
+Segno de pozision conservada
+<&tracker>El traciador salva la posision de un bloco nel ogjeto.<br>
+<br>
+Clica un bloco par salvar dimension e coordinate. El suggerimento mostra la posision. Doparalo in furtivo par scancelar el bersaglio.<br>
+<br>
+Segna machine, galarie, comandi remoti o cantieri incompleti.
+<np>
+Carbon de Arianna
+Segno de percorso par mine
+<&ariadne_coal>El Carbon de Arianna el mete in presa frese negre par segnar ła strada su fase stàbiłi de mina. Dòparalo su na fasa sołida par segnar ła pròsima volta, usita o incrocio; el segno el suporta oto diresion su ła fasa clicada, conprese łe diagonałi.<br>
+<br>
+El Carbon de Arianna el xe un atreso da tornar a doparar, co 100 doprade. Ogni segno messo ben el costa un punto de durada. El rifiuta łe fase che no va ben invece de consumar l’ozeto.
+<np>
+Autoinietor stimołante
+Inietor de emergensa
+<&stimpack>El stimpack automatico xe un ogjeto medico de emergenza.<br>
+<br>
+Doparalo a man par curar, protezion breve e velocità. In inventario el parte co poca salute e dopo el recupera. Tienghelo pronto in posti pericolosi.
+<np>
+Saco par dormir
+Equipamento par riposar in giro
+<&sleeping_bag>El saco a pelo xe un kit resistente al tempo par riposar distante da un leto.<br>
+<br>
+Doparalo de note nel Overworld par riposar fin matina senza cambiar el punto de rinascita.<br>
+<br>
+No el funsiona de giorno, co mostri visini o in dimension sbaglià. Ogni riposo lo consuma.
+<np>
+Cassa par materiałi
+Cassa de scorte par costrusion
+<&material_box>La cassa materiali porta tanta roba de un solo material comune, mia modificà e impilabile.<br>
+<br>
+Tien la cassa in man principale e el material in altra par caricarlo; con altra man voda tira fora una pila.<br>
+<br>
+La tien 512 ogjeti de un tipo, refiuta altre casse, atrezi mia impilabili e pile modificate e mostra el contenùo nel suggerimento.
+<np>
+Capsuła de aria par andar soto àcua
+Resèrva de aria de emergensa
+<&diving_capsule>La capsula de aria xe una riserva de emergenza par lavorar soto aqua.<br>
+<br>
+Doparala a man par recuperar aria. In inventario la parte da sola quando aria xe quasi finia, dopo la va in recupero. Portala in miniere alagate e tubi soto aqua.
+<np>
+Pressa par barete Muslee
+Pressa par magnar
+<&musli_bar_press>La pressa Muslee trasforma magnar comune in rasion compatte.<br>
+<br>
+Porta pan, pomo e semi de formento, melon, suca, barbabietola o canapa industriale e dopara la pressa. La consuma uno par tipo, controla posto, fa quatro barete e se danegia.<br>
+<br>
+Se manca qualcosa o posto, no la consuma gnente.
+<np>
+Bareta de energia Muslee Melange
+Boconsin svelto da ofisina
+<&musli_bar>La barreta Muslee Melange xe magnar compatto de pan, semi e fruta.<br>
+<br>
+Magnala sul campo mentre te monti comandi, tubi, piataforme o linee de machine.
+<np>
+Strucador mentałe
+Condensador de esperiensa
+<&charged_lapis_squeezer>El Strucador mentałe el transforma un lapislàsaro e un łiveło de esperiensa de’l to inventario in Lapislàsaro cargà.<br>
+<br>
+Ogni trasformasion che riesse ła fa mal, ła causa afaticamento alimentare e ła orba par poco tenpo chi che lo dòpara. El no va sensa lapislàsaro, sensa XP o quando chi che lo dòpara el xe massa visin a morir.
+<np>
+Lapislàsaro cargà
+Esperiensa conservada
+<&charged_lapis>El Lapislàsaro cargà el conserva un łiveło de esperiensa. Consùmalo par riaver el łiveło, cavar i efeti ativi e recuperar un fià de salute.<br>
+<br>
+Fàbrica prima un Strucador mentałe: el Lapislàsaro cargà el vien prodoto doparando sto atreso co lapislàsaro e XP a disposision.
+<np>
+Graneła grossa de fero
+Materiałe par atresi da inzenier doparà dal grupo de resete ricostruìo.
+<&iron_grit>Se pol fonderla in lingoti de<br>fero, ma no ła va ben par ła<br>łaorasion avansada de i materiałi.
+<np>
+Graneła grossa de oro
+Materiałe par atresi da inzenier doparà dal grupo de resete ricostruìo.
+<&gold_grit>Se pol fonderla in lingoti de<br>oro, ma no ła va ben par ła<br>łaorasion avansada de i materiałi.

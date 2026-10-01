@@ -1,0 +1,5 @@
+Block o' dark shingle roof
+Weather-worn roof fitting
+<&recipe>This block shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>

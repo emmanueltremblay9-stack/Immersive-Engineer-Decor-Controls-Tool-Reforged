@@ -1,0 +1,7 @@
+Sleeping Bag
+Portable rest kit
+<&recipe>The Sleeping Bag is a weatherproof rest kit for field work far from a bed.<br>
+<br>
+Usage: Use it at night in the Overworld to rest until morning. It does not set or move your spawn point.<br>
+<br>
+The bag refuses daytime use, unsafe surroundings with nearby monsters, and dimensions that are not suitable for a safe field rest. Each successful rest wears the bag.

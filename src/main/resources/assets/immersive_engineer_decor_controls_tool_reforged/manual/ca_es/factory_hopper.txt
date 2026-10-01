@@ -1,0 +1,5 @@
+Tremuja de fàbrica
+Equipament de planta
+<&recipe>Aquest bloc mou piles d’objectes dins d’una carcassa industrial més compacta.<br>
+<br>
+Ús: orienta’l cap a la línia d’inventaris i ajusta l’abast, la quantitat de la pila, els temps i el mode de redstone a la pantalla.<br>

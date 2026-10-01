@@ -1,0 +1,5 @@
+Zavod anguti
+Ustaxona yordamchi qurilmasi
+<&recipe>Bu blok buyum to'plamlarini ixchamroq sanoat qobig'idan o'tkazadi.<br>
+<br>
+Ishlatish: inventar liniyasiga qarating, so'ng oynada masofa, to'plam soni, vaqt va redstone rejimini belgilang.<br>

@@ -1,0 +1,5 @@
+Bloco de cuarełi de scoria
+Muradura fissa de fàbrica
+<&recipe>Sto bloco el zonta muradura fissa griza e maron par fondamente, muri de sostegno e veci capani da łaoro.<br>
+<br>
+Uso: dòparalo par fondamente vecie, muri de sostegno e pavimenti sporchi de fàbrica.<br>

@@ -1,0 +1,5 @@
+Napelem
+Műhelyi segédeszköz
+<&recipe>A kis napelem műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: biztosíts szabad égboltot, és csatlakoztass kis fogyasztású berendezéseket.<br>

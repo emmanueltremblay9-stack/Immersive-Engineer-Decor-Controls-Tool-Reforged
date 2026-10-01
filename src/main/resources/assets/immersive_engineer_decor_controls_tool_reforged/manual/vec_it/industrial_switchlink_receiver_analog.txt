@@ -1,0 +1,7 @@
+Ricevidor anałòjego de ligamento
+Comanda ligada
+<&recipe>Un ricevidor ligà el dà ai panełi de controło un bersałio visìbiłe da distante.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Dòpara sta perla stando cucà par ativar el ricevidor da distante.<br>
+<br>
+Da saver: sto ricevidor el manda un segnal de redstone pieno quando el vien ativà.

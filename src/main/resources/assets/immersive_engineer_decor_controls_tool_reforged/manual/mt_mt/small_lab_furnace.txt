@@ -1,0 +1,5 @@
+Forn tal-laboratorju
+Unità kompatta tal-ipproċessar
+<&recipe>Il-forn tal-laboratorju jagħmel xogħol kompatt ta' tidwib bi fjuwil solidu, fi spazju żgħir fil-ħanut tax-xogħol.<br>
+<br>
+Użu: uża fjuwil solidu għal lottijiet kompatti ta' tidwib.<br>

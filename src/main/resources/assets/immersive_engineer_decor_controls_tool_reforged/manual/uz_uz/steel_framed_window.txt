@@ -1,0 +1,5 @@
+Po'lat romli deraza
+Himoyalangan ko'rish yo'li
+<&recipe>Bu blok mustahkamlangan zavod qurilishiga mos holda ko'rish yo'lini ochiq saqlaydi.<br>
+<br>
+Ishlatish: o'yinchilar mashinalarni himoyalangan to'siq ortidan ko'rishi kerak bo'lgan joylarda foydalaning.<br>

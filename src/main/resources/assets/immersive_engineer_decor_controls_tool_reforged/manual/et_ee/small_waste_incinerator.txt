@@ -1,0 +1,5 @@
+Jäätmepõleti
+Kompaktne töötlusseade
+<&recipe>Jäätmepõleti hävitab soovimatud esemed väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Lisa selle järjekorda ainult soovimatuid esemeid.<br>

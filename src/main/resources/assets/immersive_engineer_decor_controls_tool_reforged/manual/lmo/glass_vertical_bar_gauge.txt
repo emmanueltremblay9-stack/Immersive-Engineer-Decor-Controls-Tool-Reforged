@@ -1,0 +1,7 @@
+Misurador a barra de veder
+Misurador de segnal
+<&recipe>Un misurador piscinin per la sala di controi el fa vedè la potenza de prejarossa in d’una letura ciara in sul panell.<br>
+<br>
+Montel indove che se poeu vardà a colp d’oeucc la potenza de prejarossa lì arent.<br>
+<br>
+El legg la potenza de prejarossa lì arent de 0 a 15.

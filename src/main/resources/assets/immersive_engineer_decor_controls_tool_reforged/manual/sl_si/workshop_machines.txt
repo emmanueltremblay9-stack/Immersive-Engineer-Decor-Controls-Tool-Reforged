@@ -1,0 +1,107 @@
+Delavniški stroji
+Stroji ter vhodi in izhodi delavnice
+Delavniški stroji omogočajo kompaktno izdelavo, premikanje predmetov, taljenje, odstranjevanje odpadkov, zbiranje in pomožna opravila v prostoru enega bloka.<br>
+<br>
+Odpri naslednje strani za recept, prikaz, zgodbo in uporabna navodila za vsak stroj.
+<np>
+Jeklena miza
+Delavniško pohištvo
+<&steel_table>Ta blok je uporaben kos delavniškega pohištva za delovne prostore in vzdrževalne kotičke.<br>
+<br>
+Uporaba: Postavi ga ob delovnih klopeh, zabojih in kompaktnih strojih.<br>
+<np>
+Miza iz obdelanega lesa
+Delavniško pohištvo
+<&treated_wood_table>Ta blok je uporaben kos delavniškega pohištva za delovne prostore in vzdrževalne kotičke.<br>
+<br>
+Uporaba: Postavi ga ob delovnih klopeh, zabojih in kompaktnih strojih.<br>
+<np>
+Stolček iz obdelanega lesa
+Delavniško pohištvo
+<&treated_wood_stool>Ta blok je uporaben kos delavniškega pohištva za delovne prostore in vzdrževalne kotičke.<br>
+<br>
+Uporaba: Postavi ga ob delovnih klopeh, zabojih in kompaktnih strojih.<br>
+<np>
+Miza za obdelavo kovin
+Delovno mesto za plošče
+<&metal_crafting_table>Miza za obdelavo kovin je ojačana delavniška postaja z mestom za kladivo, mrežo za izdelavo 3x3 in jasno ločenim izhodnim mestom.<br>
+<br>
+Uporaba: Mrežo uporabljaj za običajno izdelavo. Za plošče IE postavi inženirsko kladivo na mesto za orodje in material plošče v mrežo, preden vzameš izdelek. Jekleni okrasni elementi uporabljajo jeklene plošče za stebre, servisne prehode, okna, vrata, zaščitne ograje in druge jeklene dele.<br>
+<np>
+Tovarniški lijak
+Tovarniški pripomoček
+<&factory_hopper>Ta blok premika sklade predmetov skozi kompaktnejše industrijsko ohišje.<br>
+<br>
+Uporaba: Usmeri ga proti vrsti inventarjev, nato v vmesniku nastavi doseg, število skladov, časovne nastavitve in način redstone.<br>
+<np>
+Tovarniški delilnik
+Tovarniški pripomoček
+<&factory_dropper>Ta blok izpušča shranjene predmete z usmerjene ploskve.<br>
+<br>
+Uporaba: Usmeri sprednjo stran proti točki izpusta, napolni notranja mesta ter v vmesniku nastavi silo, kot, zamik, logiko filtra in način redstone.<br>
+<np>
+Tovarniški postavljalnik blokov
+Tovarniški pripomoček
+<&factory_placer>Ta blok ob aktivaciji postavlja bloke iz notranje zaloge.<br>
+<br>
+Uporaba: Delovno ploskev usmeri proti ciljnemu prostoru in naloži sklade predmetov, ki jih je mogoče postaviti.<br>
+<np>
+Razbijalnik blokov
+Tovarniški pripomoček
+<&small_block_breaker>Majhen razbijalnik blokov je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Delovno ploskev usmeri proti bloku, ki ga želiš odstraniti.<br>
+<np>
+Sežigalnik odpadkov
+Kompaktna obdelovalna enota
+<&small_waste_incinerator>Sežigalnik odpadkov uničuje neželene predmete in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: V njegovo čakalno vrsto dovajaj samo neželene predmete.<br>
+<np>
+Laboratorijska peč
+Kompaktna obdelovalna enota
+<&small_lab_furnace>Laboratorijska peč opravlja kompaktna talilna dela na trdno gorivo in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: Za majhne serije taljenja uporabi trdno gorivo.<br>
+<np>
+Električna peč
+Kompaktna obdelovalna enota
+<&small_electrical_furnace>Električna peč opravlja kompaktna talilna dela na energijo FE in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: Dovajaj FE in ustrezen material za taljenje.<br>
+<np>
+Talilnik mineralov
+Kompaktna obdelovalna enota
+<&small_mineral_smelter>Talilnik mineralov obdeluje minerale pri visokih temperaturah in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: Za visokotemperaturno taljenje dovajaj mineralne bloke in energijo.<br>
+<np>
+Zamrzovalnik vode
+Kompaktna obdelovalna enota
+<&small_freezer>Zamrzovalnik vode opravlja kompaktno hlajenje za napajane sisteme s fluidi.<br>
+<br>
+Uporaba: Dovajaj vodo in energijo za postopno proizvodnjo ledu.<br>
+<np>
+Pasivni fluid
+Oprema cevovodov za fluide
+<&passive_fluid_accumulator>Pasivni zbiralnik fluidov je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Postavi ga ob ustrezne vire vode in pusti prostor za odvajanje fluida.<br>
+<np>
+Sončna plošča
+Tovarniški pripomoček
+<&small_solar_panel>Majhna sončna plošča je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Zagotovi ji odprto nebo in priključi naprave z majhno porabo.<br>
+<np>
+Molzni stroj
+Tovarniški pripomoček
+<&small_milking_machine>Majhen molzni stroj je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Postavi ga blizu krav in zagotovi odvajanje posod z mlekom ali fluida.<br>
+<np>
+Sekač dreves
+Tovarniški pripomoček
+<&small_tree_cutter>Majhen sekač dreves je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Usmeri ga proti odraslim drevesom in izplen zbiraj ločeno.<br>

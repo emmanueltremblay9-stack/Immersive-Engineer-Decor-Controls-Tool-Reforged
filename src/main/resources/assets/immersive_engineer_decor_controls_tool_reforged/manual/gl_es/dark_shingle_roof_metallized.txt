@@ -1,0 +1,5 @@
+Paraneves de tellado
+Peza de tellado envellecida
+<&recipe>O paraneves de tellado de tellas escuras crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>

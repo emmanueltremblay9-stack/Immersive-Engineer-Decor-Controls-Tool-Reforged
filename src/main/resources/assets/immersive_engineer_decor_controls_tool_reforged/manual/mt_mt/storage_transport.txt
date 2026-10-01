@@ -1,0 +1,41 @@
+Ħażna u trasport
+Tagħmir tal-inventarju u tal-fluss
+It-tagħmir tal-ħażna u t-trasport jinkludi kaxxi, btieti, lembuti u valvi għal tqassim kompatt tar-rotot fil-fabbrika.<br>
+<br>
+Uża dawn il-paġni meta tqassam imħażen, pajpijiet, tankijiet tas-servizz u linji kkontrollati tal-fluwidu.
+<np>
+Kaxxa bit-tikketta
+Tikketta editabbli tal-ħażna
+<&labeled_crate>Din il-kaxxa bit-tikketta nbniet għal tqassim ċar fil-maħżen. Il-plakka ta' quddiem tagħha tista' tiġi editjata bħal sinjal żgħir tal-ħanut tax-xogħol.<br>
+<br>
+Użu: ikklikkja l-plakka tat-tikketta bil-lemin biex teditja t-tikketta tal-kaxxa. Ikklikkja l-bqija tal-kaxxa bil-lemin biex tiftaħ il-ħażna għat-tagħmir, partijiet u provvisti tal-manutenzjoni.<br>
+<np>
+Bittija tal-fluwidu
+Tagħmir tal-linji tal-fluwidu
+<&fluid_barrel>Dan it-tagħmir hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: qiegħdu fejn pajpijiet jew bramel jistgħu jilħqu l-wiċċ tat-tank.<br>
+<np>
+Lembut tal-fluwidu
+Tagħmir tal-linji tal-fluwidu
+<&small_fluid_funnel>Il-lembut żgħir tal-fluwidu hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: qiegħdu taħt il-punt tal-ġbir tal-fluwidu u mexxi l-kontenut maħżun tiegħu lejn tankijiet jew pajpijiet aktar baxxi.<br>
+<np>
+Valv tal-pajp li ma jħallix il-fluwidu jmur lura
+Tagħmir tal-linji tal-fluwidu
+<&straight_pipe_valve>Il-valv li ma jħallix il-fluwidu jmur lura hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: allinja l-valv mad-direzzjoni mixtieqa tal-fluss.<br>
+<np>
+Valv tal-fluwidu tar-Redstone
+Tagħmir tal-linji tal-fluwidu
+<&straight_pipe_valve_redstone>Il-valv tal-fluwidu tar-Redstone hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: allinja l-valv mad-direzzjoni mixtieqa tal-fluss.<br>
+<np>
+Valv analogu tal-fluwidu
+Tagħmir tal-linji tal-fluwidu
+<&straight_pipe_valve_redstone_analog>Il-valv analogu tal-fluwidu hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: allinja l-valv mad-direzzjoni mixtieqa tal-fluss.<br>

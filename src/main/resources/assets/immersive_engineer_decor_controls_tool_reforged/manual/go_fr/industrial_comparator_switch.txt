@@ -1,0 +1,7 @@
+Interrupteur a comparouer
+Signa attachë
+<&recipe>Un interrupteur mezurouer compact lit le blloqe su qhi il ét montë e mue ç'te lecture en eune sortie de paniao simple.<br>
+<br>
+Empllai : Montéz-le su des renabls, des réservouers ou des appareils a redstone. Cant qe le blloqe de support indiçe eune sortie de comparouer, de contenant ou de redstone, l'interrupteur émet de la redstone de plleine force.<br>
+<br>
+Notes : Empllayéz-le pour fére des niveaux de réserve ou du câbllage cachë des lignes de comande marche/arét cllères.

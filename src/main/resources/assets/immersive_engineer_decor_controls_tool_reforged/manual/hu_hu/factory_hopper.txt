@@ -1,0 +1,5 @@
+Gyári tölcsér
+Műhelyi segédeszköz
+<&recipe>Ez a blokk tárgyhalmokat mozgat egy kompaktabb ipari házon keresztül.<br>
+<br>
+Használat: fordítsd a tárolósor felé, majd a felületen állítsd be a hatótávot, a halmok számát, az időzítést és a redstone-módot.<br>

@@ -1,0 +1,7 @@
+Rilevador de temporal
+Rilevament di segnai
+<&recipe>Un sensor de temporal el dà i avertiment quand che gh’è i ton.<br>
+<br>
+Metel sota el ciel avert e colegel a lampe o allarmi.<br>
+<br>
+Servissen i ton e el ciel avert.

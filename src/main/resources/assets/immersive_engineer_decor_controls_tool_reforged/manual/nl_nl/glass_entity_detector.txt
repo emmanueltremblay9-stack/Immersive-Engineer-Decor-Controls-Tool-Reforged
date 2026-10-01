@@ -1,0 +1,7 @@
+Glazen entiteitendetector
+Signaaldetectie
+<&recipe>Een entiteitendetector bewaakt beweging in de buurt zonder een zichtbare vloerplaat.<br>
+<br>
+Gebruik: verbind hem met deuren, lampen, alarmen of machinevergrendelingen.<br>
+<br>
+Opmerking: scant een klein gebied rond het blok.

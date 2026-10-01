@@ -1,0 +1,5 @@
+Šķidruma caurules pretvārsts
+Šķidrumu līnijas aprīkojums
+<&recipe>Šķidruma caurules pretvārsts ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto vārstu atbilstoši paredzētajam plūsmas virzienam.<br>

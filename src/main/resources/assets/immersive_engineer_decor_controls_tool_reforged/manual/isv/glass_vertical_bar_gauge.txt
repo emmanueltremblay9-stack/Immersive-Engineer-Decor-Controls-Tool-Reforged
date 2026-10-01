@@ -1,0 +1,7 @@
+Steklěny stolbčaty měritelj
+Měritelj signala
+<&recipe>Kompaktny měritelj upravnoj komory pokazyvaje redstounovu silu kak jasno vidimu veličinu na panelu.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde možno na jedin pogled prověriti blizku redstounovu silu.<br>
+<br>
+Primětky: Čitaje blizku redstounovu silu od 0 do 15.

@@ -1,0 +1,7 @@
+Analog koblingsmottaker
+Koblet betjening
+<&recipe>En koblet mottaker gir betjeningspaneler et synlig fjernmål.<br>
+<br>
+Bruk: klikk på den med en enderperle for å lage en koblet perle. Bruk perlen mens du sniker for å fjernaktivere mottakeren.<br>
+<br>
+Merknad: denne mottakeren gir et redstonesignal med full styrke når den utløses.

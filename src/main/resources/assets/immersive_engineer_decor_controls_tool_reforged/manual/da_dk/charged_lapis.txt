@@ -1,0 +1,7 @@
+Opladet lapis
+Lagret erfaring
+<&recipe>Opladet lapis gemmer ét erfaringsniveau, som er frembragt med tankepresseren.<br>
+<br>
+Brug: Indtag den for at få ét niveau tilbage, fjerne aktive effekter og genvinde lidt helbred.<br>
+<br>
+Opskriftsvisningen viser tankepresseren, fordi opladet lapis fremstilles ved at bruge dette værktøj med lapis og XP til rådighed.

@@ -1,0 +1,7 @@
+Muslee 穀條榨器
+榨糧器
+<&recipe>Muslee 條壓具，化常食為便攜行糧。<br>
+<br>
+用法：備麵包、蘋果，及小麥、西瓜、南瓜、甜菜或 Industrial Hemp 種子，用壓具。成則各耗一，先察空位，製四 Muslee Melange 條，且損壓具耐久。<br>
+<br>
+若料缺或物品欄無隙，則毫無所耗。

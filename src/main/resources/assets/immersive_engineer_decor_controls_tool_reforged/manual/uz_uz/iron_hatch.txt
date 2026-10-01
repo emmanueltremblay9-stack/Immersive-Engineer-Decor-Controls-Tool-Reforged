@@ -1,0 +1,5 @@
+Temir lyuk
+Sanoat kirish nuqtasi
+<&recipe>Bu blok xizmat xonalari, shaxtalar, tomlar va mashina qobiqlari uchun mustahkam kirish nuqtasi beradi.<br>
+<br>
+Ishlatish: qurilishda nazoratli texnik ochilish kerak joyga o'rnating.<br>

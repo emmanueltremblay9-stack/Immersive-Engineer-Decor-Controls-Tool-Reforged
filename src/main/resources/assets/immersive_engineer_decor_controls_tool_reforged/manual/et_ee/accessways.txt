@@ -1,0 +1,127 @@
+Käiguteed
+Käiguteed ja toed
+Teraspostid, töödeldud puitpostid, restid, käigusillad, piirded, redelid, uksed, aknad ja luugid moodustavad tehase sees kompaktsed hooldusteed.<br>
+<br>
+Terasest ligipääsuosad kasutavad terasplaate. Meisterda või paigalda metallitöölaud, sisesta Immersive Engineeringu vasar ning vasarda terasekangid plaatideks postide, käigusildade, akende, uste, piirete ja muude teraskaunistuste jaoks.<br>
+<br>
+Paigalda need sinna, kus masinad vajavad hooldusligipääsu, kõrgendatud teid, hooldusšahte või turvalisemaid servi.
+<np>
+Jäme teraspost
+Tugiraami osa
+<&thick_steel_pole>Sirge jäme teraspost annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Jämeda posti pea
+Tugiraami osa
+<&thick_steel_pole_head>Sirge jämeda terasposti pea või jalg annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Peenike teraspost
+Tugiraami osa
+<&thin_steel_pole>Sirge peenike teraspost annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Peenikese posti pea
+Tugiraami osa
+<&thin_steel_pole_head>Sirge peenikese terasposti pea või jalg annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Töödeldud puidust post
+Tugiraami osa
+<&treated_wood_pole>Sirge töödeldud puidust post annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Töödeldud posti pea
+Tugiraami osa
+<&treated_wood_pole_head>Sirge töödeldud puitposti pea või jalg annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Töödeldud posti tugi
+Tugiraami osa
+<&treated_wood_pole_support>Sirge töödeldud puitposti tugi annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Terasest topelt-T-tugi
+Tugiraami osa
+<&steel_double_t_support>See plokk annab masinahallidele ja ligipääsuraamidele nähtava konstruktsiooni.<br>
+<br>
+Kasutamine: Pööra ja paigalda see talade, postide ning platvormiservade nähtavaks toestuseks.<br>
+<np>
+Terasest põrandarest
+Hooldusligipääsu osa
+<&steel_floor_grating>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Teraskäigusild
+Hooldusligipääsu osa
+<&steel_catwalk>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Teraskäigusilla trepp
+Hooldusligipääsu osa
+<&steel_catwalk_stairs>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Kõrgendatud teraskäigusild
+Hooldusligipääsu osa
+<&steel_catwalk_ta>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Teraspiire
+Hooldusligipääsu osa
+<&steel_railing>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Terasvõrkaed
+Hooldusligipääsu osa
+<&steel_mesh_fence>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Terasvõrkaia värav
+Hooldusligipääsu osa
+<&steel_mesh_fence_gate>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Metallpulkredel
+Hooldusligipääsu osa
+<&metal_rung_ladder>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Nihutatud metallastmed
+Hooldusligipääsu osa
+<&metal_rung_steps>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>
+<np>
+Terasraamiga aken
+Kaitstud vaade
+<&steel_framed_window>See plokk säilitab avatud vaate ning sobib samal ajal tugevdatud tehasekonstruktsiooniga.<br>
+<br>
+Kasutamine: Paigalda ühe ploki suurusesse seinaavasse, kus mängijad peaksid nägema masinaid läbi kaitstud tõkke.<br>
+<np>
+Metallist lükanduks
+Tööstuslik ligipääsupunkt
+<&metal_sliding_door>See plokk loob tugeva ligipääsupunkti hooldusruumidele, šahtidele, katustele ja masinakorpustele.<br>
+<br>
+Kasutamine: Paigalda sinna, kus ehitis vajab kontrollitavat hooldusava.<br>
+<np>
+Rauast hooldusluuk
+Tööstuslik ligipääsupunkt
+<&iron_hatch>See plokk loob tugeva ligipääsupunkti hooldusruumidele, šahtidele, katustele ja masinakorpustele.<br>
+<br>
+Kasutamine: Paigalda sinna, kus ehitis vajab kontrollitavat hooldusava.<br>

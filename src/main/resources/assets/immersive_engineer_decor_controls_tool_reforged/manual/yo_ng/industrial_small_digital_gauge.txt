@@ -1,0 +1,7 @@
+Ẹ̀rọ Ìwọ̀n Nọ́mbà
+Agbára àmì tí a lè kà
+<&recipe>Ẹ̀rọ ìwọ̀n yàrá ìdarí kékeré ń fi agbára Redstone hàn gẹ́gẹ́ bí ìkàwé pánẹ́ẹ̀lì tó ṣe kedere.<br>
+<br>
+Lílò: So ó síbi tí a ti lè yẹ agbára Redstone tó wà lẹ́gbẹ̀ẹ́ rẹ̀ wò ní ojú kan.<br>
+<br>
+Àkíyèsí: Ó ń ka agbára Redstone nítòsí láti 0 sí 15.

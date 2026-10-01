@@ -1,0 +1,7 @@
+Sensôr di lûs
+Rilevament dal segnâl
+<&recipe>Un sensôr di lûs al transforme la luminositât locâl in comant di redstone.<br>
+<br>
+Ûs: doprilu par lampis automatichis, scûrs e circuits di visibilitât.<br>
+<br>
+Notis: si impie cun luminositât grese 8 o plui.

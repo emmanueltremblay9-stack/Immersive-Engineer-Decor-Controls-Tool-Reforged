@@ -1,0 +1,7 @@
+Ladd lasurstein
+Lagra røynsle
+<&recipe>Ladd lasurstein lagrar eitt røynslesteg som kjem frå tankepressa.<br>
+<br>
+Bruk: bruk opp steinen for å få eitt steg tilbake, fjerne aktive effektar og lækje litt helse.<br>
+<br>
+Oppskriftsruta viser tankepressa fordi du lagar ladd lasurstein ved å bruke dette verktøyet med lasurstein og røynsle tilgjengeleg.

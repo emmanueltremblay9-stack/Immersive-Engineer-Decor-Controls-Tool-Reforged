@@ -1,0 +1,7 @@
+Sirene Alarm
+Umpan balik sinyal
+<&recipe>Sirene alarm adalah indikator redstone yang dipasang pada sisi blok. Status dayanya mengikuti sinyal dari blok tempatnya terpasang.<br>
+<br>
+Penggunaan: tempelkan pada sisi padat dan berikan daya untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: sirene diperbarui sekali setiap detik selama sinyal tempatnya terpasang tetap aktif.

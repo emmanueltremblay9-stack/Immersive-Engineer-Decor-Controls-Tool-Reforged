@@ -1,0 +1,5 @@
+Testa per palo sottile
+Elemento di telaio strutturale
+<&recipe>La base/testa per palo d’acciaio sottile e diritto fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>

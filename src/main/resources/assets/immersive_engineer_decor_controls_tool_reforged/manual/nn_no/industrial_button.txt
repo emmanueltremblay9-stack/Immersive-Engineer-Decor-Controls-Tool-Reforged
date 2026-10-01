@@ -1,0 +1,7 @@
+Maskinknapp
+Redstone-styring
+<&recipe>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.

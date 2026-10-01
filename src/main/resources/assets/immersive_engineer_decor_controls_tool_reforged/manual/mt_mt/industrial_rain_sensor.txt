@@ -1,0 +1,7 @@
+Sensur tax-xita
+Sejbien tas-sinjal
+<&recipe>Sensur tat-temp jibdel ix-xita fil-pożizzjoni tiegħu f'Redstone.<br>
+<br>
+Użu: immuntah fejn il-blokka ta' fuqu tista' tirċievi x-xita.<br>
+<br>
+Noti: jiċċekkja x-xita fuq is-sensur.

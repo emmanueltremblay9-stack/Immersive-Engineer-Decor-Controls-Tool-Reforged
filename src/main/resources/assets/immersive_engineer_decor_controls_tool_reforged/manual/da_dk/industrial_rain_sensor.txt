@@ -1,0 +1,7 @@
+Regnsensor
+Signalregistrering
+<&recipe>En vejrsensor omdanner regn ved sin placering til redstone.<br>
+<br>
+Brug: Monter den, hvor blokken ovenover kan modtage regn.<br>
+<br>
+Bemærk: Kontrollerer regn over sensoren.

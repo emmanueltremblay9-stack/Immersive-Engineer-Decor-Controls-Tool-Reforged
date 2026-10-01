@@ -1,0 +1,107 @@
+Verkstaðarmaskinur
+Maskinur og verkstaðarinntak/-úttak
+Verkstaðarmaskinur geva evning, lutaflyting, bræðing, burturbeining, savning og hjálpararbeiði á einum plássi, sum bert fyllir ein kubba.<br>
+<br>
+Lat næstu síðurnar upp fyri at síggja uppskrift, mynd, bakgrund og ítøkiligar nýtsluviðmerkingar til hvørja maskinu.
+<np>
+Stálborð
+Verkstaðarmøblar
+<&steel_table>Hesin kubbin er ein nýtiligur møbil til arbeiðsrúm og viðlíkahaldshorn.<br>
+<br>
+Nýtsla: Set hann við arbeiðsborð, kassar og smáar maskinur.<br>
+<np>
+Borð úr viðgjørdum viði
+Verkstaðarmøblar
+<&treated_wood_table>Hesin kubbin er ein nýtiligur møbil til arbeiðsrúm og viðlíkahaldshorn.<br>
+<br>
+Nýtsla: Set hann við arbeiðsborð, kassar og smáar maskinur.<br>
+<np>
+Skammil úr viðgjørdum viði
+Verkstaðarmøblar
+<&treated_wood_stool>Hesin kubbin er ein nýtiligur møbil til arbeiðsrúm og viðlíkahaldshorn.<br>
+<br>
+Nýtsla: Set hann við arbeiðsborð, kassar og smáar maskinur.<br>
+<np>
+Málmarbeiðsborð
+Arbeiðsstaður til plátur
+<&metal_crafting_table>Málmarbeiðsborðið er ein styrkt arbeiðsstøð á verkstaðnum við hamaraplássi, einari 3x3-evningarrutu og einum greiðum úttaksplássi.<br>
+<br>
+Nýtsla: Brúka rutuna til vanliga evning. Til IE-plátur skalt tú seta ein verkfrøðingahamara í amboðsplássið og plátutilfarið í rutuna, áðrenn tú tekur úrslitið. Stálprýði brúkar stálplátur til stólpar, gongubrýr, vindeygu, hurðar, gelendarar og aðrar stálpartar.<br>
+<np>
+Verksmiðjutrakt
+Hjálpartól á verkstaðargólvinum
+<&factory_hopper>Hesin kubbin flytur lutastáplar gjøgnum eitt minni ídnaðarhús.<br>
+<br>
+Nýtsla: Vend honum móti goymsluketuni og stilla síðani frástøðu, stáplatal, tíðir og reyðgrýtishátt á skerminum.<br>
+<np>
+Verksmiðjuútspýtari
+Hjálpartól á verkstaðargólvinum
+<&factory_dropper>Hesin kubbin sendir goymdar lutir út gjøgnum eina síðu, ið er vend móti málinum.<br>
+<br>
+Nýtsla: Vend framsíðuni móti útspýtingarstaðnum, fyll innbygdu plássini og stilla kraft, vinkul, seinkan, sílulogikk og reyðgrýtishátt á skerminum.<br>
+<np>
+Verksmiðjukubbasetari
+Hjálpartól á verkstaðargólvinum
+<&factory_placer>Hesin kubbin setur kubbar úr sínum innbygda forða, tá ið hann verður virkjaður.<br>
+<br>
+Nýtsla: Vend arbeiðssíðuni móti málrúminum og fyll við stáplum, sum kunnu setast.<br>
+<np>
+Kubbabrótari
+Hjálpartól á verkstaðargólvinum
+<&small_block_breaker>Lítli kubbabrótarin er ein hjálparkubbi á verkstaðargólvinum til evning, goymslu, seting, bróting, savning ella lítlan sjálvvirkandi rakstur.<br>
+<br>
+Nýtsla: Vend arbeiðssíðuni móti kubbanum, sum skal takast burtur.<br>
+<np>
+Ruskbrenniovnur
+Lítil viðgerðareind
+<&small_waste_incinerator>Ruskbrenniovnurin oyðileggur óynsktar lutir og krevur lítið pláss á verkstaðnum.<br>
+<br>
+Nýtsla: Koyr bert óynsktar lutir í bíðirøðina.<br>
+<np>
+Starvsstovuovnur
+Lítil viðgerðareind
+<&small_lab_furnace>Starvsstovuovnurin tekur sær av smáum bræðingaruppgávum við føstum brennievni og krevur lítið pláss á verkstaðnum.<br>
+<br>
+Nýtsla: Brúka fast brennievni til smáar bræðingarumferðir.<br>
+<np>
+Elovnur
+Lítil viðgerðareind
+<&small_electrical_furnace>Elovnurin tekur sær av smáum FE-drivnum bræðingaruppgávum og krevur lítið pláss á verkstaðnum.<br>
+<br>
+Nýtsla: Tilfør FE og gyldugt bræðingartilfar.<br>
+<np>
+Mineralbræðari
+Lítil viðgerðareind
+<&small_mineral_smelter>Mineralbræðarin viðger mineral við høgum hita og krevur lítið pláss á verkstaðnum.<br>
+<br>
+Nýtsla: Veit mineralkubbar og orku til bræðing við høgum hita.<br>
+<np>
+Vatnfrystari
+Lítil viðgerðareind
+<&small_freezer>Vatnfrystarin tekur sær av lítlum køliuppgávum í løgskipanum við orkuveiting.<br>
+<br>
+Nýtsla: Tilfør vatn og orku fyri at framleiða ís í stigum.<br>
+<np>
+Ódrivin løgur
+Útgerð til løgleiðingar
+<&passive_fluid_accumulator>Ódrivni løgsavnarin er ein lítil løgleiðingarpartur til smáar tangar, rørlagnir, savnistøð og reyðgrýtisstýrda gjøgnumrenning.<br>
+<br>
+Nýtsla: Set hann móti hóskandi vatnkeldum og lat pláss vera til at taka løg út.<br>
+<np>
+Sólpanel
+Hjálpartól á verkstaðargólvinum
+<&small_solar_panel>Lítla sólpanelið er ein hjálparkubbi á verkstaðargólvinum til evning, goymslu, seting, bróting, savning ella lítlan sjálvvirkandi rakstur.<br>
+<br>
+Nýtsla: Gev tí frítt sýni at himlinum og bind útgerð við lítlari nýtslu til.<br>
+<np>
+Mjólkingarmaskina
+Hjálpartól á verkstaðargólvinum
+<&small_milking_machine>Lítla mjólkingarmaskinan er ein hjálparkubbi á verkstaðargólvinum til evning, goymslu, seting, bróting, savning ella lítlan sjálvvirkandi rakstur.<br>
+<br>
+Nýtsla: Set hana nær neytum og syrg fyri einari leið at taka mjólkaríløt ella løg út.<br>
+<np>
+Træfellari
+Hjálpartól á verkstaðargólvinum
+<&small_tree_cutter>Lítli træfellarin er ein hjálparkubbi á verkstaðargólvinum til evning, goymslu, seting, bróting, savning ella lítlan sjálvvirkandi rakstur.<br>
+<br>
+Nýtsla: Vend honum móti fullvaksnum trøum og savna niðurdotnu lutirnar fyri seg.<br>

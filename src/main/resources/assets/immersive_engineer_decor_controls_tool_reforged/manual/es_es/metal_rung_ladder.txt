@@ -1,0 +1,5 @@
+Escalera de peldaños de metal
+Elemento de acceso de mantenimiento
+<&recipe>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>

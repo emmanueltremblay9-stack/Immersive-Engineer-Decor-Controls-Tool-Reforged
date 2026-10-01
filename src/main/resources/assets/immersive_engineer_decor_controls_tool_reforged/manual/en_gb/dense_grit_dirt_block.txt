@@ -1,0 +1,5 @@
+Dense Grit Dirt
+Worksite ground cover
+<&recipe>This block gives outdoor work areas a compacted, trampled surface.<br>
+<br>
+Usage: Lay it around loading doors, outdoor tanks, and machine yards.<br>

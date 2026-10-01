@@ -1,0 +1,5 @@
+Pancarta decorativa
+Marca de perilh
+<&recipe>La Placa de pancarta (Engineer's Decor) senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>

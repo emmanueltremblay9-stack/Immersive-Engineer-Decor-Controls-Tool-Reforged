@@ -1,0 +1,5 @@
+Tijolo de clínquer ornamentado
+Tijolos escurecidos pela fuligem
+<&recipe>O tijolo de clínquer ornamentado com arenito acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Use em paredes, acabamentos ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>

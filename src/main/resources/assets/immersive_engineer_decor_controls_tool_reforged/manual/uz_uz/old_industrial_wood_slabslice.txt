@@ -1,0 +1,5 @@
+Eski yog'och plitasining yupqa qatlami
+Eski ustaxona yog'ochi
+<&recipe>Eski sanoat yog'och plitasining yupqa qatlami pol, pog'ona, eshik va iliq ichki hoshiyalar uchun eski ustaxona yog'ochi ko'rinishini qo'shadi.<br>
+<br>
+Ishlatish: eski ustaxona pollari, zinapoyalari, eshiklari va hoshiyalarida foydalaning.<br>

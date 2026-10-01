@@ -1,0 +1,7 @@
+Interruttore rotante per macchinari
+Controllo con redstone
+<&recipe>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.

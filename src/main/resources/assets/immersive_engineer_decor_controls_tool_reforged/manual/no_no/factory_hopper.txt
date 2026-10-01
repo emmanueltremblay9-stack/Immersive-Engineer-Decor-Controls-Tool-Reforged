@@ -1,0 +1,5 @@
+Fabrikktrakt
+Hjelpemiddel på fabrikkgulvet
+<&recipe>Denne blokken flytter gjenstandsstabler gjennom en kompakt industrikasse.<br>
+<br>
+Bruk: rett den mot lagerlinjen og still rekkevidde, stabelmengde, timing og redstonemodus på skjermen.<br>

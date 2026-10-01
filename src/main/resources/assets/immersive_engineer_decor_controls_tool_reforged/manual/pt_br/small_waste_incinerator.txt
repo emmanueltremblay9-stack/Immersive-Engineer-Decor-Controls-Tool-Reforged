@@ -1,0 +1,5 @@
+Incinerador de resíduos
+Unidade compacta de processamento
+<&recipe>O incinerador de resíduos destrói itens indesejados e ocupa pouco espaço na oficina.<br>
+<br>
+Uso: Insira apenas itens indesejados na fila.<br>

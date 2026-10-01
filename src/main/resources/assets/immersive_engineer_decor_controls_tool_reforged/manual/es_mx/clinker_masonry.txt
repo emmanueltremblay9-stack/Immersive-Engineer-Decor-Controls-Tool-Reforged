@@ -1,0 +1,161 @@
+Ladrillo vitrificado y mampostería
+Revestimientos de ladrillo y concreto
+El ladrillo vitrificado, el ladrillo de escoria, el concreto armado y el vidrio blindado proporcionan superficies robustas para salas calientes, talleres y vistas protegidas.<br>
+<br>
+Usa las losas, escaleras, capas finas y muros a juego para rematar los bordes sin romper la coherencia de los materiales de la fábrica.
+<np>
+Bloque de ladrillo vitrificado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_block>Este bloque aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Losa de ladrillo vitrificado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_slab>Este bloque aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Escaleras de ladrillos vitrificados
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_stairs>Este bloque aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Muro de ladrillos vitrificados
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_wall>Este bloque aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Bloque de ladrillo vitrificado manchado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_stained_block>El bloque de ladrillo vitrificado manchado aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Losa de ladrillo vitrificado manchado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_stained_slab>La losa de ladrillo vitrificado manchado aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Escaleras de ladrillo vitrificado manchado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_stained_stairs>Las escaleras de ladrillos vitrificados manchados aportan ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Ladrillo vitrificado ornamentado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_sastor_corner_block>El ladrillo vitrificado con adornos de arenisca aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Ladrillo vitrificado empotrado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_recessed>Este bloque aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Ladrillos vitrificados ranurados
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_vertically_slit>Los ladrillos vitrificados con ranuras verticales aportan ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Losa vertical de ladrillo vitrificado
+Ladrillos oscurecidos por el hollín
+<&clinker_brick_vertical_slab_structured>La losa vertical de ladrillo vitrificado con relieve aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Capa fina de ladrillo vitrificado
+Ladrillos oscurecidos por el hollín
+<&halfslab_clinker_brick>Este bloque aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>
+<np>
+Bloque de ladrillos de escoria
+Mampostería industrial densa
+<&slag_brick_block>Este bloque añade mampostería densa de color pardo grisáceo para cimientos, muros de contención y talleres antiguos.<br>
+<br>
+Uso: Úsalo para cimientos antiguos, muros de contención y suelos sucios de fábricas.<br>
+<np>
+Losa de ladrillos de escoria
+Mampostería industrial densa
+<&slag_brick_slab>Este bloque añade mampostería densa de color pardo grisáceo para cimientos, muros de contención y talleres antiguos.<br>
+<br>
+Uso: Úsalo para cimientos antiguos, muros de contención y suelos sucios de fábricas.<br>
+<np>
+Escaleras de ladrillos de escoria
+Mampostería industrial densa
+<&slag_brick_stairs>Este bloque añade mampostería densa de color pardo grisáceo para cimientos, muros de contención y talleres antiguos.<br>
+<br>
+Uso: Úsalo para cimientos antiguos, muros de contención y suelos sucios de fábricas.<br>
+<np>
+Muro de ladrillos de escoria
+Mampostería industrial densa
+<&slag_brick_wall>Este bloque añade mampostería densa de color pardo grisáceo para cimientos, muros de contención y talleres antiguos.<br>
+<br>
+Uso: Úsalo para cimientos antiguos, muros de contención y suelos sucios de fábricas.<br>
+<np>
+Bloque de concreto armado
+Concreto reforzado
+<&rebar_concrete>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Losa de concreto armado
+Concreto reforzado
+<&rebar_concrete_slab>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Escaleras de concreto armado
+Concreto reforzado
+<&rebar_concrete_stairs>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Muro de concreto armado
+Concreto reforzado
+<&rebar_concrete_wall>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Capa fina de concreto armado
+Concreto reforzado
+<&halfslab_rebar_concrete>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Baldosas de concreto armado
+Concreto reforzado
+<&rebar_concrete_tile>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Losa de baldosas de concreto armado
+Concreto reforzado
+<&rebar_concrete_tile_slab>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Baldosas de concreto armado
+Concreto reforzado
+<&rebar_concrete_tile_stairs>Las escaleras de baldosas de concreto armado son piezas de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>
+<np>
+Bloque de vidrio blindado
+Visibilidad protegida
+<&panzerglass_block>Este bloque permite ver a través de la estructura sin romper la estética reforzada de la fábrica.<br>
+<br>
+Uso: Úsalo para que los jugadores puedan observar la maquinaria a través de una barrera protectora.<br>
+<np>
+Losa de vidrio blindado
+Visibilidad protegida
+<&panzerglass_slab>Este bloque permite ver a través de la estructura sin romper la estética reforzada de la fábrica.<br>
+<br>
+Uso: Úsalo para que los jugadores puedan observar la maquinaria a través de una barrera protectora.<br>

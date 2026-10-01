@@ -1,0 +1,5 @@
+Valvola analogica per fluidi
+Componenti per linee di fluidi
+<&recipe>La valvola analogica per fluidi è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: allinea la valvola con la direzione desiderata del flusso.<br>

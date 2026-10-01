@@ -1,0 +1,7 @@
+Jefärv empfindlich Jlas
+Signaljlas
+<&recipe>Ene Jlasblock, dä op Redstone reajeert, löht dä Durchbleck frei un zeijt dobei dä Signalzostand.<br>
+<br>
+Bruuch: Nimm en en Stüerruumfinster, lööchende Paneele un jeschötzte Fabrikverjlasunge.<br>
+<br>
+Henwies: Ängert dä Zostand durch Redstone-Energie en d'r Nöh.

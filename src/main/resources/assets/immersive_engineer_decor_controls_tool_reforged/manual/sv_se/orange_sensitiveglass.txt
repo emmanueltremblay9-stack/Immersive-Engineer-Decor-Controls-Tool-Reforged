@@ -1,0 +1,7 @@
+Orange känsligt glas
+Signalglas
+<&recipe>Ett redstonereaktivt glasblock behåller sikten och visar samtidigt signalens tillstånd.<br>
+<br>
+Användning: Använd det till kontrollrumsfönster, upplysta paneler och skyddade glaspartier i fabriker.<br>
+<br>
+Anmärkning: Ändrar tillstånd efter närliggande redstonekraft.

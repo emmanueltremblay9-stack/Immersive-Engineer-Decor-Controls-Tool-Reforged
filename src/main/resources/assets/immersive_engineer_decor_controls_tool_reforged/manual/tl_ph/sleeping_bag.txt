@@ -1,0 +1,7 @@
+Supot-tulugan
+Dalang gamit sa pahinga
+<&recipe>Ang sleeping bag ay panlaban sa panahon na pahingahan malayo sa kama.<br>
+<br>
+Gamitin sa gabi sa Overworld upang magpahinga hanggang umaga nang hindi binabago ang spawn point.<br>
+<br>
+Hindi gagana sa araw, malapit sa halimaw o sa maling dimension. Bawat matagumpay na pahinga ay nakakapudpod.

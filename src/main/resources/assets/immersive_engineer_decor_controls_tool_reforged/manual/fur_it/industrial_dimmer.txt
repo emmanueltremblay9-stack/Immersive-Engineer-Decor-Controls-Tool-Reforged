@@ -1,0 +1,7 @@
+Regoladôr di intensitât
+Segnâl variabil
+<&recipe>Un comant rotatîf al regole la potence di redstone de muse di un panêl compat.<br>
+<br>
+Ûs: fâs clic di diestre par alçâ la jessude un pas par volte; dopo la potence massime e torne a zero.<br>
+<br>
+Notis: la potence di jessude e va di 0 a 15.

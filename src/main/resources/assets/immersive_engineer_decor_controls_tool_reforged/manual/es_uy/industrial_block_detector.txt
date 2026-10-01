@@ -1,0 +1,7 @@
+Detector de bloques
+Detección de señales
+<&recipe>Un detector de bloques comprueba si está ocupado el espacio que tiene delante.<br>
+<br>
+Uso: Apuntalo hacia la cara de máquina, la reserva o el espacio protegido que quieras vigilar.<br>
+<br>
+Notas: Se activa cuando el bloque que tiene delante no es aire.

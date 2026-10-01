@@ -1,0 +1,5 @@
+Incinerador de residuos
+Unidá compacta de procesamientu
+<&recipe>L’incinerador de residuos destrúi los oxetos que nun se quieren y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: mete na cola namái oxetos de los que quieras desfacete.<br>

@@ -1,0 +1,7 @@
+Interruptor biestável de vidro
+Controle por redstone
+<&recipe>Um controle compacto fornece às fábricas um ponto de comutação de redstone fácil de identificar.<br>
+<br>
+Uso: Clique com o botão direito para ligar ou desligar a saída na intensidade máxima para os circuitos próximos.<br>
+<br>
+Observações: Emite redstone na intensidade máxima enquanto está ligado.

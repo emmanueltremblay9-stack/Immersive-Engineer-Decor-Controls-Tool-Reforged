@@ -1,0 +1,7 @@
+Dnevna stikalna ura
+Signal dnevne svetlobe
+<&recipe>Časovno stikalo sledi dnevnemu delu cikla sveta.<br>
+<br>
+Uporaba: Uporabi ga za dvoriščne svetilke, polkna in tovarniške krmilnike, ki delujejo le podnevi.<br>
+<br>
+Opombe: Zahteva dimenzijo z nebesno svetlobo.

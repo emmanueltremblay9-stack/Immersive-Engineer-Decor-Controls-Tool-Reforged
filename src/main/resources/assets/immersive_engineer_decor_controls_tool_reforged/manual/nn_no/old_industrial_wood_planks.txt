@@ -1,0 +1,5 @@
+Gamle treplankar
+Gammalt verkstadtre
+<&recipe>Dei gamle fabrikkplankane gjev gammalt verkstadtre til golv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: nytt henne til gamle verkstadgolv, trapper, dører og listverk.<br>

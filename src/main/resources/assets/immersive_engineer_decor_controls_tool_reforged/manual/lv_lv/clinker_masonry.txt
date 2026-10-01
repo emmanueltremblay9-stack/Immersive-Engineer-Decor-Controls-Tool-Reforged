@@ -1,0 +1,161 @@
+Klinkers un mūrējums
+Ķieģeļu un betona apvalki
+Klinkers, izdedžu ķieģeļi, dzelzsbetons un bruņustikls nodrošina masīvas virsmas karstām telpām, darbnīcām un aizsargātām redzamības atverēm.<br>
+<br>
+Izmanto atbilstošās plāksnes, kāpnes, plānās loksnes un mūrus, lai pabeigtu malas, saglabājot rūpnīcas materiālu vienoto stilu.
+<np>
+Klinkera ķieģeļu bloks
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_block>Šis bloks piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Klinkera ķieģeļu plāksne
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_slab>Šis bloks piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Klinkera ķieģeļu kāpnes
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_stairs>Šis bloks piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Klinkera ķieģeļu mūris
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_wall>Šis bloks piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Notraipīts klinkera bloks
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_stained_block>Notraipīts klinkera ķieģeļu bloks piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Notraipīta klinkera plāksne
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_stained_slab>Notraipīta klinkera ķieģeļu plāksne piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Notraipītas klinkera kāpnes
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_stained_stairs>Notraipītu klinkera ķieģeļu kāpnes piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Rotāts klinkera ķieģelis
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_sastor_corner_block>Ar smilšakmeni rotāts klinkera ķieģelis piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Padziļināts klinkera ķieģelis
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_recessed>Šis bloks piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Klinkera ķieģeļi ar spraugām
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_vertically_slit>Klinkera ķieģeļi ar vertikālām spraugām piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Vertikāla klinkera plāksne
+Sodrēju aptumšots ķieģeļu mūris
+<&clinker_brick_vertical_slab_structured>Fakturēta vertikāla klinkera plāksne piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Klinkera ķieģeļu pusplāksne
+Sodrēju aptumšots ķieģeļu mūris
+<&halfslab_clinker_brick>Šis bloks piešķir sodrēju aptumšotu ķieģeļu mūrējumu krāšņu hallēm, skursteņu pamatnēm un apkopes sienām.<br>
+<br>
+Lietošana: izmanto sienām, apdarei vai karstās zonas apvalkam ap krāsnīm un katliem.<br>
+<np>
+Izdedžu ķieģeļu bloks
+Blīvs rūpnīcas mūrējums
+<&slag_brick_block>Šis bloks pievieno blīvu pelēkbrūnu mūrējumu pamatiem, balstsienām un vecākām darbnīcām.<br>
+<br>
+Lietošana: izmanto veciem pamatiem, balstsienām un netīrām ražotnes grīdām.<br>
+<np>
+Izdedžu ķieģeļu plāksne
+Blīvs rūpnīcas mūrējums
+<&slag_brick_slab>Šis bloks pievieno blīvu pelēkbrūnu mūrējumu pamatiem, balstsienām un vecākām darbnīcām.<br>
+<br>
+Lietošana: izmanto veciem pamatiem, balstsienām un netīrām ražotnes grīdām.<br>
+<np>
+Izdedžu ķieģeļu kāpnes
+Blīvs rūpnīcas mūrējums
+<&slag_brick_stairs>Šis bloks pievieno blīvu pelēkbrūnu mūrējumu pamatiem, balstsienām un vecākām darbnīcām.<br>
+<br>
+Lietošana: izmanto veciem pamatiem, balstsienām un netīrām ražotnes grīdām.<br>
+<np>
+Izdedžu ķieģeļu mūris
+Blīvs rūpnīcas mūrējums
+<&slag_brick_wall>Šis bloks pievieno blīvu pelēkbrūnu mūrējumu pamatiem, balstsienām un vecākām darbnīcām.<br>
+<br>
+Lietošana: izmanto veciem pamatiem, balstsienām un netīrām ražotnes grīdām.<br>
+<np>
+Dzelzsbetona bloks
+Dzelzsbetons
+<&rebar_concrete>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Dzelzsbetona plāksne
+Dzelzsbetons
+<&rebar_concrete_slab>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Dzelzsbetona kāpnes
+Dzelzsbetons
+<&rebar_concrete_stairs>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Dzelzsbetona mūris
+Dzelzsbetons
+<&rebar_concrete_wall>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Plāna dzelzsbetona loksne
+Dzelzsbetons
+<&halfslab_rebar_concrete>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Dzelzsbetona flīze
+Dzelzsbetons
+<&rebar_concrete_tile>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Dzelzsbetona flīžu plāksne
+Dzelzsbetons
+<&rebar_concrete_tile_slab>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Dzelzsbetona flīze
+Dzelzsbetons
+<&rebar_concrete_tile_stairs>Dzelzsbetona flīžu kāpnes ir sacietējuša betona detaļas mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>
+<np>
+Bruņustikla bloks
+Aizsargāta redzamības līnija
+<&panzerglass_block>Šis bloks saglabā redzamību un vienlaikus iederas pastiprinātā rūpnīcas konstrukcijā.<br>
+<br>
+Lietošana: izmanto tur, kur spēlētājiem jāredz mašīnas caur aizsargbarjeru.<br>
+<np>
+Bruņustikla plāksne
+Aizsargāta redzamības līnija
+<&panzerglass_slab>Šis bloks saglabā redzamību un vienlaikus iederas pastiprinātā rūpnīcas konstrukcijā.<br>
+<br>
+Lietošana: izmanto tur, kur spēlētājiem jāredz mašīnas caur aizsargbarjeru.<br>

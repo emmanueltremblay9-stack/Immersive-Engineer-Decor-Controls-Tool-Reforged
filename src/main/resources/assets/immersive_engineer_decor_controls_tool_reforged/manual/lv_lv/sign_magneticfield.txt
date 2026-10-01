@@ -1,0 +1,5 @@
+Magnētiskā lauka zīme
+Apdraudējuma marķieris
+<&recipe>Zīme «Uzmanību, spēcīgs magnētiskais lauks» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>

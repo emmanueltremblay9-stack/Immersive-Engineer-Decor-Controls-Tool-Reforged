@@ -1,0 +1,5 @@
+Peti Berlabel
+Label stok boleh sunting
+<&recipe>Peti berlabel ini memudahkan pengasingan stok yang jelas. Plat hadapannya boleh disunting seperti papan tanda bengkel kecil.<br>
+<br>
+Penggunaan: Klik kanan pada plat label untuk menyunting label peti. Klik kanan pada bahagian peti lain untuk membuka simpanan kelengkapan, alat ganti dan bekalan penyelenggaraan.<br>

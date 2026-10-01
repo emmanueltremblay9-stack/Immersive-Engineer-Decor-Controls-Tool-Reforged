@@ -1,0 +1,5 @@
+Nazik dirək başlığı
+Konstruksiya karkasının hissəsi
+<&recipe>Düz nazik polad dirəyin başlığı/ayaqlığı, yəni Nazik polad dirəyin başlığı/ayaqlığı, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>

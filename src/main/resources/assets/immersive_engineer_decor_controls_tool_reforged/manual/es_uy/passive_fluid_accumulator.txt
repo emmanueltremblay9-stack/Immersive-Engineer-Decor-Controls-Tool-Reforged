@@ -1,0 +1,5 @@
+Fluido pasivo
+Equipamiento de tuberías de fluidos
+<&recipe>El acumulador pasivo de fluidos es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Colocalo junto a fuentes de agua adecuadas y dejá espacio para extraer el fluido.<br>

@@ -1,0 +1,7 @@
+Sledovač
+Značka uložené pozice
+<&recipe>Ukládá pozici bloku přímo do předmětu.<br>
+<br>
+Použití: Klikněte na blok pro dimenzi a souřadnice. Popisek ukáže pozici. V přikrčení ji smažete.<br>
+<br>
+Označte stroje, tunely, dálková ovládání nebo nedokončené stavby.

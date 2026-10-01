@@ -1,0 +1,5 @@
+Blok tamnog krova od šindre
+Istrošeni krovni dio
+<&recipe>Ovaj blok oblikuje tamne, praktične krovove radionica i industrijskih šupa.<br>
+<br>
+Uporaba: koristi dijelove zajedno za uvjerljive oblike krova.<br>

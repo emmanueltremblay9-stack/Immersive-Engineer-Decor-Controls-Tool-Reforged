@@ -1,0 +1,5 @@
+Börd veur draad ónger sjtroom
+Gevaormarkering
+<&recipe>'t Börd "Pas op, draad ónger sjtroom" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>

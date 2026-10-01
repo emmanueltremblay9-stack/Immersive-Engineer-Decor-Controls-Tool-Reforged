@@ -1,0 +1,7 @@
+Geladen lapis
+Opgeslagen ervaring
+<&recipe>Geladen lapis bewaart één ervaringsniveau dat met de geestpers is opgeslagen.<br>
+<br>
+Gebruik: verbruik de lapis om één niveau terug te krijgen, actieve effecten te wissen en een beetje gezondheid te herstellen.<br>
+<br>
+Het receptvenster toont de geestpers, omdat je geladen lapis maakt door dat gereedschap te gebruiken terwijl je lapis en ervaring bij je hebt.

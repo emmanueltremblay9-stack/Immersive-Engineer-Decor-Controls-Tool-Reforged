@@ -1,0 +1,7 @@
+Switch Link Pearl
+Linked control
+<&recipe>A linked pearl stores a receiver target for remote factory controls.<br>
+<br>
+Usage: Click a Switch Link receiver with an Ender Pearl to create one. Sneak-use the linked pearl to activate the stored receiver.<br>
+<br>
+Notes: The target must be loaded, in the same dimension, and within range.

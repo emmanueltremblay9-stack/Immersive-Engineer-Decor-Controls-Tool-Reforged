@@ -1,0 +1,7 @@
+Rofasambandsperla
+Bundin stýring
+<&recipe>Ein bundin perla goymir eitt móttakaramál til fjarstýring av verksmiðjum.<br>
+<br>
+Nýtsla: Klikk á ein móttakara til rofasambond við einari Enderperlu fyri at gera eina. Brúka bundnu perluna, meðan tú sníkir teg, fyri at virkja goymda móttakaran.<br>
+<br>
+Viðmerking: Málið má vera innlisið, í somu vídd og innan røkkivídd.

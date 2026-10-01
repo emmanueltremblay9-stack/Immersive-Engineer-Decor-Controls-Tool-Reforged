@@ -1,0 +1,5 @@
+Escalièr de bricas de clinquer
+Bricas ennegridas pel suge
+<&recipe>Aqueste blòc apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>

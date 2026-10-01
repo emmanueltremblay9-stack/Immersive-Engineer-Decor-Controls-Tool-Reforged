@@ -1,0 +1,5 @@
+Ghế đẩu gỗ đã xử lý
+Nội thất xưởng
+<&recipe>Khối này là đồ nội thất xưởng thiết thực cho phòng làm việc và góc bảo trì.<br>
+<br>
+Cách dùng: Đặt cạnh bàn, thùng và máy nhỏ.<br>

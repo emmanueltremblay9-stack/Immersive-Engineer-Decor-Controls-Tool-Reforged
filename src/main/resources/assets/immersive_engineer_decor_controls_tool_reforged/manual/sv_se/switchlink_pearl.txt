@@ -1,0 +1,7 @@
+Brytarlänkpärla
+Länkad styrning
+<&recipe>En länkad pärla sparar ett mottagarmål för fabrikens fjärrkontroller.<br>
+<br>
+Användning: Klicka på en brytarlänkmottagare med en enderpärla för att skapa en. Använd den länkade pärlan medan du smyger för att aktivera den sparade mottagaren.<br>
+<br>
+Anmärkning: Målet måste vara inläst, finnas i samma dimension och vara inom räckhåll.

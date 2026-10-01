@@ -1,0 +1,7 @@
+Sensore di pioggia
+Rilevamento del segnale
+<&recipe>Un sensore meteorologico trasforma la pioggia nella propria posizione in redstone.<br>
+<br>
+Uso: montalo dove il blocco soprastante può ricevere pioggia.<br>
+<br>
+Note: controlla la pioggia sopra il sensore.

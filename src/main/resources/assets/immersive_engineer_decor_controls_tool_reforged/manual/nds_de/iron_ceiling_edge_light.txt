@@ -1,0 +1,5 @@
+Deckenkantenlicht
+Lütt Wiärklicht
+<&recipe>Disse Block gifft lütt Industrielicht för Gäng, Loopstegen un Wiärkplätz.<br>
+<br>
+Bruuk: Maak em op Decken, Wänn oder Kanten fast, wo de Ruum düütlich Wiärklicht bruukt.<br>

@@ -1,0 +1,108 @@
+Industrijska gradnja
+Tovarniške stene in obrobe
+Splošni gradbeni elementi zajemajo vrata, okna, svetila, opozorilne table, obrobe in nosilne dele, ki ne spadajo v bolj specializiran razdelek.<br>
+<br>
+Te strani uporabi za tovarniške prostore, servisne hodnike, označevanje nevarnosti in uporabne industrijske podrobnosti.
+<np>
+Železna svetilka z žarnico
+Kompaktna delovna svetilka
+<&iron_bulb_light>Ta blok zagotavlja kompaktno industrijsko razsvetljavo za hodnike, servisne prehode in delovne prostore.<br>
+<br>
+Uporaba: Namesti ga na strop, steno ali rob, kjer prostor potrebuje jasno delovno razsvetljavo.<br>
+<np>
+Robna stropna svetilka
+Kompaktna delovna svetilka
+<&iron_ceiling_edge_light>Ta blok zagotavlja kompaktno industrijsko razsvetljavo za hodnike, servisne prehode in delovne prostore.<br>
+<br>
+Uporaba: Namesti ga na strop, steno ali rob, kjer prostor potrebuje jasno delovno razsvetljavo.<br>
+<np>
+Vgradna robna talna svetilka
+Kompaktna delovna svetilka
+<&iron_floor_edge_light>Ta blok zagotavlja kompaktno industrijsko razsvetljavo za hodnike, servisne prehode in delovne prostore.<br>
+<br>
+Uporaba: Namesti ga na strop, steno ali rob, kjer prostor potrebuje jasno delovno razsvetljavo.<br>
+<np>
+Vgradna svetilka
+Kompaktna delovna svetilka
+<&iron_inset_light>Ta blok zagotavlja kompaktno industrijsko razsvetljavo za hodnike, servisne prehode in delovne prostore.<br>
+<br>
+Uporaba: Namesti ga na strop, steno ali rob, kjer prostor potrebuje jasno delovno razsvetljavo.<br>
+<np>
+Znak »Splošno opozorilo«
+Oznaka nevarnosti
+<&sign_caution>Znak »Splošno opozorilo« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak za nevarnost
+Oznaka nevarnosti
+<&sign_danger>Znak »Pozor, tukaj je res nevarno« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Okrasna tabla
+Oznaka nevarnosti
+<&sign_decor>Tabla za znak (Inženirski okrasni elementi) označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak za obrambni sistem
+Oznaka nevarnosti
+<&sign_defense>Znak »Pozor, obrambni sistem pred vami« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak za izhod
+Oznaka nevarnosti
+<&sign_exit>Ta znak označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak »Nevarnost požara«
+Oznaka nevarnosti
+<&sign_firehazard>Znak »Nevarnost požara« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak »Opozorilo pred zmrzaljo«
+Oznaka nevarnosti
+<&sign_frost>Znak »Opozorilo pred zmrzaljo« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak za vročo površino
+Oznaka nevarnosti
+<&sign_hotsurface>Znak »Pozor, vroča površina« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak za vodnik pod napetostjo
+Oznaka nevarnosti
+<&sign_hotwire>Znak »Pozor, vodnik pod napetostjo« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak »Laserska nevarnost«
+Oznaka nevarnosti
+<&sign_laser>Znak »Laserska nevarnost« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak za čarobno nevarnost
+Oznaka nevarnosti
+<&sign_magichazard>Znak »Pozor, čarobna nevarnost« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak za magnetno polje
+Oznaka nevarnosti
+<&sign_magneticfield>Znak »Pozor, močno magnetno polje« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>
+Znak »Radioaktivna nevarnost«
+Oznaka nevarnosti
+<&sign_radioactive>Znak »Radioaktivna nevarnost« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>
+<np>

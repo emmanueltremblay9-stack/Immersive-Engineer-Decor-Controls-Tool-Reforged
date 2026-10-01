@@ -1,0 +1,5 @@
+Stara industrijska drvena vrata
+Staro radioničko drvo
+<&recipe>Ovaj blok dodaje staro radioničko drvo za podove, stube, vrata i tople unutarnje obrube.<br>
+<br>
+Uporaba: koristi ga za stare radioničke podove, stube, vrata i obrube.<br>

@@ -1,0 +1,7 @@
+Prijemnik veze prekidača
+Upravljanje preko veze
+<&recipe>Prijemnik veze daje udaljenim panelima redstone cilj najveće jačine.<br>
+<br>
+Upotreba: Kliknite ga Ender biserom da napravite upareni biser. Direktnim desnim klikom na prijemnik ručno ga uključite ili isključite.<br>
+<br>
+Napomene: Upareni biser prebacuje ovaj prijemnik kada se koristi tokom šunjanja.

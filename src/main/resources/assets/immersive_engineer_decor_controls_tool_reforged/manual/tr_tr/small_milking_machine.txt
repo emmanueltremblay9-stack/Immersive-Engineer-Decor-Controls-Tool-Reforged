@@ -1,0 +1,5 @@
+Süt Sağma Makinesi
+Atölye yardımcı aygıtı
+<&recipe>Küçük süt sağma makinesi; üretim, depolama, yerleştirme, kırma, toplama veya küçük otomasyon işleri için bir atölye yardımcı bloğudur.<br>
+<br>
+Kullanım: İneklerin yakınına yerleştirin; süt kaplarını veya sıvıyı çıkaracak bir yol sağlayın.<br>

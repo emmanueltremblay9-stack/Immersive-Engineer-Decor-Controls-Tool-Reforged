@@ -1,0 +1,7 @@
+Argi-sentsorea
+Seinaleak hautematea
+<&recipe>Argi-sentsoreak tokiko distira redstone-kontrol bihurtzen du.<br>
+<br>
+Erabilera: erabili argi automatikoetarako, pertsianetarako eta ikusgarritasun-zirkuituetarako.<br>
+<br>
+Oharrak: distira gordina 8 edo handiagoa denean energia ematen du.

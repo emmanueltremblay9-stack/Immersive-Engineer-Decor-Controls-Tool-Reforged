@@ -1,0 +1,7 @@
+Həyəcan sireni
+Siqnal göstəricisi
+<&recipe>Həyəcan sireni blokun üzünə quraşdırılan redstone göstəricisidir. Aktiv vəziyyəti bağlandığı blokdan gələn siqnala görə dəyişir.<br>
+<br>
+İstifadə: Möhkəm səthə bağlayın və qapıları, maşınları, həyəcanları və ya panelləri izləmək üçün enerji verin.<br>
+<br>
+Qeyd: Bağlı siqnal aktiv qaldıqca siren saniyədə bir dəfə yenilənir.

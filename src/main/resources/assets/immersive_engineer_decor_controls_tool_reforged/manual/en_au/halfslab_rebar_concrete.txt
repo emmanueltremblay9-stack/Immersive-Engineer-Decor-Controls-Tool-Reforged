@@ -1,0 +1,5 @@
+Rebar Concrete Slice
+Reinforced concrete
+<&recipe>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>

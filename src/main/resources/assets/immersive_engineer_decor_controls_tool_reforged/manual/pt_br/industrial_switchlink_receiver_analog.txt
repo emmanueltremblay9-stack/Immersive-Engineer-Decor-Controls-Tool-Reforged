@@ -1,0 +1,7 @@
+Receptor analógico de enlace
+Controle vinculado
+<&recipe>Um receptor vinculado fornece um destino remoto visível para painéis de controle.<br>
+<br>
+Uso: Clique com uma pérola de Ender para criar uma pérola vinculada. Use essa pérola agachado para acionar o receptor remotamente.<br>
+<br>
+Observações: Este receptor emite redstone na intensidade máxima quando acionado.

@@ -1,0 +1,5 @@
+Kuutionrikkoja
+Työpajan apulaite
+<&recipe>Pieni kuutionrikkoja on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Suuntaa työpuoli poistettavaa kuutiota kohti.<br>

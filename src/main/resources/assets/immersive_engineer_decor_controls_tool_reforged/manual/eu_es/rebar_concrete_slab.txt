@@ -1,0 +1,5 @@
+Hormigoi armatuzko lauza
+Hormigoi armatua
+<&recipe>Bloke hau hormigoi gogortuzko pieza da makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>

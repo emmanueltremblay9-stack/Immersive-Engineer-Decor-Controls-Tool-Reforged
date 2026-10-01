@@ -1,0 +1,7 @@
+Rastrejador
+Marcador de posició desada
+<&recipe>Desa una posició de bloc dins de l'objecte.<br>
+<br>
+Ús: Clica un bloc per desar dimensió i coordenades. La descripció mostra la posició. Usa'l ajupit per esborrar-la.<br>
+<br>
+Marca màquines, ramals de túnels, controls remots o obres inacabades.

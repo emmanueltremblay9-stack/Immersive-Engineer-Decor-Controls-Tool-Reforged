@@ -1,0 +1,127 @@
+Pasos d’accesu
+Pasos y soportes
+Los postes d’aceru y de madera tratao, les rexes, pasareles, barandielles, escaleres de mano, puertes, ventanes y trapielles formen pasos de serviciu compactos pel interior de les fábriques.<br>
+<br>
+Les pieces d’aceru de los pasos d’accesu riquen plaques d’aceru. Ellabora o coloca una mesa de trabayu del metal, mete un martiellu d’Immersive Engineering y martiella llingotes d’aceru pa facer plaques d’aceru pa postes, pasareles, ventanes, puertes, barandielles y otres decoraciones d’aceru.<br>
+<br>
+Colócales onde les máquines precisen accesu de serviciu, pasos elevaos, pozos de caltenimientu o bordes más seguros.
+<np>
+Poste gruesu d’aceru
+Pieza de bastidor estructural
+<&thick_steel_pole>El poste rectu gruesu d’aceru apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Cabeza de poste gruesu
+Pieza de bastidor estructural
+<&thick_steel_pole_head>La cabeza/base de poste rectu gruesu d’aceru apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Poste delgáu d’aceru
+Pieza de bastidor estructural
+<&thin_steel_pole>El poste rectu delgáu d’aceru apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Cabeza de poste delgáu
+Pieza de bastidor estructural
+<&thin_steel_pole_head>La cabeza/base de poste rectu delgáu d’aceru apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Poste de madera tratao
+Pieza de bastidor estructural
+<&treated_wood_pole>El poste rectu de madera tratao apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Cabeza de poste de madera tratao
+Pieza de bastidor estructural
+<&treated_wood_pole_head>La cabeza/base de poste rectu de madera tratao apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Soporte de poste de madera tratao
+Pieza de bastidor estructural
+<&treated_wood_pole_support>El soporte de poste rectu de madera tratao apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Soporte d’aceru de doble T
+Pieza de bastidor estructural
+<&steel_double_t_support>Esti bloque apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>
+<np>
+Rexella de suelu d’aceru
+Pieza d’accesu de serviciu
+<&steel_floor_grating>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Pasarela d’aceru
+Pieza d’accesu de serviciu
+<&steel_catwalk>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Pasales de pasarela d’aceru
+Pieza d’accesu de serviciu
+<&steel_catwalk_stairs>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Pasarela d’aceru elevada
+Pieza d’accesu de serviciu
+<&steel_catwalk_ta>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Barandiella d’aceru
+Pieza d’accesu de serviciu
+<&steel_railing>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Valla de malla d’aceru
+Pieza d’accesu de serviciu
+<&steel_mesh_fence>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Portiella de malla d’aceru
+Pieza d’accesu de serviciu
+<&steel_mesh_fence_gate>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Escalera de mano de barres metáliques
+Pieza d’accesu de serviciu
+<&metal_rung_ladder>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Pasos metálicos alternos
+Pieza d’accesu de serviciu
+<&metal_rung_steps>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>
+<np>
+Ventana con marcu d’aceru
+Vista protexida
+<&steel_framed_window>Esti bloque permite ver al traviés y combina cola construcción industrial reforzada.<br>
+<br>
+Usu: colócalu nun güecu d’un bloque na paré onde los xugadores deban ver la maquinaria al traviés d’una barrera protexida.<br>
+<np>
+Puerta corredera metálica
+Puntu d’accesu industrial
+<&metal_sliding_door>Esti bloque apurre un accesu resistente a sales de serviciu, pozos, teyaos y recintos de máquines.<br>
+<br>
+Usu: instálalu onde la construcción precise una abertura controlada pa caltenimientu.<br>
+<np>
+Trapiella abatible de fierro
+Puntu d’accesu industrial
+<&iron_hatch>Esti bloque apurre un accesu resistente a sales de serviciu, pozos, teyaos y recintos de máquines.<br>
+<br>
+Usu: instálalu onde la construcción precise una abertura controlada pa caltenimientu.<br>

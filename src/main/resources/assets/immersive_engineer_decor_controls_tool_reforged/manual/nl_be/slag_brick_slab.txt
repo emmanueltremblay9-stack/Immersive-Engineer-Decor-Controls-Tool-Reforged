@@ -1,0 +1,5 @@
+Slakkensteenplaat
+Dicht fabrieksmetselwerk
+<&recipe>Dit blok levert dicht grijsbruin metselwerk voor funderingen, keermuren en oudere werkloodsen.<br>
+<br>
+Gebruik: gebruik het voor oude funderingen, keermuren en vuile fabrieksvloeren.<br>

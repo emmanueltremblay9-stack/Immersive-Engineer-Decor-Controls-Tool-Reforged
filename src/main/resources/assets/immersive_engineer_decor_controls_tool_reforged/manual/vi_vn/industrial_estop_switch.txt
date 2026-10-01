@@ -1,0 +1,7 @@
+Nút dừng khẩn cấp
+Điều khiển redstone
+<&recipe>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.

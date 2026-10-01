@@ -1,0 +1,5 @@
+Fabrik-Blocksetzer
+Hilfsgrät für d'Werkstatt
+<&recipe>Dä Block setzt bim Aktiviere Blöck us sim eigene Vorrat.<br>
+<br>
+Verwendig: Richt d'Arbeitssiite uf de Zielruum und füll setzbari Stapel ii.<br>

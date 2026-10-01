@@ -1,0 +1,7 @@
+Nárazový poklop
+Impulz z tlaku
+<&recipe>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.

@@ -1,0 +1,107 @@
+Machine da ofisina
+Machine e entrade/usite de ofisina
+Łe machine da ofisina łe fa fabricasion, movimento de ozeti, fusion, eliminasion, racòlta e łaori de utilità inte’l posto de un bloco soło.<br>
+<br>
+Vèrzi łe pàjine che vien dopo par catar ła reseta, łe ilustrasion, łe descrision e łe note de uso pràtego de ogni màchina.
+<np>
+Tavolo de assàl
+Mòbiłe da ofisina
+<&steel_table>Sto bloco el xe un mòbiłe pràtego par locali de łaoro e cantoni de manutension.<br>
+<br>
+Uso: mètelo visin a banchi, casse e machine conpate.<br>
+<np>
+Tavolo de łenjo tratà
+Mòbiłe da ofisina
+<&treated_wood_table>Sto bloco el xe un mòbiłe pràtego par locali de łaoro e cantoni de manutension.<br>
+<br>
+Uso: mètelo visin a banchi, casse e machine conpate.<br>
+<np>
+Scagnelo de łenjo tratà
+Mòbiłe da ofisina
+<&treated_wood_stool>Sto bloco el xe un mòbiłe pràtego par locali de łaoro e cantoni de manutension.<br>
+<br>
+Uso: mètelo visin a banchi, casse e machine conpate.<br>
+<np>
+Banco par łaorar i metałi
+Postasion par far piastre
+<&metal_crafting_table>El Banco par łaorar i metałi el xe na postasion rinforzada de ofisina co un spasio par el marteło, na griglia de fabricasion 3x3 e un spasio de usita ciaro.<br>
+<br>
+Uso: dòpara ła griglia par ła fabricasion normale. Par łe piastre de IE, meti un Marteło de l’inzenier inte’l spasio par l’atreso e el materiałe de ła piastra inte ła griglia prima de ciapar el risultà. I decori de assàl i dòpara piastre de assàl par pałi, pasarełe, finestre, porte, ringhiere e altri tochi de assàl.<br>
+<np>
+Tramoza de fàbrica
+Utilità par l’ofisina
+<&factory_hopper>Sto bloco el sposta pile de ozeti dentro un invòlucro industrial pì streto.<br>
+<br>
+Uso: pùntalo verso ła linea de inventari, dopo regola portata, quantità de ła piła, tenpi e modo de redstone inte ła so schermada.<br>
+<np>
+Dropador de fàbrica
+Utilità par l’ofisina
+<&factory_dropper>Sto bloco el buta fora i ozeti conservadi da na fasa orientada.<br>
+<br>
+Uso: punta el davanti verso el ponto de usita, càrega i spasi interni e regola forsa, àngolo, ritardo, logica de i filtri e modo de redstone inte ła so schermada.<br>
+<np>
+Posador de blochi de fàbrica
+Utilità par l’ofisina
+<&factory_placer>Sto bloco el mete zo blochi da ła so scorta interna quando el vien ativà.<br>
+<br>
+Uso: punta ła fasa de łaoro verso el posto bersałio e càrega pile de roba che se pol meter zo.<br>
+<np>
+Rompiblochi
+Utilità par l’ofisina
+<&small_block_breaker>El Pìcolo rompiblochi el xe un bloco de utilità de ofisina par fabricasion, deposito, posa, rotura, racòlta o automasion conpata.<br>
+<br>
+Uso: meti ła fasa de łaoro verso el bloco da cavar.<br>
+<np>
+Inceneridor de refudi
+Unità de łaorasion conpata
+<&small_waste_incinerator>L’Inceneridor de refudi el destruze i ozeti che no serve e el ciapa poco posto in ofisina.<br>
+<br>
+Uso: meti inte ła so coda soło ozeti da butar via.<br>
+<np>
+Fornaze de laboratòrio
+Unità de łaorasion conpata
+<&small_lab_furnace>Ła Fornaze de laboratòrio ła fa pìcoli łaori de fusion a combustìbiłe sòlido e ła ciapa poco posto in ofisina.<br>
+<br>
+Uso: dòpara combustìbiłe sòlido par pìcoli lòti da fonder.<br>
+<np>
+Fornaze elètrega
+Unità de łaorasion conpata
+<&small_electrical_furnace>Ła Fornaze elètrega ła fa pìcoli łaori de fusion alimentadi a FE e ła ciapa poco posto in ofisina.<br>
+<br>
+Uso: dàghe FE e materiałe vałido da fonder.<br>
+<np>
+Fornaze par fonder minerałi
+Unità de łaorasion conpata
+<&small_mineral_smelter>Ła Fornaze par fonder minerałi ła łaora i minerałi a gran całor e ła ciapa poco posto in ofisina.<br>
+<br>
+Uso: dàghe blochi minerałi e energia par fonder a alta tenperatura.<br>
+<np>
+Congelador de àcua
+Unità de łaorasion conpata
+<&small_freezer>El Congelador de àcua el fa łaori conpati de rafredamento par inpianti de fluidi alimentadi a energia.<br>
+<br>
+Uso: dàghe àcua e energia par far giaso in pì fasi.<br>
+<np>
+Fluido passivo
+Equipamento par linee de fluidi
+<&passive_fluid_accumulator>L’Acumulador passivo de fluidi el xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: mètelo contro sorzenti de àcua adate e łassa posto par cavar el fluido.<br>
+<np>
+Paneło sołar
+Utilità par l’ofisina
+<&small_solar_panel>El Pìcolo paneło sołar el xe un bloco de utilità de ofisina par fabricasion, deposito, posa, rotura, racòlta o automasion conpata.<br>
+<br>
+Uso: łassa el ciel verto sora de lu e colega apareci che i consuma poco.<br>
+<np>
+Màchina da móndar
+Utilità par l’ofisina
+<&small_milking_machine>Ła Pìcola màchina da móndar ła xe un bloco de utilità de ofisina par fabricasion, deposito, posa, rotura, racòlta o automasion conpata.<br>
+<br>
+Uso: mètela visin a łe vache e prepara un modo par cavar recipienti de łate o fluido.<br>
+<np>
+Tajador de àlbari
+Utilità par l’ofisina
+<&small_tree_cutter>El Pìcolo tajador de àlbari el xe un bloco de utilità de ofisina par fabricasion, deposito, posa, rotura, racòlta o automasion conpata.<br>
+<br>
+Uso: pùntalo verso àlbari cresudi e cata su a parte i ozeti che casca.<br>

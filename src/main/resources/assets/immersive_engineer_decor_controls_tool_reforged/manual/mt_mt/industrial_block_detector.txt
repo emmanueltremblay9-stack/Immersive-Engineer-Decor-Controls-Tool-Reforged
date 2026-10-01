@@ -1,0 +1,7 @@
+Detettur tal-blokok
+Sejbien tas-sinjal
+<&recipe>Detettur tal-blokok jiċċekkja jekk l-ispazju quddiemu huwiex okkupat.<br>
+<br>
+Użu: ippontah lejn il-wiċċ tal-magna, ir-riżerva jew l-ispazju mgħasses li trid tosserva.<br>
+<br>
+Noti: jagħti l-enerġija meta l-blokka quddiemu ma tkunx arja.

@@ -1,0 +1,7 @@
+Løddur asursteinur
+Goymdar royndir
+<&recipe>Løddur asursteinur goymir eitt royndarstig, sum er gjørt við sinnispressuni.<br>
+<br>
+Nýtsla: Brúka hann fyri at fáa eitt stig aftur, taka virknar ávirkanir burtur og fáa eitt sindur av lívi aftur.<br>
+<br>
+Uppskriftarvísingin sýnir sinnispressuna, tí løddur asursteinur verður gjørdur við at brúka hetta amboðið, tá ið asursteinur og XP eru tøk.

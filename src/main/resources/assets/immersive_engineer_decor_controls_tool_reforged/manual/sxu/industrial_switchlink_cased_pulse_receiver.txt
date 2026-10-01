@@ -1,0 +1,7 @@
+Impulsempfängor im Gehäuse
+Vorbundne Schdeuorung
+<&recipe>Ä vorbundnor Impulsempfängor im Gehäuse gibd fernen Paneelen än gorzn Redstone-Auslösor.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle druff, um ä vorbundne Bärle zu machn. Rechdsgligg uff’n Empfängor oddor lös de vorbundne Bärle aus, um än gorzn Impuls zu gebn.<br>
+<br>
+Hinweis: Dor Impuls gehd nach seiner fesdn Dauer von alleine zurigg.

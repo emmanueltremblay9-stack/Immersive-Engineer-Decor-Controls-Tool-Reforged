@@ -1,0 +1,5 @@
+Fabrikala blokopozilo
+Laboreyaparato
+<&recipe>Ca bloko instalas bloki de sua interna stoko kande aktigita.<br>
+<br>
+Uzo: Direktez la laborfacio vers la skopspaco e plenigez ol per pozebla staki.<br>

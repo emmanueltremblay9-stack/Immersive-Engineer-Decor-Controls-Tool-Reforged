@@ -1,0 +1,7 @@
+Regolatore
+Segnale variabile
+<&recipe>Un comando rotante regola la potenza di redstone da un pannello compatto.<br>
+<br>
+Uso: fai clic destro per aumentare l’uscita a passi; dopo la massima potenza torna a zero.<br>
+<br>
+Note: emette potenza da 0 a 15.

@@ -1,0 +1,107 @@
+Metiejaj maŝinoj
+Maŝinoj kaj metiejaj enigoj/eligoj
+Metiejaj maŝinoj ebligas kompaktan konstruadon, objektomovadon, fandadon, forigon, kolektadon kaj helpan laboron en la spaco de unu bloko.<br>
+<br>
+Malfermu la sekvajn paĝojn por la recepto, bildo, priskribo kaj praktikaj uznotoj de ĉiu maŝino.
+<np>
+Ŝtala tablo
+Metieja meblo
+<&steel_table>Ĉi tiu bloko estas praktika metieja meblo por laborĉambroj kaj prizorgaj anguloj.<br>
+<br>
+Uzado: metu ĝin apud labortabloj, kestoj kaj kompaktaj maŝinoj.<br>
+<np>
+Traktligna tablo
+Metieja meblo
+<&treated_wood_table>Ĉi tiu bloko estas praktika metieja meblo por laborĉambroj kaj prizorgaj anguloj.<br>
+<br>
+Uzado: metu ĝin apud labortabloj, kestoj kaj kompaktaj maŝinoj.<br>
+<np>
+Traktligna tabureto
+Metieja meblo
+<&treated_wood_stool>Ĉi tiu bloko estas praktika metieja meblo por laborĉambroj kaj prizorgaj anguloj.<br>
+<br>
+Uzado: metu ĝin apud labortabloj, kestoj kaj kompaktaj maŝinoj.<br>
+<np>
+Metalprilabora tablo
+Plata laborstacio
+<&metal_crafting_table>La metalprilabora tablo estas plifortigita metieja stacio kun martelfako, 3x3 konstrua krado kaj klara elirfako.<br>
+<br>
+Uzado: uzu la kradon por ordinara konstruado. Por IE-platoj, metu Inĝenieran Martelon en la ilfakon kaj la platmaterialon en la kradon antaŭ preni la rezulton. Ŝtalaj ornamaĵoj uzas ŝtalajn platojn por fostoj, paspontoj, fenestroj, pordoj, balustradoj kaj aliaj ŝtalaj partoj.<br>
+<np>
+Fabrika funelo
+Metieja helpilo
+<&factory_hopper>Ĉi tiu bloko movas objektostakojn tra pli kompakta industria ujo.<br>
+<br>
+Uzado: direktu ĝin al la inventara linio, poste agordu atingon, staknombron, tempadon kaj redstone’an reĝimon per ĝia ekrano.<br>
+<np>
+Fabrika donilo
+Metieja helpilo
+<&factory_dropper>Ĉi tiu bloko elĵetas stokitajn objektojn el direktita flanko.<br>
+<br>
+Uzado: direktu la fronton al la elĵetejo, plenigu la internajn fakojn kaj agordu forton, angulon, prokraston, filtrilan logikon kaj redstone’an reĝimon per ĝia ekrano.<br>
+<np>
+Fabrika blokmetilo
+Metieja helpilo
+<&factory_placer>Ĉi tiu bloko metas blokojn el sia interna stoko kiam ĝi estas aktivigita.<br>
+<br>
+Uzado: direktu la laborflankon al la celspaco kaj enmetu meteblajn stakojn.<br>
+<np>
+Blokrompilo
+Metieja helpilo
+<&small_block_breaker>La malgranda blokrompilo estas metieja helpbloko por konstruado, stokado, metado, rompado, kolektado aŭ kompakta aŭtomatigo.<br>
+<br>
+Uzado: direktu la laborflankon al la forigota bloko.<br>
+<np>
+Rubforbruligilo
+Kompakta prilabora unuo
+<&small_waste_incinerator>La rubforbruligilo detruas nedeziratajn objektojn en kompakta metieja spaco.<br>
+<br>
+Uzado: enmetu nur nedeziratajn objektojn en ĝian vicon.<br>
+<np>
+Laboratoria forno
+Kompakta prilabora unuo
+<&small_lab_furnace>La laboratoria forno plenumas kompaktajn fandtaskojn per solida brulaĵo en malgranda metieja spaco.<br>
+<br>
+Uzado: uzu solidan brulaĵon por malgrandaj fandaroj.<br>
+<np>
+Elektra forno
+Kompakta prilabora unuo
+<&small_electrical_furnace>La elektra forno plenumas kompaktajn fandtaskojn per FE-energio en malgranda metieja spaco.<br>
+<br>
+Uzado: provizu FE-energion kaj validajn fandotaĵojn.<br>
+<np>
+Minerala fandilo
+Kompakta prilabora unuo
+<&small_mineral_smelter>La minerala fandilo prilaboras mineralojn je alta varmo en kompakta metieja spaco.<br>
+<br>
+Uzado: enmetu mineralajn blokojn kaj provizu energion por altvarma fandado.<br>
+<np>
+Akvofrostigilo
+Kompakta prilabora unuo
+<&small_freezer>La akvofrostigilo plenumas kompaktan malvarmigan laboron por energiigitaj fluidsistemoj.<br>
+<br>
+Uzado: provizu akvon kaj energion por faza glaciproduktado.<br>
+<np>
+Pasiva fluido
+Fluidliniaj ekipaĵoj
+<&passive_fluid_accumulator>La pasiva fluidkolektilo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: metu ĝin kontraŭ taŭgaj akvofontoj kaj lasu lokon por elpreni fluidaĵon.<br>
+<np>
+Sunpanelo
+Metieja helpilo
+<&small_solar_panel>La malgranda sunpanelo estas metieja helpbloko por konstruado, stokado, metado, rompado, kolektado aŭ kompakta aŭtomatigo.<br>
+<br>
+Uzado: donu al ĝi liberan ĉielon kaj konektu malaltkonsumajn aparatojn.<br>
+<np>
+Melkmaŝino
+Metieja helpilo
+<&small_milking_machine>La malgranda melkmaŝino estas metieja helpbloko por konstruado, stokado, metado, rompado, kolektado aŭ kompakta aŭtomatigo.<br>
+<br>
+Uzado: metu ĝin proksime al bovinoj kaj disponigu rimedon por elpreni laktoujojn aŭ fluidaĵon.<br>
+<np>
+Arbotranĉilo
+Metieja helpilo
+<&small_tree_cutter>La malgranda arbotranĉilo estas metieja helpbloko por konstruado, stokado, metado, rompado, kolektado aŭ kompakta aŭtomatigo.<br>
+<br>
+Uzado: direktu ĝin al plenkreskaj arboj kaj aparte kolektu la falintaĵojn.<br>

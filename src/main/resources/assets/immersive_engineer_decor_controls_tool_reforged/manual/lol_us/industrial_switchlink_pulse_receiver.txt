@@ -1,0 +1,7 @@
+Pulsy Linky Receiver
+Linky controlz
+<&recipe>Linked pulse receiver gives remote panelz a short redstone triggur, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Right-click da receiver or triggur da linked perl fer a short pulse, meow.<br>
+<br>
+Kitty note: Pulse resets itself after da scheduled length.

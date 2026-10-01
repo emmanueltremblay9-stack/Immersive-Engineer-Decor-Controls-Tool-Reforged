@@ -1,0 +1,5 @@
+Fabrika Hunisi
+Atölye yardımcı aygıtı
+<&recipe>Bu blok, eşya yığınlarını daha dar bir sanayi tipi muhafaza içinden taşır.<br>
+<br>
+Kullanım: Envanter hattına yöneltin; menzili, yığın sayısını, zamanlamayı ve redstone modunu ekranından ayarlayın.<br>

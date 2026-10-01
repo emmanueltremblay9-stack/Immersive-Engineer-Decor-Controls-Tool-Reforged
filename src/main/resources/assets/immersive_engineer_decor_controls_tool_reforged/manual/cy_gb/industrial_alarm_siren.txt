@@ -1,0 +1,7 @@
+Seiren larwm
+Dangosydd signal
+<&recipe>Mae'r Seiren larwm yn ddangosydd redstone sydd wedi'i osod ar wyneb bloc. Mae ei chyflwr pŵer yn dilyn signal y bloc y mae ynghlwm wrtho.<br>
+<br>
+Defnydd: Gosodwch ar wyneb solet a'i phweru i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodyn: Mae'r seiren yn adnewyddu unwaith yr eiliad tra bo'r signal yn weithredol.

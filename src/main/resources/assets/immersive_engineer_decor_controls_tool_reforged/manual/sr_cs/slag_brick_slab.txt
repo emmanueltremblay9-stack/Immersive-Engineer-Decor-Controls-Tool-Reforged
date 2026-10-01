@@ -1,0 +1,5 @@
+Ploča od cigala od zgure
+Zbijeno fabričko zidarstvo
+<&recipe>Ovaj blok dodaje zbijeno sivosmeđe zidarstvo za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Upotreba: koristi ga za stare temelje, potporne zidove i prljave fabričke podove.<br>

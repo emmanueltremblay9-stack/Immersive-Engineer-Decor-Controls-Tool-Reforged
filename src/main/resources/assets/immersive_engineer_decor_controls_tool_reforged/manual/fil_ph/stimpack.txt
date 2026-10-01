@@ -1,0 +1,7 @@
+Awtomatikong Pampasiglang Iniksiyon
+Pang-iniksiyon sa kagipitan
+<&recipe>Ang Auto Stim Pack ay pang-emerhensiyang gamit sa paggaling para sa mapanganib na gawaing pagmementena.<br>
+<br>
+Paggamit: Gamitin ito nang mano-mano upang gumaling, magkaroon ng maikling proteksiyon, at sandaling bumilis. Kapag dala sa inventory, maaari rin itong awtomatikong gumana sa mababang kalusugan, saka papasok sa cooldown.<br>
+<br>
+Magdala nito bago subukan ang matataas na lugar, nakalantad na kawad o mapanganib na ruta sa mina.

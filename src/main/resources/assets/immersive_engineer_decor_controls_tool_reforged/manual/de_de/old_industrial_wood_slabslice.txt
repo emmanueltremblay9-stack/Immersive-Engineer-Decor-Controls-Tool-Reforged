@@ -1,0 +1,5 @@
+Alte Holzviertelstufe
+Gealtertes Werkstattholz
+<&recipe>Die alte Fabrikholzviertelstufe ergänzt gealtertes Werkstattholz für Böden, Tritte, Türen und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nutze ihn für alte Werkstattböden, Treppen, Türen und Einfassungen.<br>

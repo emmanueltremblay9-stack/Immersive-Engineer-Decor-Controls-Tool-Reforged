@@ -1,0 +1,7 @@
+Glasintervallsignal
+Tidsstyrt puls
+<&recipe>Eit kompakt tidsur gjev ein planlagd redstone-puls.<br>
+<br>
+Bruk: nytt det der ein liten mekanisme treng styring med jamne mellomrom eller med forseinking.<br>
+<br>
+Merknad: nyttar planlagde redstone-pulsar.

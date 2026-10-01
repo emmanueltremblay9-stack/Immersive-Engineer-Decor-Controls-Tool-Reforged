@@ -1,0 +1,7 @@
+Relé analógico de ligação
+Controlo vinculado
+<&recipe>Um componente com aparência de relé fornece um ponto compacto de comutação local para painéis.<br>
+<br>
+Uso: Clica com o botão direito para ligar ou desligar a saída na intensidade máxima para circuitos próximos. Usa blocos recetores quando precisares de acionamento por pérolas vinculadas.<br>
+<br>
+Observações: Emite redstone na intensidade máxima enquanto está ligado.

@@ -1,0 +1,7 @@
+Kopogásgomb
+Redstone-vezérlés
+<&recipe>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.

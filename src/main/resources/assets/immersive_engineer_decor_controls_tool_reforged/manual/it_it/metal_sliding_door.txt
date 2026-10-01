@@ -1,0 +1,5 @@
+Porta scorrevole metallica
+Accesso industriale
+<&recipe>Questo blocco offre un accesso robusto a locali di servizio, pozzi, tetti e vani dei macchinari.<br>
+<br>
+Uso: installalo dove la costruzione richiede un’apertura di manutenzione controllata.<br>

@@ -1,0 +1,7 @@
+Ercevou de liaizon analogiqe
+Comande liée
+<&recipe>Un ercevou lié doune ao paniaos de comande eune cible éloignée visibl.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Empllayéz ç'te perle en vous acroupissant pour décllancher l'ercevou de liain.<br>
+<br>
+Notes : Ç't'ercevou sort un signa de redstone pllein cant q'il ét décllanchë.

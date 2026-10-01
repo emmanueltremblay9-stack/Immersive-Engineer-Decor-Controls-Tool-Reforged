@@ -1,0 +1,7 @@
+Detettur tal-entitajiet
+Sejbien tas-sinjal
+<&recipe>Detettur tal-entitajiet josserva moviment fil-qrib mingħajr pjanċa viżibbli fl-art.<br>
+<br>
+Użu: qabbdu ma' bibien, lampi, allarmi jew mekkaniżmi ta' interblokk tal-magni.<br>
+<br>
+Noti: jiskennja żona żgħira madwar il-blokka.

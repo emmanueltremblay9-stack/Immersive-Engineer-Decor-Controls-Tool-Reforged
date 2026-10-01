@@ -1,0 +1,7 @@
+Blockdetektor
+Signalerfassig
+<&recipe>En Blockdetektor prüeft, ob vor sinere Stirnsiite en Block staht.<br>
+<br>
+Verwendig: Richt en uf d'Maschinesiite, de Puffer oder de gschützte Ruum, wo überwache wotsch.<br>
+<br>
+Hiwiis: Git es Signal, wenn de Block davor kei Luft isch.

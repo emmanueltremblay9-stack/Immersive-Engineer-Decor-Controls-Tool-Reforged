@@ -1,0 +1,5 @@
+Dėžė su etikete
+Redaguojama atsargų etiketė
+<&recipe>Ši dėžė su etikete skirta aiškiai rūšiuoti atsargas sandėlyje. Jos priekinę plokštelę galima redaguoti kaip mažą dirbtuvių ženklą.<br>
+<br>
+Naudojimas: dešiniuoju pelės mygtuku spustelėk etiketės plokštelę, kad redaguotum dėžės etiketę. Spustelėk likusią dėžės dalį, kad atidarytum įrangos, dalių ir priežiūros atsargų sandėlį.<br>

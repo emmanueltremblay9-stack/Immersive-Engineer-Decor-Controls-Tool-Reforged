@@ -1,0 +1,5 @@
+Schild „Allgemeine Warnung“
+Gefahrenmarkierung
+<&recipe>Das Schild „Allgemeine Warnung“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>

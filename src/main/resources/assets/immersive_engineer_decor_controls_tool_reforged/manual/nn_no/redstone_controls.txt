@@ -1,0 +1,789 @@
+Redstone-betening
+Målarar og signaldelar
+Beteningsutstyr gjer skjult redstone om til oversynlege fabrikkpanel, sensorar, indikatorar, brytarar, alarmar og kopla signaldelar.<br>
+<br>
+Bruk desse sidene når du byggjer operatørstasjonar, signaltavler, tryggleikskrinsar og fjernbetening.
+<np>
+Pilblink
+Kortvarig puls
+<&arrow_target>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Dørsensor
+Redstone-styring
+<&door_sensor_switch>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Heisknapp
+Redstone-styring
+<&elevator_button>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Glasknapp
+Redstone-styring
+<&glass_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Glasknapp
+Redstone-styring
+<&glass_small_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Glasberøringsknapp
+Redstone-styring
+<&glass_touch_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Maskinknapp
+Redstone-styring
+<&industrial_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Knapp
+Redstone-styring
+<&industrial_double_pole_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Maskinknapp med vernebøyle
+Redstone-styring
+<&industrial_fenced_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Bankeknapp
+Redstone-styring
+<&industrial_knock_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Gammal pynteknapp
+Redstone-styring
+<&oldfancy_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Gammal pynteknapp
+Redstone-styring
+<&oldfancy_small_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Gammal pynta kjedeknapp
+Kortvarig puls
+<&oldfancy_spring_reset_chain>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Rustikk knapp
+Redstone-styring
+<&rustic_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Rustikk spikarknapp
+Redstone-styring
+<&rustic_nail_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Liten rustikk knapp
+Redstone-styring
+<&rustic_small_button>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Rustikk kjedeknapp
+Kortvarig puls
+<&rustic_spring_reset_chain>Ein momentbrytar gjev ein tydeleg redstone-puls med full styrke.<br>
+<br>
+Bruk: nytt han til maskinstart, døropning, alarmar eller eingongskrinsar.<br>
+<br>
+Merknad: går tilbake når den fastsette pulsen er over.
+<np>
+Glaskontaktplate
+Trykkpuls
+<&glass_contact_mat>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Glasdørkontakt
+Trykkpuls
+<&glass_door_contact_mat>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Kontaktmatte
+Trykkpuls
+<&industrial_contact_mat>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Dørkontaktmatte
+Trykkpuls
+<&industrial_door_contact_mat>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Gjennomfallsdetektor
+Signalføling
+<&industrial_fallthrough_detector>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Fotknapp
+Redstone-styring
+<&industrial_foot_button>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Industriell støytdør
+Trykkpuls
+<&industrial_high_sensitive_trapdoor>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Støytkontaktmatte
+Trykkpuls
+<&industrial_shock_sensitive_contact_mat>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Støytlem
+Trykkpuls
+<&industrial_shock_sensitive_trapdoor>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Raud straumplante
+Trykkpuls
+<&red_power_plant>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Rustikk trykkplate
+Trykkpuls
+<&rustic_contact_plate>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Rustikk dørkontakt
+Trykkpuls
+<&rustic_door_contact_plate>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Rustikk falldetektor
+Signalføling
+<&rustic_fallthrough_detector>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Rustikk støytdør
+Trykkpuls
+<&rustic_high_sensitive_trapdoor>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Rustikk støytplate
+Trykkpuls
+<&rustic_shock_sensitive_plate>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Rustikk støytdør
+Trykkpuls
+<&rustic_shock_sensitive_trapdoor>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Gul straumplante
+Trykkpuls
+<&yellow_power_plant>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.
+<np>
+Glasdøgnur
+Dagslyssignal
+<&glass_day_timer>Eit tidsur følgjer den lyse delen av døgnsyklusen i verda.<br>
+<br>
+Bruk: nytt det til utelys, luker og fabrikkstyring som berre skal verke om dagen.<br>
+<br>
+Merknad: krev ein dimensjon med himmellys.
+<np>
+Glasentitetsdetektor
+Signalføling
+<&glass_entity_detector>Ein entitetsdetektor vaktar rørsle i nærleiken utan ei synleg golvplate.<br>
+<br>
+Bruk: kople han til dører, lamper, alarmar eller maskinforriglingar.<br>
+<br>
+Merknad: skannar eit lite område kring blokka.
+<np>
+Glasintervallsignal
+Tidsstyrt puls
+<&glass_interval_timer>Eit kompakt tidsur gjev ein planlagd redstone-puls.<br>
+<br>
+Bruk: nytt det der ein liten mekanisme treng styring med jamne mellomrom eller med forseinking.<br>
+<br>
+Merknad: nyttar planlagde redstone-pulsar.
+<np>
+Glaslinedetektor
+Signalføling
+<&glass_linear_entity_detector>Ein entitetsdetektor vaktar rørsle i nærleiken utan ei synleg golvplate.<br>
+<br>
+Bruk: kople han til dører, lamper, alarmar eller maskinforriglingar.<br>
+<br>
+Merknad: skannar eit lite område kring blokka.
+<np>
+Blokkdetektor
+Signalføling
+<&industrial_block_detector>Ein blokkdetektor ser etter om rommet framfor er oppteke.<br>
+<br>
+Bruk: rett han mot maskinsida, bufferen eller det sikra rommet som skal vaktast.<br>
+<br>
+Merknad: gjev signal når blokka framfor ikkje er luft.
+<np>
+Døgnur
+Dagslyssignal
+<&industrial_day_timer>Eit tidsur følgjer den lyse delen av døgnsyklusen i verda.<br>
+<br>
+Bruk: nytt det til utelys, luker og fabrikkstyring som berre skal verke om dagen.<br>
+<br>
+Merknad: krev ein dimensjon med himmellys.
+<np>
+Entitetsdetektor
+Signalføling
+<&industrial_entity_detector>Ein entitetsdetektor vaktar rørsle i nærleiken utan ei synleg golvplate.<br>
+<br>
+Bruk: kople han til dører, lamper, alarmar eller maskinforriglingar.<br>
+<br>
+Merknad: skannar eit lite område kring blokka.
+<np>
+Intervallur
+Tidsstyrt puls
+<&industrial_interval_timer>Eit kompakt tidsur gjev ein planlagd redstone-puls.<br>
+<br>
+Bruk: nytt det der ein liten mekanisme treng styring med jamne mellomrom eller med forseinking.<br>
+<br>
+Merknad: nyttar planlagde redstone-pulsar.
+<np>
+Lyssensor
+Signalføling
+<&industrial_light_sensor>Ein lyssensor gjer lokal lysstyrke om til redstone-styring.<br>
+<br>
+Bruk: nytt han til automatiske lamper, luker og krinsar som reagerer på kor godt ein ser.<br>
+<br>
+Merknad: gjev signal ved rå lysstyrke 8 eller høgare.
+<np>
+Toredetektor
+Signalføling
+<&industrial_lightning_sensor>Ein toresensor styrer åtvaringar under torevêr.<br>
+<br>
+Bruk: plasser han under open himmel og kople han til lamper eller alarmar.<br>
+<br>
+Merknad: krev tore og tilgjenge til himmelen.
+<np>
+Lineær entitetsdetektor
+Signalføling
+<&industrial_linear_entity_detector>Ein entitetsdetektor vaktar rørsle i nærleiken utan ei synleg golvplate.<br>
+<br>
+Bruk: kople han til dører, lamper, alarmar eller maskinforriglingar.<br>
+<br>
+Merknad: skannar eit lite område kring blokka.
+<np>
+Regnsensor
+Signalføling
+<&industrial_rain_sensor>Ein vêrsensor gjer regn på staden der han står om til redstone.<br>
+<br>
+Bruk: monter han der blokka over kan få regn på seg.<br>
+<br>
+Merknad: ser etter regn over sensoren.
+<np>
+Bistabil glasbrytar
+Redstone-styring
+<&glass_rotary_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Bistabil glasberøring
+Redstone-styring
+<&glass_touch_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Oransje følsamt glas
+Signalglas
+<&orange_sensitiveglass>Ei glasblokk som reagerer på redstone held sikta open og viser samstundes signaltilstanden.<br>
+<br>
+Bruk: nytt henne i kontrollromsvindauge, opplyste panel og verneglas i fabrikken.<br>
+<br>
+Merknad: endrar tilstand ved redstone-signal i nærleiken.
+<np>
+Lysande følsamt glas
+Signalglas
+<&sensitive_glass_block>Ei glasblokk som reagerer på redstone held sikta open og viser samstundes signaltilstanden.<br>
+<br>
+Bruk: nytt henne i kontrollromsvindauge, opplyste panel og verneglas i fabrikken.<br>
+<br>
+Merknad: endrar tilstand ved redstone-signal i nærleiken.
+<np>
+Farga følsamt glas
+Signalglas
+<&stained_sensitiveglass>Ei glasblokk som reagerer på redstone held sikta open og viser samstundes signaltilstanden.<br>
+<br>
+Bruk: nytt henne i kontrollromsvindauge, opplyste panel og verneglas i fabrikken.<br>
+<br>
+Merknad: endrar tilstand ved redstone-signal i nærleiken.
+<np>
+Glasstolpemålar
+Signalmålar
+<&glass_vertical_bar_gauge>Ein kompakt kontrollromsmålar viser redstone-styrken tydeleg på eit panel.<br>
+<br>
+Bruk: monter han der du skal kunne lese av redstone i nærleiken med eitt blikk.<br>
+<br>
+Merknad: les redstone-styrke i nærleiken frå 0 til 15.
+<np>
+Analog målar
+Signalmålar
+<&industrial_analog_angular_gauge>Ein kompakt kontrollromsmålar viser redstone-styrken tydeleg på eit panel.<br>
+<br>
+Bruk: monter han der du skal kunne lese av redstone i nærleiken med eitt blikk.<br>
+<br>
+Merknad: les redstone-styrke i nærleiken frå 0 til 15.
+<np>
+Voltmeter
+Signalmålar
+<&industrial_analog_horizontal_gauge>Ein kompakt kontrollromsmålar viser redstone-styrken tydeleg på eit panel.<br>
+<br>
+Bruk: monter han der du skal kunne lese av redstone i nærleiken med eitt blikk.<br>
+<br>
+Merknad: les redstone-styrke i nærleiken frå 0 til 15.
+<np>
+Digital målar
+Avlesbar signalstyrke
+<&industrial_small_digital_gauge>Ein kompakt kontrollromsmålar viser redstone-styrken tydeleg på eit panel.<br>
+<br>
+Bruk: monter han der du skal kunne lese av redstone i nærleiken med eitt blikk.<br>
+<br>
+Merknad: les redstone-styrke i nærleiken frå 0 til 15.
+<np>
+Glasrøyrmålar
+Signalmålar
+<&industrial_tube_gauge>Ein kompakt kontrollromsmålar viser redstone-styrken tydeleg på eit panel.<br>
+<br>
+Bruk: monter han der du skal kunne lese av redstone i nærleiken med eitt blikk.<br>
+<br>
+Merknad: les redstone-styrke i nærleiken frå 0 til 15.
+<np>
+Analog stolpemålar
+Signalmålar
+<&industrial_vertical_bar_gauge>Ein kompakt kontrollromsmålar viser redstone-styrken tydeleg på eit panel.<br>
+<br>
+Bruk: monter han der du skal kunne lese av redstone i nærleiken med eitt blikk.<br>
+<br>
+Merknad: les redstone-styrke i nærleiken frå 0 til 15.
+<np>
+Alarmlampe
+Signalvising
+<&industrial_alarm_lamp>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Alarmsirene
+Signalvisning
+<&industrial_alarm_siren>Alarmsirenen er en redstone-indikator montert på en blokkflate. Strømtilstanden følger signalet fra blokken den er festet til.<br>
+<br>
+Fest den til en solid flate og gi den strøm for å overvåke dører, maskiner, alarmer eller paneler.<br>
+<br>
+Sirenen oppdateres én gang i sekundet så lenge signalet er aktivt.
+<np>
+Blinkande LED
+Signalvising
+<&industrial_blinking_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Grøn blinkande LED
+Signalvising
+<&industrial_green_blinking_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Grøn LED
+Signalvising
+<&industrial_green_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Raud LED
+Signalvising
+<&industrial_red_blinking_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Raud LED
+Signalvising
+<&industrial_red_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Kvit blinkande LED
+Signalvising
+<&industrial_white_blinking_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Kvit LED
+Signalvising
+<&industrial_white_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Gul blinkande LED
+Signalvising
+<&industrial_yellow_blinking_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Gul LED
+Signalvising
+<&industrial_yellow_led>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Rustikk semafor
+Signalvising
+<&rustic_semaphore>Ein kompakt indikator gjer skjulte redstone-signal synlege i fabrikken.<br>
+<br>
+Bruk: kople han attmed signalet for å vakte dører, maskiner, alarmar eller panel.<br>
+<br>
+Merknad: endrar tilstand når det finst redstone-signal i nærleiken.
+<np>
+Samanliknarbrytar
+Signal frå festeblokka
+<&industrial_comparator_switch>Ein kompakt sensorbrytar les festeblokka og gjer avlesinga om til ein enkel panelutgang.<br>
+<br>
+Bruk: monter han på lager, tankar eller redstone-utstyr. Når festeblokka melder samanliknar-, behaldar- eller redstone-utgang, gjev brytaren eit redstone-signal med full styrke.<br>
+<br>
+Merknad: bruk han til å gjere lagernivå eller skjulte leidningar om til tydelege av/på-styreliner.
+<np>
+Dimmar
+Variabelt signal
+<&industrial_dimmer>Ein dreiebrytar stiller redstone-styrken frå ei kompakt panelflate.<br>
+<br>
+Bruk: høgreklikk for å auke utgangen stegvis. Etter full styrke går han tilbake til null.<br>
+<br>
+Merknad: gjev signalstyrke frå 0 til 15.
+<np>
+Naudstoppknapp
+Redstone-styring
+<&industrial_estop_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Trektblokkerar
+Redstone-styring
+<&industrial_hopper_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Bankebrytar
+Redstone-styring
+<&industrial_knock_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Spak
+Redstone-styring
+<&industrial_lever>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Maskinbrytar med to knappar
+Redstone-styring
+<&industrial_machine_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Trekkhandtak
+Redstone-styring
+<&industrial_pull_handle>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Dreiespak
+Redstone-styring
+<&industrial_rotary_lever>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Dreibar maskinbrytar
+Redstone-styring
+<&industrial_rotary_machine_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Kontaktspak
+Redstone-styring
+<&industrial_small_lever>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Brytar
+Redstone-styring
+<&industrialswitch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Lysbrytar
+Redstone-styring
+<&light_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Ventilbrytar
+Redstone-styring
+<&valve_wheel_switch>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Pulsmottakar med kasse
+Kopla betening
+<&industrial_switchlink_cased_pulse_receiver>Ein kopla pulsmottakar med kasse gjev fjernpanel ei kort redstone-utløysing.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Høgreklikk på mottakaren eller løys ut den kopla perla for å gje ein kort puls.<br>
+<br>
+Merknad: pulsen sluttar av seg sjølv etter den fastsette tida.
+<np>
+Koplingsmottakar med kasse
+Kopla betening
+<&industrial_switchlink_cased_receiver>Ein kopla mottakar med kasse gjev fjernpanel eit solid redstone-mål.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Høgreklikk rett på mottakaren for å slå han om for hand.<br>
+<br>
+Merknad: ei kopla perle slår om denne mottakaren når ho blir brukt medan du smyg.
+<np>
+Pulskoplingsmottakar
+Kopla betening
+<&industrial_switchlink_pulse_receiver>Ein kopla pulsmottakar gjev fjernpanel ei kort redstone-utløysing.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Høgreklikk på mottakaren eller løys ut den kopla perla for å gje ein kort puls.<br>
+<br>
+Merknad: pulsen sluttar av seg sjølv etter den fastsette tida.
+<np>
+Pulskoplingsrelé
+Kopla betening
+<&industrial_switchlink_pulse_relay>Ein del i reléstil gjev panelbygg eit kompakt, lokalt brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå full utgangsstyrke av eller på for krinsar i nærleiken. Bruk mottakarblokker når du treng utløysing med kopla perler.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Brytarkoplingsmottakar
+Kopla betening
+<&industrial_switchlink_receiver>Ein kopla mottakar gjev fjernpanel eit redstone-mål med full styrke.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Høgreklikk rett på mottakaren for å slå han om for hand.<br>
+<br>
+Merknad: ei kopla perle slår om denne mottakaren når ho blir brukt medan du smyg.
+<np>
+Analog koplingsmottakar
+Kopla betening
+<&industrial_switchlink_receiver_analog>Ein kopla mottakar gjev beteningspanel eit synleg fjernmål.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Bruk perla medan du smyg for å aktivere mottakaren på avstand.<br>
+<br>
+Merknad: denne mottakaren gjev eit redstone-signal med full styrke når han blir utløyst.
+<np>
+Brytarkoplingsrelé
+Kopla betening
+<&industrial_switchlink_relay>Ein del i reléstil gjev panelbygg eit kompakt, lokalt brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå full utgangsstyrke av eller på for krinsar i nærleiken. Bruk mottakarblokker når du treng utløysing med kopla perler.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Analogt koplingsrelé
+Kopla betening
+<&industrial_switchlink_relay_analog>Ein del i reléstil gjev panelbygg eit kompakt, lokalt brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå full utgangsstyrke av eller på for krinsar i nærleiken. Bruk mottakarblokker når du treng utløysing med kopla perler.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Brytarkoplingsperle
+Kopla betening
+<&switchlink_pearl>Ei kopla perle lagrar ein mottakar som mål for fjernstyring av fabrikken.<br>
+<br>
+Bruk: klikk på ein brytarkoplingsmottakar med ei endeperle for å lage ei. Bruk den kopla perla medan du smyg for å aktivere den lagra mottakaren.<br>
+<br>
+Merknad: målet må vere lasta inn, i same dimensjon og innanfor rekkjevidda.
+<np>
+Gammal pyntespak
+Redstone-styring
+<&oldfancy_bistableswitch1>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Gammal pynta dreiespak
+Redstone-styring
+<&oldfancy_bistableswitch2>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Rustikk dreiespak
+Redstone-styring
+<&rustic_angular_lever>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Rustikk spak
+Redstone-styring
+<&rustic_lever>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Rustikk spikarspak
+Redstone-styring
+<&rustic_nail_lever>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.
+<np>
+Rustikk spak med to hengsler
+Redstone-styring
+<&rustic_two_hinge_lever>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.

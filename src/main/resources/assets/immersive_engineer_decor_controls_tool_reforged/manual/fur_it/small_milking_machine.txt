@@ -1,0 +1,5 @@
+Machine par molzi
+Utilitât pal plan di oficine
+<&recipe>La Piçule machine par molzi e je un bloc di utilitât di oficine pe fabricazion, il deposit, la pose, la roture, la racuelte o la automazion compacte.<br>
+<br>
+Ûs: metile dongje des vacjis e pronte un mût par gjavâ recipients di lat o fluid.<br>

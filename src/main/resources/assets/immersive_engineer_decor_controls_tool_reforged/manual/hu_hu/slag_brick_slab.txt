@@ -1,0 +1,5 @@
+Salaktéglalap
+Tömör gyári falazat
+<&recipe>Ez a blokk tömör szürkésbarna falazatot ad alapokhoz, támfalakhoz és régebbi műhelyépületekhez.<br>
+<br>
+Használat: régi alapokhoz, támfalakhoz és piszkos üzemi padlókhoz használd.<br>

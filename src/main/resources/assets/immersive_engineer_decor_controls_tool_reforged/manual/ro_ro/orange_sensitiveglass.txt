@@ -1,0 +1,7 @@
+Sticlă sensibilă portocalie
+Sticlă de semnalizare
+<&recipe>Un bloc de sticlă sensibil la redstone păstrează vizibilitatea și arată starea semnalului.<br>
+<br>
+Utilizare: Folosește-l în ferestrele camerelor de comandă, în panouri luminoase și ca sticlă de protecție în fabrică.<br>
+<br>
+Observații: Își schimbă starea în funcție de semnalul redstone din apropiere.

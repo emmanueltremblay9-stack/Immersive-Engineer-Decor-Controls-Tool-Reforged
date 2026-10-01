@@ -1,0 +1,127 @@
+Zuegangswäg
+Laufwäg und Stütze
+Stahlpfoste, imprägnierti Holzpfoste, Gitterrost, Laufsteg, Geländer, Leitere, Türe, Fänschter und Luke mached kompakti Wartigswäg dur d'Fabrik.<br>
+<br>
+Zuegangsteil us Stahl bruuched Stahlplatte. Bau oder setz e Metallwerkbank, steck en Hammer us Immersive Engineering ii und hämmer Stahlbarre zu Platte. Drus machsch Pfoste, Laufsteg, Fänschter, Türe, Geländer und anderi Stahldekoratione.<br>
+<br>
+Setz die Teil dert hii, wo Maschine Wartigszuegäng, erhöhti Wäg, Schächt oder gschützti Kante bruuched.
+<np>
+Dicke Stahlpfoste
+Teil vom Tragwärch
+<&thick_steel_pole>De grade dicke Stahlpfoste bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Chopf für dicke Stahlpfoste
+Teil vom Tragwärch
+<&thick_steel_pole_head>De Chopf/Fuess für grade dicke Stahlpfoste bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Dünne Stahlpfoste
+Teil vom Tragwärch
+<&thin_steel_pole>De grade dünne Stahlpfoste bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Chopf für dünne Stahlpfoste
+Teil vom Tragwärch
+<&thin_steel_pole_head>De Chopf/Fuess für grade dünne Stahlpfoste bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Pfoste us imprägniertem Holz
+Teil vom Tragwärch
+<&treated_wood_pole>De grade Pfoste us imprägniertem Holz bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Chopf für imprägnierte Holzpfoste
+Teil vom Tragwärch
+<&treated_wood_pole_head>De Chopf/Fuess für grade Pfoste us imprägniertem Holz bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Stütze für imprägnierte Holzpfoste
+Teil vom Tragwärch
+<&treated_wood_pole_support>D'Stütze für grade Pfoste us imprägniertem Holz bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Stahl-Doppel-T-Träger
+Teil vom Tragwärch
+<&steel_double_t_support>Mit dem Block überchunsch sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>
+<np>
+Stahlgitterrost
+Bauteil für Wartigszuegäng
+<&steel_floor_grating>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Stahllaufsteg
+Bauteil für Wartigszuegäng
+<&steel_catwalk>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Stahllaufstegstäge
+Bauteil für Wartigszuegäng
+<&steel_catwalk_stairs>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Erhöhte Stahllaufsteg
+Bauteil für Wartigszuegäng
+<&steel_catwalk_ta>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Stahlgeländer
+Bauteil für Wartigszuegäng
+<&steel_railing>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Stahlgitterhaag
+Bauteil für Wartigszuegäng
+<&steel_mesh_fence>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Stahlgitterhaagtor
+Bauteil für Wartigszuegäng
+<&steel_mesh_fence_gate>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Metallsprosseleitere
+Bauteil für Wartigszuegäng
+<&metal_rung_ladder>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Versetzti Metalltritt
+Bauteil für Wartigszuegäng
+<&metal_rung_steps>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>
+<np>
+Fänschter mit Stahlrahme
+Gschützte Iiblick
+<&steel_framed_window>Mit dem Block bliibt d'Sicht frei, und er passt trotzdem zur verstärkte Fabrikbauwiis.<br>
+<br>
+Verwendig: Setz en i e Wandöffnig vo enem Block, wo Spieler dur e gschützti Schiibe d'Maschine gseh sötted.<br>
+<np>
+Metallschiebetür
+Industrielle Zuegang
+<&metal_sliding_door>Dä Block schafft en robuste Zuegang zu Betriebsrüüm, Schächt, Dächer und Maschineghüüs.<br>
+<br>
+Verwendig: Bau en ii, wo din Bau e kontrollierbari Wartigsöffnig bruucht.<br>
+<np>
+Iisigi Luke
+Industrielle Zuegang
+<&iron_hatch>Dä Block schafft en robuste Zuegang zu Betriebsrüüm, Schächt, Dächer und Maschineghüüs.<br>
+<br>
+Verwendig: Bau en ii, wo din Bau e kontrollierbari Wartigsöffnig bruucht.<br>

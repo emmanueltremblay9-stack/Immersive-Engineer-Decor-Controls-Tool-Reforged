@@ -1,0 +1,5 @@
+Vanad puitplangud
+Vana töökojapuit
+<&recipe>Vanad tehasepuidust plangud lisavad vana töökojapuitu põrandatele, astmetele, ustele ja sooja ilmega sisekaunistustele.<br>
+<br>
+Kasutamine: Kasuta vanade töökojapõrandate, treppide, uste ja kaunistuste jaoks.<br>

@@ -1,0 +1,5 @@
+Süslü Klinker Tuğla
+İs karası tuğla duvar
+<&recipe>Kum taşı süslemeli klinker tuğla; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>

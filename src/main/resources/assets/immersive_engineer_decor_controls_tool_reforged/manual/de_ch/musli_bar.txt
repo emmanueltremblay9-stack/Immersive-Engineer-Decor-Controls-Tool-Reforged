@@ -1,0 +1,5 @@
+Muslee-Melange-Energieriegel
+Schneller Werkstatt-Snack
+<&recipe>Der Muslee-Melange-Energieriegel ist ein kompaktes Nahrungsmittel aus Brot, Samen und Obst.<br>
+<br>
+Benutzung: Als Feldverpflegung beim Platzieren von Steuerungen, Rohren, Plattformen oder langen Maschinenraumstrecken essen.

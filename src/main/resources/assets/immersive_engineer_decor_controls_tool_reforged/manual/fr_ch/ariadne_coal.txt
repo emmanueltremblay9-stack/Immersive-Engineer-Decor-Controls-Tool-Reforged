@@ -1,0 +1,7 @@
+Charbon d'Ariane
+Balisage des mines
+<&recipe>Le charbon d'Ariane permet de baliser rapidement les puits, les galeries et les chantiers souterrains temporaires.<br>
+<br>
+Utilisation : cliquez sur la face stable d'un bloc pour placer une flèche noire sur ce bord. La balise tient compte du point cliqué et propose huit directions, diagonales comprises, pour indiquer les virages, sorties, culs-de-sac et voies de ravitaillement sans transporter de panneaux séparés.<br>
+<br>
+Le charbon d'Ariane est un outil de balisage réutilisable offrant 100 utilisations. Chaque placement réussi consomme un point de durabilité ; les faces incompatibles sont refusées sans user l'objet.

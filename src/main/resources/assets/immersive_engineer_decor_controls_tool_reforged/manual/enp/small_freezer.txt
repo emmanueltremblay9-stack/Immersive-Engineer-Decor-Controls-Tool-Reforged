@@ -1,0 +1,5 @@
+Water Freezer
+Small working loom
+<&recipe>The Water Freezer does small chilling jobs for might-fed flowstuff works.<br>
+<br>
+Use: Feed water and might to make ice in steps.<br>

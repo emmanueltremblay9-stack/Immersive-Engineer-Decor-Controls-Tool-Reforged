@@ -1,0 +1,7 @@
+Lineaarinen entiteettitunnistin
+Signaalin tunnistus
+<&recipe>Entiteettitunnistin tarkkailee lähellä tapahtuvaa liikettä ilman näkyvää lattialevyä.<br>
+<br>
+Käyttö: Kytke oviin, valoihin, hälytyksiin tai koneiden lukituksiin.<br>
+<br>
+Huomaa: Tarkkailee pientä aluetta kuution ympärillä.

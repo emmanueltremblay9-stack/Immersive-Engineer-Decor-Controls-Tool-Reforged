@@ -1,0 +1,7 @@
+Mjerač sa staklenom cijevi
+Mjerač signala
+<&recipe>Kompaktni mjerač za kontrolnu sobu jasno prikazuje jačinu redstona na panelu.<br>
+<br>
+Upotreba: Montirajte ga gdje se jačina obližnjeg redstona treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: Očitava jačinu obližnjeg redstona od 0 do 15.

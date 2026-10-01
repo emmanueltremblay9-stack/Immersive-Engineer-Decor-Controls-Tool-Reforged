@@ -1,0 +1,7 @@
+Dageszäitschalter
+Dagesliichtsignal
+<&recipe>En Zäitschalter orientéiert sech um Dagesdeel vum Weltzyklus.<br>
+<br>
+Benotzung: Benotz en fir Haffluuchten, Rolllueden a Fabricksteierungen, déi nëmmen dagsiwwer lafe sollen.<br>
+<br>
+Hiweiser: Braucht eng Dimensioun mat Himmelsliicht.

@@ -1,0 +1,5 @@
+Vatnsfrystir
+Fyrirferðarlítil vinnslueining
+<&recipe>Vatnsfrystirinn sinnir fyrirferðarlítilli kælivinnslu fyrir aflknúin vökvakerfi.<br>
+<br>
+Notkun: Gefðu honum vatn og afl fyrir ísframleiðslu í áföngum.<br>

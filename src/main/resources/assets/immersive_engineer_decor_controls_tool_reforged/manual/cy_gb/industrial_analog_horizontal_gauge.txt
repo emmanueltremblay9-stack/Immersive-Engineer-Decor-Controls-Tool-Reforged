@@ -1,0 +1,7 @@
+Mesurydd Foltmedr
+Mesurydd signal
+<&recipe>Mae mesurydd ystafell reoli cryno yn dangos cryfder Redstone fel darlleniad panel clir.<br>
+<br>
+Defnydd: Gosodwch ef lle gellir gwirio pŵer Redstone cyfagos ar gip.<br>
+<br>
+Nodiadau: Mae'n darllen cryfder Redstone cyfagos o 0 i 15.

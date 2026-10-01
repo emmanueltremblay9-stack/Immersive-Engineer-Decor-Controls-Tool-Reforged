@@ -1,0 +1,7 @@
+Materiaalopsjlaagkis
+Kis veur bouwveurraod
+<&recipe>De materiaalkis drög 'ne groeëte veurraod van ein gewoen, ónveranderd en stapelbaar bouwmateriaal.<br>
+<br>
+Gebroek: Haw de kis in de hoofhand en 'ne stapel materiaal in de angere hand veur te laje. Gebroek de kis mit ein lege angere hand veur eine stapel oet te haole.<br>
+<br>
+Ze hilt tot 512 veurwerpe van ein soort. Ze weigert kiste in kiste, neet-stapelbare oetröösting en herneumde of data-verangerde stapels; de tooltip wies de inhoud.

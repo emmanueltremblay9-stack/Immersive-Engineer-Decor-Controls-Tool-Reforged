@@ -1,0 +1,5 @@
+Þykkur stálstaur
+Burðargrindarhluti
+<&recipe>Beini þykki stálstaurinn veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>

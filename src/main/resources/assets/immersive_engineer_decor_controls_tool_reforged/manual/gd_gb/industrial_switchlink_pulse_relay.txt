@@ -1,0 +1,7 @@
+Ath-sheachadair ceangail puls
+Smachd ceangailte
+<&recipe>Bheir uidheam ann an stoidhle ath-sheachadair puing suidsidh ionadail dhlùth do thogalaichean panail.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air. Cleachd blocaichean glacadair nuair a bhios gnìomhachadh le neamhnaid cheangailte a dhìth ort.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.

@@ -1,0 +1,7 @@
+Omhulde Koppelontvanger
+Gekoppelde beheer
+<&recipe>’n Omhulde gekoppelde ontvanger gee afgeleë panele ’n stewige redstone-teiken.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Regsklik die ontvanger direk om dit met die hand aan of af te skakel.<br>
+<br>
+Nota: ’n gekoppelde pêrel skakel hierdie ontvanger aan of af wanneer dit tydens sluip gebruik word.

@@ -1,0 +1,5 @@
+Passarel·la d’acer
+Peça d’accés de servei
+<&recipe>Aquest bloc crea recorreguts de servei ben identificables al voltant de les màquines.<br>
+<br>
+Ús: col·loca’l per donar accés de manteniment al voltant de les màquines, als pisos superiors i als pous de servei.<br>

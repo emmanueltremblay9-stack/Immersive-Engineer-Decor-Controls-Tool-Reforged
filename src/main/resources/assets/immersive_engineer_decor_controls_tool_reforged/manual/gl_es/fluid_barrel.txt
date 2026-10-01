@@ -1,0 +1,5 @@
+Bocoi de líquidos
+Equipamento de tubaxes de fluídos
+<&recipe>Este accesorio é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: colócao onde as tubaxes ou os baldes poidan chegar á cara do depósito.<br>

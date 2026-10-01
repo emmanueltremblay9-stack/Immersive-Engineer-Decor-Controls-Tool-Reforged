@@ -1,0 +1,5 @@
+Laje vertical de clínquer
+Tijolos escurecidos pela fuligem
+<&recipe>A laje vertical de clínquer com relevo acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>

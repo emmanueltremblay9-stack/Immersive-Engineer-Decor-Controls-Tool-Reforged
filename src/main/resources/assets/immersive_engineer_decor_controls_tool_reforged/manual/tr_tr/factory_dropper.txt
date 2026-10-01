@@ -1,0 +1,5 @@
+Fabrika Bırakıcısı
+Atölye yardımcı aygıtı
+<&recipe>Bu blok, depolanmış eşyaları yöneltilen yüzünden dışarı verir.<br>
+<br>
+Kullanım: Önünü bırakma noktasına yöneltin, dahili yuvaları doldurun; kuvveti, açıyı, gecikmeyi, filtre mantığını ve redstone modunu ekranından ayarlayın.<br>

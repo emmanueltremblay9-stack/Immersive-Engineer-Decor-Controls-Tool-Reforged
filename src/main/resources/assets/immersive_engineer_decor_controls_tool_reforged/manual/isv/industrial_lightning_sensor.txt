@@ -1,0 +1,7 @@
+Detektor burje
+Čutje signala
+<&recipe>Senzor burje upravljaje prěduprědženjami pri grměnju.<br>
+<br>
+Upotrěbjenje: Postavi go pod otvorjenym nebom i poveži s lampami ili trevogami.<br>
+<br>
+Primětky: Potrěbuje grměnje i pristup k nebu.

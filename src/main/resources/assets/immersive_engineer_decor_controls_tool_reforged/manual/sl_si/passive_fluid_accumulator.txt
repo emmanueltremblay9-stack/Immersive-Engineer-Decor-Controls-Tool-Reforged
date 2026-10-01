@@ -1,0 +1,5 @@
+Pasivni fluid
+Oprema cevovodov za fluide
+<&recipe>Pasivni zbiralnik fluidov je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Postavi ga ob ustrezne vire vode in pusti prostor za odvajanje fluida.<br>

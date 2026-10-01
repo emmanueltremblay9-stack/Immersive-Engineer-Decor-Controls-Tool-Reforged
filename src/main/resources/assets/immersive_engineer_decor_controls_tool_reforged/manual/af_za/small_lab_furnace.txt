@@ -1,0 +1,5 @@
+Laboratoriumoond
+Kompakte verwerkingseenheid
+<&recipe>Die Laboratoriumoond verrig kompakte smeltwerk met vaste brandstof en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: gebruik vaste brandstof vir klein smeltbondels.<br>

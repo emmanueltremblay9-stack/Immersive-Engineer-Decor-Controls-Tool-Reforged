@@ -1,0 +1,7 @@
+Mesa de fabricación metálica
+Estación de placas
+<&recipe>La Mesa de fabricación metálica es una estación reforzada con ranura para martillo, cuadrícula completa 3x3 y una salida clara.<br>
+<br>
+Uso: Usa la cuadrícula como una mesa normal. Para formar placas de IE, pon un Martillo del ingeniero en la ranura de herramienta y el material en la cuadrícula; después retira la placa de la salida.<br>
+<br>
+Las decoraciones con marco de acero usan placas de acero formadas en esta mesa.

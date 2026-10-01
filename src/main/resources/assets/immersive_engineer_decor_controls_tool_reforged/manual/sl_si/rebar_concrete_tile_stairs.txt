@@ -1,0 +1,5 @@
+Ploščica armiranega betona
+Ojačan beton
+<&recipe>Stopnice iz ploščic armiranega betona so utrjeni betonski deli za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>

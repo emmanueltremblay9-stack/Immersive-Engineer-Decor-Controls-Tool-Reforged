@@ -1,0 +1,7 @@
+Kontaktna prostirka
+Tlačni impuls
+<&recipe>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.

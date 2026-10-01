@@ -1,0 +1,5 @@
+Gamlar viðartröppur
+Gamall verkstæðisviður
+<&recipe>Tröppurnar úr gömlum iðnaðarviði bæta við gömlum verkstæðisviði fyrir gólf, þrep, hurðir og hlýlega innanhússkanta.<br>
+<br>
+Notkun: Notaðu hann í gömul verkstæðisgólf, tröppur, hurðir og kanta.<br>

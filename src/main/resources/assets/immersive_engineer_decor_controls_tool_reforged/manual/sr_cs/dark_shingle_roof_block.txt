@@ -1,0 +1,5 @@
+Blok tamnog krova od šindre
+Istrošen krovni deo
+<&recipe>Ovaj blok gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>

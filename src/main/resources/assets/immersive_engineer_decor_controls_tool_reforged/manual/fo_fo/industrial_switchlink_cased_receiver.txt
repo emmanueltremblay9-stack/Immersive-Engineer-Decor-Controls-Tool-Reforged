@@ -1,0 +1,7 @@
+Sambandsmóttakari í húsi
+Bundin stýring
+<&recipe>Ein bundin móttakari í húsi gevur fjarpanelum eitt sterkt reyðgrýtismál.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Høgraklikk beinleiðis á móttakaran fyri at tendra ella sløkkja hann við hond.<br>
+<br>
+Viðmerking: Ein bundin perla tendrar ella sløkkir henda móttakaran, tá ið hon verður brúkt sníkjandi.

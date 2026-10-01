@@ -1,0 +1,5 @@
+Wossagefriera
+Kloane Verarbeitungseinheit
+<&recipe>Da Wossagefriera erledigt kloane Kühlaufgaben fia strombetriebene Flüssigkeitsanlagn.<br>
+<br>
+So geht's: Führ Wossa und Energie zua, dann entsteht Eis in Stufn.<br>

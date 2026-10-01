@@ -1,0 +1,5 @@
+Bar ng Enerhiyang Muslee Melange
+Mabilis na meryenda sa pagawaan
+<&recipe>Ang Muslee Melange bar ay siksik na pagkain mula sa tinapay, buto at prutas.<br>
+<br>
+Kainin habang naglalagay ng control, tubo, platform o mahabang linya ng makina.

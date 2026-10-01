@@ -1,0 +1,5 @@
+Zhutnený piesok so štrkom
+Povrch pracoviska
+<&recipe>Tento blok dodáva vonkajším pracovným plochám zhutnený udupaný povrch.<br>
+<br>
+Použitie: Polož ho okolo nakladacích dverí, vonkajších nádrží a strojových dvorov.<br>

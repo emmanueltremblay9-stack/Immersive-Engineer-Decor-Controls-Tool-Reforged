@@ -1,0 +1,5 @@
+Riggschlagvendil fürs Flissichgeedsrohr
+Flissichgeedsleidungsbaudeile
+<&recipe>Das Riggschlagvendil fürs Flissichgeedsrohr is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Richd’s Vendil nach dor gewinschdn Flussrichdung aus.<br>

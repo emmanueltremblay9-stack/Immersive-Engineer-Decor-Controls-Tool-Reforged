@@ -1,0 +1,5 @@
+Minerālu kausētājs
+Kompakta apstrādes ierīce
+<&recipe>Minerālu kausētājs apstrādā minerālus augstā temperatūrā, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: padod minerālu blokus un enerģiju kausēšanai augstā temperatūrā.<br>

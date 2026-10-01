@@ -1,0 +1,7 @@
+Alarmlamp
+Tekentorüchmellen
+<&recipe>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.

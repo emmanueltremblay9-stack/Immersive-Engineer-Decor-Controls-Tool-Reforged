@@ -1,0 +1,5 @@
+Rannsóknarstofuofn
+Fyrirferðarlítil vinnslueining
+<&recipe>Rannsóknarstofuofninn sinnir bræðslu með föstu eldsneyti á litlu verkstæðisrými.<br>
+<br>
+Notkun: Notaðu fast eldsneyti fyrir litla bræðsluskammta.<br>

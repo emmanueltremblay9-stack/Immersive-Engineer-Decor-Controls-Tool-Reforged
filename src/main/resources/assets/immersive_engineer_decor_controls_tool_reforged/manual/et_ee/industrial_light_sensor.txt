@@ -1,0 +1,7 @@
+Valgusandur
+Signaali tuvastamine
+<&recipe>Valgusandur teisendab kohaliku valguse tugevuse redstone'i juhtimiseks.<br>
+<br>
+Kasutamine: Kasuta automaatsete lampide, aknaluukide ja nähtavusest sõltuvate vooluringide jaoks.<br>
+<br>
+Märkus: Annab toidet töötlemata valgustasemel 8 või rohkem.

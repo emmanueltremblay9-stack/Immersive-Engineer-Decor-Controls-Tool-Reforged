@@ -1,0 +1,7 @@
+Blockdetektor
+Signalerkennung
+<&recipe>E Blockdetektor préift, ob de Raum a senger Bléckrichtung beluecht ass.<br>
+<br>
+Benotzung: Riicht en op déi Maschinnesäit, dee Puffer oder dee geschützte Raum, deen iwwerwaacht soll ginn.<br>
+<br>
+Hiweiser: Gëtt Stroum, wann de Block virun him net Loft ass.

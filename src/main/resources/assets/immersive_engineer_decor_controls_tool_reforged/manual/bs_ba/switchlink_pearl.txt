@@ -1,0 +1,7 @@
+Biser veze prekidača
+Upravljanje preko veze
+<&recipe>Upareni biser čuva cilj prijemnika za daljinsko fabričko upravljanje.<br>
+<br>
+Upotreba: Kliknite prijemnik veze prekidača Ender biserom da napravite upareni biser. Upotrijebite upareni biser dok se šunjate da aktivirate zapamćeni prijemnik.<br>
+<br>
+Napomene: Cilj mora biti učitan, u istoj dimenziji i unutar dometa.

@@ -1,0 +1,5 @@
+Fabrieksuitwerper
+Hulpmiddel voor de fabrieksvloer
+<&recipe>Dit blok werpt opgeslagen voorwerpen uit via een gericht vlak.<br>
+<br>
+Gebruik: richt de voorkant op de gewenste uitwerpplaats, vul de interne vakken en stel kracht, hoek, vertraging, filterlogica en redstonemodus in op het scherm.<br>

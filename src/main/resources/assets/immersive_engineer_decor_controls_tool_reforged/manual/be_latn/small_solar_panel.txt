@@ -1,0 +1,5 @@
+Soniečnaja panel
+Abstalavannie cecha
+<&recipe>Małaja soniečnaja panel — dapamožny cechavy błok dla vyrabu, zachoŭvannia, ustalavannia, razbivannia, zboru abo kampaktnaj aŭtamatyzacyi.<br>
+<br>
+Vykarystannie: zabiaspieč dostup da adkrytaha nieba i padklučy abstalavannie z małym spažyvanniem.<br>

@@ -1,0 +1,7 @@
+Capsule di aiar par lâ sot aghe
+Risierve di aiar di emergjence
+<&recipe>La capsule di aiar di imersion e je une risierve di emergjence pai lavôrs sot aghe.<br>
+<br>
+Ûs: Doprele a man par tornâ a jemplâ l'aiar. Se e je tal inventari, e pues ancje ativâsi in automatic cuant che l'aiar al è cuasi finît, po e va in cooldown.<br>
+<br>
+Puartile pes minieris inundadis, i tubui sot aghe e lis riparazions tes salis des pompis.

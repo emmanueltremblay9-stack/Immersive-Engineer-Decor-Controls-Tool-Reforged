@@ -1,0 +1,5 @@
+Merdevine sa metalnim prečkama
+Deo servisnog pristupa
+<&recipe>Ovaj blok stvara jasno prepoznatljive servisne puteve oko mašina.<br>
+<br>
+Upotreba: postavi ga za pristup održavanju oko mašina, gornjih spratova i servisnih okana.<br>

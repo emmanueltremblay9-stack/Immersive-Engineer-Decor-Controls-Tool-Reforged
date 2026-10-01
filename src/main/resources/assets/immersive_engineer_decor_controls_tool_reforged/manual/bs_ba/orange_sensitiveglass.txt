@@ -1,0 +1,7 @@
+Narandžasto osjetljivo staklo
+Signalno staklo
+<&recipe>Stakleni blok koji reaguje na redstone čuva preglednost i prikazuje stanje signala.<br>
+<br>
+Upotreba: Koristite ga za prozore kontrolne sobe, osvijetljene panele i zaštićeno fabričko staklo.<br>
+<br>
+Napomene: Mijenja stanje prema obližnjem redstone signalu.

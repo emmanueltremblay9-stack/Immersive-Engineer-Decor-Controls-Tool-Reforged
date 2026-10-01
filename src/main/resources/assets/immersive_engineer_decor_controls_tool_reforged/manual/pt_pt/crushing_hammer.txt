@@ -1,0 +1,5 @@
+Martelo triturador de minérios
+Ferramenta de trituração manual
+<&recipe>O martelo triturador de minérios é uma ferramenta manual para o processamento inicial de ferro e ouro.<br>
+<br>
+Use-o com ferro bruto, ouro bruto, minério de ferro, minério de ferro de ardósia profunda, minério de ouro ou minério de ouro de ardósia profunda para produzir pó de Immersive Engineering. O martelo perde durabilidade, volta à grade até quebrar, se desgasta ao minerar e causa repulsão em combate.

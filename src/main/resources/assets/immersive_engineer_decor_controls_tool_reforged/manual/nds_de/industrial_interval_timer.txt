@@ -1,0 +1,7 @@
+Intervallklock
+Tiedpuls
+<&recipe>En lütte Tiedschalter gifft en vörgeven Redstone-Puls.<br>
+<br>
+Bruuk: Bruuk em, wenn en lütt Mechanismus regelmäßig oder verzögert stüert warrn schall.<br>
+<br>
+Anmarken: Bruukt vörgeven Redstone-Pulsen.

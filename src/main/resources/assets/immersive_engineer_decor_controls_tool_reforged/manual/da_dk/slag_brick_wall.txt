@@ -1,0 +1,5 @@
+Slaggestensmur
+Tæt fabriksmurværk
+<&recipe>Denne blok giver tæt gråbrunt murværk til fundamenter, støttemure og ældre værkstedsskure.<br>
+<br>
+Brug: Brug den til ældre fundamenter, støttemure og snavsede fabriksgulve.<br>

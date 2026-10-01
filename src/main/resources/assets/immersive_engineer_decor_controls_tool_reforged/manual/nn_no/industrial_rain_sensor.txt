@@ -1,0 +1,7 @@
+Regnsensor
+Signalføling
+<&recipe>Ein vêrsensor gjer regn på staden der han står om til redstone.<br>
+<br>
+Bruk: monter han der blokka over kan få regn på seg.<br>
+<br>
+Merknad: ser etter regn over sensoren.

@@ -1,0 +1,5 @@
+Pfoste us imprägniertem Holz
+Teil vom Tragwärch
+<&recipe>De grade Pfoste us imprägniertem Holz bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>

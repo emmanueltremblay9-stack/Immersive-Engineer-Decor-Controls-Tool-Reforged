@@ -1,0 +1,5 @@
+Elektrisk ovn
+Kompakt behandlingsenhet
+<&recipe>Den elektriske ovnen utfører kompakte smeltejobber med FE-strøm på liten verkstedplass.<br>
+<br>
+Bruk: tilfør FE og gyldig smeltemateriale.<br>

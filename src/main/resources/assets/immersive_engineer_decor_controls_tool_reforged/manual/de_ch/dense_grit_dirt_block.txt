@@ -1,0 +1,5 @@
+Verdichteti Chieserde
+Bodebelag für Arbeitsplätz
+<&recipe>Dä Block git Arbeitsplätz dusse e verdichteti, zertrampelti Oberflächi.<br>
+<br>
+Verwendig: Verleg en bi Ladetüre, Ussetanks und uf Maschinehöf.<br>

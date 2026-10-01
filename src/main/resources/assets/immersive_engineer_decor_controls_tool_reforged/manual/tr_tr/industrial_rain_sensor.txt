@@ -1,0 +1,7 @@
+Yağmur Algılayıcısı
+Sinyal algılama
+<&recipe>Hava durumu algılayıcısı, bulunduğu yerdeki yağmuru redstone sinyaline dönüştürür.<br>
+<br>
+Kullanım: Üstündeki bloğun yağmur alabileceği yere takın.<br>
+<br>
+Notlar: Algılayıcının üzerindeki yağmuru denetler.

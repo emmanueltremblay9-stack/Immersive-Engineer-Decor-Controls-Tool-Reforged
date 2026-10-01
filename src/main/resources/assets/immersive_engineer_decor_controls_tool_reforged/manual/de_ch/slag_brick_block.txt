@@ -1,0 +1,5 @@
+Schlackeziegelblock
+Massivs Fabrikmuurwärk
+<&recipe>Dä Block bringt dichts graubruuns Muurwärk für Fundamänt, Stützmuure und älteri Werkstattschuppe.<br>
+<br>
+Verwendig: Nimm en für alti Fundamänt, Stützmuure und dräckigi Fabrikböde.<br>

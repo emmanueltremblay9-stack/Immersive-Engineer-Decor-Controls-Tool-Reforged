@@ -1,0 +1,7 @@
+Perła łącząca przełączniki
+Powiązany element sterujący
+<&recipe>Powiązana perła zapisuje odbiornik docelowy do zdalnego sterowania fabryką.<br>
+<br>
+Użycie: Kliknij enderperłą odbiornik połączenia przełączników, aby ją utworzyć. Użyj powiązanej perły podczas skradania, aby uruchomić zapisany odbiornik.<br>
+<br>
+Uwagi: Cel musi być wczytany, w tym samym wymiarze i w zasięgu.

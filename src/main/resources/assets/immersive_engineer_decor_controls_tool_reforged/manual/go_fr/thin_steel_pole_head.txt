@@ -1,0 +1,5 @@
+Téte de fin potè
+Pièce d'ossature
+<&recipe>La Téte/Pië de fin potè dret en acier fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>

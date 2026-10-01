@@ -1,0 +1,7 @@
+Materialkist
+Kist för Buuvörraad
+<&recipe>De Materiaalkist dreegt vele vun een eenfach, nich ännert un stapelbor Buumateriaal.<br>
+<br>
+Holl de Kist in de Hööfthand un dat Materiaal in de anner Hand to Laden; mit leddige anner Hand kummt een Stapel rut.<br>
+<br>
+Se höllt 512 vun een Sort, wiest anner Kisten, nich stapelbor Tüüch un ännert Stapeln af un toont den Inholt in Tipp.

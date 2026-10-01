@@ -1,0 +1,5 @@
+Acumulación pasiva de líquidos
+Accesorios de conducción de líquidos
+<&recipe>L’acumulador pasivu de líquidos ye un elementu compactu de conducción de líquidos pa depósitos pequeños, tendíos de tuberíes, puntos de recoyida y control del caudal por redstone.<br>
+<br>
+Usu: colócalu contra fontes d’agua afayadices y dexa espaciu pa sacar el líquidu.<br>

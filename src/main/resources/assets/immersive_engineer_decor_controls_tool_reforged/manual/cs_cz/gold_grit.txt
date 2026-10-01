@@ -1,0 +1,3 @@
+Hrubá zlatá drť
+Materiál inženýrských nástrojů používaný obnovenou sadou výrobních receptů.
+<&recipe>Lze přetavit na zlaté ingoty,<br>ale nehodí se k pokročilému<br>zpracování materiálů.

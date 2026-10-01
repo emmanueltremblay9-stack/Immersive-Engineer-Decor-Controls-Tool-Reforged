@@ -1,0 +1,7 @@
+Audros jutiklis
+Signalo jutimas
+<&recipe>Audros jutiklis įjungia įspėjimus per perkūniją.<br>
+<br>
+Naudojimas: statyk po atviru dangumi ir prijunk prie lempų arba pavojaus signalų.<br>
+<br>
+Pastabos: reikia perkūnijos ir atviro dangaus.

@@ -470,11 +470,11 @@ Notes: Changes state when nearby redstone power is present.
 <np>
 Alarm Siren
 Signal feedback
-<&industrial_alarm_siren>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<&industrial_alarm_siren>The Alarm Siren is a face-mounted redstone indicator. It changes powered state from the signal supplied by the block it is attached to.<br>
 <br>
-Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+Usage: Attach it to a solid face and power it to monitor doors, machines, alarms, or panels.<br>
 <br>
-Notes: Changes state when nearby redstone power is present.
+Notes: The siren refreshes once per second while its attached signal remains active.
 <np>
 Blinking Led
 Signal feedback

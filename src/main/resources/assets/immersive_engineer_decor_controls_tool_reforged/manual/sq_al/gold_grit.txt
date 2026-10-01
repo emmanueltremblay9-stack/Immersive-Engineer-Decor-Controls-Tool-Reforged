@@ -1,0 +1,3 @@
+Grimca të trasha ari
+Material veglash inxhinieri, i përdorur nga grupi i recetave të rindërtuara.
+<&recipe>Mund të shkrihen në shufra ari,<br>por nuk vlejnë për përpunim<br>të përparuar materialesh.

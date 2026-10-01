@@ -1,0 +1,7 @@
+Izsekotājs
+Saglabātas vietas marķieris
+<&recipe>Izsekotājs saglabā bloka atrašanās vietu tieši priekšmetā.<br>
+<br>
+Lietošana: Noklikšķini uz bloka, lai saglabātu dimensiju un koordinātas. Paskaidre rāda vietu. Izmanto izsekotāju pieliecoties, lai notīrītu mērķi.<br>
+<br>
+Izmanto to, lai atzīmētu mašīnas, tuneļu atzarus, attālinātas vadības ierīces vai nepabeigtas būvvietas, pirms atgriezies ar rīkiem un materiāliem.

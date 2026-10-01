@@ -1,0 +1,7 @@
+Botó de peu
+Control per redstone
+<&recipe>Un interruptor de contacte emet un senyal breu quan es mou el terra o una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passen per un corredor de servici, un carregador o una ruta vigilada.<br>
+<br>
+Notes: emet un pols breu després del contacte d’una entitat.

@@ -1,0 +1,7 @@
+Sac de dormit
+Echipament portabil de odihnă
+<&recipe>Sacul de dormit este un set rezistent la vreme pentru lucru departe de pat.<br>
+<br>
+Folosește-l noaptea în Lumea de Suprafață pentru odihnă până dimineața fără a schimba punctul de reapariție.<br>
+<br>
+Nu funcționează ziua, lângă monștri sau în dimensiuni nepotrivite. Fiecare odihnă reușită îl uzează.

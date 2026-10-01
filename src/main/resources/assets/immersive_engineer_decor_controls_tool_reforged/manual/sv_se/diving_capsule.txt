@@ -1,0 +1,5 @@
+Dykluftkapsel
+Nödluftsreserv
+<&recipe>Dykarkapseln är en nödreserv av luft för undervattensarbete.<br>
+<br>
+Använd den manuellt för att återställa luft. I förrådet aktiveras den automatiskt när luften nästan är slut och går sedan på nedkylning. Ta med den till översvämmade gruvor och nedsänkta rör.

@@ -1,0 +1,7 @@
+Sirena d’alarma
+Indicació de senyal
+<&recipe>La sirena dalarma és un indicador de redstone muntat a la cara dun bloc. El seu estat alimentat seguix el senyal del bloc on està fixada.<br>
+<br>
+Fixeu-la a una cara sòlida i alimenteu-la per vigilar portes, màquines, alarmes o panells.<br>
+<br>
+La sirena sactualitza una vegada per segon mentre el senyal està actiu.

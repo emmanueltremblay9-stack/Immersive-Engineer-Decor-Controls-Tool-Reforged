@@ -1,0 +1,5 @@
+Piec do topienia minerałów
+Kompaktowa jednostka przetwórcza
+<&recipe>Piec do topienia minerałów przetwarza minerały w wysokiej temperaturze, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Dostarcz bloki mineralne i energię do topienia w wysokiej temperaturze.<br>

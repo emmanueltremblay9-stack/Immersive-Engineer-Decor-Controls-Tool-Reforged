@@ -1,0 +1,5 @@
+Vékony oszlop feje
+Tartóvázelem
+<&recipe>Az egyenes vékony acéloszlop feje/talpa látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>

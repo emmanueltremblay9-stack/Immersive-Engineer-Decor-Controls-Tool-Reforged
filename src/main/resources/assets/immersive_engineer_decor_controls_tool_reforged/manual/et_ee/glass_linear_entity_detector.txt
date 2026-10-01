@@ -1,0 +1,7 @@
+Klaasist joontuvastaja
+Signaali tuvastamine
+<&recipe>Olemituvastaja jälgib lähedast liikumist ilma nähtava põrandaplaadita.<br>
+<br>
+Kasutamine: Ühenda uste, lampide, häirete või masinate turvablokeeringutega.<br>
+<br>
+Märkus: Skannib väikest ala ploki ümber.

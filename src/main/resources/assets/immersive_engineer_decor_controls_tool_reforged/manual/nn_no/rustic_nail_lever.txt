@@ -1,0 +1,7 @@
+Rustikk spikarspak
+Redstone-styring
+<&recipe>Ein kompakt beteningsdel gjev fabrikkbygg eit tydeleg redstone-brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå utgangen med full styrke av eller på for krinsar i nærleiken.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.

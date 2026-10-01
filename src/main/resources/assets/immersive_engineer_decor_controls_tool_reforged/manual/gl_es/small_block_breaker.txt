@@ -1,0 +1,5 @@
+Rompebloques
+Equipamento de planta
+<&recipe>O rompebloques pequeno é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: orienta a cara de traballo cara ao bloque que queiras retirar.<br>

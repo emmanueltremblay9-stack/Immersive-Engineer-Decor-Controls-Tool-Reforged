@@ -1,0 +1,7 @@
+Analog linkmodtager
+Forbundet styring
+<&recipe>En linkmodtager giver kontrolpaneler et synligt fjernmål.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Brug perlen, mens du sniger, for at aktivere modtageren på afstand.<br>
+<br>
+Bemærk: Denne modtager udsender et redstonesignal med fuld styrke, når den udløses.

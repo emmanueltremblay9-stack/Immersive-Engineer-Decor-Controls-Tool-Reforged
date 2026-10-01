@@ -1,0 +1,7 @@
+Sémaphore de campègne
+Indicacion du signa
+<&recipe>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.

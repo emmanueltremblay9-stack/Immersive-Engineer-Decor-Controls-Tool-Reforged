@@ -1,0 +1,5 @@
+Doras-beòil iarainn
+Puing-ruigsinn gnìomhachais
+<&recipe>Bheir am bloca seo puing-ruigsinn làidir do sheòmraichean-seirbheis, slocan, mullaichean agus cuairteachain innealan.<br>
+<br>
+Cleachdadh: stàlaich e far a bheil fosgladh cumail suas fo smachd a dhìth san togalach.<br>

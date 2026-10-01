@@ -1,0 +1,7 @@
+Detector de entități
+Detectarea semnalelor
+<&recipe>Un detector de entități urmărește mișcarea din apropiere fără o placă vizibilă pe podea.<br>
+<br>
+Utilizare: Conectează-l la uși, lămpi, alarme sau sisteme de interblocare a mașinilor.<br>
+<br>
+Observații: Scanează o zonă mică din jurul blocului.

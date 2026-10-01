@@ -1,0 +1,7 @@
+Segnale a intervalli in vetro
+Impulso temporizzato
+<&recipe>Un temporizzatore compatto fornisce un impulso programmato di redstone.<br>
+<br>
+Uso: impiegalo dove un piccolo meccanismo richiede un controllo periodico o ritardato.<br>
+<br>
+Note: usa impulsi programmati di redstone.

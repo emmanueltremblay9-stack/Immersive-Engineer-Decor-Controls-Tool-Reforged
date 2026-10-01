@@ -1,0 +1,5 @@
+Aserong Suportang Dobleng T
+Bahagi ng balangkas
+<&recipe>Nagbibigay ang blokeng ito ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>

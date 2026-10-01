@@ -1,0 +1,7 @@
+Griene knipperjende LED
+Sinjaalwerommelding
+<&recipe>In kompakte oanwizer makket ferburgen redstone sichtber yn de fabryk.<br>
+<br>
+Gebrûk: Slút him njonken it sinjaal oan om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: Feroaret fan steat as der redstone-enerzjy tichteby is.

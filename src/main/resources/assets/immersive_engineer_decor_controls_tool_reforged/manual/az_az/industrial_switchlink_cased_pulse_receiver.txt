@@ -1,0 +1,7 @@
+Gövdəli impuls qəbuledicisi
+Bağlantılı idarəetmə
+<&recipe>Gövdəli bağlantılı impuls qəbuledicisi uzaq panellərə qısa qızıl daş işəsalma siqnalı verir.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Qısa impuls vermək üçün sağ klikləyin və ya bağlanmış incini işə salın.<br>
+<br>
+Qeydlər: İmpuls təyin edilmiş müddətdən sonra öz-özünə sıfırlanır.

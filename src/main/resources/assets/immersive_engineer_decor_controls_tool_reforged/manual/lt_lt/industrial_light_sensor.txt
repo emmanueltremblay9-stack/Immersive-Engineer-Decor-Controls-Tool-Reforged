@@ -1,0 +1,7 @@
+Apšvietimo jutiklis
+Signalo jutimas
+<&recipe>Apšvietimo jutiklis paverčia vietinį šviesumą redstono valdymo signalu.<br>
+<br>
+Naudojimas: naudok automatinėms lempoms, langinėms ir matomumo grandinėms.<br>
+<br>
+Pastabos: siunčia signalą, kai neapdorotas šviesumo lygis yra 8 arba didesnis.

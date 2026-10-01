@@ -1,0 +1,108 @@
+Průmyslové stavby
+Tovární zdi a lemování
+Obecné stavební vybavení zahrnuje dveře, okna, světla, výstražné cedule, lemování a konstrukční díly, které nepatří do žádné užší sekce.<br>
+<br>
+Tyto stránky využij pro tovární místnosti, servisní chodby, značení nebezpečí a praktické průmyslové detaily.
+<np>
+Železné baňkové světlo
+Kompaktní pracovní světlo
+<&iron_bulb_light>Tento blok poskytuje kompaktní průmyslové osvětlení chodeb, lávek a pracovních prostor.<br>
+<br>
+Použití: Připevni jej na strop, stěny nebo hrany tam, kde místnost potřebuje jasné pracovní osvětlení.<br>
+<np>
+Světlo na hranu stropu
+Kompaktní pracovní světlo
+<&iron_ceiling_edge_light>Tento blok poskytuje kompaktní průmyslové osvětlení chodeb, lávek a pracovních prostor.<br>
+<br>
+Použití: Připevni jej na strop, stěny nebo hrany tam, kde místnost potřebuje jasné pracovní osvětlení.<br>
+<np>
+Zapuštěné světlo na hranu podlahy
+Kompaktní pracovní světlo
+<&iron_floor_edge_light>Tento blok poskytuje kompaktní průmyslové osvětlení chodeb, lávek a pracovních prostor.<br>
+<br>
+Použití: Připevni jej na strop, stěny nebo hrany tam, kde místnost potřebuje jasné pracovní osvětlení.<br>
+<np>
+Zapuštěné světlo
+Kompaktní pracovní světlo
+<&iron_inset_light>Tento blok poskytuje kompaktní průmyslové osvětlení chodeb, lávek a pracovních prostor.<br>
+<br>
+Použití: Připevni jej na strop, stěny nebo hrany tam, kde místnost potřebuje jasné pracovní osvětlení.<br>
+<np>
+Cedule „Obecné varování“
+Značka nebezpečí
+<&sign_caution>Cedule „Obecné varování“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule nebezpečí
+Značka nebezpečí
+<&sign_danger>Cedule „Pozor, opravdu nebezpečné místo“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Ozdobná cedule
+Značka nebezpečí
+<&sign_decor>Popisovací cedule (Engineer's Decor) označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule obranného systému
+Značka nebezpečí
+<&sign_defense>Cedule „Pozor, obranný systém“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule východu
+Značka nebezpečí
+<&sign_exit>Tato cedule označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule „Nebezpečí požáru“
+Značka nebezpečí
+<&sign_firehazard>Cedule „Nebezpečí požáru“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule „Pozor, mráz“
+Značka nebezpečí
+<&sign_frost>Cedule „Pozor, mráz“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule horkého povrchu
+Značka nebezpečí
+<&sign_hotsurface>Cedule „Pozor, horký povrch“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule vodiče pod napětím
+Značka nebezpečí
+<&sign_hotwire>Cedule „Pozor, vodič pod napětím“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule „Nebezpečí laseru“
+Značka nebezpečí
+<&sign_laser>Cedule „Nebezpečí laseru“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule magického nebezpečí
+Značka nebezpečí
+<&sign_magichazard>Cedule „Pozor, magické nebezpečí“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule magnetického pole
+Značka nebezpečí
+<&sign_magneticfield>Cedule „Pozor, silné magnetické pole“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>
+Cedule „Nebezpečí radiace“
+Značka nebezpečí
+<&sign_radioactive>Cedule „Nebezpečí radiace“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>
+<np>

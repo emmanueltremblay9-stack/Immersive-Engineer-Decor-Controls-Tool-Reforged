@@ -1,0 +1,5 @@
+Markboard "Fire Risk"
+Risk marker
+<&recipe>The Fire Risk Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>

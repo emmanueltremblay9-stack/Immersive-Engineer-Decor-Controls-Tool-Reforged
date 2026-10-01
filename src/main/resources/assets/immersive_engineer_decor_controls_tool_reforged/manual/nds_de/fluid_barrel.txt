@@ -1,0 +1,5 @@
+Flüssigkeitsfatt
+Deelen för Flüssigkeitsleitungen
+<&recipe>Dit Deel is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Sett dat dor, wo Röhren oder Emmers an de Tanksiet rankaamt.<br>

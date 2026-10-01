@@ -1,0 +1,99 @@
+Ostilhoù an ijinour
+Dafar atalier hezoug
+Strollad Ostilhoù an ijinour a ouzhpenn binvioù dorn, merkerioù mengleuz, traoù a zifrae da veveziñ, boued war al lec'h ha skoazellioù bihan da dretañ dafar er memes levr hag ar bloc'hoù kinklañ ha reoliñ.<br>
+<br>
+Ar binvioù-mañ zo evit labourat pell diouzh un atalier pourvezet mat: merkit an hent, dougit pourvezioù, en em adkemerit goude fazioù hag echuit labourioù tretañ bihan war al lec'h.
+<np>
+Ostilh REDIA
+Ostilh goloet gant diamantoù
+<&redia_tool>An ostilh REDIA zo ur benveg padus evit labourat an douar buan war al lec'h. Implijit anezhañ war zouar a c'haller labourat evit ober douar troet.<br>
+<br>
+Implijit anezhañ ouzh ur fas solut en ur zerc'hel etevioù-gouloù ganeoc'h, evit lakaat ur merk etev-gouloù eus ho renabl hep uzañ REDIA. Labourat an douar, touzañ, labour ar vouc'hal ha diskar gwez a vevez padusted.
+<np>
+Morzhol frikañ mengleuz
+Ostilh-dorn
+<&crushing_hammer>Ostilh dorn evit labour abred gant houarn hag aour.<br>
+<br>
+Implij: Gant houarn kriz, aour kriz, mengleuz houarn, mengleuz houarn ardoaz don, mengleuz aour pe mengleuz aour ardoaz don e reer poultr houarn pe aour Immersive Engineering. Koll a ra padusted ha distreiñ d'ar rouedad betek terriñ.<br>
+<br>
+Higanañ a ra ivez o toullañ ha kas ar pal da-dreñv er stourm tost.
+<np>
+Heulier
+Merk lec'h miret
+<&tracker>Mirout a ra lec'h ur bloc'h en elfenn.<br>
+<br>
+Implij: Klikañ war ur bloc'h evit ar vent hag an daveennoù. Ar skoazell a ziskouez al lec'h. Stouiñ a skarz anezhañ.<br>
+<br>
+Merkañ mekanikoù, brankoù toull, reolerezhioù a-bell pe savadurioù diechu.
+<np>
+Glaou Ariadne
+Merker hent mengleuz
+<&ariadne_coal>Glaou Ariadne a laka biroù du buan war fasoù solut ur vengleuz. Implijit anezhañ war ur fas solut evit merkañ an dro, an hent er-maez pe ar skourr a-heul. Eizh tu a vez degemeret war ar fas kliket, an tuioù a-veskell en o zouez.<br>
+<br>
+Glaou Ariadne zo ur benveg merkañ adimplijadus gant 100 implij. Pep merk lakaet mat a vevez ur poent padusted. Nac'hañ a ra ar fasoù na glotont ket e-lec'h uzañ an elfenn.
+<np>
+Pakadenn stim emgefreek
+Sanker trumm
+<&stimpack>Ostilh adkavout evit ratreañ dañjerus.<br>
+<br>
+Implij: Dre zorn e pare, e warez hag e vuana berr. Er renabl e loc'h gant yec'hed izel ha goude e tiskuizh.<br>
+<br>
+Dougen a-raok uhelderioù, neud tredan dizolo pe mengleuzioù dañjerus.
+<np>
+Sac'h kousket
+Ardivink diskuizh dougen
+<&sleeping_bag>Ardivink ouzh an amzer evit labour pell eus ur gwele.<br>
+<br>
+Implij: Noz er Bed Uhel, diskuizhañ betek ar mintin hep lakaat na fiñval an adganidigezh.<br>
+<br>
+Nac'hañ a ra an deiz, euzhviled tost hag ar mentoù fall. Pep diskuizh a higana anezhañ.
+<np>
+Boest materyaloù
+Pourvezioù sevel
+<&material_box>Dougen ur bern bras eus ur materyal boutin, digemm hag a c'haller berniañ.<br>
+<br>
+Implij: Boest en dorn pennañ ha materyal en egile da gargañ. Dorn all goullo a denn ur bern.<br>
+<br>
+Mirout 512 elfenn eus ur seurt; nac'hañ boestoù e-barzh, ostilhoù na vez ket berniet ha bernioù kemmet. An endalc'had zo er skoazell.
+<np>
+Kapsulenn aer spluj
+Miret aer trumm
+<&diving_capsule>Aer trumm evit labour dindan dour.<br>
+<br>
+Implij: Adkargañ aer dre zorn. Er renabl e loc'h emgefreek pa vez an aer hogos echu, ha goude e tiskuizh.<br>
+<br>
+Dougen evit mengleuzioù beuzet, tuellennoù dindan dour ha kambr ar pompoù.
+<np>
+Gwasker barrennoù Muslee
+Gwasker boued
+<&musli_bar_press>Treuzfurmiñ boued boutin da lodennoù maez stank.<br>
+<br>
+Implij: Bara, aval hag had gwinizh, melon, koulourdrenn, betrabez pe kanab greantel. Ur gwaskadenn vat a implij unan eus pep tra, a wiria ar plas, a ra pevar barrenn hag a zistruj ar gwasker.<br>
+<br>
+Ma vank ur dra pe plas, netra ne vez implijet.
+<np>
+Barrenn energiezh Muslee Melange
+Predig stal buan
+<&musli_bar>Boued stank diwar vara, had ha frouezh.<br>
+<br>
+Implij: Debriñ pa lakait reolerezhioù, tuellennoù, savennoù pe linennoù mekanikoù hir.
+<np>
+Gwaskerez spered
+Kondañsator skiant-prenet
+<&charged_lapis_squeezer>Ar waskerez spered a dro ul Lapis Lazuli hag ul live skiant-prenet eus ho renabl da lapis karget.<br>
+<br>
+Pep treuzfurmadur reizh a ra poan, a gresk skuizhder an implijer hag a zegas naon, hag a dall anezhañ e-pad un amzer verr. Nac'hañ a ra mont en-dro hep lapis, hep XP pe pa'z eo an implijer re dost d'ar marv.
+<np>
+Lapis karget
+Skiant-prenet stoket
+<&charged_lapis>Al lapis karget a vir ul live skiant-prenet. Implijit anezhañ evit adkavout al live, dilemel an efedoù oberiant hag adkavout un tamm yec'hed.<br>
+<br>
+Fardit ur waskerez spered da gentañ. Al lapis karget a vez graet en ur implijout ar benveg-se gant lapis hag XP hegerz.
+<np>
+Greun houarn bras
+Dafar ostilhoù ijinour implijet er strollad rekipeoù adsavet.
+<&iron_grit>Gallout a reer euziñ anezho da<br>varrennoù houarn, met ne glotont<br>ket gant tretañ dafar kempleshoc'h.
+<np>
+Greun aour bras
+Dafar ostilhoù ijinour implijet er strollad rekipeoù adsavet.
+<&gold_grit>Gallout a reer euziñ anezho da<br>varrennoù aour, met ne glotont<br>ket gant tretañ dafar kempleshoc'h.

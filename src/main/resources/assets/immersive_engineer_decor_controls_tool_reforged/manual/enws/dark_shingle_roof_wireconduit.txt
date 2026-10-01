@@ -1,0 +1,5 @@
+Wire Conduit for a Roof
+Weathered Fitting for a Roof
+<&recipe>The Wire Conduit for a Dark Shingle Roof forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>

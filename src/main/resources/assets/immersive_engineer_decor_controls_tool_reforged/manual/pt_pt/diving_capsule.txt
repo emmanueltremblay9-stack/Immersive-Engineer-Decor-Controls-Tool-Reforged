@@ -1,0 +1,5 @@
+Cápsula de ar para mergulho
+Reserva de ar de emergência
+<&recipe>A cápsula de ar é uma reserva de emergência para trabalhos subaquáticos.<br>
+<br>
+Use-a manualmente para recuperar ar. No inventário, ela também se aciona automaticamente quando o ar está quase acabando e então entra em recarga. Leve-a a minas alagadas, tubulações submersas e salas de bombas.

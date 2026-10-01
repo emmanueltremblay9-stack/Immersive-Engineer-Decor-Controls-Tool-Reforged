@@ -1,0 +1,5 @@
+Congelador de aqua
+Unità compata de lavorazzion
+<&recipe>El Congelador de aqua el fa lavor piscinin de rafredament per impiant de fluid cont energia.<br>
+<br>
+Dà aqua e energia per fà giazz a stad successiv.<br>

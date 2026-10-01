@@ -1,0 +1,7 @@
+Intervaltimer
+Tidsstyret puls
+<&recipe>En kompakt timerkontakt giver en tidsindstillet redstonepuls.<br>
+<br>
+Brug: Brug den, hvor en lille mekanisme kræver periodisk eller forsinket styring.<br>
+<br>
+Bemærk: Bruger tidsindstillede redstonepulser.

@@ -1,0 +1,7 @@
+LED i bardhë pulsues
+Tregim gjendjeje sinjali
+<&recipe>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.

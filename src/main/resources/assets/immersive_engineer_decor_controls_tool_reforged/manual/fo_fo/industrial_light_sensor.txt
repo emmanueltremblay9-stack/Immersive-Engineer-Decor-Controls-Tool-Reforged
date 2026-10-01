@@ -1,0 +1,7 @@
+Ljósnemi
+Teknaskynjan
+<&recipe>Ein ljósnemi ger staðbundnu ljósstyrkina til reyðgrýtisstýring.<br>
+<br>
+Nýtsla: Brúka hann til sjálvvirkandi lampur, lúkur og sýnisrásir.<br>
+<br>
+Viðmerking: Gevur orku við óviðgjørdari ljósstyrki 8 ella hægri.

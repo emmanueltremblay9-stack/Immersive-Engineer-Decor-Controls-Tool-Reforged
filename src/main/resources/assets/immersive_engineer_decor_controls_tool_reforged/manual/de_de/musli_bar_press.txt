@@ -1,0 +1,7 @@
+Muslee-Riegelpresse
+Lebensmittelpresse
+<&recipe>Die Muslee-Riegelpresse verwandelt übliche Lebensmittel in kompakte Feldrationen.<br>
+<br>
+Benutzung: Brot, einen Apfel und Weizen-, Melonen-, Kürbis-, Rote-Bete- oder Industriehanfsamen mitführen und die Presse benutzen. Ein erfolgreicher Vorgang verbraucht je eine Zutat, prüft den Ausgabeplatz, erzeugt vier Muslee-Riegel und beschädigt die Presse.<br>
+<br>
+Fehlt eine Zutat oder ist kein Platz vorhanden, wird nichts verbraucht.

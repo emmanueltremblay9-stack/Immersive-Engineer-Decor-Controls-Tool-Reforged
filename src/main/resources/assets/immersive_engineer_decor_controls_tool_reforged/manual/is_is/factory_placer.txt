@@ -1,0 +1,5 @@
+Verksmiðjukubbaleggjari
+Verkstæðisbúnaður
+<&recipe>Þessi kubbur leggur kubba úr innri birgðum þegar hann er virkjaður.<br>
+<br>
+Notkun: Beindu vinnuhliðinni að markrýminu og fylltu hann af staflanlegum hlutum sem má leggja.<br>

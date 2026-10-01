@@ -1,0 +1,7 @@
+Gekleurd gevoelig glas
+Signaalglas
+<&recipe>Een glasblok dat op redstone reageert houdt het zicht vrij en toont tegelijk de signaaltoestand.<br>
+<br>
+Gebruik: gebruik het in ramen van controlekamers, verlichte panelen en beschermende fabrieksbeglazing.<br>
+<br>
+Opmerking: verandert van toestand door een redstonesignaal in de buurt.

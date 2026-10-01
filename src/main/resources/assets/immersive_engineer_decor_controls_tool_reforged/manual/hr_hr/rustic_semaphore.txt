@@ -1,0 +1,7 @@
+Rustikalni semafor
+Povratna informacija o signalu
+<&recipe>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.

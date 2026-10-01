@@ -1,0 +1,7 @@
+Detector de tormentes eléctriques
+Deteición de señales
+<&recipe>Un sensor de tormentes eléctriques activa avisos cuando hai truenos.<br>
+<br>
+Usu: colócalu al cielu abiertu y conéctalu a llámpares o alarmes.<br>
+<br>
+Notes: rique truenos y accesu al cielu.

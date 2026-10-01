@@ -1,0 +1,5 @@
+Pavë de vieû bouéz d'uzine
+Vieû bouéz d'atelier
+<&recipe>Çu blloqe ajoute du vieû bouéz d'atelier pour les sols, les marches, les portes e des bordures intérieures chaodeuses.<br>
+<br>
+Empllai : Empllayéz-le pour de vieû sols d'atelier, des degrës, des portes e des bordures.<br>

@@ -1,0 +1,7 @@
+Auto Stim-Pack Thing
+Emergency pokey injector
+<&recipe>Auto Stim Pack iz emergency healz tool fer danger maintenance.<br>
+<br>
+How 2 use: Use manually 2 heal, get brief protect, an short speed boost. In inventoree it can also trigger automatic at low health, den enter cooldown.<br>
+<br>
+Keep one handy before testin high places, exposed wiring, or hostile mine routez, meow.

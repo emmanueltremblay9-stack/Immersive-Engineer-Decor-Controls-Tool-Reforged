@@ -1,0 +1,5 @@
+Kapsul Udara Selam
+Simpanan udara kecemasan
+<&recipe>Kapsul udara selam ialah bekalan udara kecemasan untuk kerja bawah air.<br>
+<br>
+Gunakan secara manual untuk memulihkan udara. Dalam inventori, ia tercetus automatik apabila udara hampir habis lalu memasuki tempoh bertenang. Bawa ke lombong banjir dan paip tenggelam.

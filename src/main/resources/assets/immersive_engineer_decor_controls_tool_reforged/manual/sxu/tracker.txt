@@ -1,0 +1,7 @@
+Schbursuchor
+Geschbeichorde Ordsmargierung
+<&recipe>De Tracker wohrt en Blocksteed in dat Item.<br>
+<br>
+Klick en Block för Dimension un Koordinaten. De Tipp toont de Steed. Bruuk em sluukend, üm dat Teel to löschen.<br>
+<br>
+Markeer Maschinen, Tunnels, Feernstüern oder unfardige Buusteden.

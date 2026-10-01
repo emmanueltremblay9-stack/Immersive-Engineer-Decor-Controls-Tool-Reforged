@@ -1,0 +1,5 @@
+Maquina de mólzer
+Equipament utilitari d’obrador
+<&recipe>La Pichona maquina de mólzer es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : pausa-la près de las vacas e prevei un mejan de tirar los recipients de lach o lo fluid.<br>

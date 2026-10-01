@@ -1,0 +1,7 @@
+Spårare
+Lagrad positionsmarkering
+<&recipe>Spåraren lagrar ett blocks position i föremålet.<br>
+<br>
+Klicka på ett block för att spara dimension och koordinater. Verktygstipset visar positionen. Smyganvänd för att rensa målet.<br>
+<br>
+Markera maskiner, tunnlar, fjärrkontroller eller oavslutade byggen.

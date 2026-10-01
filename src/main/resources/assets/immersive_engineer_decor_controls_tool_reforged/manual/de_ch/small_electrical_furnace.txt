@@ -1,0 +1,5 @@
+Elektroofe
+Kompakti Verarbeitigseinheit
+<&recipe>De Elektroofe erledigt FE-betriebeni Schmelzarbeite uf wenig Werkstattflächi.<br>
+<br>
+Verwendig: Füehr FE-Energie und passends Schmelzguet zue.<br>

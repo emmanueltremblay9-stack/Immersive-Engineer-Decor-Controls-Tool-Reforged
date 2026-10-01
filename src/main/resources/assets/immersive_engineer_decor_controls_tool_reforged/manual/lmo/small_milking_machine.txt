@@ -1,0 +1,5 @@
+Machina de molger
+Arnea de servizzi per la fabrica
+<&recipe>La Piscinina machina de molger l’è un bloch de servizzi per la fabrica che el serviss a fabregà, conservà, mett sgiò, romp, catà su o fà piscinina automazzion.<br>
+<br>
+Metela vesin a i vache e dagh una manera de tirà foeura i contenidor de lacc o el fluid.<br>

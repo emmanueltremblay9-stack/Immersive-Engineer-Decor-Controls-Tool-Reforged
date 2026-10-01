@@ -1,0 +1,7 @@
+Şüşə zolaqlı göstərici
+Siqnal göstəricisi
+<&recipe>İdarəetmə otağı üçün yığcam ölçü cihazı qızıl daş gücünü paneldə aydın göstərici kimi göstərir.<br>
+<br>
+İstifadə: Yaxındakı qızıl daş gücünün bir baxışda yoxlanıla biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş gücünü 0 ilə 15 arasında oxuyur.

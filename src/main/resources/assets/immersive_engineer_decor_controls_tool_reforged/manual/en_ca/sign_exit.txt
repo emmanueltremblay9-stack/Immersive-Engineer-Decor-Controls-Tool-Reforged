@@ -1,0 +1,5 @@
+Exit Sign
+Hazard marker
+<&recipe>This sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>

@@ -1,0 +1,5 @@
+Suport d’acer de doble T
+Peça d’estructura
+<&recipe>Aquest bloc aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pilars i vores de plataformes.<br>

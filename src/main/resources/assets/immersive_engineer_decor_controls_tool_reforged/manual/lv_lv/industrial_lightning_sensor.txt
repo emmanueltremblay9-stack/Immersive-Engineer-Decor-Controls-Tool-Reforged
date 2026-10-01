@@ -1,0 +1,7 @@
+Negaisa detektors
+Signāla uztveršana
+<&recipe>Negaisa sensors darbina brīdinājumus pērkona laikā.<br>
+<br>
+Lietošana: novieto zem atklātām debesīm un pieslēdz lampām vai trauksmēm.<br>
+<br>
+Piezīmes: vajadzīgs pērkons un piekļuve debesīm.

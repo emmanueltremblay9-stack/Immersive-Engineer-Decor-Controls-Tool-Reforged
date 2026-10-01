@@ -1,0 +1,5 @@
+Fluid Funnel
+Fluid line hardware
+<&recipe>The Small Fluid Funnel is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Put it below the fluid collection point and route its stored contents into tanks or lower pipework.<br>

@@ -1,0 +1,7 @@
+Alarmsirene
+Signalindikator
+<&recipe>Alarmsirenen er en redstone-indikator monteret på en blokside. Dens strømtilstand følger signalet fra blokken, den sidder på.<br>
+<br>
+Brug: Monter på en fast side og giv strøm for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Sirenen opdateres én gang i sekundet, mens signalet er aktivt.

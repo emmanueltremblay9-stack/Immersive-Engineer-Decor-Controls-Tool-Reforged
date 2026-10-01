@@ -1,0 +1,7 @@
+Tolok Tiub Kaca
+Tolok isyarat
+<&recipe>Tolok bilik kawalan padat memaparkan kekuatan redstone dengan bacaan panel yang jelas.<br>
+<br>
+Penggunaan: Pasang di tempat kuasa redstone bersebelahan dapat diperiksa sepintas lalu.<br>
+<br>
+Nota: Membaca kekuatan redstone berdekatan dari 0 hingga 15.

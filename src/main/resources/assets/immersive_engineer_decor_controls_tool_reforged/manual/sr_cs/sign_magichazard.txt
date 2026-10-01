@@ -1,0 +1,5 @@
+Znak magijske opasnosti
+Oznaka opasnosti
+<&recipe>Znak „Oprez, magijska opasnost“ obeležava opasnosti, izlaze i radne zone jasnom oznakom za fabričku bezbednost.<br>
+<br>
+Upotreba: postavi ga pored opasnosti, izlaza, mašina i zabranjenih zona.<br>

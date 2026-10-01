@@ -1,0 +1,7 @@
+Glass Contact Plate
+Pressure pulse
+<&recipe>A contact switch sends a short signal from floor or trapdoor movement.<br>
+<br>
+Usage: Place it where entities pass through a service aisle, loader, or guarded route.<br>
+<br>
+Notes: Pulses briefly after entity contact.

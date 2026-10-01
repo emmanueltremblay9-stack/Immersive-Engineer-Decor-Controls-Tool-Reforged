@@ -1,0 +1,5 @@
+Làmina de formigó armat
+Formigó reforçat
+<&recipe>Este bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i sòls de molls de càrrega.<br>
+<br>
+Ús: usa’l davall de les màquines, al llarg dels corredors de servici o on la construcció necessite una base reforçada.<br>

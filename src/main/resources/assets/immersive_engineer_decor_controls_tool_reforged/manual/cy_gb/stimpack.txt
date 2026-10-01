@@ -1,0 +1,7 @@
+Pecyn stim awtomatig
+Chwistrellwr brys
+<&recipe>Offeryn adfer brys ar gyfer cynnal a chadw peryglus.<br>
+<br>
+Defnydd: Â llaw mae'n iacháu, amddiffyn a chyflymu'n fyr. Yn y rhestr mae'n cychwyn ar iechyd isel ac yna'n oeri.<br>
+<br>
+Cariwch cyn uchderau, gwifrau agored neu fwyngloddiau peryglus.

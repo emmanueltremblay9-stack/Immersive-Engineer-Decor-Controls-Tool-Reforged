@@ -1,0 +1,5 @@
+Laborovve
+Klein Verarbeitungseinheit
+<&recipe>Dä Laborovve deit kleine Schmelzarbeite met festem Brennstoff op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Nimm feste Brennstoff för kleine Schmelzladunge.<br>

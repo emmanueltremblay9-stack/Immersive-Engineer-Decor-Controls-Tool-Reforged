@@ -1,0 +1,5 @@
+Folyadékhordó
+Folyadékvezeték-szerelvények
+<&recipe>Ez kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: olyan helyre tedd, ahol csövek vagy vödrök elérik a tartály oldalát.<br>

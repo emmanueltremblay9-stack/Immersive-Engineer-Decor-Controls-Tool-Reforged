@@ -1,0 +1,5 @@
+Tolva de fábrica
+Utilidad de taller
+<&recipe>Este bloque mueve pilas de objetos mediante una carcasa industrial más compacta.<br>
+<br>
+Uso: Oriéntalo hacia la línea de inventarios y ajusta el alcance, el tamaño de pila, los tiempos y el modo de redstone en su pantalla.<br>

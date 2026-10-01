@@ -1,0 +1,5 @@
+Piec elektryczny
+Kompaktowa jednostka przetwórcza
+<&recipe>Piec elektryczny wykonuje niewielkie zadania przetapiania zasilane FE, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Dostarcz FE i odpowiedni materiał do przetopienia.<br>

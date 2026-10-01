@@ -1,0 +1,108 @@
+Construcción industrial
+Paredes y remates de fábrica
+Los elementos de construcción generales incluyen puertas, ventanas, luces, señales de advertencia, remates y piezas estructurales que no pertenecen a una sección más específica.<br>
+<br>
+Consultá estas páginas para salas de fábrica, pasillos de mantenimiento, señalización de peligros y detalles industriales prácticos.
+<np>
+Bombilla de hierro
+Luz compacta de trabajo
+<&iron_bulb_light>Este bloque proporciona iluminación industrial compacta para pasillos, pasarelas y puestos de trabajo.<br>
+<br>
+Uso: Montalo en techos, paredes o bordes donde la sala necesite una iluminación de trabajo clara.<br>
+<np>
+Luz de borde de techo
+Luz compacta de trabajo
+<&iron_ceiling_edge_light>Este bloque proporciona iluminación industrial compacta para pasillos, pasarelas y puestos de trabajo.<br>
+<br>
+Uso: Montalo en techos, paredes o bordes donde la sala necesite una iluminación de trabajo clara.<br>
+<np>
+Lámpara de borde de suelo empotrada
+Luz compacta de trabajo
+<&iron_floor_edge_light>Este bloque proporciona iluminación industrial compacta para pasillos, pasarelas y puestos de trabajo.<br>
+<br>
+Uso: Montalo en techos, paredes o bordes donde la sala necesite una iluminación de trabajo clara.<br>
+<np>
+Luz empotrada
+Luz compacta de trabajo
+<&iron_inset_light>Este bloque proporciona iluminación industrial compacta para pasillos, pasarelas y puestos de trabajo.<br>
+<br>
+Uso: Montalo en techos, paredes o bordes donde la sala necesite una iluminación de trabajo clara.<br>
+<np>
+Señal de precaución general
+Señalización de peligro
+<&sign_caution>La señal de precaución general identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de peligro
+Señalización de peligro
+<&sign_danger>La señal «Atención: zona muy peligrosa» identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal decorativa
+Señalización de peligro
+<&sign_decor>La placa de señalización de Engineer's Decor identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de defensa
+Señalización de peligro
+<&sign_defense>La señal «Atención: sistema de defensa» identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de salida
+Señalización de peligro
+<&sign_exit>Esta señal identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de peligro de incendio
+Señalización de peligro
+<&sign_firehazard>La señal de peligro de incendio identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de peligro de heladas
+Señalización de peligro
+<&sign_frost>La señal de peligro de heladas identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de superficie caliente
+Señalización de peligro
+<&sign_hotsurface>La señal «Atención: superficie caliente» identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de cable con tensión
+Señalización de peligro
+<&sign_hotwire>La señal «Atención: cable con tensión» identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de peligro de láser
+Señalización de peligro
+<&sign_laser>La señal de peligro de láser identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de peligro mágico
+Señalización de peligro
+<&sign_magichazard>La señal «Atención: peligro mágico» identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de campo magnético
+Señalización de peligro
+<&sign_magneticfield>La señal «Atención: campo magnético intenso» identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>
+Señal de peligro radiactivo
+Señalización de peligro
+<&sign_radioactive>La señal de peligro radiactivo identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colocala junto a peligros, salidas, máquinas y zonas restringidas.<br>
+<np>

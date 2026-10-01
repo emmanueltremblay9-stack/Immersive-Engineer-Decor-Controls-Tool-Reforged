@@ -1,0 +1,5 @@
+Pelebur Mineral
+Unit pemrosesan ringkas
+<&recipe>Pelebur mineral menangani pemrosesan mineral bersuhu tinggi dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: masukkan blok mineral dan daya untuk pencairan bersuhu tinggi.<br>

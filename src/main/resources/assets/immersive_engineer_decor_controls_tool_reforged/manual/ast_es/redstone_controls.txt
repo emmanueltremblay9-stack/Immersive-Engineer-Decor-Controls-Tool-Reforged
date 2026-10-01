@@ -1,0 +1,789 @@
+Controles de redstone
+Mididores y componentes de señalización
+Los componentes de control convierten la redstone oculta en paneles, sensores, indicadores, interruptores, alarmes y componentes de señal enllazaos fáciles d’interpretar na fábrica.<br>
+<br>
+Usa estes páxines al construyir puestos d’operador, paneles de señales, circuitos de seguranza y controles remotos.
+<np>
+Diana de fleches
+Pulsu momentaneu
+<&arrow_target>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Sensor de puerta
+Control por redstone
+<&door_sensor_switch>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón d’ascensor
+Control por redstone
+<&elevator_button>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Botón de vidru
+Control por redstone
+<&glass_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón de vidru
+Control por redstone
+<&glass_small_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón táctil de vidru
+Control por redstone
+<&glass_touch_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón de máquina
+Control por redstone
+<&industrial_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón
+Control por redstone
+<&industrial_double_pole_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón de máquina con proteición
+Control por redstone
+<&industrial_fenced_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón de golpe
+Control por redstone
+<&industrial_knock_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón antiguu adornáu
+Control por redstone
+<&oldfancy_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón antiguu adornáu
+Control por redstone
+<&oldfancy_small_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón antiguu adornáu con cadena
+Pulsu momentaneu
+<&oldfancy_spring_reset_chain>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón rústicu
+Control por redstone
+<&rustic_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón rústicu de clavu
+Control por redstone
+<&rustic_nail_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón pequeñu rústicu
+Control por redstone
+<&rustic_small_button>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Botón rústicu con cadena
+Pulsu momentaneu
+<&rustic_spring_reset_chain>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.
+<np>
+Placa de contautu de vidru
+Pulsu de presión
+<&glass_contact_mat>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Contautu de puerta de vidru
+Pulsu de presión
+<&glass_door_contact_mat>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Alfombra de contautu
+Pulsu de presión
+<&industrial_contact_mat>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Alfombra de contautu pa puertes
+Pulsu de presión
+<&industrial_door_contact_mat>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Detector de pasu
+Deteición de señales
+<&industrial_fallthrough_detector>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Botón de pie
+Control por redstone
+<&industrial_foot_button>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Puerta industrial d’impautu
+Pulsu de presión
+<&industrial_high_sensitive_trapdoor>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Alfombra de contautu d’impautu
+Pulsu de presión
+<&industrial_shock_sensitive_contact_mat>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Trapiella d’impautu
+Pulsu de presión
+<&industrial_shock_sensitive_trapdoor>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Planta enerxética colorada
+Pulsu de presión
+<&red_power_plant>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Placa de presión rústica
+Pulsu de presión
+<&rustic_contact_plate>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Presión rústica de puerta
+Pulsu de presión
+<&rustic_door_contact_plate>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Detector rústicu de cayida
+Deteición de señales
+<&rustic_fallthrough_detector>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Puerta rústica d’impautu
+Pulsu de presión
+<&rustic_high_sensitive_trapdoor>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Placa rústica d’impautu
+Pulsu de presión
+<&rustic_shock_sensitive_plate>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Puerta rústica d’impautu
+Pulsu de presión
+<&rustic_shock_sensitive_trapdoor>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Planta enerxética mariella
+Pulsu de presión
+<&yellow_power_plant>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.
+<np>
+Reló programador diariu de vidru
+Señal de lluz diurna
+<&glass_day_timer>Un interruptor temporizáu sigue la parte diurna del ciclu del mundu.<br>
+<br>
+Usu: úsalu pa llámpares de patiu, contraventanes y controles de fábrica que namái funcionen de día.<br>
+<br>
+Notes: rique una dimensión con lluz del cielu.
+<np>
+Detector d’entidaes de vidru
+Deteición de señales
+<&glass_entity_detector>Un detector d’entidaes vixila’l movimientu cercanu ensin una placa visible nel suelu.<br>
+<br>
+Usu: conéctalu a puertes, llámpares, alarmes o enclavamientos de máquines.<br>
+<br>
+Notes: analiza una zona pequeña alredor del bloque.
+<np>
+Señal d’intervalu de vidru
+Pulsu temporizáu
+<&glass_interval_timer>Un interruptor temporizáu compactu emite un pulsu de redstone programáu.<br>
+<br>
+Usu: úsalu onde un mecanismu pequeñu precise un control periódicu o con retrasu.<br>
+<br>
+Notes: usa pulsos de redstone programaos.
+<np>
+Detector llinial de vidru
+Deteición de señales
+<&glass_linear_entity_detector>Un detector d’entidaes vixila’l movimientu cercanu ensin una placa visible nel suelu.<br>
+<br>
+Usu: conéctalu a puertes, llámpares, alarmes o enclavamientos de máquines.<br>
+<br>
+Notes: analiza una zona pequeña alredor del bloque.
+<np>
+Detector de bloques
+Deteición de señales
+<&industrial_block_detector>Un detector de bloques comprueba si l’espaciu que tien delantre ta ocupáu.<br>
+<br>
+Usu: apúntalu a la cara de máquina, reserva o espaciu protexíu que quieras vixilar.<br>
+<br>
+Notes: emite enerxía cuando’l bloque que tien delantre nun ye aire.
+<np>
+Reló programador diariu
+Señal de lluz diurna
+<&industrial_day_timer>Un interruptor temporizáu sigue la parte diurna del ciclu del mundu.<br>
+<br>
+Usu: úsalu pa llámpares de patiu, contraventanes y controles de fábrica que namái funcionen de día.<br>
+<br>
+Notes: rique una dimensión con lluz del cielu.
+<np>
+Detector d’entidaes
+Deteición de señales
+<&industrial_entity_detector>Un detector d’entidaes vixila’l movimientu cercanu ensin una placa visible nel suelu.<br>
+<br>
+Usu: conéctalu a puertes, llámpares, alarmes o enclavamientos de máquines.<br>
+<br>
+Notes: analiza una zona pequeña alredor del bloque.
+<np>
+Temporizador d’intervalos
+Pulsu temporizáu
+<&industrial_interval_timer>Un interruptor temporizáu compactu emite un pulsu de redstone programáu.<br>
+<br>
+Usu: úsalu onde un mecanismu pequeñu precise un control periódicu o con retrasu.<br>
+<br>
+Notes: usa pulsos de redstone programaos.
+<np>
+Sensor de lluz
+Deteición de señales
+<&industrial_light_sensor>Un sensor de lluz convierte’l brillu local en control por redstone.<br>
+<br>
+Usu: úsalu pa llámpares automátiques, contraventanes y circuitos de visibilidá.<br>
+<br>
+Notes: emite enerxía con un nivel de brillu brutu de 8 o más.
+<np>
+Detector de tormentes eléctriques
+Deteición de señales
+<&industrial_lightning_sensor>Un sensor de tormentes eléctriques activa avisos cuando hai truenos.<br>
+<br>
+Usu: colócalu al cielu abiertu y conéctalu a llámpares o alarmes.<br>
+<br>
+Notes: rique truenos y accesu al cielu.
+<np>
+Detector llinial d’entidaes
+Deteición de señales
+<&industrial_linear_entity_detector>Un detector d’entidaes vixila’l movimientu cercanu ensin una placa visible nel suelu.<br>
+<br>
+Usu: conéctalu a puertes, llámpares, alarmes o enclavamientos de máquines.<br>
+<br>
+Notes: analiza una zona pequeña alredor del bloque.
+<np>
+Sensor de lluvia
+Deteición de señales
+<&industrial_rain_sensor>Un sensor meteorolóxicu convierte la lluvia na so posición en redstone.<br>
+<br>
+Usu: móntalu onde’l bloque d’enriba pueda recibir lluvia.<br>
+<br>
+Notes: comprueba la lluvia enriba del sensor.
+<np>
+Interruptor biestable de vidru
+Control por redstone
+<&glass_rotary_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Contautu táctil biestable de vidru
+Control por redstone
+<&glass_touch_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Vidru sensible naranxa
+Vidru de señalización
+<&orange_sensitiveglass>Un bloque de vidru sensible a redstone permite ver al traviés mientres amuesa l’estáu de la señal.<br>
+<br>
+Usu: úsalu en ventanes de sales de control, paneles allumaos y acristalamientos protexíos de fábrica.<br>
+<br>
+Notes: cambia d’estáu según la potencia de redstone cercana.
+<np>
+Vidru sensible lluminoso
+Vidru de señalización
+<&sensitive_glass_block>Un bloque de vidru sensible a redstone permite ver al traviés mientres amuesa l’estáu de la señal.<br>
+<br>
+Usu: úsalu en ventanes de sales de control, paneles allumaos y acristalamientos protexíos de fábrica.<br>
+<br>
+Notes: cambia d’estáu según la potencia de redstone cercana.
+<np>
+Vidru sensible de colores
+Vidru de señalización
+<&stained_sensitiveglass>Un bloque de vidru sensible a redstone permite ver al traviés mientres amuesa l’estáu de la señal.<br>
+<br>
+Usu: úsalu en ventanes de sales de control, paneles allumaos y acristalamientos protexíos de fábrica.<br>
+<br>
+Notes: cambia d’estáu según la potencia de redstone cercana.
+<np>
+Mididor de barra de vidru
+Mididor de señal
+<&glass_vertical_bar_gauge>Un mididor compactu de sala de control amuesa la intensidá de redstone nuna llectura clara de panel.<br>
+<br>
+Usu: móntalu onde se deba comprobar d’un vistazu la potencia de redstone axacente.<br>
+<br>
+Notes: llee la intensidá de redstone cercana, de 0 a 15.
+<np>
+Mididor analóxicu
+Mididor de señal
+<&industrial_analog_angular_gauge>Un mididor compactu de sala de control amuesa la intensidá de redstone nuna llectura clara de panel.<br>
+<br>
+Usu: móntalu onde se deba comprobar d’un vistazu la potencia de redstone axacente.<br>
+<br>
+Notes: llee la intensidá de redstone cercana, de 0 a 15.
+<np>
+Mididor de voltímetru
+Mididor de señal
+<&industrial_analog_horizontal_gauge>Un mididor compactu de sala de control amuesa la intensidá de redstone nuna llectura clara de panel.<br>
+<br>
+Usu: móntalu onde se deba comprobar d’un vistazu la potencia de redstone axacente.<br>
+<br>
+Notes: llee la intensidá de redstone cercana, de 0 a 15.
+<np>
+Mididor dixital
+Intensidá de señal fácil de lleer
+<&industrial_small_digital_gauge>Un mididor compactu de sala de control amuesa la intensidá de redstone nuna llectura clara de panel.<br>
+<br>
+Usu: móntalu onde se deba comprobar d’un vistazu la potencia de redstone axacente.<br>
+<br>
+Notes: llee la intensidá de redstone cercana, de 0 a 15.
+<np>
+Mididor de tubu de vidru
+Mididor de señal
+<&industrial_tube_gauge>Un mididor compactu de sala de control amuesa la intensidá de redstone nuna llectura clara de panel.<br>
+<br>
+Usu: móntalu onde se deba comprobar d’un vistazu la potencia de redstone axacente.<br>
+<br>
+Notes: llee la intensidá de redstone cercana, de 0 a 15.
+<np>
+Mididor de barra analóxica
+Mididor de señal
+<&industrial_vertical_bar_gauge>Un mididor compactu de sala de control amuesa la intensidá de redstone nuna llectura clara de panel.<br>
+<br>
+Usu: móntalu onde se deba comprobar d’un vistazu la potencia de redstone axacente.<br>
+<br>
+Notes: llee la intensidá de redstone cercana, de 0 a 15.
+<np>
+Lluz d’alarma
+Indicación de señal
+<&industrial_alarm_lamp>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+Sirena d'alarma
+Indicador de señal
+<&industrial_alarm_siren>La Sirena d'alarma ye un indicador de redstone montáu nuna cara. El so estáu activáu cambia cola señal del bloque al que ta suxeta.<br>
+<br>
+Usu: Ponla nuna cara sólida y aliméntala pa supervisar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: La sirena actualízase una vegada per segundu mientres la señal conectada siga activa.
+<np>
+LED intermitente
+Indicación de señal
+<&industrial_blinking_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED verde intermitente
+Indicación de señal
+<&industrial_green_blinking_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED verde
+Indicación de señal
+<&industrial_green_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED coloráu
+Indicación de señal
+<&industrial_red_blinking_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED coloráu
+Indicación de señal
+<&industrial_red_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED blancu intermitente
+Indicación de señal
+<&industrial_white_blinking_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED blancu
+Indicación de señal
+<&industrial_white_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED mariellu intermitente
+Indicación de señal
+<&industrial_yellow_blinking_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+LED mariellu
+Indicación de señal
+<&industrial_yellow_led>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+Semáforu rústicu
+Indicación de señal
+<&rustic_semaphore>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.
+<np>
+Interruptor comparador
+Señal del bloque de montaxe
+<&industrial_comparator_switch>Un interruptor sensor compactu llee’l bloque nel que ta montáu y convierte esa llectura nuna salida senciella de panel.<br>
+<br>
+Usu: móntalu en inventarios, depósitos o componentes de redstone. Cuando’l bloque de montaxe informa d’una salida de comparador, de recipiente o de redstone, l’interruptor emite redstone a plena potencia.<br>
+<br>
+Notes: úsalu pa convertir niveles d’almacenamientu o cableáu ocultu en llinies de control clares d’encendíu y apagáu.
+<np>
+Regulador d’intensidá
+Señal variable
+<&industrial_dimmer>Un control xiratoriu axusta la intensidá de redstone dende un frontal compactu de panel.<br>
+<br>
+Usu: fai clic derechu pa subir la salida un pasu cada vegada; dempués de la potencia máxima vuelve a cero.<br>
+<br>
+Notes: emite una potencia de 0 a 15.
+<np>
+Botón de parada d’emerxencia
+Control por redstone
+<&industrial_estop_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Bloqueador d’embudu
+Control por redstone
+<&industrial_hopper_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Interruptor de golpe
+Control por redstone
+<&industrial_knock_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca
+Control por redstone
+<&industrial_lever>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Interruptor de máquina de dos botones
+Control por redstone
+<&industrial_machine_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Tirador
+Control por redstone
+<&industrial_pull_handle>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca xiratoria
+Control por redstone
+<&industrial_rotary_lever>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Interruptor xiratoriu de máquina
+Control por redstone
+<&industrial_rotary_machine_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca de contautu
+Control por redstone
+<&industrial_small_lever>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Interruptor
+Control por redstone
+<&industrialswitch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Interruptor de lluz
+Control por redstone
+<&light_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Interruptor de válvula
+Control por redstone
+<&valve_wheel_switch>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Receptor de pulsos con carcasa
+Control enllazáu
+<&industrial_switchlink_cased_pulse_receiver>Un receptor enllazáu de pulsos con carcasa da a los paneles remotos una activación curtia de redstone.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Fai clic derechu nél o activa la perlla enllazada pa emitir un pulsu curtiu.<br>
+<br>
+Notes: el pulsu termínase solo dempués de la duración programada.
+<np>
+Receptor d’enllaz con carcasa
+Control enllazáu
+<&industrial_switchlink_cased_receiver>Un receptor enllazáu con carcasa da a los paneles remotos un destín resistente de redstone.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Fai clic derechu direutamente nel receptor pa conmutalu a mano.<br>
+<br>
+Notes: una perlla enllazada conmuta esti receptor cuando s’usa al encuxase.
+<np>
+Receptor d’enllaz de pulsos
+Control enllazáu
+<&industrial_switchlink_pulse_receiver>Un receptor enllazáu de pulsos da a los paneles remotos una activación curtia de redstone.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Fai clic derechu nél o activa la perlla enllazada pa emitir un pulsu curtiu.<br>
+<br>
+Notes: el pulsu termínase solo dempués de la duración programada.
+<np>
+Relé d’enllaz de pulsos
+Control enllazáu
+<&industrial_switchlink_pulse_relay>Una pieza con aspeutu de relé da a les construcciones de paneles un puntu d’interrupción local compactu.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos. Usa bloques receptores cuando precises activación per aciu d’una perlla enllazada.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Receptor d’enllaz d’interruptores
+Control enllazáu
+<&industrial_switchlink_receiver>Un receptor enllazáu da a los paneles remotos un destín de redstone a plena potencia.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Fai clic derechu direutamente nel receptor pa conmutalu a mano.<br>
+<br>
+Notes: una perlla enllazada conmuta esti receptor cuando s’usa al encuxase.
+<np>
+Receptor analóxicu d’enllaz
+Control enllazáu
+<&industrial_switchlink_receiver_analog>Un receptor enllazáu da a los paneles de control un destín remotu visible.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Usa esa perlla mientres te encuxes p’activar el receptor a distancia.<br>
+<br>
+Notes: esti receptor emite una señal de redstone a plena potencia al activase.
+<np>
+Relé d’enllaz d’interruptores
+Control enllazáu
+<&industrial_switchlink_relay>Una pieza con aspeutu de relé da a les construcciones de paneles un puntu d’interrupción local compactu.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos. Usa bloques receptores cuando precises activación per aciu d’una perlla enllazada.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Relé analóxicu d’enllaz
+Control enllazáu
+<&industrial_switchlink_relay_analog>Una pieza con aspeutu de relé da a les construcciones de paneles un puntu d’interrupción local compactu.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos. Usa bloques receptores cuando precises activación per aciu d’una perlla enllazada.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Perlla d’enllaz d’interruptores
+Control enllazáu
+<&switchlink_pearl>Una perlla enllazada guarda un receptor de destín pa controles remotos de fábrica.<br>
+<br>
+Usu: fai clic con una perlla d’Ender nun receptor d’enllaz d’interruptores pa crear una. Usa la perlla enllazada mientres te encuxes p’activar el receptor guardáu.<br>
+<br>
+Notes: el destín tien de tar cargáu, na mesma dimensión y dientro del alcance.
+<np>
+Palanca antigua adornada
+Control por redstone
+<&oldfancy_bistableswitch1>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca xiratoria antigua adornada
+Control por redstone
+<&oldfancy_bistableswitch2>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca xiratoria rústica
+Control por redstone
+<&rustic_angular_lever>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca rústica
+Control por redstone
+<&rustic_lever>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca rústica de clavu
+Control por redstone
+<&rustic_nail_lever>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.
+<np>
+Palanca rústica de dos bisagres
+Control por redstone
+<&rustic_two_hinge_lever>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.

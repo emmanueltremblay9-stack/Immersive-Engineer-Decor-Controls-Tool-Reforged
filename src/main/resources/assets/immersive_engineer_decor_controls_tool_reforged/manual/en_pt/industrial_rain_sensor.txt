@@ -1,0 +1,7 @@
+Lookout fer rain
+Sensin' a signal
+<&recipe>A weather lookout turns rain at her berth into redstone.<br>
+<br>
+Orders: Mount her where rain can reach the block above.<br>
+<br>
+Mind ye: She checks fer rain above the sensor.

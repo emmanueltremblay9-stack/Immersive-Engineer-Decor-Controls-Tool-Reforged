@@ -1,0 +1,161 @@
+Clinquer e maçonariá
+Envelopas de bricas e de beton
+Lo clinquer, las bricas d’escòria, lo beton armat e lo veire blindat fornisson de superfícias massissas per las pèças caudas, los obradors e las vistas protegidas.<br>
+<br>
+Utiliza las lausas, los escalièrs, los talhons e los murs assortits per acabar los bòrds sens rompre l’unitat dels materials de la fabrica.
+<np>
+Blòc de bricas de clinquer
+Bricas ennegridas pel suge
+<&clinker_brick_block>Aqueste blòc apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Lausa de bricas de clinquer
+Bricas ennegridas pel suge
+<&clinker_brick_slab>Aqueste blòc apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Escalièr de bricas de clinquer
+Bricas ennegridas pel suge
+<&clinker_brick_stairs>Aqueste blòc apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Mur de bricas de clinquer
+Bricas ennegridas pel suge
+<&clinker_brick_wall>Aqueste blòc apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Blòc de clinquer tacat
+Bricas ennegridas pel suge
+<&clinker_brick_stained_block>Lo Blòc de bricas de clinquer tacadas apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Lausa de clinquer tacat
+Bricas ennegridas pel suge
+<&clinker_brick_stained_slab>La Lausa de bricas de clinquer tacadas apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Escalièr de clinquer tacat
+Bricas ennegridas pel suge
+<&clinker_brick_stained_stairs>L’Escalièr de bricas de clinquer tacadas apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Brica de clinquer ornada
+Bricas ennegridas pel suge
+<&clinker_brick_sastor_corner_block>La Brica de clinquer ornada de gres apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Brica de clinquer en relèu negatiu
+Bricas ennegridas pel suge
+<&clinker_brick_recessed>Aqueste blòc apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Bricas de clinquer fendilhadas
+Bricas ennegridas pel suge
+<&clinker_brick_vertically_slit>Las Bricas de clinquer amb fendilhas verticalas apondon una maçonariá ennegrida pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Lausa verticala de clinquer
+Bricas ennegridas pel suge
+<&clinker_brick_vertical_slab_structured>La Lausa verticala de clinquer estructurada apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Mièja lausa de bricas de clinquer
+Bricas ennegridas pel suge
+<&halfslab_clinker_brick>Aqueste blòc apond una maçonariá de bricas ennegridas pel suge a las salas de forns, als pès de cheminièra e als murs de servici.<br>
+<br>
+Utilizacion : emplega-lo coma mur, ornament o envelopa de zòna cauda a l’entorn dels forns e de las caudièras.<br>
+<np>
+Blòc de bricas d’escòria
+Maçonariá densa de fabrica
+<&slag_brick_block>Aqueste blòc apond una maçonariá densa grisa e bruna a las fondacions, als murs de sosten e als vièlhs obradors.<br>
+<br>
+Utilizacion : emplega-lo per las fondacions ancianas, los murs de sosten e los sòls bruts de fabrica.<br>
+<np>
+Lausa de bricas d’escòria
+Maçonariá densa de fabrica
+<&slag_brick_slab>Aqueste blòc apond una maçonariá densa grisa e bruna a las fondacions, als murs de sosten e als vièlhs obradors.<br>
+<br>
+Utilizacion : emplega-lo per las fondacions ancianas, los murs de sosten e los sòls bruts de fabrica.<br>
+<np>
+Escalièr de bricas d’escòria
+Maçonariá densa de fabrica
+<&slag_brick_stairs>Aqueste blòc apond una maçonariá densa grisa e bruna a las fondacions, als murs de sosten e als vièlhs obradors.<br>
+<br>
+Utilizacion : emplega-lo per las fondacions ancianas, los murs de sosten e los sòls bruts de fabrica.<br>
+<np>
+Mur de bricas d’escòria
+Maçonariá densa de fabrica
+<&slag_brick_wall>Aqueste blòc apond una maçonariá densa grisa e bruna a las fondacions, als murs de sosten e als vièlhs obradors.<br>
+<br>
+Utilizacion : emplega-lo per las fondacions ancianas, los murs de sosten e los sòls bruts de fabrica.<br>
+<np>
+Blòc de beton armat
+Beton renforçat
+<&rebar_concrete>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Lausa de beton armat
+Beton renforçat
+<&rebar_concrete_slab>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Escalièr de beton armat
+Beton renforçat
+<&rebar_concrete_stairs>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Mur de beton armat
+Beton renforçat
+<&rebar_concrete_wall>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Talhon de beton armat
+Beton renforçat
+<&halfslab_rebar_concrete>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Cairèl de beton armat
+Beton renforçat
+<&rebar_concrete_tile>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Lausa de cairèls de beton armat
+Beton renforçat
+<&rebar_concrete_tile_slab>Aqueste blòc es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Cairèl de beton armat
+Beton renforçat
+<&rebar_concrete_tile_stairs>L’Escalièr de cairèls de beton armat es una pèça de beton endurit per las basas de maquinas, los murs contra las explosions e los sòls dels cais de cargament.<br>
+<br>
+Utilizacion : pausa-lo jos las maquinas, al long dels corredors de servici o pertot ont la construccion demanda una basa renforçada.<br>
+<np>
+Blòc de veire blindat
+Vista protegida
+<&panzerglass_block>Aqueste blòc manten una vista desgatjada e s’acòrda amb la construccion de fabrica renforçada.<br>
+<br>
+Utilizacion : emplega-lo ont los jogaires devon veire las maquinas a travèrs una barralha protegida.<br>
+<np>
+Lausa de veire blindat
+Vista protegida
+<&panzerglass_slab>Aqueste blòc manten una vista desgatjada e s’acòrda amb la construccion de fabrica renforçada.<br>
+<br>
+Utilizacion : emplega-lo ont los jogaires devon veire las maquinas a travèrs una barralha protegida.<br>

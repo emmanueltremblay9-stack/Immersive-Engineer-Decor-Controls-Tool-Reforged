@@ -1,0 +1,5 @@
+Brace fer a treated pole
+Piece o' structural framing
+<&recipe>Brace fer a treated-timber pole gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>

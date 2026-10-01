@@ -1,0 +1,5 @@
+Verzierte Klinkerziejel
+Rooßdüster Ziejelwerk
+<&recipe>Dä Klinkerziejel met Sandsteinzier brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>

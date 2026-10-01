@@ -1,0 +1,108 @@
+Industriële constructie
+Fabrieksmuren en afwerking
+Algemene bouwonderdelen omvatten deuren, ramen, verlichting, waarschuwingsborden, afwerking en constructiedelen die niet onder een specifiekere rubriek vallen.<br>
+<br>
+Gebruik deze pagina's voor fabrieksruimtes, onderhoudsgangen, gevarenmarkering en praktische industriële details.
+<np>
+IJzeren bollamp
+Compacte werkverlichting
+<&iron_bulb_light>Dit blok biedt compacte industriële verlichting voor gangen, loopbruggen en werkvakken.<br>
+<br>
+Gebruik: bevestig het aan plafonds, muren of randen waar duidelijke werkverlichting nodig is.<br>
+<np>
+Plafondrandlamp
+Compacte werkverlichting
+<&iron_ceiling_edge_light>Dit blok biedt compacte industriële verlichting voor gangen, loopbruggen en werkvakken.<br>
+<br>
+Gebruik: bevestig het aan plafonds, muren of randen waar duidelijke werkverlichting nodig is.<br>
+<np>
+Verzonken vloerrandlamp
+Compacte werkverlichting
+<&iron_floor_edge_light>Dit blok biedt compacte industriële verlichting voor gangen, loopbruggen en werkvakken.<br>
+<br>
+Gebruik: bevestig het aan plafonds, muren of randen waar duidelijke werkverlichting nodig is.<br>
+<np>
+Inbouwlamp
+Compacte werkverlichting
+<&iron_inset_light>Dit blok biedt compacte industriële verlichting voor gangen, loopbruggen en werkvakken.<br>
+<br>
+Gebruik: bevestig het aan plafonds, muren of randen waar duidelijke werkverlichting nodig is.<br>
+<np>
+Bord 'Algemene waarschuwing'
+Gevarenmarkering
+<&sign_caution>Het bord 'Algemene waarschuwing' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Gevarenbord
+Gevarenmarkering
+<&sign_danger>Het bord 'Pas op, echt gevaarlijk' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Decoratiebord
+Gevarenmarkering
+<&sign_decor>Het decoratiebord van Engineer's Decor markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Verdedigingssysteembord
+Gevarenmarkering
+<&sign_defense>Het bord 'Pas op, verdedigingssysteem' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Uitgangsbord
+Gevarenmarkering
+<&sign_exit>Dit bord markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Brandgevaarbord
+Gevarenmarkering
+<&sign_firehazard>Het bord 'Brandgevaar' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Vorstwaarschuwingsbord
+Gevarenmarkering
+<&sign_frost>Het bord 'Vorstwaarschuwing' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Bord voor hete oppervlakken
+Gevarenmarkering
+<&sign_hotsurface>Het bord 'Pas op, heet oppervlak' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Bord voor draden onder spanning
+Gevarenmarkering
+<&sign_hotwire>Het bord 'Pas op, kabel onder spanning' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Lasergevaarbord
+Gevarenmarkering
+<&sign_laser>Het bord 'Lasergevaar' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Magisch-gevaarbord
+Gevarenmarkering
+<&sign_magichazard>Het bord 'Pas op, magisch gevaar' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Magneetveldbord
+Gevarenmarkering
+<&sign_magneticfield>Het bord 'Pas op, sterk magneetveld' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>
+Stralingsgevaarbord
+Gevarenmarkering
+<&sign_radioactive>Het bord 'Radioactief gevaar' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>
+<np>

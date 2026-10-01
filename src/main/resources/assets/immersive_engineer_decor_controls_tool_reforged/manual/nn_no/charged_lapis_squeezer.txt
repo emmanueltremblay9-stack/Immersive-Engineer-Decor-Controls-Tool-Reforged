@@ -1,0 +1,7 @@
+Tankepresse
+Røynslekondensator
+<&recipe>Tankepressa gjer lasurstein og røynsle om til ladd lasurstein.<br>
+<br>
+Bruk: ta med lasurstein og minst eitt røynslesteg, og bruk verktøyet. Ei vellukka pressing kostar eitt steg og éin lasurstein, skadar brukaren, slit på pressa og lagar éin ladd lasurstein.<br>
+<br>
+Pressa verkar ikkje dersom brukaren manglar lasurstein eller røynsle, eller er for nær døden.

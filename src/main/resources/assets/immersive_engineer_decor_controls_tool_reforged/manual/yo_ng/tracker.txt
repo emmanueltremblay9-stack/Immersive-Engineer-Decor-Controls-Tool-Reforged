@@ -1,0 +1,7 @@
+Olùtọpinpin
+Àmì ibi tí a pamọ́
+<&recipe>Tracker n fi ipo block pamọ sinu item.<br>
+<br>
+Te block lati fi dimension ati coordinates pamọ. Tooltip n fi ipo han. Lo nigba sneak lati pa target re.<br>
+<br>
+Samisi ero, tunnel, remote control tabi ile ti ko pari.

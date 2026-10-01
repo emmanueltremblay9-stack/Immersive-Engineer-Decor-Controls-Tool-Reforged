@@ -1,0 +1,7 @@
+Watcher of Entities
+Watching for Signals
+<&recipe>An entity watcher observes nearby movement without a visible floor plate.<br>
+<br>
+Use: Connect it to doors, lamps, alarms or engine interlocks.<br>
+<br>
+Note: It watches a little area about the block.

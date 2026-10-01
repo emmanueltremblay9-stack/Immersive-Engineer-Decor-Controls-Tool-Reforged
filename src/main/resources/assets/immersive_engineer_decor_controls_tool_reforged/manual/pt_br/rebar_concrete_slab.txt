@@ -1,0 +1,5 @@
+Laje de concreto armado
+Concreto reforçado
+<&recipe>Este bloco é uma peça de concreto endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Use sob máquinas, em corredores de serviço ou onde a construção precisar de uma base reforçada.<br>

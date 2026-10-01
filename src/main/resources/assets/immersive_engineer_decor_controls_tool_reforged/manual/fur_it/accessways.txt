@@ -1,0 +1,127 @@
+Passaçs di acès
+Passarelis e supuarts
+Pâi di açâr, pâi tratâts, gridelis, passarelis, ringhieris, scjalis a man, puartis, barcons e trabuchei a formin passaçs di servizi compats dentri tes fabrichis.<br>
+<br>
+I tocs di acès di açâr a doprin plachis di açâr. Fabriche o met un Banc pe lavorazion dai metai, inserìs un martiel di Immersive Engineering e bat i lingots di açâr par fâ plachis di doprâ par pâi, passarelis, barcons, puartis, ringhieris e altris decôrs di açâr.<br>
+<br>
+Metiju dulà che lis machinis a àn bisugne di acès pal servizi, passaçs alts, puçs di manutenzion o ôrs plui sigûrs.
+<np>
+Pâl grues di açâr
+Toc di telâr struturâl
+<&thick_steel_pole>Il Pâl dret grues di açâr al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Cjâf di pâl grues
+Toc di telâr struturâl
+<&thick_steel_pole_head>Il Cjâf/pît di pâl dret grues di açâr al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Pâl sutîl di açâr
+Toc di telâr struturâl
+<&thin_steel_pole>Il Pâl dret sutîl di açâr al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Cjâf di pâl sutîl
+Toc di telâr struturâl
+<&thin_steel_pole_head>Il Cjâf/pît di pâl dret sutîl di açâr al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Pâl di len tratât
+Toc di telâr struturâl
+<&treated_wood_pole>Il Pâl dret di len tratât al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Cjâf di pâl tratât
+Toc di telâr struturâl
+<&treated_wood_pole_head>Il Cjâf/pît di pâl dret di len tratât al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Supuart di pâl tratât
+Toc di telâr struturâl
+<&treated_wood_pole_support>Il Supuart di pâl dret di len tratât al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Supuart di açâr a dopli T
+Toc di telâr struturâl
+<&steel_double_t_support>Chest bloc al da une struture visibile aes salis di machinis e ai telârs di acès.<br>
+<br>
+Ûs: zire e met il toc tant che rinfuart visibil par travs, pâi e ôrs di plateforme.<br>
+<np>
+Gridele di paviment di açâr
+Acessori di acès pal servizi
+<&steel_floor_grating>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Passarele di açâr
+Acessori di acès pal servizi
+<&steel_catwalk>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Scjalins di passarele di açâr
+Acessori di acès pal servizi
+<&steel_catwalk_stairs>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Passarele di açâr alçade
+Acessori di acès pal servizi
+<&steel_catwalk_ta>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Ringhiere di açâr
+Acessori di acès pal servizi
+<&steel_railing>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Stangjaçade di rêt di açâr
+Acessori di acès pal servizi
+<&steel_mesh_fence>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Portonut di rêt di açâr
+Acessori di acès pal servizi
+<&steel_mesh_fence_gate>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Scjale a man cun scjalins di metal
+Acessori di acès pal servizi
+<&metal_rung_ladder>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Scjalins di metal sfalsâts
+Acessori di acès pal servizi
+<&metal_rung_steps>Chest bloc al forme percors di servizi facii di ricognossi ator des machinis.<br>
+<br>
+Ûs: metilu par dâ acès ae manutenzion ator des machinis, ai plans di sore e tai puçs di servizi.<br>
+<np>
+Barcon cun telâr di açâr
+Visuale protete
+<&steel_framed_window>Chest bloc al lasse viodi traviers e al reste adat ae costruzion rinfuartide di fabriche.<br>
+<br>
+Ûs: metilu intune vierzidure di mûr di 1 bloc dulà che i zuiadôrs a àn di viodi lis machinis traviers di une bariere protete.<br>
+<np>
+Puarte scorredule di metal
+Pont di acès industriâl
+<&metal_sliding_door>Chest bloc al da un acès robust aes stanziis di servizi, ai puçs, ai cuvierts e ai sierais des machinis.<br>
+<br>
+Ûs: instàlilu dulà che la costruzion e à bisugne di une vierzidure controlade pe manutenzion.<br>
+<np>
+Trabuchel di fier a roves
+Pont di acès industriâl
+<&iron_hatch>Chest bloc al da un acès robust aes stanziis di servizi, ai puçs, ai cuvierts e ai sierais des machinis.<br>
+<br>
+Ûs: instàlilu dulà che la costruzion e à bisugne di une vierzidure controlade pe manutenzion.<br>

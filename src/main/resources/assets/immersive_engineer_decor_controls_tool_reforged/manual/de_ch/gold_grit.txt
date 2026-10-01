@@ -1,0 +1,3 @@
+Grobe Goldgrus
+Es Wärchzüügmaterial vom Ingenieur für die rekonstruierte Handwärksrezept.
+<&recipe>Laht sich zu Goldbarre<br>schmelze, eignet sich aber nöd für<br>wiiterfüehrendi Materialverarbeitig.

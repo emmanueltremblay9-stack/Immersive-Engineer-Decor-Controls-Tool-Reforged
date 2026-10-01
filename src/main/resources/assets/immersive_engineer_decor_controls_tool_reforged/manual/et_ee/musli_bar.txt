@@ -1,0 +1,5 @@
+Muslee Melange energiabatoon
+Kiire töökojasnäkk
+<&recipe>Kompaktne toit leivast, seemnetest ja puuviljast.<br>
+<br>
+Kasutus: Söö juhtseadmete, torude, platvormide või pikkade masinaliinide paigaldamisel.

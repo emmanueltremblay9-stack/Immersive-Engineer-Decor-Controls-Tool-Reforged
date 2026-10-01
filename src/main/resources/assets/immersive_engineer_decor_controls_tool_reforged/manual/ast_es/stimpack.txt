@@ -1,0 +1,7 @@
+Paquete d'estimulante automáticu
+Inyector d'emerxencia
+<&recipe>El Paquete d'estimulante automáticu ye un oxetu de recuperación pa mantenimientu peligrosu.<br>
+<br>
+Usu: Úsalu manualmente pa curar, ganar protección breve y un impulsu curtiu de movimientu. Nel inventariu tamién pue activase solo con salú baxa, y dempués recarga.<br>
+<br>
+Ten ún disponible antes de probar altures, cableáu espuestu o mines hostiles.

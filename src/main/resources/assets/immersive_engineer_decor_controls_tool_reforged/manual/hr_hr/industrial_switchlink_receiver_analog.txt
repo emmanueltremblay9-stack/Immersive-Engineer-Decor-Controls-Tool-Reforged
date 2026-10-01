@@ -1,0 +1,7 @@
+Analogni prijamnik poveznice
+Povezano upravljanje
+<&recipe>Povezani prijamnik daje upravljačkim panelima vidljiv udaljeni cilj.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Upotrijebi taj biser dok čučiš za daljinsku aktivaciju prijamnika.<br>
+<br>
+Napomene: ovaj prijamnik pri aktivaciji šalje puni redstone signal.

@@ -1,0 +1,5 @@
+Baton energizant cu amestec de musli
+Gustare rapidă în atelier
+<&recipe>Batonul Muslee Melange este hrană compactă din pâine, semințe și fructe.<br>
+<br>
+Mănâncă-l ca hrană de teren când instalezi comenzi, conducte, platforme sau linii lungi de mașini.

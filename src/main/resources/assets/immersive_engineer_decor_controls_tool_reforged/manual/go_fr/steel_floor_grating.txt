@@ -1,0 +1,5 @@
+Grille de sol en acier
+Pièce d'accès de service
+<&recipe>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>

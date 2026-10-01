@@ -1,0 +1,3 @@
+Jäme rauapuru
+Inseneri tööriistamaterjal, mida kasutatakse taastatud meisterduskomplektis.
+<&recipe>Saab sulatada<br>rauakangideks, kuid ei sobi<br>keerukamaks materjalitöötluseks.

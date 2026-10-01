@@ -1,0 +1,107 @@
+Darbnīcu mašīnas
+Mašīnas un darbnīcu ievades un izvades
+Darbnīcu mašīnas nodrošina kompaktu izgatavošanu, priekšmetu pārvietošanu, kausēšanu, iznīcināšanu, savākšanu un palīgdarbības viena bloka lielumā.<br>
+<br>
+Atver nākamās lapas, lai atrastu katras mašīnas recepti, attēlu, aprakstu un praktiskas lietošanas piezīmes.
+<np>
+Tērauda galds
+Darbnīcas mēbele
+<&steel_table>Šis bloks ir praktiska darbnīcas mēbele darba telpām un apkopes stūriem.<br>
+<br>
+Lietošana: novieto blakus darbagaldiem, kastēm un kompaktām mašīnām.<br>
+<np>
+Apstrādāta koka galds
+Darbnīcas mēbele
+<&treated_wood_table>Šis bloks ir praktiska darbnīcas mēbele darba telpām un apkopes stūriem.<br>
+<br>
+Lietošana: novieto blakus darbagaldiem, kastēm un kompaktām mašīnām.<br>
+<np>
+Apstrādāta koka ķeblis
+Darbnīcas mēbele
+<&treated_wood_stool>Šis bloks ir praktiska darbnīcas mēbele darba telpām un apkopes stūriem.<br>
+<br>
+Lietošana: novieto blakus darbagaldiem, kastēm un kompaktām mašīnām.<br>
+<np>
+Metālapstrādes galds
+Plākšņu izgatavošanas stacija
+<&metal_crafting_table>Metālapstrādes galds ir pastiprināta darbnīcas darba vieta ar āmura nodalījumu, 3x3 izgatavošanas režģi un skaidru izvades nodalījumu.<br>
+<br>
+Lietošana: izmanto režģi parastai izgatavošanai. IE plāksnēm ievieto inženiera āmuru rīka nodalījumā un plāksnes materiālu režģī, tad paņem rezultātu. Tērauda dekorācijas izmanto tērauda plāksnes stabiem, apkopes laipām, logiem, durvīm, margām un citām tērauda detaļām.<br>
+<np>
+Rūpnīcas piltuve
+Darbnīcas palīgierīce
+<&factory_hopper>Šis bloks pārvieto priekšmetu kaudzītes caur kompaktāku rūpniecisku korpusu.<br>
+<br>
+Lietošana: pavērs to pret krātuvju līniju, tad saskarnē iestati attālumu, kaudzīšu skaitu, laika intervālus un Redstone režīmu.<br>
+<np>
+Rūpnīcas izsviedējs
+Darbnīcas palīgierīce
+<&factory_dropper>Šis bloks izvada glabātos priekšmetus no pavērstās puses.<br>
+<br>
+Lietošana: pavērs priekšu pret izsviešanas vietu, piepildi iekšējos nodalījumus un saskarnē noregulē spēku, leņķi, aizkavi, filtra loģiku un Redstone režīmu.<br>
+<np>
+Rūpnīcas bloku novietotājs
+Darbnīcas palīgierīce
+<&factory_placer>Aktivizējot šis bloks novieto blokus no saviem iekšējiem krājumiem.<br>
+<br>
+Lietošana: pavērs darba pusi pret mērķa vietu un ielādē novietojamas kaudzītes.<br>
+<np>
+Bloku lauzējs
+Darbnīcas palīgierīce
+<&small_block_breaker>Mazs bloku lauzējs ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: pavērs darba pusi pret noņemamo bloku.<br>
+<np>
+Atkritumu dedzinātājs
+Kompakta apstrādes ierīce
+<&small_waste_incinerator>Atkritumu dedzinātājs iznīcina nevajadzīgus priekšmetus, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: padod tā rindā tikai nevajadzīgus priekšmetus.<br>
+<np>
+Laboratorijas krāsns
+Kompakta apstrādes ierīce
+<&small_lab_furnace>Laboratorijas krāsns veic nelielus kausēšanas darbus ar cieto kurināmo, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: izmanto cieto kurināmo nelielām kausēšanas partijām.<br>
+<np>
+Elektriskā krāsns
+Kompakta apstrādes ierīce
+<&small_electrical_furnace>Elektriskā krāsns veic nelielus ar FE darbināmus kausēšanas darbus, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: pievadi FE un derīgus kausēšanas materiālus.<br>
+<np>
+Minerālu kausētājs
+Kompakta apstrādes ierīce
+<&small_mineral_smelter>Minerālu kausētājs apstrādā minerālus augstā temperatūrā, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: padod minerālu blokus un enerģiju kausēšanai augstā temperatūrā.<br>
+<np>
+Ūdens saldētājs
+Kompakta apstrādes ierīce
+<&small_freezer>Ūdens saldētājs veic kompaktus dzesēšanas darbus ar enerģiju apgādātās šķidrumu sistēmās.<br>
+<br>
+Lietošana: pievadi ūdeni un enerģiju pakāpeniskai ledus ražošanai.<br>
+<np>
+Pasīva šķidrumu uzkrāšana
+Šķidrumu līnijas aprīkojums
+<&passive_fluid_accumulator>Pasīvs šķidrumu uzkrājējs ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto pie piemērotiem ūdens avotiem un atstāj vietu šķidruma izvadīšanai.<br>
+<np>
+Saules panelis
+Darbnīcas palīgierīce
+<&small_solar_panel>Mazs saules panelis ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: nodrošini atklātas debesis un pievieno ierīces ar mazu patēriņu.<br>
+<np>
+Slaukšanas iekārta
+Darbnīcas palīgierīce
+<&small_milking_machine>Maza slaukšanas iekārta ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: novieto pie govīm un nodrošini veidu, kā aizvadīt piena traukus vai šķidrumu.<br>
+<np>
+Koku cirtējs
+Darbnīcas palīgierīce
+<&small_tree_cutter>Mazs koku cirtējs ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: pavērs pret izaugušiem kokiem un savāc izbirušos priekšmetus atsevišķi.<br>

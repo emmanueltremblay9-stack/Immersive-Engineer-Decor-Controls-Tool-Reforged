@@ -1,0 +1,5 @@
+Dapugan ng Laboratoryo
+Maliit na yunit ng pagproseso
+<&recipe>Gumagawa ang Dapugan ng Laboratoryo ng maliliit na gawaing pagtunaw gamit ang solidong panggatong, sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Gumamit ng solidong panggatong para sa maliliit na pangkat ng pagtunaw.<br>

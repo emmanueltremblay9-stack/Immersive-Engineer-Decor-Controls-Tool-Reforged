@@ -1,0 +1,5 @@
+Shlak g'isht bloki
+Zich zavod g'isht-tosh qurilishi
+<&recipe>Bu blok poydevorlar, tuproq tutuvchi devorlar va eski ish shiyponlariga zich kulrang-qo'ng'ir g'isht-tosh qoplama qo'shadi.<br>
+<br>
+Ishlatish: eski poydevorlar, tuproq tutuvchi devorlar va kir zavod pollari uchun foydalaning.<br>

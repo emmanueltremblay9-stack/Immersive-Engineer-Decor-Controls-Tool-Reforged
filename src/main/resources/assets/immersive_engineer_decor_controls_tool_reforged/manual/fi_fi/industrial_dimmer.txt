@@ -1,0 +1,7 @@
+Himmennin
+Säädettävä signaali
+<&recipe>Kiertosäädin asettaa redstone-voimakkuuden pieneltä paneelipinnalta.<br>
+<br>
+Käyttö: Kasvata lähtöä askel kerrallaan oikealla napsautuksella. Täyden voimakkuuden jälkeen se palaa nollaan.<br>
+<br>
+Huomaa: Antaa voimakkuuden väliltä 0–15.

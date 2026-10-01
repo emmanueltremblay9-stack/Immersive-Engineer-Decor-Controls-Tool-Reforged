@@ -1,0 +1,5 @@
+Kezeltfa-hokedli
+Műhelybútor
+<&recipe>Ez a blokk praktikus műhelybútor munkaszobákhoz és karbantartósarkokhoz.<br>
+<br>
+Használat: állítsd munkapadok, ládák és kompakt gépek mellé.<br>

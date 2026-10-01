@@ -1,0 +1,7 @@
+Glassrørmåler
+Signalmåler
+<&recipe>En kompakt kontrollromsmåler viser redstonestyrken tydelig på et panel.<br>
+<br>
+Bruk: monter den der nærliggende redstonesignaler skal kunne leses av med ett blikk.<br>
+<br>
+Merknad: leser nærliggende redstonestyrke fra 0 til 15.

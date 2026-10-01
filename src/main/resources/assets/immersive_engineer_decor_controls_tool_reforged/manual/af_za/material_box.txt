@@ -1,0 +1,7 @@
+Materiaalbergingsboks
+Boks vir konstruksievoorraad
+<&recipe>Die Materiaalbergingsboks dra 'n groot voorraad van een gewone, onveranderde, stapelbare konstruksiemateriaal.<br>
+<br>
+Gebruik: Hou die boks in die hoofhand en 'n materiaalstapel in die ander hand om daardie materiaal te laai. Gebruik die boks met 'n leë ander hand om een stapel uit te haal.<br>
+<br>
+Die boks hou tot 512 items, behou net een materiaaltipe op 'n slag, weier geneste bokse, nie-stapelbare toerusting en veranderde benoemde of data-draende stapels, en wys die gestoorde inhoud in die nutswenk.

@@ -1,0 +1,5 @@
+Escaleiras de pasarela de aceiro
+Peza de acceso de servizo
+<&recipe>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>

@@ -1,0 +1,41 @@
+Lagring og transport
+Lager- og gjennomstrømningsdeler
+Lagrings- og transportdeler omfatter kasser, tønner, trakter og ventiler for kompakte fabrikkruter.<br>
+<br>
+Bruk disse sidene når du planlegger lagerrom, rørstrekk, servicetanker og styrte væskelinjer.
+<np>
+Merket kasse
+Redigerbar lageretikett
+<&labeled_crate>Denne merkede kassen er laget for oversiktlig sortering i lagerrommet. Frontplaten kan redigeres som et lite verkstedskilt.<br>
+<br>
+Bruk: høyreklikk på etikettplaten for å endre kasseetiketten. Høyreklikk på resten av kassen for å åpne lageret for beslag, deler og vedlikeholdsutstyr.<br>
+<np>
+Væsketønne
+Utstyr for væskelinjer
+<&fluid_barrel>Denne kompakte væskerørdelen passer til små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: plasser den der rør eller bøtter kan nå tanksiden.<br>
+<np>
+Væskeoppsamlingstrakt
+Utstyr for væskelinjer
+<&small_fluid_funnel>Den lille væskeoppsamlingstrakten er en kompakt væskerørdel for små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: sett den under væskeoppsamlingspunktet og før det lagrede innholdet til tanker eller rør nedenfor.<br>
+<np>
+Tilbakeslagsventil for væskerør
+Utstyr for væskelinjer
+<&straight_pipe_valve>Væsketilbakeslagsventilen er en kompakt væskerørdel for små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: rett ventilen etter den ønskede strømningsretningen.<br>
+<np>
+Redstonevæskeventil
+Utstyr for væskelinjer
+<&straight_pipe_valve_redstone>Redstonevæskeventilen er en kompakt væskerørdel for små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: rett ventilen etter den ønskede strømningsretningen.<br>
+<np>
+Analog væskeventil
+Utstyr for væskelinjer
+<&straight_pipe_valve_redstone_analog>Den analoge væskeventilen er en kompakt væskerørdel for små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: rett ventilen etter den ønskede strømningsretningen.<br>

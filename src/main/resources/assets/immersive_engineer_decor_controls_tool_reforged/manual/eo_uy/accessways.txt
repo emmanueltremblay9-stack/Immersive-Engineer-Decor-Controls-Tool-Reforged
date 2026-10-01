@@ -1,0 +1,127 @@
+Alirvojoj
+Paspontoj kaj apogiloj
+Ŝtalaj fostoj, traktlignaj fostoj, kradoj, paspontoj, balustradoj, ŝtupetaroj, pordoj, fenestroj kaj lukokovriloj formas kompaktajn servovojojn tra fabrikaj internoj.<br>
+<br>
+Ŝtalaj alirvojaj partoj uzas ŝtalajn platojn. Fabriku aŭ metu metalprilaboran tablon, enmetu martelon de Immersive Engineering, poste martelu ŝtalajn ingotojn al ŝtalaj platoj por fostoj, paspontoj, fenestroj, pordoj, balustradoj kaj aliaj ŝtalaj ornamaĵoj.<br>
+<br>
+Metu ilin kie maŝinoj bezonas prizorgan aliron, altajn padojn, prizorgajn ŝaktojn aŭ pli sekurajn randojn.
+<np>
+Dika ŝtala fosto
+Struktura kadroparto
+<&thick_steel_pole>La rekta dika ŝtala fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Kapo de dika fosto
+Struktura kadroparto
+<&thick_steel_pole_head>La kapo/piedo de rekta dika ŝtala fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Maldika ŝtala fosto
+Struktura kadroparto
+<&thin_steel_pole>La rekta maldika ŝtala fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Kapo de maldika fosto
+Struktura kadroparto
+<&thin_steel_pole_head>La kapo/piedo de rekta maldika ŝtala fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Traktligna fosto
+Struktura kadroparto
+<&treated_wood_pole>La rekta traktligna fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Kapo de traktligna fosto
+Struktura kadroparto
+<&treated_wood_pole_head>La kapo/piedo de rekta traktligna fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Apogilo de traktligna fosto
+Struktura kadroparto
+<&treated_wood_pole_support>La apogilo de rekta traktligna fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Ŝtala duobla T-apogilo
+Struktura kadroparto
+<&steel_double_t_support>Ĉi tiu bloko donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>
+<np>
+Ŝtala plankkrado
+Prizorga alirparto
+<&steel_floor_grating>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Ŝtala pasponto
+Prizorga alirparto
+<&steel_catwalk>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Ŝtala pasponta ŝtuparo
+Prizorga alirparto
+<&steel_catwalk_stairs>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Levata ŝtala pasponto
+Prizorga alirparto
+<&steel_catwalk_ta>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Ŝtala balustrado
+Prizorga alirparto
+<&steel_railing>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Ŝtala retbarilo
+Prizorga alirparto
+<&steel_mesh_fence>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Ŝtala retbarila pordo
+Prizorga alirparto
+<&steel_mesh_fence_gate>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Metalŝtupa ŝtupetaro
+Prizorga alirparto
+<&metal_rung_ladder>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Alternaj metalŝtupetoj
+Prizorga alirparto
+<&metal_rung_steps>Ĉi tiu bloko formas klare rekoneblajn servovojojn ĉirkaŭ maŝinoj.<br>
+<br>
+Uzado: metu ĝin kiel prizorgan alirejon ĉirkaŭ maŝinoj, supraj etaĝoj kaj servaj ŝaktoj.<br>
+<np>
+Ŝtalkadra fenestro
+Protektita vidlinio
+<&steel_framed_window>Ĉi tiu bloko tenas vidliniojn liberaj kaj samtempe kongruas kun plifortigita fabrika konstruado.<br>
+<br>
+Uzado: metu ĝin en 1-blokan muraperturon kie ludantoj devus vidi maŝinojn tra protekta barilo.<br>
+<np>
+Metala glitpordo
+Industria alirejo
+<&metal_sliding_door>Ĉi tiu bloko provizas fortikan alirejon al prizorgaj ĉambroj, ŝaktoj, tegmentoj kaj maŝinujoj.<br>
+<br>
+Uzado: instalu ĝin kie la konstruaĵo bezonas regatan prizorgan aperturon.<br>
+<np>
+Fera lukokovrilo
+Industria alirejo
+<&iron_hatch>Ĉi tiu bloko provizas fortikan alirejon al prizorgaj ĉambroj, ŝaktoj, tegmentoj kaj maŝinujoj.<br>
+<br>
+Uzado: instalu ĝin kie la konstruaĵo bezonas regatan prizorgan aperturon.<br>

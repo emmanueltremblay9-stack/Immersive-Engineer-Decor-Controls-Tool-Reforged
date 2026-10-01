@@ -1,0 +1,5 @@
+Blokkbryter
+Hjelpemiddel på fabrikkgulvet
+<&recipe>Den lille blokkbryteren er en nytteblokk for fabrikkgulvet, innen håndverk, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: rett arbeidssiden mot blokken som skal fjernes.<br>

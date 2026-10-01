@@ -1,0 +1,3 @@
+Granalla grossa de ferro
+Material per a ferramentes d’enginyer usat en el conjunt reconstruït de receptes.
+<&recipe>Es pot fondre per a obtindre lingots<br>de ferro, però no servix per al<br>processament avançat de materials.

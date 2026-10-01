@@ -1,0 +1,5 @@
+Dekorskilt
+Faremerking
+<&recipe>Skiltplata frå Engineer's Decor merkjer farar, utgangar og arbeidsområde med eit attkjenneleg tryggleikssymbol for fabrikkar.<br>
+<br>
+Bruk: plasser det ved farar, utgangar, maskiner og område med avgrensa tilgjenge.<br>

@@ -1,0 +1,7 @@
+Jauje voltmètre
+Jauje de signa
+<&recipe>Eune jauje compacte de salle de contrôle montre la force de redstone par eune lecture cllère su le paniao.<br>
+<br>
+Empllai : Montéz-la la où qe n'en peut vaer d'un coup d'œil le pououair de redstone d'a couté.<br>
+<br>
+Notes : Lit la force de redstone d'a couté de 0 a 15.

@@ -1,0 +1,5 @@
+Malnova industria lignopordo
+Malnova metieja ligno
+<&recipe>Ĉi tiu bloko aldonas malnovan metiejan lignon por plankoj, ŝtupetoj, pordoj kaj varmaj internaj borderoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj metiejaj plankoj, ŝtuparoj, pordoj kaj borderoj.<br>

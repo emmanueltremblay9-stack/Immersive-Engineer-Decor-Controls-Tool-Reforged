@@ -1,0 +1,7 @@
+Detector tempestatis
+Sensus signorum
+<&recipe>Sensor tempestatis monita in tonitruis agit.<br>
+<br>
+Usus: sub caelo aperto pone et lucernis aut terroribus coniunge.<br>
+<br>
+Notae: tonitrua et accessum ad caelum requirit.

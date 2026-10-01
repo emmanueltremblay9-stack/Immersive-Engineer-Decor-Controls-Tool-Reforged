@@ -1,0 +1,7 @@
+Oranžové citlivé sklo
+Signalizační sklo
+<&recipe>Skleněný blok reagující na redstone zachovává výhled a zároveň ukazuje stav signálu.<br>
+<br>
+Použití: Hodí se do oken řídicích místností, osvětlených panelů a ochranného továrního zasklení.<br>
+<br>
+Poznámky: Mění stav podle blízkého redstonového signálu.

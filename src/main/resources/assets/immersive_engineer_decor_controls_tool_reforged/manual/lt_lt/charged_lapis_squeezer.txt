@@ -1,0 +1,7 @@
+Minčių spaustuvas
+Patirties kondensatorius
+<&recipe>Minčių spaustuvas paverčia lazuritą ir patirtį įkrautu lazuritu.<br>
+<br>
+Naudojimas: turėk lazurito ir bent vieną patirties lygį, tada panaudok įrankį. Sėkmingas spaudimas sunaudoja vieną lygį ir vieną lazuritą, sužeidžia naudotoją, dėvi spaustuvą ir sukuria vieną įkrautą lazuritą.<br>
+<br>
+Jis atsisako veikti, kai naudotojui trūksta lazurito, patirties arba kai šis yra per arti mirties.

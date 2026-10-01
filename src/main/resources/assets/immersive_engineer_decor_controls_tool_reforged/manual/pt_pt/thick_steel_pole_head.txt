@@ -1,0 +1,5 @@
+Cabeça de poste grosso
+Peça de estrutura
+<&recipe>A cabeça/base de poste reto grosso de aço fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>

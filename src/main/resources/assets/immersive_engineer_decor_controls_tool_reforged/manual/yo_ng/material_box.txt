@@ -1,0 +1,7 @@
+Àpótí Ìpamọ́ Ohun Èlò
+Àpótí ìpèsè ìkọ́lé
+<&recipe>Apoti ohun elo gbe ipese nla ti ohun elo ikole kan ti ko yipada ati ti a le ko jo.<br>
+<br>
+Di apoti ni main hand ati ohun elo ni offhand lati fi sii; lo pelu offhand ofo lati yo stack kan.<br>
+<br>
+O gba ohun 512 ti iru kan, ko gba apoti miiran, irinse ti ko le stack ati stack ti a yipada, o si fi akoonu han ninu tooltip.

@@ -1,0 +1,7 @@
+Sa a dormi
+Éqhipement portatif d'erpos
+<&recipe>Le sac a dormi ét un fourniment de repos contre le temps pour l'ouvraije loin d'un lit.<br>
+<br>
+Usaije : Servez-vous-en la net den l'Overworld pour vous reposer jusq'au matin. I ne fixe ni ne dépllaçe le pouint de réapparition.<br>
+<br>
+I refuse le jour, les endrets dangëreus avèq des monstres pres e les dimensions pouint convenabls au repos sûr. Chaqe bon repos use le sac.

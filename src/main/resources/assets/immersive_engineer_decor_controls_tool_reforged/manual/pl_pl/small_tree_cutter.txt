@@ -1,0 +1,5 @@
+Ścinacz drzew
+Urządzenie warsztatowe
+<&recipe>Mały ścinacz drzew należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Skieruj go na wyrośnięte drzewa i osobno zbieraj upuszczone przedmioty.<br>

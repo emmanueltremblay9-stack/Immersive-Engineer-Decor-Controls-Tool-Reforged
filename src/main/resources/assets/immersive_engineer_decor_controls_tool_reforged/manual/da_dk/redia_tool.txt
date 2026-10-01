@@ -1,0 +1,7 @@
+REDIA-værktøj
+Diamantbeklædt universalværktøj
+<&recipe>REDIA-værktøjet er et holdbart multiværktøj af diamantklasse til feltarbejde omkring midlertidige pladser, værksteder og mineindgange.<br>
+<br>
+Brug: Brug det, mens du har fakler med, for at placere én fakkel fra tasken uden at slide på REDIA. Brug det, mens du sniger, for at klippe planter eller skifte jorden mellem jord, landbrugsjord, grov jord og jordsti. Den oprindelige reservefunktion som økse gælder fra undersiden. Snig, mens du bryder stammer, for at fælde sammenhængende træblokke.<br>
+<br>
+Reparer det med diamanter. Overreparation af et fuldt repareret REDIA-værktøj genskaber den oprindelige udvikling af Effektivitet og Held.

@@ -1,0 +1,5 @@
+Pantserglasplaat
+Beschermd zicht
+<&recipe>Dit blok houdt het zicht vrij en past tegelijk bij versterkte fabrieksconstructies.<br>
+<br>
+Gebruik: plaats het waar spelers door een beschermende afscheiding naar machines moeten kunnen kijken.<br>

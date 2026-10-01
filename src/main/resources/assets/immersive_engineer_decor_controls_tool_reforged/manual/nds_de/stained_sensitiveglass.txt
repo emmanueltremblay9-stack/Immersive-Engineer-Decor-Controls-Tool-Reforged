@@ -1,0 +1,7 @@
+Farvig empfindlich Glas
+Tekenglas
+<&recipe>En Redstone-empfindliche Glasblock lett di dörchkieken un wiest dorbi den Tekenstand.<br>
+<br>
+Bruuk: Bruuk em in Stüerruumfinstern, lüchten Paneels un schützt Fabrikglas.<br>
+<br>
+Anmarken: Wesselt den Stand dörch Redstone dichtbi.

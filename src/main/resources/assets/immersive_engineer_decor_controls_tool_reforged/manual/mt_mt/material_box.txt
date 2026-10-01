@@ -1,0 +1,7 @@
+Kaxxa għall-ħażna tal-materjali
+Kaxxa tal-provvisti tal-bini
+<&recipe>Il-kaxxa tal-materjal iġġorr riżerva kbira ta materjal wieħed komuni, mhux mibdul u impilabbli.<br>
+<br>
+Żomm il-kaxxa fl-id ewlenija u l-materjal fl-oħra biex iddaħħlu; meta l-id l-oħra vojta oħroġ munzell wieħed.<br>
+<br>
+Iżżomm 512 oġġett ta tip wieħed, tirrifjuta kaxxi oħra, tagħmir mhux impilabbli u munzelli mibdula u turi l-kontenut fit-tagħrif.

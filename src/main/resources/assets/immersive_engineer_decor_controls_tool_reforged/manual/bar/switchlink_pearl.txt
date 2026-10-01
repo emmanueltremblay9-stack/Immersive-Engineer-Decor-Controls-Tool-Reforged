@@ -1,0 +1,7 @@
+Schaltlinkperle
+Verbundene Steuerung
+<&recipe>A verbundene Perle speichert a Empfängaziel fia d'Fabrikfernsteuerung.<br>
+<br>
+So geht's: Klick mit ana Enderperle auf an Schaltlinkempfänga, damit oane entsteht. Benutz de verbundene Perle beim Schleichn, zum Aktiviern vom gspeicherten Empfänga.<br>
+<br>
+Hinweis: S'Ziel muaß gladn, in da gleichen Dimension und innerhalb vo da Reichweit sei.

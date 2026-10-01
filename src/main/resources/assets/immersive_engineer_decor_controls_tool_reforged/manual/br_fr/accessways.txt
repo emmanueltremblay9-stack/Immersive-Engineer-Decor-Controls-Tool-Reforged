@@ -1,0 +1,127 @@
+Hentoù moned
+Gwenodennoù ha skorioù
+Postoù dir, postoù koad tretet, kaeloù, hentoù-gwenodennoù, skorvelloù, skeulioù, dorioù, prenestroù ha trapoù a ya d'ober hentoù trezalc'h bihan e-barzh an uzinoù.<br>
+<br>
+Tammoù hentoù moned dir a implij plakennoù dir. Fardit pe lakait un daol aozañ metal, enlakit ur morzhol Immersive Engineering ha skoit barrennoù dir da blakennoù dir evit postoù, hentoù-gwenodennoù, prenestroù, dorioù, skorvelloù ha kinkladurioù dir all.<br>
+<br>
+Lakait anezho el lec'hioù ma'z eus ezhomm da dostaat ouzh ar mekanikoù, da sevel hentoù uhelaet pe buñsoù trezalc'h, pe da wareziñ ar ribloù.
+<np>
+Post dir tev
+Tamm framm skor
+<&thick_steel_pole>Ar post dir tev eeun a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Penn post tev
+Tamm framm skor
+<&thick_steel_pole_head>Penn/troad ar post dir tev eeun a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Post dir moan
+Tamm framm skor
+<&thin_steel_pole>Ar post dir moan eeun a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Penn post moan
+Tamm framm skor
+<&thin_steel_pole_head>Penn/troad ar post dir moan eeun a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Post koad tretet
+Tamm framm skor
+<&treated_wood_pole>Ar post koad tretet eeun a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Penn post tretet
+Tamm framm skor
+<&treated_wood_pole_head>Penn/troad ar post koad tretet eeun a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Skor post tretet
+Tamm framm skor
+<&treated_wood_pole_support>Skor ar post koad tretet eeun a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Skor dir T doubl
+Tamm framm skor
+<&steel_double_t_support>Ar bloc'h-mañ a ro ur framm gwelet da salioù mekanikoù ha sternioù moned.<br>
+<br>
+Implij: Troit ha lakait anezhañ evel skor gwelet evit treustoù, postoù ha ribloù savennoù.<br>
+<np>
+Kael leur dir
+Tamm moned trezalc'h
+<&steel_floor_grating>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Hent-gwenodenn dir
+Tamm moned trezalc'h
+<&steel_catwalk>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Diri hent-gwenodenn dir
+Tamm moned trezalc'h
+<&steel_catwalk_stairs>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Hent-gwenodenn dir uhelaet
+Tamm moned trezalc'h
+<&steel_catwalk_ta>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Skorvell dir
+Tamm moned trezalc'h
+<&steel_railing>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Kloued gael dir
+Tamm moned trezalc'h
+<&steel_mesh_fence>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Dor kloued gael dir
+Tamm moned trezalc'h
+<&steel_mesh_fence_gate>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Skeul gant pazelloù metal
+Tamm moned trezalc'h
+<&metal_rung_ladder>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Pazioù metal diblaen
+Tamm moned trezalc'h
+<&metal_rung_steps>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>
+<np>
+Prenestr gant stern dir
+Gwel gwarezet
+<&steel_framed_window>Ar bloc'h-mañ a vir ar gwel digor en ur glotañ gant savadurioù uzin kreñvaet.<br>
+<br>
+Implij: Lakait anezhañ e toull ur voger a 1 bloc'h, el lec'h ma rank ar c'hoarierien gwelet ar mekanikoù dre ur gwarez.<br>
+<np>
+Dor rikl metal
+Moned greantel
+<&metal_sliding_door>Ar bloc'h-mañ a ro ur moned solut da salioù trezalc'h, puñsoù, toennoù ha goloioù mekanikoù.<br>
+<br>
+Implij: Stalit anezhañ el lec'h ma'z eus ezhomm eus un digoradur trezalc'h reoliet.<br>
+<np>
+Trap houarn
+Moned greantel
+<&iron_hatch>Ar bloc'h-mañ a ro ur moned solut da salioù trezalc'h, puñsoù, toennoù ha goloioù mekanikoù.<br>
+<br>
+Implij: Stalit anezhañ el lec'h ma'z eus ezhomm eus un digoradur trezalc'h reoliet.<br>

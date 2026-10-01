@@ -1,0 +1,5 @@
+Vloeistofvat
+Vloeistoflyntoerusting
+<&recipe>Hierdie toebehoor is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: plaas dit waar pype of emmers die tenkvlak kan bereik.<br>

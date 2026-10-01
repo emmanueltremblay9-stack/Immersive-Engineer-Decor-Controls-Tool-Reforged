@@ -1,0 +1,7 @@
+Receptor cu puls și carcasă
+Comandă prin legătură
+<&recipe>Un receptor de legături cu puls și carcasă oferă panourilor de comandă la distanță o declanșare redstone scurtă.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Fă clic dreapta pe el sau acționează perla asociată pentru a emite un impuls scurt.<br>
+<br>
+Observații: Impulsul se oprește singur după durata programată.

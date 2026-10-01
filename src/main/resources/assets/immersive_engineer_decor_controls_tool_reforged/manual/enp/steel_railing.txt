@@ -1,0 +1,5 @@
+Steel Guardrail
+Upkeep pathway fitting
+<&recipe>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>

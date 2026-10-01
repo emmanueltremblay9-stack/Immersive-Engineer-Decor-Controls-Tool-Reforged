@@ -1,0 +1,7 @@
+Botón de máquina
+Control por redstone
+<&recipe>Un interruptor momentáneo emite un pulso de redstone limpo á máxima potencia.<br>
+<br>
+Uso: úsao para arrancar máquinas, desbloquear portas, activar alarmas ou accionar circuítos dunha soa activación.<br>
+<br>
+Notas: restablécese despois do pulso programado.

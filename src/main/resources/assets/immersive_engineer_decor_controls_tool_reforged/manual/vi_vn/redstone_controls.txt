@@ -1,0 +1,789 @@
+Điều khiển Redstone
+Đồng hồ và phụ kiện tín hiệu
+Thiết bị điều khiển biến redstone ẩn thành bảng điều khiển nhà máy dễ đọc, cảm biến, đèn chỉ báo, công tắc, báo động và phụ kiện tín hiệu liên kết.<br>
+<br>
+Dùng các trang này khi xây trạm vận hành, bảng tín hiệu, mạch an toàn và điều khiển từ xa.
+<np>
+Bia mũi tên
+Xung tức thời
+<&arrow_target>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Cảm biến cửa
+Điều khiển redstone
+<&door_sensor_switch>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút thang máy
+Điều khiển redstone
+<&elevator_button>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Nút kính
+Điều khiển redstone
+<&glass_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút kính
+Điều khiển redstone
+<&glass_small_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút cảm ứng kính
+Điều khiển redstone
+<&glass_touch_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút máy
+Điều khiển redstone
+<&industrial_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút bấm
+Điều khiển redstone
+<&industrial_double_pole_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút máy có khung bảo vệ
+Điều khiển redstone
+<&industrial_fenced_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút gõ
+Điều khiển redstone
+<&industrial_knock_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút cổ trang trí
+Điều khiển redstone
+<&oldfancy_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút cổ trang trí
+Điều khiển redstone
+<&oldfancy_small_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút kéo xích cổ trang trí
+Xung tức thời
+<&oldfancy_spring_reset_chain>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút mộc mạc
+Điều khiển redstone
+<&rustic_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút đinh mộc mạc
+Điều khiển redstone
+<&rustic_nail_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút mộc mạc nhỏ
+Điều khiển redstone
+<&rustic_small_button>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Nút kéo xích mộc mạc
+Xung tức thời
+<&rustic_spring_reset_chain>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.
+<np>
+Tấm tiếp xúc kính
+Xung áp lực
+<&glass_contact_mat>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Tiếp điểm cửa bằng kính
+Xung áp lực
+<&glass_door_contact_mat>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Thảm tiếp xúc
+Xung áp lực
+<&industrial_contact_mat>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Thảm tiếp điểm cửa
+Xung áp lực
+<&industrial_door_contact_mat>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Bộ phát hiện rơi xuyên
+Cảm nhận tín hiệu
+<&industrial_fallthrough_detector>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Nút đạp
+Điều khiển redstone
+<&industrial_foot_button>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Cửa sập công nghiệp kích hoạt bằng va đập
+Xung áp lực
+<&industrial_high_sensitive_trapdoor>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Thảm tiếp xúc nhạy chấn động
+Xung áp lực
+<&industrial_shock_sensitive_contact_mat>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Cửa sập kích hoạt bằng va đập
+Xung áp lực
+<&industrial_shock_sensitive_trapdoor>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Cây tín hiệu đỏ
+Xung áp lực
+<&red_power_plant>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Đĩa cảm biến áp lực mộc mạc
+Xung áp lực
+<&rustic_contact_plate>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Tiếp điểm áp lực cửa mộc mạc
+Xung áp lực
+<&rustic_door_contact_plate>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Bộ phát hiện rơi mộc mạc
+Cảm nhận tín hiệu
+<&rustic_fallthrough_detector>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Cửa sập mộc mạc kích hoạt bằng va đập
+Xung áp lực
+<&rustic_high_sensitive_trapdoor>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Tấm áp lực mộc mạc nhạy chấn động
+Xung áp lực
+<&rustic_shock_sensitive_plate>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Cửa sập mộc mạc kích hoạt bằng va đập
+Xung áp lực
+<&rustic_shock_sensitive_trapdoor>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Cây tín hiệu vàng
+Xung áp lực
+<&yellow_power_plant>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.
+<np>
+Đồng hồ hẹn giờ ngày bằng kính
+Tín hiệu ban ngày
+<&glass_day_timer>Công tắc hẹn giờ tuân theo phần ban ngày của chu kỳ thế giới.<br>
+<br>
+Cách dùng: Dùng cho đèn sân, cửa chớp và điều khiển nhà máy chỉ hoạt động ban ngày.<br>
+<br>
+Ghi chú: Cần chiều không gian có ánh sáng bầu trời.
+<np>
+Bộ phát hiện thực thể bằng kính
+Cảm nhận tín hiệu
+<&glass_entity_detector>Bộ phát hiện thực thể theo dõi chuyển động gần đó mà không cần tấm sàn nhìn thấy được.<br>
+<br>
+Cách dùng: Nối đến cửa, đèn, báo động hoặc khóa liên động máy.<br>
+<br>
+Ghi chú: Quét vùng nhỏ quanh khối.
+<np>
+Bộ phát tín hiệu định kỳ bằng kính
+Xung hẹn giờ
+<&glass_interval_timer>Công tắc hẹn giờ gọn phát xung redstone theo lịch.<br>
+<br>
+Cách dùng: Dùng khi cơ cấu nhỏ cần điều khiển định kỳ hoặc có độ trễ.<br>
+<br>
+Ghi chú: Dùng xung redstone theo lịch.
+<np>
+Bộ phát hiện theo đường bằng kính
+Cảm nhận tín hiệu
+<&glass_linear_entity_detector>Bộ phát hiện thực thể theo dõi chuyển động gần đó mà không cần tấm sàn nhìn thấy được.<br>
+<br>
+Cách dùng: Nối đến cửa, đèn, báo động hoặc khóa liên động máy.<br>
+<br>
+Ghi chú: Quét vùng nhỏ quanh khối.
+<np>
+Bộ phát hiện khối
+Cảm nhận tín hiệu
+<&industrial_block_detector>Bộ phát hiện khối kiểm tra xem khoảng trống trước mặt có bị chiếm không.<br>
+<br>
+Cách dùng: Hướng về mặt máy, bộ đệm hoặc khoảng trống cần bảo vệ để theo dõi.<br>
+<br>
+Ghi chú: Phát tín hiệu khi khối trước mặt không phải không khí.
+<np>
+Đồng hồ hẹn giờ ban ngày
+Tín hiệu ban ngày
+<&industrial_day_timer>Công tắc hẹn giờ tuân theo phần ban ngày của chu kỳ thế giới.<br>
+<br>
+Cách dùng: Dùng cho đèn sân, cửa chớp và điều khiển nhà máy chỉ hoạt động ban ngày.<br>
+<br>
+Ghi chú: Cần chiều không gian có ánh sáng bầu trời.
+<np>
+Bộ phát hiện thực thể
+Cảm nhận tín hiệu
+<&industrial_entity_detector>Bộ phát hiện thực thể theo dõi chuyển động gần đó mà không cần tấm sàn nhìn thấy được.<br>
+<br>
+Cách dùng: Nối đến cửa, đèn, báo động hoặc khóa liên động máy.<br>
+<br>
+Ghi chú: Quét vùng nhỏ quanh khối.
+<np>
+Bộ hẹn giờ định kỳ
+Xung hẹn giờ
+<&industrial_interval_timer>Công tắc hẹn giờ gọn phát xung redstone theo lịch.<br>
+<br>
+Cách dùng: Dùng khi cơ cấu nhỏ cần điều khiển định kỳ hoặc có độ trễ.<br>
+<br>
+Ghi chú: Dùng xung redstone theo lịch.
+<np>
+Cảm biến ánh sáng
+Cảm nhận tín hiệu
+<&industrial_light_sensor>Cảm biến ánh sáng biến độ sáng tại chỗ thành điều khiển redstone.<br>
+<br>
+Cách dùng: Dùng cho đèn tự động, cửa chớp và mạch điều khiển tầm nhìn.<br>
+<br>
+Ghi chú: Phát tín hiệu khi độ sáng thô từ 8 trở lên.
+<np>
+Bộ phát hiện bão
+Cảm nhận tín hiệu
+<&industrial_lightning_sensor>Cảm biến bão kích hoạt cảnh báo khi có sấm sét.<br>
+<br>
+Cách dùng: Đặt dưới trời thoáng và nối tới đèn hoặc báo động.<br>
+<br>
+Ghi chú: Cần có sấm sét và không bị che trời.
+<np>
+Bộ phát hiện thực thể theo đường
+Cảm nhận tín hiệu
+<&industrial_linear_entity_detector>Bộ phát hiện thực thể theo dõi chuyển động gần đó mà không cần tấm sàn nhìn thấy được.<br>
+<br>
+Cách dùng: Nối đến cửa, đèn, báo động hoặc khóa liên động máy.<br>
+<br>
+Ghi chú: Quét vùng nhỏ quanh khối.
+<np>
+Cảm biến mưa
+Cảm nhận tín hiệu
+<&industrial_rain_sensor>Cảm biến thời tiết biến mưa tại vị trí của nó thành redstone.<br>
+<br>
+Cách dùng: Gắn ở nơi khối phía trên có thể nhận mưa.<br>
+<br>
+Ghi chú: Kiểm tra mưa phía trên cảm biến.
+<np>
+Công tắc kính lưỡng ổn
+Điều khiển redstone
+<&glass_rotary_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cảm ứng kính hai trạng thái ổn định
+Điều khiển redstone
+<&glass_touch_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Kính nhạy màu cam
+Kính tín hiệu
+<&orange_sensitiveglass>Khối kính phản ứng với redstone vừa giữ tầm nhìn vừa hiển thị trạng thái tín hiệu.<br>
+<br>
+Cách dùng: Dùng trong cửa sổ phòng điều khiển, bảng sáng và kính nhà máy được bảo vệ.<br>
+<br>
+Ghi chú: Đổi trạng thái theo năng lượng redstone gần đó.
+<np>
+Kính nhạy phát sáng
+Kính tín hiệu
+<&sensitive_glass_block>Khối kính phản ứng với redstone vừa giữ tầm nhìn vừa hiển thị trạng thái tín hiệu.<br>
+<br>
+Cách dùng: Dùng trong cửa sổ phòng điều khiển, bảng sáng và kính nhà máy được bảo vệ.<br>
+<br>
+Ghi chú: Đổi trạng thái theo năng lượng redstone gần đó.
+<np>
+Kính nhạy có màu
+Kính tín hiệu
+<&stained_sensitiveglass>Khối kính phản ứng với redstone vừa giữ tầm nhìn vừa hiển thị trạng thái tín hiệu.<br>
+<br>
+Cách dùng: Dùng trong cửa sổ phòng điều khiển, bảng sáng và kính nhà máy được bảo vệ.<br>
+<br>
+Ghi chú: Đổi trạng thái theo năng lượng redstone gần đó.
+<np>
+Đồng hồ thanh bằng kính
+Đồng hồ tín hiệu
+<&glass_vertical_bar_gauge>Đồng hồ phòng điều khiển gọn hiển thị cường độ redstone rõ ràng trên bảng.<br>
+<br>
+Cách dùng: Gắn ở nơi có thể nhìn nhanh để kiểm tra năng lượng redstone liền kề.<br>
+<br>
+Ghi chú: Đọc cường độ redstone gần đó từ 0 đến 15.
+<np>
+Đồng hồ tương tự
+Đồng hồ tín hiệu
+<&industrial_analog_angular_gauge>Đồng hồ phòng điều khiển gọn hiển thị cường độ redstone rõ ràng trên bảng.<br>
+<br>
+Cách dùng: Gắn ở nơi có thể nhìn nhanh để kiểm tra năng lượng redstone liền kề.<br>
+<br>
+Ghi chú: Đọc cường độ redstone gần đó từ 0 đến 15.
+<np>
+Đồng hồ vôn kế
+Đồng hồ tín hiệu
+<&industrial_analog_horizontal_gauge>Đồng hồ phòng điều khiển gọn hiển thị cường độ redstone rõ ràng trên bảng.<br>
+<br>
+Cách dùng: Gắn ở nơi có thể nhìn nhanh để kiểm tra năng lượng redstone liền kề.<br>
+<br>
+Ghi chú: Đọc cường độ redstone gần đó từ 0 đến 15.
+<np>
+Đồng hồ số
+Cường độ tín hiệu dễ đọc
+<&industrial_small_digital_gauge>Đồng hồ phòng điều khiển gọn hiển thị cường độ redstone rõ ràng trên bảng.<br>
+<br>
+Cách dùng: Gắn ở nơi có thể nhìn nhanh để kiểm tra năng lượng redstone liền kề.<br>
+<br>
+Ghi chú: Đọc cường độ redstone gần đó từ 0 đến 15.
+<np>
+Đồng hồ ống kính
+Đồng hồ tín hiệu
+<&industrial_tube_gauge>Đồng hồ phòng điều khiển gọn hiển thị cường độ redstone rõ ràng trên bảng.<br>
+<br>
+Cách dùng: Gắn ở nơi có thể nhìn nhanh để kiểm tra năng lượng redstone liền kề.<br>
+<br>
+Ghi chú: Đọc cường độ redstone gần đó từ 0 đến 15.
+<np>
+Đồng hồ thanh tương tự
+Đồng hồ tín hiệu
+<&industrial_vertical_bar_gauge>Đồng hồ phòng điều khiển gọn hiển thị cường độ redstone rõ ràng trên bảng.<br>
+<br>
+Cách dùng: Gắn ở nơi có thể nhìn nhanh để kiểm tra năng lượng redstone liền kề.<br>
+<br>
+Ghi chú: Đọc cường độ redstone gần đó từ 0 đến 15.
+<np>
+Đèn báo động
+Phản hồi tín hiệu
+<&industrial_alarm_lamp>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+Còi báo động
+Phản hồi tín hiệu
+<&industrial_alarm_siren>Còi báo động là bộ chỉ thị redstone gắn lên mặt khối. Trạng thái có điện thay đổi theo tín hiệu của khối mà nó được gắn vào.<br>
+<br>
+Gắn vào mặt khối đặc và cấp điện để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Còi cập nhật mỗi giây một lần khi tín hiệu kết nối còn hoạt động.
+<np>
+LED nhấp nháy
+Phản hồi tín hiệu
+<&industrial_blinking_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED xanh lá nhấp nháy
+Phản hồi tín hiệu
+<&industrial_green_blinking_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED xanh lá
+Phản hồi tín hiệu
+<&industrial_green_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED đỏ
+Phản hồi tín hiệu
+<&industrial_red_blinking_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED đỏ
+Phản hồi tín hiệu
+<&industrial_red_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED trắng nhấp nháy
+Phản hồi tín hiệu
+<&industrial_white_blinking_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED trắng
+Phản hồi tín hiệu
+<&industrial_white_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED vàng nhấp nháy
+Phản hồi tín hiệu
+<&industrial_yellow_blinking_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+LED vàng
+Phản hồi tín hiệu
+<&industrial_yellow_led>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+Đèn hiệu mộc mạc
+Phản hồi tín hiệu
+<&rustic_semaphore>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.
+<np>
+Công tắc so sánh
+Tín hiệu từ khối gắn vào
+<&industrial_comparator_switch>Công tắc cảm biến gọn đọc khối mà nó gắn lên rồi biến kết quả thành đầu ra đơn giản trên bảng.<br>
+<br>
+Cách dùng: Gắn lên kho đồ, bể hoặc thiết bị redstone. Khi khối được gắn vào báo đầu ra bộ so sánh, thùng chứa hoặc redstone, công tắc phát redstone cường độ tối đa.<br>
+<br>
+Ghi chú: Dùng để biến mức lưu trữ hoặc dây dẫn ẩn thành tuyến điều khiển bật/tắt rõ ràng.
+<np>
+Bộ chỉnh độ sáng
+Tín hiệu biến thiên
+<&industrial_dimmer>Bộ điều khiển xoay điều chỉnh cường độ redstone từ mặt bảng gọn.<br>
+<br>
+Cách dùng: Nhấp phải để tăng đầu ra từng nấc; sau cường độ tối đa sẽ trở về không.<br>
+<br>
+Ghi chú: Xuất cường độ từ 0 đến 15.
+<np>
+Nút dừng khẩn cấp
+Điều khiển redstone
+<&industrial_estop_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Bộ khóa phễu
+Điều khiển redstone
+<&industrial_hopper_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Công tắc gõ
+Điều khiển redstone
+<&industrial_knock_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt
+Điều khiển redstone
+<&industrial_lever>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Công tắc máy hai nút
+Điều khiển redstone
+<&industrial_machine_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Tay kéo
+Điều khiển redstone
+<&industrial_pull_handle>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt xoay
+Điều khiển redstone
+<&industrial_rotary_lever>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Công tắc máy dạng xoay
+Điều khiển redstone
+<&industrial_rotary_machine_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt tiếp xúc
+Điều khiển redstone
+<&industrial_small_lever>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Công tắc
+Điều khiển redstone
+<&industrialswitch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Công tắc đèn
+Điều khiển redstone
+<&light_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Công tắc van
+Điều khiển redstone
+<&valve_wheel_switch>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Bộ nhận xung có vỏ
+Điều khiển liên kết
+<&industrial_switchlink_cased_pulse_receiver>Bộ nhận xung liên kết có vỏ cung cấp kích hoạt redstone ngắn cho các bảng điều khiển từ xa.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Nhấp phải vào bộ nhận hoặc kích hoạt viên ngọc liên kết để phát xung ngắn.<br>
+<br>
+Ghi chú: Xung tự đặt lại sau thời lượng đã hẹn.
+<np>
+Bộ nhận liên kết có vỏ
+Điều khiển liên kết
+<&industrial_switchlink_cased_receiver>Bộ nhận liên kết có vỏ cung cấp mục tiêu redstone bền chắc cho các bảng điều khiển từ xa.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Nhấp phải trực tiếp vào bộ nhận để bật/tắt bằng tay.<br>
+<br>
+Ghi chú: Dùng viên ngọc liên kết khi cúi để bật/tắt bộ nhận này.
+<np>
+Bộ nhận liên kết xung
+Điều khiển liên kết
+<&industrial_switchlink_pulse_receiver>Bộ nhận xung liên kết cung cấp kích hoạt redstone ngắn cho các bảng điều khiển từ xa.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Nhấp phải vào bộ nhận hoặc kích hoạt viên ngọc liên kết để phát xung ngắn.<br>
+<br>
+Ghi chú: Xung tự đặt lại sau thời lượng đã hẹn.
+<np>
+Rơle liên kết xung
+Điều khiển liên kết
+<&industrial_switchlink_pulse_relay>Phụ kiện kiểu rơle cung cấp điểm công tắc cục bộ gọn cho bảng điều khiển.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra cường độ tối đa cho mạch gần đó. Dùng khối bộ nhận khi cần kích hoạt bằng viên ngọc liên kết.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Bộ nhận liên kết công tắc
+Điều khiển liên kết
+<&industrial_switchlink_receiver>Bộ nhận liên kết cung cấp mục tiêu redstone cường độ tối đa cho các bảng điều khiển từ xa.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Nhấp phải trực tiếp vào bộ nhận để bật/tắt bằng tay.<br>
+<br>
+Ghi chú: Dùng viên ngọc liên kết khi cúi để bật/tắt bộ nhận này.
+<np>
+Bộ nhận liên kết tương tự
+Điều khiển liên kết
+<&industrial_switchlink_receiver_analog>Bộ nhận liên kết cung cấp mục tiêu từ xa nhìn thấy được cho bảng điều khiển.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Dùng viên ngọc đó khi cúi để kích hoạt bộ nhận từ xa.<br>
+<br>
+Ghi chú: Bộ nhận này phát tín hiệu redstone tối đa khi được kích hoạt.
+<np>
+Rơle liên kết công tắc
+Điều khiển liên kết
+<&industrial_switchlink_relay>Phụ kiện kiểu rơle cung cấp điểm công tắc cục bộ gọn cho bảng điều khiển.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra cường độ tối đa cho mạch gần đó. Dùng khối bộ nhận khi cần kích hoạt bằng viên ngọc liên kết.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Rơle liên kết tương tự
+Điều khiển liên kết
+<&industrial_switchlink_relay_analog>Phụ kiện kiểu rơle cung cấp điểm công tắc cục bộ gọn cho bảng điều khiển.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra cường độ tối đa cho mạch gần đó. Dùng khối bộ nhận khi cần kích hoạt bằng viên ngọc liên kết.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Ngọc liên kết công tắc
+Điều khiển liên kết
+<&switchlink_pearl>Viên ngọc liên kết lưu mục tiêu bộ nhận cho điều khiển nhà máy từ xa.<br>
+<br>
+Cách dùng: Nhấp bộ nhận liên kết công tắc bằng ngọc Ender để tạo viên ngọc liên kết. Dùng viên ngọc đó khi cúi để kích hoạt bộ nhận đã lưu.<br>
+<br>
+Ghi chú: Mục tiêu phải được tải, ở cùng chiều không gian và trong phạm vi.
+<np>
+Cần gạt cổ trang trí
+Điều khiển redstone
+<&oldfancy_bistableswitch1>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt xoay cổ trang trí
+Điều khiển redstone
+<&oldfancy_bistableswitch2>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt xoay mộc mạc
+Điều khiển redstone
+<&rustic_angular_lever>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt mộc mạc
+Điều khiển redstone
+<&rustic_lever>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt đinh mộc mạc
+Điều khiển redstone
+<&rustic_nail_lever>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.
+<np>
+Cần gạt hai bản lề mộc mạc
+Điều khiển redstone
+<&rustic_two_hinge_lever>Chi tiết điều khiển gọn tạo điểm công tắc redstone rõ ràng cho nhà máy.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra tối đa cho mạch gần đó.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.

@@ -1,0 +1,7 @@
+Rustic Semaphore
+Visible Signal Report
+<&recipe>A compact indicator makes hidden redstone plain to see in the manufactory.<br>
+<br>
+Use: Wire it beside the signal to observe doors, engines, alarms or panels.<br>
+<br>
+Note: Its state changes when redstone power is present nearby.

@@ -1,0 +1,7 @@
+Napolnjen lazurni kamen
+Shranjene izkušnje
+<&recipe>Napolnjen lazurni kamen hrani eno stopnjo izkušenj, pridobljeno z ožemalnikom uma.<br>
+<br>
+Uporaba: Zaužij ga, da si povrneš eno stopnjo, odstraniš aktivne učinke in obnoviš malo zdravja.<br>
+<br>
+Prikaz recepta kaže ožemalnik uma, ker napolnjen lazurni kamen nastane z uporabo tega orodja, ko imaš na voljo lazurni kamen in XP.

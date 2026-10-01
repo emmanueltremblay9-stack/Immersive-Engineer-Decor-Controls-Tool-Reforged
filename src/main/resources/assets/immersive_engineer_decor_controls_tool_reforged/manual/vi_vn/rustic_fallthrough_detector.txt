@@ -1,0 +1,7 @@
+Bộ phát hiện rơi mộc mạc
+Cảm nhận tín hiệu
+<&recipe>Công tắc tiếp xúc phát tín hiệu ngắn từ chuyển động trên sàn hoặc cửa sập.<br>
+<br>
+Cách dùng: Đặt nơi thực thể đi qua lối bảo trì, bộ nạp hoặc tuyến được bảo vệ.<br>
+<br>
+Ghi chú: Phát xung ngắn sau khi thực thể tiếp xúc.

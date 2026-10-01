@@ -1,0 +1,7 @@
+Glassy Interval Signalz
+Timed pulsez
+<&recipe>Lil timer switch gives a scheduled redstone pulse, kitty.<br>
+<br>
+How to: Use where a lil mechanism needs periodic or delayed controlz, meow.<br>
+<br>
+Kitty note: Uses scheduled redstone pulsez.

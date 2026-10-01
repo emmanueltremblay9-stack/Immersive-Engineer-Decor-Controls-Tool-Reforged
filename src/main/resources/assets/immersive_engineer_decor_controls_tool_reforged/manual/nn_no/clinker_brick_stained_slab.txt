@@ -1,0 +1,5 @@
+Tilskitna klinkerhelle
+Sotmørkt murverk
+<&recipe>Den tilskitna klinkerhella gjev sotmørkt murverk til omnshallar, pipefundament og servicevegger.<br>
+<br>
+Bruk: lag vegger, kantar eller eit varmesoneskal kring omnar og kjelar.<br>

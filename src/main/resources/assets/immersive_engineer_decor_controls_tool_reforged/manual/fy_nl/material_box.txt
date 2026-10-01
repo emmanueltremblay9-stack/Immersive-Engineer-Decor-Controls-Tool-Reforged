@@ -1,0 +1,7 @@
+Materiaalopslachkiste
+Boufoarriedkiste
+<&recipe>De materiaalkiste draacht in grutte foarrie fan ien gewoan, ûnferoare en stapelber boumateriaal.<br>
+<br>
+Gebrûk: Hâld de kiste yn de haadhân en in stapel materiaal yn de oare hân om it te laden. Brûk de kiste mei in lege oare hân om ien stapel derút te heljen.<br>
+<br>
+De kiste hâldt oant 512 items fan ien soarte. Se wegeret nêste kisten, net-stapelbere útrissing en omneamde of mei gegevens feroare stapels; de tooltip lit de ynhâld sjen.

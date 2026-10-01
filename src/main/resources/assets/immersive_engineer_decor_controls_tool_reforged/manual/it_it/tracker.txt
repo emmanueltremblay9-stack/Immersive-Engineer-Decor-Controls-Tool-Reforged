@@ -1,0 +1,7 @@
+Localizzatore
+Indicatore di posizione memorizzata
+<&recipe>Il localizzatore salva la posizione di un blocco direttamente nell'oggetto.<br>
+<br>
+Uso: Fai clic su un blocco per salvarne dimensione e coordinate. Il suggerimento mostra la posizione memorizzata. Usa il localizzatore da accovacciato per cancellare il bersaglio.<br>
+<br>
+Usalo per segnare macchinari, diramazioni di gallerie, comandi remoti o cantieri incompleti prima di tornare con utensili e materiali.

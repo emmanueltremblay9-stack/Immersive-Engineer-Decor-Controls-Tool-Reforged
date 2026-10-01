@@ -1,0 +1,5 @@
+Kovové posuvné dvere
+Priemyselný prístupový bod
+<&recipe>Tento blok poskytuje odolný prístup do servisných miestností, šácht, striech a strojových krytov.<br>
+<br>
+Použitie: Nainštaluj ho tam, kde stavba potrebuje ovládateľný otvor na údržbu.<br>

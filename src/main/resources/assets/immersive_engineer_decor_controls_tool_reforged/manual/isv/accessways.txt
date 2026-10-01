@@ -1,0 +1,127 @@
+Pristupne puti
+Prohodne puti i podpory
+Staljne stolpy, obrabotane drěvene stolpy, rěšetky, obslužne ploščiny, zaščitne ogrady, drabiny, dveri, okna i poklopy tvorjat kompaktne obslužne puti vnutri fabrik.<br>
+<br>
+Staljne česti pristupnyh putij upotrěbjajut staljne ploče. Iztvori ili postavi vrštat dlja metala, vloži molot Immersive Engineering i potom kuj staljne kovky v staljne ploče dlja stolpov, obslužnyh ploščin, oken, dverij, zaščitnyh ograd i drugih staljnyh ozdob.<br>
+<br>
+Stavjaj jih tam, kde mašiny potrěbujut pristup dlja obsluživanja, povyšene puti, servisne šahty ili bezopasnějše kraje.
+<np>
+Debely staljny stolp
+Čest konstrukcijnogo rama
+<&thick_steel_pole>Pravy debely staljny stolp davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Glava debelogo stolpa
+Čest konstrukcijnogo rama
+<&thick_steel_pole_head>Glava/noga pravogo debelogo staljnogo stolpa davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Tenky staljny stolp
+Čest konstrukcijnogo rama
+<&thin_steel_pole>Pravy tenky staljny stolp davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Glava tenkogo stolpa
+Čest konstrukcijnogo rama
+<&thin_steel_pole_head>Glava/noga pravogo tenkogo staljnogo stolpa davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Stolp iz obrabotanogo drěva
+Čest konstrukcijnogo rama
+<&treated_wood_pole>Pravy stolp iz obrabotanogo drěva davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Glava obrabotanogo stolpa
+Čest konstrukcijnogo rama
+<&treated_wood_pole_head>Glava/noga pravogo stolpa iz obrabotanogo drěva davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Podpora obrabotanogo stolpa
+Čest konstrukcijnogo rama
+<&treated_wood_pole_support>Podpora pravogo stolpa iz obrabotanogo drěva davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Staljna podpora dvojnoj T-formy
+Čest konstrukcijnogo rama
+<&steel_double_t_support>Sej blok davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>
+<np>
+Staljna podložna rěšetka
+Dodatok obslužnogo pristupa
+<&steel_floor_grating>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Staljna obslužna ploščina
+Dodatok obslužnogo pristupa
+<&steel_catwalk>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Stupenišče staljnoj obslužnoj ploščiny
+Dodatok obslužnogo pristupa
+<&steel_catwalk_stairs>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Povyšena staljna obslužna ploščina
+Dodatok obslužnogo pristupa
+<&steel_catwalk_ta>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Staljna zaščitna ograda
+Dodatok obslužnogo pristupa
+<&steel_railing>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Staljna sětkova ograda
+Dodatok obslužnogo pristupa
+<&steel_mesh_fence>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Vrata staljnoj sětkovoj ogrady
+Dodatok obslužnogo pristupa
+<&steel_mesh_fence_gate>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Drabina s metalnymi prěčkami
+Dodatok obslužnogo pristupa
+<&metal_rung_ladder>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Naizměnno razměščene metalne stupeni
+Dodatok obslužnogo pristupa
+<&metal_rung_steps>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>
+<np>
+Okno s staljnym ramom
+Zaščiščeny pogled
+<&steel_framed_window>Sej blok sohranjaje otvorjeny pogled, ale vsegda odgovarjaje ojačenoj fabričnoj konstrukciji.<br>
+<br>
+Upotrěbjenje: Postavi go v otvor stěny široky 1 blok, kde igrači majut viděti mašiny črěz zaščiščenu prěgradu.<br>
+<np>
+Metalne kolzajuče dveri
+Promyslovo pristupno město
+<&metal_sliding_door>Sej blok davaje krěpky pristup do servisnyh komor, šaht, strěh i mašinnyh obalov.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde budynok potrěbuje upravljany otvor dlja obsluživanja.<br>
+<np>
+Želězny poklop
+Promyslovo pristupno město
+<&iron_hatch>Sej blok davaje krěpky pristup do servisnyh komor, šaht, strěh i mašinnyh obalov.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde budynok potrěbuje upravljany otvor dlja obsluživanja.<br>

@@ -1,0 +1,108 @@
+Ndërtim industrial
+Mure fabrike dhe zbukurime
+Pajisjet e përgjithshme të ndërtimit mbulojnë dyer, dritare, drita, tabela paralajmëruese, zbukurime dhe pjesë strukturore që nuk hyjnë në një seksion më të veçantë.<br>
+<br>
+Përdori këto faqe për dhoma fabrike, korridore shërbimi, shënimin e rreziqeve dhe hollësi praktike industriale.
+<np>
+Llambë hekuri
+Dritë kompakte pune
+<&iron_bulb_light>Ky bllok jep ndriçim kompakt industrial për korridore, pasarela dhe zona pune.<br>
+<br>
+Përdorimi: montoje në tavane, mure ose skaje ku dhoma kërkon ndriçim të qartë pune.<br>
+<np>
+Dritë anësore tavani
+Dritë kompakte pune
+<&iron_ceiling_edge_light>Ky bllok jep ndriçim kompakt industrial për korridore, pasarela dhe zona pune.<br>
+<br>
+Përdorimi: montoje në tavane, mure ose skaje ku dhoma kërkon ndriçim të qartë pune.<br>
+<np>
+Dritë e futur në skajin e dyshemesë
+Dritë kompakte pune
+<&iron_floor_edge_light>Ky bllok jep ndriçim kompakt industrial për korridore, pasarela dhe zona pune.<br>
+<br>
+Përdorimi: montoje në tavane, mure ose skaje ku dhoma kërkon ndriçim të qartë pune.<br>
+<np>
+Dritë e futur brenda
+Dritë kompakte pune
+<&iron_inset_light>Ky bllok jep ndriçim kompakt industrial për korridore, pasarela dhe zona pune.<br>
+<br>
+Përdorimi: montoje në tavane, mure ose skaje ku dhoma kërkon ndriçim të qartë pune.<br>
+<np>
+Tabelë «Kujdes i përgjithshëm»
+Shenjë rreziku
+<&sign_caution>Tabela «Kujdes i përgjithshëm» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë rreziku
+Shenjë rreziku
+<&sign_danger>Tabela «Kujdes, rrezik i madh atje» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë dekorative
+Shenjë rreziku
+<&sign_decor>Pllaka e tabelës (Engineer’s Decor) shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë mbrojtjeje
+Shenjë rreziku
+<&sign_defense>Tabela «Kujdes, sistem mbrojtjeje përpara» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë daljeje
+Shenjë rreziku
+<&sign_exit>Kjo tabelë shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë «Rrezik zjarri»
+Shenjë rreziku
+<&sign_firehazard>Tabela «Rrezik zjarri» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë «Kujdes, ngricë»
+Shenjë rreziku
+<&sign_frost>Tabela «Kujdes, ngricë» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë sipërfaqeje të nxehtë
+Shenjë rreziku
+<&sign_hotsurface>Tabela «Kujdes, sipërfaqe e nxehtë» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë teli nën tension
+Shenjë rreziku
+<&sign_hotwire>Tabela «Kujdes, tel nën tension» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë «Rrezik lazeri»
+Shenjë rreziku
+<&sign_laser>Tabela «Rrezik lazeri» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë rreziku magjik
+Shenjë rreziku
+<&sign_magichazard>Tabela «Kujdes, rrezik magjik» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë fushe magnetike
+Shenjë rreziku
+<&sign_magneticfield>Tabela «Kujdes, fushë e fortë magnetike» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>
+Tabelë «Rrezik radioaktiv»
+Shenjë rreziku
+<&sign_radioactive>Tabela «Rrezik radioaktiv» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>
+<np>

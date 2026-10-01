@@ -1,0 +1,7 @@
+Detector de blocuri
+Detectarea semnalelor
+<&recipe>Un detector de blocuri verifică dacă spațiul din fața sa este ocupat.<br>
+<br>
+Utilizare: Orientează-l spre fața mașinii, spațiul tampon sau spațiul protejat pe care vrei să-l supraveghezi.<br>
+<br>
+Observații: Emite semnal când blocul din față nu este aer.

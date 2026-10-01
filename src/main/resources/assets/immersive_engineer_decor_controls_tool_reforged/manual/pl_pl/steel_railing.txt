@@ -1,0 +1,5 @@
+Stalowa balustrada
+Element dostępu serwisowego
+<&recipe>Ten blok wyznacza czytelne drogi serwisowe wokół maszyn.<br>
+<br>
+Użycie: Twórz z niego dostęp serwisowy wokół maszyn, na wyższych kondygnacjach i przy szybach technicznych.<br>

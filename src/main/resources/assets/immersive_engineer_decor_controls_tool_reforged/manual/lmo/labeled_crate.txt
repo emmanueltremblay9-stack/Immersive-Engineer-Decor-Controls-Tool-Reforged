@@ -1,0 +1,5 @@
+Cassa cont eticheta
+Eticheta di materiai de podè cambià
+<&recipe>Quella cassa cont eticheta chì l’è fada per ordenà ben i materiai in del magazzin. Se poeu cambià la piastra in denanz come un piscinin placard de laboratori.<br>
+<br>
+Fà clic drizz in su la piastra de l’eticheta per cambià l’eticheta de la cassa. Fà clic drizz in sul rest de la cassa per dervì el deposit de acessori, tocch e materiai de manutenzion.<br>

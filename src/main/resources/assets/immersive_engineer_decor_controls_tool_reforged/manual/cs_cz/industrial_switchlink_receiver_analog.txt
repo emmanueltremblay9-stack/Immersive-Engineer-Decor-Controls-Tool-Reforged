@@ -1,0 +1,7 @@
+Analogový přijímač propojení
+Propojené ovládání
+<&recipe>Propojený přijímač poskytuje ovládacím panelům viditelný vzdálený cíl.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Použij ji při plížení pro dálkové spuštění přijímače.<br>
+<br>
+Poznámky: Po spuštění tento přijímač vyšle redstonový signál plné síly.

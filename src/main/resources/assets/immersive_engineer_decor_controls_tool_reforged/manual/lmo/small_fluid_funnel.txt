@@ -1,0 +1,5 @@
+Imbudd per fluid
+Acessori per linee de fluid
+<&recipe>El Piscinin imbudd per catà su fluid l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Metel sota el pont de recolta del fluid e manda quel che el conserva vers serbatoi o tub pussee bass.<br>

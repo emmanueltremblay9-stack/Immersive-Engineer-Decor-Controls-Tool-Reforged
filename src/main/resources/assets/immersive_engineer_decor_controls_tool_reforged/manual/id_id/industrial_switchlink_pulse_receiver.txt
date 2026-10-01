@@ -1,0 +1,7 @@
+Penerima Tautan Pulsa
+Kendali tertaut
+<&recipe>Penerima pulsa tertaut memberi panel jarak jauh pemicu redstone singkat.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Klik kanan penerima atau picu mutiara tertaut untuk mengeluarkan pulsa singkat.<br>
+<br>
+Catatan: pulsa kembali ke keadaan awal setelah durasi terjadwalnya.

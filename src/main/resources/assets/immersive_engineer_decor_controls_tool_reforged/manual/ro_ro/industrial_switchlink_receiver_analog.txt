@@ -1,0 +1,7 @@
+Receptor analogic de legături
+Comandă prin legătură
+<&recipe>Un receptor de legături oferă panourilor de comandă o țintă vizibilă pentru acționare la distanță.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Folosește perla în timp ce te furișezi pentru a activa receptorul de la distanță.<br>
+<br>
+Observații: Acest receptor emite un semnal redstone la intensitate maximă când este declanșat.

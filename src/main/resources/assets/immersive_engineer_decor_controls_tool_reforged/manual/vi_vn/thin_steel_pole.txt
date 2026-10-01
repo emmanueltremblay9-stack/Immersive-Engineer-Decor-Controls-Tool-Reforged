@@ -1,0 +1,5 @@
+Cột thép mảnh
+Bộ phận khung kết cấu
+<&recipe>Cột thép mảnh thẳng tạo kết cấu nhìn thấy được cho gian máy và khung lối tiếp cận.<br>
+<br>
+Cách dùng: Xoay và đặt làm giằng nhìn thấy được cho dầm, cột và mép sàn thao tác.<br>

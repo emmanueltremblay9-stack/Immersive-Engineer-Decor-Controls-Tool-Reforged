@@ -1,0 +1,5 @@
+Stare lesene deske
+Postaran delavniški les
+<&recipe>Stare industrijske lesene deske dodajajo postaran delavniški les za tla, stopnice, vrata in tople notranje obrobe.<br>
+<br>
+Uporaba: Uporabi ga za stara delavniška tla, stopnice, vrata in obrobe.<br>

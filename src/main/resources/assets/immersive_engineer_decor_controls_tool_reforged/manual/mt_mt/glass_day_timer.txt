@@ -1,0 +1,7 @@
+Arloġġ tat-tajmer ta' jum tal-ħġieġ
+Sinjal tad-dawl tal-jum
+<&recipe>Swiċċ tat-tajmer isegwi l-parti ta' matul il-jum taċ-ċiklu tad-dinja.<br>
+<br>
+Użu: użah għal lampi tal-bitħa, persjani u kontrolli tal-fabbrika li jaħdmu biss bi nhar.<br>
+<br>
+Noti: jeħtieġ dimensjoni bid-dawl tas-sema.

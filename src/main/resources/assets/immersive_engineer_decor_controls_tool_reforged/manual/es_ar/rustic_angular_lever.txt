@@ -1,0 +1,7 @@
+Palanca giratoria rústica
+Control por redstone
+<&recipe>Un mando compacto proporciona un punto de conmutación de redstone fácil de identificar en las fábricas.<br>
+<br>
+Uso: Hacé clic derecho para activar o desactivar una salida a máxima intensidad para los circuitos cercanos.<br>
+<br>
+Notas: Emite redstone a máxima intensidad mientras está encendido.

@@ -1,0 +1,7 @@
+Detector d’auratge
+Deteccion de senhal
+<&recipe>Un captador d’auratge activa los avertiments quand i a de tròn.<br>
+<br>
+Utilizacion : pausa-lo jos lo cèl dobèrt e liga-lo a de lampas o d’alarmas.<br>
+<br>
+Nòta : demanda de tròn e un accès al cèl.

@@ -1,0 +1,5 @@
+Valv analogu tal-fluwidu
+Tagħmir tal-linji tal-fluwidu
+<&recipe>Il-valv analogu tal-fluwidu hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: allinja l-valv mad-direzzjoni mixtieqa tal-fluss.<br>

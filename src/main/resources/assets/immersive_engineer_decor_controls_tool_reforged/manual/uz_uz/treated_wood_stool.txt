@@ -1,0 +1,5 @@
+Ishlov berilgan yog'och kursi
+Ustaxona mebeli
+<&recipe>Bu blok ish xonalari va xizmat burchaklari uchun amaliy ustaxona mebelidir.<br>
+<br>
+Ishlatish: ish stollari, yashiklar va ixcham mashinalar yoniga qo'ying.<br>

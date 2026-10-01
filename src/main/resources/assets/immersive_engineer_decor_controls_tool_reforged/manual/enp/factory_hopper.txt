@@ -1,0 +1,5 @@
+Workstead Hopper
+Workshop-floor helper
+<&recipe>This clot shifts thing heaps through a smaller workstead housing.<br>
+<br>
+Use: Face it toward the inholding line, then set reach, heap count, timing and redstone kind on the screen.<br>

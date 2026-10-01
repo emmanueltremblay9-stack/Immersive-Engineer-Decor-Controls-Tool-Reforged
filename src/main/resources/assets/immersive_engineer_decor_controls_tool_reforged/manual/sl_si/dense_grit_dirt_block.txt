@@ -1,0 +1,5 @@
+Zbita zemlja z drobirjem
+Talna obloga delovišča
+<&recipe>Ta blok daje zunanjim deloviščem zbito, poteptano površino.<br>
+<br>
+Uporaba: Položi ga okoli nakladalnih vrat, zunanjih rezervoarjev in strojnih dvorišč.<br>

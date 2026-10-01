@@ -1,0 +1,5 @@
+Tagapaglagay ng Bloke ng Pabrika
+Pantulong sa sahig ng pagawaan
+<&recipe>Naglalagay ang blokeng ito ng mga bloke mula sa sariling suplay kapag pinagana.<br>
+<br>
+Paggamit: Itutok ang gumaganang mukha sa target na espasyo at lagyan ng mga bunton na maaaring ilagay.<br>

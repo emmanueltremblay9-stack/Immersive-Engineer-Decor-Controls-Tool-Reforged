@@ -1,0 +1,7 @@
+Sensor de lus
+Rilevament di segnai
+<&recipe>Un sensor de lus el trasforma la luminosità del post in un comand de prejarossa.<br>
+<br>
+Dovrel per lampe automatiche, scuri e circuit che dipenden de la visibilità.<br>
+<br>
+El dà energia quand che la luminosità grezza l’è 8 o pussee.

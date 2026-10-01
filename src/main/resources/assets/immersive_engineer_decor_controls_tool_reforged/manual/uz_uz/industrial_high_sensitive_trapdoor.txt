@@ -1,0 +1,7 @@
+Zarbaga javob beruvchi sanoat eshigi
+Bosim impulsi
+<&recipe>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.

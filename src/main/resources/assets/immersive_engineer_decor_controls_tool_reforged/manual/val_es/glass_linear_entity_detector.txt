@@ -1,0 +1,7 @@
+Detector lineal de vidre
+Detecció de senyals
+<&recipe>Un detector d’entitats vigila el moviment pròxim sense una placa visible en terra.<br>
+<br>
+Ús: connecta’l a portes, làmpades, alarmes o enclavaments de màquines.<br>
+<br>
+Notes: analitza una zona xicoteta al voltant del bloc.

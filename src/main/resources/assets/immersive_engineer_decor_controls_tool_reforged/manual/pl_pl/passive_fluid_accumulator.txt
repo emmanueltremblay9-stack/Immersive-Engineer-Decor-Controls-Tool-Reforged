@@ -1,0 +1,5 @@
+Pasywny układ płynów
+Elementy instalacji płynów
+<&recipe>Pasywny zbieracz płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Postaw go przy odpowiednich źródłach wody i zostaw miejsce na odbiór płynu.<br>

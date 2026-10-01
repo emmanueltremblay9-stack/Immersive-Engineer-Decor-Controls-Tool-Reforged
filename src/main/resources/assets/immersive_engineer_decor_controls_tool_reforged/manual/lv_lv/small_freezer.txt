@@ -1,0 +1,5 @@
+Ūdens saldētājs
+Kompakta apstrādes ierīce
+<&recipe>Ūdens saldētājs veic kompaktus dzesēšanas darbus ar enerģiju apgādātās šķidrumu sistēmās.<br>
+<br>
+Lietošana: pievadi ūdeni un enerģiju pakāpeniskai ledus ražošanai.<br>

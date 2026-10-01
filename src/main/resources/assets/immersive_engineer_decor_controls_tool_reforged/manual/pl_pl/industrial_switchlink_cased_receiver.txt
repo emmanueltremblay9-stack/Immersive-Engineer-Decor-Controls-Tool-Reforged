@@ -1,0 +1,7 @@
+Odbiornik połączenia w obudowie
+Powiązany element sterujący
+<&recipe>Powiązany odbiornik w obudowie zapewnia wytrzymały cel redstone do zdalnych paneli.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Kliknij bezpośrednio odbiornik prawym przyciskiem myszy, aby ręcznie zmienić jego stan.<br>
+<br>
+Uwagi: Powiązana perła przełącza ten odbiornik, gdy użyjesz jej podczas skradania.

@@ -1,0 +1,93 @@
+Inženirska orodja
+Prenosna delavniška oprema
+Nabor Inženirska orodja dodaja ročno opremo, rudniške označevalnike, zasilne potrošne predmete, terensko hrano in majhne pripomočke za obdelavo materialov v isti priročnik, ki opisuje okrasne in krmilne bloke.<br>
+<br>
+Ta orodja so namenjena delu daleč od povsem opremljene delavnice: označi pot, prenašaj zaloge, popravi posledice napak in opravi manjša obdelovalna dela na kraju samem.
+<np>
+Orodje REDIA
+Diamantna prevleka za uporabnost
+<&redia_tool>Orodje REDIA je vzdržljivo terensko orodje za hitro delo z zemljo. Uporabi ga na obdelovalni zemlji, da jo spremeniš v zorano zemljo.<br>
+<br>
+Uporabi ga na stabilni ploskvi, ko imaš pri sebi bakle, da postaviš baklo za označevanje iz inventarja, ne da bi obrabil REDIA. Obdelava zemlje, striženje, delo s sekiro in podiranje dreves porabljajo vzdržljivost.
+<np>
+Kladivo za drobljenje rude
+Ročno orodje za drobljenje
+<&crushing_hammer>Kladivo za drobljenje rude je ročno orodje za zgodnjo obdelavo železa in zlata.<br>
+<br>
+Uporabite ga s surovim železom, surovim zlatom, železovo ali globinsko železovo rudo, zlato ali globinsko zlato rudo za prah Immersive Engineering. Kladivo izgublja trpežnost, se vrača v mrežo do zloma, obrablja pri rudarjenju in odbija tarče.
+<np>
+Sledilnik
+Označevalnik shranjenega položaja
+<&tracker>Sledilnik shrani položaj bloka neposredno v predmet.<br>
+<br>
+Kliknite blok za shranjevanje dimenzije in koordinat. Namig pokaže položaj. Uporabite ga med prikradanjem za brisanje cilja.<br>
+<br>
+Označite stroje, predore, oddaljena krmila ali nedokončana gradbišča.
+<np>
+Ariadnin premog
+Označevalnik poti po rudniku
+<&ariadne_coal>Ariadnin premog hitro postavlja črne puščične oznake poti na stabilne rudniške ploskve. Uporabi ga na trdni ploskvi, da označiš naslednji zavoj, izhod ali razcep; oznaka podpira osem smeri na kliknjeni ploskvi, tudi diagonalne.<br>
+<br>
+Ariadnin premog je večkrat uporabno orodje za označevanje s 100 uporabami. Vsaka uspešna postavitev oznake porabi eno točko vzdržljivosti. Nepodprte ploskve zavrne, namesto da bi obrabil predmet.
+<np>
+Samodejni poživljajoči injektor
+Zasilni injektor
+<&stimpack>Samodejni stimulans je zasilni medicinski predmet.<br>
+<br>
+Uporabite ga ročno za zdravljenje, kratko zaščito in pospešek. V inventarju se sproži samodejno pri nizkem zdravju in nato ohlaja. Imejte ga pri roki na nevarnih mestih.
+<np>
+Spalna vreča
+Prenosna oprema za počitek
+<&sleeping_bag>Spalna vreča je vremensko odporen komplet za počitek daleč od postelje.<br>
+<br>
+Uporabite jo ponoči v Nadsvetu za počitek do jutra brez spremembe točke ponovnega rojstva.<br>
+<br>
+Ne deluje podnevi, ob bližnjih pošastih ali v neprimernih dimenzijah. Vsak uspešen počitek jo obrabi.
+<np>
+Škatla za material
+Škatla za gradbene zaloge
+<&material_box>Škatla za material nosi veliko zalogo ene običajne, nespremenjene in zložljive gradbene snovi.<br>
+<br>
+Držite škatlo v glavni roki in material v drugi za nalaganje; s prazno drugo roko izvlečete en sklad.<br>
+<br>
+Sprejme 512 predmetov ene vrste, zavrne druge škatle, nezložljivo opremo in spremenjene sklade ter vsebino pokaže v namigu.
+<np>
+Kapsula z zrakom za potapljanje
+Zasilna zaloga zraka
+<&diving_capsule>Potapljaška kapsula je zasilna zaloga zraka za delo pod vodo.<br>
+<br>
+Uporabite jo ročno za obnovo zraka. V inventarju se sproži samodejno, ko zraka skoraj zmanjka, nato se ohlaja. Vzemite jo v poplavljene rudnike in k potopljenim cevem.
+<np>
+Stiskalnica za ploščice z müslijem
+Stiskalnica za hrano
+<&musli_bar_press>Stiskalnica Muslee spremeni običajno hrano v kompaktne terenske obroke.<br>
+<br>
+Imejte kruh, jabolko in semena pšenice, melone, buče, pese ali industrijske konoplje ter uporabite stiskalnico. Porabi po eno sestavino, preveri prostor, ustvari štiri ploščice in poškoduje stiskalnico.<br>
+<br>
+Če kaj manjka ali ni prostora, se nič ne porabi.
+<np>
+Energijska ploščica iz mešanice müslija
+Hiter delavniški prigrizek
+<&musli_bar>Ploščica Muslee Melange je kompaktna hrana iz kruha, semen in sadja.<br>
+<br>
+Jejte jo na terenu med nameščanjem krmil, cevi, ploščadi ali dolgih strojnih linij.
+<np>
+Ožemalnik uma
+Kondenzator izkušenj
+<&charged_lapis_squeezer>Ožemalnik uma pretvori en lazurni kamen in eno stopnjo izkušenj iz tvojega inventarja v napolnjen lazurni kamen.<br>
+<br>
+Vsaka uspešna pretvorba uporabnika poškoduje, izčrpa in za kratek čas oslepi. Postopek se ne izvede brez lazurnega kamna, brez XP ali ko je uporabnik preblizu smrti.
+<np>
+Napolnjen lazurni kamen
+Shranjene izkušnje
+<&charged_lapis>Napolnjen lazurni kamen hrani eno stopnjo izkušenj. Zaužij ga, da si povrneš stopnjo, odstraniš aktivne učinke in obnoviš malo zdravja.<br>
+<br>
+Najprej izdelaj ožemalnik uma; napolnjen lazurni kamen nastane z uporabo tega orodja, ko imaš na voljo lazurni kamen in XP.
+<np>
+Grob železov drobljenec
+Material za inženirska orodja, uporabljen v obnovljenem naboru receptov.
+<&iron_grit>Lahko ga stališ v železne<br>palice, vendar ni primeren<br>za napredno obdelavo materialov.
+<np>
+Grob zlat drobljenec
+Material za inženirska orodja, uporabljen v obnovljenem naboru receptov.
+<&gold_grit>Lahko ga stališ v zlate<br>palice, vendar ni primeren<br>za napredno obdelavo materialov.

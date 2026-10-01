@@ -1,0 +1,7 @@
+Vidru sensible de colores
+Vidru de señalización
+<&recipe>Un bloque de vidru sensible a redstone permite ver al traviés mientres amuesa l’estáu de la señal.<br>
+<br>
+Usu: úsalu en ventanes de sales de control, paneles allumaos y acristalamientos protexíos de fábrica.<br>
+<br>
+Notes: cambia d’estáu según la potencia de redstone cercana.

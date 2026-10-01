@@ -1,0 +1,7 @@
+Ariadne-karbo
+Mineja vojmarkilo
+<&recipe>Ariadne-karbo estas rapida vojmarkilo por ŝaktoj, branĉminejoj kaj provizoraj subteraj laboroj.<br>
+<br>
+Uzado: uzu ĝin sur stabila blokflanko por meti nigran sagomarkon sur tiun randon. La markilo legas la klakitan punkton kaj subtenas ok direktojn, inkluzive diagonalojn. Tio helpas marki turnojn, elirejojn, sakstratojn kaj provizvojojn sen porti apartajn vojŝildojn.<br>
+<br>
+Ariadne-karbo estas reuzebla markilo kun 100 uzoj. Ĉiu sukcesa metado kostas unu daŭropovon; netaŭgaj flankoj estas rifuzataj sen eluzi la objekton.

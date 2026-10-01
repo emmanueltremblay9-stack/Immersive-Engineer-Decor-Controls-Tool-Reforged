@@ -1,0 +1,5 @@
+Hoʻokuʻu Palaka Halehana
+Lako kōkua papahele hale hana
+<&recipe>Hoʻokuʻu kēia palaka i nā ʻikamu i mālama ʻia mai ka ʻaoʻao i kuhikuhi ʻia.<br>
+<br>
+Hoʻohana: E kuhikuhi i ke alo i kahi hoʻokuʻu, hoʻopiha i nā wahi kūloko, a hoʻonohonoho i ka ikaika, ke kihi, ka manawa kali, ka loina kānana, a me ke ʻano Redstone ma kona pale.<br>

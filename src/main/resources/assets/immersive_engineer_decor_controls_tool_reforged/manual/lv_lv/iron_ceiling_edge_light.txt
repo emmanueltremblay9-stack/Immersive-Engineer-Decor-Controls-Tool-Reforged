@@ -1,0 +1,5 @@
+Griestu malas gaismeklis
+Kompakts darba gaismeklis
+<&recipe>Šis bloks nodrošina kompaktu rūpniecisku apgaismojumu koridoriem, apkopes laipām un darba vietām.<br>
+<br>
+Lietošana: uzstādi pie griestiem, sienām vai malām, kur telpai vajadzīgs skaidrs darba apgaismojums.<br>

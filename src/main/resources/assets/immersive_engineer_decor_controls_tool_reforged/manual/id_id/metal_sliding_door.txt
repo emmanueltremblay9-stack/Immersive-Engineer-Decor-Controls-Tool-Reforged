@@ -1,0 +1,5 @@
+Pintu Geser Logam
+Titik akses industri
+<&recipe>Blok ini menyediakan titik akses kokoh untuk ruang servis, lubang, atap, dan selubung mesin.<br>
+<br>
+Penggunaan: pasang ketika bangunan membutuhkan bukaan perawatan yang terkendali.<br>

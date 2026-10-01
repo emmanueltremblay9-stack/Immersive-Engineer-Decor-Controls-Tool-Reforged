@@ -1,0 +1,5 @@
+Rúbací stroj
+Vybavenie výrobnej haly
+<&recipe>Malý rúbací stroj patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Namier ho na vyrastené stromy a vypadnuté predmety zbieraj samostatne.<br>

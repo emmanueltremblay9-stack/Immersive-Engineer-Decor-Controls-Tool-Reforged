@@ -1,0 +1,7 @@
+Schakelkoppelingsparel
+Gekoppelde bediening
+<&recipe>Een gekoppelde parel bewaart een ontvangerdoel voor fabrieksbediening op afstand.<br>
+<br>
+Gebruik: klik met een enderparel op een schakelkoppelingsontvanger om er een te maken. Gebruik de gekoppelde parel terwijl u sluipt om de opgeslagen ontvanger te activeren.<br>
+<br>
+Opmerking: het doel moet geladen zijn, zich in dezelfde dimensie bevinden en binnen bereik liggen.

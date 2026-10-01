@@ -1,0 +1,7 @@
+Signa a intervalle en verre
+Pouls minutë
+<&recipe>Un interrupteur a minuterie compact doune un pouls de redstone programmë.<br>
+<br>
+Empllai : Empllayéz-le la où q'un ptit mécanisme demande eune comande périodiqe ou retardée.<br>
+<br>
+Notes : Empllaie des pouls de redstone programmés.

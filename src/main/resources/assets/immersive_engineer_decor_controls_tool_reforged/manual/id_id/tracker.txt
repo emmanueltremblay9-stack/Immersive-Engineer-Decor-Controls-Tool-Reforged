@@ -1,0 +1,7 @@
+Pelacak
+Penanda posisi tersimpan
+<&recipe>Pelacak menyimpan posisi blok langsung di dalam item.<br>
+<br>
+Penggunaan: Klik blok untuk menyimpan dimensi dan koordinatnya. Tooltip menampilkan posisi tersimpan. Gunakan pelacak sambil menyelinap untuk menghapus sasaran.<br>
+<br>
+Gunakan untuk menandai mesin, percabangan terowongan, kendali jarak jauh, atau lokasi konstruksi yang belum selesai sebelum kembali membawa perkakas dan bahan.

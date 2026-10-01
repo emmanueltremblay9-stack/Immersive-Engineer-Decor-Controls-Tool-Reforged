@@ -1,0 +1,789 @@
+Mga Kontrol ng Redstone
+Mga panukat at kagamitan ng signal
+Ginagawang malinaw na panel ng pabrika, pandama, tagapagpahiwatig, swits, alarma at nakakawing na kagamitan ng signal ng mga pangkontrol ang nakatagong redstone.<br>
+<br>
+Gamitin ang mga pahinang ito kapag gumagawa ng lugar ng tagapangasiwa, lupon ng signal, sirkito ng kaligtasan at kontrol mula sa malayo.
+<np>
+Tudlaan ng Palaso
+Panandaliang pulso
+<&arrow_target>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Pandama ng pinto
+Kontrol ng Redstone
+<&door_sensor_switch>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Pindutan ng Elebeytor
+Kontrol ng Redstone
+<&elevator_button>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Salaming Pindutan
+Kontrol ng Redstone
+<&glass_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Salaming Pindutan
+Kontrol ng Redstone
+<&glass_small_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Salaming Pindutang Pandampi
+Kontrol ng Redstone
+<&glass_touch_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Pindutan ng Makina
+Kontrol ng Redstone
+<&industrial_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Pindutan
+Kontrol ng Redstone
+<&industrial_double_pole_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+May Bakod na Pindutan ng Makina
+Kontrol ng Redstone
+<&industrial_fenced_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Pindutang Tumutugon sa Katok
+Kontrol ng Redstone
+<&industrial_knock_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Lumang Magarang Pindutan
+Kontrol ng Redstone
+<&oldfancy_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Lumang Magarang Pindutan
+Kontrol ng Redstone
+<&oldfancy_small_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Lumang Magarang Pindutang Kadena
+Panandaliang pulso
+<&oldfancy_spring_reset_chain>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Rustikong Pindutan
+Kontrol ng Redstone
+<&rustic_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Rustikong Pindutang Pako
+Kontrol ng Redstone
+<&rustic_nail_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Maliit na Rustikong Pindutan
+Kontrol ng Redstone
+<&rustic_small_button>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Rustikong Pindutang Kadena
+Panandaliang pulso
+<&rustic_spring_reset_chain>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.
+<np>
+Salaming Plaka ng Pagdampi
+Pulsong galing sa diin
+<&glass_contact_mat>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Salaming Pandampi ng Pinto
+Pulsong galing sa diin
+<&glass_door_contact_mat>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Banig ng Pagdampi
+Pulsong galing sa diin
+<&industrial_contact_mat>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Banig ng Pagdampi sa Pinto
+Pulsong galing sa diin
+<&industrial_door_contact_mat>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pantukoy ng Nahuhulog na Dumaraan
+Pagdama ng signal
+<&industrial_fallthrough_detector>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pindutang Pangpaa
+Kontrol ng Redstone
+<&industrial_foot_button>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pang-industriyang Pintong Tumutugon sa Mekanikal na Dagok
+Pulsong galing sa diin
+<&industrial_high_sensitive_trapdoor>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Banig na Pandama ng Mekanikal na Dagok
+Pulsong galing sa diin
+<&industrial_shock_sensitive_contact_mat>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Bukasan na Pandama ng Mekanikal na Dagok
+Pulsong galing sa diin
+<&industrial_shock_sensitive_trapdoor>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pulang Halamang Pansignal
+Pulsong galing sa diin
+<&red_power_plant>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Rustikong Plakang Pandiin
+Pulsong galing sa diin
+<&rustic_contact_plate>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pandama ng Diin sa Pintong Pangnayon
+Pulsong galing sa diin
+<&rustic_door_contact_plate>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pantukoy ng Nahuhulog na Pangnayon
+Pagdama ng signal
+<&rustic_fallthrough_detector>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pintong Pangnayon na Tumutugon sa Mekanikal na Dagok
+Pulsong galing sa diin
+<&rustic_high_sensitive_trapdoor>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Plakang Pangnayon na Pandama ng Mekanikal na Dagok
+Pulsong galing sa diin
+<&rustic_shock_sensitive_plate>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Pintong Pangnayon na Tumutugon sa Mekanikal na Dagok
+Pulsong galing sa diin
+<&rustic_shock_sensitive_trapdoor>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Dilaw na Halamang Pansignal
+Pulsong galing sa diin
+<&yellow_power_plant>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.
+<np>
+Salaming Orasan ng Araw
+Signal ng liwanag ng araw
+<&glass_day_timer>Sinusundan ng swits na orasan ang araw na bahagi ng siklo ng mundo.<br>
+<br>
+Paggamit: Gamitin para sa mga ilaw sa bakuran, takip ng bintana at kontrol ng pabrika na para sa araw lamang.<br>
+<br>
+Tandaan: Nangangailangan ng dimensiyong may liwanag mula sa langit.
+<np>
+Salaming Pantukoy ng Entidad
+Pagdama ng signal
+<&glass_entity_detector>Binabantayan ng pantukoy ng entidad ang paggalaw sa paligid nang walang nakikitang plaka sa sahig.<br>
+<br>
+Paggamit: Ikabit sa mga pinto, ilaw, alarma o interlock ng makina.<br>
+<br>
+Tandaan: Sinusuri ang maliit na espasyo sa paligid ng bloke.
+<np>
+Salaming Signal na May Agwat
+Nakatakdang pulso
+<&glass_interval_timer>Nagbibigay ang maliit na swits na orasan ng nakatakdang pulso ng redstone.<br>
+<br>
+Paggamit: Gamitin kung kailangan ng maliit na mekanismo ng pana-panahon o naantalang kontrol.<br>
+<br>
+Tandaan: Gumagamit ng mga nakatakdang pulso ng redstone.
+<np>
+Salaming Pantukoy sa Tuwid na Linya
+Pagdama ng signal
+<&glass_linear_entity_detector>Binabantayan ng pantukoy ng entidad ang paggalaw sa paligid nang walang nakikitang plaka sa sahig.<br>
+<br>
+Paggamit: Ikabit sa mga pinto, ilaw, alarma o interlock ng makina.<br>
+<br>
+Tandaan: Sinusuri ang maliit na espasyo sa paligid ng bloke.
+<np>
+Pantukoy ng Bloke
+Pagdama ng signal
+<&industrial_block_detector>Sinusuri ng pantukoy ng bloke kung may laman ang espasyong kaharap nito.<br>
+<br>
+Paggamit: Itutok sa mukha ng makina, imbakan o binabantayang espasyo.<br>
+<br>
+Tandaan: Nagbibigay ng signal kapag hindi hangin ang blokeng kaharap.
+<np>
+Orasan ng Araw
+Signal ng liwanag ng araw
+<&industrial_day_timer>Sinusundan ng swits na orasan ang araw na bahagi ng siklo ng mundo.<br>
+<br>
+Paggamit: Gamitin para sa mga ilaw sa bakuran, takip ng bintana at kontrol ng pabrika na para sa araw lamang.<br>
+<br>
+Tandaan: Nangangailangan ng dimensiyong may liwanag mula sa langit.
+<np>
+Pantukoy ng Entidad
+Pagdama ng signal
+<&industrial_entity_detector>Binabantayan ng pantukoy ng entidad ang paggalaw sa paligid nang walang nakikitang plaka sa sahig.<br>
+<br>
+Paggamit: Ikabit sa mga pinto, ilaw, alarma o interlock ng makina.<br>
+<br>
+Tandaan: Sinusuri ang maliit na espasyo sa paligid ng bloke.
+<np>
+Orasang Pang-agwat
+Nakatakdang pulso
+<&industrial_interval_timer>Nagbibigay ang maliit na swits na orasan ng nakatakdang pulso ng redstone.<br>
+<br>
+Paggamit: Gamitin kung kailangan ng maliit na mekanismo ng pana-panahon o naantalang kontrol.<br>
+<br>
+Tandaan: Gumagamit ng mga nakatakdang pulso ng redstone.
+<np>
+Pandama ng Liwanag
+Pagdama ng signal
+<&industrial_light_sensor>Ginagawang kontrol ng redstone ng pandama ng liwanag ang liwanag sa kinalalagyan nito.<br>
+<br>
+Paggamit: Gamitin para sa awtomatikong ilaw, takip ng bintana at mga sirkito para sa pagkakita.<br>
+<br>
+Tandaan: Nagbibigay ng signal kapag ang hilaw na antas ng liwanag ay 8 o mas mataas.
+<np>
+Pantukoy ng Bagyo
+Pagdama ng signal
+<&industrial_lightning_sensor>Nagpapagana ng babala ang pandama ng bagyo kapag may kulog.<br>
+<br>
+Paggamit: Ilagay sa ilalim ng bukas na langit at ikabit sa mga ilaw o alarma.<br>
+<br>
+Tandaan: Nangangailangan ng kulog at bukas na daan sa langit.
+<np>
+Pantukoy ng Entidad sa Tuwid na Linya
+Pagdama ng signal
+<&industrial_linear_entity_detector>Binabantayan ng pantukoy ng entidad ang paggalaw sa paligid nang walang nakikitang plaka sa sahig.<br>
+<br>
+Paggamit: Ikabit sa mga pinto, ilaw, alarma o interlock ng makina.<br>
+<br>
+Tandaan: Sinusuri ang maliit na espasyo sa paligid ng bloke.
+<np>
+Pandama ng Ulan
+Pagdama ng signal
+<&industrial_rain_sensor>Ginagawang redstone ng pandama ng panahon ang ulan sa kinalalagyan nito.<br>
+<br>
+Paggamit: Ikabit kung saan maaabot ng ulan ang bloke sa ibabaw.<br>
+<br>
+Tandaan: Sinusuri ang ulan sa ibabaw ng pandama.
+<np>
+Salaming Swits na May Dalawang Matatag na Estado
+Kontrol ng Redstone
+<&glass_rotary_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Salaming Pandampi na May Dalawang Matatag na Estado
+Kontrol ng Redstone
+<&glass_touch_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Kahel na Salaming Pandama
+Salamin ng signal
+<&orange_sensitiveglass>Pinananatili ng blokeng salamin na tumutugon sa redstone ang tanaw habang ipinapakita ang estado ng signal.<br>
+<br>
+Paggamit: Gamitin sa bintana ng silid ng kontrol, may ilaw na panel at protektadong salamin ng pabrika.<br>
+<br>
+Tandaan: Nagbabago ang estado dahil sa lakas ng kalapit na redstone.
+<np>
+May Ilaw na Salaming Pandama
+Salamin ng signal
+<&sensitive_glass_block>Pinananatili ng blokeng salamin na tumutugon sa redstone ang tanaw habang ipinapakita ang estado ng signal.<br>
+<br>
+Paggamit: Gamitin sa bintana ng silid ng kontrol, may ilaw na panel at protektadong salamin ng pabrika.<br>
+<br>
+Tandaan: Nagbabago ang estado dahil sa lakas ng kalapit na redstone.
+<np>
+Kinulayang Salaming Pandama
+Salamin ng signal
+<&stained_sensitiveglass>Pinananatili ng blokeng salamin na tumutugon sa redstone ang tanaw habang ipinapakita ang estado ng signal.<br>
+<br>
+Paggamit: Gamitin sa bintana ng silid ng kontrol, may ilaw na panel at protektadong salamin ng pabrika.<br>
+<br>
+Tandaan: Nagbabago ang estado dahil sa lakas ng kalapit na redstone.
+<np>
+Salaming Baras na Panukat
+Panukat ng signal
+<&glass_vertical_bar_gauge>Ipinapakita ng maliit na panukat sa silid ng kontrol ang lakas ng redstone bilang malinaw na basa sa panel.<br>
+<br>
+Paggamit: Ikabit kung saan masusuri sa isang tingin ang lakas ng kalapit na redstone.<br>
+<br>
+Tandaan: Binabasa ang lakas ng kalapit na redstone mula 0 hanggang 15.
+<np>
+Analogong Panukat
+Panukat ng signal
+<&industrial_analog_angular_gauge>Ipinapakita ng maliit na panukat sa silid ng kontrol ang lakas ng redstone bilang malinaw na basa sa panel.<br>
+<br>
+Paggamit: Ikabit kung saan masusuri sa isang tingin ang lakas ng kalapit na redstone.<br>
+<br>
+Tandaan: Binabasa ang lakas ng kalapit na redstone mula 0 hanggang 15.
+<np>
+Boltametrong Panukat
+Panukat ng signal
+<&industrial_analog_horizontal_gauge>Ipinapakita ng maliit na panukat sa silid ng kontrol ang lakas ng redstone bilang malinaw na basa sa panel.<br>
+<br>
+Paggamit: Ikabit kung saan masusuri sa isang tingin ang lakas ng kalapit na redstone.<br>
+<br>
+Tandaan: Binabasa ang lakas ng kalapit na redstone mula 0 hanggang 15.
+<np>
+Digital na Panukat
+Malinaw na lakas ng signal
+<&industrial_small_digital_gauge>Ipinapakita ng maliit na panukat sa silid ng kontrol ang lakas ng redstone bilang malinaw na basa sa panel.<br>
+<br>
+Paggamit: Ikabit kung saan masusuri sa isang tingin ang lakas ng kalapit na redstone.<br>
+<br>
+Tandaan: Binabasa ang lakas ng kalapit na redstone mula 0 hanggang 15.
+<np>
+Salaming Tubong Panukat
+Panukat ng signal
+<&industrial_tube_gauge>Ipinapakita ng maliit na panukat sa silid ng kontrol ang lakas ng redstone bilang malinaw na basa sa panel.<br>
+<br>
+Paggamit: Ikabit kung saan masusuri sa isang tingin ang lakas ng kalapit na redstone.<br>
+<br>
+Tandaan: Binabasa ang lakas ng kalapit na redstone mula 0 hanggang 15.
+<np>
+Analogong Baras na Panukat
+Panukat ng signal
+<&industrial_vertical_bar_gauge>Ipinapakita ng maliit na panukat sa silid ng kontrol ang lakas ng redstone bilang malinaw na basa sa panel.<br>
+<br>
+Paggamit: Ikabit kung saan masusuri sa isang tingin ang lakas ng kalapit na redstone.<br>
+<br>
+Tandaan: Binabasa ang lakas ng kalapit na redstone mula 0 hanggang 15.
+<np>
+Ilaw ng Alarma
+Pahiwatig ng signal
+<&industrial_alarm_lamp>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Sirena ng Alarma
+Pahiwatig ng signal
+<&industrial_alarm_siren>Ang sirenang pang-alarma ay isang redstone indicator na nakakabit sa mukha ng bloke. Nagbabago ang powered state nito ayon sa signal mula sa blokeng kinabitan nito.<br>
+<br>
+Paggamit: Ikabit sa solidong mukha at bigyan ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Inuulit ng sirena ang tunog bawat segundo habang aktibo ang nakakabit na signal.
+<np>
+Kumikislap na LED
+Pahiwatig ng signal
+<&industrial_blinking_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Berdeng Kumikislap na LED
+Pahiwatig ng signal
+<&industrial_green_blinking_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Berdeng LED
+Pahiwatig ng signal
+<&industrial_green_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Pulang LED
+Pahiwatig ng signal
+<&industrial_red_blinking_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Pulang LED
+Pahiwatig ng signal
+<&industrial_red_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Puting Kumikislap na LED
+Pahiwatig ng signal
+<&industrial_white_blinking_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Puting LED
+Pahiwatig ng signal
+<&industrial_white_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Dilaw na Kumikislap na LED
+Pahiwatig ng signal
+<&industrial_yellow_blinking_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Dilaw na LED
+Pahiwatig ng signal
+<&industrial_yellow_led>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Semaporong Pangnayon
+Pahiwatig ng signal
+<&rustic_semaphore>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.
+<np>
+Swits na Panghambing
+Nakakabit na signal
+<&industrial_comparator_switch>Binabasa ng maliit na swits na pandama ang blokeng kinakapitan nito at ginagawang payak na signal sa panel ang basa.<br>
+<br>
+Paggamit: Ikabit sa mga imbentaryo, tangke o kagamitang redstone. Kapag may signal ng panghambing, lalagyan o redstone ang blokeng kinakapitan, naglalabas ang swits ng redstone na buong lakas.<br>
+<br>
+Tandaan: Gamitin upang gawing malinaw na linyang buhay-patay ang antas ng imbakan o nakatagong mga kawad.
+<np>
+Panghina ng Signal
+Nababagong signal
+<&industrial_dimmer>Itinatakda ng umiikot na kontrol ang lakas ng redstone mula sa harap ng maliit na panel.<br>
+<br>
+Paggamit: Iklik nang kanan upang unti-unting itaas ang signal, saka bumalik sa sero matapos ang buong lakas.<br>
+<br>
+Tandaan: Naglalabas ng lakas mula 0 hanggang 15.
+<np>
+Pindutang Panghinto sa Emerhensiya
+Kontrol ng Redstone
+<&industrial_estop_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Pangharang ng Embudo
+Kontrol ng Redstone
+<&industrial_hopper_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Swits na Tumutugon sa Katok
+Kontrol ng Redstone
+<&industrial_knock_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Plangka
+Kontrol ng Redstone
+<&industrial_lever>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Swits ng Makina na May Dalawang Pindutan
+Kontrol ng Redstone
+<&industrial_machine_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Hawakang Hinihila
+Kontrol ng Redstone
+<&industrial_pull_handle>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Umiikot na Plangka
+Kontrol ng Redstone
+<&industrial_rotary_lever>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Paikot na Swits ng Makina
+Kontrol ng Redstone
+<&industrial_rotary_machine_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Plangkang Pandampi
+Kontrol ng Redstone
+<&industrial_small_lever>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Swits
+Kontrol ng Redstone
+<&industrialswitch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Swits ng Ilaw
+Kontrol ng Redstone
+<&light_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Swits na Balbula
+Kontrol ng Redstone
+<&valve_wheel_switch>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+May Kahang Tagatanggap ng Pulso
+Nakakawing na kontrol
+<&industrial_switchlink_cased_pulse_receiver>Nagbibigay ang may kahang tagatanggap ng nakakawing na pulso ng maikling pang-udyok ng redstone sa malalayong panel.<br>
+<br>
+Paggamit: Iklik gamit ang Endermutya upang gumawa ng nakakawing na mutya. Iklik nang kanan o gamitin ang nakakawing na mutya upang maglabas ng maikling pulso.<br>
+<br>
+Tandaan: Kusang bumabalik ang pulso sa paunang estado matapos ang nakatakdang tagal.
+<np>
+May Kahang Tagatanggap ng Kawing
+Nakakawing na kontrol
+<&industrial_switchlink_cased_receiver>Nagbibigay ang may kahang tagatanggap ng kawing ng matibay na target ng redstone sa malalayong panel.<br>
+<br>
+Paggamit: Iklik gamit ang Endermutya upang gumawa ng nakakawing na mutya. Direktang iklik nang kanan ang tagatanggap upang ilipat nang mano-mano ang estado.<br>
+<br>
+Tandaan: Inililipat ng nakakawing na mutya ang estado ng tagatanggap na ito kapag ginamit habang nakayuko.
+<np>
+Tagatanggap ng Kawing ng Pulso
+Nakakawing na kontrol
+<&industrial_switchlink_pulse_receiver>Nagbibigay ang tagatanggap ng nakakawing na pulso ng maikling pang-udyok ng redstone sa malalayong panel.<br>
+<br>
+Paggamit: Iklik gamit ang Endermutya upang gumawa ng nakakawing na mutya. Iklik nang kanan o gamitin ang nakakawing na mutya upang maglabas ng maikling pulso.<br>
+<br>
+Tandaan: Kusang bumabalik ang pulso sa paunang estado matapos ang nakatakdang tagal.
+<np>
+Relay ng Kawing ng Pulso
+Nakakawing na kontrol
+<&industrial_switchlink_pulse_relay>Nagbibigay ang kagamitang mukhang relay ng maliit na lokal na lugar ng paglipat sa mga panel.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito. Gumamit ng mga blokeng tagatanggap kapag kailangan ng pagpapaandar sa pamamagitan ng nakakawing na mutya.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Tagatanggap ng Kawing ng Swits
+Nakakawing na kontrol
+<&industrial_switchlink_receiver>Nagbibigay ang tagatanggap ng kawing ng target ng redstone na buong lakas sa malalayong panel.<br>
+<br>
+Paggamit: Iklik gamit ang Endermutya upang gumawa ng nakakawing na mutya. Direktang iklik nang kanan ang tagatanggap upang ilipat nang mano-mano ang estado.<br>
+<br>
+Tandaan: Inililipat ng nakakawing na mutya ang estado ng tagatanggap na ito kapag ginamit habang nakayuko.
+<np>
+Analogong Tagatanggap ng Kawing
+Nakakawing na kontrol
+<&industrial_switchlink_receiver_analog>Nagbibigay ang tagatanggap ng kawing ng nakikitang malayong target sa mga panel ng kontrol.<br>
+<br>
+Paggamit: Iklik gamit ang Endermutya upang gumawa ng nakakawing na mutya. Gamitin ang mutyang iyon habang nakayuko upang paganahin ang tagatanggap mula sa malayo.<br>
+<br>
+Tandaan: Naglalabas ng buong redstone signal ang tagatanggap na ito kapag inudyukan.
+<np>
+Relay ng Kawing ng Swits
+Nakakawing na kontrol
+<&industrial_switchlink_relay>Nagbibigay ang kagamitang mukhang relay ng maliit na lokal na lugar ng paglipat sa mga panel.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito. Gumamit ng mga blokeng tagatanggap kapag kailangan ng pagpapaandar sa pamamagitan ng nakakawing na mutya.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Analogong Relay ng Kawing
+Nakakawing na kontrol
+<&industrial_switchlink_relay_analog>Nagbibigay ang kagamitang mukhang relay ng maliit na lokal na lugar ng paglipat sa mga panel.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito. Gumamit ng mga blokeng tagatanggap kapag kailangan ng pagpapaandar sa pamamagitan ng nakakawing na mutya.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Mutya ng Kawing ng Swits
+Nakakawing na kontrol
+<&switchlink_pearl>Nag-iimbak ang nakakawing na mutya ng target na tagatanggap para sa kontrol ng pabrika mula sa malayo.<br>
+<br>
+Paggamit: Iklik ang tagatanggap ng Kawing ng Swits gamit ang Endermutya upang gumawa nito. Gamitin ang nakakawing na mutya habang nakayuko upang paganahin ang nakaimbak na tagatanggap.<br>
+<br>
+Tandaan: Kailangang nakarga sa laro ang target, nasa parehong dimensiyon at nasa abot.
+<np>
+Lumang Magarang Plangka
+Kontrol ng Redstone
+<&oldfancy_bistableswitch1>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Lumang Magarang Paikot na Plangka
+Kontrol ng Redstone
+<&oldfancy_bistableswitch2>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Rustikong Paikot na Plangka
+Kontrol ng Redstone
+<&rustic_angular_lever>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Rustikong Plangka
+Kontrol ng Redstone
+<&rustic_lever>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Rustikong Plangkang Pako
+Kontrol ng Redstone
+<&rustic_nail_lever>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.
+<np>
+Rustikong Plangka na May Dalawang Bisagra
+Kontrol ng Redstone
+<&rustic_two_hinge_lever>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.

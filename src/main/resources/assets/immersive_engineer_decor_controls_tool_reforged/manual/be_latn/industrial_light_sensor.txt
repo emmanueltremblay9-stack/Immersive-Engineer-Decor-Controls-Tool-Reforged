@@ -1,0 +1,7 @@
+Datčyk asviatlennia
+Vyjaŭlennie sihnału
+<&recipe>Datčyk asviatlennia pieratvaraje miascovuju jarkasć u redstonavaje kiravannie.<br>
+<br>
+Vykarystannie: skarystaj jaho dla aŭtamatyčnych lampaŭ, akanic i schiem bačnasci.<br>
+<br>
+Zaŭvahi: padaje sihnał pry zychodnaj jarkasci 8 abo vyšej.

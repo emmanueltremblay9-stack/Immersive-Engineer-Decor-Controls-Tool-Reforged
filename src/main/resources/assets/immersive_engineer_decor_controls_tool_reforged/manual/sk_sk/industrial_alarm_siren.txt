@@ -1,0 +1,7 @@
+Výstražná siréna
+Spätná väzba signálu
+<&recipe>Poplachová siréna je redstonový indikátor montovaný na stenu bloku. Jej napájaný stav sa mení podľa signálu z bloku, ku ktorému je pripevnená.<br>
+<br>
+Pripevnite ju na pevnú stenu a napájajte ju na sledovanie dverí, strojov, poplachov alebo panelov.<br>
+<br>
+Siréna sa obnovuje raz za sekundu, kým je pripojený signál aktívny.

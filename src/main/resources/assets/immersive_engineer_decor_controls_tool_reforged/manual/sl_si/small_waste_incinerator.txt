@@ -1,0 +1,5 @@
+Sežigalnik odpadkov
+Kompaktna obdelovalna enota
+<&recipe>Sežigalnik odpadkov uničuje neželene predmete in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: V njegovo čakalno vrsto dovajaj samo neželene predmete.<br>

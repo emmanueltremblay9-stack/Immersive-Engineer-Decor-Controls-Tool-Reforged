@@ -1,0 +1,5 @@
+Laborofen
+Kompakte Verarbeitungseinheit
+<&recipe>Der Laborofen erledigt Schmelzarbeiten mit Festbrennstoff auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Nutze Festbrennstoff für kleinere Schmelzchargen.<br>

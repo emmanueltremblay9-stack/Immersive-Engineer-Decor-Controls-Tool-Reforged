@@ -1,0 +1,7 @@
+Skladova skrinja dlja materialov
+Skrinja budovnyh zalih
+<&recipe>Skladova skrinja dlja materialov nosi veliku zalihu jednogo prostogo, neizměnjenogo i skladanogo budovnogo materiala.<br>
+<br>
+Upotrěbjenje: Drži skrinju v glavnoj rukě i kupu materiala v drugoj, da ju napolniš. Upotrěbi skrinju s prazdnoj drugoj rukoju, da izvadiš jednu kupu.<br>
+<br>
+Hrani do 512 prědmetov jednogo roda. Otkazuje vgněždene skrinje, neskladano orudje i prěimenovane ili podatkami izměnjene kupy; podskazka pokazuje sodržanje.

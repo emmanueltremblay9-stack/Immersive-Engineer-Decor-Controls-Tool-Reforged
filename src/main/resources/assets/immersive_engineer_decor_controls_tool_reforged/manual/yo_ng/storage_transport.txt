@@ -1,0 +1,41 @@
+Ìpamọ́ àti Ìrìnnà
+Ohun èlò ìpamọ́ àti ìṣàn
+Ohun èlò ìpamọ́ àti ìrìnnà ń bójú tó àwọn àpótí, àgbá, ẹnu ìkójọ, àti àtọwọ́dá fún dídarí ọ̀nà ilé iṣẹ́ kékeré.<br>
+<br>
+Lo àwọn ojú ìwé yìí nígbà ṣíṣètò ilé ìpamọ́, ọ̀nà paipu, àpò omi iṣẹ́, àti ìlà ohun olómi tí a lè darí.
+<np>
+Àpótí Oníàmì
+Àmì ìpamọ́ tí a lè ṣàtúnṣe
+<&labeled_crate>A ṣe àpótí oníàmì yìí fún títò ilé ìpamọ́ lọ́nà tó ṣe kedere. A lè ṣàtúnṣe àwo iwájú rẹ̀ bí àmì kékeré ilé ìṣẹ́ ọwọ́.<br>
+<br>
+Lílò: Tẹ àwo àmì pẹ̀lú bọ́tìnì ọ̀tún láti ṣàtúnṣe àmì àpótí. Tẹ apá tó kù lára àpótí pẹ̀lú bọ́tìnì ọ̀tún láti ṣí ìpamọ́ fún ohun èlò, apá ẹ̀rọ, àti ìpèsè ìtọ́jú.<br>
+<np>
+Àgbá Ohun Olómi
+Ohun èlò ìlà ohun olómi
+<&fluid_barrel>Ohun èlò yìí jẹ́ apá ìlà ohun olómi kékeré fún àwọn àpò omi kékeré, ọ̀nà paipu, ibi ìkójọ, àti ìṣàn tí Redstone ń darí.<br>
+<br>
+Lílò: Gbé e níbi tí paipu tàbí gàráwà lè dé ojú àpò omi.<br>
+<np>
+Ẹnu Ìkójọ Ohun Olómi
+Ohun èlò ìlà ohun olómi
+<&small_fluid_funnel>Ẹnu Ìkójọ Ohun Olómi Kékeré jẹ́ apá ìlà ohun olómi kékeré fún àwọn àpò omi kékeré, ọ̀nà paipu, ibi ìkójọ, àti ìṣàn tí Redstone ń darí.<br>
+<br>
+Lílò: Fi sí ìsàlẹ̀ ibi ìkójọ ohun olómi, kí o sì darí ohun inú ìpamọ́ rẹ̀ sínú àwọn àpò omi tàbí paipu ìsàlẹ̀.<br>
+<np>
+Àtọwọ́dá Dídènà Ìṣàn Padà
+Ohun èlò ìlà ohun olómi
+<&straight_pipe_valve>Àtọwọ́dá Dídènà Ìṣàn Padà jẹ́ apá ìlà ohun olómi kékeré fún àwọn àpò omi kékeré, ọ̀nà paipu, ibi ìkójọ, àti ìṣàn tí Redstone ń darí.<br>
+<br>
+Lílò: Mú àtọwọ́dá bá ọ̀nà ìṣàn tí o fẹ́ mu.<br>
+<np>
+Àtọwọ́dá Ohun Olómi Redstone
+Ohun èlò ìlà ohun olómi
+<&straight_pipe_valve_redstone>Àtọwọ́dá Ohun Olómi Redstone jẹ́ apá ìlà ohun olómi kékeré fún àwọn àpò omi kékeré, ọ̀nà paipu, ibi ìkójọ, àti ìṣàn tí Redstone ń darí.<br>
+<br>
+Lílò: Mú àtọwọ́dá bá ọ̀nà ìṣàn tí o fẹ́ mu.<br>
+<np>
+Àtọwọ́dá Ohun Olómi Oníwọ̀n
+Ohun èlò ìlà ohun olómi
+<&straight_pipe_valve_redstone_analog>Àtọwọ́dá Ohun Olómi Oníwọ̀n jẹ́ apá ìlà ohun olómi kékeré fún àwọn àpò omi kékeré, ọ̀nà paipu, ibi ìkójọ, àti ìṣàn tí Redstone ń darí.<br>
+<br>
+Lílò: Mú àtọwọ́dá bá ọ̀nà ìṣàn tí o fẹ́ mu.<br>

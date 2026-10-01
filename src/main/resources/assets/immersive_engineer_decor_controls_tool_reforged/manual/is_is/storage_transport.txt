@@ -1,0 +1,41 @@
+Geymsla og flutningur
+Geymslu- og flæðisbúnaður
+Geymslu- og flutningsbúnaður nær yfir kassa, tunnur, trektarbúnað og loka fyrir fyrirferðarlitlar verksmiðjulagnir.<br>
+<br>
+Notaðu þessar síður þegar þú skipuleggur birgðageymslur, röralagnir, þjónustugeyma og stýrðar vökvalagnir.
+<np>
+Merktur kassi
+Breytanleg birgðamerking
+<&labeled_crate>Þessi merkti kassi er ætlaður til skýrrar flokkunar í birgðageymslu. Framplötunni má breyta eins og litlu verkstæðisskilti.<br>
+<br>
+Notkun: Hægrismelltu á merkiplötuna til að breyta kassamerkingunni. Hægrismelltu annars staðar á kassann til að opna geymslu fyrir tengihluti, varahluti og viðhaldsbirgðir.<br>
+<np>
+Vökvatunna
+Vökvalagnabúnaður
+<&fluid_barrel>Þessi búnaður er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Settu hann þar sem rör eða fötur ná að hlið geymisins.<br>
+<np>
+Vökvatrekt
+Vökvalagnabúnaður
+<&small_fluid_funnel>Litla vökvasöfnunartrektin er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Settu hana undir vökvasöfnunarstaðinn og leiddu geymt innihald hennar í geyma eða rör neðar.<br>
+<np>
+Bakstreymisloki í vökvarör
+Vökvalagnabúnaður
+<&straight_pipe_valve>Bakstreymislokinn í vökvarör er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Láttu lokann snúa í fyrirhugaða rennslisstefnu.<br>
+<np>
+Roðsteinsvökvaloki
+Vökvalagnabúnaður
+<&straight_pipe_valve_redstone>Roðsteinsstýrði vökvalokinn er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Láttu lokann snúa í fyrirhugaða rennslisstefnu.<br>
+<np>
+Hliðrænn vökvaloki
+Vökvalagnabúnaður
+<&straight_pipe_valve_redstone_analog>Hliðræni roðsteinsvökvalokinn er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Láttu lokann snúa í fyrirhugaða rennslisstefnu.<br>

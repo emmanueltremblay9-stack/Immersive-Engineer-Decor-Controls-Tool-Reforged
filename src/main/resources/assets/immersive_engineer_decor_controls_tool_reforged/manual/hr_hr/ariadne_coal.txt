@@ -1,0 +1,7 @@
+Arijadnin ugljen
+Oznaka rudarskog puta
+<&recipe>Arijadnin ugljen brzo označava putove u oknima, razgranatim rudnicima i privremenim podzemnim radovima.<br>
+<br>
+Uporaba: upotrijebi ga na stabilnoj strani bloka za postavljanje crne strelice uz taj rub. Oznaka uzima u obzir mjesto klika i podržava osam smjerova, uključujući dijagonale. Tako možeš označiti zavoje, izlaze, slijepe putove i opskrbne rute bez nošenja zasebnih putokaza.<br>
+<br>
+Arijadnin ugljen je višekratni alat za označavanje sa 100 uporaba. Svako uspješno postavljanje troši jedan bod izdržljivosti; neprikladne površine odbija bez trošenja predmeta.

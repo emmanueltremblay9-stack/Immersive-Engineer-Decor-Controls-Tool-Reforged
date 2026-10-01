@@ -1,0 +1,7 @@
+Alarm Siren
+Signal feedback
+<&recipe>Heed this: The Alarm Siren is a face-mounted redstone indicator. It changes powered state from the signal supplied by the block it is attached to.<br>
+<br>
+Usage: Attach it to a solid face and power it to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: The siren refreshes once per second while its attached signal remains active.

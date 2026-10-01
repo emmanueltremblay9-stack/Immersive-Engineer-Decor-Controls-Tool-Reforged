@@ -1,0 +1,5 @@
+Embudo ng Likido
+Kagamitan sa linya ng likido
+<&recipe>Ang Maliit na Embudo ng Likido ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Ilagay sa ilalim ng lugar ng pagkolekta ng likido at idaan ang nakaimbak na laman sa mga tangke o mas mababang mga tubo.<br>

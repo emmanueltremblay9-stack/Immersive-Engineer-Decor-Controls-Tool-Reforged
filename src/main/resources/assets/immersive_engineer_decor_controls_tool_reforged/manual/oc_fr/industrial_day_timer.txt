@@ -1,0 +1,7 @@
+Relòtge jornalièr
+Senhal de jorn
+<&recipe>Un interruptor temporizat seguís la partida diürna del cicle del mond.<br>
+<br>
+Utilizacion : emplega-lo per las lampas de cort, los contravents e las comandas de fabrica que devon foncionar sonque de jorn.<br>
+<br>
+Nòta : demanda una dimension amb lutz del cèl.

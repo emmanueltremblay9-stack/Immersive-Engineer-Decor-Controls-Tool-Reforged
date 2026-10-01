@@ -1,0 +1,5 @@
+Vasbeton burkolólap
+Vasbeton
+<&recipe>A vasbeton burkolatlépcső kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>

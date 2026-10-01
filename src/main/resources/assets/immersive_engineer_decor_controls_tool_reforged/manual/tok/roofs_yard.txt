@@ -1,0 +1,101 @@
+len sewi en ma poka tomo
+kipisi pi poka tomo pali
+leko len sewi, kiwen lili pi ma poka tomo, en kipisi kasi majuna pi tomo pali li pona e pini pi tomo pi poka tomo, pi ma pali, pi ma pana ijo, pi poka majuna pi tomo pali.<br>
+<br>
+o wan e kipisi ni en pali kiwen en nasin kama tawa ni: tomo ilo lon poka tomo li ken lukin pona tan weka.
+<np>
+len sewi pimeja pi supa lili
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof>leko ni li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+sinpin ko lete pi len sewi
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_metallized>sinpin ko lete pi len sewi pimeja li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+len sewi pimeja pi supa lili
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_skylight>kiwen lukin pi len sewi pimeja li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+palisa pi lupa kon sewi
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_chimneytrunk>palisa pi lupa kon pi len sewi pimeja li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+lupa linja pi len sewi
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_wireconduit>lupa linja pi len sewi pimeja li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+len sewi pimeja pi supa lili
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_chimney>lupa kon pi len sewi pimeja. lupa kon pi len sewi pimeja li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+leko pi len sewi pimeja pi supa lili
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_block>leko ni li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+supa pi len sewi pimeja
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_slab>leko ni li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+supa pi len sewi pimeja
+kipisi len sewi pi lukin majuna
+<&dark_shingle_roof_slabslice>kipisi supa pi len sewi pimeja li pali e linja pimeja kepeken pi len sewi tawa tomo pali en tomo ilo.<br>
+<br>
+kepeken: o kepeken e kipisi lon kulupu tawa pali e sijelo len sewi pi ken lon.<br>
+<np>
+ma kiwen pi kiwen lili
+len ma pi ma pali
+<&dense_grit_dirt_block>leko ni li pana e ma kiwen pi tawa noka mute tawa ma pali lon poka tomo.<br>
+<br>
+kepeken: o pana e ona lon poka pi lupa pana ijo, pi poki telo lon poka tomo, pi ma ilo.<br>
+<np>
+ko kiwen pi kiwen lili
+len ma pi ma pali
+<&dense_grit_sand_block>leko ni li pana e ma kiwen pi tawa noka mute tawa ma pali lon poka tomo.<br>
+<br>
+kepeken: o pana e ona lon poka pi lupa pana ijo, pi poki telo lon poka tomo, pi ma ilo.<br>
+<np>
+kiwen kipisi majuna
+kiwen kasi majuna pi tomo pali
+<&old_industrial_wood_planks>kiwen kipisi majuna pi tomo pali li pana e kiwen kasi majuna pi tomo pali tawa ma, tawa nasin sewi, tawa lupa, tawa poka lukin pi pilin seli lon insa tomo.<br>
+<br>
+kepeken: o kepeken e ona tawa ma majuna pi tomo pali, tawa leko sewi, tawa lupa, tawa poka lukin.<br>
+<np>
+supa kasi majuna pi tomo pali
+kiwen kasi majuna pi tomo pali
+<&old_industrial_wood_slab>leko ni li pana e kiwen kasi majuna pi tomo pali tawa ma, tawa nasin sewi, tawa lupa, tawa poka lukin pi pilin seli lon insa tomo.<br>
+<br>
+kepeken: o kepeken e ona tawa ma majuna pi tomo pali, tawa leko sewi, tawa lupa, tawa poka lukin.<br>
+<np>
+leko sewi kasi majuna
+kiwen kasi majuna pi tomo pali
+<&old_industrial_wood_stairs>leko sewi kasi majuna pi tomo pali li pana e kiwen kasi majuna pi tomo pali tawa ma, tawa nasin sewi, tawa lupa, tawa poka lukin pi pilin seli lon insa tomo.<br>
+<br>
+kepeken: o kepeken e ona tawa ma majuna pi tomo pali, tawa leko sewi, tawa lupa, tawa poka lukin.<br>
+<np>
+kipisi supa kasi majuna
+kiwen kasi majuna pi tomo pali
+<&old_industrial_wood_slabslice>kipisi supa kasi majuna pi tomo pali li pana e kiwen kasi majuna pi tomo pali tawa ma, tawa nasin sewi, tawa lupa, tawa poka lukin pi pilin seli lon insa tomo.<br>
+<br>
+kepeken: o kepeken e ona tawa ma majuna pi tomo pali, tawa leko sewi, tawa lupa, tawa poka lukin.<br>
+<np>
+lupa kasi majuna pi tomo pali
+kiwen kasi majuna pi tomo pali
+<&old_industrial_wood_door>leko ni li pana e kiwen kasi majuna pi tomo pali tawa ma, tawa nasin sewi, tawa lupa, tawa poka lukin pi pilin seli lon insa tomo.<br>
+<br>
+kepeken: o kepeken e ona tawa ma majuna pi tomo pali, tawa leko sewi, tawa lupa, tawa poka lukin.<br>

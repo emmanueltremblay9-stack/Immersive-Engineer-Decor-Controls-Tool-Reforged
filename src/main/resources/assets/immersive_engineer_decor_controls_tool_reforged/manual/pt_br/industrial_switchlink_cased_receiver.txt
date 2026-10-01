@@ -1,0 +1,7 @@
+Receptor de enlace com carcaça
+Controle vinculado
+<&recipe>Um receptor vinculado com carcaça fornece um destino robusto de redstone para painéis remotos.<br>
+<br>
+Uso: Clique com uma pérola de Ender para criar uma pérola vinculada. Clique com o botão direito diretamente no receptor para alterná-lo manualmente.<br>
+<br>
+Observações: Uma pérola vinculada alterna este receptor quando usada agachado.

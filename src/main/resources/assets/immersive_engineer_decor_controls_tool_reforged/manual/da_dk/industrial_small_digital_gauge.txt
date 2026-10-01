@@ -1,0 +1,7 @@
+Digital måler
+Aflæselig signalstyrke
+<&recipe>En kompakt måler til kontrolrum viser redstonestyrken som en tydelig panelaflæsning.<br>
+<br>
+Brug: Monter den, hvor styrken af redstone i nærheden skal kunne ses med et enkelt blik.<br>
+<br>
+Bemærk: Aflæser nærliggende redstonestyrke fra 0 til 15.

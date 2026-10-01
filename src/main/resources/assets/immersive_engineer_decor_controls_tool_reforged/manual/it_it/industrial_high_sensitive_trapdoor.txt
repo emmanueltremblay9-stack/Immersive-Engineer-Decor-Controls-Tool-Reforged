@@ -1,0 +1,7 @@
+Botola industriale a urto
+Impulso a pressione
+<&recipe>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.

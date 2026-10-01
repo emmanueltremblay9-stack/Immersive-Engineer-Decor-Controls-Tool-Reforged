@@ -1,0 +1,5 @@
+Bedna se štítkem
+Upravitelný skladový štítek
+<&recipe>Tato bedna se štítkem usnadňuje přehledné třídění zásob. Její přední štítek lze upravovat jako malou dílenskou ceduli.<br>
+<br>
+Použití: Pravým kliknutím na štítek uprav popisek bedny. Pravým kliknutím na zbytek bedny otevři úložiště vybavení, součástek a zásob pro údržbu.<br>

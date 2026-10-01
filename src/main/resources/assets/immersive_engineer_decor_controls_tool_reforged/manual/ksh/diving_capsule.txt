@@ -1,0 +1,7 @@
+Tauchluffkapsel
+Notluffvürrod
+<&recipe>De Dauchloftkapsel es ene Nootvorrat aan Loft för Arbeid unger Wasser.<br>
+<br>
+Jebruch: Bruch se met de Hand, öm Loft opzevolle. Em Inventar kann se och automatesch lossjonn, wann de Loft bal alle es, un jeiht dann en de Afköhlzick.<br>
+<br>
+Nimm se met för övverflödde Mine, Rohrleitunge unger Wasser un Reparature en Pomperüüm.

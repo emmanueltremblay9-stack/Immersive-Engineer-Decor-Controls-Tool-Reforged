@@ -1,0 +1,107 @@
+Màquines de taller
+Màquines i entrades/eixides de taller
+Les màquines de taller permeten fabricar, moure objectes, fondre, eliminar, recollir i fer treballs auxiliars de manera compacta en un sol bloc.<br>
+<br>
+Obri les pàgines següents per a vore la recepta, la imatge, l’ambientació i les notes pràctiques d’ús de cada màquina.
+<np>
+Taula d’acer
+Mobles de taller
+<&steel_table>Este bloc és un moble pràctic de taller per a sales de treball i racons de manteniment.<br>
+<br>
+Ús: posa’l al costat de bancs, caixons i màquines compactes.<br>
+<np>
+Taula de fusta tractada
+Mobles de taller
+<&treated_wood_table>Este bloc és un moble pràctic de taller per a sales de treball i racons de manteniment.<br>
+<br>
+Ús: posa’l al costat de bancs, caixons i màquines compactes.<br>
+<np>
+Tamboret de fusta tractada
+Mobles de taller
+<&treated_wood_stool>Este bloc és un moble pràctic de taller per a sales de treball i racons de manteniment.<br>
+<br>
+Ús: posa’l al costat de bancs, caixons i màquines compactes.<br>
+<np>
+Taula de treball del metall
+Estació de treball per a plaques
+<&metal_crafting_table>La taula de treball del metall és una estació de taller reforçada, amb un espai per al martell, una graella de manufactures de 3x3 i un espai d’eixida ben definit.<br>
+<br>
+Ús: usa la graella per a la manufactura normal. Per a fer plaques d’IE, posa un martell de l’enginyer en l’espai de ferramenta i el material de la placa en la graella abans de traure el resultat. Les decoracions d’acer usen plaques d’acer per a pals, passarel·les, finestres, portes, baranes i altres peces d’acer.<br>
+<np>
+Tremuja de fàbrica
+Equipament de terra de taller
+<&factory_hopper>Este bloc mou piles d’objectes a través d’una carcassa industrial més compacta.<br>
+<br>
+Ús: orienta’l cap a la línia d’inventaris i ajusta l’abast, la quantitat de la pila, els temps i el mode de redstone en la seua pantalla.<br>
+<np>
+Subministrador de fàbrica
+Equipament de terra de taller
+<&factory_dropper>Este bloc solta objectes guardats per la cara cap a la qual s’orienta.<br>
+<br>
+Ús: orienta el frontal cap al punt d’eixida, ompli els espais interns i ajusta la força, l’angle, l’espera, la lògica de filtres i el mode de redstone en la seua pantalla.<br>
+<np>
+Col·locador de blocs de fàbrica
+Equipament de terra de taller
+<&factory_placer>Este bloc col·loca blocs de les seues existències internes quan s’activa.<br>
+<br>
+Ús: apunta la cara de treball a l’espai de destí i carrega piles que es puguen col·locar.<br>
+<np>
+Trencador de blocs
+Equipament de terra de taller
+<&small_block_breaker>El trencador de blocs xicotet és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: orienta la cara de treball cap al bloc que vulgues llevar.<br>
+<np>
+Incinerador de residus
+Unitat compacta de processament
+<&small_waste_incinerator>L’incinerador de residus destruïx els objectes que no es volen i ocupa poc espai en el taller.<br>
+<br>
+Ús: posa en la cua només objectes dels quals et vulgues desfer.<br>
+<np>
+Forn de laboratori
+Unitat compacta de processament
+<&small_lab_furnace>El forn de laboratori s’encarrega de treballs compactes de fosa amb combustible sòlid i ocupa poc espai en el taller.<br>
+<br>
+Ús: usa combustible sòlid per a fondre en tandes xicotetes.<br>
+<np>
+Forn elèctric
+Unitat compacta de processament
+<&small_electrical_furnace>El forn elèctric s’encarrega de treballs compactes de fosa amb energia FE i ocupa poc espai en el taller.<br>
+<br>
+Ús: subministra FE i materials vàlids per a fondre.<br>
+<np>
+Forn de fusió de minerals
+Unitat compacta de processament
+<&small_mineral_smelter>El forn de fusió de minerals processa minerals a alta temperatura i ocupa poc espai en el taller.<br>
+<br>
+Ús: alimenta el forn amb blocs minerals i energia per a treballs de fusió a alta temperatura.<br>
+<np>
+Congelador d’aigua
+Unitat compacta de processament
+<&small_freezer>El congelador d’aigua fa treballs compactes de refredament per a sistemes de líquids alimentats amb energia.<br>
+<br>
+Ús: subministra aigua i energia per a produir gel per fases.<br>
+<np>
+Acumulació passiva de líquids
+Accessoris de conducció de líquids
+<&passive_fluid_accumulator>L’acumulador passiu de líquids és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: col·loca’l contra fonts d’aigua adequades i deixa espai per a traure el líquid.<br>
+<np>
+Panell solar
+Equipament de terra de taller
+<&small_solar_panel>El panell solar xicotet és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: deixa que tinga accés al cel obert i connecta equip de baix consum.<br>
+<np>
+Munyidora
+Equipament de terra de taller
+<&small_milking_machine>La munyidora xicoteta és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: col·loca-la prop de les vaques i proporciona un mitjà per a traure els recipients de llet o el líquid.<br>
+<np>
+Tallador d’arbres
+Equipament de terra de taller
+<&small_tree_cutter>El tallador d’arbres xicotet és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: apunta’l cap a arbres crescuts i recull el botí per separat.<br>

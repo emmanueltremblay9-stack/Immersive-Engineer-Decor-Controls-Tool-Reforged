@@ -1,0 +1,7 @@
+Senzor svjetlosti
+Otkrivanje signala
+<&recipe>Senzor svjetlosti pretvara lokalnu svjetlinu u redstone upravljanje.<br>
+<br>
+Uporaba: koristi ga za automatska svjetla, zatvarače i sklopove vidljivosti.<br>
+<br>
+Napomene: uključuje se pri neobrađenoj svjetlini od 8 ili više.

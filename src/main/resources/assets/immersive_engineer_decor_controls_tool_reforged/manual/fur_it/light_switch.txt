@@ -1,0 +1,7 @@
+Interutôr di lûs
+Control cun redstone
+<&recipe>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.

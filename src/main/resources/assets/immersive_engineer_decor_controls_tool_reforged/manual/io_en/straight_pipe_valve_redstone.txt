@@ -1,0 +1,5 @@
+Redstonea fluidovalvo
+Fluidotuba aparataro
+<&recipe>La Fluidovalvo regata per redstoneo esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Alinez la valvo kun la dezirata fluodireciono.<br>

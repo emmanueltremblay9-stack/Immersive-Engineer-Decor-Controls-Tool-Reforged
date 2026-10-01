@@ -1,0 +1,127 @@
+Vías de acceso
+Pasarelas y soportes
+Los postes de acero y de madera tratada, las rejillas, pasarelas, barandillas, escaleras de mano, puertas, ventanas y trampillas forman vías de mantenimiento compactas en el interior de las fábricas.<br>
+<br>
+Las piezas de acero para vías de acceso requieren placas de acero. Fabrica o coloca una mesa de crafteo metálica, introduce un martillo de Immersive Engineering y martillea lingotes de acero para obtener las placas con las que fabricar postes, pasarelas, ventanas, puertas, barandillas y otras decoraciones de acero.<br>
+<br>
+Colócalas donde las máquinas necesiten acceso de mantenimiento, caminos elevados, pozos de servicio o bordes más seguros.
+<np>
+Poste grueso de acero
+Pieza de estructura
+<&thick_steel_pole>El poste recto de acero grueso aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Cabeza de poste grueso
+Pieza de estructura
+<&thick_steel_pole_head>La cabeza o pie de poste recto de acero grueso aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Poste delgado de acero
+Pieza de estructura
+<&thin_steel_pole>El poste de acero recto y delgado aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Cabeza de poste delgado
+Pieza de estructura
+<&thin_steel_pole_head>La cabeza o pie de poste de acero recto y delgado aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Poste de madera tratada
+Pieza de estructura
+<&treated_wood_pole>El poste recto de madera tratada aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Cabeza de poste de madera tratada
+Pieza de estructura
+<&treated_wood_pole_head>La cabeza o pie de poste recto de madera tratada aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Soporte de poste de madera tratada
+Pieza de estructura
+<&treated_wood_pole_support>El soporte de poste recto de madera tratada aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Soporte de acero en doble T
+Pieza de estructura
+<&steel_double_t_support>Este bloque aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>
+<np>
+Rejilla de acero para suelos
+Elemento de acceso de mantenimiento
+<&steel_floor_grating>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Pasarela de acero
+Elemento de acceso de mantenimiento
+<&steel_catwalk>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Escaleras de acero para pasarela
+Elemento de acceso de mantenimiento
+<&steel_catwalk_stairs>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Pasarela de acero elevada
+Elemento de acceso de mantenimiento
+<&steel_catwalk_ta>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Barandilla de acero
+Elemento de acceso de mantenimiento
+<&steel_railing>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Valla de malla de acero
+Elemento de acceso de mantenimiento
+<&steel_mesh_fence>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Puerta de malla de acero para vallas
+Elemento de acceso de mantenimiento
+<&steel_mesh_fence_gate>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Escalera de peldaños de metal
+Elemento de acceso de mantenimiento
+<&metal_rung_ladder>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Peldaños metálicos escalonados
+Elemento de acceso de mantenimiento
+<&metal_rung_steps>Este bloque crea vías de mantenimiento fáciles de identificar alrededor de la maquinaria.<br>
+<br>
+Uso: Colócalo para acceder al mantenimiento de máquinas, plantas superiores y pozos de servicio.<br>
+<np>
+Ventana con marco de acero
+Visibilidad protegida
+<&steel_framed_window>Este bloque permite ver a través de la estructura sin romper la estética reforzada de la fábrica.<br>
+<br>
+Uso: Colócalo en un hueco de un bloque en la pared para observar la maquinaria a través de una barrera protectora.<br>
+<np>
+Puerta corredera metálica
+Punto de acceso industrial
+<&metal_sliding_door>Este bloque proporciona un acceso resistente a salas de servicio, pozos, tejados y recintos de máquinas.<br>
+<br>
+Uso: Instálalo donde necesites una abertura de mantenimiento controlada.<br>
+<np>
+Trampilla de hierro
+Punto de acceso industrial
+<&iron_hatch>Este bloque proporciona un acceso resistente a salas de servicio, pozos, tejados y recintos de máquinas.<br>
+<br>
+Uso: Instálalo donde necesites una abertura de mantenimiento controlada.<br>

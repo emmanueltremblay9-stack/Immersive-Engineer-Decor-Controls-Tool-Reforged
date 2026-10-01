@@ -1,0 +1,7 @@
+Bouton de machine o garde
+Comande par redstone
+<&recipe>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.

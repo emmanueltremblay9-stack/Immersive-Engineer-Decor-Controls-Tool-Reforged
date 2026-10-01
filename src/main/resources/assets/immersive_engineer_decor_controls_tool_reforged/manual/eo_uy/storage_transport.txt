@@ -1,0 +1,41 @@
+Stokado kaj transporto
+Inventaraj kaj fluaj ekipaĵoj
+Stokaj kaj transportaj ekipaĵoj inkluzivas kestojn, barelojn, funelojn kaj valvojn por kompakta fabrika vojigo.<br>
+<br>
+Uzu ĉi tiujn paĝojn dum planado de stokejoj, tuboj, prizorgaj tankoj kaj regataj fluidlinioj.
+<np>
+Etikedita kesto
+Redaktebla stoketikedo
+<&labeled_crate>Ĉi tiu etikedita kesto estas por klare ordigi stokejon. Ĝia antaŭa plato estas redaktebla kiel malgranda metieja ŝildo.<br>
+<br>
+Uzado: dekstre klaku la etikedplaton por redakti la kestetikedon. Dekstre klaku la reston de la kesto por malfermi stokadon de ekipaĵoj, partoj kaj prizorgaj provizoj.<br>
+<np>
+Fluida barelo
+Fluidliniaj ekipaĵoj
+<&fluid_barrel>Ĉi tiu ekipaĵo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: metu ĝin kie tuboj aŭ siteloj povas atingi la tankoflankon.<br>
+<np>
+Fluida funelo
+Fluidliniaj ekipaĵoj
+<&small_fluid_funnel>La malgranda fluida funelo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: metu ĝin sub la fluidkolektopunkton kaj direktu ĝian stokitan enhavon al tankoj aŭ tuboj pli malsupre.<br>
+<np>
+Fluida kontraŭrevena valvo
+Fluidliniaj ekipaĵoj
+<&straight_pipe_valve>La fluida kontraŭrevena valvo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: vicigu la valvon laŭ la celita fludirekto.<br>
+<np>
+Redstone’a fluida valvo
+Fluidliniaj ekipaĵoj
+<&straight_pipe_valve_redstone>La redstone’a fluida valvo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: vicigu la valvon laŭ la celita fludirekto.<br>
+<np>
+Analoga fluida valvo
+Fluidliniaj ekipaĵoj
+<&straight_pipe_valve_redstone_analog>La analoga fluida valvo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: vicigu la valvon laŭ la celita fludirekto.<br>

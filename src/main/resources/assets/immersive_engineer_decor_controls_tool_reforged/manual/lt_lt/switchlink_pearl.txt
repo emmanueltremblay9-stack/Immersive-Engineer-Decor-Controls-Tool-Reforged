@@ -1,0 +1,7 @@
+Jungiklio ryšio perlas
+Susietas valdymas
+<&recipe>Susietas perlas išsaugo imtuvo taikinį nuotoliniam fabriko valdymui.<br>
+<br>
+Naudojimas: spustelėk jungiklio ryšio imtuvą laikydamas Enderio perlą, kad jį sukurtum. Naudok susietą perlą sėlindamas, kad suaktyvintum išsaugotą imtuvą.<br>
+<br>
+Pastabos: taikinys turi būti įkeltas, toje pačioje dimensijoje ir pasiekiamas ryšio nuotoliu.

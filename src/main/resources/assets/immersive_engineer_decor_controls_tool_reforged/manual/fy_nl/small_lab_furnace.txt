@@ -1,0 +1,5 @@
+Laboratoariumoven
+Kompakte ferwurkingsienheid
+<&recipe>De laboratoariumoven fiert lytse smelttaken op fêste brânstof út en nimt mar in bytsje plak yn de wurkpleats yn.<br>
+<br>
+Gebrûk: Brûk fêste brânstof foar lytse smeltpartijen.<br>

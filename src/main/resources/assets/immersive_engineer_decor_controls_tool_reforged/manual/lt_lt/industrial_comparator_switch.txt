@@ -1,0 +1,7 @@
+Komparatoriaus jungiklis
+Prijungto bloko signalas
+<&recipe>Kompaktiškas jutiklinis jungiklis nuskaito bloką, ant kurio sumontuotas, ir paverčia rodmenį paprasta skydelio išvestimi.<br>
+<br>
+Naudojimas: tvirtink prie sandėlių, talpyklų arba redstono įrenginių. Kai prijungtas blokas pateikia komparatoriaus, konteinerio arba redstono išvestį, jungiklis siunčia viso stiprumo redstono signalą.<br>
+<br>
+Pastabos: naudok saugyklų užpildymo lygiui arba paslėptiems laidams paversti aiškiomis įjungimo ir išjungimo valdymo linijomis.

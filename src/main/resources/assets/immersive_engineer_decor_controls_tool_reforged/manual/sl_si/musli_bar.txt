@@ -1,0 +1,5 @@
+Energijska ploščica iz mešanice müslija
+Hiter delavniški prigrizek
+<&recipe>Ploščica Muslee Melange je kompaktna hrana iz kruha, semen in sadja.<br>
+<br>
+Jejte jo na terenu med nameščanjem krmil, cevi, ploščadi ali dolgih strojnih linij.

@@ -1,0 +1,107 @@
+Àwọn Ẹ̀rọ Ilé Ìṣẹ́ Ọwọ́
+Àwọn ẹ̀rọ àti ìwọlé/àbájáde ilé iṣẹ́
+Àwọn ẹ̀rọ ilé ìṣẹ́ ọwọ́ ń pèsè iṣẹ́ ọwọ́ kékeré, gbígbé ohun, yíyọ́, ìparun, ìkójọ, àti iṣẹ́ ìrànwọ́ nínú ààyè búlọ́ọ̀kù kan ṣoṣo.<br>
+<br>
+Ṣí àwọn ojú ìwé tó tẹ̀lé fún àwòṣe, àwòrán, ìtàn, àti àkíyèsí lílò tó wúlò fún ẹ̀rọ kọ̀ọ̀kan.
+<np>
+Tábìlì Irin Líle
+Ohun èlò ilé ìṣẹ́ ọwọ́
+<&steel_table>Búlọ́ọ̀kù yìí jẹ́ ohun èlò ilé iṣẹ́ tó wúlò fún yàrá iṣẹ́ àti igun ìtọ́jú.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ àwọn tábìlì iṣẹ́, àpótí, àti ẹ̀rọ kékeré.<br>
+<np>
+Tábìlì Igi tí A Tọ́jú
+Ohun èlò ilé ìṣẹ́ ọwọ́
+<&treated_wood_table>Búlọ́ọ̀kù yìí jẹ́ ohun èlò ilé iṣẹ́ tó wúlò fún yàrá iṣẹ́ àti igun ìtọ́jú.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ àwọn tábìlì iṣẹ́, àpótí, àti ẹ̀rọ kékeré.<br>
+<np>
+Àpótí Ìjókòó Igi tí A Tọ́jú
+Ohun èlò ilé ìṣẹ́ ọwọ́
+<&treated_wood_stool>Búlọ́ọ̀kù yìí jẹ́ ohun èlò ilé iṣẹ́ tó wúlò fún yàrá iṣẹ́ àti igun ìtọ́jú.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ àwọn tábìlì iṣẹ́, àpótí, àti ẹ̀rọ kékeré.<br>
+<np>
+Tábìlì Iṣẹ́ Ọwọ́ Irin
+Ibùdó iṣẹ́ àwo
+<&metal_crafting_table>Tábìlì Iṣẹ́ Ọwọ́ Irin jẹ́ ibùdó ilé iṣẹ́ aláfikún pẹ̀lú ihò òòlù, àwòṣe iṣẹ́ ọwọ́ 3x3, àti ihò àbájáde tó ṣe kedere.<br>
+<br>
+Lílò: Lo àwòṣe fún iṣẹ́ ọwọ́ déédéé. Fún àwọn àwo IE, fi Òòlù Ẹlẹ́rọ̀ sínú ihò irinṣẹ́, kí o sì fi ohun èlò àwo sínú àwòṣe kí o tó gba èso. Àwọn ọ̀ṣọ́ irin líle ń lo àwo irin líle fún àwọn òpó, ọ̀nà ìrìn, fèrèsé, ìlẹ̀kùn, ọ̀pá ìdènà, àti apá irin líle mìíràn.<br>
+<np>
+Àpò Ìgbéjáde Ilé Iṣẹ́
+Ohun ìrànwọ́ ilẹ̀ ilé iṣẹ́
+<&factory_hopper>Búlọ́ọ̀kù yìí ń gbé àwọn àkójọpọ̀ ohun kọjá àpótí ilé iṣẹ́ tó kéré sí i.<br>
+<br>
+Lílò: Dojú rẹ̀ sí ìlà ibi ìpamọ́, lẹ́yìn náà ṣètò ìjìnnà, iye àkójọpọ̀, àkókò, àti ipò Redstone lójú ìṣàkóso rẹ̀.<br>
+<np>
+Ẹ̀rọ Ìtúsílẹ̀ Ilé Iṣẹ́
+Ohun ìrànwọ́ ilẹ̀ ilé iṣẹ́
+<&factory_dropper>Búlọ́ọ̀kù yìí ń tú àwọn ohun ìpamọ́ jáde láti ojú tí a dojú kọ.<br>
+<br>
+Lílò: Dojú iwájú sí ibi ìtúsílẹ̀, kún àwọn ihò inú rẹ̀, kí o sì ṣètò agbára, igun, ìdádúró, ìlànà àlẹ̀, àti ipò Redstone lójú ìṣàkóso rẹ̀.<br>
+<np>
+Ẹ̀rọ Gbígbé Búlọ́ọ̀kù Ilé Iṣẹ́
+Ohun ìrànwọ́ ilẹ̀ ilé iṣẹ́
+<&factory_placer>Búlọ́ọ̀kù yìí ń gbé àwọn búlọ́ọ̀kù láti ìpamọ́ inú rẹ̀ kalẹ̀ nígbà tí a mú un ṣiṣẹ́.<br>
+<br>
+Lílò: Dojú ẹ̀gbẹ́ iṣẹ́ sí ààyè àfojúsùn, kí o sì fi àwọn àkójọpọ̀ tó ṣeé gbé sínú rẹ̀.<br>
+<np>
+Ẹ̀rọ Fífọ́ Búlọ́ọ̀kù
+Ohun ìrànwọ́ ilẹ̀ ilé iṣẹ́
+<&small_block_breaker>Ẹ̀rọ Fífọ́ Búlọ́ọ̀kù Kékeré jẹ́ búlọ́ọ̀kù ìrànwọ́ ilẹ̀ ilé iṣẹ́ fún iṣẹ́ ọwọ́, ìpamọ́, ìgbékalẹ̀, fífọ́, ìkójọ, tàbí iṣẹ́ àdáṣe kékeré.<br>
+<br>
+Lílò: Dojú ẹ̀gbẹ́ iṣẹ́ sí búlọ́ọ̀kù tí o fẹ́ yọ.<br>
+<np>
+Ẹ̀rọ Sísun Ìdọ̀tí
+Ẹ̀ka ìṣiṣẹ́ kékeré
+<&small_waste_incinerator>Ẹ̀rọ Sísun Ìdọ̀tí ń pa àwọn ohun tí a kò fẹ́ run nínú ààyè ilé ìṣẹ́ ọwọ́ kékeré.<br>
+<br>
+Lílò: Fi àwọn ohun tí a kò fẹ́ nìkan sínú ìlà rẹ̀.<br>
+<np>
+Ààrò Yàrá Ìdánwò
+Ẹ̀ka ìṣiṣẹ́ kékeré
+<&small_lab_furnace>Ààrò Yàrá Ìdánwò ń ṣe iṣẹ́ yíyọ́ kékeré pẹ̀lú epo líle nínú ààyè ilé ìṣẹ́ ọwọ́ kékeré.<br>
+<br>
+Lílò: Lo epo líle fún àwọn ẹgbẹ́ yíyọ́ kékeré.<br>
+<np>
+Ààrò Iná Mànàmáná
+Ẹ̀ka ìṣiṣẹ́ kékeré
+<&small_electrical_furnace>Ààrò Iná Mànàmáná ń ṣe iṣẹ́ yíyọ́ kékeré pẹ̀lú agbára FE nínú ààyè ilé ìṣẹ́ ọwọ́ kékeré.<br>
+<br>
+Lílò: Pèsè FE àti ohun ìwọlé yíyọ́ tó yẹ.<br>
+<np>
+Ààrò Yíyọ́ Àlùmọ́ọ́nì
+Ẹ̀ka ìṣiṣẹ́ kékeré
+<&small_mineral_smelter>Ààrò Yíyọ́ Àlùmọ́ọ́nì ń ṣe iṣẹ́ àlùmọ́ọ́nì pẹ̀lú ooru gíga nínú ààyè ilé ìṣẹ́ ọwọ́ kékeré.<br>
+<br>
+Lílò: Fi àwọn búlọ́ọ̀kù àlùmọ́ọ́nì àti agbára wọlé fún iṣẹ́ yíyọ́ pẹ̀lú ooru gíga.<br>
+<np>
+Ẹ̀rọ Dídì Omi
+Ẹ̀ka ìṣiṣẹ́ kékeré
+<&small_freezer>Ẹ̀rọ Dídì Omi ń ṣe iṣẹ́ ìmútutù kékeré fún àwọn ètò ohun olómi alágbára.<br>
+<br>
+Lílò: Pèsè omi àti agbára fún ṣíṣe yìnyín ní ìpele.<br>
+<np>
+Ohun Olómi Láìsí Agbára
+Ohun èlò ìlà ohun olómi
+<&passive_fluid_accumulator>Olùkójọ Ohun Olómi Láìsí Agbára jẹ́ apá ìlà ohun olómi kékeré fún àwọn àpò omi kékeré, ọ̀nà paipu, ibi ìkójọ, àti ìṣàn tí Redstone ń darí.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ àwọn orísun omi tó yẹ, kí o sì fi ààyè sílẹ̀ fún yíyọ ohun olómi.<br>
+<np>
+Pánẹ́ẹ̀lì Oòrùn
+Ohun ìrànwọ́ ilẹ̀ ilé iṣẹ́
+<&small_solar_panel>Pánẹ́ẹ̀lì Oòrùn Kékeré jẹ́ búlọ́ọ̀kù ìrànwọ́ ilẹ̀ ilé iṣẹ́ fún iṣẹ́ ọwọ́, ìpamọ́, ìgbékalẹ̀, fífọ́, ìkójọ, tàbí iṣẹ́ àdáṣe kékeré.<br>
+<br>
+Lílò: Jẹ́ kí ọ̀run gbangba wà lókè rẹ̀, kí o sì so ohun èlò tí kò nílò agbára púpọ̀ mọ́ ọn.<br>
+<np>
+Ẹ̀rọ Fífa Wàrà
+Ohun ìrànwọ́ ilẹ̀ ilé iṣẹ́
+<&small_milking_machine>Ẹ̀rọ Fífa Wàrà Kékeré jẹ́ búlọ́ọ̀kù ìrànwọ́ ilẹ̀ ilé iṣẹ́ fún iṣẹ́ ọwọ́, ìpamọ́, ìgbékalẹ̀, fífọ́, ìkójọ, tàbí iṣẹ́ àdáṣe kékeré.<br>
+<br>
+Lílò: Gbé e nítòsí àwọn màlúù, kí o sì pèsè ọ̀nà láti yọ ohun èlò ìgbéwàrà tàbí ohun olómi.<br>
+<np>
+Ẹ̀rọ Gígé Igi
+Ohun ìrànwọ́ ilẹ̀ ilé iṣẹ́
+<&small_tree_cutter>Ẹ̀rọ Gígé Igi Kékeré jẹ́ búlọ́ọ̀kù ìrànwọ́ ilẹ̀ ilé iṣẹ́ fún iṣẹ́ ọwọ́, ìpamọ́, ìgbékalẹ̀, fífọ́, ìkójọ, tàbí iṣẹ́ àdáṣe kékeré.<br>
+<br>
+Lílò: Dojú rẹ̀ sí àwọn igi tí ó ti dàgbà, kí o sì kó ohun tí ó ṣubú jọ lọ́tọ̀.<br>

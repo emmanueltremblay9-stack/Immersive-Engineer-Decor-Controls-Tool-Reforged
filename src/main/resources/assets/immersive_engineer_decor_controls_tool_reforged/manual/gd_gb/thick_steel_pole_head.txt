@@ -1,0 +1,5 @@
+Ceann puist thiugh
+Pàirt frèam structair
+<&recipe>Bheir Ceann/Bun puist dhìrich thiugh stàilinn structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>

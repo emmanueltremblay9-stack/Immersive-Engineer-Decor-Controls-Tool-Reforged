@@ -1,0 +1,7 @@
+Shinin' sensitive glass
+Glass fer signals
+<&recipe>A glass block that feels redstone keeps the view clear while showin' the signal's state.<br>
+<br>
+Orders: Use her in control-room portholes, lit panels and guarded factory glazing.<br>
+<br>
+Mind ye: Nearby redstone power changes her state.

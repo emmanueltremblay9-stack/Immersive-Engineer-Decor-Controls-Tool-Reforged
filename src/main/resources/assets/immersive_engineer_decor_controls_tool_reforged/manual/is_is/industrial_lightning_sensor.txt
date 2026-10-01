@@ -1,0 +1,7 @@
+Óveðursnemi
+Merkjaskynjun
+<&recipe>Óveðursnemi knýr viðvaranir í þrumuveðri.<br>
+<br>
+Notkun: Settu hann undir opinn himin og tengdu við lampa eða viðvaranir.<br>
+<br>
+Athugasemdir: Krefst þrumuveðurs og aðgangs að himni.

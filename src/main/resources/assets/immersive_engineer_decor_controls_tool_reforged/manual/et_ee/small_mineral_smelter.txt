@@ -1,0 +1,5 @@
+Mineraalisulati
+Kompaktne töötlusseade
+<&recipe>Mineraalisulati töötleb mineraale kõrgel temperatuuril väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Lisa mineraalplokke ja energiat kõrgel temperatuuril sulatamiseks.<br>

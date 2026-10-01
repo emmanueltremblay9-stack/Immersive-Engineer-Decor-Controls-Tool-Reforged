@@ -1,0 +1,3 @@
+Grof goudgruis
+Materiaal voor ingenieursgereedschap uit de gereconstrueerde receptenset.
+<&recipe>Kan tot goudstaven worden<br>gesmolten, maar is niet geschikt<br>voor geavanceerde materiaalverwerking.

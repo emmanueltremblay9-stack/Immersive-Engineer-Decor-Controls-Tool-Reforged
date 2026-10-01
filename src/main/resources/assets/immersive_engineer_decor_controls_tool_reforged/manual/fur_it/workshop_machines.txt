@@ -1,0 +1,107 @@
+Machinis di oficine
+Machinis e jentradis/jessudis di oficine
+Lis machinis di oficine a fasin fabricazion, moviment di ogjets, fusion, eliminazion, racuelte e lavôrs di utilitât tal spazi di un bloc sôl.<br>
+<br>
+Vierç lis pagjinis che a vegnin dopo par cjatâ la ricete, lis ilustrazions, lis descrizions e lis notis pratichis di ûs di ogni machine.
+<np>
+Taule di açâr
+Mobil di oficine
+<&steel_table>Chest bloc al è un mobil pratic pes stanziis di lavôr e i cjantons di manutenzion.<br>
+<br>
+Ûs: metilu dongje di bancs, cassis e machinis che a ocupin pôc spazi.<br>
+<np>
+Taule di len tratât
+Mobil di oficine
+<&treated_wood_table>Chest bloc al è un mobil pratic pes stanziis di lavôr e i cjantons di manutenzion.<br>
+<br>
+Ûs: metilu dongje di bancs, cassis e machinis che a ocupin pôc spazi.<br>
+<np>
+Scagnel di len tratât
+Mobil di oficine
+<&treated_wood_stool>Chest bloc al è un mobil pratic pes stanziis di lavôr e i cjantons di manutenzion.<br>
+<br>
+Ûs: metilu dongje di bancs, cassis e machinis che a ocupin pôc spazi.<br>
+<np>
+Banc pe lavorazion dai metai
+Postazion par fâ plachis
+<&metal_crafting_table>Il Banc pe lavorazion dai metai al è une postazion rinfuartide di oficine cuntun vani pal martiel, une gridele di fabricazion 3x3 e un vani di jessude clâr.<br>
+<br>
+Ûs: dopre la gridele pe fabricazion normâl. Pes plachis di IE, met un Martiel dal inzegnîr tal vani pal imprest e il materiâl de plache te gridele prime di cjapâ il risultât. I decôrs di açâr a doprin plachis di açâr par pâi, passarelis, barcons, puartis, ringhieris e altris tocs di açâr.<br>
+<np>
+Tramuele di fabriche
+Utilitât pal plan di oficine
+<&factory_hopper>Chest bloc al sposte pilis di ogjets dentri di une casse industriâl plui strete.<br>
+<br>
+Ûs: voltilu viers la linie di inventaris, po regole puartade, cuantitât de pile, timps e modalitât di redstone te sô schermade.<br>
+<np>
+Tiradôr di fabriche
+Utilitât pal plan di oficine
+<&factory_dropper>Chest bloc al tire fûr i ogjets conservâts di une muse orientade.<br>
+<br>
+Ûs: volte il devant viers il pont di jessude, cjarie i vanis internis e regole fuarce, angul, ritart, logjiche dai filtris e modalitât di redstone te sô schermade.<br>
+<np>
+Posadôr di blocs di fabriche
+Utilitât pal plan di oficine
+<&factory_placer>Chest bloc al met blocs de sô scorte interne cuant che al ven ativât.<br>
+<br>
+Ûs: volte la muse di lavôr viers il spazi di destinazion e cjarie pilis di robe che si pues meti.<br>
+<np>
+Rompidôr di blocs
+Utilitât pal plan di oficine
+<&small_block_breaker>Il Piçul rompidôr di blocs al è un bloc di utilitât di oficine pe fabricazion, il deposit, la pose, la roture, la racuelte o la automazion compacte.<br>
+<br>
+Ûs: volte la muse di lavôr viers il bloc di gjavâ.<br>
+<np>
+Incineradôr di refudums
+Unitât di lavorazion compacte
+<&small_waste_incinerator>L’Incineradôr di refudums al distrûç i ogjets che no coventin e al ocupe pôc spazi in oficine.<br>
+<br>
+Ûs: met te sô code dome ogjets di butâ vie.<br>
+<np>
+Fornâs di laboratori
+Unitât di lavorazion compacte
+<&small_lab_furnace>La Fornâs di laboratori e fâs piçui lavôrs di fusion a combustibil solit e e ocupe pôc spazi in oficine.<br>
+<br>
+Ûs: dopre combustibil solit par piçui lots di fondi.<br>
+<np>
+Fornâs eletriche
+Unitât di lavorazion compacte
+<&small_electrical_furnace>La Fornâs eletriche e fâs piçui lavôrs di fusion alimentâts a FE e e ocupe pôc spazi in oficine.<br>
+<br>
+Ûs: dâi FE e materiâl valid di fondi.<br>
+<np>
+Fornâs par fondi minerâi
+Unitât di lavorazion compacte
+<&small_mineral_smelter>La Fornâs par fondi minerâi e lavore i minerâi a grant calôr e e ocupe pôc spazi in oficine.<br>
+<br>
+Ûs: dâi blocs minerâi e energjie par fondi a alte temperadure.<br>
+<np>
+Congeladôr di aghe
+Unitât di lavorazion compacte
+<&small_freezer>Il Congeladôr di aghe al fâs lavôrs compats di disfredament par implants di fluids alimentâts cun energjie.<br>
+<br>
+Ûs: dâi aghe e energjie par produsi glaç in plui fasis.<br>
+<np>
+Fluid passîf
+Acessoris par liniis di fluids
+<&passive_fluid_accumulator>L’Acumuladôr passîf di fluids al è un toc compat par liniis di fluids, piçui serbatois, tubui, ponts di racuelte e flus controlâts de redstone.<br>
+<br>
+Ûs: metilu cuintri di sorzints di aghe adatis e lasse spazi par gjavâ il fluid.<br>
+<np>
+Panêl solâr
+Utilitât pal plan di oficine
+<&small_solar_panel>Il Piçul panêl solâr al è un bloc di utilitât di oficine pe fabricazion, il deposit, la pose, la roture, la racuelte o la automazion compacte.<br>
+<br>
+Ûs: lasse il cîl viert parsore e coleghe aparechis che a consumin pôc.<br>
+<np>
+Machine par molzi
+Utilitât pal plan di oficine
+<&small_milking_machine>La Piçule machine par molzi e je un bloc di utilitât di oficine pe fabricazion, il deposit, la pose, la roture, la racuelte o la automazion compacte.<br>
+<br>
+Ûs: metile dongje des vacjis e pronte un mût par gjavâ recipients di lat o fluid.<br>
+<np>
+Taiadôr di arbui
+Utilitât pal plan di oficine
+<&small_tree_cutter>Il Piçul taiadôr di arbui al è un bloc di utilitât di oficine pe fabricazion, il deposit, la pose, la roture, la racuelte o la automazion compacte.<br>
+<br>
+Ûs: voltilu viers arbui cressûts e racuei a part i ogjets che a colin.<br>

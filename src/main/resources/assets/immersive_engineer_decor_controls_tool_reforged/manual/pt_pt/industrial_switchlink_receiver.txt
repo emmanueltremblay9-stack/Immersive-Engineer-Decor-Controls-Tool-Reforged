@@ -1,0 +1,7 @@
+Recetor de ligação de interruptor
+Controlo vinculado
+<&recipe>Um recetor vinculado fornece um destino de redstone na intensidade máxima para painéis remotos.<br>
+<br>
+Uso: Clica com uma pérola do Ender para criar uma pérola vinculada. Clica com o botão direito diretamente no recetor para alterná-lo manualmente.<br>
+<br>
+Observações: Uma pérola vinculada alterna este recetor quando a usas agachado.

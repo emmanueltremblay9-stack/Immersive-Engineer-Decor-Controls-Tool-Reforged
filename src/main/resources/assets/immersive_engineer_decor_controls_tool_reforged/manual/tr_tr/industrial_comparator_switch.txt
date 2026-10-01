@@ -1,0 +1,7 @@
+Karşılaştırıcı Anahtarı
+Bağlı sinyal
+<&recipe>Küçük algılayıcı anahtar, takılı olduğu bloğu okuyup bu değeri basit bir panel çıkışına dönüştürür.<br>
+<br>
+Kullanım: Envanterlere, tanklara veya redstone donanımına takın. Takılı olduğu blok karşılaştırıcı, kap veya redstone çıkışı bildirdiğinde anahtar tam güçlü redstone sinyali verir.<br>
+<br>
+Notlar: Depolama seviyelerini veya gizli kabloları anlaşılır aç/kapat kontrol hatlarına dönüştürmek için kullanın.

@@ -1,0 +1,5 @@
+Qalın dirək başlığı
+Konstruksiya karkasının hissəsi
+<&recipe>Düz qalın polad dirəyin başlığı/ayaqlığı, yəni Qalın polad dirəyin başlığı/ayaqlığı, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>

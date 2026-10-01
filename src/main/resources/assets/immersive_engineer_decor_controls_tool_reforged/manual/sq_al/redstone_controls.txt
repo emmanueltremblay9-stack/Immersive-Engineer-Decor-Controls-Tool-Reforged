@@ -1,0 +1,789 @@
+Kontrollet e redstonit
+Matës dhe pajisje sinjali
+Pajisjet e kontrollit e kthejnë redstonin e fshehur në panele fabrike të lexueshme, sensorë, tregues, çelësa, alarme dhe pajisje sinjali të lidhura.<br>
+<br>
+Përdori këto faqe kur ndërton stacione operatorësh, tabela sinjalizimi, qarqe sigurie dhe kontrolle në largësi.
+<np>
+Shënjestër shigjete
+Puls i çastit
+<&arrow_target>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Sensor dere
+Kontrolli me redston
+<&door_sensor_switch>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton ashensori
+Kontrolli me redston
+<&elevator_button>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Buton xhami
+Kontrolli me redston
+<&glass_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton xhami
+Kontrolli me redston
+<&glass_small_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton me prekje prej xhami
+Kontrolli me redston
+<&glass_touch_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton makinerie
+Kontrolli me redston
+<&industrial_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton
+Kontrolli me redston
+<&industrial_double_pole_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton makinerie me mbrojtëse
+Kontrolli me redston
+<&industrial_fenced_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton trokitjeje
+Kontrolli me redston
+<&industrial_knock_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton i vjetër zbukurues
+Kontrolli me redston
+<&oldfancy_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton i vjetër zbukurues
+Kontrolli me redston
+<&oldfancy_small_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton i vjetër zbukurues me zinxhir
+Puls i çastit
+<&oldfancy_spring_reset_chain>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton rustik
+Kontrolli me redston
+<&rustic_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton rustik me gozhdë
+Kontrolli me redston
+<&rustic_nail_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton i vogël rustik
+Kontrolli me redston
+<&rustic_small_button>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Buton rustik me zinxhir
+Puls i çastit
+<&rustic_spring_reset_chain>Një çelës i çastit jep një puls të qartë redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: përdore për nisjen e makinerive, hapjen e dyerve, alarmet ose qarqet që veprojnë vetëm një herë.<br>
+<br>
+Shënim: rikthehet pasi përfundon pulsi i planifikuar.
+<np>
+Pllakë kontakti prej xhami
+Puls presioni
+<&glass_contact_mat>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Kontakt xhami për dyer
+Puls presioni
+<&glass_door_contact_mat>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Tapet kontakti
+Puls presioni
+<&industrial_contact_mat>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Tapet kontakti për dyer
+Puls presioni
+<&industrial_door_contact_mat>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Zbulues rënieje përmes hapjes
+Zbulim sinjali
+<&industrial_fallthrough_detector>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Buton për këmbë
+Kontrolli me redston
+<&industrial_foot_button>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Derë industriale e aktivizuar me goditje
+Puls presioni
+<&industrial_high_sensitive_trapdoor>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Tapet kontakti i ndjeshëm ndaj goditjes
+Puls presioni
+<&industrial_shock_sensitive_contact_mat>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Kapanxhë e aktivizuar me goditje
+Puls presioni
+<&industrial_shock_sensitive_trapdoor>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Lule sinjali e kuqe
+Puls presioni
+<&red_power_plant>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Pllakë presioni rustike
+Puls presioni
+<&rustic_contact_plate>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Presion rustik dere
+Puls presioni
+<&rustic_door_contact_plate>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Zbulues rustik rënieje
+Zbulim sinjali
+<&rustic_fallthrough_detector>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Derë rustike e aktivizuar me goditje
+Puls presioni
+<&rustic_high_sensitive_trapdoor>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Pllakë rustike e ndjeshme ndaj goditjes
+Puls presioni
+<&rustic_shock_sensitive_plate>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Derë rustike e aktivizuar me goditje
+Puls presioni
+<&rustic_shock_sensitive_trapdoor>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Lule sinjali e verdhë
+Puls presioni
+<&yellow_power_plant>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.
+<np>
+Orë ditore prej xhami
+Sinjal drite ditore
+<&glass_day_timer>Një çelës me kohëmatës ndjek pjesën ditore të ciklit të botës.<br>
+<br>
+Përdorimi: përdore për llamba oborri, grila dhe kontrolle fabrike që punojnë vetëm ditën.<br>
+<br>
+Shënim: kërkon një dimension me dritë qielli.
+<np>
+Zbulues entitetesh prej xhami
+Zbulim sinjali
+<&glass_entity_detector>Një zbulues entitetesh vëzhgon lëvizjen pranë pa pllakë të dukshme dyshemeje.<br>
+<br>
+Përdorimi: lidhe me dyer, llamba, alarme ose bllokime sigurie makinerish.<br>
+<br>
+Shënim: skanon një zonë të vogël rreth bllokut.
+<np>
+Sinjal me intervale prej xhami
+Puls i kohëzuar
+<&glass_interval_timer>Një çelës kompakt me kohëmatës jep një puls redstoni sipas orarit.<br>
+<br>
+Përdorimi: përdore kur një mekanizëm i vogël kërkon kontroll periodik ose të vonuar.<br>
+<br>
+Shënim: përdor pulse të planifikuara redstoni.
+<np>
+Zbulues linear prej xhami
+Zbulim sinjali
+<&glass_linear_entity_detector>Një zbulues entitetesh vëzhgon lëvizjen pranë pa pllakë të dukshme dyshemeje.<br>
+<br>
+Përdorimi: lidhe me dyer, llamba, alarme ose bllokime sigurie makinerish.<br>
+<br>
+Shënim: skanon një zonë të vogël rreth bllokut.
+<np>
+Zbulues blloqesh
+Zbulim sinjali
+<&industrial_block_detector>Një zbulues blloqesh kontrollon nëse hapësira përballë është e zënë.<br>
+<br>
+Përdorimi: drejtoje te faqja e makinerisë, buferi ose hapësira e ruajtur që do të vëzhgosh.<br>
+<br>
+Shënim: jep fuqi kur blloku përballë nuk është ajër.
+<np>
+Orë ditore
+Sinjal drite ditore
+<&industrial_day_timer>Një çelës me kohëmatës ndjek pjesën ditore të ciklit të botës.<br>
+<br>
+Përdorimi: përdore për llamba oborri, grila dhe kontrolle fabrike që punojnë vetëm ditën.<br>
+<br>
+Shënim: kërkon një dimension me dritë qielli.
+<np>
+Zbulues entitetesh
+Zbulim sinjali
+<&industrial_entity_detector>Një zbulues entitetesh vëzhgon lëvizjen pranë pa pllakë të dukshme dyshemeje.<br>
+<br>
+Përdorimi: lidhe me dyer, llamba, alarme ose bllokime sigurie makinerish.<br>
+<br>
+Shënim: skanon një zonë të vogël rreth bllokut.
+<np>
+Kohëmatës intervalesh
+Puls i kohëzuar
+<&industrial_interval_timer>Një çelës kompakt me kohëmatës jep një puls redstoni sipas orarit.<br>
+<br>
+Përdorimi: përdore kur një mekanizëm i vogël kërkon kontroll periodik ose të vonuar.<br>
+<br>
+Shënim: përdor pulse të planifikuara redstoni.
+<np>
+Sensor drite
+Zbulim sinjali
+<&industrial_light_sensor>Një sensor drite e kthen ndriçimin lokal në kontroll redstoni.<br>
+<br>
+Përdorimi: përdore për llamba automatike, grila dhe qarqe dukshmërie.<br>
+<br>
+Shënim: jep fuqi kur ndriçimi i papërpunuar është 8 ose më shumë.
+<np>
+Zbulues stuhish
+Zbulim sinjali
+<&industrial_lightning_sensor>Një sensor stuhie aktivizon paralajmërime gjatë bubullimave.<br>
+<br>
+Përdorimi: vendose nën qiell të hapur dhe lidhe me llamba ose alarme.<br>
+<br>
+Shënim: kërkon bubullima dhe pamje të hapur drejt qiellit.
+<np>
+Zbulues linear entitetesh
+Zbulim sinjali
+<&industrial_linear_entity_detector>Një zbulues entitetesh vëzhgon lëvizjen pranë pa pllakë të dukshme dyshemeje.<br>
+<br>
+Përdorimi: lidhe me dyer, llamba, alarme ose bllokime sigurie makinerish.<br>
+<br>
+Shënim: skanon një zonë të vogël rreth bllokut.
+<np>
+Sensor shiu
+Zbulim sinjali
+<&industrial_rain_sensor>Një sensor moti e kthen shiun në vendndodhjen e tij në redston.<br>
+<br>
+Përdorimi: montoje ku blloku sipër mund të marrë shi.<br>
+<br>
+Shënim: kontrollon shiun mbi sensor.
+<np>
+Çelës bistabil prej xhami
+Kontrolli me redston
+<&glass_rotary_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Prekje bistabile prej xhami
+Kontrolli me redston
+<&glass_touch_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Xham i ndjeshëm portokalli
+Xham sinjali
+<&orange_sensitiveglass>Një bllok xhami që reagon ndaj redstonit ruan pamjen përmes tij dhe tregon gjendjen e sinjalit.<br>
+<br>
+Përdorimi: përdore në dritare dhomash kontrolli, panele të ndriçuara dhe xhama të mbrojtur fabrike.<br>
+<br>
+Shënim: ndryshon gjendje nga fuqia e redstonit pranë.
+<np>
+Xham i ndjeshëm ndriçues
+Xham sinjali
+<&sensitive_glass_block>Një bllok xhami që reagon ndaj redstonit ruan pamjen përmes tij dhe tregon gjendjen e sinjalit.<br>
+<br>
+Përdorimi: përdore në dritare dhomash kontrolli, panele të ndriçuara dhe xhama të mbrojtur fabrike.<br>
+<br>
+Shënim: ndryshon gjendje nga fuqia e redstonit pranë.
+<np>
+Xham i ndjeshëm me ngjyrë
+Xham sinjali
+<&stained_sensitiveglass>Një bllok xhami që reagon ndaj redstonit ruan pamjen përmes tij dhe tregon gjendjen e sinjalit.<br>
+<br>
+Përdorimi: përdore në dritare dhomash kontrolli, panele të ndriçuara dhe xhama të mbrojtur fabrike.<br>
+<br>
+Shënim: ndryshon gjendje nga fuqia e redstonit pranë.
+<np>
+Matës me shirit prej xhami
+Matës sinjali
+<&glass_vertical_bar_gauge>Një matës kompakt dhome kontrolli shfaq fuqinë e redstonit si lexim të qartë paneli.<br>
+<br>
+Përdorimi: montoje ku fuqia e redstonit pranë mund të kontrollohet me një vështrim.<br>
+<br>
+Shënim: lexon fuqinë e redstonit pranë nga 0 deri në 15.
+<np>
+Matës analog
+Matës sinjali
+<&industrial_analog_angular_gauge>Një matës kompakt dhome kontrolli shfaq fuqinë e redstonit si lexim të qartë paneli.<br>
+<br>
+Përdorimi: montoje ku fuqia e redstonit pranë mund të kontrollohet me një vështrim.<br>
+<br>
+Shënim: lexon fuqinë e redstonit pranë nga 0 deri në 15.
+<np>
+Matës voltmetri
+Matës sinjali
+<&industrial_analog_horizontal_gauge>Një matës kompakt dhome kontrolli shfaq fuqinë e redstonit si lexim të qartë paneli.<br>
+<br>
+Përdorimi: montoje ku fuqia e redstonit pranë mund të kontrollohet me një vështrim.<br>
+<br>
+Shënim: lexon fuqinë e redstonit pranë nga 0 deri në 15.
+<np>
+Matës dixhital
+Fuqi sinjali e lexueshme
+<&industrial_small_digital_gauge>Një matës kompakt dhome kontrolli shfaq fuqinë e redstonit si lexim të qartë paneli.<br>
+<br>
+Përdorimi: montoje ku fuqia e redstonit pranë mund të kontrollohet me një vështrim.<br>
+<br>
+Shënim: lexon fuqinë e redstonit pranë nga 0 deri në 15.
+<np>
+Matës me tub xhami
+Matës sinjali
+<&industrial_tube_gauge>Një matës kompakt dhome kontrolli shfaq fuqinë e redstonit si lexim të qartë paneli.<br>
+<br>
+Përdorimi: montoje ku fuqia e redstonit pranë mund të kontrollohet me një vështrim.<br>
+<br>
+Shënim: lexon fuqinë e redstonit pranë nga 0 deri në 15.
+<np>
+Matës analog me shirit
+Matës sinjali
+<&industrial_vertical_bar_gauge>Një matës kompakt dhome kontrolli shfaq fuqinë e redstonit si lexim të qartë paneli.<br>
+<br>
+Përdorimi: montoje ku fuqia e redstonit pranë mund të kontrollohet me një vështrim.<br>
+<br>
+Shënim: lexon fuqinë e redstonit pranë nga 0 deri në 15.
+<np>
+Llambë alarmi
+Tregim gjendjeje sinjali
+<&industrial_alarm_lamp>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+Sirenë alarmi
+Tregim gjendjeje sinjali
+<&industrial_alarm_siren>Sirena e alarmit është tregues redstone i montuar në faqen e bllokut. Gjendja e saj me energji ndjek sinjalin e bllokut ku është lidhur.<br>
+<br>
+Lidheni në një faqe të fortë dhe furnizojeni për të mbikëqyrur dyer, makina, alarme ose panele.<br>
+<br>
+Sirena rifreskohet një herë në sekondë sa kohë sinjali mbetet aktiv.
+<np>
+LED pulsues
+Tregim gjendjeje sinjali
+<&industrial_blinking_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i gjelbër pulsues
+Tregim gjendjeje sinjali
+<&industrial_green_blinking_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i gjelbër
+Tregim gjendjeje sinjali
+<&industrial_green_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i kuq
+Tregim gjendjeje sinjali
+<&industrial_red_blinking_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i kuq
+Tregim gjendjeje sinjali
+<&industrial_red_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i bardhë pulsues
+Tregim gjendjeje sinjali
+<&industrial_white_blinking_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i bardhë
+Tregim gjendjeje sinjali
+<&industrial_white_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i verdhë pulsues
+Tregim gjendjeje sinjali
+<&industrial_yellow_blinking_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+LED i verdhë
+Tregim gjendjeje sinjali
+<&industrial_yellow_led>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+Semafor rustik
+Tregim gjendjeje sinjali
+<&rustic_semaphore>Një tregues kompakt e kthen redstonin e fshehur në informacion të dukshëm fabrike.<br>
+<br>
+Përdorimi: lidhe pranë sinjalit për të vëzhguar dyer, makineri, alarme ose panele.<br>
+<br>
+Shënim: ndryshon gjendje kur pranë ka fuqi redstoni.
+<np>
+Çelës krahasues
+Sinjal i lidhur
+<&industrial_comparator_switch>Një çelës kompakt me sensor lexon bllokun ku është montuar dhe e kthen leximin në dalje të thjeshtë paneli.<br>
+<br>
+Përdorimi: montoje në inventarë, depozita ose pajisje redstoni. Kur blloku i lidhur jep dalje krahasuesi, ene ose redstoni, çelësi jep redston me fuqi të plotë.<br>
+<br>
+Shënim: përdore për të kthyer nivelet e ruajtjes ose telat e fshehur në linja të qarta ndezjeje/fikjeje.
+<np>
+Rregullues fuqie
+Sinjal i ndryshueshëm
+<&industrial_dimmer>Një kontroll rrotullues rregullon fuqinë e redstonit nga një faqe kompakte paneli.<br>
+<br>
+Përdorimi: kliko djathtas për të rritur daljen me hapa, pastaj për ta kthyer në zero pasi të arrijë fuqinë e plotë.<br>
+<br>
+Shënim: jep fuqi nga 0 deri në 15.
+<np>
+Buton ndalimi emergjent
+Kontrolli me redston
+<&industrial_estop_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Bllokues hinke
+Kontrolli me redston
+<&industrial_hopper_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Çelës trokitjeje
+Kontrolli me redston
+<&industrial_knock_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë
+Kontrolli me redston
+<&industrial_lever>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Çelës makinerie me dy butona
+Kontrolli me redston
+<&industrial_machine_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Dorezë tërheqëse
+Kontrolli me redston
+<&industrial_pull_handle>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë rrotulluese
+Kontrolli me redston
+<&industrial_rotary_lever>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Çelës makinerie rrotullues
+Kontrolli me redston
+<&industrial_rotary_machine_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë kontakti
+Kontrolli me redston
+<&industrial_small_lever>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Çelës
+Kontrolli me redston
+<&industrialswitch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Çelës drite
+Kontrolli me redston
+<&light_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Çelës valvule
+Kontrolli me redston
+<&valve_wheel_switch>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Marrës pulsi me kasë
+Kontroll i lidhur
+<&industrial_switchlink_cased_pulse_receiver>Një marrës pulsi i lidhur me kasë u jep paneleve të largëta një aktivizim të shkurtër redstoni.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Kliko djathtas marrësin ose aktivizo perlën për të dhënë një puls të shkurtër.<br>
+<br>
+Shënim: pulsi rikthehet vetë pas kohëzgjatjes së planifikuar.
+<np>
+Marrës lidhjeje me kasë
+Kontroll i lidhur
+<&industrial_switchlink_cased_receiver>Një marrës i lidhur me kasë u jep paneleve të largëta një objektiv të fortë redstoni.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Kliko djathtas drejtpërdrejt marrësin për ta ndezur ose fikur me dorë.<br>
+<br>
+Shënim: perla e lidhur e ndez ose fik këtë marrës kur përdoret duke u përkulur.
+<np>
+Marrës lidhjeje pulsi
+Kontroll i lidhur
+<&industrial_switchlink_pulse_receiver>Një marrës pulsi i lidhur u jep paneleve të largëta një aktivizim të shkurtër redstoni.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Kliko djathtas marrësin ose aktivizo perlën për të dhënë një puls të shkurtër.<br>
+<br>
+Shënim: pulsi rikthehet vetë pas kohëzgjatjes së planifikuar.
+<np>
+Rele lidhjeje pulsi
+Kontroll i lidhur
+<&industrial_switchlink_pulse_relay>Një pajisje me pamje releje u jep paneleve një pikë kompakte çelësi lokal.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë. Përdor blloqe marrëse kur duhet aktivizim me perlë të lidhur.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Marrës lidhjeje çelësash
+Kontroll i lidhur
+<&industrial_switchlink_receiver>Një marrës i lidhur u jep paneleve të largëta një objektiv redstoni me fuqi të plotë.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Kliko djathtas drejtpërdrejt marrësin për ta ndezur ose fikur me dorë.<br>
+<br>
+Shënim: perla e lidhur e ndez ose fik këtë marrës kur përdoret duke u përkulur.
+<np>
+Marrës analog lidhjeje
+Kontroll i lidhur
+<&industrial_switchlink_receiver_analog>Një marrës i lidhur u jep paneleve të kontrollit një objektiv të dukshëm në largësi.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Përdore perlën duke u përkulur për të aktivizuar marrësin në largësi.<br>
+<br>
+Shënim: ky marrës jep sinjal të plotë redstoni kur aktivizohet.
+<np>
+Rele lidhjeje çelësash
+Kontroll i lidhur
+<&industrial_switchlink_relay>Një pajisje me pamje releje u jep paneleve një pikë kompakte çelësi lokal.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë. Përdor blloqe marrëse kur duhet aktivizim me perlë të lidhur.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Rele analoge lidhjeje
+Kontroll i lidhur
+<&industrial_switchlink_relay_analog>Një pajisje me pamje releje u jep paneleve një pikë kompakte çelësi lokal.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë. Përdor blloqe marrëse kur duhet aktivizim me perlë të lidhur.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Perlë lidhëse çelësash
+Kontroll i lidhur
+<&switchlink_pearl>Një perlë e lidhur ruan një marrës si objektiv për kontrollet e largëta të fabrikës.<br>
+<br>
+Përdorimi: kliko një marrës lidhjeje çelësash me një perlë të Ender-it për ta krijuar. Përdore perlën e lidhur duke u përkulur për të aktivizuar marrësin e ruajtur.<br>
+<br>
+Shënim: objektivi duhet të jetë i ngarkuar, në të njëjtin dimension dhe brenda rrezes.
+<np>
+Levë e vjetër zbukuruese
+Kontrolli me redston
+<&oldfancy_bistableswitch1>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë e vjetër zbukuruese rrotulluese
+Kontrolli me redston
+<&oldfancy_bistableswitch2>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë rustike rrotulluese
+Kontrolli me redston
+<&rustic_angular_lever>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë rustike
+Kontrolli me redston
+<&rustic_lever>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë rustike me gozhdë
+Kontrolli me redston
+<&rustic_nail_lever>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.
+<np>
+Levë rustike me dy mentesha
+Kontrolli me redston
+<&rustic_two_hinge_lever>Një pajisje kompakte kontrolli u jep ndërtimeve të fabrikës një pikë të qartë çelësi redstoni.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.

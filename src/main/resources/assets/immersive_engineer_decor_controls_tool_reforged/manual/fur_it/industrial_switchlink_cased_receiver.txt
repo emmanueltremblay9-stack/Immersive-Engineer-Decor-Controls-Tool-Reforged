@@ -1,0 +1,7 @@
+Ricevidôr di leam in casse
+Comant leât
+<&recipe>Un ricevidôr leât in casse al da ai panei lontans une destinazion di redstone robuste.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Fâs clic di diestre dret sul ricevidôr par cambiâji stât a man.<br>
+<br>
+Notis: une perle leade e cambie il stât di chest ricevidôr cuant che tu le dopris sbassât.

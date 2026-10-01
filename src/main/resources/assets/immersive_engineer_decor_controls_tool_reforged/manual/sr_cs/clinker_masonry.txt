@@ -1,0 +1,161 @@
+Klinker i zidarstvo
+Oplate od cigle i betona
+Klinker, cigle od zgure, armirani beton i oklopno staklo daju teške površine za vruće prostorije, radionice i zaštićen pogled.<br>
+<br>
+Koristi odgovarajuće ploče, stepenice, tanke slojeve i zidove za dovršavanje ivica bez promene stila fabričkih materijala.
+<np>
+Blok klinker cigala
+Zidovi potamneli od čađi
+<&clinker_brick_block>Ovaj blok unosi cigle potamnele od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Ploča od klinker cigala
+Zidovi potamneli od čađi
+<&clinker_brick_slab>Ovaj blok unosi cigle potamnele od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Stepenice od klinker cigala
+Zidovi potamneli od čađi
+<&clinker_brick_stairs>Ovaj blok unosi cigle potamnele od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Zid od klinker cigala
+Zidovi potamneli od čađi
+<&clinker_brick_wall>Ovaj blok unosi cigle potamnele od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Blok zaprljanog klinkera
+Zidovi potamneli od čađi
+<&clinker_brick_stained_block>Blok zaprljanih klinker cigala unosi zidarstvo potamnelo od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Ploča zaprljanog klinkera
+Zidovi potamneli od čađi
+<&clinker_brick_stained_slab>Ploča od zaprljanih klinker cigala unosi zidarstvo potamnelo od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Stepenice zaprljanog klinkera
+Zidovi potamneli od čađi
+<&clinker_brick_stained_stairs>Stepenice od zaprljanih klinker cigala unose zidarstvo potamnelo od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Ukrašena klinker cigla
+Zidovi potamneli od čađi
+<&clinker_brick_sastor_corner_block>Klinker cigla ukrašena peščarom unosi zidarstvo potamnelo od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Uvučena klinker cigla
+Zidovi potamneli od čađi
+<&clinker_brick_recessed>Ovaj blok unosi cigle potamnele od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Prorezane klinker cigle
+Zidovi potamneli od čađi
+<&clinker_brick_vertically_slit>Klinker cigle sa uspravnim prorezima unose zidarstvo potamnelo od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Uspravna ploča od klinkera
+Zidovi potamneli od čađi
+<&clinker_brick_vertical_slab_structured>Reljefna uspravna ploča od klinkera unosi zidarstvo potamnelo od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Poluploča od klinker cigle
+Zidovi potamneli od čađi
+<&halfslab_clinker_brick>Ovaj blok unosi cigle potamnele od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>
+<np>
+Blok cigala od zgure
+Zbijeno fabričko zidarstvo
+<&slag_brick_block>Ovaj blok dodaje zbijeno sivosmeđe zidarstvo za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Upotreba: koristi ga za stare temelje, potporne zidove i prljave fabričke podove.<br>
+<np>
+Ploča od cigala od zgure
+Zbijeno fabričko zidarstvo
+<&slag_brick_slab>Ovaj blok dodaje zbijeno sivosmeđe zidarstvo za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Upotreba: koristi ga za stare temelje, potporne zidove i prljave fabričke podove.<br>
+<np>
+Stepenice od cigala od zgure
+Zbijeno fabričko zidarstvo
+<&slag_brick_stairs>Ovaj blok dodaje zbijeno sivosmeđe zidarstvo za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Upotreba: koristi ga za stare temelje, potporne zidove i prljave fabričke podove.<br>
+<np>
+Zid od cigala od zgure
+Zbijeno fabričko zidarstvo
+<&slag_brick_wall>Ovaj blok dodaje zbijeno sivosmeđe zidarstvo za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Upotreba: koristi ga za stare temelje, potporne zidove i prljave fabričke podove.<br>
+<np>
+Blok armiranog betona
+Ojačani beton
+<&rebar_concrete>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Ploča od armiranog betona
+Ojačani beton
+<&rebar_concrete_slab>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Stepenice od armiranog betona
+Ojačani beton
+<&rebar_concrete_stairs>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Zid od armiranog betona
+Ojačani beton
+<&rebar_concrete_wall>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Tanki sloj armiranog betona
+Ojačani beton
+<&halfslab_rebar_concrete>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Pločica od armiranog betona
+Ojačani beton
+<&rebar_concrete_tile>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Ploča od pločica armiranog betona
+Ojačani beton
+<&rebar_concrete_tile_slab>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Pločica od armiranog betona
+Ojačani beton
+<&rebar_concrete_tile_stairs>Stepenice od pločica armiranog betona su ojačani delovi za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>
+<np>
+Blok oklopnog stakla
+Zaštićen pogled
+<&panzerglass_block>Ovaj blok ostavlja pogled otvorenim, uz izgled koji odgovara ojačanoj fabričkoj gradnji.<br>
+<br>
+Upotreba: koristi ga tamo gde igrači treba da vide mašine kroz zaštićenu pregradu.<br>
+<np>
+Ploča od oklopnog stakla
+Zaštićen pogled
+<&panzerglass_slab>Ovaj blok ostavlja pogled otvorenim, uz izgled koji odgovara ojačanoj fabričkoj gradnji.<br>
+<br>
+Upotreba: koristi ga tamo gde igrači treba da vide mašine kroz zaštićenu pregradu.<br>

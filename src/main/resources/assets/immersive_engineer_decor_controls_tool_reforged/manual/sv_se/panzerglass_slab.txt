@@ -1,0 +1,5 @@
+Pansarglasplatta
+Skyddad siktlinje
+<&recipe>Det här blocket håller sikten fri och passar samtidigt ihop med förstärkta fabriksbyggnader.<br>
+<br>
+Användning: Använd det där spelare ska kunna se maskiner genom en skyddande barriär.<br>

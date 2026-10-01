@@ -1,0 +1,5 @@
+Pangkal Cerobong Atap
+Komponen atap lapuk
+<&recipe>Pangkal cerobong atap sirap gelap membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>

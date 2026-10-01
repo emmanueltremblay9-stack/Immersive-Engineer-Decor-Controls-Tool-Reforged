@@ -1,0 +1,5 @@
+Kahon na May Tatak
+Nababagong tatak ng suplay
+<&recipe>Ginawa ang kahong may tatak na ito para sa malinaw na pagsasaayos ng bodega. Maaaring baguhin ang plaka sa harap tulad ng maliit na karatula sa pagawaan.<br>
+<br>
+Paggamit: Iklik nang kanan ang plaka ng tatak upang baguhin ang pangalan ng kahon. Iklik nang kanan ang ibang bahagi ng kahon upang buksan ang imbakan ng mga kagamitan, piyesa at suplay sa pagpapanatili.<br>

@@ -1,0 +1,7 @@
+Tenporizador a intervałi
+Inpulso a tenpo
+<&recipe>Un interutor a tenpo conpato el dà un inpulso de redstone programà.<br>
+<br>
+Uso: dòparalo dove un pìcolo mecanismo el ga bisogno de na comanda periodica o ritardada.<br>
+<br>
+Da saver: el dòpara inpulsi de redstone programadi.

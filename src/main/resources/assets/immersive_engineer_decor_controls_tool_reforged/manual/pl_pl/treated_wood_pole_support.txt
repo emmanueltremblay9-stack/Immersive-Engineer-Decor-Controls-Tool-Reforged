@@ -1,0 +1,5 @@
+Wspornik impregnowanego słupa
+Element szkieletu konstrukcji
+<&recipe>Wspornik prostego słupa z impregnowanego drewna tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>

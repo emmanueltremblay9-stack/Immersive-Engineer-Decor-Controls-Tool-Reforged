@@ -1,0 +1,5 @@
+Zamarožvalnik vady
+Kampaktnaja pierapracoŭčaja pryłada
+<&recipe>Zamarožvalnik vady vykonvaje kampaktnyja zadačy achałodžvannia ŭ fluidnych sistemach z siłkavanniem.<br>
+<br>
+Vykarystannie: padaj vadu i enierhiju dla paetapnaj vytvorčasci lodu.<br>

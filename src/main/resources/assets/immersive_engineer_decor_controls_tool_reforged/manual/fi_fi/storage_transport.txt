@@ -1,0 +1,41 @@
+Säilytys ja kuljetus
+Varasto- ja virtausosat
+Varastointi- ja kuljetusosat kattavat laatikot, tynnyrit, suppilot ja venttiilit tehtaan pieniin siirtoreitteihin.<br>
+<br>
+Käytä näitä sivuja suunnitellessasi varastohuoneita, putkireittejä, huoltosäiliöitä ja hallittuja nestelinjoja.
+<np>
+Nimikylttilaatikko
+Muokattava varastonimikyltti
+<&labeled_crate>Tämä nimikylttilaatikko on tehty varastohuoneen selkeään järjestelyyn. Etulevyä voi muokata pienen työpajakyltin tavoin.<br>
+<br>
+Käyttö: Muokkaa laatikon nimikylttiä napsauttamalla kylttilevyä oikealla painikkeella. Avaa osien, liittimien ja huoltotarvikkeiden varasto napsauttamalla laatikon muita kohtia oikealla painikkeella.<br>
+<np>
+Nestetynnyri
+Nestelinjan laitteet
+<&fluid_barrel>Tämä pieni nestelinjan osa sopii pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Aseta niin, että putket tai ämpärit yltävät säiliön pintaan.<br>
+<np>
+Nestesuppilo
+Nestelinjan laitteet
+<&small_fluid_funnel>Pieni nesteenkeruusuppilo on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Aseta nesteen keräyspisteen alle ja ohjaa varastoitu sisältö säiliöihin tai alempiin putkiin.<br>
+<np>
+Nesteputken takaiskuventtiili
+Nestelinjan laitteet
+<&straight_pipe_valve>Nesteputken takaiskuventtiili on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Kohdista venttiili haluttuun virtaussuuntaan.<br>
+<np>
+Redstone-nesteventtiili
+Nestelinjan laitteet
+<&straight_pipe_valve_redstone>Redstone-ohjattu nesteventtiili on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Kohdista venttiili haluttuun virtaussuuntaan.<br>
+<np>
+Analoginen nesteventtiili
+Nestelinjan laitteet
+<&straight_pipe_valve_redstone_analog>Analoginen nesteventtiili on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Kohdista venttiili haluttuun virtaussuuntaan.<br>

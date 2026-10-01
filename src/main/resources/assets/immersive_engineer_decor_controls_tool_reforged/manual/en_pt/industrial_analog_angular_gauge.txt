@@ -1,0 +1,7 @@
+Gauge o' the analog sort
+Gauge fer signals
+<&recipe>A small control-room gauge shows redstone strength as an easy panel reading, matey.<br>
+<br>
+Orders: Mount her where ye can read nearby redstone power at a glance.<br>
+<br>
+Mind ye: She reads nearby redstone strength from 0 to 15.

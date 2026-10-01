@@ -1,0 +1,7 @@
+Euri-sentsorea
+Seinaleak hautematea
+<&recipe>Eguraldi-sentsoreak bere kokapeneko euria redstone-seinale bihurtzen du.<br>
+<br>
+Erabilera: muntatu gaineko blokeak euria jaso dezakeen tokian.<br>
+<br>
+Oharrak: sentsorearen gaineko euria egiaztatzen du.

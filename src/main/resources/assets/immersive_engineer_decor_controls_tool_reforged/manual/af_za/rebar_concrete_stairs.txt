@@ -1,0 +1,5 @@
+Gewapendebetontrappe
+Gewapende beton
+<&recipe>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>

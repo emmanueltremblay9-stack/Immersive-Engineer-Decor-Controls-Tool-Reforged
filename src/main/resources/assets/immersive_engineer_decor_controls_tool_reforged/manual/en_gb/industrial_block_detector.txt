@@ -1,0 +1,7 @@
+Block Detector
+Signal sensing
+<&recipe>A block detector checks whether the facing space is occupied.<br>
+<br>
+Usage: Point it at the machine face, buffer, or guarded space to watch.<br>
+<br>
+Notes: Powers when the facing block is not air.

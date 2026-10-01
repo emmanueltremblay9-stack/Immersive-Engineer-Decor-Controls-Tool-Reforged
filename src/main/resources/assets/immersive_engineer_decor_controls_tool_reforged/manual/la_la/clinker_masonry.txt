@@ -1,0 +1,161 @@
+Lateres clincarii et structura latericia
+Tegmina laterum et caementi
+Lateres clincarii et scoriacei, caementum armatum et vitrum loricatum superficies graves conclavibus calidis, officinis et prospectibus munitis praebent.<br>
+<br>
+Gradibus, scalis, laminis tenuibus et muris congruentibus utere ut margines perficias sine stylo materiarum officinae mutato.
+<np>
+Cubus laterum clincariorum
+Structura latericia fuligine obscurata
+<&clinker_brick_block>Hic cubus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Gradus laterum clincariorum
+Structura latericia fuligine obscurata
+<&clinker_brick_slab>Hic cubus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Scalae laterum clincariorum
+Structura latericia fuligine obscurata
+<&clinker_brick_stairs>Hic cubus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Murus laterum clincariorum
+Structura latericia fuligine obscurata
+<&clinker_brick_wall>Hic cubus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Cubus clincarius maculosus
+Structura latericia fuligine obscurata
+<&clinker_brick_stained_block>Cubus laterum clincariorum maculosorum structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Gradus clincarius maculosus
+Structura latericia fuligine obscurata
+<&clinker_brick_stained_slab>Gradus laterum clincariorum maculosorum structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Scalae clincariae maculosae
+Structura latericia fuligine obscurata
+<&clinker_brick_stained_stairs>Scalae laterum clincariorum maculosorum structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addunt.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Later clincarius ornatus
+Structura latericia fuligine obscurata
+<&clinker_brick_sastor_corner_block>Later clincarius lapide arenaceo ornatus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Later clincarius recessus
+Structura latericia fuligine obscurata
+<&clinker_brick_recessed>Hic cubus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Lateres clincarii fissi
+Structura latericia fuligine obscurata
+<&clinker_brick_vertically_slit>Lateres clincarii verticaliter fissi structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addunt.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Gradus clincarius verticalis
+Structura latericia fuligine obscurata
+<&clinker_brick_vertical_slab_structured>Gradus clincarius verticalis caelatus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Lamina tenuis laterum clincariorum
+Structura latericia fuligine obscurata
+<&halfslab_clinker_brick>Hic cubus structuram latericiam fuligine obscuratam aulis fornacum, basibus caminorum et muris curationis addit.<br>
+<br>
+Usus: ut murum, marginem aut tegmen zonae calidae circa fornaces et ahena adhibe.<br>
+<np>
+Cubus laterum scoriaceorum
+Structura officinae densa
+<&slag_brick_block>Hic cubus structuram densam cinereobrunneam fundamentis, muris sustinentibus et tuguriis laboris vetustioribus addit.<br>
+<br>
+Usus: pro fundamentis veteribus, muris sustinentibus et pavimentis officinae sordidis adhibe.<br>
+<np>
+Gradus laterum scoriaceorum
+Structura officinae densa
+<&slag_brick_slab>Hic cubus structuram densam cinereobrunneam fundamentis, muris sustinentibus et tuguriis laboris vetustioribus addit.<br>
+<br>
+Usus: pro fundamentis veteribus, muris sustinentibus et pavimentis officinae sordidis adhibe.<br>
+<np>
+Scalae laterum scoriaceorum
+Structura officinae densa
+<&slag_brick_stairs>Hic cubus structuram densam cinereobrunneam fundamentis, muris sustinentibus et tuguriis laboris vetustioribus addit.<br>
+<br>
+Usus: pro fundamentis veteribus, muris sustinentibus et pavimentis officinae sordidis adhibe.<br>
+<np>
+Murus laterum scoriaceorum
+Structura officinae densa
+<&slag_brick_wall>Hic cubus structuram densam cinereobrunneam fundamentis, muris sustinentibus et tuguriis laboris vetustioribus addit.<br>
+<br>
+Usus: pro fundamentis veteribus, muris sustinentibus et pavimentis officinae sordidis adhibe.<br>
+<np>
+Cubus caementi armati
+Caementum firmatum
+<&rebar_concrete>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Gradus caementi armati
+Caementum firmatum
+<&rebar_concrete_slab>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Scalae caementi armati
+Caementum firmatum
+<&rebar_concrete_stairs>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Murus caementi armati
+Caementum firmatum
+<&rebar_concrete_wall>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Lamina tenuis caementi armati
+Caementum firmatum
+<&halfslab_rebar_concrete>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Tessera caementi armati
+Caementum firmatum
+<&rebar_concrete_tile>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Gradus tesserarum caementi armati
+Caementum firmatum
+<&rebar_concrete_tile_slab>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Tessera caementi armati
+Caementum firmatum
+<&rebar_concrete_tile_stairs>Scalae tesserarum caementi armati partes caementi durati sunt pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>
+<np>
+Cubus vitri loricati
+Prospectus munitus
+<&panzerglass_block>Hic cubus prospectum apertum servat et constructioni officinae firmatae congruit.<br>
+<br>
+Usus: adhibe ubi lusores machinas per saeptum munitum videre debent.<br>
+<np>
+Gradus vitri loricati
+Prospectus munitus
+<&panzerglass_slab>Hic cubus prospectum apertum servat et constructioni officinae firmatae congruit.<br>
+<br>
+Usus: adhibe ubi lusores machinas per saeptum munitum videre debent.<br>

@@ -1,0 +1,7 @@
+Glerrörsmælir
+Merkjamælir
+<&recipe>Fyrirferðarlítill mælir í stjórnherbergi sýnir roðsteinsstyrk með skýrum aflestri á stjórnborði.<br>
+<br>
+Notkun: Festu hann þar sem á að vera hægt að sjá roðsteinsafl nágrennisins í fljótu bragði.<br>
+<br>
+Athugasemdir: Les roðsteinsstyrk í nágrenninu frá 0 til 15.

@@ -1,0 +1,5 @@
+Solas cùlaichte oir an làir
+Solas-obrach dlùth
+<&recipe>Bheir am bloca seo solas gnìomhachais dlùth do thrannsaichean, slighean-coise agus bàghan-obrach.<br>
+<br>
+Cleachdadh: cuir air mullaichean a-staigh, ballachan no oirean e far a bheil feum aig an t-seòmar air solas-obrach soilleir.<br>

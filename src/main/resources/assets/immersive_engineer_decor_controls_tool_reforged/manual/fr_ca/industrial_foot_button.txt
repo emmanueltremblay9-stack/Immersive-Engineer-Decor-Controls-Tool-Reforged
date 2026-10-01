@@ -1,0 +1,7 @@
+Bouton de pied
+Commande redstone
+<&recipe>Un interrupteur de contact émet un bref signal lors d'un mouvement sur le sol ou une trappe.<br>
+<br>
+Utilisation : placez-le là où des entités traversent une allée de service, un chargeur ou un passage surveillé.<br>
+<br>
+Remarque : émet une brève impulsion après un contact avec une entité.

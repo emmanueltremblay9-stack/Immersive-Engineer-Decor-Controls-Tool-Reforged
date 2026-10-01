@@ -1,0 +1,7 @@
+Häiresireen
+Signaalinäidik
+<&recipe>Häiresireen on ploki küljele kinnitatav redstone'i näidik. Selle toiteolek järgib kinnitusploki signaali.<br>
+<br>
+Kasutus: Kinnita tugevale küljele ja anna toide uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Aktiivse signaali ajal uueneb sireen kord sekundis.

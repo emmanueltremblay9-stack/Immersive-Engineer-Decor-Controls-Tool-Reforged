@@ -1,0 +1,7 @@
+Shtrydhës mendjeje
+Kondensues përvoje
+<&recipe>Shtrydhësi i mendjes kthen lazuritin dhe përvojën në Lazurit të ngarkuar.<br>
+<br>
+Përdorimi: mbaj lazurit dhe të paktën një nivel përvoje, pastaj përdor veglën. Një shtrydhje e suksesshme shpenzon një nivel dhe një lazurit, dëmton përdoruesin, konsumon shtrydhësin dhe krijon një Lazurit të ngarkuar.<br>
+<br>
+Nuk punon kur përdoruesit i mungon lazuriti ose XP-ja, ose kur është tepër pranë vdekjes.

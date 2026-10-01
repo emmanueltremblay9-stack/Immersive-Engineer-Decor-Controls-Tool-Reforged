@@ -1,0 +1,5 @@
+Mineral Smelter
+Compact processing unit
+<&recipe>The Mineral Smelter handles high-heat mineral processing in a compact workshop footprint.<br>
+<br>
+Usage: Feed mineral blocks and power for high-heat melting work.<br>

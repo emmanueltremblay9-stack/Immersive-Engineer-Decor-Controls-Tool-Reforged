@@ -1,0 +1,7 @@
+Argi-etengailua
+Redstone-kontrola
+<&recipe>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.

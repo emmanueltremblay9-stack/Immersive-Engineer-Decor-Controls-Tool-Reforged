@@ -1,0 +1,5 @@
+Maye çəlləyi
+Maye xətti avadanlığı
+<&recipe>Bu element kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Boruların və ya vedrələrin çənin üzünə çata biləcəyi yerə yerləşdirin.<br>

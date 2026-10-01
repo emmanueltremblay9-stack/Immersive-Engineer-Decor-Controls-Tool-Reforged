@@ -1,0 +1,5 @@
+Talionica minerala
+Kompaktna jedinica za obradu
+<&recipe>Talionica minerala obrađuje minerale na visokoj temperaturi, zauzimajući malo prostora u radionici.<br>
+<br>
+Uporaba: dovedi mineralne blokove i energiju za taljenje na visokoj temperaturi.<br>

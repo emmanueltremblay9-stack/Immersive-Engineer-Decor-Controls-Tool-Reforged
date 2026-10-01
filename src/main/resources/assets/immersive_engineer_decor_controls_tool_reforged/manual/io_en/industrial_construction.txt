@@ -1,0 +1,108 @@
+Industriala konstrukto
+Fabrikmuri e borduri
+La generala konstruktopeci inkluzas pordi, fenestri, lumizili, avertoshildi, borduri e strukturpeci ne apartenanta a plu specifika seciono.<br>
+<br>
+Uzez ca pagini por fabrikchambri, servokoridori, danjermarkado e praktika industriala detali.
+<np>
+Fera ampulolumizilo
+Kompakta laborlumo
+<&iron_bulb_light>Ca bloko furnisas kompakta industriala lumizado por koridori, pasareli e laborloki.<br>
+<br>
+Uzo: Fixigez ol sur plafoni, muri o bordi ube la chambro bezonas klara laborlumo.<br>
+<np>
+Lumizilo por plafonbordo
+Kompakta laborlumo
+<&iron_ceiling_edge_light>Ca bloko furnisas kompakta industriala lumizado por koridori, pasareli e laborloki.<br>
+<br>
+Uzo: Fixigez ol sur plafoni, muri o bordi ube la chambro bezonas klara laborlumo.<br>
+<np>
+Enkavigita lumizilo por plankobordo
+Kompakta laborlumo
+<&iron_floor_edge_light>Ca bloko furnisas kompakta industriala lumizado por koridori, pasareli e laborloki.<br>
+<br>
+Uzo: Fixigez ol sur plafoni, muri o bordi ube la chambro bezonas klara laborlumo.<br>
+<np>
+Enkavigita lumizilo
+Kompakta laborlumo
+<&iron_inset_light>Ca bloko furnisas kompakta industriala lumizado por koridori, pasareli e laborloki.<br>
+<br>
+Uzo: Fixigez ol sur plafoni, muri o bordi ube la chambro bezonas klara laborlumo.<br>
+<np>
+Shildo "Generala averto"
+Danjermarkilo
+<&sign_caution>La shildo "Generala averto" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Danjershildo
+Danjermarkilo
+<&sign_danger>La Shildo "Atence, vere danjeroza loko" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Dekorshildo
+Danjermarkilo
+<&sign_decor>La Shildolamo (Engineer's decor) markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Defensoshildo
+Danjermarkilo
+<&sign_defense>La Shildo "Atence, defensosistemo avan" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Exireyosignalo
+Danjermarkilo
+<&sign_exit>Ca shildo markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo "Fairodanjero"
+Danjermarkilo
+<&sign_firehazard>La Shildo "Fairodanjero" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo "Frostaverto"
+Danjermarkilo
+<&sign_frost>La Shildo "Frostaverto" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo pri varmega surfaco
+Danjermarkilo
+<&sign_hotsurface>La Shildo "Atence, varmega surfaco" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo pri elektrizita filo
+Danjermarkilo
+<&sign_hotwire>La Shildo "Atence, elektrizita filo" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo "Laserdanjero"
+Danjermarkilo
+<&sign_laser>La Shildo "Laserdanjero" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo pri magiala danjero
+Danjermarkilo
+<&sign_magichazard>La Shildo "Atence, magiala danjero" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo pri magnetala kampo
+Danjermarkilo
+<&sign_magneticfield>La Shildo "Atence, forta magnetala kampo" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>
+Shildo "Radioaktiva danjero"
+Danjermarkilo
+<&sign_radioactive>La Shildo "Radioaktiva danjero" markas danjeri, exireyi e laborzoni per videbla indiko apta por fabriksekureso.<br>
+<br>
+Uzo: Pozez ol apud danjeri, exireyi, mashini e rezervita zoni.<br>
+<np>

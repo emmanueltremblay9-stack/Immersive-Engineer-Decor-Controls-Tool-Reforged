@@ -1,0 +1,5 @@
+Lionn fulangach
+Uidheam loidhne lionna
+<&recipe>Tha an Cruinniche lionna fulangach na phàirt dhlùth de loidhne-lionna airson tancaichean beaga, sreathan phìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: cuir ri taobh thùsan uisge freagarrach e agus fàg àite airson an lionn a thoirt air falbh.<br>

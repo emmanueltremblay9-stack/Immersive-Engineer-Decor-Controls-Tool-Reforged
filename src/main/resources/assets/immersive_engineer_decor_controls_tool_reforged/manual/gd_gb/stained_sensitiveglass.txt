@@ -1,0 +1,7 @@
+Glainne mhothachail dhathte
+Glainne chomharran
+<&recipe>Cumaidh bloca glainne a fhreagras do redstone loidhnichean-seallaidh fosgailte agus seallaidh e staid a' chomharra.<br>
+<br>
+Cleachdadh: cleachd e ann an uinneagan seòmar-smachd, panalan le solas agus glainne dìonta factaraidh.<br>
+<br>
+Nòtaichean: atharraichidh e staid a rèir cumhachd redstone faisg air.

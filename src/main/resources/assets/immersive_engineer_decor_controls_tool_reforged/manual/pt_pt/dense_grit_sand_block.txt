@@ -1,0 +1,5 @@
+Areia com gravilha compactada
+Cobertura de solo de estaleiro
+<&recipe>Este bloco dá às áreas de trabalho externas uma superfície compactada e pisoteada.<br>
+<br>
+Uso: Coloca ao redor de portas de carga, depósitos externos e pátios de máquinas.<br>

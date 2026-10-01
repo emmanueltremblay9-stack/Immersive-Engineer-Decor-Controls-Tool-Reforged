@@ -1,0 +1,5 @@
+Fluids passius
+Equipament de conducha de fluids
+<&recipe>L’Acumulador passiu de fluids es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : pausa-lo contra de fonts d’aiga adaptadas e daissa de plaça per tirar lo fluid.<br>

@@ -1,0 +1,5 @@
+Sinal decorativo
+Marcador de risco
+<&recipe>A placa de sinal (Engineer's Decor) marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>

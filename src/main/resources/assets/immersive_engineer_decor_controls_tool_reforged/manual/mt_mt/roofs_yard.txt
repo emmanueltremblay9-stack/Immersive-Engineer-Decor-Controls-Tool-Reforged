@@ -1,0 +1,101 @@
+Soqfa u btieħi
+Tagħmir ta' barra tal-fabbrika
+Blokok tas-soqfa, żrar tal-btieħi u partijiet tal-injam industrijali qadim jgħinu biex tlesti barrakki ta' barra, btieħi tax-xogħol, żoni tat-tagħbija u truf tal-fabbrika milbusa mit-temp.<br>
+<br>
+Ħallat dawn il-biċċiet mal-ġebel tal-bini u l-mogħdijiet tal-aċċess biex il-bini industrijali fil-beraħ jibqa' ċar mill-bogħod.
+<np>
+Saqaf b'tegoli skuri
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof>Din il-blokka tagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Ilqugħ tal-borra tas-saqaf
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_metallized>L-ilqugħ tal-borra għas-saqaf b'tegoli skuri jagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Saqaf b'tegoli skuri
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_skylight>It-tieqa fis-saqaf b'tegoli skuri tagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Xaft taċ-ċumnija tas-saqaf
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_chimneytrunk>Ix-xaft taċ-ċumnija tas-saqaf b'tegoli skuri jagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Kondjuwit tal-wajer tas-saqaf
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_wireconduit>Il-kondjuwit tal-wajer tas-saqaf b'tegoli skuri jagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Saqaf b'tegoli skuri
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_chimney>Iċ-ċumnija tas-saqaf b'tegoli skuri tagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Blokka tas-saqaf b'tegoli skuri
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_block>Din il-blokka tagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Ċangun tas-saqaf b'tegoli skuri
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_slab>Din il-blokka tagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Ċangun tas-saqaf b'tegoli skuri
+Tagħmir tas-saqaf milbus mit-temp
+<&dark_shingle_roof_slabslice>Is-saff irqiq taċ-ċangun tas-saqaf b'tegoli skuri jagħmel profili skuri u prattiċi tas-soqfa għal ħwienet tax-xogħol u barrakki industrijali.<br>
+<br>
+Użu: uża l-biċċiet flimkien biex tagħmel profili tas-soqfa kredibbli.<br>
+<np>
+Ħamrija densa biż-żrar
+Kisi tal-art tas-sit tax-xogħol
+<&dense_grit_dirt_block>Din il-blokka tagħti wiċċ magħfus u mirfus lil żoni tax-xogħol fil-beraħ.<br>
+<br>
+Użu: poġġiha madwar bibien tat-tagħbija, tankijiet ta' barra u btieħi tal-magni.<br>
+<np>
+Ramel dens biż-żrar
+Kisi tal-art tas-sit tax-xogħol
+<&dense_grit_sand_block>Din il-blokka tagħti wiċċ magħfus u mirfus lil żoni tax-xogħol fil-beraħ.<br>
+<br>
+Użu: poġġiha madwar bibien tat-tagħbija, tankijiet ta' barra u btieħi tal-magni.<br>
+<np>
+Twavel tal-injam qadim
+Injam qadim tal-ħanut tax-xogħol
+<&old_industrial_wood_planks>It-twavel tal-injam industrijali qadim iżidu injam qadim tal-ħanut tax-xogħol għal artijiet, skaluni, bibien u borduri sħan ta' ġewwa.<br>
+<br>
+Użu: użaha għal artijiet, taraġ, bibien u borduri ta' ħwienet tax-xogħol qodma.<br>
+<np>
+Ċangun tal-injam industrijali qadim
+Injam qadim tal-ħanut tax-xogħol
+<&old_industrial_wood_slab>Din il-blokka żżid injam qadim tal-ħanut tax-xogħol għal artijiet, skaluni, bibien u borduri sħan ta' ġewwa.<br>
+<br>
+Użu: użaha għal artijiet, taraġ, bibien u borduri ta' ħwienet tax-xogħol qodma.<br>
+<np>
+Taraġ tal-injam qadim
+Injam qadim tal-ħanut tax-xogħol
+<&old_industrial_wood_stairs>It-taraġ tal-injam industrijali qadim iżid injam qadim tal-ħanut tax-xogħol għal artijiet, skaluni, bibien u borduri sħan ta' ġewwa.<br>
+<br>
+Użu: użaha għal artijiet, taraġ, bibien u borduri ta' ħwienet tax-xogħol qodma.<br>
+<np>
+Saff irqiq taċ-ċangun tal-injam qadim
+Injam qadim tal-ħanut tax-xogħol
+<&old_industrial_wood_slabslice>Is-saff irqiq taċ-ċangun tal-injam industrijali qadim iżid injam qadim tal-ħanut tax-xogħol għal artijiet, skaluni, bibien u borduri sħan ta' ġewwa.<br>
+<br>
+Użu: użaha għal artijiet, taraġ, bibien u borduri ta' ħwienet tax-xogħol qodma.<br>
+<np>
+Bieb tal-injam industrijali qadim
+Injam qadim tal-ħanut tax-xogħol
+<&old_industrial_wood_door>Din il-blokka żżid injam qadim tal-ħanut tax-xogħol għal artijiet, skaluni, bibien u borduri sħan ta' ġewwa.<br>
+<br>
+Użu: użaha għal artijiet, taraġ, bibien u borduri ta' ħwienet tax-xogħol qodma.<br>

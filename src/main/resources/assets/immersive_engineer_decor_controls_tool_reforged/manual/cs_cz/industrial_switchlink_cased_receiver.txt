@@ -1,0 +1,7 @@
+Krytý přijímač propojení
+Propojené ovládání
+<&recipe>Krytý propojený přijímač poskytuje vzdáleným panelům odolný redstonový cíl.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Pravým kliknutím přímo na přijímač jej ručně přepneš.<br>
+<br>
+Poznámky: Propojená perla při použití během plížení přepne tento přijímač.

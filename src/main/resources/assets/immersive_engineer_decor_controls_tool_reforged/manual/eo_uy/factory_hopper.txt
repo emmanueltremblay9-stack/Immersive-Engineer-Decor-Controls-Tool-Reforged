@@ -1,0 +1,5 @@
+Fabrika funelo
+Metieja helpilo
+<&recipe>Ĉi tiu bloko movas objektostakojn tra pli kompakta industria ujo.<br>
+<br>
+Uzado: direktu ĝin al la inventara linio, poste agordu atingon, staknombron, tempadon kaj redstone’an reĝimon per ĝia ekrano.<br>

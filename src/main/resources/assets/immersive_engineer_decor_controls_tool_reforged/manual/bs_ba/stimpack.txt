@@ -1,0 +1,7 @@
+Automatski stim-paket
+Hitna injekcija
+<&recipe>Predmet za hitni oporavak pri opasnom održavanju.<br>
+<br>
+Upotreba: Ručno liječi, daje kratku zaštitu i ubrzanje. U inventaru se aktivira pri slabom zdravlju i zatim se hladi.<br>
+<br>
+Držite prije visina, otvorenih žica ili opasnih rudnika.

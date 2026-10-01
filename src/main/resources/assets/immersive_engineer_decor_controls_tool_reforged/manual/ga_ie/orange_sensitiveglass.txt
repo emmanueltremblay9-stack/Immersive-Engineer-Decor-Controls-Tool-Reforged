@@ -1,0 +1,7 @@
+Gloine Íogair Oráiste
+Gloine chomhartha
+<&recipe>Coinníonn bloc gloine a imoibríonn le Redstone línte radhairc oscailte agus staid an chomhartha á léiriú aige.<br>
+<br>
+Úsáid: úsáid é i bhfuinneoga seomra rialaithe, i bpainéil shoilsithe agus i ngloine chosanta monarchan.<br>
+<br>
+Nótaí: athraíonn sé staid de réir cumhacht Redstone in aice láimhe.

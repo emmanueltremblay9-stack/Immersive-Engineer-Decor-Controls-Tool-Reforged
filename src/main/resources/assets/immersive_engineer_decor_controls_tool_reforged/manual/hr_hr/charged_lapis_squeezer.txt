@@ -1,0 +1,7 @@
+Preša za um
+Kondenzator iskustva
+<&recipe>Preša za um pretvara lazulit i iskustvo u napunjeni lazulit.<br>
+<br>
+Uporaba: nosi lazulit i barem jednu razinu iskustva te upotrijebi alat. Uspješna obrada troši jednu razinu i jedan lazulit, ozljeđuje korisnika, troši prešu i stvara jedan napunjeni lazulit.<br>
+<br>
+Ne radi ako korisnik nema lazulit, nema iskustva ili je preblizu smrti.

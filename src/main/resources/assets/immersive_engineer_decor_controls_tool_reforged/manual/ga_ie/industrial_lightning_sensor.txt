@@ -1,0 +1,7 @@
+Braiteoir Stoirme
+Brath comharthaí
+<&recipe>Tugann braiteoir stoirme rabhaidh le linn toirní.<br>
+<br>
+Úsáid: cuir faoin spéir oscailte é agus nasc le lampaí nó aláraim é.<br>
+<br>
+Nótaí: tá toirneach agus rochtain ar an spéir de dhíth.

@@ -1,0 +1,5 @@
+Watervriezer
+Compacte verwerkingseenheid
+<&recipe>De watervriezer voert compacte koelwerkzaamheden uit in aangedreven vloeistofinstallaties.<br>
+<br>
+Gebruik: voer water en energie aan om stapsgewijs ijs te produceren.<br>

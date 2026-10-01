@@ -1,0 +1,5 @@
+Mineralsmelter
+Kompakt bearbejdningsenhed
+<&recipe>Mineralsmelteren bearbejder mineraler ved høj varme på begrænset værkstedsplads.<br>
+<br>
+Brug: Tilfør mineralblokke og strøm til smeltning ved høj varme.<br>

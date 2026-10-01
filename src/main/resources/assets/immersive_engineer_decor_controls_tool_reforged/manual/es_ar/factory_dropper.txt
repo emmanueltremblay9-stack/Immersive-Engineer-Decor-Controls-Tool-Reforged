@@ -1,0 +1,5 @@
+Soltador de fábrica
+Utilidad de taller
+<&recipe>Este bloque expulsa los objetos almacenados por una cara orientada.<br>
+<br>
+Uso: Orientá el frontal hacia el punto de salida, cargá sus ranuras internas y ajustá la fuerza, el ángulo, la espera, la lógica de filtros y el modo de redstone en su pantalla.<br>

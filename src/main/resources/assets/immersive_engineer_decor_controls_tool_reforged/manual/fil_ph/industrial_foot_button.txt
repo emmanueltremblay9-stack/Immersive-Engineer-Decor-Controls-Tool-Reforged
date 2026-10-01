@@ -1,0 +1,7 @@
+Pindutang Pangpaa
+Kontrol ng Redstone
+<&recipe>Nagpapadala ang swits na pandampi ng maikling signal mula sa paggalaw sa sahig o bukasan.<br>
+<br>
+Paggamit: Ilagay kung saan dumaraan ang mga entidad sa pasilyo ng pagpapanatili, kargahan o binabantayang ruta.<br>
+<br>
+Tandaan: Sandaling pumupulso matapos dumampi ang entidad.

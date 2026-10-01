@@ -1,0 +1,7 @@
+Vihmaandur
+Signaali tuvastamine
+<&recipe>Ilmaandur teisendab oma asukoha vihmasaju redstone'iks.<br>
+<br>
+Kasutamine: Kinnita sinna, kus ülemine plokk saab vihma.<br>
+<br>
+Märkus: Kontrollib vihma anduri kohal.

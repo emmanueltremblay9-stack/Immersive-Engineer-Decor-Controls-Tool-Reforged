@@ -1,0 +1,5 @@
+Dünn ahl Holzschiev
+Ahl Werkstattholz
+<&recipe>De dünn Schiev us ahlem Industrieholz ergänzt ahl Werkstattholz för Böde, Tritt, Düre un warme Ennezier.<br>
+<br>
+Bruuch: Nimm en för ahle Werkstattböde, Trappe, Düre un Kante.<br>

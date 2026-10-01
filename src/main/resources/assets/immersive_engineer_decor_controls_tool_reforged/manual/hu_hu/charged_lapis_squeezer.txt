@@ -1,0 +1,7 @@
+Elmeprés
+Tapasztalatsűrítő
+<&recipe>Az elmeprés lazuritból és tapasztalatból feltöltött lazuritot állít elő.<br>
+<br>
+Használat: legyen nálad lazurit és legalább egy tapasztalati szint, majd használd az eszközt. A sikeres préselés egy szintet és egy lazuritot fogyaszt, megsebez, koptatja a prést, és egy feltöltött lazuritot hoz létre.<br>
+<br>
+Nem működik, ha nincs nálad lazurit vagy tapasztalat, illetve ha túl közel vagy a halálhoz.

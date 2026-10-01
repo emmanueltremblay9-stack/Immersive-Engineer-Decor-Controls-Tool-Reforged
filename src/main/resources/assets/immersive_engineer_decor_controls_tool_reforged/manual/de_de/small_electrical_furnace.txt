@@ -1,0 +1,5 @@
+Elektroofen
+Kompakte Verarbeitungseinheit
+<&recipe>Der Elektroofen erledigt FE-betriebene Schmelzarbeiten auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Führe FE-Energie und geeignetes Schmelzgut zu.<br>

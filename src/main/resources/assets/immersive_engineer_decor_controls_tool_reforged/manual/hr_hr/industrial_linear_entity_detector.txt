@@ -1,0 +1,7 @@
+Linijski detektor entiteta
+Otkrivanje signala
+<&recipe>Detektor entiteta promatra obližnje kretanje bez vidljive podne ploče.<br>
+<br>
+Uporaba: spoji ga na vrata, svjetla, alarme ili sigurnosne blokade strojeva.<br>
+<br>
+Napomene: pregledava malo područje oko bloka.

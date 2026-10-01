@@ -1,0 +1,3 @@
+Yirik oltin donachalari
+Qayta tiklangan yasash to'plamida ishlatiladigan muhandis asbobi materiali.
+<&recipe>Oltin quymalarga eritish<br>mumkin, ammo murakkab<br>material ishloviga yaramaydi.

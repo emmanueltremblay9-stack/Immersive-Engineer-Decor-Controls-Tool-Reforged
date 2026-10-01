@@ -1,0 +1,5 @@
+Poste grueso de acero
+Pieza de estructura
+<&recipe>El poste recto de acero grueso aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Gira y coloca la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>

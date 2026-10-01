@@ -1,0 +1,789 @@
+Redstone-Steierungen
+Miessgeräter a Signalbaudeeler
+Steierhardware mécht verstoppt Redstone als liesbar Fabricksteierbrieder, Sensoren, Uweisungen, Schalter, Alarmer a verbonne Signalbaudeeler zougänglech.<br>
+<br>
+Benotz dës Säite beim Bau vu Bedéngungsstatiounen, Signalbrieder, Sécherheetsschaltungen a Fernsteierungen.
+<np>
+Feilzil
+Kuerzen Impuls
+<&arrow_target>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Diersensor
+Redstone-Steierung
+<&door_sensor_switch>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Liftknäppchen
+Redstone-Steierung
+<&elevator_button>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Glasknäppchen
+Redstone-Steierung
+<&glass_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Glasknäppchen
+Redstone-Steierung
+<&glass_small_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Glasberéierungsknäppchen
+Redstone-Steierung
+<&glass_touch_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Maschinneknäppchen
+Redstone-Steierung
+<&industrial_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Knäppchen
+Redstone-Steierung
+<&industrial_double_pole_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Maschinneknäppche mat Schutzbügel
+Redstone-Steierung
+<&industrial_fenced_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Klappknäppchen
+Redstone-Steierung
+<&industrial_knock_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Alen dekorative Knäppchen
+Redstone-Steierung
+<&oldfancy_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Alen dekorative Knäppchen
+Redstone-Steierung
+<&oldfancy_small_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Alen dekorative Ketteknäppchen
+Kuerzen Impuls
+<&oldfancy_spring_reset_chain>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Rustikale Knäppchen
+Redstone-Steierung
+<&rustic_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Rustikale Nolknäppchen
+Redstone-Steierung
+<&rustic_nail_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Rustikale klenge Knäppchen
+Redstone-Steierung
+<&rustic_small_button>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Rustikale Ketteknäppchen
+Kuerzen Impuls
+<&rustic_spring_reset_chain>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.
+<np>
+Glaskontaktplack
+Drockimpuls
+<&glass_contact_mat>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Glasdierkontakt
+Drockimpuls
+<&glass_door_contact_mat>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Kontaktmatt
+Drockimpuls
+<&industrial_contact_mat>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Dierkontaktmatt
+Drockimpuls
+<&industrial_door_contact_mat>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Duerchfalldetektor
+Signalerkennung
+<&industrial_fallthrough_detector>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Foussknäppchen
+Redstone-Steierung
+<&industrial_foot_button>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Industriestoussdier
+Drockimpuls
+<&industrial_high_sensitive_trapdoor>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Stousskontaktmatt
+Drockimpuls
+<&industrial_shock_sensitive_contact_mat>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Stoussklappdier
+Drockimpuls
+<&industrial_shock_sensitive_trapdoor>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Rout Stroumplanz
+Drockimpuls
+<&red_power_plant>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Rustikal Drockplack
+Drockimpuls
+<&rustic_contact_plate>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Rustikale Dierdrockkontakt
+Drockimpuls
+<&rustic_door_contact_plate>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Rustikale Falldetektor
+Signalerkennung
+<&rustic_fallthrough_detector>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Rustikal Stoussdier
+Drockimpuls
+<&rustic_high_sensitive_trapdoor>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Rustikal Stoussplack
+Drockimpuls
+<&rustic_shock_sensitive_plate>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Rustikal Stoussdier
+Drockimpuls
+<&rustic_shock_sensitive_trapdoor>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Giel Stroumplanz
+Drockimpuls
+<&yellow_power_plant>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.
+<np>
+Dageszäitschalter aus Glas
+Dagesliichtsignal
+<&glass_day_timer>En Zäitschalter orientéiert sech um Dagesdeel vum Weltzyklus.<br>
+<br>
+Benotzung: Benotz en fir Haffluuchten, Rolllueden a Fabricksteierungen, déi nëmmen dagsiwwer lafe sollen.<br>
+<br>
+Hiweiser: Braucht eng Dimensioun mat Himmelsliicht.
+<np>
+Glasentitéitsdetektor
+Signalerkennung
+<&glass_entity_detector>En Entitéitsdetektor iwwerwaacht Beweegungen an der Géigend ouni siichtbar Buedemplack.<br>
+<br>
+Benotzung: Verbann en mat Dieren, Luuchten, Alarmer oder Maschinnesécherheetsspären.<br>
+<br>
+Hiweiser: Scannt e klenge Beräich ronderëm de Block.
+<np>
+Glasintervallsignal
+Zäitgesteierten Impuls
+<&glass_interval_timer>E kompakte Zäitschalter liwwert e geplangte Redstone-Impuls.<br>
+<br>
+Benotzung: Benotz en do, wou e klenge Mechanismus eng periodesch oder verzögert Steierung brauch.<br>
+<br>
+Hiweiser: Benotzt geplangte Redstone-Impulser.
+<np>
+Glaslinnendetektor
+Signalerkennung
+<&glass_linear_entity_detector>En Entitéitsdetektor iwwerwaacht Beweegungen an der Géigend ouni siichtbar Buedemplack.<br>
+<br>
+Benotzung: Verbann en mat Dieren, Luuchten, Alarmer oder Maschinnesécherheetsspären.<br>
+<br>
+Hiweiser: Scannt e klenge Beräich ronderëm de Block.
+<np>
+Blockdetektor
+Signalerkennung
+<&industrial_block_detector>E Blockdetektor préift, ob de Raum a senger Bléckrichtung beluecht ass.<br>
+<br>
+Benotzung: Riicht en op déi Maschinnesäit, dee Puffer oder dee geschützte Raum, deen iwwerwaacht soll ginn.<br>
+<br>
+Hiweiser: Gëtt Stroum, wann de Block virun him net Loft ass.
+<np>
+Dageszäitschalter
+Dagesliichtsignal
+<&industrial_day_timer>En Zäitschalter orientéiert sech um Dagesdeel vum Weltzyklus.<br>
+<br>
+Benotzung: Benotz en fir Haffluuchten, Rolllueden a Fabricksteierungen, déi nëmmen dagsiwwer lafe sollen.<br>
+<br>
+Hiweiser: Braucht eng Dimensioun mat Himmelsliicht.
+<np>
+Entitéitsdetektor
+Signalerkennung
+<&industrial_entity_detector>En Entitéitsdetektor iwwerwaacht Beweegungen an der Géigend ouni siichtbar Buedemplack.<br>
+<br>
+Benotzung: Verbann en mat Dieren, Luuchten, Alarmer oder Maschinnesécherheetsspären.<br>
+<br>
+Hiweiser: Scannt e klenge Beräich ronderëm de Block.
+<np>
+Intervallzäitschalter
+Zäitgesteierten Impuls
+<&industrial_interval_timer>E kompakte Zäitschalter liwwert e geplangte Redstone-Impuls.<br>
+<br>
+Benotzung: Benotz en do, wou e klenge Mechanismus eng periodesch oder verzögert Steierung brauch.<br>
+<br>
+Hiweiser: Benotzt geplangte Redstone-Impulser.
+<np>
+Liichtsensor
+Signalerkennung
+<&industrial_light_sensor>E Liichtsensor verwandelt déi lokal Hellegkeet an eng Redstone-Steierung.<br>
+<br>
+Benotzung: Benotz en fir automatesch Luuchten, Rolllueden a Siichtschaltungen.<br>
+<br>
+Hiweiser: Gëtt Stroum bei enger rouer Hellegkeet vun 8 oder méi.
+<np>
+Gewittersensor
+Signalerkennung
+<&industrial_lightning_sensor>E Gewittersensor aktivéiert Warnunge bei Donnerwieder.<br>
+<br>
+Benotzung: Setz en ënner de fräien Himmel a verbann e mat Luuchten oder Alarmer.<br>
+<br>
+Hiweiser: Braucht Donner an Zougang zum Himmel.
+<np>
+Linearen Entitéitsdetektor
+Signalerkennung
+<&industrial_linear_entity_detector>En Entitéitsdetektor iwwerwaacht Beweegungen an der Géigend ouni siichtbar Buedemplack.<br>
+<br>
+Benotzung: Verbann en mat Dieren, Luuchten, Alarmer oder Maschinnesécherheetsspären.<br>
+<br>
+Hiweiser: Scannt e klenge Beräich ronderëm de Block.
+<np>
+Reensensor
+Signalerkennung
+<&industrial_rain_sensor>E Wiedersensor verwandelt de Reen op senger Plaz a Redstone.<br>
+<br>
+Benotzung: Montéier en do, wou de Block driwwer Reen ofkréie kann.<br>
+<br>
+Hiweiser: Préift de Reen iwwer dem Sensor.
+<np>
+Bistabile Glasschalter
+Redstone-Steierung
+<&glass_rotary_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Bistabile Glasberéierungsschalter
+Redstone-Steierung
+<&glass_touch_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Orangë sensibelt Glas
+Signalglas
+<&orange_sensitiveglass>E Glasblock, deen op Redstone reagéiert, léisst d'Vue fräi a weist gläichzäiteg de Signalzoustand.<br>
+<br>
+Benotzung: Benotz en a Kontrollraumfënsteren, beliichte Steierbrieder a geschütztem Fabrickglas.<br>
+<br>
+Hiweiser: Ännert den Zoustand duerch Redstone-Stroum an der Géigend.
+<np>
+Liichtend empfindlecht Glas
+Signalglas
+<&sensitive_glass_block>E Glasblock, deen op Redstone reagéiert, léisst d'Vue fräi a weist gläichzäiteg de Signalzoustand.<br>
+<br>
+Benotzung: Benotz en a Kontrollraumfënsteren, beliichte Steierbrieder a geschütztem Fabrickglas.<br>
+<br>
+Hiweiser: Ännert den Zoustand duerch Redstone-Stroum an der Géigend.
+<np>
+Faarwegt empfindlecht Glas
+Signalglas
+<&stained_sensitiveglass>E Glasblock, deen op Redstone reagéiert, léisst d'Vue fräi a weist gläichzäiteg de Signalzoustand.<br>
+<br>
+Benotzung: Benotz en a Kontrollraumfënsteren, beliichte Steierbrieder a geschütztem Fabrickglas.<br>
+<br>
+Hiweiser: Ännert den Zoustand duerch Redstone-Stroum an der Géigend.
+<np>
+Glasbalkemesser
+Signalmesser
+<&glass_vertical_bar_gauge>E kompakte Messer fir de Kontrollraum weist d'Redstone-Stäerkt kloer um Steierbriet un.<br>
+<br>
+Benotzung: Montéier en do, wou d'Redstone-Stäerkt an der Géigend op ee Bléck kontrolléiert soll ginn.<br>
+<br>
+Hiweiser: Liest d'Redstone-Stäerkt an der Géigend vun 0 bis 15.
+<np>
+Analoge Messer
+Signalmesser
+<&industrial_analog_angular_gauge>E kompakte Messer fir de Kontrollraum weist d'Redstone-Stäerkt kloer um Steierbriet un.<br>
+<br>
+Benotzung: Montéier en do, wou d'Redstone-Stäerkt an der Géigend op ee Bléck kontrolléiert soll ginn.<br>
+<br>
+Hiweiser: Liest d'Redstone-Stäerkt an der Géigend vun 0 bis 15.
+<np>
+Voltmeter
+Signalmesser
+<&industrial_analog_horizontal_gauge>E kompakte Messer fir de Kontrollraum weist d'Redstone-Stäerkt kloer um Steierbriet un.<br>
+<br>
+Benotzung: Montéier en do, wou d'Redstone-Stäerkt an der Géigend op ee Bléck kontrolléiert soll ginn.<br>
+<br>
+Hiweiser: Liest d'Redstone-Stäerkt an der Géigend vun 0 bis 15.
+<np>
+Digitale Messer
+Liesbar Signalstäerkt
+<&industrial_small_digital_gauge>E kompakte Messer fir de Kontrollraum weist d'Redstone-Stäerkt kloer um Steierbriet un.<br>
+<br>
+Benotzung: Montéier en do, wou d'Redstone-Stäerkt an der Géigend op ee Bléck kontrolléiert soll ginn.<br>
+<br>
+Hiweiser: Liest d'Redstone-Stäerkt an der Géigend vun 0 bis 15.
+<np>
+Glasrouermesser
+Signalmesser
+<&industrial_tube_gauge>E kompakte Messer fir de Kontrollraum weist d'Redstone-Stäerkt kloer um Steierbriet un.<br>
+<br>
+Benotzung: Montéier en do, wou d'Redstone-Stäerkt an der Géigend op ee Bléck kontrolléiert soll ginn.<br>
+<br>
+Hiweiser: Liest d'Redstone-Stäerkt an der Géigend vun 0 bis 15.
+<np>
+Analoge Balkemesser
+Signalmesser
+<&industrial_vertical_bar_gauge>E kompakte Messer fir de Kontrollraum weist d'Redstone-Stäerkt kloer um Steierbriet un.<br>
+<br>
+Benotzung: Montéier en do, wou d'Redstone-Stäerkt an der Géigend op ee Bléck kontrolléiert soll ginn.<br>
+<br>
+Hiweiser: Liest d'Redstone-Stäerkt an der Géigend vun 0 bis 15.
+<np>
+Alarmluucht
+Signalréckmeldung
+<&industrial_alarm_lamp>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Alarmsirenn
+Signalréckmeldung
+<&industrial_alarm_siren>D'Alarmsirèn ass e Redstone-Indikator, deen un enger Säit befestegt gëtt. Hiren ugedriwwene Status follegt dem Signal vum Block, un deem se hänkt.<br>
+<br>
+Benotzung: Montéier se op enger fester Säit a versuerg se mat Stroum fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: D'Sirenn erneiert hiren Toun eemol pro Sekonn, soulaang hiert ugeschlossent Signal aktiv bleift.
+<np>
+Blénkend LED
+Signalréckmeldung
+<&industrial_blinking_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Gréng blénkend LED
+Signalréckmeldung
+<&industrial_green_blinking_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Gréng LED
+Signalréckmeldung
+<&industrial_green_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Rout LED
+Signalréckmeldung
+<&industrial_red_blinking_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Rout LED
+Signalréckmeldung
+<&industrial_red_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Wäiss blénkend LED
+Signalréckmeldung
+<&industrial_white_blinking_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Wäiss LED
+Signalréckmeldung
+<&industrial_white_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Giel blénkend LED
+Signalréckmeldung
+<&industrial_yellow_blinking_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Giel LED
+Signalréckmeldung
+<&industrial_yellow_led>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Rustikale Semaphor
+Signalréckmeldung
+<&rustic_semaphore>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.
+<np>
+Komparatorschalter
+Signal vum montéierte Block
+<&industrial_comparator_switch>E kompakte Sensorschalter liest de Block, op deem en montéiert ass, a verwandelt déi Miessung an en einfache Steierbrietausgang.<br>
+<br>
+Benotzung: Montéier en op Inventarer, Tanken oder Redstone-Baudeeler. Wann de verbonne Block e Komparator-, Behälter- oder Redstone-Ausgang mellt, gëtt de Schalter Redstone mat voller Stäerkt aus.<br>
+<br>
+Hiweiser: Benotz en fir Fëllstänn oder verstoppt Verkabelung an däitlech Un-/Aussteierleitungen ëmzewandelen.
+<np>
+Dimmer
+Variabelt Signal
+<&industrial_dimmer>En Dréiregler stellt d'Redstone-Stäerkt op enger kompakter Steierfläch an.<br>
+<br>
+Benotzung: Maach e Rietsklick fir den Ausgang schrëttweis ze erhéijen. No der voller Stäerkt fänkt en erëm bei null un.<br>
+<br>
+Hiweiser: Gëtt eng Stäerkt vun 0 bis 15 aus.
+<np>
+Noutstoppknäppchen
+Redstone-Steierung
+<&industrial_estop_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Triichterspär
+Redstone-Steierung
+<&industrial_hopper_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Klappschalter
+Redstone-Steierung
+<&industrial_knock_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Hiewel
+Redstone-Steierung
+<&industrial_lever>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Maschinneschalter mat zwee Knäppercher
+Redstone-Steierung
+<&industrial_machine_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Zuchgrëff
+Redstone-Steierung
+<&industrial_pull_handle>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Dréihiewel
+Redstone-Steierung
+<&industrial_rotary_lever>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Dréischalter fir Maschinnen
+Redstone-Steierung
+<&industrial_rotary_machine_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Kontakthiewel
+Redstone-Steierung
+<&industrial_small_lever>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Schalter
+Redstone-Steierung
+<&industrialswitch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Liichtschalter
+Redstone-Steierung
+<&light_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Ventilschalter
+Redstone-Steierung
+<&valve_wheel_switch>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Impulsempfänger am Gehäis
+Verbonne Steierung
+<&industrial_switchlink_cased_pulse_receiver>E verbonnen Impulsempfänger am Gehäis gëtt Fernsteierbrieder e kuerze Redstone-Ausléiser.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Maach e Rietsklick drop oder aktivéier déi verbonne Pärel fir e kuerzen Impuls auszeginn.<br>
+<br>
+Hiweiser: Den Impuls setzt sech no senger agestallter Dauer selwer zeréck.
+<np>
+Verbindungsempfänger am Gehäis
+Verbonne Steierung
+<&industrial_switchlink_cased_receiver>E verbonnen Empfänger am Gehäis bitt Fernsteierbrieder e robust Redstone-Zil.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Maach direkt e Rietsklick op den Empfänger fir e mat der Hand ëmzeschalten.<br>
+<br>
+Hiweiser: Eng verbonne Pärel schalt dësen Empfänger ëm, wann se beim Schläiche benotzt gëtt.
+<np>
+Verbonnen Impulsempfänger
+Verbonne Steierung
+<&industrial_switchlink_pulse_receiver>E verbonnen Impulsempfänger gëtt Fernsteierbrieder e kuerze Redstone-Ausléiser.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Maach e Rietsklick drop oder aktivéier déi verbonne Pärel fir e kuerzen Impuls auszeginn.<br>
+<br>
+Hiweiser: Den Impuls setzt sech no senger agestallter Dauer selwer zeréck.
+<np>
+Impulsverbindungsrelais
+Verbonne Steierung
+<&industrial_switchlink_pulse_relay>E Baudeel am Relaisstil bitt Steierbrieder e kompakte lokale Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten. Benotz Empfängerbléck, wann s du eng Aktivéierung mat enger verbonnener Pärel brauchs.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Empfänger fir Schaltverbindungen
+Verbonne Steierung
+<&industrial_switchlink_receiver>E verbonnen Empfänger bitt Fernsteierbrieder e Redstone-Zil mat voller Stäerkt.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Maach direkt e Rietsklick op den Empfänger fir e mat der Hand ëmzeschalten.<br>
+<br>
+Hiweiser: Eng verbonne Pärel schalt dësen Empfänger ëm, wann se beim Schläiche benotzt gëtt.
+<np>
+Analoge Verbindungsempfänger
+Verbonne Steierung
+<&industrial_switchlink_receiver_analog>E verbonnen Empfänger bitt Steierbrieder e siichtbart Fernzil.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Benotz déi Pärel beim Schläiche fir den Empfänger aus der Distanz z'aktivéieren.<br>
+<br>
+Hiweiser: Dësen Empfänger gëtt e Redstone-Signal mat voller Stäerkt aus, wann en ausgeléist gëtt.
+<np>
+Schaltverbindungsrelais
+Verbonne Steierung
+<&industrial_switchlink_relay>E Baudeel am Relaisstil bitt Steierbrieder e kompakte lokale Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten. Benotz Empfängerbléck, wann s du eng Aktivéierung mat enger verbonnener Pärel brauchs.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Analogt Verbindungsrelais
+Verbonne Steierung
+<&industrial_switchlink_relay_analog>E Baudeel am Relaisstil bitt Steierbrieder e kompakte lokale Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten. Benotz Empfängerbléck, wann s du eng Aktivéierung mat enger verbonnener Pärel brauchs.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Schaltverbindungspärel
+Verbonne Steierung
+<&switchlink_pearl>Eng verbonne Pärel späichert en Empfängerzil fir Fernsteierunge vun der Fabrick.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel op en Empfänger fir Schaltverbindunge fir eng ze maachen. Benotz déi verbonne Pärel beim Schläiche fir de gespäicherten Empfänger z'aktivéieren.<br>
+<br>
+Hiweiser: D'Zil muss geluede sinn, an der selwechter Dimensioun leien a bannent der Reechwäit sinn.
+<np>
+Alen dekorativen Hiewel
+Redstone-Steierung
+<&oldfancy_bistableswitch1>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Alen dekorativen Dréihiewel
+Redstone-Steierung
+<&oldfancy_bistableswitch2>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Rustikalen Dréihiewel
+Redstone-Steierung
+<&rustic_angular_lever>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Rustikalen Hiewel
+Redstone-Steierung
+<&rustic_lever>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Rustikalen Nolhiewel
+Redstone-Steierung
+<&rustic_nail_lever>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.
+<np>
+Rustikalen Hiewel mat zwee Scharnéieren
+Redstone-Steierung
+<&rustic_two_hinge_lever>E kompakte Steierbaudeel bitt Fabricksgebaier e kloer erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Benotzung: Maach e Rietsklick drop fir den Ausgang mat voller Stäerkt fir no Schaltungen un- oder auszeschalten.<br>
+<br>
+Hiweiser: Gëtt Redstone mat voller Stäerkt aus, soulaang en ageschalt ass.

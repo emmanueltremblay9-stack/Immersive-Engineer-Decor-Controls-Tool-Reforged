@@ -1,0 +1,5 @@
+Baumfäller
+Hilfsgerät für die Werkstatt
+<&recipe>Der kleine Baumfäller ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Richte ihn auf ausgewachsene Bäume und sammle die Beute separat ein.<br>

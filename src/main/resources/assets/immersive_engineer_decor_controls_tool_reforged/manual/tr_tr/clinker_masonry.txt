@@ -1,0 +1,161 @@
+Klinker ve Duvar Yapımı
+Tuğla ve beton kabuklar
+Klinker, cüruf tuğlası, betonarme ve zırhlı cam; sıcak odalar, atölyeler ve korunan görüş hatları için ağır yüzeyler sağlar.<br>
+<br>
+Fabrikanın malzeme bütünlüğünü bozmadan kenarları bitirmek için uyumlu basamakları, merdivenleri, dilimleri ve duvarları kullanın.
+<np>
+Klinker Tuğla Bloğu
+İs karası tuğla duvar
+<&clinker_brick_block>Bu blok; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Klinker Tuğla Basamak
+İs karası tuğla duvar
+<&clinker_brick_slab>Bu blok; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Klinker Tuğla Merdiven
+İs karası tuğla duvar
+<&clinker_brick_stairs>Bu blok; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Klinker Tuğla Duvar
+İs karası tuğla duvar
+<&clinker_brick_wall>Bu blok; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Lekeli Klinker Bloğu
+İs karası tuğla duvar
+<&clinker_brick_stained_block>Lekeli klinker tuğla bloğu; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Lekeli Klinker Basamak
+İs karası tuğla duvar
+<&clinker_brick_stained_slab>Lekeli klinker tuğla basamak; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Lekeli Klinker Merdiven
+İs karası tuğla duvar
+<&clinker_brick_stained_stairs>Lekeli klinker tuğla merdiven; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Süslü Klinker Tuğla
+İs karası tuğla duvar
+<&clinker_brick_sastor_corner_block>Kum taşı süslemeli klinker tuğla; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Girintili Klinker Tuğla
+İs karası tuğla duvar
+<&clinker_brick_recessed>Bu blok; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Yarık Klinker Tuğlalar
+İs karası tuğla duvar
+<&clinker_brick_vertically_slit>Dikey yarık klinker tuğlalar; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Dikey Klinker Basamak
+İs karası tuğla duvar
+<&clinker_brick_vertical_slab_structured>Dokulu dikey klinker basamak; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Yarım Klinker Tuğla Basamak
+İs karası tuğla duvar
+<&halfslab_clinker_brick>Bu blok; ocak salonlarına, baca tabanlarına ve servis duvarlarına isle kararmış tuğla görünümü katar.<br>
+<br>
+Kullanım: Ocak ve kazanların çevresinde duvar, süsleme veya sıcak bölge kabuğu olarak kullanın.<br>
+<np>
+Cüruf Tuğla Bloğu
+Yoğun fabrika duvarı
+<&slag_brick_block>Bu blok; temeller, istinat duvarları ve eski çalışma barakaları için yoğun gri-kahverengi duvar malzemesi ekler.<br>
+<br>
+Kullanım: Eski temeller, istinat duvarları ve kirli fabrika zeminleri için kullanın.<br>
+<np>
+Cüruf Tuğla Basamak
+Yoğun fabrika duvarı
+<&slag_brick_slab>Bu blok; temeller, istinat duvarları ve eski çalışma barakaları için yoğun gri-kahverengi duvar malzemesi ekler.<br>
+<br>
+Kullanım: Eski temeller, istinat duvarları ve kirli fabrika zeminleri için kullanın.<br>
+<np>
+Cüruf Tuğla Merdiven
+Yoğun fabrika duvarı
+<&slag_brick_stairs>Bu blok; temeller, istinat duvarları ve eski çalışma barakaları için yoğun gri-kahverengi duvar malzemesi ekler.<br>
+<br>
+Kullanım: Eski temeller, istinat duvarları ve kirli fabrika zeminleri için kullanın.<br>
+<np>
+Cüruf Tuğla Duvar
+Yoğun fabrika duvarı
+<&slag_brick_wall>Bu blok; temeller, istinat duvarları ve eski çalışma barakaları için yoğun gri-kahverengi duvar malzemesi ekler.<br>
+<br>
+Kullanım: Eski temeller, istinat duvarları ve kirli fabrika zeminleri için kullanın.<br>
+<np>
+Betonarme Bloğu
+Güçlendirilmiş beton
+<&rebar_concrete>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Betonarme Basamak
+Güçlendirilmiş beton
+<&rebar_concrete_slab>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Betonarme Merdiven
+Güçlendirilmiş beton
+<&rebar_concrete_stairs>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Betonarme Duvar
+Güçlendirilmiş beton
+<&rebar_concrete_wall>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Betonarme Dilimi
+Güçlendirilmiş beton
+<&halfslab_rebar_concrete>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Betonarme Karo
+Güçlendirilmiş beton
+<&rebar_concrete_tile>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Betonarme Karo Basamak
+Güçlendirilmiş beton
+<&rebar_concrete_tile_slab>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Betonarme Karo
+Güçlendirilmiş beton
+<&rebar_concrete_tile_stairs>Betonarme karo merdivenler; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçalarıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>
+<np>
+Zırhlı Cam Bloğu
+Korunan görüş hattı
+<&panzerglass_block>Bu blok, güçlendirilmiş fabrika yapısına uyum sağlarken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Oyuncuların makineleri koruyucu bir engelin ardından görmesi gereken yerlerde kullanın.<br>
+<np>
+Zırhlı Cam Basamak
+Korunan görüş hattı
+<&panzerglass_slab>Bu blok, güçlendirilmiş fabrika yapısına uyum sağlarken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Oyuncuların makineleri koruyucu bir engelin ardından görmesi gereken yerlerde kullanın.<br>

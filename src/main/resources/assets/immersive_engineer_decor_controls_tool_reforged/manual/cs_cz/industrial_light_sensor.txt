@@ -1,0 +1,7 @@
+Světelné čidlo
+Snímání signálu
+<&recipe>Světelné čidlo převádí místní jas na redstonové ovládání.<br>
+<br>
+Použití: Hodí se pro automatické lampy, okenice a obvody reagující na viditelnost.<br>
+<br>
+Poznámky: Vysílá signál při hrubé hodnotě jasu 8 nebo vyšší.

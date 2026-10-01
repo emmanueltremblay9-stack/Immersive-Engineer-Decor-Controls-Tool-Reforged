@@ -1,0 +1,5 @@
+Water Freezer
+Compact Processing Engine
+<&recipe>The Water Freezer performs compact chilling for powered liquid works.<br>
+<br>
+Use: Supply water and power to make ice in stages.<br>

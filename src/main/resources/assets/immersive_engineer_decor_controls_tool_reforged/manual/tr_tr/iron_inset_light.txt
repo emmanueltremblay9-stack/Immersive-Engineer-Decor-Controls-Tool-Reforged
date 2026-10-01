@@ -1,0 +1,5 @@
+Gömme Lamba
+Küçük çalışma lambası
+<&recipe>Bu blok; koridorlar, servis yolları ve çalışma bölmeleri için az yer kaplayan sanayi tipi aydınlatma sağlar.<br>
+<br>
+Kullanım: Odanın belirgin çalışma aydınlatmasına ihtiyaç duyduğu tavanlara, duvarlara veya kenarlara takın.<br>

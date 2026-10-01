@@ -1,0 +1,108 @@
+Iðnaðarbygging
+Verksmiðjuveggir og kantar
+Almennir byggingarhlutar ná yfir hurðir, glugga, ljós, viðvörunarskilti, kanta og burðarhluta sem tilheyra ekki sértækari kafla.<br>
+<br>
+Notaðu þessar síður fyrir verksmiðjuherbergi, þjónustuganga, hættumerkingar og hagnýt smáatriði í iðnaðarstíl.
+<np>
+Járnperuljós
+Fyrirferðarlítið vinnuljós
+<&iron_bulb_light>Þessi kubbur veitir fyrirferðarlitla iðnaðarlýsingu fyrir ganga, göngubrýr og vinnustæði.<br>
+<br>
+Notkun: Festu hann í loft, á veggi eða brúnir þar sem herbergið þarf skýra vinnulýsingu.<br>
+<np>
+Loftbrúnarljós
+Fyrirferðarlítið vinnuljós
+<&iron_ceiling_edge_light>Þessi kubbur veitir fyrirferðarlitla iðnaðarlýsingu fyrir ganga, göngubrýr og vinnustæði.<br>
+<br>
+Notkun: Festu hann í loft, á veggi eða brúnir þar sem herbergið þarf skýra vinnulýsingu.<br>
+<np>
+Innfellt gólfbrúnarljós
+Fyrirferðarlítið vinnuljós
+<&iron_floor_edge_light>Þessi kubbur veitir fyrirferðarlitla iðnaðarlýsingu fyrir ganga, göngubrýr og vinnustæði.<br>
+<br>
+Notkun: Festu hann í loft, á veggi eða brúnir þar sem herbergið þarf skýra vinnulýsingu.<br>
+<np>
+Innfellt ljós
+Fyrirferðarlítið vinnuljós
+<&iron_inset_light>Þessi kubbur veitir fyrirferðarlitla iðnaðarlýsingu fyrir ganga, göngubrýr og vinnustæði.<br>
+<br>
+Notkun: Festu hann í loft, á veggi eða brúnir þar sem herbergið þarf skýra vinnulýsingu.<br>
+<np>
+Skilti „Almenn viðvörun“
+Hættumerki
+<&sign_caution>Skiltið „Almenn viðvörun“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Hættuskilti
+Hættumerki
+<&sign_danger>Skiltið „Varúð, stórhættulegt svæði“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Skrautskilti
+Hættumerki
+<&sign_decor>Skiltaplatan (Engineer's decor) merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Varnarskilti
+Hættumerki
+<&sign_defense>Skiltið „Varúð, varnarkerfi framundan“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Útgönguskilti
+Hættumerki
+<&sign_exit>Þetta skilti merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Skilti „Eldhætta“
+Hættumerki
+<&sign_firehazard>Skiltið „Eldhætta“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Skilti „Frostviðvörun“
+Hættumerki
+<&sign_frost>Skiltið „Frostviðvörun“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Skilti um heitt yfirborð
+Hættumerki
+<&sign_hotsurface>Skiltið „Varúð, heitt yfirborð“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Skilti um spennuhafa vír
+Hættumerki
+<&sign_hotwire>Skiltið „Varúð, spennuhafa vír“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Skilti „Leysirhætta“
+Hættumerki
+<&sign_laser>Skiltið „Leysirhætta“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Töfrahættuskilti
+Hættumerki
+<&sign_magichazard>Skiltið „Varúð, töfrahætta“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Segulsviðsskilti
+Hættumerki
+<&sign_magneticfield>Skiltið „Varúð, sterkt segulsvið“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>
+Skilti „Geislavirknihætta“
+Hættumerki
+<&sign_radioactive>Skiltið „Geislavirknihætta“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>
+<np>

@@ -1,0 +1,5 @@
+Tree-fellin' contraption
+Gear fer the workshop deck
+<&recipe>Little tree feller be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Aim her at grown trees and gather the fallen loot separately.<br>

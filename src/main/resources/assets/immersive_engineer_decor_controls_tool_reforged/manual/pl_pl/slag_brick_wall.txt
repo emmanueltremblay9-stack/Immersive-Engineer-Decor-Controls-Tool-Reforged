@@ -1,0 +1,5 @@
+Murek z cegieł żużlowych
+Masywne mury fabryczne
+<&recipe>Ten blok zapewnia masywne szarobrązowe mury na fundamenty, ściany oporowe i starsze budynki warsztatowe.<br>
+<br>
+Użycie: Buduj z niego stare fundamenty, ściany oporowe i zabrudzone podłogi zakładów.<br>

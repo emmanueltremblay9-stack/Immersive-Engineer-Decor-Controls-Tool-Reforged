@@ -1,0 +1,5 @@
+Půlblok z pancéřového skla
+Chráněný výhled
+<&recipe>Tento blok zachovává výhled a současně ladí se zesílenou tovární konstrukcí.<br>
+<br>
+Použití: Použij jej tam, kde mají hráči vidět stroje přes ochrannou přepážku.<br>

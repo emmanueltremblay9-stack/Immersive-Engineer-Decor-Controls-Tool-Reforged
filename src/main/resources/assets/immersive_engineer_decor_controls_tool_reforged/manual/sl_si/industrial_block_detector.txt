@@ -1,0 +1,7 @@
+Detektor blokov
+Zaznavanje za signalizacijo
+<&recipe>Detektor blokov preverja, ali je prostor pred njim zaseden.<br>
+<br>
+Uporaba: Usmeri ga proti ploskvi stroja, zalogi ali varovanemu prostoru, ki ga želiš spremljati.<br>
+<br>
+Opombe: Oddaja signal, ko blok pred njim ni zrak.

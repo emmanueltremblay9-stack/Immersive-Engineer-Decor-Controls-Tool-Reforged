@@ -1,0 +1,5 @@
+Mineral-meltin' oven
+Small processin' contraption
+<&recipe>The mineral-meltin' oven works minerals at mighty heat in a small corner o' yer workshop.<br>
+<br>
+Orders: Feed mineral blocks and power aboard fer meltin' at high heat.<br>

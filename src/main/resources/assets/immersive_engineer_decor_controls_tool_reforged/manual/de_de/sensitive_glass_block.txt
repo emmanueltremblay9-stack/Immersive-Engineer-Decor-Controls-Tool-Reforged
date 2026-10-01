@@ -1,0 +1,7 @@
+Leuchtendes signalempfindliches Glas
+Signalglas
+<&recipe>Ein auf Redstone reagierender Glasblock lässt die Sicht frei und zeigt zugleich den Signalzustand an.<br>
+<br>
+Verwendung: Nutze ihn in Kontrollraumfenstern, beleuchteten Tafeln und geschützten Fabrikverglasungen.<br>
+<br>
+Hinweis: Ändert seinen Zustand durch Redstone-Signale in der Nähe.

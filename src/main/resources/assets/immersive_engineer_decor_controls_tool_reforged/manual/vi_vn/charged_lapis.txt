@@ -1,0 +1,7 @@
+Ngọc lưu ly tích năng
+Kinh nghiệm lưu trữ
+<&recipe>Ngọc lưu ly tích năng lưu một cấp kinh nghiệm được tạo bằng máy ép tâm trí.<br>
+<br>
+Cách dùng: Tiêu thụ để lấy lại một cấp, xóa hiệu ứng đang hoạt động và hồi một ít máu.<br>
+<br>
+Khung công thức hiển thị máy ép tâm trí vì ngọc lưu ly tích năng được tạo khi dùng dụng cụ đó với ngọc lưu ly và kinh nghiệm sẵn có.

@@ -1,0 +1,7 @@
+Analog Linky Receiver
+Linky controlz
+<&recipe>Linked receiver gives control panelz a visible remote target, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Tiptoe-use dat perl fer activatin da receiver remotely, meow.<br>
+<br>
+Kitty note: Dis receiver gives a full redstone signal when triggered.

@@ -1,0 +1,5 @@
+Lámina de madeira vella
+Madeira envellecida de obradoiro
+<&recipe>A lámina de madeira industrial vella achega madeira envellecida de obradoiro para chans, chanzos, portas e remates interiores acolledores.<br>
+<br>
+Uso: úsao en chans, escaleiras, portas e remates de obradoiros antigos.<br>

@@ -1,0 +1,7 @@
+Relái Cyswllt Analog
+Rheolaeth gysylltiedig
+<&recipe>Mae elfen ar ffurf relái yn rhoi pwynt switsio lleol cryno i adeiladau paneli.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos. Defnyddiwch flociau derbyn pan fo angen gweithredu â pherl gysylltiedig.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.

@@ -1,0 +1,7 @@
+Analoë Koppelontvanger
+Gekoppelde beheer
+<&recipe>’n Gekoppelde ontvanger gee beheerpanele ’n sigbare afgeleë teiken.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Gebruik die pêrel terwyl jy sluip om die ontvanger op afstand te aktiveer.<br>
+<br>
+Nota: hierdie ontvanger stuur ’n volle redstone-sein uit wanneer dit geaktiveer word.

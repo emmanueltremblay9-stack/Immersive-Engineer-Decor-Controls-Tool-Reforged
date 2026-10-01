@@ -1,0 +1,7 @@
+Gladene Lapislazuli
+Gspeichereti Erfahrig
+<&recipe>Gladene Lapislazuli speicheret e Erfahrigsstufe, wo mit de Gedankepresse iibracht wird.<br>
+<br>
+Verwendig: Verbruuch en, um e Stufe zruggzübercho, aktivi Effekt loszwerde und chli Gsundheit uufzfülle.<br>
+<br>
+D'Rezeptaazeig zeigt d'Gedankepresse, will gladene Lapislazuli mit dem Wärchzüüg entsteht, wenn Lapislazuli und Erfahrig vorhanden sind.

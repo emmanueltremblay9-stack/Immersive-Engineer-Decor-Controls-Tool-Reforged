@@ -1,0 +1,5 @@
+Bloc de formigó armat
+Formigó reforçat
+<&recipe>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>

@@ -1,0 +1,7 @@
+Regensensor
+Tekenmeten
+<&recipe>En Wedersensor maakt Regen op sien Steed to Redstone.<br>
+<br>
+Bruuk: Maak em dor fast, wo de Block över em Regen kriegen kann.<br>
+<br>
+Anmarken: Pröövt Regen över den Sensor.

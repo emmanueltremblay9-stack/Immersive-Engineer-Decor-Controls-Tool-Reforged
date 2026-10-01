@@ -1,0 +1,5 @@
+Tábuas de madeira antiga
+Madeira envelhecida de oficina
+<&recipe>As tábuas industriais de madeira antiga acrescentam madeira envelhecida de oficina para pisos, degraus, portas e remates internos aconchegantes.<br>
+<br>
+Uso: Usa em pisos, escadas, portas e remates de oficinas antigas.<br>

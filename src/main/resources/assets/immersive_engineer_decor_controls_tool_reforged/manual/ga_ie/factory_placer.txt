@@ -1,0 +1,5 @@
+Leagthóir Bloc Monarchan
+Áis urláir ceardlainne
+<&recipe>Cuireann an bloc seo bloic óna stoc inmheánach ann nuair a ghníomhachtaítear é.<br>
+<br>
+Úsáid: dírigh an aghaidh oibre ar an spás sprice agus cuir cruacha inleagtha isteach.<br>

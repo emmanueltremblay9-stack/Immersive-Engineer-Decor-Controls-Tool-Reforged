@@ -1,0 +1,7 @@
+REDIA-Werkzeug
+Diamantbeschichteter Allrounder
+<&recipe>Das REDIA-Werkzeug ist ein langlebiges Multifunktionswerkzeug auf Diamantniveau für Arbeiten an vorübergehenden Baustellen, Werkstätten und Mineneingängen.<br>
+<br>
+Verwendung: Benutze es mit Fackeln im Inventar, um eine Fackel zu platzieren, ohne REDIA abzunutzen. Benutze es beim Schleichen, um Pflanzen zu scheren oder den Boden zwischen Erde, Ackerland, grober Erde und Trampelpfad zu wechseln. Die ursprüngliche Axt-Ersatzfunktion greift an der Unterseite. Schleiche beim Stammabbau, um verbundene Baumblöcke zu fällen.<br>
+<br>
+Repariere es mit Diamanten. Das Überreparieren eines vollständig reparierten REDIA-Werkzeugs stellt die ursprüngliche Fortschrittsfolge von Effizienz und Glück wieder her.

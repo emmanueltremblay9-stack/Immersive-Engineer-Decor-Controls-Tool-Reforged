@@ -1,0 +1,5 @@
+Prorezane klinker cigle
+Zidovi potamneli od čađi
+<&recipe>Klinker cigle sa uspravnim prorezima unose zidarstvo potamnelo od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>

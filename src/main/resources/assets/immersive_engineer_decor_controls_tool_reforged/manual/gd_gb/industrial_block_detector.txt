@@ -1,0 +1,7 @@
+Mothaiche bhlocaichean
+Mothachadh chomharran
+<&recipe>Dearbhaidh mothaiche bhlocaichean a bheil rudeigin san àite air a bheulaibh.<br>
+<br>
+Cleachdadh: cuir e a' coimhead air aghaidh inneil, bufair no àite fo dhìon air a bheil thu airson sùil a chumail.<br>
+<br>
+Nòtaichean: bheir e cumhachd mura h-eil am bloca air a bheulaibh na adhar.

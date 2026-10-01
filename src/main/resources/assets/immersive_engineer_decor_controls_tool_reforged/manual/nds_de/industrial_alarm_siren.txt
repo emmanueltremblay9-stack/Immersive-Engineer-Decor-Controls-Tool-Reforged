@@ -1,0 +1,7 @@
+Alarmsireen
+Tekentorüchmellen
+<&recipe>De Alarmsireen is en Redstone-Wieser op de Siet vun en Block. Ehr Stroomstand folgt dat Signaal vun den Block, an den se fastmaakt is.<br>
+<br>
+Maak se an en faste Siet un geev Stroom, üm Dören, Maschinen, Alarm oder Paneelen to överwaken.<br>
+<br>
+De Sireen frischt sik eenmaal per Sekunn op, solang dat Signaal aktiv is.

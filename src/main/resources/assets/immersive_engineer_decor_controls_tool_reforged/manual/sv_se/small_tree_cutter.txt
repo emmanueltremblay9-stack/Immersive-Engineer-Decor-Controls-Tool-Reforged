@@ -1,0 +1,5 @@
+Trädfällare
+Hjälpmedel för verkstadsgolvet
+<&recipe>Den lilla trädfällaren är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Rikta den mot fullvuxna träd och samla in tappade föremål separat.<br>

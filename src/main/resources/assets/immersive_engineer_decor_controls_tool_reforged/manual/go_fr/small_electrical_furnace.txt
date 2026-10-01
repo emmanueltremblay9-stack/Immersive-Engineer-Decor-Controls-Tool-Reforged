@@ -1,0 +1,5 @@
+Fournè eletriqe
+Unitë de tratement compacte
+<&recipe>Le Fournè eletriqe fait de la fonte alimentée par FE den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Bailléz-li des FE e eune entrée qe n'en peut fondr.<br>

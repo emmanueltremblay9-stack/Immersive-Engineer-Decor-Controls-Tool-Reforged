@@ -1,0 +1,7 @@
+Torunemi
+Teknaskynjan
+<&recipe>Ein torunemi gevur ávaringar í toruveðri.<br>
+<br>
+Nýtsla: Set hann undir opnum himli og bind hann til lampur ella ávaringar.<br>
+<br>
+Viðmerking: Krevur toru og atgongd til himmalin.

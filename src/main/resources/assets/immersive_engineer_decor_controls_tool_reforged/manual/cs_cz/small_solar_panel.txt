@@ -1,0 +1,5 @@
+Solární panel
+Vybavení provozu
+<&recipe>Malý solární panel patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Zajisti mu otevřené nebe a připoj zařízení s nízkou spotřebou.<br>

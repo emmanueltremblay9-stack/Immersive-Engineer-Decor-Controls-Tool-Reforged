@@ -1,0 +1,3 @@
+Burdin legar lodia
+Berreraikitako fabrikazio-multzoak erabiltzen duen ingeniari-tresnen materiala.
+<&recipe>Burdinazko lingoteak egiteko urtu<br>daiteke, baina ez da egokia<br>materialen prozesamendu aurreraturako.

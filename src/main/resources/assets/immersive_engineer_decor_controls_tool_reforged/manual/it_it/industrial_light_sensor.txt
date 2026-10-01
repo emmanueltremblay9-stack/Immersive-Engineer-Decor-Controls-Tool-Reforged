@@ -1,0 +1,7 @@
+Sensore di luce
+Rilevamento del segnale
+<&recipe>Un sensore di luce trasforma la luminosità locale in un comando redstone.<br>
+<br>
+Uso: impiegalo per lampade automatiche, imposte e circuiti di visibilità.<br>
+<br>
+Note: si attiva con luminosità grezza pari o superiore a 8.

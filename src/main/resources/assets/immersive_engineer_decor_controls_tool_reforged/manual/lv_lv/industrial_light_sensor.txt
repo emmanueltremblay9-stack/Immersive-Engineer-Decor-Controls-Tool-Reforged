@@ -1,0 +1,7 @@
+Apgaismojuma sensors
+Signāla uztveršana
+<&recipe>Apgaismojuma sensors pārvērš vietējo spilgtumu Redstone vadībā.<br>
+<br>
+Lietošana: izmanto automātiskām lampām, slēģiem un redzamības ķēdēm.<br>
+<br>
+Piezīmes: izvada signālu, ja neapstrādātais spilgtuma līmenis ir 8 vai lielāks.

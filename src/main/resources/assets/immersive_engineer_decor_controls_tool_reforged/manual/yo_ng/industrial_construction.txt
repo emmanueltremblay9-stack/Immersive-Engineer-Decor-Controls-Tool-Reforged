@@ -1,0 +1,108 @@
+Ìkọ́lé Ilé Iṣẹ́
+Àwọn ògiri àti ọ̀ṣọ́ etí ilé iṣẹ́
+Ohun èlò ìkọ́lé gbogbogbò bo àwọn ìlẹ̀kùn, fèrèsé, ìmọ́lẹ̀, àmì ìkìlọ̀, ọ̀ṣọ́ etí, àti apá ìkọ́lé tí kò sí lábẹ́ ẹ̀ka pàtó mìíràn.<br>
+<br>
+Lo àwọn ojú ìwé yìí fún yàrá ilé iṣẹ́, ọ̀nà ìtọ́jú, fífi àmì sí ewu, àti iṣẹ́ àlàyé ilé iṣẹ́ tó wúlò.
+<np>
+Àtùpà Bọ́ọ̀bù Irin
+Ìmọ́lẹ̀ iṣẹ́ kékeré
+<&iron_bulb_light>Búlọ́ọ̀kù yìí ń pèsè ìmọ́lẹ̀ ilé iṣẹ́ kékeré fún àwọn ọ̀nà, ọ̀nà ìrìn gíga, àti ibi iṣẹ́.<br>
+<br>
+Lílò: So ó mọ́ àjà, ògiri, tàbí etí níbi tí yàrá ti nílò ìmọ́lẹ̀ iṣẹ́ tó ṣe kedere.<br>
+<np>
+Ìmọ́lẹ̀ Etí Àjà
+Ìmọ́lẹ̀ iṣẹ́ kékeré
+<&iron_ceiling_edge_light>Búlọ́ọ̀kù yìí ń pèsè ìmọ́lẹ̀ ilé iṣẹ́ kékeré fún àwọn ọ̀nà, ọ̀nà ìrìn gíga, àti ibi iṣẹ́.<br>
+<br>
+Lílò: So ó mọ́ àjà, ògiri, tàbí etí níbi tí yàrá ti nílò ìmọ́lẹ̀ iṣẹ́ tó ṣe kedere.<br>
+<np>
+Ìmọ́lẹ̀ Etí Ilẹ̀ Tí A Rì Sínú
+Ìmọ́lẹ̀ iṣẹ́ kékeré
+<&iron_floor_edge_light>Búlọ́ọ̀kù yìí ń pèsè ìmọ́lẹ̀ ilé iṣẹ́ kékeré fún àwọn ọ̀nà, ọ̀nà ìrìn gíga, àti ibi iṣẹ́.<br>
+<br>
+Lílò: So ó mọ́ àjà, ògiri, tàbí etí níbi tí yàrá ti nílò ìmọ́lẹ̀ iṣẹ́ tó ṣe kedere.<br>
+<np>
+Ìmọ́lẹ̀ Tí A Rì Sínú
+Ìmọ́lẹ̀ iṣẹ́ kékeré
+<&iron_inset_light>Búlọ́ọ̀kù yìí ń pèsè ìmọ́lẹ̀ ilé iṣẹ́ kékeré fún àwọn ọ̀nà, ọ̀nà ìrìn gíga, àti ibi iṣẹ́.<br>
+<br>
+Lílò: So ó mọ́ àjà, ògiri, tàbí etí níbi tí yàrá ti nílò ìmọ́lẹ̀ iṣẹ́ tó ṣe kedere.<br>
+<np>
+Àmì "Ìkìlọ̀ Gbogbogbò
+Àmì ewu
+<&sign_caution>Àmì "Ìkìlọ̀ Gbogbogbò", àmì ìṣọ́ra, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Ewu
+Àmì ewu
+<&sign_danger>Àmì "Ṣọ́ra, Ibẹ̀ Léwu Gan-an", àmì ewu, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Ọ̀ṣọ́
+Àmì ewu
+<&sign_decor>Pátákó Àmì (Ọ̀ṣọ́ Onímọ̀ Ẹ̀rọ), àmì ọ̀ṣọ́, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Ìdábòbò
+Àmì ewu
+<&sign_defense>Àmì "Ṣọ́ra, Ètò Ààbò Wà Níwájú", àmì ìdábòbò, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Ọ̀nà Àbájáde
+Àmì ewu
+<&sign_exit>Àmì yìí ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì "Àmì Ewu Iná
+Àmì ewu
+<&sign_firehazard>Àmì "Ewu Iná", àmì ewu iná, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì "Àmì Ìkìlọ̀ Òtútù
+Àmì ewu
+<&sign_frost>Àmì "Ìkìlọ̀ Òtútù Dídì", àmì ìkìlọ̀ òtútù, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Ojú Gbígbóná
+Àmì ewu
+<&sign_hotsurface>Àmì "Ṣọ́ra, Ojú Nǹkan Gbóná", àmì ojú gbígbóná, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Wáyà Alágbára
+Àmì ewu
+<&sign_hotwire>Àmì "Ṣọ́ra, Wáyà Iná", àmì wáyà alágbára, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì "Àmì Ewu Lésà
+Àmì ewu
+<&sign_laser>Àmì "Ewu Ìtànṣán Lésà", àmì ewu lésà, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Ewu Idán
+Àmì ewu
+<&sign_magichazard>Àmì "Ṣọ́ra, Ewu Idán", àmì ewu idán, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì Ààyè Oofa
+Àmì ewu
+<&sign_magneticfield>Àmì "Ṣọ́ra, Agbègbè Oofa Alágbára", àmì ààyè oofa, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>
+Àmì "Ewu Ìtànṣán Ìparun
+Àmì ewu
+<&sign_radioactive>Àmì "Ewu Ìtànṣán Ìparun", àmì ìtànṣán ìparun, ń fi àmì sí àwọn ewu, àbájáde, àti agbègbè iṣẹ́ pẹ̀lú àmì ojú tó yẹ fún ààbò ilé iṣẹ́.<br>
+<br>
+Lílò: Gbé e lẹ́gbẹ̀ẹ́ ewu, àbájáde, ẹ̀rọ, àti agbègbè tí a díwọ̀ sí.<br>
+<np>

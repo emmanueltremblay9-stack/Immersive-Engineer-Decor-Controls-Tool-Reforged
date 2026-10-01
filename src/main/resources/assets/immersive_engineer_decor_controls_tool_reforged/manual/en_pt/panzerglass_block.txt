@@ -1,0 +1,5 @@
+Block o' armoured porthole glass
+A guarded view
+<&recipe>This block lets ye see through while keepin' the look o' reinforced factory walls.<br>
+<br>
+Orders: Use her where sailors must see machinery through a protected barrier.<br>

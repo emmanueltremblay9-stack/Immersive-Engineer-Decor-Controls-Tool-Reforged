@@ -1,0 +1,7 @@
+Glos-Intervallsignal
+Zeitgsteuerter Impuls
+<&recipe>A kloana Zeitschalter liefert an festgelegten Redstone-Impuls.<br>
+<br>
+So geht's: Nutz'n, wenn a kloana Mechanismus regelmäßig oder verzögert gsteuert werdn soll.<br>
+<br>
+Hinweis: Nutzt festgelegte Redstone-Impulse.

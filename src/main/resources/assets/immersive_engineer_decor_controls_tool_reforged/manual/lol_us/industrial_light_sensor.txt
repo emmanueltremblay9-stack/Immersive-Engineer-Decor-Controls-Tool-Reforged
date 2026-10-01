@@ -1,0 +1,7 @@
+Light Sniffer Thing
+Signal sniffin
+<&recipe>Light sensor turns local brightness into redstone controlz, kitty.<br>
+<br>
+How to: Use fer automatic lampz, shutters, an visibility circuits, meow.<br>
+<br>
+Kitty note: Powers up at raw brightness 8 or moar.

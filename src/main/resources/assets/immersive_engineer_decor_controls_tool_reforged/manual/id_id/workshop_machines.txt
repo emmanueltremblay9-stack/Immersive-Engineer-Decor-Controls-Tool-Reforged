@@ -1,0 +1,107 @@
+Mesin Bengkel
+Mesin serta masukan/keluaran bengkel
+Mesin bengkel menyediakan kerajinan, pemindahan barang, peleburan, pembuangan, pengumpulan, dan pekerjaan tambahan yang ringkas dalam ruang sebesar satu blok.<br>
+<br>
+Buka halaman berikut untuk melihat resep, tampilan, latar cerita, dan catatan penggunaan praktis setiap mesin.
+<np>
+Meja Baja
+Perabot bengkel
+<&steel_table>Blok ini adalah perabot bengkel praktis untuk ruang kerja dan sudut perawatan.<br>
+<br>
+Penggunaan: letakkan di samping bangku kerja, peti, dan mesin ringkas.<br>
+<np>
+Meja Kayu Olahan
+Perabot bengkel
+<&treated_wood_table>Blok ini adalah perabot bengkel praktis untuk ruang kerja dan sudut perawatan.<br>
+<br>
+Penggunaan: letakkan di samping bangku kerja, peti, dan mesin ringkas.<br>
+<np>
+Bangku Kayu Olahan
+Perabot bengkel
+<&treated_wood_stool>Blok ini adalah perabot bengkel praktis untuk ruang kerja dan sudut perawatan.<br>
+<br>
+Penggunaan: letakkan di samping bangku kerja, peti, dan mesin ringkas.<br>
+<np>
+Meja Kerajinan Logam
+Meja kerja pelat
+<&metal_crafting_table>Meja kerajinan logam adalah meja bengkel yang diperkuat dengan slot palu, kisi kerajinan 3x3, dan slot keluaran yang jelas.<br>
+<br>
+Penggunaan: gunakan kisi untuk kerajinan biasa. Untuk pelat IE, letakkan palu insinyur di slot perkakas dan bahan pelat dalam kisi sebelum mengambil hasilnya. Dekorasi baja menggunakan pelat baja untuk tiang, jalur servis, jendela, pintu, pagar pengaman, dan bagian baja lainnya.<br>
+<np>
+Corong Pabrik
+Peralatan lantai bengkel
+<&factory_hopper>Blok ini memindahkan tumpukan barang melalui selubung industri yang lebih ringkas.<br>
+<br>
+Penggunaan: arahkan ke jalur persediaan, lalu atur jangkauan, jumlah tumpukan, waktu, dan mode redstone melalui layarnya.<br>
+<np>
+Penjatuh Pabrik
+Peralatan lantai bengkel
+<&factory_dropper>Blok ini mengeluarkan barang yang tersimpan dari sisi yang diarahkan.<br>
+<br>
+Penggunaan: arahkan bagian depan ke titik pengeluaran, isi slot internal, lalu atur gaya, sudut, jeda, logika penyaring, dan mode redstone melalui layarnya.<br>
+<np>
+Pemasang Blok Pabrik
+Peralatan lantai bengkel
+<&factory_placer>Blok ini memasang blok dari stok internal saat diaktifkan.<br>
+<br>
+Penggunaan: arahkan sisi kerja ke ruang sasaran dan isi dengan tumpukan yang dapat dipasang.<br>
+<np>
+Pemecah Blok
+Peralatan lantai bengkel
+<&small_block_breaker>Pemecah blok kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: arahkan sisi kerja ke blok yang akan disingkirkan.<br>
+<np>
+Pembakar Limbah
+Unit pemrosesan ringkas
+<&small_waste_incinerator>Pembakar limbah memusnahkan barang yang tidak diinginkan dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: masukkan hanya barang yang tidak diinginkan ke antreannya.<br>
+<np>
+Tungku Laboratorium
+Unit pemrosesan ringkas
+<&small_lab_furnace>Tungku laboratorium menangani peleburan ringkas berbahan bakar padat dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: gunakan bahan bakar padat untuk melebur dalam kelompok kecil.<br>
+<np>
+Tungku Listrik
+Unit pemrosesan ringkas
+<&small_electrical_furnace>Tungku listrik menangani peleburan ringkas bertenaga FE dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: sediakan FE dan masukan peleburan yang sesuai.<br>
+<np>
+Pelebur Mineral
+Unit pemrosesan ringkas
+<&small_mineral_smelter>Pelebur mineral menangani pemrosesan mineral bersuhu tinggi dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: masukkan blok mineral dan daya untuk pencairan bersuhu tinggi.<br>
+<np>
+Pembeku Air
+Unit pemrosesan ringkas
+<&small_freezer>Pembeku air menangani pendinginan ringkas untuk instalasi cairan bertenaga.<br>
+<br>
+Penggunaan: sediakan air dan daya untuk produksi es bertahap.<br>
+<np>
+Cairan Pasif
+Perlengkapan jalur cairan
+<&passive_fluid_accumulator>Pengumpul cairan pasif adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: pasang bersebelahan dengan sumber air yang sesuai dan sisakan ruang untuk pengambilan cairan.<br>
+<np>
+Panel Surya
+Peralatan lantai bengkel
+<&small_solar_panel>Panel surya kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: berikan akses ke langit terbuka dan hubungkan peralatan berdaya rendah.<br>
+<np>
+Mesin Pemerah Susu
+Peralatan lantai bengkel
+<&small_milking_machine>Mesin pemerah susu kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: pasang di dekat sapi dan sediakan cara mengambil wadah susu atau cairannya.<br>
+<np>
+Penebang Pohon
+Peralatan lantai bengkel
+<&small_tree_cutter>Penebang pohon kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: arahkan ke pohon yang sudah tumbuh dan kumpulkan barang jatuh secara terpisah.<br>

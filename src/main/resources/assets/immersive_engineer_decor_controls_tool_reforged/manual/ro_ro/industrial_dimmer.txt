@@ -1,0 +1,7 @@
+Regulator de intensitate
+Semnal variabil
+<&recipe>O comandă rotativă reglează intensitatea redstone de pe fața unui panou compact.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a mări treptat ieșirea, care revine la zero după intensitatea maximă.<br>
+<br>
+Observații: Emite o intensitate de la 0 la 15.

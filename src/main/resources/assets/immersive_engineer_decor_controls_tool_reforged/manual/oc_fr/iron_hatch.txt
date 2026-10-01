@@ -1,0 +1,5 @@
+Trapa de fèrre inversada
+Ponch d’accès industrial
+<&recipe>Aqueste blòc fornís un accès solid a las salas de servici, als passatges verticals, als teulats e a las enclausuras de maquinas.<br>
+<br>
+Utilizacion : installa-lo ont cal una dobertura contrarotlada per l’entreten.<br>

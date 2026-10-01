@@ -1,0 +1,3 @@
+Granule grosiere de fier
+Material pentru uneltele inginerului, folosit de setul de rețete reconstruit.
+<&recipe>Pot fi topite în lingouri<br>de fier, dar nu sunt<br>potrivite pentru prelucrări avansate.

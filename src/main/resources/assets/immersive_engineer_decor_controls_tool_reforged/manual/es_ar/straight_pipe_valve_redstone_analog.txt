@@ -1,0 +1,5 @@
+Válvula analógica de fluidos
+Equipamiento de tuberías de fluidos
+<&recipe>La válvula analógica de fluidos es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Alineá la válvula con la dirección de flujo prevista.<br>

@@ -1,0 +1,7 @@
+Omhulde Pulsontvanger
+Gekoppelde beheer
+<&recipe>’n Omhulde gekoppelde pulsontvanger gee afgeleë panele ’n kort redstone-sneller.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Regsklik dit of aktiveer die gekoppelde pêrel om ’n kort puls uit te stuur.<br>
+<br>
+Nota: die puls stel homself ná sy geskeduleerde tydsduur terug.

@@ -1,0 +1,5 @@
+Panel Solar
+Cyfleustod llawr gweithdy
+<&recipe>Bloc cyfleustod llawr gweithdy yw'r Panel Solar Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Rhowch fynediad at awyr agored iddo a chysylltwch offer sydd angen ychydig o bŵer.<br>

@@ -1,0 +1,5 @@
+Fabrikako bloke-kokagailua
+Lantegiko tresneria
+<&recipe>Bloke honek barneko erreserbako blokeak instalatzen ditu aktibatzean.<br>
+<br>
+Erabilera: zuzendu laneko aurpegia helburuko espaziora eta bete jar daitezkeen pilekin.<br>

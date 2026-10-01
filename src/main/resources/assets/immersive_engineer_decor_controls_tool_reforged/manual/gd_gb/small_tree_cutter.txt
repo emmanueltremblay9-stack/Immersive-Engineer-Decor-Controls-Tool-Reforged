@@ -1,0 +1,5 @@
+Gearradair chraobhan
+Goireas làir bùth-obrach
+<&recipe>Tha an Gearradair beag chraobhan na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: cuir e a dh'ionnsaigh chraobhan fàsta agus cruinnich na nithean a thuiteas air leth.<br>

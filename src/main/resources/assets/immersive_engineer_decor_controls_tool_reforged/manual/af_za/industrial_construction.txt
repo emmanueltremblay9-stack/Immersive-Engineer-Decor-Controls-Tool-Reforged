@@ -1,0 +1,108 @@
+Industriële Konstruksie
+Fabrieksmure en afwerking
+Algemene boutoebehore sluit deure, vensters, ligte, waarskuwingstekens, afwerking en struktuuronderdele in wat nie in ’n meer spesifieke afdeling hoort nie.<br>
+<br>
+Gebruik hierdie bladsye vir fabrieksvertrekke, diensgange, gevaarmerke en praktiese industriële besonderhede.
+<np>
+Ysterbolletjielig
+Kompakte werkslig
+<&iron_bulb_light>Hierdie blok verskaf kompakte industriële beligting vir gange, loopbrûe en werkbaaie.<br>
+<br>
+Gebruik: monteer dit op plafonne, mure of rande waar die vertrek duidelike werksbeligting nodig het.<br>
+<np>
+Plafonrandlig
+Kompakte werkslig
+<&iron_ceiling_edge_light>Hierdie blok verskaf kompakte industriële beligting vir gange, loopbrûe en werkbaaie.<br>
+<br>
+Gebruik: monteer dit op plafonne, mure of rande waar die vertrek duidelike werksbeligting nodig het.<br>
+<np>
+Ingesonke Vloerrandlig
+Kompakte werkslig
+<&iron_floor_edge_light>Hierdie blok verskaf kompakte industriële beligting vir gange, loopbrûe en werkbaaie.<br>
+<br>
+Gebruik: monteer dit op plafonne, mure of rande waar die vertrek duidelike werksbeligting nodig het.<br>
+<np>
+Ingesonke Lig
+Kompakte werkslig
+<&iron_inset_light>Hierdie blok verskaf kompakte industriële beligting vir gange, loopbrûe en werkbaaie.<br>
+<br>
+Gebruik: monteer dit op plafonne, mure of rande waar die vertrek duidelike werksbeligting nodig het.<br>
+<np>
+Teken «Algemene Waarskuwing»
+Gevaarmerk
+<&sign_caution>Die Teken «Algemene Waarskuwing» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Gevaarteken
+Gevaarmerk
+<&sign_danger>Die Teken «Pasop, Baie Gevaarlik Daar» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Dekorteken
+Gevaarmerk
+<&sign_decor>Die Tekenplaat (Engineer’s Decor) merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Verdedigingsteken
+Gevaarmerk
+<&sign_defense>Die Teken «Pasop, Verdedigingstelsel Voor» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Uitgangsteken
+Gevaarmerk
+<&sign_exit>Hierdie teken merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Teken «Brandgevaar»
+Gevaarmerk
+<&sign_firehazard>Die Teken «Brandgevaar» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Teken «Rypwaarskuwing»
+Gevaarmerk
+<&sign_frost>Die Teken «Rypwaarskuwing» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Warmoppervlakteken
+Gevaarmerk
+<&sign_hotsurface>Die Teken «Pasop, Warm Oppervlak» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Lewendigedraadteken
+Gevaarmerk
+<&sign_hotwire>Die Teken «Pasop, Lewendige Draad» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Teken «Lasergevaar»
+Gevaarmerk
+<&sign_laser>Die Teken «Lasergevaar» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Magiesegevaarteken
+Gevaarmerk
+<&sign_magichazard>Die Teken «Pasop, Magiese Gevaar» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Magneetveldteken
+Gevaarmerk
+<&sign_magneticfield>Die Teken «Pasop, Sterk Magneetveld» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>
+Teken «Radioaktiewe Gevaar»
+Gevaarmerk
+<&sign_radioactive>Die Teken «Radioaktiewe Gevaar» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>
+<np>

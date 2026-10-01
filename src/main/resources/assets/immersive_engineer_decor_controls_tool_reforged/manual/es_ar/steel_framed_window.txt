@@ -1,0 +1,5 @@
+Ventana con marco de acero
+Visibilidad protegida
+<&recipe>Este bloque permite ver a través de la estructura sin romper la estética reforzada de la fábrica.<br>
+<br>
+Uso: Usalo para que los jugadores puedan observar la maquinaria a través de una barrera protectora.<br>

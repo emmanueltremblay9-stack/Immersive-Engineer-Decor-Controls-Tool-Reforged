@@ -1,0 +1,7 @@
+Taula de treball del metall
+Estació de treball per a plaques
+<&recipe>La taula de metall té ranura de martell, graella 3x3 completa i eixida.<br>
+<br>
+Useu la graella com una taula normal. Per a plaques IE, poseu el martell denginyer a la ranura, el material a la graella i preneu la placa de leixida.<br>
+<br>
+Les decoracions dacer usen plaques formades en esta taula.

@@ -1,0 +1,5 @@
+Trjáfellingarvél
+Verkstæðisbúnaður
+<&recipe>Litla trjáfellingarvélin er nytjakubbur á verkstæði fyrir smíði, geymslu, lagningu, brot, söfnun eða fyrirferðarlitla sjálfvirkni.<br>
+<br>
+Notkun: Beindu henni að fullvöxnum trjám og safnaðu föllnum hlutum sérstaklega.<br>

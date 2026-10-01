@@ -1,0 +1,5 @@
+Laboratórna pec
+Kompaktná spracovacia jednotka
+<&recipe>Laboratórna pec vykonáva menšie taviace práce s tuhým palivom a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Na tavenie malých dávok použi tuhé palivo.<br>

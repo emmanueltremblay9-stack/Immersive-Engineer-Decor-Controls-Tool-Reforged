@@ -1,0 +1,5 @@
+Raudoitettu betonikuutio
+Raudoitettu betoni
+<&recipe>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>

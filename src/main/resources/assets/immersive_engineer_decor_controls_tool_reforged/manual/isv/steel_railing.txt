@@ -1,0 +1,5 @@
+Staljna zaščitna ograda
+Dodatok obslužnogo pristupa
+<&recipe>Sej blok tvori jasno vidime obslužne puti okolo mašin.<br>
+<br>
+Upotrěbjenje: Postavi go dlja obslužnogo pristupa okolo mašin, vrhnjih etažej i servisnyh šaht.<br>

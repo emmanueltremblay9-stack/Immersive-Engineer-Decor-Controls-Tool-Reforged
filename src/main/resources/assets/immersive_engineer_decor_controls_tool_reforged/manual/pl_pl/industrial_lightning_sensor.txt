@@ -1,0 +1,7 @@
+Wykrywacz burz
+Wykrywanie sygnałów
+<&recipe>Czujnik burzy uruchamia ostrzeżenia podczas wyładowań atmosferycznych.<br>
+<br>
+Użycie: Postaw go pod otwartym niebem i podłącz do lamp lub alarmów.<br>
+<br>
+Uwagi: Wymaga burzy i dostępu do nieba.

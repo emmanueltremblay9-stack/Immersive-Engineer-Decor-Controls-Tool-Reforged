@@ -1,0 +1,5 @@
+Laborategiko labea
+Prozesatze-unitate trinkoa
+<&recipe>Laborategiko labeak erregai solido bidezko urtze-lan trinkoak egiten ditu lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: erabili erregai solidoa urtze sorta trinkoetarako.<br>

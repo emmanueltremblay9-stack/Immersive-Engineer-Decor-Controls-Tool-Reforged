@@ -1,0 +1,5 @@
+Fera ampollumigilo
+Kompakta laborlumo
+<&recipe>Ĉi tiu bloko provizas kompaktan industrian lumigon por koridoroj, paspontoj kaj laborejoj.<br>
+<br>
+Uzado: muntu ĝin sur plafonoj, muroj aŭ randoj kie la ĉambro bezonas klaran laborlumon.<br>

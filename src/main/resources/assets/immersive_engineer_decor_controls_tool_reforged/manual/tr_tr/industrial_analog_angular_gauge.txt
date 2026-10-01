@@ -1,0 +1,7 @@
+Analog Gösterge
+Sinyal göstergesi
+<&recipe>Kontrol odasına uygun küçük gösterge, redstone gücünü anlaşılır bir panel değeri olarak gösterir.<br>
+<br>
+Kullanım: Yakındaki redstone gücünün bir bakışta kontrol edilebileceği yere takın.<br>
+<br>
+Notlar: Yakındaki redstone gücünü 0 ile 15 arasında okur.

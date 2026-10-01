@@ -1,0 +1,108 @@
+Adeiladu Diwydiannol
+Waliau ac ymylon addurnol ffatri
+Mae elfennau adeiladu cyffredinol yn cynnwys drysau, ffenestri, goleuadau, arwyddion rhybudd, ymylon addurnol a rhannau adeileddol nad ydynt yn perthyn i adran fwy penodol.<br>
+<br>
+Defnyddiwch y tudalennau hyn ar gyfer ystafelloedd ffatri, coridorau gwasanaethu, marcio peryglon a manylion diwydiannol ymarferol.
+<np>
+Golau Bwlb Haearn
+Golau gwaith cryno
+<&iron_bulb_light>Mae'r bloc hwn yn darparu goleuadau diwydiannol cryno ar gyfer coridorau, llwyfannau cerdded a mannau gwaith.<br>
+<br>
+Defnydd: Gosodwch ef ar nenfydau, waliau neu ymylon lle mae angen golau gwaith clir yn yr ystafell.<br>
+<np>
+Golau Ymyl Nenfwd
+Golau gwaith cryno
+<&iron_ceiling_edge_light>Mae'r bloc hwn yn darparu goleuadau diwydiannol cryno ar gyfer coridorau, llwyfannau cerdded a mannau gwaith.<br>
+<br>
+Defnydd: Gosodwch ef ar nenfydau, waliau neu ymylon lle mae angen golau gwaith clir yn yr ystafell.<br>
+<np>
+Golau Cilfachog Ymyl Llawr
+Golau gwaith cryno
+<&iron_floor_edge_light>Mae'r bloc hwn yn darparu goleuadau diwydiannol cryno ar gyfer coridorau, llwyfannau cerdded a mannau gwaith.<br>
+<br>
+Defnydd: Gosodwch ef ar nenfydau, waliau neu ymylon lle mae angen golau gwaith clir yn yr ystafell.<br>
+<np>
+Golau Cilfachog
+Golau gwaith cryno
+<&iron_inset_light>Mae'r bloc hwn yn darparu goleuadau diwydiannol cryno ar gyfer coridorau, llwyfannau cerdded a mannau gwaith.<br>
+<br>
+Defnydd: Gosodwch ef ar nenfydau, waliau neu ymylon lle mae angen golau gwaith clir yn yr ystafell.<br>
+<np>
+Arwydd "Rhybudd Cyffredinol
+Marciwr perygl
+<&sign_caution>Mae'r Arwydd "Rhybudd Cyffredinol" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Perygl
+Marciwr perygl
+<&sign_danger>Mae'r Arwydd "Rhybudd: Perygl Difrifol Yno" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Addurnol
+Marciwr perygl
+<&sign_decor>Mae'r Plât Arwydd (Engineer's decor) yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Amddiffyn
+Marciwr perygl
+<&sign_defense>Mae'r Arwydd "Rhybudd: System Amddiffyn o'ch Blaen" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Allanfa
+Marciwr perygl
+<&sign_exit>Mae'r arwydd hwn yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd "Perygl Tân
+Marciwr perygl
+<&sign_firehazard>Mae'r Arwydd "Perygl Tân" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd "Rhybudd Rhew
+Marciwr perygl
+<&sign_frost>Mae'r Arwydd "Rhybudd Rhew" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Arwyneb Poeth
+Marciwr perygl
+<&sign_hotsurface>Mae'r Arwydd "Rhybudd: Arwyneb Poeth" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Gwifren Fyw
+Marciwr perygl
+<&sign_hotwire>Mae'r Arwydd "Rhybudd: Gwifren Fyw" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd "Perygl Laser
+Marciwr perygl
+<&sign_laser>Mae'r Arwydd "Perygl Laser" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Perygl Hudol
+Marciwr perygl
+<&sign_magichazard>Mae'r Arwydd "Rhybudd: Perygl Hudol" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd Maes Magnetig
+Marciwr perygl
+<&sign_magneticfield>Mae'r Arwydd "Rhybudd: Maes Magnetig Cryf" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>
+Arwydd "Perygl Ymbelydrol
+Marciwr perygl
+<&sign_radioactive>Mae'r Arwydd "Perygl Ymbelydrol" yn marcio peryglon, allanfeydd a pharthau gwaith â chiw gweledol addas i ddiogelwch ffatri.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl peryglon, allanfeydd, peiriannau a pharthau cyfyngedig.<br>
+<np>

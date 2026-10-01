@@ -1,0 +1,5 @@
+Puerta corredera metálica
+Punto de acceso industrial
+<&recipe>Este bloque proporciona un acceso resistente a salas de servicio, pozos, tejados y recintos de máquinas.<br>
+<br>
+Uso: Instalalo donde necesites una abertura de mantenimiento controlada.<br>

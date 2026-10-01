@@ -1,0 +1,7 @@
+Sakelar Pembanding
+Sinyal dari tempat pemasangan
+<&recipe>Sakelar sensor ringkas membaca blok tempatnya terpasang dan mengubah pembacaan itu menjadi keluaran panel sederhana.<br>
+<br>
+Penggunaan: pasang pada persediaan, tangki, atau perangkat redstone. Ketika blok tempatnya terpasang melaporkan keluaran pembanding, wadah, atau redstone, sakelar mengeluarkan redstone berkekuatan penuh.<br>
+<br>
+Catatan: gunakan untuk mengubah tingkat isi penyimpanan atau pengawatan tersembunyi menjadi jalur kendali nyala/mati yang jelas.

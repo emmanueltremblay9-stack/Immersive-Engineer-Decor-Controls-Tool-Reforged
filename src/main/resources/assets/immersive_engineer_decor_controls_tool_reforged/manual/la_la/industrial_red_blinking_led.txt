@@ -1,0 +1,7 @@
+LED ruber
+Ostensio signi
+<&recipe>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.

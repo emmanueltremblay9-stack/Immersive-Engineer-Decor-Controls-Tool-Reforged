@@ -1,0 +1,7 @@
+Rustični detektor pada
+Otkrivanje signala
+<&recipe>Kontaktni prekidač šalje kratak signal pri pomeranju podne ploče ili poklopca.<br>
+<br>
+Upotreba: postavi ga tamo gde entiteti prolaze servisnim prolazom, utovarnim mestom ili čuvanom putanjom.<br>
+<br>
+Napomene: kratko pulsira posle dodira entiteta.

@@ -1,0 +1,7 @@
+Vero sensìbiłe naransa
+Vero de segnal
+<&recipe>Un bloco de vero che reagisse a ła redstone el łassa védar atraverso mentre el mostra el stato de’l segnal.<br>
+<br>
+Uso: dòparalo par finestre de sala controło, panełi iluminadi e lastre de vero protete de fàbrica.<br>
+<br>
+Da saver: el canbia stato co l’energia de redstone visina.

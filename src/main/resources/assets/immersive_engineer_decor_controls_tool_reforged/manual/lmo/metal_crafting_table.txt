@@ -1,0 +1,7 @@
+Banch per lavorà i metai
+Post de lavor per piastre
+<&recipe>Banch de lavor in metall con un post apposta per el martell, griglia 3x3 e uscita.<br>
+<br>
+Dovra la griglia come un banch de lavorà normal. Per formà piastre de IE, met un Martell de l’inzegner in de la casella di arnea e el material de la piastra in de la griglia, poeu cata su la piastra formada de la sortida.<br>
+<br>
+I decorazzion d’azzal i dovren piastre d’azzal. Met denter un martell de Immersive Engineering, bat i lingot d’azzal per faj vegnì piastre, poeu dovra i piastre per fabregà pai, passarelle, finestre, porte, ringhere e olter decorazzion d’azzal.<br>

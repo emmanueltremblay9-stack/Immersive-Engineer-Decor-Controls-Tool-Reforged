@@ -1,0 +1,7 @@
+Ŝaltilliga perlo
+Ligita regado
+<&recipe>Ligita perlo konservas ricevilan celon por foraj fabrikaj regiloj.<br>
+<br>
+Uzado: klaku ŝaltilligan ricevilon per Enderperlo por fari unu. Uzu la ligitan perlon kaŭrante por aktivigi la konservitan ricevilon.<br>
+<br>
+Notoj: la celo devas esti ŝargita en la mondo, en la sama dimensio kaj ene de atingo.

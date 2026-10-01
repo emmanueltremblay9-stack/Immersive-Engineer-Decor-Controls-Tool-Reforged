@@ -1,0 +1,5 @@
+Zavod buraxıcısı
+Emalatxana yardımçısı
+<&recipe>Bu blok saxlanılan əşyaları yönəldilmiş üzdən buraxır.<br>
+<br>
+İstifadə: Ön üzü buraxma nöqtəsinə yönəldin, daxili yuvaları doldurun və ekranda qüvvə, bucaq, gecikmə, süzgəc məntiqi və qızıl daş rejimini ayarlayın.<br>

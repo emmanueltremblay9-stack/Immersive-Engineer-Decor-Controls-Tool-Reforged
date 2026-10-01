@@ -1,0 +1,5 @@
+Inceneritore di rifiuti
+Unità di lavorazione compatta
+<&recipe>L’inceneritore di rifiuti distrugge oggetti indesiderati in uno spazio d’officina ridotto.<br>
+<br>
+Uso: inserisci nella coda soltanto gli oggetti da eliminare.<br>

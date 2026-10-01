@@ -1,0 +1,5 @@
+Cevher Kırma Çekici
+Elle kullanılan kırma aleti
+<&recipe>Cevher kırma çekici, demir ve altının erken işlenmesi için el aletidir.<br>
+<br>
+Immersive Engineering tozu için ham demir, ham altın, demir veya altın cevheri ve derin kayrak türleriyle kullanın. Çekiç dayanıklılık kaybeder, kırılana kadar ızgaraya döner, madencilikte aşınır ve hedefleri geri savurur.

@@ -1,0 +1,5 @@
+Entonou a liqides
+Éqhipement de ligne a liqides
+<&recipe>Le Petit entonou a ramasser les liqides ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Météz-le sous le pouint de collecte du liqide e menéz son contenu devers des réservouers ou des tuyaux pus bâs.<br>

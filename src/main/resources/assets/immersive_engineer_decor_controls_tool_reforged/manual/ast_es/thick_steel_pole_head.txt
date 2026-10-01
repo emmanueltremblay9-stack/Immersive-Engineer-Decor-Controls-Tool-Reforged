@@ -1,0 +1,5 @@
+Cabeza de poste gruesu
+Pieza de bastidor estructural
+<&recipe>La cabeza/base de poste rectu gruesu d’aceru apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>

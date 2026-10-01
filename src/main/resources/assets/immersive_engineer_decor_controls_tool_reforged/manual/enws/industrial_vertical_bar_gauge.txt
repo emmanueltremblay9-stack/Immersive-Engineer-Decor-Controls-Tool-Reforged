@@ -1,0 +1,7 @@
+Analogue Bar Gauge
+Gauge for Signals
+<&recipe>A compact gauge in the control chamber shows redstone strength plainly upon its panel.<br>
+<br>
+Use: Mount it where neighbouring redstone power may be seen at a glance.<br>
+<br>
+Note: It reads nearby redstone strength from 0 to 15.

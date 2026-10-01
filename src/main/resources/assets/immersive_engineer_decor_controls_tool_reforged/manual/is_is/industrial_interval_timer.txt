@@ -1,0 +1,7 @@
+Lotutímari
+Tímasettur púls
+<&recipe>Fyrirferðarlítill tímastýrður rofi gefur tímasettan roðsteinspúls.<br>
+<br>
+Notkun: Notaðu hann þar sem lítið gangverk þarf reglubundna eða seinkaða stýringu.<br>
+<br>
+Athugasemdir: Notar tímasetta roðsteinspúlsa.

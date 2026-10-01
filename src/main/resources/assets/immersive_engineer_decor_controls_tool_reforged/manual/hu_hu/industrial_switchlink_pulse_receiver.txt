@@ -1,0 +1,7 @@
+Távkapcsolati impulzusvevő
+Összekapcsolt vezérlés
+<&recipe>A hozzárendelt impulzusvevő rövid redstone-indítójelet ad a távoli paneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Jobb kattintással vagy a hozzárendelt gyöngy aktiválásával indíts rövid impulzust.<br>
+<br>
+Megjegyzés: az impulzus a beállított idő után magától véget ér.

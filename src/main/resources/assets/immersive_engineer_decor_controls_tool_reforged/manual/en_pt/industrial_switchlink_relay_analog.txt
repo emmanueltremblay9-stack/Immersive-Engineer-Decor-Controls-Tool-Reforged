@@ -1,0 +1,7 @@
+Analog relay fer links
+Orders through a link
+<&recipe>A relay-shaped fitting gives yer panel a small point fer a local switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits. Choose receiver blocks if ye need a linked pearl to trigger them.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.

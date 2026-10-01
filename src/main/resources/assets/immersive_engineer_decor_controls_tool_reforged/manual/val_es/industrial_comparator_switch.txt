@@ -1,0 +1,7 @@
+Interruptor comparador
+Senyal del bloc de muntatge
+<&recipe>Un interruptor sensor compacte llig el bloc on està muntat i convertix eixa lectura en una eixida senzilla de panell.<br>
+<br>
+Ús: munta’l en inventaris, depòsits o components de redstone. Quan el bloc de muntatge informa d’una eixida de comparador, de contenidor o de redstone, l’interruptor emet redstone a plena potència.<br>
+<br>
+Notes: usa’l per a convertir nivells d’emmagatzematge o cablejat ocult en línies de control clares d’encesa i apagada.

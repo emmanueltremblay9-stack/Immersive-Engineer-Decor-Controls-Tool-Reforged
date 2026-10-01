@@ -1,0 +1,7 @@
+Buton rustic mic
+Control prin redstone
+<&recipe>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.

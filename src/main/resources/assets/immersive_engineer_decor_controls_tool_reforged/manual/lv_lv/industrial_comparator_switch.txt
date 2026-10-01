@@ -1,0 +1,7 @@
+Salīdzinātāja slēdzis
+Pievienotā bloka signāls
+<&recipe>Kompakts sensorslēdzis nolasa bloku, uz kura uzstādīts, un pārvērš nolasījumu vienkāršā paneļa izvadē.<br>
+<br>
+Lietošana: uzstādi uz krātuvēm, tvertnēm vai Redstone iekārtām. Ja pievienotais bloks dod salīdzinātāja, konteinera vai Redstone izvadi, slēdzis izvada pilna stipruma Redstone signālu.<br>
+<br>
+Piezīmes: izmanto, lai krājumu līmeni vai slēptos vadus pārvērstu skaidrās ieslēgšanas un izslēgšanas vadības līnijās.

@@ -1,0 +1,7 @@
+Temporizador de intervalos
+Pulso temporizado
+<&recipe>Un interruptor temporizado compacto proporciona un pulso de redstone programado.<br>
+<br>
+Uso: Úsalo donde un mecanismo pequeño necesite un control periódico o retardado.<br>
+<br>
+Notas: Utiliza pulsos de redstone programados.

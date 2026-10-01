@@ -1,0 +1,7 @@
+Sporari
+Goymd staðmerking
+<&recipe>Sporarin goymir støðuna hjá einum kubba beinleiðis í lutinum.<br>
+<br>
+Nýtsla: Klikk á ein kubba fyri at goyma dimensión og koordinatir. Frágreiðingin vísir goymda staðið. Brúka sporaran meðan tú krýpur fyri at strika málið.<br>
+<br>
+Brúka hann til at merkja maskinur, tunnilsgreinar, fjarstýringar ella ólidin byggipláss, áðrenn tú kemur aftur við amboðum og tilfari.

@@ -1,0 +1,5 @@
+Fornâs par fondi minerâi
+Unitât di lavorazion compacte
+<&recipe>La Fornâs par fondi minerâi e lavore i minerâi a grant calôr e e ocupe pôc spazi in oficine.<br>
+<br>
+Ûs: dâi blocs minerâi e energjie par fondi a alte temperadure.<br>

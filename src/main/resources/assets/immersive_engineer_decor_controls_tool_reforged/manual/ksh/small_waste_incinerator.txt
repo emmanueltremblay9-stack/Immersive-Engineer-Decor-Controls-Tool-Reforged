@@ -1,0 +1,5 @@
+Müllverbrennovve
+Klein Verarbeitungseinheit
+<&recipe>Dä Müllverbrennovve vernicht Dinge, die de nit mieh wells, op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Jevv bloß Dinge en sing Waateschlang, die fott solle.<br>

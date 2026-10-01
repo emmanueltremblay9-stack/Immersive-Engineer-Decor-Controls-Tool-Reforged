@@ -1,0 +1,7 @@
+Beli LED
+Prikaz signala
+<&recipe>Kompaktan pokazivač pretvara skriveni redstoun u vidljivu fabričku povratnu informaciju.<br>
+<br>
+Upotreba: poveži ga uz signal da pratiš vrata, mašine, alarme ili panele.<br>
+<br>
+Napomene: menja stanje kada je u blizini prisutno redstoun napajanje.

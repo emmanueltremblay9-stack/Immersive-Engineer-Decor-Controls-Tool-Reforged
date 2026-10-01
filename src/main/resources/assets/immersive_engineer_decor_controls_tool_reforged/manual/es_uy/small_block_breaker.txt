@@ -1,0 +1,5 @@
+Rompedor de bloques
+Utilidad de taller
+<&recipe>El rompedor de bloques pequeño es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Orientá la cara de trabajo hacia el bloque que quieras quitar.<br>

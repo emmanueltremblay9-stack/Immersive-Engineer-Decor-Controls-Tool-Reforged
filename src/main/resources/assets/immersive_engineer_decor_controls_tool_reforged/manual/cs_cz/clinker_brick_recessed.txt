@@ -1,0 +1,5 @@
+Zapuštěné klinkerové cihly
+Zdivo ztmavlé sazemi
+<&recipe>Tento blok přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>

@@ -1,0 +1,101 @@
+Dächer und Hof
+Fabrikausstattung im Freien
+Dachblöcke, Hofschotter und alte Fabrikholzteile vervollständigen Außenschuppen, Arbeitshöfe, Ladebereiche und verwitterte Fabrikränder.<br>
+<br>
+Kombiniere diese Teile mit Mauerwerk und Zugangswegen, damit Industriebauten im Freien auch aus der Entfernung übersichtlich bleiben.
+<np>
+Dunkles Schindeldach
+Verwittertes Dachbauteil
+<&dark_shingle_roof>Dieser Block schafft dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dachschneefang
+Verwittertes Dachbauteil
+<&dark_shingle_roof_metallized>Der Schneefang für dunkle Schindeldächer ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dunkles Schindeldach
+Verwittertes Dachbauteil
+<&dark_shingle_roof_skylight>Das Dachfenster für dunkle Schindeldächer ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dachschornsteinschaft
+Verwittertes Dachbauteil
+<&dark_shingle_roof_chimneytrunk>Der Schornsteinschaft für dunkle Schindeldächer ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dachkabeldurchführung
+Verwittertes Dachbauteil
+<&dark_shingle_roof_wireconduit>Die Kabeldurchführung für dunkle Schindeldächer ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dunkles Schindeldach
+Verwittertes Dachbauteil
+<&dark_shingle_roof_chimney>Der Schornstein für dunkle Schindeldächer ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dunkler Schindeldachblock
+Verwittertes Dachbauteil
+<&dark_shingle_roof_block>Dieser Block schafft dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dunkle Schindeldachstufe
+Verwittertes Dachbauteil
+<&dark_shingle_roof_slab>Dieser Block schafft dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Dunkle Schindeldachstufe
+Verwittertes Dachbauteil
+<&dark_shingle_roof_slabslice>Die dunkle Schindeldachviertelstufe ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>
+<np>
+Verdichtete Kieserde
+Bodenbelag für Arbeitsbereiche
+<&dense_grit_dirt_block>Dieser Block verleiht Arbeitsbereichen im Freien eine verdichtete, zertrampelte Oberfläche.<br>
+<br>
+Verwendung: Verlege ihn vor Ladetoren, um Außentanks und auf Maschinenhöfen.<br>
+<np>
+Verdichteter Kiessand
+Bodenbelag für Arbeitsbereiche
+<&dense_grit_sand_block>Dieser Block verleiht Arbeitsbereichen im Freien eine verdichtete, zertrampelte Oberfläche.<br>
+<br>
+Verwendung: Verlege ihn vor Ladetoren, um Außentanks und auf Maschinenhöfen.<br>
+<np>
+Alte Holzbretter
+Gealtertes Werkstattholz
+<&old_industrial_wood_planks>Die alten Fabrikholzbretter ergänzen gealtertes Werkstattholz für Böden, Tritte, Türen und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nutze ihn für alte Werkstattböden, Treppen, Türen und Einfassungen.<br>
+<np>
+Alte Fabrikholzstufe
+Gealtertes Werkstattholz
+<&old_industrial_wood_slab>Dieser Block ergänzt gealtertes Werkstattholz für Böden, Tritte, Türen und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nutze ihn für alte Werkstattböden, Treppen, Türen und Einfassungen.<br>
+<np>
+Alte Holztreppe
+Gealtertes Werkstattholz
+<&old_industrial_wood_stairs>Die alte Fabrikholztreppe ergänzt gealtertes Werkstattholz für Böden, Tritte, Türen und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nutze ihn für alte Werkstattböden, Treppen, Türen und Einfassungen.<br>
+<np>
+Alte Holzviertelstufe
+Gealtertes Werkstattholz
+<&old_industrial_wood_slabslice>Die alte Fabrikholzviertelstufe ergänzt gealtertes Werkstattholz für Böden, Tritte, Türen und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nutze ihn für alte Werkstattböden, Treppen, Türen und Einfassungen.<br>
+<np>
+Alte Fabrikholztür
+Gealtertes Werkstattholz
+<&old_industrial_wood_door>Dieser Block ergänzt gealtertes Werkstattholz für Böden, Tritte, Türen und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nutze ihn für alte Werkstattböden, Treppen, Türen und Einfassungen.<br>

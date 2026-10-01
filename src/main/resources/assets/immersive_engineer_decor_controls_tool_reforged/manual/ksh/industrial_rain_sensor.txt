@@ -1,0 +1,7 @@
+Ränsensor
+Signalerkennung
+<&recipe>Ene Weddersensor mäht us Rän aan singem Plätz e Redstone-Signal.<br>
+<br>
+Bruuch: Befestig en do, wo dä Block övver ihm Rän avkrieje kann.<br>
+<br>
+Henwies: Pröf dä Rän övver däm Sensor.

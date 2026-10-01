@@ -1,0 +1,7 @@
+Carvão de Ariadne
+Marcador de rotas de mina
+<&recipe>O carvão de Ariadne marca rapidamente rotas em poços, galerias e trabalhos subterrâneos temporários.<br>
+<br>
+Uso: Aplique em uma face firme de bloco para colocar uma seta preta nessa superfície. O marcador interpreta o ponto clicado e aceita oito direções, inclusive diagonais, ajudando a marcar curvas, saídas, becos sem saída e rotas de abastecimento sem carregar postes de sinalização separados.<br>
+<br>
+O carvão de Ariadne é uma ferramenta reutilizável com 100 usos. Cada colocação bem-sucedida consome um ponto de durabilidade; faces inadequadas são recusadas sem desgastar o item.

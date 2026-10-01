@@ -1,0 +1,7 @@
+Rustik semafor
+Siqnalın əks göstərişi
+<&recipe>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.

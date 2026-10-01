@@ -1,0 +1,101 @@
+Saqafyo iyo barxad
+Qaybaha warshadda ee dibadda
+Baloogyada saqafka, jayga barxadda iyo qaybaha alwaaxda warshadeed ee duugga ahi waxay caawiyaan dhammaystirka aqallada dibadda, barxadaha shaqada, aagagga raridda iyo geesaha warshadda ee cimiladu duugtay.<br>
+<br>
+Qaybahan ku qas dhismaha lebenka iyo marinnada si dhismayaasha warshadeed ee dibadda meel fog looga fahmi karo.
+<np>
+Saqafka looxyada yaryar ee madow
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof>Balooggani wuxuu goobaha shaqada iyo aqallada warshadaha u sameeyaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Xannibaha barafka saqafka
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_metallized>Xannibaha barafka ee saqafka looxyada yaryar ee madow wuxuu goobaha shaqada iyo aqallada warshadaha u sameeyaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Saqafka looxyada yaryar ee madow
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_skylight>Daaqadda saqafka looxyada yaryar ee madow waxay goobaha shaqada iyo aqallada warshadaha u samaysaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Jirridda qiiqmareenka saqafka
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_chimneytrunk>Jirridda qiiqmareenka saqafka looxyada yaryar ee madow waxay goobaha shaqada iyo aqallada warshadaha u samaysaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Marinka fiilada saqafka
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_wireconduit>Marinka fiilada ee saqafka looxyada yaryar ee madow wuxuu goobaha shaqada iyo aqallada warshadaha u sameeyaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Saqafka looxyada yaryar ee madow
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_chimney>Qiiqmareenka saqafka looxyada yaryar ee madow wuxuu goobaha shaqada iyo aqallada warshadaha u sameeyaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Baloogga saqafka looxyada yaryar ee madow
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_block>Balooggani wuxuu goobaha shaqada iyo aqallada warshadaha u sameeyaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Saxanka saqafka looxyada yaryar ee madow
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_slab>Balooggani wuxuu goobaha shaqada iyo aqallada warshadaha u sameeyaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Saxanka saqafka looxyada yaryar ee madow
+Qayb saqaf oo cimiladu duugtay
+<&dark_shingle_roof_slabslice>Jeexa saxanka saqafka looxyada yaryar ee madow wuxuu goobaha shaqada iyo aqallada warshadaha u sameeyaa saqafyo madow oo waxtar leh.<br>
+<br>
+Isticmaal: Qaybaha wada isticmaal si aad u samayso qaabab saqaf oo dhab u eg.<br>
+<np>
+Ciidda jayga cufan
+Daboolka dhulka goobta shaqada
+<&dense_grit_dirt_block>Balooggani wuxuu aagagga shaqada ee dibadda siiyaa dusha la cufay oo lagu tuntay.<br>
+<br>
+Isticmaal: Ku fidi agagaarka albaabbada raridda, haamaha dibadda iyo barxadaha mashiinnada.<br>
+<np>
+Ciidda xeebeed ee jayga cufan
+Daboolka dhulka goobta shaqada
+<&dense_grit_sand_block>Balooggani wuxuu aagagga shaqada ee dibadda siiyaa dusha la cufay oo lagu tuntay.<br>
+<br>
+Isticmaal: Ku fidi agagaarka albaabbada raridda, haamaha dibadda iyo barxadaha mashiinnada.<br>
+<np>
+Looxyada alwaaxda duugga ah
+Alwaaxda goobta shaqada ee duugga ah
+<&old_industrial_wood_planks>Looxyada alwaaxda warshadeed ee duugga ahi waxay ku daraan alwaax duug ah oo goob shaqo, loogu talagalay sagxado, tallaabooyin, albaabbo iyo qurxin gudaha ah oo diirran.<br>
+<br>
+Isticmaal: U adeegso sagxadaha goobaha shaqada ee duugga ah, jaranjarooyin, albaabbo iyo qurxinta geesaha.<br>
+<np>
+Saxanka alwaaxda warshadeed ee duugga ah
+Alwaaxda goobta shaqada ee duugga ah
+<&old_industrial_wood_slab>Balooggani wuxuu ku daraa alwaax duug ah oo goob shaqo, loogu talagalay sagxado, tallaabooyin, albaabbo iyo qurxin gudaha ah oo diirran.<br>
+<br>
+Isticmaal: U adeegso sagxadaha goobaha shaqada ee duugga ah, jaranjarooyin, albaabbo iyo qurxinta geesaha.<br>
+<np>
+Jaranjarada alwaaxda duugga ah
+Alwaaxda goobta shaqada ee duugga ah
+<&old_industrial_wood_stairs>Jaranjarada alwaaxda warshadeed ee duugga ahi waxay ku dartaa alwaax duug ah oo goob shaqo, loogu talagalay sagxado, tallaabooyin, albaabbo iyo qurxin gudaha ah oo diirran.<br>
+<br>
+Isticmaal: U adeegso sagxadaha goobaha shaqada ee duugga ah, jaranjarooyin, albaabbo iyo qurxinta geesaha.<br>
+<np>
+Jeexa saxanka alwaaxda duugga ah
+Alwaaxda goobta shaqada ee duugga ah
+<&old_industrial_wood_slabslice>Jeexa saxanka alwaaxda warshadeed ee duugga ahi wuxuu ku daraa alwaax duug ah oo goob shaqo, loogu talagalay sagxado, tallaabooyin, albaabbo iyo qurxin gudaha ah oo diirran.<br>
+<br>
+Isticmaal: U adeegso sagxadaha goobaha shaqada ee duugga ah, jaranjarooyin, albaabbo iyo qurxinta geesaha.<br>
+<np>
+Albaabka alwaaxda warshadeed ee duugga ah
+Alwaaxda goobta shaqada ee duugga ah
+<&old_industrial_wood_door>Balooggani wuxuu ku daraa alwaax duug ah oo goob shaqo, loogu talagalay sagxado, tallaabooyin, albaabbo iyo qurxin gudaha ah oo diirran.<br>
+<br>
+Isticmaal: U adeegso sagxadaha goobaha shaqada ee duugga ah, jaranjarooyin, albaabbo iyo qurxinta geesaha.<br>

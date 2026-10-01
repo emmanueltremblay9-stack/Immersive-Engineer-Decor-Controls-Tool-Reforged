@@ -1,0 +1,5 @@
+Tabuleta de perigo
+Sinalização de perigo
+<&recipe>A tabuleta "Atenção: perigo extremo" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>

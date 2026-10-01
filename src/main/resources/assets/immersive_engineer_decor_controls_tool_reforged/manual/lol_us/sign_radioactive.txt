@@ -1,0 +1,5 @@
+Sign "Radioactive Ouchie"
+Danger-marker thingz
+<&recipe>Da "Radioactive Ouchie" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>

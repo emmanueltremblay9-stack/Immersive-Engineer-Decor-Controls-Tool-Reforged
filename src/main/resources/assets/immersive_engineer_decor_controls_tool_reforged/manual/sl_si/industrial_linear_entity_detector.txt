@@ -1,0 +1,7 @@
+Linijski detektor entitet
+Zaznavanje za signalizacijo
+<&recipe>Detektor entitet spremlja gibanje v bližini brez vidne talne plošče.<br>
+<br>
+Uporaba: Poveži ga z vrati, svetilkami, alarmi ali varnostnimi blokadami strojev.<br>
+<br>
+Opombe: Pregleduje majhno območje okoli bloka.

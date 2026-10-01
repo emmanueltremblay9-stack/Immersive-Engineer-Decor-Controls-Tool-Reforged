@@ -1,0 +1,161 @@
+Klinkertegl og murverk
+Tegl- og betongskall
+Klinkertegl, slaggtegl, armert betong og panserglass gir tunge overflater for varme rom, verksteder og beskyttet sikt.<br>
+<br>
+Bruk tilhørende heller, trapper, tynne heller og murer til å avslutte kanter uten å bryte fabrikkens materialpreg.
+<np>
+Klinkerblokk
+Sotmørkt murverk
+<&clinker_brick_block>Denne blokken gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Klinkerhelle
+Sotmørkt murverk
+<&clinker_brick_slab>Denne blokken gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Klinkertrapp
+Sotmørkt murverk
+<&clinker_brick_stairs>Denne blokken gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Klinkermur
+Sotmørkt murverk
+<&clinker_brick_wall>Denne blokken gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Tilsmusset klinkerblokk
+Sotmørkt murverk
+<&clinker_brick_stained_block>Den tilsmussede klinkerblokken gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Tilsmusset klinkerhelle
+Sotmørkt murverk
+<&clinker_brick_stained_slab>Den tilsmussede klinkerhellen gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Tilsmusset klinkertrapp
+Sotmørkt murverk
+<&clinker_brick_stained_stairs>Den tilsmussede klinkertrappen gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Pyntet klinkertegl
+Sotmørkt murverk
+<&clinker_brick_sastor_corner_block>Klinkerteglen med sandsteinspynt gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Inntrukket klinkertegl
+Sotmørkt murverk
+<&clinker_brick_recessed>Denne blokken gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Klinkertegl med slisser
+Sotmørkt murverk
+<&clinker_brick_vertically_slit>Klinkerteglen med loddrette slisser gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Loddrett klinkerhelle
+Sotmørkt murverk
+<&clinker_brick_vertical_slab_structured>Den loddrette klinkerhellen med struktur gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Halv klinkerhelle
+Sotmørkt murverk
+<&halfslab_clinker_brick>Denne blokken gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>
+<np>
+Slaggteglblokk
+Tett fabrikkmurverk
+<&slag_brick_block>Denne blokken gir tett gråbrunt murverk til fundamenter, støttemurer og eldre arbeidsskur.<br>
+<br>
+Bruk: bruk den til gamle fundamenter, støttemurer og skitne fabrikkgulv.<br>
+<np>
+Slaggteglhelle
+Tett fabrikkmurverk
+<&slag_brick_slab>Denne blokken gir tett gråbrunt murverk til fundamenter, støttemurer og eldre arbeidsskur.<br>
+<br>
+Bruk: bruk den til gamle fundamenter, støttemurer og skitne fabrikkgulv.<br>
+<np>
+Slaggtegltrapp
+Tett fabrikkmurverk
+<&slag_brick_stairs>Denne blokken gir tett gråbrunt murverk til fundamenter, støttemurer og eldre arbeidsskur.<br>
+<br>
+Bruk: bruk den til gamle fundamenter, støttemurer og skitne fabrikkgulv.<br>
+<np>
+Slaggteglmur
+Tett fabrikkmurverk
+<&slag_brick_wall>Denne blokken gir tett gråbrunt murverk til fundamenter, støttemurer og eldre arbeidsskur.<br>
+<br>
+Bruk: bruk den til gamle fundamenter, støttemurer og skitne fabrikkgulv.<br>
+<np>
+Blokk av armert betong
+Armert betong
+<&rebar_concrete>Denne blokken er en herdet betongdel for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Helle av armert betong
+Armert betong
+<&rebar_concrete_slab>Denne blokken er en herdet betongdel for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Trapp av armert betong
+Armert betong
+<&rebar_concrete_stairs>Denne blokken er en herdet betongdel for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Mur av armert betong
+Armert betong
+<&rebar_concrete_wall>Denne blokken er en herdet betongdel for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Tynn helle av armert betong
+Armert betong
+<&halfslab_rebar_concrete>Denne blokken er en herdet betongdel for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Flis av armert betong
+Armert betong
+<&rebar_concrete_tile>Denne blokken er en herdet betongdel for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Flishelle av armert betong
+Armert betong
+<&rebar_concrete_tile_slab>Denne blokken er en herdet betongdel for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Flis av armert betong
+Armert betong
+<&rebar_concrete_tile_stairs>Flistrappene av armert betong er herdede betongdeler for maskinfundamenter, eksplosjonsvegger og lasterampegulv.<br>
+<br>
+Bruk: legg den under maskiner, langs servicekorridorer eller der bygget trenger et forsterket underlag.<br>
+<np>
+Panserglassblokk
+Beskyttet sikt
+<&panzerglass_block>Denne blokken holder sikten åpen og passer samtidig til forsterkede fabrikkonstruksjoner.<br>
+<br>
+Bruk: plasser den der spillere skal se maskiner gjennom en beskyttende barriere.<br>
+<np>
+Panserglasshelle
+Beskyttet sikt
+<&panzerglass_slab>Denne blokken holder sikten åpen og passer samtidig til forsterkede fabrikkonstruksjoner.<br>
+<br>
+Bruk: plasser den der spillere skal se maskiner gjennom en beskyttende barriere.<br>

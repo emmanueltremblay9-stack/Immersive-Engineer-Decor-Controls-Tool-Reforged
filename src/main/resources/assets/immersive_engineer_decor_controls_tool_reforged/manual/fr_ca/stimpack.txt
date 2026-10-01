@@ -1,0 +1,7 @@
+Auto-injecteur stimulant
+Injecteur d'urgence
+<&recipe>L’Auto Stim Pack est un outil médical d’urgence pour les travaux d’entretien dangereux.<br>
+<br>
+Utilisation : activez-le manuellement pour vous soigner, obtenir une brève protection et une courte accélération. Dans l’inventaire, il peut aussi s’activer automatiquement quand la santé est faible, puis entre en recharge.<br>
+<br>
+Gardez-en un sur vous avant de travailler en hauteur, de tester des câbles exposés ou de parcourir des mines hostiles.

@@ -1,0 +1,7 @@
+Relai Tautan Pulsa
+Kendali tertaut
+<&recipe>Komponen berbentuk relai memberi rakitan panel titik sakelar lokal yang ringkas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya. Gunakan blok penerima jika membutuhkan pengaktifan melalui mutiara tertaut.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.

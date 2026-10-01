@@ -1,0 +1,7 @@
+Beira sentikor laranja
+Seinale-beira
+<&recipe>Redstoneari erantzuten dion beira-blokeak ikuslerroak mantentzen ditu seinalearen egoera erakusten duen bitartean.<br>
+<br>
+Erabilera: erabili aginte-gelako leihoetan, panel argiztatuetan eta fabrikako beira babestuetan.<br>
+<br>
+Oharrak: egoera aldatzen du inguruko redstone-potentziaren arabera.

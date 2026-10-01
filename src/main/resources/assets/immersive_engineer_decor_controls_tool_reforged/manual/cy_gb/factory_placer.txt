@@ -1,0 +1,5 @@
+Gosodwr Blociau Ffatri
+Cyfleustod llawr gweithdy
+<&recipe>Mae'r bloc hwn yn gosod blociau o'i stoc fewnol pan gaiff ei weithredu.<br>
+<br>
+Defnydd: Anelwch yr wyneb gweithio at y gofod targed a llwythwch bentyrrau y gellir eu gosod.<br>

@@ -1,0 +1,161 @@
+Klinker və hörgü
+Kərpic və beton örtüklər
+Klinker, şlak kərpic, möhkəmləndirilmiş beton və zirehli şüşə isti otaqlar, emalatxanalar və qorunan görünüş sahələri üçün ağır səthlər yaradır.<br>
+<br>
+Zavodun material üslubunu dəyişmədən kənarları tamamlamaq üçün uyğun pillələr, pilləkənlər, dilimlər və divarlar istifadə edin.
+<np>
+Klinker kərpic bloku
+His qaraltmış kərpic hörgü
+<&clinker_brick_block>Bu blok soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Klinker kərpic pillə
+His qaraltmış kərpic hörgü
+<&clinker_brick_slab>Bu blok soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Klinker kərpic pilləkən
+His qaraltmış kərpic hörgü
+<&clinker_brick_stairs>Bu blok soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Klinker kərpic divar
+His qaraltmış kərpic hörgü
+<&clinker_brick_wall>Bu blok soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Ləkəli klinker bloku
+His qaraltmış kərpic hörgü
+<&clinker_brick_stained_block>Ləkəli klinker kərpic bloku soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Ləkəli klinker pillə
+His qaraltmış kərpic hörgü
+<&clinker_brick_stained_slab>Ləkəli klinker kərpic pillə soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Ləkəli klinker pilləkən
+His qaraltmış kərpic hörgü
+<&clinker_brick_stained_stairs>Ləkəli klinker kərpic pilləkən soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Bəzədilmiş klinker kərpic
+His qaraltmış kərpic hörgü
+<&clinker_brick_sastor_corner_block>Qumdaşı ilə bəzədilmiş klinker kərpic soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Oyuqlu klinker kərpic
+His qaraltmış kərpic hörgü
+<&clinker_brick_recessed>Bu blok soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Yarıqlı klinker kərpiclər
+His qaraltmış kərpic hörgü
+<&clinker_brick_vertically_slit>Şaquli yarıqlı klinker kərpiclər soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Şaquli klinker pillə
+His qaraltmış kərpic hörgü
+<&clinker_brick_vertical_slab_structured>Naxışlı şaquli klinker pillə soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Klinker kərpic yarımpillə
+His qaraltmış kərpic hörgü
+<&halfslab_clinker_brick>Bu blok soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>
+<np>
+Şlak kərpic bloku
+Sıx zavod hörgüsü
+<&slag_brick_block>Bu blok bünövrələr, istinad divarları və köhnə emalatxanalar üçün sıx boz-qəhvəyi hörgü əlavə edir.<br>
+<br>
+İstifadə: Köhnə bünövrələrdə, istinad divarlarında və çirkli zavod döşəmələrində istifadə edin.<br>
+<np>
+Şlak kərpic pillə
+Sıx zavod hörgüsü
+<&slag_brick_slab>Bu blok bünövrələr, istinad divarları və köhnə emalatxanalar üçün sıx boz-qəhvəyi hörgü əlavə edir.<br>
+<br>
+İstifadə: Köhnə bünövrələrdə, istinad divarlarında və çirkli zavod döşəmələrində istifadə edin.<br>
+<np>
+Şlak kərpic pilləkən
+Sıx zavod hörgüsü
+<&slag_brick_stairs>Bu blok bünövrələr, istinad divarları və köhnə emalatxanalar üçün sıx boz-qəhvəyi hörgü əlavə edir.<br>
+<br>
+İstifadə: Köhnə bünövrələrdə, istinad divarlarında və çirkli zavod döşəmələrində istifadə edin.<br>
+<np>
+Şlak kərpic divar
+Sıx zavod hörgüsü
+<&slag_brick_wall>Bu blok bünövrələr, istinad divarları və köhnə emalatxanalar üçün sıx boz-qəhvəyi hörgü əlavə edir.<br>
+<br>
+İstifadə: Köhnə bünövrələrdə, istinad divarlarında və çirkli zavod döşəmələrində istifadə edin.<br>
+<np>
+Dəmir-beton bloku
+Möhkəmləndirilmiş beton
+<&rebar_concrete>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Dəmir-beton pillə
+Möhkəmləndirilmiş beton
+<&rebar_concrete_slab>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Dəmir-beton pilləkən
+Möhkəmləndirilmiş beton
+<&rebar_concrete_stairs>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Dəmir-beton divar
+Möhkəmləndirilmiş beton
+<&rebar_concrete_wall>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Dəmir-beton dilimi
+Möhkəmləndirilmiş beton
+<&halfslab_rebar_concrete>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Dəmir-beton plitə
+Möhkəmləndirilmiş beton
+<&rebar_concrete_tile>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Dəmir-beton plitə pilləsi
+Möhkəmləndirilmiş beton
+<&rebar_concrete_tile_slab>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Dəmir-beton plitə
+Möhkəmləndirilmiş beton
+<&rebar_concrete_tile_stairs>Dəmir-beton plitə pilləkəni maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissələrdən ibarətdir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>
+<np>
+Zirehli şüşə bloku
+Qorunan görünüş
+<&panzerglass_block>Bu blok möhkəmləndirilmiş zavod tikintisinə uyğun olmaqla görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: Oyunçuların maşınları qoruyucu maneənin arxasından görməli olduğu yerlərdə istifadə edin.<br>
+<np>
+Zirehli şüşə pillə
+Qorunan görünüş
+<&panzerglass_slab>Bu blok möhkəmləndirilmiş zavod tikintisinə uyğun olmaqla görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: Oyunçuların maşınları qoruyucu maneənin arxasından görməli olduğu yerlərdə istifadə edin.<br>

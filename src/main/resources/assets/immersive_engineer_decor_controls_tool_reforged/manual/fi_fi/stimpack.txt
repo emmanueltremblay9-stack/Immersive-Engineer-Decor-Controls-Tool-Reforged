@@ -1,0 +1,7 @@
+Automaattinen stim-pakkaus
+Hätäpistin
+<&recipe>Hätäpalautusväline vaaralliseen huoltotyöhön.<br>
+<br>
+Käyttö: Käsin parantaa, suojaa lyhyesti ja nopeuttaa. Tavaraluettelossa laukeaa matalalla terveydellä ja jäähtyy sitten.<br>
+<br>
+Pidä mukana ennen korkeita paikkoja, paljaita johtoja tai vaarallisia kaivoksia.

@@ -1,0 +1,7 @@
+Metal Krafting Tabal
+Plate-makin stationz
+<&recipe>Metal werkbench wif dedicated hamr slot, 3x3 craftin grid, an output slot.<br>
+<br>
+How to: Use da grid like a normal Krafting Tabal. Fer IE plates, put an Engineer's Hammer in da tool slot an da plate material in da grid, den take da formed plate frum da output, meow.<br>
+<br>
+Steely decorz use steel plates. Insert an Immersive Engineering hammer, hammer steel ingots into plates, den kraft polez, catwalkz, windowz, doorz, railingz, an other steely decorz frum da plates, meow.<br>

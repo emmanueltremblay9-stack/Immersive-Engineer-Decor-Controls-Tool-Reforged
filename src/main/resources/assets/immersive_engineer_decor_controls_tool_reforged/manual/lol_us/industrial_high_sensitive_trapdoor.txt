@@ -1,0 +1,7 @@
+Factory Bump-Open Door
+Pressy pulsez
+<&recipe>A contact switch sends a short signal frum floor or trapdoor movement, kitty.<br>
+<br>
+How to: Place where entities pass thru a service aisle, loader, or guarded path, meow.<br>
+<br>
+Kitty note: Gives a brief pulse after entity contact.

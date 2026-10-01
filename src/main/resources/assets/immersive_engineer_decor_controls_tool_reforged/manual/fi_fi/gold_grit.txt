@@ -1,0 +1,3 @@
+Karkea kultarouhe
+Insinöörityökalujen materiaali, jota käytetään rekonstruoidussa reseptivalikoimassa.
+<&recipe>Voidaan sulattaa<br>kultaharkoiksi, mutta ei sovi<br>edistyneeseen materiaalinkäsittelyyn.

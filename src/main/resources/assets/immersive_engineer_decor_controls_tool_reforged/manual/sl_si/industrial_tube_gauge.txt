@@ -1,0 +1,7 @@
+Stekleni cevni merilnik
+Merilnik signala
+<&recipe>Kompakten merilnik za nadzorno sobo prikazuje moč signala redstone kot jasno berljiv odčitek na plošči.<br>
+<br>
+Uporaba: Namesti ga tam, kjer želiš na hitro preveriti moč sosednjega signala redstone.<br>
+<br>
+Opombe: Odčitava bližnjo moč signala redstone od 0 do 15.

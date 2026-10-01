@@ -1,0 +1,7 @@
+Kapsul Udara Selam
+Cadangan udara darurat
+<&recipe>Kapsul udara selam adalah cadangan udara darurat untuk pekerjaan bawah air.<br>
+<br>
+Penggunaan: Pakai secara manual untuk memulihkan udara. Saat dibawa dalam inventaris, kapsul juga dapat aktif otomatis ketika udara hampir habis, lalu memasuki cooldown.<br>
+<br>
+Bawa untuk tambang tergenang, jalur pipa bawah air, dan perbaikan ruang pompa.

@@ -1,0 +1,7 @@
+Metal hazırlama masası
+Lövhə iş stansiyası
+<&recipe>Metal hazırlama masası çəkic yuvası, tam 3x3 hazırlama toru və aydın çıxış yuvası olan möhkəmləndirilmiş emalatxana stansiyasıdır.<br>
+<br>
+İstifadə: Toru adi hazırlama masası kimi istifadə edin. IE lövhələri üçün Mühəndis çəkicini alət yuvasına, lövhə materialını tora qoyun və hazır lövhəni çıxışdan götürün.<br>
+<br>
+Polad çərçivəli bəzəklərdə bu masada formalaşdırılan polad lövhələr istifadə olunur.

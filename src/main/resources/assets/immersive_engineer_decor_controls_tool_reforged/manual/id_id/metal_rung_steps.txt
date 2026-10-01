@@ -1,0 +1,5 @@
+Pijakan Logam Berselang
+Komponen akses servis
+<&recipe>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>

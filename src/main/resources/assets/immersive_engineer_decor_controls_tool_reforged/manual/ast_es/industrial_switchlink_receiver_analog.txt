@@ -1,0 +1,7 @@
+Receptor analóxicu d’enllaz
+Control enllazáu
+<&recipe>Un receptor enllazáu da a los paneles de control un destín remotu visible.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Usa esa perlla mientres te encuxes p’activar el receptor a distancia.<br>
+<br>
+Notes: esti receptor emite una señal de redstone a plena potencia al activase.

@@ -1,0 +1,7 @@
+Metall-Werkbank
+Plattenstation
+<&recipe>Die Metall-Werkbank is a verstärkte Station mit Hammafach, vollem 3x3-Raster und klarem Ausgabefach.<br>
+<br>
+Benutzung: Raster wia a normale Werkbank nutzn. Für IE-Platten an Ingenieurshamma ins Werkzeugfach und Material ins Raster legn, dann Platte aus da Ausgabe nehma.<br>
+<br>
+Stahlgerahmte Dekorationen nutzn Stahlplatten, de auf der Werkbank gformt werdn.

@@ -1,0 +1,5 @@
+Tunawan ng Mineral
+Maliit na yunit ng pagproseso
+<&recipe>Pinoproseso ng Tunawan ng Mineral ang mga mineral sa matinding init, sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Magpasok ng mga bloke ng mineral at enerhiya para sa pagtunaw sa matinding init.<br>

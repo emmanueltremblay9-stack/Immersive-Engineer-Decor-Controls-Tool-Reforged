@@ -1,0 +1,7 @@
+Dùdach rabhaidh
+Fios-air-ais chomharran
+<&recipe>’S e comharra redstone air aghaidh a th’ anns an dùdach-rabhaidh. Tha a staid chumhachdaichte a’ leantainn a’ chomharra bhon bhloc ris a bheil i ceangailte.<br>
+<br>
+Cleachdadh: ceangail i ri aghaidh chruaidh agus thoir cumhachd dhi gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: ùraichidh an dùdach aon uair san diog fhad 's a tha an comharra ris a bheil i ceangailte gnìomhach.

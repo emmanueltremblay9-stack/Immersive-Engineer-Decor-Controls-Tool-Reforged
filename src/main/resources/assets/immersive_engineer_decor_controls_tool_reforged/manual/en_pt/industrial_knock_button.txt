@@ -1,0 +1,7 @@
+Button that hears a knock
+Redstone orders
+<&recipe>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.

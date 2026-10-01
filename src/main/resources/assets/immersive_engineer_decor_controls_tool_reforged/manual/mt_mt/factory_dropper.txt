@@ -1,0 +1,5 @@
+Qattara tal-fabbrika
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&recipe>Din il-blokka toħroġ oġġetti maħżuna minn wiċċ immirat.<br>
+<br>
+Użu: immira l-faċċata lejn il-punt tal-ħruġ, imla s-slots interni u aġġusta l-forza, l-angolu, id-dewmien, il-loġika tal-filtru u l-modalità tar-Redstone mill-iskrin tagħha.<br>

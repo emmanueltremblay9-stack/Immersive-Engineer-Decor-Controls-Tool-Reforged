@@ -1,0 +1,5 @@
+Järnlucka
+Industriell åtkomstpunkt
+<&recipe>Det här blocket ger en robust åtkomstpunkt till servicerum, schakt, tak och maskinhöljen.<br>
+<br>
+Användning: Montera det där byggnaden behöver en kontrollerad öppning för underhåll.<br>

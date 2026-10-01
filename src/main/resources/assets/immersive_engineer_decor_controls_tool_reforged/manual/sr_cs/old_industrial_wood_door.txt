@@ -1,0 +1,5 @@
+Stara industrijska drvena vrata
+Ostarela radionička građa
+<&recipe>Ovaj blok dodaje ostarelu radioničku drvenu građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>

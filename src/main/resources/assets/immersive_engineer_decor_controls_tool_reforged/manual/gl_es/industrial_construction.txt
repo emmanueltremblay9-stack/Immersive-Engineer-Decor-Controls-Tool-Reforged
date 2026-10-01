@@ -1,0 +1,108 @@
+Construción industrial
+Paredes e remates de fábrica
+Os accesorios de construción xeral abranguen portas, ventás, luces, sinais de advertencia, remates e pezas estruturais que non pertencen a unha sección máis específica.<br>
+<br>
+Usa estas páxinas para salas de fábrica, corredores de servizo, sinalización de riscos e detalles industriais prácticos.
+<np>
+Luz de lámpada de ferro
+Luz de traballo compacta
+<&iron_bulb_light>Este bloque proporciona iluminación industrial compacta para corredores, pasarelas e zonas de traballo.<br>
+<br>
+Uso: móntao en teitos, paredes ou bordos onde se precise unha iluminación de traballo clara.<br>
+<np>
+Luz de bordo de teito
+Luz de traballo compacta
+<&iron_ceiling_edge_light>Este bloque proporciona iluminación industrial compacta para corredores, pasarelas e zonas de traballo.<br>
+<br>
+Uso: móntao en teitos, paredes ou bordos onde se precise unha iluminación de traballo clara.<br>
+<np>
+Luz encaixada de bordo de chan
+Luz de traballo compacta
+<&iron_floor_edge_light>Este bloque proporciona iluminación industrial compacta para corredores, pasarelas e zonas de traballo.<br>
+<br>
+Uso: móntao en teitos, paredes ou bordos onde se precise unha iluminación de traballo clara.<br>
+<np>
+Luz encaixada
+Luz de traballo compacta
+<&iron_inset_light>Este bloque proporciona iluminación industrial compacta para corredores, pasarelas e zonas de traballo.<br>
+<br>
+Uso: móntao en teitos, paredes ou bordos onde se precise unha iluminación de traballo clara.<br>
+<np>
+Sinal «Precaución xeral»
+Marcador de risco
+<&sign_caution>O sinal «Precaución xeral» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal de perigo
+Marcador de risco
+<&sign_danger>O sinal «Coidado, zona moi perigosa» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal decorativo
+Marcador de risco
+<&sign_decor>A placa de sinal (Engineer's Decor) marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal de defensa
+Marcador de risco
+<&sign_defense>O sinal «Coidado, sistema de defensa diante» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal de saída
+Marcador de risco
+<&sign_exit>Este sinal marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal «Risco de incendio»
+Marcador de risco
+<&sign_firehazard>O sinal «Risco de incendio» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal «Aviso de xeada»
+Marcador de risco
+<&sign_frost>O sinal «Aviso de xeada» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal de superficie quente
+Marcador de risco
+<&sign_hotsurface>O sinal «Coidado, superficie quente» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal de cable con tensión
+Marcador de risco
+<&sign_hotwire>O sinal «Coidado, cable con tensión» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal «Risco de láser»
+Marcador de risco
+<&sign_laser>O sinal «Risco de láser» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal de risco máxico
+Marcador de risco
+<&sign_magichazard>O sinal «Coidado, risco máxico» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal de campo magnético
+Marcador de risco
+<&sign_magneticfield>O sinal «Coidado, campo magnético intenso» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>
+Sinal «Risco radioactivo»
+Marcador de risco
+<&sign_radioactive>O sinal «Risco radioactivo» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>
+<np>

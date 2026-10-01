@@ -1,0 +1,5 @@
+Fluid Barrel
+Fluid line hardware
+<&recipe>This fitting is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Place it where pipes or buckets can reach the tank face.<br>

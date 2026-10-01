@@ -1,0 +1,7 @@
+Glas-dagtíðarklokka
+Dagsljóstekin
+<&recipe>Ein tíðarrofi fylgir dagsljóspartinum av heimsins tíðarringrás.<br>
+<br>
+Nýtsla: Brúka hann til túnlampur, lúkur og verksmiðjustýringar, sum bert skulu virka um dagin.<br>
+<br>
+Viðmerking: Krevur eina vídd við himmalljósi.

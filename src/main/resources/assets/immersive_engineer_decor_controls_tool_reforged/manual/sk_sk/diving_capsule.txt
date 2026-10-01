@@ -1,0 +1,5 @@
+Potápačská vzduchová kapsula
+Núdzová zásoba vzduchu
+<&recipe>Potápačská kapsula je núdzová zásoba vzduchu na prácu pod vodou.<br>
+<br>
+Použite ju ručne na obnovenie vzduchu. V inventári sa spustí automaticky, keď vzduch takmer dôjde, potom sa obnovuje. Vezmite ju do zaplavených baní a k ponoreným potrubiam.

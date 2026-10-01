@@ -1,0 +1,7 @@
+Reinsensor
+Sinjaaldeteksje
+<&recipe>In waarsensor set rein op syn posysje om yn redstone.<br>
+<br>
+Gebrûk: Montearje him dêr't it blok derboppe rein krije kin.<br>
+<br>
+Opmerking: Kontrolearret oft it boppe de sensor reint.

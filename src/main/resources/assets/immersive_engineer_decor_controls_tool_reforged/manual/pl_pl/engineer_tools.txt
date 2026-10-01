@@ -1,0 +1,93 @@
+Narzędzia inżyniera
+Przenośne wyposażenie warsztatu
+Zestaw Narzędzia inżyniera dodaje narzędzia ręczne, znaczniki kopalniane, awaryjne przedmioty zużywalne, prowiant i drobny sprzęt do obróbki materiałów do tego samego podręcznika, który opisuje dekoracje i bloki sterowania.<br>
+<br>
+Narzędzia te służą do pracy z dala od w pełni wyposażonego warsztatu: oznaczania dróg, transportu zaopatrzenia, naprawiania skutków pomyłek i wykonywania drobnych prac przetwórczych na miejscu.
+<np>
+Narzędzie REDIA
+Przyrząd pokryty diamentem
+<&redia_tool>Narzędzie REDIA to trwały przyrząd terenowy do szybkich prac ziemnych. Użyj go na odpowiedniej glebie, aby utworzyć pole uprawne.<br>
+<br>
+Użyj go na stabilnej powierzchni, mając pochodnie przy sobie, aby postawić pochodnię oznaczeniową z ekwipunku bez zużywania REDIA. Prace ziemne, strzyżenie, praca siekierą i ścinanie drzew zużywają trwałość.
+<np>
+Młot do kruszenia rud
+Ręczne narzędzie do kruszenia
+<&crushing_hammer>Młot do kruszenia rud to ręczne narzędzie do wczesnej obróbki żelaza i złota.<br>
+<br>
+Użyj go w recepturze z surowym żelazem, surowym złotem, rudą żelaza, głębinową rudą żelaza, rudą złota lub głębinową rudą złota, aby uzyskać pył Immersive Engineering. Młot traci wytrzymałość, wraca do siatki aż się zniszczy, zużywa się przy kopaniu i odrzuca cele.
+<np>
+Lokalizator
+Znacznik zapamiętanego położenia
+<&tracker>Lokalizator zapisuje pozycję bloku bezpośrednio w przedmiocie.<br>
+<br>
+Kliknij blok, aby zapisać wymiar i współrzędne. Podpowiedź pokazuje pozycję. Użyj podczas skradania, aby usunąć cel.<br>
+<br>
+Oznaczaj nim maszyny, tunele, zdalne sterowanie i niedokończone budowy.
+<np>
+Węgiel Ariadny
+Znacznik dróg w kopalni
+<&ariadne_coal>Węgiel Ariadny szybko umieszcza czarne strzałki na stabilnych powierzchniach kopalni. Użyj go na solidnej ścianie, aby oznaczyć następny zakręt, wyjście lub rozgałęzienie. Znacznik obsługuje osiem kierunków zależnych od punktu kliknięcia, w tym ukośne.<br>
+<br>
+Węgiel Ariadny to wielorazowe narzędzie do oznaczania z zapasem 100 użyć. Każde udane umieszczenie znacznika kosztuje jeden punkt trwałości. Nieodpowiednie powierzchnie są odrzucane bez zużycia przedmiotu.
+<np>
+Automatyczny wstrzykiwacz stymulantów
+Awaryjny wstrzykiwacz
+<&stimpack>Automatyczny stymulator to awaryjny przedmiot medyczny do niebezpiecznej pracy.<br>
+<br>
+Użyj go ręcznie, aby się uleczyć, krótko chronić i przyspieszyć. W ekwipunku uruchamia się automatycznie przy niskim zdrowiu, po czym ma czas odnowienia. Trzymaj go przy sobie w niebezpiecznych miejscach.
+<np>
+Śpiwór
+Przenośny zestaw do odpoczynku
+<&sleeping_bag>Śpiwór to odporny na pogodę zestaw do odpoczynku z dala od łóżka.<br>
+<br>
+Użyj go nocą w Nadziemiu, aby odpocząć do rana bez ustawiania punktu odrodzenia.<br>
+<br>
+Nie działa za dnia, przy pobliskich potworach ani w nieodpowiednich wymiarach. Każdy udany odpoczynek zużywa śpiwór.
+<np>
+Skrzynka na materiały
+Skrzynka na materiały budowlane
+<&material_box>Skrzynka na materiały mieści duży zapas jednego zwykłego, niezmodyfikowanego i układalnego materiału budowlanego.<br>
+<br>
+Trzymaj skrzynkę w głównej ręce, a stos w drugiej, aby go schować; użyj skrzynki z pustą drugą ręką, aby wyjąć jeden stos.<br>
+<br>
+Mieści do 512 przedmiotów jednego typu, odrzuca inne skrzynki, niestapialny sprzęt i zmodyfikowane stosy oraz pokazuje zawartość w podpowiedzi.
+<np>
+Kapsuła powietrza do nurkowania
+Awaryjny zapas powietrza
+<&diving_capsule>Kapsuła powietrzna to awaryjny zapas do pracy pod wodą.<br>
+<br>
+Użyj jej ręcznie, aby odzyskać powietrze. W ekwipunku uruchamia się też automatycznie, gdy prawie brakuje powietrza, po czym ma czas odnowienia. Przydaje się w zalanych kopalniach i przy podwodnych rurach.
+<np>
+Prasa do batonów musli
+Prasa do żywności
+<&musli_bar_press>Prasa Muslee zmienia zwykłą żywność w kompaktowe racje terenowe.<br>
+<br>
+Miej chleb, jabłko i nasiona pszenicy, arbuza, dyni, buraka lub konopi przemysłowych i użyj prasy. Zużywa po jednym składniku, sprawdza miejsce, tworzy cztery batony i uszkadza prasę.<br>
+<br>
+Jeśli brakuje składnika lub miejsca, nic nie zostaje zużyte.
+<np>
+Baton energetyczny z mieszanki musli
+Szybka przekąska warsztatowa
+<&musli_bar>Baton Muslee Melange to kompaktowe jedzenie z chleba, nasion i owoców.<br>
+<br>
+Jedz go jako prowiant podczas budowy sterowników, rur, pomostów lub długich hal maszyn.
+<np>
+Wyciskacz umysłu
+Kondensator doświadczenia
+<&charged_lapis_squeezer>Wyciskacz umysłu zamienia jedną sztukę lazurytu i jeden poziom doświadczenia z ekwipunku w naładowany lazuryt.<br>
+<br>
+Każda udana przemiana rani, wyczerpuje i na krótko oślepia użytkownika. Urządzenie nie działa bez lazurytu, bez doświadczenia ani gdy użytkownik jest zbyt blisko śmierci.
+<np>
+Naładowany lazuryt
+Zmagazynowane doświadczenie
+<&charged_lapis>Naładowany lazuryt przechowuje jeden poziom doświadczenia. Zużyj go, aby odzyskać poziom, usunąć aktywne efekty i przywrócić niewielką ilość zdrowia.<br>
+<br>
+Najpierw wytwórz wyciskacz umysłu. Naładowany lazuryt powstaje podczas używania tego narzędzia, gdy dostępne są lazuryt i doświadczenie.
+<np>
+Gruby granulat żelaza
+Materiał narzędzi inżyniera używany w odtworzonym zestawie receptur.
+<&iron_grit>Można przetopić na sztabki żelaza,<br>ale nie nadaje się do zaawansowanego<br>przetwarzania materiałów.
+<np>
+Gruby granulat złota
+Materiał narzędzi inżyniera używany w odtworzonym zestawie receptur.
+<&gold_grit>Można przetopić na sztabki złota,<br>ale nie nadaje się do zaawansowanego<br>przetwarzania materiałów.

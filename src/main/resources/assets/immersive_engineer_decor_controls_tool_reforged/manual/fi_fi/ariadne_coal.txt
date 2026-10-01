@@ -1,0 +1,7 @@
+Ariadnen hiili
+Kaivoksen reittimerkki
+<&recipe>Ariadnen hiili merkitsee nopeasti reitin kuiluihin, haarautuviin kaivoskäytäviin ja väliaikaisille maanalaisille työmaille.<br>
+<br>
+Käyttö: Käytä vakaaseen kuution pintaan asettaaksesi siihen mustan nuolimerkin. Merkki lukee napsautetun kohdan pinnalta ja tukee kahdeksaa suuntaa, myös vinoja. Sillä voi merkitä käännökset, uloskäynnit, umpikujat ja huoltoreitit kantamatta erillisiä kylttejä.<br>
+<br>
+Ariadnen hiili on uudelleenkäytettävä sadan käyttökerran merkintätyökalu. Kukin onnistunut merkintä kuluttaa yhden kestävyyspisteen. Sopimattomat pinnat hylätään kuluttamatta esinettä.

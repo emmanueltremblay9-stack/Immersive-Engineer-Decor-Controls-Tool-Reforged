@@ -1,0 +1,5 @@
+Bòrd stàilinn
+Àirneis bùth-obrach
+<&recipe>Tha am bloca seo na àirneis phractaigeach do sheòmraichean-obrach agus oiseanan cumail suas.<br>
+<br>
+Cleachdadh: cuir ri taobh bheingean, cisteachan-bathair agus innealan dlùtha e.<br>

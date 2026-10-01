@@ -1,0 +1,7 @@
+Voltmeter-Messgerät
+Signalmessgerät
+<&recipe>A kloans Messgerät fia'n Steuerraum zeigt d'Redstone-Stärk ois klare Paneelanzeig.<br>
+<br>
+So geht's: Montier's dort, wo du d'Redstone-Energie in da Näh auf oan Blick prüfn mogst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärk in da Näh vo 0 bis 15.

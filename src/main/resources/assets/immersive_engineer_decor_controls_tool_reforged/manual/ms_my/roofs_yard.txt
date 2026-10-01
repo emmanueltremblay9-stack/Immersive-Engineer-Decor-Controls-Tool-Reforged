@@ -1,0 +1,101 @@
+Bumbung dan Halaman
+Kelengkapan kilang luar
+Blok bumbung, kerikil halaman dan bahagian kayu industri lama membantu menyudahkan bangsal luar, halaman kerja, kawasan pemunggahan dan tepi kilang lusuh.<br>
+<br>
+Gabungkan bahagian ini dengan binaan batu dan laluan akses agar binaan industri luar tetap jelas dari jauh.
+<np>
+Bumbung Sirap Gelap
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof>Blok ini membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Pengadang Salji Bumbung
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_metallized>Pengadang salji bumbung sirap gelap membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Bumbung Sirap Gelap
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_skylight>Tingkap atap bumbung sirap gelap membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Batang Cerobong Bumbung
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_chimneytrunk>Batang cerobong bumbung sirap gelap membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Konduit Wayar Bumbung
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_wireconduit>Konduit wayar bumbung sirap gelap membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Bumbung Sirap Gelap
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_chimney>Cerobong bumbung sirap gelap membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Blok Bumbung Sirap Gelap
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_block>Blok ini membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Papak Bumbung Sirap Gelap
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_slab>Blok ini membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Papak Bumbung Sirap Gelap
+Kelengkapan bumbung lusuh
+<&dark_shingle_roof_slabslice>Hirisan papak bumbung sirap gelap membentuk garis bumbung gelap dan praktikal untuk bengkel dan bangsal industri.<br>
+<br>
+Penggunaan: Gabungkan bahagian ini untuk membentuk profil bumbung yang munasabah.<br>
+<np>
+Tanah Kerikil Padat
+Penutup tanah tapak kerja
+<&dense_grit_dirt_block>Blok ini memberikan permukaan mampat dan dipijak kepada kawasan kerja luar.<br>
+<br>
+Penggunaan: Bentangkan di sekitar pintu pemunggahan, tangki luar dan halaman mesin.<br>
+<np>
+Pasir Kerikil Padat
+Penutup tanah tapak kerja
+<&dense_grit_sand_block>Blok ini memberikan permukaan mampat dan dipijak kepada kawasan kerja luar.<br>
+<br>
+Penggunaan: Bentangkan di sekitar pintu pemunggahan, tangki luar dan halaman mesin.<br>
+<np>
+Papan Kayu Lama
+Kayu bengkel lama
+<&old_industrial_wood_planks>Papan kayu industri lama menambah kayu bengkel lama untuk lantai, anak tangga, pintu dan hiasan dalaman yang hangat.<br>
+<br>
+Penggunaan: Gunakan untuk lantai bengkel lama, tangga, pintu dan hiasan tepi.<br>
+<np>
+Papak Kayu Industri Lama
+Kayu bengkel lama
+<&old_industrial_wood_slab>Blok ini menambah kayu bengkel lama untuk lantai, anak tangga, pintu dan hiasan dalaman yang hangat.<br>
+<br>
+Penggunaan: Gunakan untuk lantai bengkel lama, tangga, pintu dan hiasan tepi.<br>
+<np>
+Tangga Kayu Lama
+Kayu bengkel lama
+<&old_industrial_wood_stairs>Tangga kayu industri lama menambah kayu bengkel lama untuk lantai, anak tangga, pintu dan hiasan dalaman yang hangat.<br>
+<br>
+Penggunaan: Gunakan untuk lantai bengkel lama, tangga, pintu dan hiasan tepi.<br>
+<np>
+Hirisan Papak Kayu Lama
+Kayu bengkel lama
+<&old_industrial_wood_slabslice>Hirisan papak kayu industri lama menambah kayu bengkel lama untuk lantai, anak tangga, pintu dan hiasan dalaman yang hangat.<br>
+<br>
+Penggunaan: Gunakan untuk lantai bengkel lama, tangga, pintu dan hiasan tepi.<br>
+<np>
+Pintu Kayu Industri Lama
+Kayu bengkel lama
+<&old_industrial_wood_door>Blok ini menambah kayu bengkel lama untuk lantai, anak tangga, pintu dan hiasan dalaman yang hangat.<br>
+<br>
+Penggunaan: Gunakan untuk lantai bengkel lama, tangga, pintu dan hiasan tepi.<br>

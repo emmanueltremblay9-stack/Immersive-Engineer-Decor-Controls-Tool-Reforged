@@ -1,0 +1,7 @@
+Lapislazzer cargad
+Esperienza conservada
+<&recipe>El Lapislazzer cargad el conserva un nivell de XP e el vegn fad del Schisciador de la ment.<br>
+<br>
+Consomel per tornà a avè un nivell, cavà via i efet ativ e recuperà on poo de salute.<br>
+<br>
+El riquader de la riceta el fa vedè el Schisciador de la ment, perché el Lapislazzer cargad el vegn fad dovrando quell’arnea cont lapislazzer e XP a disposizzion.

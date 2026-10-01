@@ -1,0 +1,41 @@
+Repositio et transportatio
+Apparatus inventarii et fluxus
+Apparatus repositionis et translationis cistas, cupas, infundibula et valvulas ad itinera officinae compacta complectuntur.<br>
+<br>
+His paginis utere dum horrea, fistulas, receptacula ministerii et lineas fluidi moderatas componis.
+<np>
+Cista titulo inscripta
+Titulus copiae mutabilis
+<&labeled_crate>Haec cista titulo inscripta ad horreum clare ordinandum facta est. Lamina anterior sicut parva tabula officinae mutari potest.<br>
+<br>
+Usus: laminam tituli dextro clicco pulsa ut titulum cistae mutes. Reliquam cistam dextro clicco pulsa ut receptaculum apparatuum, partium et copiarum refectionis aperias.<br>
+<np>
+Cupa fluidorum
+Apparatus linearum fluidi
+<&fluid_barrel>Haec pars compacta lineae fluidi receptaculis parvis, fistulis, locis collectionis et fluxui redstone moderato apta est.<br>
+<br>
+Usus: pone ubi fistulae aut hamae faciem receptaculi attingere possunt.<br>
+<np>
+Infundibulum fluidi
+Apparatus linearum fluidi
+<&small_fluid_funnel>Infundibulum fluidi parvum est pars compacta lineae fluidi pro receptaculis parvis, fistulis, locis collectionis et fluxu redstone moderato.<br>
+<br>
+Usus: sub loco fluidi colligendi pone et res servatas in receptacula aut fistulas inferiores dirige.<br>
+<np>
+Valvula fluidi contra refluxum
+Apparatus linearum fluidi
+<&straight_pipe_valve>Valvula fluidi contra refluxum est pars compacta lineae fluidi pro receptaculis parvis, fistulis, locis collectionis et fluxu redstone moderato.<br>
+<br>
+Usus: valvulam secundum directionem fluxus optatam dispone.<br>
+<np>
+Valvula fluidi redstone
+Apparatus linearum fluidi
+<&straight_pipe_valve_redstone>Valvula fluidi redstone est pars compacta lineae fluidi pro receptaculis parvis, fistulis, locis collectionis et fluxu redstone moderato.<br>
+<br>
+Usus: valvulam secundum directionem fluxus optatam dispone.<br>
+<np>
+Valvula fluidi analogica
+Apparatus linearum fluidi
+<&straight_pipe_valve_redstone_analog>Valvula fluidi analogica est pars compacta lineae fluidi pro receptaculis parvis, fistulis, locis collectionis et fluxu redstone moderato.<br>
+<br>
+Usus: valvulam secundum directionem fluxus optatam dispone.<br>

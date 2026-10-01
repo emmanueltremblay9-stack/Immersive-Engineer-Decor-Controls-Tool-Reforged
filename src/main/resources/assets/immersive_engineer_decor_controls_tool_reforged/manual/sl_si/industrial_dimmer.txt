@@ -1,0 +1,7 @@
+Regulator signala
+Spremenljiv signal
+<&recipe>Vrtljiv krmilnik na kompaktni plošči nastavlja moč signala redstone.<br>
+<br>
+Uporaba: Z desnim klikom postopoma povečuj izhod, ki se po polni moči vrne na nič.<br>
+<br>
+Opombe: Oddaja moč od 0 do 15.

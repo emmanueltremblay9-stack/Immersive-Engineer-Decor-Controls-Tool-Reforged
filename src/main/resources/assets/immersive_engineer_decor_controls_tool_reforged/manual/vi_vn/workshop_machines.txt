@@ -1,0 +1,107 @@
+Máy móc xưởng
+Máy móc và đầu vào/ra của xưởng
+Máy móc xưởng thực hiện chế tạo, chuyển vật phẩm, nung, tiêu hủy, thu gom và công việc tiện ích gọn trong không gian một khối.<br>
+<br>
+Mở các trang sau để xem công thức, hình ảnh, bối cảnh và ghi chú sử dụng thiết thực của từng máy.
+<np>
+Bàn thép
+Nội thất xưởng
+<&steel_table>Khối này là đồ nội thất xưởng thiết thực cho phòng làm việc và góc bảo trì.<br>
+<br>
+Cách dùng: Đặt cạnh bàn, thùng và máy nhỏ.<br>
+<np>
+Bàn gỗ đã xử lý
+Nội thất xưởng
+<&treated_wood_table>Khối này là đồ nội thất xưởng thiết thực cho phòng làm việc và góc bảo trì.<br>
+<br>
+Cách dùng: Đặt cạnh bàn, thùng và máy nhỏ.<br>
+<np>
+Ghế đẩu gỗ đã xử lý
+Nội thất xưởng
+<&treated_wood_stool>Khối này là đồ nội thất xưởng thiết thực cho phòng làm việc và góc bảo trì.<br>
+<br>
+Cách dùng: Đặt cạnh bàn, thùng và máy nhỏ.<br>
+<np>
+Bàn chế tạo kim loại
+Trạm gia công tấm
+<&metal_crafting_table>Bàn chế tạo kim loại là trạm xưởng gia cường với ô búa, lưới chế tạo 3x3 và ô đầu ra rõ ràng.<br>
+<br>
+Cách dùng: Dùng lưới để chế tạo thường. Với tấm IE, đặt búa kỹ sư vào ô dụng cụ và vật liệu của tấm vào lưới trước khi lấy kết quả. Chi tiết trang trí thép dùng tấm thép cho cột, lối đi bảo trì, cửa sổ, cửa, lan can và chi tiết thép khác.<br>
+<np>
+Phễu công nghiệp
+Tiện ích sàn xưởng
+<&factory_hopper>Khối này chuyển các chồng đồ qua vỏ công nghiệp gọn hơn.<br>
+<br>
+Cách dùng: Hướng về tuyến kho đồ rồi đặt phạm vi, số lượng trong chồng, thời gian và chế độ redstone trong màn hình của nó.<br>
+<np>
+Máy thả công nghiệp
+Tiện ích sàn xưởng
+<&factory_dropper>Khối này thả các vật phẩm đã lưu ra từ mặt được nhắm.<br>
+<br>
+Cách dùng: Hướng mặt trước về điểm thả, nạp đồ vào các ô bên trong, rồi chỉnh lực, góc, độ trễ, logic bộ lọc và chế độ redstone trong màn hình của nó.<br>
+<np>
+Máy đặt khối công nghiệp
+Tiện ích sàn xưởng
+<&factory_placer>Khối này đặt khối từ kho bên trong khi được kích hoạt.<br>
+<br>
+Cách dùng: Hướng mặt làm việc về khoảng trống mục tiêu rồi nạp các chồng đồ có thể đặt.<br>
+<np>
+Máy phá khối
+Tiện ích sàn xưởng
+<&small_block_breaker>Máy phá khối nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Đặt mặt làm việc hướng về khối cần bỏ.<br>
+<np>
+Lò đốt rác
+Thiết bị xử lý gọn
+<&small_waste_incinerator>Lò đốt rác hủy vật phẩm không cần trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Chỉ nạp vật phẩm không cần vào hàng đợi.<br>
+<np>
+Lò phòng thí nghiệm
+Thiết bị xử lý gọn
+<&small_lab_furnace>Lò phòng thí nghiệm thực hiện công việc nung gọn bằng nhiên liệu rắn trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Dùng nhiên liệu rắn để nung từng mẻ nhỏ.<br>
+<np>
+Lò điện
+Thiết bị xử lý gọn
+<&small_electrical_furnace>Lò điện thực hiện công việc nung gọn bằng năng lượng FE trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Cấp FE và nguyên liệu nung hợp lệ.<br>
+<np>
+Lò nấu chảy khoáng vật
+Thiết bị xử lý gọn
+<&small_mineral_smelter>Lò nấu chảy khoáng vật xử lý khoáng vật ở nhiệt độ cao trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Cấp khối khoáng vật và năng lượng để nấu chảy ở nhiệt độ cao.<br>
+<np>
+Máy đóng băng nước
+Thiết bị xử lý gọn
+<&small_freezer>Máy đóng băng nước thực hiện công việc làm lạnh gọn cho hệ thống chất lỏng dùng điện.<br>
+<br>
+Cách dùng: Cấp nước và năng lượng để tạo băng theo giai đoạn.<br>
+<np>
+Chất lỏng thụ động
+Thiết bị tuyến chất lỏng
+<&passive_fluid_accumulator>Bộ tích chất lỏng thụ động là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Đặt sát nguồn nước phù hợp và chừa chỗ để lấy chất lỏng ra.<br>
+<np>
+Tấm pin mặt trời
+Tiện ích sàn xưởng
+<&small_solar_panel>Tấm pin mặt trời nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Chừa trời thoáng phía trên và nối thiết bị tiêu thụ ít điện.<br>
+<np>
+Máy vắt sữa
+Tiện ích sàn xưởng
+<&small_milking_machine>Máy vắt sữa nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Đặt gần bò và bố trí cách lấy bình sữa hoặc chất lỏng ra.<br>
+<np>
+Máy đốn cây
+Tiện ích sàn xưởng
+<&small_tree_cutter>Máy đốn cây nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Hướng vào cây đã trưởng thành và thu đồ rơi riêng.<br>

@@ -1,0 +1,5 @@
+Leveny Kiln
+Small working loom
+<&recipe>The Leveny Kiln does small FE-fed smelting jobs in little workshop room.<br>
+<br>
+Use: Feed FE and fitting things to smelt.<br>

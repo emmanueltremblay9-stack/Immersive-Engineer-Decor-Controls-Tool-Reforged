@@ -1,0 +1,7 @@
+Valoanturi
+Signaalin tunnistus
+<&recipe>Valoanturi muuntaa paikallisen kirkkauden redstone-ohjaukseksi.<br>
+<br>
+Käyttö: Käytä automaattisiin valoihin, sulkimiin ja näkyvyydestä riippuviin piireihin.<br>
+<br>
+Huomaa: Antaa virtaa raakakirkkauden ollessa vähintään 8.

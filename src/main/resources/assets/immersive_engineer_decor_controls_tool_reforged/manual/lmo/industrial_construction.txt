@@ -1,0 +1,108 @@
+Costruzzion industrial
+Mur e profil de fabrica
+I acessori de costruzzion generai i comprenden porte, finestre, lus, placard de avertiment, profil e tocch struturai che van minga in de sezion pussee specifiche.<br>
+<br>
+Dovra quelle pagine chì per i locai de fabrica, i coridor de servizzi, i segn de pericol e i detaj industriai pratich.
+<np>
+Lampadina de ferr
+Lus de lavor piscinina
+<&iron_bulb_light>Quell bloch chì el dà una lus industrial compata per coridor, passarelle e poste de lavor.<br>
+<br>
+Montel in su plafon, mur o bord indove che el local el gh’ha de besogn de una lus ciara per lavorà.<br>
+<np>
+Lus de l’orl del plafon
+Lus de lavor piscinina
+<&iron_ceiling_edge_light>Quell bloch chì el dà una lus industrial compata per coridor, passarelle e poste de lavor.<br>
+<br>
+Montel in su plafon, mur o bord indove che el local el gh’ha de besogn de una lus ciara per lavorà.<br>
+<np>
+Lus incassada de l’orl del paviment
+Lus de lavor piscinina
+<&iron_floor_edge_light>Quell bloch chì el dà una lus industrial compata per coridor, passarelle e poste de lavor.<br>
+<br>
+Montel in su plafon, mur o bord indove che el local el gh’ha de besogn de una lus ciara per lavorà.<br>
+<np>
+Lus incassada
+Lus de lavor piscinina
+<&iron_inset_light>Quell bloch chì el dà una lus industrial compata per coridor, passarelle e poste de lavor.<br>
+<br>
+Montel in su plafon, mur o bord indove che el local el gh’ha de besogn de una lus ciara per lavorà.<br>
+<np>
+Placard « Atent »
+Segn de pericol
+<&sign_caution>El Placard « Atent » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de pericol
+Segn de pericol
+<&sign_danger>El Placard « Atent, lì l’è pericolos debon » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de decorazzion
+Segn de pericol
+<&sign_decor>La Piastra per placard (Engineer's Decor) la segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de difesa
+Segn de pericol
+<&sign_defense>El Placard « Atent, sistema de difesa inanz » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de sortida
+Segn de pericol
+<&sign_exit>Quell placard chì el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard « Pericol de foeugh »
+Segn de pericol
+<&sign_firehazard>El Placard « Pericol de foeugh » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard « Atent al giazz »
+Segn de pericol
+<&sign_frost>El Placard « Atent al giazz » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de superfiss calda
+Segn de pericol
+<&sign_hotsurface>El Placard « Atent, superfiss calda » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de fil in tension
+Segn de pericol
+<&sign_hotwire>El Placard « Atent, fil in tension » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard « Pericol laser »
+Segn de pericol
+<&sign_laser>El Placard « Pericol laser » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de pericol magich
+Segn de pericol
+<&sign_magichazard>El Placard « Atent, pericol magich » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard de camp magnetich
+Segn de pericol
+<&sign_magneticfield>El Placard « Atent, camp magnetich fort » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>
+Placard « Pericol radioativ »
+Segn de pericol
+<&sign_radioactive>El Placard « Pericol radioativ » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>
+<np>

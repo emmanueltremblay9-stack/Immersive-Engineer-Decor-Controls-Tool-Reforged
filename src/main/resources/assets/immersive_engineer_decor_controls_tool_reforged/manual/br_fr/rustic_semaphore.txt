@@ -1,0 +1,7 @@
+Semafor war ar maez
+Adtitour signal
+<&recipe>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.

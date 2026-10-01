@@ -1,0 +1,5 @@
+Stahl-Dubbel-T-Stütt
+Deel vun en Dragrahmen
+<&recipe>Disse Block gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>

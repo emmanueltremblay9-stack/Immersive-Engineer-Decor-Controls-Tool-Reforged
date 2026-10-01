@@ -1,0 +1,7 @@
+Materiaalilaatikko
+Rakennustarvikkeet
+<&recipe>Kuljettaa suuren määrän yhtä tavallista, muuttamatonta ja pinottavaa rakennusmateriaalia.<br>
+<br>
+Käyttö: Laatikko pääkädessä ja materiaali toisessa täyttää. Tyhjä toinen käsi ottaa pinon.<br>
+<br>
+Tilaa 512 esineelle yhdestä lajista; torjuu sisäkkäiset laatikot, pinoamattomat varusteet ja muokatut pinot. Sisältö näkyy vihjeessä.

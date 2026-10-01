@@ -1,0 +1,7 @@
+Ŝtormdetektilo
+Signala sentado
+<&recipe>Ŝtormsensilo ekigas avertojn dum fulmotondrado.<br>
+<br>
+Uzado: metu ĝin sub liberan ĉielon kaj konektu ĝin al lampoj aŭ alarmoj.<br>
+<br>
+Notoj: ĝi bezonas tondradon kaj aliron al la ĉielo.

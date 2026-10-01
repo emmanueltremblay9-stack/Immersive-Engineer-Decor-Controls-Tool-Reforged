@@ -1,0 +1,5 @@
+Spalionica otpada
+Kompaktna jedinica za obradu
+<&recipe>Spalionica otpada uništava neželjene predmete, zauzimajući malo prostora u radionici.<br>
+<br>
+Uporaba: u red čekanja stavljaj samo neželjene predmete.<br>

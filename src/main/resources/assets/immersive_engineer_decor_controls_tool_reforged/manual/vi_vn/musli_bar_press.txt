@@ -1,0 +1,7 @@
+Máy ép thanh năng lượng hỗn hợp Muslee
+Máy ép thực phẩm
+<&recipe>Máy ép Muslee biến thực phẩm thường thành khẩu phần gọn.<br>
+<br>
+Mang bánh mì, táo và hạt lúa mì, dưa hấu, bí ngô, củ dền hoặc gai dầu công nghiệp rồi dùng máy ép. Máy dùng mỗi thứ một, kiểm tra chỗ trống, tạo bốn thanh và bị hao mòn.<br>
+<br>
+Nếu thiếu nguyên liệu hoặc chỗ trống, không có gì bị tiêu thụ.

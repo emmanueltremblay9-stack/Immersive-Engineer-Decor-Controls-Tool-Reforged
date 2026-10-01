@@ -1,0 +1,7 @@
+Lysbryter
+Redstonestyring
+<&recipe>En kompakt betjeningsdel gir fabrikkbygg et tydelig redstonebryterpunkt.<br>
+<br>
+Bruk: høyreklikk for å slå utgang med full styrke av eller på for nærliggende kretser.<br>
+<br>
+Merknad: gir redstone med full styrke mens den er på.

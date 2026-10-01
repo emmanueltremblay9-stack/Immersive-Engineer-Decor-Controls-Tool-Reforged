@@ -1,0 +1,7 @@
+Sjakelkóppelingspaerel
+Gekóppelde bediening
+<&recipe>Ein gekóppelde paerel sjleit ein ontvangerdoel op veur fabrieksbediening op aafstand.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel op ein sjakelkóppelingsontvanger um ein te maake. Gebroek de gekóppelde paerel bukkend um de opgesjlage ontvanger te activere.<br>
+<br>
+Opmerking: 't doel moot gelaaje zeen, in dezelfste dimensie ligke en binne bereik zeen.

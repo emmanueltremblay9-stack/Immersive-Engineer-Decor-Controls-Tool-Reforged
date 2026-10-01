@@ -1,0 +1,5 @@
+Vas izzólámpa
+Kompakt munkalámpa
+<&recipe>Ez a blokk kompakt ipari világítást ad folyosókhoz, szerelőjárdákhoz és munkaállásokhoz.<br>
+<br>
+Használat: mennyezetre, falra vagy szélre szereld, ahol jól látható munkavilágítás szükséges.<br>

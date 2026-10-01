@@ -1,0 +1,5 @@
+Pasales de lladriyos d’escoria
+Mampostería industrial compacta
+<&recipe>Esti bloque añade mampostería compacta de color marrón abuxao pa cimientos, murios de contención y talleres antiguos.<br>
+<br>
+Usu: úsalu en cimientos antiguos, murios de contención y suelos de fábrica ensuciaos.<br>

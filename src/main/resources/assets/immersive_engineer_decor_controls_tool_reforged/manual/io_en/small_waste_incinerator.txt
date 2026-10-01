@@ -1,0 +1,5 @@
+Deshejobruligilo
+Kompakta procesunajo
+<&recipe>La deshejobruligilo destruktas nedezirata objekti en kompakta laboreyspaco.<br>
+<br>
+Uzo: Enmetez nur nedezirata objekti en lua vartorango.<br>

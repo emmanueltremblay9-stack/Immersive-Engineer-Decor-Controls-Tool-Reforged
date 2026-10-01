@@ -1,0 +1,41 @@
+Mālama a me ka Lawe
+Nā lako waihona a me ke kahe
+Mālama nā lako waihona a lawe i nā pahu, nā palela, nā kīʻaha, a me nā kiwikā no nā ala halehana paʻapu.<br>
+<br>
+E hoʻohana i kēia mau ʻaoʻao i ka hoʻonohonoho ʻana i nā lumi waihona, nā ala paipu, nā pahu wai mālama, a me nā laina wai hoʻomalu ʻia.
+<np>
+Pahu Lepili
+Lepili waihona hiki ke hoʻololi
+<&labeled_crate>Kūkulu ʻia kēia pahu lepili no ka hoʻokaʻawale mōakāka i ka lumi waihona. Hiki ke hoʻololi i kona papa alo e like me ka hōʻailona hale hana liʻiliʻi.<br>
+<br>
+Hoʻohana: E kaomi ʻākau i ka papa lepili e hoʻololi i ka lepili pahu. E kaomi ʻākau i ke koena o ka pahu e wehe i ka waihona lako, nā ʻāpana, a me nā lako mālama.<br>
+<np>
+Palela Wai
+Lako laina wai
+<&fluid_barrel>He ʻāpana laina wai paʻapu kēia no nā pahu wai liʻiliʻi, nā ala paipu, nā wahi ʻohi, a me ke kahe i hoʻomalu ʻia e Redstone.<br>
+<br>
+Hoʻohana: E kau ma kahi e hiki ai nā paipu a me nā pākeke i ke alo pahu wai.<br>
+<np>
+Kīʻaha Wai
+Lako laina wai
+<&small_fluid_funnel>He ʻāpana laina wai paʻapu ka Kīʻaha Wai Liʻiliʻi no nā pahu wai liʻiliʻi, nā ala paipu, nā wahi ʻohi, a me ke kahe i hoʻomalu ʻia e Redstone.<br>
+<br>
+Hoʻohana: E kau ma lalo o kahi ʻohi wai a hoʻoili i nā mea i mālama ʻia i nā pahu wai a i ʻole nā paipu lalo.<br>
+<np>
+Kiwikā Pale Kahe Hoʻi
+Lako laina wai
+<&straight_pipe_valve>He ʻāpana laina wai paʻapu ke Kiwikā Pale Kahe Hoʻi no nā pahu wai liʻiliʻi, nā ala paipu, nā wahi ʻohi, a me ke kahe i hoʻomalu ʻia e Redstone.<br>
+<br>
+Hoʻohana: E kūlani i ke kiwikā me ka ʻaoʻao kahe i manaʻo ʻia.<br>
+<np>
+Kiwikā Wai Redstone
+Lako laina wai
+<&straight_pipe_valve_redstone>He ʻāpana laina wai paʻapu ke Kiwikā Wai Redstone no nā pahu wai liʻiliʻi, nā ala paipu, nā wahi ʻohi, a me ke kahe i hoʻomalu ʻia e Redstone.<br>
+<br>
+Hoʻohana: E kūlani i ke kiwikā me ka ʻaoʻao kahe i manaʻo ʻia.<br>
+<np>
+Kiwikā Wai Loli Mau
+Lako laina wai
+<&straight_pipe_valve_redstone_analog>He ʻāpana laina wai paʻapu ke Kiwikā Wai Loli Mau no nā pahu wai liʻiliʻi, nā ala paipu, nā wahi ʻohi, a me ke kahe i hoʻomalu ʻia e Redstone.<br>
+<br>
+Hoʻohana: E kūlani i ke kiwikā me ka ʻaoʻao kahe i manaʻo ʻia.<br>

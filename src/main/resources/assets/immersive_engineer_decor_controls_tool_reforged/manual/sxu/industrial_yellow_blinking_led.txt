@@ -1,0 +1,7 @@
+Gelb blingende LED
+Signalriggmeldung
+<&recipe>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.

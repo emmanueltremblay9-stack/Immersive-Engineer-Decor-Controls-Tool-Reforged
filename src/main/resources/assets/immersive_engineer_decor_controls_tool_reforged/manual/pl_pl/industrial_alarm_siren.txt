@@ -1,0 +1,7 @@
+Syrena alarmowa
+Sygnalizacja stanu
+<&recipe>Syrena alarmowa to wskaźnik redstone montowany na powierzchni bloku. Jej stan zasilania odpowiada sygnałowi z bloku, do którego jest przymocowana.<br>
+<br>
+Przymocuj ją do pełnej powierzchni i zasil, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Syrena odświeża stan raz na sekundę, dopóki sygnał pozostaje aktywny.

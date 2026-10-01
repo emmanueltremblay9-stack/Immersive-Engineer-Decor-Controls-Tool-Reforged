@@ -1,0 +1,5 @@
+Bristeoir Bloc
+Áis urláir ceardlainne
+<&recipe>Is bloc áisiúil urláir ceardlainne é an Bristeoir Beag Bloc le haghaidh ceardaíochta, stórála, leagan bloc, briste, bailithe nó uathoibrithe dhlúith.<br>
+<br>
+Úsáid: cuir an aghaidh oibre i dtreo an bhloic atá le baint.<br>

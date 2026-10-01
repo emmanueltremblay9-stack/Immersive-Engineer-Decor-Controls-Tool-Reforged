@@ -1,0 +1,5 @@
+Laboratorní pec
+Kompaktní zpracovací jednotka
+<&recipe>Laboratorní pec zvládá malé tavicí úlohy na tuhé palivo a v dílně zabírá málo místa.<br>
+<br>
+Použití: K tavení malých dávek používej tuhé palivo.<br>

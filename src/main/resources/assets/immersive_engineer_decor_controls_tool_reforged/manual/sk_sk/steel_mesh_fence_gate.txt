@@ -1,0 +1,5 @@
+Bránka oceľového pletivového plota
+Prvok servisného prístupu
+<&recipe>Tento blok vytvára prehľadné servisné trasy okolo strojov.<br>
+<br>
+Použitie: Umiestni ho na údržbový prístup okolo strojov, horných poschodí a servisných šácht.<br>

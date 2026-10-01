@@ -1,0 +1,7 @@
+Analoga ligoricevilo
+Ligita regilo
+<&recipe>Ligita ricevilo donas videbla distanta skopo a regopaneli.<br>
+<br>
+Uzo: Klikez ol kun Enderperlo por krear ligita perlo. Uzez ta perlo reptante por distance aktigar la ricevilo.<br>
+<br>
+Noti: Ca ricevilo emisas plena redstonea signalo kande startigita.

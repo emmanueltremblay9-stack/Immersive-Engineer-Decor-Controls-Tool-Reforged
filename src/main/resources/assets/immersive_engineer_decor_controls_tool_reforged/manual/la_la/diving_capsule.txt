@@ -1,0 +1,7 @@
+Capsula aeris urinatoria
+Copia aeris ad periculum
+<&recipe>Capsula aeris urinatoria subsidium aeris in necessitate ad opera sub aqua est.<br>
+<br>
+Usus: Manu utere ut aerem restituas. In inventario etiam sponte moveri potest cum aer paene deficit, deinde tempus refrigerationis intrat.<br>
+<br>
+Ad fodinas inundatas, fistulas submersas et refectiones conclavium sentinarum porta.

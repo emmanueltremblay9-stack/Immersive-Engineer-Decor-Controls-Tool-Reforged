@@ -1,0 +1,107 @@
+Workshop Looms
+Looms and workshop inflow/outflow
+Workshop looms do small crafting, thing-shifting, smelting, throwing-away, gathering and helping jobs within a lone clot.<br>
+<br>
+Open the next pages for each loom's crafting layout, looks, lore and working guidance.
+<np>
+Steel Board Table
+Workshop fitting
+<&steel_table>This clot is a useful shop fitting for workrooms and upkeep corners.<br>
+<br>
+Use: Set it beside benches, crates and small looms.<br>
+<np>
+Treated-Wood Table
+Workshop fitting
+<&treated_wood_table>This clot is a useful shop fitting for workrooms and upkeep corners.<br>
+<br>
+Use: Set it beside benches, crates and small looms.<br>
+<np>
+Treated-Wood Stool
+Workshop fitting
+<&treated_wood_stool>This clot is a useful shop fitting for workrooms and upkeep corners.<br>
+<br>
+Use: Set it beside benches, crates and small looms.<br>
+<np>
+Bloom Workbench
+Sheet workstead
+<&metal_crafting_table>The Bloom Workbench is a strengthened workshop stand with a hammer slot, a 3x3 crafting grid and a clear outward slot.<br>
+<br>
+Use: Use the grid for everyday crafting. For IE sheets, put an Engineer's Hammer in the tool slot and the sheet stuff in the grid before taking the yield. Steel decking uses steel sheets for poles, walkways, windows, doors, guardrails and other steel fittings.<br>
+<np>
+Workstead Hopper
+Workshop-floor helper
+<&factory_hopper>This clot shifts thing heaps through a smaller workstead housing.<br>
+<br>
+Use: Face it toward the inholding line, then set reach, heap count, timing and redstone kind on the screen.<br>
+<np>
+Workstead Dropper
+Workshop-floor helper
+<&factory_dropper>This clot lets stored things out through an aimed side.<br>
+<br>
+Use: Aim the fore side at the throwing spot, fill the inner slots, then set strength, slant, waiting time, sieve rules and redstone kind on the screen.<br>
+<np>
+Workstead Clot Setter
+Workshop-floor helper
+<&factory_placer>This clot sets clots from its inner stock when started.<br>
+<br>
+Use: Point the working side at the wanted space and fill it with heaps that can be set.<br>
+<np>
+Clot Breaker
+Workshop-floor helper
+<&small_block_breaker>The Small Clot Breaker is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Point the working side toward the clot to be taken away.<br>
+<np>
+Offal Burner
+Small working loom
+<&small_waste_incinerator>The Offal Burner destroys unwanted things in little workshop room.<br>
+<br>
+Use: Feed only unwanted things into its waiting row.<br>
+<np>
+Tryout Kiln
+Small working loom
+<&small_lab_furnace>The Tryout Kiln does small solid-stuff-fired smelting jobs in little workshop room.<br>
+<br>
+Use: Feed solid burning stuff for small smelting batches.<br>
+<np>
+Leveny Kiln
+Small working loom
+<&small_electrical_furnace>The Leveny Kiln does small FE-fed smelting jobs in little workshop room.<br>
+<br>
+Use: Feed FE and fitting things to smelt.<br>
+<np>
+Stone Smelter
+Small working loom
+<&small_mineral_smelter>The Stone Smelter works stone at high heat in little workshop room.<br>
+<br>
+Use: Feed stone clots and might for high-heat melting.<br>
+<np>
+Water Freezer
+Small working loom
+<&small_freezer>The Water Freezer does small chilling jobs for might-fed flowstuff works.<br>
+<br>
+Use: Feed water and might to make ice in steps.<br>
+<np>
+Self-Filling Flowstuff
+Flow-line gear
+<&passive_fluid_accumulator>The Self-Filling Flowstuff Gatherer is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Set it against fitting water springs and leave room to draw flowstuff out.<br>
+<np>
+Sunmight Board
+Workshop-floor helper
+<&small_solar_panel>The Small Sunmight Board is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Give it open sky and link gear that needs little might.<br>
+<np>
+Milking Loom
+Workshop-floor helper
+<&small_milking_machine>The Small Milking Loom is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Set it near cows and give it a way to send milk holders or flowing milk out.<br>
+<np>
+Tree Cutter
+Workshop-floor helper
+<&small_tree_cutter>The Small Tree Cutter is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Aim it at grown trees and gather the drops apart from it.<br>

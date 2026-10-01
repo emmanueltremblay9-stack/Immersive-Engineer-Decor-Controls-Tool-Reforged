@@ -1,0 +1,5 @@
+Kapsulë ajri për zhytje
+Rezervë ajri emergjente
+<&recipe>Kapsula e ajrit është rezervë emergjente për punë nën ujë.<br>
+<br>
+Përdoreni me dorë për të rikthyer ajrin. Në inventar ndizet automatikisht kur ajri pothuajse mbaron dhe pastaj hyn në ftohje. Merreni në miniera të përmbytura dhe pranë tubave nën ujë.

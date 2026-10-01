@@ -1,0 +1,7 @@
+Levier a contact
+Comande par redstone
+<&recipe>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.

@@ -1,0 +1,7 @@
+Komparatorschalter
+Signal am Befestigungsblock
+<&recipe>Ein kompakter Sensorschalter liest seinen Befestigungsblock aus und wandelt den Messwert in einen einfachen Schalttafelausgang um.<br>
+<br>
+Verwendung: Montiere ihn an Inventaren, Tanks oder Redstone-Bauteilen. Meldet der Befestigungsblock einen Komparator-, Behälter- oder Redstone-Ausgang, gibt der Schalter ein Redstone-Signal voller Stärke aus.<br>
+<br>
+Hinweis: Wandelt Lagerfüllstände oder verborgene Leitungen in klare Ein-/Aus-Steuerleitungen um.

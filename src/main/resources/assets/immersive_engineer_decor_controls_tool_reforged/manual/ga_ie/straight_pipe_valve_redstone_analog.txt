@@ -1,0 +1,5 @@
+Comhla Leachta Analógach
+Crua-earraí píblíne sreabháin
+<&recipe>Is páirt dhlúth píblíne sreabháin í an Chomhla Leachta Analógach d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: ailínigh an chomhla leis an treo sreafa atá beartaithe.<br>

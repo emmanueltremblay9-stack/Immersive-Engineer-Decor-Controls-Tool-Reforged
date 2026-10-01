@@ -1,0 +1,5 @@
+Hatch o' iron
+Factory access berth
+<&recipe>This block gives a stout point o' access to service rooms, shafts, roofs and machine enclosures.<br>
+<br>
+Orders: Fit her where yer build needs a controlled opening fer upkeep.<br>

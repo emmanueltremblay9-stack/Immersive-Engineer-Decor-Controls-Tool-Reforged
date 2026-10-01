@@ -1,0 +1,5 @@
+Fabrikkblokkplasserer
+Hjelpemiddel på fabrikkgulvet
+<&recipe>Denne blokken plasserer blokker fra sitt interne lager når den aktiveres.<br>
+<br>
+Bruk: rett arbeidssiden mot målrommet og legg inn stabler som kan plasseres.<br>

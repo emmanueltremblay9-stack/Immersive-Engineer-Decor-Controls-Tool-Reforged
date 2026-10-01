@@ -1,0 +1,5 @@
+Laboratoriouuni
+Pieni käsittely-yksikkö
+<&recipe>Laboratoriouuni hoitaa pienet kiinteällä polttoaineella tehtävät sulatustyöt vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Käytä kiinteää polttoainetta pieniin sulatuseriin.<br>

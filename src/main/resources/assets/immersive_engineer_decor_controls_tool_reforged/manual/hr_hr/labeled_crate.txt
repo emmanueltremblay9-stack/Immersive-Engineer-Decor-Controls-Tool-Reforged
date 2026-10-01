@@ -1,0 +1,5 @@
+Sanduk s oznakom
+Urediva oznaka zaliha
+<&recipe>Ovaj sanduk s oznakom olakšava pregledno sortiranje skladišta. Prednja pločica uređuje se poput malog radioničkog znaka.<br>
+<br>
+Uporaba: desnim klikom na pločicu uredi oznaku sanduka. Desnim klikom na ostatak sanduka otvori spremište za opremu, dijelove i zalihe za održavanje.<br>

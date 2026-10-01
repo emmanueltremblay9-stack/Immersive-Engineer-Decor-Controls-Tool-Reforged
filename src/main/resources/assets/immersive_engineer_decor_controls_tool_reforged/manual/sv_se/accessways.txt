@@ -1,0 +1,127 @@
+Tillträdesvägar
+Gångvägar och stöd
+Stålstolpar, stolpar av behandlat trä, galler, gångbryggor, räcken, stegar, dörrar, fönster och luckor bildar kompakta servicevägar genom fabrikens inre.<br>
+<br>
+Servicevägarnas ståldelar tillverkas av stålplåtar. Tillverka eller placera en metallarbetsbänk, sätt i en hammare från Immersive Engineering och hamra ståltackor till stålplåtar för stolpar, gångbryggor, fönster, dörrar, räcken och andra ståldekorationer.<br>
+<br>
+Placera dem där maskiner behöver serviceåtkomst, upphöjda gångvägar, underhållsschakt eller säkrare kanter.
+<np>
+Tjock stålstolpe
+Del till bärande stomme
+<&thick_steel_pole>Den raka tjocka stålstolpen ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Ändstycke för tjock stolpe
+Del till bärande stomme
+<&thick_steel_pole_head>Ändstycket för en rak tjock stålstolpe används som topp eller fot och ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Tunn stålstolpe
+Del till bärande stomme
+<&thin_steel_pole>Den raka tunna stålstolpen ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Ändstycke för tunn stolpe
+Del till bärande stomme
+<&thin_steel_pole_head>Ändstycket för en rak tunn stålstolpe används som topp eller fot och ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Stolpe av behandlat trä
+Del till bärande stomme
+<&treated_wood_pole>Den raka stolpen av behandlat trä ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Ändstycke för behandlad stolpe
+Del till bärande stomme
+<&treated_wood_pole_head>Ändstycket för en rak stolpe av behandlat trä används som topp eller fot och ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Stöd för behandlad stolpe
+Del till bärande stomme
+<&treated_wood_pole_support>Stödet för en rak stolpe av behandlat trä ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Dubbel T-balk av stål
+Del till bärande stomme
+<&steel_double_t_support>Det här blocket ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>
+<np>
+Stålgolvgaller
+Del för serviceåtkomst
+<&steel_floor_grating>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Stålgångbrygga
+Del för serviceåtkomst
+<&steel_catwalk>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Stålgångbryggstrappa
+Del för serviceåtkomst
+<&steel_catwalk_stairs>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Upphöjd stålgångbrygga
+Del för serviceåtkomst
+<&steel_catwalk_ta>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Stålräcke
+Del för serviceåtkomst
+<&steel_railing>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Stålnätstaket
+Del för serviceåtkomst
+<&steel_mesh_fence>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Stålnätsgrind
+Del för serviceåtkomst
+<&steel_mesh_fence_gate>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Metallstege
+Del för serviceåtkomst
+<&metal_rung_ladder>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Förskjutna metallsteg
+Del för serviceåtkomst
+<&metal_rung_steps>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>
+<np>
+Fönster med stålram
+Skyddad siktlinje
+<&steel_framed_window>Det här blocket håller sikten fri och passar samtidigt ihop med förstärkta fabriksbyggnader.<br>
+<br>
+Användning: Placera det i en väggöppning på ett block där spelare ska kunna se maskiner genom en skyddande barriär.<br>
+<np>
+Skjutdörr av metall
+Industriell åtkomstpunkt
+<&metal_sliding_door>Det här blocket ger en robust åtkomstpunkt till servicerum, schakt, tak och maskinhöljen.<br>
+<br>
+Användning: Montera det där byggnaden behöver en kontrollerad öppning för underhåll.<br>
+<np>
+Järnlucka
+Industriell åtkomstpunkt
+<&iron_hatch>Det här blocket ger en robust åtkomstpunkt till servicerum, schakt, tak och maskinhöljen.<br>
+<br>
+Användning: Montera det där byggnaden behöver en kontrollerad öppning för underhåll.<br>

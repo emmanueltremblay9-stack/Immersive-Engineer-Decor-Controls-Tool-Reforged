@@ -1,0 +1,107 @@
+Peiriannau Gweithdy
+Peiriannau a mewnbwn/allbwn gweithdy
+Mae peiriannau gweithdy'n darparu crefftio, symud eitemau, mwyndoddi, gwaredu, casglu a gwaith cyfleustod cryno o fewn un bloc.<br>
+<br>
+Agorwch y tudalennau canlynol i weld rysáit, delwedd, cefndir a nodiadau defnyddio ymarferol pob peiriant.
+<np>
+Bwrdd Dur
+Dodrefnyn gweithdy
+<&steel_table>Dodrefnyn gweithdy ymarferol yw'r bloc hwn, ar gyfer ystafelloedd gwaith a chorneli cynnal a chadw.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl meinciau, cratiau a pheiriannau cryno.<br>
+<np>
+Bwrdd Pren wedi'i Drin
+Dodrefnyn gweithdy
+<&treated_wood_table>Dodrefnyn gweithdy ymarferol yw'r bloc hwn, ar gyfer ystafelloedd gwaith a chorneli cynnal a chadw.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl meinciau, cratiau a pheiriannau cryno.<br>
+<np>
+Stôl Pren wedi'i Drin
+Dodrefnyn gweithdy
+<&treated_wood_stool>Dodrefnyn gweithdy ymarferol yw'r bloc hwn, ar gyfer ystafelloedd gwaith a chorneli cynnal a chadw.<br>
+<br>
+Defnydd: Gosodwch ef wrth ymyl meinciau, cratiau a pheiriannau cryno.<br>
+<np>
+Bwrdd Crefft Metel
+Gweithfan platiau
+<&metal_crafting_table>Gweithfan gweithdy atgyfnerthiedig yw'r Bwrdd Crefft Metel, â slot morthwyl, grid crefftio 3x3 a slot allbwn clir.<br>
+<br>
+Defnydd: Defnyddiwch y grid ar gyfer crefftio arferol. Ar gyfer platiau IE, rhowch Forthwyl y Peiriannydd yn y slot offer a deunydd y plât yn y grid cyn cymryd y canlyniad. Mae addurniadau dur yn defnyddio platiau dur ar gyfer polion, llwyfannau cerdded, ffenestri, drysau, rheiliau a rhannau dur eraill.<br>
+<np>
+Hopran Ffatri
+Cyfleustod llawr gweithdy
+<&factory_hopper>Mae'r bloc hwn yn symud pentyrrau eitemau drwy gasin diwydiannol mwy cryno.<br>
+<br>
+Defnydd: Trowch ef tuag at y llinell rhestrau eiddo, yna gosodwch ystod, nifer y pentyrrau, amseru a modd Redstone ar ei sgrin.<br>
+<np>
+Gollyngwr Ffatri
+Cyfleustod llawr gweithdy
+<&factory_dropper>Mae'r bloc hwn yn gollwng eitemau wedi'u storio o wyneb wedi'i anelu.<br>
+<br>
+Defnydd: Anelwch y blaen at y pwynt gollwng, llenwch ei slotiau mewnol ac addaswch rym, ongl, oedi, rhesymeg hidlydd a modd Redstone ar ei sgrin.<br>
+<np>
+Gosodwr Blociau Ffatri
+Cyfleustod llawr gweithdy
+<&factory_placer>Mae'r bloc hwn yn gosod blociau o'i stoc fewnol pan gaiff ei weithredu.<br>
+<br>
+Defnydd: Anelwch yr wyneb gweithio at y gofod targed a llwythwch bentyrrau y gellir eu gosod.<br>
+<np>
+Torrwr Blociau
+Cyfleustod llawr gweithdy
+<&small_block_breaker>Bloc cyfleustod llawr gweithdy yw'r Torrwr Blociau Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Gosodwch yr wyneb gweithio tuag at y bloc i'w dynnu.<br>
+<np>
+Llosgydd Gwastraff
+Uned brosesu gryno
+<&small_waste_incinerator>Mae'r Llosgydd Gwastraff yn dinistrio eitemau diangen mewn arwynebedd gweithdy cryno.<br>
+<br>
+Defnydd: Rhowch eitemau diangen yn unig yn ei giw.<br>
+<np>
+Ffwrnais Labordy
+Uned brosesu gryno
+<&small_lab_furnace>Mae'r Ffwrnais Labordy yn cyflawni gwaith mwyndoddi cryno â thanwydd solet mewn arwynebedd gweithdy bach.<br>
+<br>
+Defnydd: Defnyddiwch danwydd solet ar gyfer sypiau mwyndoddi cryno.<br>
+<np>
+Ffwrnais Drydan
+Uned brosesu gryno
+<&small_electrical_furnace>Mae'r Ffwrnais Drydan yn cyflawni gwaith mwyndoddi cryno â phŵer FE mewn arwynebedd gweithdy bach.<br>
+<br>
+Defnydd: Cyflenwch FE a mewnbwn mwyndoddi dilys.<br>
+<np>
+Toddwr Mwynau
+Uned brosesu gryno
+<&small_mineral_smelter>Mae'r Toddwr Mwynau yn prosesu mwynau ar wres uchel mewn arwynebedd gweithdy cryno.<br>
+<br>
+Defnydd: Cyflenwch flociau mwynol a phŵer ar gyfer toddi ar wres uchel.<br>
+<np>
+Rhewgell Dŵr
+Uned brosesu gryno
+<&small_freezer>Mae'r Rhewgell Dŵr yn cyflawni gwaith oeri cryno ar gyfer systemau hylif â phŵer.<br>
+<br>
+Defnydd: Cyflenwch ddŵr a phŵer i gynhyrchu rhew fesul cam.<br>
+<np>
+Hylif Goddefol
+Offer llinell hylif
+<&passive_fluid_accumulator>Rhan gryno o linell hylif yw'r Cronnydd Hylif Goddefol, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Gosodwch ef yn erbyn ffynonellau dŵr addas a gadewch le i dynnu'r hylif.<br>
+<np>
+Panel Solar
+Cyfleustod llawr gweithdy
+<&small_solar_panel>Bloc cyfleustod llawr gweithdy yw'r Panel Solar Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Rhowch fynediad at awyr agored iddo a chysylltwch offer sydd angen ychydig o bŵer.<br>
+<np>
+Peiriant Godro
+Cyfleustod llawr gweithdy
+<&small_milking_machine>Bloc cyfleustod llawr gweithdy yw'r Peiriant Godro Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Gosodwch ef ger buchod a darparwch ffordd o dynnu cynwysyddion llaeth neu hylif.<br>
+<np>
+Torrwr Coed
+Cyfleustod llawr gweithdy
+<&small_tree_cutter>Bloc cyfleustod llawr gweithdy yw'r Torrwr Coed Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Anelwch ef at goed sydd wedi tyfu a chasglwch yr eitemau sy'n disgyn ar wahân.<br>

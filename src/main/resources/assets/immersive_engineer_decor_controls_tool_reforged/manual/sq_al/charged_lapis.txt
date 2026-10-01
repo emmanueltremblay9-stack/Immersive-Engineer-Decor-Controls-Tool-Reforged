@@ -1,0 +1,7 @@
+Lazurit i ngarkuar
+Përvojë e ruajtur
+<&recipe>Lazuriti i ngarkuar ruan një nivel përvoje të krijuar përmes Shtrydhësit të mendjes.<br>
+<br>
+Përdorimi: konsumoje për të rimarrë një nivel, për të hequr efektet aktive dhe për të rikthyer pak shëndet.<br>
+<br>
+Dritarja e recetës tregon Shtrydhësin e mendjes, sepse Lazuriti i ngarkuar prodhohet duke përdorur atë vegël kur ke lazurit dhe XP.

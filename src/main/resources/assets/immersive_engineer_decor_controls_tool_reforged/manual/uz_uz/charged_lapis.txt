@@ -1,0 +1,7 @@
+Zaryadlangan lojuvard
+Saqlangan tajriba
+<&recipe>Zaryadlangan lojuvard Ong siqgich orqali yaratilgan bitta tajriba darajasini saqlaydi.<br>
+<br>
+Ishlatish: bitta darajani tiklash, faol ta'sirlarni tozalash va ozgina sog'liq qaytarish uchun iste'mol qiling.<br>
+<br>
+Retsept vidjeti Ong siqgichni ko'rsatadi, chunki zaryadlangan lojuvard lojuvard va tajriba mavjud bo'lganda shu asbobni ishlatib yaratiladi.

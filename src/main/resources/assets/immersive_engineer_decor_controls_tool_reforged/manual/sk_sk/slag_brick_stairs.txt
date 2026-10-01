@@ -1,0 +1,5 @@
+Schody z troskových tehál
+Hutné továrenské murivo
+<&recipe>Tento blok pridáva hutné sivohnedé murivo na základy, oporné múry a staršie dielne.<br>
+<br>
+Použitie: Hodí sa na staršie základy, oporné múry a špinavé továrenské podlahy.<br>

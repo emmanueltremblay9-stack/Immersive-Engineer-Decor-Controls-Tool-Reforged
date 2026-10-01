@@ -1,0 +1,108 @@
+Costruzioni industriali
+Pareti e rifiniture industriali
+Gli accessori generali da costruzione comprendono porte, finestre, luci, cartelli di pericolo, rifiniture ed elementi strutturali che non appartengono a sezioni più specifiche.<br>
+<br>
+Consulta queste pagine per locali industriali, corridoi di servizio, segnalazione dei pericoli e dettagli industriali pratici.
+<np>
+Lampadina in ferro
+Luce da lavoro compatta
+<&iron_bulb_light>Questo blocco offre un’illuminazione industriale compatta per corridoi, passerelle e postazioni di lavoro.<br>
+<br>
+Uso: montalo su soffitti, pareti o bordi dove serve una buona illuminazione da lavoro.<br>
+<np>
+Luce da bordo del soffitto
+Luce da lavoro compatta
+<&iron_ceiling_edge_light>Questo blocco offre un’illuminazione industriale compatta per corridoi, passerelle e postazioni di lavoro.<br>
+<br>
+Uso: montalo su soffitti, pareti o bordi dove serve una buona illuminazione da lavoro.<br>
+<np>
+Luce incassata da bordo del pavimento
+Luce da lavoro compatta
+<&iron_floor_edge_light>Questo blocco offre un’illuminazione industriale compatta per corridoi, passerelle e postazioni di lavoro.<br>
+<br>
+Uso: montalo su soffitti, pareti o bordi dove serve una buona illuminazione da lavoro.<br>
+<np>
+Luce incassata
+Luce da lavoro compatta
+<&iron_inset_light>Questo blocco offre un’illuminazione industriale compatta per corridoi, passerelle e postazioni di lavoro.<br>
+<br>
+Uso: montalo su soffitti, pareti o bordi dove serve una buona illuminazione da lavoro.<br>
+<np>
+Cartello «Attenzione»
+Indicatore di pericolo
+<&sign_caution>Il cartello «Attenzione» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello di pericolo
+Indicatore di pericolo
+<&sign_danger>Il cartello «Attenzione, zona molto pericolosa» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello decorativo
+Indicatore di pericolo
+<&sign_decor>La targa delle decorazioni dell’ingegnere segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello di difesa
+Indicatore di pericolo
+<&sign_defense>Il cartello «Attenzione, sistema di difesa più avanti» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello di uscita
+Indicatore di pericolo
+<&sign_exit>Questo cartello segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello «Pericolo d’incendio»
+Indicatore di pericolo
+<&sign_firehazard>Il cartello «Pericolo d’incendio» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello «Attenzione al gelo»
+Indicatore di pericolo
+<&sign_frost>Il cartello «Attenzione al gelo» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello di superficie calda
+Indicatore di pericolo
+<&sign_hotsurface>Il cartello «Attenzione, superficie calda» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello di cavo sotto tensione
+Indicatore di pericolo
+<&sign_hotwire>Il cartello «Attenzione, cavo sotto tensione» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello «Pericolo laser»
+Indicatore di pericolo
+<&sign_laser>Il cartello «Pericolo laser» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello di pericolo magico
+Indicatore di pericolo
+<&sign_magichazard>Il cartello «Attenzione, pericolo magico» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello di campo magnetico
+Indicatore di pericolo
+<&sign_magneticfield>Il cartello «Attenzione, forte campo magnetico» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>
+Cartello «Pericolo radioattivo»
+Indicatore di pericolo
+<&sign_radioactive>Il cartello «Pericolo radioattivo» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>
+<np>

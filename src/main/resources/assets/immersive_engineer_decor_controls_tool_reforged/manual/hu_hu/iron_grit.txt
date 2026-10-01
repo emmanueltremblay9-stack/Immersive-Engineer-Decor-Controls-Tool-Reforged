@@ -1,0 +1,3 @@
+Durva vasszemcse
+Az újjáépített barkácskészletben használt mérnöki szerszámanyag.
+<&recipe>Vasrúddá olvasztható,<br>de fejlettebb<br>anyagfeldolgozásra nem alkalmas.

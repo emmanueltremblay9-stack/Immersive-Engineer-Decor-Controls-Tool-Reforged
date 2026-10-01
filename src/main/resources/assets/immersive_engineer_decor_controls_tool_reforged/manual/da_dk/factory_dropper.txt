@@ -1,0 +1,5 @@
+Fabriksudkaster
+Hjælpemiddel til værkstedsgulvet
+<&recipe>Denne blok udsender lagrede genstande fra en rettet forside.<br>
+<br>
+Brug: Ret forsiden mod udleveringspunktet, fyld de interne pladser, og indstil kraft, vinkel, forsinkelse, filterlogik og redstonetilstand på skærmen.<br>

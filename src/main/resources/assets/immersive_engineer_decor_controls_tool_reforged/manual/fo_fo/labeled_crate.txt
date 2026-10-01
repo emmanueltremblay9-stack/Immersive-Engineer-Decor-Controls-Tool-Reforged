@@ -1,0 +1,5 @@
+Kassi við merki
+Broytiligt goymslumerki
+<&recipe>Hesin kassin við merki er gjørdur til greiða flokking í goymslurúminum. Framplátan kann broytast sum eitt lítið verkstaðarskelti.<br>
+<br>
+Nýtsla: Høgraklikk á merkisplátuna fyri at broyta kassamerkið. Høgraklikk á restina av kassanum fyri at lata goymsluna til útgerð, partar og viðlíkahaldstilfar upp.<br>

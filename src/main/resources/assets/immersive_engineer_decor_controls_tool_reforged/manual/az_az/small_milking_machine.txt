@@ -1,0 +1,5 @@
+Sağım maşını
+Emalatxana yardımçısı
+<&recipe>Kiçik sağım maşını hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: İnəklərin yaxınlığına qoyun və süd qablarının və ya mayenin çıxarılmasına imkan yaradın.<br>

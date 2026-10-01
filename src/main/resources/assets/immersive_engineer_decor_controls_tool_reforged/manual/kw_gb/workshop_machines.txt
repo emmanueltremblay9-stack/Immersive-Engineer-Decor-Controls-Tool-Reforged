@@ -1,0 +1,107 @@
+Jynnys Gweythdy
+Jynnys hag ynworrans/eskorrans gweythdy
+Yma jynnys gweythdy ow ri kreftya, remova traow, teudhi, dilea, dastum hag ober devnydhyek kompakt yn egor unn stock.<br>
+<br>
+Ygor an folennow a syw rag formula, skeusenn, derivadow ha notennow devnydh ymarferel a bub jynn.
+<np>
+Moos Dur
+Tacklow gweythdy
+<&steel_table>Yth yw an stock ma darn ymarferel a dacklow gweythdy rag stevelyow oberi ha korneliow mantenyans.<br>
+<br>
+Devnydh: gor e ogas dhe venkys, kistyow ha jynnys kompakt.<br>
+<np>
+Moos Prenn Tretys
+Tacklow gweythdy
+<&treated_wood_table>Yth yw an stock ma darn ymarferel a dacklow gweythdy rag stevelyow oberi ha korneliow mantenyans.<br>
+<br>
+Devnydh: gor e ogas dhe venkys, kistyow ha jynnys kompakt.<br>
+<np>
+Skavel Prenn Tretys
+Tacklow gweythdy
+<&treated_wood_stool>Yth yw an stock ma darn ymarferel a dacklow gweythdy rag stevelyow oberi ha korneliow mantenyans.<br>
+<br>
+Devnydh: gor e ogas dhe venkys, kistyow ha jynnys kompakt.<br>
+<np>
+Moos Kreftya Metal
+Gorsav oberi platyow
+<&metal_crafting_table>Yth yw an Moos Kreftya Metal gorsav gweythdy nerthys gans slot morthol, gril kreftya 3x3 ha slot eskorrans kler.<br>
+<br>
+Devnydh: usya an gril rag kreftya normal. Rag platyow IE, gor Morthol an Enjynour y'n slot daffar ha gor danvez an plat y'n gril kyns kemeres an sewyans. Yma afinyow dur ow tevnydhya platyow dur rag peulyow, hensyow kerdhes, fenestriow, darasow, balustransow ha parthow dur erel.<br>
+<np>
+Korn-Dinewi Gweythva
+Daffar leur gweythdy
+<&factory_hopper>An stock ma a vov bernyow traow dre gist diwysyansel moy kompakt.<br>
+<br>
+Devnydh: tro e dhe'n res rolasow, ena set kylles, niver bernyow, termyn ha fordh rudhven war y skrin.<br>
+<np>
+Droppyer Gweythva
+Daffar leur gweythdy
+<&factory_dropper>An stock ma a dhyllo traow gwithys a enep amkan.<br>
+<br>
+Devnydh: tro an tal dhe'n poynt dyllo, karg an slotow a-berth, ha set nerth, korn, termyn gortos, resonydh sidhel ha fordh rudhven war y skrin.<br>
+<np>
+Gorrour Stockow Gweythva
+Daffar leur gweythdy
+<&factory_placer>An stock ma a worr stockow a'n stokk a-berth pan y'n weythennir.<br>
+<br>
+Devnydh: tro an enep oberi dhe'n spas amkan ha karg bernyow gorradow.<br>
+<np>
+Terrour Stockow
+Daffar leur gweythdy
+<&small_block_breaker>Yth yw an Terrour Stockow Byghan stock devnydhyek rag leur gweythdy: kreftya, gwitha, gorra, terri, dastum po oberans awtomatek kompakt.<br>
+<br>
+Devnydh: gor an enep oberi war-tu ha'n stock dhe dhilea.<br>
+<np>
+Leskyer Atal
+Unsys oberi kompakt
+<&small_waste_incinerator>Yma an Leskyer Atal ow distrui traow na fynnir ha devnydhya nebes egor yn gweythdy.<br>
+<br>
+Devnydh: gor traow na fynnir hepken y'n res.<br>
+<np>
+Fog Arnodhva
+Unsys oberi kompakt
+<&small_lab_furnace>Yma an Fog Arnodhva ow teudhi gans danvez leski kales ha devnydhya nebes egor yn gweythdy byghan.<br>
+<br>
+Devnydh: usya danvez leski kales rag bagasow teudhi kompakt.<br>
+<np>
+Fog Tredanek
+Unsys oberi kompakt
+<&small_electrical_furnace>Yma an Fog Tredanek ow teudhi gans galloes FE ha devnydhya nebes egor yn gweythdy byghan.<br>
+<br>
+Devnydh: ri FE ha danvez gwiw dhe deudhi.<br>
+<np>
+Fog Teudhi Mineralow
+Unsys oberi kompakt
+<&small_mineral_smelter>Yma an Fog Teudhi Mineralow owth oberi mineralow gans tommder ughel ha devnydhya nebes egor yn gweythdy.<br>
+<br>
+Devnydh: ri stockow mineralow ha galloes rag teudhi gans tommder ughel.<br>
+<np>
+Rewer Dowr
+Unsys oberi kompakt
+<&small_freezer>Yma an Rewer Dowr ow kul ober yeynhe kompakt rag systemow hylyf gans galloes.<br>
+<br>
+Devnydh: ri dowr ha galloes rag askorra rew dre gammow.<br>
+<np>
+Hylyf Passek
+Daffar lynenn hylyf
+<&passive_fluid_accumulator>Yth yw an Dastumyer Hylyf Passek darn kompakt a linen hylyf rag tankys byghan, hensyow pibell, leow dastum ha fros reolys gans rudhven.<br>
+<br>
+Devnydh: gor e orth pennfentennow dowr gwiw ha gas egor rag tenna an hylyf.<br>
+<np>
+Panel Howlek
+Daffar leur gweythdy
+<&small_solar_panel>Yth yw an Panel Howlek Byghan stock devnydhyek rag leur gweythdy: kreftya, gwitha, gorra, terri, dastum po oberans awtomatek kompakt.<br>
+<br>
+Devnydh: gas an ebron digor a-ugh dhodho ha jun daffar gans devnydh isel.<br>
+<np>
+Jynn Godhra
+Daffar leur gweythdy
+<&small_milking_machine>Yth yw an Jynn Godhra Byghan stock devnydhyek rag leur gweythdy: kreftya, gwitha, gorra, terri, dastum po oberans awtomatek kompakt.<br>
+<br>
+Devnydh: gor e ogas dhe vughes ha ri fordh dhe denna lestri leth po hylyf.<br>
+<np>
+Treghyer Gwydh
+Daffar leur gweythdy
+<&small_tree_cutter>Yth yw an Treghyer Gwydh Byghan stock devnydhyek rag leur gweythdy: kreftya, gwitha, gorra, terri, dastum po oberans awtomatek kompakt.<br>
+<br>
+Devnydh: gor y enep war-tu ha gwydh devys ha dastum an traow a godh a-hanow.<br>

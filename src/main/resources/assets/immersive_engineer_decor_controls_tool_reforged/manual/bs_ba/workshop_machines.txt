@@ -1,0 +1,107 @@
+Radioničke mašine
+Mašine i radionički ulazi/izlazi
+Radioničke mašine omogućavaju kompaktnu izradu, premještanje predmeta, topljenje, odlaganje, prikupljanje i pomoćne poslove na prostoru jednog bloka.<br>
+<br>
+Otvorite sljedeće stranice za recept, sliku, tematski opis i praktične napomene o upotrebi svake mašine.
+<np>
+Čelični sto
+Radionički namještaj
+<&steel_table>Ovaj blok je praktičan radionički namještaj za radne prostorije i kutke za održavanje.<br>
+<br>
+Upotreba: Postavite ga uz radne klupe, sanduke i kompaktne mašine.<br>
+<np>
+Sto od tretiranog drveta
+Radionički namještaj
+<&treated_wood_table>Ovaj blok je praktičan radionički namještaj za radne prostorije i kutke za održavanje.<br>
+<br>
+Upotreba: Postavite ga uz radne klupe, sanduke i kompaktne mašine.<br>
+<np>
+Stolica bez naslona od tretiranog drveta
+Radionički namještaj
+<&treated_wood_stool>Ovaj blok je praktičan radionički namještaj za radne prostorije i kutke za održavanje.<br>
+<br>
+Upotreba: Postavite ga uz radne klupe, sanduke i kompaktne mašine.<br>
+<np>
+Sto za obradu metala
+Radno mjesto za ploče
+<&metal_crafting_table>Sto za obradu metala je ojačana radionička stanica s mjestom za čekić, mrežom za izradu 3x3 i jasno izdvojenim izlaznim mjestom.<br>
+<br>
+Upotreba: Koristite mrežu za običnu izradu. Za IE ploče stavite inženjerski čekić u mjesto za alat i materijal ploče u mrežu prije uzimanja rezultata. Čelični ukrasi koriste čelične ploče za stubove, servisne staze, prozore, vrata, zaštitne ograde i druge čelične dijelove.<br>
+<np>
+Fabrički lijevak
+Oprema fabričke hale
+<&factory_hopper>Ovaj blok premješta hrpe predmeta kroz kompaktnije industrijsko kućište.<br>
+<br>
+Upotreba: Okrenite ga prema nizu inventara, a zatim u interfejsu podesite domet, broj hrpa, vremenske razmake i redstone način.<br>
+<np>
+Fabrički izbacivač
+Oprema fabričke hale
+<&factory_dropper>Ovaj blok izbacuje pohranjene predmete kroz usmjerenu stranu.<br>
+<br>
+Upotreba: Usmjerite prednju stranu prema mjestu izbacivanja, napunite unutrašnja mjesta i u interfejsu podesite snagu, ugao, kašnjenje, logiku filtera i redstone način.<br>
+<np>
+Fabrički postavljač blokova
+Oprema fabričke hale
+<&factory_placer>Ovaj blok pri aktiviranju postavlja blokove iz svojih unutrašnjih zaliha.<br>
+<br>
+Upotreba: Usmjerite radnu stranu prema ciljnom prostoru i ubacite hrpe koje se mogu postaviti.<br>
+<np>
+Razbijač blokova
+Oprema fabričke hale
+<&small_block_breaker>Mali razbijač blokova je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Okrenite radnu stranu prema bloku koji želite ukloniti.<br>
+<np>
+Spalionica otpada
+Kompaktna jedinica za obradu
+<&small_waste_incinerator>Spalionica otpada uništava neželjene predmete, zauzimajući malo mjesta u radionici.<br>
+<br>
+Upotreba: U njen red ubacujte samo neželjene predmete.<br>
+<np>
+Laboratorijska peć
+Kompaktna jedinica za obradu
+<&small_lab_furnace>Laboratorijska peć obavlja kompaktne poslove topljenja na čvrsto gorivo, zauzimajući malo mjesta u radionici.<br>
+<br>
+Upotreba: Koristite čvrsto gorivo za male ture topljenja.<br>
+<np>
+Električna peć
+Kompaktna jedinica za obradu
+<&small_electrical_furnace>Električna peć obavlja kompaktne poslove topljenja uz FE napajanje, zauzimajući malo mjesta u radionici.<br>
+<br>
+Upotreba: Dovedite FE i pogodan materijal za topljenje.<br>
+<np>
+Topionica minerala
+Kompaktna jedinica za obradu
+<&small_mineral_smelter>Topionica minerala obrađuje minerale na visokoj temperaturi, zauzimajući malo mjesta u radionici.<br>
+<br>
+Upotreba: Dovedite mineralne blokove i energiju za topljenje na visokoj temperaturi.<br>
+<np>
+Zamrzivač vode
+Kompaktna jedinica za obradu
+<&small_freezer>Zamrzivač vode obavlja kompaktne poslove hlađenja u instalacijama fluida s napajanjem.<br>
+<br>
+Upotreba: Dovedite vodu i energiju za proizvodnju leda u fazama.<br>
+<np>
+Pasivni fluid
+Oprema vodova za fluide
+<&passive_fluid_accumulator>Pasivni sakupljač fluida je kompaktni dio voda za fluide za male spremnike, cjevovode, sabirna mjesta i protok upravljan redstoneom.<br>
+<br>
+Upotreba: Postavite ga uz pogodne izvore vode i ostavite prostor za izvlačenje fluida.<br>
+<np>
+Solarni panel
+Oprema fabričke hale
+<&small_solar_panel>Mali solarni panel je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Omogućite mu otvoreno nebo i povežite opremu male potrošnje.<br>
+<np>
+Muzilica
+Oprema fabričke hale
+<&small_milking_machine>Mala muzilica je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Postavite je blizu krava i omogućite izvlačenje posuda za mlijeko ili fluida.<br>
+<np>
+Sjekač drveća
+Oprema fabričke hale
+<&small_tree_cutter>Mali sjekač drveća je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Usmjerite ga prema odraslim stablima i zasebno prikupite ispuštene predmete.<br>

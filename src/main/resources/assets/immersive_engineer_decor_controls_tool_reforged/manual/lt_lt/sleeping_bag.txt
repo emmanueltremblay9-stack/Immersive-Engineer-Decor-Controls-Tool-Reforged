@@ -1,0 +1,7 @@
+Miegmaišis
+Nešiojamasis poilsio rinkinys
+<&recipe>Miegmaišis yra oro sąlygoms atsparus poilsio rinkinys darbui toli nuo lovos.<br>
+<br>
+Naudojimas: Naudok naktį Overworld, kad pailsėtum iki ryto. Jis nenustato ir neperkelia atsiradimo vietos.<br>
+<br>
+Jis neveikia dieną, pavojingoje vietoje su netoliese esančiais monstrais ir saugiam poilsiui netinkamose dimensijose. Kiekvienas sėkmingas poilsis dėvi maišą.

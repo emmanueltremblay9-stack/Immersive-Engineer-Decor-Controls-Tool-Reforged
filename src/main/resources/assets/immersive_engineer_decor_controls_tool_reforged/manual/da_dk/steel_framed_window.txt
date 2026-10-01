@@ -1,0 +1,5 @@
+Vindue med stålramme
+Beskyttet udsyn
+<&recipe>Denne blok bevarer det frie udsyn og passer samtidig til forstærkede fabriksbygninger.<br>
+<br>
+Brug: Brug den, hvor spillere skal kunne se maskiner gennem en beskyttende barriere.<br>

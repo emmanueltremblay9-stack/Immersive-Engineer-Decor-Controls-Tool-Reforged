@@ -1,0 +1,7 @@
+Bòrd-ciùird meatailt
+Ionad-obrach pleataichean
+<&recipe>Beinge-obrach meatailt le slot òird sònraichte, griod ciùird 3x3 agus slot toraidh.<br>
+<br>
+Cleachdadh: cleachd an griod mar bhòrd-ciùird àbhaisteach. Gus pleataichean IE a chumadh, cuir Òrd an Innleadair anns an t-sliotan inneil agus cuir stuth na pleata sa ghriod, agus an uair sin thoir a' phleata chumte on às-chur.<br>
+<br>
+Cleachdaidh sgeadachaidhean stàilinn pleataichean stàilinn. Cuir òrd Immersive Engineering a-steach, buail ungaichean stàilinn leis an òrd gus pleataichean stàilinn a dhèanamh, agus an uair sin cleachd na pleataichean gus puist, slighean-coise, uinneagan, dorsan, rèilean agus sgeadachaidhean stàilinn eile a dhèanamh.<br>

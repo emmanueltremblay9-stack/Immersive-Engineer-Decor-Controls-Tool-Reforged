@@ -1,0 +1,93 @@
+ilo pi jan pali ilo
+ilo tawa pi tomo pali
+kulupu ilo pi jan pali ilo li pana e ilo luka, e sitelen nasin pi lupa kiwen, e ijo kepeken lon ike, e moku ma, e ilo lili pi pali ijo tawa lipu sona sama pi leko pona lukin en leko lawa.<br>
+<br>
+ilo ni li tawa pali lon weka pi tomo pali pi jo ilo ale: o sitelen e nasin, o jo e ijo wile, o kama pona tan pakala, o pini e pali lili pi ante ijo lon ma pali.
+<np>
+ilo REDIA
+ilo pona pi selo kiwen laso
+<&redia_tool>ilo REDIA li ilo ma pi mute pona suli tawa pali ma pi tenpo lili. o kepeken e ona lon ma pi ken pali tawa pali e ma mama.<br>
+<br>
+o kepeken e ona lon sinpin awen lon jo pi palisa suno tawa pana e sitelen palisa suno tan jo sina kepeken lili ala pi mute pona REDIA. pali ma, kipisi len, pali pi ilo kipisi, en kipisi kasi suli li lili e mute pona.
+<np>
+ilo pakala kiwen ma
+ilo pakala kepeken luka
+<&crushing_hammer>ilo pakala kiwen ma li ilo luka tawa pali open pi kiwen walo en kiwen jelo.<br>
+<br>
+o kepeken ona lon pali kepeken kiwen walo/jelo sin anu kiwen ma ona, kepeken ante deepslate kin, tawa pali e ko Immersive Engineering. ilo li kama pakala lili li awen lon ma pali tan pali, li pakala lon alasa, li tawa weka e jan ike.
+<np>
+ilo alasa nasin
+sitelen pi ma awen
+<&tracker>ilo alasa ma li awen e ma leko lon insa ona.<br>
+<br>
+o pilin e leko tawa awen e ma suli en nanpa ma. nimi ilo li toki e ma. o anpa o kepeken ona tawa weka e ma.<br>
+<br>
+o sitelen e ilo, nasin anpa, ilo lawa weka anu tomo pini ala.
+<np>
+ko pimeja Ariadne
+ilo sitelen nasin pi lupa kiwen
+<&ariadne_coal>ko pimeja Ariadne li pana e linja lawa pimeja pi nasin lon sinpin awen pi lupa kiwen kepeken tenpo lili. o kepeken e ona lon sinpin kiwen tawa sitelen e ante nasin kama, e nasin weka, anu e ma pi kipisi nasin. sitelen li ken kepeken e nasin luka tu wan lon sinpin pi luka sina. nasin pi poka tu kin li ken.<br>
+<br>
+ko pimeja Ariadne li ilo sitelen pi kepeken sin pi kepeken 100. pana sitelen pona wan li weka e mute pona wan. ilo li kute ala e sinpin pi ken ala. ona li lili ala e mute pona ilo.
+<np>
+poki pi pana pona sijelo kepeken wile ona
+ilo pana telo lon ike
+<&stimpack>poki sijelo Auto Stim li ilo pona sijelo pi tenpo ike.<br>
+<br>
+o kepeken luka tawa pona, awen lili, tawa wawa. ona lon poki jo la sijelo li ike la ona li pali sama, li awen lon tenpo. o jo lon ma ike.
+<np>
+poki lape
+ilo lape tawa
+<&sleeping_bag>poki lape li ilo lape pi ma ante lon weka supa lape.<br>
+<br>
+lon tenpo pimeja lon Overworld la o kepeken tawa kama tenpo suno. ona li ante ala e ma kama sin.<br>
+<br>
+tenpo suno, monsuta poka, anu ma ante ike la ona li pali ala. lape pona li pakala lili e poki.
+<np>
+poki jo pi ijo tomo
+poki ijo pi pali tomo
+<&material_box>poki ijo li jo suli e ijo tomo wan pi nasin pona, pi ante ala, pi ken kulupu.<br>
+<br>
+o jo e poki lon luka suli, e ijo lon luka ante tawa pana insa. luka ante li jo ala la o kepeken tawa kama jo e kulupu wan.<br>
+<br>
+ona li jo e ijo 512 pi nasin wan. ona li jo ala e poki ante, e ilo pi ken kulupu ala, e ijo ante. nimi ilo li toki e jo ona.
+<np>
+poki kon pi tawa telo
+kon awen lon ike
+<&diving_capsule>poki kon telo li poki kon awen tawa pali lon anpa telo.<br>
+<br>
+o kepeken ona kepeken luka tawa pana sin e kon. ona lon poki jo la kon li kama pini la ona li pali sama. ni la ona li awen. o jo e ona lon ma kiwen pi telo en lon linja telo.
+<np>
+ilo ko pi moku palisa Muslee
+ilo ko moku
+<&musli_bar_press>ilo pana Muslee li ante e moku tawa moku lili pi pali ma.<br>
+<br>
+o jo e pan, e kili apple, e sike kasi wheat/melon/pumpkin/beetroot/hemp, o kepeken ilo. ona li moku e wan pi ijo ale, li alasa e ma jo, li pali e moku palisa tu tu, li kama pakala lili.<br>
+<br>
+ijo anu ma jo li weka la ona li moku ala e ijo.
+<np>
+moku palisa wawa Muslee Melange
+moku lili wawa tenpo pi tomo pali
+<&musli_bar>moku palisa Muslee Melange li moku lili tan pan, sike kasi, kili.<br>
+<br>
+o moku e ona lon pali pi ilo lawa, linja, supa, tomo ilo suli.
+<np>
+ilo ko sona
+ilo kulupu wawa sona
+<&charged_lapis_squeezer>ilo ko sona li ante e kiwen pi laso telo wan en nanpa wawa sona wan tan jo sina tawa kiwen pi laso telo pi jo wawa sona.<br>
+<br>
+pali ante pona ale li pakala e sijelo jan li wawa e wile moku tan pali li weka e lukin ona lon tenpo lili. kiwen pi laso telo li lon ala anu wawa sona li lon ala anu jan li poka ike tawa moli la ilo li pali ala.
+<np>
+kiwen pi laso telo pi jo wawa sona
+wawa sona jo
+<&charged_lapis>kiwen pi laso telo pi jo wawa sona li awen e nanpa wawa sona wan. o moku e ona tawa kama jo sin e nanpa ni, tawa weka e wawa nasa pi pali, tawa kama jo sin e pona sijelo lili.<br>
+<br>
+o pali e ilo ko sona lon tenpo nanpa wan. kiwen pi jo wawa sona li kama tan kepeken ilo ni lon jo pi kiwen pi laso telo en wawa sona.
+<np>
+kipisi suli pi kiwen walo
+ni li kiwen pi ilo jan pali ilo. kulupu pali pi pali sin li kepeken e ona.
+<&iron_grit>sina ken seli e ona tawa kiwen<br>walo. taso ona li pona ala tawa<br>nasin pali kiwen pi ilo mute.
+<np>
+kipisi suli pi kiwen jelo
+ni li kiwen pi ilo jan pali ilo. kulupu pali pi pali sin li kepeken e ona.
+<&gold_grit>sina ken seli e ona tawa kiwen<br>jelo. taso ona li pona ala tawa<br>nasin pali kiwen pi ilo mute.

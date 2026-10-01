@@ -1,0 +1,5 @@
+Falf Hylif Redstone
+Offer llinell hylif
+<&recipe>Rhan gryno o linell hylif yw'r Falf Hylif Redstone, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Aliniwch y falf â'r cyfeiriad llif a fwriedir.<br>

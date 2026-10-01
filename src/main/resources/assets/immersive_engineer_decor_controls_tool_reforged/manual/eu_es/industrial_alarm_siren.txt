@@ -1,0 +1,7 @@
+Alarma-sirena
+Seinale-adierazlea
+<&recipe>Alarma-sirena bloke-aurpegi batean muntatutako redstone adierazlea da. Piztutako egoerak atxikita dagoen blokearen seinalea jarraitzen du.<br>
+<br>
+Erabilera: Lotu aurpegi sendo bati eta elikatu ateak, makinak, alarmak edo panelak kontrolatzeko.<br>
+<br>
+Oharra: Seinalea aktibo dagoen bitartean, sirena segundoko behin freskatzen da.

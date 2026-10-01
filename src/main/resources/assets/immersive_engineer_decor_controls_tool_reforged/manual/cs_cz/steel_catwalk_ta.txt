@@ -1,0 +1,5 @@
+Zvýšená ocelová lávka
+Prvek servisního přístupu
+<&recipe>Tento blok vytváří přehledné servisní cesty kolem strojů.<br>
+<br>
+Použití: Umísti jej pro údržbový přístup kolem strojů, vyšších podlaží a servisních šachet.<br>

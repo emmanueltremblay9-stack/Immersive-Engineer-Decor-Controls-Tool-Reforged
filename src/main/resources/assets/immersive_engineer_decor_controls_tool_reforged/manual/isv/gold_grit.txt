@@ -1,0 +1,3 @@
+Gruby zlaty drobok
+Material orudij inženera, upotrěbjany rekonstruovanym sostavom tvorjenja.
+<&recipe>Možno go stopiti v zlate<br>kovky, ale ne jest prigodny dlja<br>naprednoj obrabotky materialov.

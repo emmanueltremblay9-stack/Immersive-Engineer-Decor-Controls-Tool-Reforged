@@ -1,0 +1,5 @@
+Laboratoriya pechi
+Ixcham ishlov birligi
+<&recipe>Laboratoriya pechi ustaxonada kichik joy egallab, qattiq yoqilg'i bilan ixcham eritish ishlarini bajaradi.<br>
+<br>
+Ishlatish: kichik eritish to'plamlari uchun qattiq yoqilg'idan foydalaning.<br>

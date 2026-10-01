@@ -1,0 +1,5 @@
+Đèn âm
+Đèn làm việc gọn
+<&recipe>Khối này cung cấp ánh sáng công nghiệp gọn cho hành lang, lối đi bảo trì và gian làm việc.<br>
+<br>
+Cách dùng: Gắn lên trần, tường hoặc mép ở nơi phòng cần ánh sáng rõ để làm việc.<br>

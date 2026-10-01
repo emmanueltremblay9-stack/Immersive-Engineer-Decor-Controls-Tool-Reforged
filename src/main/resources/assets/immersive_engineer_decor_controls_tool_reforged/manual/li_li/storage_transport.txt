@@ -1,0 +1,41 @@
+Opsjlaag en transport
+Opsjlaag- en doorstroomóngerdaele
+Opsjlaag- en transportóngerdaele zeen kisse, vate, trechters en ventiele veur kleine fabrieksroutes.<br>
+<br>
+Gebroek dees bladzies es doe veurraodruumtes, buisroutes, ónnerhouwdstanks en gestuurde vloeistofleidinge aanlègs.
+<np>
+Kis mèt opsjrif
+Aanpasbaar veurraodopsjrif
+<&labeled_crate>Dees kis mèt opsjrif is bedoeld veur duidelik sortere in de opsjlaagruumte. De veurplaat kin wie ein klein werkplaatsbörd verangerd waere.<br>
+<br>
+Gebroek: rechtsklik op de opsjrifplaat um 't kisopsjrif te verangere. Rechtsklik op de res van de kis um opsjlaag veur montagemateriaal, óngerdaele en ónnerhouwdsveurraod te opene.<br>
+<np>
+Vloeistofvaat
+Vloeistofleidingóngerdaele
+<&fluid_barrel>Dit óngerdael is ein klein vloeistofleidingdael veur kleine tanks, buisroutes, verzamelpunte en redstonegestuurde doorstroom.<br>
+<br>
+Gebroek: zèt 't wao buize of tobbe aan de tankkant kinne kómme.<br>
+<np>
+Vloeistoftrechter
+Vloeistofleidingóngerdaele
+<&small_fluid_funnel>De kleine vloeistofverzameltrechter is ein klein vloeistofleidingdael veur kleine tanks, buisroutes, verzamelpunte en redstonegestuurde doorstroom.<br>
+<br>
+Gebroek: zèt 'm ónger 't vloeistofverzamelpunt en leid zien opgesjlage inhoud nao tanks of laeger ligkende buize.<br>
+<np>
+Terugsjlaagventiel veur vloeistofbuis
+Vloeistofleidingóngerdaele
+<&straight_pipe_valve>'t Terugsjlaagventiel veur vloeistofbuis is ein klein vloeistofleidingdael veur kleine tanks, buisroutes, verzamelpunte en redstonegestuurde doorstroom.<br>
+<br>
+Gebroek: richt 't ventiel nao de gewunsjte stroomrichting.<br>
+<np>
+Redstonevloeistofventiel
+Vloeistofleidingóngerdaele
+<&straight_pipe_valve_redstone>'t Redstonegestuurde vloeistofventiel is ein klein vloeistofleidingdael veur kleine tanks, buisroutes, verzamelpunte en redstonegestuurde doorstroom.<br>
+<br>
+Gebroek: richt 't ventiel nao de gewunsjte stroomrichting.<br>
+<np>
+Analoog vloeistofventiel
+Vloeistofleidingóngerdaele
+<&straight_pipe_valve_redstone_analog>'t Analoge redstonevloeistofventiel is ein klein vloeistofleidingdael veur kleine tanks, buisroutes, verzamelpunte en redstonegestuurde doorstroom.<br>
+<br>
+Gebroek: richt 't ventiel nao de gewunsjte stroomrichting.<br>

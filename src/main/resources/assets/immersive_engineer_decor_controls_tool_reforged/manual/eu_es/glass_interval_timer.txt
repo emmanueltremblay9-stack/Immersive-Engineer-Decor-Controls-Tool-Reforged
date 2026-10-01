@@ -1,0 +1,7 @@
+Beirazko tarte-seinalea
+Pultsu tenporizatua
+<&recipe>Tenporizadore-etengailu trinko batek redstone-pultsu programatua ematen du.<br>
+<br>
+Erabilera: erabili mekanismo txiki batek aldizkako kontrola edo kontrol atzeratua behar duenean.<br>
+<br>
+Oharrak: programatutako redstone-pultsuak erabiltzen ditu.

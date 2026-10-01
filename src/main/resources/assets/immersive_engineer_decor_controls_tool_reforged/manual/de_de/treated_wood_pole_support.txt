@@ -1,0 +1,5 @@
+Stütze für imprägnierten Holzpfosten
+Teil des Tragwerks
+<&recipe>Die Stütze für gerade Pfosten aus imprägniertem Holz bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>

@@ -1,0 +1,7 @@
+Grozāms mašīnas slēdzis
+Redstone vadība
+<&recipe>Kompakta vadības ierīce dod rūpnīcu būvēm skaidri saskatāmu Redstone pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.

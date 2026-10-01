@@ -1,0 +1,5 @@
+Caixote com etiqueta
+Etiqueta de estoque editável
+<&recipe>Este caixote com etiqueta facilita a organização do almoxarifado. A placa frontal pode ser editada como uma pequena placa de oficina.<br>
+<br>
+Uso: Clique com o botão direito na placa para editar a etiqueta do caixote. Clique com o botão direito no restante do caixote para abrir o armazenamento de componentes, peças e suprimentos de manutenção.<br>

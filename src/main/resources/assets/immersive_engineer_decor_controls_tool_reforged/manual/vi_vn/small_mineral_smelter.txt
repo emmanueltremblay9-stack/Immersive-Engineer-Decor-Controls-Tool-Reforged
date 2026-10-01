@@ -1,0 +1,5 @@
+Lò nấu chảy khoáng vật
+Thiết bị xử lý gọn
+<&recipe>Lò nấu chảy khoáng vật xử lý khoáng vật ở nhiệt độ cao trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Cấp khối khoáng vật và năng lượng để nấu chảy ở nhiệt độ cao.<br>

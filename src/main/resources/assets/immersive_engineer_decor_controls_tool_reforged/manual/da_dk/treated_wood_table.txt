@@ -1,0 +1,5 @@
+Bord af behandlet træ
+Værkstedsindretning
+<&recipe>Denne blok er et praktisk værkstedsmøbel til arbejdsrum og vedligeholdelseshjørner.<br>
+<br>
+Brug: Sæt den ved siden af bænke, kasser og kompakte maskiner.<br>

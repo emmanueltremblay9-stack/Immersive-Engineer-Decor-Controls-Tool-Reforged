@@ -1,0 +1,5 @@
+Magnetvälja silt
+Ohumärgis
+<&recipe>Tugeva magnetvälja hoiatussilt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>

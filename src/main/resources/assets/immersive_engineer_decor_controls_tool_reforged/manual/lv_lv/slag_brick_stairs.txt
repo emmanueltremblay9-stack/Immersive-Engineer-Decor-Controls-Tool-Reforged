@@ -1,0 +1,5 @@
+Izdedžu ķieģeļu kāpnes
+Blīvs rūpnīcas mūrējums
+<&recipe>Šis bloks pievieno blīvu pelēkbrūnu mūrējumu pamatiem, balstsienām un vecākām darbnīcām.<br>
+<br>
+Lietošana: izmanto veciem pamatiem, balstsienām un netīrām ražotnes grīdām.<br>

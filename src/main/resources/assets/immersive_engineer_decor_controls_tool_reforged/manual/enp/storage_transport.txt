@@ -1,0 +1,41 @@
+Keeping and Carrying
+Inholding and flow fittings
+Keeping and carrying fittings handle crates, barrels, funnels and flowgates for close-fitting workstead paths.<br>
+<br>
+Use these pages when laying out stockrooms, pipe runs, upkeep vats and ruled flow lines.
+<np>
+Named Crate
+Changeable stock name
+<&labeled_crate>This named crate makes stockroom sorting clear. Its fore sheet can be written on like a small workshop markboard.<br>
+<br>
+Use: Right-click the name sheet to change the crate name. Right-click the rest of the crate to open its stockholding for fittings, bits and upkeep supplies.<br>
+<np>
+Flowstuff Barrel
+Flow-line gear
+<&fluid_barrel>This small flow-line fitting suits little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Set it where pipes or buckets can reach the vat side.<br>
+<np>
+Flowstuff Funnel
+Flow-line gear
+<&small_fluid_funnel>The Small Flowstuff Funnel is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Put it beneath the flowstuff gathering spot and send what it holds into vats or lower pipes.<br>
+<np>
+One-Way Flowgate
+Flow-line gear
+<&straight_pipe_valve>The One-Way Flowgate is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Line the flowgate up with the wanted flow way.<br>
+<np>
+Redstone Flowgate
+Flow-line gear
+<&straight_pipe_valve_redstone>The Redstone Flowgate is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Line the flowgate up with the wanted flow way.<br>
+<np>
+Graded Flowgate
+Flow-line gear
+<&straight_pipe_valve_redstone_analog>The Graded Flowgate is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Line the flowgate up with the wanted flow way.<br>

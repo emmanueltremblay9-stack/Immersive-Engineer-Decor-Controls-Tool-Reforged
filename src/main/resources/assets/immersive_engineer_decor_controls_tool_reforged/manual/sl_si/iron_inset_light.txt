@@ -1,0 +1,5 @@
+Vgradna svetilka
+Kompaktna delovna svetilka
+<&recipe>Ta blok zagotavlja kompaktno industrijsko razsvetljavo za hodnike, servisne prehode in delovne prostore.<br>
+<br>
+Uporaba: Namesti ga na strop, steno ali rob, kjer prostor potrebuje jasno delovno razsvetljavo.<br>

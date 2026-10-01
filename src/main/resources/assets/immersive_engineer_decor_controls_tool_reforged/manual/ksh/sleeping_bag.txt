@@ -1,0 +1,7 @@
+Schlofsack
+Draachbar Rohzüch
+<&recipe>Dä Schlofsack es e wetterfest Ruhset för Arbeid wigg vum Bett.<br>
+<br>
+Jebruch: Bruch en en de Naach em Overworld, öm bes Morjens ze ruhe. Hä setz udder verschuuv dä Spawnpunkt nit.<br>
+<br>
+Hä refusesch Dag, unsechere Plätz met Monster noh draan un Dimensione, wo mer nit sech ruh kann. Jede jode Ruh verschleiß dä Sack.

@@ -1,0 +1,5 @@
+Plošča armiranega betona
+Ojačan beton
+<&recipe>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>

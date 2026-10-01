@@ -1,0 +1,5 @@
+Mørk spåntagsblok
+Vejrbidt tagdel
+<&recipe>Denne blok skaber mørke, praktiske taglinjer til værksteder og industriskure.<br>
+<br>
+Brug: Kombiner delene for at skabe troværdige tagprofiler.<br>

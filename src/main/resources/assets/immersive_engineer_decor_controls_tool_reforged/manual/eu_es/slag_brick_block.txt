@@ -1,0 +1,5 @@
+Zepa-adreiluen blokea
+Fabrikako harlangaitz trinkoa
+<&recipe>Bloke honek harlangaitz gris-marroi trinkoa gehitzen du zimenduetarako, euste-hormetarako eta lantegi zaharragoetarako.<br>
+<br>
+Erabilera: erabili zimendu zaharretan, euste-hormetan eta fabrikako zoru zikinetan.<br>

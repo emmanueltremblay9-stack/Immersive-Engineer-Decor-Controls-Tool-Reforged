@@ -1,0 +1,7 @@
+Lo-zakua
+Atseden-ekipo eramangarria
+<&recipe>Ohetik urrun lan egiteko eguraldiaren aurkako ekipoa.<br>
+<br>
+Erabilera: Gauez Gainmunduan atseden hartu goizera arte, berpizte-puntua ezarri edo mugitu gabe.<br>
+<br>
+Eguna, gertuko munstroak eta dimentsio desegokiak baztertzen ditu. Atseden bakoitzak higatzen du.

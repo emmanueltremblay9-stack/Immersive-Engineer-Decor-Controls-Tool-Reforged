@@ -1,0 +1,5 @@
+Sinjal "Periklu ta' Nar"
+Markatur tal-periklu
+<&recipe>Is-sinjal "Periklu ta' Nar" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>

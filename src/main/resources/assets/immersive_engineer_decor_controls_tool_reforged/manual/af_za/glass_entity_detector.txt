@@ -1,0 +1,7 @@
+Glasentiteitsverklikker
+Seinwaarneming
+<&recipe>’n Entiteitsverklikker hou nabygeleë beweging dop sonder ’n sigbare vloerplaat.<br>
+<br>
+Gebruik: verbind dit met deure, lampe, alarms of masjienvergrendelings.<br>
+<br>
+Nota: ondersoek ’n klein gebied rondom die blok.

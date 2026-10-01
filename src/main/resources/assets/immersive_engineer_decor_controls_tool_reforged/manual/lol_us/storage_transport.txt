@@ -1,0 +1,41 @@
+Storin & Haulin
+Inventory an flow fittingz
+Storage an transport parts cover crates, fish-box barrelz, funnels, an valveez fer compact factory routes, kitty.<br>
+<br>
+Use dese pages fer stockrooms, pipe routez, service tankz, an controlled flooid linez, meow.
+<np>
+Crate wif Labelz
+Stock label u can editz
+<&labeled_crate>Dis labeled crate makes stockroom sorting clear, kitty. Edit da front plate like a lil workshop sign.<br>
+<br>
+How to: Right-click da label plate fer editin da crate label. Right-click da rest fer storage of fittingz, parts, an maintenance supplies, meow.<br>
+<np>
+Flooid Fish Box
+Flooid-line hardwarez
+<&fluid_barrel>Lil flooid-line part fer small tankz, pipe runz, collection spots, an redstone-controlled flow, kitty.<br>
+<br>
+How to: Place where pipez or bucketz can reach da tank face, meow.<br>
+<np>
+Flooid Funnel Thing
+Flooid-line hardwarez
+<&small_fluid_funnel>Lil Flooid Catcher Funnel iz a lil flooid-line part fer small tankz, pipe runz, collection spots, an redstone-controlled flow, kitty.<br>
+<br>
+How to: Put below da flooid collection spot an route stored stuff into tankz or lower pipez, meow.<br>
+<np>
+One-Way Flooid Valvee
+Flooid-line hardwarez
+<&straight_pipe_valve>One-Way Flooid Valvee iz a lil flooid-line part fer small tankz, pipe runz, collection spots, an redstone-controlled flow, kitty.<br>
+<br>
+How to: Line da valvee up wif da flow direction u wants, meow.<br>
+<np>
+Redstone Flooid Valvee Thing
+Flooid-line hardwarez
+<&straight_pipe_valve_redstone>Redstone-On Flooid Valvee iz a lil flooid-line part fer small tankz, pipe runz, collection spots, an redstone-controlled flow, kitty.<br>
+<br>
+How to: Line da valvee up wif da flow direction u wants, meow.<br>
+<np>
+Analog Flooid Valvee Thing
+Flooid-line hardwarez
+<&straight_pipe_valve_redstone_analog>Redstone-Strength Flooid Valvee iz a lil flooid-line part fer small tankz, pipe runz, collection spots, an redstone-controlled flow, kitty.<br>
+<br>
+How to: Line da valvee up wif da flow direction u wants, meow.<br>

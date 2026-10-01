@@ -1,0 +1,7 @@
+Outil REDIA
+Polyvalence recouverte de diamant
+<&recipe>L'outil REDIA est un outil multifonction durable de qualité diamant pour travailler sur les chantiers temporaires, dans les ateliers et aux entrées des mines.<br>
+<br>
+Utilisation : employez-le en portant des torches pour poser une torche de votre inventaire sans user REDIA. Utilisez-le en vous baissant pour tailler les plantes ou transformer le sol entre terre, terre labourée, terre stérile et chemin de terre. L'action de hache d'origine s'applique depuis la face inférieure. Cassez des bûches en vous baissant pour abattre les blocs d'arbre reliés.<br>
+<br>
+Réparez-le avec des diamants. Dépasser la réparation complète de l'outil REDIA rétablit sa progression d'origine vers Efficacité et Fortune.

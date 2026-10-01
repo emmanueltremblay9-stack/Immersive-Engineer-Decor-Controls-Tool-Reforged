@@ -1,0 +1,7 @@
+Récepteur de liaison en boîtier
+Commande liée
+<&recipe>Un récepteur lié en boîtier offre une cible redstone robuste aux panneaux distants.<br>
+<br>
+Utilisation : cliquez dessus avec une perle de l'Ender pour créer une perle liée. Faites directement un clic droit sur le récepteur pour le basculer manuellement.<br>
+<br>
+Remarque : une perle liée bascule ce récepteur lorsqu'elle est utilisée en vous accroupissant.

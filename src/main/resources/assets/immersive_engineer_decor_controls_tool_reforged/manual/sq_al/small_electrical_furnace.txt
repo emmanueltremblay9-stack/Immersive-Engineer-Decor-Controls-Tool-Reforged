@@ -1,0 +1,5 @@
+Furrë elektrike
+Njësi kompakte përpunimi
+<&recipe>Furra elektrike kryen punë shkrirjeje me energji FE duke zënë pak vend në punishte.<br>
+<br>
+Përdorimi: furnizoje me FE dhe materiale të vlefshme për shkrirje.<br>

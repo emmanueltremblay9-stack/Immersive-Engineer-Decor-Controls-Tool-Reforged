@@ -1,0 +1,7 @@
+Rilevatore lineare di entità
+Rilevamento del segnale
+<&recipe>Un rilevatore di entità osserva i movimenti vicini senza una pedana visibile sul pavimento.<br>
+<br>
+Uso: collegalo a porte, lampade, allarmi o interblocchi dei macchinari.<br>
+<br>
+Note: esamina una piccola area attorno al blocco.

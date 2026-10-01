@@ -1,0 +1,41 @@
+Deposit e trasport
+Acessori de inventari e de fluss
+I acessori de deposit e trasport i fan funzionà casse, baril, imbudd e valvole per corsei piscinin de fabrica.<br>
+<br>
+Dovra quelle pagine chì quand che te sistemi magazzin, corsei de tub, serbatoi de servizzi e linee de fluid controlade.
+<np>
+Cassa cont eticheta
+Eticheta di materiai de podè cambià
+<&labeled_crate>Quella cassa cont eticheta chì l’è fada per ordenà ben i materiai in del magazzin. Se poeu cambià la piastra in denanz come un piscinin placard de laboratori.<br>
+<br>
+Fà clic drizz in su la piastra de l’eticheta per cambià l’eticheta de la cassa. Fà clic drizz in sul rest de la cassa per dervì el deposit de acessori, tocch e materiai de manutenzion.<br>
+<np>
+Baril di fluid
+Acessori per linee de fluid
+<&fluid_barrel>Quell acessori chì l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Metel indove che i tub o i sidei poeuden rivà a la faccia del serbatoi.<br>
+<np>
+Imbudd per fluid
+Acessori per linee de fluid
+<&small_fluid_funnel>El Piscinin imbudd per catà su fluid l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Metel sota el pont de recolta del fluid e manda quel che el conserva vers serbatoi o tub pussee bass.<br>
+<np>
+Valvola de minga retorn per tub di fluid
+Acessori per linee de fluid
+<&straight_pipe_valve>La Valvola de minga retorn di fluid l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Alinèa la valvola cont la direzzion che el fluid el gh’ha de seguì.<br>
+<np>
+Valvola di fluid controlada de la prejarossa
+Acessori per linee de fluid
+<&straight_pipe_valve_redstone>La Valvola di fluid controlada de la prejarossa l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Alinèa la valvola cont la direzzion che el fluid el gh’ha de seguì.<br>
+<np>
+Valvola analogica di fluid
+Acessori per linee de fluid
+<&straight_pipe_valve_redstone_analog>La Valvola analogica di fluid l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Alinèa la valvola cont la direzzion che el fluid el gh’ha de seguì.<br>

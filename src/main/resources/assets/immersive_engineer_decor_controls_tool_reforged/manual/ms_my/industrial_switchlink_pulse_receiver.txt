@@ -1,0 +1,7 @@
+Penerima Pautan Denyutan
+Kawalan berpaut
+<&recipe>Penerima denyutan berpaut memberikan pencetus redstone singkat kepada panel jauh.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Klik kanan padanya atau cetuskan mutiara berpaut untuk mengeluarkan denyutan singkat.<br>
+<br>
+Nota: Denyutan menetap semula selepas tempoh yang dijadualkan.

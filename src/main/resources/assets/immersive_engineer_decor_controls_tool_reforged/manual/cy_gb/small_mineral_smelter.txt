@@ -1,0 +1,5 @@
+Toddwr Mwynau
+Uned brosesu gryno
+<&recipe>Mae'r Toddwr Mwynau yn prosesu mwynau ar wres uchel mewn arwynebedd gweithdy cryno.<br>
+<br>
+Defnydd: Cyflenwch flociau mwynol a phŵer ar gyfer toddi ar wres uchel.<br>

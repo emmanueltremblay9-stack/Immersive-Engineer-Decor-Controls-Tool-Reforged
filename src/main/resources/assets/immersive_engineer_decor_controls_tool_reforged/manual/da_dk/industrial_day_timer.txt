@@ -1,0 +1,7 @@
+Døgnur
+Dagslyssignal
+<&recipe>En timerkontakt følger den lyse del af verdens døgn.<br>
+<br>
+Brug: Brug den til gårdlamper, skodder og fabriksstyring, der kun skal være aktiv om dagen.<br>
+<br>
+Bemærk: Kræver en dimension med himmellys.

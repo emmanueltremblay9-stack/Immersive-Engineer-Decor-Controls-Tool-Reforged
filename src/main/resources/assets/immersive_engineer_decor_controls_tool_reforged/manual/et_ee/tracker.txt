@@ -1,0 +1,7 @@
+Jälgija
+Salvestatud asukoha märk
+<&recipe>Salvestab ploki asukoha esemesse.<br>
+<br>
+Kasutus: Klõpsa plokki dimensiooni ja koordinaatide salvestamiseks. Vihje näitab asukohta. Küürutades kasutamine kustutab.<br>
+<br>
+Märgi masinad, tunneliharud, kaugjuhtimised või pooleliolevad ehitused.

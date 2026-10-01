@@ -1,0 +1,5 @@
+Bittija tal-fluwidu
+Tagħmir tal-linji tal-fluwidu
+<&recipe>Dan it-tagħmir hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: qiegħdu fejn pajpijiet jew bramel jistgħu jilħqu l-wiċċ tat-tank.<br>

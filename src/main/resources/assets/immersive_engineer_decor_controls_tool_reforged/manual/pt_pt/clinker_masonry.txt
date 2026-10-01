@@ -1,0 +1,161 @@
+Clínquer e alvenaria
+Revestimentos de tijolos e betão
+Clínquer, tijolos de escória, betão armado e vidro blindado fornecem superfícies robustas para salas quentes, oficinas e áreas de visibilidade protegida.<br>
+<br>
+Usa as lajes, escadas, fatias e muros correspondentes para rematar os rebordos sem alterar o estilo dos materiais da fábrica.
+<np>
+Bloco de tijolos de clínquer
+Tijolos escurecidos pela fuligem
+<&clinker_brick_block>Este bloco acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Laje de tijolos de clínquer
+Tijolos escurecidos pela fuligem
+<&clinker_brick_slab>Este bloco acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Escadas de tijolos de clínquer
+Tijolos escurecidos pela fuligem
+<&clinker_brick_stairs>Este bloco acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Muro de tijolos de clínquer
+Tijolos escurecidos pela fuligem
+<&clinker_brick_wall>Este bloco acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Bloco de clínquer manchado
+Tijolos escurecidos pela fuligem
+<&clinker_brick_stained_block>O bloco de tijolos de clínquer manchados acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Laje de clínquer manchado
+Tijolos escurecidos pela fuligem
+<&clinker_brick_stained_slab>A laje de tijolos de clínquer manchados acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Escadas de clínquer manchado
+Tijolos escurecidos pela fuligem
+<&clinker_brick_stained_stairs>As escadas de tijolos de clínquer manchados acrescentam tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Tijolo de clínquer ornamentado
+Tijolos escurecidos pela fuligem
+<&clinker_brick_sastor_corner_block>O tijolo de clínquer ornamentado com arenito acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Tijolo de clínquer rebaixado
+Tijolos escurecidos pela fuligem
+<&clinker_brick_recessed>Este bloco acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Tijolos de clínquer com fendas
+Tijolos escurecidos pela fuligem
+<&clinker_brick_vertically_slit>Os tijolos de clínquer com fendas verticais acrescentam tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Laje vertical de clínquer
+Tijolos escurecidos pela fuligem
+<&clinker_brick_vertical_slab_structured>A laje vertical de clínquer com relevo acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Fatia de tijolos de clínquer
+Tijolos escurecidos pela fuligem
+<&halfslab_clinker_brick>Este bloco acrescenta tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>
+<np>
+Bloco de tijolos de escória
+Alvenaria industrial densa
+<&slag_brick_block>Este bloco acrescenta alvenaria densa castanho-acinzentada para fundações, muros de contenção e oficinas antigas.<br>
+<br>
+Uso: Usa em fundações antigas, muros de contenção e pisos sujos de fábricas.<br>
+<np>
+Laje de tijolos de escória
+Alvenaria industrial densa
+<&slag_brick_slab>Este bloco acrescenta alvenaria densa castanho-acinzentada para fundações, muros de contenção e oficinas antigas.<br>
+<br>
+Uso: Usa em fundações antigas, muros de contenção e pisos sujos de fábricas.<br>
+<np>
+Escadas de tijolos de escória
+Alvenaria industrial densa
+<&slag_brick_stairs>Este bloco acrescenta alvenaria densa castanho-acinzentada para fundações, muros de contenção e oficinas antigas.<br>
+<br>
+Uso: Usa em fundações antigas, muros de contenção e pisos sujos de fábricas.<br>
+<np>
+Muro de tijolos de escória
+Alvenaria industrial densa
+<&slag_brick_wall>Este bloco acrescenta alvenaria densa castanho-acinzentada para fundações, muros de contenção e oficinas antigas.<br>
+<br>
+Uso: Usa em fundações antigas, muros de contenção e pisos sujos de fábricas.<br>
+<np>
+Bloco de betão armado
+Betão reforçado
+<&rebar_concrete>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Laje de betão armado
+Betão reforçado
+<&rebar_concrete_slab>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Escadas de betão armado
+Betão reforçado
+<&rebar_concrete_stairs>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Muro de betão armado
+Betão reforçado
+<&rebar_concrete_wall>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Fatia de betão armado
+Betão reforçado
+<&halfslab_rebar_concrete>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Ladrilhos de betão armado
+Betão reforçado
+<&rebar_concrete_tile>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Laje de ladrilhos de betão armado
+Betão reforçado
+<&rebar_concrete_tile_slab>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Ladrilhos de betão armado
+Betão reforçado
+<&rebar_concrete_tile_stairs>As escadas de ladrilhos de betão armado são peças de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>
+<np>
+Bloco de vidro blindado
+Visibilidade protegida
+<&panzerglass_block>Este bloco mantém a visão desobstruída sem destoar da construção reforçada da fábrica.<br>
+<br>
+Uso: Usa-o onde os jogadores devem conseguir ver as máquinas através de uma barreira protetora.<br>
+<np>
+Laje de vidro blindado
+Visibilidade protegida
+<&panzerglass_slab>Este bloco mantém a visão desobstruída sem destoar da construção reforçada da fábrica.<br>
+<br>
+Uso: Usa-o onde os jogadores devem conseguir ver as máquinas através de uma barreira protetora.<br>

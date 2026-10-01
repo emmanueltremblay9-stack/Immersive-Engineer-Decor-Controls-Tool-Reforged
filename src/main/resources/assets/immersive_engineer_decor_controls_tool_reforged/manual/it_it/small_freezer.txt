@@ -1,0 +1,5 @@
+Congelatore d’acqua
+Unità di lavorazione compatta
+<&recipe>Il congelatore d’acqua esegue lavorazioni di raffreddamento compatte per impianti di fluidi alimentati a energia.<br>
+<br>
+Uso: fornisci acqua ed energia per produrre ghiaccio in fasi successive.<br>

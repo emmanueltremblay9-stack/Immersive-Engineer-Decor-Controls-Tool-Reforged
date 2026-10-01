@@ -1,0 +1,7 @@
+Ricevidor de impuls ligad
+Comand ligad
+<&recipe>Un ricevidor de impuls ligad el dà una curta ativazzion de prejarossa a i panei distant.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Fà clic cont el boton drizz o ativa la perla ligada per mandà un curt impuls.<br>
+<br>
+L’impuls el se smorza de per lu dopo la durada stabilida.

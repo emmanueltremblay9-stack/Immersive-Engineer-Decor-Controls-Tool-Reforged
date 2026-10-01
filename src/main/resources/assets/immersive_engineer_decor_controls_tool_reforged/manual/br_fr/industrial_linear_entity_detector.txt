@@ -1,0 +1,7 @@
+Detektor entiteoù linenn
+Merzout signal
+<&recipe>Un detektor entiteoù a sell ouzh ar fiñvoù tost hep ur blakenn leur gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ ouzh dorioù, gouloù, alarmoù pe serradennoù surentez ar mekanikoù.<br>
+<br>
+Notenn: C'hwiliañ a ra un takad bihan tro-dro d'ar bloc'h.

@@ -1,0 +1,5 @@
+Coletor de fluidos em funil
+Componentes de tubulação de fluidos
+<&recipe>O pequeno coletor de fluidos em funil é um componente compacto para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Coloque abaixo do ponto de coleta de fluido e encaminhe o conteúdo armazenado para tanques ou tubulações inferiores.<br>

@@ -1,0 +1,7 @@
+Dimmer Thingy
+Changeable signalz
+<&recipe>Twisty control dials redstone strength frum a lil panel face, kitty.<br>
+<br>
+How to: Right-click fer stepping output upward, den back to zero after full strength, meow.<br>
+<br>
+Kitty note: Output strength goes frum 0 to 15.

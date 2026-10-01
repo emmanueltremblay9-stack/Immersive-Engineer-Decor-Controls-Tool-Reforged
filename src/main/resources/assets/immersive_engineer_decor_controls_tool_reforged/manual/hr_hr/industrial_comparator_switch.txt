@@ -1,0 +1,7 @@
+Komparatorski prekidač
+Signal povezanog bloka
+<&recipe>Kompaktni senzorski prekidač očitava blok na kojem je postavljen i pretvara očitanje u jednostavan izlaz panela.<br>
+<br>
+Uporaba: postavi ga na inventare, spremnike ili redstone uređaje. Kada povezani blok daje komparatorski, spremnički ili redstone izlaz, prekidač šalje redstone pune snage.<br>
+<br>
+Napomene: pretvara razine zaliha ili skriveno ožičenje u jasne vodove za uključivanje i isključivanje.

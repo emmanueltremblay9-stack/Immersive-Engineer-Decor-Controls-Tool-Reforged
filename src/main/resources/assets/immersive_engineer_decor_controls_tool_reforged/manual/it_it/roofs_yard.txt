@@ -1,0 +1,101 @@
+Tetti e cortile
+Accessori industriali per esterni
+Blocchi per tetti, terreni granulosi da cortile e parti in vecchio legno industriale rifiniscono capannoni esterni, piazzali di lavoro, aree di carico e bordi di fabbriche usurati dal tempo.<br>
+<br>
+Combina questi elementi con muratura e vie d’accesso per mantenere riconoscibili da lontano le costruzioni industriali esterne.
+<np>
+Tetto in scandole scure
+Accessorio per tetti usurati
+<&dark_shingle_roof>Questo blocco crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Fermaneve del tetto
+Accessorio per tetti usurati
+<&dark_shingle_roof_metallized>Il fermaneve per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Tetto in scandole scure
+Accessorio per tetti usurati
+<&dark_shingle_roof_skylight>Il lucernario per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Canna fumaria del tetto
+Accessorio per tetti usurati
+<&dark_shingle_roof_chimneytrunk>La canna fumaria per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Passacavi del tetto
+Accessorio per tetti usurati
+<&dark_shingle_roof_wireconduit>Il passacavi per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Tetto in scandole scure
+Accessorio per tetti usurati
+<&dark_shingle_roof_chimney>Il camino per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Blocco di tetto in scandole scure
+Accessorio per tetti usurati
+<&dark_shingle_roof_block>Questo blocco crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Lastra di tetto in scandole scure
+Accessorio per tetti usurati
+<&dark_shingle_roof_slab>Questo blocco crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Lastra di tetto in scandole scure
+Accessorio per tetti usurati
+<&dark_shingle_roof_slabslice>Lo strato di lastra per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>
+<np>
+Terra granulosa compatta
+Rivestimento del suolo del cantiere
+<&dense_grit_dirt_block>Questo blocco dà alle aree di lavoro all’aperto una superficie compatta e calpestata.<br>
+<br>
+Uso: posalo attorno a porte di carico, serbatoi esterni e piazzali per macchinari.<br>
+<np>
+Sabbia granulosa compatta
+Rivestimento del suolo del cantiere
+<&dense_grit_sand_block>Questo blocco dà alle aree di lavoro all’aperto una superficie compatta e calpestata.<br>
+<br>
+Uso: posalo attorno a porte di carico, serbatoi esterni e piazzali per macchinari.<br>
+<np>
+Vecchie assi di legno
+Legname d’officina invecchiato
+<&old_industrial_wood_planks>Le vecchie assi industriali in legno aggiungono legname d’officina invecchiato per pavimenti, gradini, porte e calde rifiniture interne.<br>
+<br>
+Uso: usalo per vecchi pavimenti d’officina, scale, porte e rifiniture.<br>
+<np>
+Vecchia lastra industriale in legno
+Legname d’officina invecchiato
+<&old_industrial_wood_slab>Questo blocco aggiunge legname d’officina invecchiato per pavimenti, gradini, porte e calde rifiniture interne.<br>
+<br>
+Uso: usalo per vecchi pavimenti d’officina, scale, porte e rifiniture.<br>
+<np>
+Vecchi scalini in legno
+Legname d’officina invecchiato
+<&old_industrial_wood_stairs>I vecchi scalini industriali in legno aggiungono legname d’officina invecchiato per pavimenti, gradini, porte e calde rifiniture interne.<br>
+<br>
+Uso: usalo per vecchi pavimenti d’officina, scale, porte e rifiniture.<br>
+<np>
+Vecchio strato di lastra in legno
+Legname d’officina invecchiato
+<&old_industrial_wood_slabslice>Il vecchio strato di lastra industriale in legno aggiunge legname d’officina invecchiato per pavimenti, gradini, porte e calde rifiniture interne.<br>
+<br>
+Uso: usalo per vecchi pavimenti d’officina, scale, porte e rifiniture.<br>
+<np>
+Vecchia porta industriale in legno
+Legname d’officina invecchiato
+<&old_industrial_wood_door>Questo blocco aggiunge legname d’officina invecchiato per pavimenti, gradini, porte e calde rifiniture interne.<br>
+<br>
+Uso: usalo per vecchi pavimenti d’officina, scale, porte e rifiniture.<br>

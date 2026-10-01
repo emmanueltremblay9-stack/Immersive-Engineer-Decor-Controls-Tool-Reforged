@@ -1,0 +1,108 @@
+Industrielt byggeri
+Fabriksvægge og udsmykning
+De generelle bygningsdele omfatter døre, vinduer, lys, advarselsskilte, udsmykning og konstruktionsdele, som ikke hører til i et mere specifikt afsnit.<br>
+<br>
+Brug disse sider til fabriksrum, servicegange, fareafmærkning og praktiske industridetaljer.
+<np>
+Jernpærelampe
+Kompakt arbejdslys
+<&iron_bulb_light>Denne blok giver kompakt industribelysning til gange, gangbroer og arbejdsbåse.<br>
+<br>
+Brug: Monter den i lofter, på vægge eller langs kanter, hvor rummet kræver tydelig arbejdsbelysning.<br>
+<np>
+Loftkantlampe
+Kompakt arbejdslys
+<&iron_ceiling_edge_light>Denne blok giver kompakt industribelysning til gange, gangbroer og arbejdsbåse.<br>
+<br>
+Brug: Monter den i lofter, på vægge eller langs kanter, hvor rummet kræver tydelig arbejdsbelysning.<br>
+<np>
+Forsænket gulvkantlampe
+Kompakt arbejdslys
+<&iron_floor_edge_light>Denne blok giver kompakt industribelysning til gange, gangbroer og arbejdsbåse.<br>
+<br>
+Brug: Monter den i lofter, på vægge eller langs kanter, hvor rummet kræver tydelig arbejdsbelysning.<br>
+<np>
+Forsænket lampe
+Kompakt arbejdslys
+<&iron_inset_light>Denne blok giver kompakt industribelysning til gange, gangbroer og arbejdsbåse.<br>
+<br>
+Brug: Monter den i lofter, på vægge eller langs kanter, hvor rummet kræver tydelig arbejdsbelysning.<br>
+<np>
+Skilt: generel advarsel
+Faremarkering
+<&sign_caution>Det generelle advarselsskilt markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Fareskilt
+Faremarkering
+<&sign_danger>Skiltet om et virkelig farligt område markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Decor-skilt
+Faremarkering
+<&sign_decor>Skiltepladen fra Engineer's Decor markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Forsvarsskilt
+Faremarkering
+<&sign_defense>Skiltet om et forsvarssystem forude markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Udgangsskilt
+Faremarkering
+<&sign_exit>Dette skilt markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Skilt: brandfare
+Faremarkering
+<&sign_firehazard>Skiltet om brandfare markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Skilt: frostadvarsel
+Faremarkering
+<&sign_frost>Skiltet med frostadvarsel markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Skilt om varm overflade
+Faremarkering
+<&sign_hotsurface>Skiltet, der advarer om en varm overflade, markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Skilt om strømførende ledning
+Faremarkering
+<&sign_hotwire>Skiltet, der advarer om strømførende ledninger, markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Skilt: laserfare
+Faremarkering
+<&sign_laser>Skiltet om laserfare markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Skilt om magisk fare
+Faremarkering
+<&sign_magichazard>Skiltet, der advarer om magiske farer, markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Magnetfeltskilt
+Faremarkering
+<&sign_magneticfield>Skiltet, der advarer om et stærkt magnetfelt, markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>
+Skilt: radioaktiv fare
+Faremarkering
+<&sign_radioactive>Skiltet om radioaktiv fare markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>
+<np>

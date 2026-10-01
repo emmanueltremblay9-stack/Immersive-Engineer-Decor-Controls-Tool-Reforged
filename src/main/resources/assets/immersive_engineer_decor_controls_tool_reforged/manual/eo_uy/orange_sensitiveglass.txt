@@ -1,0 +1,7 @@
+Oranĝkolora sentema vitro
+Signalvitro
+<&recipe>Vitra bloko reaganta al redstone’o konservas vidliniojn dum ĝi montras la signalstaton.<br>
+<br>
+Uzado: uzu ĝin en stirejaj fenestroj, lumigitaj paneloj kaj protektita fabrika vitro.<br>
+<br>
+Notoj: ĝi ŝanĝas staton pro proksima redstone’a signalo.

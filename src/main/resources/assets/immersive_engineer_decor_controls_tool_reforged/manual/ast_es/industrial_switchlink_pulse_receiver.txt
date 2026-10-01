@@ -1,0 +1,7 @@
+Receptor d’enllaz de pulsos
+Control enllazáu
+<&recipe>Un receptor enllazáu de pulsos da a los paneles remotos una activación curtia de redstone.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Fai clic derechu nél o activa la perlla enllazada pa emitir un pulsu curtiu.<br>
+<br>
+Notes: el pulsu termínase solo dempués de la duración programada.

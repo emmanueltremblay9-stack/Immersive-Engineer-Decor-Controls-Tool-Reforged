@@ -1,0 +1,5 @@
+Ağaç Kesici
+Atölye yardımcı aygıtı
+<&recipe>Küçük ağaç kesici; üretim, depolama, yerleştirme, kırma, toplama veya küçük otomasyon işleri için bir atölye yardımcı bloğudur.<br>
+<br>
+Kullanım: Yetişmiş ağaçlara yöneltin ve düşen eşyaları ayrı olarak toplayın.<br>

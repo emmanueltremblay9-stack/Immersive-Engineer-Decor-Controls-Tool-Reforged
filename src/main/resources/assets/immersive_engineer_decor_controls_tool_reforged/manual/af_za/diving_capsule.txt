@@ -1,0 +1,7 @@
+Duiklugkapsule
+Noodlugvoorraad
+<&recipe>Die Duiklugkapsule is 'n noodlugitem vir werk onder water.<br>
+<br>
+Gebruik: Gebruik dit handmatig om lug te herstel. Wanneer dit in jou voorraad gedra word, kan dit ook outomaties aktiveer wanneer lug byna op is, waarna dit afkoel.<br>
+<br>
+Dra dit vir oorstroomde myne, onderwaterpyplyne en herstelwerk in pompkamers.

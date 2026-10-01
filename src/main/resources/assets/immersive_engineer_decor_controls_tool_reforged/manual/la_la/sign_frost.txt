@@ -1,0 +1,5 @@
+Tabula «Cave gelu»
+Signum periculi
+<&recipe>Tabula «Cave gelu» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>

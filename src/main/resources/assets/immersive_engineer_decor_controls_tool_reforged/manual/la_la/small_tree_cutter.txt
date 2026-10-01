@@ -1,0 +1,5 @@
+Sector arborum
+Auxilium pavimenti officinae
+<&recipe>Sector arborum parvus est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: ad arbores adultas dirige et res delapsas separatim collige.<br>

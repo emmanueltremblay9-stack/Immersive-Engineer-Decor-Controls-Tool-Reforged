@@ -1,0 +1,5 @@
+Thick Pole Head
+Framework fitting
+<&recipe>The Straight Thick Steel Pole Head/Foot forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>

@@ -1,0 +1,5 @@
+Logs tērauda rāmī
+Aizsargāta redzamības līnija
+<&recipe>Šis bloks saglabā redzamību un vienlaikus iederas pastiprinātā rūpnīcas konstrukcijā.<br>
+<br>
+Lietošana: izmanto tur, kur spēlētājiem jāredz mašīnas caur aizsargbarjeru.<br>

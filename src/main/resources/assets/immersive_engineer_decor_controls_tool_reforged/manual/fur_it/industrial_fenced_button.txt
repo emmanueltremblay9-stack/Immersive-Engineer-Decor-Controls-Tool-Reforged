@@ -1,0 +1,7 @@
+Boton di machine cun protezion
+Control cun redstone
+<&recipe>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.

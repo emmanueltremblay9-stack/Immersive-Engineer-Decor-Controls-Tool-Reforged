@@ -1,0 +1,5 @@
+Ahl Holztrapp
+Ahl Werkstattholz
+<&recipe>De ahl Industrieholztrapp ergänzt ahl Werkstattholz för Böde, Tritt, Düre un warme Ennezier.<br>
+<br>
+Bruuch: Nimm en för ahle Werkstattböde, Trappe, Düre un Kante.<br>

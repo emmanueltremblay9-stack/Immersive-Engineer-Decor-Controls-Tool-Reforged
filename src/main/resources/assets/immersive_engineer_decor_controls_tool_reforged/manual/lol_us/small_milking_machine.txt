@@ -1,0 +1,5 @@
+Milk Getter Thing
+Shop-floor helperz
+<&recipe>Lil Milk Getter iz a shop-floor helper bluk fer kraftin, storin, plonkin, bustin, scoopin, or lil automationz, kitty.<br>
+<br>
+How to: Place near cowz an make a way to take milk containers or flooid away, meow.<br>

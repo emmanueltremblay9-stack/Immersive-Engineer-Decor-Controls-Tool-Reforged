@@ -1,0 +1,5 @@
+Water Freezer
+Compact processing unit
+<&recipe>The Water Freezer handles compact chilling work for powered fluid setups.<br>
+<br>
+Usage: Supply water and power for staged ice production.<br>

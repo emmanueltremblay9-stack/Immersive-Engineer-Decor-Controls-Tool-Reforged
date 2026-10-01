@@ -1,0 +1,5 @@
+Acél padlórács
+Karbantartási megközelítőelem
+<&recipe>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>

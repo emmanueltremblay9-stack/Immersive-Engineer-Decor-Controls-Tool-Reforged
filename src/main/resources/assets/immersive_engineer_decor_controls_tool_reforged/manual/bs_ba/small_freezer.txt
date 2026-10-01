@@ -1,0 +1,5 @@
+Zamrzivač vode
+Kompaktna jedinica za obradu
+<&recipe>Zamrzivač vode obavlja kompaktne poslove hlađenja u instalacijama fluida s napajanjem.<br>
+<br>
+Upotreba: Dovedite vodu i energiju za proizvodnju leda u fazama.<br>

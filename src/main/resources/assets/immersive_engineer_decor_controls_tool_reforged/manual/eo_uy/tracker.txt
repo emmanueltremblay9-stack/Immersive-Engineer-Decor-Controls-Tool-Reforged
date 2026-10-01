@@ -1,0 +1,7 @@
+Spurilo
+Konservita pozicia marko
+<&recipe>Konservas blokpozicion en la objekto.<br>
+<br>
+Uzo: Alklaku blokon por dimensio kaj koordinatoj. La helpilo montras la pozicion. Kaŭra uzo forigas ĝin.<br>
+<br>
+Marku maŝinojn, tunelbranĉojn, teleregilojn aŭ nefinitajn konstruejojn.

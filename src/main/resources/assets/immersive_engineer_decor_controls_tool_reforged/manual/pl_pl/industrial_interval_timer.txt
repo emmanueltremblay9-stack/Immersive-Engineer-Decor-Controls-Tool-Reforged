@@ -1,0 +1,7 @@
+Timer okresowy
+Impuls czasowy
+<&recipe>Mały przełącznik czasowy dostarcza zaprogramowany impuls redstone.<br>
+<br>
+Użycie: Stosuj go tam, gdzie niewielki mechanizm wymaga sterowania okresowego lub z opóźnieniem.<br>
+<br>
+Uwagi: Korzysta z zaprogramowanych impulsów redstone.

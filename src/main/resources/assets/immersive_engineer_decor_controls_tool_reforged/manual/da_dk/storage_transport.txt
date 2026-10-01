@@ -1,0 +1,41 @@
+Opbevaring og transport
+Lager- og gennemstrømningsudstyr
+Opbevarings- og transportudstyret omfatter kasser, tønder, tragte og ventiler til kompakte transportruter i fabrikken.<br>
+<br>
+Brug disse sider, når du planlægger lagerrum, rørstrækninger, servicetanke og kontrollerede væskeledninger.
+<np>
+Kasse med etiket
+Redigerbar lageretiket
+<&labeled_crate>Denne kasse med etiket er lavet til tydelig sortering i lagerrum. Frontpladen kan redigeres som et lille værkstedsskilt.<br>
+<br>
+Brug: Højreklik på etiketpladen for at ændre kasseetiketten. Højreklik på resten af kassen for at åbne lageret til beslag, dele og vedligeholdelsesforsyninger.<br>
+<np>
+Væsketønde
+Udstyr til væskeledninger
+<&fluid_barrel>Denne komponent er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Placer den, så rør eller spande kan nå tankfladen.<br>
+<np>
+Væsketragt
+Udstyr til væskeledninger
+<&small_fluid_funnel>Den lille væskeopsamlingstragt er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Sæt den under væskens opsamlingspunkt, og led det lagrede indhold til tanke eller lavere rørføringer.<br>
+<np>
+Kontraventil til væskerør
+Udstyr til væskeledninger
+<&straight_pipe_valve>Kontraventilen til væskerør er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Vend ventilen efter den ønskede strømningsretning.<br>
+<np>
+Redstonevæskeventil
+Udstyr til væskeledninger
+<&straight_pipe_valve_redstone>Den redstonestyrede væskeventil er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Vend ventilen efter den ønskede strømningsretning.<br>
+<np>
+Analog væskeventil
+Udstyr til væskeledninger
+<&straight_pipe_valve_redstone_analog>Den analoge væskeventil er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Vend ventilen efter den ønskede strømningsretning.<br>

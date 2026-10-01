@@ -1,0 +1,3 @@
+Jäme kullapuru
+Inseneri tööriistamaterjal, mida kasutatakse taastatud meisterduskomplektis.
+<&recipe>Saab sulatada<br>kullakangideks, kuid ei sobi<br>keerukamaks materjalitöötluseks.

@@ -1,0 +1,5 @@
+Znak za vročo površino
+Oznaka nevarnosti
+<&recipe>Znak »Pozor, vroča površina« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>

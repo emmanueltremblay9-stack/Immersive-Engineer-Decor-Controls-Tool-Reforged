@@ -1,0 +1,5 @@
+Bloc de beton armat
+Beton armat
+<&recipe>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>

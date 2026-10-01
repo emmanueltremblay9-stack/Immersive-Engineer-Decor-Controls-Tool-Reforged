@@ -1,0 +1,7 @@
+Ždímač mysli
+Kondenzátor zkušeností
+<&recipe>Ždímač mysli mění lazurit a zkušenosti na nabitý lazurit.<br>
+<br>
+Použití: Měj u sebe lazurit a alespoň jednu úroveň zkušeností, potom nástroj použij. Úspěšné vyždímání spotřebuje jednu úroveň a jeden lazurit, zraní uživatele, opotřebuje ždímač a vytvoří jeden nabitý lazurit.<br>
+<br>
+Nespustí se, pokud uživatel nemá lazurit či zkušenosti nebo je příliš blízko smrti.

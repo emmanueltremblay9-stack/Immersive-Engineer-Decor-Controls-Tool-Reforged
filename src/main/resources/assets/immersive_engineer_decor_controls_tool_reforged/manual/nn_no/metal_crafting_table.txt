@@ -1,0 +1,7 @@
+Metallarbeidsbenk
+Arbeidsstasjon for plater
+<&recipe>Metallarbeidsbenken har hammerspor, full 3x3 arbeidsrute og utgangsspor.<br>
+<br>
+Bruk ruten som en vanlig arbeidsbenk. For IE-plater plasserer du en ingeniørhammer i verktøysporet og platematerialet i ruten, og tar platen fra utgangen.<br>
+<br>
+Ståldekorasjoner bruker stålplater formet ved denne benken.

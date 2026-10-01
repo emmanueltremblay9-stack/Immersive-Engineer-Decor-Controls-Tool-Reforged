@@ -1,0 +1,5 @@
+Stare drvene stepenice
+Ostarjelo radioničko drvo
+<&recipe>Stare industrijske drvene stepenice dodaju ostarjelo radioničko drvo za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: Koristite ga za stare radioničke podove, stepenice, vrata i ukrase.<br>

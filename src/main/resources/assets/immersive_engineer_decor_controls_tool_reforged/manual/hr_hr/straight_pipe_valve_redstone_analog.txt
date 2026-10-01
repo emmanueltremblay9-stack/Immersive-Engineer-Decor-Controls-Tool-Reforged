@@ -1,0 +1,5 @@
+Analogni ventil za tekućine
+Oprema vodova tekućine
+<&recipe>Analogni ventil za tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: poravnaj ventil sa željenim smjerom protoka.<br>

@@ -1,0 +1,5 @@
+Bord av behandlet tre
+Verkstedmøbel
+<&recipe>Denne blokken er et praktisk verkstedmøbel for arbeidsrom og vedlikeholdshjørner.<br>
+<br>
+Bruk: sett den ved siden av benker, kasser og kompakte maskiner.<br>

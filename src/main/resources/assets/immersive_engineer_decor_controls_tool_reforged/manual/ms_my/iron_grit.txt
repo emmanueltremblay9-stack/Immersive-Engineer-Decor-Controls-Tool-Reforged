@@ -1,0 +1,3 @@
+Butiran Besi Kasar
+Bahan alat jurutera yang digunakan oleh set resipi yang dibina semula.
+<&recipe>Boleh dilebur menjadi jongkong<br>besi, tetapi tidak sesuai untuk<br>pemprosesan bahan lanjutan.

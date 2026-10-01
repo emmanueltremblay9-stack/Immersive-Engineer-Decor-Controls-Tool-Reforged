@@ -1,0 +1,3 @@
+Granula auri crassa
+Materia instrumentorum ingeniarii in formulis reconstructis adhibita.
+<&recipe>In lateres aureos conflari possunt,<br>sed ad curationem materiae<br>provectam non apta sunt.

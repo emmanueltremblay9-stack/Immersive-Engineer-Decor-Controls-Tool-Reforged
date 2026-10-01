@@ -1,0 +1,5 @@
+Slaggtegltrapp
+Tett fabrikkmurverk
+<&recipe>Denne blokken gir tett gråbrunt murverk til fundamenter, støttemurer og eldre arbeidsskur.<br>
+<br>
+Bruk: bruk den til gamle fundamenter, støttemurer og skitne fabrikkgulv.<br>

@@ -1,0 +1,5 @@
+Bóta par lìcuidi
+Equipamento par linee de fluidi
+<&recipe>Sto equipamento el xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: mètelo dove tubi o seci i pol rivar a ła fasa de’l serbatoio.<br>

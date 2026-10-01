@@ -1,0 +1,5 @@
+Beschrëfte Këscht
+Ännerbar Lageretikett
+<&recipe>Dës beschrëfte Këscht erlaabt eng kloer Sortéierung am Lager. Hir viischt Plack ka wéi e klengt Ateliersschëld geännert ginn.<br>
+<br>
+Benotzung: Maach e Rietsklick op d'Etiketteplack fir d'Këschtbeschrëftung z'änneren. Maach e Rietsklick op de Rescht vun der Këscht fir de Lagerraum fir Baudeeler, Ersatzdeeler an Ënnerhaltsmaterial opzemaachen.<br>

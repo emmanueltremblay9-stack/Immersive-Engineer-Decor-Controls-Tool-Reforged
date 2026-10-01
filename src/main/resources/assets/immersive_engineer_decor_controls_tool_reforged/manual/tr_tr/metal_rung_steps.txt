@@ -1,0 +1,5 @@
+Şaşırtmalı Metal Basamaklar
+Bakım erişim parçası
+<&recipe>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>

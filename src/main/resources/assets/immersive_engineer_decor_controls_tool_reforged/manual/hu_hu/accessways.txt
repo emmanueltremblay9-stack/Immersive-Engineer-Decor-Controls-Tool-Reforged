@@ -1,0 +1,127 @@
+Megközelítőutak
+Járdák és támaszok
+Acéloszlopok, kezeltfaoszlopok, rácsok, szerelőjárdák, korlátok, létrák, ajtók, ablakok és szerelőnyílások alkotnak kompakt karbantartási útvonalakat a gyár belsejében.<br>
+<br>
+Az acél megközelítőelemekhez acéllemezek kellenek. Készíts vagy helyezz le egy fémmegmunkáló asztalt, tegyél bele Immersive Engineering kalapácsot, majd kalapálj acélrudakat acéllemezzé oszlopokhoz, szerelőjárdákhoz, ablakokhoz, ajtókhoz, korlátokhoz és más acéldíszekhez.<br>
+<br>
+Ott helyezd el őket, ahol a gépekhez karbantartási hozzáférés, emelt útvonal, szerelőakna vagy biztonságosabb perem szükséges.
+<np>
+Vastag acéloszlop
+Tartóvázelem
+<&thick_steel_pole>Az egyenes vastag acéloszlop látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Vastag oszlop feje
+Tartóvázelem
+<&thick_steel_pole_head>Az egyenes vastag acéloszlop feje/talpa látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Vékony acéloszlop
+Tartóvázelem
+<&thin_steel_pole>Az egyenes vékony acéloszlop látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Vékony oszlop feje
+Tartóvázelem
+<&thin_steel_pole_head>Az egyenes vékony acéloszlop feje/talpa látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Kezeltfaoszlop
+Tartóvázelem
+<&treated_wood_pole>Az egyenes kezeltfaoszlop látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Kezeltfaoszlop feje
+Tartóvázelem
+<&treated_wood_pole_head>Az egyenes kezeltfaoszlop feje/talpa látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Kezeltfaoszlop támasza
+Tartóvázelem
+<&treated_wood_pole_support>Az egyenes kezeltfaoszlop támasza látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Acél kettős T támasz
+Tartóvázelem
+<&steel_double_t_support>Ez a blokk látható tartószerkezetet ad gépcsarnokokhoz és megközelítőkeretekhez.<br>
+<br>
+Használat: elforgatva helyezd el gerendák, oszlopok és platformszélek látható merevítéseként.<br>
+<np>
+Acél padlórács
+Karbantartási megközelítőelem
+<&steel_floor_grating>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Acél szerelőjárda
+Karbantartási megközelítőelem
+<&steel_catwalk>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Acél szerelőjárdalépcső
+Karbantartási megközelítőelem
+<&steel_catwalk_stairs>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Emelt acél szerelőjárda
+Karbantartási megközelítőelem
+<&steel_catwalk_ta>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Acélkorlát
+Karbantartási megközelítőelem
+<&steel_railing>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Acélhálókerítés
+Karbantartási megközelítőelem
+<&steel_mesh_fence>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Acélhálókerítés-kapu
+Karbantartási megközelítőelem
+<&steel_mesh_fence_gate>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Fémfokos létra
+Karbantartási megközelítőelem
+<&metal_rung_ladder>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Váltott fémhágcsók
+Karbantartási megközelítőelem
+<&metal_rung_steps>Ez a blokk jól felismerhető karbantartási útvonalakat alakít ki a gépek körül.<br>
+<br>
+Használat: helyezd el karbantartási hozzáférésként gépek körül, felső szinteken és szerelőaknákban.<br>
+<np>
+Acélkeretes ablak
+Védett rálátás
+<&steel_framed_window>Ez a blokk szabadon hagyja a rálátást, miközben illik a megerősített gyári szerkezetekhez.<br>
+<br>
+Használat: tedd egyblokkos falnyílásba, ahol a játékosoknak védőfalon keresztül kell látniuk a gépeket.<br>
+<np>
+Fém tolóajtó
+Ipari hozzáférési pont
+<&metal_sliding_door>Ez a blokk strapabíró hozzáférést biztosít szerelőhelyiségekhez, aknákhoz, tetőkhöz és gépházakhoz.<br>
+<br>
+Használat: ott szereld fel, ahol az építménynek szabályozható karbantartási nyílásra van szüksége.<br>
+<np>
+Vas szerelőnyílás
+Ipari hozzáférési pont
+<&iron_hatch>Ez a blokk strapabíró hozzáférést biztosít szerelőhelyiségekhez, aknákhoz, tetőkhöz és gépházakhoz.<br>
+<br>
+Használat: ott szereld fel, ahol az építménynek szabályozható karbantartási nyílásra van szüksége.<br>

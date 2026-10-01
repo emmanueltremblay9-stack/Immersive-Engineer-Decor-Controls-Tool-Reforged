@@ -1,0 +1,5 @@
+Laborofn
+Kompakte Verarbeitungseinheit
+<&recipe>Da Laborofn erledigt Schmelzarbeitn mit Festbrennstoff auf wenig Werkstattfläche.<br>
+<br>
+Verwendung: Nimm Festbrennstoff für kloane Schmelzchargen.<br>

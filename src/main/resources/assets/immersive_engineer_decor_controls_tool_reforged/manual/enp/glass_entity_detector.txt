@@ -1,0 +1,7 @@
+Glass Being Watcher
+Sensing tokens
+<&recipe>A being watcher sees nearby movement without a seen floor sheet.<br>
+<br>
+Use: Link it to doors, lights, warnings or loom interlocks.<br>
+<br>
+Mind: Watches a small space around the clot.

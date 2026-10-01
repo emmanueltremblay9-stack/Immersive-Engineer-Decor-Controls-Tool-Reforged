@@ -1,0 +1,7 @@
+Materiallagerkëscht
+Këscht fir Baumaterial
+<&recipe>D'Materialkëscht dréit eng grouss Reserve vun engem einfachen, onverännerten a stapelbare Baumaterial.<br>
+<br>
+Benotzung: Hal d'Këscht an der Haapthand an e Materialstapel an der anerer Hand fir se ze lueden. Benotz se mat eidel anerer Hand fir ee Stapel erauszehuelen.<br>
+<br>
+Si hält bis 512 Saache vun enger Zort. Si refuséiert ageschachtelt Këschten, net stapelbar Ausrüstung an ëmbenannt oder dateverännert Stapelen; den Tooltip weist den Inhalt.

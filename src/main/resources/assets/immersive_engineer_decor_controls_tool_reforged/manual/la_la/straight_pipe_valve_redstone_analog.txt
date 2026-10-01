@@ -1,0 +1,5 @@
+Valvula fluidi analogica
+Apparatus linearum fluidi
+<&recipe>Valvula fluidi analogica est pars compacta lineae fluidi pro receptaculis parvis, fistulis, locis collectionis et fluxu redstone moderato.<br>
+<br>
+Usus: valvulam secundum directionem fluxus optatam dispone.<br>

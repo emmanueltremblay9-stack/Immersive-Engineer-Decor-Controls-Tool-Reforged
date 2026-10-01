@@ -1,0 +1,5 @@
+Stålrekkverk
+Del for vedlikeholdstilgang
+<&recipe>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>

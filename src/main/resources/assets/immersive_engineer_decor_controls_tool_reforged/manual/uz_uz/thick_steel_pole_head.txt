@@ -1,0 +1,5 @@
+Qalin ustun uchi
+Tayanch rom qismi
+<&recipe>To'g'ri qalin po'lat ustun uchi/tagligi mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>

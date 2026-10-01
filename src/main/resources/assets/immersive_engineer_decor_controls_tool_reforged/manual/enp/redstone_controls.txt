@@ -1,0 +1,789 @@
+Redstone Switchgear
+Readers and token fittings
+Switchgear turns hidden redstone into clear workstead boards, watchers, showing lights, switches, warnings and linked token fittings.<br>
+<br>
+Use these pages when building working stands, token boards, warding loops and faraway switchgear.
+<np>
+Arrow Mark
+Short-lived beat
+<&arrow_target>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Door watcher
+Redstone Ruling
+<&door_sensor_switch>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Lift Knap
+Redstone Ruling
+<&elevator_button>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Glass Knap
+Redstone Ruling
+<&glass_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Glass Knap
+Redstone Ruling
+<&glass_small_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Glass Touch Knap
+Redstone Ruling
+<&glass_touch_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Loom Knap
+Redstone Ruling
+<&industrial_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Knap
+Redstone Ruling
+<&industrial_double_pole_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Guarded Loom Knap
+Redstone Ruling
+<&industrial_fenced_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Knock Knap
+Redstone Ruling
+<&industrial_knock_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Old Decked Knap
+Redstone Ruling
+<&oldfancy_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Old Decked Knap
+Redstone Ruling
+<&oldfancy_small_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Old Decked Chain Knap
+Short-lived beat
+<&oldfancy_spring_reset_chain>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Country Knap
+Redstone Ruling
+<&rustic_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Country Nail Knap
+Redstone Ruling
+<&rustic_nail_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Small Country Knap
+Redstone Ruling
+<&rustic_small_button>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Country Chain Knap
+Short-lived beat
+<&rustic_spring_reset_chain>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.
+<np>
+Glass Touch Sheet
+Touch-driven beat
+<&glass_contact_mat>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Glass Door Touch Gear
+Touch-driven beat
+<&glass_door_contact_mat>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Touch Mat
+Touch-driven beat
+<&industrial_contact_mat>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Door Touch Mat
+Touch-driven beat
+<&industrial_door_contact_mat>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Fall-Through Watcher
+Sensing tokens
+<&industrial_fallthrough_detector>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Foot Knap
+Redstone Ruling
+<&industrial_foot_button>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Workstead Blow Door
+Touch-driven beat
+<&industrial_high_sensitive_trapdoor>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Blow-Sensing Touch Mat
+Touch-driven beat
+<&industrial_shock_sensitive_contact_mat>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Blow-Opened Trapdoor
+Touch-driven beat
+<&industrial_shock_sensitive_trapdoor>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Red might plant
+Touch-driven beat
+<&red_power_plant>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Country Thrutch Sheet
+Touch-driven beat
+<&rustic_contact_plate>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Country Door Thrutch Gear
+Touch-driven beat
+<&rustic_door_contact_plate>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Country Fall Watcher
+Sensing tokens
+<&rustic_fallthrough_detector>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Country Blow Door
+Touch-driven beat
+<&rustic_high_sensitive_trapdoor>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Country Blow Sheet
+Touch-driven beat
+<&rustic_shock_sensitive_plate>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Country Blow Door
+Touch-driven beat
+<&rustic_shock_sensitive_trapdoor>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Yellow might plant
+Touch-driven beat
+<&yellow_power_plant>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.
+<np>
+Glass Daytime Clock
+Daylight token
+<&glass_day_timer>A timer switch follows the daytime part of the world's round.<br>
+<br>
+Use: Run yard lights, shutters and daytime-only workstead switches.<br>
+<br>
+Mind: Needs a worldfold with skylight.
+<np>
+Glass Being Watcher
+Sensing tokens
+<&glass_entity_detector>A being watcher sees nearby movement without a seen floor sheet.<br>
+<br>
+Use: Link it to doors, lights, warnings or loom interlocks.<br>
+<br>
+Mind: Watches a small space around the clot.
+<np>
+Glass Timed Token
+Timed beat
+<&glass_interval_timer>A small timer switch gives redstone beats at set times.<br>
+<br>
+Use: Fit it where small workings need timed starts or waits.<br>
+<br>
+Mind: Uses redstone beats at set times.
+<np>
+Glass Line Watcher
+Sensing tokens
+<&glass_linear_entity_detector>A being watcher sees nearby movement without a seen floor sheet.<br>
+<br>
+Use: Link it to doors, lights, warnings or loom interlocks.<br>
+<br>
+Mind: Watches a small space around the clot.
+<np>
+Clot Watcher
+Sensing tokens
+<&industrial_block_detector>A clot watcher checks whether something fills the space ahead.<br>
+<br>
+Use: Point it toward the loom side, holding store or guarded space to watch.<br>
+<br>
+Mind: Sends might when the clot ahead is not air.
+<np>
+Daytime Clock
+Daylight token
+<&industrial_day_timer>A timer switch follows the daytime part of the world's round.<br>
+<br>
+Use: Run yard lights, shutters and daytime-only workstead switches.<br>
+<br>
+Mind: Needs a worldfold with skylight.
+<np>
+Being Watcher
+Sensing tokens
+<&industrial_entity_detector>A being watcher sees nearby movement without a seen floor sheet.<br>
+<br>
+Use: Link it to doors, lights, warnings or loom interlocks.<br>
+<br>
+Mind: Watches a small space around the clot.
+<np>
+Beat-and-Wait Timer
+Timed beat
+<&industrial_interval_timer>A small timer switch gives redstone beats at set times.<br>
+<br>
+Use: Fit it where small workings need timed starts or waits.<br>
+<br>
+Mind: Uses redstone beats at set times.
+<np>
+Light Watcher
+Sensing tokens
+<&industrial_light_sensor>A light watcher turns nearby brightness into redstone ruling.<br>
+<br>
+Use: Run self-starting lights, shutters and sight-driven loops.<br>
+<br>
+Mind: Sends might at raw brightness 8 or higher.
+<np>
+Storm Watcher
+Sensing tokens
+<&industrial_lightning_sensor>A storm watcher starts warnings during thunder.<br>
+<br>
+Use: Set it under open sky and link it to lights or warnings.<br>
+<br>
+Mind: Needs thunder and an open way to the sky.
+<np>
+Line Being Watcher
+Sensing tokens
+<&industrial_linear_entity_detector>A being watcher sees nearby movement without a seen floor sheet.<br>
+<br>
+Use: Link it to doors, lights, warnings or loom interlocks.<br>
+<br>
+Mind: Watches a small space around the clot.
+<np>
+Rain Watcher
+Sensing tokens
+<&industrial_rain_sensor>A weather watcher turns rainfall where it stands into redstone.<br>
+<br>
+Use: Fix it where rain can reach the clot above.<br>
+<br>
+Mind: Checks for rain above the watcher.
+<np>
+Two-State Glass Switch
+Redstone Ruling
+<&glass_rotary_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Two-State Glass Touch Gear
+Redstone Ruling
+<&glass_touch_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Yellowred Woken Glass
+Token glass
+<&orange_sensitiveglass>A redstone-woken glass clot keeps sightways open while showing the token state.<br>
+<br>
+Use: Fit it in switchroom windows, lit boards and guarded workstead glass.<br>
+<br>
+Mind: Nearby redstone might changes its state.
+<np>
+Lit Woken Glass
+Token glass
+<&sensitive_glass_block>A redstone-woken glass clot keeps sightways open while showing the token state.<br>
+<br>
+Use: Fit it in switchroom windows, lit boards and guarded workstead glass.<br>
+<br>
+Mind: Nearby redstone might changes its state.
+<np>
+Hued Woken Glass
+Token glass
+<&stained_sensitiveglass>A redstone-woken glass clot keeps sightways open while showing the token state.<br>
+<br>
+Use: Fit it in switchroom windows, lit boards and guarded workstead glass.<br>
+<br>
+Mind: Nearby redstone might changes its state.
+<np>
+Glass Bar Reader
+Token reader
+<&glass_vertical_bar_gauge>A small switchroom reader shows redstone strength clearly on a board.<br>
+<br>
+Use: Fix it where nearby redstone might can be checked at a glance.<br>
+<br>
+Mind: Reads nearby redstone strength from 0 to 15.
+<np>
+Needle Reader
+Token reader
+<&industrial_analog_angular_gauge>A small switchroom reader shows redstone strength clearly on a board.<br>
+<br>
+Use: Fix it where nearby redstone might can be checked at a glance.<br>
+<br>
+Mind: Reads nearby redstone strength from 0 to 15.
+<np>
+Might Reader
+Token reader
+<&industrial_analog_horizontal_gauge>A small switchroom reader shows redstone strength clearly on a board.<br>
+<br>
+Use: Fix it where nearby redstone might can be checked at a glance.<br>
+<br>
+Mind: Reads nearby redstone strength from 0 to 15.
+<np>
+Number Reader
+Clear token strength
+<&industrial_small_digital_gauge>A small switchroom reader shows redstone strength clearly on a board.<br>
+<br>
+Use: Fix it where nearby redstone might can be checked at a glance.<br>
+<br>
+Mind: Reads nearby redstone strength from 0 to 15.
+<np>
+Glass Pipe Reader
+Token reader
+<&industrial_tube_gauge>A small switchroom reader shows redstone strength clearly on a board.<br>
+<br>
+Use: Fix it where nearby redstone might can be checked at a glance.<br>
+<br>
+Mind: Reads nearby redstone strength from 0 to 15.
+<np>
+Graded Bar Reader
+Token reader
+<&industrial_vertical_bar_gauge>A small switchroom reader shows redstone strength clearly on a board.<br>
+<br>
+Use: Fix it where nearby redstone might can be checked at a glance.<br>
+<br>
+Mind: Reads nearby redstone strength from 0 to 15.
+<np>
+Warning Lightvat
+Token feedback
+<&industrial_alarm_lamp>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Alarm Siren
+Signal feedback
+<&industrial_alarm_siren>Heed this: The Alarm Siren is a face-mounted redstone indicator. It changes powered state from the signal supplied by the block it is attached to.<br>
+<br>
+Usage: Attach it to a solid face and power it to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: The siren refreshes once per second while its attached signal remains active.
+<np>
+Blinking LED
+Token feedback
+<&industrial_blinking_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Green Blinking LED
+Token feedback
+<&industrial_green_blinking_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Green LED
+Token feedback
+<&industrial_green_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Red LED
+Token feedback
+<&industrial_red_blinking_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Red LED
+Token feedback
+<&industrial_red_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+White Blinking LED
+Token feedback
+<&industrial_white_blinking_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+White LED
+Token feedback
+<&industrial_white_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Yellow Blinking LED
+Token feedback
+<&industrial_yellow_blinking_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Yellow LED
+Token feedback
+<&industrial_yellow_led>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Country Flag
+Token feedback
+<&rustic_semaphore>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.
+<np>
+Bemeter Switch
+Backing token
+<&industrial_comparator_switch>A small watcher switch reads its backing clot and turns that reading into a plain board outflow.<br>
+<br>
+Use: Fix it to inholdings, vats or redstone gear. When the backing clot gives a Bemeter, holder or redstone outflow, the switch sends full-strength redstone.<br>
+<br>
+Mind: Turn stock levels or hidden wiring into clear on/off switch lines.
+<np>
+Might Setter
+Changeable token
+<&industrial_dimmer>A turning knap sets redstone strength on a small switchboard.<br>
+<br>
+Use: Right-click to raise the outflow step by step, then back to naught after full strength.<br>
+<br>
+Mind: Sends strength from 0 to 15.
+<np>
+ESTOP Knap
+Redstone Ruling
+<&industrial_estop_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Hopper Stopper
+Redstone Ruling
+<&industrial_hopper_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Knock Switch
+Redstone Ruling
+<&industrial_knock_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Heaver
+Redstone Ruling
+<&industrial_lever>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Two-Knap Loom Switch
+Redstone Ruling
+<&industrial_machine_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Pull Grip
+Redstone Ruling
+<&industrial_pull_handle>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Turning Heaver
+Redstone Ruling
+<&industrial_rotary_lever>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Turning Loom Switch
+Redstone Ruling
+<&industrial_rotary_machine_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Touch Heaver
+Redstone Ruling
+<&industrial_small_lever>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Switch
+Redstone Ruling
+<&industrialswitch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Light Switch
+Redstone Ruling
+<&light_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Flowgate Switch
+Redstone Ruling
+<&valve_wheel_switch>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Cased Beat Catcher
+Linked switchgear
+<&industrial_switchlink_cased_pulse_receiver>A cased linked beat catcher gives faraway switchboards a short redstone starter.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Right-click it or start the linked mergroat to send a short beat.<br>
+<br>
+Mind: The beat resets itself after its set length.
+<np>
+Cased Link Catcher
+Linked switchgear
+<&industrial_switchlink_cased_receiver>A cased linked catcher gives faraway switchboards a tough redstone mark.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Right-click the catcher itself to turn it by hand.<br>
+<br>
+Mind: Sneak-using a linked mergroat turns this catcher on or off.
+<np>
+Beat Link Catcher
+Linked switchgear
+<&industrial_switchlink_pulse_receiver>A linked beat catcher gives faraway switchboards a short redstone starter.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Right-click it or start the linked mergroat to send a short beat.<br>
+<br>
+Mind: The beat resets itself after its set length.
+<np>
+Beat Link Relay
+Linked switchgear
+<&industrial_switchlink_pulse_relay>A relay-shaped fitting gives switchboard builds a small nearby switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops. For linked-mergroat starting, use catcher clots.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Switch Link Catcher
+Linked switchgear
+<&industrial_switchlink_receiver>A linked catcher gives faraway switchboards a full-strength redstone mark.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Right-click the catcher itself to turn it by hand.<br>
+<br>
+Mind: Sneak-using a linked mergroat turns this catcher on or off.
+<np>
+Graded Link Catcher
+Linked switchgear
+<&industrial_switchlink_receiver_analog>A linked catcher gives switchboards a seen mark for faraway use.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Sneak-use that mergroat to start the catcher from afar.<br>
+<br>
+Mind: This catcher sends a full redstone token when started.
+<np>
+Switch Link Relay
+Linked switchgear
+<&industrial_switchlink_relay>A relay-shaped fitting gives switchboard builds a small nearby switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops. For linked-mergroat starting, use catcher clots.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Graded Link Relay
+Linked switchgear
+<&industrial_switchlink_relay_analog>A relay-shaped fitting gives switchboard builds a small nearby switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops. For linked-mergroat starting, use catcher clots.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Switch Link Mergroat
+Linked switchgear
+<&switchlink_pearl>A linked mergroat saves a catcher mark for faraway workstead switching.<br>
+<br>
+Use: Click a Switch Link catcher with an Ender Mergroat to make one. Sneak-use the linked mergroat to start the saved catcher.<br>
+<br>
+Mind: The mark must be loaded, in the same worldfold and within reach.
+<np>
+Old Decked Heaver
+Redstone Ruling
+<&oldfancy_bistableswitch1>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Old Decked Turning Heaver
+Redstone Ruling
+<&oldfancy_bistableswitch2>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Country Turning Heaver
+Redstone Ruling
+<&rustic_angular_lever>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Country Heaver
+Redstone Ruling
+<&rustic_lever>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Country Nail Heaver
+Redstone Ruling
+<&rustic_nail_lever>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.
+<np>
+Country Two-Hinge Heaver
+Redstone Ruling
+<&rustic_two_hinge_lever>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.

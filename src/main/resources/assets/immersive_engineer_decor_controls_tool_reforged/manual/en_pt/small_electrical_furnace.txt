@@ -1,0 +1,5 @@
+Oven run by electricity
+Small processin' contraption
+<&recipe>The electric oven handles FE-powered smeltin' jobs in a small corner o' yer workshop.<br>
+<br>
+Orders: Supply FE power and loot that can be smelted.<br>

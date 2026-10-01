@@ -1,0 +1,7 @@
+Receptor d’enllaz d’interruptores
+Control enllazáu
+<&recipe>Un receptor enllazáu da a los paneles remotos un destín de redstone a plena potencia.<br>
+<br>
+Usu: fai clic nél con una perlla d’Ender pa crear una perlla enllazada. Fai clic derechu direutamente nel receptor pa conmutalu a mano.<br>
+<br>
+Notes: una perlla enllazada conmuta esti receptor cuando s’usa al encuxase.

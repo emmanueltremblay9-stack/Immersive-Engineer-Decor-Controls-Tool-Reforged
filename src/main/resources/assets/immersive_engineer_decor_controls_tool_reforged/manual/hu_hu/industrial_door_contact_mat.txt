@@ -1,0 +1,7 @@
+Ajtóérintkező-szőnyeg
+Nyomásimpulzus
+<&recipe>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.

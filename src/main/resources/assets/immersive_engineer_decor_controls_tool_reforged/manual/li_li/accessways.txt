@@ -1,0 +1,127 @@
+Toegangspade
+Looppade en sjteune
+Sjtaole pale, behandelde houtpale, roosters, looppade, leuninge, lèdders, deure, vinsters en loeke vorme kleine ónnerhouwdsroutes door de fabriek.<br>
+<br>
+Sjtaole toegangsdiele gebroeke sjtaolplate. Maak of plaats ein metaalwerkbank, zèt d'r ein haomer van Immersive Engineering in en haomer sjtaolstave tot sjtaolplate veur pale, looppade, vinsters, deure, leuninge en angere sjtaolversieringe.<br>
+<br>
+Zèt ze wao machines ónnerhouwdstoegang, hoegere pade, ónnerhouwdssjachte of veiligere rande neudig höbbe.
+<np>
+Dikke sjtaolpaol
+Dael van ein draagkader
+<&thick_steel_pole>De rechte dikke sjtaolpaol geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Kóp veur dikke paol
+Dael van ein draagkader
+<&thick_steel_pole_head>De kóp/voet veur de rechte dikke sjtaolpaol geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Dunne sjtaolpaol
+Dael van ein draagkader
+<&thin_steel_pole>De rechte dunne sjtaolpaol geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Kóp veur dunne paol
+Dael van ein draagkader
+<&thin_steel_pole_head>De kóp/voet veur de rechte dunne sjtaolpaol geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Paol van behandeld hout
+Dael van ein draagkader
+<&treated_wood_pole>De rechte paol van behandeld hout geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Kóp veur behandelde paol
+Dael van ein draagkader
+<&treated_wood_pole_head>De kóp/voet veur de rechte paol van behandeld hout geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Sjteun veur behandelde paol
+Dael van ein draagkader
+<&treated_wood_pole_support>De sjteun veur de rechte paol van behandeld hout geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Sjtaole dubbele T-sjteun
+Dael van ein draagkader
+<&steel_double_t_support>Dees blok geuf machinehalle en toegangskaders ein zeenbare draagconstructie.<br>
+<br>
+Gebroek: draej en plaats 'm es zeenbaar verband veur balke, pale en platformrande.<br>
+<np>
+Sjtaole vloerrooster
+Ónnerhouwdstoegang
+<&steel_floor_grating>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Sjtaole looppad
+Ónnerhouwdstoegang
+<&steel_catwalk>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Sjtaole looppadtraeje
+Ónnerhouwdstoegang
+<&steel_catwalk_stairs>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Verhoegd sjtaole looppad
+Ónnerhouwdstoegang
+<&steel_catwalk_ta>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Sjtaole leuning
+Ónnerhouwdstoegang
+<&steel_railing>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Sjtaole gaashèk
+Ónnerhouwdstoegang
+<&steel_mesh_fence>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Sjtaole gaashèkpaort
+Ónnerhouwdstoegang
+<&steel_mesh_fence_gate>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Metalen sportlèdder
+Ónnerhouwdstoegang
+<&metal_rung_ladder>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Versjprónge metalen treje
+Ónnerhouwdstoegang
+<&metal_rung_steps>Dees blok maak duidelike ónnerhouwdsroutes rond machines.<br>
+<br>
+Gebroek: zèt 'm es ónnerhouwdstoegang rond machines, baoveverdiepinge en ónnerhouwdssjachte.<br>
+<np>
+Vinster mèt sjtaolkader
+Beschermde zichlijn
+<&steel_framed_window>Dees blok laot 't zich vriej en pas toch bie versterkte fabrieksbouw.<br>
+<br>
+Gebroek: zèt 'm in ein moeropening van 1 blok wao sjpelers door ein beschermde wand nao machines moete kinne kieke.<br>
+<np>
+Metalen sjuifdeur
+Industriële toegang
+<&metal_sliding_door>Dees blok maak ein sjtevige toegang veur ónnerhouwdsruumtes, sjachte, dake en machinekaste.<br>
+<br>
+Gebroek: bouw 'm in wao ein gecontroleerde ónnerhouwdsopening neudig is.<br>
+<np>
+Iezer loek
+Industriële toegang
+<&iron_hatch>Dees blok maak ein sjtevige toegang veur ónnerhouwdsruumtes, sjachte, dake en machinekaste.<br>
+<br>
+Gebroek: bouw 'm in wao ein gecontroleerde ónnerhouwdsopening neudig is.<br>

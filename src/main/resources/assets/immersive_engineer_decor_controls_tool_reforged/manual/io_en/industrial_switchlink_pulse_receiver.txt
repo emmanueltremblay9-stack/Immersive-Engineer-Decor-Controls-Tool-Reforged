@@ -1,0 +1,7 @@
+Impulsa ligoricevilo
+Ligita regilo
+<&recipe>Ligita impulsorecevilo donas kurta redstonea startigo a distanta paneli.<br>
+<br>
+Uzo: Klikez ol kun Enderperlo por krear ligita perlo. Klikez ol dextre o aktigez la ligita perlo por emisar kurta impulso.<br>
+<br>
+Noti: La impulso automate reinicialigesas pos sua definita duro.

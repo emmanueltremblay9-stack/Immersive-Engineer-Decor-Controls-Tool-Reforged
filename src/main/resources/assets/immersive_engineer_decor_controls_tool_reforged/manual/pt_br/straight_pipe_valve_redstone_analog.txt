@@ -1,0 +1,5 @@
+Válvula analógica de fluidos
+Componentes de tubulação de fluidos
+<&recipe>A válvula analógica de fluidos é um componente compacto para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Alinhe a válvula com a direção de fluxo desejada.<br>

@@ -1,0 +1,7 @@
+Charbon d'Ariadne
+Marqou de chemin de mine
+<&recipe>Le Charbon d'Ariadne marque vite les chemins den les puits, les galeries de mine ramifiées e les bezaignes provisoires sous terre.<br>
+<br>
+Empllai : Empllayéz-le su eune face de blloqe solide pour y pllacer eune flèche naire. La marqe lit le pouint cliqë su la face e permet huit sens, o les diagonales ; ça aide a marqer les virages, les sorties, les impasses e les voies d'aprovisionnement sans porter des potiaos de paniaos a part.<br>
+<br>
+Le Charbon d'Ariadne ét un outil de marqaije réempllayabl o 100 empllais. Chaqe marqe bien pllaciée coûte eune unitë de durance ; les faces qi ne tiennent pouint sont refusées sans uzer la bezaigne.

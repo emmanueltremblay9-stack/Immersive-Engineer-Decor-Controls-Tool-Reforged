@@ -1,0 +1,5 @@
+Analoga fluida valvo
+Fluidliniaj ekipaĵoj
+<&recipe>La analoga fluida valvo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: vicigu la valvon laŭ la celita fludirekto.<br>

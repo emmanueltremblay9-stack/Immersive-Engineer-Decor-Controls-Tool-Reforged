@@ -1,0 +1,5 @@
+Supapă analogică de fluide
+Echipament pentru circuite de fluide
+<&recipe>Supapa analogică de fluide este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Aliniază supapa cu direcția dorită a debitului.<br>

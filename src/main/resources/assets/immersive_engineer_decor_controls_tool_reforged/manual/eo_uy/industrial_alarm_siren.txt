@@ -1,0 +1,7 @@
+Alarma sireno
+Signala indikilo
+<&recipe>La Alarma sireno estas redstone-indikilo muntita sur blokflanko. Ĝia elektra stato sekvas la signalon de la bloko, al kiu ĝi estas fiksita.<br>
+<br>
+Uzo: Fiksu al solida flanko kaj elektrigu por kontroli pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Noto: La sireno refreŝiĝas unufoje sekunde dum la signalo restas aktiva.

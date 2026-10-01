@@ -1,0 +1,5 @@
+Panneau solaire
+Équipement d'atelier
+<&recipe>Le petit panneau solaire est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : exposez-le à ciel ouvert et reliez des équipements peu gourmands.<br>

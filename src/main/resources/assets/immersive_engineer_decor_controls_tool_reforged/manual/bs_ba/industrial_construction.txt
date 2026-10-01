@@ -1,0 +1,108 @@
+Industrijska gradnja
+Fabrički zidovi i ukrasi
+Opći građevinski dijelovi obuhvataju vrata, prozore, svjetla, znakove upozorenja, ukrase i strukturne dijelove koji ne pripadaju određenijoj sekciji.<br>
+<br>
+Koristite ove stranice za fabričke prostorije, servisne hodnike, označavanje opasnosti i praktične industrijske detalje.
+<np>
+Gvozdena svjetiljka sa sijalicom
+Kompaktno radno svjetlo
+<&iron_bulb_light>Ovaj blok pruža kompaktno industrijsko osvjetljenje za hodnike, servisne staze i radne prostore.<br>
+<br>
+Upotreba: Montirajte ga na plafone, zidove ili rubove gdje prostoriji treba jasno radno osvjetljenje.<br>
+<np>
+Rubna plafonska svjetiljka
+Kompaktno radno svjetlo
+<&iron_ceiling_edge_light>Ovaj blok pruža kompaktno industrijsko osvjetljenje za hodnike, servisne staze i radne prostore.<br>
+<br>
+Upotreba: Montirajte ga na plafone, zidove ili rubove gdje prostoriji treba jasno radno osvjetljenje.<br>
+<np>
+Ugrađena rubna podna svjetiljka
+Kompaktno radno svjetlo
+<&iron_floor_edge_light>Ovaj blok pruža kompaktno industrijsko osvjetljenje za hodnike, servisne staze i radne prostore.<br>
+<br>
+Upotreba: Montirajte ga na plafone, zidove ili rubove gdje prostoriji treba jasno radno osvjetljenje.<br>
+<np>
+Ugrađena svjetiljka
+Kompaktno radno svjetlo
+<&iron_inset_light>Ovaj blok pruža kompaktno industrijsko osvjetljenje za hodnike, servisne staze i radne prostore.<br>
+<br>
+Upotreba: Montirajte ga na plafone, zidove ili rubove gdje prostoriji treba jasno radno osvjetljenje.<br>
+<np>
+Znak „Opći oprez”
+Oznaka opasnosti
+<&sign_caution>Znak „Opći oprez” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak opasnosti
+Oznaka opasnosti
+<&sign_danger>Znak „Oprez, ovdje je zaista opasno” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Ukrasni znak
+Oznaka opasnosti
+<&sign_decor>Ploča za znak (Inženjerski ukrasi) označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak odbrane
+Oznaka opasnosti
+<&sign_defense>Znak „Oprez, odbrambeni sistem ispred” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak za izlaz
+Oznaka opasnosti
+<&sign_exit>Ovaj znak označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak „Opasnost od požara”
+Oznaka opasnosti
+<&sign_firehazard>Znak „Opasnost od požara” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak „Upozorenje na mraz”
+Oznaka opasnosti
+<&sign_frost>Znak „Upozorenje na mraz” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak vruće površine
+Oznaka opasnosti
+<&sign_hotsurface>Znak „Oprez, vruća površina” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak žice pod naponom
+Oznaka opasnosti
+<&sign_hotwire>Znak „Oprez, žica pod naponom” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak „Opasnost od lasera”
+Oznaka opasnosti
+<&sign_laser>Znak „Opasnost od lasera” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak magijske opasnosti
+Oznaka opasnosti
+<&sign_magichazard>Znak „Oprez, magijska opasnost” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak magnetnog polja
+Oznaka opasnosti
+<&sign_magneticfield>Znak „Oprez, jako magnetno polje” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>
+Znak „Radioaktivna opasnost”
+Oznaka opasnosti
+<&sign_radioactive>Znak „Radioaktivna opasnost” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>
+<np>

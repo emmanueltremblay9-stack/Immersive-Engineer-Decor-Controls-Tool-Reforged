@@ -1,0 +1,127 @@
+Togäng
+Loopwegen un Stütten
+Stahlpöhl, behannelte Holtpöhl, Rosten, Loopstegen, Gelänner, Leddern, Düörn, Finstern un Klappen maakt lütte Wartoongswegen dörch de Fabrik.<br>
+<br>
+Stahlparts för Togäng bruukt Stahlplaten. Maak oder sett en Metallwiärkbank, legg en Hamer vun Immersive Engineering rin un hamer denn Stahlbarren to Stahlplaten för Pöhl, Loopstegen, Finstern, Düörn, Gelänner un anner Stahlprunk.<br>
+<br>
+Sett se dor, wo Maschinen Wartoongstogang, hoge Padden, Wartoongsschachten oder sekere Kanten bruukt.
+<np>
+Dicke Stahlpahl
+Deel vun en Dragrahmen
+<&thick_steel_pole>De lieke dicke Stahlpahl gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Kopp för dicken Pahl
+Deel vun en Dragrahmen
+<&thick_steel_pole_head>De Kopp/Foot för lieken dicken Stahlpahl gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Dünne Stahlpahl
+Deel vun en Dragrahmen
+<&thin_steel_pole>De lieke dünne Stahlpahl gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Kopp för dünnen Pahl
+Deel vun en Dragrahmen
+<&thin_steel_pole_head>De Kopp/Foot för lieken dünnen Stahlpahl gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Pahl ut behannelt Holt
+Deel vun en Dragrahmen
+<&treated_wood_pole>De lieke Pahl ut behannelt Holt gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Kopp för behannelten Pahl
+Deel vun en Dragrahmen
+<&treated_wood_pole_head>De Kopp/Foot för lieken Pahl ut behannelt Holt gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Stütt för behannelten Pahl
+Deel vun en Dragrahmen
+<&treated_wood_pole_support>De Stütt för lieken Pahl ut behannelt Holt gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Stahl-Dubbel-T-Stütt
+Deel vun en Dragrahmen
+<&steel_double_t_support>Disse Block gifft Maschinenhallen un Togangsrahmen sichtbare Dragkonstrukschonen.<br>
+<br>
+Bruuk: Dreih un sett em as sichtbare Verstieven för Balken, Pöhl un Plattformkanten.<br>
+<np>
+Stahlboddenrost
+Wartoongstogang
+<&steel_floor_grating>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Stahlloopsteg
+Wartoongstogang
+<&steel_catwalk>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Stahlloopstegtrapp
+Wartoongstogang
+<&steel_catwalk_stairs>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Hoge Stahlloopsteg
+Wartoongstogang
+<&steel_catwalk_ta>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Stahlgelänner
+Wartoongstogang
+<&steel_railing>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Stahlgaastuun
+Wartoongstogang
+<&steel_mesh_fence>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Stahlgaastuunpoort
+Wartoongstogang
+<&steel_mesh_fence_gate>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Metallsprossenledder
+Wartoongstogang
+<&metal_rung_ladder>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Versett Metalltreden
+Wartoongstogang
+<&metal_rung_steps>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>
+<np>
+Finster mit Stahlrahmen
+Schützt Dörchkiek
+<&steel_framed_window>Disse Block lett di dörchkieken un passt liekers to verstarkte Fabrikbauten.<br>
+<br>
+Bruuk: Sett em in en Muurlock vun 1 Block, wo Spelers dörch en Schutzwand na Maschinen kieken schüllt.<br>
+<np>
+Metallschuuvdüör
+Industrietogang
+<&metal_sliding_door>Disse Block maakt en robuste Togang to Wartoongsruum, Schachten, Däcker un Maschinenhüllen.<br>
+<br>
+Bruuk: Sett em dor in, wo de Bau en regelte Wartoongsöffnung bruukt.<br>
+<np>
+Isenklapp
+Industrietogang
+<&iron_hatch>Disse Block maakt en robuste Togang to Wartoongsruum, Schachten, Däcker un Maschinenhüllen.<br>
+<br>
+Bruuk: Sett em dor in, wo de Bau en regelte Wartoongsöffnung bruukt.<br>

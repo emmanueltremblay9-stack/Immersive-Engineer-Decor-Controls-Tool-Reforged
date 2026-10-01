@@ -1,0 +1,99 @@
+Utensili dil injenioro
+Portebla laboreyekipuro
+La utensilaro dil injenioro adjuntas manala ekipuro, mineymarkili, urja konsumebli, portebla manjaji e mikra materialoprocesili a la sama manlibro qua dokumentas la dekorbloki e regilbloki.<br>
+<br>
+Ca utensili destinesas a laboro for de plene ekipita laboreyo: marcar la voyo, portar provizi, remediar erori e finar mikra procesolabori surloke.
+<np>
+REDIA-utensilo
+Utensilo kovrita per diamanto
+<&redia_tool>La REDIA-utensilo esas duriva portebla utensilo por rapida terlaboro. Uzez ol sur laborebla sulo por preparar farmsulo.<br>
+<br>
+Uzez ol kontre stabila facio dum vu portas torchi por pozar torchomarko de vua inventaro sen uzurar REDIA. Terlaboro, tondado, hakilalaboro ed arborfaligo konsumas duriveso.
+<np>
+Ercomuelmartelo
+Manala muelutensilo
+<&crushing_hammer>La martelo por dispecigar mineralo esas manual utensilo por frua laboro di fero e oro.<br>
+<br>
+Uzo: Fabrikez ol kun kruda fero, kruda oro, fero-mineralo, profunda-ardoza fero-mineralo, oro-mineralo o profunda-ardoza oro-mineralo por produktar fero- o oro-pulvero di Immersive Engineering. La martelo perdas duriveso e revenas aden la fabrik-reteto til ke ol ruptas.<br>
+<br>
+Ol anke uzuresas dum minado e povas repulsar skopi en proxima kombato.
+<np>
+Spurilo
+Konservita pozicionmarko
+<&tracker>La spurilo konservas bloko-pozicion direte en la kozo.<br>
+<br>
+Uzo: Kliktez bloko por konservi lua dimensiono e koordinati. La helpoteksto montras la pozicion. Uzez la spurilo dum klino por efacar la skopo.<br>
+<br>
+Uzez ol por marcar mashini, tunelbranchi, distanta regili o nefinita konstruktoloki ante revenar kun utensili e materiali.
+<np>
+Karbono di Ariadne
+Mineya vojmarkilo
+<&ariadne_coal>Karbono di Ariadne pozas rapida nigra flechomarki sur stabila mineyfacii. Uzez ol sur solida facio por marcar la sequanta turno, exireyo o brancho; la marko subtenas ok direcioni sur la klikita facio, inkluzive diagonali.<br>
+<br>
+Karbono di Ariadne esas riuzebla markutensilo kun 100 uzi. Singla sucesinta markopozado kustas un duriveso. Ol refuzas nesubtenata facii vice uzurar la objekto.
+<np>
+Automata stimulopako
+Urjoinjektilo
+<&stimpack>La Auto Stim Pack esas urjanta medicin-ilo por danjeroza mantenado.<br>
+<br>
+Uzo: Uzez ol manuale por kuracar, recevar kurta protekto e kurta movo-akcelo. En la inventario ol povas aktivesar automatee ye basa saneso, pose eniras refrij-periodo.<br>
+<br>
+Tenez un disponebla ante probar alta loki, nekovrita filkonekti o danjeroza mineyvoyi.
+<np>
+Dormosako
+Portebla repozekipuro
+<&sleeping_bag>La dormosako esas vetero-rezistanta ripozilo por laboro fore de lito.<br>
+<br>
+Uzo: Uzez ol nokte en la Overworld por ripozar til matino. Ol ne fixas nek movas vua renasko-punkto.<br>
+<br>
+Ol rifuzas diurna uzo, danjeroza cirkumajo kun proxima monstri e dimensioni ne apta por sekura ripozo. Singla sucesoza ripozo uzas la sako.
+<np>
+Materialostokokesto
+Konstruktomateriala provizokesto
+<&material_box>La materiala buxo portas granda rezervo de un simpla, nechanjita e staplebla konstruktomaterialo.<br>
+<br>
+Uzo: Tenez la buxo en la chefa manuo e materiala stapo en la altra por charjar ol. Uzez la buxo kun vakua altra manuo por sacar un stapo.<br>
+<br>
+Ol tenas til 512 kozi de un speco. Ol rifuzas buxi en buxo, nestaplebla equipuro e renomisita o daten-chanjita stapi; la helpoteksto montras la kontenajo.
+<np>
+Plonjoaerokapsulo
+Urja aerrezervo
+<&diving_capsule>La submarsala aero-kapsulo esas urjanta rezervo di aero por laboro sub aquo.<br>
+<br>
+Uzo: Uzez ol manuale por restaurar aero. Kande ol esas en la inventario, ol povas anke aktivesar automatee kande aero preske mankas, pose eniras refrij-periodo.<br>
+<br>
+Portez ol por inundita mineyi, subaquala tubvoyi e repari en pumpchambri.
+<np>
+Presilo di Muslee-bastoni
+Manjajopresilo
+<&musli_bar_press>La Muslee-bareto-preso transformas ordinara manjajo aden kompakta kampala racioni.<br>
+<br>
+Uzo: Portez pano, pomo e semino de frumento, melono, kukurbito, beto o Industrial Hemp, pose uzez la preso. Sucesoza presado konsumas un de singlu ingrediento, kontrolas spaco, produktas quar Muslee Melange-bareti e domajas la preso.<br>
+<br>
+Se ingrediento mankas o la inventario ne havas spaco, nulo konsumesas.
+<np>
+Muslee-mixura energiobastono
+Rapida laboreyintermanjajo
+<&musli_bar>La energio-bareto Muslee Melange esas kompakta manjajo de pano, semini e frukto.<br>
+<br>
+Uzo: Manjez ol kom portebla manjajo dum pozado di regili, tubi, platformi o longa instaluri en mashinchambri.
+<np>
+Mentopresilo
+Experiencokondensilo
+<&charged_lapis_squeezer>La mentopresilo konvertas un lapislazulo ed un experienconivelo de vua inventaro a charjita lapislazulo.<br>
+<br>
+Singla sucesinta konverto dolorigas e exhaustas la uzanto, augmentante hungro, ed anke breve blindigas lu. Ol refuzas funcionar sen lapislazulo, sen XP o kande la uzanto esas tro proxima a morto.
+<np>
+Charjita lapislazulo
+Konservita experienco
+<&charged_lapis>Charjita lapislazulo konservas un experienconivelo. Konsumez ol por restaurar la nivelo, efacar aktiva efiki e retrovar poka saneso.<br>
+<br>
+Unesme fabrikez mentopresilo; charjita lapislazulo produktesas per uzo di ta utensilo kun disponebla lapislazulo e XP.
+<np>
+Grosiera fergranuli
+Materialo por injeniorutensili uzata da la rekonstruktita fabrikoreceptaro.
+<&iron_grit>Povas fuzesar a fera<br>lingoti, ma ne esas<br>apta por avancita materialoprocesado.
+<np>
+Grosiera orgranuli
+Materialo por injeniorutensili uzata da la rekonstruktita fabrikoreceptaro.
+<&gold_grit>Povas fuzesar a ora<br>lingoti, ma ne esas<br>apta por avancita materialoprocesado.

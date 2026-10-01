@@ -1,0 +1,7 @@
+Pulssiyhteysrele
+Yhteysohjaus
+<&recipe>Releen muotoinen osa tarjoaa paneelirakennelmiin pienen paikallisen kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella. Käytä vastaanotinkuutioita, kun tarvitset aktivointia yhteyshelmellä.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.

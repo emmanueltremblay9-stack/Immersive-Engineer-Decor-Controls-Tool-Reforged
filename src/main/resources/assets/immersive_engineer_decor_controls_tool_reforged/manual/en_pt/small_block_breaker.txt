@@ -1,0 +1,5 @@
+Breaker o' blocks
+Gear fer the workshop deck
+<&recipe>Little block breaker be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Aim the working face at the block ye want removed.<br>

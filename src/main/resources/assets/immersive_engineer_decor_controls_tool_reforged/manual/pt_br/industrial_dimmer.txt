@@ -1,0 +1,7 @@
+Regulador
+Sinal variável
+<&recipe>Um controle giratório regula a intensidade de redstone pela face de um painel compacto.<br>
+<br>
+Uso: Clique com o botão direito para aumentar a saída em etapas; depois da intensidade máxima, ela volta a zero.<br>
+<br>
+Observações: Emite intensidades de 0 a 15.

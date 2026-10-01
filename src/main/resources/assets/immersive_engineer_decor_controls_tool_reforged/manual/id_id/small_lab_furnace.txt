@@ -1,0 +1,5 @@
+Tungku Laboratorium
+Unit pemrosesan ringkas
+<&recipe>Tungku laboratorium menangani peleburan ringkas berbahan bakar padat dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: gunakan bahan bakar padat untuk melebur dalam kelompok kecil.<br>

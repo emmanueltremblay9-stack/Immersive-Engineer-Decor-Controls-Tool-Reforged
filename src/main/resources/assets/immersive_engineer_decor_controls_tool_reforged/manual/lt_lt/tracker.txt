@@ -1,0 +1,7 @@
+Sekiklis
+Išsaugotos vietos žymeklis
+<&recipe>Sekiklis išsaugo bloko vietą tiesiai daikte.<br>
+<br>
+Naudojimas: Spustelėk bloką, kad išsaugotum jo dimensiją ir koordinates. Paaiškinimas rodo vietą. Naudok sekiklį sėlindamas, kad išvalytum taikinį.<br>
+<br>
+Naudok jį mašinoms, tunelių atšakoms, nuotoliniams valdikliams arba nebaigtoms statybų vietoms pažymėti, prieš grįždamas su įrankiais ir medžiagomis.

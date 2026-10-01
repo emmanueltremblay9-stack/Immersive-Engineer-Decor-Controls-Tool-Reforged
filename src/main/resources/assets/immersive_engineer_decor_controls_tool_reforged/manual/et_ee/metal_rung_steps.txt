@@ -1,0 +1,5 @@
+Nihutatud metallastmed
+Hooldusligipääsu osa
+<&recipe>See plokk moodustab masinate ümber selged hooldusteed.<br>
+<br>
+Kasutamine: Paigalda hooldusligipääsuks masinate, ülemiste korruste ja hooldusšahtide ümber.<br>

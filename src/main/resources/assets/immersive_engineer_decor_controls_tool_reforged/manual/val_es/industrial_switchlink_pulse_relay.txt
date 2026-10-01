@@ -1,0 +1,7 @@
+Relé d’enllaç de polsos
+Control enllaçat
+<&recipe>Una peça amb aspecte de relé dona a les construccions de panells un punt d’interrupció local compacte.<br>
+<br>
+Ús: fes clic dret per a commutar una eixida a plena potència per als circuits pròxims. Usa blocs receptors quan necessites activar-los amb una perla enllaçada.<br>
+<br>
+Notes: emet redstone a plena potència mentre està encés.

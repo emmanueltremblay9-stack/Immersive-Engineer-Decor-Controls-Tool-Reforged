@@ -1,0 +1,7 @@
+Prelum mentis
+Condensator experientiae
+<&recipe>Prelum mentis lapidem lazuli et experientiam in lapidem lazuli oneratum convertit.<br>
+<br>
+Usus: lapidem lazuli et saltem unum gradum experientiae porta, deinde instrumento utere. Compressio prospera unum gradum et unum lapidem lazuli consumit, usorem laedit, prelum terit et unum lapidem lazuli oneratum efficit.<br>
+<br>
+Operari recusat si usori lapis lazuli aut experientia deest, aut si nimis prope mortem est.

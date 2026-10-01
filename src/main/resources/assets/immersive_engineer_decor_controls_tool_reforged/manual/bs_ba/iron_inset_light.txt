@@ -1,0 +1,5 @@
+Ugrađena svjetiljka
+Kompaktno radno svjetlo
+<&recipe>Ovaj blok pruža kompaktno industrijsko osvjetljenje za hodnike, servisne staze i radne prostore.<br>
+<br>
+Upotreba: Montirajte ga na plafone, zidove ili rubove gdje prostoriji treba jasno radno osvjetljenje.<br>

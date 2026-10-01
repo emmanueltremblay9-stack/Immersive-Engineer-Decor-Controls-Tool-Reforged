@@ -1,0 +1,3 @@
+Grober Goidgrus
+A Werkzeigmaterial vom Ingenieur für de rekonstruierten Hondwerksrezepte.
+<&recipe>Losst si zu Goidbarrn<br>schmözn, passt oba ned für<br>aufwendigere Materialverarbeitung.

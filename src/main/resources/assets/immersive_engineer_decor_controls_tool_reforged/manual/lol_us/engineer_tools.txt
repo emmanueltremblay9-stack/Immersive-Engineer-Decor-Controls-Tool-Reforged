@@ -1,0 +1,99 @@
+Engineer's Toolz
+Workshop gear to carryz
+Engineer's Toolz adds paw-held gear, mine markerz, emergency consumables, field nomz, an lil material-processing helpers to da same manual as decor an control blukz, kitty.<br>
+<br>
+Dese toolz iz fer jobz far frum a fully equipped workshop: mark ur route, carry supplies, recover frum mistakez, an finish lil processing jobz right dere.
+<np>
+REDIA Multi-Toolz
+Diamond-coated helperz
+<&redia_tool>REDIA Multi-Toolz iz a durable field helper fer quick ground work. Use on workable soil fer tillin farmland, kitty.<br>
+<br>
+Carry torches an use against a sturdy face fer placin a torch marker frum inventory without wearin REDIA. Ground work, shearin, axe work, an tree fellin all consume durability, meow.
+<np>
+Ore-Bonkin Hammer
+Ore-bonkin by paw
+<&crushing_hammer>Ore Crushin Hamr iz manual tool fer early iron an gold werk.<br>
+<br>
+How 2 use: Craft wif raw iron, raw gold, iron ore, deepslate iron ore, gold ore, or deepslate gold ore 2 make Immersive Engineering iron or gold dust. Hamr loses durabilitee an returnz 2 craftin grid till it breakz.<br>
+<br>
+Minin wears down its durability too, an it can knock targets backwardz in close combat, meow.
+<np>
+Findy Tracker Thing
+Remembered-position markerz
+<&tracker>Tracker storez a bluk position inside teh item.<br>
+<br>
+How 2 use: Click bluk 2 save dimension an coordinates. Tooltip showz saved spot. Sneak-use Tracker 2 clear target.<br>
+<br>
+Mark machinez, tunnel branches, remote controlz, or unfinished buildin sites before comin back wif toolz an materials, kitty.
+<np>
+Ariadne Coalz
+Markin da mine pathz
+<&ariadne_coal>Ariadne Coalz quickly puts black arrow route markers on sturdy mine faces. Use a solid face fer markin da next turn, exit, or branch point. Eight click-face directions work, diagonalz too, meow.<br>
+<br>
+Ariadne Coalz iz a reusable marker tool wif 100 usez. Each successful marker costs one durability. Unsupported faces get NOPE instead of wearin da item, kitty.
+<np>
+Auto Stim-Pack Thing
+Emergency pokey injector
+<&stimpack>Auto Stim Pack iz emergency healz tool fer danger maintenance.<br>
+<br>
+How 2 use: Use manually 2 heal, get brief protect, an short speed boost. In inventoree it can also trigger automatic at low health, den enter cooldown.<br>
+<br>
+Keep one handy before testin high places, exposed wiring, or hostile mine routez, meow.
+<np>
+Nap Bagz
+Carry-along nap kit
+<&sleeping_bag>Sleepin Bag iz weatherproof nap kit fer werk far frum bed.<br>
+<br>
+How 2 use: Use at nite in Overworld 2 rest till mornin. It no set or move ur spawn point.<br>
+<br>
+Bag sayz no in daytime, near monsters, or in bad dimension. Each gud rest wears teh bag.
+<np>
+Buildin-Stuff Carry Box
+Buildin supply boxz
+<&material_box>Material Box carryz big stash of one plain, unchanged, stackable buildin material.<br>
+<br>
+How 2 use: Hold box in main paw an material stack in off paw 2 load it. Use box wif empty off paw 2 pull one stack out.<br>
+<br>
+Box holdz up 2 512 itemz of one type. It rejectz nested boxes, unstackable gear, an renamed or data-changed stacks; tooltip showz teh contents.
+<np>
+Diver's Air Bubblie Capsule
+Emergency air stashez
+<&diving_capsule>Divin Air Capsule iz emergency air stash fer underwater werk.<br>
+<br>
+How 2 use: Use it urself 2 refill air. In inventoree it can also trigger automatic when air iz almost gone, den enter cooldown.<br>
+<br>
+Bring it fer flooded minez, underwater pipe routez, an pump-room repairz, kitty.
+<np>
+Muslee Nom-Bar Press
+Food squishin press
+<&musli_bar_press>Muslee Bar Press turnz common noms into compact field rations.<br>
+<br>
+How 2 use: Bring bread, apple, an wheat, melon, pumpkin, beetroot, or Industrial Hemp seed, den use press. Gud press eats one of each, checkz output room, makes four Muslee Melange Power Bars, an hurts press durability.<br>
+<br>
+If ingredient iz missin or inventoree haz no room fer bars, nothin iz eaten.
+<np>
+Muslee Melange Powah Nom-Bar
+Speedy workshop nomz
+<&musli_bar>Muslee Melange Power Bar iz compact noms made frum bread, seedz, an fruit.<br>
+<br>
+How to: Nom as field food while placin controlz, pipez, platforms, or long machine-room routez, meow.
+<np>
+Mind Squeezie
+XP squishin gadget
+<&charged_lapis_squeezer>Mind Squeezie turns one lapis an one XP levl frum ur inventory into Charged Blu Stuffz, kitty.<br>
+<br>
+Every successful conversion hurts u, causes hunger exhaustion, an briefly makes u blind. It refuses to work without lapis, without XP, or when u iz too close to bein ded, meow.
+<np>
+Charged Blu Stuffz
+Saved XP levlz
+<&charged_lapis>Charged Blu Stuffz keeps one XP levl. Nom it fer da levl back, clearing active effects, an healin a lil bit, kitty.<br>
+<br>
+Kraft a Mind Squeezie first. Charged Blu Stuffz comes frum usin dat tool while u haz lapis an XP, yiss.
+<np>
+Chunky Irun Grit
+Engineer-tool material fer da reconstructed kraftin set, kitty.
+<&iron_grit>Smelt dis into Irun Ingots, yiss.<br>Fancy advanced material<br>processin can't use dis grit, tho.
+<np>
+Chunky GULDEN Grit
+Engineer-tool material fer da reconstructed kraftin set, kitty.
+<&gold_grit>Smelt dis into GULDEN INGUTS,<br>yiss. Fancy advanced material<br>processin can't use dis grit, tho.

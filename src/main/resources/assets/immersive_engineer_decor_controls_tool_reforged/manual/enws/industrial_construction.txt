@@ -1,0 +1,108 @@
+Manufactory Construction
+Manufactory Walls and Trim
+General construction fittings include doors, windows, lights, warning signs, trim and structural parts that fall under no more particular heading.<br>
+<br>
+Consult these pages for manufactory chambers, service passages, hazard markings and serviceable details of the works.
+<np>
+Iron Bulb Light
+Little Working Light
+<&iron_bulb_light>This block affords compact manufactory lighting for passages, walkways and working bays.<br>
+<br>
+Use: Mount it upon ceilings, walls or edges where thy chamber needs clear light for labour.<br>
+<np>
+Light for a Ceiling Edge
+Little Working Light
+<&iron_ceiling_edge_light>This block affords compact manufactory lighting for passages, walkways and working bays.<br>
+<br>
+Use: Mount it upon ceilings, walls or edges where thy chamber needs clear light for labour.<br>
+<np>
+Inset Light for a Floor Edge
+Little Working Light
+<&iron_floor_edge_light>This block affords compact manufactory lighting for passages, walkways and working bays.<br>
+<br>
+Use: Mount it upon ceilings, walls or edges where thy chamber needs clear light for labour.<br>
+<np>
+Inset Glowstone Light
+Little Working Light
+<&iron_inset_light>This block affords compact manufactory lighting for passages, walkways and working bays.<br>
+<br>
+Use: Mount it upon ceilings, walls or edges where thy chamber needs clear light for labour.<br>
+<np>
+Sign "Take Heed"
+Mark of Peril
+<&sign_caution>The Sign "Take Heed" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign of Danger
+Mark of Peril
+<&sign_danger>The Sign "Peril Indeed Lies There" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign for Adornment
+Mark of Peril
+<&sign_decor>The Sign Plate (Engineer’s decor) marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign of Defences
+Mark of Peril
+<&sign_defense>The Sign "Beware the Defences Ahead" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Way Out Sign
+Mark of Peril
+<&sign_exit>This sign marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign "Peril of Fire"
+Mark of Peril
+<&sign_firehazard>The Sign "Peril of Fire" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign "Beware the Frost"
+Mark of Peril
+<&sign_frost>The Sign "Beware the Frost" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign of a Heated Surface
+Mark of Peril
+<&sign_hotsurface>The Sign "Beware the Heated Surface" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign of a Live Wire
+Mark of Peril
+<&sign_hotwire>The Sign "Beware the Live Wire" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign "Peril of Lasers"
+Mark of Peril
+<&sign_laser>The Sign "Peril of Lasers" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign of Magical Peril
+Mark of Peril
+<&sign_magichazard>The Sign "Beware of Magical Peril" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign of a Magnetic Field
+Mark of Peril
+<&sign_magneticfield>The Sign "Beware a Mighty Magnetic Field" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>
+Sign "Peril of Radioactivity"
+Mark of Peril
+<&sign_radioactive>The Sign "Peril of Radioactivity" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>
+<np>

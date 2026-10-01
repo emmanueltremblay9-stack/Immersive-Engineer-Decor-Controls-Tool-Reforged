@@ -1,0 +1,7 @@
+Komparatorschalter
+Signal vum montéierte Block
+<&recipe>E kompakte Sensorschalter liest de Block, op deem en montéiert ass, a verwandelt déi Miessung an en einfache Steierbrietausgang.<br>
+<br>
+Benotzung: Montéier en op Inventarer, Tanken oder Redstone-Baudeeler. Wann de verbonne Block e Komparator-, Behälter- oder Redstone-Ausgang mellt, gëtt de Schalter Redstone mat voller Stäerkt aus.<br>
+<br>
+Hiweiser: Benotz en fir Fëllstänn oder verstoppt Verkabelung an däitlech Un-/Aussteierleitungen ëmzewandelen.

@@ -1,0 +1,7 @@
+Lorgaire
+Comharra suidheachaidh stòraichte
+<&recipe>Bidh an lorgaire a’ stòradh suidheachadh bloca dìreach san nì.<br>
+<br>
+Cleachdadh: Briog air bloc gus an tomhas agus na co-chomharran a shàbhaladh. Seallaidh an gliocas an suidheachadh. Cleachd an lorgaire fhad ’s a tha thu a’ crùbadh gus an targaid a ghlanadh.<br>
+<br>
+Cleachd e gus innealan, meuran tunail, smachdan iomallach no làraichean togail neo-chrìochnaichte a chomharrachadh mus till thu le innealan agus stuthan.

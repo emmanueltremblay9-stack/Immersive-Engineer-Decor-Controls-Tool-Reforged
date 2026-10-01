@@ -1,0 +1,5 @@
+Flis av armert betong
+Armert betong
+<&recipe>Flistrappene av armert betong er herda betongdelar for maskinfundament, eksplosjonsvegger og lasterampegolv.<br>
+<br>
+Bruk: legg henne under maskiner, langs servicegangar eller der bygget treng eit forsterka underlag.<br>

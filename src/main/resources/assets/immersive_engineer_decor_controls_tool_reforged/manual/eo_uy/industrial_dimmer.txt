@@ -1,0 +1,7 @@
+Signalreguligilo
+Variebla signalo
+<&recipe>Turna regilo agordas redstone’an forton de kompakta panelflanko.<br>
+<br>
+Uzado: dekstre klaku ĝin por paŝe pliigi la eligon; post plena forto ĝi revenas al nulo.<br>
+<br>
+Notoj: ĝi eligas forton de 0 ĝis 15.

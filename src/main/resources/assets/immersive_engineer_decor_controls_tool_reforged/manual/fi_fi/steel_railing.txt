@@ -1,0 +1,5 @@
+Teräskaide
+Huoltokulun osa
+<&recipe>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>

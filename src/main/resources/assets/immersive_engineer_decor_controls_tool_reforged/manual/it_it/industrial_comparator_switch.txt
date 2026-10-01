@@ -1,0 +1,7 @@
+Interruttore comparatore
+Segnale del blocco collegato
+<&recipe>Un sensore compatto legge il blocco su cui è montato e trasforma il risultato in una semplice uscita da pannello.<br>
+<br>
+Uso: montalo su inventari, serbatoi o componenti redstone. Quando il blocco collegato segnala un’uscita da comparatore, contenitore o redstone, l’interruttore emette redstone alla massima potenza.<br>
+<br>
+Note: usalo per trasformare livelli di deposito o cablaggi nascosti in linee di controllo acceso/spento chiare.

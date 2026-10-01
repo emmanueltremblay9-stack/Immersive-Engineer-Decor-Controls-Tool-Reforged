@@ -1,0 +1,7 @@
+Interval Timer
+Timed pulse
+<&recipe>A compact timer switch provides a scheduled redstone pulse.<br>
+<br>
+Usage: Use it where a small mechanism needs periodic or delayed control.<br>
+<br>
+Notes: Uses scheduled redstone pulses.

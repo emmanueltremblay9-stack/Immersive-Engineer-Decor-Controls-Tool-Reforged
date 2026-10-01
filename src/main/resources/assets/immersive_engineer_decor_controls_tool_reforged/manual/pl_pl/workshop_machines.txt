@@ -1,0 +1,107 @@
+Maszyny warsztatowe
+Maszyny oraz wejścia i wyjścia warsztatu
+Maszyny warsztatowe oferują wytwarzanie, przemieszczanie przedmiotów, przetapianie, usuwanie odpadów, zbieranie i inne usługi w obrysie jednego bloku.<br>
+<br>
+Otwórz kolejne strony, aby poznać recepturę, ilustrację, opis i praktyczne wskazówki obsługi każdej maszyny.
+<np>
+Stalowy stół
+Mebel warsztatowy
+<&steel_table>Ten blok jest praktycznym meblem do pomieszczeń roboczych i zakątków konserwacyjnych.<br>
+<br>
+Użycie: Ustaw go obok stołów roboczych, skrzyń i niewielkich maszyn.<br>
+<np>
+Stół z impregnowanego drewna
+Mebel warsztatowy
+<&treated_wood_table>Ten blok jest praktycznym meblem do pomieszczeń roboczych i zakątków konserwacyjnych.<br>
+<br>
+Użycie: Ustaw go obok stołów roboczych, skrzyń i niewielkich maszyn.<br>
+<np>
+Taboret z impregnowanego drewna
+Mebel warsztatowy
+<&treated_wood_stool>Ten blok jest praktycznym meblem do pomieszczeń roboczych i zakątków konserwacyjnych.<br>
+<br>
+Użycie: Ustaw go obok stołów roboczych, skrzyń i niewielkich maszyn.<br>
+<np>
+Stół do obróbki metalu
+Stanowisko wytwarzania blach
+<&metal_crafting_table>Stół do obróbki metalu to wzmocnione stanowisko warsztatowe z polem na młot, siatką wytwarzania 3x3 i wyraźnym polem wyjścia.<br>
+<br>
+Użycie: Korzystaj z siatki do zwykłego wytwarzania. Aby robić blachy IE, umieść młot inżyniera w polu narzędzia, a materiał blachy w siatce, po czym odbierz wynik. Stalowe dekoracje wymagają stalowych blach na słupy, pomosty, okna, drzwi, balustrady i inne stalowe elementy.<br>
+<np>
+Lej fabryczny
+Urządzenie warsztatowe
+<&factory_hopper>Ten blok przenosi stosy przedmiotów przez zwartą przemysłową obudowę.<br>
+<br>
+Użycie: Skieruj go ku ciągowi ekwipunków, a następnie ustaw w oknie zasięg, wielkość stosu, czasy i tryb redstone.<br>
+<np>
+Podajnik fabryczny
+Urządzenie warsztatowe
+<&factory_dropper>Ten blok wyrzuca zgromadzone przedmioty z ukierunkowanej strony.<br>
+<br>
+Użycie: Skieruj przód ku miejscu wyrzutu, napełnij wewnętrzne pola i w oknie urządzenia ustaw siłę, kąt, opóźnienie, logikę filtrów oraz tryb redstone.<br>
+<np>
+Fabryczny ustawiacz bloków
+Urządzenie warsztatowe
+<&factory_placer>Po uruchomieniu ten blok stawia bloki z wewnętrznego zapasu.<br>
+<br>
+Użycie: Skieruj stronę roboczą ku docelowemu miejscu i załaduj stosy przedmiotów, które można postawić.<br>
+<np>
+Niszczyciel bloków
+Urządzenie warsztatowe
+<&small_block_breaker>Mały niszczyciel bloków należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Skieruj stronę roboczą ku blokowi do usunięcia.<br>
+<np>
+Spalarnia odpadów
+Kompaktowa jednostka przetwórcza
+<&small_waste_incinerator>Spalarnia odpadów niszczy niepotrzebne przedmioty, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Podawaj do kolejki wyłącznie niepotrzebne przedmioty.<br>
+<np>
+Piec laboratoryjny
+Kompaktowa jednostka przetwórcza
+<&small_lab_furnace>Piec laboratoryjny wykonuje niewielkie zadania przetapiania na paliwo stałe, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Stosuj paliwo stałe do przetapiania niewielkich partii.<br>
+<np>
+Piec elektryczny
+Kompaktowa jednostka przetwórcza
+<&small_electrical_furnace>Piec elektryczny wykonuje niewielkie zadania przetapiania zasilane FE, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Dostarcz FE i odpowiedni materiał do przetopienia.<br>
+<np>
+Piec do topienia minerałów
+Kompaktowa jednostka przetwórcza
+<&small_mineral_smelter>Piec do topienia minerałów przetwarza minerały w wysokiej temperaturze, zajmując mało miejsca w warsztacie.<br>
+<br>
+Użycie: Dostarcz bloki mineralne i energię do topienia w wysokiej temperaturze.<br>
+<np>
+Zamrażarka wody
+Kompaktowa jednostka przetwórcza
+<&small_freezer>Zamrażarka wody wykonuje niewielkie zadania chłodzenia w instalacjach płynowych zasilanych energią.<br>
+<br>
+Użycie: Dostarcz wodę i energię, aby etapami wytwarzać lód.<br>
+<np>
+Pasywny układ płynów
+Elementy instalacji płynów
+<&passive_fluid_accumulator>Pasywny zbieracz płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Postaw go przy odpowiednich źródłach wody i zostaw miejsce na odbiór płynu.<br>
+<np>
+Panel słoneczny
+Urządzenie warsztatowe
+<&small_solar_panel>Mały panel słoneczny należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Zapewnij mu otwarte niebo i podłącz urządzenia o małym poborze energii.<br>
+<np>
+Dojarka
+Urządzenie warsztatowe
+<&small_milking_machine>Mała dojarka należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Postaw ją w pobliżu krów i zapewnij odbiór pojemników z mlekiem lub płynu.<br>
+<np>
+Ścinacz drzew
+Urządzenie warsztatowe
+<&small_tree_cutter>Mały ścinacz drzew należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Skieruj go na wyrośnięte drzewa i osobno zbieraj upuszczone przedmioty.<br>

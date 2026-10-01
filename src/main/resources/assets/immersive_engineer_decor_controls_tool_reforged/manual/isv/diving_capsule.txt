@@ -1,0 +1,7 @@
+Potapjačka vozdušna kapsula
+Avarijna vozdušna zaliha
+<&recipe>Potapjačka vozdušna kapsula jest avarijna zaliha vozduha za rabotu pod vodoju.<br>
+<br>
+Upotrěbjenje: Upotrěbi ju ručno, da obnoviš vozduh. V orudovanju može se takože avtomatično aktivovati, kogda vozduh skoro izčezne, potom vhodi v ohladženje.<br>
+<br>
+Nosi ju dlja potopjenyh rudnikov, podvodnyh trubnih putij i poprav v pumpnyh komorah.

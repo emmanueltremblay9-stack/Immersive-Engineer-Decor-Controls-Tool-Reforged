@@ -1,0 +1,5 @@
+Saules panelis
+Darbnīcas palīgierīce
+<&recipe>Mazs saules panelis ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: nodrošini atklātas debesis un pievieno ierīces ar mazu patēriņu.<br>

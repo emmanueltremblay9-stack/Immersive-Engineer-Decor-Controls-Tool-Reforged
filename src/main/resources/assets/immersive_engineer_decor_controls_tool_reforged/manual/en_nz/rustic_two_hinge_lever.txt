@@ -1,0 +1,7 @@
+Rustic Two-Hinge Lever
+Redstone control
+<&recipe>A compact control fitting gives factory builds a readable redstone switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.

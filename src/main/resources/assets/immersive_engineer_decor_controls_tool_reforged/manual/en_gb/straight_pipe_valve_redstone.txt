@@ -1,0 +1,5 @@
+Redstone Fluid Valve
+Fluid line hardware
+<&recipe>The Redstone Fluid Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Align the valve with the intended flow direction.<br>

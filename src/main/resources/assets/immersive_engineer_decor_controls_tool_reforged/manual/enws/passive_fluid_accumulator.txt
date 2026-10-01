@@ -1,0 +1,5 @@
+Passive Gathering of Liquids
+Fittings for Liquid Lines
+<&recipe>The Passive Gatherer of Liquids is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Set it against suitable water sources and leave space to draw off liquid.<br>

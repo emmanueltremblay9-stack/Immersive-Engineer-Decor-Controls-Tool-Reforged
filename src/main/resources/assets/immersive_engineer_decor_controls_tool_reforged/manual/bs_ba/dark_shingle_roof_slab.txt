@@ -1,0 +1,5 @@
+Ploča krova od tamne šindre
+Krovni dio istrošenog izgleda
+<&recipe>Ovaj blok oblikuje tamne, praktične krovove za radionice i industrijske hale.<br>
+<br>
+Upotreba: Kombinujte dijelove da napravite uvjerljive oblike krova.<br>

@@ -1,0 +1,161 @@
+Clinker & Masonry
+Brick and concrete shells
+Clinker, slag brick, reinforced concrete, and panzer glass provide heavy surfaces for hot rooms, workshops, and protected sightlines.<br>
+<br>
+Use the matching slabs, stairs, slices, and walls to finish edges without changing the factory material language.
+<np>
+Clinker Brick Block
+Soot-dark brickwork
+<&clinker_brick_block>This block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Clinker Brick Slab
+Soot-dark brickwork
+<&clinker_brick_slab>This block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Clinker Brick Stairs
+Soot-dark brickwork
+<&clinker_brick_stairs>This block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Clinker Brick Wall
+Soot-dark brickwork
+<&clinker_brick_wall>This block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Stained Clinker Block
+Soot-dark brickwork
+<&clinker_brick_stained_block>The Stained Clinker Brick Block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Stained Clinker Slab
+Soot-dark brickwork
+<&clinker_brick_stained_slab>The Stained Clinker Brick Slab brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Stained Clinker Stairs
+Soot-dark brickwork
+<&clinker_brick_stained_stairs>The Stained Clinker Brick Stairs bring soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Ornated Clinker Brick
+Soot-dark brickwork
+<&clinker_brick_sastor_corner_block>The Sandstone Ornated Clinker Brick brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Recessed Clinker Brick
+Soot-dark brickwork
+<&clinker_brick_recessed>This block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Slit Clinker Bricks
+Soot-dark brickwork
+<&clinker_brick_vertically_slit>The Vertically Slit Clinker Bricks bring soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Vertical Clinker Slab
+Soot-dark brickwork
+<&clinker_brick_vertical_slab_structured>The Structured Vertical Clinker Slab brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Halfslab Clinker Brick
+Soot-dark brickwork
+<&halfslab_clinker_brick>This block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>
+<np>
+Slag Brick Block
+Dense factory masonry
+<&slag_brick_block>This block adds dense grey-brown masonry for foundations, retaining walls, and older worksheds.<br>
+<br>
+Usage: Use it for older foundations, retaining walls, and dirty plant floors.<br>
+<np>
+Slag Brick Slab
+Dense factory masonry
+<&slag_brick_slab>This block adds dense grey-brown masonry for foundations, retaining walls, and older worksheds.<br>
+<br>
+Usage: Use it for older foundations, retaining walls, and dirty plant floors.<br>
+<np>
+Slag Brick Stairs
+Dense factory masonry
+<&slag_brick_stairs>This block adds dense grey-brown masonry for foundations, retaining walls, and older worksheds.<br>
+<br>
+Usage: Use it for older foundations, retaining walls, and dirty plant floors.<br>
+<np>
+Slag Brick Wall
+Dense factory masonry
+<&slag_brick_wall>This block adds dense grey-brown masonry for foundations, retaining walls, and older worksheds.<br>
+<br>
+Usage: Use it for older foundations, retaining walls, and dirty plant floors.<br>
+<np>
+Rebar Concrete Block
+Reinforced concrete
+<&rebar_concrete>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Rebar Concrete Slab
+Reinforced concrete
+<&rebar_concrete_slab>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Rebar Concrete Stairs
+Reinforced concrete
+<&rebar_concrete_stairs>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Rebar Concrete Wall
+Reinforced concrete
+<&rebar_concrete_wall>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Rebar Concrete Slice
+Reinforced concrete
+<&halfslab_rebar_concrete>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Rebar Concrete Tile
+Reinforced concrete
+<&rebar_concrete_tile>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Rebar Concrete Tile Slab
+Reinforced concrete
+<&rebar_concrete_tile_slab>This block is a hardened concrete part for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Rebar Concrete Tile
+Reinforced concrete
+<&rebar_concrete_tile_stairs>The Rebar Concrete Tile Stairs are hardened concrete parts for machine pads, blast walls, and loading-bay floors.<br>
+<br>
+Usage: Use it under machines, along service corridors, or anywhere the build needs a reinforced base.<br>
+<np>
+Panzer Glass Block
+Protected sightline
+<&panzerglass_block>This block keeps sightlines open while still matching reinforced factory construction.<br>
+<br>
+Usage: Use it where players should see machinery through a protected barrier.<br>
+<np>
+Panzer Glass Slab
+Protected sightline
+<&panzerglass_slab>This block keeps sightlines open while still matching reinforced factory construction.<br>
+<br>
+Usage: Use it where players should see machinery through a protected barrier.<br>

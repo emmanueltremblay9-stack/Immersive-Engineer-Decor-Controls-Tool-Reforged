@@ -1,0 +1,7 @@
+Kaca Peka Berwarna
+Kaca isyarat
+<&recipe>Blok kaca yang bertindak balas kepada redstone mengekalkan garis pandang sambil menunjukkan keadaan isyarat.<br>
+<br>
+Penggunaan: Gunakan pada tingkap bilik kawalan, panel bercahaya dan kaca kilang terlindung.<br>
+<br>
+Nota: Berubah keadaan mengikut kuasa redstone berdekatan.

@@ -1,0 +1,7 @@
+Açar bağlantısı incisi
+Bağlantılı idarəetmə
+<&recipe>Bağlanmış inci uzaq zavod idarələri üçün qəbuledici hədəfini saxlayır.<br>
+<br>
+İstifadə: Yaratmaq üçün Açar bağlantısı qəbuledicisinə Ender incisi ilə klikləyin. Yadda saxlanılan qəbuledicini işə salmaq üçün bağlanmış incini əyilərək istifadə edin.<br>
+<br>
+Qeydlər: Hədəf yüklənmiş, eyni ölçüdə və təsir məsafəsi daxilində olmalıdır.

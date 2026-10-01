@@ -1,0 +1,5 @@
+Tehase plokipaigaldaja
+Töökoja abiseade
+<&recipe>See plokk paigaldab aktiveerimisel plokke oma sisemisest varust.<br>
+<br>
+Kasutamine: Suuna tööpind sihtkohta ja täida paigaldatavate esemete virnadega.<br>

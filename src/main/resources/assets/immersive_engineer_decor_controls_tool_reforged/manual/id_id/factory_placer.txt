@@ -1,0 +1,5 @@
+Pemasang Blok Pabrik
+Peralatan lantai bengkel
+<&recipe>Blok ini memasang blok dari stok internal saat diaktifkan.<br>
+<br>
+Penggunaan: arahkan sisi kerja ke ruang sasaran dan isi dengan tumpukan yang dapat dipasang.<br>

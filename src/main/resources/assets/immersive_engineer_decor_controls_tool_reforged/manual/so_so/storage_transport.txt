@@ -1,0 +1,41 @@
+Kaydinta iyo raridda
+Qaybaha kaydka iyo qulqulka
+Qaybaha kaydinta iyo rariddu waxay maamulaan sanduuqyo, foostooyin, maseello iyo waalallo si warshadda dhexdeeda loogu gudbiyo si kooban.<br>
+<br>
+Bogaggan isticmaal markaad dejinayso qolalka kaydka, marinnada tuubooyinka, haamaha adeegga iyo khadadka dareeraha ee la xakameeyo.
+<np>
+Sanduuqa summadaysan
+Summadda kaydka ee wax laga beddeli karo
+<&labeled_crate>Sanduuqan summadaysan waxaa loo sameeyey kala-habaynta cad ee qolka kaydka. Looxiisa hore waxaa loo tifaftiri karaa sidii calaamad yar oo goob shaqo.<br>
+<br>
+Isticmaal: Midig guji looxa summadda si aad wax uga beddesho summadda sanduuqa. Midig guji qaybta kale ee sanduuqa si aad u furto kaydka qaybaha, qalabka iyo sahayda dayactirka.<br>
+<np>
+Foostada dareeraha
+Qalabka khadka dareeraha
+<&fluid_barrel>Qaybtani waa qalab yar oo khadka dareeraha ah, loogu talagalay haamaha yaryar, marinnada tuubooyinka, meelaha ururinta iyo qulqulka redstone xakameeyo.<br>
+<br>
+Isticmaal: Ku dhig meel tuubooyin ama baaldiyo ay gaari karaan wejiga haanta.<br>
+<np>
+Maseelka dareeraha
+Qalabka khadka dareeraha
+<&small_fluid_funnel>Maseelka dareeraha ee yar waa qayb yar oo khadka dareeraha ah, loogu talagalay haamaha yaryar, marinnada tuubooyinka, meelaha ururinta iyo qulqulka redstone xakameeyo.<br>
+<br>
+Isticmaal: Dhig meesha dareeraha lagu ururiyo hoosteeda, waxyaabaha ku kaydsanna u gudbi haamo ama tuubooyin hoose.<br>
+<np>
+Waalka hal-jihada ee tuubada dareeraha
+Qalabka khadka dareeraha
+<&straight_pipe_valve>Waalka hal-jihada ee dareeruhu waa qayb yar oo khadka dareeraha ah, loogu talagalay haamaha yaryar, marinnada tuubooyinka, meelaha ururinta iyo qulqulka redstone xakameeyo.<br>
+<br>
+Isticmaal: Waalka la sim jihada qulqulka la doonayo.<br>
+<np>
+Waalka dareeraha redstone
+Qalabka khadka dareeraha
+<&straight_pipe_valve_redstone>Waalka dareeraha redstone waa qayb yar oo khadka dareeraha ah, loogu talagalay haamaha yaryar, marinnada tuubooyinka, meelaha ururinta iyo qulqulka redstone xakameeyo.<br>
+<br>
+Isticmaal: Waalka la sim jihada qulqulka la doonayo.<br>
+<np>
+Waalka dareeraha qiyaasan
+Qalabka khadka dareeraha
+<&straight_pipe_valve_redstone_analog>Waalka dareeraha qiyaasan waa qayb yar oo khadka dareeraha ah, loogu talagalay haamaha yaryar, marinnada tuubooyinka, meelaha ururinta iyo qulqulka redstone xakameeyo.<br>
+<br>
+Isticmaal: Waalka la sim jihada qulqulka la doonayo.<br>

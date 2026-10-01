@@ -1,0 +1,7 @@
+Unealtă REDIA
+Utilitate acoperită cu diamant
+<&recipe>Unealta REDIA este o unealtă multifuncțională durabilă, de nivel diamant, pentru lucrări pe teren în jurul șantierelor temporare, atelierelor și intrărilor în mină.<br>
+<br>
+Utilizare: Folosește-o când ai torțe la tine pentru a amplasa o torță din inventar fără a uza REDIA. Folosește-o în timp ce te furișezi pentru a tunde plante sau pentru a comuta terenul între pământ, teren agricol, pământ pietros și potecă de pământ. Acțiunea alternativă originală de topor se aplică de pe fața inferioară. Furișează-te în timp ce spargi bușteni pentru a doborî blocurile conectate ale copacului.<br>
+<br>
+Repar-o cu diamante. Repararea peste limita normală a unei unelte REDIA complet reparate restabilește progresia originală a Eficienței și Averii.

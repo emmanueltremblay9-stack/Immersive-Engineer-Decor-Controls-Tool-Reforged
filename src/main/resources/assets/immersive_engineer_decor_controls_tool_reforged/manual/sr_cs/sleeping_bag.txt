@@ -1,0 +1,7 @@
+Vreća za spavanje
+Prenosiv pribor za odmor
+<&recipe>Vreća za spavanje je komplet otporan na vreme za odmor daleko od kreveta.<br>
+<br>
+Koristite je noću u Overworldu da odmorite do jutra bez promene tačke ponovnog stvaranja.<br>
+<br>
+Ne radi danju, blizu čudovišta ili u neprikladnim dimenzijama. Svaki uspešan odmor je troši.

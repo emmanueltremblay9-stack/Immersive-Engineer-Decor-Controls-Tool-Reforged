@@ -1,0 +1,5 @@
+Pal de fusta tractada
+Peça de bastidor estructural
+<&recipe>El pal recte de fusta tractada aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>

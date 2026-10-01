@@ -1,0 +1,161 @@
+Klinkersten og murværk
+Beklædning af mursten og beton
+Klinkersten, slaggesten, armeret beton og panserglas giver tunge overflader til varme rum, værksteder og beskyttet udsyn.<br>
+<br>
+Brug de tilhørende fliser, trapper, tynde plader og mure til at afslutte kanterne uden at ændre fabrikkens materialestil.
+<np>
+Klinkerstensblok
+Sodmørkt murværk
+<&clinker_brick_block>Denne blok giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Klinkerstensflise
+Sodmørkt murværk
+<&clinker_brick_slab>Denne blok giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Klinkerstenstrappe
+Sodmørkt murværk
+<&clinker_brick_stairs>Denne blok giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Klinkerstensmur
+Sodmørkt murværk
+<&clinker_brick_wall>Denne blok giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Tilsmudset klinkerblok
+Sodmørkt murværk
+<&clinker_brick_stained_block>Den tilsmudsede klinkerstensblok giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Tilsmudset klinkerflise
+Sodmørkt murværk
+<&clinker_brick_stained_slab>Den tilsmudsede klinkerstensflise giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Tilsmudset klinkertrappe
+Sodmørkt murværk
+<&clinker_brick_stained_stairs>Den tilsmudsede klinkerstenstrappe giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Udsmykket klinkersten
+Sodmørkt murværk
+<&clinker_brick_sastor_corner_block>Klinkersten med sandstensudsmykning giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Forsænket klinkersten
+Sodmørkt murværk
+<&clinker_brick_recessed>Denne blok giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Klinkersten med slidser
+Sodmørkt murværk
+<&clinker_brick_vertically_slit>Klinkerstenene med lodrette slidser giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Lodret klinkerflise
+Sodmørkt murværk
+<&clinker_brick_vertical_slab_structured>Den lodrette klinkerflise med struktur giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Halv klinkerstensflise
+Sodmørkt murværk
+<&halfslab_clinker_brick>Denne blok giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>
+<np>
+Slaggestensblok
+Tæt fabriksmurværk
+<&slag_brick_block>Denne blok giver tæt gråbrunt murværk til fundamenter, støttemure og ældre værkstedsskure.<br>
+<br>
+Brug: Brug den til ældre fundamenter, støttemure og snavsede fabriksgulve.<br>
+<np>
+Slaggestensflise
+Tæt fabriksmurværk
+<&slag_brick_slab>Denne blok giver tæt gråbrunt murværk til fundamenter, støttemure og ældre værkstedsskure.<br>
+<br>
+Brug: Brug den til ældre fundamenter, støttemure og snavsede fabriksgulve.<br>
+<np>
+Slaggestenstrappe
+Tæt fabriksmurværk
+<&slag_brick_stairs>Denne blok giver tæt gråbrunt murværk til fundamenter, støttemure og ældre værkstedsskure.<br>
+<br>
+Brug: Brug den til ældre fundamenter, støttemure og snavsede fabriksgulve.<br>
+<np>
+Slaggestensmur
+Tæt fabriksmurværk
+<&slag_brick_wall>Denne blok giver tæt gråbrunt murværk til fundamenter, støttemure og ældre værkstedsskure.<br>
+<br>
+Brug: Brug den til ældre fundamenter, støttemure og snavsede fabriksgulve.<br>
+<np>
+Armeret betonblok
+Armeret beton
+<&rebar_concrete>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Armeret betonflise
+Armeret beton
+<&rebar_concrete_slab>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Armeret betontrappe
+Armeret beton
+<&rebar_concrete_stairs>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Armeret betonmur
+Armeret beton
+<&rebar_concrete_wall>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Tynd plade af armeret beton
+Armeret beton
+<&halfslab_rebar_concrete>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Armeret betonklinke
+Armeret beton
+<&rebar_concrete_tile>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Flise af armerede betonklinker
+Armeret beton
+<&rebar_concrete_tile_slab>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Armeret betonklinke
+Armeret beton
+<&rebar_concrete_tile_stairs>Trappen af armerede betonklinker består af hærdede betondele til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>
+<np>
+Panserglasblok
+Beskyttet udsyn
+<&panzerglass_block>Denne blok bevarer det frie udsyn og passer samtidig til forstærkede fabriksbygninger.<br>
+<br>
+Brug: Brug den, hvor spillere skal kunne se maskiner gennem en beskyttende barriere.<br>
+<np>
+Panserglasflise
+Beskyttet udsyn
+<&panzerglass_slab>Denne blok bevarer det frie udsyn og passer samtidig til forstærkede fabriksbygninger.<br>
+<br>
+Brug: Brug den, hvor spillere skal kunne se maskiner gennem en beskyttende barriere.<br>

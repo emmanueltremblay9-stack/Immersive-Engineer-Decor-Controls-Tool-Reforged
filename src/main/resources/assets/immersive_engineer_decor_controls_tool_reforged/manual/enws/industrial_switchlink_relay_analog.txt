@@ -1,0 +1,7 @@
+Analogue Link Relay
+Control through a Link
+<&recipe>A fitting in the fashion of a relay affords thy panel a compact local switching point.<br>
+<br>
+Use: Right-click to turn a full-strength output on or off for nearby circuits. Choose receiver blocks when thou requirest activation by linked pearl.<br>
+<br>
+Note: Whilst turned on, it sends redstone at full strength.

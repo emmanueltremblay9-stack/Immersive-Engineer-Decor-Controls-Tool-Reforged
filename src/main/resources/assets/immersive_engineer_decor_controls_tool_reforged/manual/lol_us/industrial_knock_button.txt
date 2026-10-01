@@ -1,0 +1,7 @@
+Knocky Button
+Redstone Controlz Here
+<&recipe>A momentary switch gives a clean, full-strength redstone pulse, meow.<br>
+<br>
+How to: Use fer startin machinez, releasin doorz, alarmz, or circuits dat should fire once, kitty.<br>
+<br>
+Kitty note: Resets after its planned pulse finishes.

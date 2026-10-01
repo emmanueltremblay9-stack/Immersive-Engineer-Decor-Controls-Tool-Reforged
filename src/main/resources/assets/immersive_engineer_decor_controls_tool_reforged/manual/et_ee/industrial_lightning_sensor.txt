@@ -1,0 +1,7 @@
+Tormituvastaja
+Signaali tuvastamine
+<&recipe>Tormiandur käivitab äikese ajal hoiatusi.<br>
+<br>
+Kasutamine: Paigalda lageda taeva alla ning ühenda lampide või häiretega.<br>
+<br>
+Märkus: Vajab äikest ja avatud taevast.

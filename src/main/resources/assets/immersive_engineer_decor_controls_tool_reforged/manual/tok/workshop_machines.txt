@@ -1,0 +1,107 @@
+ilo pi tomo pali
+ilo en nasin kama/pana pi tomo pali
+ilo pi tomo pali li pana e pali lili, e tawa ijo, e seli ijo, e weka ijo, e kama jo, e pali pona lon ma pi leko wan.<br>
+<br>
+o open e lipu kama tawa nasin pali, tawa sitelen lukin, tawa toki tan, tawa sona kepeken pi ilo wan ale.
+<np>
+supa pi kiwen wawa
+ilo tomo pi tomo pali
+<&steel_table>leko ni li ilo tomo kepeken pi tomo pali tawa tomo pali en poka pi pali awen.<br>
+<br>
+kepeken: o pana e ona lon poka pi supa pali, pi poki, pi ilo lili.<br>
+<np>
+supa pi kiwen kasi awen
+ilo tomo pi tomo pali
+<&treated_wood_table>leko ni li ilo tomo kepeken pi tomo pali tawa tomo pali en poka pi pali awen.<br>
+<br>
+kepeken: o pana e ona lon poka pi supa pali, pi poki, pi ilo lili.<br>
+<np>
+supa monsi pi kiwen kasi awen
+ilo tomo pi tomo pali
+<&treated_wood_stool>leko ni li ilo tomo kepeken pi tomo pali tawa tomo pali en poka pi pali awen.<br>
+<br>
+kepeken: o pana e ona lon poka pi supa pali, pi poki, pi ilo lili.<br>
+<np>
+supa pali kiwen
+ma pali supa kiwen
+<&metal_crafting_table>supa pali kiwen li ma pali wawa pi tomo pali. ona li jo e lupa pi ilo pakala, e ma leko pali 3x3, e lupa pana pi pona lukin.<br>
+<br>
+kepeken: o kepeken ma leko tawa pali pi nasin open. tawa supa IE la o pana e ilo pakala pi jan pali ilo tawa lupa ilo e kiwen supa tawa ma leko lon tenpo nanpa wan. ni la o kama jo e ijo pini. ijo kiwen wawa pi pona lukin li kepeken e supa kiwen wawa tawa palisa, tawa nasin supa, tawa kiwen lukin, tawa lupa, tawa sinpin palisa, tawa kipisi kiwen wawa ante.<br>
+<np>
+poki pi tawa ijo pi tomo pali
+ilo pona pi ma tomo pali
+<&factory_hopper>leko ni li tawa e kulupu ijo lon selo lili pi tomo pali.<br>
+<br>
+kepeken: o nasin e ona tawa linja poki jo. ni la o lawa e suli nasin, e mute pi kulupu ijo, e tenpo, e nasin Redstone lon ilo lukin ona.<br>
+<np>
+poki pana pi tomo pali
+ilo pona pi ma tomo pali
+<&factory_dropper>leko ni li pana e ijo jo tan sinpin pi nasin wile.<br>
+<br>
+kepeken: o nasin e sinpin tawa ma pana, o pana ijo tawa lupa jo insa ona. ni la o ante e wawa pana, e nasin pana, e tenpo awen, e nasin pi wile sama, e nasin Redstone lon ilo lukin ona.<br>
+<np>
+ilo pana leko pi tomo pali
+ilo pona pi ma tomo pali
+<&factory_placer>leko ni li open la ona li pana e leko tan jo insa ona.<br>
+<br>
+kepeken: o nasin e sinpin pali tawa ma wile li pana e kulupu ijo pi ken pana leko.<br>
+<np>
+ilo pakala leko
+ilo pona pi ma tomo pali
+<&small_block_breaker>ilo pakala leko lili li leko pona pi ma tomo pali tawa pali, tawa jo, tawa pana, tawa pakala, tawa kama jo, anu tawa pali ilo lili.<br>
+<br>
+kepeken: o nasin e sinpin pali tawa leko pi wile weka.<br>
+<np>
+poki seli pi weka ijo
+ilo pali lili
+<&small_waste_incinerator>poki seli pi weka ijo li weka e ijo pi wile ala lon ma lili pi tomo pali.<br>
+<br>
+kepeken: o pana e ijo pi wile ala taso tawa linja awen ona.<br>
+<np>
+poki seli pi tomo sona
+ilo pali lili
+<&small_lab_furnace>poki seli pi tomo sona li pali e seli lili kepeken ijo kiwen pi pana seli lon ma lili pi tomo pali.<br>
+<br>
+kepeken: o kepeken ijo kiwen pi pana seli tawa seli kulupu lili.<br>
+<np>
+poki seli wawa
+ilo pali lili
+<&small_electrical_furnace>poki seli wawa li pali e seli lili kepeken wawa FE lon ma lili pi tomo pali.<br>
+<br>
+kepeken: o pana e wawa FE e ijo kama pi ken seli.<br>
+<np>
+ilo seli kiwen
+ilo pali lili
+<&small_mineral_smelter>ilo seli kiwen li pali e kiwen lon seli suli lon ma lili pi tomo pali.<br>
+<br>
+kepeken: o pana e leko kiwen e wawa tawa pali pi telo kiwen lon seli suli.<br>
+<np>
+ilo pi pali kiwen telo
+ilo pali lili
+<&small_freezer>ilo pi pali kiwen telo li pali e lete lili tawa kulupu telo pi wawa.<br>
+<br>
+kepeken: o pana e telo e wawa tawa pali pi kiwen telo lon nasin ante kama.<br>
+<np>
+telo pi wawa ala
+ilo linja telo
+<&passive_fluid_accumulator>poki telo pi wawa ala li kipisi linja telo lili tawa poki telo lili, tawa nasin linja telo, tawa ma kama jo, tawa tawa telo pi lawa Redstone.<br>
+<br>
+kepeken: o pana e ona lon poka pi ma open telo pona li awen e ma tawa weka telo.<br>
+<np>
+supa suno
+ilo pona pi ma tomo pali
+<&small_solar_panel>supa suno lili li leko pona pi ma tomo pali tawa pali, tawa jo, tawa pana, tawa pakala, tawa kama jo, anu tawa pali ilo lili.<br>
+<br>
+kepeken: o pana e kon sewi open tawa ona li wan e ilo pi wile wawa lili.<br>
+<np>
+ilo kama jo telo mani
+ilo pona pi ma tomo pali
+<&small_milking_machine>ilo lili pi kama jo telo mani li leko pona pi ma tomo pali tawa pali, tawa jo, tawa pana, tawa pakala, tawa kama jo, anu tawa pali ilo lili.<br>
+<br>
+kepeken: o pana e ona lon poka mani li pana e nasin weka pi poki telo mani anu telo.<br>
+<np>
+ilo kipisi kasi
+ilo pona pi ma tomo pali
+<&small_tree_cutter>ilo kipisi kasi lili li leko pona pi ma tomo pali tawa pali, tawa jo, tawa pana, tawa pakala, tawa kama jo, anu tawa pali ilo lili.<br>
+<br>
+kepeken: o nasin e ona tawa kasi suli li kama jo e ijo anpa lon nasin ante.<br>

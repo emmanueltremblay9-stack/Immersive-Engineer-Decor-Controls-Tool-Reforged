@@ -1,0 +1,7 @@
+Ferramenta REDIA
+Ferramenta recuberta de diamante
+<&recipe>A ferramenta REDIA é unha multiferramenta resistente de categoría diamante para traballos de campo en lugares temporais, obradoiros e entradas de minas.<br>
+<br>
+Uso: úsaa mentres levas fachos para colocar un facho do inventario sen desgastar a REDIA. Agóchate e úsaa para cortar plantas ou alternar o terreo entre terra, terra de cultivo, terra árida e camiño de terra. A función alternativa orixinal de machada aplícase desde a cara inferior. Agóchate ao romper troncos para talar os bloques conectados da árbore.<br>
+<br>
+Repáraa con diamantes. Reparar unha ferramenta REDIA xa completamente reparada máis alá do máximo recupera a progresión orixinal de Eficiencia e Fortuna.

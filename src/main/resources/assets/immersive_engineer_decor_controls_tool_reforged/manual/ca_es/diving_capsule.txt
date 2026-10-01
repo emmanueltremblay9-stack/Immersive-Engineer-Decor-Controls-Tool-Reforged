@@ -1,0 +1,7 @@
+Càpsula d'aire de busseig
+Reserva d'aire d'emergència
+<&recipe>Objecte d'emergència per treballar sota l'aigua.<br>
+<br>
+Ús: Usa-la manualment per recuperar aire. A l'inventari s'activa sola quan l'aire gairebé s'acaba i després es recarrega.<br>
+<br>
+Porta-la a mines inundades, canonades submergides i sales de bombes.

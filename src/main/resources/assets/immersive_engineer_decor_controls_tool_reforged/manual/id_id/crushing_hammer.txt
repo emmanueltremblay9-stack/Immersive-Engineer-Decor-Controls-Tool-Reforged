@@ -1,0 +1,7 @@
+Palu Penghancur Bijih
+Perkakas penghancur genggam
+<&recipe>Palu penghancur bijih adalah alat manual untuk pengolahan awal besi dan emas.<br>
+<br>
+Penggunaan: Rakit bersama besi mentah, emas mentah, bijih besi, bijih besi deepslate, bijih emas, atau bijih emas deepslate untuk menghasilkan debu besi atau emas Immersive Engineering. Ketahanan palu berkurang dan palu kembali ke kisi perakitan sampai rusak.<br>
+<br>
+Alat juga aus saat menambang dan dapat menghempaskan sasaran dalam pertarungan jarak dekat.

@@ -1,0 +1,7 @@
+Intensoregilo
+Variabla signalo
+<&recipe>Turnoregilo ajustas redstonea forteso sur kompakta panelfacio.<br>
+<br>
+Uzo: Klikez dextre por augmentar la ekiro per gradi; pos plena forteso, ol revenas a zero.<br>
+<br>
+Noti: Emisas forteso de 0 til 15.

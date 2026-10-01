@@ -1,0 +1,3 @@
+Hrubá zlatá drvina
+Materiál inžinierskych nástrojov používaný obnovenou súpravou výrobných receptov.
+<&recipe>Dá sa pretaviť na zlaté tehličky,<br>ale nie je vhodná na pokročilé<br>spracovanie materiálov.

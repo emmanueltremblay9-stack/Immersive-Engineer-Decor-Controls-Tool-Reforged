@@ -1,0 +1,7 @@
+Blwch deunydd
+Cyflenwadau adeiladu
+<&recipe>Yn cario cronfa fawr o un deunydd cyffredin, heb ei newid ac y gellir ei bentyrru.<br>
+<br>
+Defnydd: Blwch yn y brif law a deunydd yn y llall i lwytho. Llaw arall wag i dynnu un stac.<br>
+<br>
+Yn dal 512 eitem o un math ac yn gwrthod blychau nythu, offer na ellir ei bentyrru a staciau wedi'u newid; mae'r cynnwys yn yr awgrym.

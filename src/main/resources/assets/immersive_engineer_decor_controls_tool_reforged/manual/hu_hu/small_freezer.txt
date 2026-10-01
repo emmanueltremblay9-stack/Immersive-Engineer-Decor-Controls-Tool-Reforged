@@ -1,0 +1,5 @@
+Vízfagyasztó
+Kompakt feldolgozóegység
+<&recipe>A vízfagyasztó kompakt hűtési feladatokat végez energiával ellátott folyadékrendszerekben.<br>
+<br>
+Használat: biztosíts vizet és energiát a többfázisú jéggyártáshoz.<br>

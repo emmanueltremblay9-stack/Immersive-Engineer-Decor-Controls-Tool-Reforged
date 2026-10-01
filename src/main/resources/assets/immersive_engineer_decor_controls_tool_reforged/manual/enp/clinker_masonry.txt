@@ -1,0 +1,161 @@
+Clinker and Stonework
+Tile and stonelime shells
+Clinker, slag tiles, strengthened stonelime and shieldglass give weighty outer layers to hot rooms, workshops and guarded sightways.<br>
+<br>
+Finish the edges with matching halfclots, stairs, slivers and walls while keeping the same workstead building style.
+<np>
+Clinker Tile Clot
+Soot-dark tilework
+<&clinker_brick_block>This clot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Clinker Tile Halfclot
+Soot-dark tilework
+<&clinker_brick_slab>This clot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Clinker Tile Stairs
+Soot-dark tilework
+<&clinker_brick_stairs>This clot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Clinker Tile Wall
+Soot-dark tilework
+<&clinker_brick_wall>This clot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Grimy Clinker Clot
+Soot-dark tilework
+<&clinker_brick_stained_block>The Grimy Clinker Tile Clot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Grimy Clinker Halfclot
+Soot-dark tilework
+<&clinker_brick_stained_slab>The Grimy Clinker Tile Halfclot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Grimy Clinker Stairs
+Soot-dark tilework
+<&clinker_brick_stained_stairs>The Grimy Clinker Tile Stairs bring soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Decked Clinker Tile
+Soot-dark tilework
+<&clinker_brick_sastor_corner_block>The Sandstone-Decked Clinker Tile brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Sunken Clinker Tile
+Soot-dark tilework
+<&clinker_brick_recessed>This clot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Slit Clinker Tiles
+Soot-dark tilework
+<&clinker_brick_vertically_slit>The Upright-Slit Clinker Tiles bring soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Upright Clinker Halfclot
+Soot-dark tilework
+<&clinker_brick_vertical_slab_structured>The Grained Upright Clinker Halfclot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Clinker Tile Halfclot
+Soot-dark tilework
+<&halfslab_clinker_brick>This clot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>
+<np>
+Slag Tile Clot
+Hard-packed workstead stonework
+<&slag_brick_block>This clot adds thick gray-brown stonework for footings, earth-holding walls and older worksheds.<br>
+<br>
+Use: Build old footings, earth-holding walls and grimy workstead floors.<br>
+<np>
+Slag Tile Halfclot
+Hard-packed workstead stonework
+<&slag_brick_slab>This clot adds thick gray-brown stonework for footings, earth-holding walls and older worksheds.<br>
+<br>
+Use: Build old footings, earth-holding walls and grimy workstead floors.<br>
+<np>
+Slag Tile Stairs
+Hard-packed workstead stonework
+<&slag_brick_stairs>This clot adds thick gray-brown stonework for footings, earth-holding walls and older worksheds.<br>
+<br>
+Use: Build old footings, earth-holding walls and grimy workstead floors.<br>
+<np>
+Slag Tile Wall
+Hard-packed workstead stonework
+<&slag_brick_wall>This clot adds thick gray-brown stonework for footings, earth-holding walls and older worksheds.<br>
+<br>
+Use: Build old footings, earth-holding walls and grimy workstead floors.<br>
+<np>
+Steel-Bound Stonelime Clot
+Strengthened stonelime
+<&rebar_concrete>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Steel-Bound Stonelime Halfclot
+Strengthened stonelime
+<&rebar_concrete_slab>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Steel-Bound Stonelime Stairs
+Strengthened stonelime
+<&rebar_concrete_stairs>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Steel-Bound Stonelime Wall
+Strengthened stonelime
+<&rebar_concrete_wall>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Steel-Bound Stonelime Sliver
+Strengthened stonelime
+<&halfslab_rebar_concrete>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Steel-Bound Stonelime Tile
+Strengthened stonelime
+<&rebar_concrete_tile>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Steel-Bound Stonelime Tile Halfclot
+Strengthened stonelime
+<&rebar_concrete_tile_slab>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Steel-Bound Stonelime Tile
+Strengthened stonelime
+<&rebar_concrete_tile_stairs>Steel-Bound Stonelime Tile Stairs are hardened stonelime fittings for loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>
+<np>
+Shieldglass Clot
+Guarded sightway
+<&panzerglass_block>This clot keeps sightways open while matching the strengthened workstead build.<br>
+<br>
+Use: Set it where players should see looms through a warding wall.<br>
+<np>
+Shieldglass Halfclot
+Guarded sightway
+<&panzerglass_slab>This clot keeps sightways open while matching the strengthened workstead build.<br>
+<br>
+Use: Set it where players should see looms through a warding wall.<br>

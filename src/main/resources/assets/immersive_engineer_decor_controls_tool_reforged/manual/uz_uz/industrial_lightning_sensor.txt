@@ -1,0 +1,7 @@
+Momaqaldiroq detektori
+Signalni sezish
+<&recipe>Momaqaldiroq sensori momaqaldiroq paytida ogohlantirishlarni ishga tushiradi.<br>
+<br>
+Ishlatish: ochiq osmon ostiga qo'yib, chiroq yoki ogohlantirgichlarga ulang.<br>
+<br>
+Eslatma: momaqaldiroq va ochiq osmon talab qilinadi.

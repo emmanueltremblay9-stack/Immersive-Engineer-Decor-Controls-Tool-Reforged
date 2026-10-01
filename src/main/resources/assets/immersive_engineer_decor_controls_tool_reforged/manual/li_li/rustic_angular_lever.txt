@@ -1,0 +1,7 @@
+Landelike draeihendel
+Redstonebediening
+<&recipe>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.

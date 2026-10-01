@@ -1,0 +1,7 @@
+Alarmlamp
+Signalröckmeldung
+<&recipe>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.

@@ -1,0 +1,5 @@
+Gạch clinker trang trí
+Tường gạch phủ muội đen
+<&recipe>Gạch clinker trang trí sa thạch mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>

@@ -1,0 +1,7 @@
+Kutija za materijal
+Građevinske zalihe
+<&recipe>Nosi veliki zalih jednog običnog, neizmijenjenog materijala koji se slaže.<br>
+<br>
+Upotreba: Kutija u glavnoj, materijal u drugoj ruci za punjenje. Prazna druga ruka vadi jednu hrpu.<br>
+<br>
+Prima 512 predmeta jednog tipa i odbija ugniježđene kutije, opremu bez slaganja i izmijenjene hrpe; sadržaj je u opisu.

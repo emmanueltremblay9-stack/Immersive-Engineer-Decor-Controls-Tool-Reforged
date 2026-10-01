@@ -1,0 +1,5 @@
+Slaukšanas iekārta
+Darbnīcas palīgierīce
+<&recipe>Maza slaukšanas iekārta ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: novieto pie govīm un nodrošini veidu, kā aizvadīt piena traukus vai šķidrumu.<br>

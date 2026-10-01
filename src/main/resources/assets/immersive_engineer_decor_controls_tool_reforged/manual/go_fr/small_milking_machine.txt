@@ -1,0 +1,5 @@
+Machine a tirer le lét
+Outil de sol d'atelier
+<&recipe>La Petite machine a tirer le lét ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Pllacéz-la a couté des vaches e prévayéz eune façon d'ertirer les contenants de lét ou le liqide.<br>

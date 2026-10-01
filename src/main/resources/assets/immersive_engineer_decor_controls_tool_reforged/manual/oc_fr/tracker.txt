@@ -1,0 +1,7 @@
+Localizador
+Marca de posicion memorizada
+<&recipe>Lo traçador garda la posicion dun blòt dins lobjècte.<br>
+<br>
+Clicatz un blòt per gardar dimension e coordenadas. Linfobulla mòstra la posicion. Emplegatz-lo acoconat per escafar la cibla.<br>
+<br>
+Marcatz maquinas, tunèls, comandas a distància o bastiments inacabats.

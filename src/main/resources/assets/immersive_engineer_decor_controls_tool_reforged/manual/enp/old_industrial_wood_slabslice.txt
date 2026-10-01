@@ -1,0 +1,5 @@
+Old Wood Sliver
+Aged workshop timber
+<&recipe>The Old Workstead Wood Sliver adds aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>

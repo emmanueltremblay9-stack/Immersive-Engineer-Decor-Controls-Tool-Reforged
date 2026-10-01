@@ -1,0 +1,7 @@
+Skleněný detektor entit
+Snímání signálu
+<&recipe>Detektor entit sleduje pohyb poblíž bez viditelné podlahové desky.<br>
+<br>
+Použití: Připoj jej ke dveřím, lampám, poplachům nebo bezpečnostnímu blokování strojů.<br>
+<br>
+Poznámky: Snímá malou oblast kolem bloku.

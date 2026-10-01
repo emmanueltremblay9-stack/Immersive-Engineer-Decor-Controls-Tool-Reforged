@@ -1,0 +1,5 @@
+Tihendatud kruusliiv
+Töökoha pinnakate
+<&recipe>See plokk annab välitööaladele tihendatud ja tallatud pinna.<br>
+<br>
+Kasutamine: Laota laadimisuste, välismahutite ja masinaplatside ümber.<br>

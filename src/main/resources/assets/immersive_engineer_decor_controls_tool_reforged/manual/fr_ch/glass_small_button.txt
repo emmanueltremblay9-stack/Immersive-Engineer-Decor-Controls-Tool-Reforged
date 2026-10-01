@@ -1,0 +1,7 @@
+Bouton en verre
+Commande redstone
+<&recipe>Un interrupteur momentané émet une impulsion nette de redstone à puissance maximale.<br>
+<br>
+Utilisation : déclenchez des machines, déverrouillez des portes, activez des alarmes ou des circuits à action unique.<br>
+<br>
+Remarque : revient à son état initial après la durée prévue de l'impulsion.

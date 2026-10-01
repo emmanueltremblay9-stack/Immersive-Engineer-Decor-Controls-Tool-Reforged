@@ -1,0 +1,7 @@
+Perla prepojenia spínačov
+Prepojené ovládanie
+<&recipe>Prepojená perla uchováva cieľový prijímač pre diaľkové továrenské ovládanie.<br>
+<br>
+Použitie: Vytvor ju kliknutím Ender perlou na prijímač prepojenia spínačov. Použitím prepojenej perly počas zakrádania spustíš uložený prijímač.<br>
+<br>
+Poznámky: Cieľ musí byť načítaný, v rovnakej dimenzii a v dosahu.

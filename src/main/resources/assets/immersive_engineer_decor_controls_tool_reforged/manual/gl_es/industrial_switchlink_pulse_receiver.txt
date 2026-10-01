@@ -1,0 +1,7 @@
+Receptor de pulsos de ligazón
+Control ligado
+<&recipe>Un receptor ligado de pulsos ofrece unha activación breve de redstone para paneis remotos.<br>
+<br>
+Uso: fai clic nel cunha perla do Ender para crear unha perla ligada. Fai clic dereito nel ou activa a perla ligada para emitir un pulso breve.<br>
+<br>
+Notas: o pulso restablécese por si mesmo cando remata a duración programada.

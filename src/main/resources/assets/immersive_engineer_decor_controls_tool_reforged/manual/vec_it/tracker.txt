@@ -1,0 +1,7 @@
+Localizador
+Segno de pozision conservada
+<&recipe>El traciador salva la posision de un bloco nel ogjeto.<br>
+<br>
+Clica un bloco par salvar dimension e coordinate. El suggerimento mostra la posision. Doparalo in furtivo par scancelar el bersaglio.<br>
+<br>
+Segna machine, galarie, comandi remoti o cantieri incompleti.

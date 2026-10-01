@@ -1,0 +1,127 @@
+Walkways
+Walkways and Braces
+Steel poles, treated posts, grates, walkways, guardrails, ladders, doors, windows and hatches make close-fitting upkeep paths through workstead halls.<br>
+<br>
+Steel walkway fittings use steel sheets. Craft or set a Bloom Workbench, put in an Immersive Engineering hammer, then hammer steel ingots into sheets for poles, walkways, windows, doors, guardrails and other steel decking.<br>
+<br>
+Set them where looms need upkeep paths, raised walkways, upkeep shafts or guarded edges.
+<np>
+Thick Steel Pole
+Framework fitting
+<&thick_steel_pole>The Straight Thick Steel Pole forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Thick Pole Head
+Framework fitting
+<&thick_steel_pole_head>The Straight Thick Steel Pole Head/Foot forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Thin Steel Pole
+Framework fitting
+<&thin_steel_pole>The Straight Thin Steel Pole forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Thin Pole Head
+Framework fitting
+<&thin_steel_pole_head>The Straight Thin Steel Pole head/foot forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Treated-Wood Pole
+Framework fitting
+<&treated_wood_pole>The Straight Treated-Wood Pole forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Treated Pole Head
+Framework fitting
+<&treated_wood_pole_head>The Straight Treated-Wood Pole Head/Foot forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Treated Pole Brace
+Framework fitting
+<&treated_wood_pole_support>The Straight Treated-Wood Pole Brace forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Steel Double-T Crossbrace
+Framework fitting
+<&steel_double_t_support>This clot forms the seen framework of loom halls and walkway frames.<br>
+<br>
+Use: Turn and set it as a seen brace for beams, poles and raised-floor edges.<br>
+<np>
+Steel Floor Grate
+Upkeep pathway fitting
+<&steel_floor_grating>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Steel Walkway
+Upkeep pathway fitting
+<&steel_catwalk>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Steel Walkway Stairs
+Upkeep pathway fitting
+<&steel_catwalk_stairs>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Raised Steel Walkway
+Upkeep pathway fitting
+<&steel_catwalk_ta>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Steel Guardrail
+Upkeep pathway fitting
+<&steel_railing>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Steel Mesh Edder
+Upkeep pathway fitting
+<&steel_mesh_fence>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Steel Mesh Edder Gate
+Upkeep pathway fitting
+<&steel_mesh_fence_gate>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Bloom Rung Ladder
+Upkeep pathway fitting
+<&metal_rung_ladder>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Staggered Bloom Steps
+Upkeep pathway fitting
+<&metal_rung_steps>This clot makes clear upkeep paths around looms.<br>
+<br>
+Use: Set it as an upkeep path around looms, upper floors and upkeep shafts.<br>
+<np>
+Steel-Framed Window
+Guarded sightway
+<&steel_framed_window>This clot keeps sightways open while matching the strengthened workstead build.<br>
+<br>
+Use: Set it in a 1-clot wall gap where players should see looms through a warding wall.<br>
+<np>
+Bloom Sliding Door
+Workstead way in
+<&metal_sliding_door>This clot makes a strong way into upkeep rooms, shafts, roofs and loom housings.<br>
+<br>
+Use: Fit it where the build needs an upkeep gap that can be opened and shut.<br>
+<np>
+Iron Hatch
+Workstead way in
+<&iron_hatch>This clot makes a strong way into upkeep rooms, shafts, roofs and loom housings.<br>
+<br>
+Use: Fit it where the build needs an upkeep gap that can be opened and shut.<br>

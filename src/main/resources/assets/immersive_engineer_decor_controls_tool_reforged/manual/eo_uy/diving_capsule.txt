@@ -1,0 +1,7 @@
+Plonĝa aerkapsulo
+Kriza aerrezervo
+<&recipe>Kriza aero por subakva laboro.<br>
+<br>
+Uzo: Restaŭru aeron mane. En la inventaro ĝi aŭtomate ekfunkcias kiam aero preskaŭ finiĝas kaj poste atendas.<br>
+<br>
+Portu al inunditaj minejoj, subakvaj tuboj kaj pumpĉambroj.

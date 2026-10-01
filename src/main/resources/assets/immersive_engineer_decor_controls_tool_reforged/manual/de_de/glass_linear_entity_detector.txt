@@ -1,0 +1,7 @@
+Glas-Lichtschranke
+Signalerfassung
+<&recipe>Ein Entitätsdetektor überwacht Bewegungen in der Nähe, ohne eine sichtbare Bodenplatte zu benötigen.<br>
+<br>
+Verwendung: Verbinde ihn mit Türen, Leuchten, Alarmen oder Maschinenverriegelungen.<br>
+<br>
+Hinweis: Überwacht einen kleinen Bereich um den Block.

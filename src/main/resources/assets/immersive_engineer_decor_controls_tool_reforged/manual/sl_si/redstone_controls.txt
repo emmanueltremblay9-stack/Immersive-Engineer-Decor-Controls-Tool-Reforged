@@ -1,0 +1,789 @@
+Krmilniki redstone
+Merilniki in signalni elementi
+Krmilna oprema pretvarja skrit redstone v berljive tovarniške plošče, tipala, kazalnike, stikala, alarme in povezane signalne elemente.<br>
+<br>
+Te strani uporabi pri gradnji upravljalnih postaj, signalnih plošč, varnostnih vezij in daljinskih krmilnikov.
+<np>
+Tarča za puščice
+Kratkotrajen impulz
+<&arrow_target>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Senzor vrat
+Krmiljenje z redstonom
+<&door_sensor_switch>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Gumb dvigala
+Krmiljenje z redstonom
+<&elevator_button>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Steklen gumb
+Krmiljenje z redstonom
+<&glass_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Steklen gumb
+Krmiljenje z redstonom
+<&glass_small_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Steklen gumb na dotik
+Krmiljenje z redstonom
+<&glass_touch_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Strojni gumb
+Krmiljenje z redstonom
+<&industrial_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Gumb
+Krmiljenje z redstonom
+<&industrial_double_pole_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Ograjen strojni gumb
+Krmiljenje z redstonom
+<&industrial_fenced_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Gumb na trkanje
+Krmiljenje z redstonom
+<&industrial_knock_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Star okrasni gumb
+Krmiljenje z redstonom
+<&oldfancy_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Star okrasni gumb
+Krmiljenje z redstonom
+<&oldfancy_small_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Star okrasni gumb z verigo
+Kratkotrajen impulz
+<&oldfancy_spring_reset_chain>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Rustikalen gumb
+Krmiljenje z redstonom
+<&rustic_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Rustikalen gumb v obliki žeblja
+Krmiljenje z redstonom
+<&rustic_nail_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Majhen rustikalen gumb
+Krmiljenje z redstonom
+<&rustic_small_button>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Rustikalen gumb z verigo
+Kratkotrajen impulz
+<&rustic_spring_reset_chain>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.
+<np>
+Steklena kontaktna plošča
+Impulz ob pritisku
+<&glass_contact_mat>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Steklen vratni kontakt
+Impulz ob pritisku
+<&glass_door_contact_mat>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Kontaktna preproga
+Impulz ob pritisku
+<&industrial_contact_mat>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Vratna kontaktna preproga
+Impulz ob pritisku
+<&industrial_door_contact_mat>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Detektor padca skozi
+Zaznavanje za signalizacijo
+<&industrial_fallthrough_detector>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Nožni gumb
+Krmiljenje z redstonom
+<&industrial_foot_button>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Industrijska vrata na mehanski udarec
+Impulz ob pritisku
+<&industrial_high_sensitive_trapdoor>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Kontaktna preproga na mehanski udarec
+Impulz ob pritisku
+<&industrial_shock_sensitive_contact_mat>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Loputa na mehanski udarec
+Impulz ob pritisku
+<&industrial_shock_sensitive_trapdoor>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rdeča električna rastlina
+Impulz ob pritisku
+<&red_power_plant>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rustikalna pritisna plošča
+Impulz ob pritisku
+<&rustic_contact_plate>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rustikalni vratni pritisk
+Impulz ob pritisku
+<&rustic_door_contact_plate>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rustikalen detektor padca
+Zaznavanje za signalizacijo
+<&rustic_fallthrough_detector>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rustikalna vrata na mehanski udarec
+Impulz ob pritisku
+<&rustic_high_sensitive_trapdoor>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rustikalna plošča na mehanski udarec
+Impulz ob pritisku
+<&rustic_shock_sensitive_plate>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rustikalna vrata na mehanski udarec
+Impulz ob pritisku
+<&rustic_shock_sensitive_trapdoor>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Rumena električna rastlina
+Impulz ob pritisku
+<&yellow_power_plant>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.
+<np>
+Steklena dnevna stikalna ura
+Signal dnevne svetlobe
+<&glass_day_timer>Časovno stikalo sledi dnevnemu delu cikla sveta.<br>
+<br>
+Uporaba: Uporabi ga za dvoriščne svetilke, polkna in tovarniške krmilnike, ki delujejo le podnevi.<br>
+<br>
+Opombe: Zahteva dimenzijo z nebesno svetlobo.
+<np>
+Steklen detektor entitet
+Zaznavanje za signalizacijo
+<&glass_entity_detector>Detektor entitet spremlja gibanje v bližini brez vidne talne plošče.<br>
+<br>
+Uporaba: Poveži ga z vrati, svetilkami, alarmi ali varnostnimi blokadami strojev.<br>
+<br>
+Opombe: Pregleduje majhno območje okoli bloka.
+<np>
+Steklen intervalni signal
+Časovno določen impulz
+<&glass_interval_timer>Kompaktno časovno stikalo zagotavlja časovno načrtovan impulz redstone.<br>
+<br>
+Uporaba: Uporabi ga tam, kjer majhen mehanizem potrebuje periodično ali zakasnjeno krmiljenje.<br>
+<br>
+Opombe: Uporablja časovno načrtovane impulze redstone.
+<np>
+Steklen linijski detektor
+Zaznavanje za signalizacijo
+<&glass_linear_entity_detector>Detektor entitet spremlja gibanje v bližini brez vidne talne plošče.<br>
+<br>
+Uporaba: Poveži ga z vrati, svetilkami, alarmi ali varnostnimi blokadami strojev.<br>
+<br>
+Opombe: Pregleduje majhno območje okoli bloka.
+<np>
+Detektor blokov
+Zaznavanje za signalizacijo
+<&industrial_block_detector>Detektor blokov preverja, ali je prostor pred njim zaseden.<br>
+<br>
+Uporaba: Usmeri ga proti ploskvi stroja, zalogi ali varovanemu prostoru, ki ga želiš spremljati.<br>
+<br>
+Opombe: Oddaja signal, ko blok pred njim ni zrak.
+<np>
+Dnevna stikalna ura
+Signal dnevne svetlobe
+<&industrial_day_timer>Časovno stikalo sledi dnevnemu delu cikla sveta.<br>
+<br>
+Uporaba: Uporabi ga za dvoriščne svetilke, polkna in tovarniške krmilnike, ki delujejo le podnevi.<br>
+<br>
+Opombe: Zahteva dimenzijo z nebesno svetlobo.
+<np>
+Detektor entitet
+Zaznavanje za signalizacijo
+<&industrial_entity_detector>Detektor entitet spremlja gibanje v bližini brez vidne talne plošče.<br>
+<br>
+Uporaba: Poveži ga z vrati, svetilkami, alarmi ali varnostnimi blokadami strojev.<br>
+<br>
+Opombe: Pregleduje majhno območje okoli bloka.
+<np>
+Intervalni časovnik
+Časovno določen impulz
+<&industrial_interval_timer>Kompaktno časovno stikalo zagotavlja časovno načrtovan impulz redstone.<br>
+<br>
+Uporaba: Uporabi ga tam, kjer majhen mehanizem potrebuje periodično ali zakasnjeno krmiljenje.<br>
+<br>
+Opombe: Uporablja časovno načrtovane impulze redstone.
+<np>
+Senzor svetlobe
+Zaznavanje za signalizacijo
+<&industrial_light_sensor>Senzor svetlobe pretvarja lokalno svetlost v krmiljenje redstone.<br>
+<br>
+Uporaba: Uporabi ga za samodejne svetilke, polkna in vezja za vidljivost.<br>
+<br>
+Opombe: Oddaja signal pri surovi svetlosti 8 ali več.
+<np>
+Detektor nevihte
+Zaznavanje za signalizacijo
+<&industrial_lightning_sensor>Senzor nevihte sproža opozorila med grmenjem.<br>
+<br>
+Uporaba: Postavi ga pod odprto nebo in poveži s svetilkami ali alarmi.<br>
+<br>
+Opombe: Potrebuje grmenje in dostop do neba.
+<np>
+Linijski detektor entitet
+Zaznavanje za signalizacijo
+<&industrial_linear_entity_detector>Detektor entitet spremlja gibanje v bližini brez vidne talne plošče.<br>
+<br>
+Uporaba: Poveži ga z vrati, svetilkami, alarmi ali varnostnimi blokadami strojev.<br>
+<br>
+Opombe: Pregleduje majhno območje okoli bloka.
+<np>
+Senzor dežja
+Zaznavanje za signalizacijo
+<&industrial_rain_sensor>Vremenski senzor pretvarja padavine na svojem položaju v signal redstone.<br>
+<br>
+Uporaba: Namesti ga tam, kjer lahko na blok nad njim pada dež.<br>
+<br>
+Opombe: Preverja dež nad senzorjem.
+<np>
+Bistabilno stekleno stikalo
+Krmiljenje z redstonom
+<&glass_rotary_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Bistabilno stekleno stikalo na dotik
+Krmiljenje z redstonom
+<&glass_touch_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Oranžno občutljivo steklo
+Signalno steklo
+<&orange_sensitiveglass>Stekleni blok, ki se odziva na redstone, ohranja pogled in hkrati kaže stanje signala.<br>
+<br>
+Uporaba: Uporabi ga v oknih nadzornih sob, osvetljenih ploščah in zaščitnih tovarniških zasteklitvah.<br>
+<br>
+Opombe: Stanje spreminja glede na bližnji signal redstone.
+<np>
+Svetleče občutljivo steklo
+Signalno steklo
+<&sensitive_glass_block>Stekleni blok, ki se odziva na redstone, ohranja pogled in hkrati kaže stanje signala.<br>
+<br>
+Uporaba: Uporabi ga v oknih nadzornih sob, osvetljenih ploščah in zaščitnih tovarniških zasteklitvah.<br>
+<br>
+Opombe: Stanje spreminja glede na bližnji signal redstone.
+<np>
+Barvno občutljivo steklo
+Signalno steklo
+<&stained_sensitiveglass>Stekleni blok, ki se odziva na redstone, ohranja pogled in hkrati kaže stanje signala.<br>
+<br>
+Uporaba: Uporabi ga v oknih nadzornih sob, osvetljenih ploščah in zaščitnih tovarniških zasteklitvah.<br>
+<br>
+Opombe: Stanje spreminja glede na bližnji signal redstone.
+<np>
+Steklen stolpčni merilnik
+Merilnik signala
+<&glass_vertical_bar_gauge>Kompakten merilnik za nadzorno sobo prikazuje moč signala redstone kot jasno berljiv odčitek na plošči.<br>
+<br>
+Uporaba: Namesti ga tam, kjer želiš na hitro preveriti moč sosednjega signala redstone.<br>
+<br>
+Opombe: Odčitava bližnjo moč signala redstone od 0 do 15.
+<np>
+Analogni merilnik
+Merilnik signala
+<&industrial_analog_angular_gauge>Kompakten merilnik za nadzorno sobo prikazuje moč signala redstone kot jasno berljiv odčitek na plošči.<br>
+<br>
+Uporaba: Namesti ga tam, kjer želiš na hitro preveriti moč sosednjega signala redstone.<br>
+<br>
+Opombe: Odčitava bližnjo moč signala redstone od 0 do 15.
+<np>
+Voltmeter
+Merilnik signala
+<&industrial_analog_horizontal_gauge>Kompakten merilnik za nadzorno sobo prikazuje moč signala redstone kot jasno berljiv odčitek na plošči.<br>
+<br>
+Uporaba: Namesti ga tam, kjer želiš na hitro preveriti moč sosednjega signala redstone.<br>
+<br>
+Opombe: Odčitava bližnjo moč signala redstone od 0 do 15.
+<np>
+Digitalni merilnik
+Berljiva moč signala
+<&industrial_small_digital_gauge>Kompakten merilnik za nadzorno sobo prikazuje moč signala redstone kot jasno berljiv odčitek na plošči.<br>
+<br>
+Uporaba: Namesti ga tam, kjer želiš na hitro preveriti moč sosednjega signala redstone.<br>
+<br>
+Opombe: Odčitava bližnjo moč signala redstone od 0 do 15.
+<np>
+Stekleni cevni merilnik
+Merilnik signala
+<&industrial_tube_gauge>Kompakten merilnik za nadzorno sobo prikazuje moč signala redstone kot jasno berljiv odčitek na plošči.<br>
+<br>
+Uporaba: Namesti ga tam, kjer želiš na hitro preveriti moč sosednjega signala redstone.<br>
+<br>
+Opombe: Odčitava bližnjo moč signala redstone od 0 do 15.
+<np>
+Analogni stolpčni merilnik
+Merilnik signala
+<&industrial_vertical_bar_gauge>Kompakten merilnik za nadzorno sobo prikazuje moč signala redstone kot jasno berljiv odčitek na plošči.<br>
+<br>
+Uporaba: Namesti ga tam, kjer želiš na hitro preveriti moč sosednjega signala redstone.<br>
+<br>
+Opombe: Odčitava bližnjo moč signala redstone od 0 do 15.
+<np>
+Alarmna svetilka
+Povratna informacija o signalu
+<&industrial_alarm_lamp>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Alarmna sirena
+Povratna informacija o signalu
+<&industrial_alarm_siren>Alarmna sirena je redstone kazalnik, nameščen na ploskev bloka. Njeno stanje napajanja sledi signalu bloka, na katerega je pritrjena.<br>
+<br>
+Pritrdite jo na trdno ploskev in jo napajajte za spremljanje vrat, strojev, alarmov ali plošč.<br>
+<br>
+Sirena se osveži enkrat na sekundo, dokler je priključeni signal dejaven.
+<np>
+Utripajoča LED
+Povratna informacija o signalu
+<&industrial_blinking_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Zelena utripajoča LED
+Povratna informacija o signalu
+<&industrial_green_blinking_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Zelena LED
+Povratna informacija o signalu
+<&industrial_green_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Rdeča LED
+Povratna informacija o signalu
+<&industrial_red_blinking_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Rdeča LED
+Povratna informacija o signalu
+<&industrial_red_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Bela utripajoča LED
+Povratna informacija o signalu
+<&industrial_white_blinking_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Bela LED
+Povratna informacija o signalu
+<&industrial_white_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Rumena utripajoča LED
+Povratna informacija o signalu
+<&industrial_yellow_blinking_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Rumena LED
+Povratna informacija o signalu
+<&industrial_yellow_led>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Rustikalen semafor
+Povratna informacija o signalu
+<&rustic_semaphore>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.
+<np>
+Primerjalno stikalo
+Signal pritrditvenega bloka
+<&industrial_comparator_switch>Kompaktno senzorsko stikalo odčitava blok, na katerega je pritrjeno, in odčitek pretvori v preprost izhod na plošči.<br>
+<br>
+Uporaba: Pritrdi ga na inventarje, rezervoarje ali opremo redstone. Ko pritrditveni blok oddaja izhod primerjalnika, posode ali redstona, stikalo odda signal redstone s polno močjo.<br>
+<br>
+Opombe: Z njim pretvori stopnje napolnjenosti zalog ali skrito ožičenje v jasne krmilne vode za vklop/izklop.
+<np>
+Regulator signala
+Spremenljiv signal
+<&industrial_dimmer>Vrtljiv krmilnik na kompaktni plošči nastavlja moč signala redstone.<br>
+<br>
+Uporaba: Z desnim klikom postopoma povečuj izhod, ki se po polni moči vrne na nič.<br>
+<br>
+Opombe: Oddaja moč od 0 do 15.
+<np>
+Gumb za izklop v sili
+Krmiljenje z redstonom
+<&industrial_estop_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Blokada lijaka
+Krmiljenje z redstonom
+<&industrial_hopper_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Stikalo na trkanje
+Krmiljenje z redstonom
+<&industrial_knock_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Ročica
+Krmiljenje z redstonom
+<&industrial_lever>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Strojno stikalo z dvema gumboma
+Krmiljenje z redstonom
+<&industrial_machine_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Vlečni ročaj
+Krmiljenje z redstonom
+<&industrial_pull_handle>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Vrtljiva ročica
+Krmiljenje z redstonom
+<&industrial_rotary_lever>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Vrtljivo strojno stikalo
+Krmiljenje z redstonom
+<&industrial_rotary_machine_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Kontaktna ročica
+Krmiljenje z redstonom
+<&industrial_small_lever>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Stikalo
+Krmiljenje z redstonom
+<&industrialswitch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Stikalo za luč
+Krmiljenje z redstonom
+<&light_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Ventilsko stikalo
+Krmiljenje z redstonom
+<&valve_wheel_switch>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Impulzni sprejemnik v ohišju
+Povezano krmiljenje
+<&industrial_switchlink_cased_pulse_receiver>Povezan impulzni sprejemnik v ohišju oddaljenim ploščam zagotavlja kratko proženje redstone.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Klikni ga z desnim gumbom miške ali sproži povezan biser, da odda kratek impulz.<br>
+<br>
+Opombe: Impulz se po predvidenem trajanju sam ponastavi.
+<np>
+Sprejemnik povezave v ohišju
+Povezano krmiljenje
+<&industrial_switchlink_cased_receiver>Povezan sprejemnik v ohišju oddaljenim ploščam zagotavlja trpežen cilj redstone.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Z neposrednim desnim klikom na sprejemnik ga preklopi ročno.<br>
+<br>
+Opombe: Povezan biser ob uporabi med tihotapljenjem preklopi ta sprejemnik.
+<np>
+Impulzni sprejemnik povezave
+Povezano krmiljenje
+<&industrial_switchlink_pulse_receiver>Povezan impulzni sprejemnik oddaljenim ploščam zagotavlja kratko proženje redstone.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Klikni ga z desnim gumbom miške ali sproži povezan biser, da odda kratek impulz.<br>
+<br>
+Opombe: Impulz se po predvidenem trajanju sam ponastavi.
+<np>
+Impulzni rele povezave
+Povezano krmiljenje
+<&industrial_switchlink_pulse_relay>Element v slogu releja nadzornim ploščam zagotavlja kompaktno lokalno stikalno točko.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja. Za aktivacijo prek povezanega bisera uporabi sprejemne bloke.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Sprejemnik povezave stikal
+Povezano krmiljenje
+<&industrial_switchlink_receiver>Povezan sprejemnik oddaljenim ploščam zagotavlja cilj redstone s polno močjo.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Z neposrednim desnim klikom na sprejemnik ga preklopi ročno.<br>
+<br>
+Opombe: Povezan biser ob uporabi med tihotapljenjem preklopi ta sprejemnik.
+<np>
+Analogni sprejemnik povezave
+Povezano krmiljenje
+<&industrial_switchlink_receiver_analog>Povezan sprejemnik nadzornim ploščam zagotavlja viden oddaljeni cilj.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Ta biser uporabi med tihotapljenjem, da na daljavo aktiviraš sprejemnik.<br>
+<br>
+Opombe: Ta sprejemnik ob sprožitvi odda poln signal redstone.
+<np>
+Rele povezave stikal
+Povezano krmiljenje
+<&industrial_switchlink_relay>Element v slogu releja nadzornim ploščam zagotavlja kompaktno lokalno stikalno točko.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja. Za aktivacijo prek povezanega bisera uporabi sprejemne bloke.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Analogni rele povezave
+Povezano krmiljenje
+<&industrial_switchlink_relay_analog>Element v slogu releja nadzornim ploščam zagotavlja kompaktno lokalno stikalno točko.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja. Za aktivacijo prek povezanega bisera uporabi sprejemne bloke.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Biser povezave stikal
+Povezano krmiljenje
+<&switchlink_pearl>Povezan biser hrani cilj sprejemnika za oddaljene tovarniške krmilnike.<br>
+<br>
+Uporaba: Ustvariš ga tako, da z Enderovim biserom klikneš sprejemnik povezave stikal. Povezan biser uporabi med tihotapljenjem, da aktiviraš shranjeni sprejemnik.<br>
+<br>
+Opombe: Cilj mora biti naložen, v isti dimenziji in znotraj dosega.
+<np>
+Stara okrasna ročica
+Krmiljenje z redstonom
+<&oldfancy_bistableswitch1>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Stara okrasna vrtljiva ročica
+Krmiljenje z redstonom
+<&oldfancy_bistableswitch2>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Rustikalna vrtljiva ročica
+Krmiljenje z redstonom
+<&rustic_angular_lever>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Rustikalna ročica
+Krmiljenje z redstonom
+<&rustic_lever>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Rustikalna ročica v obliki žeblja
+Krmiljenje z redstonom
+<&rustic_nail_lever>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.
+<np>
+Rustikalna ročica z dvema tečajema
+Krmiljenje z redstonom
+<&rustic_two_hinge_lever>Kompakten krmilni element tovarniškim zgradbam daje jasno prepoznavno stikalno točko redstone.<br>
+<br>
+Uporaba: Z desnim klikom preklopi izhod s polno močjo za bližnja vezja.<br>
+<br>
+Opombe: Dokler je vklopljen, oddaja signal redstone s polno močjo.

@@ -1,0 +1,127 @@
+Toegangswegen
+Looproutes en steunen
+Stalen palen, palen van behandeld hout, roosters, loopbruggen, leuningen, ladders, deuren, ramen en luiken vormen compacte onderhoudsroutes door fabrieksgebouwen.<br>
+<br>
+Stalen onderdelen voor toegangswegen worden van staalplaten gemaakt. Maak of plaats een metaalwerkbank, leg er een hamer van Immersive Engineering in en sla staalstaven tot staalplaten voor palen, loopbruggen, ramen, deuren, leuningen en andere stalen decoraties.<br>
+<br>
+Plaats ze waar machines onderhoudstoegang, verhoogde looppaden, onderhoudsschachten of veiligere randen nodig hebben.
+<np>
+Dikke stalen paal
+Onderdeel van een draagconstructie
+<&thick_steel_pole>De rechte dikke stalen paal vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Kopstuk voor dikke paal
+Onderdeel van een draagconstructie
+<&thick_steel_pole_head>Het kop- of voetstuk voor rechte dikke stalen palen vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Dunne stalen paal
+Onderdeel van een draagconstructie
+<&thin_steel_pole>De rechte dunne stalen paal vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Kopstuk voor dunne paal
+Onderdeel van een draagconstructie
+<&thin_steel_pole_head>Het kop- of voetstuk voor rechte dunne stalen palen vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Paal van behandeld hout
+Onderdeel van een draagconstructie
+<&treated_wood_pole>De rechte paal van behandeld hout vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Kopstuk voor behandelde paal
+Onderdeel van een draagconstructie
+<&treated_wood_pole_head>Het kop- of voetstuk voor rechte palen van behandeld hout vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Steun voor behandelde paal
+Onderdeel van een draagconstructie
+<&treated_wood_pole_support>De steun voor rechte palen van behandeld hout vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Stalen dubbel-T-balk
+Onderdeel van een draagconstructie
+<&steel_double_t_support>Dit blok vormt een zichtbaar onderdeel van de draagconstructie van machinehallen en toegangskaders.<br>
+<br>
+Gebruik: draai en plaats het onderdeel als zichtbare versteviging van balken, palen en platformranden.<br>
+<np>
+Stalen vloerrooster
+Onderdeel voor onderhoudstoegang
+<&steel_floor_grating>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Stalen loopbrug
+Onderdeel voor onderhoudstoegang
+<&steel_catwalk>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Stalen loopbrugtrap
+Onderdeel voor onderhoudstoegang
+<&steel_catwalk_stairs>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Verhoogde stalen loopbrug
+Onderdeel voor onderhoudstoegang
+<&steel_catwalk_ta>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Stalen leuning
+Onderdeel voor onderhoudstoegang
+<&steel_railing>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Stalen gaashek
+Onderdeel voor onderhoudstoegang
+<&steel_mesh_fence>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Stalen gaaspoort
+Onderdeel voor onderhoudstoegang
+<&steel_mesh_fence_gate>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Metalen sportenladder
+Onderdeel voor onderhoudstoegang
+<&metal_rung_ladder>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Verspringende metalen treden
+Onderdeel voor onderhoudstoegang
+<&metal_rung_steps>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>
+<np>
+Raam met stalen kozijn
+Beschermd zicht
+<&steel_framed_window>Dit blok houdt het zicht vrij en past tegelijk bij versterkte fabrieksconstructies.<br>
+<br>
+Gebruik: plaats het in een muuropening van één blok waar spelers door een beschermende afscheiding naar machines moeten kunnen kijken.<br>
+<np>
+Metalen schuifdeur
+Industriële toegang
+<&metal_sliding_door>Dit blok biedt een stevige toegang tot technische ruimtes, schachten, daken en machinebehuizingen.<br>
+<br>
+Gebruik: monteer het waar een gecontroleerde opening voor onderhoud nodig is.<br>
+<np>
+Ijzeren luik
+Industriële toegang
+<&iron_hatch>Dit blok biedt een stevige toegang tot technische ruimtes, schachten, daken en machinebehuizingen.<br>
+<br>
+Gebruik: monteer het waar een gecontroleerde opening voor onderhoud nodig is.<br>

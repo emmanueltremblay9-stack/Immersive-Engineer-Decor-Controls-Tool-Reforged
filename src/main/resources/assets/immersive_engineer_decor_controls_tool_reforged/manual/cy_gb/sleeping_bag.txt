@@ -1,0 +1,7 @@
+Bag cysgu
+Pecyn gorffwys cludadwy
+<&recipe>Pecyn gwrth-dywydd ar gyfer gwaith ymhell o wely.<br>
+<br>
+Defnydd: Nos yn y Gorfyd, gorffwyswch tan y bore heb osod neu symud man ail-ymddangos.<br>
+<br>
+Yn gwrthod dydd, angenfilod cyfagos a dimensiynau anaddas. Mae pob gorffwys yn ei dreulio.

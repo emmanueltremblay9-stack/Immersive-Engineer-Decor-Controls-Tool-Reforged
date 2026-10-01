@@ -1,0 +1,7 @@
+Prijamnik poveznice u kućištu
+Povezano upravljanje
+<&recipe>Povezani prijamnik u kućištu daje udaljenim panelima čvrst redstone cilj.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Izravnim desnim klikom na prijamnik ručno ga uključi ili isključi.<br>
+<br>
+Napomene: povezani biser mijenja stanje ovog prijamnika kada ga koristiš dok čučiš.

@@ -1,0 +1,5 @@
+Miješana energetska pločica Muslee
+Brzi radionički zalogaj
+<&recipe>Energetska pločica Muslee Melange kompaktna je hrana od kruha, sjemenki i voća.<br>
+<br>
+Uporaba: jedi je kao terensku hranu pri postavljanju upravljačkih uređaja, cijevi, platformi ili dugih instalacija u strojarnici.

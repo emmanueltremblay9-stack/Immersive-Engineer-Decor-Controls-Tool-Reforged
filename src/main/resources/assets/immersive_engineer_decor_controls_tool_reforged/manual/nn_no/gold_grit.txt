@@ -1,0 +1,3 @@
+Grovt gullgrus
+Materiale for ingeniørverktøy i det rekonstruerte oppskriftssettet.
+<&recipe>Kan smeltast til<br>gullbarrar, men høver ikkje<br>til avansert materialhandsaming.

@@ -1,0 +1,99 @@
+Yngenieursark
+Draachbere wurkpleatsútrissing
+De samling Engineer's Tools foeget hânark, mynmarkearringen, ferbrûksguod foar needgefallen, iten foar ûnderweis en lytse helpmiddels foar materiaalferwurking ta oan itselde hânboek dat de dekoraasje- en bestjoeringsblokken beskriuwt.<br>
+<br>
+Dit ark is bedoeld foar wurk fier fan in folslein ynrjochte wurkpleats: markearje de rûte, nim foarrieden mei, herstel fan flaters en meitsje lytse ferwurkingstaken op it plak ôf.
+<np>
+REDIA-ark
+Alsidich ark mei diamantbeklaaiïng
+<&redia_tool>It REDIA-ark is duorsum ark foar fluch grûnwurk ûnderweis. Brûk it op bewurkbere grûn om boulân oan te lizzen.<br>
+<br>
+Brûk it tsjin in fêst flak wylstst fakkels by dy hast om in fakkelmarkearring út dyn ynventaris te pleatsen sûnder dat REDIA slijt. Grûnwurk, skearen, bilewurk en beamfellen ferbrûke duorsumheid.
+<np>
+Ertsfergruzelhammer
+Hânark foar fergruzeljen
+<&crushing_hammer>De ertsfergruzingshammer is in hânark foar iere ferwurking fan izer en goud.<br>
+<br>
+Gebrûk: Craft him mei rau izer, rau goud, izererts, djiplaach-izererts, gouderts of djiplaach-gouderts om izer- of goudstof fan Immersive Engineering te meitsjen. De hammer ferliest duorsumens en komt werom yn it craftingroaster oant er brekt.<br>
+<br>
+Hy slijt ek troch mynjen en kin doelen yn in gefjocht fan tichteby efterút slaan.
+<np>
+Folchapparaat
+Markearring fan in bewarre posysje
+<&tracker>De folchapparaat bewarret de posysje fan in blok direkt yn it item.<br>
+<br>
+Gebrûk: Klik op in blok om de dimensje en koördinaten te bewarjen. De tooltip toant it bewarre plak. Brûk it apparaat slûpend om it doel te wiskjen.<br>
+<br>
+Brûk it om masines, tunnelôftakkingen, ôfstânsbestjoeringen of ûnfoltôge bouplakken te markearjen foardatst mei ark en materialen weromkomst.
+<np>
+Ariadne-koal
+Markearring foar mynpaad
+<&ariadne_coal>Ariadne-koal set fluch swarte rûtepylken op fêste mynflakken. Brûk it op in stevich flak om de folgjende bocht, útgong of ôftakking te markearjen; de markearring stipet acht rjochtingen op it oanklikte flak, ek skeane.<br>
+<br>
+Ariadne-koal is in werbrûkber markearark mei 100 gebrûken. Elke slagge pleatsing fan in markearring kostet ien duorsumheidspunt. Net stipe flakken wurde wegere ynstee fan it foarwerp te sliten.
+<np>
+Automatysk stimulânspakket
+Needynjektor
+<&stimpack>De Auto Stim Pack is in needhelp-ark foar gefaarlik ûnderhâldswurk.<br>
+<br>
+Gebrûk: Brûk him mei de hân om te genêzen, koarte beskerming en in koarte bewegingsboost te krijen. Yn de ynventaris kin er ek automatysk by lege sûnens aktivearje en giet dan yn cooldown.<br>
+<br>
+Soargje dat der ien beskikber is foardatst hege plakken, bleatleine bedrading of mynpaden mei fijannen útprobearrest.
+<np>
+Sliepsek
+Draachber rêstguod
+<&sleeping_bag>De sliepsek is in waarfêste rêstset foar wurk fier fan in bêd.<br>
+<br>
+Gebrûk: Brûk him nachts yn de Overworld om oant moarns te rêsten. Hy stelt of ferpleatst dyn spawnpunt net.<br>
+<br>
+De sek wegeret gebrûk oerdeis, gefaarlike omkriten mei meunsters tichtby en dimensjes dy't net geskikt binne foar feilige rêst. Elke slagge rêst slitet de sek.
+<np>
+Materiaalopslachkiste
+Boufoarriedkiste
+<&material_box>De materiaalkiste draacht in grutte foarrie fan ien gewoan, ûnferoare en stapelber boumateriaal.<br>
+<br>
+Gebrûk: Hâld de kiste yn de haadhân en in stapel materiaal yn de oare hân om it te laden. Brûk de kiste mei in lege oare hân om ien stapel derút te heljen.<br>
+<br>
+De kiste hâldt oant 512 items fan ien soarte. Se wegeret nêste kisten, net-stapelbere útrissing en omneamde of mei gegevens feroare stapels; de tooltip lit de ynhâld sjen.
+<np>
+Dûkloftkapsule
+Loftfoarrie foar needgefallen
+<&diving_capsule>De dûkluchtkapsule is in needfoarrie lucht foar wurk ûnder wetter.<br>
+<br>
+Gebrûk: Brûk him mei de hân om lucht oan te foljen. Yn de ynventaris kin er ek automatysk aktivearje as de lucht hast op is, en giet dêrnei yn cooldown.<br>
+<br>
+Nim har mei foar ûnderstrûpte minen, piipliedingen ûnder wetter en reparaasjes yn pompkeamers.
+<np>
+Muslee-reepparse
+Itenparse
+<&musli_bar_press>De Muslee-reepparse makket fan gewoan iten kompakte fjildrantsoenen.<br>
+<br>
+Gebrûk: Nim brea, in apel en weet-, meloen-, pompoen-, biet- of Industrial Hemp-sied mei en brûk de parse. In slagge parse brûkt ien fan elk, kontrolearret romte, makket fjouwer Muslee Melange-reepen en beskeadiget de parse.<br>
+<br>
+As in yngrediïnt ûntbrekt of de ynventaris gjin romte hat, wurdt neat ferbrûkt.
+<np>
+Muslee Melange enerzjyreep
+Flugge wurkpleatshap
+<&musli_bar>De Muslee Melange-enerzjyreep is kompakt iten makke fan brea, sied en fruit.<br>
+<br>
+Gebrûk: Yt him as iten foar ûnderweis by it pleatsen fan bestjoeringsûnderdielen, pipen, platfoarms of lange ynstallaasjerûtes yn masinehallen.
+<np>
+Geastparse
+Underfiningskondinsator
+<&charged_lapis_squeezer>De geastparse set ien lapis lazuli en ien ûnderfiningsnivo út dyn ynventaris om yn opladen lapis lazuli.<br>
+<br>
+Elke slagge omsetting docht de brûker sear, ferheget de útputting dy't honger feroarsaket en makket him koart blyn. De parse wurket net sûnder lapis lazuli of XP, of as de brûker te ticht by de dea is.
+<np>
+Opladen lapis lazuli
+Bewarre ûnderfining
+<&charged_lapis>Opladen lapis lazuli bewarret ien ûnderfiningsnivo. Ferbrûk it om it nivo werom te krijen, aktive effekten fuort te heljen en in bytsje sûnens te herstellen.<br>
+<br>
+Meitsje earst in geastparse; opladen lapis lazuli ûntstiet troch dat ark te brûken as der lapis lazuli en XP beskikber binne.
+<np>
+Grof izergrús
+Yngenieursarkmateriaal dat troch de rekonstruearre nifelset brûkt wurdt.
+<&iron_grit>Kin ta izeren stêven smolten<br>wurde, mar is net geskikt foar<br>avansearre materiaalferwurking.
+<np>
+Grof goudgrús
+Yngenieursarkmateriaal dat troch de rekonstruearre nifelset brûkt wurdt.
+<&gold_grit>Kin ta gouden stêven smolten<br>wurde, mar is net geskikt foar<br>avansearre materiaalferwurking.

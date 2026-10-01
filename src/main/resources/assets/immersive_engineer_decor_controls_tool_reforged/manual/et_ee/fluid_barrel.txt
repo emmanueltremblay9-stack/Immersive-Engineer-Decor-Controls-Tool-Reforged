@@ -1,0 +1,5 @@
+Vedelikutünn
+Vedelikutrassi seadmed
+<&recipe>See kompaktne vedelikutrassi osa sobib väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Paigalda sinna, kus torud või ämbrid pääsevad mahuti pinnani.<br>

@@ -1,0 +1,7 @@
+Regulador
+Sinal variable
+<&recipe>Un control xiratorio axusta a potencia de redstone desde un frontal compacto de panel.<br>
+<br>
+Uso: fai clic dereito nel para aumentar a saída paso a paso; despois da potencia máxima volve a cero.<br>
+<br>
+Notas: emite unha potencia entre 0 e 15.

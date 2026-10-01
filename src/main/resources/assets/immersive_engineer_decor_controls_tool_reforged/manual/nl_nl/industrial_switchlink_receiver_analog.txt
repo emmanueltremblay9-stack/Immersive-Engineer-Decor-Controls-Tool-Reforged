@@ -1,0 +1,7 @@
+Analoge koppelingsontvanger
+Gekoppelde bediening
+<&recipe>Een gekoppelde ontvanger geeft bedieningspanelen een zichtbaar doel voor bediening op afstand.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Gebruik die parel terwijl je sluipt om de ontvanger op afstand te activeren.<br>
+<br>
+Opmerking: deze ontvanger geeft bij activering een redstonesignaal op volle sterkte af.

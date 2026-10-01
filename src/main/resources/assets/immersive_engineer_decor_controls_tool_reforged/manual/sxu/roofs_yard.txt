@@ -1,0 +1,101 @@
+Dächor un Hof
+Fabrigbaudeile für draußn
+Dachblögge, Hofgrus un alde Industrieholzdeile helfn, Außenschubbn, Werghöfe, Ladepläddze un vorwäddorde Fabrigganddn fert’sch zu machn.<br>
+<br>
+Misch diese Deile mid Mauorwerg un Zugangswegen, damid Indusdriebaudn draußn ooch aus dor Ferne deidl’sch ergennbar bleibn.
+<np>
+Dungles Schindldach
+Vorwäddordes Dachdeil
+<&dark_shingle_roof>Dieser Blogg machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Dachschneefang
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_metallized>Dor Schneefang fürs dungle Schindldach machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Dungles Schindldach
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_skylight>Das Dachfänsdor fürs dungle Schindldach machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Dachschornschdeenfuß
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_chimneytrunk>Dor Schornschdeenfuß fürs dungle Schindldach machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Dachgablrohr
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_wireconduit>Das Gablrohr fürs dungle Schindldach machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Dungles Schindldach
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_chimney>Dor Schornschdeen fürs dungle Schindldach machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Blogg fürs dungle Schindldach
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_block>Dieser Blogg machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Schdufe fürs dungle Schindldach
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_slab>Dieser Blogg machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Schdufe fürs dungle Schindldach
+Vorwäddordes Dachdeil
+<&dark_shingle_roof_slabslice>De dinne Scheibe fürs dungle Schindldach machd dungle, zweggmäßige Dachlinien für Wergschdäddn un Indusdrieschubbn.<br>
+<br>
+Nuddzung: Nimmde Deile zusamm, um glaubwürdige Dachformn zu baun.<br>
+<np>
+Vordichde Grusährde
+Bauschdellnbodn
+<&dense_grit_dirt_block>Dieser Blogg gibd Arbeedspläddzn draußn ä vordichde, zordreddne Fläche.<br>
+<br>
+Nuddzung: Leg’n um Ladediern, Außentangs un Maschinenhöfe.<br>
+<np>
+Vordichdor Grussand
+Bauschdellnbodn
+<&dense_grit_sand_block>Dieser Blogg gibd Arbeedspläddzn draußn ä vordichde, zordreddne Fläche.<br>
+<br>
+Nuddzung: Leg’n um Ladediern, Außentangs un Maschinenhöfe.<br>
+<np>
+Alde Holzbräddor
+Aldes Wergschdaddholz
+<&old_industrial_wood_planks>De aldn Industrieholzbräddor ergänzn aldes Wergschdaddholz für Bödn, Dridde, Diern un warme Innenzier.<br>
+<br>
+Nuddzung: Nimm’n für alde Wergschdaddbödn, Drebben, Diern un Ganddn.<br>
+<np>
+Alde Industrieholzschdufe
+Aldes Wergschdaddholz
+<&old_industrial_wood_slab>Dieser Blogg ergänzt aldes Wergschdaddholz für Bödn, Dridde, Diern un warme Innenzier.<br>
+<br>
+Nuddzung: Nimm’n für alde Wergschdaddbödn, Drebben, Diern un Ganddn.<br>
+<np>
+Alde Holzdrebbe
+Aldes Wergschdaddholz
+<&old_industrial_wood_stairs>De alde Industrieholzdrebbe ergänzt aldes Wergschdaddholz für Bödn, Dridde, Diern un warme Innenzier.<br>
+<br>
+Nuddzung: Nimm’n für alde Wergschdaddbödn, Drebben, Diern un Ganddn.<br>
+<np>
+Dinne alde Holzscheibe
+Aldes Wergschdaddholz
+<&old_industrial_wood_slabslice>De dinne alde Industrieholzscheibe ergänzt aldes Wergschdaddholz für Bödn, Dridde, Diern un warme Innenzier.<br>
+<br>
+Nuddzung: Nimm’n für alde Wergschdaddbödn, Drebben, Diern un Ganddn.<br>
+<np>
+Alde Industrieholzdiere
+Aldes Wergschdaddholz
+<&old_industrial_wood_door>Dieser Blogg ergänzt aldes Wergschdaddholz für Bödn, Dridde, Diern un warme Innenzier.<br>
+<br>
+Nuddzung: Nimm’n für alde Wergschdaddbödn, Drebben, Diern un Ganddn.<br>

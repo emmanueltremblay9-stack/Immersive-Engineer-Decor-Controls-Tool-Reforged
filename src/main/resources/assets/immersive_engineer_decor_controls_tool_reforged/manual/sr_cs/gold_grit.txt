@@ -1,0 +1,3 @@
+Krupna zlatna zrna
+Materijal inženjerskih alata koji se koristi u rekonstruisanim receptima.
+<&recipe>Mogu se istopiti u zlatne<br>poluge, ali nisu pogodna za<br>naprednu obradu materijala.

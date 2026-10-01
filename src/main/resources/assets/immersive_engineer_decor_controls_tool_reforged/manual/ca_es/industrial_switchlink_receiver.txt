@@ -1,0 +1,7 @@
+Receptor d’enllaç d’interruptors
+Control enllaçat
+<&recipe>Un receptor enllaçat proporciona un punt receptor de redstone de màxima força per a panells remots.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Fes clic dret directament al receptor per commutar-lo a mà.<br>
+<br>
+Notes: una perla enllaçada commuta aquest receptor quan la fas servir ajupit.

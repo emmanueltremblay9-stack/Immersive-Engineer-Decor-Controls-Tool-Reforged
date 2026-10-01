@@ -1,0 +1,7 @@
+Relé de pulsos de enlace
+Control enlazado
+<&recipe>Un elemento con aspecto de relé proporciona un punto de conmutación local compacto para los paneles.<br>
+<br>
+Uso: Hacé clic derecho para activar o desactivar una salida a máxima intensidad para los circuitos cercanos. Usá bloques receptores cuando necesites activación mediante perlas enlazadas.<br>
+<br>
+Notas: Emite redstone a máxima intensidad mientras está encendido.

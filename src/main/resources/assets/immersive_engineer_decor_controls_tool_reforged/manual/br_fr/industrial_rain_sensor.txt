@@ -1,0 +1,7 @@
+Sensor glav
+Merzout signal
+<&recipe>Ur sensor amzer a dro ar glav en e lec'h da Redstone.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'hall ar bloc'h a-us dezhañ resev glav.<br>
+<br>
+Notenn: Gwiriañ a ra ar glav a-us d'ar sensor.

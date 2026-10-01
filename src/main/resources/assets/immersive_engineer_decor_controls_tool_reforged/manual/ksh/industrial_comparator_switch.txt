@@ -1,0 +1,7 @@
+Verjlicheschalter
+Signal vum Draachblock
+<&recipe>Ene kleine Sensorschalter ließ singe Draachblock av un mäht us däm Wäät en einfache Paneelußjaav.<br>
+<br>
+Bruuch: Befestig en op Lajer, Tanks udder Redstone-Jeräte. Wann dä Draachblock Verjliche-, Behälter- udder Redstone-Ußjaav meldt, jit dä Schalter Redstone met voller Stärk.<br>
+<br>
+Henwies: Su maachs de Lajerstäng udder verstoche Kabel zo klare Aan-/Us-Stüerleitunge.

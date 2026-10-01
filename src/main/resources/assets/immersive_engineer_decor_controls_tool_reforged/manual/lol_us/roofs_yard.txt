@@ -1,0 +1,101 @@
+Rooftops & Yardz
+Outside factory fittingz
+Rooftop blukz, yard grit, an old factory wood parts finish outside sheds, work yardz, loading area, an weather-worn factory edges, kitty.<br>
+<br>
+Mix wif brikwork an pathways so ur outside factory build stays clear-looking even far away, meow.
+<np>
+Dark Shingul Rooftopz
+Weather-worn rooftop fittingz
+<&dark_shingle_roof>Dis bluk makes dark, useful roof linez fer workshops an factory shedz, kitty.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Rooftop Snow Stopper Thing
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_metallized>Dark Shingul Rooftop Snow Stopper makes dark, useful roof linez fer workshops an factory shedz, yiss.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Dark Shingul Rooftopz
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_skylight>Dark Shingul Rooftop Sky Window makes dark, useful roof linez fer workshops an factory shedz, kitty.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Rooftop Chimney Base Thing
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_chimneytrunk>Dark Shingul Rooftop Chimney Base makes dark, useful roof linez fer workshops an factory shedz, meow.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Rooftop Wire Tunnel Thing
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_wireconduit>Dark Shingul Rooftop Wire Tunnel makes dark, useful roof linez fer workshops an factory shedz, yiss.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Dark Shingul Rooftopz
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_chimney>Dark Shingul Rooftop Smokestack makes dark, useful roof linez fer workshops an factory shedz, kitty.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Dark Shingul Rooftop Bluk
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_block>Dis bluk makes dark, useful roof linez fer workshops an factory shedz, kitty.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Dark Shingul Rooftop Slabz
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_slab>Dis bluk makes dark, useful roof linez fer workshops an factory shedz, kitty.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Dark Shingul Rooftop Slabz
+Weather-worn rooftop fittingz
+<&dark_shingle_roof_slabslice>Thin Dark Shingul Rooftop Sliceez makes dark, useful roof linez fer workshops an factory shedz, meow.<br>
+<br>
+How to: Use da pieces together fer roof shapes dat look believable, meow.<br>
+<np>
+Squished Gritty Durt
+Ground Cover fer Da Worksite
+<&dense_grit_dirt_block>Dis bluk gives outdoor work area a hard-packed, trampled surface, kitty.<br>
+<br>
+How to: Lay round loading doorz, outdoor tankz, an machine yardz, meow.<br>
+<np>
+Squished Gritty Sandz
+Ground Cover fer Da Worksite
+<&dense_grit_sand_block>Dis bluk gives outdoor work area a hard-packed, trampled surface, kitty.<br>
+<br>
+How to: Lay round loading doorz, outdoor tankz, an machine yardz, meow.<br>
+<np>
+Old Woody Plankz
+Old workshop woodz
+<&old_industrial_wood_planks>Old Factory Wood Plankz adds aged shop timber fer floorz, stepz, doorz, an warm interior trim, kitty.<br>
+<br>
+How to: Use fer old shop floorz, stairz, doorz, an trimz, meow.<br>
+<np>
+Old Factory Wood Slabz
+Old workshop woodz
+<&old_industrial_wood_slab>Dis bluk adds aged shop timber fer floorz, stepz, doorz, an warm interior trim, kitty.<br>
+<br>
+How to: Use fer old shop floorz, stairz, doorz, an trimz, meow.<br>
+<np>
+Old Woody Stepz
+Old workshop woodz
+<&old_industrial_wood_stairs>Old Factory Wood Stepz adds aged shop timber fer floorz, stepz, doorz, an warm interior trim, yiss.<br>
+<br>
+How to: Use fer old shop floorz, stairz, doorz, an trimz, meow.<br>
+<np>
+Thin Old-Wood Slab Sliceez
+Old workshop woodz
+<&old_industrial_wood_slabslice>Thin Old Factory Wood Sliceez adds aged shop timber fer floorz, stepz, doorz, an warm interior trim, meow.<br>
+<br>
+How to: Use fer old shop floorz, stairz, doorz, an trimz, meow.<br>
+<np>
+Old Factory Wood Doorz
+Old workshop woodz
+<&old_industrial_wood_door>Dis bluk adds aged shop timber fer floorz, stepz, doorz, an warm interior trim, kitty.<br>
+<br>
+How to: Use fer old shop floorz, stairz, doorz, an trimz, meow.<br>

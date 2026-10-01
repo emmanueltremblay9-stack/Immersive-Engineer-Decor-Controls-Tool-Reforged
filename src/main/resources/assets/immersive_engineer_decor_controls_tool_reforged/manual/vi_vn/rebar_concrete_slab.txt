@@ -1,0 +1,5 @@
+Phiến bê tông cốt thép
+Bê tông gia cường
+<&recipe>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>

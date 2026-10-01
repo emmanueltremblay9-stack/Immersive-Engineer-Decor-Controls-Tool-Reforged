@@ -1,0 +1,5 @@
+Vasbetonlépcső
+Vasbeton
+<&recipe>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>

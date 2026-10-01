@@ -1,0 +1,7 @@
+Tracker
+Gespeicherte Positionsmarkn
+<&recipe>Da Tracker speichert a Blockposition direkt im Gegenstand.<br>
+<br>
+Benutzung: Block anklicka, um Dimension und Koordinaten zu speichern. Da Hinweis zoagt d'Position. Schleich-Benutzung löscht s' Ziel.<br>
+<br>
+Zum Markiern von Maschina, Tunnelzweigen, Fernsteuerungen oda unfertign Baustelln vor da Rückkehr mit Werkzeug und Material.

@@ -1,0 +1,7 @@
+Odbiornik impulsowy połączenia
+Powiązany element sterujący
+<&recipe>Powiązany odbiornik impulsowy dostarcza krótkie wyzwolenie redstone do zdalnych paneli.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Kliknij odbiornik prawym przyciskiem myszy lub uruchom perłę, aby wyemitować krótki impuls.<br>
+<br>
+Uwagi: Impuls kończy się sam po zaprogramowanym czasie.

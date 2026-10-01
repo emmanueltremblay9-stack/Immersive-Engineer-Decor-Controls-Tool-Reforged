@@ -1,0 +1,7 @@
+Bygdarligur knøttur
+Reyðgrýtisstýring
+<&recipe>Ein løturofi gevur ein greiðan reyðgrýtispuls við fullari styrki.<br>
+<br>
+Nýtsla: Brúka hann til maskinustart, hurðaropning, ávaringar ella rásir, sum skulu virkjast eina ferð.<br>
+<br>
+Viðmerking: Fer aftur í upphavsstøðu eftir ásetta pulsin.

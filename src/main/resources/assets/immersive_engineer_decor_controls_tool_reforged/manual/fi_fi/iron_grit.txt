@@ -1,0 +1,3 @@
+Karkea rautarouhe
+Insinöörityökalujen materiaali, jota käytetään rekonstruoidussa reseptivalikoimassa.
+<&recipe>Voidaan sulattaa<br>rautaharkoiksi, mutta ei sovi<br>edistyneeseen materiaalinkäsittelyyn.

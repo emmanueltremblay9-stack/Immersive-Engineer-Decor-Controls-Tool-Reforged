@@ -1,0 +1,7 @@
+Dešťové čidlo
+Snímání signálu
+<&recipe>Čidlo počasí převádí déšť ve svém místě na redstone.<br>
+<br>
+Použití: Připevni jej tam, kde na blok nad ním může pršet.<br>
+<br>
+Poznámky: Kontroluje déšť nad čidlem.

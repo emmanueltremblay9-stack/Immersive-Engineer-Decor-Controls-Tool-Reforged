@@ -1,0 +1,5 @@
+Feliratozható láda
+Szerkeszthető készletfelirat
+<&recipe>Ez a feliratozható láda a raktári készletek egyértelmű rendezésére készült. Elülső táblája kis műhelytáblaként szerkeszthető.<br>
+<br>
+Használat: jobb kattintás a felirattáblára a ládafelirat szerkesztéséhez. A láda többi részére kattintva megnyitod a szerelvények, alkatrészek és karbantartási készletek tárolóját.<br>

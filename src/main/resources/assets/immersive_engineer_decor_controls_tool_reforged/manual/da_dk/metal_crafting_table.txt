@@ -1,0 +1,7 @@
+Metal-fremstillingsbord
+Pladestation
+<&recipe>Forstærket station med hammerplads, fuldt 3x3-gitter og output.<br>
+<br>
+Brug: Som et normalt bord. Til IE-plader placeres Ingeniørhammer i værktøjspladsen og materialet i gitteret; tag pladen fra outputtet.<br>
+<br>
+Dekorationer med stålramme bruger stålplader formet her.

@@ -1,0 +1,5 @@
+Trencador de blocs
+Equipament de terra de taller
+<&recipe>El trencador de blocs xicotet és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: orienta la cara de treball cap al bloc que vulgues llevar.<br>

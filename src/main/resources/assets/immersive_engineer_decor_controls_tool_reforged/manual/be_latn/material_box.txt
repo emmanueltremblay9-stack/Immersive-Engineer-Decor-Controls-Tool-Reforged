@@ -1,0 +1,7 @@
+Skrynja materyjalaŭ
+Budaŭničy zapas
+<&recipe>Skrynja materyjalaŭ zachoŭvaje vjaliki zapas adnaho prostaha, njazmjenjenaha, prydatnaha da stosaŭ budaŭničaha materyjalu.<br>
+<br>
+Vykarystannje: Trymajcje skrynju ŭ haloŭnaj ruce, materyjal u druhoj dlja zahruzki. Z pustoj druhoj rukoj dastancje adzin stos.<br>
+<br>
+Skrynja zmjaščaje da 512 pradmjetaŭ, tolki adzin typ, adchiljaje ŭkladzjenyja skryni, pradmjety bjez stosaŭ i zmjenjenyja, nazvanyja abo z danymi stosy; zmjesciva pakazana ŭ padkazcy.

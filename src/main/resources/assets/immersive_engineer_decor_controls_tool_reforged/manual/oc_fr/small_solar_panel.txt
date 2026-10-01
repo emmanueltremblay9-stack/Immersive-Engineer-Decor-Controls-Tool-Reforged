@@ -1,0 +1,5 @@
+Panèl solar
+Equipament utilitari d’obrador
+<&recipe>Lo Pichon panèl solar es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : daissa-li lo cèl desgatjat e connecta d’aparelhs que demandan pauc d’energia.<br>

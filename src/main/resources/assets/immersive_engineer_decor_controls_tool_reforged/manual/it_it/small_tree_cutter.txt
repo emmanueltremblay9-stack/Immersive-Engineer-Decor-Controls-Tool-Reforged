@@ -1,0 +1,5 @@
+Taglialegna
+Attrezzatura per la fabbrica
+<&recipe>Il piccolo taglialegna appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: puntalo verso alberi cresciuti e raccogli separatamente gli oggetti lasciati cadere.<br>

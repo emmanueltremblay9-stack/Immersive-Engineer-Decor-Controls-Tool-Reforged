@@ -1,0 +1,5 @@
+Viên khí lặn
+Dự trữ khí khẩn cấp
+<&recipe>Viên nang khí lặn là nguồn khí khẩn cấp cho công việc dưới nước.<br>
+<br>
+Dùng thủ công để phục hồi khí. Trong kho đồ, nó tự kích hoạt khi khí gần cạn rồi hồi chiêu. Mang theo vào mỏ ngập và đường ống chìm.

@@ -1,0 +1,7 @@
+Plokituvastaja
+Signaali tuvastamine
+<&recipe>Plokituvastaja kontrollib, kas selle ees olev ruum on hõivatud.<br>
+<br>
+Kasutamine: Suuna see jälgitavale masinapinnale, puhvrile või kaitstud alale.<br>
+<br>
+Märkus: Annab toidet, kui ees olev plokk pole õhk.

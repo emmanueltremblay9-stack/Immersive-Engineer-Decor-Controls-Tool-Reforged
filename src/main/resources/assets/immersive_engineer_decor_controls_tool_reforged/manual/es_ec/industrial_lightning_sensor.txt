@@ -1,0 +1,7 @@
+Detector de tormentas
+Detección de señales
+<&recipe>Un sensor de tormentas activa avisos durante las tormentas eléctricas.<br>
+<br>
+Uso: Colócalo a cielo abierto y conéctalo a lámparas o alarmas.<br>
+<br>
+Notas: Requiere tormenta eléctrica y exposición al cielo.

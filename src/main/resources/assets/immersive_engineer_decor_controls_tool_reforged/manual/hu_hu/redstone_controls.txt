@@ -1,0 +1,789 @@
+Redstone-vezérlők
+Mérők és jelzőszerelvények
+A vezérlőberendezések a rejtett redstone-t leolvasható gyári panelekké, érzékelőkké, jelzőkké, kapcsolókká, riasztókká és összekapcsolt jelzőelemekké alakítják.<br>
+<br>
+Ezeket az oldalakat kezelőállások, jelzőtáblák, biztonsági áramkörök és távoli vezérlők építésekor használd.
+<np>
+Nyílvesszőcéltábla
+Pillanatnyi impulzus
+<&arrow_target>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Ajtóérzékelő
+Redstone-vezérlés
+<&door_sensor_switch>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Liftgomb
+Redstone-vezérlés
+<&elevator_button>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Üveggomb
+Redstone-vezérlés
+<&glass_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Üveggomb
+Redstone-vezérlés
+<&glass_small_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Üveg érintőgomb
+Redstone-vezérlés
+<&glass_touch_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Gépgomb
+Redstone-vezérlés
+<&industrial_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Gomb
+Redstone-vezérlés
+<&industrial_double_pole_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Védőkeretes gépgomb
+Redstone-vezérlés
+<&industrial_fenced_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Kopogásgomb
+Redstone-vezérlés
+<&industrial_knock_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Régi díszes gomb
+Redstone-vezérlés
+<&oldfancy_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Régi díszes gomb
+Redstone-vezérlés
+<&oldfancy_small_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Régi díszes láncos gomb
+Pillanatnyi impulzus
+<&oldfancy_spring_reset_chain>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Rusztikus gomb
+Redstone-vezérlés
+<&rustic_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Rusztikus szeggomb
+Redstone-vezérlés
+<&rustic_nail_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Kis rusztikus gomb
+Redstone-vezérlés
+<&rustic_small_button>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Rusztikus láncos gomb
+Pillanatnyi impulzus
+<&rustic_spring_reset_chain>A pillanatkapcsoló tiszta, teljes erősségű redstone-impulzust ad.<br>
+<br>
+Használat: gépindításhoz, ajtókioldáshoz, riasztáshoz vagy egyszeri működésű áramkörökhöz használd.<br>
+<br>
+Megjegyzés: a beállított impulzus végén visszaáll.
+<np>
+Üveg érintkezőlap
+Nyomásimpulzus
+<&glass_contact_mat>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Üveg ajtóérintkező
+Nyomásimpulzus
+<&glass_door_contact_mat>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Érintkezőszőnyeg
+Nyomásimpulzus
+<&industrial_contact_mat>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Ajtóérintkező-szőnyeg
+Nyomásimpulzus
+<&industrial_door_contact_mat>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Átesésérzékelő
+Jelérzékelés
+<&industrial_fallthrough_detector>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Lábgomb
+Redstone-vezérlés
+<&industrial_foot_button>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Ipari ütésre nyíló ajtó
+Nyomásimpulzus
+<&industrial_high_sensitive_trapdoor>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Ütésérzékeny érintkezőszőnyeg
+Nyomásimpulzus
+<&industrial_shock_sensitive_contact_mat>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Ütésre nyíló csapóajtó
+Nyomásimpulzus
+<&industrial_shock_sensitive_trapdoor>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Piros energianövény
+Nyomásimpulzus
+<&red_power_plant>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Rusztikus nyomólap
+Nyomásimpulzus
+<&rustic_contact_plate>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Rusztikus ajtónyomólap
+Nyomásimpulzus
+<&rustic_door_contact_plate>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Rusztikus esésérzékelő
+Jelérzékelés
+<&rustic_fallthrough_detector>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Rusztikus ütésre nyíló ajtó
+Nyomásimpulzus
+<&rustic_high_sensitive_trapdoor>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Rusztikus ütésérzékeny lap
+Nyomásimpulzus
+<&rustic_shock_sensitive_plate>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Rusztikus ütésre nyíló ajtó
+Nyomásimpulzus
+<&rustic_shock_sensitive_trapdoor>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Sárga energianövény
+Nyomásimpulzus
+<&yellow_power_plant>Az érintkezőkapcsoló rövid jelet küld a padlón vagy csapóajtón történő mozgás hatására.<br>
+<br>
+Használat: tedd oda, ahol entitások haladnak át egy szerelőfolyosón, rakodón vagy védett útvonalon.<br>
+<br>
+Megjegyzés: entitás érintése után rövid impulzust ad.
+<np>
+Üveg napszakidőzítő
+Nappali jel
+<&glass_day_timer>Az időzítőkapcsoló a világciklus nappali szakaszát követi.<br>
+<br>
+Használat: udvari lámpákhoz, zsalukhoz és csak nappal működő gyári vezérlőkhöz használd.<br>
+<br>
+Megjegyzés: égboltfénnyel rendelkező dimenziót igényel.
+<np>
+Üveg entitásérzékelő
+Jelérzékelés
+<&glass_entity_detector>Az entitásérzékelő látható padlólap nélkül figyeli a közeli mozgást.<br>
+<br>
+Használat: kösd ajtókhoz, lámpákhoz, riasztókhoz vagy gépek biztonsági reteszeléséhez.<br>
+<br>
+Megjegyzés: a blokk körül kis területet vizsgál.
+<np>
+Üveg ciklikus jeladó
+Időzített impulzus
+<&glass_interval_timer>A kompakt időzítőkapcsoló ütemezett redstone-impulzust biztosít.<br>
+<br>
+Használat: ott használd, ahol egy kis szerkezetnek időszakos vagy késleltetett vezérlésre van szüksége.<br>
+<br>
+Megjegyzés: ütemezett redstone-impulzusokat használ.
+<np>
+Üveg vonalérzékelő
+Jelérzékelés
+<&glass_linear_entity_detector>Az entitásérzékelő látható padlólap nélkül figyeli a közeli mozgást.<br>
+<br>
+Használat: kösd ajtókhoz, lámpákhoz, riasztókhoz vagy gépek biztonsági reteszeléséhez.<br>
+<br>
+Megjegyzés: a blokk körül kis területet vizsgál.
+<np>
+Blokkérzékelő
+Jelérzékelés
+<&industrial_block_detector>A blokkérzékelő ellenőrzi, hogy foglalt-e az előtte lévő hely.<br>
+<br>
+Használat: fordítsd a megfigyelendő gépfelület, puffer vagy védett tér felé.<br>
+<br>
+Megjegyzés: akkor ad jelet, ha az előtte lévő blokk nem levegő.
+<np>
+Napszakidőzítő
+Nappali jel
+<&industrial_day_timer>Az időzítőkapcsoló a világciklus nappali szakaszát követi.<br>
+<br>
+Használat: udvari lámpákhoz, zsalukhoz és csak nappal működő gyári vezérlőkhöz használd.<br>
+<br>
+Megjegyzés: égboltfénnyel rendelkező dimenziót igényel.
+<np>
+Entitásérzékelő
+Jelérzékelés
+<&industrial_entity_detector>Az entitásérzékelő látható padlólap nélkül figyeli a közeli mozgást.<br>
+<br>
+Használat: kösd ajtókhoz, lámpákhoz, riasztókhoz vagy gépek biztonsági reteszeléséhez.<br>
+<br>
+Megjegyzés: a blokk körül kis területet vizsgál.
+<np>
+Ciklikus időzítő
+Időzített impulzus
+<&industrial_interval_timer>A kompakt időzítőkapcsoló ütemezett redstone-impulzust biztosít.<br>
+<br>
+Használat: ott használd, ahol egy kis szerkezetnek időszakos vagy késleltetett vezérlésre van szüksége.<br>
+<br>
+Megjegyzés: ütemezett redstone-impulzusokat használ.
+<np>
+Fényérzékelő
+Jelérzékelés
+<&industrial_light_sensor>A fényérzékelő a helyi fényerőt redstone-vezérléssé alakítja.<br>
+<br>
+Használat: automatikus lámpákhoz, zsalukhoz és láthatósági áramkörökhöz használd.<br>
+<br>
+Megjegyzés: legalább 8-as nyers fényszintnél ad jelet.
+<np>
+Zivatarérzékelő
+Jelérzékelés
+<&industrial_lightning_sensor>A zivatarérzékelő mennydörgéskor figyelmeztetéseket működtet.<br>
+<br>
+Használat: tedd nyílt ég alá, és kösd lámpákhoz vagy riasztókhoz.<br>
+<br>
+Megjegyzés: mennydörgés és szabad égbolt szükséges.
+<np>
+Vonalirányú entitásérzékelő
+Jelérzékelés
+<&industrial_linear_entity_detector>Az entitásérzékelő látható padlólap nélkül figyeli a közeli mozgást.<br>
+<br>
+Használat: kösd ajtókhoz, lámpákhoz, riasztókhoz vagy gépek biztonsági reteszeléséhez.<br>
+<br>
+Megjegyzés: a blokk körül kis területet vizsgál.
+<np>
+Esőérzékelő
+Jelérzékelés
+<&industrial_rain_sensor>Az időjárás-érzékelő a helyén hulló esőt redstone-jellé alakítja.<br>
+<br>
+Használat: oda szereld, ahol a fölötte lévő blokkot elérheti az eső.<br>
+<br>
+Megjegyzés: az érzékelő fölötti esőt vizsgálja.
+<np>
+Bistabil üvegkapcsoló
+Redstone-vezérlés
+<&glass_rotary_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Bistabil üveg érintőkapcsoló
+Redstone-vezérlés
+<&glass_touch_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Narancssárga érzékeny üveg
+Jelzőüveg
+<&orange_sensitiveglass>A redstone-ra reagáló üvegblokk megtartja az átláthatóságot, és közben jelzi a jel állapotát.<br>
+<br>
+Használat: vezérlőtermi ablakokban, világító panelekben és védett gyári üvegezésként használd.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Világító érzékeny üveg
+Jelzőüveg
+<&sensitive_glass_block>A redstone-ra reagáló üvegblokk megtartja az átláthatóságot, és közben jelzi a jel állapotát.<br>
+<br>
+Használat: vezérlőtermi ablakokban, világító panelekben és védett gyári üvegezésként használd.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Színes érzékeny üveg
+Jelzőüveg
+<&stained_sensitiveglass>A redstone-ra reagáló üvegblokk megtartja az átláthatóságot, és közben jelzi a jel állapotát.<br>
+<br>
+Használat: vezérlőtermi ablakokban, világító panelekben és védett gyári üvegezésként használd.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Üveg sávos mérő
+Jelmérő
+<&glass_vertical_bar_gauge>A kompakt vezérlőtermi mérő világosan leolvasható panelértékként jelzi a redstone erősségét.<br>
+<br>
+Használat: oda szereld, ahol a szomszédos redstone-táplálás egy pillantással ellenőrizhető.<br>
+<br>
+Megjegyzés: a közeli redstone erősségét olvassa le 0 és 15 között.
+<np>
+Analóg mérő
+Jelmérő
+<&industrial_analog_angular_gauge>A kompakt vezérlőtermi mérő világosan leolvasható panelértékként jelzi a redstone erősségét.<br>
+<br>
+Használat: oda szereld, ahol a szomszédos redstone-táplálás egy pillantással ellenőrizhető.<br>
+<br>
+Megjegyzés: a közeli redstone erősségét olvassa le 0 és 15 között.
+<np>
+Voltmérős műszer
+Jelmérő
+<&industrial_analog_horizontal_gauge>A kompakt vezérlőtermi mérő világosan leolvasható panelértékként jelzi a redstone erősségét.<br>
+<br>
+Használat: oda szereld, ahol a szomszédos redstone-táplálás egy pillantással ellenőrizhető.<br>
+<br>
+Megjegyzés: a közeli redstone erősségét olvassa le 0 és 15 között.
+<np>
+Digitális mérő
+Leolvasható jelerősség
+<&industrial_small_digital_gauge>A kompakt vezérlőtermi mérő világosan leolvasható panelértékként jelzi a redstone erősségét.<br>
+<br>
+Használat: oda szereld, ahol a szomszédos redstone-táplálás egy pillantással ellenőrizhető.<br>
+<br>
+Megjegyzés: a közeli redstone erősségét olvassa le 0 és 15 között.
+<np>
+Üvegcsöves mérő
+Jelmérő
+<&industrial_tube_gauge>A kompakt vezérlőtermi mérő világosan leolvasható panelértékként jelzi a redstone erősségét.<br>
+<br>
+Használat: oda szereld, ahol a szomszédos redstone-táplálás egy pillantással ellenőrizhető.<br>
+<br>
+Megjegyzés: a közeli redstone erősségét olvassa le 0 és 15 között.
+<np>
+Analóg sávos mérő
+Jelmérő
+<&industrial_vertical_bar_gauge>A kompakt vezérlőtermi mérő világosan leolvasható panelértékként jelzi a redstone erősségét.<br>
+<br>
+Használat: oda szereld, ahol a szomszédos redstone-táplálás egy pillantással ellenőrizhető.<br>
+<br>
+Megjegyzés: a közeli redstone erősségét olvassa le 0 és 15 között.
+<np>
+Riasztólámpa
+Jelvisszajelzés
+<&industrial_alarm_lamp>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Riasztósziréna
+Jelvisszajelzés
+<&industrial_alarm_siren>A riasztósziréna oldalra szerelhető redstone-jelző. Bekapcsolt állapota a rögzítési blokk által adott jelet követi.<br>
+<br>
+Használat: rögzítsd szilárd felületre, és tápláld meg ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: a sziréna másodpercenként frissül, amíg a csatlakozó jele aktív.
+<np>
+Villogó LED
+Jelvisszajelzés
+<&industrial_blinking_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Zöld villogó LED
+Jelvisszajelzés
+<&industrial_green_blinking_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Zöld LED
+Jelvisszajelzés
+<&industrial_green_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Piros LED
+Jelvisszajelzés
+<&industrial_red_blinking_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Piros LED
+Jelvisszajelzés
+<&industrial_red_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Fehér villogó LED
+Jelvisszajelzés
+<&industrial_white_blinking_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Fehér LED
+Jelvisszajelzés
+<&industrial_white_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Sárga villogó LED
+Jelvisszajelzés
+<&industrial_yellow_blinking_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Sárga LED
+Jelvisszajelzés
+<&industrial_yellow_led>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Rusztikus szemafor
+Jelvisszajelzés
+<&rustic_semaphore>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.
+<np>
+Komparátorkapcsoló
+A tartóblokk jele
+<&industrial_comparator_switch>A kompakt érzékelőkapcsoló leolvassa a blokkot, amelyre szerelték, és ezt egyszerű panelkimenetté alakítja.<br>
+<br>
+Használat: szereld tárolókra, tartályokra vagy redstone-berendezésekre. Ha a tartóblokk komparátoros, tárolói vagy redstone-kimenetet jelez, a kapcsoló teljes erősségű redstone-jelet ad.<br>
+<br>
+Megjegyzés: ezzel tárolási szinteket vagy rejtett vezetékezést alakíthatsz világos be/ki vezérlővonalakká.
+<np>
+Jelerősség-szabályozó
+Változó jel
+<&industrial_dimmer>A forgó szabályozó egy kompakt panel előlapján állítja a redstone erősségét.<br>
+<br>
+Használat: jobb kattintással növeld lépésenként a kimenetet; a teljes erősség után nullára vált.<br>
+<br>
+Megjegyzés: 0 és 15 közötti erősséget ad ki.
+<np>
+Vészleállító gomb
+Redstone-vezérlés
+<&industrial_estop_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Tölcsérblokkoló
+Redstone-vezérlés
+<&industrial_hopper_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Kopogáskapcsoló
+Redstone-vezérlés
+<&industrial_knock_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Kar
+Redstone-vezérlés
+<&industrial_lever>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Kétgombos gépkapcsoló
+Redstone-vezérlés
+<&industrial_machine_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Húzófogantyú
+Redstone-vezérlés
+<&industrial_pull_handle>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Forgókar
+Redstone-vezérlés
+<&industrial_rotary_lever>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Forgó gépkapcsoló
+Redstone-vezérlés
+<&industrial_rotary_machine_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Érintkezőkar
+Redstone-vezérlés
+<&industrial_small_lever>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Kapcsoló
+Redstone-vezérlés
+<&industrialswitch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Villanykapcsoló
+Redstone-vezérlés
+<&light_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Szelepkapcsoló
+Redstone-vezérlés
+<&valve_wheel_switch>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Házba épített impulzusvevő
+Összekapcsolt vezérlés
+<&industrial_switchlink_cased_pulse_receiver>A házba épített, hozzárendelt impulzusvevő rövid redstone-indítójelet ad a távoli paneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Jobb kattintással vagy a hozzárendelt gyöngy aktiválásával indíts rövid impulzust.<br>
+<br>
+Megjegyzés: az impulzus a beállított idő után magától véget ér.
+<np>
+Házba épített távkapcsolati vevő
+Összekapcsolt vezérlés
+<&industrial_switchlink_cased_receiver>A házba épített, hozzárendelt vevő strapabíró redstone-célpontot ad a távoli paneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Közvetlenül a vevőre jobb kattintva kézzel kapcsolhatod át.<br>
+<br>
+Megjegyzés: a hozzárendelt gyöngy lopakodó használata átkapcsolja ezt a vevőt.
+<np>
+Távkapcsolati impulzusvevő
+Összekapcsolt vezérlés
+<&industrial_switchlink_pulse_receiver>A hozzárendelt impulzusvevő rövid redstone-indítójelet ad a távoli paneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Jobb kattintással vagy a hozzárendelt gyöngy aktiválásával indíts rövid impulzust.<br>
+<br>
+Megjegyzés: az impulzus a beállított idő után magától véget ér.
+<np>
+Távkapcsolati impulzusrelé
+Összekapcsolt vezérlés
+<&industrial_switchlink_pulse_relay>A relés megjelenésű elem kompakt helyi kapcsolópontot ad a paneleknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét. Hozzárendelt gyöngyös aktiváláshoz használj vevőblokkokat.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Távkapcsolati vevő
+Összekapcsolt vezérlés
+<&industrial_switchlink_receiver>A hozzárendelt vevő teljes erősségű redstone-célpontot ad a távoli paneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Közvetlenül a vevőre jobb kattintva kézzel kapcsolhatod át.<br>
+<br>
+Megjegyzés: a hozzárendelt gyöngy lopakodó használata átkapcsolja ezt a vevőt.
+<np>
+Analóg távkapcsolati vevő
+Összekapcsolt vezérlés
+<&industrial_switchlink_receiver_analog>A hozzárendelt vevő látható távoli célpontot ad a vezérlőpaneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Lopakodva használd ezt a gyöngyöt a vevő távoli aktiválásához.<br>
+<br>
+Megjegyzés: ez a vevő indítójelre teljes erősségű redstone-jelet ad.
+<np>
+Távkapcsolati relé
+Összekapcsolt vezérlés
+<&industrial_switchlink_relay>A relés megjelenésű elem kompakt helyi kapcsolópontot ad a paneleknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét. Hozzárendelt gyöngyös aktiváláshoz használj vevőblokkokat.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Analóg távkapcsolati relé
+Összekapcsolt vezérlés
+<&industrial_switchlink_relay_analog>A relés megjelenésű elem kompakt helyi kapcsolópontot ad a paneleknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét. Hozzárendelt gyöngyös aktiváláshoz használj vevőblokkokat.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Távkapcsolati gyöngy
+Összekapcsolt vezérlés
+<&switchlink_pearl>A hozzárendelt gyöngy egy vevő célpontját tárolja a gyár távoli vezérléséhez.<br>
+<br>
+Használat: kattints endergyönggyel egy távkapcsolati vevőre a létrehozásához. Lopakodva használd a hozzárendelt gyöngyöt a tárolt vevő aktiválásához.<br>
+<br>
+Megjegyzés: a célpontnak betöltve, ugyanabban a dimenzióban és hatótávon belül kell lennie.
+<np>
+Régi díszes kar
+Redstone-vezérlés
+<&oldfancy_bistableswitch1>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Régi díszes forgókar
+Redstone-vezérlés
+<&oldfancy_bistableswitch2>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Rusztikus forgókar
+Redstone-vezérlés
+<&rustic_angular_lever>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Rusztikus kar
+Redstone-vezérlés
+<&rustic_lever>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Rusztikus szegkar
+Redstone-vezérlés
+<&rustic_nail_lever>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.
+<np>
+Rusztikus kétzsanéros kar
+Redstone-vezérlés
+<&rustic_two_hinge_lever>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.

@@ -1,0 +1,7 @@
+Reloj programador diario
+Señal diurna
+<&recipe>Un interruptor temporizado sigue la parte diurna del ciclo del mundo.<br>
+<br>
+Uso: Usalo para lámparas de patio, persianas y controles de fábrica que solo deban funcionar de día.<br>
+<br>
+Notas: Requiere una dimensión con luz del cielo.

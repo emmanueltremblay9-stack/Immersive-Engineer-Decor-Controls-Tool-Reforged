@@ -1,0 +1,7 @@
+Przełącznik komparatorowy
+Sygnał bloku mocującego
+<&recipe>Mały przełącznik z czujnikiem odczytuje blok, na którym jest zamontowany, i przekształca odczyt w proste wyjście panelu.<br>
+<br>
+Użycie: Zamontuj go na ekwipunku, zbiorniku lub urządzeniu redstone. Gdy podłączony blok udostępnia wyjście komparatora, pojemnika lub redstone, przełącznik emituje redstone o pełnej sile.<br>
+<br>
+Uwagi: Zamieniaj nim poziomy zapasów lub ukryte przewody w czytelne linie sterowania włącz/wyłącz.

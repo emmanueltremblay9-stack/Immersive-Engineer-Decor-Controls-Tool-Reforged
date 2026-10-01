@@ -1,0 +1,789 @@
+Roðsteinsstýringar
+Mælar og merkjabúnaður
+Stýribúnaður breytir földum roðsteini í læsileg verksmiðjustjórnborð, nema, vísa, rofa, viðvaranir og tengdan merkjabúnað.<br>
+<br>
+Notaðu þessar síður við smíði stjórnstöðva, merkjaborða, öryggisrása og fjarstýringa.
+<np>
+Örvaskotmark
+Skammvinnur púls
+<&arrow_target>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Hurðarnemi
+Roðsteinsstýring
+<&door_sensor_switch>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Lyftuhnappur
+Roðsteinsstýring
+<&elevator_button>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Glerhnappur
+Roðsteinsstýring
+<&glass_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Glerhnappur
+Roðsteinsstýring
+<&glass_small_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Snertiglerhnappur
+Roðsteinsstýring
+<&glass_touch_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Vélarhnappur
+Roðsteinsstýring
+<&industrial_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Hnappur
+Roðsteinsstýring
+<&industrial_double_pole_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Vélarhnappur með hlíf
+Roðsteinsstýring
+<&industrial_fenced_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Bankhnappur
+Roðsteinsstýring
+<&industrial_knock_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Gamall skrauthnappur
+Roðsteinsstýring
+<&oldfancy_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Gamall skrauthnappur
+Roðsteinsstýring
+<&oldfancy_small_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Gamall skrautkeðjuhnappur
+Skammvinnur púls
+<&oldfancy_spring_reset_chain>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Sveitahnappur
+Roðsteinsstýring
+<&rustic_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Sveitanaglahnappur
+Roðsteinsstýring
+<&rustic_nail_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Lítill sveitahnappur
+Roðsteinsstýring
+<&rustic_small_button>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Sveitakeðjuhnappur
+Skammvinnur púls
+<&rustic_spring_reset_chain>Augnabliksrofi gefur hreinan roðsteinspúls á fullum styrk.<br>
+<br>
+Notkun: Notaðu hann til að ræsa vélar, opna hurðir, gefa viðvaranir eða virkja eins skiptis rásir.<br>
+<br>
+Athugasemdir: Endurstillist eftir áætlaðan púls.
+<np>
+Snertiglerhella
+Þrýstipúls
+<&glass_contact_mat>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Glerhurðarsnerta
+Þrýstipúls
+<&glass_door_contact_mat>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Snertimotta
+Þrýstipúls
+<&industrial_contact_mat>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Snertimotta fyrir hurð
+Þrýstipúls
+<&industrial_door_contact_mat>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Gegnumfallsnemi
+Merkjaskynjun
+<&industrial_fallthrough_detector>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Fóthnappur
+Roðsteinsstýring
+<&industrial_foot_button>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Iðnaðarhögghurð
+Þrýstipúls
+<&industrial_high_sensitive_trapdoor>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Höggsnertimotta
+Þrýstipúls
+<&industrial_shock_sensitive_contact_mat>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Högghleri
+Þrýstipúls
+<&industrial_shock_sensitive_trapdoor>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Rautt rafblóm
+Þrýstipúls
+<&red_power_plant>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Sveitaþrýstihella
+Þrýstipúls
+<&rustic_contact_plate>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Sveitaþrýstibúnaður fyrir hurð
+Þrýstipúls
+<&rustic_door_contact_plate>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Sveitafallsnemi
+Merkjaskynjun
+<&rustic_fallthrough_detector>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Sveitahögghurð
+Þrýstipúls
+<&rustic_high_sensitive_trapdoor>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Sveitahögghella
+Þrýstipúls
+<&rustic_shock_sensitive_plate>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Sveitahögghurð
+Þrýstipúls
+<&rustic_shock_sensitive_trapdoor>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Gult rafblóm
+Þrýstipúls
+<&yellow_power_plant>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.
+<np>
+Dagstímaklukka úr gleri
+Dagsljósmerki
+<&glass_day_timer>Tímastýrður rofi fylgir daghluta sólarhrings heimsins.<br>
+<br>
+Notkun: Notaðu hann fyrir hlaðlampa, lokur og verksmiðjustýringar sem eiga aðeins að virka á daginn.<br>
+<br>
+Athugasemdir: Krefst víddar með himinljósi.
+<np>
+Glereininganemi
+Merkjaskynjun
+<&glass_entity_detector>Eininganemi fylgist með hreyfingu í nágrenninu án sýnilegrar gólfhellu.<br>
+<br>
+Notkun: Tengdu hann við hurðir, lampa, viðvaranir eða öryggislæsingar véla.<br>
+<br>
+Athugasemdir: Skannar lítið svæði í kringum kubbinn.
+<np>
+Lotumerki úr gleri
+Tímasettur púls
+<&glass_interval_timer>Fyrirferðarlítill tímastýrður rofi gefur tímasettan roðsteinspúls.<br>
+<br>
+Notkun: Notaðu hann þar sem lítið gangverk þarf reglubundna eða seinkaða stýringu.<br>
+<br>
+Athugasemdir: Notar tímasetta roðsteinspúlsa.
+<np>
+Línunemi úr gleri
+Merkjaskynjun
+<&glass_linear_entity_detector>Eininganemi fylgist með hreyfingu í nágrenninu án sýnilegrar gólfhellu.<br>
+<br>
+Notkun: Tengdu hann við hurðir, lampa, viðvaranir eða öryggislæsingar véla.<br>
+<br>
+Athugasemdir: Skannar lítið svæði í kringum kubbinn.
+<np>
+Kubbanemi
+Merkjaskynjun
+<&industrial_block_detector>Kubbanemi athugar hvort rýmið sem hann snýr að sé upptekið.<br>
+<br>
+Notkun: Beindu honum að vélarhlið, biðgeymslu eða vörðu rými sem á að fylgjast með.<br>
+<br>
+Athugasemdir: Gefur afl þegar kubburinn fyrir framan er ekki loft.
+<np>
+Dagstímaklukka
+Dagsljósmerki
+<&industrial_day_timer>Tímastýrður rofi fylgir daghluta sólarhrings heimsins.<br>
+<br>
+Notkun: Notaðu hann fyrir hlaðlampa, lokur og verksmiðjustýringar sem eiga aðeins að virka á daginn.<br>
+<br>
+Athugasemdir: Krefst víddar með himinljósi.
+<np>
+Eininganemi
+Merkjaskynjun
+<&industrial_entity_detector>Eininganemi fylgist með hreyfingu í nágrenninu án sýnilegrar gólfhellu.<br>
+<br>
+Notkun: Tengdu hann við hurðir, lampa, viðvaranir eða öryggislæsingar véla.<br>
+<br>
+Athugasemdir: Skannar lítið svæði í kringum kubbinn.
+<np>
+Lotutímari
+Tímasettur púls
+<&industrial_interval_timer>Fyrirferðarlítill tímastýrður rofi gefur tímasettan roðsteinspúls.<br>
+<br>
+Notkun: Notaðu hann þar sem lítið gangverk þarf reglubundna eða seinkaða stýringu.<br>
+<br>
+Athugasemdir: Notar tímasetta roðsteinspúlsa.
+<np>
+Ljósnemi
+Merkjaskynjun
+<&industrial_light_sensor>Ljósnemi breytir staðbundinni birtu í roðsteinsstýringu.<br>
+<br>
+Notkun: Notaðu hann fyrir sjálfvirka lampa, lokur og skyggnisrásir.<br>
+<br>
+Athugasemdir: Gefur afl við óleiðrétt birtustig 8 eða hærra.
+<np>
+Óveðursnemi
+Merkjaskynjun
+<&industrial_lightning_sensor>Óveðursnemi knýr viðvaranir í þrumuveðri.<br>
+<br>
+Notkun: Settu hann undir opinn himin og tengdu við lampa eða viðvaranir.<br>
+<br>
+Athugasemdir: Krefst þrumuveðurs og aðgangs að himni.
+<np>
+Línueininganemi
+Merkjaskynjun
+<&industrial_linear_entity_detector>Eininganemi fylgist með hreyfingu í nágrenninu án sýnilegrar gólfhellu.<br>
+<br>
+Notkun: Tengdu hann við hurðir, lampa, viðvaranir eða öryggislæsingar véla.<br>
+<br>
+Athugasemdir: Skannar lítið svæði í kringum kubbinn.
+<np>
+Regnnemi
+Merkjaskynjun
+<&industrial_rain_sensor>Veðurnemi breytir úrkomu á sínum stað í roðsteinsmerki.<br>
+<br>
+Notkun: Festu hann þar sem kubburinn fyrir ofan getur fengið á sig regn.<br>
+<br>
+Athugasemdir: Athugar regn fyrir ofan nemann.
+<np>
+Tveggja stöðu glerrofi
+Roðsteinsstýring
+<&glass_rotary_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Tveggja stöðu snertiglerrofi
+Roðsteinsstýring
+<&glass_touch_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Appelsínugult næmt gler
+Merkjagler
+<&orange_sensitiveglass>Glerkubbur sem bregst við roðsteini heldur sjónlínum opnum og sýnir um leið stöðu merkisins.<br>
+<br>
+Notkun: Notaðu hann í stjórnherbergisglugga, lýst stjórnborð og varið verksmiðjugler.<br>
+<br>
+Athugasemdir: Breytir um stöðu eftir roðsteinsafli í nágrenninu.
+<np>
+Lýsandi næmt gler
+Merkjagler
+<&sensitive_glass_block>Glerkubbur sem bregst við roðsteini heldur sjónlínum opnum og sýnir um leið stöðu merkisins.<br>
+<br>
+Notkun: Notaðu hann í stjórnherbergisglugga, lýst stjórnborð og varið verksmiðjugler.<br>
+<br>
+Athugasemdir: Breytir um stöðu eftir roðsteinsafli í nágrenninu.
+<np>
+Litað næmt gler
+Merkjagler
+<&stained_sensitiveglass>Glerkubbur sem bregst við roðsteini heldur sjónlínum opnum og sýnir um leið stöðu merkisins.<br>
+<br>
+Notkun: Notaðu hann í stjórnherbergisglugga, lýst stjórnborð og varið verksmiðjugler.<br>
+<br>
+Athugasemdir: Breytir um stöðu eftir roðsteinsafli í nágrenninu.
+<np>
+Súlumælir úr gleri
+Merkjamælir
+<&glass_vertical_bar_gauge>Fyrirferðarlítill mælir í stjórnherbergi sýnir roðsteinsstyrk með skýrum aflestri á stjórnborði.<br>
+<br>
+Notkun: Festu hann þar sem á að vera hægt að sjá roðsteinsafl nágrennisins í fljótu bragði.<br>
+<br>
+Athugasemdir: Les roðsteinsstyrk í nágrenninu frá 0 til 15.
+<np>
+Hliðrænn mælir
+Merkjamælir
+<&industrial_analog_angular_gauge>Fyrirferðarlítill mælir í stjórnherbergi sýnir roðsteinsstyrk með skýrum aflestri á stjórnborði.<br>
+<br>
+Notkun: Festu hann þar sem á að vera hægt að sjá roðsteinsafl nágrennisins í fljótu bragði.<br>
+<br>
+Athugasemdir: Les roðsteinsstyrk í nágrenninu frá 0 til 15.
+<np>
+Spennumælir
+Merkjamælir
+<&industrial_analog_horizontal_gauge>Fyrirferðarlítill mælir í stjórnherbergi sýnir roðsteinsstyrk með skýrum aflestri á stjórnborði.<br>
+<br>
+Notkun: Festu hann þar sem á að vera hægt að sjá roðsteinsafl nágrennisins í fljótu bragði.<br>
+<br>
+Athugasemdir: Les roðsteinsstyrk í nágrenninu frá 0 til 15.
+<np>
+Stafrænn mælir
+Læsilegur merkisstyrkur
+<&industrial_small_digital_gauge>Fyrirferðarlítill mælir í stjórnherbergi sýnir roðsteinsstyrk með skýrum aflestri á stjórnborði.<br>
+<br>
+Notkun: Festu hann þar sem á að vera hægt að sjá roðsteinsafl nágrennisins í fljótu bragði.<br>
+<br>
+Athugasemdir: Les roðsteinsstyrk í nágrenninu frá 0 til 15.
+<np>
+Glerrörsmælir
+Merkjamælir
+<&industrial_tube_gauge>Fyrirferðarlítill mælir í stjórnherbergi sýnir roðsteinsstyrk með skýrum aflestri á stjórnborði.<br>
+<br>
+Notkun: Festu hann þar sem á að vera hægt að sjá roðsteinsafl nágrennisins í fljótu bragði.<br>
+<br>
+Athugasemdir: Les roðsteinsstyrk í nágrenninu frá 0 til 15.
+<np>
+Hliðrænn súlumælir
+Merkjamælir
+<&industrial_vertical_bar_gauge>Fyrirferðarlítill mælir í stjórnherbergi sýnir roðsteinsstyrk með skýrum aflestri á stjórnborði.<br>
+<br>
+Notkun: Festu hann þar sem á að vera hægt að sjá roðsteinsafl nágrennisins í fljótu bragði.<br>
+<br>
+Athugasemdir: Les roðsteinsstyrk í nágrenninu frá 0 til 15.
+<np>
+Viðvörunarlampi
+Endurgjöf merkis
+<&industrial_alarm_lamp>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Viðvörunarsírena
+Endurgjöf merkis
+<&industrial_alarm_siren>Viðvörunarsírenan er redstone-vísir sem festist á hlið. Straumstaðan fylgir merkinu frá kubbnum sem hún er fest við.<br>
+<br>
+Notkun: Festu hana á trausta hlið og gefðu henni afl til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Sírenan endurnýjar hljóðið einu sinni á sekúndu meðan tengda merkið helst virkt.
+<np>
+Blikkandi LED-ljós
+Endurgjöf merkis
+<&industrial_blinking_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Grænt blikkandi LED-ljós
+Endurgjöf merkis
+<&industrial_green_blinking_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Grænt LED-ljós
+Endurgjöf merkis
+<&industrial_green_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Rautt LED-ljós
+Endurgjöf merkis
+<&industrial_red_blinking_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Rautt LED-ljós
+Endurgjöf merkis
+<&industrial_red_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Hvítt blikkandi LED-ljós
+Endurgjöf merkis
+<&industrial_white_blinking_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Hvítt LED-ljós
+Endurgjöf merkis
+<&industrial_white_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Gult blikkandi LED-ljós
+Endurgjöf merkis
+<&industrial_yellow_blinking_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Gult LED-ljós
+Endurgjöf merkis
+<&industrial_yellow_led>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Sveitamerkiflagg
+Endurgjöf merkis
+<&rustic_semaphore>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.
+<np>
+Samanburðarrofi
+Merki frá tengdum kubbi
+<&industrial_comparator_switch>Fyrirferðarlítill nemarofi les kubbinn sem hann er festur á og breytir aflestrinum í einfalt stjórnborðsúttak.<br>
+<br>
+Notkun: Festu hann á geymslur, vökvageyma eða roðsteinsbúnað. Þegar tengdi kubburinn gefur samanburðar-, geymslu- eða roðsteinsúttak gefur rofinn roðstein á fullum styrk.<br>
+<br>
+Athugasemdir: Notaðu hann til að breyta geymslustöðu eða földum lögnum í skýrar kveiki-/slökkvistýringar.
+<np>
+Deyfir
+Breytilegt merki
+<&industrial_dimmer>Snúningsstýring stillir roðsteinsstyrk á litlu stjórnborði.<br>
+<br>
+Notkun: Hægrismelltu til að hækka úttakið í skrefum; eftir fullan styrk fer það aftur í núll.<br>
+<br>
+Athugasemdir: Gefur úttaksstyrk frá 0 til 15.
+<np>
+Neyðarstöðvunarhnappur
+Roðsteinsstýring
+<&industrial_estop_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Trektarlæsir
+Roðsteinsstýring
+<&industrial_hopper_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Bankrofi
+Roðsteinsstýring
+<&industrial_knock_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Rofi
+Roðsteinsstýring
+<&industrial_lever>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Tveggja hnappa vélarrofi
+Roðsteinsstýring
+<&industrial_machine_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Toghandfang
+Roðsteinsstýring
+<&industrial_pull_handle>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Snúningsrofi
+Roðsteinsstýring
+<&industrial_rotary_lever>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Snúningsrofi fyrir vélar
+Roðsteinsstýring
+<&industrial_rotary_machine_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Snertirofi
+Roðsteinsstýring
+<&industrial_small_lever>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Rofi
+Roðsteinsstýring
+<&industrialswitch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Ljósrofi
+Roðsteinsstýring
+<&light_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Lokarofi
+Roðsteinsstýring
+<&valve_wheel_switch>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Púlsmóttakari í hylki
+Tengd stýring
+<&industrial_switchlink_cased_pulse_receiver>Tengdur púlsmóttakari í hylki veitir fjarstjórnborðum stutta roðsteinskveikju.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Hægrismelltu á hann eða virkjaðu tengdu perluna til að gefa stuttan púls.<br>
+<br>
+Athugasemdir: Púlsinn endurstillist sjálfur þegar stilltur tími hans er liðinn.
+<np>
+Tengimóttakari í hylki
+Tengd stýring
+<&industrial_switchlink_cased_receiver>Tengdur móttakari í hylki veitir fjarstjórnborðum sterkbyggt roðsteinsmark.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Hægrismelltu beint á móttakarann til að skipta um stöðu hans með hendi.<br>
+<br>
+Athugasemdir: Tengd perla skiptir um stöðu þessa móttakara þegar hún er notuð á meðan læðst er.
+<np>
+Tengdur púlsmóttakari
+Tengd stýring
+<&industrial_switchlink_pulse_receiver>Tengdur púlsmóttakari veitir fjarstjórnborðum stutta roðsteinskveikju.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Hægrismelltu á hann eða virkjaðu tengdu perluna til að gefa stuttan púls.<br>
+<br>
+Athugasemdir: Púlsinn endurstillist sjálfur þegar stilltur tími hans er liðinn.
+<np>
+Púlstengirafliði
+Tengd stýring
+<&industrial_switchlink_pulse_relay>Hluti í líki rafliða veitir stjórnborðum fyrirferðarlítinn staðbundinn rofa.<br>
+<br>
+Notkun: Hægrismelltu á hann til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir. Notaðu móttakarakubba þegar þú þarft virkjun með tengdri perlu.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Fjarrofamóttakari
+Tengd stýring
+<&industrial_switchlink_receiver>Tengdur móttakari veitir fjarstjórnborðum roðsteinsmark á fullum styrk.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Hægrismelltu beint á móttakarann til að skipta um stöðu hans með hendi.<br>
+<br>
+Athugasemdir: Tengd perla skiptir um stöðu þessa móttakara þegar hún er notuð á meðan læðst er.
+<np>
+Hliðrænn tengimóttakari
+Tengd stýring
+<&industrial_switchlink_receiver_analog>Tengdur móttakari veitir stjórnborðum sýnilegt fjarstýrt mark.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Notaðu perluna á meðan þú læðist til að virkja móttakarann úr fjarlægð.<br>
+<br>
+Athugasemdir: Þessi móttakari gefur roðsteinsmerki á fullum styrk þegar hann er virkjaður.
+<np>
+Fjarrofatengirafliði
+Tengd stýring
+<&industrial_switchlink_relay>Hluti í líki rafliða veitir stjórnborðum fyrirferðarlítinn staðbundinn rofa.<br>
+<br>
+Notkun: Hægrismelltu á hann til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir. Notaðu móttakarakubba þegar þú þarft virkjun með tengdri perlu.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Hliðrænn tengirafliði
+Tengd stýring
+<&industrial_switchlink_relay_analog>Hluti í líki rafliða veitir stjórnborðum fyrirferðarlítinn staðbundinn rofa.<br>
+<br>
+Notkun: Hægrismelltu á hann til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir. Notaðu móttakarakubba þegar þú þarft virkjun með tengdri perlu.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Fjarrofaperla
+Tengd stýring
+<&switchlink_pearl>Tengd perla geymir móttakaramark fyrir fjarstýringar verksmiðju.<br>
+<br>
+Notkun: Smelltu á fjarrofamóttakara með endaperlu til að búa hana til. Notaðu tengdu perluna á meðan þú læðist til að virkja vistaða móttakarann.<br>
+<br>
+Athugasemdir: Markið verður að vera hlaðið, í sömu vídd og innan drægni.
+<np>
+Gamall skrautrofi
+Roðsteinsstýring
+<&oldfancy_bistableswitch1>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Gamall skrautsnúningsrofi
+Roðsteinsstýring
+<&oldfancy_bistableswitch2>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Sveitasnúningsrofi
+Roðsteinsstýring
+<&rustic_angular_lever>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Sveitarofi
+Roðsteinsstýring
+<&rustic_lever>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Sveitanaglarofi
+Roðsteinsstýring
+<&rustic_nail_lever>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.
+<np>
+Sveitarofi með tveimur hjörum
+Roðsteinsstýring
+<&rustic_two_hinge_lever>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.

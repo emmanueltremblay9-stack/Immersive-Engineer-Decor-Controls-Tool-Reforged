@@ -1,0 +1,161 @@
+Klinkier i mury
+Ceglane i betonowe osłony
+Klinkier, cegły żużlowe, żelbet i szkło pancerne zapewniają masywne powierzchnie w gorących pomieszczeniach, warsztatach i miejscach wymagających widoczności przez osłonę.<br>
+<br>
+Używaj pasujących płyt, schodów, cienkich płyt i murków, aby wykończyć krawędzie bez zmiany stylu materiałów fabryki.
+<np>
+Blok cegieł klinkierowych
+Cegły przyciemnione sadzą
+<&clinker_brick_block>Ten blok nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Płyta z cegieł klinkierowych
+Cegły przyciemnione sadzą
+<&clinker_brick_slab>Ten blok nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Schody z cegieł klinkierowych
+Cegły przyciemnione sadzą
+<&clinker_brick_stairs>Ten blok nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Murek z cegieł klinkierowych
+Cegły przyciemnione sadzą
+<&clinker_brick_wall>Ten blok nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Blok zabrudzonego klinkieru
+Cegły przyciemnione sadzą
+<&clinker_brick_stained_block>Blok zabrudzonych cegieł klinkierowych nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Płyta z zabrudzonego klinkieru
+Cegły przyciemnione sadzą
+<&clinker_brick_stained_slab>Płyta z zabrudzonych cegieł klinkierowych nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Schody z zabrudzonego klinkieru
+Cegły przyciemnione sadzą
+<&clinker_brick_stained_stairs>Schody z zabrudzonych cegieł klinkierowych nadają halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Zdobiona cegła klinkierowa
+Cegły przyciemnione sadzą
+<&clinker_brick_sastor_corner_block>Cegła klinkierowa zdobiona piaskowcem nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Cofnięta cegła klinkierowa
+Cegły przyciemnione sadzą
+<&clinker_brick_recessed>Ten blok nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Cegły klinkierowe ze szczelinami
+Cegły przyciemnione sadzą
+<&clinker_brick_vertically_slit>Cegły klinkierowe z pionowymi szczelinami nadają halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Pionowa płyta klinkierowa
+Cegły przyciemnione sadzą
+<&clinker_brick_vertical_slab_structured>Pionowa płyta klinkierowa z reliefem nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Cienka płyta z cegieł klinkierowych
+Cegły przyciemnione sadzą
+<&halfslab_clinker_brick>Ten blok nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>
+<np>
+Blok cegieł żużlowych
+Masywne mury fabryczne
+<&slag_brick_block>Ten blok zapewnia masywne szarobrązowe mury na fundamenty, ściany oporowe i starsze budynki warsztatowe.<br>
+<br>
+Użycie: Buduj z niego stare fundamenty, ściany oporowe i zabrudzone podłogi zakładów.<br>
+<np>
+Płyta z cegieł żużlowych
+Masywne mury fabryczne
+<&slag_brick_slab>Ten blok zapewnia masywne szarobrązowe mury na fundamenty, ściany oporowe i starsze budynki warsztatowe.<br>
+<br>
+Użycie: Buduj z niego stare fundamenty, ściany oporowe i zabrudzone podłogi zakładów.<br>
+<np>
+Schody z cegieł żużlowych
+Masywne mury fabryczne
+<&slag_brick_stairs>Ten blok zapewnia masywne szarobrązowe mury na fundamenty, ściany oporowe i starsze budynki warsztatowe.<br>
+<br>
+Użycie: Buduj z niego stare fundamenty, ściany oporowe i zabrudzone podłogi zakładów.<br>
+<np>
+Murek z cegieł żużlowych
+Masywne mury fabryczne
+<&slag_brick_wall>Ten blok zapewnia masywne szarobrązowe mury na fundamenty, ściany oporowe i starsze budynki warsztatowe.<br>
+<br>
+Użycie: Buduj z niego stare fundamenty, ściany oporowe i zabrudzone podłogi zakładów.<br>
+<np>
+Blok żelbetu
+Beton zbrojony
+<&rebar_concrete>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Płyta żelbetowa
+Beton zbrojony
+<&rebar_concrete_slab>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Schody żelbetowe
+Beton zbrojony
+<&rebar_concrete_stairs>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Murek żelbetowy
+Beton zbrojony
+<&rebar_concrete_wall>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Cienka płyta żelbetowa
+Beton zbrojony
+<&halfslab_rebar_concrete>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Żelbetowe kafle
+Beton zbrojony
+<&rebar_concrete_tile>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Płyta z żelbetowych kafli
+Beton zbrojony
+<&rebar_concrete_tile_slab>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Żelbetowe kafle
+Beton zbrojony
+<&rebar_concrete_tile_stairs>Schody z żelbetowych kafli są elementami wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>
+<np>
+Blok szkła pancernego
+Widoczność przez osłonę
+<&panzerglass_block>Ten blok zapewnia widoczność, zachowując wygląd wzmocnionej konstrukcji fabrycznej.<br>
+<br>
+Użycie: Stosuj go tam, gdzie gracze mają widzieć maszyny przez barierę ochronną.<br>
+<np>
+Płyta ze szkła pancernego
+Widoczność przez osłonę
+<&panzerglass_slab>Ten blok zapewnia widoczność, zachowując wygląd wzmocnionej konstrukcji fabrycznej.<br>
+<br>
+Użycie: Stosuj go tam, gdzie gracze mają widzieć maszyny przez barierę ochronną.<br>

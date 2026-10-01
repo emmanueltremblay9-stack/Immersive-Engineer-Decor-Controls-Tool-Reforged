@@ -1,0 +1,7 @@
+Analog koplingsmottakar
+Kopla betening
+<&recipe>Ein kopla mottakar gjev beteningspanel eit synleg fjernmål.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Bruk perla medan du smyg for å aktivere mottakaren på avstand.<br>
+<br>
+Merknad: denne mottakaren gjev eit redstone-signal med full styrke når han blir utløyst.

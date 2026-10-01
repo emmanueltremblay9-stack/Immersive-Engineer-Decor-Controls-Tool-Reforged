@@ -1,0 +1,7 @@
+Rustik kædeknap
+Kortvarig puls
+<&recipe>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.

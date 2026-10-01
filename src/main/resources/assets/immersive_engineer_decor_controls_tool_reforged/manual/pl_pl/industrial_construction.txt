@@ -1,0 +1,108 @@
+Budownictwo przemysłowe
+Ściany i wykończenia fabryki
+Ogólne elementy budowlane obejmują drzwi, okna, oświetlenie, tabliczki ostrzegawcze, wykończenia i części konstrukcyjne, które nie należą do bardziej szczegółowej sekcji.<br>
+<br>
+Korzystaj z tych stron podczas budowania pomieszczeń fabrycznych, korytarzy technicznych, oznaczania zagrożeń i dodawania praktycznych detali przemysłowych.
+<np>
+Żelazna lampa żarówkowa
+Mała lampa robocza
+<&iron_bulb_light>Ten blok zapewnia kompaktowe oświetlenie przemysłowe korytarzy, pomostów i stanowisk roboczych.<br>
+<br>
+Użycie: Montuj go na sufitach, ścianach i krawędziach wymagających jasnego oświetlenia do pracy.<br>
+<np>
+Lampa przy krawędzi sufitu
+Mała lampa robocza
+<&iron_ceiling_edge_light>Ten blok zapewnia kompaktowe oświetlenie przemysłowe korytarzy, pomostów i stanowisk roboczych.<br>
+<br>
+Użycie: Montuj go na sufitach, ścianach i krawędziach wymagających jasnego oświetlenia do pracy.<br>
+<np>
+Wpuszczana lampa przy krawędzi podłogi
+Mała lampa robocza
+<&iron_floor_edge_light>Ten blok zapewnia kompaktowe oświetlenie przemysłowe korytarzy, pomostów i stanowisk roboczych.<br>
+<br>
+Użycie: Montuj go na sufitach, ścianach i krawędziach wymagających jasnego oświetlenia do pracy.<br>
+<np>
+Lampa wpuszczana
+Mała lampa robocza
+<&iron_inset_light>Ten blok zapewnia kompaktowe oświetlenie przemysłowe korytarzy, pomostów i stanowisk roboczych.<br>
+<br>
+Użycie: Montuj go na sufitach, ścianach i krawędziach wymagających jasnego oświetlenia do pracy.<br>
+<np>
+Tabliczka ostrzegawcza
+Oznaczenie zagrożenia
+<&sign_caution>Tabliczka ostrzegawcza oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka niebezpieczeństwa
+Oznaczenie zagrożenia
+<&sign_danger>Tabliczka „Uwaga: skrajne niebezpieczeństwo” oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka dekoracyjna
+Oznaczenie zagrożenia
+<&sign_decor>Tabliczka oznaczeniowa Engineer's Decor oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka obrony
+Oznaczenie zagrożenia
+<&sign_defense>Tabliczka „Uwaga: system obronny przed tobą” oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka wyjścia
+Oznaczenie zagrożenia
+<&sign_exit>Ta tabliczka oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka zagrożenia pożarowego
+Oznaczenie zagrożenia
+<&sign_firehazard>Tabliczka zagrożenia pożarowego oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka ostrzegająca przed mrozem
+Oznaczenie zagrożenia
+<&sign_frost>Tabliczka ostrzegająca przed mrozem oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka gorącej powierzchni
+Oznaczenie zagrożenia
+<&sign_hotsurface>Tabliczka „Uwaga: gorąca powierzchnia” oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka przewodu pod napięciem
+Oznaczenie zagrożenia
+<&sign_hotwire>Tabliczka „Uwaga: przewód pod napięciem” oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka zagrożenia laserowego
+Oznaczenie zagrożenia
+<&sign_laser>Tabliczka zagrożenia laserowego oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka zagrożenia magicznego
+Oznaczenie zagrożenia
+<&sign_magichazard>Tabliczka „Uwaga: zagrożenie magiczne” oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka pola magnetycznego
+Oznaczenie zagrożenia
+<&sign_magneticfield>Tabliczka „Uwaga: silne pole magnetyczne” oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>
+Tabliczka zagrożenia promieniowaniem
+Oznaczenie zagrożenia
+<&sign_radioactive>Tabliczka zagrożenia promieniowaniem oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>
+<np>

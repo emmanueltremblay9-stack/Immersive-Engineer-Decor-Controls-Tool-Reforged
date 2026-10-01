@@ -1,0 +1,161 @@
+Klinker i murarstvo
+Ceglene i betonne obaly
+Klinker, šlakove cegly, armovany beton i bronovano steklo davajut masivne povrhnosti dlja gorečih komor, rabotilnj i zaščiščenyh pogledov.<br>
+<br>
+Upotrěbi odpovědajuče platformy, stupenišče, sloje i stěny dlja zakončenja krajev bez izměnjenja materialnogo stila fabriky.
+<np>
+Blok klinkerovyh cegl
+Mur počrněly sažeju
+<&clinker_brick_block>Sej blok prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Klinkerovy cegleny platform
+Mur počrněly sažeju
+<&clinker_brick_slab>Sej blok prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Klinkerove ceglene stupenišče
+Mur počrněly sažeju
+<&clinker_brick_stairs>Sej blok prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Klinkerova ceglena stěna
+Mur počrněly sažeju
+<&clinker_brick_wall>Sej blok prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Zamazany klinkerovy blok
+Mur počrněly sažeju
+<&clinker_brick_stained_block>Zamazany blok klinkerovyh cegl prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Zamazany klinkerovy platform
+Mur počrněly sažeju
+<&clinker_brick_stained_slab>Zamazany klinkerovy cegleny platform prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Zamazane klinkerove stupenišče
+Mur počrněly sažeju
+<&clinker_brick_stained_stairs>Zamazane klinkerove ceglene stupenišče prinosjat mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Ozdobjena klinkerova cegla
+Mur počrněly sažeju
+<&clinker_brick_sastor_corner_block>Klinkerova cegla s ornamentom iz pěsočnogo kamnja prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Vglobljena klinkerova cegla
+Mur počrněly sažeju
+<&clinker_brick_recessed>Sej blok prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Klinkerove cegly so ščelinami
+Mur počrněly sažeju
+<&clinker_brick_vertically_slit>Klinkerove cegly s vertikalnymi ščelinami prinosjat mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Vertikalny klinkerovy platform
+Mur počrněly sažeju
+<&clinker_brick_vertical_slab_structured>Strukturny vertikalny klinkerovy platform prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Polplatform iz klinkerovyh cegl
+Mur počrněly sažeju
+<&halfslab_clinker_brick>Sej blok prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>
+<np>
+Blok šlakovyh cegl
+Plotny fabričny mur
+<&slag_brick_block>Sej blok dodavaje plotny sivo-koričnevy mur dlja fundamentov, podpornyh stěn i staryh rabotnyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh fundamentov, podpornyh stěn i nečistyh fabričnyh podlog.<br>
+<np>
+Šlakovy cegleny platform
+Plotny fabričny mur
+<&slag_brick_slab>Sej blok dodavaje plotny sivo-koričnevy mur dlja fundamentov, podpornyh stěn i staryh rabotnyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh fundamentov, podpornyh stěn i nečistyh fabričnyh podlog.<br>
+<np>
+Šlakove ceglene stupenišče
+Plotny fabričny mur
+<&slag_brick_stairs>Sej blok dodavaje plotny sivo-koričnevy mur dlja fundamentov, podpornyh stěn i staryh rabotnyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh fundamentov, podpornyh stěn i nečistyh fabričnyh podlog.<br>
+<np>
+Šlakova ceglena stěna
+Plotny fabričny mur
+<&slag_brick_wall>Sej blok dodavaje plotny sivo-koričnevy mur dlja fundamentov, podpornyh stěn i staryh rabotnyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh fundamentov, podpornyh stěn i nečistyh fabričnyh podlog.<br>
+<np>
+Blok armovanogo betona
+Ojačeny beton
+<&rebar_concrete>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Platform iz armovanogo betona
+Ojačeny beton
+<&rebar_concrete_slab>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Stupenišče iz armovanogo betona
+Ojačeny beton
+<&rebar_concrete_stairs>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Stěna iz armovanogo betona
+Ojačeny beton
+<&rebar_concrete_wall>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Sloj armovanogo betona
+Ojačeny beton
+<&halfslab_rebar_concrete>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Pločica iz armovanogo betona
+Ojačeny beton
+<&rebar_concrete_tile>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Pločicovy platform iz armovanogo betona
+Ojačeny beton
+<&rebar_concrete_tile_slab>Sej blok jest utvrdena betonna čest dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Pločica iz armovanogo betona
+Ojačeny beton
+<&rebar_concrete_tile_stairs>Pločicove stupenišče iz armovanogo betona sut utvrdene betonne česti dlja mašinnyh osnov, zaščitnyh stěn protiv eksplozij i podlog nakladnyh měst.<br>
+<br>
+Upotrěbjenje: Upotrěbi go pod mašinami, vzdolž obslužnyh koridorov ili kde-nebud, kde budynok potrěbuje ojačenu osnovu.<br>
+<np>
+Blok bronovanogo stekla
+Zaščiščeny pogled
+<&panzerglass_block>Sej blok sohranjaje otvorjeny pogled, ale vsegda odgovarjaje ojačenoj fabričnoj konstrukciji.<br>
+<br>
+Upotrěbjenje: Upotrěbi go tam, kde igrači majut viděti mašiny črěz zaščiščenu prěgradu.<br>
+<np>
+Platform iz bronovanogo stekla
+Zaščiščeny pogled
+<&panzerglass_slab>Sej blok sohranjaje otvorjeny pogled, ale vsegda odgovarjaje ojačenoj fabričnoj konstrukciji.<br>
+<br>
+Upotrěbjenje: Upotrěbi go tam, kde igrači majut viděti mašiny črěz zaščiščenu prěgradu.<br>

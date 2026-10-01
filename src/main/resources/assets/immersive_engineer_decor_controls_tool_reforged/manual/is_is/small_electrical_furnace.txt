@@ -1,0 +1,5 @@
+Rafmagnsofn
+Fyrirferðarlítil vinnslueining
+<&recipe>Rafmagnsofninn sinnir FE-knúinni bræðslu á litlu verkstæðisrými.<br>
+<br>
+Notkun: Gefðu honum FE og gilt bræðsluhráefni.<br>

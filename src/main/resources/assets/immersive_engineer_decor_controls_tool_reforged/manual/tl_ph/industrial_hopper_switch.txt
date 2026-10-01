@@ -1,0 +1,7 @@
+Pangharang ng Lukton
+Kontrol ng Redstone
+<&recipe>Nagbibigay ang maliit na kontrol ng malinaw na lugar ng paglipat ng redstone sa mga gusali ng pabrika.<br>
+<br>
+Paggamit: Iklik nang kanan upang buhayin o patayin ang inilalabas na signal na buong lakas para sa kalapit na sirkito.<br>
+<br>
+Tandaan: Naglalabas ng redstone na buong lakas habang nakabukas.

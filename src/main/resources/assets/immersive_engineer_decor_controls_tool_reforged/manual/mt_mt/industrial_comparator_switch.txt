@@ -1,0 +1,7 @@
+Swiċċ komparatur
+Sinjal imqabbad
+<&recipe>Swiċċ b'sensur kompatt jaqra l-blokka mmuntat fuqha u jibdel dak il-qari fi ħruġ sempliċi tal-pannell.<br>
+<br>
+Użu: immuntah fuq inventarji, tankijiet jew tagħmir tar-Redstone. Meta l-blokka mwaħħal magħha tirrapporta ħruġ ta' komparatur, kontenitur jew Redstone, l-iswiċċ joħroġ Redstone bis-saħħa kollha.<br>
+<br>
+Noti: użah biex tibdel livelli tal-ħażna jew wajers moħbija f'linji ċari ta' kontroll mixgħul/mitfi.

@@ -1,0 +1,789 @@
+Redstone-beheer
+Meters en seintoebehore
+Beheertoerusting verander versteekte redstone in leesbare fabriekspanele, sensors, aanwysers, skakelaars, alarms en gekoppelde seintoebehore.<br>
+<br>
+Gebruik hierdie bladsye wanneer jy bedienerstasies, seinborde, veiligheidstroombane en afstandbeheer bou.
+<np>
+Pylteiken
+Kortstondige puls
+<&arrow_target>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Deursensor
+Redstone-beheer
+<&door_sensor_switch>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Hysbakknoppie
+Redstone-beheer
+<&elevator_button>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Glasknoppie
+Redstone-beheer
+<&glass_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Glasknoppie
+Redstone-beheer
+<&glass_small_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Glasraakknoppie
+Redstone-beheer
+<&glass_touch_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Masjienknoppie
+Redstone-beheer
+<&industrial_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Knoppie
+Redstone-beheer
+<&industrial_double_pole_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Beskermde Masjienknoppie
+Redstone-beheer
+<&industrial_fenced_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Klopknoppie
+Redstone-beheer
+<&industrial_knock_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Ou Sierknoppie
+Redstone-beheer
+<&oldfancy_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Ou Sierknoppie
+Redstone-beheer
+<&oldfancy_small_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Ou Sierkettingknoppie
+Kortstondige puls
+<&oldfancy_spring_reset_chain>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Rustieke Knoppie
+Redstone-beheer
+<&rustic_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Rustieke Spykerknoppie
+Redstone-beheer
+<&rustic_nail_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Klein Rustieke Knoppie
+Redstone-beheer
+<&rustic_small_button>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Rustieke Kettingknoppie
+Kortstondige puls
+<&rustic_spring_reset_chain>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.
+<np>
+Glaskontakplaat
+Drukpuls
+<&glass_contact_mat>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Glasdeurkontak
+Drukpuls
+<&glass_door_contact_mat>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Kontakmat
+Drukpuls
+<&industrial_contact_mat>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Deurkontakmat
+Drukpuls
+<&industrial_door_contact_mat>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Deurvalverklikker
+Seinwaarneming
+<&industrial_fallthrough_detector>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Voetknoppie
+Redstone-beheer
+<&industrial_foot_button>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Industriële Impakgeaktiveerde Deur
+Drukpuls
+<&industrial_high_sensitive_trapdoor>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Impaksensitiewe Kontakmat
+Drukpuls
+<&industrial_shock_sensitive_contact_mat>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Impakgeaktiveerde Valdeur
+Drukpuls
+<&industrial_shock_sensitive_trapdoor>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Rooi Seinblom
+Drukpuls
+<&red_power_plant>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Rustieke Drukplaat
+Drukpuls
+<&rustic_contact_plate>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Rustieke Deurdruk
+Drukpuls
+<&rustic_door_contact_plate>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Rustieke Valverklikker
+Seinwaarneming
+<&rustic_fallthrough_detector>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Rustieke Impakgeaktiveerde Deur
+Drukpuls
+<&rustic_high_sensitive_trapdoor>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Rustieke Impaksensitiewe Plaat
+Drukpuls
+<&rustic_shock_sensitive_plate>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Rustieke Impakgeaktiveerde Deur
+Drukpuls
+<&rustic_shock_sensitive_trapdoor>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Geel Seinblom
+Drukpuls
+<&yellow_power_plant>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.
+<np>
+Glasdagtydklok
+Dagligsein
+<&glass_day_timer>’n Tydskakelaar volg die daggedeelte van die wêreldsiklus.<br>
+<br>
+Gebruik: gebruik dit vir werflampe, luike en fabrieksbeheer wat net bedags moet werk.<br>
+<br>
+Nota: vereis ’n dimensie met luglig.
+<np>
+Glasentiteitsverklikker
+Seinwaarneming
+<&glass_entity_detector>’n Entiteitsverklikker hou nabygeleë beweging dop sonder ’n sigbare vloerplaat.<br>
+<br>
+Gebruik: verbind dit met deure, lampe, alarms of masjienvergrendelings.<br>
+<br>
+Nota: ondersoek ’n klein gebied rondom die blok.
+<np>
+Glasintervalsein
+Tydpuls
+<&glass_interval_timer>’n Kompakte tydskakelaar verskaf ’n geskeduleerde redstone-puls.<br>
+<br>
+Gebruik: gebruik dit waar ’n klein meganisme periodieke of vertraagde beheer nodig het.<br>
+<br>
+Nota: gebruik geskeduleerde redstone-pulse.
+<np>
+Glaslynverklikker
+Seinwaarneming
+<&glass_linear_entity_detector>’n Entiteitsverklikker hou nabygeleë beweging dop sonder ’n sigbare vloerplaat.<br>
+<br>
+Gebruik: verbind dit met deure, lampe, alarms of masjienvergrendelings.<br>
+<br>
+Nota: ondersoek ’n klein gebied rondom die blok.
+<np>
+Blokverklikker
+Seinwaarneming
+<&industrial_block_detector>’n Blokverklikker bepaal of die ruimte voor dit beset is.<br>
+<br>
+Gebruik: rig dit na die masjienvlak, buffer of bewaakte ruimte wat jy wil dophou.<br>
+<br>
+Nota: gee krag wanneer die blok voor dit nie lug is nie.
+<np>
+Dagtydklok
+Dagligsein
+<&industrial_day_timer>’n Tydskakelaar volg die daggedeelte van die wêreldsiklus.<br>
+<br>
+Gebruik: gebruik dit vir werflampe, luike en fabrieksbeheer wat net bedags moet werk.<br>
+<br>
+Nota: vereis ’n dimensie met luglig.
+<np>
+Entiteitsverklikker
+Seinwaarneming
+<&industrial_entity_detector>’n Entiteitsverklikker hou nabygeleë beweging dop sonder ’n sigbare vloerplaat.<br>
+<br>
+Gebruik: verbind dit met deure, lampe, alarms of masjienvergrendelings.<br>
+<br>
+Nota: ondersoek ’n klein gebied rondom die blok.
+<np>
+Intervaltydskakelaar
+Tydpuls
+<&industrial_interval_timer>’n Kompakte tydskakelaar verskaf ’n geskeduleerde redstone-puls.<br>
+<br>
+Gebruik: gebruik dit waar ’n klein meganisme periodieke of vertraagde beheer nodig het.<br>
+<br>
+Nota: gebruik geskeduleerde redstone-pulse.
+<np>
+Ligsensor
+Seinwaarneming
+<&industrial_light_sensor>’n Ligsensor omskep plaaslike helderheid in redstone-beheer.<br>
+<br>
+Gebruik: gebruik dit vir outomatiese lampe, luike en sigbaarheidstroombane.<br>
+<br>
+Nota: gee krag wanneer die rou helderheid 8 of hoër is.
+<np>
+Donderstormverklikker
+Seinwaarneming
+<&industrial_lightning_sensor>’n Donderstormsensorskakelaar gee waarskuwings wanneer dit donder.<br>
+<br>
+Gebruik: plaas dit onder die oop lug en verbind dit met lampe of alarms.<br>
+<br>
+Nota: vereis donderweer en toegang tot die lug.
+<np>
+Lynentiteitsverklikker
+Seinwaarneming
+<&industrial_linear_entity_detector>’n Entiteitsverklikker hou nabygeleë beweging dop sonder ’n sigbare vloerplaat.<br>
+<br>
+Gebruik: verbind dit met deure, lampe, alarms of masjienvergrendelings.<br>
+<br>
+Nota: ondersoek ’n klein gebied rondom die blok.
+<np>
+Reënsensor
+Seinwaarneming
+<&industrial_rain_sensor>’n Weersensor omskep reënval op sy plek in redstone.<br>
+<br>
+Gebruik: monteer dit waar die blok bo dit reën kan ontvang.<br>
+<br>
+Nota: gaan reën bo die sensor na.
+<np>
+Bistabiele Glasskakelaar
+Redstone-beheer
+<&glass_rotary_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Bistabiele Glasraakkontak
+Redstone-beheer
+<&glass_touch_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Oranje Sensitiewe Glas
+Seinglas
+<&orange_sensitiveglass>’n Glasblok wat op redstone reageer behou siglyne terwyl dit die seintoestand wys.<br>
+<br>
+Gebruik: gebruik dit in beheerkamervensters, verligte panele en beskermde fabrieksglas.<br>
+<br>
+Nota: verander toestand weens nabygeleë redstone-krag.
+<np>
+Liggewende Sensitiewe Glas
+Seinglas
+<&sensitive_glass_block>’n Glasblok wat op redstone reageer behou siglyne terwyl dit die seintoestand wys.<br>
+<br>
+Gebruik: gebruik dit in beheerkamervensters, verligte panele en beskermde fabrieksglas.<br>
+<br>
+Nota: verander toestand weens nabygeleë redstone-krag.
+<np>
+Gekleurde Sensitiewe Glas
+Seinglas
+<&stained_sensitiveglass>’n Glasblok wat op redstone reageer behou siglyne terwyl dit die seintoestand wys.<br>
+<br>
+Gebruik: gebruik dit in beheerkamervensters, verligte panele en beskermde fabrieksglas.<br>
+<br>
+Nota: verander toestand weens nabygeleë redstone-krag.
+<np>
+Glasstaafmeter
+Seinmeter
+<&glass_vertical_bar_gauge>’n Kompakte beheerkamermeter wys redstone-sterkte as ’n duidelike paneellesing.<br>
+<br>
+Gebruik: monteer dit waar aangrensende redstone-krag met een oogopslag nagegaan kan word.<br>
+<br>
+Nota: lees nabygeleë redstone-sterkte van 0 tot 15.
+<np>
+Analoë Meter
+Seinmeter
+<&industrial_analog_angular_gauge>’n Kompakte beheerkamermeter wys redstone-sterkte as ’n duidelike paneellesing.<br>
+<br>
+Gebruik: monteer dit waar aangrensende redstone-krag met een oogopslag nagegaan kan word.<br>
+<br>
+Nota: lees nabygeleë redstone-sterkte van 0 tot 15.
+<np>
+Voltmetermeter
+Seinmeter
+<&industrial_analog_horizontal_gauge>’n Kompakte beheerkamermeter wys redstone-sterkte as ’n duidelike paneellesing.<br>
+<br>
+Gebruik: monteer dit waar aangrensende redstone-krag met een oogopslag nagegaan kan word.<br>
+<br>
+Nota: lees nabygeleë redstone-sterkte van 0 tot 15.
+<np>
+Digitale Meter
+Leesbare seinsterkte
+<&industrial_small_digital_gauge>’n Kompakte beheerkamermeter wys redstone-sterkte as ’n duidelike paneellesing.<br>
+<br>
+Gebruik: monteer dit waar aangrensende redstone-krag met een oogopslag nagegaan kan word.<br>
+<br>
+Nota: lees nabygeleë redstone-sterkte van 0 tot 15.
+<np>
+Glasbuismeter
+Seinmeter
+<&industrial_tube_gauge>’n Kompakte beheerkamermeter wys redstone-sterkte as ’n duidelike paneellesing.<br>
+<br>
+Gebruik: monteer dit waar aangrensende redstone-krag met een oogopslag nagegaan kan word.<br>
+<br>
+Nota: lees nabygeleë redstone-sterkte van 0 tot 15.
+<np>
+Analoë Staafmeter
+Seinmeter
+<&industrial_vertical_bar_gauge>’n Kompakte beheerkamermeter wys redstone-sterkte as ’n duidelike paneellesing.<br>
+<br>
+Gebruik: monteer dit waar aangrensende redstone-krag met een oogopslag nagegaan kan word.<br>
+<br>
+Nota: lees nabygeleë redstone-sterkte van 0 tot 15.
+<np>
+Alarmlamp
+Seinterugvoer
+<&industrial_alarm_lamp>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Alarmsirene
+Seinterugvoer
+<&industrial_alarm_siren>Die Alarmsirene is 'n rooisteen-aanwyser wat op 'n vlak aangebring word. Sy aangedrewe toestand verander volgens die sein van die blok waaraan dit geheg is.<br>
+<br>
+Gebruik: Heg dit aan 'n soliede vlak en dryf dit aan om deure, masjiene, alarms of panele te monitor.<br>
+<br>
+Notas: Die sirene verfris een keer per sekonde terwyl die aangehegte sein aktief bly.
+<np>
+Flikkerende LED
+Seinterugvoer
+<&industrial_blinking_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Groen Flikkerende LED
+Seinterugvoer
+<&industrial_green_blinking_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Groen LED
+Seinterugvoer
+<&industrial_green_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Rooi LED
+Seinterugvoer
+<&industrial_red_blinking_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Rooi LED
+Seinterugvoer
+<&industrial_red_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Wit Flikkerende LED
+Seinterugvoer
+<&industrial_white_blinking_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Wit LED
+Seinterugvoer
+<&industrial_white_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Geel Flikkerende LED
+Seinterugvoer
+<&industrial_yellow_blinking_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Geel LED
+Seinterugvoer
+<&industrial_yellow_led>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Rustieke Semafoor
+Seinterugvoer
+<&rustic_semaphore>’n Kompakte aanwyser verander versteekte redstone in sigbare fabrieksterugvoer.<br>
+<br>
+Gebruik: bedraad dit langs die sein om deure, masjiene, alarms of panele dop te hou.<br>
+<br>
+Nota: verander toestand wanneer nabygeleë redstone-krag teenwoordig is.
+<np>
+Vergelykerskakelaar
+Gekoppelde sein
+<&industrial_comparator_switch>’n Kompakte sensorskakelaar lees die blok waarop dit gemonteer is en verander die lesing in ’n eenvoudige paneeluitset.<br>
+<br>
+Gebruik: monteer dit op voorrade, tenks of redstone-toerusting. Wanneer die monteerblok vergelyker-, houer- of redstone-uitset gee, stuur die skakelaar redstone op volle sterkte uit.<br>
+<br>
+Nota: gebruik dit om bergingsvlakke of versteekte bedrading in duidelike aan-/afbeheerlyne te verander.
+<np>
+Domper
+Veranderlike sein
+<&industrial_dimmer>’n Draaiknop stel redstone-sterkte vanaf ’n kompakte paneelvlak in.<br>
+<br>
+Gebruik: regsklik dit om die uitset stapsgewys te verhoog en ná volle sterkte weer na nul terug te keer.<br>
+<br>
+Nota: gee ’n sterkte van 0 tot 15 uit.
+<np>
+Noodstopknoppie
+Redstone-beheer
+<&industrial_estop_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Geutbakblokkeerder
+Redstone-beheer
+<&industrial_hopper_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Klopskakelaar
+Redstone-beheer
+<&industrial_knock_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Hefboom
+Redstone-beheer
+<&industrial_lever>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Tweeknop-masjienskakelaar
+Redstone-beheer
+<&industrial_machine_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Trekhandvatsel
+Redstone-beheer
+<&industrial_pull_handle>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Draaihefboom
+Redstone-beheer
+<&industrial_rotary_lever>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Draaibare Masjienskakelaar
+Redstone-beheer
+<&industrial_rotary_machine_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Kontakhefboom
+Redstone-beheer
+<&industrial_small_lever>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Skakelaar
+Redstone-beheer
+<&industrialswitch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Ligskakelaar
+Redstone-beheer
+<&light_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Klepskakelaar
+Redstone-beheer
+<&valve_wheel_switch>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Omhulde Pulsontvanger
+Gekoppelde beheer
+<&industrial_switchlink_cased_pulse_receiver>’n Omhulde gekoppelde pulsontvanger gee afgeleë panele ’n kort redstone-sneller.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Regsklik dit of aktiveer die gekoppelde pêrel om ’n kort puls uit te stuur.<br>
+<br>
+Nota: die puls stel homself ná sy geskeduleerde tydsduur terug.
+<np>
+Omhulde Koppelontvanger
+Gekoppelde beheer
+<&industrial_switchlink_cased_receiver>’n Omhulde gekoppelde ontvanger gee afgeleë panele ’n stewige redstone-teiken.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Regsklik die ontvanger direk om dit met die hand aan of af te skakel.<br>
+<br>
+Nota: ’n gekoppelde pêrel skakel hierdie ontvanger aan of af wanneer dit tydens sluip gebruik word.
+<np>
+Pulskoppelontvanger
+Gekoppelde beheer
+<&industrial_switchlink_pulse_receiver>’n Gekoppelde pulsontvanger gee afgeleë panele ’n kort redstone-sneller.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Regsklik dit of aktiveer die gekoppelde pêrel om ’n kort puls uit te stuur.<br>
+<br>
+Nota: die puls stel homself ná sy geskeduleerde tydsduur terug.
+<np>
+Pulskoppelrelais
+Gekoppelde beheer
+<&industrial_switchlink_pulse_relay>’n Toebehoor met ’n relaisvoorkoms gee panele ’n kompakte plaaslike skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel. Gebruik ontvangerblokke wanneer jy aktivering deur gekoppelde pêrels nodig het.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Skakelaarkoppelontvanger
+Gekoppelde beheer
+<&industrial_switchlink_receiver>’n Gekoppelde ontvanger gee afgeleë panele ’n redstone-teiken op volle sterkte.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Regsklik die ontvanger direk om dit met die hand aan of af te skakel.<br>
+<br>
+Nota: ’n gekoppelde pêrel skakel hierdie ontvanger aan of af wanneer dit tydens sluip gebruik word.
+<np>
+Analoë Koppelontvanger
+Gekoppelde beheer
+<&industrial_switchlink_receiver_analog>’n Gekoppelde ontvanger gee beheerpanele ’n sigbare afgeleë teiken.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel daarop om ’n gekoppelde pêrel te maak. Gebruik die pêrel terwyl jy sluip om die ontvanger op afstand te aktiveer.<br>
+<br>
+Nota: hierdie ontvanger stuur ’n volle redstone-sein uit wanneer dit geaktiveer word.
+<np>
+Skakelaarkoppelrelais
+Gekoppelde beheer
+<&industrial_switchlink_relay>’n Toebehoor met ’n relaisvoorkoms gee panele ’n kompakte plaaslike skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel. Gebruik ontvangerblokke wanneer jy aktivering deur gekoppelde pêrels nodig het.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Analoë Koppelrelais
+Gekoppelde beheer
+<&industrial_switchlink_relay_analog>’n Toebehoor met ’n relaisvoorkoms gee panele ’n kompakte plaaslike skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel. Gebruik ontvangerblokke wanneer jy aktivering deur gekoppelde pêrels nodig het.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Skakelaarkoppelpêrel
+Gekoppelde beheer
+<&switchlink_pearl>’n Gekoppelde pêrel stoor ’n ontvangerteiken vir afgeleë fabrieksbeheer.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel op ’n skakelaarkoppelontvanger om een te maak. Gebruik die gekoppelde pêrel terwyl jy sluip om die gestoorde ontvanger te aktiveer.<br>
+<br>
+Nota: die teiken moet gelaai, in dieselfde dimensie en binne bereik wees.
+<np>
+Ou Sierhefboom
+Redstone-beheer
+<&oldfancy_bistableswitch1>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Ou Sierdraaihefboom
+Redstone-beheer
+<&oldfancy_bistableswitch2>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Rustieke Draaihefboom
+Redstone-beheer
+<&rustic_angular_lever>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Rustieke Hefboom
+Redstone-beheer
+<&rustic_lever>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Rustieke Spykerhefboom
+Redstone-beheer
+<&rustic_nail_lever>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.
+<np>
+Rustieke Tweeskarnierhefboom
+Redstone-beheer
+<&rustic_two_hinge_lever>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.

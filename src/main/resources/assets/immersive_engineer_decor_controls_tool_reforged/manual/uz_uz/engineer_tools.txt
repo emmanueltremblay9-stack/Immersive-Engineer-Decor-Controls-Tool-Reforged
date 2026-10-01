@@ -1,0 +1,93 @@
+Muhandis asboblari
+Ko'chma ustaxona jihozlari
+Muhandis asboblari to'plami bezak va boshqaruv bloklari yoritilgan shu qo'llanmaga qo'l jihozlari, kon belgilari, favqulodda sarflanadigan vositalar, dala ovqati va kichik material ishlov yordamchilarini qo'shadi.<br>
+<br>
+Bu asboblar to'liq jihozlangan ustaxonadan olisda ishlash uchun: yo'lni belgilang, zaxira olib yuring, xatolardan tiklaning va kichik ishlov vazifalarini joyida tugating.
+<np>
+REDIA asbobi
+Olmos qoplangan yordamchi asbob
+<&redia_tool>REDIA asbobi yerga tez ishlov berish uchun chidamli dala vositasidir. Ishlov beriladigan tuproqni haydalgan yerga aylantirishda foydalaning.<br>
+<br>
+Mash'al olib yurganingizda mustahkam yuzada ishlatib, REDIAni eskirtirmasdan inventaringizdan mash'al belgisi qo'ying. Yerga ishlov berish, qirqish, bolta ishlari va daraxt qulatish chidamlilik sarflaydi.
+<np>
+Ruda maydalash bolg'asi
+Qo'lda maydalash asbobi
+<&crushing_hammer>Ruda maydalash bolgasi temir va oltinni erta qayta ishlash uchun qol asbobidir.<br>
+<br>
+Immersive Engineering changi uchun xom temir, xom oltin, temir yoki oltin rudasi va deepslate turlari bilan ishlating. Bolga chidamlilik yoqotadi, singuncha torga qaytadi, qazishda yeyiladi va nishonni orqaga suradi.
+<np>
+Iz topgich
+Saqlangan joy belgisi
+<&tracker>Kuzatuvchi blok joyini buyum ichida saqlaydi.<br>
+<br>
+Olcham va koordinatani saqlash uchun blokni bosing. Maslahat joyni korsatadi. Nishonni ochirish uchun egilib ishlating.<br>
+<br>
+Mashina, tunnel, masofaviy boshqaruv yoki tugamagan qurilishni belgilang.
+<np>
+Ariadna ko'miri
+Kon yo'li belgisi
+<&ariadne_coal>Ariadna ko'miri mustahkam kon yuzalariga tez qora o'q yo'l belgilari qo'yadi. Navbatdagi burilish, chiqish yoki tarmoqni belgilash uchun qattiq yuzada ishlating; belgi bosilgan yuzada diagonal ham qo'shilgan sakkiz yo'nalishni qo'llaydi.<br>
+<br>
+Ariadna ko'miri qayta ishlatiladigan, 100 marta xizmat qiladigan belgilash asbobi. Har bir muvaffaqiyatli belgi bitta chidamlilik sarflaydi. Mos bo'lmagan yuzani buyumni eskirtirish o'rniga rad etadi.
+<np>
+Avtomatik stimulyator to'plami
+Favqulodda inyektor
+<&stimpack>Avtomatik stim toplami favqulodda tibbiy buyumdir.<br>
+<br>
+Davolanish, qisqa himoya va tezlik uchun qolda ishlating. Inventarda sogliq past bolsa avtomatik ishga tushib, keyin soviydi. Xavfli joyda tayyor tuting.
+<np>
+Uyqu qopi
+Ko'chma dam olish to'plami
+<&sleeping_bag>Uyqu qopi yotoqdan uzoqda dam olish uchun ob-havoga chidamli jihozdir.<br>
+<br>
+Qayta tugilish joyini ozgartirmay ertalabgacha dam olish uchun Overworldda tunda ishlating.<br>
+<br>
+Kunduzi, yaqin maxluqlar yoki mos bolmagan olchamda ishlamaydi. Har dam olish uni yeydiradi.
+<np>
+Material saqlash qutisi
+Qurilish ta'minoti qutisi
+<&material_box>Material qutisi bitta oddiy, ozgarmagan va taxlanadigan qurilish materialining katta zaxirasini tashiydi.<br>
+<br>
+Qutini asosiy qolda, materialni ikkinchi qolda tutib yuklang; ikkinchi qol bosh bolsa bir top oling.<br>
+<br>
+Bir turdan 512 buyum saqlaydi, boshqa quti, taxlanmaydigan uskuna va ozgartirilgan toplarni qabul qilmaydi, tarkibni maslahatda korsatadi.
+<np>
+Sho'ng'ish havo kapsulasi
+Favqulodda havo zaxirasi
+<&diving_capsule>Shongish havo kapsulasi suv osti ishlari uchun favqulodda havo zaxirasidir.<br>
+<br>
+Havoni tiklash uchun qolda ishlating. Inventarda havo tugayotganda avtomatik ishga tushib, keyin soviydi. Suv bosgan kon va suv osti quvurlariga olib boring.
+<np>
+Musli batonchasi pressi
+Ovqat pressi
+<&musli_bar_press>Muslee pressi oddiy ovqatni ixcham dala ozigiga aylantiradi.<br>
+<br>
+Non, olma va bugdoy, qovun, qovoq, lavlagi yoki sanoat kanopi urugini olib pressni ishlating. Har biridan bittadan sarflaydi, joyni tekshiradi, tortta baton qiladi va shikastlanadi.<br>
+<br>
+Narsa yoki joy yetishmasa, hech narsa sarflanmaydi.
+<np>
+Aralash musli quvvat batonchasi
+Tez ustaxona yeguligi
+<&musli_bar>Muslee Melange batonchasi non, urug va mevadan tayyorlangan ixcham ovqatdir.<br>
+<br>
+Boshqaruv, quvur, platforma yoki uzun mashina qatorlarini ornatishda yeng.
+<np>
+Ong siqgich
+Tajriba kondensatori
+<&charged_lapis_squeezer>Ong siqgich inventaringizdagi bitta lojuvard va bitta tajriba darajasini zaryadlangan lojuvardga aylantiradi.<br>
+<br>
+Har bir muvaffaqiyatli aylantirish foydalanuvchiga og'riq yetkazadi, ochlikni kuchaytiruvchi toliqishni keltirib chiqaradi va qisqa vaqt ko'r qiladi. Lojuvard yoki tajriba bo'lmasa, yoxud foydalanuvchi o'limga juda yaqin bo'lsa, ishlashni rad etadi.
+<np>
+Zaryadlangan lojuvard
+Saqlangan tajriba
+<&charged_lapis>Zaryadlangan lojuvard bitta tajriba darajasini saqlaydi. Darajani tiklash, faol ta'sirlarni tozalash va ozgina sog'liq qaytarish uchun iste'mol qiling.<br>
+<br>
+Avval Ong siqgich yasang; zaryadlangan lojuvard lojuvard va tajriba mavjud bo'lganda shu asbobni ishlatib yaratiladi.
+<np>
+Yirik temir donachalari
+Qayta tiklangan yasash to'plamida ishlatiladigan muhandis asbobi materiali.
+<&iron_grit>Temir quymalarga eritish<br>mumkin, ammo murakkab<br>material ishloviga yaramaydi.
+<np>
+Yirik oltin donachalari
+Qayta tiklangan yasash to'plamida ishlatiladigan muhandis asbobi materiali.
+<&gold_grit>Oltin quymalarga eritish<br>mumkin, ammo murakkab<br>material ishloviga yaramaydi.

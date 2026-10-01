@@ -1,0 +1,7 @@
+Watcher of Storms
+Watching for Signals
+<&recipe>A storm watcher drives warnings whilst thunder prevails.<br>
+<br>
+Use: Set it beneath open sky and connect it to lamps or alarms.<br>
+<br>
+Note: Thunder and an open way to the sky are required.

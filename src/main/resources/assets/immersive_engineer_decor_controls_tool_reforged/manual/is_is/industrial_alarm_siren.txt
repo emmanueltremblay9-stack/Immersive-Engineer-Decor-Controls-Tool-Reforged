@@ -1,0 +1,7 @@
+Viðvörunarsírena
+Endurgjöf merkis
+<&recipe>Viðvörunarsírenan er redstone-vísir sem festist á hlið. Straumstaðan fylgir merkinu frá kubbnum sem hún er fest við.<br>
+<br>
+Notkun: Festu hana á trausta hlið og gefðu henni afl til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Sírenan endurnýjar hljóðið einu sinni á sekúndu meðan tengda merkið helst virkt.

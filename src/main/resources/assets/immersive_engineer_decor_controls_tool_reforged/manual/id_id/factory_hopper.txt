@@ -1,0 +1,5 @@
+Corong Pabrik
+Peralatan lantai bengkel
+<&recipe>Blok ini memindahkan tumpukan barang melalui selubung industri yang lebih ringkas.<br>
+<br>
+Penggunaan: arahkan ke jalur persediaan, lalu atur jangkauan, jumlah tumpukan, waktu, dan mode redstone melalui layarnya.<br>

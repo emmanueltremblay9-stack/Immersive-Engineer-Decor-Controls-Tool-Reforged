@@ -1,0 +1,5 @@
+Techo de tejas oscuras en forma de losa
+Elemento de tejado envejecido
+<&recipe>El techo de tejas oscuras en forma de losa fraccionada crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>

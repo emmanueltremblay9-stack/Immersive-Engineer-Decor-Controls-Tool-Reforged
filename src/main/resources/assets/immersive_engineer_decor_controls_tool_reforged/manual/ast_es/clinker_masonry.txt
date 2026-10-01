@@ -1,0 +1,161 @@
+Clínker y mampostería
+Envolventes de lladriyu y formigón
+El clínker, los lladriyos d’escoria, el formigón armao y el vidru blindao apurren superficies robustes pa sales calientes, talleres y zones de visión protexida.<br>
+<br>
+Usa les llábanes, pasales, llámines y murios del mesmu material pa rematar los bordes ensin romper la coherencia de los materiales de la fábrica.
+<np>
+Bloque de lladriyos de clínker
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_block>Esti bloque apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Llábana de lladriyos de clínker
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_slab>Esti bloque apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Pasales de lladriyos de clínker
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_stairs>Esti bloque apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Muriu de lladriyos de clínker
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_wall>Esti bloque apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Bloque de clínker manchao
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_stained_block>El bloque de lladriyos manchaos de clínker apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Llábana de clínker manchao
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_stained_slab>La llábana de lladriyos manchaos de clínker apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Pasales de clínker manchao
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_stained_stairs>Les pasales de lladriyos manchaos de clínker apurren lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Lladriyu de clínker ornamentáu
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_sastor_corner_block>El lladriyu de clínker ornamentáu con gres apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Lladriyu de clínker rebaxáu
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_recessed>Esti bloque apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Lladriyos de clínker con fendedures
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_vertically_slit>Los lladriyos de clínker con fendedures verticales apurren lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Llábana vertical de clínker
+Lladriyos escurecíos pol sarriu
+<&clinker_brick_vertical_slab_structured>La llábana vertical de clínker con relieve apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Media llábana de lladriyos de clínker
+Lladriyos escurecíos pol sarriu
+<&halfslab_clinker_brick>Esti bloque apurre lladriyos escurecíos pol sarriu a sales de fornos, bases de chimenees y parés de serviciu.<br>
+<br>
+Usu: úsalu como paré, remate o envolvente de zona caliente alredor de fornos y calderes.<br>
+<np>
+Bloque de lladriyos d’escoria
+Mampostería industrial compacta
+<&slag_brick_block>Esti bloque añade mampostería compacta de color marrón abuxao pa cimientos, murios de contención y talleres antiguos.<br>
+<br>
+Usu: úsalu en cimientos antiguos, murios de contención y suelos de fábrica ensuciaos.<br>
+<np>
+Llábana de lladriyos d’escoria
+Mampostería industrial compacta
+<&slag_brick_slab>Esti bloque añade mampostería compacta de color marrón abuxao pa cimientos, murios de contención y talleres antiguos.<br>
+<br>
+Usu: úsalu en cimientos antiguos, murios de contención y suelos de fábrica ensuciaos.<br>
+<np>
+Pasales de lladriyos d’escoria
+Mampostería industrial compacta
+<&slag_brick_stairs>Esti bloque añade mampostería compacta de color marrón abuxao pa cimientos, murios de contención y talleres antiguos.<br>
+<br>
+Usu: úsalu en cimientos antiguos, murios de contención y suelos de fábrica ensuciaos.<br>
+<np>
+Muriu de lladriyos d’escoria
+Mampostería industrial compacta
+<&slag_brick_wall>Esti bloque añade mampostería compacta de color marrón abuxao pa cimientos, murios de contención y talleres antiguos.<br>
+<br>
+Usu: úsalu en cimientos antiguos, murios de contención y suelos de fábrica ensuciaos.<br>
+<np>
+Bloque de formigón armao
+Formigón reforzao
+<&rebar_concrete>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Llábana de formigón armao
+Formigón reforzao
+<&rebar_concrete_slab>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Pasales de formigón armao
+Formigón reforzao
+<&rebar_concrete_stairs>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Muriu de formigón armao
+Formigón reforzao
+<&rebar_concrete_wall>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Llámina de formigón armao
+Formigón reforzao
+<&halfslab_rebar_concrete>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Baldosa de formigón armao
+Formigón reforzao
+<&rebar_concrete_tile>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Llábana de baldoses de formigón armao
+Formigón reforzao
+<&rebar_concrete_tile_slab>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Baldosa de formigón armao
+Formigón reforzao
+<&rebar_concrete_tile_stairs>Les pasales de baldoses de formigón armao son pieces de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>
+<np>
+Bloque de vidru blindao
+Vista protexida
+<&panzerglass_block>Esti bloque permite ver al traviés y combina cola construcción industrial reforzada.<br>
+<br>
+Usu: úsalu onde los xugadores deban ver la maquinaria al traviés d’una barrera protexida.<br>
+<np>
+Llábana de vidru blindao
+Vista protexida
+<&panzerglass_slab>Esti bloque permite ver al traviés y combina cola construcción industrial reforzada.<br>
+<br>
+Usu: úsalu onde los xugadores deban ver la maquinaria al traviés d’una barrera protexida.<br>

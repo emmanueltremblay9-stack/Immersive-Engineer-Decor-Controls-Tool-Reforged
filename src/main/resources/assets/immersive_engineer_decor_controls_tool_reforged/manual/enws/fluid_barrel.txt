@@ -1,0 +1,5 @@
+Barrel for Liquids
+Fittings for Liquid Lines
+<&recipe>This compact fitting serves liquid lines for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Set it where pipes or buckets may reach the tank face.<br>

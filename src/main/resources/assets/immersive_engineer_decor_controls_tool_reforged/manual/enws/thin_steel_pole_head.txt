@@ -1,0 +1,5 @@
+Head of a Thin Pole
+Fitting for a Structural Frame
+<&recipe>The Head/Foot for a Straight Thin Steel Pole gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>

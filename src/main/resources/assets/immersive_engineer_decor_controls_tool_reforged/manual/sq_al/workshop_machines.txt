@@ -1,0 +1,107 @@
+Makineri punishteje
+Makineri dhe hyrje/dalje punishteje
+Makineritë e punishtes mundësojnë punim kompakt, lëvizje objektesh, shkrirje, asgjësim, mbledhje dhe punë ndihmëse brenda hapësirës së një blloku.<br>
+<br>
+Hap faqet e mëposhtme për recetën, pamjen, përshkrimin dhe shënimet praktike të çdo makinerie.
+<np>
+Tavolinë çeliku
+Mobilie punishteje
+<&steel_table>Ky bllok është mobilie praktike punishteje për dhoma pune dhe kënde mirëmbajtjeje.<br>
+<br>
+Përdorimi: vendose pranë bankave të punës, arkave dhe makinerive kompakte.<br>
+<np>
+Tavolinë druri të trajtuar
+Mobilie punishteje
+<&treated_wood_table>Ky bllok është mobilie praktike punishteje për dhoma pune dhe kënde mirëmbajtjeje.<br>
+<br>
+Përdorimi: vendose pranë bankave të punës, arkave dhe makinerive kompakte.<br>
+<np>
+Stol druri të trajtuar
+Mobilie punishteje
+<&treated_wood_stool>Ky bllok është mobilie praktike punishteje për dhoma pune dhe kënde mirëmbajtjeje.<br>
+<br>
+Përdorimi: vendose pranë bankave të punës, arkave dhe makinerive kompakte.<br>
+<np>
+Tavolinë përpunimi metali
+Stacion pune për pllaka
+<&metal_crafting_table>Tavolina e përpunimit të metalit është stacion i përforcuar punishteje me vend çekiçi, rrjetë punimi 3x3 dhe vend të qartë daljeje.<br>
+<br>
+Përdorimi: përdore rrjetën për punim të zakonshëm. Për pllaka IE, vendos një Çekiç inxhinieri në vendin e veglës dhe materialin e pllakës në rrjetë përpara se të marrësh rezultatin. Zbukurimet e çelikut përdorin pllaka çeliku për shtylla, pasarela, dritare, dyer, parmakë dhe pjesë të tjera çeliku.<br>
+<np>
+Hinkë fabrike
+Pajisje ndihmëse punishteje
+<&factory_hopper>Ky bllok lëviz grumbuj objektesh përmes një kase industriale më kompakte.<br>
+<br>
+Përdorimi: drejtoje te linja e inventarëve, pastaj cakto rrezen, madhësinë e grumbullit, kohëzgjatjen dhe mënyrën e redstonit në ekran.<br>
+<np>
+Hedhës fabrike
+Pajisje ndihmëse punishteje
+<&factory_dropper>Ky bllok nxjerr objektet e ruajtura nga një faqe e drejtuar.<br>
+<br>
+Përdorimi: drejto faqen e përparme te pika e lëshimit, mbush vendet e brendshme dhe rregullo forcën, këndin, vonesën, logjikën e filtrit dhe mënyrën e redstonit në ekran.<br>
+<np>
+Vendosës blloqesh fabrike
+Pajisje ndihmëse punishteje
+<&factory_placer>Ky bllok vendos blloqe nga rezerva e brendshme kur aktivizohet.<br>
+<br>
+Përdorimi: drejto faqen e punës te hapësira e synuar dhe fut grumbuj që mund të vendosen.<br>
+<np>
+Thyes blloqesh
+Pajisje ndihmëse punishteje
+<&small_block_breaker>Thyesi i vogël i blloqeve është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: drejto faqen e punës te blloku që duhet hequr.<br>
+<np>
+Djegës mbeturinash
+Njësi kompakte përpunimi
+<&small_waste_incinerator>Djegësi i mbeturinave shkatërron objektet e padëshiruara duke zënë pak vend në punishte.<br>
+<br>
+Përdorimi: fut vetëm objekte të padëshiruara në radhën e tij.<br>
+<np>
+Furrë laboratori
+Njësi kompakte përpunimi
+<&small_lab_furnace>Furra e laboratorit kryen punë kompakte shkrirjeje me lëndë djegëse të ngurtë duke zënë pak vend në punishte.<br>
+<br>
+Përdorimi: përdor lëndë djegëse të ngurtë për seri të vogla shkrirjeje.<br>
+<np>
+Furrë elektrike
+Njësi kompakte përpunimi
+<&small_electrical_furnace>Furra elektrike kryen punë shkrirjeje me energji FE duke zënë pak vend në punishte.<br>
+<br>
+Përdorimi: furnizoje me FE dhe materiale të vlefshme për shkrirje.<br>
+<np>
+Shkrirës mineralesh
+Njësi kompakte përpunimi
+<&small_mineral_smelter>Shkrirësi i mineraleve kryen përpunim mineralesh me nxehtësi të lartë duke zënë pak vend në punishte.<br>
+<br>
+Përdorimi: furnizoje me blloqe mineralesh dhe energji për shkrirje me nxehtësi të lartë.<br>
+<np>
+Ngrirës uji
+Njësi kompakte përpunimi
+<&small_freezer>Ngrirësi i ujit kryen ftohje kompakte për sisteme lëngjesh me energji.<br>
+<br>
+Përdorimi: jep ujë dhe energji për prodhimin e akullit me faza.<br>
+<np>
+Lëng pasiv
+Pajisje linjash lëngjesh
+<&passive_fluid_accumulator>Grumbulluesi pasiv i lëngjeve është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: vendose pranë burimeve të përshtatshme të ujit dhe lër hapësirë për nxjerrjen e lëngut.<br>
+<np>
+Panel diellor
+Pajisje ndihmëse punishteje
+<&small_solar_panel>Paneli i vogël diellor është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: lëri qiell të hapur dhe lidh pajisje me konsum të ulët.<br>
+<np>
+Makinë mjeljeje
+Pajisje ndihmëse punishteje
+<&small_milking_machine>Makina e vogël e mjeljes është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: vendose pranë lopëve dhe siguro një mënyrë për të nxjerrë enët e qumështit ose lëngun.<br>
+<np>
+Prerës pemësh
+Pajisje ndihmëse punishteje
+<&small_tree_cutter>Prerësi i vogël i pemëve është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: drejtoje te pemët e rritura dhe mblidhi veçmas objektet e rëna.<br>

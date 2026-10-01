@@ -1,0 +1,7 @@
+Switch Link Catcher
+Linked switchgear
+<&recipe>A linked catcher gives faraway switchboards a full-strength redstone mark.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Right-click the catcher itself to turn it by hand.<br>
+<br>
+Mind: Sneak-using a linked mergroat turns this catcher on or off.

@@ -1,0 +1,7 @@
+Caissa de depaus de materials
+Caissa de provesiment de construccion
+<&recipe>La caissa de materials pòrta una granda resèrva dun sol material de bastiment simple, pas modificat e apilable.<br>
+<br>
+Tenètz la caissa en man principala e lo material dins lautra per lo cargar; amb lautra man voida tiratz una pila.<br>
+<br>
+Ten 512 objèctes dun tipe, refusa autras caissas, equipament non apilable e pilas modificadas e mòstra lo contengut dins linfobulla.

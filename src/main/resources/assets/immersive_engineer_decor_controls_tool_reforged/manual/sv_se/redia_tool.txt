@@ -1,0 +1,7 @@
+REDIA-verktyg
+Diamantklätt universalverktyg
+<&recipe>REDIA-verktyget är ett slitstarkt multiverktyg av diamantklass för fältarbete vid tillfälliga arbetsplatser, verkstäder och gruvmynningar.<br>
+<br>
+Användning: Använd det medan du har facklor med dig för att placera en fackla från förrådet utan att slita på REDIA. Använd det medan du smyger för att klippa växter eller växla mark mellan jord, åkerjord, grov jord och jordstig. Den ursprungliga yxfunktionen används som reserv från undersidan. Smyg medan du bryter stockar för att fälla sammanhängande trädblock.<br>
+<br>
+Reparera det med diamanter. Om du reparerar ett redan helt reparerat REDIA-verktyg återställs den ursprungliga utvecklingen av Effektivitet och Rikedom.

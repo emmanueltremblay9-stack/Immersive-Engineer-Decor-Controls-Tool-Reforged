@@ -1,0 +1,5 @@
+Merktur kassi
+Breytanleg birgðamerking
+<&recipe>Þessi merkti kassi er ætlaður til skýrrar flokkunar í birgðageymslu. Framplötunni má breyta eins og litlu verkstæðisskilti.<br>
+<br>
+Notkun: Hægrismelltu á merkiplötuna til að breyta kassamerkingunni. Hægrismelltu annars staðar á kassann til að opna geymslu fyrir tengihluti, varahluti og viðhaldsbirgðir.<br>

@@ -1,0 +1,5 @@
+Fourneau de fusion de minéraux
+Unité de traitement compacte
+<&recipe>Le fourneau de fusion de minéraux traite les minéraux à haute température dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : fournissez des blocs minéraux et de l'énergie pour les opérations de fusion à haute température.<br>

@@ -1,0 +1,5 @@
+Nestetynnyri
+Nestelinjan laitteet
+<&recipe>Tämä pieni nestelinjan osa sopii pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Aseta niin, että putket tai ämpärit yltävät säiliön pintaan.<br>

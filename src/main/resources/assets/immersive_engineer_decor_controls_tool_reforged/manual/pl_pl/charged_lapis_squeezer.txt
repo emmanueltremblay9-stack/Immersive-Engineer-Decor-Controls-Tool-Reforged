@@ -1,0 +1,7 @@
+Wyciskacz umysłu
+Kondensator doświadczenia
+<&recipe>Wyciskacz umysłu zamienia lazuryt i doświadczenie w naładowany lazuryt.<br>
+<br>
+Użycie: Miej przy sobie lazuryt i co najmniej jeden poziom doświadczenia, a następnie użyj narzędzia. Udane wyciśnięcie zużywa poziom i jedną sztukę lazurytu, rani użytkownika, zużywa trwałość wyciskacza i tworzy jeden naładowany lazuryt.<br>
+<br>
+Nie działa, gdy użytkownik nie ma lazurytu lub doświadczenia albo jest zbyt blisko śmierci.

@@ -1,0 +1,5 @@
+Blok pancierového skla
+Chránený výhľad
+<&recipe>Tento blok ponecháva voľný výhľad a zároveň ladí so zosilnenou továrenskou stavbou.<br>
+<br>
+Použitie: Použi ho tam, kde majú hráči vidieť stroje cez ochrannú bariéru.<br>

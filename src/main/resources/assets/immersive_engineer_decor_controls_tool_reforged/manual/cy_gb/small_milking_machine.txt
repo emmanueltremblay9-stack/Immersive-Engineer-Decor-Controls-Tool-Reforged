@@ -1,0 +1,5 @@
+Peiriant Godro
+Cyfleustod llawr gweithdy
+<&recipe>Bloc cyfleustod llawr gweithdy yw'r Peiriant Godro Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Gosodwch ef ger buchod a darparwch ffordd o dynnu cynwysyddion llaeth neu hylif.<br>

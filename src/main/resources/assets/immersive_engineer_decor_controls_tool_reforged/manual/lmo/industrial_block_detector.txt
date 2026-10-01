@@ -1,0 +1,7 @@
+Rilevador de bloch
+Rilevament di segnai
+<&recipe>Un rilevador de bloch el controla se el spazzi in denanz l’è ocupad.<br>
+<br>
+Pontel vers la faccia de la machina, la riserva o el spazzi cont protezzion che gh’è de besogn de tegnì d’oeucc.<br>
+<br>
+El dà energia quand che el bloch in denanz l’è minga aria.

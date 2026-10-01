@@ -1,0 +1,7 @@
+Įkrautas lazuritas
+Sukaupta patirtis
+<&recipe>Įkrautas lazuritas saugo vieną patirties lygį, sukauptą minčių spaustuvu.<br>
+<br>
+Naudojimas: suvartok, kad atgautum vieną lygį, pašalintum aktyvius poveikius ir atkurtum šiek tiek gyvybių.<br>
+<br>
+Recepto valdiklyje rodomas minčių spaustuvas, nes įkrautas lazuritas gaunamas naudojant šį įrankį, kai turi lazurito ir patirties.

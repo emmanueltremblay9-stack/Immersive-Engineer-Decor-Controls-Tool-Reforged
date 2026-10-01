@@ -1,0 +1,5 @@
+Rückschlagventil fia Flüssigkeitsrohre
+Bauteil fia Flüssigkeitsleitungen
+<&recipe>S'Rückschlagventil fia Flüssigkeitsrohre is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Richt des Ventil in de vorgesehene Fließrichtung aus.<br>

@@ -1,0 +1,5 @@
+Lej fabryczny
+Urządzenie warsztatowe
+<&recipe>Ten blok przenosi stosy przedmiotów przez zwartą przemysłową obudowę.<br>
+<br>
+Użycie: Skieruj go ku ciągowi ekwipunków, a następnie ustaw w oknie zasięg, wielkość stosu, czasy i tryb redstone.<br>

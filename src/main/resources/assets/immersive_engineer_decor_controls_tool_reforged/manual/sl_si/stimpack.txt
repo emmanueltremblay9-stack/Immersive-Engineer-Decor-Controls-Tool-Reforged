@@ -1,0 +1,5 @@
+Samodejni poživljajoči injektor
+Zasilni injektor
+<&recipe>Samodejni stimulans je zasilni medicinski predmet.<br>
+<br>
+Uporabite ga ročno za zdravljenje, kratko zaščito in pospešek. V inventarju se sproži samodejno pri nizkem zdravju in nato ohlaja. Imejte ga pri roki na nevarnih mestih.

@@ -1,0 +1,5 @@
+Gammel trætrappe
+Ældet værkstedstræ
+<&recipe>Den gamle industritrætrappe giver ældet værkstedstræ til gulve, trin, døre og varm indvendig udsmykning.<br>
+<br>
+Brug: Brug den til gamle værkstedsgulve, trapper, døre og udsmykning.<br>

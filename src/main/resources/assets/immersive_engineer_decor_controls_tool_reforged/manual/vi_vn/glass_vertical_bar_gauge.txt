@@ -1,0 +1,7 @@
+Đồng hồ thanh bằng kính
+Đồng hồ tín hiệu
+<&recipe>Đồng hồ phòng điều khiển gọn hiển thị cường độ redstone rõ ràng trên bảng.<br>
+<br>
+Cách dùng: Gắn ở nơi có thể nhìn nhanh để kiểm tra năng lượng redstone liền kề.<br>
+<br>
+Ghi chú: Đọc cường độ redstone gần đó từ 0 đến 15.

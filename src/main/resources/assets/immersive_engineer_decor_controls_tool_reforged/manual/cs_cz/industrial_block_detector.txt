@@ -1,0 +1,7 @@
+Detektor bloků
+Snímání signálu
+<&recipe>Detektor bloků zjišťuje, zda je prostor před ním obsazený.<br>
+<br>
+Použití: Namiř jej na sledovanou stranu stroje, zásobník nebo střežený prostor.<br>
+<br>
+Poznámky: Vysílá signál, pokud před ním není vzduch.

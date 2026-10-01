@@ -1,0 +1,5 @@
+Avfallsförbrännare
+Kompakt bearbetningsenhet
+<&recipe>Avfallsförbrännaren förstör oönskade föremål på liten verkstadsyta.<br>
+<br>
+Användning: Mata bara in oönskade föremål i dess kö.<br>

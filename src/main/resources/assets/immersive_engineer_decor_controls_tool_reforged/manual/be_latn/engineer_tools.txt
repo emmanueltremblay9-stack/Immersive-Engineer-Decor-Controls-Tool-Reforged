@@ -1,0 +1,99 @@
+Inžynierskija instrumienty
+Pieranosnaje abstalavannie majsterni
+Nabor inžynierskich instrumientaŭ dadaje ručnoje abstalavannie, šachtnyja markiery, avaryjnyja raschodnyja srodki, palavuju ježu i małyja pryłady dla apracoŭki materyjałaŭ u toj ža daviednik, jaki apisvaje dekaratyŭnyja błoki i elemienty kiravannia.<br>
+<br>
+Hetyja instrumienty pryznačany dla pracy ŭdalečyni ad całkam abstalavanaj majsterni: paznačaj maršrut, nasi prypasy, vypraŭlaj nastupstvy pamyłak i vykonvaj drobnuju pierapracoŭku na miescy.
+<np>
+Instrumient REDIA
+Univiersalny instrumient z dyjamientavym pakrycciom
+<&redia_tool>Instrumient REDIA — tryvały palavy pamočnik dla chutkaj apracoŭki ziamli. Skarystaj jaho na prydatnaj hlebie, kab stvaryć rallu.<br>
+<br>
+Skarystaj jaho na tryvałaj hrani, majučy pry sabie fakieły, kab pastavić fakieł-markier z ryštunku biez znosu REDIA. Apracoŭka ziamli, stryžka, praca siakieraj i vałka dreŭ raschodujuć tryvałasć.
+<np>
+Molat dlja drabnjennja rudy
+Ručnaja prylada
+<&crushing_hammer>Molat dlja drabnjennja rudy — ručnaja prylada rannjaj apracoŭki žaljeza i zolata.<br>
+<br>
+Vykarystannje: Spalučajcje z syrym žaljezam, syrym zolatam, žaljeznaj rudaj, hlybinnaslancavaj žaljeznaj rudaj, zalatoj rudaj abo hlybinnaslancavaj zalatoj rudaj, kab atrymac žaljezny abo zalaty pyl Immersive Engineering. Molat hubljaje tryvalasc i vjartajecca ŭ sjetku, pakul nje zlamajecca.<br>
+<br>
+Jon taksama znošvajecca pry zdabyčy i moža adkidvac mety ŭ blizkim bai.
+<np>
+Trekjer
+Markjer zachavanaj pazicyi
+<&tracker>Trekjer zachoŭvaje pazicyju bloka njepasredna ŭ pradmjecje.<br>
+<br>
+Vykarystannje: Nacisnicje blok, kab zachavac vymjarennje i kaardynaty. Padkazka pakazvaje pazicyju. Vykarystoŭvajcje ŭprysjadki, kab ačyscic metu.<br>
+<br>
+Paznačajcje mašyny, razhalinavanni tuneljaŭ, addaljenyja eljemjenty kiravannja abo njezavjeršanyja budoŭli.
+<np>
+Vuhal Aryjadny
+Markier šachtnaha maršrutu
+<&ariadne_coal>Vuhal Aryjadny chutka stavić čornyja strełki maršrutu na tryvałych pavierchniach šachty. Skarystaj jaho na cviordaj hrani, kab paznačyć nastupny pavarot, vychad abo razhalinavannie; markier padtrymlivaje vosiem kirunkaŭ pavodle pstryčki na hrani, u tym liku dyjahanali.<br>
+<br>
+Vuhal Aryjadny — šmatrazovy instrumient dla markiroŭki na 100 vykarystanniaŭ. Kožnaje paspiachovaje ŭstalavannie markiera raschoduje adzin punkt tryvałasci. Jon adchilaje nieprydatnyja hrani zamiest taho, kab znošvać pradmiet.
+<np>
+Aŭtastympak
+Avaryjny in'jektar
+<&stimpack>Aŭtastympak — avaryjny pradmjet dlja njebjaspječnych ramontnych rabot.<br>
+<br>
+Vykarystannje: Užyvajcje ŭručnuju dlja ljačennja, karotkaj abarony i paskarennja ruchu. U invjentary jon moža spracavac aŭtamatyčna pry nizkim zdaroŭi i zatym pjerazaradžajecca.<br>
+<br>
+Trymajcje adzin pjerad vyprabavannjem vyšyn, adkrytaj pravodki abo njebjaspječnych šacht.
+<np>
+Spalny mjašok
+Pjeranosny nabor dlja adpačynku
+<&sleeping_bag>Spalny mjašok — ustojlivy da nadvor'ja nabor dlja paljavoj pracy daljoka ad ložka.<br>
+<br>
+Vykarystannje: Užyvajcje nočču ŭ Vjerchnim svjecje, kab adpačyc da ranicy. Jon nje ŭstaljoŭvaje i nje zmjanjaje mjesca z'jaŭljennja.<br>
+<br>
+Mjašok nje pracuje dnjom, pobač z monstrami i ŭ njeprydatnych vymjarennjach. Kožny paspjachovy adpačynak znošvaje jaho.
+<np>
+Skrynja materyjalaŭ
+Budaŭničy zapas
+<&material_box>Skrynja materyjalaŭ zachoŭvaje vjaliki zapas adnaho prostaha, njazmjenjenaha, prydatnaha da stosaŭ budaŭničaha materyjalu.<br>
+<br>
+Vykarystannje: Trymajcje skrynju ŭ haloŭnaj ruce, materyjal u druhoj dlja zahruzki. Z pustoj druhoj rukoj dastancje adzin stos.<br>
+<br>
+Skrynja zmjaščaje da 512 pradmjetaŭ, tolki adzin typ, adchiljaje ŭkladzjenyja skryni, pradmjety bjez stosaŭ i zmjenjenyja, nazvanyja abo z danymi stosy; zmjesciva pakazana ŭ padkazcy.
+<np>
+Pavjetranaja kapsula dajvjera
+Avaryjny zapas pavjetra
+<&diving_capsule>Pavjetranaja kapsula dajvjera — avaryjny pradmjet dlja padvodnaj pracy.<br>
+<br>
+Vykarystannje: Užyvajcje ŭručnuju dlja adnaŭljennja pavjetra. U invjentary jana moža aŭtamatyčna spracavac, kali pavjetra amal skončylasja, i zatym pjerazaradžajecca.<br>
+<br>
+Bjarycje jaje ŭ zatopljenyja šachty, na padvodnyja trubapravody i ramont pompavych pamjaškannjaŭ.
+<np>
+Pres batončykaŭ Muslee
+Charčovy pres
+<&musli_bar_press>Pres Muslee pjeratvaraje zvyčajnyja pradukty ŭ kampaktnyja paljavyja pajki.<br>
+<br>
+Vykarystannje: Vazmicje chljeb, jablyk i nasjennje pšanicy, kavuna, harbuza, buraka abo pramyslovych kanopljaŭ i skarystajcje pres. Paspjachovaje presavannje vydatkoŭvaje pa adnym inhredyjencje, pravjaraje mjesca, stvaraje čatyry batončyki i paškodžvaje pres.<br>
+<br>
+Kali inhredyjenta njama abo mjesca njedastatkova, ničoha nje vydatkoŭvajecca.
+<np>
+Enjerhjetyčny batončyk Muslee Melange
+Chutkaja majsterskaja zakuska
+<&musli_bar>Muslee Melange — kampaktnaja ježa z chljeba, nasjennja i sadaviny.<br>
+<br>
+Vykarystannje: Ješcje jak paljavuju ježu padčas ustaljavannja kiravannja, trub, platformaŭ abo doŭhich linij mašynnaj zaly.
+<np>
+Vyciskalnik rozumu
+Kandensatar dosviedu
+<&charged_lapis_squeezer>Vyciskalnik rozumu pieratvaraje adzin łazuryt z tvajho ryštunku i adzin uzrovień dosviedu ŭ zaradžany łazuryt.<br>
+<br>
+Kožnaje paspiachovaje pieraŭtvarennie ranić, zniasilvaje i nienadoŭha aslaplaje karystalnika. Pryłada admaŭlajecca pracavać biez łazurytu, biez XP abo kali karystalnik zanadta blizki da smierci.
+<np>
+Zaradžany łazuryt
+Zachavany dosvied
+<&charged_lapis>Zaradžany łazuryt zachoŭvaje adzin uzrovień dosviedu. Spažyvi jaho, kab viarnuć uzrovień, zniać aktyŭnyja efiekty i adnavić nievialikuju kolkasć zdaroŭja.<br>
+<br>
+Spačatku zrabi vyciskalnik rozumu; zaradžany łazuryt atrymlivajecca pry vykarystanni hetaha instrumienta z dastupnymi łazurytam i XP.
+<np>
+Hruby žalezny hranulat
+Materyjał dla inžynierskich instrumientaŭ, jaki vykarystoŭvajecca adnoŭlenym naboram receptaŭ.
+<&iron_grit>Možna pierapłavić u žaleznyja<br>zlitki, ale nie padychodzić dla<br>składanaj pierapracoŭki materyjałaŭ.
+<np>
+Hruby załaty hranulat
+Materyjał dla inžynierskich instrumientaŭ, jaki vykarystoŭvajecca adnoŭlenym naboram receptaŭ.
+<&gold_grit>Možna pierapłavić u załatyja<br>zlitki, ale nie padychodzić dla<br>składanaj pierapracoŭki materyjałaŭ.

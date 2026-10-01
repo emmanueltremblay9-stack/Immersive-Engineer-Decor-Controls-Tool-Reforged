@@ -1,0 +1,5 @@
+Verteidigungsschild
+Gfahremarkierig
+<&recipe>S'Schild «Vorsicht, Verteidigigsaalag» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>

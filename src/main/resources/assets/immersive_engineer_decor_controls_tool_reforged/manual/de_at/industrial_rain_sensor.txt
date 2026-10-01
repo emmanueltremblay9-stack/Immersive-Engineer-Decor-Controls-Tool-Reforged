@@ -1,0 +1,7 @@
+Regnsensor
+Signalerfassung
+<&recipe>A Wettersensor macht ausm Regn an seinem Standort a Redstone-Signal.<br>
+<br>
+Verwendung: Montier eam so, dass Regn den Block drüber erreichen kann.<br>
+<br>
+Hinweis: Prüft, ob's überm Sensor regnt.

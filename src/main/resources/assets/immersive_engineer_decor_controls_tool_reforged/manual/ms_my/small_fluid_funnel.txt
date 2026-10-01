@@ -1,0 +1,5 @@
+Corong Bendalir
+Perkakasan talian bendalir
+<&recipe>Corong kutipan bendalir kecil ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Letakkan di bawah titik kutipan bendalir dan salurkan kandungannya ke tangki atau paip yang lebih rendah.<br>

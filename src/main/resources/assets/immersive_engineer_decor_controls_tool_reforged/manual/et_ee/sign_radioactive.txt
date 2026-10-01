@@ -1,0 +1,5 @@
+Silt: radioaktiivne oht
+Ohumärgis
+<&recipe>Radioaktiivse ohu silt tähistab ohte, väljapääse ja töötsoone tehasele sobiva nähtava ohutusmärgiga.<br>
+<br>
+Kasutamine: Paigalda ohtude, väljapääsude, masinate ja piiratud alade kõrvale.<br>

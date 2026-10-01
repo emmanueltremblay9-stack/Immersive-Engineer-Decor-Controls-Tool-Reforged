@@ -1,0 +1,99 @@
+Ingeniariaren tresnak
+Lantegiko ekipamendu eramangarria
+Ingeniariaren tresnen multzoak eskuko ekipamendua, meategiko markatzaileak, larrialdiko kontsumigarriak, kanpoko lana egiteko elikagaiak eta materialak prozesatzeko lagungarri txikiak gehitzen dizkio dekorazio- eta aginte-blokeak azaltzen dituen eskuliburu berari.<br>
+<br>
+Tresna hauek guztiz hornitutako lantegitik kanpo lan egiteko dira: markatu ibilbidea, eraman hornigaiak, akatsetatik suspertu eta prozesatze-lan txikiak tokian bertan amaitu.
+<np>
+REDIA tresna
+Diamantez estalitako tresna erabilgarria
+<&redia_tool>REDIA tresna kanpoko lur-lan azkarretarako tresna iraunkorra da. Erabili landu daitekeen lurrean sailak lantzeko.<br>
+<br>
+Erabili aurpegi egonkor baten kontra, argi-zuziak daramatzazula, inbentarioko argi-zuzi bat markatzaile gisa jartzeko REDIA higatu gabe. Lur-lanek, mozketek, aizkora-lanek eta zuhaitzak botatzeak iraunkortasuna kontsumitzen dute.
+<np>
+Mea xehatzeko mailua
+Eskuko tresna
+<&crushing_hammer>Burdin eta urre lan goiztiarrerako eskuko tresna.<br>
+<br>
+Erabilera: Burdin gordina, urre gordina, burdin mea, arbel sakoneko burdin mea, urre mea edo arbel sakoneko urre mea erabiliz Immersive Engineeringeko burdin edo urre hautsa egiten du. Iraunkortasuna galtzen du eta saretara itzultzen da apurtu arte.<br>
+<br>
+Meatzaritzan ere higatzen da eta borroka hurbilean atzera botatzen du.
+<np>
+Aztarnaria
+Gordetako posizio-marka
+<&tracker>Bloke-posizioa elementuan gordetzen du.<br>
+<br>
+Erabilera: Egin klik blokean dimentsioa eta koordenatuak gordetzeko. Argibideak posizioa erakusten du. Makurtuta erabiltzeak ezabatzen du.<br>
+<br>
+Markatu makinak, tunel-adarrak, urruneko kontrolak edo amaitu gabeko obrak.
+<np>
+Ariadnaren ikatza
+Meategiko ibilbide-markatzailea
+<&ariadne_coal>Ariadnaren ikatzak gezi beltzeko ibilbide-markatzaileak azkar jartzen ditu meategiko aurpegi egonkorretan. Erabili aurpegi solido batean hurrengo bihurgunea, irteera edo adarkatzea markatzeko; markatzaileak klikatutako aurpegiko zortzi norabide onartzen ditu, diagonalak barne.<br>
+<br>
+Ariadnaren ikatza 100 erabilerako markatze-tresna berrerabilgarria da. Markatzaile bat ondo jartzeak iraunkortasun-unitate bat gastatzen du. Aurpegi desegokiak baztertzen ditu, objektua higatu ordez.
+<np>
+Stim-pakete automatikoa
+Larrialdiko injektorea
+<&stimpack>Mantentze arriskutsurako larrialdiko tresna.<br>
+<br>
+Erabilera: Eskuz sendatu, babestu eta labur bizkortzen du. Inbentarioan osasun baxuan aktibatu eta gero hozten da.<br>
+<br>
+Eraman altuerak, agerian dauden kableak edo meategi arriskutsuak probatu aurretik.
+<np>
+Lo-zakua
+Atseden-ekipo eramangarria
+<&sleeping_bag>Ohetik urrun lan egiteko eguraldiaren aurkako ekipoa.<br>
+<br>
+Erabilera: Gauez Gainmunduan atseden hartu goizera arte, berpizte-puntua ezarri edo mugitu gabe.<br>
+<br>
+Eguna, gertuko munstroak eta dimentsio desegokiak baztertzen ditu. Atseden bakoitzak higatzen du.
+<np>
+Material-kutxa
+Eraikuntza-hornidurak
+<&material_box>Material arrunt, aldatu gabe eta pilagarri bakarraren erreserba handia darama.<br>
+<br>
+Erabilera: Kutxa esku nagusian eta materiala bestean kargatzeko. Beste eskua hutsik, pila bat ateratzeko.<br>
+<br>
+Mota bakarreko 512 elementu gordetzen ditu eta kutxa habiaratuak, pilaezinak eta aldatutako pilak baztertzen ditu; edukia argibidean dago.
+<np>
+Urpekaritza-aire kapsula
+Larrialdiko aire-erreserba
+<&diving_capsule>Urpeko lanerako larrialdiko airea.<br>
+<br>
+Erabilera: Berreskuratu airea eskuz. Inbentarioan automatikoki aktibatzen da airea ia amaitzean eta gero hozten da.<br>
+<br>
+Eraman urez betetako meategietara, urpeko hodietara eta ponpa-geletara.
+<np>
+Muslee barra-prentsa
+Janari-prentsa
+<&musli_bar_press>Janari arrunta landa-errazio trinko bihurtzen du.<br>
+<br>
+Erabilera: Ogi, sagar eta gari, meloi, kalabaza, erremolatxa edo industria-kalamu hazia. Prentsatze arrakastatsuak bana kontsumitzen du, lekua egiaztatu, lau barra egin eta prentsa kaltetzen du.<br>
+<br>
+Osagai edo lekurik ez badago, ez da ezer kontsumitzen.
+<np>
+Muslee Melange energia-barra
+Tailerreko mokadu azkarra
+<&musli_bar>Ogi, hazi eta frutaz egindako janari trinkoa.<br>
+<br>
+Erabilera: Jan landa-janari gisa kontrolak, hodiak, plataformak edo makina-lerro luzeak jartzean.
+<np>
+Adimen-zukugailua
+Esperientzia-kondentsadorea
+<&charged_lapis_squeezer>Adimen-zukugailuak zure inbentarioko lapis lazuli bat eta esperientzia-maila bat lapis kargatu bihurtzen ditu.<br>
+<br>
+Bihurketa on bakoitzak erabiltzaileari min, nekea eta itsutasun laburra eragiten dizkio. Ez du funtzionatzen lapisik edo XPrik gabe, ezta erabiltzailea hiltzetik gertuegi dagoenean ere.
+<np>
+Lapis kargatua
+Gordetako esperientzia
+<&charged_lapis>Lapis kargatuak esperientzia-maila bat gordetzen du. Kontsumitu maila berreskuratzeko, efektu aktiboak kentzeko eta osasun kantitate txiki bat berreskuratzeko.<br>
+<br>
+Fabrikatu adimen-zukugailua lehenik; lapis kargatua tresna hori erabiliz sortzen da, lapisa eta XP eskura dituzula.
+<np>
+Burdin legar lodia
+Berreraikitako fabrikazio-multzoak erabiltzen duen ingeniari-tresnen materiala.
+<&iron_grit>Burdinazko lingoteak egiteko urtu<br>daiteke, baina ez da egokia<br>materialen prozesamendu aurreraturako.
+<np>
+Urre-legar lodia
+Berreraikitako fabrikazio-multzoak erabiltzen duen ingeniari-tresnen materiala.
+<&gold_grit>Urrezko lingoteak egiteko urtu<br>daiteke, baina ez da egokia<br>materialen prozesamendu aurreraturako.

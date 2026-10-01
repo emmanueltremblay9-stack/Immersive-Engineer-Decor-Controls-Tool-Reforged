@@ -1,0 +1,7 @@
+Lapis încărcat
+Experiență stocată
+<&recipe>Lapisul încărcat stochează un nivel de experiență, prin prelucrare cu storcătorul de minte.<br>
+<br>
+Utilizare: Consumă-l pentru a recupera un nivel, a elimina efectele active și a restabili o cantitate mică de sănătate.<br>
+<br>
+Elementul de afișare a rețetei arată storcătorul de minte, deoarece lapisul încărcat se produce folosind această unealtă atunci când ai lapis și experiență disponibile.

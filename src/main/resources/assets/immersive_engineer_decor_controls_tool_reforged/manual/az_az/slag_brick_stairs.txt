@@ -1,0 +1,5 @@
+Şlak kərpic pilləkən
+Sıx zavod hörgüsü
+<&recipe>Bu blok bünövrələr, istinad divarları və köhnə emalatxanalar üçün sıx boz-qəhvəyi hörgü əlavə edir.<br>
+<br>
+İstifadə: Köhnə bünövrələrdə, istinad divarlarında və çirkli zavod döşəmələrində istifadə edin.<br>

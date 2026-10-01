@@ -1,0 +1,7 @@
+Slaapzak
+Draagbare slaapuitrusting
+<&recipe>De slaapzak is een weerbestendige rustuitrusting voor veldwerk ver van een bed.<br>
+<br>
+Gebruik hem s nachts in de Overworld om tot de ochtend te rusten zonder je verschijnpunt in te stellen of te verplaatsen.<br>
+<br>
+Hij weigert gebruik overdag, bij nabije monsters en in ongeschikte dimensies. Elke geslaagde rust verslijt de zak.

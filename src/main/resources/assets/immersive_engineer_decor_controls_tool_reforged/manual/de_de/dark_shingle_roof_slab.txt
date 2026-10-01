@@ -1,0 +1,5 @@
+Dunkle Schindeldachstufe
+Verwittertes Dachbauteil
+<&recipe>Dieser Block schafft dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>

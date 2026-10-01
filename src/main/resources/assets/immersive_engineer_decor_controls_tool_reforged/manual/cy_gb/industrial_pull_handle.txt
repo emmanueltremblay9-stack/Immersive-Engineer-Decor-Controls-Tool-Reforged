@@ -1,0 +1,7 @@
+Dolen Dynnu
+Rheoli Redstone
+<&recipe>Mae elfen reoli gryno yn rhoi pwynt switsio Redstone clir i adeiladau ffatri.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i droi allbwn cryfder llawn ymlaen neu i ffwrdd ar gyfer cylchedau cyfagos.<br>
+<br>
+Nodiadau: Mae'n allbynnu Redstone ar gryfder llawn tra bo ymlaen.

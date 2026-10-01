@@ -1,0 +1,7 @@
+Pengesan Blok
+Penderiaan isyarat
+<&recipe>Pengesan blok memeriksa sama ada ruang di hadapannya berisi.<br>
+<br>
+Penggunaan: Halakan ke muka mesin, penimbal atau ruang terkawal yang hendak dipantau.<br>
+<br>
+Nota: Mengeluarkan kuasa apabila blok di hadapan bukan udara.

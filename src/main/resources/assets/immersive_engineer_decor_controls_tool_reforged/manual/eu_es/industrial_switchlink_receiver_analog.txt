@@ -1,0 +1,7 @@
+Loturaren hargailu analogikoa
+Lotutako agintea
+<&recipe>Lotutako hargailuak urruneko helburu ikusgarria eskaintzen die aginte-panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Erabili perla hori makurtuta, hargailua urrunetik aktibatzeko.<br>
+<br>
+Oharrak: hargailu honek redstone-seinale osoa igortzen du aktibatzean.

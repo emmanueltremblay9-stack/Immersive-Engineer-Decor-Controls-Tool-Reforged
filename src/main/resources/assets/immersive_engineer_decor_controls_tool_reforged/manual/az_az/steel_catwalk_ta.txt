@@ -1,0 +1,5 @@
+Hündür polad keçid
+Xidmət keçidi elementi
+<&recipe>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>

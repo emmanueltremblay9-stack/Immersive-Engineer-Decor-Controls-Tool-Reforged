@@ -1,0 +1,127 @@
+Priėjimo takai
+Takai ir atramos
+Plieno stulpai, apdorotos medienos stulpai, grotelės, aptarnavimo takai, turėklai, kopėčios, durys, langai ir liukai sudaro kompaktiškus aptarnavimo kelius fabriko viduje.<br>
+<br>
+Plieninėms priėjimo takų dalims reikia plieno plokščių. Pagamink arba pastatyk metalo darbastalį, įdėk Immersive Engineering plaktuką ir kaldamas paversk plieno liejinius plokštėmis stulpams, aptarnavimo takams, langams, durims, turėklams ir kitoms plieninėms dekoracijoms.<br>
+<br>
+Dėk jas ten, kur reikia prieiti prie mašinų, įrengti pakeltus takus, priežiūros šachtas arba saugesnius kraštus.
+<np>
+Storas plieno stulpas
+Karkaso dalis
+<&thick_steel_pole>Tiesus storas plieno stulpas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Storo stulpo viršus
+Karkaso dalis
+<&thick_steel_pole_head>Tiesaus storo plieno stulpo viršus / pagrindas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Plonas plieno stulpas
+Karkaso dalis
+<&thin_steel_pole>Tiesus plonas plieno stulpas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Plono stulpo viršus
+Karkaso dalis
+<&thin_steel_pole_head>Tiesaus plono plieno stulpo viršus / pagrindas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Apdorotos medienos stulpas
+Karkaso dalis
+<&treated_wood_pole>Tiesus apdorotos medienos stulpas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Apdorotos medienos stulpo viršus
+Karkaso dalis
+<&treated_wood_pole_head>Tiesaus apdorotos medienos stulpo viršus / pagrindas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Apdorotos medienos stulpo atrama
+Karkaso dalis
+<&treated_wood_pole_support>Tiesaus apdorotos medienos stulpo atrama suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Plieninė dvigubo T atrama
+Karkaso dalis
+<&steel_double_t_support>Šis blokas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>
+<np>
+Plieninės grindų grotelės
+Aptarnavimo prieigos dalis
+<&steel_floor_grating>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Plieninis aptarnavimo takas
+Aptarnavimo prieigos dalis
+<&steel_catwalk>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Plieninio aptarnavimo tako laiptai
+Aptarnavimo prieigos dalis
+<&steel_catwalk_stairs>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Pakeltas plieninis aptarnavimo takas
+Aptarnavimo prieigos dalis
+<&steel_catwalk_ta>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Plieninis turėklas
+Aptarnavimo prieigos dalis
+<&steel_railing>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Plieninio tinklo tvora
+Aptarnavimo prieigos dalis
+<&steel_mesh_fence>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Plieninio tinklo tvoros vartai
+Aptarnavimo prieigos dalis
+<&steel_mesh_fence_gate>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Metalinių skersinių kopėčios
+Aptarnavimo prieigos dalis
+<&metal_rung_ladder>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Pakaitiniai metaliniai laipteliai
+Aptarnavimo prieigos dalis
+<&metal_rung_steps>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>
+<np>
+Langas su plieno rėmu
+Apsaugota matymo linija
+<&steel_framed_window>Šis blokas leidžia matyti kiaurai ir kartu dera prie sutvirtintų fabriko konstrukcijų.<br>
+<br>
+Naudojimas: įstatyk į vieno bloko angą sienoje, kur žaidėjai turėtų matyti mašinas pro apsauginę pertvarą.<br>
+<np>
+Metalinės stumdomos durys
+Pramoninis prieigos taškas
+<&metal_sliding_door>Šis blokas suteikia tvirtą prieigą prie aptarnavimo patalpų, šachtų, stogų ir mašinų gaubtų.<br>
+<br>
+Naudojimas: montuok ten, kur statinyje reikia valdomos angos priežiūrai.<br>
+<np>
+Geležinis aptarnavimo liukas
+Pramoninis prieigos taškas
+<&iron_hatch>Šis blokas suteikia tvirtą prieigą prie aptarnavimo patalpų, šachtų, stogų ir mašinų gaubtų.<br>
+<br>
+Naudojimas: montuok ten, kur statinyje reikia valdomos angos priežiūrai.<br>

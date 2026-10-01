@@ -1,0 +1,7 @@
+Maschinenknop
+Redstone-Stüern
+<&recipe>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.

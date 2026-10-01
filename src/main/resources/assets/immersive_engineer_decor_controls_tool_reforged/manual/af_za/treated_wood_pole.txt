@@ -1,0 +1,5 @@
+Behandeldehoutpaal
+Struktuurraamonderdeel
+<&recipe>Die Reguit Behandeldehoutpaal verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>

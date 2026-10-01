@@ -1,0 +1,5 @@
+Cüruf Tuğla Basamak
+Yoğun fabrika duvarı
+<&recipe>Bu blok; temeller, istinat duvarları ve eski çalışma barakaları için yoğun gri-kahverengi duvar malzemesi ekler.<br>
+<br>
+Kullanım: Eski temeller, istinat duvarları ve kirli fabrika zeminleri için kullanın.<br>

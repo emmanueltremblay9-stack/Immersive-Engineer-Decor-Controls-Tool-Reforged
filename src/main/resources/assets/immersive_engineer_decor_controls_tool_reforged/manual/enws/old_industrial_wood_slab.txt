@@ -1,0 +1,5 @@
+Old Manufactory Wood Slab
+Aged Timber for the Workshop
+<&recipe>This block adds aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>

@@ -1,0 +1,7 @@
+Tadhall Gloine Dé-chobhsaí
+Rialú Redstone
+<&recipe>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.

@@ -1,0 +1,7 @@
+Pylwr
+Signal amrywiol
+<&recipe>Mae rheolydd cylchdro yn addasu cryfder Redstone o wyneb panel cryno.<br>
+<br>
+Defnydd: Cliciwch â'r botwm de i godi'r allbwn fesul cam, ac yna'n ôl i sero ar ôl cryfder llawn.<br>
+<br>
+Nodiadau: Mae'n allbynnu cryfder o 0 i 15.

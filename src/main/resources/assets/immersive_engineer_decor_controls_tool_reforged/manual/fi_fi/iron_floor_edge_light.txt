@@ -1,0 +1,5 @@
+Upotettu lattian reunavalaisin
+Pieni työvalo
+<&recipe>Tämä kuutio tarjoaa pienen teollisuusvalaisimen käytäville, huoltotasoille ja työpisteisiin.<br>
+<br>
+Käyttö: Asenna kattoon, seinille tai reunoille, joissa huone tarvitsee selkeää työvaloa.<br>

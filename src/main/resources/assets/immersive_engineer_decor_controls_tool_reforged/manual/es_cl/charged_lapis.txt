@@ -1,0 +1,7 @@
+Lapislázuli cargado
+Experiencia almacenada
+<&recipe>El lapislázuli cargado almacena un nivel de experiencia obtenido mediante el exprimidor de mentes.<br>
+<br>
+Uso: Consúmelo para recuperar un nivel, eliminar los efectos activos y restaurar un poco de salud.<br>
+<br>
+El visor de recetas muestra el exprimidor de mentes porque el lapislázuli cargado se produce utilizando esa herramienta con lapislázuli y experiencia disponibles.

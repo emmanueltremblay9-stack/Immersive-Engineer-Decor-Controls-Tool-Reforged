@@ -1,0 +1,5 @@
+Arena compactao con grava
+Revestimientu del terrén de trabayu
+<&recipe>Esti bloque da a les zones de trabayu esteriores una superficie compactada y pisada.<br>
+<br>
+Usu: estiéndelu alredor de puertes de carga, depósitos esteriores y patios de máquines.<br>

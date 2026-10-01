@@ -1,0 +1,7 @@
+Interruptor comparator
+Senhal del blòc de sosten
+<&recipe>Un interruptor captador compacte legís lo blòc ont es montat e transforma aquela lectura en una sortida simpla de panèl.<br>
+<br>
+Utilizacion : monta-lo sus d’inventaris, de cuvas o d’aparelhs de redstone. Quand lo blòc de sosten fornís una sortida de comparator, de recipient o de redstone, l’interruptor manda de redstone a plena poténcia.<br>
+<br>
+Nòta : utiliza-lo per transformar los nivèls de depaus o los cables amagats en de linhas de comanda claras de marcha e d’arrèst.

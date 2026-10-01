@@ -1,0 +1,789 @@
+Comenzi de redstone
+Indicatoare și echipamente de semnalizare
+Dispozitivele de comandă transformă semnalul redstone ascuns în panouri industriale ușor de citit, senzori, indicatoare, comutatoare, alarme și echipamente de semnalizare prin legături.<br>
+<br>
+Folosește aceste pagini când construiești posturi de operare, panouri de semnalizare, circuite de siguranță și comenzi la distanță.
+<np>
+Țintă pentru săgeți
+Impuls momentan
+<&arrow_target>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Senzor de ușă
+Control prin redstone
+<&door_sensor_switch>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton de lift
+Control prin redstone
+<&elevator_button>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Buton de sticlă
+Control prin redstone
+<&glass_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton de sticlă
+Control prin redstone
+<&glass_small_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton tactil de sticlă
+Control prin redstone
+<&glass_touch_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton de mașină
+Control prin redstone
+<&industrial_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton
+Control prin redstone
+<&industrial_double_pole_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton de mașină cu protecție
+Control prin redstone
+<&industrial_fenced_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton la ciocănire
+Control prin redstone
+<&industrial_knock_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton vechi ornamentat
+Control prin redstone
+<&oldfancy_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton vechi ornamentat
+Control prin redstone
+<&oldfancy_small_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton cu lanț vechi ornamentat
+Impuls momentan
+<&oldfancy_spring_reset_chain>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton rustic
+Control prin redstone
+<&rustic_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton rustic din cui
+Control prin redstone
+<&rustic_nail_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton rustic mic
+Control prin redstone
+<&rustic_small_button>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Buton rustic cu lanț
+Impuls momentan
+<&rustic_spring_reset_chain>Un întrerupător momentan produce un impuls clar de redstone la intensitate maximă.<br>
+<br>
+Utilizare: Folosește-l pentru pornirea mașinilor, deblocarea ușilor, alarme sau circuite cu o singură acționare.<br>
+<br>
+Observații: Revine la starea inițială după impulsul programat.
+<np>
+Placă de contact din sticlă
+Impuls la apăsare
+<&glass_contact_mat>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Contact de ușă din sticlă
+Impuls la apăsare
+<&glass_door_contact_mat>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Covoraș de contact
+Impuls la apăsare
+<&industrial_contact_mat>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Covoraș de contact pentru ușă
+Impuls la apăsare
+<&industrial_door_contact_mat>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Detector de căderi prin deschidere
+Detectarea semnalelor
+<&industrial_fallthrough_detector>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Buton de picior
+Control prin redstone
+<&industrial_foot_button>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Ușă industrială activată de șocuri
+Impuls la apăsare
+<&industrial_high_sensitive_trapdoor>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Covoraș de contact la șocuri
+Impuls la apăsare
+<&industrial_shock_sensitive_contact_mat>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Trapă la șocuri
+Impuls la apăsare
+<&industrial_shock_sensitive_trapdoor>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Plantă roșie de semnal
+Impuls la apăsare
+<&red_power_plant>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Placă de presiune rustică
+Impuls la apăsare
+<&rustic_contact_plate>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Placă rustică de presiune pentru ușă
+Impuls la apăsare
+<&rustic_door_contact_plate>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Detector rustic de căderi
+Detectarea semnalelor
+<&rustic_fallthrough_detector>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Ușă rustică activată de șocuri
+Impuls la apăsare
+<&rustic_high_sensitive_trapdoor>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Placă rustică la șocuri
+Impuls la apăsare
+<&rustic_shock_sensitive_plate>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Ușă rustică activată de șocuri
+Impuls la apăsare
+<&rustic_shock_sensitive_trapdoor>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Plantă galbenă de semnal
+Impuls la apăsare
+<&yellow_power_plant>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.
+<np>
+Temporizator zilnic de sticlă
+Semnal de lumină diurnă
+<&glass_day_timer>Un comutator temporizat urmărește partea de zi a ciclului lumii.<br>
+<br>
+Utilizare: Folosește-l pentru lămpi de curte, obloane și comenzi de fabrică active doar ziua.<br>
+<br>
+Observații: Necesită o dimensiune cu lumină cerească.
+<np>
+Detector de entități din sticlă
+Detectarea semnalelor
+<&glass_entity_detector>Un detector de entități urmărește mișcarea din apropiere fără o placă vizibilă pe podea.<br>
+<br>
+Utilizare: Conectează-l la uși, lămpi, alarme sau sisteme de interblocare a mașinilor.<br>
+<br>
+Observații: Scanează o zonă mică din jurul blocului.
+<np>
+Semnalizator de intervale din sticlă
+Impuls temporizat
+<&glass_interval_timer>Un comutator temporizat compact produce un impuls redstone programat.<br>
+<br>
+Utilizare: Folosește-l acolo unde un mecanism mic are nevoie de comandă periodică sau întârziată.<br>
+<br>
+Observații: Folosește impulsuri redstone programate.
+<np>
+Detector liniar din sticlă
+Detectarea semnalelor
+<&glass_linear_entity_detector>Un detector de entități urmărește mișcarea din apropiere fără o placă vizibilă pe podea.<br>
+<br>
+Utilizare: Conectează-l la uși, lămpi, alarme sau sisteme de interblocare a mașinilor.<br>
+<br>
+Observații: Scanează o zonă mică din jurul blocului.
+<np>
+Detector de blocuri
+Detectarea semnalelor
+<&industrial_block_detector>Un detector de blocuri verifică dacă spațiul din fața sa este ocupat.<br>
+<br>
+Utilizare: Orientează-l spre fața mașinii, spațiul tampon sau spațiul protejat pe care vrei să-l supraveghezi.<br>
+<br>
+Observații: Emite semnal când blocul din față nu este aer.
+<np>
+Temporizator zilnic
+Semnal de lumină diurnă
+<&industrial_day_timer>Un comutator temporizat urmărește partea de zi a ciclului lumii.<br>
+<br>
+Utilizare: Folosește-l pentru lămpi de curte, obloane și comenzi de fabrică active doar ziua.<br>
+<br>
+Observații: Necesită o dimensiune cu lumină cerească.
+<np>
+Detector de entități
+Detectarea semnalelor
+<&industrial_entity_detector>Un detector de entități urmărește mișcarea din apropiere fără o placă vizibilă pe podea.<br>
+<br>
+Utilizare: Conectează-l la uși, lămpi, alarme sau sisteme de interblocare a mașinilor.<br>
+<br>
+Observații: Scanează o zonă mică din jurul blocului.
+<np>
+Temporizator de intervale
+Impuls temporizat
+<&industrial_interval_timer>Un comutator temporizat compact produce un impuls redstone programat.<br>
+<br>
+Utilizare: Folosește-l acolo unde un mecanism mic are nevoie de comandă periodică sau întârziată.<br>
+<br>
+Observații: Folosește impulsuri redstone programate.
+<np>
+Senzor de lumină
+Detectarea semnalelor
+<&industrial_light_sensor>Un senzor de lumină transformă luminozitatea locală într-o comandă redstone.<br>
+<br>
+Utilizare: Folosește-l pentru lămpi automate, obloane și circuite legate de vizibilitate.<br>
+<br>
+Observații: Emite semnal la o luminozitate brută de 8 sau mai mare.
+<np>
+Detector de furtună
+Detectarea semnalelor
+<&industrial_lightning_sensor>Un senzor de furtună activează avertizări când tună.<br>
+<br>
+Utilizare: Amplasează-l sub cerul liber și conectează-l la lămpi sau alarme.<br>
+<br>
+Observații: Necesită tunete și acces la cer.
+<np>
+Detector liniar de entități
+Detectarea semnalelor
+<&industrial_linear_entity_detector>Un detector de entități urmărește mișcarea din apropiere fără o placă vizibilă pe podea.<br>
+<br>
+Utilizare: Conectează-l la uși, lămpi, alarme sau sisteme de interblocare a mașinilor.<br>
+<br>
+Observații: Scanează o zonă mică din jurul blocului.
+<np>
+Senzor de ploaie
+Detectarea semnalelor
+<&industrial_rain_sensor>Un senzor meteorologic transformă ploaia din poziția sa în semnal redstone.<br>
+<br>
+Utilizare: Montează-l acolo unde blocul de deasupra poate primi ploaie.<br>
+<br>
+Observații: Verifică ploaia deasupra senzorului.
+<np>
+Comutator bistabil de sticlă
+Control prin redstone
+<&glass_rotary_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Comutator tactil bistabil de sticlă
+Control prin redstone
+<&glass_touch_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Sticlă sensibilă portocalie
+Sticlă de semnalizare
+<&orange_sensitiveglass>Un bloc de sticlă sensibil la redstone păstrează vizibilitatea și arată starea semnalului.<br>
+<br>
+Utilizare: Folosește-l în ferestrele camerelor de comandă, în panouri luminoase și ca sticlă de protecție în fabrică.<br>
+<br>
+Observații: Își schimbă starea în funcție de semnalul redstone din apropiere.
+<np>
+Sticlă sensibilă luminoasă
+Sticlă de semnalizare
+<&sensitive_glass_block>Un bloc de sticlă sensibil la redstone păstrează vizibilitatea și arată starea semnalului.<br>
+<br>
+Utilizare: Folosește-l în ferestrele camerelor de comandă, în panouri luminoase și ca sticlă de protecție în fabrică.<br>
+<br>
+Observații: Își schimbă starea în funcție de semnalul redstone din apropiere.
+<np>
+Sticlă sensibilă colorată
+Sticlă de semnalizare
+<&stained_sensitiveglass>Un bloc de sticlă sensibil la redstone păstrează vizibilitatea și arată starea semnalului.<br>
+<br>
+Utilizare: Folosește-l în ferestrele camerelor de comandă, în panouri luminoase și ca sticlă de protecție în fabrică.<br>
+<br>
+Observații: Își schimbă starea în funcție de semnalul redstone din apropiere.
+<np>
+Indicator cu bară de sticlă
+Indicator de semnal
+<&glass_vertical_bar_gauge>Un indicator compact pentru camera de comandă afișează clar intensitatea redstone pe un panou.<br>
+<br>
+Utilizare: Montează-l acolo unde semnalul redstone din apropiere trebuie verificat dintr-o privire.<br>
+<br>
+Observații: Citește intensitatea redstone din apropiere, de la 0 la 15.
+<np>
+Indicator analogic
+Indicator de semnal
+<&industrial_analog_angular_gauge>Un indicator compact pentru camera de comandă afișează clar intensitatea redstone pe un panou.<br>
+<br>
+Utilizare: Montează-l acolo unde semnalul redstone din apropiere trebuie verificat dintr-o privire.<br>
+<br>
+Observații: Citește intensitatea redstone din apropiere, de la 0 la 15.
+<np>
+Indicator tip voltmetru
+Indicator de semnal
+<&industrial_analog_horizontal_gauge>Un indicator compact pentru camera de comandă afișează clar intensitatea redstone pe un panou.<br>
+<br>
+Utilizare: Montează-l acolo unde semnalul redstone din apropiere trebuie verificat dintr-o privire.<br>
+<br>
+Observații: Citește intensitatea redstone din apropiere, de la 0 la 15.
+<np>
+Indicator digital
+Intensitate de semnal ușor de citit
+<&industrial_small_digital_gauge>Un indicator compact pentru camera de comandă afișează clar intensitatea redstone pe un panou.<br>
+<br>
+Utilizare: Montează-l acolo unde semnalul redstone din apropiere trebuie verificat dintr-o privire.<br>
+<br>
+Observații: Citește intensitatea redstone din apropiere, de la 0 la 15.
+<np>
+Indicator cu tub de sticlă
+Indicator de semnal
+<&industrial_tube_gauge>Un indicator compact pentru camera de comandă afișează clar intensitatea redstone pe un panou.<br>
+<br>
+Utilizare: Montează-l acolo unde semnalul redstone din apropiere trebuie verificat dintr-o privire.<br>
+<br>
+Observații: Citește intensitatea redstone din apropiere, de la 0 la 15.
+<np>
+Indicator analogic cu bară
+Indicator de semnal
+<&industrial_vertical_bar_gauge>Un indicator compact pentru camera de comandă afișează clar intensitatea redstone pe un panou.<br>
+<br>
+Utilizare: Montează-l acolo unde semnalul redstone din apropiere trebuie verificat dintr-o privire.<br>
+<br>
+Observații: Citește intensitatea redstone din apropiere, de la 0 la 15.
+<np>
+Lampă de alarmă
+Indicarea semnalului
+<&industrial_alarm_lamp>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+Sirenă de alarmă
+Indicarea semnalului
+<&industrial_alarm_siren>Sirena de alarmă este un indicator redstone montat pe fața unui bloc. Starea ei alimentată urmează semnalul blocului de care este prinsă.<br>
+<br>
+Prinde-o pe o față solidă și alimenteaz-o pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Sirena se actualizează o dată pe secundă cât timp semnalul rămâne activ.
+<np>
+LED intermitent
+Indicarea semnalului
+<&industrial_blinking_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED verde intermitent
+Indicarea semnalului
+<&industrial_green_blinking_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED verde
+Indicarea semnalului
+<&industrial_green_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED roșu
+Indicarea semnalului
+<&industrial_red_blinking_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED roșu
+Indicarea semnalului
+<&industrial_red_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED alb intermitent
+Indicarea semnalului
+<&industrial_white_blinking_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED alb
+Indicarea semnalului
+<&industrial_white_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED galben intermitent
+Indicarea semnalului
+<&industrial_yellow_blinking_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+LED galben
+Indicarea semnalului
+<&industrial_yellow_led>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+Semafor rustic
+Indicarea semnalului
+<&rustic_semaphore>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.
+<np>
+Comutator comparator
+Semnal de la blocul de montare
+<&industrial_comparator_switch>Un comutator compact cu senzor citește blocul pe care este montat și transformă citirea într-o ieșire simplă de panou.<br>
+<br>
+Utilizare: Montează-l pe inventare, rezervoare sau echipament redstone. Când blocul de montare raportează o ieșire de comparator, container sau redstone, comutatorul emite redstone la intensitate maximă.<br>
+<br>
+Observații: Folosește-l pentru a transforma nivelurile de stocare sau cablajul ascuns în linii de comandă pornit/oprit ușor de urmărit.
+<np>
+Regulator de intensitate
+Semnal variabil
+<&industrial_dimmer>O comandă rotativă reglează intensitatea redstone de pe fața unui panou compact.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a mări treptat ieșirea, care revine la zero după intensitatea maximă.<br>
+<br>
+Observații: Emite o intensitate de la 0 la 15.
+<np>
+Buton de oprire de urgență
+Control prin redstone
+<&industrial_estop_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Blocator de pâlnie
+Control prin redstone
+<&industrial_hopper_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Comutator la ciocănire
+Control prin redstone
+<&industrial_knock_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă
+Control prin redstone
+<&industrial_lever>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Comutator de mașină cu două butoane
+Control prin redstone
+<&industrial_machine_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Mâner de tragere
+Control prin redstone
+<&industrial_pull_handle>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă rotativă
+Control prin redstone
+<&industrial_rotary_lever>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Comutator rotativ de mașină
+Control prin redstone
+<&industrial_rotary_machine_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă de contact
+Control prin redstone
+<&industrial_small_lever>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Comutator
+Control prin redstone
+<&industrialswitch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Întrerupător de lumină
+Control prin redstone
+<&light_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Comutator cu roată de supapă
+Control prin redstone
+<&valve_wheel_switch>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Receptor cu puls și carcasă
+Comandă prin legătură
+<&industrial_switchlink_cased_pulse_receiver>Un receptor de legături cu puls și carcasă oferă panourilor de comandă la distanță o declanșare redstone scurtă.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Fă clic dreapta pe el sau acționează perla asociată pentru a emite un impuls scurt.<br>
+<br>
+Observații: Impulsul se oprește singur după durata programată.
+<np>
+Receptor de legături cu carcasă
+Comandă prin legătură
+<&industrial_switchlink_cased_receiver>Un receptor de legături cu carcasă oferă panourilor de comandă la distanță o țintă redstone robustă.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Fă clic dreapta direct pe receptor pentru a-l comuta manual.<br>
+<br>
+Observații: O perlă asociată comută acest receptor când este folosită în timpul furișării.
+<np>
+Receptor de legături cu puls
+Comandă prin legătură
+<&industrial_switchlink_pulse_receiver>Un receptor de legături cu puls oferă panourilor de comandă la distanță o declanșare redstone scurtă.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Fă clic dreapta pe el sau acționează perla asociată pentru a emite un impuls scurt.<br>
+<br>
+Observații: Impulsul se oprește singur după durata programată.
+<np>
+Releu de legături cu puls
+Comandă prin legătură
+<&industrial_switchlink_pulse_relay>O piesă cu aspect de releu oferă panourilor un punct local compact de comutare.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere. Folosește blocuri receptor când ai nevoie de activare prin perle asociate.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Receptor de legături de comutare
+Comandă prin legătură
+<&industrial_switchlink_receiver>Un receptor de legături oferă panourilor de comandă la distanță o țintă redstone cu intensitate maximă.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Fă clic dreapta direct pe receptor pentru a-l comuta manual.<br>
+<br>
+Observații: O perlă asociată comută acest receptor când este folosită în timpul furișării.
+<np>
+Receptor analogic de legături
+Comandă prin legătură
+<&industrial_switchlink_receiver_analog>Un receptor de legături oferă panourilor de comandă o țintă vizibilă pentru acționare la distanță.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Folosește perla în timp ce te furișezi pentru a activa receptorul de la distanță.<br>
+<br>
+Observații: Acest receptor emite un semnal redstone la intensitate maximă când este declanșat.
+<np>
+Releu de legături de comutare
+Comandă prin legătură
+<&industrial_switchlink_relay>O piesă cu aspect de releu oferă panourilor un punct local compact de comutare.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere. Folosește blocuri receptor când ai nevoie de activare prin perle asociate.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Releu analogic de legături
+Comandă prin legătură
+<&industrial_switchlink_relay_analog>O piesă cu aspect de releu oferă panourilor un punct local compact de comutare.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere. Folosește blocuri receptor când ai nevoie de activare prin perle asociate.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Perlă pentru legături de comutare
+Comandă prin legătură
+<&switchlink_pearl>O perlă asociată memorează un receptor țintă pentru comenzi industriale la distanță.<br>
+<br>
+Utilizare: Fă clic pe un receptor de legături de comutare cu o perlă de Ender pentru a crea o perlă asociată. Folosește perla asociată în timp ce te furișezi pentru a activa receptorul memorat.<br>
+<br>
+Observații: Ținta trebuie să fie încărcată, în aceeași dimensiune și în raza de acțiune.
+<np>
+Manetă veche ornamentată
+Control prin redstone
+<&oldfancy_bistableswitch1>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă rotativă veche ornamentată
+Control prin redstone
+<&oldfancy_bistableswitch2>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă rustică rotativă
+Control prin redstone
+<&rustic_angular_lever>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă rustică
+Control prin redstone
+<&rustic_lever>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă rustică din cui
+Control prin redstone
+<&rustic_nail_lever>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.
+<np>
+Manetă rustică cu două balamale
+Control prin redstone
+<&rustic_two_hinge_lever>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.

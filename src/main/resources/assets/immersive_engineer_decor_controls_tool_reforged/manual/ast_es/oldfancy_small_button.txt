@@ -1,0 +1,7 @@
+Botón antiguu adornáu
+Control por redstone
+<&recipe>Un interruptor momentaneu emite un pulsu de redstone nítidu y a plena potencia.<br>
+<br>
+Usu: úsalu p’arrancar máquines, lliberar puertes, activar alarmes o controlar circuitos d’un solu disparu.<br>
+<br>
+Notes: vuelve al estáu inicial cuando termina’l pulsu programáu.

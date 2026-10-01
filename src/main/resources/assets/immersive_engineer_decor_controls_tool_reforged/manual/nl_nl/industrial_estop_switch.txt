@@ -1,0 +1,7 @@
+Noodstopknop
+Redstonebesturing
+<&recipe>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.

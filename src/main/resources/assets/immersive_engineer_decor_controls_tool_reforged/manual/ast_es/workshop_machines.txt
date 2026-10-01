@@ -1,0 +1,107 @@
+Máquines de taller
+Máquines y entraes/salíes de taller
+Les máquines de taller permiten ellaborar, mover oxetos, fundir, eliminar, recoyer y facer trabayos auxiliares de mou compactu nun solu bloque.<br>
+<br>
+Abre les páxines siguientes pa ver la receta, la imaxe, l’ambientación y les notes práctiques d’usu de cada máquina.
+<np>
+Mesa d’aceru
+Muebles de taller
+<&steel_table>Esti bloque ye un mueble prácticu de taller pa sales de trabayu y rincones de caltenimientu.<br>
+<br>
+Usu: ponlu al llau de bancos, caxones y máquines compactes.<br>
+<np>
+Mesa de madera tratao
+Muebles de taller
+<&treated_wood_table>Esti bloque ye un mueble prácticu de taller pa sales de trabayu y rincones de caltenimientu.<br>
+<br>
+Usu: ponlu al llau de bancos, caxones y máquines compactes.<br>
+<np>
+Taburete de madera tratao
+Muebles de taller
+<&treated_wood_stool>Esti bloque ye un mueble prácticu de taller pa sales de trabayu y rincones de caltenimientu.<br>
+<br>
+Usu: ponlu al llau de bancos, caxones y máquines compactes.<br>
+<np>
+Mesa de trabayu del metal
+Puestu de trabayu pa plaques
+<&metal_crafting_table>La mesa de trabayu del metal ye un puestu de taller reforzáu, con una ranura pal martiellu, una cuadrícula d’ellaboración de 3x3 y una ranura de salida bien definida.<br>
+<br>
+Usu: usa la cuadrícula pa la ellaboración normal. Pa facer plaques d’IE, pon un martiellu d’inxenieru na ranura de ferramienta y el material de la placa na cuadrícula enantes de sacar el resultáu. Les decoraciones d’aceru usen plaques d’aceru pa postes, pasareles, ventanes, puertes, barandielles y otres pieces d’aceru.<br>
+<np>
+Embudu de fábrica
+Equipamientu de suelu de taller
+<&factory_hopper>Esti bloque mueve piles d’oxetos al traviés d’una carcasa industrial más compacta.<br>
+<br>
+Usu: oriéntalu escontra la llinia d’inventarios y axusta l’alcance, la cantidá de la pila, los tiempos y el mou de redstone na so pantalla.<br>
+<np>
+Apurridor de fábrica
+Equipamientu de suelu de taller
+<&factory_dropper>Esti bloque suelta oxetos almacenaos pela cara escontra la que s’oriente.<br>
+<br>
+Usu: orienta’l frontal escontra’l puntu de salida, enllena les ranures internes y axusta la fuercia, l’ángulu, la espera, la lóxica de filtros y el mou de redstone na so pantalla.<br>
+<np>
+Colocador de bloques de fábrica
+Equipamientu de suelu de taller
+<&factory_placer>Esti bloque coloca bloques de les sos esistencies internes cuando s’activa.<br>
+<br>
+Usu: apunta la cara de trabayu al espaciu de destín y carga piles que se puedan colocar.<br>
+<np>
+Rompedor de bloques
+Equipamientu de suelu de taller
+<&small_block_breaker>El rompedor de bloques pequeñu ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: orienta la cara de trabayu escontra’l bloque que quieras quitar.<br>
+<np>
+Incinerador de residuos
+Unidá compacta de procesamientu
+<&small_waste_incinerator>L’incinerador de residuos destrúi los oxetos que nun se quieren y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: mete na cola namái oxetos de los que quieras desfacete.<br>
+<np>
+Fornu de llaboratoriu
+Unidá compacta de procesamientu
+<&small_lab_furnace>El fornu de llaboratoriu encárgase de trabayos compactos de fundición con combustible sólido y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: usa combustible sólido pa fundir en tandes pequeñes.<br>
+<np>
+Fornu eléctricu
+Unidá compacta de procesamientu
+<&small_electrical_furnace>El fornu eléctricu encárgase de trabayos compactos de fundición con enerxía FE y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: apurre FE y materiales válidos pa fundir.<br>
+<np>
+Fornu de fusión de minerales
+Unidá compacta de procesamientu
+<&small_mineral_smelter>El fornu de fusión de minerales procesa minerales a alta temperatura y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: alimenta’l fornu con bloques minerales y enerxía pa trabayos de fusión a alta temperatura.<br>
+<np>
+Conxelador d’agua
+Unidá compacta de procesamientu
+<&small_freezer>El conxelador d’agua fai trabayos compactos d’enfriamientu pa sistemes de líquidos alimentaos con enerxía.<br>
+<br>
+Usu: apurre agua y enerxía pa producir xelu por fases.<br>
+<np>
+Acumulación pasiva de líquidos
+Accesorios de conducción de líquidos
+<&passive_fluid_accumulator>L’acumulador pasivu de líquidos ye un elementu compactu de conducción de líquidos pa depósitos pequeños, tendíos de tuberíes, puntos de recoyida y control del caudal por redstone.<br>
+<br>
+Usu: colócalu contra fontes d’agua afayadices y dexa espaciu pa sacar el líquidu.<br>
+<np>
+Panel solar
+Equipamientu de suelu de taller
+<&small_solar_panel>El panel solar pequeñu ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: dexa que tenga accesu al cielu abiertu y conecta equipu de baxu consumu.<br>
+<np>
+Máquina de mecer
+Equipamientu de suelu de taller
+<&small_milking_machine>La máquina de mecer pequeña ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: colócala cerca de les vaques y apurre un mediu pa sacar los recipientes de lleche o’l líquidu.<br>
+<np>
+Talador d’árboles
+Equipamientu de suelu de taller
+<&small_tree_cutter>El talador d’árboles pequeñu ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: apúntalu escontra árboles crecíos y recueye’l botín por separao.<br>

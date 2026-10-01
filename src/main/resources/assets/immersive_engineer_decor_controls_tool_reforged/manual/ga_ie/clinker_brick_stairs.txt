@@ -1,0 +1,5 @@
+Staighre Brící Clincéir
+Brící dorchaithe le súiche
+<&recipe>Tugann an bloc seo obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>

@@ -1,0 +1,7 @@
+Łieva rùstega
+Controło co redstone
+<&recipe>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.

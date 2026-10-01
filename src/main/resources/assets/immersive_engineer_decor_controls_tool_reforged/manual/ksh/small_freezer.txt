@@ -1,0 +1,5 @@
+Wasserfröster
+Klein Verarbeitungseinheit
+<&recipe>Dä Wasserfröster deit kleine Köhlarbeite för strombedrevve Flössichkeitsanlaache.<br>
+<br>
+Bruuch: Föhr Wasser un Energie zo, öm Ies en Stufe ze maache.<br>

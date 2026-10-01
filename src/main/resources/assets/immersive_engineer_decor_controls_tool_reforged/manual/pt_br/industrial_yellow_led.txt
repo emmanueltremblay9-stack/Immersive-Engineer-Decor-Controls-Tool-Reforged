@@ -1,0 +1,7 @@
+LED amarelo
+Indicação de sinais
+<&recipe>Um indicador compacto transforma redstone oculta em informação visual para a fábrica.<br>
+<br>
+Uso: Conecte junto ao sinal para monitorar portas, máquinas, alarmes ou painéis.<br>
+<br>
+Observações: Muda de estado quando há redstone ativa por perto.

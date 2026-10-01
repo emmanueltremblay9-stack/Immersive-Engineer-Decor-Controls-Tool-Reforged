@@ -1,0 +1,7 @@
+Vrštat dlja metala
+Rabotno město dlja ploč
+<&recipe>Metalovy vrštat s osobnoj pozicijoju molota, sětkoju tvorjenja 3x3 i izhodnoj pozicijoju.<br>
+<br>
+Upotrěbjenje: Upotrěbi sětku kak obyčny vrštat. Dlja tvorjenja ploč IE postavi molot inženera v poziciju orudja i material ploče v sětku, potom vzemi stvorjenu ploču iz izhoda.<br>
+<br>
+Staljne ozdoby upotrěbjajut staljne ploče. Vloži molot Immersive Engineering, kuj staljne kovky v staljne ploče i potom iz ploč tvori stolpy, obslužne ploščiny, okna, dveri, zaščitne ogrady i druge staljne ozdoby.<br>

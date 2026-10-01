@@ -1,0 +1,7 @@
+Martell triturador de mineral
+Eina manual
+<&recipe>Eina manual per als primers treballs amb ferro i or.<br>
+<br>
+Ús: Combina'l amb ferro en brut, or en brut, mineral de ferro, mineral de ferro de pissarra profunda, mineral d'or o mineral d'or de pissarra profunda per obtenir pols de ferro o d'or d'Immersive Engineering. Perd durabilitat i torna a la graella fins que es trenca.<br>
+<br>
+També es desgasta minant i pot fer retrocedir en combat proper.

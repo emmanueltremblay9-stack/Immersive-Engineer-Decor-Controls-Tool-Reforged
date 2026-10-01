@@ -1,0 +1,5 @@
+Cuaille Adhmaid Chóireáilte
+Páirt den fhráma struchtúrach
+<&recipe>Tugann an Cuaille Díreach Adhmaid Chóireáilte struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>

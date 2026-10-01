@@ -1,0 +1,789 @@
+Redstonebediening
+Meters en signaalonderdelen
+Bedieningsapparatuur maakt verborgen redstone zichtbaar in overzichtelijke fabriekspanelen, sensoren, indicatoren, schakelaars, alarmen en gekoppelde signaalonderdelen.<br>
+<br>
+Gebruik deze pagina's bij het bouwen van bedieningsposten, signaalpanelen, veiligheidsschakelingen en afstandsbedieningen.
+<np>
+Schietschijf
+Kortstondige puls
+<&arrow_target>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Deursensor
+Redstonebesturing
+<&door_sensor_switch>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Liftknop
+Redstonebesturing
+<&elevator_button>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Glazen knop
+Redstonebesturing
+<&glass_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Glazen knop
+Redstonebesturing
+<&glass_small_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Glazen aanraakknop
+Redstonebesturing
+<&glass_touch_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Machineknop
+Redstonebesturing
+<&industrial_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Knop
+Redstonebesturing
+<&industrial_double_pole_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Machineknop met beschermbeugel
+Redstonebesturing
+<&industrial_fenced_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Klopknop
+Redstonebesturing
+<&industrial_knock_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Oude sierknop
+Redstonebesturing
+<&oldfancy_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Oude sierknop
+Redstonebesturing
+<&oldfancy_small_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Oude sierkettingknop
+Kortstondige puls
+<&oldfancy_spring_reset_chain>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Rustieke knop
+Redstonebesturing
+<&rustic_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Rustieke spijkerknop
+Redstonebesturing
+<&rustic_nail_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Kleine rustieke knop
+Redstonebesturing
+<&rustic_small_button>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Rustieke kettingknop
+Kortstondige puls
+<&rustic_spring_reset_chain>Een momentane schakelaar geeft een duidelijke redstonepuls op volle sterkte.<br>
+<br>
+Gebruik: gebruik hem om machines te starten, deuren vrij te geven, alarmen te activeren of eenmalige schakelingen aan te sturen.<br>
+<br>
+Opmerking: keert na de ingestelde puls terug naar de ruststand.
+<np>
+Glazen contactplaat
+Drukpuls
+<&glass_contact_mat>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Glazen deurcontact
+Drukpuls
+<&glass_door_contact_mat>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Contactmat
+Drukpuls
+<&industrial_contact_mat>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Deurcontactmat
+Drukpuls
+<&industrial_door_contact_mat>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Doorvaldetector
+Signaaldetectie
+<&industrial_fallthrough_detector>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Voetknop
+Redstonebesturing
+<&industrial_foot_button>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Industriële schokdeur
+Drukpuls
+<&industrial_high_sensitive_trapdoor>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Schokcontactmat
+Drukpuls
+<&industrial_shock_sensitive_contact_mat>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Schokvalluik
+Drukpuls
+<&industrial_shock_sensitive_trapdoor>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Rode stroomplant
+Drukpuls
+<&red_power_plant>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Rustieke drukplaat
+Drukpuls
+<&rustic_contact_plate>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Rustiek deurcontact
+Drukpuls
+<&rustic_door_contact_plate>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Rustieke valdetector
+Signaaldetectie
+<&rustic_fallthrough_detector>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Rustieke schokdeur
+Drukpuls
+<&rustic_high_sensitive_trapdoor>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Rustieke schokplaat
+Drukpuls
+<&rustic_shock_sensitive_plate>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Rustieke schokdeur
+Drukpuls
+<&rustic_shock_sensitive_trapdoor>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Gele stroomplant
+Drukpuls
+<&yellow_power_plant>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.
+<np>
+Glazen dagschakelklok
+Daglichtsignaal
+<&glass_day_timer>Een schakelklok volgt het daggedeelte van de wereldcyclus.<br>
+<br>
+Gebruik: gebruik hem voor terreinverlichting, luiken en fabrieksbediening die alleen overdag actief mag zijn.<br>
+<br>
+Opmerking: vereist een dimensie met hemellicht.
+<np>
+Glazen entiteitendetector
+Signaaldetectie
+<&glass_entity_detector>Een entiteitendetector bewaakt beweging in de buurt zonder een zichtbare vloerplaat.<br>
+<br>
+Gebruik: verbind hem met deuren, lampen, alarmen of machinevergrendelingen.<br>
+<br>
+Opmerking: scant een klein gebied rond het blok.
+<np>
+Glazen intervalsignaal
+Tijdgestuurde puls
+<&glass_interval_timer>Een compacte tijdschakelaar levert een geplande redstonepuls.<br>
+<br>
+Gebruik: gebruik hem waar een klein mechanisme periodieke of vertraagde bediening nodig heeft.<br>
+<br>
+Opmerking: werkt met geplande redstonepulsen.
+<np>
+Glazen lijndetector
+Signaaldetectie
+<&glass_linear_entity_detector>Een entiteitendetector bewaakt beweging in de buurt zonder een zichtbare vloerplaat.<br>
+<br>
+Gebruik: verbind hem met deuren, lampen, alarmen of machinevergrendelingen.<br>
+<br>
+Opmerking: scant een klein gebied rond het blok.
+<np>
+Blokdetector
+Signaaldetectie
+<&industrial_block_detector>Een blokdetector controleert of de ruimte vóór hem bezet is.<br>
+<br>
+Gebruik: richt hem op de machinezijde, buffer of beveiligde ruimte die bewaakt moet worden.<br>
+<br>
+Opmerking: geeft een signaal af wanneer het blok vóór hem geen lucht is.
+<np>
+Dagschakelklok
+Daglichtsignaal
+<&industrial_day_timer>Een schakelklok volgt het daggedeelte van de wereldcyclus.<br>
+<br>
+Gebruik: gebruik hem voor terreinverlichting, luiken en fabrieksbediening die alleen overdag actief mag zijn.<br>
+<br>
+Opmerking: vereist een dimensie met hemellicht.
+<np>
+Entiteitendetector
+Signaaldetectie
+<&industrial_entity_detector>Een entiteitendetector bewaakt beweging in de buurt zonder een zichtbare vloerplaat.<br>
+<br>
+Gebruik: verbind hem met deuren, lampen, alarmen of machinevergrendelingen.<br>
+<br>
+Opmerking: scant een klein gebied rond het blok.
+<np>
+Intervalschakelaar
+Tijdgestuurde puls
+<&industrial_interval_timer>Een compacte tijdschakelaar levert een geplande redstonepuls.<br>
+<br>
+Gebruik: gebruik hem waar een klein mechanisme periodieke of vertraagde bediening nodig heeft.<br>
+<br>
+Opmerking: werkt met geplande redstonepulsen.
+<np>
+Lichtsensor
+Signaaldetectie
+<&industrial_light_sensor>Een lichtsensor zet de plaatselijke helderheid om in redstonebediening.<br>
+<br>
+Gebruik: gebruik hem voor automatische lampen, luiken en schakelingen die op zichtbaarheid reageren.<br>
+<br>
+Opmerking: geeft een signaal af bij een onbewerkte helderheidswaarde van 8 of hoger.
+<np>
+Onweersdetector
+Signaaldetectie
+<&industrial_lightning_sensor>Een onweerssensor stuurt waarschuwingen aan tijdens onweer.<br>
+<br>
+Gebruik: plaats hem onder de open hemel en verbind hem met lampen of alarmen.<br>
+<br>
+Opmerking: vereist onweer en vrij zicht op de hemel.
+<np>
+Lineaire entiteitendetector
+Signaaldetectie
+<&industrial_linear_entity_detector>Een entiteitendetector bewaakt beweging in de buurt zonder een zichtbare vloerplaat.<br>
+<br>
+Gebruik: verbind hem met deuren, lampen, alarmen of machinevergrendelingen.<br>
+<br>
+Opmerking: scant een klein gebied rond het blok.
+<np>
+Regensensor
+Signaaldetectie
+<&industrial_rain_sensor>Een weersensor zet regen op zijn positie om in een redstonesignaal.<br>
+<br>
+Gebruik: monteer hem waar het blok erboven regen kan ontvangen.<br>
+<br>
+Opmerking: controleert of het boven de sensor regent.
+<np>
+Bistabiele glazen schakelaar
+Redstonebesturing
+<&glass_rotary_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Bistabiele glazen aanraakbediening
+Redstonebesturing
+<&glass_touch_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Oranje gevoelig glas
+Signaalglas
+<&orange_sensitiveglass>Een glasblok dat op redstone reageert houdt het zicht vrij en toont tegelijk de signaaltoestand.<br>
+<br>
+Gebruik: gebruik het in ramen van controlekamers, verlichte panelen en beschermende fabrieksbeglazing.<br>
+<br>
+Opmerking: verandert van toestand door een redstonesignaal in de buurt.
+<np>
+Lichtgevend gevoelig glas
+Signaalglas
+<&sensitive_glass_block>Een glasblok dat op redstone reageert houdt het zicht vrij en toont tegelijk de signaaltoestand.<br>
+<br>
+Gebruik: gebruik het in ramen van controlekamers, verlichte panelen en beschermende fabrieksbeglazing.<br>
+<br>
+Opmerking: verandert van toestand door een redstonesignaal in de buurt.
+<np>
+Gekleurd gevoelig glas
+Signaalglas
+<&stained_sensitiveglass>Een glasblok dat op redstone reageert houdt het zicht vrij en toont tegelijk de signaaltoestand.<br>
+<br>
+Gebruik: gebruik het in ramen van controlekamers, verlichte panelen en beschermende fabrieksbeglazing.<br>
+<br>
+Opmerking: verandert van toestand door een redstonesignaal in de buurt.
+<np>
+Glazen balkmeter
+Signaalmeter
+<&glass_vertical_bar_gauge>Een compacte meter voor controlekamers toont de redstonesterkte duidelijk op een paneel.<br>
+<br>
+Gebruik: monteer hem waar de redstonesterkte van nabijgelegen blokken in één oogopslag moet kunnen worden gecontroleerd.<br>
+<br>
+Opmerking: leest de redstonesterkte in de buurt van 0 tot 15.
+<np>
+Analoge meter
+Signaalmeter
+<&industrial_analog_angular_gauge>Een compacte meter voor controlekamers toont de redstonesterkte duidelijk op een paneel.<br>
+<br>
+Gebruik: monteer hem waar de redstonesterkte van nabijgelegen blokken in één oogopslag moet kunnen worden gecontroleerd.<br>
+<br>
+Opmerking: leest de redstonesterkte in de buurt van 0 tot 15.
+<np>
+Voltmeter
+Signaalmeter
+<&industrial_analog_horizontal_gauge>Een compacte meter voor controlekamers toont de redstonesterkte duidelijk op een paneel.<br>
+<br>
+Gebruik: monteer hem waar de redstonesterkte van nabijgelegen blokken in één oogopslag moet kunnen worden gecontroleerd.<br>
+<br>
+Opmerking: leest de redstonesterkte in de buurt van 0 tot 15.
+<np>
+Digitale meter
+Afleesbare signaalsterkte
+<&industrial_small_digital_gauge>Een compacte meter voor controlekamers toont de redstonesterkte duidelijk op een paneel.<br>
+<br>
+Gebruik: monteer hem waar de redstonesterkte van nabijgelegen blokken in één oogopslag moet kunnen worden gecontroleerd.<br>
+<br>
+Opmerking: leest de redstonesterkte in de buurt van 0 tot 15.
+<np>
+Glazen buismeter
+Signaalmeter
+<&industrial_tube_gauge>Een compacte meter voor controlekamers toont de redstonesterkte duidelijk op een paneel.<br>
+<br>
+Gebruik: monteer hem waar de redstonesterkte van nabijgelegen blokken in één oogopslag moet kunnen worden gecontroleerd.<br>
+<br>
+Opmerking: leest de redstonesterkte in de buurt van 0 tot 15.
+<np>
+Analoge balkmeter
+Signaalmeter
+<&industrial_vertical_bar_gauge>Een compacte meter voor controlekamers toont de redstonesterkte duidelijk op een paneel.<br>
+<br>
+Gebruik: monteer hem waar de redstonesterkte van nabijgelegen blokken in één oogopslag moet kunnen worden gecontroleerd.<br>
+<br>
+Opmerking: leest de redstonesterkte in de buurt van 0 tot 15.
+<np>
+Alarmlamp
+Signaalweergave
+<&industrial_alarm_lamp>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Alarmsirene
+Signaalweergave
+<&industrial_alarm_siren>De alarmsirene is een op een blokvlak gemonteerde redstone-indicator. Zijn aangedreven toestand verandert volgens het signaal van het blok waaraan hij is bevestigd.<br>
+<br>
+Gebruik: bevestig hem op een stevig vlak en voorzie hem van stroom om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: de sirene wordt eenmaal per seconde bijgewerkt zolang het aangesloten signaal actief blijft.
+<np>
+Knipperled
+Signaalweergave
+<&industrial_blinking_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Groene knipperled
+Signaalweergave
+<&industrial_green_blinking_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Groene led
+Signaalweergave
+<&industrial_green_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Rode led
+Signaalweergave
+<&industrial_red_blinking_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Rode led
+Signaalweergave
+<&industrial_red_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Witte knipperled
+Signaalweergave
+<&industrial_white_blinking_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Witte led
+Signaalweergave
+<&industrial_white_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Gele knipperled
+Signaalweergave
+<&industrial_yellow_blinking_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Gele led
+Signaalweergave
+<&industrial_yellow_led>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Rustieke semafoor
+Signaalweergave
+<&rustic_semaphore>Een compacte indicator maakt verborgen redstonesignalen zichtbaar in de fabriek.<br>
+<br>
+Gebruik: sluit hem naast het signaal aan om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: verandert van toestand wanneer er in de buurt een redstonesignaal aanwezig is.
+<np>
+Vergelijkerschakelaar
+Signaal van het bevestigingsblok
+<&industrial_comparator_switch>Een compacte sensorschakelaar leest het blok waarop hij is gemonteerd en zet die meting om in een eenvoudig paneelsignaal.<br>
+<br>
+Gebruik: monteer hem op inventarissen, tanks of redstoneapparatuur. Wanneer het bevestigingsblok een vergelijkersignaal, containerinhoud of redstone-uitgang meldt, geeft de schakelaar een redstonesignaal op volle sterkte af.<br>
+<br>
+Opmerking: gebruik hem om voorraadniveaus of verborgen bedrading in duidelijke aan-uitbesturingslijnen om te zetten.
+<np>
+Dimmer
+Variabel signaal
+<&industrial_dimmer>Met een draaiknop op een compact paneel stelt u de redstonesterkte in.<br>
+<br>
+Gebruik: rechtsklik om de uitgangssterkte stapsgewijs te verhogen. Na de hoogste stand begint hij weer bij nul.<br>
+<br>
+Opmerking: geeft een signaalsterkte van 0 tot 15 af.
+<np>
+Noodstopknop
+Redstonebesturing
+<&industrial_estop_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Trechterblokkeerder
+Redstonebesturing
+<&industrial_hopper_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Klopschakelaar
+Redstonebesturing
+<&industrial_knock_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Hendel
+Redstonebesturing
+<&industrial_lever>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Machine-tweeknopsschakelaar
+Redstonebesturing
+<&industrial_machine_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Trekgreep
+Redstonebesturing
+<&industrial_pull_handle>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Draaischakelaar
+Redstonebesturing
+<&industrial_rotary_lever>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Machinedraaischakelaar
+Redstonebesturing
+<&industrial_rotary_machine_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Contacthendel
+Redstonebesturing
+<&industrial_small_lever>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Schakelaar
+Redstonebesturing
+<&industrialswitch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Lichtschakelaar
+Redstonebesturing
+<&light_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Ventielschakelaar
+Redstonebesturing
+<&valve_wheel_switch>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Pulsontvanger met behuizing
+Gekoppelde bediening
+<&industrial_switchlink_cased_pulse_receiver>Een gekoppelde pulsontvanger met behuizing geeft bedieningspanelen op afstand een korte redstonepuls.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Rechtsklik op de ontvanger of activeer de gekoppelde parel om een korte puls af te geven.<br>
+<br>
+Opmerking: de puls eindigt vanzelf na de ingestelde duur.
+<np>
+Koppelingsontvanger met behuizing
+Gekoppelde bediening
+<&industrial_switchlink_cased_receiver>Een gekoppelde ontvanger met behuizing geeft bedieningspanelen op afstand een stevig redstonedoel.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Rechtsklik rechtstreeks op de ontvanger om hem met de hand om te schakelen.<br>
+<br>
+Opmerking: een gekoppelde parel schakelt deze ontvanger om wanneer u de parel sluipend gebruikt.
+<np>
+Pulskoppelingsontvanger
+Gekoppelde bediening
+<&industrial_switchlink_pulse_receiver>Een gekoppelde pulsontvanger geeft bedieningspanelen op afstand een korte redstonepuls.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Rechtsklik op de ontvanger of activeer de gekoppelde parel om een korte puls af te geven.<br>
+<br>
+Opmerking: de puls eindigt vanzelf na de ingestelde duur.
+<np>
+Pulskoppelingsrelais
+Gekoppelde bediening
+<&industrial_switchlink_pulse_relay>Een onderdeel in relaisstijl geeft bedieningspanelen een compact plaatselijk schakelpunt.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten. Gebruik ontvangerblokken voor activering met gekoppelde parels.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Schakelkoppelingsontvanger
+Gekoppelde bediening
+<&industrial_switchlink_receiver>Een gekoppelde ontvanger geeft bedieningspanelen op afstand een redstonedoel op volle sterkte.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Rechtsklik rechtstreeks op de ontvanger om hem met de hand om te schakelen.<br>
+<br>
+Opmerking: een gekoppelde parel schakelt deze ontvanger om wanneer u de parel sluipend gebruikt.
+<np>
+Analoge koppelingsontvanger
+Gekoppelde bediening
+<&industrial_switchlink_receiver_analog>Een gekoppelde ontvanger geeft bedieningspanelen een zichtbaar doel voor bediening op afstand.<br>
+<br>
+Gebruik: klik erop met een enderparel om een gekoppelde parel te maken. Gebruik die parel terwijl u sluipt om de ontvanger op afstand te activeren.<br>
+<br>
+Opmerking: deze ontvanger geeft bij activering een redstonesignaal op volle sterkte af.
+<np>
+Schakelkoppelingsrelais
+Gekoppelde bediening
+<&industrial_switchlink_relay>Een onderdeel in relaisstijl geeft bedieningspanelen een compact plaatselijk schakelpunt.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten. Gebruik ontvangerblokken voor activering met gekoppelde parels.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Analoog koppelingsrelais
+Gekoppelde bediening
+<&industrial_switchlink_relay_analog>Een onderdeel in relaisstijl geeft bedieningspanelen een compact plaatselijk schakelpunt.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten. Gebruik ontvangerblokken voor activering met gekoppelde parels.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Schakelkoppelingsparel
+Gekoppelde bediening
+<&switchlink_pearl>Een gekoppelde parel bewaart een ontvangerdoel voor fabrieksbediening op afstand.<br>
+<br>
+Gebruik: klik met een enderparel op een schakelkoppelingsontvanger om er een te maken. Gebruik de gekoppelde parel terwijl u sluipt om de opgeslagen ontvanger te activeren.<br>
+<br>
+Opmerking: het doel moet geladen zijn, zich in dezelfde dimensie bevinden en binnen bereik liggen.
+<np>
+Oude sierhendel
+Redstonebesturing
+<&oldfancy_bistableswitch1>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Oude sierdraaischakelaar
+Redstonebesturing
+<&oldfancy_bistableswitch2>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Rustieke draaischakelaar
+Redstonebesturing
+<&rustic_angular_lever>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Rustieke hendel
+Redstonebesturing
+<&rustic_lever>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Rustieke spijkerhendel
+Redstonebesturing
+<&rustic_nail_lever>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.
+<np>
+Rustieke hendel met twee scharnieren
+Redstonebesturing
+<&rustic_two_hinge_lever>Een compacte bediening vormt een duidelijk herkenbaar redstoneschakelpunt in fabrieksgebouwen.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.

@@ -1,0 +1,7 @@
+Derbynnydd Cyswllt Analog
+Rheolaeth gysylltiedig
+<&recipe>Mae derbynnydd cysylltiedig yn rhoi targed o bell gweladwy i baneli rheoli.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Defnyddiwch y berl honno wrth sleifio i weithredu'r derbynnydd o bell.<br>
+<br>
+Nodiadau: Mae'r derbynnydd hwn yn allbynnu signal Redstone llawn pan gaiff ei sbarduno.

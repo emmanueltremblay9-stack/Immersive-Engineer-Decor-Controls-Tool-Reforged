@@ -1,0 +1,7 @@
+Temporizador a interval
+Impuls a temp
+<&recipe>Un interutor a temp piscinin el dà un impuls de prejarossa a un temp stabilid.<br>
+<br>
+Dovrel indove che un mecanism piscinin el gh’ha de besogn de comands periodich o ritardad.<br>
+<br>
+El dovra impuls de prejarossa a temp stabilid.

@@ -1,0 +1,7 @@
+Ariadne-kol
+Leiðmerking til námur
+<&recipe>Ariadne-kol er ein skjótur leiðmerkari til skaktir, námasíðugongir og fyribils arbeiði undir jørð.<br>
+<br>
+Nýtsla: Brúka tað á einari fastari kubbasíðu fyri at seta eina svarta pílmerking á síðuna. Merkingin lesur klikstaðið á síðuni og stuðlar átta leiðum, eisini skákleiðum. Soleiðis kanst tú merkja sving, útgongdir, blindgongir og veitingarleiðir uttan at bera serstøk skelti.<br>
+<br>
+Ariadne-kol er eitt endurnýtanligt merkjamboð við 100 nýtslum. Hvør væleydnað merking kostar eitt haldførisstig. Síður, sum ikki verða stuðlaðar, verða vrakaðar uttan at slíta lutin.

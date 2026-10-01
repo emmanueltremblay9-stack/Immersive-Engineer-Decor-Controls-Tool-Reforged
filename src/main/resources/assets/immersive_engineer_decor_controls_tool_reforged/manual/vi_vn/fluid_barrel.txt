@@ -1,0 +1,5 @@
+Thùng chất lỏng
+Thiết bị tuyến chất lỏng
+<&recipe>Phụ kiện này là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Đặt ở nơi ống hoặc xô có thể tiếp cận mặt bể.<br>

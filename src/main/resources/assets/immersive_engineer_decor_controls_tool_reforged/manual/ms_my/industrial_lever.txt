@@ -1,0 +1,7 @@
+Tuil
+Kawalan Redstone
+<&recipe>Kelengkapan kawalan padat memberikan titik suis redstone yang jelas dalam binaan kilang.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.

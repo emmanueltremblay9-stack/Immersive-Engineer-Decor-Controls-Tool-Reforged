@@ -1,0 +1,127 @@
+Prehodi
+Prehodi in podpore
+Jekleni stebri, stebri iz obdelanega lesa, rešetke, servisni prehodi, zaščitne ograje, lestve, vrata, okna in lopute tvorijo kompaktne servisne poti po notranjosti tovarn.<br>
+<br>
+Jekleni deli prehodov uporabljajo jeklene plošče. Izdelaj ali postavi mizo za obdelavo kovin, vstavi kladivo Immersive Engineering, nato pa z njim skuj jeklene palice v jeklene plošče za stebre, servisne prehode, okna, vrata, zaščitne ograje in druge jeklene okrasne elemente.<br>
+<br>
+Postavi jih tam, kjer stroji potrebujejo servisni dostop, dvignjene poti, vzdrževalne jaške ali varnejše robove.
+<np>
+Debel jeklen steber
+Del nosilnega ogrodja
+<&thick_steel_pole>Raven debel jeklen steber daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Glava debelega stebra
+Del nosilnega ogrodja
+<&thick_steel_pole_head>Glava/podnožje ravnega debelega jeklenega stebra daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Tanek jeklen steber
+Del nosilnega ogrodja
+<&thin_steel_pole>Raven tanek jeklen steber daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Glava tankega stebra
+Del nosilnega ogrodja
+<&thin_steel_pole_head>Glava/podnožje ravnega tankega jeklenega stebra daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Steber iz obdelanega lesa
+Del nosilnega ogrodja
+<&treated_wood_pole>Raven steber iz obdelanega lesa daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Glava stebra iz obdelanega lesa
+Del nosilnega ogrodja
+<&treated_wood_pole_head>Glava/podnožje ravnega stebra iz obdelanega lesa daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Podpora stebra iz obdelanega lesa
+Del nosilnega ogrodja
+<&treated_wood_pole_support>Podpora ravnega stebra iz obdelanega lesa daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Jeklena dvojna T-podpora
+Del nosilnega ogrodja
+<&steel_double_t_support>Ta blok daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>
+<np>
+Jeklena talna rešetka
+Del servisnega dostopa
+<&steel_floor_grating>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Jeklen servisni prehod
+Del servisnega dostopa
+<&steel_catwalk>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Stopnice jeklenega servisnega prehoda
+Del servisnega dostopa
+<&steel_catwalk_stairs>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Dvignjen jeklen servisni prehod
+Del servisnega dostopa
+<&steel_catwalk_ta>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Jeklena zaščitna ograja
+Del servisnega dostopa
+<&steel_railing>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Ograja iz jeklene mreže
+Del servisnega dostopa
+<&steel_mesh_fence>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Vrata ograje iz jeklene mreže
+Del servisnega dostopa
+<&steel_mesh_fence_gate>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Lestev s kovinskimi prečkami
+Del servisnega dostopa
+<&metal_rung_ladder>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Izmenične kovinske stopnice
+Del servisnega dostopa
+<&metal_rung_steps>Ta blok oblikuje jasno prepoznavne servisne poti okoli strojev.<br>
+<br>
+Uporaba: Postavi ga za vzdrževalni dostop okoli strojev, v zgornjih nadstropjih in servisnih jaških.<br>
+<np>
+Okno z jeklenim okvirjem
+Zaščiten pogled
+<&steel_framed_window>Ta blok ohranja odprt pogled in se hkrati ujema z ojačano tovarniško gradnjo.<br>
+<br>
+Uporaba: Postavi ga v odprtino širine 1 bloka v steni, kjer naj igralci vidijo stroje skozi zaščitno pregrado.<br>
+<np>
+Kovinska drsna vrata
+Industrijska dostopna točka
+<&metal_sliding_door>Ta blok zagotavlja trpežen dostop do servisnih prostorov, jaškov, streh in ohišij strojev.<br>
+<br>
+Uporaba: Namesti ga tam, kjer gradnja potrebuje nadzorovano vzdrževalno odprtino.<br>
+<np>
+Železen pokrov dostopa
+Industrijska dostopna točka
+<&iron_hatch>Ta blok zagotavlja trpežen dostop do servisnih prostorov, jaškov, streh in ohišij strojev.<br>
+<br>
+Uporaba: Namesti ga tam, kjer gradnja potrebuje nadzorovano vzdrževalno odprtino.<br>

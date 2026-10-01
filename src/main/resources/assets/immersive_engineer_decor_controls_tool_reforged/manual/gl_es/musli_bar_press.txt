@@ -1,0 +1,7 @@
+Prensa de barriñas Muslee
+Prensa de alimentos
+<&recipe>A prensa de barras Muslee converte alimentos comúns en racións de campo compactas.<br>
+<br>
+Uso: Leva pan, unha mazá e sementes de trigo, melón, cabaza, remolacha ou Industrial Hemp, e usa a prensa. Un prensado correcto consome unha de cada, comproba o espazo, crea catro barras Muslee Melange e dana a prensa.<br>
+<br>
+Se falta un ingrediente ou non hai espazo no inventario, non se consome nada.

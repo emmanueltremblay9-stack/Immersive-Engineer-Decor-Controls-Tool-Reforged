@@ -1,0 +1,5 @@
+Automatický stimulátor
+Núdzový injektor
+<&recipe>Automatický stimulátor je núdzový liečebný predmet.<br>
+<br>
+Použite ho ručne na liečenie, krátku ochranu a zrýchlenie. V inventári sa spustí automaticky pri nízkom zdraví a potom sa obnovuje. Majte ho poruke na nebezpečných miestach.

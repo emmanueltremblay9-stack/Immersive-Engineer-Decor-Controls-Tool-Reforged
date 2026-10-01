@@ -1,0 +1,7 @@
+Spací vak
+Prenosná výbava na odpočinok
+<&recipe>Spací vak je výbava odolná voči počasiu na odpočinok ďaleko od postele.<br>
+<br>
+Použite ho v noci v Overworlde na odpočinok do rána bez zmeny miesta znovuzrodenia.<br>
+<br>
+Nefunguje cez deň, pri blízkych príšerách ani v nevhodných dimenziách. Každý úspešný odpočinok ho opotrebuje.

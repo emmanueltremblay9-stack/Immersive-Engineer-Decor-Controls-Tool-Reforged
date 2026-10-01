@@ -1,0 +1,7 @@
+Neurgailu analogikoa
+Seinale-neurgailua
+<&recipe>Aginte-gelako neurgailu trinko batek redstonearen indarra erakusten du, panelean argi irakurtzeko moduan.<br>
+<br>
+Erabilera: muntatu inguruko redstone-potentzia begirada batean egiaztatzeko tokian.<br>
+<br>
+Oharrak: inguruko redstonearen indarra irakurtzen du, 0 eta 15 artean.

@@ -1,0 +1,5 @@
+Blokbrekker
+Helpapparaat foar de wurkflier
+<&recipe>De lytse blokbrekker is in helpblok foar de wurkflier foar nifeljen, opslach, pleatsen, brekken, sammeljen of kompakte automatisearring.<br>
+<br>
+Gebrûk: Rjochtsje de wurkkant op it blok dat fuorthelle wurde moat.<br>

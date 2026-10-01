@@ -1,0 +1,5 @@
+Maye qıfı
+Maye xətti avadanlığı
+<&recipe>Kiçik maye qıfı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Maye toplama nöqtəsinin altına qoyub içindəkiləri çənlərə və ya aşağıdakı borulara yönəldin.<br>

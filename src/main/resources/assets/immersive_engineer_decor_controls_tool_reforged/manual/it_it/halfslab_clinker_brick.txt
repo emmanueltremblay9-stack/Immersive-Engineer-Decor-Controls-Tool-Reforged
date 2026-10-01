@@ -1,0 +1,5 @@
+Mezza lastra di mattoni di clinker
+Muratura annerita dalla fuliggine
+<&recipe>Questo blocco porta mattoni anneriti dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>

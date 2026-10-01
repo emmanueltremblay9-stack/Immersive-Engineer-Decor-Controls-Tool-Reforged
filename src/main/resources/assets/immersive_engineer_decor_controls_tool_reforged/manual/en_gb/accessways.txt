@@ -1,0 +1,127 @@
+Accessways
+Walkways and supports
+Steel poles, treated posts, grating, catwalks, railings, ladders, doors, windows, and hatches form compact service routes through factory interiors.<br>
+<br>
+Steel accessway parts use steel plates. Craft or place a Metal Crafting Table, insert an Immersive Engineering hammer, then hammer steel ingots into steel plates for poles, catwalks, windows, doors, railings, and other steel decorations.<br>
+<br>
+Place them where machines need service access, elevated paths, maintenance shafts, or safer edges.
+<np>
+Thick Steel Pole
+Structural frame part
+<&thick_steel_pole>The Straight Thick Steel Pole Thick Steel Pole supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Thick Pole Head
+Structural frame part
+<&thick_steel_pole_head>The Straight Thick Steel Pole Head/Foot Thick Steel Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Thin Steel Pole
+Structural frame part
+<&thin_steel_pole>The Straight Thin Steel Pole Thin Steel Pole supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Thin Pole Head
+Structural frame part
+<&thin_steel_pole_head>The Straight Thin Steel Pole head/foot Thin Steel Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Treated Wood Pole
+Structural frame part
+<&treated_wood_pole>The Straight Treated Wood Pole Treated Wood Pole supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Treated Pole Head
+Structural frame part
+<&treated_wood_pole_head>The Straight Treated Wood Pole Head/Foot Treated Wood Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Treated Pole Support
+Structural frame part
+<&treated_wood_pole_support>The Straight Treated Wood Pole Support Treated Wood Pole Support supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Steel Double T Support
+Structural frame part
+<&steel_double_t_support>This block supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
+<np>
+Steel Floor Grating
+Service access fitting
+<&steel_floor_grating>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Steel Catwalk
+Service access fitting
+<&steel_catwalk>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Steel Catwalk Stairs
+Service access fitting
+<&steel_catwalk_stairs>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Raised Steel Catwalk
+Service access fitting
+<&steel_catwalk_ta>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Steel Railing
+Service access fitting
+<&steel_railing>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Steel Mesh Fence
+Service access fitting
+<&steel_mesh_fence>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Steel Mesh Fence Gate
+Service access fitting
+<&steel_mesh_fence_gate>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Metal Rung Ladder
+Service access fitting
+<&metal_rung_ladder>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Staggered Metal Steps
+Service access fitting
+<&metal_rung_steps>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
+<np>
+Steel Framed Window
+Protected sightline
+<&steel_framed_window>This block keeps sightlines open while still matching reinforced factory construction.<br>
+<br>
+Usage: Place it in a 1-block wall opening where players should see machinery through a protected barrier.<br>
+<np>
+Metal Sliding Door
+Industrial access point
+<&metal_sliding_door>This block provides a rugged access point for service rooms, shafts, roofs, and machine enclosures.<br>
+<br>
+Usage: Install it where the build needs a controlled maintenance opening.<br>
+<np>
+Iron Hatch
+Industrial access point
+<&iron_hatch>This block provides a rugged access point for service rooms, shafts, roofs, and machine enclosures.<br>
+<br>
+Usage: Install it where the build needs a controlled maintenance opening.<br>

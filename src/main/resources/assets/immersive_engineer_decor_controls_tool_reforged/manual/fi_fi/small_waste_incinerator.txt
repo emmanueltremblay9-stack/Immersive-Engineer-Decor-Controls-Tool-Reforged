@@ -1,0 +1,5 @@
+Jätteenpoltin
+Pieni käsittely-yksikkö
+<&recipe>Jätteenpoltin tuhoaa tarpeettomat esineet vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Syötä sen jonoon vain tarpeettomia esineitä.<br>

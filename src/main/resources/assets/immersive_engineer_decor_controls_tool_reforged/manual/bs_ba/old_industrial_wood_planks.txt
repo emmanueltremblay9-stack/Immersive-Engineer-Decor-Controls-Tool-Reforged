@@ -1,0 +1,5 @@
+Stare drvene daske
+Ostarjelo radioničko drvo
+<&recipe>Stare industrijske drvene daske dodaju ostarjelo radioničko drvo za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: Koristite ga za stare radioničke podove, stepenice, vrata i ukrase.<br>

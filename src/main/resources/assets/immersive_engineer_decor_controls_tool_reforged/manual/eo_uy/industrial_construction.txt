@@ -1,0 +1,108 @@
+Industria konstruado
+Fabrikaj muroj kaj borderoj
+Ĝeneralaj konstrupartoj inkluzivas pordojn, fenestrojn, lumigilojn, avertŝildojn, borderojn kaj strukturajn partojn kiuj ne apartenas al pli specifa sekcio.<br>
+<br>
+Uzu ĉi tiujn paĝojn por fabrikaj ĉambroj, prizorgaj koridoroj, danĝermarkado kaj praktikaj industriaj detaloj.
+<np>
+Fera ampollumigilo
+Kompakta laborlumo
+<&iron_bulb_light>Ĉi tiu bloko provizas kompaktan industrian lumigon por koridoroj, paspontoj kaj laborejoj.<br>
+<br>
+Uzado: muntu ĝin sur plafonoj, muroj aŭ randoj kie la ĉambro bezonas klaran laborlumon.<br>
+<np>
+Plafonranda lumigilo
+Kompakta laborlumo
+<&iron_ceiling_edge_light>Ĉi tiu bloko provizas kompaktan industrian lumigon por koridoroj, paspontoj kaj laborejoj.<br>
+<br>
+Uzado: muntu ĝin sur plafonoj, muroj aŭ randoj kie la ĉambro bezonas klaran laborlumon.<br>
+<np>
+Enfosa plankranda lumigilo
+Kompakta laborlumo
+<&iron_floor_edge_light>Ĉi tiu bloko provizas kompaktan industrian lumigon por koridoroj, paspontoj kaj laborejoj.<br>
+<br>
+Uzado: muntu ĝin sur plafonoj, muroj aŭ randoj kie la ĉambro bezonas klaran laborlumon.<br>
+<np>
+Enfosa lumigilo
+Kompakta laborlumo
+<&iron_inset_light>Ĉi tiu bloko provizas kompaktan industrian lumigon por koridoroj, paspontoj kaj laborejoj.<br>
+<br>
+Uzado: muntu ĝin sur plafonoj, muroj aŭ randoj kie la ĉambro bezonas klaran laborlumon.<br>
+<np>
+Ŝildo «Ĝenerala averto»
+Danĝermarkilo
+<&sign_caution>La ŝildo «Ĝenerala averto» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Danĝerŝildo
+Danĝermarkilo
+<&sign_danger>La ŝildo «Atentu, tie estas vera danĝero» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ornama ŝildo
+Danĝermarkilo
+<&sign_decor>La ŝildplato de Engineer’s Decor markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Defenda ŝildo
+Danĝermarkilo
+<&sign_defense>La ŝildo «Atentu, defenda sistemo antaŭe» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Elireja ŝildo
+Danĝermarkilo
+<&sign_exit>Ĉi tiu ŝildo markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo «Fajrodanĝero»
+Danĝermarkilo
+<&sign_firehazard>La ŝildo «Fajrodanĝero» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo «Frostoaverto»
+Danĝermarkilo
+<&sign_frost>La ŝildo «Frostoaverto» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo pri varmega surfaco
+Danĝermarkilo
+<&sign_hotsurface>La ŝildo «Atentu, varmega surfaco» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo pri tensia drato
+Danĝermarkilo
+<&sign_hotwire>La ŝildo «Atentu, tensia drato» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo «Lasera danĝero»
+Danĝermarkilo
+<&sign_laser>La ŝildo «Lasera danĝero» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo pri magia danĝero
+Danĝermarkilo
+<&sign_magichazard>La ŝildo «Atentu, magia danĝero» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo pri magneta kampo
+Danĝermarkilo
+<&sign_magneticfield>La ŝildo «Atentu, forta magneta kampo» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>
+Ŝildo «Radiada danĝero»
+Danĝermarkilo
+<&sign_radioactive>La ŝildo «Radiada danĝero» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>
+<np>

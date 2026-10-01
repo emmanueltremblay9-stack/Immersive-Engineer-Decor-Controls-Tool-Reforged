@@ -1,0 +1,108 @@
+Industria-eraikuntza
+Fabrikako hormak eta ertz-apaingarriak
+Eraikuntzako osagarri orokorrek ateak, leihoak, argiak, abisu-seinaleak, ertz-apaingarriak eta atal zehatzagoetan sartzen ez diren egitura-piezak biltzen dituzte.<br>
+<br>
+Erabili orrialde hauek fabrikako geletarako, mantentze-korridoreetarako, arriskuen markaketarako eta industria-xehetasun praktikoetarako.
+<np>
+Burdinazko bonbilla-argia
+Laneko argi trinkoa
+<&iron_bulb_light>Bloke honek industria-argiztapen trinkoa eskaintzen du korridoreetarako, pasabideetarako eta lan-guneetarako.<br>
+<br>
+Erabilera: muntatu sabaietan, hormetan edo ertzetan, gelak lanerako argiztapen argia behar duen tokian.<br>
+<np>
+Sabai-ertzeko argia
+Laneko argi trinkoa
+<&iron_ceiling_edge_light>Bloke honek industria-argiztapen trinkoa eskaintzen du korridoreetarako, pasabideetarako eta lan-guneetarako.<br>
+<br>
+Erabilera: muntatu sabaietan, hormetan edo ertzetan, gelak lanerako argiztapen argia behar duen tokian.<br>
+<np>
+Zoru-ertzeko argi txertatua
+Laneko argi trinkoa
+<&iron_floor_edge_light>Bloke honek industria-argiztapen trinkoa eskaintzen du korridoreetarako, pasabideetarako eta lan-guneetarako.<br>
+<br>
+Erabilera: muntatu sabaietan, hormetan edo ertzetan, gelak lanerako argiztapen argia behar duen tokian.<br>
+<np>
+Argi txertatua
+Laneko argi trinkoa
+<&iron_inset_light>Bloke honek industria-argiztapen trinkoa eskaintzen du korridoreetarako, pasabideetarako eta lan-guneetarako.<br>
+<br>
+Erabilera: muntatu sabaietan, hormetan edo ertzetan, gelak lanerako argiztapen argia behar duen tokian.<br>
+<np>
+«Kontuz, arrisku orokorra» seinalea
+Arrisku-markatzailea
+<&sign_caution>«Kontuz, arrisku orokorra» abisu-seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Arrisku-seinalea
+Arrisku-markatzailea
+<&sign_danger>«Kontuz, benetan arriskutsua da hor» arrisku-seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Seinale apaingarria
+Arrisku-markatzailea
+<&sign_decor>Seinale-plaka apaingarriak (Ingeniariaren dekorazioa) arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Defentsa-seinalea
+Arrisku-markatzailea
+<&sign_defense>«Kontuz, defentsa-sistema aurrean» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Irteera-seinalea
+Arrisku-markatzailea
+<&sign_exit>Seinale honek arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+«Sute-arriskua» seinalea
+Arrisku-markatzailea
+<&sign_firehazard>«Sute-arriskua» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+«Izozte-oharra» seinalea
+Arrisku-markatzailea
+<&sign_frost>«Izozte-oharra» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Gainazal beroaren seinalea
+Arrisku-markatzailea
+<&sign_hotsurface>«Kontuz, gainazal beroa» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Tentsiopeko kablearen seinalea
+Arrisku-markatzailea
+<&sign_hotwire>«Kontuz, tentsiopeko kablea» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+«Laser-arriskua» seinalea
+Arrisku-markatzailea
+<&sign_laser>«Laser-arriskua» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Arrisku magikoaren seinalea
+Arrisku-markatzailea
+<&sign_magichazard>«Kontuz, arrisku magikoa» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+Eremu magnetikoaren seinalea
+Arrisku-markatzailea
+<&sign_magneticfield>«Kontuz, eremu magnetiko indartsua» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>
+«Arrisku erradioaktiboa» seinalea
+Arrisku-markatzailea
+<&sign_radioactive>«Arrisku erradioaktiboa» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>
+<np>

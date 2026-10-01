@@ -1,0 +1,7 @@
+Biser poveznice prekidača
+Povezano upravljanje
+<&recipe>Povezani biser pohranjuje ciljni prijamnik za daljinsko tvorničko upravljanje.<br>
+<br>
+Uporaba: klikni Ender biserom na prijamnik poveznice prekidača za izradu povezanog bisera. Upotrijebi ga dok čučiš za aktivaciju spremljenog prijamnika.<br>
+<br>
+Napomene: cilj mora biti učitan, u istoj dimenziji i unutar dometa.

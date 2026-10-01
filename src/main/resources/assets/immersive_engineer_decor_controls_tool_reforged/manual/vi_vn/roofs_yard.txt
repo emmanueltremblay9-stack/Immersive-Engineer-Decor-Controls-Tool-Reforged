@@ -1,0 +1,101 @@
+Mái và sân
+Phụ kiện nhà máy ngoài trời
+Khối mái, sạn sân và chi tiết gỗ công nghiệp cũ giúp hoàn thiện nhà kho ngoài trời, sân làm việc, khu bốc dỡ và mép nhà máy phong hóa.<br>
+<br>
+Phối các chi tiết này với khối xây và lối tiếp cận để công trình công nghiệp ngoài trời vẫn rõ hình từ xa.
+<np>
+Mái ngói vảy tối màu
+Chi tiết mái phong hóa
+<&dark_shingle_roof>Khối này tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Tấm chắn tuyết mái
+Chi tiết mái phong hóa
+<&dark_shingle_roof_metallized>Tấm chắn tuyết mái ngói vảy tối màu tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Mái ngói vảy tối màu
+Chi tiết mái phong hóa
+<&dark_shingle_roof_skylight>Cửa sổ mái ngói vảy tối màu tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Thân ống khói mái
+Chi tiết mái phong hóa
+<&dark_shingle_roof_chimneytrunk>Thân ống khói mái ngói vảy tối màu tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Ống luồn dây mái
+Chi tiết mái phong hóa
+<&dark_shingle_roof_wireconduit>Ống luồn dây mái ngói vảy tối màu tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Mái ngói vảy tối màu
+Chi tiết mái phong hóa
+<&dark_shingle_roof_chimney>Ống khói mái ngói vảy tối màu tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Khối mái ngói vảy tối màu
+Chi tiết mái phong hóa
+<&dark_shingle_roof_block>Khối này tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Phiến mái ngói vảy tối màu
+Chi tiết mái phong hóa
+<&dark_shingle_roof_slab>Khối này tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Phiến mái ngói vảy tối màu
+Chi tiết mái phong hóa
+<&dark_shingle_roof_slabslice>Lát phiến mái ngói vảy tối màu tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>
+<np>
+Đất sạn nén chặt
+Lớp phủ nền công trường
+<&dense_grit_dirt_block>Khối này tạo bề mặt nén chặt, bị giẫm nhiều cho khu làm việc ngoài trời.<br>
+<br>
+Cách dùng: Rải quanh cửa bốc dỡ, bể ngoài trời và sân máy.<br>
+<np>
+Cát sạn nén chặt
+Lớp phủ nền công trường
+<&dense_grit_sand_block>Khối này tạo bề mặt nén chặt, bị giẫm nhiều cho khu làm việc ngoài trời.<br>
+<br>
+Cách dùng: Rải quanh cửa bốc dỡ, bể ngoài trời và sân máy.<br>
+<np>
+Ván gỗ cũ
+Gỗ xưởng cũ
+<&old_industrial_wood_planks>Ván gỗ công nghiệp cũ thêm gỗ xưởng cũ cho sàn, bậc, cửa và viền nội thất ấm áp.<br>
+<br>
+Cách dùng: Dùng cho sàn xưởng cũ, cầu thang, cửa và viền.<br>
+<np>
+Phiến gỗ công nghiệp cũ
+Gỗ xưởng cũ
+<&old_industrial_wood_slab>Khối này thêm gỗ xưởng cũ cho sàn, bậc, cửa và viền nội thất ấm áp.<br>
+<br>
+Cách dùng: Dùng cho sàn xưởng cũ, cầu thang, cửa và viền.<br>
+<np>
+Cầu thang gỗ cũ
+Gỗ xưởng cũ
+<&old_industrial_wood_stairs>Cầu thang gỗ công nghiệp cũ thêm gỗ xưởng cũ cho sàn, bậc, cửa và viền nội thất ấm áp.<br>
+<br>
+Cách dùng: Dùng cho sàn xưởng cũ, cầu thang, cửa và viền.<br>
+<np>
+Lát phiến gỗ cũ
+Gỗ xưởng cũ
+<&old_industrial_wood_slabslice>Lát phiến gỗ công nghiệp cũ thêm gỗ xưởng cũ cho sàn, bậc, cửa và viền nội thất ấm áp.<br>
+<br>
+Cách dùng: Dùng cho sàn xưởng cũ, cầu thang, cửa và viền.<br>
+<np>
+Cửa gỗ công nghiệp cũ
+Gỗ xưởng cũ
+<&old_industrial_wood_door>Khối này thêm gỗ xưởng cũ cho sàn, bậc, cửa và viền nội thất ấm áp.<br>
+<br>
+Cách dùng: Dùng cho sàn xưởng cũ, cầu thang, cửa và viền.<br>

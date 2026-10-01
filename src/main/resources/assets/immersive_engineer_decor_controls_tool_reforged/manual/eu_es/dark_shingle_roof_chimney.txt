@@ -1,0 +1,5 @@
+Teila iluneko teilatua
+Eguraldiak higatutako teilatu-osagarria
+<&recipe>Teila iluneko teilatuaren tximiniak teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>

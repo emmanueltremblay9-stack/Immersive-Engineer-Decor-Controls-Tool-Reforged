@@ -1,0 +1,7 @@
+Cjedilo za um
+Kondenzator iskustva
+<&recipe>Cjedilo za um pretvara lapis i iskustvo u napunjeni lapis.<br>
+<br>
+Upotreba: Nosite Lapis Lazuli i najmanje jedan nivo iskustva, a zatim upotrijebite alat. Uspješno cijeđenje troši jedan nivo i jedan lapis, povređuje korisnika, troši izdržljivost cjedila i stvara jedan napunjeni lapis.<br>
+<br>
+Odbija raditi ako korisniku nedostaje lapis, iskustvo ili ako je preblizu smrti.

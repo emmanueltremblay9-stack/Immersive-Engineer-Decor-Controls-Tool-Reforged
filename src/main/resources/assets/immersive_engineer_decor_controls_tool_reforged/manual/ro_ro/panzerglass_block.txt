@@ -1,0 +1,5 @@
+Bloc de sticlă blindată
+Vizibilitate printr-o barieră de protecție
+<&recipe>Acest bloc păstrează vizibilitatea și se încadrează totodată în construcțiile industriale ranforsate.<br>
+<br>
+Utilizare: Folosește-l acolo unde jucătorii trebuie să vadă mașinile printr-o barieră de protecție.<br>

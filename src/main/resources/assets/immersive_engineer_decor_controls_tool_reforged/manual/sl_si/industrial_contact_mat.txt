@@ -1,0 +1,7 @@
+Kontaktna preproga
+Impulz ob pritisku
+<&recipe>Kontaktno stikalo pošlje kratek signal ob premiku talne plošče ali lopute.<br>
+<br>
+Uporaba: Postavi ga tam, kjer entitete prehajajo skozi servisni hodnik, nakladalnik ali varovano pot.<br>
+<br>
+Opombe: Po stiku z entiteto odda kratek impulz.

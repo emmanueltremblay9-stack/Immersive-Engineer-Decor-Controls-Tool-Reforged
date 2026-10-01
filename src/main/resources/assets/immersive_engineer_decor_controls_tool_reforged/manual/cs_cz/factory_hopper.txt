@@ -1,0 +1,5 @@
+Tovární násypka
+Vybavení provozu
+<&recipe>Tento blok přesouvá stohy předmětů v kompaktnějším průmyslovém plášti.<br>
+<br>
+Použití: Namiř jej směrem k řadě inventářů a v rozhraní nastav dosah, velikost stohu, časování a redstonový režim.<br>

@@ -1,0 +1,5 @@
+Dark Shingle Roof
+Weathered roof fitting
+<&recipe>The Dark Shingle Roof Chimney. Dark Shingle Roof Chimney builds dark, practical roof lines for workshops and industrial sheds.<br>
+<br>
+Usage: Use the pieces together to make believable roof profiles.<br>

@@ -1,0 +1,7 @@
+Ryšio imtuvas korpuse
+Susietas valdymas
+<&recipe>Susietas imtuvas korpuse suteikia nuotoliniams skydams tvirtą redstono valdymo taikinį.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Tiesiogiai spustelėk imtuvą dešiniuoju pelės mygtuku, kad perjungtum jį ranka.<br>
+<br>
+Pastabos: naudojant susietą perlą sėlinant, šis imtuvas persijungia.

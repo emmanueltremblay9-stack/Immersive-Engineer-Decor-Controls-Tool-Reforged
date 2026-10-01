@@ -1,0 +1,7 @@
+Cápsula de aire para mergullo
+Reserva de aire de emerxencia
+<&recipe>A cápsula de aire de mergullo é unha reserva de emerxencia para traballos baixo a auga.<br>
+<br>
+Uso: Utilízaa manualmente para recuperar aire. Se está no inventario, tamén pode activarse automaticamente cando case non queda aire e entra logo en tempo de recarga.<br>
+<br>
+Lévaa para traballar en minas inundadas, tubaxes mergulladas e reparacións de salas de bombas.

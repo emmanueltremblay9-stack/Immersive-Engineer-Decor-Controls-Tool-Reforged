@@ -1,0 +1,7 @@
+Rastreador
+Marcador de posición guardada
+<&recipe>El Rastreador guarda una posición de bloque nel mesmu oxetu.<br>
+<br>
+Usu: Calca nun bloque pa guardar dimensión y coordenaes. La descripción amuesa la posición. Úsalu agacháu pa borrar l'oxetivu.<br>
+<br>
+Úsalu pa marcar máquines, bifurcaciones, controles remotos o obres ensin terminar antes de volver con ferramientes y materiales.

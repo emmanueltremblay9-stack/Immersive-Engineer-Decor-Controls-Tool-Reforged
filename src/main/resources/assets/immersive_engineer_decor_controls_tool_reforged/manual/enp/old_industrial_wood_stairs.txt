@@ -1,0 +1,5 @@
+Old Wood Stairs
+Aged workshop timber
+<&recipe>Old Workstead Wood Stairs add aged workshop timber for floors, steps, doors and warm indoor edging.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and edging.<br>

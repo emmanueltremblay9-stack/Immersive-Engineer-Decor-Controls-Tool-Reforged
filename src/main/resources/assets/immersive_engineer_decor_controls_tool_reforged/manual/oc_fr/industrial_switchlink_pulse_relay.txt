@@ -1,0 +1,7 @@
+Relai d’impulsion de ligam
+Comanda ligada
+<&recipe>Un equipament en forma de relai balha als panèls un ponch de commutacion local compacte.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins. Utiliza de blòcs receptors se te cal una activacion per pèrla ligada.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.

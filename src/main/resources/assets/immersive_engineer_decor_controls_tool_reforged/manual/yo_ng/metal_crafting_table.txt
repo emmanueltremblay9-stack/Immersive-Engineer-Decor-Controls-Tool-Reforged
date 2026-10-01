@@ -1,0 +1,7 @@
+Tábìlì Iṣẹ́ Ọwọ́ Irin
+Ibùdó iṣẹ́ àwo
+<&recipe>Tabili irin ni iho olo, crafting grid 3x3 ati iho abajade.<br>
+<br>
+Lo grid bi tabili deede. Fun IE plate fi Engineers Hammer si iho irinse, ohun elo si grid, ki o gba plate lati output.<br>
+<br>
+Ohun oso steel n lo steel plate ti a se lori tabili yii.

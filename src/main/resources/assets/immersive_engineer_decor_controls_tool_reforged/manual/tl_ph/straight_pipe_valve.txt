@@ -1,0 +1,5 @@
+Balbulang Isahang-Daloy ng Tubo ng Likido
+Kagamitan sa linya ng likido
+<&recipe>Ang Balbula ng Likidong Panlaban sa Balik ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Itapat ang balbula sa nilalayong direksiyon ng daloy.<br>

@@ -1,0 +1,7 @@
+Tombol Kaca
+Kendali Redstone
+<&recipe>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.

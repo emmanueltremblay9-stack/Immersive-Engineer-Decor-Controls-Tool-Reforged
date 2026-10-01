@@ -1,0 +1,7 @@
+Jämförarbrytare
+Signal från fästblocket
+<&recipe>En kompakt sensorbrytare läser blocket den är monterad på och omvandlar värdet till en enkel panelutgång.<br>
+<br>
+Användning: Montera den på förråd, tankar eller redstoneutrustning. När fästblocket ger en jämförar-, behållar- eller redstonesignal avger brytaren redstone med full styrka.<br>
+<br>
+Anmärkning: Använd den för att omvandla lagernivåer eller dolda ledningar till tydliga styrledningar med på- och avläge.

@@ -1,0 +1,5 @@
+Fabrik-Trichter
+Hilfsgerät für die Werkstatt
+<&recipe>Dieser Block bewegt Gegenstandsstapel durch ein kompaktes Industriegehäuse.<br>
+<br>
+Verwendung: Richte ihn auf die Inventarstrecke aus und stelle dann Reichweite, Stapelmenge, Zeitverhalten und Redstone-Modus in der Oberfläche ein.<br>

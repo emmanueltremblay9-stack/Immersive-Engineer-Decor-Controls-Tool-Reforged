@@ -1,0 +1,7 @@
+Derbynner Pols yn Kist
+Reolyans kevrennys
+<&recipe>Derbynner pols kevrennys yn kist a ry weythenni rudhven berr dhe banellow pell.<br>
+<br>
+Devnydh: gwra klikya gans Perl an Diwedh rag gul perl kevrennys. Gwra klikya dyhow warnodho po gweythenni an perl kevrennys rag ri pols berr.<br>
+<br>
+Notennow: an pols a omdhasset wosa y dermyn ragdresys.

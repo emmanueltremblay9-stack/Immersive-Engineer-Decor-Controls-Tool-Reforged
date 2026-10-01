@@ -1,0 +1,5 @@
+Shieldglass Halfclot
+Guarded sightway
+<&recipe>This clot keeps sightways open while matching the strengthened workstead build.<br>
+<br>
+Use: Set it where players should see looms through a warding wall.<br>

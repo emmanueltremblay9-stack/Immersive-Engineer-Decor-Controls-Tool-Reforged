@@ -1,0 +1,161 @@
+Klinker und Mauerwerk
+Hüllen aus Ziegeln und Beton
+Klinker, Schlackenziegel, Stahlbeton und Panzerglas schaffen massive Oberflächen für heiße Räume, Werkstätten und geschützte Sichtbereiche.<br>
+<br>
+Vervollständige Kanten mit passenden Stufen, Treppen, Viertelstufen und Mauern, damit die Materialgestaltung der Fabrik einheitlich bleibt.
+<np>
+Klinkerziegelblock
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_block>Dieser Block verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Klinkerziegelstufe
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_slab>Dieser Block verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Klinkerziegeltreppe
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_stairs>Dieser Block verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Klinkerziegelmauer
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_wall>Dieser Block verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Verschmutzter Klinkerblock
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_stained_block>Der verschmutzte Klinkerziegelblock verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Verschmutzte Klinkerstufe
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_stained_slab>Die verschmutzte Klinkerziegelstufe verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Verschmutzte Klinkertreppe
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_stained_stairs>Die verschmutzte Klinkerziegeltreppe verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Verzierter Klinkerziegel
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_sastor_corner_block>Der Klinkerziegel mit Sandsteinverzierung verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Vertiefter Klinkerziegel
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_recessed>Dieser Block verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Geschlitzte Klinkerziegel
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_vertically_slit>Die senkrecht geschlitzten Klinkerziegel verleihen Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Senkrechte Klinkerstufe
+Rußdunkles Ziegelmauerwerk
+<&clinker_brick_vertical_slab_structured>Die strukturierte senkrechte Klinkerstufe verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Klinkerziegelviertelstufe
+Rußdunkles Ziegelmauerwerk
+<&halfslab_clinker_brick>Dieser Block verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>
+<np>
+Schlackenziegelblock
+Massives Fabrikmauerwerk
+<&slag_brick_block>Dieser Block ergänzt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppen.<br>
+<br>
+Verwendung: Nutze ihn für ältere Fundamente, Stützmauern und schmutzige Fabrikböden.<br>
+<np>
+Schlackenziegelstufe
+Massives Fabrikmauerwerk
+<&slag_brick_slab>Dieser Block ergänzt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppen.<br>
+<br>
+Verwendung: Nutze ihn für ältere Fundamente, Stützmauern und schmutzige Fabrikböden.<br>
+<np>
+Schlackenziegeltreppe
+Massives Fabrikmauerwerk
+<&slag_brick_stairs>Dieser Block ergänzt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppen.<br>
+<br>
+Verwendung: Nutze ihn für ältere Fundamente, Stützmauern und schmutzige Fabrikböden.<br>
+<np>
+Schlackenziegelmauer
+Massives Fabrikmauerwerk
+<&slag_brick_wall>Dieser Block ergänzt dichtes graubraunes Mauerwerk für Fundamente, Stützmauern und ältere Werkstattschuppen.<br>
+<br>
+Verwendung: Nutze ihn für ältere Fundamente, Stützmauern und schmutzige Fabrikböden.<br>
+<np>
+Stahlbetonblock
+Stahlbewehrter Beton
+<&rebar_concrete>Dieser Block ist ein gehärtetes Betonteil für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Stahlbetonstufe
+Stahlbewehrter Beton
+<&rebar_concrete_slab>Dieser Block ist ein gehärtetes Betonteil für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Stahlbetontreppe
+Stahlbewehrter Beton
+<&rebar_concrete_stairs>Dieser Block ist ein gehärtetes Betonteil für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Stahlbetonmauer
+Stahlbewehrter Beton
+<&rebar_concrete_wall>Dieser Block ist ein gehärtetes Betonteil für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Stahlbetonviertelstufe
+Stahlbewehrter Beton
+<&halfslab_rebar_concrete>Dieser Block ist ein gehärtetes Betonteil für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Stahlbetonfliese
+Stahlbewehrter Beton
+<&rebar_concrete_tile>Dieser Block ist ein gehärtetes Betonteil für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Stahlbetonfliesenstufe
+Stahlbewehrter Beton
+<&rebar_concrete_tile_slab>Dieser Block ist ein gehärtetes Betonteil für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Stahlbetonfliese
+Stahlbewehrter Beton
+<&rebar_concrete_tile_stairs>Die Stahlbetonfliesentreppe besteht aus gehärteten Betonteilen für Maschinenfundamente, Schutzwände und Ladehallenböden.<br>
+<br>
+Verwendung: Setze ihn unter Maschinen, entlang von Wartungsgängen oder überall dort ein, wo dein Bau eine verstärkte Basis benötigt.<br>
+<np>
+Panzerglasblock
+Geschützter Einblick
+<&panzerglass_block>Dieser Block ermöglicht freie Sicht und passt zugleich zur verstärkten Bauweise einer Fabrik.<br>
+<br>
+Verwendung: Setze ihn dort ein, wo Spieler Maschinen hinter einer schützenden Barriere sehen sollen.<br>
+<np>
+Panzerglasstufe
+Geschützter Einblick
+<&panzerglass_slab>Dieser Block ermöglicht freie Sicht und passt zugleich zur verstärkten Bauweise einer Fabrik.<br>
+<br>
+Verwendung: Setze ihn dort ein, wo Spieler Maschinen hinter einer schützenden Barriere sehen sollen.<br>

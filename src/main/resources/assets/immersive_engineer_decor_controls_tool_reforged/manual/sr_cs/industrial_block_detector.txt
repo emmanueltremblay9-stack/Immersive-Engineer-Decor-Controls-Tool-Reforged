@@ -1,0 +1,7 @@
+Detektor blokova
+Otkrivanje signala
+<&recipe>Detektor blokova proverava da li je prostor ispred zauzet.<br>
+<br>
+Upotreba: usmeri ga ka strani mašine, zalihi ili čuvanom prostoru koji treba nadgledati.<br>
+<br>
+Napomene: daje signal kada blok ispred nije vazduh.

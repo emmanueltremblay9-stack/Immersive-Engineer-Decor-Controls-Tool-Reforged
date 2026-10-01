@@ -1,0 +1,5 @@
+İşlenmiş Ahşap Tabure
+Atölye mobilyası
+<&recipe>Bu blok, çalışma odaları ve bakım köşeleri için kullanışlı bir atölye mobilyasıdır.<br>
+<br>
+Kullanım: Tezgâhların, sandıkların ve küçük makinelerin yanına koyun.<br>

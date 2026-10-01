@@ -1,0 +1,5 @@
+Versetzte Metalltritte
+Bauteil für Wartungszugänge
+<&recipe>Dieser Block schafft übersichtliche Wartungswege rund um Maschinen.<br>
+<br>
+Verwendung: Platziere ihn als Wartungszugang an Maschinen, Obergeschossen und Versorgungsschächten.<br>

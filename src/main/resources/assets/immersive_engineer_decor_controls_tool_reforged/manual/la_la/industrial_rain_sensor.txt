@@ -1,0 +1,7 @@
+Sensor pluviae
+Sensus signorum
+<&recipe>Sensor caeli pluviam loco suo in redstone convertit.<br>
+<br>
+Usus: pone ubi cubus superior pluviam accipere potest.<br>
+<br>
+Notae: pluviam supra sensorem inspicit.

@@ -1,0 +1,7 @@
+Analog aloqa qabul qilgichi
+Bog'langan boshqaruv
+<&recipe>Bog'langan qabul qilgich boshqaruv panellariga ko'rinadigan masofaviy nishon beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qabul qilgichni masofadan faollashtirish uchun o'sha injudan egilib foydalaning.<br>
+<br>
+Eslatma: bu qabul qilgich ishga tushirilganda to'liq redstone signali chiqaradi.

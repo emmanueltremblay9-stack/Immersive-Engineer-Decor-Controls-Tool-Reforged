@@ -1,0 +1,7 @@
+Analoger Linkempfänga
+Verbundene Steuerung
+<&recipe>A verbundener Empfänga gibt Steuerpaneele a sichtbars Ziel in da Fern.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Benutz de Perle beim Schleichn, zum Auslösn vom Empfänga aus da Fern.<br>
+<br>
+Hinweis: Der Empfänga gibt beim Auslösn a volles Redstone-Signal ab.

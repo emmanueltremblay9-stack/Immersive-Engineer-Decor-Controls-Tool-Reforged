@@ -1,0 +1,5 @@
+Blokbreker
+Hulpmiddel voor de fabrieksvloer
+<&recipe>De kleine blokbreker is een hulpmiddel voor de fabrieksvloer, uit een reeks blokken voor vervaardiging, opslag, plaatsing, breken, verzamelen en compacte automatisering.<br>
+<br>
+Gebruik: richt de werkzijde op het blok dat moet worden verwijderd.<br>

@@ -1,0 +1,41 @@
+Stowage and haulage
+Gear fer loot bags and flow
+Stowage and haulage fittings handle crates, barrels, funnels and valves fer compact factory routes.<br>
+<br>
+Turn to these pages when ye lay out storerooms, pipe runs, service tanks and fluid lines under yer control.
+<np>
+Crate with a label
+Stock label ye can change
+<&labeled_crate>This labelled crate makes storeroom sorting clear, matey. Edit her front plate like a little workshop sign.<br>
+<br>
+Orders: Right-click the label plate to change the crate's label. Right-click elsewhere on the crate to open storage fer fittings, parts and upkeep supplies.<br>
+<np>
+Barrel o' fluid
+Gear fer fluid lines
+<&fluid_barrel>This compact fluid-line fitting serves small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Place her where pipes or buckets can reach the tank face.<br>
+<np>
+Funnel fer fluids
+Gear fer fluid lines
+<&small_fluid_funnel>Little fluid-gatherin' funnel be a compact fluid-line fitting fer small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Set her below the fluid-gatherin' point, then lead her stored contents to tanks or lower pipework.<br>
+<np>
+One-way fluid-pipe valve
+Gear fer fluid lines
+<&straight_pipe_valve>One-way fluid-pipe valve be a compact fluid-line fitting fer small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Align the valve with the way ye want fluid to flow.<br>
+<np>
+Fluid valve under redstone orders
+Gear fer fluid lines
+<&straight_pipe_valve_redstone>Fluid valve under redstone orders be a compact fluid-line fitting fer small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Align the valve with the way ye want fluid to flow.<br>
+<np>
+Fluid valve under analog orders
+Gear fer fluid lines
+<&straight_pipe_valve_redstone_analog>Analog redstone fluid valve be a compact fluid-line fitting fer small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Align the valve with the way ye want fluid to flow.<br>

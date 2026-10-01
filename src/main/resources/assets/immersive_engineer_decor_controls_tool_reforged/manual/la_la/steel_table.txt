@@ -1,0 +1,5 @@
+Mensa chalybea
+Supellex officinae
+<&recipe>Hic cubus supellex utilis officinae est pro conclavibus laboris et angulis refectionis.<br>
+<br>
+Usus: iuxta mensas, cistas et machinas compactas pone.<br>

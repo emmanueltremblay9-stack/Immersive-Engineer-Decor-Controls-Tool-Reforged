@@ -1,0 +1,7 @@
+Masă de lucru pentru metal
+Post de lucru pentru plăci
+<&recipe>Masa pentru metal are slot de ciocan, grilă completă 3x3 și ieșire.<br>
+<br>
+Folosește grila ca pe o masă normală. Pentru plăci IE, pune ciocanul inginerului în slot, materialul în grilă și ia placa din ieșire.<br>
+<br>
+Decorațiunile de oțel folosesc plăci formate la această masă.

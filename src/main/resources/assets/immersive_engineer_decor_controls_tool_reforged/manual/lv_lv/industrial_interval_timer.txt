@@ -1,0 +1,7 @@
+Intervālu taimeris
+Noteikta laika impulss
+<&recipe>Kompakts taimera slēdzis nodrošina plānotu Redstone impulsu.<br>
+<br>
+Lietošana: izmanto tur, kur nelielam mehānismam vajadzīga periodiska vai aizkavēta vadība.<br>
+<br>
+Piezīmes: izmanto plānotus Redstone impulsus.

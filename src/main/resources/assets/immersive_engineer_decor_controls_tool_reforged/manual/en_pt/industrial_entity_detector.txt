@@ -1,0 +1,7 @@
+Lookout fer entities
+Sensin' a signal
+<&recipe>An entity lookout watches nearby movement without a visible plate on the deck.<br>
+<br>
+Orders: Wire her to doors, lamps, alarms or machine interlocks.<br>
+<br>
+Mind ye: She scans a small patch round the block.

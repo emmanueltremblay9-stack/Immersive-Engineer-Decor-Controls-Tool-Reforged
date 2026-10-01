@@ -1,0 +1,5 @@
+Tukul Penghancur Bijih
+Alat penghancur tangan
+<&recipe>Tukul penghancur bijih ialah alat tangan untuk pemprosesan awal besi dan emas.<br>
+<br>
+Gunakan dengan besi mentah, emas mentah, bijih besi atau emas dan varian batu loh dalam untuk menghasilkan debu Immersive Engineering. Tukul kehilangan ketahanan, kembali ke grid hingga pecah, haus ketika melombong dan menolak sasaran.

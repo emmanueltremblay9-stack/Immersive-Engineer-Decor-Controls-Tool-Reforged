@@ -1,0 +1,5 @@
+Bočka dlja tekučin
+Pribor tekučinovoj linije
+<&recipe>Sej dodatok jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde truby ili vědra mogut dosegnuti stranu rezervuara.<br>

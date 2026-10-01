@@ -1,0 +1,7 @@
+Interruptor comparador
+Señal del bloque de montaxe
+<&recipe>Un interruptor sensor compactu llee’l bloque nel que ta montáu y convierte esa llectura nuna salida senciella de panel.<br>
+<br>
+Usu: móntalu en inventarios, depósitos o componentes de redstone. Cuando’l bloque de montaxe informa d’una salida de comparador, de recipiente o de redstone, l’interruptor emite redstone a plena potencia.<br>
+<br>
+Notes: úsalu pa convertir niveles d’almacenamientu o cableáu ocultu en llinies de control clares d’encendíu y apagáu.

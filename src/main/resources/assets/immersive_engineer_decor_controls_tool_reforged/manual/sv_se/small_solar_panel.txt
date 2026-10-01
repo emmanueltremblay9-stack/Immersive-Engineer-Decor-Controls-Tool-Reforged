@@ -1,0 +1,5 @@
+Solpanel
+Hjälpmedel för verkstadsgolvet
+<&recipe>Den lilla solpanelen är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Ge den fri sikt mot himlen och anslut utrustning med låg förbrukning.<br>

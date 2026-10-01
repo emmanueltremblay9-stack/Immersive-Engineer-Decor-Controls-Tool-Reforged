@@ -1,0 +1,5 @@
+Mineralensmeltoven
+Compacte verwerkingseenheid
+<&recipe>De mineralensmeltoven verwerkt mineralen op hoge temperatuur en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: voer mineraalblokken en energie aan om op hoge temperatuur te smelten.<br>

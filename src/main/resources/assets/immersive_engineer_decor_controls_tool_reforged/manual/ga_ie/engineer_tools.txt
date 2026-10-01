@@ -1,0 +1,99 @@
+Uirlisí an Innealtóra
+Trealamh ceardlainne iniompartha
+Cuireann tacar Uirlisí an Innealtóra trealamh láimhe, marcóirí mianaigh, earraí éigeandála inchaite, bia allamuigh agus áiseanna beaga próiseála ábhar leis an lámhleabhar céanna a chlúdaíonn na bloic mhaisiúcháin agus rialaithe.<br>
+<br>
+Tá na huirlisí seo ceaptha d'obair ar shiúl ó cheardlann lántrealmhaithe: marcáil an bealach, iompair soláthairtí, téigh i ngleic le botúin agus críochnaigh jabanna beaga próiseála ar an láthair.
+<np>
+Uirlis REDIA
+Uirlis áisiúil clúdaithe le diamant
+<&redia_tool>Is uirlis mharthanach allamuigh í an Uirlis REDIA d'obair thapa talún. Úsáid ar ithir insaothraithe í chun talamh feirme a threabhadh.<br>
+<br>
+Úsáid i gcoinne aghaidhe daingne í agus tóirsí agat chun marcóir tóirse a chur ann ó do fhardal gan REDIA a chaitheamh. Ídíonn obair thalún, lomadh, obair thua agus leagan crann marthanacht.
+<np>
+Casúr Brúite Mian
+Uirlis brúite láimhe
+<&crushing_hammer>Uirlis láimhe é an casúr brúite méine chun iarann agus ór a phróiseáil go luath.<br>
+<br>
+Úsáid: Déan é a cheardaíocht le hiarann amh, ór amh, amhiarainn, amhiarainn domhainscláta, amhór nó amhór domhainscláta chun deannach iarainn nó óir Immersive Engineering a dhéanamh. Cailltear marthanacht agus filleann an casúr ar an eangach go dtí go mbristear é.<br>
+<br>
+Caitear é le mianadóireacht freisin agus is féidir leis spriocanna a chaitheamh siar sa dhlúthchomhrac.
+<np>
+Lorgaire
+Marcóir suímh stóráilte
+<&tracker>Stórálann an lorgaire suíomh bloic go díreach san earra.<br>
+<br>
+Úsáid: Cliceáil bloc lena thoise agus a chomhordanáidí a shábháil. Taispeánann an leid uirlise an suíomh. Úsáid an lorgaire agus tú ag cromadh chun an sprioc a ghlanadh.<br>
+<br>
+Úsáid é chun meaisíní, craobhacha tollán, cianrialtáin nó láithreáin tógála neamhchríochnaithe a mharcáil sula bhfillfidh tú le huirlisí agus ábhair.
+<np>
+Gual Ariadne
+Marcóir bealaigh mianaigh
+<&ariadne_coal>Cuireann Gual Ariadne marcóirí tapa saighde dubha ar aghaidheanna daingne mianaigh. Úsáid é ar aghaidh sholadach chun an chéad chasadh eile, bealach amach nó acomhal a mharcáil; tacaíonn an marcóir le hocht dtreo ar an aghaidh ar ar cliceáladh, treonna trasnánacha san áireamh.<br>
+<br>
+Is uirlis mharcála in-athúsáidte é Gual Ariadne a bhfuil 100 úsáid aige. Cosnaíonn gach marcóir a chuirtear ann go rathúil aonad amháin marthanachta. Diúltaíonn sé d'aghaidheanna nach dtacaítear leo seachas an t-earra a chaitheamh.
+<np>
+Pacáiste Spreagtha Uathoibríoch
+Insteallaire éigeandála
+<&stimpack>Uirlis leighis éigeandála é an Auto Stim Pack d’obair chothabhála chontúirteach.<br>
+<br>
+Úsáid: Úsáid de láimh é le leigheas, cosaint ghearr agus borradh gairid gluaiseachta a fháil. San fhardal féadfaidh sé gníomhachtú go huathoibríoch ag sláinte íseal, ansin téann sé ar athluchtú.<br>
+<br>
+Bíodh ceann ar fáil agat sula mbainfidh tú triail as áiteanna arda, sreangú nochta nó bealaí contúirteacha mianaigh.
+<np>
+Mála Codlata
+Fearas scíthe iniompartha
+<&sleeping_bag>Is trealamh scíthe síondíonach é an mála codlata d’obair i bhfad ó leaba.<br>
+<br>
+Úsáid: Úsáid san oíche san Overworld é chun scíth a ligean go maidin. Ní shocraíonn ná ní bhogann sé do phointe athghiniúna.<br>
+<br>
+Diúltaíonn sé úsáid sa lá, timpeallacht chontúirteach le harrachtaí in aice láimhe agus toisí nach n-oireann do scíth shábháilte. Caitheann gach scíth rathúil an mála.
+<np>
+Bosca Stórála Ábhar
+Bosca soláthairtí tógála
+<&material_box>Iompraíonn an bosca ábhar stór mór d’aon ábhar tógála simplí, gan athrú agus inchruachta.<br>
+<br>
+Úsáid: Coinnigh an bosca sa phríomhlámh agus cruach ábhair sa lámh eile lena luchtú. Úsáid an bosca leis an lámh eile folamh chun cruach amháin a bhaint.<br>
+<br>
+Coinníonn sé suas le 512 earra d’aon chineál amháin. Diúltaíonn sé boscaí neadaithe, trealamh nach cruachtaítear agus cruacha athainmnithe nó sonraí-athraithe; taispeántar an t-ábhar sa leid uirlise.
+<np>
+Capsúl Aeir Tumadóireachta
+Cúltaca éigeandála aeir
+<&diving_capsule>Is cúlchiste éigeandála aeir é an capsúl aeir tumadóireachta d’obair faoi uisce.<br>
+<br>
+Úsáid: Úsáid de láimh é chun aer a athshlánú. Nuair atá sé san fhardal, féadfaidh sé gníomhachtú go huathoibríoch agus an t-aer beagnach caite, ansin téann sé ar athluchtú.<br>
+<br>
+Iompair é do mhianaigh faoi thuile, píblínte báite agus deisiúcháin i seomraí caidéal.
+<np>
+Preas Barra Muslee
+Preas bia
+<&musli_bar_press>Déanann an preas barra Muslee ciondálacha dlútha páirce de ghnáthbhia.<br>
+<br>
+Úsáid: Bíodh arán, úll agus síol cruithneachta, mealbhacán, puimcín, biatas nó Industrial Hemp agat agus úsáid an preas. Ídíonn brú rathúil ceann de gach comhábhar, seiceálann sé spás, cruthaíonn sé ceithre bharra Muslee Melange agus déanann sé damáiste don phreas.<br>
+<br>
+Má bhíonn comhábhar ar iarraidh nó gan spás san fhardal, ní ídítear rud ar bith.
+<np>
+Barra Fuinnimh Muslee Melange
+Sneaic thapa ceardlainne
+<&musli_bar>Bia dlúth déanta as arán, síolta agus torthaí is ea an barra fuinnimh Muslee Melange.<br>
+<br>
+Úsáid: ith mar bhia allamuigh é agus rialtáin, píopaí, ardáin nó línte fada i seomraí meaisín á gcur ann agat.
+<np>
+Fáiscire Intinne
+Comhdhlúthadán taithí
+<&charged_lapis_squeezer>Tiontaíonn an Fáiscire Intinne lapis lazuli amháin agus leibhéal amháin taithí ó do fhardal ina Lapis Luchtaithe.<br>
+<br>
+Gortaíonn an próiseas an t-úsáideoir, cruthaíonn sé tuirse a chuireann leis an ocras agus dallann sé an t-úsáideoir go gearr le gach tiontú rathúil. Diúltaíonn sé oibriú gan lapis, gan XP nó nuair atá an t-úsáideoir róghar don bhás.
+<np>
+Lapis Luchtaithe
+Taithí stóráilte
+<&charged_lapis>Stórálann Lapis Luchtaithe leibhéal amháin taithí. Ídigh é chun an leibhéal a athbhunú, éifeachtaí gníomhacha a bhaint agus méid beag sláinte a fháil ar ais.<br>
+<br>
+Déan Fáiscire Intinne ar dtús; déantar Lapis Luchtaithe tríd an uirlis sin a úsáid agus lapis agus XP ar fáil.
+<np>
+Grean Garbh Iarainn
+Ábhar uirlisí innealtóra a úsáidtear sa tacar ceardaíochta athchruthaithe.
+<&iron_grit>Is féidir é a bhruithniú ina<br>thinní iarainn, ach níl sé<br>oiriúnach d'ardphróiseáil ábhar.
+<np>
+Grean Garbh Óir
+Ábhar uirlisí innealtóra a úsáidtear sa tacar ceardaíochta athchruthaithe.
+<&gold_grit>Is féidir é a bhruithniú ina<br>thinní óir, ach níl sé<br>oiriúnach d'ardphróiseáil ábhar.

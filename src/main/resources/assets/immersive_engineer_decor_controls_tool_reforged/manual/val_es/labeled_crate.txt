@@ -1,0 +1,5 @@
+Caixó amb etiqueta
+Etiqueta editable d’existències
+<&recipe>Este caixó amb etiqueta està pensat per a ordenar clarament el magatzem. La placa frontal es pot editar com un cartell xicotet de taller.<br>
+<br>
+Ús: fes clic dret en la placa de l’etiqueta per a editar l’etiqueta del caixó. Fes clic dret en la resta del caixó per a obrir l’emmagatzematge d’accessoris, peces i subministraments de manteniment.<br>

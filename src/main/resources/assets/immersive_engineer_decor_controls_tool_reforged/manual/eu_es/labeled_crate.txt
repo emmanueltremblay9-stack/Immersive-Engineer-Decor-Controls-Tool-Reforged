@@ -1,0 +1,5 @@
+Etiketadun kaxa
+Izakinen etiketa editagarria
+<&recipe>Etiketadun kaxa hau biltegiko izakinak argi sailkatzeko egina dago. Aurreko plaka lantegiko kartel txiki baten moduan edita daiteke.<br>
+<br>
+Erabilera: egin eskuineko klik etiketa-plakan kaxaren etiketa editatzeko. Egin eskuineko klik kaxaren gainerako zatian osagarriak, piezak eta mantentze-hornigaiak gordetzeko espazioa irekitzeko.<br>

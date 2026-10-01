@@ -1,0 +1,7 @@
+Receptor de legături cu carcasă
+Comandă prin legătură
+<&recipe>Un receptor de legături cu carcasă oferă panourilor de comandă la distanță o țintă redstone robustă.<br>
+<br>
+Utilizare: Fă clic pe el cu o perlă de Ender pentru a crea o perlă asociată. Fă clic dreapta direct pe receptor pentru a-l comuta manual.<br>
+<br>
+Observații: O perlă asociată comută acest receptor când este folosită în timpul furișării.

@@ -1,0 +1,161 @@
+Glingor un Mauorwerg
+Hülln aus Zieschl un Bedong
+Glingor, Schlaggnzieschl, Schdahlbedong un Panzorglas gebn schwäre Flächen für heeße Räume, Wergschdäddn un geschiddzde Sichdlinien.<br>
+<br>
+Nimmde bassndn Schdufn, Drebben, Scheibn un Mauorn, um Ganddn abzuschließn, ohne dän Maderialsdil dor Fabrig zu ändorn.
+<np>
+Glingorzieschlblogg
+Rußdungles Zieschlwerg
+<&clinker_brick_block>Dieser Blogg bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Glingorzieschlschdufe
+Rußdungles Zieschlwerg
+<&clinker_brick_slab>Dieser Blogg bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Glingorzieschldrebbe
+Rußdungles Zieschlwerg
+<&clinker_brick_stairs>Dieser Blogg bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Glingorzieschlmauor
+Rußdungles Zieschlwerg
+<&clinker_brick_wall>Dieser Blogg bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Fleggigor Glingorblogg
+Rußdungles Zieschlwerg
+<&clinker_brick_stained_block>Dor fleggige Glingorzieschlblogg bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Fleggige Glingorschdufe
+Rußdungles Zieschlwerg
+<&clinker_brick_stained_slab>De fleggige Glingorzieschlschdufe bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Fleggige Glingordrebbe
+Rußdungles Zieschlwerg
+<&clinker_brick_stained_stairs>De fleggige Glingorzieschldrebbe bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Vorzierdor Glingorzieschl
+Rußdungles Zieschlwerg
+<&clinker_brick_sastor_corner_block>Dor Glingorzieschl mid Sandschdeenverzierung bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Vorsängdor Glingorzieschl
+Rußdungles Zieschlwerg
+<&clinker_brick_recessed>Dieser Blogg bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Geschliddzde Glingorzieschl
+Rußdungles Zieschlwerg
+<&clinker_brick_vertically_slit>De sängrechd geschliddzdn Glingorzieschl bringn rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Sängrechde Glingorschdufe
+Rußdungles Zieschlwerg
+<&clinker_brick_vertical_slab_structured>De schdrukdurierde sängrechde Glingorschdufe bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Halbe Glingorzieschlschdufe
+Rußdungles Zieschlwerg
+<&halfslab_clinker_brick>Dieser Blogg bringd rußdungles Mauorwerg in Ofnhalln, Schornschdeenfiße un Wardungswände.<br>
+<br>
+Nuddzung: Nimm’n als Mauor, Rand oddor Hiddzbereichshülle um Öfn un Gessl.<br>
+<np>
+Schlaggnzieschlblogg
+Dichdes Fabrigmauorwerg
+<&slag_brick_block>Dieser Blogg ergänzt dichdes graubraunes Mauorwerg für Fundamente, Schdiddzmauorn un äldere Wergschubbn.<br>
+<br>
+Nuddzung: Nimm’n für alde Fundamente, Schdiddzmauorn un dreggige Fabrigbödn.<br>
+<np>
+Schlaggnzieschlschdufe
+Dichdes Fabrigmauorwerg
+<&slag_brick_slab>Dieser Blogg ergänzt dichdes graubraunes Mauorwerg für Fundamente, Schdiddzmauorn un äldere Wergschubbn.<br>
+<br>
+Nuddzung: Nimm’n für alde Fundamente, Schdiddzmauorn un dreggige Fabrigbödn.<br>
+<np>
+Schlaggnzieschldrebbe
+Dichdes Fabrigmauorwerg
+<&slag_brick_stairs>Dieser Blogg ergänzt dichdes graubraunes Mauorwerg für Fundamente, Schdiddzmauorn un äldere Wergschubbn.<br>
+<br>
+Nuddzung: Nimm’n für alde Fundamente, Schdiddzmauorn un dreggige Fabrigbödn.<br>
+<np>
+Schlaggnzieschlmauor
+Dichdes Fabrigmauorwerg
+<&slag_brick_wall>Dieser Blogg ergänzt dichdes graubraunes Mauorwerg für Fundamente, Schdiddzmauorn un äldere Wergschubbn.<br>
+<br>
+Nuddzung: Nimm’n für alde Fundamente, Schdiddzmauorn un dreggige Fabrigbödn.<br>
+<np>
+Schdahlbedongblogg
+Vorschdärgdor Bedong
+<&rebar_concrete>Dieser Blogg is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Schdahlbedongschdufe
+Vorschdärgdor Bedong
+<&rebar_concrete_slab>Dieser Blogg is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Schdahlbedongdrebbe
+Vorschdärgdor Bedong
+<&rebar_concrete_stairs>Dieser Blogg is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Schdahlbedongmauor
+Vorschdärgdor Bedong
+<&rebar_concrete_wall>Dieser Blogg is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Dinne Schdahlbedongscheibe
+Vorschdärgdor Bedong
+<&halfslab_rebar_concrete>Dieser Blogg is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Schdahlbedongfliese
+Vorschdärgdor Bedong
+<&rebar_concrete_tile>Dieser Blogg is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Schdahlbedongfliesenschdufe
+Vorschdärgdor Bedong
+<&rebar_concrete_tile_slab>Dieser Blogg is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Schdahlbedongfliese
+Vorschdärgdor Bedong
+<&rebar_concrete_tile_stairs>De Schdahlbedongfliesendrebbe is ä haddes Bedongdeil für Maschinensoggl, Explosionsschuddzwände un Ladebuchdnbödn.<br>
+<br>
+Nuddzung: Seddz’n undor Maschinen, längs dor Wardungsgänge oddor dorthin, wo dor Bau än vorschdärgdn Grund brauchd.<br>
+<np>
+Panzorglasblogg
+Geschiddzdor Durchbligg
+<&panzerglass_block>Dieser Blogg häld dän Durchbligg frei un bassd drodzdem zu vorschdärgdn Fabrigbaudn.<br>
+<br>
+Nuddzung: Nimm’n dort, wo Schbielorr durch ä geschiddzde Wand uff Maschinen guggn solln.<br>
+<np>
+Panzorglasschdufe
+Geschiddzdor Durchbligg
+<&panzerglass_slab>Dieser Blogg häld dän Durchbligg frei un bassd drodzdem zu vorschdärgdn Fabrigbaudn.<br>
+<br>
+Nuddzung: Nimm’n dort, wo Schbielorr durch ä geschiddzde Wand uff Maschinen guggn solln.<br>

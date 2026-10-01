@@ -1,0 +1,5 @@
+Dërrasa të vjetra druri
+Dru i vjetruar punishteje
+<&recipe>Dërrasat e vjetra industriale shtojnë dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>

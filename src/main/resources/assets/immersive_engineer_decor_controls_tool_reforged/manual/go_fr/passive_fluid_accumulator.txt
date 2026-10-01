@@ -1,0 +1,5 @@
+Liqide passif
+Éqhipement de ligne a liqides
+<&recipe>L'Accumulaïteur passif de liqides ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Pllacéz-le contr des sources d'iao qi conviennent e laisséz de la pllâce pour ertirer le liqide.<br>

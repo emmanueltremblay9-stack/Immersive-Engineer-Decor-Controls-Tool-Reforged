@@ -1,0 +1,5 @@
+Stahlgeländer
+Bauteil für Wartungszugänge
+<&recipe>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>

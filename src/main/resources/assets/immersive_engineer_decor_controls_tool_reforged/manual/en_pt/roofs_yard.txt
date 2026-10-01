@@ -1,0 +1,101 @@
+Roofin' and yard
+Fittings fer outdoor works
+Roof blocks, yard grit and old factory timber help ye finish outside sheds, work yards, loading areas and weather-worn factory edges.<br>
+<br>
+Mix these pieces with masonry and gangways so ye can make sense o' outdoor factory builds from afar.
+<np>
+Roof o' dark shingles
+Weather-worn roof fitting
+<&dark_shingle_roof>This block shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Snow guard fer the roof
+Weather-worn roof fitting
+<&dark_shingle_roof_metallized>Snow guard fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Roof o' dark shingles
+Weather-worn roof fitting
+<&dark_shingle_roof_skylight>Skylight fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Base fer a roof chimney
+Weather-worn roof fitting
+<&dark_shingle_roof_chimneytrunk>Chimney base fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Wire passage through the roof
+Weather-worn roof fitting
+<&dark_shingle_roof_wireconduit>Wire passage fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Roof o' dark shingles
+Weather-worn roof fitting
+<&dark_shingle_roof_chimney>Chimney fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Block o' dark shingle roof
+Weather-worn roof fitting
+<&dark_shingle_roof_block>This block shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Slab o' dark shingle roof
+Weather-worn roof fitting
+<&dark_shingle_roof_slab>This block shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Slab o' dark shingle roof
+Weather-worn roof fitting
+<&dark_shingle_roof_slabslice>Thin slab o' dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>
+<np>
+Packed gritty filth
+Ground cover fer a worksite
+<&dense_grit_dirt_block>This block gives yer outdoor works a hard-packed, well-trodden surface.<br>
+<br>
+Orders: Lay her round loading doors, outdoor tanks and machine yards.<br>
+<np>
+Packed gritty sand
+Ground cover fer a worksite
+<&dense_grit_sand_block>This block gives yer outdoor works a hard-packed, well-trodden surface.<br>
+<br>
+Orders: Lay her round loading doors, outdoor tanks and machine yards.<br>
+<np>
+Planks o' old timber
+Timber from an aged workshop
+<&old_industrial_wood_planks>Planks o' old factory timber brings aged workshop timber to decks, steps, doors and warm interior trim, matey.<br>
+<br>
+Orders: Use her fer old workshop decks, stairs, doors and trim.<br>
+<np>
+Slab o' old factory timber
+Timber from an aged workshop
+<&old_industrial_wood_slab>This block brings aged workshop timber to decks, steps, doors and warm interior trim, matey.<br>
+<br>
+Orders: Use her fer old workshop decks, stairs, doors and trim.<br>
+<np>
+Stairs o' old timber
+Timber from an aged workshop
+<&old_industrial_wood_stairs>Stairs o' old factory timber brings aged workshop timber to decks, steps, doors and warm interior trim, matey.<br>
+<br>
+Orders: Use her fer old workshop decks, stairs, doors and trim.<br>
+<np>
+Thin slab o' old timber
+Timber from an aged workshop
+<&old_industrial_wood_slabslice>Thin slab o' old factory timber brings aged workshop timber to decks, steps, doors and warm interior trim, matey.<br>
+<br>
+Orders: Use her fer old workshop decks, stairs, doors and trim.<br>
+<np>
+Door o' old factory timber
+Timber from an aged workshop
+<&old_industrial_wood_door>This block brings aged workshop timber to decks, steps, doors and warm interior trim, matey.<br>
+<br>
+Orders: Use her fer old workshop decks, stairs, doors and trim.<br>

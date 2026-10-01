@@ -1,0 +1,7 @@
+Kovový pracovní stůl
+Pracoviště na pláty
+<&recipe>Zesílené pracoviště s místem na kladivo, mřížkou 3x3 a výstupem.<br>
+<br>
+Použití: Jako běžný stůl. Pro IE pláty dejte Inženýrské kladivo do slotu, materiál do mřížky a plát vezměte z výstupu.<br>
+<br>
+Dekorace s ocelovým rámem používají ocelové pláty vytvořené zde.

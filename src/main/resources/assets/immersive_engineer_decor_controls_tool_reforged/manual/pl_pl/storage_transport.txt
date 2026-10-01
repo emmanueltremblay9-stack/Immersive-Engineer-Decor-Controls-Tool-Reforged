@@ -1,0 +1,41 @@
+Magazynowanie i transport
+Elementy magazynowania i przepływu
+Elementy magazynowania i transportu obejmują skrzynie, beczki, lejki i zawory do zwartych instalacji fabrycznych.<br>
+<br>
+Korzystaj z tych stron podczas planowania magazynów, rurociągów, zbiorników technicznych i sterowanych instalacji płynów.
+<np>
+Skrzynia z etykietą
+Edytowalna etykieta zapasów
+<&labeled_crate>Ta skrzynia z etykietą ułatwia czytelne porządkowanie magazynu. Przednią płytkę można edytować jak małą tabliczkę warsztatową.<br>
+<br>
+Użycie: Kliknij płytkę etykiety prawym przyciskiem myszy, aby zmienić opis skrzyni. Kliknij prawym przyciskiem pozostałą część skrzyni, aby otworzyć magazyn elementów, części i materiałów konserwacyjnych.<br>
+<np>
+Beczka na płyny
+Elementy instalacji płynów
+<&fluid_barrel>Ten niewielki element instalacji płynów służy do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Postaw go tak, aby rury lub wiadra miały dostęp do ściany zbiornika.<br>
+<np>
+Lejek do płynów
+Elementy instalacji płynów
+<&small_fluid_funnel>Mały lejek do płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Postaw go pod punktem zbierania płynu i skieruj jego zawartość do zbiorników lub rur położonych niżej.<br>
+<np>
+Zawór zwrotny do płynów
+Elementy instalacji płynów
+<&straight_pipe_valve>Zawór zwrotny do płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Ustaw zawór zgodnie z zamierzonym kierunkiem przepływu.<br>
+<np>
+Zawór redstone do płynów
+Elementy instalacji płynów
+<&straight_pipe_valve_redstone>Zawór redstone do płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Ustaw zawór zgodnie z zamierzonym kierunkiem przepływu.<br>
+<np>
+Analogowy zawór do płynów
+Elementy instalacji płynów
+<&straight_pipe_valve_redstone_analog>Analogowy zawór do płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Ustaw zawór zgodnie z zamierzonym kierunkiem przepływu.<br>

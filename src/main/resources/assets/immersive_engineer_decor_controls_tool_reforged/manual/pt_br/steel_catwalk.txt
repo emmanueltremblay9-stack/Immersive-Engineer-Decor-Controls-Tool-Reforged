@@ -1,0 +1,5 @@
+Passarela de aço
+Elemento de acesso para manutenção
+<&recipe>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloque como acesso para manutenção em máquinas, andares superiores e poços de serviço.<br>

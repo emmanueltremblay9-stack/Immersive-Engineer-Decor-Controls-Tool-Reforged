@@ -1,0 +1,7 @@
+Raegesensor
+Signaolwaorneming
+<&recipe>Ein weersensor zèt raege op zien plaats in redstone óm.<br>
+<br>
+Gebroek: bevestig 'm wao 't blok d'rbaove raege kin kriege.<br>
+<br>
+Opmerking: controleert raege baove de sensor.

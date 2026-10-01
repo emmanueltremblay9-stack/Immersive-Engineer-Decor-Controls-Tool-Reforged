@@ -1,0 +1,107 @@
+Værkstedsmaskiner
+Maskiner og værkstedets ind- og udgange
+Værkstedsmaskinerne tilbyder kompakt fremstilling, flytning af genstande, smeltning, bortskaffelse, opsamling og hjælpeopgaver på blot én blok.<br>
+<br>
+Åbn de følgende sider for hver maskines opskrift, billeder, baggrund og praktiske brugsvejledning.
+<np>
+Stålbord
+Værkstedsindretning
+<&steel_table>Denne blok er et praktisk værkstedsmøbel til arbejdsrum og vedligeholdelseshjørner.<br>
+<br>
+Brug: Sæt den ved siden af bænke, kasser og kompakte maskiner.<br>
+<np>
+Bord af behandlet træ
+Værkstedsindretning
+<&treated_wood_table>Denne blok er et praktisk værkstedsmøbel til arbejdsrum og vedligeholdelseshjørner.<br>
+<br>
+Brug: Sæt den ved siden af bænke, kasser og kompakte maskiner.<br>
+<np>
+Taburet af behandlet træ
+Værkstedsindretning
+<&treated_wood_stool>Denne blok er et praktisk værkstedsmøbel til arbejdsrum og vedligeholdelseshjørner.<br>
+<br>
+Brug: Sæt den ved siden af bænke, kasser og kompakte maskiner.<br>
+<np>
+Metalarbejdsbord
+Arbejdsstation til plader
+<&metal_crafting_table>Metalarbejdsbordet er en forstærket værkstedsstation med en hammerplads, et 3x3-fremstillingsgitter og en tydelig resultatplads.<br>
+<br>
+Brug: Brug gitteret til almindelig fremstilling. Til IE-plader skal du lægge en ingeniørhammer i værktøjspladsen og pladematerialet i gitteret, før du tager resultatet. Ståldekorationer bruger stålplader til stolper, gangbroer, vinduer, døre, rækværk og andre ståldele.<br>
+<np>
+Fabrikstragt
+Hjælpemiddel til værkstedsgulvet
+<&factory_hopper>Denne blok flytter genstandsstakke gennem et mere kompakt industrikabinet.<br>
+<br>
+Brug: Ret den mod lagerlinjen, og indstil rækkevidde, stakantal, tidsforløb og redstonetilstand på skærmen.<br>
+<np>
+Fabriksudkaster
+Hjælpemiddel til værkstedsgulvet
+<&factory_dropper>Denne blok udsender lagrede genstande fra en rettet forside.<br>
+<br>
+Brug: Ret forsiden mod udleveringspunktet, fyld de interne pladser, og indstil kraft, vinkel, forsinkelse, filterlogik og redstonetilstand på skærmen.<br>
+<np>
+Fabriksblokplacerer
+Hjælpemiddel til værkstedsgulvet
+<&factory_placer>Denne blok placerer blokke fra sit interne lager, når den aktiveres.<br>
+<br>
+Brug: Ret arbejdsfladen mod målområdet, og fyld stakke af placerbare blokke i.<br>
+<np>
+Blokbryder
+Hjælpemiddel til værkstedsgulvet
+<&small_block_breaker>Den lille blokbryder er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Ret arbejdsfladen mod den blok, der skal fjernes.<br>
+<np>
+Affaldsforbrænder
+Kompakt bearbejdningsenhed
+<&small_waste_incinerator>Affaldsforbrænderen ødelægger uønskede genstande på begrænset værkstedsplads.<br>
+<br>
+Brug: Tilfør kun uønskede genstande til dens kø.<br>
+<np>
+Laboratorieovn
+Kompakt bearbejdningsenhed
+<&small_lab_furnace>Laboratorieovnen udfører kompakte smelteopgaver med fast brændsel på begrænset værkstedsplads.<br>
+<br>
+Brug: Brug fast brændsel til små smelteportioner.<br>
+<np>
+Elektrisk ovn
+Kompakt bearbejdningsenhed
+<&small_electrical_furnace>Den elektriske ovn udfører kompakte FE-drevne smelteopgaver på begrænset værkstedsplads.<br>
+<br>
+Brug: Tilfør FE og gyldigt smeltemateriale.<br>
+<np>
+Mineralsmelter
+Kompakt bearbejdningsenhed
+<&small_mineral_smelter>Mineralsmelteren bearbejder mineraler ved høj varme på begrænset værkstedsplads.<br>
+<br>
+Brug: Tilfør mineralblokke og strøm til smeltning ved høj varme.<br>
+<np>
+Vandfryser
+Kompakt bearbejdningsenhed
+<&small_freezer>Vandfryseren udfører kompakt kølearbejde i strømdrevne væskeanlæg.<br>
+<br>
+Brug: Tilfør vand og strøm til trinvis isproduktion.<br>
+<np>
+Passiv væske
+Udstyr til væskeledninger
+<&passive_fluid_accumulator>Den passive væskeopsamler er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Placer den op mod egnede vandkilder, og sørg for plads til væskeudtagning.<br>
+<np>
+Solpanel
+Hjælpemiddel til værkstedsgulvet
+<&small_solar_panel>Det lille solpanel er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Giv det fri adgang til himlen, og tilslut udstyr med lavt forbrug.<br>
+<np>
+Malkemaskine
+Hjælpemiddel til værkstedsgulvet
+<&small_milking_machine>Den lille malkemaskine er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Placer den tæt på køer, og sørg for at kunne fjerne mælkebeholdere eller væske.<br>
+<np>
+Træfælder
+Hjælpemiddel til værkstedsgulvet
+<&small_tree_cutter>Den lille træfælder er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Ret den mod udvoksede træer, og saml de tabte genstande op separat.<br>

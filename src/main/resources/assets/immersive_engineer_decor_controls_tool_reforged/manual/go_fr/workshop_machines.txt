@@ -1,0 +1,107 @@
+Machines d'atelier
+Machines e entrées-sorties d'atelier
+Les machines d'atelier permettent la fezerie, le dépllacement de bezaignes, la fonte, la destruction, le ramassaije e les bezaignes utilitaires den la pllâce d'un seul blloqe.<br>
+<br>
+Ouvréz les pajes qi suivent pour la recette, l'image, l'istouere e les notes d'empllai pratiqe de chaqe machine.
+<np>
+Tabl en acier
+Meubll d'atelier
+<&steel_table>Çu blloqe ét un meubll d'atelier pratiqe pour les salles de bezaigne e les coins d'entretien.<br>
+<br>
+Empllai : Pllacéz-le a couté des établlis, des caisses e des machines compactes.<br>
+<np>
+Tabl en bouéz traitë
+Meubll d'atelier
+<&treated_wood_table>Çu blloqe ét un meubll d'atelier pratiqe pour les salles de bezaigne e les coins d'entretien.<br>
+<br>
+Empllai : Pllacéz-le a couté des établlis, des caisses e des machines compactes.<br>
+<np>
+Tabouret en bouéz traitë
+Meubll d'atelier
+<&treated_wood_stool>Çu blloqe ét un meubll d'atelier pratiqe pour les salles de bezaigne e les coins d'entretien.<br>
+<br>
+Empllai : Pllacéz-le a couté des établlis, des caisses e des machines compactes.<br>
+<np>
+Etablli a métal
+Pouste de bezaigne des pllaqes
+<&metal_crafting_table>L'Etablli a métal ét un pouste d'atelier renforcë o eune case a martè, eune grille de fezerie 3x3 e eune case de sortie cllère.<br>
+<br>
+Empllai : Empllayéz la grille pour la fezerie ordinaire. Pour les pllaqes IE, météz un Martè de l'anjénieur den la case a outil e le matériau de pllaqe den la grille avant de prindr le résultat. Les décors d'acier empllayent des pllaqes d'acier pour les potiaos, passerelles, fenétrs, portes, rambardes e aotres pièces d'acier.<br>
+<np>
+Avouillette d'uzine
+Outil de sol d'atelier
+<&factory_hopper>Çu blloqe dépllâce des pilées de bezaignes den eune bouéte d'uzine pus serrée.<br>
+<br>
+Empllai : Miréz-le devers la ligne de renabls, pis regléz la portée, le nombr des pilées, le temp e le mode redstone den son écran.<br>
+<np>
+Egâillouer d'uzine
+Outil de sol d'atelier
+<&factory_dropper>Çu blloqe lâche les bezaignes gardées par eune face orientée.<br>
+<br>
+Empllai : Miréz le devant devers le pouint de lâchaije, rempllisséz ses cases e regléz la force, l'angle, le délai, la logiqe de filtre e le mode redstone den son écran.<br>
+<np>
+Pllacou de blloqes d'uzine
+Outil de sol d'atelier
+<&factory_placer>Çu blloqe installe des blloqes de sa réserve intérieure cant q'il ét décllanchë.<br>
+<br>
+Empllai : Miréz la face de bezaigne devers la pllâce cible e météz-y des pilées qe n'en peut pllacer.<br>
+<np>
+Cassou de blloqes
+Outil de sol d'atelier
+<&small_block_breaker>Le Petit cassou de blloqes ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Pllacéz la face de bezaigne devers le blloqe a ôter.<br>
+<np>
+Brûlou de déchés
+Unitë de tratement compacte
+<&small_waste_incinerator>Le Brûlou de déchés détruit les bezaignes qe n'en veut pouint den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Ne météz den sa file qe les bezaignes qe vous voulez jeter.<br>
+<np>
+Fournè de laboratoire
+Unitë de tratement compacte
+<&small_lab_furnace>Le Fournè de laboratoire fait de la fonte au combustibl solide den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Empllayéz du combustibl solide pour fondr de petites tournées.<br>
+<np>
+Fournè eletriqe
+Unitë de tratement compacte
+<&small_electrical_furnace>Le Fournè eletriqe fait de la fonte alimentée par FE den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Bailléz-li des FE e eune entrée qe n'en peut fondr.<br>
+<np>
+Fournè a fondr les minéraux
+Unitë de tratement compacte
+<&small_mineral_smelter>Le Fournè a fondr les minéraux fait du tratement de minéraux a haote chalou den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Bailléz des blloqes de minéraux e du pououair pour la fonte a haote chalou.<br>
+<np>
+Engelou d'iao
+Unitë de tratement compacte
+<&small_freezer>L'Engelou d'iao fait de la bezaigne d'erfardissement compacte pour les instalaçons de liqides alimentées.<br>
+<br>
+Empllai : Bailléz de l'iao e du pououair pour fére de la grôe par étapes.<br>
+<np>
+Liqide passif
+Éqhipement de ligne a liqides
+<&passive_fluid_accumulator>L'Accumulaïteur passif de liqides ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Pllacéz-le contr des sources d'iao qi conviennent e laisséz de la pllâce pour ertirer le liqide.<br>
+<np>
+Paniao solaire
+Outil de sol d'atelier
+<&small_solar_panel>Le Petit paniao solaire ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Donéz-li le ciel ouvert e branchéz des appareils qi demandent peu.<br>
+<np>
+Machine a tirer le lét
+Outil de sol d'atelier
+<&small_milking_machine>La Petite machine a tirer le lét ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Pllacéz-la a couté des vaches e prévayéz eune façon d'ertirer les contenants de lét ou le liqide.<br>
+<np>
+Coupou d'arbrs
+Outil de sol d'atelier
+<&small_tree_cutter>Le Petit coupou d'arbrs ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Miréz-le devers des arbrs grandis e ramasséz les chutes a part.<br>

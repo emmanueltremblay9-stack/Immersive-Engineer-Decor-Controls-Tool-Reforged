@@ -1,0 +1,7 @@
+Analoge ûntfanger foar skeakelferbiningen
+Keppele bestjoering
+<&recipe>In keppele ûntfanger jout betsjinningspanielen in sichtber doel op ôfstân.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Brûk dy pearel by it slûpen om de ûntfanger op ôfstân te aktivearjen.<br>
+<br>
+Opmerking: Dizze ûntfanger jout in fol redstonesinjaal út as er aktivearre wurdt.

@@ -1,0 +1,7 @@
+Penjejak
+Penanda kedudukan tersimpan
+<&recipe>Penjejak menyimpan kedudukan blok dalam item.<br>
+<br>
+Klik blok untuk menyimpan dimensi dan koordinat. Petua menunjukkan kedudukan. Guna sambil menyelinap untuk memadam sasaran.<br>
+<br>
+Tandai mesin, terowong, kawalan jauh atau binaan belum siap.

@@ -1,0 +1,108 @@
+Drehevel Diwysyansel
+Fosow hag amalow gweythva
+Daffar drehevel ollgemmyn a gomprehend darasow, fenestriow, golowys, arwodhyow gwarnyans, afinans amal ha darnow strwythurel na berthyn dhe gevren moy arbennik.<br>
+<br>
+Usya an folennow ma rag stevelyow gweythva, koridorow gonis, merkyans peryllow hag ober manylyon diwysyansel dhe les.
+<np>
+Golow Bollen Horn
+Golow oberi kompakt
+<&iron_bulb_light>An stock ma a ry golowyans diwysyansel kompakt rag koridorow, hensyow kerdhes ha leow oberi.<br>
+<br>
+Devnydh: gor e war nennow, fosow po amalow may fo res a wolowyans oberi kler y'n stevel.<br>
+<np>
+Golow Amal an Nenn
+Golow oberi kompakt
+<&iron_ceiling_edge_light>An stock ma a ry golowyans diwysyansel kompakt rag koridorow, hensyow kerdhes ha leow oberi.<br>
+<br>
+Devnydh: gor e war nennow, fosow po amalow may fo res a wolowyans oberi kler y'n stevel.<br>
+<np>
+Golow Amal Leur Ynkovys
+Golow oberi kompakt
+<&iron_floor_edge_light>An stock ma a ry golowyans diwysyansel kompakt rag koridorow, hensyow kerdhes ha leow oberi.<br>
+<br>
+Devnydh: gor e war nennow, fosow po amalow may fo res a wolowyans oberi kler y'n stevel.<br>
+<np>
+Golow Ynkovys
+Golow oberi kompakt
+<&iron_inset_light>An stock ma a ry golowyans diwysyansel kompakt rag koridorow, hensyow kerdhes ha leow oberi.<br>
+<br>
+Devnydh: gor e war nennow, fosow po amalow may fo res a wolowyans oberi kler y'n stevel.<br>
+<np>
+Arwodh "Gwarnyans ollgemmyn
+Merkyer peryl
+<&sign_caution>An Arwodh "Gwarnyans ollgemmyn" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Peryl
+Merkyer peryl
+<&sign_danger>An Arwodh "Gwarnyans: gans peryl bras ena" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Afinans
+Merkyer peryl
+<&sign_decor>An Plat Arwodh (Engineer's decor) a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Difres
+Merkyer peryl
+<&sign_defense>An Arwodh "Gwarnyans: system difres a-rag" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Dyllo
+Merkyer peryl
+<&sign_exit>An arwodh ma a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh "Peryl tan
+Merkyer peryl
+<&sign_firehazard>An Arwodh "Peryl tan" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh "Gwarnyans rew
+Merkyer peryl
+<&sign_frost>An Arwodh "Gwarnyans rew" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Enep Tomm
+Merkyer peryl
+<&sign_hotsurface>An Arwodh "Gwarnyans: enep tomm" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Gwivren Fyw
+Merkyer peryl
+<&sign_hotwire>An Arwodh "Gwarnyans: gwivren fyw" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh "Peryl laser
+Merkyer peryl
+<&sign_laser>An Arwodh "Peryl laser" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Peryl Hus
+Merkyer peryl
+<&sign_magichazard>An Arwodh "Gwarnyans: peryl hus" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh Park Magnetek
+Merkyer peryl
+<&sign_magneticfield>An Arwodh "Gwarnyans: park magnetek krev" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>
+Arwodh "Peryl radyoweythrek
+Merkyer peryl
+<&sign_radioactive>An Arwodh "Peryl radyoweythrek" a verk peryllow, dyllow ha ranndiryow oberi gans merk gweladow gwiw rag sawder gweythva.<br>
+<br>
+Devnydh: gor e a-denewen dhe beryllow, dyllow, jynnys ha ranndiryow gans hedhas finwethys.<br>
+<np>

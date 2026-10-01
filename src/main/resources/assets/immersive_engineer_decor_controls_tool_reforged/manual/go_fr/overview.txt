@@ -1,0 +1,5 @@
+Vue d'ensembll
+Éqhipements e comandes d'uzine
+Engineer's Decor rassembe des pièces de bâtisse d'uzine, des outils d'atelier e des appareils de comande pour les bâtisses d'uzine pratiqes.<br>
+<br>
+Ouvréz les sections de ç'te catégorie pour les recettes, les images, les istoueres e les notes d'empllai de chaqe blloqe ou bezaigne d'installaçon.

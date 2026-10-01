@@ -1,0 +1,5 @@
+Solarny panel
+Pribor fabričnoj haly
+<&recipe>Maly solarny panel jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Obezpeči mu otvorjeno nebo i poveži pribor s maloj potrěboj energiji.<br>

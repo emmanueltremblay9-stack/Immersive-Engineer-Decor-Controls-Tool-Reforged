@@ -1,0 +1,127 @@
+Kulkureitit
+Kulkutasot ja tuet
+Teräspylväät, käsitellyt puupylväät, ritilät, huoltotasot, kaiteet, tikkaat, ovet, ikkunat ja luukut muodostavat pieniä huoltoreittejä tehtaan sisälle.<br>
+<br>
+Teräksiset kulkureittiosat käyttävät teräslevyjä. Valmista tai aseta metallityöpöytä, lisää Immersive Engineeringin vasara ja vasaroi teräsharkot levyiksi pylväitä, huoltotasoja, ikkunoita, ovia, kaiteita ja muita teräskoristeita varten.<br>
+<br>
+Aseta niitä paikkoihin, joissa koneet tarvitsevat huoltokulkua, korotettuja reittejä, huoltokuiluja tai turvallisempia reunoja.
+<np>
+Paksu teräspylväs
+Rungon rakenneosa
+<&thick_steel_pole>Suora paksu teräspylväs antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Paksun pylvään pää
+Rungon rakenneosa
+<&thick_steel_pole_head>Suoran paksun teräspylvään pää tai jalka antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Ohut teräspylväs
+Rungon rakenneosa
+<&thin_steel_pole>Suora ohut teräspylväs antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Ohuen pylvään pää
+Rungon rakenneosa
+<&thin_steel_pole_head>Suoran ohuen teräspylvään pää tai jalka antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Käsitelty puupylväs
+Rungon rakenneosa
+<&treated_wood_pole>Suora käsitelty puupylväs antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Käsitellyn pylvään pää
+Rungon rakenneosa
+<&treated_wood_pole_head>Suoran käsitellyn puupylvään pää tai jalka antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Käsitellyn pylvään tuki
+Rungon rakenneosa
+<&treated_wood_pole_support>Suoran käsitellyn puupylvään tuki antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Teräksinen kaksois-T-tuki
+Rungon rakenneosa
+<&steel_double_t_support>Tämä kuutio antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>
+<np>
+Teräslattiaritilä
+Huoltokulun osa
+<&steel_floor_grating>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Teräshuoltotaso
+Huoltokulun osa
+<&steel_catwalk>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Teräshuoltotason portaat
+Huoltokulun osa
+<&steel_catwalk_stairs>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Korotettu teräshuoltotaso
+Huoltokulun osa
+<&steel_catwalk_ta>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Teräskaide
+Huoltokulun osa
+<&steel_railing>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Teräsverkkoaita
+Huoltokulun osa
+<&steel_mesh_fence>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Teräsverkkoaidan portti
+Huoltokulun osa
+<&steel_mesh_fence_gate>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Metallipuolatikas
+Huoltokulun osa
+<&metal_rung_ladder>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Porrastetut metalliaskeleet
+Huoltokulun osa
+<&metal_rung_steps>Tämä kuutio muodostaa selkeitä huoltoreittejä koneiden ympärille.<br>
+<br>
+Käyttö: Aseta huoltokuluksi koneiden, yläkerrosten ja huoltokuilujen ympärille.<br>
+<np>
+Teräskehysikkuna
+Suojattu näkymä
+<&steel_framed_window>Tämä kuutio säilyttää avoimet näkymät ja sopii samalla vahvistettuun tehdasrakentamiseen.<br>
+<br>
+Käyttö: Aseta yhden kuution seinäaukkoon, jossa pelaajien tulisi nähdä koneet suojatun esteen läpi.<br>
+<np>
+Metallinen liukuovi
+Teollinen kulkuaukko
+<&metal_sliding_door>Tämä kuutio tarjoaa tukevan kulkuaukon huoltohuoneisiin, kuiluihin, katoille ja konekoteloihin.<br>
+<br>
+Käyttö: Asenna sinne, missä rakennelma tarvitsee hallittavan huoltoaukon.<br>
+<np>
+Rautainen huoltoluukku
+Teollinen kulkuaukko
+<&iron_hatch>Tämä kuutio tarjoaa tukevan kulkuaukon huoltohuoneisiin, kuiluihin, katoille ja konekoteloihin.<br>
+<br>
+Käyttö: Asenna sinne, missä rakennelma tarvitsee hallittavan huoltoaukon.<br>

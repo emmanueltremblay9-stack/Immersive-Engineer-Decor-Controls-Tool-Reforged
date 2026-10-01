@@ -1,0 +1,5 @@
+Pembeku Air
+Unit pemrosesan ringkas
+<&recipe>Pembeku air menangani pendinginan ringkas untuk instalasi cairan bertenaga.<br>
+<br>
+Penggunaan: sediakan air dan daya untuk produksi es bertahap.<br>

@@ -1,0 +1,93 @@
+Ferramentas do engenheiro
+Equipamento portátil de oficina
+O conjunto Ferramentas do engenheiro acrescenta equipamentos de mão, marcadores de minas, consumíveis de emergência, alimentos de campo e pequenos auxiliares de processamento ao mesmo manual dos blocos decorativos e de controle.<br>
+<br>
+Estas ferramentas foram feitas para trabalhar longe de uma oficina equipada: marcar o caminho, transportar suprimentos, recuperar-se de erros e concluir pequenos serviços de processamento no local.
+<np>
+Ferramenta REDIA
+Utilidade revestida de diamante
+<&redia_tool>A ferramenta REDIA é um utensílio de campo durável para trabalhos rápidos no solo. Use em terra adequada para produzir terra arada.<br>
+<br>
+Use em uma face firme enquanto carrega tochas para colocar uma tocha de marcação do inventário sem desgastar REDIA. Trabalho no solo, tosquia, ações de machado e derrubada de árvores consomem durabilidade.
+<np>
+Martelo triturador de minérios
+Ferramenta de trituração manual
+<&crushing_hammer>O martelo triturador de minérios é uma ferramenta manual para o processamento inicial de ferro e ouro.<br>
+<br>
+Use-o com ferro bruto, ouro bruto, minério de ferro, minério de ferro de ardósia profunda, minério de ouro ou minério de ouro de ardósia profunda para produzir pó de Immersive Engineering. O martelo perde durabilidade, volta à grade até quebrar, se desgasta ao minerar e causa repulsão em combate.
+<np>
+Rastreador
+Marcador de posição salva
+<&tracker>O rastreador guarda a posição de um bloco no próprio item.<br>
+<br>
+Clique em um bloco para salvar dimensão e coordenadas. A descrição mostra a posição. Use agachado para apagar o alvo.<br>
+<br>
+Marque máquinas, túneis, controles remotos ou obras inacabadas.
+<np>
+Carvão de Ariadne
+Marcador de rotas de mina
+<&ariadne_coal>O carvão de Ariadne coloca rapidamente setas pretas de rota em faces firmes da mina. Use em uma face sólida para marcar a próxima curva, saída ou bifurcação; o marcador aceita oito direções conforme o ponto clicado, inclusive diagonais.<br>
+<br>
+O carvão de Ariadne é uma ferramenta reutilizável com 100 usos. Cada colocação bem-sucedida consome um ponto de durabilidade. Recusa faces inadequadas em vez de desgastar o item.
+<np>
+Injetor automático de estimulantes
+Injetor de emergência
+<&stimpack>O pacote estimulante automático é um item médico de emergência.<br>
+<br>
+Use-o manualmente para curar, obter proteção breve e um curto aumento de movimento. No inventário, aciona-se automaticamente com pouca saúde e então entra em recarga. Mantenha um à mão em locais perigosos.
+<np>
+Saco de dormir
+Conjunto portátil para descanso
+<&sleeping_bag>O saco de dormir é um kit resistente ao tempo para trabalho longe de uma cama.<br>
+<br>
+Use-o à noite no Mundo Superior para descansar até a manhã sem definir o ponto de renascimento.<br>
+<br>
+Ele não funciona de dia, com monstros próximos ou em dimensões impróprias. Cada descanso bem-sucedido o desgasta.
+<np>
+Caixa de materiais
+Caixa de suprimentos de construção
+<&material_box>A caixa de materiais carrega uma grande reserva de um único material de construção comum, inalterado e empilhável.<br>
+<br>
+Segure a caixa na mão principal e o material na outra para guardá-lo; use-a com a outra mão vazia para retirar uma pilha.<br>
+<br>
+Ela comporta 512 itens de um tipo, rejeita outras caixas, equipamento não empilhável e pilhas modificadas, e mostra o conteúdo na descrição.
+<np>
+Cápsula de ar para mergulho
+Reserva de ar de emergência
+<&diving_capsule>A cápsula de ar é uma reserva de emergência para trabalhos subaquáticos.<br>
+<br>
+Use-a manualmente para recuperar ar. No inventário, ela também se aciona automaticamente quando o ar está quase acabando e então entra em recarga. Leve-a a minas alagadas, tubulações submersas e salas de bombas.
+<np>
+Prensa de barras de müsli
+Prensa de alimentos
+<&musli_bar_press>A prensa Muslee transforma alimentos comuns em rações compactas.<br>
+<br>
+Tenha pão, uma maçã e sementes de trigo, melancia, abóbora, beterraba ou cânhamo industrial e use a prensa. Ela consome um de cada ingrediente, verifica o espaço, cria quatro barras e sofre dano.<br>
+<br>
+Se faltar ingrediente ou espaço, nada é consumido.
+<np>
+Barra energética de mistura de müsli
+Lanche rápido de oficina
+<&musli_bar>A barra Muslee Melange é um alimento compacto feito de pão, sementes e frutas.<br>
+<br>
+Coma-a como ração de campo ao instalar controles, tubos, plataformas ou longas linhas de máquinas.
+<np>
+Espremedor de mentes
+Condensador de experiência
+<&charged_lapis_squeezer>O espremedor de mentes converte um lápis-lazúli e um nível de experiência do inventário em lápis-lazúli carregado.<br>
+<br>
+Cada conversão bem-sucedida machuca, causa exaustão e cega brevemente o usuário. Não funciona sem lápis-lazúli, sem experiência ou quando o usuário está perto demais da morte.
+<np>
+Lápis-lazúli carregado
+Experiência armazenada
+<&charged_lapis>O lápis-lazúli carregado armazena um nível de experiência. Consuma para recuperar o nível, remover efeitos ativos e restaurar um pouco de vida.<br>
+<br>
+Fabrique primeiro um espremedor de mentes; o lápis-lazúli carregado é produzido usando essa ferramenta com lápis-lazúli e experiência disponíveis.
+<np>
+Granulado grosso de ferro
+Material de ferramentas de engenheiro utilizado pelo conjunto reconstruído de receitas.
+<&iron_grit>Pode ser fundido em lingotes de<br>ferro, mas não serve para<br>processamento avançado de materiais.
+<np>
+Granulado grosso de ouro
+Material de ferramentas de engenheiro utilizado pelo conjunto reconstruído de receitas.
+<&gold_grit>Pode ser fundido em lingotes de<br>ouro, mas não serve para<br>processamento avançado de materiais.

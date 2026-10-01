@@ -1,0 +1,5 @@
+Muslee Melange-energibar
+Hurtig værkstedssnack
+<&recipe>Kompakt mad af brød, frø og frugt.<br>
+<br>
+Brug: Spis som feltmad ved opsætning af styringer, rør, platforme eller lange maskinlinjer.

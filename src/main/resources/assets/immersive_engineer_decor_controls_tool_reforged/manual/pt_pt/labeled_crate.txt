@@ -1,0 +1,5 @@
+Caixote com etiqueta
+Etiqueta de reserva editável
+<&recipe>Este caixote com etiqueta permite organizar o armazém com clareza. A placa frontal pode ser editada como uma pequena tabuleta de oficina.<br>
+<br>
+Uso: Clica com o botão direito na placa para editar a etiqueta do caixote. Clica com o botão direito no resto do caixote para abrir o armazenamento de componentes, peças e materiais de manutenção.<br>

@@ -1,0 +1,7 @@
+Caixa de materiais
+Caixa de subministracións de construción
+<&recipe>A caixa de materiais leva unha gran reserva dun único material de construción simple, sen modificar e apilable.<br>
+<br>
+Uso: Sostén a caixa na man principal e unha pila de material na secundaria para cargala. Usa a caixa coa man secundaria baleira para retirar unha pila.<br>
+<br>
+Garda ata 512 obxectos dun só tipo. Rexeita caixas aniñadas, equipamento non apilable e pilas renomeadas ou con datos modificados; a descrición mostra o contido.

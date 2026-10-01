@@ -1,0 +1,5 @@
+Væsketunne
+Utstyr for væskeliner
+<&recipe>Denne kompakte væskerøyrdelen høver til små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: plasser delen der røyr eller bytter kjem til tanksida.<br>

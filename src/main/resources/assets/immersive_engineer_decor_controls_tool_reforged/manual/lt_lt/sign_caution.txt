@@ -1,0 +1,5 @@
+Bendro įspėjimo ženklas
+Pavojaus žymeklis
+<&recipe>Bendro įspėjimo ženklas žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>

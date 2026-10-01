@@ -1,0 +1,7 @@
+Cassa di materiai
+Cassa di materiai de costruzzion
+<&recipe>La cassa di material la porta una granda scorta d'un sol material da costruzzion semplic, minga modificaa e impilabil.<br>
+<br>
+Dopra: Tegn la cassa in la man principal e una pila de material in quell'altra per cargala. Dopra la cassa con l'altra man voeuda per tirà foeura una pila.<br>
+<br>
+La tegn fin a 512 robb d'un sol tipo. La refuda cass in dent a alter cass, equipaggiament minga impilabil e pile rinominaa o con dati modificaa; el tooltip el mostra el contenud.

@@ -1,0 +1,5 @@
+Bočka dla fluidaŭ
+Abstalavannie fluidnych linij
+<&recipe>Hety elemient — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie truby abo viodry mohuć dasiahnuć hrani reziervuara.<br>

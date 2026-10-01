@@ -1,0 +1,7 @@
+Analoginen yhteysvastaanotin
+Yhteysohjaus
+<&recipe>Yhteysvastaanotin antaa ohjauspaneeleille näkyvän etäkohteen.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Käytä helmeä hiipien aktivoidaksesi vastaanottimen etänä.<br>
+<br>
+Huomaa: Tämä vastaanotin antaa täyden redstone-signaalin liipaistaessa.

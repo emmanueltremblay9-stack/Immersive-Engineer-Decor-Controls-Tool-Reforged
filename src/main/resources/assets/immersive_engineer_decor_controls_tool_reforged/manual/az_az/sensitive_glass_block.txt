@@ -1,0 +1,7 @@
+İşıqlı həssas şüşə
+Siqnal şüşəsi
+<&recipe>Qızıl daşa reaksiya verən şüşə blok siqnal vəziyyətini göstərərkən görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: İdarəetmə otağı pəncərələrində, işıqlı panellərdə və qorunan zavod şüşələməsində istifadə edin.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş siqnalına görə vəziyyətini dəyişir.

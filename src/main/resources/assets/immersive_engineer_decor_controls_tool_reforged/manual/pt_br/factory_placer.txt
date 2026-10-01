@@ -1,0 +1,5 @@
+Colocador de blocos de fábrica
+Utilidade de oficina
+<&recipe>Este bloco coloca blocos do estoque interno quando é acionado.<br>
+<br>
+Uso: Aponte a face de trabalho para o espaço-alvo e carregue pilhas de itens que possam ser colocados.<br>

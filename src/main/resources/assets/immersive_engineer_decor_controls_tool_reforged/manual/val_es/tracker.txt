@@ -1,0 +1,7 @@
+Rastrejador
+Marcador de posició guardada
+<&recipe>El rastrejador guarda la posició dun bloc dins de lobjecte.<br>
+<br>
+Cliqueu un bloc per guardar dimensió i coordenades. La descripció mostra la posició. Useu-lo ajupit per esborrar lobjectiu.<br>
+<br>
+Marqueu màquines, túnels, controls remots o construccions inacabades.

@@ -1,0 +1,107 @@
+Werkstattmaschine
+Maschine und Werkstattein- und -uusgäng
+Werkstattmaschine erlediged Herstellig, Gägestandstransport, Schmelze, Entsorge, Sammle und Hilfsarbeite uf de Flächi vo enem Block.<br>
+<br>
+Uf de folgende Siite findsch für jedi Maschine Rezept, Bild, Hintergrund und praktischi Verwendigshiwiis.
+<np>
+Stahltisch
+Werkstattiirichtig
+<&steel_table>Dä Block isch e praktischi Werkstattiirichtig für Arbeitsrüüm und Wartigsecke.<br>
+<br>
+Verwendig: Stell en näbe Werkbänk, Chiste und kompakti Maschine.<br>
+<np>
+Tisch us imprägniertem Holz
+Werkstattiirichtig
+<&treated_wood_table>Dä Block isch e praktischi Werkstattiirichtig für Arbeitsrüüm und Wartigsecke.<br>
+<br>
+Verwendig: Stell en näbe Werkbänk, Chiste und kompakti Maschine.<br>
+<np>
+Hocker us imprägniertem Holz
+Werkstattiirichtig
+<&treated_wood_stool>Dä Block isch e praktischi Werkstattiirichtig für Arbeitsrüüm und Wartigsecke.<br>
+<br>
+Verwendig: Stell en näbe Werkbänk, Chiste und kompakti Maschine.<br>
+<np>
+Metallwerkbank
+Arbeitsplatz für Platte
+<&metal_crafting_table>D'Metallwerkbank isch en verstärkte Arbeitsplatz mit Hammerfach, 3x3-Handwärksfäld und klarem Uusgangsfach.<br>
+<br>
+Verwendig: Nimm s'Fäld fürs normale Handwärch. Für IE-Platte steck en Ingenieurshammer is Wärchzüügfach und s'Plattematerial is Fäld, bevor s'Ergebnis usenimmsch. Stahldekoratione bruuched Stahlplatte für Pfoste, Laufsteg, Fänschter, Türe, Geländer und wiiteri Stahlteil.<br>
+<np>
+Fabrik-Trichter
+Hilfsgrät für d'Werkstatt
+<&factory_hopper>Dä Block bewegt Gägestandsstapel dur es ängers Industrieghüüs.<br>
+<br>
+Verwendig: Richt en zur Inventarstrecke uus und stell Riichwiiti, Stapelmängi, Ziitverhalte und Redstone-Modus ide Oberflächi ii.<br>
+<np>
+Fabrik-Uswerfer
+Hilfsgrät für d'Werkstatt
+<&factory_dropper>Dä Block git gspeichereti Gägeständ us ere uusgrichtete Siite uus.<br>
+<br>
+Verwendig: Richt d'Vordersiite zum Uswurfpunkt, füll d'Fächer und stell Chraft, Winkel, Verzögerig, Filterlogik und Redstone-Modus ide Oberflächi ii.<br>
+<np>
+Fabrik-Blocksetzer
+Hilfsgrät für d'Werkstatt
+<&factory_placer>Dä Block setzt bim Aktiviere Blöck us sim eigene Vorrat.<br>
+<br>
+Verwendig: Richt d'Arbeitssiite uf de Zielruum und füll setzbari Stapel ii.<br>
+<np>
+Blockbrächer
+Hilfsgrät für d'Werkstatt
+<&small_block_breaker>De chliine Blockbrächer isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Richt d'Arbeitssiite uf de Block, wo wäg söll.<br>
+<np>
+Abfallverbrennigsaalag
+Kompakti Verarbeitigseinheit
+<&small_waste_incinerator>D'Abfallverbrennigsaalag vernichtet unerwünschti Gägeständ uf wenig Werkstattflächi.<br>
+<br>
+Verwendig: Gib nur unerwünschti Gägeständ i ihri Warteschlange.<br>
+<np>
+Laborofe
+Kompakti Verarbeitigseinheit
+<&small_lab_furnace>De Laborofe erledigt Schmelzarbeite mit Feschtbrennstoff uf wenig Werkstattflächi.<br>
+<br>
+Verwendig: Nimm Feschtbrennstoff für chliini Schmelzcharge.<br>
+<np>
+Elektroofe
+Kompakti Verarbeitigseinheit
+<&small_electrical_furnace>De Elektroofe erledigt FE-betriebeni Schmelzarbeite uf wenig Werkstattflächi.<br>
+<br>
+Verwendig: Füehr FE-Energie und passends Schmelzguet zue.<br>
+<np>
+Mineralschmelzer
+Kompakti Verarbeitigseinheit
+<&small_mineral_smelter>De Mineralschmelzer verarbeitet Mineralie bi hoher Temperatur uf wenig Werkstattflächi.<br>
+<br>
+Verwendig: Füehr Mineralblöck und Energie für heissi Schmelzarbeite zue.<br>
+<np>
+Wassergefrierer
+Kompakti Verarbeitigseinheit
+<&small_freezer>De Wassergefrierer erledigt kompakti Chüelarbeite i energieversorgte Flüssigkeitsaalage.<br>
+<br>
+Verwendig: Gib em Wasser und Energie, demit Eis stuufewiis entsteht.<br>
+<np>
+Passivi Flüssigkeitssammlig
+Bauteil für Flüssigkeitsleitige
+<&passive_fluid_accumulator>De passive Flüssigkeitssammler isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Setz en a passendi Wasserquelle und lah Platz für d'Flüssigkeitsentnahm.<br>
+<np>
+Solarpanel
+Hilfsgrät für d'Werkstatt
+<&small_solar_panel>S'chliine Solarpanel isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Gib em freie Himmel und schlüss Grät mit wenig Verbruuch aa.<br>
+<np>
+Mälchmaschine
+Hilfsgrät für d'Werkstatt
+<&small_milking_machine>D'chliini Mälchmaschine isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Setz si zu de Chüeh und sorg defür, dass Milchbehälter oder Flüssigkeit usechömed.<br>
+<np>
+Baumfäller
+Hilfsgrät für d'Werkstatt
+<&small_tree_cutter>De chliine Baumfäller isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Richt en uf uusgwachseni Bäum und sammel d'Beute separat ii.<br>

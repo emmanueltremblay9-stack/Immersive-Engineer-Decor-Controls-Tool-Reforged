@@ -1,0 +1,5 @@
+Zid od armiranog betona
+Armirani beton
+<&recipe>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>

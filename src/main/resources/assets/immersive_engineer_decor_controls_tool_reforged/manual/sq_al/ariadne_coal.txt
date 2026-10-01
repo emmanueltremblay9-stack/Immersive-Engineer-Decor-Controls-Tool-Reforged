@@ -1,0 +1,7 @@
+Qymyrgur Ariadne
+Shenjues rrugësh minierash
+<&recipe>Qymyrguri Ariadne shënon shpejt rrugët në puse, degëzime minierash dhe punime të përkohshme nëntokësore.<br>
+<br>
+Përdorimi: përdore mbi një faqe të qëndrueshme blloku për të vendosur aty një shigjetë të zezë. Shenja lexon pikën ku klikon dhe mbështet tetë drejtime, përfshirë diagonalet. Kështu shënon kthesa, dalje, rrugë pa krye dhe rrugë furnizimi pa mbajtur tabela të veçanta.<br>
+<br>
+Qymyrguri Ariadne është vegël shënimi e ripërdorshme me 100 përdorime. Çdo shenjë e vendosur me sukses kushton një pikë qëndrueshmërie; faqet e papërshtatshme refuzohen pa e konsumuar veglën.

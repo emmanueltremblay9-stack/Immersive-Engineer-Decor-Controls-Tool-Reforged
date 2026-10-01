@@ -1,0 +1,789 @@
+Rialuithe Redstone
+Tomhsairí agus feistis chomhartha
+Tiontaíonn crua-earraí rialaithe Redstone ceilte ina phainéil inléite monarchan, braiteoirí, táscairí, lasca, aláraim agus feistis nasctha comhartha.<br>
+<br>
+Úsáid na leathanaigh seo agus stáisiúin oibreora, cláir chomharthaí, ciorcaid sábháilteachta agus cianrialtáin á dtógáil agat.
+<np>
+Sprioc Saighead
+Bíog nóiméadach
+<&arrow_target>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Braiteoir Dorais
+Rialú Redstone
+<&door_sensor_switch>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Ardaitheora
+Rialú Redstone
+<&elevator_button>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Cnaipe Gloine
+Rialú Redstone
+<&glass_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Gloine
+Rialú Redstone
+<&glass_small_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Tadhaill Gloine
+Rialú Redstone
+<&glass_touch_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Meaisín
+Rialú Redstone
+<&industrial_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe
+Rialú Redstone
+<&industrial_double_pole_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Meaisín le Garda
+Rialú Redstone
+<&industrial_fenced_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Cnag
+Rialú Redstone
+<&industrial_knock_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Seanchnaipe Maisiúil
+Rialú Redstone
+<&oldfancy_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Seanchnaipe Maisiúil
+Rialú Redstone
+<&oldfancy_small_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Seanchnaipe Slabhra Maisiúil
+Bíog nóiméadach
+<&oldfancy_spring_reset_chain>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Tuaithe
+Rialú Redstone
+<&rustic_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Tairne Tuaithe
+Rialú Redstone
+<&rustic_nail_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Beag Tuaithe
+Rialú Redstone
+<&rustic_small_button>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Cnaipe Slabhra Tuaithe
+Bíog nóiméadach
+<&rustic_spring_reset_chain>Tugann lasc nóiméadach bíog ghlan Redstone lán-neart.<br>
+<br>
+Úsáid: úsáid é chun meaisíní a thosú, doirse a scaoileadh, aláraim a ghníomhachtú nó ciorcaid aonuaire a rialú.<br>
+<br>
+Nótaí: athshocraíonn sé tar éis na bíge sceidealaithe.
+<np>
+Pláta Teagmhála Gloine
+Bíog brú
+<&glass_contact_mat>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Teagmhálaí Dorais Gloine
+Bíog brú
+<&glass_door_contact_mat>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Mata Teagmhála
+Bíog brú
+<&industrial_contact_mat>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Mata Teagmhála Dorais
+Bíog brú
+<&industrial_door_contact_mat>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Braiteoir Titim Tríd
+Brath comharthaí
+<&industrial_fallthrough_detector>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Cnaipe Coise
+Rialú Redstone
+<&industrial_foot_button>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Doras Tionsclaíoch Íogair do Bhuille
+Bíog brú
+<&industrial_high_sensitive_trapdoor>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Mata Teagmhála Íogair do Bhuille
+Bíog brú
+<&industrial_shock_sensitive_contact_mat>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Comhla a Ghníomhachtaítear le Buille
+Bíog brú
+<&industrial_shock_sensitive_trapdoor>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Planda Cumhachta Dearg
+Bíog brú
+<&red_power_plant>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Pláta Brú Tuaithe
+Bíog brú
+<&rustic_contact_plate>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Brú Dorais Tuaithe
+Bíog brú
+<&rustic_door_contact_plate>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Braiteoir Titim Tuaithe
+Brath comharthaí
+<&rustic_fallthrough_detector>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Doras Tuaithe Íogair do Bhuille
+Bíog brú
+<&rustic_high_sensitive_trapdoor>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Pláta Tuaithe Íogair do Bhuille
+Bíog brú
+<&rustic_shock_sensitive_plate>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Doras Tuaithe Íogair do Bhuille
+Bíog brú
+<&rustic_shock_sensitive_trapdoor>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Planda Cumhachta Buí
+Bíog brú
+<&yellow_power_plant>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.
+<np>
+Clog Amadóra Lae Gloine
+Comhartha sholas an lae
+<&glass_day_timer>Leanann lasc amadóra an chuid lae de thimthriall an domhain.<br>
+<br>
+Úsáid: úsáid é do lampaí clóis, cróluais agus rialtáin mhonarchan nach n-oibríonn ach sa lá.<br>
+<br>
+Nótaí: teastaíonn toise ina bhfuil solas spéire uaidh.
+<np>
+Braiteoir Eintiteas Gloine
+Brath comharthaí
+<&glass_entity_detector>Déanann braiteoir eintiteas monatóireacht ar ghluaiseacht in aice láimhe gan pláta infheicthe ar an urlár.<br>
+<br>
+Úsáid: nasc é le doirse, lampaí, aláraim nó comhghlais mheaisín.<br>
+<br>
+Nótaí: scanann sé limistéar beag timpeall ar an mbloc.
+<np>
+Comhartha Eatramhach Gloine
+Bíog uainithe
+<&glass_interval_timer>Soláthraíonn lasc dlúth amadóra bíog sceidealaithe Redstone.<br>
+<br>
+Úsáid: úsáid é nuair atá rialú tréimhsiúil nó moillithe de dhíth ar mheicníocht bheag.<br>
+<br>
+Nótaí: úsáideann sé bíoga sceidealaithe Redstone.
+<np>
+Braiteoir Líne Gloine
+Brath comharthaí
+<&glass_linear_entity_detector>Déanann braiteoir eintiteas monatóireacht ar ghluaiseacht in aice láimhe gan pláta infheicthe ar an urlár.<br>
+<br>
+Úsáid: nasc é le doirse, lampaí, aláraim nó comhghlais mheaisín.<br>
+<br>
+Nótaí: scanann sé limistéar beag timpeall ar an mbloc.
+<np>
+Braiteoir Bloc
+Brath comharthaí
+<&industrial_block_detector>Seiceálann braiteoir bloc an bhfuil rud sa spás os a chomhair.<br>
+<br>
+Úsáid: dírigh é ar aghaidh an mheaisín, ar an maolán nó ar an spás cosanta ar mian leat faire air.<br>
+<br>
+Nótaí: soláthraíonn sé cumhacht nuair nach aer é an bloc os a chomhair.
+<np>
+Clog Amadóra Lae
+Comhartha sholas an lae
+<&industrial_day_timer>Leanann lasc amadóra an chuid lae de thimthriall an domhain.<br>
+<br>
+Úsáid: úsáid é do lampaí clóis, cróluais agus rialtáin mhonarchan nach n-oibríonn ach sa lá.<br>
+<br>
+Nótaí: teastaíonn toise ina bhfuil solas spéire uaidh.
+<np>
+Braiteoir Eintiteas
+Brath comharthaí
+<&industrial_entity_detector>Déanann braiteoir eintiteas monatóireacht ar ghluaiseacht in aice láimhe gan pláta infheicthe ar an urlár.<br>
+<br>
+Úsáid: nasc é le doirse, lampaí, aláraim nó comhghlais mheaisín.<br>
+<br>
+Nótaí: scanann sé limistéar beag timpeall ar an mbloc.
+<np>
+Amadóir Eatramhach
+Bíog uainithe
+<&industrial_interval_timer>Soláthraíonn lasc dlúth amadóra bíog sceidealaithe Redstone.<br>
+<br>
+Úsáid: úsáid é nuair atá rialú tréimhsiúil nó moillithe de dhíth ar mheicníocht bheag.<br>
+<br>
+Nótaí: úsáideann sé bíoga sceidealaithe Redstone.
+<np>
+Braiteoir Solais
+Brath comharthaí
+<&industrial_light_sensor>Tiontaíonn braiteoir solais gile áitiúil ina rialú Redstone.<br>
+<br>
+Úsáid: úsáid é do lampaí uathoibríocha, cróluais agus ciorcaid infheictheachta.<br>
+<br>
+Nótaí: soláthraíonn sé cumhacht ag amhghile 8 nó níos airde.
+<np>
+Braiteoir Stoirme
+Brath comharthaí
+<&industrial_lightning_sensor>Tugann braiteoir stoirme rabhaidh le linn toirní.<br>
+<br>
+Úsáid: cuir faoin spéir oscailte é agus nasc le lampaí nó aláraim é.<br>
+<br>
+Nótaí: tá toirneach agus rochtain ar an spéir de dhíth.
+<np>
+Braiteoir Líneach Eintiteas
+Brath comharthaí
+<&industrial_linear_entity_detector>Déanann braiteoir eintiteas monatóireacht ar ghluaiseacht in aice láimhe gan pláta infheicthe ar an urlár.<br>
+<br>
+Úsáid: nasc é le doirse, lampaí, aláraim nó comhghlais mheaisín.<br>
+<br>
+Nótaí: scanann sé limistéar beag timpeall ar an mbloc.
+<np>
+Braiteoir Báistí
+Brath comharthaí
+<&industrial_rain_sensor>Tiontaíonn braiteoir aimsire báisteach ag a shuíomh ina Redstone.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir báisteach a fháil ar an mbloc os a chionn.<br>
+<br>
+Nótaí: seiceálann sé báisteach os cionn an bhraiteora.
+<np>
+Lasc Gloine Dé-chobhsaí
+Rialú Redstone
+<&glass_rotary_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Tadhall Gloine Dé-chobhsaí
+Rialú Redstone
+<&glass_touch_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Gloine Íogair Oráiste
+Gloine chomhartha
+<&orange_sensitiveglass>Coinníonn bloc gloine a imoibríonn le Redstone línte radhairc oscailte agus staid an chomhartha á léiriú aige.<br>
+<br>
+Úsáid: úsáid é i bhfuinneoga seomra rialaithe, i bpainéil shoilsithe agus i ngloine chosanta monarchan.<br>
+<br>
+Nótaí: athraíonn sé staid de réir cumhacht Redstone in aice láimhe.
+<np>
+Gloine Íogair Shoilsithe
+Gloine chomhartha
+<&sensitive_glass_block>Coinníonn bloc gloine a imoibríonn le Redstone línte radhairc oscailte agus staid an chomhartha á léiriú aige.<br>
+<br>
+Úsáid: úsáid é i bhfuinneoga seomra rialaithe, i bpainéil shoilsithe agus i ngloine chosanta monarchan.<br>
+<br>
+Nótaí: athraíonn sé staid de réir cumhacht Redstone in aice láimhe.
+<np>
+Gloine Íogair Dhaite
+Gloine chomhartha
+<&stained_sensitiveglass>Coinníonn bloc gloine a imoibríonn le Redstone línte radhairc oscailte agus staid an chomhartha á léiriú aige.<br>
+<br>
+Úsáid: úsáid é i bhfuinneoga seomra rialaithe, i bpainéil shoilsithe agus i ngloine chosanta monarchan.<br>
+<br>
+Nótaí: athraíonn sé staid de réir cumhacht Redstone in aice láimhe.
+<np>
+Tomhsaire Barra Gloine
+Tomhsaire comhartha
+<&glass_vertical_bar_gauge>Taispeánann tomhsaire dlúth seomra rialaithe neart Redstone mar léamh soiléir ar phainéal.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir cumhacht Redstone in aice láimhe a sheiceáil le spléachadh.<br>
+<br>
+Nótaí: léann sé neart Redstone in aice láimhe ó 0 go 15.
+<np>
+Tomhsaire Analógach
+Tomhsaire comhartha
+<&industrial_analog_angular_gauge>Taispeánann tomhsaire dlúth seomra rialaithe neart Redstone mar léamh soiléir ar phainéal.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir cumhacht Redstone in aice láimhe a sheiceáil le spléachadh.<br>
+<br>
+Nótaí: léann sé neart Redstone in aice láimhe ó 0 go 15.
+<np>
+Tomhsaire Voltmhéadair
+Tomhsaire comhartha
+<&industrial_analog_horizontal_gauge>Taispeánann tomhsaire dlúth seomra rialaithe neart Redstone mar léamh soiléir ar phainéal.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir cumhacht Redstone in aice láimhe a sheiceáil le spléachadh.<br>
+<br>
+Nótaí: léann sé neart Redstone in aice láimhe ó 0 go 15.
+<np>
+Tomhsaire Digiteach
+Neart comhartha inléite
+<&industrial_small_digital_gauge>Taispeánann tomhsaire dlúth seomra rialaithe neart Redstone mar léamh soiléir ar phainéal.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir cumhacht Redstone in aice láimhe a sheiceáil le spléachadh.<br>
+<br>
+Nótaí: léann sé neart Redstone in aice láimhe ó 0 go 15.
+<np>
+Tomhsaire Feadáin Ghloine
+Tomhsaire comhartha
+<&industrial_tube_gauge>Taispeánann tomhsaire dlúth seomra rialaithe neart Redstone mar léamh soiléir ar phainéal.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir cumhacht Redstone in aice láimhe a sheiceáil le spléachadh.<br>
+<br>
+Nótaí: léann sé neart Redstone in aice láimhe ó 0 go 15.
+<np>
+Tomhsaire Barra Analógach
+Tomhsaire comhartha
+<&industrial_vertical_bar_gauge>Taispeánann tomhsaire dlúth seomra rialaithe neart Redstone mar léamh soiléir ar phainéal.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir cumhacht Redstone in aice láimhe a sheiceáil le spléachadh.<br>
+<br>
+Nótaí: léann sé neart Redstone in aice láimhe ó 0 go 15.
+<np>
+Lampa Aláraim
+Aiseolas comhartha
+<&industrial_alarm_lamp>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+Bonnán Aláraim
+Aiseolas comhartha
+<&industrial_alarm_siren>Is táscaire redstone é an bonnán aláraim a chuirtear ar aghaidh bloic. Leanann a staid chumhachtaithe an comhartha ón mbloc a bhfuil sé ceangailte de.<br>
+<br>
+Úsáid: ceangail d'aghaidh sholadach é agus cumhachtaigh é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athnuachanann an bonnán uair sa soicind fad atá an comhartha lena bhfuil sé ceangailte gníomhach.
+<np>
+LED Splancach
+Aiseolas comhartha
+<&industrial_blinking_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Uaine Splancach
+Aiseolas comhartha
+<&industrial_green_blinking_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Uaine
+Aiseolas comhartha
+<&industrial_green_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Dearg
+Aiseolas comhartha
+<&industrial_red_blinking_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Dearg
+Aiseolas comhartha
+<&industrial_red_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Bán Splancach
+Aiseolas comhartha
+<&industrial_white_blinking_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Bán
+Aiseolas comhartha
+<&industrial_white_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Buí Splancach
+Aiseolas comhartha
+<&industrial_yellow_blinking_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+LED Buí
+Aiseolas comhartha
+<&industrial_yellow_led>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+Séamafór Tuaithe
+Aiseolas comhartha
+<&rustic_semaphore>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.
+<np>
+Lasc Comparadóra
+Comhartha ceangailte
+<&industrial_comparator_switch>Léann lasc dlúth braiteora an bloc ar a bhfuil sé suite agus tiontaíonn sé an léamh sin ina aschur simplí painéil.<br>
+<br>
+Úsáid: suiteáil ar fhardail, umair nó crua-earraí Redstone é. Nuair a thuairiscíonn an bloc ceangailte aschur comparadóra, coimeádáin nó Redstone, astaíonn an lasc Redstone lán-neart.<br>
+<br>
+Nótaí: úsáid é chun leibhéil stórála nó sreangú ceilte a thiontú ina línte soiléire rialaithe air/as.
+<np>
+Maolaitheoir
+Comhartha athraitheach
+<&industrial_dimmer>Socraíonn rialtán rothlach neart Redstone ó aghaidh phainéil dhlúith.<br>
+<br>
+Úsáid: deaschliceáil air chun an t-aschur a ardú céim ar chéim, agus filleadh ar nialas tar éis an lán-neart.<br>
+<br>
+Nótaí: aschuireann sé neart ó 0 go 15.
+<np>
+Cnaipe Stad Éigeandála
+Rialú Redstone
+<&industrial_estop_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Bacóir Crannóige
+Rialú Redstone
+<&industrial_hopper_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Lasc Cnag
+Rialú Redstone
+<&industrial_knock_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Luamhán
+Rialú Redstone
+<&industrial_lever>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Lasc Meaisín Dhá Chnaipe
+Rialú Redstone
+<&industrial_machine_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Láimhseáil Tarraingthe
+Rialú Redstone
+<&industrial_pull_handle>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Luamhán Rothlach
+Rialú Redstone
+<&industrial_rotary_lever>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Lasc Rothlach Meaisín
+Rialú Redstone
+<&industrial_rotary_machine_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Luamhán Teagmhála
+Rialú Redstone
+<&industrial_small_lever>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Lasc
+Rialú Redstone
+<&industrialswitch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Lasc Solais
+Rialú Redstone
+<&light_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Lasc Comhla
+Rialú Redstone
+<&valve_wheel_switch>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Glacadóir Bíge i gCásáil
+Rialú nasctha
+<&industrial_switchlink_cased_pulse_receiver>Tugann glacadóir nasctha bíge i gcásáil truicear gearr Redstone do phainéil chianda.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Deaschliceáil air nó gníomhachtaigh an péarla nasctha chun bíog ghearr a astú.<br>
+<br>
+Nótaí: athshocraíonn an bhíog í féin tar éis a tréimhse sceidealaithe.
+<np>
+Glacadóir Naisc i gCásáil
+Rialú nasctha
+<&industrial_switchlink_cased_receiver>Tugann glacadóir nasctha i gcásáil sprioc láidir Redstone do phainéil chianda.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Deaschliceáil go díreach ar an nglacadóir chun é a scoránú de láimh.<br>
+<br>
+Nótaí: scoránaíonn péarla nasctha an glacadóir seo nuair a úsáidtear é agus tú ag téaltú.
+<np>
+Glacadóir Bíge Naisc
+Rialú nasctha
+<&industrial_switchlink_pulse_receiver>Tugann glacadóir nasctha bíge truicear gearr Redstone do phainéil chianda.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Deaschliceáil air nó gníomhachtaigh an péarla nasctha chun bíog ghearr a astú.<br>
+<br>
+Nótaí: athshocraíonn an bhíog í féin tar éis a tréimhse sceidealaithe.
+<np>
+Athsheachadán Bíge Naisc
+Rialú nasctha
+<&industrial_switchlink_pulse_relay>Tugann feisteas i stíl athsheachadáin pointe dlúth áitiúil lasctha do thógálacha painéil.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe. Úsáid bloic ghlacadóra nuair atá gníomhachtú le péarla nasctha de dhíth.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Glacadóir Naisc Lasc
+Rialú nasctha
+<&industrial_switchlink_receiver>Tugann glacadóir nasctha sprioc Redstone lán-neart do phainéil chianda.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Deaschliceáil go díreach ar an nglacadóir chun é a scoránú de láimh.<br>
+<br>
+Nótaí: scoránaíonn péarla nasctha an glacadóir seo nuair a úsáidtear é agus tú ag téaltú.
+<np>
+Glacadóir Analógach Naisc
+Rialú nasctha
+<&industrial_switchlink_receiver_analog>Tugann glacadóir nasctha sprioc chianda infheicthe do phainéil rialaithe.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Úsáid an péarla sin agus tú ag téaltú chun an glacadóir a ghníomhachtú go cianda.<br>
+<br>
+Nótaí: astaíonn an glacadóir seo comhartha iomlán Redstone nuair a ghníomhachtaítear é.
+<np>
+Athsheachadán Naisc Lasc
+Rialú nasctha
+<&industrial_switchlink_relay>Tugann feisteas i stíl athsheachadáin pointe dlúth áitiúil lasctha do thógálacha painéil.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe. Úsáid bloic ghlacadóra nuair atá gníomhachtú le péarla nasctha de dhíth.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Athsheachadán Analógach Naisc
+Rialú nasctha
+<&industrial_switchlink_relay_analog>Tugann feisteas i stíl athsheachadáin pointe dlúth áitiúil lasctha do thógálacha painéil.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe. Úsáid bloic ghlacadóra nuair atá gníomhachtú le péarla nasctha de dhíth.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Péarla Naisc Lasc
+Rialú nasctha
+<&switchlink_pearl>Stórálann péarla nasctha sprioc ghlacadóra do chianrialtáin mhonarchan.<br>
+<br>
+Úsáid: cliceáil ar ghlacadóir Naisc Lasc le Péarla Ender chun ceann a chruthú. Úsáid an péarla nasctha agus tú ag téaltú chun an glacadóir atá curtha i gcuimhne a ghníomhachtú.<br>
+<br>
+Nótaí: caithfidh an sprioc a bheith luchtaithe, sa toise céanna agus laistigh den raon.
+<np>
+Seanluamhán Maisiúil
+Rialú Redstone
+<&oldfancy_bistableswitch1>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Seanluamhán Rothlach Maisiúil
+Rialú Redstone
+<&oldfancy_bistableswitch2>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Luamhán Rothlach Tuaithe
+Rialú Redstone
+<&rustic_angular_lever>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Luamhán Tuaithe
+Rialú Redstone
+<&rustic_lever>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Luamhán Tairne Tuaithe
+Rialú Redstone
+<&rustic_nail_lever>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.
+<np>
+Luamhán Tuaithe Dhá Inse
+Rialú Redstone
+<&rustic_two_hinge_lever>Tugann feisteas dlúth rialaithe pointe soiléir lasctha Redstone do thógálacha monarchan.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.

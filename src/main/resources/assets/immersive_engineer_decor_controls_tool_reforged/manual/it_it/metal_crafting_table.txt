@@ -1,0 +1,7 @@
+Banco per la lavorazione dei metalli
+Postazione per piastre
+<&recipe>Banco da lavoro in metallo con alloggiamento dedicato al martello, griglia 3x3 e uscita.<br>
+<br>
+Uso: usa la griglia come quella di un banco da fabbricazione normale. Per formare piastre di IE, inserisci un martello dell’ingegnere nello slot utensile e il materiale nella griglia, poi preleva la piastra formata dall’uscita.<br>
+<br>
+Le decorazioni d’acciaio richiedono piastre d’acciaio. Inserisci un martello di Immersive Engineering, martella lingotti d’acciaio per ricavarne piastre e usale per fabbricare pali, passerelle, finestre, porte, ringhiere e altre decorazioni d’acciaio.<br>

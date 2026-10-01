@@ -1,0 +1,5 @@
+Ŝtala duobla T-apogilo
+Struktura kadroparto
+<&recipe>Ĉi tiu bloko donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>

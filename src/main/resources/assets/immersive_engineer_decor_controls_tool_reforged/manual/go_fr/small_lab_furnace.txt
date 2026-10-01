@@ -1,0 +1,5 @@
+Fournè de laboratoire
+Unitë de tratement compacte
+<&recipe>Le Fournè de laboratoire fait de la fonte au combustibl solide den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Empllayéz du combustibl solide pour fondr de petites tournées.<br>

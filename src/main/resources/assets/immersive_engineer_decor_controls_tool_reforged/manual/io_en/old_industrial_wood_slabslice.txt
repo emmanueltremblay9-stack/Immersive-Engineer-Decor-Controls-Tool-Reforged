@@ -1,0 +1,5 @@
+Trancho di plako ek olda ligno
+Oldigita laboreyligno
+<&recipe>La Trancho di plako ek olda industriala ligno adjuntas oldigita laboreyligno por planki, skaluni, pordi e varma internborduri.<br>
+<br>
+Uzo: Uzez ol por olda laboreyplanki, eskaleri, pordi e borduri.<br>

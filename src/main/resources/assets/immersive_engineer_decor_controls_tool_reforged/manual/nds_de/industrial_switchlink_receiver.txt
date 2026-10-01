@@ -1,0 +1,7 @@
+Schaltlinkempfanger
+Verbunnen Stüern
+<&recipe>En verbunnen Empfanger gifft feerne Paneels en Redstone-Teel mit vulle Stark.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Rechtsklick direkt op den Empfanger, üm em mit de Hand ümtostellen.<br>
+<br>
+Anmarken: En verbunnen Parrel stellt dissen Empfanger üm, wenn du ehr bi't Sliken bruukst.

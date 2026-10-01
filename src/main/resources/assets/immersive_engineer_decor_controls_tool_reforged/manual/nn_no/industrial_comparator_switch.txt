@@ -1,0 +1,7 @@
+Samanliknarbrytar
+Signal frå festeblokka
+<&recipe>Ein kompakt sensorbrytar les festeblokka og gjer avlesinga om til ein enkel panelutgang.<br>
+<br>
+Bruk: monter han på lager, tankar eller redstone-utstyr. Når festeblokka melder samanliknar-, behaldar- eller redstone-utgang, gjev brytaren eit redstone-signal med full styrke.<br>
+<br>
+Merknad: bruk han til å gjere lagernivå eller skjulte leidningar om til tydelege av/på-styreliner.

@@ -1,0 +1,3 @@
+İri dəmir qırıntıları
+Yenidən qurulmuş hazırlama dəstində istifadə edilən mühəndis aləti materialı.
+<&recipe>Dəmir külçələrə əridilə<br>bilər, lakin qabaqcıl<br>material emalına uyğun deyil.

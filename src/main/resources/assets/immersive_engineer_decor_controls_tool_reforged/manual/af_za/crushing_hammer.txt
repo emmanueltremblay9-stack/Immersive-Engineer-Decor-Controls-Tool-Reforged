@@ -1,0 +1,7 @@
+Ertsbreekhamer
+Handbreekgereedskap
+<&recipe>Die Ertsbreekhamer is 'n handmatige verwerkingsgereedskap vir vroeë yster- en goudwerk.<br>
+<br>
+Gebruik: Vervaardig daarmee saam met rou yster, rou goud, ystererts, dieplei-ystererts, gouderts of dieplei-gouderts om Immersive Engineering se yster- of goudstof te maak. Die hamer verloor duursaamheid en keer na die vervaardigingsrooster terug totdat dit breek.<br>
+<br>
+Dit slyt ook wanneer jy myn en kan teikens in nabygeveg terugslaan.

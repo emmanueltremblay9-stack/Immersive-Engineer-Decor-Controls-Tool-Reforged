@@ -1,0 +1,7 @@
+Détéctouer d'entités
+Détection de signa
+<&recipe>Un détéctouer d'entités guette les mouvements proches sans pllaqe de sol visibl.<br>
+<br>
+Empllai : Reliéz-le ao portes, lampes, alarmes ou verrouillaijes de machines.<br>
+<br>
+Notes : Examine eune petite zone entoure du blloqe.

@@ -1,0 +1,5 @@
+Laboriahi
+Kompaktne töötlusseade
+<&recipe>Laboriahi teeb kompaktseid tahkekütusel sulatustöid väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Kasuta tahket kütust väikeste sulatuspartiide jaoks.<br>

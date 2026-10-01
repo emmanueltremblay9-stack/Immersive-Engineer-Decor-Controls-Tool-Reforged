@@ -1,0 +1,5 @@
+Zamražač vody
+Kompaktna obrabotna jedinica
+<&recipe>Zamražač vody vrši kompaktne děla ohladžanja dlja tekučinovyh sistemov s energetičnym napajanjem.<br>
+<br>
+Upotrěbjenje: Podaj vodu i energiju dlja postupnogo proizvodstva leda.<br>

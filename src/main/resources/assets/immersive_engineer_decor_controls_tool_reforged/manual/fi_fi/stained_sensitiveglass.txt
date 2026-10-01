@@ -1,0 +1,7 @@
+Värillinen herkkä lasi
+Signaalilasi
+<&recipe>Redstoneen reagoiva lasikuutio säilyttää näkymän ja näyttää samalla signaalin tilan.<br>
+<br>
+Käyttö: Käytä valvomoiden ikkunoihin, valaistuihin paneeleihin ja tehtaan suojattuihin lasipintoihin.<br>
+<br>
+Huomaa: Vaihtaa tilaa lähellä olevan redstone-virran mukaan.

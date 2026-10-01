@@ -1,0 +1,5 @@
+Pec na tavení minerálů
+Kompaktní zpracovací jednotka
+<&recipe>Pec na tavení minerálů zpracovává minerály za vysokých teplot a v dílně zabírá málo místa.<br>
+<br>
+Použití: Přiváděj minerální bloky a energii pro vysokoteplotní tavení.<br>

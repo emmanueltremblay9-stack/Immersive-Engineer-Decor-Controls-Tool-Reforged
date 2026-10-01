@@ -1,0 +1,7 @@
+Açar bağlantısı qəbuledicisi
+Bağlantılı idarəetmə
+<&recipe>Bağlantılı qəbuledici uzaq panellər üçün tam güclü qızıl daş hədəfi yaradır.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Əl ilə açıb-bağlamaq üçün qəbulediciyə birbaşa sağ klikləyin.<br>
+<br>
+Qeydlər: Bağlanmış inci əyilərək istifadə edildikdə bu qəbuledicini açıb-bağlayır.

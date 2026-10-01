@@ -1,0 +1,7 @@
+Ariadne's coal
+Marks fer mine routes
+<&recipe>Ariadne's coal marks routes swiftly through shafts, branch mines and temporary work below ground.<br>
+<br>
+Orders: Use her on a firm block face to put a black arrow on that border. Where ye click decides its direction, with eight choices includin' diagonals. Mark turns, ways out, dead ends and supply routes without haulin' separate signposts.<br>
+<br>
+Ariadne's coal be a reusable markin' tool with 100 uses. Each mark ye set successfully costs one durability. Faces she cannot mark are refused without wear.

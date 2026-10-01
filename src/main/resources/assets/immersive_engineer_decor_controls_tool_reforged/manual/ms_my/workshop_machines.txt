@@ -1,0 +1,107 @@
+Mesin Bengkel
+Mesin dan input/output bengkel
+Mesin bengkel menyediakan pertukangan, pemindahan item, peleburan, pelupusan, kutipan dan kerja kegunaan lain secara padat dalam ruang satu blok.<br>
+<br>
+Buka halaman berikut untuk resipi, gambar, latar dan nota penggunaan praktikal setiap mesin.
+<np>
+Meja Keluli
+Perabot bengkel
+<&steel_table>Blok ini ialah perabot bengkel praktikal untuk bilik kerja dan sudut penyelenggaraan.<br>
+<br>
+Penggunaan: Letakkan di sebelah meja kerja, peti dan mesin padat.<br>
+<np>
+Meja Kayu Dirawat
+Perabot bengkel
+<&treated_wood_table>Blok ini ialah perabot bengkel praktikal untuk bilik kerja dan sudut penyelenggaraan.<br>
+<br>
+Penggunaan: Letakkan di sebelah meja kerja, peti dan mesin padat.<br>
+<np>
+Bangku Kayu Dirawat
+Perabot bengkel
+<&treated_wood_stool>Blok ini ialah perabot bengkel praktikal untuk bilik kerja dan sudut penyelenggaraan.<br>
+<br>
+Penggunaan: Letakkan di sebelah meja kerja, peti dan mesin padat.<br>
+<np>
+Meja Pertukangan Logam
+Stesen kerja plat
+<&metal_crafting_table>Meja pertukangan logam ialah stesen bengkel bertetulang dengan slot tukul, grid pertukangan 3x3 dan slot output jelas.<br>
+<br>
+Penggunaan: Gunakan grid untuk pertukangan biasa. Bagi plat IE, letakkan tukul jurutera dalam slot alat dan bahan plat dalam grid sebelum mengambil hasilnya. Hiasan keluli menggunakan plat keluli untuk tiang, laluan servis, tingkap, pintu, susur dan bahagian keluli lain.<br>
+<np>
+Corong Tuang Kilang
+Kegunaan lantai bengkel
+<&factory_hopper>Blok ini memindahkan tindanan item melalui sarung industri yang lebih padat.<br>
+<br>
+Penggunaan: Halakan ke laluan inventori, kemudian tetapkan julat, bilangan item dalam tindanan, masa dan mod redstone pada skrinnya.<br>
+<np>
+Penitis Kilang
+Kegunaan lantai bengkel
+<&factory_dropper>Blok ini melepaskan item tersimpan dari muka yang diarahkan.<br>
+<br>
+Penggunaan: Halakan muka hadapan ke titik pelepasan, isi slot dalaman dan laraskan daya, sudut, sela masa, logik penapis dan mod redstone pada skrinnya.<br>
+<np>
+Peletak Blok Kilang
+Kegunaan lantai bengkel
+<&factory_placer>Blok ini meletakkan blok daripada stok dalaman apabila diaktifkan.<br>
+<br>
+Penggunaan: Halakan muka kerja ke ruang sasaran dan isi tindanan yang boleh diletakkan.<br>
+<np>
+Pemecah Blok
+Kegunaan lantai bengkel
+<&small_block_breaker>Pemecah blok kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Halakan muka kerja ke blok yang hendak dibuang.<br>
+<np>
+Penunu Sisa
+Unit pemprosesan padat
+<&small_waste_incinerator>Penunu sisa memusnahkan item yang tidak dikehendaki dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Masukkan hanya item yang tidak dikehendaki ke dalam baris gilir.<br>
+<np>
+Relau Makmal
+Unit pemprosesan padat
+<&small_lab_furnace>Relau makmal menjalankan kerja peleburan padat menggunakan bahan api pepejal dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Gunakan bahan api pepejal untuk kelompok peleburan kecil.<br>
+<np>
+Relau Elektrik
+Unit pemprosesan padat
+<&small_electrical_furnace>Relau elektrik menjalankan kerja peleburan padat berkuasa FE dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Bekalkan FE dan input peleburan yang sah.<br>
+<np>
+Pelebur Mineral
+Unit pemprosesan padat
+<&small_mineral_smelter>Pelebur mineral memproses mineral pada haba tinggi dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Bekalkan blok mineral dan kuasa untuk peleburan haba tinggi.<br>
+<np>
+Pembeku Air
+Unit pemprosesan padat
+<&small_freezer>Pembeku air menjalankan kerja penyejukan padat untuk sistem bendalir berkuasa.<br>
+<br>
+Penggunaan: Bekalkan air dan kuasa untuk penghasilan ais berperingkat.<br>
+<np>
+Bendalir Pasif
+Perkakasan talian bendalir
+<&passive_fluid_accumulator>Pengumpul bendalir pasif ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Letakkan di sisi sumber air yang sesuai dan sediakan ruang untuk pengeluaran bendalir.<br>
+<np>
+Panel Suria
+Kegunaan lantai bengkel
+<&small_solar_panel>Panel suria kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Sediakan langit terbuka dan sambungkan peralatan berkeperluan kuasa rendah.<br>
+<np>
+Mesin Pemerah Susu
+Kegunaan lantai bengkel
+<&small_milking_machine>Mesin pemerah susu kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Letakkan berhampiran lembu dan sediakan cara mengeluarkan bekas susu atau bendalir.<br>
+<np>
+Penebang Pokok
+Kegunaan lantai bengkel
+<&small_tree_cutter>Penebang pokok kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Halakan ke pokok matang dan kumpulkan item gugur secara berasingan.<br>

@@ -1,0 +1,7 @@
+Ariadne süsi
+Kaevanduse rajamärgis
+<&recipe>Ariadne süsi märgib kiiresti teed šahtides, hargnevates kaevanduskäikudes ja ajutistel maa-alustel töökohtadel.<br>
+<br>
+Kasutamine: Kasuta stabiilsel plokipinnal, et asetada sellele must noolemärgis. Märgis loeb pinnal klõpsatud kohta ja toetab kaheksat suunda, ka diagonaale. Nii saad tähistada pöördeid, väljapääse, ummikuid ja varustusteid ilma eraldi silte kandmata.<br>
+<br>
+Ariadne süsi on korduskasutatav märgistustööriist saja kasutuskorraga. Iga õnnestunud märgistus kulutab ühe vastupidavuspunkti. Sobimatud pinnad lükatakse tagasi eset kulutamata.

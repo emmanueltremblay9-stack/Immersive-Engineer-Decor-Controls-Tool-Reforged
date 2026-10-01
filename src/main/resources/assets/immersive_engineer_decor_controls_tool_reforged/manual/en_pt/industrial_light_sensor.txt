@@ -1,0 +1,7 @@
+Lookout fer light
+Sensin' a signal
+<&recipe>A light lookout turns the brightness where she stands into redstone orders.<br>
+<br>
+Orders: Use her fer automatic lamps, shutters and visibility circuits.<br>
+<br>
+Mind ye: She powers on at raw brightness 8 or higher.

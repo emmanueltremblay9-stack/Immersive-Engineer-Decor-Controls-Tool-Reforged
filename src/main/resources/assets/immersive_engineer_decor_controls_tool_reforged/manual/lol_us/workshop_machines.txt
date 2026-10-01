@@ -1,0 +1,107 @@
+Workshop Machinez
+Machinez an shop stuff-in/stuff-out
+Workshop machinez do kraftin, item movin, smeltin, disposal, scoopin, an helper jobz while fittin in one bluk, meow.<br>
+<br>
+Open da next pages fer each machine's recipe, picture, lore, an practical how-to notez, kitty.
+<np>
+Steely Tabal
+Workshop furniturez
+<&steel_table>Dis bluk iz practical shop furniture fer work roomz an maintenance cornerz, kitty.<br>
+<br>
+How to: Put beside benches, crates, an lil machinez, meow.<br>
+<np>
+Treated-Wood Tabal
+Workshop furniturez
+<&treated_wood_table>Dis bluk iz practical shop furniture fer work roomz an maintenance cornerz, kitty.<br>
+<br>
+How to: Put beside benches, crates, an lil machinez, meow.<br>
+<np>
+Treated-Wood Sittin Stool
+Workshop furniturez
+<&treated_wood_stool>Dis bluk iz practical shop furniture fer work roomz an maintenance cornerz, kitty.<br>
+<br>
+How to: Put beside benches, crates, an lil machinez, meow.<br>
+<np>
+Metal Krafting Tabal
+Plate-makin stationz
+<&metal_crafting_table>Metal Krafting Tabal iz a reinforced shop station wif a hammer slot, a 3x3 kraftin grid, an easy-to-see output slot, meow.<br>
+<br>
+How to: Use da grid fer normal kraftin. Fer IE plates, put an Engineer's Hammer in da tool slot an plate material in da grid before takin da result. Steely decorz use steel plates fer polez, catwalkz, windowz, doorz, railingz, an other steely parts, kitty.<br>
+<np>
+Factory Huperr
+Shop-floor helperz
+<&factory_hopper>Dis bluk moves item stackz thru a compact factory casing, kitty.<br>
+<br>
+How to: Point toward da inventory line, den set reach, number of stackz, timing, an redstone style on its screen, meow.<br>
+<np>
+Factory DRUPPER
+Shop-floor helperz
+<&factory_dropper>Dis bluk lets stored itemz out frum its aimed face, kitty.<br>
+<br>
+How to: Aim da front at da release spot, load its inside slotz, an use its screen fer force, angle, delay, filter logic, an redstone style, meow.<br>
+<np>
+Factory Bluk Plonker
+Shop-floor helperz
+<&factory_placer>Dis bluk places blukz frum its own stash when activated, kitty.<br>
+<br>
+How to: Point da workin face at da target space an load stackz dat can be placed, meow.<br>
+<np>
+Bluk Buster Thing
+Shop-floor helperz
+<&small_block_breaker>Lil Bluk Buster iz a shop-floor helper bluk fer kraftin, storin, plonkin, bustin, scoopin, or lil automationz, kitty.<br>
+<br>
+How to: Point da workin face toward da bluk u wants removed, meow.<br>
+<np>
+Trash Burninator Thing
+Lil processing gadget
+<&small_waste_incinerator>Trash Burninator destroys unwanted itemz in a lil patch of ur workshop, kitty.<br>
+<br>
+How to: Feed ONLY unwanted itemz into its queue, meow.<br>
+<np>
+Lab Furnace Thing
+Lil processing gadget
+<&small_lab_furnace>Lab Furnace does solid-fuel smeltin jobz in a lil patch of ur workshop, kitty.<br>
+<br>
+How to: Use solid fuel fer lil batches of smeltin, meow.<br>
+<np>
+Zap Furnace Thing
+Lil processing gadget
+<&small_electrical_furnace>Zap Furnace does FE-powered smeltin jobz in a lil patch of ur workshop, kitty.<br>
+<br>
+How to: Gib FE an valid smeltin inputz, meow.<br>
+<np>
+Rock Melter Thing
+Lil processing gadget
+<&small_mineral_smelter>Rock Melter does high-heat mineral processin in a lil patch of ur workshop, kitty.<br>
+<br>
+How to: Feed mineral blukz an powah fer real-hot meltin workz, meow.<br>
+<np>
+Water Freezie Thing
+Lil processing gadget
+<&small_freezer>Water Freezie handles lil chillin jobz fer powered flooid setupz, kitty.<br>
+<br>
+How to: Gib water an powah fer makin ice stage by stage, meow.<br>
+<np>
+Passive Flooid Thingz
+Flooid-line hardwarez
+<&passive_fluid_accumulator>Passively Fillin Flooid Collector iz a lil flooid-line part fer small tankz, pipe runz, collection spots, an redstone-controlled flow, kitty.<br>
+<br>
+How to: Place against suitable water sourcez an leave room fer takin flooid away, meow.<br>
+<np>
+Sunshine Panel Thing
+Shop-floor helperz
+<&small_solar_panel>Lil Sunshine Panel iz a shop-floor helper bluk fer kraftin, storin, plonkin, bustin, scoopin, or lil automationz, kitty.<br>
+<br>
+How to: Gib open sky an connect equipment dat dun need much powah, meow.<br>
+<np>
+Milk Getter Thing
+Shop-floor helperz
+<&small_milking_machine>Lil Milk Getter iz a shop-floor helper bluk fer kraftin, storin, plonkin, bustin, scoopin, or lil automationz, kitty.<br>
+<br>
+How to: Place near cowz an make a way to take milk containers or flooid away, meow.<br>
+<np>
+Tree Chopper Thing
+Shop-floor helperz
+<&small_tree_cutter>Lil Tree Chopper iz a shop-floor helper bluk fer kraftin, storin, plonkin, bustin, scoopin, or lil automationz, kitty.<br>
+<br>
+How to: Aim at grown treez an collect da dropz separately, meow.<br>

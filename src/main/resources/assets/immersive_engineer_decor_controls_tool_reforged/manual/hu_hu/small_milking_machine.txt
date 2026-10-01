@@ -1,0 +1,5 @@
+Fejőgép
+Műhelyi segédeszköz
+<&recipe>A kis fejőgép műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: tedd tehenek közelébe, és biztosíts lehetőséget a tejesedények vagy a folyadék elvezetésére.<br>

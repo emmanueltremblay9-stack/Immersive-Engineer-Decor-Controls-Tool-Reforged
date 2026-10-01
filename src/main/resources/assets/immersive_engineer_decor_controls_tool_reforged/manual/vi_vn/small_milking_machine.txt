@@ -1,0 +1,5 @@
+Máy vắt sữa
+Tiện ích sàn xưởng
+<&recipe>Máy vắt sữa nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Đặt gần bò và bố trí cách lấy bình sữa hoặc chất lỏng ra.<br>

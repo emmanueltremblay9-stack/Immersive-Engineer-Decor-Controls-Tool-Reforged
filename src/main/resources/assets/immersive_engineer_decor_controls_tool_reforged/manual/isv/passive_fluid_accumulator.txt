@@ -1,0 +1,5 @@
+Pasivna tekučina
+Pribor tekučinovoj linije
+<&recipe>Pasivny sbiratelj tekučin jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Postavi go protiv prigodnyh istočnikov vody i ostavi město dlja odvoda tekučiny.<br>

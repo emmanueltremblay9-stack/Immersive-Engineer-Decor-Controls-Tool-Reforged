@@ -1,0 +1,161 @@
+Klinkertegel och murverk
+Höljen av tegel och betong
+Klinker, slaggtegel, armerad betong och pansarglas ger tunga ytor för heta rum, verkstäder och skyddade siktlinjer.<br>
+<br>
+Använd de matchande plattorna, trapporna, tunna plattorna och murarna för att avsluta kanter och behålla fabrikens materialstil.
+<np>
+Klinkertegelblock
+Sotmörkt tegelmurverk
+<&clinker_brick_block>Det här blocket ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Klinkertegelplatta
+Sotmörkt tegelmurverk
+<&clinker_brick_slab>Det här blocket ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Klinkertegeltrappa
+Sotmörkt tegelmurverk
+<&clinker_brick_stairs>Det här blocket ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Klinkertegelmur
+Sotmörkt tegelmurverk
+<&clinker_brick_wall>Det här blocket ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Smutsigt klinkerblock
+Sotmörkt tegelmurverk
+<&clinker_brick_stained_block>Det smutsiga klinkertegelblocket ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Smutsig klinkerplatta
+Sotmörkt tegelmurverk
+<&clinker_brick_stained_slab>Den smutsiga klinkertegelplattan ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Smutsig klinkertrappa
+Sotmörkt tegelmurverk
+<&clinker_brick_stained_stairs>Den smutsiga klinkertegeltrappan ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Dekorerat klinkertegel
+Sotmörkt tegelmurverk
+<&clinker_brick_sastor_corner_block>Klinkertegel med sandstensdekor ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Indraget klinkertegel
+Sotmörkt tegelmurverk
+<&clinker_brick_recessed>Det här blocket ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Klinkertegel med slitsar
+Sotmörkt tegelmurverk
+<&clinker_brick_vertically_slit>Klinkerteglet med lodräta slitsar ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Lodrät klinkerplatta
+Sotmörkt tegelmurverk
+<&clinker_brick_vertical_slab_structured>Den lodräta klinkerplattan med struktur ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Halv klinkertegelplatta
+Sotmörkt tegelmurverk
+<&halfslab_clinker_brick>Det här blocket ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>
+<np>
+Slaggtegelblock
+Tätt fabriksmurverk
+<&slag_brick_block>Det här blocket ger tätt gråbrunt murverk till fundament, stödmurar och äldre verkstadsskjul.<br>
+<br>
+Användning: Använd det till äldre fundament, stödmurar och smutsiga fabriksgolv.<br>
+<np>
+Slaggtegelplatta
+Tätt fabriksmurverk
+<&slag_brick_slab>Det här blocket ger tätt gråbrunt murverk till fundament, stödmurar och äldre verkstadsskjul.<br>
+<br>
+Användning: Använd det till äldre fundament, stödmurar och smutsiga fabriksgolv.<br>
+<np>
+Slaggtegeltrappa
+Tätt fabriksmurverk
+<&slag_brick_stairs>Det här blocket ger tätt gråbrunt murverk till fundament, stödmurar och äldre verkstadsskjul.<br>
+<br>
+Användning: Använd det till äldre fundament, stödmurar och smutsiga fabriksgolv.<br>
+<np>
+Slaggtegelmur
+Tätt fabriksmurverk
+<&slag_brick_wall>Det här blocket ger tätt gråbrunt murverk till fundament, stödmurar och äldre verkstadsskjul.<br>
+<br>
+Användning: Använd det till äldre fundament, stödmurar och smutsiga fabriksgolv.<br>
+<np>
+Block av armerad betong
+Armerad betong
+<&rebar_concrete>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Platta av armerad betong
+Armerad betong
+<&rebar_concrete_slab>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Trappa av armerad betong
+Armerad betong
+<&rebar_concrete_stairs>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Mur av armerad betong
+Armerad betong
+<&rebar_concrete_wall>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Tunn platta av armerad betong
+Armerad betong
+<&halfslab_rebar_concrete>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Kakel av armerad betong
+Armerad betong
+<&rebar_concrete_tile>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Kakelplatta av armerad betong
+Armerad betong
+<&rebar_concrete_tile_slab>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Kakel av armerad betong
+Armerad betong
+<&rebar_concrete_tile_stairs>Kakeltrappan av armerad betong består av härdade betongdelar för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>
+<np>
+Pansarglasblock
+Skyddad siktlinje
+<&panzerglass_block>Det här blocket håller sikten fri och passar samtidigt ihop med förstärkta fabriksbyggnader.<br>
+<br>
+Användning: Använd det där spelare ska kunna se maskiner genom en skyddande barriär.<br>
+<np>
+Pansarglasplatta
+Skyddad siktlinje
+<&panzerglass_slab>Det här blocket håller sikten fri och passar samtidigt ihop med förstärkta fabriksbyggnader.<br>
+<br>
+Användning: Använd det där spelare ska kunna se maskiner genom en skyddande barriär.<br>

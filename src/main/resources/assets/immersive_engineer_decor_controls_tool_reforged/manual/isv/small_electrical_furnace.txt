@@ -1,0 +1,5 @@
+Električna peč
+Kompaktna obrabotna jedinica
+<&recipe>Električna peč vrši kompaktne děla topljenja s napajanjem FE, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Podaj FE i prigodny vhod dlja topljenja.<br>

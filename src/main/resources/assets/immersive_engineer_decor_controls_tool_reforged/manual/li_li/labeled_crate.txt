@@ -1,0 +1,5 @@
+Kis mèt opsjrif
+Aanpasbaar veurraodopsjrif
+<&recipe>Dees kis mèt opsjrif is bedoeld veur duidelik sortere in de opsjlaagruumte. De veurplaat kin wie ein klein werkplaatsbörd verangerd waere.<br>
+<br>
+Gebroek: rechtsklik op de opsjrifplaat um 't kisopsjrif te verangere. Rechtsklik op de res van de kis um opsjlaag veur montagemateriaal, óngerdaele en ónnerhouwdsveurraod te opene.<br>

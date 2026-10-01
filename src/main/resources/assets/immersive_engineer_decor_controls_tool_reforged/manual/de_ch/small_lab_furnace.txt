@@ -1,0 +1,5 @@
+Laborofe
+Kompakti Verarbeitigseinheit
+<&recipe>De Laborofe erledigt Schmelzarbeite mit Feschtbrennstoff uf wenig Werkstattflächi.<br>
+<br>
+Verwendig: Nimm Feschtbrennstoff für chliini Schmelzcharge.<br>

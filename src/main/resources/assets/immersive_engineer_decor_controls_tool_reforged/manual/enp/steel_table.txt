@@ -1,0 +1,5 @@
+Steel Board Table
+Workshop fitting
+<&recipe>This clot is a useful shop fitting for workrooms and upkeep corners.<br>
+<br>
+Use: Set it beside benches, crates and small looms.<br>

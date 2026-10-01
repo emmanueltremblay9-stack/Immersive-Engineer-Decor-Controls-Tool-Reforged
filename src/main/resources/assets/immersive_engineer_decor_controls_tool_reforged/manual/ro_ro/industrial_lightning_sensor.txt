@@ -1,0 +1,7 @@
+Detector de furtună
+Detectarea semnalelor
+<&recipe>Un senzor de furtună activează avertizări când tună.<br>
+<br>
+Utilizare: Amplasează-l sub cerul liber și conectează-l la lămpi sau alarme.<br>
+<br>
+Observații: Necesită tunete și acces la cer.

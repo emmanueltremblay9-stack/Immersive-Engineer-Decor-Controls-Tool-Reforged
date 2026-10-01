@@ -1,0 +1,5 @@
+Decoratiebord
+Gevarenmarkering
+<&recipe>Het decoratiebord van Engineer's Decor markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>

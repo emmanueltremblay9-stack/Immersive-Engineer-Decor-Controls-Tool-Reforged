@@ -1,0 +1,5 @@
+Staalraamvenster
+Beskermde uitsig
+<&recipe>Hierdie blok behou oop siglyne en pas steeds by gewapende fabriekskonstruksie.<br>
+<br>
+Gebruik: gebruik dit waar spelers masjinerie deur ’n beskermende versperring moet kan sien.<br>

@@ -1,0 +1,7 @@
+Blockdetektor
+Signalerkennung
+<&recipe>A Blockdetektor prüft, ob da Raum vor ihm belegt is.<br>
+<br>
+So geht's: Richt'n auf de Maschinenseit, den Puffer oder den gschützten Raum, denst im Augn behaltn mogst.<br>
+<br>
+Hinweis: Gibt Energie ab, wenn da Block vor ihm koa Luft is.

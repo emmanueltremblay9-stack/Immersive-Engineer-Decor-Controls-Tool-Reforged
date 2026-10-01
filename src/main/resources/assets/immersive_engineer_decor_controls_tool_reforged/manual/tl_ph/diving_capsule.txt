@@ -1,0 +1,5 @@
+Kapsula ng Hangin sa Pagsisid
+Reserbang hangin sa kagipitan
+<&recipe>Ang diving air capsule ay reserbang hangin para sa gawaing nasa ilalim ng tubig.<br>
+<br>
+Gamitin nang manu-mano para ibalik ang hangin. Sa inventory, awtomatiko rin itong gagana kapag halos ubos ang hangin at saka mag-cooldown. Dalhin sa baha na minahan at lubog na tubo.

@@ -1,0 +1,5 @@
+Toit en bardeaux foncés
+Élément de toiture patinée
+<&recipe>Ce bloc forme des toitures sombres et fonctionnelles pour les ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>

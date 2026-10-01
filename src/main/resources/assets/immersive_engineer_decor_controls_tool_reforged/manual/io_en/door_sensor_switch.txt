@@ -1,0 +1,7 @@
+Pordosensilo
+Redstonea regado
+<&recipe>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.

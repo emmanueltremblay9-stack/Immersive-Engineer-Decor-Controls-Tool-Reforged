@@ -1,0 +1,101 @@
+Teilatuak eta patioa
+Fabrikako kanpoko osagarriak
+Teilatu-blokeek, patioko legarrak eta industria-zur zaharreko piezek kanpoko estalpeak, lan-patioak, zamalanetako eremuak eta eguraldiak higatutako fabrikako ertzak amaitzen laguntzen dute.<br>
+<br>
+Nahasi pieza hauek harlangaitzarekin eta pasabideekin, kanpoko industria-eraikuntzak urrutitik ere argi bereizteko.
+<np>
+Teila iluneko teilatua
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof>Bloke honek teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teilatuaren elur-babesa
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_metallized>Teila iluneko teilatuaren elur-babesak teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teila iluneko teilatua
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_skylight>Teila iluneko teilatuaren argizuloak teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teilatuaren tximinia-enborra
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_chimneytrunk>Teila iluneko teilatuaren tximinia-enborrak teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teilatuaren kable-hodia
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_wireconduit>Teila iluneko teilatuaren kable-hodiak teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teila iluneko teilatua
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_chimney>Teila iluneko teilatuaren tximiniak teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teila iluneko teilatu-blokea
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_block>Bloke honek teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teila iluneko teilatuaren lauza
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_slab>Bloke honek teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Teila iluneko teilatuaren lauza
+Eguraldiak higatutako teilatu-osagarria
+<&dark_shingle_roof_slabslice>Teila iluneko teilatuaren lauza-xaflak teilatu ilun eta praktikoen profilak osatzen ditu lantegietarako eta industria-estalpeetarako.<br>
+<br>
+Erabilera: erabili piezak elkarrekin teilatu-profil sinesgarriak egiteko.<br>
+<np>
+Legar-lur trinkoa
+Lantokiko zoru-estaldura
+<&dense_grit_dirt_block>Bloke honek gainazal trinkotu eta zapaldua ematen die kanpoko lan-eremuei.<br>
+<br>
+Erabilera: jarri zamalanetako ateen, kanpoko deposituen eta makinen patioen inguruan.<br>
+<np>
+Legar-hare trinkoa
+Lantokiko zoru-estaldura
+<&dense_grit_sand_block>Bloke honek gainazal trinkotu eta zapaldua ematen die kanpoko lan-eremuei.<br>
+<br>
+Erabilera: jarri zamalanetako ateen, kanpoko deposituen eta makinen patioen inguruan.<br>
+<np>
+Zur zaharreko oholak
+Lantegiko zur zahartua
+<&old_industrial_wood_planks>Fabrika zaharreko oholek lantegiko zur zahartua eskaintzen dute zoruetarako, mailetarako, ateetarako eta barrualdeko apaingarri beroetarako.<br>
+<br>
+Erabilera: erabili lantegi zaharren zoruetan, eskaileretan, ateetan eta ertz-apaingarrietan.<br>
+<np>
+Fabrika zaharreko zurezko lauza
+Lantegiko zur zahartua
+<&old_industrial_wood_slab>Bloke honek lantegiko zur zahartua eskaintzen du zoruetarako, mailetarako, ateetarako eta barrualdeko apaingarri beroetarako.<br>
+<br>
+Erabilera: erabili lantegi zaharren zoruetan, eskaileretan, ateetan eta ertz-apaingarrietan.<br>
+<np>
+Zur zaharreko eskailerak
+Lantegiko zur zahartua
+<&old_industrial_wood_stairs>Fabrika zaharreko zurezko eskailerek lantegiko zur zahartua eskaintzen dute zoruetarako, mailetarako, ateetarako eta barrualdeko apaingarri beroetarako.<br>
+<br>
+Erabilera: erabili lantegi zaharren zoruetan, eskaileretan, ateetan eta ertz-apaingarrietan.<br>
+<np>
+Zur zaharreko lauza-xafla
+Lantegiko zur zahartua
+<&old_industrial_wood_slabslice>Fabrika zaharreko zurezko lauza-xaflak lantegiko zur zahartua eskaintzen du zoruetarako, mailetarako, ateetarako eta barrualdeko apaingarri beroetarako.<br>
+<br>
+Erabilera: erabili lantegi zaharren zoruetan, eskaileretan, ateetan eta ertz-apaingarrietan.<br>
+<np>
+Fabrika zaharreko zurezko atea
+Lantegiko zur zahartua
+<&old_industrial_wood_door>Bloke honek lantegiko zur zahartua eskaintzen du zoruetarako, mailetarako, ateetarako eta barrualdeko apaingarri beroetarako.<br>
+<br>
+Erabilera: erabili lantegi zaharren zoruetan, eskaileretan, ateetan eta ertz-apaingarrietan.<br>

@@ -1,0 +1,5 @@
+Thin Slice of Old Wood
+Aged Timber for the Workshop
+<&recipe>The Thin Slice of Old Manufactory Wood adds aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>

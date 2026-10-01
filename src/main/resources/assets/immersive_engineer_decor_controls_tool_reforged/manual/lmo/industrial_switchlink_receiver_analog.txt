@@ -1,0 +1,7 @@
+Ricevidor de ligam analogich
+Comand ligad
+<&recipe>Un ricevidor ligad el dà una destinazzion lontana e visibila a i panei de control.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Dovra quella perla lì strusando via per ativà el ricevidor a distanza.<br>
+<br>
+Quell ricevidor chì el manda un segnal de prejarossa a piena potenza quand che el vegn ativad.

@@ -1,0 +1,7 @@
+Svietiace citlivé sklo
+Signalizačné sklo
+<&recipe>Sklenený blok reagujúci na redstone zachováva výhľad a zároveň zobrazuje stav signálu.<br>
+<br>
+Použitie: Hodí sa do okien riadiacich miestností, osvetlených panelov a ochranného továrenského zasklenia.<br>
+<br>
+Poznámky: Mení stav podľa blízkeho redstonového signálu.

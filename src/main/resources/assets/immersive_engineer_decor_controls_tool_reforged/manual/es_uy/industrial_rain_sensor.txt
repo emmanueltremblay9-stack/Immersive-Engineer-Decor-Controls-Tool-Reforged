@@ -1,0 +1,7 @@
+Sensor de lluvia
+Detección de señales
+<&recipe>Un sensor meteorológico convierte la lluvia que cae en su ubicación en una señal de redstone.<br>
+<br>
+Uso: Montalo donde el bloque situado encima pueda recibir lluvia.<br>
+<br>
+Notas: Comprueba si llueve sobre el sensor.

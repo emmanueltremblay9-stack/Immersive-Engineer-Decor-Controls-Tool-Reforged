@@ -1,0 +1,5 @@
+Scalae caementi armati
+Caementum firmatum
+<&recipe>Hic cubus pars caementi durati est pro basibus machinarum, muris contra explosiones et pavimentis arearum onerandi.<br>
+<br>
+Usus: sub machinis, per corridores curationis aut ubicumque basis firmata opus est pone.<br>

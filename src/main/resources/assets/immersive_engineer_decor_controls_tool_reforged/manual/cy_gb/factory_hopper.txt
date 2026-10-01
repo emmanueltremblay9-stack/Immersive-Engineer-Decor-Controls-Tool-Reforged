@@ -1,0 +1,5 @@
+Hopran Ffatri
+Cyfleustod llawr gweithdy
+<&recipe>Mae'r bloc hwn yn symud pentyrrau eitemau drwy gasin diwydiannol mwy cryno.<br>
+<br>
+Defnydd: Trowch ef tuag at y llinell rhestrau eiddo, yna gosodwch ystod, nifer y pentyrrau, amseru a modd Redstone ar ei sgrin.<br>

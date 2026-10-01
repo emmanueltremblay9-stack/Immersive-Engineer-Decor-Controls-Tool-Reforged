@@ -1,0 +1,5 @@
+Melkmashino
+Laboreyaparato
+<&recipe>La Mikra melkmashino esas laboreyaparato por fabrikado, stokado, pozado, ruptado, kolektado o kompakta automatigo.<br>
+<br>
+Uzo: Pozez ol apud bovi e provizez moyeno por forprenar laktorecipienti o fluido.<br>

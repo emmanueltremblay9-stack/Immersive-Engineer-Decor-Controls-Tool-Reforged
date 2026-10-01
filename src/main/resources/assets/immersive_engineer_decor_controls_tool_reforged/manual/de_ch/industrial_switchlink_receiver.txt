@@ -1,0 +1,7 @@
+Empfänger für Schalterverchnüpfige
+Verchnüpfti Stüürig
+<&recipe>En verchnüpfte Empfänger bietet entfernte Tafle es Redstone-Ziel mit voller Stärchi.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Mit enem direkte Rechtsklick chasch de Empfänger vo Hand umschalte.<br>
+<br>
+Hiwiis: Benutz d'Link-Perle bim Schliiche, demit de Empfänger umschaltet.

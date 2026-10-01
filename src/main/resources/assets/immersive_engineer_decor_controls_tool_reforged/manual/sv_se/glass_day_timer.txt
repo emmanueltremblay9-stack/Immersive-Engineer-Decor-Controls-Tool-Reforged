@@ -1,0 +1,7 @@
+Dygnstimer av glas
+Dagsljussignal
+<&recipe>En timerbrytare följer den ljusa delen av världens dygn.<br>
+<br>
+Användning: Använd den till gårdslampor, jalusier och fabrikskontroller som bara ska fungera dagtid.<br>
+<br>
+Anmärkning: Kräver en dimension med himmelsljus.

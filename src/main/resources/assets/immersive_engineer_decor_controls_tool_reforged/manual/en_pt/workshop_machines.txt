@@ -1,0 +1,107 @@
+Contraptions fer the workshop
+Contraptions and workshop ins/outs
+Workshop contraptions fit craftin', loot shiftin', smeltin', disposal, gatherin' and useful work into a single block.<br>
+<br>
+Open the pages ahead fer each contraption's recipe, picture, lore and practical orders.
+<np>
+Table o' steel
+Furniture fer work
+<&steel_table>This block be practical workshop furniture fer workrooms and upkeep corners.<br>
+<br>
+Orders: Set her beside benches, crates and compact contraptions.<br>
+<np>
+Table o' treated timber
+Furniture fer work
+<&treated_wood_table>This block be practical workshop furniture fer workrooms and upkeep corners.<br>
+<br>
+Orders: Set her beside benches, crates and compact contraptions.<br>
+<np>
+Stool o' treated timber
+Furniture fer work
+<&treated_wood_stool>This block be practical workshop furniture fer workrooms and upkeep corners.<br>
+<br>
+Orders: Set her beside benches, crates and compact contraptions.<br>
+<np>
+Metal craftin' table
+Workstation fer plates
+<&metal_crafting_table>The metal craftin' table be a reinforced workshop station with a hammer slot, a 3x3 craftin' grid and a clear output slot.<br>
+<br>
+Orders: Use the grid fer ordinary craftin'. Fer IE plates, berth an Engineer's Hammer in the tool slot and put the plate material in the grid, then take the result. Steel finery calls fer steel plates to make poles, gangways, portholes, doors, guardrails and other steel pieces.<br>
+<np>
+Factory suckin' device
+Gear fer the workshop deck
+<&factory_hopper>This block shifts stacks o' loot through a tighter factory casing.<br>
+<br>
+Orders: Face her along the loot-bag line, then set range, stack count, timing and redstone orders on her screen.<br>
+<np>
+Factory broken cannon
+Gear fer the workshop deck
+<&factory_dropper>This block sends stowed loot out through the face ye aim.<br>
+<br>
+Orders: Aim the front at the droppin' point, load the slots aboard, then use her screen to set force, angle, delay, filter rules and redstone orders.<br>
+<np>
+Factory block setter
+Gear fer the workshop deck
+<&factory_placer>This block sets blocks from her onboard stock when ye trigger her.<br>
+<br>
+Orders: Aim the working face at yer chosen space and load stacks she can place.<br>
+<np>
+Breaker o' blocks
+Gear fer the workshop deck
+<&small_block_breaker>Little block breaker be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Aim the working face at the block ye want removed.<br>
+<np>
+Burner o' rubbish
+Small processin' contraption
+<&small_waste_incinerator>The rubbish burner destroys unwanted loot in a small corner o' yer workshop.<br>
+<br>
+Orders: Feed only loot ye don't want into her queue.<br>
+<np>
+Oven fer the laboratory
+Small processin' contraption
+<&small_lab_furnace>The laboratory oven smelts with solid fuel in a small corner o' yer workshop.<br>
+<br>
+Orders: Use solid fuel fer small batches o' smeltin'.<br>
+<np>
+Oven run by electricity
+Small processin' contraption
+<&small_electrical_furnace>The electric oven handles FE-powered smeltin' jobs in a small corner o' yer workshop.<br>
+<br>
+Orders: Supply FE power and loot that can be smelted.<br>
+<np>
+Mineral-meltin' oven
+Small processin' contraption
+<&small_mineral_smelter>The mineral-meltin' oven works minerals at mighty heat in a small corner o' yer workshop.<br>
+<br>
+Orders: Feed mineral blocks and power aboard fer meltin' at high heat.<br>
+<np>
+Freezer o' water
+Small processin' contraption
+<&small_freezer>The water freezer handles chillin' work in a compact berth fer powered fluid rigs.<br>
+<br>
+Orders: Supply water and power to make frost in stages.<br>
+<np>
+Passive fluid gatherin'
+Gear fer fluid lines
+<&passive_fluid_accumulator>Passive fluid-gatherin' vessel be a compact fluid-line fitting fer small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Set her against suitable water sources, leavin' room to draw fluid out.<br>
+<np>
+Panel fer sun-power
+Gear fer the workshop deck
+<&small_solar_panel>Little sun-power panel be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Give her open sky and connect gear that needs little power.<br>
+<np>
+Cow-milkin' contraption
+Gear fer the workshop deck
+<&small_milking_machine>Little cow milker be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Put her near cows and provide a way to take out milk containers or fluid milk.<br>
+<np>
+Tree-fellin' contraption
+Gear fer the workshop deck
+<&small_tree_cutter>Little tree feller be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Aim her at grown trees and gather the fallen loot separately.<br>

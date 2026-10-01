@@ -1,0 +1,7 @@
+Presse de barres Muslee
+Presse a manger
+<&recipe>La presse a barres Muslee change la mangeaille commune en rations de champ compactes.<br>
+<br>
+Usaije : Prenez du pain, eune pomme e des graines de blë, melon, citrouille, bettrave ou Industrial Hemp, pis servez-vous de la presse. Eune bone pressëe use yun de chaqe, vérifie la pllaçe, fét qatr barres Muslee Melange e use la presse.<br>
+<br>
+Si yun des ingrédients manqe ou si l'inventaire n'a pouint de pllaçe, ren n'ét consommë.

@@ -1,0 +1,5 @@
+Panel fer sun-power
+Gear fer the workshop deck
+<&recipe>Little sun-power panel be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Give her open sky and connect gear that needs little power.<br>

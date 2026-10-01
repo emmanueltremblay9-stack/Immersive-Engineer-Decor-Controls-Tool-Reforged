@@ -1,0 +1,5 @@
+Fabrikspenda
+Werkstatthilf
+<&recipe>Der Block gibt glagerte Sachn durch a ausgerichtete Seit aus.<br>
+<br>
+So geht's: Richt d'Vorderseit auf'n Ausgabpunkt, füll d'innern Fächer und stell Kraft, Winkl, Verzögerung, Filterlogik und Redstone-Art im Menü ei.<br>

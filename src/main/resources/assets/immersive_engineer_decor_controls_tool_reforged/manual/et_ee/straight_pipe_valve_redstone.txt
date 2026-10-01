@@ -1,0 +1,5 @@
+Redstone'i vedelikuventiil
+Vedelikutrassi seadmed
+<&recipe>Redstone'iga juhitav vedelikuventiil on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Joonda ventiil soovitud voolusuunaga.<br>

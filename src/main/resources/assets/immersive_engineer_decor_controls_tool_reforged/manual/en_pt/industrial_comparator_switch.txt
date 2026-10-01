@@ -1,0 +1,7 @@
+Compaaratorrr switch
+Signal from the support
+<&recipe>A little sensor switch reads her support block and turns that reading into a plain panel output.<br>
+<br>
+Orders: Mount her on loot bags, tanks or redstone gear. When her support block reports compaaratorrr, container or redstone output, she sends redstone at full strength.<br>
+<br>
+Mind ye: Use her to turn storage levels or hidden wires into clear on/off control lines.

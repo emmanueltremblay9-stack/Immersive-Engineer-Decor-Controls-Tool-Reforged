@@ -1,0 +1,5 @@
+Stálgöngubrú
+Þjónustuaðgangshluti
+<&recipe>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>

@@ -1,0 +1,5 @@
+Mattone di clinker decorato
+Muratura annerita dalla fuliggine
+<&recipe>Il mattone di clinker decorato con arenaria porta muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>

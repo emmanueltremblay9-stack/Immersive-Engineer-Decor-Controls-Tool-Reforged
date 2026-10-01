@@ -1,0 +1,7 @@
+Martello frantumaminerali
+Utensile di frantumazione manuale
+<&recipe>Il martello frantumatore di minerali è un utensile manuale per la prima lavorazione di ferro e oro.<br>
+<br>
+Uso: Combinalo con ferro grezzo, oro grezzo, minerale di ferro, minerale di ferro di ardesia profonda, minerale d'oro o minerale d'oro di ardesia profonda per produrre polvere di ferro o d'oro di Immersive Engineering. Il martello perde durabilità e torna nella griglia finché non si rompe.<br>
+<br>
+Si usura anche scavando e può respingere bersagli nel combattimento ravvicinato.

@@ -1,0 +1,7 @@
+Woltomierz
+Miernik sygnału
+<&recipe>Mały miernik do sterowni pokazuje siłę redstone jako czytelny odczyt na panelu.<br>
+<br>
+Użycie: Zamontuj go w miejscu, w którym pobliski sygnał redstone powinien być widoczny na pierwszy rzut oka.<br>
+<br>
+Uwagi: Odczytuje pobliską siłę redstone od 0 do 15.

@@ -1,0 +1,7 @@
+Captador de pluèja
+Deteccion de senhal
+<&recipe>Un captador meteorologic transforma la pluèja a son emplaçament en redstone.<br>
+<br>
+Utilizacion : monta-lo ont lo blòc de dessús pòt recebre la pluèja.<br>
+<br>
+Nòta : verifica la pluèja dessús lo captador.

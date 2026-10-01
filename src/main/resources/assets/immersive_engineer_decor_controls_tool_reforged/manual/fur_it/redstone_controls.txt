@@ -1,0 +1,789 @@
+Controi di redstone
+Misuradôrs e aparechis di segnâl
+I aparechis di control a trasformin la redstone platade in panei di fabriche clârs, sensôrs, indicadôrs, interutôrs, alarmis e aparechis di segnâl leâts.<br>
+<br>
+Dopre chestis pagjinis cuant che tu fasis postazions pai operadôrs, tabelis di segnalazion, circuits di sigurece e controi a distance.
+<np>
+Bersaî pes frecis
+Impuls momentani
+<&arrow_target>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Sensôr di puarte
+Control cun redstone
+<&door_sensor_switch>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton di assensôr
+Control cun redstone
+<&elevator_button>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Boton di veri
+Control cun redstone
+<&glass_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton di veri
+Control cun redstone
+<&glass_small_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton tatîl di veri
+Control cun redstone
+<&glass_touch_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton di machine
+Control cun redstone
+<&industrial_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton
+Control cun redstone
+<&industrial_double_pole_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton di machine cun protezion
+Control cun redstone
+<&industrial_fenced_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton che al sint i colps
+Control cun redstone
+<&industrial_knock_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton vecjo ornât
+Control cun redstone
+<&oldfancy_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton vecjo ornât
+Control cun redstone
+<&oldfancy_small_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton vecjo ornât cun cjadene
+Impuls momentani
+<&oldfancy_spring_reset_chain>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton rustic
+Control cun redstone
+<&rustic_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton rustic a claut
+Control cun redstone
+<&rustic_nail_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Piçul boton rustic
+Control cun redstone
+<&rustic_small_button>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Boton rustic cun cjadene
+Impuls momentani
+<&rustic_spring_reset_chain>Un interutôr momentani al da un impuls net di redstone a plene potence.<br>
+<br>
+Ûs: doprilu par inviâ machinis, vierzi puartis, mandâ alarmis o comandâ circuits a un colp sôl.<br>
+<br>
+Notis: al torne al stât iniziâl dopo il so impuls programât.
+<np>
+Plache di contat di veri
+Impuls di pression
+<&glass_contact_mat>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Contat di puarte di veri
+Impuls di pression
+<&glass_door_contact_mat>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Tapon di contat
+Impuls di pression
+<&industrial_contact_mat>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Tapon di contat di puarte
+Impuls di pression
+<&industrial_door_contact_mat>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Rilevadôr di coladis traviers
+Rilevament dal segnâl
+<&industrial_fallthrough_detector>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Boton di pît
+Control cun redstone
+<&industrial_foot_button>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Trabuchel industriâl pai colps
+Impuls di pression
+<&industrial_high_sensitive_trapdoor>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Tapon di contat pai colps
+Impuls di pression
+<&industrial_shock_sensitive_contact_mat>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Trabuchel pai colps
+Impuls di pression
+<&industrial_shock_sensitive_trapdoor>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Plante rosse di potence
+Impuls di pression
+<&red_power_plant>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Plache di pression rustiche
+Impuls di pression
+<&rustic_contact_plate>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Pression rustiche di puarte
+Impuls di pression
+<&rustic_door_contact_plate>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Rilevadôr rustic di coladis
+Rilevament dal segnâl
+<&rustic_fallthrough_detector>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Trabuchel rustic pai colps
+Impuls di pression
+<&rustic_high_sensitive_trapdoor>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Plache rustiche pai colps
+Impuls di pression
+<&rustic_shock_sensitive_plate>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Trabuchel rustic pai colps
+Impuls di pression
+<&rustic_shock_sensitive_trapdoor>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Plante zale di potence
+Impuls di pression
+<&yellow_power_plant>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.
+<np>
+Orloi di zornade di veri
+Segnâl di dì
+<&glass_day_timer>Un interutôr a timp al seguìs la part di dì dal cicli dal mont.<br>
+<br>
+Ûs: doprilu pes lampis di cort, i scûrs e i controi di fabriche di fâ funzionâ dome di dì.<br>
+<br>
+Notis: e covente une dimension cun lûs dal cîl.
+<np>
+Rilevadôr di entitâts di veri
+Rilevament dal segnâl
+<&glass_entity_detector>Un rilevadôr di entitâts al cjale i moviments dongje cence une plache visibile sul paviment.<br>
+<br>
+Ûs: coleghilu a puartis, lampis, alarmis o blocaments di sigurece des machinis.<br>
+<br>
+Notis: al controle une piçule aree ator dal bloc.
+<np>
+Segnâl a intervaî di veri
+Impuls a timp
+<&glass_interval_timer>Un interutôr a timp compat al da un impuls di redstone programât.<br>
+<br>
+Ûs: doprilu dulà che un piçul mecanisim al à bisugne di un comant periodic o ritardât.<br>
+<br>
+Notis: al dopre impuls di redstone programâts.
+<np>
+Rilevadôr lineâr di veri
+Rilevament dal segnâl
+<&glass_linear_entity_detector>Un rilevadôr di entitâts al cjale i moviments dongje cence une plache visibile sul paviment.<br>
+<br>
+Ûs: coleghilu a puartis, lampis, alarmis o blocaments di sigurece des machinis.<br>
+<br>
+Notis: al controle une piçule aree ator dal bloc.
+<np>
+Rilevadôr di blocs
+Rilevament dal segnâl
+<&industrial_block_detector>Un rilevadôr di blocs al controle se il spazi devant al è ocupât.<br>
+<br>
+Ûs: voltilu viers la muse de machine, la risierve o il spazi protet di controlâ.<br>
+<br>
+Notis: si impie se il bloc devant nol è aiar.
+<np>
+Orloi di zornade
+Segnâl di dì
+<&industrial_day_timer>Un interutôr a timp al seguìs la part di dì dal cicli dal mont.<br>
+<br>
+Ûs: doprilu pes lampis di cort, i scûrs e i controi di fabriche di fâ funzionâ dome di dì.<br>
+<br>
+Notis: e covente une dimension cun lûs dal cîl.
+<np>
+Rilevadôr di entitâts
+Rilevament dal segnâl
+<&industrial_entity_detector>Un rilevadôr di entitâts al cjale i moviments dongje cence une plache visibile sul paviment.<br>
+<br>
+Ûs: coleghilu a puartis, lampis, alarmis o blocaments di sigurece des machinis.<br>
+<br>
+Notis: al controle une piçule aree ator dal bloc.
+<np>
+Temporizadôr a intervaî
+Impuls a timp
+<&industrial_interval_timer>Un interutôr a timp compat al da un impuls di redstone programât.<br>
+<br>
+Ûs: doprilu dulà che un piçul mecanisim al à bisugne di un comant periodic o ritardât.<br>
+<br>
+Notis: al dopre impuls di redstone programâts.
+<np>
+Sensôr di lûs
+Rilevament dal segnâl
+<&industrial_light_sensor>Un sensôr di lûs al transforme la luminositât locâl in comant di redstone.<br>
+<br>
+Ûs: doprilu par lampis automatichis, scûrs e circuits di visibilitât.<br>
+<br>
+Notis: si impie cun luminositât grese 8 o plui.
+<np>
+Rilevadôr di temporâl
+Rilevament dal segnâl
+<&industrial_lightning_sensor>Un sensôr di temporâl al invie i avîs cuant che a son tons.<br>
+<br>
+Ûs: metilu sot dal cîl viert e coleghilu a lampis o alarmis.<br>
+<br>
+Notis: a coventin tons e acès al cîl.
+<np>
+Rilevadôr lineâr di entitâts
+Rilevament dal segnâl
+<&industrial_linear_entity_detector>Un rilevadôr di entitâts al cjale i moviments dongje cence une plache visibile sul paviment.<br>
+<br>
+Ûs: coleghilu a puartis, lampis, alarmis o blocaments di sigurece des machinis.<br>
+<br>
+Notis: al controle une piçule aree ator dal bloc.
+<np>
+Sensôr di ploie
+Rilevament dal segnâl
+<&industrial_rain_sensor>Un sensôr dal timp al transforme la ploie tal so puest in redstone.<br>
+<br>
+Ûs: montilu dulà che il bloc parsore al pues cjapâ la ploie.<br>
+<br>
+Notis: al controle la ploie parsore dal sensôr.
+<np>
+Interutôr bistabil di veri
+Control cun redstone
+<&glass_rotary_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Contat tatîl bistabil di veri
+Control cun redstone
+<&glass_touch_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Veri sensibil naranç
+Veri di segnâl
+<&orange_sensitiveglass>Un bloc di veri che al reagjìs ae redstone al lasse viodi traviers intant che al mostre il stât dal segnâl.<br>
+<br>
+Ûs: doprilu tai barcons de sale control, tai panei iluminâts e tal veri protet di fabriche.<br>
+<br>
+Notis: al cambie stât cu la energjie di redstone dongje.
+<np>
+Veri sensibil che al fâs lûs
+Veri di segnâl
+<&sensitive_glass_block>Un bloc di veri che al reagjìs ae redstone al lasse viodi traviers intant che al mostre il stât dal segnâl.<br>
+<br>
+Ûs: doprilu tai barcons de sale control, tai panei iluminâts e tal veri protet di fabriche.<br>
+<br>
+Notis: al cambie stât cu la energjie di redstone dongje.
+<np>
+Veri sensibil colorât
+Veri di segnâl
+<&stained_sensitiveglass>Un bloc di veri che al reagjìs ae redstone al lasse viodi traviers intant che al mostre il stât dal segnâl.<br>
+<br>
+Ûs: doprilu tai barcons de sale control, tai panei iluminâts e tal veri protet di fabriche.<br>
+<br>
+Notis: al cambie stât cu la energjie di redstone dongje.
+<np>
+Misuradôr a bare di veri
+Misuradôr di segnâl
+<&glass_vertical_bar_gauge>Un misuradôr compat di sale control al mostre la potence di redstone in maniere clare sul panêl.<br>
+<br>
+Ûs: montilu dulà che al covente controlâ la potence di redstone dongje cuntune cjalade.<br>
+<br>
+Notis: al lei la potence di redstone dongje di 0 a 15.
+<np>
+Misuradôr analogjic
+Misuradôr di segnâl
+<&industrial_analog_angular_gauge>Un misuradôr compat di sale control al mostre la potence di redstone in maniere clare sul panêl.<br>
+<br>
+Ûs: montilu dulà che al covente controlâ la potence di redstone dongje cuntune cjalade.<br>
+<br>
+Notis: al lei la potence di redstone dongje di 0 a 15.
+<np>
+Voltmetri
+Misuradôr di segnâl
+<&industrial_analog_horizontal_gauge>Un misuradôr compat di sale control al mostre la potence di redstone in maniere clare sul panêl.<br>
+<br>
+Ûs: montilu dulà che al covente controlâ la potence di redstone dongje cuntune cjalade.<br>
+<br>
+Notis: al lei la potence di redstone dongje di 0 a 15.
+<np>
+Misuradôr numeric
+Potence dal segnâl ben visibile
+<&industrial_small_digital_gauge>Un misuradôr compat di sale control al mostre la potence di redstone in maniere clare sul panêl.<br>
+<br>
+Ûs: montilu dulà che al covente controlâ la potence di redstone dongje cuntune cjalade.<br>
+<br>
+Notis: al lei la potence di redstone dongje di 0 a 15.
+<np>
+Misuradôr a tubul di veri
+Misuradôr di segnâl
+<&industrial_tube_gauge>Un misuradôr compat di sale control al mostre la potence di redstone in maniere clare sul panêl.<br>
+<br>
+Ûs: montilu dulà che al covente controlâ la potence di redstone dongje cuntune cjalade.<br>
+<br>
+Notis: al lei la potence di redstone dongje di 0 a 15.
+<np>
+Misuradôr analogjic a bare
+Misuradôr di segnâl
+<&industrial_vertical_bar_gauge>Un misuradôr compat di sale control al mostre la potence di redstone in maniere clare sul panêl.<br>
+<br>
+Ûs: montilu dulà che al covente controlâ la potence di redstone dongje cuntune cjalade.<br>
+<br>
+Notis: al lei la potence di redstone dongje di 0 a 15.
+<np>
+Lampe di alarme
+Indicazion dal segnâl
+<&industrial_alarm_lamp>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+Sirene di alarme
+Indicazion dal segnâl
+<&industrial_alarm_siren>La sirene di alarme e je un indicadôr redstone montât suntune face. Il so stât alimentât al seguìs il segnâl dal bloc dulà che e je tacade.<br>
+<br>
+Ûs: tachile suntune muse solide e alimentile par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: la sirene si rinove une volte par secont fintremai che il so segnâl al reste atîf.
+<np>
+LED lampegiant
+Indicazion dal segnâl
+<&industrial_blinking_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED vert lampegiant
+Indicazion dal segnâl
+<&industrial_green_blinking_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED vert
+Indicazion dal segnâl
+<&industrial_green_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED ros
+Indicazion dal segnâl
+<&industrial_red_blinking_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED ros
+Indicazion dal segnâl
+<&industrial_red_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED blanc lampegiant
+Indicazion dal segnâl
+<&industrial_white_blinking_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED blanc
+Indicazion dal segnâl
+<&industrial_white_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED zâl lampegiant
+Indicazion dal segnâl
+<&industrial_yellow_blinking_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+LED zâl
+Indicazion dal segnâl
+<&industrial_yellow_led>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+Semafor rustic
+Indicazion dal segnâl
+<&rustic_semaphore>Un indicadôr compat al fâs viodi il stât de redstone platade te fabriche.<br>
+<br>
+Ûs: coleghilu dongje dal segnâl par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: al cambie stât cuant che e je energjie di redstone dongje.
+<np>
+Interutôr comparadôr
+Segnâl dal bloc di supuart
+<&industrial_comparator_switch>Un interutôr sensôr compat al lei il bloc dulà che al è montât e al transforme la leture intune jessude sempliçe di panêl.<br>
+<br>
+Ûs: montilu su inventaris, serbatois o aparechis di redstone. Cuant che il bloc di supuart al da une jessude di comparadôr, di contignidôr o di redstone, l’interutôr al mande redstone a plene potence.<br>
+<br>
+Notis: doprilu par trasformâ nivei di deposit o fîi platâts in liniis claris di ativazion e disativazion.
+<np>
+Regoladôr di intensitât
+Segnâl variabil
+<&industrial_dimmer>Un comant rotatîf al regole la potence di redstone de muse di un panêl compat.<br>
+<br>
+Ûs: fâs clic di diestre par alçâ la jessude un pas par volte; dopo la potence massime e torne a zero.<br>
+<br>
+Notis: la potence di jessude e va di 0 a 15.
+<np>
+Boton di ferme di emergjence
+Control cun redstone
+<&industrial_estop_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Blocadôr di tramuele
+Control cun redstone
+<&industrial_hopper_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Interutôr che al sint i colps
+Control cun redstone
+<&industrial_knock_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve
+Control cun redstone
+<&industrial_lever>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Interutôr di machine cun doi botons
+Control cun redstone
+<&industrial_machine_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Manie di tirâ
+Control cun redstone
+<&industrial_pull_handle>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve rotative
+Control cun redstone
+<&industrial_rotary_lever>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Interutôr rotatîf di machine
+Control cun redstone
+<&industrial_rotary_machine_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve di contat
+Control cun redstone
+<&industrial_small_lever>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Interutôr
+Control cun redstone
+<&industrialswitch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Interutôr di lûs
+Control cun redstone
+<&light_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Interutôr a valvule
+Control cun redstone
+<&valve_wheel_switch>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Ricevidôr a impuls in casse
+Comant leât
+<&industrial_switchlink_cased_pulse_receiver>Un ricevidôr leât a impuls in casse al da ai panei lontans une curte ativazion di redstone.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Fâs clic di diestre sul ricevidôr o ative la perle leade par mandâ un impuls curt.<br>
+<br>
+Notis: l’impuls si ferme di bessôl dopo la durade programade.
+<np>
+Ricevidôr di leam in casse
+Comant leât
+<&industrial_switchlink_cased_receiver>Un ricevidôr leât in casse al da ai panei lontans une destinazion di redstone robuste.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Fâs clic di diestre dret sul ricevidôr par cambiâji stât a man.<br>
+<br>
+Notis: une perle leade e cambie il stât di chest ricevidôr cuant che tu le dopris sbassât.
+<np>
+Ricevidôr a impuls di leam
+Comant leât
+<&industrial_switchlink_pulse_receiver>Un ricevidôr leât a impuls al da ai panei lontans une curte ativazion di redstone.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Fâs clic di diestre sul ricevidôr o ative la perle leade par mandâ un impuls curt.<br>
+<br>
+Notis: l’impuls si ferme di bessôl dopo la durade programade.
+<np>
+Relè a impuls di leam
+Comant leât
+<&industrial_switchlink_pulse_relay>Un acessori in forme di relè al da ai panei un pont locâl di comutazion compat.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje. Dopre blocs ricevidôrs cuant che ti covente ativâ cuntune perle leade.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Ricevidôr di leam di interutôrs
+Comant leât
+<&industrial_switchlink_receiver>Un ricevidôr leât al da ai panei lontans une destinazion di redstone a plene potence.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Fâs clic di diestre dret sul ricevidôr par cambiâji stât a man.<br>
+<br>
+Notis: une perle leade e cambie il stât di chest ricevidôr cuant che tu le dopris sbassât.
+<np>
+Ricevidôr analogjic di leam
+Comant leât
+<&industrial_switchlink_receiver_analog>Un ricevidôr leât al da ai panei di control une destinazion visibile a distance.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Dopre chê perle biel che tu sês sbassât par ativâ il ricevidôr a distance.<br>
+<br>
+Notis: chest ricevidôr al mande un segnâl di redstone plen cuant che al ven ativât.
+<np>
+Relè di leam di interutôrs
+Comant leât
+<&industrial_switchlink_relay>Un acessori in forme di relè al da ai panei un pont locâl di comutazion compat.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje. Dopre blocs ricevidôrs cuant che ti covente ativâ cuntune perle leade.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Relè analogjic di leam
+Comant leât
+<&industrial_switchlink_relay_analog>Un acessori in forme di relè al da ai panei un pont locâl di comutazion compat.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje. Dopre blocs ricevidôrs cuant che ti covente ativâ cuntune perle leade.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Perle di leam di interutôrs
+Comant leât
+<&switchlink_pearl>Une perle leade e conserve un ricevidôr di destinazion pai controi di fabriche a distance.<br>
+<br>
+Ûs: fâs clic suntun ricevidôr di leam di interutôrs cuntune perle dal End par creânt une. Dopre la perle leade biel che tu sês sbassât par ativâ il ricevidôr regjistrât.<br>
+<br>
+Notis: la destinazion e à di jessi cjariade, te stesse dimension e a puartade.
+<np>
+Jeve vecje ornade
+Control cun redstone
+<&oldfancy_bistableswitch1>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve vecje ornade rotative
+Control cun redstone
+<&oldfancy_bistableswitch2>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve rustiche rotative
+Control cun redstone
+<&rustic_angular_lever>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve rustiche
+Control cun redstone
+<&rustic_lever>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve rustiche a claut
+Control cun redstone
+<&rustic_nail_lever>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.
+<np>
+Jeve rustiche cun dôs cernieris
+Control cun redstone
+<&rustic_two_hinge_lever>Un aparechi di comant compat al da aes costruzions di fabriche un pont di interuzion di redstone ben visibil.<br>
+<br>
+Ûs: fâs clic di diestre par impiâ o distudâ la jessude a plene potence pai circuits dongje.<br>
+<br>
+Notis: al mande redstone a plene potence fintremai che al è impiât.

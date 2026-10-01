@@ -1,0 +1,7 @@
+Wykrywacz bytów
+Wykrywanie sygnałów
+<&recipe>Wykrywacz bytów obserwuje pobliski ruch bez widocznej płytki podłogowej.<br>
+<br>
+Użycie: Podłącz go do drzwi, lamp, alarmów lub blokad bezpieczeństwa maszyn.<br>
+<br>
+Uwagi: Skanuje niewielki obszar wokół bloku.

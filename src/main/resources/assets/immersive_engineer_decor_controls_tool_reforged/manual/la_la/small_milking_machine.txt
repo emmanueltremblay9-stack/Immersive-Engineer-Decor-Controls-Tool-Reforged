@@ -1,0 +1,5 @@
+Machina mulgendi
+Auxilium pavimenti officinae
+<&recipe>Machina parva mulgendi est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: prope vaccas pone et viam vasis lactis aut fluidi auferendi praebe.<br>

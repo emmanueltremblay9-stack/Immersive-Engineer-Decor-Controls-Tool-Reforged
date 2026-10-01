@@ -1,0 +1,41 @@
+jo en tawa
+kipisi jo en kipisi tawa
+kipisi jo en kipisi tawa li lawa e poki, e poki sike, e poki kama jo, e lupa lawa tawa nasin lili pi tomo pali.<br>
+<br>
+o kepeken lipu ni lon pali pi tomo jo, pi nasin linja telo, pi poki telo pi pali awen, pi linja telo lawa.
+<np>
+poki pi lipu nimi
+nimi jo pi ken ante
+<&labeled_crate>poki ni pi lipu nimi li tawa kulupu pona pi tomo jo. sina ken ante e supa sinpin ona sama sitelen lili pi tomo pali.<br>
+<br>
+kepeken: o luka kepeken nena teje e supa nimi tawa ante e nimi poki. o luka kepeken nena teje e kipisi ante pi poki sama tawa open e jo pi kipisi wan, pi kipisi, pi ijo wile pi pali awen.<br>
+<np>
+poki sike telo
+ilo linja telo
+<&fluid_barrel>kipisi ni li kipisi linja telo lili tawa poki telo lili, tawa nasin linja telo, tawa ma kama jo, tawa tawa telo pi lawa Redstone.<br>
+<br>
+kepeken: o pana e ona lon ma ni: linja telo anu poki telo li ken tawa sinpin poki.<br>
+<np>
+poki kama jo telo
+ilo linja telo
+<&small_fluid_funnel>poki lili pi kama jo telo li kipisi linja telo lili tawa poki telo lili, tawa nasin linja telo, tawa ma kama jo, tawa tawa telo pi lawa Redstone.<br>
+<br>
+kepeken: o pana e ona lon anpa pi ma kama jo telo li nasin e ijo jo ona tawa poki telo anu tawa linja telo anpa.<br>
+<np>
+lupa lawa pi telo wan nasin
+ilo linja telo
+<&straight_pipe_valve>lupa lawa pi telo wan nasin li kipisi linja telo lili tawa poki telo lili, tawa nasin linja telo, tawa ma kama jo, tawa tawa telo pi lawa Redstone.<br>
+<br>
+kepeken: o nasin e lupa lawa sama nasin telo pi wile sina.<br>
+<np>
+lupa lawa telo Redstone
+ilo linja telo
+<&straight_pipe_valve_redstone>lupa lawa telo Redstone li kipisi linja telo lili tawa poki telo lili, tawa nasin linja telo, tawa ma kama jo, tawa tawa telo pi lawa Redstone.<br>
+<br>
+kepeken: o nasin e lupa lawa sama nasin telo pi wile sina.<br>
+<np>
+lupa lawa telo pi mute wawa
+ilo linja telo
+<&straight_pipe_valve_redstone_analog>lupa lawa telo pi mute wawa li kipisi linja telo lili tawa poki telo lili, tawa nasin linja telo, tawa ma kama jo, tawa tawa telo pi lawa Redstone.<br>
+<br>
+kepeken: o nasin e lupa lawa sama nasin telo pi wile sina.<br>

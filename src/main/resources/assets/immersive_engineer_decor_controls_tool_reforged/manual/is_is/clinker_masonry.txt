@@ -1,0 +1,161 @@
+Klinker og múrverk
+Múrsteins- og steinsteypuhjúpar
+Klinker, gjallmúrsteinar, járnbent steinsteypa og bryngler veita þunga fleti fyrir heit herbergi, verkstæði og varið útsýni.<br>
+<br>
+Notaðu samsvarandi hellur, tröppur, þunn lög og veggi til að ganga frá brúnum án þess að breyta efnisstíl verksmiðjunnar.
+<np>
+Klinkermúrsteinskubbur
+Múrverk dökkt af sóti
+<&clinker_brick_block>Þessi kubbur gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Klinkermúrhella
+Múrverk dökkt af sóti
+<&clinker_brick_slab>Þessi kubbur gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Klinkermúrsteinströppur
+Múrverk dökkt af sóti
+<&clinker_brick_stairs>Þessi kubbur gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Klinkermúrsteinsveggur
+Múrverk dökkt af sóti
+<&clinker_brick_wall>Þessi kubbur gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Flekkóttur klinkerkubbur
+Múrverk dökkt af sóti
+<&clinker_brick_stained_block>Flekkótti klinkermúrsteinskubburinn gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Flekkótt klinkerhella
+Múrverk dökkt af sóti
+<&clinker_brick_stained_slab>Flekkótta klinkermúrhellan gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Flekkóttar klinkertröppur
+Múrverk dökkt af sóti
+<&clinker_brick_stained_stairs>Flekkóttu klinkermúrsteinströppurnar gefa sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Skreyttur klinkermúrsteinn
+Múrverk dökkt af sóti
+<&clinker_brick_sastor_corner_block>Sandsteinsskreytti klinkermúrsteinninn gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Inndreginn klinkermúrsteinn
+Múrverk dökkt af sóti
+<&clinker_brick_recessed>Þessi kubbur gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Raufóttir klinkermúrsteinar
+Múrverk dökkt af sóti
+<&clinker_brick_vertically_slit>Klinkermúrsteinarnir með lóðréttum raufum gefa sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Lóðrétt klinkerhella
+Múrverk dökkt af sóti
+<&clinker_brick_vertical_slab_structured>Lóðrétta klinkermúrhellan með mynstri gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Hálf klinkermúrhella
+Múrverk dökkt af sóti
+<&halfslab_clinker_brick>Þessi kubbur gefur sótdökkt múrverk í ofnasölum, reykháfsundirstöðum og þjónustuveggjum.<br>
+<br>
+Notkun: Notaðu hann sem vegg, kant eða hlíf utan um heit svæði við ofna og katla.<br>
+<np>
+Gjallmúrsteinskubbur
+Þétt verksmiðjumúrverk
+<&slag_brick_block>Þessi kubbur bætir við þéttu grábrúnu múrverki fyrir undirstöður, stoðveggi og eldri vinnuskúra.<br>
+<br>
+Notkun: Notaðu hann í eldri undirstöður, stoðveggi og óhrein verksmiðjugólf.<br>
+<np>
+Gjallmúrhella
+Þétt verksmiðjumúrverk
+<&slag_brick_slab>Þessi kubbur bætir við þéttu grábrúnu múrverki fyrir undirstöður, stoðveggi og eldri vinnuskúra.<br>
+<br>
+Notkun: Notaðu hann í eldri undirstöður, stoðveggi og óhrein verksmiðjugólf.<br>
+<np>
+Gjallmúrsteinströppur
+Þétt verksmiðjumúrverk
+<&slag_brick_stairs>Þessi kubbur bætir við þéttu grábrúnu múrverki fyrir undirstöður, stoðveggi og eldri vinnuskúra.<br>
+<br>
+Notkun: Notaðu hann í eldri undirstöður, stoðveggi og óhrein verksmiðjugólf.<br>
+<np>
+Gjallmúrsteinsveggur
+Þétt verksmiðjumúrverk
+<&slag_brick_wall>Þessi kubbur bætir við þéttu grábrúnu múrverki fyrir undirstöður, stoðveggi og eldri vinnuskúra.<br>
+<br>
+Notkun: Notaðu hann í eldri undirstöður, stoðveggi og óhrein verksmiðjugólf.<br>
+<np>
+Járnbentur steinsteypukubbur
+Járnbent steinsteypa
+<&rebar_concrete>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Járnbent steinsteypuhella
+Járnbent steinsteypa
+<&rebar_concrete_slab>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Járnbentar steinsteyputröppur
+Járnbent steinsteypa
+<&rebar_concrete_stairs>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Járnbentur steinsteypuveggur
+Járnbent steinsteypa
+<&rebar_concrete_wall>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Þunnt lag af járnbentri steinsteypu
+Járnbent steinsteypa
+<&halfslab_rebar_concrete>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Járnbent steinsteypuflís
+Járnbent steinsteypa
+<&rebar_concrete_tile>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Járnbent steinsteypuflísahella
+Járnbent steinsteypa
+<&rebar_concrete_tile_slab>Þessi kubbur er hertur steinsteypuhluti fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Járnbent steinsteypuflís
+Járnbent steinsteypa
+<&rebar_concrete_tile_stairs>Járnbentu steinsteypuflísatröppurnar eru hertir steinsteypuhlutar fyrir vélaundirstöður, sprengivarnarveggi og gólf við hleðsludyr.<br>
+<br>
+Notkun: Notaðu hann undir vélar, meðfram þjónustugöngum eða hvar sem byggingin þarf styrkta undirstöðu.<br>
+<np>
+Brynglerskubbur
+Varið útsýni
+<&panzerglass_block>Þessi kubbur heldur sjónlínum opnum og fellur samt að styrktum verksmiðjubyggingum.<br>
+<br>
+Notkun: Notaðu hann þar sem leikmenn eiga að sjá vélar í gegnum varið skilrúm.<br>
+<np>
+Brynglershella
+Varið útsýni
+<&panzerglass_slab>Þessi kubbur heldur sjónlínum opnum og fellur samt að styrktum verksmiðjubyggingum.<br>
+<br>
+Notkun: Notaðu hann þar sem leikmenn eiga að sjá vélar í gegnum varið skilrúm.<br>

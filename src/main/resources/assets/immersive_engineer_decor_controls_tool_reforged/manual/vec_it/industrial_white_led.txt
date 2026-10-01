@@ -1,0 +1,7 @@
+LED bianca
+Indicasion de’l segnal
+<&recipe>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.

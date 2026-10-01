@@ -1,0 +1,108 @@
+Indusdriebaudn
+Fabrigwände un Ganddn
+Allgemeine Baudeile sin Diern, Fänsdor, Lischdor, Warnschillor, Ganddn un Draachdeile, die in geene genauere Abdeilung bassn.<br>
+<br>
+Nimm diese Seidn für Fabrigräume, Wardungsgänge, Gefahrenmargierungen un zweggmäßige Indusdriededails.
+<np>
+Eisnbirnlischd
+Gleenes Arbeedslischd
+<&iron_bulb_light>Dieser Blogg gibd gleene Indusdriebeleuchdung für Gänge, Laufschdeege un Arbeedsbuchdn.<br>
+<br>
+Nuddzung: Bring’n an Deggn, Wändn oddor Ganddn an, wo dor Raum guds Arbeedslischd brauchd.<br>
+<np>
+Deggngandnlischd
+Gleenes Arbeedslischd
+<&iron_ceiling_edge_light>Dieser Blogg gibd gleene Indusdriebeleuchdung für Gänge, Laufschdeege un Arbeedsbuchdn.<br>
+<br>
+Nuddzung: Bring’n an Deggn, Wändn oddor Ganddn an, wo dor Raum guds Arbeedslischd brauchd.<br>
+<np>
+Eingelassnes Bodngandnlischd
+Gleenes Arbeedslischd
+<&iron_floor_edge_light>Dieser Blogg gibd gleene Indusdriebeleuchdung für Gänge, Laufschdeege un Arbeedsbuchdn.<br>
+<br>
+Nuddzung: Bring’n an Deggn, Wändn oddor Ganddn an, wo dor Raum guds Arbeedslischd brauchd.<br>
+<np>
+Eingelassnes Lischd
+Gleenes Arbeedslischd
+<&iron_inset_light>Dieser Blogg gibd gleene Indusdriebeleuchdung für Gänge, Laufschdeege un Arbeedsbuchdn.<br>
+<br>
+Nuddzung: Bring’n an Deggn, Wändn oddor Ganddn an, wo dor Raum guds Arbeedslischd brauchd.<br>
+<np>
+Schild „Allgemeine Vorsichd
+Gefahrenmargierung
+<&sign_caution>Das Schild „Allgemeine Vorsichd“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Gefahrenschild
+Gefahrenmargierung
+<&sign_danger>Das Schild „Obbach, hier isses richd’sch gefährl’sch“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Zierschild
+Gefahrenmargierung
+<&sign_decor>De Schillorbladde (Engineer's decor) margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Abwehrschild
+Gefahrenmargierung
+<&sign_defense>Das Schild „Obbach, Abwehrsystem voraus“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Ausgangsschild
+Gefahrenmargierung
+<&sign_exit>Dieses Schild margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Schild „Feuorrgefahr
+Gefahrenmargierung
+<&sign_firehazard>Das Schild „Feuorrgefahr“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Schild „Frosdwarnung
+Gefahrenmargierung
+<&sign_frost>Das Schild „Frosdwarnung“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Schild für heeße Flächen
+Gefahrenmargierung
+<&sign_hotsurface>Das Schild „Obbach, heeße Fläche“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Schild für Drahd undor Schdrom
+Gefahrenmargierung
+<&sign_hotwire>Das Schild „Obbach, Drahd undor Schdrom“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Schild „Lasergefahr
+Gefahrenmargierung
+<&sign_laser>Das Schild „Lasergefahr“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Schild für mag’sche Gefahr
+Gefahrenmargierung
+<&sign_magichazard>Das Schild „Obbach, mag’sche Gefahr“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Magnedfeldschild
+Gefahrenmargierung
+<&sign_magneticfield>Das Schild „Obbach, schdarges Magnedfeld“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>
+Schild „Radioaggdive Gefahr
+Gefahrenmargierung
+<&sign_radioactive>Das Schild „Radioaggdive Gefahr“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>
+<np>

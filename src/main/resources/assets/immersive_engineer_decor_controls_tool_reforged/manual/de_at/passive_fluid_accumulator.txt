@@ -1,0 +1,5 @@
+Passive Flüssigkeitssammlung
+Bauteil für Flüssigkeitsleitungen
+<&recipe>Da passive Flüssigkeitssammla is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setz eam an passende Wossaquelln und lass Plotz für de Flüssigkeitsentnahme.<br>

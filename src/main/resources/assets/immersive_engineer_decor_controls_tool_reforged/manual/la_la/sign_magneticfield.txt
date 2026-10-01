@@ -1,0 +1,5 @@
+Tabula campi magnetici
+Signum periculi
+<&recipe>Tabula «Cave campum magneticum validum» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>

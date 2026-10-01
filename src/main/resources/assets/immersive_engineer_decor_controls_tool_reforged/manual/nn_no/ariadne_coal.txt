@@ -1,0 +1,7 @@
+Ariadne-kol
+Rutemerking i gruver
+<&recipe>Ariadne-kol merkjer raskt ruter i sjakter, forgreina gruver og mellombelse arbeidsstader under jorda.<br>
+<br>
+Bruk: klikk på ei stødig blokkflate for å setje ei svart pil der. Merket les klikkpunktet på flata og støttar åtte retningar, òg diagonalt. Då kan du merkje svingar, utgangar, blindvegar og forsyningsruter utan å ta med eigne vegvisarskilt.<br>
+<br>
+Ariadne-kol er eit gjenbrukbart merkeverktøy med 100 bruk. Kvart vellukka merke kostar eitt haldbarheitspoeng. Flater som ikkje duger, blir avviste utan slitasje.

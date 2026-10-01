@@ -1,0 +1,5 @@
+Šlakovy cegleny platform
+Plotny fabričny mur
+<&recipe>Sej blok dodavaje plotny sivo-koričnevy mur dlja fundamentov, podpornyh stěn i staryh rabotnyh šup.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja staryh fundamentov, podpornyh stěn i nečistyh fabričnyh podlog.<br>

@@ -1,0 +1,7 @@
+Pahu Waihona Mea Kūkulu
+Pahu lako kūkulu
+<&recipe>Lawe ka Pahu Mea Hana i ka nui o hoʻokahi ʻano mea kūkulu maʻalahi, loli ʻole, a hiki ke hoʻāhu.<br>
+<br>
+Hoʻohana: E paʻa i ka pahu ma ka lima nui a me ka pūʻulu mea ma ka lima ʻē aʻe e hoʻokomo ai. E hoʻohana me ka lima ʻē aʻe hakahaka e unuhi i hoʻokahi pūʻulu.<br>
+<br>
+Hiki ke mālama i 512 mea o hoʻokahi ʻano. Hōʻole ia i nā pahu i loko, nā pono hiki ʻole ke hoʻāhu, a me nā pūʻulu inoa ʻia a ʻikepili paha; hōʻike ka tooltip i ka waihona.

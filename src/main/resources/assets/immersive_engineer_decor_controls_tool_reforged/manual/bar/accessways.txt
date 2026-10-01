@@ -1,0 +1,127 @@
+Zugangsweg
+Laufweg und Stützn
+Stahlpfeila, behandelte Hoizpfostn, Gitterrost, Laufsteg, Geländer, Leitern, Tiern, Fensta und Lukn ergeben kloane Wartungsweg durch d'Fabrik.<br>
+<br>
+De Stahlteil fia Zugangsweg brauchn Stahlplattn. Stell a Metallwerkbank her oder setz oane hi, leg an Hamma vo Immersive Engineering nei und hamma Stahlbarren zu Stahlplattn fia Pfeila, Laufsteg, Fensta, Tiern, Geländer und andere Stahlverzierunga.<br>
+<br>
+Setz's dorthin, wo Maschinen an Wartungszugang, erhöhte Weg, Wartungsschächt oder sicherere Kantn brauchn.
+<np>
+Dicker Stahlpfeila
+Teil vom Tragrahma
+<&thick_steel_pole>Da grade dicke Stahlpfeila gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Kopf fia an dicken Pfeila
+Teil vom Tragrahma
+<&thick_steel_pole_head>Da Kopf/Fuass fia an graden dicken Stahlpfeila gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Dünner Stahlpfeila
+Teil vom Tragrahma
+<&thin_steel_pole>Da grade dünne Stahlpfeila gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Kopf fia an dünnen Pfeila
+Teil vom Tragrahma
+<&thin_steel_pole_head>Da Kopf/Fuass fia an graden dünnen Stahlpfeila gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Pfeila aus behandltem Hoiz
+Teil vom Tragrahma
+<&treated_wood_pole>Da grade Pfeila aus behandltem Hoiz gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Kopf fia an behandelten Pfeila
+Teil vom Tragrahma
+<&treated_wood_pole_head>Da Kopf/Fuass fia an graden Pfeila aus behandltem Hoiz gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Stützn fia an behandelten Pfeila
+Teil vom Tragrahma
+<&treated_wood_pole_support>De Stützn fia an graden Pfeila aus behandltem Hoiz gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Stahl-Doppel-T-Stützn
+Teil vom Tragrahma
+<&steel_double_t_support>Der Block gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>
+<np>
+Stahlbodnrost
+Wartungszugang
+<&steel_floor_grating>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Stahllaufsteg
+Wartungszugang
+<&steel_catwalk>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Stahllaufstegschdiang
+Wartungszugang
+<&steel_catwalk_stairs>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Hocha Stahllaufsteg
+Wartungszugang
+<&steel_catwalk_ta>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Stahlgeländer
+Wartungszugang
+<&steel_railing>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Stahlgitterzaun
+Wartungszugang
+<&steel_mesh_fence>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Stahlgitterzauntor
+Wartungszugang
+<&steel_mesh_fence_gate>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Metallsprossnleita
+Wartungszugang
+<&metal_rung_ladder>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Versetzte Metalltritt
+Wartungszugang
+<&metal_rung_steps>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>
+<np>
+Fensta mit Stahlrahma
+Gschützter Durchblick
+<&steel_framed_window>Mit dem Block bleibt da Durchblick frei, und er passt trotzdem zu verstärkte Fabrikbauten.<br>
+<br>
+So geht's: Setz'n in a Maueröffnung vo 1 Block, wo de Spiela durch a gschützte Wand auf Maschinen schaun solln.<br>
+<np>
+Metallschiebetia
+Industriezugang
+<&metal_sliding_door>Der Block schafft an robusten Zugang zu Wartungsräum, Schächt, Dächer und Maschinenverkleidunga.<br>
+<br>
+So geht's: Bau'n dort ei, wo a kontrollierte Wartungsöffnung braucht wird.<br>
+<np>
+Eisenluke
+Industriezugang
+<&iron_hatch>Der Block schafft an robusten Zugang zu Wartungsräum, Schächt, Dächer und Maschinenverkleidunga.<br>
+<br>
+So geht's: Bau'n dort ei, wo a kontrollierte Wartungsöffnung braucht wird.<br>

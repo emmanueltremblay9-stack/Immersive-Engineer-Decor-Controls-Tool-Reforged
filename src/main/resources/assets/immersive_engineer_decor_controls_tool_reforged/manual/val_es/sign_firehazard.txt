@@ -1,0 +1,5 @@
+Cartell «Risc d’incendi»
+Marcador de perill
+<&recipe>El cartell «Risc d’incendi» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>

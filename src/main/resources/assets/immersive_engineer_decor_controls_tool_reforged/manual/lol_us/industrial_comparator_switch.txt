@@ -1,0 +1,7 @@
+Comparator Switchy
+Attached signalz
+<&recipe>Lil sensor switch reads da bluk it sits on an turns dat reading into simple panel output, kitty.<br>
+<br>
+How to: Mount on inventories, tankz, or redstone hardware. When da attached bluk reports comparator, container, or redstone output, switch gives full-strength redstone, meow.<br>
+<br>
+Kitty note: Turns storage levlz or hidden wiring into clear YISS/NAW control linez.

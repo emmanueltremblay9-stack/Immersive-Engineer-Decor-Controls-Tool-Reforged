@@ -1,0 +1,5 @@
+Elektrisk ovn
+Kompakt bearbejdningsenhed
+<&recipe>Den elektriske ovn udfører kompakte FE-drevne smelteopgaver på begrænset værkstedsplads.<br>
+<br>
+Brug: Tilfør FE og gyldigt smeltemateriale.<br>

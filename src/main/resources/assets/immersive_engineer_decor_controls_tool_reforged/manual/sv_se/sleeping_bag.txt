@@ -1,0 +1,7 @@
+Sovsäck
+Bärbar sovutrustning
+<&recipe>Sovsäcken är ett vädertåligt vilokit för arbete långt från en säng.<br>
+<br>
+Använd den på natten i Overworld för att vila till morgonen utan att ändra återuppståndelsepunkten.<br>
+<br>
+Den fungerar inte på dagen, nära monster eller i olämpliga dimensioner. Varje lyckad vila sliter på säcken.

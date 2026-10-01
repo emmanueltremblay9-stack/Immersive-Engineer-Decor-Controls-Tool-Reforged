@@ -1,0 +1,7 @@
+Tragač
+Oznaka spremljenog položaja
+<&recipe>Tragač sprema položaj bloka izravno u predmet.<br>
+<br>
+Uporaba: Klikni blok kako bi spremio dimenziju i koordinate. Opis pokazuje spremljeni položaj. Upotrijebi tragač šuljajući se da ukloniš cilj.<br>
+<br>
+Koristi ga za označavanje strojeva, račvanja tunela, daljinskih komandi ili nedovršenih gradilišta prije povratka s alatima i materijalima.

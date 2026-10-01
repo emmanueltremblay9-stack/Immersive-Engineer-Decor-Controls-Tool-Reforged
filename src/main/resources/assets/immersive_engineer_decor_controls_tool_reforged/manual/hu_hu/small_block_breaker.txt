@@ -1,0 +1,5 @@
+Blokktörő
+Műhelyi segédeszköz
+<&recipe>A kis blokktörő műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: fordítsd a munkafelületét az eltávolítandó blokk felé.<br>

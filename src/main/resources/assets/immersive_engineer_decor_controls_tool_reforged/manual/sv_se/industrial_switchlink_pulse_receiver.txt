@@ -1,0 +1,7 @@
+Pulslänkmottagare
+Länkad styrning
+<&recipe>En länkad pulsmottagare ger fjärrpaneler en kort redstoneutlösning.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Högerklicka på mottagaren eller aktivera den länkade pärlan för att skicka en kort puls.<br>
+<br>
+Anmärkning: Pulsen återställs automatiskt efter den inställda tiden.

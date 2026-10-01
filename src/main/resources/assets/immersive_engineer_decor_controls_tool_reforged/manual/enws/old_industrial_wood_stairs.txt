@@ -1,0 +1,5 @@
+Old Stairs of Wood
+Aged Timber for the Workshop
+<&recipe>The Old Manufactory Wood Stairs add aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>

@@ -1,0 +1,789 @@
+Redstonea regili
+Mezurili e signalaparati
+Regilaro transformas celita redstoneo a klare lektebla fabrikpaneli, sensili, indikili, komutili, alarmi e ligita signalaparati.<br>
+<br>
+Uzez ca pagini por konstruktar operacistostacioni, signaltabuli, sekuresocirkuiti e distanta regili.
+<np>
+Flechopafskopo
+Momenta impulso
+<&arrow_target>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Pordosensilo
+Redstonea regado
+<&door_sensor_switch>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Liftobutono
+Redstonea regado
+<&elevator_button>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Vitrobutono
+Redstonea regado
+<&glass_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Vitrobutono
+Redstonea regado
+<&glass_small_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Taktala vitrobutono
+Redstonea regado
+<&glass_touch_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Mashinbutono
+Redstonea regado
+<&industrial_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Butono
+Redstonea regado
+<&industrial_double_pole_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Mashinbutono kun gardilo
+Redstonea regado
+<&industrial_fenced_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Frapbutono
+Redstonea regado
+<&industrial_knock_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Olda ornita butono
+Redstonea regado
+<&oldfancy_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Olda ornita butono
+Redstonea regado
+<&oldfancy_small_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Olda ornita katenbutono
+Momenta impulso
+<&oldfancy_spring_reset_chain>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Rustika butono
+Redstonea regado
+<&rustic_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Rustika klovobutono
+Redstonea regado
+<&rustic_nail_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Mikra rustika butono
+Redstonea regado
+<&rustic_small_button>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Rustika katenbutono
+Momenta impulso
+<&rustic_spring_reset_chain>Momenta komutilo donas klara redstonea impulso ye plena forteso.<br>
+<br>
+Uzo: Uzez ol por mashinstarti, pordoaperti, alarmi o unufoya cirkuiti.<br>
+<br>
+Noti: Ol reinicialigesas pos sua definita impulso.
+<np>
+Vitrokontaktoplako
+Presoimpulso
+<&glass_contact_mat>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Vitra pordokontaktilo
+Presoimpulso
+<&glass_door_contact_mat>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Kontaktotapiso
+Presoimpulso
+<&industrial_contact_mat>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Pordokontaktotapiso
+Presoimpulso
+<&industrial_door_contact_mat>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Trafalodetektilo
+Signaldetekto
+<&industrial_fallthrough_detector>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Pedbutono
+Redstonea regado
+<&industrial_foot_button>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Industriala shoktrapo
+Presoimpulso
+<&industrial_high_sensitive_trapdoor>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Shokkontaktotapiso
+Presoimpulso
+<&industrial_shock_sensitive_contact_mat>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Shoktrapo
+Presoimpulso
+<&industrial_shock_sensitive_trapdoor>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Reda energioplanto
+Presoimpulso
+<&red_power_plant>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Rustika presoplako
+Presoimpulso
+<&rustic_contact_plate>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Rustika pordopresoregilo
+Presoimpulso
+<&rustic_door_contact_plate>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Rustika falodetektilo
+Signaldetekto
+<&rustic_fallthrough_detector>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Rustika shoktrapo
+Presoimpulso
+<&rustic_high_sensitive_trapdoor>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Rustika shokplako
+Presoimpulso
+<&rustic_shock_sensitive_plate>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Rustika shoktrapo
+Presoimpulso
+<&rustic_shock_sensitive_trapdoor>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Flava energioplanto
+Presoimpulso
+<&yellow_power_plant>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.
+<np>
+Vitra diotempohorlojo
+Diolumosignalo
+<&glass_day_timer>Temporizila komutilo sequas la diurna parto di la mondociklo.<br>
+<br>
+Uzo: Uzez ol por kortolampi, fenestroklapi e fabrikregili por nur diurna uzo.<br>
+<br>
+Noti: Bezonas dimensiono kun ciellumo.
+<np>
+Vitra entodetektilo
+Signaldetekto
+<&glass_entity_detector>Entodetektilo observas proxima movado sen videbla plankoplako.<br>
+<br>
+Uzo: Konektez ol a pordi, lampi, alarmi o mashininterblokili.<br>
+<br>
+Noti: Skanas mikra regiono cirkum la bloko.
+<np>
+Vitra intervalosignalo
+Temporizita impulso
+<&glass_interval_timer>Kompakta temporizila komutilo furnisas planita redstonea impulso.<br>
+<br>
+Uzo: Uzez ol ube mikra mekanismo bezonas periodala o prokrastita regado.<br>
+<br>
+Noti: Uzas planita redstonea impulsi.
+<np>
+Vitra lineala detektilo
+Signaldetekto
+<&glass_linear_entity_detector>Entodetektilo observas proxima movado sen videbla plankoplako.<br>
+<br>
+Uzo: Konektez ol a pordi, lampi, alarmi o mashininterblokili.<br>
+<br>
+Noti: Skanas mikra regiono cirkum la bloko.
+<np>
+Blokodetektilo
+Signaldetekto
+<&industrial_block_detector>Blokodetektilo kontrolas ka la spaco avan ol esas okupata.<br>
+<br>
+Uzo: Direktez ol vers la surveyenda mashinfacio, buffer o gardata spaco.<br>
+<br>
+Noti: Ol emisas energio kande la bloko avan ne esas aero.
+<np>
+Diotempohorlojo
+Diolumosignalo
+<&industrial_day_timer>Temporizila komutilo sequas la diurna parto di la mondociklo.<br>
+<br>
+Uzo: Uzez ol por kortolampi, fenestroklapi e fabrikregili por nur diurna uzo.<br>
+<br>
+Noti: Bezonas dimensiono kun ciellumo.
+<np>
+Entodetektilo
+Signaldetekto
+<&industrial_entity_detector>Entodetektilo observas proxima movado sen videbla plankoplako.<br>
+<br>
+Uzo: Konektez ol a pordi, lampi, alarmi o mashininterblokili.<br>
+<br>
+Noti: Skanas mikra regiono cirkum la bloko.
+<np>
+Intervalotemporizilo
+Temporizita impulso
+<&industrial_interval_timer>Kompakta temporizila komutilo furnisas planita redstonea impulso.<br>
+<br>
+Uzo: Uzez ol ube mikra mekanismo bezonas periodala o prokrastita regado.<br>
+<br>
+Noti: Uzas planita redstonea impulsi.
+<np>
+Lumsensilo
+Signaldetekto
+<&industrial_light_sensor>Lumsensilo konvertas la lokala lumintenseso a redstonea regado.<br>
+<br>
+Uzo: Uzez ol por automata lampi, fenestroklapi e videblesocirkuiti.<br>
+<br>
+Noti: Emisas energio ye kruda lumintenseso 8 o plu alta.
+<np>
+Tempestodetektilo
+Signaldetekto
+<&industrial_lightning_sensor>Tempestosensilo startigas averti dum fulmotondro.<br>
+<br>
+Uzo: Pozez ol sub libera cielo e konektez ol a lampi o alarmi.<br>
+<br>
+Noti: Bezonas fulmotondro ed aceso a cielo.
+<np>
+Lineala entodetektilo
+Signaldetekto
+<&industrial_linear_entity_detector>Entodetektilo observas proxima movado sen videbla plankoplako.<br>
+<br>
+Uzo: Konektez ol a pordi, lampi, alarmi o mashininterblokili.<br>
+<br>
+Noti: Skanas mikra regiono cirkum la bloko.
+<np>
+Pluvosensilo
+Signaldetekto
+<&industrial_rain_sensor>Veterosensilo konvertas la pluvo che sua loko a redstoneo.<br>
+<br>
+Uzo: Fixigez ol ube la supra bloko povas recevar pluvo.<br>
+<br>
+Noti: Kontrolas la pluvo super la sensilo.
+<np>
+Bistabila vitra komutilo
+Redstonea regado
+<&glass_rotary_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Bistabila vitra taktoregilo
+Redstonea regado
+<&glass_touch_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Oranjea sensiva vitro
+Signalvitro
+<&orange_sensitiveglass>Vitrobloko reaganta a redstoneo konservas vidlinii dum ol montras la signalstato.<br>
+<br>
+Uzo: Uzez ol en regochambra fenestri, lumizita paneli e protektita fabrikvitro.<br>
+<br>
+Noti: Chanjas stato pro apuda redstonea energio.
+<np>
+Lumizita sensiva vitro
+Signalvitro
+<&sensitive_glass_block>Vitrobloko reaganta a redstoneo konservas vidlinii dum ol montras la signalstato.<br>
+<br>
+Uzo: Uzez ol en regochambra fenestri, lumizita paneli e protektita fabrikvitro.<br>
+<br>
+Noti: Chanjas stato pro apuda redstonea energio.
+<np>
+Kolorita sensiva vitro
+Signalvitro
+<&stained_sensitiveglass>Vitrobloko reaganta a redstoneo konservas vidlinii dum ol montras la signalstato.<br>
+<br>
+Uzo: Uzez ol en regochambra fenestri, lumizita paneli e protektita fabrikvitro.<br>
+<br>
+Noti: Chanjas stato pro apuda redstonea energio.
+<np>
+Vitra stangoindikilo
+Signalmezurilo
+<&glass_vertical_bar_gauge>Kompakta mezurilo por regochambro montras la redstonea forteso klare sur panelo.<br>
+<br>
+Uzo: Fixigez ol ube apuda redstonea energio povas kontrolesar per rapida regardo.<br>
+<br>
+Noti: Lektas apuda redstonea forteso de 0 til 15.
+<np>
+Analoga mezurilo
+Signalmezurilo
+<&industrial_analog_angular_gauge>Kompakta mezurilo por regochambro montras la redstonea forteso klare sur panelo.<br>
+<br>
+Uzo: Fixigez ol ube apuda redstonea energio povas kontrolesar per rapida regardo.<br>
+<br>
+Noti: Lektas apuda redstonea forteso de 0 til 15.
+<np>
+Voltometra mezurilo
+Signalmezurilo
+<&industrial_analog_horizontal_gauge>Kompakta mezurilo por regochambro montras la redstonea forteso klare sur panelo.<br>
+<br>
+Uzo: Fixigez ol ube apuda redstonea energio povas kontrolesar per rapida regardo.<br>
+<br>
+Noti: Lektas apuda redstonea forteso de 0 til 15.
+<np>
+Digitala mezurilo
+Klare lektebla signalforteso
+<&industrial_small_digital_gauge>Kompakta mezurilo por regochambro montras la redstonea forteso klare sur panelo.<br>
+<br>
+Uzo: Fixigez ol ube apuda redstonea energio povas kontrolesar per rapida regardo.<br>
+<br>
+Noti: Lektas apuda redstonea forteso de 0 til 15.
+<np>
+Vitrotuba mezurilo
+Signalmezurilo
+<&industrial_tube_gauge>Kompakta mezurilo por regochambro montras la redstonea forteso klare sur panelo.<br>
+<br>
+Uzo: Fixigez ol ube apuda redstonea energio povas kontrolesar per rapida regardo.<br>
+<br>
+Noti: Lektas apuda redstonea forteso de 0 til 15.
+<np>
+Analoga stangomezurilo
+Signalmezurilo
+<&industrial_vertical_bar_gauge>Kompakta mezurilo por regochambro montras la redstonea forteso klare sur panelo.<br>
+<br>
+Uzo: Fixigez ol ube apuda redstonea energio povas kontrolesar per rapida regardo.<br>
+<br>
+Noti: Lektas apuda redstonea forteso de 0 til 15.
+<np>
+Alarmlampo
+Signalindiko
+<&industrial_alarm_lamp>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Alarmsireno
+Signalindiko
+<&industrial_alarm_siren>La alarm-sireno esas redstone-indikilo fixita sur faco. Olua stato kun povo sequas la signalo de la bloko ad qua ol esas fixita.<br>
+<br>
+Uzo: Fixigez ol a solida facio ed alimentez ol por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: La sireno rinovigas su unfoye por sekundo dum la konektita signalo restas aktiva.
+<np>
+Scintilanta LED
+Signalindiko
+<&industrial_blinking_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Verda scintilanta LED
+Signalindiko
+<&industrial_green_blinking_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Verda LED
+Signalindiko
+<&industrial_green_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Reda LED
+Signalindiko
+<&industrial_red_blinking_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Reda LED
+Signalindiko
+<&industrial_red_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Blanka scintilanta LED
+Signalindiko
+<&industrial_white_blinking_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Blanka LED
+Signalindiko
+<&industrial_white_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Flava scintilanta LED
+Signalindiko
+<&industrial_yellow_blinking_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Flava LED
+Signalindiko
+<&industrial_yellow_led>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Rustika semaforo
+Signalindiko
+<&rustic_semaphore>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.
+<np>
+Komparilokomutilo
+Konektita signalo
+<&industrial_comparator_switch>Kompakta sensila komutilo lektas la bloko sur qua ol fixigesas e konvertas ta lekto a simpla panelekiro.<br>
+<br>
+Uzo: Fixigez ol sur inventari, rezervuyi o redstonea aparati. Kande la portobloko raportas komparila, recipienta o redstonea ekiro, la komutilo emisas redstoneo ye plena forteso.<br>
+<br>
+Noti: Uzez ol por transformar stokoniveli o celita filkonekti a klara aktiva/desaktiva regolinei.
+<np>
+Intensoregilo
+Variabla signalo
+<&industrial_dimmer>Turnoregilo ajustas redstonea forteso sur kompakta panelfacio.<br>
+<br>
+Uzo: Klikez dextre por augmentar la ekiro per gradi; pos plena forteso, ol revenas a zero.<br>
+<br>
+Noti: Emisas forteso de 0 til 15.
+<np>
+Urjohaltobutono
+Redstonea regado
+<&industrial_estop_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Funelegoblokilo
+Redstonea regado
+<&industrial_hopper_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Frapkomutilo
+Redstonea regado
+<&industrial_knock_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Levero
+Redstonea regado
+<&industrial_lever>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Mashinkomutilo kun du butoni
+Redstonea regado
+<&industrial_machine_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Tirtenilo
+Redstonea regado
+<&industrial_pull_handle>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Turnolevero
+Redstonea regado
+<&industrial_rotary_lever>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Turnanta mashinkomutilo
+Redstonea regado
+<&industrial_rotary_machine_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Kontaktolevero
+Redstonea regado
+<&industrial_small_lever>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Komutilo
+Redstonea regado
+<&industrialswitch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Lumokomutilo
+Redstonea regado
+<&light_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Valvokomutilo
+Redstonea regado
+<&valve_wheel_switch>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Enkasigita impulsorecevilo
+Ligita regilo
+<&industrial_switchlink_cased_pulse_receiver>Enkasigita ligita impulsorecevilo donas kurta redstonea startigo a distanta paneli.<br>
+<br>
+Uzo: Klikez ol kun Enderperlo por krear ligita perlo. Klikez ol dextre o aktigez la ligita perlo por emisar kurta impulso.<br>
+<br>
+Noti: La impulso automate reinicialigesas pos sua definita duro.
+<np>
+Enkasigita ligoricevilo
+Ligita regilo
+<&industrial_switchlink_cased_receiver>Enkasigita ligita ricevilo donas fortrezista redstonea skopo a distanta paneli.<br>
+<br>
+Uzo: Klikez ol kun Enderperlo por krear ligita perlo. Klikez dextre rekte sur la ricevilo por mane alternar lua stato.<br>
+<br>
+Noti: Ligita perlo alternigas ca ricevilo kande uzata reptante.
+<np>
+Impulsa ligoricevilo
+Ligita regilo
+<&industrial_switchlink_pulse_receiver>Ligita impulsorecevilo donas kurta redstonea startigo a distanta paneli.<br>
+<br>
+Uzo: Klikez ol kun Enderperlo por krear ligita perlo. Klikez ol dextre o aktigez la ligita perlo por emisar kurta impulso.<br>
+<br>
+Noti: La impulso automate reinicialigesas pos sua definita duro.
+<np>
+Impulsa ligorelayo
+Ligita regilo
+<&industrial_switchlink_pulse_relay>Instaluro kun relaya aspekto donas kompakta lokala komutopunkto a panelkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti. Uzez ricevila bloki kande vu bezonas aktigo per ligita perlo.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Ricevilo di komutiloligilo
+Ligita regilo
+<&industrial_switchlink_receiver>Ligita ricevilo donas redstonea skopo ye plena forteso a distanta paneli.<br>
+<br>
+Uzo: Klikez ol kun Enderperlo por krear ligita perlo. Klikez dextre rekte sur la ricevilo por mane alternar lua stato.<br>
+<br>
+Noti: Ligita perlo alternigas ca ricevilo kande uzata reptante.
+<np>
+Analoga ligoricevilo
+Ligita regilo
+<&industrial_switchlink_receiver_analog>Ligita ricevilo donas videbla distanta skopo a regopaneli.<br>
+<br>
+Uzo: Klikez ol kun Enderperlo por krear ligita perlo. Uzez ta perlo reptante por distance aktigar la ricevilo.<br>
+<br>
+Noti: Ca ricevilo emisas plena redstonea signalo kande startigita.
+<np>
+Relayo di komutiloligilo
+Ligita regilo
+<&industrial_switchlink_relay>Instaluro kun relaya aspekto donas kompakta lokala komutopunkto a panelkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti. Uzez ricevila bloki kande vu bezonas aktigo per ligita perlo.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Analoga ligorelayo
+Ligita regilo
+<&industrial_switchlink_relay_analog>Instaluro kun relaya aspekto donas kompakta lokala komutopunkto a panelkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti. Uzez ricevila bloki kande vu bezonas aktigo per ligita perlo.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Perlo di komutiloligilo
+Ligita regilo
+<&switchlink_pearl>Ligita perlo konservas ricevilskopo por distanta fabrikregili.<br>
+<br>
+Uzo: Klikez ricevilo di komutiloligilo kun Enderperlo por krear un. Uzez la ligita perlo reptante por aktigar la konservita ricevilo.<br>
+<br>
+Noti: La skopo mustas esar charjita, en la sama dimensiono ed en la atingodistanco.
+<np>
+Olda ornita levero
+Redstonea regado
+<&oldfancy_bistableswitch1>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Olda ornita turnolevero
+Redstonea regado
+<&oldfancy_bistableswitch2>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Rustika turnolevero
+Redstonea regado
+<&rustic_angular_lever>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Rustika levero
+Redstonea regado
+<&rustic_lever>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Rustika klovolevero
+Redstonea regado
+<&rustic_nail_lever>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.
+<np>
+Rustika levero kun du charnieri
+Redstonea regado
+<&rustic_two_hinge_lever>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.

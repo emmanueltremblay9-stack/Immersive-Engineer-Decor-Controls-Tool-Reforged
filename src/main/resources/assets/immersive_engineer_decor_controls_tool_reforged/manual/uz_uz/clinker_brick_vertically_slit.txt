@@ -1,0 +1,5 @@
+Tirqishli klinker g'ishtlar
+Qurumdan qoraygan g'isht
+<&recipe>Tik tirqishli klinker g'ishtlar pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>

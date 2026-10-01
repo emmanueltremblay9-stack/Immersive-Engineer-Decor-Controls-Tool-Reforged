@@ -1,0 +1,5 @@
+Miza iz obdelanega lesa
+Delavniško pohištvo
+<&recipe>Ta blok je uporaben kos delavniškega pohištva za delovne prostore in vzdrževalne kotičke.<br>
+<br>
+Uporaba: Postavi ga ob delovnih klopeh, zabojih in kompaktnih strojih.<br>

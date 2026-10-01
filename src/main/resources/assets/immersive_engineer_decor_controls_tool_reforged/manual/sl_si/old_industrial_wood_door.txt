@@ -1,0 +1,5 @@
+Stara industrijska lesena vrata
+Postaran delavniški les
+<&recipe>Ta blok dodaja postaran delavniški les za tla, stopnice, vrata in tople notranje obrobe.<br>
+<br>
+Uporaba: Uporabi ga za stara delavniška tla, stopnice, vrata in obrobe.<br>

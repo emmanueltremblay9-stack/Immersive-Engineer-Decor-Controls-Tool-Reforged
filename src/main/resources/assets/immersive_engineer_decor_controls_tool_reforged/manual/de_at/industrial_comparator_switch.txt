@@ -1,0 +1,7 @@
+Komparatorschoita
+Signal am Befestigungsblock
+<&recipe>A kompakter Sensorschoita liest seinen Befestigungsblock und macht draus an einfachen Tafelausgang.<br>
+<br>
+Verwendung: Montier eam an Inventarn, Tanks oda Redstone-Bauteiln. Meldet da Befestigungsblock an Komparator-, Behälter- oda Redstone-Ausgang, gibt da Schoita volle Redstone-Stärke aus.<br>
+<br>
+Hinweis: Macht aus Lagerfüllständen oda versteckten Leitungen klare Ein-/Aus-Steuerleitungen.

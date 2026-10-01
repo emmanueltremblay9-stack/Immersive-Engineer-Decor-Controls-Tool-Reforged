@@ -1,0 +1,7 @@
+Analoogne ühendusvastuvõtja
+Ühendatud juhtimine
+<&recipe>Ühendatud vastuvõtja annab juhtpaneelidele nähtava kaugsihtmärgi.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Vastuvõtja kaugaktiveerimiseks kasuta pärli hiilides.<br>
+<br>
+Märkus: See vastuvõtja väljastab käivitamisel täistugevusega redstone'i signaali.

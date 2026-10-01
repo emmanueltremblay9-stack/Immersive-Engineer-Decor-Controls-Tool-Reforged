@@ -1,0 +1,5 @@
+Tenky staljny stolp
+Čest konstrukcijnogo rama
+<&recipe>Pravy tenky staljny stolp davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>

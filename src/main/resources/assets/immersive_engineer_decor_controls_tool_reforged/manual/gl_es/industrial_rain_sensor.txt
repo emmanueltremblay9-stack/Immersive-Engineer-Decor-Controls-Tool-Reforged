@@ -1,0 +1,7 @@
+Sensor de chuvia
+Detección de sinais
+<&recipe>Un sensor meteorolóxico converte a chuvia que cae no seu lugar nun sinal de redstone.<br>
+<br>
+Uso: móntao onde o bloque de enriba poida recibir chuvia.<br>
+<br>
+Notas: comproba se chove sobre o sensor.

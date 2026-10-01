@@ -1,0 +1,789 @@
+Redstonekontroller
+Mätare och signaldelar
+Kontrollutrustningen gör dold redstone till avläsbara fabrikspaneler, sensorer, indikatorer, brytare, larm och länkade signaldelar.<br>
+<br>
+Använd de här sidorna när du bygger operatörsstationer, signaltavlor, säkerhetskretsar och fjärrkontroller.
+<np>
+Pilmåltavla
+Kort puls
+<&arrow_target>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Dörrsensor
+Redstonestyrning
+<&door_sensor_switch>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Hissknapp
+Redstonestyrning
+<&elevator_button>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Glasknapp
+Redstonestyrning
+<&glass_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Glasknapp
+Redstonestyrning
+<&glass_small_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Glaspekknapp
+Redstonestyrning
+<&glass_touch_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Maskinknapp
+Redstonestyrning
+<&industrial_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Knapp
+Redstonestyrning
+<&industrial_double_pole_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Maskinknapp med skyddsbygel
+Redstonestyrning
+<&industrial_fenced_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Knackknapp
+Redstonestyrning
+<&industrial_knock_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Gammal prydnadsknapp
+Redstonestyrning
+<&oldfancy_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Gammal prydnadsknapp
+Redstonestyrning
+<&oldfancy_small_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Gammal prydd kedjeknapp
+Kort puls
+<&oldfancy_spring_reset_chain>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Rustik knapp
+Redstonestyrning
+<&rustic_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Rustik spikknapp
+Redstonestyrning
+<&rustic_nail_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Liten rustik knapp
+Redstonestyrning
+<&rustic_small_button>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Rustik kedjeknapp
+Kort puls
+<&rustic_spring_reset_chain>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.
+<np>
+Glaskontaktplatta
+Tryckpuls
+<&glass_contact_mat>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Dörrkontakt av glas
+Tryckpuls
+<&glass_door_contact_mat>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Kontaktmatta
+Tryckpuls
+<&industrial_contact_mat>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Dörrkontaktmatta
+Tryckpuls
+<&industrial_door_contact_mat>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Genomfallsdetektor
+Signalavkänning
+<&industrial_fallthrough_detector>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Fotknapp
+Redstonestyrning
+<&industrial_foot_button>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Industriell stötutlöst dörr
+Tryckpuls
+<&industrial_high_sensitive_trapdoor>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Stötkänslig kontaktmatta
+Tryckpuls
+<&industrial_shock_sensitive_contact_mat>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Stötutlöst fallucka
+Tryckpuls
+<&industrial_shock_sensitive_trapdoor>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Röd kraftväxt
+Tryckpuls
+<&red_power_plant>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Rustik tryckplatta
+Tryckpuls
+<&rustic_contact_plate>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Rustik dörrtryckplatta
+Tryckpuls
+<&rustic_door_contact_plate>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Rustik falldetektor
+Signalavkänning
+<&rustic_fallthrough_detector>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Rustik stötutlöst dörr
+Tryckpuls
+<&rustic_high_sensitive_trapdoor>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Rustik stötplatta
+Tryckpuls
+<&rustic_shock_sensitive_plate>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Rustik stötutlöst dörr
+Tryckpuls
+<&rustic_shock_sensitive_trapdoor>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Gul kraftväxt
+Tryckpuls
+<&yellow_power_plant>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.
+<np>
+Dygnstimer av glas
+Dagsljussignal
+<&glass_day_timer>En timerbrytare följer den ljusa delen av världens dygn.<br>
+<br>
+Användning: Använd den till gårdslampor, jalusier och fabrikskontroller som bara ska fungera dagtid.<br>
+<br>
+Anmärkning: Kräver en dimension med himmelsljus.
+<np>
+Glasdetektor för entiteter
+Signalavkänning
+<&glass_entity_detector>En entitetsdetektor övervakar närliggande rörelser utan någon synlig golvplatta.<br>
+<br>
+Användning: Koppla den till dörrar, lampor, larm eller maskinförreglingar.<br>
+<br>
+Anmärkning: Söker av ett litet område runt blocket.
+<np>
+Intervallsignal av glas
+Tidsstyrd puls
+<&glass_interval_timer>En kompakt timerbrytare ger en tidsinställd redstonepuls.<br>
+<br>
+Användning: Använd den där en liten mekanism behöver regelbunden eller fördröjd styrning.<br>
+<br>
+Anmärkning: Använder tidsinställda redstonepulser.
+<np>
+Linjär glasdetektor
+Signalavkänning
+<&glass_linear_entity_detector>En entitetsdetektor övervakar närliggande rörelser utan någon synlig golvplatta.<br>
+<br>
+Användning: Koppla den till dörrar, lampor, larm eller maskinförreglingar.<br>
+<br>
+Anmärkning: Söker av ett litet område runt blocket.
+<np>
+Blockdetektor
+Signalavkänning
+<&industrial_block_detector>En blockdetektor kontrollerar om utrymmet framför den är upptaget.<br>
+<br>
+Användning: Rikta den mot maskinytan, bufferten eller det bevakade utrymmet som ska övervakas.<br>
+<br>
+Anmärkning: Ger signal när blocket framför den inte är luft.
+<np>
+Dygnstimer
+Dagsljussignal
+<&industrial_day_timer>En timerbrytare följer den ljusa delen av världens dygn.<br>
+<br>
+Användning: Använd den till gårdslampor, jalusier och fabrikskontroller som bara ska fungera dagtid.<br>
+<br>
+Anmärkning: Kräver en dimension med himmelsljus.
+<np>
+Entitetsdetektor
+Signalavkänning
+<&industrial_entity_detector>En entitetsdetektor övervakar närliggande rörelser utan någon synlig golvplatta.<br>
+<br>
+Användning: Koppla den till dörrar, lampor, larm eller maskinförreglingar.<br>
+<br>
+Anmärkning: Söker av ett litet område runt blocket.
+<np>
+Intervalltimer
+Tidsstyrd puls
+<&industrial_interval_timer>En kompakt timerbrytare ger en tidsinställd redstonepuls.<br>
+<br>
+Användning: Använd den där en liten mekanism behöver regelbunden eller fördröjd styrning.<br>
+<br>
+Anmärkning: Använder tidsinställda redstonepulser.
+<np>
+Ljussensor
+Signalavkänning
+<&industrial_light_sensor>En ljussensor omvandlar den lokala ljusstyrkan till redstonestyrning.<br>
+<br>
+Användning: Använd den för automatiska lampor, jalusier och kretsar som reagerar på sikten.<br>
+<br>
+Anmärkning: Ger signal vid en rå ljusstyrka på 8 eller högre.
+<np>
+Åskdetektor
+Signalavkänning
+<&industrial_lightning_sensor>En åsksensor aktiverar varningar när det åskar.<br>
+<br>
+Användning: Placera den under bar himmel och anslut den till lampor eller larm.<br>
+<br>
+Anmärkning: Kräver åska och fri sikt mot himlen.
+<np>
+Linjär entitetsdetektor
+Signalavkänning
+<&industrial_linear_entity_detector>En entitetsdetektor övervakar närliggande rörelser utan någon synlig golvplatta.<br>
+<br>
+Användning: Koppla den till dörrar, lampor, larm eller maskinförreglingar.<br>
+<br>
+Anmärkning: Söker av ett litet område runt blocket.
+<np>
+Regnsensor
+Signalavkänning
+<&industrial_rain_sensor>En vädersensor omvandlar regn vid sin position till redstone.<br>
+<br>
+Användning: Montera den där blocket ovanför kan utsättas för regn.<br>
+<br>
+Anmärkning: Kontrollerar regn ovanför sensorn.
+<np>
+Bistabil glasbrytare
+Redstonestyrning
+<&glass_rotary_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Bistabil glaspekbrytare
+Redstonestyrning
+<&glass_touch_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Orange känsligt glas
+Signalglas
+<&orange_sensitiveglass>Ett redstonereaktivt glasblock behåller sikten och visar samtidigt signalens tillstånd.<br>
+<br>
+Användning: Använd det till kontrollrumsfönster, upplysta paneler och skyddade glaspartier i fabriker.<br>
+<br>
+Anmärkning: Ändrar tillstånd efter närliggande redstonekraft.
+<np>
+Lysande känsligt glas
+Signalglas
+<&sensitive_glass_block>Ett redstonereaktivt glasblock behåller sikten och visar samtidigt signalens tillstånd.<br>
+<br>
+Användning: Använd det till kontrollrumsfönster, upplysta paneler och skyddade glaspartier i fabriker.<br>
+<br>
+Anmärkning: Ändrar tillstånd efter närliggande redstonekraft.
+<np>
+Färgat känsligt glas
+Signalglas
+<&stained_sensitiveglass>Ett redstonereaktivt glasblock behåller sikten och visar samtidigt signalens tillstånd.<br>
+<br>
+Användning: Använd det till kontrollrumsfönster, upplysta paneler och skyddade glaspartier i fabriker.<br>
+<br>
+Anmärkning: Ändrar tillstånd efter närliggande redstonekraft.
+<np>
+Glasstapelmätare
+Signalmätare
+<&glass_vertical_bar_gauge>En kompakt mätare för kontrollrum visar redstonestyrkan tydligt på panelen.<br>
+<br>
+Användning: Montera den där styrkan hos närliggande redstone ska kunna avläsas med en blick.<br>
+<br>
+Anmärkning: Läser närliggande redstonestyrka från 0 till 15.
+<np>
+Analog mätare
+Signalmätare
+<&industrial_analog_angular_gauge>En kompakt mätare för kontrollrum visar redstonestyrkan tydligt på panelen.<br>
+<br>
+Användning: Montera den där styrkan hos närliggande redstone ska kunna avläsas med en blick.<br>
+<br>
+Anmärkning: Läser närliggande redstonestyrka från 0 till 15.
+<np>
+Voltmetermätare
+Signalmätare
+<&industrial_analog_horizontal_gauge>En kompakt mätare för kontrollrum visar redstonestyrkan tydligt på panelen.<br>
+<br>
+Användning: Montera den där styrkan hos närliggande redstone ska kunna avläsas med en blick.<br>
+<br>
+Anmärkning: Läser närliggande redstonestyrka från 0 till 15.
+<np>
+Digital mätare
+Avläsbar signalstyrka
+<&industrial_small_digital_gauge>En kompakt mätare för kontrollrum visar redstonestyrkan tydligt på panelen.<br>
+<br>
+Användning: Montera den där styrkan hos närliggande redstone ska kunna avläsas med en blick.<br>
+<br>
+Anmärkning: Läser närliggande redstonestyrka från 0 till 15.
+<np>
+Glasrörsmätare
+Signalmätare
+<&industrial_tube_gauge>En kompakt mätare för kontrollrum visar redstonestyrkan tydligt på panelen.<br>
+<br>
+Användning: Montera den där styrkan hos närliggande redstone ska kunna avläsas med en blick.<br>
+<br>
+Anmärkning: Läser närliggande redstonestyrka från 0 till 15.
+<np>
+Analog stapelmätare
+Signalmätare
+<&industrial_vertical_bar_gauge>En kompakt mätare för kontrollrum visar redstonestyrkan tydligt på panelen.<br>
+<br>
+Användning: Montera den där styrkan hos närliggande redstone ska kunna avläsas med en blick.<br>
+<br>
+Anmärkning: Läser närliggande redstonestyrka från 0 till 15.
+<np>
+Alarmlampa
+Signalåterkoppling
+<&industrial_alarm_lamp>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Alarmsiren
+Signalåterkoppling
+<&industrial_alarm_siren>Alarmsirenen är en redstoneindikator som monteras på en blockyta. Dess strömläge följer signalen från blocket den sitter på.<br>
+<br>
+Fäst den på en solid yta och ge den ström för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Sirenen uppdateras en gång per sekund medan signalen är aktiv.
+<np>
+Blinkande lysdiod
+Signalåterkoppling
+<&industrial_blinking_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Grön blinkande lysdiod
+Signalåterkoppling
+<&industrial_green_blinking_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Grön lysdiod
+Signalåterkoppling
+<&industrial_green_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Röd lysdiod
+Signalåterkoppling
+<&industrial_red_blinking_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Röd lysdiod
+Signalåterkoppling
+<&industrial_red_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Vit blinkande lysdiod
+Signalåterkoppling
+<&industrial_white_blinking_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Vit lysdiod
+Signalåterkoppling
+<&industrial_white_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Gul blinkande lysdiod
+Signalåterkoppling
+<&industrial_yellow_blinking_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Gul lysdiod
+Signalåterkoppling
+<&industrial_yellow_led>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Rustik semafor
+Signalåterkoppling
+<&rustic_semaphore>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.
+<np>
+Jämförarbrytare
+Signal från fästblocket
+<&industrial_comparator_switch>En kompakt sensorbrytare läser blocket den är monterad på och omvandlar värdet till en enkel panelutgång.<br>
+<br>
+Användning: Montera den på förråd, tankar eller redstoneutrustning. När fästblocket ger en jämförar-, behållar- eller redstonesignal avger brytaren redstone med full styrka.<br>
+<br>
+Anmärkning: Använd den för att omvandla lagernivåer eller dolda ledningar till tydliga styrledningar med på- och avläge.
+<np>
+Dimmer
+Variabel signal
+<&industrial_dimmer>Ett vridreglage ställer in redstonestyrkan på en kompakt panelfront.<br>
+<br>
+Användning: Högerklicka för att öka utgången stegvis. Efter full styrka återgår den till noll.<br>
+<br>
+Anmärkning: Ger en styrka mellan 0 och 15.
+<np>
+Nödstoppsknapp
+Redstonestyrning
+<&industrial_estop_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Trattblockerare
+Redstonestyrning
+<&industrial_hopper_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Knackbrytare
+Redstonestyrning
+<&industrial_knock_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Spak
+Redstonestyrning
+<&industrial_lever>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Maskinbrytare med två knappar
+Redstonestyrning
+<&industrial_machine_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Draghandtag
+Redstonestyrning
+<&industrial_pull_handle>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Vridspak
+Redstonestyrning
+<&industrial_rotary_lever>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Vridbar maskinbrytare
+Redstonestyrning
+<&industrial_rotary_machine_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Kontaktspak
+Redstonestyrning
+<&industrial_small_lever>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Brytare
+Redstonestyrning
+<&industrialswitch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Ljusbrytare
+Redstonestyrning
+<&light_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Ventilbrytare
+Redstonestyrning
+<&valve_wheel_switch>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Kapslad pulsmottagare
+Länkad styrning
+<&industrial_switchlink_cased_pulse_receiver>En kapslad länkad pulsmottagare ger fjärrpaneler en kort redstoneutlösning.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Högerklicka på mottagaren eller aktivera den länkade pärlan för att skicka en kort puls.<br>
+<br>
+Anmärkning: Pulsen återställs automatiskt efter den inställda tiden.
+<np>
+Kapslad länkmottagare
+Länkad styrning
+<&industrial_switchlink_cased_receiver>En kapslad länkmottagare ger fjärrpaneler ett robust redstonemål.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Högerklicka direkt på mottagaren för att växla den för hand.<br>
+<br>
+Anmärkning: En länkad pärla växlar mottagaren när den används medan du smyger.
+<np>
+Pulslänkmottagare
+Länkad styrning
+<&industrial_switchlink_pulse_receiver>En länkad pulsmottagare ger fjärrpaneler en kort redstoneutlösning.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Högerklicka på mottagaren eller aktivera den länkade pärlan för att skicka en kort puls.<br>
+<br>
+Anmärkning: Pulsen återställs automatiskt efter den inställda tiden.
+<np>
+Pulslänkrelä
+Länkad styrning
+<&industrial_switchlink_pulse_relay>En reläformad enhet ger panelbyggen en kompakt lokal brytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar. Använd mottagarblock när du behöver aktivering med en länkad pärla.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Brytarlänkmottagare
+Länkad styrning
+<&industrial_switchlink_receiver>En länkmottagare ger fjärrpaneler ett redstonemål med full styrka.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Högerklicka direkt på mottagaren för att växla den för hand.<br>
+<br>
+Anmärkning: En länkad pärla växlar mottagaren när den används medan du smyger.
+<np>
+Analog länkmottagare
+Länkad styrning
+<&industrial_switchlink_receiver_analog>En länkmottagare ger kontrollpaneler ett synligt fjärrmål.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Använd pärlan medan du smyger för att fjärraktivera mottagaren.<br>
+<br>
+Anmärkning: Den här mottagaren ger en redstonesignal med full styrka när den utlöses.
+<np>
+Brytarlänkrelä
+Länkad styrning
+<&industrial_switchlink_relay>En reläformad enhet ger panelbyggen en kompakt lokal brytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar. Använd mottagarblock när du behöver aktivering med en länkad pärla.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Analogt länkrelä
+Länkad styrning
+<&industrial_switchlink_relay_analog>En reläformad enhet ger panelbyggen en kompakt lokal brytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar. Använd mottagarblock när du behöver aktivering med en länkad pärla.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Brytarlänkpärla
+Länkad styrning
+<&switchlink_pearl>En länkad pärla sparar ett mottagarmål för fabrikens fjärrkontroller.<br>
+<br>
+Användning: Klicka på en brytarlänkmottagare med en enderpärla för att skapa en. Använd den länkade pärlan medan du smyger för att aktivera den sparade mottagaren.<br>
+<br>
+Anmärkning: Målet måste vara inläst, finnas i samma dimension och vara inom räckhåll.
+<np>
+Gammal prydnadsspak
+Redstonestyrning
+<&oldfancy_bistableswitch1>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Gammal prydd vridspak
+Redstonestyrning
+<&oldfancy_bistableswitch2>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Rustik vridspak
+Redstonestyrning
+<&rustic_angular_lever>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Rustik spak
+Redstonestyrning
+<&rustic_lever>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Rustik spikspak
+Redstonestyrning
+<&rustic_nail_lever>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.
+<np>
+Rustik spak med två gångjärn
+Redstonestyrning
+<&rustic_two_hinge_lever>En kompakt kontrollenhet ger fabriksbyggen en tydlig redstonebrytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.

@@ -1,0 +1,7 @@
+Umova iztiskivača
+Kondensator opyta
+<&recipe>Umova iztiskivača prětvarjaje lazurit i opyt v nabity lazurit.<br>
+<br>
+Upotrěbjenje: Nosi lazurit i prinajmenje jedin urovnj opyta, potom upotrěbi orudje. Uspěšno iztiskanje potrěbuje jedin urovnj i jedin lazurit, rani koristnika, snižaje trajnost iztiskivače i tvori jedin nabity lazurit.<br>
+<br>
+Odmětaje rabotati, kogda koristnik nema lazurita, nema XP ili jest prěblizko smrti.

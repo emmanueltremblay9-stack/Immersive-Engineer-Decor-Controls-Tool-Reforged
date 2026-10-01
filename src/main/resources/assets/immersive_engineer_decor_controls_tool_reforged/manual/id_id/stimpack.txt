@@ -1,0 +1,7 @@
+Paket Stimulan Otomatis
+Penyuntik darurat
+<&recipe>Auto Stim Pack adalah alat pemulihan darurat untuk pekerjaan perawatan berbahaya.<br>
+<br>
+Penggunaan: Pakai secara manual untuk memulihkan kesehatan, memperoleh perlindungan singkat, dan dorongan gerak sesaat. Saat dibawa dalam inventaris, alat juga dapat aktif otomatis ketika kesehatan rendah, lalu memasuki cooldown.<br>
+<br>
+Siapkan satu sebelum menguji tempat tinggi, kabel terbuka, atau rute tambang yang berbahaya.

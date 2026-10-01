@@ -1,0 +1,7 @@
+Suis Pembanding
+Isyarat blok terpasang
+<&recipe>Suis sensor padat membaca blok tempatnya dipasang dan menukar bacaan itu menjadi output panel ringkas.<br>
+<br>
+Penggunaan: Pasang pada inventori, tangki atau perkakasan redstone. Apabila blok tempatnya dipasang melaporkan output pembanding, bekas atau redstone, suis mengeluarkan redstone berkekuatan penuh.<br>
+<br>
+Nota: Gunakan untuk menukar aras simpanan atau pendawaian tersembunyi menjadi talian kawalan hidup/mati yang jelas.

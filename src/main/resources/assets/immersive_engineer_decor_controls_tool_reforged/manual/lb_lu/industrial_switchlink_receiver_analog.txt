@@ -1,0 +1,7 @@
+Analoge Verbindungsempfänger
+Verbonne Steierung
+<&recipe>E verbonnen Empfänger bitt Steierbrieder e siichtbart Fernzil.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Benotz déi Pärel beim Schläiche fir den Empfänger aus der Distanz z'aktivéieren.<br>
+<br>
+Hiweiser: Dësen Empfänger gëtt e Redstone-Signal mat voller Stäerkt aus, wann en ausgeléist gëtt.

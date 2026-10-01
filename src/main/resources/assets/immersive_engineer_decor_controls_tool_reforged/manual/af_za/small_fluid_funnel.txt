@@ -1,0 +1,5 @@
+Vloeistofversameltregter
+Vloeistoflyntoerusting
+<&recipe>Die Klein Vloeistofversameltregter is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: plaas dit onder die vloeistofversamelpunt en lei sy gestoorde inhoud na tenks of laer pypwerk.<br>

@@ -1,0 +1,7 @@
+Glos-Intervallsignalgeber
+Zeitgsteuerter Impuls
+<&recipe>A kompakter Zeitschoita liefert an zeitlich geplanten Redstone-Impuls.<br>
+<br>
+Verwendung: Nimm eam, wenn a kloana Mechanismus regelmäßig oda verzögert gsteuert werden soll.<br>
+<br>
+Hinweis: Nutzt zeitlich geplante Redstone-Impulse.

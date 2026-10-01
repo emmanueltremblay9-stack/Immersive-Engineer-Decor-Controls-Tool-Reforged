@@ -1,0 +1,5 @@
+Laboratorijas krāsns
+Kompakta apstrādes ierīce
+<&recipe>Laboratorijas krāsns veic nelielus kausēšanas darbus ar cieto kurināmo, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: izmanto cieto kurināmo nelielām kausēšanas partijām.<br>

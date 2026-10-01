@@ -1,0 +1,7 @@
+Pulskoplingsmottakar
+Kopla betening
+<&recipe>Ein kopla pulsmottakar gjev fjernpanel ei kort redstone-utløysing.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Høgreklikk på mottakaren eller løys ut den kopla perla for å gje ein kort puls.<br>
+<br>
+Merknad: pulsen sluttar av seg sjølv etter den fastsette tida.

@@ -1,0 +1,5 @@
+Fabrički postavljač blokova
+Oprema fabričke hale
+<&recipe>Ovaj blok pri aktiviranju postavlja blokove iz svojih unutrašnjih zaliha.<br>
+<br>
+Upotreba: Usmjerite radnu stranu prema ciljnom prostoru i ubacite hrpe koje se mogu postaviti.<br>

@@ -1,0 +1,5 @@
+Fabrikktrekt
+Hjelpemiddel på fabrikkgolvet
+<&recipe>Denne blokka flyttar gjenstandsstablar gjennom ei kompakt industrikasse.<br>
+<br>
+Bruk: rett henne mot lagerlina og still rekkjevidde, stabelmengde, tid og redstone-modus på skjermen.<br>

@@ -1,0 +1,5 @@
+Apdorotos medienos stalas
+Dirbtuvių baldas
+<&recipe>Šis blokas yra praktiškas baldas darbo patalpoms ir priežiūros kampeliams.<br>
+<br>
+Naudojimas: statyk šalia darbastalių, dėžių ir kompaktiškų mašinų.<br>

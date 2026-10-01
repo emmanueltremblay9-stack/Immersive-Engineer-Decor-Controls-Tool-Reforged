@@ -1,0 +1,41 @@
+Lagring og transport
+Lager- og gjennomstrøymingsdelar
+Lagrings- og transportdelar omfattar kasser, tunner, trekter og ventilar for kompakte transportruter i fabrikken.<br>
+<br>
+Bruk desse sidene når du planlegg lagerrom, røyrstrekk, servicetankar og styrte væskeliner.
+<np>
+Merkt kasse
+Lageretikett som kan endrast
+<&labeled_crate>Denne merkte kassa er laga for oversynleg sortering i lagerrommet. Frontplata kan endrast som eit lite verkstadskilt.<br>
+<br>
+Bruk: høgreklikk på etikettplata for å endre kasseetiketten. Høgreklikk på resten av kassa for å opne lageret for beslag, delar og vedlikehaldsutstyr.<br>
+<np>
+Væsketunne
+Utstyr for væskeliner
+<&fluid_barrel>Denne kompakte væskerøyrdelen høver til små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: plasser delen der røyr eller bytter kjem til tanksida.<br>
+<np>
+Væskeoppsamlingstrekt
+Utstyr for væskeliner
+<&small_fluid_funnel>Den vesle væskeoppsamlingstrekta er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: set henne under væskeoppsamlingspunktet og før det lagra innhaldet til tankar eller røyr nedanfor.<br>
+<np>
+Tilbakeslagsventil for væskerøyr
+Utstyr for væskeliner
+<&straight_pipe_valve>Væsketilbakeslagsventilen er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: rett ventilen etter den ynskte straumretninga.<br>
+<np>
+Redstone-væskeventil
+Utstyr for væskeliner
+<&straight_pipe_valve_redstone>Redstone-væskeventilen er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: rett ventilen etter den ynskte straumretninga.<br>
+<np>
+Analog væskeventil
+Utstyr for væskeliner
+<&straight_pipe_valve_redstone_analog>Den analoge væskeventilen er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: rett ventilen etter den ynskte straumretninga.<br>

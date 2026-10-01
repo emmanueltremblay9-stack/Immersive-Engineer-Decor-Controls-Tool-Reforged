@@ -1,0 +1,7 @@
+Yüklü Lapis
+Depolanmış deneyim
+<&recipe>Yüklü lapis, zihin sıkacağıyla oluşturulan bir deneyim seviyesini depolar.<br>
+<br>
+Kullanım: Bir seviyeyi geri almak, etkin etkileri kaldırmak ve biraz sağlık yenilemek için tüketin.<br>
+<br>
+Tarif görünümünde zihin sıkacağı gösterilir; çünkü yüklü lapis, lapis ve deneyim hazırken bu aleti kullanarak üretilir.

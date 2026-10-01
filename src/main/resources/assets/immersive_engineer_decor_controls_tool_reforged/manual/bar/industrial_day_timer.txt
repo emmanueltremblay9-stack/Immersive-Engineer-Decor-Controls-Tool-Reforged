@@ -1,0 +1,7 @@
+Tageszeitschaltuhr
+Tagesliachtsignal
+<&recipe>A Zeitschalter folgt dem Tagesabschnitt vom Weltzyklus.<br>
+<br>
+So geht's: Nutz'n fia Hoflampn, Fensterlädn und Fabriksteuerunga, de bloß tagsüber laufn solln.<br>
+<br>
+Hinweis: Braucht a Dimension mit Himmelsliacht.

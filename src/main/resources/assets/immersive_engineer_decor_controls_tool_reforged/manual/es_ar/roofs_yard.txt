@@ -1,0 +1,101 @@
+Tejados y patios
+Elementos exteriores de fábrica
+Los bloques de tejado, la gravilla de patio y las piezas de madera industrial antigua ayudan a rematar cobertizos exteriores, patios de trabajo, zonas de carga y bordes envejecidos de fábricas.<br>
+<br>
+Combiná estas piezas con mampostería y vías de acceso para que las construcciones industriales exteriores se distingan bien desde lejos.
+<np>
+Techo de tejas oscuras
+Elemento de tejado envejecido
+<&dark_shingle_roof>Este bloque crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Protector contra nieve de tejado
+Elemento de tejado envejecido
+<&dark_shingle_roof_metallized>El protector contra nieve para tejado de tejas oscuras crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Techo de tejas oscuras
+Elemento de tejado envejecido
+<&dark_shingle_roof_skylight>El techo de tejas oscuras con claraboya crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Cuerpo de chimenea de tejado
+Elemento de tejado envejecido
+<&dark_shingle_roof_chimneytrunk>El cuerpo de chimenea para tejado de tejas oscuras crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Conducto de cables para tejado
+Elemento de tejado envejecido
+<&dark_shingle_roof_wireconduit>El techo de tejas oscuras con conducto para cables crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Techo de tejas oscuras
+Elemento de tejado envejecido
+<&dark_shingle_roof_chimney>La chimenea para tejado de tejas oscuras crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Bloque de techo de tejas oscuras
+Elemento de tejado envejecido
+<&dark_shingle_roof_block>Este bloque crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Techo de tejas oscuras en forma de baldosa
+Elemento de tejado envejecido
+<&dark_shingle_roof_slab>Este bloque crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Techo de tejas oscuras en forma de baldosa
+Elemento de tejado envejecido
+<&dark_shingle_roof_slabslice>El techo de tejas oscuras en forma de baldosa fraccionada crea perfiles de tejado oscuros y funcionales para talleres y cobertizos industriales.<br>
+<br>
+Uso: Combina las piezas para crear perfiles de tejado verosímiles.<br>
+<np>
+Tierra con gravilla compactada
+Pavimento de zona de trabajo
+<&dense_grit_dirt_block>Este bloque da a las zonas de trabajo exteriores una superficie compactada y pisoteada.<br>
+<br>
+Uso: Colocalo alrededor de puertas de carga, depósitos exteriores y patios de maquinaria.<br>
+<np>
+Arena con gravilla compactada
+Pavimento de zona de trabajo
+<&dense_grit_sand_block>Este bloque da a las zonas de trabajo exteriores una superficie compactada y pisoteada.<br>
+<br>
+Uso: Colocalo alrededor de puertas de carga, depósitos exteriores y patios de maquinaria.<br>
+<np>
+Tablones de madera antigua
+Madera de taller envejecida
+<&old_industrial_wood_planks>Las tablas industriales antiguas de madera aportan madera de taller envejecida para suelos, peldaños, puertas y remates interiores cálidos.<br>
+<br>
+Uso: Usalo para suelos, escaleras, puertas y remates de talleres antiguos.<br>
+<np>
+Baldosa industrial antigua de madera
+Madera de taller envejecida
+<&old_industrial_wood_slab>Este bloque aporta madera de taller envejecida para suelos, peldaños, puertas y remates interiores cálidos.<br>
+<br>
+Uso: Usalo para suelos, escaleras, puertas y remates de talleres antiguos.<br>
+<np>
+Escaleras de madera antigua
+Madera de taller envejecida
+<&old_industrial_wood_stairs>Las escaleras industriales antiguas de madera aportan madera de taller envejecida para suelos, peldaños, puertas y remates interiores cálidos.<br>
+<br>
+Uso: Usalo para suelos, escaleras, puertas y remates de talleres antiguos.<br>
+<np>
+Capa fina de baldosa de madera antigua
+Madera de taller envejecida
+<&old_industrial_wood_slabslice>La capa fina de baldosa industrial antigua de madera aporta madera de taller envejecida para suelos, peldaños, puertas y remates interiores cálidos.<br>
+<br>
+Uso: Usalo para suelos, escaleras, puertas y remates de talleres antiguos.<br>
+<np>
+Puerta industrial antigua de madera
+Madera de taller envejecida
+<&old_industrial_wood_door>Este bloque aporta madera de taller envejecida para suelos, peldaños, puertas y remates interiores cálidos.<br>
+<br>
+Uso: Usalo para suelos, escaleras, puertas y remates de talleres antiguos.<br>

@@ -1,0 +1,93 @@
+Alat Jurutera
+Kelengkapan bengkel mudah alih
+Set alat jurutera menambah peralatan tangan, penanda lombong, bekalan kecemasan habis guna, makanan lapangan dan alat pemprosesan bahan kecil ke dalam manual yang sama dengan blok hiasan dan kawalan.<br>
+<br>
+Alat ini untuk kerja jauh daripada bengkel lengkap: tandakan laluan, bawa bekalan, pulih daripada kesilapan dan selesaikan pemprosesan kecil di tapak.
+<np>
+Alat REDIA
+Kegunaan bersalut berlian
+<&redia_tool>Alat REDIA ialah alat lapangan tahan lasak untuk kerja tanah pantas. Gunakan pada tanah yang boleh diusahakan untuk mencangkul tanah ladang.<br>
+<br>
+Gunakan pada muka kukuh sambil membawa obor untuk meletakkan tanda obor daripada inventori tanpa menghauskan REDIA. Kerja tanah, pemotongan, kerja kapak dan penebangan pokok menggunakan ketahanan.
+<np>
+Tukul Penghancur Bijih
+Alat penghancur tangan
+<&crushing_hammer>Tukul penghancur bijih ialah alat tangan untuk pemprosesan awal besi dan emas.<br>
+<br>
+Gunakan dengan besi mentah, emas mentah, bijih besi atau emas dan varian batu loh dalam untuk menghasilkan debu Immersive Engineering. Tukul kehilangan ketahanan, kembali ke grid hingga pecah, haus ketika melombong dan menolak sasaran.
+<np>
+Penjejak
+Penanda kedudukan tersimpan
+<&tracker>Penjejak menyimpan kedudukan blok dalam item.<br>
+<br>
+Klik blok untuk menyimpan dimensi dan koordinat. Petua menunjukkan kedudukan. Guna sambil menyelinap untuk memadam sasaran.<br>
+<br>
+Tandai mesin, terowong, kawalan jauh atau binaan belum siap.
+<np>
+Arang Batu Ariadne
+Penanda laluan lombong
+<&ariadne_coal>Arang batu Ariadne meletakkan anak panah hitam dengan pantas pada muka lombong kukuh. Gunakan pada muka pejal untuk menandakan selekoh, jalan keluar atau persimpangan seterusnya; penanda menyokong lapan arah pada muka yang diklik, termasuk pepenjuru.<br>
+<br>
+Arang batu Ariadne ialah alat penanda boleh guna semula dengan 100 kegunaan. Setiap tanda yang berjaya diletakkan menggunakan satu ketahanan. Muka yang tidak disokong ditolak tanpa menghauskan item.
+<np>
+Pek Perangsang Automatik
+Penyuntik kecemasan
+<&stimpack>Pek rangsangan automatik ialah item perubatan kecemasan.<br>
+<br>
+Gunakan secara manual untuk sembuh, perlindungan singkat dan peningkatan gerakan. Dalam inventori, ia tercetus automatik ketika kesihatan rendah lalu bertenang. Simpan di tempat berbahaya.
+<np>
+Beg Tidur
+Set rehat mudah alih
+<&sleeping_bag>Beg tidur ialah kit rehat tahan cuaca untuk kerja jauh dari katil.<br>
+<br>
+Gunakan pada waktu malam di Overworld untuk berehat hingga pagi tanpa mengubah titik muncul.<br>
+<br>
+Tidak berfungsi siang hari, dekat raksasa atau dalam dimensi tidak sesuai. Setiap rehat berjaya menghauskan beg.
+<np>
+Kotak Simpanan Bahan
+Kotak bekalan pembinaan
+<&material_box>Kotak bahan membawa simpanan besar satu bahan binaan biasa, tidak diubah dan boleh ditindan.<br>
+<br>
+Pegang kotak di tangan utama dan bahan di tangan sebelah untuk menyimpan; gunakan dengan tangan sebelah kosong untuk mengambil satu tindan.<br>
+<br>
+Memuatkan 512 item satu jenis, menolak kotak lain, peralatan tidak boleh ditindan dan tindan diubah, serta menunjukkan kandungan pada petua.
+<np>
+Kapsul Udara Selam
+Simpanan udara kecemasan
+<&diving_capsule>Kapsul udara selam ialah bekalan udara kecemasan untuk kerja bawah air.<br>
+<br>
+Gunakan secara manual untuk memulihkan udara. Dalam inventori, ia tercetus automatik apabila udara hampir habis lalu memasuki tempoh bertenang. Bawa ke lombong banjir dan paip tenggelam.
+<np>
+Penekan Bar Tenaga Campuran Muslee
+Penekan makanan
+<&musli_bar_press>Penekan Muslee menukar makanan biasa menjadi bekalan lapangan padat.<br>
+<br>
+Bawa roti, epal dan biji gandum, tembikai, labu, ubi bit atau hem industri lalu gunakan penekan. Ia menggunakan satu setiap bahan, memeriksa ruang, menghasilkan empat bar dan merosakkan penekan.<br>
+<br>
+Jika bahan atau ruang tiada, tiada apa digunakan.
+<np>
+Bar Tenaga Campuran Muslee
+Snek bengkel pantas
+<&musli_bar>Bar Muslee Melange ialah makanan padat daripada roti, biji dan buah.<br>
+<br>
+Makan sebagai bekalan lapangan ketika memasang kawalan, paip, pelantar atau barisan mesin.
+<np>
+Pemerah Minda
+Pemampat pengalaman
+<&charged_lapis_squeezer>Pemerah minda menukar satu lapis lazuli dan satu aras pengalaman daripada inventori menjadi lapis lazuli bercas.<br>
+<br>
+Setiap penukaran berjaya menyakiti, meletihkan dan membutakan pengguna seketika. Ia menolak operasi tanpa lapis lazuli, tanpa pengalaman atau apabila pengguna terlalu hampir mati.
+<np>
+Lapis Lazuli Bercas
+Pengalaman tersimpan
+<&charged_lapis>Lapis lazuli bercas menyimpan satu aras pengalaman. Gunakan untuk memulihkan aras itu, membuang kesan aktif dan memulihkan sedikit kesihatan.<br>
+<br>
+Hasilkan pemerah minda dahulu; lapis lazuli bercas terhasil apabila alat itu digunakan dengan lapis lazuli dan pengalaman tersedia.
+<np>
+Butiran Besi Kasar
+Bahan alat jurutera yang digunakan oleh set resipi yang dibina semula.
+<&iron_grit>Boleh dilebur menjadi jongkong<br>besi, tetapi tidak sesuai untuk<br>pemprosesan bahan lanjutan.
+<np>
+Butiran Emas Kasar
+Bahan alat jurutera yang digunakan oleh set resipi yang dibina semula.
+<&gold_grit>Boleh dilebur menjadi jongkong<br>emas, tetapi tidak sesuai untuk<br>pemprosesan bahan lanjutan.

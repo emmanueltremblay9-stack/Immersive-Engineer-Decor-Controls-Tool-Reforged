@@ -1,0 +1,5 @@
+Steel-Bound Stonelime Halfclot
+Strengthened stonelime
+<&recipe>This hardened stonelime fitting suits loom pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it under looms, along upkeep hallways or wherever the build needs a strengthened footing.<br>

@@ -1,0 +1,7 @@
+Detektor nevihte
+Zaznavanje za signalizacijo
+<&recipe>Senzor nevihte sproža opozorila med grmenjem.<br>
+<br>
+Uporaba: Postavi ga pod odprto nebo in poveži s svetilkami ali alarmi.<br>
+<br>
+Opombe: Potrebuje grmenje in dostop do neba.

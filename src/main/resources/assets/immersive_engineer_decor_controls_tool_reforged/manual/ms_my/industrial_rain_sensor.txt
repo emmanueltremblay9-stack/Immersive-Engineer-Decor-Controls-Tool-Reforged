@@ -1,0 +1,7 @@
+Sensor Hujan
+Penderiaan isyarat
+<&recipe>Sensor cuaca menukar hujan di lokasinya kepada redstone.<br>
+<br>
+Penggunaan: Pasang di tempat blok di atasnya boleh menerima hujan.<br>
+<br>
+Nota: Memeriksa hujan di atas sensor.

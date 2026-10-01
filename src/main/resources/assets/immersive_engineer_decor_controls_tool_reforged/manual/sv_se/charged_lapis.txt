@@ -1,0 +1,7 @@
+Laddad lapis
+Lagrad erfarenhet
+<&recipe>Laddad lapis lagrar en erfarenhetsnivå som skapats med tankepressen.<br>
+<br>
+Användning: Förbruka den för att få tillbaka en nivå, ta bort aktiva effekter och återfå lite hälsa.<br>
+<br>
+Receptvisningen visar tankepressen eftersom laddad lapis framställs genom att använda det verktyget med tillgång till lapis och XP.

@@ -1,0 +1,7 @@
+Localizadôr
+Segn di posizion conservade
+<&recipe>Il localizadôr al memorize la posizion di un bloc diretementri tal ogjet.<br>
+<br>
+Ûs: Fâs clic suntun bloc par salvâ dimension e coordenadis. Il tooltip al mostre la posizion salvade. Dopre il localizadôr intant che tu sês pleât par scancelâ la destinazion.<br>
+<br>
+Doprilu par segnâ machinis, incrosaments di galariis, controi a distance o cantîrs no finîts prime di tornâ cun imprescj e materiâi.

@@ -1,0 +1,7 @@
+Blok Algılayıcısı
+Sinyal algılama
+<&recipe>Blok algılayıcısı, baktığı alanın dolu olup olmadığını kontrol eder.<br>
+<br>
+Kullanım: İzlenecek makine yüzüne, ara depoya veya korunan alana yöneltin.<br>
+<br>
+Notlar: Önündeki blok hava olmadığında güç verir.

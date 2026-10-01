@@ -1,0 +1,7 @@
+Kukui Hoʻōho
+Pane hōʻailona
+<&recipe>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.

@@ -1,0 +1,7 @@
+Materialkasse
+Kasse for byggematerialer
+<&recipe>Materialkassen bærer en stor reserve av ett vanlig, uendret og stabelbart byggemateriale.<br>
+<br>
+Hold kassen i hovedhånden og materialet i den andre hånden for å fylle den; bruk den med tom andre hånd for å ta ut én stabel.<br>
+<br>
+Den rommer 512 gjenstander, én materialtype om gangen, avviser andre kasser, ustabelbart utstyr og endrede stabler, og viser innholdet i verktøytipset.

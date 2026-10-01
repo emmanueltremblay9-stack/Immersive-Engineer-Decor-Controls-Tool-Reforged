@@ -1,0 +1,7 @@
+Cista materiae servandae
+Cista commeatus aedificandi
+<&recipe>Arca materiae magnam copiam unius materiae aedificatoriae simplicis, immutatae et cumulabilis portat.<br>
+<br>
+Usus: Arcam in manu principe et cumulum materiae in altera tene ut impleas. Arca cum altera manu vacua utere ut unum cumulum extrahas.<br>
+<br>
+Usque ad 512 res unius generis continet. Arcas inclusas, instrumenta non cumulabilia et cumulos renominatos aut datis mutatos recusat; titulus contenta monstrat.

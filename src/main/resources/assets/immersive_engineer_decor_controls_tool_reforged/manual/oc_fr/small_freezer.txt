@@ -1,0 +1,5 @@
+Congelador d’aiga
+Unitat de tractament compacta
+<&recipe>Lo Congelador d’aiga realiza de trabalhs de refregiment compactes per las installacions de fluids alimentadas en energia.<br>
+<br>
+Utilizacion : fornís d’aiga e d’energia per produsir lo glaç per estadis.<br>

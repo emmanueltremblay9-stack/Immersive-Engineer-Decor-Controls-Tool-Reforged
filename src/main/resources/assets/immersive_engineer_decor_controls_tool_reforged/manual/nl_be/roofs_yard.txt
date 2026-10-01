@@ -1,0 +1,101 @@
+Daken en terrein
+Fabrieksonderdelen voor buiten
+Dakblokken, terreinsteenslag en oude industriële houten onderdelen helpen bij het afwerken van buitenloodsen, werkterreinen, laadzones en verweerde fabrieksranden.<br>
+<br>
+Combineer deze onderdelen met metselwerk en toegangswegen om industriële buitenbouwwerken ook op afstand herkenbaar te houden.
+<np>
+Donker schindeldak
+Verweerd dakonderdeel
+<&dark_shingle_roof>Met dit blok bouwt u donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Daksneeuwvanger
+Verweerd dakonderdeel
+<&dark_shingle_roof_metallized>De sneeuwvanger voor het donkere schindeldak past bij donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Donker schindeldak
+Verweerd dakonderdeel
+<&dark_shingle_roof_skylight>Het dakraam voor het donkere schindeldak past bij donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Dakschoorsteenschacht
+Verweerd dakonderdeel
+<&dark_shingle_roof_chimneytrunk>De schoorsteenschacht voor het donkere schindeldak past bij donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Dakkabeldoorvoer
+Verweerd dakonderdeel
+<&dark_shingle_roof_wireconduit>De kabeldoorvoer voor het donkere schindeldak past bij donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Donker schindeldak
+Verweerd dakonderdeel
+<&dark_shingle_roof_chimney>De schoorsteen voor het donkere schindeldak past bij donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Donker schindeldakblok
+Verweerd dakonderdeel
+<&dark_shingle_roof_block>Met dit blok bouwt u donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Donkere schindeldakplaat
+Verweerd dakonderdeel
+<&dark_shingle_roof_slab>Met dit blok bouwt u donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Donkere schindeldakplaat
+Verweerd dakonderdeel
+<&dark_shingle_roof_slabslice>De dunne plaat voor het donkere schindeldak past bij donkere, praktische daken voor werkplaatsen en industriële loodsen.<br>
+<br>
+Gebruik: combineer de onderdelen tot geloofwaardige dakvormen.<br>
+<np>
+Verdichte grindgrond
+Terreinbedekking
+<&dense_grit_dirt_block>Dit blok geeft buitenwerkplekken een verdicht en vertrapt oppervlak.<br>
+<br>
+Gebruik: leg het rond laaddeuren, buitentanks en machineterreinen.<br>
+<np>
+Verdicht grindzand
+Terreinbedekking
+<&dense_grit_sand_block>Dit blok geeft buitenwerkplekken een verdicht en vertrapt oppervlak.<br>
+<br>
+Gebruik: leg het rond laaddeuren, buitentanks en machineterreinen.<br>
+<np>
+Oude houten planken
+Verouderd werkplaatshout
+<&old_industrial_wood_planks>De oude industriële houten planken leveren verouderd werkplaatshout voor vloeren, treden, deuren en warme binnenafwerking.<br>
+<br>
+Gebruik: gebruik het voor oude werkplaatsvloeren, trappen, deuren en afwerking.<br>
+<np>
+Oude fabriekshouten plaat
+Verouderd werkplaatshout
+<&old_industrial_wood_slab>Dit blok levert verouderd werkplaatshout voor vloeren, treden, deuren en warme binnenafwerking.<br>
+<br>
+Gebruik: gebruik het voor oude werkplaatsvloeren, trappen, deuren en afwerking.<br>
+<np>
+Oude houten trap
+Verouderd werkplaatshout
+<&old_industrial_wood_stairs>De oude industriële houten trap levert verouderd werkplaatshout voor vloeren, treden, deuren en warme binnenafwerking.<br>
+<br>
+Gebruik: gebruik het voor oude werkplaatsvloeren, trappen, deuren en afwerking.<br>
+<np>
+Dunne oude houten plaat
+Verouderd werkplaatshout
+<&old_industrial_wood_slabslice>De dunne oude industriële houten plaat levert verouderd werkplaatshout voor vloeren, treden, deuren en warme binnenafwerking.<br>
+<br>
+Gebruik: gebruik het voor oude werkplaatsvloeren, trappen, deuren en afwerking.<br>
+<np>
+Oude fabriekshouten deur
+Verouderd werkplaatshout
+<&old_industrial_wood_door>Dit blok levert verouderd werkplaatshout voor vloeren, treden, deuren en warme binnenafwerking.<br>
+<br>
+Gebruik: gebruik het voor oude werkplaatsvloeren, trappen, deuren en afwerking.<br>

@@ -1,0 +1,7 @@
+Botón de pedal
+Control por redstone
+<&recipe>Un interruptor de contacto envía una señal breve al detectar movimiento en el suelo o en una escotilla.<br>
+<br>
+Uso: Colócalo donde las entidades atraviesen un pasillo de mantenimiento, un cargador o una ruta vigilada.<br>
+<br>
+Notas: Emite un pulso breve tras el contacto con una entidad.

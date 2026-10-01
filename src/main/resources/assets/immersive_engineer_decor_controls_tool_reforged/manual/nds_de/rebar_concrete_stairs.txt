@@ -1,0 +1,5 @@
+Stahlbetontrapp
+Stahlbeton
+<&recipe>Disse Block is en hart Betonpart för Maschinenfundamenten, Spreengschutzwänn un Böden vun Laadsteden.<br>
+<br>
+Bruuk: Bruuk em ünner Maschinen, langs Wartoongsgäng oder dor, wo de Bau en verstarkten Ünnergrund bruukt.<br>

@@ -1,0 +1,7 @@
+Pulslinkempfanger
+Verbunnen Stüern
+<&recipe>En verbunnen Pulsempfanger gifft feerne Paneels en korte Redstone-Utlöser.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Rechtsklick op den Empfanger oder löös de verbunnen Parrel ut, üm en korten Puls to geven.<br>
+<br>
+Anmarken: De Puls sett sik na sien vörgeven Tied sülven torüch.

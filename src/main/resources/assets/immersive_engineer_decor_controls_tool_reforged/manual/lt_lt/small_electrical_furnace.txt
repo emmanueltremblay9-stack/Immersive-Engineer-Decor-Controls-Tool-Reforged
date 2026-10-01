@@ -1,0 +1,5 @@
+Elektrinė krosnis
+Kompaktiškas apdorojimo įrenginys
+<&recipe>Elektrinė krosnis atlieka nedidelius FE energija maitinamus lydymo darbus, užimdama mažai vietos dirbtuvėse.<br>
+<br>
+Naudojimas: tiek FE ir tinkamą lydymo žaliavą.<br>

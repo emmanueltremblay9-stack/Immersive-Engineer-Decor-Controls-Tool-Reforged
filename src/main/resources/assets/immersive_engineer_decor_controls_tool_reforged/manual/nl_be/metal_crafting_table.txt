@@ -1,0 +1,7 @@
+Metaalwerkbank
+Werkstation voor metaalplaten
+<&recipe>De metaalwerkbank heeft een hamersleuf, een volledig 3x3-raster en een uitvoersleuf.<br>
+<br>
+Gebruik het raster als een gewone werkbank. Plaats voor IE-platen een ingenieurshamer in de gereedschapssleuf en plaatmateriaal in het raster; neem de gevormde plaat uit de uitvoer.<br>
+<br>
+Stalen decoraties gebruiken stalen platen die aan deze tafel zijn gevormd.

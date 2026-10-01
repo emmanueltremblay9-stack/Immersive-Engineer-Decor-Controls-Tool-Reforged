@@ -1,0 +1,7 @@
+Vanha koristeellinen painike
+Redstone-ohjaus
+<&recipe>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.

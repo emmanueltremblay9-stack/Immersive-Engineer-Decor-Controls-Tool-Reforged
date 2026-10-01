@@ -1,0 +1,7 @@
+Šklany detektar sutnasciej
+Vyjaŭlennie sihnału
+<&recipe>Detektar sutnasciej sočyć za rucham pablizu biez bačnaj padłohavaj płasciny.<br>
+<br>
+Vykarystannie: padklučaj jaho da dzviarej, lampaŭ, sihnalizacyi abo błakirovak mašyn.<br>
+<br>
+Zaŭvahi: skanuje nievialikuju vobłasć vakoł błoka.

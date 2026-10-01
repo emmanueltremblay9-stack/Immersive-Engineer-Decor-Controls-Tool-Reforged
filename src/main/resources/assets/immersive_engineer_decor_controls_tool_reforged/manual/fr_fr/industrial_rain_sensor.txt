@@ -1,0 +1,7 @@
+Capteur de pluie
+Détection de signal
+<&recipe>Un capteur météo transforme la pluie à son emplacement en signal de redstone.<br>
+<br>
+Utilisation : montez-le à un endroit où le bloc au-dessus peut recevoir la pluie.<br>
+<br>
+Remarque : vérifie la pluie au-dessus du capteur.

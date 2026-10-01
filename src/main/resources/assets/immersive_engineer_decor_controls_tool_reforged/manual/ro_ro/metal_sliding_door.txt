@@ -1,0 +1,5 @@
+Ușă metalică glisantă
+Punct de acces industrial
+<&recipe>Acest bloc oferă un punct de acces robust pentru încăperi tehnice, puțuri, acoperișuri și incinte pentru mașini.<br>
+<br>
+Utilizare: Montează-l acolo unde construcția are nevoie de o deschidere controlată pentru întreținere.<br>

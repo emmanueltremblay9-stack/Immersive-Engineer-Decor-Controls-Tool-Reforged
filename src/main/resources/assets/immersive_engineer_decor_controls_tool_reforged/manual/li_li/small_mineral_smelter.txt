@@ -1,0 +1,5 @@
+Mineraalsmelter
+Kleine verwerkingseenheid
+<&recipe>De mineraalsmelter verwerkt minerale bie hoeg hitte op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: voer mineraalblök en energie toe veur smeltwerk bie hoeg hitte.<br>

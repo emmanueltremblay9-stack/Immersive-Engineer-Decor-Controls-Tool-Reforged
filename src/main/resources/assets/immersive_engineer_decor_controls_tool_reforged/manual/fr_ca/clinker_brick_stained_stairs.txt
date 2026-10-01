@@ -1,0 +1,5 @@
+Escaliers de clinker teinté
+Briques noircies par la suie
+<&recipe>Les escaliers en brique de clinker teinté apportent une maçonnerie assombrie par la suie aux salles de fourneaux, bases de cheminées et murs de service.<br>
+<br>
+Utilisation : construisez des murs, des bordures ou des enveloppes de zones chaudes autour des fourneaux et des chaudières.<br>

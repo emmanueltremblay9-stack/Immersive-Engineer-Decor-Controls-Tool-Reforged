@@ -1,0 +1,101 @@
+Katot ja piha
+Tehtaan ulkovarusteet
+Kattokuutiot, pihasora ja vanhat tehdaspuuosat viimeistelevät ulkovajat, työpihat, lastausalueet ja sään kuluttamat tehtaan reunat.<br>
+<br>
+Yhdistä osat muuraukseen ja kulkureitteihin, jotta teollisuuden ulkorakennelmat erottuvat selkeästi myös kaukaa.
+<np>
+Tumma paanukatto
+Sään kuluttama katto-osa
+<&dark_shingle_roof>Tämä kuutio muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Katon lumieste
+Sään kuluttama katto-osa
+<&dark_shingle_roof_metallized>Tumman paanukaton lumieste muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Tumma paanukatto
+Sään kuluttama katto-osa
+<&dark_shingle_roof_skylight>Tumman paanukaton kattoikkuna muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Katon savupiipun runko
+Sään kuluttama katto-osa
+<&dark_shingle_roof_chimneytrunk>Tumman paanukaton savupiipun runko muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Katon johtoläpivienti
+Sään kuluttama katto-osa
+<&dark_shingle_roof_wireconduit>Tumman paanukaton johtoläpivienti muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Tumma paanukatto
+Sään kuluttama katto-osa
+<&dark_shingle_roof_chimney>Tumman paanukaton savupiippu muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Tumma paanukattokuutio
+Sään kuluttama katto-osa
+<&dark_shingle_roof_block>Tämä kuutio muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Tumma paanukattolaatta
+Sään kuluttama katto-osa
+<&dark_shingle_roof_slab>Tämä kuutio muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Tumma paanukattolaatta
+Sään kuluttama katto-osa
+<&dark_shingle_roof_slabslice>Ohut tumma paanukattolaatta muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>
+<np>
+Tiivis soramulta
+Työmaan maanpäällyste
+<&dense_grit_dirt_block>Tämä kuutio antaa ulkotyöalueille tiivistetyn, tallotun pinnan.<br>
+<br>
+Käyttö: Aseta lastausovien, ulkosäiliöiden ja konepihojen ympärille.<br>
+<np>
+Tiivis sorahiekka
+Työmaan maanpäällyste
+<&dense_grit_sand_block>Tämä kuutio antaa ulkotyöalueille tiivistetyn, tallotun pinnan.<br>
+<br>
+Käyttö: Aseta lastausovien, ulkosäiliöiden ja konepihojen ympärille.<br>
+<np>
+Vanhat puulankut
+Vanha työpajapuu
+<&old_industrial_wood_planks>Vanhat tehdaspuulankut tuovat vanhentunutta työpajapuuta lattioihin, askelmiin, oviin ja lämpimän sävyiseen sisäkoristeluun.<br>
+<br>
+Käyttö: Käytä vanhoihin työpajalattioihin, portaisiin, oviin ja koristeisiin.<br>
+<np>
+Vanha tehdaspuulaatta
+Vanha työpajapuu
+<&old_industrial_wood_slab>Tämä kuutio tuo vanhentunutta työpajapuuta lattioihin, askelmiin, oviin ja lämpimän sävyiseen sisäkoristeluun.<br>
+<br>
+Käyttö: Käytä vanhoihin työpajalattioihin, portaisiin, oviin ja koristeisiin.<br>
+<np>
+Vanhat puuportaat
+Vanha työpajapuu
+<&old_industrial_wood_stairs>Vanhat tehdaspuuportaat tuovat vanhentunutta työpajapuuta lattioihin, askelmiin, oviin ja lämpimän sävyiseen sisäkoristeluun.<br>
+<br>
+Käyttö: Käytä vanhoihin työpajalattioihin, portaisiin, oviin ja koristeisiin.<br>
+<np>
+Ohut vanha puulaatta
+Vanha työpajapuu
+<&old_industrial_wood_slabslice>Ohut vanha tehdaspuulaatta tuo vanhentunutta työpajapuuta lattioihin, askelmiin, oviin ja lämpimän sävyiseen sisäkoristeluun.<br>
+<br>
+Käyttö: Käytä vanhoihin työpajalattioihin, portaisiin, oviin ja koristeisiin.<br>
+<np>
+Vanha tehdaspuuovi
+Vanha työpajapuu
+<&old_industrial_wood_door>Tämä kuutio tuo vanhentunutta työpajapuuta lattioihin, askelmiin, oviin ja lämpimän sävyiseen sisäkoristeluun.<br>
+<br>
+Käyttö: Käytä vanhoihin työpajalattioihin, portaisiin, oviin ja koristeisiin.<br>

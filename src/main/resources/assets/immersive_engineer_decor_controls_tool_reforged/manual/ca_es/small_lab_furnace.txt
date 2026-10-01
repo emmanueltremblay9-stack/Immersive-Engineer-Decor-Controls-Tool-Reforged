@@ -1,0 +1,5 @@
+Forn de laboratori
+Unitat compacta de processament
+<&recipe>El forn de laboratori fa feines de fosa amb combustible sòlid en un espai reduït de taller.<br>
+<br>
+Ús: fes servir combustible sòlid per fondre petites tandes.<br>

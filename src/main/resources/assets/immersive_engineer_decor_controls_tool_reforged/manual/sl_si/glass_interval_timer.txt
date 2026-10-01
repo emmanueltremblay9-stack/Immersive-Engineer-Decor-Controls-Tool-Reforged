@@ -1,0 +1,7 @@
+Steklen intervalni signal
+Časovno določen impulz
+<&recipe>Kompaktno časovno stikalo zagotavlja časovno načrtovan impulz redstone.<br>
+<br>
+Uporaba: Uporabi ga tam, kjer majhen mehanizem potrebuje periodično ali zakasnjeno krmiljenje.<br>
+<br>
+Opombe: Uporablja časovno načrtovane impulze redstone.

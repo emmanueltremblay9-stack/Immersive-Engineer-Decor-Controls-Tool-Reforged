@@ -1,0 +1,7 @@
+Analoge Verchnüpfigsempfänger
+Verchnüpfti Stüürig
+<&recipe>En verchnüpfte Empfänger git Stüürtafle es sichtbars Fernziel.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Benutz d'Perle bim Schliiche, um de Empfänger us de Fern z'aktiviere.<br>
+<br>
+Hiwiis: Dä Empfänger git bi Uuslösig d'volli Redstone-Stärchi uus.

@@ -1,0 +1,5 @@
+Köhnə sənaye taxta qapısı
+Köhnəlmiş emalatxana taxtası
+<&recipe>Bu blok döşəmələr, pillələr, qapılar və isti çalarlı daxili haşiyələr üçün köhnəlmiş emalatxana taxtası əlavə edir.<br>
+<br>
+İstifadə: Köhnə emalatxana döşəmələri, pilləkənləri, qapıları və haşiyələri üçün istifadə edin.<br>

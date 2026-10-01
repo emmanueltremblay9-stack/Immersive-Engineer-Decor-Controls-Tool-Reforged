@@ -1,0 +1,5 @@
+Šalčio įspėjimo ženklas
+Pavojaus žymeklis
+<&recipe>Ženklas „Atsargiai, šaltis“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>

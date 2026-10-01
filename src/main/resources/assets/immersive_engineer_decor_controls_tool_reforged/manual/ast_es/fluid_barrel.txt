@@ -1,0 +1,5 @@
+Barril de líquidos
+Accesorios de conducción de líquidos
+<&recipe>Esta pieza ye un elementu compactu de conducción de líquidos pa depósitos pequeños, tendíos de tuberíes, puntos de recoyida y control del caudal por redstone.<br>
+<br>
+Usu: colócala onde les tuberíes o los calderos puedan llegar a la cara del depósitu.<br>

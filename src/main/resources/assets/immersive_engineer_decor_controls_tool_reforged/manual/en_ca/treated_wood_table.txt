@@ -1,0 +1,5 @@
+Treated Wood Table
+Workshop furnishing
+<&recipe>This block is a practical shop furnishing for work rooms and maintenance corners.<br>
+<br>
+Usage: Set it beside benches, crates, and compact machines.<br>

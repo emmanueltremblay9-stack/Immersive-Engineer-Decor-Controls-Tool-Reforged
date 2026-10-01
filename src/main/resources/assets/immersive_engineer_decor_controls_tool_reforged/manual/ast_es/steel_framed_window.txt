@@ -1,0 +1,5 @@
+Ventana con marcu d’aceru
+Vista protexida
+<&recipe>Esti bloque permite ver al traviés y combina cola construcción industrial reforzada.<br>
+<br>
+Usu: úsalu onde los xugadores deban ver la maquinaria al traviés d’una barrera protexida.<br>

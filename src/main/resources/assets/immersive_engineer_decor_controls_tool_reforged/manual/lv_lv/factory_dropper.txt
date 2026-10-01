@@ -1,0 +1,5 @@
+Rūpnīcas izsviedējs
+Darbnīcas palīgierīce
+<&recipe>Šis bloks izvada glabātos priekšmetus no pavērstās puses.<br>
+<br>
+Lietošana: pavērs priekšu pret izsviešanas vietu, piepildi iekšējos nodalījumus un saskarnē noregulē spēku, leņķi, aizkavi, filtra loģiku un Redstone režīmu.<br>

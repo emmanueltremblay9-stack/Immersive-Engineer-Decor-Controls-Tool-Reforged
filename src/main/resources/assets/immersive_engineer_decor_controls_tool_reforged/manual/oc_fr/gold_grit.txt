@@ -1,0 +1,3 @@
+Granulat grossièr d’aur
+Material d’aisina d’engenhaire utilizat per l’ensemble de recèptas reconstituit.
+<&recipe>Se pòt fondre en lingòts d’aur,<br>mas conven pas al tractament<br>avançat dels materials.

@@ -1,0 +1,5 @@
+Znak »Splošno opozorilo«
+Oznaka nevarnosti
+<&recipe>Znak »Splošno opozorilo« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>

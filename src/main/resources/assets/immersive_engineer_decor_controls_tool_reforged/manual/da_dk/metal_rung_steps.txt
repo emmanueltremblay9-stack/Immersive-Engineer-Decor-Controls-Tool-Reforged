@@ -1,0 +1,5 @@
+Forskudte metaltrin
+Del til serviceadgang
+<&recipe>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>

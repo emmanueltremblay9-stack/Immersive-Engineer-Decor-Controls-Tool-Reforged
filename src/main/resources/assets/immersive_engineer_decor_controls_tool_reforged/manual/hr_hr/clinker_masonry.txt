@@ -1,0 +1,161 @@
+Klinker i zidarski materijali
+Obloge od opeke i betona
+Klinker, opeka od troske, armirani beton i oklopno staklo pružaju masivne površine za tople prostorije, radionice i zaštićene poglede.<br>
+<br>
+Odgovarajućim pločama, stubama, tankim slojevima i zidovima dovrši rubove bez promjene izgleda tvorničkih materijala.
+<np>
+Blok klinker opeke
+Opeka potamnjela od čađe
+<&clinker_brick_block>Ovaj blok donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Ploča od klinker opeke
+Opeka potamnjela od čađe
+<&clinker_brick_slab>Ovaj blok donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Stube od klinker opeke
+Opeka potamnjela od čađe
+<&clinker_brick_stairs>Ovaj blok donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Zid od klinker opeke
+Opeka potamnjela od čađe
+<&clinker_brick_wall>Ovaj blok donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Blok zamrljanog klinkera
+Opeka potamnjela od čađe
+<&clinker_brick_stained_block>Blok zamrljane klinker opeke donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Ploča zamrljanog klinkera
+Opeka potamnjela od čađe
+<&clinker_brick_stained_slab>Ploča od zamrljane klinker opeke donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Stube zamrljanog klinkera
+Opeka potamnjela od čađe
+<&clinker_brick_stained_stairs>Stube od zamrljane klinker opeke donose opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Ukrašena klinker opeka
+Opeka potamnjela od čađe
+<&clinker_brick_sastor_corner_block>Klinker opeka ukrašena pješčenjakom donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Uvučena klinker opeka
+Opeka potamnjela od čađe
+<&clinker_brick_recessed>Ovaj blok donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Klinker opeka s prorezima
+Opeka potamnjela od čađe
+<&clinker_brick_vertically_slit>Klinker opeka s okomitim prorezima donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Okomita ploča od klinkera
+Opeka potamnjela od čađe
+<&clinker_brick_vertical_slab_structured>Reljefna okomita ploča od klinkera donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Poluploča od klinker opeke
+Opeka potamnjela od čađe
+<&halfslab_clinker_brick>Ovaj blok donosi opeku potamnjelu od čađe u hale s pećima, podnožja dimnjaka i servisne zidove.<br>
+<br>
+Uporaba: koristi ga za zidove, obrube ili obloge toplih područja oko peći i kotlova.<br>
+<np>
+Blok opeke od troske
+Gusto tvorničko ziđe
+<&slag_brick_block>Ovaj blok dodaje gusto sivosmeđe ziđe za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Uporaba: koristi ga za starije temelje, potporne zidove i prljave tvorničke podove.<br>
+<np>
+Ploča od opeke od troske
+Gusto tvorničko ziđe
+<&slag_brick_slab>Ovaj blok dodaje gusto sivosmeđe ziđe za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Uporaba: koristi ga za starije temelje, potporne zidove i prljave tvorničke podove.<br>
+<np>
+Stube od opeke od troske
+Gusto tvorničko ziđe
+<&slag_brick_stairs>Ovaj blok dodaje gusto sivosmeđe ziđe za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Uporaba: koristi ga za starije temelje, potporne zidove i prljave tvorničke podove.<br>
+<np>
+Zid od opeke od troske
+Gusto tvorničko ziđe
+<&slag_brick_wall>Ovaj blok dodaje gusto sivosmeđe ziđe za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Uporaba: koristi ga za starije temelje, potporne zidove i prljave tvorničke podove.<br>
+<np>
+Blok armiranog betona
+Armirani beton
+<&rebar_concrete>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Ploča od armiranog betona
+Armirani beton
+<&rebar_concrete_slab>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Stube od armiranog betona
+Armirani beton
+<&rebar_concrete_stairs>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Zid od armiranog betona
+Armirani beton
+<&rebar_concrete_wall>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Tanki sloj armiranog betona
+Armirani beton
+<&halfslab_rebar_concrete>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Pločica od armiranog betona
+Armirani beton
+<&rebar_concrete_tile>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Ploča od pločica armiranog betona
+Armirani beton
+<&rebar_concrete_tile_slab>Ovaj blok je očvrsnuti betonski dio za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Pločica od armiranog betona
+Armirani beton
+<&rebar_concrete_tile_stairs>Stube od pločica armiranog betona očvrsnuti su betonski dijelovi za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>
+<np>
+Blok oklopnog stakla
+Zaštićen pogled
+<&panzerglass_block>Ovaj blok zadržava otvoren pogled i uklapa se u ojačanu tvorničku konstrukciju.<br>
+<br>
+Uporaba: koristi ga gdje igrači trebaju vidjeti strojeve kroz zaštitnu pregradu.<br>
+<np>
+Ploča od oklopnog stakla
+Zaštićen pogled
+<&panzerglass_slab>Ovaj blok zadržava otvoren pogled i uklapa se u ojačanu tvorničku konstrukciju.<br>
+<br>
+Uporaba: koristi ga gdje igrači trebaju vidjeti strojeve kroz zaštitnu pregradu.<br>

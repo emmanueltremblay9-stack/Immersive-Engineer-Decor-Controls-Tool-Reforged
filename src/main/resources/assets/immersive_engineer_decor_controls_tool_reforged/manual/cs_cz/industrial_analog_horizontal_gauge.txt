@@ -1,0 +1,7 @@
+Voltmetr
+Měřič signálu
+<&recipe>Kompaktní měřič v řídicí místnosti zobrazuje sílu redstonu na přehledném panelu.<br>
+<br>
+Použití: Připevni jej tam, kde má být síla sousedního redstonu vidět na první pohled.<br>
+<br>
+Poznámky: Odečítá okolní sílu redstonu od 0 do 15.

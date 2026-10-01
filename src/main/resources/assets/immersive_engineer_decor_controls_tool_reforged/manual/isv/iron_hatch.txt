@@ -1,0 +1,5 @@
+Želězny poklop
+Promyslovo pristupno město
+<&recipe>Sej blok davaje krěpky pristup do servisnyh komor, šaht, strěh i mašinnyh obalov.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde budynok potrěbuje upravljany otvor dlja obsluživanja.<br>

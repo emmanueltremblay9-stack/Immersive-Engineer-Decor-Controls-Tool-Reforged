@@ -1,0 +1,5 @@
+Metal Sürgülü Kapı
+Sanayi tipi erişim noktası
+<&recipe>Bu blok; servis odaları, boşluklar, çatılar ve makine muhafazaları için sağlam bir erişim noktası sağlar.<br>
+<br>
+Kullanım: Yapıda kontrollü bir bakım açıklığı gereken yere takın.<br>

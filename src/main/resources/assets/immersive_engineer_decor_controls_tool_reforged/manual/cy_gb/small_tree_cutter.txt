@@ -1,0 +1,5 @@
+Torrwr Coed
+Cyfleustod llawr gweithdy
+<&recipe>Bloc cyfleustod llawr gweithdy yw'r Torrwr Coed Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Anelwch ef at goed sydd wedi tyfu a chasglwch yr eitemau sy'n disgyn ar wahân.<br>

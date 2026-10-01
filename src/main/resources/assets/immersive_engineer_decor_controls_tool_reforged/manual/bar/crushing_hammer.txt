@@ -1,0 +1,7 @@
+Erz-Zerkleinerungshamma
+Handwerkzeug
+<&recipe>Da Erz-Zerkleinerungshamma is a manuelles Werkzeug für frühe Eisen- und Goldarbeit.<br>
+<br>
+Benutzung: Mit Roheisn, Rohgold, Eisenerz, Tiefenschiefer-Eisenerz, Golderz oda Tiefenschiefer-Golderz kombiniern, um Immersive-Engineering-Eisn- oda Goldstaub z'macha. Da Hamma verliert Haltbarkeit und kehrt bis zum Brecha ins Raster zruck.<br>
+<br>
+Er nutzt si aa beim Abbau ab und kann Ziele im Nahkampf zruckstoßn.

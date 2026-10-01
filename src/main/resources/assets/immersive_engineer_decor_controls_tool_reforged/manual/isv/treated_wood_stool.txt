@@ -1,0 +1,5 @@
+Taburet iz obrabotanogo drěva
+Meble rabotilnje
+<&recipe>Sej blok jest praktična čest meblja dlja rabotnyh komor i obslužnyh ugolkov.<br>
+<br>
+Upotrěbjenje: Postavi go blizko lav, skrinj i kompaktnyh mašin.<br>

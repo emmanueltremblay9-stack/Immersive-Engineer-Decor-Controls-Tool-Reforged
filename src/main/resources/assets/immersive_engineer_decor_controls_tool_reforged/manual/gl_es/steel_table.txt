@@ -1,0 +1,5 @@
+Mesa de aceiro
+Mobiliario de obradoiro
+<&recipe>Este bloque é un moble práctico de obradoiro para salas de traballo e recunchos de mantemento.<br>
+<br>
+Uso: colócao xunto a bancos de traballo, caixóns e máquinas compactas.<br>

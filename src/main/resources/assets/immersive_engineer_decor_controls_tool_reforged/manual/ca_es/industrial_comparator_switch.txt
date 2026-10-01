@@ -1,0 +1,7 @@
+Interruptor comparador
+Senyal del bloc de suport
+<&recipe>Un interruptor sensor compacte llegeix el bloc on està muntat i converteix la lectura en una sortida senzilla de panell.<br>
+<br>
+Ús: munta’l en inventaris, dipòsits o aparells de redstone. Quan el bloc de suport indica una sortida de comparador, contenidor o redstone, l’interruptor emet redstone a la màxima força.<br>
+<br>
+Notes: fes-lo servir per convertir els nivells d’emmagatzematge o el cablejat ocult en línies clares de control d’encesa/apagada.

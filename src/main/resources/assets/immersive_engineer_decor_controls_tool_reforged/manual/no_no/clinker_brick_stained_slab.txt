@@ -1,0 +1,5 @@
+Tilsmusset klinkerhelle
+Sotmørkt murverk
+<&recipe>Den tilsmussede klinkerhellen gir sotmørkt teglverk til ovnshaller, pipefundamenter og servicevegger.<br>
+<br>
+Bruk: bygg vegger, kanter eller en varmesone rundt ovner og kjeler.<br>

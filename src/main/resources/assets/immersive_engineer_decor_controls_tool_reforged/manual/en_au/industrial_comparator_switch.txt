@@ -1,0 +1,7 @@
+Comparator Switch
+Attached signal
+<&recipe>A compact sensor switch reads the block it is mounted on and turns that reading into a simple panel output.<br>
+<br>
+Usage: Mount it on inventories, tanks, or redstone hardware. When the attached block reports comparator, container, or redstone output, the switch emits full-strength redstone.<br>
+<br>
+Notes: Use it to turn storage levels or hidden wiring into clear on/off control lines.

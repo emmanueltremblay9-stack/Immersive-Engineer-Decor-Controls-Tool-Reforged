@@ -1,0 +1,7 @@
+Lit Woken Glass
+Token glass
+<&recipe>A redstone-woken glass clot keeps sightways open while showing the token state.<br>
+<br>
+Use: Fit it in switchroom windows, lit boards and guarded workstead glass.<br>
+<br>
+Mind: Nearby redstone might changes its state.

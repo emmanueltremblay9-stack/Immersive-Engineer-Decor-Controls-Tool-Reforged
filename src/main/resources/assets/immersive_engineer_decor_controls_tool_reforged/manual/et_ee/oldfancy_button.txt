@@ -1,0 +1,7 @@
+Vana ehitud nupp
+Redstone'i juhtimine
+<&recipe>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.

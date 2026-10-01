@@ -1,0 +1,5 @@
+Awtomatikong Pampasiglang Iniksiyon
+Pang-iniksiyon sa kagipitan
+<&recipe>Ang auto stim pack ay pang-emergency na medikal na item.<br>
+<br>
+Gamitin nang manu-mano para gumaling, maprotektahan sandali at bumilis. Sa inventory, awtomatikong gagana sa mababang health at saka mag-cooldown. Maghanda nito sa mapanganib na lugar.

@@ -1,0 +1,789 @@
+Àwọn Ìdarí Redstone
+Àwọn ẹ̀rọ ìwọ̀n àti ohun èlò àmì
+Ohun èlò ìdarí ń yí Redstone tó fara sin sí àwọn pánẹ́ẹ̀lì ilé iṣẹ́ tí a lè kà, ẹ̀rọ ìmọ̀lára, atọ́ka, ẹ̀rọ ìyípadà, ìkìlọ̀, àti ohun èlò àmì tí a so pọ̀.<br>
+<br>
+Lo àwọn ojú ìwé yìí nígbà kíkọ́ ibùdó olùdarí, pákó àmì, ètò ààbò, àti ìdarí jíjìnnà.
+<np>
+Àfojúsùn Ọfà
+Ìlù àkókò díẹ̀
+<&arrow_target>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Ẹ̀rọ Ìmọ̀ Ẹnu Ọ̀nà
+Ìdarí Redstone
+<&door_sensor_switch>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ẹ̀rọ Gbígbé Sókè
+Ìdarí Redstone
+<&elevator_button>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Bọ́tìnì Gíláàsì
+Ìdarí Redstone
+<&glass_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Gíláàsì
+Ìdarí Redstone
+<&glass_small_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ìfọwọ́kàn Gíláàsì
+Ìdarí Redstone
+<&glass_touch_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ẹ̀rọ
+Ìdarí Redstone
+<&industrial_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì
+Ìdarí Redstone
+<&industrial_double_pole_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ẹ̀rọ Aláàbò
+Ìdarí Redstone
+<&industrial_fenced_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ìkanlẹ̀kùn
+Ìdarí Redstone
+<&industrial_knock_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ọ̀ṣọ́ Àtijọ́
+Ìdarí Redstone
+<&oldfancy_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ọ̀ṣọ́ Àtijọ́
+Ìdarí Redstone
+<&oldfancy_small_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ẹ̀wọ̀n Ọ̀ṣọ́ Àtijọ́
+Ìlù àkókò díẹ̀
+<&oldfancy_spring_reset_chain>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ìbílẹ̀
+Ìdarí Redstone
+<&rustic_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ìṣó Ìbílẹ̀
+Ìdarí Redstone
+<&rustic_nail_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ìbílẹ̀ Kékeré
+Ìdarí Redstone
+<&rustic_small_button>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Bọ́tìnì Ẹ̀wọ̀n Ìbílẹ̀
+Ìlù àkókò díẹ̀
+<&rustic_spring_reset_chain>Ẹ̀rọ ìyípadà fún àkókò díẹ̀ ń fúnni ní ìlù Redstone kedere tí agbára rẹ̀ kún.<br>
+<br>
+Lílò: Lo ó fún bíbẹ̀rẹ̀ ẹ̀rọ, ṣíṣí ìlẹ̀kùn, ìkìlọ̀, tàbí àwọn ètò ìlù kan ṣoṣo.<br>
+<br>
+Àkíyèsí: Ó ń padà sí ipò ìpilẹ̀ lẹ́yìn ìlù tí a ṣètò fún un.
+<np>
+Àwo Ìfọwọ́kàn Gíláàsì
+Ìlù ìtẹ̀
+<&glass_contact_mat>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ìfọwọ́kàn Ẹnu Ọ̀nà Gíláàsì
+Ìlù ìtẹ̀
+<&glass_door_contact_mat>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ẹní Ìfọwọ́kàn
+Ìlù ìtẹ̀
+<&industrial_contact_mat>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ẹní Ìfọwọ́kàn Ẹnu Ọ̀nà
+Ìlù ìtẹ̀
+<&industrial_door_contact_mat>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ẹ̀rọ Ìmọ̀ Ohun Tí Ń Ṣubú Kọjá
+Ìmọ̀ àmì
+<&industrial_fallthrough_detector>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Bọ́tìnì Ẹsẹ̀
+Ìdarí Redstone
+<&industrial_foot_button>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ìlẹ̀kùn Ilé Iṣẹ́ Tí Ìkọlù Ti Ara Ń Ṣí
+Ìlù ìtẹ̀
+<&industrial_high_sensitive_trapdoor>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ẹní Ìfọwọ́kàn Ìkọlù Ti Ara
+Ìlù ìtẹ̀
+<&industrial_shock_sensitive_contact_mat>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ìlẹ̀kùn Ilẹ̀ Ìkọlù Ti Ara
+Ìlù ìtẹ̀
+<&industrial_shock_sensitive_trapdoor>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Òdòdó Agbára Pupa
+Ìlù ìtẹ̀
+<&red_power_plant>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Àwo Ìtẹ̀ Ìbílẹ̀
+Ìlù ìtẹ̀
+<&rustic_contact_plate>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ìtẹ̀ Ẹnu Ọ̀nà Ìbílẹ̀
+Ìlù ìtẹ̀
+<&rustic_door_contact_plate>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ẹ̀rọ Ìmọ̀ Ìṣubú Ìbílẹ̀
+Ìmọ̀ àmì
+<&rustic_fallthrough_detector>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ìlẹ̀kùn Ìbílẹ̀ Ìkọlù Ti Ara
+Ìlù ìtẹ̀
+<&rustic_high_sensitive_trapdoor>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Àwo Ìbílẹ̀ Ìkọlù Ti Ara
+Ìlù ìtẹ̀
+<&rustic_shock_sensitive_plate>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Ìlẹ̀kùn Ìbílẹ̀ Ìkọlù Ti Ara
+Ìlù ìtẹ̀
+<&rustic_shock_sensitive_trapdoor>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Òdòdó Agbára Yẹ́lò
+Ìlù ìtẹ̀
+<&yellow_power_plant>Ẹ̀rọ ìyípadà ìfọwọ́kàn ń fi àmì kúkúrú ránṣẹ́ láti ìṣípo ilẹ̀ tàbí ìlẹ̀kùn ilẹ̀.<br>
+<br>
+Lílò: Gbé e níbi tí àwọn ohun tàbí ẹ̀dá ti ń kọjá ọ̀nà iṣẹ́, ẹ̀rọ ìgbérù, tàbí ọ̀nà aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń mú ìlù kúkúrú jáde lẹ́yìn ìfọwọ́kàn ohun tàbí ẹ̀dá.
+<np>
+Aago Àkókò Ọjọ́ Gíláàsì
+Àmì ìmọ́lẹ̀ ọjọ́
+<&glass_day_timer>Ẹ̀rọ ìyípadà aago ń tẹ̀lé apá ọ̀sán ìyípo ayé.<br>
+<br>
+Lílò: Lo ó fún àtùpà àgbàlá, ìbòrí fèrèsé, àti ìdarí ilé iṣẹ́ tó ń ṣiṣẹ́ lọ́sàn-án nìkan.<br>
+<br>
+Àkíyèsí: Ó nílò ayé tí ìmọ́lẹ̀ ọ̀run wà.
+<np>
+Ẹ̀rọ Gíláàsì Ìmọ̀ Ohun àti Ẹ̀dá
+Ìmọ̀ àmì
+<&glass_entity_detector>Ẹ̀rọ ìmọ̀ ohun àti ẹ̀dá ń ṣọ́ ìṣípo nítòsí láìsí àwo ilẹ̀ tí a lè rí.<br>
+<br>
+Lílò: So ó pọ̀ mọ́ àwọn ìlẹ̀kùn, àtùpà, ìkìlọ̀, tàbí ètò ìdábòbò ẹ̀rọ.<br>
+<br>
+Àkíyèsí: Ó ń yẹ agbègbè kékeré yí ká búlọ́ọ̀kù wò.
+<np>
+Àmì Àárín Àkókò Gíláàsì
+Ìlù alákòóso àkókò
+<&glass_interval_timer>Ẹ̀rọ ìyípadà aago kékeré ń pèsè ìlù Redstone tí a ṣètò àkókò rẹ̀.<br>
+<br>
+Lílò: Lo ó níbi tí ẹ̀rọ kékeré ti nílò ìdarí léraléra tàbí ìdarí pẹ̀lú ìdádúró.<br>
+<br>
+Àkíyèsí: Ó ń lo àwọn ìlù Redstone tí a ṣètò àkókò wọn.
+<np>
+Ẹ̀rọ Gíláàsì Ìmọ̀ Ìlà
+Ìmọ̀ àmì
+<&glass_linear_entity_detector>Ẹ̀rọ ìmọ̀ ohun àti ẹ̀dá ń ṣọ́ ìṣípo nítòsí láìsí àwo ilẹ̀ tí a lè rí.<br>
+<br>
+Lílò: So ó pọ̀ mọ́ àwọn ìlẹ̀kùn, àtùpà, ìkìlọ̀, tàbí ètò ìdábòbò ẹ̀rọ.<br>
+<br>
+Àkíyèsí: Ó ń yẹ agbègbè kékeré yí ká búlọ́ọ̀kù wò.
+<np>
+Ẹ̀rọ Ìmọ̀ Búlọ́ọ̀kù
+Ìmọ̀ àmì
+<&industrial_block_detector>Ẹ̀rọ ìmọ̀ búlọ́ọ̀kù ń yẹ̀ wò bí ohun kan bá wà ní ààyè tí ó dojú kọ.<br>
+<br>
+Lílò: Dojú rẹ̀ sí ojú ẹ̀rọ, ìpamọ́, tàbí ààyè aláàbò tí o fẹ́ ṣọ́.<br>
+<br>
+Àkíyèsí: Ó ń fúnni ní agbára nígbà tí búlọ́ọ̀kù tí ó dojú kọ kì í ṣe afẹ́fẹ́.
+<np>
+Aago Àkókò Ọjọ́
+Àmì ìmọ́lẹ̀ ọjọ́
+<&industrial_day_timer>Ẹ̀rọ ìyípadà aago ń tẹ̀lé apá ọ̀sán ìyípo ayé.<br>
+<br>
+Lílò: Lo ó fún àtùpà àgbàlá, ìbòrí fèrèsé, àti ìdarí ilé iṣẹ́ tó ń ṣiṣẹ́ lọ́sàn-án nìkan.<br>
+<br>
+Àkíyèsí: Ó nílò ayé tí ìmọ́lẹ̀ ọ̀run wà.
+<np>
+Ẹ̀rọ Ìmọ̀ Ohun àti Ẹ̀dá
+Ìmọ̀ àmì
+<&industrial_entity_detector>Ẹ̀rọ ìmọ̀ ohun àti ẹ̀dá ń ṣọ́ ìṣípo nítòsí láìsí àwo ilẹ̀ tí a lè rí.<br>
+<br>
+Lílò: So ó pọ̀ mọ́ àwọn ìlẹ̀kùn, àtùpà, ìkìlọ̀, tàbí ètò ìdábòbò ẹ̀rọ.<br>
+<br>
+Àkíyèsí: Ó ń yẹ agbègbè kékeré yí ká búlọ́ọ̀kù wò.
+<np>
+Aago Àárín Àkókò
+Ìlù alákòóso àkókò
+<&industrial_interval_timer>Ẹ̀rọ ìyípadà aago kékeré ń pèsè ìlù Redstone tí a ṣètò àkókò rẹ̀.<br>
+<br>
+Lílò: Lo ó níbi tí ẹ̀rọ kékeré ti nílò ìdarí léraléra tàbí ìdarí pẹ̀lú ìdádúró.<br>
+<br>
+Àkíyèsí: Ó ń lo àwọn ìlù Redstone tí a ṣètò àkókò wọn.
+<np>
+Ẹ̀rọ Ìmọ̀ Ìmọ́lẹ̀
+Ìmọ̀ àmì
+<&industrial_light_sensor>Ẹ̀rọ ìmọ̀ ìmọ́lẹ̀ ń yí ìmọ́lẹ̀ ibẹ̀ sí ìdarí Redstone.<br>
+<br>
+Lílò: Lo ó fún àtùpà àdáṣe, ìbòrí fèrèsé, àti àwọn ètò ìríran.<br>
+<br>
+Àkíyèsí: Ó ń fúnni ní agbára nígbà tí ìpele ìmọ́lẹ̀ àìṣàtúnṣe jẹ́ 8 tàbí jù bẹ́ẹ̀ lọ.
+<np>
+Ẹ̀rọ Ìmọ̀ Ìjì
+Ìmọ̀ àmì
+<&industrial_lightning_sensor>Ẹ̀rọ ìmọ̀ ìjì ń darí ìkìlọ̀ nígbà tí àrá wà.<br>
+<br>
+Lílò: Gbé e sábẹ́ ọ̀run gbangba, kí o sì so ó mọ́ àwọn àtùpà tàbí ìkìlọ̀.<br>
+<br>
+Àkíyèsí: Ó nílò àrá àti ọ̀nà dé ọ̀run.
+<np>
+Ẹ̀rọ Ìmọ̀ Ohun àti Ẹ̀dá Lórí Ìlà
+Ìmọ̀ àmì
+<&industrial_linear_entity_detector>Ẹ̀rọ ìmọ̀ ohun àti ẹ̀dá ń ṣọ́ ìṣípo nítòsí láìsí àwo ilẹ̀ tí a lè rí.<br>
+<br>
+Lílò: So ó pọ̀ mọ́ àwọn ìlẹ̀kùn, àtùpà, ìkìlọ̀, tàbí ètò ìdábòbò ẹ̀rọ.<br>
+<br>
+Àkíyèsí: Ó ń yẹ agbègbè kékeré yí ká búlọ́ọ̀kù wò.
+<np>
+Ẹ̀rọ Ìmọ̀ Òjò
+Ìmọ̀ àmì
+<&industrial_rain_sensor>Ẹ̀rọ ìmọ̀ ojú ọjọ́ ń yí òjò ní ibi tí ó wà sí Redstone.<br>
+<br>
+Lílò: So ó síbi tí búlọ́ọ̀kù lókè lè gba òjò.<br>
+<br>
+Àkíyèsí: Ó ń yẹ òjò lókè ẹ̀rọ ìmọ̀lára wò.
+<np>
+Ẹ̀rọ Ìyípadà Gíláàsì Oníipò Méjì
+Ìdarí Redstone
+<&glass_rotary_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ìfọwọ́kàn Gíláàsì Oníipò Méjì
+Ìdarí Redstone
+<&glass_touch_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Gíláàsì Àwọ̀ Ọsàn Tí Ń Fèsì
+Gíláàsì àmì
+<&orange_sensitiveglass>Búlọ́ọ̀kù gíláàsì tí ń fèsì sí Redstone ń pa ọ̀nà ìríran mọ́ nígbà tí ó ń fi ipò àmì hàn.<br>
+<br>
+Lílò: Lo ó nínú fèrèsé yàrá ìdarí, pánẹ́ẹ̀lì tí ń tàn, àti gíláàsì ilé iṣẹ́ aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nítorí agbára Redstone tó wà nítòsí.
+<np>
+Gíláàsì Tí Ń Fèsì Tí Ń Tàn
+Gíláàsì àmì
+<&sensitive_glass_block>Búlọ́ọ̀kù gíláàsì tí ń fèsì sí Redstone ń pa ọ̀nà ìríran mọ́ nígbà tí ó ń fi ipò àmì hàn.<br>
+<br>
+Lílò: Lo ó nínú fèrèsé yàrá ìdarí, pánẹ́ẹ̀lì tí ń tàn, àti gíláàsì ilé iṣẹ́ aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nítorí agbára Redstone tó wà nítòsí.
+<np>
+Gíláàsì Tí Ń Fèsì Aláwọ̀
+Gíláàsì àmì
+<&stained_sensitiveglass>Búlọ́ọ̀kù gíláàsì tí ń fèsì sí Redstone ń pa ọ̀nà ìríran mọ́ nígbà tí ó ń fi ipò àmì hàn.<br>
+<br>
+Lílò: Lo ó nínú fèrèsé yàrá ìdarí, pánẹ́ẹ̀lì tí ń tàn, àti gíláàsì ilé iṣẹ́ aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nítorí agbára Redstone tó wà nítòsí.
+<np>
+Ìwọ̀n Gíláàsì Onílà
+Ẹ̀rọ ìwọ̀n àmì
+<&glass_vertical_bar_gauge>Ẹ̀rọ ìwọ̀n yàrá ìdarí kékeré ń fi agbára Redstone hàn gẹ́gẹ́ bí ìkàwé pánẹ́ẹ̀lì tó ṣe kedere.<br>
+<br>
+Lílò: So ó síbi tí a ti lè yẹ agbára Redstone tó wà lẹ́gbẹ̀ẹ́ rẹ̀ wò ní ojú kan.<br>
+<br>
+Àkíyèsí: Ó ń ka agbára Redstone nítòsí láti 0 sí 15.
+<np>
+Ẹ̀rọ Ìwọ̀n Onítọ́ka
+Ẹ̀rọ ìwọ̀n àmì
+<&industrial_analog_angular_gauge>Ẹ̀rọ ìwọ̀n yàrá ìdarí kékeré ń fi agbára Redstone hàn gẹ́gẹ́ bí ìkàwé pánẹ́ẹ̀lì tó ṣe kedere.<br>
+<br>
+Lílò: So ó síbi tí a ti lè yẹ agbára Redstone tó wà lẹ́gbẹ̀ẹ́ rẹ̀ wò ní ojú kan.<br>
+<br>
+Àkíyèsí: Ó ń ka agbára Redstone nítòsí láti 0 sí 15.
+<np>
+Ẹ̀rọ Ìwọ̀n Fọ́ọ̀tì
+Ẹ̀rọ ìwọ̀n àmì
+<&industrial_analog_horizontal_gauge>Ẹ̀rọ ìwọ̀n yàrá ìdarí kékeré ń fi agbára Redstone hàn gẹ́gẹ́ bí ìkàwé pánẹ́ẹ̀lì tó ṣe kedere.<br>
+<br>
+Lílò: So ó síbi tí a ti lè yẹ agbára Redstone tó wà lẹ́gbẹ̀ẹ́ rẹ̀ wò ní ojú kan.<br>
+<br>
+Àkíyèsí: Ó ń ka agbára Redstone nítòsí láti 0 sí 15.
+<np>
+Ẹ̀rọ Ìwọ̀n Nọ́mbà
+Agbára àmì tí a lè kà
+<&industrial_small_digital_gauge>Ẹ̀rọ ìwọ̀n yàrá ìdarí kékeré ń fi agbára Redstone hàn gẹ́gẹ́ bí ìkàwé pánẹ́ẹ̀lì tó ṣe kedere.<br>
+<br>
+Lílò: So ó síbi tí a ti lè yẹ agbára Redstone tó wà lẹ́gbẹ̀ẹ́ rẹ̀ wò ní ojú kan.<br>
+<br>
+Àkíyèsí: Ó ń ka agbára Redstone nítòsí láti 0 sí 15.
+<np>
+Ìwọ̀n Túùbù Gíláàsì
+Ẹ̀rọ ìwọ̀n àmì
+<&industrial_tube_gauge>Ẹ̀rọ ìwọ̀n yàrá ìdarí kékeré ń fi agbára Redstone hàn gẹ́gẹ́ bí ìkàwé pánẹ́ẹ̀lì tó ṣe kedere.<br>
+<br>
+Lílò: So ó síbi tí a ti lè yẹ agbára Redstone tó wà lẹ́gbẹ̀ẹ́ rẹ̀ wò ní ojú kan.<br>
+<br>
+Àkíyèsí: Ó ń ka agbára Redstone nítòsí láti 0 sí 15.
+<np>
+Ìwọ̀n Onílà Oníwọ̀n
+Ẹ̀rọ ìwọ̀n àmì
+<&industrial_vertical_bar_gauge>Ẹ̀rọ ìwọ̀n yàrá ìdarí kékeré ń fi agbára Redstone hàn gẹ́gẹ́ bí ìkàwé pánẹ́ẹ̀lì tó ṣe kedere.<br>
+<br>
+Lílò: So ó síbi tí a ti lè yẹ agbára Redstone tó wà lẹ́gbẹ̀ẹ́ rẹ̀ wò ní ojú kan.<br>
+<br>
+Àkíyèsí: Ó ń ka agbára Redstone nítòsí láti 0 sí 15.
+<np>
+Àtùpà Ìkìlọ̀
+Èsì àmì
+<&industrial_alarm_lamp>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+Agogo Ìkìlọ̀
+Èsì àmì
+<&industrial_alarm_siren>Agogo itaniji je afihan redstone ti a fi si oju block. Ipo agbara re yipada pelu signal lati block ti o so mo.<br>
+<br>
+So o mo oju to lagbara ki o fun ni agbara lati wo ilekun, ero, itaniji tabi paneli.<br>
+<br>
+Agogo naa n tunse leekan ni iseju-aaya nigba ti signal n sise.
+<np>
+LED Tí Ń Tàn, Tí Ń Pa Léraléra
+Èsì àmì
+<&industrial_blinking_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Àwọ̀ Ewé Tí Ń Tàn, Tí Ń Pa Léraléra
+Èsì àmì
+<&industrial_green_blinking_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Àwọ̀ Ewé
+Èsì àmì
+<&industrial_green_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Pupa
+Èsì àmì
+<&industrial_red_blinking_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Pupa
+Èsì àmì
+<&industrial_red_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Funfun Tí Ń Tàn, Tí Ń Pa Léraléra
+Èsì àmì
+<&industrial_white_blinking_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Funfun
+Èsì àmì
+<&industrial_white_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Yẹ́lò Tí Ń Tàn, Tí Ń Pa Léraléra
+Èsì àmì
+<&industrial_yellow_blinking_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+LED Yẹ́lò
+Èsì àmì
+<&industrial_yellow_led>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+Àsíá Àmì Ìbílẹ̀
+Èsì àmì
+<&rustic_semaphore>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.
+<np>
+Ẹ̀rọ Ìyípadà Ìfiwéra
+Àmì tí a so mọ́ ọn
+<&industrial_comparator_switch>Ẹ̀rọ ìyípadà ìmọ̀lára kékeré ń ka búlọ́ọ̀kù tí a so ó mọ́, ó sì ń yí ìkàwé yẹn sí àbájáde pánẹ́ẹ̀lì rọrùn.<br>
+<br>
+Lílò: So ó mọ́ ibi ìpamọ́, àpò omi, tàbí ohun èlò Redstone. Nígbà tí búlọ́ọ̀kù tí a so mọ́ ọn bá fi àbájáde ìfiwéra, ohun èlò ìpamọ́, tàbí Redstone hàn, ẹ̀rọ ìyípadà ń mú Redstone agbára kíkún jáde.<br>
+<br>
+Àkíyèsí: Lo ó láti yí ìpele ìpamọ́ tàbí wáyà tí ó fara sin sí àwọn ìlà ìdarí títàn/pípa tó ṣe kedere.
+<np>
+Ẹ̀rọ Ìdínagbára
+Àmì aláyípadà
+<&industrial_dimmer>Ìdarí yíyí ń ṣètò agbára Redstone láti ojú pánẹ́ẹ̀lì kékeré.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti mú àbájáde gòkè ní ìpele kọ̀ọ̀kan, lẹ́yìn náà padà sí òdo lẹ́yìn agbára kíkún.<br>
+<br>
+Àkíyèsí: Ó ń mú agbára láti 0 sí 15 jáde.
+<np>
+Bọ́tìnì Ìdádúró Pàjáwìrì
+Ìdarí Redstone
+<&industrial_estop_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Olùdí Àpò Ìgbéjáde
+Ìdarí Redstone
+<&industrial_hopper_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ẹ̀rọ Ìyípadà Ìkanlẹ̀kùn
+Ìdarí Redstone
+<&industrial_knock_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà
+Ìdarí Redstone
+<&industrial_lever>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ẹ̀rọ Ìyípadà Ẹ̀rọ Oníbọ́tìnì Méjì
+Ìdarí Redstone
+<&industrial_machine_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọwọ́ Ìfà
+Ìdarí Redstone
+<&industrial_pull_handle>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà Yíyí
+Ìdarí Redstone
+<&industrial_rotary_lever>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ẹ̀rọ Ìyípadà Yíyí Ẹ̀rọ
+Ìdarí Redstone
+<&industrial_rotary_machine_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà Ìfọwọ́kàn
+Ìdarí Redstone
+<&industrial_small_lever>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ẹ̀rọ Ìyípadà
+Ìdarí Redstone
+<&industrialswitch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ẹ̀rọ Ìyípadà Ìmọ́lẹ̀
+Ìdarí Redstone
+<&light_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ẹ̀rọ Ìyípadà Àtọwọ́dá
+Ìdarí Redstone
+<&valve_wheel_switch>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Olùgbà Ìlù Nínú Àpótí
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_cased_pulse_receiver>Olùgbà ìlù tí a so pọ̀ nínú àpótí ń fún àwọn pánẹ́ẹ̀lì jíjìnnà ní ìbẹ̀rẹ̀ Redstone kúkúrú.<br>
+<br>
+Lílò: Tẹ̀ ẹ́ pẹ̀lú péálì Ender láti dá péálì tí a so pọ̀ sílẹ̀. Tẹ̀ bọ́tìnì ọ̀tún tàbí mú péálì tí a so pọ̀ ṣiṣẹ́ láti mú ìlù kúkúrú jáde.<br>
+<br>
+Àkíyèsí: Ìlù náà ń padà sí ipò ìpilẹ̀ fúnra rẹ̀ lẹ́yìn àkókò tí a ṣètò fún un.
+<np>
+Olùgbà Ìsopọ̀ Nínú Àpótí
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_cased_receiver>Olùgbà tí a so pọ̀ nínú àpótí ń fún àwọn pánẹ́ẹ̀lì jíjìnnà ní àfojúsùn Redstone tó lágbára.<br>
+<br>
+Lílò: Tẹ̀ ẹ́ pẹ̀lú péálì Ender láti dá péálì tí a so pọ̀ sílẹ̀. Tẹ olùgbà tààrà pẹ̀lú bọ́tìnì ọ̀tún láti tan tàbí pa á lọ́wọ́.<br>
+<br>
+Àkíyèsí: Péálì tí a so pọ̀ ń tan tàbí pa olùgbà yìí nígbà tí a bá lò ó ní ìwólẹ̀ díẹ̀.
+<np>
+Olùgbà Ìlù Ìsopọ̀
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_pulse_receiver>Olùgbà ìlù tí a so pọ̀ ń fún àwọn pánẹ́ẹ̀lì jíjìnnà ní ìbẹ̀rẹ̀ Redstone kúkúrú.<br>
+<br>
+Lílò: Tẹ̀ ẹ́ pẹ̀lú péálì Ender láti dá péálì tí a so pọ̀ sílẹ̀. Tẹ̀ bọ́tìnì ọ̀tún tàbí mú péálì tí a so pọ̀ ṣiṣẹ́ láti mú ìlù kúkúrú jáde.<br>
+<br>
+Àkíyèsí: Ìlù náà ń padà sí ipò ìpilẹ̀ fúnra rẹ̀ lẹ́yìn àkókò tí a ṣètò fún un.
+<np>
+Ẹ̀rọ Ìgbéàmìsíwájú Ìlù Ìsopọ̀
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_pulse_relay>Ohun èlò tí ìrísí rẹ̀ dà bí ẹ̀rọ ìgbéàmìsíwájú ń fún àwọn ìkọ́lé pánẹ́ẹ̀lì ní ibi ìyípadà kékeré ibẹ̀.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí. Lo àwọn búlọ́ọ̀kù olùgbà nígbà tí o bá nílò péálì tí a so pọ̀ láti mú un ṣiṣẹ́.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Olùgbà Ìsopọ̀ Ìyípadà
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_receiver>Olùgbà tí a so pọ̀ ń fún àwọn pánẹ́ẹ̀lì jíjìnnà ní àfojúsùn Redstone agbára kíkún.<br>
+<br>
+Lílò: Tẹ̀ ẹ́ pẹ̀lú péálì Ender láti dá péálì tí a so pọ̀ sílẹ̀. Tẹ olùgbà tààrà pẹ̀lú bọ́tìnì ọ̀tún láti tan tàbí pa á lọ́wọ́.<br>
+<br>
+Àkíyèsí: Péálì tí a so pọ̀ ń tan tàbí pa olùgbà yìí nígbà tí a bá lò ó ní ìwólẹ̀ díẹ̀.
+<np>
+Olùgbà Ìsopọ̀ Oníwọ̀n
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_receiver_analog>Olùgbà tí a so pọ̀ ń fún àwọn pánẹ́ẹ̀lì ìdarí ní àfojúsùn jíjìnnà tí a lè rí.<br>
+<br>
+Lílò: Tẹ̀ ẹ́ pẹ̀lú péálì Ender láti dá péálì tí a so pọ̀ sílẹ̀. Wólẹ̀ díẹ̀ nígbà lílo péálì náà láti mú olùgbà ṣiṣẹ́ láti ọ̀nà jíjìn.<br>
+<br>
+Àkíyèsí: Olùgbà yìí ń mú àmì Redstone kíkún jáde nígbà tí a mú un ṣiṣẹ́.
+<np>
+Ẹ̀rọ Ìgbéàmìsíwájú Ìsopọ̀ Ìyípadà
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_relay>Ohun èlò tí ìrísí rẹ̀ dà bí ẹ̀rọ ìgbéàmìsíwájú ń fún àwọn ìkọ́lé pánẹ́ẹ̀lì ní ibi ìyípadà kékeré ibẹ̀.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí. Lo àwọn búlọ́ọ̀kù olùgbà nígbà tí o bá nílò péálì tí a so pọ̀ láti mú un ṣiṣẹ́.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ẹ̀rọ Ìgbéàmìsíwájú Ìsopọ̀ Oníwọ̀n
+Ìdarí tí a so pọ̀
+<&industrial_switchlink_relay_analog>Ohun èlò tí ìrísí rẹ̀ dà bí ẹ̀rọ ìgbéàmìsíwájú ń fún àwọn ìkọ́lé pánẹ́ẹ̀lì ní ibi ìyípadà kékeré ibẹ̀.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí. Lo àwọn búlọ́ọ̀kù olùgbà nígbà tí o bá nílò péálì tí a so pọ̀ láti mú un ṣiṣẹ́.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Péálì Ìsopọ̀ Ìyípadà
+Ìdarí tí a so pọ̀
+<&switchlink_pearl>Péálì tí a so pọ̀ ń pa àfojúsùn olùgbà mọ́ fún ìdarí ilé iṣẹ́ láti ọ̀nà jíjìn.<br>
+<br>
+Lílò: Tẹ olùgbà Ìsopọ̀ Ìyípadà pẹ̀lú péálì Ender láti dá ọ̀kan sílẹ̀. Wólẹ̀ díẹ̀ nígbà lílo péálì tí a so pọ̀ láti mú olùgbà tí a pamọ́ ṣiṣẹ́.<br>
+<br>
+Àkíyèsí: Àfojúsùn gbọ́dọ̀ wà ní agbègbè eré tí a ti kó sínú ìrántí, nínú ayé kan náà, àti láàárín ìjìnnà tó yẹ.
+<np>
+Ọ̀pá Ìyípadà Ọ̀ṣọ́ Àtijọ́
+Ìdarí Redstone
+<&oldfancy_bistableswitch1>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà Yíyí Ọ̀ṣọ́ Àtijọ́
+Ìdarí Redstone
+<&oldfancy_bistableswitch2>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà Yíyí Ìbílẹ̀
+Ìdarí Redstone
+<&rustic_angular_lever>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà Ìbílẹ̀
+Ìdarí Redstone
+<&rustic_lever>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà Ìṣó Ìbílẹ̀
+Ìdarí Redstone
+<&rustic_nail_lever>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.
+<np>
+Ọ̀pá Ìyípadà Ìbílẹ̀ Pẹ̀lú Ìsopọ̀ Yíyí Méjì
+Ìdarí Redstone
+<&rustic_two_hinge_lever>Ohun èlò ìdarí kékeré ń fún ìkọ́lé ilé iṣẹ́ ní ibi ìyípadà Redstone tí ó ṣe kedere.<br>
+<br>
+Lílò: Tẹ̀ bọ́tìnì ọ̀tún láti tan tàbí pa àbájáde agbára kíkún fún àwọn ètò tó wà nítòsí.<br>
+<br>
+Àkíyèsí: Ó ń mú Redstone agbára kíkún jáde nígbà tí ó tàn.

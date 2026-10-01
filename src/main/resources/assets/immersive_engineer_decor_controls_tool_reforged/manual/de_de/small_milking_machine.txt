@@ -1,0 +1,5 @@
+Melkmaschine
+Hilfsgerät für die Werkstatt
+<&recipe>Die kleine Melkmaschine ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Platziere sie in Kuhnähe und sorge für die Entnahme von Milchbehältern oder Flüssigkeit.<br>

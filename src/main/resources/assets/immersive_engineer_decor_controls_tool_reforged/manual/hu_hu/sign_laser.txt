@@ -1,0 +1,5 @@
+Lézerveszélytábla
+Veszélyjelölő
+<&recipe>A „Lézerveszély” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>

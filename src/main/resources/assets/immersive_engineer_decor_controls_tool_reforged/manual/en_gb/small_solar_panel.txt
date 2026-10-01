@@ -1,0 +1,5 @@
+Solar Panel
+Shop-floor utility
+<&recipe>The Small Solar Panel is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
+<br>
+Usage: Give it open sky and connect low-demand equipment.<br>

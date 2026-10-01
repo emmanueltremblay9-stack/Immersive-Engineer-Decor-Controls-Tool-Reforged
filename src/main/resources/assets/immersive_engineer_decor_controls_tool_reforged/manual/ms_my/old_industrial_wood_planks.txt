@@ -1,0 +1,5 @@
+Papan Kayu Lama
+Kayu bengkel lama
+<&recipe>Papan kayu industri lama menambah kayu bengkel lama untuk lantai, anak tangga, pintu dan hiasan dalaman yang hangat.<br>
+<br>
+Penggunaan: Gunakan untuk lantai bengkel lama, tangga, pintu dan hiasan tepi.<br>

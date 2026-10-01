@@ -1,0 +1,7 @@
+Relé d’enllaç d’interruptors
+Control enllaçat
+<&recipe>Un accessori amb aspecte de relé ofereix un punt local de commutació compacte per als panells.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers. Fes servir blocs receptors quan necessitis l’activació amb perles enllaçades.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.

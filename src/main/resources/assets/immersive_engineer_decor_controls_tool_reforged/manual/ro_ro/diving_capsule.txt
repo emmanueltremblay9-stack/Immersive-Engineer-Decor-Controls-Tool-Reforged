@@ -1,0 +1,5 @@
+Capsulă de aer pentru scufundări
+Rezervă de aer de urgență
+<&recipe>Capsula de aer este o rezervă de urgență pentru lucrul sub apă.<br>
+<br>
+Folosește-o manual pentru aer. În inventar se declanșează automat când aerul aproape s-a terminat, apoi intră în reîncărcare. Ia-o în mine inundate, la conducte scufundate și în camere de pompe.

@@ -1,0 +1,5 @@
+Mineraalisulatin
+Pieni käsittely-yksikkö
+<&recipe>Mineraalisulatin käsittelee mineraaleja korkeassa lämpötilassa vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Syötä mineraalikuutioita ja energiaa korkean lämpötilan sulatukseen.<br>

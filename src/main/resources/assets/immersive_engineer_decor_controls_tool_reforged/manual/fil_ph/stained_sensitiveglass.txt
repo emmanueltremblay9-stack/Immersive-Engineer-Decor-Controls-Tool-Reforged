@@ -1,0 +1,7 @@
+Kinulayang Salaming Pandama
+Salamin ng signal
+<&recipe>Pinananatili ng blokeng salamin na tumutugon sa redstone ang tanaw habang ipinapakita ang estado ng signal.<br>
+<br>
+Paggamit: Gamitin sa bintana ng silid ng kontrol, may ilaw na panel at protektadong salamin ng pabrika.<br>
+<br>
+Tandaan: Nagbabago ang estado dahil sa lakas ng kalapit na redstone.

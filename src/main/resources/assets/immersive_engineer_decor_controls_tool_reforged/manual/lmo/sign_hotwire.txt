@@ -1,0 +1,5 @@
+Placard de fil in tension
+Segn de pericol
+<&recipe>El Placard « Atent, fil in tension » el segna pericoi, sortide e zone de lavor cont un segn visibil adat a la sicurezza de fabrica.<br>
+<br>
+Metel vesin a pericoi, sortide, machine e zone de acess limitad.<br>

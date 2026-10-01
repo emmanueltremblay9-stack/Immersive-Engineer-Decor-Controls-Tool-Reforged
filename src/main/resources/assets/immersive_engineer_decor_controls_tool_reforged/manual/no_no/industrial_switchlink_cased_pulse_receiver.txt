@@ -1,0 +1,7 @@
+Pulsmottaker med kasse
+Koblet betjening
+<&recipe>En koblet pulsmottaker med kasse gir fjernpaneler en kort redstoneutløsning.<br>
+<br>
+Bruk: klikk på den med en enderperle for å lage en koblet perle. Høyreklikk på mottakeren eller utløs den koblede perlen for å gi en kort puls.<br>
+<br>
+Merknad: pulsen tilbakestilles automatisk etter den innstilte varigheten.

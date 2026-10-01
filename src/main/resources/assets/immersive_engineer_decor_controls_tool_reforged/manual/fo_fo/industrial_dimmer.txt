@@ -1,0 +1,7 @@
+Dimari
+Broytiligt tekin
+<&recipe>Ein snúningsstýring stillar reyðgrýtisstyrkina av einari lítlari panelframsíðu.<br>
+<br>
+Nýtsla: Høgraklikk fyri at økja úttakið stig fyri stig og fara aftur til null eftir fulla styrki.<br>
+<br>
+Viðmerking: Gevur styrki frá 0 til 15.

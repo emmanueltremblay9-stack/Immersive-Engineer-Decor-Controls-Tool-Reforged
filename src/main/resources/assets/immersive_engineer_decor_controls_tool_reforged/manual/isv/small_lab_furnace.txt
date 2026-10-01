@@ -1,0 +1,5 @@
+Laboratorna peč
+Kompaktna obrabotna jedinica
+<&recipe>Laboratorna peč vrši kompaktne děla topljenja na tverdo gorivo, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Upotrěbi tverdo gorivo dlja malyh partij topljenja.<br>

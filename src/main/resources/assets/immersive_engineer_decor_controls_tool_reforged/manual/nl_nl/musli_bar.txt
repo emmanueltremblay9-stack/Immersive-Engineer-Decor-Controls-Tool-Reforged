@@ -1,0 +1,5 @@
+Muslee Melange-energiereep
+Snelle werkplaatssnack
+<&recipe>De Muslee Melange-energiereep is compact voedsel van brood, zaden en fruit.<br>
+<br>
+Eet hem als veldvoedsel tijdens het plaatsen van bedieningselementen, leidingen, platforms of lange machinekamerroutes.

@@ -1,0 +1,5 @@
+Passive Flössichkeit
+Flössichkeitsleitungsbauteile
+<&recipe>Dä passive Flössichkeitssammler es e klein Flössichkeitsleitungsdeel för kleine Tanks, Rohrwääje, Sammelplätz un Redstone-jestüerte Durchfloß.<br>
+<br>
+Bruuch: Setz en aan passende Wasserquelle un loß Platz, öm Flössichkeit avzenemme.<br>

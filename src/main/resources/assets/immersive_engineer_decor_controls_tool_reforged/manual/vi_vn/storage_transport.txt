@@ -1,0 +1,41 @@
+Lưu trữ và vận chuyển
+Phụ kiện lưu trữ và dòng chảy
+Phụ kiện lưu trữ và vận chuyển gồm thùng, thùng chất lỏng, phễu và van để bố trí tuyến gọn trong nhà máy.<br>
+<br>
+Dùng các trang này khi bố trí kho vật tư, đường ống, bể kỹ thuật và tuyến chất lỏng có điều khiển.
+<np>
+Thùng có nhãn
+Nhãn kho có thể sửa
+<&labeled_crate>Thùng có nhãn này giúp phân loại rõ ràng trong kho. Tấm nhãn trước có thể sửa như biển nhỏ trong xưởng.<br>
+<br>
+Cách dùng: Nhấp phải vào tấm nhãn để sửa nhãn thùng. Nhấp phải vào phần còn lại của thùng để mở kho phụ kiện, linh kiện và vật tư bảo trì.<br>
+<np>
+Thùng chất lỏng
+Thiết bị tuyến chất lỏng
+<&fluid_barrel>Phụ kiện này là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Đặt ở nơi ống hoặc xô có thể tiếp cận mặt bể.<br>
+<np>
+Phễu thu chất lỏng
+Thiết bị tuyến chất lỏng
+<&small_fluid_funnel>Phễu thu chất lỏng nhỏ là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Đặt bên dưới điểm thu chất lỏng và dẫn lượng đã chứa vào bể hoặc đường ống thấp hơn.<br>
+<np>
+Van một chiều ống chất lỏng
+Thiết bị tuyến chất lỏng
+<&straight_pipe_valve>Van một chiều chất lỏng là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Căn van theo hướng dòng chảy mong muốn.<br>
+<np>
+Van chất lỏng redstone
+Thiết bị tuyến chất lỏng
+<&straight_pipe_valve_redstone>Van chất lỏng redstone là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Căn van theo hướng dòng chảy mong muốn.<br>
+<np>
+Van chất lỏng tương tự
+Thiết bị tuyến chất lỏng
+<&straight_pipe_valve_redstone_analog>Van chất lỏng tương tự là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Căn van theo hướng dòng chảy mong muốn.<br>

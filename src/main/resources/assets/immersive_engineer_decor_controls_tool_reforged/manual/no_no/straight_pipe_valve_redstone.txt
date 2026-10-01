@@ -1,0 +1,5 @@
+Redstonevæskeventil
+Utstyr for væskelinjer
+<&recipe>Redstonevæskeventilen er en kompakt væskerørdel for små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: rett ventilen etter den ønskede strømningsretningen.<br>

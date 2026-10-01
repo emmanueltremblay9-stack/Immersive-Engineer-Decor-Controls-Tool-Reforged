@@ -1,0 +1,7 @@
+Receptor de pulsos com carcaça
+Controle vinculado
+<&recipe>Um receptor vinculado de pulsos com carcaça fornece um acionamento breve de redstone para painéis remotos.<br>
+<br>
+Uso: Clique com uma pérola de Ender para criar uma pérola vinculada. Clique com o botão direito no receptor ou acione a pérola para emitir um pulso breve.<br>
+<br>
+Observações: O pulso termina automaticamente após a duração programada.

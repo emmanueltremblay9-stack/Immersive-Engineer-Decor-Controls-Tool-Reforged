@@ -1,0 +1,7 @@
+İldırımlı hava detektoru
+Siqnalın aşkar edilməsi
+<&recipe>İldırımlı hava sensoru ildırım zamanı xəbərdarlıqları işə salır.<br>
+<br>
+İstifadə: Açıq səma altına yerləşdirib lampalara və ya həyəcan siqnallarına qoşun.<br>
+<br>
+Qeydlər: İldırım və səmaya açıq yol tələb edir.

@@ -1,0 +1,7 @@
+Link-Perle
+Verchnüpfti Stüürig
+<&recipe>E Link-Perle speicheret en Empfänger als Ziel für d'Fernstüürig vo de Fabrik.<br>
+<br>
+Verwendig: Klick en Verchnüpfigsempfänger mit ere Enderperle aa. Benutz d'entstandeni Link-Perle bim Schliiche, um de gspeicherete Empfänger z'aktiviere.<br>
+<br>
+Hiwiis: S'Ziel muess glade sii, ide gliiche Dimension ligge und i Riichwiiti sii.

@@ -1,0 +1,41 @@
+Goymsla og flutningur
+Goymslu- og gjøgnumrenningarpartar
+Goymslu- og flutningsútgerð fevnir um kassar, tunnur, traktir og ventilar til stuttar flutningsleiðir í verksmiðjuni.<br>
+<br>
+Brúka hesar síðurnar, tá ið tú leggur goymslurúm, rørlagnir, viðlíkahaldstangar og stýrdar løgleiðingar til rættis.
+<np>
+Kassi við merki
+Broytiligt goymslumerki
+<&labeled_crate>Hesin kassin við merki er gjørdur til greiða flokking í goymslurúminum. Framplátan kann broytast sum eitt lítið verkstaðarskelti.<br>
+<br>
+Nýtsla: Høgraklikk á merkisplátuna fyri at broyta kassamerkið. Høgraklikk á restina av kassanum fyri at lata goymsluna til útgerð, partar og viðlíkahaldstilfar upp.<br>
+<np>
+Løgstunna
+Útgerð til løgleiðingar
+<&fluid_barrel>Hesin parturin er ein lítil løgleiðingarpartur til smáar tangar, rørlagnir, savnistøð og reyðgrýtisstýrda gjøgnumrenning.<br>
+<br>
+Nýtsla: Set hann, har rør ella spannir kunnu røkka tangasíðuni.<br>
+<np>
+Løgsavnitrakt
+Útgerð til løgleiðingar
+<&small_fluid_funnel>Lítla løgsavnitraktin er ein lítil løgleiðingarpartur til smáar tangar, rørlagnir, savnistøð og reyðgrýtisstýrda gjøgnumrenning.<br>
+<br>
+Nýtsla: Set hana undir løgsavnistaðið og leið goymda innihaldið í tangar ella rørlagnir longri niðri.<br>
+<np>
+Afturstreymingsventilur til løgrør
+Útgerð til løgleiðingar
+<&straight_pipe_valve>Afturstreymingsventilurin til løgrør er ein lítil løgleiðingarpartur til smáar tangar, rørlagnir, savnistøð og reyðgrýtisstýrda gjøgnumrenning.<br>
+<br>
+Nýtsla: Vend ventilinum í ætlaðu streymleiðina.<br>
+<np>
+Reyðgrýtisløgventilur
+Útgerð til løgleiðingar
+<&straight_pipe_valve_redstone>Reyðgrýtisstýrdi løgventilurin er ein lítil løgleiðingarpartur til smáar tangar, rørlagnir, savnistøð og reyðgrýtisstýrda gjøgnumrenning.<br>
+<br>
+Nýtsla: Vend ventilinum í ætlaðu streymleiðina.<br>
+<np>
+Analogur løgventilur
+Útgerð til løgleiðingar
+<&straight_pipe_valve_redstone_analog>Analogi reyðgrýtisløgventilurin er ein lítil løgleiðingarpartur til smáar tangar, rørlagnir, savnistøð og reyðgrýtisstýrda gjøgnumrenning.<br>
+<br>
+Nýtsla: Vend ventilinum í ætlaðu streymleiðina.<br>

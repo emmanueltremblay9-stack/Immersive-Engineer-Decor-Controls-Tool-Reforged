@@ -1,0 +1,5 @@
+Factory Block Placer
+Shop-floor utility
+<&recipe>This block installs blocks from its internal stock when activated.<br>
+<br>
+Usage: Point the working face at the target space and load placeable stacks.<br>

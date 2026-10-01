@@ -1,0 +1,7 @@
+Bistabiler Glos-Berührungsschalter
+Redstone-Steuerung
+<&recipe>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.

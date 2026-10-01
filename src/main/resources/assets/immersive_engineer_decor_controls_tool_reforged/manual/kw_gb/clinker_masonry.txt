@@ -1,0 +1,161 @@
+Klinker ha Menweyth
+Pliskow bryckys ha beton
+Klinker, bryckys slak, beton nerthys ha gweder arvwiskys a ry enepow poos rag stevelyow tomm, gweythdyow ha linennow gweles difresys.<br>
+<br>
+Usya an leghennow, grisyow, treghow ha fosow a gyf rag gorfenna amalow heb chanjya gis danvez an gweythva.
+<np>
+Stock Bryckys Klinker
+Bryckweyth tewol gans sugh
+<&clinker_brick_block>An stock ma a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Leghen Vryckys Klinker
+Bryckweyth tewol gans sugh
+<&clinker_brick_slab>An stock ma a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Grisyow Bryckys Klinker
+Bryckweyth tewol gans sugh
+<&clinker_brick_stairs>An stock ma a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Fos Vryckys Klinker
+Bryckweyth tewol gans sugh
+<&clinker_brick_wall>An stock ma a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Stock Klinker Lous
+Bryckweyth tewol gans sugh
+<&clinker_brick_stained_block>An Stock Bryckys Klinker Lous a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Leghen Klinker Lous
+Bryckweyth tewol gans sugh
+<&clinker_brick_stained_slab>An Leghen Vryckys Klinker Lous a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Grisyow Klinker Lous
+Bryckweyth tewol gans sugh
+<&clinker_brick_stained_stairs>An Grisyow Bryckys Klinker Lous a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Bryck Klinker Afinys
+Bryckweyth tewol gans sugh
+<&clinker_brick_sastor_corner_block>An Bryck Klinker Afinys gans Krag a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Bryck Klinker Ynkovys
+Bryckweyth tewol gans sugh
+<&clinker_brick_recessed>An stock ma a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Bryckys Klinker gans Folsyow
+Bryckweyth tewol gans sugh
+<&clinker_brick_vertically_slit>An Bryckys Klinker gans Folsyow Savadow a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Leghen Klinker Savadow
+Bryckweyth tewol gans sugh
+<&clinker_brick_vertical_slab_structured>An Leghen Klinker Savadow gans Gwead a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Hanter-Leghen Vryck Klinker
+Bryckweyth tewol gans sugh
+<&halfslab_clinker_brick>An stock ma a dhros bryckweyth tewolheys gans sugh dhe neuadhow fogow, bonow simna ha fosow gonis.<br>
+<br>
+Devnydh: usya e avel fos, afinans amal po plisk ranndir tomm a-dro dhe fogow ha boyleryow.<br>
+<np>
+Stock Bryckys Slak
+Menweyth gwasgys gweythva
+<&slag_brick_block>An stock ma a geworr menweyth loos-gell gwasgys rag selvennow, fosow gwitha dor ha skiberow oberi kottha.<br>
+<br>
+Devnydh: usya e rag selvennow kottha, fosow gwitha dor ha leuriow gweythva lous.<br>
+<np>
+Leghen Vryckys Slak
+Menweyth gwasgys gweythva
+<&slag_brick_slab>An stock ma a geworr menweyth loos-gell gwasgys rag selvennow, fosow gwitha dor ha skiberow oberi kottha.<br>
+<br>
+Devnydh: usya e rag selvennow kottha, fosow gwitha dor ha leuriow gweythva lous.<br>
+<np>
+Grisyow Bryckys Slak
+Menweyth gwasgys gweythva
+<&slag_brick_stairs>An stock ma a geworr menweyth loos-gell gwasgys rag selvennow, fosow gwitha dor ha skiberow oberi kottha.<br>
+<br>
+Devnydh: usya e rag selvennow kottha, fosow gwitha dor ha leuriow gweythva lous.<br>
+<np>
+Fos Vryckys Slak
+Menweyth gwasgys gweythva
+<&slag_brick_wall>An stock ma a geworr menweyth loos-gell gwasgys rag selvennow, fosow gwitha dor ha skiberow oberi kottha.<br>
+<br>
+Devnydh: usya e rag selvennow kottha, fosow gwitha dor ha leuriow gweythva lous.<br>
+<np>
+Stock Beton Nerthys
+Beton nerthys
+<&rebar_concrete>An stock ma yw darn beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Leghen Beton Nerthys
+Beton nerthys
+<&rebar_concrete_slab>An stock ma yw darn beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Grisyow Beton Nerthys
+Beton nerthys
+<&rebar_concrete_stairs>An stock ma yw darn beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Fos Beton Nerthys
+Beton nerthys
+<&rebar_concrete_wall>An stock ma yw darn beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Tregh Beton Nerthys
+Beton nerthys
+<&halfslab_rebar_concrete>An stock ma yw darn beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Leghen Leur Beton Nerthys
+Beton nerthys
+<&rebar_concrete_tile>An stock ma yw darn beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Leghen Wostek a Leghennow Beton Nerthys
+Beton nerthys
+<&rebar_concrete_tile_slab>An stock ma yw darn beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Leghen Leur Beton Nerthys
+Beton nerthys
+<&rebar_concrete_tile_stairs>An Grisyow Leghennow Beton Nerthys yw darnow beton kales rag selvennow jynnys, fosow difres tardhans ha leuriow leow karga.<br>
+<br>
+Devnydh: usya e a-woles dhe jynnys, a-hys koridorow gonis, po neble may fo res a selven nerthys y'n drehevyans.<br>
+<np>
+Stock Gweder Arvwiskys
+Linenn weles difresys
+<&panzerglass_block>An stock ma a with linennow gweles ygor hag a gyf hwath gans drehevel gweythva nerthys.<br>
+<br>
+Devnydh: usya e may fynner dhe warioryon gweles jynnys dre skoodh difresys.<br>
+<np>
+Leghen Weder Arvwiskys
+Linenn weles difresys
+<&panzerglass_slab>An stock ma a with linennow gweles ygor hag a gyf hwath gans drehevel gweythva nerthys.<br>
+<br>
+Devnydh: usya e may fynner dhe warioryon gweles jynnys dre skoodh difresys.<br>

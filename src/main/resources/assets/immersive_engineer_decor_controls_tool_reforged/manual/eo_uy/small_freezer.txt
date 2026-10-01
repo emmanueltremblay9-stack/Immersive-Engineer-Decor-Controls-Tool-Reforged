@@ -1,0 +1,5 @@
+Akvofrostigilo
+Kompakta prilabora unuo
+<&recipe>La akvofrostigilo plenumas kompaktan malvarmigan laboron por energiigitaj fluidsistemoj.<br>
+<br>
+Uzado: provizu akvon kaj energion por faza glaciproduktado.<br>

@@ -1,0 +1,5 @@
+Niszczyciel bloków
+Urządzenie warsztatowe
+<&recipe>Mały niszczyciel bloków należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Skieruj stronę roboczą ku blokowi do usunięcia.<br>

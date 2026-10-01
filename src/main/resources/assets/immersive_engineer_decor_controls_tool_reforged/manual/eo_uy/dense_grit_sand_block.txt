@@ -1,0 +1,5 @@
+Kompakta gruza sablo
+Laboreja grundkovraĵo
+<&recipe>Ĉi tiu bloko donas kompaktigitan surtretitan surfacon al eksteraj laborareoj.<br>
+<br>
+Uzado: metu ĝin ĉirkaŭ ŝarĝpordoj, eksteraj tankoj kaj maŝinkortoj.<br>

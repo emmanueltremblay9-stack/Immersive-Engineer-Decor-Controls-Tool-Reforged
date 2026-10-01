@@ -1,0 +1,5 @@
+Bloca leigeil às factaraidh
+Goireas làir bùth-obrach
+<&recipe>Leigidh am bloca seo nithean stòraichte a-mach bho aghaidh air a h-amas.<br>
+<br>
+Cleachdadh: amas an aghaidh air a' phuing leigeil às, lìon na sliotanan a-staigh agus rèitich feachd, ceàrn, dàil, loidsig criathraig agus modh redstone air an sgrìn aige.<br>

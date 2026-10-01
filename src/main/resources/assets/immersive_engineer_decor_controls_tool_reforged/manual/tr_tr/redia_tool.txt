@@ -1,0 +1,7 @@
+REDIA Aleti
+Elmas kaplı yardımcı alet
+<&recipe>REDIA aleti; geçici şantiyeler, atölyeler ve maden girişlerinde saha işi için dayanıklı, elmas düzeyinde çok amaçlı alettir.<br>
+<br>
+Kullanım: Yanınızda meşale varken kullanarak REDIA aletini yıpratmadan envanterden bir meşale yerleştirin. Bitkileri kırpmak veya toprağı sırasıyla toprak, tarım arazisi, iri taneli toprak ve toprak yol arasında değiştirmek için eğilerek kullanın. Alt yüzeyde orijinal yedek balta işlevi uygulanır. Bağlı ağaç bloklarını kesmek için kütük kırarken eğilin.<br>
+<br>
+Elmaslarla onarın. Tamamen onarılmış REDIA aletini daha da onarmak, orijinal Verimlilik ve Servet gelişimini geri getirir.

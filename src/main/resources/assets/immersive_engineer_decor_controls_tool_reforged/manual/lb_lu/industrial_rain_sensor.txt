@@ -1,0 +1,7 @@
+Reensensor
+Signalerkennung
+<&recipe>E Wiedersensor verwandelt de Reen op senger Plaz a Redstone.<br>
+<br>
+Benotzung: Montéier en do, wou de Block driwwer Reen ofkréie kann.<br>
+<br>
+Hiweiser: Préift de Reen iwwer dem Sensor.

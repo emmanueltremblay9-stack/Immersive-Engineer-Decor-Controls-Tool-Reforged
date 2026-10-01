@@ -1,0 +1,5 @@
+Okno z jeklenim okvirjem
+Zaščiten pogled
+<&recipe>Ta blok ohranja odprt pogled in se hkrati ujema z ojačano tovarniško gradnjo.<br>
+<br>
+Uporaba: Uporabi ga tam, kjer naj igralci vidijo stroje skozi zaščitno pregrado.<br>

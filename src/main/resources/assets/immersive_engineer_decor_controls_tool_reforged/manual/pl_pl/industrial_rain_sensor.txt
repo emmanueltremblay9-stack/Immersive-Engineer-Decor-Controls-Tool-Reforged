@@ -1,0 +1,7 @@
+Czujnik deszczu
+Wykrywanie sygnałów
+<&recipe>Czujnik pogody zamienia padający na niego deszcz w sygnał redstone.<br>
+<br>
+Użycie: Zamontuj go tak, aby deszcz mógł padać na blok nad nim.<br>
+<br>
+Uwagi: Sprawdza deszcz nad czujnikiem.

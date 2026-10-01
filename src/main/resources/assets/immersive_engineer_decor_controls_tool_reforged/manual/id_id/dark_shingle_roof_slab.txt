@@ -1,0 +1,5 @@
+Lempeng Atap Sirap Gelap
+Komponen atap lapuk
+<&recipe>Blok ini membentuk garis atap gelap dan praktis untuk bengkel serta gudang industri.<br>
+<br>
+Penggunaan: gabungkan bagian-bagiannya untuk membuat bentuk atap yang meyakinkan.<br>

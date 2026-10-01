@@ -1,0 +1,7 @@
+Analogni prijemnik veze
+Povezano upravljanje
+<&recipe>Povezani prijemnik daje komandnim panelima vidljiv udaljeni cilj.<br>
+<br>
+Upotreba: klikni ender biserom da napraviš povezani biser. Upotrebi ga pri šunjanju da daljinski aktiviraš prijemnik.<br>
+<br>
+Napomene: ovaj prijemnik emituje redstoun najveće snage kada se okine.

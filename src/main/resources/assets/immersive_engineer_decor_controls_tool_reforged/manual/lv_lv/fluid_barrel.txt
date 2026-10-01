@@ -1,0 +1,5 @@
+Šķidrumu muca
+Šķidrumu līnijas aprīkojums
+<&recipe>Šī ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto tur, kur caurules vai spaiņi var piekļūt tvertnes pusei.<br>

@@ -1,0 +1,789 @@
+Redstone boshqaruvlari
+O'lchagichlar va signal jihozlari
+Boshqaruv jihozlari yashirin redstoneni aniq zavod panellari, sensorlar, ko'rsatkichlar, kalitlar, ogohlantirgichlar va bog'langan signal qismlariga aylantiradi.<br>
+<br>
+Operator ish joylari, signal taxtalari, xavfsizlik sxemalari va masofaviy boshqaruvlar qurishda bu sahifalardan foydalaning.
+<np>
+O'q nishoni
+Qisqa impuls
+<&arrow_target>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Eshik sensori
+Redstone boshqaruvi
+<&door_sensor_switch>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Lift tugmasi
+Redstone boshqaruvi
+<&elevator_button>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Oynali tugma
+Redstone boshqaruvi
+<&glass_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Oynali tugma
+Redstone boshqaruvi
+<&glass_small_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Oynali sensorli tugma
+Redstone boshqaruvi
+<&glass_touch_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Mashina tugmasi
+Redstone boshqaruvi
+<&industrial_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Tugma
+Redstone boshqaruvi
+<&industrial_double_pole_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Himoyalangan mashina tugmasi
+Redstone boshqaruvi
+<&industrial_fenced_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Taqillatish tugmasi
+Redstone boshqaruvi
+<&industrial_knock_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Eski bezakli tugma
+Redstone boshqaruvi
+<&oldfancy_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Eski bezakli tugma
+Redstone boshqaruvi
+<&oldfancy_small_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Eski bezakli zanjir tugmasi
+Qisqa impuls
+<&oldfancy_spring_reset_chain>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Qishloqcha tugma
+Redstone boshqaruvi
+<&rustic_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Qishloqcha mix tugmasi
+Redstone boshqaruvi
+<&rustic_nail_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Kichik qishloqcha tugma
+Redstone boshqaruvi
+<&rustic_small_button>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Qishloqcha zanjir tugmasi
+Qisqa impuls
+<&rustic_spring_reset_chain>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.
+<np>
+Oynali kontakt plitasi
+Bosim impulsi
+<&glass_contact_mat>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Oynali eshik kontakti
+Bosim impulsi
+<&glass_door_contact_mat>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Kontakt gilamchasi
+Bosim impulsi
+<&industrial_contact_mat>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Eshik kontakt gilamchasi
+Bosim impulsi
+<&industrial_door_contact_mat>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Tushib o'tish detektori
+Signalni sezish
+<&industrial_fallthrough_detector>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Oyoq tugmasi
+Redstone boshqaruvi
+<&industrial_foot_button>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Zarbaga javob beruvchi sanoat eshigi
+Bosim impulsi
+<&industrial_high_sensitive_trapdoor>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Zarba kontakt gilamchasi
+Bosim impulsi
+<&industrial_shock_sensitive_contact_mat>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Zarbadan ochiladigan lyuk
+Bosim impulsi
+<&industrial_shock_sensitive_trapdoor>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Qizil quvvat guli
+Bosim impulsi
+<&red_power_plant>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Qishloqcha bosim plitasi
+Bosim impulsi
+<&rustic_contact_plate>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Qishloqcha eshik bosimi
+Bosim impulsi
+<&rustic_door_contact_plate>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Qishloqcha tushish detektori
+Signalni sezish
+<&rustic_fallthrough_detector>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Zarbaga javob beruvchi qishloqcha eshik
+Bosim impulsi
+<&rustic_high_sensitive_trapdoor>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Qishloqcha zarba plitasi
+Bosim impulsi
+<&rustic_shock_sensitive_plate>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Zarbaga javob beruvchi qishloqcha eshik
+Bosim impulsi
+<&rustic_shock_sensitive_trapdoor>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Sariq quvvat guli
+Bosim impulsi
+<&yellow_power_plant>Kontakt kaliti pol yoki lyuk harakatidan qisqa muddatli signal yuboradi.<br>
+<br>
+Ishlatish: mavjudotlar xizmat yo'lagi, yuklagich yoki qo'riqlanadigan yo'ldan o'tadigan joyga qo'ying.<br>
+<br>
+Eslatma: mavjudot tekkandan so'ng qisqa vaqt impuls beradi.
+<np>
+Oynali kun taymeri
+Kunduzgi yorug'lik signali
+<&glass_day_timer>Taymer kaliti dunyo siklining kunduzgi qismiga ergashadi.<br>
+<br>
+Ishlatish: hovli chiroqlari, yopqichlar va faqat kunduzi ishlaydigan zavod boshqaruvlarida foydalaning.<br>
+<br>
+Eslatma: osmon yorug'ligi bor o'lcham talab qilinadi.
+<np>
+Oynali mavjudot detektori
+Signalni sezish
+<&glass_entity_detector>Mavjudot detektori ko'rinadigan pol plitasisiz yaqin harakatni kuzatadi.<br>
+<br>
+Ishlatish: eshiklar, chiroqlar, ogohlantirgichlar yoki mashina blokirovkalariga ulang.<br>
+<br>
+Eslatma: blok atrofidagi kichik hududni tekshiradi.
+<np>
+Oynali oraliq signal
+Vaqtli impuls
+<&glass_interval_timer>Ixcham taymer kaliti rejalashtirilgan redstone impulsi beradi.<br>
+<br>
+Ishlatish: kichik mexanizmga davriy yoki kechiktirilgan boshqaruv kerak joyda foydalaning.<br>
+<br>
+Eslatma: rejalashtirilgan redstone impulslaridan foydalanadi.
+<np>
+Oynali chiziq detektori
+Signalni sezish
+<&glass_linear_entity_detector>Mavjudot detektori ko'rinadigan pol plitasisiz yaqin harakatni kuzatadi.<br>
+<br>
+Ishlatish: eshiklar, chiroqlar, ogohlantirgichlar yoki mashina blokirovkalariga ulang.<br>
+<br>
+Eslatma: blok atrofidagi kichik hududni tekshiradi.
+<np>
+Blok detektori
+Signalni sezish
+<&industrial_block_detector>Blok detektori qaragan joyi bandligini tekshiradi.<br>
+<br>
+Ishlatish: kuzatiladigan mashina yuzi, zaxira yoki qo'riqlanadigan joyga qarating.<br>
+<br>
+Eslatma: oldidagi blok havo bo'lmasa, quvvat beradi.
+<np>
+Kun taymeri
+Kunduzgi yorug'lik signali
+<&industrial_day_timer>Taymer kaliti dunyo siklining kunduzgi qismiga ergashadi.<br>
+<br>
+Ishlatish: hovli chiroqlari, yopqichlar va faqat kunduzi ishlaydigan zavod boshqaruvlarida foydalaning.<br>
+<br>
+Eslatma: osmon yorug'ligi bor o'lcham talab qilinadi.
+<np>
+Mavjudot detektori
+Signalni sezish
+<&industrial_entity_detector>Mavjudot detektori ko'rinadigan pol plitasisiz yaqin harakatni kuzatadi.<br>
+<br>
+Ishlatish: eshiklar, chiroqlar, ogohlantirgichlar yoki mashina blokirovkalariga ulang.<br>
+<br>
+Eslatma: blok atrofidagi kichik hududni tekshiradi.
+<np>
+Oraliq taymer
+Vaqtli impuls
+<&industrial_interval_timer>Ixcham taymer kaliti rejalashtirilgan redstone impulsi beradi.<br>
+<br>
+Ishlatish: kichik mexanizmga davriy yoki kechiktirilgan boshqaruv kerak joyda foydalaning.<br>
+<br>
+Eslatma: rejalashtirilgan redstone impulslaridan foydalanadi.
+<np>
+Yorug'lik sensori
+Signalni sezish
+<&industrial_light_sensor>Yorug'lik sensori mahalliy yorug'likni redstone boshqaruviga aylantiradi.<br>
+<br>
+Ishlatish: avtomatik chiroqlar, yopqichlar va ko'rinish sxemalarida foydalaning.<br>
+<br>
+Eslatma: xom yorug'lik darajasi 8 yoki undan yuqori bo'lsa, quvvat beradi.
+<np>
+Momaqaldiroq detektori
+Signalni sezish
+<&industrial_lightning_sensor>Momaqaldiroq sensori momaqaldiroq paytida ogohlantirishlarni ishga tushiradi.<br>
+<br>
+Ishlatish: ochiq osmon ostiga qo'yib, chiroq yoki ogohlantirgichlarga ulang.<br>
+<br>
+Eslatma: momaqaldiroq va ochiq osmon talab qilinadi.
+<np>
+Chiziqli mavjudot detektori
+Signalni sezish
+<&industrial_linear_entity_detector>Mavjudot detektori ko'rinadigan pol plitasisiz yaqin harakatni kuzatadi.<br>
+<br>
+Ishlatish: eshiklar, chiroqlar, ogohlantirgichlar yoki mashina blokirovkalariga ulang.<br>
+<br>
+Eslatma: blok atrofidagi kichik hududni tekshiradi.
+<np>
+Yomg'ir sensori
+Signalni sezish
+<&industrial_rain_sensor>Ob-havo sensori o'z joyiga yog'ayotgan yomg'irni redstone signaliga aylantiradi.<br>
+<br>
+Ishlatish: ustidagi blokka yomg'ir tushadigan joyga mahkamlang.<br>
+<br>
+Eslatma: sensor tepasidagi yomg'irni tekshiradi.
+<np>
+Ikki barqaror holatli oynali kalit
+Redstone boshqaruvi
+<&glass_rotary_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Ikki holatli oynali sensor
+Redstone boshqaruvi
+<&glass_touch_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Zarg'aldoq sezgir oyna
+Signal oynasi
+<&orange_sensitiveglass>Redstonega javob beradigan oyna bloki signal holatini ko'rsatib, ko'rish yo'lini saqlaydi.<br>
+<br>
+Ishlatish: boshqaruv xonasi derazalari, yoritilgan panellar va himoyalangan zavod oynalarida foydalaning.<br>
+<br>
+Eslatma: yaqin redstone quvvati bilan holati o'zgaradi.
+<np>
+Yorug'lik chiqaruvchi sezgir oyna
+Signal oynasi
+<&sensitive_glass_block>Redstonega javob beradigan oyna bloki signal holatini ko'rsatib, ko'rish yo'lini saqlaydi.<br>
+<br>
+Ishlatish: boshqaruv xonasi derazalari, yoritilgan panellar va himoyalangan zavod oynalarida foydalaning.<br>
+<br>
+Eslatma: yaqin redstone quvvati bilan holati o'zgaradi.
+<np>
+Rangli sezgir oyna
+Signal oynasi
+<&stained_sensitiveglass>Redstonega javob beradigan oyna bloki signal holatini ko'rsatib, ko'rish yo'lini saqlaydi.<br>
+<br>
+Ishlatish: boshqaruv xonasi derazalari, yoritilgan panellar va himoyalangan zavod oynalarida foydalaning.<br>
+<br>
+Eslatma: yaqin redstone quvvati bilan holati o'zgaradi.
+<np>
+Oynali ustuncha o'lchagich
+Signal o'lchagichi
+<&glass_vertical_bar_gauge>Boshqaruv xonasidagi ixcham o'lchagich redstone kuchini panelda aniq ko'rsatadi.<br>
+<br>
+Ishlatish: qo'shni redstone quvvatini bir qarashda tekshirish mumkin joyga mahkamlang.<br>
+<br>
+Eslatma: yaqin redstone kuchini 0 dan 15 gacha o'qiydi.
+<np>
+Analog o'lchagich
+Signal o'lchagichi
+<&industrial_analog_angular_gauge>Boshqaruv xonasidagi ixcham o'lchagich redstone kuchini panelda aniq ko'rsatadi.<br>
+<br>
+Ishlatish: qo'shni redstone quvvatini bir qarashda tekshirish mumkin joyga mahkamlang.<br>
+<br>
+Eslatma: yaqin redstone kuchini 0 dan 15 gacha o'qiydi.
+<np>
+Voltmetr o'lchagichi
+Signal o'lchagichi
+<&industrial_analog_horizontal_gauge>Boshqaruv xonasidagi ixcham o'lchagich redstone kuchini panelda aniq ko'rsatadi.<br>
+<br>
+Ishlatish: qo'shni redstone quvvatini bir qarashda tekshirish mumkin joyga mahkamlang.<br>
+<br>
+Eslatma: yaqin redstone kuchini 0 dan 15 gacha o'qiydi.
+<np>
+Raqamli o'lchagich
+Aniq o'qiladigan signal kuchi
+<&industrial_small_digital_gauge>Boshqaruv xonasidagi ixcham o'lchagich redstone kuchini panelda aniq ko'rsatadi.<br>
+<br>
+Ishlatish: qo'shni redstone quvvatini bir qarashda tekshirish mumkin joyga mahkamlang.<br>
+<br>
+Eslatma: yaqin redstone kuchini 0 dan 15 gacha o'qiydi.
+<np>
+Oyna naychali o'lchagich
+Signal o'lchagichi
+<&industrial_tube_gauge>Boshqaruv xonasidagi ixcham o'lchagich redstone kuchini panelda aniq ko'rsatadi.<br>
+<br>
+Ishlatish: qo'shni redstone quvvatini bir qarashda tekshirish mumkin joyga mahkamlang.<br>
+<br>
+Eslatma: yaqin redstone kuchini 0 dan 15 gacha o'qiydi.
+<np>
+Analog ustuncha o'lchagich
+Signal o'lchagichi
+<&industrial_vertical_bar_gauge>Boshqaruv xonasidagi ixcham o'lchagich redstone kuchini panelda aniq ko'rsatadi.<br>
+<br>
+Ishlatish: qo'shni redstone quvvatini bir qarashda tekshirish mumkin joyga mahkamlang.<br>
+<br>
+Eslatma: yaqin redstone kuchini 0 dan 15 gacha o'qiydi.
+<np>
+Ogohlantirish chirog'i
+Signal holatining aks ettirilishi
+<&industrial_alarm_lamp>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Ogohlantirish sirenasi
+Signal holatining aks ettirilishi
+<&industrial_alarm_siren>Signal sirenasi blok yuzasiga ornatiladigan redstone korsatkichidir. Uning quvvat holati biriktirilgan blok signaliga qarab ozgaradi.<br>
+<br>
+Eshik, mashina, signal yoki panelni kuzatish uchun qattiq yuzaga ornating va quvvat bering.<br>
+<br>
+Signal faol turganda sirena har soniyada yangilanadi.
+<np>
+Miltillovchi LED
+Signal holatining aks ettirilishi
+<&industrial_blinking_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Yashil miltillovchi LED
+Signal holatining aks ettirilishi
+<&industrial_green_blinking_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Yashil LED
+Signal holatining aks ettirilishi
+<&industrial_green_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Qizil LED
+Signal holatining aks ettirilishi
+<&industrial_red_blinking_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Qizil LED
+Signal holatining aks ettirilishi
+<&industrial_red_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Oq miltillovchi LED
+Signal holatining aks ettirilishi
+<&industrial_white_blinking_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Oq LED
+Signal holatining aks ettirilishi
+<&industrial_white_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Sariq miltillovchi LED
+Signal holatining aks ettirilishi
+<&industrial_yellow_blinking_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Sariq LED
+Signal holatining aks ettirilishi
+<&industrial_yellow_led>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Qishloqcha semafor
+Signal holatining aks ettirilishi
+<&rustic_semaphore>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.
+<np>
+Taqqoslagich kaliti
+Mahkamlangan blok signali
+<&industrial_comparator_switch>Ixcham sensor kaliti o'zi mahkamlangan blokni o'qib, natijani oddiy panel chiqishiga aylantiradi.<br>
+<br>
+Ishlatish: inventar, bak yoki redstone jihoziga mahkamlang. Ulangan blok taqqoslagich, idish yoki redstone chiqishini bildirganda, kalit to'liq quvvatli redstone chiqaradi.<br>
+<br>
+Eslatma: zaxira sathi yoki yashirin simlarni aniq yoqiq/o'chiq boshqaruv liniyasiga aylantirishda foydalaning.
+<np>
+Signal rostlagichi
+O'zgaruvchan signal
+<&industrial_dimmer>Burama boshqaruv ixcham panel yuzasidan redstone kuchini belgilaydi.<br>
+<br>
+Ishlatish: chiqishni bosqichma-bosqich oshirish uchun o'ng tugmani bosing; eng yuqori kuchdan keyin yana nolga qaytadi.<br>
+<br>
+Eslatma: 0 dan 15 gacha kuch chiqaradi.
+<np>
+Favqulodda to'xtatish tugmasi
+Redstone boshqaruvi
+<&industrial_estop_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Angut to'sgichi
+Redstone boshqaruvi
+<&industrial_hopper_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Taqillatish kaliti
+Redstone boshqaruvi
+<&industrial_knock_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Dastak
+Redstone boshqaruvi
+<&industrial_lever>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Ikki tugmali mashina kaliti
+Redstone boshqaruvi
+<&industrial_machine_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Tortma tutqich
+Redstone boshqaruvi
+<&industrial_pull_handle>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Burama dastak
+Redstone boshqaruvi
+<&industrial_rotary_lever>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Burama mashina kaliti
+Redstone boshqaruvi
+<&industrial_rotary_machine_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Kontakt dastagi
+Redstone boshqaruvi
+<&industrial_small_lever>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Kalit
+Redstone boshqaruvi
+<&industrialswitch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Chiroq kaliti
+Redstone boshqaruvi
+<&light_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Klapan kaliti
+Redstone boshqaruvi
+<&valve_wheel_switch>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Qobiqli impuls qabul qilgich
+Bog'langan boshqaruv
+<&industrial_switchlink_cased_pulse_receiver>Qobiqli bog'langan impuls qabul qilgich masofaviy panellar uchun qisqa muddatli redstone ishga tushirish signalini beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qisqa impuls chiqarish uchun o'ng tugmani bosing yoki bog'langan injuni ishga tushiring.<br>
+<br>
+Eslatma: belgilangan muddat tugagach, impuls o'z-o'zidan dastlabki holatga qaytadi.
+<np>
+Qobiqli aloqa qabul qilgichi
+Bog'langan boshqaruv
+<&industrial_switchlink_cased_receiver>Qobiqli bog'langan qabul qilgich masofaviy panellar uchun mustahkam redstone nishoni beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qo'lda almashtirish uchun bevosita qabul qilgichga o'ng tugma bilan bosing.<br>
+<br>
+Eslatma: bog'langan injudan egilib foydalanilganda bu qabul qilgich almashadi.
+<np>
+Impulsli aloqa qabul qilgichi
+Bog'langan boshqaruv
+<&industrial_switchlink_pulse_receiver>Bog'langan impuls qabul qilgich masofaviy panellar uchun qisqa muddatli redstone ishga tushirish signalini beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qisqa impuls chiqarish uchun o'ng tugmani bosing yoki bog'langan injuni ishga tushiring.<br>
+<br>
+Eslatma: belgilangan muddat tugagach, impuls o'z-o'zidan dastlabki holatga qaytadi.
+<np>
+Impulsli aloqa relesi
+Bog'langan boshqaruv
+<&industrial_switchlink_pulse_relay>Rele uslubidagi qism panel qurilishlariga ixcham mahalliy kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni almashtirishga o'ng tugmani bosing. Bog'langan inju bilan faollashtirish kerak bo'lsa, qabul qilgich bloklaridan foydalaning.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Kalit aloqa qabul qilgichi
+Bog'langan boshqaruv
+<&industrial_switchlink_receiver>Bog'langan qabul qilgich masofaviy panellar uchun to'liq quvvatli redstone nishoni beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qo'lda almashtirish uchun bevosita qabul qilgichga o'ng tugma bilan bosing.<br>
+<br>
+Eslatma: bog'langan injudan egilib foydalanilganda bu qabul qilgich almashadi.
+<np>
+Analog aloqa qabul qilgichi
+Bog'langan boshqaruv
+<&industrial_switchlink_receiver_analog>Bog'langan qabul qilgich boshqaruv panellariga ko'rinadigan masofaviy nishon beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qabul qilgichni masofadan faollashtirish uchun o'sha injudan egilib foydalaning.<br>
+<br>
+Eslatma: bu qabul qilgich ishga tushirilganda to'liq redstone signali chiqaradi.
+<np>
+Kalit aloqa relesi
+Bog'langan boshqaruv
+<&industrial_switchlink_relay>Rele uslubidagi qism panel qurilishlariga ixcham mahalliy kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni almashtirishga o'ng tugmani bosing. Bog'langan inju bilan faollashtirish kerak bo'lsa, qabul qilgich bloklaridan foydalaning.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Analog aloqa relesi
+Bog'langan boshqaruv
+<&industrial_switchlink_relay_analog>Rele uslubidagi qism panel qurilishlariga ixcham mahalliy kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni almashtirishga o'ng tugmani bosing. Bog'langan inju bilan faollashtirish kerak bo'lsa, qabul qilgich bloklaridan foydalaning.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Kalit aloqa injusi
+Bog'langan boshqaruv
+<&switchlink_pearl>Bog'langan inju zavodni masofadan boshqarish uchun qabul qilgich nishonini saqlaydi.<br>
+<br>
+Ishlatish: yaratish uchun kalit aloqa qabul qilgichini ender injusi bilan bosing. Saqlangan qabul qilgichni faollashtirish uchun bog'langan injudan egilib foydalaning.<br>
+<br>
+Eslatma: nishon yuklangan, bir xil o'lchamda va masofa chegarasida bo'lishi kerak.
+<np>
+Eski bezakli dastak
+Redstone boshqaruvi
+<&oldfancy_bistableswitch1>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Eski bezakli burama dastak
+Redstone boshqaruvi
+<&oldfancy_bistableswitch2>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Qishloqcha burama dastak
+Redstone boshqaruvi
+<&rustic_angular_lever>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Qishloqcha dastak
+Redstone boshqaruvi
+<&rustic_lever>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Qishloqcha mix dastagi
+Redstone boshqaruvi
+<&rustic_nail_lever>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.
+<np>
+Ikki oshiq-moshiqli qishloqcha dastak
+Redstone boshqaruvi
+<&rustic_two_hinge_lever>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.

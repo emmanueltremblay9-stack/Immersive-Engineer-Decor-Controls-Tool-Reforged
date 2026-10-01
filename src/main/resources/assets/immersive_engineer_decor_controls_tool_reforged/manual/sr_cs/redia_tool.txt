@@ -1,0 +1,7 @@
+REDIA alat
+Korisni alat obložen dijamantom
+<&recipe>REDIA alat je izdržljiv višenamenski alat dijamantskog nivoa za terenski rad na privremenim gradilištima, u radionicama i na ulazima rudnika.<br>
+<br>
+Upotreba: koristi ga dok nosiš baklje da postaviš jednu baklju iz inventara bez habanja REDIA alata. Pri šunjanju šiša biljke ili menja tlo između zemlje, oranice, hrapave zemlje i zemljane staze. Izvorna rezervna radnja sekire primenjuje se sa donje strane. Šunjaj se dok razbijaš debla da oboriš povezane blokove drveta.<br>
+<br>
+Popravljaj ga dijamantima. Popravljanje već potpuno popravljenog REDIA alata preko maksimuma vraća izvorno napredovanje Efikasnosti i Sreće.

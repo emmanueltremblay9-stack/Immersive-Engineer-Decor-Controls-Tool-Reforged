@@ -1,0 +1,99 @@
+Werkzeig vom Ingenieur
+Tragbore Werkstattausrüstung
+De Werkzeig vom Ingenieur erweitern des gleiche Hondbuch wie de Dekor- und Steuerblöcke um Hondgeräte, Minenmarkierungen, Notfallzeug, Proviant und kloane Hüfen zur Materialverarbeitung.<br>
+<br>
+Des Werkzeig is für Arbeit weg von da komplettn Werkstatt gedacht: Weg markieren, Vorräte tragen, Missgeschicke ausbessern und kloane Verarbeitungsschritte vor Ort erledign.
+<np>
+REDIA-Werkzeig
+Diamantbeschichteter Allrounder
+<&redia_tool>Des REDIA-Werkzeig is a langlebige Hüfe für schnölle Bodnarbeitn unterwegs. Benutz's auf geeignetem Bodn, um Ockerland anzulegen.<br>
+<br>
+Benutz's mit Fackln im Inventar an ana festen Fläche, um a Fackl zu setzn, ohne REDIA abzunutzn. Bodnarbeitn, Schern, Axtarbeitn und Bamfälln kosten Haltbarkeit.
+<np>
+Erz-Zerkleinerungshammer
+Handwerkzeug
+<&crushing_hammer>Der Erz-Zerkleinerungshammer ist ein manuelles Verarbeitungswerkzeug für frühe Eisen- und Goldarbeiten.<br>
+<br>
+Benutzung: Mit Roheisen, Rohgold, Eisenerz, Tiefenschiefer-Eisenerz, Golderz oder Tiefenschiefer-Golderz herstellen, um Immersive-Engineering-Eisen- oder Goldstaub zu erzeugen. Der Hammer verliert Haltbarkeit und kehrt ins Herstellungsraster zurück, bis er zerbricht.<br>
+<br>
+Er nutzt sich auch beim Abbauen ab und kann Ziele im Nahkampf zurückstoßen.
+<np>
+Tracker
+Gespeicherte Positionsmarkierung
+<&tracker>Der Tracker speichert eine Blockposition direkt im Gegenstand.<br>
+<br>
+Benutzung: Einen Block anklicken, um Dimension und Koordinaten zu speichern. Der Tooltip zeigt die Position. Durch Schleichen-Benutzung wird das Ziel gelöscht.<br>
+<br>
+Zum Markieren von Maschinen, Tunnelabzweigungen, Fernsteuerungen oder unfertigen Baustellen vor der Rückkehr mit Werkzeug und Material.
+<np>
+Ariadne-Kohln
+Wegmarkierung für Minen
+<&ariadne_coal>Ariadne-Kohln setzt schnöll schworze Richtungspfeile auf feste Minenflächen. Markier auf ana stabilen Fläche de nächste Kurve, den Ausgang oda a Abzweigung. Acht Klickrichtungen inklusive Diagonalen san möglich.<br>
+<br>
+Ariadne-Kohln is a wiederverwendbors Markierwerkzeig für 100 Einsätze. Jede erfolgreiche Markierung kostet oan Haltbarkeitspunkt. Ungeeignete Flächen werdn abglehnt, statt's Werkzeig abzunutzn.
+<np>
+Auto-Stimpack
+Notinjektor
+<&stimpack>Das Auto-Stimpack ist ein Notfall-Gegenstand für gefährliche Wartungsarbeiten.<br>
+<br>
+Benutzung: Manuell heilen, kurz Schutz erhalten und die Bewegung beschleunigen. Im Inventar kann es bei niedriger Gesundheit automatisch auslösen und geht danach in Abklingzeit.<br>
+<br>
+Vor Arbeiten in großer Höhe, an offenen Leitungen oder in feindlichen Minen bereithalten.
+<np>
+Schlafsack
+Tragbare Ruheausrüstung
+<&sleeping_bag>Der Schlafsack ist wetterfeste Ruheausrüstung für Feldarbeit weit entfernt von einem Bett.<br>
+<br>
+Benutzung: Nachts in der Oberwelt bis zum Morgen ruhen. Er setzt oder verschiebt den Einstiegspunkt nicht.<br>
+<br>
+Er verweigert Nutzung am Tag, bei Monstern in der Nähe und in ungeeigneten Dimensionen. Jede erfolgreiche Ruhe nutzt ihn ab.
+<np>
+Materiallagerkiste
+Bauvorratskiste
+<&material_box>Die Materiallagerkiste enthält einen großen Vorrat genau eines einfachen, unveränderten und stapelbaren Baumaterials.<br>
+<br>
+Benutzung: Kiste in der Haupthand und Materialstapel in der Nebenhand halten, um zu laden. Mit leerer Nebenhand einen Stapel entnehmen.<br>
+<br>
+Die Kiste hält bis zu 512 Gegenstände, nur eine Materialsorte zugleich, und lehnt verschachtelte Kisten, nicht stapelbare Ausrüstung sowie veränderte, benannte oder datentragende Stapel ab; der Tooltip zeigt den Inhalt.
+<np>
+Taucher-Luftkapsel
+Notluftvorrat
+<&diving_capsule>Die Taucher-Luftkapsel ist ein Notluftgegenstand für Arbeiten unter Wasser.<br>
+<br>
+Benutzung: Manuell benutzen, um Luft aufzufüllen. Im Inventar kann sie kurz vor dem Luftmangel automatisch auslösen und geht danach in Abklingzeit.<br>
+<br>
+Für überflutete Minen, Unterwasserrohre und Reparaturen in Pumpenräumen mitnehmen.
+<np>
+Muslee-Riegelpresse
+Lebensmittelpresse
+<&musli_bar_press>Die Muslee-Riegelpresse verwandelt übliche Lebensmittel in kompakte Feldrationen.<br>
+<br>
+Benutzung: Brot, einen Apfel und Weizen-, Melonen-, Kürbis-, Rote-Bete- oder Industriehanfsamen mitführen und die Presse benutzen. Ein erfolgreicher Vorgang verbraucht je eine Zutat, prüft den Ausgabeplatz, erzeugt vier Muslee-Riegel und beschädigt die Presse.<br>
+<br>
+Fehlt eine Zutat oder ist kein Platz vorhanden, wird nichts verbraucht.
+<np>
+Muslee-Melange-Energieriegel
+Schneller Werkstatt-Snack
+<&musli_bar>Der Muslee-Melange-Energieriegel ist ein kompaktes Nahrungsmittel aus Brot, Samen und Obst.<br>
+<br>
+Benutzung: Als Feldverpflegung beim Platzieren von Steuerungen, Rohren, Plattformen oder langen Maschinenraumstrecken essen.
+<np>
+Gedonknpressn
+Erfahrungsverdichter
+<&charged_lapis_squeezer>De Gedonknpressn mocht aus am Lapislazuli und ana Erfahrungsstufn aus deim Inventar an glodnen Lapislazuli.<br>
+<br>
+Jede erfolgreiche Umwandlung tuat weh, erschöpft di und blendet di kurz. Ohne Lapislazuli, ohne Erfahrung oda bei z'wenig Gsundheit arbeitet's Gerät ned.
+<np>
+Glodner Lapislazuli
+Gspeicherte Erfahrung
+<&charged_lapis>Glodner Lapislazuli speichert a Erfahrungsstufn. Verbrauch eam, um de Stufn zruckzukriagn, aktive Effekte loszuwerdn und a bissl Gsundheit aufzufülln.<br>
+<br>
+Bau zuerst a Gedonknpressn. Glodner Lapislazuli entsteht mit dem Werkzeig, wenn Lapislazuli und Erfahrung do san.
+<np>
+Grober Eisngrus
+A Werkzeigmaterial vom Ingenieur für de rekonstruierten Hondwerksrezepte.
+<&iron_grit>Losst si zu Eisnborrn<br>schmözn, passt oba ned für<br>aufwendigere Materialverarbeitung.
+<np>
+Grober Goidgrus
+A Werkzeigmaterial vom Ingenieur für de rekonstruierten Hondwerksrezepte.
+<&gold_grit>Losst si zu Goidbarrn<br>schmözn, passt oba ned für<br>aufwendigere Materialverarbeitung.

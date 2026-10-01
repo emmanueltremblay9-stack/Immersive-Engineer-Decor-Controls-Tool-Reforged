@@ -1,0 +1,5 @@
+Wassergefrierer
+Kompakte Verarbeitungseinheit
+<&recipe>Der Wassergefrierer erledigt kompakte Kühlarbeiten in energieversorgten Flüssigkeitsanlagen.<br>
+<br>
+Verwendung: Führe Wasser und Energie für die stufenweise Eisherstellung zu.<br>

@@ -1,0 +1,5 @@
+Crannóg Monarchan
+Áis urláir ceardlainne
+<&recipe>Bogann an bloc seo cruacha earraí trí chásáil thionsclaíoch níos dlúithe.<br>
+<br>
+Úsáid: dírigh é i dtreo na líne fardail, agus ansin socraigh raon, líon cruacha, uainiú agus mód Redstone ar a scáileán.<br>

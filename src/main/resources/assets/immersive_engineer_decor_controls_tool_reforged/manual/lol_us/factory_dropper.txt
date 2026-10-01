@@ -1,0 +1,5 @@
+Factory DRUPPER
+Shop-floor helperz
+<&recipe>Dis bluk lets stored itemz out frum its aimed face, kitty.<br>
+<br>
+How to: Aim da front at da release spot, load its inside slotz, an use its screen fer force, angle, delay, filter logic, an redstone style, meow.<br>

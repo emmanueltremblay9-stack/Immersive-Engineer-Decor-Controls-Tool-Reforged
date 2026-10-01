@@ -1,0 +1,7 @@
+Reló programador diariu
+Señal de lluz diurna
+<&recipe>Un interruptor temporizáu sigue la parte diurna del ciclu del mundu.<br>
+<br>
+Usu: úsalu pa llámpares de patiu, contraventanes y controles de fábrica que namái funcionen de día.<br>
+<br>
+Notes: rique una dimensión con lluz del cielu.

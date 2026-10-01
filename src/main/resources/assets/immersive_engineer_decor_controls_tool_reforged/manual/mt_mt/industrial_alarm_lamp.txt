@@ -1,0 +1,7 @@
+Lampa tal-allarm
+Rispons viżibbli tas-sinjal
+<&recipe>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.

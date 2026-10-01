@@ -1,0 +1,5 @@
+Fabrieksblokplaatser
+Hulpmiddel voor de fabrieksvloer
+<&recipe>Dit blok plaatst bij activering blokken uit zijn interne voorraad.<br>
+<br>
+Gebruik: richt de werkzijde op de doelruimte en vul de voorraad met plaatsbare stapels.<br>

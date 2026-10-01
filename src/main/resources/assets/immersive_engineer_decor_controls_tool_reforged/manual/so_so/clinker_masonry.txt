@@ -1,0 +1,161 @@
+Klinkar iyo dhismaha lebenka
+Daboollada lebenka iyo shubka
+Klinkar, lebenka haraaga dhalaalinta, shubka la xoojiyey iyo muraayadda gaashaaman waxay qolalka kulul, goobaha shaqada iyo aragtiyaha la ilaaliyey siiyaan dusho adag.<br>
+<br>
+Adeegso saxannada, jaranjarooyinka, jeexyada iyo darbiyada isku nooca ah si aad geesaha u dhammaystirto adigoon beddelin qaabka agabka warshadda.
+<np>
+Baloogga lebenka klinkarka
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_block>Balooggani wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Saxanka lebenka klinkarka
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_slab>Balooggani wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Jaranjarada lebenka klinkarka
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_stairs>Balooggani wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Darbiga lebenka klinkarka
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_wall>Balooggani wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Baloogga klinkarka wasakhaysan
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_stained_block>Baloogga lebenka klinkarka wasakhaysan wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Saxanka klinkarka wasakhaysan
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_stained_slab>Saxanka lebenka klinkarka wasakhaysan wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Jaranjarada klinkarka wasakhaysan
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_stained_stairs>Jaranjarada lebenka klinkarka wasakhaysan waxay hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku dartaa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Lebenka klinkarka ee la qurxiyey
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_sastor_corner_block>Lebenka klinkarka ee dhagaxa ciidda lagu qurxiyey wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Lebenka klinkarka ee godan
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_recessed>Balooggani wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Lebenka klinkarka jeexjeexan
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_vertically_slit>Lebenka klinkarka ee jeexjeexyada taagan leh wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Saxanka klinkarka taagan
+Dhismaha lebenka ee danbasku madoobeeyey
+<&clinker_brick_vertical_slab_structured>Saxanka klinkarka taagan ee qaabaysan wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Saxanka nuska ah ee lebenka klinkarka
+Dhismaha lebenka ee danbasku madoobeeyey
+<&halfslab_clinker_brick>Balooggani wuxuu hoolalka foornooyinka, saldhigyada qiiqmareennada iyo darbiyada adeegga ku daraa dhisme leben oo danbasku madoobeeyey.<br>
+<br>
+Isticmaal: U adeegso darbi, qurxin geeseed ama daboolka aagga kulaylka ee ku wareegsan foornooyinka iyo kuleyliyeyaasha biyaha.<br>
+<np>
+Baloogga lebenka haraaga dhalaalinta
+Dhisme warshadeed oo cufan
+<&slag_brick_block>Balooggani wuxuu aasaasyada, darbiyada carro-celinta iyo aqallada shaqada ee duugga ah ku daraa dhisme cufan oo cawl-buni ah.<br>
+<br>
+Isticmaal: U adeegso aasaasyo duug ah, darbiyada carro-celinta iyo sagxadaha warshadaha ee wasakhaysan.<br>
+<np>
+Saxanka lebenka haraaga dhalaalinta
+Dhisme warshadeed oo cufan
+<&slag_brick_slab>Balooggani wuxuu aasaasyada, darbiyada carro-celinta iyo aqallada shaqada ee duugga ah ku daraa dhisme cufan oo cawl-buni ah.<br>
+<br>
+Isticmaal: U adeegso aasaasyo duug ah, darbiyada carro-celinta iyo sagxadaha warshadaha ee wasakhaysan.<br>
+<np>
+Jaranjarada lebenka haraaga dhalaalinta
+Dhisme warshadeed oo cufan
+<&slag_brick_stairs>Balooggani wuxuu aasaasyada, darbiyada carro-celinta iyo aqallada shaqada ee duugga ah ku daraa dhisme cufan oo cawl-buni ah.<br>
+<br>
+Isticmaal: U adeegso aasaasyo duug ah, darbiyada carro-celinta iyo sagxadaha warshadaha ee wasakhaysan.<br>
+<np>
+Darbiga lebenka haraaga dhalaalinta
+Dhisme warshadeed oo cufan
+<&slag_brick_wall>Balooggani wuxuu aasaasyada, darbiyada carro-celinta iyo aqallada shaqada ee duugga ah ku daraa dhisme cufan oo cawl-buni ah.<br>
+<br>
+Isticmaal: U adeegso aasaasyo duug ah, darbiyada carro-celinta iyo sagxadaha warshadaha ee wasakhaysan.<br>
+<np>
+Baloogga shubka birta lagu xoojiyey
+Shub la xoojiyey
+<&rebar_concrete>Balooggani waa qayb shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Saxanka shubka birta lagu xoojiyey
+Shub la xoojiyey
+<&rebar_concrete_slab>Balooggani waa qayb shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Jaranjarada shubka birta lagu xoojiyey
+Shub la xoojiyey
+<&rebar_concrete_stairs>Balooggani waa qayb shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Darbiga shubka birta lagu xoojiyey
+Shub la xoojiyey
+<&rebar_concrete_wall>Balooggani waa qayb shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Jeexa shubka birta lagu xoojiyey
+Shub la xoojiyey
+<&halfslab_rebar_concrete>Balooggani waa qayb shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Dusiye shub ah oo bir lagu xoojiyey
+Shub la xoojiyey
+<&rebar_concrete_tile>Balooggani waa qayb shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Saxanka dusiyaha shubka birta lagu xoojiyey
+Shub la xoojiyey
+<&rebar_concrete_tile_slab>Balooggani waa qayb shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Dusiye shub ah oo bir lagu xoojiyey
+Shub la xoojiyey
+<&rebar_concrete_tile_stairs>Jaranjarada dusiyaha shubka birta lagu xoojiyey waa qaybo shub adag ah oo loogu talagalay saldhigyada mashiinnada, darbiyada qarax-celinta iyo sagxadaha goobaha raridda.<br>
+<br>
+Isticmaal: Ku dhig mashiinnada hoostooda, dhinacyada marinnada adeegga ama meel kasta oo dhismuhu saldhig la xoojiyey uga baahan yahay.<br>
+<np>
+Baloogga muraayadda gaashaaman
+Aragti la ilaaliyey
+<&panzerglass_block>Balooggani wuxuu ilaaliyaa aragti furan isagoo weli la jaanqaadaya dhismaha warshadeed ee la xoojiyey.<br>
+<br>
+Isticmaal: Ku dhig halka ciyaartoydu ay mashiinnada uga arki karaan xayndaab la ilaaliyey.<br>
+<np>
+Saxanka muraayadda gaashaaman
+Aragti la ilaaliyey
+<&panzerglass_slab>Balooggani wuxuu ilaaliyaa aragti furan isagoo weli la jaanqaadaya dhismaha warshadeed ee la xoojiyey.<br>
+<br>
+Isticmaal: Ku dhig halka ciyaartoydu ay mashiinnada uga arki karaan xayndaab la ilaaliyey.<br>

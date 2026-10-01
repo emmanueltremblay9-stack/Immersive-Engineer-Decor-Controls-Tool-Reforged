@@ -1,0 +1,108 @@
+Construccion industriala
+Murs e ornaments de fabrica
+Los equipaments generals de construccion comprenon las pòrtas, las fenèstras, las luses, las pancartas d’avertiment, los ornaments e las pèças d’estructura que dintran pas dins una seccion mai precisa.<br>
+<br>
+Utiliza aquestas paginas per las salas de fabrica, los corredors de servici, lo marcatge dels perilhs e los detalhs industrials practics.
+<np>
+Lampa a ampola en fèrre
+Lutz de trabalh compacta
+<&iron_bulb_light>Aqueste blòc fornís un esclairatge industrial compacte pels corredors, las passarèlas e los pòstes de trabalh.<br>
+<br>
+Utilizacion : monta-lo al plafon, suls murs o suls bòrds ont cal un esclairatge de trabalh clar.<br>
+<np>
+Lutz de bòrd de plafon
+Lutz de trabalh compacta
+<&iron_ceiling_edge_light>Aqueste blòc fornís un esclairatge industrial compacte pels corredors, las passarèlas e los pòstes de trabalh.<br>
+<br>
+Utilizacion : monta-lo al plafon, suls murs o suls bòrds ont cal un esclairatge de trabalh clar.<br>
+<np>
+Lutz encastrada de bòrd de sòl
+Lutz de trabalh compacta
+<&iron_floor_edge_light>Aqueste blòc fornís un esclairatge industrial compacte pels corredors, las passarèlas e los pòstes de trabalh.<br>
+<br>
+Utilizacion : monta-lo al plafon, suls murs o suls bòrds ont cal un esclairatge de trabalh clar.<br>
+<np>
+Lutz encastrada
+Lutz de trabalh compacta
+<&iron_inset_light>Aqueste blòc fornís un esclairatge industrial compacte pels corredors, las passarèlas e los pòstes de trabalh.<br>
+<br>
+Utilizacion : monta-lo al plafon, suls murs o suls bòrds ont cal un esclairatge de trabalh clar.<br>
+<np>
+Pancarta « Avertiment general »
+Marca de perilh
+<&sign_caution>La Pancarta « Avertiment general » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta de perilh
+Marca de perilh
+<&sign_danger>La Pancarta « Atencion, es fòrça perilhós ailà » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta decorativa
+Marca de perilh
+<&sign_decor>La Placa de pancarta (Engineer's Decor) senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta de defensa
+Marca de perilh
+<&sign_defense>La Pancarta « Atencion, sistèma de defensa davant » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta de sortida
+Marca de perilh
+<&sign_exit>Aquesta pancarta senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta « Risque d’incendi »
+Marca de perilh
+<&sign_firehazard>La Pancarta « Risque d’incendi » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta « Atencion al gèl »
+Marca de perilh
+<&sign_frost>La Pancarta « Atencion al gèl » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta de superfícia cauda
+Marca de perilh
+<&sign_hotsurface>La Pancarta « Atencion, superfícia cauda » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta de fial jos tension
+Marca de perilh
+<&sign_hotwire>La Pancarta « Atencion, fial jos tension » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta « Perilh laser »
+Marca de perilh
+<&sign_laser>La Pancarta « Perilh laser » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta de perilh magic
+Marca de perilh
+<&sign_magichazard>La Pancarta « Atencion, perilh magic » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta de camp magnetic
+Marca de perilh
+<&sign_magneticfield>La Pancarta « Atencion, camp magnetic fòrt » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>
+Pancarta « Perilh radioactiu »
+Marca de perilh
+<&sign_radioactive>La Pancarta « Perilh radioactiu » senhala los perilhs, las sortidas e las zònas de trabalh amb un repèri visual adaptat a la seguretat en fabrica.<br>
+<br>
+Utilizacion : pausa-la près dels perilhs, de las sortidas, de las maquinas e de las zònas d’accès limitat.<br>
+<np>

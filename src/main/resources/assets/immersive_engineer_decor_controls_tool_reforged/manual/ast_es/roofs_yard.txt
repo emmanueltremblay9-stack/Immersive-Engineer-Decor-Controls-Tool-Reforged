@@ -1,0 +1,101 @@
+Teyaos y patiu
+Accesorios esteriores de fábrica
+Los bloques de teyáu, la grava de patiu y les pieces de madera industrial vieyo ayuden a rematar cobertizos esteriores, patios de trabayu, zones de carga y bordes de fábrica desgastaos pola intemperie.<br>
+<br>
+Combina estes pieces con mampostería y pasos d’accesu pa que les construcciones industriales esteriores sigan siendo fáciles d’interpretar dende lloñe.
+<np>
+Teyáu de teyes escures
+Pieza de teyáu avieyada
+<&dark_shingle_roof>Esti bloque forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Paranieves de teyáu
+Pieza de teyáu avieyada
+<&dark_shingle_roof_metallized>El paranieves de teyáu de teyes escures forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Teyáu de teyes escures
+Pieza de teyáu avieyada
+<&dark_shingle_roof_skylight>La claraboya de teyáu de teyes escures forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Base de chimenea de teyáu
+Pieza de teyáu avieyada
+<&dark_shingle_roof_chimneytrunk>La base de chimenea de teyáu de teyes escures forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Conductu de cables de teyáu
+Pieza de teyáu avieyada
+<&dark_shingle_roof_wireconduit>El conductu de cables de teyáu de teyes escures forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Teyáu de teyes escures
+Pieza de teyáu avieyada
+<&dark_shingle_roof_chimney>La chimenea de teyáu de teyes escures forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Bloque de teyáu de teyes escures
+Pieza de teyáu avieyada
+<&dark_shingle_roof_block>Esti bloque forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Llábana de teyáu de teyes escures
+Pieza de teyáu avieyada
+<&dark_shingle_roof_slab>Esti bloque forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Llábana de teyáu de teyes escures
+Pieza de teyáu avieyada
+<&dark_shingle_roof_slabslice>La llámina de teyáu de teyes escures forma perfiles de teyáu escuros y prácticos pa talleres y cobertizos industriales.<br>
+<br>
+Usu: combina les pieces pa crear perfiles de teyáu creíbles.<br>
+<np>
+Tierra compactao con grava
+Revestimientu del terrén de trabayu
+<&dense_grit_dirt_block>Esti bloque da a les zones de trabayu esteriores una superficie compactada y pisada.<br>
+<br>
+Usu: estiéndelu alredor de puertes de carga, depósitos esteriores y patios de máquines.<br>
+<np>
+Arena compactao con grava
+Revestimientu del terrén de trabayu
+<&dense_grit_sand_block>Esti bloque da a les zones de trabayu esteriores una superficie compactada y pisada.<br>
+<br>
+Usu: estiéndelu alredor de puertes de carga, depósitos esteriores y patios de máquines.<br>
+<np>
+Tables de madera vieyo
+Madera avieyao de taller
+<&old_industrial_wood_planks>Les tables de madera industrial vieyo añaden madera avieyao de taller pa suelos, pasos, puertes y remates interiores de tonu cálidu.<br>
+<br>
+Usu: úsalu pa suelos, pasales, puertes y remates de talleres antiguos.<br>
+<np>
+Llábana de madera industrial vieyo
+Madera avieyao de taller
+<&old_industrial_wood_slab>Esti bloque añade madera avieyao de taller pa suelos, pasos, puertes y remates interiores de tonu cálidu.<br>
+<br>
+Usu: úsalu pa suelos, pasales, puertes y remates de talleres antiguos.<br>
+<np>
+Pasales de madera vieyo
+Madera avieyao de taller
+<&old_industrial_wood_stairs>Les pasales de madera industrial vieyo añaden madera avieyao de taller pa suelos, pasos, puertes y remates interiores de tonu cálidu.<br>
+<br>
+Usu: úsalu pa suelos, pasales, puertes y remates de talleres antiguos.<br>
+<np>
+Llámina de madera vieyo
+Madera avieyao de taller
+<&old_industrial_wood_slabslice>La llámina de madera industrial vieyo añade madera avieyao de taller pa suelos, pasos, puertes y remates interiores de tonu cálidu.<br>
+<br>
+Usu: úsalu pa suelos, pasales, puertes y remates de talleres antiguos.<br>
+<np>
+Puerta de madera industrial vieyo
+Madera avieyao de taller
+<&old_industrial_wood_door>Esti bloque añade madera avieyao de taller pa suelos, pasos, puertes y remates interiores de tonu cálidu.<br>
+<br>
+Usu: úsalu pa suelos, pasales, puertes y remates de talleres antiguos.<br>

@@ -1,0 +1,7 @@
+Knock Switch
+Redstone Ruling
+<&recipe>A small switchgear fitting gives workstead builds a clear redstone switching spot.<br>
+<br>
+Use: Right-click to turn full-strength outflow on or off for nearby loops.<br>
+<br>
+Mind: Sends full-strength redstone while on.

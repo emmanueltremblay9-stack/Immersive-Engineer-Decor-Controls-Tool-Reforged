@@ -1,0 +1,5 @@
+Levak za tečnosti
+Oprema za vodove tečnosti
+<&recipe>Mali levak za sakupljanje tečnosti je kompaktan deo za male rezervoare, cevovode, mesta sakupljanja i protok kojim upravlja redstoun.<br>
+<br>
+Upotreba: postavi ga ispod mesta sakupljanja tečnosti i usmeri sačuvani sadržaj u rezervoare ili cevi ispod.<br>

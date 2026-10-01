@@ -1,0 +1,5 @@
+Blockbrecher
+Hilfsgerät für die Werkstatt
+<&recipe>Der kleine Blockbrecher ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Richte die Arbeitsseite auf den abzubauenden Block.<br>

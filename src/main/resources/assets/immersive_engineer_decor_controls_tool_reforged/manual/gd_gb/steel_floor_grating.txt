@@ -1,0 +1,5 @@
+Grèid làir stàilinn
+Uidheam-ruigsinn seirbheis
+<&recipe>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>

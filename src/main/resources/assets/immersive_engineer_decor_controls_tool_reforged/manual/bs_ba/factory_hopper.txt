@@ -1,0 +1,5 @@
+Fabrički lijevak
+Oprema fabričke hale
+<&recipe>Ovaj blok premješta hrpe predmeta kroz kompaktnije industrijsko kućište.<br>
+<br>
+Upotreba: Okrenite ga prema nizu inventara, a zatim u interfejsu podesite domet, broj hrpa, vremenske razmake i redstone način.<br>

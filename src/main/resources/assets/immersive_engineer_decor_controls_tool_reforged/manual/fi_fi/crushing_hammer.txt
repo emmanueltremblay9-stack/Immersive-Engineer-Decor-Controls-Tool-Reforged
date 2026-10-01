@@ -1,0 +1,7 @@
+Malminmurskausvasara
+Käsimurskaustyökalu
+<&recipe>Käsityökalu varhaiseen raudan ja kullan käsittelyyn.<br>
+<br>
+Käyttö: Valmista raa'an raudan, kullan, rautamalmin, syväliuskerautamalmin, kultamalmin tai syväliuskerkultamalmin kanssa Immersive Engineeringin rauta- tai kultapölyä. Vasara menettää kestävyyttä ja palaa ruudukkoon, kunnes rikkoutuu.<br>
+<br>
+Se kuluu myös louhiessa ja työntää lähitaistelussa.

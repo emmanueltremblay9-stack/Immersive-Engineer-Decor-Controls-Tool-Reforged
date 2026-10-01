@@ -1,0 +1,5 @@
+Væsketønde
+Udstyr til væskeledninger
+<&recipe>Denne komponent er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Placer den, så rør eller spande kan nå tankfladen.<br>

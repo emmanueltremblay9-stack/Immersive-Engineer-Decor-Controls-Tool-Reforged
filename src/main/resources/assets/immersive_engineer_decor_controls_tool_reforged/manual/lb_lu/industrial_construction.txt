@@ -1,0 +1,108 @@
+Industriebau
+Fabricksmaueren a Bordüren
+Allgemeng Baudeeler ëmfaassen Dieren, Fënsteren, Luuchten, Warnschëlter, Bordüren a Strukturdeeler, déi net zu engem méi spezifesche Kapitel gehéieren.<br>
+<br>
+Benotz dës Säite fir Fabricksraim, Servicegäng, Geforemarkéierungen a praktesch Industriedetailer.
+<np>
+Eisebirluucht
+Kompakt Aarbechtsluucht
+<&iron_bulb_light>Dëse Block bitt kompakt Industriebeliichtung fir Gäng, Lafstegen an Aarbechtsberäicher.<br>
+<br>
+Benotzung: Montéier en op Plafongen, Maueren oder Kanten, wou de Raum kloert Aarbechtsliicht brauch.<br>
+<np>
+Plafongsrandluucht
+Kompakt Aarbechtsluucht
+<&iron_ceiling_edge_light>Dëse Block bitt kompakt Industriebeliichtung fir Gäng, Lafstegen an Aarbechtsberäicher.<br>
+<br>
+Benotzung: Montéier en op Plafongen, Maueren oder Kanten, wou de Raum kloert Aarbechtsliicht brauch.<br>
+<np>
+Agelooss Buedemrandluucht
+Kompakt Aarbechtsluucht
+<&iron_floor_edge_light>Dëse Block bitt kompakt Industriebeliichtung fir Gäng, Lafstegen an Aarbechtsberäicher.<br>
+<br>
+Benotzung: Montéier en op Plafongen, Maueren oder Kanten, wou de Raum kloert Aarbechtsliicht brauch.<br>
+<np>
+Agelooss Luucht
+Kompakt Aarbechtsluucht
+<&iron_inset_light>Dëse Block bitt kompakt Industriebeliichtung fir Gäng, Lafstegen an Aarbechtsberäicher.<br>
+<br>
+Benotzung: Montéier en op Plafongen, Maueren oder Kanten, wou de Raum kloert Aarbechtsliicht brauch.<br>
+<np>
+Schëld „Allgemeng Virsiicht“
+Geforemarkéierung
+<&sign_caution>D'Schëld „Allgemeng Virsiicht“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Geforeschëld
+Geforemarkéierung
+<&sign_danger>D'Schëld „Virsiicht, wierklech geféierlech do“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Dekoratiounsschëld
+Geforemarkéierung
+<&sign_decor>D'Schëldplack (Engineer's decor) markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Verdeedegungsschëld
+Geforemarkéierung
+<&sign_defense>D'Schëld „Virsiicht, Verdeedegungssystem viraus“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Ausgangsschëld
+Geforemarkéierung
+<&sign_exit>Dëst Schëld markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Schëld „Brandgefor“
+Geforemarkéierung
+<&sign_firehazard>D'Schëld „Brandgefor“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Schëld „Fraschtwarnung“
+Geforemarkéierung
+<&sign_frost>D'Schëld „Fraschtwarnung“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Schëld fir waarm Uewerflächen
+Geforemarkéierung
+<&sign_hotsurface>D'Schëld „Virsiicht, waarm Uewerfläch“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Schëld fir Drot ënner Spannung
+Geforemarkéierung
+<&sign_hotwire>D'Schëld „Virsiicht, Drot ënner Spannung“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Schëld „Lasergefor“
+Geforemarkéierung
+<&sign_laser>D'Schëld „Lasergefor“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Schëld fir magesch Geforen
+Geforemarkéierung
+<&sign_magichazard>D'Schëld „Virsiicht, magesch Gefor“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Magnéitfeldschëld
+Geforemarkéierung
+<&sign_magneticfield>D'Schëld „Virsiicht, staarkt Magnéitfeld“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>
+Schëld „Radioaktiv Gefor“
+Geforemarkéierung
+<&sign_radioactive>D'Schëld „Radioaktiv Gefor“ markéiert Geforen, Ausgäng an Aarbechtszonen mat engem visuelle Sécherheetshinweis am Fabrickstil.<br>
+<br>
+Benotzung: Setz et nieft Geforen, Ausgäng, Maschinnen a gespaart Zonen.<br>
+<np>

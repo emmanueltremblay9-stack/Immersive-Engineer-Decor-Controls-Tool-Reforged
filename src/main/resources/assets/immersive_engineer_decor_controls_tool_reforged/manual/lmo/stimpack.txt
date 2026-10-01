@@ -1,0 +1,7 @@
+Autoinietor stimolant
+Inietor de emergenza
+<&recipe>L'Auto Stim Pack l'è un utensil medic d'emergenza per lavor de manutenzion pericolos.<br>
+<br>
+Dopra: Attival a man per curatt, ciapà una protezzion curta e un piccol slancio de moviment. In l'inventari el pò anca attivass da sol con poca salute, poeu el va in cooldown.<br>
+<br>
+Tegn un inietor a portada prima de provà post volt, fil descoverci o strade pericolose in miniera.

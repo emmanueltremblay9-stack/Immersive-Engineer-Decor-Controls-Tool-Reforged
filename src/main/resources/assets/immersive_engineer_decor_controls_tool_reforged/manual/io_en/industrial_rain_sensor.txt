@@ -1,0 +1,7 @@
+Pluvosensilo
+Signaldetekto
+<&recipe>Veterosensilo konvertas la pluvo che sua loko a redstoneo.<br>
+<br>
+Uzo: Fixigez ol ube la supra bloko povas recevar pluvo.<br>
+<br>
+Noti: Kontrolas la pluvo super la sensilo.

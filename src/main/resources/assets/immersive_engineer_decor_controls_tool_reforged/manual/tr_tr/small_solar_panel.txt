@@ -1,0 +1,5 @@
+Güneş Paneli
+Atölye yardımcı aygıtı
+<&recipe>Küçük güneş paneli; üretim, depolama, yerleştirme, kırma, toplama veya küçük otomasyon işleri için bir atölye yardımcı bloğudur.<br>
+<br>
+Kullanım: Üstünü gökyüzüne açık tutup düşük tüketimli donanıma bağlayın.<br>

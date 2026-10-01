@@ -1,0 +1,107 @@
+Lantegiko makinak
+Makinak eta lantegiko sarrera/irteerak
+Lantegiko makinek fabrikazioa, objektuen mugimendua, urtzea, ezabatzea, bilketa eta erabilera anitzeko lan trinkoak eskaintzen dituzte bloke bakarrean.<br>
+<br>
+Ireki hurrengo orrialdeak makina bakoitzaren errezeta, irudia, giro-azalpena eta erabilera-ohar praktikoak ikusteko.
+<np>
+Altzairuzko mahaia
+Lantegiko altzaria
+<&steel_table>Bloke hau lan-geletarako eta mantentze-txokoetarako lantegiko altzari praktikoa da.<br>
+<br>
+Erabilera: jarri lan-bankuen, kaxen eta makina trinkoen ondoan.<br>
+<np>
+Zur tratatuzko mahaia
+Lantegiko altzaria
+<&treated_wood_table>Bloke hau lan-geletarako eta mantentze-txokoetarako lantegiko altzari praktikoa da.<br>
+<br>
+Erabilera: jarri lan-bankuen, kaxen eta makina trinkoen ondoan.<br>
+<np>
+Zur tratatuzko taburetea
+Lantegiko altzaria
+<&treated_wood_stool>Bloke hau lan-geletarako eta mantentze-txokoetarako lantegiko altzari praktikoa da.<br>
+<br>
+Erabilera: jarri lan-bankuen, kaxen eta makina trinkoen ondoan.<br>
+<np>
+Metalgintzako lan-mahaia
+Xaflak egiteko lanpostua
+<&metal_crafting_table>Metalgintzako lan-mahaia lantegiko lanpostu indartua da, mailu-zirrikitua, 3x3 fabrikazio-sarea eta irteerako zirrikitu argia dituena.<br>
+<br>
+Erabilera: erabili sarea fabrikazio arrunterako. IE xaflak egiteko, jarri ingeniariaren mailua tresna-zirrikituan eta xaflaren materiala sarean emaitza hartu aurretik. Altzairuzko apaingarriek altzairuzko xaflak erabiltzen dituzte zutoinetarako, pasabideetarako, leihoetarako, ateetarako, barandetarako eta altzairuzko beste piezetarako.<br>
+<np>
+Fabrikako tobera
+Lantegiko tresneria
+<&factory_hopper>Bloke honek objektu-pilak industria-karkasa estuago batean zehar mugitzen ditu.<br>
+<br>
+Erabilera: zuzendu inbentario-lerrorantz eta ezarri irismena, pila-kopurua, denborak eta redstone-modua bere pantailan.<br>
+<np>
+Fabrikako jaurtigailua
+Lantegiko tresneria
+<&factory_dropper>Bloke honek gordetako objektuak zuzendutako aurpegi batetik askatzen ditu.<br>
+<br>
+Erabilera: zuzendu aurrealdea askatze-punturantz, bete barneko zirrikituak eta doitu indarra, angelua, atzerapena, iragazki-logika eta redstone-modua bere pantailan.<br>
+<np>
+Fabrikako bloke-kokagailua
+Lantegiko tresneria
+<&factory_placer>Bloke honek barneko erreserbako blokeak instalatzen ditu aktibatzean.<br>
+<br>
+Erabilera: zuzendu laneko aurpegia helburuko espaziora eta bete jar daitezkeen pilekin.<br>
+<np>
+Bloke-hausgailua
+Lantegiko tresneria
+<&small_block_breaker>Bloke-hausgailu txikia lantegiko erabilera anitzeko blokea da: fabrikaziorako, biltegiratzeko, jartzeko, hausteko, biltzeko edo automatizazio trinkorako.<br>
+<br>
+Erabilera: jarri laneko aurpegia kendu nahi duzun blokerantz.<br>
+<np>
+Hondakin-erraustegia
+Prozesatze-unitate trinkoa
+<&small_waste_incinerator>Hondakin-erraustegiak nahi ez diren objektuak suntsitzen ditu lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: sartu nahi ez dituzun objektuak soilik haren ilaran.<br>
+<np>
+Laborategiko labea
+Prozesatze-unitate trinkoa
+<&small_lab_furnace>Laborategiko labeak erregai solido bidezko urtze-lan trinkoak egiten ditu lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: erabili erregai solidoa urtze sorta trinkoetarako.<br>
+<np>
+Labe elektrikoa
+Prozesatze-unitate trinkoa
+<&small_electrical_furnace>Labe elektrikoak FE bidezko urtze-lan trinkoak egiten ditu lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: hornitu FE energia eta urtzeko sarrera egokia.<br>
+<np>
+Mineralak urtzeko labea
+Prozesatze-unitate trinkoa
+<&small_mineral_smelter>Mineralak urtzeko labeak bero handiko mineral-prozesamendua egiten du lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: hornitu mineral-blokeak eta energia, bero handiz urtzeko lanetarako.<br>
+<np>
+Ur-izozkailua
+Prozesatze-unitate trinkoa
+<&small_freezer>Ur-izozkailuak hozte-lan trinkoak egiten ditu energiaz elikatutako fluido-instalazioetarako.<br>
+<br>
+Erabilera: hornitu ura eta energia izotza faseka ekoizteko.<br>
+<np>
+Fluido pasiboa
+Fluido-lineako ekipamendua
+<&passive_fluid_accumulator>Fluido-metagailu pasiboa fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: jarri ur-iturri egokien kontra eta utzi lekua fluidoa ateratzeko.<br>
+<np>
+Eguzki-panela
+Lantegiko tresneria
+<&small_solar_panel>Eguzki-panel txikia lantegiko erabilera anitzeko blokea da: fabrikaziorako, biltegiratzeko, jartzeko, hausteko, biltzeko edo automatizazio trinkorako.<br>
+<br>
+Erabilera: utzi zeru irekian eta konektatu kontsumo txikiko ekipamendua.<br>
+<np>
+Jezteko makina
+Lantegiko tresneria
+<&small_milking_machine>Jezteko makina txikia lantegiko erabilera anitzeko blokea da: fabrikaziorako, biltegiratzeko, jartzeko, hausteko, biltzeko edo automatizazio trinkorako.<br>
+<br>
+Erabilera: jarri behien ondoan eta eskaini esne-ontziak edo fluidoa ateratzeko bidea.<br>
+<np>
+Zuhaitz-ebakigailua
+Lantegiko tresneria
+<&small_tree_cutter>Zuhaitz-ebakigailu txikia lantegiko erabilera anitzeko blokea da: fabrikaziorako, biltegiratzeko, jartzeko, hausteko, biltzeko edo automatizazio trinkorako.<br>
+<br>
+Erabilera: zuzendu hazitako zuhaitzetara eta bildu eroritako objektuak bereizita.<br>

@@ -1,0 +1,7 @@
+Cased Link Receiver
+Control through a Link
+<&recipe>A cased linked receiver affords distant panels a stout redstone target.<br>
+<br>
+Use: Click it with an Ender Pearl to fashion a linked pearl. Right-click the receiver itself to turn it on or off by hand.<br>
+<br>
+Note: Sneak-use a linked pearl to turn this receiver on or off.

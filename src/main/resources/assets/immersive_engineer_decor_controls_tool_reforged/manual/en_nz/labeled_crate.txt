@@ -1,0 +1,5 @@
+Labelled Crate
+Editable stock label
+<&recipe>This labelled crate is built for clear stockroom sorting. Its front plate can be edited like a small workshop sign.<br>
+<br>
+Usage: Right-click the label plate to edit the crate label. Right-click the rest of the crate to open storage for fittings, parts, and maintenance supplies.<br>

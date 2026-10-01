@@ -1,0 +1,127 @@
+Vias de acesso
+Passadiços e suportes
+Postes de aço e de madeira tratada, grelhas, passadiços, guarda-corpos, escadas de mão, portas, janelas e alçapões formam rotas compactas de manutenção dentro das fábricas.<br>
+<br>
+As peças de aço das vias de acesso usam chapas de aço. Cria ou coloca uma mesa de trabalho de metal, insere um martelo de Immersive Engineering e martela lingotes de aço para obter chapas para postes, passadiços, janelas, portas, guarda-corpos e outras decorações de aço.<br>
+<br>
+Coloca-os onde as máquinas precisam de acessos de manutenção, caminhos elevados, poços de serviço ou rebordos mais seguros.
+<np>
+Poste grosso de aço
+Peça de estrutura
+<&thick_steel_pole>O poste reto grosso de aço fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Cabeça de poste grosso
+Peça de estrutura
+<&thick_steel_pole_head>A cabeça/base de poste reto grosso de aço fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Poste fino de aço
+Peça de estrutura
+<&thin_steel_pole>O poste reto fino de aço fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Cabeça de poste fino
+Peça de estrutura
+<&thin_steel_pole_head>A cabeça/base de poste reto fino de aço fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Poste de madeira tratada
+Peça de estrutura
+<&treated_wood_pole>O poste reto de madeira tratada fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Cabeça de poste de madeira tratada
+Peça de estrutura
+<&treated_wood_pole_head>A cabeça/base de poste reto de madeira tratada fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Suporte de poste de madeira tratada
+Peça de estrutura
+<&treated_wood_pole_support>O suporte de poste reto de madeira tratada fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Suporte de aço em duplo T
+Peça de estrutura
+<&steel_double_t_support>Este bloco fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>
+<np>
+Grelha de piso de aço
+Elemento de acesso para manutenção
+<&steel_floor_grating>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Passadiço de aço
+Elemento de acesso para manutenção
+<&steel_catwalk>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Escadas de passadiço de aço
+Elemento de acesso para manutenção
+<&steel_catwalk_stairs>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Passadiço elevado de aço
+Elemento de acesso para manutenção
+<&steel_catwalk_ta>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Guarda-corpo de aço
+Elemento de acesso para manutenção
+<&steel_railing>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Cerca de malha de aço
+Elemento de acesso para manutenção
+<&steel_mesh_fence>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Portão de cerca de malha de aço
+Elemento de acesso para manutenção
+<&steel_mesh_fence_gate>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Escada de mão de barras metálicas
+Elemento de acesso para manutenção
+<&metal_rung_ladder>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Degraus metálicos alternados
+Elemento de acesso para manutenção
+<&metal_rung_steps>Este bloco forma rotas de manutenção fáceis de identificar ao redor das máquinas.<br>
+<br>
+Uso: Coloca-o para criar acessos de manutenção junto de máquinas, pisos superiores e poços de serviço.<br>
+<np>
+Janela com moldura de aço
+Visibilidade protegida
+<&steel_framed_window>Este bloco mantém a visão desobstruída sem destoar da construção reforçada da fábrica.<br>
+<br>
+Uso: Coloca numa abertura de um bloco na parede para que os jogadores possam ver as máquinas através de uma barreira protetora.<br>
+<np>
+Porta metálica de correr
+Ponto de acesso industrial
+<&metal_sliding_door>Este bloco fornece um acesso robusto a salas de serviço, poços, telhados e recintos de máquinas.<br>
+<br>
+Uso: Instala-o onde a construção precisa de uma abertura de manutenção controlada.<br>
+<np>
+Alçapão de ferro
+Ponto de acesso industrial
+<&iron_hatch>Este bloco fornece um acesso robusto a salas de serviço, poços, telhados e recintos de máquinas.<br>
+<br>
+Uso: Instala-o onde a construção precisa de uma abertura de manutenção controlada.<br>

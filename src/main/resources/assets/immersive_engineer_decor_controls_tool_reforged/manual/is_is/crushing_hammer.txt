@@ -1,0 +1,7 @@
+Málmgrýtismölunarhamar
+Handverkfæri til mölunar
+<&recipe>Málmgrýtismulningshamarinn er handverkfæri fyrir fyrstu vinnslu á járni og gulli.<br>
+<br>
+Notkun: Smíðaðu hann með hrájárni, hrágulli, járngrýti, djúpskíferjárngrýti, gullgrýti eða djúpskífergullgrýti til að búa til járn- eða gullduft frá Immersive Engineering. Hamarinn missir endingu og kemur aftur í smíðareitinn þar til hann brotnar.<br>
+<br>
+Hann slitnar líka við námugröft og getur hrint skotmörkum frá sér í návígi.

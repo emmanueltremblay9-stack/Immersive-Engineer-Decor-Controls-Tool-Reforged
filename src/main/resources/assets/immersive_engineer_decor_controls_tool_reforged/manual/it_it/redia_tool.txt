@@ -1,0 +1,7 @@
+Utensile REDIA
+Utilità rivestita di diamante
+<&recipe>L’utensile REDIA è un attrezzo multiuso resistente di livello diamante per lavorare in cantieri temporanei, officine e ingressi di miniere.<br>
+<br>
+Uso: usalo mentre porti torce per posarne una dall’inventario senza usurare REDIA. Usalo da accovacciato per tagliare piante o alternare il terreno tra terra, terra zappata, terra brulla e sentiero sterrato. L’azione alternativa originale dell’ascia si applica dalla faccia inferiore. Rompi tronchi da accovacciato per abbattere i blocchi collegati dell’albero.<br>
+<br>
+Riparalo con diamanti. Riparare oltre il massimo un utensile REDIA già completamente riparato ripristina la progressione originale di Efficienza e Fortuna.

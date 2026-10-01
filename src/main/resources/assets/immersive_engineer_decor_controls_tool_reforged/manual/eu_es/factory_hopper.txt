@@ -1,0 +1,5 @@
+Fabrikako tobera
+Lantegiko tresneria
+<&recipe>Bloke honek objektu-pilak industria-karkasa estuago batean zehar mugitzen ditu.<br>
+<br>
+Erabilera: zuzendu inbentario-lerrorantz eta ezarri irismena, pila-kopurua, denborak eta redstone-modua bere pantailan.<br>

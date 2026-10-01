@@ -1,0 +1,5 @@
+Hlavice impregnovaného sloupu
+Díl nosného rámu
+<&recipe>Patka/hlavice rovného sloupu z impregnovaného dřeva dodává strojním halám a přístupovým rámům viditelnou nosnou konstrukci.<br>
+<br>
+Použití: Natoč jej a umísti jako viditelnou výztuhu nosníků, sloupů a okrajů plošin.<br>

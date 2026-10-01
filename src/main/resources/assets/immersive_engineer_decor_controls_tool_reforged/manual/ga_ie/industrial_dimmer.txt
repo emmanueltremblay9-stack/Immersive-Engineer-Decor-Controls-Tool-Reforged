@@ -1,0 +1,7 @@
+Maolaitheoir
+Comhartha athraitheach
+<&recipe>Socraíonn rialtán rothlach neart Redstone ó aghaidh phainéil dhlúith.<br>
+<br>
+Úsáid: deaschliceáil air chun an t-aschur a ardú céim ar chéim, agus filleadh ar nialas tar éis an lán-neart.<br>
+<br>
+Nótaí: aschuireann sé neart ó 0 go 15.

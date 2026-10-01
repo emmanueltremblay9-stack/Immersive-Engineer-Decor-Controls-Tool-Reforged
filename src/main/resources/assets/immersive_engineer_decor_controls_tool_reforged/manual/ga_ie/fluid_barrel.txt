@@ -1,0 +1,5 @@
+Bairille Leachta
+Crua-earraí píblíne sreabháin
+<&recipe>Is páirt dhlúth píblíne sreabháin é an feisteas seo d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: cuir é in áit ar féidir le píopaí nó buicéid aghaidh an umair a bhaint amach.<br>

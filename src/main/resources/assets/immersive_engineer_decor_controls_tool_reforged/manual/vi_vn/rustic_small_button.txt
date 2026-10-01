@@ -1,0 +1,7 @@
+Nút mộc mạc nhỏ
+Điều khiển redstone
+<&recipe>Công tắc tức thời tạo xung redstone rõ ràng ở cường độ tối đa.<br>
+<br>
+Cách dùng: Dùng để khởi động máy, mở cửa, báo động hoặc điều khiển mạch một lần.<br>
+<br>
+Ghi chú: Tự đặt lại sau xung đã hẹn.

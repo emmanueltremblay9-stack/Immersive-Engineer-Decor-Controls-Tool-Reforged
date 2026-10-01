@@ -1,0 +1,5 @@
+Fourneau de laboratoire
+Unité de traitement compacte
+<&recipe>Le fourneau de laboratoire assure de petits travaux de cuisson au combustible solide dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : employez du combustible solide pour de petits lots de cuisson.<br>

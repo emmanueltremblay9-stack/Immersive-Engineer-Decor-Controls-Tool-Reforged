@@ -1,0 +1,5 @@
+Pemecah Blok
+Kegunaan lantai bengkel
+<&recipe>Pemecah blok kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Halakan muka kerja ke blok yang hendak dibuang.<br>

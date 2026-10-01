@@ -1,0 +1,101 @@
+Dächer und Hof
+Fabrikbauteil fia draußn
+Dochblöck, Hofsplitt und oide Industriehoizteil helfen beim Fertigstelln vo Außenhüttn, Werkhöf, Ladebereichen und verwitterten Fabrikkantn.<br>
+<br>
+Misch de Teil mit Mauerwerk und Zugangswegen, damit Industriebauten draußn a vo weiter weg guat erkennbar bleibn.
+<np>
+Dunkls Schindldoch
+Verwittertes Dochteil
+<&dark_shingle_roof>Der Block ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Dochschneefang
+Verwittertes Dochteil
+<&dark_shingle_roof_metallized>Da Schneefang fia a dunkls Schindldoch ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Dunkls Schindldoch
+Verwittertes Dochteil
+<&dark_shingle_roof_skylight>S'Dochfensta fia a dunkls Schindldoch ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Dochkaminfuass
+Verwittertes Dochteil
+<&dark_shingle_roof_chimneytrunk>Da Kaminfuass fia a dunkls Schindldoch ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Dochkabelrohr
+Verwittertes Dochteil
+<&dark_shingle_roof_wireconduit>S'Kabelrohr fia a dunkls Schindldoch ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Dunkls Schindldoch
+Verwittertes Dochteil
+<&dark_shingle_roof_chimney>Da Kamin fia a dunkls Schindldoch ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Block fia a dunkls Schindldoch
+Verwittertes Dochteil
+<&dark_shingle_roof_block>Der Block ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Stufn fia a dunkls Schindldoch
+Verwittertes Dochteil
+<&dark_shingle_roof_slab>Der Block ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Stufn fia a dunkls Schindldoch
+Verwittertes Dochteil
+<&dark_shingle_roof_slabslice>De dünne Scheibn fia a dunkls Schindldoch ergibt dunkle, zweckmäßige Dochlinien fia Werkstätten und Industriehüttn.<br>
+<br>
+So geht's: Kombinier de Teil, damit glaubwürdige Dochformen entstehn.<br>
+<np>
+Verdichtete Splitt-Eadn
+Baustellnbodn
+<&dense_grit_dirt_block>Der Block gibt Arbeitsplätzn draußn a verdichtete, zammtramplte Oberfläch.<br>
+<br>
+So geht's: Leg'n rund um Ladetiern, Außentanks und Maschinenhöf.<br>
+<np>
+Verdichteta Splittsand
+Baustellnbodn
+<&dense_grit_sand_block>Der Block gibt Arbeitsplätzn draußn a verdichtete, zammtramplte Oberfläch.<br>
+<br>
+So geht's: Leg'n rund um Ladetiern, Außentanks und Maschinenhöf.<br>
+<np>
+Oide Hoizbretta
+Oids Werkstatthoiz
+<&old_industrial_wood_planks>De oidn Industriehoizbretta ergänzen oids Werkstatthoiz fia Bödn, Tritt, Tiern und warme Innenverzierunga.<br>
+<br>
+So geht's: Nutz'n fia oide Werkstattbödn, Schdiang, Tiern und Einfassunga.<br>
+<np>
+Oide Industriehoizstufn
+Oids Werkstatthoiz
+<&old_industrial_wood_slab>Der Block ergänzt oids Werkstatthoiz fia Bödn, Tritt, Tiern und warme Innenverzierunga.<br>
+<br>
+So geht's: Nutz'n fia oide Werkstattbödn, Schdiang, Tiern und Einfassunga.<br>
+<np>
+Oide Hoizschdiang
+Oids Werkstatthoiz
+<&old_industrial_wood_stairs>De oide Industriehoizschdiang ergänzt oids Werkstatthoiz fia Bödn, Tritt, Tiern und warme Innenverzierunga.<br>
+<br>
+So geht's: Nutz'n fia oide Werkstattbödn, Schdiang, Tiern und Einfassunga.<br>
+<np>
+Dünne oide Hoizscheibn
+Oids Werkstatthoiz
+<&old_industrial_wood_slabslice>De dünne Scheibn aus oidm Industriehoiz ergänzt oids Werkstatthoiz fia Bödn, Tritt, Tiern und warme Innenverzierunga.<br>
+<br>
+So geht's: Nutz'n fia oide Werkstattbödn, Schdiang, Tiern und Einfassunga.<br>
+<np>
+Oide Industriehoiztia
+Oids Werkstatthoiz
+<&old_industrial_wood_door>Der Block ergänzt oids Werkstatthoiz fia Bödn, Tritt, Tiern und warme Innenverzierunga.<br>
+<br>
+So geht's: Nutz'n fia oide Werkstattbödn, Schdiang, Tiern und Einfassunga.<br>

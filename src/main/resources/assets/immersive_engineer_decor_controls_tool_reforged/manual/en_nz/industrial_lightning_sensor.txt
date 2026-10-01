@@ -1,0 +1,7 @@
+Storm Detector
+Signal sensing
+<&recipe>A storm sensor drives warnings during thunder conditions.<br>
+<br>
+Usage: Place it under open sky and route it to lamps or alarms.<br>
+<br>
+Notes: Requires thunder and sky access.

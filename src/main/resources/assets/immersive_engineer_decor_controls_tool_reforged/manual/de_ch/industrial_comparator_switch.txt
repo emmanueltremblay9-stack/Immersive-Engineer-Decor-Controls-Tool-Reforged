@@ -1,0 +1,7 @@
+Komparatorschalter
+Signal am Befestigungsblock
+<&recipe>En kompakte Sensorschalter liest sin Befestigungsblock und macht drus en eifache Tafeluusgang.<br>
+<br>
+Verwendig: Montier en a Inventare, Tanks oder Redstone-Bauteil. Mäldet de Befestigungsblock en Komparator-, Behälter- oder Redstone-Uusgang, git de Schalter d'volli Redstone-Stärchi uus.<br>
+<br>
+Hiwiis: Macht us Lagerfüllständ oder versteckte Leitige klari Ii-/Us-Stüürleitige.

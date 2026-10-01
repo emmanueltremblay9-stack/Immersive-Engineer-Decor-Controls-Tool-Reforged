@@ -1,0 +1,5 @@
+Tabula exitus
+Signum periculi
+<&recipe>Haec tabula pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>

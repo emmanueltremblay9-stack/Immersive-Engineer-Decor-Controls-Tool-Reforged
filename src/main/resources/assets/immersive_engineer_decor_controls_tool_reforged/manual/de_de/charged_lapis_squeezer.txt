@@ -1,0 +1,7 @@
+Gedankenpresse
+Erfahrungsverdichter
+<&recipe>Die Gedankenpresse wandelt Lapislazuli und Erfahrung in geladenen Lapislazuli um.<br>
+<br>
+Verwendung: Führe Lapislazuli und mindestens eine Erfahrungsstufe mit und benutze das Werkzeug. Ein erfolgreicher Pressvorgang verbraucht eine Stufe und einen Lapislazuli, verletzt den Benutzer, nutzt die Presse ab und erzeugt einen geladenen Lapislazuli.<br>
+<br>
+Sie arbeitet nicht, wenn Lapislazuli oder Erfahrung fehlen oder der Benutzer dem Tod zu nahe ist.

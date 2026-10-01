@@ -1,0 +1,127 @@
+Laluan Akses
+Laluan dan penyokong
+Tiang keluli, tiang kayu dirawat, jeriji, laluan servis, susur, tangga, pintu, tingkap dan penutup lubang membentuk laluan penyelenggaraan padat dalam kilang.<br>
+<br>
+Bahagian laluan akses keluli menggunakan plat keluli. Hasilkan atau letakkan meja pertukangan logam, masukkan tukul Immersive Engineering, kemudian ketuk jongkong keluli menjadi plat untuk tiang, laluan servis, tingkap, pintu, susur dan hiasan keluli lain.<br>
+<br>
+Letakkan di tempat mesin memerlukan akses servis, laluan tinggi, aci penyelenggaraan atau tepi yang lebih selamat.
+<np>
+Tiang Keluli Tebal
+Bahagian rangka struktur
+<&thick_steel_pole>Tiang keluli tebal lurus menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Kepala Tiang Tebal
+Bahagian rangka struktur
+<&thick_steel_pole_head>Kepala/kaki tiang keluli tebal lurus menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Tiang Keluli Nipis
+Bahagian rangka struktur
+<&thin_steel_pole>Tiang keluli nipis lurus menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Kepala Tiang Nipis
+Bahagian rangka struktur
+<&thin_steel_pole_head>Kepala/kaki tiang keluli nipis lurus menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Tiang Kayu Dirawat
+Bahagian rangka struktur
+<&treated_wood_pole>Tiang kayu dirawat lurus menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Kepala Tiang Kayu Dirawat
+Bahagian rangka struktur
+<&treated_wood_pole_head>Kepala/kaki tiang kayu dirawat lurus menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Penyokong Tiang Kayu Dirawat
+Bahagian rangka struktur
+<&treated_wood_pole_support>Penyokong tiang kayu dirawat lurus menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Penyokong Keluli T Berganda
+Bahagian rangka struktur
+<&steel_double_t_support>Blok ini menyediakan struktur yang kelihatan untuk dewan mesin dan rangka akses.<br>
+<br>
+Penggunaan: Putar dan letakkan sebagai pengukuh yang kelihatan untuk rasuk, tiang dan tepi pelantar.<br>
+<np>
+Jeriji Lantai Keluli
+Kelengkapan akses servis
+<&steel_floor_grating>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Laluan Servis Keluli
+Kelengkapan akses servis
+<&steel_catwalk>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Tangga Laluan Servis Keluli
+Kelengkapan akses servis
+<&steel_catwalk_stairs>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Laluan Servis Keluli Ditinggikan
+Kelengkapan akses servis
+<&steel_catwalk_ta>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Susur Keluli
+Kelengkapan akses servis
+<&steel_railing>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Pagar Jaring Keluli
+Kelengkapan akses servis
+<&steel_mesh_fence>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Pintu Pagar Jaring Keluli
+Kelengkapan akses servis
+<&steel_mesh_fence_gate>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Tangga Anak Palang Logam
+Kelengkapan akses servis
+<&metal_rung_ladder>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Anak Tangga Logam Berselang
+Kelengkapan akses servis
+<&metal_rung_steps>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>
+<np>
+Tingkap Bingkai Keluli
+Garis pandang terlindung
+<&steel_framed_window>Blok ini mengekalkan pandangan terbuka sambil sepadan dengan binaan kilang bertetulang.<br>
+<br>
+Penggunaan: Letakkan dalam bukaan dinding selebar 1 blok di tempat pemain perlu melihat mesin melalui penghadang terlindung.<br>
+<np>
+Pintu Gelangsar Logam
+Titik akses industri
+<&metal_sliding_door>Blok ini menyediakan titik akses lasak untuk bilik servis, aci, bumbung dan sarung mesin.<br>
+<br>
+Penggunaan: Pasang di tempat binaan memerlukan bukaan penyelenggaraan terkawal.<br>
+<np>
+Penutup Lubang Besi
+Titik akses industri
+<&iron_hatch>Blok ini menyediakan titik akses lasak untuk bilik servis, aci, bumbung dan sarung mesin.<br>
+<br>
+Penggunaan: Pasang di tempat binaan memerlukan bukaan penyelenggaraan terkawal.<br>

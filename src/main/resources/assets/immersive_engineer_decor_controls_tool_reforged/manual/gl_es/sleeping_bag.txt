@@ -1,0 +1,7 @@
+Saco de durmir
+Equipo de descanso portátil
+<&recipe>O saco de durmir é un equipo de descanso resistente á intemperie para traballos lonxe dunha cama.<br>
+<br>
+Uso: Utilízao pola noite no Overworld para descansar ata a mañá. Non fixa nin move o punto de aparición.<br>
+<br>
+Rexeita o uso diúrno, lugares perigosos con monstros próximos e dimensións inadecuadas para un descanso seguro. Cada descanso correcto desgasta o saco.

@@ -1,0 +1,5 @@
+Mur de briques de scories
+Maçonnerie industrielle dense
+<&recipe>Ce bloc apporte une maçonnerie dense gris-brun aux fondations, murs de soutènement et vieux ateliers.<br>
+<br>
+Utilisation : construisez de vieilles fondations, des murs de soutènement et des sols d'usine encrassés.<br>

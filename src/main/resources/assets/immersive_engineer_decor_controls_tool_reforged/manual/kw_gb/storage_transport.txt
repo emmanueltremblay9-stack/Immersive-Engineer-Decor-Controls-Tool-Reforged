@@ -1,0 +1,41 @@
+Gwithva ha Treusperthyans
+Afinans rolas ha fros
+Yma afinans gwitha ha treusperthi owth oberi gans kistyow, balyers, kornow dastum ha valvys rag hembrenkyans kompakt yn gweythva.<br>
+<br>
+Usya an folennow ma pan drehevydh stevelyow gwitha, hensyow pibell, tankys servys ha linennow hylyf reolys.
+<np>
+Kist Fardellow gans Label
+Label stokk golegadow
+<&labeled_crate>An Gist Fardellow gans Label ma yw gwrys rag renka kler yn gwithva. Y hyllir golegi hy flat tal kepar ha arwodh byghan gweythdy.<br>
+<br>
+Devnydh: gwra klikya dyhow war an plat label rag golegi label an gist. Gwra klikya dyhow war an parth erel a'n gist rag ygeri gwithva rag daffar, darnow ha provians gonis.<br>
+<np>
+Balyer Hylyf
+Daffar lynenn hylyf
+<&fluid_barrel>An daffar ma yw darn kompakt lynenn hylyf rag tankys byghan, resow pibellow, poyntow dastum ha fros reolys gans rudhven.<br>
+<br>
+Devnydh: gor e may hallo pibellow po kelern hedhes enep an tank.<br>
+<np>
+Korn Dastum Hylyf
+Daffar lynenn hylyf
+<&small_fluid_funnel>Yth yw an Korn Dastum Hylyf Byghan darn kompakt a linen hylyf rag tankys byghan, hensyow pibell, leow dastum ha fros reolys gans rudhven.<br>
+<br>
+Devnydh: gor e a-woles dhe'n le dastum hylyf ha hembrenk y dalgh gwithys dhe dankys po dhe bibellow a-woles.<br>
+<np>
+Valv Unn-Tu Bibell Hylyf
+Daffar lynenn hylyf
+<&straight_pipe_valve>Yth yw an Valv Unn-Tu Hylyf darn kompakt a linen hylyf rag tankys byghan, hensyow pibell, leow dastum ha fros reolys gans rudhven.<br>
+<br>
+Devnydh: alin an valv orth tu an fros a vynnir.<br>
+<np>
+Valv Hylyf Rudhven
+Daffar lynenn hylyf
+<&straight_pipe_valve_redstone>Yth yw an Valv Hylyf Rudhven darn kompakt a linen hylyf rag tankys byghan, hensyow pibell, leow dastum ha fros reolys gans rudhven.<br>
+<br>
+Devnydh: alin an valv orth tu an fros a vynnir.<br>
+<np>
+Valv Hylyf Analog
+Daffar lynenn hylyf
+<&straight_pipe_valve_redstone_analog>Yth yw an Valv Hylyf Analog darn kompakt a linen hylyf rag tankys byghan, hensyow pibell, leow dastum ha fros reolys gans rudhven.<br>
+<br>
+Devnydh: alin an valv orth tu an fros a vynnir.<br>

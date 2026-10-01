@@ -1,0 +1,5 @@
+Muzilica
+Oprema tvorničkog poda
+<&recipe>Mala muzilica pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: postavi je blizu krava i osiguraj odvod posuda s mlijekom ili same tekućine.<br>

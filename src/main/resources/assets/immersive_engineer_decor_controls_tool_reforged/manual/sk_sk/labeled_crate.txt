@@ -1,0 +1,5 @@
+Debna so štítkom
+Upraviteľný skladový štítok
+<&recipe>Táto debna so štítkom slúži na prehľadné triedenie v sklade. Jej predný štítok sa dá upravovať ako malá dielenská ceduľa.<br>
+<br>
+Použitie: Pravým kliknutím na štítok uprav označenie debny. Pravým kliknutím na zvyšok debny otvoríš úložisko súčiastok, dielov a zásob na údržbu.<br>

@@ -1,0 +1,7 @@
+Analogt relé til rofasambond
+Bundin stýring
+<&recipe>Ein partur í reléstíli gevur panelbygging eitt lítið staðbundið rofapunkt.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis. Brúka móttakarakubbar, tá ið tær tørvar virking við bundnari perlu.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.

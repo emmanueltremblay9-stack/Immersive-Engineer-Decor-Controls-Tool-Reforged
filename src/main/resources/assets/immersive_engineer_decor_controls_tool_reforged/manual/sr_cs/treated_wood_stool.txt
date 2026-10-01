@@ -1,0 +1,5 @@
+Stoličica od obrađenog drveta
+Radionički nameštaj
+<&recipe>Ovaj blok je praktičan nameštaj za radne prostorije i uglove za održavanje.<br>
+<br>
+Upotreba: postavi ga pored klupa, sanduka i kompaktnih mašina.<br>

@@ -1,0 +1,7 @@
+Synhwyrydd Endidau Llinol
+Synhwyro signal
+<&recipe>Mae synhwyrydd endidau'n gwylio symudiad cyfagos heb blât llawr gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef â drysau, lampau, larymau neu gydgloeon diogelwch peiriannau.<br>
+<br>
+Nodiadau: Mae'n sganio ardal fach o amgylch y bloc.

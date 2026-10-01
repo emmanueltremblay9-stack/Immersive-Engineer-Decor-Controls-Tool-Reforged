@@ -1,0 +1,7 @@
+Geestpers
+Ervaringsverdichter
+<&recipe>De geestpers zet lapis en ervaring om in geladen lapis.<br>
+<br>
+Gebruik: neem lapis lazuli en minstens één ervaringsniveau mee en gebruik het gereedschap. Een geslaagde persbeurt verbruikt één niveau en één lapis, verwondt de gebruiker, beschadigt de pers en maakt één geladen lapis.<br>
+<br>
+De pers werkt niet als de gebruiker geen lapis of ervaring heeft, of bijna dood is.

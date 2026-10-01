@@ -1,0 +1,7 @@
+Stakleni dnevni tajmer
+Signal dnevnog svjetla
+<&recipe>Vremenski prekidač prati dnevni dio ciklusa svijeta.<br>
+<br>
+Upotreba: Koristite ga za dvorišne lampe, kapke i fabričke komande aktivne samo danju.<br>
+<br>
+Napomene: Potrebna je dimenzija s nebeskim svjetlom.

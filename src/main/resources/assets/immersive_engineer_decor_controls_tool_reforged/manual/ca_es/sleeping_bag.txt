@@ -1,0 +1,7 @@
+Sac de dormir
+Equip de descans portàtil
+<&recipe>Equip resistent per treballar lluny d'un llit.<br>
+<br>
+Ús: De nit al Supramón, descansa fins al matí sense fixar ni moure la reaparició.<br>
+<br>
+Rebutja el dia, monstres propers i dimensions inadequades. Cada descans correcte el desgasta.

@@ -1,0 +1,5 @@
+Panel solar
+Equipamento de planta
+<&recipe>O panel solar pequeno é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: dálle acceso ao ceo aberto e conecta equipamento de baixo consumo.<br>

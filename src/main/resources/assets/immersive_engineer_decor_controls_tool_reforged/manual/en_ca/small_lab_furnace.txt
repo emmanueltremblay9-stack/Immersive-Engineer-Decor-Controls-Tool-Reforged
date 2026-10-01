@@ -1,0 +1,5 @@
+Laboratory Furnace
+Compact processing unit
+<&recipe>The Laboratory Furnace handles compact solid-fuel smelting jobs in a small workshop footprint.<br>
+<br>
+Usage: Use solid fuel for compact smelting batches.<br>

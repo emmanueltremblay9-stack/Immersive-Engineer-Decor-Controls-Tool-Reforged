@@ -1,0 +1,5 @@
+Talea alimentaria mixturae Muslee
+Cibus officinae celer
+<&recipe>Virga energetica Muslee Melange cibus compactus e pane, seminibus fructuque est.<br>
+<br>
+Usus: ut cibum expeditionis ede dum moderamina, fistulas, suggesta aut longas series conclavium machinarum ponis.

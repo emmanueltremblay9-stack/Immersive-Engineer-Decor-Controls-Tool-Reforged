@@ -1,0 +1,7 @@
+Obojeno osjetljivo staklo
+Signalno staklo
+<&recipe>Stakleni blok osjetljiv na redstone zadržava pogled i prikazuje stanje signala.<br>
+<br>
+Uporaba: koristi ga za prozore upravljačke sobe, osvijetljene panele i zaštićeno tvorničko ostakljenje.<br>
+<br>
+Napomene: mijenja stanje prema obližnjem redstone signalu.

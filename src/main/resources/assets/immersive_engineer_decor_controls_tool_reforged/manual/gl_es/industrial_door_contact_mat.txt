@@ -1,0 +1,7 @@
+Alfombra de contacto para portas
+Pulso de presión
+<&recipe>Un interruptor de contacto envía un sinal breve co movemento do chan ou dun zapón.<br>
+<br>
+Uso: colócao onde as entidades pasen por un corredor de servizo, un cargador ou unha ruta vixiada.<br>
+<br>
+Notas: emite un pulso breve despois do contacto cunha entidade.

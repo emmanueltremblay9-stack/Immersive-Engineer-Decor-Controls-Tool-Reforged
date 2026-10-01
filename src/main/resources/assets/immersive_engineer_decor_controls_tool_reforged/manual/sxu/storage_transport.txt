@@ -1,0 +1,41 @@
+Lagerung un Transport
+Lager- un Durchflussbaudeile
+Lager- un Transportbaudeile sin Druhn, Fässer, Drischdorr un Vendile für gleene Fabrigwege.<br>
+<br>
+Nimm diese Seidn, wenn de Lagerräume, Rohrwege, Wardungstangs un geschdeuorde Flissichgeedsleidungen anlegsd.
+<np>
+Beschrifde Druhe
+Ändorbare Lagerbeschriftung
+<&labeled_crate>Diese beschrifde Druhe is für deidliche Ordnung im Lager gedachd. Ihre Vorderbladde lässd sich wie ä gleenes Wergschdaddschild beschrifdn.<br>
+<br>
+Nuddzung: Rechdsgligg uff de Schillorbladde, um de Druhenbeschriftung zu ändorn. Rechdsgligg uff dän Resd dor Druhe, um’s Lager für Anbaudeile, Deile un Wardungsvorrad uffzumachn.<br>
+<np>
+Flissichgeedsfass
+Flissichgeedsleidungsbaudeile
+<&fluid_barrel>Das Deil is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Seddz’s dorthin, wo Rohre oddor Ehmorr an de Tangseide rangomm.<br>
+<np>
+Flissichgeedsdrischdorr
+Flissichgeedsleidungsbaudeile
+<&small_fluid_funnel>Dor gleene Flissichgeedssammeldrischdorr is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Seddz’n undor dän Flissichgeedssammelpladdz un leite sein geschbeichordn Inhald an Tangs oddor dieferliegende Rohre weidor.<br>
+<np>
+Riggschlagvendil fürs Flissichgeedsrohr
+Flissichgeedsleidungsbaudeile
+<&straight_pipe_valve>Das Riggschlagvendil fürs Flissichgeedsrohr is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Richd’s Vendil nach dor gewinschdn Flussrichdung aus.<br>
+<np>
+Redstone-Flissichgeedsvendil
+Flissichgeedsleidungsbaudeile
+<&straight_pipe_valve_redstone>Das Redstone-geschdeuorde Flissichgeedsvendil is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Richd’s Vendil nach dor gewinschdn Flussrichdung aus.<br>
+<np>
+Analoges Flissichgeedsvendil
+Flissichgeedsleidungsbaudeile
+<&straight_pipe_valve_redstone_analog>Das analoge Redstone-Flissichgeedsvendil is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Richd’s Vendil nach dor gewinschdn Flussrichdung aus.<br>

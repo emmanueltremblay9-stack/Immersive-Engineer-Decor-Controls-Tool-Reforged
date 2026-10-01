@@ -1,0 +1,7 @@
+Cedilica uma
+Kondenzator iskustva
+<&recipe>Cedilica uma pretvara lapis i iskustvo u napunjeni lapis.<br>
+<br>
+Upotreba: ponesi lapis lazuli i bar jedan nivo iskustva, pa upotrebi alat. Uspešno ceđenje troši jedan nivo i jedan lapis, povređuje korisnika, oštećuje cedilicu i pravi jedan napunjeni lapis.<br>
+<br>
+Ne radi ako korisniku nedostaje lapis, iskustvo ili je suviše blizu smrti.

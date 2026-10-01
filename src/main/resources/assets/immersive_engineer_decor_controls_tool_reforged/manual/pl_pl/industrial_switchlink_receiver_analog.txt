@@ -1,0 +1,7 @@
+Analogowy odbiornik połączenia
+Powiązany element sterujący
+<&recipe>Powiązany odbiornik zapewnia widoczny zdalny cel do paneli sterowania.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Użyj tej perły podczas skradania, aby zdalnie uruchomić odbiornik.<br>
+<br>
+Uwagi: Po wyzwoleniu odbiornik emituje redstone o pełnej sile.

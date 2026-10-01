@@ -1,0 +1,5 @@
+Baril de fluide
+Équipement de réseau de fluides
+<&recipe>Cet élément compact de réseau de fluides convient aux petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : placez-le pour que les tuyaux ou les chaudières puissent atteindre la face du réservoir.<br>

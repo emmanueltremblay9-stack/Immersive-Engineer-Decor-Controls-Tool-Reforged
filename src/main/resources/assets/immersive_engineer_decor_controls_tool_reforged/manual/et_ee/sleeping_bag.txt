@@ -1,0 +1,7 @@
+Magamiskott
+Kaasaskantav puhkekomplekt
+<&recipe>Ilmakindel komplekt voodist kaugel töötamiseks.<br>
+<br>
+Kasutus: Öösel Ülamaailmas puhka hommikuni ilma taassünnikohta muutmata.<br>
+<br>
+Keeldub päeval, lähedaste koletistega ja sobimatus dimensioonis. Iga puhkus kulutab.

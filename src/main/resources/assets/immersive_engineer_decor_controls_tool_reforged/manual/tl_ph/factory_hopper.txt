@@ -1,0 +1,5 @@
+Lukton ng Pabrika
+Pantulong sa sahig ng pagawaan
+<&recipe>Naglilipat ang blokeng ito ng mga bunton ng bagay sa mas masikip na pang-industriyang kaha.<br>
+<br>
+Paggamit: Itutok sa linya ng talatinggalan, saka itakda sa screen ang abot, dami sa bunton, oras at paraan ng redstone.<br>

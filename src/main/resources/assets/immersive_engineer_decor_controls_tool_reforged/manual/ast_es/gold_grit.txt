@@ -1,0 +1,3 @@
+Granalla grueso d’oru
+Material pa ferramientes d’inxenieru usáu nel conxuntu reconstruyíu de recetes.
+<&recipe>Pue fundise pa obtener llingotes<br>d’oru, pero nun val pa procesar<br>materiales con téuniques avanzaes.

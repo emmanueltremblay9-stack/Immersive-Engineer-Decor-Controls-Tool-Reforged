@@ -1,0 +1,7 @@
+Troc'hell dro mekanik
+Reoliñ Redstone
+<&recipe>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.

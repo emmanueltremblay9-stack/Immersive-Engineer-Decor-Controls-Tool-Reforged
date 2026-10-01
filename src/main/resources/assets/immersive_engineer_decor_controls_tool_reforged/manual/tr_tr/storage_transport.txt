@@ -1,0 +1,41 @@
+Depolama ve Taşıma
+Envanter ve akış parçaları
+Depolama ve taşıma parçaları; az yer kaplayan fabrika hatları için sandıkları, varilleri, hunileri ve vanaları kapsar.<br>
+<br>
+Depoları, boru hatlarını, servis tanklarını ve kontrollü sıvı hatlarını düzenlerken bu sayfaları kullanın.
+<np>
+Etiketli Sandık
+Düzenlenebilir stok etiketi
+<&labeled_crate>Bu etiketli sandık, depodaki eşyaların kolayca sınıflandırılması için yapılmıştır. Ön plakası küçük bir atölye tabelası gibi düzenlenebilir.<br>
+<br>
+Kullanım: Sandık etiketini düzenlemek için etiket plakasına sağ tıklayın. Donanım, parçalar ve bakım malzemeleri deposunu açmak için sandığın geri kalanına sağ tıklayın.<br>
+<np>
+Sıvı Varili
+Sıvı hattı donanımı
+<&fluid_barrel>Bu parça; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Boruların veya kovaların tank yüzüne erişebileceği yere yerleştirin.<br>
+<np>
+Sıvı Hunisi
+Sıvı hattı donanımı
+<&small_fluid_funnel>Küçük sıvı hunisi; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Sıvı toplama noktasının altına koyun; depoladığı içeriği tanklara veya daha aşağıdaki borulara yönlendirin.<br>
+<np>
+Sıvı Borusu Çekvalfi
+Sıvı hattı donanımı
+<&straight_pipe_valve>Sıvı çekvalfi; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Vanayı istenen akış yönüne hizalayın.<br>
+<np>
+Redstone Sıvı Vanası
+Sıvı hattı donanımı
+<&straight_pipe_valve_redstone>Redstone sıvı vanası; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Vanayı istenen akış yönüne hizalayın.<br>
+<np>
+Analog Sıvı Vanası
+Sıvı hattı donanımı
+<&straight_pipe_valve_redstone_analog>Analog sıvı vanası; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Vanayı istenen akış yönüne hizalayın.<br>

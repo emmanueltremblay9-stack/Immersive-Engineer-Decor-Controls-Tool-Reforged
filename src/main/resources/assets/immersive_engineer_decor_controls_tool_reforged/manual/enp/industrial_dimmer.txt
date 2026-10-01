@@ -1,0 +1,7 @@
+Might Setter
+Changeable token
+<&recipe>A turning knap sets redstone strength on a small switchboard.<br>
+<br>
+Use: Right-click to raise the outflow step by step, then back to naught after full strength.<br>
+<br>
+Mind: Sends strength from 0 to 15.

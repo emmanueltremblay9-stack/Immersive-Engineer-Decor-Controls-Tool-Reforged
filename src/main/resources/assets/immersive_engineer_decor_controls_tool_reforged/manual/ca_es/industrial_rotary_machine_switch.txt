@@ -1,0 +1,7 @@
+Interruptor giratori de màquina
+Control per redstone
+<&recipe>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.

@@ -1,0 +1,3 @@
+Graniglia d’oro grossolana
+Materiale per utensili dell’ingegnere usato nelle ricette ricostruite.
+<&recipe>Si può fondere in lingotti<br>d’oro, ma non è adatta alla<br>lavorazione avanzata dei materiali.

@@ -1,0 +1,7 @@
+Dimmar
+Variabelt signal
+<&recipe>Ein dreiebrytar stiller redstone-styrken frå ei kompakt panelflate.<br>
+<br>
+Bruk: høgreklikk for å auke utgangen stegvis. Etter full styrke går han tilbake til null.<br>
+<br>
+Merknad: gjev signalstyrke frå 0 til 15.

@@ -1,0 +1,5 @@
+Geležinis lemputės šviestuvas
+Kompaktiškas darbo šviestuvas
+<&recipe>Šis blokas suteikia kompaktišką pramoninį apšvietimą koridoriams, aptarnavimo takams ir darbo vietoms.<br>
+<br>
+Naudojimas: montuok ant lubų, sienų arba kraštų, kur patalpai reikia aiškaus darbo apšvietimo.<br>

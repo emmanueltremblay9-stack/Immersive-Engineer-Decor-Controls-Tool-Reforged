@@ -1,0 +1,5 @@
+Freezer o' water
+Small processin' contraption
+<&recipe>The water freezer handles chillin' work in a compact berth fer powered fluid rigs.<br>
+<br>
+Orders: Supply water and power to make frost in stages.<br>

@@ -1,0 +1,5 @@
+Elektriese Oond
+Kompakte verwerkingseenheid
+<&recipe>Die Elektriese Oond verrig kompakte FE-aangedrewe smeltwerk en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: verskaf FE en geldige smeltinvoer.<br>

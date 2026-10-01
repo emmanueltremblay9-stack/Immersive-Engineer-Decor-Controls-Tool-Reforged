@@ -1,0 +1,5 @@
+Sign "Fire Can Haz Ouch"
+Danger-marker thingz
+<&recipe>Da "Fire Can Haz Ouch" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>

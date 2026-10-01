@@ -1,0 +1,7 @@
+Relè per collegamenti tra interruttori
+Comando collegato
+<&recipe>Un comando a forma di relè offre ai pannelli un punto d’interruzione locale compatto.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini. Usa i ricevitori quando serve l’attivazione con una perla collegata.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.

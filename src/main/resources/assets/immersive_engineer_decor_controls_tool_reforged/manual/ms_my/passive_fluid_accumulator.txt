@@ -1,0 +1,5 @@
+Bendalir Pasif
+Perkakasan talian bendalir
+<&recipe>Pengumpul bendalir pasif ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Letakkan di sisi sumber air yang sesuai dan sediakan ruang untuk pengeluaran bendalir.<br>

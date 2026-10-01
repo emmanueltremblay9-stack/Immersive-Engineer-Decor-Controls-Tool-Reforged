@@ -1,0 +1,789 @@
+Controls de redstone
+Mesuradors i accessoris de senyal
+Els dispositius de control converteixen la redstone amagada en panells de fàbrica fàcils de llegir, sensors, indicadors, interruptors, alarmes i accessoris de senyal enllaçats.<br>
+<br>
+Fes servir aquestes pàgines per construir llocs d’operador, quadres de senyalització, circuits de seguretat i controls remots.
+<np>
+Diana de fletxes
+Pols momentani
+<&arrow_target>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Sensor de porta
+Control per redstone
+<&door_sensor_switch>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó d’ascensor
+Control per redstone
+<&elevator_button>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Botó de vidre
+Control per redstone
+<&glass_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó de vidre
+Control per redstone
+<&glass_small_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó tàctil de vidre
+Control per redstone
+<&glass_touch_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó de màquina
+Control per redstone
+<&industrial_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó
+Control per redstone
+<&industrial_double_pole_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó de màquina amb protecció
+Control per redstone
+<&industrial_fenced_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó de cops
+Control per redstone
+<&industrial_knock_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó antic ornamentat
+Control per redstone
+<&oldfancy_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó antic ornamentat
+Control per redstone
+<&oldfancy_small_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó de cadena antic ornamentat
+Pols momentani
+<&oldfancy_spring_reset_chain>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó rústic
+Control per redstone
+<&rustic_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó de clau rústic
+Control per redstone
+<&rustic_nail_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó petit rústic
+Control per redstone
+<&rustic_small_button>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Botó de cadena rústic
+Pols momentani
+<&rustic_spring_reset_chain>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.
+<np>
+Placa de contacte de vidre
+Pols de pressió
+<&glass_contact_mat>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Contacte de porta de vidre
+Pols de pressió
+<&glass_door_contact_mat>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Catifa de contacte
+Pols de pressió
+<&industrial_contact_mat>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Catifa de contacte per a portes
+Pols de pressió
+<&industrial_door_contact_mat>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Detector de caigudes
+Detecció de senyals
+<&industrial_fallthrough_detector>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Polsador de peu
+Control per redstone
+<&industrial_foot_button>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Porta industrial d’impacte
+Pols de pressió
+<&industrial_high_sensitive_trapdoor>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Catifa de contacte per impacte
+Pols de pressió
+<&industrial_shock_sensitive_contact_mat>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Trapa d’impacte
+Pols de pressió
+<&industrial_shock_sensitive_trapdoor>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Flor d’energia vermella
+Pols de pressió
+<&red_power_plant>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Placa de pressió rústica
+Pols de pressió
+<&rustic_contact_plate>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Pressió rústica de porta
+Pols de pressió
+<&rustic_door_contact_plate>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Detector rústic de caigudes
+Detecció de senyals
+<&rustic_fallthrough_detector>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Porta rústica d’impacte
+Pols de pressió
+<&rustic_high_sensitive_trapdoor>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Placa rústica d’impacte
+Pols de pressió
+<&rustic_shock_sensitive_plate>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Porta rústica d’impacte
+Pols de pressió
+<&rustic_shock_sensitive_trapdoor>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Flor d’energia groga
+Pols de pressió
+<&yellow_power_plant>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.
+<np>
+Rellotge programador diari de vidre
+Senyal diürn
+<&glass_day_timer>Un interruptor temporitzat segueix la part diürna del cicle del món.<br>
+<br>
+Ús: fes-lo servir per a llums de pati, persianes i controls de fàbrica que només funcionin de dia.<br>
+<br>
+Notes: requereix una dimensió amb llum del cel.
+<np>
+Detector d’entitats de vidre
+Detecció de senyals
+<&glass_entity_detector>Un detector d’entitats vigila el moviment proper sense una placa visible al terra.<br>
+<br>
+Ús: connecta’l a portes, llums, alarmes o enclavaments de màquines.<br>
+<br>
+Notes: examina una petita zona al voltant del bloc.
+<np>
+Senyal periòdic de vidre
+Pols temporitzat
+<&glass_interval_timer>Un interruptor temporitzat compacte produeix un pols de redstone programat.<br>
+<br>
+Ús: fes-lo servir quan un petit mecanisme necessiti un control periòdic o retardat.<br>
+<br>
+Notes: fa servir polsos de redstone programats.
+<np>
+Detector lineal de vidre
+Detecció de senyals
+<&glass_linear_entity_detector>Un detector d’entitats vigila el moviment proper sense una placa visible al terra.<br>
+<br>
+Ús: connecta’l a portes, llums, alarmes o enclavaments de màquines.<br>
+<br>
+Notes: examina una petita zona al voltant del bloc.
+<np>
+Detector de blocs
+Detecció de senyals
+<&industrial_block_detector>Un detector de blocs comprova si l’espai que té al davant està ocupat.<br>
+<br>
+Ús: apunta’l cap a la cara de màquina, la reserva o l’espai vigilat que vols supervisar.<br>
+<br>
+Notes: emet potència quan el bloc del davant no és aire.
+<np>
+Rellotge programador diari
+Senyal diürn
+<&industrial_day_timer>Un interruptor temporitzat segueix la part diürna del cicle del món.<br>
+<br>
+Ús: fes-lo servir per a llums de pati, persianes i controls de fàbrica que només funcionin de dia.<br>
+<br>
+Notes: requereix una dimensió amb llum del cel.
+<np>
+Detector d’entitats
+Detecció de senyals
+<&industrial_entity_detector>Un detector d’entitats vigila el moviment proper sense una placa visible al terra.<br>
+<br>
+Ús: connecta’l a portes, llums, alarmes o enclavaments de màquines.<br>
+<br>
+Notes: examina una petita zona al voltant del bloc.
+<np>
+Temporitzador periòdic
+Pols temporitzat
+<&industrial_interval_timer>Un interruptor temporitzat compacte produeix un pols de redstone programat.<br>
+<br>
+Ús: fes-lo servir quan un petit mecanisme necessiti un control periòdic o retardat.<br>
+<br>
+Notes: fa servir polsos de redstone programats.
+<np>
+Sensor de llum
+Detecció de senyals
+<&industrial_light_sensor>Un sensor de llum converteix la lluminositat local en control per redstone.<br>
+<br>
+Ús: fes-lo servir per a llums automàtics, persianes i circuits de visibilitat.<br>
+<br>
+Notes: emet potència amb un nivell de llum brut de 8 o més.
+<np>
+Detector de tempestes
+Detecció de senyals
+<&industrial_lightning_sensor>Un sensor de tempestes activa avisos durant les tempestes elèctriques.<br>
+<br>
+Ús: col·loca’l a cel obert i connecta’l a llums o alarmes.<br>
+<br>
+Notes: requereix una tempesta elèctrica i accés al cel.
+<np>
+Detector lineal d’entitats
+Detecció de senyals
+<&industrial_linear_entity_detector>Un detector d’entitats vigila el moviment proper sense una placa visible al terra.<br>
+<br>
+Ús: connecta’l a portes, llums, alarmes o enclavaments de màquines.<br>
+<br>
+Notes: examina una petita zona al voltant del bloc.
+<np>
+Sensor de pluja
+Detecció de senyals
+<&industrial_rain_sensor>Un sensor meteorològic converteix la pluja que cau al lloc on es troba en redstone.<br>
+<br>
+Ús: munta’l on el bloc de sobre pugui rebre pluja.<br>
+<br>
+Notes: comprova si plou damunt del sensor.
+<np>
+Interruptor biestable de vidre
+Control per redstone
+<&glass_rotary_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Tàctil biestable de vidre
+Control per redstone
+<&glass_touch_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Vidre sensible taronja
+Vidre de senyal
+<&orange_sensitiveglass>Un bloc de vidre reactiu a la redstone manté la visibilitat mentre mostra l’estat del senyal.<br>
+<br>
+Ús: fes-lo servir en finestres de sales de control, panells il·luminats i vidrieres de fàbrica protegides.<br>
+<br>
+Notes: canvia d’estat amb la potència de redstone propera.
+<np>
+Vidre sensible lluminós
+Vidre de senyal
+<&sensitive_glass_block>Un bloc de vidre reactiu a la redstone manté la visibilitat mentre mostra l’estat del senyal.<br>
+<br>
+Ús: fes-lo servir en finestres de sales de control, panells il·luminats i vidrieres de fàbrica protegides.<br>
+<br>
+Notes: canvia d’estat amb la potència de redstone propera.
+<np>
+Vidre sensible de color
+Vidre de senyal
+<&stained_sensitiveglass>Un bloc de vidre reactiu a la redstone manté la visibilitat mentre mostra l’estat del senyal.<br>
+<br>
+Ús: fes-lo servir en finestres de sales de control, panells il·luminats i vidrieres de fàbrica protegides.<br>
+<br>
+Notes: canvia d’estat amb la potència de redstone propera.
+<np>
+Mesurador amb barra de vidre
+Mesurador de senyal
+<&glass_vertical_bar_gauge>Un mesurador compacte de sala de control mostra la força de redstone com una lectura clara al panell.<br>
+<br>
+Ús: munta’l on es pugui comprovar d’un cop d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llegeix la força de redstone propera entre 0 i 15.
+<np>
+Mesurador analògic
+Mesurador de senyal
+<&industrial_analog_angular_gauge>Un mesurador compacte de sala de control mostra la força de redstone com una lectura clara al panell.<br>
+<br>
+Ús: munta’l on es pugui comprovar d’un cop d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llegeix la força de redstone propera entre 0 i 15.
+<np>
+Mesurador amb voltímetre
+Mesurador de senyal
+<&industrial_analog_horizontal_gauge>Un mesurador compacte de sala de control mostra la força de redstone com una lectura clara al panell.<br>
+<br>
+Ús: munta’l on es pugui comprovar d’un cop d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llegeix la força de redstone propera entre 0 i 15.
+<np>
+Mesurador digital
+Força del senyal fàcil de llegir
+<&industrial_small_digital_gauge>Un mesurador compacte de sala de control mostra la força de redstone com una lectura clara al panell.<br>
+<br>
+Ús: munta’l on es pugui comprovar d’un cop d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llegeix la força de redstone propera entre 0 i 15.
+<np>
+Mesurador amb tub de vidre
+Mesurador de senyal
+<&industrial_tube_gauge>Un mesurador compacte de sala de control mostra la força de redstone com una lectura clara al panell.<br>
+<br>
+Ús: munta’l on es pugui comprovar d’un cop d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llegeix la força de redstone propera entre 0 i 15.
+<np>
+Mesurador amb barra analògica
+Mesurador de senyal
+<&industrial_vertical_bar_gauge>Un mesurador compacte de sala de control mostra la força de redstone com una lectura clara al panell.<br>
+<br>
+Ús: munta’l on es pugui comprovar d’un cop d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llegeix la força de redstone propera entre 0 i 15.
+<np>
+Llum d’alarma
+Indicació del senyal
+<&industrial_alarm_lamp>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+Sirena d'alarma
+Indicador de senyal
+<&industrial_alarm_siren>La Sirena d'alarma és un indicador de redstone muntat a la cara d'un bloc. El seu estat encès segueix el senyal del bloc on està fixada.<br>
+<br>
+Ús: Fixa-la a una cara sòlida i alimenta-la per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Nota: La sirena s'actualitza un cop per segon mentre el senyal connectat continuï actiu.
+<np>
+LED intermitent
+Indicació del senyal
+<&industrial_blinking_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED verd intermitent
+Indicació del senyal
+<&industrial_green_blinking_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED verd
+Indicació del senyal
+<&industrial_green_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED vermell
+Indicació del senyal
+<&industrial_red_blinking_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED vermell
+Indicació del senyal
+<&industrial_red_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED blanc intermitent
+Indicació del senyal
+<&industrial_white_blinking_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED blanc
+Indicació del senyal
+<&industrial_white_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED groc intermitent
+Indicació del senyal
+<&industrial_yellow_blinking_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+LED groc
+Indicació del senyal
+<&industrial_yellow_led>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+Semàfor rústic
+Indicació del senyal
+<&rustic_semaphore>Un indicador compacte converteix la redstone amagada en informació visible per a la fàbrica.<br>
+<br>
+Ús: connecta’l al costat del senyal per supervisar portes, màquines, alarmes o panells.<br>
+<br>
+Notes: canvia d’estat quan hi ha potència de redstone a prop.
+<np>
+Interruptor comparador
+Senyal del bloc de suport
+<&industrial_comparator_switch>Un interruptor sensor compacte llegeix el bloc on està muntat i converteix la lectura en una sortida senzilla de panell.<br>
+<br>
+Ús: munta’l en inventaris, dipòsits o aparells de redstone. Quan el bloc de suport indica una sortida de comparador, contenidor o redstone, l’interruptor emet redstone a la màxima força.<br>
+<br>
+Notes: fes-lo servir per convertir els nivells d’emmagatzematge o el cablejat ocult en línies clares de control d’encesa/apagada.
+<np>
+Regulador
+Senyal variable
+<&industrial_dimmer>Un control giratori ajusta la força de redstone des d’un frontal compacte de panell.<br>
+<br>
+Ús: fes-hi clic dret per augmentar la sortida pas a pas; després de la força màxima, torna a zero.<br>
+<br>
+Notes: emet una força entre 0 i 15.
+<np>
+Botó d’aturada d’emergència
+Control per redstone
+<&industrial_estop_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Bloquejador de tremuja
+Control per redstone
+<&industrial_hopper_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Interruptor de cops
+Control per redstone
+<&industrial_knock_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca
+Control per redstone
+<&industrial_lever>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Interruptor de màquina amb dos botons
+Control per redstone
+<&industrial_machine_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Tirador
+Control per redstone
+<&industrial_pull_handle>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca giratòria
+Control per redstone
+<&industrial_rotary_lever>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Interruptor giratori de màquina
+Control per redstone
+<&industrial_rotary_machine_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca de contacte
+Control per redstone
+<&industrial_small_lever>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Interruptor
+Control per redstone
+<&industrialswitch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Interruptor de llum
+Control per redstone
+<&light_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Interruptor de vàlvula
+Control per redstone
+<&valve_wheel_switch>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Receptor de polsos amb carcassa
+Control enllaçat
+<&industrial_switchlink_cased_pulse_receiver>Un receptor enllaçat de polsos amb carcassa proporciona una activació breu de redstone per a panells remots.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Fes-hi clic dret o activa la perla enllaçada per emetre un pols breu.<br>
+<br>
+Notes: el pols es restableix automàticament després de la durada programada.
+<np>
+Receptor d’enllaç amb carcassa
+Control enllaçat
+<&industrial_switchlink_cased_receiver>Un receptor enllaçat amb carcassa proporciona un punt receptor robust de redstone per a panells remots.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Fes clic dret directament al receptor per commutar-lo a mà.<br>
+<br>
+Notes: una perla enllaçada commuta aquest receptor quan la fas servir ajupit.
+<np>
+Receptor de polsos d’enllaç
+Control enllaçat
+<&industrial_switchlink_pulse_receiver>Un receptor enllaçat de polsos proporciona una activació breu de redstone per a panells remots.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Fes-hi clic dret o activa la perla enllaçada per emetre un pols breu.<br>
+<br>
+Notes: el pols es restableix automàticament després de la durada programada.
+<np>
+Relé de polsos d’enllaç
+Control enllaçat
+<&industrial_switchlink_pulse_relay>Un accessori amb aspecte de relé ofereix un punt local de commutació compacte per als panells.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers. Fes servir blocs receptors quan necessitis l’activació amb perles enllaçades.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Receptor d’enllaç d’interruptors
+Control enllaçat
+<&industrial_switchlink_receiver>Un receptor enllaçat proporciona un punt receptor de redstone de màxima força per a panells remots.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Fes clic dret directament al receptor per commutar-lo a mà.<br>
+<br>
+Notes: una perla enllaçada commuta aquest receptor quan la fas servir ajupit.
+<np>
+Receptor analògic d’enllaç
+Control enllaçat
+<&industrial_switchlink_receiver_analog>Un receptor enllaçat ofereix un punt receptor remot visible per als panells de control.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Ajup-te i fes servir la perla per activar el receptor a distància.<br>
+<br>
+Notes: aquest receptor emet un senyal de redstone de màxima força quan s’activa.
+<np>
+Relé d’enllaç d’interruptors
+Control enllaçat
+<&industrial_switchlink_relay>Un accessori amb aspecte de relé ofereix un punt local de commutació compacte per als panells.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers. Fes servir blocs receptors quan necessitis l’activació amb perles enllaçades.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Relé analògic d’enllaç
+Control enllaçat
+<&industrial_switchlink_relay_analog>Un accessori amb aspecte de relé ofereix un punt local de commutació compacte per als panells.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers. Fes servir blocs receptors quan necessitis l’activació amb perles enllaçades.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Perla d’enllaç d’interruptors
+Control enllaçat
+<&switchlink_pearl>Una perla enllaçada desa un receptor de destinació per als controls remots de fàbrica.<br>
+<br>
+Ús: fes clic amb una perla d’Ender en un receptor d’enllaç d’interruptors per crear-la. Ajup-te i fes servir la perla enllaçada per activar el receptor desat.<br>
+<br>
+Notes: el receptor ha d’estar carregat, a la mateixa dimensió i dins de l’abast.
+<np>
+Palanca antiga ornamentada
+Control per redstone
+<&oldfancy_bistableswitch1>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca giratòria antiga ornamentada
+Control per redstone
+<&oldfancy_bistableswitch2>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca giratòria rústica
+Control per redstone
+<&rustic_angular_lever>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca rústica
+Control per redstone
+<&rustic_lever>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca de clau rústica
+Control per redstone
+<&rustic_nail_lever>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.
+<np>
+Palanca rústica de dues frontisses
+Control per redstone
+<&rustic_two_hinge_lever>Un component de control compacte ofereix un punt de commutació de redstone ben identificable en construccions de fàbrica.<br>
+<br>
+Ús: fes-hi clic dret per activar o desactivar la sortida de màxima força per als circuits propers.<br>
+<br>
+Notes: emet redstone a la màxima força mentre està encès.

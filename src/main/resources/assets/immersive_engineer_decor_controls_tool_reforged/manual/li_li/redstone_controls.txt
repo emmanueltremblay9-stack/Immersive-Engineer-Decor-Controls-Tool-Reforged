@@ -1,0 +1,789 @@
+Redstonebediening
+Maeters en signaalóngerdaele
+Bedieningsapparaat maak versjtaoke redstone tot aafleesbare fabriekspanele, sensore, aanwiezers, sjakelaars, alarm en gekóppelde signaaldiele.<br>
+<br>
+Gebroek dees bladzies es doe bedieningsposte, signaalborde, veiligheidssjakelinge en aafstandsbediening bous.
+<np>
+Pieldoel
+Korte puls
+<&arrow_target>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Deursensor
+Redstonebediening
+<&door_sensor_switch>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Liftknóp
+Redstonebediening
+<&elevator_button>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Glaze knóp
+Redstonebediening
+<&glass_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Glaze knóp
+Redstonebediening
+<&glass_small_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Glaze aanraakknóp
+Redstonebediening
+<&glass_touch_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Machineknóp
+Redstonebediening
+<&industrial_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Knóp
+Redstonebediening
+<&industrial_double_pole_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Machineknóp mèt beschermbeugel
+Redstonebediening
+<&industrial_fenced_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Klopknóp
+Redstonebediening
+<&industrial_knock_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Aaj sierknóp
+Redstonebediening
+<&oldfancy_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Aaj sierknóp
+Redstonebediening
+<&oldfancy_small_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Aaj sierkettingknóp
+Korte puls
+<&oldfancy_spring_reset_chain>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Landelike knóp
+Redstonebediening
+<&rustic_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Landelike naegelknóp
+Redstonebediening
+<&rustic_nail_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Kleine landelike knóp
+Redstonebediening
+<&rustic_small_button>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Landelike kettingknóp
+Korte puls
+<&rustic_spring_reset_chain>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.
+<np>
+Glaze contactplaat
+Drökpuls
+<&glass_contact_mat>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Glaze deurcontact
+Drökpuls
+<&glass_door_contact_mat>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Contactmat
+Drökpuls
+<&industrial_contact_mat>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Deurcontactmat
+Drökpuls
+<&industrial_door_contact_mat>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Doorvaldetector
+Signaolwaorneming
+<&industrial_fallthrough_detector>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Voetknóp
+Redstonebediening
+<&industrial_foot_button>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Industrieel sjtootloek
+Drökpuls
+<&industrial_high_sensitive_trapdoor>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Sjtootcontactmat
+Drökpuls
+<&industrial_shock_sensitive_contact_mat>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Sjtootvalloek
+Drökpuls
+<&industrial_shock_sensitive_trapdoor>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Roeje sjtroomplant
+Drökpuls
+<&red_power_plant>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Landelike drökplaat
+Drökpuls
+<&rustic_contact_plate>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Landelike deurdrökplaat
+Drökpuls
+<&rustic_door_contact_plate>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Landelike valdetector
+Signaolwaorneming
+<&rustic_fallthrough_detector>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Landelik sjtootloek
+Drökpuls
+<&rustic_high_sensitive_trapdoor>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Landelike sjtootplaat
+Drökpuls
+<&rustic_shock_sensitive_plate>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Landelik sjtootloek
+Drökpuls
+<&rustic_shock_sensitive_trapdoor>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Gaele sjtroomplant
+Drökpuls
+<&yellow_power_plant>Ein contactsjakelaar geuf ein kort signaal bie beweging op de vloer of 't valloek.<br>
+<br>
+Gebroek: zèt 'm wao entiteite door ein ónnerhouwdsgang, laadpunt of bewaakt pad gaon.<br>
+<br>
+Opmerking: geuf ein korte puls nao contact mèt ein entiteit.
+<np>
+Glaze daagtiedsjakelklok
+Daagleechsignaal
+<&glass_day_timer>Ein tiedsjakelaar volg 't daagdael van de wereldcyclus.<br>
+<br>
+Gebroek: neem 'm veur hoflampe, vinsterloeke en fabrieksbediening die allein euverdaag moot werke.<br>
+<br>
+Opmerking: haet ein dimensie mèt himmelleech neudig.
+<np>
+Glaze entiteitsdetector
+Signaolwaorneming
+<&glass_entity_detector>Ein entiteitsdetector bewaak beweging in de buurt zónger ein zeenbare vloerplaat.<br>
+<br>
+Gebroek: verbind 'm mèt deure, lampe, alarm of machinevergrendelinge.<br>
+<br>
+Opmerking: zeuk ein klein gebied rond 't blok aaf.
+<np>
+Glaze intervalsignaal
+Getiede puls
+<&glass_interval_timer>Ein kleine tiedsjakelaar geuf ein geplande redstonepuls.<br>
+<br>
+Gebroek: neem 'm es ein klein mechanisme regelmatig of mèt vertraging bediend moot waere.<br>
+<br>
+Opmerking: gebroek geplande redstonepulse.
+<np>
+Glaze liendetector
+Signaolwaorneming
+<&glass_linear_entity_detector>Ein entiteitsdetector bewaak beweging in de buurt zónger ein zeenbare vloerplaat.<br>
+<br>
+Gebroek: verbind 'm mèt deure, lampe, alarm of machinevergrendelinge.<br>
+<br>
+Opmerking: zeuk ein klein gebied rond 't blok aaf.
+<np>
+Blokdetector
+Signaolwaorneming
+<&industrial_block_detector>Ein blokdetector controleert of de ruumte veur 'm bezèt is.<br>
+<br>
+Gebroek: richt 'm op de machinekant, buffer of beschermde ruumte die doe in 't oog wils haoje.<br>
+<br>
+Opmerking: geuf energie es 't blok veur 'm gein locht is.
+<np>
+Daagtiedsjakelklok
+Daagleechsignaal
+<&industrial_day_timer>Ein tiedsjakelaar volg 't daagdael van de wereldcyclus.<br>
+<br>
+Gebroek: neem 'm veur hoflampe, vinsterloeke en fabrieksbediening die allein euverdaag moot werke.<br>
+<br>
+Opmerking: haet ein dimensie mèt himmelleech neudig.
+<np>
+Entiteitsdetector
+Signaolwaorneming
+<&industrial_entity_detector>Ein entiteitsdetector bewaak beweging in de buurt zónger ein zeenbare vloerplaat.<br>
+<br>
+Gebroek: verbind 'm mèt deure, lampe, alarm of machinevergrendelinge.<br>
+<br>
+Opmerking: zeuk ein klein gebied rond 't blok aaf.
+<np>
+Intervaltiedgever
+Getiede puls
+<&industrial_interval_timer>Ein kleine tiedsjakelaar geuf ein geplande redstonepuls.<br>
+<br>
+Gebroek: neem 'm es ein klein mechanisme regelmatig of mèt vertraging bediend moot waere.<br>
+<br>
+Opmerking: gebroek geplande redstonepulse.
+<np>
+Leechsensor
+Signaolwaorneming
+<&industrial_light_sensor>Ein leechsensor zèt de plaatselike helderheid in redstonebediening óm.<br>
+<br>
+Gebroek: neem 'm veur automatische lampe, vinsterloeke en zichtsjakelinge.<br>
+<br>
+Opmerking: geuf energie vanaaf ruwe helderheid 8.
+<np>
+Ónweerdetector
+Signaolwaorneming
+<&industrial_lightning_sensor>Ein ónweersensor sjtuurt waarsjoewinge bie donder.<br>
+<br>
+Gebroek: zèt 'm ónger de ope himmel en verbind 'm mèt lampe of alarm.<br>
+<br>
+Opmerking: haet donder en vriej zich op de himmel neudig.
+<np>
+Lienentiteitsdetector
+Signaolwaorneming
+<&industrial_linear_entity_detector>Ein entiteitsdetector bewaak beweging in de buurt zónger ein zeenbare vloerplaat.<br>
+<br>
+Gebroek: verbind 'm mèt deure, lampe, alarm of machinevergrendelinge.<br>
+<br>
+Opmerking: zeuk ein klein gebied rond 't blok aaf.
+<np>
+Raegesensor
+Signaolwaorneming
+<&industrial_rain_sensor>Ein weersensor zèt raege op zien plaats in redstone óm.<br>
+<br>
+Gebroek: bevestig 'm wao 't blok d'rbaove raege kin kriege.<br>
+<br>
+Opmerking: controleert raege baove de sensor.
+<np>
+Bistabiele glaze sjakelaar
+Redstonebediening
+<&glass_rotary_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Bistabiele glaze aanraaksjakelaar
+Redstonebediening
+<&glass_touch_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Oranje gevoelig glaas
+Signaalglaas
+<&orange_sensitiveglass>Ein glaasblok dat op redstone reageert, laot 't zich vriej en laot tegelijk de signaaltoestand zeen.<br>
+<br>
+Gebroek: neem 'm veur vinsters van bedieningsruumtes, verlechte panele en beschermd fabrieksglaas.<br>
+<br>
+Opmerking: verangert van toestand door redstone-energie in de buurt.
+<np>
+Leechgevend gevoelig glaas
+Signaalglaas
+<&sensitive_glass_block>Ein glaasblok dat op redstone reageert, laot 't zich vriej en laot tegelijk de signaaltoestand zeen.<br>
+<br>
+Gebroek: neem 'm veur vinsters van bedieningsruumtes, verlechte panele en beschermd fabrieksglaas.<br>
+<br>
+Opmerking: verangert van toestand door redstone-energie in de buurt.
+<np>
+Gekleurd gevoelig glaas
+Signaalglaas
+<&stained_sensitiveglass>Ein glaasblok dat op redstone reageert, laot 't zich vriej en laot tegelijk de signaaltoestand zeen.<br>
+<br>
+Gebroek: neem 'm veur vinsters van bedieningsruumtes, verlechte panele en beschermd fabrieksglaas.<br>
+<br>
+Opmerking: verangert van toestand door redstone-energie in de buurt.
+<np>
+Glaze balkmaeter
+Signaalmaeter
+<&glass_vertical_bar_gauge>Ein kleine maeter veur de bedieningsruumte laot de redstonesjtèrkte duidelik op 't paneel zeen.<br>
+<br>
+Gebroek: zèt 'm wao de redstone-energie in de buurt in eine blik te controlere is.<br>
+<br>
+Opmerking: lieës de redstonesjtèrkte in de buurt van 0 tot 15 aaf.
+<np>
+Analoge maeter
+Signaalmaeter
+<&industrial_analog_angular_gauge>Ein kleine maeter veur de bedieningsruumte laot de redstonesjtèrkte duidelik op 't paneel zeen.<br>
+<br>
+Gebroek: zèt 'm wao de redstone-energie in de buurt in eine blik te controlere is.<br>
+<br>
+Opmerking: lieës de redstonesjtèrkte in de buurt van 0 tot 15 aaf.
+<np>
+Voltmetermaeter
+Signaalmaeter
+<&industrial_analog_horizontal_gauge>Ein kleine maeter veur de bedieningsruumte laot de redstonesjtèrkte duidelik op 't paneel zeen.<br>
+<br>
+Gebroek: zèt 'm wao de redstone-energie in de buurt in eine blik te controlere is.<br>
+<br>
+Opmerking: lieës de redstonesjtèrkte in de buurt van 0 tot 15 aaf.
+<np>
+Digitale maeter
+Aafleesbare signaalsjtèrkte
+<&industrial_small_digital_gauge>Ein kleine maeter veur de bedieningsruumte laot de redstonesjtèrkte duidelik op 't paneel zeen.<br>
+<br>
+Gebroek: zèt 'm wao de redstone-energie in de buurt in eine blik te controlere is.<br>
+<br>
+Opmerking: lieës de redstonesjtèrkte in de buurt van 0 tot 15 aaf.
+<np>
+Glaze buismaeter
+Signaalmaeter
+<&industrial_tube_gauge>Ein kleine maeter veur de bedieningsruumte laot de redstonesjtèrkte duidelik op 't paneel zeen.<br>
+<br>
+Gebroek: zèt 'm wao de redstone-energie in de buurt in eine blik te controlere is.<br>
+<br>
+Opmerking: lieës de redstonesjtèrkte in de buurt van 0 tot 15 aaf.
+<np>
+Analoge balkmaeter
+Signaalmaeter
+<&industrial_vertical_bar_gauge>Ein kleine maeter veur de bedieningsruumte laot de redstonesjtèrkte duidelik op 't paneel zeen.<br>
+<br>
+Gebroek: zèt 'm wao de redstone-energie in de buurt in eine blik te controlere is.<br>
+<br>
+Opmerking: lieës de redstonesjtèrkte in de buurt van 0 tot 15 aaf.
+<np>
+Alarmlamp
+Signaaltrökmelding
+<&industrial_alarm_lamp>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Alarmsirene
+Signaaltrökmelding
+<&industrial_alarm_siren>De alarmsireen is 'ne redstone-aanwiezer dae op ein zied vastzit. De ingesjakelde sjtand volleg 't signaal van 't blok woaraan hae vastzit.<br>
+<br>
+Gebroek: bevestig ze op ein vas vlak en geef energie um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: de sirene vernieut zich ein keer per seconde zolang 't aangesjlaote signaal actief blief.
+<np>
+Knipperende LED
+Signaaltrökmelding
+<&industrial_blinking_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Greune knipperende LED
+Signaaltrökmelding
+<&industrial_green_blinking_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Greune LED
+Signaaltrökmelding
+<&industrial_green_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Roeje LED
+Signaaltrökmelding
+<&industrial_red_blinking_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Roeje LED
+Signaaltrökmelding
+<&industrial_red_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Witte knipperende LED
+Signaaltrökmelding
+<&industrial_white_blinking_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Witte LED
+Signaaltrökmelding
+<&industrial_white_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Gaele knipperende LED
+Signaaltrökmelding
+<&industrial_yellow_blinking_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Gaele LED
+Signaaltrökmelding
+<&industrial_yellow_led>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Landelike semafoor
+Signaaltrökmelding
+<&rustic_semaphore>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.
+<np>
+Vergeliekersjakelaar
+Signaal van 't draagblok
+<&industrial_comparator_switch>Ein kleine sensorsjakelaar lieës zien draagblok aaf en maak dao ein eenvoudige paneeloetvoer van.<br>
+<br>
+Gebroek: zèt 'm op opsjlaag, tanks of redstoneapparaat. Es 't draagblok vergelieker-, houwer- of redstone-oetvoer meldt, geuf de sjakelaar redstone op volle sjtèrkte.<br>
+<br>
+Opmerking: maak zo van opsjlaagniveaus of versjtaoke bedraoding duidelike aan-/oetbedieningsliene.
+<np>
+Dimmer
+Verangerbaar signaal
+<&industrial_dimmer>Ein draeiregelaar stelt de redstonesjtèrkte vanaaf ein klein paneelvlak in.<br>
+<br>
+Gebroek: rechtsklik um de oetvoer sjtap veur sjtap te verhoege en nao volle sjtèrkte weer bie nul te beginne.<br>
+<br>
+Opmerking: geuf ein sjtèrkte van 0 tot 15.
+<np>
+Noodsjtopknóp
+Redstonebediening
+<&industrial_estop_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Trechterblokkering
+Redstonebediening
+<&industrial_hopper_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Klopsjakelaar
+Redstonebediening
+<&industrial_knock_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Hendel
+Redstonebediening
+<&industrial_lever>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Machinesjakelaar mèt twee knöp
+Redstonebediening
+<&industrial_machine_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Trekhendel
+Redstonebediening
+<&industrial_pull_handle>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Draeihendel
+Redstonebediening
+<&industrial_rotary_lever>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Draejende machinesjakelaar
+Redstonebediening
+<&industrial_rotary_machine_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Contacthendel
+Redstonebediening
+<&industrial_small_lever>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Sjakelaar
+Redstonebediening
+<&industrialswitch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Leechsjakelaar
+Redstonebediening
+<&light_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Ventielsjakelaar
+Redstonebediening
+<&valve_wheel_switch>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Ingekasde pulsontvanger
+Gekóppelde bediening
+<&industrial_switchlink_cased_pulse_receiver>Ein ingekasde gekóppelde pulsontvanger geuf panele op aafstand ein korte redstoneactivatie.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel um ein gekóppelde paerel te maake. Rechtsklik d'rop of activeer de gekóppelde paerel um ein korte puls te gaeve.<br>
+<br>
+Opmerking: de puls geit nao zien geplande duur vanzelf trök.
+<np>
+Ingekasde kóppelingsontvanger
+Gekóppelde bediening
+<&industrial_switchlink_cased_receiver>Ein ingekasde gekóppelde ontvanger geuf panele op aafstand ein sjtevig redstonedoel.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel um ein gekóppelde paerel te maake. Rechtsklik direk op de ontvanger um 'm mèt de hand óm te sjakele.<br>
+<br>
+Opmerking: ein gekóppelde paerel sjakelt dees ontvanger óm es doe ze bukkend gebroeks.
+<np>
+Pulskóppelingsontvanger
+Gekóppelde bediening
+<&industrial_switchlink_pulse_receiver>Ein gekóppelde pulsontvanger geuf panele op aafstand ein korte redstoneactivatie.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel um ein gekóppelde paerel te maake. Rechtsklik d'rop of activeer de gekóppelde paerel um ein korte puls te gaeve.<br>
+<br>
+Opmerking: de puls geit nao zien geplande duur vanzelf trök.
+<np>
+Pulskóppelingsrelais
+Gekóppelde bediening
+<&industrial_switchlink_pulse_relay>Ein óngerdael in relaisvorm geuf paneelbouw ein klein plaatselik sjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte. Gebroek ontvangerblök veur activatie mèt ein gekóppelde paerel.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Sjakelkóppelingsontvanger
+Gekóppelde bediening
+<&industrial_switchlink_receiver>Ein gekóppelde ontvanger geuf panele op aafstand ein redstonedoel op volle sjtèrkte.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel um ein gekóppelde paerel te maake. Rechtsklik direk op de ontvanger um 'm mèt de hand óm te sjakele.<br>
+<br>
+Opmerking: ein gekóppelde paerel sjakelt dees ontvanger óm es doe ze bukkend gebroeks.
+<np>
+Analoge kóppelingsontvanger
+Gekóppelde bediening
+<&industrial_switchlink_receiver_analog>Ein gekóppelde ontvanger geuf bedieningspanele ein zeenbaar doel op aafstand.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel um ein gekóppelde paerel te maake. Gebroek de paerel bukkend um de ontvanger op aafstand te activere.<br>
+<br>
+Opmerking: dees ontvanger geuf ein vol redstonesignaal es hae geactiveerd weurt.
+<np>
+Sjakelkóppelingsrelais
+Gekóppelde bediening
+<&industrial_switchlink_relay>Ein óngerdael in relaisvorm geuf paneelbouw ein klein plaatselik sjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte. Gebroek ontvangerblök veur activatie mèt ein gekóppelde paerel.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Analoog kóppelingsrelais
+Gekóppelde bediening
+<&industrial_switchlink_relay_analog>Ein óngerdael in relaisvorm geuf paneelbouw ein klein plaatselik sjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte. Gebroek ontvangerblök veur activatie mèt ein gekóppelde paerel.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Sjakelkóppelingspaerel
+Gekóppelde bediening
+<&switchlink_pearl>Ein gekóppelde paerel sjleit ein ontvangerdoel op veur fabrieksbediening op aafstand.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel op ein sjakelkóppelingsontvanger um ein te maake. Gebroek de gekóppelde paerel bukkend um de opgesjlage ontvanger te activere.<br>
+<br>
+Opmerking: 't doel moot gelaaje zeen, in dezelfste dimensie ligke en binne bereik zeen.
+<np>
+Aaj sierhendel
+Redstonebediening
+<&oldfancy_bistableswitch1>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Aaj sierdraeihendel
+Redstonebediening
+<&oldfancy_bistableswitch2>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Landelike draeihendel
+Redstonebediening
+<&rustic_angular_lever>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Landelike hendel
+Redstonebediening
+<&rustic_lever>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Landelike naegelhendel
+Redstonebediening
+<&rustic_nail_lever>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.
+<np>
+Landelike hendel mèt twee sjarniere
+Redstonebediening
+<&rustic_two_hinge_lever>Ein klein bedieningsóngerdael geuf fabrieksgebouwe ein duidelik redstonesjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.

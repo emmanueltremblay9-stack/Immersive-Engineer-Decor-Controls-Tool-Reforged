@@ -1,0 +1,7 @@
+Perla pro propojení spínačů
+Propojené ovládání
+<&recipe>Propojená perla uchovává cílový přijímač pro dálkové tovární ovládání.<br>
+<br>
+Použití: Vytvoř ji kliknutím endovou perlou na přijímač propojení spínačů. Použitím propojené perly při plížení spustíš uložený přijímač.<br>
+<br>
+Poznámky: Cíl musí být načtený, ve stejné dimenzi a v dosahu.

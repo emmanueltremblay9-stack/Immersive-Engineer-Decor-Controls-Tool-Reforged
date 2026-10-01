@@ -1,0 +1,5 @@
+Tables de madera vieyo
+Madera avieyao de taller
+<&recipe>Les tables de madera industrial vieyo añaden madera avieyao de taller pa suelos, pasos, puertes y remates interiores de tonu cálidu.<br>
+<br>
+Usu: úsalu pa suelos, pasales, puertes y remates de talleres antiguos.<br>

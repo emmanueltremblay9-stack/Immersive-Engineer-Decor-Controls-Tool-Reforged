@@ -1,0 +1,7 @@
+Komparaatorlüliti
+Kinnitusploki signaal
+<&recipe>Kompaktne andurlüliti loeb oma kinnitusplokki ja muudab näidu lihtsaks paneeliväljundiks.<br>
+<br>
+Kasutamine: Kinnita ladudele, mahutitele või redstone'i seadmetele. Kui kinnitusplokk annab komparaatori-, mahuti- või redstone'i väljundi, väljastab lüliti täistugevusega redstone'i.<br>
+<br>
+Märkus: Kasuta laotasemete või peidetud juhtmete teisendamiseks selgeteks sisse/välja-juhtliinideks.

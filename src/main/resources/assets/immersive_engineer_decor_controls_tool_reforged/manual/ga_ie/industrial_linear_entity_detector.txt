@@ -1,0 +1,7 @@
+Braiteoir Líneach Eintiteas
+Brath comharthaí
+<&recipe>Déanann braiteoir eintiteas monatóireacht ar ghluaiseacht in aice láimhe gan pláta infheicthe ar an urlár.<br>
+<br>
+Úsáid: nasc é le doirse, lampaí, aláraim nó comhghlais mheaisín.<br>
+<br>
+Nótaí: scanann sé limistéar beag timpeall ar an mbloc.

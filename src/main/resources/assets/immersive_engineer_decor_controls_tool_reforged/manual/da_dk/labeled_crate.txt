@@ -1,0 +1,5 @@
+Kasse med etiket
+Redigerbar lageretiket
+<&recipe>Denne kasse med etiket er lavet til tydelig sortering i lagerrum. Frontpladen kan redigeres som et lille værkstedsskilt.<br>
+<br>
+Brug: Højreklik på etiketpladen for at ændre kasseetiketten. Højreklik på resten af kassen for at åbne lageret til beslag, dele og vedligeholdelsesforsyninger.<br>

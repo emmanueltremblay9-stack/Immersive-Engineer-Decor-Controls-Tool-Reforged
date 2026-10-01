@@ -1,0 +1,127 @@
+Llwybrau Mynediad
+Llwybrau cerdded a chynheiliaid
+Mae polion dur, pyst pren wedi'i drin, gratiau, llwyfannau cerdded, rheiliau, ysgolion, drysau, ffenestri ac agorfeydd yn creu llwybrau gwasanaethu cryno drwy du mewn ffatrïoedd.<br>
+<br>
+Mae rhannau llwybrau mynediad dur yn defnyddio platiau dur. Crefftiwch neu gosodwch Fwrdd Crefft Metel, mewnosodwch forthwyl Immersive Engineering, yna gofannwch fariau dur yn blatiau dur ar gyfer polion, llwyfannau cerdded, ffenestri, drysau, rheiliau ac addurniadau dur eraill.<br>
+<br>
+Gosodwch nhw lle mae angen mynediad at beiriannau ar gyfer gwasanaethu, llwybrau uchel, siafftiau cynnal a chadw neu ymylon mwy diogel.
+<np>
+Polyn Dur Trwchus
+Rhan ffrâm adeileddol
+<&thick_steel_pole>Mae'r Polyn Dur Trwchus Syth yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Pen Polyn Trwchus
+Rhan ffrâm adeileddol
+<&thick_steel_pole_head>Mae Pen/Troed y Polyn Dur Trwchus Syth yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Polyn Dur Tenau
+Rhan ffrâm adeileddol
+<&thin_steel_pole>Mae'r Polyn Dur Tenau Syth yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Pen Polyn Tenau
+Rhan ffrâm adeileddol
+<&thin_steel_pole_head>Mae Pen/Troed y Polyn Dur Tenau Syth yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Polyn Pren wedi'i Drin
+Rhan ffrâm adeileddol
+<&treated_wood_pole>Mae'r Polyn Syth o Bren wedi'i Drin yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Pen Polyn Pren wedi'i Drin
+Rhan ffrâm adeileddol
+<&treated_wood_pole_head>Mae Pen/Troed y Polyn Syth o Bren wedi'i Drin yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Cynhaliwr Polyn Pren wedi'i Drin
+Rhan ffrâm adeileddol
+<&treated_wood_pole_support>Mae Cynhaliwr y Polyn Syth o Bren wedi'i Drin yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Cynhaliwr Dur T Dwbl
+Rhan ffrâm adeileddol
+<&steel_double_t_support>Mae'r bloc hwn yn darparu adeiledd gweladwy ar gyfer neuaddau peiriannau a fframiau mynediad.<br>
+<br>
+Defnydd: Trowch a gosodwch ef fel croesgynhaliaeth weladwy ar gyfer trawstiau, polion ac ymylon llwyfannau.<br>
+<np>
+Grât Llawr Dur
+Elfen mynediad gwasanaethu
+<&steel_floor_grating>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Llwyfan Cerdded Dur
+Elfen mynediad gwasanaethu
+<&steel_catwalk>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Grisiau Llwyfan Cerdded Dur
+Elfen mynediad gwasanaethu
+<&steel_catwalk_stairs>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Llwyfan Cerdded Dur Uchel
+Elfen mynediad gwasanaethu
+<&steel_catwalk_ta>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Rheilen Ddur
+Elfen mynediad gwasanaethu
+<&steel_railing>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Ffens Rhwyll Ddur
+Elfen mynediad gwasanaethu
+<&steel_mesh_fence>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Giât Ffens Rhwyll Ddur
+Elfen mynediad gwasanaethu
+<&steel_mesh_fence_gate>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Ysgol Ffyn Metel
+Elfen mynediad gwasanaethu
+<&metal_rung_ladder>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Camau Metel Bob yn Ail
+Elfen mynediad gwasanaethu
+<&metal_rung_steps>Mae'r bloc hwn yn creu llwybrau gwasanaethu clir o amgylch peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef i roi mynediad cynnal a chadw o amgylch peiriannau, lloriau uwch a siafftiau gwasanaethu.<br>
+<np>
+Ffenestr Ffrâm Ddur
+Llinell weld warchodedig
+<&steel_framed_window>Mae'r bloc hwn yn cadw llinellau gweld yn agored ac yn cyd-fynd ag adeiladwaith ffatri atgyfnerthiedig.<br>
+<br>
+Defnydd: Gosodwch ef mewn agoriad 1 bloc mewn wal lle dylai chwaraewyr weld peiriannau drwy rwystr gwarchodedig.<br>
+<np>
+Drws Llithro Metel
+Mynedfa ddiwydiannol
+<&metal_sliding_door>Mae'r bloc hwn yn darparu mynedfa gadarn i ystafelloedd gwasanaethu, siafftiau, toeau ac amgaeadau peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef lle mae angen agoriad cynnal a chadw dan reolaeth yn yr adeilad.<br>
+<np>
+Agorfa Haearn
+Mynedfa ddiwydiannol
+<&iron_hatch>Mae'r bloc hwn yn darparu mynedfa gadarn i ystafelloedd gwasanaethu, siafftiau, toeau ac amgaeadau peiriannau.<br>
+<br>
+Defnydd: Gosodwch ef lle mae angen agoriad cynnal a chadw dan reolaeth yn yr adeilad.<br>

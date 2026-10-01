@@ -1,0 +1,5 @@
+Tom sim quvuri
+Ob-havo izlari bor tom qismi
+<&recipe>To'q rangli cherepitsa tom sim quvuri ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>

@@ -1,0 +1,5 @@
+Forno de laboratorio
+Unidade compacta de procesamento
+<&recipe>O forno de laboratorio fai traballos de fundición con combustible sólido nun espazo reducido de obradoiro.<br>
+<br>
+Uso: usa combustible sólido para fundir pequenas tandas.<br>

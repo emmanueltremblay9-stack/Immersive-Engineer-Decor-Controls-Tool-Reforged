@@ -1,0 +1,5 @@
+Müllverbrennofn
+Kloane Verarbeitungseinheit
+<&recipe>Da Müllverbrennofn vernichtet unerwünschte Sachn und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Gib bloß Sachn in sei Warteschlang, de weg solln.<br>

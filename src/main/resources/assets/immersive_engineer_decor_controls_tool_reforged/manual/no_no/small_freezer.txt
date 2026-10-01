@@ -1,0 +1,5 @@
+Vannfryser
+Kompakt behandlingsenhet
+<&recipe>Vannfryseren utfører kompakt kjølearbeid for strømdrevne væskeanlegg.<br>
+<br>
+Bruk: tilfør vann og strøm for trinnvis isproduksjon.<br>

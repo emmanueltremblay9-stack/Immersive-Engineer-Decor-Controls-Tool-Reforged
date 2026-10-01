@@ -1,0 +1,3 @@
+Granulado grosso de ferro
+Material de ferramentas de engenheiro utilizado pelo conjunto reconstruído de receitas.
+<&recipe>Pode ser fundido em lingotes de<br>ferro, mas não serve para<br>processamento avançado de materiais.

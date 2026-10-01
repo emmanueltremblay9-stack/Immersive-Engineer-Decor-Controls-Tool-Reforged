@@ -1,0 +1,5 @@
+Vieille porte en bois industrielle
+Vieux bois d'atelier
+<&recipe>Ce bloc apporte un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>

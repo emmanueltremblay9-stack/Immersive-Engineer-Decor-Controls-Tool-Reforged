@@ -1,0 +1,7 @@
+Exprimidor de mentes
+Condensador de experiencia
+<&recipe>El exprimidor de mentes convierte lapislázuli y experiencia en lapislázuli cargado.<br>
+<br>
+Uso: Llevá lapislázuli y al menos un nivel de experiencia y utilizá la herramienta. Cada extracción válida consume un nivel y un lapislázuli, hiere al usuario, desgasta el exprimidor y crea un lapislázuli cargado.<br>
+<br>
+No funciona si al usuario le falta lapislázuli o experiencia, o si está demasiado cerca de morir.

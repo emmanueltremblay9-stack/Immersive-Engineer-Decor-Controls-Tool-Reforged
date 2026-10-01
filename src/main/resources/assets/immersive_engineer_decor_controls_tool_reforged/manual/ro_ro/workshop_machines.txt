@@ -1,0 +1,107 @@
+Mașini de atelier
+Mașini și transferuri de atelier
+Mașinile de atelier oferă operații compacte de fabricare, deplasare a obiectelor, topire, eliminare, colectare și lucrări utilitare, ocupând câte un singur bloc.<br>
+<br>
+Deschide paginile următoare pentru rețeta, imaginea, descrierea tematică și observațiile practice de utilizare ale fiecărei mașini.
+<np>
+Masă de oțel
+Mobilier de atelier
+<&steel_table>Acest bloc este o piesă practică de mobilier de atelier pentru încăperi de lucru și colțuri de întreținere.<br>
+<br>
+Utilizare: Așază-l lângă bancuri de lucru, lăzi și mașini compacte.<br>
+<np>
+Masă din lemn tratat
+Mobilier de atelier
+<&treated_wood_table>Acest bloc este o piesă practică de mobilier de atelier pentru încăperi de lucru și colțuri de întreținere.<br>
+<br>
+Utilizare: Așază-l lângă bancuri de lucru, lăzi și mașini compacte.<br>
+<np>
+Taburet din lemn tratat
+Mobilier de atelier
+<&treated_wood_stool>Acest bloc este o piesă practică de mobilier de atelier pentru încăperi de lucru și colțuri de întreținere.<br>
+<br>
+Utilizare: Așază-l lângă bancuri de lucru, lăzi și mașini compacte.<br>
+<np>
+Masă de lucru pentru metal
+Post de lucru pentru plăci
+<&metal_crafting_table>Masa de lucru pentru metal este un post de atelier ranforsat, cu un slot de ciocan, o grilă de lucru de 3x3 și un slot de ieșire bine delimitat.<br>
+<br>
+Utilizare: Folosește grila pentru fabricarea obișnuită. Pentru plăci IE, pune un ciocan al inginerului în slotul de unelte și materialul plăcii în grilă înainte de a lua rezultatul. Decorațiunile de oțel folosesc plăci de oțel pentru stâlpi, pasarele, ferestre, uși, balustrade și alte piese de oțel.<br>
+<np>
+Pâlnie de fabrică
+Echipament util în hală
+<&factory_hopper>Acest bloc deplasează stive de obiecte printr-o carcasă industrială mai compactă.<br>
+<br>
+Utilizare: Orientează-l spre linia de inventare, apoi setează raza, numărul de stive, temporizarea și modul redstone în ecranul său.<br>
+<np>
+Aruncător de fabrică
+Echipament util în hală
+<&factory_dropper>Acest bloc eliberează obiectele stocate printr-o față orientată spre țintă.<br>
+<br>
+Utilizare: Orientează partea frontală spre punctul de eliberare, încarcă sloturile interne și reglează forța, unghiul, întârzierea, logica filtrului și modul redstone în ecranul său.<br>
+<np>
+Amplasator de blocuri de fabrică
+Echipament util în hală
+<&factory_placer>Acest bloc amplasează blocuri din stocul său intern atunci când este activat.<br>
+<br>
+Utilizare: Orientează fața de lucru spre spațiul țintă și încarcă stive de blocuri care pot fi amplasate.<br>
+<np>
+Spărgător de blocuri
+Echipament util în hală
+<&small_block_breaker>Spărgătorul mic de blocuri este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Orientează fața de lucru spre blocul de îndepărtat.<br>
+<np>
+Incinerator de deșeuri
+Unitate compactă de prelucrare
+<&small_waste_incinerator>Incineratorul de deșeuri distruge obiectele nedorite, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Introdu în coada sa doar obiecte nedorite.<br>
+<np>
+Cuptor de laborator
+Unitate compactă de prelucrare
+<&small_lab_furnace>Cuptorul de laborator efectuează operații compacte de topire cu combustibil solid, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Folosește combustibil solid pentru loturi mici de topire.<br>
+<np>
+Cuptor electric
+Unitate compactă de prelucrare
+<&small_electrical_furnace>Cuptorul electric efectuează operații compacte de topire alimentate cu FE, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Furnizează FE și un material potrivit pentru topire.<br>
+<np>
+Topitor de minerale
+Unitate compactă de prelucrare
+<&small_mineral_smelter>Topitorul de minerale prelucrează minerale la temperaturi înalte, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Introdu blocuri minerale și furnizează energie pentru topire la temperaturi înalte.<br>
+<np>
+Congelator de apă
+Unitate compactă de prelucrare
+<&small_freezer>Congelatorul de apă efectuează operații compacte de răcire pentru instalații de fluide alimentate cu energie.<br>
+<br>
+Utilizare: Furnizează apă și energie pentru producția de gheață în etape.<br>
+<np>
+Fluide pasive
+Echipament pentru circuite de fluide
+<&passive_fluid_accumulator>Acumulatorul pasiv de fluide este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Amplasează-l lângă surse de apă potrivite și lasă loc pentru extragerea fluidului.<br>
+<np>
+Panou solar
+Echipament util în hală
+<&small_solar_panel>Panoul solar mic este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Oferă-i acces la cerul liber și conectează echipamente cu consum redus.<br>
+<np>
+Aparat de muls
+Echipament util în hală
+<&small_milking_machine>Aparatul mic de muls este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Amplasează-l lângă vaci și asigură o cale de extragere a recipientelor cu lapte sau a fluidului.<br>
+<np>
+Tăietor de copaci
+Echipament util în hală
+<&small_tree_cutter>Tăietorul mic de copaci este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Orientează-l spre copaci crescuți și adună separat obiectele căzute.<br>

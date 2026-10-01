@@ -1,0 +1,7 @@
+Detector llinial d’entidaes
+Deteición de señales
+<&recipe>Un detector d’entidaes vixila’l movimientu cercanu ensin una placa visible nel suelu.<br>
+<br>
+Usu: conéctalu a puertes, llámpares, alarmes o enclavamientos de máquines.<br>
+<br>
+Notes: analiza una zona pequeña alredor del bloque.

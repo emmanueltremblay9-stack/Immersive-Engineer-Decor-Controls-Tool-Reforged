@@ -1,0 +1,7 @@
+Sravnjateljny prěključatelj
+Pripojeny signal
+<&recipe>Kompaktny senzorny prěključatelj čitaje blok, na ktorom jest montovany, i prětvarjaje rezultat v prosty panelny izhod.<br>
+<br>
+Upotrěbjenje: Montuj go na orudovanja, rezervuary ili redstounove ustrojstva. Kogda pripojeny blok davaje izhod sravnjatelja, posudy ili redstouna, prěključatelj izdavaje redstoun polnoj sily.<br>
+<br>
+Primětky: Upotrěbi go dlja prětvorjenja skladovyh urovnjev ili skrytyh provodov v jasne upravne linije vključeno/izključeno.

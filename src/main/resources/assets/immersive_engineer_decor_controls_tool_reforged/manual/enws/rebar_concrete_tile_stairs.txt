@@ -1,0 +1,5 @@
+Tile of Steel-Bound Cement
+Strengthened Cement
+<&recipe>The Stairs of Steel-Bound Cement Tiles are hardened fittings for engine pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it beneath engines, along service passages or wherever thy building requires a strengthened base.<br>

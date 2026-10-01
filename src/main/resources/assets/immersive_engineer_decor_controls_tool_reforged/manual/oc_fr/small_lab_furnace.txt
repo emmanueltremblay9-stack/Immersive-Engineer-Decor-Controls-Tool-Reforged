@@ -1,0 +1,5 @@
+Forn de laboratòri
+Unitat de tractament compacta
+<&recipe>Lo Forn de laboratòri realiza de trabalhs de fusion amb combustible solid en ocupant pauc de plaça dins l’obrador.<br>
+<br>
+Utilizacion : emplega de combustible solid per fondre de pichons lòts.<br>

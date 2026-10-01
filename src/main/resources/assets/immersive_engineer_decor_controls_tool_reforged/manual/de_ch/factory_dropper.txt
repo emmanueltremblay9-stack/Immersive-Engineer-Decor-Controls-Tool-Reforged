@@ -1,0 +1,5 @@
+Fabrik-Uswerfer
+Hilfsgrät für d'Werkstatt
+<&recipe>Dä Block git gspeichereti Gägeständ us ere uusgrichtete Siite uus.<br>
+<br>
+Verwendig: Richt d'Vordersiite zum Uswurfpunkt, füll d'Fächer und stell Chraft, Winkel, Verzögerig, Filterlogik und Redstone-Modus ide Oberflächi ii.<br>

@@ -1,0 +1,5 @@
+Yarim plitali klinker g'isht
+Qurumdan qoraygan g'isht
+<&recipe>Bu blok pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>

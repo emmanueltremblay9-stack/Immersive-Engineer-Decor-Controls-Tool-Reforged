@@ -1,0 +1,7 @@
+Cutie de materiale
+Cutie de provizii pentru construcții
+<&recipe>Cutia de materiale poartă o rezervă mare dintr-un singur material de construcție obișnuit, nemodificat și stivuibil.<br>
+<br>
+Ține cutia în mâna principală și materialul în cealaltă pentru a-l încărca; folosește-o cu cealaltă mână goală pentru a scoate o stivă.<br>
+<br>
+Ține 512 obiecte de un tip, respinge alte cutii, echipamentul nestivuibil și stivele modificate și arată conținutul în descriere.

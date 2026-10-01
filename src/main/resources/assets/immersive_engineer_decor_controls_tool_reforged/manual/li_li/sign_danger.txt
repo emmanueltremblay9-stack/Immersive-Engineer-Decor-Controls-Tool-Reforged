@@ -1,0 +1,5 @@
+Gevaorbörd
+Gevaormarkering
+<&recipe>'t Börd "Pas op, hie is 't ech gevaerlik" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>

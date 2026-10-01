@@ -1,0 +1,5 @@
+Fagyveszélytábla
+Veszélyjelölő
+<&recipe>A „Fagyveszély” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>

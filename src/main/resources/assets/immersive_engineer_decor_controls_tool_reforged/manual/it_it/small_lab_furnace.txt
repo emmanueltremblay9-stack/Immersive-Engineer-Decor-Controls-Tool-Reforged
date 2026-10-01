@@ -1,0 +1,5 @@
+Fornace da laboratorio
+Unità di lavorazione compatta
+<&recipe>La fornace da laboratorio esegue cotture a combustibile solido in uno spazio d’officina ridotto.<br>
+<br>
+Uso: usa combustibile solido per piccole serie di cottura.<br>

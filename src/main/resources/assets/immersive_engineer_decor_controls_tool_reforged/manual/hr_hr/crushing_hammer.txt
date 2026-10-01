@@ -1,0 +1,7 @@
+Čekić za drobljenje ruda
+Ručni alat za drobljenje
+<&recipe>Čekić za drobljenje rude ručni je alat za početnu obradu željeza i zlata.<br>
+<br>
+Uporaba: Izradi ga sa sirovim željezom, sirovim zlatom, željeznom rudom, dubinskom željeznom rudom, zlatnom rudom ili dubinskom zlatnom rudom kako bi dobio željeznu ili zlatnu prašinu Immersive Engineeringa. Čekić gubi izdržljivost i vraća se u mrežu dok se ne slomi.<br>
+<br>
+Troši se i pri rudarenju te može odbaciti mete u bliskoj borbi.

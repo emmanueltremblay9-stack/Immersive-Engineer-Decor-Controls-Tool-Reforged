@@ -1,0 +1,7 @@
+Schaltlinkrelé
+Verbunnen Stüern
+<&recipe>En Deel in Reléstil gifft Paneelbauten en lütten Schaltpunkt vör Ort.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen. Bruuk Empfangerblöck, wenn du Utlösen mit en verbunnen Parrel bruukst.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.

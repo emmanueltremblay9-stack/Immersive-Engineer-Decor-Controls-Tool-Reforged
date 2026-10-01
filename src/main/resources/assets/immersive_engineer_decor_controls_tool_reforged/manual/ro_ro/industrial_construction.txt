@@ -1,0 +1,108 @@
+Construcții industriale
+Pereți și ornamente de fabrică
+Piesele generale de construcție cuprind uși, ferestre, lămpi, indicatoare de avertizare, ornamente și piese structurale care nu aparțin unei secțiuni mai precise.<br>
+<br>
+Folosește aceste pagini pentru încăperile fabricii, coridoarele tehnice, marcarea pericolelor și detaliile industriale practice.
+<np>
+Bec cu carcasă de fier
+Lampă de lucru compactă
+<&iron_bulb_light>Acest bloc oferă iluminat industrial compact pentru coridoare, pasarele și zone de lucru.<br>
+<br>
+Utilizare: Montează-l pe tavane, pereți sau margini unde încăperea are nevoie de lumină clară pentru lucru.<br>
+<np>
+Lampă de margine de tavan
+Lampă de lucru compactă
+<&iron_ceiling_edge_light>Acest bloc oferă iluminat industrial compact pentru coridoare, pasarele și zone de lucru.<br>
+<br>
+Utilizare: Montează-l pe tavane, pereți sau margini unde încăperea are nevoie de lumină clară pentru lucru.<br>
+<np>
+Lampă încastrată de margine de podea
+Lampă de lucru compactă
+<&iron_floor_edge_light>Acest bloc oferă iluminat industrial compact pentru coridoare, pasarele și zone de lucru.<br>
+<br>
+Utilizare: Montează-l pe tavane, pereți sau margini unde încăperea are nevoie de lumină clară pentru lucru.<br>
+<np>
+Lampă încastrată
+Lampă de lucru compactă
+<&iron_inset_light>Acest bloc oferă iluminat industrial compact pentru coridoare, pasarele și zone de lucru.<br>
+<br>
+Utilizare: Montează-l pe tavane, pereți sau margini unde încăperea are nevoie de lumină clară pentru lucru.<br>
+<np>
+Indicator „Atenție generală”
+Marcaj de pericol
+<&sign_caution>Indicatorul „Atenție generală” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator de pericol
+Marcaj de pericol
+<&sign_danger>Indicatorul „Atenție, pericol grav înainte” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator decorativ
+Marcaj de pericol
+<&sign_decor>Placa de semnalizare (Decorațiunile inginerului) marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator de apărare
+Marcaj de pericol
+<&sign_defense>Indicatorul „Atenție, sistem defensiv înainte” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator de ieșire
+Marcaj de pericol
+<&sign_exit>Acest indicator marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator „Pericol de incendiu”
+Marcaj de pericol
+<&sign_firehazard>Indicatorul „Pericol de incendiu” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator „Atenție, îngheț”
+Marcaj de pericol
+<&sign_frost>Indicatorul „Atenție, îngheț” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator de suprafață fierbinte
+Marcaj de pericol
+<&sign_hotsurface>Indicatorul „Atenție, suprafață fierbinte” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator de conductor sub tensiune
+Marcaj de pericol
+<&sign_hotwire>Indicatorul „Atenție, conductor sub tensiune” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator „Pericol laser”
+Marcaj de pericol
+<&sign_laser>Indicatorul „Pericol laser” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator de pericol magic
+Marcaj de pericol
+<&sign_magichazard>Indicatorul „Atenție, pericol magic” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator de câmp magnetic
+Marcaj de pericol
+<&sign_magneticfield>Indicatorul „Atenție, câmp magnetic puternic” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>
+Indicator „Pericol radioactiv”
+Marcaj de pericol
+<&sign_radioactive>Indicatorul „Pericol radioactiv” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>
+<np>

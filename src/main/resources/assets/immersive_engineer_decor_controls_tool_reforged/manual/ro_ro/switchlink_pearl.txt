@@ -1,0 +1,7 @@
+Perlă pentru legături de comutare
+Comandă prin legătură
+<&recipe>O perlă asociată memorează un receptor țintă pentru comenzi industriale la distanță.<br>
+<br>
+Utilizare: Fă clic pe un receptor de legături de comutare cu o perlă de Ender pentru a crea o perlă asociată. Folosește perla asociată în timp ce te furișezi pentru a activa receptorul memorat.<br>
+<br>
+Observații: Ținta trebuie să fie încărcată, în aceeași dimensiune și în raza de acțiune.

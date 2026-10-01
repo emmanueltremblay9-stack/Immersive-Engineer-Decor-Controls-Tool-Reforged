@@ -1,0 +1,41 @@
+Depaus e transpòrt
+Equipaments d’inventari e de debit
+Los equipaments de depaus e de transpòrt comprenon las caissas, las barricas, los embuts e las vanas per organizar de circuits compactes de fabrica.<br>
+<br>
+Utiliza aquestas paginas per preparar los magazins, las conduchas, las cuvas de servici e los circuits de fluids contrarotlats.
+<np>
+Caissa etiquetada
+Etiqueta de resèrva modificabla
+<&labeled_crate>Aquesta caissa etiquetada es concebuda per un triatge clar dins lo magazin. Sa placa de davant se pòt modificar coma una pichona pancarta d’obrador.<br>
+<br>
+Utilizacion : fai un clic drech sus la placa per modificar l’etiqueta de la caissa. Fai un clic drech sus la rèsta de la caissa per dobrir lo depaus d’equipaments, de pèças e de provesiments d’entreten.<br>
+<np>
+Barrica de liquids
+Equipament de conducha de fluids
+<&fluid_barrel>Aqueste equipament es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : pausa-lo ont las conduchas o los ferrats pòdon arribar a la fàcia de la cuva.<br>
+<np>
+Embut de fluids
+Equipament de conducha de fluids
+<&small_fluid_funnel>Lo Pichon embut de recampatge de fluids es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : pausa-lo jos lo ponch de recampatge de fluids e mena son contengut servat cap a de cuvas o de conduchas mai bassas.<br>
+<np>
+Clapet antiretorn de conducha de fluids
+Equipament de conducha de fluids
+<&straight_pipe_valve>Lo Clapet antiretorn de conducha de fluids es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : alinha la vana amb lo sens d’escorriment volgut.<br>
+<np>
+Vana de fluids per redstone
+Equipament de conducha de fluids
+<&straight_pipe_valve_redstone>La Vana de fluids comandada per redstone es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : alinha la vana amb lo sens d’escorriment volgut.<br>
+<np>
+Vana analogica de fluids
+Equipament de conducha de fluids
+<&straight_pipe_valve_redstone_analog>La Vana analogica de fluids per redstone es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : alinha la vana amb lo sens d’escorriment volgut.<br>

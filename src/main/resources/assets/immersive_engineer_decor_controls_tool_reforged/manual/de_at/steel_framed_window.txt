@@ -1,0 +1,5 @@
+Fensta mit Stahlrahmen
+Gschützter Einblick
+<&recipe>Mit dem Block bleibt de Sicht frei, und er passt trotzdem zur verstärkten Fabrikbauweise.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Spieler Maschinen hinter ana gschützten Barriere sehn solln.<br>

@@ -1,0 +1,5 @@
+Töödeldud puidust taburet
+Töökojamööbel
+<&recipe>See plokk on praktiline töökojamööbel tööruumidesse ja hooldusnurkadesse.<br>
+<br>
+Kasutamine: Aseta tööpinkide, kastide ja kompaktsete masinate kõrvale.<br>

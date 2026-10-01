@@ -1,0 +1,101 @@
+Çati dhe oborre
+Pajisje të jashtme fabrike
+Blloqet e çatisë, zhavorri i oborrit dhe pjesët e vjetra industriale prej druri ndihmojnë të përfundosh hangarë, oborre pune, zona ngarkimi dhe skaje fabrike të vjetruara nga moti.<br>
+<br>
+Përzieji këto pjesë me muraturë dhe rrugë hyrjeje që ndërtimet industriale të jashtme të dallohen qartë nga larg.
+<np>
+Çati me tjegulla të errëta
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof>Ky bllok ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Pengesë bore çatie
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_metallized>Pengesa e borës për çati me tjegulla të errëta ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Çati me tjegulla të errëta
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_skylight>Dritarja e çatisë me tjegulla të errëta ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Bazë oxhaku çatie
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_chimneytrunk>Baza e oxhakut për çati me tjegulla të errëta ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Kanal teli çatie
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_wireconduit>Kanali i telit për çati me tjegulla të errëta ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Çati me tjegulla të errëta
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_chimney>Oxhaku i çatisë me tjegulla të errëta ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Bllok çatie me tjegulla të errëta
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_block>Ky bllok ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Rrasë çatie me tjegulla të errëta
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_slab>Ky bllok ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Rrasë çatie me tjegulla të errëta
+Pajisje çatie e vjetruar nga moti
+<&dark_shingle_roof_slabslice>Rrasa e hollë e çatisë me tjegulla të errëta ndërton çati të errëta e praktike për punishte dhe hangarë industrialë.<br>
+<br>
+Përdorimi: përdori pjesët së bashku për profile të besueshme çatie.<br>
+<np>
+Dhe i ngjeshur me zhavorr
+Mbulesë toke kantieri
+<&dense_grit_dirt_block>Ky bllok u jep zonave të jashtme të punës një sipërfaqe të ngjeshur e të shkelur.<br>
+<br>
+Përdorimi: shtroje rreth dyerve të ngarkimit, depozitave të jashtme dhe oborreve të makinerive.<br>
+<np>
+Rërë e ngjeshur me zhavorr
+Mbulesë toke kantieri
+<&dense_grit_sand_block>Ky bllok u jep zonave të jashtme të punës një sipërfaqe të ngjeshur e të shkelur.<br>
+<br>
+Përdorimi: shtroje rreth dyerve të ngarkimit, depozitave të jashtme dhe oborreve të makinerive.<br>
+<np>
+Dërrasa të vjetra druri
+Dru i vjetruar punishteje
+<&old_industrial_wood_planks>Dërrasat e vjetra industriale shtojnë dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>
+<np>
+Rrasë e vjetër industriale prej druri
+Dru i vjetruar punishteje
+<&old_industrial_wood_slab>Ky bllok shton dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>
+<np>
+Shkallare të vjetra druri
+Dru i vjetruar punishteje
+<&old_industrial_wood_stairs>Shkallaret e vjetra industriale prej druri shtojnë dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>
+<np>
+Rrasë e hollë druri të vjetër
+Dru i vjetruar punishteje
+<&old_industrial_wood_slabslice>Rrasa e hollë e vjetër industriale prej druri shton dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>
+<np>
+Derë e vjetër industriale prej druri
+Dru i vjetruar punishteje
+<&old_industrial_wood_door>Ky bllok shton dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>

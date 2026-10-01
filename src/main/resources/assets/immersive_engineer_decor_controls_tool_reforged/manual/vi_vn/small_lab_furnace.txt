@@ -1,0 +1,5 @@
+Lò phòng thí nghiệm
+Thiết bị xử lý gọn
+<&recipe>Lò phòng thí nghiệm thực hiện công việc nung gọn bằng nhiên liệu rắn trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Dùng nhiên liệu rắn để nung từng mẻ nhỏ.<br>

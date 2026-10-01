@@ -1,0 +1,5 @@
+Factory block setter
+Gear fer the workshop deck
+<&recipe>This block sets blocks from her onboard stock when ye trigger her.<br>
+<br>
+Orders: Aim the working face at yer chosen space and load stacks she can place.<br>

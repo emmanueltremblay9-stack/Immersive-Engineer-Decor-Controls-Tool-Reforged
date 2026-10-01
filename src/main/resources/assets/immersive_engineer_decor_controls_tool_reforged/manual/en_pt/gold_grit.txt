@@ -1,0 +1,3 @@
+Rough grit o' gold
+Material fer engineer's tools in the reconstructed craftin' set.
+<&recipe>Smelt it into bullion<br>o' gold. It ain't fit<br>fer advanced material processin'.

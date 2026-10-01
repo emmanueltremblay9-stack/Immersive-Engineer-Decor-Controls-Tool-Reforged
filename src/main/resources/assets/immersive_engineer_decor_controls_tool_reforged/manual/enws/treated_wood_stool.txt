@@ -1,0 +1,5 @@
+Stool of Treated Wood
+Furniture for the Workshop
+<&recipe>This block is a serviceable furnishing for working chambers and corners devoted to upkeep.<br>
+<br>
+Use: Set it beside benches, crates and compact engines.<br>

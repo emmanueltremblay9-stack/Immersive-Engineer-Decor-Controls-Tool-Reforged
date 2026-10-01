@@ -1,0 +1,5 @@
+Soomusklaasiplokk
+Kaitstud vaade
+<&recipe>See plokk säilitab avatud vaate ning sobib samal ajal tugevdatud tehasekonstruktsiooniga.<br>
+<br>
+Kasutamine: Kasuta seal, kus mängijad peaksid nägema masinaid läbi kaitstud tõkke.<br>

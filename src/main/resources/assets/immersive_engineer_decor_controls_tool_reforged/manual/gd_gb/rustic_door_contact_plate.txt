@@ -1,0 +1,7 @@
+Pleata-brùthaidh dorais dhùthchail
+Puls brùthaidh
+<&recipe>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.

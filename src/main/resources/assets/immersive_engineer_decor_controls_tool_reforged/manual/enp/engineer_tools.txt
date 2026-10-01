@@ -1,0 +1,99 @@
+Sareman's Tools
+Carryable workshop gear
+The Sareman's Tools set adds hand-held gear, mine markers, one-use helps for dire need, field food and small stuff-working helpers to the same handbook as the decking and switchgear clots.<br>
+<br>
+These tools are for work away from a fully fitted shop: mark your way, carry your stock, set mishaps right and finish small working jobs where you stand.
+<np>
+REDIA Tool
+Athamans-sheathed helper
+<&redia_tool>The REDIA Tool is a long-lasting field helper for quick earthwork. Use it on fitting earth to till Cropland.<br>
+<br>
+With Brands in your inholding, use it against a steady side to set a Brand mark without wearing REDIA. Earthwork, shearing, axework and tree felling all wear it.
+<np>
+Ore Crushing Hammer
+Hand crushing tool
+<&crushing_hammer>Heed this: The Ore Crushing Hammer is a manual processing tool for early iron and gold work.<br>
+<br>
+Usage: Craft it with raw iron, raw gold, iron ore, deepslate iron ore, gold ore, or deepslate gold ore to produce Immersive Engineering iron or gold dust. The hammer takes durability damage and returns to the crafting grid until it breaks.<br>
+<br>
+It also wears down from mining and can knock targets back in close combat.
+<np>
+Tracker
+Stored stead marker
+<&tracker>Heed this: The Tracker stores a block stead directly in the thing.<br>
+<br>
+Usage: Click a block to save its world-room and bearings. The helptext shows the stored stead. Sneak-use the Tracker to clear the target.<br>
+<br>
+Use it to mark machines, tunnel branches, remote controls, or unfinished building sites before returning with tools and stuffs.
+<np>
+Ariadne Coal
+Mine waymarker
+<&ariadne_coal>Ariadne Coal quickly sets black arrow waymarks on steady mine sides. Use it on a solid side to mark the next turn, way out or branch; the mark points in eight ways on the clicked side, including slantwise.<br>
+<br>
+Ariadne Coal is a reusable marking tool with 100 uses. Each well-set mark costs one wear point. Sides that cannot hold it are turned down instead of wearing the tool.
+<np>
+Auto Stim Pack
+Emergency injector
+<&stimpack>Heed this: The Auto Stim Pack is an emergency recovery thing for dangerous maintenance work.<br>
+<br>
+Usage: Use it manually to heal, gain brief protection, and get a short movement boost. When carried in inholding, it can also trigger by itself at low health, then enters cooldown.<br>
+<br>
+Keep one available before testing high places, exposed wiring, or hostile mine routes.
+<np>
+Sleeping Bag
+Carryable rest kit
+<&sleeping_bag>Heed this: The Sleeping Bag is a weatherproof rest kit for field work far from a bed.<br>
+<br>
+Usage: Use it at night in the Overworld to rest until morning. It does not set or move your spawn point.<br>
+<br>
+The bag refuses daytime use, unsafe surroundings with nearby monsters, and world-rooms that are not suitable for a safe field rest. Each successful rest wears the bag.
+<np>
+Building-Stuff Box
+Building supply box
+<&material_box>Heed this: The Building-Stuff Box carries a large reserve of one plain, unmodified heapable building stuff.<br>
+<br>
+Usage: Hold the box in the main hand and a stuff heap in the offhand to load that stuff into the box. Use the box with an empty offhand to pull one heap back out.<br>
+<br>
+The box holds up to 512 things, keeps only one stuff type at a time, rejects nested boxes, non-heapable gear, and modified named or data-bearing heaps, and reports its stored contents in the helptext.
+<np>
+Diving Air Capsule
+Emergency air reserve
+<&diving_capsule>Heed this: The Diving Air Capsule is an emergency air thing for underwater work.<br>
+<br>
+Usage: Use it manually to restore air. When carried in inholding, it can also trigger by itself when air is nearly gone, then enters cooldown.<br>
+<br>
+Carry it for flooded mines, submerged pipe runs, and pump-room repairs.
+<np>
+Muslee Bar Press
+Food press
+<&musli_bar_press>Heed this: The Muslee Bar Press turns common food supplies into compact field rations.<br>
+<br>
+Usage: Carry bread, an apple, and wheat, melon, pumpkin, beetroot, or Industrial Hemp seeds, then use the press. A successful press consumes one of each ingredient, checks that the outcome can fit, creates four Muslee Melange Power Bars, and damages the press.<br>
+<br>
+If an ingredient is missing or the inholding has no room for the bars, nothing is consumed.
+<np>
+Muslee Melange Power Bar
+Fast shop snack
+<&musli_bar>Heed this: The Muslee Melange Power Bar is a compact food thing made from bread, seeds, and fruit.<br>
+<br>
+Usage: Eat it as field food while placing controls, pipes, platforms, or long machine-room runs.
+<np>
+Mind Squeezer
+XP squeeze loom
+<&charged_lapis_squeezer>The Mind Squeezer turns one Hewnstone and one XP level from your inholding into Loaded Hewnstone.<br>
+<br>
+Each good squeeze hurts you, makes you weary in a way that brings hunger, and briefly blinds you. It will not run without Hewnstone or XP, or when you are too near death.
+<np>
+Loaded Hewnstone
+XP held in store
+<&charged_lapis>Loaded Hewnstone holds one XP level. Eat it to regain the level, clear ongoing workings and get a little health back.<br>
+<br>
+Craft a Mind Squeezer first; Loaded Hewnstone is made by using it while Hewnstone and XP are at hand.
+<np>
+Rough Iron Grit
+Sareman's tool stuff used by the rebuilt crafting set.
+<&iron_grit>Smelts into Iron Ingots, but<br>will not work with<br>further kinds of stuff working.
+<np>
+Rough Gold Grit
+Sareman's tool stuff used by the rebuilt crafting set.
+<&gold_grit>Smelts into Gold Ingots, but<br>will not work with<br>further kinds of stuff working.

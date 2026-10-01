@@ -1,0 +1,7 @@
+Starodavna knopka
+Redstounovo upravljanje
+<&recipe>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.

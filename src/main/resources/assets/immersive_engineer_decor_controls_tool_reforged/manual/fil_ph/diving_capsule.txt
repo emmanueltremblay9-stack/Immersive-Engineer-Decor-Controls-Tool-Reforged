@@ -1,0 +1,7 @@
+Kapsula ng Hangin sa Pagsisid
+Reserbang hangin sa kagipitan
+<&recipe>Ang kapsula ng hangin sa pagsisid ay pang-emerhensiyang reserba ng hangin para sa gawaing nasa ilalim ng tubig.<br>
+<br>
+Paggamit: Gamitin ito nang mano-mano upang maibalik ang hangin. Kapag dala sa inventory, maaari rin itong awtomatikong gumana kapag halos ubos na ang hangin, saka papasok sa cooldown.<br>
+<br>
+Dalhin para sa binahang mina, mga tubong nakalubog sa tubig at pagkukumpuni sa silid ng bomba.

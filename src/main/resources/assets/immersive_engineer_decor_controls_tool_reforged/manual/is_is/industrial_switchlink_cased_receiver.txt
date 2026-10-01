@@ -1,0 +1,7 @@
+Tengimóttakari í hylki
+Tengd stýring
+<&recipe>Tengdur móttakari í hylki veitir fjarstjórnborðum sterkbyggt roðsteinsmark.<br>
+<br>
+Notkun: Smelltu á hann með endaperlu til að búa til tengda perlu. Hægrismelltu beint á móttakarann til að skipta um stöðu hans með hendi.<br>
+<br>
+Athugasemdir: Tengd perla skiptir um stöðu þessa móttakara þegar hún er notuð á meðan læðst er.

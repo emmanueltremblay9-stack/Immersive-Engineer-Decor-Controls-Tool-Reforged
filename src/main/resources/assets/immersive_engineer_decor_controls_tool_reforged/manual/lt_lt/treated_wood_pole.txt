@@ -1,0 +1,5 @@
+Apdorotos medienos stulpas
+Karkaso dalis
+<&recipe>Tiesus apdorotos medienos stulpas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>

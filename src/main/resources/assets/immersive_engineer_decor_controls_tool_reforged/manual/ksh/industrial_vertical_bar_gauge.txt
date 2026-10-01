@@ -1,0 +1,7 @@
+Analog Balkemäßjerät
+Signalmäßjerät
+<&recipe>E klein Mäßjerät för dä Stüerruum zeijt de Redstone-Stärk als klare Paneelaanzeich.<br>
+<br>
+Bruuch: Befestig et do, wo de Redstone-Energie en d'r Nöh met einem Bleck pröfe wells.<br>
+<br>
+Henwies: Ließ Redstone-Stärk en d'r Nöh vun 0 bes 15 av.

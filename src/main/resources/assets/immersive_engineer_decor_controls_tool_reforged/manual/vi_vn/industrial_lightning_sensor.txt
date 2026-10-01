@@ -1,0 +1,7 @@
+Bộ phát hiện bão
+Cảm nhận tín hiệu
+<&recipe>Cảm biến bão kích hoạt cảnh báo khi có sấm sét.<br>
+<br>
+Cách dùng: Đặt dưới trời thoáng và nối tới đèn hoặc báo động.<br>
+<br>
+Ghi chú: Cần có sấm sét và không bị che trời.

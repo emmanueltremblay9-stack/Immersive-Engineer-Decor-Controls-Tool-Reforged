@@ -1,0 +1,7 @@
+Jännitemittari
+Signaalimittari
+<&recipe>Pieni valvomomittari näyttää redstone-voimakkuuden selkeänä paneelilukemana.<br>
+<br>
+Käyttö: Asenna paikkaan, jossa viereinen redstone-virta on voitava tarkistaa yhdellä silmäyksellä.<br>
+<br>
+Huomaa: Lukee lähellä olevan redstonen voimakkuuden väliltä 0–15.

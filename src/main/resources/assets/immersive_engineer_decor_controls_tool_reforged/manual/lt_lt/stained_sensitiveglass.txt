@@ -1,0 +1,7 @@
+Spalvotas jautrus stiklas
+Signalinis stiklas
+<&recipe>Į redstoną reaguojantis stiklo blokas leidžia matyti kiaurai ir rodo signalo būseną.<br>
+<br>
+Naudojimas: naudok valdymo patalpų langams, apšviestiems skydams ir apsauginiam fabriko įstiklinimui.<br>
+<br>
+Pastabos: keičia būseną nuo netoliese esančio redstono maitinimo.

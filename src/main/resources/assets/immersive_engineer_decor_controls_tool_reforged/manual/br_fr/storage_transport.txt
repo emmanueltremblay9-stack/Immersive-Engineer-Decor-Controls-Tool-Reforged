@@ -1,0 +1,41 @@
+Stokañ ha treuzkas
+Tammoù renabl ha red
+An dafar stokañ ha treuzkas a vod koufroù, tonelloù, founilhoù ha valvoù evit hentoù bihan en uzin.<br>
+<br>
+Implijit ar pajennoù-mañ pa renkit salioù stokañ, hentoù korzennoù, beolioù trezalc'h ha linennoù houlif reoliet.
+<np>
+Koufr gant skritell
+Skritell stok kemmadus
+<&labeled_crate>Ar c'houfr gant skritell-mañ zo graet evit renkañ sklaer ur sal stokañ. E blakenn a-raok a c'haller kemmañ evel ur banell atalier vihan.<br>
+<br>
+Implij: Klikit a-zehoù war ar blakenn skritell evit kemmañ skritell ar c'houfr. Klikit a-zehoù war peurrest ar c'houfr evit digeriñ ar stok tammoù, pezhioù ha pourvezioù trezalc'h.<br>
+<np>
+Tonell houlif
+Dafar linennoù houlif
+<&fluid_barrel>An tamm-mañ zo un tamm linenn houlif bihan evit beolioù bihan, hentoù korzennoù, poentoù dastum ha red renet gant Redstone.<br>
+<br>
+Implij: Lakait anezhañ el lec'h ma c'hall korzennoù pe sailhoù tizhout fas ar veol.<br>
+<np>
+Founilh houlif
+Dafar linennoù houlif
+<&small_fluid_funnel>Ar founilh dastum houlif bihan zo un tamm linenn houlif bihan evit beolioù bihan, hentoù korzennoù, poentoù dastum ha red renet gant Redstone.<br>
+<br>
+Implij: Lakait anezhañ dindan al lec'h dastum houlif ha kasit e endalc'had stoket da beolioù pe gorzennoù izeloc'h.<br>
+<np>
+Valv enep-distro korzenn houlif
+Dafar linennoù houlif
+<&straight_pipe_valve>Ar valv enep-distro korzenn houlif zo un tamm linenn houlif bihan evit beolioù bihan, hentoù korzennoù, poentoù dastum ha red renet gant Redstone.<br>
+<br>
+Implij: Reizhit ar valv gant tu ar red a fell deoc'h kaout.<br>
+<np>
+Valv houlif Redstone
+Dafar linennoù houlif
+<&straight_pipe_valve_redstone>Ar valv houlif renet gant Redstone zo un tamm linenn houlif bihan evit beolioù bihan, hentoù korzennoù, poentoù dastum ha red renet gant Redstone.<br>
+<br>
+Implij: Reizhit ar valv gant tu ar red a fell deoc'h kaout.<br>
+<np>
+Valv houlif analogel
+Dafar linennoù houlif
+<&straight_pipe_valve_redstone_analog>Ar valv houlif analogel Redstone zo un tamm linenn houlif bihan evit beolioù bihan, hentoù korzennoù, poentoù dastum ha red renet gant Redstone.<br>
+<br>
+Implij: Reizhit ar valv gant tu ar red a fell deoc'h kaout.<br>

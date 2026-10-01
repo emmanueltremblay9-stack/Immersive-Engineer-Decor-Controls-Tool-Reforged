@@ -1,0 +1,5 @@
+Nosač obrađenog stuba
+Deo nosećeg okvira
+<&recipe>Nosač pravog stuba od obrađenog drveta daje vidljivu noseću strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: okreni ga i postavi kao vidljivo ukrućenje greda, stubova i ivica platformi.<br>

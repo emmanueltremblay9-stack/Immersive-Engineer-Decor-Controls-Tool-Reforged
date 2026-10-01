@@ -1,0 +1,101 @@
+Toeau ac Iard
+Elfennau ffatri awyr agored
+Mae blociau to, graean iard a rhannau hen bren diwydiannol yn helpu i orffen siediau allanol, iardiau gwaith, mannau llwytho ac ymylon ffatri hindreuliedig.<br>
+<br>
+Cymysgwch y rhannau hyn â gwaith maen a llwybrau mynediad i gadw adeiladau diwydiannol awyr agored yn glir o bell.
+<np>
+To Teils Gorgyffwrdd Tywyll
+Elfen to hindreuliedig
+<&dark_shingle_roof>Mae'r bloc hwn yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+Rhwystr Eira To
+Elfen to hindreuliedig
+<&dark_shingle_roof_metallized>Mae Rhwystr Eira To Teils Gorgyffwrdd Tywyll yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+To Teils Gorgyffwrdd Tywyll
+Elfen to hindreuliedig
+<&dark_shingle_roof_skylight>Mae Ffenestr Do Teils Gorgyffwrdd Tywyll yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+Siafft Simnai To
+Elfen to hindreuliedig
+<&dark_shingle_roof_chimneytrunk>Mae Siafft Simnai To Teils Gorgyffwrdd Tywyll yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+Cwndid Gwifrau To
+Elfen to hindreuliedig
+<&dark_shingle_roof_wireconduit>Mae Cwndid Gwifrau To Teils Gorgyffwrdd Tywyll yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+To Teils Gorgyffwrdd Tywyll
+Elfen to hindreuliedig
+<&dark_shingle_roof_chimney>Mae Simnai To Teils Gorgyffwrdd Tywyll yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+Bloc To Teils Gorgyffwrdd Tywyll
+Elfen to hindreuliedig
+<&dark_shingle_roof_block>Mae'r bloc hwn yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+Slab To Teils Gorgyffwrdd Tywyll
+Elfen to hindreuliedig
+<&dark_shingle_roof_slab>Mae'r bloc hwn yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+Slab To Teils Gorgyffwrdd Tywyll
+Elfen to hindreuliedig
+<&dark_shingle_roof_slabslice>Mae Haen Slab To Teils Gorgyffwrdd Tywyll yn creu llinellau to tywyll ac ymarferol ar gyfer gweithdai a siediau diwydiannol.<br>
+<br>
+Defnydd: Cyfunwch y rhannau i greu proffiliau to credadwy.<br>
+<np>
+Pridd Graean Dwys
+Gorchudd tir safle gwaith
+<&dense_grit_dirt_block>Mae'r bloc hwn yn rhoi arwyneb cywasgedig a sathredig i fannau gwaith awyr agored.<br>
+<br>
+Defnydd: Gosodwch ef o amgylch drysau llwytho, tanciau awyr agored ac iardiau peiriannau.<br>
+<np>
+Tywod Graean Dwys
+Gorchudd tir safle gwaith
+<&dense_grit_sand_block>Mae'r bloc hwn yn rhoi arwyneb cywasgedig a sathredig i fannau gwaith awyr agored.<br>
+<br>
+Defnydd: Gosodwch ef o amgylch drysau llwytho, tanciau awyr agored ac iardiau peiriannau.<br>
+<np>
+Hen Blanciau Pren
+Hen bren gweithdy
+<&old_industrial_wood_planks>Mae'r Hen Blanciau Pren Diwydiannol yn ychwanegu hen bren gweithdy ar gyfer lloriau, camau, drysau ac ymylon addurnol cynnes dan do.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer hen loriau gweithdy, grisiau, drysau ac ymylon addurnol.<br>
+<np>
+Hen Slab Pren Diwydiannol
+Hen bren gweithdy
+<&old_industrial_wood_slab>Mae'r bloc hwn yn ychwanegu hen bren gweithdy ar gyfer lloriau, camau, drysau ac ymylon addurnol cynnes dan do.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer hen loriau gweithdy, grisiau, drysau ac ymylon addurnol.<br>
+<np>
+Hen Risiau Pren
+Hen bren gweithdy
+<&old_industrial_wood_stairs>Mae'r Hen Risiau Pren Diwydiannol yn ychwanegu hen bren gweithdy ar gyfer lloriau, camau, drysau ac ymylon addurnol cynnes dan do.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer hen loriau gweithdy, grisiau, drysau ac ymylon addurnol.<br>
+<np>
+Haen Hen Slab Pren
+Hen bren gweithdy
+<&old_industrial_wood_slabslice>Mae Haen Hen Slab Pren Diwydiannol yn ychwanegu hen bren gweithdy ar gyfer lloriau, camau, drysau ac ymylon addurnol cynnes dan do.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer hen loriau gweithdy, grisiau, drysau ac ymylon addurnol.<br>
+<np>
+Hen Ddrws Pren Diwydiannol
+Hen bren gweithdy
+<&old_industrial_wood_door>Mae'r bloc hwn yn ychwanegu hen bren gweithdy ar gyfer lloriau, camau, drysau ac ymylon addurnol cynnes dan do.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer hen loriau gweithdy, grisiau, drysau ac ymylon addurnol.<br>

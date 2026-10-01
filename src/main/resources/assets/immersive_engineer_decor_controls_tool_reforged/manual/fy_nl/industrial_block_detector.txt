@@ -1,0 +1,7 @@
+Blokdetektor
+Sinjaaldeteksje
+<&recipe>In blokdetektor kontrolearret oft de romte foar him beset is.<br>
+<br>
+Gebrûk: Rjochtsje him op de masinekant, buffer of bewekke romte dy'tst folgje wolst.<br>
+<br>
+Opmerking: Jout enerzjy as it blok foar him gjin loft is.

@@ -1,0 +1,5 @@
+Lijevak za tekućine
+Oprema vodova tekućine
+<&recipe>Mali lijevak za tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: postavi ga ispod mjesta skupljanja tekućine i usmjeri spremljeni sadržaj u spremnike ili niže cijevi.<br>

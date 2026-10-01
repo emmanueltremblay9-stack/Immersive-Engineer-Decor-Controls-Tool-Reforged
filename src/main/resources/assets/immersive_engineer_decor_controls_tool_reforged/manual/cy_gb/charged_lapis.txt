@@ -1,0 +1,7 @@
+Lapis wedi'i Wefru
+Profiad wedi'i storio
+<&recipe>Mae Lapis wedi'i Wefru yn storio un lefel profiad a grëwyd drwy'r Wasg Meddwl.<br>
+<br>
+Defnydd: Defnyddiwch ef i adfer un lefel, tynnu effeithiau gweithredol ac adennill ychydig o iechyd.<br>
+<br>
+Mae'r teclyn rysáit yn dangos y Wasg Meddwl oherwydd cynhyrchir Lapis wedi'i Wefru drwy ddefnyddio'r offeryn hwnnw pan fo lapis a phrofiad ar gael.

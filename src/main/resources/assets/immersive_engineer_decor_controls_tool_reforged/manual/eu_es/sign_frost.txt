@@ -1,0 +1,5 @@
+«Izozte-oharra» seinalea
+Arrisku-markatzailea
+<&recipe>«Izozte-oharra» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>

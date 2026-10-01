@@ -1,0 +1,5 @@
+Porta industrial de madeira antiga
+Madeira envelhecida de oficina
+<&recipe>Este bloco acrescenta madeira envelhecida de oficina para pisos, degraus, portas e acabamentos internos aconchegantes.<br>
+<br>
+Uso: Use em pisos, escadas, portas e acabamentos de oficinas antigas.<br>

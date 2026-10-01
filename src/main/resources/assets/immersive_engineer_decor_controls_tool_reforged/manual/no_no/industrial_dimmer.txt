@@ -1,0 +1,7 @@
+Dimmer
+Variabelt signal
+<&recipe>En dreiebryter stiller redstonestyrken fra en kompakt panelflate.<br>
+<br>
+Bruk: høyreklikk for å øke utgangen trinnvis. Etter full styrke går den tilbake til null.<br>
+<br>
+Merknad: gir signalstyrke fra 0 til 15.

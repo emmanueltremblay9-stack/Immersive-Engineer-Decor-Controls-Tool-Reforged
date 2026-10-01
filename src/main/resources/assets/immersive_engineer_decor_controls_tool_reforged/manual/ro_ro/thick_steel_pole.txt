@@ -1,0 +1,5 @@
+Stâlp gros de oțel
+Piesă pentru structuri de susținere
+<&recipe>Stâlpul drept gros de oțel oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>

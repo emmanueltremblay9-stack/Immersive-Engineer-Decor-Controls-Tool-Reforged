@@ -1,0 +1,5 @@
+Rūpnīcas piltuve
+Darbnīcas palīgierīce
+<&recipe>Šis bloks pārvieto priekšmetu kaudzītes caur kompaktāku rūpniecisku korpusu.<br>
+<br>
+Lietošana: pavērs to pret krātuvju līniju, tad saskarnē iestati attālumu, kaudzīšu skaitu, laika intervālus un Redstone režīmu.<br>

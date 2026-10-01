@@ -1,0 +1,5 @@
+Congélateur à eau
+Unité de traitement compacte
+<&recipe>Le congélateur à eau réalise des travaux de refroidissement compacts dans les installations de fluides alimentées en énergie.<br>
+<br>
+Utilisation : fournissez de l'eau et de l'énergie pour produire progressivement de la glace.<br>

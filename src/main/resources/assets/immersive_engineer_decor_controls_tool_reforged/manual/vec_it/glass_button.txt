@@ -1,0 +1,7 @@
+Boton de vero
+Controło co redstone
+<&recipe>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.

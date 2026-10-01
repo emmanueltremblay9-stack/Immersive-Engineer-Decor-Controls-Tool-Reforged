@@ -1,0 +1,7 @@
+Urpekaritza-aire kapsula
+Larrialdiko aire-erreserba
+<&recipe>Urpeko lanerako larrialdiko airea.<br>
+<br>
+Erabilera: Berreskuratu airea eskuz. Inbentarioan automatikoki aktibatzen da airea ia amaitzean eta gero hozten da.<br>
+<br>
+Eraman urez betetako meategietara, urpeko hodietara eta ponpa-geletara.

@@ -1,0 +1,5 @@
+Caissa etiquetada
+Etiqueta de resèrva modificabla
+<&recipe>Aquesta caissa etiquetada es concebuda per un triatge clar dins lo magazin. Sa placa de davant se pòt modificar coma una pichona pancarta d’obrador.<br>
+<br>
+Utilizacion : fai un clic drech sus la placa per modificar l’etiqueta de la caissa. Fai un clic drech sus la rèsta de la caissa per dobrir lo depaus d’equipaments, de pèças e de provesiments d’entreten.<br>

@@ -1,0 +1,5 @@
+Utlačeny pěsok s kamenčikami
+Pokrytije rabotnoj zemje
+<&recipe>Sej blok davaje vněšnjim rabotnym oblastjam utlačenu, utoptanu povrhnost.<br>
+<br>
+Upotrěbjenje: Polagaj go okolo nakladnyh dverij, vněšnjih rezervuarov i mašinnyh dvorov.<br>

@@ -1,0 +1,5 @@
+Shkallare tullash klinkeri
+Muraturë e nxirë nga bloza
+<&recipe>Ky bllok sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>

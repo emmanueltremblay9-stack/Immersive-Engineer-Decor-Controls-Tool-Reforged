@@ -1,0 +1,7 @@
+Pendeteksi Entitas
+Pengindraan sinyal
+<&recipe>Pendeteksi entitas mengamati gerakan di dekatnya tanpa pelat lantai yang terlihat.<br>
+<br>
+Penggunaan: hubungkan ke pintu, lampu, alarm, atau pengunci keselamatan mesin.<br>
+<br>
+Catatan: memindai area kecil di sekitar blok.

@@ -1,0 +1,5 @@
+Martell għat-tgħaffiġ tal-minerali
+Għodda għat-tgħaffiġ bl-idejn
+<&recipe>Il-martell li jfarrak il-mineral huwa għodda tal-idejn għall-ipproċessar bikri tal-ħadid u d-deheb.<br>
+<br>
+Użah ma ħadid jew deheb nej, mineral tal-ħadid jew tad-deheb u l-varjanti deepslate għal trab Immersive Engineering. Jitlef id-durabilità, jerġa fil-gradilja sakemm jinkiser, jintlibes fit-tħaffir u jwarrab il-miri.

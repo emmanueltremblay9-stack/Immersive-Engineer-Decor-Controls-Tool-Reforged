@@ -1,0 +1,5 @@
+Clot Breaker
+Workshop-floor helper
+<&recipe>The Small Clot Breaker is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Point the working side toward the clot to be taken away.<br>

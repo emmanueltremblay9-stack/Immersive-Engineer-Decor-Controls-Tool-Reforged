@@ -1,0 +1,3 @@
+İri Altın Kırıntısı
+Yeniden oluşturulmuş üretim tariflerinde kullanılan mühendis aleti malzemesi.
+<&recipe>Eritilerek altın külçesi yapılabilir,<br>ancak ileri malzeme işleme<br>için uygun değildir.

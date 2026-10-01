@@ -1,0 +1,5 @@
+Unudireciona valvo por fluidotubo
+Fluidotuba aparataro
+<&recipe>La Unudireciona valvo por fluidotubo esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Alinez la valvo kun la dezirata fluodireciono.<br>

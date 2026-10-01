@@ -1,0 +1,7 @@
+Verda LED
+Signalindiko
+<&recipe>Kompakta indikilo transformas celita redstonea signali a videbla fabrikindiki.<br>
+<br>
+Uzo: Konektez ol apud la signalo por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: Chanjas stato kande apuda redstonea energio existas.

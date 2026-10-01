@@ -1,0 +1,5 @@
+Gradus vetus industrialis ligneus
+Lignum officinae vetustum
+<&recipe>Hic cubus lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addit.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>

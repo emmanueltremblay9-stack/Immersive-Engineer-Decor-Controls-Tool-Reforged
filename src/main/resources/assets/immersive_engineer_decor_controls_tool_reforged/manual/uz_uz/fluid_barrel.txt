@@ -1,0 +1,5 @@
+Suyuqlik bochkasi
+Suyuqlik liniyasi jihozi
+<&recipe>Bu jihoz kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: quvurlar yoki chelaklar bak yuzasiga yeta oladigan joyga qo'ying.<br>

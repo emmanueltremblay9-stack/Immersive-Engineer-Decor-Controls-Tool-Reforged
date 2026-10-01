@@ -1,0 +1,5 @@
+Flüssigkeitsfassl
+Bauteil fia Flüssigkeitsleitungen
+<&recipe>Des Bauteil is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Setz's dorthin, wo Rohre oder Oama an d'Tankseit hinkemma.<br>

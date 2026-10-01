@@ -1,0 +1,3 @@
+Graean Haearn Garw
+Deunydd offer peiriannydd a ddefnyddir gan y set grefftio a ail-grewyd.
+<&recipe>Gellir ei fwyndoddi yn fariau<br>haearn, ond nid yw'n addas ar<br>gyfer prosesu deunyddiau datblygedig.

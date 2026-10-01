@@ -1,0 +1,5 @@
+Càpsula d’aire de busseig
+Reserva d’aire d’emergència
+<&recipe>La càpsula daire és una reserva demergència per a treball submarí.<br>
+<br>
+Useu-la manualment per recuperar aire. A linventari també sactiva quan laire quasi sacaba i després es refreda. Porteu-la a mines inundades i tubs submergits.

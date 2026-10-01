@@ -1,0 +1,5 @@
+Imbuto per fluidi
+Componenti per linee di fluidi
+<&recipe>Il piccolo imbuto raccoglifluidi è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: posalo sotto il punto di raccolta del fluido e convoglia il contenuto in serbatoi o tubature sottostanti.<br>

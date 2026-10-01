@@ -1,0 +1,7 @@
+Sensor de pluja
+Detecció de senyals
+<&recipe>Un sensor meteorològic converteix la pluja que cau al lloc on es troba en redstone.<br>
+<br>
+Ús: munta’l on el bloc de sobre pugui rebre pluja.<br>
+<br>
+Notes: comprova si plou damunt del sensor.

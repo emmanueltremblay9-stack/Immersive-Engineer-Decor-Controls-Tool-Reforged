@@ -1,0 +1,5 @@
+Podajnik fabryczny
+Urządzenie warsztatowe
+<&recipe>Ten blok wyrzuca zgromadzone przedmioty z ukierunkowanej strony.<br>
+<br>
+Użycie: Skieruj przód ku miejscu wyrzutu, napełnij wewnętrzne pola i w oknie urządzenia ustaw siłę, kąt, opóźnienie, logikę filtrów oraz tryb redstone.<br>

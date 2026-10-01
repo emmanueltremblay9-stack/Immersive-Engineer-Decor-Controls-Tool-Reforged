@@ -1,0 +1,789 @@
+Redstone-Steuerungen
+Messonzeign und Signalbauteile
+Steuerungstechnik macht versteckts Redstone ois lesbore Fabriktafeln, Sensoren, Onzeign, Schoita, Alarme und verknüpfte Signalbauteile nutzbor.<br>
+<br>
+Nimm de Seiten beim Bauen von Bedienplätzen, Signaltafeln, Sicherheitsschaltungen und Fernsteuerungen.
+<np>
+Zülscheibn
+Kurzer Impuls
+<&arrow_target>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Tirsensor
+Redstone-Steuerung
+<&door_sensor_switch>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Liftknopf
+Redstone-Steuerung
+<&elevator_button>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Glosknopf
+Redstone-Steuerung
+<&glass_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Glosknopf
+Redstone-Steuerung
+<&glass_small_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Glos-Berührungsknopf
+Redstone-Steuerung
+<&glass_touch_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Maschinenknopf
+Redstone-Steuerung
+<&industrial_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Knopf
+Redstone-Steuerung
+<&industrial_double_pole_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Eingzäunter Maschinenknopf
+Redstone-Steuerung
+<&industrial_fenced_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Klopfknopf
+Redstone-Steuerung
+<&industrial_knock_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Nostalgischer Zierknopf
+Redstone-Steuerung
+<&oldfancy_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Nostalgischer Zierknopf
+Redstone-Steuerung
+<&oldfancy_small_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Nostalgischer Zugkettnknopf
+Kurzer Impuls
+<&oldfancy_spring_reset_chain>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Rustikaler Knopf
+Redstone-Steuerung
+<&rustic_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Rustikaler Noglknopf
+Redstone-Steuerung
+<&rustic_nail_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Kloana rustikaler Knopf
+Redstone-Steuerung
+<&rustic_small_button>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Rustikaler Zugkettnknopf
+Kurzer Impuls
+<&rustic_spring_reset_chain>A Taster gibt an klaren Redstone-Impuls mit voller Stärke.<br>
+<br>
+Verwendung: Nimm eam für Maschinenstarts, Tirfreigaben, Alarme oda einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt si nach da eingstöllten Impulsdauer zruck.
+<np>
+Gloskontaktplottn
+Druckimpuls
+<&glass_contact_mat>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Glos-Tirkontakt
+Druckimpuls
+<&glass_door_contact_mat>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Kontaktmattn
+Druckimpuls
+<&industrial_contact_mat>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Tirkontaktmattn
+Druckimpuls
+<&industrial_door_contact_mat>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Durchfoidetektor
+Signalerfassung
+<&industrial_fallthrough_detector>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Fuaßknopf
+Redstone-Steuerung
+<&industrial_foot_button>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Industrielle Erschütterungstir
+Druckimpuls
+<&industrial_high_sensitive_trapdoor>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Erschütterungskontaktmattn
+Druckimpuls
+<&industrial_shock_sensitive_contact_mat>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Erschütterungsfoitir
+Druckimpuls
+<&industrial_shock_sensitive_trapdoor>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Rote Strombluman
+Druckimpuls
+<&red_power_plant>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Rustikale Druckplottn
+Druckimpuls
+<&rustic_contact_plate>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Rustikale Tirdruckplottn
+Druckimpuls
+<&rustic_door_contact_plate>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Rustikaler Foildetektor
+Signalerfassung
+<&rustic_fallthrough_detector>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Rustikale Erschütterungstir
+Druckimpuls
+<&rustic_high_sensitive_trapdoor>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Rustikale Erschütterungsplottn
+Druckimpuls
+<&rustic_shock_sensitive_plate>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Rustikale Erschütterungstir
+Druckimpuls
+<&rustic_shock_sensitive_trapdoor>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Gelbe Strombluman
+Druckimpuls
+<&yellow_power_plant>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.
+<np>
+Glos-Zeitschaltuhr
+Tagesliachtsignal
+<&glass_day_timer>A Zeitschoita folgt dem Tagesabschnitt vom Wödzyklus.<br>
+<br>
+Verwendung: Nimm eam für Hofliachta, Rolläden und Fabriksteuerungen, de nur am Tag laufen solln.<br>
+<br>
+Hinweis: Braucht a Dimension mit Himmelsliacht.
+<np>
+Glos-Entitätsdetektor
+Signalerfassung
+<&glass_entity_detector>A Entitätsdetektor beobachtet Bewegung in da Nähe, ohne a sichtbore Bodnplottn zu brauchn.<br>
+<br>
+Verwendung: Schließ Tirn, Liachta, Alarme oda Maschinenverriegelungen on.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich rund um den Block ob.
+<np>
+Glos-Intervallsignalgeber
+Zeitgsteuerter Impuls
+<&glass_interval_timer>A kompakter Zeitschoita liefert an zeitlich geplanten Redstone-Impuls.<br>
+<br>
+Verwendung: Nimm eam, wenn a kloana Mechanismus regelmäßig oda verzögert gsteuert werden soll.<br>
+<br>
+Hinweis: Nutzt zeitlich geplante Redstone-Impulse.
+<np>
+Glos-Liachtschronkn
+Signalerfassung
+<&glass_linear_entity_detector>A Entitätsdetektor beobachtet Bewegung in da Nähe, ohne a sichtbore Bodnplottn zu brauchn.<br>
+<br>
+Verwendung: Schließ Tirn, Liachta, Alarme oda Maschinenverriegelungen on.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich rund um den Block ob.
+<np>
+Blockdetektor
+Signalerfassung
+<&industrial_block_detector>A Blockdetektor prüft, ob vor seiner Stirnseitn a Block steht.<br>
+<br>
+Verwendung: Richt eam auf de Maschinenseitn, den Puffer oda den gschützten Raum, denst überwachen willst.<br>
+<br>
+Hinweis: Gibt Strom, wenn da Block davor ka Luft is.
+<np>
+Zeitschaltuhr
+Tagesliachtsignal
+<&industrial_day_timer>A Zeitschoita folgt dem Tagesabschnitt vom Wödzyklus.<br>
+<br>
+Verwendung: Nimm eam für Hofliachta, Rolläden und Fabriksteuerungen, de nur am Tag laufen solln.<br>
+<br>
+Hinweis: Braucht a Dimension mit Himmelsliacht.
+<np>
+Entitätsdetektor
+Signalerfassung
+<&industrial_entity_detector>A Entitätsdetektor beobachtet Bewegung in da Nähe, ohne a sichtbore Bodnplottn zu brauchn.<br>
+<br>
+Verwendung: Schließ Tirn, Liachta, Alarme oda Maschinenverriegelungen on.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich rund um den Block ob.
+<np>
+Intervalltimer
+Zeitgsteuerter Impuls
+<&industrial_interval_timer>A kompakter Zeitschoita liefert an zeitlich geplanten Redstone-Impuls.<br>
+<br>
+Verwendung: Nimm eam, wenn a kloana Mechanismus regelmäßig oda verzögert gsteuert werden soll.<br>
+<br>
+Hinweis: Nutzt zeitlich geplante Redstone-Impulse.
+<np>
+Liachtsensor
+Signalerfassung
+<&industrial_light_sensor>A Liachtsensor macht aus da Helligkeit vor Ort a Redstone-Steuerung.<br>
+<br>
+Verwendung: Nimm eam für automatische Liachta, Rolläden und helligkeitsabhängige Schaltungen.<br>
+<br>
+Hinweis: Gibt ab ana rohen Helligkeit von 8 a Signal aus.
+<np>
+Gewitterdetektor
+Signalerfassung
+<&industrial_lightning_sensor>A Gewittersensor löst Wornungen während am Gewitter aus.<br>
+<br>
+Verwendung: Setz eam untern freien Himmel und verbinde eam mit Liachtern oda Alarmen.<br>
+<br>
+Hinweis: Braucht Gewitter und freien Himmelszugang.
+<np>
+Lineare Entitätserkennung
+Signalerfassung
+<&industrial_linear_entity_detector>A Entitätsdetektor beobachtet Bewegung in da Nähe, ohne a sichtbore Bodnplottn zu brauchn.<br>
+<br>
+Verwendung: Schließ Tirn, Liachta, Alarme oda Maschinenverriegelungen on.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich rund um den Block ob.
+<np>
+Regnsensor
+Signalerfassung
+<&industrial_rain_sensor>A Wettersensor macht ausm Regn an seinem Standort a Redstone-Signal.<br>
+<br>
+Verwendung: Montier eam so, dass Regn den Block drüber erreichen kann.<br>
+<br>
+Hinweis: Prüft, ob's überm Sensor regnt.
+<np>
+Bistabiler Glosschoita
+Redstone-Steuerung
+<&glass_rotary_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Bistabiler Glos-Berührungsschoita
+Redstone-Steuerung
+<&glass_touch_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Oranges signalempfindlichs Glos
+Signalglos
+<&orange_sensitiveglass>A Redstone-empfindlicher Glosblock hält de Sicht frei und zeigt dabei den Signalzustand.<br>
+<br>
+Verwendung: Nimm eam für Kontrollraumfensta, beleuchtete Tafeln und gschützte Fabrikverglasungen.<br>
+<br>
+Hinweis: Redstone in da Nähe ändert den Zustand.
+<np>
+Leichtends signalempfindlichs Glos
+Signalglos
+<&sensitive_glass_block>A Redstone-empfindlicher Glosblock hält de Sicht frei und zeigt dabei den Signalzustand.<br>
+<br>
+Verwendung: Nimm eam für Kontrollraumfensta, beleuchtete Tafeln und gschützte Fabrikverglasungen.<br>
+<br>
+Hinweis: Redstone in da Nähe ändert den Zustand.
+<np>
+Farbigs signalempfindlichs Glos
+Signalglos
+<&stained_sensitiveglass>A Redstone-empfindlicher Glosblock hält de Sicht frei und zeigt dabei den Signalzustand.<br>
+<br>
+Verwendung: Nimm eam für Kontrollraumfensta, beleuchtete Tafeln und gschützte Fabrikverglasungen.<br>
+<br>
+Hinweis: Redstone in da Nähe ändert den Zustand.
+<np>
+Glos-Balknonzeig
+Signalmessgerät
+<&glass_vertical_bar_gauge>A kompakts Messgerät fürn Kontrollraum zeigt de Redstone-Stärke guat lesbor auf ana Tafl.<br>
+<br>
+Verwendung: Montier's, wo du de Redstone-Stärke nebenan auf an Blick prüfen willst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärke in da Nähe von 0 bis 15.
+<np>
+Analoge Messonzeig
+Signalmessgerät
+<&industrial_analog_angular_gauge>A kompakts Messgerät fürn Kontrollraum zeigt de Redstone-Stärke guat lesbor auf ana Tafl.<br>
+<br>
+Verwendung: Montier's, wo du de Redstone-Stärke nebenan auf an Blick prüfen willst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärke in da Nähe von 0 bis 15.
+<np>
+Voltmeteronzeig
+Signalmessgerät
+<&industrial_analog_horizontal_gauge>A kompakts Messgerät fürn Kontrollraum zeigt de Redstone-Stärke guat lesbor auf ana Tafl.<br>
+<br>
+Verwendung: Montier's, wo du de Redstone-Stärke nebenan auf an Blick prüfen willst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärke in da Nähe von 0 bis 15.
+<np>
+Digitalonzeig
+Guat lesbore Signalstärke
+<&industrial_small_digital_gauge>A kompakts Messgerät fürn Kontrollraum zeigt de Redstone-Stärke guat lesbor auf ana Tafl.<br>
+<br>
+Verwendung: Montier's, wo du de Redstone-Stärke nebenan auf an Blick prüfen willst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärke in da Nähe von 0 bis 15.
+<np>
+Glosrohronzeig
+Signalmessgerät
+<&industrial_tube_gauge>A kompakts Messgerät fürn Kontrollraum zeigt de Redstone-Stärke guat lesbor auf ana Tafl.<br>
+<br>
+Verwendung: Montier's, wo du de Redstone-Stärke nebenan auf an Blick prüfen willst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärke in da Nähe von 0 bis 15.
+<np>
+Analoge Balknonzeig
+Signalmessgerät
+<&industrial_vertical_bar_gauge>A kompakts Messgerät fürn Kontrollraum zeigt de Redstone-Stärke guat lesbor auf ana Tafl.<br>
+<br>
+Verwendung: Montier's, wo du de Redstone-Stärke nebenan auf an Blick prüfen willst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärke in da Nähe von 0 bis 15.
+<np>
+Alarmlompn
+Signalrückmeldung
+<&industrial_alarm_lamp>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Alarmsirene
+Signalanzeige
+<&industrial_alarm_siren>Die Alarmsirene ist eine an einer Blockfläche montierte Redstone-Anzeige. Ihr Stromzustand folgt dem Signal des Blocks, an dem sie befestigt ist.<br>
+<br>
+Benutzung: An einer festen Fläche anbringen und mit Strom versorgen, um Türen, Maschinen, Alarme oder Bedienfelder zu überwachen.<br>
+<br>
+Hinweis: Solange das anliegende Signal aktiv ist, aktualisiert sich die Sirene einmal pro Sekunde.
+<np>
+Blink-LED
+Signalrückmeldung
+<&industrial_blinking_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Grüne Blink-LED
+Signalrückmeldung
+<&industrial_green_blinking_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Grüne LED
+Signalrückmeldung
+<&industrial_green_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Rote LED
+Signalrückmeldung
+<&industrial_red_blinking_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Rote LED
+Signalrückmeldung
+<&industrial_red_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Weiße Blink-LED
+Signalrückmeldung
+<&industrial_white_blinking_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Weiße LED
+Signalrückmeldung
+<&industrial_white_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Gelbe Blink-LED
+Signalrückmeldung
+<&industrial_yellow_blinking_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Gelbe LED
+Signalrückmeldung
+<&industrial_yellow_led>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Rustikale Signalfahn
+Signalrückmeldung
+<&rustic_semaphore>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.
+<np>
+Komparatorschoita
+Signal am Befestigungsblock
+<&industrial_comparator_switch>A kompakter Sensorschoita liest seinen Befestigungsblock und macht draus an einfachen Tafelausgang.<br>
+<br>
+Verwendung: Montier eam an Inventarn, Tanks oda Redstone-Bauteiln. Meldet da Befestigungsblock an Komparator-, Behälter- oda Redstone-Ausgang, gibt da Schoita volle Redstone-Stärke aus.<br>
+<br>
+Hinweis: Macht aus Lagerfüllständen oda versteckten Leitungen klare Ein-/Aus-Steuerleitungen.
+<np>
+Dimmer
+Veränderlichs Signal
+<&industrial_dimmer>A Drehregler stöllt de Redstone-Stärke auf ana kloanen Tafelfläche ein.<br>
+<br>
+Verwendung: Rechtsklick erhöht den Ausgang Schritt für Schritt; nach voller Stärke geht's wieder bei null los.<br>
+<br>
+Hinweis: Gibt a Stärke von 0 bis 15 aus.
+<np>
+Notausknopf
+Redstone-Steuerung
+<&industrial_estop_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Trichtasperrschoita
+Redstone-Steuerung
+<&industrial_hopper_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Klopfschoita
+Redstone-Steuerung
+<&industrial_knock_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Hebl
+Redstone-Steuerung
+<&industrial_lever>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Zwa-Knopf-Maschinenschoita
+Redstone-Steuerung
+<&industrial_machine_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Zuggriff
+Redstone-Steuerung
+<&industrial_pull_handle>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Drehhebl
+Redstone-Steuerung
+<&industrial_rotary_lever>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Maschinendrehschoita
+Redstone-Steuerung
+<&industrial_rotary_machine_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Kontakthebl
+Redstone-Steuerung
+<&industrial_small_lever>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Schoita
+Redstone-Steuerung
+<&industrialswitch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Liachtschoita
+Redstone-Steuerung
+<&light_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Hondradschoita
+Redstone-Steuerung
+<&valve_wheel_switch>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Impulsempfänger im Ghäus
+Verknüpfte Steuerung
+<&industrial_switchlink_cased_pulse_receiver>A verknüpfter Impulsempfänger im Ghäus gibt entfernten Tafeln an kurzen Redstone-Auslöser.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Rechtsklick oda Betätigung von da Perle löst an kurzen Impuls aus.<br>
+<br>
+Hinweis: Da Impuls endet nach seiner festgelegten Dauer von söba.
+<np>
+Verknüpfungsempfänger im Ghäus
+Verknüpfte Steuerung
+<&industrial_switchlink_cased_receiver>A verknüpfter Empfänger im Ghäus is a robusts Redstone-Ziel für entfernte Tafeln.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Mit am direkten Rechtsklick kannst den Empfänger von Hond umschaltn.<br>
+<br>
+Hinweis: Benutz de Link-Perle beim Schleichn, damit da Empfänger umschaltet.
+<np>
+Verknüpfter Impulsempfänger
+Verknüpfte Steuerung
+<&industrial_switchlink_pulse_receiver>A verknüpfter Impulsempfänger gibt entfernten Tafeln an kurzen Redstone-Auslöser.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Rechtsklick oda Betätigung von da Perle löst an kurzen Impuls aus.<br>
+<br>
+Hinweis: Da Impuls endet nach seiner festgelegten Dauer von söba.
+<np>
+Verknüpfts Impulsrelais
+Verknüpfte Steuerung
+<&industrial_switchlink_pulse_relay>A Teil im Relaisstil gibt Schalttafeln an kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Rechtsklick schaltet den Ausgang mit voller Stärke für nahe Schaltungen um. Nimm Empfängerblöcke, wennst mit ana Link-Perle auslösen willst.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Empfänger für Schalterverknüpfungen
+Verknüpfte Steuerung
+<&industrial_switchlink_receiver>A verknüpfter Empfänger bietet entfernten Tafeln a Redstone-Ziel mit voller Stärke.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Mit am direkten Rechtsklick kannst den Empfänger von Hond umschaltn.<br>
+<br>
+Hinweis: Benutz de Link-Perle beim Schleichn, damit da Empfänger umschaltet.
+<np>
+Analoger Verknüpfungsempfänger
+Verknüpfte Steuerung
+<&industrial_switchlink_receiver_analog>A verknüpfter Empfänger gibt Steuerungstafeln a sichtbors Fernziel.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Benutz de Perle beim Schleichn, um den Empfänger aus da Ferne zu aktivieren.<br>
+<br>
+Hinweis: Der Empfänger gibt bei Auslösung volle Redstone-Stärke aus.
+<np>
+Relais für Schalterverknüpfungen
+Verknüpfte Steuerung
+<&industrial_switchlink_relay>A Teil im Relaisstil gibt Schalttafeln an kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Rechtsklick schaltet den Ausgang mit voller Stärke für nahe Schaltungen um. Nimm Empfängerblöcke, wennst mit ana Link-Perle auslösen willst.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Analoges Verknüpfungsrelais
+Verknüpfte Steuerung
+<&industrial_switchlink_relay_analog>A Teil im Relaisstil gibt Schalttafeln an kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Rechtsklick schaltet den Ausgang mit voller Stärke für nahe Schaltungen um. Nimm Empfängerblöcke, wennst mit ana Link-Perle auslösen willst.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Link-Perle
+Verknüpfte Steuerung
+<&switchlink_pearl>A Link-Perle speichert an Empfänger ois Ziel für de Fernsteuerung von da Fabrik.<br>
+<br>
+Verwendung: Klick an Verknüpfungsempfänger mit ana Enderperle an. Benutz de entstandene Link-Perle beim Schleichn, um den gspeicherten Empfänger zu aktivieren.<br>
+<br>
+Hinweis: Des Ziel muass glodn sein, in da gleichen Dimension liegen und in Reichweite sein.
+<np>
+Nostalgischer Zierhebl
+Redstone-Steuerung
+<&oldfancy_bistableswitch1>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Nostalgischer Zierdrehhebl
+Redstone-Steuerung
+<&oldfancy_bistableswitch2>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Rustikaler Drehhebl
+Redstone-Steuerung
+<&rustic_angular_lever>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Rustikaler Hebl
+Redstone-Steuerung
+<&rustic_lever>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Rustikaler Noglhebl
+Redstone-Steuerung
+<&rustic_nail_lever>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.
+<np>
+Rustikaler Dopplgelenkhebl
+Redstone-Steuerung
+<&rustic_two_hinge_lever>A kompakts Bedienteil gibt da Fabrik an guat erkennbaren Redstone-Schaltpunkt.<br>
+<br>
+Verwendung: Mit Rechtsklick schaltest den Ausgang mit voller Stärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.

@@ -1,0 +1,99 @@
+Verkfrøðingaamboð
+Flytbar verkstaðarútgerð
+Engineer's Tools savnið leggur handamboð, námamerkjarar, neyðtilfar, mat til útiveru og smá hjálpartól til tilfarsviðgerð afturat somu handbók, sum lýsir prýðis- og stýrikubbarnar.<br>
+<br>
+Amboðini eru ætlað til arbeiði langt frá einum væl útgjørdum verkstaði: merk leiðina, ber útgerð, kom fyri teg aftur eftir mistøk og ger smáar viðgerðir lidnar á staðnum.
+<np>
+REDIA-amboð
+Fjølvirkni við diamantlagi
+<&redia_tool>REDIA-amboðið er eitt haldgott hjálparamboð til skjótt jarðararbeiði á staðnum. Brúka tað á jørð, sum kann veltast, fyri at gera landbúnaðarjørð.<br>
+<br>
+Brúka tað móti einari fastari síðu, meðan tú hevur kyndlar við tær, fyri at seta eina kyndilmerking úr skjáttuni uttan at slíta REDIA. Jarðararbeiði, klipping, øksararbeiði og træfelling brúka haldføri.
+<np>
+Málmknúsingarhamari
+Handamboð til knúsing
+<&crushing_hammer>Málmknúsingarhamarin er eitt handamboð til fyrstu viðgerð av jarni og gulli.<br>
+<br>
+Nýtsla: Smíða hann saman við rájárni, rágulli, jarnmámi, djúpskíferjarnmámi, gullmámi ella djúpskífergullmámi fyri at gera jarn- ella gullpulvur frá Immersive Engineering. Hamarin missir haldføri og kemur aftur í smíðirútin, til hann brotnar.<br>
+<br>
+Hann slítist eisini av námaarbeiði og kann sláa mál afturút í nærbardaga.
+<np>
+Sporari
+Goymd staðmerking
+<&tracker>Sporarin goymir støðuna hjá einum kubba beinleiðis í lutinum.<br>
+<br>
+Nýtsla: Klikk á ein kubba fyri at goyma dimensión og koordinatir. Frágreiðingin vísir goymda staðið. Brúka sporaran meðan tú krýpur fyri at strika málið.<br>
+<br>
+Brúka hann til at merkja maskinur, tunnilsgreinar, fjarstýringar ella ólidin byggipláss, áðrenn tú kemur aftur við amboðum og tilfari.
+<np>
+Ariadne-kol
+Leiðmerking til námur
+<&ariadne_coal>Ariadne-kol setur skjótar svartar leiðpílar á fastar síður í námuni. Brúka tað á eina fasta síðu fyri at merkja næsta sving, útgongd ella vegamót; merkingin stuðlar átta leiðum á kliktu síðuni, eisini skákleiðum.<br>
+<br>
+Ariadne-kol er eitt endurnýtanligt merkjamboð við 100 nýtslum. Hvør væleydnað merking kostar eitt haldførisstig. Tað vrakar síður, sum ikki verða stuðlaðar, í staðin fyri at slíta lutin.
+<np>
+Sjálvvirkandi stimulanspakki
+Neyðinnsprænari
+<&stimpack>Auto Stim Pack er eitt neyðheilsubótaramboð til vandamikið viðlíkahald.<br>
+<br>
+Nýtsla: Brúka tað við hond fyri at lekja, fáa stutta verju og eitt stutt ferðaskump. Í goymsluni kann tað eisini virkjast sjálvvirkandi við lágari heilsu og fer síðani í bíðitíð.<br>
+<br>
+Hav ein tøkan, áðrenn tú roynir høg støð, berar leidningar ella námaleiðir við fíggindum.
+<np>
+Soviposi
+Flytbar hvíluútgerð
+<&sleeping_bag>Soviposin er ein veðurtrygg hvíldarútgerð til arbeiði langt frá song.<br>
+<br>
+Nýtsla: Brúka hann um náttina í Overworld fyri at hvíla til morguns. Hann setur ella flytur ikki endurføðingarstaðið.<br>
+<br>
+Posin noktar dagsljós, vandamikil øki við nærverandi skrímslum og dimensiónir, sum ikki egna seg til trygga hvíld. Hvør væleydnað hvíld slítur posan.
+<np>
+Tilfarsgoymslukassi
+Kassi til byggiútgerð
+<&material_box>Tilfarakassin ber nógv av einum sløttum, óbroyttum og stáplandi byggitilfari.<br>
+<br>
+Nýtsla: Halt kassan í høvuðshond og ein stápla av tilfari í hinari hondini fyri at leggja tað í. Brúka kassan við tómari hinari hond fyri at taka ein stápla út.<br>
+<br>
+Kassin rúmar upp í 512 lutum av einum slag. Hann noktar innlagdar kassar, útgerð ið ikki kann stáplast, og navn- ella dátubroyttar stáplar; innihaldið sæst í frágreiðingini.
+<np>
+Kavilufthylki
+Neyðluftgoymsla
+<&diving_capsule>Kavingarlufthylkið er ein neyðgoymsla av luft til arbeiði undir vatni.<br>
+<br>
+Nýtsla: Brúka tað við hond fyri at endurnýggja luftina. Tá tað er í goymsluni, kann tað eisini virkjast sjálvvirkandi, tá luftin næstan er uppi, og fer síðani í bíðitíð.<br>
+<br>
+Hav tað við til vatnfylltar námur, rørlagnir undir vatni og umvælingar í pumpurúmum.
+<np>
+Muslee-stangapressa
+Matpressa
+<&musli_bar_press>Muslee-stongapressan ger vanligan mat til kompaktar ferðaskamtir.<br>
+<br>
+Nýtsla: Hav breyð, eitt súrepli og hveiti-, melón-, graskar-, reyðrót- ella Industrial Hemp-fræ og brúka pressuna. Eitt væleydnað trýst brúkar eitt av hvørjum, kannar pláss, ger fýra Muslee Melange-stengur og slítur pressuna.<br>
+<br>
+Vantar eitt evni, ella er einki pláss í goymsluni, verður einki brúkt.
+<np>
+Muslee Melange orkustong
+Skjótur verkstaðarbiti
+<&musli_bar>Muslee Melange orkustongin er kompakt matur úr breyði, fræum og frukt.<br>
+<br>
+Nýtsla: Et hana sum mat á staðnum, meðan tú setur stýringar, rør, pallar ella langar útgerðarrøðir í maskinurúmum.
+<np>
+Sinnispressa
+Royndarsavnari
+<&charged_lapis_squeezer>Sinnispressan ger ein løddan asurstein úr einum asursteini og einum royndarstigi úr skjáttuni.<br>
+<br>
+Hvør væleydnað umgerð skaðar brúkaran, økir møðina, sum elvir til hungur, og ger hann blindan eina stutta løtu. Hon noktar at virka uttan asurstein ella XP, ella tá ið brúkarin er ov nær deyðanum.
+<np>
+Løddur asursteinur
+Goymdar royndir
+<&charged_lapis>Løddur asursteinur goymir eitt royndarstig. Brúka hann fyri at fáa stigið aftur, taka virknar ávirkanir burtur og fáa eitt sindur av lívi aftur.<br>
+<br>
+Evna fyrst eina sinnispressu; løddur asursteinur verður gjørdur við at brúka hetta amboðið, tá ið asursteinur og XP eru tøk.
+<np>
+Grovt jarngrús
+Tilfar til verkfrøðingaamboð, brúkt av endurgjørdu evningaruppskriftunum.
+<&iron_grit>Kann bræðast til<br>jarnstengur, men hóskar ikki<br>til framkomna tilfarsviðgerð.
+<np>
+Grovt gullgrús
+Tilfar til verkfrøðingaamboð, brúkt av endurgjørdu evningaruppskriftunum.
+<&gold_grit>Kann bræðast til<br>gullstengur, men hóskar ikki<br>til framkomna tilfarsviðgerð.

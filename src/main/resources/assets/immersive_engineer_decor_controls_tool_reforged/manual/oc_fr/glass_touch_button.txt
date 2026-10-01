@@ -1,0 +1,7 @@
+Boton tactil de veire
+Comanda per redstone
+<&recipe>Un interruptor momentàneu balha una impulsion neta de redstone a plena poténcia.<br>
+<br>
+Utilizacion : utiliza-lo per aviar las maquinas, liberar las pòrtas, lançar d’alarmas o comandar de circuits d’una sola accion.<br>
+<br>
+Nòta : torna a son estat inicial après l’impulsion programada.

@@ -1,0 +1,5 @@
+Pec na tavenie minerálov
+Kompaktná spracovacia jednotka
+<&recipe>Pec na tavenie minerálov spracúva minerály pri vysokej teplote a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Dodávaj minerálne bloky a energiu na vysokoteplotné tavenie.<br>

@@ -1,0 +1,5 @@
+Etiketli Sandık
+Düzenlenebilir stok etiketi
+<&recipe>Bu etiketli sandık, depodaki eşyaların kolayca sınıflandırılması için yapılmıştır. Ön plakası küçük bir atölye tabelası gibi düzenlenebilir.<br>
+<br>
+Kullanım: Sandık etiketini düzenlemek için etiket plakasına sağ tıklayın. Donanım, parçalar ve bakım malzemeleri deposunu açmak için sandığın geri kalanına sağ tıklayın.<br>

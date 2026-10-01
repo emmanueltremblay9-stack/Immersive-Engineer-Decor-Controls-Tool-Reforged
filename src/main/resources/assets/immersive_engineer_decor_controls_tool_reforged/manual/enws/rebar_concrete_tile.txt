@@ -1,0 +1,5 @@
+Tile of Steel-Bound Cement
+Strengthened Cement
+<&recipe>This block is a hardened cement fitting for engine pads, blast walls and loading-bay floors.<br>
+<br>
+Use: Set it beneath engines, along service passages or wherever thy building requires a strengthened base.<br>

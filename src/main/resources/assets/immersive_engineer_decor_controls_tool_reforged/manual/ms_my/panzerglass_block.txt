@@ -1,0 +1,5 @@
+Blok Kaca Berperisai
+Garis pandang terlindung
+<&recipe>Blok ini mengekalkan pandangan terbuka sambil sepadan dengan binaan kilang bertetulang.<br>
+<br>
+Penggunaan: Gunakan di tempat pemain perlu melihat mesin melalui penghadang terlindung.<br>

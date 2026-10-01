@@ -1,0 +1,7 @@
+Meja Pertukangan Logam
+Stesen kerja plat
+<&recipe>Meja kerja logam mempunyai slot tukul, grid penuh 3x3 dan slot keluaran.<br>
+<br>
+Gunakan grid seperti meja biasa. Untuk plat IE, letakkan Tukul Jurutera di slot alat, bahan di grid dan ambil plat dari keluaran.<br>
+<br>
+Hiasan keluli menggunakan plat keluli yang dibentuk di meja ini.

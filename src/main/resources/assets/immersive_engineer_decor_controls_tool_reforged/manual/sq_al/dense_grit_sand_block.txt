@@ -1,0 +1,5 @@
+Rërë e ngjeshur me zhavorr
+Mbulesë toke kantieri
+<&recipe>Ky bllok u jep zonave të jashtme të punës një sipërfaqe të ngjeshur e të shkelur.<br>
+<br>
+Përdorimi: shtroje rreth dyerve të ngarkimit, depozitave të jashtme dhe oborreve të makinerive.<br>

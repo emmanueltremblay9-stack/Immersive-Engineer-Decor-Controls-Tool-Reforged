@@ -1,0 +1,5 @@
+Suv muzlatgich
+Ixcham ishlov birligi
+<&recipe>Suv muzlatgich quvvatli suyuqlik tizimlari uchun ixcham sovitish ishlarini bajaradi.<br>
+<br>
+Ishlatish: bosqichma-bosqich muz ishlab chiqarish uchun suv va quvvat bering.<br>

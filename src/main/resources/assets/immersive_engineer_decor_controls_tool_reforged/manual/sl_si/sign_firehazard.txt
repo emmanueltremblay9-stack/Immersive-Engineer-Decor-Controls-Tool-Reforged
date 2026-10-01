@@ -1,0 +1,5 @@
+Znak »Nevarnost požara«
+Oznaka nevarnosti
+<&recipe>Znak »Nevarnost požara« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>

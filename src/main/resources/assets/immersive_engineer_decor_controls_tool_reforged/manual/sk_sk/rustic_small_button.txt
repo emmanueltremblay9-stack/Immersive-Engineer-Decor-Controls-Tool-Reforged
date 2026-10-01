@@ -1,0 +1,7 @@
+Malé rustikálne tlačidlo
+Redstonové riadenie
+<&recipe>Tlačidlový spínač poskytuje čistý redstonový impulz plnej sily.<br>
+<br>
+Použitie: Hodí sa na spúšťanie strojov, odomykanie dverí, poplachy a jednorazové obvody.<br>
+<br>
+Poznámky: Po nastavenom impulze sa vráti do východiskového stavu.

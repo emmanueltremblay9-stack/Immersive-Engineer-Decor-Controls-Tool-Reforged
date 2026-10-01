@@ -1,0 +1,7 @@
+Obojeno osetljivo staklo
+Signalno staklo
+<&recipe>Stakleni blok koji reaguje na redstoun zadržava pogled i pokazuje stanje signala.<br>
+<br>
+Upotreba: koristi ga u prozorima komandnih prostorija, osvetljenim panelima i zaštićenim fabričkim zastakljenjima.<br>
+<br>
+Napomene: menja stanje na osnovu obližnjeg redstoun napajanja.

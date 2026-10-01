@@ -1,0 +1,5 @@
+Továrenský ukladač blokov
+Vybavenie výrobnej haly
+<&recipe>Tento blok po spustení ukladá bloky z vnútornej zásoby.<br>
+<br>
+Použitie: Namier pracovnú stranu na cieľový priestor a vlož stohy predmetov, ktoré možno položiť.<br>

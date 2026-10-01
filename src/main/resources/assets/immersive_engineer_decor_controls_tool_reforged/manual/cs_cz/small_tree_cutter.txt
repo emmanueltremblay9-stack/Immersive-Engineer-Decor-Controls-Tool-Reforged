@@ -1,0 +1,5 @@
+Kácí stroj
+Vybavení provozu
+<&recipe>Malý kácí stroj patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Namiř jej na vzrostlé stromy a vypadlé předměty sbírej samostatně.<br>

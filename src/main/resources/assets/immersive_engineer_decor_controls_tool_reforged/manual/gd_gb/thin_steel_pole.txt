@@ -1,0 +1,5 @@
+Post tana stàilinn
+Pàirt frèam structair
+<&recipe>Bheir am Post dìreach tana stàilinn structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>

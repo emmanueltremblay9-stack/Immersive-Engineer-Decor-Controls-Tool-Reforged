@@ -1,0 +1,107 @@
+Mašiny rabotilnje
+Mašiny i vhod/izhod rabotilnje
+Mašiny rabotilnje vršat kompaktno tvorjenje, prěnos prědmetov, topljenje, uniščanje odpada, sbiranje i pomočno dělo v razměru jednogo bloka.<br>
+<br>
+Otvori slědujuče stranice dlja recepta, izobraženja, opisa i praktičnyh primětok upotrěbjenja vsjakoj mašiny.
+<np>
+Staljny stol
+Meble rabotilnje
+<&steel_table>Sej blok jest praktična čest meblja dlja rabotnyh komor i obslužnyh ugolkov.<br>
+<br>
+Upotrěbjenje: Postavi go blizko lav, skrinj i kompaktnyh mašin.<br>
+<np>
+Stol iz obrabotanogo drěva
+Meble rabotilnje
+<&treated_wood_table>Sej blok jest praktična čest meblja dlja rabotnyh komor i obslužnyh ugolkov.<br>
+<br>
+Upotrěbjenje: Postavi go blizko lav, skrinj i kompaktnyh mašin.<br>
+<np>
+Taburet iz obrabotanogo drěva
+Meble rabotilnje
+<&treated_wood_stool>Sej blok jest praktična čest meblja dlja rabotnyh komor i obslužnyh ugolkov.<br>
+<br>
+Upotrěbjenje: Postavi go blizko lav, skrinj i kompaktnyh mašin.<br>
+<np>
+Vrštat dlja metala
+Rabotno město dlja ploč
+<&metal_crafting_table>Vrštat dlja metala jest ojačeno rabotno město s pozicijoju molota, sětkoju tvorjenja 3x3 i jasno odděljenoju izhodnoju pozicijoju.<br>
+<br>
+Upotrěbjenje: Upotrěbi sětku dlja obyčnogo tvorjenja. Dlja ploč IE postavi molot inženera v poziciju orudja i material ploče v sětku prěd braniem rezultata. Staljne ozdoby upotrěbjajut staljne ploče dlja stolpov, obslužnyh ploščin, oken, dverij, zaščitnyh ograd i drugih staljnyh čestij.<br>
+<np>
+Fabričny nasypnik
+Pribor fabričnoj haly
+<&factory_hopper>Sej blok prěnosi kupy prědmetov črěz tesnějši promyslovy obal.<br>
+<br>
+Upotrěbjenje: Usměri go k liniji orudovanij i potom nastroj doseg, čislo kupov, časovanje i redstounovy režim v jego ekranu.<br>
+<np>
+Fabričny izdavač
+Pribor fabričnoj haly
+<&factory_dropper>Sej blok vypuščaje uložene prědmety iz směrovanoj strany.<br>
+<br>
+Upotrěbjenje: Usměri prědnju stranu k městu vypuščenja, napolni vnutrišnje pozicije i nastroj silu, ugol, pauzu, logiku filtrov i redstounovy režim v jego ekranu.<br>
+<np>
+Fabričny stavjač blokov
+Pribor fabričnoj haly
+<&factory_placer>Sej blok stavi bloky iz svojih vnutrišnjih zalih pri aktivovanju.<br>
+<br>
+Upotrěbjenje: Usměri rabotnu stranu na cěljevy prostor i naloži kupy stavimyh prědmetov.<br>
+<np>
+Lomjač blokov
+Pribor fabričnoj haly
+<&small_block_breaker>Maly lomjač blokov jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Usměri rabotnu stranu k bloku, ktory hočeš odstraniti.<br>
+<np>
+Spaljalnica odpada
+Kompaktna obrabotna jedinica
+<&small_waste_incinerator>Spaljalnica odpada uniščaje neželane prědmety, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Podavaj v jej red samo neželane prědmety.<br>
+<np>
+Laboratorna peč
+Kompaktna obrabotna jedinica
+<&small_lab_furnace>Laboratorna peč vrši kompaktne děla topljenja na tverdo gorivo, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Upotrěbi tverdo gorivo dlja malyh partij topljenja.<br>
+<np>
+Električna peč
+Kompaktna obrabotna jedinica
+<&small_electrical_furnace>Električna peč vrši kompaktne děla topljenja s napajanjem FE, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Podaj FE i prigodny vhod dlja topljenja.<br>
+<np>
+Topilnja mineralov
+Kompaktna obrabotna jedinica
+<&small_mineral_smelter>Topilnja mineralov vrši vysokotemperaturnu obrabotku mineralov, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Podaj mineralne bloky i energiju dlja vysokotemperaturnogo topljenja.<br>
+<np>
+Zamražač vody
+Kompaktna obrabotna jedinica
+<&small_freezer>Zamražač vody vrši kompaktne děla ohladžanja dlja tekučinovyh sistemov s energetičnym napajanjem.<br>
+<br>
+Upotrěbjenje: Podaj vodu i energiju dlja postupnogo proizvodstva leda.<br>
+<np>
+Pasivna tekučina
+Pribor tekučinovoj linije
+<&passive_fluid_accumulator>Pasivny sbiratelj tekučin jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Postavi go protiv prigodnyh istočnikov vody i ostavi město dlja odvoda tekučiny.<br>
+<np>
+Solarny panel
+Pribor fabričnoj haly
+<&small_solar_panel>Maly solarny panel jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Obezpeči mu otvorjeno nebo i poveži pribor s maloj potrěboj energiji.<br>
+<np>
+Dojilna mašina
+Pribor fabričnoj haly
+<&small_milking_machine>Mala dojilna mašina jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Postavi ju blizko krav i obezpeči sposob odstranjenja posud s mlěkom ili tekučiny.<br>
+<np>
+Rězač drěv
+Pribor fabričnoj haly
+<&small_tree_cutter>Maly rězač drěv jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Usměri go na dorastle drěva i sbiraj vypale prědmety odděljeno.<br>

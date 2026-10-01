@@ -1,0 +1,5 @@
+Vandfryser
+Kompakt bearbejdningsenhed
+<&recipe>Vandfryseren udfører kompakt kølearbejde i strømdrevne væskeanlæg.<br>
+<br>
+Brug: Tilfør vand og strøm til trinvis isproduktion.<br>

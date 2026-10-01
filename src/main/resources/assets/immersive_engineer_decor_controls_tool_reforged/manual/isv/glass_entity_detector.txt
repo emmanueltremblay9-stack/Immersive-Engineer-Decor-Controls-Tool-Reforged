@@ -1,0 +1,7 @@
+Steklěny detektor entitetov
+Čutje signala
+<&recipe>Detektor entitetov nabljudaje blizko dviženje bez vidimoj podložnoj ploče.<br>
+<br>
+Upotrěbjenje: Poveži go s dverjami, lampami, trevogami ili mašinnymi blokirovkami.<br>
+<br>
+Primětky: Skanuje malu oblast okolo bloka.

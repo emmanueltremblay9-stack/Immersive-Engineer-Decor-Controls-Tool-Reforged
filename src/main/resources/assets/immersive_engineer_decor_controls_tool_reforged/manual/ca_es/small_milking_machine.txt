@@ -1,0 +1,5 @@
+Munyidora
+Equipament de planta
+<&recipe>La munyidora petita és un bloc d’equipament de planta per a elaboració, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: posa-la a prop de vaques i proporciona una via per extreure els recipients de llet o el fluid.<br>

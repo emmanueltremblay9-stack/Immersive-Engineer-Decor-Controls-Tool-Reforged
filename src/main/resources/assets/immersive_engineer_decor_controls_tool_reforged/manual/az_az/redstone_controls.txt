@@ -1,0 +1,789 @@
+Qızıl daş idarələri
+Ölçü cihazları və siqnal elementləri
+İdarəetmə avadanlığı gizli qızıl daş siqnallarını aydın zavod panellərinə, sensorlara, göstəricilərə, açarlara, həyəcan siqnallarına və bağlantılı siqnal elementlərinə çevirir.<br>
+<br>
+Operator məntəqələri, siqnal lövhələri, təhlükəsizlik dövrələri və uzaqdan idarələr qurarkən bu səhifələrdən istifadə edin.
+<np>
+Ox hədəfi
+Qısamüddətli impuls
+<&arrow_target>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Qapı sensoru
+Qızıl daşla idarəetmə
+<&door_sensor_switch>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Lift düyməsi
+Qızıl daşla idarəetmə
+<&elevator_button>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Şüşə düymə
+Qızıl daşla idarəetmə
+<&glass_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Şüşə düymə
+Qızıl daşla idarəetmə
+<&glass_small_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Şüşə toxunma düyməsi
+Qızıl daşla idarəetmə
+<&glass_touch_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Maşın düyməsi
+Qızıl daşla idarəetmə
+<&industrial_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Düymə
+Qızıl daşla idarəetmə
+<&industrial_double_pole_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Qoruyucu çərçivəli maşın düyməsi
+Qızıl daşla idarəetmə
+<&industrial_fenced_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Tıqqıltı düyməsi
+Qızıl daşla idarəetmə
+<&industrial_knock_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Köhnə bəzəkli düymə
+Qızıl daşla idarəetmə
+<&oldfancy_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Köhnə bəzəkli düymə
+Qızıl daşla idarəetmə
+<&oldfancy_small_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Köhnə bəzəkli zəncir düyməsi
+Qısamüddətli impuls
+<&oldfancy_spring_reset_chain>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Rustik düymə
+Qızıl daşla idarəetmə
+<&rustic_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Rustik mismar düyməsi
+Qızıl daşla idarəetmə
+<&rustic_nail_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Kiçik rustik düymə
+Qızıl daşla idarəetmə
+<&rustic_small_button>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Rustik zəncir düyməsi
+Qısamüddətli impuls
+<&rustic_spring_reset_chain>Qısamüddətli açar tam güclü, dəqiq qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Maşınları işə salmaq, qapıları açmaq, həyəcan siqnalları və ya birdəfəlik dövrələr üçün istifadə edin.<br>
+<br>
+Qeydlər: Təyin edilmiş impulsdan sonra ilkin vəziyyətinə qayıdır.
+<np>
+Şüşə kontakt lövhəsi
+Təzyiq impulsu
+<&glass_contact_mat>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Şüşə qapı kontaktı
+Təzyiq impulsu
+<&glass_door_contact_mat>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Kontakt döşəkçəsi
+Təzyiq impulsu
+<&industrial_contact_mat>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Qapı kontakt döşəkçəsi
+Təzyiq impulsu
+<&industrial_door_contact_mat>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+İçindən düşmə detektoru
+Siqnalın aşkar edilməsi
+<&industrial_fallthrough_detector>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Ayaq düyməsi
+Qızıl daşla idarəetmə
+<&industrial_foot_button>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Sənaye mexaniki zərbə qapısı
+Təzyiq impulsu
+<&industrial_high_sensitive_trapdoor>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Mexaniki zərbə kontakt döşəkçəsi
+Təzyiq impulsu
+<&industrial_shock_sensitive_contact_mat>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Mexaniki zərbə tələ qapısı
+Təzyiq impulsu
+<&industrial_shock_sensitive_trapdoor>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Qırmızı siqnal bitkisi
+Təzyiq impulsu
+<&red_power_plant>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Rustik təzyiq lövhəsi
+Təzyiq impulsu
+<&rustic_contact_plate>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Rustik qapı təzyiqi
+Təzyiq impulsu
+<&rustic_door_contact_plate>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Rustik düşmə detektoru
+Siqnalın aşkar edilməsi
+<&rustic_fallthrough_detector>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Rustik mexaniki zərbə qapısı
+Təzyiq impulsu
+<&rustic_high_sensitive_trapdoor>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Rustik mexaniki zərbə lövhəsi
+Təzyiq impulsu
+<&rustic_shock_sensitive_plate>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Rustik mexaniki zərbə qapısı
+Təzyiq impulsu
+<&rustic_shock_sensitive_trapdoor>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Sarı siqnal bitkisi
+Təzyiq impulsu
+<&yellow_power_plant>Kontakt açarı döşəmə və ya tələ qapısı hərəkətindən qısa siqnal göndərir.<br>
+<br>
+İstifadə: Varlıqların xidmət keçidindən, yükləyicidən və ya qorunan yoldan keçdiyi yerə yerləşdirin.<br>
+<br>
+Qeydlər: Varlıq toxunduqdan sonra qısa impuls verir.
+<np>
+Şüşə gündəlik taymer saatı
+Gündüz işığı siqnalı
+<&glass_day_timer>Taymer açarı dünyanın dövrünün gündüz hissəsinə uyğun işləyir.<br>
+<br>
+İstifadə: Həyət lampaları, pəncərə qapaqları və yalnız gündüz işləyən zavod idarələri üçün istifadə edin.<br>
+<br>
+Qeydlər: Göy işığı olan ölçü tələb edir.
+<np>
+Şüşə varlıq detektoru
+Siqnalın aşkar edilməsi
+<&glass_entity_detector>Varlıq detektoru görünən döşəmə lövhəsi olmadan yaxınlıqdakı hərəkəti izləyir.<br>
+<br>
+İstifadə: Qapılara, lampalara, həyəcan siqnallarına və ya maşınların təhlükəsizlik kilidlərinə qoşun.<br>
+<br>
+Qeydlər: Blokun ətrafında kiçik sahəni yoxlayır.
+<np>
+Şüşə aralıqlı siqnal
+Vaxtlanmış impuls
+<&glass_interval_timer>Yığcam taymer açarı təyin edilmiş vaxtda qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Kiçik mexanizmə dövri və ya gecikdirilmiş idarəetmə lazım olan yerlərdə istifadə edin.<br>
+<br>
+Qeydlər: Vaxtı təyin edilmiş qızıl daş impulslarından istifadə edir.
+<np>
+Şüşə xətt detektoru
+Siqnalın aşkar edilməsi
+<&glass_linear_entity_detector>Varlıq detektoru görünən döşəmə lövhəsi olmadan yaxınlıqdakı hərəkəti izləyir.<br>
+<br>
+İstifadə: Qapılara, lampalara, həyəcan siqnallarına və ya maşınların təhlükəsizlik kilidlərinə qoşun.<br>
+<br>
+Qeydlər: Blokun ətrafında kiçik sahəni yoxlayır.
+<np>
+Blok detektoru
+Siqnalın aşkar edilməsi
+<&industrial_block_detector>Blok detektoru qarşısındakı yerin dolu olub-olmadığını yoxlayır.<br>
+<br>
+İstifadə: İzlənəcək maşın üzünə, ehtiyat sahəsinə və ya qorunan yerə yönəldin.<br>
+<br>
+Qeydlər: Qarşısındakı blok hava olmadıqda siqnal verir.
+<np>
+Gündəlik taymer saatı
+Gündüz işığı siqnalı
+<&industrial_day_timer>Taymer açarı dünyanın dövrünün gündüz hissəsinə uyğun işləyir.<br>
+<br>
+İstifadə: Həyət lampaları, pəncərə qapaqları və yalnız gündüz işləyən zavod idarələri üçün istifadə edin.<br>
+<br>
+Qeydlər: Göy işığı olan ölçü tələb edir.
+<np>
+Varlıq detektoru
+Siqnalın aşkar edilməsi
+<&industrial_entity_detector>Varlıq detektoru görünən döşəmə lövhəsi olmadan yaxınlıqdakı hərəkəti izləyir.<br>
+<br>
+İstifadə: Qapılara, lampalara, həyəcan siqnallarına və ya maşınların təhlükəsizlik kilidlərinə qoşun.<br>
+<br>
+Qeydlər: Blokun ətrafında kiçik sahəni yoxlayır.
+<np>
+Aralıq taymeri
+Vaxtlanmış impuls
+<&industrial_interval_timer>Yığcam taymer açarı təyin edilmiş vaxtda qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Kiçik mexanizmə dövri və ya gecikdirilmiş idarəetmə lazım olan yerlərdə istifadə edin.<br>
+<br>
+Qeydlər: Vaxtı təyin edilmiş qızıl daş impulslarından istifadə edir.
+<np>
+İşıq sensoru
+Siqnalın aşkar edilməsi
+<&industrial_light_sensor>İşıq sensoru yerli parlaqlığı qızıl daş idarəetməsinə çevirir.<br>
+<br>
+İstifadə: Avtomatik lampalar, pəncərə qapaqları və görünüş dövrələri üçün istifadə edin.<br>
+<br>
+Qeydlər: Xam parlaqlıq 8 və ya daha yüksək olduqda siqnal verir.
+<np>
+İldırımlı hava detektoru
+Siqnalın aşkar edilməsi
+<&industrial_lightning_sensor>İldırımlı hava sensoru ildırım zamanı xəbərdarlıqları işə salır.<br>
+<br>
+İstifadə: Açıq səma altına yerləşdirib lampalara və ya həyəcan siqnallarına qoşun.<br>
+<br>
+Qeydlər: İldırım və səmaya açıq yol tələb edir.
+<np>
+Xətti varlıq detektoru
+Siqnalın aşkar edilməsi
+<&industrial_linear_entity_detector>Varlıq detektoru görünən döşəmə lövhəsi olmadan yaxınlıqdakı hərəkəti izləyir.<br>
+<br>
+İstifadə: Qapılara, lampalara, həyəcan siqnallarına və ya maşınların təhlükəsizlik kilidlərinə qoşun.<br>
+<br>
+Qeydlər: Blokun ətrafında kiçik sahəni yoxlayır.
+<np>
+Yağış sensoru
+Siqnalın aşkar edilməsi
+<&industrial_rain_sensor>Hava sensoru olduğu yerdəki yağışı qızıl daş siqnalına çevirir.<br>
+<br>
+İstifadə: Üstündəki blokun yağış ala biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Sensorun üstündə yağış olub-olmadığını yoxlayır.
+<np>
+İki sabit vəziyyətli şüşə açar
+Qızıl daşla idarəetmə
+<&glass_rotary_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+İki sabit vəziyyətli şüşə toxunma açarı
+Qızıl daşla idarəetmə
+<&glass_touch_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Narıncı həssas şüşə
+Siqnal şüşəsi
+<&orange_sensitiveglass>Qızıl daşa reaksiya verən şüşə blok siqnal vəziyyətini göstərərkən görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: İdarəetmə otağı pəncərələrində, işıqlı panellərdə və qorunan zavod şüşələməsində istifadə edin.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş siqnalına görə vəziyyətini dəyişir.
+<np>
+İşıqlı həssas şüşə
+Siqnal şüşəsi
+<&sensitive_glass_block>Qızıl daşa reaksiya verən şüşə blok siqnal vəziyyətini göstərərkən görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: İdarəetmə otağı pəncərələrində, işıqlı panellərdə və qorunan zavod şüşələməsində istifadə edin.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş siqnalına görə vəziyyətini dəyişir.
+<np>
+Rəngli həssas şüşə
+Siqnal şüşəsi
+<&stained_sensitiveglass>Qızıl daşa reaksiya verən şüşə blok siqnal vəziyyətini göstərərkən görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: İdarəetmə otağı pəncərələrində, işıqlı panellərdə və qorunan zavod şüşələməsində istifadə edin.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş siqnalına görə vəziyyətini dəyişir.
+<np>
+Şüşə zolaqlı göstərici
+Siqnal göstəricisi
+<&glass_vertical_bar_gauge>İdarəetmə otağı üçün yığcam ölçü cihazı qızıl daş gücünü paneldə aydın göstərici kimi göstərir.<br>
+<br>
+İstifadə: Yaxındakı qızıl daş gücünün bir baxışda yoxlanıla biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş gücünü 0 ilə 15 arasında oxuyur.
+<np>
+Analoq göstərici
+Siqnal göstəricisi
+<&industrial_analog_angular_gauge>İdarəetmə otağı üçün yığcam ölçü cihazı qızıl daş gücünü paneldə aydın göstərici kimi göstərir.<br>
+<br>
+İstifadə: Yaxındakı qızıl daş gücünün bir baxışda yoxlanıla biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş gücünü 0 ilə 15 arasında oxuyur.
+<np>
+Voltmetr göstəricisi
+Siqnal göstəricisi
+<&industrial_analog_horizontal_gauge>İdarəetmə otağı üçün yığcam ölçü cihazı qızıl daş gücünü paneldə aydın göstərici kimi göstərir.<br>
+<br>
+İstifadə: Yaxındakı qızıl daş gücünün bir baxışda yoxlanıla biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş gücünü 0 ilə 15 arasında oxuyur.
+<np>
+Rəqəmsal göstərici
+Aydın görünən siqnal gücü
+<&industrial_small_digital_gauge>İdarəetmə otağı üçün yığcam ölçü cihazı qızıl daş gücünü paneldə aydın göstərici kimi göstərir.<br>
+<br>
+İstifadə: Yaxındakı qızıl daş gücünün bir baxışda yoxlanıla biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş gücünü 0 ilə 15 arasında oxuyur.
+<np>
+Şüşə borulu göstərici
+Siqnal göstəricisi
+<&industrial_tube_gauge>İdarəetmə otağı üçün yığcam ölçü cihazı qızıl daş gücünü paneldə aydın göstərici kimi göstərir.<br>
+<br>
+İstifadə: Yaxındakı qızıl daş gücünün bir baxışda yoxlanıla biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş gücünü 0 ilə 15 arasında oxuyur.
+<np>
+Analoq zolaqlı göstərici
+Siqnal göstəricisi
+<&industrial_vertical_bar_gauge>İdarəetmə otağı üçün yığcam ölçü cihazı qızıl daş gücünü paneldə aydın göstərici kimi göstərir.<br>
+<br>
+İstifadə: Yaxındakı qızıl daş gücünün bir baxışda yoxlanıla biləcəyi yerə quraşdırın.<br>
+<br>
+Qeydlər: Yaxındakı qızıl daş gücünü 0 ilə 15 arasında oxuyur.
+<np>
+Həyəcan lampası
+Siqnalın əks göstərişi
+<&industrial_alarm_lamp>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Həyəcan sireni
+Siqnal göstəricisi
+<&industrial_alarm_siren>Həyəcan sireni blokun üzünə quraşdırılan redstone göstəricisidir. Aktiv vəziyyəti bağlandığı blokdan gələn siqnala görə dəyişir.<br>
+<br>
+İstifadə: Möhkəm səthə bağlayın və qapıları, maşınları, həyəcanları və ya panelləri izləmək üçün enerji verin.<br>
+<br>
+Qeyd: Bağlı siqnal aktiv qaldıqca siren saniyədə bir dəfə yenilənir.
+<np>
+Yanıb-sönən LED
+Siqnalın əks göstərişi
+<&industrial_blinking_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Yanıb-sönən yaşıl LED
+Siqnalın əks göstərişi
+<&industrial_green_blinking_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Yaşıl LED
+Siqnalın əks göstərişi
+<&industrial_green_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Qırmızı LED
+Siqnalın əks göstərişi
+<&industrial_red_blinking_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Qırmızı LED
+Siqnalın əks göstərişi
+<&industrial_red_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Yanıb-sönən ağ LED
+Siqnalın əks göstərişi
+<&industrial_white_blinking_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Ağ LED
+Siqnalın əks göstərişi
+<&industrial_white_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Yanıb-sönən sarı LED
+Siqnalın əks göstərişi
+<&industrial_yellow_blinking_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Sarı LED
+Siqnalın əks göstərişi
+<&industrial_yellow_led>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Rustik semafor
+Siqnalın əks göstərişi
+<&rustic_semaphore>Yığcam göstərici gizli qızıl daş siqnalını zavodda görünən göstərişə çevirir.<br>
+<br>
+İstifadə: Qapıları, maşınları, həyəcan siqnallarını və ya panelləri izləmək üçün siqnalın yanına qoşun.<br>
+<br>
+Qeydlər: Yaxında qızıl daş siqnalı olduqda vəziyyətini dəyişir.
+<np>
+Qarşılaşdırıcı açarı
+Bərkidildiyi blokun siqnalı
+<&industrial_comparator_switch>Yığcam sensor açarı bərkidildiyi bloku oxuyub nəticəni sadə panel çıxışına çevirir.<br>
+<br>
+İstifadə: İnventarlara, çənlərə və ya qızıl daş avadanlığına quraşdırın. Bərkidildiyi blok qarşılaşdırıcı, konteyner və ya qızıl daş çıxışı bildirdikdə açar tam güclü qızıl daş siqnalı verir.<br>
+<br>
+Qeydlər: Saxlama səviyyələrini və ya gizli naqilləri aydın açıq/qapalı idarəetmə xətlərinə çevirmək üçün istifadə edin.
+<np>
+Siqnal tənzimləyicisi
+Dəyişən siqnal
+<&industrial_dimmer>Fırlanan idarə yığcam panel üzündən qızıl daş gücünü tənzimləyir.<br>
+<br>
+İstifadə: Çıxışı pillə-pillə artırmaq, tam gücdən sonra yenidən sıfıra qaytarmaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: 0 ilə 15 arasında siqnal gücü verir.
+<np>
+Təcili dayandırma düyməsi
+Qızıl daşla idarəetmə
+<&industrial_estop_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Süzgəc kilidləyicisi
+Qızıl daşla idarəetmə
+<&industrial_hopper_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Tıqqıltı açarı
+Qızıl daşla idarəetmə
+<&industrial_knock_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Ling
+Qızıl daşla idarəetmə
+<&industrial_lever>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+İkidüyməli maşın açarı
+Qızıl daşla idarəetmə
+<&industrial_machine_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Dartma dəstəyi
+Qızıl daşla idarəetmə
+<&industrial_pull_handle>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Fırlanan ling
+Qızıl daşla idarəetmə
+<&industrial_rotary_lever>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Fırlanan maşın açarı
+Qızıl daşla idarəetmə
+<&industrial_rotary_machine_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Kontakt lingi
+Qızıl daşla idarəetmə
+<&industrial_small_lever>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Açar
+Qızıl daşla idarəetmə
+<&industrialswitch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+İşıq açarı
+Qızıl daşla idarəetmə
+<&light_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Klapan açarı
+Qızıl daşla idarəetmə
+<&valve_wheel_switch>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Gövdəli impuls qəbuledicisi
+Bağlantılı idarəetmə
+<&industrial_switchlink_cased_pulse_receiver>Gövdəli bağlantılı impuls qəbuledicisi uzaq panellərə qısa qızıl daş işəsalma siqnalı verir.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Qısa impuls vermək üçün sağ klikləyin və ya bağlanmış incini işə salın.<br>
+<br>
+Qeydlər: İmpuls təyin edilmiş müddətdən sonra öz-özünə sıfırlanır.
+<np>
+Gövdəli bağlantı qəbuledicisi
+Bağlantılı idarəetmə
+<&industrial_switchlink_cased_receiver>Gövdəli bağlantılı qəbuledici uzaq panellər üçün möhkəm qızıl daş hədəfi yaradır.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Əl ilə açıb-bağlamaq üçün qəbulediciyə birbaşa sağ klikləyin.<br>
+<br>
+Qeydlər: Bağlanmış inci əyilərək istifadə edildikdə bu qəbuledicini açıb-bağlayır.
+<np>
+İmpuls bağlantısı qəbuledicisi
+Bağlantılı idarəetmə
+<&industrial_switchlink_pulse_receiver>Bağlantılı impuls qəbuledicisi uzaq panellərə qısa qızıl daş işəsalma siqnalı verir.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Qısa impuls vermək üçün sağ klikləyin və ya bağlanmış incini işə salın.<br>
+<br>
+Qeydlər: İmpuls təyin edilmiş müddətdən sonra öz-özünə sıfırlanır.
+<np>
+İmpuls bağlantısı relesi
+Bağlantılı idarəetmə
+<&industrial_switchlink_pulse_relay>Rele üslublu element panel quruluşlarında yığcam yerli açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin. Bağlanmış inci ilə işəsalma lazım olduqda qəbuledici bloklardan istifadə edin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Açar bağlantısı qəbuledicisi
+Bağlantılı idarəetmə
+<&industrial_switchlink_receiver>Bağlantılı qəbuledici uzaq panellər üçün tam güclü qızıl daş hədəfi yaradır.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Əl ilə açıb-bağlamaq üçün qəbulediciyə birbaşa sağ klikləyin.<br>
+<br>
+Qeydlər: Bağlanmış inci əyilərək istifadə edildikdə bu qəbuledicini açıb-bağlayır.
+<np>
+Analoq bağlantı qəbuledicisi
+Bağlantılı idarəetmə
+<&industrial_switchlink_receiver_analog>Bağlantılı qəbuledici idarəetmə panellərinə görünən uzaq hədəf verir.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Qəbuledicini uzaqdan işə salmaq üçün həmin incini əyilərək istifadə edin.<br>
+<br>
+Qeydlər: İşə salındıqda bu qəbuledici tam güclü qızıl daş siqnalı verir.
+<np>
+Açar bağlantısı relesi
+Bağlantılı idarəetmə
+<&industrial_switchlink_relay>Rele üslublu element panel quruluşlarında yığcam yerli açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin. Bağlanmış inci ilə işəsalma lazım olduqda qəbuledici bloklardan istifadə edin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Analoq bağlantı relesi
+Bağlantılı idarəetmə
+<&industrial_switchlink_relay_analog>Rele üslublu element panel quruluşlarında yığcam yerli açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin. Bağlanmış inci ilə işəsalma lazım olduqda qəbuledici bloklardan istifadə edin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Açar bağlantısı incisi
+Bağlantılı idarəetmə
+<&switchlink_pearl>Bağlanmış inci uzaq zavod idarələri üçün qəbuledici hədəfini saxlayır.<br>
+<br>
+İstifadə: Yaratmaq üçün Açar bağlantısı qəbuledicisinə Ender incisi ilə klikləyin. Yadda saxlanılan qəbuledicini işə salmaq üçün bağlanmış incini əyilərək istifadə edin.<br>
+<br>
+Qeydlər: Hədəf yüklənmiş, eyni ölçüdə və təsir məsafəsi daxilində olmalıdır.
+<np>
+Köhnə bəzəkli ling
+Qızıl daşla idarəetmə
+<&oldfancy_bistableswitch1>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Köhnə bəzəkli fırlanan ling
+Qızıl daşla idarəetmə
+<&oldfancy_bistableswitch2>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Rustik fırlanan ling
+Qızıl daşla idarəetmə
+<&rustic_angular_lever>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Rustik ling
+Qızıl daşla idarəetmə
+<&rustic_lever>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+Rustik mismar lingi
+Qızıl daşla idarəetmə
+<&rustic_nail_lever>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.
+<np>
+İkioynaqlı rustik ling
+Qızıl daşla idarəetmə
+<&rustic_two_hinge_lever>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.

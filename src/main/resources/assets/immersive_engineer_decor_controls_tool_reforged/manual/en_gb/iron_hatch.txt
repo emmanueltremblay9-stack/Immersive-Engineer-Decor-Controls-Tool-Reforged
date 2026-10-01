@@ -1,0 +1,5 @@
+Iron Hatch
+Industrial access point
+<&recipe>This block provides a rugged access point for service rooms, shafts, roofs, and machine enclosures.<br>
+<br>
+Usage: Install it where the build needs a controlled maintenance opening.<br>

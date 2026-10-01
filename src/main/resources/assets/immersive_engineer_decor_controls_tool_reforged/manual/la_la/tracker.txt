@@ -1,0 +1,7 @@
+Vestigator
+Signum loci memorati
+<&recipe>Vestigator positionem cubi directe in re servat.<br>
+<br>
+Usus: Cubum clicca ut dimensionem et coordinata serves. Titulus positionem servatam monstrat. Vestigatore dum te demittis utere ut destinationem deleas.<br>
+<br>
+Eo utere ut machinas, ramos cuniculorum, moderamina remota aut aedificia nondum perfecta notes antequam instrumentis et materiis redeas.

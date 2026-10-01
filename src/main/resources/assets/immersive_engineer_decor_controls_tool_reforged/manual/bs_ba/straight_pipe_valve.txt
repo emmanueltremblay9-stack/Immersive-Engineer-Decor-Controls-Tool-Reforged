@@ -1,0 +1,5 @@
+Nepovratni ventil za fluide
+Oprema vodova za fluide
+<&recipe>Nepovratni ventil za fluide je kompaktni dio voda za fluide za male spremnike, cjevovode, sabirna mjesta i protok upravljan redstoneom.<br>
+<br>
+Upotreba: Poravnajte ventil sa željenim smjerom protoka.<br>

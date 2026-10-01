@@ -1,0 +1,7 @@
+Potápěčská vzduchová kapsle
+Nouzová zásoba vzduchu
+<&recipe>Nouzový předmět pro práci pod vodou.<br>
+<br>
+Použití: Ručně doplní vzduch. V inventáři se automaticky spustí těsně před jeho vyčerpáním a poté se obnovuje.<br>
+<br>
+Noste ji do zatopených dolů, k ponořeným trubkám a čerpadlům.
