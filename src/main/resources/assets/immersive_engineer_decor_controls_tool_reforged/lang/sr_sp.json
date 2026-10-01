@@ -481,7 +481,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit": "Крупна гвоздена зрна",
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit.help": "Могу се истопити у гвоздене\nполуге, али нису погодна за\nнапредну обраду материјала.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box": "Кутија за материјал",
-  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Кутија за материјал носи велику залиху једног обичног,\nнеизмењеног и сложивог грађевинског материјала. Држите кутију у\nглавној руци, а материјал у другој да га\nубаците; са празном другом руком извадите један сложај.",
+  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Много једног обичног, неизмењеног,\nсложивог грађевинског материјала.\nГлавна рука: кутија; друга: материјал.\nПуни. Празна друга: узми један сложај.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.empty": "Кутија за материјал је празна.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.full": "Кутија за материјал је пуна.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.mainhand": "Држи кутију за материјал у главној руци.",

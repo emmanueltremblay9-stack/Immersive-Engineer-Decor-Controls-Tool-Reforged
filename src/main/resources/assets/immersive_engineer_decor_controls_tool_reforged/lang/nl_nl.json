@@ -481,7 +481,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit": "Grof ijzergruis",
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit.help": "Kan tot ijzerstaven worden\ngesmolten, maar is niet geschikt\nvoor geavanceerde materiaalverwerking.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box": "Materiaalopslagkist",
-  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "De materiaalopslagkist draagt een grote voorraad van één gewoon, ongewijzigd en\nstapelbaar bouwmateriaal. Houd de kist in de hoofdhand en een materiaalstapel\nin de andere hand om die op te slaan; gebruik hem\nmet een lege andere hand om één stapel terug te nemen.",
+  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Grote voorraad van één gewoon, ongewijzigd\nen stapelbaar bouwmateriaal. Kist in hoofdhand,\nmateriaal in andere hand: opslaan. Met lege\nandere hand één stapel terugnemen.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.empty": "De materiaalkist is leeg.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.full": "De materiaalkist is vol.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.mainhand": "Houd de materiaalkist in je hoofdhand.",

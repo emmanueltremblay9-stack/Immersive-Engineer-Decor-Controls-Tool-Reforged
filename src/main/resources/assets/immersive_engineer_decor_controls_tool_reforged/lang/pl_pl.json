@@ -481,7 +481,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit": "Gruby granulat żelaza",
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit.help": "Można przetopić na sztabki żelaza,\nale nie nadaje się do zaawansowanego\nprzetwarzania materiałów.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box": "Skrzynka na materiały",
-  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Skrzynka na materiały mieści duży zapas jednego zwykłego, niezmodyfikowanego\ni układalnego materiału budowlanego. Trzymaj skrzynkę w głównej ręce,\na stos w drugiej, aby go schować; użyj skrzynki\nz pustą drugą ręką, aby wyjąć jeden stos.",
+  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Duży zapas jednego zwykłego budulca,\nniezmienionego i układalnego w stosy. Skrzynka\nw głównej ręce, materiał w drugiej: schowaj.\nPusta druga ręka: wyjmij jeden stos.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.empty": "Skrzynka na materiały jest pusta.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.full": "Skrzynka na materiały jest pełna.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.mainhand": "Trzymaj skrzynkę na materiały w głównej ręce.",

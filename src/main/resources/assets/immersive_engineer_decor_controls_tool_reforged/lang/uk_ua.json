@@ -481,7 +481,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit": "Груба залізна крупка",
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit.help": "Можна переплавити на залізні\nзлитки, але для складнішої\nобробки матеріалів не підходить.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box": "Ящик для матеріалів",
-  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Ящик переносить великий запас одного звичайного, незміненого й\nбудівельного матеріалу, який можна складати у стоси. Тримайте ящик у головній руці,\nа матеріал — в іншій, щоб завантажити; з\nпорожньою іншою рукою вийміть один стос.",
+  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Багато одного звичайного будматеріалу,\nбез змін; можна складати у стоси.\nЯщик — головна рука; матеріал — інша.\nКлади; порожня інша: вийми один стос.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.empty": "Ящик для матеріалів порожній.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.full": "Ящик для матеріалів повний.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.mainhand": "Тримайте ящик для матеріалів в основній руці.",

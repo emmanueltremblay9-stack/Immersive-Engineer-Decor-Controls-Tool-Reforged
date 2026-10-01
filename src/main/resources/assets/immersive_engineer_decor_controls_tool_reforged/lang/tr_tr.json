@@ -481,7 +481,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit": "İri Demir Kırıntısı",
   "item.immersive_engineer_decor_controls_tool_reforged.iron_grit.help": "Eritilerek demir külçesi yapılabilir,\nancak ileri malzeme işleme\niçin uygun değildir.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box": "Malzeme Saklama Kutusu",
-  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Malzeme kutusu, tek tür sade, değiştirilmemiş ve yığınlanabilir\nyapı malzemesinden büyük bir stok taşır. Doldurmak için\nkutuyu ana elde, malzemeyi diğer elde tutun; bir\nyığın almak için diğer el boşken kullanın.",
+  "item.immersive_engineer_decor_controls_tool_reforged.material_box.help": "Tek tür sıradan, değişmemiş, yığınlanabilir\nyapı malzemesi için büyük stok. Kutu ana elde,\nmalzeme diğer elde: depola. Diğer el boşken\nkullan: bir yığın al.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.empty": "Malzeme kutusu boş.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.full": "Malzeme kutusu dolu.",
   "item.immersive_engineer_decor_controls_tool_reforged.material_box.msg.mainhand": "Malzeme kutusunu ana elinizde tutun.",
