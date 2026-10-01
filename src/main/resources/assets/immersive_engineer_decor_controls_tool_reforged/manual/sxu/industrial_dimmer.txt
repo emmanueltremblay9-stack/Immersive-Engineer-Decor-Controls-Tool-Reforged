@@ -1,0 +1,7 @@
+Dimmer
+Vorändorbares Signal
+<&recipe>Ä Drehreglor schdelld de Redstone-Schdärge von eenor gleenen Paneelfläche aus ein.<br>
+<br>
+Nuddzung: Rechdsgligg, um de Ausgabe schriddweise zu erhöhn un nach voller Schdärge wiedor bei null anzufang.<br>
+<br>
+Hinweis: Gibd ä Schdärge von 0 bis 15 aus.

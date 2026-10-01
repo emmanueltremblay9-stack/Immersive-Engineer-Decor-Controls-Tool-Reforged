@@ -1,0 +1,7 @@
+Mind Squeezer
+Condenser of Experience
+<&recipe>The Mind Squeezer turns lapis and experience into Charged Lapis.<br>
+<br>
+Use: Carry lapis lazuli and at least one experience level, then use the tool. Each successful squeeze spends one level and one lapis, harms thee, wears the squeezer and makes one Charged Lapis.<br>
+<br>
+It will not work when thou hast no lapis, no XP, or art too near death.

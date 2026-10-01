@@ -1,0 +1,7 @@
+Receptor analógico de enlace
+Control enlazado
+<&recipe>Un receptor enlazado proporciona un destino remoto visible para paneles de control.<br>
+<br>
+Uso: Haz clic con una perla de ender para crear una perla enlazada. Usa esa perla mientras te agachas para activar el receptor a distancia.<br>
+<br>
+Notas: Este receptor emite una señal de redstone a máxima intensidad cuando se activa.

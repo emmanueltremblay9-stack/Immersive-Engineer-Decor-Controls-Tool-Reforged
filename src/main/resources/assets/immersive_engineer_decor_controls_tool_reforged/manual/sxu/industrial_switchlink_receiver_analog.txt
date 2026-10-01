@@ -1,0 +1,7 @@
+Analogor Vorbindungsempfängor
+Vorbundne Schdeuorung
+<&recipe>Ä vorbundnor Empfängor gibd Schdeuorpaneelen ä sichdbares Fernziel.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle druff, um ä vorbundne Bärle zu machn. Nuddz die Bärle beim Schleischn, um’n Empfängor aus dor Ferne auszulösn.<br>
+<br>
+Hinweis: Dieser Empfängor gibd ä volles Redstone-Signal aus, wenn or ausgelösd wird.

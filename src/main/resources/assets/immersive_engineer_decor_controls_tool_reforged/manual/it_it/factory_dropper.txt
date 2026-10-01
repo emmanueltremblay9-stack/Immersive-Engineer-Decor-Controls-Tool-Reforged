@@ -1,0 +1,5 @@
+Gettatore industriale
+Attrezzatura per la fabbrica
+<&recipe>Questo blocco espelle gli oggetti conservati da una faccia orientabile.<br>
+<br>
+Uso: rivolgi il lato anteriore verso il punto di espulsione, carica gli slot interni e regola forza, angolo, ritardo, logica dei filtri e modalità redstone nella schermata.<br>

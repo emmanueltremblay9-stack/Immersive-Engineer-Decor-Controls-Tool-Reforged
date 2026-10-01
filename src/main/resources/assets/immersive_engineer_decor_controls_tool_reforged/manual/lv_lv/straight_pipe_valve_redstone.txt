@@ -1,0 +1,5 @@
+Redstone šķidruma vārsts
+Šķidrumu līnijas aprīkojums
+<&recipe>Redstone šķidruma vārsts ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto vārstu atbilstoši paredzētajam plūsmas virzienam.<br>

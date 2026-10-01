@@ -1,0 +1,5 @@
+Elektriskā krāsns
+Kompakta apstrādes ierīce
+<&recipe>Elektriskā krāsns veic nelielus ar FE darbināmus kausēšanas darbus, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: pievadi FE un derīgus kausēšanas materiālus.<br>

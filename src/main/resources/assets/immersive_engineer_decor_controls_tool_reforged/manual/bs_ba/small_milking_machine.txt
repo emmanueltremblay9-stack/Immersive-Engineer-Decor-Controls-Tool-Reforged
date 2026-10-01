@@ -1,0 +1,5 @@
+Muzilica
+Oprema fabričke hale
+<&recipe>Mala muzilica je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Postavite je blizu krava i omogućite izvlačenje posuda za mlijeko ili fluida.<br>

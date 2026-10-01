@@ -1,0 +1,5 @@
+Kist mit Opschrift
+Ännerbare Lageropschrift
+<&recipe>Disse Kist mit Opschrift is för kloor Sorteren in't Lager maakt. Ehr Vörplaat lett sik as en lütt Wiärksteedschild ännern.<br>
+<br>
+Bruuk: Rechtsklick op de Schillerplaat, üm de Kistenopschrift to ännern. Rechtsklick op den Rest vun de Kist, üm dat Lager för Anbuudeelen, Parts un Wartoongsgood optomaken.<br>

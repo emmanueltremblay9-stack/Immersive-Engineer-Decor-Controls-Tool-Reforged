@@ -1,0 +1,5 @@
+Terra compactada amb grava
+Paviment d’obra
+<&recipe>Aquest bloc dona a les zones de treball exteriors una superfície compactada i trepitjada.<br>
+<br>
+Ús: posa’l al voltant de portes de càrrega, dipòsits exteriors i patis de màquines.<br>

@@ -1,0 +1,7 @@
+Ogohlantirish sirenasi
+Signal holatining aks ettirilishi
+<&recipe>Signal sirenasi blok yuzasiga ornatiladigan redstone korsatkichidir. Uning quvvat holati biriktirilgan blok signaliga qarab ozgaradi.<br>
+<br>
+Eshik, mashina, signal yoki panelni kuzatish uchun qattiq yuzaga ornating va quvvat bering.<br>
+<br>
+Signal faol turganda sirena har soniyada yangilanadi.

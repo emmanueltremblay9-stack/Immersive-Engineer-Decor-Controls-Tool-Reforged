@@ -1,0 +1,7 @@
+Arang Batu Ariadne
+Penanda laluan lombong
+<&recipe>Arang batu Ariadne ialah penanda laluan pantas untuk aci, lombong bercabang dan kerja bawah tanah sementara.<br>
+<br>
+Penggunaan: Gunakan pada muka blok kukuh untuk meletakkan anak panah hitam pada muka itu. Penanda membaca titik yang diklik dan menyokong lapan arah termasuk pepenjuru, membantu menandakan selekoh, jalan keluar, jalan buntu dan laluan bekalan tanpa membawa papan tanda berasingan.<br>
+<br>
+Arang batu Ariadne ialah alat penanda boleh guna semula dengan 100 kegunaan. Setiap peletakan berjaya menggunakan satu ketahanan; muka yang tidak disokong ditolak tanpa menghauskan item.

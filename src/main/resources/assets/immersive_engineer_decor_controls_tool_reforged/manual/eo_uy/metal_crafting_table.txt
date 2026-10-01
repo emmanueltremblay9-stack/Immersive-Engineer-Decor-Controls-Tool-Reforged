@@ -1,0 +1,7 @@
+Metala fabriktablo
+Plata laborejo
+<&recipe>Plifortigita stacio kun martela fendo, plena 3x3 krado kaj eligo.<br>
+<br>
+Uzo: Kiel normala tablo. Por IE-platoj metu la Martelon de inĝeniero en la fendon kaj materialon en la kradon; prenu la platon el la eligo.<br>
+<br>
+Ŝtalkadraj ornamaĵoj uzas ŝtalajn platojn formitajn ĉi tie.

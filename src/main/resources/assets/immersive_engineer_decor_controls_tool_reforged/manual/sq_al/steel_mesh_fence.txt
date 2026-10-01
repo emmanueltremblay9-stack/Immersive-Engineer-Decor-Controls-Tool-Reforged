@@ -1,0 +1,5 @@
+Gard rrjete çeliku
+Pajisje hyrjeje shërbimi
+<&recipe>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>

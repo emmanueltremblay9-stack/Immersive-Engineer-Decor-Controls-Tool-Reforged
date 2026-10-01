@@ -1,0 +1,5 @@
+Kepala Tiang Olahan
+Bagian rangka struktur
+<&recipe>Kepala/kaki tiang kayu olahan lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>

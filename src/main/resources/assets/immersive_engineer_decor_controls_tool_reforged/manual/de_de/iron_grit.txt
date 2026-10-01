@@ -1,0 +1,3 @@
+Grober Eisengrus
+Werkzeugmaterial des Ingenieurs für die rekonstruierten Handwerksrezepte.
+<&recipe>Kann zu Eisenbarren geschmolzen<br>werden, eignet sich jedoch nicht für<br>weiterführende Materialverarbeitung.

@@ -1,0 +1,5 @@
+Vékony régi falap
+Öreg műhelyfa
+<&recipe>A vékony régi ipari falap öreg műhelyfát ad padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>

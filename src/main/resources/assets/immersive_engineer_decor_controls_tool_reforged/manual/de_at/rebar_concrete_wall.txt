@@ -1,0 +1,5 @@
+Stahlbetonmaua
+Stahlbewehrter Beton
+<&recipe>Der Block is a gehärtets Betonteil für Maschinenfundamente, Schutzwänd und Ladehallnbödn.<br>
+<br>
+Verwendung: Setz eam unter Maschinen, entlang von Wartungsgängn oda überall, wo a verstärkte Basis braucht wird.<br>

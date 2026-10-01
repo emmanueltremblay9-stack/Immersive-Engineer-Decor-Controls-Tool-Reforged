@@ -1,0 +1,107 @@
+Werkswinkelmasjiene
+Masjiene en werkswinkelinvoer/-uitvoer
+Werkswinkelmasjiene bied kompakte vervaardiging, itemverskuiwing, smelting, wegdoening, versameling en nutswerk binne die ruimte van een blok.<br>
+<br>
+Maak die volgende bladsye oop vir elke masjien se resep, beeld, agtergrond en praktiese gebruiksnotas.
+<np>
+Staaltafel
+Werkswinkelmeubel
+<&steel_table>Hierdie blok is ’n praktiese werkswinkelmeubel vir werkkamers en onderhoudshoeke.<br>
+<br>
+Gebruik: plaas dit langs banke, kratte en kompakte masjiene.<br>
+<np>
+Behandeldehouttafel
+Werkswinkelmeubel
+<&treated_wood_table>Hierdie blok is ’n praktiese werkswinkelmeubel vir werkkamers en onderhoudshoeke.<br>
+<br>
+Gebruik: plaas dit langs banke, kratte en kompakte masjiene.<br>
+<np>
+Behandeldehoutkruk
+Werkswinkelmeubel
+<&treated_wood_stool>Hierdie blok is ’n praktiese werkswinkelmeubel vir werkkamers en onderhoudshoeke.<br>
+<br>
+Gebruik: plaas dit langs banke, kratte en kompakte masjiene.<br>
+<np>
+Metaalwerksbank
+Plaatwerkstasie
+<&metal_crafting_table>Die Metaalwerksbank is ’n versterkte werkswinkelstasie met ’n hamergleuf, ’n 3x3-vervaardigingsrooster en ’n duidelike uitvoergleuf.<br>
+<br>
+Gebruik: gebruik die rooster vir gewone vervaardiging. Vir IE-plate plaas jy ’n Ingenieurshamer in die gereedskapgleuf en die plaatmateriaal in die rooster voordat jy die resultaat neem. Staalversierings gebruik staalplate vir pale, loopbrûe, vensters, deure, relings en ander staaldele.<br>
+<np>
+Fabrieksgeutbak
+Werkswinkelnutsmiddel
+<&factory_hopper>Hierdie blok verskuif itemstapels deur ’n kompakte industriële omhulsel.<br>
+<br>
+Gebruik: rig dit na die voorraadlyn en stel dan bereik, stapelgrootte, tydsberekening en redstone-modus op sy skerm in.<br>
+<np>
+Fabrieksleweraar
+Werkswinkelnutsmiddel
+<&factory_dropper>Hierdie blok laat gestoorde items vanaf ’n gerigte vlak uit.<br>
+<br>
+Gebruik: rig die voorkant na die uitlaatpunt, vul sy interne gleuwe en stel krag, hoek, vertraging, filterlogika en redstone-modus op sy skerm in.<br>
+<np>
+Fabrieksblokplaser
+Werkswinkelnutsmiddel
+<&factory_placer>Hierdie blok plaas blokke uit sy interne voorraad wanneer dit geaktiveer word.<br>
+<br>
+Gebruik: rig die werkvlak na die teikenruimte en laai stapels wat geplaas kan word.<br>
+<np>
+Blokbreker
+Werkswinkelnutsmiddel
+<&small_block_breaker>Die Klein Blokbreker is ’n werkswinkelnutsblok vir vervaardiging, berging, plasing, breekwerk, versameling of kompakte outomatisering.<br>
+<br>
+Gebruik: rig die werkvlak na die blok wat verwyder moet word.<br>
+<np>
+Afvalverbrander
+Kompakte verwerkingseenheid
+<&small_waste_incinerator>Die Afvalverbrander vernietig ongewenste items en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: voer slegs ongewenste items in sy wagry in.<br>
+<np>
+Laboratoriumoond
+Kompakte verwerkingseenheid
+<&small_lab_furnace>Die Laboratoriumoond verrig kompakte smeltwerk met vaste brandstof en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: gebruik vaste brandstof vir klein smeltbondels.<br>
+<np>
+Elektriese Oond
+Kompakte verwerkingseenheid
+<&small_electrical_furnace>Die Elektriese Oond verrig kompakte FE-aangedrewe smeltwerk en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: verskaf FE en geldige smeltinvoer.<br>
+<np>
+Mineraalsmeltoond
+Kompakte verwerkingseenheid
+<&small_mineral_smelter>Die Mineraalsmeltoond verwerk minerale teen hoë hitte en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: voer mineraalblokke en krag in vir smeltwerk teen hoë hitte.<br>
+<np>
+Watervrieser
+Kompakte verwerkingseenheid
+<&small_freezer>Die Watervrieser verrig kompakte verkoelingswerk vir elektries aangedrewe vloeistofopstellings.<br>
+<br>
+Gebruik: verskaf water en krag vir ysproduksie in fases.<br>
+<np>
+Passiewe Vloeistof
+Vloeistoflyntoerusting
+<&passive_fluid_accumulator>Die Passiewe Vloeistofversamelaar is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: plaas dit teen geskikte waterbronne en laat ruimte om die vloeistof uit te haal.<br>
+<np>
+Sonpaneel
+Werkswinkelnutsmiddel
+<&small_solar_panel>Die Klein Sonpaneel is ’n werkswinkelnutsblok vir vervaardiging, berging, plasing, breekwerk, versameling of kompakte outomatisering.<br>
+<br>
+Gebruik: gee dit oop lug en verbind toerusting met lae kragverbruik.<br>
+<np>
+Melkmasjien
+Werkswinkelnutsmiddel
+<&small_milking_machine>Die Klein Melkmasjien is ’n werkswinkelnutsblok vir vervaardiging, berging, plasing, breekwerk, versameling of kompakte outomatisering.<br>
+<br>
+Gebruik: plaas dit naby koeie en verskaf ’n manier om melkhouers of vloeistof uit te haal.<br>
+<np>
+Boomkapper
+Werkswinkelnutsmiddel
+<&small_tree_cutter>Die Klein Boomkapper is ’n werkswinkelnutsblok vir vervaardiging, berging, plasing, breekwerk, versameling of kompakte outomatisering.<br>
+<br>
+Gebruik: rig dit na volgroeide bome en versamel die buit apart.<br>

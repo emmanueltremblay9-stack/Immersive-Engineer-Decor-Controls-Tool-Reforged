@@ -1,0 +1,5 @@
+Likidong Walang Enerhiya
+Kagamitan sa linya ng likido
+<&recipe>Ang Tagapag-ipon ng Likidong Walang Enerhiya ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Ilagay katabi ng angkop na bukal ng tubig at mag-iwan ng puwang para sa pagkuha ng likido.<br>

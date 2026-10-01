@@ -1,0 +1,7 @@
+Analoges Verknüpfungsrelais
+Verknüpfte Steuerung
+<&recipe>A Teil im Relaisstil gibt Schalttafeln an kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Rechtsklick schaltet den Ausgang mit voller Stärke für nahe Schaltungen um. Nimm Empfängerblöcke, wennst mit ana Link-Perle auslösen willst.<br>
+<br>
+Hinweis: Eingeschaltet gibt er volle Redstone-Stärke aus.

@@ -1,0 +1,7 @@
+Veder sensibil colorad
+Veder de segnal
+<&recipe>Un bloch de veder che el reagiss a la prejarossa el lassa vedè travers intant che el mostra el stat del segnal.<br>
+<br>
+Dovrel in di finestre de la sala di controi, in di panei iluminad e in di veder de fabrica cont protezzion.<br>
+<br>
+El cambia stat cont l’energia de prejarossa lì arent.

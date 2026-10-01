@@ -1,0 +1,7 @@
+Signāla regulators
+Mainīgs signāls
+<&recipe>Grozāma vadības ierīce regulē Redstone stiprumu kompakta paneļa priekšpusē.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pakāpeniski palielinātu izvadi; pēc maksimālā stipruma tā atgriežas uz nulli.<br>
+<br>
+Piezīmes: izvada stiprumu no 0 līdz 15.

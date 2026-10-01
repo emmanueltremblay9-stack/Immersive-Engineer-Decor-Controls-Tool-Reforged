@@ -1,0 +1,7 @@
+REDIA tresna
+Diamantez estalitako tresna erabilgarria
+<&recipe>REDIA tresna diamante-mailako erabilera anitzeko tresna iraunkorra da aldi baterako lan-guneen, lantegien eta meategi-sarreren inguruan lan egiteko.<br>
+<br>
+Erabilera: erabili argi-zuziak daramatzazula, inbentariotik argi-zuzi bat jartzeko REDIA higatu gabe. Erabili makurtuta landareak mozteko edo lurra, saila, lur trokatsua eta lur bidea txandakatzeko. Azpiko aurpegitik jatorrizko ordezko aizkora-ekintza aplikatzen da. Makurtu enborrak haustean lotutako zuhaitz-blokeak botatzeko.<br>
+<br>
+Konpondu diamanteekin. Guztiz konpondutako REDIA tresna gehiegizko mailara konpontzeak Eraginkortasunaren eta Aberastasunaren jatorrizko progresioa berrezartzen du.

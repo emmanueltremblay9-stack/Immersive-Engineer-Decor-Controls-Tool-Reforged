@@ -1,0 +1,3 @@
+Growwe Goudgruis
+Ingenieursgereedskapmateriaal wat in die gerekonstrueerde vervaardigingstel gebruik word.
+<&recipe>Kan tot goudstawe gesmelt word,<br>maar is nie geskik vir gevorderde<br>materiaalverwerking nie.

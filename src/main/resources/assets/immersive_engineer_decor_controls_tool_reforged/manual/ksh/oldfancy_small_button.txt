@@ -1,0 +1,7 @@
+Ahle verzierte Knopp
+Redstone-Stüerung
+<&recipe>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.

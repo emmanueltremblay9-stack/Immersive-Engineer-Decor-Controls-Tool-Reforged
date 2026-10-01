@@ -1,0 +1,7 @@
+Håndtag
+Redstonestyring
+<&recipe>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.

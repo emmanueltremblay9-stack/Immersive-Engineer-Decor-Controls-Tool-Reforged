@@ -1,0 +1,93 @@
+Ingenjörsverktyg
+Bärbar verkstadsutrustning
+Uppsättningen Engineer's Tools lägger till handverktyg, gruvmarkeringar, förbrukningsartiklar för nödlägen, fältmat och små hjälpmedel för materialbearbetning i samma manual som beskriver dekorations- och kontrollblocken.<br>
+<br>
+Verktygen är avsedda för arbete långt från en fullt utrustad verkstad: markera vägen, bär med dig material, återhämta dig efter misstag och avsluta små bearbetningsarbeten på plats.
+<np>
+REDIA-verktyg
+Diamantklätt universalverktyg
+<&redia_tool>REDIA-verktyget är ett slitstarkt fältverktyg för snabbt markarbete. Använd det på brukbar jord för att skapa åkerjord.<br>
+<br>
+Använd det mot en stabil yta medan du har facklor med dig för att placera en fackelmarkering från förrådet utan att slita på REDIA. Markarbete, klippning, yxarbete och trädfällning förbrukar hållbarhet.
+<np>
+Malmkrosshammare
+Handverktyg för krossning
+<&crushing_hammer>Malmkrosshammaren är ett handverktyg för tidig bearbetning av järn och guld.<br>
+<br>
+Använd den med råjärn, råguld, järnmalm eller guldmalm och deras djupskiffervarianter för Immersive Engineering-stoft. Hammaren tappar hållbarhet, återgår till rutan tills den går sönder, slits vid gruvdrift och knuffar tillbaka mål.
+<np>
+Spårare
+Lagrad positionsmarkering
+<&tracker>Spåraren lagrar ett blocks position i föremålet.<br>
+<br>
+Klicka på ett block för att spara dimension och koordinater. Verktygstipset visar positionen. Smyganvänd för att rensa målet.<br>
+<br>
+Markera maskiner, tunnlar, fjärrkontroller eller oavslutade byggen.
+<np>
+Ariadnekol
+Ruttmarkering för gruvor
+<&ariadne_coal>Ariadnekol placerar snabbt svarta riktningspilar på stabila gruvytor. Använd det på en fast yta för att markera nästa sväng, utgång eller förgrening. Markeringen stöder åtta riktningar på den klickade ytan, även diagonala.<br>
+<br>
+Ariadnekol är ett återanvändbart markeringsverktyg som räcker till 100 användningar. Varje lyckad markering förbrukar en hållbarhetspoäng. Ytor som inte stöds avvisas utan att föremålet slits.
+<np>
+Automatiskt stimpaket
+Nödinjektor
+<&stimpack>Det automatiska stim-paketet är ett medicinskt nödföremål.<br>
+<br>
+Använd det manuellt för läkning, kort skydd och fartökning. I förrådet aktiveras det automatiskt vid låg hälsa och går sedan på nedkylning. Ha ett nära till hands på farliga platser.
+<np>
+Sovsäck
+Bärbar sovutrustning
+<&sleeping_bag>Sovsäcken är ett vädertåligt vilokit för arbete långt från en säng.<br>
+<br>
+Använd den på natten i Overworld för att vila till morgonen utan att ändra återuppståndelsepunkten.<br>
+<br>
+Den fungerar inte på dagen, nära monster eller i olämpliga dimensioner. Varje lyckad vila sliter på säcken.
+<np>
+Materiallåda
+Låda för byggmaterial
+<&material_box>Materiallådan bär ett stort lager av ett vanligt, oförändrat och stapelbart byggmaterial.<br>
+<br>
+Håll lådan i huvudhanden och materialet i den andra för att lägga in det; använd den med tom andra hand för att ta ut en stapel.<br>
+<br>
+Den rymmer 512 föremål av en typ, avvisar andra lådor, ostapelbar utrustning och ändrade staplar och visar innehållet i verktygstipset.
+<np>
+Dykluftkapsel
+Nödluftsreserv
+<&diving_capsule>Dykarkapseln är en nödreserv av luft för undervattensarbete.<br>
+<br>
+Använd den manuellt för att återställa luft. I förrådet aktiveras den automatiskt när luften nästan är slut och går sedan på nedkylning. Ta med den till översvämmade gruvor och nedsänkta rör.
+<np>
+Musleepress
+Matpress
+<&musli_bar_press>Muslee-pressen gör vanliga livsmedel till kompakta fältransoner.<br>
+<br>
+Ha bröd, ett äpple och frön av vete, melon, pumpa, rödbeta eller industrihampa och använd pressen. Den tar en av varje, kontrollerar utrymmet, gör fyra barer och skadar pressen.<br>
+<br>
+Om något saknas eller utrymme saknas förbrukas inget.
+<np>
+Muslee Melange-energikaka
+Snabbt verkstadsmellanmål
+<&musli_bar>Muslee Melange-baren är kompakt mat av bröd, frön och frukt.<br>
+<br>
+Ät den som fältmat när du bygger kontroller, rör, plattformar eller långa maskinlinjer.
+<np>
+Tankepress
+Erfarenhetskondensator
+<&charged_lapis_squeezer>Tankepressen omvandlar en lapis lazuli och en erfarenhetsnivå från ditt förråd till laddad lapis.<br>
+<br>
+Varje lyckad omvandling skadar, utmattar och förblindar användaren en kort stund. Processen vägrar starta utan lapis eller XP, eller när användaren är för nära döden.
+<np>
+Laddad lapis
+Lagrad erfarenhet
+<&charged_lapis>Laddad lapis lagrar en erfarenhetsnivå. Förbruka den för att få tillbaka nivån, ta bort aktiva effekter och återfå lite hälsa.<br>
+<br>
+Tillverka först en tankepress. Laddad lapis framställs genom att använda det verktyget med tillgång till lapis och XP.
+<np>
+Grovt järngrus
+Ingenjörsverktygsmaterial som används i den rekonstruerade receptuppsättningen.
+<&iron_grit>Kan smältas till<br>järntackor men passar inte för<br>avancerad materialbearbetning.
+<np>
+Grovt guldgrus
+Ingenjörsverktygsmaterial som används i den rekonstruerade receptuppsättningen.
+<&gold_grit>Kan smältas till<br>guldtackor men passar inte för<br>avancerad materialbearbetning.

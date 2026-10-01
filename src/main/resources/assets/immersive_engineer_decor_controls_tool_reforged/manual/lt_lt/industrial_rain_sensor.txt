@@ -1,0 +1,7 @@
+Lietaus jutiklis
+Signalo jutimas
+<&recipe>Oro sąlygų jutiklis paverčia jo vietoje krintantį lietų redstono signalu.<br>
+<br>
+Naudojimas: montuok ten, kur virš jo esantį bloką gali pasiekti lietus.<br>
+<br>
+Pastabos: tikrina lietų virš jutiklio.

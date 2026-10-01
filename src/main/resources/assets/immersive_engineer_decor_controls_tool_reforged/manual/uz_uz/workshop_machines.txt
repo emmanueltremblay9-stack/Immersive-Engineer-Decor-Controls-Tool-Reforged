@@ -1,0 +1,107 @@
+Ustaxona mashinalari
+Mashinalar va ustaxona kirish-chiqishlari
+Ustaxona mashinalari bir blokli joyda ixcham yasash, buyum ko'chirish, eritish, chiqindini yo'q qilish, yig'ish va yordamchi ishlarni bajaradi.<br>
+<br>
+Har bir mashinaning retsepti, tasviri, tarixi va amaliy ishlatish izohlari uchun keyingi sahifalarni oching.
+<np>
+Po'lat stol
+Ustaxona mebeli
+<&steel_table>Bu blok ish xonalari va xizmat burchaklari uchun amaliy ustaxona mebelidir.<br>
+<br>
+Ishlatish: ish stollari, yashiklar va ixcham mashinalar yoniga qo'ying.<br>
+<np>
+Ishlov berilgan yog'och stol
+Ustaxona mebeli
+<&treated_wood_table>Bu blok ish xonalari va xizmat burchaklari uchun amaliy ustaxona mebelidir.<br>
+<br>
+Ishlatish: ish stollari, yashiklar va ixcham mashinalar yoniga qo'ying.<br>
+<np>
+Ishlov berilgan yog'och kursi
+Ustaxona mebeli
+<&treated_wood_stool>Bu blok ish xonalari va xizmat burchaklari uchun amaliy ustaxona mebelidir.<br>
+<br>
+Ishlatish: ish stollari, yashiklar va ixcham mashinalar yoniga qo'ying.<br>
+<np>
+Metall yasash stoli
+Tunuka ish joyi
+<&metal_crafting_table>Metall yasash stoli bolg'a katagi, 3x3 yasash kataklari va aniq chiqish katagi bor mustahkamlangan ustaxona ish joyidir.<br>
+<br>
+Ishlatish: kataklarda oddiy yasashni bajaring. IE tunukalari uchun Muhandis bolg'asini asbob katagiga, tunuka materialini esa yasash kataklariga qo'yib, keyin natijani oling. Po'lat bezaklar ustunlar, xizmat yo'laklari, derazalar, eshiklar, to'siq panjaralari va boshqa po'lat qismlarga po'lat tunuka ishlatadi.<br>
+<np>
+Zavod anguti
+Ustaxona yordamchi qurilmasi
+<&factory_hopper>Bu blok buyum to'plamlarini ixchamroq sanoat qobig'idan o'tkazadi.<br>
+<br>
+Ishlatish: inventar liniyasiga qarating, so'ng oynada masofa, to'plam soni, vaqt va redstone rejimini belgilang.<br>
+<np>
+Zavod tashlagichi
+Ustaxona yordamchi qurilmasi
+<&factory_dropper>Bu blok saqlangan buyumlarni mo'ljallangan yuzasidan chiqaradi.<br>
+<br>
+Ishlatish: oldini chiqarish joyiga qarating, ichki kataklarini to'ldiring, oynada kuch, burchak, kechikish, filtr mantiqi va redstone rejimini sozlang.<br>
+<np>
+Zavod blok joylashtirgichi
+Ustaxona yordamchi qurilmasi
+<&factory_placer>Bu blok faollashganda ichki zaxirasidagi bloklarni joylashtiradi.<br>
+<br>
+Ishlatish: ishchi yuzasini nishon joyga qarating va joylashtiriladigan to'plamlarni yuklang.<br>
+<np>
+Blok buzgich
+Ustaxona yordamchi qurilmasi
+<&small_block_breaker>Kichik blok buzgich yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: ishchi yuzasini olib tashlanadigan blokka qarating.<br>
+<np>
+Chiqindi yoqgich
+Ixcham ishlov birligi
+<&small_waste_incinerator>Chiqindi yoqgich ustaxonada kichik joy egallab, keraksiz buyumlarni yo'q qiladi.<br>
+<br>
+Ishlatish: navbatiga faqat keraksiz buyumlarni bering.<br>
+<np>
+Laboratoriya pechi
+Ixcham ishlov birligi
+<&small_lab_furnace>Laboratoriya pechi ustaxonada kichik joy egallab, qattiq yoqilg'i bilan ixcham eritish ishlarini bajaradi.<br>
+<br>
+Ishlatish: kichik eritish to'plamlari uchun qattiq yoqilg'idan foydalaning.<br>
+<np>
+Elektr pech
+Ixcham ishlov birligi
+<&small_electrical_furnace>Elektr pech ustaxonada kichik joy egallab, FE quvvati bilan ixcham eritish ishlarini bajaradi.<br>
+<br>
+Ishlatish: FE va eritishga mos buyum bering.<br>
+<np>
+Mineral eritgich
+Ixcham ishlov birligi
+<&small_mineral_smelter>Mineral eritgich ustaxonada kichik joy egallab, yuqori haroratli mineral ishlovini bajaradi.<br>
+<br>
+Ishlatish: yuqori haroratda eritish uchun mineral bloklar va quvvat bering.<br>
+<np>
+Suv muzlatgich
+Ixcham ishlov birligi
+<&small_freezer>Suv muzlatgich quvvatli suyuqlik tizimlari uchun ixcham sovitish ishlarini bajaradi.<br>
+<br>
+Ishlatish: bosqichma-bosqich muz ishlab chiqarish uchun suv va quvvat bering.<br>
+<np>
+Passiv suyuqlik
+Suyuqlik liniyasi jihozi
+<&passive_fluid_accumulator>Passiv suyuqlik yig'gich kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: mos suv manbalariga taqab qo'ying va suyuqlik chiqarish uchun joy qoldiring.<br>
+<np>
+Quyosh paneli
+Ustaxona yordamchi qurilmasi
+<&small_solar_panel>Kichik quyosh paneli yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: ochiq osmon bilan ta'minlab, kam quvvat talab qiladigan jihozlarni ulang.<br>
+<np>
+Sog'ish mashinasi
+Ustaxona yordamchi qurilmasi
+<&small_milking_machine>Kichik sog'ish mashinasi yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: sigirlarga yaqin qo'yib, sut idishlari yoki suyuqlikni chiqarish yo'lini ta'minlang.<br>
+<np>
+Daraxt kesgich
+Ustaxona yordamchi qurilmasi
+<&small_tree_cutter>Kichik daraxt kesgich yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: o'sib bo'lgan daraxtlarga qarating va tushgan buyumlarni alohida yig'ing.<br>

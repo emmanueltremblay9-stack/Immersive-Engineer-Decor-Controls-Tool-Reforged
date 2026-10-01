@@ -1,0 +1,5 @@
+Meja Keluli
+Perabot bengkel
+<&recipe>Blok ini ialah perabot bengkel praktikal untuk bilik kerja dan sudut penyelenggaraan.<br>
+<br>
+Penggunaan: Letakkan di sebelah meja kerja, peti dan mesin padat.<br>

@@ -1,0 +1,7 @@
+Kotak Penyimpanan Bahan
+Kotak pasokan konstruksi
+<&recipe>Kotak material membawa persediaan besar dari satu jenis bahan konstruksi polos, tidak dimodifikasi, dan dapat ditumpuk.<br>
+<br>
+Penggunaan: Pegang kotak di tangan utama dan tumpukan material di tangan sekunder untuk memuatnya. Gunakan kotak dengan tangan sekunder kosong untuk mengambil satu tumpukan.<br>
+<br>
+Kotak menampung hingga 512 item, hanya satu jenis material, serta menolak kotak bersarang, perlengkapan tak dapat ditumpuk, dan tumpukan bernama atau berdata yang dimodifikasi. Isinya ditampilkan pada tooltip.

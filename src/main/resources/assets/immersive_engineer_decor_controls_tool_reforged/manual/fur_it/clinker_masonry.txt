@@ -1,0 +1,161 @@
+Clinker e muradure
+Involucris di modons e beton
+Clinker, modons di scorie, beton armât e veri blindât a dan superficiis massissis par stanziis cjaldis, oficinis e visualis protetis.<br>
+<br>
+Dopre lastris, scjalins, fetis e mûrs compagns par finî i ôrs cence cambiâ il stîl dai materiâi de fabriche.
+<np>
+Bloc di modons di clinker
+Modons scurîts dal cjalin
+<&clinker_brick_block>Chest bloc al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Lastre di modons di clinker
+Modons scurîts dal cjalin
+<&clinker_brick_slab>Chest bloc al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Scjalins di modons di clinker
+Modons scurîts dal cjalin
+<&clinker_brick_stairs>Chest bloc al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Mûr di modons di clinker
+Modons scurîts dal cjalin
+<&clinker_brick_wall>Chest bloc al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Bloc di clinker maculât
+Modons scurîts dal cjalin
+<&clinker_brick_stained_block>Il Bloc di modons di clinker maculâts al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Lastre di clinker maculât
+Modons scurîts dal cjalin
+<&clinker_brick_stained_slab>La Lastre di modons di clinker maculâts e puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Scjalins di clinker maculât
+Modons scurîts dal cjalin
+<&clinker_brick_stained_stairs>I Scjalins di modons di clinker maculâts a puartin modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Modon di clinker ornât
+Modons scurîts dal cjalin
+<&clinker_brick_sastor_corner_block>Il Modon di clinker ornât di arenarie al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Modon di clinker incassât
+Modons scurîts dal cjalin
+<&clinker_brick_recessed>Chest bloc al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Modons di clinker cun fendituris
+Modons scurîts dal cjalin
+<&clinker_brick_vertically_slit>I Modons di clinker cun fendituris verticâls a puartin modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Lastre verticâl di clinker
+Modons scurîts dal cjalin
+<&clinker_brick_vertical_slab_structured>La Lastre verticâl di clinker struturade e puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Mieze lastre di modons di clinker
+Modons scurîts dal cjalin
+<&halfslab_clinker_brick>Chest bloc al puarte modons scurîts dal cjalin tes salis des fornâs, ae base dai cjamins e sui mûrs di servizi.<br>
+<br>
+Ûs: doprilu tant che mûr, finidure o rivestiment di zone cjalde ator di fornâs e cjaldieris.<br>
+<np>
+Bloc di modons di scorie
+Muradure fisse di fabriche
+<&slag_brick_block>Chest bloc al zonte muradure fisse grise e maron pes fondamentis, i mûrs di sostegn e i vecjos magazens di lavôr.<br>
+<br>
+Ûs: doprilu par vecjis fondamentis, mûrs di sostegn e paviments sporcs di stabiliment.<br>
+<np>
+Lastre di modons di scorie
+Muradure fisse di fabriche
+<&slag_brick_slab>Chest bloc al zonte muradure fisse grise e maron pes fondamentis, i mûrs di sostegn e i vecjos magazens di lavôr.<br>
+<br>
+Ûs: doprilu par vecjis fondamentis, mûrs di sostegn e paviments sporcs di stabiliment.<br>
+<np>
+Scjalins di modons di scorie
+Muradure fisse di fabriche
+<&slag_brick_stairs>Chest bloc al zonte muradure fisse grise e maron pes fondamentis, i mûrs di sostegn e i vecjos magazens di lavôr.<br>
+<br>
+Ûs: doprilu par vecjis fondamentis, mûrs di sostegn e paviments sporcs di stabiliment.<br>
+<np>
+Mûr di modons di scorie
+Muradure fisse di fabriche
+<&slag_brick_wall>Chest bloc al zonte muradure fisse grise e maron pes fondamentis, i mûrs di sostegn e i vecjos magazens di lavôr.<br>
+<br>
+Ûs: doprilu par vecjis fondamentis, mûrs di sostegn e paviments sporcs di stabiliment.<br>
+<np>
+Bloc di beton armât
+Beton rinfuartît
+<&rebar_concrete>Chest bloc al è un toc di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Lastre di beton armât
+Beton rinfuartît
+<&rebar_concrete_slab>Chest bloc al è un toc di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Scjalins di beton armât
+Beton rinfuartît
+<&rebar_concrete_stairs>Chest bloc al è un toc di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Mûr di beton armât
+Beton rinfuartît
+<&rebar_concrete_wall>Chest bloc al è un toc di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Fete di beton armât
+Beton rinfuartît
+<&halfslab_rebar_concrete>Chest bloc al è un toc di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Piastrele di beton armât
+Beton rinfuartît
+<&rebar_concrete_tile>Chest bloc al è un toc di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Lastre di piastrelis di beton armât
+Beton rinfuartît
+<&rebar_concrete_tile_slab>Chest bloc al è un toc di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Piastrele di beton armât
+Beton rinfuartît
+<&rebar_concrete_tile_stairs>I Scjalins di piastrelis di beton armât a son tocs di beton indurît pes basis des machinis, i mûrs cuintri lis esplosions e i paviments des banchinis di cjarie.<br>
+<br>
+Ûs: metilu sot des machinis, dilunc dai coridôrs di servizi o dulà che e covente une base rinfuartide.<br>
+<np>
+Bloc di veri blindât
+Visuale protete
+<&panzerglass_block>Chest bloc al lasse viodi traviers e al reste adat ae costruzion rinfuartide di fabriche.<br>
+<br>
+Ûs: doprilu dulà che i zuiadôrs a àn di viodi lis machinis traviers di une bariere protete.<br>
+<np>
+Lastre di veri blindât
+Visuale protete
+<&panzerglass_slab>Chest bloc al lasse viodi traviers e al reste adat ae costruzion rinfuartide di fabriche.<br>
+<br>
+Ûs: doprilu dulà che i zuiadôrs a àn di viodi lis machinis traviers di une bariere protete.<br>

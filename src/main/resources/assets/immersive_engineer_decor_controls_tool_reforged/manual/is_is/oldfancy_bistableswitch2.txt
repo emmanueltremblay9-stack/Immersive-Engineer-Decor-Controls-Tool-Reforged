@@ -1,0 +1,7 @@
+Gamall skrautsnúningsrofi
+Roðsteinsstýring
+<&recipe>Fyrirferðarlítil stýring veitir verksmiðjubyggingum greinilegan roðsteinsrofastað.<br>
+<br>
+Notkun: Hægrismelltu á hana til að kveikja eða slökkva á úttaki á fullum styrk fyrir nálægar rásir.<br>
+<br>
+Athugasemdir: Gefur roðstein á fullum styrk meðan kveikt er á henni.

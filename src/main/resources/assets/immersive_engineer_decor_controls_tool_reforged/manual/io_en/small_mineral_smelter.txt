@@ -1,0 +1,5 @@
+Mineralfuzilo
+Kompakta procesunajo
+<&recipe>La mineralfuzilo exekutas mineraloprocesado ye alta temperaturo en kompakta laboreyspaco.<br>
+<br>
+Uzo: Provizez mineralbloki ed energio por fuzado ye alta temperaturo.<br>

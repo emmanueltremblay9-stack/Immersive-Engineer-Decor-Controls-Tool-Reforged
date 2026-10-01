@@ -1,0 +1,7 @@
+Rustic Chain Button
+Brief Pulse
+<&recipe>A momentary switch sends a clean redstone pulse of full strength.<br>
+<br>
+Use: Start engines, release doors, sound alarms or trigger circuits that fire but once.<br>
+<br>
+Note: It resets when the appointed pulse hath ended.

@@ -1,0 +1,7 @@
+Vergelijkerschakelaar
+Signaal van het bevestigingsblok
+<&recipe>Een compacte sensorschakelaar leest het blok waarop hij is gemonteerd en zet die meting om in een eenvoudig paneelsignaal.<br>
+<br>
+Gebruik: monteer hem op inventarissen, tanks of redstoneapparatuur. Wanneer het bevestigingsblok een vergelijkersignaal, containerinhoud of redstone-uitgang meldt, geeft de schakelaar een redstonesignaal op volle sterkte af.<br>
+<br>
+Opmerking: gebruik hem om voorraadniveaus of verborgen bedrading in duidelijke aan-uitbesturingslijnen om te zetten.

@@ -1,0 +1,41 @@
+Pohrana i prijevoz
+Oprema inventara i protoka
+Dijelovi za pohranu i prijevoz obuhvaćaju sanduke, bačve, lijevke i ventile za kompaktne tvorničke vodove.<br>
+<br>
+Koristi ove stranice pri planiranju skladišta, cjevovoda, servisnih spremnika i kontroliranih vodova tekućine.
+<np>
+Sanduk s oznakom
+Urediva oznaka zaliha
+<&labeled_crate>Ovaj sanduk s oznakom olakšava pregledno sortiranje skladišta. Prednja pločica uređuje se poput malog radioničkog znaka.<br>
+<br>
+Uporaba: desnim klikom na pločicu uredi oznaku sanduka. Desnim klikom na ostatak sanduka otvori spremište za opremu, dijelove i zalihe za održavanje.<br>
+<np>
+Bačva za tekućine
+Oprema vodova tekućine
+<&fluid_barrel>Ovaj je dio kompaktna oprema vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: postavi ga gdje cijevi ili kante mogu dosegnuti stranu spremnika.<br>
+<np>
+Lijevak za tekućine
+Oprema vodova tekućine
+<&small_fluid_funnel>Mali lijevak za tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: postavi ga ispod mjesta skupljanja tekućine i usmjeri spremljeni sadržaj u spremnike ili niže cijevi.<br>
+<np>
+Nepovratni ventil za tekućine
+Oprema vodova tekućine
+<&straight_pipe_valve>Nepovratni ventil za tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: poravnaj ventil sa željenim smjerom protoka.<br>
+<np>
+Redstone ventil za tekućine
+Oprema vodova tekućine
+<&straight_pipe_valve_redstone>Redstone ventil za tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: poravnaj ventil sa željenim smjerom protoka.<br>
+<np>
+Analogni ventil za tekućine
+Oprema vodova tekućine
+<&straight_pipe_valve_redstone_analog>Analogni ventil za tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: poravnaj ventil sa željenim smjerom protoka.<br>

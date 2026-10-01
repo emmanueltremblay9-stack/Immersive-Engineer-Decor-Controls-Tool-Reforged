@@ -1,0 +1,127 @@
+Tagongswegen
+Rinpaden en stipen
+Stielen peallen, behannele houtpeallen, roasters, rinbrêgen, leuningen, ljedders, doarren, finsters en lûken foarmje kompakte rûtes foar ûnderhâld troch it fabryksgebou.<br>
+<br>
+Stielen ûnderdielen foar tagongsrûtes brûke stielplaten. Meitsje of pleats in metaalwurkbank, set der in hammer fan Immersive Engineering yn en hammer stielen stêven ta stielplaten foar peallen, rinbrêgen, finsters, doarren, leuningen en oare stielen fersieringen.<br>
+<br>
+Pleats se dêr't masines tagong foar ûnderhâld, ferhege paden, ûnderhâldsskachten of feiliger rânen nedich hawwe.
+<np>
+Dikke stielen peal
+Ûnderdiel fan in draachramt
+<&thick_steel_pole>De rjochte dikke stielen peal jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Kop foar dikke peal
+Ûnderdiel fan in draachramt
+<&thick_steel_pole_head>De kop/foet foar rjochte dikke stielen peal jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Tinne stielen peal
+Ûnderdiel fan in draachramt
+<&thin_steel_pole>De rjochte tinne stielen peal jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Kop foar tinne peal
+Ûnderdiel fan in draachramt
+<&thin_steel_pole_head>De kop/foet foar rjochte tinne stielen peal jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Peal fan behannele hout
+Ûnderdiel fan in draachramt
+<&treated_wood_pole>De rjochte peal fan behannele hout jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Kop foar behannele peal
+Ûnderdiel fan in draachramt
+<&treated_wood_pole_head>De kop/foet foar rjochte peal fan behannele hout jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Stipe foar behannele peal
+Ûnderdiel fan in draachramt
+<&treated_wood_pole_support>De stipe foar rjochte peal fan behannele hout jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Stielen dûbele T-stipe
+Ûnderdiel fan in draachramt
+<&steel_double_t_support>Dit blok jout masinehallen en tagongsramten in sichtbere draachkonstruksje.<br>
+<br>
+Gebrûk: Draai en pleats it as sichtbere fersteviging foar balken, peallen en de rânen fan platfoarms.<br>
+<np>
+Stielen flierroaster
+Ûnderdiel foar ûnderhâldstagong
+<&steel_floor_grating>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Stielen rinbrêge
+Ûnderdiel foar ûnderhâldstagong
+<&steel_catwalk>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Stielen rinbrêgetrep
+Ûnderdiel foar ûnderhâldstagong
+<&steel_catwalk_stairs>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Ferhege stielen rinbrêge
+Ûnderdiel foar ûnderhâldstagong
+<&steel_catwalk_ta>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Stielen leuning
+Ûnderdiel foar ûnderhâldstagong
+<&steel_railing>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Stielen gaasstek
+Ûnderdiel foar ûnderhâldstagong
+<&steel_mesh_fence>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Stielen gaasstekpoarte
+Ûnderdiel foar ûnderhâldstagong
+<&steel_mesh_fence_gate>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Ljedder mei metalen sporten
+Ûnderdiel foar ûnderhâldstagong
+<&metal_rung_ladder>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Fersprongen metalen treden
+Ûnderdiel foar ûnderhâldstagong
+<&metal_rung_steps>Dit blok foarmet dúdlike ûnderhâldsrûtes om masines hinne.<br>
+<br>
+Gebrûk: Pleats it as tagong foar ûnderhâld om masines, boppeferdjippingen en ûnderhâldsskachten hinne.<br>
+<np>
+Finster mei stielen ramt
+Beskerme útsjoch
+<&steel_framed_window>Dit blok hâldt it útsjoch iepen en past tagelyk by fersterke fabrykskonstruksjes.<br>
+<br>
+Gebrûk: Pleats it yn in muorre-iepening fan 1 blok dêr't spilers troch in beskermjende ôfskieding nei masines sjen kinne moatte.<br>
+<np>
+Metalen skodoar
+Yndustriële tagong
+<&metal_sliding_door>Dit blok jout ûnderhâldsromten, skachten, dakken en masinebehuizingen in stevige tagong.<br>
+<br>
+Gebrûk: Ynstallearje it dêr't it gebou in behearske iepening foar ûnderhâld nedich hat.<br>
+<np>
+Izeren lûk
+Yndustriële tagong
+<&iron_hatch>Dit blok jout ûnderhâldsromten, skachten, dakken en masinebehuizingen in stevige tagong.<br>
+<br>
+Gebrûk: Ynstallearje it dêr't it gebou in behearske iepening foar ûnderhâld nedich hat.<br>

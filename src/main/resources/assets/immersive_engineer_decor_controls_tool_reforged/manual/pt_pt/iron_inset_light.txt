@@ -1,0 +1,5 @@
+Luz embutida
+Luz de trabalho compacta
+<&recipe>Este bloco fornece iluminação industrial compacta para corredores, passadiços e postos de trabalho.<br>
+<br>
+Uso: Instala-o em tetos, paredes ou rebordos onde é necessária iluminação de trabalho clara.<br>

@@ -1,0 +1,5 @@
+Laboratóriumi kemence
+Kompakt feldolgozóegység
+<&recipe>A laboratóriumi kemence kis helyigény mellett végez kompakt, szilárd tüzelőanyaggal működő olvasztási feladatokat a műhelyben.<br>
+<br>
+Használat: szilárd tüzelőanyaggal olvassz kis adagokat.<br>

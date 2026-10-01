@@ -1,0 +1,5 @@
+Barre énergétique au mélange de muesli
+En-cas rapide d'atelier
+<&recipe>La barre énergétique au mélange de muesli est un aliment compact à base de pain, de graines et de fruit.<br>
+<br>
+Utilisation : mangez-la sur le terrain pendant la pose de commandes, tuyaux, plateformes ou longues installations en salle des machines.

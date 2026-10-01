@@ -1,0 +1,7 @@
+Blow-Sensing Touch Mat
+Touch-driven beat
+<&recipe>A touch switch sends a short token from movement on a floor or trapdoor.<br>
+<br>
+Use: Set it where beings go through an upkeep aisle, loader or guarded path.<br>
+<br>
+Mind: Gives a brief beat after being touched by a being.

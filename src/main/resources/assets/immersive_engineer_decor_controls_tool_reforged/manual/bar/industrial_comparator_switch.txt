@@ -1,0 +1,7 @@
+Komparatoaschalter
+Signal vom Trägerblock
+<&recipe>A kloana Sensorschalter liest sein Trägerblock und macht ausm Messwert a oafache Paneelausgab.<br>
+<br>
+So geht's: Montier'n auf Lager, Tanks oder Redstone-Geräte. Wenn da Trägerblock Komparatoa-, Behälter- oder Redstone-Ausgab meldt, gibt da Schalter Redstone mit voller Stärk ab.<br>
+<br>
+Hinweis: So machst Lagerständ oder versteckte Verkabelung zu klare Ein-/Aus-Steuerleitungen.

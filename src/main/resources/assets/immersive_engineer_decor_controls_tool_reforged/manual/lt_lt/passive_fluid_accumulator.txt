@@ -1,0 +1,5 @@
+Pasyvus skysčių kaupimas
+Skysčių linijos įranga
+<&recipe>Pasyvus skysčių kaupiklis yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: statyk prie tinkamų vandens šaltinių ir palik vietos skysčiui išvesti.<br>

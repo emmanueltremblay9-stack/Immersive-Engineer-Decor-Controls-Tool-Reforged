@@ -1,0 +1,7 @@
+Nabitý lazurit
+Uložené zkušenosti
+<&recipe>Nabitý lazurit uchovává jednu úroveň zkušeností získanou pomocí ždímače mysli.<br>
+<br>
+Použití: Spotřebováním obnovíš jednu úroveň, odstraníš aktivní účinky a získáš zpět trochu zdraví.<br>
+<br>
+Zobrazení receptu ukazuje ždímač mysli, protože nabitý lazurit vzniká použitím tohoto nástroje s dostupným lazuritem a zkušenostmi.

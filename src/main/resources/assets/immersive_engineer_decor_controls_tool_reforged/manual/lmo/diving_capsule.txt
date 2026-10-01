@@ -1,0 +1,7 @@
+Capsola de aria per andà sota l’aqua
+Riserva de aria de emergenza
+<&recipe>La capsula d'aria per l'immersion l'è una riserva d'emergenza per lavorà sott'acqua.<br>
+<br>
+Dopra: Doprala a man per rimett l'aria. Quand l'è in l'inventari, la pò anca attivass da sola quand l'aria l'è quasi finida, e poeu la va in cooldown.<br>
+<br>
+Dovrela quand che te lavori in di miniere sot’aqua, de longh a i tub sommerg o per comedà i sal di pompe.

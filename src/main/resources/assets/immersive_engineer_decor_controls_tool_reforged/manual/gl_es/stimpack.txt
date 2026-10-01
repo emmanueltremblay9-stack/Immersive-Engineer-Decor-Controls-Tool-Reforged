@@ -1,0 +1,7 @@
+Autoinxector estimulante
+Inxector de emerxencia
+<&recipe>O Auto Stim Pack é unha ferramenta médica de emerxencia para mantemento perigoso.<br>
+<br>
+Uso: Actívao manualmente para curarte, obter protección breve e un pequeno impulso de movemento. No inventario tamén pode activarse automaticamente con pouca saúde e entrar logo en tempo de recarga.<br>
+<br>
+Ten un á man antes de probar lugares altos, cableado exposto ou rutas de mina con inimigos.

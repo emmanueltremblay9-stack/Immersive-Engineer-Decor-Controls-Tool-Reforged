@@ -1,0 +1,7 @@
+Material saqlash qutisi
+Qurilish ta'minoti qutisi
+<&recipe>Material qutisi bitta oddiy, ozgarmagan va taxlanadigan qurilish materialining katta zaxirasini tashiydi.<br>
+<br>
+Qutini asosiy qolda, materialni ikkinchi qolda tutib yuklang; ikkinchi qol bosh bolsa bir top oling.<br>
+<br>
+Bir turdan 512 buyum saqlaydi, boshqa quti, taxlanmaydigan uskuna va ozgartirilgan toplarni qabul qilmaydi, tarkibni maslahatda korsatadi.

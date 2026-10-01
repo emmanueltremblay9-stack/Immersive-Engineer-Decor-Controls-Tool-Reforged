@@ -1,0 +1,41 @@
+Almacenamiento y transporte
+Elementos de inventario y circulación
+Los elementos de almacenamiento y transporte incluyen cajones, barriles, embudos y válvulas para organizar recorridos compactos en la fábrica.<br>
+<br>
+Consulta estas páginas al diseñar almacenes, tendidos de tuberías, depósitos de servicio y conducciones de fluidos controladas.
+<np>
+Cajón con etiqueta
+Etiqueta de existencias editable
+<&labeled_crate>Este cajón con etiqueta permite organizar con claridad el almacén. Su placa frontal se puede editar como un pequeño letrero de taller.<br>
+<br>
+Uso: Haz clic derecho en la placa para editar la etiqueta del cajón. Haz clic derecho en el resto del cajón para abrir el almacén de accesorios, piezas y suministros de mantenimiento.<br>
+<np>
+Barril de fluidos
+Equipamiento de tuberías de fluidos
+<&fluid_barrel>Este elemento compacto forma parte de las conducciones de fluidos para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Colócalo donde las tuberías o los baldes puedan acceder a la cara del depósito.<br>
+<np>
+Embudo de fluidos
+Equipamiento de tuberías de fluidos
+<&small_fluid_funnel>El embudo pequeño de fluidos es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Colócalo bajo el punto de recogida del fluido y conduce el contenido almacenado hacia depósitos o tuberías inferiores.<br>
+<np>
+Válvula de retención para tuberías de fluidos
+Equipamiento de tuberías de fluidos
+<&straight_pipe_valve>La válvula de retención de fluidos es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Alinea la válvula con la dirección de flujo prevista.<br>
+<np>
+Válvula de fluidos de redstone
+Equipamiento de tuberías de fluidos
+<&straight_pipe_valve_redstone>La válvula de fluidos de redstone es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Alinea la válvula con la dirección de flujo prevista.<br>
+<np>
+Válvula analógica de fluidos
+Equipamiento de tuberías de fluidos
+<&straight_pipe_valve_redstone_analog>La válvula analógica de fluidos es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Alinea la válvula con la dirección de flujo prevista.<br>

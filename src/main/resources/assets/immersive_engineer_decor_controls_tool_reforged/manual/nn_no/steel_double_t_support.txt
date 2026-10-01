@@ -1,0 +1,5 @@
+Dobbel T-bjelke av stål
+Del til berande rammeverk
+<&recipe>Denne blokka gjev synleg rammeverk i maskinhallar og tilkomstrammer.<br>
+<br>
+Bruk: drei og plasser delen som synleg avstiving av bjelkar, stolpar og plattformkantar.<br>

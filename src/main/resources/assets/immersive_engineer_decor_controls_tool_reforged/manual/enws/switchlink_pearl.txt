@@ -1,0 +1,7 @@
+Switch Link Pearl
+Control through a Link
+<&recipe>A linked pearl remembers a receiver target for distant control of the manufactory.<br>
+<br>
+Use: Click a Switch Link receiver with an Ender Pearl to fashion one. Sneak-use the linked pearl to set off its remembered receiver.<br>
+<br>
+Note: The target must be loaded, within reach and in thy own dimension.

@@ -1,0 +1,108 @@
+Industriële bouw
+Fabrieksmoere en rande
+Algemeine bouwóngerdaele omvatte deure, vinsters, lichte, waarsjoewingsbördje, rande en draagdiele die neet in ein preciezere aafdaeling passe.<br>
+<br>
+Gebroek dees bladzies veur fabrieksruumtes, ónnerhouwdsgange, gevaormarkering en praktisch industrieel detailwerk.
+<np>
+Iezere peerlamp
+Klein werkleech
+<&iron_bulb_light>Dees blok geuf kleine industriële verlechting veur gange, looppade en werkvakke.<br>
+<br>
+Gebroek: bevestig 'm op plafonds, moere of rande wao de ruumte duidelik werkleech neudig haet.<br>
+<np>
+Plafondrandlamp
+Klein werkleech
+<&iron_ceiling_edge_light>Dees blok geuf kleine industriële verlechting veur gange, looppade en werkvakke.<br>
+<br>
+Gebroek: bevestig 'm op plafonds, moere of rande wao de ruumte duidelik werkleech neudig haet.<br>
+<np>
+Verzónke vloerrandlamp
+Klein werkleech
+<&iron_floor_edge_light>Dees blok geuf kleine industriële verlechting veur gange, looppade en werkvakke.<br>
+<br>
+Gebroek: bevestig 'm op plafonds, moere of rande wao de ruumte duidelik werkleech neudig haet.<br>
+<np>
+Verzónke lamp
+Klein werkleech
+<&iron_inset_light>Dees blok geuf kleine industriële verlechting veur gange, looppade en werkvakke.<br>
+<br>
+Gebroek: bevestig 'm op plafonds, moere of rande wao de ruumte duidelik werkleech neudig haet.<br>
+<np>
+Börd "Algemein oppasse
+Gevaormarkering
+<&sign_caution>'t Börd "Algemein oppasse" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Gevaorbörd
+Gevaormarkering
+<&sign_danger>'t Börd "Pas op, hie is 't ech gevaerlik" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Decorbörd
+Gevaormarkering
+<&sign_decor>De bördplaat (Engineer's decor) markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Verdedigingsbörd
+Gevaormarkering
+<&sign_defense>'t Börd "Pas op, verdedigingssysteem veuroet" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Oetgangsbörd
+Gevaormarkering
+<&sign_exit>Dit börd markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Börd "Vuurgevaor
+Gevaormarkering
+<&sign_firehazard>'t Börd "Vuurgevaor" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Börd "Vorstwaarsjoewing
+Gevaormarkering
+<&sign_frost>'t Börd "Vorstwaarsjoewing" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Börd veur heit vlak
+Gevaormarkering
+<&sign_hotsurface>'t Börd "Pas op, heit vlak" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Börd veur draad ónger sjtroom
+Gevaormarkering
+<&sign_hotwire>'t Börd "Pas op, draad ónger sjtroom" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Börd "Lasergevaor
+Gevaormarkering
+<&sign_laser>'t Börd "Lasergevaor" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Magisch gevaorbörd
+Gevaormarkering
+<&sign_magichazard>'t Börd "Pas op, magisch gevaor" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Magneetveldbörd
+Gevaormarkering
+<&sign_magneticfield>'t Börd "Pas op, sjtèrk magneetveld" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>
+Börd "Radioactief gevaor
+Gevaormarkering
+<&sign_radioactive>'t Börd "Radioactief gevaor" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>
+<np>

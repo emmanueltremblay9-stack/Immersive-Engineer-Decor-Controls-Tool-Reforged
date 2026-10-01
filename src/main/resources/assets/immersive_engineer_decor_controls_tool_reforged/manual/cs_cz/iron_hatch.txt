@@ -1,0 +1,5 @@
+Železný výklopný poklop
+Průmyslový přístupový bod
+<&recipe>Tento blok poskytuje odolný vstup do servisních místností, šachet, střech a strojních krytů.<br>
+<br>
+Použití: Nainstaluj jej tam, kde stavba potřebuje ovladatelný údržbový otvor.<br>

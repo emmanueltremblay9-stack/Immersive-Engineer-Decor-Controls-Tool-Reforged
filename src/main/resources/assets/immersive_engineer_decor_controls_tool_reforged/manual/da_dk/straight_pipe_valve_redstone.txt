@@ -1,0 +1,5 @@
+Redstonevæskeventil
+Udstyr til væskeledninger
+<&recipe>Den redstonestyrede væskeventil er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Vend ventilen efter den ønskede strømningsretning.<br>

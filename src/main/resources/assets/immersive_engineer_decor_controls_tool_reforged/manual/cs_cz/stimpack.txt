@@ -1,0 +1,7 @@
+Automatický stimpack
+Nouzový injektor
+<&recipe>Nouzový předmět pro nebezpečnou údržbu.<br>
+<br>
+Použití: Ručně léčí, krátce chrání a zrychlí. V inventáři se spustí při nízkém zdraví a poté se obnovuje.<br>
+<br>
+Noste před prací ve výškách, s odkrytými vodiči či v nebezpečných dolech.

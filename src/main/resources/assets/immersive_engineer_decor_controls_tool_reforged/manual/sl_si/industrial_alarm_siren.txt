@@ -1,0 +1,7 @@
+Alarmna sirena
+Povratna informacija o signalu
+<&recipe>Alarmna sirena je redstone kazalnik, nameščen na ploskev bloka. Njeno stanje napajanja sledi signalu bloka, na katerega je pritrjena.<br>
+<br>
+Pritrdite jo na trdno ploskev in jo napajajte za spremljanje vrat, strojev, alarmov ali plošč.<br>
+<br>
+Sirena se osveži enkrat na sekundo, dokler je priključeni signal dejaven.

@@ -1,0 +1,5 @@
+Dicker Stahlpfosten
+Teil des Tragwerks
+<&recipe>Der gerade dicke Stahlpfosten bildet sichtbare Tragstrukturen für Maschinenhallen und Zugangsrahmen.<br>
+<br>
+Verwendung: Drehe und platziere das Teil als sichtbare Verstrebung für Träger, Pfosten und Plattformränder.<br>

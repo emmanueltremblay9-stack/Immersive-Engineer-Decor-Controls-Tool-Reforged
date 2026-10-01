@@ -1,0 +1,161 @@
+Klinker és falazat
+Tégla- és betonburkolatok
+A klinker, a salaktégla, a vasbeton és a páncélüveg tömör felületeket biztosít forró helyiségekhez, műhelyekhez és védett betekintőnyílásokhoz.<br>
+<br>
+A hozzájuk illő lapokkal, lépcsőkkel, vékony lapokkal és falakkal zárd le a széleket a gyár anyaghasználatának megtartásával.
+<np>
+Klinkertéglablokk
+Koromtól sötét téglafal
+<&clinker_brick_block>Ez a blokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Klinkertéglalap
+Koromtól sötét téglafal
+<&clinker_brick_slab>Ez a blokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Klinkertéglalépcső
+Koromtól sötét téglafal
+<&clinker_brick_stairs>Ez a blokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Klinkertéglafal
+Koromtól sötét téglafal
+<&clinker_brick_wall>Ez a blokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Foltos klinkerblokk
+Koromtól sötét téglafal
+<&clinker_brick_stained_block>A foltos klinkertéglablokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Foltos klinkerlap
+Koromtól sötét téglafal
+<&clinker_brick_stained_slab>A foltos klinkertéglalap koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Foltos klinkerlépcső
+Koromtól sötét téglafal
+<&clinker_brick_stained_stairs>A foltos klinkertéglalépcső koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Díszített klinkertégla
+Koromtól sötét téglafal
+<&clinker_brick_sastor_corner_block>A homokkővel díszített klinkertégla koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Süllyesztett klinkertégla
+Koromtól sötét téglafal
+<&clinker_brick_recessed>Ez a blokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Réselt klinkertéglák
+Koromtól sötét téglafal
+<&clinker_brick_vertically_slit>A függőlegesen réselt klinkertéglák koromtól sötét téglafalazatot adnak kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Függőleges klinkerlap
+Koromtól sötét téglafal
+<&clinker_brick_vertical_slab_structured>A mintázott függőleges klinkerlap koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Klinkertégla féllap
+Koromtól sötét téglafal
+<&halfslab_clinker_brick>Ez a blokk koromtól sötét téglafalazatot ad kemencecsarnokokhoz, kéményalapokhoz és karbantartási falakhoz.<br>
+<br>
+Használat: falnak, szegélynek vagy a kemencék és kazánok körüli forró zóna burkolatának használd.<br>
+<np>
+Salaktéglablokk
+Tömör gyári falazat
+<&slag_brick_block>Ez a blokk tömör szürkésbarna falazatot ad alapokhoz, támfalakhoz és régebbi műhelyépületekhez.<br>
+<br>
+Használat: régi alapokhoz, támfalakhoz és piszkos üzemi padlókhoz használd.<br>
+<np>
+Salaktéglalap
+Tömör gyári falazat
+<&slag_brick_slab>Ez a blokk tömör szürkésbarna falazatot ad alapokhoz, támfalakhoz és régebbi műhelyépületekhez.<br>
+<br>
+Használat: régi alapokhoz, támfalakhoz és piszkos üzemi padlókhoz használd.<br>
+<np>
+Salaktéglalépcső
+Tömör gyári falazat
+<&slag_brick_stairs>Ez a blokk tömör szürkésbarna falazatot ad alapokhoz, támfalakhoz és régebbi műhelyépületekhez.<br>
+<br>
+Használat: régi alapokhoz, támfalakhoz és piszkos üzemi padlókhoz használd.<br>
+<np>
+Salaktéglafal
+Tömör gyári falazat
+<&slag_brick_wall>Ez a blokk tömör szürkésbarna falazatot ad alapokhoz, támfalakhoz és régebbi műhelyépületekhez.<br>
+<br>
+Használat: régi alapokhoz, támfalakhoz és piszkos üzemi padlókhoz használd.<br>
+<np>
+Vasbetonblokk
+Vasbeton
+<&rebar_concrete>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Vasbetonlap
+Vasbeton
+<&rebar_concrete_slab>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Vasbetonlépcső
+Vasbeton
+<&rebar_concrete_stairs>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Vasbetonfal
+Vasbeton
+<&rebar_concrete_wall>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Vékony vasbetonlap
+Vasbeton
+<&halfslab_rebar_concrete>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Vasbeton burkolólap
+Vasbeton
+<&rebar_concrete_tile>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Vasbeton burkolatlap
+Vasbeton
+<&rebar_concrete_tile_slab>Ez a blokk kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Vasbeton burkolólap
+Vasbeton
+<&rebar_concrete_tile_stairs>A vasbeton burkolatlépcső kemény betonelem gépalapokhoz, robbanásvédő falakhoz és rakodóhelyek padlójához.<br>
+<br>
+Használat: tedd gépek alá, karbantartási folyosók mentén, vagy bárhová, ahol megerősített alapra van szükség.<br>
+<np>
+Páncélüvegblokk
+Védett rálátás
+<&panzerglass_block>Ez a blokk szabadon hagyja a rálátást, miközben illik a megerősített gyári szerkezetekhez.<br>
+<br>
+Használat: ott használd, ahol a játékosoknak védőfalon keresztül kell látniuk a gépeket.<br>
+<np>
+Páncélüveglap
+Védett rálátás
+<&panzerglass_slab>Ez a blokk szabadon hagyja a rálátást, miközben illik a megerősített gyári szerkezetekhez.<br>
+<br>
+Használat: ott használd, ahol a játékosoknak védőfalon keresztül kell látniuk a gépeket.<br>

@@ -1,0 +1,7 @@
+Glacadair puls ann an cèis
+Smachd ceangailte
+<&recipe>Bheir glacadair puls ceangailte ann an cèis brosnachadh redstone goirid do phanalan iomallach.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Dèan briogadh deas air no brosnaich an neamhnaid cheangailte gus puls goirid a thoirt seachad.<br>
+<br>
+Nòtaichean: ath-shuidhichidh am puls e fhèin an dèidh na h-ùine clàraichte aige.

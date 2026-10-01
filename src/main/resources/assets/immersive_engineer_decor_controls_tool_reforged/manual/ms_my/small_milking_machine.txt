@@ -1,0 +1,5 @@
+Mesin Pemerah Susu
+Kegunaan lantai bengkel
+<&recipe>Mesin pemerah susu kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Letakkan berhampiran lembu dan sediakan cara mengeluarkan bekas susu atau bendalir.<br>

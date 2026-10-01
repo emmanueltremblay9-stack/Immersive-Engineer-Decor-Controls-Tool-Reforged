@@ -1,0 +1,5 @@
+Fabrik-Auswerfa
+Hüfsgerät für de Werkstatt
+<&recipe>Der Block gibt gespeicherte Gegnständ aus ana ausgrichteten Seitn aus.<br>
+<br>
+Verwendung: Richt de Vorderseitn zum Auswurfpunkt, füll de Fächa und stöll Kraft, Winkl, Verzögerung, Filterlogik und Redstone-Modus in da Oberfläche ein.<br>

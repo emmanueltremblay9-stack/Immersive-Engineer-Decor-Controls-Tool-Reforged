@@ -1,0 +1,3 @@
+Grosiera orgranuli
+Materialo por injeniorutensili uzata da la rekonstruktita fabrikoreceptaro.
+<&recipe>Povas fuzesar a ora<br>lingoti, ma ne esas<br>apta por avancita materialoprocesado.

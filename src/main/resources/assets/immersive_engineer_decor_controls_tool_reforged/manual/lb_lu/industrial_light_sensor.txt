@@ -1,0 +1,7 @@
+Liichtsensor
+Signalerkennung
+<&recipe>E Liichtsensor verwandelt déi lokal Hellegkeet an eng Redstone-Steierung.<br>
+<br>
+Benotzung: Benotz en fir automatesch Luuchten, Rolllueden a Siichtschaltungen.<br>
+<br>
+Hiweiser: Gëtt Stroum bei enger rouer Hellegkeet vun 8 oder méi.

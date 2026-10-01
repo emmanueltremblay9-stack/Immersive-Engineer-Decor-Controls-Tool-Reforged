@@ -1,0 +1,5 @@
+Bloque de ladrillo vitrificado manchado
+Ladrillos oscurecidos por el hollín
+<&recipe>El bloque de ladrillo vitrificado manchado aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Úsalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>

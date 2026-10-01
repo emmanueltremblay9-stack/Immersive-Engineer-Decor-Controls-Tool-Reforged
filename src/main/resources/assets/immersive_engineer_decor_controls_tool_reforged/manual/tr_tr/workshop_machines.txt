@@ -1,0 +1,107 @@
+Atölye Makineleri
+Makineler ve atölye giriş/çıkışları
+Atölye makineleri; üretim, eşya taşıma, eritme, atık imhası, toplama ve yardımcı işleri tek blok boyutunda gerçekleştirir.<br>
+<br>
+Her makinenin tarifini, görselini, açıklamasını ve pratik kullanım notlarını görmek için sonraki sayfaları açın.
+<np>
+Çelik Masa
+Atölye mobilyası
+<&steel_table>Bu blok, çalışma odaları ve bakım köşeleri için kullanışlı bir atölye mobilyasıdır.<br>
+<br>
+Kullanım: Tezgâhların, sandıkların ve küçük makinelerin yanına koyun.<br>
+<np>
+İşlenmiş Ahşap Masa
+Atölye mobilyası
+<&treated_wood_table>Bu blok, çalışma odaları ve bakım köşeleri için kullanışlı bir atölye mobilyasıdır.<br>
+<br>
+Kullanım: Tezgâhların, sandıkların ve küçük makinelerin yanına koyun.<br>
+<np>
+İşlenmiş Ahşap Tabure
+Atölye mobilyası
+<&treated_wood_stool>Bu blok, çalışma odaları ve bakım köşeleri için kullanışlı bir atölye mobilyasıdır.<br>
+<br>
+Kullanım: Tezgâhların, sandıkların ve küçük makinelerin yanına koyun.<br>
+<np>
+Metal Çalışma Masası
+Levha çalışma istasyonu
+<&metal_crafting_table>Metal çalışma masası; çekiç yuvası, 3x3 üretim ızgarası ve belirgin çıkış yuvası olan güçlendirilmiş atölye istasyonudur.<br>
+<br>
+Kullanım: Izgarayı normal üretim için kullanın. IE levhaları için alet yuvasına mühendis çekicini ve ızgaraya levha malzemesini koyup sonucu alın. Çelik süslemeler; direkler, servis yolları, pencereler, kapılar, korkuluklar ve diğer çelik parçalar için çelik levha kullanır.<br>
+<np>
+Fabrika Hunisi
+Atölye yardımcı aygıtı
+<&factory_hopper>Bu blok, eşya yığınlarını daha dar bir sanayi tipi muhafaza içinden taşır.<br>
+<br>
+Kullanım: Envanter hattına yöneltin; menzili, yığın sayısını, zamanlamayı ve redstone modunu ekranından ayarlayın.<br>
+<np>
+Fabrika Bırakıcısı
+Atölye yardımcı aygıtı
+<&factory_dropper>Bu blok, depolanmış eşyaları yöneltilen yüzünden dışarı verir.<br>
+<br>
+Kullanım: Önünü bırakma noktasına yöneltin, dahili yuvaları doldurun; kuvveti, açıyı, gecikmeyi, filtre mantığını ve redstone modunu ekranından ayarlayın.<br>
+<np>
+Fabrika Blok Yerleştiricisi
+Atölye yardımcı aygıtı
+<&factory_placer>Bu blok etkinleştirildiğinde dahili stokundan blok yerleştirir.<br>
+<br>
+Kullanım: Çalışma yüzünü hedef alana yöneltip yerleştirilebilir yığınlarla doldurun.<br>
+<np>
+Blok Kırıcı
+Atölye yardımcı aygıtı
+<&small_block_breaker>Küçük blok kırıcı; üretim, depolama, yerleştirme, kırma, toplama veya küçük otomasyon işleri için bir atölye yardımcı bloğudur.<br>
+<br>
+Kullanım: Çalışma yüzünü kaldırılacak bloğa yöneltin.<br>
+<np>
+Atık Yakıcısı
+Küçük işleme birimi
+<&small_waste_incinerator>Atık yakıcısı, az atölye alanında istenmeyen eşyaları yok eder.<br>
+<br>
+Kullanım: Kuyruğuna yalnızca istemediğiniz eşyaları koyun.<br>
+<np>
+Laboratuvar Ocağı
+Küçük işleme birimi
+<&small_lab_furnace>Laboratuvar ocağı, az atölye alanında küçük ölçekli katı yakıtlı eritme işleri yapar.<br>
+<br>
+Kullanım: Küçük eritme partileri için katı yakıt kullanın.<br>
+<np>
+Elektrikli Ocak
+Küçük işleme birimi
+<&small_electrical_furnace>Elektrikli ocak, az atölye alanında küçük ölçekli FE gücüyle eritme işleri yapar.<br>
+<br>
+Kullanım: FE ve uygun eritme girdisi sağlayın.<br>
+<np>
+Mineral Eritici
+Küçük işleme birimi
+<&small_mineral_smelter>Mineral eritici, az atölye alanında yüksek sıcaklıklı mineral işleme yapar.<br>
+<br>
+Kullanım: Yüksek sıcaklıkta eritme için mineral blokları ve güç verin.<br>
+<np>
+Su Dondurucu
+Küçük işleme birimi
+<&small_freezer>Su dondurucu, güç alan sıvı düzenekleri için küçük ölçekli soğutma işleri yapar.<br>
+<br>
+Kullanım: Aşamalı buz üretimi için su ve güç sağlayın.<br>
+<np>
+Pasif Sıvı
+Sıvı hattı donanımı
+<&passive_fluid_accumulator>Pasif sıvı biriktirici; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Uygun su kaynaklarının yanına yerleştirin ve sıvının alınabilmesi için yer bırakın.<br>
+<np>
+Güneş Paneli
+Atölye yardımcı aygıtı
+<&small_solar_panel>Küçük güneş paneli; üretim, depolama, yerleştirme, kırma, toplama veya küçük otomasyon işleri için bir atölye yardımcı bloğudur.<br>
+<br>
+Kullanım: Üstünü gökyüzüne açık tutup düşük tüketimli donanıma bağlayın.<br>
+<np>
+Süt Sağma Makinesi
+Atölye yardımcı aygıtı
+<&small_milking_machine>Küçük süt sağma makinesi; üretim, depolama, yerleştirme, kırma, toplama veya küçük otomasyon işleri için bir atölye yardımcı bloğudur.<br>
+<br>
+Kullanım: İneklerin yakınına yerleştirin; süt kaplarını veya sıvıyı çıkaracak bir yol sağlayın.<br>
+<np>
+Ağaç Kesici
+Atölye yardımcı aygıtı
+<&small_tree_cutter>Küçük ağaç kesici; üretim, depolama, yerleştirme, kırma, toplama veya küçük otomasyon işleri için bir atölye yardımcı bloğudur.<br>
+<br>
+Kullanım: Yetişmiş ağaçlara yöneltin ve düşen eşyaları ayrı olarak toplayın.<br>

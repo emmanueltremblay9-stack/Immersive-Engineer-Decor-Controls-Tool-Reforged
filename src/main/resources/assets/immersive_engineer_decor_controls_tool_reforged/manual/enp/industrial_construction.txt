@@ -1,0 +1,108 @@
+Workstead Building
+Workstead walls and edging
+Shared building fittings cover doors, windows, lights, warning markboards, edging and frame bits that do not fit a narrower heading.<br>
+<br>
+Use these pages for workstead rooms, upkeep hallways, risk marking and useful workstead detail.
+<np>
+Iron Lightbulb
+Small work light
+<&iron_bulb_light>This clot gives small workstead lighting for hallways, walkways and work bays.<br>
+<br>
+Use: Fix it overhead, on walls or on edges where the room needs clear working light.<br>
+<np>
+Overhead Edge Light
+Small work light
+<&iron_ceiling_edge_light>This clot gives small workstead lighting for hallways, walkways and work bays.<br>
+<br>
+Use: Fix it overhead, on walls or on edges where the room needs clear working light.<br>
+<np>
+Sunken Floor Edge Light
+Small work light
+<&iron_floor_edge_light>This clot gives small workstead lighting for hallways, walkways and work bays.<br>
+<br>
+Use: Fix it overhead, on walls or on edges where the room needs clear working light.<br>
+<np>
+Sunken Glowstone Light
+Small work light
+<&iron_inset_light>This clot gives small workstead lighting for hallways, walkways and work bays.<br>
+<br>
+Use: Fix it overhead, on walls or on edges where the room needs clear working light.<br>
+<np>
+Markboard "Take Heed"
+Risk marker
+<&sign_caution>The Take Heed Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Great Risk Markboard
+Risk marker
+<&sign_danger>The Great Risk Ahead Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Decking Markboard
+Risk marker
+<&sign_decor>The Markboard Sheet (Engineer's decor) marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Warding Markboard
+Risk marker
+<&sign_defense>The Beware: Ward Looms Ahead Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Way Out Markboard
+Risk marker
+<&sign_exit>This markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Markboard "Fire Risk"
+Risk marker
+<&sign_firehazard>The Fire Risk Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Markboard "Beware of Frost"
+Risk marker
+<&sign_frost>The Beware of Frost Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Hot Outside Markboard
+Risk marker
+<&sign_hotsurface>The Hot Outside: Take Heed Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Live Wire Markboard
+Risk marker
+<&sign_hotwire>The Live Wire: Take Heed Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Markboard "Beam Risk"
+Risk marker
+<&sign_laser>The Beam Risk Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Spellcraft Risk Markboard
+Risk marker
+<&sign_magichazard>The Beware of Spellcraft Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Lodestone Field Markboard
+Risk marker
+<&sign_magneticfield>The Strong Lodestone Field Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>
+Markboard "Raygiving Risk"
+Risk marker
+<&sign_radioactive>The Raygiving Risk Markboard marks risks, ways out and work spots with a clear workstead warning.<br>
+<br>
+Use: Set it beside risks, ways out, looms and closed-off spots.<br>
+<np>

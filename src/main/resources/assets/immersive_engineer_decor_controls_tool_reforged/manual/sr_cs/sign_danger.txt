@@ -1,0 +1,5 @@
+Znak opasnosti
+Oznaka opasnosti
+<&recipe>Znak „Oprez, veoma opasno područje“ obeležava opasnosti, izlaze i radne zone jasnom oznakom za fabričku bezbednost.<br>
+<br>
+Upotreba: postavi ga pored opasnosti, izlaza, mašina i zabranjenih zona.<br>

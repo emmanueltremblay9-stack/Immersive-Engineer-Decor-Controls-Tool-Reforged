@@ -1,0 +1,7 @@
+Metaalwerkbank
+Platewerkstation
+<&recipe>Metale werkbank mit ein aparte hamerplaats, ein 3x3-maakraoster en ein oetgank.<br>
+<br>
+Gebroek: gebroek 't rooster es ein gewoene werkbank. Veur IE-plate zètste ein ingenieurshaomer in 't gereidsjapsvak en 't plaatmateriaal in 't rooster. Pak dan de gevormde plaat oet de oetvoer.<br>
+<br>
+Sjtaolversieringe gebroeke sjtaolplate. Zèt ein haomer van Immersive Engineering in de bank, haomer sjtaolstave tot sjtaolplate en gebroek die veur pale, looppade, vinsters, deure, leuninge en angere sjtaolversieringe.<br>

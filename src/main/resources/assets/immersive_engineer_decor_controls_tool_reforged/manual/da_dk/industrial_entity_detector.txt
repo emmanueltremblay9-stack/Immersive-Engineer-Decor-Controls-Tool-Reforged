@@ -1,0 +1,7 @@
+Entitetsdetektor
+Signalregistrering
+<&recipe>En entitetsdetektor overvåger bevægelse i nærheden uden en synlig gulvplade.<br>
+<br>
+Brug: Forbind den til døre, lamper, alarmer eller maskinforriglinger.<br>
+<br>
+Bemærk: Afsøger et lille område omkring blokken.

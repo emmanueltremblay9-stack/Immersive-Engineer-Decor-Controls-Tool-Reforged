@@ -1,0 +1,5 @@
+Senkrechte Klinkerstufe
+Rußdunkles Ziegelmauerwerk
+<&recipe>Die strukturierte senkrechte Klinkerstufe verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>

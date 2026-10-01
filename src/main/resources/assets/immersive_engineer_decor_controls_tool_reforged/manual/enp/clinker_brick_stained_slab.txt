@@ -1,0 +1,5 @@
+Grimy Clinker Halfclot
+Soot-dark tilework
+<&recipe>The Grimy Clinker Tile Halfclot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>

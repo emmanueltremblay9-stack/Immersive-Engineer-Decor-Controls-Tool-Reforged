@@ -1,0 +1,7 @@
+Receptor d’impulsion en bóstia
+Comanda ligada
+<&recipe>Un receptor d’impulsion ligat dins una bóstia balha als panèls alunhats un brèu desencadenament de redstone.<br>
+<br>
+Utilizacion : clica dessús amb una pèrla d’Ender per crear una pèrla ligada. Fai un clic drech sul receptor o activa la pèrla ligada per mandar una impulsion brèva.<br>
+<br>
+Nòta : l’impulsion s’arrèsta tota sola après la durada programada.

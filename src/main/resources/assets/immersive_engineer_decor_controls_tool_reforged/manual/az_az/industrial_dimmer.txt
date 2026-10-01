@@ -1,0 +1,7 @@
+Siqnal tənzimləyicisi
+Dəyişən siqnal
+<&recipe>Fırlanan idarə yığcam panel üzündən qızıl daş gücünü tənzimləyir.<br>
+<br>
+İstifadə: Çıxışı pillə-pillə artırmaq, tam gücdən sonra yenidən sıfıra qaytarmaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: 0 ilə 15 arasında siqnal gücü verir.

@@ -1,0 +1,7 @@
+Beirazko eguneko tenporizadore-erlojua
+Eguneko argiaren seinalea
+<&recipe>Tenporizadore-etengailuak munduaren zikloko eguneko zatiari jarraitzen dio.<br>
+<br>
+Erabilera: erabili patioko argietarako, pertsianetarako eta egunez soilik dabiltzan fabrikako aginteetarako.<br>
+<br>
+Oharrak: zeruko argia duen dimentsioa behar du.

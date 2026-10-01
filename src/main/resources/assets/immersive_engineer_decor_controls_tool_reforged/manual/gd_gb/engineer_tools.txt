@@ -1,0 +1,99 @@
+Innealan an innleadair
+Uidheam bùth-obrach so-ghiùlain
+Cuiridh an seata Innealan an innleadair uidheam làimhe, comharran mèinne, nithean èiginn a ghabhas caitheamh, biadh achaidh agus taicean beaga pròiseasaidh stuthan ris an aon leabhar-làimhe a mhìnicheas na blocaichean sgeadachaidh agus smachd.<br>
+<br>
+Tha na h-innealan seo airson obair air falbh bho bhùth làn-uidheamaichte: comharraich an t-slighe, giùlain solar, faigh seachad air mearachdan agus crìochnaich obraichean beaga pròiseasaidh air an làrach.
+<np>
+Inneal REDIA
+Goireas còmhdaichte le daoimean
+<&redia_tool>Tha an Inneal REDIA na ghoireas achaidh seasmhach airson obair thalmhainn luath. Cleachd e air ùir a ghabhas obrachadh gus fearann-tuathanais a threabhadh.<br>
+<br>
+Cleachd e air aghaidh sheasmhach fhad 's a tha lòchrain agad gus comharra lòchrain on chlàr-stuthan agad a chur ann gun REDIA a chaitheamh. Caithidh obair thalmhainn, rùsgadh, obair tuaighe agus leagail chraobhan buan-sheasmhachd.
+<np>
+Òrd pronnaidh mèinne
+Inneal pronnaidh làimhe
+<&crushing_hammer>’S e inneal-làimhe a th’ ann an t-òrd pronnadh mèinn airson iarann is òr a làimhseachadh tràth.<br>
+<br>
+Cleachdadh: Dèan ceàird leis bho iarann amh, òr amh, mèinn iarainn, mèinn iarainn domhainsglèata, mèinn òir no mèinn òir domhainsglèata gus duslach iarainn no òir Immersive Engineering a dhèanamh. Caillidh an t-òrd seasmhachd agus tillidh e dhan ghriod gus am bris e.<br>
+<br>
+Caithidh mèinneadh e cuideachd, agus putaidh e targaidean air ais ann an sabaid dlùth.
+<np>
+Lorgaire
+Comharra suidheachaidh stòraichte
+<&tracker>Bidh an lorgaire a’ stòradh suidheachadh bloca dìreach san nì.<br>
+<br>
+Cleachdadh: Briog air bloc gus an tomhas agus na co-chomharran a shàbhaladh. Seallaidh an gliocas an suidheachadh. Cleachd an lorgaire fhad ’s a tha thu a’ crùbadh gus an targaid a ghlanadh.<br>
+<br>
+Cleachd e gus innealan, meuran tunail, smachdan iomallach no làraichean togail neo-chrìochnaichte a chomharrachadh mus till thu le innealan agus stuthan.
+<np>
+Gual Ariadne
+Comharra slighe mèinne
+<&ariadne_coal>Cuiridh Gual Ariadne comharran slighe saighdean dubha gu luath air aghaidhean mèinne seasmhach. Cleachd e air aghaidh chruaidh gus an ath oisean, slighe a-mach no meur slighe a chomharrachadh; tha taic aig a' chomharra ri ochd treòrachadh air an aghaidh air an do bhriog thu, treòrachadh trastain nam measg.<br>
+<br>
+Tha Gual Ariadne na inneal-comharrachaidh le 100 cleachdadh a ghabhas ath-chleachdadh. Cosgaidh gach cur comharra soirbheachail aon bhuan-sheasmhachd. Diùltaidh e aghaidhean gun taic an àite an nì a chaitheamh.
+<np>
+Paca brosnachaidh fèin-obrachail
+Stealladair èiginn
+<&stimpack>’S e inneal leighis èiginn a th’ anns an Auto Stim Pack airson obair-càraidh chunnartach.<br>
+<br>
+Cleachdadh: Cleachd le làimh e airson leigheas, dìon goirid agus brosnachadh gluasaid fhaighinn. San tasgadh faodaidh e obrachadh leis fhèin nuair a tha slàinte ìosal, agus thèid e an uair sin air fuarachadh.<br>
+<br>
+Cùm fear ri làimh mus dèan thu deuchainn air àiteachan àrda, uèirleadh fosgailte no slighean mèinne le nàimhdean.
+<np>
+Poca-cadail
+Uidheam fois so-ghiùlain
+<&sleeping_bag>’S e acfhainn fois dìon-sìde a th’ anns a’ phoca-chadail airson obair fada bho leabaidh.<br>
+<br>
+Cleachdadh: Cleachd e air an oidhche san Overworld airson fois gu madainn. Cha shuidhich no ghluais e d’ àite ath-bhreith.<br>
+<br>
+Diùltaidh e cleachdadh tron latha, àite cunnartach le uilebheistean faisg agus tomhasan nach eil freagarrach airson fois shàbhailte. Caithidh gach fois soirbheachail am poca.
+<np>
+Bogsa stòraidh stuthan
+Bogsa solair togail
+<&material_box>Tha am bogsa stuthan a’ giùlan mòran de aon stuth-togail shìmplidh, gun atharrachadh agus so-chruachadh.<br>
+<br>
+Cleachdadh: Cum am bogsa sa phrìomh làimh agus cruach stuth sa làimh eile airson a luchdadh. Cleachd e leis an làimh eile falamh gus aon chruach a thoirt a-mach.<br>
+<br>
+Gabhaidh e suas ri 512 nì de aon seòrsa. Diùltaidh e bogsaichean neadaichte, uidheam nach cruachaich agus cruachan ath-ainmichte no dàta-atharraichte; seallaidh an gliocas an susbaint.
+<np>
+Capsal adhair dàibhidh
+Tèarmann adhair èiginn
+<&diving_capsule>’S e stòras èiginn adhair a th’ anns a’ chapsal adhair dàibhidh airson obair fon uisge.<br>
+<br>
+Cleachdadh: Cleachd le làimh e gus anail a thoirt air ais. Nuair a tha e san tasgadh, faodaidh e obrachadh leis fhèin nuair a tha an t-adhar cha mhòr falamh, agus thèid e an uair sin air fuarachadh.<br>
+<br>
+Giùlain e airson mèinnean fo uisge, pìoban fon uisge agus càradh seòmraichean pumpa.
+<np>
+Preas bhàraichean Muslee
+Preas bìdh
+<&musli_bar_press>Nì preas bàr Muslee cuibhreannan beaga-achaidh de bhiadh cumanta.<br>
+<br>
+Cleachdadh: Thoir leat aran, ubhal agus sìol cruithneachd, mealbhacain, puimcinn, biotais no Industrial Hemp agus cleachd am preas. Ithidh preas soirbheachail fear de gach stuth, dearbhaidh e àite, cruthaichidh e ceithir bàraichean Muslee Melange agus millidh e am preas.<br>
+<br>
+Ma tha stuth a dhìth no gun àite san tasgadh, cha tèid dad a chaitheamh.
+<np>
+Bàr-lùtha Muslee Melange
+Greim-bìdh luath bùth-obrach
+<&musli_bar>’S e biadh teann de dh’aran, sìol agus measan a th’ anns a’ bhàr lùtha Muslee Melange.<br>
+<br>
+Cleachdadh: ith e mar bhiadh san raon fhad 's a tha thu a' cur smachdan, pìoban, àrd-ùrlaran no sreathan fada ann an seòmraichean innealan.
+<np>
+Brùthadair inntinn
+Co-dhlùthadair eòlais
+<&charged_lapis_squeezer>Tionndaidhidh am Brùthadair inntinn aon chlach-chopair agus aon ìre eòlais on chlàr-stuthan agad gu Clach-chopair luchdaichte.<br>
+<br>
+Goirtichidh am pròiseas an cleachdaiche, adhbharaichidh e sgìths a chuireas ris an acras agus dallaidh e an cleachdaiche airson ùine ghoirid le gach tionndadh soirbheachail. Diùltaidh e ruith gun chlach-chopair, gun XP no nuair a tha an cleachdaiche ro fhaisg air bàs.
+<np>
+Clach-chopair luchdaichte
+Eòlas stòraichte
+<&charged_lapis>Stòraidh Clach-chopair luchdaichte aon ìre eòlais. Ith i gus an ìre aiseag, buaidhean gnìomhach a thoirt air falbh agus beagan slàinte fhaighinn air ais.<br>
+<br>
+Dèan Brùthadair inntinn an toiseach; dèanar Clach-chopair luchdaichte le bhith a' cleachdadh an inneil sin fhad 's a tha clach-chopair agus XP agad.
+<np>
+Greabhal garbh iarainn
+Stuth innealan innleadair a chleachdar san t-seata ciùird ath-thogte.
+<&iron_grit>Gabhaidh a leaghadh na ungaichean<br>iarainn, ach chan eil e freagarrach<br>airson pròiseasadh stuthan adhartach.
+<np>
+Greabhal garbh òir
+Stuth innealan innleadair a chleachdar san t-seata ciùird ath-thogte.
+<&gold_grit>Gabhaidh a leaghadh na ungaichean<br>òir, ach chan eil e freagarrach<br>airson pròiseasadh stuthan adhartach.

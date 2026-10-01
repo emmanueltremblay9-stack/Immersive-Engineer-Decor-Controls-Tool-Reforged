@@ -1,0 +1,5 @@
+Fabriksblokplacerer
+Hjælpemiddel til værkstedsgulvet
+<&recipe>Denne blok placerer blokke fra sit interne lager, når den aktiveres.<br>
+<br>
+Brug: Ret arbejdsfladen mod målområdet, og fyld stakke af placerbare blokke i.<br>

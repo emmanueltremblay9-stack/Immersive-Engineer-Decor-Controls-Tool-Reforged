@@ -1,0 +1,5 @@
+Muslee Karışık Enerji Barı
+Hızlı atölye atıştırmalığı
+<&recipe>Muslee Melange barı ekmek, tohum ve meyveden yapılan kompakt yiyecektir.<br>
+<br>
+Kontrol, boru, platform veya uzun makine hattı kurarken arazi yiyeceği olarak tüketin.

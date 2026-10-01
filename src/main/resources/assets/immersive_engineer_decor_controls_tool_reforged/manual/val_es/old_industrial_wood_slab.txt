@@ -1,0 +1,5 @@
+Llosa de fusta industrial envellida
+Fusta envellida de taller
+<&recipe>Este bloc afig fusta envellida de taller per a sòls, esglaons, portes i remats interiors de to càlid.<br>
+<br>
+Ús: usa’l per a sòls, escales, portes i remats de tallers antics.<br>

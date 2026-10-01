@@ -1,0 +1,7 @@
+Detektor bouřky
+Snímání signálu
+<&recipe>Bouřkové čidlo spouští varování během bouřky.<br>
+<br>
+Použití: Umísti jej pod otevřené nebe a připoj k lampám nebo poplachům.<br>
+<br>
+Poznámky: Vyžaduje bouřku a přístup k nebi.

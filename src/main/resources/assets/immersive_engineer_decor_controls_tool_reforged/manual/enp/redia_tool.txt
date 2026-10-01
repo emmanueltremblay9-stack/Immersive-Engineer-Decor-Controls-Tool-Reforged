@@ -1,0 +1,7 @@
+REDIA Tool
+Athamans-sheathed helper
+<&recipe>The REDIA Tool is a long-lasting Athamans-grade manytool for fieldwork around short-lived work spots, workshops and mine mouths.<br>
+<br>
+Use: While carrying Brands, use it to set one from your inholding without wearing REDIA. Sneak-use it to shear plants or change ground through Dirt, Cropland, Rough Dirt and Dirtpath. The old axe fallback works from the bottom side. Sneak while breaking logs to fell linked tree clots.<br>
+<br>
+Mend it with Athamans. Overmending a fully mended REDIA Tool brings back the old Frimfulness and Weal growth path.

@@ -1,0 +1,5 @@
+Tramuele di fabriche
+Utilitât pal plan di oficine
+<&recipe>Chest bloc al sposte pilis di ogjets dentri di une casse industriâl plui strete.<br>
+<br>
+Ûs: voltilu viers la linie di inventaris, po regole puartade, cuantitât de pile, timps e modalitât di redstone te sô schermade.<br>

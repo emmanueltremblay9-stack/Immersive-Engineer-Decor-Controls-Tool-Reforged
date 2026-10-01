@@ -1,0 +1,5 @@
+Stålbord
+Verkstadsinredning
+<&recipe>Det här blocket är en praktisk verkstadsmöbel för arbetsrum och underhållshörnor.<br>
+<br>
+Användning: Placera det intill bänkar, lådor och kompakta maskiner.<br>

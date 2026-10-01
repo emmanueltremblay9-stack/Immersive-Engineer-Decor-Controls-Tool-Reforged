@@ -1,0 +1,7 @@
+Dimmer
+Variabel signaal
+<&recipe>Met een draaiknop op een compact paneel stelt u de redstonesterkte in.<br>
+<br>
+Gebruik: rechtsklik om de uitgangssterkte stapsgewijs te verhogen. Na de hoogste stand begint hij weer bij nul.<br>
+<br>
+Opmerking: geeft een signaalsterkte van 0 tot 15 af.

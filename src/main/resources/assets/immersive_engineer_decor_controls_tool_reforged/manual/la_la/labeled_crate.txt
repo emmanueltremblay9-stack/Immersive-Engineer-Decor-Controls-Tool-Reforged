@@ -1,0 +1,5 @@
+Cista titulo inscripta
+Titulus copiae mutabilis
+<&recipe>Haec cista titulo inscripta ad horreum clare ordinandum facta est. Lamina anterior sicut parva tabula officinae mutari potest.<br>
+<br>
+Usus: laminam tituli dextro clicco pulsa ut titulum cistae mutes. Reliquam cistam dextro clicco pulsa ut receptaculum apparatuum, partium et copiarum refectionis aperias.<br>

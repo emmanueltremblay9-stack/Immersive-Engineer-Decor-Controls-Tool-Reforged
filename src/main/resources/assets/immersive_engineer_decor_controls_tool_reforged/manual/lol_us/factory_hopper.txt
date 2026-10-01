@@ -1,0 +1,5 @@
+Factory Huperr
+Shop-floor helperz
+<&recipe>Dis bluk moves item stackz thru a compact factory casing, kitty.<br>
+<br>
+How to: Point toward da inventory line, den set reach, number of stackz, timing, an redstone style on its screen, meow.<br>

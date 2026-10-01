@@ -1,0 +1,5 @@
+Tabliczka ostrzegająca przed mrozem
+Oznaczenie zagrożenia
+<&recipe>Tabliczka ostrzegająca przed mrozem oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>

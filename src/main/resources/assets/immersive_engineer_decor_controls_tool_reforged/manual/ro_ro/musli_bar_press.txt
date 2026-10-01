@@ -1,0 +1,7 @@
+Presă de batoane cu musli
+Presă alimentară
+<&recipe>Presa Muslee transformă alimentele obișnuite în rații compacte.<br>
+<br>
+Ai nevoie de pâine, un măr și semințe de grâu, pepene, dovleac, sfeclă sau cânepă industrială. Presarea consumă câte una, verifică spațiul, creează patru batoane și uzează presa.<br>
+<br>
+Dacă lipsește ceva sau nu este loc, nu se consumă nimic.

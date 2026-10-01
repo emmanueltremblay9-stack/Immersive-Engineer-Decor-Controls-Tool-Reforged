@@ -1,0 +1,5 @@
+Phiến kính bọc giáp
+Tầm nhìn được bảo vệ
+<&recipe>Khối này giữ tầm nhìn thông thoáng nhưng vẫn phù hợp với kết cấu nhà máy gia cường.<br>
+<br>
+Cách dùng: Dùng nơi người chơi cần nhìn máy móc qua lớp chắn bảo vệ.<br>

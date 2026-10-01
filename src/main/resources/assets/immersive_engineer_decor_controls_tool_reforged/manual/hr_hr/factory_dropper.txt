@@ -1,0 +1,5 @@
+Tvornički izbacivač
+Oprema tvorničkog poda
+<&recipe>Ovaj blok ispušta pohranjene predmete iz usmjerene strane.<br>
+<br>
+Uporaba: usmjeri prednju stranu prema mjestu ispuštanja, napuni unutarnja mjesta te u sučelju podesi silu, kut, odgodu, logiku filtara i redstone način.<br>

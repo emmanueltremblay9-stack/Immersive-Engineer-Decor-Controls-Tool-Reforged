@@ -1,0 +1,5 @@
+Płyta ze szkła pancernego
+Widoczność przez osłonę
+<&recipe>Ten blok zapewnia widoczność, zachowując wygląd wzmocnionej konstrukcji fabrycznej.<br>
+<br>
+Użycie: Stosuj go tam, gdzie gracze mają widzieć maszyny przez barierę ochronną.<br>

@@ -1,0 +1,3 @@
+Rough grit o' iron
+Material fer engineer's tools in the reconstructed craftin' set.
+<&recipe>Smelt it into bullion<br>o' iron. It ain't fit<br>fer advanced material processin'.

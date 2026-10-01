@@ -1,0 +1,7 @@
+Døgnur
+Dagslyssignal
+<&recipe>Eit tidsur følgjer den lyse delen av døgnsyklusen i verda.<br>
+<br>
+Bruk: nytt det til utelys, luker og fabrikkstyring som berre skal verke om dagen.<br>
+<br>
+Merknad: krev ein dimensjon med himmellys.

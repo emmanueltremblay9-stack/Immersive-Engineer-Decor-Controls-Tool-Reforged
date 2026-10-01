@@ -1,0 +1,5 @@
+Degrë de briqes de scorie
+Maçounnerie d'uzine dense
+<&recipe>Çu blloqe ajoute eune maçounnerie griz-brun dense pour les fondacions, les murs de soutènement e les vieilles remizes d'atelier.<br>
+<br>
+Empllai : Empllayéz-le pour de vieilles fondacions, des murs de soutènement e des sols d'uzine sales.<br>

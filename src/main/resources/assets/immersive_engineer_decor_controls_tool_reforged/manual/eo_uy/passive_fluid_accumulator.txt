@@ -1,0 +1,5 @@
+Pasiva fluido
+Fluidliniaj ekipaĵoj
+<&recipe>La pasiva fluidkolektilo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: metu ĝin kontraŭ taŭgaj akvofontoj kaj lasu lokon por elpreni fluidaĵon.<br>

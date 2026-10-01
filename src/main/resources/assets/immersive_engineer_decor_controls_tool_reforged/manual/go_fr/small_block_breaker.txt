@@ -1,0 +1,5 @@
+Cassou de blloqes
+Outil de sol d'atelier
+<&recipe>Le Petit cassou de blloqes ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Pllacéz la face de bezaigne devers le blloqe a ôter.<br>

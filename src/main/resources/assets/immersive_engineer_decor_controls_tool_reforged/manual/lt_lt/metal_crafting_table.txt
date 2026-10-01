@@ -1,0 +1,7 @@
+Metalo darbastalis
+Plokščių gamybos stotis
+<&recipe>Metalinis darbastalis su atskiru plaktuko lizdu, 3x3 gaminimo tinkleliu ir išvesties lizdu.<br>
+<br>
+Naudojimas: naudok tinklelį kaip įprastą darbastalį. Norėdamas gaminti IE plokštes, įdėk inžinieriaus plaktuką į įrankio lizdą, o plokštės medžiagą – į tinklelį, tada paimk suformuotą plokštę iš išvesties.<br>
+<br>
+Plieninėms dekoracijoms reikia plieno plokščių. Įdėk Immersive Engineering plaktuką, kaldamas paversk plieno liejinius plokštėmis ir iš jų gamink stulpus, aptarnavimo takus, langus, duris, turėklus bei kitas plienines dekoracijas.<br>

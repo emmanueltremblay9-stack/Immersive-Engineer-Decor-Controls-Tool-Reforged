@@ -1,0 +1,7 @@
+Lorgaire
+Marcóir suímh stóráilte
+<&recipe>Stórálann an lorgaire suíomh bloic go díreach san earra.<br>
+<br>
+Úsáid: Cliceáil bloc lena thoise agus a chomhordanáidí a shábháil. Taispeánann an leid uirlise an suíomh. Úsáid an lorgaire agus tú ag cromadh chun an sprioc a ghlanadh.<br>
+<br>
+Úsáid é chun meaisíní, craobhacha tollán, cianrialtáin nó láithreáin tógála neamhchríochnaithe a mharcáil sula bhfillfidh tú le huirlisí agus ábhair.

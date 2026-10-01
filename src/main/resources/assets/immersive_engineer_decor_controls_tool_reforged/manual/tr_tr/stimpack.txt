@@ -1,0 +1,5 @@
+Otomatik Uyarıcı Paketi
+Acil enjeksiyon aygıtı
+<&recipe>Otomatik stim paketi acil tıbbi eşyadır.<br>
+<br>
+İyileşmek, kısa koruma ve hareket artışı almak için elle kullanın. Envanterde düşük sağlıkta otomatik tetiklenir ve sonra beklemeye girer. Tehlikeli yerlerde hazır tutun.

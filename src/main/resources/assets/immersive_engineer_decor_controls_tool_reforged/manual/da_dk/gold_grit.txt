@@ -1,0 +1,3 @@
+Groft guldgrus
+Ingeniørværktøjsmateriale til det rekonstruerede opskriftssæt.
+<&recipe>Kan smeltes til guldbarrer,<br>men egner sig ikke til<br>avanceret materialebearbejdning.

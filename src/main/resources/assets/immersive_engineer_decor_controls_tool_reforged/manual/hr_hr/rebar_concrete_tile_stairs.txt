@@ -1,0 +1,5 @@
+Pločica od armiranog betona
+Armirani beton
+<&recipe>Stube od pločica armiranog betona očvrsnuti su betonski dijelovi za postolja strojeva, zidove protiv eksplozija i podove utovarnih prostora.<br>
+<br>
+Uporaba: postavi ga ispod strojeva, uz servisne hodnike ili gdje je potrebna ojačana osnova.<br>

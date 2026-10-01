@@ -1,0 +1,5 @@
+Pembeku Air
+Unit pemprosesan padat
+<&recipe>Pembeku air menjalankan kerja penyejukan padat untuk sistem bendalir berkuasa.<br>
+<br>
+Penggunaan: Bekalkan air dan kuasa untuk penghasilan ais berperingkat.<br>

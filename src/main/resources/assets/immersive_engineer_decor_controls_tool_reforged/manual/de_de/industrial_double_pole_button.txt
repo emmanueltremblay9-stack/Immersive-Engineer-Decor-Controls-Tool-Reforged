@@ -1,0 +1,7 @@
+Knopf
+Redstone-Steuerung
+<&recipe>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.

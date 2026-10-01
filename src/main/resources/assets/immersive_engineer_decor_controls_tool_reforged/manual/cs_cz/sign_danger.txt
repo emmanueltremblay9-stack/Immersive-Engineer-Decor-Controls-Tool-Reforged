@@ -1,0 +1,5 @@
+Cedule nebezpečí
+Značka nebezpečí
+<&recipe>Cedule „Pozor, opravdu nebezpečné místo“ označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>

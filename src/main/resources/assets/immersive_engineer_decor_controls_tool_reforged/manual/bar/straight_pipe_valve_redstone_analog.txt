@@ -1,0 +1,5 @@
+Analoges Flüssigkeitsventil
+Bauteil fia Flüssigkeitsleitungen
+<&recipe>S'analoge Redstone-Flüssigkeitsventil is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Richt des Ventil in de vorgesehene Fließrichtung aus.<br>

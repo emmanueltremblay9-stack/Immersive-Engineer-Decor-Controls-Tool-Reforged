@@ -1,0 +1,7 @@
+Světlosenzor
+Čutje signala
+<&recipe>Světlosenzor prětvarjaje městnu jasnost v redstounovo upravljanje.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja avtomatičnyh lamp, žaluzij i obvodov vidimosti.<br>
+<br>
+Primětky: Podavaje signal pri syrovej jasnosti 8 ili vyše.

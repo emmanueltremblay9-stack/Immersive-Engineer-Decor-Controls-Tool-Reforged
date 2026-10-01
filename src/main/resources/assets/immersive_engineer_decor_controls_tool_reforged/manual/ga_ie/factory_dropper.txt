@@ -1,0 +1,5 @@
+Dáileoir Monarchan
+Áis urláir ceardlainne
+<&recipe>Scaoileann an bloc seo earraí stóráilte ó aghaidh atá dírithe ar sprioc.<br>
+<br>
+Úsáid: dírigh an t-éadan ar an bpointe scaoilte, líon na sliotáin inmheánacha agus coigeartaigh fórsa, uillinn, moill, loighic scagaire agus mód Redstone ar a scáileán.<br>

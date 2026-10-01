@@ -1,0 +1,7 @@
+Rơle liên kết xung
+Điều khiển liên kết
+<&recipe>Phụ kiện kiểu rơle cung cấp điểm công tắc cục bộ gọn cho bảng điều khiển.<br>
+<br>
+Cách dùng: Nhấp phải để bật/tắt đầu ra cường độ tối đa cho mạch gần đó. Dùng khối bộ nhận khi cần kích hoạt bằng viên ngọc liên kết.<br>
+<br>
+Ghi chú: Xuất redstone tối đa khi bật.

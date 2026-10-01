@@ -1,0 +1,7 @@
+Staro ukrasno dugme
+Redstoun upravljanje
+<&recipe>Trenutni prekidač daje čist redstoun impuls najveće snage.<br>
+<br>
+Upotreba: koristi ga za pokretanje mašina, otključavanje vrata, alarme ili kola sa jednim impulsom.<br>
+<br>
+Napomene: vraća se u početno stanje posle zadatog impulsa.

@@ -1,0 +1,7 @@
+Bonnán Aláraim
+Aiseolas comhartha
+<&recipe>Is táscaire redstone é an bonnán aláraim a chuirtear ar aghaidh bloic. Leanann a staid chumhachtaithe an comhartha ón mbloc a bhfuil sé ceangailte de.<br>
+<br>
+Úsáid: ceangail d'aghaidh sholadach é agus cumhachtaigh é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athnuachanann an bonnán uair sa soicind fad atá an comhartha lena bhfuil sé ceangailte gníomhach.

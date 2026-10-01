@@ -1,0 +1,107 @@
+Werkstattmaschine
+Maschine un Werkstatt-En-/Ußjaav
+Werkstattmaschine biete Handwerk, Dingtransport, Schmelze, Entsorje, Sammele un Hölpsarbeit op däm Platz vun einem Block.<br>
+<br>
+Maach de nächste Sigge op, öm Rezept, Bild, Hingerjrund un praktische Bruuchshenwiese vun jeder Maschin ze finge.
+<np>
+Stahltisch
+Werkstattmöbel
+<&steel_table>Heh dä Block es e zweckmäßich Werkstattmöbel för Arbeitsrüüm un Wartungsecke.<br>
+<br>
+Bruuch: Stell en nevve Werkbänk, Keße un kleine Maschine.<br>
+<np>
+Tisch us behandeltem Holz
+Werkstattmöbel
+<&treated_wood_table>Heh dä Block es e zweckmäßich Werkstattmöbel för Arbeitsrüüm un Wartungsecke.<br>
+<br>
+Bruuch: Stell en nevve Werkbänk, Keße un kleine Maschine.<br>
+<np>
+Hocker us behandeltem Holz
+Werkstattmöbel
+<&treated_wood_stool>Heh dä Block es e zweckmäßich Werkstattmöbel för Arbeitsrüüm un Wartungsecke.<br>
+<br>
+Bruuch: Stell en nevve Werkbänk, Keße un kleine Maschine.<br>
+<np>
+Metallwerkbank
+Plattewerkstatt
+<&metal_crafting_table>De Metallwerkbank es en verstärkte Werkstattstation met Hammerfach, enem 3x3-Handwerksraster un enem klare Ußjaavfach.<br>
+<br>
+Bruuch: Nimm et Raster för normal Handwerk. För IE-Platte stellste ene Ingenieurshammer en et Werkzüchfach un dat Plattematerial en et Raster, ih de et Erjevnis nimms. Stahlzier brucht Stahlplatte för Pöhl, Laufsteje, Finster, Düre, Jeländer un andere Stahlteile.<br>
+<np>
+Fabriktreechter
+Werkstatthölp
+<&factory_hopper>Heh dä Block verschuff Dingstapel durch e enger Industriejehüüs.<br>
+<br>
+Bruuch: Richt en noh d'r Lajerreih un stell dann Reichwitt, Stapeltal, Zicke un Redstone-Aat em Menü en.<br>
+<np>
+Fabrikusjevver
+Werkstatthölp
+<&factory_dropper>Heh dä Block jit jelajerte Dinge durch en uusjerichte Sigg uß.<br>
+<br>
+Bruuch: Richt de Vürsigg op dä Ußjaavplätz, föll de ennere Fächer un stell Kraft, Winkel, Verzögerung, Filterlogik un Redstone-Aat em Menü en.<br>
+<np>
+Fabrikblocksetzer
+Werkstatthölp
+<&factory_placer>Heh dä Block setz Blöck us singem ennere Vürrod, wann hä usjelöst weed.<br>
+<br>
+Bruuch: Richt de Arbeitssigg op dä Zielruum un föll setzbare Stapel en.<br>
+<np>
+Blockbrecher
+Werkstatthölp
+<&small_block_breaker>Dä kleine Blockbrecher es ene Werkstatthölpsblock för Handwerk, Lajere, Setze, Breche, Sammele udder kleine Automatisierung.<br>
+<br>
+Bruuch: Richt de Arbeitssigg op dä Block, dä fott soll.<br>
+<np>
+Müllverbrennovve
+Klein Verarbeitungseinheit
+<&small_waste_incinerator>Dä Müllverbrennovve vernicht Dinge, die de nit mieh wells, op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Jevv bloß Dinge en sing Waateschlang, die fott solle.<br>
+<np>
+Laborovve
+Klein Verarbeitungseinheit
+<&small_lab_furnace>Dä Laborovve deit kleine Schmelzarbeite met festem Brennstoff op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Nimm feste Brennstoff för kleine Schmelzladunge.<br>
+<np>
+Elektroovve
+Klein Verarbeitungseinheit
+<&small_electrical_furnace>Dä Elektroovve deit kleine Schmelzarbeite met FE-Energie op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Föhr FE un passend Schmelzmaterial zo.<br>
+<np>
+Mineralschmelzer
+Klein Verarbeitungseinheit
+<&small_mineral_smelter>Dä Mineralschmelzer verarbeitet Minerale bei huh Hitz op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Föhr Mineralblöck un Energie för Schmelzarbeite bei huh Hitz zo.<br>
+<np>
+Wasserfröster
+Klein Verarbeitungseinheit
+<&small_freezer>Dä Wasserfröster deit kleine Köhlarbeite för strombedrevve Flössichkeitsanlaache.<br>
+<br>
+Bruuch: Föhr Wasser un Energie zo, öm Ies en Stufe ze maache.<br>
+<np>
+Passive Flössichkeit
+Flössichkeitsleitungsbauteile
+<&passive_fluid_accumulator>Dä passive Flössichkeitssammler es e klein Flössichkeitsleitungsdeel för kleine Tanks, Rohrwääje, Sammelplätz un Redstone-jestüerte Durchfloß.<br>
+<br>
+Bruuch: Setz en aan passende Wasserquelle un loß Platz, öm Flössichkeit avzenemme.<br>
+<np>
+Solarpaneel
+Werkstatthölp
+<&small_solar_panel>Et kleine Solarpaneel es ene Werkstatthölpsblock för Handwerk, Lajere, Setze, Breche, Sammele udder kleine Automatisierung.<br>
+<br>
+Bruuch: Jevv ihm freie Himmelssicht un schließ Jeräte met winnich Verbruch aan.<br>
+<np>
+Melkmaschin
+Werkstatthölp
+<&small_milking_machine>De klein Melkmaschin es ene Werkstatthölpsblock för Handwerk, Lajere, Setze, Breche, Sammele udder kleine Automatisierung.<br>
+<br>
+Bruuch: Setz se noh bei Köh un sorch doför, dat Melleschbehälter udder Flössichkeit avjeholt wäde könne.<br>
+<np>
+Boomfäller
+Werkstatthölp
+<&small_tree_cutter>Dä kleine Boomfäller es ene Werkstatthölpsblock för Handwerk, Lajere, Setze, Breche, Sammele udder kleine Automatisierung.<br>
+<br>
+Bruuch: Richt en op usjewahße Bööm un sammel de eravjefalle Dinge extra.<br>

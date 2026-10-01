@@ -1,0 +1,5 @@
+Bariles ng Likido
+Kagamitan sa linya ng likido
+<&recipe>Ang kagamitang ito ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Ilagay kung saan maaabot ng mga tubo o balde ang mukha ng tangke.<br>

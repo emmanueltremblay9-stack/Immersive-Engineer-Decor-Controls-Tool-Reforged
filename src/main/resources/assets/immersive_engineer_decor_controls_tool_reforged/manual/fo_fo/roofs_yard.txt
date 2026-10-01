@@ -1,0 +1,101 @@
+Tøk og tún
+Útandura verksmiðjuútgerð
+Takkubbar, túngrús og gamlir ídnaðarviðarpartar hjálpa at gera skúrar, arbeiðstún, fermipláss og veðurslitnar verksmiðjukantar lidnar.<br>
+<br>
+Blanda hesar partarnar við múrverk og atgongdarleiðir, so útandura ídnaðarbygningar eisini síggjast greitt úr fjarstøðu.
+<np>
+Myrkt spóntak
+Veðurslitin takútgerð
+<&dark_shingle_roof>Hesin kubbin ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Kavaforðing á taki
+Veðurslitin takútgerð
+<&dark_shingle_roof_metallized>Kavaforðingin til myrkt spóntak ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Myrkt spóntak
+Veðurslitin takútgerð
+<&dark_shingle_roof_skylight>Takvindeygað til myrkt spóntak ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Skorsteinsstovnur á taki
+Veðurslitin takútgerð
+<&dark_shingle_roof_chimneytrunk>Skorsteinsstovnurin til myrkt spóntak ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Leidningsrás á taki
+Veðurslitin takútgerð
+<&dark_shingle_roof_wireconduit>Leidningsrásin til myrkt spóntak ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Myrkt spóntak
+Veðurslitin takútgerð
+<&dark_shingle_roof_chimney>Skorsteinurin til myrkt spóntak ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Kubbi til myrkt spóntak
+Veðurslitin takútgerð
+<&dark_shingle_roof_block>Hesin kubbin ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Pláta til myrkt spóntak
+Veðurslitin takútgerð
+<&dark_shingle_roof_slab>Hesin kubbin ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Pláta til myrkt spóntak
+Veðurslitin takútgerð
+<&dark_shingle_roof_slabslice>Tunna flísin til myrkt spóntak ger myrkar, nýtiligar taklinjur til verkstøð og ídnaðarskúrar.<br>
+<br>
+Nýtsla: Brúka partarnar saman fyri at gera sannførandi taksnið.<br>
+<np>
+Samantrýst mold við grúsi
+Jørð til arbeiðspláss
+<&dense_grit_dirt_block>Hesin kubbin gevur útandura arbeiðsøkjum eitt samantrýst, niðurtraðkað yvirflati.<br>
+<br>
+Nýtsla: Legg hann kring fermihurðar, útitangar og maskinutún.<br>
+<np>
+Samantrýstur sandur við grúsi
+Jørð til arbeiðspláss
+<&dense_grit_sand_block>Hesin kubbin gevur útandura arbeiðsøkjum eitt samantrýst, niðurtraðkað yvirflati.<br>
+<br>
+Nýtsla: Legg hann kring fermihurðar, útitangar og maskinutún.<br>
+<np>
+Gomul viðarborð
+Aldraður verkstaðarviður
+<&old_industrial_wood_planks>Gomlu ídnaðarviðarborðini geva aldraðan verkstaðarvið til gólv, trin, hurðar og fjálgt innandura kantprýði.<br>
+<br>
+Nýtsla: Brúka hann til gomul verkstaðargólv, trappur, hurðar og kantprýði.<br>
+<np>
+Gomul ídnaðarviðarpláta
+Aldraður verkstaðarviður
+<&old_industrial_wood_slab>Hesin kubbin gevur aldraðan verkstaðarvið til gólv, trin, hurðar og fjálgt innandura kantprýði.<br>
+<br>
+Nýtsla: Brúka hann til gomul verkstaðargólv, trappur, hurðar og kantprýði.<br>
+<np>
+Gomul viðartrappa
+Aldraður verkstaðarviður
+<&old_industrial_wood_stairs>Gamla ídnaðarviðartrappan gevur aldraðan verkstaðarvið til gólv, trin, hurðar og fjálgt innandura kantprýði.<br>
+<br>
+Nýtsla: Brúka hann til gomul verkstaðargólv, trappur, hurðar og kantprýði.<br>
+<np>
+Tunn flís úr gomlum viði
+Aldraður verkstaðarviður
+<&old_industrial_wood_slabslice>Tunna flísin úr gomlum ídnaðarviði gevur aldraðan verkstaðarvið til gólv, trin, hurðar og fjálgt innandura kantprýði.<br>
+<br>
+Nýtsla: Brúka hann til gomul verkstaðargólv, trappur, hurðar og kantprýði.<br>
+<np>
+Gomul ídnaðarviðarhurð
+Aldraður verkstaðarviður
+<&old_industrial_wood_door>Hesin kubbin gevur aldraðan verkstaðarvið til gólv, trin, hurðar og fjálgt innandura kantprýði.<br>
+<br>
+Nýtsla: Brúka hann til gomul verkstaðargólv, trappur, hurðar og kantprýði.<br>

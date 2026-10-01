@@ -1,0 +1,7 @@
+Vidre sensible taronja
+Vidre de senyal
+<&recipe>Un bloc de vidre reactiu a la redstone manté la visibilitat mentre mostra l’estat del senyal.<br>
+<br>
+Ús: fes-lo servir en finestres de sales de control, panells il·luminats i vidrieres de fàbrica protegides.<br>
+<br>
+Notes: canvia d’estat amb la potència de redstone propera.

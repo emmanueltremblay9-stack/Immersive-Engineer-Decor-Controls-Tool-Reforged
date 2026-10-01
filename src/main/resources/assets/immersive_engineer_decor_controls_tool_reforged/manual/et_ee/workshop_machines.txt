@@ -1,0 +1,107 @@
+Töökojamasinad
+Masinad ning töökoja sisendid ja väljundid
+Töökojamasinad pakuvad meisterdamist, esemete liigutamist, sulatamist, hävitamist, kogumist ja abitoiminguid ühe ploki sees.<br>
+<br>
+Ava järgmised lehed iga masina retsepti, piltide, taustakirjelduse ja praktiliste kasutusjuhiste vaatamiseks.
+<np>
+Teraslaud
+Töökojamööbel
+<&steel_table>See plokk on praktiline töökojamööbel tööruumidesse ja hooldusnurkadesse.<br>
+<br>
+Kasutamine: Aseta tööpinkide, kastide ja kompaktsete masinate kõrvale.<br>
+<np>
+Töödeldud puidust laud
+Töökojamööbel
+<&treated_wood_table>See plokk on praktiline töökojamööbel tööruumidesse ja hooldusnurkadesse.<br>
+<br>
+Kasutamine: Aseta tööpinkide, kastide ja kompaktsete masinate kõrvale.<br>
+<np>
+Töödeldud puidust taburet
+Töökojamööbel
+<&treated_wood_stool>See plokk on praktiline töökojamööbel tööruumidesse ja hooldusnurkadesse.<br>
+<br>
+Kasutamine: Aseta tööpinkide, kastide ja kompaktsete masinate kõrvale.<br>
+<np>
+Metallitöölaud
+Plaaditööjaam
+<&metal_crafting_table>Metallitöölaud on tugevdatud töökoja tööjaam vasarapesa, 3x3-meisterdusruudustiku ja selge tulemusepesaga.<br>
+<br>
+Kasutamine: Kasuta ruudustikku tavaliseks meisterdamiseks. IE plaatide jaoks pane inseneri vasar tööriistapessa ja plaadimaterjal ruudustikku, enne kui võtad tulemuse. Teraskaunistused kasutavad terasplaate postide, käigusildade, akende, uste, piirete ja muude terasosade jaoks.<br>
+<np>
+Tehasepüüdja
+Töökoja abiseade
+<&factory_hopper>See plokk liigutab esemevirnu läbi kompaktsema tööstuskorpuse.<br>
+<br>
+Kasutamine: Suuna see laoliini poole ja sea ekraanil ulatus, virnade arv, ajastus ning redstone'i režiim.<br>
+<np>
+Tehaseheitja
+Töökoja abiseade
+<&factory_dropper>See plokk väljastab salvestatud esemeid suunatud esipinnalt.<br>
+<br>
+Kasutamine: Suuna esikülg väljastuspunkti, täida sisemised pesad ning seadista ekraanil jõud, nurk, viivitus, filtriloogika ja redstone'i režiim.<br>
+<np>
+Tehase plokipaigaldaja
+Töökoja abiseade
+<&factory_placer>See plokk paigaldab aktiveerimisel plokke oma sisemisest varust.<br>
+<br>
+Kasutamine: Suuna tööpind sihtkohta ja täida paigaldatavate esemete virnadega.<br>
+<np>
+Plokilõhkuja
+Töökoja abiseade
+<&small_block_breaker>Väike plokilõhkuja on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Suuna tööpind eemaldatava ploki poole.<br>
+<np>
+Jäätmepõleti
+Kompaktne töötlusseade
+<&small_waste_incinerator>Jäätmepõleti hävitab soovimatud esemed väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Lisa selle järjekorda ainult soovimatuid esemeid.<br>
+<np>
+Laboriahi
+Kompaktne töötlusseade
+<&small_lab_furnace>Laboriahi teeb kompaktseid tahkekütusel sulatustöid väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Kasuta tahket kütust väikeste sulatuspartiide jaoks.<br>
+<np>
+Elektriahi
+Kompaktne töötlusseade
+<&small_electrical_furnace>Elektriahi teeb kompaktselt FE-energiaga sulatustöid väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Lisa FE-energiat ja sobivat sulatusmaterjali.<br>
+<np>
+Mineraalisulati
+Kompaktne töötlusseade
+<&small_mineral_smelter>Mineraalisulati töötleb mineraale kõrgel temperatuuril väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Lisa mineraalplokke ja energiat kõrgel temperatuuril sulatamiseks.<br>
+<np>
+Veekülmuti
+Kompaktne töötlusseade
+<&small_freezer>Veekülmuti teeb kompaktseid jahutustöid energiaga töötavates vedelikusüsteemides.<br>
+<br>
+Kasutamine: Lisa vett ja energiat etapiviisiliseks jäätootmiseks.<br>
+<np>
+Passiivne vedelik
+Vedelikutrassi seadmed
+<&passive_fluid_accumulator>Passiivne vedelikukoguja on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Paigalda sobivate veeallikate vastu ja jäta ruumi vedeliku eemaldamiseks.<br>
+<np>
+Päikesepaneel
+Töökoja abiseade
+<&small_solar_panel>Väike päikesepaneel on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Taga avatud taevas ja ühenda väikese tarbimisega seadmed.<br>
+<np>
+Lüpsimasin
+Töökoja abiseade
+<&small_milking_machine>Väike lüpsimasin on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Paigalda lehmade lähedale ja taga piimaanumate või vedeliku eemaldamise võimalus.<br>
+<np>
+Puulangeti
+Töökoja abiseade
+<&small_tree_cutter>Väike puulangeti on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Suuna täiskasvanud puudele ja kogu mahakukkunud esemed eraldi.<br>

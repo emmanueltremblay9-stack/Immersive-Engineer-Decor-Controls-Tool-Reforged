@@ -1,0 +1,7 @@
+Vanha koristeellinen kiertovipu
+Redstone-ohjaus
+<&recipe>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.

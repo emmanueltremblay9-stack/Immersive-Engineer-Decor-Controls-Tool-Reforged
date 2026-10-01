@@ -1,0 +1,5 @@
+Acélkeretes ablak
+Védett rálátás
+<&recipe>Ez a blokk szabadon hagyja a rálátást, miközben illik a megerősített gyári szerkezetekhez.<br>
+<br>
+Használat: ott használd, ahol a játékosoknak védőfalon keresztül kell látniuk a gépeket.<br>

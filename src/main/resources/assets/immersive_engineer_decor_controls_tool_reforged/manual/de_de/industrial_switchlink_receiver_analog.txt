@@ -1,0 +1,7 @@
+Analoger Verknüpfungsempfänger
+Verknüpfte Steuerung
+<&recipe>Ein verknüpfter Empfänger bietet Schalttafeln ein sichtbares Fernsteuerziel.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Benutze diese beim Schleichen, um den Empfänger aus der Ferne zu aktivieren.<br>
+<br>
+Hinweis: Dieser Empfänger gibt bei Auslösung ein Redstone-Signal voller Stärke aus.

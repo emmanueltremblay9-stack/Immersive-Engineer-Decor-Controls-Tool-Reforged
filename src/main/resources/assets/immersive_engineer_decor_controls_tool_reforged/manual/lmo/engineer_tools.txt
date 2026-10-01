@@ -1,0 +1,99 @@
+Arnea de l’inzegner
+Arnea de laboratori de portà adree
+El grup Arnea de l’inzegner el sgionta arnea de tegnì in man, segna-strada de miniera, consumabil de emergenza, mangià per el lavor in gir e piscinin aparecc per lavorà i materiai in del stess manual di bloch de decorazzion e di comand.<br>
+<br>
+Quell arnea chì la serviss per lavorà lontan de un laboratori ben fornid: segnà la strada, portà materiai, recuperà dopo i error e finì piscinin lavor de trasformazzion sul post.
+<np>
+Arnea REDIA
+Arnea utila coverta de diamant
+<&redia_tool>L’Arnea REDIA l’è una arnea dura per sistemà in pressa el teren quand che se lavora in gir. Dovrela in su un teren che se poeu lavorà per trasformall in terra de somenà.<br>
+<br>
+Dovrela contro una faccia ferma intant che te portet torce, per mett sgiò una torcia de l’inventari come segn senza consomà la REDIA. I lavor del teren, el taj cont i s’cesore, el taj cont el segurin e el taj di piante i consomen durada.
+<np>
+Martell per sminuzzà mineraj
+Arnea per sminuzzà a man
+<&crushing_hammer>El martell per sfracassà i mineraj l'è un utensil manual per la prima lavorazzion de ferr e or.<br>
+<br>
+Dopra: Combinal col ferr cruu, l'or cruu, el mineral de ferr, el mineral de ferr de lavagna profonda, el mineral d'or o quel d'or de lavagna profonda per fà polver de ferr o d'or de Immersive Engineering. El martell el perd durata e el torna in la griglia fin che el se romp.<br>
+<br>
+El martell el consoma durada anca scavando e el poeu sburtà indree i bersai in del combatiment de vesin.
+<np>
+Localizador
+Segna-posizzion conservad
+<&tracker>El localizador el salva la posizzion d'un bloch direttament in l'oggett.<br>
+<br>
+Dopra: Fà clic su un bloch per salvà dimension e coordenade. El tooltip el mostra la posizzion salvada. Dopra el localizador mentre te seet piegaa per scancelà la destinazzion.<br>
+<br>
+Dovrel per segnà machine, ram de galeria, comands a distanza o cantier ancamò minga finid, prima de tornà cont arnea e materiai.
+<np>
+Carbon de Arianna
+Segna-strada de miniera
+<&ariadne_coal>El Carbon de Arianna el mett in pressa flizze negre per segnà strade in su facce ferme di miniere. Dovrel in su una faccia solida per segnà la prossima curva, la sortida o el pont indove la galeria la se spartiss; el segn el suporta vott direzzion segond el pont toccad de la faccia, anca in diagonal.<br>
+<br>
+El Carbon de Arianna se poeu dovrall pussee volte e el dura 100 dovrade. Ogni segn metud ben el consoma un pont de durada. El refuda i facce minga adate senza consomà l’oget.
+<np>
+Autoinietor stimolant
+Inietor de emergenza
+<&stimpack>L'Auto Stim Pack l'è un utensil medic d'emergenza per lavor de manutenzion pericolos.<br>
+<br>
+Dopra: Attival a man per curatt, ciapà una protezzion curta e un piccol slancio de moviment. In l'inventari el pò anca attivass da sol con poca salute, poeu el va in cooldown.<br>
+<br>
+Tegn un inietor a portada prima de provà post volt, fil descoverci o strade pericolose in miniera.
+<np>
+Sacch de dormì
+Corred de dormì de portà adree
+<&sleeping_bag>El sacco a pelo l'è un kit de riposo resistent al temp per lavorà lontan d'un lett.<br>
+<br>
+Dopra: Doprallo de nott in l'Overworld per riposà fina a la mattina. El mett e el sposta minga el punto de nascita.<br>
+<br>
+El refuda de dì, i sit pericolos con mostri arent e i dimension minga adatte a un riposo segur. Ogni riposo bon el consuma el sacco.
+<np>
+Cassa di materiai
+Cassa di materiai de costruzzion
+<&material_box>La cassa di material la porta una granda scorta d'un sol material da costruzzion semplic, minga modificaa e impilabil.<br>
+<br>
+Dopra: Tegn la cassa in la man principal e una pila de material in quell'altra per cargala. Dopra la cassa con l'altra man voeuda per tirà foeura una pila.<br>
+<br>
+La tegn fin a 512 robb d'un sol tipo. La refuda cass in dent a alter cass, equipaggiament minga impilabil e pile rinominaa o con dati modificaa; el tooltip el mostra el contenud.
+<np>
+Capsola de aria per andà sota l’aqua
+Riserva de aria de emergenza
+<&diving_capsule>La capsula d'aria per l'immersion l'è una riserva d'emergenza per lavorà sott'acqua.<br>
+<br>
+Dopra: Doprala a man per rimett l'aria. Quand l'è in l'inventari, la pò anca attivass da sola quand l'aria l'è quasi finida, e poeu la va in cooldown.<br>
+<br>
+Dovrela quand che te lavori in di miniere sot’aqua, de longh a i tub sommerg o per comedà i sal di pompe.
+<np>
+Pressa di barete Muslee
+Pressa de mangià
+<&musli_bar_press>La pressa per barrette Muslee la trasforma el mangià comun in razion compatte da campagna.<br>
+<br>
+Dopra: Porta pan, un pomm e semenz de frument, melon, zucca, barbabietola o Industrial Hemp, poeu dopra la pressa. Una pressada bona la consuma vun de ogni ingredient, la controlla el spazio, la crea quatter barrette Muslee Melange e la rovina la pressa.<br>
+<br>
+Se manca un ingredient o gh'è minga spazio in l'inventari, se consuma nagott.
+<np>
+Bareta de energia Muslee Melange
+Merenda svelta de laboratori
+<&musli_bar>La barretta energetica Muslee Melange l'è un mangià compatto faa con pan, semenz e frutta.<br>
+<br>
+Mangiala quand che te seet in gir a mett sgiò comands, tub, piattaforme o longhe linee in di sal di machine.
+<np>
+Schisciador de la ment
+Condensador de esperienza
+<&charged_lapis_squeezer>El Schisciador de la ment el transforma un lapislazzer e un nivell de esperienza de l’inventari in un Lapislazzer cargad.<br>
+<br>
+Ogni dovrada che la va a bon fin la fa del mal a chi che la dovra, la causa strachezza che la fa vegnì fam e la dà cecità per on curt temp. El se refuda de lavorà se manca XP o lapislazzer, o se chi che lo dovra l’è arent a morì.
+<np>
+Lapislazzer cargad
+Esperienza conservada
+<&charged_lapis>El Lapislazzer cargad el conserva un nivell de esperienza. Consomel per tornà a avè el nivell, cavà via i efet ativ e recuperà on poo de salute.<br>
+<br>
+Fabrega prima un Schisciador de la ment; el Lapislazzer cargad el vegn fad dovrando quell’arnea cont lapislazzer e XP a disposizzion.
+<np>
+Granell gross de ferr
+Material per arnea de inzegner dovrad del grup de ricete ricostruid.
+<&iron_grit>Se poeu fondell in lingot de<br>ferr, ma l’è minga adat a la<br>lavorazzion avanzada di materiai.
+<np>
+Granell gross d’or
+Material per arnea de inzegner dovrad del grup de ricete ricostruid.
+<&gold_grit>Se poeu fondell in lingot d’or,<br>ma l’è minga adat a la<br>lavorazzion avanzada di materiai.

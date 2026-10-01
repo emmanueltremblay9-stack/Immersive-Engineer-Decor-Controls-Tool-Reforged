@@ -1,0 +1,5 @@
+Hinkë fabrike
+Pajisje ndihmëse punishteje
+<&recipe>Ky bllok lëviz grumbuj objektesh përmes një kase industriale më kompakte.<br>
+<br>
+Përdorimi: drejtoje te linja e inventarëve, pastaj cakto rrezen, madhësinë e grumbullit, kohëzgjatjen dhe mënyrën e redstonit në ekran.<br>

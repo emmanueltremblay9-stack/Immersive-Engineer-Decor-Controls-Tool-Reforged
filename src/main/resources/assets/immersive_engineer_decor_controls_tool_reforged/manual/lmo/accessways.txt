@@ -1,0 +1,127 @@
+Passagg de acess
+Passarelle e suport
+I pai d’azzal, i pai de legn tratad, i gratelle de paviment, i passarelle, i ringhere, i scale a man, i porte, i finestre e i bussere i formen corsei de servizzi piscinin travers i locai de la fabrica.<br>
+<br>
+I tocch d’azzal di passagg de acess i dovren piastre d’azzal. Prima fabrega o met sgiò un Banch per lavorà i metai, met denter un martell de Immersive Engineering e bat i lingot d’azzal per faj vegnì piastre d’azzal per pai, passarelle, finestre, porte, ringhere e olter decorazzion d’azzal.<br>
+<br>
+Dovra quella familia de bloch indove gh’è de besogn de rivà a i machine per fà manutenzion: corsei sora el teren, pozzi de servizzi e bord cont protezzion.
+<np>
+Pal d’azzal gross
+Tocch de telar strutural
+<&thick_steel_pole>El Pal drizz gross d’azzal el dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Testa de pal gross
+Tocch de telar strutural
+<&thick_steel_pole_head>La Testa/pee de pal drizz gross d’azzal la dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Pal d’azzal fin
+Tocch de telar strutural
+<&thin_steel_pole>El Pal drizz suttil d’azzal el dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Testa de pal fin
+Tocch de telar strutural
+<&thin_steel_pole_head>La Testa/pee de pal drizz suttil d’azzal la dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Pal de legn tratad
+Tocch de telar strutural
+<&treated_wood_pole>El Pal drizz de legn tratad el dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Testa de pal de legn tratad
+Tocch de telar strutural
+<&treated_wood_pole_head>La Testa/pee de pal drizz de legn tratad la dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Suport de pal de legn tratad
+Tocch de telar strutural
+<&treated_wood_pole_support>El Suport de pal drizz de legn tratad el dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Suport d’azzal a dopia T
+Tocch de telar strutural
+<&steel_double_t_support>Quell bloch chì el dà una strutura ben visibila a i sal di machine e a i telar di passagg.<br>
+<br>
+Voltel e metel sgiò come suport ben visibil per trav, pai e bord de piattaforme.<br>
+<np>
+Gratella de paviment d’azzal
+Acessori per passagg de servizzi
+<&steel_floor_grating>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Passarella d’azzal
+Acessori per passagg de servizzi
+<&steel_catwalk>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Basei de passarella d’azzal
+Acessori per passagg de servizzi
+<&steel_catwalk_stairs>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Passarella d’azzal alzada
+Acessori per passagg de servizzi
+<&steel_catwalk_ta>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Ringhera d’azzal
+Acessori per passagg de servizzi
+<&steel_railing>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Stongarda de red d’azzal
+Acessori per passagg de servizzi
+<&steel_mesh_fence>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Restell de red d’azzal
+Acessori per passagg de servizzi
+<&steel_mesh_fence_gate>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Scala a man cont basei de metal
+Acessori per passagg de servizzi
+<&metal_rung_ladder>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Basei de metal sfalsad
+Acessori per passagg de servizzi
+<&metal_rung_steps>Quell bloch chì el forma corsei de servizzi ben recognossibil in gir a i machine.<br>
+<br>
+Metel come passagg per la manutenzion in gir a i machine, in di pian de sora e in di pozzi de servizzi.<br>
+<np>
+Finestra cont telar d’azzal
+Vista cont protezzion
+<&steel_framed_window>Quell bloch chì el lassa libera la vista travers la strutura e el resta adat a la costruzzion rinforzada de fabrica.<br>
+<br>
+Metel in d’una avertura larga 1 bloch in del mur, indove che i sgiugador gh’han de podè vardà i machine travers d’una barriera proteta.<br>
+<np>
+Porta scoridora de metal
+Passagg industrial
+<&metal_sliding_door>Quell bloch chì el fa un passagg robust per i locai de servizzi, i pozzi, i tecc e i recinti di machine.<br>
+<br>
+Montel indove che serviss una avertura controlada per la manutenzion.<br>
+<np>
+Bussera de ferr al contrari
+Passagg industrial
+<&iron_hatch>Quell bloch chì el fa un passagg robust per i locai de servizzi, i pozzi, i tecc e i recinti di machine.<br>
+<br>
+Montel indove che serviss una avertura controlada per la manutenzion.<br>

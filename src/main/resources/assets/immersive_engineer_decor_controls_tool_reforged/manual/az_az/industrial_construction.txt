@@ -1,0 +1,108 @@
+Sənaye tikintisi
+Zavod divarları və haşiyələr
+Ümumi tikinti elementləri daha xüsusi bölməyə aid olmayan qapıları, pəncərələri, işıqları, xəbərdarlıq nişanlarını, haşiyələri və konstruksiya hissələrini əhatə edir.<br>
+<br>
+Bu səhifələrdən zavod otaqları, xidmət dəhlizləri, təhlükə nişanlamaları və praktik sənaye detalları üçün istifadə edin.
+<np>
+Dəmir lampa
+Yığcam iş işığı
+<&iron_bulb_light>Bu blok dəhlizlər, keçidlər və iş bölmələri üçün yığcam sənaye işıqlandırması yaradır.<br>
+<br>
+İstifadə: Otaqda aydın iş işıqlandırması lazım olan tavanlara, divarlara və ya kənarlara quraşdırın.<br>
+<np>
+Tavan kənarı işığı
+Yığcam iş işığı
+<&iron_ceiling_edge_light>Bu blok dəhlizlər, keçidlər və iş bölmələri üçün yığcam sənaye işıqlandırması yaradır.<br>
+<br>
+İstifadə: Otaqda aydın iş işıqlandırması lazım olan tavanlara, divarlara və ya kənarlara quraşdırın.<br>
+<np>
+Döşəmə kənarına gömülən işıq
+Yığcam iş işığı
+<&iron_floor_edge_light>Bu blok dəhlizlər, keçidlər və iş bölmələri üçün yığcam sənaye işıqlandırması yaradır.<br>
+<br>
+İstifadə: Otaqda aydın iş işıqlandırması lazım olan tavanlara, divarlara və ya kənarlara quraşdırın.<br>
+<np>
+Gömülən işıq
+Yığcam iş işığı
+<&iron_inset_light>Bu blok dəhlizlər, keçidlər və iş bölmələri üçün yığcam sənaye işıqlandırması yaradır.<br>
+<br>
+İstifadə: Otaqda aydın iş işıqlandırması lazım olan tavanlara, divarlara və ya kənarlara quraşdırın.<br>
+<np>
+"Ümumi xəbərdarlıq" nişanı
+Təhlükə nişanı
+<&sign_caution>"Ümumi xəbərdarlıq" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+Təhlükə nişanı
+Təhlükə nişanı
+<&sign_danger>"Diqqət, burada həqiqi təhlükə var" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+Bəzək nişanı
+Təhlükə nişanı
+<&sign_decor>Nişan lövhəsi (Mühəndis dekoru), yəni Bəzək nişanı, təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+Müdafiə nişanı
+Təhlükə nişanı
+<&sign_defense>"Diqqət, qarşıda müdafiə sistemi var" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+Çıxış nişanı
+Təhlükə nişanı
+<&sign_exit>Bu nişan təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+"Yanğın təhlükəsi" nişanı
+Təhlükə nişanı
+<&sign_firehazard>"Yanğın təhlükəsi" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+"Şaxta xəbərdarlığı" nişanı
+Təhlükə nişanı
+<&sign_frost>"Şaxta xəbərdarlığı" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+İsti səth nişanı
+Təhlükə nişanı
+<&sign_hotsurface>"Diqqət, isti səth" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+Gərginlikli naqil nişanı
+Təhlükə nişanı
+<&sign_hotwire>"Diqqət, gərginlikli naqil" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+"Lazer təhlükəsi" nişanı
+Təhlükə nişanı
+<&sign_laser>"Lazer təhlükəsi" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+Sehrli təhlükə nişanı
+Təhlükə nişanı
+<&sign_magichazard>"Diqqət, sehrli təhlükə" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+Maqnit sahəsi nişanı
+Təhlükə nişanı
+<&sign_magneticfield>"Diqqət, güclü maqnit sahəsi" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>
+"Radioaktiv təhlükə" nişanı
+Təhlükə nişanı
+<&sign_radioactive>"Radioaktiv təhlükə" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>
+<np>

@@ -1,0 +1,7 @@
+LED verde intermitente
+Indicación de señales
+<&recipe>Un indicador compacto hace visible en la fábrica una señal de redstone oculta.<br>
+<br>
+Uso: Conéctalo junto a la señal para vigilar puertas, máquinas, alarmas o paneles.<br>
+<br>
+Notas: Cambia de estado cuando hay señal de redstone cerca.

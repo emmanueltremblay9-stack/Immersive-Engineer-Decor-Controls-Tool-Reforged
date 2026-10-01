@@ -1,0 +1,5 @@
+Katup Cairan Redstone
+Perlengkapan jalur cairan
+<&recipe>Katup cairan redstone adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: sejajarkan katup dengan arah aliran yang diinginkan.<br>

@@ -1,0 +1,7 @@
+Paros laikmatis
+Dienos šviesos signalas
+<&recipe>Laikmačio jungiklis seka dieninę pasaulio ciklo dalį.<br>
+<br>
+Naudojimas: naudok kiemo lempoms, langinėms ir tik dieną veikiantiems fabriko valdikliams.<br>
+<br>
+Pastabos: reikia dimensijos su dangaus šviesa.

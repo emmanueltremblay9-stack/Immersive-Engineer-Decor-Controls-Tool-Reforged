@@ -1,0 +1,108 @@
+Xây dựng công nghiệp
+Tường và viền nhà máy
+Phụ kiện xây dựng chung gồm cửa, cửa sổ, đèn, biển cảnh báo, viền và chi tiết kết cấu không thuộc mục cụ thể hơn.<br>
+<br>
+Dùng các trang này cho phòng nhà máy, hành lang kỹ thuật, đánh dấu nguy hiểm và các chi tiết công nghiệp thiết thực.
+<np>
+Đèn bóng sắt
+Đèn làm việc gọn
+<&iron_bulb_light>Khối này cung cấp ánh sáng công nghiệp gọn cho hành lang, lối đi bảo trì và gian làm việc.<br>
+<br>
+Cách dùng: Gắn lên trần, tường hoặc mép ở nơi phòng cần ánh sáng rõ để làm việc.<br>
+<np>
+Đèn viền trần
+Đèn làm việc gọn
+<&iron_ceiling_edge_light>Khối này cung cấp ánh sáng công nghiệp gọn cho hành lang, lối đi bảo trì và gian làm việc.<br>
+<br>
+Cách dùng: Gắn lên trần, tường hoặc mép ở nơi phòng cần ánh sáng rõ để làm việc.<br>
+<np>
+Đèn âm viền sàn
+Đèn làm việc gọn
+<&iron_floor_edge_light>Khối này cung cấp ánh sáng công nghiệp gọn cho hành lang, lối đi bảo trì và gian làm việc.<br>
+<br>
+Cách dùng: Gắn lên trần, tường hoặc mép ở nơi phòng cần ánh sáng rõ để làm việc.<br>
+<np>
+Đèn âm
+Đèn làm việc gọn
+<&iron_inset_light>Khối này cung cấp ánh sáng công nghiệp gọn cho hành lang, lối đi bảo trì và gian làm việc.<br>
+<br>
+Cách dùng: Gắn lên trần, tường hoặc mép ở nơi phòng cần ánh sáng rõ để làm việc.<br>
+<np>
+Biển «Cẩn thận»
+Dấu cảnh báo nguy hiểm
+<&sign_caution>Biển «Cẩn thận» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển nguy hiểm
+Dấu cảnh báo nguy hiểm
+<&sign_danger>Biển «Cẩn thận, nơi đó rất nguy hiểm» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển trang trí
+Dấu cảnh báo nguy hiểm
+<&sign_decor>Biển trang trí Engineer's Decor đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển hệ thống phòng vệ
+Dấu cảnh báo nguy hiểm
+<&sign_defense>Biển «Cẩn thận, phía trước có hệ thống phòng vệ» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển lối thoát
+Dấu cảnh báo nguy hiểm
+<&sign_exit>Biển này đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển nguy cơ cháy
+Dấu cảnh báo nguy hiểm
+<&sign_firehazard>Biển «Nguy cơ cháy» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển cảnh báo băng giá
+Dấu cảnh báo nguy hiểm
+<&sign_frost>Biển «Cảnh báo băng giá» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển bề mặt nóng
+Dấu cảnh báo nguy hiểm
+<&sign_hotsurface>Biển «Cẩn thận, bề mặt nóng» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển dây có điện
+Dấu cảnh báo nguy hiểm
+<&sign_hotwire>Biển «Cẩn thận, dây có điện» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển nguy hiểm laser
+Dấu cảnh báo nguy hiểm
+<&sign_laser>Biển «Nguy hiểm laser» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển nguy hiểm ma thuật
+Dấu cảnh báo nguy hiểm
+<&sign_magichazard>Biển «Cẩn thận, nguy hiểm ma thuật» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển từ trường
+Dấu cảnh báo nguy hiểm
+<&sign_magneticfield>Biển «Cẩn thận, từ trường mạnh» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>
+Biển nguy hiểm phóng xạ
+Dấu cảnh báo nguy hiểm
+<&sign_radioactive>Biển «Nguy hiểm phóng xạ» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>
+<np>

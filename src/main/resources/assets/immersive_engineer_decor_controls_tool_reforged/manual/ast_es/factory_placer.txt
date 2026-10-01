@@ -1,0 +1,5 @@
+Colocador de bloques de fábrica
+Equipamientu de suelu de taller
+<&recipe>Esti bloque coloca bloques de les sos esistencies internes cuando s’activa.<br>
+<br>
+Usu: apunta la cara de trabayu al espaciu de destín y carga piles que se puedan colocar.<br>

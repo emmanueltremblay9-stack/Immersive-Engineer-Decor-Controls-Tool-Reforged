@@ -1,0 +1,7 @@
+Sklenený denný časovač
+Signál denného svetla
+<&recipe>Časový spínač sleduje dennú časť cyklu sveta.<br>
+<br>
+Použitie: Hodí sa na dvorné lampy, okenice a továrenské ovládanie len na dennú prevádzku.<br>
+<br>
+Poznámky: Vyžaduje dimenziu s nebeským svetlom.

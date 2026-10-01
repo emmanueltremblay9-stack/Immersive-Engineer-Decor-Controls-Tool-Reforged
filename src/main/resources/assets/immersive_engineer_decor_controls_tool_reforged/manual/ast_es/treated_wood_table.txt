@@ -1,0 +1,5 @@
+Mesa de madera tratao
+Muebles de taller
+<&recipe>Esti bloque ye un mueble prácticu de taller pa sales de trabayu y rincones de caltenimientu.<br>
+<br>
+Usu: ponlu al llau de bancos, caxones y máquines compactes.<br>

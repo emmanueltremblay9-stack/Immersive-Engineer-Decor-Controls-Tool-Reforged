@@ -1,0 +1,7 @@
+Détecteur d'orage
+Détection de signal
+<&recipe>Un capteur d'orage déclenche des avertissements pendant les orages.<br>
+<br>
+Utilisation : placez-le à ciel ouvert et reliez-le aux lampes ou aux alarmes.<br>
+<br>
+Remarque : nécessite un orage et un accès au ciel.

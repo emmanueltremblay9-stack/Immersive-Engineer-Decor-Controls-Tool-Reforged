@@ -1,0 +1,5 @@
+Bloc Gwydr Arfog
+Llinell weld warchodedig
+<&recipe>Mae'r bloc hwn yn cadw llinellau gweld yn agored ac yn cyd-fynd ag adeiladwaith ffatri atgyfnerthiedig.<br>
+<br>
+Defnydd: Defnyddiwch ef lle dylai chwaraewyr weld peiriannau drwy rwystr gwarchodedig.<br>

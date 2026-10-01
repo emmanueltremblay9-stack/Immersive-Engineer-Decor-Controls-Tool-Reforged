@@ -1,0 +1,5 @@
+Bloque de formigón armado
+Formigón reforzado
+<&recipe>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>

@@ -1,0 +1,5 @@
+Funil de fábrica
+Equipamento de planta
+<&recipe>Este bloque move pilas de obxectos dentro dunha carcasa industrial máis compacta.<br>
+<br>
+Uso: oriéntao cara á liña de inventarios e axusta o alcance, a cantidade da pila, os tempos e o modo de redstone na pantalla.<br>

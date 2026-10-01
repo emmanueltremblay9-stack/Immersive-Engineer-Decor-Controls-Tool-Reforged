@@ -1,0 +1,5 @@
+Zmrazovač vody
+Kompaktná spracovacia jednotka
+<&recipe>Zmrazovač vody zabezpečuje menšie chladiace práce v napájaných kvapalinových zostavách.<br>
+<br>
+Použitie: Priveď vodu a energiu na postupnú výrobu ľadu.<br>

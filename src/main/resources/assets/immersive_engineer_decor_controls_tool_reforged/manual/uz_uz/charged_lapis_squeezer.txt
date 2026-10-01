@@ -1,0 +1,7 @@
+Ong siqgich
+Tajriba kondensatori
+<&recipe>Ong siqgich lojuvard va tajribani zaryadlangan lojuvardga aylantiradi.<br>
+<br>
+Ishlatish: lojuvard va kamida bitta tajriba darajasiga ega bo'lib, asbobni ishlating. Muvaffaqiyatli siqish bitta daraja va bitta lojuvard sarflaydi, foydalanuvchiga zarar yetkazadi, siqgichni eskirtiradi va bitta zaryadlangan lojuvard yaratadi.<br>
+<br>
+Lojuvard yoki tajriba yetishmasa, yoxud foydalanuvchi o'limga juda yaqin bo'lsa, ishlashni rad etadi.

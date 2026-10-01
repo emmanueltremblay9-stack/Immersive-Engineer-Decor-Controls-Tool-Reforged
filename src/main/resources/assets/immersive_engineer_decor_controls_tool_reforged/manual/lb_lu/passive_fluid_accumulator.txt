@@ -1,0 +1,5 @@
+Passiv Flëssegkeet
+Flëssegkeetsleitungsbaudeeler
+<&recipe>De passive Flëssegkeetssammler ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Setz en un entspriechend Waasserquellen a looss Plaz fir d'Flëssegkeet erauszehuelen.<br>

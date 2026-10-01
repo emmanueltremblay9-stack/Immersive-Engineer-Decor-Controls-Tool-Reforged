@@ -1,0 +1,5 @@
+Fluido passivo
+Equipamento par linee de fluidi
+<&recipe>L’Acumulador passivo de fluidi el xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: mètelo contro sorzenti de àcua adate e łassa posto par cavar el fluido.<br>

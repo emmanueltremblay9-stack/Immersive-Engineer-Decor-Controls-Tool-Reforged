@@ -1,0 +1,7 @@
+Vitra stangmezurilo
+Signalmezurilo
+<&recipe>Kompakta stireja mezurilo montras redstone’an forton kiel klaran panelan valoron.<br>
+<br>
+Uzado: muntu ĝin kie eblas tuj kontroli proksiman redstone’an signalforton.<br>
+<br>
+Notoj: ĝi legas proksiman redstone’an forton de 0 ĝis 15.

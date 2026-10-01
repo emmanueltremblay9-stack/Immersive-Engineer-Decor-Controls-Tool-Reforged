@@ -1,0 +1,5 @@
+Krat met Etiket
+Wysigbare voorraadetiket
+<&recipe>Hierdie krat met etiket is vir duidelike sortering in die stoorkamer gemaak. Sy voorplaat kan soos ’n klein werkswinkelteken gewysig word.<br>
+<br>
+Gebruik: regsklik die etiketplaat om die kratetiket te wysig. Regsklik die res van die krat om berging vir toebehore, onderdele en onderhoudsvoorraad oop te maak.<br>

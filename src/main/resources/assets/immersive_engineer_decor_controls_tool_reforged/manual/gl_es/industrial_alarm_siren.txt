@@ -1,0 +1,7 @@
+Sirena de alarma
+Indicación do sinal
+<&recipe>A serea de alarma é un indicador de redstone montado nunha cara. O seu estado activado segue o sinal do bloque ao que está unida.<br>
+<br>
+Uso: fíxaa a unha cara sólida e aliméntaa para supervisar portas, máquinas, alarmas ou paneis.<br>
+<br>
+Notas: a sirena reactívase unha vez por segundo mentres o sinal conectado segue activo.

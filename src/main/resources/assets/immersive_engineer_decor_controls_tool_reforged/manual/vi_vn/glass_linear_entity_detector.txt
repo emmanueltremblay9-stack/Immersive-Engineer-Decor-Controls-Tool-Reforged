@@ -1,0 +1,7 @@
+Bộ phát hiện theo đường bằng kính
+Cảm nhận tín hiệu
+<&recipe>Bộ phát hiện thực thể theo dõi chuyển động gần đó mà không cần tấm sàn nhìn thấy được.<br>
+<br>
+Cách dùng: Nối đến cửa, đèn, báo động hoặc khóa liên động máy.<br>
+<br>
+Ghi chú: Quét vùng nhỏ quanh khối.

@@ -1,0 +1,5 @@
+Märkt låda
+Redigerbar lageretikett
+<&recipe>Den här märkta lådan är gjord för tydlig sortering i förråd. Frontskylten kan redigeras som en liten verkstadsskylt.<br>
+<br>
+Användning: Högerklicka på skyltplattan för att ändra lådans etikett. Högerklicka på resten av lådan för att öppna förvaringen för fästen, delar och underhållsmaterial.<br>

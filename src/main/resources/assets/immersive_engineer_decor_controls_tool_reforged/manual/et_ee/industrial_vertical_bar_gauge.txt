@@ -1,0 +1,7 @@
+Analoogne tulpnäidik
+Signaalinäidik
+<&recipe>Kompaktne juhtimisruumi näidik kuvab redstone'i tugevuse selge paneelinäiduna.<br>
+<br>
+Kasutamine: Paigalda sinna, kus lähedast redstone'i toidet peab saama ühe pilguga kontrollida.<br>
+<br>
+Märkus: Loeb lähedase redstone'i tugevust vahemikus 0–15.

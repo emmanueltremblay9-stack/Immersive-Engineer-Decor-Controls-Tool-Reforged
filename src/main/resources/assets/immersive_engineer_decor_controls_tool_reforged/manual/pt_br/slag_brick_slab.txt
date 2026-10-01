@@ -1,0 +1,5 @@
+Laje de tijolos de escória
+Alvenaria industrial densa
+<&recipe>Este bloco acrescenta alvenaria densa marrom-acinzentada para fundações, muros de contenção e oficinas antigas.<br>
+<br>
+Uso: Use em fundações antigas, muros de contenção e pisos sujos de fábricas.<br>

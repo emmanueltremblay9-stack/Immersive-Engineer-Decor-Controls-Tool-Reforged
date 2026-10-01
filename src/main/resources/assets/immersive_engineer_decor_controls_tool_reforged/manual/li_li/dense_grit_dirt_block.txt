@@ -1,0 +1,5 @@
+Verdichte gruisdrek
+Bouwplaatsgrónd
+<&recipe>Dees blok geuf werkplaatse boete ein verdicht, vertrapt vlak.<br>
+<br>
+Gebroek: lèg 'm rond laaddeure, boetetanks en machinehove.<br>

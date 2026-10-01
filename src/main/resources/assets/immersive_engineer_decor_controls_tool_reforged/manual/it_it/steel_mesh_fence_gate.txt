@@ -1,0 +1,5 @@
+Cancello in rete d’acciaio
+Accessorio per accessi di servizio
+<&recipe>Questo blocco crea percorsi di servizio chiaramente riconoscibili attorno ai macchinari.<br>
+<br>
+Uso: posalo per consentire la manutenzione di macchinari, piani superiori e pozzi di servizio.<br>

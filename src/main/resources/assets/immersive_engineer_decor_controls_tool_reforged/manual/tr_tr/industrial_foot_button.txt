@@ -1,0 +1,7 @@
+Ayak Düğmesi
+Redstone Kontrolü
+<&recipe>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.

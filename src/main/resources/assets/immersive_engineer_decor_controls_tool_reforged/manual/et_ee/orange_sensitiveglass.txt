@@ -1,0 +1,7 @@
+Oranž tundlik klaas
+Signaaliklaas
+<&recipe>Redstone'ile reageeriv klaasiplokk säilitab vaate ja näitab signaali olekut.<br>
+<br>
+Kasutamine: Kasuta juhtimisruumi akendes, valgustatud paneelides ja kaitstud tehaseklaasis.<br>
+<br>
+Märkus: Muudab olekut lähedase redstone'i toite järgi.

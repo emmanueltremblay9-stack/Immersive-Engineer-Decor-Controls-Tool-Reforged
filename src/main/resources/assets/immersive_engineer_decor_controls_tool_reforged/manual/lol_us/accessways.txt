@@ -1,0 +1,127 @@
+Gettin-Around Pathz
+Walkies an supportz
+Steel polez, treated postz, gratez, catwalkz, guardrailz, ladderz, doorz, windowz, an hatchies make lil service pathz through ur factory insides, kitty.<br>
+<br>
+Steely pathway partz need steel plates. Kraft OR place a Metal Krafting Tabal, put an Immersive Engineering hammer in, den hammer steel ingots into plates fer polez, catwalkz, windowz, doorz, railingz, an other steely decorz.<br>
+<br>
+Put dem where machinez need service access, high-up pathz, maintenance shaftz, or edges dat keep kitty safer.
+<np>
+Chonky Steely Pole
+Structural frame piecez
+<&thick_steel_pole>Da Straight Chonky Steely Pole makes visible supports fer machine hallz an access framez, meow.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Chonky Pole Cap
+Structural frame piecez
+<&thick_steel_pole_head>Da Straight Chonky Steely Pole Cap/Base makes visible supports fer machine hallz an access framez, yiss.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Skinny Steely Pole
+Structural frame piecez
+<&thin_steel_pole>Da Straight Skinny Steely Pole makes visible supports fer machine hallz an access framez, kitty.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Skinny Pole Cap
+Structural frame piecez
+<&thin_steel_pole_head>Da Straight Skinny Steely Pole Cap/Base makes visible supports fer machine hallz an access framez, meow.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Treated-Wood Pole Thing
+Structural frame piecez
+<&treated_wood_pole>Da Straight Treated-Wood Pole makes visible supports fer machine hallz an access framez, yiss.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Treated-Pole Cap Thing
+Structural frame piecez
+<&treated_wood_pole_head>Da Straight Treated-Wood Pole Cap/Base makes visible supports fer machine hallz an access framez, kitty.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Treated-Pole Support Thing
+Structural frame piecez
+<&treated_wood_pole_support>Da Straight Treated-Wood Pole Support makes visible supports fer machine hallz an access framez, meow.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Steely Double-T Supportz
+Structural frame piecez
+<&steel_double_t_support>Dis bluk makes visible supports fer machine hallz an access framez, kitty.<br>
+<br>
+How to: Rotate an place it as visible bracing fer beamz, polez, an platform edges, kitty.<br>
+<np>
+Steely Floor Gratez
+Get-to-da-machine fittingz
+<&steel_floor_grating>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Steely Catwalkz
+Get-to-da-machine fittingz
+<&steel_catwalk>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Steely Catwalk Stepz
+Get-to-da-machine fittingz
+<&steel_catwalk_stairs>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Raised Steely Catwalkz
+Get-to-da-machine fittingz
+<&steel_catwalk_ta>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Steely Guardrailz
+Get-to-da-machine fittingz
+<&steel_railing>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Steely Mesh Fencez
+Get-to-da-machine fittingz
+<&steel_mesh_fence>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Steely Mesh Fence Gatez
+Get-to-da-machine fittingz
+<&steel_mesh_fence_gate>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Metal Rung Climbies
+Get-to-da-machine fittingz
+<&metal_rung_ladder>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Zigzag Metal Stepz
+Get-to-da-machine fittingz
+<&metal_rung_steps>Dis bluk makes clear service pathz round ur machinery, meow.<br>
+<br>
+How to: Put it round machinez, upper floorz, an service shaftz fer maintenance access, kitty.<br>
+<np>
+Steely-Framed Windowz
+Look-thru protectionz
+<&steel_framed_window>Dis bluk keeps da view clear while still matchin reinforced factory buildinz, meow.<br>
+<br>
+How to: Put it in a 1-bluk-wide wall opening where playerz needs to see machinery thru a protective barrier, kitty.<br>
+<np>
+Metal Slidey Door
+Factory access spotz
+<&metal_sliding_door>Dis bluk makes a tough access point fer service roomz, shaftz, rooftops, an machine enclosures, yiss.<br>
+<br>
+How to: Install where ur build needs a controlled opening fer maintenance, kitty.<br>
+<np>
+Irun Hatchy Door
+Factory access spotz
+<&iron_hatch>Dis bluk makes a tough access point fer service roomz, shaftz, rooftops, an machine enclosures, yiss.<br>
+<br>
+How to: Install where ur build needs a controlled opening fer maintenance, kitty.<br>

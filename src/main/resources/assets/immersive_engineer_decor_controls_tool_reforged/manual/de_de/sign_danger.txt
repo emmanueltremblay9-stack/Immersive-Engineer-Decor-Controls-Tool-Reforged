@@ -1,0 +1,5 @@
+Gefahrenschild
+Gefahrenmarkierung
+<&recipe>Das Schild „Vorsicht, sehr gefährlich“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>

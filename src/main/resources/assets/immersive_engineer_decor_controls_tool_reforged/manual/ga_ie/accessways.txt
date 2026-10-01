@@ -1,0 +1,127 @@
+Bealaí Rochtana
+Siúláin agus tacaí
+Cruthaíonn cuaillí cruach, cuaillí cóireáilte, grátáil, siúláin, ráillí, dréimirí, doirse, fuinneoga agus comhlaí bealaí dlútha seirbhíse trí thaobh istigh monarchana.<br>
+<br>
+Úsáidtear plátaí cruach i bpáirteanna cruach do bhealaí rochtana. Déan nó cuir Bord Ceardaíochta Miotail ann, cuir casúr Immersive Engineering isteach, agus ansin casúir tinní cruach ina bplátaí cruach do chuaillí, siúláin, fuinneoga, doirse, ráillí agus maisiúcháin chruach eile.<br>
+<br>
+Cuir iad in áiteanna a bhfuil rochtain seirbhíse ar mheaisíní, cosáin ardaithe, sloic chothabhála nó imill níos sláine de dhíth.
+<np>
+Cuaille Cruach Tiubh
+Páirt den fhráma struchtúrach
+<&thick_steel_pole>Tugann an Cuaille Díreach Tiubh Cruach struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Ceann Cuaille Thiubh
+Páirt den fhráma struchtúrach
+<&thick_steel_pole_head>Tugann Ceann/Bun Cuaille Dhírigh Thiubh Cruach struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Cuaille Cruach Tanaí
+Páirt den fhráma struchtúrach
+<&thin_steel_pole>Tugann an Cuaille Díreach Tanaí Cruach struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Ceann Cuaille Thanaí
+Páirt den fhráma struchtúrach
+<&thin_steel_pole_head>Tugann Ceann/Bun Cuaille Dhírigh Thanaí Cruach struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Cuaille Adhmaid Chóireáilte
+Páirt den fhráma struchtúrach
+<&treated_wood_pole>Tugann an Cuaille Díreach Adhmaid Chóireáilte struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Ceann Cuaille Chóireáilte
+Páirt den fhráma struchtúrach
+<&treated_wood_pole_head>Tugann Ceann/Bun Cuaille Dhírigh Adhmaid Chóireáilte struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Taca Cuaille Chóireáilte
+Páirt den fhráma struchtúrach
+<&treated_wood_pole_support>Tugann Taca Cuaille Dhírigh Adhmaid Chóireáilte struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Taca Cruach T Dúbailte
+Páirt den fhráma struchtúrach
+<&steel_double_t_support>Tugann an bloc seo struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>
+<np>
+Gríl Urláir Cruach
+Feisteas rochtana seirbhíse
+<&steel_floor_grating>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Siúlán Cruach
+Feisteas rochtana seirbhíse
+<&steel_catwalk>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Staighre Siúláin Cruach
+Feisteas rochtana seirbhíse
+<&steel_catwalk_stairs>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Siúlán Cruach Ardaithe
+Feisteas rochtana seirbhíse
+<&steel_catwalk_ta>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Ráille Cruach
+Feisteas rochtana seirbhíse
+<&steel_railing>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Fál Mogall Cruach
+Feisteas rochtana seirbhíse
+<&steel_mesh_fence>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Geata Fál Mogall Cruach
+Feisteas rochtana seirbhíse
+<&steel_mesh_fence_gate>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Dréimire Rungaí Miotail
+Feisteas rochtana seirbhíse
+<&metal_rung_ladder>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Céimeanna Miotail Malartacha
+Feisteas rochtana seirbhíse
+<&metal_rung_steps>Cruthaíonn an bloc seo bealaí soiléire seirbhíse timpeall ar innealra.<br>
+<br>
+Úsáid: cuir é mar rochtain chothabhála timpeall ar mheaisíní, urláir uachtaracha agus sloic sheirbhíse.<br>
+<np>
+Fuinneog le Fráma Cruach
+Radharc cosanta
+<&steel_framed_window>Coinníonn an bloc seo línte radhairc oscailte agus oireann sé do thógáil threisithe monarchan fós.<br>
+<br>
+Úsáid: cuir é in oscailt 1 bhloc i mballa áit ar chóir d'imreoirí innealra a fheiceáil trí bhac cosanta.<br>
+<np>
+Doras Sleamhnáin Miotail
+Pointe rochtana tionsclaíoch
+<&metal_sliding_door>Cuireann an bloc seo pointe láidir rochtana ar fáil do sheomraí seirbhíse, sloic, díonta agus imfháluithe meaisín.<br>
+<br>
+Úsáid: suiteáil é áit a bhfuil oscailt rialaithe chothabhála de dhíth sa tógáil.<br>
+<np>
+Comhla Iarainn
+Pointe rochtana tionsclaíoch
+<&iron_hatch>Cuireann an bloc seo pointe láidir rochtana ar fáil do sheomraí seirbhíse, sloic, díonta agus imfháluithe meaisín.<br>
+<br>
+Úsáid: suiteáil é áit a bhfuil oscailt rialaithe chothabhála de dhíth sa tógáil.<br>

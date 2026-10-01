@@ -1,0 +1,7 @@
+Ricevidôr di leam di interutôrs
+Comant leât
+<&recipe>Un ricevidôr leât al da ai panei lontans une destinazion di redstone a plene potence.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Fâs clic di diestre dret sul ricevidôr par cambiâji stât a man.<br>
+<br>
+Notis: une perle leade e cambie il stât di chest ricevidôr cuant che tu le dopris sbassât.

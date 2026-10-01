@@ -1,0 +1,7 @@
+Lýsandi næmt gler
+Merkjagler
+<&recipe>Glerkubbur sem bregst við roðsteini heldur sjónlínum opnum og sýnir um leið stöðu merkisins.<br>
+<br>
+Notkun: Notaðu hann í stjórnherbergisglugga, lýst stjórnborð og varið verksmiðjugler.<br>
+<br>
+Athugasemdir: Breytir um stöðu eftir roðsteinsafli í nágrenninu.

@@ -1,0 +1,5 @@
+Arkë me etiketë
+Etiketë rezerve e ndryshueshme
+<&recipe>Kjo arkë me etiketë shërben për renditje të qartë në magazinë. Pllaka përpara mund të ndryshohet si një tabelë e vogël punishteje.<br>
+<br>
+Përdorimi: kliko djathtas pllakën e etiketës për të ndryshuar tekstin e arkës. Kliko djathtas pjesën tjetër për të hapur ruajtjen e pajisjeve, pjesëve dhe furnizimeve të mirëmbajtjes.<br>

@@ -1,0 +1,7 @@
+Veri sensibil naranç
+Veri di segnâl
+<&recipe>Un bloc di veri che al reagjìs ae redstone al lasse viodi traviers intant che al mostre il stât dal segnâl.<br>
+<br>
+Ûs: doprilu tai barcons de sale control, tai panei iluminâts e tal veri protet di fabriche.<br>
+<br>
+Notis: al cambie stât cu la energjie di redstone dongje.

@@ -1,0 +1,5 @@
+Sign "Fire Hazard Sign
+Hazard marker
+<&recipe>The Sign "Fire Hazard" Fire Hazard Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>

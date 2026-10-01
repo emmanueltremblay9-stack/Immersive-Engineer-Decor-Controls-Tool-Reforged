@@ -1,0 +1,5 @@
+Valvul analoge lëngjesh
+Pajisje linjash lëngjesh
+<&recipe>Valvula analoge e lëngjeve është pjesë kompakte linje lëngjesh për depozita të vogla, tubacione, pika mbledhjeje dhe rrjedhje të kontrolluar me redston.<br>
+<br>
+Përdorimi: rreshtoje valvulën me drejtimin e synuar të rrjedhjes.<br>

@@ -1,0 +1,7 @@
+Zehin sıxıcısı
+Təcrübə sıxlaşdırıcısı
+<&recipe>Zehin sıxıcısı lapisi və təcrübəni yüklənmiş lapisə çevirir.<br>
+<br>
+İstifadə: Üzərinizdə lapis lazuli və ən azı bir təcrübə səviyyəsi olsun, sonra aləti işlədin. Uğurlu sıxma bir səviyyə və bir lapis sərf edir, istifadəçiyə zərər vurur, sıxıcını köhnəldir və bir yüklənmiş lapis yaradır.<br>
+<br>
+İstifadəçidə lapis və ya XP olmadıqda, yaxud o, ölümə çox yaxın olduqda işləmir.

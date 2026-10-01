@@ -1,0 +1,7 @@
+Yashil LED
+Signal holatining aks ettirilishi
+<&recipe>Ixcham ko'rsatkich yashirin redstoneni zavodda ko'rinadigan holat ko'rsatkichiga aylantiradi.<br>
+<br>
+Ishlatish: eshiklar, mashinalar, ogohlantirishlar yoki panellarni kuzatish uchun signal yoniga simlang.<br>
+<br>
+Eslatma: yaqin redstone quvvati bo'lganda holati o'zgaradi.

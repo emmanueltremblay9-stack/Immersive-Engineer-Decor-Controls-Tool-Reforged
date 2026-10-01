@@ -1,0 +1,5 @@
+Tabulae ligneae veteres
+Lignum officinae vetustum
+<&recipe>Tabulae veteres industriales ligneae lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addunt.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>

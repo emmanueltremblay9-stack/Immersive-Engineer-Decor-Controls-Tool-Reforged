@@ -1,0 +1,7 @@
+Bộ nhận liên kết công tắc
+Điều khiển liên kết
+<&recipe>Bộ nhận liên kết cung cấp mục tiêu redstone cường độ tối đa cho các bảng điều khiển từ xa.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Nhấp phải trực tiếp vào bộ nhận để bật/tắt bằng tay.<br>
+<br>
+Ghi chú: Dùng viên ngọc liên kết khi cúi để bật/tắt bộ nhận này.

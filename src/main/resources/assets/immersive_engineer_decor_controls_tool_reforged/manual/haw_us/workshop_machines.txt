@@ -1,0 +1,107 @@
+Nā Mīkini Hale Hana
+Nā mīkini me ka hoʻokomo a hoʻopuka o ka hale hana
+Hāʻawi nā mīkini hale hana i ka hanalima, ka hoʻoneʻe ʻikamu, ka hoʻoheheʻe, ka hoʻopau ʻōpala, ka ʻohi, a me nā hana kōkua paʻapu ma kahi hoʻokahi palaka.<br>
+<br>
+E wehe i nā ʻaoʻao aʻe no ka lekapī, ke kiʻi, ka moʻolelo, a me nā memo hoʻohana pono o kēlā me kēia mīkini.
+<np>
+Pākaukau Kila
+Lako hale hana
+<&steel_table>He lako hale hana pono kēia palaka no nā lumi hana a me nā kihi mālama.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā papa hana, nā pahu, a me nā mīkini paʻapu.<br>
+<np>
+Pākaukau Lāʻau Mālama ʻIa
+Lako hale hana
+<&treated_wood_table>He lako hale hana pono kēia palaka no nā lumi hana a me nā kihi mālama.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā papa hana, nā pahu, a me nā mīkini paʻapu.<br>
+<np>
+Noho Lāʻau Mālama ʻIa
+Lako hale hana
+<&treated_wood_stool>He lako hale hana pono kēia palaka no nā lumi hana a me nā kihi mālama.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā papa hana, nā pahu, a me nā mīkini paʻapu.<br>
+<np>
+Papa Hanalima Metala
+Kahua hana papa metala
+<&metal_crafting_table>He kahua hale hana hoʻoikaika ʻia ka Papa Hanalima Metala me kahi wahi no ka hāmare, he mākia hanalima 3x3, a me kahi wahi huapuka mōakāka.<br>
+<br>
+Hoʻohana: E hoʻohana i ka mākia no ka hanalima maʻamau. No nā papa IE, e kau i ka Hāmare ʻEnekinia ma ka wahi no ka mea hana a hoʻokomo i ka mea o ka papa ma ka mākia ma mua o ka lawe ʻana i ka huahana. Hoʻohana nā hoʻonani kila i nā papa kila no nā pou, nā ala hele, nā puka aniani, nā puka, nā kaola pale, a me nā ʻāpana kila ʻē aʻe.<br>
+<np>
+Kānuku Halehana
+Lako kōkua papahele hale hana
+<&factory_hopper>Hoʻoneʻe kēia palaka i nā pūʻulu ʻikamu ma loko o ka iwi halehana paʻapu aʻe.<br>
+<br>
+Hoʻohana: E kuhikuhi i ka laina waihona, a laila hoʻonohonoho i ka laulā, ka helu pūʻulu, ka manawa, a me ke ʻano Redstone ma kona pale.<br>
+<np>
+Hoʻokuʻu Palaka Halehana
+Lako kōkua papahele hale hana
+<&factory_dropper>Hoʻokuʻu kēia palaka i nā ʻikamu i mālama ʻia mai ka ʻaoʻao i kuhikuhi ʻia.<br>
+<br>
+Hoʻohana: E kuhikuhi i ke alo i kahi hoʻokuʻu, hoʻopiha i nā wahi kūloko, a hoʻonohonoho i ka ikaika, ke kihi, ka manawa kali, ka loina kānana, a me ke ʻano Redstone ma kona pale.<br>
+<np>
+Mea Kau Palaka Halehana
+Lako kōkua papahele hale hana
+<&factory_placer>Kau kēia palaka i nā palaka mai kona waihona kūloko ke hoʻā ʻia.<br>
+<br>
+Hoʻohana: E kuhikuhi i ke alo hana i ka wahi pahuhopu a hoʻopiha i nā pūʻulu hiki ke kau ʻia.<br>
+<np>
+Mea Wāwahi Palaka
+Lako kōkua papahele hale hana
+<&small_block_breaker>He palaka kōkua papahele hale hana ka Mea Wāwahi Palaka Liʻiliʻi no ka hanalima, ka mālama, ke kau ʻana, ka wāwahi, ka ʻohi, a i ʻole ka hana ʻakomi paʻapu.<br>
+<br>
+Hoʻohana: E kuhikuhi i ke alo hana i ka palaka e wehe ʻia.<br>
+<np>
+Umu Puhi ʻŌpala
+Mīkini hana hoʻololi paʻapu
+<&small_waste_incinerator>Hoʻopau ka Umu Puhi ʻŌpala i nā ʻikamu makemake ʻole ʻia ma kahi paʻapu o ka hale hana.<br>
+<br>
+Hoʻohana: E hānai wale i nā ʻikamu makemake ʻole ʻia i kona lālani.<br>
+<np>
+Umu Keʻena Hoʻokolohua
+Mīkini hana hoʻololi paʻapu
+<&small_lab_furnace>Hana ka Umu Keʻena Hoʻokolohua i ka hoʻoheheʻe me ka wahie paʻa ma kahi paʻapu o ka hale hana.<br>
+<br>
+Hoʻohana: E hoʻohana i ka wahie paʻa no nā pūʻulu hoʻoheheʻe paʻapu.<br>
+<np>
+Umu Uila
+Mīkini hana hoʻololi paʻapu
+<&small_electrical_furnace>Hana ka Umu Uila i ka hoʻoheheʻe me ka ikehu FE ma kahi paʻapu o ka hale hana.<br>
+<br>
+Hoʻohana: E hoʻolako i ka FE a me ka ʻikamu hoʻoheheʻe kūpono.<br>
+<np>
+Mea Hoʻoheheʻe Minelala
+Mīkini hana hoʻololi paʻapu
+<&small_mineral_smelter>Hana ka Mea Hoʻoheheʻe Minelala i ka hana minelala wela kiʻekiʻe ma kahi paʻapu o ka hale hana.<br>
+<br>
+Hoʻohana: E hānai i nā palaka minelala a me ka ikehu no ka hoʻoheheʻe wela kiʻekiʻe.<br>
+<np>
+Mea Hoʻohau Wai
+Mīkini hana hoʻololi paʻapu
+<&small_freezer>Hana ka Mea Hoʻohau Wai i ka hoʻomaʻalili paʻapu no nā hoʻonohonoho wai i loaʻa ka ikehu.<br>
+<br>
+Hoʻohana: E hoʻolako i ka wai a me ka ikehu no ka hana hau ma nā ʻanuʻu kaʻina.<br>
+<np>
+Wai ʻAi Ikehu ʻOle
+Lako laina wai
+<&passive_fluid_accumulator>He ʻāpana laina wai paʻapu ka Mea Hōʻiliʻili Wai ʻAi Ikehu ʻOle no nā pahu wai liʻiliʻi, nā ala paipu, nā wahi ʻohi, a me ke kahe i hoʻomalu ʻia e Redstone.<br>
+<br>
+Hoʻohana: E kau pili i nā kumu wai kūpono a waiho i kahi no ka lawe ʻana i ka wai.<br>
+<np>
+Papa Lā
+Lako kōkua papahele hale hana
+<&small_solar_panel>He palaka kōkua papahele hale hana ka Papa Lā Liʻiliʻi no ka hanalima, ka mālama, ke kau ʻana, ka wāwahi, ka ʻohi, a i ʻole ka hana ʻakomi paʻapu.<br>
+<br>
+Hoʻohana: E waiho ma lalo o ka lani hāmama a hoʻohui i nā lako ʻai ikehu liʻiliʻi.<br>
+<np>
+Mīkini Waiū
+Lako kōkua papahele hale hana
+<&small_milking_machine>He palaka kōkua papahele hale hana ka Mīkini Waiū Liʻiliʻi no ka hanalima, ka mālama, ke kau ʻana, ka wāwahi, ka ʻohi, a i ʻole ka hana ʻakomi paʻapu.<br>
+<br>
+Hoʻohana: E kau kokoke i nā pipi a hoʻolako i ke ala lawe i nā ipu waiū a i ʻole ka waiū kahe.<br>
+<np>
+Mea ʻOki Lāʻau
+Lako kōkua papahele hale hana
+<&small_tree_cutter>He palaka kōkua papahele hale hana ka Mea ʻOki Lāʻau Liʻiliʻi no ka hanalima, ka mālama, ke kau ʻana, ka wāwahi, ka ʻohi, a i ʻole ka hana ʻakomi paʻapu.<br>
+<br>
+Hoʻohana: E kuhikuhi i nā lāʻau makua a ʻohi kaʻawale i nā ʻikamu hāʻule.<br>

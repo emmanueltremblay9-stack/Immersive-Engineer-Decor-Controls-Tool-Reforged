@@ -1,0 +1,7 @@
+Skakelaarkoppelpêrel
+Gekoppelde beheer
+<&recipe>’n Gekoppelde pêrel stoor ’n ontvangerteiken vir afgeleë fabrieksbeheer.<br>
+<br>
+Gebruik: klik met ’n Ender-pêrel op ’n skakelaarkoppelontvanger om een te maak. Gebruik die gekoppelde pêrel terwyl jy sluip om die gestoorde ontvanger te aktiveer.<br>
+<br>
+Nota: die teiken moet gelaai, in dieselfde dimensie en binne bereik wees.

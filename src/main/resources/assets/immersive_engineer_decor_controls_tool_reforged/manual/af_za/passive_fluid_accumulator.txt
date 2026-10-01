@@ -1,0 +1,5 @@
+Passiewe Vloeistof
+Vloeistoflyntoerusting
+<&recipe>Die Passiewe Vloeistofversamelaar is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: plaas dit teen geskikte waterbronne en laat ruimte om die vloeistof uit te haal.<br>

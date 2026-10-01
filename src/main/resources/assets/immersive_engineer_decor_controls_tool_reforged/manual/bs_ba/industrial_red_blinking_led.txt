@@ -1,0 +1,7 @@
+Crveni LED
+Prikaz stanja signala
+<&recipe>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u fabrici.<br>
+<br>
+Upotreba: Povežite ga uz signal za nadzor vrata, mašina, alarma ili panela.<br>
+<br>
+Napomene: Mijenja stanje kada je prisutan obližnji redstone signal.

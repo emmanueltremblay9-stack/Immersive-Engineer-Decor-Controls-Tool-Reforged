@@ -1,0 +1,5 @@
+Muro de concreto armado
+Concreto reforzado
+<&recipe>Este bloque es una pieza de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Úsalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>

@@ -1,0 +1,108 @@
+Togail gnìomhachais
+Ballachan is oir-sgeadachadh factaraidh
+Tha dorsan, uinneagan, solais, soidhnichean rabhaidh, oir-sgeadachadh agus pàirtean structair nach buin do roinn nas mionaidiche ann an uidheam togail coitcheann.<br>
+<br>
+Cleachd na duilleagan seo airson seòmraichean factaraidh, trannsaichean-seirbheis, comharrachadh chunnartan agus mion-obair gnìomhachais phractaigeach.
+<np>
+Solas bolgain iarainn
+Solas-obrach dlùth
+<&iron_bulb_light>Bheir am bloca seo solas gnìomhachais dlùth do thrannsaichean, slighean-coise agus bàghan-obrach.<br>
+<br>
+Cleachdadh: cuir air mullaichean a-staigh, ballachan no oirean e far a bheil feum aig an t-seòmar air solas-obrach soilleir.<br>
+<np>
+Solas oir a' mhullaich
+Solas-obrach dlùth
+<&iron_ceiling_edge_light>Bheir am bloca seo solas gnìomhachais dlùth do thrannsaichean, slighean-coise agus bàghan-obrach.<br>
+<br>
+Cleachdadh: cuir air mullaichean a-staigh, ballachan no oirean e far a bheil feum aig an t-seòmar air solas-obrach soilleir.<br>
+<np>
+Solas cùlaichte oir an làir
+Solas-obrach dlùth
+<&iron_floor_edge_light>Bheir am bloca seo solas gnìomhachais dlùth do thrannsaichean, slighean-coise agus bàghan-obrach.<br>
+<br>
+Cleachdadh: cuir air mullaichean a-staigh, ballachan no oirean e far a bheil feum aig an t-seòmar air solas-obrach soilleir.<br>
+<np>
+Solas cùlaichte
+Solas-obrach dlùth
+<&iron_inset_light>Bheir am bloca seo solas gnìomhachais dlùth do thrannsaichean, slighean-coise agus bàghan-obrach.<br>
+<br>
+Cleachdadh: cuir air mullaichean a-staigh, ballachan no oirean e far a bheil feum aig an t-seòmar air solas-obrach soilleir.<br>
+<np>
+Soidhne "Rabhadh coitcheann
+Comharra cunnart
+<&sign_caution>Comharraichidh an Soidhne "Rabhadh coitcheann" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne cunnart
+Comharra cunnart
+<&sign_danger>Comharraichidh an Soidhne "Rabhadh: Gu math cunnartach thall" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne sgeadachaidh
+Comharra cunnart
+<&sign_decor>Comharraichidh an Clàr-soidhne (Engineer's decor) cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne dìon
+Comharra cunnart
+<&sign_defense>Comharraichidh an Soidhne "Rabhadh: Siostam dìona romhad" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne slighe a-mach
+Comharra cunnart
+<&sign_exit>Comharraichidh an soidhne seo cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne "Cunnart teine
+Comharra cunnart
+<&sign_firehazard>Comharraichidh an Soidhne "Cunnart teine" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne "Rabhadh reòthaidh
+Comharra cunnart
+<&sign_frost>Comharraichidh an Soidhne "Rabhadh reòthaidh" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne uachdar teth
+Comharra cunnart
+<&sign_hotsurface>Comharraichidh an Soidhne "Rabhadh: Uachdar teth" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne uèir bheò
+Comharra cunnart
+<&sign_hotwire>Comharraichidh an Soidhne "Rabhadh: Uèir bheò" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne "Cunnart leusair
+Comharra cunnart
+<&sign_laser>Comharraichidh an Soidhne "Cunnart leusair" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne cunnart draoidheachd
+Comharra cunnart
+<&sign_magichazard>Comharraichidh an Soidhne "Rabhadh: Cunnart draoidheachd" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne raon magnatach
+Comharra cunnart
+<&sign_magneticfield>Comharraichidh an Soidhne "Rabhadh: Raon làidir magnatach" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>
+Soidhne "Cunnart rèidio-bheòthail
+Comharra cunnart
+<&sign_radioactive>Comharraichidh an Soidhne "Cunnart rèidio-bheòthail" cunnartan, slighean a-mach agus raointean-obrach le comharra faicsinneach freagarrach do shàbhailteachd factaraidh.<br>
+<br>
+Cleachdadh: cuir e ri taobh chunnartan, slighean a-mach, innealan agus raointean far a bheil ruigsinn cuingealaichte.<br>
+<np>

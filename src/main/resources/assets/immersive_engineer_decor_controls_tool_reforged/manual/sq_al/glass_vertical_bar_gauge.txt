@@ -1,0 +1,7 @@
+Matës me shirit prej xhami
+Matës sinjali
+<&recipe>Një matës kompakt dhome kontrolli shfaq fuqinë e redstonit si lexim të qartë paneli.<br>
+<br>
+Përdorimi: montoje ku fuqia e redstonit pranë mund të kontrollohet me një vështrim.<br>
+<br>
+Shënim: lexon fuqinë e redstonit pranë nga 0 deri në 15.

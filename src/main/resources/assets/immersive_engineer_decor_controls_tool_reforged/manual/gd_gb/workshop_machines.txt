@@ -1,0 +1,107 @@
+Innealan bùth-obrach
+Innealan agus ion-chur/às-chur bùth-obrach
+Nì innealan bùth-obrach obair-chiùird dhlùth, gluasad nithean, leaghadh, faighinn cuidhteas, cruinneachadh agus obair ghoireis taobh a-staigh aon bhloca.<br>
+<br>
+Fosgail na duilleagan a leanas airson reasabaidh, sealladh, cùl-fhiosrachadh agus nòtaichean cleachdaidh practaigeach gach inneil.
+<np>
+Bòrd stàilinn
+Àirneis bùth-obrach
+<&steel_table>Tha am bloca seo na àirneis phractaigeach do sheòmraichean-obrach agus oiseanan cumail suas.<br>
+<br>
+Cleachdadh: cuir ri taobh bheingean, cisteachan-bathair agus innealan dlùtha e.<br>
+<np>
+Bòrd fiodha làimhsichte
+Àirneis bùth-obrach
+<&treated_wood_table>Tha am bloca seo na àirneis phractaigeach do sheòmraichean-obrach agus oiseanan cumail suas.<br>
+<br>
+Cleachdadh: cuir ri taobh bheingean, cisteachan-bathair agus innealan dlùtha e.<br>
+<np>
+Stòl fiodha làimhsichte
+Àirneis bùth-obrach
+<&treated_wood_stool>Tha am bloca seo na àirneis phractaigeach do sheòmraichean-obrach agus oiseanan cumail suas.<br>
+<br>
+Cleachdadh: cuir ri taobh bheingean, cisteachan-bathair agus innealan dlùtha e.<br>
+<np>
+Bòrd-ciùird meatailt
+Ionad-obrach pleataichean
+<&metal_crafting_table>Tha am Bòrd-ciùird meatailt na ionad-obrach neartaichte le sliotan ùird, griod-ciùird 3x3 agus sliotan às-chuir soilleir.<br>
+<br>
+Cleachdadh: cleachd an griod airson obair-chiùird àbhaisteach. Airson pleataichean IE, cuir Òrd an Innleadair anns an t-sliotan inneil agus cuir stuth na pleata sa ghriod mus tog thu an toradh. Cleachdaidh sgeadachaidhean stàilinn pleataichean stàilinn airson puist, slighean-coise, uinneagan, dorsan, rèilean agus pàirtean stàilinn eile.<br>
+<np>
+Drabhailt factaraidh
+Goireas làir bùth-obrach
+<&factory_hopper>Gluaisidh am bloca seo cruachan nithean tro chèis ghnìomhachais nas dlùithe.<br>
+<br>
+Cleachdadh: cuir e a' coimhead air loidhne nan clàran-stuthan, agus suidhich raon, àireamh cruachan, ùine agus modh redstone air an sgrìn aige.<br>
+<np>
+Bloca leigeil às factaraidh
+Goireas làir bùth-obrach
+<&factory_dropper>Leigidh am bloca seo nithean stòraichte a-mach bho aghaidh air a h-amas.<br>
+<br>
+Cleachdadh: amas an aghaidh air a' phuing leigeil às, lìon na sliotanan a-staigh agus rèitich feachd, ceàrn, dàil, loidsig criathraig agus modh redstone air an sgrìn aige.<br>
+<np>
+Inneal cur bhlocaichean factaraidh
+Goireas làir bùth-obrach
+<&factory_placer>Cuiridh am bloca seo blocaichean on stòras a-staigh aige nuair a ghnìomhaichear e.<br>
+<br>
+Cleachdadh: amas an aghaidh obrach air an àite-targaid agus cuir cruachan a ghabhas suidheachadh a-steach.<br>
+<np>
+Briseadair bhlocaichean
+Goireas làir bùth-obrach
+<&small_block_breaker>Tha am Briseadair beag bhlocaichean na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: cuir an aghaidh-obrach ris a' bhloca a tha thu airson a thoirt air falbh.<br>
+<np>
+Loisgeadair sgudail
+Aonad giullachd dlùth
+<&small_waste_incinerator>Sgriosaidh an Loisgeadair sgudail nithean nach eilear ag iarraidh ann an àite beag bùth-obrach.<br>
+<br>
+Cleachdadh: na cuir anns a' chiudha aige ach nithean nach eil thu ag iarraidh.<br>
+<np>
+Fùirneis deuchainn-lainn
+Aonad giullachd dlùth
+<&small_lab_furnace>Nì an Fhùirneis deuchainn-lainn obair leaghaidh dhlùth le connadh cruaidh ann an àite beag bùth-obrach.<br>
+<br>
+Cleachdadh: cleachd connadh cruaidh airson baidsean leaghaidh dlùtha.<br>
+<np>
+Fùirneis dealain
+Aonad giullachd dlùth
+<&small_electrical_furnace>Nì an Fhùirneis dealain obair leaghaidh dhlùth le cumhachd FE ann an àite beag bùth-obrach.<br>
+<br>
+Cleachdadh: thoir FE agus ion-chur leaghaidh dligheach dhi.<br>
+<np>
+Leaghadair mèinnearach
+Aonad giullachd dlùth
+<&small_mineral_smelter>Nì an Leaghadair mèinnearach giullachd mhèinnearan aig teas àrd ann an àite beag bùth-obrach.<br>
+<br>
+Cleachdadh: thoir blocaichean mèinnearach agus cumhachd dha airson obair leaghaidh aig teas àrd.<br>
+<np>
+Reòthadair uisge
+Aonad giullachd dlùth
+<&small_freezer>Nì an Reòthadair uisge obair fuarachaidh dhlùth airson shiostaman lionna le cumhachd.<br>
+<br>
+Cleachdadh: thoir uisge agus cumhachd dha airson deigh a dhèanamh ann an ìrean.<br>
+<np>
+Lionn fulangach
+Uidheam loidhne lionna
+<&passive_fluid_accumulator>Tha an Cruinniche lionna fulangach na phàirt dhlùth de loidhne-lionna airson tancaichean beaga, sreathan phìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: cuir ri taobh thùsan uisge freagarrach e agus fàg àite airson an lionn a thoirt air falbh.<br>
+<np>
+Panal grèine
+Goireas làir bùth-obrach
+<&small_solar_panel>Tha am Panal beag grèine na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: fàg an t-adhar fosgailte os a chionn agus ceangail uidheam nach iarr mòran cumhachd ris.<br>
+<np>
+Inneal bleoghainn
+Goireas làir bùth-obrach
+<&small_milking_machine>Tha an Inneal beag bleoghainn na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: cuir faisg air crodh e agus thoir seachad dòigh air soithichean bainne no lionn a thoirt air falbh.<br>
+<np>
+Gearradair chraobhan
+Goireas làir bùth-obrach
+<&small_tree_cutter>Tha an Gearradair beag chraobhan na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: cuir e a dh'ionnsaigh chraobhan fàsta agus cruinnich na nithean a thuiteas air leth.<br>

@@ -1,0 +1,7 @@
+Kytkinyhteyshelmi
+Yhteysohjaus
+<&recipe>Yhteyshelmi tallentaa vastaanottimen tehtaan etäohjauksen kohteeksi.<br>
+<br>
+Käyttö: Luo helmi napsauttamalla kytkinyhteysvastaanotinta Ender-helmellä. Käytä yhteyshelmeä hiipien aktivoidaksesi tallennetun vastaanottimen.<br>
+<br>
+Huomaa: Kohteen on oltava ladattuna, samassa ulottuvuudessa ja kantaman sisällä.

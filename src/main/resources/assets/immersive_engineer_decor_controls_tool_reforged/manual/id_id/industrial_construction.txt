@@ -1,0 +1,108 @@
+Konstruksi Industri
+Tembok dan lis pabrik
+Perlengkapan konstruksi umum mencakup pintu, jendela, lampu, rambu peringatan, lis, dan bagian struktur yang tidak termasuk bagian lain yang lebih khusus.<br>
+<br>
+Gunakan halaman ini untuk ruangan pabrik, lorong servis, penandaan bahaya, dan pekerjaan detail industri yang praktis.
+<np>
+Lampu Bohlam Besi
+Lampu kerja ringkas
+<&iron_bulb_light>Blok ini menyediakan penerangan industri ringkas untuk lorong, jalur servis, dan ruang kerja.<br>
+<br>
+Penggunaan: pasang pada langit-langit, tembok, atau tepi tempat ruangan membutuhkan penerangan kerja yang jelas.<br>
+<np>
+Lampu Tepi Langit-Langit
+Lampu kerja ringkas
+<&iron_ceiling_edge_light>Blok ini menyediakan penerangan industri ringkas untuk lorong, jalur servis, dan ruang kerja.<br>
+<br>
+Penggunaan: pasang pada langit-langit, tembok, atau tepi tempat ruangan membutuhkan penerangan kerja yang jelas.<br>
+<np>
+Lampu Tanam Tepi Lantai
+Lampu kerja ringkas
+<&iron_floor_edge_light>Blok ini menyediakan penerangan industri ringkas untuk lorong, jalur servis, dan ruang kerja.<br>
+<br>
+Penggunaan: pasang pada langit-langit, tembok, atau tepi tempat ruangan membutuhkan penerangan kerja yang jelas.<br>
+<np>
+Lampu Tanam
+Lampu kerja ringkas
+<&iron_inset_light>Blok ini menyediakan penerangan industri ringkas untuk lorong, jalur servis, dan ruang kerja.<br>
+<br>
+Penggunaan: pasang pada langit-langit, tembok, atau tepi tempat ruangan membutuhkan penerangan kerja yang jelas.<br>
+<np>
+Rambu “Peringatan Umum”
+Penanda bahaya
+<&sign_caution>Rambu “Peringatan Umum” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Bahaya
+Penanda bahaya
+<&sign_danger>Rambu “Awas, Sangat Berbahaya” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Dekoratif
+Penanda bahaya
+<&sign_decor>Pelat rambu (Engineer's Decor) menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Pertahanan
+Penanda bahaya
+<&sign_defense>Rambu “Awas, Sistem Pertahanan di Depan” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Keluar
+Penanda bahaya
+<&sign_exit>Rambu ini menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu “Bahaya Kebakaran”
+Penanda bahaya
+<&sign_firehazard>Rambu “Bahaya Kebakaran” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu “Peringatan Beku”
+Penanda bahaya
+<&sign_frost>Rambu “Peringatan Beku” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Permukaan Panas
+Penanda bahaya
+<&sign_hotsurface>Rambu “Awas, Permukaan Panas” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Kabel Bertegangan
+Penanda bahaya
+<&sign_hotwire>Rambu “Awas, Kabel Bertegangan” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu “Bahaya Laser”
+Penanda bahaya
+<&sign_laser>Rambu “Bahaya Laser” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Bahaya Sihir
+Penanda bahaya
+<&sign_magichazard>Rambu “Awas, Bahaya Sihir” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu Medan Magnet
+Penanda bahaya
+<&sign_magneticfield>Rambu “Awas, Medan Magnet Kuat” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>
+Rambu “Bahaya Radioaktif”
+Penanda bahaya
+<&sign_radioactive>Rambu “Bahaya Radioaktif” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>
+<np>

@@ -1,0 +1,7 @@
+Senzor svetlobe
+Zaznavanje za signalizacijo
+<&recipe>Senzor svetlobe pretvarja lokalno svetlost v krmiljenje redstone.<br>
+<br>
+Uporaba: Uporabi ga za samodejne svetilke, polkna in vezja za vidljivost.<br>
+<br>
+Opombe: Oddaja signal pri surovi svetlosti 8 ali več.

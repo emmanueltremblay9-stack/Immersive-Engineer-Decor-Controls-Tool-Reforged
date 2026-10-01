@@ -1,0 +1,161 @@
+Klinkur og múrverk
+Skeljar úr múrsteini og betongi
+Klinkur, gjallmúrsteinar, styrkt betong og pansarglas geva tung yvirflati til heit rúm, verkstøð og vard útsýni.<br>
+<br>
+Brúka samsvarandi plátur, trappur, tunnar flísar og múrar fyri at gera kantarnar lidnar uttan at broyta tilfarsstílin í verksmiðjuni.
+<np>
+Klinkurmúrsteinskubbi
+Sótmyrkt múrverk
+<&clinker_brick_block>Hesin kubbin gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Klinkurmúrsteinspláta
+Sótmyrkt múrverk
+<&clinker_brick_slab>Hesin kubbin gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Klinkurmúrsteinstrappa
+Sótmyrkt múrverk
+<&clinker_brick_stairs>Hesin kubbin gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Klinkurmúrsteinsmúrur
+Sótmyrkt múrverk
+<&clinker_brick_wall>Hesin kubbin gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Blettutur klinkurkubbi
+Sótmyrkt múrverk
+<&clinker_brick_stained_block>Blettuti klinkurmúrsteinskubbin gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Blettut klinkurpláta
+Sótmyrkt múrverk
+<&clinker_brick_stained_slab>Blettuta klinkurmúrsteinsplátan gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Blettut klinkurtrappa
+Sótmyrkt múrverk
+<&clinker_brick_stained_stairs>Blettuta klinkurmúrsteinstrappan gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Prýddur klinkurmúrsteinur
+Sótmyrkt múrverk
+<&clinker_brick_sastor_corner_block>Klinkurmúrsteinurin við sandsteinsprýði gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Innfeldur klinkurmúrsteinur
+Sótmyrkt múrverk
+<&clinker_brick_recessed>Hesin kubbin gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Rillaðir klinkurmúrsteinar
+Sótmyrkt múrverk
+<&clinker_brick_vertically_slit>Loddrætt rillaðu klinkurmúrsteinarnir geva sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Loddrøtt klinkurpláta
+Sótmyrkt múrverk
+<&clinker_brick_vertical_slab_structured>Mynstraða loddrætta klinkurplátan gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Hálv klinkurmúrsteinspláta
+Sótmyrkt múrverk
+<&halfslab_clinker_brick>Hesin kubbin gevur sótmyrkt múrverk til ovnshallir, skorsteinsbotnar og viðlíkahaldsveggir.<br>
+<br>
+Nýtsla: Brúka hann sum múr, kantprýði ella verjuklædning kring hitaøki við ovnar og ketlar.<br>
+<np>
+Gjallmúrsteinskubbi
+Tætt verksmiðjumúrverk
+<&slag_brick_block>Hesin kubbin gevur tætt grábrúnt múrverk til undirstøði, stuðulsmúrar og eldri arbeiðsskúrar.<br>
+<br>
+Nýtsla: Brúka hann til eldri undirstøði, stuðulsmúrar og skitin verksmiðjugólv.<br>
+<np>
+Gjallmúrsteinspláta
+Tætt verksmiðjumúrverk
+<&slag_brick_slab>Hesin kubbin gevur tætt grábrúnt múrverk til undirstøði, stuðulsmúrar og eldri arbeiðsskúrar.<br>
+<br>
+Nýtsla: Brúka hann til eldri undirstøði, stuðulsmúrar og skitin verksmiðjugólv.<br>
+<np>
+Gjallmúrsteinstrappa
+Tætt verksmiðjumúrverk
+<&slag_brick_stairs>Hesin kubbin gevur tætt grábrúnt múrverk til undirstøði, stuðulsmúrar og eldri arbeiðsskúrar.<br>
+<br>
+Nýtsla: Brúka hann til eldri undirstøði, stuðulsmúrar og skitin verksmiðjugólv.<br>
+<np>
+Gjallmúrsteinsmúrur
+Tætt verksmiðjumúrverk
+<&slag_brick_wall>Hesin kubbin gevur tætt grábrúnt múrverk til undirstøði, stuðulsmúrar og eldri arbeiðsskúrar.<br>
+<br>
+Nýtsla: Brúka hann til eldri undirstøði, stuðulsmúrar og skitin verksmiðjugólv.<br>
+<np>
+Styrktur betongkubbi
+Styrkt betong
+<&rebar_concrete>Hesin kubbin er ein herdur betongpartur til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Styrkt betongpláta
+Styrkt betong
+<&rebar_concrete_slab>Hesin kubbin er ein herdur betongpartur til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Styrkt betongtrappa
+Styrkt betong
+<&rebar_concrete_stairs>Hesin kubbin er ein herdur betongpartur til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Styrktur betongmúrur
+Styrkt betong
+<&rebar_concrete_wall>Hesin kubbin er ein herdur betongpartur til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Tunn flís úr styrktum betongi
+Styrkt betong
+<&halfslab_rebar_concrete>Hesin kubbin er ein herdur betongpartur til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Styrktur betongflísakubbi
+Styrkt betong
+<&rebar_concrete_tile>Hesin kubbin er ein herdur betongpartur til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Styrkt betongflísapláta
+Styrkt betong
+<&rebar_concrete_tile_slab>Hesin kubbin er ein herdur betongpartur til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Styrktur betongflísakubbi
+Styrkt betong
+<&rebar_concrete_tile_stairs>Styrktu betongflísatrappurnar eru herdir betongpartar til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>
+<np>
+Pansarglaskubbi
+Vart útsýni
+<&panzerglass_block>Hesin kubbin varðveitir útsýnið og hóskar samstundis til styrkta verksmiðjubygging.<br>
+<br>
+Nýtsla: Brúka hann, har leikarar skulu síggja maskinur gjøgnum eina verju.<br>
+<np>
+Pansarglaspláta
+Vart útsýni
+<&panzerglass_slab>Hesin kubbin varðveitir útsýnið og hóskar samstundis til styrkta verksmiðjubygging.<br>
+<br>
+Nýtsla: Brúka hann, har leikarar skulu síggja maskinur gjøgnum eina verju.<br>

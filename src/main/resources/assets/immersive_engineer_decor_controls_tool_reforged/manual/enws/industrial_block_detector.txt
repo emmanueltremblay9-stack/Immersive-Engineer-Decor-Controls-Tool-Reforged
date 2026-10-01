@@ -1,0 +1,7 @@
+Watcher of Blocks
+Watching for Signals
+<&recipe>A block watcher examines whether the space before it is occupied.<br>
+<br>
+Use: Aim it at the engine face, reserve or guarded space thou wouldst watch.<br>
+<br>
+Note: It gives power when the block before it is not air.

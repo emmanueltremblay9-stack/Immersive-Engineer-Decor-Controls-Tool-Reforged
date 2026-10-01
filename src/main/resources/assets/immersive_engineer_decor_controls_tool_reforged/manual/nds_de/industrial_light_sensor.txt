@@ -1,0 +1,7 @@
+Lichtsensor
+Tekenmeten
+<&recipe>En Lichtsensor maakt de Helligkeit vör Ort to Redstone-Stüern.<br>
+<br>
+Bruuk: Bruuk em för automaatsche Lampen, Luuken un Sichtschaltungen.<br>
+<br>
+Anmarken: Gifft Energie bi en rohe Helligkeit vun 8 oder mehr.

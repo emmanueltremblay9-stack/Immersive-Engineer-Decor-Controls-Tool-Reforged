@@ -1,0 +1,7 @@
+Cărbunele Ariadnei
+Marcaj de traseu în mină
+<&recipe>Cărbunele Ariadnei permite marcarea rapidă a traseului în puțuri, galerii ramificate și lucrări subterane temporare.<br>
+<br>
+Utilizare: Folosește-l pe fața unui bloc stabil pentru a pune un marcaj cu săgeată neagră pe marginea respectivă. Marcajul ține cont de punctul apăsat pe fața blocului și permite opt direcții, inclusiv diagonale. Astfel poți marca viraje, ieșiri, fundături și trasee de aprovizionare fără să cari indicatoare separate.<br>
+<br>
+Cărbunele Ariadnei este o unealtă reutilizabilă de marcare cu 100 de utilizări. Fiecare marcaj amplasat cu succes consumă un punct de durabilitate; fețele neacceptate sunt respinse fără uzarea obiectului.

@@ -1,0 +1,7 @@
+Rustieke Drukplaat
+Drukpuls
+<&recipe>’n Kontakskakelaar stuur ’n kort sein weens beweging op die vloer of valdeur.<br>
+<br>
+Gebruik: plaas dit waar entiteite deur ’n diensgang, laaier of bewaakte roete beweeg.<br>
+<br>
+Nota: gee ’n kort puls ná entiteitskontak.

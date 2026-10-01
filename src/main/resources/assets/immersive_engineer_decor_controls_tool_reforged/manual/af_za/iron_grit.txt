@@ -1,0 +1,3 @@
+Growwe Ystergruis
+Ingenieursgereedskapmateriaal wat in die gerekonstrueerde vervaardigingstel gebruik word.
+<&recipe>Kan tot ysterstawe gesmelt word,<br>maar is nie geskik vir gevorderde<br>materiaalverwerking nie.

@@ -1,0 +1,41 @@
+Lajerung un Transport
+Lajer- un Durchfloßbauteile
+Lajer- un Transportbauteile sin Keße, Fässer, Treechter un Ventile för kleine Fabrikwääje.<br>
+<br>
+Bruch heh die Sigge, wann de Lajerrüüm, Rohrwääje, Wartungstanks un jestüerte Flössichkeitsleitunge aanleeje deis.
+<np>
+Beschreffte Keß
+Verängerbare Lajerbeschreftung
+<&labeled_crate>Heh die beschreffte Keß es för klares Sortéére em Lajer jedaach. Ihre Vürplatt löht sich wie e klein Werkstattschild beschrefte.<br>
+<br>
+Bruuch: Rechtsklick op de Schilderplatt, öm de Keßbeschreftung ze ängere. Rechtsklick op dä Rest vun d'r Keß, öm dat Lajer för Aanbouteile, Teile un Wartungsvürrod opzemaache.<br>
+<np>
+Flössichkeitsfaaß
+Flössichkeitsleitungsbauteile
+<&fluid_barrel>Dat Teil es e klein Flössichkeitsleitungsdeel för kleine Tanks, Rohrwääje, Sammelplätz un Redstone-jestüerte Durchfloß.<br>
+<br>
+Bruuch: Setz et dohin, wo Rohre udder Emmer aan de Tanksigg rankumme.<br>
+<np>
+Flössichkeitstreechter
+Flössichkeitsleitungsbauteile
+<&small_fluid_funnel>Dä kleine Flössichkeitssammeltreechter es e klein Flössichkeitsleitungsdeel för kleine Tanks, Rohrwääje, Sammelplätz un Redstone-jestüerte Durchfloß.<br>
+<br>
+Bruuch: Setz en unger dä Flössichkeitssammelplätz un leit singe jespeicherte Inhalt aan Tanks udder tiefer liejende Rohre wigger.<br>
+<np>
+Röckschlaachventil för Flössichkeitsrohr
+Flössichkeitsleitungsbauteile
+<&straight_pipe_valve>Et Röckschlaachventil för Flössichkeitsrohr es e klein Flössichkeitsleitungsdeel för kleine Tanks, Rohrwääje, Sammelplätz un Redstone-jestüerte Durchfloß.<br>
+<br>
+Bruuch: Richt et Ventil noh d'r jewünschte Floßrichtung us.<br>
+<np>
+Redstone-Flössichkeitsventil
+Flössichkeitsleitungsbauteile
+<&straight_pipe_valve_redstone>Et Redstone-jestüerte Flössichkeitsventil es e klein Flössichkeitsleitungsdeel för kleine Tanks, Rohrwääje, Sammelplätz un Redstone-jestüerte Durchfloß.<br>
+<br>
+Bruuch: Richt et Ventil noh d'r jewünschte Floßrichtung us.<br>
+<np>
+Analog Flössichkeitsventil
+Flössichkeitsleitungsbauteile
+<&straight_pipe_valve_redstone_analog>Et analoge Redstone-Flössichkeitsventil es e klein Flössichkeitsleitungsdeel för kleine Tanks, Rohrwääje, Sammelplätz un Redstone-jestüerte Durchfloß.<br>
+<br>
+Bruuch: Richt et Ventil noh d'r jewünschte Floßrichtung us.<br>

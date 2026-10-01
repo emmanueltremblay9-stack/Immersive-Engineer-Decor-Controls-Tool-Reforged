@@ -1,0 +1,7 @@
+Marteau de concassage de minerais
+Outil de concassage manuel
+<&recipe>Le marteau de concassage de minerais est un outil manuel destiné aux premiers travaux sur le fer et l’or.<br>
+<br>
+Utilisation : combinez-le avec du fer brut, de l’or brut, du minerai de fer, du minerai de fer des abîmes, du minerai d’or ou du minerai d’or des abîmes pour produire de la poudre de fer ou d’or d’Immersive Engineering. Le marteau perd de la durabilité et revient dans la grille de fabrication jusqu’à sa rupture.<br>
+<br>
+Il s'use aussi lors du minage et peut repousser les cibles au corps à corps.

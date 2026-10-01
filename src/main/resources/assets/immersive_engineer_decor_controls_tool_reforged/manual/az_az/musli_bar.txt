@@ -1,0 +1,5 @@
+Muslee Melange enerji batonu
+Sürətli emalatxana qəlyanaltısı
+<&recipe>Muslee Melange enerji batonu çörək, toxum və meyvədən hazırlanan yığcam qidadır.<br>
+<br>
+İstifadə: İdarəetmə qurğuları, borular, platformalar və ya uzun maşın otağı xətləri qurarkən sahə yeməyi kimi yeyin.

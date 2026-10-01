@@ -1,0 +1,5 @@
+Eilassnes Liacht
+Kloans Arbeitsliacht
+<&recipe>Der Block liefert kloane Industriebeleuchtung fia Gäng, Laufsteg und Arbeitsbuchtn.<br>
+<br>
+So geht's: Befestig'n an Deckn, Wänd oder Kantn, wo da Raum klares Arbeitsliacht braucht.<br>

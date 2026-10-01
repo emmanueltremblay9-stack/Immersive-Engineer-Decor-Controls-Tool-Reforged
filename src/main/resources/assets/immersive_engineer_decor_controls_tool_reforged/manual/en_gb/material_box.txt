@@ -1,0 +1,7 @@
+Material Storage Box
+Construction supply box
+<&recipe>The Material Storage Box carries a large reserve of one plain, unmodified stackable construction material.<br>
+<br>
+Usage: Hold the box in the main hand and a material stack in the offhand to load that material into the box. Use the box with an empty offhand to pull one stack back out.<br>
+<br>
+The box holds up to 512 items, keeps only one material type at a time, rejects nested boxes, non-stackable gear, and modified named or data-bearing stacks, and reports its stored contents in the tooltip.

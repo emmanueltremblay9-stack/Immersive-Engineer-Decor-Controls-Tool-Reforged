@@ -1,0 +1,7 @@
+Lietus sensors
+Signāla uztveršana
+<&recipe>Laikapstākļu sensors pārvērš lietu savā atrašanās vietā Redstone signālā.<br>
+<br>
+Lietošana: uzstādi tur, kur virs tā esošo bloku var sasniegt lietus.<br>
+<br>
+Piezīmes: pārbauda lietu virs sensora.

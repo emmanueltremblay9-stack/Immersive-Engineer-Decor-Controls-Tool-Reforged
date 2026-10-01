@@ -1,0 +1,5 @@
+Lampu Terbenam Tepi Lantai
+Lampu kerja padat
+<&recipe>Blok ini menyediakan pencahayaan industri padat untuk koridor, laluan servis dan ruang kerja.<br>
+<br>
+Penggunaan: Pasang pada siling, dinding atau tepi yang memerlukan pencahayaan kerja jelas.<br>

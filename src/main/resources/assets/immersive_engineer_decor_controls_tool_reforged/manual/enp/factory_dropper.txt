@@ -1,0 +1,5 @@
+Workstead Dropper
+Workshop-floor helper
+<&recipe>This clot lets stored things out through an aimed side.<br>
+<br>
+Use: Aim the fore side at the throwing spot, fill the inner slots, then set strength, slant, waiting time, sieve rules and redstone kind on the screen.<br>

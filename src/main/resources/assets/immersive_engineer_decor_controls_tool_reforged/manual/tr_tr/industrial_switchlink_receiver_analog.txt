@@ -1,0 +1,7 @@
+Analog Bağlantı Alıcısı
+Bağlantılı kontrol
+<&recipe>Bağlantılı alıcı, kontrol panelleri için görünür bir uzak hedef sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Alıcıyı uzaktan etkinleştirmek için inciyi eğilerek kullanın.<br>
+<br>
+Notlar: Bu alıcı tetiklendiğinde tam güçlü redstone sinyali verir.

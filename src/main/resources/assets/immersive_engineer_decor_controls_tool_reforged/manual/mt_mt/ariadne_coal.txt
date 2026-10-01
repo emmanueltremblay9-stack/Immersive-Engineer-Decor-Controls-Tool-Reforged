@@ -1,0 +1,7 @@
+Faħam ta' Ariadne
+Markatur tar-rotta fil-minjiera
+<&recipe>Il-faħam ta' Ariadne jagħmel marki tar-rotta malajr f'xaftijiet, fergħat tal-minjieri u xogħol temporanju taħt l-art.<br>
+<br>
+Użu: użah fuq wiċċ stabbli ta' blokka biex tqiegħed markatur ta' vleġġa sewda fuq dak ix-xifer. Il-markatur jaqra l-punt ikklikkjat fuq il-wiċċ u jappoġġja tmien direzzjonijiet, inklużi djagonali. Dan jgħin biex timmarka dawriet, ħruġ, toroq magħluqa u rotot tal-provvista mingħajr ma ġġorr tabelli separati.<br>
+<br>
+Il-faħam ta' Ariadne hu għodda tal-marki li terġa' tintuża, b'100 użu. Kull tqegħid ta' markatur b'suċċess jiswa punt wieħed ta' durabbiltà; uċuħ mhux appoġġjati jiġu rrifjutati mingħajr ma tonqos id-durabbiltà tal-oġġett.

@@ -1,0 +1,5 @@
+Ploča od klinker cigala
+Zidovi potamneli od čađi
+<&recipe>Ovaj blok unosi cigle potamnele od čađi u hale s pećima, osnove dimnjaka i servisne zidove.<br>
+<br>
+Upotreba: koristi ga kao zid, ivični ukras ili omotač vrućih zona oko peći i kotlova.<br>

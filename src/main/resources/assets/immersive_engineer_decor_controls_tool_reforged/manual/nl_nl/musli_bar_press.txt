@@ -1,0 +1,7 @@
+Muslee-pers
+Voedselpers
+<&recipe>De Muslee-pers verandert gewone voedselvoorraden in compacte veldrantsoenen.<br>
+<br>
+Draag brood, een appel en tarwe-, meloen-, pompoen-, bieten- of industriële hennepzaden en gebruik de pers. Een geslaagde persing verbruikt één van elk ingrediënt, controleert de uitvoerruimte, maakt vier repen en beschadigt de pers.<br>
+<br>
+Als een ingrediënt ontbreekt of er geen ruimte is, wordt niets verbruikt.

@@ -1,0 +1,7 @@
+Analóg távkapcsolati vevő
+Összekapcsolt vezérlés
+<&recipe>A hozzárendelt vevő látható távoli célpontot ad a vezérlőpaneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Lopakodva használd ezt a gyöngyöt a vevő távoli aktiválásához.<br>
+<br>
+Megjegyzés: ez a vevő indítójelre teljes erősségű redstone-jelet ad.

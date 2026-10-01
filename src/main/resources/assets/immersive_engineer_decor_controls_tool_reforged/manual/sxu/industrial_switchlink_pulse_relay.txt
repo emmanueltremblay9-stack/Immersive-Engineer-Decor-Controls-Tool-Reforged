@@ -1,0 +1,7 @@
+Impulsvorbindungsrelais
+Vorbundne Schdeuorung
+<&recipe>Ä Baudeil im Relaissdil gibd Paneelbaudn än gleenen Schaldbungd vor Ord.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn. Nimm Empfängorblögge, wenn de mid eenor vorbundnen Bärle auslösn willsd.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.

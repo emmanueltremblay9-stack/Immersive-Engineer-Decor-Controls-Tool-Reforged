@@ -1,0 +1,5 @@
+Dropador de fàbrica
+Utilità par l’ofisina
+<&recipe>Sto bloco el buta fora i ozeti conservadi da na fasa orientada.<br>
+<br>
+Uso: punta el davanti verso el ponto de usita, càrega i spasi interni e regola forsa, àngolo, ritardo, logica de i filtri e modo de redstone inte ła so schermada.<br>

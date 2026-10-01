@@ -1,0 +1,5 @@
+Penunu Sisa
+Unit pemprosesan padat
+<&recipe>Penunu sisa memusnahkan item yang tidak dikehendaki dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Masukkan hanya item yang tidak dikehendaki ke dalam baris gilir.<br>

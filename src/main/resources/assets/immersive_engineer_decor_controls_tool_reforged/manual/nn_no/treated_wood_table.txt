@@ -1,0 +1,5 @@
+Bord av handsama tre
+Verkstadmøbel
+<&recipe>Denne blokka er eit praktisk verkstadmøbel for arbeidsrom og vedlikehaldshjørne.<br>
+<br>
+Bruk: set henne attmed benkar, kasser og kompakte maskiner.<br>

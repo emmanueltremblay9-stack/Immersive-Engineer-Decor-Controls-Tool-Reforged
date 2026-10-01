@@ -1,0 +1,7 @@
+Gual Ariadne
+Comharra slighe mèinne
+<&recipe>Tha Gual Ariadne na chomharra slighe luath airson slocan, mèinnean meurach agus obair shealach fon talamh.<br>
+<br>
+Cleachdadh: cleachd e air aghaidh bhloca sheasmhach gus comharra saighde dubh a chur air an aghaidh sin. Leughaidh an comharra a' phuing air an do bhriog thu agus cuiridh e taic ri ochd treòrachadh, treòrachadh trastain nam measg. Cuidichidh seo thu oiseanan, slighean a-mach, slighean gun dol troimhe agus slighean-solair a chomharrachadh gun phuist-soidhne fa leth a ghiùlan.<br>
+<br>
+Tha Gual Ariadne na inneal-comharrachaidh le 100 cleachdadh a ghabhas ath-chleachdadh. Cosgaidh gach cur comharra soirbheachail aon bhuan-sheasmhachd, agus diùltar aghaidhean gun taic gun an nì a chaitheamh.

@@ -1,0 +1,7 @@
+Dimmer
+Variable signal
+<&recipe>A rotary control dials redstone strength from a compact panel face.<br>
+<br>
+Usage: Right-click it to step the output upward, then back to zero after full strength.<br>
+<br>
+Notes: Outputs strength from 0 to 15.

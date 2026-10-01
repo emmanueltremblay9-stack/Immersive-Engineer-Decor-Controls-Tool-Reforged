@@ -1,0 +1,5 @@
+Trape en fèr
+Accès d'uzine
+<&recipe>Çu blloqe fait un accès costaud pour les pièces de service, les conduits, les téts e les enceintes de machines.<br>
+<br>
+Empllai : Installéz-le la où qe la bâtisse demande eune ouverture d'entretien contrôlée.<br>

@@ -1,0 +1,7 @@
+Muslee-barpresse
+Madpresse
+<&recipe>Gør almindelige fødevarer til kompakte feltrationer.<br>
+<br>
+Brug: Brød, æble og frø af hvede, melon, græskar, rødbede eller industrihamp. En vellykket presning bruger én af hver, kontrollerer plads, laver fire barer og skader pressen.<br>
+<br>
+Mangler en ingrediens eller plads, bruges intet.

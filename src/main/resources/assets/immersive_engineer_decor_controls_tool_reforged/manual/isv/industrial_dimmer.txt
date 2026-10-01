@@ -1,0 +1,7 @@
+Regulator sily
+Proměnny signal
+<&recipe>Rotacijny upravny element nastrojuje redstounovu silu s kompaktnoj panelnoj strany.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja postupnogo povyšenja izhoda, potom vrnjenja na nulu poslě polnoj sily.<br>
+<br>
+Primětky: Izdavaje silu od 0 do 15.

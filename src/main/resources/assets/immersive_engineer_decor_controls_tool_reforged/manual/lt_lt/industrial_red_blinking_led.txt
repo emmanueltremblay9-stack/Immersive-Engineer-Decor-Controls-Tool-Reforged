@@ -1,0 +1,7 @@
+Raudonas LED
+Signalo būsenos rodymas
+<&recipe>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.

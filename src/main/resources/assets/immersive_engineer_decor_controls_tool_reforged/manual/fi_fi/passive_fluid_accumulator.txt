@@ -1,0 +1,5 @@
+Passiivinen neste
+Nestelinjan laitteet
+<&recipe>Passiivinen nesteenkerääjä on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Aseta sopivia vesilähteitä vasten ja jätä tilaa nesteen poistolle.<br>

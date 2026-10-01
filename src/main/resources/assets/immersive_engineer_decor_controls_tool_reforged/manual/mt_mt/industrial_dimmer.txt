@@ -1,0 +1,7 @@
+Regolatur tal-intensità
+Sinjal varjabbli
+<&recipe>Kontroll li jdur jaġġusta s-saħħa tar-Redstone minn faċċata kompatta tal-pannell.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex iżżid il-ħruġ pass pass, imbagħad terġa' lura għal żero wara s-saħħa kollha.<br>
+<br>
+Noti: joħroġ saħħa minn 0 sa 15.

@@ -1,0 +1,7 @@
+Auto-stimpakke
+Nødinjektor
+<&recipe>Nødgenstand til farligt vedligehold.<br>
+<br>
+Brug: Manuelt heler, beskytter kort og øger bevægelse. I inventaret udløses den ved lavt helbred og går derefter på nedkøling.<br>
+<br>
+Hav én klar før højder, blotlagte ledninger eller farlige miner.

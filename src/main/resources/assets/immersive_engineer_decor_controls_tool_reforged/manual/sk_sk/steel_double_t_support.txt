@@ -1,0 +1,5 @@
+Oceľová podpera z profilu I
+Diel nosného rámu
+<&recipe>Tento blok dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>

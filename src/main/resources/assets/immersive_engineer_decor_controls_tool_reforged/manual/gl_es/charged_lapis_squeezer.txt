@@ -1,0 +1,7 @@
+Espremedor mental
+Condensador de experiencia
+<&recipe>O espremedor mental converte lapislázuli e experiencia en lapislázuli cargado.<br>
+<br>
+Uso: leva lapislázuli e polo menos un nivel de experiencia, e usa a ferramenta. Unha extracción correcta consume un nivel e unha unidade de lapislázuli, fai dano ao usuario, desgasta o espremedor e crea unha unidade de lapislázuli cargado.<br>
+<br>
+Non funciona se ao usuario lle falta lapislázuli ou experiencia, ou se está demasiado preto da morte.

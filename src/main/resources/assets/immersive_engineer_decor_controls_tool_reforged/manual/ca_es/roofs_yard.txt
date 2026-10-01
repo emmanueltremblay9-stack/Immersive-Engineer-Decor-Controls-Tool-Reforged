@@ -1,0 +1,101 @@
+Teulades i pati
+Accessoris exteriors de fàbrica
+Els blocs de teulada, el granulat de pati i les peces de fusta industrial vella ajuden a acabar coberts exteriors, patis de treball, zones de càrrega i vores envellides de fàbrica.<br>
+<br>
+Combina aquestes peces amb maçoneria i vies d’accés perquè les construccions industrials exteriors es puguin interpretar bé des de lluny.
+<np>
+Teulada de teules fosques
+Peça de teulada envellida
+<&dark_shingle_roof>Aquest bloc crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Paraneu de teulada
+Peça de teulada envellida
+<&dark_shingle_roof_metallized>El paraneu de teulada de teules fosques crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Teulada de teules fosques
+Peça de teulada envellida
+<&dark_shingle_roof_skylight>La claraboia de teulada de teules fosques crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Base de xemeneia de teulada
+Peça de teulada envellida
+<&dark_shingle_roof_chimneytrunk>La base de xemeneia de teulada de teules fosques crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Passacables de teulada
+Peça de teulada envellida
+<&dark_shingle_roof_wireconduit>El passacables de teulada de teules fosques crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Teulada de teules fosques
+Peça de teulada envellida
+<&dark_shingle_roof_chimney>La xemeneia de teulada de teules fosques crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Bloc de teulada de teules fosques
+Peça de teulada envellida
+<&dark_shingle_roof_block>Aquest bloc crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Llosa de teulada de teules fosques
+Peça de teulada envellida
+<&dark_shingle_roof_slab>Aquest bloc crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Llosa de teulada de teules fosques
+Peça de teulada envellida
+<&dark_shingle_roof_slabslice>La làmina de teulada de teules fosques crea perfils de teulada foscos i pràctics per a tallers i coberts industrials.<br>
+<br>
+Ús: combina les peces per formar teulades de perfil versemblant.<br>
+<np>
+Terra compactada amb grava
+Paviment d’obra
+<&dense_grit_dirt_block>Aquest bloc dona a les zones de treball exteriors una superfície compactada i trepitjada.<br>
+<br>
+Ús: posa’l al voltant de portes de càrrega, dipòsits exteriors i patis de màquines.<br>
+<np>
+Sorra compactada amb grava
+Paviment d’obra
+<&dense_grit_sand_block>Aquest bloc dona a les zones de treball exteriors una superfície compactada i trepitjada.<br>
+<br>
+Ús: posa’l al voltant de portes de càrrega, dipòsits exteriors i patis de màquines.<br>
+<np>
+Taulons de fusta vella
+Fusta envellida de taller
+<&old_industrial_wood_planks>Els taulons de fusta industrial vella aporten fusta envellida de taller per a terres, graons, portes i acabats interiors càlids.<br>
+<br>
+Ús: fes-lo servir per a terres, escales, portes i acabats de tallers antics.<br>
+<np>
+Llosa de fusta industrial vella
+Fusta envellida de taller
+<&old_industrial_wood_slab>Aquest bloc afegeix fusta envellida de taller per a terres, graons, portes i acabats interiors càlids.<br>
+<br>
+Ús: fes-lo servir per a terres, escales, portes i acabats de tallers antics.<br>
+<np>
+Escales de fusta vella
+Fusta envellida de taller
+<&old_industrial_wood_stairs>Les escales de fusta industrial vella aporten fusta envellida de taller per a terres, graons, portes i acabats interiors càlids.<br>
+<br>
+Ús: fes-lo servir per a terres, escales, portes i acabats de tallers antics.<br>
+<np>
+Làmina de fusta vella
+Fusta envellida de taller
+<&old_industrial_wood_slabslice>La làmina de fusta industrial vella aporta fusta envellida de taller per a terres, graons, portes i acabats interiors càlids.<br>
+<br>
+Ús: fes-lo servir per a terres, escales, portes i acabats de tallers antics.<br>
+<np>
+Porta de fusta industrial vella
+Fusta envellida de taller
+<&old_industrial_wood_door>Aquest bloc afegeix fusta envellida de taller per a terres, graons, portes i acabats interiors càlids.<br>
+<br>
+Ús: fes-lo servir per a terres, escales, portes i acabats de tallers antics.<br>

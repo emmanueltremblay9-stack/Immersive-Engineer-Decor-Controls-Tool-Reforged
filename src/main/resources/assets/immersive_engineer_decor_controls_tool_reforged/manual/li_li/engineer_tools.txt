@@ -1,0 +1,99 @@
+Ingenieursgereidsjap
+Draagbaar werkplaatsgereidsjap
+De set ingenieursgereidsjap veugt handapparaat, mienmarkeerders, noedverbruiksgoeje, aete veur óngerwaeg en kleine materiaalhölpe toe aan 't zelfde handbook es de decor- en bedieningsblök.<br>
+<br>
+Dees gereidsjappe zeen veur werk wied van ein volledig oetgeruste werkplaats: markeer de weg, neem veurraod mee, herstel dich van foute en maak kleine verwerkingstaoke ter plaatse aaf.
+<np>
+REDIA-gereidsjap
+Hölpmiddel mèt diamantbedekking
+<&redia_tool>'t REDIA-gereidsjap is ein slijtvas hölpmiddel veur sjnel gróndwerk ter plaatse. Gebroek 't op bewerkbare grónd um akkerlandj te maake.<br>
+<br>
+Gebroek 't op ein sjtevig vlak terwiel doe fakkels bie dich höbs um ein fakkelmarkering oet dien inventaris te zètte zónger REDIA te versjlijte. Gróndwerk, sjere, bielwerk en buim vèlle verbroeke levensduur.
+<np>
+Ertsmaolhaomer
+Handmaolgereidsjap
+<&crushing_hammer>De ertsverbrokkelhamer is handgereidsjap veur de vreuge verwerking van iezer en goud.<br>
+<br>
+Gebroek: Maak 'm mit rauw iezer, rauw goud, iezererts, diepplaot-iezererts, gouderts of diepplaot-gouderts veur Immersive Engineering iezer- of goudsjtof. De hamer verlèst duurzaamheid en kump trök in 't maakraoster tot hae breuk.<br>
+<br>
+Hae versjliet ouch bie 't mienwerk en kin doelen in 't gevech van kortbie tröksjlaon.
+<np>
+Sjporezeuker
+Opgesjlage plaatsmarkering
+<&tracker>De sjporezeuker sjlaat de posisie van ein blok direk in 't veurwerp op.<br>
+<br>
+Gebroek: Klik op ein blok veur dimensie en koördinate op te sjlaon. De tooltip wies de posisie. Gebroek 'm tiedes sloeke veur 't doel te wisse.<br>
+<br>
+Gebroek 'm um machines, tunnelaafsjlitsinge, aafstandsbediening of ónafgebouwde bouwplaatse te markere veur doe mèt gereidsjap en materiaal trökkumps.
+<np>
+Ariadne-sjteinkaol
+Mienwegmarkeerder
+<&ariadne_coal>Ariadne-sjteinkaol zèt sjnel zjwarte pielmarkeringe op sjtevige mienvlakke. Gebroek 'm op ein vas vlak um de volgende boch, oetgang of aafsjlitsing te markere. De markering kin acht richtinge op 't aangeklikte vlak aanwieze, ouch sjuin.<br>
+<br>
+Ariadne-sjteinkaol is ein herbroekbaar markeergereidsjap mèt 100 gebroeke. Elke geslaagde markering kos ein punt levensduur. Neet-óngersteunde vlakke waere geweigerd in plaats van 't veurwèrp te versjlijte.
+<np>
+Automatisch stimulanspak
+Noedinjector
+<&stimpack>De Auto Stim Pack is medisch noodgereidsjap veur geveurlik óngerhaajdswerk.<br>
+<br>
+Gebroek: Gebroek 'm mit de hand veur te geneze, korte besjerming en 'ne korte bewegingsstoot. In de inveggelies kan hae biej lage gezondheid vanzelf aan gaon en kump daonao in aafkoeling.<br>
+<br>
+Hauw d'r ein bie de hand veur doe hoeg plaatse, blote bedraoding of gevaerlike mienroutes oetprobeers.
+<np>
+Slaopzak
+Draagbare roesset
+<&sleeping_bag>De sjlaopzak is ein weerbestendig rösset veur werk wied van ein bèd.<br>
+<br>
+Gebroek: Gebroek 'm 's nachs in de Overworld veur tot mèrge te rösse. Hae zet of verplaats dien spawnpunt neet.<br>
+<br>
+Hae weigert gebroek euverdaag, ónveilige plaatse mit monsters kortbie en dimensies die neet veur veilige rös passe. Eder geslaagde rös versjliet de zak.
+<np>
+Materiaalopsjlaagkis
+Kis veur bouwveurraod
+<&material_box>De materiaalkis drög 'ne groeëte veurraod van ein gewoen, ónveranderd en stapelbaar bouwmateriaal.<br>
+<br>
+Gebroek: Haw de kis in de hoofhand en 'ne stapel materiaal in de angere hand veur te laje. Gebroek de kis mit ein lege angere hand veur eine stapel oet te haole.<br>
+<br>
+Ze hilt tot 512 veurwerpe van ein soort. Ze weigert kiste in kiste, neet-stapelbare oetröösting en herneumde of data-verangerde stapels; de tooltip wies de inhoud.
+<np>
+Doeklochtcapsule
+Noedlochtveurraod
+<&diving_capsule>De duiklóchcapsule is 'ne noodveurraod lóch veur werk ónger water.<br>
+<br>
+Gebroek: Gebroek 'm mit de hand veur lóch trök te kriege. In de inveggelies kan hae ouch vanzelf aan gaon es de lóch biejna op is, en kump daonao in aafkoeling.<br>
+<br>
+Neem ze mee veur óngerwatermiene, buisroutes ónger water en reparaties in pompruumtes.
+<np>
+Muslee-reeppers
+Voedselpers
+<&musli_bar_press>De Muslee-riegelpers maak van gewoen eate kompakte veldrantsoene.<br>
+<br>
+Gebroek: Neum broeëd, eine appel en weite-, meloen-, pompoen-, biet- of Industrial Hemp-zaod en gebroek de pers. Ein geslaagde persing verbruukt eine van eder, kontroleert plaats, maak veer Muslee Melange-riegels en sjade de pers.<br>
+<br>
+Es ein ingredeënt mis of gein plaats in de inveggelies is, weurt niks verbruuk.
+<np>
+Muslee Melange energiereep
+Sjnel werkplaatshapke
+<&musli_bar>De Muslee Melange-energieriegel is kompakt eate van broeëd, zaod en fruit.<br>
+<br>
+Gebroek: aet 'm es rantsoen ter plaatse es doe bediening, buize, platforme of lange routes door machineruumtes aanlègs.
+<np>
+Gedachtepers
+Ervaringsverdichter
+<&charged_lapis_squeezer>De gedachtepers zèt eine lapis lazuli en ein ervaringsniveau oet dien inventaris in gelaaje lapis óm.<br>
+<br>
+Elke geslaagde omzetting duit de gebroeker pien, put 'm oet, wat hónger veroorzaakt, en maak 'm effe blind. 't Werk neet zónger lapis of XP, of es de gebroeker te kort bie de doed is.
+<np>
+Gelaaje lapis
+Opgesjlage ervaring
+<&charged_lapis>Gelaaje lapis sjleit ein ervaringsniveau op. Verbroek 'm um dat niveau trök te kriege, actieve effecte weg te pakke en ein bietje gezóndheid te herstelle.<br>
+<br>
+Maak eers ein gedachtepers. Gelaaje lapis weurt gemaakt door dat gereidsjap mèt lapis en XP te gebroeke.
+<np>
+Grof iezergruis
+Ingenieursgereidsjapmateriaal veur de herstelde vervaardigingsset.
+<&iron_grit>Kin tot iezerstave gesmólte<br>waere, mer is neet gesjik veur<br>geavanceerde materiaalverwerking.
+<np>
+Grof goudgruis
+Ingenieursgereidsjapmateriaal veur de herstelde vervaardigingsset.
+<&gold_grit>Kin tot goudstave gesmólte<br>waere, mer is neet gesjik veur<br>geavanceerde materiaalverwerking.

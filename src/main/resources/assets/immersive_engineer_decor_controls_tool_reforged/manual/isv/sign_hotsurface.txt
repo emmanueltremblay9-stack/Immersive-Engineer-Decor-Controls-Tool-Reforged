@@ -1,0 +1,5 @@
+Znak gorečej povrhnosti
+Označatelj opasnosti
+<&recipe>Znak "Pozor, goreča povrhnost" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>

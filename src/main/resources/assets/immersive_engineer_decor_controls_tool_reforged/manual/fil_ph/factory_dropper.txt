@@ -1,0 +1,5 @@
+Tagahulog ng Pabrika
+Pantulong sa sahig ng pagawaan
+<&recipe>Naglalabas ang blokeng ito ng nakaimbak na bagay mula sa nakatutok na mukha.<br>
+<br>
+Paggamit: Itutok ang harap sa lugar ng paglabas, lagyan ang mga panloob na puwesto at ayusin sa screen ang puwersa, anggulo, pagkaantala, lohika ng salaan at paraan ng redstone.<br>

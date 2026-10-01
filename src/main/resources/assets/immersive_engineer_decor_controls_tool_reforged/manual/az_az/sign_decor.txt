@@ -1,0 +1,5 @@
+Bəzək nişanı
+Təhlükə nişanı
+<&recipe>Nişan lövhəsi (Mühəndis dekoru), yəni Bəzək nişanı, təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>

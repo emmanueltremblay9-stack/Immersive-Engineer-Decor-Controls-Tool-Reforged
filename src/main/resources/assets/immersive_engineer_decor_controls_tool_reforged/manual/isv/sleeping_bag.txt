@@ -1,0 +1,7 @@
+Spalny měh
+Prěnosny pribor za odpočinek
+<&recipe>Spalny měh jest pogodootporny pribor za odpočinek daleko od ležišča.<br>
+<br>
+Upotrěbjenje: Upotrěbi go nočju v Overworldu, da odpočineš do jutra. Ne ustanjuje ni prěměšča města prěrodženja.<br>
+<br>
+Otkazuje dnevno upotrěbjenje, nebezpečnu okolinu s blizkymi čudovišči i dimenzije, neugodny za bezopasny odpočinek. Vsaky uspěšny odpočinek troši měh.

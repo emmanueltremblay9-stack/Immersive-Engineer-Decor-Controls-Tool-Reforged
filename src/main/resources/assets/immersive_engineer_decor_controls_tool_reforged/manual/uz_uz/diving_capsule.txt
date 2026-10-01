@@ -1,0 +1,5 @@
+Sho'ng'ish havo kapsulasi
+Favqulodda havo zaxirasi
+<&recipe>Shongish havo kapsulasi suv osti ishlari uchun favqulodda havo zaxirasidir.<br>
+<br>
+Havoni tiklash uchun qolda ishlating. Inventarda havo tugayotganda avtomatik ishga tushib, keyin soviydi. Suv bosgan kon va suv osti quvurlariga olib boring.

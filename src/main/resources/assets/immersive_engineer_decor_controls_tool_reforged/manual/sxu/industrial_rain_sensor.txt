@@ -1,0 +1,7 @@
+Räschnsensor
+Signalergennung
+<&recipe>Ä Wäddorrsensor machd aus Räschn an seim Pladdz ä Redstone-Signal.<br>
+<br>
+Nuddzung: Bring’n dort an, wo dor Blogg ibor ihm Räschn abgriegn kann.<br>
+<br>
+Hinweis: Prifd Räschn ibor’m Sensor.

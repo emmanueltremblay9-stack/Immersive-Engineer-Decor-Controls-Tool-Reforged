@@ -1,0 +1,7 @@
+Spalna vreča
+Prenosna oprema za počitek
+<&recipe>Spalna vreča je vremensko odporen komplet za počitek daleč od postelje.<br>
+<br>
+Uporabite jo ponoči v Nadsvetu za počitek do jutra brez spremembe točke ponovnega rojstva.<br>
+<br>
+Ne deluje podnevi, ob bližnjih pošastih ali v neprimernih dimenzijah. Vsak uspešen počitek jo obrabi.

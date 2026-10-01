@@ -1,0 +1,7 @@
+Gwasg Meddwl
+Cyddwysydd profiad
+<&recipe>Mae'r Wasg Meddwl yn troi lapis a phrofiad yn Lapis wedi'i Wefru.<br>
+<br>
+Defnydd: Cariwch Lapis-Laswli ac o leiaf un lefel profiad, yna defnyddiwch yr offeryn. Mae gwasgiad llwyddiannus yn defnyddio un lefel ac un lapis, yn brifo'r defnyddiwr, yn niweidio'r wasg ac yn creu un Lapis wedi'i Wefru.<br>
+<br>
+Mae'n gwrthod gweithio os nad oes gan y defnyddiwr lapis neu brofiad, neu os yw'n rhy agos at farw.

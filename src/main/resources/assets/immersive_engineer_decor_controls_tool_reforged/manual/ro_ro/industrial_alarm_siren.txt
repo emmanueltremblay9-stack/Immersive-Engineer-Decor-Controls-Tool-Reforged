@@ -1,0 +1,7 @@
+Sirenă de alarmă
+Indicarea semnalului
+<&recipe>Sirena de alarmă este un indicator redstone montat pe fața unui bloc. Starea ei alimentată urmează semnalul blocului de care este prinsă.<br>
+<br>
+Prinde-o pe o față solidă și alimenteaz-o pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Sirena se actualizează o dată pe secundă cât timp semnalul rămâne activ.

@@ -1,0 +1,5 @@
+Vattenfrys
+Kompakt bearbetningsenhet
+<&recipe>Vattenfrysen utför kompakt kylning i strömförsörjda vätskeanläggningar.<br>
+<br>
+Användning: Tillför vatten och ström för stegvis istillverkning.<br>

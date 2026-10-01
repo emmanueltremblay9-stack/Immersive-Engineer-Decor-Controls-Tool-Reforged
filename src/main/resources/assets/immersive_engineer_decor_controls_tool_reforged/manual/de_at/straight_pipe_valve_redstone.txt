@@ -1,0 +1,5 @@
+Redstone-Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitungen
+<&recipe>Des Redstone-Flüssigkeitsventil is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richt des Ventil in de gewünschte Fließrichtung aus.<br>

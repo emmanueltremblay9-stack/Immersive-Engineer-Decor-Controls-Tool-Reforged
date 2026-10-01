@@ -1,0 +1,7 @@
+Kotak Simpanan Bahan
+Kotak bekalan pembinaan
+<&recipe>Kotak bahan membawa simpanan besar satu bahan binaan biasa, tidak diubah dan boleh ditindan.<br>
+<br>
+Pegang kotak di tangan utama dan bahan di tangan sebelah untuk menyimpan; gunakan dengan tangan sebelah kosong untuk mengambil satu tindan.<br>
+<br>
+Memuatkan 512 item satu jenis, menolak kotak lain, peralatan tidak boleh ditindan dan tindan diubah, serta menunjukkan kandungan pada petua.

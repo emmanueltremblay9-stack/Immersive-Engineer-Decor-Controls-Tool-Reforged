@@ -1,0 +1,5 @@
+Fabryksblokpleatser
+Helpapparaat foar de wurkflier
+<&recipe>Dit blok pleatst blokken út syn ynterne foarried as it aktivearre wurdt.<br>
+<br>
+Gebrûk: Rjochtsje de wurkkant op de doelromte en folje it mei steapels dy't pleatst wurde kinne.<br>

@@ -1,0 +1,5 @@
+Lò điện
+Thiết bị xử lý gọn
+<&recipe>Lò điện thực hiện công việc nung gọn bằng năng lượng FE trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Cấp FE và nguyên liệu nung hợp lệ.<br>

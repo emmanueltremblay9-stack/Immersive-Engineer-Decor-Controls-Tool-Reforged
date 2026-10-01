@@ -1,0 +1,5 @@
+Fluide passif
+Équipement de réseau de fluides
+<&recipe>L'accumulateur de fluide passif est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : placez-le contre des sources d'eau adaptées et laissez de la place pour extraire le fluide.<br>

@@ -1,0 +1,7 @@
+Gwer kizidik orañjez
+Gwer signal
+<&recipe>Ur bloc'h gwer a respont da Redstone a vir ar gwel en ur ziskouez stad ar signal.<br>
+<br>
+Implij: Implijit anezhañ e prenestroù salioù reoliñ, panelloù sklerijennet ha gwer uzin gwarezet.<br>
+<br>
+Notenn: Cheñch a ra stad gant energiezh Redstone tost.

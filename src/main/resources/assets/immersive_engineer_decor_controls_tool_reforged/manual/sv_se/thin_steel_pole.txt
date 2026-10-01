@@ -1,0 +1,5 @@
+Tunn stålstolpe
+Del till bärande stomme
+<&recipe>Den raka tunna stålstolpen ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>

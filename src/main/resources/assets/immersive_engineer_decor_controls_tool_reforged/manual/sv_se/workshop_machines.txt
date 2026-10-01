@@ -1,0 +1,107 @@
+Verkstadsmaskiner
+Maskiner och verkstadens in- och utmatning
+Verkstadsmaskinerna erbjuder kompakt tillverkning, föremålsförflyttning, smältning, bortskaffning, insamling och hjälparbeten på ett enda blocks yta.<br>
+<br>
+Öppna följande sidor för varje maskins recept, bilder, bakgrund och praktiska användningsråd.
+<np>
+Stålbord
+Verkstadsinredning
+<&steel_table>Det här blocket är en praktisk verkstadsmöbel för arbetsrum och underhållshörnor.<br>
+<br>
+Användning: Placera det intill bänkar, lådor och kompakta maskiner.<br>
+<np>
+Bord av behandlat trä
+Verkstadsinredning
+<&treated_wood_table>Det här blocket är en praktisk verkstadsmöbel för arbetsrum och underhållshörnor.<br>
+<br>
+Användning: Placera det intill bänkar, lådor och kompakta maskiner.<br>
+<np>
+Pall av behandlat trä
+Verkstadsinredning
+<&treated_wood_stool>Det här blocket är en praktisk verkstadsmöbel för arbetsrum och underhållshörnor.<br>
+<br>
+Användning: Placera det intill bänkar, lådor och kompakta maskiner.<br>
+<np>
+Metallarbetsbänk
+Arbetsstation för plåtar
+<&metal_crafting_table>Metallarbetsbänken är en förstärkt verkstadsstation med en hammarplats, ett tillverkningsrutnät på 3x3 och en tydlig resultatplats.<br>
+<br>
+Användning: Använd rutnätet för vanlig tillverkning. För IE-plåtar placerar du en ingenjörshammare i verktygsplatsen och plåtmaterialet i rutnätet innan du tar resultatet. Ståldekorationer tillverkas av stålplåtar för stolpar, gångbryggor, fönster, dörrar, räcken och andra ståldelar.<br>
+<np>
+Fabrikstratt
+Hjälpmedel för verkstadsgolvet
+<&factory_hopper>Det här blocket flyttar föremålsstaplar genom ett kompakt industrihölje.<br>
+<br>
+Användning: Rikta det mot lagerlinjen och ställ sedan in räckvidd, stapelantal, tider och redstoneläge på skärmen.<br>
+<np>
+Fabriksutmatare
+Hjälpmedel för verkstadsgolvet
+<&factory_dropper>Det här blocket släpper ut lagrade föremål från en riktad framsida.<br>
+<br>
+Användning: Rikta framsidan mot utsläppspunkten, fyll de interna platserna och ställ in kraft, vinkel, fördröjning, filterlogik och redstoneläge på skärmen.<br>
+<np>
+Fabriksblockplacerare
+Hjälpmedel för verkstadsgolvet
+<&factory_placer>Det här blocket placerar block från sitt interna lager när det aktiveras.<br>
+<br>
+Användning: Rikta arbetsytan mot målutrymmet och fyll på med staplar av placerbara block.<br>
+<np>
+Blockbrytare
+Hjälpmedel för verkstadsgolvet
+<&small_block_breaker>Den lilla blockbrytaren är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Rikta arbetsytan mot blocket som ska tas bort.<br>
+<np>
+Avfallsförbrännare
+Kompakt bearbetningsenhet
+<&small_waste_incinerator>Avfallsförbrännaren förstör oönskade föremål på liten verkstadsyta.<br>
+<br>
+Användning: Mata bara in oönskade föremål i dess kö.<br>
+<np>
+Laboratorieugn
+Kompakt bearbetningsenhet
+<&small_lab_furnace>Laboratorieugnen utför kompakta smältarbeten med fast bränsle på liten verkstadsyta.<br>
+<br>
+Användning: Använd fast bränsle för små smältomgångar.<br>
+<np>
+Elugn
+Kompakt bearbetningsenhet
+<&small_electrical_furnace>Elugnen utför kompakta, FE-drivna smältarbeten på liten verkstadsyta.<br>
+<br>
+Användning: Tillför FE och giltigt smältmaterial.<br>
+<np>
+Mineralsmältugn
+Kompakt bearbetningsenhet
+<&small_mineral_smelter>Mineralsmältugnen bearbetar mineraler vid hög temperatur på liten verkstadsyta.<br>
+<br>
+Användning: Mata in mineralblock och ström för smältning vid hög temperatur.<br>
+<np>
+Vattenfrys
+Kompakt bearbetningsenhet
+<&small_freezer>Vattenfrysen utför kompakt kylning i strömförsörjda vätskeanläggningar.<br>
+<br>
+Användning: Tillför vatten och ström för stegvis istillverkning.<br>
+<np>
+Passiv vätska
+Utrustning för vätskeledningar
+<&passive_fluid_accumulator>Den passiva vätskeackumulatorn är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Placera den intill lämpliga vattenkällor och lämna plats för vätskeutmatning.<br>
+<np>
+Solpanel
+Hjälpmedel för verkstadsgolvet
+<&small_solar_panel>Den lilla solpanelen är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Ge den fri sikt mot himlen och anslut utrustning med låg förbrukning.<br>
+<np>
+Mjölkmaskin
+Hjälpmedel för verkstadsgolvet
+<&small_milking_machine>Den lilla mjölkmaskinen är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Placera den nära kor och ordna bortförsel av mjölkbehållare eller vätska.<br>
+<np>
+Trädfällare
+Hjälpmedel för verkstadsgolvet
+<&small_tree_cutter>Den lilla trädfällaren är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Rikta den mot fullvuxna träd och samla in tappade föremål separat.<br>

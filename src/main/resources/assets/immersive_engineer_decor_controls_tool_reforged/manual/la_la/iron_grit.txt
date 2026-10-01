@@ -1,0 +1,3 @@
+Granula ferri crassa
+Materia instrumentorum ingeniarii in formulis reconstructis adhibita.
+<&recipe>In lateres ferreos conflari possunt,<br>sed ad curationem materiae<br>provectam non apta sunt.

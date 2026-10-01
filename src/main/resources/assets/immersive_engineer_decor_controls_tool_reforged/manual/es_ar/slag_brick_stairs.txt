@@ -1,0 +1,5 @@
+Escaleras de ladrillos de escoria
+Mampostería industrial densa
+<&recipe>Este bloque añade mampostería densa de color pardo grisáceo para cimientos, muros de contención y talleres antiguos.<br>
+<br>
+Uso: Usalo para cimientos antiguos, muros de contención y suelos sucios de fábricas.<br>

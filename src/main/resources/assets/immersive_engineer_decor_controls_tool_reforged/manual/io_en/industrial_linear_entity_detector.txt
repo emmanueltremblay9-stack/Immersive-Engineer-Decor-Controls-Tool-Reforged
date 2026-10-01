@@ -1,0 +1,7 @@
+Lineala entodetektilo
+Signaldetekto
+<&recipe>Entodetektilo observas proxima movado sen videbla plankoplako.<br>
+<br>
+Uzo: Konektez ol a pordi, lampi, alarmi o mashininterblokili.<br>
+<br>
+Noti: Skanas mikra regiono cirkum la bloko.

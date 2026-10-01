@@ -1,0 +1,7 @@
+Pressa per barrette Muslee
+Pressa alimentare
+<&recipe>La pressa per barrette Muslee trasforma alimenti comuni in razioni da campo compatte.<br>
+<br>
+Uso: Porta pane, una mela e semi di grano, melone, zucca, barbabietola o Industrial Hemp, poi usa la pressa. Una pressatura riuscita consuma un elemento per ingrediente, controlla lo spazio, crea quattro barrette Muslee Melange e danneggia la pressa.<br>
+<br>
+Se manca un ingrediente o l'inventario non ha spazio, non viene consumato nulla.

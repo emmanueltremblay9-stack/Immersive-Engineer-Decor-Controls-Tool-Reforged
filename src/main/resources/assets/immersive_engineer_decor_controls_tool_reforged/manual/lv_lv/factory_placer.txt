@@ -1,0 +1,5 @@
+Rūpnīcas bloku novietotājs
+Darbnīcas palīgierīce
+<&recipe>Aktivizējot šis bloks novieto blokus no saviem iekšējiem krājumiem.<br>
+<br>
+Lietošana: pavērs darba pusi pret mērķa vietu un ielādē novietojamas kaudzītes.<br>

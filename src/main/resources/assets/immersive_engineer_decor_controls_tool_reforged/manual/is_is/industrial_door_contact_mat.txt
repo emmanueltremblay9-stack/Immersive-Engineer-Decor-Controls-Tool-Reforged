@@ -1,0 +1,7 @@
+Snertimotta fyrir hurð
+Þrýstipúls
+<&recipe>Snertirofi sendir stutt merki við hreyfingu á gólfi eða hlera.<br>
+<br>
+Notkun: Settu hann þar sem einingar fara um þjónustugang, hleðslubúnað eða varða leið.<br>
+<br>
+Athugasemdir: Gefur stuttan púls eftir snertingu við einingu.

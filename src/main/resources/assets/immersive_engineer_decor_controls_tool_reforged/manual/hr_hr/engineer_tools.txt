@@ -1,0 +1,99 @@
+Inženjerski alati
+Prijenosna radionička oprema
+Skup inženjerskih alata dodaje ručnu opremu, rudarske oznake, potrošni pribor za nuždu, terensku hranu i mala pomagala za obradu materijala u isti priručnik koji pokriva ukrasne i upravljačke blokove.<br>
+<br>
+Ovi su alati namijenjeni radu daleko od potpuno opremljene radionice: označi put, prenesi zalihe, oporavi se od pogrešaka i dovrši manje poslove obrade na terenu.
+<np>
+Alat REDIA
+Oprema obložena dijamantom
+<&redia_tool>Alat REDIA izdržljiv je terenski alat za brzu obradu tla. Koristi ga na prikladnom tlu za pripremu obrađene zemlje.<br>
+<br>
+Upotrijebi ga na stabilnoj strani bloka dok nosiš baklje kako bi postavio baklju iz inventara bez trošenja REDIA-e. Obrada tla, šišanje, rad sjekirom i sječa stabala troše izdržljivost.
+<np>
+Čekić za drobljenje ruda
+Ručni alat za drobljenje
+<&crushing_hammer>Čekić za drobljenje rude ručni je alat za početnu obradu željeza i zlata.<br>
+<br>
+Uporaba: Izradi ga sa sirovim željezom, sirovim zlatom, željeznom rudom, dubinskom željeznom rudom, zlatnom rudom ili dubinskom zlatnom rudom kako bi dobio željeznu ili zlatnu prašinu Immersive Engineeringa. Čekić gubi izdržljivost i vraća se u mrežu dok se ne slomi.<br>
+<br>
+Troši se i pri rudarenju te može odbaciti mete u bliskoj borbi.
+<np>
+Tragač
+Oznaka spremljenog položaja
+<&tracker>Tragač sprema položaj bloka izravno u predmet.<br>
+<br>
+Uporaba: Klikni blok kako bi spremio dimenziju i koordinate. Opis pokazuje spremljeni položaj. Upotrijebi tragač šuljajući se da ukloniš cilj.<br>
+<br>
+Koristi ga za označavanje strojeva, račvanja tunela, daljinskih komandi ili nedovršenih gradilišta prije povratka s alatima i materijalima.
+<np>
+Arijadnin ugljen
+Oznaka rudarskog puta
+<&ariadne_coal>Arijadnin ugljen brzo postavlja crne strelice na stabilne rudničke površine. Upotrijebi ga na čvrstoj strani za označavanje sljedećeg zavoja, izlaza ili račvanja; oznaka podržava osam smjerova prema mjestu klika, uključujući dijagonale.<br>
+<br>
+Arijadnin ugljen je višekratni alat za označavanje sa 100 uporaba. Svako uspješno postavljanje troši jedan bod izdržljivosti. Neprikladne površine odbija bez trošenja predmeta.
+<np>
+Automatski stimulacijski paket
+Injektor za nuždu
+<&stimpack>Auto Stim Pack hitni je medicinski alat za opasne poslove održavanja.<br>
+<br>
+Uporaba: Ručno ga upotrijebi za liječenje, kratku zaštitu i kratko ubrzanje kretanja. U inventaru se može automatski aktivirati pri niskom zdravlju, a zatim ulazi u hlađenje.<br>
+<br>
+Neka ti bude pri ruci prije ispitivanja visokih mjesta, izloženog ožičenja ili neprijateljskih rudničkih putova.
+<np>
+Vreća za spavanje
+Prijenosni pribor za odmor
+<&sleeping_bag>Vreća za spavanje otporan je pribor za odmor pri radu daleko od kreveta.<br>
+<br>
+Uporaba: Upotrijebi je noću u Overworldu za odmor do jutra. Ne postavlja niti pomiče točku ponovnog pojavljivanja.<br>
+<br>
+Odbija dnevnu uporabu, nesigurno područje s obližnjim čudovištima i dimenzije neprikladne za siguran odmor. Svaki uspješan odmor troši vreću.
+<np>
+Kutija za materijal
+Kutija građevinskih zaliha
+<&material_box>Kutija za materijal nosi veliku zalihu jednog jednostavnog, neizmijenjenog i složivog građevnog materijala.<br>
+<br>
+Uporaba: Drži kutiju u glavnoj ruci, a hrpu materijala u drugoj kako bi je napunio. Upotrijebi kutiju s praznom drugom rukom za vađenje jedne hrpe.<br>
+<br>
+Drži do 512 predmeta jedne vrste. Odbija ugniježđene kutije, nesloživu opremu i preimenovane ili podatkovno izmijenjene hrpe; opis pokazuje sadržaj.
+<np>
+Kapsula zraka za ronjenje
+Pričuvni zrak za nuždu
+<&diving_capsule>Ronilačka zračna kapsula pričuvni je izvor zraka za rad pod vodom.<br>
+<br>
+Uporaba: Ručno je upotrijebi za obnovu zraka. U inventaru se može i automatski aktivirati kad je zrak gotovo potrošen, a zatim ulazi u hlađenje.<br>
+<br>
+Nosi je za poplavljene rudnike, podvodne cjevovode i popravke crpnih prostorija.
+<np>
+Preša za Muslee pločice
+Preša za hranu
+<&musli_bar_press>Preša za pločice Muslee pretvara uobičajenu hranu u kompaktne terenske obroke.<br>
+<br>
+Uporaba: Ponesi kruh, jabuku i sjemenke pšenice, dinje, bundeve, cikle ili Industrial Hempa pa upotrijebi prešu. Uspješno prešanje troši po jedan sastojak, provjerava prostor, izrađuje četiri pločice Muslee Melange i oštećuje prešu.<br>
+<br>
+Ako sastojak nedostaje ili u inventaru nema mjesta, ništa se ne troši.
+<np>
+Miješana energetska pločica Muslee
+Brzi radionički zalogaj
+<&musli_bar>Energetska pločica Muslee Melange kompaktna je hrana od kruha, sjemenki i voća.<br>
+<br>
+Uporaba: jedi je kao terensku hranu pri postavljanju upravljačkih uređaja, cijevi, platformi ili dugih instalacija u strojarnici.
+<np>
+Preša za um
+Kondenzator iskustva
+<&charged_lapis_squeezer>Preša za um pretvara jedan lazulit i jednu razinu iskustva iz tvojih zaliha u napunjeni lazulit.<br>
+<br>
+Svaka uspješna pretvorba ozljeđuje, iscrpljuje i nakratko zasljepljuje korisnika. Ne radi bez lazulita, bez iskustva ili kada je korisnik preblizu smrti.
+<np>
+Napunjeni lazulit
+Pohranjeno iskustvo
+<&charged_lapis>Napunjeni lazulit pohranjuje jednu razinu iskustva. Potroši ga za povrat razine, uklanjanje aktivnih učinaka i obnovu malo zdravlja.<br>
+<br>
+Prvo izradi prešu za um; napunjeni lazulit nastaje uporabom tog alata uz dostupni lazulit i iskustvo.
+<np>
+Grubi željezni granulat
+Materijal inženjerskih alata koji se koristi u rekonstruiranim receptima.
+<&iron_grit>Može se istaliti u željezne poluge,<br>ali nije prikladan za naprednu<br>obradu materijala.
+<np>
+Grubi zlatni granulat
+Materijal inženjerskih alata koji se koristi u rekonstruiranim receptima.
+<&gold_grit>Može se istaliti u zlatne poluge,<br>ali nije prikladan za naprednu<br>obradu materijala.

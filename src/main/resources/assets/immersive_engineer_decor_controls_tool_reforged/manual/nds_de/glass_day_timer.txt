@@ -1,0 +1,7 @@
+Glas-Dagstiedklock
+Dagslichtteken
+<&recipe>En Tiedschalter folgt den Dagslichtdeel vun den Weltloop.<br>
+<br>
+Bruuk: Bruuk em för Hofflampen, Finsterluuken un Fabrikstüern, de bloots bi Dag lopen schüllt.<br>
+<br>
+Anmarken: Bruukt en Dimenschoon mit Himmelslicht.

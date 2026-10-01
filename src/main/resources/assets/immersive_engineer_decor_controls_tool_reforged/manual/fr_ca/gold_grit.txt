@@ -1,0 +1,3 @@
+Fragments grossiers d'or
+Matériau d'outil d'ingénieur utilisé par l'ensemble de recettes reconstitué.
+<&recipe>Peuvent être fondus en lingots<br>d'or, mais ne conviennent pas au<br>traitement avancé des matériaux.

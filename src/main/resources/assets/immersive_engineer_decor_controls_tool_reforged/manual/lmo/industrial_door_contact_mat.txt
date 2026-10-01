@@ -1,0 +1,7 @@
+Taped de contat de porta
+Impuls de pression
+<&recipe>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.

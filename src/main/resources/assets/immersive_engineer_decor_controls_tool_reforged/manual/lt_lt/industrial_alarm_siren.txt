@@ -1,0 +1,7 @@
+Pavojaus sirena
+Signalo būsenos rodymas
+<&recipe>Pavojaus sirena yra prie paviršiaus tvirtinamas redstone indikatorius. Jos maitinimo būsena seka bloko, prie kurio ji pritvirtinta, signalą.<br>
+<br>
+Naudojimas: pritvirtink prie tvirto paviršiaus ir prijunk maitinimą, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: sirena atsinaujina kartą per sekundę, kol prijungtas signalas aktyvus.

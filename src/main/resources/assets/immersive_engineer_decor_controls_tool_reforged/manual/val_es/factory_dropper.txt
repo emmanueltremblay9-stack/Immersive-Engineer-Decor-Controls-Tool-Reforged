@@ -1,0 +1,5 @@
+Subministrador de fàbrica
+Equipament de terra de taller
+<&recipe>Este bloc solta objectes guardats per la cara cap a la qual s’orienta.<br>
+<br>
+Ús: orienta el frontal cap al punt d’eixida, ompli els espais interns i ajusta la força, l’angle, l’espera, la lògica de filtres i el mode de redstone en la seua pantalla.<br>

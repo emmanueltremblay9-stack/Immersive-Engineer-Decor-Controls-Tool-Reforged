@@ -1,0 +1,7 @@
+Detektar błokaŭ
+Vyjaŭlennie sihnału
+<&recipe>Detektar błokaŭ praviaraje, ci zaniata miesca pierad im.<br>
+<br>
+Vykarystannie: nakiruj jaho na hrań mašyny, bufier abo achoŭnuju prastoru dla nazirannia.<br>
+<br>
+Zaŭvahi: padaje sihnał, kali błok pierad im nie zjaŭlajecca pavietram.

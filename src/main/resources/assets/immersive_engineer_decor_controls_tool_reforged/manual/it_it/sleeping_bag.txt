@@ -1,0 +1,7 @@
+Sacco a pelo
+Kit portatile per riposare
+<&recipe>Il sacco a pelo è un kit da riposo resistente alle intemperie per lavorare lontano da un letto.<br>
+<br>
+Uso: Usalo di notte nell'Overworld per riposare fino al mattino. Non imposta né sposta il punto di generazione.<br>
+<br>
+Rifiuta l'uso diurno, luoghi pericolosi con mostri vicini e dimensioni inadatte a un riposo sicuro. Ogni riposo riuscito consuma il sacco.

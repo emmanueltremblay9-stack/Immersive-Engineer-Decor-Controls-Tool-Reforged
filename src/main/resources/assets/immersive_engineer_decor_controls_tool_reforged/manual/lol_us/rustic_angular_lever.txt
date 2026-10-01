@@ -1,0 +1,7 @@
+Rustic Twisty Lever
+Redstone Controlz Here
+<&recipe>Lil control fitting gives ur factory build a clear spot fer redstone switchin, meow.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits, kitty.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.

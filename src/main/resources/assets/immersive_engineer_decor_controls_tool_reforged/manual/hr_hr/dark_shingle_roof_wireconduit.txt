@@ -1,0 +1,5 @@
+Krovni kanal za žice
+Istrošeni krovni dio
+<&recipe>Kanal za žice za tamni krov od šindre oblikuje tamne, praktične krovove radionica i industrijskih šupa.<br>
+<br>
+Uporaba: koristi dijelove zajedno za uvjerljive oblike krova.<br>

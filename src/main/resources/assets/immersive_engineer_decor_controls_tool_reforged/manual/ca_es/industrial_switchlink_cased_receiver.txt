@@ -1,0 +1,7 @@
+Receptor d’enllaç amb carcassa
+Control enllaçat
+<&recipe>Un receptor enllaçat amb carcassa proporciona un punt receptor robust de redstone per a panells remots.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Fes clic dret directament al receptor per commutar-lo a mà.<br>
+<br>
+Notes: una perla enllaçada commuta aquest receptor quan la fas servir ajupit.

@@ -1,0 +1,5 @@
+Mälchmaschine
+Hilfsgrät für d'Werkstatt
+<&recipe>D'chliini Mälchmaschine isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Setz si zu de Chüeh und sorg defür, dass Milchbehälter oder Flüssigkeit usechömed.<br>

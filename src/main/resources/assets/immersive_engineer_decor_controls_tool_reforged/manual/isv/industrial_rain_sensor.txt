@@ -1,0 +1,7 @@
+Doždževy senzor
+Čutje signala
+<&recipe>Senzor pogody prětvarjaje doždž na svojem městu v redstounovy signal.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde blok nad njim može prijmati doždž.<br>
+<br>
+Primětky: Prověrjaje doždž nad senzorom.

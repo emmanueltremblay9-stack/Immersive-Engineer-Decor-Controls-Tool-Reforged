@@ -1,0 +1,7 @@
+Automatski stimulacijski paket
+Injektor za nuždu
+<&recipe>Auto Stim Pack hitni je medicinski alat za opasne poslove održavanja.<br>
+<br>
+Uporaba: Ručno ga upotrijebi za liječenje, kratku zaštitu i kratko ubrzanje kretanja. U inventaru se može automatski aktivirati pri niskom zdravlju, a zatim ulazi u hlađenje.<br>
+<br>
+Neka ti bude pri ruci prije ispitivanja visokih mjesta, izloženog ožičenja ili neprijateljskih rudničkih putova.

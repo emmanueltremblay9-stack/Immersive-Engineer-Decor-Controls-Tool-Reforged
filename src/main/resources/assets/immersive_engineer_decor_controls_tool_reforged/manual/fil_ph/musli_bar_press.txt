@@ -1,0 +1,7 @@
+Pangpresa ng Bar na Muslee
+Pangpresa ng pagkain
+<&recipe>Ginagawang siksik na rasyong pantrabaho ng Muslee Bar Press ang karaniwang pagkain.<br>
+<br>
+Paggamit: Magdala ng tinapay, mansanas, at buto ng trigo, melon, kalabasa, beetroot, o Industrial Hemp, saka gamitin ang press. Kapag matagumpay, kumokonsumo ito ng tig-isa, tinitiyak na kasya ang output, gumagawa ng apat na Muslee Melange Power Bar, at binabawasan ang durability ng press.<br>
+<br>
+Kung kulang ang sangkap o walang puwang sa inventory para sa mga bar, walang makokonsumo.

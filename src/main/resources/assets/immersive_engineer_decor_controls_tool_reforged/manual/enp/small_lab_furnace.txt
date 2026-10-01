@@ -1,0 +1,5 @@
+Tryout Kiln
+Small working loom
+<&recipe>The Tryout Kiln does small solid-stuff-fired smelting jobs in little workshop room.<br>
+<br>
+Use: Feed solid burning stuff for small smelting batches.<br>

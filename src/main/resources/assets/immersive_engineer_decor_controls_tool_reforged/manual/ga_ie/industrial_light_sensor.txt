@@ -1,0 +1,7 @@
+Braiteoir Solais
+Brath comharthaí
+<&recipe>Tiontaíonn braiteoir solais gile áitiúil ina rialú Redstone.<br>
+<br>
+Úsáid: úsáid é do lampaí uathoibríocha, cróluais agus ciorcaid infheictheachta.<br>
+<br>
+Nótaí: soláthraíonn sé cumhacht ag amhghile 8 nó níos airde.

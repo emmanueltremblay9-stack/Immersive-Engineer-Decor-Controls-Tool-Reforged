@@ -1,0 +1,5 @@
+Flüssigkeitstrichta
+Bauteil für Flüssigkeitsleitungen
+<&recipe>Da kloane Flüssigkeitssammeltrichta is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setz eam unter de Sammelstell und leit seinen Inhalt in Tanks oda tiefer gelegene Rohr.<br>

@@ -1,0 +1,5 @@
+Funil de fábrica
+Utilidade de oficina
+<&recipe>Este bloco movimenta pilhas de itens por uma carcaça industrial mais compacta.<br>
+<br>
+Uso: Aponte para a linha de inventários e ajuste alcance, tamanho da pilha, tempos e modo de redstone na tela.<br>

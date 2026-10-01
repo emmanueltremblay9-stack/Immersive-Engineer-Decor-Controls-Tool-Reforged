@@ -1,0 +1,7 @@
+Puxador
+Controlo por redstone
+<&recipe>Um controlo compacto fornece às fábricas um ponto de comutação de redstone fácil de identificar.<br>
+<br>
+Uso: Clica com o botão direito para ligar ou desligar a saída na intensidade máxima para os circuitos próximos.<br>
+<br>
+Observações: Emite redstone na intensidade máxima enquanto está ligado.

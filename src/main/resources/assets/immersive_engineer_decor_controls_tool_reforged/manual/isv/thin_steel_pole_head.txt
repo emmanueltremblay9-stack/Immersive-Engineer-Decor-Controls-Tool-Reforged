@@ -1,0 +1,5 @@
+Glava tenkogo stolpa
+Čest konstrukcijnogo rama
+<&recipe>Glava/noga pravogo tenkogo staljnogo stolpa davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>

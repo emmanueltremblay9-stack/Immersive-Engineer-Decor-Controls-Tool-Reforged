@@ -1,0 +1,7 @@
+Spurilo
+Konservita pozicionmarko
+<&recipe>La spurilo konservas bloko-pozicion direte en la kozo.<br>
+<br>
+Uzo: Kliktez bloko por konservi lua dimensiono e koordinati. La helpoteksto montras la pozicion. Uzez la spurilo dum klino por efacar la skopo.<br>
+<br>
+Uzez ol por marcar mashini, tunelbranchi, distanta regili o nefinita konstruktoloki ante revenar kun utensili e materiali.

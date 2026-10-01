@@ -1,0 +1,41 @@
+Opslach en ferfier
+Ynventaris- en trochstreamingsûnderdielen
+Opslach- en ferfierûnderdielen omfetsje kratten, fetten, trachters en kleppen foar kompakte fabryksrûtes.<br>
+<br>
+Brûk dizze siden by it ynrjochtsjen fan foarriedromten, piipliedingen, ûnderhâldstanks en regele floeistofliedingen.
+<np>
+Kiste mei etiket
+Bewurkber foarriedetiket
+<&labeled_crate>Dizze krat mei etiket is makke om foarrieden dúdlik te sortearjen. De plaat oan de foarkant kin as in lyts wurkpleatsboerd bewurke wurde.<br>
+<br>
+Gebrûk: Rjochtsklik op de etiketplaat om it kratetiket te bewurkjen. Rjochtsklik op de rest fan de krat om de opslach foar fittings, ûnderdielen en ûnderhâldsfoarrieden te iepenjen.<br>
+<np>
+Floeistoffet
+Ûnderdielen foar floeistofliedingen
+<&fluid_barrel>Dit is in kompakt ûnderdiel foar floeistofliedingen by lytse tanks, piiprûtes, sammelpunten en troch redstone bestjoerde trochstreaming.<br>
+<br>
+Gebrûk: Pleats it dêr't pipen of amers de tankkant berikke kinne.<br>
+<np>
+Floeistofsammeltrachter
+Ûnderdielen foar floeistofliedingen
+<&small_fluid_funnel>De lytse floeistofsammeltrachter is in kompakt ûnderdiel foar floeistofliedingen by lytse tanks, piiprûtes, sammelpunten en troch redstone bestjoerde trochstreaming.<br>
+<br>
+Gebrûk: Set him ûnder it floeistofsammelpunt en fier de opsleine ynhâld nei tanks of leger lizzende pipen ôf.<br>
+<np>
+Floeistofpiip-weromslachklep
+Ûnderdielen foar floeistofliedingen
+<&straight_pipe_valve>De floeistofpiip-weromslachklep is in kompakt ûnderdiel foar floeistofliedingen by lytse tanks, piiprûtes, sammelpunten en troch redstone bestjoerde trochstreaming.<br>
+<br>
+Gebrûk: Rjochtsje de klep yn de bedoelde streamrjochting.<br>
+<np>
+Redstone-floeistofklep
+Ûnderdielen foar floeistofliedingen
+<&straight_pipe_valve_redstone>De redstonestjoerde floeistofklep is in kompakt ûnderdiel foar floeistofliedingen by lytse tanks, piiprûtes, sammelpunten en troch redstone bestjoerde trochstreaming.<br>
+<br>
+Gebrûk: Rjochtsje de klep yn de bedoelde streamrjochting.<br>
+<np>
+Analoge floeistofklep
+Ûnderdielen foar floeistofliedingen
+<&straight_pipe_valve_redstone_analog>De analoge redstone-floeistofklep is in kompakt ûnderdiel foar floeistofliedingen by lytse tanks, piiprûtes, sammelpunten en troch redstone bestjoerde trochstreaming.<br>
+<br>
+Gebrûk: Rjochtsje de klep yn de bedoelde streamrjochting.<br>

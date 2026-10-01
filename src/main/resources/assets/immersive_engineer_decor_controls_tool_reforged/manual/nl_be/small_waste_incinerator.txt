@@ -1,0 +1,5 @@
+Afvalverbrandingsoven
+Compacte verwerkingseenheid
+<&recipe>De afvalverbrandingsoven vernietigt ongewenste voorwerpen en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: voer alleen ongewenste voorwerpen aan de wachtrij toe.<br>

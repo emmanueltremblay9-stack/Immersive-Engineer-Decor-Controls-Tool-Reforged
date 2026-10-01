@@ -1,0 +1,7 @@
+Geastparse
+Underfiningskondinsator
+<&recipe>De geastparse set lapis lazuli en ûnderfining om yn opladen lapis lazuli.<br>
+<br>
+Gebrûk: Nim lapis lazuli en teminsten ien ûnderfiningsnivo mei en brûk dan it ark. In slagge persing ferbrûkt ien nivo en ien lapis lazuli, docht de brûker sear, beskeadiget de parse en makket ien opladen lapis lazuli.<br>
+<br>
+De parse wurket net as de brûker gjin lapis lazuli of XP hat, of te ticht by de dea is.

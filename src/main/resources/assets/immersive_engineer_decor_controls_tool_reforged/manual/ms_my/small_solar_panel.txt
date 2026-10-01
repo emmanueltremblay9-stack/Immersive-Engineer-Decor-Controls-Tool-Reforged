@@ -1,0 +1,5 @@
+Panel Suria
+Kegunaan lantai bengkel
+<&recipe>Panel suria kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Sediakan langit terbuka dan sambungkan peralatan berkeperluan kuasa rendah.<br>

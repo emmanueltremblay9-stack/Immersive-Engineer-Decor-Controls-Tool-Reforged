@@ -1,0 +1,5 @@
+Koku cirtējs
+Darbnīcas palīgierīce
+<&recipe>Mazs koku cirtējs ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: pavērs pret izaugušiem kokiem un savāc izbirušos priekšmetus atsevišķi.<br>

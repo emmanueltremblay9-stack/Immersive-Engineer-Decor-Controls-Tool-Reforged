@@ -1,0 +1,7 @@
+Alarmsirene
+Signaalweergave
+<&recipe>De alarmsirene is een op een blokvlak gemonteerde redstone-indicator. Zijn aangedreven toestand verandert volgens het signaal van het blok waaraan hij is bevestigd.<br>
+<br>
+Gebruik: bevestig hem op een stevig vlak en voorzie hem van stroom om deuren, machines, alarmen of panelen te bewaken.<br>
+<br>
+Opmerking: de sirene wordt eenmaal per seconde bijgewerkt zolang het aangesloten signaal actief blijft.

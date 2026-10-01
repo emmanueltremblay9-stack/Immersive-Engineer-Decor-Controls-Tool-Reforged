@@ -1,0 +1,5 @@
+Fluídos pasivos
+Equipamento de tubaxes de fluídos
+<&recipe>O acumulador pasivo de fluídos é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: colócao contra fontes de auga axeitadas e deixa espazo para extraer o fluído.<br>

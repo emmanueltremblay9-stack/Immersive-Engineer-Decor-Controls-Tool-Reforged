@@ -1,0 +1,5 @@
+Baldosa de ladrillo vitrificado
+Ladrillos oscurecidos por el hollín
+<&recipe>Este bloque aporta ladrillos ennegrecidos por el hollín a salas de hornos, bases de chimeneas y paredes de servicio.<br>
+<br>
+Uso: Usalo para paredes, remates o revestimientos de zonas calientes alrededor de hornos y calderas.<br>

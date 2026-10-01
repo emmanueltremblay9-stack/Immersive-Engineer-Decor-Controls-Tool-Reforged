@@ -1,0 +1,5 @@
+Vane antir'tour de tuyau a liqides
+Éqhipement de ligne a liqides
+<&recipe>La Vane antir'tour de tuyau a liqides ét eune pièce compacte de ligne a liqides pour les petits réservouers, les lignes de tuyaux, les pouints de collecte e le débit contrôlë par redstone.<br>
+<br>
+Empllai : Alignéz la vane d'o le sens de débit voulu.<br>

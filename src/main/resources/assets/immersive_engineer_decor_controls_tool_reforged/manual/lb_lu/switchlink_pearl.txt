@@ -1,0 +1,7 @@
+Schaltverbindungspärel
+Verbonne Steierung
+<&recipe>Eng verbonne Pärel späichert en Empfängerzil fir Fernsteierunge vun der Fabrick.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel op en Empfänger fir Schaltverbindunge fir eng ze maachen. Benotz déi verbonne Pärel beim Schläiche fir de gespäicherten Empfänger z'aktivéieren.<br>
+<br>
+Hiweiser: D'Zil muss geluede sinn, an der selwechter Dimensioun leien a bannent der Reechwäit sinn.

@@ -1,0 +1,7 @@
+Cloc Amserydd Dydd Gwydr
+Signal golau dydd
+<&recipe>Mae switsh amserydd yn dilyn rhan golau dydd cylch y byd.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer lampau iard, caeadau a rheolyddion ffatri sy'n gweithio yn ystod y dydd yn unig.<br>
+<br>
+Nodiadau: Mae angen dimensiwn â golau o'r awyr.

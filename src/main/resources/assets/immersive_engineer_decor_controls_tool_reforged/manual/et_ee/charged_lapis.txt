@@ -1,0 +1,7 @@
+Laetud lasuriit
+Salvestatud kogemus
+<&recipe>Laetud lasuriit salvestab mõttepressiga loodud ühe kogemustaseme.<br>
+<br>
+Kasutamine: Tarbi seda ühe taseme taastamiseks, aktiivsete efektide eemaldamiseks ja väikese hulga elupunktide taastamiseks.<br>
+<br>
+Retseptivaade näitab mõttepressi, sest laetud lasuriiti saadakse selle tööriista kasutamisel, kui lasuriit ja XP on saadaval.

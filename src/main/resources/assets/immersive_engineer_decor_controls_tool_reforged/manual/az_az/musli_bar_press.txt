@@ -1,0 +1,7 @@
+Muslee Baton Presi
+Qida presi
+<&recipe>Muslee Baton Presi adi ərzaqları yığcam sahə payına çevirir.<br>
+<br>
+İstifadə: Çörək, alma və buğda, qarpız, balqabaq, çuğundur və ya sənaye çətənə toxumu daşıyın, sonra presdən istifadə edin. Uğurlu pres hər inqrediyentdən birini sərf edir, çıxış yerini yoxlayır, dörd Muslee Melange batonu yaradır və presə zərər verir.<br>
+<br>
+İnqrediyent çatmırsa və ya inventarda yer yoxdursa, heç nə sərf olunmur.

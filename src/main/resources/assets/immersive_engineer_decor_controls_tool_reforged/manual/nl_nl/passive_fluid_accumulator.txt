@@ -1,0 +1,5 @@
+Passieve vloeistofopvang
+Onderdelen voor vloeistofleidingen
+<&recipe>De passieve vloeistofverzamelaar is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: plaats hem tegen geschikte waterbronnen en houd ruimte vrij voor vloeistofafvoer.<br>

@@ -1,0 +1,7 @@
+Mielipuristin
+Kokemuksen tiivistin
+<&recipe>Mielipuristin muuntaa lasuriitin ja kokemuksen ladatuksi lasuriitiksi.<br>
+<br>
+Käyttö: Pidä mukana lasuriittia ja vähintään yksi kokemustaso ja käytä työkalua. Onnistunut puristus kuluttaa yhden tason ja yhden lasuriitin, vahingoittaa käyttäjää, kuluttaa puristinta ja luo yhden ladatun lasuriitin.<br>
+<br>
+Laite kieltäytyy toimimasta, jos käyttäjällä ei ole lasuriittia tai XP:tä tai hän on liian lähellä kuolemaa.

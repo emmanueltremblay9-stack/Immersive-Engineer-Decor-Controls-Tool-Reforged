@@ -1,0 +1,7 @@
+Zivatarérzékelő
+Jelérzékelés
+<&recipe>A zivatarérzékelő mennydörgéskor figyelmeztetéseket működtet.<br>
+<br>
+Használat: tedd nyílt ég alá, és kösd lámpákhoz vagy riasztókhoz.<br>
+<br>
+Megjegyzés: mennydörgés és szabad égbolt szükséges.

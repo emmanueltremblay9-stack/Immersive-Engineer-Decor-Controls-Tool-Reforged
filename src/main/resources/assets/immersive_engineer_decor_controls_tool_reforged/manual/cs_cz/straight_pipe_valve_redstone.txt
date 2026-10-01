@@ -1,0 +1,5 @@
+Redstonový kapalinový ventil
+Vybavení kapalinových rozvodů
+<&recipe>Redstonový kapalinový ventil je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Natoč ventil do požadovaného směru proudění.<br>

@@ -1,0 +1,7 @@
+Sjporezeuker
+Opgesjlage plaatsmarkering
+<&recipe>De sjporezeuker sjlaat de posisie van ein blok direk in 't veurwerp op.<br>
+<br>
+Gebroek: Klik op ein blok veur dimensie en koördinate op te sjlaon. De tooltip wies de posisie. Gebroek 'm tiedes sloeke veur 't doel te wisse.<br>
+<br>
+Gebroek 'm um machines, tunnelaafsjlitsinge, aafstandsbediening of ónafgebouwde bouwplaatse te markere veur doe mèt gereidsjap en materiaal trökkumps.

@@ -1,0 +1,5 @@
+Samanpressa grusjord
+Dekke på arbeidsplassen
+<&recipe>Denne blokka gjev arbeidsområde ute ei samanpressa og nedtrakka overflate.<br>
+<br>
+Bruk: legg henne kring lasteportar, utetankar og maskinplassar.<br>

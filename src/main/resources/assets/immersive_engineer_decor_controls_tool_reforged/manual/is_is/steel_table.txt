@@ -1,0 +1,5 @@
+Stálborð
+Verkstæðishúsgagn
+<&recipe>Þessi kubbur er hagnýtt verkstæðishúsgagn fyrir vinnuherbergi og viðhaldshorn.<br>
+<br>
+Notkun: Settu hann við bekki, kassa og litlar vélar.<br>

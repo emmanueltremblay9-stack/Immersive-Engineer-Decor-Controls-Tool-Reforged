@@ -1,0 +1,5 @@
+Solarpanel
+Hilfsgrät für d'Werkstatt
+<&recipe>S'chliine Solarpanel isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Gib em freie Himmel und schlüss Grät mit wenig Verbruuch aa.<br>

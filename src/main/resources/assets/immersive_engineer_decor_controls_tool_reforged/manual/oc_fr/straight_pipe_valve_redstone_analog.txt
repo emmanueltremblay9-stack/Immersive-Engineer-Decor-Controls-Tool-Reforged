@@ -1,0 +1,5 @@
+Vana analogica de fluids
+Equipament de conducha de fluids
+<&recipe>La Vana analogica de fluids per redstone es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : alinha la vana amb lo sens d’escorriment volgut.<br>

@@ -1,0 +1,5 @@
+Zur zaharreko eskailerak
+Lantegiko zur zahartua
+<&recipe>Fabrika zaharreko zurezko eskailerek lantegiko zur zahartua eskaintzen dute zoruetarako, mailetarako, ateetarako eta barrualdeko apaingarri beroetarako.<br>
+<br>
+Erabilera: erabili lantegi zaharren zoruetan, eskaileretan, ateetan eta ertz-apaingarrietan.<br>

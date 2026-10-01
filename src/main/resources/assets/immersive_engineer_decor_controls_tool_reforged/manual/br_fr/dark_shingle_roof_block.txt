@@ -1,0 +1,5 @@
+Bloc'h toenn skantailh teñval
+Tamm toenn uzet gant an amzer
+<&recipe>Ar bloc'h-mañ a ra linennoù toenn teñval ha talvoudus evit atalieroù ha hangarioù greantel.<br>
+<br>
+Implij: Implijit an tammoù asambles evit stummañ toennoù gwirheñvel.<br>

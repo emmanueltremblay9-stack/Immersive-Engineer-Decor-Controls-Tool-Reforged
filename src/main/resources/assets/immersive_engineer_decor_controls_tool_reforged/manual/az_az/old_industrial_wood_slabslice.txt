@@ -1,0 +1,5 @@
+Köhnə taxta pilləsinin dilimi
+Köhnəlmiş emalatxana taxtası
+<&recipe>Köhnə sənaye taxta pilləsinin dilimi döşəmələr, pillələr, qapılar və isti çalarlı daxili haşiyələr üçün köhnəlmiş emalatxana taxtası əlavə edir.<br>
+<br>
+İstifadə: Köhnə emalatxana döşəmələri, pilləkənləri, qapıları və haşiyələri üçün istifadə edin.<br>

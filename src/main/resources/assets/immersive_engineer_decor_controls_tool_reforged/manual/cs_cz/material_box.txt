@@ -1,0 +1,7 @@
+Krabice na materiál
+Stavební zásoby
+<&recipe>Nese velkou zásobu jednoho běžného, nezměněného a stohovatelného materiálu.<br>
+<br>
+Použití: Krabice v hlavní a materiál ve vedlejší ruce ji naplní. S prázdnou vedlejší rukou vyjmete stoh.<br>
+<br>
+Pojme 512 kusů jednoho typu a odmítá vnořené krabice, nestohovatelné vybavení a změněné stohy; obsah je v popisku.

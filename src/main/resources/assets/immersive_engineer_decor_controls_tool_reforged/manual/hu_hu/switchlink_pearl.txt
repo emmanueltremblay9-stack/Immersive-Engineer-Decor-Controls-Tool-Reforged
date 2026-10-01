@@ -1,0 +1,7 @@
+Távkapcsolati gyöngy
+Összekapcsolt vezérlés
+<&recipe>A hozzárendelt gyöngy egy vevő célpontját tárolja a gyár távoli vezérléséhez.<br>
+<br>
+Használat: kattints endergyönggyel egy távkapcsolati vevőre a létrehozásához. Lopakodva használd a hozzárendelt gyöngyöt a tárolt vevő aktiválásához.<br>
+<br>
+Megjegyzés: a célpontnak betöltve, ugyanabban a dimenzióban és hatótávon belül kell lennie.

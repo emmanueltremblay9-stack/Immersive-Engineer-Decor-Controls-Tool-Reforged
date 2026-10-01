@@ -1,0 +1,5 @@
+Dalış Hava Kapsülü
+Acil hava rezervi
+<&recipe>Dalış hava kapsülü, su altı işi için acil hava yedeğidir.<br>
+<br>
+Havayı yenilemek için elle kullanın. Envanterde hava bitmek üzereyken otomatik tetiklenir ve ardından bekleme süresine girer. Su basmış madenlere ve su altı borularına götürün.

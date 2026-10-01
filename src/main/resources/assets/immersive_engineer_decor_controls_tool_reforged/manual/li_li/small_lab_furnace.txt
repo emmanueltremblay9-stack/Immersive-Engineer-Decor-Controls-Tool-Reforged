@@ -1,0 +1,5 @@
+Laboratoriumaove
+Kleine verwerkingseenheid
+<&recipe>De laboratoriumaove duit klein smeltwerk mèt vaste brandstof op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: neem vaste brandstof veur kleine smeltporties.<br>

@@ -1,0 +1,7 @@
+Placă rustică de presiune pentru ușă
+Impuls la apăsare
+<&recipe>Un comutator de contact trimite un semnal scurt la mișcare pe podea sau pe trapă.<br>
+<br>
+Utilizare: Amplasează-l acolo unde entitățile trec printr-un culoar tehnic, un încărcător sau un traseu supravegheat.<br>
+<br>
+Observații: Emite un impuls scurt după contactul cu o entitate.

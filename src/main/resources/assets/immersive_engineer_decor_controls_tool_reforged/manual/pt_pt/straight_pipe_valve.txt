@@ -1,0 +1,5 @@
+Válvula de retenção de fluidos
+Componentes de tubagem de fluidos
+<&recipe>A válvula de retenção de fluidos é um componente compacto para pequenos depósitos, tubagens, pontos de recolha e caudal controlado por redstone.<br>
+<br>
+Uso: Alinha a válvula com a direção de fluxo desejada.<br>

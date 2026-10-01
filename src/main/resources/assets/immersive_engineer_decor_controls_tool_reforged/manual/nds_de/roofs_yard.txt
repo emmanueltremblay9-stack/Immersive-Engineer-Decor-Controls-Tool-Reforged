@@ -1,0 +1,101 @@
+Däcker un Hoff
+Fabrikuutstattung för buten
+Dackblöck, Hoffgruus un ole Industrieholtdeelen hölpt, Butenschüün, Wiärkhööv, Laadsteden un verwederte Fabrikkanten fardig to maken.<br>
+<br>
+Misch disse Deelen mit Muurwiärk un Togäng, dormit Fabrikbauten buten ok vun wieden düütlich blievt.
+<np>
+Düüster Schindeldack
+Verwedert Dackdeel
+<&dark_shingle_roof>Disse Block maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Dacksneefang
+Verwedert Dackdeel
+<&dark_shingle_roof_metallized>De Sneefang för düüster Schindeldack maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Düüster Schindeldack
+Verwedert Dackdeel
+<&dark_shingle_roof_skylight>Dat Dackfinster för düüster Schindeldack maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Dackschösteensockel
+Verwedert Dackdeel
+<&dark_shingle_roof_chimneytrunk>De Schösteensockel för düüster Schindeldack maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Dackdrahtröhr
+Verwedert Dackdeel
+<&dark_shingle_roof_wireconduit>De Drahtröhr för düüster Schindeldack maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Düüster Schindeldack
+Verwedert Dackdeel
+<&dark_shingle_roof_chimney>De Schösteen för düüster Schindeldack maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Block för düüster Schindeldack
+Verwedert Dackdeel
+<&dark_shingle_roof_block>Disse Block maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Plaat för düüster Schindeldack
+Verwedert Dackdeel
+<&dark_shingle_roof_slab>Disse Block maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Plaat för düüster Schindeldack
+Verwedert Dackdeel
+<&dark_shingle_roof_slabslice>De dünne Schicht för düüster Schindeldack maakt düüstere, nütte Dacklinien för Wiärksteden un Industrieschüün.<br>
+<br>
+Bruuk: Bruuk de Deelen tosamen, üm glöövige Dackformen to maken.<br>
+<np>
+Fastdrückte Gruusäer
+Grund för de Buusteed
+<&dense_grit_dirt_block>Disse Block gifft Butenwiärksteden en fastdrückte, platttrampelte Flach.<br>
+<br>
+Bruuk: Legg em üm Laaddüörn, Butentanks un Maschinenhööv.<br>
+<np>
+Fastdrückten Gruussand
+Grund för de Buusteed
+<&dense_grit_sand_block>Disse Block gifft Butenwiärksteden en fastdrückte, platttrampelte Flach.<br>
+<br>
+Bruuk: Legg em üm Laaddüörn, Butentanks un Maschinenhööv.<br>
+<np>
+Ole Holtbreden
+Oolt Wiärksteedholt
+<&old_industrial_wood_planks>De olen Industrie-Holtbreden bringt oolt Wiärksteedholt för Böden, Treden, Düörn un warme Binnenprunk.<br>
+<br>
+Bruuk: Bruuk em för ole Wiärksteedböden, Trappen, Düörn un Kanten.<br>
+<np>
+Ole Industrie-Holtplaat
+Oolt Wiärksteedholt
+<&old_industrial_wood_slab>Disse Block brengt oolt Wiärksteedholt för Böden, Treden, Düörn un warme Binnenprunk.<br>
+<br>
+Bruuk: Bruuk em för ole Wiärksteedböden, Trappen, Düörn un Kanten.<br>
+<np>
+Ole Holttrapp
+Oolt Wiärksteedholt
+<&old_industrial_wood_stairs>De ole Industrie-Holttrapp brengt oolt Wiärksteedholt för Böden, Treden, Düörn un warme Binnenprunk.<br>
+<br>
+Bruuk: Bruuk em för ole Wiärksteedböden, Trappen, Düörn un Kanten.<br>
+<np>
+Dünne ole Holtschicht
+Oolt Wiärksteedholt
+<&old_industrial_wood_slabslice>De dünne Schicht oolt Industrieholt brengt oolt Wiärksteedholt för Böden, Treden, Düörn un warme Binnenprunk.<br>
+<br>
+Bruuk: Bruuk em för ole Wiärksteedböden, Trappen, Düörn un Kanten.<br>
+<np>
+Ole Industrie-Holtdüör
+Oolt Wiärksteedholt
+<&old_industrial_wood_door>Disse Block brengt oolt Wiärksteedholt för Böden, Treden, Düörn un warme Binnenprunk.<br>
+<br>
+Bruuk: Bruuk em för ole Wiärksteedböden, Trappen, Düörn un Kanten.<br>

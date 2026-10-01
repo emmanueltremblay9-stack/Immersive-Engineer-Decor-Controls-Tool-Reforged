@@ -1,0 +1,5 @@
+Klinkersteenmuur
+Roetdonker messelwerk
+<&recipe>Hierdie blok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>

@@ -1,0 +1,101 @@
+Çatılar ve Avlu
+Dış mekân fabrika parçaları
+Çatı blokları, avlu çakılı ve eski sanayi tipi ahşap parçalar; dış barakaları, çalışma avlularını, yükleme alanlarını ve yıpranmış fabrika kenarlarını tamamlamaya yardım eder.<br>
+<br>
+Dış mekân sanayi yapılarının uzaktan anlaşılır kalması için bu parçaları duvar malzemeleri ve erişim yollarıyla birlikte kullanın.
+<np>
+Koyu Şıngıl Çatı
+Eskimiş çatı parçası
+<&dark_shingle_roof>Bu blok, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Çatı Kar Tutucusu
+Eskimiş çatı parçası
+<&dark_shingle_roof_metallized>Koyu şıngıl çatı kar tutucusu, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Koyu Şıngıl Çatı
+Eskimiş çatı parçası
+<&dark_shingle_roof_skylight>Koyu şıngıl çatı penceresi, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Çatı Baca Gövdesi
+Eskimiş çatı parçası
+<&dark_shingle_roof_chimneytrunk>Koyu şıngıl çatı baca gövdesi, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Çatı Kablo Kanalı
+Eskimiş çatı parçası
+<&dark_shingle_roof_wireconduit>Koyu şıngıl çatı kablo kanalı, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Koyu Şıngıl Çatı
+Eskimiş çatı parçası
+<&dark_shingle_roof_chimney>Koyu şıngıl çatı bacası, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Koyu Şıngıl Çatı Bloğu
+Eskimiş çatı parçası
+<&dark_shingle_roof_block>Bu blok, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Koyu Şıngıl Çatı Basamağı
+Eskimiş çatı parçası
+<&dark_shingle_roof_slab>Bu blok, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Koyu Şıngıl Çatı Basamağı
+Eskimiş çatı parçası
+<&dark_shingle_roof_slabslice>Koyu şıngıl çatı basamak dilimi, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>
+<np>
+Sıkıştırılmış Çakıllı Toprak
+Şantiye zemin kaplaması
+<&dense_grit_dirt_block>Bu blok, dış çalışma alanlarına sıkıştırılmış ve çiğnenmiş bir yüzey verir.<br>
+<br>
+Kullanım: Yükleme kapılarının, açık hava tanklarının ve makine avlularının çevresine döşeyin.<br>
+<np>
+Sıkıştırılmış Çakıllı Kum
+Şantiye zemin kaplaması
+<&dense_grit_sand_block>Bu blok, dış çalışma alanlarına sıkıştırılmış ve çiğnenmiş bir yüzey verir.<br>
+<br>
+Kullanım: Yükleme kapılarının, açık hava tanklarının ve makine avlularının çevresine döşeyin.<br>
+<np>
+Eski Ahşap Tahtalar
+Eskimiş atölye ahşabı
+<&old_industrial_wood_planks>Eski sanayi tipi ahşap tahtalar; zeminler, basamaklar, kapılar ve sıcak görünümlü iç süslemeler için eskimiş atölye ahşabı ekler.<br>
+<br>
+Kullanım: Eski atölye zeminlerinde, merdivenlerde, kapılarda ve süslemelerde kullanın.<br>
+<np>
+Eski Sanayi Tipi Ahşap Basamak
+Eskimiş atölye ahşabı
+<&old_industrial_wood_slab>Bu blok; zeminler, basamaklar, kapılar ve sıcak görünümlü iç süslemeler için eskimiş atölye ahşabı ekler.<br>
+<br>
+Kullanım: Eski atölye zeminlerinde, merdivenlerde, kapılarda ve süslemelerde kullanın.<br>
+<np>
+Eski Ahşap Merdiven
+Eskimiş atölye ahşabı
+<&old_industrial_wood_stairs>Eski sanayi tipi ahşap merdiven; zeminler, basamaklar, kapılar ve sıcak görünümlü iç süslemeler için eskimiş atölye ahşabı ekler.<br>
+<br>
+Kullanım: Eski atölye zeminlerinde, merdivenlerde, kapılarda ve süslemelerde kullanın.<br>
+<np>
+Eski Ahşap Basamak Dilimi
+Eskimiş atölye ahşabı
+<&old_industrial_wood_slabslice>Eski sanayi tipi ahşap basamak dilimi; zeminler, basamaklar, kapılar ve sıcak görünümlü iç süslemeler için eskimiş atölye ahşabı ekler.<br>
+<br>
+Kullanım: Eski atölye zeminlerinde, merdivenlerde, kapılarda ve süslemelerde kullanın.<br>
+<np>
+Eski Sanayi Tipi Ahşap Kapı
+Eskimiş atölye ahşabı
+<&old_industrial_wood_door>Bu blok; zeminler, basamaklar, kapılar ve sıcak görünümlü iç süslemeler için eskimiş atölye ahşabı ekler.<br>
+<br>
+Kullanım: Eski atölye zeminlerinde, merdivenlerde, kapılarda ve süslemelerde kullanın.<br>

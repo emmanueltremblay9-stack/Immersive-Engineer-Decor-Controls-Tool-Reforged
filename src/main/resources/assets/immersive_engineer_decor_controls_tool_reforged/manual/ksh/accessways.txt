@@ -1,0 +1,127 @@
+Zojangswääje
+Laufwääje un Stütze
+Stahlpöhl, behandelte Holzpöhl, Jidderrost, Laufsteje, Jeländer, Leedere, Düre, Finster un Luuke maache kleine Wartungswääje durch de Fabrik.<br>
+<br>
+Stahlteile för Zojäng bruche Stahlplatte. Maach en Metallwerkbank udder stell ein hin, donn ene Hammer vun Immersive Engineering erin un hammer Stahlbrikette zo Stahlplatte för Pöhl, Laufsteje, Finster, Düre, Jeländer un andere Stahlzier.<br>
+<br>
+Setz se dohin, wo Maschine Wartungszojang, huhe Wääje, Wartungsschäch udder sicherere Kante bruche.
+<np>
+Dicke Stahlpohl
+Teil vum Draachrahme
+<&thick_steel_pole>Dä jrade dicke Stahlpohl jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Kopp för ene dicke Pohl
+Teil vum Draachrahme
+<&thick_steel_pole_head>Dä Kopp/Fuß för ene jrade dicke Stahlpohl jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Dünne Stahlpohl
+Teil vum Draachrahme
+<&thin_steel_pole>Dä jrade dünne Stahlpohl jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Kopp för ene dünne Pohl
+Teil vum Draachrahme
+<&thin_steel_pole_head>Dä Kopp/Fuß för ene jrade dünne Stahlpohl jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Pohl us behandeltem Holz
+Teil vum Draachrahme
+<&treated_wood_pole>Dä jrade Pohl us behandeltem Holz jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Kopp för ene behandelte Pohl
+Teil vum Draachrahme
+<&treated_wood_pole_head>Dä Kopp/Fuß för ene jrade Pohl us behandeltem Holz jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Stütz för ene behandelte Pohl
+Teil vum Draachrahme
+<&treated_wood_pole_support>De Stütz för ene jrade Pohl us behandeltem Holz jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Stahl-Doppel-T-Stütz
+Teil vum Draachrahme
+<&steel_double_t_support>Heh dä Block jit Maschinehalle un Zojangsrahme en sichtbare Draachstruktur.<br>
+<br>
+Bruuch: Dreih un setz en als sichtbare Verstrevung för Balke, Pöhl un Plattformkante.<br>
+<np>
+Stahlbodderost
+Wartungszojang
+<&steel_floor_grating>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Stahllaufstech
+Wartungszojang
+<&steel_catwalk>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Stahllaufstechtrapp
+Wartungszojang
+<&steel_catwalk_stairs>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Huhe Stahllaufstech
+Wartungszojang
+<&steel_catwalk_ta>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Stahljeländer
+Wartungszojang
+<&steel_railing>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Stahljidderzong
+Wartungszojang
+<&steel_mesh_fence>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Stahljidderzongstor
+Wartungszojang
+<&steel_mesh_fence_gate>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Metallsprosseleeder
+Wartungszojang
+<&metal_rung_ladder>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Versetzte Metalltritt
+Wartungszojang
+<&metal_rung_steps>Heh dä Block mäht jot erkennbare Wartungswääje öm Maschine.<br>
+<br>
+Bruuch: Setz en als Wartungszojang öm Maschine, huhe Stockwerke un Wartungsschäch.<br>
+<np>
+Finster met Stahlrahme
+Jeschötzte Durchbleck
+<&steel_framed_window>Heh dä Block löht dä Durchbleck frei un paß trotzdem zo verstärkte Fabrikboute.<br>
+<br>
+Bruuch: Setz en en en Muuröffnung vun 1 Block, wo Spiller durch en jeschötzte Wand op Maschine luure solle.<br>
+<np>
+Metallschovedür
+Industriezojang
+<&metal_sliding_door>Heh dä Block mäht ene stabile Zojang zo Wartungsrüüm, Schäch, Dächer un Maschinehülle.<br>
+<br>
+Bruuch: Bou en do en, wo ene kontrollierte Wartungszojang bruch weed.<br>
+<np>
+Ieseluuk
+Industriezojang
+<&iron_hatch>Heh dä Block mäht ene stabile Zojang zo Wartungsrüüm, Schäch, Dächer un Maschinehülle.<br>
+<br>
+Bruuch: Bou en do en, wo ene kontrollierte Wartungszojang bruch weed.<br>

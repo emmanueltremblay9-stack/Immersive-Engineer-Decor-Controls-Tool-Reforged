@@ -1,0 +1,5 @@
+Slag Brick Wall
+Dense factory masonry
+<&recipe>This block adds dense grey-brown masonry for foundations, retaining walls, and older worksheds.<br>
+<br>
+Usage: Use it for older foundations, retaining walls, and dirty plant floors.<br>

@@ -1,0 +1,101 @@
+Tecta et area
+Apparatus externi officinae
+Cubi tecti, glarea areae et partes ligni industrialis veteris tuguria externa, areas laboris, loca onerandi et margines officinae tempestatibus affectos perficiunt.<br>
+<br>
+Has partes cum structura latericia et viis accessus coniunge ut aedificia industrialia externa e longinquo clara sint.
+<np>
+Tectum scandularum obscurarum
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof>Hic cubus lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Retinaculum nivis tecti
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_metallized>Retinaculum nivis tecti scandularum obscurarum lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Tectum scandularum obscurarum
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_skylight>Fenestra tecti scandularum obscurarum lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Basis camini tecti
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_chimneytrunk>Basis camini tecti scandularum obscurarum lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Canalis fili tecti
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_wireconduit>Canalis fili tecti scandularum obscurarum lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Tectum scandularum obscurarum
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_chimney>Caminus tecti scandularum obscurarum lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Cubus tecti scandularum obscurarum
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_block>Hic cubus lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Gradus tecti scandularum obscurarum
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_slab>Hic cubus lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Gradus tecti scandularum obscurarum
+Pars tecti tempestatibus affecta
+<&dark_shingle_roof_slabslice>Lamina tenuis tecti scandularum obscurarum lineas tectorum obscuras et utiles officinis ac tuguriis industrialibus format.<br>
+<br>
+Usus: partes simul adhibe ut formas tectorum verisimiles facias.<br>
+<np>
+Humus glarea densa
+Tegumentum soli operarii
+<&dense_grit_dirt_block>Hic cubus areis laboris externis superficiem compressam et calcatam dat.<br>
+<br>
+Usus: circa ostia onerandi, cisternas externas et areas machinarum sterne.<br>
+<np>
+Arena glarea densa
+Tegumentum soli operarii
+<&dense_grit_sand_block>Hic cubus areis laboris externis superficiem compressam et calcatam dat.<br>
+<br>
+Usus: circa ostia onerandi, cisternas externas et areas machinarum sterne.<br>
+<np>
+Tabulae ligneae veteres
+Lignum officinae vetustum
+<&old_industrial_wood_planks>Tabulae veteres industriales ligneae lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addunt.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>
+<np>
+Gradus vetus industrialis ligneus
+Lignum officinae vetustum
+<&old_industrial_wood_slab>Hic cubus lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addit.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>
+<np>
+Scalae ligneae veteres
+Lignum officinae vetustum
+<&old_industrial_wood_stairs>Scalae veteres industriales ligneae lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addunt.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>
+<np>
+Lamina tenuis ligni veteris
+Lignum officinae vetustum
+<&old_industrial_wood_slabslice>Lamina tenuis veteris ligni industrialis lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addit.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>
+<np>
+Ostium vetus industriale ligneum
+Lignum officinae vetustum
+<&old_industrial_wood_door>Hic cubus lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addit.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>

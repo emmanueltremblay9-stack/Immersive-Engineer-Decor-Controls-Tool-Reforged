@@ -1,0 +1,7 @@
+Recetor analógico de ligação
+Controlo vinculado
+<&recipe>Um recetor vinculado fornece um destino remoto visível para painéis de controlo.<br>
+<br>
+Uso: Clica com uma pérola do Ender para criar uma pérola vinculada. Usa essa pérola agachado para acionar o recetor remotamente.<br>
+<br>
+Observações: Este recetor emite redstone na intensidade máxima quando acionado.

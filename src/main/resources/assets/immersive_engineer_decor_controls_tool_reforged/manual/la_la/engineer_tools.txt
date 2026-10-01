@@ -1,0 +1,99 @@
+Instrumenta ingeniarii
+Instrumenta officinae portatilia
+Instrumenta ingeniarii apparatum manualem, signa fodinarum, res in periculo consumendas, cibum ad expeditiones et auxilia parva materiarum tractandarum eidem manuali addunt quod cubos ornatus et moderaminum describit.<br>
+<br>
+Haec instrumenta ad opus procul ab officina plene instructa destinantur: viam nota, commeatum porta, ab erroribus te restitue et parva opera tractationis in loco perfice.
+<np>
+Instrumentum REDIA
+Instrumentum utile adamantibus tectum
+<&redia_tool>Instrumentum REDIA auxilium durabile ad opus soli celeriter faciendum est. In solo tractabili utere ut terram aratam facias.<br>
+<br>
+Faciebus stabilibus adhibe dum faces portas, ut facem ex inventario tuo ponas sine REDIA terendo. Opus soli, tonsio, opus securis et caedes arborum durabilitatem consumunt.
+<np>
+Malleus aeris contundendi
+Instrumentum manuale contundendi
+<&crushing_hammer>Malleus ad metallum conterendum instrumentum manuale est ad ferrum aurumque primo tractanda.<br>
+<br>
+Usus: Cum ferro crudo, auro crudo, vena ferri, vena ferri schisti profundi, vena auri aut vena auri schisti profundi compone ut pulverem ferri vel auri Immersive Engineering facias. Malleus firmitatem amittit et in reticulum rediit donec frangatur.<br>
+<br>
+Fodiendo etiam teritur et in pugna propinqua adversarios repellere potest.
+<np>
+Vestigator
+Signum loci memorati
+<&tracker>Vestigator positionem cubi directe in re servat.<br>
+<br>
+Usus: Cubum clicca ut dimensionem et coordinata serves. Titulus positionem servatam monstrat. Vestigatore dum te demittis utere ut destinationem deleas.<br>
+<br>
+Eo utere ut machinas, ramos cuniculorum, moderamina remota aut aedificia nondum perfecta notes antequam instrumentis et materiis redeas.
+<np>
+Carbo Ariadnae
+Signum viae fodinae
+<&ariadne_coal>Carbo Ariadnae sagittas nigras celeriter in faciebus fodinae stabilibus ponit. In facie solida adhibe ut proximum flexum, exitum aut ramum notes; signum octo directiones secundum faciem cliccatam, etiam obliquas, sustinet.<br>
+<br>
+Carbo Ariadnae est instrumentum signandi iterabile cum 100 usibus. Quaeque positio prospera unam durabilitatem consumit. Facies non aptas recusat potius quam rem terat.
+<np>
+Fasciculus stimulans automaticus
+Iniector ad periculum
+<&stimpack>Auto Stim Pack instrumentum medicum necessarium est ad periculosa opera conservandi.<br>
+<br>
+Usus: Manu utere ut saneris, brevem tutelam celeritatemque accipias. In inventario etiam sponte moveri potest cum valetudo humilis est, deinde tempus refrigerationis intrat.<br>
+<br>
+Unum paratum habe antequam loca alta, fila nuda aut vias fodinarum hostiles explores.
+<np>
+Saccus dormiendi
+Instrumenta quietis portatilia
+<&sleeping_bag>Saccus dormitorius instrumentum quietis tempestatibus resistens est ad opera procul a lecto.<br>
+<br>
+Usus: Nocte in Overworld utere ut usque mane quiescas. Locum renascendi nec statuit nec movet.<br>
+<br>
+Usum diurnum, loca periculosa monstris proximis et dimensiones quieti securae ineptas recusat. Quaeque quies felix saccum deterit.
+<np>
+Cista materiae servandae
+Cista commeatus aedificandi
+<&material_box>Arca materiae magnam copiam unius materiae aedificatoriae simplicis, immutatae et cumulabilis portat.<br>
+<br>
+Usus: Arcam in manu principe et cumulum materiae in altera tene ut impleas. Arca cum altera manu vacua utere ut unum cumulum extrahas.<br>
+<br>
+Usque ad 512 res unius generis continet. Arcas inclusas, instrumenta non cumulabilia et cumulos renominatos aut datis mutatos recusat; titulus contenta monstrat.
+<np>
+Capsula aeris urinatoria
+Copia aeris ad periculum
+<&diving_capsule>Capsula aeris urinatoria subsidium aeris in necessitate ad opera sub aqua est.<br>
+<br>
+Usus: Manu utere ut aerem restituas. In inventario etiam sponte moveri potest cum aer paene deficit, deinde tempus refrigerationis intrat.<br>
+<br>
+Ad fodinas inundatas, fistulas submersas et refectiones conclavium sentinarum porta.
+<np>
+Prelum taleolarum Muslee
+Prelum cibi
+<&musli_bar_press>Prelum virgarum Muslee cibos communes in commeatus militares compactos mutat.<br>
+<br>
+Usus: Panem, malum et semen tritici, peponis, cucurbitae, betae aut Cannabis Industrialis porta, deinde prelo utere. Pressio felix unum cuiusque consumit, spatium probat, quattuor virgas Muslee Melange creat et prelum laedit.<br>
+<br>
+Si quid deest aut in inventario spatium non est, nihil consumitur.
+<np>
+Talea alimentaria mixturae Muslee
+Cibus officinae celer
+<&musli_bar>Virga energetica Muslee Melange cibus compactus e pane, seminibus fructuque est.<br>
+<br>
+Usus: ut cibum expeditionis ede dum moderamina, fistulas, suggesta aut longas series conclavium machinarum ponis.
+<np>
+Prelum mentis
+Condensator experientiae
+<&charged_lapis_squeezer>Prelum mentis unum lapidem lazuli et unum gradum experientiae ex inventario tuo in lapidem lazuli oneratum convertit.<br>
+<br>
+Processus in quaque conversione prospera usorem laedit, defatigat et breviter caecat. Operari recusat sine lapide lazuli, sine experientia aut cum usor nimis prope mortem est.
+<np>
+Lapis lazuli oneratus
+Experientia servata
+<&charged_lapis>Lapis lazuli oneratus unum gradum experientiae servat. Consume ut gradum recipias, effectus activos tollas et paulum salutis restituas.<br>
+<br>
+Primum prelum mentis fabrica; lapis lazuli oneratus illo instrumento efficitur dum lapis lazuli et experientia adsunt.
+<np>
+Granula ferri crassa
+Materia instrumentorum ingeniarii in formulis reconstructis adhibita.
+<&iron_grit>In lateres ferreos conflari possunt,<br>sed ad curationem materiae<br>provectam non apta sunt.
+<np>
+Granula auri crassa
+Materia instrumentorum ingeniarii in formulis reconstructis adhibita.
+<&gold_grit>In lateres aureos conflari possunt,<br>sed ad curationem materiae<br>provectam non apta sunt.

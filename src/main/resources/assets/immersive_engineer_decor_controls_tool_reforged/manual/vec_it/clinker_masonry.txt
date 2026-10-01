@@ -1,0 +1,161 @@
+Clinker e muradura
+Involucri de cuarełi e beton
+Clinker, cuarełi de scoria, beton armà e vero blindà i dà superfise massise par locali caldi, ofisine e viste protete.<br>
+<br>
+Dòpara łistoni, scałe, fete e muri compagni par finir i bordi sensa canbiar el stile de i materiałi de ła fàbrica.
+<np>
+Bloco de cuarełi de clinker
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_block>Sto bloco el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Łiston de cuarełi de clinker
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_slab>Sto bloco el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Scałe de cuarełi de clinker
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_stairs>Sto bloco el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Muro de cuarełi de clinker
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_wall>Sto bloco el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Bloco de clinker macià
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_stained_block>El Bloco de cuarełi de clinker maciadi el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Łiston de clinker macià
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_stained_slab>El Łiston de cuarełi de clinker maciadi el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Scałe de clinker macià
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_stained_stairs>Łe Scałe de cuarełi de clinker maciadi łe porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Cuareło de clinker ornà
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_sastor_corner_block>El Cuareło de clinker ornà de arenaria el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Cuareło de clinker scavà
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_recessed>Sto bloco el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Cuarełi de clinker co sfese
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_vertically_slit>I Cuarełi de clinker co sfese verticałi i porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Łiston vertical de clinker
+Cuarełi scuridi da ła calìzene
+<&clinker_brick_vertical_slab_structured>El Łiston vertical de clinker struturà el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Mezo łiston de cuarełi de clinker
+Cuarełi scuridi da ła calìzene
+<&halfslab_clinker_brick>Sto bloco el porta cuarełi scuridi da ła calìzene inte łe sale de fornaze, a ła base de i camini e su i muri de servisio.<br>
+<br>
+Uso: dòparalo come muro, finidura o rivestimento de zona calda torno fornaze e caldiere.<br>
+<np>
+Bloco de cuarełi de scoria
+Muradura fissa de fàbrica
+<&slag_brick_block>Sto bloco el zonta muradura fissa griza e maron par fondamente, muri de sostegno e veci capani da łaoro.<br>
+<br>
+Uso: dòparalo par fondamente vecie, muri de sostegno e pavimenti sporchi de fàbrica.<br>
+<np>
+Łiston de cuarełi de scoria
+Muradura fissa de fàbrica
+<&slag_brick_slab>Sto bloco el zonta muradura fissa griza e maron par fondamente, muri de sostegno e veci capani da łaoro.<br>
+<br>
+Uso: dòparalo par fondamente vecie, muri de sostegno e pavimenti sporchi de fàbrica.<br>
+<np>
+Scałe de cuarełi de scoria
+Muradura fissa de fàbrica
+<&slag_brick_stairs>Sto bloco el zonta muradura fissa griza e maron par fondamente, muri de sostegno e veci capani da łaoro.<br>
+<br>
+Uso: dòparalo par fondamente vecie, muri de sostegno e pavimenti sporchi de fàbrica.<br>
+<np>
+Muro de cuarełi de scoria
+Muradura fissa de fàbrica
+<&slag_brick_wall>Sto bloco el zonta muradura fissa griza e maron par fondamente, muri de sostegno e veci capani da łaoro.<br>
+<br>
+Uso: dòparalo par fondamente vecie, muri de sostegno e pavimenti sporchi de fàbrica.<br>
+<np>
+Bloco de beton armà
+Beton rinforzà
+<&rebar_concrete>Sto bloco el xe un toco de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Łiston de beton armà
+Beton rinforzà
+<&rebar_concrete_slab>Sto bloco el xe un toco de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Scałe de beton armà
+Beton rinforzà
+<&rebar_concrete_stairs>Sto bloco el xe un toco de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Muro de beton armà
+Beton rinforzà
+<&rebar_concrete_wall>Sto bloco el xe un toco de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Feta de beton armà
+Beton rinforzà
+<&halfslab_rebar_concrete>Sto bloco el xe un toco de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Piastreła de beton armà
+Beton rinforzà
+<&rebar_concrete_tile>Sto bloco el xe un toco de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Łiston de piastrełe de beton armà
+Beton rinforzà
+<&rebar_concrete_tile_slab>Sto bloco el xe un toco de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Piastreła de beton armà
+Beton rinforzà
+<&rebar_concrete_tile_stairs>Łe Scałe de piastrełe de beton armà łe xe tochi de beton indurìo par basi de machine, muri contra łe esplosion e pavimenti de banchine de carico.<br>
+<br>
+Uso: mètelo soto łe machine, lungo i coridori de servisio o dove serve na base rinforzada.<br>
+<np>
+Bloco de vero blindà
+Vista proteta
+<&panzerglass_block>Sto bloco el łassa védar atraverso e el va ben co ła costrusion rinforzada de fàbrica.<br>
+<br>
+Uso: dòparalo dove i zugadori i ga da védar łe machine atraverso na bariera proteta.<br>
+<np>
+Łiston de vero blindà
+Vista proteta
+<&panzerglass_slab>Sto bloco el łassa védar atraverso e el va ben co ła costrusion rinforzada de fàbrica.<br>
+<br>
+Uso: dòparalo dove i zugadori i ga da védar łe machine atraverso na bariera proteta.<br>

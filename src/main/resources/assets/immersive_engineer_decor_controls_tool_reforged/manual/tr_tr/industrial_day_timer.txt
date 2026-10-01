@@ -1,0 +1,7 @@
+Gün Zamanlayıcısı
+Gün ışığı sinyali
+<&recipe>Zamanlayıcı anahtarı, dünya döngüsünün gündüz bölümünü izler.<br>
+<br>
+Kullanım: Avlu lambaları, panjurlar ve yalnızca gündüz çalışan fabrika kontrolleri için kullanın.<br>
+<br>
+Notlar: Gökyüzü ışığı bulunan bir boyut gerekir.

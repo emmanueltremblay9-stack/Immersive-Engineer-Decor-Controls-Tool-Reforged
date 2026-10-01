@@ -1,0 +1,7 @@
+Stół do obróbki metalu
+Stanowisko wytwarzania blach
+<&recipe>Stół do obróbki metalu ma pole młota, pełną siatkę 3x3 i pole wyniku.<br>
+<br>
+Używaj siatki jak zwykłego stołu. Aby formować blachy IE, włóż młot inżyniera do pola narzędzia, materiał do siatki i odbierz blachę z wyjścia.<br>
+<br>
+Stalowe dekoracje wykorzystują blachy uformowane przy tym stole.

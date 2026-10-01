@@ -1,0 +1,5 @@
+Dzelzsbetona flīžu plāksne
+Dzelzsbetons
+<&recipe>Šis bloks ir sacietējuša betona detaļa mašīnu pamatnēm, sprādzienu aizsargsienām un iekraušanas laukumu grīdām.<br>
+<br>
+Lietošana: liec zem mašīnām, gar apkopes koridoriem vai jebkur, kur būvei vajadzīga pastiprināta pamatne.<br>

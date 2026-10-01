@@ -1,0 +1,7 @@
+Blockdetektor
+Signalerfassung
+<&recipe>Ein Blockdetektor prüft, ob der Raum vor seiner Stirnseite belegt ist.<br>
+<br>
+Verwendung: Richte ihn auf die zu überwachende Maschinenseite, den Puffer oder den gesicherten Bereich.<br>
+<br>
+Hinweis: Gibt ein Signal aus, wenn der gegenüberliegende Block keine Luft ist.

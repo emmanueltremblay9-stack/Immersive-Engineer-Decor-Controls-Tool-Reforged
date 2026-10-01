@@ -1,0 +1,7 @@
+Detektor búrky
+Snímanie signálu
+<&recipe>Búrkový snímač spúšťa výstrahy počas búrky.<br>
+<br>
+Použitie: Umiestni ho pod otvorené nebo a pripoj k lampám alebo poplachom.<br>
+<br>
+Poznámky: Vyžaduje búrku a prístup k oblohe.

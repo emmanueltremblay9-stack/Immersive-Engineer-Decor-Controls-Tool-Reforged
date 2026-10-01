@@ -1,0 +1,5 @@
+Legar-lur trinkoa
+Lantokiko zoru-estaldura
+<&recipe>Bloke honek gainazal trinkotu eta zapaldua ematen die kanpoko lan-eremuei.<br>
+<br>
+Erabilera: jarri zamalanetako ateen, kanpoko deposituen eta makinen patioen inguruan.<br>

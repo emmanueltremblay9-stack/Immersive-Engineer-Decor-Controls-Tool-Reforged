@@ -1,0 +1,7 @@
+Impulsni prijemnik veze
+Upravljanje preko veze
+<&recipe>Impulsni prijemnik veze daje udaljenim panelima kratko redstone okidanje.<br>
+<br>
+Upotreba: Kliknite ga Ender biserom da napravite upareni biser. Desnim klikom na prijemnik ili aktiviranjem uparenog bisera proizvedite kratak impuls.<br>
+<br>
+Napomene: Impuls se sam završava nakon predviđenog trajanja.

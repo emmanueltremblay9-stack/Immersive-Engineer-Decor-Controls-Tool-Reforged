@@ -1,0 +1,5 @@
+Gollyngwr Ffatri
+Cyfleustod llawr gweithdy
+<&recipe>Mae'r bloc hwn yn gollwng eitemau wedi'u storio o wyneb wedi'i anelu.<br>
+<br>
+Defnydd: Anelwch y blaen at y pwynt gollwng, llenwch ei slotiau mewnol ac addaswch rym, ongl, oedi, rhesymeg hidlydd a modd Redstone ar ei sgrin.<br>

@@ -1,0 +1,5 @@
+Stablo krovnog dimnjaka
+Istrošen krovni deo
+<&recipe>Stablo dimnjaka za tamni krov od šindre gradi tamne, praktične krovne linije za radionice i industrijske šupe.<br>
+<br>
+Upotreba: kombinuj delove da napraviš uverljive krovne oblike.<br>

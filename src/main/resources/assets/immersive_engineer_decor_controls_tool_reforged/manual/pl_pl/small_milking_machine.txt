@@ -1,0 +1,5 @@
+Dojarka
+Urządzenie warsztatowe
+<&recipe>Mała dojarka należy do warsztatowych urządzeń do wytwarzania, magazynowania, stawiania, niszczenia, zbierania i kompaktowej automatyzacji.<br>
+<br>
+Użycie: Postaw ją w pobliżu krów i zapewnij odbiór pojemników z mlekiem lub płynu.<br>

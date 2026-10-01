@@ -1,0 +1,7 @@
+Pressa par barete Muslee
+Pressa par magnar
+<&recipe>La pressa Muslee trasforma magnar comune in rasion compatte.<br>
+<br>
+Porta pan, pomo e semi de formento, melon, suca, barbabietola o canapa industriale e dopara la pressa. La consuma uno par tipo, controla posto, fa quatro barete e se danegia.<br>
+<br>
+Se manca qualcosa o posto, no la consuma gnente.

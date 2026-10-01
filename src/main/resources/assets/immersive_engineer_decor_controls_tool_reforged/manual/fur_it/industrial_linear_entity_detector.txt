@@ -1,0 +1,7 @@
+Rilevadôr lineâr di entitâts
+Rilevament dal segnâl
+<&recipe>Un rilevadôr di entitâts al cjale i moviments dongje cence une plache visibile sul paviment.<br>
+<br>
+Ûs: coleghilu a puartis, lampis, alarmis o blocaments di sigurece des machinis.<br>
+<br>
+Notis: al controle une piçule aree ator dal bloc.

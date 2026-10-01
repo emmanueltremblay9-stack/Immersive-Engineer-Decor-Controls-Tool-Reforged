@@ -1,0 +1,7 @@
+Donderstormverklikker
+Seinwaarneming
+<&recipe>’n Donderstormsensorskakelaar gee waarskuwings wanneer dit donder.<br>
+<br>
+Gebruik: plaas dit onder die oop lug en verbind dit met lampe of alarms.<br>
+<br>
+Nota: vereis donderweer en toegang tot die lug.

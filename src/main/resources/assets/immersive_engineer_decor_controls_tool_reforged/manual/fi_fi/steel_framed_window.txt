@@ -1,0 +1,5 @@
+Teräskehysikkuna
+Suojattu näkymä
+<&recipe>Tämä kuutio säilyttää avoimet näkymät ja sopii samalla vahvistettuun tehdasrakentamiseen.<br>
+<br>
+Käyttö: Käytä siellä, missä pelaajien tulisi nähdä koneet suojatun esteen läpi.<br>

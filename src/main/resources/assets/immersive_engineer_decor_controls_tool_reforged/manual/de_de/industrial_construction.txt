@@ -1,0 +1,108 @@
+Industriebau
+Fabrikwände und Einfassungen
+Allgemeine Bauteile umfassen Türen, Fenster, Leuchten, Warnschilder, Einfassungen und Tragwerksteile, die keiner spezielleren Kategorie angehören.<br>
+<br>
+Nutze diese Seiten für Fabrikräume, Wartungsgänge, Gefahrenkennzeichnung und zweckmäßige industrielle Details.
+<np>
+Eiserne Kugelleuchte
+Kompakte Arbeitsleuchte
+<&iron_bulb_light>Dieser Block bietet kompakte Industriebeleuchtung für Gänge, Laufstege und Arbeitsbuchten.<br>
+<br>
+Verwendung: Montiere ihn an Decken, Wänden oder Kanten, wo der Raum gute Arbeitsbeleuchtung benötigt.<br>
+<np>
+Deckenkantenleuchte
+Kompakte Arbeitsleuchte
+<&iron_ceiling_edge_light>Dieser Block bietet kompakte Industriebeleuchtung für Gänge, Laufstege und Arbeitsbuchten.<br>
+<br>
+Verwendung: Montiere ihn an Decken, Wänden oder Kanten, wo der Raum gute Arbeitsbeleuchtung benötigt.<br>
+<np>
+Eingelassene Bodenkantenleuchte
+Kompakte Arbeitsleuchte
+<&iron_floor_edge_light>Dieser Block bietet kompakte Industriebeleuchtung für Gänge, Laufstege und Arbeitsbuchten.<br>
+<br>
+Verwendung: Montiere ihn an Decken, Wänden oder Kanten, wo der Raum gute Arbeitsbeleuchtung benötigt.<br>
+<np>
+Einbauleuchte
+Kompakte Arbeitsleuchte
+<&iron_inset_light>Dieser Block bietet kompakte Industriebeleuchtung für Gänge, Laufstege und Arbeitsbuchten.<br>
+<br>
+Verwendung: Montiere ihn an Decken, Wänden oder Kanten, wo der Raum gute Arbeitsbeleuchtung benötigt.<br>
+<np>
+Schild „Allgemeine Warnung“
+Gefahrenmarkierung
+<&sign_caution>Das Schild „Allgemeine Warnung“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Gefahrenschild
+Gefahrenmarkierung
+<&sign_danger>Das Schild „Vorsicht, sehr gefährlich“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Dekorschild
+Gefahrenmarkierung
+<&sign_decor>Die Schildtafel (Engineer's Decor) kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Verteidigungsschild
+Gefahrenmarkierung
+<&sign_defense>Das Schild „Vorsicht, Verteidigungsanlage“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Ausgangsschild
+Gefahrenmarkierung
+<&sign_exit>Dieses Schild kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Brandgefahr“
+Gefahrenmarkierung
+<&sign_firehazard>Das Schild „Brandgefahr“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Frostwarnung“
+Gefahrenmarkierung
+<&sign_frost>Das Schild „Frostwarnung“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Heiße Oberfläche“
+Gefahrenmarkierung
+<&sign_hotsurface>Das Schild „Vorsicht, heiße Oberfläche“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Spannungsführendes Kabel“
+Gefahrenmarkierung
+<&sign_hotwire>Das Schild „Vorsicht, spannungsführendes Kabel“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Lasergefahr“
+Gefahrenmarkierung
+<&sign_laser>Das Schild „Lasergefahr“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Magische Gefahr“
+Gefahrenmarkierung
+<&sign_magichazard>Das Schild „Vorsicht, magische Gefahr“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Magnetfeld“
+Gefahrenmarkierung
+<&sign_magneticfield>Das Schild „Vorsicht, starkes Magnetfeld“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>
+Schild „Radioaktive Gefahr“
+Gefahrenmarkierung
+<&sign_radioactive>Das Schild „Radioaktive Gefahr“ kennzeichnet Gefahren, Ausgänge und Arbeitszonen mit einem gut erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Platziere es neben Gefahrenstellen, Ausgängen, Maschinen und gesperrten Bereichen.<br>
+<np>

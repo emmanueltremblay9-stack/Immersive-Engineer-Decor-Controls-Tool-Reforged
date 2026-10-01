@@ -1,0 +1,7 @@
+Indicatore a tubo di vetro
+Misuratore di segnale
+<&recipe>Un indicatore compatto da sala di controllo mostra chiaramente la potenza di redstone sul pannello.<br>
+<br>
+Uso: montalo dove occorre controllare a colpo d’occhio la potenza di redstone vicina.<br>
+<br>
+Note: legge la potenza di redstone vicina da 0 a 15.

@@ -1,0 +1,7 @@
+Blok detektoru
+Siqnalın aşkar edilməsi
+<&recipe>Blok detektoru qarşısındakı yerin dolu olub-olmadığını yoxlayır.<br>
+<br>
+İstifadə: İzlənəcək maşın üzünə, ehtiyat sahəsinə və ya qorunan yerə yönəldin.<br>
+<br>
+Qeydlər: Qarşısındakı blok hava olmadıqda siqnal verir.

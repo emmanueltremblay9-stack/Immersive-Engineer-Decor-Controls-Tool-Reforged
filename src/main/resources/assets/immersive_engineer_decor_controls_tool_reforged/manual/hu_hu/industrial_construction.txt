@@ -1,0 +1,108 @@
+Ipari építés
+Gyári falak és szegélyek
+Az általános építőelemek közé ajtók, ablakok, lámpák, figyelmeztető táblák, szegélyek és olyan szerkezeti elemek tartoznak, amelyeknek nincs külön szakaszuk.<br>
+<br>
+Ezeket az oldalakat gyári helyiségekhez, szerelőfolyosókhoz, veszélyjelöléshez és praktikus ipari részletekhez használd.
+<np>
+Vas izzólámpa
+Kompakt munkalámpa
+<&iron_bulb_light>Ez a blokk kompakt ipari világítást ad folyosókhoz, szerelőjárdákhoz és munkaállásokhoz.<br>
+<br>
+Használat: mennyezetre, falra vagy szélre szereld, ahol jól látható munkavilágítás szükséges.<br>
+<np>
+Mennyezetszéli lámpa
+Kompakt munkalámpa
+<&iron_ceiling_edge_light>Ez a blokk kompakt ipari világítást ad folyosókhoz, szerelőjárdákhoz és munkaállásokhoz.<br>
+<br>
+Használat: mennyezetre, falra vagy szélre szereld, ahol jól látható munkavilágítás szükséges.<br>
+<np>
+Süllyesztett padlószéli lámpa
+Kompakt munkalámpa
+<&iron_floor_edge_light>Ez a blokk kompakt ipari világítást ad folyosókhoz, szerelőjárdákhoz és munkaállásokhoz.<br>
+<br>
+Használat: mennyezetre, falra vagy szélre szereld, ahol jól látható munkavilágítás szükséges.<br>
+<np>
+Süllyesztett lámpa
+Kompakt munkalámpa
+<&iron_inset_light>Ez a blokk kompakt ipari világítást ad folyosókhoz, szerelőjárdákhoz és munkaállásokhoz.<br>
+<br>
+Használat: mennyezetre, falra vagy szélre szereld, ahol jól látható munkavilágítás szükséges.<br>
+<np>
+„Általános figyelmeztetés” tábla
+Veszélyjelölő
+<&sign_caution>Az „Általános figyelmeztetés” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Veszélytábla
+Veszélyjelölő
+<&sign_danger>A „Vigyázat, itt tényleg veszélyes” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Dísztábla
+Veszélyjelölő
+<&sign_decor>A táblalap (Engineer's Decor) gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Védelmi tábla
+Veszélyjelölő
+<&sign_defense>A „Vigyázat, védelmi rendszer következik” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Kijárattábla
+Veszélyjelölő
+<&sign_exit>Ez a tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Tűzveszélytábla
+Veszélyjelölő
+<&sign_firehazard>A „Tűzveszély” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Fagyveszélytábla
+Veszélyjelölő
+<&sign_frost>A „Fagyveszély” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Forró felület táblája
+Veszélyjelölő
+<&sign_hotsurface>A „Vigyázat, forró felület” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Feszültség alatt álló vezeték táblája
+Veszélyjelölő
+<&sign_hotwire>A „Vigyázat, feszültség alatt álló vezeték” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Lézerveszélytábla
+Veszélyjelölő
+<&sign_laser>A „Lézerveszély” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Mágikus veszély táblája
+Veszélyjelölő
+<&sign_magichazard>A „Vigyázat, mágikus veszély” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Mágneses tér táblája
+Veszélyjelölő
+<&sign_magneticfield>A „Vigyázat, erős mágneses tér” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>
+Radioaktív veszély táblája
+Veszélyjelölő
+<&sign_radioactive>A „Radioaktív veszély” tábla gyári biztonsági jelzéssel jelöli a veszélyeket, kijáratokat és munkaterületeket.<br>
+<br>
+Használat: tedd veszélyek, kijáratok, gépek és korlátozott hozzáférésű területek mellé.<br>
+<np>

@@ -1,0 +1,7 @@
+Obrtna poluga
+Upravljanje redstoneom
+<&recipe>Kompaktna upravljačka komponenta daje fabričkoj gradnji jasno prepoznatljivu tačku prebacivanja redstona.<br>
+<br>
+Upotreba: Desnim klikom uključite ili isključite izlaz najveće jačine za obližnje sklopove.<br>
+<br>
+Napomene: Daje redstone najveće jačine dok je uključeno.

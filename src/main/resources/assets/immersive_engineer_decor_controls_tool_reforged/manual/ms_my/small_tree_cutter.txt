@@ -1,0 +1,5 @@
+Penebang Pokok
+Kegunaan lantai bengkel
+<&recipe>Penebang pokok kecil ialah blok kegunaan lantai bengkel untuk pertukangan, simpanan, peletakan, pemecahan, kutipan atau automasi padat.<br>
+<br>
+Penggunaan: Halakan ke pokok matang dan kumpulkan item gugur secara berasingan.<br>

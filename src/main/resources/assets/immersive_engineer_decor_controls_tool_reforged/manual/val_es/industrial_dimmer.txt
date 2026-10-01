@@ -1,0 +1,7 @@
+Regulador d’intensitat
+Senyal variable
+<&recipe>Un control giratori ajusta la intensitat de redstone des d’un frontal compacte de panell.<br>
+<br>
+Ús: fes clic dret per a pujar l’eixida un pas cada vegada; després de la potència màxima torna a zero.<br>
+<br>
+Notes: emet una potència de 0 a 15.

@@ -1,0 +1,7 @@
+Détecteur de bloc
+Détection de signal
+<&recipe>Un détecteur de bloc vérifie si l'espace devant lui est occupé.<br>
+<br>
+Utilisation : dirigez-le vers la face de machine, la réserve ou l'espace à surveiller.<br>
+<br>
+Remarque : s'active lorsque le bloc devant lui n'est pas de l'air.

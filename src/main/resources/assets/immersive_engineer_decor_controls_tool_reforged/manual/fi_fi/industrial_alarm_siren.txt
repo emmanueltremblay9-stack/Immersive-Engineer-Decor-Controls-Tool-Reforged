@@ -1,0 +1,7 @@
+Hälytyssireeni
+Signaalin ilmaisin
+<&recipe>Hälytyssireeni on lohkon sivulle kiinnitettävä redstone-ilmaisin. Sen virtatila seuraa kiinnityslohkon signaalia.<br>
+<br>
+Käyttö: Kiinnitä kiinteään sivuun ja anna virtaa ovien, koneiden, hälytysten tai paneelien valvontaan.<br>
+<br>
+Huomio: Sireeni päivittyy kerran sekunnissa niin kauan kuin signaali on aktiivinen.

@@ -1,0 +1,7 @@
+Knopka
+Redstonavaje kiravannie
+<&recipe>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.

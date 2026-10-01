@@ -1,0 +1,7 @@
+Stakleni detektor entiteta
+Otkrivanje signala
+<&recipe>Detektor entiteta prati obližnje kretanje bez vidljive podne ploče.<br>
+<br>
+Upotreba: Povežite ga s vratima, lampama, alarmima ili sigurnosnim blokadama mašina.<br>
+<br>
+Napomene: Pregleda malo područje oko bloka.

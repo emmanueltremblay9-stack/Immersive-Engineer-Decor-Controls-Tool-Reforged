@@ -1,0 +1,127 @@
+Vías de acceso
+Pasarelas e soportes
+Os postes de aceiro, os postes tratados, as grellas, as pasarelas, as varandas, as escadas, as portas, as ventás e os zapóns forman percorridos compactos de servizo polos interiores das fábricas.<br>
+<br>
+As pezas de aceiro das vías de acceso usan placas de aceiro. Fabrica ou coloca unha mesa de traballo do metal, insire un martelo de Immersive Engineering e martela lingotes de aceiro para obter placas de aceiro para postes, pasarelas, ventás, portas, varandas e outras decoracións de aceiro.<br>
+<br>
+Colócaas onde as máquinas precisen acceso de servizo, camiños elevados, pozos de mantemento ou bordos máis seguros.
+<np>
+Poste de aceiro groso
+Peza de armazón estrutural
+<&thick_steel_pole>O poste recto de aceiro groso achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Cabeza de poste groso
+Peza de armazón estrutural
+<&thick_steel_pole_head>A cabeza ou base do poste recto de aceiro groso achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Poste de aceiro fino
+Peza de armazón estrutural
+<&thin_steel_pole>O poste recto de aceiro fino achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Cabeza de poste fino
+Peza de armazón estrutural
+<&thin_steel_pole_head>A cabeza ou base do poste recto de aceiro fino achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Poste de madeira tratada
+Peza de armazón estrutural
+<&treated_wood_pole>O poste recto de madeira tratada achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Cabeza de poste tratado
+Peza de armazón estrutural
+<&treated_wood_pole_head>A cabeza ou base do poste recto de madeira tratada achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Soporte de poste tratado
+Peza de armazón estrutural
+<&treated_wood_pole_support>O soporte do poste recto de madeira tratada achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Soporte de aceiro de dobre T
+Peza de armazón estrutural
+<&steel_double_t_support>Este bloque achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>
+<np>
+Grella de chan de aceiro
+Peza de acceso de servizo
+<&steel_floor_grating>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Pasarela de aceiro
+Peza de acceso de servizo
+<&steel_catwalk>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Escaleiras de pasarela de aceiro
+Peza de acceso de servizo
+<&steel_catwalk_stairs>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Pasarela de aceiro elevada
+Peza de acceso de servizo
+<&steel_catwalk_ta>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Varanda de aceiro
+Peza de acceso de servizo
+<&steel_railing>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Valado de malla de aceiro
+Peza de acceso de servizo
+<&steel_mesh_fence>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Cancela de malla de aceiro
+Peza de acceso de servizo
+<&steel_mesh_fence_gate>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Escada de barras metálicas
+Peza de acceso de servizo
+<&metal_rung_ladder>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Chanzos metálicos alternos
+Peza de acceso de servizo
+<&metal_rung_steps>Este bloque crea percorridos de servizo doados de identificar arredor das máquinas.<br>
+<br>
+Uso: colócao como acceso de mantemento arredor das máquinas, nas plantas superiores e nos pozos de servizo.<br>
+<np>
+Ventá con marco de aceiro
+Visibilidade protexida
+<&steel_framed_window>Este bloque mantén a visibilidade sen desentoar coa construción reforzada da fábrica.<br>
+<br>
+Uso: colócao nun oco dun bloque na parede onde os xogadores deban ver as máquinas a través dunha barreira protectora.<br>
+<np>
+Porta corrediza metálica
+Punto de acceso industrial
+<&metal_sliding_door>Este bloque proporciona un punto de acceso robusto a salas de servizo, pozos, tellados e recintos de máquinas.<br>
+<br>
+Uso: instálao onde a construción precise unha abertura de mantemento controlada.<br>
+<np>
+Zapón abatible de ferro
+Punto de acceso industrial
+<&iron_hatch>Este bloque proporciona un punto de acceso robusto a salas de servizo, pozos, tellados e recintos de máquinas.<br>
+<br>
+Uso: instálao onde a construción precise unha abertura de mantemento controlada.<br>

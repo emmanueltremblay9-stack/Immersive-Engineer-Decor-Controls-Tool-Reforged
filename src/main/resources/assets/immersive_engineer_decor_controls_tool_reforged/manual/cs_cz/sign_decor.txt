@@ -1,0 +1,5 @@
+Ozdobná cedule
+Značka nebezpečí
+<&recipe>Popisovací cedule (Engineer's Decor) označuje nebezpečí, východy a pracovní zóny srozumitelným továrním bezpečnostním značením.<br>
+<br>
+Použití: Umísti ji vedle nebezpečných míst, východů, strojů a zakázaných zón.<br>

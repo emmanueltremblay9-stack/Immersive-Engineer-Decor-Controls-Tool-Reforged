@@ -1,0 +1,101 @@
+Dächer und Hof
+Fabrikusstattig dusse
+Dachblöck, Hofschotter und alti Fabrikholzteil mached Usseschuppe, Arbeitshöf, Ladeberiich und verwittereti Fabrikränder fertig.<br>
+<br>
+Kombinier die Teil mit Muurwärk und Zuegangswäg, demit d'Industriebaute dusse au us de Entfernig guet erkennbar bliibed.
+<np>
+Dunkels Schindeldach
+Verwitterets Dachbauteil
+<&dark_shingle_roof>Dä Block git Werkstätte und Industrieschuppe e dunkli, zweckmässigi Dachform.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dachschneefang
+Verwitterets Dachbauteil
+<&dark_shingle_roof_metallized>De Schneefang fürs dunkle Schindeldach ergänzt dunkli, zweckmässigi Dachforme für Werkstätte und Industrieschuppe.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dunkels Schindeldach
+Verwitterets Dachbauteil
+<&dark_shingle_roof_skylight>S'Dachfänschter fürs dunkle Schindeldach ergänzt dunkli, zweckmässigi Dachforme für Werkstätte und Industrieschuppe.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dachchämischaft
+Verwitterets Dachbauteil
+<&dark_shingle_roof_chimneytrunk>De Chämischaft fürs dunkle Schindeldach ergänzt dunkli, zweckmässigi Dachforme für Werkstätte und Industrieschuppe.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dach-Kabeldurchfüehrig
+Verwitterets Dachbauteil
+<&dark_shingle_roof_wireconduit>D'Kabeldurchfüehrig fürs dunkle Schindeldach ergänzt dunkli, zweckmässigi Dachforme für Werkstätte und Industrieschuppe.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dunkels Schindeldach
+Verwitterets Dachbauteil
+<&dark_shingle_roof_chimney>S'Chämi fürs dunkle Schindeldach ergänzt dunkli, zweckmässigi Dachforme für Werkstätte und Industrieschuppe.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dunkle Schindeldachblock
+Verwitterets Dachbauteil
+<&dark_shingle_roof_block>Dä Block git Werkstätte und Industrieschuppe e dunkli, zweckmässigi Dachform.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dunkli Schindeldachstufe
+Verwitterets Dachbauteil
+<&dark_shingle_roof_slab>Dä Block git Werkstätte und Industrieschuppe e dunkli, zweckmässigi Dachform.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Dunkli Schindeldachstufe
+Verwitterets Dachbauteil
+<&dark_shingle_roof_slabslice>D'dunkli Schindeldachviertelstufe ergänzt dunkli, zweckmässigi Dachforme für Werkstätte und Industrieschuppe.<br>
+<br>
+Verwendig: Kombinier d'Teil zu glaubwürdige Dachforme.<br>
+<np>
+Verdichteti Chieserde
+Bodebelag für Arbeitsplätz
+<&dense_grit_dirt_block>Dä Block git Arbeitsplätz dusse e verdichteti, zertrampelti Oberflächi.<br>
+<br>
+Verwendig: Verleg en bi Ladetüre, Ussetanks und uf Maschinehöf.<br>
+<np>
+Verdichtete Chiessand
+Bodebelag für Arbeitsplätz
+<&dense_grit_sand_block>Dä Block git Arbeitsplätz dusse e verdichteti, zertrampelti Oberflächi.<br>
+<br>
+Verwendig: Verleg en bi Ladetüre, Ussetanks und uf Maschinehöf.<br>
+<np>
+Alti Holzbrätter
+Alts Werkstattholz
+<&old_industrial_wood_planks>D'alte Fabrikholzbrätter bringed gealterets Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>
+<np>
+Alti Fabrikholzstufe
+Alts Werkstattholz
+<&old_industrial_wood_slab>Dä Block bringt alts Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>
+<np>
+Alti Holzstäge
+Alts Werkstattholz
+<&old_industrial_wood_stairs>D'alti Fabrikholzstäge bringt gealterets Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>
+<np>
+Alti Holzviertelstufe
+Alts Werkstattholz
+<&old_industrial_wood_slabslice>D'alti Fabrikholzviertelstufe bringt gealterets Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>
+<np>
+Alti Fabrikholztür
+Alts Werkstattholz
+<&old_industrial_wood_door>Dä Block bringt alts Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>

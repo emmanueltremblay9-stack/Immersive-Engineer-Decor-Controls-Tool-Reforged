@@ -1,0 +1,7 @@
+Mea Hahai
+Hōʻailona wahi i mālama ʻia
+<&recipe>Mālama ka Tracker i ke kūlana o kahi palaka i loko o ka mea.<br>
+<br>
+Hoʻohana: E kaomi i ka palaka e mālama i kona dimension a me coordinates. Hōʻike ka tooltip i ke kūlana. E sneak-use i ka Tracker e holoi i ka pahuhopu.<br>
+<br>
+E hoʻohana e kaha i nā mīkini, nā lālā ana, nā hoʻomalu mamao, a me nā kahua kūkulu i pau ʻole ma mua o ka hoʻi ʻana mai me nā mea hana a me nā mea kūkulu.

@@ -1,0 +1,5 @@
+Solarpanel
+Hilfsgerät für die Werkstatt
+<&recipe>Das kleine Solarpanel ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Sorge für freien Himmel und schließe Geräte mit geringem Energiebedarf an.<br>

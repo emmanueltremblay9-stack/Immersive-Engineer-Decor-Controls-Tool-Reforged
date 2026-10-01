@@ -1,0 +1,5 @@
+Oven fer the laboratory
+Small processin' contraption
+<&recipe>The laboratory oven smelts with solid fuel in a small corner o' yer workshop.<br>
+<br>
+Orders: Use solid fuel fer small batches o' smeltin'.<br>

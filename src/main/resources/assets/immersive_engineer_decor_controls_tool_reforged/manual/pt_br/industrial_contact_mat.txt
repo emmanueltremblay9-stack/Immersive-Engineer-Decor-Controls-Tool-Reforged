@@ -1,0 +1,7 @@
+Tapete de contato
+Pulso por pressão
+<&recipe>Um interruptor de contato envia um sinal breve com o movimento no piso ou no alçapão.<br>
+<br>
+Uso: Coloque onde entidades passam por um corredor de serviço, carregador ou rota protegida.<br>
+<br>
+Observações: Emite um pulso breve após o contato com uma entidade.

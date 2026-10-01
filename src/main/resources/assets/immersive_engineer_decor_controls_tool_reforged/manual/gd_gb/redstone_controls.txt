@@ -1,0 +1,789 @@
+Smachdan redstone
+Tomhasan is uidheam chomharran
+Tionndaidhidh uidheam-smachd redstone falaichte gu panalan factaraidh a ghabhas leughadh, mothachairean, comharraichean, suidsean, rabhaidhean agus uidheam chomharran ceangailte.<br>
+<br>
+Cleachd na duilleagan seo nuair a bhios tu a' togail ionadan obrachaidh, bùird chomharran, cuairtean sàbhailteachd agus smachdan iomallach.
+<np>
+Targaid saighde
+Puls goirid
+<&arrow_target>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Mothaiche dorais
+Smachd redstone
+<&door_sensor_switch>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan àrdaicheir
+Smachd redstone
+<&elevator_button>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Putan glainne
+Smachd redstone
+<&glass_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan glainne
+Smachd redstone
+<&glass_small_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan-suathaidh glainne
+Smachd redstone
+<&glass_touch_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan inneil
+Smachd redstone
+<&industrial_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan
+Smachd redstone
+<&industrial_double_pole_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan inneil le dìon
+Smachd redstone
+<&industrial_fenced_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan cnag
+Smachd redstone
+<&industrial_knock_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Seann phutan sgeadachail
+Smachd redstone
+<&oldfancy_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Seann phutan sgeadachail
+Smachd redstone
+<&oldfancy_small_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Seann phutan slabhraidh sgeadachail
+Puls goirid
+<&oldfancy_spring_reset_chain>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan dùthchail
+Smachd redstone
+<&rustic_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan tàirne dùthchail
+Smachd redstone
+<&rustic_nail_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan beag dùthchail
+Smachd redstone
+<&rustic_small_button>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Putan slabhraidh dùthchail
+Puls goirid
+<&rustic_spring_reset_chain>Bheir suidse geàrr-ùine puls redstone glan aig làn-neart.<br>
+<br>
+Cleachdadh: cleachd i airson tòiseachadh innealan, fosgladh dhorsan, rabhaidhean no cuairtean aon-uaire.<br>
+<br>
+Nòtaichean: ath-shuidhichidh i an dèidh a' phuls chlàraichte.
+<np>
+Pleata-suathaidh glainne
+Puls brùthaidh
+<&glass_contact_mat>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Uidheam-suathaidh dorais glainne
+Puls brùthaidh
+<&glass_door_contact_mat>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Brat-suathaidh
+Puls brùthaidh
+<&industrial_contact_mat>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Brat-suathaidh dorais
+Puls brùthaidh
+<&industrial_door_contact_mat>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Mothaiche tuiteam troimhe
+Mothachadh chomharran
+<&industrial_fallthrough_detector>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Putan-coise
+Smachd redstone
+<&industrial_foot_button>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Doras gnìomhachais mothachail do bhuille
+Puls brùthaidh
+<&industrial_high_sensitive_trapdoor>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Brat-suathaidh mothachail do bhuille
+Puls brùthaidh
+<&industrial_shock_sensitive_contact_mat>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Doras-leigeil air a ghnìomhachadh le buille
+Puls brùthaidh
+<&industrial_shock_sensitive_trapdoor>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Lus cumhachd dearg
+Puls brùthaidh
+<&red_power_plant>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Pleata-brùthaidh dùthchail
+Puls brùthaidh
+<&rustic_contact_plate>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Pleata-brùthaidh dorais dhùthchail
+Puls brùthaidh
+<&rustic_door_contact_plate>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Mothaiche tuiteam dùthchail
+Mothachadh chomharran
+<&rustic_fallthrough_detector>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Doras dùthchail mothachail do bhuille
+Puls brùthaidh
+<&rustic_high_sensitive_trapdoor>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Pleata dhùthchail mothachail do bhuille
+Puls brùthaidh
+<&rustic_shock_sensitive_plate>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Doras dùthchail mothachail do bhuille
+Puls brùthaidh
+<&rustic_shock_sensitive_trapdoor>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Lus cumhachd buidhe
+Puls brùthaidh
+<&yellow_power_plant>Cuiridh suidse-suathaidh comharra goirid bho ghluasad air làr no doras-leigeil.<br>
+<br>
+Cleachdadh: cuir e far an tèid eintiteasan tro thrannsa-seirbheis, inneal-luchdachaidh no slighe dhìonta.<br>
+<br>
+Nòtaichean: bheir e puls goirid an dèidh suathadh ri eintiteas.
+<np>
+Cloc-ama làitheil glainne
+Comharra solas an latha
+<&glass_day_timer>Leanaidh suidse cloc-ama a' chuid làitheil de chuairt an t-saoghail.<br>
+<br>
+Cleachdadh: cleachd i airson lampaichean clòis, còmhlaichean agus smachdan factaraidh nach obraich ach tron latha.<br>
+<br>
+Nòtaichean: tha toise le solas speura a dhìth.
+<np>
+Mothaiche eintiteasan glainne
+Mothachadh chomharran
+<&glass_entity_detector>Coimheadaidh mothaiche eintiteasan air gluasad faisg air gun phleata làir fhaicsinneach.<br>
+<br>
+Cleachdadh: ceangail e ri dorsan, lampaichean, rabhaidhean no co-ghlasaidhean innealan.<br>
+<br>
+Nòtaichean: sganaidh e àite beag timcheall air a' bhloca.
+<np>
+Comharra eadar-amail glainne
+Puls le àm suidhichte
+<&glass_interval_timer>Bheir suidse cloc-ama dhlùth puls redstone clàraichte.<br>
+<br>
+Cleachdadh: cleachd i far a bheil feum aig uidheam beag air smachd cunbhalach no le dàil.<br>
+<br>
+Nòtaichean: cleachdaidh i pulsaichean redstone clàraichte.
+<np>
+Mothaiche loidhneach glainne
+Mothachadh chomharran
+<&glass_linear_entity_detector>Coimheadaidh mothaiche eintiteasan air gluasad faisg air gun phleata làir fhaicsinneach.<br>
+<br>
+Cleachdadh: ceangail e ri dorsan, lampaichean, rabhaidhean no co-ghlasaidhean innealan.<br>
+<br>
+Nòtaichean: sganaidh e àite beag timcheall air a' bhloca.
+<np>
+Mothaiche bhlocaichean
+Mothachadh chomharran
+<&industrial_block_detector>Dearbhaidh mothaiche bhlocaichean a bheil rudeigin san àite air a bheulaibh.<br>
+<br>
+Cleachdadh: cuir e a' coimhead air aghaidh inneil, bufair no àite fo dhìon air a bheil thu airson sùil a chumail.<br>
+<br>
+Nòtaichean: bheir e cumhachd mura h-eil am bloca air a bheulaibh na adhar.
+<np>
+Cloc-ama làitheil
+Comharra solas an latha
+<&industrial_day_timer>Leanaidh suidse cloc-ama a' chuid làitheil de chuairt an t-saoghail.<br>
+<br>
+Cleachdadh: cleachd i airson lampaichean clòis, còmhlaichean agus smachdan factaraidh nach obraich ach tron latha.<br>
+<br>
+Nòtaichean: tha toise le solas speura a dhìth.
+<np>
+Mothaiche eintiteasan
+Mothachadh chomharran
+<&industrial_entity_detector>Coimheadaidh mothaiche eintiteasan air gluasad faisg air gun phleata làir fhaicsinneach.<br>
+<br>
+Cleachdadh: ceangail e ri dorsan, lampaichean, rabhaidhean no co-ghlasaidhean innealan.<br>
+<br>
+Nòtaichean: sganaidh e àite beag timcheall air a' bhloca.
+<np>
+Cloc eadar-amail
+Puls le àm suidhichte
+<&industrial_interval_timer>Bheir suidse cloc-ama dhlùth puls redstone clàraichte.<br>
+<br>
+Cleachdadh: cleachd i far a bheil feum aig uidheam beag air smachd cunbhalach no le dàil.<br>
+<br>
+Nòtaichean: cleachdaidh i pulsaichean redstone clàraichte.
+<np>
+Mothaiche solais
+Mothachadh chomharran
+<&industrial_light_sensor>Tionndaidhidh mothaiche solais soilleireachd ionadail gu smachd redstone.<br>
+<br>
+Cleachdadh: cleachd e airson lampaichean fèin-obrachail, còmhlaichean agus cuairtean faicsinneachd.<br>
+<br>
+Nòtaichean: bheir e cumhachd aig soilleireachd amh 8 no nas àirde.
+<np>
+Mothaiche stoirme
+Mothachadh chomharran
+<&industrial_lightning_sensor>Cuiridh mothaiche stoirme rabhaidhean an gnìomh nuair a bhios tàirneanach ann.<br>
+<br>
+Cleachdadh: cuir e fon adhar fhosgailte agus ceangail e ri lampaichean no rabhaidhean.<br>
+<br>
+Nòtaichean: feumaidh tàirneanach a bhith ann agus an t-adhar os a chionn a bhith fosgailte.
+<np>
+Mothaiche eintiteasan loidhneach
+Mothachadh chomharran
+<&industrial_linear_entity_detector>Coimheadaidh mothaiche eintiteasan air gluasad faisg air gun phleata làir fhaicsinneach.<br>
+<br>
+Cleachdadh: ceangail e ri dorsan, lampaichean, rabhaidhean no co-ghlasaidhean innealan.<br>
+<br>
+Nòtaichean: sganaidh e àite beag timcheall air a' bhloca.
+<np>
+Mothaiche uisge-adhair
+Mothachadh chomharran
+<&industrial_rain_sensor>Tionndaidhidh mothaiche sìde uisge-adhair san àite aige gu redstone.<br>
+<br>
+Cleachdadh: cuir e far am faigh am bloca os a chionn uisge-adhair.<br>
+<br>
+Nòtaichean: dearbhaidh e uisge-adhair os cionn a' mhothaiche.
+<np>
+Suidse glainne dà-sheasmhach
+Smachd redstone
+<&glass_rotary_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Suidse-suathaidh glainne dà-sheasmhach
+Smachd redstone
+<&glass_touch_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Glainne mhothachail orains
+Glainne chomharran
+<&orange_sensitiveglass>Cumaidh bloca glainne a fhreagras do redstone loidhnichean-seallaidh fosgailte agus seallaidh e staid a' chomharra.<br>
+<br>
+Cleachdadh: cleachd e ann an uinneagan seòmar-smachd, panalan le solas agus glainne dìonta factaraidh.<br>
+<br>
+Nòtaichean: atharraichidh e staid a rèir cumhachd redstone faisg air.
+<np>
+Glainne mhothachail le solas
+Glainne chomharran
+<&sensitive_glass_block>Cumaidh bloca glainne a fhreagras do redstone loidhnichean-seallaidh fosgailte agus seallaidh e staid a' chomharra.<br>
+<br>
+Cleachdadh: cleachd e ann an uinneagan seòmar-smachd, panalan le solas agus glainne dìonta factaraidh.<br>
+<br>
+Nòtaichean: atharraichidh e staid a rèir cumhachd redstone faisg air.
+<np>
+Glainne mhothachail dhathte
+Glainne chomharran
+<&stained_sensitiveglass>Cumaidh bloca glainne a fhreagras do redstone loidhnichean-seallaidh fosgailte agus seallaidh e staid a' chomharra.<br>
+<br>
+Cleachdadh: cleachd e ann an uinneagan seòmar-smachd, panalan le solas agus glainne dìonta factaraidh.<br>
+<br>
+Nòtaichean: atharraichidh e staid a rèir cumhachd redstone faisg air.
+<np>
+Tomhas bàr glainne
+Tomhas chomharran
+<&glass_vertical_bar_gauge>Seallaidh tomhas dlùth airson seòmar-smachd neart redstone gu soilleir air panal.<br>
+<br>
+Cleachdadh: cuir e far am faicear cumhachd redstone faisg air ann an aon sùil.<br>
+<br>
+Nòtaichean: leughaidh e neart redstone faisg air eadar 0 agus 15.
+<np>
+Tomhas analagach
+Tomhas chomharran
+<&industrial_analog_angular_gauge>Seallaidh tomhas dlùth airson seòmar-smachd neart redstone gu soilleir air panal.<br>
+<br>
+Cleachdadh: cuir e far am faicear cumhachd redstone faisg air ann an aon sùil.<br>
+<br>
+Nòtaichean: leughaidh e neart redstone faisg air eadar 0 agus 15.
+<np>
+Tomhas bholtmheadair
+Tomhas chomharran
+<&industrial_analog_horizontal_gauge>Seallaidh tomhas dlùth airson seòmar-smachd neart redstone gu soilleir air panal.<br>
+<br>
+Cleachdadh: cuir e far am faicear cumhachd redstone faisg air ann an aon sùil.<br>
+<br>
+Nòtaichean: leughaidh e neart redstone faisg air eadar 0 agus 15.
+<np>
+Tomhas didseatach
+Neart chomharran a ghabhas leughadh
+<&industrial_small_digital_gauge>Seallaidh tomhas dlùth airson seòmar-smachd neart redstone gu soilleir air panal.<br>
+<br>
+Cleachdadh: cuir e far am faicear cumhachd redstone faisg air ann an aon sùil.<br>
+<br>
+Nòtaichean: leughaidh e neart redstone faisg air eadar 0 agus 15.
+<np>
+Tomhas tiùba glainne
+Tomhas chomharran
+<&industrial_tube_gauge>Seallaidh tomhas dlùth airson seòmar-smachd neart redstone gu soilleir air panal.<br>
+<br>
+Cleachdadh: cuir e far am faicear cumhachd redstone faisg air ann an aon sùil.<br>
+<br>
+Nòtaichean: leughaidh e neart redstone faisg air eadar 0 agus 15.
+<np>
+Tomhas bàr analagach
+Tomhas chomharran
+<&industrial_vertical_bar_gauge>Seallaidh tomhas dlùth airson seòmar-smachd neart redstone gu soilleir air panal.<br>
+<br>
+Cleachdadh: cuir e far am faicear cumhachd redstone faisg air ann an aon sùil.<br>
+<br>
+Nòtaichean: leughaidh e neart redstone faisg air eadar 0 agus 15.
+<np>
+Lampa rabhaidh
+Fios-air-ais chomharran
+<&industrial_alarm_lamp>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+Dùdach rabhaidh
+Fios-air-ais chomharran
+<&industrial_alarm_siren>’S e comharra redstone air aghaidh a th’ anns an dùdach-rabhaidh. Tha a staid chumhachdaichte a’ leantainn a’ chomharra bhon bhloc ris a bheil i ceangailte.<br>
+<br>
+Cleachdadh: ceangail i ri aghaidh chruaidh agus thoir cumhachd dhi gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: ùraichidh an dùdach aon uair san diog fhad 's a tha an comharra ris a bheil i ceangailte gnìomhach.
+<np>
+LED priobach
+Fios-air-ais chomharran
+<&industrial_blinking_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED uaine priobach
+Fios-air-ais chomharran
+<&industrial_green_blinking_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED uaine
+Fios-air-ais chomharran
+<&industrial_green_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED dearg
+Fios-air-ais chomharran
+<&industrial_red_blinking_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED dearg
+Fios-air-ais chomharran
+<&industrial_red_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED geal priobach
+Fios-air-ais chomharran
+<&industrial_white_blinking_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED geal
+Fios-air-ais chomharran
+<&industrial_white_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED buidhe priobach
+Fios-air-ais chomharran
+<&industrial_yellow_blinking_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+LED buidhe
+Fios-air-ais chomharran
+<&industrial_yellow_led>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+Semeafòr dùthchail
+Fios-air-ais chomharran
+<&rustic_semaphore>Tionndaidhidh comharraiche dlùth redstone falaichte gu fios-air-ais faicsinneach sa fhactaraidh.<br>
+<br>
+Cleachdadh: ceangail e ris an uèirleadh ri taobh a' chomharra gus sùil a chumail air dorsan, innealan, rabhaidhean no panalan.<br>
+<br>
+Nòtaichean: atharraichidh e staid nuair a bhios cumhachd redstone faisg air.
+<np>
+Suidse inneil-choimeis
+Comharra ceangailte
+<&industrial_comparator_switch>Leughaidh suidse-mothachaidh dhlùth am bloca air a bheil i suidhichte agus tionndaidhidh i an leughadh sin gu às-chur panail sìmplidh.<br>
+<br>
+Cleachdadh: cuir air clàran-stuthan, tancaichean no uidheam redstone i. Nuair a dh'aithriseas am bloca ris a bheil i ceangailte às-chur inneil-choimeis, soithich no redstone, bheir an suidse redstone làn-neart.<br>
+<br>
+Nòtaichean: cleachd i gus ìrean stòraidh no uèirleadh falaichte a thionndadh gu loidhnichean-smachd soilleir air/dheth.
+<np>
+Lùghdaiche cumhachd
+Comharra caochlaideach
+<&industrial_dimmer>Suidhichidh smachd cuairteach neart redstone bho aghaidh panail dhlùth.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus an t-às-chur àrdachadh ceum air cheum, agus air ais gu neoni an dèidh làn-neart.<br>
+<br>
+Nòtaichean: bheir e neart eadar 0 agus 15.
+<np>
+Putan stad èiginn
+Smachd redstone
+<&industrial_estop_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Bacadair drabhailt
+Smachd redstone
+<&industrial_hopper_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Suidse cnag
+Smachd redstone
+<&industrial_knock_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Luamhan
+Smachd redstone
+<&industrial_lever>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Suidse inneil dà phutan
+Smachd redstone
+<&industrial_machine_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Làmh-tharraing
+Smachd redstone
+<&industrial_pull_handle>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Luamhan cuairteach
+Smachd redstone
+<&industrial_rotary_lever>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Suidse inneil cuairteach
+Smachd redstone
+<&industrial_rotary_machine_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Luamhan-suathaidh
+Smachd redstone
+<&industrial_small_lever>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Suidse
+Smachd redstone
+<&industrialswitch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Suidse solais
+Smachd redstone
+<&light_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Suidse bhalbha
+Smachd redstone
+<&valve_wheel_switch>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Glacadair puls ann an cèis
+Smachd ceangailte
+<&industrial_switchlink_cased_pulse_receiver>Bheir glacadair puls ceangailte ann an cèis brosnachadh redstone goirid do phanalan iomallach.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Dèan briogadh deas air no brosnaich an neamhnaid cheangailte gus puls goirid a thoirt seachad.<br>
+<br>
+Nòtaichean: ath-shuidhichidh am puls e fhèin an dèidh na h-ùine clàraichte aige.
+<np>
+Glacadair ceangail ann an cèis
+Smachd ceangailte
+<&industrial_switchlink_cased_receiver>Bheir glacadair ceangailte ann an cèis targaid redstone làidir do phanalan iomallach.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Dèan briogadh deas dìreach air a' ghlacadair gus a thogladh le làimh.<br>
+<br>
+Nòtaichean: toglaichidh neamhnaid cheangailte an glacadair seo nuair a chleachdar i fhad 's a tha thu a' snàgadh.
+<np>
+Glacadair ceangail puls
+Smachd ceangailte
+<&industrial_switchlink_pulse_receiver>Bheir glacadair puls ceangailte brosnachadh redstone goirid do phanalan iomallach.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Dèan briogadh deas air no brosnaich an neamhnaid cheangailte gus puls goirid a thoirt seachad.<br>
+<br>
+Nòtaichean: ath-shuidhichidh am puls e fhèin an dèidh na h-ùine clàraichte aige.
+<np>
+Ath-sheachadair ceangail puls
+Smachd ceangailte
+<&industrial_switchlink_pulse_relay>Bheir uidheam ann an stoidhle ath-sheachadair puing suidsidh ionadail dhlùth do thogalaichean panail.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air. Cleachd blocaichean glacadair nuair a bhios gnìomhachadh le neamhnaid cheangailte a dhìth ort.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Glacadair Ceangal suidse
+Smachd ceangailte
+<&industrial_switchlink_receiver>Bheir glacadair ceangailte targaid redstone làn-neart do phanalan iomallach.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Dèan briogadh deas dìreach air a' ghlacadair gus a thogladh le làimh.<br>
+<br>
+Nòtaichean: toglaichidh neamhnaid cheangailte an glacadair seo nuair a chleachdar i fhad 's a tha thu a' snàgadh.
+<np>
+Glacadair ceangail analagaich
+Smachd ceangailte
+<&industrial_switchlink_receiver_analog>Bheir glacadair ceangailte targaid iomallach fhaicsinneach do phanalan-smachd.<br>
+<br>
+Cleachdadh: briog air le neamhnaid Ender gus neamhnaid cheangailte a chruthachadh. Cleachd an neamhnaid sin fhad 's a tha thu a' snàgadh gus an glacadair a ghnìomhachadh air astar.<br>
+<br>
+Nòtaichean: bheir an glacadair seo comharra redstone làn-neart nuair a bhrosnaichear e.
+<np>
+Ath-sheachadair Ceangal suidse
+Smachd ceangailte
+<&industrial_switchlink_relay>Bheir uidheam ann an stoidhle ath-sheachadair puing suidsidh ionadail dhlùth do thogalaichean panail.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air. Cleachd blocaichean glacadair nuair a bhios gnìomhachadh le neamhnaid cheangailte a dhìth ort.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Ath-sheachadair ceangail analagaich
+Smachd ceangailte
+<&industrial_switchlink_relay_analog>Bheir uidheam ann an stoidhle ath-sheachadair puing suidsidh ionadail dhlùth do thogalaichean panail.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air. Cleachd blocaichean glacadair nuair a bhios gnìomhachadh le neamhnaid cheangailte a dhìth ort.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Neamhnaid Ceangal suidse
+Smachd ceangailte
+<&switchlink_pearl>Stòraidh neamhnaid cheangailte targaid glacadair airson smachdan factaraidh iomallach.<br>
+<br>
+Cleachdadh: briog air glacadair Ceangal suidse le neamhnaid Ender gus tè a chruthachadh. Cleachd an neamhnaid cheangailte fhad 's a tha thu a' snàgadh gus an glacadair a chaidh a stòradh a ghnìomhachadh.<br>
+<br>
+Nòtaichean: feumaidh an targaid a bhith luchdaichte, san aon toise agus taobh a-staigh an raoin.
+<np>
+Seann luamhan sgeadachail
+Smachd redstone
+<&oldfancy_bistableswitch1>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Seann luamhan cuairteach sgeadachail
+Smachd redstone
+<&oldfancy_bistableswitch2>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Luamhan cuairteach dùthchail
+Smachd redstone
+<&rustic_angular_lever>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Luamhan dùthchail
+Smachd redstone
+<&rustic_lever>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Luamhan tàirne dùthchail
+Smachd redstone
+<&rustic_nail_lever>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.
+<np>
+Luamhan dùthchail dà lùdag
+Smachd redstone
+<&rustic_two_hinge_lever>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.

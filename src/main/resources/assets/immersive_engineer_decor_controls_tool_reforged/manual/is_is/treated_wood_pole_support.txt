@@ -1,0 +1,5 @@
+Stoð á meðhöndlaðan staur
+Burðargrindarhluti
+<&recipe>Stoðin á beinan staur úr meðhöndluðum viði veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>

@@ -1,0 +1,5 @@
+Blok buzgich
+Ustaxona yordamchi qurilmasi
+<&recipe>Kichik blok buzgich yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: ishchi yuzasini olib tashlanadigan blokka qarating.<br>

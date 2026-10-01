@@ -1,0 +1,5 @@
+Recoletor de fluidos em funil
+Componentes de tubagem de fluidos
+<&recipe>O pequeno recoletor de fluidos em funil é um componente compacto para pequenos depósitos, tubagens, pontos de recolha e caudal controlado por redstone.<br>
+<br>
+Uso: Coloca-o por baixo do ponto de recolha de fluido e encaminha o conteúdo armazenado para depósitos ou tubagens inferiores.<br>

@@ -1,0 +1,7 @@
+Digitale mjitter
+Of te lêzen sinjaalsterkte
+<&recipe>In kompakte mjitter foar de kontrôlekeamer lit de redstonesterkte as in dúdlike panielwearde sjen.<br>
+<br>
+Gebrûk: Montearje him dêr'tst de redstone-enerzjy tichteby yn ien eachopslach kontrolearje kinst.<br>
+<br>
+Opmerking: Lêst de redstonesterkte tichteby fan 0 oant 15.

@@ -1,0 +1,101 @@
+Stogai ir kiemas
+Lauko fabriko įranga
+Stogo blokai, žvyringos kiemo dangos ir senos pramoninės medienos dalys padeda užbaigti lauko pašiūres, darbo kiemus, pakrovimo vietas ir orų paveiktus fabriko pakraščius.<br>
+<br>
+Derink šias dalis su mūru ir priėjimo takais, kad lauko pramoniniai statiniai būtų aiškiai atpažįstami iš tolo.
+<np>
+Tamsių malksnų stogas
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof>Šis blokas kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Stogo sniego užtvara
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_metallized>Tamsių malksnų stogo sniego užtvara kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Tamsių malksnų stogas
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_skylight>Tamsių malksnų stoglangis kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Stogo kamino korpusas
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_chimneytrunk>Tamsių malksnų stogo kamino korpusas kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Stogo laido įvadas
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_wireconduit>Tamsių malksnų stogo laido įvadas kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Tamsių malksnų stogas
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_chimney>Tamsių malksnų stogo kaminas kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Tamsių malksnų stogo blokas
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_block>Šis blokas kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Tamsių malksnų stogo pusblokis
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_slab>Šis blokas kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Tamsių malksnų stogo pusblokis
+Apdūlėjusi stogo dalis
+<&dark_shingle_roof_slabslice>Plona tamsių malksnų stogo plokštelė kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>
+<np>
+Sutankinta žvyringa žemė
+Darbovietės grunto danga
+<&dense_grit_dirt_block>Šis blokas suteikia lauko darbo vietoms sutankintą, išmindytą paviršių.<br>
+<br>
+Naudojimas: klok aplink pakrovimo duris, lauko talpyklas ir mašinų kiemus.<br>
+<np>
+Sutankintas žvyringas smėlis
+Darbovietės grunto danga
+<&dense_grit_sand_block>Šis blokas suteikia lauko darbo vietoms sutankintą, išmindytą paviršių.<br>
+<br>
+Naudojimas: klok aplink pakrovimo duris, lauko talpyklas ir mašinų kiemus.<br>
+<np>
+Senos medinės lentos
+Sena dirbtuvių mediena
+<&old_industrial_wood_planks>Senos pramoninės medinės lentos suteikia sendintos dirbtuvių medienos grindims, laipteliams, durims ir jaukiai vidaus apdailai.<br>
+<br>
+Naudojimas: naudok senoms dirbtuvių grindims, laiptams, durims ir apdailai.<br>
+<np>
+Senas pramoninės medienos pusblokis
+Sena dirbtuvių mediena
+<&old_industrial_wood_slab>Šis blokas suteikia sendintos dirbtuvių medienos grindims, laipteliams, durims ir jaukiai vidaus apdailai.<br>
+<br>
+Naudojimas: naudok senoms dirbtuvių grindims, laiptams, durims ir apdailai.<br>
+<np>
+Seni mediniai laiptai
+Sena dirbtuvių mediena
+<&old_industrial_wood_stairs>Seni pramoniniai mediniai laiptai suteikia sendintos dirbtuvių medienos grindims, laipteliams, durims ir jaukiai vidaus apdailai.<br>
+<br>
+Naudojimas: naudok senoms dirbtuvių grindims, laiptams, durims ir apdailai.<br>
+<np>
+Plona senos medienos plokštelė
+Sena dirbtuvių mediena
+<&old_industrial_wood_slabslice>Plona senos pramoninės medienos plokštelė suteikia sendintos dirbtuvių medienos grindims, laipteliams, durims ir jaukiai vidaus apdailai.<br>
+<br>
+Naudojimas: naudok senoms dirbtuvių grindims, laiptams, durims ir apdailai.<br>
+<np>
+Senos pramoninės medinės durys
+Sena dirbtuvių mediena
+<&old_industrial_wood_door>Šis blokas suteikia sendintos dirbtuvių medienos grindims, laipteliams, durims ir jaukiai vidaus apdailai.<br>
+<br>
+Naudojimas: naudok senoms dirbtuvių grindims, laiptams, durims ir apdailai.<br>

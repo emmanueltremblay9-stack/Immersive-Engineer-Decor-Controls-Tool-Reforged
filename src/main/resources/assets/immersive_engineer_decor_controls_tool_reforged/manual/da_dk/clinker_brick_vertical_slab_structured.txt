@@ -1,0 +1,5 @@
+Lodret klinkerflise
+Sodmørkt murværk
+<&recipe>Den lodrette klinkerflise med struktur giver sodmørkt murværk til ovnhaller, skorstensfundamenter og servicevægge.<br>
+<br>
+Brug: Brug den som væg, udsmykning eller beklædning omkring varmezoner ved ovne og kedler.<br>

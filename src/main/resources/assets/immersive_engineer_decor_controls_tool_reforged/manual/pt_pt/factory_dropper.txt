@@ -1,0 +1,5 @@
+Ejetor de fábrica
+Utilidade de oficina
+<&recipe>Este bloco liberta itens armazenados por uma face direcionada.<br>
+<br>
+Uso: Orienta a frente para o ponto de saída, carrega os espaços internos e ajusta a força, o ângulo, o intervalo, a lógica dos filtros e o modo de redstone no ecrã.<br>

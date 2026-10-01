@@ -1,0 +1,7 @@
+Lampa d’alarma
+Indicacion del senhal
+<&recipe>Un indicador compacte rend visibla la redstone amagada dins la fabrica.<br>
+<br>
+Utilizacion : cable-lo al costat del senhal per susvelhar de pòrtas, de maquinas, d’alarmas o de panèls.<br>
+<br>
+Nòta : càmbia d’estat quand de poténcia de redstone es presenta a proximitat.

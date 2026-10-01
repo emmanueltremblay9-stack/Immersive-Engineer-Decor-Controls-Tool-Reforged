@@ -1,0 +1,107 @@
+Mashiinnada goobta shaqada
+Mashiinnada iyo gelinta/bixitaanka goobta shaqada
+Mashiinnada goobta shaqadu waxay hal baloog gudaheed ku bixiyaan farsamayn, dhaqaajinta alaabta, dhalaalin, baabi’in, ururin iyo adeegyo kale oo kooban.<br>
+<br>
+Fur bogagga soo socda si aad u hesho habka farsamaynta mashiin kasta, sawirkiisa, macluumaadka sheekada iyo tilmaamaha isticmaalka wax-ku-oolka ah.
+<np>
+Miiska birta adag
+Alaabta goobta shaqada
+<&steel_table>Balooggani waa alaab goob-shaqo oo waxtar leh, loogu talagalay qolalka shaqada iyo geesaha dayactirka.<br>
+<br>
+Isticmaal: Dhig dhinaca miisaska shaqada, sanduuqyada iyo mashiinnada yaryar.<br>
+<np>
+Miiska alwaaxda la daweeyey
+Alaabta goobta shaqada
+<&treated_wood_table>Balooggani waa alaab goob-shaqo oo waxtar leh, loogu talagalay qolalka shaqada iyo geesaha dayactirka.<br>
+<br>
+Isticmaal: Dhig dhinaca miisaska shaqada, sanduuqyada iyo mashiinnada yaryar.<br>
+<np>
+Kursiga aan dhabarka lahayn ee alwaaxda la daweeyey
+Alaabta goobta shaqada
+<&treated_wood_stool>Balooggani waa alaab goob-shaqo oo waxtar leh, loogu talagalay qolalka shaqada iyo geesaha dayactirka.<br>
+<br>
+Isticmaal: Dhig dhinaca miisaska shaqada, sanduuqyada iyo mashiinnada yaryar.<br>
+<np>
+Miiska farsamaynta biraha
+Goobta samaynta saxannada
+<&metal_crafting_table>Miiska farsamaynta biruhu waa goob shaqo oo la xoojiyey, lehna boos dubbe, shabag farsamayn 3x3 ah iyo boos wax-soo-saar oo cad.<br>
+<br>
+Isticmaal: Shabagga u adeegso farsamaynta caadiga ah. Saxannada IE, dubbaha injineerka geli booska qalabka, agabka saxankana geli shabagga ka hor intaadan natiijada qaadan. Qurxinta birta adagi waxay saxanno bir adag ah u isticmaashaa tiirarka, marinnada socodka, daaqadaha, albaabbada, biraha badbaadada iyo qaybaha birta adag kale.<br>
+<np>
+Ururiyaha warshadda
+Qalabka adeegga sagxadda shaqada
+<&factory_hopper>Balooggani wuxuu rasooyinka alaabta ku dhex wareejiyaa sanduuq warshadeed oo ka kooban.<br>
+<br>
+Isticmaal: U jeedi khadka kaydadka, kaddib shaashaddiisa ku deji masaafadda, tirada rasada, waqtiga iyo habka redstone.<br>
+<np>
+Tuuraha warshadda
+Qalabka adeegga sagxadda shaqada
+<&factory_dropper>Balooggani wuxuu alaabta kaydsan ka sii daayaa wejiga loo jeediyey.<br>
+<br>
+Isticmaal: Hore u jeedi meesha alaabtu ka baxayso, buuxi boosaskiisa gudaha, kuna hagaaji shaashaddiisa xoogga, xagasha, dib-u-dhaca, xeerarka shaandhada iyo habka redstone.<br>
+<np>
+Dhigaha baloogyada warshadda
+Qalabka adeegga sagxadda shaqada
+<&factory_placer>Balooggani wuxuu marka la kiciyo dhigayaa baloogyo ka yimaadda kaydkiisa gudaha.<br>
+<br>
+Isticmaal: Wejiga shaqada u jeedi booska bartilmaameedka, kuna buuxi rasooyin la dhigi karo.<br>
+<np>
+Jebiyaha baloogyada
+Qalabka adeegga sagxadda shaqada
+<&small_block_breaker>Jebiyaha baloogyada ee yar waa baloog adeeg goob-shaqo oo loogu talagalay farsamaynta, kaydinta, dhigista, jebinta, ururinta ama otomaatig yar.<br>
+<br>
+Isticmaal: Wejiga shaqada u jeedi baloogga la saarayo.<br>
+<np>
+Gubaha qashinka
+Qayb farsamayn oo yar
+<&small_waste_incinerator>Gubaha qashinku wuxuu goob shaqo oo yar ku baabi’iyaa alaabta aan la rabin.<br>
+<br>
+Isticmaal: Safkiisa geli oo keliya alaabta aan la rabin.<br>
+<np>
+Foornada shaybaarka
+Qayb farsamayn oo yar
+<&small_lab_furnace>Foornada shaybaarku waxay goob shaqo oo yar ku qabataa hawlo dhalaalin oo shidaal adag isticmaala.<br>
+<br>
+Isticmaal: Adeegso shidaal adag si aad u dhalaaliso kooxo yar yar.<br>
+<np>
+Foornada korontada
+Qayb farsamayn oo yar
+<&small_electrical_furnace>Foornada korontadu waxay goob shaqo oo yar ku qabataa hawlo dhalaalin oo tamarta FE ku shaqeeya.<br>
+<br>
+Isticmaal: Sii FE iyo agab dhalaalin oo sax ah.<br>
+<np>
+Dhalaaliyaha macdanta
+Qayb farsamayn oo yar
+<&small_mineral_smelter>Dhalaaliyaha macdantu wuxuu goob shaqo oo yar ku qabtaa farsamaynta macdanta ee kulaylka sare leh.<br>
+<br>
+Isticmaal: Sii baloogyo macdan ah iyo tamar si uu kulayl sare ugu dhalaaliyo.<br>
+<np>
+Qaboojiyaha biyaha barafeeya
+Qayb farsamayn oo yar
+<&small_freezer>Qaboojiyaha biyaha barafeeya wuxuu shaqo qaboojin oo yar u qabtaa nidaamyada dareeraha ee tamarta leh.<br>
+<br>
+Isticmaal: Sii biyo iyo tamar si uu baraf wejiyo kala duwan ugu soo saaro.<br>
+<np>
+Dareeraha aan tamarta u baahnayn
+Qalabka khadka dareeraha
+<&passive_fluid_accumulator>Ururiyaha dareeraha ee aan tamarta u baahnayn waa qayb yar oo khadka dareeraha ah, loogu talagalay haamaha yaryar, marinnada tuubooyinka, meelaha ururinta iyo qulqulka redstone xakameeyo.<br>
+<br>
+Isticmaal: Ku dhig ilaha biyaha ee ku habboon dhinacooda, meelnana u daa saarista dareeraha.<br>
+<np>
+Looxa qorraxda
+Qalabka adeegga sagxadda shaqada
+<&small_solar_panel>Looxa qorraxda ee yar waa baloog adeeg goob-shaqo oo loogu talagalay farsamaynta, kaydinta, dhigista, jebinta, ururinta ama otomaatig yar.<br>
+<br>
+Isticmaal: Sii cir furan, kuna xir qalab tamar yar u baahan.<br>
+<np>
+Mashiinka lisidda
+Qalabka adeegga sagxadda shaqada
+<&small_milking_machine>Mashiinka lisidda ee yar waa baloog adeeg goob-shaqo oo loogu talagalay farsamaynta, kaydinta, dhigista, jebinta, ururinta ama otomaatig yar.<br>
+<br>
+Isticmaal: Dhig lo’da agteeda, diyaarina hab lagu saaro weelasha caanaha ama dareeraha.<br>
+<np>
+Jaraha geedaha
+Qalabka adeegga sagxadda shaqada
+<&small_tree_cutter>Jaraha geedaha ee yar waa baloog adeeg goob-shaqo oo loogu talagalay farsamaynta, kaydinta, dhigista, jebinta, ururinta ama otomaatig yar.<br>
+<br>
+Isticmaal: U jeedi geedaha koray, alaabta dhacdana si gaar ah u ururi.<br>

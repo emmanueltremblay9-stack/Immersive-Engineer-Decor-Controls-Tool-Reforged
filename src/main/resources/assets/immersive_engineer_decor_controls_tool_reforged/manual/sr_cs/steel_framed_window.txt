@@ -1,0 +1,5 @@
+Prozor sa čeličnim okvirom
+Zaštićen pogled
+<&recipe>Ovaj blok ostavlja pogled otvorenim, uz izgled koji odgovara ojačanoj fabričkoj gradnji.<br>
+<br>
+Upotreba: koristi ga tamo gde igrači treba da vide mašine kroz zaštićenu pregradu.<br>

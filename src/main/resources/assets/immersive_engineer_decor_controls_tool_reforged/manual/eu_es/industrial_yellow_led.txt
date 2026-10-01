@@ -1,0 +1,7 @@
+LED horia
+Seinalearen adierazpena
+<&recipe>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.

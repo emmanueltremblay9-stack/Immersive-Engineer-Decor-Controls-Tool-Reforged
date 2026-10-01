@@ -1,0 +1,7 @@
+Sporer
+Gemt positionsmærke
+<&recipe>Gemmer en blokposition i genstanden.<br>
+<br>
+Brug: Klik på en blok for dimension og koordinater. Tippet viser positionen. Snige-brug rydder den.<br>
+<br>
+Markér maskiner, tunnelgrene, fjernstyringer eller ufærdige byggepladser.

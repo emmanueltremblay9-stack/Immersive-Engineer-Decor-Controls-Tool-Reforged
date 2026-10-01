@@ -1,0 +1,5 @@
+Caisse a étiqhette
+Étiqhette de réserve modifiable
+<&recipe>Ç'te caisse a étiqhette ét faite pour trier les réserves cllèrement. N'en peut chanjer sa pllaqe de devant coume un ptit paniao d'atelier.<br>
+<br>
+Empllai : Fezéz un clic dret su la pllaqe d'étiqhette pour chanjer le nom de la caisse. Fezéz un clic dret su l'reste de la caisse pour ouvrir le ranjement de pièces d'installaçon, de composants e de fournitures d'entretien.<br>

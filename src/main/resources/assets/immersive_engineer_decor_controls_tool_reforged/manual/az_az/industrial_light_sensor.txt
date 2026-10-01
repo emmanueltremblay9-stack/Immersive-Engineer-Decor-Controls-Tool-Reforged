@@ -1,0 +1,7 @@
+İşıq sensoru
+Siqnalın aşkar edilməsi
+<&recipe>İşıq sensoru yerli parlaqlığı qızıl daş idarəetməsinə çevirir.<br>
+<br>
+İstifadə: Avtomatik lampalar, pəncərə qapaqları və görünüş dövrələri üçün istifadə edin.<br>
+<br>
+Qeydlər: Xam parlaqlıq 8 və ya daha yüksək olduqda siqnal verir.

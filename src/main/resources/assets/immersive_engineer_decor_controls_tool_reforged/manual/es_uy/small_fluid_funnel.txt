@@ -1,0 +1,5 @@
+Embudo de fluidos
+Equipamiento de tuberías de fluidos
+<&recipe>El embudo pequeño de fluidos es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Colocalo bajo el punto de recogida del fluido y conducí el contenido almacenado hacia depósitos o tuberías inferiores.<br>

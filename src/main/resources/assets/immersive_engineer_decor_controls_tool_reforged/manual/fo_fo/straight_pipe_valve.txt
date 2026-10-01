@@ -1,0 +1,5 @@
+Afturstreymingsventilur til løgrør
+Útgerð til løgleiðingar
+<&recipe>Afturstreymingsventilurin til løgrør er ein lítil løgleiðingarpartur til smáar tangar, rørlagnir, savnistøð og reyðgrýtisstýrda gjøgnumrenning.<br>
+<br>
+Nýtsla: Vend ventilinum í ætlaðu streymleiðina.<br>

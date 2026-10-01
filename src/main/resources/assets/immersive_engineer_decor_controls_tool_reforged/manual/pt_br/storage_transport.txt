@@ -1,0 +1,41 @@
+Armazenamento e transporte
+Componentes de inventário e fluxo
+Os elementos de armazenamento e transporte incluem caixotes, barris, funis e válvulas para rotas compactas na fábrica.<br>
+<br>
+Consulte estas páginas ao planejar almoxarifados, tubulações, tanques de serviço e linhas de fluidos controladas.
+<np>
+Caixote com etiqueta
+Etiqueta de estoque editável
+<&labeled_crate>Este caixote com etiqueta facilita a organização do almoxarifado. A placa frontal pode ser editada como uma pequena placa de oficina.<br>
+<br>
+Uso: Clique com o botão direito na placa para editar a etiqueta do caixote. Clique com o botão direito no restante do caixote para abrir o armazenamento de componentes, peças e suprimentos de manutenção.<br>
+<np>
+Barril de fluidos
+Componentes de tubulação de fluidos
+<&fluid_barrel>Este componente compacto integra linhas de fluidos para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Coloque onde os tubos ou baldes possam alcançar a face do tanque.<br>
+<np>
+Coletor de fluidos em funil
+Componentes de tubulação de fluidos
+<&small_fluid_funnel>O pequeno coletor de fluidos em funil é um componente compacto para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Coloque abaixo do ponto de coleta de fluido e encaminhe o conteúdo armazenado para tanques ou tubulações inferiores.<br>
+<np>
+Válvula de retenção de fluidos
+Componentes de tubulação de fluidos
+<&straight_pipe_valve>A válvula de retenção de fluidos é um componente compacto para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Alinhe a válvula com a direção de fluxo desejada.<br>
+<np>
+Válvula de fluidos de redstone
+Componentes de tubulação de fluidos
+<&straight_pipe_valve_redstone>A válvula de fluidos de redstone é um componente compacto para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Alinhe a válvula com a direção de fluxo desejada.<br>
+<np>
+Válvula analógica de fluidos
+Componentes de tubulação de fluidos
+<&straight_pipe_valve_redstone_analog>A válvula analógica de fluidos é um componente compacto para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Alinhe a válvula com a direção de fluxo desejada.<br>

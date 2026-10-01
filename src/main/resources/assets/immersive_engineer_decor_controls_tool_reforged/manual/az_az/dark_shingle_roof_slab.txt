@@ -1,0 +1,5 @@
+Tünd şingil dam pilləsi
+Hava təsirindən köhnəlmiş dam elementi
+<&recipe>Bu blok emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>

@@ -1,0 +1,108 @@
+Dhismaha warshadaha
+Darbiyada iyo qurxinta geesaha warshadda
+Qaybaha guud ee dhismuhu waxay daboolaan albaabbo, daaqado, nalal, calaamadaha digniinta, qurxinta geesaha iyo qaybaha taageerada ee aan ku jirin qayb ka sii gaar ah.<br>
+<br>
+Bogaggan u adeegso qolalka warshadda, marinnada adeegga, calaamadaynta halista iyo faahfaahinta wax-ku-oolka ah ee warshadaha.
+<np>
+Nalka birta ee wareegsan
+Nalka shaqada ee yar
+<&iron_bulb_light>Balooggani wuxuu marinnada, marinnada socodka ee sare iyo goobaha shaqada siiyaa iftiin warshadeed oo kooban.<br>
+<br>
+Isticmaal: Ku rakib saqafyada, darbiyada ama geesaha meesha qolku uga baahan yahay iftiin shaqo oo cad.<br>
+<np>
+Nalka geeska saqafka
+Nalka shaqada ee yar
+<&iron_ceiling_edge_light>Balooggani wuxuu marinnada, marinnada socodka ee sare iyo goobaha shaqada siiyaa iftiin warshadeed oo kooban.<br>
+<br>
+Isticmaal: Ku rakib saqafyada, darbiyada ama geesaha meesha qolku uga baahan yahay iftiin shaqo oo cad.<br>
+<np>
+Nalka ku dhex jira geeska sagxadda
+Nalka shaqada ee yar
+<&iron_floor_edge_light>Balooggani wuxuu marinnada, marinnada socodka ee sare iyo goobaha shaqada siiyaa iftiin warshadeed oo kooban.<br>
+<br>
+Isticmaal: Ku rakib saqafyada, darbiyada ama geesaha meesha qolku uga baahan yahay iftiin shaqo oo cad.<br>
+<np>
+Nalka dhexgashan
+Nalka shaqada ee yar
+<&iron_inset_light>Balooggani wuxuu marinnada, marinnada socodka ee sare iyo goobaha shaqada siiyaa iftiin warshadeed oo kooban.<br>
+<br>
+Isticmaal: Ku rakib saqafyada, darbiyada ama geesaha meesha qolku uga baahan yahay iftiin shaqo oo cad.<br>
+<np>
+Calaamadda "Digniin guud
+Calaamadda halista
+<&sign_caution>Calaamadda "Digniin guud" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda khatarta
+Calaamadda halista
+<&sign_danger>Calaamadda "Digniin: meeshaasi runtii waa halis" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda qurxinta
+Calaamadda halista
+<&sign_decor>Looxa calaamadda (Engineer's Decor) wuxuu halisaha, bixitaannada iyo aagagga shaqada ku calaamadiyaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda difaaca
+Calaamadda halista
+<&sign_defense>Calaamadda "Digniin: nidaam difaac ayaa hore yaal" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda bixitaanka
+Calaamadda halista
+<&sign_exit>Calaamaddani waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda "Halis dab
+Calaamadda halista
+<&sign_firehazard>Calaamadda "Halis dab" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda "Digniin dhaxan
+Calaamadda halista
+<&sign_frost>Calaamadda "Digniin dhaxan" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda dusha kulul
+Calaamadda halista
+<&sign_hotsurface>Calaamadda "Digniin: dusha kulul" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda fiilada korontada leh
+Calaamadda halista
+<&sign_hotwire>Calaamadda "Digniin: fiilo koronto leh" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda "Halis laysar
+Calaamadda halista
+<&sign_laser>Calaamadda "Halis laysar" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda halista sixirka
+Calaamadda halista
+<&sign_magichazard>Calaamadda "Digniin: halis sixir" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda goobta birlabta
+Calaamadda halista
+<&sign_magneticfield>Calaamadda "Digniin: goob birlab xooggan" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>
+Calaamadda "Halis shucaac
+Calaamadda halista
+<&sign_radioactive>Calaamadda "Halis shucaac" waxay halisaha, bixitaannada iyo aagagga shaqada ku calaamadisaa tilmaan muuqata oo ku habboon badbaadada warshadda.<br>
+<br>
+Isticmaal: Ku dhig dhinaca halisaha, bixitaannada, mashiinnada iyo aagagga xaddidan.<br>
+<np>

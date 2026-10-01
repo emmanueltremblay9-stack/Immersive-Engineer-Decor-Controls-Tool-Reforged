@@ -1,0 +1,5 @@
+Õhuke vana puitplaat
+Vana töökojapuit
+<&recipe>Õhuke vana tehasepuidust plaat lisab vana töökojapuitu põrandatele, astmetele, ustele ja sooja ilmega sisekaunistustele.<br>
+<br>
+Kasutamine: Kasuta vanade töökojapõrandate, treppide, uste ja kaunistuste jaoks.<br>

@@ -1,0 +1,7 @@
+Rustika najlolevilo
+Redstone’a regado
+<&recipe>Kompakta regilo donas al fabrikaj konstruaĵoj klare rekoneblan redstone’an ŝaltpunkton.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.

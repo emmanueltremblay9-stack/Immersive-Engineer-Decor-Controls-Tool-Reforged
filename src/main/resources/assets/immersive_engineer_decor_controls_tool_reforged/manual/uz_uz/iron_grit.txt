@@ -1,0 +1,3 @@
+Yirik temir donachalari
+Qayta tiklangan yasash to'plamida ishlatiladigan muhandis asbobi materiali.
+<&recipe>Temir quymalarga eritish<br>mumkin, ammo murakkab<br>material ishloviga yaramaydi.

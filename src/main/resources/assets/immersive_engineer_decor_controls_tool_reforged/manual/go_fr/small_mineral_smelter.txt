@@ -1,0 +1,5 @@
+Fournè a fondr les minéraux
+Unitë de tratement compacte
+<&recipe>Le Fournè a fondr les minéraux fait du tratement de minéraux a haote chalou den eune petite pllâce d'atelier.<br>
+<br>
+Empllai : Bailléz des blloqes de minéraux e du pououair pour la fonte a haote chalou.<br>

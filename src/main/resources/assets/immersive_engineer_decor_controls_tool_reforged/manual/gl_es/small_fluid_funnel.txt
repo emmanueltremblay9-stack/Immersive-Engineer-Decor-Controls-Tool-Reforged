@@ -1,0 +1,5 @@
+Funil de líquidos
+Equipamento de tubaxes de fluídos
+<&recipe>O funil pequeno de recollida de líquidos é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: pono debaixo do punto de recollida de líquidos e conduce o contido almacenado a depósitos ou tubaxes inferiores.<br>

@@ -1,0 +1,7 @@
+Penerima Pautan Analog
+Kawalan berpaut
+<&recipe>Penerima berpaut memberikan sasaran jauh yang kelihatan kepada panel kawalan.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Gunakan mutiara itu sambil menyelinap untuk mengaktifkan penerima dari jauh.<br>
+<br>
+Nota: Penerima ini mengeluarkan isyarat redstone penuh apabila dicetuskan.

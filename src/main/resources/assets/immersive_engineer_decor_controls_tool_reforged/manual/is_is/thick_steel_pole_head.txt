@@ -1,0 +1,5 @@
+Höfuð á þykkan staur
+Burðargrindarhluti
+<&recipe>Höfuð/fótur á beinan þykkan stálstaur veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>

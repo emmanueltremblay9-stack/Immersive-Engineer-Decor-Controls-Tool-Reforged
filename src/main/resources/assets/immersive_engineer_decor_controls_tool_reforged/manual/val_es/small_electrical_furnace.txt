@@ -1,0 +1,5 @@
+Forn elèctric
+Unitat compacta de processament
+<&recipe>El forn elèctric s’encarrega de treballs compactes de fosa amb energia FE i ocupa poc espai en el taller.<br>
+<br>
+Ús: subministra FE i materials vàlids per a fondre.<br>

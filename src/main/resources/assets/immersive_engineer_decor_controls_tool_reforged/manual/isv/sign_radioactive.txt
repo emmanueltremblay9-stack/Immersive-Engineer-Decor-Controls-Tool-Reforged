@@ -1,0 +1,5 @@
+Znak "Radioaktivna opasnost
+Označatelj opasnosti
+<&recipe>Znak "Radioaktivna opasnost" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>

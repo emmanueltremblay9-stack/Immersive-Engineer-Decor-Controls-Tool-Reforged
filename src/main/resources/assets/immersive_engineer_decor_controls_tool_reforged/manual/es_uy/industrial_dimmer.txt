@@ -1,0 +1,7 @@
+Regulador
+Señal variable
+<&recipe>Un mando giratorio regula la intensidad de redstone desde un panel compacto.<br>
+<br>
+Uso: Hacé clic derecho para aumentar la salida por pasos; tras la intensidad máxima, vuelve a cero.<br>
+<br>
+Notas: Emite una intensidad de 0 a 15.

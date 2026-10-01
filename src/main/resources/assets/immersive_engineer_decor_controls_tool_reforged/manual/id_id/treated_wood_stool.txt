@@ -1,0 +1,5 @@
+Bangku Kayu Olahan
+Perabot bengkel
+<&recipe>Blok ini adalah perabot bengkel praktis untuk ruang kerja dan sudut perawatan.<br>
+<br>
+Penggunaan: letakkan di samping bangku kerja, peti, dan mesin ringkas.<br>

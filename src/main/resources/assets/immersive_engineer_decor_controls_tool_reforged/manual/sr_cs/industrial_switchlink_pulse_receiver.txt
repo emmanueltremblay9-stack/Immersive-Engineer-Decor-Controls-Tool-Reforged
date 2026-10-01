@@ -1,0 +1,7 @@
+Impulsni prijemnik veze
+Povezano upravljanje
+<&recipe>Povezani impulsni prijemnik daje udaljenim panelima kratko redstoun okidanje.<br>
+<br>
+Upotreba: klikni ender biserom da napraviš povezani biser. Klikni desnim dugmetom na prijemnik ili aktiviraj povezani biser da emituješ kratak impuls.<br>
+<br>
+Napomene: impuls se sam završava posle zadatog trajanja.

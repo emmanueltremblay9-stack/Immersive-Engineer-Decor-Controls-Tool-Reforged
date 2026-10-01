@@ -1,0 +1,5 @@
+Phiến gạch xỉ
+Khối xây nhà máy đặc
+<&recipe>Khối này thêm vật liệu xây xám nâu đặc cho móng, tường chắn và nhà xưởng cũ.<br>
+<br>
+Cách dùng: Dùng cho móng cũ, tường chắn và sàn nhà máy bám bẩn.<br>

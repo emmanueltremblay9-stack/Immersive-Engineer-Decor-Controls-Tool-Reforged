@@ -1,0 +1,5 @@
+Blockbrecha
+Hüfsgerät für de Werkstatt
+<&recipe>Da kloane Blockbrecha is a Werkstatthüfsblock für Herstellung, Lagern, Setzn, Obbau, Sammeln oda kompakte Automation.<br>
+<br>
+Verwendung: Richt de Arbeitsseitn auf den Block, der weg soll.<br>

@@ -1,0 +1,7 @@
+Perla de ligazón de interruptores
+Control ligado
+<&recipe>Unha perla ligada garda un receptor de destino para os controis remotos de fábrica.<br>
+<br>
+Uso: fai clic cunha perla do Ender nun receptor de ligazón de interruptores para creala. Agóchate e usa a perla ligada para activar o receptor gardado.<br>
+<br>
+Notas: o destino debe estar cargado, na mesma dimensión e dentro do alcance.

@@ -1,0 +1,5 @@
+Stahlgitterzauntor
+Wartungszugang
+<&recipe>Der Block macht guat erkennbare Wartungsweg um Maschinen herum.<br>
+<br>
+So geht's: Setz'n ois Wartungszugang rund um Maschinen, obere Stockwerk und Wartungsschächt.<br>

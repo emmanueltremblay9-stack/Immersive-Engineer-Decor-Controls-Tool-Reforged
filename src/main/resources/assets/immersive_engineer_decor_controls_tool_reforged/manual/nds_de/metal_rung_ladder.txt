@@ -1,0 +1,5 @@
+Metallsprossenledder
+Wartoongstogang
+<&recipe>Disse Block maakt düütliche Wartoongswegen üm Maschinen.<br>
+<br>
+Bruuk: Sett em as Wartoongstogang üm Maschinen, hoge Stockwarken un Wartoongsschachten.<br>

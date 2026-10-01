@@ -1,0 +1,99 @@
+Daffar an Enjynour
+Daffar gweythdy portadow
+An sett Daffar an Enjynour a geworr daffar dorn, merkyoryow bal, traow a dhevnydhir rag peryl, boos war an le hag astellyow byghan oberi danvez dhe'n keth lyver dorn a dheskrif an stockow afinans ha reoli.<br>
+<br>
+An daffar ma yw rag ober a-bell a weythdy leun-dhaffarys: merk an hyns, perth provians, dassav a gammwriansow ha gorfen oberansow byghan danvez war an le.
+<np>
+Daffar REDIA
+Daffar difresys gans adamant
+<&redia_tool>An Daffar REDIA yw daffar duradow war an le rag ober dor uskis. Usya e war dor oberadow rag kravella bargen tir.<br>
+<br>
+Usya e orth enep stabil hag ow perthi faglennow rag gorra merk faglen a'th rolas heb lehe duryans REDIA. Ober dor, diblansya, ober bool ha kodha gwydh a dhevnydh duryans.
+<np>
+Morthol Frusya Moon
+Daffar frusya dre dhorn
+<&crushing_hammer>Toul dorn rag ober kynsa yn haearn hag owr yw an morthwyl darbarthus mwyn.<br>
+<br>
+Devnydh: Gwra y grefti gans haearn kriv, owr kriv, mwyn haearn, mwyn haearn leghva-don, mwyn owr po mwyn owr leghva-don rag gul pow haearn po owr Immersive Engineering. An morthwyl a goll hirder hag a dhehweles dhe'n grid bys pan y torr.<br>
+<br>
+An morthol a goll duryans dre valweyth ynwedh, ha y hyll e gwaska amkanow war-dhelergh yn kas ogas.
+<np>
+Holyour
+Merkyer le gwithys
+<&tracker>An holyour a with posityon stock yn unnfordh y'n tra.<br>
+<br>
+Devnydh: Klikya stock rag gwitha y vent ha'y gyd-leow. An tooltip a dhiskwedh an le. Devnydh an holyour ha ty ow kwedha rag dilea an amkan.<br>
+<br>
+Usya e rag merkya jynnys, garow tollborth, reolyow pell po leow drehevel anorfennys kyns dos arta gans daffar ha danvez.
+<np>
+Glow Ariadne
+Merkyer hyns bal
+<&ariadne_coal>Glow Ariadne a worr merkys hyns uskis a sethow du war enepow bal stabil. Usya e war enep kales rag merkyas an nessa tro, dyllo po poynt fordh forkys; an merk a skoodh eth tu war an enep klikys, tuow treuslinnek ynwedh.<br>
+<br>
+Glow Ariadne yw daffar merkyer a 100 devnydh a yllir usya arta. Pub korrans merk sewen a gost unn duryans. Ny gas e gorra merk war enep anskoodhys ha ny wra henna lehe duryans an tra.
+<np>
+Pakk Derfhynna Awtomatek
+Injektyer rag peryl
+<&stimpack>Toul medhek orth y dhywargh yw an Auto Stim Pack rag ober mayntena peryllys.<br>
+<br>
+Devnydh: Devnydh e dre dhorn rag yaghhe, kavos difresyans berr ha nerth movyans berr. Y'n inventori y hyll dos yn ober y honan gans yeghes isel, hag ena mos yn cooldown.<br>
+<br>
+Gwith unn parys kyns assaya leow ughel, gwivrennow digudh po hensyow balyow eskarus.
+<np>
+Sagh Kosk
+Sett powes portadow
+<&sleeping_bag>Set o fow kledhva rag esedhes pel dhyworth gwely yw an sagh koska.<br>
+<br>
+Devnydh: Devnydh e dhe nos y'n Overworld rag esedhes bys dhe-vyttin. Ny wra settya po movya dha le dasgenyans.<br>
+<br>
+Y sagh a nahas devnydh dydh, leow peryllys gans monstros ogas, ha mentow na dalves rag esedhes saw. Pub esedh sewen a wra gwiska an sagh.
+<np>
+Kist Gwitha Danvez
+Kist provians drehevel
+<&material_box>An kist daffar a wra don lies a unn daffar drehevel sempel, digemmys ha stackadow.<br>
+<br>
+Devnydh: Kell an gist y'n prif dhorn ha stack daffar y'n dorn aral rag y chargya. Devnydh an gist gans an dorn aral gwag rag tenna unn stack yn-mes.<br>
+<br>
+Y hyll synsi dhe 512 tra a unn eghen. Yth esa gostynges kystow yn y gilydh, daffar na yll bos stackys, ha stackys henwys po gans data gemmys; an tooltip a dhiskwedh an dalgh.
+<np>
+Kapsul Ayr Sodhya
+Gwithva ayr rag peryl
+<&diving_capsule>Gwithva ayar y dhywargh yw an kapsul ayar sodha rag ober yn-dann dowr.<br>
+<br>
+Devnydh: Devnydh e dre dhorn rag dasleunia ayar. Pan yw yn an inventori, y hyll dos yn ober y honan pan yw an ayar ogas gwag, hag ena mos yn cooldown.<br>
+<br>
+Perth e rag balyow beudhys, resow pibellow dan dowr hag ewnansow stevel pump.
+<np>
+Gwasker Barryow Muslee
+Gwasker boos
+<&musli_bar_press>An pres barr Muslee a wra kevra rannow boos kompak dhyworth boos kemmyn.<br>
+<br>
+Devnydh: Kemmer bara, aval ha has gwaneth, melon, pompyon, bet po Industrial Hemp, ha devnydh an pres. Presyans sewen a dhevor unn a bub tra, a wir bos spas, a wra peswar barr Muslee Melange hag a goll hirder an pres.<br>
+<br>
+Mar peu tra fyllys po nag eus spas y'n inventori, ny vydh tra devorys.
+<np>
+Barr Enerji Muslee Melange
+Tamm boos uskis gweythdy
+<&musli_bar>Bara, hasow ha frooth a wra an Muslee Melange Power Bar, boos kompak.<br>
+<br>
+Devnydh: deber e avel boos war an le hedre es ta ow korra reolyow, pibellow, plattow po resow hir yn stevelyow jynnys.
+<np>
+Gwasker Brys
+Kondensour skians
+<&charged_lapis_squeezer>An Gwasker Brys a dreyl unn lapis hag unn nivel skians a'th rolas dhe Lapis Kargys.<br>
+<br>
+An proses a wra payn dhe'n usyer, a wra skwithder a ynni nown hag a'n dallha rag termyn berr gans pub treylyans sewen. Ny wra e oberi heb lapis, heb XP po pan yw an usyer re ogas dhe vernans.
+<np>
+Lapis Kargys
+Skians gwithys
+<&charged_lapis>Lapis Kargys a with unn nivel skians. Deber e rag daskor an nivel, dilea effeythyow gweythrek ha kavos nebes yeghes arta.<br>
+<br>
+Gwra Gwasker Brys kynsa; Lapis Kargys a wruthir gans devnydhya an daffar na pan eus lapis hag XP.
+<np>
+Gravyl Horn Garow
+Danvez daffar an enjynour devnydhys gans an sett kreftya dastrehys.
+<&iron_grit>Y hyllir y deudhi dhe<br>etewigow horn, mes nyns yw gwiw<br>rag oberans avonsys a dhanvez.
+<np>
+Gravyl Owr Garow
+Danvez daffar an enjynour devnydhys gans an sett kreftya dastrehys.
+<&gold_grit>Y hyllir y deudhi dhe<br>etewigow owr, mes nyns yw gwiw<br>rag oberans avonsys a dhanvez.

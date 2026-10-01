@@ -1,0 +1,7 @@
+Sensor de lluz
+Deteición de señales
+<&recipe>Un sensor de lluz convierte’l brillu local en control por redstone.<br>
+<br>
+Usu: úsalu pa llámpares automátiques, contraventanes y circuitos de visibilidá.<br>
+<br>
+Notes: emite enerxía con un nivel de brillu brutu de 8 o más.

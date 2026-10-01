@@ -1,0 +1,5 @@
+Ləkəli klinker bloku
+His qaraltmış kərpic hörgü
+<&recipe>Ləkəli klinker kərpic bloku soba zallarına, baca altlıqlarına və xidmət divarlarına hisdən qaralmış kərpic görünüşü verir.<br>
+<br>
+İstifadə: Sobaların və qazanların ətrafında divar, haşiyə və ya isti zonanın örtüyü kimi istifadə edin.<br>

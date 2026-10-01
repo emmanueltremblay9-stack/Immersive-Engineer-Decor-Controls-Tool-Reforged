@@ -1,0 +1,99 @@
+Insinöörin työkalut
+Kannettavat työpajavarusteet
+Insinöörin työkalut -valikoima lisää käsityökalut, kaivosmerkit, hätäkulutustarvikkeet, kenttäruoan ja pienet materiaalinkäsittelyn apuvälineet samaan käsikirjaan, joka kattaa koriste- ja ohjainkuutiot.<br>
+<br>
+Työkalut on tarkoitettu työhön kaukana täysin varustellusta työpajasta: merkitse reitti, kanna tarvikkeita, toivu virheistä ja viimeistele pienet käsittelytyöt paikan päällä.
+<np>
+REDIA-työkalu
+Timanttipäällysteinen yleistyökalu
+<&redia_tool>REDIA-työkalu on kestävä kenttätyökalu nopeaan maanmuokkaukseen. Tee viljelysmaata käyttämällä sitä muokattavaan maahan.<br>
+<br>
+Kun sinulla on soihtuja mukana, käytä sitä vakaaseen pintaan asettaaksesi tavaraluettelosta soihtumerkin kuluttamatta REDIAa. Maanmuokkaus, keritseminen, kirvestyöt ja puunkaato kuluttavat kestävyyttä.
+<np>
+Malminmurskausvasara
+Käsimurskaustyökalu
+<&crushing_hammer>Käsityökalu varhaiseen raudan ja kullan käsittelyyn.<br>
+<br>
+Käyttö: Valmista raa'an raudan, kullan, rautamalmin, syväliuskerautamalmin, kultamalmin tai syväliuskerkultamalmin kanssa Immersive Engineeringin rauta- tai kultapölyä. Vasara menettää kestävyyttä ja palaa ruudukkoon, kunnes rikkoutuu.<br>
+<br>
+Se kuluu myös louhiessa ja työntää lähitaistelussa.
+<np>
+Paikannin
+Tallennetun sijainnin merkki
+<&tracker>Tallentaa lohkon sijainnin esineeseen.<br>
+<br>
+Käyttö: Napsauta lohkoa ulottuvuuden ja koordinaattien tallentamiseksi. Vihje näyttää sijainnin. Hiivintäkäyttö tyhjentää sen.<br>
+<br>
+Merkitse koneita, tunnelinhaaroja, kauko-ohjaimia tai keskeneräisiä työmaita.
+<np>
+Ariadnen hiili
+Kaivoksen reittimerkki
+<&ariadne_coal>Ariadnen hiili asettaa nopeasti mustia reittinuolia vakaille kaivospinnoille. Merkitse seuraava käännös, uloskäynti tai haara käyttämällä sitä tukevaan pintaan. Merkki tukee kahdeksaa napsautetun pinnan suuntaa, myös vinoja.<br>
+<br>
+Ariadnen hiili on uudelleenkäytettävä sadan käyttökerran merkintätyökalu. Kukin onnistunut merkintä kuluttaa yhden kestävyyspisteen. Sopimattomat pinnat hylätään esineen kuluttamisen sijaan.
+<np>
+Automaattinen stim-pakkaus
+Hätäpistin
+<&stimpack>Hätäpalautusväline vaaralliseen huoltotyöhön.<br>
+<br>
+Käyttö: Käsin parantaa, suojaa lyhyesti ja nopeuttaa. Tavaraluettelossa laukeaa matalalla terveydellä ja jäähtyy sitten.<br>
+<br>
+Pidä mukana ennen korkeita paikkoja, paljaita johtoja tai vaarallisia kaivoksia.
+<np>
+Makuupussi
+Kannettava leposarja
+<&sleeping_bag>Säänkestävä sarja kenttätyöhön kaukana sängystä.<br>
+<br>
+Käyttö: Yöllä Ylämaailmassa lepää aamuun asettamatta tai siirtämättä syntymispaikkaa.<br>
+<br>
+Torjuu päivän, lähellä olevat hirviöt ja sopimattomat ulottuvuudet. Jokainen lepo kuluttaa sitä.
+<np>
+Materiaalilaatikko
+Rakennustarvikkeet
+<&material_box>Kuljettaa suuren määrän yhtä tavallista, muuttamatonta ja pinottavaa rakennusmateriaalia.<br>
+<br>
+Käyttö: Laatikko pääkädessä ja materiaali toisessa täyttää. Tyhjä toinen käsi ottaa pinon.<br>
+<br>
+Tilaa 512 esineelle yhdestä lajista; torjuu sisäkkäiset laatikot, pinoamattomat varusteet ja muokatut pinot. Sisältö näkyy vihjeessä.
+<np>
+Sukellusilmakapseli
+Hätäilmavarasto
+<&diving_capsule>Hätäilmaväline vedenalaiseen työhön.<br>
+<br>
+Käyttö: Palauta ilmaa käsin. Tavaraluettelossa se laukeaa automaattisesti ilman lähes loppuessa ja jäähtyy sitten.<br>
+<br>
+Pidä mukana tulvineissa kaivoksissa, vedenalaisilla putkilla ja pumppuhuoneissa.
+<np>
+Muslee-patukkapuristin
+Ruokapuristin
+<&musli_bar_press>Muuttaa tavalliset elintarvikkeet tiiviiksi kenttäannoksiksi.<br>
+<br>
+Käyttö: Leipä, omena ja vehnän, melonin, kurpitsan, punajuuren tai teollisuushampun siemen. Onnistunut puristus kuluttaa yhden kutakin, tarkistaa tilan, tekee neljä patukkaa ja vaurioittaa puristinta.<br>
+<br>
+Jos aines tai tila puuttuu, mitään ei kulu.
+<np>
+Muslee Melange -energiapatukka
+Nopea työpajavälipala
+<&musli_bar>Tiivis ruoka leivästä, siemenistä ja hedelmistä.<br>
+<br>
+Käyttö: Syö kenttäruokana asentaessasi ohjaimia, putkia, tasoja tai pitkiä konelinjoja.
+<np>
+Mielipuristin
+Kokemuksen tiivistin
+<&charged_lapis_squeezer>Mielipuristin muuntaa yhden lasuriitin ja yhden kokemustason tavaraluettelostasi ladatuksi lasuriitiksi.<br>
+<br>
+Jokainen onnistunut muunnos satuttaa, uuvuttaa ja sokaisee käyttäjän hetkeksi. Laite kieltäytyy toimimasta ilman lasuriittia tai XP:tä tai käyttäjän ollessa liian lähellä kuolemaa.
+<np>
+Ladattu lasuriitti
+Varastoitu kokemus
+<&charged_lapis>Ladattu lasuriitti varastoi yhden kokemustason. Nauti saadaksesi tason takaisin, poistaaksesi aktiiviset vaikutukset ja palauttaaksesi hieman terveyttä.<br>
+<br>
+Valmista ensin mielipuristin. Ladattua lasuriittia tuotetaan käyttämällä sitä, kun lasuriittia ja XP:tä on saatavilla.
+<np>
+Karkea rautarouhe
+Insinöörityökalujen materiaali, jota käytetään rekonstruoidussa reseptivalikoimassa.
+<&iron_grit>Voidaan sulattaa<br>rautaharkoiksi, mutta ei sovi<br>edistyneeseen materiaalinkäsittelyyn.
+<np>
+Karkea kultarouhe
+Insinöörityökalujen materiaali, jota käytetään rekonstruoidussa reseptivalikoimassa.
+<&gold_grit>Voidaan sulattaa<br>kultaharkoiksi, mutta ei sovi<br>edistyneeseen materiaalinkäsittelyyn.

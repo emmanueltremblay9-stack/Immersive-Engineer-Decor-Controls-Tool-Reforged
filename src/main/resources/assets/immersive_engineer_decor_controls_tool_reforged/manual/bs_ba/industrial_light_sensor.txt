@@ -1,0 +1,7 @@
+Senzor svjetla
+Otkrivanje signala
+<&recipe>Senzor svjetla pretvara lokalnu svjetlinu u upravljanje redstoneom.<br>
+<br>
+Upotreba: Koristite ga za automatske lampe, kapke i sklopove za vidljivost.<br>
+<br>
+Napomene: Daje signal pri sirovoj svjetlini 8 ili većoj.

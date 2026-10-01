@@ -1,0 +1,7 @@
+Sukellusilmakapseli
+Hätäilmavarasto
+<&recipe>Hätäilmaväline vedenalaiseen työhön.<br>
+<br>
+Käyttö: Palauta ilmaa käsin. Tavaraluettelossa se laukeaa automaattisesti ilman lähes loppuessa ja jäähtyy sitten.<br>
+<br>
+Pidä mukana tulvineissa kaivoksissa, vedenalaisilla putkilla ja pumppuhuoneissa.

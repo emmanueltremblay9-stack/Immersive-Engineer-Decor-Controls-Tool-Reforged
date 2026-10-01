@@ -1,0 +1,7 @@
+Alarmsiren
+Signalåterkoppling
+<&recipe>Alarmsirenen är en redstoneindikator som monteras på en blockyta. Dess strömläge följer signalen från blocket den sitter på.<br>
+<br>
+Fäst den på en solid yta och ge den ström för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Sirenen uppdateras en gång per sekund medan signalen är aktiv.

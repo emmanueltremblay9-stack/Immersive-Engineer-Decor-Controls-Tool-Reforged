@@ -1,0 +1,5 @@
+Named Crate
+Changeable stock name
+<&recipe>This named crate makes stockroom sorting clear. Its fore sheet can be written on like a small workshop markboard.<br>
+<br>
+Use: Right-click the name sheet to change the crate name. Right-click the rest of the crate to open its stockholding for fittings, bits and upkeep supplies.<br>

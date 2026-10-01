@@ -1,0 +1,7 @@
+Analogni relej veze
+Upravljanje preko veze
+<&recipe>Komponenta u obliku releja daje panelima kompaktnu lokalnu tačku prebacivanja.<br>
+<br>
+Upotreba: Desnim klikom uključite ili isključite izlaz najveće jačine za obližnje sklopove. Koristite blokove prijemnika kada trebate aktiviranje uparenim biserom.<br>
+<br>
+Napomene: Daje redstone najveće jačine dok je uključeno.

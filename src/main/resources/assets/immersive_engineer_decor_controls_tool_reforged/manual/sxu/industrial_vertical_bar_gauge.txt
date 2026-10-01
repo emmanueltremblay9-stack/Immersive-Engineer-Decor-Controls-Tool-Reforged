@@ -1,0 +1,7 @@
+Analoges Balgnmessgeräd
+Signalmessgeräd
+<&recipe>Ä gleenes Messgeräd für’n Schdeuorraum zeigd de Redstone-Schdärge als gud lesbare Paneelanzeige.<br>
+<br>
+Nuddzung: Bring’s dort an, wo de de Redstone-Energie nebenan mid eem Bligg prifn kannsd.<br>
+<br>
+Hinweis: Liesd de Redstone-Schdärge in dor Nähe von 0 bis 15 ab.

@@ -1,0 +1,5 @@
+Stairs o' old timber
+Timber from an aged workshop
+<&recipe>Stairs o' old factory timber brings aged workshop timber to decks, steps, doors and warm interior trim, matey.<br>
+<br>
+Orders: Use her fer old workshop decks, stairs, doors and trim.<br>

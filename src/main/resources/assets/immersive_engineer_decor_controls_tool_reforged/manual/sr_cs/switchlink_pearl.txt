@@ -1,0 +1,7 @@
+Biser veze prekidača
+Povezano upravljanje
+<&recipe>Povezani biser pamti ciljni prijemnik za daljinsko upravljanje fabrikom.<br>
+<br>
+Upotreba: klikni ender biserom na prijemnik veze prekidača da ga napraviš. Upotrebi povezani biser pri šunjanju da aktiviraš zapamćeni prijemnik.<br>
+<br>
+Napomene: cilj mora biti učitan, u istoj dimenziji i u dometu.

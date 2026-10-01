@@ -1,0 +1,7 @@
+Detector de caigudes
+Detecció de senyals
+<&recipe>Un interruptor de contacte envia un senyal breu amb el moviment del terra o d’una trapa.<br>
+<br>
+Ús: col·loca’l on les entitats passin per un passadís de servei, un carregador o un recorregut vigilat.<br>
+<br>
+Notes: emet un pols breu després del contacte amb una entitat.

@@ -1,0 +1,7 @@
+Gréng LED
+Signalréckmeldung
+<&recipe>Eng kompakt Uweisung mécht verstoppt Redstone als Réckmeldung an der Fabrick siichtbar.<br>
+<br>
+Benotzung: Verkabel se nieft dem Signal fir Dieren, Maschinnen, Alarmer oder Steierbrieder ze iwwerwaachen.<br>
+<br>
+Hiweiser: Wiesselt den Zoustand, wann Redstone-Stroum an der Géigend do ass.

@@ -1,0 +1,7 @@
+Gele Stroomplant
+Druckpuls
+<&recipe>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.

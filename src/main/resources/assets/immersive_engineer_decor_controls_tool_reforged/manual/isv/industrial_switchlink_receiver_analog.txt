@@ -1,0 +1,7 @@
+Vezany analogovy prijemnik
+Vezano upravljanje
+<&recipe>Vezany prijemnik davaje upravnym panelam vidimy oddaleny cělj.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Upotrěbi tu perlu kraduči se dlja oddalenogo aktivovanja prijemnika.<br>
+<br>
+Primětky: Sej prijemnik izdavaje polny redstounovy signal pri spuščenju.

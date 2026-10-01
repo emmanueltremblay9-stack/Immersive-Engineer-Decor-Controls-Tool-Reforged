@@ -1,0 +1,5 @@
+Verdichte Kiessand
+Buedembelag fir Aarbechtsplazen
+<&recipe>Dëse Block gëtt Aarbechtsberäicher dobaussen eng verdicht, zertrëppelt Uewerfläch.<br>
+<br>
+Benotzung: Lee en ëm Luededieren, Tanken dobaussen a Maschinnenhäff.<br>

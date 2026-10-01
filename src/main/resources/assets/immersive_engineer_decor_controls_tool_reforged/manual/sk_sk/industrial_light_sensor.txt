@@ -1,0 +1,7 @@
+Svetelný snímač
+Snímanie signálu
+<&recipe>Svetelný snímač mení miestny jas na redstonové ovládanie.<br>
+<br>
+Použitie: Hodí sa na automatické lampy, okenice a obvody reagujúce na viditeľnosť.<br>
+<br>
+Poznámky: Vysiela signál pri surovej hodnote jasu 8 alebo vyššej.

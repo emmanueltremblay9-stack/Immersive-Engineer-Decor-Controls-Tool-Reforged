@@ -1,0 +1,7 @@
+Steklěny dnevny časovnik
+Signal dnevnogo světa
+<&recipe>Časovny prěključatelj slěduje dnevnu čest cikla světa.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja dvorovyh lamp, žaluzij i fabričnogo upravljanja samo v denj.<br>
+<br>
+Primětky: Potrěbuje dimenziju s nebesnym světlom.

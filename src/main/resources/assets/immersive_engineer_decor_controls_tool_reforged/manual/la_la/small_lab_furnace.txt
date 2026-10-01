@@ -1,0 +1,5 @@
+Fornax laboratoria
+Unitas tractationis compacta
+<&recipe>Fornax laboratoria opera conflandi compacta combustibili solido agit, parvum spatium officinae occupans.<br>
+<br>
+Usus: combustibili solido ad parvas series conflandi utere.<br>

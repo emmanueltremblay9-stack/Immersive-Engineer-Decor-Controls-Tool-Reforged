@@ -1,0 +1,7 @@
+Braiteoir Bloc
+Brath comharthaí
+<&recipe>Seiceálann braiteoir bloc an bhfuil rud sa spás os a chomhair.<br>
+<br>
+Úsáid: dírigh é ar aghaidh an mheaisín, ar an maolán nó ar an spás cosanta ar mian leat faire air.<br>
+<br>
+Nótaí: soláthraíonn sé cumhacht nuair nach aer é an bloc os a chomhair.

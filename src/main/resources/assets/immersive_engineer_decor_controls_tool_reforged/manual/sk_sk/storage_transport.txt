@@ -1,0 +1,41 @@
+Skladovanie a preprava
+Inventárové a prietokové vybavenie
+Úložné a prepravné vybavenie zahŕňa debny, sudy, lieviky a ventily pre kompaktné továrenské rozvody.<br>
+<br>
+Tieto stránky využi pri navrhovaní skladov, potrubných trás, servisných nádrží a riadených kvapalinových vedení.
+<np>
+Debna so štítkom
+Upraviteľný skladový štítok
+<&labeled_crate>Táto debna so štítkom slúži na prehľadné triedenie v sklade. Jej predný štítok sa dá upravovať ako malá dielenská ceduľa.<br>
+<br>
+Použitie: Pravým kliknutím na štítok uprav označenie debny. Pravým kliknutím na zvyšok debny otvoríš úložisko súčiastok, dielov a zásob na údržbu.<br>
+<np>
+Sud na kvapaliny
+Vybavenie kvapalinových rozvodov
+<&fluid_barrel>Tento kompaktný diel kvapalinových rozvodov sa hodí pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Umiestni ho tak, aby potrubie alebo vedrá dosiahli na príslušnú stranu nádrže.<br>
+<np>
+Kvapalinový lievik
+Vybavenie kvapalinových rozvodov
+<&small_fluid_funnel>Malý kvapalinový lievik je kompaktný diel pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Polož ho pod miesto zbierania kvapaliny a odveď uložený obsah do nádrží alebo nižšieho potrubia.<br>
+<np>
+Spätný ventil kvapalinového potrubia
+Vybavenie kvapalinových rozvodov
+<&straight_pipe_valve>Spätný kvapalinový ventil je kompaktný diel pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Zarovnaj ventil s požadovaným smerom toku.<br>
+<np>
+Redstonový kvapalinový ventil
+Vybavenie kvapalinových rozvodov
+<&straight_pipe_valve_redstone>Redstonový kvapalinový ventil je kompaktný diel pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Zarovnaj ventil s požadovaným smerom toku.<br>
+<np>
+Analógový kvapalinový ventil
+Vybavenie kvapalinových rozvodov
+<&straight_pipe_valve_redstone_analog>Analógový kvapalinový ventil je kompaktný diel pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Zarovnaj ventil s požadovaným smerom toku.<br>

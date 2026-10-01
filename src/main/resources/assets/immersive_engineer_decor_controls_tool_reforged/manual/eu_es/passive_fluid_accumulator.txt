@@ -1,0 +1,5 @@
+Fluido pasiboa
+Fluido-lineako ekipamendua
+<&recipe>Fluido-metagailu pasiboa fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: jarri ur-iturri egokien kontra eta utzi lekua fluidoa ateratzeko.<br>

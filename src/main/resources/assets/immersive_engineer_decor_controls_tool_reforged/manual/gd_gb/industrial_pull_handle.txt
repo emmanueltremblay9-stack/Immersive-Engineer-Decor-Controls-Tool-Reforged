@@ -1,0 +1,7 @@
+Làmh-tharraing
+Smachd redstone
+<&recipe>Bheir uidheam-smachd dlùth puing suidsidh redstone soilleir do thogalaichean factaraidh.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus às-chur làn-neart a thogladh airson chuairtean faisg air.<br>
+<br>
+Nòtaichean: bheir e redstone làn-neart fhad 's a tha e air.

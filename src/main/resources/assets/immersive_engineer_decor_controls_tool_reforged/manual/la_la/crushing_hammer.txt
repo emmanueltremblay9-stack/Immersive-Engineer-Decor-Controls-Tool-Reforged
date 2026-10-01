@@ -1,0 +1,7 @@
+Malleus aeris contundendi
+Instrumentum manuale contundendi
+<&recipe>Malleus ad metallum conterendum instrumentum manuale est ad ferrum aurumque primo tractanda.<br>
+<br>
+Usus: Cum ferro crudo, auro crudo, vena ferri, vena ferri schisti profundi, vena auri aut vena auri schisti profundi compone ut pulverem ferri vel auri Immersive Engineering facias. Malleus firmitatem amittit et in reticulum rediit donec frangatur.<br>
+<br>
+Fodiendo etiam teritur et in pugna propinqua adversarios repellere potest.

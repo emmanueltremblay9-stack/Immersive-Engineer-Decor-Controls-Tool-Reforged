@@ -1,0 +1,161 @@
+Klinker & Brikworkz
+Brik an konkreet shellz
+Klinker, slaggy brikz, reinforced konkreet, an armored glass gives heavy surfaces fer hot roomz, workshops, an protected viewz, kitty.<br>
+<br>
+Use matching slabz, stepz, sliceez, an wallz fer finishin edges while keepin da same factory material style, meow.
+<np>
+Klinker Brik Bluk
+Soot-dark brikworkz
+<&clinker_brick_block>Dis bluk brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Klinker Brik Slabz
+Soot-dark brikworkz
+<&clinker_brick_slab>Dis bluk brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Klinker Brik Stepz
+Soot-dark brikworkz
+<&clinker_brick_stairs>Dis bluk brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Klinker Brik Wallz
+Soot-dark brikworkz
+<&clinker_brick_wall>Dis bluk brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Grimy Klinker Bluk
+Soot-dark brikworkz
+<&clinker_brick_stained_block>Grimy Klinker Brik Bluk brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Grimy Klinker Slabz
+Soot-dark brikworkz
+<&clinker_brick_stained_slab>Grimy Klinker Brik Slabz brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, yiss.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Grimy Klinker Stepz
+Soot-dark brikworkz
+<&clinker_brick_stained_stairs>Grimy Klinker Brik Stepz brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, kitty.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Fancy-Trim Klinker Brikz
+Soot-dark brikworkz
+<&clinker_brick_sastor_corner_block>Klinker Brikz wif Litter-Box-Rockz Trim brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, kitty.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Sunken Klinker Brikz
+Soot-dark brikworkz
+<&clinker_brick_recessed>Dis bluk brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Slitty Klinker Brikz
+Soot-dark brikworkz
+<&clinker_brick_vertically_slit>Klinker Brikz wif Upright Slitz brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, yiss.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Upright Klinker Slabz
+Soot-dark brikworkz
+<&clinker_brick_vertical_slab_structured>Upright Textured Klinker Slabz brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Half-Slab Klinker Brikz
+Soot-dark brikworkz
+<&halfslab_clinker_brick>Dis bluk brings sooty dark brikwork to furnace hallz, chimney bases, an service wallz, meow.<br>
+<br>
+How to: Use as wallz, trim, or heat-zone casing round furnacez an boilerz, kitty.<br>
+<np>
+Slaggy Brik Bluk
+Dense factory brikworkz
+<&slag_brick_block>Dis bluk adds dense gray-brown brikwork fer foundations, retaining wallz, an old workshedz, kitty.<br>
+<br>
+How to: Use fer old foundations, retaining wallz, an grimy factory floorz, meow.<br>
+<np>
+Slaggy Brik Slabz
+Dense factory brikworkz
+<&slag_brick_slab>Dis bluk adds dense gray-brown brikwork fer foundations, retaining wallz, an old workshedz, kitty.<br>
+<br>
+How to: Use fer old foundations, retaining wallz, an grimy factory floorz, meow.<br>
+<np>
+Slaggy Brik Stepz
+Dense factory brikworkz
+<&slag_brick_stairs>Dis bluk adds dense gray-brown brikwork fer foundations, retaining wallz, an old workshedz, kitty.<br>
+<br>
+How to: Use fer old foundations, retaining wallz, an grimy factory floorz, meow.<br>
+<np>
+Slaggy Brik Wallz
+Dense factory brikworkz
+<&slag_brick_wall>Dis bluk adds dense gray-brown brikwork fer foundations, retaining wallz, an old workshedz, kitty.<br>
+<br>
+How to: Use fer old foundations, retaining wallz, an grimy factory floorz, meow.<br>
+<np>
+Rebar Konkreet Bluk
+Reinforced konkreet stuffz
+<&rebar_concrete>Dis hardened konkreet piece goes in machine pads, blast wallz, an loading-bay floorz, kitty.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Rebar Konkreet Slabz
+Reinforced konkreet stuffz
+<&rebar_concrete_slab>Dis hardened konkreet piece goes in machine pads, blast wallz, an loading-bay floorz, kitty.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Rebar Konkreet Stepz
+Reinforced konkreet stuffz
+<&rebar_concrete_stairs>Dis hardened konkreet piece goes in machine pads, blast wallz, an loading-bay floorz, kitty.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Rebar Konkreet Wallz
+Reinforced konkreet stuffz
+<&rebar_concrete_wall>Dis hardened konkreet piece goes in machine pads, blast wallz, an loading-bay floorz, kitty.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Rebar Konkreet Sliceez
+Reinforced konkreet stuffz
+<&halfslab_rebar_concrete>Dis hardened konkreet piece goes in machine pads, blast wallz, an loading-bay floorz, kitty.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Rebar Konkreet Floor Tilez
+Reinforced konkreet stuffz
+<&rebar_concrete_tile>Dis hardened konkreet piece goes in machine pads, blast wallz, an loading-bay floorz, kitty.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Rebar Konkreet Floor-Tile Slabz
+Reinforced konkreet stuffz
+<&rebar_concrete_tile_slab>Dis hardened konkreet piece goes in machine pads, blast wallz, an loading-bay floorz, kitty.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Rebar Konkreet Floor Tilez
+Reinforced konkreet stuffz
+<&rebar_concrete_tile_stairs>Rebar Konkreet Floor-Tile Stepz iz hardened konkreet partz fer machine pads, blast wallz, an loading-bay floorz, yiss.<br>
+<br>
+How to: Put under machinez, along service corridors, or anywhere ur build needs a reinforced base, meow.<br>
+<np>
+Armored Glassy Bluk
+Look-thru protectionz
+<&panzerglass_block>Dis bluk keeps da view clear while still matchin reinforced factory buildinz, meow.<br>
+<br>
+How to: Use where playerz should see machinery thru a protected barrier, kitty.<br>
+<np>
+Armored Glassy Slabz
+Look-thru protectionz
+<&panzerglass_slab>Dis bluk keeps da view clear while still matchin reinforced factory buildinz, meow.<br>
+<br>
+How to: Use where playerz should see machinery thru a protected barrier, kitty.<br>

@@ -1,0 +1,5 @@
+Dubbel T-balk av stål
+Del till bärande stomme
+<&recipe>Det här blocket ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>

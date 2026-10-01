@@ -1,0 +1,7 @@
+Sensor de llum
+Detecció de senyals
+<&recipe>Un sensor de llum converteix la lluminositat local en control per redstone.<br>
+<br>
+Ús: fes-lo servir per a llums automàtics, persianes i circuits de visibilitat.<br>
+<br>
+Notes: emet potència amb un nivell de llum brut de 8 o més.

@@ -1,0 +1,127 @@
+Acesovoyi
+Pasareli ed apogili
+Acerstangi, traktita lignostangi, kradaro, pasareli, balustradi, skali, pordi, fenestri e trapi formas kompakta servovoyi tra fabrikinterni.<br>
+<br>
+Acera acesovoypeci uzas acerplaki. Fabrikez o pozez metala tablo di fabrikado, enmetez Immersive Engineering-martelo, pose martelez acerlingoti a acerplaki por stangi, pasareli, fenestri, pordi, balustradi ed altra acerdekoraji.<br>
+<br>
+Pozez li ube mashini bezonas servoaceso, elevita voyi, manutenoshakti o plu sekura bordi.
+<np>
+Dika acerstango
+Struktura kadropeco
+<&thick_steel_pole>La Rekta dika acerstango furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Kapo di dika stango
+Struktura kadropeco
+<&thick_steel_pole_head>La Kapo/pedo di rekta dika acerstango furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Tenua acerstango
+Struktura kadropeco
+<&thin_steel_pole>La Rekta tenua acerstango furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Kapo di tenua stango
+Struktura kadropeco
+<&thin_steel_pole_head>La Kapo/pedo di rekta tenua acerstango furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Stango ek traktita ligno
+Struktura kadropeco
+<&treated_wood_pole>La Rekta stango ek traktita ligno furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Kapo di traktita stango
+Struktura kadropeco
+<&treated_wood_pole_head>La Kapo/pedo di rekta stango ek traktita ligno furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Apogilo di traktita stango
+Struktura kadropeco
+<&treated_wood_pole_support>La Apogilo di rekta stango ek traktita ligno furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Acera duopla-T-apogilo
+Struktura kadropeco
+<&steel_double_t_support>Ca bloko furnisas videbla strukturo por mashinhalei ed acesokadri.<br>
+<br>
+Uzo: Turnez e pozez ol kom videbla apogilo por trabi, stangi e platformobordi.<br>
+<np>
+Acera plankokradaro
+Servoacesa instaluro
+<&steel_floor_grating>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Acera pasarelo
+Servoacesa instaluro
+<&steel_catwalk>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Eskalero di acera pasarelo
+Servoacesa instaluro
+<&steel_catwalk_stairs>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Elevita acera pasarelo
+Servoacesa instaluro
+<&steel_catwalk_ta>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Acera balustrado
+Servoacesa instaluro
+<&steel_railing>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Acera retbarilo
+Servoacesa instaluro
+<&steel_mesh_fence>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Pordo di acera retbarilo
+Servoacesa instaluro
+<&steel_mesh_fence_gate>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Skalo kun metalvergeti
+Servoacesa instaluro
+<&metal_rung_ladder>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Alternanta metalskaluni
+Servoacesa instaluro
+<&metal_rung_steps>Ca bloko formas klare komprenebla servovoyi cirkum mashini.<br>
+<br>
+Uzo: Pozez ol kom manutenoaceso cirkum mashini, supera etaji e servoshakti.<br>
+<np>
+Fenestro kun acera kadro
+Protektita vidlinio
+<&steel_framed_window>Ca bloko konservas apertita vidlinii dum ol kongruas kun plufortigita fabrikkonstrukto.<br>
+<br>
+Uzo: Pozez ol en aperturo di 1 bloko en muro ube ludanti devas vidar mashini tra protektita barilo.<br>
+<np>
+Metalpordo glitanta
+Industriala acesopunkto
+<&metal_sliding_door>Ca bloko furnisas fortrezista acesopunkto por servochambri, shakti, tekti e mashinenkadruri.<br>
+<br>
+Uzo: Instalez ol ube la konstrukto bezonas regata manutenoaperturo.<br>
+<np>
+Fera trapo
+Industriala acesopunkto
+<&iron_hatch>Ca bloko furnisas fortrezista acesopunkto por servochambri, shakti, tekti e mashinenkadruri.<br>
+<br>
+Uzo: Instalez ol ube la konstrukto bezonas regata manutenoaperturo.<br>

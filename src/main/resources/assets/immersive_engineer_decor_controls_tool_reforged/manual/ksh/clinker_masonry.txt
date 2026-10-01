@@ -1,0 +1,161 @@
+Klinker un Muurwerk
+Hülle us Ziejel un Betong
+Klinker, Schlackeziejel, Stahlbetong un Panzerjlas jävve heiße Rüüm, Werkstätte un jeschötzte Sichtbereiche schwere Fläsche.<br>
+<br>
+Nimm de passende Stufe, Trappe, dünne Schieve un Muure, öm Kante avzeschließe, ohne dä Materialstil vun d'r Fabrik ze ängere.
+<np>
+Klinkerziejelblock
+Rooßdüster Ziejelwerk
+<&clinker_brick_block>Heh dä Block brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Klinkerziejelstof
+Rooßdüster Ziejelwerk
+<&clinker_brick_slab>Heh dä Block brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Klinkerziejeltrapp
+Rooßdüster Ziejelwerk
+<&clinker_brick_stairs>Heh dä Block brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Klinkerziejelmuur
+Rooßdüster Ziejelwerk
+<&clinker_brick_wall>Heh dä Block brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Fleckije Klinkerblock
+Rooßdüster Ziejelwerk
+<&clinker_brick_stained_block>Dä fleckije Klinkerziejelblock brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Fleckije Klinkerstof
+Rooßdüster Ziejelwerk
+<&clinker_brick_stained_slab>De fleckije Klinkerziejelstof brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Fleckije Klinkertrapp
+Rooßdüster Ziejelwerk
+<&clinker_brick_stained_stairs>De fleckije Klinkerziejeltrapp brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Verzierte Klinkerziejel
+Rooßdüster Ziejelwerk
+<&clinker_brick_sastor_corner_block>Dä Klinkerziejel met Sandsteinzier brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Enjelassene Klinkerziejel
+Rooßdüster Ziejelwerk
+<&clinker_brick_recessed>Heh dä Block brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Jeschlitzte Klinkerziejel
+Rooßdüster Ziejelwerk
+<&clinker_brick_vertically_slit>De senkrecht jeschlitzte Klinkerziejel bränge rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Senkrechte Klinkerstof
+Rooßdüster Ziejelwerk
+<&clinker_brick_vertical_slab_structured>De struktureete senkrechte Klinkerstof brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Halve Klinkerziejelstof
+Rooßdüster Ziejelwerk
+<&halfslab_clinker_brick>Heh dä Block brängk rooßdüster Muurwerk en Ovvehalle, Schornsteinföß un Wartungswäng.<br>
+<br>
+Bruuch: Nimm en als Muur, Rand udder Hitzbereichshüll öm Övve un Kessel.<br>
+<np>
+Schlackeziejelblock
+Dicht Fabrikmuurwerk
+<&slag_brick_block>Heh dä Block ergänzt dicht jraubrung Muurwerk för Fundamente, Stötzmuure un äldere Werkschoppe.<br>
+<br>
+Bruuch: Nimm en för ahle Fundamente, Stötzmuure un dreckije Fabrikböde.<br>
+<np>
+Schlackeziejelstof
+Dicht Fabrikmuurwerk
+<&slag_brick_slab>Heh dä Block ergänzt dicht jraubrung Muurwerk för Fundamente, Stötzmuure un äldere Werkschoppe.<br>
+<br>
+Bruuch: Nimm en för ahle Fundamente, Stötzmuure un dreckije Fabrikböde.<br>
+<np>
+Schlackeziejeltrapp
+Dicht Fabrikmuurwerk
+<&slag_brick_stairs>Heh dä Block ergänzt dicht jraubrung Muurwerk för Fundamente, Stötzmuure un äldere Werkschoppe.<br>
+<br>
+Bruuch: Nimm en för ahle Fundamente, Stötzmuure un dreckije Fabrikböde.<br>
+<np>
+Schlackeziejelmuur
+Dicht Fabrikmuurwerk
+<&slag_brick_wall>Heh dä Block ergänzt dicht jraubrung Muurwerk för Fundamente, Stötzmuure un äldere Werkschoppe.<br>
+<br>
+Bruuch: Nimm en för ahle Fundamente, Stötzmuure un dreckije Fabrikböde.<br>
+<np>
+Stahlbetongblock
+Verstärkte Betong
+<&rebar_concrete>Heh dä Block es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Stahlbetongstof
+Verstärkte Betong
+<&rebar_concrete_slab>Heh dä Block es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Stahlbetongtrapp
+Verstärkte Betong
+<&rebar_concrete_stairs>Heh dä Block es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Stahlbetongmuur
+Verstärkte Betong
+<&rebar_concrete_wall>Heh dä Block es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Dünn Stahlbetongschiev
+Verstärkte Betong
+<&halfslab_rebar_concrete>Heh dä Block es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Stahlbetongflies
+Verstärkte Betong
+<&rebar_concrete_tile>Heh dä Block es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Stahlbetongfliesestof
+Verstärkte Betong
+<&rebar_concrete_tile_slab>Heh dä Block es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Stahlbetongflies
+Verstärkte Betong
+<&rebar_concrete_tile_stairs>De Stahlbetongfliesetrapp es e hat Betongteil för Maschinesockel, Explosiounsschotzwäng un Böde vun Laadebuchte.<br>
+<br>
+Bruuch: Setz en unger Maschine, langs Wartungsjäng udder dohin, wo dä Bou ene verstärkte Jrund brucht.<br>
+<np>
+Panzerjlasblock
+Jeschötzte Durchbleck
+<&panzerglass_block>Heh dä Block löht dä Durchbleck frei un paß trotzdem zo verstärkte Fabrikboute.<br>
+<br>
+Bruuch: Nimm en do, wo Spiller durch en jeschötzte Wand op Maschine luure solle.<br>
+<np>
+Panzerjlasstof
+Jeschötzte Durchbleck
+<&panzerglass_slab>Heh dä Block löht dä Durchbleck frei un paß trotzdem zo verstärkte Fabrikboute.<br>
+<br>
+Bruuch: Nimm en do, wo Spiller durch en jeschötzte Wand op Maschine luure solle.<br>

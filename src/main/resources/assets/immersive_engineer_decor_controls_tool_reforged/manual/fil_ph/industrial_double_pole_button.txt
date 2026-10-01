@@ -1,0 +1,7 @@
+Pindutan
+Kontrol ng Redstone
+<&recipe>Nagbibigay ang panandaliang swits ng malinaw na pulso ng redstone na buong lakas.<br>
+<br>
+Paggamit: Gamitin para sa pagsisimula ng makina, pagbukas ng pinto, alarma o sirkito na minsan lang tumatakbo.<br>
+<br>
+Tandaan: Bumabalik sa paunang estado matapos ang nakatakdang pulso.

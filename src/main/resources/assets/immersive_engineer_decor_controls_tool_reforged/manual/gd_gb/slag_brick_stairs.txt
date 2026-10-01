@@ -1,0 +1,5 @@
+Staidhre bhreigichean sgudail-leaghaidh
+Clachaireachd dhlùth factaraidh
+<&recipe>Bheir am bloca seo clachaireachd dhlùth ghlas-dhonn airson bunaitean, ballachan-glèidhidh agus seann seadaichean-obrach.<br>
+<br>
+Cleachdadh: cleachd e airson seann bhunaitean, ballachan-glèidhidh agus làir shalach ionadan-obrach.<br>

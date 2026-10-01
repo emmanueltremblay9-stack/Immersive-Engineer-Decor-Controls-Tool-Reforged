@@ -1,0 +1,5 @@
+Panou solar
+Echipament util în hală
+<&recipe>Panoul solar mic este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Oferă-i acces la cerul liber și conectează echipamente cu consum redus.<br>

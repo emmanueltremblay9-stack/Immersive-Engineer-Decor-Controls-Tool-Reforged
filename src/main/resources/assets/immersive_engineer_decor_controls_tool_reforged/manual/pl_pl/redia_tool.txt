@@ -1,0 +1,7 @@
+Narzędzie REDIA
+Przyrząd pokryty diamentem
+<&recipe>Narzędzie REDIA to trwałe narzędzie wielofunkcyjne klasy diamentowej do prac terenowych przy tymczasowych placach budowy, warsztatach i wejściach do kopalń.<br>
+<br>
+Użycie: Mając przy sobie pochodnie, użyj narzędzia, aby postawić jedną z ekwipunku bez zużywania REDIA. Podczas skradania przycinaj rośliny lub zmieniaj podłoże między ziemią, polem uprawnym, twardą ziemią i ścieżką. Oryginalne działanie siekiery jest stosowane jako wariant zastępczy od dolnej strony. Niszcz pnie podczas skradania, aby ściąć połączone bloki drzewa.<br>
+<br>
+Naprawiaj je diamentami. Naprawa w pełni sprawnego narzędzia REDIA ponad maksimum przywraca oryginalną ścieżkę ulepszeń Wydajności i Szczęścia.

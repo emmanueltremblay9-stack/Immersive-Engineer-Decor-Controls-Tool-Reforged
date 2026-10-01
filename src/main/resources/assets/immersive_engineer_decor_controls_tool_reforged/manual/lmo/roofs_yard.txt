@@ -1,0 +1,101 @@
+Tecc e cort
+Acessori de fabrica de foeura
+I bloch de tecc, la gera del piazal e i tocch de legn industrial vegg i juten a finì i capannon de foeura, i cort de lavor, i zone de carga e i bord de fabrica invegiad dal temp.<br>
+<br>
+Met insema quei tocch chì cont muradura e corsei de passagg per fà capì ben i costruzzion industriai de foeura anca de lontan.
+<np>
+Tecc de scandole scure
+Acessori de tecc invegiad
+<&dark_shingle_roof>Quell tocch chì el fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Para fioca del tecc
+Acessori de tecc invegiad
+<&dark_shingle_roof_metallized>El Para fioca de tecc de scandole scure el fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Tecc de scandole scure
+Acessori de tecc invegiad
+<&dark_shingle_roof_skylight>El Lucernari de tecc de scandole scure el fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Canna del camin del tecc
+Acessori de tecc invegiad
+<&dark_shingle_roof_chimneytrunk>La Canna de camin de tecc de scandole scure la fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Passafil del tecc
+Acessori de tecc invegiad
+<&dark_shingle_roof_wireconduit>El Passafil de tecc de scandole scure el fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Tecc de scandole scure
+Acessori de tecc invegiad
+<&dark_shingle_roof_chimney>El Camin de tecc de scandole scure el fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Bloch de tecc de scandole scure
+Acessori de tecc invegiad
+<&dark_shingle_roof_block>Quell tocch chì el fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Pioda de tecc de scandole scure
+Acessori de tecc invegiad
+<&dark_shingle_roof_slab>Quell tocch chì el fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Pioda de tecc de scandole scure
+Acessori de tecc invegiad
+<&dark_shingle_roof_slabslice>La Fetta de pioda de tecc de scandole scure la fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>
+<np>
+Terra de gera compata
+Teren de cantiere
+<&dense_grit_dirt_block>Quell bloch chì el fa una superfiss compata e pestada per i lavor de foeura.<br>
+<br>
+Metel vesin a i porte de carga, a i serbatoi de foeura e a i piazai di machine.<br>
+<np>
+Sabia de gera compata
+Teren de cantiere
+<&dense_grit_sand_block>Quell bloch chì el fa una superfiss compata e pestada per i lavor de foeura.<br>
+<br>
+Metel vesin a i porte de carga, a i serbatoi de foeura e a i piazai di machine.<br>
+<np>
+Ass de legn vegg
+Legn invegiad de laboratori
+<&old_industrial_wood_planks>I Ass vegg de legn industrial i sgionten legn invegiad de laboratori per paviment, gradin, porte e profil de denter cont un aspèt cald.<br>
+<br>
+Dovrel per paviment, basei, porte e profil di laboratori vegg.<br>
+<np>
+Pioda veggia de legn industrial
+Legn invegiad de laboratori
+<&old_industrial_wood_slab>Quell bloch chì el sgionta legn invegiad de laboratori per paviment, gradin, porte e profil de denter cont un aspèt cald.<br>
+<br>
+Dovrel per paviment, basei, porte e profil di laboratori vegg.<br>
+<np>
+Basei de legn vegg
+Legn invegiad de laboratori
+<&old_industrial_wood_stairs>I Basei vegg de legn industrial i sgionten legn invegiad de laboratori per paviment, gradin, porte e profil de denter cont un aspèt cald.<br>
+<br>
+Dovrel per paviment, basei, porte e profil di laboratori vegg.<br>
+<np>
+Fetta de pioda de legn vegg
+Legn invegiad de laboratori
+<&old_industrial_wood_slabslice>La Fetta de pioda veggia de legn industrial la sgionta legn invegiad de laboratori per paviment, gradin, porte e profil de denter cont un aspèt cald.<br>
+<br>
+Dovrel per paviment, basei, porte e profil di laboratori vegg.<br>
+<np>
+Porta veggia de legn industrial
+Legn invegiad de laboratori
+<&old_industrial_wood_door>Quell bloch chì el sgionta legn invegiad de laboratori per paviment, gradin, porte e profil de denter cont un aspèt cald.<br>
+<br>
+Dovrel per paviment, basei, porte e profil di laboratori vegg.<br>

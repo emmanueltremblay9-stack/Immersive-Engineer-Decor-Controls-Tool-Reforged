@@ -1,0 +1,7 @@
+Boxed Linky Receiver
+Linky controlz
+<&recipe>Boxed linked receiver gives remote panelz a tough redstone target, kitty.<br>
+<br>
+How to: Click wif an Ender Perl fer makin a linked perl. Right-click da receiver itself fer flipping it by paw, meow.<br>
+<br>
+Kitty note: Tiptoe-use da linked perl fer togglin dis receiver.

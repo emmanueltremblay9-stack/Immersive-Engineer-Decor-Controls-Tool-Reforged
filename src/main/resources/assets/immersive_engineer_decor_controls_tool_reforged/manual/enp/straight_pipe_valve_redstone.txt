@@ -1,0 +1,5 @@
+Redstone Flowgate
+Flow-line gear
+<&recipe>The Redstone Flowgate is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Line the flowgate up with the wanted flow way.<br>

@@ -1,0 +1,5 @@
+Paksu teräspylväs
+Rungon rakenneosa
+<&recipe>Suora paksu teräspylväs antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>

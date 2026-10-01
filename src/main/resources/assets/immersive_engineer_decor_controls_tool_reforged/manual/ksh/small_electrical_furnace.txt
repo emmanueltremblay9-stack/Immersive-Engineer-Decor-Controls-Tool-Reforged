@@ -1,0 +1,5 @@
+Elektroovve
+Klein Verarbeitungseinheit
+<&recipe>Dä Elektroovve deit kleine Schmelzarbeite met FE-Energie op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Föhr FE un passend Schmelzmaterial zo.<br>

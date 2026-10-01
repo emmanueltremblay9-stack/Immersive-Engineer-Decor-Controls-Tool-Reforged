@@ -1,0 +1,5 @@
+Fabrik-Auswerfer
+Hilfsgerät für die Werkstatt
+<&recipe>Dieser Block gibt gespeicherte Gegenstände aus einer ausgerichteten Seite aus.<br>
+<br>
+Verwendung: Richte die Vorderseite auf den Auswurfpunkt, fülle die internen Fächer und stelle Kraft, Winkel, Verzögerung, Filterlogik und Redstone-Modus in der Oberfläche ein.<br>

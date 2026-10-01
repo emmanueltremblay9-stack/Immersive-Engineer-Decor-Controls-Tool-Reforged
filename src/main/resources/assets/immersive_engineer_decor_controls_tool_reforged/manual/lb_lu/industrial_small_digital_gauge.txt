@@ -1,0 +1,7 @@
+Digitale Messer
+Liesbar Signalstäerkt
+<&recipe>E kompakte Messer fir de Kontrollraum weist d'Redstone-Stäerkt kloer um Steierbriet un.<br>
+<br>
+Benotzung: Montéier en do, wou d'Redstone-Stäerkt an der Géigend op ee Bléck kontrolléiert soll ginn.<br>
+<br>
+Hiweiser: Liest d'Redstone-Stäerkt an der Géigend vun 0 bis 15.

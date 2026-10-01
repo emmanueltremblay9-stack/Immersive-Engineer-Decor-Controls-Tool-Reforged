@@ -1,0 +1,108 @@
+Industriebauten
+Fabrikwänd und Einfassunga
+Allgemeine Bauteil umfassen Tiern, Fensta, Liachta, Warnschuidln, Einfassunga und Tragteil, de in koan speziellern Abschnitt ghörn.<br>
+<br>
+Nutz de Seiten fia Fabrikräum, Wartungsgäng, Gfahrnmarkierunga und praktische Industriedetails.
+<np>
+Eisenbirnliacht
+Kloans Arbeitsliacht
+<&iron_bulb_light>Der Block liefert kloane Industriebeleuchtung fia Gäng, Laufsteg und Arbeitsbuchtn.<br>
+<br>
+So geht's: Befestig'n an Deckn, Wänd oder Kantn, wo da Raum klares Arbeitsliacht braucht.<br>
+<np>
+Decknkantenliacht
+Kloans Arbeitsliacht
+<&iron_ceiling_edge_light>Der Block liefert kloane Industriebeleuchtung fia Gäng, Laufsteg und Arbeitsbuchtn.<br>
+<br>
+So geht's: Befestig'n an Deckn, Wänd oder Kantn, wo da Raum klares Arbeitsliacht braucht.<br>
+<np>
+Eilassnes Bodnkantenliacht
+Kloans Arbeitsliacht
+<&iron_floor_edge_light>Der Block liefert kloane Industriebeleuchtung fia Gäng, Laufsteg und Arbeitsbuchtn.<br>
+<br>
+So geht's: Befestig'n an Deckn, Wänd oder Kantn, wo da Raum klares Arbeitsliacht braucht.<br>
+<np>
+Eilassnes Liacht
+Kloans Arbeitsliacht
+<&iron_inset_light>Der Block liefert kloane Industriebeleuchtung fia Gäng, Laufsteg und Arbeitsbuchtn.<br>
+<br>
+So geht's: Befestig'n an Deckn, Wänd oder Kantn, wo da Raum klares Arbeitsliacht braucht.<br>
+<np>
+Schuidl „Allgemeine Vorsicht
+Gfahrnmarkierung
+<&sign_caution>S'Schuidl „Allgemeine Vorsicht“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Gfahrnschuidl
+Gfahrnmarkierung
+<&sign_danger>S'Schuidl „Obacht, da is echt gfährlich“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Verzierschuidl
+Gfahrnmarkierung
+<&sign_decor>De Schuidlplattn (Engineer's decor) markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Abwehrschuidl
+Gfahrnmarkierung
+<&sign_defense>S'Schuidl „Obacht, Abwehranlag voraus“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Ausgangsschuidl
+Gfahrnmarkierung
+<&sign_exit>Des Schuidl markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schuidl „Feiergefahr
+Gfahrnmarkierung
+<&sign_firehazard>S'Schuidl „Feiergefahr“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schuidl „Frostwarnung
+Gfahrnmarkierung
+<&sign_frost>S'Schuidl „Frostwarnung“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schuidl fia hoaße Flächen
+Gfahrnmarkierung
+<&sign_hotsurface>S'Schuidl „Obacht, hoaße Fläch“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schuidl fia Draht unter Strom
+Gfahrnmarkierung
+<&sign_hotwire>S'Schuidl „Obacht, Draht unter Strom“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schuidl „Lasergefahr
+Gfahrnmarkierung
+<&sign_laser>S'Schuidl „Lasergefahr“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schuidl fia magische Gfahr
+Gfahrnmarkierung
+<&sign_magichazard>S'Schuidl „Obacht, magische Gfahr“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Magnetfeldschuidl
+Gfahrnmarkierung
+<&sign_magneticfield>S'Schuidl „Obacht, starks Magnetfeld“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schuidl „Strahlungsgefahr
+Gfahrnmarkierung
+<&sign_radioactive>S'Schuidl „Strahlungsgefahr“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>
+<np>

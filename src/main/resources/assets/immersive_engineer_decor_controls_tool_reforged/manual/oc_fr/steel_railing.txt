@@ -1,0 +1,5 @@
+Barana d’acièr
+Equipament d’accès de servici
+<&recipe>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>

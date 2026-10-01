@@ -1,0 +1,7 @@
+Than Ariadne
+Dấu chỉ đường trong mỏ
+<&recipe>Than Ariadne là công cụ đánh dấu nhanh cho giếng mỏ, nhánh hầm và công việc ngầm tạm thời.<br>
+<br>
+Cách dùng: Dùng trên mặt khối chắc chắn để đặt mũi tên đen tại mặt đó. Dấu đọc vị trí nhấp và hỗ trợ tám hướng, gồm cả đường chéo, giúp đánh dấu chỗ rẽ, lối ra, ngõ cụt và đường tiếp tế mà không cần mang biển chỉ đường riêng.<br>
+<br>
+Than Ariadne là dụng cụ đánh dấu tái sử dụng với 100 lần dùng. Mỗi dấu đặt thành công tốn một độ bền; mặt không được hỗ trợ bị từ chối mà không làm mòn vật phẩm.

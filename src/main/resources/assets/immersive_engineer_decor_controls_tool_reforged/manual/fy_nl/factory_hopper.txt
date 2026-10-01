@@ -1,0 +1,5 @@
+Fabrykstrachter
+Helpapparaat foar de wurkflier
+<&recipe>Dit blok ferpleatst foarwerpsteapels troch in kompaktere yndustriële kast.<br>
+<br>
+Gebrûk: Rjochtsje it op de ynventarisketen en stel dêrnei berik, steapeloantal, tiden en redstonemodus yn op it skerm.<br>

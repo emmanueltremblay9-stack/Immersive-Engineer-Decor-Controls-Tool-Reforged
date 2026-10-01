@@ -1,0 +1,7 @@
+Viaskovaja plita dla miechaničnych udaraŭ
+Impuls ad cisku
+<&recipe>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.

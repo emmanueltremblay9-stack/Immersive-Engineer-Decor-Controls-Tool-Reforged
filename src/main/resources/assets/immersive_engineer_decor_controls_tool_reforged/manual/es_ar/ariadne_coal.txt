@@ -1,0 +1,7 @@
+Carbón de Ariadna
+Marcador de rutas de mina
+<&recipe>El carbón de Ariadna permite marcar rápidamente rutas en pozos, galerías y trabajos subterráneos temporales.<br>
+<br>
+Uso: Aplicalo sobre una cara estable de un bloque para dibujar una flecha negra en esa superficie. La marca utiliza el punto donde hacés clic y admite ocho direcciones, incluidas las diagonales. Así podés señalar giros, salidas, callejones sin salida y rutas de suministro sin llevar postes de señalización.<br>
+<br>
+El carbón de Ariadna es una herramienta reutilizable con 100 usos. Cada marca colocada consume un punto de durabilidad; las caras no aptas se rechazan sin desgastar el objeto.

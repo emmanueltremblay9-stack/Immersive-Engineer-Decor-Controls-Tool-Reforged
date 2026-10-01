@@ -1,0 +1,5 @@
+Quyosh paneli
+Ustaxona yordamchi qurilmasi
+<&recipe>Kichik quyosh paneli yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: ochiq osmon bilan ta'minlab, kam quvvat talab qiladigan jihozlarni ulang.<br>

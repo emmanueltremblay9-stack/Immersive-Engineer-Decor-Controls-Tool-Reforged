@@ -1,0 +1,7 @@
+Presse-esprit
+Condensateur d'expérience
+<&recipe>Le presse-esprit transforme le lapis et l'expérience en lapis chargé.<br>
+<br>
+Utilisation : gardez du lapis-lazuli et au moins un niveau d'expérience, puis utilisez l'outil. Une extraction réussie consomme un niveau et un lapis, blesse l'utilisateur, use le presse-esprit et produit un lapis chargé.<br>
+<br>
+Il refuse de fonctionner si vous manquez de lapis ou d'XP, ou si vous êtes trop proche de la mort.

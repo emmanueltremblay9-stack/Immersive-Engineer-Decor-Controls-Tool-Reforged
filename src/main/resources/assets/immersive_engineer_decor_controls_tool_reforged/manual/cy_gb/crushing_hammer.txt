@@ -1,0 +1,7 @@
+Morthwyl malu mwyn
+Offeryn llaw
+<&recipe>Offeryn llaw ar gyfer gwaith haearn ac aur cynnar.<br>
+<br>
+Defnydd: Gyda haearn crai, aur crai, mwyn haearn, mwyn haearn llechen ddofn, mwyn aur neu fwyn aur llechen ddofn, mae'n gwneud llwch haearn neu aur Immersive Engineering. Mae'n colli gwydnwch ac yn dychwelyd i'r grid nes torri.<br>
+<br>
+Mae hefyd yn treulio wrth fwyngloddio ac yn gwthio targedau mewn ymladd agos.

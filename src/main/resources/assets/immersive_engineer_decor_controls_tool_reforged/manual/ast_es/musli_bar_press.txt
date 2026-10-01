@@ -1,0 +1,7 @@
+Prensa de Barres Muslee
+Prensa de comida
+<&recipe>La Prensa de Barres Muslee convierte alimentos comunes en raciones de campu compactes.<br>
+<br>
+Usu: Lleva pan, una mazana y semientes de trigu, sandía, calabaza, remolacha o cáñamu industrial, y usa la prensa. Un prensáu correutu consume una de cada ingrediente, comprueba l'espaciu, crea cuatro Barres Muslee Melange y gasta la prensa.<br>
+<br>
+Si falta un ingrediente o nun hai sitiu, nun se consume nada.

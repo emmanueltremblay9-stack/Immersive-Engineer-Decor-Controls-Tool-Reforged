@@ -1,0 +1,5 @@
+Cuaille Cruach Tanaí
+Páirt den fhráma struchtúrach
+<&recipe>Tugann an Cuaille Díreach Tanaí Cruach struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>

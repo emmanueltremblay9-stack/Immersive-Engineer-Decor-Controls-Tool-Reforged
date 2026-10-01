@@ -1,0 +1,7 @@
+Intervalinis laikmatis
+Nustatyto laiko impulsas
+<&recipe>Kompaktiškas laikmačio jungiklis siunčia suplanuotą redstono impulsą.<br>
+<br>
+Naudojimas: naudok ten, kur mažam mechanizmui reikia periodinio arba uždelsto valdymo.<br>
+<br>
+Pastabos: naudoja suplanuotus redstono impulsus.

@@ -1,0 +1,7 @@
+Svirtis
+Valdymas redstonu
+<&recipe>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.

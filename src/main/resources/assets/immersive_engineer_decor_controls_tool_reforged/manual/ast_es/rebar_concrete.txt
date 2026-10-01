@@ -1,0 +1,5 @@
+Bloque de formigón armao
+Formigón reforzao
+<&recipe>Esti bloque ye una pieza de formigón endurecío pa bases de máquines, parés contra esplosiones y suelos de muelles de carga.<br>
+<br>
+Usu: úsalu debaxo de les máquines, a lo llargo de los pasillos de serviciu o onde la construcción precise una base reforzada.<br>

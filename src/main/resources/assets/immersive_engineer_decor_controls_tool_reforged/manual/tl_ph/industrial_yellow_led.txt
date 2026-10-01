@@ -1,0 +1,7 @@
+Dilaw na LED
+Pahiwatig ng signal
+<&recipe>Ginagawang nakikitang pahiwatig ng maliit na tagapagpahiwatig ang nakatagong redstone sa pabrika.<br>
+<br>
+Paggamit: Ikabit sa tabi ng signal upang bantayan ang mga pinto, makina, alarma o panel.<br>
+<br>
+Tandaan: Nagbabago ng estado kapag may lakas ng redstone sa paligid.

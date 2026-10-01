@@ -1,0 +1,7 @@
+Lapis Luchtaithe
+Taithí stóráilte
+<&recipe>Stórálann Lapis Luchtaithe leibhéal amháin taithí a cruthaíodh leis an bhFáiscire Intinne.<br>
+<br>
+Úsáid: ídigh é chun leibhéal amháin a athbhunú, éifeachtaí gníomhacha a bhaint agus méid beag sláinte a fháil ar ais.<br>
+<br>
+Taispeánann an ghiuirléid oidis an Fáiscire Intinne mar go ndéantar Lapis Luchtaithe tríd an uirlis sin a úsáid agus lapis agus XP ar fáil.

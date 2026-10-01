@@ -1,0 +1,127 @@
+Voies d'accès
+Passaijes e supports
+Les potiaos d'acier, les potiaos traités, les grilles de sol, les passerelles, les rambardes, les echales, les portes, les fenétrs e les trapes font des voies de service compactes den les uzines.<br>
+<br>
+Les pièces d'accès en acier se font o des pllaqes d'acier. Fezéz ou pllacéz un Etablli a métal, météz-y un martè d'Immersive Engineering, pis batéz des moches d'acier en pllaqes d'acier pour les potiaos, les passerelles, les fenétrs, les portes, les rambardes e les aotres décors en acier.<br>
+<br>
+Pllacéz-les la où qe les machines ont besouin d'accès de service, de sentes en haoteur, de conduits d'entretien ou de bords pus seûrs.
+<np>
+Grô potè d'acier
+Pièce d'ossature
+<&thick_steel_pole>Le Grô potè dret en acier fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Téte de grô potè
+Pièce d'ossature
+<&thick_steel_pole_head>La Téte/Pië de grô potè dret en acier fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Fin potè d'acier
+Pièce d'ossature
+<&thin_steel_pole>Le Fin potè dret en acier fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Téte de fin potè
+Pièce d'ossature
+<&thin_steel_pole_head>La Téte/Pië de fin potè dret en acier fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Potè en bouéz traitë
+Pièce d'ossature
+<&treated_wood_pole>Le Potè dret en bouéz traitë fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Téte de potè traitë
+Pièce d'ossature
+<&treated_wood_pole_head>La Téte/Pië de potè dret en bouéz traitë fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Soutien de potè traitë
+Pièce d'ossature
+<&treated_wood_pole_support>Le Soutien de potè dret en bouéz traitë fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Soutien en acier a deûz T
+Pièce d'ossature
+<&steel_double_t_support>Çu blloqe fait eune structure visibl pour les halles a machines e les cadres d'accès.<br>
+<br>
+Empllai : Viréz e pllacéz la pièce coume renfort visibl pour les poutres, les potiaos e les bords de pllâteformes.<br>
+<np>
+Grille de sol en acier
+Pièce d'accès de service
+<&steel_floor_grating>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Passerelle en acier
+Pièce d'accès de service
+<&steel_catwalk>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Degrë de passerelle en acier
+Pièce d'accès de service
+<&steel_catwalk_stairs>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Passerelle en acier rehaocée
+Pièce d'accès de service
+<&steel_catwalk_ta>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Rambarde en acier
+Pièce d'accès de service
+<&steel_railing>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Barrie grillagée en acier
+Pièce d'accès de service
+<&steel_mesh_fence>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Portillon de barrie grillagée en acier
+Pièce d'accès de service
+<&steel_mesh_fence_gate>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Echale a barraos de métal
+Pièce d'accès de service
+<&metal_rung_ladder>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Marches de métal décalées
+Pièce d'accès de service
+<&metal_rung_steps>Çu blloqe fait des voies de service cllères entoure des machines.<br>
+<br>
+Empllai : Pllacéz-le pour l'accès d'entretien entoure des machines, des étaijes e des conduits de service.<br>
+<np>
+Fenétr cadrée d'acier
+Vue protégée
+<&steel_framed_window>Çu blloqe garde la vue ouverte tout en allant o la bâtisse d'uzine renforcée.<br>
+<br>
+Empllai : Pllacéz-le den eune ouverture de mur de 1 blloqe, la où qe les jouous doivent vaer les machines a travèrs eune barrie protégée.<br>
+<np>
+Porte coulissante en métal
+Accès d'uzine
+<&metal_sliding_door>Çu blloqe fait un accès costaud pour les pièces de service, les conduits, les téts e les enceintes de machines.<br>
+<br>
+Empllai : Installéz-le la où qe la bâtisse demande eune ouverture d'entretien contrôlée.<br>
+<np>
+Trape en fèr
+Accès d'uzine
+<&iron_hatch>Çu blloqe fait un accès costaud pour les pièces de service, les conduits, les téts e les enceintes de machines.<br>
+<br>
+Empllai : Installéz-le la où qe la bâtisse demande eune ouverture d'entretien contrôlée.<br>

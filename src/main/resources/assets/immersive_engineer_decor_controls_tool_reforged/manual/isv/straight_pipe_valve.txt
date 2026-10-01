@@ -1,0 +1,5 @@
+Obratny ventil tekučinovoj truby
+Pribor tekučinovoj linije
+<&recipe>Obratny ventil tekučin jest kompaktna čest tekučinovoj linije dlja malyh rezervuarov, trubnih putij, sbirnyh měst i toka upravljanogo redstounom.<br>
+<br>
+Upotrěbjenje: Poravnaj ventil s želanym směrom toka.<br>

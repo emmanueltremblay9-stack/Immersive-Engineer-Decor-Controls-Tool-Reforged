@@ -1,0 +1,7 @@
+Metal Çalışma Masası
+Levha çalışma istasyonu
+<&recipe>Metal çalışma masasının çekiç yuvası, tam 3x3 üretim ızgarası ve çıkışı vardır.<br>
+<br>
+Izgarayı normal masa gibi kullanın. IE levhası için mühendis çekicini araç yuvasına, malzemeyi ızgaraya koyun ve levhayı çıkıştan alın.<br>
+<br>
+Çelik süslemeler bu masada şekillendirilen çelik levhaları kullanır.

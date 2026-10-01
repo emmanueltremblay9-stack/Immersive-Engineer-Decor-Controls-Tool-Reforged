@@ -1,0 +1,3 @@
+Granalla grueso de fierro
+Material pa ferramientes d’inxenieru usáu nel conxuntu reconstruyíu de recetes.
+<&recipe>Pue fundise pa obtener llingotes de<br>fierro, pero nun val pa procesar<br>materiales con téuniques avanzaes.

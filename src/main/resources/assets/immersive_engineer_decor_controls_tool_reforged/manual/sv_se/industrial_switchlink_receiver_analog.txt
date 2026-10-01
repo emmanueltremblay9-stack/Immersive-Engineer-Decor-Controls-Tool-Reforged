@@ -1,0 +1,7 @@
+Analog länkmottagare
+Länkad styrning
+<&recipe>En länkmottagare ger kontrollpaneler ett synligt fjärrmål.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Använd pärlan medan du smyger för att fjärraktivera mottagaren.<br>
+<br>
+Anmärkning: Den här mottagaren ger en redstonesignal med full styrka när den utlöses.

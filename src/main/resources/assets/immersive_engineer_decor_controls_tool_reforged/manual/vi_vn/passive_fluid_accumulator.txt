@@ -1,0 +1,5 @@
+Chất lỏng thụ động
+Thiết bị tuyến chất lỏng
+<&recipe>Bộ tích chất lỏng thụ động là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Đặt sát nguồn nước phù hợp và chừa chỗ để lấy chất lỏng ra.<br>

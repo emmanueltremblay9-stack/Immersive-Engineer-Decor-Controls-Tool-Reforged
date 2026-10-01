@@ -1,0 +1,7 @@
+Caisse de matériaux
+Caisse de fournitures de chantier
+<&recipe>La caisse de matériaux transporte une grande réserve d’un seul matériau de construction simple, non modifié et empilable.<br>
+<br>
+Utilisation : tenez la caisse en main principale et une pile de matériau en main secondaire pour la charger. Utilisez-la avec la main secondaire vide pour retirer une pile.<br>
+<br>
+Elle contient jusqu’à 512 objets d’un seul type. Elle refuse les caisses imbriquées, l’équipement non empilable et les piles renommées ou porteuses de données modifiées; l’infobulle indique son contenu.

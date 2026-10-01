@@ -1,0 +1,7 @@
+Vidro sensível luminoso
+Vidro de sinalização
+<&recipe>Um bloco de vidro reativo à redstone mantém a visibilidade enquanto mostra o estado do sinal.<br>
+<br>
+Uso: Use em janelas de salas de controle, painéis iluminados e vidros de proteção industrial.<br>
+<br>
+Observações: Muda de estado conforme a redstone próxima.

@@ -1,0 +1,5 @@
+Congelator de apă
+Unitate compactă de prelucrare
+<&recipe>Congelatorul de apă efectuează operații compacte de răcire pentru instalații de fluide alimentate cu energie.<br>
+<br>
+Utilizare: Furnizează apă și energie pentru producția de gheață în etape.<br>

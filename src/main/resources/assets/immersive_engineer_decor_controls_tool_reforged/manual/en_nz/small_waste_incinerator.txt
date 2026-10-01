@@ -1,0 +1,5 @@
+Waste Incinerator
+Compact processing unit
+<&recipe>The Waste Incinerator destroys unwanted items in a compact workshop footprint.<br>
+<br>
+Usage: Feed only unwanted items into its queue.<br>

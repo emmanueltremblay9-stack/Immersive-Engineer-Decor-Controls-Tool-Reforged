@@ -1,0 +1,7 @@
+Sinyal Interval Kaca
+Pulsa berwaktu
+<&recipe>Sakelar waktu ringkas memberikan pulsa redstone terjadwal.<br>
+<br>
+Penggunaan: gunakan ketika mekanisme kecil membutuhkan kendali berkala atau tertunda.<br>
+<br>
+Catatan: menggunakan pulsa redstone terjadwal.

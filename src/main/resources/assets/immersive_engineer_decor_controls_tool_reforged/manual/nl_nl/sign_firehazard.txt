@@ -1,0 +1,5 @@
+Brandgevaarbord
+Gevarenmarkering
+<&recipe>Het bord 'Brandgevaar' markeert gevaren, uitgangen en werkzones met een herkenbaar industrieel veiligheidssymbool.<br>
+<br>
+Gebruik: plaats het bij gevaren, uitgangen, machines en zones met beperkte toegang.<br>

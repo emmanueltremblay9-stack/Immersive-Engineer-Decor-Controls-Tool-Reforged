@@ -1,0 +1,5 @@
+Elovnur
+Lítil viðgerðareind
+<&recipe>Elovnurin tekur sær av smáum FE-drivnum bræðingaruppgávum og krevur lítið pláss á verkstaðnum.<br>
+<br>
+Nýtsla: Tilfør FE og gyldugt bræðingartilfar.<br>

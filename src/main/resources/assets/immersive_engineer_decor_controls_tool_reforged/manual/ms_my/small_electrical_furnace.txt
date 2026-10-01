@@ -1,0 +1,5 @@
+Relau Elektrik
+Unit pemprosesan padat
+<&recipe>Relau elektrik menjalankan kerja peleburan padat berkuasa FE dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Bekalkan FE dan input peleburan yang sah.<br>

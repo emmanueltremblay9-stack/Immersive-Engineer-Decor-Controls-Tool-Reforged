@@ -1,0 +1,5 @@
+Incinerador de residuos
+Unidade compacta de procesamento
+<&recipe>O incinerador de residuos destrúe os obxectos que non queres nun espazo reducido de obradoiro.<br>
+<br>
+Uso: introduce na cola só obxectos que non queiras conservar.<br>

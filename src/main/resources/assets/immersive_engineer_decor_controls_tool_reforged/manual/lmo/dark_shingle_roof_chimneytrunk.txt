@@ -1,0 +1,5 @@
+Canna del camin del tecc
+Acessori de tecc invegiad
+<&recipe>La Canna de camin de tecc de scandole scure la fa tecc scur e pratich per laboratori e capannon industriai.<br>
+<br>
+Dovra i tocch de tecc di istessa familia per fà profil de tecc credibil.<br>

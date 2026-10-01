@@ -1,0 +1,5 @@
+Lò đốt rác
+Thiết bị xử lý gọn
+<&recipe>Lò đốt rác hủy vật phẩm không cần trong không gian xưởng nhỏ.<br>
+<br>
+Cách dùng: Chỉ nạp vật phẩm không cần vào hàng đợi.<br>

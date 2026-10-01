@@ -1,0 +1,7 @@
+Intervalový časovač
+Časovaný impulz
+<&recipe>Kompaktný časový spínač poskytuje naplánovaný redstonový impulz.<br>
+<br>
+Použitie: Hodí sa tam, kde malý mechanizmus potrebuje pravidelné alebo oneskorené ovládanie.<br>
+<br>
+Poznámky: Používa naplánované redstonové impulzy.

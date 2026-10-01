@@ -1,0 +1,7 @@
+Vitra estaĵdetektilo
+Signala sentado
+<&recipe>Estaĵdetektilo observas proksiman moviĝon sen videbla plankplato.<br>
+<br>
+Uzado: konektu ĝin al pordoj, lampoj, alarmoj aŭ maŝinaj sekurinterligoj.<br>
+<br>
+Notoj: ĝi skanas malgrandan areon ĉirkaŭ la bloko.

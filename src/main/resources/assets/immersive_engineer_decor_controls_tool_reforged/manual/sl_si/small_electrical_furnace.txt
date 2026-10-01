@@ -1,0 +1,5 @@
+Električna peč
+Kompaktna obdelovalna enota
+<&recipe>Električna peč opravlja kompaktna talilna dela na energijo FE in v delavnici zavzame malo prostora.<br>
+<br>
+Uporaba: Dovajaj FE in ustrezen material za taljenje.<br>

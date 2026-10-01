@@ -1,0 +1,7 @@
+Pulsante rustico a catenella
+Impulso momentaneo
+<&recipe>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.

@@ -1,0 +1,5 @@
+Cajón con etiqueta
+Etiqueta de existencias editable
+<&recipe>Este cajón con etiqueta permite organizar con claridad el almacén. Su placa frontal se puede editar como un pequeño letrero de taller.<br>
+<br>
+Uso: Haz clic derecho en la placa para editar la etiqueta del cajón. Haz clic derecho en el resto del cajón para abrir el almacén de accesorios, piezas y suministros de mantenimiento.<br>

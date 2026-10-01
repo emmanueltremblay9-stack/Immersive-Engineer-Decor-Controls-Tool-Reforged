@@ -1,0 +1,5 @@
+Sign "Radioactive Hazard
+Hazard marker
+<&recipe>The Sign "Radioactive Hazard" Radioactive Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>

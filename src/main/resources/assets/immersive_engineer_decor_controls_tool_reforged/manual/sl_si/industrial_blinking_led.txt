@@ -1,0 +1,7 @@
+Utripajoča LED
+Povratna informacija o signalu
+<&recipe>Kompakten kazalnik spremeni skrit signal redstone v vidno tovarniško povratno informacijo.<br>
+<br>
+Uporaba: Poveži ga ob signalu za nadzor vrat, strojev, alarmov ali plošč.<br>
+<br>
+Opombe: Spremeni stanje, ko je v bližini prisoten signal redstone.

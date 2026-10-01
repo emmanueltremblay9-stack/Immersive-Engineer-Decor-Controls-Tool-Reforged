@@ -1,0 +1,5 @@
+Passzív folyadékgyűjtés
+Folyadékvezeték-szerelvények
+<&recipe>A passzív folyadékgyűjtő kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: tedd megfelelő vízforrás mellé, és hagyj helyet a folyadék kivételéhez.<br>

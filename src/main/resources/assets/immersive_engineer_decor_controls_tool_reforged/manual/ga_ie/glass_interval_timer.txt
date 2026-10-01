@@ -1,0 +1,7 @@
+Comhartha Eatramhach Gloine
+Bíog uainithe
+<&recipe>Soláthraíonn lasc dlúth amadóra bíog sceidealaithe Redstone.<br>
+<br>
+Úsáid: úsáid é nuair atá rialú tréimhsiúil nó moillithe de dhíth ar mheicníocht bheag.<br>
+<br>
+Nótaí: úsáideann sé bíoga sceidealaithe Redstone.

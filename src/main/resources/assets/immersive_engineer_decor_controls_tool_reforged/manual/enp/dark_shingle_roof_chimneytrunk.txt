@@ -1,0 +1,5 @@
+Roof Smokestack Foot
+Weathered roof fitting
+<&recipe>The Dark Shingle Roof Smokestack Foot builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>

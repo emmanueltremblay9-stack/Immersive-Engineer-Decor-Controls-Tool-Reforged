@@ -1,0 +1,5 @@
+Stupienok zo starého priemyselného dreva
+Staré dielenské drevo
+<&recipe>Tento blok pridáva staré dielenské drevo na podlahy, stupne, dvere a útulné vnútorné lemovanie.<br>
+<br>
+Použitie: Použi ho na staré dielenské podlahy, schody, dvere a lemovanie.<br>

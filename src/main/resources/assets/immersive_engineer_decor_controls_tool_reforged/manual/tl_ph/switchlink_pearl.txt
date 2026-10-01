@@ -1,0 +1,7 @@
+Mutya ng Kawing ng Swits
+Nakakawing na kontrol
+<&recipe>Nag-iimbak ang nakakawing na mutya ng target na tagatanggap para sa kontrol ng pabrika mula sa malayo.<br>
+<br>
+Paggamit: Iklik ang tagatanggap ng Kawing ng Swits gamit ang Mutyang Ender upang gumawa nito. Gamitin ang nakakawing na mutya habang nakayuko upang paganahin ang nakaimbak na tagatanggap.<br>
+<br>
+Tandaan: Kailangang nakarga sa laro ang target, nasa parehong dimensiyon at nasa abot.

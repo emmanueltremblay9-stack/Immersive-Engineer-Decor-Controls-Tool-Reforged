@@ -1,0 +1,7 @@
+Svetleče občutljivo steklo
+Signalno steklo
+<&recipe>Stekleni blok, ki se odziva na redstone, ohranja pogled in hkrati kaže stanje signala.<br>
+<br>
+Uporaba: Uporabi ga v oknih nadzornih sob, osvetljenih ploščah in zaščitnih tovarniških zasteklitvah.<br>
+<br>
+Opombe: Stanje spreminja glede na bližnji signal redstone.

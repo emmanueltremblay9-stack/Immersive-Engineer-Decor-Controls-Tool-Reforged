@@ -1,0 +1,7 @@
+Relè de impuls ligad
+Comand ligad
+<&recipe>Un acessori a forma de relè el dà un pont piscinin de interuzzion locala a i panei.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida a piena potenza per i circuit lì arent. Dovra bloch ricevidor quand che te gh’heet de besogn de ativazzion cont una perla ligada.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.

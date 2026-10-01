@@ -1,0 +1,7 @@
+Beg Tidur
+Set rehat mudah alih
+<&recipe>Beg tidur ialah kit rehat tahan cuaca untuk kerja jauh dari katil.<br>
+<br>
+Gunakan pada waktu malam di Overworld untuk berehat hingga pagi tanpa mengubah titik muncul.<br>
+<br>
+Tidak berfungsi siang hari, dekat raksasa atau dalam dimensi tidak sesuai. Setiap rehat berjaya menghauskan beg.

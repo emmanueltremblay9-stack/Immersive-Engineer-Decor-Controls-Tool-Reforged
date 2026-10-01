@@ -1,0 +1,5 @@
+Barril de fluidos
+Componentes de tubulação de fluidos
+<&recipe>Este componente compacto integra linhas de fluidos para pequenos tanques, tubulações, pontos de coleta e vazão controlada por redstone.<br>
+<br>
+Uso: Coloque onde os tubos ou baldes possam alcançar a face do tanque.<br>

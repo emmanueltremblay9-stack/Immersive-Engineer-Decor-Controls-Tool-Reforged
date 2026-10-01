@@ -1,0 +1,161 @@
+Klinker en Messelwerk
+Baksteen- en betonomhulsels
+Klinker, slakbakstene, gewapende beton en pantserglas bied swaar oppervlakke vir warm vertrekke, werkswinkels en beskermde siglyne.<br>
+<br>
+Gebruik die passende blaaie, trappe, dun blaaie en mure om rande af te werk sonder om die fabriek se materiaalstyl te verander.
+<np>
+Klinkersteenblok
+Roetdonker messelwerk
+<&clinker_brick_block>Hierdie blok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Klinkersteenblad
+Roetdonker messelwerk
+<&clinker_brick_slab>Hierdie blok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Klinkersteentrappe
+Roetdonker messelwerk
+<&clinker_brick_stairs>Hierdie blok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Klinkersteenmuur
+Roetdonker messelwerk
+<&clinker_brick_wall>Hierdie blok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Bevlekte Klinkerblok
+Roetdonker messelwerk
+<&clinker_brick_stained_block>Die Bevlekte Klinkersteenblok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Bevlekte Klinkerblad
+Roetdonker messelwerk
+<&clinker_brick_stained_slab>Die Bevlekte Klinkersteenblad bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Bevlekte Klinkertrappe
+Roetdonker messelwerk
+<&clinker_brick_stained_stairs>Die Bevlekte Klinkersteentrappe bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Versierde Klinkersteen
+Roetdonker messelwerk
+<&clinker_brick_sastor_corner_block>Die Sandsteenversierde Klinkersteen bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Ingesonke Klinkersteen
+Roetdonker messelwerk
+<&clinker_brick_recessed>Hierdie blok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Klinkerstene met Gleuwe
+Roetdonker messelwerk
+<&clinker_brick_vertically_slit>Die Klinkerstene met Vertikale Gleuwe bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Vertikale Klinkerblad
+Roetdonker messelwerk
+<&clinker_brick_vertical_slab_structured>Die Gestruktureerde Vertikale Klinkerblad bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Klinkersteenhalfblad
+Roetdonker messelwerk
+<&halfslab_clinker_brick>Hierdie blok bring roetdonker messelwerk na oondsale, skoorsteenbasisse en diensmure.<br>
+<br>
+Gebruik: gebruik dit as muur, versiering of ’n omhulsel om die warm gebied rondom oonde en stoomketels.<br>
+<np>
+Slakbaksteenblok
+Digte fabrieksmesselwerk
+<&slag_brick_block>Hierdie blok voeg digte grysbruin messelwerk by fondamente, keermure en ouer werkskure.<br>
+<br>
+Gebruik: gebruik dit vir ouer fondamente, keermure en vuil fabrieksvloere.<br>
+<np>
+Slakbaksteenblad
+Digte fabrieksmesselwerk
+<&slag_brick_slab>Hierdie blok voeg digte grysbruin messelwerk by fondamente, keermure en ouer werkskure.<br>
+<br>
+Gebruik: gebruik dit vir ouer fondamente, keermure en vuil fabrieksvloere.<br>
+<np>
+Slakbaksteentrappe
+Digte fabrieksmesselwerk
+<&slag_brick_stairs>Hierdie blok voeg digte grysbruin messelwerk by fondamente, keermure en ouer werkskure.<br>
+<br>
+Gebruik: gebruik dit vir ouer fondamente, keermure en vuil fabrieksvloere.<br>
+<np>
+Slakbaksteenmuur
+Digte fabrieksmesselwerk
+<&slag_brick_wall>Hierdie blok voeg digte grysbruin messelwerk by fondamente, keermure en ouer werkskure.<br>
+<br>
+Gebruik: gebruik dit vir ouer fondamente, keermure en vuil fabrieksvloere.<br>
+<np>
+Gewapendebetonblok
+Gewapende beton
+<&rebar_concrete>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Gewapendebetonblad
+Gewapende beton
+<&rebar_concrete_slab>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Gewapendebetontrappe
+Gewapende beton
+<&rebar_concrete_stairs>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Gewapendebetonmuur
+Gewapende beton
+<&rebar_concrete_wall>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Dun Gewapendebetonblad
+Gewapende beton
+<&halfslab_rebar_concrete>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Gewapendebetonteël
+Gewapende beton
+<&rebar_concrete_tile>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Gewapendebetonteëlblad
+Gewapende beton
+<&rebar_concrete_tile_slab>Hierdie blok is ’n geharde betononderdeel vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Gewapendebetonteël
+Gewapende beton
+<&rebar_concrete_tile_stairs>Die Gewapendebetonteëltrappe is geharde betononderdele vir masjienbasisse, ontploffingsmure en laaibaaivloere.<br>
+<br>
+Gebruik: gebruik dit onder masjiene, langs diensgange of waar die gebou ook al ’n versterkte basis nodig het.<br>
+<np>
+Pantserglasblok
+Beskermde uitsig
+<&panzerglass_block>Hierdie blok behou oop siglyne en pas steeds by gewapende fabriekskonstruksie.<br>
+<br>
+Gebruik: gebruik dit waar spelers masjinerie deur ’n beskermende versperring moet kan sien.<br>
+<np>
+Pantserglasblad
+Beskermde uitsig
+<&panzerglass_slab>Hierdie blok behou oop siglyne en pas steeds by gewapende fabriekskonstruksie.<br>
+<br>
+Gebruik: gebruik dit waar spelers masjinerie deur ’n beskermende versperring moet kan sien.<br>

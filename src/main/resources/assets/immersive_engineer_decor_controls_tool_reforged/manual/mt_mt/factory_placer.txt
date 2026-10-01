@@ -1,0 +1,5 @@
+Apparat tal-fabbrika għat-tqegħid tal-blokok
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&recipe>Din il-blokka tinstalla blokok mill-ħażna interna tagħha meta tiġi attivata.<br>
+<br>
+Użu: ipponta l-wiċċ tax-xogħol lejn l-ispazju fil-mira u daħħal munzelli li jistgħu jitqiegħdu.<br>

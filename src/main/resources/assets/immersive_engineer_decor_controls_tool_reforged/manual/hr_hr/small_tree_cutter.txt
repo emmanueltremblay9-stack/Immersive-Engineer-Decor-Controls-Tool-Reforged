@@ -1,0 +1,5 @@
+Sjekač drveća
+Oprema tvorničkog poda
+<&recipe>Mali sjekač drveća pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: usmjeri ga prema odraslim stablima i ispuštene predmete skupljaj zasebno.<br>

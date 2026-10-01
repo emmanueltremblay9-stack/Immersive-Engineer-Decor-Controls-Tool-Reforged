@@ -1,0 +1,7 @@
+Rūdos smulkinimo plaktukas
+Rankinis smulkinimo įrankis
+<&recipe>Rūdos smulkinimo plaktukas yra rankinis įrankis ankstyvam geležies ir aukso apdorojimui.<br>
+<br>
+Naudojimas: Gamink jį su žalia geležimi, žaliu auksu, geležies rūda, gilūno geležies rūda, aukso rūda arba gilūno aukso rūda, kad gautum Immersive Engineering geležies ar aukso dulkių. Plaktuko patvarumas mažėja, o jis grįžta į gamybos tinklelį, kol sulūžta.<br>
+<br>
+Jis taip pat dėvisi kasant ir artimoje kovoje gali atstumti taikinius.

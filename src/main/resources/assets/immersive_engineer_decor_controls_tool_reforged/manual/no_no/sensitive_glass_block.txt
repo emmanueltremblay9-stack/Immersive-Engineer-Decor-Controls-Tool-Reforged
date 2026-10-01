@@ -1,0 +1,7 @@
+Lysende følsomt glass
+Signalglass
+<&recipe>En redstonefølsom glassblokk holder sikten åpen samtidig som den viser signaltilstanden.<br>
+<br>
+Bruk: bruk den i kontrollromsvinduer, opplyste paneler og beskyttende fabrikkglass.<br>
+<br>
+Merknad: skifter tilstand ved redstonesignal i nærheten.

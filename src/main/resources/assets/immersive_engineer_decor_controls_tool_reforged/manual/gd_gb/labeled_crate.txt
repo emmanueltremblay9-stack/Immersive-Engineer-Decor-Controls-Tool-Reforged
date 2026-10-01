@@ -1,0 +1,5 @@
+Ciste-bathair le leubail
+Leubail stòrais a ghabhas deasachadh
+<&recipe>Tha a' Chiste-bathair le leubail seo air a dealbhadh airson stuthan a sheòrsachadh gu soilleir sa stòras. Gabhaidh a pleata-aghaidh a dheasachadh mar shoidhne beag bùth-obrach.<br>
+<br>
+Cleachdadh: dèan briogadh deas air a' phleata-leubail gus leubail na ciste-bathair a dheasachadh. Dèan briogadh deas air a' chòrr den chiste-bathair gus stòras airson uidheam, pàirtean agus solar cumail suas fhosgladh.<br>

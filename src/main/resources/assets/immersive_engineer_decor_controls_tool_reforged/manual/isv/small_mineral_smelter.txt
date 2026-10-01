@@ -1,0 +1,5 @@
+Topilnja mineralov
+Kompaktna obrabotna jedinica
+<&recipe>Topilnja mineralov vrši vysokotemperaturnu obrabotku mineralov, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Podaj mineralne bloky i energiju dlja vysokotemperaturnogo topljenja.<br>

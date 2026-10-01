@@ -1,0 +1,41 @@
+Imbakan at Paghahatid
+Mga kagamitan sa talatinggalan at daloy
+Hinahawakan ng kagamitan sa imbakan at paghahatid ang mga kahon, bariles, embudo at balbula para sa maliit na sistema ng pagdaloy sa pabrika.<br>
+<br>
+Gamitin ang mga pahinang ito kapag nag-aayos ng bodega, mga tubo, tangke ng pagpapanatili at kontroladong linya ng likido.
+<np>
+Kahon na May Tatak
+Nababagong tatak ng suplay
+<&labeled_crate>Ginawa ang kahong may tatak na ito para sa malinaw na pagsasaayos ng bodega. Maaaring baguhin ang plaka sa harap tulad ng maliit na karatula sa pagawaan.<br>
+<br>
+Paggamit: Iklik nang kanan ang plaka ng tatak upang baguhin ang pangalan ng kahon. Iklik nang kanan ang ibang bahagi ng kahon upang buksan ang imbakan ng mga kagamitan, piyesa at suplay sa pagpapanatili.<br>
+<np>
+Bariles ng Likido
+Kagamitan sa linya ng likido
+<&fluid_barrel>Ang kagamitang ito ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Ilagay kung saan maaabot ng mga tubo o timba ang mukha ng tangke.<br>
+<np>
+Embudo ng Likido
+Kagamitan sa linya ng likido
+<&small_fluid_funnel>Ang Maliit na Embudo ng Likido ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Ilagay sa ilalim ng lugar ng pagkolekta ng likido at idaan ang nakaimbak na laman sa mga tangke o mas mababang mga tubo.<br>
+<np>
+Balbulang Isahang-Daloy ng Tubo ng Likido
+Kagamitan sa linya ng likido
+<&straight_pipe_valve>Ang Balbula ng Likidong Panlaban sa Balik ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Itapat ang balbula sa nilalayong direksiyon ng daloy.<br>
+<np>
+Balbula ng Likidong Redstone
+Kagamitan sa linya ng likido
+<&straight_pipe_valve_redstone>Ang Balbula ng Likidong Redstone ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Itapat ang balbula sa nilalayong direksiyon ng daloy.<br>
+<np>
+Analogong Balbula ng Likido
+Kagamitan sa linya ng likido
+<&straight_pipe_valve_redstone_analog>Ang Analogong Balbula ng Likido ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Itapat ang balbula sa nilalayong direksiyon ng daloy.<br>

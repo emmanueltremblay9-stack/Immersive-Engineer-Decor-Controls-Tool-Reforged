@@ -1,0 +1,5 @@
+Alde Holzbräddor
+Aldes Wergschdaddholz
+<&recipe>De aldn Industrieholzbräddor ergänzn aldes Wergschdaddholz für Bödn, Dridde, Diern un warme Innenzier.<br>
+<br>
+Nuddzung: Nimm’n für alde Wergschdaddbödn, Drebben, Diern un Ganddn.<br>

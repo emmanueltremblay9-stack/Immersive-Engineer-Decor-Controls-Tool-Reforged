@@ -1,0 +1,5 @@
+Altzairuzko mahaia
+Lantegiko altzaria
+<&recipe>Bloke hau lan-geletarako eta mantentze-txokoetarako lantegiko altzari praktikoa da.<br>
+<br>
+Erabilera: jarri lan-bankuen, kaxen eta makina trinkoen ondoan.<br>

@@ -1,0 +1,7 @@
+Kalit aloqa relesi
+Bog'langan boshqaruv
+<&recipe>Rele uslubidagi qism panel qurilishlariga ixcham mahalliy kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni almashtirishga o'ng tugmani bosing. Bog'langan inju bilan faollashtirish kerak bo'lsa, qabul qilgich bloklaridan foydalaning.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.

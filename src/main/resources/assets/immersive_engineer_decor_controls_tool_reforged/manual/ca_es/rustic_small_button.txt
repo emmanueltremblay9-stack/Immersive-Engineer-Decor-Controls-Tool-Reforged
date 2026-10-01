@@ -1,0 +1,7 @@
+Botó petit rústic
+Control per redstone
+<&recipe>Un interruptor momentani produeix un pols de redstone net i de màxima força.<br>
+<br>
+Ús: fes-lo servir per engegar màquines, desbloquejar portes, activar alarmes o accionar circuits d’una sola activació.<br>
+<br>
+Notes: es restableix quan acaba el pols programat.

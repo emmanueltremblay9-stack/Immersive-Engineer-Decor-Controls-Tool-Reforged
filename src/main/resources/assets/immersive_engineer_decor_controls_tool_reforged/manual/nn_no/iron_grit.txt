@@ -1,0 +1,3 @@
+Grovt jarngrus
+Materiale for ingeniørverktøy i det rekonstruerte oppskriftssettet.
+<&recipe>Kan smeltast til<br>jarnbarrar, men høver ikkje<br>til avansert materialhandsaming.

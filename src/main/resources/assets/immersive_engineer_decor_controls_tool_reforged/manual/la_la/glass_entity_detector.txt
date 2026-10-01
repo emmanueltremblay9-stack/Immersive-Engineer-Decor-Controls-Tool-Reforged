@@ -1,0 +1,7 @@
+Detector vitreus entium
+Sensus signorum
+<&recipe>Detector entium motum vicinum observat sine lamina pavimenti visibili.<br>
+<br>
+Usus: ostiis, lucernis, terroribus aut nexibus securitatis machinarum coniunge.<br>
+<br>
+Notae: parvam aream circa cubum explorat.

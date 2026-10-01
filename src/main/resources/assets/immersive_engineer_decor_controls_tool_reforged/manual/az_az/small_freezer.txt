@@ -1,0 +1,5 @@
+Su dondurucu
+Yığcam emal qurğusu
+<&recipe>Su dondurucu enerjili maye sistemlərində yığcam soyutma işləri görür.<br>
+<br>
+İstifadə: Mərhələli buz istehsalı üçün su və enerji verin.<br>

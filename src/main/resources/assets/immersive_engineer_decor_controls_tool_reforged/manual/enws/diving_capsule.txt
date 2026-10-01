@@ -1,0 +1,7 @@
+Diving Air Capsule
+Emergency air reserve
+<&recipe>Lo, the Diving Air Capsule is an emergency air item for underwater work.<br>
+<br>
+Usage: Thou shalt Use it manually to restore air. When carried in inventory, it may likewise trigger automatically whenas air is nearly gone, then enters cooldown.<br>
+<br>
+Carry it for flooded mines, submerged pipe runs, and pump-room repairs.

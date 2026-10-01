@@ -1,0 +1,5 @@
+Tabelë mbrojtjeje
+Shenjë rreziku
+<&recipe>Tabela «Kujdes, sistem mbrojtjeje përpara» shënon rreziqe, dalje dhe zona pune me një tregues pamor të sigurisë në fabrikë.<br>
+<br>
+Përdorimi: vendose pranë rreziqeve, daljeve, makinerive dhe zonave të kufizuara.<br>

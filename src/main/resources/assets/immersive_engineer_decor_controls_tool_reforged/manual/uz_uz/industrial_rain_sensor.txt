@@ -1,0 +1,7 @@
+Yomg'ir sensori
+Signalni sezish
+<&recipe>Ob-havo sensori o'z joyiga yog'ayotgan yomg'irni redstone signaliga aylantiradi.<br>
+<br>
+Ishlatish: ustidagi blokka yomg'ir tushadigan joyga mahkamlang.<br>
+<br>
+Eslatma: sensor tepasidagi yomg'irni tekshiradi.

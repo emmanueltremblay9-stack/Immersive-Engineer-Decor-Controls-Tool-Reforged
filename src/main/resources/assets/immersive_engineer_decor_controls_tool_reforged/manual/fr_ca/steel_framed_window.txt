@@ -1,0 +1,5 @@
+Fenêtre encadrée en acier
+Vue protégée
+<&recipe>Ce bloc préserve la visibilité tout en s'intégrant à une construction industrielle renforcée.<br>
+<br>
+Utilisation : placez-le pour observer les machines à travers une barrière protectrice.<br>

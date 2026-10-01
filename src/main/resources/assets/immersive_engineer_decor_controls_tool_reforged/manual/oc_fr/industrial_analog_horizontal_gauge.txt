@@ -1,0 +1,7 @@
+Volt-mètre
+Aparelh de mesura de senhal
+<&recipe>Un aparelh compacte de sala de comanda aficha clarament la poténcia de redstone sul panèl.<br>
+<br>
+Utilizacion : monta-lo ont cal verificar d’un còp d’uèlh la poténcia de redstone vesina.<br>
+<br>
+Nòta : legís la poténcia de redstone vesina de 0 a 15.

@@ -1,0 +1,5 @@
+Fornu de fusión de minerales
+Unidá compacta de procesamientu
+<&recipe>El fornu de fusión de minerales procesa minerales a alta temperatura y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: alimenta’l fornu con bloques minerales y enerxía pa trabayos de fusión a alta temperatura.<br>

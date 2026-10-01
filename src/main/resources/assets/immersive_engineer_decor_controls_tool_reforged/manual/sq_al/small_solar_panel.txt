@@ -1,0 +1,5 @@
+Panel diellor
+Pajisje ndihmëse punishteje
+<&recipe>Paneli i vogël diellor është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: lëri qiell të hapur dhe lidh pajisje me konsum të ulët.<br>

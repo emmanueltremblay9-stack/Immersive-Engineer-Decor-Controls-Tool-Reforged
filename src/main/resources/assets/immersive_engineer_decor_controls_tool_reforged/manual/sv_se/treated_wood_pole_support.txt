@@ -1,0 +1,5 @@
+Stöd för behandlad stolpe
+Del till bärande stomme
+<&recipe>Stödet för en rak stolpe av behandlat trä ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>

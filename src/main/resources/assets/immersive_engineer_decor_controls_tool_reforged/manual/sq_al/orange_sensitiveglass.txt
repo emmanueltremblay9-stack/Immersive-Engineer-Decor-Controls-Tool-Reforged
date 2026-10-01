@@ -1,0 +1,7 @@
+Xham i ndjeshëm portokalli
+Xham sinjali
+<&recipe>Një bllok xhami që reagon ndaj redstonit ruan pamjen përmes tij dhe tregon gjendjen e sinjalit.<br>
+<br>
+Përdorimi: përdore në dritare dhomash kontrolli, panele të ndriçuara dhe xhama të mbrojtur fabrike.<br>
+<br>
+Shënim: ndryshon gjendje nga fuqia e redstonit pranë.

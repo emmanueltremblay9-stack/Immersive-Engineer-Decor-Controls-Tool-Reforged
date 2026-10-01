@@ -1,0 +1,7 @@
+Alarmsirene
+Sinjaalwerommelding
+<&recipe>De alarmsirene is in redstone-yndikator dy't oan in flak fêstsit. De aktive steat folget it sinjaal fan it blok dêr't er oan fêstsit.<br>
+<br>
+Gebrûk: Meitsje har oan in fêst flak fêst en jou har enerzjy om doarren, masines, alarmen of panielen yn de gaten te hâlden.<br>
+<br>
+Opmerking: De sirene fernijt ien kear yn de sekonde salang't it sinjaal dêr't se op oansletten is aktyf bliuwt.

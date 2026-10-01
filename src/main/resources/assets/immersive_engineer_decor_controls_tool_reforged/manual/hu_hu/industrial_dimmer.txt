@@ -1,0 +1,7 @@
+Jelerősség-szabályozó
+Változó jel
+<&recipe>A forgó szabályozó egy kompakt panel előlapján állítja a redstone erősségét.<br>
+<br>
+Használat: jobb kattintással növeld lépésenként a kimenetet; a teljes erősség után nullára vált.<br>
+<br>
+Megjegyzés: 0 és 15 közötti erősséget ad ki.

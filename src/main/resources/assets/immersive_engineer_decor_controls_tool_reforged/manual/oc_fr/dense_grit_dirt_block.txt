@@ -1,0 +1,5 @@
+Tèrra de graveta compactada
+Revestiment de sòl de talhièr
+<&recipe>Aqueste blòc balha a las zònas de trabalh exterioras una superfícia compactada e trepejada.<br>
+<br>
+Utilizacion : pausa-lo a l’entorn de las pòrtas de cargament, de las cuvas exterioras e de las corts de maquinas.<br>

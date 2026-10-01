@@ -1,0 +1,7 @@
+Apaindutako kate-botoi zaharra
+Uneko pultsua
+<&recipe>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.

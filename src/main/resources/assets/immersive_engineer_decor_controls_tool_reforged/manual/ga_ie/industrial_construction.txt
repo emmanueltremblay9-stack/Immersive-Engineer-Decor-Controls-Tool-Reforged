@@ -1,0 +1,108 @@
+Tógáil Thionsclaíoch
+Ballaí agus imill mhaisiúla monarchan
+Clúdaíonn feistis ghinearálta tógála doirse, fuinneoga, soilse, comharthaí rabhaidh, imill mhaisiúla agus páirteanna struchtúracha nach mbaineann le rannán níos sainiúla.<br>
+<br>
+Úsáid na leathanaigh seo do sheomraí monarchan, conairí seirbhíse, marcáil guaiseacha agus obair phraiticiúil sonraí tionsclaíocha.
+<np>
+Solas Bolgáin Iarainn
+Solas dlúth oibre
+<&iron_bulb_light>Soláthraíonn an bloc seo soilsiú dlúth tionsclaíoch do chonairí, siúláin agus bánna oibre.<br>
+<br>
+Úsáid: suiteáil ar shíleálacha, ballaí nó imill é áit a bhfuil soilsiú soiléir oibre de dhíth sa seomra.<br>
+<np>
+Solas Imeall Síleála
+Solas dlúth oibre
+<&iron_ceiling_edge_light>Soláthraíonn an bloc seo soilsiú dlúth tionsclaíoch do chonairí, siúláin agus bánna oibre.<br>
+<br>
+Úsáid: suiteáil ar shíleálacha, ballaí nó imill é áit a bhfuil soilsiú soiléir oibre de dhíth sa seomra.<br>
+<np>
+Solas Cuasaithe Imeall Urláir
+Solas dlúth oibre
+<&iron_floor_edge_light>Soláthraíonn an bloc seo soilsiú dlúth tionsclaíoch do chonairí, siúláin agus bánna oibre.<br>
+<br>
+Úsáid: suiteáil ar shíleálacha, ballaí nó imill é áit a bhfuil soilsiú soiléir oibre de dhíth sa seomra.<br>
+<np>
+Solas Cuasaithe
+Solas dlúth oibre
+<&iron_inset_light>Soláthraíonn an bloc seo soilsiú dlúth tionsclaíoch do chonairí, siúláin agus bánna oibre.<br>
+<br>
+Úsáid: suiteáil ar shíleálacha, ballaí nó imill é áit a bhfuil soilsiú soiléir oibre de dhíth sa seomra.<br>
+<np>
+Comhartha "Rabhadh Ginearálta
+Marcóir guaise
+<&sign_caution>Marcálann an Comhartha Rabhaidh "Rabhadh Ginearálta" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Contúirte
+Marcóir guaise
+<&sign_danger>Marcálann an Comhartha Contúirte "Rabhadh: An-chontúirteach Thall" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Maisiúil
+Marcóir guaise
+<&sign_decor>Marcálann Pláta Comhartha Maisiúil Engineer's Decor guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Cosanta
+Marcóir guaise
+<&sign_defense>Marcálann an Comhartha Cosanta "Rabhadh: Córas Cosanta Romhat" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Amach
+Marcóir guaise
+<&sign_exit>Marcálann an comhartha seo guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha "Baol Dóiteáin
+Marcóir guaise
+<&sign_firehazard>Marcálann an Comhartha "Baol Dóiteáin" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha "Rabhadh Seaca
+Marcóir guaise
+<&sign_frost>Marcálann an Comhartha "Rabhadh Seaca" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Dromchla The
+Marcóir guaise
+<&sign_hotsurface>Marcálann an Comhartha "Rabhadh: Dromchla Te" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Sreinge Beo
+Marcóir guaise
+<&sign_hotwire>Marcálann an Comhartha "Rabhadh: Sreang Bheo" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha "Baol Léasair
+Marcóir guaise
+<&sign_laser>Marcálann an Comhartha "Baol Léasair" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Guaise Draíochta
+Marcóir guaise
+<&sign_magichazard>Marcálann an Comhartha "Rabhadh: Guais Draíochta" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha Réimse Mhaighnéadaigh
+Marcóir guaise
+<&sign_magneticfield>Marcálann an Comhartha "Rabhadh: Réimse Maighnéadach Láidir" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>
+Comhartha "Baol Radaighníomhach
+Marcóir guaise
+<&sign_radioactive>Marcálann an Comhartha Radaighníomhachta "Baol Radaighníomhach" guaiseacha, bealaí amach agus limistéir oibre le leid amhairc oiriúnach do shábháilteacht monarchan.<br>
+<br>
+Úsáid: cuir é in aice le guaiseacha, bealaí amach, meaisíní agus limistéir shrianta.<br>
+<np>

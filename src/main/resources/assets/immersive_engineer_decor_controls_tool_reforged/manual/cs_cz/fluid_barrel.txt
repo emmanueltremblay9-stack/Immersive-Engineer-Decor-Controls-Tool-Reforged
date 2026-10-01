@@ -1,0 +1,5 @@
+Sud na kapaliny
+Vybavení kapalinových rozvodů
+<&recipe>Tento kompaktní kapalinový díl se hodí pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Umísti jej tak, aby se potrubí nebo kbelíky dostaly k příslušné straně nádrže.<br>

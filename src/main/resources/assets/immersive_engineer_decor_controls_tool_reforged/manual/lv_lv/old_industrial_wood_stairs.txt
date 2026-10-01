@@ -1,0 +1,5 @@
+Vecas koka kāpnes
+Vecināts darbnīcu koks
+<&recipe>Vecas rūpnieciskas koka kāpnes pievieno vecinātu darbnīcu koku grīdām, pakāpieniem, durvīm un siltai iekštelpu apdarei.<br>
+<br>
+Lietošana: izmanto vecām darbnīcu grīdām, kāpnēm, durvīm un apdarei.<br>

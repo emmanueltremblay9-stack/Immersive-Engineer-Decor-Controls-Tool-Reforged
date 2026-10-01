@@ -1,0 +1,3 @@
+Grober Eisenschrot
+Ingenieurswerkzeigmaterial fia de wiederhergstellten Handweaksrezepte.
+<&recipe>Lasst si zu Eisenbarren<br>schmelzn, taugt oba ned fia<br>weiterführende Materialverarbeitung.

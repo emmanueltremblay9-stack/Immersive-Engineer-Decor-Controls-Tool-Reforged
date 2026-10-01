@@ -1,0 +1,5 @@
+Fabryksjouwer
+Helpapparaat foar de wurkflier
+<&recipe>Dit blok jout opsleine foarwerpen út troch in rjochte kant.<br>
+<br>
+Gebrûk: Rjochtsje de foarkant op it útjefteplak, folje de ynterne fakken en stel krêft, hoeke, fertraging, filterlogika en redstonemodus yn op it skerm.<br>

@@ -1,0 +1,7 @@
+Sirena ng Alarma
+Pahiwatig ng signal
+<&recipe>Ang alarm siren ay redstone indicator na ikinakabit sa mukha ng bloke. Nagbabago ang powered state ayon sa signal ng blokeng kinabitan.<br>
+<br>
+Ikabit sa matibay na mukha at paandarin upang bantayan ang pinto, makina, alarm o panel.<br>
+<br>
+Nagre-refresh ang siren minsan bawat segundo habang aktibo ang signal.

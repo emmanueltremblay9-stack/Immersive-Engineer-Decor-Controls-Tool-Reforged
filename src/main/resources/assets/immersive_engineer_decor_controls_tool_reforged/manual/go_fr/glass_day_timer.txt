@@ -1,0 +1,7 @@
+Orloje de jour en verre
+Signa du jour
+<&recipe>Un interrupteur a minuterie suit la partie de jour du cycle du monde.<br>
+<br>
+Empllai : Empllayéz-le pour les lampes de cour, les volets e les comandes d'uzine qi ne marchent qe de jour.<br>
+<br>
+Notes : Demande eune dimension o de la lumière du ciel.

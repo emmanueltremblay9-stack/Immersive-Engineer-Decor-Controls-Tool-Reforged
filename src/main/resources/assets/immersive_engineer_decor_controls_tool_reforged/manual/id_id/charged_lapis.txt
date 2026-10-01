@@ -1,0 +1,7 @@
+Lazuardi Bermuatan
+Pengalaman tersimpan
+<&recipe>Lazuardi bermuatan menyimpan satu tingkat pengalaman yang dibuat melalui pemeras pikiran.<br>
+<br>
+Penggunaan: konsumsi untuk mengembalikan satu tingkat, menghapus efek aktif, dan memulihkan sedikit kesehatan.<br>
+<br>
+Tampilan resep menunjukkan pemeras pikiran karena lazuardi bermuatan dihasilkan dengan memakai alat tersebut saat lazuardi dan pengalaman tersedia.

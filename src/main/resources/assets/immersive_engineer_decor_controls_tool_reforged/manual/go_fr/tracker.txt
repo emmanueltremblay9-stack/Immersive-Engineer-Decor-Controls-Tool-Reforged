@@ -1,0 +1,7 @@
+Suivou
+Marqou de position gardée
+<&recipe>Le suivou garde la position d'un blloqe directement den l'objet.<br>
+<br>
+Usaije : Cliqéz su un blloqe pour garder sa dimension e ses coordonnées. L'infobulle montre la position. Servez-vous du suivou en vous baissant pour ôter la cible.<br>
+<br>
+Empllayéz-le pour marqer des machines, des branches de tunnel, des comandes a distance ou des chantiers pouint finis avant de revenir d'o les outils e les matériaux.

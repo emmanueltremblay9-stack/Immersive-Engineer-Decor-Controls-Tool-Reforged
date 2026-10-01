@@ -1,0 +1,7 @@
+Mezurouer de lumière
+Détection de signa
+<&recipe>Un mezurouer de lumière mue la luzayance locale en comande de redstone.<br>
+<br>
+Empllai : Empllayéz-le pour les lampes automatiqes, les volets e les circuits de visibilité.<br>
+<br>
+Notes : Doune du pououair a eune luzayance brute de 8 ou pus.

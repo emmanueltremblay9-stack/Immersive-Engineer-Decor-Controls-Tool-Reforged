@@ -1,0 +1,7 @@
+Sirena tal-allarm
+Rispons viżibbli tas-sinjal
+<&recipe>Is-sirena tal-allarm hija indikatur redstone mwaħħal ma wiċċ ta blokka. L-istat mixgħul tagħha jimxi mas-sinjal tal-blokka li magħha hi mwaħħla.<br>
+<br>
+Waħħalha ma wiċċ solidu u agħtiha l-enerġija biex tissorvelja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Is-sirena taġġorna darba kull sekonda sakemm is-sinjal jibqa attiv.

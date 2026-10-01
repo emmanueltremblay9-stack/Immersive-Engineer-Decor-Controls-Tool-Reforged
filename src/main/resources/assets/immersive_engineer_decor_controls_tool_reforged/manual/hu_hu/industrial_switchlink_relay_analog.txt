@@ -1,0 +1,7 @@
+Analóg távkapcsolati relé
+Összekapcsolt vezérlés
+<&recipe>A relés megjelenésű elem kompakt helyi kapcsolópontot ad a paneleknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét. Hozzárendelt gyöngyös aktiváláshoz használj vevőblokkokat.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.

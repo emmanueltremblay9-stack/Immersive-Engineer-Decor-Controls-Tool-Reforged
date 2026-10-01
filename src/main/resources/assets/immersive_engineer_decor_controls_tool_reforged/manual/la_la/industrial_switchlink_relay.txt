@@ -1,0 +1,7 @@
+Repetitor nexus commutatorum
+Moderatio conexa
+<&recipe>Pars specie repetitoris tabulis punctum commutandi locale compactum dat.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva. Cubis receptoribus utere cum activatione margaritae conexae opus est.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.

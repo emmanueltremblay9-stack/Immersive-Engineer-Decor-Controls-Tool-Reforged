@@ -1,0 +1,5 @@
+Van chất lỏng redstone
+Thiết bị tuyến chất lỏng
+<&recipe>Van chất lỏng redstone là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Căn van theo hướng dòng chảy mong muốn.<br>

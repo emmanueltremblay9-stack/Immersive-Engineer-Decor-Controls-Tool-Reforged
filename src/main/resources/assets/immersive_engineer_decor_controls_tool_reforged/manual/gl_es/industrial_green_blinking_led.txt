@@ -1,0 +1,7 @@
+LED verde intermitente
+Indicación do sinal
+<&recipe>Un indicador compacto converte a redstone oculta en información visible da fábrica.<br>
+<br>
+Uso: conéctao ao lado do sinal para supervisar portas, máquinas, alarmas ou paneis.<br>
+<br>
+Notas: cambia de estado cando hai potencia de redstone preto.

@@ -1,0 +1,5 @@
+Baumfäller
+Hilfsgrät für d'Werkstatt
+<&recipe>De chliine Baumfäller isch en Werkstatthilfsblock für Herstellig, Lagere, Setze, Abbau, Sammle oder kompakti Automation.<br>
+<br>
+Verwendig: Richt en uf uusgwachseni Bäum und sammel d'Beute separat ii.<br>

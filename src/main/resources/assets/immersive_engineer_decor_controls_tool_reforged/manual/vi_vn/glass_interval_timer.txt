@@ -1,0 +1,7 @@
+Bộ phát tín hiệu định kỳ bằng kính
+Xung hẹn giờ
+<&recipe>Công tắc hẹn giờ gọn phát xung redstone theo lịch.<br>
+<br>
+Cách dùng: Dùng khi cơ cấu nhỏ cần điều khiển định kỳ hoặc có độ trễ.<br>
+<br>
+Ghi chú: Dùng xung redstone theo lịch.

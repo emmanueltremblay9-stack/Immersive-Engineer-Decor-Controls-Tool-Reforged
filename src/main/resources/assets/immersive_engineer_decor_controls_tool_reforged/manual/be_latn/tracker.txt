@@ -1,0 +1,7 @@
+Trekjer
+Markjer zachavanaj pazicyi
+<&recipe>Trekjer zachoŭvaje pazicyju bloka njepasredna ŭ pradmjecje.<br>
+<br>
+Vykarystannje: Nacisnicje blok, kab zachavac vymjarennje i kaardynaty. Padkazka pakazvaje pazicyju. Vykarystoŭvajcje ŭprysjadki, kab ačyscic metu.<br>
+<br>
+Paznačajcje mašyny, razhalinavanni tuneljaŭ, addaljenyja eljemjenty kiravannja abo njezavjeršanyja budoŭli.

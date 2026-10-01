@@ -1,0 +1,108 @@
+Rūpnieciskā būvniecība
+Rūpnīcas sienas un apdare
+Vispārīgās būvdetaļas ietver durvis, logus, gaismekļus, brīdinājuma zīmes, apdari un konstrukciju daļas, kas nepieder konkrētākai sadaļai.<br>
+<br>
+Izmanto šīs lapas rūpnīcas telpām, apkopes koridoriem, apdraudējumu marķēšanai un praktiskām rūpnieciskām detaļām.
+<np>
+Dzelzs spuldzes gaismeklis
+Kompakts darba gaismeklis
+<&iron_bulb_light>Šis bloks nodrošina kompaktu rūpniecisku apgaismojumu koridoriem, apkopes laipām un darba vietām.<br>
+<br>
+Lietošana: uzstādi pie griestiem, sienām vai malām, kur telpai vajadzīgs skaidrs darba apgaismojums.<br>
+<np>
+Griestu malas gaismeklis
+Kompakts darba gaismeklis
+<&iron_ceiling_edge_light>Šis bloks nodrošina kompaktu rūpniecisku apgaismojumu koridoriem, apkopes laipām un darba vietām.<br>
+<br>
+Lietošana: uzstādi pie griestiem, sienām vai malām, kur telpai vajadzīgs skaidrs darba apgaismojums.<br>
+<np>
+Iebūvēts grīdas malas gaismeklis
+Kompakts darba gaismeklis
+<&iron_floor_edge_light>Šis bloks nodrošina kompaktu rūpniecisku apgaismojumu koridoriem, apkopes laipām un darba vietām.<br>
+<br>
+Lietošana: uzstādi pie griestiem, sienām vai malām, kur telpai vajadzīgs skaidrs darba apgaismojums.<br>
+<np>
+Iebūvēts gaismeklis
+Kompakts darba gaismeklis
+<&iron_inset_light>Šis bloks nodrošina kompaktu rūpniecisku apgaismojumu koridoriem, apkopes laipām un darba vietām.<br>
+<br>
+Lietošana: uzstādi pie griestiem, sienām vai malām, kur telpai vajadzīgs skaidrs darba apgaismojums.<br>
+<np>
+Zīme «Vispārējs brīdinājums»
+Apdraudējuma marķieris
+<&sign_caution>Zīme «Vispārējs brīdinājums» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Bīstamības zīme
+Apdraudējuma marķieris
+<&sign_danger>Zīme «Uzmanību, šeit tiešām bīstami» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Dekoratīva zīme
+Apdraudējuma marķieris
+<&sign_decor>Zīmes plāksne (Engineer's Decor) atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Aizsardzības zīme
+Apdraudējuma marķieris
+<&sign_defense>Zīme «Uzmanību, priekšā aizsardzības sistēma» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Izejas zīme
+Apdraudējuma marķieris
+<&sign_exit>Šī zīme atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Ugunsbīstamības zīme
+Apdraudējuma marķieris
+<&sign_firehazard>Zīme «Ugunsbīstamība» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Brīdinājuma zīme par salu
+Apdraudējuma marķieris
+<&sign_frost>Zīme «Brīdinājums par salu» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Karstas virsmas zīme
+Apdraudējuma marķieris
+<&sign_hotsurface>Zīme «Uzmanību, karsta virsma» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Sprieguma vada zīme
+Apdraudējuma marķieris
+<&sign_hotwire>Zīme «Uzmanību, vads zem sprieguma» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Lāzera bīstamības zīme
+Apdraudējuma marķieris
+<&sign_laser>Zīme «Lāzera bīstamība» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Maģiska apdraudējuma zīme
+Apdraudējuma marķieris
+<&sign_magichazard>Zīme «Uzmanību, maģisks apdraudējums» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Magnētiskā lauka zīme
+Apdraudējuma marķieris
+<&sign_magneticfield>Zīme «Uzmanību, spēcīgs magnētiskais lauks» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>
+Radioaktīva apdraudējuma zīme
+Apdraudējuma marķieris
+<&sign_radioactive>Zīme «Radioaktīvs apdraudējums» atzīmē apdraudējumus, izejas un darba zonas ar rūpnīcas drošībai atbilstošu vizuālu norādi.<br>
+<br>
+Lietošana: novieto pie apdraudējumiem, izejām, mašīnām un ierobežotas piekļuves zonām.<br>
+<np>

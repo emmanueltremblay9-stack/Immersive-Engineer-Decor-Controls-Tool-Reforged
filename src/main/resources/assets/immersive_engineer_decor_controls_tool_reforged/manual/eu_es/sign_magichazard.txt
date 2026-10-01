@@ -1,0 +1,5 @@
+Arrisku magikoaren seinalea
+Arrisku-markatzailea
+<&recipe>«Kontuz, arrisku magikoa» seinaleak arriskuak, irteerak eta lan-eremuak markatzen ditu, fabrikako segurtasunerako ikusizko ikur batekin.<br>
+<br>
+Erabilera: jarri arriskuen, irteeren, makinen eta sarbide mugatuko eremuen alboan.<br>

@@ -1,0 +1,7 @@
+Lampă de alarmă
+Indicarea semnalului
+<&recipe>Un indicator compact transformă semnalul redstone ascuns într-o indicație vizibilă în fabrică.<br>
+<br>
+Utilizare: Conectează-l lângă semnal pentru a monitoriza uși, mașini, alarme sau panouri.<br>
+<br>
+Observații: Își schimbă starea când există semnal redstone în apropiere.

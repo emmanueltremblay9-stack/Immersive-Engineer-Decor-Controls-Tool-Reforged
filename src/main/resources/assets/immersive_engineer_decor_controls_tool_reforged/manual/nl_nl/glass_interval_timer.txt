@@ -1,0 +1,7 @@
+Glazen intervalsignaal
+Tijdgestuurde puls
+<&recipe>Een compacte tijdschakelaar levert een geplande redstonepuls.<br>
+<br>
+Gebruik: gebruik hem waar een klein mechanisme periodieke of vertraagde bediening nodig heeft.<br>
+<br>
+Opmerking: werkt met geplande redstonepulsen.

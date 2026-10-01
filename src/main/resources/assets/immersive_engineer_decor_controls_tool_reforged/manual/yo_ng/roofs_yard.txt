@@ -1,0 +1,101 @@
+Àwọn Orùlé àti Àgbàlá
+Ohun èlò ilé iṣẹ́ ìta
+Àwọn búlọ́ọ̀kù orùlé, ilẹ̀ àgbàlá oníwẹ́wẹ́, àti apá igi ilé iṣẹ́ àtijọ́ ń ràn ọ́ lọ́wọ́ láti parí àwọn àgọ́ ìta, àgbàlá iṣẹ́, ibi gbígbé ẹrù, àti etí ilé iṣẹ́ tí ojú ọjọ́ ti kan.<br>
+<br>
+Da àwọn apá yìí pọ̀ mọ́ iṣẹ́ òkúta àti ọ̀nà ìwọlé kí ìkọ́lé ilé iṣẹ́ ìta lè ṣì ṣe kedere láti ọ̀nà jíjìn.
+<np>
+Orùlé Pẹlẹbẹ Òkùnkùn
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof>Búlọ́ọ̀kù yìí ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Ìdènà Yìnyín Orùlé
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_metallized>Ìdènà Yìnyín Orùlé Pẹlẹbẹ Òkùnkùn ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Orùlé Pẹlẹbẹ Òkùnkùn
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_skylight>Fèrèsé Òkè Orùlé Pẹlẹbẹ Òkùnkùn ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Ara Ẹnu Èéfín Orùlé
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_chimneytrunk>Ara Ẹnu Èéfín Orùlé Pẹlẹbẹ Òkùnkùn ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Ọ̀nà Wáyà Orùlé
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_wireconduit>Ọ̀nà Wáyà Orùlé Pẹlẹbẹ Òkùnkùn ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Orùlé Pẹlẹbẹ Òkùnkùn
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_chimney>Ẹnu Èéfín Orùlé Pẹlẹbẹ Òkùnkùn. Ẹnu Èéfín Orùlé Pẹlẹbẹ Òkùnkùn ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Búlọ́ọ̀kù Orùlé Pẹlẹbẹ Òkùnkùn
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_block>Búlọ́ọ̀kù yìí ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Pẹlẹbẹ Orùlé Pẹlẹbẹ Òkùnkùn
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_slab>Búlọ́ọ̀kù yìí ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Pẹlẹbẹ Orùlé Pẹlẹbẹ Òkùnkùn
+Ohun èlò orùlé tí ojú ọjọ́ ti kan
+<&dark_shingle_roof_slabslice>Èérún Pẹlẹbẹ Orùlé Pẹlẹbẹ Òkùnkùn ń kọ ìrísí orùlé dúdú tó wúlò fún ilé ìṣẹ́ ọwọ́ àti àwọn àgọ́ ilé iṣẹ́.<br>
+<br>
+Lílò: Lo àwọn apá náà papọ̀ láti dá ìrísí orùlé tó dà bí gidi sílẹ̀.<br>
+<np>
+Ilẹ̀ Wẹ́wẹ́ Tí A Fúnpọ̀
+Ìbòrí ilẹ̀ ibi iṣẹ́
+<&dense_grit_dirt_block>Búlọ́ọ̀kù yìí ń fún àwọn ibi iṣẹ́ ìta ní ojú ilẹ̀ tí a tẹ̀ pọ̀, tí a sì ti tẹ̀ mọ́lẹ̀.<br>
+<br>
+Lílò: Tẹ́ ẹ lẹ́gbẹ̀ẹ́ ìlẹ̀kùn ẹrù, àpò omi ìta, àti àgbàlá ẹ̀rọ.<br>
+<np>
+Iyanrìn Wẹ́wẹ́ Tí A Fúnpọ̀
+Ìbòrí ilẹ̀ ibi iṣẹ́
+<&dense_grit_sand_block>Búlọ́ọ̀kù yìí ń fún àwọn ibi iṣẹ́ ìta ní ojú ilẹ̀ tí a tẹ̀ pọ̀, tí a sì ti tẹ̀ mọ́lẹ̀.<br>
+<br>
+Lílò: Tẹ́ ẹ lẹ́gbẹ̀ẹ́ ìlẹ̀kùn ẹrù, àpò omi ìta, àti àgbàlá ẹ̀rọ.<br>
+<np>
+Pákó Igi Àtijọ́
+Igi ilé iṣẹ́ tó ti dàgbà
+<&old_industrial_wood_planks>Pátákó Igi Ilé Iṣẹ́ Àtijọ́ ń fi igi ilé iṣẹ́ àtijọ́ kún ilẹ̀, ìgbésẹ̀, ìlẹ̀kùn, àti ọ̀ṣọ́ etí inú ilé tó mú ara yá.<br>
+<br>
+Lílò: Lo ó fún ilẹ̀ ilé iṣẹ́ àtijọ́, àtẹ̀gùn, ìlẹ̀kùn, àti ọ̀ṣọ́ etí.<br>
+<np>
+Pẹlẹbẹ Igi Ilé Iṣẹ́ Àtijọ́
+Igi ilé iṣẹ́ tó ti dàgbà
+<&old_industrial_wood_slab>Búlọ́ọ̀kù yìí ń fi igi ilé iṣẹ́ àtijọ́ kún ilẹ̀, ìgbésẹ̀, ìlẹ̀kùn, àti ọ̀ṣọ́ etí inú ilé tó mú ara yá.<br>
+<br>
+Lílò: Lo ó fún ilẹ̀ ilé iṣẹ́ àtijọ́, àtẹ̀gùn, ìlẹ̀kùn, àti ọ̀ṣọ́ etí.<br>
+<np>
+Àtẹ̀gùn Igi Àtijọ́
+Igi ilé iṣẹ́ tó ti dàgbà
+<&old_industrial_wood_stairs>Àtẹ̀gùn Igi Ilé Iṣẹ́ Àtijọ́ ń fi igi ilé iṣẹ́ àtijọ́ kún ilẹ̀, ìgbésẹ̀, ìlẹ̀kùn, àti ọ̀ṣọ́ etí inú ilé tó mú ara yá.<br>
+<br>
+Lílò: Lo ó fún ilẹ̀ ilé iṣẹ́ àtijọ́, àtẹ̀gùn, ìlẹ̀kùn, àti ọ̀ṣọ́ etí.<br>
+<np>
+Èérún Pẹlẹbẹ Igi Àtijọ́
+Igi ilé iṣẹ́ tó ti dàgbà
+<&old_industrial_wood_slabslice>Èérún Pẹlẹbẹ Igi Ilé Iṣẹ́ Àtijọ́ ń fi igi ilé iṣẹ́ àtijọ́ kún ilẹ̀, ìgbésẹ̀, ìlẹ̀kùn, àti ọ̀ṣọ́ etí inú ilé tó mú ara yá.<br>
+<br>
+Lílò: Lo ó fún ilẹ̀ ilé iṣẹ́ àtijọ́, àtẹ̀gùn, ìlẹ̀kùn, àti ọ̀ṣọ́ etí.<br>
+<np>
+Ìlẹ̀kùn Igi Ilé Iṣẹ́ Àtijọ́
+Igi ilé iṣẹ́ tó ti dàgbà
+<&old_industrial_wood_door>Búlọ́ọ̀kù yìí ń fi igi ilé iṣẹ́ àtijọ́ kún ilẹ̀, ìgbésẹ̀, ìlẹ̀kùn, àti ọ̀ṣọ́ etí inú ilé tó mú ara yá.<br>
+<br>
+Lílò: Lo ó fún ilẹ̀ ilé iṣẹ́ àtijọ́, àtẹ̀gùn, ìlẹ̀kùn, àti ọ̀ṣọ́ etí.<br>

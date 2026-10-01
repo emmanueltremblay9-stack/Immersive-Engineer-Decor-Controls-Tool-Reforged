@@ -1,0 +1,5 @@
+Soporte de poste de madera tratao
+Pieza de bastidor estructural
+<&recipe>El soporte de poste rectu de madera tratao apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>

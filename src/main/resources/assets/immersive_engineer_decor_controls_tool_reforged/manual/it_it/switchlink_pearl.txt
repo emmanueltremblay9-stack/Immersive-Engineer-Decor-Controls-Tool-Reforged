@@ -1,0 +1,7 @@
+Perla di collegamento tra interruttori
+Comando collegato
+<&recipe>Una perla collegata memorizza un ricevitore bersaglio per comandare la fabbrica a distanza.<br>
+<br>
+Uso: fai clic con una perla di ender su un ricevitore di collegamento per crearla. Usa la perla collegata da accovacciato per attivare il ricevitore memorizzato.<br>
+<br>
+Note: il bersaglio deve essere caricato, nella stessa dimensione ed entro la portata.

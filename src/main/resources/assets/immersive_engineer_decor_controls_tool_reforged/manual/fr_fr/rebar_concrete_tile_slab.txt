@@ -1,0 +1,5 @@
+Dalle de tuiles de béton armé
+Béton armé
+<&recipe>Ce bloc est un élément en béton durci destiné aux socles de machines, murs pare-souffle et sols de quais de chargement.<br>
+<br>
+Utilisation : placez-le sous les machines, le long des couloirs techniques ou partout où une base renforcée est nécessaire.<br>

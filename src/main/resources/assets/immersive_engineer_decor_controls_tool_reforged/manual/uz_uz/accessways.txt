@@ -1,0 +1,127 @@
+Xizmat yo'llari
+Yo'laklar va tayanchlar
+Po'lat ustunlar, ishlov berilgan yog'och ustunlar, pol panjaralari, xizmat yo'laklari, to'siq panjaralari, narvonlar, eshiklar, derazalar va lyuklar zavod ichida ixcham xizmat yo'llarini hosil qiladi.<br>
+<br>
+Po'lat xizmat yo'li qismlari po'lat tunuka ishlatadi. Metall yasash stolini yasang yoki joylashtiring, Immersive Engineering bolg'asini kiriting, keyin po'lat quymalarni bolg'alab, ustunlar, xizmat yo'laklari, derazalar, eshiklar, to'siq panjaralari va boshqa po'lat bezaklar uchun tunuka tayyorlang.<br>
+<br>
+Mashinalarga xizmat kirishi, baland yo'llar, texnik shaxtalar yoki xavfsizroq chetlar kerak bo'lgan joyga o'rnating.
+<np>
+Qalin po'lat ustun
+Tayanch rom qismi
+<&thick_steel_pole>To'g'ri qalin po'lat ustun mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Qalin ustun uchi
+Tayanch rom qismi
+<&thick_steel_pole_head>To'g'ri qalin po'lat ustun uchi/tagligi mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Ingichka po'lat ustun
+Tayanch rom qismi
+<&thin_steel_pole>To'g'ri ingichka po'lat ustun mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Ingichka ustun uchi
+Tayanch rom qismi
+<&thin_steel_pole_head>To'g'ri ingichka po'lat ustun uchi/tagligi mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Ishlov berilgan yog'och ustun
+Tayanch rom qismi
+<&treated_wood_pole>Ishlov berilgan yog'ochdan to'g'ri ustun mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Ishlov berilgan ustun uchi
+Tayanch rom qismi
+<&treated_wood_pole_head>Ishlov berilgan yog'ochdan to'g'ri ustun uchi/tagligi mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Ishlov berilgan ustun tayanchi
+Tayanch rom qismi
+<&treated_wood_pole_support>Ishlov berilgan yog'ochdan to'g'ri ustun tayanchi mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Qo'sh T shaklli po'lat tayanch
+Tayanch rom qismi
+<&steel_double_t_support>Bu blok mashina zallari va xizmat romlari uchun ko'rinadigan tayanch tuzilma beradi.<br>
+<br>
+Ishlatish: to'sin, ustun va platforma chetlarining ko'rinadigan tirgagi sifatida aylantirib joylashtiring.<br>
+<np>
+Po'lat pol panjarasi
+Xizmat kirishi qismi
+<&steel_floor_grating>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Po'lat xizmat yo'lagi
+Xizmat kirishi qismi
+<&steel_catwalk>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Po'lat xizmat yo'lagi zinapoyasi
+Xizmat kirishi qismi
+<&steel_catwalk_stairs>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Ko'tarilgan po'lat xizmat yo'lagi
+Xizmat kirishi qismi
+<&steel_catwalk_ta>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Po'lat to'siq panjarasi
+Xizmat kirishi qismi
+<&steel_railing>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Po'lat to'r panjara
+Xizmat kirishi qismi
+<&steel_mesh_fence>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Po'lat to'r darvozacha
+Xizmat kirishi qismi
+<&steel_mesh_fence_gate>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Metall pog'onali narvon
+Xizmat kirishi qismi
+<&metal_rung_ladder>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Navbatlashgan metall pog'onalar
+Xizmat kirishi qismi
+<&metal_rung_steps>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>
+<np>
+Po'lat romli deraza
+Himoyalangan ko'rish yo'li
+<&steel_framed_window>Bu blok mustahkamlangan zavod qurilishiga mos holda ko'rish yo'lini ochiq saqlaydi.<br>
+<br>
+Ishlatish: o'yinchilar mashinalarni himoyalangan to'siq ortidan ko'rishi kerak bo'lgan devordagi 1 blokli teshikka qo'ying.<br>
+<np>
+Suriladigan metall eshik
+Sanoat kirish nuqtasi
+<&metal_sliding_door>Bu blok xizmat xonalari, shaxtalar, tomlar va mashina qobiqlari uchun mustahkam kirish nuqtasi beradi.<br>
+<br>
+Ishlatish: qurilishda nazoratli texnik ochilish kerak joyga o'rnating.<br>
+<np>
+Temir lyuk
+Sanoat kirish nuqtasi
+<&iron_hatch>Bu blok xizmat xonalari, shaxtalar, tomlar va mashina qobiqlari uchun mustahkam kirish nuqtasi beradi.<br>
+<br>
+Ishlatish: qurilishda nazoratli texnik ochilish kerak joyga o'rnating.<br>

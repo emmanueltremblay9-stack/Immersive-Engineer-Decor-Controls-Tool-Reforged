@@ -1,0 +1,5 @@
+Escales de fusta envellida
+Fusta envellida de taller
+<&recipe>Les escales de fusta industrial envellida afigen fusta envellida de taller per a sòls, esglaons, portes i remats interiors de to càlid.<br>
+<br>
+Ús: usa’l per a sòls, escales, portes i remats de tallers antics.<br>

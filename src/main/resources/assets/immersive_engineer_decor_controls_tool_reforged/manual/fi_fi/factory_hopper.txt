@@ -1,0 +1,5 @@
+Tehdassuppilo
+Työpajan apulaite
+<&recipe>Tämä kuutio siirtää esinepinoja tiiviimmän teollisuuskotelon läpi.<br>
+<br>
+Käyttö: Suuntaa varastolinjaan ja aseta sitten kantama, pinomäärä, ajoitus ja redstone-tila käyttöliittymästä.<br>

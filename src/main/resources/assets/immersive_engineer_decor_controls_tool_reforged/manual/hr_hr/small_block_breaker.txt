@@ -1,0 +1,5 @@
+Razbijač blokova
+Oprema tvorničkog poda
+<&recipe>Mali razbijač blokova pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: usmjeri radnu stranu prema bloku koji treba ukloniti.<br>

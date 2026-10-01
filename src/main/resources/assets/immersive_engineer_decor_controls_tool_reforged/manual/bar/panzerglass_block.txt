@@ -1,0 +1,5 @@
+Panzerglosblock
+Gschützter Durchblick
+<&recipe>Mit dem Block bleibt da Durchblick frei, und er passt trotzdem zu verstärkte Fabrikbauten.<br>
+<br>
+So geht's: Nutz'n dort, wo Spiela durch a gschützte Wand auf Maschinen schaun solln.<br>

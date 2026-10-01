@@ -1,0 +1,7 @@
+Dažďový snímač
+Snímanie signálu
+<&recipe>Snímač počasia premieňa dážď vo svojom mieste na redstone.<br>
+<br>
+Použitie: Pripevni ho tam, kde na blok nad ním môže pršať.<br>
+<br>
+Poznámky: Kontroluje dážď nad snímačom.

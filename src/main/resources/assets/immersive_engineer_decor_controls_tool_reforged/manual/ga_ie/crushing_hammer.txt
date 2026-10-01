@@ -1,0 +1,7 @@
+Casúr Brúite Mian
+Uirlis brúite láimhe
+<&recipe>Uirlis láimhe é an casúr brúite méine chun iarann agus ór a phróiseáil go luath.<br>
+<br>
+Úsáid: Déan é a cheardaíocht le hiarann amh, ór amh, amhiarainn, amhiarainn domhainscláta, amhór nó amhór domhainscláta chun deannach iarainn nó óir Immersive Engineering a dhéanamh. Cailltear marthanacht agus filleann an casúr ar an eangach go dtí go mbristear é.<br>
+<br>
+Caitear é le mianadóireacht freisin agus is féidir leis spriocanna a chaitheamh siar sa dhlúthchomhrac.

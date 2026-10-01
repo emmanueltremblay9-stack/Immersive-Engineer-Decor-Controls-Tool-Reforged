@@ -1,0 +1,7 @@
+Rustikální hřebíková páka
+Redstonové řízení
+<&recipe>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.

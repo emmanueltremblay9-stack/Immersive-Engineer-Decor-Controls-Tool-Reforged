@@ -1,0 +1,7 @@
+Chiziqli mavjudot detektori
+Signalni sezish
+<&recipe>Mavjudot detektori ko'rinadigan pol plitasisiz yaqin harakatni kuzatadi.<br>
+<br>
+Ishlatish: eshiklar, chiroqlar, ogohlantirgichlar yoki mashina blokirovkalariga ulang.<br>
+<br>
+Eslatma: blok atrofidagi kichik hududni tekshiradi.

@@ -1,0 +1,7 @@
+Beskermde Masjienknoppie
+Redstone-beheer
+<&recipe>’n Kortstondige skakelaar gee ’n duidelike redstone-puls op volle sterkte.<br>
+<br>
+Gebruik: gebruik dit om masjiene te begin, deure vry te stel, alarms te aktiveer of eenmalige stroombane te skakel.<br>
+<br>
+Nota: stel ná sy geskeduleerde puls terug.

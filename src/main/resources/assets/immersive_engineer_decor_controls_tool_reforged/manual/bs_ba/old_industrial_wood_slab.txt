@@ -1,0 +1,5 @@
+Stara industrijska drvena ploča
+Ostarjelo radioničko drvo
+<&recipe>Ovaj blok dodaje ostarjelo radioničko drvo za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: Koristite ga za stare radioničke podove, stepenice, vrata i ukrase.<br>

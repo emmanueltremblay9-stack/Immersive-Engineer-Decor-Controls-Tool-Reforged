@@ -1,0 +1,7 @@
+Rusztikus szegkar
+Redstone-vezérlés
+<&recipe>A kompakt vezérlőelem jól felismerhető redstone-kapcsolópontot ad a gyári építményeknek.<br>
+<br>
+Használat: jobb kattintással váltsd a közeli áramkörök teljes erősségű kimenetét.<br>
+<br>
+Megjegyzés: bekapcsolva teljes erősségű redstone-jelet ad.

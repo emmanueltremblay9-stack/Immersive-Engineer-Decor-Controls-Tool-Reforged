@@ -1,0 +1,5 @@
+Tvornički lijevak
+Oprema tvorničkog poda
+<&recipe>Ovaj blok premješta hrpe predmeta kroz kompaktnije industrijsko kućište.<br>
+<br>
+Uporaba: usmjeri ga prema nizu inventara te u sučelju podesi domet, broj predmeta u hrpi, vrijeme i redstone način.<br>

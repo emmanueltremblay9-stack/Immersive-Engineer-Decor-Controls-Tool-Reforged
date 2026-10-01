@@ -1,0 +1,7 @@
+Schaldvorbindungsbärle
+Vorbundne Schdeuorung
+<&recipe>Ä vorbundne Bärle schbeichord än Empfängor als Ziel für Fabrigfernschdeuorungen.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle uff än Schaldvorbindungsempfängor, um eene zu machn. Nuddz de vorbundne Bärle beim Schleischn, um dän geschbeichordn Empfängor auszulösn.<br>
+<br>
+Hinweis: Das Ziel muss geladn, in dor selbn Dimension un in Reichweide sein.

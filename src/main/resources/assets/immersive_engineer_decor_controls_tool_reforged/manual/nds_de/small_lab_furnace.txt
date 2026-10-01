@@ -1,0 +1,5 @@
+Laboraven
+Lütte Verarbeitungseenheit
+<&recipe>De Laboraven smölt lütte Mengden mit fasten Brennstoff op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Bruuk fasten Brennstoff för lütte Smöltladungen.<br>

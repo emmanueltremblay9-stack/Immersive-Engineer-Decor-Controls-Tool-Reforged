@@ -1,0 +1,5 @@
+Panzerglasplaat
+Schützt Dörchkiek
+<&recipe>Disse Block lett di dörchkieken un passt liekers to verstarkte Fabrikbauten.<br>
+<br>
+Bruuk: Bruuk em dor, wo Spelers dörch en Schutzwand na Maschinen kieken schüllt.<br>

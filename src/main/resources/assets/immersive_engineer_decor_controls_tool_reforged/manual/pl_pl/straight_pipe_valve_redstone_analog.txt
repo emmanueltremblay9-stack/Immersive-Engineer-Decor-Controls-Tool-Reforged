@@ -1,0 +1,5 @@
+Analogowy zawór do płynów
+Elementy instalacji płynów
+<&recipe>Analogowy zawór do płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Ustaw zawór zgodnie z zamierzonym kierunkiem przepływu.<br>

@@ -1,0 +1,5 @@
+Polad ikitavr dayaq
+Konstruksiya karkasının hissəsi
+<&recipe>Bu blok maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>

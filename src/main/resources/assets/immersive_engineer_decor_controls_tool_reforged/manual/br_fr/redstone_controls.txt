@@ -1,0 +1,789 @@
+Reolennoù Redstone
+Muzulierioù ha tammoù signal
+An dafar reoliñ a dro ar Redstone kuzhet da banelloù uzin aes da lenn, sensoroù, merkerioù, troc'helloù, alarmoù ha tammoù signal kennasket.<br>
+<br>
+Implijit ar pajennoù-mañ pa savit lec'hioù labour oberatourien, taolennoù signal, kelc'hiadoù surentez ha reolennoù a-bell.
+<np>
+Buk saezhoù
+Lusk berrbad
+<&arrow_target>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Sensor dor
+Reoliñ Redstone
+<&door_sensor_switch>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton saverez
+Reoliñ Redstone
+<&elevator_button>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Bouton gwer
+Reoliñ Redstone
+<&glass_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton gwer
+Reoliñ Redstone
+<&glass_small_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton stok gwer
+Reoliñ Redstone
+<&glass_touch_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton mekanik
+Reoliñ Redstone
+<&industrial_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton
+Reoliñ Redstone
+<&industrial_double_pole_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton mekanik gwarezet
+Reoliñ Redstone
+<&industrial_fenced_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton skoioù
+Reoliñ Redstone
+<&industrial_knock_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton kozh kinklet
+Reoliñ Redstone
+<&oldfancy_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton kozh kinklet
+Reoliñ Redstone
+<&oldfancy_small_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton chadenn kozh kinklet
+Lusk berrbad
+<&oldfancy_spring_reset_chain>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton war ar maez
+Reoliñ Redstone
+<&rustic_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton tach war ar maez
+Reoliñ Redstone
+<&rustic_nail_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton bihan war ar maez
+Reoliñ Redstone
+<&rustic_small_button>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Bouton chadenn war ar maez
+Lusk berrbad
+<&rustic_spring_reset_chain>Un droc'hell verrbad a ro ul lusk Redstone sklaer gant an nerzh uhelañ.<br>
+<br>
+Implij: Implijit anezhi evit loc'hañ mekanikoù, digeriñ dorioù, alarmoù pe kelc'hiadoù a rank ober un dro hepken.<br>
+<br>
+Notenn: Distreiñ a ra d'he stad orin goude al lusk termenet.
+<np>
+Plakenn stok gwer
+Lusk gwask
+<&glass_contact_mat>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Stok dor gwer
+Lusk gwask
+<&glass_door_contact_mat>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Pallenn stok
+Lusk gwask
+<&industrial_contact_mat>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Pallenn stok dor
+Lusk gwask
+<&industrial_door_contact_mat>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Detektor kouezhadenn drezañ
+Merzout signal
+<&industrial_fallthrough_detector>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Bouton troad
+Reoliñ Redstone
+<&industrial_foot_button>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Trap stok greantel
+Lusk gwask
+<&industrial_high_sensitive_trapdoor>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Pallenn stokioù
+Lusk gwask
+<&industrial_shock_sensitive_contact_mat>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Trap stokioù
+Lusk gwask
+<&industrial_shock_sensitive_trapdoor>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Plantenn energiezh ruz
+Lusk gwask
+<&red_power_plant>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Plakenn wask war ar maez
+Lusk gwask
+<&rustic_contact_plate>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Gwask dor war ar maez
+Lusk gwask
+<&rustic_door_contact_plate>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Detektor kouezhadenn war ar maez
+Merzout signal
+<&rustic_fallthrough_detector>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Trap stokioù war ar maez
+Lusk gwask
+<&rustic_high_sensitive_trapdoor>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Plakenn stokioù war ar maez
+Lusk gwask
+<&rustic_shock_sensitive_plate>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Trap stokioù war ar maez
+Lusk gwask
+<&rustic_shock_sensitive_trapdoor>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Plantenn energiezh velen
+Lusk gwask
+<&yellow_power_plant>Un droc'hell stok a gas ur signal berr diwar fiñv war al leur pe an trap.<br>
+<br>
+Implij: Lakait anezhi el lec'h ma tremen entiteoù dre un hent trezalc'h, ur gargerez pe ur wenodenn warezet.<br>
+<br>
+Notenn: Kas a ra ul lusk berr goude stok un entite.
+<np>
+Eurier deiz gwer
+Signal gouloù deiz
+<&glass_day_timer>Un droc'hell amzerier a heuilh lodenn deiz kelc'hiad ar bed.<br>
+<br>
+Implij: Implijit anezhi evit gouloù porzh, stalafioù ha reolennoù uzin a labour en deiz hepken.<br>
+<br>
+Notenn: Ezhomm zo eus ur vent gant gouloù o tont eus an oabl.
+<np>
+Detektor entiteoù gwer
+Merzout signal
+<&glass_entity_detector>Un detektor entiteoù a sell ouzh ar fiñvoù tost hep ur blakenn leur gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ ouzh dorioù, gouloù, alarmoù pe serradennoù surentez ar mekanikoù.<br>
+<br>
+Notenn: C'hwiliañ a ra un takad bihan tro-dro d'ar bloc'h.
+<np>
+Signal etremezioù gwer
+Lusk amzeriet
+<&glass_interval_timer>Un droc'hell amzerier vihan a gas ul lusk Redstone termenet en amzer.<br>
+<br>
+Implij: Implijit anezhi pa'z eus ezhomm da reoliñ ur mekanik bihan bep an amzer pe gant un dale.<br>
+<br>
+Notenn: Implijout a ra luskoù Redstone termenet en amzer.
+<np>
+Detektor linenn gwer
+Merzout signal
+<&glass_linear_entity_detector>Un detektor entiteoù a sell ouzh ar fiñvoù tost hep ur blakenn leur gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ ouzh dorioù, gouloù, alarmoù pe serradennoù surentez ar mekanikoù.<br>
+<br>
+Notenn: C'hwiliañ a ra un takad bihan tro-dro d'ar bloc'h.
+<np>
+Detektor bloc'hoù
+Merzout signal
+<&industrial_block_detector>Un detektor bloc'hoù a wir hag-eñ ez eus un dra el lec'h dirazañ.<br>
+<br>
+Implij: Troit anezhañ war-du fas ar mekanik, ar pourvez pe an takad gwarezet da evezhiañ.<br>
+<br>
+Notenn: Reiñ a ra energiezh ma n'eo ket ar bloc'h dirazañ aer.
+<np>
+Eurier deiz
+Signal gouloù deiz
+<&industrial_day_timer>Un droc'hell amzerier a heuilh lodenn deiz kelc'hiad ar bed.<br>
+<br>
+Implij: Implijit anezhi evit gouloù porzh, stalafioù ha reolennoù uzin a labour en deiz hepken.<br>
+<br>
+Notenn: Ezhomm zo eus ur vent gant gouloù o tont eus an oabl.
+<np>
+Detektor entiteoù
+Merzout signal
+<&industrial_entity_detector>Un detektor entiteoù a sell ouzh ar fiñvoù tost hep ur blakenn leur gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ ouzh dorioù, gouloù, alarmoù pe serradennoù surentez ar mekanikoù.<br>
+<br>
+Notenn: C'hwiliañ a ra un takad bihan tro-dro d'ar bloc'h.
+<np>
+Amzerier etremezioù
+Lusk amzeriet
+<&industrial_interval_timer>Un droc'hell amzerier vihan a gas ul lusk Redstone termenet en amzer.<br>
+<br>
+Implij: Implijit anezhi pa'z eus ezhomm da reoliñ ur mekanik bihan bep an amzer pe gant un dale.<br>
+<br>
+Notenn: Implijout a ra luskoù Redstone termenet en amzer.
+<np>
+Sensor gouloù
+Merzout signal
+<&industrial_light_sensor>Ur sensor gouloù a dro sklerijenn lec'hel da reolerezh Redstone.<br>
+<br>
+Implij: Implijit anezhañ evit gouloù emgefre, stalafioù ha kelc'hiadoù gwelusted.<br>
+<br>
+Notenn: Reiñ a ra energiezh pa'z eo ar sklerijenn diaoz 8 pe uheloc'h.
+<np>
+Detektor barr-amzer
+Merzout signal
+<&industrial_lightning_sensor>Ur sensor barr-amzer a zelusk kemennadoù pa vez kurun.<br>
+<br>
+Implij: Lakait anezhañ dindan un oabl digor ha kennaskit anezhañ ouzh gouloù pe alarmoù.<br>
+<br>
+Notenn: Ezhomm zo eus kurun ha moned d'an oabl.
+<np>
+Detektor entiteoù linenn
+Merzout signal
+<&industrial_linear_entity_detector>Un detektor entiteoù a sell ouzh ar fiñvoù tost hep ur blakenn leur gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ ouzh dorioù, gouloù, alarmoù pe serradennoù surentez ar mekanikoù.<br>
+<br>
+Notenn: C'hwiliañ a ra un takad bihan tro-dro d'ar bloc'h.
+<np>
+Sensor glav
+Merzout signal
+<&industrial_rain_sensor>Ur sensor amzer a dro ar glav en e lec'h da Redstone.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'hall ar bloc'h a-us dezhañ resev glav.<br>
+<br>
+Notenn: Gwiriañ a ra ar glav a-us d'ar sensor.
+<np>
+Troc'hell wer daou-stad
+Reoliñ Redstone
+<&glass_rotary_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Stok gwer daou-stad
+Reoliñ Redstone
+<&glass_touch_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Gwer kizidik orañjez
+Gwer signal
+<&orange_sensitiveglass>Ur bloc'h gwer a respont da Redstone a vir ar gwel en ur ziskouez stad ar signal.<br>
+<br>
+Implij: Implijit anezhañ e prenestroù salioù reoliñ, panelloù sklerijennet ha gwer uzin gwarezet.<br>
+<br>
+Notenn: Cheñch a ra stad gant energiezh Redstone tost.
+<np>
+Gwer kizidik sklerijennus
+Gwer signal
+<&sensitive_glass_block>Ur bloc'h gwer a respont da Redstone a vir ar gwel en ur ziskouez stad ar signal.<br>
+<br>
+Implij: Implijit anezhañ e prenestroù salioù reoliñ, panelloù sklerijennet ha gwer uzin gwarezet.<br>
+<br>
+Notenn: Cheñch a ra stad gant energiezh Redstone tost.
+<np>
+Gwer kizidik livet
+Gwer signal
+<&stained_sensitiveglass>Ur bloc'h gwer a respont da Redstone a vir ar gwel en ur ziskouez stad ar signal.<br>
+<br>
+Implij: Implijit anezhañ e prenestroù salioù reoliñ, panelloù sklerijennet ha gwer uzin gwarezet.<br>
+<br>
+Notenn: Cheñch a ra stad gant energiezh Redstone tost.
+<np>
+Muzulier barrenn wer
+Muzulier signal
+<&glass_vertical_bar_gauge>Ur muzulier bihan evit sal reoliñ a ziskouez nerzh Redstone dre ul lennadenn sklaer war banell.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'haller gwiriañ nerzh Redstone an amezegiezh gant ur sell.<br>
+<br>
+Notenn: Lenn a ra nerzh Redstone tost etre 0 ha 15.
+<np>
+Muzulier analogel
+Muzulier signal
+<&industrial_analog_angular_gauge>Ur muzulier bihan evit sal reoliñ a ziskouez nerzh Redstone dre ul lennadenn sklaer war banell.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'haller gwiriañ nerzh Redstone an amezegiezh gant ur sell.<br>
+<br>
+Notenn: Lenn a ra nerzh Redstone tost etre 0 ha 15.
+<np>
+Muzulier voltmetr
+Muzulier signal
+<&industrial_analog_horizontal_gauge>Ur muzulier bihan evit sal reoliñ a ziskouez nerzh Redstone dre ul lennadenn sklaer war banell.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'haller gwiriañ nerzh Redstone an amezegiezh gant ur sell.<br>
+<br>
+Notenn: Lenn a ra nerzh Redstone tost etre 0 ha 15.
+<np>
+Muzulier niverel
+Nerzh signal aes da lenn
+<&industrial_small_digital_gauge>Ur muzulier bihan evit sal reoliñ a ziskouez nerzh Redstone dre ul lennadenn sklaer war banell.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'haller gwiriañ nerzh Redstone an amezegiezh gant ur sell.<br>
+<br>
+Notenn: Lenn a ra nerzh Redstone tost etre 0 ha 15.
+<np>
+Muzulier korzenn wer
+Muzulier signal
+<&industrial_tube_gauge>Ur muzulier bihan evit sal reoliñ a ziskouez nerzh Redstone dre ul lennadenn sklaer war banell.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'haller gwiriañ nerzh Redstone an amezegiezh gant ur sell.<br>
+<br>
+Notenn: Lenn a ra nerzh Redstone tost etre 0 ha 15.
+<np>
+Muzulier barrenn analogel
+Muzulier signal
+<&industrial_vertical_bar_gauge>Ur muzulier bihan evit sal reoliñ a ziskouez nerzh Redstone dre ul lennadenn sklaer war banell.<br>
+<br>
+Implij: Stagit anezhañ el lec'h ma c'haller gwiriañ nerzh Redstone an amezegiezh gant ur sell.<br>
+<br>
+Notenn: Lenn a ra nerzh Redstone tost etre 0 ha 15.
+<np>
+Gouloù alarm
+Adtitour signal
+<&industrial_alarm_lamp>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+Sirenenn alarm
+Diskouez ar signal
+<&industrial_alarm_siren>Ar Sirenenn alarm zo un diskouez redstone stag ouzh tal ur bloc'h. He stad tredan a heuilh signal ar bloc'h ma'z eo staget.<br>
+<br>
+Implij: Stagañ ouzh un tal solut ha reiñ tredan da evezhiañ dorioù, mekanikoù, alarmoù pe panelloù.<br>
+<br>
+Notenn: Freskaat a ra ar sirenenn ur wech bep eilenn keit ma chom ar signal bev.
+<np>
+LED o blinkañ
+Adtitour signal
+<&industrial_blinking_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED gwer o blinkañ
+Adtitour signal
+<&industrial_green_blinking_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED gwer
+Adtitour signal
+<&industrial_green_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED ruz
+Adtitour signal
+<&industrial_red_blinking_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED ruz
+Adtitour signal
+<&industrial_red_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED gwenn o blinkañ
+Adtitour signal
+<&industrial_white_blinking_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED gwenn
+Adtitour signal
+<&industrial_white_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED melen o blinkañ
+Adtitour signal
+<&industrial_yellow_blinking_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+LED melen
+Adtitour signal
+<&industrial_yellow_led>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+Semafor war ar maez
+Adtitour signal
+<&rustic_semaphore>Ur merker bihan a dro ar Redstone kuzhet da adtitour uzin gwelet.<br>
+<br>
+Implij: Kennaskit anezhañ e-kichen ar signal evit evezhiañ dorioù, mekanikoù, alarmoù pe banelloù.<br>
+<br>
+Notenn: Cheñch a ra stad pa'z eus energiezh Redstone tost.
+<np>
+Troc'hell geñverier
+Signal staget
+<&industrial_comparator_switch>Un droc'hell sensor vihan a lenn ar bloc'h emañ staget outañ hag a dro al lennadenn-se da un ec'hank panell eeun.<br>
+<br>
+Implij: Stagit anezhi ouzh renabloù, beolioù pe ardivinkoù Redstone. Pa ziskouez ar bloc'h staget un ec'hank keñverier, lestr pe Redstone, e kas an droc'hell Redstone gant an nerzh uhelañ.<br>
+<br>
+Notenn: Implijit anezhi evit treiñ liveoù stok pe funioù kuzhet da linennoù reoliñ gweredekaet/lazhet sklaer.
+<np>
+Reoler nerzh
+Signal kemmus
+<&industrial_dimmer>Ur reoler tro a reiz nerzh Redstone diwar fas ur banell vihan.<br>
+<br>
+Implij: Klikit a-zehoù evit kreskiñ an ec'hank tamm-ha-tamm, ha distreiñ da zero goude an nerzh uhelañ.<br>
+<br>
+Notenn: Kas a ra un nerzh etre 0 ha 15.
+<np>
+Bouton paouez trumm
+Reoliñ Redstone
+<&industrial_estop_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Stanker founilh
+Reoliñ Redstone
+<&industrial_hopper_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Troc'hell skoioù
+Reoliñ Redstone
+<&industrial_knock_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn
+Reoliñ Redstone
+<&industrial_lever>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Troc'hell mekanik daou vouton
+Reoliñ Redstone
+<&industrial_machine_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Dornell sachañ
+Reoliñ Redstone
+<&industrial_pull_handle>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn dro
+Reoliñ Redstone
+<&industrial_rotary_lever>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Troc'hell dro mekanik
+Reoliñ Redstone
+<&industrial_rotary_machine_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn stok
+Reoliñ Redstone
+<&industrial_small_lever>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Troc'hell
+Reoliñ Redstone
+<&industrialswitch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Troc'hell c'houloù
+Reoliñ Redstone
+<&light_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Troc'hell valv
+Reoliñ Redstone
+<&valve_wheel_switch>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Degemerer lusk en ur c'houfr
+Reolerezh kennasket
+<&industrial_switchlink_cased_pulse_receiver>Un degemerer lusk kennasket en ur c'houfr a ro un delusker Redstone berr da banelloù pell.<br>
+<br>
+Implij: Klikit warnañ gant ur berlezenn an End evit krouiñ ur berlezenn gennasket. Klikit a-zehoù warnañ pe deluskit ar berlezenn gennasket evit kas ul lusk berr.<br>
+<br>
+Notenn: Distreiñ a ra al lusk d'e stad orin goude e badelezh termenet.
+<np>
+Degemerer kennask en ur c'houfr
+Reolerezh kennasket
+<&industrial_switchlink_cased_receiver>Un degemerer kennasket en ur c'houfr a ro ur buk Redstone solut da banelloù pell.<br>
+<br>
+Implij: Klikit warnañ gant ur berlezenn an End evit krouiñ ur berlezenn gennasket. Klikit a-zehoù war-eeun war an degemerer evit e cheñch stad dre zorn.<br>
+<br>
+Notenn: Ur berlezenn gennasket a cheñch stad an degemerer-mañ pa vez implijet en ur gluchañ.
+<np>
+Degemerer kennask lusk
+Reolerezh kennasket
+<&industrial_switchlink_pulse_receiver>Un degemerer lusk kennasket a ro un delusker Redstone berr da banelloù pell.<br>
+<br>
+Implij: Klikit warnañ gant ur berlezenn an End evit krouiñ ur berlezenn gennasket. Klikit a-zehoù warnañ pe deluskit ar berlezenn gennasket evit kas ul lusk berr.<br>
+<br>
+Notenn: Distreiñ a ra al lusk d'e stad orin goude e badelezh termenet.
+<np>
+Relae kennask lusk
+Reolerezh kennasket
+<&industrial_switchlink_pulse_relay>Un tamm a stil relae a ro ur poent troc'hañ lec'hel bihan da savadurioù panelloù.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost. Implijit bloc'hoù degemerer ma'z eus ezhomm da zeluskañ gant ur berlezenn gennasket.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Degemerer kennask troc'hell
+Reolerezh kennasket
+<&industrial_switchlink_receiver>Un degemerer kennasket a ro ur buk Redstone gant an nerzh uhelañ da banelloù pell.<br>
+<br>
+Implij: Klikit warnañ gant ur berlezenn an End evit krouiñ ur berlezenn gennasket. Klikit a-zehoù war-eeun war an degemerer evit e cheñch stad dre zorn.<br>
+<br>
+Notenn: Ur berlezenn gennasket a cheñch stad an degemerer-mañ pa vez implijet en ur gluchañ.
+<np>
+Degemerer kennask analogel
+Reolerezh kennasket
+<&industrial_switchlink_receiver_analog>Un degemerer kennasket a ro ur buk pell gwelet da banelloù reoliñ.<br>
+<br>
+Implij: Klikit warnañ gant ur berlezenn an End evit krouiñ ur berlezenn gennasket. Implijit ar berlezenn-se en ur gluchañ evit gweredekaat an degemerer a-bell.<br>
+<br>
+Notenn: An degemerer-mañ a gas ur signal Redstone gant an nerzh uhelañ pa vez delusket.
+<np>
+Relae kennask troc'hell
+Reolerezh kennasket
+<&industrial_switchlink_relay>Un tamm a stil relae a ro ur poent troc'hañ lec'hel bihan da savadurioù panelloù.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost. Implijit bloc'hoù degemerer ma'z eus ezhomm da zeluskañ gant ur berlezenn gennasket.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Relae kennask analogel
+Reolerezh kennasket
+<&industrial_switchlink_relay_analog>Un tamm a stil relae a ro ur poent troc'hañ lec'hel bihan da savadurioù panelloù.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost. Implijit bloc'hoù degemerer ma'z eus ezhomm da zeluskañ gant ur berlezenn gennasket.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Perlezenn gennask troc'hell
+Reolerezh kennasket
+<&switchlink_pearl>Ur berlezenn gennasket a enroll ur buk degemerer evit reolennoù uzin a-bell.<br>
+<br>
+Implij: Klikit gant ur berlezenn an End war un degemerer kennask troc'hell evit ober unan. Implijit ar berlezenn gennasket en ur gluchañ evit gweredekaat an degemerer enrollet.<br>
+<br>
+Notenn: Ar buk a rank bezañ karget, er memes ment hag en hed.
+<np>
+Loc'henn gozh kinklet
+Reoliñ Redstone
+<&oldfancy_bistableswitch1>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn dro gozh kinklet
+Reoliñ Redstone
+<&oldfancy_bistableswitch2>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn dro war ar maez
+Reoliñ Redstone
+<&rustic_angular_lever>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn war ar maez
+Reoliñ Redstone
+<&rustic_lever>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn dach war ar maez
+Reoliñ Redstone
+<&rustic_nail_lever>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.
+<np>
+Loc'henn zaou droell war ar maez
+Reoliñ Redstone
+<&rustic_two_hinge_lever>Un tamm reolerezh bihan a ro ur poent troc'hañ Redstone aes da lenn da savadurioù uzin.<br>
+<br>
+Implij: Klikit a-zehoù evit gweredekaat pe lazhañ an ec'hank nerzh uhelañ evit kelc'hiadoù tost.<br>
+<br>
+Notenn: Kas a ra Redstone gant an nerzh uhelañ keit ha ma'z eo gweredekaet.

@@ -1,0 +1,7 @@
+Veire sensible colorat
+Veire de senhal
+<&recipe>Un blòc de veire reactiu a la redstone manten la vista desgatjada mentre mòstra l’estat del senhal.<br>
+<br>
+Utilizacion : emplega-lo per las fenèstras de sala de comanda, los panèls esclairats e las vitras protegidas de fabrica.<br>
+<br>
+Nòta : càmbia d’estat segon la poténcia de redstone vesina.

@@ -1,0 +1,7 @@
+Skrzynka na materiały
+Skrzynka na materiały budowlane
+<&recipe>Skrzynka na materiały mieści duży zapas jednego zwykłego, niezmodyfikowanego i układalnego materiału budowlanego.<br>
+<br>
+Trzymaj skrzynkę w głównej ręce, a stos w drugiej, aby go schować; użyj skrzynki z pustą drugą ręką, aby wyjąć jeden stos.<br>
+<br>
+Mieści do 512 przedmiotów jednego typu, odrzuca inne skrzynki, niestapialny sprzęt i zmodyfikowane stosy oraz pokazuje zawartość w podpowiedzi.

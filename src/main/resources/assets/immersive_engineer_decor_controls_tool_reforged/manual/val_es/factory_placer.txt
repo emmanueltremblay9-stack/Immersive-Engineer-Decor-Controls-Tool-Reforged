@@ -1,0 +1,5 @@
+Col·locador de blocs de fàbrica
+Equipament de terra de taller
+<&recipe>Este bloc col·loca blocs de les seues existències internes quan s’activa.<br>
+<br>
+Ús: apunta la cara de treball a l’espai de destí i carrega piles que es puguen col·locar.<br>

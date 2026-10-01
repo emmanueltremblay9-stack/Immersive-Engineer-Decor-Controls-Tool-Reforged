@@ -1,0 +1,107 @@
+Ateliersmaschinnen
+Maschinnen an Ateliersagäng/-ausgäng
+Ateliersmaschinne maachen Handwierk, Géigestandstransport, Schmëlzen, Entsuergung, Sammelen an Notzaarbechten op der Fläch vun engem eenzege Block.<br>
+<br>
+Maach déi folgend Säiten op fir d'Rezept, d'Bild, den Hannergrond a praktesch Notzungshiweiser vun all Maschinn.
+<np>
+Stoldësch
+Ateliersmiwwel
+<&steel_table>Dëse Block ass e praktescht Ateliersmiwwel fir Aarbechtsraim an Ënnerhaltsecken.<br>
+<br>
+Benotzung: Setz en nieft Bänken, Këschten a kompakte Maschinnen.<br>
+<np>
+Dësch aus behandeltem Holz
+Ateliersmiwwel
+<&treated_wood_table>Dëse Block ass e praktescht Ateliersmiwwel fir Aarbechtsraim an Ënnerhaltsecken.<br>
+<br>
+Benotzung: Setz en nieft Bänken, Këschten a kompakte Maschinnen.<br>
+<np>
+Hocker aus behandeltem Holz
+Ateliersmiwwel
+<&treated_wood_stool>Dëse Block ass e praktescht Ateliersmiwwel fir Aarbechtsraim an Ënnerhaltsecken.<br>
+<br>
+Benotzung: Setz en nieft Bänken, Këschten a kompakte Maschinnen.<br>
+<np>
+Metallwierkbänk
+Aarbechtsstatioun fir Placken
+<&metal_crafting_table>D'Metallwierkbänk ass eng verstäerkt Ateliersstatioun mat engem Hummerfach, engem 3x3-Handwierksraster an engem kloeren Ausgangsfach.<br>
+<br>
+Benotzung: Benotz de Raster fir normal Handwierksaarbechten. Fir IE-Placke setzt du en Ingenieurshummer an d'Geschierfach an d'Plackematerial an de Raster, éier s du d'Resultat eraushëls. Stoldekoratioune benotze Stolplacke fir Pottoen, Lafstegen, Fënsteren, Dieren, Gelänner an aner Stoldeeler.<br>
+<np>
+Fabricktriichter
+Hëllefsmëttel um Ateliersbuedem
+<&factory_hopper>Dëse Block beweegt Géigestandsstapelen duerch e méi kompakt Industriegehäis.<br>
+<br>
+Benotzung: Riicht en op d'Inventarlinn a stell duerno Reechwäit, Stapelzuel, Zäitverhalen a Redstone-Modus am Interface an.<br>
+<np>
+Fabrickspender
+Hëllefsmëttel um Ateliersbuedem
+<&factory_dropper>Dëse Block gëtt gespäichert Géigestänn iwwer eng geriichte Säit eraus.<br>
+<br>
+Benotzung: Riicht déi viischt Säit op den Ausgabepunkt, fëll déi intern Fächer a stell Kraaft, Wénkel, Waardezäit, Filterlogik a Redstone-Modus am Interface an.<br>
+<np>
+Fabrickblocksetzer
+Hëllefsmëttel um Ateliersbuedem
+<&factory_placer>Dëse Block setzt Bléck aus sengem interne Virrat, wann en aktivéiert gëtt.<br>
+<br>
+Benotzung: Riicht d'Aarbechtssäit op den Zilraum a fëll e mat Stapelen, déi gesat kënne ginn.<br>
+<np>
+Blockbriecher
+Hëllefsmëttel um Ateliersbuedem
+<&small_block_breaker>De klenge Blockbriecher ass en Ateliersnotzblock fir Handwierk, Lagerung, Plazéierung, Ofbau, Sammelen oder kompakt Automatiséierung.<br>
+<br>
+Benotzung: Riicht d'Aarbechtssäit op de Block, deen ewechgeholl soll ginn.<br>
+<np>
+Offallverbrennungsuewen
+Kompakt Veraarbechtungseenheet
+<&small_waste_incinerator>Den Offallverbrennungsuewen zerstéiert ongewollte Géigestänn op wéineg Plaz am Atelier.<br>
+<br>
+Benotzung: Féier nëmmen ongewollte Géigestänn a seng Waardeschlaang.<br>
+<np>
+Labo-Uewen
+Kompakt Veraarbechtungseenheet
+<&small_lab_furnace>De Labo-Uewen mécht kompakt Schmelzaarbechte mat festem Brennstoff op wéineg Plaz am Atelier.<br>
+<br>
+Benotzung: Benotz feste Brennstoff fir kleng Schmelzchargen.<br>
+<np>
+Elektreschen Uewen
+Kompakt Veraarbechtungseenheet
+<&small_electrical_furnace>Den elektreschen Uewen mécht kompakt FE-gedriwwe Schmelzaarbechten op wéineg Plaz am Atelier.<br>
+<br>
+Benotzung: Féier FE a valabelt Schmelzmaterial zou.<br>
+<np>
+Mineralschmelzer
+Kompakt Veraarbechtungseenheet
+<&small_mineral_smelter>De Mineralschmelzer verschafft Mineraler bei héijen Temperaturen op wéineg Plaz am Atelier.<br>
+<br>
+Benotzung: Féier Mineralbléck a Stroum fir d'Schmëlze bei héijer Temperatur zou.<br>
+<np>
+Waasserafréierer
+Kompakt Veraarbechtungseenheet
+<&small_freezer>De Waasserafréierer mécht kompakt Killaarbechte fir stroumgedriwwe Flëssegkeetssystemer.<br>
+<br>
+Benotzung: Féier Waasser a Stroum zou fir eng stufweis Äisproduktioun.<br>
+<np>
+Passiv Flëssegkeet
+Flëssegkeetsleitungsbaudeeler
+<&passive_fluid_accumulator>De passive Flëssegkeetssammler ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Setz en un entspriechend Waasserquellen a looss Plaz fir d'Flëssegkeet erauszehuelen.<br>
+<np>
+Solarpanneau
+Hëllefsmëttel um Ateliersbuedem
+<&small_solar_panel>De klenge Solarpanneau ass en Ateliersnotzblock fir Handwierk, Lagerung, Plazéierung, Ofbau, Sammelen oder kompakt Automatiséierung.<br>
+<br>
+Benotzung: Gëff him fräien Himmel a verbann Ausrüstung mat nidderegem Verbrauch.<br>
+<np>
+Mëllechmaschinn
+Hëllefsmëttel um Ateliersbuedem
+<&small_milking_machine>Déi kleng Mëllechmaschinn ass en Ateliersnotzblock fir Handwierk, Lagerung, Plazéierung, Ofbau, Sammelen oder kompakt Automatiséierung.<br>
+<br>
+Benotzung: Setz se bei Kéi a suerg fir eng Méiglechkeet, Mëllechbehälter oder Flëssegkeet erauszehuelen.<br>
+<np>
+Bamfäller
+Hëllefsmëttel um Ateliersbuedem
+<&small_tree_cutter>De klenge Bamfäller ass en Ateliersnotzblock fir Handwierk, Lagerung, Plazéierung, Ofbau, Sammelen oder kompakt Automatiséierung.<br>
+<br>
+Benotzung: Riicht en op ausgewuesse Beem a sammel d'Ausbeut separat.<br>

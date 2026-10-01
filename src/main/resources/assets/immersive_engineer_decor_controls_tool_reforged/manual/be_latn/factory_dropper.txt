@@ -1,0 +1,5 @@
+Fabryčny vykidalnik
+Abstalavannie cecha
+<&recipe>Hety błok vypuskaje zachavanyja pradmiety z nakiravanaj hrani.<br>
+<br>
+Vykarystannie: nakiruj piaredniuju hrań da miesca vypusku, zapoŭni ŭnutranyja jačejki i naładź u jaho ekranie siłu, vuhał, zatrymku, łohiku filtra i redstonavy režym.<br>

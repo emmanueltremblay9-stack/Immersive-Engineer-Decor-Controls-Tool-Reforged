@@ -1,0 +1,5 @@
+Zavod süzgəci
+Emalatxana yardımçısı
+<&recipe>Bu blok əşya yığınlarını daha yığcam sənaye gövdəsi içindən ötürür.<br>
+<br>
+İstifadə: İnventar xəttinə yönəldin, sonra ekranda məsafəni, yığın sayını, vaxtlamanı və qızıl daş rejimini təyin edin.<br>

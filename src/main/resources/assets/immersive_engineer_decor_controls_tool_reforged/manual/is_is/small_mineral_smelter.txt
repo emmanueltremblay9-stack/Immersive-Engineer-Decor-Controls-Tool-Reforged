@@ -1,0 +1,5 @@
+Steinefnabræðsluofn
+Fyrirferðarlítil vinnslueining
+<&recipe>Steinefnabræðsluofninn sinnir háhitavinnslu steinefna á litlu verkstæðisrými.<br>
+<br>
+Notkun: Mataðu hann með steinefnakubbum og afli fyrir háhitabræðslu.<br>

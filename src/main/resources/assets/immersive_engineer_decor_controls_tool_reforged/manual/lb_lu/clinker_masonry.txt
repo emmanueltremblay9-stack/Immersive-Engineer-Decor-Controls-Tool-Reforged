@@ -1,0 +1,161 @@
+Klinker a Mauerwierk
+Zillen- a Bëtongshüllen
+Klinker, Schlackenzillen, arméierte Bëtong a Panzerglas bidde schwéier Flächen fir waarm Raim, Atelieren a geschützte Bléck op Maschinnen.<br>
+<br>
+Benotz déi passend Placken, Trapen, dënn Schichten a Maueren, fir Kante fäerdeg ze maachen, ouni de Materialstil vun der Fabrick z'änneren.
+<np>
+Klinkerzilleblock
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_block>Dëse Block bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Klinkerzilleplack
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_slab>Dëse Block bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Klinkerzillentrap
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_stairs>Dëse Block bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Klinkerzillemauer
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_wall>Dëse Block bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Fleckegen Klinkerblock
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_stained_block>De fleckege Klinkerzilleblock bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Fleckeg Klinkerplack
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_stained_slab>Déi fleckeg Klinkerzilleplack bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Fleckeg Klinkertrap
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_stained_stairs>Déi fleckeg Klinkerzillentrap bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Dekoréiert Klinkerzillen
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_sastor_corner_block>Déi mat Sandsteen dekoréiert Klinkerzille brénge vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Zeréckgesate Klinkerzillen
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_recessed>Dëse Block bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Geschlitzte Klinkerzillen
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_vertically_slit>Déi vertikal geschlitzte Klinkerzille brénge vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Vertikal Klinkerplack
+Vum Rous verdäischtert Zillewierk
+<&clinker_brick_vertical_slab_structured>Déi strukturéiert vertikal Klinkerplack bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Hallef Klinkerzilleplack
+Vum Rous verdäischtert Zillewierk
+<&halfslab_clinker_brick>Dëse Block bréngt vum Rous verdäischtert Zillewierk an Uewenhalen, Kamäinsockelen a Servicemaueren.<br>
+<br>
+Benotzung: Benotz en als Mauer, Bordür oder Hëtztberäichsverkleedung ronderëm Uewen a Kesselen.<br>
+<np>
+Schlackenzilleblock
+Dicht Fabrickmauerwierk
+<&slag_brick_block>Dëse Block füügt dicht grobrong Mauerwierk fir Fundamenter, Stützmaueren an eeler Aarbechtsschäpp bäi.<br>
+<br>
+Benotzung: Benotz en fir eeler Fundamenter, Stützmaueren an dreckeg Fabricksbiedem.<br>
+<np>
+Schlackenzilleplack
+Dicht Fabrickmauerwierk
+<&slag_brick_slab>Dëse Block füügt dicht grobrong Mauerwierk fir Fundamenter, Stützmaueren an eeler Aarbechtsschäpp bäi.<br>
+<br>
+Benotzung: Benotz en fir eeler Fundamenter, Stützmaueren an dreckeg Fabricksbiedem.<br>
+<np>
+Schlackenzillentrap
+Dicht Fabrickmauerwierk
+<&slag_brick_stairs>Dëse Block füügt dicht grobrong Mauerwierk fir Fundamenter, Stützmaueren an eeler Aarbechtsschäpp bäi.<br>
+<br>
+Benotzung: Benotz en fir eeler Fundamenter, Stützmaueren an dreckeg Fabricksbiedem.<br>
+<np>
+Schlackenzillemauer
+Dicht Fabrickmauerwierk
+<&slag_brick_wall>Dëse Block füügt dicht grobrong Mauerwierk fir Fundamenter, Stützmaueren an eeler Aarbechtsschäpp bäi.<br>
+<br>
+Benotzung: Benotz en fir eeler Fundamenter, Stützmaueren an dreckeg Fabricksbiedem.<br>
+<np>
+Arméierte Bëtongsblock
+Arméierte Bëtong
+<&rebar_concrete>Dëse Block ass en haart Bëtongsdeel fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Arméiert Bëtongsplack
+Arméierte Bëtong
+<&rebar_concrete_slab>Dëse Block ass en haart Bëtongsdeel fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Arméiert Bëtongstrap
+Arméierte Bëtong
+<&rebar_concrete_stairs>Dëse Block ass en haart Bëtongsdeel fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Arméiert Bëtongsmauer
+Arméierte Bëtong
+<&rebar_concrete_wall>Dëse Block ass en haart Bëtongsdeel fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Dënn Schicht aus arméiertem Bëtong
+Arméierte Bëtong
+<&halfslab_rebar_concrete>Dëse Block ass en haart Bëtongsdeel fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Arméiert Bëtongsflis
+Arméierte Bëtong
+<&rebar_concrete_tile>Dëse Block ass en haart Bëtongsdeel fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Arméiert Bëtongsfliseplack
+Arméierte Bëtong
+<&rebar_concrete_tile_slab>Dëse Block ass en haart Bëtongsdeel fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Arméiert Bëtongsflis
+Arméierte Bëtong
+<&rebar_concrete_tile_stairs>D'arméiert Bëtongsflisentrap besteet aus haarde Bëtongsdeeler fir Maschinnesockelen, Explosiounsschutzmaueren a Biedem vu Luederampen.<br>
+<br>
+Benotzung: Benotz en ënner Maschinnen, laanscht Servicegäng oder iwwerall, wou d'Konstruktioun eng verstäerkt Basis brauch.<br>
+<np>
+Panzerglasblock
+Geschützte Bléck
+<&panzerglass_block>Dëse Block léisst d'Vue fräi a passt trotzdeem zu enger verstäerkter Fabrickkonstruktioun.<br>
+<br>
+Benotzung: Benotz en do, wou Spiller duerch eng geschützte Barrière op Maschinne kucke sollen.<br>
+<np>
+Panzerglasplack
+Geschützte Bléck
+<&panzerglass_slab>Dëse Block léisst d'Vue fräi a passt trotzdeem zu enger verstäerkter Fabrickkonstruktioun.<br>
+<br>
+Benotzung: Benotz en do, wou Spiller duerch eng geschützte Barrière op Maschinne kucke sollen.<br>

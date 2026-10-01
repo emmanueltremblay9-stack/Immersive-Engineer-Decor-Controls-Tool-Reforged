@@ -1,0 +1,7 @@
+Martilyong Pandurog ng Mineral
+Mano-manong kasangkapang pandurog
+<&recipe>Ang martilyong pandurog ng mineral ay mano-manong kasangkapan para sa maagang pagproseso ng bakal at ginto.<br>
+<br>
+Paggamit: I-craft ito kasama ng hilaw na bakal, hilaw na ginto, iron ore, deepslate iron ore, gold ore, o deepslate gold ore upang makagawa ng iron o gold dust ng Immersive Engineering. Nababawasan ang durability ng martilyo at bumabalik ito sa crafting grid hanggang sa masira.<br>
+<br>
+Nauupod din ito sa pagmimina at nakapagpapatulak ng mga target sa malapitang labanan.

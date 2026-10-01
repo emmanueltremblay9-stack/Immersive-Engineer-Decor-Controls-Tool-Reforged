@@ -1,0 +1,7 @@
+Rūdas smalcināšanas āmurs
+Rokas smalcināšanas rīks
+<&recipe>Rūdas drupināšanas āmurs ir rokas rīks dzelzs un zelta sākotnējai apstrādei.<br>
+<br>
+Lietošana: Izgatavo to kopā ar jēldzelzi, jēlzeltu, dzelzs rūdu, dziļslānekļa dzelzs rūdu, zelta rūdu vai dziļslānekļa zelta rūdu, lai iegūtu Immersive Engineering dzelzs vai zelta putekļus. Āmurs zaudē izturību un atgriežas izgatavošanas režģī, līdz salūst.<br>
+<br>
+Tas nolietojas arī rakšanas laikā un tuvcīņā var atgrūst mērķus.

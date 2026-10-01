@@ -1,0 +1,5 @@
+Metallschiebetia
+Industriezugang
+<&recipe>Der Block schafft an robusten Zugang zu Wartungsräum, Schächt, Dächer und Maschinenverkleidunga.<br>
+<br>
+So geht's: Bau'n dort ei, wo a kontrollierte Wartungsöffnung braucht wird.<br>

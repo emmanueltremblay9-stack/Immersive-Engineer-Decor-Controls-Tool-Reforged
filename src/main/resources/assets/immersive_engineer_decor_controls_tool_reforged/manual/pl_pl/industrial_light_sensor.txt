@@ -1,0 +1,7 @@
+Czujnik światła
+Wykrywanie sygnałów
+<&recipe>Czujnik światła przekształca lokalną jasność w sterowanie redstone.<br>
+<br>
+Użycie: Stosuj go do automatycznych lamp, żaluzji i obwodów sterujących widocznością.<br>
+<br>
+Uwagi: Włącza sygnał przy surowym poziomie jasności 8 lub wyższym.

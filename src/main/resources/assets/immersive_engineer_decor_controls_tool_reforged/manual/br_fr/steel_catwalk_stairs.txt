@@ -1,0 +1,5 @@
+Diri hent-gwenodenn dir
+Tamm moned trezalc'h
+<&recipe>Ar bloc'h-mañ a ra hentoù trezalc'h aes da lenn tro-dro d'ar mekanikoù.<br>
+<br>
+Implij: Lakait anezhañ evit moned trezalc'h tro-dro d'ar mekanikoù, an estajoù uhelañ hag ar puñsoù trezalc'h.<br>

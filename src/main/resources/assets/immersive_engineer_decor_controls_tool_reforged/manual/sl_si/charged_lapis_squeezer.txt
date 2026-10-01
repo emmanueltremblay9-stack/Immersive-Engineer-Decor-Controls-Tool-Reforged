@@ -1,0 +1,7 @@
+Ožemalnik uma
+Kondenzator izkušenj
+<&recipe>Ožemalnik uma pretvarja lazurni kamen in izkušnje v napolnjen lazurni kamen.<br>
+<br>
+Uporaba: Imej pri sebi lazurni kamen in vsaj eno stopnjo izkušenj, nato uporabi orodje. Uspešno ožemanje porabi eno stopnjo in en lazurni kamen, poškoduje uporabnika, obrabi ožemalnik in ustvari en napolnjen lazurni kamen.<br>
+<br>
+Delovanje zavrne, če uporabnik nima lazurnega kamna, nima XP ali je preblizu smrti.

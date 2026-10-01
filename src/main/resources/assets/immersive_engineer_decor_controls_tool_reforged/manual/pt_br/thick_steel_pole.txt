@@ -1,0 +1,5 @@
+Poste grosso de aço
+Peça de estrutura
+<&recipe>O poste reto grosso de aço fornece estrutura visível para galpões de máquinas e armações de acesso.<br>
+<br>
+Uso: Gire e coloque como reforço visível de vigas, postes e bordas de plataformas.<br>

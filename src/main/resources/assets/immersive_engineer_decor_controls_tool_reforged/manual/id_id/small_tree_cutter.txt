@@ -1,0 +1,5 @@
+Penebang Pohon
+Peralatan lantai bengkel
+<&recipe>Penebang pohon kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: arahkan ke pohon yang sudah tumbuh dan kumpulkan barang jatuh secara terpisah.<br>

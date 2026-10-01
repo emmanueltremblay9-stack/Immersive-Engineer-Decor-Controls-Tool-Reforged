@@ -1,0 +1,7 @@
+Vergeliekersjakelaar
+Signaal van 't draagblok
+<&recipe>Ein kleine sensorsjakelaar lieës zien draagblok aaf en maak dao ein eenvoudige paneeloetvoer van.<br>
+<br>
+Gebroek: zèt 'm op opsjlaag, tanks of redstoneapparaat. Es 't draagblok vergelieker-, houwer- of redstone-oetvoer meldt, geuf de sjakelaar redstone op volle sjtèrkte.<br>
+<br>
+Opmerking: maak zo van opsjlaagniveaus of versjtaoke bedraoding duidelike aan-/oetbedieningsliene.

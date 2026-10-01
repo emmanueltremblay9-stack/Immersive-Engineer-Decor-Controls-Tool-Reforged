@@ -1,0 +1,5 @@
+Escales de maons d’escòria
+Maçoneria densa de fàbrica
+<&recipe>Aquest bloc afegeix maçoneria densa de color marró grisós per a fonaments, murs de contenció i tallers antics.<br>
+<br>
+Ús: fes-lo servir per a fonaments antics, murs de contenció i terres bruts de fàbrica.<br>

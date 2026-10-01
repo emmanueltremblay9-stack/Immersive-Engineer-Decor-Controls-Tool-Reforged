@@ -1,0 +1,41 @@
+Shranjevanje in prevoz
+Elementi za inventar in pretok
+Elementi za shranjevanje in prevoz vključujejo zaboje, sode, lijake in ventile za kompaktne tovarniške povezave.<br>
+<br>
+Te strani uporabi pri načrtovanju skladišč, cevovodov, servisnih rezervoarjev in nadzorovanih napeljav za fluide.
+<np>
+Zaboj z oznako
+Uredljiva oznaka zaloge
+<&labeled_crate>Ta zaboj z oznako omogoča jasno razvrščanje v skladišču. Njegovo sprednjo ploščico lahko urejaš kot majhno delavniško tablo.<br>
+<br>
+Uporaba: Z desnim klikom na ploščico uredi oznako zaboja. Z desnim klikom na preostanek zaboja odpri shrambo za opremo, dele in vzdrževalne zaloge.<br>
+<np>
+Sod za fluide
+Oprema cevovodov za fluide
+<&fluid_barrel>Ta element je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Postavi ga tam, kjer lahko cevi ali vedra dosežejo ploskev rezervoarja.<br>
+<np>
+Lijak za fluide
+Oprema cevovodov za fluide
+<&small_fluid_funnel>Majhen lijak za zbiranje fluidov je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Postavi ga pod zbiralno točko fluida in njegovo shranjeno vsebino spelji v rezervoarje ali nižje cevovode.<br>
+<np>
+Nepovratni ventil za fluide
+Oprema cevovodov za fluide
+<&straight_pipe_valve>Nepovratni ventil za fluide je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Ventil poravnaj s predvideno smerjo pretoka.<br>
+<np>
+Ventil za fluide redstone
+Oprema cevovodov za fluide
+<&straight_pipe_valve_redstone>Ventil za fluide redstone je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Ventil poravnaj s predvideno smerjo pretoka.<br>
+<np>
+Analogni ventil za fluide
+Oprema cevovodov za fluide
+<&straight_pipe_valve_redstone_analog>Analogni ventil za fluide je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Ventil poravnaj s predvideno smerjo pretoka.<br>

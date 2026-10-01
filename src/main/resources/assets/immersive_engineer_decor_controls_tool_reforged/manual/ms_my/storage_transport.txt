@@ -1,0 +1,41 @@
+Simpanan dan Pengangkutan
+Kelengkapan inventori dan aliran
+Kelengkapan simpanan dan pengangkutan merangkumi peti, tong, corong dan injap untuk laluan kilang padat.<br>
+<br>
+Gunakan halaman ini semasa menyusun bilik stok, laluan paip, tangki servis dan talian bendalir terkawal.
+<np>
+Peti Berlabel
+Label stok boleh sunting
+<&labeled_crate>Peti berlabel ini memudahkan pengasingan stok yang jelas. Plat hadapannya boleh disunting seperti papan tanda bengkel kecil.<br>
+<br>
+Penggunaan: Klik kanan pada plat label untuk menyunting label peti. Klik kanan pada bahagian peti lain untuk membuka simpanan kelengkapan, alat ganti dan bekalan penyelenggaraan.<br>
+<np>
+Tong Bendalir
+Perkakasan talian bendalir
+<&fluid_barrel>Kelengkapan ini ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Letakkan di tempat paip atau baldi boleh mencapai muka tangki.<br>
+<np>
+Corong Bendalir
+Perkakasan talian bendalir
+<&small_fluid_funnel>Corong kutipan bendalir kecil ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Letakkan di bawah titik kutipan bendalir dan salurkan kandungannya ke tangki atau paip yang lebih rendah.<br>
+<np>
+Injap Sehala Paip Bendalir
+Perkakasan talian bendalir
+<&straight_pipe_valve>Injap sehala bendalir ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Jajarkan injap mengikut arah aliran yang dikehendaki.<br>
+<np>
+Injap Bendalir Redstone
+Perkakasan talian bendalir
+<&straight_pipe_valve_redstone>Injap bendalir redstone ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Jajarkan injap mengikut arah aliran yang dikehendaki.<br>
+<np>
+Injap Bendalir Analog
+Perkakasan talian bendalir
+<&straight_pipe_valve_redstone_analog>Injap bendalir analog ialah bahagian talian bendalir padat untuk tangki kecil, laluan paip, titik kutipan dan aliran kawalan redstone.<br>
+<br>
+Penggunaan: Jajarkan injap mengikut arah aliran yang dikehendaki.<br>

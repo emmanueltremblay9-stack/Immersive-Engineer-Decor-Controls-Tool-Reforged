@@ -1,0 +1,7 @@
+Fjarrofaperla
+Tengd stýring
+<&recipe>Tengd perla geymir móttakaramark fyrir fjarstýringar verksmiðju.<br>
+<br>
+Notkun: Smelltu á fjarrofamóttakara með endaperlu til að búa hana til. Notaðu tengdu perluna á meðan þú læðist til að virkja vistaða móttakarann.<br>
+<br>
+Athugasemdir: Markið verður að vera hlaðið, í sömu vídd og innan drægni.

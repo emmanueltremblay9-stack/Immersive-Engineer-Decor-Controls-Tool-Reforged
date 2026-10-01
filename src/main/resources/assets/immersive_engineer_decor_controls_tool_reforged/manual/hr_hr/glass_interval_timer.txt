@@ -1,0 +1,7 @@
+Stakleni intervalni signal
+Vremenski impuls
+<&recipe>Kompaktni vremenski prekidač daje redstone impuls prema rasporedu.<br>
+<br>
+Uporaba: koristi ga gdje mali mehanizam treba povremeno ili odgođeno upravljanje.<br>
+<br>
+Napomene: koristi redstone impulse prema rasporedu.

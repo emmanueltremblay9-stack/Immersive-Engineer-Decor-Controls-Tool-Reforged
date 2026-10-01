@@ -1,0 +1,7 @@
+Steklen gumb na dotik
+Krmiljenje z redstonom
+<&recipe>Trenutno stikalo odda čist impulz redstone s polno močjo.<br>
+<br>
+Uporaba: Uporabi ga za zagon strojev, odpiranje vrat, alarme ali vezja z enkratnim proženjem.<br>
+<br>
+Opombe: Po predvidenem trajanju impulza se ponastavi.

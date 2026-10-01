@@ -1,0 +1,7 @@
+Rele vezanogo prěključanja
+Vezano upravljanje
+<&recipe>Element v stilu rele davaje panelnym konstrukcijam kompaktno město dlja městnogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni go pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam. Upotrěbi bloky prijemnikov, kogda potrěbuješ aktivovanje vezanoju perloju.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.

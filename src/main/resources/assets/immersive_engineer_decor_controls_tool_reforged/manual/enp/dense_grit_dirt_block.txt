@@ -1,0 +1,5 @@
+Hard-Packed Grit Dirt
+Workstead ground layer
+<&recipe>This clot gives outdoor work spots a hard-packed, trampled ground.<br>
+<br>
+Use: Lay it around loading doors, outdoor vats and loom yards.<br>

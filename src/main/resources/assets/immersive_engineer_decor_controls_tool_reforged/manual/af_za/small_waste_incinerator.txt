@@ -1,0 +1,5 @@
+Afvalverbrander
+Kompakte verwerkingseenheid
+<&recipe>Die Afvalverbrander vernietig ongewenste items en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: voer slegs ongewenste items in sy wagry in.<br>

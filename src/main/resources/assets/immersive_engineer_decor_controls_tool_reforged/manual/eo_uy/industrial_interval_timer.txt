@@ -1,0 +1,7 @@
+Intervala tempigilo
+Tempigita pulso
+<&recipe>Kompakta tempŝaltilo provizas planitan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin kie malgranda mekanismo bezonas periodan aŭ prokrastitan regadon.<br>
+<br>
+Notoj: ĝi uzas planitajn redstone’ajn pulsojn.

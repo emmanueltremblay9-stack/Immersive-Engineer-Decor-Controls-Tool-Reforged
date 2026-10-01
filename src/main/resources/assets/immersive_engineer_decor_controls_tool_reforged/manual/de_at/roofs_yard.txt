@@ -1,0 +1,101 @@
+Dächer und Hof
+Fabrikausstattung draußen
+Dochblöcke, Hofschotter und oide Fabrikhoizteile machen Außenschuppn, Arbeitshöfe, Ladebereiche und verwitterte Fabrikränder fertig.<br>
+<br>
+Kombinier de Teile mit Mauerwerk und Zugangswegen, damit de Industriebautn draußen a aus da Entfernung guat erkennbor bleiben.
+<np>
+Dunkls Schindldoch
+Verwitterts Dochbauteil
+<&dark_shingle_roof>Der Block gibt Werkstätten und Industrieschuppn a dunkle, zweckmäßige Dochform.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Dochschneefong
+Verwitterts Dochbauteil
+<&dark_shingle_roof_metallized>Da Schneefong fürs dunkle Schindldoch ergänzt dunkle, zweckmäßige Dochformen für Werkstätten und Industrieschuppn.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Dunkls Schindldoch
+Verwitterts Dochbauteil
+<&dark_shingle_roof_skylight>Des Dochfensta fürs dunkle Schindldoch ergänzt dunkle, zweckmäßige Dochformen für Werkstätten und Industrieschuppn.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Dochrauchfongschaft
+Verwitterts Dochbauteil
+<&dark_shingle_roof_chimneytrunk>Da Rauchfongschaft fürs dunkle Schindldoch ergänzt dunkle, zweckmäßige Dochformen für Werkstätten und Industrieschuppn.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Doch-Kobldurchführung
+Verwitterts Dochbauteil
+<&dark_shingle_roof_wireconduit>De Kobldurchführung fürs dunkle Schindldoch ergänzt dunkle, zweckmäßige Dochformen für Werkstätten und Industrieschuppn.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Dunkls Schindldoch
+Verwitterts Dochbauteil
+<&dark_shingle_roof_chimney>Da Rauchfong fürs dunkle Schindldoch ergänzt dunkle, zweckmäßige Dochformen für Werkstätten und Industrieschuppn.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Dunkla Schindldochblock
+Verwitterts Dochbauteil
+<&dark_shingle_roof_block>Der Block gibt Werkstätten und Industrieschuppn a dunkle, zweckmäßige Dochform.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Dunkle Schindldochstufn
+Verwitterts Dochbauteil
+<&dark_shingle_roof_slab>Der Block gibt Werkstätten und Industrieschuppn a dunkle, zweckmäßige Dochform.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Dunkle Schindldochstufn
+Verwitterts Dochbauteil
+<&dark_shingle_roof_slabslice>De dunkle Schindldochviertlstufn ergänzt dunkle, zweckmäßige Dochformen für Werkstätten und Industrieschuppn.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>
+<np>
+Verdichtete Kieserdn
+Bodnbelag für Arbeitsplätze
+<&dense_grit_dirt_block>Der Block gibt Arbeitsplätzen draußen a verdichtete, ztrampelte Oberfläche.<br>
+<br>
+Verwendung: Verleg eam bei Ladetirn, Außentanks und auf Maschinenhöfn.<br>
+<np>
+Verdichteta Kiessond
+Bodnbelag für Arbeitsplätze
+<&dense_grit_sand_block>Der Block gibt Arbeitsplätzen draußen a verdichtete, ztrampelte Oberfläche.<br>
+<br>
+Verwendung: Verleg eam bei Ladetirn, Außentanks und auf Maschinenhöfn.<br>
+<np>
+Oide Hoizbrettl
+Oids Werkstatthoiz
+<&old_industrial_wood_planks>De oiden Fabrikhoizbrettl bringen gealterts Werkstatthoiz für Bödn, Tritt, Tirn und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nimm eam für oide Werkstattbödn, Treppn, Tirn und Einfassungen.<br>
+<np>
+Oide Fabrikhoizstufn
+Oids Werkstatthoiz
+<&old_industrial_wood_slab>Der Block bringt oids Werkstatthoiz für Bödn, Tritt, Tirn und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nimm eam für oide Werkstattbödn, Treppn, Tirn und Einfassungen.<br>
+<np>
+Oide Hoiztreppn
+Oids Werkstatthoiz
+<&old_industrial_wood_stairs>De oide Fabrikhoiztreppn bringt gealterts Werkstatthoiz für Bödn, Tritt, Tirn und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nimm eam für oide Werkstattbödn, Treppn, Tirn und Einfassungen.<br>
+<np>
+Oide Hoizviertlstufn
+Oids Werkstatthoiz
+<&old_industrial_wood_slabslice>De oide Fabrikhoizviertlstufn bringt gealterts Werkstatthoiz für Bödn, Tritt, Tirn und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nimm eam für oide Werkstattbödn, Treppn, Tirn und Einfassungen.<br>
+<np>
+Oide Fabrikhoiztir
+Oids Werkstatthoiz
+<&old_industrial_wood_door>Der Block bringt oids Werkstatthoiz für Bödn, Tritt, Tirn und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nimm eam für oide Werkstattbödn, Treppn, Tirn und Einfassungen.<br>

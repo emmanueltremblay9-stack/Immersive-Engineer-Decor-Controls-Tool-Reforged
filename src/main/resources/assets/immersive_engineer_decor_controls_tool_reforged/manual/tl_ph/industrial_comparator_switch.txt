@@ -1,0 +1,7 @@
+Swits na Panghambing
+Nakakabit na signal
+<&recipe>Binabasa ng maliit na swits na pandama ang blokeng kinakapitan nito at ginagawang payak na signal sa panel ang basa.<br>
+<br>
+Paggamit: Ikabit sa mga talatinggalan, tangke o kagamitang redstone. Kapag may signal ng panghambing, lalagyan o redstone ang blokeng kinakapitan, naglalabas ang swits ng redstone na buong lakas.<br>
+<br>
+Tandaan: Gamitin upang gawing malinaw na linyang buhay-patay ang antas ng imbakan o nakatagong mga kawad.

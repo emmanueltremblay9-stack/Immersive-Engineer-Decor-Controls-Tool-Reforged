@@ -1,0 +1,5 @@
+Workstead Clot Setter
+Workshop-floor helper
+<&recipe>This clot sets clots from its inner stock when started.<br>
+<br>
+Use: Point the working side at the wanted space and fill it with heaps that can be set.<br>

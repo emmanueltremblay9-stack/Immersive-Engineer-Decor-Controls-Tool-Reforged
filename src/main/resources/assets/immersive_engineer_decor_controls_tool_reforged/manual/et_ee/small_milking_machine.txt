@@ -1,0 +1,5 @@
+Lüpsimasin
+Töökoja abiseade
+<&recipe>Väike lüpsimasin on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Paigalda lehmade lähedale ja taga piimaanumate või vedeliku eemaldamise võimalus.<br>

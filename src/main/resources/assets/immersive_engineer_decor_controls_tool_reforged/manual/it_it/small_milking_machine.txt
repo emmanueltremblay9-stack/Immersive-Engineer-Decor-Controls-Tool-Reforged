@@ -1,0 +1,5 @@
+Mungitrice
+Attrezzatura per la fabbrica
+<&recipe>La piccola mungitrice appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: posala vicino alle mucche e predisponi l’estrazione dei contenitori di latte o del fluido.<br>

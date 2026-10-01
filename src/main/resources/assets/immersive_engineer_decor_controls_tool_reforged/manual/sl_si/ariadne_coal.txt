@@ -1,0 +1,7 @@
+Ariadnin premog
+Označevalnik poti po rudniku
+<&recipe>Ariadnin premog hitro označuje poti v jaških, razvejanih rudnikih in začasnih podzemnih deloviščih.<br>
+<br>
+Uporaba: Uporabi ga na stabilni ploskvi bloka, da na ta rob postaviš črno puščično oznako. Oznaka upošteva točko klika na ploskvi in podpira osem smeri, tudi diagonalne, zato lahko označuješ zavoje, izhode, slepe rove in oskrbovalne poti, ne da bi nosil ločene smerokaze.<br>
+<br>
+Ariadnin premog je večkrat uporabno orodje za označevanje s 100 uporabami. Vsaka uspešna postavitev oznake porabi eno točko vzdržljivosti; nepodprte ploskve zavrne, ne da bi obrabil predmet.

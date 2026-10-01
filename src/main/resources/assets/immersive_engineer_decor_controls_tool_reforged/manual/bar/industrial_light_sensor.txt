@@ -1,0 +1,7 @@
+Liachtsensor
+Signalerkennung
+<&recipe>A Liachtsensor macht aus da örtlichen Helligkeit a Redstone-Steuerung.<br>
+<br>
+So geht's: Nutz'n fia automatische Lampn, Klapplädn und Sichtbarkeitsschaltungen.<br>
+<br>
+Hinweis: Gibt ab ana rohen Helligkeit vo 8 Energie ab.

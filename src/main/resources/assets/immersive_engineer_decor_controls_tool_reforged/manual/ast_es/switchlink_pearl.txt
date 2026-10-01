@@ -1,0 +1,7 @@
+Perlla d’enllaz d’interruptores
+Control enllazáu
+<&recipe>Una perlla enllazada guarda un receptor de destín pa controles remotos de fábrica.<br>
+<br>
+Usu: fai clic con una perlla d’Ender nun receptor d’enllaz d’interruptores pa crear una. Usa la perlla enllazada mientres te encuxes p’activar el receptor guardáu.<br>
+<br>
+Notes: el destín tien de tar cargáu, na mesma dimensión y dientro del alcance.

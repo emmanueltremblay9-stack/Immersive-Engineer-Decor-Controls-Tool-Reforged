@@ -1,0 +1,7 @@
+Keset Kontak Pintu
+Pulsa tekanan
+<&recipe>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.

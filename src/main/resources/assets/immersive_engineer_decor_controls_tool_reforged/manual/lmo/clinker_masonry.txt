@@ -1,0 +1,161 @@
+Clinker e muradura
+Coperture de quadrei e ciment
+El clinker, i quadrei de scoria, el ciment armad e el veder blindad i fan superfiss massicce per locai cald, laboratori e barrier protete che lassen vedè de là.<br>
+<br>
+Dovra i piode, i basei, i fett e i mur compagn per finì i bord senza cambià el stil di materiai de la fabrica.
+<np>
+Bloch de quadrei de clinker
+Quadrei scur de fulisgen
+<&clinker_brick_block>Quell bloch chì el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Pioda de quadrei de clinker
+Quadrei scur de fulisgen
+<&clinker_brick_slab>Quell bloch chì el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Basei de quadrei de clinker
+Quadrei scur de fulisgen
+<&clinker_brick_stairs>Quell bloch chì el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Mur de quadrei de clinker
+Quadrei scur de fulisgen
+<&clinker_brick_wall>Quell bloch chì el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Bloch de clinker maciad
+Quadrei scur de fulisgen
+<&clinker_brick_stained_block>El Bloch de quadrei de clinker maciad el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Pioda de clinker maciad
+Quadrei scur de fulisgen
+<&clinker_brick_stained_slab>La Pioda de quadrei de clinker maciad la fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Basei de clinker maciad
+Quadrei scur de fulisgen
+<&clinker_brick_stained_stairs>I Basei de quadrei de clinker maciad i fan mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Quadrell de clinker ornad
+Quadrei scur de fulisgen
+<&clinker_brick_sastor_corner_block>El Quadrell de clinker ornad de molera el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Quadrell de clinker incassad
+Quadrei scur de fulisgen
+<&clinker_brick_recessed>Quell bloch chì el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Quadrei de clinker cont sfernadure
+Quadrei scur de fulisgen
+<&clinker_brick_vertically_slit>I Quadrei de clinker cont sfernadure verticai i fan mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Pioda vertical de clinker
+Quadrei scur de fulisgen
+<&clinker_brick_vertical_slab_structured>La Pioda vertical de clinker struturada la fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Mezza pioda de quadrei de clinker
+Quadrei scur de fulisgen
+<&halfslab_clinker_brick>Quell bloch chì el fa mur de quadrei scur de fulisgen, per sal di fornas, bas di camin e mur di locai de servizzi.<br>
+<br>
+Dovrel come mur, profil o covertura de una zona calda in gir a fornas e caldaie.<br>
+<np>
+Bloch de quadrei de scoria
+Muradura compata de fabrica
+<&slag_brick_block>Quell bloch chì el dà una superfiss densa, grisa e marron, a i fondament, a i mur de sostegn e a i capannon de lavor pussee vegg.<br>
+<br>
+Dovrel per fondament de edifici vegg, mur de sostegn e paviment sozz de stabiliment.<br>
+<np>
+Pioda de quadrei de scoria
+Muradura compata de fabrica
+<&slag_brick_slab>Quell bloch chì el dà una superfiss densa, grisa e marron, a i fondament, a i mur de sostegn e a i capannon de lavor pussee vegg.<br>
+<br>
+Dovrel per fondament de edifici vegg, mur de sostegn e paviment sozz de stabiliment.<br>
+<np>
+Basei de quadrei de scoria
+Muradura compata de fabrica
+<&slag_brick_stairs>Quell bloch chì el dà una superfiss densa, grisa e marron, a i fondament, a i mur de sostegn e a i capannon de lavor pussee vegg.<br>
+<br>
+Dovrel per fondament de edifici vegg, mur de sostegn e paviment sozz de stabiliment.<br>
+<np>
+Mur de quadrei de scoria
+Muradura compata de fabrica
+<&slag_brick_wall>Quell bloch chì el dà una superfiss densa, grisa e marron, a i fondament, a i mur de sostegn e a i capannon de lavor pussee vegg.<br>
+<br>
+Dovrel per fondament de edifici vegg, mur de sostegn e paviment sozz de stabiliment.<br>
+<np>
+Bloch de ciment armad
+Ciment armad
+<&rebar_concrete>Quell tocch de ciment durid chì el va ben per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Pioda de ciment armad
+Ciment armad
+<&rebar_concrete_slab>Quell tocch de ciment durid chì el va ben per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Basei de ciment armad
+Ciment armad
+<&rebar_concrete_stairs>Quell tocch de ciment durid chì el va ben per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Mur de ciment armad
+Ciment armad
+<&rebar_concrete_wall>Quell tocch de ciment durid chì el va ben per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Fetta de ciment armad
+Ciment armad
+<&halfslab_rebar_concrete>Quell tocch de ciment durid chì el va ben per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Piastrella de ciment armad
+Ciment armad
+<&rebar_concrete_tile>Quell tocch de ciment durid chì el va ben per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Pioda de piastrelle de ciment armad
+Ciment armad
+<&rebar_concrete_tile_slab>Quell tocch de ciment durid chì el va ben per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Piastrella de ciment armad
+Ciment armad
+<&rebar_concrete_tile_stairs>I Basei de piastrelle de ciment armad inn tocch de ciment durid per i bas di machine, i mur contro i esplosion e i paviment di baie de carga.<br>
+<br>
+Metel sota i machine, de longh a i coridor de servizzi o in qualsessia post indove che la costruzzion la gh’ha de besogn de una basa rinforzada.<br>
+<np>
+Bloch de veder blindad
+Vista cont protezzion
+<&panzerglass_block>Quell bloch chì el lassa libera la vista travers la strutura e el resta adat a la costruzzion rinforzada de fabrica.<br>
+<br>
+Dovrel indove che i sgiugador gh’han de podè vardà i machine travers de una barriera proteta.<br>
+<np>
+Pioda de veder blindad
+Vista cont protezzion
+<&panzerglass_slab>Quell bloch chì el lassa libera la vista travers la strutura e el resta adat a la costruzzion rinforzada de fabrica.<br>
+<br>
+Dovrel indove che i sgiugador gh’han de podè vardà i machine travers de una barriera proteta.<br>

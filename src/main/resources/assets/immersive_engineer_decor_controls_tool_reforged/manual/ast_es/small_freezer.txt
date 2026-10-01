@@ -1,0 +1,5 @@
+Conxelador d’agua
+Unidá compacta de procesamientu
+<&recipe>El conxelador d’agua fai trabayos compactos d’enfriamientu pa sistemes de líquidos alimentaos con enerxía.<br>
+<br>
+Usu: apurre agua y enerxía pa producir xelu por fases.<br>

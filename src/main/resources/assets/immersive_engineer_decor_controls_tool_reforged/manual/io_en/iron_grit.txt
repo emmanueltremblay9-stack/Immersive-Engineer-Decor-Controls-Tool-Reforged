@@ -1,0 +1,3 @@
+Grosiera fergranuli
+Materialo por injeniorutensili uzata da la rekonstruktita fabrikoreceptaro.
+<&recipe>Povas fuzesar a fera<br>lingoti, ma ne esas<br>apta por avancita materialoprocesado.

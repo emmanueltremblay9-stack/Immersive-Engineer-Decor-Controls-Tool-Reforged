@@ -1,0 +1,5 @@
+Passive Fluid
+Fluid line hardware
+<&recipe>The Passive Fluid Accumulator is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Place it against suitable water sources and leave room for fluid removal.<br>

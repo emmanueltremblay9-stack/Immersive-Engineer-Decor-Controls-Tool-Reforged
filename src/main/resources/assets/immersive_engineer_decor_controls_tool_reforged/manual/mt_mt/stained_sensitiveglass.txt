@@ -1,0 +1,7 @@
+Ħġieġ sensittiv ikkulurit
+Ħġieġ tas-sinjal
+<&recipe>Blokka tal-ħġieġ li tirreaġixxi għar-Redstone żżomm il-linji tal-vista waqt li turi l-istat tas-sinjal.<br>
+<br>
+Użu: użaha fit-twieqi tal-kamra tal-kontroll, pannelli mdawla u ħġieġ protett tal-fabbrika.<br>
+<br>
+Noti: tibdel l-istat skont il-qawwa tar-Redstone fil-qrib.

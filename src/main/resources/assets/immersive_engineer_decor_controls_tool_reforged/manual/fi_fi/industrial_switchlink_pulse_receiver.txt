@@ -1,0 +1,7 @@
+Pulssiyhteysvastaanotin
+Yhteysohjaus
+<&recipe>Yhteyden pulssivastaanotin antaa etäpaneeleille lyhyen redstone-liipaisun.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Lähetä lyhyt pulssi napsauttamalla vastaanotinta oikealla painikkeella tai liipaisemalla yhteyshelmellä.<br>
+<br>
+Huomaa: Pulssi palautuu itsestään asetetun ajan jälkeen.

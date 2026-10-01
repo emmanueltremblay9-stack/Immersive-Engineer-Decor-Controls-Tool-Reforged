@@ -1,0 +1,107 @@
+Macchinari da officina
+Macchinari e ingressi/uscite d’officina
+I macchinari d’officina permettono fabbricazione, spostamento di oggetti, cottura, smaltimento, raccolta e lavori ausiliari nello spazio di un solo blocco.<br>
+<br>
+Apri le pagine seguenti per ricette, immagini, descrizioni e note d’uso pratiche di ogni macchinario.
+<np>
+Tavolo d’acciaio
+Arredamento d’officina
+<&steel_table>Questo blocco è un mobile pratico per locali di lavoro e angoli di manutenzione.<br>
+<br>
+Uso: posalo vicino a banchi, casse e macchinari compatti.<br>
+<np>
+Tavolo in legno trattato
+Arredamento d’officina
+<&treated_wood_table>Questo blocco è un mobile pratico per locali di lavoro e angoli di manutenzione.<br>
+<br>
+Uso: posalo vicino a banchi, casse e macchinari compatti.<br>
+<np>
+Sgabello in legno trattato
+Arredamento d’officina
+<&treated_wood_stool>Questo blocco è un mobile pratico per locali di lavoro e angoli di manutenzione.<br>
+<br>
+Uso: posalo vicino a banchi, casse e macchinari compatti.<br>
+<np>
+Banco per la lavorazione dei metalli
+Postazione per piastre
+<&metal_crafting_table>Il banco per la lavorazione dei metalli è una postazione rinforzata con slot per martello, griglia 3x3 e slot d’uscita ben riconoscibile.<br>
+<br>
+Uso: usa la griglia per la fabbricazione normale. Per le piastre di IE, inserisci un martello dell’ingegnere nello slot utensile e il materiale nella griglia prima di prelevare il risultato. Le decorazioni d’acciaio usano piastre d’acciaio per pali, passerelle, finestre, porte, ringhiere e altre parti d’acciaio.<br>
+<np>
+Tramoggia industriale
+Attrezzatura per la fabbrica
+<&factory_hopper>Questo blocco trasferisce pile di oggetti in un involucro industriale più compatto.<br>
+<br>
+Uso: orientalo verso la linea degli inventari, poi imposta portata, dimensione delle pile, tempi e modalità redstone nella schermata.<br>
+<np>
+Gettatore industriale
+Attrezzatura per la fabbrica
+<&factory_dropper>Questo blocco espelle gli oggetti conservati da una faccia orientabile.<br>
+<br>
+Uso: rivolgi il lato anteriore verso il punto di espulsione, carica gli slot interni e regola forza, angolo, ritardo, logica dei filtri e modalità redstone nella schermata.<br>
+<np>
+Piazzatore di blocchi industriale
+Attrezzatura per la fabbrica
+<&factory_placer>Questo blocco posa i blocchi delle scorte interne quando viene attivato.<br>
+<br>
+Uso: rivolgi la faccia operativa verso lo spazio bersaglio e carica pile di blocchi posabili.<br>
+<np>
+Demolitore di blocchi
+Attrezzatura per la fabbrica
+<&small_block_breaker>Il piccolo demolitore di blocchi appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: rivolgi la faccia operativa verso il blocco da rimuovere.<br>
+<np>
+Inceneritore di rifiuti
+Unità di lavorazione compatta
+<&small_waste_incinerator>L’inceneritore di rifiuti distrugge oggetti indesiderati in uno spazio d’officina ridotto.<br>
+<br>
+Uso: inserisci nella coda soltanto gli oggetti da eliminare.<br>
+<np>
+Fornace da laboratorio
+Unità di lavorazione compatta
+<&small_lab_furnace>La fornace da laboratorio esegue cotture a combustibile solido in uno spazio d’officina ridotto.<br>
+<br>
+Uso: usa combustibile solido per piccole serie di cottura.<br>
+<np>
+Fornace elettrica
+Unità di lavorazione compatta
+<&small_electrical_furnace>La fornace elettrica esegue lavorazioni di cottura alimentate a FE in uno spazio d’officina ridotto.<br>
+<br>
+Uso: fornisci FE e ingredienti validi per la cottura.<br>
+<np>
+Fornace di fusione minerale
+Unità di lavorazione compatta
+<&small_mineral_smelter>La fornace di fusione minerale lavora minerali ad alta temperatura in uno spazio d’officina ridotto.<br>
+<br>
+Uso: fornisci blocchi minerali ed energia per la fusione ad alta temperatura.<br>
+<np>
+Congelatore d’acqua
+Unità di lavorazione compatta
+<&small_freezer>Il congelatore d’acqua esegue lavorazioni di raffreddamento compatte per impianti di fluidi alimentati a energia.<br>
+<br>
+Uso: fornisci acqua ed energia per produrre ghiaccio in fasi successive.<br>
+<np>
+Fluido passivo
+Componenti per linee di fluidi
+<&passive_fluid_accumulator>L’accumulatore passivo di fluidi è un componente compatto per piccoli serbatoi, tubature, punti di raccolta e flussi controllati da redstone.<br>
+<br>
+Uso: posalo accanto a sorgenti d’acqua adatte e lascia spazio per estrarre il fluido.<br>
+<np>
+Pannello solare
+Attrezzatura per la fabbrica
+<&small_solar_panel>Il piccolo pannello solare appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: esponilo al cielo aperto e collegalo ad apparecchiature a basso consumo.<br>
+<np>
+Mungitrice
+Attrezzatura per la fabbrica
+<&small_milking_machine>La piccola mungitrice appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: posala vicino alle mucche e predisponi l’estrazione dei contenitori di latte o del fluido.<br>
+<np>
+Taglialegna
+Attrezzatura per la fabbrica
+<&small_tree_cutter>Il piccolo taglialegna appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: puntalo verso alberi cresciuti e raccogli separatamente gli oggetti lasciati cadere.<br>

@@ -1,0 +1,5 @@
+Lâmpada de ferro
+Luz de trabalho compacta
+<&recipe>Este bloco fornece iluminação industrial compacta para corredores, passarelas e postos de trabalho.<br>
+<br>
+Uso: Instale em tetos, paredes ou bordas onde o ambiente precisar de iluminação clara para trabalhar.<br>

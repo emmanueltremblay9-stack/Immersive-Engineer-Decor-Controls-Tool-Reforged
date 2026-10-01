@@ -1,0 +1,7 @@
+Buttuna
+Kontroll tar-Redstone
+<&recipe>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.

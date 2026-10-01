@@ -1,0 +1,7 @@
+Récepteur de liaison analogique
+Commande liée
+<&recipe>Un récepteur lié offre une cible distante visible aux panneaux de commande.<br>
+<br>
+Utilisation : cliquez dessus avec une Ender perle pour créer une perle liée. Utilisez cette perle en vous baissant pour activer le récepteur à distance.<br>
+<br>
+Remarque : ce récepteur émet un signal de redstone à puissance maximale lorsqu'il est déclenché.

@@ -1,0 +1,5 @@
+Tree Cutter
+Convenience for the Workshop Floor
+<&recipe>The Little Tree Cutter is a workshop convenience for crafts, storage, placement, breaking, gathering or compact automatic works.<br>
+<br>
+Use: Aim it at grown trees and gather their drops separately.<br>

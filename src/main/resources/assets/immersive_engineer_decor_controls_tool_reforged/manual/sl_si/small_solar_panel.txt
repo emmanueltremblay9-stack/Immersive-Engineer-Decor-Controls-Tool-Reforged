@@ -1,0 +1,5 @@
+Sončna plošča
+Tovarniški pripomoček
+<&recipe>Majhna sončna plošča je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Zagotovi ji odprto nebo in priključi naprave z majhno porabo.<br>

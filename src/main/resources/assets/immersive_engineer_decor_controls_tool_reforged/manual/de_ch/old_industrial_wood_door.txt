@@ -1,0 +1,5 @@
+Alti Fabrikholztür
+Alts Werkstattholz
+<&recipe>Dä Block bringt alts Werkstattholz für Böde, Tritt, Türe und warmi Inneiifassige.<br>
+<br>
+Verwendig: Nimm en für alti Werkstattböde, Stäge, Türe und Iifassige.<br>

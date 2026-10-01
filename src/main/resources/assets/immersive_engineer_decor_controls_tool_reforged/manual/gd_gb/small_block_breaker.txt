@@ -1,0 +1,5 @@
+Briseadair bhlocaichean
+Goireas làir bùth-obrach
+<&recipe>Tha am Briseadair beag bhlocaichean na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: cuir an aghaidh-obrach ris a' bhloca a tha thu airson a thoirt air falbh.<br>

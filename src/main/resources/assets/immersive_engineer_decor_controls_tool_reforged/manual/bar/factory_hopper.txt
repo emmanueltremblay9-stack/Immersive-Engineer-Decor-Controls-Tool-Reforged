@@ -1,0 +1,5 @@
+Fabriktrichta
+Werkstatthilf
+<&recipe>Der Block verschiebt Gegenstandsstapl durch a engeres Industrieghäus.<br>
+<br>
+So geht's: Richt'n zur Lagerlinie und stell dann Reichweit, Staplanzahl, Zeiten und Redstone-Art im Menü ei.<br>

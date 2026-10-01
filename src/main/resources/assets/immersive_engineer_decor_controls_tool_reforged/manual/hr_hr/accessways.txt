@@ -1,0 +1,127 @@
+Pristupni putovi
+Staze i nosači
+Čelični stupovi, obrađeni drveni stupovi, rešetke, servisne staze, ograde, ljestve, vrata, prozori i poklopci tvore kompaktne servisne putove kroz unutrašnjost tvornice.<br>
+<br>
+Čelični dijelovi pristupnih putova koriste čelične ploče. Izradi ili postavi stol za obradu metala, umetni čekić Immersive Engineeringa i oblikuj čelične poluge u ploče za stupove, servisne staze, prozore, vrata, ograde i druge čelične ukrase.<br>
+<br>
+Postavi ih gdje strojevima treba pristup za održavanje, povišen put, servisni otvor ili sigurniji rub.
+<np>
+Debeli čelični stup
+Dio nosivog okvira
+<&thick_steel_pole>Ravni debeli čelični stup daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Glava debelog stupa
+Dio nosivog okvira
+<&thick_steel_pole_head>Glava/podnožje ravnog debelog čeličnog stupa daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Tanki čelični stup
+Dio nosivog okvira
+<&thin_steel_pole>Ravni tanki čelični stup daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Glava tankog stupa
+Dio nosivog okvira
+<&thin_steel_pole_head>Glava/podnožje ravnog tankog čeličnog stupa daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Stup od obrađenog drva
+Dio nosivog okvira
+<&treated_wood_pole>Ravni stup od obrađenog drva daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Glava obrađenog stupa
+Dio nosivog okvira
+<&treated_wood_pole_head>Glava/podnožje ravnog stupa od obrađenog drva daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Nosač obrađenog stupa
+Dio nosivog okvira
+<&treated_wood_pole_support>Nosač ravnog stupa od obrađenog drva daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Čelični dvostruki T-nosač
+Dio nosivog okvira
+<&steel_double_t_support>Ovaj blok daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>
+<np>
+Čelična podna rešetka
+Dio servisnog pristupa
+<&steel_floor_grating>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Čelična servisna staza
+Dio servisnog pristupa
+<&steel_catwalk>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Stube za čeličnu servisnu stazu
+Dio servisnog pristupa
+<&steel_catwalk_stairs>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Podignuta čelična servisna staza
+Dio servisnog pristupa
+<&steel_catwalk_ta>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Čelična zaštitna ograda
+Dio servisnog pristupa
+<&steel_railing>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Čelična mrežasta ograda
+Dio servisnog pristupa
+<&steel_mesh_fence>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Vrata za čeličnu mrežastu ogradu
+Dio servisnog pristupa
+<&steel_mesh_fence_gate>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Ljestve s metalnim prečkama
+Dio servisnog pristupa
+<&metal_rung_ladder>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Izmjenične metalne prečke
+Dio servisnog pristupa
+<&metal_rung_steps>Ovaj blok oblikuje jasne servisne putove oko strojeva.<br>
+<br>
+Uporaba: postavi ga kao pristup za održavanje oko strojeva, gornjih katova i servisnih otvora.<br>
+<np>
+Prozor s čeličnim okvirom
+Zaštićen pogled
+<&steel_framed_window>Ovaj blok zadržava otvoren pogled i uklapa se u ojačanu tvorničku konstrukciju.<br>
+<br>
+Uporaba: postavi ga u zidni otvor od jednog bloka gdje igrači trebaju vidjeti strojeve kroz zaštitnu pregradu.<br>
+<np>
+Metalna klizna vrata
+Industrijska pristupna točka
+<&metal_sliding_door>Ovaj blok pruža čvrstu pristupnu točku za servisne prostorije, okna, krovove i kućišta strojeva.<br>
+<br>
+Uporaba: ugradi ga gdje je potreban kontroliran otvor za održavanje.<br>
+<np>
+Željezni poklopac
+Industrijska pristupna točka
+<&iron_hatch>Ovaj blok pruža čvrstu pristupnu točku za servisne prostorije, okna, krovove i kućišta strojeva.<br>
+<br>
+Uporaba: ugradi ga gdje je potreban kontroliran otvor za održavanje.<br>

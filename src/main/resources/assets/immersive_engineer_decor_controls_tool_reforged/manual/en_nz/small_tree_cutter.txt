@@ -1,0 +1,5 @@
+Tree Cutter
+Shop-floor utility
+<&recipe>The Small Tree Cutter is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
+<br>
+Usage: Aim it at grown trees and collect drops separately.<br>

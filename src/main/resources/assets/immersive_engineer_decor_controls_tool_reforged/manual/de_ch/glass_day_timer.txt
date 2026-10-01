@@ -1,0 +1,7 @@
+Glas-Ziitschaltuhr
+Tagesliechtsignal
+<&recipe>En Ziitschalter folgt em Tagesabschnitt vom Wältzyklus.<br>
+<br>
+Verwendig: Nimm en für Hoflüchte, Rollläde und Fabrikstüürige, wo nur am Tag laufe sötted.<br>
+<br>
+Hiwiis: Bruucht e Dimension mit Himmelsliecht.

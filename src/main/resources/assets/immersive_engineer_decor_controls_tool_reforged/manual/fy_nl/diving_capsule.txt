@@ -1,0 +1,7 @@
+Dûkloftkapsule
+Loftfoarrie foar needgefallen
+<&recipe>De dûkluchtkapsule is in needfoarrie lucht foar wurk ûnder wetter.<br>
+<br>
+Gebrûk: Brûk him mei de hân om lucht oan te foljen. Yn de ynventaris kin er ek automatysk aktivearje as de lucht hast op is, en giet dêrnei yn cooldown.<br>
+<br>
+Nim har mei foar ûnderstrûpte minen, piipliedingen ûnder wetter en reparaasjes yn pompkeamers.

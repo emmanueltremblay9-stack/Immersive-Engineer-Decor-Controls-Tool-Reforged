@@ -1,0 +1,7 @@
+Bộ chỉnh độ sáng
+Tín hiệu biến thiên
+<&recipe>Bộ điều khiển xoay điều chỉnh cường độ redstone từ mặt bảng gọn.<br>
+<br>
+Cách dùng: Nhấp phải để tăng đầu ra từng nấc; sau cường độ tối đa sẽ trở về không.<br>
+<br>
+Ghi chú: Xuất cường độ từ 0 đến 15.

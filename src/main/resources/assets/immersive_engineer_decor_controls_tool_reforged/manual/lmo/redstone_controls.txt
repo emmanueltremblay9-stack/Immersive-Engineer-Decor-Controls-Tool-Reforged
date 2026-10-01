@@ -1,0 +1,789 @@
+Comands de prejarossa
+Misurador e acessori de segnal
+I aparecc de comand i fan vegnì visibila la prejarossa sconduda cont panei de fabrica leggibil, sensor, indicador, interutor, allarmi e acessori de segnal ligad.<br>
+<br>
+Dovra quelle pagine chì quand che te fabreghi postazzion de operador, panei di segnai, circuit de sicurezza e comands a distanza.
+<np>
+Bersai di flizze
+Impuls momentan
+<&arrow_target>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Sensor de porta
+Control cont prejarossa
+<&door_sensor_switch>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton de ascensor
+Control cont prejarossa
+<&elevator_button>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Boton de veder
+Control cont prejarossa
+<&glass_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton de veder
+Control cont prejarossa
+<&glass_small_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton tatil de veder
+Control cont prejarossa
+<&glass_touch_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton de machina
+Control cont prejarossa
+<&industrial_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton
+Control cont prejarossa
+<&industrial_double_pole_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton de machina cont protezzion
+Control cont prejarossa
+<&industrial_fenced_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton de bussada
+Control cont prejarossa
+<&industrial_knock_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton vegg ornad
+Control cont prejarossa
+<&oldfancy_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton vegg ornad
+Control cont prejarossa
+<&oldfancy_small_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton vegg ornad cont cadena
+Impuls momentan
+<&oldfancy_spring_reset_chain>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton rustegh
+Control cont prejarossa
+<&rustic_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton rustegh a ciod
+Control cont prejarossa
+<&rustic_nail_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Piscinin boton rustegh
+Control cont prejarossa
+<&rustic_small_button>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Boton rustegh cont cadena
+Impuls momentan
+<&rustic_spring_reset_chain>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.
+<np>
+Piastra de contat de veder
+Impuls de pression
+<&glass_contact_mat>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Contat de porta de veder
+Impuls de pression
+<&glass_door_contact_mat>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Taped de contat
+Impuls de pression
+<&industrial_contact_mat>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Taped de contat de porta
+Impuls de pression
+<&industrial_door_contact_mat>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Rilevador de crodade travers
+Rilevament di segnai
+<&industrial_fallthrough_detector>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Boton de pee
+Control cont prejarossa
+<&industrial_foot_button>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Bussera industrial ativada di colp
+Impuls de pression
+<&industrial_high_sensitive_trapdoor>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Taped de contat sensibil ai colp
+Impuls de pression
+<&industrial_shock_sensitive_contact_mat>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Bussera ativada di colp
+Impuls de pression
+<&industrial_shock_sensitive_trapdoor>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Pianta rossa de potenza
+Impuls de pression
+<&red_power_plant>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Pian a pression rustegh
+Impuls de pression
+<&rustic_contact_plate>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Pian a pression rustegh de porta
+Impuls de pression
+<&rustic_door_contact_plate>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Rilevador rustegh de crodade
+Rilevament di segnai
+<&rustic_fallthrough_detector>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Bussera rustega ativada di colp
+Impuls de pression
+<&rustic_high_sensitive_trapdoor>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Piastra rustega sensibila ai colp
+Impuls de pression
+<&rustic_shock_sensitive_plate>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Bussera rustega ativada di colp
+Impuls de pression
+<&rustic_shock_sensitive_trapdoor>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Pianta sgialda de potenza
+Impuls de pression
+<&yellow_power_plant>Un interutor de contat el manda un segnal curt quand che se moeuv el paviment o una bussera.<br>
+<br>
+Metel indove che i entità passen in de un coridor de servizzi, un cargador o un passagg cont protezzion.<br>
+<br>
+El manda un curt impuls dopo el contat cont una entità.
+<np>
+Orloeug de giornata de veder
+Segnal de lus del dì
+<&glass_day_timer>Un interutor a temp el va adree a la part de dì del cicl del mond.<br>
+<br>
+Dovrel per i lampe del piazal, i scuri e i comands de fabrica che gh’han de andà domà de dì.<br>
+<br>
+Serviss una dimension cont lus del ciel.
+<np>
+Rilevador de entità de veder
+Rilevament di segnai
+<&glass_entity_detector>Un rilevador de entità el varda i moviment lì arent senza una piastra de paviment visibila.<br>
+<br>
+Colegel a porte, lampe, allarmi o bloch de sicurezza di machine.<br>
+<br>
+El controla una piscinina zona in gir al bloch.
+<np>
+Segnal a interval de veder
+Impuls a temp
+<&glass_interval_timer>Un interutor a temp piscinin el dà un impuls de prejarossa a un temp stabilid.<br>
+<br>
+Dovrel indove che un mecanism piscinin el gh’ha de besogn de comands periodich o ritardad.<br>
+<br>
+El dovra impuls de prejarossa a temp stabilid.
+<np>
+Rilevador in linea de veder
+Rilevament di segnai
+<&glass_linear_entity_detector>Un rilevador de entità el varda i moviment lì arent senza una piastra de paviment visibila.<br>
+<br>
+Colegel a porte, lampe, allarmi o bloch de sicurezza di machine.<br>
+<br>
+El controla una piscinina zona in gir al bloch.
+<np>
+Rilevador de bloch
+Rilevament di segnai
+<&industrial_block_detector>Un rilevador de bloch el controla se el spazzi in denanz l’è ocupad.<br>
+<br>
+Pontel vers la faccia de la machina, la riserva o el spazzi cont protezzion che gh’è de besogn de tegnì d’oeucc.<br>
+<br>
+El dà energia quand che el bloch in denanz l’è minga aria.
+<np>
+Orloeug de giornata
+Segnal de lus del dì
+<&industrial_day_timer>Un interutor a temp el va adree a la part de dì del cicl del mond.<br>
+<br>
+Dovrel per i lampe del piazal, i scuri e i comands de fabrica che gh’han de andà domà de dì.<br>
+<br>
+Serviss una dimension cont lus del ciel.
+<np>
+Rilevador de entità
+Rilevament di segnai
+<&industrial_entity_detector>Un rilevador de entità el varda i moviment lì arent senza una piastra de paviment visibila.<br>
+<br>
+Colegel a porte, lampe, allarmi o bloch de sicurezza di machine.<br>
+<br>
+El controla una piscinina zona in gir al bloch.
+<np>
+Temporizador a interval
+Impuls a temp
+<&industrial_interval_timer>Un interutor a temp piscinin el dà un impuls de prejarossa a un temp stabilid.<br>
+<br>
+Dovrel indove che un mecanism piscinin el gh’ha de besogn de comands periodich o ritardad.<br>
+<br>
+El dovra impuls de prejarossa a temp stabilid.
+<np>
+Sensor de lus
+Rilevament di segnai
+<&industrial_light_sensor>Un sensor de lus el trasforma la luminosità del post in un comand de prejarossa.<br>
+<br>
+Dovrel per lampe automatiche, scuri e circuit che dipenden de la visibilità.<br>
+<br>
+El dà energia quand che la luminosità grezza l’è 8 o pussee.
+<np>
+Rilevador de temporal
+Rilevament di segnai
+<&industrial_lightning_sensor>Un sensor de temporal el dà i avertiment quand che gh’è i ton.<br>
+<br>
+Metel sota el ciel avert e colegel a lampe o allarmi.<br>
+<br>
+Servissen i ton e el ciel avert.
+<np>
+Rilevador de entità in linea
+Rilevament di segnai
+<&industrial_linear_entity_detector>Un rilevador de entità el varda i moviment lì arent senza una piastra de paviment visibila.<br>
+<br>
+Colegel a porte, lampe, allarmi o bloch de sicurezza di machine.<br>
+<br>
+El controla una piscinina zona in gir al bloch.
+<np>
+Sensor de pioeuva
+Rilevament di segnai
+<&industrial_rain_sensor>Un sensor del temp el trasforma la pioeuva che la croda in de la so posizzion in un segnal de prejarossa.<br>
+<br>
+Montel indove che el bloch de sora el poeu ciapà la pioeuva.<br>
+<br>
+El controla se pioeuv sora el sensor.
+<np>
+Interutor bistabil de veder
+Control cont prejarossa
+<&glass_rotary_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Contat bistabil de veder
+Control cont prejarossa
+<&glass_touch_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Veder sensibil naranz
+Veder de segnal
+<&orange_sensitiveglass>Un bloch de veder che el reagiss a la prejarossa el lassa vedè travers intant che el mostra el stat del segnal.<br>
+<br>
+Dovrel in di finestre de la sala di controi, in di panei iluminad e in di veder de fabrica cont protezzion.<br>
+<br>
+El cambia stat cont l’energia de prejarossa lì arent.
+<np>
+Veder sensibil che el fa lus
+Veder de segnal
+<&sensitive_glass_block>Un bloch de veder che el reagiss a la prejarossa el lassa vedè travers intant che el mostra el stat del segnal.<br>
+<br>
+Dovrel in di finestre de la sala di controi, in di panei iluminad e in di veder de fabrica cont protezzion.<br>
+<br>
+El cambia stat cont l’energia de prejarossa lì arent.
+<np>
+Veder sensibil colorad
+Veder de segnal
+<&stained_sensitiveglass>Un bloch de veder che el reagiss a la prejarossa el lassa vedè travers intant che el mostra el stat del segnal.<br>
+<br>
+Dovrel in di finestre de la sala di controi, in di panei iluminad e in di veder de fabrica cont protezzion.<br>
+<br>
+El cambia stat cont l’energia de prejarossa lì arent.
+<np>
+Misurador a barra de veder
+Misurador de segnal
+<&glass_vertical_bar_gauge>Un misurador piscinin per la sala di controi el fa vedè la potenza de prejarossa in d’una letura ciara in sul panell.<br>
+<br>
+Montel indove che se poeu vardà a colp d’oeucc la potenza de prejarossa lì arent.<br>
+<br>
+El legg la potenza de prejarossa lì arent de 0 a 15.
+<np>
+Misurador analogich
+Misurador de segnal
+<&industrial_analog_angular_gauge>Un misurador piscinin per la sala di controi el fa vedè la potenza de prejarossa in d’una letura ciara in sul panell.<br>
+<br>
+Montel indove che se poeu vardà a colp d’oeucc la potenza de prejarossa lì arent.<br>
+<br>
+El legg la potenza de prejarossa lì arent de 0 a 15.
+<np>
+Misurador a voltmetro
+Misurador de segnal
+<&industrial_analog_horizontal_gauge>Un misurador piscinin per la sala di controi el fa vedè la potenza de prejarossa in d’una letura ciara in sul panell.<br>
+<br>
+Montel indove che se poeu vardà a colp d’oeucc la potenza de prejarossa lì arent.<br>
+<br>
+El legg la potenza de prejarossa lì arent de 0 a 15.
+<np>
+Misurador digital
+Potenza del segnal leggibila
+<&industrial_small_digital_gauge>Un misurador piscinin per la sala di controi el fa vedè la potenza de prejarossa in d’una letura ciara in sul panell.<br>
+<br>
+Montel indove che se poeu vardà a colp d’oeucc la potenza de prejarossa lì arent.<br>
+<br>
+El legg la potenza de prejarossa lì arent de 0 a 15.
+<np>
+Misurador a tub de veder
+Misurador de segnal
+<&industrial_tube_gauge>Un misurador piscinin per la sala di controi el fa vedè la potenza de prejarossa in d’una letura ciara in sul panell.<br>
+<br>
+Montel indove che se poeu vardà a colp d’oeucc la potenza de prejarossa lì arent.<br>
+<br>
+El legg la potenza de prejarossa lì arent de 0 a 15.
+<np>
+Misurador analogich a barra
+Misurador de segnal
+<&industrial_vertical_bar_gauge>Un misurador piscinin per la sala di controi el fa vedè la potenza de prejarossa in d’una letura ciara in sul panell.<br>
+<br>
+Montel indove che se poeu vardà a colp d’oeucc la potenza de prejarossa lì arent.<br>
+<br>
+El legg la potenza de prejarossa lì arent de 0 a 15.
+<np>
+Lampa de alarm
+Risposta visibila del segnal
+<&industrial_alarm_lamp>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+Sirena de alarm
+Risposta visibila del segnal
+<&industrial_alarm_siren>La sirena d'allarme l'è un indicador redstone montaa su una faccia. El so stato alimentaa el va adree al segnal del bloch indove l'è tacada.<br>
+<br>
+Tachela a una faccia solida e dagh energia per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+La sirena la se torna a ativà una volta al segond fin che el segnal tacad el resta ativ.
+<np>
+LED lampeggiant
+Risposta visibila del segnal
+<&industrial_blinking_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED verd lampeggiant
+Risposta visibila del segnal
+<&industrial_green_blinking_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED verd
+Risposta visibila del segnal
+<&industrial_green_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED ross
+Risposta visibila del segnal
+<&industrial_red_blinking_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED ross
+Risposta visibila del segnal
+<&industrial_red_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED bianch lampeggiant
+Risposta visibila del segnal
+<&industrial_white_blinking_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED bianch
+Risposta visibila del segnal
+<&industrial_white_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED sgiald lampeggiant
+Risposta visibila del segnal
+<&industrial_yellow_blinking_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+LED sgiald
+Risposta visibila del segnal
+<&industrial_yellow_led>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+Semafor rustegh
+Risposta visibila del segnal
+<&rustic_semaphore>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.
+<np>
+Interutor comparador
+Segnal del bloch de suport
+<&industrial_comparator_switch>Un interutor a sensor piscinin el legg el bloch in su indove l’è montad e el trasforma quella letura lì in una sortida sempliza del panell.<br>
+<br>
+Montel in su inventari, serbatoi o aparecc de prejarossa. Quand che el bloch de suport el dà una sortida de comparador, de contenidor o de prejarossa, l’interutor el manda prejarossa a piena potenza.<br>
+<br>
+Dovrel per trasformà i nivei di riserve o i fil scondud in linee de comand ciar de pizzà o smorzà.
+<np>
+Regolador de intensità
+Segnal variabil
+<&industrial_dimmer>Un comand rotativ el regola la potenza de prejarossa de la faccia de un panell piscinin.<br>
+<br>
+Fà clic cont el boton drizz per aumentà la sortida un pass a la volta, poeu tornà a zero dopo la piena potenza.<br>
+<br>
+El dà una potenza de 0 a 15.
+<np>
+Boton de fermada de emergenza
+Control cont prejarossa
+<&industrial_estop_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Blocador de tremoeusgia
+Control cont prejarossa
+<&industrial_hopper_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Interutor de bussada
+Control cont prejarossa
+<&industrial_knock_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva
+Control cont prejarossa
+<&industrial_lever>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Interutor de machina cont du boton
+Control cont prejarossa
+<&industrial_machine_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Maniglia de tirà
+Control cont prejarossa
+<&industrial_pull_handle>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva rotativa
+Control cont prejarossa
+<&industrial_rotary_lever>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Interutor rotativ de machina
+Control cont prejarossa
+<&industrial_rotary_machine_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva de contat
+Control cont prejarossa
+<&industrial_small_lever>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Interutor
+Control cont prejarossa
+<&industrialswitch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Interutor de lus
+Control cont prejarossa
+<&light_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Interutor a valvola
+Control cont prejarossa
+<&valve_wheel_switch>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Ricevidor de impuls ligad cont cassa
+Comand ligad
+<&industrial_switchlink_cased_pulse_receiver>Un ricevidor de impuls ligad e cont cassa el dà una curta ativazzion de prejarossa a i panei distant.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Fà clic cont el boton drizz o ativa la perla ligada per mandà un curt impuls.<br>
+<br>
+L’impuls el se smorza de per lu dopo la durada stabilida.
+<np>
+Ricevidor de ligam cont cassa
+Comand ligad
+<&industrial_switchlink_cased_receiver>Un ricevidor ligad e cont cassa el dà una destinazzion robusta de prejarossa a i panei distant.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Fà clic drizz diretamente in sul ricevidor per pizzall o smorzall a man.<br>
+<br>
+Una perla ligada la pìzza o la smorza quell ricevidor chì quand che se la dovra strusando via.
+<np>
+Ricevidor de impuls ligad
+Comand ligad
+<&industrial_switchlink_pulse_receiver>Un ricevidor de impuls ligad el dà una curta ativazzion de prejarossa a i panei distant.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Fà clic cont el boton drizz o ativa la perla ligada per mandà un curt impuls.<br>
+<br>
+L’impuls el se smorza de per lu dopo la durada stabilida.
+<np>
+Relè de impuls ligad
+Comand ligad
+<&industrial_switchlink_pulse_relay>Un acessori a forma de relè el dà un pont piscinin de interuzzion locala a i panei.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida a piena potenza per i circuit lì arent. Dovra bloch ricevidor quand che te gh’heet de besogn de ativazzion cont una perla ligada.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Ricevidor de ligam de interutor
+Comand ligad
+<&industrial_switchlink_receiver>Un ricevidor ligad el dà una destinazzion de prejarossa a piena potenza a i panei distant.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Fà clic drizz diretamente in sul ricevidor per pizzall o smorzall a man.<br>
+<br>
+Una perla ligada la pìzza o la smorza quell ricevidor chì quand che se la dovra strusando via.
+<np>
+Ricevidor de ligam analogich
+Comand ligad
+<&industrial_switchlink_receiver_analog>Un ricevidor ligad el dà una destinazzion lontana e visibila a i panei de control.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Dovra quella perla lì strusando via per ativà el ricevidor a distanza.<br>
+<br>
+Quell ricevidor chì el manda un segnal de prejarossa a piena potenza quand che el vegn ativad.
+<np>
+Relè de ligam de interutor
+Comand ligad
+<&industrial_switchlink_relay>Un acessori a forma de relè el dà un pont piscinin de interuzzion locala a i panei.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida a piena potenza per i circuit lì arent. Dovra bloch ricevidor quand che te gh’heet de besogn de ativazzion cont una perla ligada.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Relè de ligam analogich
+Comand ligad
+<&industrial_switchlink_relay_analog>Un acessori a forma de relè el dà un pont piscinin de interuzzion locala a i panei.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida a piena potenza per i circuit lì arent. Dovra bloch ricevidor quand che te gh’heet de besogn de ativazzion cont una perla ligada.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Perla de ligam de interutor
+Comand ligad
+<&switchlink_pearl>Una perla ligada la conserva el ricevidor de destinazzion per i comands de fabrica a distanza.<br>
+<br>
+Fà clic cont una Perla de l’ender in su un ricevidor de ligam de interutor per creanne una. Dovra la perla ligada strusando via per ativà el ricevidor conservad.<br>
+<br>
+La destinazzion la gh’ha de vesser cargada, in de l’istessa dimension e a portada.
+<np>
+Leva veggia ornada
+Control cont prejarossa
+<&oldfancy_bistableswitch1>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva veggia ornada rotativa
+Control cont prejarossa
+<&oldfancy_bistableswitch2>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva rustega rotativa
+Control cont prejarossa
+<&rustic_angular_lever>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva rustega
+Control cont prejarossa
+<&rustic_lever>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva rustega a ciod
+Control cont prejarossa
+<&rustic_nail_lever>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.
+<np>
+Leva rustega cont dò cerniere
+Control cont prejarossa
+<&rustic_two_hinge_lever>Quell acessori piscinin de comand chì el dà a i costruzzion de fabrica un pont de interuzzion de prejarossa ben leggibil.<br>
+<br>
+Fà clic cont el boton drizz per pizzà o smorzà la sortida de prejarossa a piena potenza e comandà i circuit lì arent.<br>
+<br>
+Fin che l’è pizzad, el comand el mantegn un segnal de prejarossa a piena potenza.

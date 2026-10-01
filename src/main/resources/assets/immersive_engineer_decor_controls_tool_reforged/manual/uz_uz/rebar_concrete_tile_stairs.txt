@@ -1,0 +1,5 @@
+Temir-beton koshin
+Mustahkamlangan beton
+<&recipe>Temir-beton koshin zinapoyasi mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismlardan iborat.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>

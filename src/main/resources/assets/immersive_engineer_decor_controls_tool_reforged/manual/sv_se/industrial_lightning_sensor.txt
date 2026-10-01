@@ -1,0 +1,7 @@
+Åskdetektor
+Signalavkänning
+<&recipe>En åsksensor aktiverar varningar när det åskar.<br>
+<br>
+Användning: Placera den under bar himmel och anslut den till lampor eller larm.<br>
+<br>
+Anmärkning: Kräver åska och fri sikt mot himlen.

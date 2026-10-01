@@ -1,0 +1,7 @@
+Capteur de lumière
+Détection de signal
+<&recipe>Un capteur de lumière convertit la luminosité locale en commande redstone.<br>
+<br>
+Utilisation : commandez automatiquement des lampes, volets et circuits de visibilité.<br>
+<br>
+Remarque : s'active à une luminosité brute de 8 ou plus.

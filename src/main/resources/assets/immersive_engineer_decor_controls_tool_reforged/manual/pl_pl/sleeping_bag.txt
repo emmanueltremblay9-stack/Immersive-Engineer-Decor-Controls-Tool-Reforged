@@ -1,0 +1,7 @@
+Śpiwór
+Przenośny zestaw do odpoczynku
+<&recipe>Śpiwór to odporny na pogodę zestaw do odpoczynku z dala od łóżka.<br>
+<br>
+Użyj go nocą w Nadziemiu, aby odpocząć do rana bez ustawiania punktu odrodzenia.<br>
+<br>
+Nie działa za dnia, przy pobliskich potworach ani w nieodpowiednich wymiarach. Każdy udany odpoczynek zużywa śpiwór.

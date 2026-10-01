@@ -1,0 +1,7 @@
+Tlačítko na klepání
+Redstonové řízení
+<&recipe>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.

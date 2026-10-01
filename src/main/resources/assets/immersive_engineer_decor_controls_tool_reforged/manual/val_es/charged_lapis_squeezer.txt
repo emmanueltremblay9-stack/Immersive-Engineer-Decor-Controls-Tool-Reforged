@@ -1,0 +1,7 @@
+Espremedor mental
+Condensador d’experiència
+<&recipe>L’espremedor mental convertix lapislàtzuli i experiència en lapislàtzuli carregat.<br>
+<br>
+Ús: porta lapislàtzuli i almenys un nivell d’experiència, i usa la ferramenta. Cada extracció aconseguida consumix un nivell i una unitat de lapislàtzuli, fa mal a l’usuari, desgasta l’espremedor i crea una unitat de lapislàtzuli carregat.<br>
+<br>
+No funciona si a l’usuari li falta lapislàtzuli o XP, o si està massa prop de morir.

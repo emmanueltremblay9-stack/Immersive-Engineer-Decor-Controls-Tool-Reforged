@@ -1,0 +1,5 @@
+Fabrika Blok Yerleştiricisi
+Atölye yardımcı aygıtı
+<&recipe>Bu blok etkinleştirildiğinde dahili stokundan blok yerleştirir.<br>
+<br>
+Kullanım: Çalışma yüzünü hedef alana yöneltip yerleştirilebilir yığınlarla doldurun.<br>

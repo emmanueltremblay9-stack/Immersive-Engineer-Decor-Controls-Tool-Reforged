@@ -1,0 +1,41 @@
+Depozitare și transport
+Echipamente pentru inventare și debite
+Echipamentele de depozitare și transport cuprind lăzi, butoaie, colectoare cu pâlnie și supape pentru trasee compacte în fabrică.<br>
+<br>
+Folosește aceste pagini când amenajezi depozite, trasee de conducte, rezervoare de serviciu și circuite de fluide controlate.
+<np>
+Ladă etichetată
+Etichetă de stoc editabilă
+<&labeled_crate>Această ladă etichetată este concepută pentru sortarea clară în depozit. Plăcuța frontală poate fi editată ca un mic indicator de atelier.<br>
+<br>
+Utilizare: Fă clic dreapta pe plăcuța cu etichetă pentru a edita eticheta lăzii. Fă clic dreapta pe restul lăzii pentru a deschide spațiul de depozitare pentru accesorii, piese și provizii de întreținere.<br>
+<np>
+Butoi pentru fluide
+Echipament pentru circuite de fluide
+<&fluid_barrel>Această piesă compactă de circuit de fluide este destinată rezervoarelor mici, traseelor de conducte, punctelor de colectare și debitului controlat prin redstone.<br>
+<br>
+Utilizare: Amplaseaz-o acolo unde conductele sau gălețile pot ajunge la fața rezervorului.<br>
+<np>
+Colector de fluide cu pâlnie
+Echipament pentru circuite de fluide
+<&small_fluid_funnel>Colectorul mic de fluide cu pâlnie este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Pune-l sub punctul de colectare a fluidului și direcționează conținutul stocat către rezervoare sau conducte aflate mai jos.<br>
+<np>
+Supapă antiretur pentru fluide
+Echipament pentru circuite de fluide
+<&straight_pipe_valve>Supapa antiretur pentru fluide este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Aliniază supapa cu direcția dorită a debitului.<br>
+<np>
+Supapă de fluide cu redstone
+Echipament pentru circuite de fluide
+<&straight_pipe_valve_redstone>Supapa de fluide cu redstone este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Aliniază supapa cu direcția dorită a debitului.<br>
+<np>
+Supapă analogică de fluide
+Echipament pentru circuite de fluide
+<&straight_pipe_valve_redstone_analog>Supapa analogică de fluide este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Aliniază supapa cu direcția dorită a debitului.<br>

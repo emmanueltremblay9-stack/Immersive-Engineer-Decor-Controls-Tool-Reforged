@@ -1,0 +1,7 @@
+Alarmsiren
+Signalröckmeldung
+<&recipe>De Alarmsirän es ene Redstone-Anzeijer, dä op en Sigg jemaat weed. Sing Stromzustand follesch däm Signal vum Block, wo hä draan hängk.<br>
+<br>
+Bruuch: Befestig se aan en feste Sigg un jevv Energie dobei, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: De Siren frischt sich einmol de Sekund op, sulang dat aanjeschlosse Signal aktiv bliev.

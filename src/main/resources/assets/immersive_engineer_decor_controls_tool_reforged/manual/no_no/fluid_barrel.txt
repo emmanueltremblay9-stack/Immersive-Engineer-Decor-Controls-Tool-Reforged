@@ -1,0 +1,5 @@
+Væsketønne
+Utstyr for væskelinjer
+<&recipe>Denne kompakte væskerørdelen passer til små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: plasser den der rør eller bøtter kan nå tanksiden.<br>

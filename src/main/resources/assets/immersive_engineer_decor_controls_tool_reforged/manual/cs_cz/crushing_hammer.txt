@@ -1,0 +1,7 @@
+Kladivo na drcení rudy
+Ruční nástroj
+<&recipe>Ruční nástroj pro počáteční práci se železem a zlatem.<br>
+<br>
+Použití: Se surovým železem, zlatem, železnou rudou, břidlicovou železnou rudou, zlatou rudou či břidlicovou zlatou rudou vyrábí železný nebo zlatý prach Immersive Engineering. Ztrácí odolnost a vrací se do mřížky, dokud se nerozbije.<br>
+<br>
+Opotřebuje se i těžbou a v boji odhazuje.

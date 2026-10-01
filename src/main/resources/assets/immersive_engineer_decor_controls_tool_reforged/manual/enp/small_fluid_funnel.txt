@@ -1,0 +1,5 @@
+Flowstuff Funnel
+Flow-line gear
+<&recipe>The Small Flowstuff Funnel is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Put it beneath the flowstuff gathering spot and send what it holds into vats or lower pipes.<br>

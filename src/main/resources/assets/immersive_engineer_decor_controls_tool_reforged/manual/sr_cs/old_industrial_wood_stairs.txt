@@ -1,0 +1,5 @@
+Stare drvene stepenice
+Ostarela radionička građa
+<&recipe>Stare industrijske drvene stepenice dodaju ostarelu radioničku građu za podove, stepenice, vrata i tople unutrašnje ukrase.<br>
+<br>
+Upotreba: koristi ga za stare radioničke podove, stepenice, vrata i ivične ukrase.<br>

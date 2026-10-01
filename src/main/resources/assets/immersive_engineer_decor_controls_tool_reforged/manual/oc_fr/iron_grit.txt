@@ -1,0 +1,3 @@
+Granulat grossièr de fèrre
+Material d’aisina d’engenhaire utilizat per l’ensemble de recèptas reconstituit.
+<&recipe>Se pòt fondre en lingòts de<br>fèrre, mas conven pas al<br>tractament avançat dels materials.

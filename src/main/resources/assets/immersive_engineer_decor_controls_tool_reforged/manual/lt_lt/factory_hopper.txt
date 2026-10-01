@@ -1,0 +1,5 @@
+Fabriko piltuvas
+Dirbtuvių pagalbininkas
+<&recipe>Šis blokas perkelia daiktų krūveles per kompaktiškesnį pramoninį korpusą.<br>
+<br>
+Naudojimas: nukreipk į sandėlių liniją, tada sąsajoje nustatyk nuotolį, krūvelių skaičių, laiką ir redstono režimą.<br>

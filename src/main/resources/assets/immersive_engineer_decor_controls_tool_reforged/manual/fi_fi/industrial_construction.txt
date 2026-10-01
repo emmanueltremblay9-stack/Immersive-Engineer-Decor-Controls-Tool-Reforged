@@ -1,0 +1,108 @@
+Teollisuusrakentaminen
+Tehtaan seinät ja koristeet
+Yleiset rakennusosat kattavat ovet, ikkunat, valot, varoituskyltit, koristeet ja rakenneosat, jotka eivät kuulu tarkempaan osioon.<br>
+<br>
+Käytä näitä sivuja tehdashuoneisiin, huoltokäytäviin, vaaramerkintöihin ja käytännöllisiin teollisuusyksityiskohtiin.
+<np>
+Rautainen polttimovalaisin
+Pieni työvalo
+<&iron_bulb_light>Tämä kuutio tarjoaa pienen teollisuusvalaisimen käytäville, huoltotasoille ja työpisteisiin.<br>
+<br>
+Käyttö: Asenna kattoon, seinille tai reunoille, joissa huone tarvitsee selkeää työvaloa.<br>
+<np>
+Katon reunavalaisin
+Pieni työvalo
+<&iron_ceiling_edge_light>Tämä kuutio tarjoaa pienen teollisuusvalaisimen käytäville, huoltotasoille ja työpisteisiin.<br>
+<br>
+Käyttö: Asenna kattoon, seinille tai reunoille, joissa huone tarvitsee selkeää työvaloa.<br>
+<np>
+Upotettu lattian reunavalaisin
+Pieni työvalo
+<&iron_floor_edge_light>Tämä kuutio tarjoaa pienen teollisuusvalaisimen käytäville, huoltotasoille ja työpisteisiin.<br>
+<br>
+Käyttö: Asenna kattoon, seinille tai reunoille, joissa huone tarvitsee selkeää työvaloa.<br>
+<np>
+Upotettu valaisin
+Pieni työvalo
+<&iron_inset_light>Tämä kuutio tarjoaa pienen teollisuusvalaisimen käytäville, huoltotasoille ja työpisteisiin.<br>
+<br>
+Käyttö: Asenna kattoon, seinille tai reunoille, joissa huone tarvitsee selkeää työvaloa.<br>
+<np>
+Kyltti: yleinen varoitus
+Vaaramerkki
+<&sign_caution>Yleinen varoituskyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Vaarakyltti
+Vaaramerkki
+<&sign_danger>Todella vaarallisesta alueesta varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Decor-kyltti
+Vaaramerkki
+<&sign_decor>Engineer's Decor -kylttilevy merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Puolustusjärjestelmän kyltti
+Vaaramerkki
+<&sign_defense>Edessä olevasta puolustusjärjestelmästä varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Poistumiskyltti
+Vaaramerkki
+<&sign_exit>Tämä kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Kyltti: palovaara
+Vaaramerkki
+<&sign_firehazard>Palovaarakyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Kyltti: pakkasvaroitus
+Vaaramerkki
+<&sign_frost>Pakkasvaroituskyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Kuuman pinnan kyltti
+Vaaramerkki
+<&sign_hotsurface>Kuumasta pinnasta varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Jännitteisen johdon kyltti
+Vaaramerkki
+<&sign_hotwire>Jännitteisestä johdosta varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Kyltti: laservaara
+Vaaramerkki
+<&sign_laser>Laservaarakyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Maagisen vaaran kyltti
+Vaaramerkki
+<&sign_magichazard>Maagisesta vaarasta varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Magneettikentän kyltti
+Vaaramerkki
+<&sign_magneticfield>Voimakkaasta magneettikentästä varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>
+Kyltti: radioaktiivinen vaara
+Vaaramerkki
+<&sign_radioactive>Radioaktiivisesta vaarasta varoittava kyltti merkitsee vaarat, uloskäynnit ja työalueet selkeällä tehtaan turvallisuusopasteella.<br>
+<br>
+Käyttö: Aseta vaarojen, uloskäyntien, koneiden ja rajoitettujen alueiden viereen.<br>
+<np>

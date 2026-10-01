@@ -1,0 +1,7 @@
+Derbynner Kevren yn Kist
+Reolyans kevrennys
+<&recipe>Derbynner kevrennys yn kist a ry amkan rudhven krev dhe banellow pell.<br>
+<br>
+Devnydh: gwra klikya gans Perl an Diwedh rag gul perl kevrennys. Gwra klikya dyhow war an derbynner yn ewn rag y skwychya dre dhorn.<br>
+<br>
+Notennow: perl kevrennys a skwych an derbynner ma pan y'n dhevnydhir hag ow skolkya.

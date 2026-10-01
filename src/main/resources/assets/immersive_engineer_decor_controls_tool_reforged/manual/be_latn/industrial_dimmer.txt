@@ -1,0 +1,7 @@
+Rehulatar siły sihnału
+Zmienny sihnał
+<&recipe>Pavarotny rehulatar zadaje siłu redstonu na kampaktnaj piaredniaj paneli.<br>
+<br>
+Vykarystannie: pstrykaj pravaj knopkaj, kab pastupova pavialičvać vychad, a pasla poŭnaj siły viarnucca da nula.<br>
+<br>
+Zaŭvahi: padaje sihnał siłaj ad 0 da 15.

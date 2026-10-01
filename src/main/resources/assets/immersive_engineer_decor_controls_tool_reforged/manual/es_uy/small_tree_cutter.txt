@@ -1,0 +1,5 @@
+Cortador de árboles
+Utilidad de taller
+<&recipe>El cortador de árboles pequeño es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Apuntalo hacia árboles crecidos y recogé los objetos por separado.<br>

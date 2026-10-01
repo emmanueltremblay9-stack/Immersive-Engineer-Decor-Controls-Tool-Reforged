@@ -1,0 +1,7 @@
+Alarmsireno
+Signalindiko
+<&recipe>La alarm-sireno esas redstone-indikilo fixita sur faco. Olua stato kun povo sequas la signalo de la bloko ad qua ol esas fixita.<br>
+<br>
+Uzo: Fixigez ol a solida facio ed alimentez ol por surveyar pordi, mashini, alarmi o paneli.<br>
+<br>
+Noti: La sireno rinovigas su unfoye por sekundo dum la konektita signalo restas aktiva.

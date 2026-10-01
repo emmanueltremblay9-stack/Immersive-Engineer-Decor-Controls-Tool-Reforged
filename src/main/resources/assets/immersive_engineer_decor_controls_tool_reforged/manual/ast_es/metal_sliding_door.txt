@@ -1,0 +1,5 @@
+Puerta corredera metálica
+Puntu d’accesu industrial
+<&recipe>Esti bloque apurre un accesu resistente a sales de serviciu, pozos, teyaos y recintos de máquines.<br>
+<br>
+Usu: instálalu onde la construcción precise una abertura controlada pa caltenimientu.<br>

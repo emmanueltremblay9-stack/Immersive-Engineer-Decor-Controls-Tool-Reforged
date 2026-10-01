@@ -1,0 +1,7 @@
+Analoq bağlantı qəbuledicisi
+Bağlantılı idarəetmə
+<&recipe>Bağlantılı qəbuledici idarəetmə panellərinə görünən uzaq hədəf verir.<br>
+<br>
+İstifadə: Bağlanmış inci yaratmaq üçün Ender incisi ilə klikləyin. Qəbuledicini uzaqdan işə salmaq üçün həmin incini əyilərək istifadə edin.<br>
+<br>
+Qeydlər: İşə salındıqda bu qəbuledici tam güclü qızıl daş siqnalı verir.

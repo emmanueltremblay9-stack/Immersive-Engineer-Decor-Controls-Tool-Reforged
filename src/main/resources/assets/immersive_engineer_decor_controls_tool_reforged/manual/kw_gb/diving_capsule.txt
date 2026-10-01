@@ -1,0 +1,7 @@
+Kapsul Ayr Sodhya
+Gwithva ayr rag peryl
+<&recipe>Gwithva ayar y dhywargh yw an kapsul ayar sodha rag ober yn-dann dowr.<br>
+<br>
+Devnydh: Devnydh e dre dhorn rag dasleunia ayar. Pan yw yn an inventori, y hyll dos yn ober y honan pan yw an ayar ogas gwag, hag ena mos yn cooldown.<br>
+<br>
+Perth e rag balyow beudhys, resow pibellow dan dowr hag ewnansow stevel pump.

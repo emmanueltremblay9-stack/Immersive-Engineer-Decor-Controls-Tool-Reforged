@@ -1,0 +1,3 @@
+Grobe Iisegrus
+Es Wärchzüügmaterial vom Ingenieur für die rekonstruierte Handwärksrezept.
+<&recipe>Laht sich zu Iisebarre<br>schmelze, eignet sich aber nöd für<br>wiiterfüehrendi Materialverarbeitig.

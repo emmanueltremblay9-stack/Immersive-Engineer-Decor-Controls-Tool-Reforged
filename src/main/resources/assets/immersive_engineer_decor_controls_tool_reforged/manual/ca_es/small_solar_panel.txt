@@ -1,0 +1,5 @@
+Plafó solar
+Equipament de planta
+<&recipe>El plafó solar petit és un bloc d’equipament de planta per a elaboració, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: deixa-li el cel descobert i connecta-hi equipament de baix consum.<br>

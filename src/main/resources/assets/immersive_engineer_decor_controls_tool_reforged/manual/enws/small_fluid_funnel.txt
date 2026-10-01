@@ -1,0 +1,5 @@
+Funnel for Liquids
+Fittings for Liquid Lines
+<&recipe>The Little Funnel for Gathering Liquids is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Put it beneath the point of liquid gathering, and conduct its store into tanks or pipes below.<br>

@@ -1,0 +1,101 @@
+Teulats e cort
+Equipaments de fabrica exteriors
+Los blòcs de teulat, la graveta de cort e las pèças de vièlha fusta industriala ajudan a acabar los cobèrts exteriors, las corts de trabalh, las zònas de cargament e los bòrds de fabrica usats pel temps.<br>
+<br>
+Combina aquestas pèças amb la maçonariá e los passatges d’accès per que las construccions industrialas exterioras demòren aisidas de reconéisser de luènh.
+<np>
+Teulat escur de bardèls
+Pèça de teulat usat pel temps
+<&dark_shingle_roof>Aqueste blòc forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Arrèst de nèu de teulat
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_metallized>L’Arrèst de nèu de teulat escur de bardèls forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Teulat escur de bardèls
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_skylight>La Fenèstra de teulat escur de bardèls forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Soca de cheminièra de teulat
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_chimneytrunk>La Soca de cheminièra de teulat escur de bardèls forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Passatge de fials de teulat
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_wireconduit>Lo Passatge de fials de teulat escur de bardèls forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Teulat escur de bardèls
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_chimney>La Cheminièra de teulat escur de bardèls forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Blòc de teulat escur de bardèls
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_block>Aqueste blòc forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Lausa de teulat escur de bardèls
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_slab>Aqueste blòc forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Lausa de teulat escur de bardèls
+Pèça de teulat usat pel temps
+<&dark_shingle_roof_slabslice>Lo Talhon de lausa de teulat escur de bardèls forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>
+<np>
+Tèrra de graveta compactada
+Revestiment de sòl de talhièr
+<&dense_grit_dirt_block>Aqueste blòc balha a las zònas de trabalh exterioras una superfícia compactada e trepejada.<br>
+<br>
+Utilizacion : pausa-lo a l’entorn de las pòrtas de cargament, de las cuvas exterioras e de las corts de maquinas.<br>
+<np>
+Sabla de graveta compactada
+Revestiment de sòl de talhièr
+<&dense_grit_sand_block>Aqueste blòc balha a las zònas de trabalh exterioras una superfícia compactada e trepejada.<br>
+<br>
+Utilizacion : pausa-lo a l’entorn de las pòrtas de cargament, de las cuvas exterioras e de las corts de maquinas.<br>
+<np>
+Vièlhas plancas de fusta
+Fusta d’obrador vielhida
+<&old_industrial_wood_planks>Las Vièlhas plancas de fusta industriala apondon de fusta d’obrador vielhida als sòls, a las marchas, a las pòrtas e als ornaments interiors caloroses.<br>
+<br>
+Utilizacion : emplega-lo pels vièlhs sòls d’obrador, los escalièrs, las pòrtas e los ornaments.<br>
+<np>
+Vièlha lausa de fusta industriala
+Fusta d’obrador vielhida
+<&old_industrial_wood_slab>Aqueste blòc apond de fusta d’obrador vielhida als sòls, a las marchas, a las pòrtas e als ornaments interiors caloroses.<br>
+<br>
+Utilizacion : emplega-lo pels vièlhs sòls d’obrador, los escalièrs, las pòrtas e los ornaments.<br>
+<np>
+Vièlh escalièr de fusta
+Fusta d’obrador vielhida
+<&old_industrial_wood_stairs>Lo Vièlh escalièr de fusta industriala apond de fusta d’obrador vielhida als sòls, a las marchas, a las pòrtas e als ornaments interiors caloroses.<br>
+<br>
+Utilizacion : emplega-lo pels vièlhs sòls d’obrador, los escalièrs, las pòrtas e los ornaments.<br>
+<np>
+Talhon de vièlha lausa de fusta
+Fusta d’obrador vielhida
+<&old_industrial_wood_slabslice>Lo Talhon de vièlha lausa de fusta industriala apond de fusta d’obrador vielhida als sòls, a las marchas, a las pòrtas e als ornaments interiors caloroses.<br>
+<br>
+Utilizacion : emplega-lo pels vièlhs sòls d’obrador, los escalièrs, las pòrtas e los ornaments.<br>
+<np>
+Vièlha pòrta de fusta industriala
+Fusta d’obrador vielhida
+<&old_industrial_wood_door>Aqueste blòc apond de fusta d’obrador vielhida als sòls, a las marchas, a las pòrtas e als ornaments interiors caloroses.<br>
+<br>
+Utilizacion : emplega-lo pels vièlhs sòls d’obrador, los escalièrs, las pòrtas e los ornaments.<br>

@@ -1,0 +1,99 @@
+Werkzeuge des Ingenieurs
+Tragbare Werkstattausrüstung
+Die Werkzeuge des Ingenieurs ergänzen das Handbuch der Dekor- und Steuerblöcke um Handgeräte, Minenmarkierungen, Notfallverbrauchsmittel, Proviant und kleine Hilfen zur Materialverarbeitung.<br>
+<br>
+Diese Werkzeuge sind für die Arbeit fern einer vollständig ausgestatteten Werkstatt gedacht: Markiere Wege, transportiere Vorräte, behebe Missgeschicke und erledige kleinere Verarbeitungsschritte vor Ort.
+<np>
+REDIA-Werkzeug
+Diamantbeschichteter Allrounder
+<&redia_tool>Das REDIA-Werkzeug ist ein langlebiges Hilfsmittel für schnelle Bodenarbeiten unterwegs. Benutze es auf geeignetem Boden, um Ackerland anzulegen.<br>
+<br>
+Benutze es mit Fackeln im Inventar an einer tragfähigen Fläche, um eine Fackelmarkierung zu setzen, ohne REDIA abzunutzen. Bodenbearbeitung, Scheren, Axtarbeiten und Baumfällen verbrauchen Haltbarkeit.
+<np>
+Erz-Zerkleinerungshammer
+Handwerkzeug
+<&crushing_hammer>Der Erz-Zerkleinerungshammer ist ein manuelles Verarbeitungswerkzeug für frühe Eisen- und Goldarbeiten.<br>
+<br>
+Benutzung: Mit Roheisen, Rohgold, Eisenerz, Tiefenschiefer-Eisenerz, Golderz oder Tiefenschiefer-Golderz herstellen, um Immersive-Engineering-Eisen- oder Goldstaub zu erzeugen. Der Hammer verliert Haltbarkeit und kehrt ins Herstellungsraster zurück, bis er zerbricht.<br>
+<br>
+Er nutzt sich auch beim Abbauen ab und kann Ziele im Nahkampf zurückstoßen.
+<np>
+Tracker
+Gespeicherte Positionsmarkierung
+<&tracker>Der Tracker speichert eine Blockposition direkt im Gegenstand.<br>
+<br>
+Benutzung: Einen Block anklicken, um Dimension und Koordinaten zu speichern. Der Tooltip zeigt die Position. Durch Schleichen-Benutzung wird das Ziel gelöscht.<br>
+<br>
+Zum Markieren von Maschinen, Tunnelabzweigungen, Fernsteuerungen oder unfertigen Baustellen vor der Rückkehr mit Werkzeug und Material.
+<np>
+Ariadne-Kohle
+Wegmarkierung für Minen
+<&ariadne_coal>Ariadne-Kohle setzt schnell schwarze Richtungspfeile auf tragfähige Minenflächen. Markiere auf einer festen Fläche die nächste Abzweigung, den Ausgang oder einen Verzweigungspunkt. Die Markierung unterstützt acht Richtungen auf der angeklickten Fläche einschließlich Diagonalen.<br>
+<br>
+Ariadne-Kohle ist ein wiederverwendbares Markierwerkzeug für 100 Einsätze. Jede erfolgreiche Markierung kostet einen Haltbarkeitspunkt. Ungeeignete Flächen werden abgelehnt, ohne das Werkzeug abzunutzen.
+<np>
+Auto-Stimpack
+Notinjektor
+<&stimpack>Das Auto-Stimpack ist ein Notfall-Gegenstand für gefährliche Wartungsarbeiten.<br>
+<br>
+Benutzung: Manuell heilen, kurz Schutz erhalten und die Bewegung beschleunigen. Im Inventar kann es bei niedriger Gesundheit automatisch auslösen und geht danach in Abklingzeit.<br>
+<br>
+Vor Arbeiten in großer Höhe, an offenen Leitungen oder in feindlichen Minen bereithalten.
+<np>
+Schlafsack
+Tragbare Ruheausrüstung
+<&sleeping_bag>Der Schlafsack ist wetterfeste Ruheausrüstung für Feldarbeit weit entfernt von einem Bett.<br>
+<br>
+Benutzung: Nachts in der Oberwelt bis zum Morgen ruhen. Er setzt oder verschiebt den Einstiegspunkt nicht.<br>
+<br>
+Er verweigert Nutzung am Tag, bei Monstern in der Nähe und in ungeeigneten Dimensionen. Jede erfolgreiche Ruhe nutzt ihn ab.
+<np>
+Materiallagerkiste
+Bauvorratskiste
+<&material_box>Die Materiallagerkiste enthält einen großen Vorrat genau eines einfachen, unveränderten und stapelbaren Baumaterials.<br>
+<br>
+Benutzung: Kiste in der Haupthand und Materialstapel in der Nebenhand halten, um zu laden. Mit leerer Nebenhand einen Stapel entnehmen.<br>
+<br>
+Die Kiste hält bis zu 512 Gegenstände, nur eine Materialsorte zugleich, und lehnt verschachtelte Kisten, nicht stapelbare Ausrüstung sowie veränderte, benannte oder datentragende Stapel ab; der Tooltip zeigt den Inhalt.
+<np>
+Taucher-Luftkapsel
+Notluftvorrat
+<&diving_capsule>Die Taucher-Luftkapsel ist ein Notluftgegenstand für Arbeiten unter Wasser.<br>
+<br>
+Benutzung: Manuell benutzen, um Luft aufzufüllen. Im Inventar kann sie kurz vor dem Luftmangel automatisch auslösen und geht danach in Abklingzeit.<br>
+<br>
+Für überflutete Minen, Unterwasserrohre und Reparaturen in Pumpenräumen mitnehmen.
+<np>
+Muslee-Riegelpresse
+Lebensmittelpresse
+<&musli_bar_press>Die Muslee-Riegelpresse verwandelt übliche Lebensmittel in kompakte Feldrationen.<br>
+<br>
+Benutzung: Brot, einen Apfel und Weizen-, Melonen-, Kürbis-, Rote-Bete- oder Industriehanfsamen mitführen und die Presse benutzen. Ein erfolgreicher Vorgang verbraucht je eine Zutat, prüft den Ausgabeplatz, erzeugt vier Muslee-Riegel und beschädigt die Presse.<br>
+<br>
+Fehlt eine Zutat oder ist kein Platz vorhanden, wird nichts verbraucht.
+<np>
+Muslee-Melange-Energieriegel
+Schneller Werkstatt-Snack
+<&musli_bar>Der Muslee-Melange-Energieriegel ist ein kompaktes Nahrungsmittel aus Brot, Samen und Obst.<br>
+<br>
+Benutzung: Als Feldverpflegung beim Platzieren von Steuerungen, Rohren, Plattformen oder langen Maschinenraumstrecken essen.
+<np>
+Gedankenpresse
+Erfahrungsverdichter
+<&charged_lapis_squeezer>Die Gedankenpresse wandelt einen Lapislazuli und eine Erfahrungsstufe aus deinem Inventar in geladenen Lapislazuli um.<br>
+<br>
+Jede erfolgreiche Umwandlung verletzt und erschöpft den Benutzer und blendet ihn kurzzeitig. Ohne Lapislazuli, ohne Erfahrung oder bei zu geringer Gesundheit arbeitet das Gerät nicht.
+<np>
+Geladener Lapislazuli
+Gespeicherte Erfahrung
+<&charged_lapis>Geladener Lapislazuli speichert eine Erfahrungsstufe. Verbrauche ihn, um die Stufe zurückzugewinnen, aktive Effekte zu entfernen und etwas Gesundheit wiederherzustellen.<br>
+<br>
+Stelle zuerst eine Gedankenpresse her. Geladener Lapislazuli entsteht durch Benutzung dieses Werkzeugs mit vorhandenem Lapislazuli und Erfahrung.
+<np>
+Grober Eisengrus
+Werkzeugmaterial des Ingenieurs für die rekonstruierten Handwerksrezepte.
+<&iron_grit>Kann zu Eisenbarren geschmolzen<br>werden, eignet sich jedoch nicht für<br>weiterführende Materialverarbeitung.
+<np>
+Grober Goldgrus
+Werkzeugmaterial des Ingenieurs für die rekonstruierten Handwerksrezepte.
+<&gold_grit>Kann zu Goldbarren geschmolzen<br>werden, eignet sich jedoch nicht für<br>weiterführende Materialverarbeitung.

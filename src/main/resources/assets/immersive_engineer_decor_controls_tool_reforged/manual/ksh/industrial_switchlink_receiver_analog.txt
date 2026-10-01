@@ -1,0 +1,7 @@
+Analoge Linkempfänger
+Verbungene Stüerung
+<&recipe>Ene verbungene Empfänger jit Stüerpaneele e sichtbare Ziel en d'r Fään.<br>
+<br>
+Bruuch: Klick met en Enderpäl drop, öm en verbungene Päl ze maache. Bruch die Päl beim Schliche, öm dä Empfänger us d'r Fään uszelöse.<br>
+<br>
+Henwies: Dä Empfänger jit e voll Redstone-Signal, wann hä usjelöst weed.

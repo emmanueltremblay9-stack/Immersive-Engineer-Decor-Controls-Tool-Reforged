@@ -1,0 +1,5 @@
+Puulangeti
+Töökoja abiseade
+<&recipe>Väike puulangeti on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Suuna täiskasvanud puudele ja kogu mahakukkunud esemed eraldi.<br>

@@ -1,0 +1,7 @@
+Molot dlja drobljenja rudy
+Ručne drobilne orudje
+<&recipe>Molot dlja drobljenja rudy jest ručno orudje za rannu obrabotku želěza i zlata.<br>
+<br>
+Upotrěbjenje: Tvori go s syrovym želězom, syrovym zlatom, želěznoj rudoju, glubokoslančevoj želěznoj rudoju, zlatoj rudoju ili glubokoslančevoj zlatoj rudoju, da dobudeš prah želěza ili zlata Immersive Engineering. Molot gubi trajnost i vrača se v sětku do razbitja.<br>
+<br>
+Takože gubi trajnost pri kopanju i može odmetati cělje v blizkom boju.

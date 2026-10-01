@@ -1,0 +1,5 @@
+Topitor de minerale
+Unitate compactă de prelucrare
+<&recipe>Topitorul de minerale prelucrează minerale la temperaturi înalte, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Introdu blocuri minerale și furnizează energie pentru topire la temperaturi înalte.<br>

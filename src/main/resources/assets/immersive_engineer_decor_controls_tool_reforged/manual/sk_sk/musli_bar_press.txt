@@ -1,0 +1,7 @@
+Lis na müsli tyčinky
+Lis na jedlo
+<&recipe>Lis Muslee mení bežné potraviny na kompaktné poľné dávky.<br>
+<br>
+Majte chlieb, jablko a semená pšenice, melóna, tekvice, repy alebo technického konope a použite lis. Spotrebuje po jednej surovine, skontroluje miesto, vytvorí štyri tyčinky a poškodí lis.<br>
+<br>
+Ak niečo chýba alebo nie je miesto, nič sa nespotrebuje.

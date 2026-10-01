@@ -1,0 +1,127 @@
+nasin kama
+nasin tawa en ilo awen
+palisa kiwen wawa, palisa kasi awen, supa lupa, nasin supa, sinpin palisa, nasin palisa sewi, lupa, kiwen lukin, en lupa sewi li pali e nasin lili pi pali awen lon insa tomo pali.<br>
+<br>
+kipisi kiwen wawa pi nasin kama li kepeken e supa kiwen wawa. o pali anu pana e supa pali kiwen, o pana insa e ilo pakala Immersive Engineering. ni la o pakala e kiwen wawa tawa supa kiwen wawa tawa palisa, nasin supa, kiwen lukin, lupa, sinpin palisa, en ijo ante pi pona lukin kiwen wawa.<br>
+<br>
+o pana e ona lon ni: ilo li wile e nasin kama pi pali awen, e nasin sewi, e lupa pi pali awen, anu e poka pi ken pakala lili.
+<np>
+palisa suli pi kiwen wawa
+kipisi sijelo awen
+<&thick_steel_pole>palisa suli linja pi kiwen wawa, palisa suli pi kiwen wawa, li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+sewi pi palisa suli
+kipisi sijelo awen
+<&thick_steel_pole_head>sewi/anpa pi palisa suli linja pi kiwen wawa, sewi/anpa pi palisa suli pi kiwen wawa, li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+palisa lili pi kiwen wawa
+kipisi sijelo awen
+<&thin_steel_pole>palisa lili linja pi kiwen wawa, palisa lili pi kiwen wawa, li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+sewi pi palisa lili
+kipisi sijelo awen
+<&thin_steel_pole_head>sewi/anpa pi palisa lili linja pi kiwen wawa, sewi/anpa pi palisa lili pi kiwen wawa, li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+palisa pi kiwen kasi awen
+kipisi sijelo awen
+<&treated_wood_pole>palisa linja pi kiwen kasi awen, palisa pi kiwen kasi awen, li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+sewi pi palisa kasi awen
+kipisi sijelo awen
+<&treated_wood_pole_head>sewi/anpa pi palisa linja pi kiwen kasi awen, sewi/anpa pi palisa kasi awen, li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+awen pi palisa kasi awen
+kipisi sijelo awen
+<&treated_wood_pole_support>palisa awen linja pi kiwen kasi awen, awen pi palisa kasi awen, li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+palisa awen T tu pi kiwen wawa
+kipisi sijelo awen
+<&steel_double_t_support>leko ni li pana e sijelo lukin tawa tomo ilo en selo pi nasin kama.<br>
+<br>
+kepeken: o ante e nasin ona li pana e ona sama palisa awen lukin tawa palisa supa, palisa sewi, en poka pi supa sewi.<br>
+<np>
+supa lupa pi kiwen wawa
+kipisi kama pi pali awen
+<&steel_floor_grating>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+nasin supa pi kiwen wawa
+kipisi kama pi pali awen
+<&steel_catwalk>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+leko sewi pi nasin supa pi kiwen wawa
+kipisi kama pi pali awen
+<&steel_catwalk_stairs>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+nasin supa sewi pi kiwen wawa
+kipisi kama pi pali awen
+<&steel_catwalk_ta>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+sinpin palisa pi kiwen wawa
+kipisi kama pi pali awen
+<&steel_railing>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+sinpin linja pi kiwen wawa
+kipisi kama pi pali awen
+<&steel_mesh_fence>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+sinpin tawa linja pi kiwen wawa
+kipisi kama pi pali awen
+<&steel_mesh_fence_gate>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+nasin sewi pi palisa kiwen
+kipisi kama pi pali awen
+<&metal_rung_ladder>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+nasin sewi pi palisa pi poka ante
+kipisi kama pi pali awen
+<&metal_rung_steps>leko ni li pali e nasin pona lukin pi pali awen lon poka ilo.<br>
+<br>
+kepeken: o pana e ona sama nasin kama pi pali awen lon poka ilo, lon supa sewi, lon lupa pi pali awen.<br>
+<np>
+kiwen lukin pi selo kiwen wawa
+nasin lukin awen
+<&steel_framed_window>leko ni li awen e nasin lukin open li sama kin pali tomo wawa pi nasin ilo.<br>
+<br>
+kepeken: o pana e ona lon lupa sinpin pi leko 1. jan musi li wile lukin e ilo lon poka ante pi sinpin awen la o kepeken e ona lon ni.<br>
+<np>
+lupa tawa pi kiwen
+ma kama pi tomo pali
+<&metal_sliding_door>leko ni li pana e ma kama wawa tawa tomo pi pali awen, tawa lupa sewi, tawa len sewi, tawa selo ilo.<br>
+<br>
+kepeken: o pana e ona lon ma pi wile lupa lawa tawa pali awen.<br>
+<np>
+lupa sewi pi kiwen walo
+ma kama pi tomo pali
+<&iron_hatch>leko ni li pana e ma kama wawa tawa tomo pi pali awen, tawa lupa sewi, tawa len sewi, tawa selo ilo.<br>
+<br>
+kepeken: o pana e ona lon ma pi wile lupa lawa tawa pali awen.<br>

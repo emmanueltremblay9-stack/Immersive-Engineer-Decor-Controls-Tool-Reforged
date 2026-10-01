@@ -1,0 +1,7 @@
+Lysende følsomt glas
+Signalglas
+<&recipe>En redstonereagerende glasblok bevarer udsynet og viser samtidig signalets tilstand.<br>
+<br>
+Brug: Brug den i kontrolrumsvinduer, oplyste paneler og beskyttede glaspartier i fabrikken.<br>
+<br>
+Bemærk: Skifter tilstand ud fra redstonekraft i nærheden.

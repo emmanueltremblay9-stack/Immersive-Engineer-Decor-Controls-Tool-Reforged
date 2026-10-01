@@ -1,0 +1,5 @@
+Mineralschmelzer
+Kloane Verarbeitungseinheit
+<&recipe>Da Mineralschmelzer verarbeitet Mineralien bei hoher Hitz und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Führ Mineralblöck und Energie fia heiße Schmelzarbeit zua.<br>

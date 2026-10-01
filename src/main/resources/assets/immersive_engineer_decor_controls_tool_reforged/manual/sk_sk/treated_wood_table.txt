@@ -1,0 +1,5 @@
+Stôl z ošetreného dreva
+Dielenský nábytok
+<&recipe>Tento blok je praktický dielenský nábytok do pracovných miestností a údržbových kútov.<br>
+<br>
+Použitie: Postav ho vedľa pracovných stolov, debien a kompaktných strojov.<br>

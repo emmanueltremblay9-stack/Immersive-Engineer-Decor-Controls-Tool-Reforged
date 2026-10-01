@@ -1,0 +1,101 @@
+Toow ha Kourt
+Afinans gweythva a-ves
+Yma stockow to, gravyl kourt ha parthow prenn diwysyansel koth ow gweres gorfenna logow a-ves, garthow oberi, leow karga hag amalow gweythva kothheys gans gewer.<br>
+<br>
+Meska an darnow ma gans menweyth ha hensyow mones rag bos drehevyansow diwysyansel a-ves es dhe aswon a-bell.
+<np>
+To Tewol a Leghennow Byghan
+Daffar to tewedhys
+<&dark_shingle_roof>An stock ma a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+Difres Ergh To
+Daffar to tewedhys
+<&dark_shingle_roof_metallized>An Difres Ergh To Tewol a Leghennow Byghan a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+To Tewol a Leghennow Byghan
+Daffar to tewedhys
+<&dark_shingle_roof_skylight>An Fenester To Tewol a Leghennow Byghan a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+Bon Simna To
+Daffar to tewedhys
+<&dark_shingle_roof_chimneytrunk>An Bon Simna To Tewol a Leghennow Byghan a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+Kanol Gwivren To
+Daffar to tewedhys
+<&dark_shingle_roof_wireconduit>An Kanol Gwivren To Tewol a Leghennow Byghan a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+To Tewol a Leghennow Byghan
+Daffar to tewedhys
+<&dark_shingle_roof_chimney>An Simna To Tewol a Leghennow Byghan a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+Stock To Tewol a Leghennow Byghan
+Daffar to tewedhys
+<&dark_shingle_roof_block>An stock ma a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+Leghen To Tewol a Leghennow Byghan
+Daffar to tewedhys
+<&dark_shingle_roof_slab>An stock ma a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+Leghen To Tewol a Leghennow Byghan
+Daffar to tewedhys
+<&dark_shingle_roof_slabslice>An Tregh Leghen To Tewol a Leghennow Byghan a wra lynennow to tewol ha dhe les rag gweythdyow ha skiberow diwysyansel.<br>
+<br>
+Devnydh: usya an darnow warbarth rag gul furvow to kryjyadow.<br>
+<np>
+Dor Gravyl Gwasgys
+Goleur dor le oberi
+<&dense_grit_dirt_block>An stock ma a ry enep gwasgys ha stampys dhe leow oberi yn-mes.<br>
+<br>
+Devnydh: gor e a-dro dhe dharasow karga, tankys yn-mes ha kourtow jynnys.<br>
+<np>
+Tewes Gravyl Gwasgys
+Goleur dor le oberi
+<&dense_grit_sand_block>An stock ma a ry enep gwasgys ha stampys dhe leow oberi yn-mes.<br>
+<br>
+Devnydh: gor e a-dro dhe dharasow karga, tankys yn-mes ha kourtow jynnys.<br>
+<np>
+Estyl Prenn Koth
+Hen brenn gweythdy
+<&old_industrial_wood_planks>An Estyl Hen Brenn Diwysyansel a geworr prenn gweythdy koth rag leuriow, kammow, darasow hag afinans diabarh tomm.<br>
+<br>
+Devnydh: usya e rag hen leuriow gweythdy, grisyow, darasow hag afinans amal.<br>
+<np>
+Leghen Hen Brenn Diwysyansel
+Hen brenn gweythdy
+<&old_industrial_wood_slab>An stock ma a geworr hen brenn gweythdy rag leuriow, kammow, darasow hag afinans tomm a-berth.<br>
+<br>
+Devnydh: usya e rag hen leuriow gweythdy, grisyow, darasow hag afinans amal.<br>
+<np>
+Grisyow Prenn Koth
+Hen brenn gweythdy
+<&old_industrial_wood_stairs>An Grisyow Hen Brenn Diwysyansel a geworr prenn gweythdy koth rag leuriow, kammow, darasow hag afinans diabarh tomm.<br>
+<br>
+Devnydh: usya e rag hen leuriow gweythdy, grisyow, darasow hag afinans amal.<br>
+<np>
+Tregh Leghen Prenn Koth
+Hen brenn gweythdy
+<&old_industrial_wood_slabslice>An Tregh Leghen Hen Brenn Diwysyansel a geworr prenn gweythdy koth rag leuriow, kammow, darasow hag afinans diabarh tomm.<br>
+<br>
+Devnydh: usya e rag hen leuriow gweythdy, grisyow, darasow hag afinans amal.<br>
+<np>
+Daras Hen Brenn Diwysyansel
+Hen brenn gweythdy
+<&old_industrial_wood_door>An stock ma a geworr hen brenn gweythdy rag leuriow, kammow, darasow hag afinans tomm a-berth.<br>
+<br>
+Devnydh: usya e rag hen leuriow gweythdy, grisyow, darasow hag afinans amal.<br>

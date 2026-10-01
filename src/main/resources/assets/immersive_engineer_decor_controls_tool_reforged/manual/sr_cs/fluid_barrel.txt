@@ -1,0 +1,5 @@
+Bure za tečnosti
+Oprema za vodove tečnosti
+<&recipe>Ovaj kompaktni deo služi malim rezervoarima, cevovodima, mestima sakupljanja i protoku kojim upravlja redstoun.<br>
+<br>
+Upotreba: postavi ga tako da cevi ili kofe mogu doseći stranu rezervoara.<br>

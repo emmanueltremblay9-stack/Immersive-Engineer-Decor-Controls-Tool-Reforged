@@ -1,0 +1,5 @@
+Brynglerskubbur
+Varið útsýni
+<&recipe>Þessi kubbur heldur sjónlínum opnum og fellur samt að styrktum verksmiðjubyggingum.<br>
+<br>
+Notkun: Notaðu hann þar sem leikmenn eiga að sjá vélar í gegnum varið skilrúm.<br>

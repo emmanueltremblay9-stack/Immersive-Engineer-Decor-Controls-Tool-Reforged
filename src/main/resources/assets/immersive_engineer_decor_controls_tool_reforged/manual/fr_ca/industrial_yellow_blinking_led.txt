@@ -1,0 +1,7 @@
+LED jaune clignotante
+Retour d'état du signal
+<&recipe>Un indicateur compact rend visible l'état des circuits redstone cachés dans l'usine.<br>
+<br>
+Utilisation : câblez-le à côté du signal pour surveiller des portes, des machines, des alarmes ou des panneaux.<br>
+<br>
+Remarque : change d'état lorsqu'un signal de redstone est présent à proximité.

@@ -1,0 +1,5 @@
+Železobetonová dlaždice
+Vyztužený beton
+<&recipe>Schody ze železobetonových dlaždic jsou zpevněné betonové díly pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>

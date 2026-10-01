@@ -1,0 +1,127 @@
+Hensyow Hedhas
+Hensyow kerdhes ha skoodhyow
+Peulyow dur, peulyow tretys, grilyow, hensyow kerdhes, balustransow, skeulyow, darasow, fenestriow ha kloesyow a furv hensyow gonis kompakt a-berth yn gweythvaow.<br>
+<br>
+Parthow dur hensyow hedhas a dhevnydh platyow dur. Gwra po gor Moos Kreftya Metal, ynwor morthol Immersive Engineering, ha gwask etewigow dur gans an morthol rag gul platyow dur rag peulyow, hensyow kerdhes, fenestriow, darasow, balustransow hag afinansow dur erel.<br>
+<br>
+Gor i may fynno jynnys hedhas gonis, hensyow ughelheys, tollow gonis po amalow moy saw.
+<np>
+Peul Dur Tew
+Darn fram strwythurel
+<&thick_steel_pole>An Peul Dur Ewn ha Tew a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Penn Peul Tew
+Darn fram strwythurel
+<&thick_steel_pole_head>Penn/Troos Peul Dur Ewn ha Tew a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Peul Dur Tanow
+Darn fram strwythurel
+<&thin_steel_pole>An Peul Dur Ewn ha Tanow a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Penn Peul Tanow
+Darn fram strwythurel
+<&thin_steel_pole_head>Penn/Troos Peul Dur Ewn ha Tanow a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Peul Prenn Tretys
+Darn fram strwythurel
+<&treated_wood_pole>An Peul Ewn a Brenn Tretys a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Penn Peul Tretys
+Darn fram strwythurel
+<&treated_wood_pole_head>Penn/Troos Peul Ewn a Brenn Tretys a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Skoodh Peul Tretys
+Darn fram strwythurel
+<&treated_wood_pole_support>Skoodh Peul Ewn a Brenn Tretys a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Skoodh Dur T Dewblek
+Darn fram strwythurel
+<&steel_double_t_support>An stock ma a ry strwythur gweladow dhe neuadhow jynnys ha framyow hedhas.<br>
+<br>
+Devnydh: tro ha gor e avel skoodh gweladow rag treustow, peulyow hag amalow platt.<br>
+<np>
+Gril Leur Dur
+Daffar hedhas gonis
+<&steel_floor_grating>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Hyns Kerdhes Dur
+Daffar hedhas gonis
+<&steel_catwalk>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Grisyow Hyns Kerdhes Dur
+Daffar hedhas gonis
+<&steel_catwalk_stairs>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Hyns Kerdhes Dur Ughelheys
+Daffar hedhas gonis
+<&steel_catwalk_ta>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Balustrans Dur
+Daffar hedhas gonis
+<&steel_railing>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Ke Rwyd Dur
+Daffar hedhas gonis
+<&steel_mesh_fence>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Porth Ke Rwyd Dur
+Daffar hedhas gonis
+<&steel_mesh_fence_gate>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Skeul gans Barrys Metal
+Daffar hedhas gonis
+<&metal_rung_ladder>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Kammow Metal a Bub Tu
+Daffar hedhas gonis
+<&metal_rung_steps>An stock ma a furv hensyow gonis kler a-dro dhe jynnys.<br>
+<br>
+Devnydh: gor e avel hedhas gonis a-dro dhe jynnys, leuriow a-ugh ha tollow gonis.<br>
+<np>
+Fenester gans Fram Dur
+Linenn weles difresys
+<&steel_framed_window>An stock ma a with linennow gweles ygor hag a gyf hwath gans drehevel gweythva nerthys.<br>
+<br>
+Devnydh: gor e yn toll 1 stock yn fos may fynner dhe warioryon gweles jynnys dre skoodh difresys.<br>
+<np>
+Daras Skydnya Metal
+Poynt hedhas diwysyansel
+<&metal_sliding_door>An stock ma a ry poynt hedhas krev rag stevelyow gonis, tollow, toow ha keow jynnys.<br>
+<br>
+Devnydh: gor e may fo res a dharas gonis reolys y'n drehevyans.<br>
+<np>
+Lo an Jowl Horn
+Poynt hedhas diwysyansel
+<&iron_hatch>An stock ma a ry poynt hedhas krev rag stevelyow gonis, tollow, toow ha keow jynnys.<br>
+<br>
+Devnydh: gor e may fo res a dharas gonis reolys y'n drehevyans.<br>

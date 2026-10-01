@@ -1,0 +1,7 @@
+Renkli Duyarlı Cam
+Sinyal camı
+<&recipe>Redstone tepkili cam bloğu, sinyal durumunu gösterirken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Kontrol odası pencerelerinde, ışıklı panellerde ve fabrikanın koruyucu camlarında kullanın.<br>
+<br>
+Notlar: Yakındaki redstone gücüne göre durum değiştirir.

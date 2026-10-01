@@ -1,0 +1,107 @@
+Workshop Machines
+Machines and shop IO
+Workshop machines provide compact crafting, item movement, smelting, disposal, collection, and utility work in a single-block footprint.<br>
+<br>
+Open the following pages for each machine recipe, visual, lore, and practical usage notes.
+<np>
+Steel Table
+Workshop furnishing
+<&steel_table>This block is a practical shop furnishing for work rooms and maintenance corners.<br>
+<br>
+Usage: Set it beside benches, crates, and compact machines.<br>
+<np>
+Treated Wood Table
+Workshop furnishing
+<&treated_wood_table>This block is a practical shop furnishing for work rooms and maintenance corners.<br>
+<br>
+Usage: Set it beside benches, crates, and compact machines.<br>
+<np>
+Treated Wood Stool
+Workshop furnishing
+<&treated_wood_stool>This block is a practical shop furnishing for work rooms and maintenance corners.<br>
+<br>
+Usage: Set it beside benches, crates, and compact machines.<br>
+<np>
+Metal Crafting Table
+Plate workstation
+<&metal_crafting_table>The Metal Crafting Table is a reinforced shop station with a hammer slot, a 3x3 crafting grid, and a clear output slot.<br>
+<br>
+Usage: Use the grid for normal crafting. For IE plates, place an Engineer's Hammer in the tool slot and put the plate material in the grid before taking the result. Steel decorations use steel plates for poles, catwalks, windows, doors, railings, and other steel parts.<br>
+<np>
+Factory Hopper
+Shop-floor utility
+<&factory_hopper>This block moves item stacks through a tighter industrial casing.<br>
+<br>
+Usage: Face it toward the inventory line, then set range, stack count, timing, and redstone mode in its screen.<br>
+<np>
+Factory Dropper
+Shop-floor utility
+<&factory_dropper>This block releases stored items from an aimed face.<br>
+<br>
+Usage: Aim the front toward the release point, load its internal slots, and tune force, angle, delay, filter logic, and redstone mode in its screen.<br>
+<np>
+Factory Block Placer
+Shop-floor utility
+<&factory_placer>This block installs blocks from its internal stock when activated.<br>
+<br>
+Usage: Point the working face at the target space and load placeable stacks.<br>
+<np>
+Block Breaker
+Shop-floor utility
+<&small_block_breaker>The Small Block Breaker is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
+<br>
+Usage: Place the working face toward the block to remove.<br>
+<np>
+Waste Incinerator
+Compact processing unit
+<&small_waste_incinerator>The Waste Incinerator destroys unwanted items in a compact workshop footprint.<br>
+<br>
+Usage: Feed only unwanted items into its queue.<br>
+<np>
+Laboratory Furnace
+Compact processing unit
+<&small_lab_furnace>The Laboratory Furnace handles compact solid-fuel smelting jobs in a small workshop footprint.<br>
+<br>
+Usage: Use solid fuel for compact smelting batches.<br>
+<np>
+Electrical Furnace
+Compact processing unit
+<&small_electrical_furnace>The Electrical Furnace handles compact FE-powered smelting jobs in a small workshop footprint.<br>
+<br>
+Usage: Supply FE and valid smelting input.<br>
+<np>
+Mineral Smelter
+Compact processing unit
+<&small_mineral_smelter>The Mineral Smelter handles high-heat mineral processing in a compact workshop footprint.<br>
+<br>
+Usage: Feed mineral blocks and power for high-heat melting work.<br>
+<np>
+Water Freezer
+Compact processing unit
+<&small_freezer>The Water Freezer handles compact chilling work for powered fluid setups.<br>
+<br>
+Usage: Supply water and power for staged ice production.<br>
+<np>
+Passive Fluid
+Fluid line hardware
+<&passive_fluid_accumulator>The Passive Fluid Accumulator is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+<br>
+Usage: Place it against suitable water sources and leave room for fluid removal.<br>
+<np>
+Solar Panel
+Shop-floor utility
+<&small_solar_panel>The Small Solar Panel is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
+<br>
+Usage: Give it open sky and connect low-demand equipment.<br>
+<np>
+Milking Machine
+Shop-floor utility
+<&small_milking_machine>The Small Milking Machine is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
+<br>
+Usage: Place it near cows and provide a way to remove milk containers or fluid.<br>
+<np>
+Tree Cutter
+Shop-floor utility
+<&small_tree_cutter>The Small Tree Cutter is a shop-floor utility block for crafting, storage, placement, breaking, collection, or compact automation.<br>
+<br>
+Usage: Aim it at grown trees and collect drops separately.<br>

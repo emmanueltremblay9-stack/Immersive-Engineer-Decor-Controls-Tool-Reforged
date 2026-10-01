@@ -1,0 +1,107 @@
+Műhelygépek
+Gépek és műhelyi be- és kimenetek
+A műhelygépek kompakt barkácsolást, tárgymozgatást, olvasztást, megsemmisítést, gyűjtést és segédmunkát végeznek egyetlen blokknyi helyen.<br>
+<br>
+A következő oldalakon találod az egyes gépek receptjeit, képeit, leírásait és gyakorlati használati megjegyzéseit.
+<np>
+Acélasztal
+Műhelybútor
+<&steel_table>Ez a blokk praktikus műhelybútor munkaszobákhoz és karbantartósarkokhoz.<br>
+<br>
+Használat: állítsd munkapadok, ládák és kompakt gépek mellé.<br>
+<np>
+Kezeltfaasztal
+Műhelybútor
+<&treated_wood_table>Ez a blokk praktikus műhelybútor munkaszobákhoz és karbantartósarkokhoz.<br>
+<br>
+Használat: állítsd munkapadok, ládák és kompakt gépek mellé.<br>
+<np>
+Kezeltfa-hokedli
+Műhelybútor
+<&treated_wood_stool>Ez a blokk praktikus műhelybútor munkaszobákhoz és karbantartósarkokhoz.<br>
+<br>
+Használat: állítsd munkapadok, ládák és kompakt gépek mellé.<br>
+<np>
+Fémmegmunkáló asztal
+Lemezmegmunkáló állomás
+<&metal_crafting_table>A fémmegmunkáló asztal megerősített műhelyállomás kalapácshellyel, 3x3-as barkácsrácscsal és jól elkülönülő kimeneti hellyel.<br>
+<br>
+Használat: a rács hagyományos barkácsolásra használható. IE-lemezekhez tegyél mérnöki kalapácsot a szerszámhelyre, lemezanyagot a rácsba, majd vedd el az eredményt. Az acéldíszek acéllemezt használnak oszlopokhoz, szerelőjárdákhoz, ablakokhoz, ajtókhoz, korlátokhoz és egyéb acélelemekhez.<br>
+<np>
+Gyári tölcsér
+Műhelyi segédeszköz
+<&factory_hopper>Ez a blokk tárgyhalmokat mozgat egy kompaktabb ipari házon keresztül.<br>
+<br>
+Használat: fordítsd a tárolósor felé, majd a felületen állítsd be a hatótávot, a halmok számát, az időzítést és a redstone-módot.<br>
+<np>
+Gyári kidobó
+Műhelyi segédeszköz
+<&factory_dropper>Ez a blokk az irányba állított oldalán adja ki a tárolt tárgyakat.<br>
+<br>
+Használat: fordítsd az elejét a kiadási pont felé, töltsd fel belső helyeit, majd a felületen állítsd az erőt, szöget, késleltetést, szűrőlogikát és redstone-módot.<br>
+<np>
+Gyári blokklerakó
+Műhelyi segédeszköz
+<&factory_placer>Ez a blokk aktiváláskor a belső készletéből rak le blokkokat.<br>
+<br>
+Használat: fordítsd a munkafelületet a célhely felé, és töltsd fel lerakható halmokkal.<br>
+<np>
+Blokktörő
+Műhelyi segédeszköz
+<&small_block_breaker>A kis blokktörő műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: fordítsd a munkafelületét az eltávolítandó blokk felé.<br>
+<np>
+Hulladékégető
+Kompakt feldolgozóegység
+<&small_waste_incinerator>A hulladékégető kis műhelyi helyigénnyel semmisíti meg a nem kívánt tárgyakat.<br>
+<br>
+Használat: kizárólag nem kívánt tárgyakat adagolj a várólistájába.<br>
+<np>
+Laboratóriumi kemence
+Kompakt feldolgozóegység
+<&small_lab_furnace>A laboratóriumi kemence kis helyigény mellett végez kompakt, szilárd tüzelőanyaggal működő olvasztási feladatokat a műhelyben.<br>
+<br>
+Használat: szilárd tüzelőanyaggal olvassz kis adagokat.<br>
+<np>
+Elektromos kemence
+Kompakt feldolgozóegység
+<&small_electrical_furnace>Az elektromos kemence kis helyigény mellett végez kompakt, FE-energiával működő olvasztási feladatokat a műhelyben.<br>
+<br>
+Használat: biztosíts FE-t és megfelelő olvasztási alapanyagot.<br>
+<np>
+Ásványolvasztó
+Kompakt feldolgozóegység
+<&small_mineral_smelter>Az ásványolvasztó magas hőmérsékletű ásványfeldolgozást végez kis műhelyi helyigénnyel.<br>
+<br>
+Használat: adagolj ásványblokkokat és energiát a magas hőmérsékletű olvasztáshoz.<br>
+<np>
+Vízfagyasztó
+Kompakt feldolgozóegység
+<&small_freezer>A vízfagyasztó kompakt hűtési feladatokat végez energiával ellátott folyadékrendszerekben.<br>
+<br>
+Használat: biztosíts vizet és energiát a többfázisú jéggyártáshoz.<br>
+<np>
+Passzív folyadékgyűjtés
+Folyadékvezeték-szerelvények
+<&passive_fluid_accumulator>A passzív folyadékgyűjtő kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: tedd megfelelő vízforrás mellé, és hagyj helyet a folyadék kivételéhez.<br>
+<np>
+Napelem
+Műhelyi segédeszköz
+<&small_solar_panel>A kis napelem műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: biztosíts szabad égboltot, és csatlakoztass kis fogyasztású berendezéseket.<br>
+<np>
+Fejőgép
+Műhelyi segédeszköz
+<&small_milking_machine>A kis fejőgép műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: tedd tehenek közelébe, és biztosíts lehetőséget a tejesedények vagy a folyadék elvezetésére.<br>
+<np>
+Fakivágó
+Műhelyi segédeszköz
+<&small_tree_cutter>A kis fakivágó műhelyi segédblokk barkácsoláshoz, tároláshoz, lerakáshoz, töréshez, gyűjtéshez vagy kompakt automatizáláshoz.<br>
+<br>
+Használat: irányítsd kifejlett fákra, és a kihulló tárgyakat külön gyűjtsd össze.<br>

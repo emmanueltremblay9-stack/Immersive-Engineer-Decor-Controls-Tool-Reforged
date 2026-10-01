@@ -1,0 +1,7 @@
+Impulsempfänger am Gehäis
+Verbonne Steierung
+<&recipe>E verbonnen Impulsempfänger am Gehäis gëtt Fernsteierbrieder e kuerze Redstone-Ausléiser.<br>
+<br>
+Benotzung: Klick mat enger Enderpärel drop fir eng verbonne Pärel ze maachen. Maach e Rietsklick drop oder aktivéier déi verbonne Pärel fir e kuerzen Impuls auszeginn.<br>
+<br>
+Hiweiser: Den Impuls setzt sech no senger agestallter Dauer selwer zeréck.

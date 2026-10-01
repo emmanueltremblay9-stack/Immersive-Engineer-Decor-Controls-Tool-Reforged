@@ -1,0 +1,5 @@
+Væsketragt
+Udstyr til væskeledninger
+<&recipe>Den lille væskeopsamlingstragt er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Sæt den under væskens opsamlingspunkt, og led det lagrede indhold til tanke eller lavere rørføringer.<br>

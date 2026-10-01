@@ -1,0 +1,5 @@
+Laboratorieovn
+Kompakt behandlingsenhet
+<&recipe>Laboratorieovnen utfører kompakte smeltejobber med fast brensel på liten verkstedplass.<br>
+<br>
+Bruk: bruk fast brensel til små smelteomganger.<br>

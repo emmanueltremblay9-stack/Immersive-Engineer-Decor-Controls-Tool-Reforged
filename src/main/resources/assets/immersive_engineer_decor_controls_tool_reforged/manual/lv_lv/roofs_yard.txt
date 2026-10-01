@@ -1,0 +1,101 @@
+Jumti un pagalms
+Rūpnīcas āra aprīkojums
+Jumta bloki, grantainie pagalma segumi un veca rūpnieciska koka detaļas palīdz pabeigt āra nojumes, darba pagalmus, iekraušanas vietas un laikapstākļu skartas rūpnīcas malas.<br>
+<br>
+Apvieno šīs detaļas ar mūrējumu un piekļuves ceļiem, lai āra rūpnieciskās būves būtu skaidri uztveramas no attāluma.
+<np>
+Tumšu šindeļu jumts
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof>Šis bloks veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Jumta sniega barjera
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_metallized>Tumšu šindeļu jumta sniega barjera veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Tumšu šindeļu jumts
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_skylight>Tumšu šindeļu jumta logs veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Jumta skursteņa korpuss
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_chimneytrunk>Tumšu šindeļu jumta skursteņa korpuss veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Jumta vada ievads
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_wireconduit>Tumšu šindeļu jumta vada ievads veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Tumšu šindeļu jumts
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_chimney>Tumšu šindeļu jumta skurstenis veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Tumšu šindeļu jumta bloks
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_block>Šis bloks veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Tumšu šindeļu jumta plāksne
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_slab>Šis bloks veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Tumšu šindeļu jumta plāksne
+Laikapstākļu skarta jumta detaļa
+<&dark_shingle_roof_slabslice>Plāna tumšu šindeļu jumta loksne veido tumšas, praktiskas jumta līnijas darbnīcām un rūpnieciskām nojumēm.<br>
+<br>
+Lietošana: apvieno detaļas, lai veidotu ticamus jumtu profilus.<br>
+<np>
+Blīva grantaina zeme
+Darba vietas grunts segums
+<&dense_grit_dirt_block>Šis bloks piešķir āra darba laukumiem sablīvētu, nomīdītu virsmu.<br>
+<br>
+Lietošana: klāj pie iekraušanas durvīm, āra tvertnēm un mašīnu pagalmos.<br>
+<np>
+Blīvas grantainas smiltis
+Darba vietas grunts segums
+<&dense_grit_sand_block>Šis bloks piešķir āra darba laukumiem sablīvētu, nomīdītu virsmu.<br>
+<br>
+Lietošana: klāj pie iekraušanas durvīm, āra tvertnēm un mašīnu pagalmos.<br>
+<np>
+Veci koka dēļi
+Vecināts darbnīcu koks
+<&old_industrial_wood_planks>Veci rūpnieciski koka dēļi pievieno vecinātu darbnīcu koku grīdām, pakāpieniem, durvīm un siltai iekštelpu apdarei.<br>
+<br>
+Lietošana: izmanto vecām darbnīcu grīdām, kāpnēm, durvīm un apdarei.<br>
+<np>
+Veca rūpnieciska koka plāksne
+Vecināts darbnīcu koks
+<&old_industrial_wood_slab>Šis bloks pievieno vecinātu darbnīcu koku grīdām, pakāpieniem, durvīm un siltai iekštelpu apdarei.<br>
+<br>
+Lietošana: izmanto vecām darbnīcu grīdām, kāpnēm, durvīm un apdarei.<br>
+<np>
+Vecas koka kāpnes
+Vecināts darbnīcu koks
+<&old_industrial_wood_stairs>Vecas rūpnieciskas koka kāpnes pievieno vecinātu darbnīcu koku grīdām, pakāpieniem, durvīm un siltai iekštelpu apdarei.<br>
+<br>
+Lietošana: izmanto vecām darbnīcu grīdām, kāpnēm, durvīm un apdarei.<br>
+<np>
+Plāna veca koka loksne
+Vecināts darbnīcu koks
+<&old_industrial_wood_slabslice>Plāna veca rūpnieciska koka loksne pievieno vecinātu darbnīcu koku grīdām, pakāpieniem, durvīm un siltai iekštelpu apdarei.<br>
+<br>
+Lietošana: izmanto vecām darbnīcu grīdām, kāpnēm, durvīm un apdarei.<br>
+<np>
+Vecas rūpnieciskas koka durvis
+Vecināts darbnīcu koks
+<&old_industrial_wood_door>Šis bloks pievieno vecinātu darbnīcu koku grīdām, pakāpieniem, durvīm un siltai iekštelpu apdarei.<br>
+<br>
+Lietošana: izmanto vecām darbnīcu grīdām, kāpnēm, durvīm un apdarei.<br>

@@ -1,0 +1,7 @@
+Liechtsensor
+Signalerfassig
+<&recipe>En Liechtsensor macht us de Helligkeit vor Ort e Redstone-Stüürig.<br>
+<br>
+Verwendig: Nimm en für automatischi Lüchte, Rollläde und helligkeitsabhängigi Schaltige.<br>
+<br>
+Hiwiis: Git ab ere rohe Helligkeit vo 8 es Signal uus.

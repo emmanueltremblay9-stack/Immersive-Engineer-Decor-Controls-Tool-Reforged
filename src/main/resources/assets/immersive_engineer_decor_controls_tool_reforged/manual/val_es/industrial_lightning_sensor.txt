@@ -1,0 +1,7 @@
+Detector de tronades
+Detecció de senyals
+<&recipe>Un sensor de tronades activa avisos quan hi ha trons.<br>
+<br>
+Ús: col·loca’l a cel obert i connecta’l a làmpades o alarmes.<br>
+<br>
+Notes: requerix trons i accés al cel.

@@ -1,0 +1,5 @@
+Alçapão de ferro
+Ponto de acesso industrial
+<&recipe>Este bloco fornece um acesso robusto a salas de serviço, poços, telhados e recintos de máquinas.<br>
+<br>
+Uso: Instala-o onde a construção precisa de uma abertura de manutenção controlada.<br>

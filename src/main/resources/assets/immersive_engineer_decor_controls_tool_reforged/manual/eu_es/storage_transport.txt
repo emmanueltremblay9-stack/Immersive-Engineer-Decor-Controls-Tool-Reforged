@@ -1,0 +1,41 @@
+Biltegiratzea eta garraioa
+Inbentario- eta fluxu-osagarriak
+Biltegiratze- eta garraio-osagarriek kaxak, upelak, inbutuak eta balbulak barne hartzen dituzte, fabrikako bideratze trinkorako.<br>
+<br>
+Erabili orrialde hauek biltegi-gelak, hodi-lineak, mantentze-deposituak eta fluido-linea kontrolatuak diseinatzean.
+<np>
+Etiketadun kaxa
+Izakinen etiketa editagarria
+<&labeled_crate>Etiketadun kaxa hau biltegiko izakinak argi sailkatzeko egina dago. Aurreko plaka lantegiko kartel txiki baten moduan edita daiteke.<br>
+<br>
+Erabilera: egin eskuineko klik etiketa-plakan kaxaren etiketa editatzeko. Egin eskuineko klik kaxaren gainerako zatian osagarriak, piezak eta mantentze-hornigaiak gordetzeko espazioa irekitzeko.<br>
+<np>
+Fluido-upela
+Fluido-lineako ekipamendua
+<&fluid_barrel>Osagarri hau fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: jarri hodiek edo ontziek deposituaren aurpegira iristeko modua duten tokian.<br>
+<np>
+Fluido-inbutua
+Fluido-lineako ekipamendua
+<&small_fluid_funnel>Fluido-inbutu txikia fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: jarri fluidoak biltzeko puntuaren azpian eta bideratu gordetako edukia deposituetara edo beheragoko hodietara.<br>
+<np>
+Fluido-hodiaren itzuleraren aurkako balbula
+Fluido-lineako ekipamendua
+<&straight_pipe_valve>Fluidoaren itzuleraren aurkako balbula fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: lerrokatu balbula nahi duzun fluxuaren norabidearekin.<br>
+<np>
+Redstone fluido-balbula
+Fluido-lineako ekipamendua
+<&straight_pipe_valve_redstone>Redstone fluido-balbula fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: lerrokatu balbula nahi duzun fluxuaren norabidearekin.<br>
+<np>
+Fluido-balbula analogikoa
+Fluido-lineako ekipamendua
+<&straight_pipe_valve_redstone_analog>Fluido-balbula analogikoa fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: lerrokatu balbula nahi duzun fluxuaren norabidearekin.<br>

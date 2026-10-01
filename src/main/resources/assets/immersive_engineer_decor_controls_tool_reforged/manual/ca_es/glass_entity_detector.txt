@@ -1,0 +1,7 @@
+Detector d’entitats de vidre
+Detecció de senyals
+<&recipe>Un detector d’entitats vigila el moviment proper sense una placa visible al terra.<br>
+<br>
+Ús: connecta’l a portes, llums, alarmes o enclavaments de màquines.<br>
+<br>
+Notes: examina una petita zona al voltant del bloc.

@@ -1,0 +1,7 @@
+Gekleurde Sensitiewe Glas
+Seinglas
+<&recipe>’n Glasblok wat op redstone reageer behou siglyne terwyl dit die seintoestand wys.<br>
+<br>
+Gebruik: gebruik dit in beheerkamervensters, verligte panele en beskermde fabrieksglas.<br>
+<br>
+Nota: verander toestand weens nabygeleë redstone-krag.

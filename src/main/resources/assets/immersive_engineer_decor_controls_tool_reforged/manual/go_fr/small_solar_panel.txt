@@ -1,0 +1,5 @@
+Paniao solaire
+Outil de sol d'atelier
+<&recipe>Le Petit paniao solaire ét un blloqe util d'atelier pour la fezerie, le ranjement, le pllaçaije, le cassaije, le ramassaije ou l'automatisation compacte.<br>
+<br>
+Empllai : Donéz-li le ciel ouvert e branchéz des appareils qi demandent peu.<br>

@@ -1,0 +1,5 @@
+Kalın Çelik Direk
+Yapısal çerçeve parçası
+<&recipe>Düz kalın çelik direk, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>

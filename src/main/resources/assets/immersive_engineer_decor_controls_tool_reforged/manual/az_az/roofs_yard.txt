@@ -1,0 +1,101 @@
+Damlar və həyət
+Açıq hava zavod elementləri
+Dam blokları, həyət çınqılları və köhnə sənaye taxta hissələri açıq talvarları, iş həyətlərini, yükləmə sahələrini və hava təsirindən köhnəlmiş zavod kənarlarını tamamlamağa kömək edir.<br>
+<br>
+Açıq havadakı sənaye tikililərinin uzaqdan aydın seçilməsi üçün bu hissələri hörgü və keçid yolları ilə birləşdirin.
+<np>
+Tünd şingil dam
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof>Bu blok emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Dam qar saxlayıcısı
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_metallized>Tünd şingil damın qar saxlayıcısı emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Tünd şingil dam
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_skylight>Tünd şingil damın işıqlığı emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Dam bacasının gövdəsi
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_chimneytrunk>Tünd şingil damının baca gövdəsi emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Dam naqil kanalı
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_wireconduit>Tünd şingil damın naqil kanalı emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Tünd şingil dam
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_chimney>Tünd şingil dam bacası emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Tünd şingil dam bloku
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_block>Bu blok emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Tünd şingil dam pilləsi
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_slab>Bu blok emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Tünd şingil dam pilləsi
+Hava təsirindən köhnəlmiş dam elementi
+<&dark_shingle_roof_slabslice>Tünd şingil dam pilləsinin dilimi emalatxanalar və sənaye talvarları üçün tünd, praktik dam xətləri yaradır.<br>
+<br>
+İstifadə: İnandırıcı dam formaları yaratmaq üçün hissələri birlikdə istifadə edin.<br>
+<np>
+Sıx çınqıllı torpaq
+İş sahəsinin zəmin örtüyü
+<&dense_grit_dirt_block>Bu blok açıq iş sahələrinə sıxılmış, tapdalanmış səth verir.<br>
+<br>
+İstifadə: Yükləmə qapıları, açıq havadakı çənlər və maşın meydançaları ətrafına döşəyin.<br>
+<np>
+Sıx çınqıllı qum
+İş sahəsinin zəmin örtüyü
+<&dense_grit_sand_block>Bu blok açıq iş sahələrinə sıxılmış, tapdalanmış səth verir.<br>
+<br>
+İstifadə: Yükləmə qapıları, açıq havadakı çənlər və maşın meydançaları ətrafına döşəyin.<br>
+<np>
+Köhnə taxtalar
+Köhnəlmiş emalatxana taxtası
+<&old_industrial_wood_planks>Köhnə sənaye taxtaları döşəmələr, pillələr, qapılar və isti çalarlı daxili haşiyələr üçün köhnəlmiş emalatxana taxtası əlavə edir.<br>
+<br>
+İstifadə: Köhnə emalatxana döşəmələri, pilləkənləri, qapıları və haşiyələri üçün istifadə edin.<br>
+<np>
+Köhnə sənaye taxta pilləsi
+Köhnəlmiş emalatxana taxtası
+<&old_industrial_wood_slab>Bu blok döşəmələr, pillələr, qapılar və isti çalarlı daxili haşiyələr üçün köhnəlmiş emalatxana taxtası əlavə edir.<br>
+<br>
+İstifadə: Köhnə emalatxana döşəmələri, pilləkənləri, qapıları və haşiyələri üçün istifadə edin.<br>
+<np>
+Köhnə taxta pilləkən
+Köhnəlmiş emalatxana taxtası
+<&old_industrial_wood_stairs>Köhnə sənaye taxta pilləkəni döşəmələr, pillələr, qapılar və isti çalarlı daxili haşiyələr üçün köhnəlmiş emalatxana taxtası əlavə edir.<br>
+<br>
+İstifadə: Köhnə emalatxana döşəmələri, pilləkənləri, qapıları və haşiyələri üçün istifadə edin.<br>
+<np>
+Köhnə taxta pilləsinin dilimi
+Köhnəlmiş emalatxana taxtası
+<&old_industrial_wood_slabslice>Köhnə sənaye taxta pilləsinin dilimi döşəmələr, pillələr, qapılar və isti çalarlı daxili haşiyələr üçün köhnəlmiş emalatxana taxtası əlavə edir.<br>
+<br>
+İstifadə: Köhnə emalatxana döşəmələri, pilləkənləri, qapıları və haşiyələri üçün istifadə edin.<br>
+<np>
+Köhnə sənaye taxta qapısı
+Köhnəlmiş emalatxana taxtası
+<&old_industrial_wood_door>Bu blok döşəmələr, pillələr, qapılar və isti çalarlı daxili haşiyələr üçün köhnəlmiş emalatxana taxtası əlavə edir.<br>
+<br>
+İstifadə: Köhnə emalatxana döşəmələri, pilləkənləri, qapıları və haşiyələri üçün istifadə edin.<br>

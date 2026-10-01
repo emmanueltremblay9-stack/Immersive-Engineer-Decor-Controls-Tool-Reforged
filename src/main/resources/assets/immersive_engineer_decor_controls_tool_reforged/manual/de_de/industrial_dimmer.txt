@@ -1,0 +1,7 @@
+Dimmer
+Veränderliches Signal
+<&recipe>Ein Drehregler stellt die Redstone-Stärke an einer kompakten Schalttafelfläche ein.<br>
+<br>
+Verwendung: Erhöhe den Ausgang schrittweise per Rechtsklick; nach voller Stärke beginnt er wieder bei null.<br>
+<br>
+Hinweis: Gibt Signalstärken von 0 bis 15 aus.

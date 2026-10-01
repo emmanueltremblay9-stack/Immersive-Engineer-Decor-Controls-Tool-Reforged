@@ -1,0 +1,5 @@
+Vertikalus klinkerio pusblokis
+Suodžiais patamsintas mūras
+<&recipe>Raštuotas vertikalus klinkerio pusblokis suteikia suodžiais patamsinto plytų mūro išvaizdą krosnių salėms, kaminų pagrindams ir aptarnavimo sienoms.<br>
+<br>
+Naudojimas: statyk sienas, apdailą arba karštosios zonos apvalkalą aplink krosnis ir katilus.<br>

@@ -1,0 +1,41 @@
+Skladování a přeprava
+Inventářové a průtokové vybavení
+Úložné a přepravní vybavení zahrnuje bedny, sudy, výlevky a ventily pro kompaktní tovární rozvody.<br>
+<br>
+Tyto stránky využij při plánování skladů, potrubních tras, servisních nádrží a řízených kapalinových vedení.
+<np>
+Bedna se štítkem
+Upravitelný skladový štítek
+<&labeled_crate>Tato bedna se štítkem usnadňuje přehledné třídění zásob. Její přední štítek lze upravovat jako malou dílenskou ceduli.<br>
+<br>
+Použití: Pravým kliknutím na štítek uprav popisek bedny. Pravým kliknutím na zbytek bedny otevři úložiště vybavení, součástek a zásob pro údržbu.<br>
+<np>
+Sud na kapaliny
+Vybavení kapalinových rozvodů
+<&fluid_barrel>Tento kompaktní kapalinový díl se hodí pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Umísti jej tak, aby se potrubí nebo kbelíky dostaly k příslušné straně nádrže.<br>
+<np>
+Kapalinová výlevka
+Vybavení kapalinových rozvodů
+<&small_fluid_funnel>Malá kapalinová výlevka je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Umísti ji pod místo sběru kapaliny a převeď uložený obsah do nádrží nebo nižšího potrubí.<br>
+<np>
+Zpětný ventil kapalinového potrubí
+Vybavení kapalinových rozvodů
+<&straight_pipe_valve>Zpětný kapalinový ventil je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Natoč ventil do požadovaného směru proudění.<br>
+<np>
+Redstonový kapalinový ventil
+Vybavení kapalinových rozvodů
+<&straight_pipe_valve_redstone>Redstonový kapalinový ventil je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Natoč ventil do požadovaného směru proudění.<br>
+<np>
+Analogový kapalinový ventil
+Vybavení kapalinových rozvodů
+<&straight_pipe_valve_redstone_analog>Analogový kapalinový ventil je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Natoč ventil do požadovaného směru proudění.<br>

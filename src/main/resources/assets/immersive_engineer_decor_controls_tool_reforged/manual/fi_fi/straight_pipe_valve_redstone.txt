@@ -1,0 +1,5 @@
+Redstone-nesteventtiili
+Nestelinjan laitteet
+<&recipe>Redstone-ohjattu nesteventtiili on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Kohdista venttiili haluttuun virtaussuuntaan.<br>

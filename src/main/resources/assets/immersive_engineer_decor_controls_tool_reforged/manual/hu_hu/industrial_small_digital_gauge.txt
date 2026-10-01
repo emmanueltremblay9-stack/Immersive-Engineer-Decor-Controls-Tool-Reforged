@@ -1,0 +1,7 @@
+Digitális mérő
+Leolvasható jelerősség
+<&recipe>A kompakt vezérlőtermi mérő világosan leolvasható panelértékként jelzi a redstone erősségét.<br>
+<br>
+Használat: oda szereld, ahol a szomszédos redstone-táplálás egy pillantással ellenőrizhető.<br>
+<br>
+Megjegyzés: a közeli redstone erősségét olvassa le 0 és 15 között.

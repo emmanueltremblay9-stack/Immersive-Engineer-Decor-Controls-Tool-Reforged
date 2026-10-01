@@ -1,0 +1,7 @@
+Muslee-briketa premilo
+Manĝaĵa premilo
+<&recipe>Transformas ordinarajn manĝaĵojn en kompaktajn kampajn porciojn.<br>
+<br>
+Uzo: Pano, pomo kaj semo de tritiko, melono, kukurbo, beto aŭ industria kanabo. Sukcesa premado konsumas po unu, kontrolas spacon, faras kvar briketojn kaj damaĝas la premilon.<br>
+<br>
+Se mankas ingredienco aŭ spaco, nenio konsumiĝas.

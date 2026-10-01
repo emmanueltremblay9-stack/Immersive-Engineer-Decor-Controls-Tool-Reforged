@@ -1,0 +1,5 @@
+Passiv væskeoppsamling
+Utstyr for væskeliner
+<&recipe>Den passive væskesamlaren er ein kompakt væskerøyrdel for små tankar, røyrstrekk, oppsamlingspunkt og redstone-styrt væskestraum.<br>
+<br>
+Bruk: plasser han mot høvelege vasskjelder og lat det vere plass til væskeuttak.<br>

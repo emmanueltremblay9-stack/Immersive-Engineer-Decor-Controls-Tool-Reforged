@@ -1,0 +1,5 @@
+Máy đốn cây
+Tiện ích sàn xưởng
+<&recipe>Máy đốn cây nhỏ là khối tiện ích sàn xưởng dành cho chế tạo, lưu trữ, đặt, phá, thu gom hoặc tự động hóa gọn.<br>
+<br>
+Cách dùng: Hướng vào cây đã trưởng thành và thu đồ rơi riêng.<br>

@@ -1,0 +1,5 @@
+Reòthadair uisge
+Aonad giullachd dlùth
+<&recipe>Nì an Reòthadair uisge obair fuarachaidh dhlùth airson shiostaman lionna le cumhachd.<br>
+<br>
+Cleachdadh: thoir uisge agus cumhachd dha airson deigh a dhèanamh ann an ìrean.<br>

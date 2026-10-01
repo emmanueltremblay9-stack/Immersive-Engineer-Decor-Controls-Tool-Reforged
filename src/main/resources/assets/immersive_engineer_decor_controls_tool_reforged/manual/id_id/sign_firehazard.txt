@@ -1,0 +1,5 @@
+Rambu “Bahaya Kebakaran”
+Penanda bahaya
+<&recipe>Rambu “Bahaya Kebakaran” menandai bahaya, pintu keluar, dan zona kerja dengan petunjuk visual untuk keselamatan pabrik.<br>
+<br>
+Penggunaan: pasang di samping bahaya, pintu keluar, mesin, dan zona terlarang.<br>

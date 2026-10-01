@@ -1,0 +1,5 @@
+Blokų laužytuvas
+Dirbtuvių pagalbininkas
+<&recipe>Mažas blokų laužytuvas yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: nukreipk darbinį paviršių į pašalintiną bloką.<br>

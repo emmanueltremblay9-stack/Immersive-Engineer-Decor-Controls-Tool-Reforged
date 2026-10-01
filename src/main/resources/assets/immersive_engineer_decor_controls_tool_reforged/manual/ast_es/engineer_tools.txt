@@ -1,0 +1,99 @@
+Ferramientes del inxenieru
+Equipu portátil de taller
+El conxuntu de ferramientes del inxenieru añade equipu de mano, marcadores de mines, consumibles d’emerxencia, comida pal trabayu fuera y pequeñes ayudes de procesamientu de materiales al mesmu manual que describe los bloques de decoración y control.<br>
+<br>
+Estes ferramientes tán pensaes pa trabayar lloñe d’un taller bien equipáu: marcar la ruta, llevar suministros, recuperase de los errores y terminar pequeños trabayos de procesamientu nel propiu sitiu.
+<np>
+Ferramienta REDIA
+Utilidá recubierta de diamante
+<&redia_tool>La ferramienta REDIA ye un utensiliu resistente pa facer pequeños trabayos rápidos nel terrén. Úsala en suelos que se puedan llabrar pa facer bloques d’eru.<br>
+<br>
+Úsala contra una cara firme mientres lleves antorches pa colocar una antorcha de marcáu del inventariu ensin desgastar REDIA. Llabrar, tosquilar, cortar col hachu y talar árboles consumen durabilidá.
+<np>
+Martiellu pa machacar mineral
+Ferramienta manual de machacáu
+<&crushing_hammer>El Martiellu pa machacar mineral ye una ferramienta manual de procesamientu pa trabayos iniciales con fierro y oru.<br>
+<br>
+Usu: Combínalu con fierro en bruto, oru en bruto, mineral de fierro, mineral de fierro de pizarra fonda, mineral d'oru o mineral d'oru de pizarra fonda pa producir polvu de fierro o d'oru d'Immersive Engineering. El martiellu pierde durabilidá y vuelve a la cuadrícula hasta que rompe.<br>
+<br>
+Tamién se gasta al picar y pue facer retroceder oxetivos nel combate cercanu.
+<np>
+Rastreador
+Marcador de posición guardada
+<&tracker>El Rastreador guarda una posición de bloque nel mesmu oxetu.<br>
+<br>
+Usu: Calca nun bloque pa guardar dimensión y coordenaes. La descripción amuesa la posición. Úsalu agacháu pa borrar l'oxetivu.<br>
+<br>
+Úsalu pa marcar máquines, bifurcaciones, controles remotos o obres ensin terminar antes de volver con ferramientes y materiales.
+<np>
+Carbón d’Ariadna
+Marcador de rutes de mina
+<&ariadne_coal>El carbón d’Ariadna coloca rápidamente marques de fleches prietes nes cares firmes de les mines. Úsalu nuna cara sólida pa marcar el siguiente xiru, la salida o una ramificación; la marca almite ocho direiciones na cara onde faigas clic, incluyíes les diagonales.<br>
+<br>
+El carbón d’Ariadna ye una ferramienta de marcáu reutilizable de 100 usos. Cada marca colocada consume un puntu de durabilidá. Refuga les cares non compatibles en vez de desgastar l’oxetu.
+<np>
+Paquete d'estimulante automáticu
+Inyector d'emerxencia
+<&stimpack>El Paquete d'estimulante automáticu ye un oxetu de recuperación pa mantenimientu peligrosu.<br>
+<br>
+Usu: Úsalu manualmente pa curar, ganar protección breve y un impulsu curtiu de movimientu. Nel inventariu tamién pue activase solo con salú baxa, y dempués recarga.<br>
+<br>
+Ten ún disponible antes de probar altures, cableáu espuestu o mines hostiles.
+<np>
+Sacu de dormir
+Equipu portátil de descansu
+<&sleeping_bag>El Sacu de dormir ye un equipu resistente pa trabayu de campu lloñe d'una cama.<br>
+<br>
+Usu: Úsalu de nueche nel Supramundu pa descansar hasta la mañana. Nun afita nin mueve'l puntu de reaparición.<br>
+<br>
+Refuga'l día, entornos inseguros con monstruos cerca y dimensiones non aptes. Cada descansu correutu gástalu.
+<np>
+Caxa de materiales
+Suministros de construcción
+<&material_box>La Caxa de materiales lleva una gran reserva d'un únicu material de construcción normal, ensin modificar y apilable.<br>
+<br>
+Usu: Ten la caxa na mano principal y una pila del material na secundaria pa cargalu. Usa la caxa cola secundaria balera pa sacar una pila.<br>
+<br>
+Guarda hasta 512 oxetos, solo un tipu cada vegada, y refuga caxes anidiaes, equipu non apilable y piles modificaes, nomaes o con datos; la descripción amuesa'l conteníu.
+<np>
+Cápsula d'aire de bucéu
+Reserva d'aire d'emerxencia
+<&diving_capsule>La Cápsula d'aire de bucéu ye un oxetu d'emerxencia pa trabayos baxo l'agua.<br>
+<br>
+Usu: Úsala manualmente pa recuperar aire. Si la lleves nel inventariu tamién pue activase sola cuando casi nun queda aire, y dempués entra en recarga.<br>
+<br>
+Llévala a mines inundaes, tuberíes somorguiaes y arreglos de sales de bombes.
+<np>
+Prensa de Barres Muslee
+Prensa de comida
+<&musli_bar_press>La Prensa de Barres Muslee convierte alimentos comunes en raciones de campu compactes.<br>
+<br>
+Usu: Lleva pan, una mazana y semientes de trigu, sandía, calabaza, remolacha o cáñamu industrial, y usa la prensa. Un prensáu correutu consume una de cada ingrediente, comprueba l'espaciu, crea cuatro Barres Muslee Melange y gasta la prensa.<br>
+<br>
+Si falta un ingrediente o nun hai sitiu, nun se consume nada.
+<np>
+Barra enerxética Muslee Melange
+Aperitivu rápidu de taller
+<&musli_bar>La Barra Muslee Melange ye un alimentu compactu fechu con pan, semientes y fruta.<br>
+<br>
+Usu: Cómela como comida de campu al instalar controles, tuberíes, plataformes o tramos llargos de sala de máquines.
+<np>
+Estruyador mental
+Condensador d’esperiencia
+<&charged_lapis_squeezer>L’estruyador mental convierte una unidá de llapislázuli y un nivel d’esperiencia del to inventariu en llapislázuli cargáu.<br>
+<br>
+Cada conversión llograda fai dañu, provoca agotamientu alimentariu y ciega durante un intre al usuariu. Nun funciona ensin llapislázuli, ensin XP o cuando’l usuariu ta demasiáu cerca de morrer.
+<np>
+Llapislázuli cargáu
+Esperiencia almacenada
+<&charged_lapis>El llapislázuli cargáu almacena un nivel d’esperiencia. Consúmilu pa recuperar el nivel, eliminar los efeutos activos y restablecer una pequeña cantidá de salú.<br>
+<br>
+Ellabora primero un estruyador mental; el llapislázuli cargáu produzse usando esa ferramienta cuando se dispón de llapislázuli y XP.
+<np>
+Granalla grueso de fierro
+Material pa ferramientes d’inxenieru usáu nel conxuntu reconstruyíu de recetes.
+<&iron_grit>Pue fundise pa obtener llingotes de<br>fierro, pero nun val pa procesar<br>materiales con téuniques avanzaes.
+<np>
+Granalla grueso d’oru
+Material pa ferramientes d’inxenieru usáu nel conxuntu reconstruyíu de recetes.
+<&gold_grit>Pue fundise pa obtener llingotes<br>d’oru, pero nun val pa procesar<br>materiales con téuniques avanzaes.

@@ -1,0 +1,127 @@
+Passageways
+Walkways and Supports
+Steel poles, treated posts, grating, walkways, railings, ladders, doors, windows and hatches make compact paths of service through the manufactory.<br>
+<br>
+Steel passageway fittings require steel plates. Craft or set a Metal Crafts Table, put in an Immersive Engineering hammer, then hammer steel ingots into plates for poles, walkways, windows, doors, railings and other steel adornments.<br>
+<br>
+Set them where engines require paths for service, raised ways, shafts for upkeep or better-guarded edges.
+<np>
+Thick Steel Pole
+Fitting for a Structural Frame
+<&thick_steel_pole>The Straight Thick Steel Pole gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Head of a Thick Pole
+Fitting for a Structural Frame
+<&thick_steel_pole_head>The Head/Foot for a Straight Thick Steel Pole gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Thin Steel Pole
+Fitting for a Structural Frame
+<&thin_steel_pole>The Straight Thin Steel Pole gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Head of a Thin Pole
+Fitting for a Structural Frame
+<&thin_steel_pole_head>The Head/Foot for a Straight Thin Steel Pole gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Pole of Treated Wood
+Fitting for a Structural Frame
+<&treated_wood_pole>The Straight Pole of Treated Wood gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Head of a Treated Pole
+Fitting for a Structural Frame
+<&treated_wood_pole_head>The Head/Foot for a Straight Treated-Wood Pole gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Support for a Treated Pole
+Fitting for a Structural Frame
+<&treated_wood_pole_support>The Support for a Straight Treated-Wood Pole gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Steel Double-T Support
+Fitting for a Structural Frame
+<&steel_double_t_support>This block gives visible framework to engine halls and passage frames.<br>
+<br>
+Use: Turn and set it to brace beams, poles and platform edges in plain sight.<br>
+<np>
+Steel Floor Grating
+Fitting for a Service Passage
+<&steel_floor_grating>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Steel Walkway
+Fitting for a Service Passage
+<&steel_catwalk>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Steel Walkway Stairs
+Fitting for a Service Passage
+<&steel_catwalk_stairs>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Raised Steel Walkway
+Fitting for a Service Passage
+<&steel_catwalk_ta>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Steel Railing
+Fitting for a Service Passage
+<&steel_railing>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Fence of Steel Mesh
+Fitting for a Service Passage
+<&steel_mesh_fence>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Gate for a Fence of Steel Mesh
+Fitting for a Service Passage
+<&steel_mesh_fence_gate>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Ladder with Metal Rungs
+Fitting for a Service Passage
+<&metal_rung_ladder>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Staggered Metal Steps
+Fitting for a Service Passage
+<&metal_rung_steps>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>
+<np>
+Window Framed in Steel
+Guarded View
+<&steel_framed_window>This block leaves thy view open whilst matching the manufactory’s strengthened construction.<br>
+<br>
+Use: Set it in a 1-block opening in a wall, where players ought to see engines through a guarded barrier.<br>
+<np>
+Sliding Door of Metal
+Manufactory Entrance
+<&metal_sliding_door>This block affords a stout entrance to service chambers, shafts, roofs and engine enclosures.<br>
+<br>
+Use: Fit it where thy building requires an opening that can govern entry for upkeep.<br>
+<np>
+Iron Hatch
+Manufactory Entrance
+<&iron_hatch>This block affords a stout entrance to service chambers, shafts, roofs and engine enclosures.<br>
+<br>
+Use: Fit it where thy building requires an opening that can govern entry for upkeep.<br>

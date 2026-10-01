@@ -1,0 +1,7 @@
+Grøn blinkende LED
+Signaltilbagemelding
+<&recipe>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.

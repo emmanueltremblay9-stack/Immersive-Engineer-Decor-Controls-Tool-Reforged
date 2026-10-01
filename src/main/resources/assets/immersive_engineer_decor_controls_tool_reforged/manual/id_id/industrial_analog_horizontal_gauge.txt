@@ -1,0 +1,7 @@
+Pengukur Voltmeter
+Pengukur sinyal
+<&recipe>Pengukur ruang kendali yang ringkas menampilkan kekuatan redstone sebagai pembacaan panel yang jelas.<br>
+<br>
+Penggunaan: pasang di tempat daya redstone di dekatnya dapat diperiksa sekilas.<br>
+<br>
+Catatan: membaca kekuatan redstone di dekatnya dari 0 hingga 15.

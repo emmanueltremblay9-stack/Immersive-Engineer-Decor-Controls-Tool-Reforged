@@ -1,0 +1,5 @@
+Ladă etichetată
+Etichetă de stoc editabilă
+<&recipe>Această ladă etichetată este concepută pentru sortarea clară în depozit. Plăcuța frontală poate fi editată ca un mic indicator de atelier.<br>
+<br>
+Utilizare: Fă clic dreapta pe plăcuța cu etichetă pentru a edita eticheta lăzii. Fă clic dreapta pe restul lăzii pentru a deschide spațiul de depozitare pentru accesorii, piese și provizii de întreținere.<br>

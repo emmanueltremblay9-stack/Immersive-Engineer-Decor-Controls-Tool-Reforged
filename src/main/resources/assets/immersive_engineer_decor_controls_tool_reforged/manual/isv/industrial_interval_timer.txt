@@ -1,0 +1,7 @@
+Intervalny časovnik
+Časovany impuls
+<&recipe>Kompaktny časovny prěključatelj davaje zaplanovany redstounovy impuls.<br>
+<br>
+Upotrěbjenje: Upotrěbi go tam, kde maly mehanizm potrěbuje periodično ili odloženo upravljanje.<br>
+<br>
+Primětky: Upotrěbjaje zaplanovane redstounove impulsy.

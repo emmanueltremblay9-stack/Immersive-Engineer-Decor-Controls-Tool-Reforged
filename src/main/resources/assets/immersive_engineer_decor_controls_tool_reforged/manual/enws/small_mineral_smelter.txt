@@ -1,0 +1,5 @@
+Mineral-Melting Furnace
+Compact Processing Engine
+<&recipe>The Mineral-Melting Furnace works minerals at great heat whilst taking little room in thy workshop.<br>
+<br>
+Use: Feed it mineral blocks and power for melting at great heat.<br>

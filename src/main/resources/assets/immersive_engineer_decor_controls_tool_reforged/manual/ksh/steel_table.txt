@@ -1,0 +1,5 @@
+Stahltisch
+Werkstattmöbel
+<&recipe>Heh dä Block es e zweckmäßich Werkstattmöbel för Arbeitsrüüm un Wartungsecke.<br>
+<br>
+Bruuch: Stell en nevve Werkbänk, Keße un kleine Maschine.<br>

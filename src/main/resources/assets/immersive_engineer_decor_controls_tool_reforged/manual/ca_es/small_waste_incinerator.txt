@@ -1,0 +1,5 @@
+Incineradora de residus
+Unitat compacta de processament
+<&recipe>La incineradora de residus destrueix objectes no desitjats en un espai reduït de taller.<br>
+<br>
+Ús: introdueix a la cua només objectes que no vulguis conservar.<br>

@@ -1,0 +1,5 @@
+Płyta z zabrudzonego klinkieru
+Cegły przyciemnione sadzą
+<&recipe>Płyta z zabrudzonych cegieł klinkierowych nadaje halom pieców, podstawom kominów i ścianom technicznym wygląd ceglanego muru przyciemnionego sadzą.<br>
+<br>
+Użycie: Buduj z niego ściany, obramowania i osłony gorących stref wokół pieców i kotłów.<br>

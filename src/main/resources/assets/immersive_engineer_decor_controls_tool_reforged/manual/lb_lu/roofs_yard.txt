@@ -1,0 +1,101 @@
+Diech an Haff
+Fabrickbaudeeler fir dobaussen
+Daachbléck, Haffkies an al Industrieholzdeeler hëllefen, Schäpp dobaussen, Aarbechtshäff, Luedzonen a verwittert Fabrickskante fäerdeg ze maachen.<br>
+<br>
+Kombinéier dës Stécker mat Mauerwierk an Zouganksweeër, fir datt Industriegebaier dobaussen och aus der Distanz kloer erkennbar bleiwen.
+<np>
+Däischtert Schëndeldaach
+Verwitterte Daachbaudeel
+<&dark_shingle_roof>Dëse Block mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Schnéifank fir den Daach
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_metallized>De Schnéifank fir dat däischtert Schëndeldaach mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Däischtert Schëndeldaach
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_skylight>D'Daachfënster fir dat däischtert Schëndeldaach mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Daachkamäinstamm
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_chimneytrunk>De Kamäinstamm fir dat däischtert Schëndeldaach mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Daachdrottleedung
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_wireconduit>D'Drottleedung fir dat däischtert Schëndeldaach mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Däischtert Schëndeldaach
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_chimney>De Kamäin fir dat däischtert Schëndeldaach mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Block vum däischtere Schëndeldaach
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_block>Dëse Block mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Plack vum däischtere Schëndeldaach
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_slab>Dëse Block mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Plack vum däischtere Schëndeldaach
+Verwitterte Daachbaudeel
+<&dark_shingle_roof_slabslice>Déi dënn Schicht vum däischtere Schëndeldaach mécht däischter, praktesch Daachforme fir Atelieren an Industrieschäpp.<br>
+<br>
+Benotzung: Kombinéier d'Stécker fir glafwierdeg Daachprofiller ze bauen.<br>
+<np>
+Verdicht Kiesäerd
+Buedembelag fir Aarbechtsplazen
+<&dense_grit_dirt_block>Dëse Block gëtt Aarbechtsberäicher dobaussen eng verdicht, zertrëppelt Uewerfläch.<br>
+<br>
+Benotzung: Lee en ëm Luededieren, Tanken dobaussen a Maschinnenhäff.<br>
+<np>
+Verdichte Kiessand
+Buedembelag fir Aarbechtsplazen
+<&dense_grit_sand_block>Dëse Block gëtt Aarbechtsberäicher dobaussen eng verdicht, zertrëppelt Uewerfläch.<br>
+<br>
+Benotzung: Lee en ëm Luededieren, Tanken dobaussen a Maschinnenhäff.<br>
+<np>
+Al Holzbrieder
+Aalt Ateliersholz
+<&old_industrial_wood_planks>Déi al Industrieholzbrieder bréngen aalt Ateliersholz fir Biedem, Trëtt, Dieren a waarm bannenzeg Bordüren.<br>
+<br>
+Benotzung: Benotz en fir al Ateliersbiedem, Trapen, Dieren a Bordüren.<br>
+<np>
+Plack aus alem Industrieholz
+Aalt Ateliersholz
+<&old_industrial_wood_slab>Dëse Block bréngt aalt Ateliersholz fir Biedem, Trëtt, Dieren a waarm bannenzeg Bordüren.<br>
+<br>
+Benotzung: Benotz en fir al Ateliersbiedem, Trapen, Dieren a Bordüren.<br>
+<np>
+Al Holztrap
+Aalt Ateliersholz
+<&old_industrial_wood_stairs>D'Trap aus alem Industrieholz bréngt aalt Ateliersholz fir Biedem, Trëtt, Dieren a waarm bannenzeg Bordüren.<br>
+<br>
+Benotzung: Benotz en fir al Ateliersbiedem, Trapen, Dieren a Bordüren.<br>
+<np>
+Dënn Schicht aus alem Holz
+Aalt Ateliersholz
+<&old_industrial_wood_slabslice>Déi dënn Schicht aus alem Industrieholz bréngt aalt Ateliersholz fir Biedem, Trëtt, Dieren a waarm bannenzeg Bordüren.<br>
+<br>
+Benotzung: Benotz en fir al Ateliersbiedem, Trapen, Dieren a Bordüren.<br>
+<np>
+Al Industrieholzdier
+Aalt Ateliersholz
+<&old_industrial_wood_door>Dëse Block bréngt aalt Ateliersholz fir Biedem, Trëtt, Dieren a waarm bannenzeg Bordüren.<br>
+<br>
+Benotzung: Benotz en fir al Ateliersbiedem, Trapen, Dieren a Bordüren.<br>

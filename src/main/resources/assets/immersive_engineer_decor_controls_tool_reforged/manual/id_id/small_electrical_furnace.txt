@@ -1,0 +1,5 @@
+Tungku Listrik
+Unit pemrosesan ringkas
+<&recipe>Tungku listrik menangani peleburan ringkas bertenaga FE dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: sediakan FE dan masukan peleburan yang sesuai.<br>

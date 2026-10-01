@@ -1,0 +1,5 @@
+Analoges Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitige
+<&recipe>S'analoge Flüssigkeitsventil isch es kompakts Leitigsteil für chliini Tanks, Rohrstrecke, Sammelstelle und Redstone-gstüürte Flüssigkeitsfluss.<br>
+<br>
+Verwendig: Richt s'Ventil i die gwünschti Fliessrichtig uus.<br>

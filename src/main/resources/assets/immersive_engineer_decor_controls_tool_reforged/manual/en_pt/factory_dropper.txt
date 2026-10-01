@@ -1,0 +1,5 @@
+Factory broken cannon
+Gear fer the workshop deck
+<&recipe>This block sends stowed loot out through the face ye aim.<br>
+<br>
+Orders: Aim the front at the droppin' point, load the slots aboard, then use her screen to set force, angle, delay, filter rules and redstone orders.<br>

@@ -1,0 +1,7 @@
+Qarşılaşdırıcı açarı
+Bərkidildiyi blokun siqnalı
+<&recipe>Yığcam sensor açarı bərkidildiyi bloku oxuyub nəticəni sadə panel çıxışına çevirir.<br>
+<br>
+İstifadə: İnventarlara, çənlərə və ya qızıl daş avadanlığına quraşdırın. Bərkidildiyi blok qarşılaşdırıcı, konteyner və ya qızıl daş çıxışı bildirdikdə açar tam güclü qızıl daş siqnalı verir.<br>
+<br>
+Qeydlər: Saxlama səviyyələrini və ya gizli naqilləri aydın açıq/qapalı idarəetmə xətlərinə çevirmək üçün istifadə edin.

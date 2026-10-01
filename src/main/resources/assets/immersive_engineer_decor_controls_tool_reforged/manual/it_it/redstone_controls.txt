@@ -1,0 +1,789 @@
+Comandi redstone
+Strumenti di misura e dispositivi di segnalazione
+I comandi rendono leggibile la redstone nascosta tramite pannelli industriali, sensori, indicatori, interruttori, allarmi e dispositivi di segnalazione collegati.<br>
+<br>
+Consulta queste pagine per costruire postazioni operatore, quadri di segnalazione, circuiti di sicurezza e comandi a distanza.
+<np>
+Bersaglio per frecce
+Impulso momentaneo
+<&arrow_target>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Sensore per porte
+Controllo con redstone
+<&door_sensor_switch>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante per ascensori
+Controllo con redstone
+<&elevator_button>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Pulsante in vetro
+Controllo con redstone
+<&glass_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante in vetro
+Controllo con redstone
+<&glass_small_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante tattile in vetro
+Controllo con redstone
+<&glass_touch_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante per macchinari
+Controllo con redstone
+<&industrial_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante
+Controllo con redstone
+<&industrial_double_pole_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante protetto per macchinari
+Controllo con redstone
+<&industrial_fenced_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante a colpi
+Controllo con redstone
+<&industrial_knock_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Vecchio pulsante ornamentale
+Controllo con redstone
+<&oldfancy_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Vecchio pulsante ornamentale
+Controllo con redstone
+<&oldfancy_small_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Vecchio pulsante ornamentale a catenella
+Impulso momentaneo
+<&oldfancy_spring_reset_chain>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante rustico
+Controllo con redstone
+<&rustic_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante rustico a chiodo
+Controllo con redstone
+<&rustic_nail_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Piccolo pulsante rustico
+Controllo con redstone
+<&rustic_small_button>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pulsante rustico a catenella
+Impulso momentaneo
+<&rustic_spring_reset_chain>Un interruttore momentaneo emette un impulso netto di redstone alla massima potenza.<br>
+<br>
+Uso: impiegalo per avviare macchinari, sbloccare porte, azionare allarmi o circuiti a impulso singolo.<br>
+<br>
+Note: si ripristina al termine dell’impulso programmato.
+<np>
+Pedana a contatto in vetro
+Impulso a pressione
+<&glass_contact_mat>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Contatto in vetro per porte
+Impulso a pressione
+<&glass_door_contact_mat>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Tappetino a contatto
+Impulso a pressione
+<&industrial_contact_mat>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Tappetino a contatto per porte
+Impulso a pressione
+<&industrial_door_contact_mat>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Rilevatore di caduta
+Rilevamento del segnale
+<&industrial_fallthrough_detector>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Pulsante a pedale
+Controllo con redstone
+<&industrial_foot_button>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Botola industriale a urto
+Impulso a pressione
+<&industrial_high_sensitive_trapdoor>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Tappetino a contatto sensibile agli urti
+Impulso a pressione
+<&industrial_shock_sensitive_contact_mat>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Botola a urto
+Impulso a pressione
+<&industrial_shock_sensitive_trapdoor>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Pianta energetica rossa
+Impulso a pressione
+<&red_power_plant>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Pedana a pressione rustica
+Impulso a pressione
+<&rustic_contact_plate>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Pedana rustica per porte
+Impulso a pressione
+<&rustic_door_contact_plate>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Rilevatore rustico di caduta
+Rilevamento del segnale
+<&rustic_fallthrough_detector>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Botola rustica a urto
+Impulso a pressione
+<&rustic_high_sensitive_trapdoor>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Pedana rustica a urto
+Impulso a pressione
+<&rustic_shock_sensitive_plate>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Botola rustica a urto
+Impulso a pressione
+<&rustic_shock_sensitive_trapdoor>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Pianta energetica gialla
+Impulso a pressione
+<&yellow_power_plant>Un interruttore a contatto invia un breve segnale quando si muove una pedana o una botola.<br>
+<br>
+Uso: posalo dove le entità attraversano un corridoio di servizio, un caricatore o un percorso sorvegliato.<br>
+<br>
+Note: emette un breve impulso dopo il contatto con un’entità.
+<np>
+Temporizzatore giornaliero in vetro
+Segnale diurno
+<&glass_day_timer>Un temporizzatore segue la parte diurna del ciclo del mondo.<br>
+<br>
+Uso: impiegalo per lampade da cortile, imposte e comandi industriali attivi solo di giorno.<br>
+<br>
+Note: richiede una dimensione con luce del cielo.
+<np>
+Rilevatore di entità in vetro
+Rilevamento del segnale
+<&glass_entity_detector>Un rilevatore di entità osserva i movimenti vicini senza una pedana visibile sul pavimento.<br>
+<br>
+Uso: collegalo a porte, lampade, allarmi o interblocchi dei macchinari.<br>
+<br>
+Note: esamina una piccola area attorno al blocco.
+<np>
+Segnale a intervalli in vetro
+Impulso temporizzato
+<&glass_interval_timer>Un temporizzatore compatto fornisce un impulso programmato di redstone.<br>
+<br>
+Uso: impiegalo dove un piccolo meccanismo richiede un controllo periodico o ritardato.<br>
+<br>
+Note: usa impulsi programmati di redstone.
+<np>
+Rilevatore lineare in vetro
+Rilevamento del segnale
+<&glass_linear_entity_detector>Un rilevatore di entità osserva i movimenti vicini senza una pedana visibile sul pavimento.<br>
+<br>
+Uso: collegalo a porte, lampade, allarmi o interblocchi dei macchinari.<br>
+<br>
+Note: esamina una piccola area attorno al blocco.
+<np>
+Rilevatore di blocchi
+Rilevamento del segnale
+<&industrial_block_detector>Un rilevatore di blocchi controlla se lo spazio davanti a esso è occupato.<br>
+<br>
+Uso: puntalo verso la faccia del macchinario, la riserva o lo spazio sorvegliato da controllare.<br>
+<br>
+Note: si attiva quando il blocco davanti non è aria.
+<np>
+Temporizzatore giornaliero
+Segnale diurno
+<&industrial_day_timer>Un temporizzatore segue la parte diurna del ciclo del mondo.<br>
+<br>
+Uso: impiegalo per lampade da cortile, imposte e comandi industriali attivi solo di giorno.<br>
+<br>
+Note: richiede una dimensione con luce del cielo.
+<np>
+Rilevatore di entità
+Rilevamento del segnale
+<&industrial_entity_detector>Un rilevatore di entità osserva i movimenti vicini senza una pedana visibile sul pavimento.<br>
+<br>
+Uso: collegalo a porte, lampade, allarmi o interblocchi dei macchinari.<br>
+<br>
+Note: esamina una piccola area attorno al blocco.
+<np>
+Temporizzatore a intervalli
+Impulso temporizzato
+<&industrial_interval_timer>Un temporizzatore compatto fornisce un impulso programmato di redstone.<br>
+<br>
+Uso: impiegalo dove un piccolo meccanismo richiede un controllo periodico o ritardato.<br>
+<br>
+Note: usa impulsi programmati di redstone.
+<np>
+Sensore di luce
+Rilevamento del segnale
+<&industrial_light_sensor>Un sensore di luce trasforma la luminosità locale in un comando redstone.<br>
+<br>
+Uso: impiegalo per lampade automatiche, imposte e circuiti di visibilità.<br>
+<br>
+Note: si attiva con luminosità grezza pari o superiore a 8.
+<np>
+Rilevatore di temporali
+Rilevamento del segnale
+<&industrial_lightning_sensor>Un sensore di temporali aziona avvisi durante i tuoni.<br>
+<br>
+Uso: posalo sotto il cielo aperto e collegalo a lampade o allarmi.<br>
+<br>
+Note: richiede un temporale e accesso al cielo.
+<np>
+Rilevatore lineare di entità
+Rilevamento del segnale
+<&industrial_linear_entity_detector>Un rilevatore di entità osserva i movimenti vicini senza una pedana visibile sul pavimento.<br>
+<br>
+Uso: collegalo a porte, lampade, allarmi o interblocchi dei macchinari.<br>
+<br>
+Note: esamina una piccola area attorno al blocco.
+<np>
+Sensore di pioggia
+Rilevamento del segnale
+<&industrial_rain_sensor>Un sensore meteorologico trasforma la pioggia nella propria posizione in redstone.<br>
+<br>
+Uso: montalo dove il blocco soprastante può ricevere pioggia.<br>
+<br>
+Note: controlla la pioggia sopra il sensore.
+<np>
+Interruttore bistabile in vetro
+Controllo con redstone
+<&glass_rotary_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Comando tattile bistabile in vetro
+Controllo con redstone
+<&glass_touch_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Vetro sensibile arancione
+Vetro di segnalazione
+<&orange_sensitiveglass>Un blocco di vetro reattivo alla redstone mantiene la visuale mostrando lo stato del segnale.<br>
+<br>
+Uso: usalo nelle finestre delle sale di controllo, nei pannelli luminosi e nelle vetrate protette della fabbrica.<br>
+<br>
+Note: cambia stato in base alla redstone vicina.
+<np>
+Vetro sensibile luminoso
+Vetro di segnalazione
+<&sensitive_glass_block>Un blocco di vetro reattivo alla redstone mantiene la visuale mostrando lo stato del segnale.<br>
+<br>
+Uso: usalo nelle finestre delle sale di controllo, nei pannelli luminosi e nelle vetrate protette della fabbrica.<br>
+<br>
+Note: cambia stato in base alla redstone vicina.
+<np>
+Vetro sensibile colorato
+Vetro di segnalazione
+<&stained_sensitiveglass>Un blocco di vetro reattivo alla redstone mantiene la visuale mostrando lo stato del segnale.<br>
+<br>
+Uso: usalo nelle finestre delle sale di controllo, nei pannelli luminosi e nelle vetrate protette della fabbrica.<br>
+<br>
+Note: cambia stato in base alla redstone vicina.
+<np>
+Indicatore a barra in vetro
+Misuratore di segnale
+<&glass_vertical_bar_gauge>Un indicatore compatto da sala di controllo mostra chiaramente la potenza di redstone sul pannello.<br>
+<br>
+Uso: montalo dove occorre controllare a colpo d’occhio la potenza di redstone vicina.<br>
+<br>
+Note: legge la potenza di redstone vicina da 0 a 15.
+<np>
+Indicatore analogico
+Misuratore di segnale
+<&industrial_analog_angular_gauge>Un indicatore compatto da sala di controllo mostra chiaramente la potenza di redstone sul pannello.<br>
+<br>
+Uso: montalo dove occorre controllare a colpo d’occhio la potenza di redstone vicina.<br>
+<br>
+Note: legge la potenza di redstone vicina da 0 a 15.
+<np>
+Voltmetro
+Misuratore di segnale
+<&industrial_analog_horizontal_gauge>Un indicatore compatto da sala di controllo mostra chiaramente la potenza di redstone sul pannello.<br>
+<br>
+Uso: montalo dove occorre controllare a colpo d’occhio la potenza di redstone vicina.<br>
+<br>
+Note: legge la potenza di redstone vicina da 0 a 15.
+<np>
+Indicatore digitale
+Potenza del segnale leggibile
+<&industrial_small_digital_gauge>Un indicatore compatto da sala di controllo mostra chiaramente la potenza di redstone sul pannello.<br>
+<br>
+Uso: montalo dove occorre controllare a colpo d’occhio la potenza di redstone vicina.<br>
+<br>
+Note: legge la potenza di redstone vicina da 0 a 15.
+<np>
+Indicatore a tubo di vetro
+Misuratore di segnale
+<&industrial_tube_gauge>Un indicatore compatto da sala di controllo mostra chiaramente la potenza di redstone sul pannello.<br>
+<br>
+Uso: montalo dove occorre controllare a colpo d’occhio la potenza di redstone vicina.<br>
+<br>
+Note: legge la potenza di redstone vicina da 0 a 15.
+<np>
+Indicatore a barra analogica
+Misuratore di segnale
+<&industrial_vertical_bar_gauge>Un indicatore compatto da sala di controllo mostra chiaramente la potenza di redstone sul pannello.<br>
+<br>
+Uso: montalo dove occorre controllare a colpo d’occhio la potenza di redstone vicina.<br>
+<br>
+Note: legge la potenza di redstone vicina da 0 a 15.
+<np>
+Lampada d’allarme
+Indicazione del segnale
+<&industrial_alarm_lamp>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+Sirena d’allarme
+Indicazione del segnale
+<&industrial_alarm_siren>La sirena d'allarme è un indicatore redstone montato su una faccia. Il suo stato alimentato segue il segnale del blocco al quale è fissata.<br>
+<br>
+Uso: fissala a una faccia solida e alimentala per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: la sirena ripete il suono ogni secondo finché il segnale collegato resta attivo.
+<np>
+LED lampeggiante
+Indicazione del segnale
+<&industrial_blinking_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED verde lampeggiante
+Indicazione del segnale
+<&industrial_green_blinking_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED verde
+Indicazione del segnale
+<&industrial_green_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED rosso
+Indicazione del segnale
+<&industrial_red_blinking_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED rosso
+Indicazione del segnale
+<&industrial_red_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED bianco lampeggiante
+Indicazione del segnale
+<&industrial_white_blinking_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED bianco
+Indicazione del segnale
+<&industrial_white_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED giallo lampeggiante
+Indicazione del segnale
+<&industrial_yellow_blinking_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+LED giallo
+Indicazione del segnale
+<&industrial_yellow_led>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+Semaforo rustico
+Indicazione del segnale
+<&rustic_semaphore>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.
+<np>
+Interruttore comparatore
+Segnale del blocco collegato
+<&industrial_comparator_switch>Un sensore compatto legge il blocco su cui è montato e trasforma il risultato in una semplice uscita da pannello.<br>
+<br>
+Uso: montalo su inventari, serbatoi o componenti redstone. Quando il blocco collegato segnala un’uscita da comparatore, contenitore o redstone, l’interruttore emette redstone alla massima potenza.<br>
+<br>
+Note: usalo per trasformare livelli di deposito o cablaggi nascosti in linee di controllo acceso/spento chiare.
+<np>
+Regolatore
+Segnale variabile
+<&industrial_dimmer>Un comando rotante regola la potenza di redstone da un pannello compatto.<br>
+<br>
+Uso: fai clic destro per aumentare l’uscita a passi; dopo la massima potenza torna a zero.<br>
+<br>
+Note: emette potenza da 0 a 15.
+<np>
+Pulsante d’arresto d’emergenza
+Controllo con redstone
+<&industrial_estop_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Blocco per tramogge
+Controllo con redstone
+<&industrial_hopper_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Interruttore a colpi
+Controllo con redstone
+<&industrial_knock_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Leva
+Controllo con redstone
+<&industrial_lever>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Interruttore a due pulsanti per macchinari
+Controllo con redstone
+<&industrial_machine_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Maniglia a tirare
+Controllo con redstone
+<&industrial_pull_handle>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Leva rotante
+Controllo con redstone
+<&industrial_rotary_lever>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Interruttore rotante per macchinari
+Controllo con redstone
+<&industrial_rotary_machine_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Leva a contatto
+Controllo con redstone
+<&industrial_small_lever>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Interruttore
+Controllo con redstone
+<&industrialswitch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Interruttore per luci
+Controllo con redstone
+<&light_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Interruttore a volantino
+Controllo con redstone
+<&valve_wheel_switch>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Ricevitore incassato a impulsi
+Comando collegato
+<&industrial_switchlink_cased_pulse_receiver>Un ricevitore incassato a impulsi offre ai pannelli remoti una breve attivazione redstone.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Fai clic destro sul ricevitore o attiva la perla collegata per emettere un breve impulso.<br>
+<br>
+Note: l’impulso si ripristina da solo al termine della durata programmata.
+<np>
+Ricevitore di collegamento incassato
+Comando collegato
+<&industrial_switchlink_cased_receiver>Un ricevitore di collegamento incassato offre ai pannelli remoti un bersaglio redstone robusto.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Fai clic destro direttamente sul ricevitore per commutarlo a mano.<br>
+<br>
+Note: la perla collegata commuta questo ricevitore quando viene usata da accovacciato.
+<np>
+Ricevitore a impulsi per collegamenti
+Comando collegato
+<&industrial_switchlink_pulse_receiver>Un ricevitore a impulsi per collegamenti offre ai pannelli remoti una breve attivazione redstone.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Fai clic destro sul ricevitore o attiva la perla collegata per emettere un breve impulso.<br>
+<br>
+Note: l’impulso si ripristina da solo al termine della durata programmata.
+<np>
+Relè a impulsi per collegamenti
+Comando collegato
+<&industrial_switchlink_pulse_relay>Un comando a forma di relè offre ai pannelli un punto d’interruzione locale compatto.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini. Usa i ricevitori quando serve l’attivazione con una perla collegata.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Ricevitore di collegamento tra interruttori
+Comando collegato
+<&industrial_switchlink_receiver>Un ricevitore collegato offre ai pannelli remoti un bersaglio redstone alla massima potenza.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Fai clic destro direttamente sul ricevitore per commutarlo a mano.<br>
+<br>
+Note: la perla collegata commuta questo ricevitore quando viene usata da accovacciato.
+<np>
+Ricevitore analogico per collegamenti
+Comando collegato
+<&industrial_switchlink_receiver_analog>Un ricevitore collegato offre ai pannelli di controllo un bersaglio remoto visibile.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Usala da accovacciato per attivare il ricevitore a distanza.<br>
+<br>
+Note: questo ricevitore emette redstone alla massima potenza quando viene attivato.
+<np>
+Relè per collegamenti tra interruttori
+Comando collegato
+<&industrial_switchlink_relay>Un comando a forma di relè offre ai pannelli un punto d’interruzione locale compatto.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini. Usa i ricevitori quando serve l’attivazione con una perla collegata.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Relè analogico per collegamenti
+Comando collegato
+<&industrial_switchlink_relay_analog>Un comando a forma di relè offre ai pannelli un punto d’interruzione locale compatto.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini. Usa i ricevitori quando serve l’attivazione con una perla collegata.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Perla di collegamento tra interruttori
+Comando collegato
+<&switchlink_pearl>Una perla collegata memorizza un ricevitore bersaglio per comandare la fabbrica a distanza.<br>
+<br>
+Uso: fai clic con una perla di ender su un ricevitore di collegamento per crearla. Usa la perla collegata da accovacciato per attivare il ricevitore memorizzato.<br>
+<br>
+Note: il bersaglio deve essere caricato, nella stessa dimensione ed entro la portata.
+<np>
+Vecchia leva ornamentale
+Controllo con redstone
+<&oldfancy_bistableswitch1>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Vecchia leva rotante ornamentale
+Controllo con redstone
+<&oldfancy_bistableswitch2>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Leva rotante rustica
+Controllo con redstone
+<&rustic_angular_lever>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Leva rustica
+Controllo con redstone
+<&rustic_lever>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Leva rustica a chiodo
+Controllo con redstone
+<&rustic_nail_lever>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.
+<np>
+Leva rustica a doppio cardine
+Controllo con redstone
+<&rustic_two_hinge_lever>Un comando compatto offre alle fabbriche un punto d’interruzione redstone chiaramente riconoscibile.<br>
+<br>
+Uso: fai clic destro per attivare o disattivare l’uscita alla massima potenza per i circuiti vicini.<br>
+<br>
+Note: emette redstone alla massima potenza mentre è acceso.

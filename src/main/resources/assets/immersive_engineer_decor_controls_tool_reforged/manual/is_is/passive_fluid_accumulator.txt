@@ -1,0 +1,5 @@
+Óknúinn vökvabúnaður
+Vökvalagnabúnaður
+<&recipe>Óknúni vökvasafnarinn er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Settu hann upp við hentugar vatnsuppsprettur og hafðu pláss til að fjarlægja vökva.<br>

@@ -1,0 +1,7 @@
+Sadeanturi
+Signaalin tunnistus
+<&recipe>Sääanturi muuttaa sijaintinsa sateen redstoneksi.<br>
+<br>
+Käyttö: Asenna paikkaan, jonka yläpuoliseen kuutioon voi sataa.<br>
+<br>
+Huomaa: Tarkistaa sateen anturin yläpuolelta.

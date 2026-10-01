@@ -1,0 +1,7 @@
+Ariadne-kull
+Rutemerking i gruver
+<&recipe>Ariadne-kull gir rask rutemerking i sjakter, forgrenede gruver og midlertidige underjordiske arbeidssteder.<br>
+<br>
+Bruk: klikk på en stødig blokkflate for å tegne en svart pil der. Merket bruker klikkpunktet på flaten og støtter åtte retninger, også diagonalt. Slik merker du svinger, utganger, blindveier og forsyningsruter uten separate veiviserskilt.<br>
+<br>
+Ariadne-kull er et gjenbrukbart merkingsverktøy med 100 bruk. Hvert vellykket merke koster ett holdbarhetspoeng. Uegnede flater avvises uten at verktøyet slites.

@@ -1,0 +1,7 @@
+Prasa do batonów musli
+Prasa do żywności
+<&recipe>Prasa Muslee zmienia zwykłą żywność w kompaktowe racje terenowe.<br>
+<br>
+Miej chleb, jabłko i nasiona pszenicy, arbuza, dyni, buraka lub konopi przemysłowych i użyj prasy. Zużywa po jednym składniku, sprawdza miejsce, tworzy cztery batony i uszkadza prasę.<br>
+<br>
+Jeśli brakuje składnika lub miejsca, nic nie zostaje zużyte.

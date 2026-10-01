@@ -1,0 +1,7 @@
+Suidse inneil-choimeis
+Comharra ceangailte
+<&recipe>Leughaidh suidse-mothachaidh dhlùth am bloca air a bheil i suidhichte agus tionndaidhidh i an leughadh sin gu às-chur panail sìmplidh.<br>
+<br>
+Cleachdadh: cuir air clàran-stuthan, tancaichean no uidheam redstone i. Nuair a dh'aithriseas am bloca ris a bheil i ceangailte às-chur inneil-choimeis, soithich no redstone, bheir an suidse redstone làn-neart.<br>
+<br>
+Nòtaichean: cleachd i gus ìrean stòraidh no uèirleadh falaichte a thionndadh gu loidhnichean-smachd soilleir air/dheth.

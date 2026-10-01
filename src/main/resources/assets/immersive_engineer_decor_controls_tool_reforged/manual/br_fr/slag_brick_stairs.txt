@@ -1,0 +1,5 @@
+Diri brikennoù skori
+Masonerezh uzin stank
+<&recipe>Ar bloc'h-mañ a ouzhpenn masonerezh gris-gell stank evit diazezoù, mogerioù skor hag atalieroù koshoc'h.<br>
+<br>
+Implij: Implijit anezhañ evit diazezoù kozh, mogerioù skor ha leurioù uzin lous.<br>

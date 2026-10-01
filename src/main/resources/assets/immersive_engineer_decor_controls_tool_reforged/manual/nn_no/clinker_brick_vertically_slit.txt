@@ -1,0 +1,5 @@
+Klinkerstein med spalter
+Sotmørkt murverk
+<&recipe>Klinkersteinen med loddrette spalter gjev sotmørkt murverk til omnshallar, pipefundament og servicevegger.<br>
+<br>
+Bruk: lag vegger, kantar eller eit varmesoneskal kring omnar og kjelar.<br>

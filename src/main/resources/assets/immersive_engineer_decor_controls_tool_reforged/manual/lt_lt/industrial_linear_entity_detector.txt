@@ -1,0 +1,7 @@
+Tiesinis esybių jutiklis
+Signalo jutimas
+<&recipe>Esybių jutiklis stebi judėjimą netoliese be matomos grindų plokštės.<br>
+<br>
+Naudojimas: prijunk prie durų, lempų, pavojaus signalų arba mašinų saugos blokavimo grandinių.<br>
+<br>
+Pastabos: skenuoja nedidelę sritį aplink bloką.

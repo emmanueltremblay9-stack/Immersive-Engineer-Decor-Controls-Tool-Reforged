@@ -1,0 +1,127 @@
+Piekļuves ceļi
+Laipas un balsti
+Tērauda stabi, apstrādāta koka stabi, režģi, apkopes laipas, margas, kāpnes, durvis, logi un lūkas veido kompaktus apkopes ceļus rūpnīcas iekšienē.<br>
+<br>
+Tērauda piekļuves ceļu detaļām vajag tērauda plāksnes. Izgatavo vai novieto metālapstrādes galdu, ievieto Immersive Engineering āmuru un izkal tērauda stieņus plāksnēs stabiem, apkopes laipām, logiem, durvīm, margām un citām tērauda dekorācijām.<br>
+<br>
+Novieto tās vietās, kur mašīnām vajag apkopes piekļuvi, paaugstinātus ceļus, apkopes šahtas vai drošākas malas.
+<np>
+Resns tērauda stabs
+Konstrukcijas karkasa daļa
+<&thick_steel_pole>Taisns resns tērauda stabs piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Resna staba augša
+Konstrukcijas karkasa daļa
+<&thick_steel_pole_head>Taisna resna tērauda staba augša/pamatne piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Tievs tērauda stabs
+Konstrukcijas karkasa daļa
+<&thin_steel_pole>Taisns tievs tērauda stabs piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Tieva staba augša
+Konstrukcijas karkasa daļa
+<&thin_steel_pole_head>Taisna tieva tērauda staba augša/pamatne piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Apstrādāta koka stabs
+Konstrukcijas karkasa daļa
+<&treated_wood_pole>Taisns apstrādāta koka stabs piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Apstrādāta koka staba augša
+Konstrukcijas karkasa daļa
+<&treated_wood_pole_head>Taisna apstrādāta koka staba augša/pamatne piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Apstrādāta koka staba balsts
+Konstrukcijas karkasa daļa
+<&treated_wood_pole_support>Taisna apstrādāta koka staba balsts piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Tērauda dubultā T balsts
+Konstrukcijas karkasa daļa
+<&steel_double_t_support>Šis bloks piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>
+<np>
+Tērauda grīdas režģis
+Apkopes piekļuves detaļa
+<&steel_floor_grating>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Tērauda apkopes laipa
+Apkopes piekļuves detaļa
+<&steel_catwalk>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Tērauda apkopes laipas kāpnes
+Apkopes piekļuves detaļa
+<&steel_catwalk_stairs>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Paaugstināta tērauda apkopes laipa
+Apkopes piekļuves detaļa
+<&steel_catwalk_ta>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Tērauda margas
+Apkopes piekļuves detaļa
+<&steel_railing>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Tērauda sieta žogs
+Apkopes piekļuves detaļa
+<&steel_mesh_fence>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Tērauda sieta žoga vārti
+Apkopes piekļuves detaļa
+<&steel_mesh_fence_gate>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Metāla šķērsspraišļu kāpnes
+Apkopes piekļuves detaļa
+<&metal_rung_ladder>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Pamīši izvietoti metāla pakāpieni
+Apkopes piekļuves detaļa
+<&metal_rung_steps>Šis bloks veido skaidri saskatāmus apkopes ceļus ap mašīnām.<br>
+<br>
+Lietošana: novieto apkopes piekļuvei ap mašīnām, augšējos stāvos un apkopes šahtās.<br>
+<np>
+Logs tērauda rāmī
+Aizsargāta redzamības līnija
+<&steel_framed_window>Šis bloks saglabā redzamību un vienlaikus iederas pastiprinātā rūpnīcas konstrukcijā.<br>
+<br>
+Lietošana: ievieto viena bloka atverē sienā, kur spēlētājiem jāredz mašīnas caur aizsargbarjeru.<br>
+<np>
+Metāla bīdāmās durvis
+Rūpnieciskas piekļuves vieta
+<&metal_sliding_door>Šis bloks nodrošina izturīgu piekļuves vietu apkopes telpām, šahtām, jumtiem un mašīnu korpusiem.<br>
+<br>
+Lietošana: uzstādi tur, kur būvē vajadzīga kontrolējama apkopes atvere.<br>
+<np>
+Dzelzs apkopes lūka
+Rūpnieciskas piekļuves vieta
+<&iron_hatch>Šis bloks nodrošina izturīgu piekļuves vietu apkopes telpām, šahtām, jumtiem un mašīnu korpusiem.<br>
+<br>
+Lietošana: uzstādi tur, kur būvē vajadzīga kontrolējama apkopes atvere.<br>

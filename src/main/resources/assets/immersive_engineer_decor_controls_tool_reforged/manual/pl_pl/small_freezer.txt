@@ -1,0 +1,5 @@
+Zamrażarka wody
+Kompaktowa jednostka przetwórcza
+<&recipe>Zamrażarka wody wykonuje niewielkie zadania chłodzenia w instalacjach płynowych zasilanych energią.<br>
+<br>
+Użycie: Dostarcz wodę i energię, aby etapami wytwarzać lód.<br>

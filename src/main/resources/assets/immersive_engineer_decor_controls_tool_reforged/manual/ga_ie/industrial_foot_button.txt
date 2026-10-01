@@ -1,0 +1,7 @@
+Cnaipe Coise
+Rialú Redstone
+<&recipe>Seolann lasc teagmhála comhartha gearr ó ghluaiseacht ar urlár nó ar chomhla.<br>
+<br>
+Úsáid: cuir é in áit a dtéann eintitis trí phasáiste seirbhíse, lódálaí nó bealach faoi gharda.<br>
+<br>
+Nótaí: tugann sé bíog ghearr tar éis teagmháil le heintiteas.

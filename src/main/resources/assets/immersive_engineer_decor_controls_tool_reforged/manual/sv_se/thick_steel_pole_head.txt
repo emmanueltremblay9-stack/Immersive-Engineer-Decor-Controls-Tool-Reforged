@@ -1,0 +1,5 @@
+Ändstycke för tjock stolpe
+Del till bärande stomme
+<&recipe>Ändstycket för en rak tjock stålstolpe används som topp eller fot och ger maskinhallar och åtkomstkonstruktioner en synlig stomme.<br>
+<br>
+Användning: Vrid och placera delen som synlig förstärkning för balkar, stolpar och plattformskanter.<br>

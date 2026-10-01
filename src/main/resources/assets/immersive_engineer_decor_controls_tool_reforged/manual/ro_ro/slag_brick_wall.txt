@@ -1,0 +1,5 @@
+Zid de cărămizi de zgură
+Zidărie industrială densă
+<&recipe>Acest bloc adaugă zidărie densă, cenușiu-maronie, pentru fundații, ziduri de sprijin și ateliere vechi.<br>
+<br>
+Utilizare: Folosește-l pentru fundații vechi, ziduri de sprijin și podele murdare de uzină.<br>

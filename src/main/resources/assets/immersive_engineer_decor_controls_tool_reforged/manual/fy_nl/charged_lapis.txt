@@ -1,0 +1,7 @@
+Opladen lapis lazuli
+Bewarre ûnderfining
+<&recipe>Opladen lapis lazuli bewarret ien ûnderfiningsnivo dat mei de geastparse makke is.<br>
+<br>
+Gebrûk: Ferbrûk it om ien nivo werom te krijen, aktive effekten fuort te heljen en in bytsje sûnens te herstellen.<br>
+<br>
+It reseptfak lit de geastparse sjen, om't opladen lapis lazuli ûntstiet troch dat ark te brûken as der lapis lazuli en XP beskikber binne.

@@ -1,0 +1,5 @@
+Sliding Door of Metal
+Manufactory Entrance
+<&recipe>This block affords a stout entrance to service chambers, shafts, roofs and engine enclosures.<br>
+<br>
+Use: Fit it where thy building requires an opening that can govern entry for upkeep.<br>

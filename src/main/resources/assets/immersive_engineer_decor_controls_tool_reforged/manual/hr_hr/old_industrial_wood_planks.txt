@@ -1,0 +1,5 @@
+Stare drvene daske
+Staro radioničko drvo
+<&recipe>Stare industrijske drvene daske dodaju staro radioničko drvo za podove, stube, vrata i tople unutarnje obrube.<br>
+<br>
+Uporaba: koristi ga za stare radioničke podove, stube, vrata i obrube.<br>

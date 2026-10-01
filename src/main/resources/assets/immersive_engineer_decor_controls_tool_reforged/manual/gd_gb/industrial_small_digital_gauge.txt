@@ -1,0 +1,7 @@
+Tomhas didseatach
+Neart chomharran a ghabhas leughadh
+<&recipe>Seallaidh tomhas dlùth airson seòmar-smachd neart redstone gu soilleir air panal.<br>
+<br>
+Cleachdadh: cuir e far am faicear cumhachd redstone faisg air ann an aon sùil.<br>
+<br>
+Nòtaichean: leughaidh e neart redstone faisg air eadar 0 agus 15.

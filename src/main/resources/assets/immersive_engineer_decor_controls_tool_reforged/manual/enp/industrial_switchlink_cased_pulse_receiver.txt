@@ -1,0 +1,7 @@
+Cased Beat Catcher
+Linked switchgear
+<&recipe>A cased linked beat catcher gives faraway switchboards a short redstone starter.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Right-click it or start the linked mergroat to send a short beat.<br>
+<br>
+Mind: The beat resets itself after its set length.

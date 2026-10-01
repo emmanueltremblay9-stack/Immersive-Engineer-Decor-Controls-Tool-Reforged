@@ -1,0 +1,5 @@
+Table en bois traité
+Mobilier d'atelier
+<&recipe>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
+<br>
+Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>

@@ -1,0 +1,5 @@
+Jendela Berbingkai Baja
+Pandangan terlindungi
+<&recipe>Blok ini mempertahankan pandangan terbuka sambil tetap cocok dengan konstruksi pabrik yang diperkuat.<br>
+<br>
+Penggunaan: gunakan agar pemain dapat melihat mesin melalui penghalang pelindung.<br>

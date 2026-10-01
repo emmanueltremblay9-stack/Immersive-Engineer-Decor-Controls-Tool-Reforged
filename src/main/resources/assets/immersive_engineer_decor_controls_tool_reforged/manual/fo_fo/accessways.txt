@@ -1,0 +1,127 @@
+Atgongdarleiðir
+Gonguleiðir og stuðlar
+Stálstólpar, viðgjørdir viðarstólpar, ristir, gongubrýr, gelendarar, stigar, hurðar, vindeygu og lúkur skapa lítlar viðlíkahaldsleiðir inni í verksmiðjum.<br>
+<br>
+Stálpartar til atgongdarleiðir brúka stálplátur. Evna ella set eitt málmarbeiðsborð, set ein hamara frá Immersive Engineering í tað og hamra síðani stálstengur til stálplátur til stólpar, gongubrýr, vindeygu, hurðar, gelendarar og annað stálprýði.<br>
+<br>
+Set teir, har maskinum tørvar viðlíkahaldsatgongd, hækkaðar gonguleiðir, viðlíkahaldsskaktir ella tryggari kantar.
+<np>
+Tjúkkur stálstólpi
+Partur av berandi rammu
+<&thick_steel_pole>Beini tjúkki stálstólpin gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Høvd til tjúkkan stólpa
+Partur av berandi rammu
+<&thick_steel_pole_head>Høvdið/fóturin til beinan tjúkkan stálstólpa gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Tunnur stálstólpi
+Partur av berandi rammu
+<&thin_steel_pole>Beini tunni stálstólpin gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Høvd til tunnan stólpa
+Partur av berandi rammu
+<&thin_steel_pole_head>Høvdið/fóturin til beinan tunnan stálstólpa gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Stólpi úr viðgjørdum viði
+Partur av berandi rammu
+<&treated_wood_pole>Beini stólpin úr viðgjørdum viði gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Høvd til viðgjørdan stólpa
+Partur av berandi rammu
+<&treated_wood_pole_head>Høvdið/fóturin til beinan stólpa úr viðgjørdum viði gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Stuðul til viðgjørdan stólpa
+Partur av berandi rammu
+<&treated_wood_pole_support>Stuðulin til beinan stólpa úr viðgjørdum viði gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Dupultur T-stuðul úr stáli
+Partur av berandi rammu
+<&steel_double_t_support>Hesin kubbin gevur maskinuhøllum og atgongdarrammum sjónligan stuðul.<br>
+<br>
+Nýtsla: Snara og set hann sum sjónliga styrking av bjálkum, stólpum og pallkantum.<br>
+<np>
+Stálgólvrist
+Viðlíkahaldsatgongd
+<&steel_floor_grating>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Stálgongubrúgv
+Viðlíkahaldsatgongd
+<&steel_catwalk>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Stálgongubrúgvartrappa
+Viðlíkahaldsatgongd
+<&steel_catwalk_stairs>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Hækkað stálgongubrúgv
+Viðlíkahaldsatgongd
+<&steel_catwalk_ta>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Stálgelendari
+Viðlíkahaldsatgongd
+<&steel_railing>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Stálnetsgirðing
+Viðlíkahaldsatgongd
+<&steel_mesh_fence>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Portur til stálnetsgirðing
+Viðlíkahaldsatgongd
+<&steel_mesh_fence_gate>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Stigi við málmtrinum
+Viðlíkahaldsatgongd
+<&metal_rung_ladder>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Skiftandi málmtrin
+Viðlíkahaldsatgongd
+<&metal_rung_steps>Hesin kubbin ger greiðar viðlíkahaldsleiðir kring maskinur.<br>
+<br>
+Nýtsla: Set hann sum viðlíkahaldsatgongd kring maskinur, ovastu hæddir og viðlíkahaldsskaktir.<br>
+<np>
+Vindeyga við stálkarmi
+Vart útsýni
+<&steel_framed_window>Hesin kubbin varðveitir útsýnið og hóskar samstundis til styrkta verksmiðjubygging.<br>
+<br>
+Nýtsla: Set hann í eitt 1-kubba hol í vegginum, har leikarar skulu síggja maskinur gjøgnum eina verju.<br>
+<np>
+Málmrennihurð
+Ídnaðaratgongd
+<&metal_sliding_door>Hesin kubbin gevur eina sterka atgongd til viðlíkahaldsrúm, skaktir, tøk og maskinuhús.<br>
+<br>
+Nýtsla: Set hann, har bygninginum tørvar eitt stýrt op til viðlíkahald.<br>
+<np>
+Jarnlúka
+Ídnaðaratgongd
+<&iron_hatch>Hesin kubbin gevur eina sterka atgongd til viðlíkahaldsrúm, skaktir, tøk og maskinuhús.<br>
+<br>
+Nýtsla: Set hann, har bygninginum tørvar eitt stýrt op til viðlíkahald.<br>

@@ -1,0 +1,41 @@
+ʇɹodsuɐɹ⟘ ⅋ ǝᵷɐɹoʇS
+sᵷuᴉʇʇᴉɟ ʍoꞁɟ puɐ ʎɹoʇuǝʌuI
+˙ᵷuᴉʇnoɹ ʎɹoʇɔɐɟ ʇɔɐdɯoɔ ɹoɟ sǝʌꞁɐʌ puɐ 'sꞁǝuunɟ 'sꞁǝɹɹɐq 'sǝʇɐɹɔ ǝꞁpuɐɥ sᵷuᴉʇʇᴉɟ ʇɹodsuɐɹʇ puɐ ǝᵷɐɹoʇS<br>
+<br>
+˙sǝuᴉꞁ pᴉnꞁɟ pǝꞁꞁoɹʇuoɔ puɐ 'sʞuɐʇ ǝɔᴉʌɹǝs 'sunɹ ǝdᴉd 'sɯooɹʞɔoʇs ʇno ᵷuᴉʎɐꞁ uǝɥʍ sǝᵷɐd ǝsǝɥʇ ǝs∩
+<np>
+ǝʇɐɹƆ pǝꞁǝqɐꞀ
+ꞁǝqɐꞁ ʞɔoʇs ǝꞁqɐʇᴉpƎ
+<&labeled_crate>˙uᵷᴉs doɥsʞɹoʍ ꞁꞁɐɯs ɐ ǝʞᴉꞁ pǝʇᴉpǝ ǝq uɐɔ ǝʇɐꞁd ʇuoɹɟ sʇI ˙ᵷuᴉʇɹos ɯooɹʞɔoʇs ɹɐǝꞁɔ ɹoɟ ʇꞁᴉnq sᴉ ǝʇɐɹɔ pǝꞁǝqɐꞁ sᴉɥ⟘<br>
+<br>
+˙sǝᴉꞁddns ǝɔuɐuǝʇuᴉɐɯ puɐ 'sʇɹɐd 'sᵷuᴉʇʇᴉɟ ɹoɟ ǝᵷɐɹoʇs uǝdo oʇ ǝʇɐɹɔ ǝɥʇ ɟo ʇsǝɹ ǝɥʇ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ ˙ꞁǝqɐꞁ ǝʇɐɹɔ ǝɥʇ ʇᴉpǝ oʇ ǝʇɐꞁd ꞁǝqɐꞁ ǝɥʇ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<np>
+ꞁǝɹɹɐᗺ pᴉnꞁℲ
+ǝɹɐʍpɹɐɥ ǝuᴉꞁ pᴉnꞁℲ
+<&fluid_barrel>˙ʍoꞁɟ pǝꞁꞁoɹʇuoɔ-ǝuoʇspǝɹ puɐ 'sʇuᴉod uoᴉʇɔǝꞁꞁoɔ 'sunɹ ǝdᴉd 'sʞuɐʇ ꞁꞁɐɯs ɹoɟ ʇɹɐd ǝuᴉꞁ-pᴉnꞁɟ ʇɔɐdɯoɔ ɐ sᴉ ᵷuᴉʇʇᴉɟ sᴉɥ⟘<br>
+<br>
+˙ǝɔɐɟ ʞuɐʇ ǝɥʇ ɥɔɐǝɹ uɐɔ sʇǝʞɔnq ɹo sǝdᴉd ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<np>
+ꞁǝuunℲ pᴉnꞁℲ
+ǝɹɐʍpɹɐɥ ǝuᴉꞁ pᴉnꞁℲ
+<&small_fluid_funnel>˙ʍoꞁɟ pǝꞁꞁoɹʇuoɔ-ǝuoʇspǝɹ puɐ 'sʇuᴉod uoᴉʇɔǝꞁꞁoɔ 'sunɹ ǝdᴉd 'sʞuɐʇ ꞁꞁɐɯs ɹoɟ ʇɹɐd ǝuᴉꞁ-pᴉnꞁɟ ʇɔɐdɯoɔ ɐ sᴉ ꞁǝuunℲ pᴉnꞁℲ ꞁꞁɐɯS ǝɥ⟘<br>
+<br>
+˙ʞɹoʍǝdᴉd ɹǝʍoꞁ ɹo sʞuɐʇ oʇuᴉ sʇuǝʇuoɔ pǝɹoʇs sʇᴉ ǝʇnoɹ puɐ ʇuᴉod uoᴉʇɔǝꞁꞁoɔ pᴉnꞁɟ ǝɥʇ ʍoꞁǝq ʇᴉ ʇnԀ :ǝᵷɐs∩<br>
+<np>
+ǝʌꞁɐɅ ʞɔǝɥƆ ǝdᴉԀ pᴉnꞁℲ
+ǝɹɐʍpɹɐɥ ǝuᴉꞁ pᴉnꞁℲ
+<&straight_pipe_valve>˙ʍoꞁɟ pǝꞁꞁoɹʇuoɔ-ǝuoʇspǝɹ puɐ 'sʇuᴉod uoᴉʇɔǝꞁꞁoɔ 'sunɹ ǝdᴉd 'sʞuɐʇ ꞁꞁɐɯs ɹoɟ ʇɹɐd ǝuᴉꞁ-pᴉnꞁɟ ʇɔɐdɯoɔ ɐ sᴉ ǝʌꞁɐɅ ʞɔǝɥƆ pᴉnꞁℲ<br>
+<br>
+˙uoᴉʇɔǝɹᴉp ʍoꞁɟ pǝpuǝʇuᴉ ǝɥʇ ɥʇᴉʍ ǝʌꞁɐʌ ǝɥʇ uᵷᴉꞁⱯ :ǝᵷɐs∩<br>
+<np>
+ǝʌꞁɐɅ pᴉnꞁℲ ǝuoʇspǝᴚ
+ǝɹɐʍpɹɐɥ ǝuᴉꞁ pᴉnꞁℲ
+<&straight_pipe_valve_redstone>˙ʍoꞁɟ pǝꞁꞁoɹʇuoɔ-ǝuoʇspǝɹ puɐ 'sʇuᴉod uoᴉʇɔǝꞁꞁoɔ 'sunɹ ǝdᴉd 'sʞuɐʇ ꞁꞁɐɯs ɹoɟ ʇɹɐd ǝuᴉꞁ-pᴉnꞁɟ ʇɔɐdɯoɔ ɐ sᴉ ǝʌꞁɐɅ pᴉnꞁℲ ǝuoʇspǝᴚ ǝɥ⟘<br>
+<br>
+˙uoᴉʇɔǝɹᴉp ʍoꞁɟ pǝpuǝʇuᴉ ǝɥʇ ɥʇᴉʍ ǝʌꞁɐʌ ǝɥʇ uᵷᴉꞁⱯ :ǝᵷɐs∩<br>
+<np>
+ǝʌꞁɐɅ pᴉnꞁℲ ᵷoꞁɐuⱯ
+ǝɹɐʍpɹɐɥ ǝuᴉꞁ pᴉnꞁℲ
+<&straight_pipe_valve_redstone_analog>˙ʍoꞁɟ pǝꞁꞁoɹʇuoɔ-ǝuoʇspǝɹ puɐ 'sʇuᴉod uoᴉʇɔǝꞁꞁoɔ 'sunɹ ǝdᴉd 'sʞuɐʇ ꞁꞁɐɯs ɹoɟ ʇɹɐd ǝuᴉꞁ-pᴉnꞁɟ ʇɔɐdɯoɔ ɐ sᴉ ǝʌꞁɐɅ pᴉnꞁℲ ᵷoꞁɐuⱯ ǝɥ⟘<br>
+<br>
+˙uoᴉʇɔǝɹᴉp ʍoꞁɟ pǝpuǝʇuᴉ ǝɥʇ ɥʇᴉʍ ǝʌꞁɐʌ ǝɥʇ uᵷᴉꞁⱯ :ǝᵷɐs∩<br>

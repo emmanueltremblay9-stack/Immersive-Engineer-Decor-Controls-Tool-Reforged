@@ -1,0 +1,7 @@
+Butang Kecil Desa
+Kawalan Redstone
+<&recipe>Suis seketika memberikan denyutan redstone jelas berkekuatan penuh.<br>
+<br>
+Penggunaan: Gunakan untuk memulakan mesin, membuka pintu, membunyikan penggera atau litar sekali cetus.<br>
+<br>
+Nota: Menetap semula selepas denyutan yang dijadualkan.

@@ -1,0 +1,5 @@
+Talador d’árboles
+Equipamientu de suelu de taller
+<&recipe>El talador d’árboles pequeñu ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: apúntalu escontra árboles crecíos y recueye’l botín por separao.<br>

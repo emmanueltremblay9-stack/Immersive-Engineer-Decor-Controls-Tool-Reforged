@@ -1,0 +1,5 @@
+Tabula solaris
+Auxilium pavimenti officinae
+<&recipe>Tabula solaris parva est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: caelum apertum praebe et apparatus parum consumentes coniunge.<br>

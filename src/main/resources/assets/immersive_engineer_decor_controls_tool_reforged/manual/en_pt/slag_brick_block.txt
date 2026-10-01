@@ -1,0 +1,5 @@
+Block o' slag bricks
+Dense brickwork fer factories
+<&recipe>This block brings dense grey-brown masonry to foundations, retaining walls and old worksheds, matey.<br>
+<br>
+Orders: Use her fer older foundations, retaining walls and grimy factory decks.<br>

@@ -1,0 +1,5 @@
+Support en acier double T
+Élément d'ossature
+<&recipe>Ce bloc forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>

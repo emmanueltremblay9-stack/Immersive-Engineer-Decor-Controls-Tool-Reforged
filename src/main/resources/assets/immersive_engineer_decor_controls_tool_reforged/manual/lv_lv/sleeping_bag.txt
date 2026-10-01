@@ -1,0 +1,7 @@
+Guļammaiss
+Pārnēsājams atpūtas komplekts
+<&recipe>Guļammaiss ir laikapstākļu izturīgs atpūtas komplekts darbam tālu no gultas.<br>
+<br>
+Lietošana: Izmanto to naktī Overworld, lai atpūstos līdz rītam. Tas neiestata un nepārvieto atdzimšanas punktu.<br>
+<br>
+Tas atsakās darboties dienā, bīstamā vietā ar tuvumā esošiem briesmoņiem un drošai atpūtai nepiemērotās dimensijās. Katra veiksmīga atpūta nolieto maisu.

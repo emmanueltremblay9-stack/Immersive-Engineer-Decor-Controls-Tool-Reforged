@@ -1,0 +1,7 @@
+Gawaan ng Metal
+Lugar ng paggawa ng plaka
+<&recipe>Ang metal crafting table ay may hammer slot, buong 3x3 grid at output slot.<br>
+<br>
+Gamitin ang grid gaya ng normal na mesa. Para sa IE plate, ilagay ang Engineers Hammer sa tool slot, materyal sa grid at kunin ang plate sa output.<br>
+<br>
+Ang steel decoration ay gumagamit ng steel plate na hinubog dito.

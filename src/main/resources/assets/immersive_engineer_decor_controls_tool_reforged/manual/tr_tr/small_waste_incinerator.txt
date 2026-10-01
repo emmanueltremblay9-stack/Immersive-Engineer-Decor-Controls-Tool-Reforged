@@ -1,0 +1,5 @@
+Atık Yakıcısı
+Küçük işleme birimi
+<&recipe>Atık yakıcısı, az atölye alanında istenmeyen eşyaları yok eder.<br>
+<br>
+Kullanım: Kuyruğuna yalnızca istemediğiniz eşyaları koyun.<br>

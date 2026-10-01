@@ -1,0 +1,7 @@
+Perla de ligam de interutor
+Comand ligad
+<&recipe>Una perla ligada la conserva el ricevidor de destinazzion per i comands de fabrica a distanza.<br>
+<br>
+Fà clic cont una Perla de l’ender in su un ricevidor de ligam de interutor per creanne una. Dovra la perla ligada strusando via per ativà el ricevidor conservad.<br>
+<br>
+La destinazzion la gh’ha de vesser cargada, in de l’istessa dimension e a portada.

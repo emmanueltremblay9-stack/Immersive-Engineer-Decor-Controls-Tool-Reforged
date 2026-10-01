@@ -1,0 +1,5 @@
+Málmrennihurð
+Ídnaðaratgongd
+<&recipe>Hesin kubbin gevur eina sterka atgongd til viðlíkahaldsrúm, skaktir, tøk og maskinuhús.<br>
+<br>
+Nýtsla: Set hann, har bygninginum tørvar eitt stýrt op til viðlíkahald.<br>

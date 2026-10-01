@@ -1,0 +1,5 @@
+Indicator „Pericol radioactiv”
+Marcaj de pericol
+<&recipe>Indicatorul „Pericol radioactiv” marchează pericolele, ieșirile și zonele de lucru printr-un semnal vizual de siguranță industrială.<br>
+<br>
+Utilizare: Amplasează-l lângă pericole, ieșiri, mașini și zone cu acces restricționat.<br>

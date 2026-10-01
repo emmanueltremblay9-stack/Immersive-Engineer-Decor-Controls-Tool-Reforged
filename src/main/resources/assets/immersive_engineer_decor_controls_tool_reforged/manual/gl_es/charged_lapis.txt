@@ -1,0 +1,7 @@
+Lapislázuli cargado
+Experiencia almacenada
+<&recipe>O lapislázuli cargado almacena un nivel de experiencia mediante o espremedor mental.<br>
+<br>
+Uso: consúmeo para recuperar un nivel, eliminar os efectos activos e restaurar unha pequena cantidade de saúde.<br>
+<br>
+O visor de receitas mostra o espremedor mental porque o lapislázuli cargado se produce ao usar esa ferramenta cando dispós de lapislázuli e experiencia.

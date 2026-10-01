@@ -1,0 +1,7 @@
+Detektor blokov
+Čutje signala
+<&recipe>Detektor blokov prověrjaje, jest li prostor prěd njim zajety.<br>
+<br>
+Upotrěbjenje: Usměri go na stranu mašiny, hranilišče ili čuvany prostor, ktory hočeš nabljudati.<br>
+<br>
+Primětky: Podavaje signal, kogda blok prěd njim ne jest vozduhom.

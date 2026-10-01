@@ -1,0 +1,5 @@
+Ysterluik
+Industriële toegangspunt
+<&recipe>Hierdie blok verskaf ’n stewige toegangspunt tot dienskamers, skagte, dakke en masjienomhulsels.<br>
+<br>
+Gebruik: installeer dit waar die gebou ’n beheerde onderhoudsopening nodig het.<br>

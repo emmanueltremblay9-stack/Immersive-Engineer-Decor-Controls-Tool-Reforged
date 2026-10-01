@@ -1,0 +1,7 @@
+Komparátorkapcsoló
+A tartóblokk jele
+<&recipe>A kompakt érzékelőkapcsoló leolvassa a blokkot, amelyre szerelték, és ezt egyszerű panelkimenetté alakítja.<br>
+<br>
+Használat: szereld tárolókra, tartályokra vagy redstone-berendezésekre. Ha a tartóblokk komparátoros, tárolói vagy redstone-kimenetet jelez, a kapcsoló teljes erősségű redstone-jelet ad.<br>
+<br>
+Megjegyzés: ezzel tárolási szinteket vagy rejtett vezetékezést alakíthatsz világos be/ki vezérlővonalakká.

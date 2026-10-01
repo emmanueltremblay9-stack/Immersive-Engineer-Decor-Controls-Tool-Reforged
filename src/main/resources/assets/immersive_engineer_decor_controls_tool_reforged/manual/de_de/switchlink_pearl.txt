@@ -1,0 +1,7 @@
+Link-Perle
+Verknüpfte Steuerung
+<&recipe>Eine Link-Perle speichert einen Empfänger als Ziel für die Fernsteuerung von Fabrikanlagen.<br>
+<br>
+Verwendung: Klicke einen Empfänger für Schalterverknüpfungen mit einer Enderperle an, um sie zu erzeugen. Benutze die Link-Perle beim Schleichen, um den gespeicherten Empfänger zu aktivieren.<br>
+<br>
+Hinweis: Das Ziel muss geladen sein, in derselben Dimension liegen und sich in Reichweite befinden.

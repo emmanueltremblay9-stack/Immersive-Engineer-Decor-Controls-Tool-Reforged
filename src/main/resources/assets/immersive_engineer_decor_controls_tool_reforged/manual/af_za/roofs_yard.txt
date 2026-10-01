@@ -1,0 +1,101 @@
+Dakke en Werf
+Buitelugfabriekstoebehore
+Dakblokke, werfgruis en ou industriële houtonderdele help om buiteskure, werkwerwe, laaigebiede en verweerde fabrieksrande af te werk.<br>
+<br>
+Meng hierdie dele met messelwerk en toegangspaaie sodat industriële buitegeboue van ver af duidelik bly.
+<np>
+Donker Daksingels
+Verweerde daktoebehoor
+<&dark_shingle_roof>Hierdie blok vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Daksneeuskerm
+Verweerde daktoebehoor
+<&dark_shingle_roof_metallized>Die Donker Daksingelsneeuskerm vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Donker Daksingels
+Verweerde daktoebehoor
+<&dark_shingle_roof_skylight>Die Donker Daksingelligvenster vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Dakskoorsteenstam
+Verweerde daktoebehoor
+<&dark_shingle_roof_chimneytrunk>Die Donker Daksingelskoorsteenstam vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Dakdraadpyp
+Verweerde daktoebehoor
+<&dark_shingle_roof_wireconduit>Die Donker Daksingeldraadpyp vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Donker Daksingels
+Verweerde daktoebehoor
+<&dark_shingle_roof_chimney>Die Donker Daksingelskoorsteen vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Donker Daksingelblok
+Verweerde daktoebehoor
+<&dark_shingle_roof_block>Hierdie blok vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Donker Daksingelblad
+Verweerde daktoebehoor
+<&dark_shingle_roof_slab>Hierdie blok vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Donker Daksingelblad
+Verweerde daktoebehoor
+<&dark_shingle_roof_slabslice>Die Dun Donker Daksingelblad vorm donker, praktiese daklyne vir werkswinkels en industriële skure.<br>
+<br>
+Gebruik: gebruik die dele saam om geloofwaardige dakprofiele te maak.<br>
+<np>
+Digte Gruisgrond
+Werkterreinbedekking
+<&dense_grit_dirt_block>Hierdie blok gee buitelugwerkgebiede ’n saamgeperste, vertrapte oppervlak.<br>
+<br>
+Gebruik: lê dit rondom laaideure, buitetenks en masjienwerwe.<br>
+<np>
+Digte Gruissand
+Werkterreinbedekking
+<&dense_grit_sand_block>Hierdie blok gee buitelugwerkgebiede ’n saamgeperste, vertrapte oppervlak.<br>
+<br>
+Gebruik: lê dit rondom laaideure, buitetenks en masjienwerwe.<br>
+<np>
+Ou Houtplanke
+Verouderde werkswinkelhout
+<&old_industrial_wood_planks>Die Ou Industriële Houtplanke voeg verouderde werkswinkelhout by vir vloere, trappe, deure en warm binneafwerking.<br>
+<br>
+Gebruik: gebruik dit vir ou werkswinkelvloere, trappe, deure en afwerking.<br>
+<np>
+Ou Industriële Houtblad
+Verouderde werkswinkelhout
+<&old_industrial_wood_slab>Hierdie blok voeg verouderde werkswinkelhout by vir vloere, trappe, deure en warm binneafwerking.<br>
+<br>
+Gebruik: gebruik dit vir ou werkswinkelvloere, trappe, deure en afwerking.<br>
+<np>
+Ou Houttrappe
+Verouderde werkswinkelhout
+<&old_industrial_wood_stairs>Die Ou Industriële Houttrappe voeg verouderde werkswinkelhout by vir vloere, trappe, deure en warm binneafwerking.<br>
+<br>
+Gebruik: gebruik dit vir ou werkswinkelvloere, trappe, deure en afwerking.<br>
+<np>
+Dun Ou Houtblad
+Verouderde werkswinkelhout
+<&old_industrial_wood_slabslice>Die Dun Ou Industriële Houtblad voeg verouderde werkswinkelhout by vir vloere, trappe, deure en warm binneafwerking.<br>
+<br>
+Gebruik: gebruik dit vir ou werkswinkelvloere, trappe, deure en afwerking.<br>
+<np>
+Ou Industriële Houtdeur
+Verouderde werkswinkelhout
+<&old_industrial_wood_door>Hierdie blok voeg verouderde werkswinkelhout by vir vloere, trappe, deure en warm binneafwerking.<br>
+<br>
+Gebruik: gebruik dit vir ou werkswinkelvloere, trappe, deure en afwerking.<br>

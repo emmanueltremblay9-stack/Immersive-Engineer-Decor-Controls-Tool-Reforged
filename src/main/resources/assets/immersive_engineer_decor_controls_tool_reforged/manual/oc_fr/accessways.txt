@@ -1,0 +1,127 @@
+Passatges d’accès
+Passarèlas e supòrts
+Los pals d’acièr, los pals tractats, las grasilhas, las passarèlas, las baranas, las escalas, las pòrtas, las fenèstras e las trapas forman de camins de servici compactes dins las fabricas.<br>
+<br>
+Las pèças d’accès d’acièr utilizan de placas d’acièr. Fabrica o pausa una Taula de trabalh del metal, inserís un martèl d’Immersive Engineering e martèla de lingòts d’acièr en placas per fabricar de pals, de passarèlas, de fenèstras, de pòrtas, de baranas e d’autres decòrs d’acièr.<br>
+<br>
+Pòsa-las ont cal accedir a las maquinas, crear de camins en nautor o de passatges verticals d’entreten, o assegurar los bòrds.
+<np>
+Pal espés d’acièr
+Pèça d’ossatura
+<&thick_steel_pole>Lo Pal drech espés d’acièr forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Tèsta de pal espés
+Pèça d’ossatura
+<&thick_steel_pole_head>La Tèsta/pè de pal drech espés d’acièr forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Pal prim d’acièr
+Pèça d’ossatura
+<&thin_steel_pole>Lo Pal drech prim d’acièr forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Tèsta de pal prim
+Pèça d’ossatura
+<&thin_steel_pole_head>La Tèsta/pè de pal drech prim d’acièr forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Pal de fusta tractada
+Pèça d’ossatura
+<&treated_wood_pole>Lo Pal drech de fusta tractada forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Tèsta de pal tractat
+Pèça d’ossatura
+<&treated_wood_pole_head>La Tèsta/pè de pal drech de fusta tractada forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Supòrt de pal tractat
+Pèça d’ossatura
+<&treated_wood_pole_support>Lo Supòrt de pal drech de fusta tractada forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Supòrt d’acièr en doble T
+Pèça d’ossatura
+<&steel_double_t_support>Aqueste blòc forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>
+<np>
+Grasilha de sòl d’acièr
+Equipament d’accès de servici
+<&steel_floor_grating>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Passarèla d’acièr
+Equipament d’accès de servici
+<&steel_catwalk>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Escalièr de passarèla d’acièr
+Equipament d’accès de servici
+<&steel_catwalk_stairs>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Passarèla d’acièr subreauçada
+Equipament d’accès de servici
+<&steel_catwalk_ta>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Barana d’acièr
+Equipament d’accès de servici
+<&steel_railing>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Barralha de malhum d’acièr
+Equipament d’accès de servici
+<&steel_mesh_fence>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Pòrta de barralha de malhum d’acièr
+Equipament d’accès de servici
+<&steel_mesh_fence_gate>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Escala de barrols metallics
+Equipament d’accès de servici
+<&metal_rung_ladder>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Marchas metallicas descaladas
+Equipament d’accès de servici
+<&metal_rung_steps>Aqueste blòc crea de camins de servici aisits de reconéisser a l’entorn de las maquinas.<br>
+<br>
+Utilizacion : pausa-lo per accedir a l’entreten a l’entorn de las maquinas, suls estatges e dins los passatges verticals de servici.<br>
+<np>
+Fenèstra amb quadre d’acièr
+Vista protegida
+<&steel_framed_window>Aqueste blòc manten una vista desgatjada e s’acòrda amb la construccion de fabrica renforçada.<br>
+<br>
+Utilizacion : pausa-lo dins una dobertura de mur d’1 blòc ont los jogaires devon veire las maquinas a travèrs una barralha protegida.<br>
+<np>
+Pòrta metallica colissanta
+Ponch d’accès industrial
+<&metal_sliding_door>Aqueste blòc fornís un accès solid a las salas de servici, als passatges verticals, als teulats e a las enclausuras de maquinas.<br>
+<br>
+Utilizacion : installa-lo ont cal una dobertura contrarotlada per l’entreten.<br>
+<np>
+Trapa de fèrre inversada
+Ponch d’accès industrial
+<&iron_hatch>Aqueste blòc fornís un accès solid a las salas de servici, als passatges verticals, als teulats e a las enclausuras de maquinas.<br>
+<br>
+Utilizacion : installa-lo ont cal una dobertura contrarotlada per l’entreten.<br>

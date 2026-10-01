@@ -1,0 +1,5 @@
+Tree Cutter
+Workshop-floor helper
+<&recipe>The Small Tree Cutter is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Aim it at grown trees and gather the drops apart from it.<br>

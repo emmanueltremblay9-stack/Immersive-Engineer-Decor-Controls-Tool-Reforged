@@ -1,0 +1,7 @@
+Receptor de pulsos con carcasa
+Control enlazado
+<&recipe>Un receptor enlazado de pulsos con carcasa proporciona una activación breve de redstone para paneles remotos.<br>
+<br>
+Uso: Haz clic con una perla de ender para crear una perla enlazada. Haz clic derecho en el receptor o activa la perla enlazada para emitir un pulso breve.<br>
+<br>
+Notas: El pulso se restablece automáticamente tras su duración programada.

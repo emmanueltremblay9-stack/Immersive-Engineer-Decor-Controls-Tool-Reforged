@@ -1,0 +1,5 @@
+Avtomatik stimulyator to'plami
+Favqulodda inyektor
+<&recipe>Avtomatik stim toplami favqulodda tibbiy buyumdir.<br>
+<br>
+Davolanish, qisqa himoya va tezlik uchun qolda ishlating. Inventarda sogliq past bolsa avtomatik ishga tushib, keyin soviydi. Xavfli joyda tayyor tuting.

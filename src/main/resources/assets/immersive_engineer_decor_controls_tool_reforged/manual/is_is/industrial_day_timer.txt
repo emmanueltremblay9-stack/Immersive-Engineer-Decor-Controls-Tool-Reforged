@@ -1,0 +1,7 @@
+Dagstímaklukka
+Dagsljósmerki
+<&recipe>Tímastýrður rofi fylgir daghluta sólarhrings heimsins.<br>
+<br>
+Notkun: Notaðu hann fyrir hlaðlampa, lokur og verksmiðjustýringar sem eiga aðeins að virka á daginn.<br>
+<br>
+Athugasemdir: Krefst víddar með himinljósi.

@@ -1,0 +1,7 @@
+Glacadóir Bíge i gCásáil
+Rialú nasctha
+<&recipe>Tugann glacadóir nasctha bíge i gcásáil truicear gearr Redstone do phainéil chianda.<br>
+<br>
+Úsáid: cliceáil air le Péarla Ender chun péarla nasctha a chruthú. Deaschliceáil air nó gníomhachtaigh an péarla nasctha chun bíog ghearr a astú.<br>
+<br>
+Nótaí: athshocraíonn an bhíog í féin tar éis a tréimhse sceidealaithe.

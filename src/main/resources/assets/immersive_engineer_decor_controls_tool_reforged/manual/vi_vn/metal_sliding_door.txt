@@ -1,0 +1,5 @@
+Cửa trượt kim loại
+Điểm tiếp cận công nghiệp
+<&recipe>Khối này tạo điểm tiếp cận chắc chắn cho phòng kỹ thuật, giếng, mái và vỏ máy.<br>
+<br>
+Cách dùng: Lắp tại nơi công trình cần một lỗ bảo trì có kiểm soát.<br>

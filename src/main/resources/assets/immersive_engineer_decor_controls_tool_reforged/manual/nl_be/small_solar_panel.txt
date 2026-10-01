@@ -1,0 +1,5 @@
+Zonnepaneel
+Hulpmiddel voor de fabrieksvloer
+<&recipe>Het kleine zonnepaneel is een hulpmiddel voor de fabrieksvloer, uit een reeks blokken voor vervaardiging, opslag, plaatsing, breken, verzamelen en compacte automatisering.<br>
+<br>
+Gebruik: zorg voor vrij zicht op de hemel en sluit apparaten met een laag verbruik aan.<br>

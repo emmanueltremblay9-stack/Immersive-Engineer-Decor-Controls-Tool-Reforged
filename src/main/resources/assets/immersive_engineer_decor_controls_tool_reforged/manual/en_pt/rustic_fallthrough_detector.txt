@@ -1,0 +1,7 @@
+Rustic lookout fer falls
+Sensin' a signal
+<&recipe>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.

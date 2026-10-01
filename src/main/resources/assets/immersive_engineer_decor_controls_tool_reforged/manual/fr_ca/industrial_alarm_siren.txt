@@ -1,0 +1,7 @@
+Sirène d'alarme
+Retour d'état du signal
+<&recipe>La sirène d’alarme est un indicateur de redstone fixé sur une face. Son état alimenté suit le signal fourni par le bloc auquel elle est attachée.<br>
+<br>
+Utilisation : fixez-la à une face solide et alimentez-la pour surveiller des portes, machines, alarmes ou panneaux.<br>
+<br>
+Remarque : la sirène se réactive chaque seconde tant que le signal auquel elle est reliée reste actif.

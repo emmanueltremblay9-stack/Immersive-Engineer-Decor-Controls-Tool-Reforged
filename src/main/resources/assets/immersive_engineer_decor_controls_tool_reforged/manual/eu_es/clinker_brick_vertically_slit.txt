@@ -1,0 +1,5 @@
+Artezkatutako klinker-adreiluak
+Kedarrez belztutako adreilugintza
+<&recipe>Artezka bertikaleko klinker-adreiluek kedarrez belztutako adreilugintza eskaintzen die labe-aretoei, tximinien oinarriei eta mantentze-hormei.<br>
+<br>
+Erabilera: erabili labeen eta galdaren inguruko horma, ertz-apaingarri edo bero-eremuko estalki gisa.<br>

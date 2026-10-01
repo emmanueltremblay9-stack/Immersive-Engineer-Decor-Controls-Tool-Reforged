@@ -1,0 +1,7 @@
+Materialkeß
+Keß för Bouvürrod
+<&recipe>De Materialkess drät ene jroße Vorrat vun eine einfache, unveränderte un stapelbare Baustoff.<br>
+<br>
+Jebruch: Hald de Kess en de Haupthand un ene Materialstapel en de andere Hand, öm se ze lade. Bruch se met leerer anderer Hand, öm ene Stapel eruuszenehme.<br>
+<br>
+Se hält bes 512 Saache vun einer Zoot. Se refuseert Kesse en Kesse, nit stapelbar Uusröstung un ömjenannte udder data-jeänderte Stapel; dä Tooltip zeijt dä Ennhald.

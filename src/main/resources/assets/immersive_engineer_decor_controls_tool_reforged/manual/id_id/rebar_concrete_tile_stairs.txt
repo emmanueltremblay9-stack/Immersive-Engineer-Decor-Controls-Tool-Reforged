@@ -1,0 +1,5 @@
+Ubin Beton Bertulang
+Beton bertulang
+<&recipe>Anak tangga ubin beton bertulang merupakan bagian beton keras untuk alas mesin, tembok penahan ledakan, dan lantai area bongkar muat.<br>
+<br>
+Penggunaan: gunakan di bawah mesin, sepanjang lorong servis, atau di tempat bangunan memerlukan alas yang diperkuat.<br>

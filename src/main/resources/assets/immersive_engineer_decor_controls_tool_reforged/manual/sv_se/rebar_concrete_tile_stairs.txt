@@ -1,0 +1,5 @@
+Kakel av armerad betong
+Armerad betong
+<&recipe>Kakeltrappan av armerad betong består av härdade betongdelar för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>

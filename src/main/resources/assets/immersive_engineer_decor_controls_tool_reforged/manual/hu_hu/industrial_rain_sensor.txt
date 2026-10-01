@@ -1,0 +1,7 @@
+Esőérzékelő
+Jelérzékelés
+<&recipe>Az időjárás-érzékelő a helyén hulló esőt redstone-jellé alakítja.<br>
+<br>
+Használat: oda szereld, ahol a fölötte lévő blokkot elérheti az eső.<br>
+<br>
+Megjegyzés: az érzékelő fölötti esőt vizsgálja.

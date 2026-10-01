@@ -1,0 +1,7 @@
+Analoga liga relajso
+Ligita regado
+<&recipe>Relajsstila regilo donas kompaktan lokan ŝaltpunkton al panelaj konstruaĵoj.<br>
+<br>
+Uzado: dekstre klaku ĝin por ŝalti aŭ malŝalti plenfortan eligon al proksimaj cirkvitoj. Uzu ricevilajn blokojn kiam vi bezonas aktivigon per ligita perlo.<br>
+<br>
+Notoj: ĝi eligas plenfortan redstone’an signalon dum ŝaltite.

@@ -1,0 +1,5 @@
+Tovarniški delilnik
+Tovarniški pripomoček
+<&recipe>Ta blok izpušča shranjene predmete z usmerjene ploskve.<br>
+<br>
+Uporaba: Usmeri sprednjo stran proti točki izpusta, napolni notranja mesta ter v vmesniku nastavi silo, kot, zamik, logiko filtra in način redstone.<br>

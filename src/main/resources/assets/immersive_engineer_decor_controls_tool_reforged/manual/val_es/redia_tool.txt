@@ -1,0 +1,7 @@
+Ferramenta REDIA
+Utilitat recoberta de diamant
+<&recipe>La ferramenta REDIA és una ferramenta múltiple resistent de categoria de diamant per a treballar fora, al voltant d’obres temporals, tallers i entrades de mines.<br>
+<br>
+Ús: usa-la mentre portes torxes per a col·locar una torxa de l’inventari sense desgastar REDIA. Usa-la acatxat per a esquilar plantes o alternar el terreny entre terra, terra arada, terra estèril i camí de terra. La funció alternativa original de destral s’aplica des de la cara inferior. Acatxa’t en trencar troncs per a talar els blocs connectats de l’arbre.<br>
+<br>
+Repara-la amb diamants. Reparar una ferramenta REDIA ja reparada completament per damunt del seu màxim restablix la progressió original d’Eficiència i Fortuna.

@@ -1,0 +1,7 @@
+Pemeras Pikiran
+Pemadat pengalaman
+<&recipe>Pemeras pikiran mengubah lazuardi dan pengalaman menjadi lazuardi bermuatan.<br>
+<br>
+Penggunaan: bawa lazuardi dan sedikitnya satu tingkat pengalaman, lalu gunakan perkakas. Pemerasan yang berhasil memakai satu tingkat dan satu lazuardi, melukai pengguna, mengauskan alat, dan menghasilkan satu lazuardi bermuatan.<br>
+<br>
+Alat menolak bekerja jika pengguna kekurangan lazuardi, tidak punya pengalaman, atau terlalu dekat dengan kematian.

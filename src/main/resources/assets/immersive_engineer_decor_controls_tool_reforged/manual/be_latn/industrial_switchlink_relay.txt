@@ -1,0 +1,7 @@
+Rele suviazi pieraklučalnikaŭ
+Kiravannie praz suviaź
+<&recipe>Elemient u styli rele daje panelnym pabudovam kampaktny punkt miascovaha pieraklučennia.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem. Kali patrebna aktyvacyja zviazanaj žamčužynaj, vykarystoŭvaj błoki pryjomnikaŭ.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.

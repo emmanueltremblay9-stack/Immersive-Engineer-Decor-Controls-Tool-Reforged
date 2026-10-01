@@ -1,0 +1,7 @@
+Traciwr
+Marc safle wedi'i gadw
+<&recipe>Yn cadw safle bloc yn yr eitem.<br>
+<br>
+Defnydd: Cliciwch floc am y dimensiwn a'r cyfesurynnau. Mae'r awgrym yn dangos y safle. Defnyddio wrth gwrcwd sy'n ei glirio.<br>
+<br>
+Marciwch beiriannau, canghennau twnnel, rheolyddion pell neu safleoedd anorffenedig.

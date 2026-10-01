@@ -1,0 +1,7 @@
+Blok detektori
+Signalni sezish
+<&recipe>Blok detektori qaragan joyi bandligini tekshiradi.<br>
+<br>
+Ishlatish: kuzatiladigan mashina yuzi, zaxira yoki qo'riqlanadigan joyga qarating.<br>
+<br>
+Eslatma: oldidagi blok havo bo'lmasa, quvvat beradi.

@@ -1,0 +1,5 @@
+Sjekač drveća
+Oprema fabričke hale
+<&recipe>Mali sjekač drveća je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Usmjerite ga prema odraslim stablima i zasebno prikupite ispuštene predmete.<br>

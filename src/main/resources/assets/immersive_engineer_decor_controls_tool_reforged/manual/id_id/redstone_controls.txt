@@ -1,0 +1,789 @@
+Kendali Redstone
+Pengukur dan perlengkapan sinyal
+Perangkat kendali mengubah redstone tersembunyi menjadi panel pabrik yang terbaca, sensor, indikator, sakelar, alarm, dan perlengkapan sinyal tertaut.<br>
+<br>
+Gunakan halaman ini saat membangun stasiun operator, papan sinyal, rangkaian keselamatan, dan kendali jarak jauh.
+<np>
+Sasaran Panah
+Pulsa sesaat
+<&arrow_target>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Sensor Pintu
+Kendali Redstone
+<&door_sensor_switch>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Lift
+Kendali Redstone
+<&elevator_button>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tombol Kaca
+Kendali Redstone
+<&glass_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Kaca
+Kendali Redstone
+<&glass_small_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Sentuh Kaca
+Kendali Redstone
+<&glass_touch_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Mesin
+Kendali Redstone
+<&industrial_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol
+Kendali Redstone
+<&industrial_double_pole_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Mesin Berpelindung
+Kendali Redstone
+<&industrial_fenced_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Ketukan
+Kendali Redstone
+<&industrial_knock_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Hias Antik
+Kendali Redstone
+<&oldfancy_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Hias Antik
+Kendali Redstone
+<&oldfancy_small_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Rantai Hias Antik
+Pulsa sesaat
+<&oldfancy_spring_reset_chain>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Rustik
+Kendali Redstone
+<&rustic_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Paku Rustik
+Kendali Redstone
+<&rustic_nail_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Rustik Kecil
+Kendali Redstone
+<&rustic_small_button>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Tombol Rantai Rustik
+Pulsa sesaat
+<&rustic_spring_reset_chain>Sakelar sesaat memberi pulsa redstone berkekuatan penuh yang jelas.<br>
+<br>
+Penggunaan: gunakan untuk menyalakan mesin, membuka pintu, alarm, atau rangkaian sekali jalan.<br>
+<br>
+Catatan: kembali ke keadaan awal setelah pulsa terjadwal selesai.
+<np>
+Pelat Kontak Kaca
+Pulsa tekanan
+<&glass_contact_mat>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Kontak Pintu Kaca
+Pulsa tekanan
+<&glass_door_contact_mat>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pelat Kontak
+Pulsa tekanan
+<&industrial_contact_mat>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Keset Kontak Pintu
+Pulsa tekanan
+<&industrial_door_contact_mat>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pendeteksi Jatuh
+Pengindraan sinyal
+<&industrial_fallthrough_detector>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Tombol Kaki
+Kendali Redstone
+<&industrial_foot_button>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pintu Industri Peka Benturan
+Pulsa tekanan
+<&industrial_high_sensitive_trapdoor>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Keset Kontak Peka Benturan
+Pulsa tekanan
+<&industrial_shock_sensitive_contact_mat>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pintu Kolong Aktif Benturan
+Pulsa tekanan
+<&industrial_shock_sensitive_trapdoor>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Tanaman Sinyal Merah
+Pulsa tekanan
+<&red_power_plant>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pelat Tekanan Rustik
+Pulsa tekanan
+<&rustic_contact_plate>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Tekanan Pintu Rustik
+Pulsa tekanan
+<&rustic_door_contact_plate>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pendeteksi Jatuh Rustik
+Pengindraan sinyal
+<&rustic_fallthrough_detector>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pintu Rustik Peka Benturan
+Pulsa tekanan
+<&rustic_high_sensitive_trapdoor>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pelat Rustik Peka Benturan
+Pulsa tekanan
+<&rustic_shock_sensitive_plate>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Pintu Rustik Peka Benturan
+Pulsa tekanan
+<&rustic_shock_sensitive_trapdoor>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Tanaman Sinyal Kuning
+Pulsa tekanan
+<&yellow_power_plant>Sakelar kontak mengirim sinyal singkat akibat gerakan pada lantai atau pintu kolong.<br>
+<br>
+Penggunaan: pasang di tempat entitas melewati lorong servis, pemuat, atau jalur yang dijaga.<br>
+<br>
+Catatan: memberi pulsa singkat setelah kontak dengan entitas.
+<np>
+Jam Pengatur Harian Kaca
+Sinyal siang hari
+<&glass_day_timer>Sakelar waktu mengikuti bagian siang dalam siklus dunia.<br>
+<br>
+Penggunaan: gunakan untuk lampu halaman, penutup jendela, dan kendali pabrik yang hanya bekerja pada siang hari.<br>
+<br>
+Catatan: memerlukan dimensi dengan cahaya langit.
+<np>
+Pendeteksi Entitas Kaca
+Pengindraan sinyal
+<&glass_entity_detector>Pendeteksi entitas mengamati gerakan di dekatnya tanpa pelat lantai yang terlihat.<br>
+<br>
+Penggunaan: hubungkan ke pintu, lampu, alarm, atau pengunci keselamatan mesin.<br>
+<br>
+Catatan: memindai area kecil di sekitar blok.
+<np>
+Sinyal Interval Kaca
+Pulsa berwaktu
+<&glass_interval_timer>Sakelar waktu ringkas memberikan pulsa redstone terjadwal.<br>
+<br>
+Penggunaan: gunakan ketika mekanisme kecil membutuhkan kendali berkala atau tertunda.<br>
+<br>
+Catatan: menggunakan pulsa redstone terjadwal.
+<np>
+Pendeteksi Garis Kaca
+Pengindraan sinyal
+<&glass_linear_entity_detector>Pendeteksi entitas mengamati gerakan di dekatnya tanpa pelat lantai yang terlihat.<br>
+<br>
+Penggunaan: hubungkan ke pintu, lampu, alarm, atau pengunci keselamatan mesin.<br>
+<br>
+Catatan: memindai area kecil di sekitar blok.
+<np>
+Pendeteksi Blok
+Pengindraan sinyal
+<&industrial_block_detector>Pendeteksi blok memeriksa apakah ruang yang dihadapinya terisi.<br>
+<br>
+Penggunaan: arahkan ke sisi mesin, penampung sementara, atau ruang yang dijaga untuk diamati.<br>
+<br>
+Catatan: mengeluarkan daya ketika blok di depannya bukan udara.
+<np>
+Jam Pengatur Harian
+Sinyal siang hari
+<&industrial_day_timer>Sakelar waktu mengikuti bagian siang dalam siklus dunia.<br>
+<br>
+Penggunaan: gunakan untuk lampu halaman, penutup jendela, dan kendali pabrik yang hanya bekerja pada siang hari.<br>
+<br>
+Catatan: memerlukan dimensi dengan cahaya langit.
+<np>
+Pendeteksi Entitas
+Pengindraan sinyal
+<&industrial_entity_detector>Pendeteksi entitas mengamati gerakan di dekatnya tanpa pelat lantai yang terlihat.<br>
+<br>
+Penggunaan: hubungkan ke pintu, lampu, alarm, atau pengunci keselamatan mesin.<br>
+<br>
+Catatan: memindai area kecil di sekitar blok.
+<np>
+Pengatur Waktu Interval
+Pulsa berwaktu
+<&industrial_interval_timer>Sakelar waktu ringkas memberikan pulsa redstone terjadwal.<br>
+<br>
+Penggunaan: gunakan ketika mekanisme kecil membutuhkan kendali berkala atau tertunda.<br>
+<br>
+Catatan: menggunakan pulsa redstone terjadwal.
+<np>
+Sensor Cahaya
+Pengindraan sinyal
+<&industrial_light_sensor>Sensor cahaya mengubah kecerahan setempat menjadi kendali redstone.<br>
+<br>
+Penggunaan: gunakan untuk lampu otomatis, penutup jendela, dan rangkaian visibilitas.<br>
+<br>
+Catatan: mengeluarkan daya pada kecerahan mentah 8 atau lebih.
+<np>
+Pendeteksi Badai
+Pengindraan sinyal
+<&industrial_lightning_sensor>Sensor badai mengaktifkan peringatan selama kondisi petir.<br>
+<br>
+Penggunaan: pasang di bawah langit terbuka dan hubungkan ke lampu atau alarm.<br>
+<br>
+Catatan: memerlukan petir dan akses ke langit.
+<np>
+Pendeteksi Entitas Linear
+Pengindraan sinyal
+<&industrial_linear_entity_detector>Pendeteksi entitas mengamati gerakan di dekatnya tanpa pelat lantai yang terlihat.<br>
+<br>
+Penggunaan: hubungkan ke pintu, lampu, alarm, atau pengunci keselamatan mesin.<br>
+<br>
+Catatan: memindai area kecil di sekitar blok.
+<np>
+Sensor Hujan
+Pengindraan sinyal
+<&industrial_rain_sensor>Sensor cuaca mengubah curah hujan di posisinya menjadi redstone.<br>
+<br>
+Penggunaan: pasang di tempat blok di atasnya dapat terkena hujan.<br>
+<br>
+Catatan: memeriksa hujan di atas sensor.
+<np>
+Sakelar Kaca Bistabil
+Kendali Redstone
+<&glass_rotary_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Sentuhan Kaca Bistabil
+Kendali Redstone
+<&glass_touch_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Kaca Peka Jingga
+Kaca sinyal
+<&orange_sensitiveglass>Blok kaca yang bereaksi terhadap redstone mempertahankan pandangan terbuka sambil menampilkan keadaan sinyal.<br>
+<br>
+Penggunaan: gunakan pada jendela ruang kendali, panel bercahaya, dan kaca pelindung pabrik.<br>
+<br>
+Catatan: berubah keadaan akibat daya redstone di dekatnya.
+<np>
+Kaca Peka Bercahaya
+Kaca sinyal
+<&sensitive_glass_block>Blok kaca yang bereaksi terhadap redstone mempertahankan pandangan terbuka sambil menampilkan keadaan sinyal.<br>
+<br>
+Penggunaan: gunakan pada jendela ruang kendali, panel bercahaya, dan kaca pelindung pabrik.<br>
+<br>
+Catatan: berubah keadaan akibat daya redstone di dekatnya.
+<np>
+Kaca Peka Berwarna
+Kaca sinyal
+<&stained_sensitiveglass>Blok kaca yang bereaksi terhadap redstone mempertahankan pandangan terbuka sambil menampilkan keadaan sinyal.<br>
+<br>
+Penggunaan: gunakan pada jendela ruang kendali, panel bercahaya, dan kaca pelindung pabrik.<br>
+<br>
+Catatan: berubah keadaan akibat daya redstone di dekatnya.
+<np>
+Pengukur Batang Kaca
+Pengukur sinyal
+<&glass_vertical_bar_gauge>Pengukur ruang kendali yang ringkas menampilkan kekuatan redstone sebagai pembacaan panel yang jelas.<br>
+<br>
+Penggunaan: pasang di tempat daya redstone di dekatnya dapat diperiksa sekilas.<br>
+<br>
+Catatan: membaca kekuatan redstone di dekatnya dari 0 hingga 15.
+<np>
+Pengukur Analog
+Pengukur sinyal
+<&industrial_analog_angular_gauge>Pengukur ruang kendali yang ringkas menampilkan kekuatan redstone sebagai pembacaan panel yang jelas.<br>
+<br>
+Penggunaan: pasang di tempat daya redstone di dekatnya dapat diperiksa sekilas.<br>
+<br>
+Catatan: membaca kekuatan redstone di dekatnya dari 0 hingga 15.
+<np>
+Pengukur Voltmeter
+Pengukur sinyal
+<&industrial_analog_horizontal_gauge>Pengukur ruang kendali yang ringkas menampilkan kekuatan redstone sebagai pembacaan panel yang jelas.<br>
+<br>
+Penggunaan: pasang di tempat daya redstone di dekatnya dapat diperiksa sekilas.<br>
+<br>
+Catatan: membaca kekuatan redstone di dekatnya dari 0 hingga 15.
+<np>
+Pengukur Digital
+Kekuatan sinyal yang terbaca
+<&industrial_small_digital_gauge>Pengukur ruang kendali yang ringkas menampilkan kekuatan redstone sebagai pembacaan panel yang jelas.<br>
+<br>
+Penggunaan: pasang di tempat daya redstone di dekatnya dapat diperiksa sekilas.<br>
+<br>
+Catatan: membaca kekuatan redstone di dekatnya dari 0 hingga 15.
+<np>
+Pengukur Tabung Kaca
+Pengukur sinyal
+<&industrial_tube_gauge>Pengukur ruang kendali yang ringkas menampilkan kekuatan redstone sebagai pembacaan panel yang jelas.<br>
+<br>
+Penggunaan: pasang di tempat daya redstone di dekatnya dapat diperiksa sekilas.<br>
+<br>
+Catatan: membaca kekuatan redstone di dekatnya dari 0 hingga 15.
+<np>
+Pengukur Batang Analog
+Pengukur sinyal
+<&industrial_vertical_bar_gauge>Pengukur ruang kendali yang ringkas menampilkan kekuatan redstone sebagai pembacaan panel yang jelas.<br>
+<br>
+Penggunaan: pasang di tempat daya redstone di dekatnya dapat diperiksa sekilas.<br>
+<br>
+Catatan: membaca kekuatan redstone di dekatnya dari 0 hingga 15.
+<np>
+Lampu Alarm
+Umpan balik sinyal
+<&industrial_alarm_lamp>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+Sirene Alarm
+Umpan balik sinyal
+<&industrial_alarm_siren>Sirene alarm adalah indikator redstone yang dipasang pada sisi blok. Status dayanya mengikuti sinyal dari blok tempatnya terpasang.<br>
+<br>
+Penggunaan: tempelkan pada sisi padat dan berikan daya untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: sirene diperbarui sekali setiap detik selama sinyal tempatnya terpasang tetap aktif.
+<np>
+LED Berkedip
+Umpan balik sinyal
+<&industrial_blinking_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Hijau Berkedip
+Umpan balik sinyal
+<&industrial_green_blinking_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Hijau
+Umpan balik sinyal
+<&industrial_green_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Merah
+Umpan balik sinyal
+<&industrial_red_blinking_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Merah
+Umpan balik sinyal
+<&industrial_red_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Putih Berkedip
+Umpan balik sinyal
+<&industrial_white_blinking_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Putih
+Umpan balik sinyal
+<&industrial_white_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Kuning Berkedip
+Umpan balik sinyal
+<&industrial_yellow_blinking_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+LED Kuning
+Umpan balik sinyal
+<&industrial_yellow_led>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+Semafor Rustik
+Umpan balik sinyal
+<&rustic_semaphore>Indikator ringkas mengubah redstone tersembunyi menjadi umpan balik pabrik yang terlihat.<br>
+<br>
+Penggunaan: hubungkan di samping sinyal untuk memantau pintu, mesin, alarm, atau panel.<br>
+<br>
+Catatan: berubah keadaan saat ada daya redstone di dekatnya.
+<np>
+Sakelar Pembanding
+Sinyal dari tempat pemasangan
+<&industrial_comparator_switch>Sakelar sensor ringkas membaca blok tempatnya terpasang dan mengubah pembacaan itu menjadi keluaran panel sederhana.<br>
+<br>
+Penggunaan: pasang pada persediaan, tangki, atau perangkat redstone. Ketika blok tempatnya terpasang melaporkan keluaran pembanding, wadah, atau redstone, sakelar mengeluarkan redstone berkekuatan penuh.<br>
+<br>
+Catatan: gunakan untuk mengubah tingkat isi penyimpanan atau pengawatan tersembunyi menjadi jalur kendali nyala/mati yang jelas.
+<np>
+Peredup
+Sinyal variabel
+<&industrial_dimmer>Kendali putar mengatur kekuatan redstone melalui bagian depan panel ringkas.<br>
+<br>
+Penggunaan: klik kanan untuk menaikkan keluaran secara bertahap, lalu kembali ke nol setelah kekuatan penuh.<br>
+<br>
+Catatan: mengeluarkan kekuatan dari 0 hingga 15.
+<np>
+Tombol Henti Darurat
+Kendali Redstone
+<&industrial_estop_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Penghambat Corong
+Kendali Redstone
+<&industrial_hopper_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Sakelar Ketukan
+Kendali Redstone
+<&industrial_knock_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas
+Kendali Redstone
+<&industrial_lever>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Sakelar Mesin Dua Tombol
+Kendali Redstone
+<&industrial_machine_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Pegangan Tarik
+Kendali Redstone
+<&industrial_pull_handle>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas Putar
+Kendali Redstone
+<&industrial_rotary_lever>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Sakelar Putar Mesin
+Kendali Redstone
+<&industrial_rotary_machine_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas Kontak
+Kendali Redstone
+<&industrial_small_lever>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Sakelar
+Kendali Redstone
+<&industrialswitch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Sakelar Lampu
+Kendali Redstone
+<&light_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Sakelar Katup
+Kendali Redstone
+<&valve_wheel_switch>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Penerima Pulsa Berkotak
+Kendali tertaut
+<&industrial_switchlink_cased_pulse_receiver>Penerima pulsa tertaut berkotak memberi panel jarak jauh pemicu redstone singkat.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Klik kanan penerima atau picu mutiara tertaut untuk mengeluarkan pulsa singkat.<br>
+<br>
+Catatan: pulsa kembali ke keadaan awal setelah durasi terjadwalnya.
+<np>
+Penerima Tautan Berkotak
+Kendali tertaut
+<&industrial_switchlink_cased_receiver>Penerima tertaut berkotak memberi panel jarak jauh sasaran redstone yang kokoh.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Klik kanan langsung pada penerima untuk mengganti keadaannya secara manual.<br>
+<br>
+Catatan: mutiara tertaut mengganti keadaan penerima ini jika digunakan sambil menyelinap.
+<np>
+Penerima Tautan Pulsa
+Kendali tertaut
+<&industrial_switchlink_pulse_receiver>Penerima pulsa tertaut memberi panel jarak jauh pemicu redstone singkat.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Klik kanan penerima atau picu mutiara tertaut untuk mengeluarkan pulsa singkat.<br>
+<br>
+Catatan: pulsa kembali ke keadaan awal setelah durasi terjadwalnya.
+<np>
+Relai Tautan Pulsa
+Kendali tertaut
+<&industrial_switchlink_pulse_relay>Komponen berbentuk relai memberi rakitan panel titik sakelar lokal yang ringkas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya. Gunakan blok penerima jika membutuhkan pengaktifan melalui mutiara tertaut.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Penerima Tautan Sakelar
+Kendali tertaut
+<&industrial_switchlink_receiver>Penerima tertaut memberi panel jarak jauh sasaran redstone berkekuatan penuh.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Klik kanan langsung pada penerima untuk mengganti keadaannya secara manual.<br>
+<br>
+Catatan: mutiara tertaut mengganti keadaan penerima ini jika digunakan sambil menyelinap.
+<np>
+Penerima Tautan Analog
+Kendali tertaut
+<&industrial_switchlink_receiver_analog>Penerima tertaut memberi panel kendali sasaran jarak jauh yang terlihat.<br>
+<br>
+Penggunaan: klik dengan mutiara Ender untuk membuat mutiara tertaut. Gunakan mutiara itu sambil menyelinap untuk mengaktifkan penerima dari jarak jauh.<br>
+<br>
+Catatan: penerima ini mengeluarkan sinyal redstone penuh saat dipicu.
+<np>
+Relai Tautan Sakelar
+Kendali tertaut
+<&industrial_switchlink_relay>Komponen berbentuk relai memberi rakitan panel titik sakelar lokal yang ringkas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya. Gunakan blok penerima jika membutuhkan pengaktifan melalui mutiara tertaut.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Relai Tautan Analog
+Kendali tertaut
+<&industrial_switchlink_relay_analog>Komponen berbentuk relai memberi rakitan panel titik sakelar lokal yang ringkas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya. Gunakan blok penerima jika membutuhkan pengaktifan melalui mutiara tertaut.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Mutiara Tautan Sakelar
+Kendali tertaut
+<&switchlink_pearl>Mutiara tertaut menyimpan sasaran penerima untuk kendali pabrik dari jarak jauh.<br>
+<br>
+Penggunaan: klik penerima tautan sakelar dengan mutiara Ender untuk membuatnya. Gunakan mutiara tertaut sambil menyelinap untuk mengaktifkan penerima yang tersimpan.<br>
+<br>
+Catatan: sasaran harus dimuat, berada dalam dimensi yang sama, dan masih dalam jangkauan.
+<np>
+Tuas Hias Antik
+Kendali Redstone
+<&oldfancy_bistableswitch1>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas Putar Hias Antik
+Kendali Redstone
+<&oldfancy_bistableswitch2>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas Putar Rustik
+Kendali Redstone
+<&rustic_angular_lever>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas Rustik
+Kendali Redstone
+<&rustic_lever>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas Paku Rustik
+Kendali Redstone
+<&rustic_nail_lever>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.
+<np>
+Tuas Rustik Dua Engsel
+Kendali Redstone
+<&rustic_two_hinge_lever>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.

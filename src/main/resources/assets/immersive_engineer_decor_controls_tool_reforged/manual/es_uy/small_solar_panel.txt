@@ -1,0 +1,5 @@
+Panel solar
+Utilidad de taller
+<&recipe>El pequeño panel solar es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Dejalo a cielo abierto y conectá equipos de bajo consumo.<br>

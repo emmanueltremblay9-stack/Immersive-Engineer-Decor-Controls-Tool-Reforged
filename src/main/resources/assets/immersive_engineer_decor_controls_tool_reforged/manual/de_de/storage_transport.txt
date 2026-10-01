@@ -1,0 +1,41 @@
+Lagerung und Transport
+Lager- und Durchflussbauteile
+Bauteile für Lagerung und Transport umfassen Kisten, Fässer, Trichter und Ventile für kompakte Transportwege in Fabriken.<br>
+<br>
+Nutze diese Seiten bei der Planung von Lagerräumen, Rohrstrecken, Versorgungstanks und geregelten Flüssigkeitsleitungen.
+<np>
+Beschriftete Kiste
+Bearbeitbare Lagerbeschriftung
+<&labeled_crate>Diese beschriftete Kiste sorgt für übersichtliche Lagerräume. Ihr Frontschild lässt sich wie ein kleines Werkstattschild bearbeiten.<br>
+<br>
+Verwendung: Klicke mit rechts auf das Frontschild, um die Beschriftung zu ändern. Ein Rechtsklick auf den übrigen Kistenkörper öffnet das Lager für Bauteile, Zubehör und Wartungsmaterial.<br>
+<np>
+Flüssigkeitsfass
+Bauteil für Flüssigkeitsleitungen
+<&fluid_barrel>Dieses kompakte Leitungsteil eignet sich für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Platziere es so, dass Rohre oder Eimer die Tankseite erreichen können.<br>
+<np>
+Flüssigkeitstrichter
+Bauteil für Flüssigkeitsleitungen
+<&small_fluid_funnel>Der kleine Flüssigkeitssammeltrichter ist ein kompaktes Leitungsteil für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setze ihn unter die Flüssigkeitssammelstelle und leite seinen Inhalt in Tanks oder tiefer gelegene Rohrleitungen.<br>
+<np>
+Flüssigkeits-Rückschlagventil
+Bauteil für Flüssigkeitsleitungen
+<&straight_pipe_valve>Das Flüssigkeits-Rückschlagventil ist ein kompaktes Leitungsteil für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richte das Ventil in der gewünschten Fließrichtung aus.<br>
+<np>
+Redstone-Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone>Das Redstone-Flüssigkeitsventil ist ein kompaktes Leitungsteil für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richte das Ventil in der gewünschten Fließrichtung aus.<br>
+<np>
+Analoges Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone_analog>Das analoge Flüssigkeitsventil ist ein kompaktes Leitungsteil für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richte das Ventil in der gewünschten Fließrichtung aus.<br>

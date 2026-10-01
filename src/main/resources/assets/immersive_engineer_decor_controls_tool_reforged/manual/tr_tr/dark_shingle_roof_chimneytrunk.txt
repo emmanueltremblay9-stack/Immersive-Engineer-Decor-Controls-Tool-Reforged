@@ -1,0 +1,5 @@
+Çatı Baca Gövdesi
+Eskimiş çatı parçası
+<&recipe>Koyu şıngıl çatı baca gövdesi, atölyeler ve sanayi barakaları için koyu renkli, kullanışlı çatı hatları oluşturur.<br>
+<br>
+Kullanım: İnandırıcı çatı biçimleri oluşturmak için parçaları birlikte kullanın.<br>

@@ -1,0 +1,5 @@
+Inbuto par fluidi
+Equipamento par linee de fluidi
+<&recipe>El Pìcolo inbuto par catar su fluidi el xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: mètelo soto el ponto de racòlta de’l fluido e porta el contenuto conservà verso serbatoi o tubi pì bassi.<br>

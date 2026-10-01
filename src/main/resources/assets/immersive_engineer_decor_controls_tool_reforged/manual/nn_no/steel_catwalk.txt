@@ -1,0 +1,5 @@
+Stålgangbru
+Del for vedlikehaldstilkomst
+<&recipe>Denne blokka gjer vedlikehaldsvegane kring maskinene tydelege.<br>
+<br>
+Bruk: plasser henne som vedlikehaldstilkomst kring maskiner, i øvre etasjar og i servicesjakter.<br>

@@ -1,0 +1,7 @@
+Impulsinio ryšio relė
+Susietas valdymas
+<&recipe>Relės išvaizdos įrenginys suteikia skydams kompaktišką vietinį perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms. Kai reikia įjungti susietu perlu, naudok imtuvų blokus.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.

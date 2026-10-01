@@ -1,0 +1,5 @@
+Señal de peligro
+Señalización de peligro
+<&recipe>La señal «Atención: zona muy peligrosa» identifica peligros, salidas y zonas de trabajo mediante una indicación visual de seguridad industrial.<br>
+<br>
+Uso: Colócala junto a peligros, salidas, máquinas y zonas restringidas.<br>

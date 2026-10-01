@@ -1,0 +1,5 @@
+Panell solar
+Equipament de terra de taller
+<&recipe>El panell solar xicotet és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: deixa que tinga accés al cel obert i connecta equip de baix consum.<br>

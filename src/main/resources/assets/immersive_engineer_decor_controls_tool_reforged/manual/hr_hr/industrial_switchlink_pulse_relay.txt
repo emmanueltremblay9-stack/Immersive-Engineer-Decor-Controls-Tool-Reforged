@@ -1,0 +1,7 @@
+Impulsni relej poveznice
+Povezano upravljanje
+<&recipe>Dio u obliku releja daje panelima kompaktno mjesto za lokalno prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove. Za aktivaciju povezanim biserom koristi prijamničke blokove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.

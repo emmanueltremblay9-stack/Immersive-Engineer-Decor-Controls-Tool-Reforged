@@ -1,0 +1,5 @@
+Stahl-Doppel-T-Träger
+Teil vom Tragwärch
+<&recipe>Mit dem Block überchunsch sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>

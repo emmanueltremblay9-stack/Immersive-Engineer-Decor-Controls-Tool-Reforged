@@ -1,0 +1,7 @@
+Tankepresser
+Erfaringskondensator
+<&recipe>Tankepresseren omdanner lapis og erfaring til opladet lapis.<br>
+<br>
+Brug: Hav lapis lazuli og mindst ét erfaringsniveau, og brug så værktøjet. En vellykket presning bruger ét niveau og én lapis, skader brugeren, slider på presseren og skaber én opladet lapis.<br>
+<br>
+Den nægter at arbejde, hvis brugeren mangler lapis eller XP eller er for tæt på at dø.

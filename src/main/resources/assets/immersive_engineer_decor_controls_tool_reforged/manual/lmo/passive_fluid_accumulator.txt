@@ -1,0 +1,5 @@
+Fluid passiv
+Acessori per linee de fluid
+<&recipe>El Acumulator passiv di fluid l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Metel contra sorgent de aqua adate e lassa spazzi per tirà foeura el fluid.<br>

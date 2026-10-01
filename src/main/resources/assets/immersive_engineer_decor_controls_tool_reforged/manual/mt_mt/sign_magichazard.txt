@@ -1,0 +1,5 @@
+Sinjal ta' periklu maġiku
+Markatur tal-periklu
+<&recipe>Is-sinjal "Attenzjoni, Periklu Maġiku" jimmarka perikli, ħruġ u żoni tax-xogħol b'indikazzjoni viżiva għas-sigurtà tal-fabbrika.<br>
+<br>
+Użu: qiegħdu maġenb perikli, ħruġ, magni u żoni ristretti.<br>

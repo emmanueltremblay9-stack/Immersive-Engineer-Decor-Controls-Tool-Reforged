@@ -1,0 +1,7 @@
+Takip Aygıtı
+Kayıtlı konum işareti
+<&recipe>İzleyici bir blok konumunu eşyanın içinde saklar.<br>
+<br>
+Boyut ve koordinatları kaydetmek için bloka tıklayın. İpucu konumu gösterir. Hedefi silmek için eğilerek kullanın.<br>
+<br>
+Makineleri, tünelleri, uzaktan kumandaları veya bitmemiş yapıları işaretleyin.

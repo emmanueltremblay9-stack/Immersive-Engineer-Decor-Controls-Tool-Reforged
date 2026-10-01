@@ -1,0 +1,5 @@
+Zutoin lodiaren burua
+Egituraren marko-pieza
+<&recipe>Altzairuzko zutoin lodi zuzenaren buruak/oinak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>

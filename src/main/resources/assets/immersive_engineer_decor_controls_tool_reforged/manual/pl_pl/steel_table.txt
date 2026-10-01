@@ -1,0 +1,5 @@
+Stalowy stół
+Mebel warsztatowy
+<&recipe>Ten blok jest praktycznym meblem do pomieszczeń roboczych i zakątków konserwacyjnych.<br>
+<br>
+Użycie: Ustaw go obok stołów roboczych, skrzyń i niewielkich maszyn.<br>

@@ -1,0 +1,7 @@
+Botó tàctil de vidre
+Control per redstone
+<&recipe>Un interruptor momentani emet un pols de redstone net i a plena potència.<br>
+<br>
+Ús: usa’l per a arrancar màquines, alliberar portes, activar alarmes o controlar circuits d’un sol dispar.<br>
+<br>
+Notes: torna a l’estat inicial quan acaba el pols programat.

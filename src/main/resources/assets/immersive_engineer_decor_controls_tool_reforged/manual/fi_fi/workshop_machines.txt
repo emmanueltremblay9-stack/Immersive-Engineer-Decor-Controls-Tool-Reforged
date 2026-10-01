@@ -1,0 +1,107 @@
+Työpajakoneet
+Koneet ja työpajan tulot ja lähdöt
+Työpajakoneet tarjoavat valmistusta, esineensiirtoa, sulatusta, hävitystä, keräämistä ja aputoimintoja yhden kuution kokoisina.<br>
+<br>
+Avaa seuraavat sivut nähdäksesi kunkin koneen reseptin, kuvat, taustatiedot ja käytännön käyttöohjeet.
+<np>
+Teräspöytä
+Työpajan kaluste
+<&steel_table>Tämä kuutio on käytännöllinen työpajakaluste työhuoneisiin ja huoltonurkkauksiin.<br>
+<br>
+Käyttö: Aseta penkkien, laatikoiden ja pienten koneiden viereen.<br>
+<np>
+Käsitelty puupöytä
+Työpajan kaluste
+<&treated_wood_table>Tämä kuutio on käytännöllinen työpajakaluste työhuoneisiin ja huoltonurkkauksiin.<br>
+<br>
+Käyttö: Aseta penkkien, laatikoiden ja pienten koneiden viereen.<br>
+<np>
+Käsitelty puujakkara
+Työpajan kaluste
+<&treated_wood_stool>Tämä kuutio on käytännöllinen työpajakaluste työhuoneisiin ja huoltonurkkauksiin.<br>
+<br>
+Käyttö: Aseta penkkien, laatikoiden ja pienten koneiden viereen.<br>
+<np>
+Metallityöpöytä
+Levytyöasema
+<&metal_crafting_table>Metallityöpöytä on vahvistettu työpaja-asema, jossa on vasarapaikka, 3x3-työstöruudukko ja selkeä tulospaikka.<br>
+<br>
+Käyttö: Käytä ruudukkoa tavalliseen työstämiseen. Tee IE-levyjä asettamalla insinöörin vasara työkalupaikkaan ja levymateriaali ruudukkoon ennen tuloksen ottamista. Teräskoristeiden pylväät, huoltotasot, ikkunat, ovet, kaiteet ja muut teräsosat käyttävät teräslevyjä.<br>
+<np>
+Tehdassuppilo
+Työpajan apulaite
+<&factory_hopper>Tämä kuutio siirtää esinepinoja tiiviimmän teollisuuskotelon läpi.<br>
+<br>
+Käyttö: Suuntaa varastolinjaan ja aseta sitten kantama, pinomäärä, ajoitus ja redstone-tila käyttöliittymästä.<br>
+<np>
+Tehdaspudottaja
+Työpajan apulaite
+<&factory_dropper>Tämä kuutio vapauttaa varastoidut esineet suunnatulta etupinnaltaan.<br>
+<br>
+Käyttö: Suuntaa etupuoli vapautuskohtaan, täytä sisäiset paikat ja säädä voima, kulma, viive, suodatinlogiikka ja redstone-tila käyttöliittymästä.<br>
+<np>
+Tehtaan kuutionasettaja
+Työpajan apulaite
+<&factory_placer>Tämä kuutio asettaa kuutioita sisäisestä varastostaan aktivoitaessa.<br>
+<br>
+Käyttö: Suuntaa työpuoli kohdetilaan ja täytä asetettavien esineiden pinoilla.<br>
+<np>
+Kuutionrikkoja
+Työpajan apulaite
+<&small_block_breaker>Pieni kuutionrikkoja on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Suuntaa työpuoli poistettavaa kuutiota kohti.<br>
+<np>
+Jätteenpoltin
+Pieni käsittely-yksikkö
+<&small_waste_incinerator>Jätteenpoltin tuhoaa tarpeettomat esineet vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Syötä sen jonoon vain tarpeettomia esineitä.<br>
+<np>
+Laboratoriouuni
+Pieni käsittely-yksikkö
+<&small_lab_furnace>Laboratoriouuni hoitaa pienet kiinteällä polttoaineella tehtävät sulatustyöt vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Käytä kiinteää polttoainetta pieniin sulatuseriin.<br>
+<np>
+Sähköuuni
+Pieni käsittely-yksikkö
+<&small_electrical_furnace>Sähköuuni hoitaa pienet FE-käyttöiset sulatustyöt vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Syötä FE:tä ja kelvollista sulatettavaa materiaalia.<br>
+<np>
+Mineraalisulatin
+Pieni käsittely-yksikkö
+<&small_mineral_smelter>Mineraalisulatin käsittelee mineraaleja korkeassa lämpötilassa vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Syötä mineraalikuutioita ja energiaa korkean lämpötilan sulatukseen.<br>
+<np>
+Vedenjäädytin
+Pieni käsittely-yksikkö
+<&small_freezer>Vedenjäädytin hoitaa pienet jäähdytystyöt energialla toimivissa nestejärjestelmissä.<br>
+<br>
+Käyttö: Syötä vettä ja energiaa vaiheittaiseen jääntuotantoon.<br>
+<np>
+Passiivinen neste
+Nestelinjan laitteet
+<&passive_fluid_accumulator>Passiivinen nesteenkerääjä on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Aseta sopivia vesilähteitä vasten ja jätä tilaa nesteen poistolle.<br>
+<np>
+Aurinkopaneeli
+Työpajan apulaite
+<&small_solar_panel>Pieni aurinkopaneeli on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Anna sille avoin näkymä taivaalle ja kytke vähän kuluttavia laitteita.<br>
+<np>
+Lypsykone
+Työpajan apulaite
+<&small_milking_machine>Pieni lypsykone on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Aseta lehmien lähelle ja järjestä maitoastioiden tai nesteen poistaminen.<br>
+<np>
+Puunkaataja
+Työpajan apulaite
+<&small_tree_cutter>Pieni puunkaataja on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Suuntaa täysikasvuisiin puihin ja kerää pudonneet esineet erikseen.<br>

@@ -1,0 +1,7 @@
+Erregulagailua
+Seinale aldakorra
+<&recipe>Aginte birakari batek redstonearen indarra doitzen du panel-aurpegi trinko batetik.<br>
+<br>
+Erabilera: egin eskuineko klik irteera mailaz maila igotzeko, eta indar osora iritsi ondoren berriro zerora itzultzeko.<br>
+<br>
+Oharrak: 0 eta 15 arteko indarra igortzen du.

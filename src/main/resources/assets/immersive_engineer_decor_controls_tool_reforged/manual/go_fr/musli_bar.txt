@@ -1,0 +1,5 @@
+Barre de force Muslee Melange
+Ptit manger d'atelier rapide
+<&recipe>La barre énergétiqe Muslee Melange ét eune mangeaille compacte féte de pain, de graines e de fruit.<br>
+<br>
+Empllai : Manjéz-la su le chantier en pllaçant des comandes, des tuyaux, des pllâteformes ou de longues lignes den les salles a machines.

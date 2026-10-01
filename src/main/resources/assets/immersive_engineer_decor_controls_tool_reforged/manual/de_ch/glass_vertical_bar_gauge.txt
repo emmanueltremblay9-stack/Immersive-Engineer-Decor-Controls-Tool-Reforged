@@ -1,0 +1,7 @@
+Glas-Balkeaazeig
+Signalmässgrät
+<&recipe>Es kompakts Mässgrät für de Kontrollruum zeigt d'Redstone-Stärchi guet lesbar uf ere Tafle.<br>
+<br>
+Verwendig: Montier's, wo d'Stärchi näbedraa uf en Blick prüefe wotsch.<br>
+<br>
+Hiwiis: Liest d'Redstone-Stärchi ide Nöchi vo 0 bis 15.

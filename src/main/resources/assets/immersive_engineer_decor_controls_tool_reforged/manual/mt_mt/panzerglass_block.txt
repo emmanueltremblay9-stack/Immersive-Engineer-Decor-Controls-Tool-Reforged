@@ -1,0 +1,5 @@
+Blokka tal-ħġieġ korazzat
+Linja tal-vista protetta
+<&recipe>Din il-blokka żżomm il-linji tal-vista miftuħa waqt li taqbel mal-kostruzzjoni rinfurzata tal-fabbrika.<br>
+<br>
+Użu: użaha fejn il-plejers għandhom jaraw il-makkinarju minn wara barriera protetta.<br>

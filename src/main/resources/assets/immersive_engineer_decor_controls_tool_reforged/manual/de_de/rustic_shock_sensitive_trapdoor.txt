@@ -1,0 +1,7 @@
+Rustikale Erschütterungstür
+Druckimpuls
+<&recipe>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.

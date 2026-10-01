@@ -1,0 +1,7 @@
+Espremedor de ment
+Condensador d’experiència
+<&recipe>L’espremedor de ment converteix lapislàtzuli i experiència en lapislàtzuli carregat.<br>
+<br>
+Ús: duu lapislàtzuli i almenys un nivell d’experiència, i fes servir l’eina. Una extracció reeixida consumeix un nivell i una unitat de lapislàtzuli, fa mal a l’usuari, desgasta l’espremedor i crea una unitat de lapislàtzuli carregat.<br>
+<br>
+No funciona si a l’usuari li falta lapislàtzuli o experiència, o si és massa a prop de morir.

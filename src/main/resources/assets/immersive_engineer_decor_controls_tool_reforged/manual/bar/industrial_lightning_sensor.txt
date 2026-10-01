@@ -1,0 +1,7 @@
+Gwitterdetektor
+Signalerkennung
+<&recipe>A Gwittersensor löst bei Donner Warnungen aus.<br>
+<br>
+So geht's: Setz'n untern freien Himml und verbind'n mit Lampn oder Alarm.<br>
+<br>
+Hinweis: Braucht Donner und freie Sicht zum Himml.

@@ -1,0 +1,7 @@
+Receptor de ligazón con carcasa
+Control ligado
+<&recipe>Un receptor ligado con carcasa ofrece un punto receptor robusto de redstone para paneis remotos.<br>
+<br>
+Uso: fai clic nel cunha perla do Ender para crear unha perla ligada. Fai clic dereito directamente no receptor para conmutalo á man.<br>
+<br>
+Notas: unha perla ligada conmuta este receptor cando a usas agochado.

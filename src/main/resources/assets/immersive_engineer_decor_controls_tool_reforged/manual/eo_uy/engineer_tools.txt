@@ -1,0 +1,99 @@
+Inĝenieraj iloj
+Portebla metieja ekipaĵo
+La inĝeniera ilaro aldonas manajn ilojn, minejajn markilojn, krizajn konsumaĵojn, kampajn manĝaĵojn kaj malgrandajn materialprilaborajn helpilojn al la sama manlibro kiu prezentas la ornamajn kaj regajn blokojn.<br>
+<br>
+Ĉi tiuj iloj estas por laboro for de plene ekipita metiejo: marku la vojon, portu provizojn, resaniĝu post eraroj kaj finu etajn prilaborajn taskojn surloke.
+<np>
+REDIA-ilo
+Diamantkovrita helpilo
+<&redia_tool>La REDIA-ilo estas daŭrema kampa helpilo por rapida grundlaboro. Uzu ĝin sur laborebla grundo por fari kultivteron.<br>
+<br>
+Uzu ĝin kontraŭ stabila flanko dum vi portas torĉojn por meti torĉmarkon el via inventaro sen eluzi REDIA. Grundlaboro, tondado, hakado kaj arbfaligado elspezas daŭropovon.
+<np>
+Erco-dispremilo
+Mana ilo
+<&crushing_hammer>Mana ilo por frua laboro kun fero kaj oro.<br>
+<br>
+Uzo: Kun kruda fero, kruda oro, fererco, profundardeza fererco, orerco aŭ profundardeza orerco ĝi faras feran aŭ oran polvon de Immersive Engineering. Ĝi perdas daŭripovon kaj revenas al la krado ĝis rompiĝo.<br>
+<br>
+Ĝi ankaŭ eluziĝas dum minado kaj repuŝas en proksima batalo.
+<np>
+Spurilo
+Konservita pozicia marko
+<&tracker>Konservas blokpozicion en la objekto.<br>
+<br>
+Uzo: Alklaku blokon por dimensio kaj koordinatoj. La helpilo montras la pozicion. Kaŭra uzo forigas ĝin.<br>
+<br>
+Marku maŝinojn, tunelbranĉojn, teleregilojn aŭ nefinitajn konstruejojn.
+<np>
+Ariadne-karbo
+Mineja vojmarkilo
+<&ariadne_coal>Ariadne-karbo metas rapidajn nigrajn sagovojmarkojn sur stabilajn minejajn flankojn. Uzu ĝin sur solida flanko por marki la sekvan turnon, elirejon aŭ branĉopunkton; la markilo subtenas ok direktojn laŭ la klakita flanko, inkluzive diagonalojn.<br>
+<br>
+Ariadne-karbo estas reuzebla markilo kun 100 uzoj. Ĉiu sukcesa markmetado kostas unu daŭropovon. Ĝi rifuzas netaŭgajn flankojn anstataŭ eluzi la objekton.
+<np>
+Aŭtomata stim-pako
+Kriza injektilo
+<&stimpack>Kriza resanigilo por danĝera prizorgado.<br>
+<br>
+Uzo: Mane resanigas, protektas kaj rapidigas mallonge. En inventaro ekfunkcias ĉe malalta sano kaj poste atendas.<br>
+<br>
+Portu antaŭ altaĵoj, nudaj dratoj aŭ danĝeraj minejoj.
+<np>
+Dormosako
+Portebla ripozilaro
+<&sleeping_bag>Veterrezista ilaro por laboro for de lito.<br>
+<br>
+Uzo: Nokte en la Supra Mondo ripozu ĝis mateno sen agordi renaskiĝejon.<br>
+<br>
+Rifuzas tagon, proksimajn monstrojn kaj netaŭgajn dimensiojn. Ĉiu ripozo eluzas ĝin.
+<np>
+Materiala skatolo
+Konstruaj provizoj
+<&material_box>Portas grandan rezervon de unu ordinara, nemodifita kaj stakigebla materialo.<br>
+<br>
+Uzo: Skatolo en ĉefa mano kaj materialo en la alia ŝargas. Malplena alia mano elprenas unu stakon.<br>
+<br>
+Tenas 512 erojn de unu tipo kaj rifuzas nestitajn skatolojn, nestakigeblajn ilojn kaj modifitajn stakojn; enhavo aperas en la helpilo.
+<np>
+Plonĝa aerkapsulo
+Kriza aerrezervo
+<&diving_capsule>Kriza aero por subakva laboro.<br>
+<br>
+Uzo: Restaŭru aeron mane. En la inventaro ĝi aŭtomate ekfunkcias kiam aero preskaŭ finiĝas kaj poste atendas.<br>
+<br>
+Portu al inunditaj minejoj, subakvaj tuboj kaj pumpĉambroj.
+<np>
+Muslee-briketa premilo
+Manĝaĵa premilo
+<&musli_bar_press>Transformas ordinarajn manĝaĵojn en kompaktajn kampajn porciojn.<br>
+<br>
+Uzo: Pano, pomo kaj semo de tritiko, melono, kukurbo, beto aŭ industria kanabo. Sukcesa premado konsumas po unu, kontrolas spacon, faras kvar briketojn kaj damaĝas la premilon.<br>
+<br>
+Se mankas ingredienco aŭ spaco, nenio konsumiĝas.
+<np>
+Muslee Melange energia briketo
+Rapida laboreja manĝeto
+<&musli_bar>Kompakta manĝaĵo el pano, semoj kaj frukto.<br>
+<br>
+Uzo: Manĝu dum instalado de regiloj, tuboj, platformoj aŭ longaj maŝinlinioj.
+<np>
+Menspremilo
+Spertokondensilo
+<&charged_lapis_squeezer>La menspremilo transformas unu lazuriton kaj unu spertonivelon el via inventaro al ŝargita lazurito.<br>
+<br>
+Ĉiu sukcesa transformo vundas, elĉerpas kaj mallonge blindigas la uzanton. Ĝi rifuzas funkcii sen lazurito, sen sperto aŭ kiam la uzanto estas tro proksima al morto.
+<np>
+Ŝargita lazurito
+Stokita sperto
+<&charged_lapis>Ŝargita lazurito stokas unu spertonivelon. Konsumu ĝin por rericevi la nivelon, forigi aktivajn efikojn kaj redoni iom da sano.<br>
+<br>
+Unue fabriku menspremilon; ŝargita lazurito estas farata per tiu ilo kiam disponeblas lazurito kaj sperto.
+<np>
+Kruda fergrio
+Materialo por inĝenieraj iloj, uzata de la rekonstruita receptaro.
+<&iron_grit>Ĝi estas fandebla al feraj ingotoj,<br>sed ne taŭgas por altnivela<br>materialprilaborado.
+<np>
+Kruda orgrio
+Materialo por inĝenieraj iloj, uzata de la rekonstruita receptaro.
+<&gold_grit>Ĝi estas fandebla al oraj ingotoj,<br>sed ne taŭgas por altnivela<br>materialprilaborado.

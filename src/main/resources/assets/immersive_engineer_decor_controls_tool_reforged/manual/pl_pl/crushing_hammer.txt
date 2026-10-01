@@ -1,0 +1,5 @@
+Młot do kruszenia rud
+Ręczne narzędzie do kruszenia
+<&recipe>Młot do kruszenia rud to ręczne narzędzie do wczesnej obróbki żelaza i złota.<br>
+<br>
+Użyj go w recepturze z surowym żelazem, surowym złotem, rudą żelaza, głębinową rudą żelaza, rudą złota lub głębinową rudą złota, aby uzyskać pył Immersive Engineering. Młot traci wytrzymałość, wraca do siatki aż się zniszczy, zużywa się przy kopaniu i odrzuca cele.

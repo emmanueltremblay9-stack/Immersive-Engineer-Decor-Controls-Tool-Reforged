@@ -1,0 +1,7 @@
+Digitalanzeige
+Gut ablesbare Signalstärke
+<&recipe>Ein kompaktes Messgerät für Kontrollräume zeigt die Redstone-Stärke gut lesbar auf einer Schalttafel an.<br>
+<br>
+Verwendung: Montiere es dort, wo die Redstone-Stärke benachbarter Bauteile auf einen Blick erkennbar sein soll.<br>
+<br>
+Hinweis: Erfasst die Redstone-Stärke in der Nähe von 0 bis 15.

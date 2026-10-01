@@ -1,0 +1,7 @@
+Daytime Tick-Tock Thing
+Daytime signalz
+<&recipe>A timer switch follows da daytime part of da world cycle, kitty.<br>
+<br>
+How to: Use fer yard lampz, shutters, an factory controlz dat should only run by day, meow.<br>
+<br>
+Kitty note: Needs a dimension dat haz skylight.

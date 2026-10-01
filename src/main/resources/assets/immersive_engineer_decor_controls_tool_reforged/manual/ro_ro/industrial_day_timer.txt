@@ -1,0 +1,7 @@
+Temporizator zilnic
+Semnal de lumină diurnă
+<&recipe>Un comutator temporizat urmărește partea de zi a ciclului lumii.<br>
+<br>
+Utilizare: Folosește-l pentru lămpi de curte, obloane și comenzi de fabrică active doar ziua.<br>
+<br>
+Observații: Necesită o dimensiune cu lumină cerească.

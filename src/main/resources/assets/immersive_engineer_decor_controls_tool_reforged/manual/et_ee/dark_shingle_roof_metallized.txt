@@ -1,0 +1,5 @@
+Katuse lumetõke
+Ilmastikust kulunud katuseosa
+<&recipe>Tumeda sindelkatuse lumetõke loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>

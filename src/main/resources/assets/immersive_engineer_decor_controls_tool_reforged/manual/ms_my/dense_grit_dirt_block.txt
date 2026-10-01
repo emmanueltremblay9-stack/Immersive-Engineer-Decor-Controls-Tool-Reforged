@@ -1,0 +1,5 @@
+Tanah Kerikil Padat
+Penutup tanah tapak kerja
+<&recipe>Blok ini memberikan permukaan mampat dan dipijak kepada kawasan kerja luar.<br>
+<br>
+Penggunaan: Bentangkan di sekitar pintu pemunggahan, tangki luar dan halaman mesin.<br>

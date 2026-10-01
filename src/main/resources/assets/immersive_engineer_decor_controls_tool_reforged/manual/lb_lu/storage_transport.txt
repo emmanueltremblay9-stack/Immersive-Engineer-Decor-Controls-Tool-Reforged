@@ -1,0 +1,41 @@
+Lagerung an Transport
+Inventar- an Duerchflossbaudeeler
+Lager- an Transportbaudeeler ëmfaasse Këschten, Fässer, Triichter a Ventiller fir kompakt Fabricksweeër.<br>
+<br>
+Benotz dës Säite beim Plange vu Lagerraim, Päifestrecken, Servicetanken a kontrolléierte Flëssegkeetsleitungen.
+<np>
+Beschrëfte Këscht
+Ännerbar Lageretikett
+<&labeled_crate>Dës beschrëfte Këscht erlaabt eng kloer Sortéierung am Lager. Hir viischt Plack ka wéi e klengt Ateliersschëld geännert ginn.<br>
+<br>
+Benotzung: Maach e Rietsklick op d'Etiketteplack fir d'Këschtbeschrëftung z'änneren. Maach e Rietsklick op de Rescht vun der Këscht fir de Lagerraum fir Baudeeler, Ersatzdeeler an Ënnerhaltsmaterial opzemaachen.<br>
+<np>
+Flëssegkeetsfaass
+Flëssegkeetsleitungsbaudeeler
+<&fluid_barrel>Dëse Baudeel ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Setz en do, wou Päifen oder Eemer un d'Tanksäit erukommen.<br>
+<np>
+Flëssegkeetstriichter
+Flëssegkeetsleitungsbaudeeler
+<&small_fluid_funnel>De klenge Flëssegkeetssammeltriichter ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Setz en ënner de Flëssegkeetssammelpunkt a féier säi gespäicherten Inhalt an Tanken oder méi déif Päifesystemer.<br>
+<np>
+Réckschlagventil fir Flëssegkeetspäifen
+Flëssegkeetsleitungsbaudeeler
+<&straight_pipe_valve>D'Réckschlagventil fir Flëssegkeetspäifen ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Riicht d'Ventil an déi gewënschten Duerchflossrichtung.<br>
+<np>
+Redstone-Flëssegkeetsventil
+Flëssegkeetsleitungsbaudeeler
+<&straight_pipe_valve_redstone>Dat Redstone-gesteiert Flëssegkeetsventil ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Riicht d'Ventil an déi gewënschten Duerchflossrichtung.<br>
+<np>
+Analogt Flëssegkeetsventil
+Flëssegkeetsleitungsbaudeeler
+<&straight_pipe_valve_redstone_analog>Dat analogt Redstone-Flëssegkeetsventil ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Riicht d'Ventil an déi gewënschten Duerchflossrichtung.<br>

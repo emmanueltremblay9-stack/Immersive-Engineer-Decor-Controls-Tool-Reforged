@@ -1,0 +1,5 @@
+Pasivno skupljanje tekućine
+Oprema vodova tekućine
+<&recipe>Pasivni sakupljač tekućine kompaktni je dio vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: postavi ga uz odgovarajuće izvore vode i ostavi prostor za odvod tekućine.<br>

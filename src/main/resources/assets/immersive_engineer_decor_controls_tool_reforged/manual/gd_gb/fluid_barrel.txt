@@ -1,0 +1,5 @@
+Baraille lionna
+Uidheam loidhne lionna
+<&recipe>Tha an uidheam seo na phàirt dhlùth loidhne lionna airson tancaichean beaga, pìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: cuir e far an ruig pìoban no bucaidean aghaidh an tanca.<br>

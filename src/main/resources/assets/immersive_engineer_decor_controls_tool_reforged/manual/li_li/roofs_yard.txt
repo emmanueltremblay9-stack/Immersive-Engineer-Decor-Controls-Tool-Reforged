@@ -1,0 +1,101 @@
+Dake en hove
+Fabrieksóngerdaele veur boete
+Dakblök, hofgruis en aaj industriële houtdiele hèlpe um boetesjoppe, werkhove, laadplaatse en verweerde fabrieksrande aaf te werke.<br>
+<br>
+Combineer die diele mèt metselwerk en toegangspade, zoadat industriële bouw boete ouch van wiederaaf duidelik blief.
+<np>
+Donker sjindeldak
+Verweerd dakóngerdael
+<&dark_shingle_roof>Dees blok maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Daksjneevanger
+Verweerd dakóngerdael
+<&dark_shingle_roof_metallized>De sjneevanger veur 't donkere sjindeldak maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Donker sjindeldak
+Verweerd dakóngerdael
+<&dark_shingle_roof_skylight>De dakvinster veur 't donkere sjindeldak maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Daksjoorsteinvoet
+Verweerd dakóngerdael
+<&dark_shingle_roof_chimneytrunk>De sjoorsteinvoet veur 't donkere sjindeldak maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Dakkabelgoot
+Verweerd dakóngerdael
+<&dark_shingle_roof_wireconduit>De kabelgoot veur 't donkere sjindeldak maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Donker sjindeldak
+Verweerd dakóngerdael
+<&dark_shingle_roof_chimney>De sjoorstein veur 't donkere sjindeldak maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Blok veur donker sjindeldak
+Verweerd dakóngerdael
+<&dark_shingle_roof_block>Dees blok maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Plaat veur donker sjindeldak
+Verweerd dakóngerdael
+<&dark_shingle_roof_slab>Dees blok maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Plaat veur donker sjindeldak
+Verweerd dakóngerdael
+<&dark_shingle_roof_slabslice>De dunne sjief veur 't donkere sjindeldak maak donkere, praktische dakliene veur werkplaatse en industriële sjoppe.<br>
+<br>
+Gebroek: combineer de diele um geluifweerdige dakvorme te bouwe.<br>
+<np>
+Verdichte gruisdrek
+Bouwplaatsgrónd
+<&dense_grit_dirt_block>Dees blok geuf werkplaatse boete ein verdicht, vertrapt vlak.<br>
+<br>
+Gebroek: lèg 'm rond laaddeure, boetetanks en machinehove.<br>
+<np>
+Verdicht gruiszand
+Bouwplaatsgrónd
+<&dense_grit_sand_block>Dees blok geuf werkplaatse boete ein verdicht, vertrapt vlak.<br>
+<br>
+Gebroek: lèg 'm rond laaddeure, boetetanks en machinehove.<br>
+<np>
+Aaj houte plenk
+Aaj werkplaatshout
+<&old_industrial_wood_planks>De aaj industriële houten plenk veuge aaj werkplaatshout toe veur vloere, treje, deure en warme binneversiering.<br>
+<br>
+Gebroek: neem 'm veur aaj werkplaatsvloere, traeje, deure en rande.<br>
+<np>
+Aaj industriële houten plaat
+Aaj werkplaatshout
+<&old_industrial_wood_slab>Dees blok veugt aaj werkplaatshout toe veur vloere, treje, deure en warme binneversiering.<br>
+<br>
+Gebroek: neem 'm veur aaj werkplaatsvloere, traeje, deure en rande.<br>
+<np>
+Aaj houte traeje
+Aaj werkplaatshout
+<&old_industrial_wood_stairs>De aaj industriële houten traeje veuge aaj werkplaatshout toe veur vloere, treje, deure en warme binneversiering.<br>
+<br>
+Gebroek: neem 'm veur aaj werkplaatsvloere, traeje, deure en rande.<br>
+<np>
+Dun sjief aaj hout
+Aaj werkplaatshout
+<&old_industrial_wood_slabslice>De dunne sjief aaj industriehout veugt aaj werkplaatshout toe veur vloere, treje, deure en warme binneversiering.<br>
+<br>
+Gebroek: neem 'm veur aaj werkplaatsvloere, traeje, deure en rande.<br>
+<np>
+Aaj industriële houten deur
+Aaj werkplaatshout
+<&old_industrial_wood_door>Dees blok veugt aaj werkplaatshout toe veur vloere, treje, deure en warme binneversiering.<br>
+<br>
+Gebroek: neem 'm veur aaj werkplaatsvloere, traeje, deure en rande.<br>

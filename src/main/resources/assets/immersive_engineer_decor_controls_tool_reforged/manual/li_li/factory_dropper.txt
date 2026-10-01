@@ -1,0 +1,5 @@
+Fabrieksdropper
+Werkplaatshölp
+<&recipe>Dees blok geuf opgesjlage veurwèrpe oet ein gerichte kant aaf.<br>
+<br>
+Gebroek: richt de veurkant op 't aafgaafpunt, völ de interne vakke en stel krach, hook, vertraging, filterlogica en redstonesjtand in 't menu in.<br>

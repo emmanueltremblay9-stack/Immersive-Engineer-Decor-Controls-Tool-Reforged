@@ -1,0 +1,5 @@
+Dachschneefang
+Verwittertes Dachbauteil
+<&recipe>Der Schneefang für dunkle Schindeldächer ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>

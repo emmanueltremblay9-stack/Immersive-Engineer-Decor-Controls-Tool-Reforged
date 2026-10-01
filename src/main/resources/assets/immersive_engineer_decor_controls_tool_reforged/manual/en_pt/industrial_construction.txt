@@ -1,0 +1,108 @@
+Buildin' factory works
+Walls and trim fer factories
+General buildin' fittings cover doors, portholes, lights, warning signs, trim and structural pieces that belong to no narrower section.<br>
+<br>
+Turn to these pages fer factory rooms, service passages, danger marks and useful details round yer works.
+<np>
+Iron-cased glowstone bulb
+Little light fer work
+<&iron_bulb_light>This block gives ye compact factory lighting along passages, gangways and work bays.<br>
+<br>
+Orders: Mount her on ceilings, walls or edges where ye need clear light fer work.<br>
+<np>
+Lamp fer a ceiling edge
+Little light fer work
+<&iron_ceiling_edge_light>This block gives ye compact factory lighting along passages, gangways and work bays.<br>
+<br>
+Orders: Mount her on ceilings, walls or edges where ye need clear light fer work.<br>
+<np>
+Sunken lamp fer a floor edge
+Little light fer work
+<&iron_floor_edge_light>This block gives ye compact factory lighting along passages, gangways and work bays.<br>
+<br>
+Orders: Mount her on ceilings, walls or edges where ye need clear light fer work.<br>
+<np>
+Sunken glowstone lamp
+Little light fer work
+<&iron_inset_light>This block gives ye compact factory lighting along passages, gangways and work bays.<br>
+<br>
+Orders: Mount her on ceilings, walls or edges where ye need clear light fer work.<br>
+<np>
+Sign: "Mind yer step"
+A mark o' danger
+<&sign_caution>Sign: "Mind yer step" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Notice o' danger
+A mark o' danger
+<&sign_danger>Sign: "Real danger ahead, matey" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Notice fer finery
+A mark o' danger
+<&sign_decor>Sign plate fer Engineer's Decor marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Notice o' defences
+A mark o' danger
+<&sign_defense>Sign: "Defence contraption ahead" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Way-out sign
+A mark o' danger
+<&sign_exit>This sign marks danger, ways out and work zones with a clear factory safety cue, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Sign: "Beware o' fire"
+A mark o' danger
+<&sign_firehazard>Sign: "Beware o' fire" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Sign: "Beware o' frost"
+A mark o' danger
+<&sign_frost>Sign: "Beware o' frost" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Notice o' scaldin' surfaces
+A mark o' danger
+<&sign_hotsurface>Sign: "Scaldin' hot surface" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Notice o' live wires
+A mark o' danger
+<&sign_hotwire>Sign: "Live wire, hands off" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Sign: "Beware o' lasers"
+A mark o' danger
+<&sign_laser>Sign: "Beware o' lasers" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Notice o' sorcerous danger
+A mark o' danger
+<&sign_magichazard>Sign: "Beware o' sorcery" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Notice o' a magnetic field
+A mark o' danger
+<&sign_magneticfield>Sign: "Mighty magnetic field" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>
+Sign: "Beware o' radiation"
+A mark o' danger
+<&sign_radioactive>Sign: "Beware o' radiation" marks danger, ways out and work zones with a clear factory safety sign, matey.<br>
+<br>
+Orders: Set her beside dangers, ways out, contraptions and forbidden zones.<br>
+<np>

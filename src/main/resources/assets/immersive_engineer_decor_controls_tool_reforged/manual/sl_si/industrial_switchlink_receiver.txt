@@ -1,0 +1,7 @@
+Sprejemnik povezave stikal
+Povezano krmiljenje
+<&recipe>Povezan sprejemnik oddaljenim ploščam zagotavlja cilj redstone s polno močjo.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Z neposrednim desnim klikom na sprejemnik ga preklopi ročno.<br>
+<br>
+Opombe: Povezan biser ob uporabi med tihotapljenjem preklopi ta sprejemnik.

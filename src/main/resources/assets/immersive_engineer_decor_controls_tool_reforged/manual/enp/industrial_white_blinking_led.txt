@@ -1,0 +1,7 @@
+White Blinking LED
+Token feedback
+<&recipe>A small showing loom makes hidden redstone workings plain to see in the workstead.<br>
+<br>
+Use: Wire it beside the token to watch doors, looms, warnings or boards.<br>
+<br>
+Mind: Changes state when redstone might is near.

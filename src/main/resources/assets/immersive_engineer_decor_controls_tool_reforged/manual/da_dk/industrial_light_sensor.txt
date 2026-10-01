@@ -1,0 +1,7 @@
+Lyssensor
+Signalregistrering
+<&recipe>En lyssensor omsætter lokal lysstyrke til redstonestyring.<br>
+<br>
+Brug: Brug den til automatiske lamper, skodder og kredsløb, der reagerer på sigtbarheden.<br>
+<br>
+Bemærk: Giver strøm ved rå lysstyrke 8 eller højere.

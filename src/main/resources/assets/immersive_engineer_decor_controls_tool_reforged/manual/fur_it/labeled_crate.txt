@@ -1,0 +1,5 @@
+Casse etichetade
+Etichete di scorte modificabile
+<&recipe>Cheste casse etichetade e covente par ordenâ ben la robe tal magazen. La plache devant si pues cambiâle come un piçul cartel di oficine.<br>
+<br>
+Ûs: fâs clic di diestre su la plache par cambiâ l’etichete de casse. Fâs clic di diestre sul rest de casse par vierzi il deposit di acessoris, tocs e scortis pe manutenzion.<br>

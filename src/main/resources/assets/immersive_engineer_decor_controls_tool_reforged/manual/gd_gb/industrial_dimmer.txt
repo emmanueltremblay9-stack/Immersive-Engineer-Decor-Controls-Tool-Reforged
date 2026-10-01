@@ -1,0 +1,7 @@
+Lùghdaiche cumhachd
+Comharra caochlaideach
+<&recipe>Suidhichidh smachd cuairteach neart redstone bho aghaidh panail dhlùth.<br>
+<br>
+Cleachdadh: dèan briogadh deas air gus an t-às-chur àrdachadh ceum air cheum, agus air ais gu neoni an dèidh làn-neart.<br>
+<br>
+Nòtaichean: bheir e neart eadar 0 agus 15.

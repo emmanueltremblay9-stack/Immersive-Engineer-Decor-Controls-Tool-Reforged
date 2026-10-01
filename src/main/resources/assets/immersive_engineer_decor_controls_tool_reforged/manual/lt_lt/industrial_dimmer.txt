@@ -1,0 +1,7 @@
+Signalo reguliatorius
+Kintamas signalas
+<&recipe>Sukamuoju valdikliu nustatomas redstono signalo stiprumas kompaktiško skydelio priekyje.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad palaipsniui didintum išvestį; po didžiausio stiprumo ji grįžta į nulį.<br>
+<br>
+Pastabos: siunčia signalą, kurio stiprumas nuo 0 iki 15.

@@ -1,0 +1,5 @@
+Ẹnu Ìkójọ Ohun Olómi
+Ohun èlò ìlà ohun olómi
+<&recipe>Ẹnu Ìkójọ Ohun Olómi Kékeré jẹ́ apá ìlà ohun olómi kékeré fún àwọn àpò omi kékeré, ọ̀nà paipu, ibi ìkójọ, àti ìṣàn tí Redstone ń darí.<br>
+<br>
+Lílò: Fi sí ìsàlẹ̀ ibi ìkójọ ohun olómi, kí o sì darí ohun inú ìpamọ́ rẹ̀ sínú àwọn àpò omi tàbí paipu ìsàlẹ̀.<br>

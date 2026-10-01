@@ -1,0 +1,5 @@
+Pausaire de blòcs de fabrica
+Equipament utilitari d’obrador
+<&recipe>Aqueste blòc pausa de blòcs de sa resèrva intèrna quand es activat.<br>
+<br>
+Utilizacion : orienta la fàcia de trabalh cap a l’espaci visat e inserís de pilas que se pòdon pausar.<br>

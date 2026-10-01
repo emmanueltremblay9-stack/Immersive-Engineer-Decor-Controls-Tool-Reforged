@@ -1,0 +1,7 @@
+Slaopzak
+Draagbare roesset
+<&recipe>De sjlaopzak is ein weerbestendig rösset veur werk wied van ein bèd.<br>
+<br>
+Gebroek: Gebroek 'm 's nachs in de Overworld veur tot mèrge te rösse. Hae zet of verplaats dien spawnpunt neet.<br>
+<br>
+Hae weigert gebroek euverdaag, ónveilige plaatse mit monsters kortbie en dimensies die neet veur veilige rös passe. Eder geslaagde rös versjliet de zak.

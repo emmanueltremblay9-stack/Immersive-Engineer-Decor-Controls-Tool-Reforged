@@ -1,0 +1,107 @@
+Machines d'atelier
+Machines et entrées/sorties d'atelier
+Les machines d'atelier assurent la fabrication, le déplacement d'objets, la cuisson, la destruction, la collecte et d'autres tâches utilitaires dans le volume d'un seul bloc.<br>
+<br>
+Ouvrez les pages suivantes pour découvrir la recette, l'illustration, la description et les conseils d'utilisation de chaque machine.
+<np>
+Table en Acier
+Mobilier d'atelier
+<&steel_table>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
+<br>
+Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>
+<np>
+Table en bois traité
+Mobilier d'atelier
+<&treated_wood_table>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
+<br>
+Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>
+<np>
+Tabouret en bois traité
+Mobilier d'atelier
+<&treated_wood_stool>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
+<br>
+Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>
+<np>
+Établi de métallurgie
+Poste de fabrication de plaques
+<&metal_crafting_table>L'établi de métallurgie est un poste renforcé avec un emplacement de marteau, une grille de fabrication 3x3 et un emplacement de sortie distinct.<br>
+<br>
+Utilisation : employez la grille pour la fabrication ordinaire. Pour les plaques IE, placez un marteau d'ingénieur dans l'emplacement d'outil et le matériau de la plaque dans la grille, puis prenez le résultat. Les décors en acier utilisent des plaques d'acier pour les poteaux, passerelles, fenêtres, portes, garde-corps et autres pièces en acier.<br>
+<np>
+Entonnoir d'usine
+Équipement d'atelier
+<&factory_hopper>Ce bloc transfère les piles d'objets dans un boîtier industriel compact.<br>
+<br>
+Utilisation : orientez-le vers la ligne d'inventaires, puis réglez la portée, le nombre d'objets, la temporisation et le mode redstone dans son interface.<br>
+<np>
+Droppeur d'usine
+Équipement d'atelier
+<&factory_dropper>Ce bloc éjecte les objets stockés depuis une face orientable.<br>
+<br>
+Utilisation : visez le point de largage avec sa face avant, remplissez ses emplacements internes et réglez la force, l'angle, le délai, la logique des filtres et le mode redstone dans son interface.<br>
+<np>
+Placeur de bloc d'usine
+Équipement d'atelier
+<&factory_placer>Ce bloc place les blocs de sa réserve interne lorsqu'il est activé.<br>
+<br>
+Utilisation : dirigez sa face de travail vers l'espace ciblé et chargez des piles de blocs pouvant être placés.<br>
+<np>
+Brise-bloc
+Équipement d'atelier
+<&small_block_breaker>Le petit brise-bloc est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : dirigez la face de travail vers le bloc à retirer.<br>
+<np>
+Incinérateur de déchets
+Unité de traitement compacte
+<&small_waste_incinerator>L'incinérateur de déchets détruit les objets indésirables dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : n'envoyez dans sa file que des objets à détruire.<br>
+<np>
+Fourneau de laboratoire
+Unité de traitement compacte
+<&small_lab_furnace>Le fourneau de laboratoire assure de petits travaux de cuisson au combustible solide dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : employez du combustible solide pour de petits lots de cuisson.<br>
+<np>
+Fourneau électrique
+Unité de traitement compacte
+<&small_electrical_furnace>Le fourneau électrique assure de petits travaux de cuisson alimentés en FE dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : fournissez des FE et un ingrédient de cuisson valide.<br>
+<np>
+Fourneau de fusion de minéraux
+Unité de traitement compacte
+<&small_mineral_smelter>Le fourneau de fusion de minéraux traite les minéraux à haute température dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : fournissez des blocs minéraux et de l'énergie pour les opérations de fusion à haute température.<br>
+<np>
+Congélateur à eau
+Unité de traitement compacte
+<&small_freezer>Le congélateur à eau réalise des travaux de refroidissement compacts dans les installations de fluides alimentées en énergie.<br>
+<br>
+Utilisation : fournissez de l'eau et de l'énergie pour produire progressivement de la glace.<br>
+<np>
+Fluide passif
+Équipement de réseau de fluides
+<&passive_fluid_accumulator>L'accumulateur de fluide passif est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : placez-le contre des sources d'eau adaptées et laissez de la place pour extraire le fluide.<br>
+<np>
+Panneau solaire
+Équipement d'atelier
+<&small_solar_panel>Le petit panneau solaire est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : exposez-le à ciel ouvert et reliez des équipements peu gourmands.<br>
+<np>
+Machine à traire
+Équipement d'atelier
+<&small_milking_machine>La petite machine à traire est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : placez-la près des vaches et prévoyez l'extraction des récipients de lait ou du fluide.<br>
+<np>
+Coupe-arbre
+Équipement d'atelier
+<&small_tree_cutter>Le petit coupe-arbre est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : dirigez-le vers des arbres adultes et ramassez séparément les objets lâchés.<br>

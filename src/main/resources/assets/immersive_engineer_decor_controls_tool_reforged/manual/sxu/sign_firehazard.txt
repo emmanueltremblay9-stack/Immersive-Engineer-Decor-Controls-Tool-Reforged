@@ -1,0 +1,5 @@
+Schild „Feuorrgefahr
+Gefahrenmargierung
+<&recipe>Das Schild „Feuorrgefahr“ margierd Gefahren, Ausgänge un Arbeedsbereiche mid eem deidlichn Fabrigsicherheedszeichn.<br>
+<br>
+Nuddzung: Seddz’s neben Gefahren, Ausgänge, Maschinen un geschbärrde Bereiche.<br>

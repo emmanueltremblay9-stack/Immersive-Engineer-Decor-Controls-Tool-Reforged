@@ -1,0 +1,7 @@
+Regulator jačine
+Promjenjivi signal
+<&recipe>Obrtna komanda podešava jačinu redstona s prednje strane kompaktnog panela.<br>
+<br>
+Upotreba: Desnim klikom povećavajte izlaz korak po korak; nakon najveće jačine vraća se na nulu.<br>
+<br>
+Napomene: Daje jačinu od 0 do 15.

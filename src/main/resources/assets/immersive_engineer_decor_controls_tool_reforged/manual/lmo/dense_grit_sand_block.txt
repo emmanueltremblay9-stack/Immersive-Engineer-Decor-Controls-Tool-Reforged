@@ -1,0 +1,5 @@
+Sabia de gera compata
+Teren de cantiere
+<&recipe>Quell bloch chì el fa una superfiss compata e pestada per i lavor de foeura.<br>
+<br>
+Metel vesin a i porte de carga, a i serbatoi de foeura e a i piazai di machine.<br>

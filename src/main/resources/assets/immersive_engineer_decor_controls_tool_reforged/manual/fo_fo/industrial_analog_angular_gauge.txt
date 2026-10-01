@@ -1,0 +1,7 @@
+Analogur mátari
+Teknamátari
+<&recipe>Ein lítil mátari til stýrirúmið vísir reyðgrýtisstyrkina sum eina greiða panelavlesing.<br>
+<br>
+Nýtsla: Fest hann, har tú vilt kunna kanna reyðgrýti nærhendis við einum eygnabrái.<br>
+<br>
+Viðmerking: Lesur reyðgrýtisstyrki nærhendis frá 0 til 15.

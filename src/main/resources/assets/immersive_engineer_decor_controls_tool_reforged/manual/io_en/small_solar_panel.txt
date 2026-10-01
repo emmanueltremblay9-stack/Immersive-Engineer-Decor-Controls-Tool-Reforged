@@ -1,0 +1,5 @@
+Sunopanelo
+Laboreyaparato
+<&recipe>La Mikra sunopanelo esas laboreyaparato por fabrikado, stokado, pozado, ruptado, kolektado o kompakta automatigo.<br>
+<br>
+Uzo: Donez aceso a libera cielo e konektez ekipuro kun basa konsumo.<br>

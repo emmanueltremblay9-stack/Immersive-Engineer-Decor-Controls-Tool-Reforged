@@ -1,0 +1,5 @@
+Fabrieksgeutbak
+Werkswinkelnutsmiddel
+<&recipe>Hierdie blok verskuif itemstapels deur ’n kompakte industriële omhulsel.<br>
+<br>
+Gebruik: rig dit na die voorraadlyn en stel dan bereik, stapelgrootte, tydsberekening en redstone-modus op sy skerm in.<br>

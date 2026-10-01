@@ -1,0 +1,5 @@
+Cairan Pasif
+Perlengkapan jalur cairan
+<&recipe>Pengumpul cairan pasif adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: pasang bersebelahan dengan sumber air yang sesuai dan sisakan ruang untuk pengambilan cairan.<br>

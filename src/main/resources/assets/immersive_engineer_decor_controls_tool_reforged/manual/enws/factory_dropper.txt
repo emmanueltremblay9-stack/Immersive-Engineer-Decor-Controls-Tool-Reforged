@@ -1,0 +1,5 @@
+Manufactory Dropper
+Convenience for the Workshop Floor
+<&recipe>This block casts forth stored items from the face thou aimst.<br>
+<br>
+Use: Aim its front at the place of release, fill its inward slots, and set force, angle, delay, filter logic and redstone mode in its window.<br>

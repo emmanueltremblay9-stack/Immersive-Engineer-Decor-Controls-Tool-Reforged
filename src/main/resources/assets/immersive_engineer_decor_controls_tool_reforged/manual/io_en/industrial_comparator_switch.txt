@@ -1,0 +1,7 @@
+Komparilokomutilo
+Konektita signalo
+<&recipe>Kompakta sensila komutilo lektas la bloko sur qua ol fixigesas e konvertas ta lekto a simpla panelekiro.<br>
+<br>
+Uzo: Fixigez ol sur inventari, rezervuyi o redstonea aparati. Kande la portobloko raportas komparila, recipienta o redstonea ekiro, la komutilo emisas redstoneo ye plena forteso.<br>
+<br>
+Noti: Uzez ol por transformar stokoniveli o celita filkonekti a klara aktiva/desaktiva regolinei.

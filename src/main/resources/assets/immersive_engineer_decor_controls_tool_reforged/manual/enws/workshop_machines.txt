@@ -1,0 +1,107 @@
+Workshop Engines
+Engines and workshop inlets/outlets
+Workshop engines afford compact crafts, item movement, smelting, disposal, gathering and other useful labours within a single block.<br>
+<br>
+Open the following pages for each engine’s recipe, picture, lore and counsel for use.
+<np>
+Steel Table
+Furniture for the Workshop
+<&steel_table>This block is a serviceable furnishing for working chambers and corners devoted to upkeep.<br>
+<br>
+Use: Set it beside benches, crates and compact engines.<br>
+<np>
+Table of Treated Wood
+Furniture for the Workshop
+<&treated_wood_table>This block is a serviceable furnishing for working chambers and corners devoted to upkeep.<br>
+<br>
+Use: Set it beside benches, crates and compact engines.<br>
+<np>
+Stool of Treated Wood
+Furniture for the Workshop
+<&treated_wood_stool>This block is a serviceable furnishing for working chambers and corners devoted to upkeep.<br>
+<br>
+Use: Set it beside benches, crates and compact engines.<br>
+<np>
+Metal Crafts Table
+Workstation for Plates
+<&metal_crafting_table>The Metal Crafts Table is a strengthened workshop station with a hammer slot, a 3x3 crafts grid and a clear outlet slot.<br>
+<br>
+Use: Work ordinary crafts in the grid. For IE plates, put an Engineer’s Hammer in the tool slot and the plate material in the grid, then take thy result. Steel adornments require steel plates for poles, walkways, windows, doors, railings and other steel fittings.<br>
+<np>
+Manufactory Conveyer
+Convenience for the Workshop Floor
+<&factory_hopper>This block moves stacks of items through a close-fitting manufactory case.<br>
+<br>
+Use: Face it towards the inventory line, then set reach, stack count, timing and redstone mode in its window.<br>
+<np>
+Manufactory Dropper
+Convenience for the Workshop Floor
+<&factory_dropper>This block casts forth stored items from the face thou aimst.<br>
+<br>
+Use: Aim its front at the place of release, fill its inward slots, and set force, angle, delay, filter logic and redstone mode in its window.<br>
+<np>
+Manufactory Block Setter
+Convenience for the Workshop Floor
+<&factory_placer>When set off, this block places blocks from its inward stock.<br>
+<br>
+Use: Aim its working face at the target space and fill it with stacks that can be placed.<br>
+<np>
+Block Breaker
+Convenience for the Workshop Floor
+<&small_block_breaker>The Little Block Breaker is a workshop convenience for crafts, storage, placement, breaking, gathering or compact automatic works.<br>
+<br>
+Use: Aim its working face at the block thou wouldst remove.<br>
+<np>
+Refuse Incinerator
+Compact Processing Engine
+<&small_waste_incinerator>The Refuse Incinerator destroys unwanted items whilst taking little room in thy workshop.<br>
+<br>
+Use: Feed its queue with unwanted items alone.<br>
+<np>
+Assay Furnace
+Compact Processing Engine
+<&small_lab_furnace>The Assay Furnace smelts with solid fuel whilst taking little room in thy workshop.<br>
+<br>
+Use: Burn solid fuel to smelt compact batches.<br>
+<np>
+Electric Furnace
+Compact Processing Engine
+<&small_electrical_furnace>The Electric Furnace smelts with FE power whilst taking little room in thy workshop.<br>
+<br>
+Use: Supply FE and an input suited to smelting.<br>
+<np>
+Mineral-Melting Furnace
+Compact Processing Engine
+<&small_mineral_smelter>The Mineral-Melting Furnace works minerals at great heat whilst taking little room in thy workshop.<br>
+<br>
+Use: Feed it mineral blocks and power for melting at great heat.<br>
+<np>
+Water Freezer
+Compact Processing Engine
+<&small_freezer>The Water Freezer performs compact chilling for powered liquid works.<br>
+<br>
+Use: Supply water and power to make ice in stages.<br>
+<np>
+Passive Gathering of Liquids
+Fittings for Liquid Lines
+<&passive_fluid_accumulator>The Passive Gatherer of Liquids is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Set it against suitable water sources and leave space to draw off liquid.<br>
+<np>
+Solar Panel
+Convenience for the Workshop Floor
+<&small_solar_panel>The Little Solar Panel is a workshop convenience for crafts, storage, placement, breaking, gathering or compact automatic works.<br>
+<br>
+Use: Grant it open sky and connect equipment of modest demand.<br>
+<np>
+Milking Engine
+Convenience for the Workshop Floor
+<&small_milking_machine>The Little Milking Engine is a workshop convenience for crafts, storage, placement, breaking, gathering or compact automatic works.<br>
+<br>
+Use: Set it near cows and provide a means to draw off milk vessels or liquid.<br>
+<np>
+Tree Cutter
+Convenience for the Workshop Floor
+<&small_tree_cutter>The Little Tree Cutter is a workshop convenience for crafts, storage, placement, breaking, gathering or compact automatic works.<br>
+<br>
+Use: Aim it at grown trees and gather their drops separately.<br>

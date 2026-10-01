@@ -1,0 +1,7 @@
+Ercevou de liaizon a pouls
+Comande liée
+<&recipe>Un ercevou de pouls lié doune ao paniaos éloignés un court décllanchement de redstone.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Fezéz-y un clic dret ou décllanchéz la perle liée pour émettre un court pouls.<br>
+<br>
+Notes : Le pouls se remet tout seul a zéro aprés sa durée programmée.

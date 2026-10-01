@@ -1,0 +1,7 @@
+Bäuerlicher Falldetektor
+Signalerkennung
+<&recipe>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.

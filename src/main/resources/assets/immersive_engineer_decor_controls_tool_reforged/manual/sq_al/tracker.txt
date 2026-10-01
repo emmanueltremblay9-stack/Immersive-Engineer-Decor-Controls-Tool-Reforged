@@ -1,0 +1,7 @@
+Gjurmues
+Shenjues pozicioni të ruajtur
+<&recipe>Gjurmuesi ruan pozicionin e një blloku në send.<br>
+<br>
+Klikoni bllokun për dimensionin dhe koordinatat. Përshkrimi tregon pozicionin. Përdoreni i ulur për të fshirë objektivin.<br>
+<br>
+Shënoni makina, tunele, kontrolle në largësi ose ndërtime të papërfunduara.

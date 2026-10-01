@@ -1,0 +1,7 @@
+Regolador de intensità
+Segnal variàbiłe
+<&recipe>Una comanda a giro ła regola ła potensa de redstone da ła fasa de un paneło conpato.<br>
+<br>
+Uso: fa clic a destra par alsar ła usita un passo a ła volta; dopo ła potensa màsima ła torna a zero.<br>
+<br>
+Da saver: ła potensa de usita ła va da 0 a 15.

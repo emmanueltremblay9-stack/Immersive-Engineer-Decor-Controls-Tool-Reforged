@@ -1,0 +1,5 @@
+Etikedita kesto
+Redaktebla stoketikedo
+<&recipe>Ĉi tiu etikedita kesto estas por klare ordigi stokejon. Ĝia antaŭa plato estas redaktebla kiel malgranda metieja ŝildo.<br>
+<br>
+Uzado: dekstre klaku la etikedplaton por redakti la kestetikedon. Dekstre klaku la reston de la kesto por malfermi stokadon de ekipaĵoj, partoj kaj prizorgaj provizoj.<br>

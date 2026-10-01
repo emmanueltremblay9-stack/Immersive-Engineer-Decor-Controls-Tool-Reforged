@@ -1,0 +1,7 @@
+Graded Bar Reader
+Token reader
+<&recipe>A small switchroom reader shows redstone strength clearly on a board.<br>
+<br>
+Use: Fix it where nearby redstone might can be checked at a glance.<br>
+<br>
+Mind: Reads nearby redstone strength from 0 to 15.

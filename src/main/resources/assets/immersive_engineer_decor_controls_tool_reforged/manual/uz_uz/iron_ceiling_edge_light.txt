@@ -1,0 +1,5 @@
+Shift cheti chirog'i
+Ixcham ish chirog'i
+<&recipe>Bu blok yo'laklar, xizmat platformalari va ish bo'linmalari uchun ixcham sanoat yoritishini beradi.<br>
+<br>
+Ishlatish: xonaga aniq ish yorug'ligi kerak bo'lgan shift, devor yoki chetga o'rnating.<br>

@@ -1,0 +1,7 @@
+Rain Sniffer Thing
+Signal sniffin
+<&recipe>Weather sensor turns rain fallin on its position into redstone, kitty.<br>
+<br>
+How to: Mount where da bluk above can get rained on, meow.<br>
+<br>
+Kitty note: Checks fer rain above da sensor.

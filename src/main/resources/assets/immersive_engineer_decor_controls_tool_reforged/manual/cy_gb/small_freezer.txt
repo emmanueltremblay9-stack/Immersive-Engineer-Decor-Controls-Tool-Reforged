@@ -1,0 +1,5 @@
+Rhewgell Dŵr
+Uned brosesu gryno
+<&recipe>Mae'r Rhewgell Dŵr yn cyflawni gwaith oeri cryno ar gyfer systemau hylif â phŵer.<br>
+<br>
+Defnydd: Cyflenwch ddŵr a phŵer i gynhyrchu rhew fesul cam.<br>

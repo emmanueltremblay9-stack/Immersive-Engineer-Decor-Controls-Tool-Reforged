@@ -1,0 +1,5 @@
+Electric Furnace
+Compact Processing Engine
+<&recipe>The Electric Furnace smelts with FE power whilst taking little room in thy workshop.<br>
+<br>
+Use: Supply FE and an input suited to smelting.<br>

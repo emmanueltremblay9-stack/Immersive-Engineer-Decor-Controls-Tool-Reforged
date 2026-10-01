@@ -1,0 +1,7 @@
+Ercevou de liaizon en bouéte
+Comande liée
+<&recipe>Un ercevou lié en bouéte doune ao paniaos éloignés eune cible redstone costaode.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Fezéz un clic dret directement su l'ercevou pour le commuter a la main.<br>
+<br>
+Notes : Eune perle liée commute ç't'ercevou si n'en l'empllaie en s'acroupissant.

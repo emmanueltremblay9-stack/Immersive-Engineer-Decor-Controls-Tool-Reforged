@@ -1,0 +1,5 @@
+Znak „Opasnost od požara”
+Oznaka opasnosti
+<&recipe>Znak „Opasnost od požara” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>

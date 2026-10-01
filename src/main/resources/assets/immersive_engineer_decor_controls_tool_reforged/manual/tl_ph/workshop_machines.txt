@@ -1,0 +1,107 @@
+Mga Makina sa Pagawaan
+Mga makina at daloy ng pagawaan
+Nagbibigay ang mga makina ng pagawaan ng maliit na sistema ng paggawa, paglilipat ng bagay, pagtunaw, pagtatapon, pagkolekta at pantulong na gawain sa laki ng iisang bloke.<br>
+<br>
+Buksan ang mga susunod na pahina para sa resipe, larawan, salaysay at praktikal na tala ng paggamit ng bawat makina.
+<np>
+Aserong Mesa
+Muwebles ng pagawaan
+<&steel_table>Ang blokeng ito ay praktikal na muwebles para sa mga silid ng trabaho at sulok ng pagpapanatili.<br>
+<br>
+Paggamit: Ilagay sa tabi ng mga bangko, kahon at maliliit na makina.<br>
+<np>
+Mesang Ginamot na Kahoy
+Muwebles ng pagawaan
+<&treated_wood_table>Ang blokeng ito ay praktikal na muwebles para sa mga silid ng trabaho at sulok ng pagpapanatili.<br>
+<br>
+Paggamit: Ilagay sa tabi ng mga bangko, kahon at maliliit na makina.<br>
+<np>
+Tabureteng Ginamot na Kahoy
+Muwebles ng pagawaan
+<&treated_wood_stool>Ang blokeng ito ay praktikal na muwebles para sa mga silid ng trabaho at sulok ng pagpapanatili.<br>
+<br>
+Paggamit: Ilagay sa tabi ng mga bangko, kahon at maliliit na makina.<br>
+<np>
+Gawaan ng Metal
+Lugar ng paggawa ng plaka
+<&metal_crafting_table>Ang Gawaan ng Metal ay pinatibay na lugar ng trabaho na may puwesto ng martilyo, 3x3 na grid ng paggawa at malinaw na puwesto ng labas.<br>
+<br>
+Paggamit: Gamitin ang grid para sa karaniwang paggawa. Para sa mga plaka ng IE, ilagay ang Martilyo ng Inhinyero sa puwesto ng kasangkapan at ang materyal ng plaka sa grid bago kunin ang resulta. Gumagamit ng aserong plaka ang mga palamuting asero para sa mga poste, daang panserbisyo, bintana, pinto, gabay at iba pang bahaging asero.<br>
+<np>
+Lukton ng Pabrika
+Pantulong sa sahig ng pagawaan
+<&factory_hopper>Naglilipat ang blokeng ito ng mga bunton ng bagay sa mas masikip na pang-industriyang kaha.<br>
+<br>
+Paggamit: Itutok sa linya ng talatinggalan, saka itakda sa screen ang abot, dami sa bunton, oras at paraan ng redstone.<br>
+<np>
+Tagahulog ng Pabrika
+Pantulong sa sahig ng pagawaan
+<&factory_dropper>Naglalabas ang blokeng ito ng nakaimbak na bagay mula sa nakatutok na mukha.<br>
+<br>
+Paggamit: Itutok ang harap sa lugar ng paglabas, lagyan ang mga panloob na puwesto at ayusin sa screen ang puwersa, anggulo, pagkaantala, lohika ng salaan at paraan ng redstone.<br>
+<np>
+Tagapaglagay ng Bloke ng Pabrika
+Pantulong sa sahig ng pagawaan
+<&factory_placer>Naglalagay ang blokeng ito ng mga bloke mula sa sariling suplay kapag pinagana.<br>
+<br>
+Paggamit: Itutok ang gumaganang mukha sa target na espasyo at lagyan ng mga bunton na maaaring ilagay.<br>
+<np>
+Tagabasag ng Bloke
+Pantulong sa sahig ng pagawaan
+<&small_block_breaker>Ang Maliit na Tagabasag ng Bloke ay pantulong sa sahig ng pagawaan para sa paggawa, pag-iimbak, paglalagay, pagsira, pagkolekta o maliit na awtomasyon.<br>
+<br>
+Paggamit: Itutok ang gumaganang mukha sa blokeng aalisin.<br>
+<np>
+Insinerador ng Basura
+Maliit na yunit ng pagproseso
+<&small_waste_incinerator>Sinisira ng Insinerador ng Basura ang mga hindi kailangang bagay sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Mga hindi kailangang bagay lamang ang ipasok sa pila nito.<br>
+<np>
+Dapugan ng Laboratoryo
+Maliit na yunit ng pagproseso
+<&small_lab_furnace>Gumagawa ang Dapugan ng Laboratoryo ng maliliit na gawaing pagtunaw gamit ang solidong panggatong, sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Gumamit ng solidong panggatong para sa maliliit na pangkat ng pagtunaw.<br>
+<np>
+De-kuryenteng Dapugan
+Maliit na yunit ng pagproseso
+<&small_electrical_furnace>Gumagawa ang De-kuryenteng Dapugan ng maliliit na gawaing pagtunaw gamit ang FE, sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Magbigay ng FE at wastong bagay na tutunawin.<br>
+<np>
+Tunawan ng Mineral
+Maliit na yunit ng pagproseso
+<&small_mineral_smelter>Pinoproseso ng Tunawan ng Mineral ang mga mineral sa matinding init, sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Magpasok ng mga bloke ng mineral at enerhiya para sa pagtunaw sa matinding init.<br>
+<np>
+Tagapagpasyelo ng Tubig
+Maliit na yunit ng pagproseso
+<&small_freezer>Gumagawa ang Tagapagpasyelo ng Tubig ng maliliit na gawaing pagpapalamig para sa mga de-kuryenteng sistema ng likido.<br>
+<br>
+Paggamit: Magbigay ng tubig at enerhiya para sa paggawa ng yelo nang paunti-unting yugto.<br>
+<np>
+Likidong Walang Enerhiya
+Kagamitan sa linya ng likido
+<&passive_fluid_accumulator>Ang Tagapag-ipon ng Likidong Walang Enerhiya ay maliit na bahagi ng linya ng likido para sa maliliit na tangke, mga tubo, lugar ng pagkolekta at daloy na kinokontrol ng redstone.<br>
+<br>
+Paggamit: Ilagay katabi ng angkop na bukal ng tubig at mag-iwan ng puwang para sa pagkuha ng likido.<br>
+<np>
+Panel ng Araw
+Pantulong sa sahig ng pagawaan
+<&small_solar_panel>Ang Maliit na Panel ng Araw ay pantulong sa sahig ng pagawaan para sa paggawa, pag-iimbak, paglalagay, pagsira, pagkolekta o maliit na awtomasyon.<br>
+<br>
+Paggamit: Bigyan ng bukas na langit at ikabit sa kagamitang mababa ang konsumo.<br>
+<np>
+Makinang Panggatas
+Pantulong sa sahig ng pagawaan
+<&small_milking_machine>Ang Maliit na Makinang Panggatas ay pantulong sa sahig ng pagawaan para sa paggawa, pag-iimbak, paglalagay, pagsira, pagkolekta o maliit na awtomasyon.<br>
+<br>
+Paggamit: Ilagay malapit sa mga baka at maglaan ng paraan upang alisin ang mga lalagyan ng gatas o likido.<br>
+<np>
+Tagaputol ng Puno
+Pantulong sa sahig ng pagawaan
+<&small_tree_cutter>Ang Maliit na Tagaputol ng Puno ay pantulong sa sahig ng pagawaan para sa paggawa, pag-iimbak, paglalagay, pagsira, pagkolekta o maliit na awtomasyon.<br>
+<br>
+Paggamit: Itutok sa mga malalaking puno at kolektahin nang hiwalay ang mga nahulog na bagay.<br>

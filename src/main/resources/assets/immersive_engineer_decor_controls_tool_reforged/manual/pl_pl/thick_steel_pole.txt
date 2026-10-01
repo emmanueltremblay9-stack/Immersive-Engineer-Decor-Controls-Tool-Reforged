@@ -1,0 +1,5 @@
+Gruby stalowy słup
+Element szkieletu konstrukcji
+<&recipe>Prosty gruby stalowy słup tworzy widoczną konstrukcję hal maszyn i ram ciągów komunikacyjnych.<br>
+<br>
+Użycie: Obróć i postaw element jako widoczne wzmocnienie belek, słupów i krawędzi platform.<br>

@@ -1,0 +1,7 @@
+Green LED
+Signal feedback
+<&recipe>A compact indicator turns hidden redstone into visible factory feedback.<br>
+<br>
+Usage: Wire it beside the signal to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: Changes state when nearby redstone power is present.

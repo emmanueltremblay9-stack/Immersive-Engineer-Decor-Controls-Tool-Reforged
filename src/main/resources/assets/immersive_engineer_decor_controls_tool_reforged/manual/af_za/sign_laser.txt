@@ -1,0 +1,5 @@
+Teken «Lasergevaar»
+Gevaarmerk
+<&recipe>Die Teken «Lasergevaar» merk gevare, uitgange en werkgebiede met ’n visuele leidraad vir fabrieksveiligheid.<br>
+<br>
+Gebruik: plaas dit langs gevare, uitgange, masjiene en beperkte gebiede.<br>

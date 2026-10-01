@@ -1,0 +1,7 @@
+Gloskontaktplottn
+Druckimpuls
+<&recipe>A Kontaktschoita gibt nach ana Bewegung auf da Bodnplottn oda Foitir a kurzes Signal.<br>
+<br>
+Verwendung: Setz eam dorthin, wo Entitäten durch an Wartungsgang, a Ladestell oda an gschützten Weg durchmüssen.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz an Impuls.

@@ -1,0 +1,5 @@
+Dobbelt-T-støtte af stål
+Del til bærende ramme
+<&recipe>Denne blok giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>

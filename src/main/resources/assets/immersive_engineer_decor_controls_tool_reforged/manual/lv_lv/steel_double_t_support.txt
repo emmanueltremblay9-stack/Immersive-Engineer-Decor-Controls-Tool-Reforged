@@ -1,0 +1,5 @@
+Tērauda dubultā T balsts
+Konstrukcijas karkasa daļa
+<&recipe>Šis bloks piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>

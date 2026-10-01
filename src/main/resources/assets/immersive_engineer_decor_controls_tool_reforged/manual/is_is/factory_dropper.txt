@@ -1,0 +1,5 @@
+Verksmiðjusleppir
+Verkstæðisbúnaður
+<&recipe>Þessi kubbur sleppir geymdum hlutum út um stefnuvalda hlið.<br>
+<br>
+Notkun: Beindu framhliðinni að sleppistaðnum, fylltu innri hólfin og stilltu kraft, horn, bið, síurök og roðsteinsham í viðmótinu.<br>

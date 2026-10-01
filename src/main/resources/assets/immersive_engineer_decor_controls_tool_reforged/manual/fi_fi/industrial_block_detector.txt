@@ -1,0 +1,7 @@
+Kuutiotunnistin
+Signaalin tunnistus
+<&recipe>Kuutiotunnistin tarkistaa, onko sen edessä oleva tila varattu.<br>
+<br>
+Käyttö: Suuntaa valvottavaan konepintaan, puskuriin tai suojattuun tilaan.<br>
+<br>
+Huomaa: Antaa virtaa, kun edessä oleva kuutio ei ole ilmaa.

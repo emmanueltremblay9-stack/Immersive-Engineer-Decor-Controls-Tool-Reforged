@@ -1,0 +1,5 @@
+Pasīva šķidrumu uzkrāšana
+Šķidrumu līnijas aprīkojums
+<&recipe>Pasīvs šķidrumu uzkrājējs ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto pie piemērotiem ūdens avotiem un atstāj vietu šķidruma izvadīšanai.<br>

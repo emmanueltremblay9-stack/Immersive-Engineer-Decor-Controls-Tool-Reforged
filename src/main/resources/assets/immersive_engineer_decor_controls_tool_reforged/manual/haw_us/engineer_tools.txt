@@ -1,0 +1,99 @@
+Nā Mea Hana ʻEnekinia
+Nā lako hale hana lawe lima
+Hoʻohui ka pūʻulu Nā Mea Hana ʻEnekinia i nā lako lima, nā hōʻailona lua ʻeli, nā lako hoʻopau ʻia i ka hoʻohana no ka pilikia, ka ʻai kahua hana, a me nā kōkua hana mea liʻiliʻi i ka puke alakaʻi hoʻokahi e wehewehe ana i nā palaka hoʻonani a hoʻomalu.<br>
+<br>
+No ka hana mamao mai ka hale hana lako piha kēia mau mea hana: e kaha i ke ala, lawe i nā lako, hoʻopakele mai nā kuhi hewa, a hoʻopau i nā hana hoʻololi liʻiliʻi ma ia wahi.
+<np>
+Mea Hana REDIA
+Lako pono uhi kaimana
+<&redia_tool>He lako kahua hana paʻa ka Mea Hana REDIA no ka hana lepo wikiwiki. E hoʻohana ma ka lepo kūpono e hō i ka mahakea.<br>
+<br>
+E hoʻohana ma ka ʻili paʻa me nā pūlama i loaʻa e kau i ka pūlama hōʻailona mai kou waihona me ka hoʻēmi ʻole ʻana i ka paʻa o REDIA. ʻAi ka hana lepo, ka ʻako, ka hana koʻi, a me ke kālai lāʻau i ka paʻa.
+<np>
+Hāmare Wāwahi Pōhaku Minelala
+Mea wāwahi lima
+<&crushing_hammer>He mea hana lima ka Hāmare Wāwahi Minerala no ka hana mua ʻana i ka hao a me ke gula.<br>
+<br>
+Hoʻohana: Hoʻohui me ka hao maka, gula maka, iron ore, deepslate iron ore, gold ore, a i ʻole deepslate gold ore e hana i ka lepo hao a gula o Immersive Engineering. Pau iki ka durability a hoʻi ka hāmare i ka papa hana a haki.<br>
+<br>
+Emi nō kona paʻa i ka ʻeli ʻana, a hiki ke hoʻokuke hope i nā pahuhopu ma ke kaua kokoke.
+<np>
+Mea Hahai
+Hōʻailona wahi i mālama ʻia
+<&tracker>Mālama ka Tracker i ke kūlana o kahi palaka i loko o ka mea.<br>
+<br>
+Hoʻohana: E kaomi i ka palaka e mālama i kona dimension a me coordinates. Hōʻike ka tooltip i ke kūlana. E sneak-use i ka Tracker e holoi i ka pahuhopu.<br>
+<br>
+E hoʻohana e kaha i nā mīkini, nā lālā ana, nā hoʻomalu mamao, a me nā kahua kūkulu i pau ʻole ma mua o ka hoʻi ʻana mai me nā mea hana a me nā mea kūkulu.
+<np>
+Lānahu Ariadne
+Hōʻailona ala lua ʻeli
+<&ariadne_coal>Kau ka Lānahu Ariadne i nā pua kuhikuhi ala ʻeleʻele wikiwiki ma nā ʻili paʻa o ka lua ʻeli. E hoʻohana ma ka ʻili paʻa e kaha i ka huli aʻe, ka puka, a i ʻole ka māhele ala; kākoʻo ka hōʻailona i nā ʻaoʻao ʻewalu ma ka ʻili i kaomi ʻia, me nā ʻaoʻao kīkiʻi.<br>
+<br>
+He mea kaha hoʻohana hou ka Lānahu Ariadne no 100 hoʻohana. ʻAi kēlā me kēia kau hōʻailona pono i hoʻokahi paʻa. Hōʻole i nā ʻili kākoʻo ʻole ma kahi o ka hoʻēmi ʻana i ka paʻa o ka mea hana.
+<np>
+Pūʻolo Hoʻoulu Ola ʻAkomi
+Mea hoʻokuʻu lāʻau pilikia
+<&stimpack>He mea hoʻōla pilikia ka Auto Stim Pack no ka hana mālama weliweli.<br>
+<br>
+Hoʻohana: E hoʻohana lima no ka hoʻōla, ka pale pōkole, a me ka hoʻonui holo iki. Ke lawe ʻia ma ka waihona, hiki ke hoʻā aunoa ke haʻahaʻa ke ola, a laila komo i cooldown.<br>
+<br>
+E hoʻomākaukau i hoʻokahi ma mua o ka hoʻāʻo ʻana i nā wahi kiʻekiʻe, nā uwea hāmama, a me nā ala lua ʻeli ʻenemi.
+<np>
+ʻEke Moe
+Pūʻolo hoʻomaha lawe lima
+<&sleeping_bag>He pono hoʻomaha kūʻē-anilā ka ʻeke Moe no ka hana mamao i kahi moena.<br>
+<br>
+Hoʻohana: E hoʻohana i ka pō ma ka Overworld e hoʻomaha a hiki i ke kakahiaka. ʻAʻole ia e hoʻololi i kou spawn point.<br>
+<br>
+Hōʻole ia i ke ao, nā wahi pilikia me nā monster kokoke, a me nā dimension kūpono ʻole. Hoʻemi kēlā me kēia hoʻomaha i kona durability.
+<np>
+Pahu Waihona Mea Kūkulu
+Pahu lako kūkulu
+<&material_box>Lawe ka Pahu Mea Hana i ka nui o hoʻokahi ʻano mea kūkulu maʻalahi, loli ʻole, a hiki ke hoʻāhu.<br>
+<br>
+Hoʻohana: E paʻa i ka pahu ma ka lima nui a me ka pūʻulu mea ma ka lima ʻē aʻe e hoʻokomo ai. E hoʻohana me ka lima ʻē aʻe hakahaka e unuhi i hoʻokahi pūʻulu.<br>
+<br>
+Hiki ke mālama i 512 mea o hoʻokahi ʻano. Hōʻole ia i nā pahu i loko, nā pono hiki ʻole ke hoʻāhu, a me nā pūʻulu inoa ʻia a ʻikepili paha; hōʻike ka tooltip i ka waihona.
+<np>
+Ipu Ea Luʻu
+Waihona ea pilikia
+<&diving_capsule>He waihona ea pilikia ka Pahu Ea Luʻu no ka hana ma lalo o ka wai.<br>
+<br>
+Hoʻohana: E hoʻohana lima e hoʻihoʻi i ka ea. Ke lawe ʻia ma ka waihona, hiki ke hoʻā aunoa ke kokoke pau ka ea, a laila komo i cooldown.<br>
+<br>
+E lawe no nā lua ʻeli piha wai, nā ala paipu ma lalo o ka wai, a me ka hoʻoponopono lumi pamu.
+<np>
+Mea Kaomi Paukū ʻAi Muslee
+Mea kaomi ʻai
+<&musli_bar_press>Hoʻololi ka Muslee Bar Press i nā mea ʻai maʻamau i rations liʻiliʻi no ka hana.<br>
+<br>
+Hoʻohana: E lawe i ka palaoa, ka ʻāpala, a me ka ʻanoʻano palaoa, melon, pumpkin, beetroot, a i ʻole Industrial Hemp, a hoʻohana i ka press. Pau hoʻokahi o kēlā me kēia mea, nānā ʻia ka hakahaka, hana ʻia ʻehā Muslee Melange Power Bar, a emi ka durability o ka press.<br>
+<br>
+Inā nele kekahi mea a ʻaʻohe hakahaka no nā bar, ʻaʻohe mea e pau.
+<np>
+Paukū ʻAi Ikaika Muslee Melange
+ʻAi hale hana wikiwiki
+<&musli_bar>He mea ʻai liʻiliʻi ka Muslee Melange Power Bar i hana ʻia me ka palaoa, nā ʻanoʻano, a me ka huaʻai.<br>
+<br>
+Hoʻohana: E ʻai ma ke kahua hana ʻoiai e kau ana i nā hoʻomalu, nā paipu, nā anuu, a me nā ala lōʻihi o ka lumi mīkini.
+<np>
+Mea ʻUwi Manaʻo
+Mea hoʻopipili ʻike
+<&charged_lapis_squeezer>Hoʻololi ka Mea ʻUwi Manaʻo i hoʻokahi uliuli a me hoʻokahi pae ʻike mai kou waihona i Uliuli Hoʻouka ʻIa.<br>
+<br>
+Hōʻeha kēia hana i ka mea hoʻohana, hoʻoulu i ka luhi e pōloli ai, a hoʻomakapō pōkole iā ia i kēlā me kēia hoʻololi pono. Hōʻole i ka holo inā ʻaʻohe uliuli, ʻaʻohe ʻike, a i ʻole ke kokoke loa ka mea hoʻohana i ka make.
+<np>
+Uliuli Hoʻouka ʻIa
+ʻIke i mālama ʻia
+<&charged_lapis>Mālama ka Uliuli Hoʻouka ʻIa i hoʻokahi pae ʻike. E hoʻopau ma ka hoʻohana ʻana e hoʻihoʻi i ka pae, wehe i nā hopena e holo nei, a hoʻōla iki.<br>
+<br>
+E hana mua i ka Mea ʻUwi Manaʻo; hana ʻia ka Uliuli Hoʻouka ʻIa ma ka hoʻohana ʻana i ia mea hana me ka uliuli a me ka ʻike i loaʻa.
+<np>
+ʻIliʻili Hao Mānoanoa
+He mea kumu no nā mea hana ʻenekinia, i hoʻohana ʻia e ka pūʻulu lekapī kūkulu hou ʻia.
+<&iron_grit>Hiki ke hoʻoheheʻe a lilo i nā<br>ʻaukā hao, akā ʻaʻole kūpono<br>no ka hana minelala holomua.
+<np>
+ʻIliʻili Kula Mānoanoa
+He mea kumu no nā mea hana ʻenekinia, i hoʻohana ʻia e ka pūʻulu lekapī kūkulu hou ʻia.
+<&gold_grit>Hiki ke hoʻoheheʻe a lilo i nā<br>ʻaukā kula, akā ʻaʻole kūpono<br>no ka hana minelala holomua.

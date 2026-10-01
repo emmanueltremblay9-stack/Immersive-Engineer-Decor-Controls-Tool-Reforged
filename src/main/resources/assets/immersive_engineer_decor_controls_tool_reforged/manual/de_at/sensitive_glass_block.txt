@@ -1,0 +1,7 @@
+Leichtends signalempfindlichs Glos
+Signalglos
+<&recipe>A Redstone-empfindlicher Glosblock hält de Sicht frei und zeigt dabei den Signalzustand.<br>
+<br>
+Verwendung: Nimm eam für Kontrollraumfensta, beleuchtete Tafeln und gschützte Fabrikverglasungen.<br>
+<br>
+Hinweis: Redstone in da Nähe ändert den Zustand.

@@ -1,0 +1,127 @@
+Marinnada
+Marinnada socodka iyo taageerayaasha
+Tiirarka birta adag, tiirarka alwaaxda la daweeyey, shabaqyada, marinnada socodka, biraha badbaadada, sallaanada, albaabbada, daaqadaha iyo dalool-daboolladu waxay sameeyaan jidad dayactir oo kooban gudaha warshadaha.<br>
+<br>
+Qaybaha marinnada birta adag waxay isticmaalaan saxanno bir adag ah. Samee ama dhig miiska farsamaynta biraha, geli dubbe Immersive Engineering ah, kaddibna biraha adag ee la shubay dubbe ugu beddel saxanno bir adag ah, si aad uga samayso tiirar, marinno socod, daaqado, albaabbo, biro badbaado iyo qurxin bir adag kale ah.<br>
+<br>
+Dhig meelaha mashiinnadu uga baahan yihiin marin dayactir, jidad sare, godad dayactir ama geeso ammaan badan.
+<np>
+Tiirka birta adag ee dhumucda leh
+Qaybta looxeedka dhismaha
+<&thick_steel_pole>Tiirka toosan ee birta adag ee dhumucda leh wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Madaxa tiirka dhumucda leh
+Qaybta looxeedka dhismaha
+<&thick_steel_pole_head>Madaxa/cagta tiirka toosan ee birta adag ee dhumucda leh wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Tiirka birta adag ee dhuuban
+Qaybta looxeedka dhismaha
+<&thin_steel_pole>Tiirka toosan ee birta adag ee dhuuban wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Madaxa tiirka dhuuban
+Qaybta looxeedka dhismaha
+<&thin_steel_pole_head>Madaxa/cagta tiirka toosan ee birta adag ee dhuuban wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Tiirka alwaaxda la daweeyey
+Qaybta looxeedka dhismaha
+<&treated_wood_pole>Tiirka toosan ee alwaaxda la daweeyey wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Madaxa tiirka alwaaxda la daweeyey
+Qaybta looxeedka dhismaha
+<&treated_wood_pole_head>Madaxa/cagta tiirka toosan ee alwaaxda la daweeyey wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Taageeraha tiirka alwaaxda la daweeyey
+Qaybta looxeedka dhismaha
+<&treated_wood_pole_support>Taageeraha tiirka toosan ee alwaaxda la daweeyey wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Taageeraha laba-T ee birta adag
+Qaybta looxeedka dhismaha
+<&steel_double_t_support>Balooggani wuxuu siinayaa hoolalka mashiinnada iyo looxyada marinnada taageero muuqata.<br>
+<br>
+Isticmaal: Rog oo dhig si uu u noqdo taageero muuqata oo u gaar ah tiirarka jiifka, tiirarka taagan iyo geesaha madallada.<br>
+<np>
+Shabaqa sagxadda ee birta adag
+Qaybta marinka dayactirka
+<&steel_floor_grating>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Marinka socodka ee birta adag
+Qaybta marinka dayactirka
+<&steel_catwalk>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Jaranjarada marinka socodka ee birta adag
+Qaybta marinka dayactirka
+<&steel_catwalk_stairs>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Marinka socodka ee birta adag ee kor loo qaaday
+Qaybta marinka dayactirka
+<&steel_catwalk_ta>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Birta deyrka ee birta adag
+Qaybta marinka dayactirka
+<&steel_railing>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Deyrka shabaqa birta adag
+Qaybta marinka dayactirka
+<&steel_mesh_fence>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Albaabka deyrka shabaqa birta adag
+Qaybta marinka dayactirka
+<&steel_mesh_fence_gate>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Sallaanka jaran biraha leh
+Qaybta marinka dayactirka
+<&metal_rung_ladder>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Tallaabooyinka birta ee isdhaafsan
+Qaybta marinka dayactirka
+<&metal_rung_steps>Balooggani wuxuu sameeyaa jidad dayactir oo cad oo ku wareegsan mashiinnada.<br>
+<br>
+Isticmaal: Dhig si uu u noqdo marin dayactir oo ku wareegsan mashiinnada, dabaqyada sare iyo godadka adeegga.<br>
+<np>
+Daaqadda looxeedkeedu yahay bir adag
+Aragti la ilaaliyey
+<&steel_framed_window>Balooggani wuxuu ilaaliyaa aragti furan isagoo weli la jaanqaadaya dhismaha warshadeed ee la xoojiyey.<br>
+<br>
+Isticmaal: Dhig dalool darbi oo 1-baloog ah halka ciyaartoydu ay mashiinnada uga arki karaan xayndaab la ilaaliyey.<br>
+<np>
+Albaabka birta ee siibta
+Meesha laga galo warshadda
+<&metal_sliding_door>Balooggani wuxuu qolalka adeegga, godadka, saqafyada iyo xayndaabyada mashiinnada u sameeyaa meel gelitaan oo adag.<br>
+<br>
+Isticmaal: Ku rakib meesha dhismuhu uga baahan yahay furitaan dayactir oo la xakameeyo.<br>
+<np>
+Dalool-daboolka birta
+Meesha laga galo warshadda
+<&iron_hatch>Balooggani wuxuu qolalka adeegga, godadka, saqafyada iyo xayndaabyada mashiinnada u sameeyaa meel gelitaan oo adag.<br>
+<br>
+Isticmaal: Ku rakib meesha dhismuhu uga baahan yahay furitaan dayactir oo la xakameeyo.<br>

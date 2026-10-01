@@ -1,0 +1,5 @@
+Steel double-T brace
+Piece o' structural framing
+<&recipe>This block gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>

@@ -1,0 +1,5 @@
+Vatnfrystari
+Lítil viðgerðareind
+<&recipe>Vatnfrystarin tekur sær av lítlum køliuppgávum í løgskipanum við orkuveiting.<br>
+<br>
+Nýtsla: Tilfør vatn og orku fyri at framleiða ís í stigum.<br>

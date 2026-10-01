@@ -1,0 +1,161 @@
+Klinker ha masonerezh
+Goloioù brikennoù ha betoñs
+Ar klinker, ar brikennoù skori, ar betoñs kreñvaet hag ar gwer hobregonet a ro gorreadoù pounner evit salioù tomm, atalieroù ha gweloù gwarezet.<br>
+<br>
+Implijit an daroù, an diri, al lamellennoù hag ar mogerioù a glot evit echuiñ ar ribloù hep cheñch stil dafar an uzin.
+<np>
+Bloc'h brikennoù klinker
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_block>Ar bloc'h-mañ a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Dar brikennoù klinker
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_slab>Ar bloc'h-mañ a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Diri brikennoù klinker
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_stairs>Ar bloc'h-mañ a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Moger brikennoù klinker
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_wall>Ar bloc'h-mañ a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Bloc'h klinker louzet
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_stained_block>Ar bloc'h brikennoù klinker louzet a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Dar klinker louzet
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_stained_slab>An dar brikennoù klinker louzet a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Diri klinker louzet
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_stained_stairs>An diri brikennoù klinker louzet a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Brikenn klinker kinklet
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_sastor_corner_block>Ar vrikenn klinker kinklet gant maen-krag a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Brikenn klinker kilet
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_recessed>Ar bloc'h-mañ a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Brikennoù klinker faoutet
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_vertically_slit>Ar brikennoù klinker faoutet a-serzh a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Dar klinker a-serzh
+Brikerezh teñvalaet gant huzel
+<&clinker_brick_vertical_slab_structured>An dar klinker a-serzh reliefet a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Hanter-dar brikennoù klinker
+Brikerezh teñvalaet gant huzel
+<&halfslab_clinker_brick>Ar bloc'h-mañ a zegas brikerezh teñvalaet gant huzel e salioù fornioù, diazezoù siminalioù ha mogerioù trezalc'h.<br>
+<br>
+Implij: Implijit anezhañ evel moger, ribl pe golo un takad tomm tro-dro da fornioù ha kaoterioù.<br>
+<np>
+Bloc'h brikennoù skori
+Masonerezh uzin stank
+<&slag_brick_block>Ar bloc'h-mañ a ouzhpenn masonerezh gris-gell stank evit diazezoù, mogerioù skor hag atalieroù koshoc'h.<br>
+<br>
+Implij: Implijit anezhañ evit diazezoù kozh, mogerioù skor ha leurioù uzin lous.<br>
+<np>
+Dar brikennoù skori
+Masonerezh uzin stank
+<&slag_brick_slab>Ar bloc'h-mañ a ouzhpenn masonerezh gris-gell stank evit diazezoù, mogerioù skor hag atalieroù koshoc'h.<br>
+<br>
+Implij: Implijit anezhañ evit diazezoù kozh, mogerioù skor ha leurioù uzin lous.<br>
+<np>
+Diri brikennoù skori
+Masonerezh uzin stank
+<&slag_brick_stairs>Ar bloc'h-mañ a ouzhpenn masonerezh gris-gell stank evit diazezoù, mogerioù skor hag atalieroù koshoc'h.<br>
+<br>
+Implij: Implijit anezhañ evit diazezoù kozh, mogerioù skor ha leurioù uzin lous.<br>
+<np>
+Moger brikennoù skori
+Masonerezh uzin stank
+<&slag_brick_wall>Ar bloc'h-mañ a ouzhpenn masonerezh gris-gell stank evit diazezoù, mogerioù skor hag atalieroù koshoc'h.<br>
+<br>
+Implij: Implijit anezhañ evit diazezoù kozh, mogerioù skor ha leurioù uzin lous.<br>
+<np>
+Bloc'h betoñs houarnet
+Betoñs kreñvaet
+<&rebar_concrete>Ar bloc'h-mañ zo un tamm betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Dar betoñs houarnet
+Betoñs kreñvaet
+<&rebar_concrete_slab>Ar bloc'h-mañ zo un tamm betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Diri betoñs houarnet
+Betoñs kreñvaet
+<&rebar_concrete_stairs>Ar bloc'h-mañ zo un tamm betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Moger betoñs houarnet
+Betoñs kreñvaet
+<&rebar_concrete_wall>Ar bloc'h-mañ zo un tamm betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Lamellenn vetoñs houarnet
+Betoñs kreñvaet
+<&halfslab_rebar_concrete>Ar bloc'h-mañ zo un tamm betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Karrell betoñs houarnet
+Betoñs kreñvaet
+<&rebar_concrete_tile>Ar bloc'h-mañ zo un tamm betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Dar karrelloù betoñs houarnet
+Betoñs kreñvaet
+<&rebar_concrete_tile_slab>Ar bloc'h-mañ zo un tamm betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Karrell betoñs houarnet
+Betoñs kreñvaet
+<&rebar_concrete_tile_stairs>An diri karrelloù betoñs houarnet zo tammoù betoñs kaletaet evit diazezoù mekanikoù, mogerioù enep-tarzhadennoù ha leurioù takadoù kargañ.<br>
+<br>
+Implij: Lakait anezhañ dindan mekanikoù, a-hed trepasoù trezalc'h, pe el lec'h ma'z eus ezhomm eus un diazez kreñvaet.<br>
+<np>
+Bloc'h gwer hobregonet
+Gwel gwarezet
+<&panzerglass_block>Ar bloc'h-mañ a vir ar gwel digor en ur glotañ gant savadurioù uzin kreñvaet.<br>
+<br>
+Implij: Implijit anezhañ el lec'h ma rank ar c'hoarierien gwelet ar mekanikoù dre ur gwarez.<br>
+<np>
+Dar gwer hobregonet
+Gwel gwarezet
+<&panzerglass_slab>Ar bloc'h-mañ a vir ar gwel digor en ur glotañ gant savadurioù uzin kreñvaet.<br>
+<br>
+Implij: Implijit anezhañ el lec'h ma rank ar c'hoarierien gwelet ar mekanikoù dre ur gwarez.<br>

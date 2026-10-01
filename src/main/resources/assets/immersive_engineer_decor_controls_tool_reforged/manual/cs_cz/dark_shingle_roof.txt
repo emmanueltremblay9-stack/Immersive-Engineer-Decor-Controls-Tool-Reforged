@@ -1,0 +1,5 @@
+Tmavá šindelová střecha
+Omšelý střešní prvek
+<&recipe>Tento blok vytváří tmavé praktické střechy dílen a průmyslových přístřešků.<br>
+<br>
+Použití: Kombinuj díly do věrohodných střešních profilů.<br>

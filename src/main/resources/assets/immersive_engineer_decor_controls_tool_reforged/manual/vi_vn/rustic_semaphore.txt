@@ -1,0 +1,7 @@
+Đèn hiệu mộc mạc
+Phản hồi tín hiệu
+<&recipe>Đèn chỉ báo gọn biến tín hiệu redstone ẩn thành phản hồi nhìn thấy được trong nhà máy.<br>
+<br>
+Cách dùng: Nối dây cạnh tín hiệu để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Ghi chú: Đổi trạng thái khi có năng lượng redstone gần đó.

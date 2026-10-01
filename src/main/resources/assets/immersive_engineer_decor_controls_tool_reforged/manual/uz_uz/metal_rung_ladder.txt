@@ -1,0 +1,5 @@
+Metall pog'onali narvon
+Xizmat kirishi qismi
+<&recipe>Bu blok mashinalar atrofida aniq ajralib turadigan xizmat yo'llarini hosil qiladi.<br>
+<br>
+Ishlatish: mashinalar, yuqori qavatlar va texnik shaxtalar atrofida xizmat ko'rsatish yo'li sifatida joylashtiring.<br>

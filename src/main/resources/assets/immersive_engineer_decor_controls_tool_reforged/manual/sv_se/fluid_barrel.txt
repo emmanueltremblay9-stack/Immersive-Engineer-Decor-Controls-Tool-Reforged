@@ -1,0 +1,5 @@
+Vätsketunna
+Utrustning för vätskeledningar
+<&recipe>Den här delen är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Placera den så att rör eller hinkar når tankytan.<br>

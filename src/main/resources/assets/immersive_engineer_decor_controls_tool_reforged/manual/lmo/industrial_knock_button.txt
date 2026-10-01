@@ -1,0 +1,7 @@
+Boton de bussada
+Control cont prejarossa
+<&recipe>Un interutor momentan el manda un impuls net de prejarossa a piena potenza.<br>
+<br>
+Dovrel per fà partì machine, sblocà porte, dà allarmi e ativà circuit una volta domà.<br>
+<br>
+Dopo la durada stabilida per l’impuls, el comand el torna a la posizzion de partenza.

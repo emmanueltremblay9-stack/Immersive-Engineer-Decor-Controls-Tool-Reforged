@@ -1,0 +1,7 @@
+Dimmer
+Veränderbars Signal
+<&recipe>A Drehregler stellt d'Stärk vo Redstone über a kloane Paneelfläch ei.<br>
+<br>
+So geht's: Rechtsklick, dann geht d'Ausgab schrittweis aufi und nach voller Stärk wieder auf null zruck.<br>
+<br>
+Hinweis: Gibt a Stärk vo 0 bis 15 aus.

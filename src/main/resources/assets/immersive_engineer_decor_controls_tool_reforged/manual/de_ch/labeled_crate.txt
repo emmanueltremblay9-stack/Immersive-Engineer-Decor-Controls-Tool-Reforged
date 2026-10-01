@@ -1,0 +1,5 @@
+Beschrifteti Chiste
+Änderbari Lagerbeschriftig
+<&recipe>D'beschrifteti Chiste sorgt für Übersicht im Lager. S'Frontschild chasch wie es chliis Werkstattschild ändere.<br>
+<br>
+Verwendig: Rechtsklick ufs Frontschild änderet d'Beschriftig. Rechtsklick uf de Rescht vo de Chiste öffnet s'Lager für Teil, Zuebehör und Wartigsmaterial.<br>

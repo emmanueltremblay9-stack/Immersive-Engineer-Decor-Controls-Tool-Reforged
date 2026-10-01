@@ -1,0 +1,5 @@
+Talador de árbores
+Equipamento de planta
+<&recipe>O talador de árbores pequeno é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: apunta cara a árbores medradas e recolle os obxectos obtidos por separado.<br>

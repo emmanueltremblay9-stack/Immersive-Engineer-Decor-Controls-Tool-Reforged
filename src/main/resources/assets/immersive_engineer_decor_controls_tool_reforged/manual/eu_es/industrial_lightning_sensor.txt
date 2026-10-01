@@ -1,0 +1,7 @@
+Ekaitz-detektagailua
+Seinaleak hautematea
+<&recipe>Ekaitz-sentsoreak abisuak aktibatzen ditu trumoi-baldintzetan.<br>
+<br>
+Erabilera: jarri zeru irekian eta konektatu argiekin edo alarmekin.<br>
+<br>
+Oharrak: trumoiak eta zerurako sarbidea behar ditu.

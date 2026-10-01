@@ -1,0 +1,7 @@
+Yellowy Blinky LEDz
+Signal peekz
+<&recipe>Lil indicator turns hidden redstone into visible factory feedback, kitty.<br>
+<br>
+How to: Wire beside da signal fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Changes state when nearby redstone powah iz present.

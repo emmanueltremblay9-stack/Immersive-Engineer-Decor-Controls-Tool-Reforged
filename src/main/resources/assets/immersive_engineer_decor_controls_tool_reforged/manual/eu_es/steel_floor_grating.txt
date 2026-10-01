@@ -1,0 +1,5 @@
+Altzairuzko zoru-sareta
+Mantentze-sarbideko osagarria
+<&recipe>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>

@@ -1,0 +1,7 @@
+Ärzmahlhammer
+Handmahlwerkzüch
+<&recipe>Dä Ärz-Knötschhammer es e Handjering för et fröhe Verarbeide vun Iese un Jold.<br>
+<br>
+Jebruch: Maach en met ruuem Iese, ruuem Jold, Ieseärz, Deepslate-Ieseärz, Joldärz udder Deepslate-Joldärz, öm Immersive Engineering Iese- udder Joldstaub ze maache. Dä Hammer verliert Haltbarkeet un kütt zeröck en et Craftingjitter, bes hä kapott jeiht.<br>
+<br>
+Hä weed och beim Avbaue avjenutz un kann Ziele em Nohkampf zoröckstoße.

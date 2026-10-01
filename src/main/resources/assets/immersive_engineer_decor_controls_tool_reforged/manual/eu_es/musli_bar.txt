@@ -1,0 +1,5 @@
+Muslee Melange energia-barra
+Tailerreko mokadu azkarra
+<&recipe>Ogi, hazi eta frutaz egindako janari trinkoa.<br>
+<br>
+Erabilera: Jan landa-janari gisa kontrolak, hodiak, plataformak edo makina-lerro luzeak jartzean.

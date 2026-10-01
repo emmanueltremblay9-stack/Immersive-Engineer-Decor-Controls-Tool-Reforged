@@ -1,0 +1,5 @@
+Placeur de bloc d'usine
+Équipement d'atelier
+<&recipe>Ce bloc place les blocs de sa réserve interne lorsqu'il est activé.<br>
+<br>
+Utilisation : dirigez sa face de travail vers l'espace ciblé et chargez des piles de blocs pouvant être placés.<br>

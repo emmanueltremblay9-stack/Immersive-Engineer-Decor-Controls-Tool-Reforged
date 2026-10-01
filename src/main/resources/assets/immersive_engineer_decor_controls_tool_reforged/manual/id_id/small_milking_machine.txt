@@ -1,0 +1,5 @@
+Mesin Pemerah Susu
+Peralatan lantai bengkel
+<&recipe>Mesin pemerah susu kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: pasang di dekat sapi dan sediakan cara mengambil wadah susu atau cairannya.<br>

@@ -1,0 +1,7 @@
+Rastreador
+Marcador de posición guardada
+<&recipe>El Rastreador guarda una posición de bloque directamente en el objeto.<br>
+<br>
+Uso: Pulsa un bloque para guardar su dimensión y coordenadas. La descripción muestra la posición. Usa el Rastreador agachado para borrar el objetivo.<br>
+<br>
+Úsalo para marcar máquinas, ramales de túneles, controles remotos u obras sin terminar antes de volver con herramientas y materiales.

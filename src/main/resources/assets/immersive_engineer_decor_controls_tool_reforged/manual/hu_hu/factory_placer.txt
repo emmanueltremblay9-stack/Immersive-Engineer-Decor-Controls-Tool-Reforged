@@ -1,0 +1,5 @@
+Gyári blokklerakó
+Műhelyi segédeszköz
+<&recipe>Ez a blokk aktiváláskor a belső készletéből rak le blokkokat.<br>
+<br>
+Használat: fordítsd a munkafelületet a célhely felé, és töltsd fel lerakható halmokkal.<br>

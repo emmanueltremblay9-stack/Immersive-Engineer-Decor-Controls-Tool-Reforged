@@ -1,0 +1,7 @@
+Linkempfänga im Ghäus
+Verbundene Steuerung
+<&recipe>A verbundener Empfänga im Ghäus gibt entfernten Paneele a robusts Redstone-Ziel.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Rechtsklick direkt auf'n Empfänga zum Umschaltn mit da Hand.<br>
+<br>
+Hinweis: A verbundene Perle schaltet den Empfänga um, wennst's beim Schleichn benutzt.

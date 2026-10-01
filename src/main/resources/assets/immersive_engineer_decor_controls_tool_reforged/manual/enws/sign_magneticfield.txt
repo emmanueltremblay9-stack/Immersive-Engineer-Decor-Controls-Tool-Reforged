@@ -1,0 +1,5 @@
+Sign of a Magnetic Field
+Mark of Peril
+<&recipe>The Sign "Beware a Mighty Magnetic Field" marks perils, exits and working zones with a clear cue of manufactory safety.<br>
+<br>
+Use: Set it beside perils, exits, engines and forbidden zones.<br>

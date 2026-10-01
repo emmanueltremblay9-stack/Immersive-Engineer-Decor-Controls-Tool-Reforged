@@ -1,0 +1,5 @@
+Stained Clinker Stairs
+Soot-dark brickwork
+<&recipe>The Stained Clinker Brick Stairs bring soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>

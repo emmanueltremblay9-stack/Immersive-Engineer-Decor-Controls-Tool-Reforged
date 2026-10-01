@@ -1,0 +1,5 @@
+Hylif Goddefol
+Offer llinell hylif
+<&recipe>Rhan gryno o linell hylif yw'r Cronnydd Hylif Goddefol, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Gosodwch ef yn erbyn ffynonellau dŵr addas a gadewch le i dynnu'r hylif.<br>

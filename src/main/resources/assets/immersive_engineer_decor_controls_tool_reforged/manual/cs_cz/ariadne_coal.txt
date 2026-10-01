@@ -1,0 +1,7 @@
+Ariadnino uhlí
+Značka důlní cesty
+<&recipe>Ariadnino uhlí rychle značí cesty v šachtách, rozvětvených dolech a dočasných podzemních pracovištích.<br>
+<br>
+Použití: Použij je na pevné stěně bloku, abys na jejím okraji nakreslil černou šipku. Značka vychází z místa kliknutí a podporuje osm směrů včetně úhlopříčných. Označíš tak odbočky, východy, slepé konce a zásobovací cesty bez samostatných rozcestníků.<br>
+<br>
+Ariadnino uhlí je opakovaně použitelný značkovací nástroj na 100 použití. Každá úspěšná značka spotřebuje jeden bod odolnosti. Nepodporovanou plochu odmítne bez opotřebení předmětu.

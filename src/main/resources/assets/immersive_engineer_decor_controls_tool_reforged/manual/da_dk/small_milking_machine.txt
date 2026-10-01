@@ -1,0 +1,5 @@
+Malkemaskine
+Hjælpemiddel til værkstedsgulvet
+<&recipe>Den lille malkemaskine er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Placer den tæt på køer, og sørg for at kunne fjerne mælkebeholdere eller væske.<br>

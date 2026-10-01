@@ -1,0 +1,7 @@
+Mesa de traballo do metal
+Posto de fabricación de placas
+<&recipe>Banco de metal cun oco dedicado ao martelo, grade de fabricación 3x3 e oco de saída.<br>
+<br>
+Uso: usa a grella coma unha mesa de fabricación normal. Para formar placas de IE, coloca un martelo do enxeñeiro na rañura de ferramenta e o material da placa na grella; despois recolle a placa formada na saída.<br>
+<br>
+As decoracións de aceiro usan placas de aceiro. Insire un martelo de Immersive Engineering, martela lingotes de aceiro para obter placas e usa as placas para fabricar postes, pasarelas, ventás, portas, varandas e outras decoracións de aceiro.<br>

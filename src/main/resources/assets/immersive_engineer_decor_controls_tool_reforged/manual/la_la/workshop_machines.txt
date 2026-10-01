@@ -1,0 +1,107 @@
+Machinae officinae
+Machinae et ingressus/egressus officinae
+Machinae officinae fabricationem, motum rerum, conflationem, deletionem, collectionem et opera utilia compacta in spatio unius cubi praebent.<br>
+<br>
+Paginas sequentes aperi ut cuiusque machinae formulam, imaginem, descriptionem et notas usus practicas videas.
+<np>
+Mensa chalybea
+Supellex officinae
+<&steel_table>Hic cubus supellex utilis officinae est pro conclavibus laboris et angulis refectionis.<br>
+<br>
+Usus: iuxta mensas, cistas et machinas compactas pone.<br>
+<np>
+Mensa ligni tractati
+Supellex officinae
+<&treated_wood_table>Hic cubus supellex utilis officinae est pro conclavibus laboris et angulis refectionis.<br>
+<br>
+Usus: iuxta mensas, cistas et machinas compactas pone.<br>
+<np>
+Scabellum ligni tractati
+Supellex officinae
+<&treated_wood_stool>Hic cubus supellex utilis officinae est pro conclavibus laboris et angulis refectionis.<br>
+<br>
+Usus: iuxta mensas, cistas et machinas compactas pone.<br>
+<np>
+Mensa metallaria
+Statio laminarum
+<&metal_crafting_table>Mensa metallaria est statio officinae firmata cum cellula mallei, reticulo fabricationis 3x3 et cellula exitus clara.<br>
+<br>
+Usus: reticulo ad fabricationem ordinariam utere. Pro laminis IE, malleum ingeniarii in cellulam instrumenti et materiam laminae in reticulum pone antequam exitum accipias. Ornamenta chalybea laminis chalybeis pro palis, ambulacris, fenestris, ostiis, cancellis et aliis partibus chalybeis utuntur.<br>
+<np>
+Infundibulum officinae
+Auxilium pavimenti officinae
+<&factory_hopper>Hic cubus acervos rerum per thecam industrialem compactiorem movet.<br>
+<br>
+Usus: ad lineam inventarii dirige, deinde intervallum, numerum acervi, tempora et modum redstone in tabula constitue.<br>
+<np>
+Demittetrum officinae
+Auxilium pavimenti officinae
+<&factory_dropper>Hic cubus res servatas ex facie directa emittit.<br>
+<br>
+Usus: frontem ad locum emissionis dirige, cellulas internas imple et vim, angulum, moram, logicam filtrorum atque modum redstone in tabula accommoda.<br>
+<np>
+Positor cuborum officinae
+Auxilium pavimenti officinae
+<&factory_placer>Hic cubus activatus cubos ex copia interna ponit.<br>
+<br>
+Usus: faciem operantem ad spatium petitum dirige et acervos ponibiles insere.<br>
+<np>
+Fractor cuborum
+Auxilium pavimenti officinae
+<&small_block_breaker>Fractor cuborum parvus est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: faciem operantem ad cubum tollendum dirige.<br>
+<np>
+Crematorium purgamentorum
+Unitas tractationis compacta
+<&small_waste_incinerator>Crematorium purgamentorum res inutiles delet, parvum spatium officinae occupans.<br>
+<br>
+Usus: solas res inutiles in ordinem eius insere.<br>
+<np>
+Fornax laboratoria
+Unitas tractationis compacta
+<&small_lab_furnace>Fornax laboratoria opera conflandi compacta combustibili solido agit, parvum spatium officinae occupans.<br>
+<br>
+Usus: combustibili solido ad parvas series conflandi utere.<br>
+<np>
+Fornax electrica
+Unitas tractationis compacta
+<&small_electrical_furnace>Fornax electrica opera conflandi compacta energia FE agit, parvum spatium officinae occupans.<br>
+<br>
+Usus: FE et materias conflandas validas praebe.<br>
+<np>
+Fornax mineralium
+Unitas tractationis compacta
+<&small_mineral_smelter>Fornax mineralium materias minerales calore alto tractat, parvum spatium officinae occupans.<br>
+<br>
+Usus: cubos minerales et energiam praebe ad liquefactionem calore alto.<br>
+<np>
+Congelator aquae
+Unitas tractationis compacta
+<&small_freezer>Congelator aquae opus refrigerandi compactum pro systematibus fluidi energia actis agit.<br>
+<br>
+Usus: aquam et energiam praebe ad glaciem gradatim producendam.<br>
+<np>
+Fluidum sine energia
+Apparatus linearum fluidi
+<&passive_fluid_accumulator>Collector fluidi sine energia est pars compacta lineae fluidi pro receptaculis parvis, fistulis, locis collectionis et fluxu redstone moderato.<br>
+<br>
+Usus: contra fontes aquae aptos pone et spatium fluidi extrahendi relinque.<br>
+<np>
+Tabula solaris
+Auxilium pavimenti officinae
+<&small_solar_panel>Tabula solaris parva est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: caelum apertum praebe et apparatus parum consumentes coniunge.<br>
+<np>
+Machina mulgendi
+Auxilium pavimenti officinae
+<&small_milking_machine>Machina parva mulgendi est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: prope vaccas pone et viam vasis lactis aut fluidi auferendi praebe.<br>
+<np>
+Sector arborum
+Auxilium pavimenti officinae
+<&small_tree_cutter>Sector arborum parvus est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: ad arbores adultas dirige et res delapsas separatim collige.<br>

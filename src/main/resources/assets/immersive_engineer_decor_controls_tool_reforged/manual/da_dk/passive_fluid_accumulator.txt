@@ -1,0 +1,5 @@
+Passiv væske
+Udstyr til væskeledninger
+<&recipe>Den passive væskeopsamler er en kompakt del til væskeledninger, små tanke, rørstrækninger, opsamlingspunkter og redstonestyret gennemstrømning.<br>
+<br>
+Brug: Placer den op mod egnede vandkilder, og sørg for plads til væskeudtagning.<br>

@@ -1,0 +1,7 @@
+Fırtına Algılayıcısı
+Sinyal algılama
+<&recipe>Fırtına algılayıcısı, gök gürültülü koşullarda uyarıları etkinleştirir.<br>
+<br>
+Kullanım: Açık gökyüzünün altına yerleştirip lambalara veya alarmlara bağlayın.<br>
+<br>
+Notlar: Gök gürültüsü ve gökyüzüne açık erişim gerekir.

@@ -1,0 +1,7 @@
+Dykkerluftkapsel
+Nødluftreserve
+<&recipe>Nødluft til arbejde under vand.<br>
+<br>
+Brug: Gendan luft manuelt. I inventaret udløses den automatisk, når luften næsten er væk, og går derefter på nedkøling.<br>
+<br>
+Tag den med i oversvømmede miner, under vand-rør og pumperum.

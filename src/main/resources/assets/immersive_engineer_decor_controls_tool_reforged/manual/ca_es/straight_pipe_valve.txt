@@ -1,0 +1,5 @@
+Vàlvula antiretorn per a canonades de líquids
+Equipament de canonades de fluids
+<&recipe>La vàlvula antiretorn per a canonades de líquids és una peça compacta de conducció de fluids per a petits dipòsits, canonades, punts de recollida i cabals controlats per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció de cabal prevista.<br>

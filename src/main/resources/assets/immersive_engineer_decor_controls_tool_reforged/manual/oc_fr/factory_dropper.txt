@@ -1,0 +1,5 @@
+Donaire de fabrica
+Equipament utilitari d’obrador
+<&recipe>Aqueste blòc expulsa los objèctes servats per una fàcia orientada.<br>
+<br>
+Utilizacion : orienta la fàcia de davant cap al ponch d’expulsion, emplena los emplaçaments intèrnes e règla la fòrça, l’angle, lo relambi, la logica dels filtres e lo mòde de redstone dins son ecran.<br>

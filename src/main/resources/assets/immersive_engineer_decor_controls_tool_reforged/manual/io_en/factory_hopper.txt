@@ -1,0 +1,5 @@
+Fabrikala funelego
+Laboreyaparato
+<&recipe>Ca bloko movas objektostaki tra plu kompakta industriala korpuso.<br>
+<br>
+Uzo: Direktez ol vers la inventaria linio, pose ajustez distanco, stakokvanto, tempo e redstonea modo en lua ekrano.<br>

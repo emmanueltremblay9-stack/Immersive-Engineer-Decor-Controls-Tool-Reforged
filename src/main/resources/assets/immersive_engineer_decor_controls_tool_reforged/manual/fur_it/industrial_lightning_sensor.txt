@@ -1,0 +1,7 @@
+Rilevadôr di temporâl
+Rilevament dal segnâl
+<&recipe>Un sensôr di temporâl al invie i avîs cuant che a son tons.<br>
+<br>
+Ûs: metilu sot dal cîl viert e coleghilu a lampis o alarmis.<br>
+<br>
+Notis: a coventin tons e acès al cîl.

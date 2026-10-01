@@ -1,0 +1,5 @@
+Beczka na płyny
+Elementy instalacji płynów
+<&recipe>Ten niewielki element instalacji płynów służy do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Postaw go tak, aby rury lub wiadra miały dostęp do ściany zbiornika.<br>

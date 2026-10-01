@@ -1,0 +1,5 @@
+Plieninis turėklas
+Aptarnavimo prieigos dalis
+<&recipe>Šis blokas sudaro aiškiai atpažįstamus aptarnavimo kelius aplink mašinas.<br>
+<br>
+Naudojimas: įrenk prieigą priežiūrai aplink mašinas, viršutiniuose aukštuose ir aptarnavimo šachtose.<br>

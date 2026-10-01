@@ -1,0 +1,5 @@
+Egâillouer d'uzine
+Outil de sol d'atelier
+<&recipe>Çu blloqe lâche les bezaignes gardées par eune face orientée.<br>
+<br>
+Empllai : Miréz le devant devers le pouint de lâchaije, rempllisséz ses cases e regléz la force, l'angle, le délai, la logiqe de filtre e le mode redstone den son écran.<br>

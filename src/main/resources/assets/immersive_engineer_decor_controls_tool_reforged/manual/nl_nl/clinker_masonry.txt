@@ -1,0 +1,161 @@
+Klinkers en metselwerk
+Omhullingen van baksteen en beton
+Klinkers, slakkenstenen, gewapend beton en pantserglas bieden zware oppervlakken voor hete ruimtes, werkplaatsen en beschermd zicht.<br>
+<br>
+Werk randen af met bijpassende platen, trappen, dunne platen en muren, zodat de fabrieksmaterialen één geheel blijven vormen.
+<np>
+Klinkerblok
+Roetdonker metselwerk
+<&clinker_brick_block>Dit blok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Klinkerplaat
+Roetdonker metselwerk
+<&clinker_brick_slab>Dit blok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Klinkertrap
+Roetdonker metselwerk
+<&clinker_brick_stairs>Dit blok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Klinkermuur
+Roetdonker metselwerk
+<&clinker_brick_wall>Dit blok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Vervuild klinkerblok
+Roetdonker metselwerk
+<&clinker_brick_stained_block>Het vervuilde klinkerblok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Vervuilde klinkerplaat
+Roetdonker metselwerk
+<&clinker_brick_stained_slab>De vervuilde klinkerplaat geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Vervuilde klinkertrap
+Roetdonker metselwerk
+<&clinker_brick_stained_stairs>De vervuilde klinkertrap geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Klinker met versiering
+Roetdonker metselwerk
+<&clinker_brick_sastor_corner_block>De klinker met zandsteenversiering geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Verdiepte klinker
+Roetdonker metselwerk
+<&clinker_brick_recessed>Dit blok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Klinkers met sleuven
+Roetdonker metselwerk
+<&clinker_brick_vertically_slit>De klinkers met verticale sleuven geven ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Verticale klinkerplaat
+Roetdonker metselwerk
+<&clinker_brick_vertical_slab_structured>De verticale klinkerplaat met reliëf geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Halve klinkerplaat
+Roetdonker metselwerk
+<&halfslab_clinker_brick>Dit blok geeft ovenhallen, schoorsteenvoeten en onderhoudsmuren de uitstraling van met roet verduisterd metselwerk.<br>
+<br>
+Gebruik: bouw er muren, afwerkranden of een omhulling rond hete ovens en ketels mee.<br>
+<np>
+Slakkensteenblok
+Dicht fabrieksmetselwerk
+<&slag_brick_block>Dit blok levert dicht grijsbruin metselwerk voor funderingen, keermuren en oudere werkloodsen.<br>
+<br>
+Gebruik: gebruik het voor oude funderingen, keermuren en vuile fabrieksvloeren.<br>
+<np>
+Slakkensteenplaat
+Dicht fabrieksmetselwerk
+<&slag_brick_slab>Dit blok levert dicht grijsbruin metselwerk voor funderingen, keermuren en oudere werkloodsen.<br>
+<br>
+Gebruik: gebruik het voor oude funderingen, keermuren en vuile fabrieksvloeren.<br>
+<np>
+Slakkensteentrap
+Dicht fabrieksmetselwerk
+<&slag_brick_stairs>Dit blok levert dicht grijsbruin metselwerk voor funderingen, keermuren en oudere werkloodsen.<br>
+<br>
+Gebruik: gebruik het voor oude funderingen, keermuren en vuile fabrieksvloeren.<br>
+<np>
+Slakkensteenmuur
+Dicht fabrieksmetselwerk
+<&slag_brick_wall>Dit blok levert dicht grijsbruin metselwerk voor funderingen, keermuren en oudere werkloodsen.<br>
+<br>
+Gebruik: gebruik het voor oude funderingen, keermuren en vuile fabrieksvloeren.<br>
+<np>
+Gewapendbetonblok
+Gewapend beton
+<&rebar_concrete>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Gewapendbetonplaat
+Gewapend beton
+<&rebar_concrete_slab>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Gewapendbetontrap
+Gewapend beton
+<&rebar_concrete_stairs>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Gewapendbetonmuur
+Gewapend beton
+<&rebar_concrete_wall>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Dunne plaat van gewapend beton
+Gewapend beton
+<&halfslab_rebar_concrete>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Gewapendbetontegel
+Gewapend beton
+<&rebar_concrete_tile>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Gewapendbetontegelplaat
+Gewapend beton
+<&rebar_concrete_tile_slab>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Gewapendbetontegel
+Gewapend beton
+<&rebar_concrete_tile_stairs>De tegeltrappen van gewapend beton zijn uitgeharde betonnen onderdelen voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>
+<np>
+Pantserglasblok
+Beschermd zicht
+<&panzerglass_block>Dit blok houdt het zicht vrij en past tegelijk bij versterkte fabrieksconstructies.<br>
+<br>
+Gebruik: plaats het waar spelers door een beschermende afscheiding naar machines moeten kunnen kijken.<br>
+<np>
+Pantserglasplaat
+Beschermd zicht
+<&panzerglass_slab>Dit blok houdt het zicht vrij en past tegelijk bij versterkte fabrieksconstructies.<br>
+<br>
+Gebruik: plaats het waar spelers door een beschermende afscheiding naar machines moeten kunnen kijken.<br>

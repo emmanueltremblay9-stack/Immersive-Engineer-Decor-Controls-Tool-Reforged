@@ -1,0 +1,7 @@
+Etablli a métal
+Pouste de bezaigne des pllaqes
+<&recipe>Établi de métal avèq eune pllaçe pour le martè, eune grille 3x3 e eune sortie.<br>
+<br>
+Empllai : Empllayéz la grille coume un Etablli ordinaire. Pour former des pllaqes IE, météz un Martè de l'anjénieur den la case a outil e le matériau de pllaqe den la grille, pis prenéz la pllaqe formée den la sortie.<br>
+<br>
+Les décors d'acier empllayent des pllaqes d'acier. Météz un martè d'Immersive Engineering, batéz des moches d'acier en pllaqes d'acier, pis empllayéz les pllaqes pour fére des potiaos, passerelles, fenétrs, portes, rambardes e aotres décors d'acier.<br>

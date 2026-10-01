@@ -1,0 +1,7 @@
+Biser povezave stikal
+Povezano krmiljenje
+<&recipe>Povezan biser hrani cilj sprejemnika za oddaljene tovarniške krmilnike.<br>
+<br>
+Uporaba: Ustvariš ga tako, da z Enderovim biserom klikneš sprejemnik povezave stikal. Povezan biser uporabi med tihotapljenjem, da aktiviraš shranjeni sprejemnik.<br>
+<br>
+Opombe: Cilj mora biti naložen, v isti dimenziji in znotraj dosega.

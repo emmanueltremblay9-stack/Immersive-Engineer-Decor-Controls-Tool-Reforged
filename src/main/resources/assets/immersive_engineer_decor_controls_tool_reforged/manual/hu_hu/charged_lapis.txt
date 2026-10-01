@@ -1,0 +1,7 @@
+Feltöltött lazurit
+Tárolt tapasztalat
+<&recipe>A feltöltött lazurit egy, az elmepréssel eltárolt tapasztalati szintet őriz.<br>
+<br>
+Használat: fogyaszd el egy szint visszanyeréséhez, az aktív hatások törléséhez és kevés életerő visszatöltéséhez.<br>
+<br>
+A receptnézet az elmeprést mutatja, mert feltöltött lazurit úgy készül, hogy lazurit és tapasztalat birtokában használod ezt az eszközt.

@@ -1,0 +1,5 @@
+Fluidum sine energia
+Apparatus linearum fluidi
+<&recipe>Collector fluidi sine energia est pars compacta lineae fluidi pro receptaculis parvis, fistulis, locis collectionis et fluxu redstone moderato.<br>
+<br>
+Usus: contra fontes aquae aptos pone et spatium fluidi extrahendi relinque.<br>

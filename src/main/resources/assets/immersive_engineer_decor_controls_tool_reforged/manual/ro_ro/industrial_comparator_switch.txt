@@ -1,0 +1,7 @@
+Comutator comparator
+Semnal de la blocul de montare
+<&recipe>Un comutator compact cu senzor citește blocul pe care este montat și transformă citirea într-o ieșire simplă de panou.<br>
+<br>
+Utilizare: Montează-l pe inventare, rezervoare sau echipament redstone. Când blocul de montare raportează o ieșire de comparator, container sau redstone, comutatorul emite redstone la intensitate maximă.<br>
+<br>
+Observații: Folosește-l pentru a transforma nivelurile de stocare sau cablajul ascuns în linii de comandă pornit/oprit ușor de urmărit.

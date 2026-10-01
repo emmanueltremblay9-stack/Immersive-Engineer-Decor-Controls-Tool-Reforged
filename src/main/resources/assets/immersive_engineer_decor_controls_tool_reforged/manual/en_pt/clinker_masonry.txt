@@ -1,0 +1,161 @@
+Clinker and mason's work
+Shells o' brick and concrete
+Clinker, slag brick, reinforced concrete and armoured glass give ye heavy surfaces fer hot rooms, workshops and guarded views.<br>
+<br>
+Finish the edges with matching slabs, stairs, slices and walls, keepin' yer factory's materials in the same style.
+<np>
+Block o' clinker bricks
+Brickwork dark with soot
+<&clinker_brick_block>This block brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Slab o' clinker bricks
+Brickwork dark with soot
+<&clinker_brick_slab>This block brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Stairs o' clinker bricks
+Brickwork dark with soot
+<&clinker_brick_stairs>This block brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Wall o' clinker bricks
+Brickwork dark with soot
+<&clinker_brick_wall>This block brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Grime-stained clinker block
+Brickwork dark with soot
+<&clinker_brick_stained_block>Grime-stained block o' clinker bricks brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Grime-stained clinker slab
+Brickwork dark with soot
+<&clinker_brick_stained_slab>Grime-stained slab o' clinker bricks brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Grime-stained clinker stairs
+Brickwork dark with soot
+<&clinker_brick_stained_stairs>Grime-stained stairs o' clinker bricks brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Clinker brickwork with finery
+Brickwork dark with soot
+<&clinker_brick_sastor_corner_block>Clinker brickwork with sandstone finery brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Recessed clinker brickwork
+Brickwork dark with soot
+<&clinker_brick_recessed>This block brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Clinker bricks with slits
+Brickwork dark with soot
+<&clinker_brick_vertically_slit>Clinker bricks with upright slits brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Upright slab o' clinker
+Brickwork dark with soot
+<&clinker_brick_vertical_slab_structured>Textured upright clinker slab brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Half-slab o' clinker bricks
+Brickwork dark with soot
+<&halfslab_clinker_brick>This block brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>
+<np>
+Block o' slag bricks
+Dense brickwork fer factories
+<&slag_brick_block>This block brings dense grey-brown masonry to foundations, retaining walls and old worksheds, matey.<br>
+<br>
+Orders: Use her fer older foundations, retaining walls and grimy factory decks.<br>
+<np>
+Slab o' slag bricks
+Dense brickwork fer factories
+<&slag_brick_slab>This block brings dense grey-brown masonry to foundations, retaining walls and old worksheds, matey.<br>
+<br>
+Orders: Use her fer older foundations, retaining walls and grimy factory decks.<br>
+<np>
+Stairs o' slag bricks
+Dense brickwork fer factories
+<&slag_brick_stairs>This block brings dense grey-brown masonry to foundations, retaining walls and old worksheds, matey.<br>
+<br>
+Orders: Use her fer older foundations, retaining walls and grimy factory decks.<br>
+<np>
+Wall o' slag bricks
+Dense brickwork fer factories
+<&slag_brick_wall>This block brings dense grey-brown masonry to foundations, retaining walls and old worksheds, matey.<br>
+<br>
+Orders: Use her fer older foundations, retaining walls and grimy factory decks.<br>
+<np>
+Block o' reinforced concrete
+Concrete reinforced fer strength
+<&rebar_concrete>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Slab o' reinforced concrete
+Concrete reinforced fer strength
+<&rebar_concrete_slab>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Stairs o' reinforced concrete
+Concrete reinforced fer strength
+<&rebar_concrete_stairs>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Wall o' reinforced concrete
+Concrete reinforced fer strength
+<&rebar_concrete_wall>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Thin slice o' reinforced concrete
+Concrete reinforced fer strength
+<&halfslab_rebar_concrete>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Tile o' reinforced concrete
+Concrete reinforced fer strength
+<&rebar_concrete_tile>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Slab o' reinforced concrete tile
+Concrete reinforced fer strength
+<&rebar_concrete_tile_slab>This hardened concrete fitting serves yer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Tile o' reinforced concrete
+Concrete reinforced fer strength
+<&rebar_concrete_tile_stairs>Stairs o' reinforced concrete tile serve as hardened fittings fer machine bases, blast walls and loading-bay decks.<br>
+<br>
+Orders: Put her under contraptions, along service passages or anywhere yer build needs a reinforced base.<br>
+<np>
+Block o' armoured porthole glass
+A guarded view
+<&panzerglass_block>This block lets ye see through while keepin' the look o' reinforced factory walls.<br>
+<br>
+Orders: Use her where sailors must see machinery through a protected barrier.<br>
+<np>
+Slab o' armoured porthole glass
+A guarded view
+<&panzerglass_slab>This block lets ye see through while keepin' the look o' reinforced factory walls.<br>
+<br>
+Orders: Use her where sailors must see machinery through a protected barrier.<br>

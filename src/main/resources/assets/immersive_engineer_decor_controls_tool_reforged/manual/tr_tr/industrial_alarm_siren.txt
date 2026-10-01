@@ -1,0 +1,7 @@
+Alarm Sireni
+Sinyal geri bildirimi
+<&recipe>Alarm sireni, blok yüzüne takılan bir redstone göstergesidir. Güç durumu, takılı olduğu bloktan gelen sinyale göre değişir.<br>
+<br>
+Kapıları, makineleri, alarmları veya panelleri izlemek için sağlam bir yüzeye takın ve güç verin.<br>
+<br>
+Bağlı sinyal etkin kaldığı sürece siren saniyede bir yenilenir.

@@ -1,0 +1,7 @@
+Kubbanemi
+Teknaskynjan
+<&recipe>Ein kubbanemi kannar, um rúmið framman fyri hann er upptikið.<br>
+<br>
+Nýtsla: Vend honum móti maskinusíðuni, millumgoymsluni ella varda rúminum, sum tú vilt hava eftirlit við.<br>
+<br>
+Viðmerking: Gevur orku, tá ið kubbin frammanfyri ikki er luft.

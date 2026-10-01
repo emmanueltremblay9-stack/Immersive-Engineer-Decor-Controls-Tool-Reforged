@@ -1,0 +1,5 @@
+Congelator aquae
+Unitas tractationis compacta
+<&recipe>Congelator aquae opus refrigerandi compactum pro systematibus fluidi energia actis agit.<br>
+<br>
+Usus: aquam et energiam praebe ad glaciem gradatim producendam.<br>

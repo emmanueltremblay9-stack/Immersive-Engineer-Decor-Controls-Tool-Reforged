@@ -1,0 +1,5 @@
+Fabrikblocksetter
+Wiärksteedhülp
+<&recipe>Disse Block sett Blöck ut sien egen Vörraad, wenn he utlööst warrt.<br>
+<br>
+Bruuk: Richt de Wiärksiet op den Teelruum un laad Stapels in, de sik setten laat.<br>

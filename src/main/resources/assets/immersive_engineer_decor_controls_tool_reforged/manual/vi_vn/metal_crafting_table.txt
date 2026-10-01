@@ -1,0 +1,7 @@
+Bàn chế tạo kim loại
+Trạm gia công tấm
+<&recipe>Bàn kim loại có ô búa, lưới chế tạo 3x3 đầy đủ và ô đầu ra.<br>
+<br>
+Dùng lưới như bàn thường. Để tạo tấm IE, đặt búa kỹ sư vào ô dụng cụ, vật liệu vào lưới rồi lấy tấm ở đầu ra.<br>
+<br>
+Đồ trang trí thép dùng tấm thép được tạo tại bàn này.

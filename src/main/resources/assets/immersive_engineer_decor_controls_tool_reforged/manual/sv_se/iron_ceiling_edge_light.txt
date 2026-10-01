@@ -1,0 +1,5 @@
+Takkantslampa
+Kompakt arbetsbelysning
+<&recipe>Det här blocket ger kompakt industribelysning för korridorer, gångbryggor och arbetsplatser.<br>
+<br>
+Användning: Montera det i tak, på väggar eller längs kanter där rummet behöver tydlig arbetsbelysning.<br>

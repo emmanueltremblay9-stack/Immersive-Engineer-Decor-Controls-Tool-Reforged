@@ -1,0 +1,5 @@
+Flüssigkeitstrichter
+Bauteil für Flüssigkeitsleitungen
+<&recipe>Der kleine Flüssigkeitssammeltrichter ist ein kompaktes Leitungsteil für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setze ihn unter die Flüssigkeitssammelstelle und leite seinen Inhalt in Tanks oder tiefer gelegene Rohrleitungen.<br>

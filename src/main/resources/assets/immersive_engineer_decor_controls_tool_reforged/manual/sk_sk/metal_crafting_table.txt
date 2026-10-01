@@ -1,0 +1,7 @@
+Stôl na spracovanie kovov
+Pracovisko na výrobu plátov
+<&recipe>Kovový pracovný stôl má otvor na kladivo, úplnú mriežku 3x3 a výstup.<br>
+<br>
+Mriežku používajte ako bežný stôl. Na IE pláty vložte inžinierske kladivo do otvoru, materiál do mriežky a vezmite plát z výstupu.<br>
+<br>
+Oceľové dekorácie používajú oceľové pláty vytvorené na tomto stole.

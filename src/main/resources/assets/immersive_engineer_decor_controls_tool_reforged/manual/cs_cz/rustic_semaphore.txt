@@ -1,0 +1,7 @@
+Rustikální semafor
+Zpětná vazba signálu
+<&recipe>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.

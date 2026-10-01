@@ -1,0 +1,5 @@
+Baldosas de concreto armado
+Concreto reforzado
+<&recipe>Las escaleras de baldosas de concreto armado son piezas de concreto endurecido para bases de máquinas, muros de protección contra explosiones y suelos de muelles de carga.<br>
+<br>
+Uso: Usalo bajo máquinas, en pasillos de mantenimiento o donde necesites una base reforzada.<br>

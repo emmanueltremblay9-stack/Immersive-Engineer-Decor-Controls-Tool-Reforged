@@ -1,0 +1,5 @@
+Sostegno d’acciaio a doppia T
+Elemento di telaio strutturale
+<&recipe>Questo blocco fornisce una struttura visibile alle sale macchine e ai telai delle vie d’accesso.<br>
+<br>
+Uso: ruotalo e posalo come rinforzo visibile per travi, pali e bordi di piattaforme.<br>

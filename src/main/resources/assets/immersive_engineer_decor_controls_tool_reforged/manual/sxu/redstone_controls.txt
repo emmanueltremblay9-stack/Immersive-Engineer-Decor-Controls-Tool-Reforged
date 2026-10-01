@@ -1,0 +1,789 @@
+Redstone-Schdeuorungen
+Messgeräde un Signalbaudeile
+Schdeuorgeräde machn vorsdeggdes Redstone zu ablesbaren Fabrigpaneelen, Sensorn, Anzeigegerädn, Schaldorn, Alarmen un vorbundnen Signalbaudeiln.<br>
+<br>
+Nimm diese Seidn, wenn de Bedienpläddze, Signaltafln, Sicherheedsschaldungen un Fernschdeuorungen bausd.
+<np>
+Pfeilziel
+Gorzor Impuls
+<&arrow_target>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Diersensor
+Redstone-Schdeuorung
+<&door_sensor_switch>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Fahrschduhlgnobb
+Redstone-Schdeuorung
+<&elevator_button>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Glasgnobb
+Redstone-Schdeuorung
+<&glass_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Glasgnobb
+Redstone-Schdeuorung
+<&glass_small_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Glas-Berührgnobb
+Redstone-Schdeuorung
+<&glass_touch_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Maschinengnobb
+Redstone-Schdeuorung
+<&industrial_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Gnobb
+Redstone-Schdeuorung
+<&industrial_double_pole_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Maschinengnobb mid Schuddzbigl
+Redstone-Schdeuorung
+<&industrial_fenced_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Globbgnobb
+Redstone-Schdeuorung
+<&industrial_knock_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Aldor Ziergnobb
+Redstone-Schdeuorung
+<&oldfancy_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Aldor Ziergnobb
+Redstone-Schdeuorung
+<&oldfancy_small_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Aldor Ziergeddngnobb
+Gorzor Impuls
+<&oldfancy_spring_reset_chain>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Bäuorl’schor Gnobb
+Redstone-Schdeuorung
+<&rustic_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Bäuorl’schor Naglgnobb
+Redstone-Schdeuorung
+<&rustic_nail_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Gleenor bäuorl’schor Gnobb
+Redstone-Schdeuorung
+<&rustic_small_button>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Bäuorl’schor Geddngnobb
+Gorzor Impuls
+<&rustic_spring_reset_chain>Ä Momendschaldor gibd än saubern Redstone-Impuls mid voller Schdärge.<br>
+<br>
+Nuddzung: Nimm’n für Maschinensdard, Dierfreigabe, Alarme oddor Schaldungen, die bloß eenma laufen solln.<br>
+<br>
+Hinweis: Gehd nach seim fesdgelegdn Impuls zurigg.
+<np>
+Glasgondagdbladde
+Druggimpuls
+<&glass_contact_mat>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Glasdiergondagd
+Druggimpuls
+<&glass_door_contact_mat>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Gondagdmadde
+Druggimpuls
+<&industrial_contact_mat>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Diergondagdmadde
+Druggimpuls
+<&industrial_door_contact_mat>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Durchfallsensor
+Signalergennung
+<&industrial_fallthrough_detector>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Fußgnobb
+Redstone-Schdeuorung
+<&industrial_foot_button>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Indusdrie-Schdoßfalldiere
+Druggimpuls
+<&industrial_high_sensitive_trapdoor>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Schdoßgondagdmadde
+Druggimpuls
+<&industrial_shock_sensitive_contact_mat>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Schdoßfalldiere
+Druggimpuls
+<&industrial_shock_sensitive_trapdoor>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Rode Schdrompflanze
+Druggimpuls
+<&red_power_plant>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Bäuorl’sche Druggbladde
+Druggimpuls
+<&rustic_contact_plate>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Bäuorl’sche Dierdruggbladde
+Druggimpuls
+<&rustic_door_contact_plate>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Bäuorl’schor Fallsensor
+Signalergennung
+<&rustic_fallthrough_detector>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Bäuorl’sche Schdoßfalldiere
+Druggimpuls
+<&rustic_high_sensitive_trapdoor>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Bäuorl’sche Schdoßbladde
+Druggimpuls
+<&rustic_shock_sensitive_plate>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Bäuorl’sche Schdoßfalldiere
+Druggimpuls
+<&rustic_shock_sensitive_trapdoor>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Gelbe Schdrompflanze
+Druggimpuls
+<&yellow_power_plant>Ä Gondagdschaldor gibd ä gorzes Signal bei Bewegung am Bodn oddor dor Falldiere.<br>
+<br>
+Nuddzung: Seddz’n dorthin, wo Endidädn durch än Wardungsgang, ä Ladeanlage oddor än bewachdn Wäg gomm.<br>
+<br>
+Hinweis: Gibd gorz än Impuls nach Gondagd mid eenor Endidäd.
+<np>
+Glas-Daageszeidschalduhr
+Daageslischdsignal
+<&glass_day_timer>Ä Zeidschaldor folgd’m Daagesdeil vom Weldzyklus.<br>
+<br>
+Nuddzung: Nimm’n für Hoflambn, Fänsdorlädn un Fabrigschdeuorungen, die bloß am Daach laufn solln.<br>
+<br>
+Hinweis: Brauchd ä Dimension mid Himmelslischd.
+<np>
+Glasendidädssensor
+Signalergennung
+<&glass_entity_detector>Ä Endidädssensor beobachded Bewegung in dor Nähe, ohne ä sichdbare Bodnbladde.<br>
+<br>
+Nuddzung: Vorbind’n mid Diern, Lambn, Alarmen oddor Maschinenverrieglungen.<br>
+<br>
+Hinweis: Suchd ä gleenes Gebied um’n Blogg ab.
+<np>
+Glasindorvallsignal
+Zeidgeschdeuordor Impuls
+<&glass_interval_timer>Ä gleenor Zeidschaldor gibd än fesdgelegdn Redstone-Impuls.<br>
+<br>
+Nuddzung: Nimm’n, wenn ä gleenor Mechanismus regelmäßig oddor vorzögord geschdeuord wärn soll.<br>
+<br>
+Hinweis: Nuddzd fesdgelegde Redstone-Impulse.
+<np>
+Glas-Liniensensor
+Signalergennung
+<&glass_linear_entity_detector>Ä Endidädssensor beobachded Bewegung in dor Nähe, ohne ä sichdbare Bodnbladde.<br>
+<br>
+Nuddzung: Vorbind’n mid Diern, Lambn, Alarmen oddor Maschinenverrieglungen.<br>
+<br>
+Hinweis: Suchd ä gleenes Gebied um’n Blogg ab.
+<np>
+Bloggsensor
+Signalergennung
+<&industrial_block_detector>Ä Bloggsensor prifd, ob dor Raum vor ihm belegd is.<br>
+<br>
+Nuddzung: Richd’n uff de Maschinenseide, dän Puffor oddor dän geschiddzdn Raum, dän de im Ouge haldn willsd.<br>
+<br>
+Hinweis: Gibd Energie aus, wenn dor Blogg vor ihm geene Lufd is.
+<np>
+Daageszeidschalduhr
+Daageslischdsignal
+<&industrial_day_timer>Ä Zeidschaldor folgd’m Daagesdeil vom Weldzyklus.<br>
+<br>
+Nuddzung: Nimm’n für Hoflambn, Fänsdorlädn un Fabrigschdeuorungen, die bloß am Daach laufn solln.<br>
+<br>
+Hinweis: Brauchd ä Dimension mid Himmelslischd.
+<np>
+Endidädssensor
+Signalergennung
+<&industrial_entity_detector>Ä Endidädssensor beobachded Bewegung in dor Nähe, ohne ä sichdbare Bodnbladde.<br>
+<br>
+Nuddzung: Vorbind’n mid Diern, Lambn, Alarmen oddor Maschinenverrieglungen.<br>
+<br>
+Hinweis: Suchd ä gleenes Gebied um’n Blogg ab.
+<np>
+Indorvallzeidgebor
+Zeidgeschdeuordor Impuls
+<&industrial_interval_timer>Ä gleenor Zeidschaldor gibd än fesdgelegdn Redstone-Impuls.<br>
+<br>
+Nuddzung: Nimm’n, wenn ä gleenor Mechanismus regelmäßig oddor vorzögord geschdeuord wärn soll.<br>
+<br>
+Hinweis: Nuddzd fesdgelegde Redstone-Impulse.
+<np>
+Lischdsensor
+Signalergennung
+<&industrial_light_sensor>Ä Lischdsensor machd aus dor Helliggeed vor Ord ä Redstone-Schdeuorung.<br>
+<br>
+Nuddzung: Nimm’n für automadische Lambn, Fänsdorlädn un Sichdschaldungen.<br>
+<br>
+Hinweis: Gibd Energie ab eenor rohn Helliggeed von 8 aus.
+<np>
+Gewiddorsensor
+Signalergennung
+<&industrial_lightning_sensor>Ä Gewiddorsensor lösd Warnungen aus, wenn’s donnord.<br>
+<br>
+Nuddzung: Seddz’n undor freien Himmel un vorbind’n mid Lambn oddor Alarmen.<br>
+<br>
+Hinweis: Brauchd Donnor un freien Himmel.
+<np>
+Linienendidädssensor
+Signalergennung
+<&industrial_linear_entity_detector>Ä Endidädssensor beobachded Bewegung in dor Nähe, ohne ä sichdbare Bodnbladde.<br>
+<br>
+Nuddzung: Vorbind’n mid Diern, Lambn, Alarmen oddor Maschinenverrieglungen.<br>
+<br>
+Hinweis: Suchd ä gleenes Gebied um’n Blogg ab.
+<np>
+Räschnsensor
+Signalergennung
+<&industrial_rain_sensor>Ä Wäddorrsensor machd aus Räschn an seim Pladdz ä Redstone-Signal.<br>
+<br>
+Nuddzung: Bring’n dort an, wo dor Blogg ibor ihm Räschn abgriegn kann.<br>
+<br>
+Hinweis: Prifd Räschn ibor’m Sensor.
+<np>
+Bisdabilor Glasschaldor
+Redstone-Schdeuorung
+<&glass_rotary_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Bisdabilor Glas-Berührschaldor
+Redstone-Schdeuorung
+<&glass_touch_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Orangsches empfindl’sches Glas
+Signalglas
+<&orange_sensitiveglass>Ä Glasblogg, dor uff Redstone reagierd, häld dän Durchbligg frei un zeigd dabei dän Signalzuschdand.<br>
+<br>
+Nuddzung: Nimm’n in Schdeuorraumfänsdorn, leuchdendn Paneelen un geschiddzdor Fabrigvorglasung.<br>
+<br>
+Hinweis: Ändord sein Zuschdand durch Redstone-Energie in dor Nähe.
+<np>
+Leuchdendes empfindl’sches Glas
+Signalglas
+<&sensitive_glass_block>Ä Glasblogg, dor uff Redstone reagierd, häld dän Durchbligg frei un zeigd dabei dän Signalzuschdand.<br>
+<br>
+Nuddzung: Nimm’n in Schdeuorraumfänsdorn, leuchdendn Paneelen un geschiddzdor Fabrigvorglasung.<br>
+<br>
+Hinweis: Ändord sein Zuschdand durch Redstone-Energie in dor Nähe.
+<np>
+Gefärbdes empfindl’sches Glas
+Signalglas
+<&stained_sensitiveglass>Ä Glasblogg, dor uff Redstone reagierd, häld dän Durchbligg frei un zeigd dabei dän Signalzuschdand.<br>
+<br>
+Nuddzung: Nimm’n in Schdeuorraumfänsdorn, leuchdendn Paneelen un geschiddzdor Fabrigvorglasung.<br>
+<br>
+Hinweis: Ändord sein Zuschdand durch Redstone-Energie in dor Nähe.
+<np>
+Glasbalgnmessgeräd
+Signalmessgeräd
+<&glass_vertical_bar_gauge>Ä gleenes Messgeräd für’n Schdeuorraum zeigd de Redstone-Schdärge als gud lesbare Paneelanzeige.<br>
+<br>
+Nuddzung: Bring’s dort an, wo de de Redstone-Energie nebenan mid eem Bligg prifn kannsd.<br>
+<br>
+Hinweis: Liesd de Redstone-Schdärge in dor Nähe von 0 bis 15 ab.
+<np>
+Analoges Messgeräd
+Signalmessgeräd
+<&industrial_analog_angular_gauge>Ä gleenes Messgeräd für’n Schdeuorraum zeigd de Redstone-Schdärge als gud lesbare Paneelanzeige.<br>
+<br>
+Nuddzung: Bring’s dort an, wo de de Redstone-Energie nebenan mid eem Bligg prifn kannsd.<br>
+<br>
+Hinweis: Liesd de Redstone-Schdärge in dor Nähe von 0 bis 15 ab.
+<np>
+Voltmeter-Messgeräd
+Signalmessgeräd
+<&industrial_analog_horizontal_gauge>Ä gleenes Messgeräd für’n Schdeuorraum zeigd de Redstone-Schdärge als gud lesbare Paneelanzeige.<br>
+<br>
+Nuddzung: Bring’s dort an, wo de de Redstone-Energie nebenan mid eem Bligg prifn kannsd.<br>
+<br>
+Hinweis: Liesd de Redstone-Schdärge in dor Nähe von 0 bis 15 ab.
+<np>
+Digidales Messgeräd
+Ablesbare Signalschdärge
+<&industrial_small_digital_gauge>Ä gleenes Messgeräd für’n Schdeuorraum zeigd de Redstone-Schdärge als gud lesbare Paneelanzeige.<br>
+<br>
+Nuddzung: Bring’s dort an, wo de de Redstone-Energie nebenan mid eem Bligg prifn kannsd.<br>
+<br>
+Hinweis: Liesd de Redstone-Schdärge in dor Nähe von 0 bis 15 ab.
+<np>
+Glasröhrnmessgeräd
+Signalmessgeräd
+<&industrial_tube_gauge>Ä gleenes Messgeräd für’n Schdeuorraum zeigd de Redstone-Schdärge als gud lesbare Paneelanzeige.<br>
+<br>
+Nuddzung: Bring’s dort an, wo de de Redstone-Energie nebenan mid eem Bligg prifn kannsd.<br>
+<br>
+Hinweis: Liesd de Redstone-Schdärge in dor Nähe von 0 bis 15 ab.
+<np>
+Analoges Balgnmessgeräd
+Signalmessgeräd
+<&industrial_vertical_bar_gauge>Ä gleenes Messgeräd für’n Schdeuorraum zeigd de Redstone-Schdärge als gud lesbare Paneelanzeige.<br>
+<br>
+Nuddzung: Bring’s dort an, wo de de Redstone-Energie nebenan mid eem Bligg prifn kannsd.<br>
+<br>
+Hinweis: Liesd de Redstone-Schdärge in dor Nähe von 0 bis 15 ab.
+<np>
+Alarmlambe
+Signalriggmeldung
+<&industrial_alarm_lamp>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Alarmsirene
+Signalriggmeldung
+<&industrial_alarm_siren>De Alarmsireen is en Redstone-Wieser op de Siet vun en Block. Ehr Stroomstand folgt dat Signaal vun den Block, an den se fastmaakt is.<br>
+<br>
+Maak se an en faste Siet un geev Stroom, üm Dören, Maschinen, Alarm oder Paneelen to överwaken.<br>
+<br>
+De Sireen frischt sik eenmaal per Sekunn op, solang dat Signaal aktiv is.
+<np>
+Blingende LED
+Signalriggmeldung
+<&industrial_blinking_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Grien blingende LED
+Signalriggmeldung
+<&industrial_green_blinking_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Griene LED
+Signalriggmeldung
+<&industrial_green_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Rode LED
+Signalriggmeldung
+<&industrial_red_blinking_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Rode LED
+Signalriggmeldung
+<&industrial_red_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Weeß blingende LED
+Signalriggmeldung
+<&industrial_white_blinking_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Weeße LED
+Signalriggmeldung
+<&industrial_white_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Gelb blingende LED
+Signalriggmeldung
+<&industrial_yellow_blinking_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Gelbe LED
+Signalriggmeldung
+<&industrial_yellow_led>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Bäuorl’schor Semaphor
+Signalriggmeldung
+<&rustic_semaphore>Ä gleenor Anzeigor machd vorsdeggdes Redstone als Fabrigriggmeldung sichdbar.<br>
+<br>
+Nuddzung: Vorgabel’n neben’m Signal, um Diern, Maschinen, Alarme oddor Paneele zu bewachn.<br>
+<br>
+Hinweis: Ändord sein Zuschdand, wenn Redstone-Energie in dor Nähe anliegd.
+<np>
+Gombaradorrschaldor
+Signal vom Draachblogg
+<&industrial_comparator_switch>Ä gleenor Sensorschaldor liesd sein Draachblogg ab un machd aus däm Werd ä einfache Paneelausgabe.<br>
+<br>
+Nuddzung: Bring’n an Lagorn, Tangs oddor Redstone-Gerädn an. Wenn dor Draachblogg Gombaradorr-, Behäldor- oddor Redstone-Ausgabe melded, gibd dor Schaldor volle Redstone-Schdärge aus.<br>
+<br>
+Hinweis: So machsde Lagerschdände oddor vorsdeggde Gabl zu deidlichn An-/Aus-Schdeuorleidungen.
+<np>
+Dimmer
+Vorändorbares Signal
+<&industrial_dimmer>Ä Drehreglor schdelld de Redstone-Schdärge von eenor gleenen Paneelfläche aus ein.<br>
+<br>
+Nuddzung: Rechdsgligg, um de Ausgabe schriddweise zu erhöhn un nach voller Schdärge wiedor bei null anzufang.<br>
+<br>
+Hinweis: Gibd ä Schdärge von 0 bis 15 aus.
+<np>
+Nod-Aus-Gnobb
+Redstone-Schdeuorung
+<&industrial_estop_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Drischdorrschbärre
+Redstone-Schdeuorung
+<&industrial_hopper_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Globbschaldor
+Redstone-Schdeuorung
+<&industrial_knock_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Hebl
+Redstone-Schdeuorung
+<&industrial_lever>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Maschinenschaldor mid zwei Gnäbbn
+Redstone-Schdeuorung
+<&industrial_machine_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Zuggriff
+Redstone-Schdeuorung
+<&industrial_pull_handle>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Drehhebl
+Redstone-Schdeuorung
+<&industrial_rotary_lever>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Maschinen-Drehschaldor
+Redstone-Schdeuorung
+<&industrial_rotary_machine_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Gondagdhebl
+Redstone-Schdeuorung
+<&industrial_small_lever>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Schaldor
+Redstone-Schdeuorung
+<&industrialswitch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Lischdschaldor
+Redstone-Schdeuorung
+<&light_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Vendilschaldor
+Redstone-Schdeuorung
+<&valve_wheel_switch>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Impulsempfängor im Gehäuse
+Vorbundne Schdeuorung
+<&industrial_switchlink_cased_pulse_receiver>Ä vorbundnor Impulsempfängor im Gehäuse gibd fernen Paneelen än gorzn Redstone-Auslösor.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle druff, um ä vorbundne Bärle zu machn. Rechdsgligg uff’n Empfängor oddor lös de vorbundne Bärle aus, um än gorzn Impuls zu gebn.<br>
+<br>
+Hinweis: Dor Impuls gehd nach seiner fesdn Dauer von alleine zurigg.
+<np>
+Vorbindungsempfängor im Gehäuse
+Vorbundne Schdeuorung
+<&industrial_switchlink_cased_receiver>Ä vorbundnor Empfängor im Gehäuse gibd fernen Paneelen ä robusdes Redstone-Ziel.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle druff, um ä vorbundne Bärle zu machn. Rechdsgligg diregd uff’n Empfängor, um’n mid dor Hand umzuschaldn.<br>
+<br>
+Hinweis: Ä vorbundne Bärle schalded diesen Empfängor um, wenn de se beim Schleischn nuddzd.
+<np>
+Impulsvorbindungsempfängor
+Vorbundne Schdeuorung
+<&industrial_switchlink_pulse_receiver>Ä vorbundnor Impulsempfängor gibd fernen Paneelen än gorzn Redstone-Auslösor.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle druff, um ä vorbundne Bärle zu machn. Rechdsgligg uff’n Empfängor oddor lös de vorbundne Bärle aus, um än gorzn Impuls zu gebn.<br>
+<br>
+Hinweis: Dor Impuls gehd nach seiner fesdn Dauer von alleine zurigg.
+<np>
+Impulsvorbindungsrelais
+Vorbundne Schdeuorung
+<&industrial_switchlink_pulse_relay>Ä Baudeil im Relaissdil gibd Paneelbaudn än gleenen Schaldbungd vor Ord.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn. Nimm Empfängorblögge, wenn de mid eenor vorbundnen Bärle auslösn willsd.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Schaldvorbindungsempfängor
+Vorbundne Schdeuorung
+<&industrial_switchlink_receiver>Ä vorbundnor Empfängor gibd fernen Paneelen ä Redstone-Ziel mid voller Schdärge.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle druff, um ä vorbundne Bärle zu machn. Rechdsgligg diregd uff’n Empfängor, um’n mid dor Hand umzuschaldn.<br>
+<br>
+Hinweis: Ä vorbundne Bärle schalded diesen Empfängor um, wenn de se beim Schleischn nuddzd.
+<np>
+Analogor Vorbindungsempfängor
+Vorbundne Schdeuorung
+<&industrial_switchlink_receiver_analog>Ä vorbundnor Empfängor gibd Schdeuorpaneelen ä sichdbares Fernziel.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle druff, um ä vorbundne Bärle zu machn. Nuddz die Bärle beim Schleischn, um’n Empfängor aus dor Ferne auszulösn.<br>
+<br>
+Hinweis: Dieser Empfängor gibd ä volles Redstone-Signal aus, wenn or ausgelösd wird.
+<np>
+Schaldvorbindungsrelais
+Vorbundne Schdeuorung
+<&industrial_switchlink_relay>Ä Baudeil im Relaissdil gibd Paneelbaudn än gleenen Schaldbungd vor Ord.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn. Nimm Empfängorblögge, wenn de mid eenor vorbundnen Bärle auslösn willsd.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Analoges Vorbindungsrelais
+Vorbundne Schdeuorung
+<&industrial_switchlink_relay_analog>Ä Baudeil im Relaissdil gibd Paneelbaudn än gleenen Schaldbungd vor Ord.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn. Nimm Empfängorblögge, wenn de mid eenor vorbundnen Bärle auslösn willsd.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Schaldvorbindungsbärle
+Vorbundne Schdeuorung
+<&switchlink_pearl>Ä vorbundne Bärle schbeichord än Empfängor als Ziel für Fabrigfernschdeuorungen.<br>
+<br>
+Nuddzung: Gligg mid eenor Enderbärle uff än Schaldvorbindungsempfängor, um eene zu machn. Nuddz de vorbundne Bärle beim Schleischn, um dän geschbeichordn Empfängor auszulösn.<br>
+<br>
+Hinweis: Das Ziel muss geladn, in dor selbn Dimension un in Reichweide sein.
+<np>
+Aldor Zierhebl
+Redstone-Schdeuorung
+<&oldfancy_bistableswitch1>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Aldor Zierdrehhebl
+Redstone-Schdeuorung
+<&oldfancy_bistableswitch2>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Bäuorl’schor Drehhebl
+Redstone-Schdeuorung
+<&rustic_angular_lever>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Bäuorl’schor Hebl
+Redstone-Schdeuorung
+<&rustic_lever>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Bäuorl’schor Naglhebl
+Redstone-Schdeuorung
+<&rustic_nail_lever>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.
+<np>
+Bäuorl’schor Hebl mid zwei Scharniern
+Redstone-Schdeuorung
+<&rustic_two_hinge_lever>Ä gleenes Schdeuorbaudeil gibd Fabrigbaudn än gud ergennbaren Redstone-Schaldbungd.<br>
+<br>
+Nuddzung: Rechdsgligg, um volle Ausgabeschdärge für nahe Schaldungen an- oddor auszuschaldn.<br>
+<br>
+Hinweis: Gibd volle Redstone-Schdärge aus, solange’s an is.

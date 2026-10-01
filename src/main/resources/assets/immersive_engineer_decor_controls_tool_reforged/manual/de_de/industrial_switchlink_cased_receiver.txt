@@ -1,0 +1,7 @@
+Verknüpfungsempfänger im Gehäuse
+Verknüpfte Steuerung
+<&recipe>Ein verknüpfter Empfänger im Gehäuse bietet entfernten Schalttafeln ein robustes Redstone-Ziel.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Klicke den Empfänger direkt mit rechts an, um ihn von Hand umzuschalten.<br>
+<br>
+Hinweis: Eine beim Schleichen benutzte Link-Perle schaltet diesen Empfänger um.

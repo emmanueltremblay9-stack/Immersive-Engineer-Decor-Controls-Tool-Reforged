@@ -1,0 +1,5 @@
+Laboratorieugn
+Kompakt bearbetningsenhet
+<&recipe>Laboratorieugnen utför kompakta smältarbeten med fast bränsle på liten verkstadsyta.<br>
+<br>
+Användning: Använd fast bränsle för små smältomgångar.<br>

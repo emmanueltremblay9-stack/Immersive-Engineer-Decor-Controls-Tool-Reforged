@@ -1,0 +1,5 @@
+Slaggsteinhelle
+Tett fabrikkmurverk
+<&recipe>Denne blokka gjev tett gråbrunt murverk til fundament, støttemurar og eldre arbeidsskur.<br>
+<br>
+Bruk: nytt henne til gamle fundament, støttemurar og skitne fabrikkgolv.<br>

@@ -1,0 +1,7 @@
+Zeleny migajuči LED
+Povratna informacija signala
+<&recipe>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.

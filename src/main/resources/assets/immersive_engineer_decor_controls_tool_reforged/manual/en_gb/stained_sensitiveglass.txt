@@ -1,0 +1,7 @@
+Coloured Sensitive Glass
+Signal glass
+<&recipe>A redstone-reactive glass block keeps sightlines while showing signal state.<br>
+<br>
+Usage: Use it in control-room windows, lit panels, and guarded factory glass.<br>
+<br>
+Notes: Changes state from nearby redstone power.

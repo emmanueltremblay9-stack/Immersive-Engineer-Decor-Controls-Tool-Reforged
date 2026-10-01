@@ -1,0 +1,93 @@
+Mühendis Aletleri
+Taşınabilir atölye donanımı
+Mühendis aletleri seti; dekorasyon ve kontrol bloklarını anlatan aynı kılavuza el aletleri, maden işaretleri, acil sarf malzemeleri, saha yiyecekleri ve küçük malzeme işleme yardımcıları ekler.<br>
+<br>
+Bu aletler tam donanımlı atölyeden uzakta çalışmak içindir: rotayı işaretleyin, malzeme taşıyın, hatalardan sonra toparlanın ve küçük işleme işlerini yerinde bitirin.
+<np>
+REDIA Aleti
+Elmas kaplı yardımcı alet
+<&redia_tool>REDIA aleti, hızlı toprak işleri için dayanıklı bir saha aletidir. İşlenebilir toprağı tarım arazisine çevirmek için kullanın.<br>
+<br>
+Yanınızda meşale varken sağlam bir yüzeyde kullanarak REDIA aletini yıpratmadan envanterden bir meşale işareti yerleştirin. Toprak işleme, kırpma, balta kullanımı ve ağaç kesme dayanıklılık harcar.
+<np>
+Cevher Kırma Çekici
+Elle kullanılan kırma aleti
+<&crushing_hammer>Cevher kırma çekici, demir ve altının erken işlenmesi için el aletidir.<br>
+<br>
+Immersive Engineering tozu için ham demir, ham altın, demir veya altın cevheri ve derin kayrak türleriyle kullanın. Çekiç dayanıklılık kaybeder, kırılana kadar ızgaraya döner, madencilikte aşınır ve hedefleri geri savurur.
+<np>
+Takip Aygıtı
+Kayıtlı konum işareti
+<&tracker>İzleyici bir blok konumunu eşyanın içinde saklar.<br>
+<br>
+Boyut ve koordinatları kaydetmek için bloka tıklayın. İpucu konumu gösterir. Hedefi silmek için eğilerek kullanın.<br>
+<br>
+Makineleri, tünelleri, uzaktan kumandaları veya bitmemiş yapıları işaretleyin.
+<np>
+Ariadne Kömürü
+Maden rotası işaretleyicisi
+<&ariadne_coal>Ariadne kömürü, sağlam maden yüzeylerine hızlıca siyah ok biçiminde rota işaretleri yerleştirir. Sonraki dönüşü, çıkışı veya yol ayrımını işaretlemek için katı bir yüzeyde kullanın. İşaret, tıklanan yüzeyde çaprazlar dahil sekiz yönü destekler.<br>
+<br>
+Ariadne kömürü, 100 kullanımlık ve tekrar kullanılabilir bir işaretleme aletidir. Başarılı her işaret bir dayanıklılık harcar. Desteklenmeyen yüzeylerde aleti yıpratmak yerine işlemi reddeder.
+<np>
+Otomatik Uyarıcı Paketi
+Acil enjeksiyon aygıtı
+<&stimpack>Otomatik stim paketi acil tıbbi eşyadır.<br>
+<br>
+İyileşmek, kısa koruma ve hareket artışı almak için elle kullanın. Envanterde düşük sağlıkta otomatik tetiklenir ve sonra beklemeye girer. Tehlikeli yerlerde hazır tutun.
+<np>
+Uyku Tulumu
+Taşınabilir dinlenme takımı
+<&sleeping_bag>Uyku tulumu yataktan uzakta çalışmak için hava koşullarına dayanıklı dinlenme setidir.<br>
+<br>
+Doğma noktasını değiştirmeden sabaha kadar dinlenmek için Overworldde gece kullanın.<br>
+<br>
+Gündüz, yakında canavar varken veya uygunsuz boyutlarda çalışmaz. Her başarılı dinlenme tulumu aşındırır.
+<np>
+Malzeme Saklama Kutusu
+İnşaat ikmal kutusu
+<&material_box>Malzeme kutusu, tek tür sade, değiştirilmemiş ve yığınlanabilir yapı malzemesinden büyük bir stok taşır.<br>
+<br>
+Doldurmak için kutuyu ana elde, malzemeyi diğer elde tutun; bir yığın almak için diğer el boşken kullanın.<br>
+<br>
+Bir türden 512 eşya tutar; başka kutuları, yığınlanamayan ekipmanı ve değiştirilmiş yığınları reddeder ve içeriği ipucunda gösterir.
+<np>
+Dalış Hava Kapsülü
+Acil hava rezervi
+<&diving_capsule>Dalış hava kapsülü, su altı işi için acil hava yedeğidir.<br>
+<br>
+Havayı yenilemek için elle kullanın. Envanterde hava bitmek üzereyken otomatik tetiklenir ve ardından bekleme süresine girer. Su basmış madenlere ve su altı borularına götürün.
+<np>
+Muslee Bar Presi
+Yiyecek presi
+<&musli_bar_press>Muslee presi sıradan yiyecekleri kompakt arazi tayınına dönüştürür.<br>
+<br>
+Ekmek, elma ve buğday, karpuz, balkabağı, pancar veya endüstriyel kenevir tohumu taşıyıp presi kullanın. Her birinden bir tane harcar, yeri denetler, dört bar üretir ve pres hasar alır.<br>
+<br>
+Malzeme veya yer eksikse hiçbir şey harcanmaz.
+<np>
+Muslee Karışık Enerji Barı
+Hızlı atölye atıştırmalığı
+<&musli_bar>Muslee Melange barı ekmek, tohum ve meyveden yapılan kompakt yiyecektir.<br>
+<br>
+Kontrol, boru, platform veya uzun makine hattı kurarken arazi yiyeceği olarak tüketin.
+<np>
+Zihin Sıkacağı
+Deneyim yoğunlaştırıcı
+<&charged_lapis_squeezer>Zihin sıkacağı, envanterinizdeki bir lapis lazuli ile bir deneyim seviyesini yüklü lapise dönüştürür.<br>
+<br>
+Başarılı her dönüşüm kullanıcıya zarar verir, yorgunluk oluşturur ve kısa süre kör eder. Lapis veya deneyim olmadığında ya da kullanıcı ölüm sınırına çok yakınsa çalışmayı reddeder.
+<np>
+Yüklü Lapis
+Depolanmış deneyim
+<&charged_lapis>Yüklü lapis bir deneyim seviyesi depolar. Seviyeyi geri almak, etkin etkileri kaldırmak ve biraz sağlık yenilemek için tüketin.<br>
+<br>
+Önce zihin sıkacağı üretin; yüklü lapis, lapis ve deneyim mevcutken bu aleti kullanarak üretilir.
+<np>
+İri Demir Kırıntısı
+Yeniden oluşturulmuş üretim tariflerinde kullanılan mühendis aleti malzemesi.
+<&iron_grit>Eritilerek demir külçesi yapılabilir,<br>ancak ileri malzeme işleme<br>için uygun değildir.
+<np>
+İri Altın Kırıntısı
+Yeniden oluşturulmuş üretim tariflerinde kullanılan mühendis aleti malzemesi.
+<&gold_grit>Eritilerek altın külçesi yapılabilir,<br>ancak ileri malzeme işleme<br>için uygun değildir.

@@ -1,0 +1,161 @@
+Klinker u ġebel tal-bini
+Qxur tal-briks u tal-konkrit
+Il-klinker, il-briks tal-gagazza, il-konkrit rinfurzat u l-ħġieġ korazzat jipprovdu uċuħ tqal għal kmamar sħan, ħwienet tax-xogħol u linji tal-vista protetti.<br>
+<br>
+Uża ċ-ċanguni, it-taraġ, is-saffi rqaq u l-ħitan li jaqblu biex tlesti t-truf mingħajr ma tibdel l-istil tal-materjali tal-fabbrika.
+<np>
+Blokka tal-briks tal-klinker
+Briks miswuda bin-nugrufun
+<&clinker_brick_block>Din il-blokka żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Ċangun tal-briks tal-klinker
+Briks miswuda bin-nugrufun
+<&clinker_brick_slab>Din il-blokka żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Taraġ tal-briks tal-klinker
+Briks miswuda bin-nugrufun
+<&clinker_brick_stairs>Din il-blokka żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Ħajt tal-briks tal-klinker
+Briks miswuda bin-nugrufun
+<&clinker_brick_wall>Din il-blokka żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Blokka tal-klinker imtebba'
+Briks miswuda bin-nugrufun
+<&clinker_brick_stained_block>Il-blokka tal-briks tal-klinker imtebba' żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Ċangun tal-klinker imtebba'
+Briks miswuda bin-nugrufun
+<&clinker_brick_stained_slab>Iċ-ċangun tal-briks tal-klinker imtebba' jżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Taraġ tal-klinker imtebba'
+Briks miswuda bin-nugrufun
+<&clinker_brick_stained_stairs>It-taraġ tal-briks tal-klinker imtebba' jżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Briksa tal-klinker imżejna
+Briks miswuda bin-nugrufun
+<&clinker_brick_sastor_corner_block>Il-briksa tal-klinker imżejna bil-ġebel ramli żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Briksa tal-klinker imdaħħla 'l ġewwa
+Briks miswuda bin-nugrufun
+<&clinker_brick_recessed>Din il-blokka żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Briks tal-klinker bix-xquq
+Briks miswuda bin-nugrufun
+<&clinker_brick_vertically_slit>Il-briks tal-klinker bi xquq vertikali jżidu briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Ċangun vertikali tal-klinker
+Briks miswuda bin-nugrufun
+<&clinker_brick_vertical_slab_structured>Iċ-ċangun vertikali tal-klinker b'nisġa strutturata jżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Nofs ċangun tal-briks tal-klinker
+Briks miswuda bin-nugrufun
+<&halfslab_clinker_brick>Din il-blokka żżid briks miswuda bin-nugrufun fis-swali tal-fran, fil-bażijiet taċ-ċmieni u fil-ħitan tal-manutenzjoni.<br>
+<br>
+Użu: użaha bħala ħajt, bordura jew qoxra ta' żona sħuna madwar fran u bojlers.<br>
+<np>
+Blokka tal-briks tal-gagazza
+Ġebel dens tal-bini tal-fabbrika
+<&slag_brick_block>Din il-blokka żżid xogħol dens tal-bini griż-kannella għal pedamenti, ħitan ta' sostenn u barrakki tax-xogħol eqdem.<br>
+<br>
+Użu: użaha għal pedamenti eqdem, ħitan ta' sostenn u artijiet maħmuġin tal-impjant.<br>
+<np>
+Ċangun tal-briks tal-gagazza
+Ġebel dens tal-bini tal-fabbrika
+<&slag_brick_slab>Din il-blokka żżid xogħol dens tal-bini griż-kannella għal pedamenti, ħitan ta' sostenn u barrakki tax-xogħol eqdem.<br>
+<br>
+Użu: użaha għal pedamenti eqdem, ħitan ta' sostenn u artijiet maħmuġin tal-impjant.<br>
+<np>
+Taraġ tal-briks tal-gagazza
+Ġebel dens tal-bini tal-fabbrika
+<&slag_brick_stairs>Din il-blokka żżid xogħol dens tal-bini griż-kannella għal pedamenti, ħitan ta' sostenn u barrakki tax-xogħol eqdem.<br>
+<br>
+Użu: użaha għal pedamenti eqdem, ħitan ta' sostenn u artijiet maħmuġin tal-impjant.<br>
+<np>
+Ħajt tal-briks tal-gagazza
+Ġebel dens tal-bini tal-fabbrika
+<&slag_brick_wall>Din il-blokka żżid xogħol dens tal-bini griż-kannella għal pedamenti, ħitan ta' sostenn u barrakki tax-xogħol eqdem.<br>
+<br>
+Użu: użaha għal pedamenti eqdem, ħitan ta' sostenn u artijiet maħmuġin tal-impjant.<br>
+<np>
+Blokka tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&rebar_concrete>Din il-blokka hi parti ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Ċangun tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&rebar_concrete_slab>Din il-blokka hi parti ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Taraġ tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&rebar_concrete_stairs>Din il-blokka hi parti ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Ħajt tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&rebar_concrete_wall>Din il-blokka hi parti ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Saff irqiq tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&halfslab_rebar_concrete>Din il-blokka hi parti ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Maduma tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&rebar_concrete_tile>Din il-blokka hi parti ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Ċangun tal-madum tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&rebar_concrete_tile_slab>Din il-blokka hi parti ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Maduma tal-konkrit rinfurzat
+Konkrit rinfurzat
+<&rebar_concrete_tile_stairs>It-taraġ tal-madum tal-konkrit rinfurzat hu magħmul minn partijiet ta' konkrit imwebbes għal bażijiet tal-magni, ħitan kontra l-isplużjonijiet u artijiet taż-żoni tat-tagħbija.<br>
+<br>
+Użu: użaha taħt magni, tul kurituri tal-manutenzjoni jew kull fejn il-bini jeħtieġ bażi rinfurzata.<br>
+<np>
+Blokka tal-ħġieġ korazzat
+Linja tal-vista protetta
+<&panzerglass_block>Din il-blokka żżomm il-linji tal-vista miftuħa waqt li taqbel mal-kostruzzjoni rinfurzata tal-fabbrika.<br>
+<br>
+Użu: użaha fejn il-plejers għandhom jaraw il-makkinarju minn wara barriera protetta.<br>
+<np>
+Ċangun tal-ħġieġ korazzat
+Linja tal-vista protetta
+<&panzerglass_slab>Din il-blokka żżomm il-linji tal-vista miftuħa waqt li taqbel mal-kostruzzjoni rinfurzata tal-fabbrika.<br>
+<br>
+Użu: użaha fejn il-plejers għandhom jaraw il-makkinarju minn wara barriera protetta.<br>

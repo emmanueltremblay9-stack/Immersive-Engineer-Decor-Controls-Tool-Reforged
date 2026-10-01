@@ -1,0 +1,161 @@
+Klinker at Pagmamason
+Mga balot na laryo at kongkreto
+Nagbibigay ang klinker, laryong latak, pinatibay na kongkreto at salaming baluti ng mabibigat na ibabaw para sa maiinit na silid, pagawaan at tanaw na may proteksiyon.<br>
+<br>
+Gamitin ang katugmang mga dalig, hagdanan, manipis na patong at pader upang tapusin ang mga gilid nang hindi binabago ang estilo ng materyales ng pabrika.
+<np>
+Blokeng Laryong Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_block>Nagdadala ang blokeng ito ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Dalig na Laryong Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_slab>Nagdadala ang blokeng ito ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Hagdanang Laryong Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_stairs>Nagdadala ang blokeng ito ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Pader na Laryong Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_wall>Nagdadala ang blokeng ito ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Namantsahang Blokeng Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_stained_block>Ang Namantsahang Bloke ng Laryong Klinker ay nagdadala ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Namantsahang Dalig na Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_stained_slab>Ang Namantsahang Dalig na Laryong Klinker ay nagdadala ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Namantsahang Hagdanang Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_stained_stairs>Ang Namantsahang Hagdanang Laryong Klinker ay nagdadala ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Laryong Klinker na May Palamuti
+Laryong pinaitim ng uling
+<&clinker_brick_sastor_corner_block>Ang Laryong Klinker na May Palamuting Batumbuhangin ay nagdadala ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Nakalubog na Laryong Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_recessed>Nagdadala ang blokeng ito ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Mga Laryong Klinker na May Hiwa
+Laryong pinaitim ng uling
+<&clinker_brick_vertically_slit>Ang mga Laryong Klinker na May Patayong Hiwa ay nagdadala ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Patayong Dalig na Klinker
+Laryong pinaitim ng uling
+<&clinker_brick_vertical_slab_structured>Ang May Estrukturang Patayong Dalig na Klinker ay nagdadala ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Manipis na Dalig na Laryong Klinker
+Laryong pinaitim ng uling
+<&halfslab_clinker_brick>Nagdadala ang blokeng ito ng laryong pinaitim ng uling sa mga bulwagan ng dapugan, paanan ng tsimenea at pader ng pagpapanatili.<br>
+<br>
+Paggamit: Gamitin bilang pader, gilid o balot ng mainit na lugar sa paligid ng mga dapugan at pakuluan.<br>
+<np>
+Blokeng Laryong Latak
+Siksik na pagmamason ng pabrika
+<&slag_brick_block>Nagdaragdag ang blokeng ito ng siksik na abong-kayumangging pagmamason para sa mga pundasyon, pader na pumipigil sa lupa at lumang gusali ng trabaho.<br>
+<br>
+Paggamit: Gamitin para sa lumang pundasyon, pader na pumipigil sa lupa at maruruming sahig ng planta.<br>
+<np>
+Dalig na Laryong Latak
+Siksik na pagmamason ng pabrika
+<&slag_brick_slab>Nagdaragdag ang blokeng ito ng siksik na abong-kayumangging pagmamason para sa mga pundasyon, pader na pumipigil sa lupa at lumang gusali ng trabaho.<br>
+<br>
+Paggamit: Gamitin para sa lumang pundasyon, pader na pumipigil sa lupa at maruruming sahig ng planta.<br>
+<np>
+Hagdanang Laryong Latak
+Siksik na pagmamason ng pabrika
+<&slag_brick_stairs>Nagdaragdag ang blokeng ito ng siksik na abong-kayumangging pagmamason para sa mga pundasyon, pader na pumipigil sa lupa at lumang gusali ng trabaho.<br>
+<br>
+Paggamit: Gamitin para sa lumang pundasyon, pader na pumipigil sa lupa at maruruming sahig ng planta.<br>
+<np>
+Pader na Laryong Latak
+Siksik na pagmamason ng pabrika
+<&slag_brick_wall>Nagdaragdag ang blokeng ito ng siksik na abong-kayumangging pagmamason para sa mga pundasyon, pader na pumipigil sa lupa at lumang gusali ng trabaho.<br>
+<br>
+Paggamit: Gamitin para sa lumang pundasyon, pader na pumipigil sa lupa at maruruming sahig ng planta.<br>
+<np>
+Blokeng Kongkretong May Bakal
+Pinatibay na kongkreto
+<&rebar_concrete>Ang blokeng ito ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Dalig na Kongkretong May Bakal
+Pinatibay na kongkreto
+<&rebar_concrete_slab>Ang blokeng ito ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Hagdanang Kongkretong May Bakal
+Pinatibay na kongkreto
+<&rebar_concrete_stairs>Ang blokeng ito ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Pader na Kongkretong May Bakal
+Pinatibay na kongkreto
+<&rebar_concrete_wall>Ang blokeng ito ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Manipis na Kongkretong May Bakal
+Pinatibay na kongkreto
+<&halfslab_rebar_concrete>Ang blokeng ito ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Baldosang Kongkretong May Bakal
+Pinatibay na kongkreto
+<&rebar_concrete_tile>Ang blokeng ito ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Dalig na Baldosang Kongkretong May Bakal
+Pinatibay na kongkreto
+<&rebar_concrete_tile_slab>Ang blokeng ito ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Baldosang Kongkretong May Bakal
+Pinatibay na kongkreto
+<&rebar_concrete_tile_stairs>Ang Hagdanang Baldosang Kongkretong May Bakal ay bahagi ng matigas na kongkreto para sa tuntungan ng makina, pader na panangga sa pagsabog at sahig ng kargahan.<br>
+<br>
+Paggamit: Gamitin sa ilalim ng makina, kahabaan ng daanan ng pagpapanatili o saanman kailangan ng pinatibay na saligan.<br>
+<np>
+Blokeng Salaming Baluti
+Tanaw na may proteksiyon
+<&panzerglass_block>Pinananatiling bukas ng blokeng ito ang tanaw habang bumabagay sa pinatibay na konstruksyon ng pabrika.<br>
+<br>
+Paggamit: Gamitin kung saan dapat makita ng manlalaro ang makinarya sa likod ng pananggalang.<br>
+<np>
+Dalig na Salaming Baluti
+Tanaw na may proteksiyon
+<&panzerglass_slab>Pinananatiling bukas ng blokeng ito ang tanaw habang bumabagay sa pinatibay na konstruksyon ng pabrika.<br>
+<br>
+Paggamit: Gamitin kung saan dapat makita ng manlalaro ang makinarya sa likod ng pananggalang.<br>

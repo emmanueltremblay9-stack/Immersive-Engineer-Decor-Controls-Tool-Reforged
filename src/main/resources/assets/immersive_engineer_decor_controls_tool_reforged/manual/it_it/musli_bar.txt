@@ -1,0 +1,5 @@
+Barretta energetica Muslee Melange
+Spuntino rapido d’officina
+<&recipe>La barretta energetica Muslee Melange è un alimento compatto fatto di pane, semi e frutta.<br>
+<br>
+Uso: mangiala come cibo da campo mentre posi comandi, tubi, piattaforme o lunghe linee nelle sale macchine.

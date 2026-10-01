@@ -1,0 +1,7 @@
+Récepteur d'impulsion en boîtier
+Commande liée
+<&recipe>Un récepteur d'impulsion lié en boîtier offre un bref déclenchement redstone aux panneaux distants.<br>
+<br>
+Utilisation : cliquez dessus avec une perle de l'Ender pour créer une perle liée. Faites un clic droit dessus ou activez la perle liée pour émettre une brève impulsion.<br>
+<br>
+Remarque : l'impulsion se réinitialise automatiquement après sa durée programmée.

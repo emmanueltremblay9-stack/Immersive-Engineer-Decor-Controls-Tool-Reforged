@@ -1,0 +1,5 @@
+Valvule par fluids a redstone
+Acessoris par liniis di fluids
+<&recipe>La Valvule par fluids controlade de redstone e je un toc compat par liniis di fluids, piçui serbatois, tubui, ponts di racuelte e flus controlâts de redstone.<br>
+<br>
+Ûs: alinee la valvule cu la direzion volude dal flus.<br>

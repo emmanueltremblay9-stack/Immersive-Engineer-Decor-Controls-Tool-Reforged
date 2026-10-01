@@ -1,0 +1,5 @@
+Clapet antiretorn de conducha de fluids
+Equipament de conducha de fluids
+<&recipe>Lo Clapet antiretorn de conducha de fluids es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : alinha la vana amb lo sens d’escorriment volgut.<br>

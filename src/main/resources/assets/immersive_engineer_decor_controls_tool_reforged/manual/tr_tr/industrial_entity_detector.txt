@@ -1,0 +1,7 @@
+Varlık Algılayıcısı
+Sinyal algılama
+<&recipe>Varlık algılayıcısı, görünür bir zemin plakası olmadan yakındaki hareketi izler.<br>
+<br>
+Kullanım: Kapılara, lambalara, alarmlara veya makine güvenlik kilitlerine bağlayın.<br>
+<br>
+Notlar: Bloğun çevresinde küçük bir alanı tarar.

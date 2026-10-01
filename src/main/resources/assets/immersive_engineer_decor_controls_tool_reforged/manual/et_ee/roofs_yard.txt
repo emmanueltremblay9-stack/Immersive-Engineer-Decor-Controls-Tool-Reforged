@@ -1,0 +1,101 @@
+Katused ja õu
+Tehase välivarustus
+Katuseplokid, õuekruus ja vanad tehasepuidust osad aitavad viimistleda väliskuure, tööplatse, laadimisalasid ja ilmastikust kulunud tehaseservi.<br>
+<br>
+Sega neid osi müüritise ja käiguteedega, et välised tööstusehitised oleksid ka eemalt selgelt loetavad.
+<np>
+Tume sindelkatus
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof>See plokk loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Katuse lumetõke
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_metallized>Tumeda sindelkatuse lumetõke loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Tume sindelkatus
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_skylight>Tumeda sindelkatuse katuseaken loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Katuse korstnatüvi
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_chimneytrunk>Tumeda sindelkatuse korstnatüvi loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Katuse juhtmeläbiviik
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_wireconduit>Tumeda sindelkatuse juhtmeläbiviik loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Tume sindelkatus
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_chimney>Tumeda sindelkatuse korsten loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Tumeda sindelkatuse plokk
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_block>See plokk loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Tumeda sindelkatuse plaat
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_slab>See plokk loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Tumeda sindelkatuse plaat
+Ilmastikust kulunud katuseosa
+<&dark_shingle_roof_slabslice>Tumeda sindelkatuse õhuke plaat loob tumedad praktilised katusejooned töökodadele ja tööstuskuuridele.<br>
+<br>
+Kasutamine: Ühenda osad usutavateks katuseprofiilideks.<br>
+<np>
+Tihendatud kruusmuld
+Töökoha pinnakate
+<&dense_grit_dirt_block>See plokk annab välitööaladele tihendatud ja tallatud pinna.<br>
+<br>
+Kasutamine: Laota laadimisuste, välismahutite ja masinaplatside ümber.<br>
+<np>
+Tihendatud kruusliiv
+Töökoha pinnakate
+<&dense_grit_sand_block>See plokk annab välitööaladele tihendatud ja tallatud pinna.<br>
+<br>
+Kasutamine: Laota laadimisuste, välismahutite ja masinaplatside ümber.<br>
+<np>
+Vanad puitplangud
+Vana töökojapuit
+<&old_industrial_wood_planks>Vanad tehasepuidust plangud lisavad vana töökojapuitu põrandatele, astmetele, ustele ja sooja ilmega sisekaunistustele.<br>
+<br>
+Kasutamine: Kasuta vanade töökojapõrandate, treppide, uste ja kaunistuste jaoks.<br>
+<np>
+Vana tehasepuidust plaat
+Vana töökojapuit
+<&old_industrial_wood_slab>See plokk lisab vana töökojapuitu põrandatele, astmetele, ustele ja sooja ilmega sisekaunistustele.<br>
+<br>
+Kasutamine: Kasuta vanade töökojapõrandate, treppide, uste ja kaunistuste jaoks.<br>
+<np>
+Vana puittrepp
+Vana töökojapuit
+<&old_industrial_wood_stairs>Vana tehasepuidust trepp lisab vana töökojapuitu põrandatele, astmetele, ustele ja sooja ilmega sisekaunistustele.<br>
+<br>
+Kasutamine: Kasuta vanade töökojapõrandate, treppide, uste ja kaunistuste jaoks.<br>
+<np>
+Õhuke vana puitplaat
+Vana töökojapuit
+<&old_industrial_wood_slabslice>Õhuke vana tehasepuidust plaat lisab vana töökojapuitu põrandatele, astmetele, ustele ja sooja ilmega sisekaunistustele.<br>
+<br>
+Kasutamine: Kasuta vanade töökojapõrandate, treppide, uste ja kaunistuste jaoks.<br>
+<np>
+Vana tehasepuidust uks
+Vana töökojapuit
+<&old_industrial_wood_door>See plokk lisab vana töökojapuitu põrandatele, astmetele, ustele ja sooja ilmega sisekaunistustele.<br>
+<br>
+Kasutamine: Kasuta vanade töökojapõrandate, treppide, uste ja kaunistuste jaoks.<br>

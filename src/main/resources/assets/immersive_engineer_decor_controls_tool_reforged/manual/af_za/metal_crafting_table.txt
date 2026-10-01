@@ -1,0 +1,7 @@
+Metaalvervaardigingstafel
+Plaatwerkstasie
+<&recipe>Die Metaalvervaardigingstafel is 'n versterkte werkstasie met 'n hamergleuf, 'n volle 3x3-vervaardigingsrooster en 'n duidelike uitvoergleuf.<br>
+<br>
+Gebruik: Gebruik die rooster soos 'n normale vervaardigingstafel. Om IE-plate te vorm, plaas 'n Ingenieurshamer in die gereedskapgleuf en die plaatmateriaal in die rooster, en neem dan die gevormde plaat uit die uitvoer.<br>
+<br>
+Staalraamversierings gebruik staalplate wat op hierdie tafel gevorm word.

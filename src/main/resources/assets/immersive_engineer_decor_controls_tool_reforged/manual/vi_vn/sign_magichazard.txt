@@ -1,0 +1,5 @@
+Biển nguy hiểm ma thuật
+Dấu cảnh báo nguy hiểm
+<&recipe>Biển «Cẩn thận, nguy hiểm ma thuật» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>

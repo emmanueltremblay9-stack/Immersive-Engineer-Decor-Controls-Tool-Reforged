@@ -1,0 +1,5 @@
+Blok dachu z ciemnego gontu
+Postarzany element dachu
+<&recipe>Ten blok pomaga tworzyć ciemne, praktyczne zarysy dachów warsztatów i hal przemysłowych.<br>
+<br>
+Użycie: Łącz te elementy, aby tworzyć wiarygodne kształty dachów.<br>

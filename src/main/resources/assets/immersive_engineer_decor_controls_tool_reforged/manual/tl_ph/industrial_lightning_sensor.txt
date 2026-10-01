@@ -1,0 +1,7 @@
+Pantukoy ng Bagyo
+Pagdama ng signal
+<&recipe>Nagpapagana ng babala ang pandama ng bagyo kapag may kulog.<br>
+<br>
+Paggamit: Ilagay sa ilalim ng bukas na langit at ikabit sa mga ilaw o alarma.<br>
+<br>
+Tandaan: Nangangailangan ng kulog at bukas na daan sa langit.

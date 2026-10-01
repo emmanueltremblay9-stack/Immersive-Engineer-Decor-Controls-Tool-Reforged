@@ -1,0 +1,5 @@
+Ornated Clinker Brick
+Soot-dark brickwork
+<&recipe>The Sandstone Ornated Clinker Brick brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>

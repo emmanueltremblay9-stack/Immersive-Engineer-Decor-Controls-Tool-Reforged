@@ -1,0 +1,7 @@
+Relé analóxico de ligazón
+Control ligado
+<&recipe>Un accesorio con aspecto de relé ofrece un punto de conmutación local compacto para os paneis.<br>
+<br>
+Uso: fai clic dereito nel para activar ou desactivar a saída á máxima potencia para os circuítos próximos. Usa bloques receptores cando precises activación con perlas ligadas.<br>
+<br>
+Notas: emite redstone á máxima potencia mentres está acendido.

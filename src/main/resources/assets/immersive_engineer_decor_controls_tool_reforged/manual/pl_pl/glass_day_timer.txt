@@ -1,0 +1,7 @@
+Szklany zegar dobowy
+Sygnał dzienny
+<&recipe>Przełącznik czasowy śledzi dzienną część cyklu świata.<br>
+<br>
+Użycie: Stosuj go do lamp na placach, żaluzji i układów sterowania fabryką działających tylko w dzień.<br>
+<br>
+Uwagi: Wymaga wymiaru ze światłem nieba.

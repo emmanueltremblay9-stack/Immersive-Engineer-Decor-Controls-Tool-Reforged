@@ -1,0 +1,5 @@
+Mineralų lydymo krosnis
+Kompaktiškas apdorojimo įrenginys
+<&recipe>Mineralų lydymo krosnis apdoroja mineralus aukštoje temperatūroje, užimdama mažai vietos dirbtuvėse.<br>
+<br>
+Naudojimas: tiek mineralų blokus ir energiją lydymui aukštoje temperatūroje.<br>

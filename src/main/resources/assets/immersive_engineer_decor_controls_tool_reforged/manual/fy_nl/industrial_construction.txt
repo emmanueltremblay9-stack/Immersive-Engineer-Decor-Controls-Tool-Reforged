@@ -1,0 +1,108 @@
+Yndustriële bou
+Fabryksmuorren en ôfwerking
+Algemiene bouûnderdielen omfetsje doarren, finsters, ljochten, warskôgingsbuorden, rânen en konstruksjeûnderdielen dy't net yn in mear spesifike seksje hearre.<br>
+<br>
+Brûk dizze siden foar fabryksromten, ûnderhâldsgongen, gefaarmarkearring en praktyske yndustriële details.
+<np>
+Izeren gloeilampe
+Kompakt wurkljocht
+<&iron_bulb_light>Dit blok jout kompakte yndustriële ferljochting foar gongen, rinbrêgen en wurkfakken.<br>
+<br>
+Gebrûk: Montearje it op plafonds, muorren of rânen dêr't de romte dúdlik wurkljocht nedich hat.<br>
+<np>
+Plafondrâneljocht
+Kompakt wurkljocht
+<&iron_ceiling_edge_light>Dit blok jout kompakte yndustriële ferljochting foar gongen, rinbrêgen en wurkfakken.<br>
+<br>
+Gebrûk: Montearje it op plafonds, muorren of rânen dêr't de romte dúdlik wurkljocht nedich hat.<br>
+<np>
+Ynboud flierrâneljocht
+Kompakt wurkljocht
+<&iron_floor_edge_light>Dit blok jout kompakte yndustriële ferljochting foar gongen, rinbrêgen en wurkfakken.<br>
+<br>
+Gebrûk: Montearje it op plafonds, muorren of rânen dêr't de romte dúdlik wurkljocht nedich hat.<br>
+<np>
+Ynboud ljocht
+Kompakt wurkljocht
+<&iron_inset_light>Dit blok jout kompakte yndustriële ferljochting foar gongen, rinbrêgen en wurkfakken.<br>
+<br>
+Gebrûk: Montearje it op plafonds, muorren of rânen dêr't de romte dúdlik wurkljocht nedich hat.<br>
+<np>
+Boerd „Algemiene warskôging
+Gefaarmarkearring
+<&sign_caution>It boerd „Algemiene warskôging“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Gefaarboerd
+Gefaarmarkearring
+<&sign_danger>It boerd „Pas op, hjir is it echt gefaarlik“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Dekoraasjeboerd
+Gefaarmarkearring
+<&sign_decor>De boerdplaat (Engineer's decor) jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Ferdigeningsboerd
+Gefaarmarkearring
+<&sign_defense>It boerd „Pas op, ferdigeningssysteem foarút“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Útgongsboerd
+Gefaarmarkearring
+<&sign_exit>Dit boerd jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd „Brângefaar
+Gefaarmarkearring
+<&sign_firehazard>It boerd „Brângefaar“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd „Froastwarskôging
+Gefaarmarkearring
+<&sign_frost>It boerd „Froastwarskôging“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd foar hjit oerflak
+Gefaarmarkearring
+<&sign_hotsurface>It boerd „Pas op, hjit oerflak“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd foar tried ûnder spanning
+Gefaarmarkearring
+<&sign_hotwire>It boerd „Pas op, tried ûnder spanning“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd „Lasergefaar
+Gefaarmarkearring
+<&sign_laser>It boerd „Lasergefaar“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd foar magysk gefaar
+Gefaarmarkearring
+<&sign_magichazard>It boerd „Pas op, magysk gefaar“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd foar magnetysk fjild
+Gefaarmarkearring
+<&sign_magneticfield>It boerd „Pas op, sterk magnetysk fjild“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>
+Boerd „Radioaktyf gefaar
+Gefaarmarkearring
+<&sign_radioactive>It boerd „Radioaktyf gefaar“ jout gefaren, útgongen en wurksônes oan mei in dúdlik feilichheidsteken foar de fabryk.<br>
+<br>
+Gebrûk: Pleats it njonken gefaren, útgongen, masines en sônes mei beheinde tagong.<br>
+<np>

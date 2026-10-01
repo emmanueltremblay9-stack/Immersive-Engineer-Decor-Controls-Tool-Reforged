@@ -1,0 +1,7 @@
+Primerjalno stikalo
+Signal pritrditvenega bloka
+<&recipe>Kompaktno senzorsko stikalo odčitava blok, na katerega je pritrjeno, in odčitek pretvori v preprost izhod na plošči.<br>
+<br>
+Uporaba: Pritrdi ga na inventarje, rezervoarje ali opremo redstone. Ko pritrditveni blok oddaja izhod primerjalnika, posode ali redstona, stikalo odda signal redstone s polno močjo.<br>
+<br>
+Opombe: Z njim pretvori stopnje napolnjenosti zalog ali skrito ožičenje v jasne krmilne vode za vklop/izklop.

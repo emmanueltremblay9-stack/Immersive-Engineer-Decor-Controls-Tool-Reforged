@@ -1,0 +1,7 @@
+Blocksensor
+Tekenmeten
+<&recipe>En Blocksensor pröövt, wat de Ruum vör em besett is.<br>
+<br>
+Bruuk: Richt em op de Maschinensiet, den Puffer oder den bewaakten Ruum, den du in't Oog behollen wullt.<br>
+<br>
+Anmarken: Gifft Energie, wenn de Block vör em keen Luft is.

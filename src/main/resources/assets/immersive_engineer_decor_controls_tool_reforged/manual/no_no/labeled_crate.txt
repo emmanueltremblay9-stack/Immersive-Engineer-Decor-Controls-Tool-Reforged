@@ -1,0 +1,5 @@
+Merket kasse
+Redigerbar lageretikett
+<&recipe>Denne merkede kassen er laget for oversiktlig sortering i lagerrommet. Frontplaten kan redigeres som et lite verkstedskilt.<br>
+<br>
+Bruk: høyreklikk på etikettplaten for å endre kasseetiketten. Høyreklikk på resten av kassen for å åpne lageret for beslag, deler og vedlikeholdsutstyr.<br>

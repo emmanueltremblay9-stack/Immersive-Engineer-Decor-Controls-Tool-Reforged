@@ -1,0 +1,7 @@
+Kutija za materijal
+Kutija građevinskih zaliha
+<&recipe>Kutija za materijal nosi veliku zalihu jednog jednostavnog, neizmijenjenog i složivog građevnog materijala.<br>
+<br>
+Uporaba: Drži kutiju u glavnoj ruci, a hrpu materijala u drugoj kako bi je napunio. Upotrijebi kutiju s praznom drugom rukom za vađenje jedne hrpe.<br>
+<br>
+Drži do 512 predmeta jedne vrste. Odbija ugniježđene kutije, nesloživu opremu i preimenovane ili podatkovno izmijenjene hrpe; opis pokazuje sadržaj.

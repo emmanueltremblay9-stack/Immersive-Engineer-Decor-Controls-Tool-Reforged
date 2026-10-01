@@ -1,0 +1,7 @@
+LED Funfun
+Èsì àmì
+<&recipe>Atọ́ka kékeré ń yí Redstone tó fara sin sí èsì ilé iṣẹ́ tí a lè rí.<br>
+<br>
+Lílò: So wáyà rẹ̀ lẹ́gbẹ̀ẹ́ àmì láti ṣọ́ àwọn ìlẹ̀kùn, ẹ̀rọ, ìkìlọ̀, tàbí pánẹ́ẹ̀lì.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nígbà tí agbára Redstone wà nítòsí.

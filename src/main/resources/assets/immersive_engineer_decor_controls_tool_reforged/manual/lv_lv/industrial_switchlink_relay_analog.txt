@@ -1,0 +1,7 @@
+Analogās saites relejs
+Sasaistīta vadība
+<&recipe>Releja izskata detaļa dod paneļiem kompaktu vietējo pārslēgšanas vietu.<br>
+<br>
+Lietošana: noklikšķini ar labo peles pogu, lai pārslēgtu pilna stipruma izvadi tuvējām ķēdēm. Ja vajadzīga aktivizēšana ar sasaistītu pērli, izmanto uztvērēju blokus.<br>
+<br>
+Piezīmes: ieslēgtā stāvoklī izvada pilna stipruma Redstone signālu.

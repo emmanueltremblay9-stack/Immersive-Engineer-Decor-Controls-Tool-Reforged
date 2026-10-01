@@ -1,0 +1,7 @@
+Receptor de enlace de interruptor
+Control enlazado
+<&recipe>Un receptor enlazado proporciona un destino de redstone a máxima intensidad para paneles remotos.<br>
+<br>
+Uso: Hacé clic con una perla de ender para crear una perla enlazada. Hacé clic derecho directamente en el receptor para conmutarlo a mano.<br>
+<br>
+Notas: Una perla enlazada conmuta este receptor cuando se usa mientras te agachás.

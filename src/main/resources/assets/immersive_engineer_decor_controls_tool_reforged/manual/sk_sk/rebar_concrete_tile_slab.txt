@@ -1,0 +1,5 @@
+Stupienok zo železobetónových dlaždíc
+Vystužený betón
+<&recipe>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>

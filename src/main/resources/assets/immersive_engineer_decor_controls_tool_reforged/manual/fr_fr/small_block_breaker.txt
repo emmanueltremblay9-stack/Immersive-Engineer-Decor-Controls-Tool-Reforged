@@ -1,0 +1,5 @@
+Brise-bloc
+Équipement d'atelier
+<&recipe>Le petit brise-bloc est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : dirigez la face de travail vers le bloc à retirer.<br>

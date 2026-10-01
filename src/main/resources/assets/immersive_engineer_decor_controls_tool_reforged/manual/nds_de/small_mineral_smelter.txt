@@ -1,0 +1,5 @@
+Mineralsmölter
+Lütte Verarbeitungseenheit
+<&recipe>De Mineralsmölter verarbeit Mineralen mit hoge Hitzt op wenig Wiärksteedplatz.<br>
+<br>
+Bruuk: Föhr Mineralblöck un Energie för Smöltarbeit bi hoge Hitzt to.<br>

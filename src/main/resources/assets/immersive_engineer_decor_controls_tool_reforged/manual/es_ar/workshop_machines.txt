@@ -1,0 +1,107 @@
+Máquinas de taller
+Máquinas y entradas/salidas del taller
+Las máquinas de taller proporcionan fabricación, movimiento de objetos, fundición, eliminación, recogida y otras tareas de utilidad en el espacio de un solo bloque.<br>
+<br>
+Abrí las páginas siguientes para consultar la receta, la ilustración, la ambientación y las notas prácticas de uso de cada máquina.
+<np>
+Mesa de acero
+Mobiliario de taller
+<&steel_table>Este bloque es un mueble práctico para salas de trabajo y rincones de mantenimiento.<br>
+<br>
+Uso: Colocalo junto a bancos de trabajo, cajones y máquinas compactas.<br>
+<np>
+Mesa de madera tratada
+Mobiliario de taller
+<&treated_wood_table>Este bloque es un mueble práctico para salas de trabajo y rincones de mantenimiento.<br>
+<br>
+Uso: Colocalo junto a bancos de trabajo, cajones y máquinas compactas.<br>
+<np>
+Taburete de madera tratada
+Mobiliario de taller
+<&treated_wood_stool>Este bloque es un mueble práctico para salas de trabajo y rincones de mantenimiento.<br>
+<br>
+Uso: Colocalo junto a bancos de trabajo, cajones y máquinas compactas.<br>
+<np>
+Mesa de crafteo metálica
+Puesto de fabricación de placas
+<&metal_crafting_table>La mesa de crafteo metálica es un puesto de taller reforzado con una ranura para martillo, una cuadrícula de fabricación de 3x3 y una ranura de salida bien diferenciada.<br>
+<br>
+Uso: Utilizá la cuadrícula para la fabricación normal. Para placas de IE, colocá un martillo de ingeniero en la ranura de herramientas y el material de la placa en la cuadrícula antes de recoger el resultado. Las decoraciones de acero requieren placas de acero para postes, pasarelas, ventanas, puertas, barandillas y otras piezas de acero.<br>
+<np>
+Tolva de fábrica
+Utilidad de taller
+<&factory_hopper>Este bloque mueve pilas de objetos mediante una carcasa industrial más compacta.<br>
+<br>
+Uso: Orientalo hacia la línea de inventarios y ajustá el alcance, el tamaño de pila, los tiempos y el modo de redstone en su pantalla.<br>
+<np>
+Soltador de fábrica
+Utilidad de taller
+<&factory_dropper>Este bloque expulsa los objetos almacenados por una cara orientada.<br>
+<br>
+Uso: Orientá el frontal hacia el punto de salida, cargá sus ranuras internas y ajustá la fuerza, el ángulo, la espera, la lógica de filtros y el modo de redstone en su pantalla.<br>
+<np>
+Colocador de bloques de fábrica
+Utilidad de taller
+<&factory_placer>Este bloque coloca bloques de su reserva interna cuando se activa.<br>
+<br>
+Uso: Orientá la cara de trabajo hacia el espacio de destino y cargá pilas de objetos que se puedan colocar.<br>
+<np>
+Rompedor de bloques
+Utilidad de taller
+<&small_block_breaker>El rompedor de bloques pequeño es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Orientá la cara de trabajo hacia el bloque que quieras quitar.<br>
+<np>
+Incineradora de residuos
+Unidad compacta de procesamiento
+<&small_waste_incinerator>La incineradora de residuos destruye objetos no deseados y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Introducí en su cola únicamente objetos que no quieras conservar.<br>
+<np>
+Horno de laboratorio
+Unidad compacta de procesamiento
+<&small_lab_furnace>El horno de laboratorio realiza pequeños trabajos de fundición con combustible sólido y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Utilizá combustible sólido para fundir lotes pequeños.<br>
+<np>
+Horno eléctrico
+Unidad compacta de procesamiento
+<&small_electrical_furnace>El horno eléctrico realiza trabajos compactos de fundición alimentados con FE y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Suministrá FE y materiales válidos para fundir.<br>
+<np>
+Horno de fusión de minerales
+Unidad compacta de procesamiento
+<&small_mineral_smelter>El horno de fusión de minerales procesa minerales a alta temperatura y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Suministrá bloques minerales y energía para realizar trabajos de fusión a alta temperatura.<br>
+<np>
+Congelador de agua
+Unidad compacta de procesamiento
+<&small_freezer>El congelador de agua realiza trabajos compactos de enfriamiento para instalaciones de fluidos con alimentación eléctrica.<br>
+<br>
+Uso: Suministrá agua y energía para producir hielo por etapas.<br>
+<np>
+Fluido pasivo
+Equipamiento de tuberías de fluidos
+<&passive_fluid_accumulator>El acumulador pasivo de fluidos es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Colocalo junto a fuentes de agua adecuadas y dejá espacio para extraer el fluido.<br>
+<np>
+Panel solar
+Utilidad de taller
+<&small_solar_panel>El pequeño panel solar es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Dejalo a cielo abierto y conectá equipos de bajo consumo.<br>
+<np>
+Máquina de ordeño
+Utilidad de taller
+<&small_milking_machine>La pequeña máquina de ordeño es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Colocala cerca de vacas y proporcioná una forma de extraer los recipientes de leche o el fluido.<br>
+<np>
+Cortador de árboles
+Utilidad de taller
+<&small_tree_cutter>El cortador de árboles pequeño es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Apuntalo hacia árboles crecidos y recogé los objetos por separado.<br>

@@ -1,0 +1,789 @@
+Redstono valdikliai
+Matuokliai ir signalų įranga
+Valdymo įranga paverčia paslėptą redstoną aiškiais fabriko skydais, jutikliais, indikatoriais, jungikliais, pavojaus signalais ir susietais signalų įrenginiais.<br>
+<br>
+Naudok šiuos puslapius kurdamas operatorių darbo vietas, signalų skydus, saugos grandines ir nuotolinį valdymą.
+<np>
+Strėlių taikinys
+Trumpas impulsas
+<&arrow_target>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Durų jutiklis
+Valdymas redstonu
+<&door_sensor_switch>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Lifto mygtukas
+Valdymas redstonu
+<&elevator_button>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Stiklinis mygtukas
+Valdymas redstonu
+<&glass_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Stiklinis mygtukas
+Valdymas redstonu
+<&glass_small_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Stiklinis jutiklinis mygtukas
+Valdymas redstonu
+<&glass_touch_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Mašinos mygtukas
+Valdymas redstonu
+<&industrial_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Mygtukas
+Valdymas redstonu
+<&industrial_double_pole_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Apsaugotas mašinos mygtukas
+Valdymas redstonu
+<&industrial_fenced_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Beldimo mygtukas
+Valdymas redstonu
+<&industrial_knock_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Senas puošnus mygtukas
+Valdymas redstonu
+<&oldfancy_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Senas puošnus mygtukas
+Valdymas redstonu
+<&oldfancy_small_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Senas puošnus grandininis mygtukas
+Trumpas impulsas
+<&oldfancy_spring_reset_chain>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Rustikinis mygtukas
+Valdymas redstonu
+<&rustic_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Rustikinis vinies mygtukas
+Valdymas redstonu
+<&rustic_nail_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Mažas rustikinis mygtukas
+Valdymas redstonu
+<&rustic_small_button>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Rustikinis grandininis mygtukas
+Trumpas impulsas
+<&rustic_spring_reset_chain>Momentinis jungiklis siunčia aiškų viso stiprumo redstono impulsą.<br>
+<br>
+Naudojimas: naudok mašinoms paleisti, durims atlaisvinti, pavojaus signalams arba vienkartinėms grandinėms.<br>
+<br>
+Pastabos: pasibaigus numatytam impulsui grįžta į pradinę būseną.
+<np>
+Stiklinė kontaktinė plokštė
+Spaudimo impulsas
+<&glass_contact_mat>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Stiklinis durų kontaktas
+Spaudimo impulsas
+<&glass_door_contact_mat>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Kontaktinis kilimėlis
+Spaudimo impulsas
+<&industrial_contact_mat>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Durų kontaktinis kilimėlis
+Spaudimo impulsas
+<&industrial_door_contact_mat>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Kritimo jutiklis
+Signalo jutimas
+<&industrial_fallthrough_detector>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Kojinis mygtukas
+Valdymas redstonu
+<&industrial_foot_button>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Pramoninis smūginis liukas
+Spaudimo impulsas
+<&industrial_high_sensitive_trapdoor>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Smūginis kontaktinis kilimėlis
+Spaudimo impulsas
+<&industrial_shock_sensitive_contact_mat>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Smūginis liukas
+Spaudimo impulsas
+<&industrial_shock_sensitive_trapdoor>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Raudonas elektrinis augalas
+Spaudimo impulsas
+<&red_power_plant>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Rustikinė slėgio plokštė
+Spaudimo impulsas
+<&rustic_contact_plate>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Rustikinė durų slėgio plokštė
+Spaudimo impulsas
+<&rustic_door_contact_plate>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Rustikinis kritimo jutiklis
+Signalo jutimas
+<&rustic_fallthrough_detector>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Rustikinis smūginis liukas
+Spaudimo impulsas
+<&rustic_high_sensitive_trapdoor>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Rustikinė smūginė plokštė
+Spaudimo impulsas
+<&rustic_shock_sensitive_plate>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Rustikinis smūginis liukas
+Spaudimo impulsas
+<&rustic_shock_sensitive_trapdoor>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Geltonas elektrinis augalas
+Spaudimo impulsas
+<&yellow_power_plant>Kontaktinis jungiklis siunčia trumpą signalą, kai sujudinamos grindys arba liukas.<br>
+<br>
+Naudojimas: statyk ten, kur esybės juda aptarnavimo taku, per krovimo įrenginį arba saugomą kelią.<br>
+<br>
+Pastabos: po kontakto su esybe siunčia trumpą impulsą.
+<np>
+Stiklinis paros laikmatis
+Dienos šviesos signalas
+<&glass_day_timer>Laikmačio jungiklis seka dieninę pasaulio ciklo dalį.<br>
+<br>
+Naudojimas: naudok kiemo lempoms, langinėms ir tik dieną veikiantiems fabriko valdikliams.<br>
+<br>
+Pastabos: reikia dimensijos su dangaus šviesa.
+<np>
+Stiklinis esybių jutiklis
+Signalo jutimas
+<&glass_entity_detector>Esybių jutiklis stebi judėjimą netoliese be matomos grindų plokštės.<br>
+<br>
+Naudojimas: prijunk prie durų, lempų, pavojaus signalų arba mašinų saugos blokavimo grandinių.<br>
+<br>
+Pastabos: skenuoja nedidelę sritį aplink bloką.
+<np>
+Stiklinis intervalinio signalo įrenginys
+Nustatyto laiko impulsas
+<&glass_interval_timer>Kompaktiškas laikmačio jungiklis siunčia suplanuotą redstono impulsą.<br>
+<br>
+Naudojimas: naudok ten, kur mažam mechanizmui reikia periodinio arba uždelsto valdymo.<br>
+<br>
+Pastabos: naudoja suplanuotus redstono impulsus.
+<np>
+Stiklinis tiesinis jutiklis
+Signalo jutimas
+<&glass_linear_entity_detector>Esybių jutiklis stebi judėjimą netoliese be matomos grindų plokštės.<br>
+<br>
+Naudojimas: prijunk prie durų, lempų, pavojaus signalų arba mašinų saugos blokavimo grandinių.<br>
+<br>
+Pastabos: skenuoja nedidelę sritį aplink bloką.
+<np>
+Blokų jutiklis
+Signalo jutimas
+<&industrial_block_detector>Blokų jutiklis tikrina, ar priešais jį esanti vieta užimta.<br>
+<br>
+Naudojimas: nukreipk į stebimą mašinos paviršių, tarpinį sandėlį arba saugomą vietą.<br>
+<br>
+Pastabos: siunčia signalą, kai priešais esantis blokas nėra oras.
+<np>
+Paros laikmatis
+Dienos šviesos signalas
+<&industrial_day_timer>Laikmačio jungiklis seka dieninę pasaulio ciklo dalį.<br>
+<br>
+Naudojimas: naudok kiemo lempoms, langinėms ir tik dieną veikiantiems fabriko valdikliams.<br>
+<br>
+Pastabos: reikia dimensijos su dangaus šviesa.
+<np>
+Esybių jutiklis
+Signalo jutimas
+<&industrial_entity_detector>Esybių jutiklis stebi judėjimą netoliese be matomos grindų plokštės.<br>
+<br>
+Naudojimas: prijunk prie durų, lempų, pavojaus signalų arba mašinų saugos blokavimo grandinių.<br>
+<br>
+Pastabos: skenuoja nedidelę sritį aplink bloką.
+<np>
+Intervalinis laikmatis
+Nustatyto laiko impulsas
+<&industrial_interval_timer>Kompaktiškas laikmačio jungiklis siunčia suplanuotą redstono impulsą.<br>
+<br>
+Naudojimas: naudok ten, kur mažam mechanizmui reikia periodinio arba uždelsto valdymo.<br>
+<br>
+Pastabos: naudoja suplanuotus redstono impulsus.
+<np>
+Apšvietimo jutiklis
+Signalo jutimas
+<&industrial_light_sensor>Apšvietimo jutiklis paverčia vietinį šviesumą redstono valdymo signalu.<br>
+<br>
+Naudojimas: naudok automatinėms lempoms, langinėms ir matomumo grandinėms.<br>
+<br>
+Pastabos: siunčia signalą, kai neapdorotas šviesumo lygis yra 8 arba didesnis.
+<np>
+Audros jutiklis
+Signalo jutimas
+<&industrial_lightning_sensor>Audros jutiklis įjungia įspėjimus per perkūniją.<br>
+<br>
+Naudojimas: statyk po atviru dangumi ir prijunk prie lempų arba pavojaus signalų.<br>
+<br>
+Pastabos: reikia perkūnijos ir atviro dangaus.
+<np>
+Tiesinis esybių jutiklis
+Signalo jutimas
+<&industrial_linear_entity_detector>Esybių jutiklis stebi judėjimą netoliese be matomos grindų plokštės.<br>
+<br>
+Naudojimas: prijunk prie durų, lempų, pavojaus signalų arba mašinų saugos blokavimo grandinių.<br>
+<br>
+Pastabos: skenuoja nedidelę sritį aplink bloką.
+<np>
+Lietaus jutiklis
+Signalo jutimas
+<&industrial_rain_sensor>Oro sąlygų jutiklis paverčia jo vietoje krintantį lietų redstono signalu.<br>
+<br>
+Naudojimas: montuok ten, kur virš jo esantį bloką gali pasiekti lietus.<br>
+<br>
+Pastabos: tikrina lietų virš jutiklio.
+<np>
+Bistabilus stiklinis jungiklis
+Valdymas redstonu
+<&glass_rotary_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Bistabilus stiklinis jutiklinis jungiklis
+Valdymas redstonu
+<&glass_touch_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Oranžinis jautrus stiklas
+Signalinis stiklas
+<&orange_sensitiveglass>Į redstoną reaguojantis stiklo blokas leidžia matyti kiaurai ir rodo signalo būseną.<br>
+<br>
+Naudojimas: naudok valdymo patalpų langams, apšviestiems skydams ir apsauginiam fabriko įstiklinimui.<br>
+<br>
+Pastabos: keičia būseną nuo netoliese esančio redstono maitinimo.
+<np>
+Šviečiantis jautrus stiklas
+Signalinis stiklas
+<&sensitive_glass_block>Į redstoną reaguojantis stiklo blokas leidžia matyti kiaurai ir rodo signalo būseną.<br>
+<br>
+Naudojimas: naudok valdymo patalpų langams, apšviestiems skydams ir apsauginiam fabriko įstiklinimui.<br>
+<br>
+Pastabos: keičia būseną nuo netoliese esančio redstono maitinimo.
+<np>
+Spalvotas jautrus stiklas
+Signalinis stiklas
+<&stained_sensitiveglass>Į redstoną reaguojantis stiklo blokas leidžia matyti kiaurai ir rodo signalo būseną.<br>
+<br>
+Naudojimas: naudok valdymo patalpų langams, apšviestiems skydams ir apsauginiam fabriko įstiklinimui.<br>
+<br>
+Pastabos: keičia būseną nuo netoliese esančio redstono maitinimo.
+<np>
+Stiklinis juostinis matuoklis
+Signalo matuoklis
+<&glass_vertical_bar_gauge>Kompaktiškas valdymo patalpos matuoklis aiškiai parodo redstono signalo stiprumą skydelyje.<br>
+<br>
+Naudojimas: montuok ten, kur gretimo redstono signalo stiprumą būtų galima patikrinti vienu žvilgsniu.<br>
+<br>
+Pastabos: rodo netoliese esančio redstono signalo stiprumą nuo 0 iki 15.
+<np>
+Analoginis matuoklis
+Signalo matuoklis
+<&industrial_analog_angular_gauge>Kompaktiškas valdymo patalpos matuoklis aiškiai parodo redstono signalo stiprumą skydelyje.<br>
+<br>
+Naudojimas: montuok ten, kur gretimo redstono signalo stiprumą būtų galima patikrinti vienu žvilgsniu.<br>
+<br>
+Pastabos: rodo netoliese esančio redstono signalo stiprumą nuo 0 iki 15.
+<np>
+Voltmetro tipo matuoklis
+Signalo matuoklis
+<&industrial_analog_horizontal_gauge>Kompaktiškas valdymo patalpos matuoklis aiškiai parodo redstono signalo stiprumą skydelyje.<br>
+<br>
+Naudojimas: montuok ten, kur gretimo redstono signalo stiprumą būtų galima patikrinti vienu žvilgsniu.<br>
+<br>
+Pastabos: rodo netoliese esančio redstono signalo stiprumą nuo 0 iki 15.
+<np>
+Skaitmeninis matuoklis
+Aiškiai matomas signalo stiprumas
+<&industrial_small_digital_gauge>Kompaktiškas valdymo patalpos matuoklis aiškiai parodo redstono signalo stiprumą skydelyje.<br>
+<br>
+Naudojimas: montuok ten, kur gretimo redstono signalo stiprumą būtų galima patikrinti vienu žvilgsniu.<br>
+<br>
+Pastabos: rodo netoliese esančio redstono signalo stiprumą nuo 0 iki 15.
+<np>
+Stiklinio vamzdelio matuoklis
+Signalo matuoklis
+<&industrial_tube_gauge>Kompaktiškas valdymo patalpos matuoklis aiškiai parodo redstono signalo stiprumą skydelyje.<br>
+<br>
+Naudojimas: montuok ten, kur gretimo redstono signalo stiprumą būtų galima patikrinti vienu žvilgsniu.<br>
+<br>
+Pastabos: rodo netoliese esančio redstono signalo stiprumą nuo 0 iki 15.
+<np>
+Analoginis juostinis matuoklis
+Signalo matuoklis
+<&industrial_vertical_bar_gauge>Kompaktiškas valdymo patalpos matuoklis aiškiai parodo redstono signalo stiprumą skydelyje.<br>
+<br>
+Naudojimas: montuok ten, kur gretimo redstono signalo stiprumą būtų galima patikrinti vienu žvilgsniu.<br>
+<br>
+Pastabos: rodo netoliese esančio redstono signalo stiprumą nuo 0 iki 15.
+<np>
+Pavojaus lempa
+Signalo būsenos rodymas
+<&industrial_alarm_lamp>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Pavojaus sirena
+Signalo būsenos rodymas
+<&industrial_alarm_siren>Pavojaus sirena yra prie paviršiaus tvirtinamas redstone indikatorius. Jos maitinimo būsena seka bloko, prie kurio ji pritvirtinta, signalą.<br>
+<br>
+Naudojimas: pritvirtink prie tvirto paviršiaus ir prijunk maitinimą, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: sirena atsinaujina kartą per sekundę, kol prijungtas signalas aktyvus.
+<np>
+Mirksintis LED
+Signalo būsenos rodymas
+<&industrial_blinking_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Žalias mirksintis LED
+Signalo būsenos rodymas
+<&industrial_green_blinking_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Žalias LED
+Signalo būsenos rodymas
+<&industrial_green_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Raudonas LED
+Signalo būsenos rodymas
+<&industrial_red_blinking_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Raudonas LED
+Signalo būsenos rodymas
+<&industrial_red_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Baltas mirksintis LED
+Signalo būsenos rodymas
+<&industrial_white_blinking_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Baltas LED
+Signalo būsenos rodymas
+<&industrial_white_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Geltonas mirksintis LED
+Signalo būsenos rodymas
+<&industrial_yellow_blinking_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Geltonas LED
+Signalo būsenos rodymas
+<&industrial_yellow_led>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Rustikinis semaforas
+Signalo būsenos rodymas
+<&rustic_semaphore>Kompaktiškas indikatorius paverčia paslėptą redstoną matomu fabriko būsenos rodmeniu.<br>
+<br>
+Naudojimas: prijunk greta signalo, kad stebėtum duris, mašinas, pavojaus signalus arba skydus.<br>
+<br>
+Pastabos: pakeičia būseną, kai netoliese yra redstono maitinimas.
+<np>
+Komparatoriaus jungiklis
+Prijungto bloko signalas
+<&industrial_comparator_switch>Kompaktiškas jutiklinis jungiklis nuskaito bloką, ant kurio sumontuotas, ir paverčia rodmenį paprasta skydelio išvestimi.<br>
+<br>
+Naudojimas: tvirtink prie sandėlių, talpyklų arba redstono įrenginių. Kai prijungtas blokas pateikia komparatoriaus, konteinerio arba redstono išvestį, jungiklis siunčia viso stiprumo redstono signalą.<br>
+<br>
+Pastabos: naudok saugyklų užpildymo lygiui arba paslėptiems laidams paversti aiškiomis įjungimo ir išjungimo valdymo linijomis.
+<np>
+Signalo reguliatorius
+Kintamas signalas
+<&industrial_dimmer>Sukamuoju valdikliu nustatomas redstono signalo stiprumas kompaktiško skydelio priekyje.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad palaipsniui didintum išvestį; po didžiausio stiprumo ji grįžta į nulį.<br>
+<br>
+Pastabos: siunčia signalą, kurio stiprumas nuo 0 iki 15.
+<np>
+Avarinio stabdymo mygtukas
+Valdymas redstonu
+<&industrial_estop_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Piltuvo blokatorius
+Valdymas redstonu
+<&industrial_hopper_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Beldimo jungiklis
+Valdymas redstonu
+<&industrial_knock_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Svirtis
+Valdymas redstonu
+<&industrial_lever>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Dviejų mygtukų mašinos jungiklis
+Valdymas redstonu
+<&industrial_machine_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Traukiama rankena
+Valdymas redstonu
+<&industrial_pull_handle>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Sukamoji svirtis
+Valdymas redstonu
+<&industrial_rotary_lever>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Sukamasis mašinos jungiklis
+Valdymas redstonu
+<&industrial_rotary_machine_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Kontaktinė svirtis
+Valdymas redstonu
+<&industrial_small_lever>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Jungiklis
+Valdymas redstonu
+<&industrialswitch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Šviesos jungiklis
+Valdymas redstonu
+<&light_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Vožtuvo jungiklis
+Valdymas redstonu
+<&valve_wheel_switch>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Impulsų imtuvas korpuse
+Susietas valdymas
+<&industrial_switchlink_cased_pulse_receiver>Susietas impulsų imtuvas korpuse suteikia nuotoliniams skydams trumpą redstono sužadinimą.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Spustelėk imtuvą dešiniuoju pelės mygtuku arba suaktyvink susietą perlą, kad išsiųstum trumpą impulsą.<br>
+<br>
+Pastabos: impulsas automatiškai baigiasi praėjus nustatytai trukmei.
+<np>
+Ryšio imtuvas korpuse
+Susietas valdymas
+<&industrial_switchlink_cased_receiver>Susietas imtuvas korpuse suteikia nuotoliniams skydams tvirtą redstono valdymo taikinį.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Tiesiogiai spustelėk imtuvą dešiniuoju pelės mygtuku, kad perjungtum jį ranka.<br>
+<br>
+Pastabos: naudojant susietą perlą sėlinant, šis imtuvas persijungia.
+<np>
+Impulsinio ryšio imtuvas
+Susietas valdymas
+<&industrial_switchlink_pulse_receiver>Susietas impulsų imtuvas suteikia nuotoliniams skydams trumpą redstono sužadinimą.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Spustelėk imtuvą dešiniuoju pelės mygtuku arba suaktyvink susietą perlą, kad išsiųstum trumpą impulsą.<br>
+<br>
+Pastabos: impulsas automatiškai baigiasi praėjus nustatytai trukmei.
+<np>
+Impulsinio ryšio relė
+Susietas valdymas
+<&industrial_switchlink_pulse_relay>Relės išvaizdos įrenginys suteikia skydams kompaktišką vietinį perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms. Kai reikia įjungti susietu perlu, naudok imtuvų blokus.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Jungiklio ryšio imtuvas
+Susietas valdymas
+<&industrial_switchlink_receiver>Susietas imtuvas suteikia nuotoliniams skydams viso stiprumo redstono valdymo taikinį.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Tiesiogiai spustelėk imtuvą dešiniuoju pelės mygtuku, kad perjungtum jį ranka.<br>
+<br>
+Pastabos: naudojant susietą perlą sėlinant, šis imtuvas persijungia.
+<np>
+Analoginio ryšio imtuvas
+Susietas valdymas
+<&industrial_switchlink_receiver_analog>Susietas imtuvas suteikia valdymo skydams matomą nuotolinį taikinį.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Naudok tą perlą sėlindamas, kad nuotoliniu būdu įjungtum imtuvą.<br>
+<br>
+Pastabos: sužadintas šis imtuvas siunčia viso stiprumo redstono signalą.
+<np>
+Jungiklio ryšio relė
+Susietas valdymas
+<&industrial_switchlink_relay>Relės išvaizdos įrenginys suteikia skydams kompaktišką vietinį perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms. Kai reikia įjungti susietu perlu, naudok imtuvų blokus.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Analoginio ryšio relė
+Susietas valdymas
+<&industrial_switchlink_relay_analog>Relės išvaizdos įrenginys suteikia skydams kompaktišką vietinį perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms. Kai reikia įjungti susietu perlu, naudok imtuvų blokus.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Jungiklio ryšio perlas
+Susietas valdymas
+<&switchlink_pearl>Susietas perlas išsaugo imtuvo taikinį nuotoliniam fabriko valdymui.<br>
+<br>
+Naudojimas: spustelėk jungiklio ryšio imtuvą laikydamas Enderio perlą, kad jį sukurtum. Naudok susietą perlą sėlindamas, kad suaktyvintum išsaugotą imtuvą.<br>
+<br>
+Pastabos: taikinys turi būti įkeltas, toje pačioje dimensijoje ir pasiekiamas ryšio nuotoliu.
+<np>
+Sena puošni svirtis
+Valdymas redstonu
+<&oldfancy_bistableswitch1>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Sena puošni sukamoji svirtis
+Valdymas redstonu
+<&oldfancy_bistableswitch2>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Rustikinė sukamoji svirtis
+Valdymas redstonu
+<&rustic_angular_lever>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Rustikinė svirtis
+Valdymas redstonu
+<&rustic_lever>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Rustikinė vinies svirtis
+Valdymas redstonu
+<&rustic_nail_lever>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.
+<np>
+Rustikinė dviejų vyrių svirtis
+Valdymas redstonu
+<&rustic_two_hinge_lever>Kompaktiškas valdiklis suteikia fabriko statiniams aiškiai atpažįstamą redstono perjungimo tašką.<br>
+<br>
+Naudojimas: spustelėk dešiniuoju pelės mygtuku, kad perjungtum viso stiprumo išvestį gretimoms grandinėms.<br>
+<br>
+Pastabos: įjungtas siunčia viso stiprumo redstono signalą.

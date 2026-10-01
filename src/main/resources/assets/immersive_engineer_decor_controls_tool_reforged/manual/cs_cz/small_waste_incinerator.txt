@@ -1,0 +1,5 @@
+Spalovna odpadu
+Kompaktní zpracovací jednotka
+<&recipe>Spalovna odpadu ničí nepotřebné předměty a v dílně zabírá málo místa.<br>
+<br>
+Použití: Do její fronty vkládej pouze nepotřebné předměty.<br>

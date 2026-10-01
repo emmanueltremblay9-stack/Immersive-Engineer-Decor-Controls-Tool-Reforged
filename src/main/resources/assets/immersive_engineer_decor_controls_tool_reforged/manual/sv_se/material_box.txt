@@ -1,0 +1,7 @@
+Materiallåda
+Låda för byggmaterial
+<&recipe>Materiallådan bär ett stort lager av ett vanligt, oförändrat och stapelbart byggmaterial.<br>
+<br>
+Håll lådan i huvudhanden och materialet i den andra för att lägga in det; använd den med tom andra hand för att ta ut en stapel.<br>
+<br>
+Den rymmer 512 föremål av en typ, avvisar andra lådor, ostapelbar utrustning och ändrade staplar och visar innehållet i verktygstipset.

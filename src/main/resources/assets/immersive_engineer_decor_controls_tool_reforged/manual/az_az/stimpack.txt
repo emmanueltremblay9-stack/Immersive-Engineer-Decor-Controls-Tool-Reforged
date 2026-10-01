@@ -1,0 +1,7 @@
+Avtomatik stim paketi
+Təcili inyektor
+<&recipe>Avtomatik stim paketi təhlükəli texniki xidmət üçün təcili bərpa əşyasıdır.<br>
+<br>
+İstifadə: Sağalmaq, qısa qorunma və hərəkət sürəti almaq üçün əl ilə istifadə edin. İnventarda daşındıqda aşağı sağlamlıqda avtomatik işə düşə, sonra soyuma müddətinə keçə bilər.<br>
+<br>
+Hündür yerləri, açıq naqilləri və ya düşmən mədən yollarını sınaqdan keçirməzdən əvvəl birini hazır saxlayın.

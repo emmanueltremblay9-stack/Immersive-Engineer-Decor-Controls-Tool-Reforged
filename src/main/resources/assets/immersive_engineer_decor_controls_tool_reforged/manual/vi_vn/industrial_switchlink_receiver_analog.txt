@@ -1,0 +1,7 @@
+Bộ nhận liên kết tương tự
+Điều khiển liên kết
+<&recipe>Bộ nhận liên kết cung cấp mục tiêu từ xa nhìn thấy được cho bảng điều khiển.<br>
+<br>
+Cách dùng: Nhấp bằng ngọc Ender để tạo viên ngọc liên kết. Dùng viên ngọc đó khi cúi để kích hoạt bộ nhận từ xa.<br>
+<br>
+Ghi chú: Bộ nhận này phát tín hiệu redstone tối đa khi được kích hoạt.

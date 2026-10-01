@@ -1,0 +1,5 @@
+Panzerglasblock
+Geschützter Einblick
+<&recipe>Dieser Block ermöglicht freie Sicht und passt zugleich zur verstärkten Bauweise einer Fabrik.<br>
+<br>
+Verwendung: Setze ihn dort ein, wo Spieler Maschinen hinter einer schützenden Barriere sehen sollen.<br>

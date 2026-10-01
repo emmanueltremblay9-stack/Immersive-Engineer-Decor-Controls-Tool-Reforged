@@ -1,0 +1,5 @@
+Storo stulpo viršus
+Karkaso dalis
+<&recipe>Tiesaus storo plieno stulpo viršus / pagrindas suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>

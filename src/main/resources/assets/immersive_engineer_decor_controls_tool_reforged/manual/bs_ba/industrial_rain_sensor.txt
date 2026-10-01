@@ -1,0 +1,7 @@
+Senzor kiše
+Otkrivanje signala
+<&recipe>Meteorološki senzor pretvara kišu na svom položaju u redstone signal.<br>
+<br>
+Upotreba: Montirajte ga gdje blok iznad može primati kišu.<br>
+<br>
+Napomene: Provjerava kišu iznad senzora.

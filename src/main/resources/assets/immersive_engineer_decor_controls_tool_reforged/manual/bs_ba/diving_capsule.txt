@@ -1,0 +1,7 @@
+Ronilačka zračna kapsula
+Rezerva zraka
+<&recipe>Predmet za hitni zrak pod vodom.<br>
+<br>
+Upotreba: Ručno vraća zrak. U inventaru se automatski aktivira kada je zrak pri kraju i zatim se hladi.<br>
+<br>
+Nosite za poplavljene rudnike, potopljene cijevi i popravke pumpi.

@@ -1,0 +1,5 @@
+Vökvatrekt
+Vökvalagnabúnaður
+<&recipe>Litla vökvasöfnunartrektin er fyrirferðarlítill vökvalagnahluti fyrir litla geyma, röralagnir, söfnunarstaði og roðsteinsstýrt rennsli.<br>
+<br>
+Notkun: Settu hana undir vökvasöfnunarstaðinn og leiddu geymt innihald hennar í geyma eða rör neðar.<br>

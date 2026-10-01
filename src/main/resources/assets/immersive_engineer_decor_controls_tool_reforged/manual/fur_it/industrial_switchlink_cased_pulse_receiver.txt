@@ -1,0 +1,7 @@
+Ricevidôr a impuls in casse
+Comant leât
+<&recipe>Un ricevidôr leât a impuls in casse al da ai panei lontans une curte ativazion di redstone.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Fâs clic di diestre sul ricevidôr o ative la perle leade par mandâ un impuls curt.<br>
+<br>
+Notis: l’impuls si ferme di bessôl dopo la durade programade.

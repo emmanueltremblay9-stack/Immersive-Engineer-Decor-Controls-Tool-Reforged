@@ -1,0 +1,7 @@
+Lienentiteitsdetector
+Signaolwaorneming
+<&recipe>Ein entiteitsdetector bewaak beweging in de buurt zónger ein zeenbare vloerplaat.<br>
+<br>
+Gebroek: verbind 'm mèt deure, lampe, alarm of machinevergrendelinge.<br>
+<br>
+Opmerking: zeuk ein klein gebied rond 't blok aaf.

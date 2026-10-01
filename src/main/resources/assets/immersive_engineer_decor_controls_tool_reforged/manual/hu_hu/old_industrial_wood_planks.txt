@@ -1,0 +1,5 @@
+Régi fadeszkák
+Öreg műhelyfa
+<&recipe>A régi ipari fadeszkák öreg műhelyfát adnak padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>

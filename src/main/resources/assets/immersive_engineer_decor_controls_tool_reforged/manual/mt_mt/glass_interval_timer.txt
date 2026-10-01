@@ -1,0 +1,7 @@
+Sinjal tal-intervalli tal-ħġieġ
+Impuls bil-ħin
+<&recipe>Swiċċ kompatt tat-tajmer jipprovdi impuls tar-Redstone skedat.<br>
+<br>
+Użu: użah fejn mekkaniżmu żgħir jeħtieġ kontroll perjodiku jew imdewwem.<br>
+<br>
+Noti: juża impulsi tar-Redstone skedati.

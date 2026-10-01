@@ -1,0 +1,5 @@
+Laboratorinė krosnis
+Kompaktiškas apdorojimo įrenginys
+<&recipe>Laboratorinė krosnis atlieka nedidelius kietu kuru maitinamus lydymo darbus, užimdama mažai vietos dirbtuvėse.<br>
+<br>
+Naudojimas: naudok kietą kurą mažoms lydymo partijoms.<br>

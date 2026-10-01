@@ -1,0 +1,5 @@
+Vas szerelőnyílás
+Ipari hozzáférési pont
+<&recipe>Ez a blokk strapabíró hozzáférést biztosít szerelőhelyiségekhez, aknákhoz, tetőkhöz és gépházakhoz.<br>
+<br>
+Használat: ott szereld fel, ahol az építménynek szabályozható karbantartási nyílásra van szüksége.<br>

@@ -1,0 +1,5 @@
+Sıvı Hunisi
+Sıvı hattı donanımı
+<&recipe>Küçük sıvı hunisi; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Sıvı toplama noktasının altına koyun; depoladığı içeriği tanklara veya daha aşağıdaki borulara yönlendirin.<br>

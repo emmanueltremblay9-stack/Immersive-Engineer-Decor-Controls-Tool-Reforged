@@ -1,0 +1,7 @@
+Impulsni prijamnik poveznice
+Povezano upravljanje
+<&recipe>Povezani impulsni prijamnik daje udaljenim panelima kratki redstone okidač.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Desnim klikom na prijamnik ili aktivacijom povezanog bisera pošalji kratki impuls.<br>
+<br>
+Napomene: impuls se sam poništava nakon zadanog trajanja.

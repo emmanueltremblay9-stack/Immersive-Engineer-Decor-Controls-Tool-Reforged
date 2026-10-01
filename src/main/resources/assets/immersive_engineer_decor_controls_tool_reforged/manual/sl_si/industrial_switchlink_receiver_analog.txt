@@ -1,0 +1,7 @@
+Analogni sprejemnik povezave
+Povezano krmiljenje
+<&recipe>Povezan sprejemnik nadzornim ploščam zagotavlja viden oddaljeni cilj.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Ta biser uporabi med tihotapljenjem, da na daljavo aktiviraš sprejemnik.<br>
+<br>
+Opombe: Ta sprejemnik ob sprožitvi odda poln signal redstone.

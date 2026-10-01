@@ -1,0 +1,7 @@
+Automaatne stimipakk
+Hädasüstal
+<&recipe>Hädavahend ohtlikuks hoolduseks.<br>
+<br>
+Kasutus: Käsitsi ravib, kaitseb ja kiirendab lühidalt. Seljakotis käivitub madala tervisega ja siis jahtub.<br>
+<br>
+Hoia enne kõrgusi, paljaid juhtmeid või ohtlikke kaevandusi.

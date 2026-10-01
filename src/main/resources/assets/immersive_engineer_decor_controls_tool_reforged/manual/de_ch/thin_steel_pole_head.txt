@@ -1,0 +1,5 @@
+Chopf für dünne Stahlpfoste
+Teil vom Tragwärch
+<&recipe>De Chopf/Fuess für grade dünne Stahlpfoste bildet sichtbari Tragstrukture für Maschinehalle und Zuegangsrahme.<br>
+<br>
+Verwendig: Dräi und setz s'Teil als sichtbari Verstrebig für Träger, Pfoste und Plattformränder.<br>

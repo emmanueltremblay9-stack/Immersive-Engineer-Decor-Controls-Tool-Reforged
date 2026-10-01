@@ -1,0 +1,3 @@
+Rupji dzelzs graudi
+Inženiera rīku materiāls, ko izmanto atjaunotajā izgatavošanas komplektā.
+<&recipe>Var pārkausēt dzelzs<br>stieņos, taču nav piemēroti<br>sarežģītākai materiālu apstrādei.

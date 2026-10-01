@@ -1,0 +1,7 @@
+Senhal intermitent de veire
+Impulsion temporizada
+<&recipe>Un interruptor temporizat compacte fornís una impulsion de redstone programada.<br>
+<br>
+Utilizacion : emplega-lo quand un pichon mecanisme demanda una comanda periodica o retardada.<br>
+<br>
+Nòta : utiliza d’impulsions de redstone programadas.

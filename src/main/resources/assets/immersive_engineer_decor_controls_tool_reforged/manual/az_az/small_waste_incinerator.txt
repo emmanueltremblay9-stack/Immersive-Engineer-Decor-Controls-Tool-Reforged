@@ -1,0 +1,5 @@
+Tullantı yandırıcısı
+Yığcam emal qurğusu
+<&recipe>Tullantı yandırıcısı emalatxanada kiçik yer tutaraq istənməyən əşyaları məhv edir.<br>
+<br>
+İstifadə: Növbəsinə yalnız istənməyən əşyalar əlavə edin.<br>

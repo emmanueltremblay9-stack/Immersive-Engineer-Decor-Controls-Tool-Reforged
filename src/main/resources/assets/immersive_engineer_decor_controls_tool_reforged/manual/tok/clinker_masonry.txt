@@ -1,0 +1,161 @@
+kiwen leko pimeja en pali kiwen
+selo pi kiwen leko en kiwen tomo
+kiwen leko pimeja, kiwen leko pi ko seli, kiwen tomo wawa, en kiwen lukin wawa li pana e sinpin suli tawa tomo seli, tawa tomo pali, tawa nasin lukin awen.<br>
+<br>
+o kepeken supa, leko sewi, kipisi supa, en sinpin sama tawa pona e poka kepeken ante ala pi nasin kiwen pi tomo pali.
+<np>
+leko pi kiwen leko pimeja
+pali kiwen leko pi pimeja seli
+<&clinker_brick_block>leko ni li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+supa pi kiwen leko pimeja
+pali kiwen leko pi pimeja seli
+<&clinker_brick_slab>leko ni li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+leko sewi pi kiwen leko pimeja
+pali kiwen leko pi pimeja seli
+<&clinker_brick_stairs>leko ni li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+sinpin pi kiwen leko pimeja
+pali kiwen leko pi pimeja seli
+<&clinker_brick_wall>leko ni li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+leko pi kiwen leko pimeja jaki
+pali kiwen leko pi pimeja seli
+<&clinker_brick_stained_block>leko pi kiwen leko pimeja jaki li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+supa pi kiwen leko pimeja jaki
+pali kiwen leko pi pimeja seli
+<&clinker_brick_stained_slab>supa pi kiwen leko pimeja jaki li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+leko sewi pi kiwen leko pimeja jaki
+pali kiwen leko pi pimeja seli
+<&clinker_brick_stained_stairs>leko sewi pi kiwen leko pimeja jaki li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+kiwen leko pimeja sitelen
+pali kiwen leko pi pimeja seli
+<&clinker_brick_sastor_corner_block>kiwen leko pimeja pi sitelen kiwen ko li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+kiwen leko pimeja anpa
+pali kiwen leko pi pimeja seli
+<&clinker_brick_recessed>leko ni li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+kiwen leko pimeja pi lupa linja
+pali kiwen leko pi pimeja seli
+<&clinker_brick_vertically_slit>kiwen leko pimeja pi lupa linja sewi li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+supa sewi pi kiwen leko pimeja
+pali kiwen leko pi pimeja seli
+<&clinker_brick_vertical_slab_structured>supa sewi pi kiwen leko pimeja sitelen li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+kipisi supa pi kiwen leko pimeja
+pali kiwen leko pi pimeja seli
+<&halfslab_clinker_brick>leko ni li pana e kiwen leko pi pimeja tan ko seli tawa tomo pi poki seli, tawa anpa pi lupa kon, tawa sinpin pi pali awen.<br>
+<br>
+kepeken: o kepeken e ona sama sinpin, sama poka lukin, anu sama selo pi ma seli lon poka pi poki seli en poki pi seli telo.<br>
+<np>
+leko pi kiwen leko pi ko seli
+pali kiwen suli pi tomo pali
+<&slag_brick_block>leko ni li pana e pali kiwen suli pi kule pimeja walo en kule loje ma tawa anpa tomo, tawa sinpin awen ma, tawa tomo pali majuna.<br>
+<br>
+kepeken: o kepeken e ona tawa anpa tomo majuna, tawa sinpin awen ma, tawa ma jaki pi tomo pali.<br>
+<np>
+supa pi kiwen leko pi ko seli
+pali kiwen suli pi tomo pali
+<&slag_brick_slab>leko ni li pana e pali kiwen suli pi kule pimeja walo en kule loje ma tawa anpa tomo, tawa sinpin awen ma, tawa tomo pali majuna.<br>
+<br>
+kepeken: o kepeken e ona tawa anpa tomo majuna, tawa sinpin awen ma, tawa ma jaki pi tomo pali.<br>
+<np>
+leko sewi pi kiwen leko pi ko seli
+pali kiwen suli pi tomo pali
+<&slag_brick_stairs>leko ni li pana e pali kiwen suli pi kule pimeja walo en kule loje ma tawa anpa tomo, tawa sinpin awen ma, tawa tomo pali majuna.<br>
+<br>
+kepeken: o kepeken e ona tawa anpa tomo majuna, tawa sinpin awen ma, tawa ma jaki pi tomo pali.<br>
+<np>
+sinpin pi kiwen leko pi ko seli
+pali kiwen suli pi tomo pali
+<&slag_brick_wall>leko ni li pana e pali kiwen suli pi kule pimeja walo en kule loje ma tawa anpa tomo, tawa sinpin awen ma, tawa tomo pali majuna.<br>
+<br>
+kepeken: o kepeken e ona tawa anpa tomo majuna, tawa sinpin awen ma, tawa ma jaki pi tomo pali.<br>
+<np>
+leko pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&rebar_concrete>leko ni li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+supa pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&rebar_concrete_slab>leko ni li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+leko sewi pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&rebar_concrete_stairs>leko ni li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+sinpin pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&rebar_concrete_wall>leko ni li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+kipisi supa pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&halfslab_rebar_concrete>leko ni li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+leko sitelen pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&rebar_concrete_tile>leko ni li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+supa sitelen pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&rebar_concrete_tile_slab>leko ni li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+leko sitelen pi kiwen tomo pi palisa insa
+kiwen tomo wawa
+<&rebar_concrete_tile_stairs>leko sewi sitelen pi kiwen tomo pi palisa insa li kipisi kiwen tomo wawa tawa ma anpa ilo, tawa sinpin awen pakala seli, tawa ma pi lupa pana ijo.<br>
+<br>
+kepeken: o kepeken e ona lon anpa ilo, lon poka nasin pi pali awen, anu lon ma pi wile anpa wawa.<br>
+<np>
+leko pi kiwen lukin wawa
+nasin lukin awen
+<&panzerglass_block>leko ni li awen e nasin lukin open li sama kin pali tomo wawa pi nasin ilo.<br>
+<br>
+kepeken: o kepeken e ona lon ma pi wile ni: jan musi li ken lukin e ilo lon poka ante pi sinpin awen.<br>
+<np>
+supa pi kiwen lukin wawa
+nasin lukin awen
+<&panzerglass_slab>leko ni li awen e nasin lukin open li sama kin pali tomo wawa pi nasin ilo.<br>
+<br>
+kepeken: o kepeken e ona lon ma pi wile ni: jan musi li ken lukin e ilo lon poka ante pi sinpin awen.<br>

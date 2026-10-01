@@ -1,0 +1,5 @@
+Sog'ish mashinasi
+Ustaxona yordamchi qurilmasi
+<&recipe>Kichik sog'ish mashinasi yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: sigirlarga yaqin qo'yib, sut idishlari yoki suyuqlikni chiqarish yo'lini ta'minlang.<br>

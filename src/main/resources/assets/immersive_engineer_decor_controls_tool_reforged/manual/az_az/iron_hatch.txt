@@ -1,0 +1,5 @@
+Dəmir lyuk
+Sənaye giriş nöqtəsi
+<&recipe>Bu blok xidmət otaqları, şaxtalar, damlar və maşın örtükləri üçün möhkəm giriş nöqtəsi yaradır.<br>
+<br>
+İstifadə: Tikilidə idarə olunan texniki xidmət açılışı lazım olan yerlərə quraşdırın.<br>

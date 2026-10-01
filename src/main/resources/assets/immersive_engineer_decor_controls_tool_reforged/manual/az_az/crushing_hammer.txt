@@ -1,0 +1,7 @@
+Filiz əzmə çəkici
+Əl ilə əzmə aləti
+<&recipe>Filiz əzmə çəkici erkən dəmir və qızıl işi üçün əl emalı alətidir.<br>
+<br>
+İstifadə: Xam dəmir, xam qızıl, dəmir filizi, dərin şist dəmir filizi, qızıl filizi və ya dərin şist qızıl filizi ilə hazırlayaraq Immersive Engineering dəmir və ya qızıl tozu alın. Çəkicin davamlılığı azalır və qırılanadək toruna qayıdır.<br>
+<br>
+Mədən çıxararkən də köhnəlir və yaxın döyüşdə hədəfləri geri itələyə bilər.

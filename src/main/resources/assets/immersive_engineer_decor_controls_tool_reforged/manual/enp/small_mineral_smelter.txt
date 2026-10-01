@@ -1,0 +1,5 @@
+Stone Smelter
+Small working loom
+<&recipe>The Stone Smelter works stone at high heat in little workshop room.<br>
+<br>
+Use: Feed stone clots and might for high-heat melting.<br>

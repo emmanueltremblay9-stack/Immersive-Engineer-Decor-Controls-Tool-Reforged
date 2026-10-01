@@ -1,0 +1,5 @@
+Batang Energi Campuran Muslee
+Camilan bengkel cepat
+<&recipe>Muslee Melange Power Bar adalah makanan ringkas yang dibuat dari roti, biji-bijian, dan buah.<br>
+<br>
+Penggunaan: makan sebagai bekal lapangan saat memasang kendali, pipa, platform, atau jalur panjang di ruang mesin.

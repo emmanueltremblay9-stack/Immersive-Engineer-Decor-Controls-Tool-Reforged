@@ -1,0 +1,5 @@
+Blòc de bricas d’escòria
+Maçonariá densa de fabrica
+<&recipe>Aqueste blòc apond una maçonariá densa grisa e bruna a las fondacions, als murs de sosten e als vièlhs obradors.<br>
+<br>
+Utilizacion : emplega-lo per las fondacions ancianas, los murs de sosten e los sòls bruts de fabrica.<br>

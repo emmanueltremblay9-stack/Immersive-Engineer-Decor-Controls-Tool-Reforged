@@ -1,0 +1,5 @@
+Cầu thang lối đi bảo trì bằng thép
+Chi tiết lối bảo trì
+<&recipe>Khối này tạo lối bảo trì rõ ràng quanh máy móc.<br>
+<br>
+Cách dùng: Đặt làm lối bảo trì quanh máy, tầng trên và giếng kỹ thuật.<br>

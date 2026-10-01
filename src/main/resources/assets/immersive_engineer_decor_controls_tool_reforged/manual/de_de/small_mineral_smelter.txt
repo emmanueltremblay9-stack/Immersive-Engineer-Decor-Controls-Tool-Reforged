@@ -1,0 +1,5 @@
+Mineralschmelzer
+Kompakte Verarbeitungseinheit
+<&recipe>Der Mineralschmelzer verarbeitet Mineralien bei hoher Temperatur auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Führe Mineralblöcke und Energie für Schmelzarbeiten bei hoher Temperatur zu.<br>

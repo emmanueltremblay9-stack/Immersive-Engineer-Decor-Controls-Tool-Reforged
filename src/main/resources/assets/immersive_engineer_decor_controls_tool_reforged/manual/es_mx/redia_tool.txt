@@ -1,0 +1,7 @@
+Herramienta REDIA
+Utilidad recubierta de diamante
+<&recipe>La herramienta REDIA es una multiherramienta duradera de nivel diamante para trabajos de campo en instalaciones temporales, talleres y entradas de minas.<br>
+<br>
+Uso: Utilízala mientras llevas antorchas para colocar una del inventario sin desgastar REDIA. Úsala agachado para cortar plantas o alternar el suelo entre tierra, tierra de cultivo, tierra infértil y camino de tierra. La acción original de hacha se aplica como alternativa desde la cara inferior. Agáchate al romper troncos para talar los bloques conectados del árbol.<br>
+<br>
+Repárala con diamantes. Superar la reparación máxima de una herramienta REDIA totalmente reparada recupera la progresión original de Eficiencia y Fortuna.

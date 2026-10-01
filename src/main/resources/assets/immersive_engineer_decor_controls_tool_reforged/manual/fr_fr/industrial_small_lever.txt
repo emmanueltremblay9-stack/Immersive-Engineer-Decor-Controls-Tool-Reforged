@@ -1,0 +1,7 @@
+Levier de contact
+Commande redstone
+<&recipe>Une commande compacte offre un point de commutation redstone clairement identifiable dans une usine.<br>
+<br>
+Utilisation : faites un clic droit pour activer ou désactiver une sortie à puissance maximale destinée aux circuits voisins.<br>
+<br>
+Remarque : émet un signal de redstone à puissance maximale tant qu'il est activé.

@@ -1,0 +1,5 @@
+Elektroofn
+Kloane Verarbeitungseinheit
+<&recipe>Da Elektroofn erledigt kloane Schmelzarbeiten mit FE-Energie und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Führ FE und gültigs Schmelzmaterial zua.<br>

@@ -1,0 +1,5 @@
+Tehaseheitja
+Töökoja abiseade
+<&recipe>See plokk väljastab salvestatud esemeid suunatud esipinnalt.<br>
+<br>
+Kasutamine: Suuna esikülg väljastuspunkti, täida sisemised pesad ning seadista ekraanil jõud, nurk, viivitus, filtriloogika ja redstone'i režiim.<br>

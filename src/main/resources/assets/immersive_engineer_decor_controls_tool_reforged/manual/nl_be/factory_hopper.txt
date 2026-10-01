@@ -1,0 +1,5 @@
+Fabriekstrechter
+Hulpmiddel voor de fabrieksvloer
+<&recipe>Dit blok verplaatst voorwerpstapels door een compacte industriële behuizing.<br>
+<br>
+Gebruik: richt het op de inventarislijn en stel bereik, aantal stapels, timing en redstonemodus in op het scherm.<br>

@@ -1,0 +1,3 @@
+Grosse poudraille de fèr
+Matériau d'outil d'anjénieur empllayë par l'ensembll de fezerie reconstruit.
+<&recipe>Peut étr fondue en moches de<br>fèr, meins ne convient pouint ao<br>tratements avancés des matériaux.

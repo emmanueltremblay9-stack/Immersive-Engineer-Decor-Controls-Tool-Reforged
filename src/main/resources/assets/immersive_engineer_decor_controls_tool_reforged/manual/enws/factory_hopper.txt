@@ -1,0 +1,5 @@
+Manufactory Conveyer
+Convenience for the Workshop Floor
+<&recipe>This block moves stacks of items through a close-fitting manufactory case.<br>
+<br>
+Use: Face it towards the inventory line, then set reach, stack count, timing and redstone mode in its window.<br>

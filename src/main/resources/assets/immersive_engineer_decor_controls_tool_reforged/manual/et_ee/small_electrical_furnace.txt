@@ -1,0 +1,5 @@
+Elektriahi
+Kompaktne töötlusseade
+<&recipe>Elektriahi teeb kompaktselt FE-energiaga sulatustöid väikesel töökojapinnal.<br>
+<br>
+Kasutamine: Lisa FE-energiat ja sobivat sulatusmaterjali.<br>

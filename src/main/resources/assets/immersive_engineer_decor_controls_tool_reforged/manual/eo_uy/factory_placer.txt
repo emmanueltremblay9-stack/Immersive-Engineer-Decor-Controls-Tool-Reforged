@@ -1,0 +1,5 @@
+Fabrika blokmetilo
+Metieja helpilo
+<&recipe>Ĉi tiu bloko metas blokojn el sia interna stoko kiam ĝi estas aktivigita.<br>
+<br>
+Uzado: direktu la laborflankon al la celspaco kaj enmetu meteblajn stakojn.<br>

@@ -1,0 +1,7 @@
+Rustik falldetektor
+Signalavkänning
+<&recipe>En kontaktbrytare skickar en kort signal vid rörelse på golvet eller genom en fallucka.<br>
+<br>
+Användning: Placera den där entiteter passerar genom en servicegång, lastare eller bevakad väg.<br>
+<br>
+Anmärkning: Ger en kort puls efter kontakt med en entitet.

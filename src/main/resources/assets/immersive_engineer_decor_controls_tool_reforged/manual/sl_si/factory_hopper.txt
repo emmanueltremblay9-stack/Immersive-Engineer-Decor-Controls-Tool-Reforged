@@ -1,0 +1,5 @@
+Tovarniški lijak
+Tovarniški pripomoček
+<&recipe>Ta blok premika sklade predmetov skozi kompaktnejše industrijsko ohišje.<br>
+<br>
+Uporaba: Usmeri ga proti vrsti inventarjev, nato v vmesniku nastavi doseg, število skladov, časovne nastavitve in način redstone.<br>

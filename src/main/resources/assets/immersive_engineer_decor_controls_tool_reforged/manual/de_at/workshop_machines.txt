@@ -1,0 +1,107 @@
+Werkstattmaschinen
+Maschinen und Werkstattein- und -ausgänge
+Werkstattmaschinen erledign Herstellung, Gegnstandstransport, Schmelzen, Entsorgen, Sammeln und Hüfsarbeitn auf da Fläche von oan Block.<br>
+<br>
+Auf de folgenden Seiten findest für jede Maschin Rezept, Büdl, Hintergrund und praktische Verwendungshinweise.
+<np>
+Stahltisch
+Werkstatteinrichtung
+<&steel_table>Der Block is a praktische Werkstatteinrichtung für Arbeitsräume und Wartungseckn.<br>
+<br>
+Verwendung: Stell eam neben Werkbänke, Kistn und kompakte Maschinen.<br>
+<np>
+Tisch aus imprägniertem Hoiz
+Werkstatteinrichtung
+<&treated_wood_table>Der Block is a praktische Werkstatteinrichtung für Arbeitsräume und Wartungseckn.<br>
+<br>
+Verwendung: Stell eam neben Werkbänke, Kistn und kompakte Maschinen.<br>
+<np>
+Stockerl aus imprägniertem Hoiz
+Werkstatteinrichtung
+<&treated_wood_stool>Der Block is a praktische Werkstatteinrichtung für Arbeitsräume und Wartungseckn.<br>
+<br>
+Verwendung: Stell eam neben Werkbänke, Kistn und kompakte Maschinen.<br>
+<np>
+Metallwerkbonk
+Arbeitsplotz für Plottn
+<&metal_crafting_table>De Metallwerkbonk is a verstärkter Arbeitsplotz mit Hommafoch, 3x3-Hondwerksfeld und klarem Ausgangsfoch.<br>
+<br>
+Verwendung: Nimm des Feld fürs normale Hondwerk. Für IE-Plottn steck an Ingenieurshomma ins Werkzeigfoch und des Plottnmaterial ins Feld, bevorst's Ergebnis herausnimmst. Stahldekorationen brauchen Stahlplottn für Pfostn, Laufstege, Fensta, Tirn, Geländer und weitere Stahlteile.<br>
+<np>
+Fabrik-Trichta
+Hüfsgerät für de Werkstatt
+<&factory_hopper>Der Block bewegt Gegnstandsstapl durch a engers Industrieghäus.<br>
+<br>
+Verwendung: Richt eam zur Inventarstreckn aus und stöll Reichweite, Staplmenge, Zeitverhalten und Redstone-Modus in da Oberfläche ein.<br>
+<np>
+Fabrik-Auswerfa
+Hüfsgerät für de Werkstatt
+<&factory_dropper>Der Block gibt gespeicherte Gegnständ aus ana ausgrichteten Seitn aus.<br>
+<br>
+Verwendung: Richt de Vorderseitn zum Auswurfpunkt, füll de Fächa und stöll Kraft, Winkl, Verzögerung, Filterlogik und Redstone-Modus in da Oberfläche ein.<br>
+<np>
+Fabrik-Blocksetza
+Hüfsgerät für de Werkstatt
+<&factory_placer>Der Block setzt beim Aktivieren Blöcke aus seinem eigenen Vorrat.<br>
+<br>
+Verwendung: Richt de Arbeitsseitn aufn Zielraum und füll setzbore Stapl ein.<br>
+<np>
+Blockbrecha
+Hüfsgerät für de Werkstatt
+<&small_block_breaker>Da kloane Blockbrecha is a Werkstatthüfsblock für Herstellung, Lagern, Setzn, Obbau, Sammeln oda kompakte Automation.<br>
+<br>
+Verwendung: Richt de Arbeitsseitn auf den Block, der weg soll.<br>
+<np>
+Müllverbrennungsanlog
+Kompakte Verarbeitungseinheit
+<&small_waste_incinerator>De Müllverbrennungsanlog vernichtet unerwünschte Gegnständ auf wenig Werkstattfläche.<br>
+<br>
+Verwendung: Gib nur unerwünschte Gegnständ in ihre Warteschlange.<br>
+<np>
+Laborofn
+Kompakte Verarbeitungseinheit
+<&small_lab_furnace>Da Laborofn erledigt Schmelzarbeitn mit Festbrennstoff auf wenig Werkstattfläche.<br>
+<br>
+Verwendung: Nimm Festbrennstoff für kloane Schmelzchargen.<br>
+<np>
+Elektroofn
+Kompakte Verarbeitungseinheit
+<&small_electrical_furnace>Da Elektroofn erledigt FE-betriebene Schmelzarbeitn auf wenig Werkstattfläche.<br>
+<br>
+Verwendung: Führ FE-Energie und passends Schmelzgut zu.<br>
+<np>
+Mineralschmelzer
+Kompakte Verarbeitungseinheit
+<&small_mineral_smelter>Da Mineralschmelzer verarbeitet Mineralien bei hoher Temperatur auf wenig Werkstattfläche.<br>
+<br>
+Verwendung: Führ Mineralblöcke und Energie für heiße Schmelzarbeitn zu.<br>
+<np>
+Wossagefrierer
+Kompakte Verarbeitungseinheit
+<&small_freezer>Da Wossagefrierer erledigt kompakte Kühlarbeitn in energieversorgten Flüssigkeitsanlogn.<br>
+<br>
+Verwendung: Gib eam Wossa und Energie, damit Eis stufenweise entsteht.<br>
+<np>
+Passive Flüssigkeitssammlung
+Bauteil für Flüssigkeitsleitungen
+<&passive_fluid_accumulator>Da passive Flüssigkeitssammla is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setz eam an passende Wossaquelln und lass Plotz für de Flüssigkeitsentnahme.<br>
+<np>
+Solarpaneel
+Hüfsgerät für de Werkstatt
+<&small_solar_panel>Des kloane Solarpaneel is a Werkstatthüfsblock für Herstellung, Lagern, Setzn, Obbau, Sammeln oda kompakte Automation.<br>
+<br>
+Verwendung: Gib eam freien Himmel und schließ Geräte mit wenig Verbrauch on.<br>
+<np>
+Melkmaschin
+Hüfsgerät für de Werkstatt
+<&small_milking_machine>De kloane Melkmaschin is a Werkstatthüfsblock für Herstellung, Lagern, Setzn, Obbau, Sammeln oda kompakte Automation.<br>
+<br>
+Verwendung: Setz's zu de Küah und sorg dafür, dass Müchbehälter oda Flüssigkeit herauskumman.<br>
+<np>
+Bamfälla
+Hüfsgerät für de Werkstatt
+<&small_tree_cutter>Da kloane Bamfälla is a Werkstatthüfsblock für Herstellung, Lagern, Setzn, Obbau, Sammeln oda kompakte Automation.<br>
+<br>
+Verwendung: Richt eam auf ausgewachsene Bama und sammel de Beute extra ein.<br>

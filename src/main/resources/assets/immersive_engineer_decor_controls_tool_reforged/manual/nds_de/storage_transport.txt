@@ -1,0 +1,41 @@
+Lager un Transport
+Lager- un Flussdeelen
+Lager- un Transportdeelen sünd Kisten, Fatten, Trächters un Ventile för lütte Fabrikwegen.<br>
+<br>
+Bruuk disse Sieden, wenn du Lagerruum, Röhrenwegen, Wartoongstanks un regelte Flüssigkeitsleitungen anleggst.
+<np>
+Kist mit Opschrift
+Ännerbare Lageropschrift
+<&labeled_crate>Disse Kist mit Opschrift is för kloor Sorteren in't Lager maakt. Ehr Vörplaat lett sik as en lütt Wiärksteedschild ännern.<br>
+<br>
+Bruuk: Rechtsklick op de Schillerplaat, üm de Kistenopschrift to ännern. Rechtsklick op den Rest vun de Kist, üm dat Lager för Anbuudeelen, Parts un Wartoongsgood optomaken.<br>
+<np>
+Flüssigkeitsfatt
+Deelen för Flüssigkeitsleitungen
+<&fluid_barrel>Dit Deel is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Sett dat dor, wo Röhren oder Emmers an de Tanksiet rankaamt.<br>
+<np>
+Flüssigkeitsträchter
+Deelen för Flüssigkeitsleitungen
+<&small_fluid_funnel>De lütte Flüssigkeitssammelträchter is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Sett em ünner de Flüssigkeitssammelsteed un föhr sien spiekerten Inholl na Tanks oder Röhren nerrn.<br>
+<np>
+Rückflussventiel för Flüssigkeitsröhren
+Deelen för Flüssigkeitsleitungen
+<&straight_pipe_valve>Dat Rückflussventiel för Flüssigkeitsröhren is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Richt dat Ventiel na de wünschte Flussrichtung ut.<br>
+<np>
+Redstone-Flüssigkeitsventiel
+Deelen för Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone>Dat Redstone-stüerte Flüssigkeitsventiel is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Richt dat Ventiel na de wünschte Flussrichtung ut.<br>
+<np>
+Analog Flüssigkeitsventiel
+Deelen för Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone_analog>Dat analoge Redstone-Flüssigkeitsventiel is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Richt dat Ventiel na de wünschte Flussrichtung ut.<br>

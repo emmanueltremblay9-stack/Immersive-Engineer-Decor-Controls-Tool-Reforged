@@ -1,0 +1,5 @@
+Ceduľa magnetického poľa
+Značka nebezpečenstva
+<&recipe>Ceduľa „Pozor, silné magnetické pole“ označuje nebezpečenstvá, východy a pracovné zóny zrozumiteľným továrenským bezpečnostným značením.<br>
+<br>
+Použitie: Umiestni ju pri nebezpečných miestach, východoch, strojoch a zónach s obmedzeným vstupom.<br>

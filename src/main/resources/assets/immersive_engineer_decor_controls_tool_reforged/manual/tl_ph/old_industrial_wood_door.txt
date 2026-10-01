@@ -1,0 +1,5 @@
+Pinto ng Lumang Kahoy ng Pabrika
+Lumang kahoy ng pagawaan
+<&recipe>Nagdaragdag ang blokeng ito ng lumang kahoy ng pagawaan para sa sahig, baytang, pinto at maaliwalas na gilid sa loob.<br>
+<br>
+Paggamit: Gamitin para sa lumang sahig, hagdanan, pinto at gilid ng pagawaan.<br>

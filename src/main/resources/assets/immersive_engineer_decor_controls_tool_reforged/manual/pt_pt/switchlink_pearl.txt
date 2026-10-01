@@ -1,0 +1,7 @@
+Pérola de ligação de interruptor
+Controlo vinculado
+<&recipe>Uma pérola vinculada guarda um recetor de destino para controlos remotos de fábrica.<br>
+<br>
+Uso: Clica com uma pérola do Ender num recetor de ligação de interruptor para criá-la. Usa a pérola vinculada agachado para acionar o recetor guardado.<br>
+<br>
+Observações: O destino deve estar carregado, na mesma dimensão e dentro do alcance.

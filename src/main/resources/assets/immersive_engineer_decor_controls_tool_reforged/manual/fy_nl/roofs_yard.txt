@@ -1,0 +1,101 @@
+Dakken en hiem
+Fabryksûnderdielen foar bûten
+Dakblokken, grús foar hiemen en âlde yndustriële houtûnderdielen helpe om bûtenskuorren, wurkhiemen, laadterreinen en ferware fabryksrânen ôf te wurkjen.<br>
+<br>
+Kombinearje dizze ûnderdielen mei mitselwurk en tagongsrûtes, sadat yndustriële gebouwen bûten ek fan fier ôf dúdlik bliuwe.
+<np>
+Donker skingeldak
+Ferware dakûnderdiel
+<&dark_shingle_roof>Dit blok makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Dak-sniefanger
+Ferware dakûnderdiel
+<&dark_shingle_roof_metallized>De sniefanger foar donker skingeldak makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Donker skingeldak
+Ferware dakûnderdiel
+<&dark_shingle_roof_skylight>It dakfinster foar donker skingeldak makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Dak-skoarstienstam
+Ferware dakûnderdiel
+<&dark_shingle_roof_chimneytrunk>De skoarstienstam foar donker skingeldak makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Triedkanaal foar it dak
+Ferware dakûnderdiel
+<&dark_shingle_roof_wireconduit>It triedkanaal foar donker skingeldak makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Donker skingeldak
+Ferware dakûnderdiel
+<&dark_shingle_roof_chimney>De skoarstien foar donker skingeldak makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Blok fan donker skingeldak
+Ferware dakûnderdiel
+<&dark_shingle_roof_block>Dit blok makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Plaat fan donker skingeldak
+Ferware dakûnderdiel
+<&dark_shingle_roof_slab>Dit blok makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Plaat fan donker skingeldak
+Ferware dakûnderdiel
+<&dark_shingle_roof_slabslice>De tinne laach fan donker skingeldak makket donkere, praktyske daklinen foar wurkpleatsen en yndustriële skuorren.<br>
+<br>
+Gebrûk: Brûk de ûnderdielen byinoar om oannimlike dakfoarmen te meitsjen.<br>
+<np>
+Fertichte grúsierde
+Grûnbedekking foar wurkterreinen
+<&dense_grit_dirt_block>Dit blok jout wurkplakken bûten in ferticht, fertrape oerflak.<br>
+<br>
+Gebrûk: Lis it om laaddoarren, bûtentanks en masinehiemen hinne.<br>
+<np>
+Ferticht grússân
+Grûnbedekking foar wurkterreinen
+<&dense_grit_sand_block>Dit blok jout wurkplakken bûten in ferticht, fertrape oerflak.<br>
+<br>
+Gebrûk: Lis it om laaddoarren, bûtentanks en masinehiemen hinne.<br>
+<np>
+Alde houten planken
+Ferâldere wurkpleatshout
+<&old_industrial_wood_planks>De âlde yndustriële houten planken foegje ferâldere wurkpleatshout ta foar flierren, treden, doarren en waarme ynterieurôfwerking.<br>
+<br>
+Gebrûk: Brûk it foar âlde wurkpleatsflierren, treppen, doarren en rânen.<br>
+<np>
+Plaat fan âld yndustrieel hout
+Ferâldere wurkpleatshout
+<&old_industrial_wood_slab>Dit blok foeget ferâldere wurkpleatshout ta foar flierren, treden, doarren en waarme ynterieurôfwerking.<br>
+<br>
+Gebrûk: Brûk it foar âlde wurkpleatsflierren, treppen, doarren en rânen.<br>
+<np>
+Alde houten trep
+Ferâldere wurkpleatshout
+<&old_industrial_wood_stairs>De trep fan âld yndustrieel hout foeget ferâldere wurkpleatshout ta foar flierren, treden, doarren en waarme ynterieurôfwerking.<br>
+<br>
+Gebrûk: Brûk it foar âlde wurkpleatsflierren, treppen, doarren en rânen.<br>
+<np>
+Tinne laach âld hout
+Ferâldere wurkpleatshout
+<&old_industrial_wood_slabslice>De tinne laach âld yndustrieel hout foeget ferâldere wurkpleatshout ta foar flierren, treden, doarren en waarme ynterieurôfwerking.<br>
+<br>
+Gebrûk: Brûk it foar âlde wurkpleatsflierren, treppen, doarren en rânen.<br>
+<np>
+Alde yndustriële houten doar
+Ferâldere wurkpleatshout
+<&old_industrial_wood_door>Dit blok foeget ferâldere wurkpleatshout ta foar flierren, treden, doarren en waarme ynterieurôfwerking.<br>
+<br>
+Gebrûk: Brûk it foar âlde wurkpleatsflierren, treppen, doarren en rânen.<br>

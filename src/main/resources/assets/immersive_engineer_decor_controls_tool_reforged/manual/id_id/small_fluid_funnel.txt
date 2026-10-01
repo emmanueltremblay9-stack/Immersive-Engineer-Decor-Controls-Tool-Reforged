@@ -1,0 +1,5 @@
+Corong Cairan
+Perlengkapan jalur cairan
+<&recipe>Corong cairan kecil adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: letakkan di bawah titik pengumpulan cairan dan alirkan isi tersimpannya ke tangki atau pipa yang lebih rendah.<br>

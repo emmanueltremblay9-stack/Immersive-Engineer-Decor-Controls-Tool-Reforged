@@ -1,0 +1,7 @@
+İzləyici
+Saxlanmış mövqe nişanı
+<&recipe>İzləyici blok mövqeyini birbaşa əşyada saxlayır.<br>
+<br>
+İstifadə: Ölçünü və koordinatları saxlamaq üçün bloka klikləyin. Məsləhət saxlanmış mövqeyi göstərir. Hədəfi silmək üçün İzləyicini əyilərək istifadə edin.<br>
+<br>
+Alətlər və materiallarla qayıtmazdan əvvəl maşınları, tunel qollarını, uzaq idarəetmələri və ya yarımçıq tikintiləri nişanlamaq üçün istifadə edin.

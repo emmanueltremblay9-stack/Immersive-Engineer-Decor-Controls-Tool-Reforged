@@ -1,0 +1,5 @@
+Válvula de líquidos de redstone
+Accesorios de conducción de líquidos
+<&recipe>La válvula de líquidos de redstone ye un elementu compactu de conducción de líquidos pa depósitos pequeños, tendíos de tuberíes, puntos de recoyida y control del caudal por redstone.<br>
+<br>
+Usu: allinia la válvula cola direición deseada del caudal.<br>

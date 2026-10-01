@@ -1,0 +1,5 @@
+Packed gritty filth
+Ground cover fer a worksite
+<&recipe>This block gives yer outdoor works a hard-packed, well-trodden surface.<br>
+<br>
+Orders: Lay her round loading doors, outdoor tanks and machine yards.<br>

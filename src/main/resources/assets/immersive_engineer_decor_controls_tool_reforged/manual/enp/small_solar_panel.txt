@@ -1,0 +1,5 @@
+Sunmight Board
+Workshop-floor helper
+<&recipe>The Small Sunmight Board is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Give it open sky and link gear that needs little might.<br>

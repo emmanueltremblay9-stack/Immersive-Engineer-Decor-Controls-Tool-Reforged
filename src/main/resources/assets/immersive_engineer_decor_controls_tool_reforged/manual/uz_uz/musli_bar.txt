@@ -1,0 +1,5 @@
+Aralash musli quvvat batonchasi
+Tez ustaxona yeguligi
+<&recipe>Muslee Melange batonchasi non, urug va mevadan tayyorlangan ixcham ovqatdir.<br>
+<br>
+Boshqaruv, quvur, platforma yoki uzun mashina qatorlarini ornatishda yeng.

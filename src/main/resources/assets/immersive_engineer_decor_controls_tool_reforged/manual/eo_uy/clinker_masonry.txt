@@ -1,0 +1,161 @@
+Klinkero kaj masonaĵo
+Brikaj kaj betonaj ŝeloj
+Klinkero, skoriobrikoj, armita betono kaj kirasvitro provizas pezajn surfacojn por varmaj ĉambroj, metiejoj kaj protektitaj vidlinioj.<br>
+<br>
+Uzu la kongruajn ŝtupojn, ŝtuparojn, tavoletojn kaj murojn por fini randojn sen ŝanĝi la materialan stilon de la fabriko.
+<np>
+Klinkerbrika bloko
+Fulge malhela brikaĵo
+<&clinker_brick_block>Ĉi tiu bloko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Klinkerbrika ŝtupo
+Fulge malhela brikaĵo
+<&clinker_brick_slab>Ĉi tiu bloko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Klinkerbrika ŝtuparo
+Fulge malhela brikaĵo
+<&clinker_brick_stairs>Ĉi tiu bloko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Klinkerbrika muro
+Fulge malhela brikaĵo
+<&clinker_brick_wall>Ĉi tiu bloko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Makulita klinkerbloko
+Fulge malhela brikaĵo
+<&clinker_brick_stained_block>La makulita klinkerbrika bloko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Makulita klinkerŝtupo
+Fulge malhela brikaĵo
+<&clinker_brick_stained_slab>La makulita klinkerbrika ŝtupo aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Makulita klinkerŝtuparo
+Fulge malhela brikaĵo
+<&clinker_brick_stained_stairs>La makulita klinkerbrika ŝtuparo aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Ornamita klinkerbriko
+Fulge malhela brikaĵo
+<&clinker_brick_sastor_corner_block>La grejse ornamita klinkerbriko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Enprofundigita klinkerbriko
+Fulge malhela brikaĵo
+<&clinker_brick_recessed>Ĉi tiu bloko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Fenditaj klinkerbrikoj
+Fulge malhela brikaĵo
+<&clinker_brick_vertically_slit>La vertikale fenditaj klinkerbrikoj aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Vertikala klinkerŝtupo
+Fulge malhela brikaĵo
+<&clinker_brick_vertical_slab_structured>La reliefa vertikala klinkerŝtupo aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Klinkerbrika tavoleto
+Fulge malhela brikaĵo
+<&halfslab_clinker_brick>Ĉi tiu bloko aldonas fulge malhelan brikaĵon al fornhaloj, kamentubbazoj kaj prizorgaj muroj.<br>
+<br>
+Uzado: uzu ĝin kiel muron, borderon aŭ varmozonan ŝelon ĉirkaŭ fornoj kaj kaldronoj.<br>
+<np>
+Skoriobrika bloko
+Densa fabrika masonaĵo
+<&slag_brick_block>Ĉi tiu bloko aldonas densan grizbrunan masonaĵon por fundamentoj, apogmuroj kaj pli malnovaj laborŝedoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj fundamentoj, apogmuroj kaj malpuraj fabrikplankoj.<br>
+<np>
+Skoriobrika ŝtupo
+Densa fabrika masonaĵo
+<&slag_brick_slab>Ĉi tiu bloko aldonas densan grizbrunan masonaĵon por fundamentoj, apogmuroj kaj pli malnovaj laborŝedoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj fundamentoj, apogmuroj kaj malpuraj fabrikplankoj.<br>
+<np>
+Skoriobrika ŝtuparo
+Densa fabrika masonaĵo
+<&slag_brick_stairs>Ĉi tiu bloko aldonas densan grizbrunan masonaĵon por fundamentoj, apogmuroj kaj pli malnovaj laborŝedoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj fundamentoj, apogmuroj kaj malpuraj fabrikplankoj.<br>
+<np>
+Skoriobrika muro
+Densa fabrika masonaĵo
+<&slag_brick_wall>Ĉi tiu bloko aldonas densan grizbrunan masonaĵon por fundamentoj, apogmuroj kaj pli malnovaj laborŝedoj.<br>
+<br>
+Uzado: uzu ĝin por malnovaj fundamentoj, apogmuroj kaj malpuraj fabrikplankoj.<br>
+<np>
+Armita betona bloko
+Armita betono
+<&rebar_concrete>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Armita betona ŝtupo
+Armita betono
+<&rebar_concrete_slab>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Armita betona ŝtuparo
+Armita betono
+<&rebar_concrete_stairs>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Armita betona muro
+Armita betono
+<&rebar_concrete_wall>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Armita betona tavoleto
+Armita betono
+<&halfslab_rebar_concrete>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Armita betona kahelo
+Armita betono
+<&rebar_concrete_tile>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Armita betona kahelŝtupo
+Armita betono
+<&rebar_concrete_tile_slab>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Armita betona kahelo
+Armita betono
+<&rebar_concrete_tile_stairs>La armita betona kahelŝtuparo estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>
+<np>
+Kirasvitra bloko
+Protektita vidlinio
+<&panzerglass_block>Ĉi tiu bloko tenas vidliniojn liberaj kaj samtempe kongruas kun plifortigita fabrika konstruado.<br>
+<br>
+Uzado: uzu ĝin kie ludantoj devus vidi maŝinojn tra protekta barilo.<br>
+<np>
+Kirasvitra ŝtupo
+Protektita vidlinio
+<&panzerglass_slab>Ĉi tiu bloko tenas vidliniojn liberaj kaj samtempe kongruas kun plifortigita fabrika konstruado.<br>
+<br>
+Uzado: uzu ĝin kie ludantoj devus vidi maŝinojn tra protekta barilo.<br>

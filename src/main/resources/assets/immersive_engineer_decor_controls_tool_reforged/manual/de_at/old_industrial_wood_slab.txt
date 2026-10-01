@@ -1,0 +1,5 @@
+Oide Fabrikhoizstufn
+Oids Werkstatthoiz
+<&recipe>Der Block bringt oids Werkstatthoiz für Bödn, Tritt, Tirn und warme Inneneinfassungen.<br>
+<br>
+Verwendung: Nimm eam für oide Werkstattbödn, Treppn, Tirn und Einfassungen.<br>

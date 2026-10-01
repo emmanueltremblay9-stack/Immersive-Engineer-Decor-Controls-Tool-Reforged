@@ -1,0 +1,5 @@
+Kaste ar etiķeti
+Rediģējama krājumu etiķete
+<&recipe>Šī kaste ar etiķeti paredzēta skaidrai noliktavas krājumu šķirošanai. Priekšējo plāksnīti var rediģēt kā nelielu darbnīcas zīmi.<br>
+<br>
+Lietošana: noklikšķini uz etiķetes plāksnītes ar labo peles pogu, lai rediģētu kastes etiķeti. Noklikšķini uz pārējās kastes, lai atvērtu aprīkojuma, detaļu un apkopes krājumu glabātavu.<br>

@@ -1,0 +1,107 @@
+Werkstattmaschinen
+Maschinen und Werkstatt-Ein-/Ausgab
+Werkstattmaschinen bieten Handweak, Gegenstandstransport, Schmelzn, Entsorgung, Sammeln und Hilfsarbeit auf'm Platz vo oam Block.<br>
+<br>
+Mach de folgenden Seiten auf, dann findst zu jeder Maschin s'Rezept, s'Bild, Hintergrund und praktische Nutzungshinweise.
+<np>
+Stahltisch
+Werkstattmöbl
+<&steel_table>Der Block is a praktisches Werkstattmöbl fia Arbeitsräum und Wartungseckn.<br>
+<br>
+So geht's: Stell'n nebn Werkbänk, Kistn und kloane Maschinen.<br>
+<np>
+Tisch aus behandltem Hoiz
+Werkstattmöbl
+<&treated_wood_table>Der Block is a praktisches Werkstattmöbl fia Arbeitsräum und Wartungseckn.<br>
+<br>
+So geht's: Stell'n nebn Werkbänk, Kistn und kloane Maschinen.<br>
+<np>
+Hocka aus behandltem Hoiz
+Werkstattmöbl
+<&treated_wood_stool>Der Block is a praktisches Werkstattmöbl fia Arbeitsräum und Wartungseckn.<br>
+<br>
+So geht's: Stell'n nebn Werkbänk, Kistn und kloane Maschinen.<br>
+<np>
+Metallwerkbank
+Plattnwerkstatt
+<&metal_crafting_table>De Metallwerkbank is a verstärkte Werkstattstation mit Hammafach, am 3x3-Handweaksraster und am klar erkennbaren Ausgabfach.<br>
+<br>
+So geht's: Nutz s'Raster fia normales Handweak. Fia IE-Plattn legst an Ingenieurshamma ins Werkzeigfach und s'Plattnmaterial ins Raster, bevorsd s'Ergebnis nimmst. Stahlverzierunga brauchn Stahlplattn fia Pfeila, Laufsteg, Fensta, Tiern, Geländer und andere Stahlteil.<br>
+<np>
+Fabriktrichta
+Werkstatthilf
+<&factory_hopper>Der Block verschiebt Gegenstandsstapl durch a engeres Industrieghäus.<br>
+<br>
+So geht's: Richt'n zur Lagerlinie und stell dann Reichweit, Staplanzahl, Zeiten und Redstone-Art im Menü ei.<br>
+<np>
+Fabrikspenda
+Werkstatthilf
+<&factory_dropper>Der Block gibt glagerte Sachn durch a ausgerichtete Seit aus.<br>
+<br>
+So geht's: Richt d'Vorderseit auf'n Ausgabpunkt, füll d'innern Fächer und stell Kraft, Winkl, Verzögerung, Filterlogik und Redstone-Art im Menü ei.<br>
+<np>
+Fabrikblocksetza
+Werkstatthilf
+<&factory_placer>Der Block setzt Blöck aus seim innern Vorrat, wenn er aktiviert wird.<br>
+<br>
+So geht's: Richt d'Arbeitsseit auf'n Zielraum und füll setzbare Stapl ei.<br>
+<np>
+Blockbrecha
+Werkstatthilf
+<&small_block_breaker>Da kloana Blockbrecha is a Werkstatthilfsblock fia Handweak, Lagerung, Setzn, Abbrechn, Sammeln oder kloane Automatisierung.<br>
+<br>
+So geht's: Richt d'Arbeitsseit auf den Block, der weg soll.<br>
+<np>
+Müllverbrennofn
+Kloane Verarbeitungseinheit
+<&small_waste_incinerator>Da Müllverbrennofn vernichtet unerwünschte Sachn und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Gib bloß Sachn in sei Warteschlang, de weg solln.<br>
+<np>
+Laborofn
+Kloane Verarbeitungseinheit
+<&small_lab_furnace>Da Laborofn erledigt kloane Schmelzarbeiten mit festem Brennstoff und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Nimm festen Brennstoff fia kloane Schmelzladungen.<br>
+<np>
+Elektroofn
+Kloane Verarbeitungseinheit
+<&small_electrical_furnace>Da Elektroofn erledigt kloane Schmelzarbeiten mit FE-Energie und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Führ FE und gültigs Schmelzmaterial zua.<br>
+<np>
+Mineralschmelzer
+Kloane Verarbeitungseinheit
+<&small_mineral_smelter>Da Mineralschmelzer verarbeitet Mineralien bei hoher Hitz und braucht wenig Werkstattplatz.<br>
+<br>
+So geht's: Führ Mineralblöck und Energie fia heiße Schmelzarbeit zua.<br>
+<np>
+Wossagefriera
+Kloane Verarbeitungseinheit
+<&small_freezer>Da Wossagefriera erledigt kloane Kühlaufgaben fia strombetriebene Flüssigkeitsanlagn.<br>
+<br>
+So geht's: Führ Wossa und Energie zua, dann entsteht Eis in Stufn.<br>
+<np>
+Passive Flüssigkeit
+Bauteil fia Flüssigkeitsleitungen
+<&passive_fluid_accumulator>Da passive Flüssigkeitssammler is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Setz'n an passende Wossaquellen und lass Platz zum Abnehma vo da Flüssigkeit.<br>
+<np>
+Solarpaneel
+Werkstatthilf
+<&small_solar_panel>S'kloane Solarpaneel is a Werkstatthilfsblock fia Handweak, Lagerung, Setzn, Abbrechn, Sammeln oder kloane Automatisierung.<br>
+<br>
+So geht's: Gib ihm freien Himmelszugang und schließ Geräte mit wenig Verbrauch o.<br>
+<np>
+Melkmaschin
+Werkstatthilf
+<&small_milking_machine>De kloane Melkmaschin is a Werkstatthilfsblock fia Handweak, Lagerung, Setzn, Abbrechn, Sammeln oder kloane Automatisierung.<br>
+<br>
+So geht's: Setz's in d'Näh vo Küah und sorg dafür, dass Millibehälter oder Flüssigkeit abgholt werdn.<br>
+<np>
+Baamfälla
+Werkstatthilf
+<&small_tree_cutter>Da kloana Baamfälla is a Werkstatthilfsblock fia Handweak, Lagerung, Setzn, Abbrechn, Sammeln oder kloane Automatisierung.<br>
+<br>
+So geht's: Richt'n auf ausgewachsene Baam und sammel de runtergfallenen Sachn extra ei.<br>

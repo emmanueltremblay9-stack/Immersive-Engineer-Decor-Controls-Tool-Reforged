@@ -1,0 +1,5 @@
+Tafel van behandeld hout
+Werkplaatsmeubilair
+<&recipe>Dit blok is een praktisch meubelstuk voor werkruimtes en onderhoudshoeken.<br>
+<br>
+Gebruik: zet het naast werkbanken, kisten en compacte machines.<br>

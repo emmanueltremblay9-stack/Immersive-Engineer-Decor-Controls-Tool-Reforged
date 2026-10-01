@@ -1,0 +1,7 @@
+Blockdetektor
+Signalavkänning
+<&recipe>En blockdetektor kontrollerar om utrymmet framför den är upptaget.<br>
+<br>
+Användning: Rikta den mot maskinytan, bufferten eller det bevakade utrymmet som ska övervakas.<br>
+<br>
+Anmärkning: Ger signal när blocket framför den inte är luft.

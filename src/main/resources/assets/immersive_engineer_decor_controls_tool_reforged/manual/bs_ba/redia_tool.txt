@@ -1,0 +1,7 @@
+Alat REDIA
+Korisnost obložena dijamantom
+<&recipe>Alat REDIA je izdržljivi višenamjenski alat dijamantskog kvaliteta za terenski rad oko privremenih gradilišta, radionica i rudničkih ulaza.<br>
+<br>
+Upotreba: Upotrijebite ga dok nosite baklje da postavite jednu baklju iz inventara bez trošenja REDIA alata. Koristite ga tokom šunjanja za striženje biljaka ili promjenu tla između zemlje, polja, grube zemlje i zemljanog puta. Izvorna zamjenska radnja sjekire primjenjuje se s donje strane. Šunjajte se dok razbijate trupce da oborite povezane blokove stabla.<br>
+<br>
+Popravljajte ga dijamantima. Popravljanje potpuno popravljenog REDIA alata preko pune izdržljivosti vraća izvornu progresiju Produktivnosti i Sreće.

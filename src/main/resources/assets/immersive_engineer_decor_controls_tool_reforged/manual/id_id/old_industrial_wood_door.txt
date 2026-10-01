@@ -1,0 +1,5 @@
+Pintu Kayu Industri Tua
+Kayu bengkel tua
+<&recipe>Blok ini menambahkan kayu bengkel tua untuk lantai, anak tangga, pintu, dan lis interior yang hangat.<br>
+<br>
+Penggunaan: gunakan untuk lantai bengkel tua, tangga, pintu, dan lis.<br>

@@ -1,0 +1,5 @@
+Podpora stebra iz obdelanega lesa
+Del nosilnega ogrodja
+<&recipe>Podpora ravnega stebra iz obdelanega lesa daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>

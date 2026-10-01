@@ -1,0 +1,5 @@
+Portiella de malla d’aceru
+Pieza d’accesu de serviciu
+<&recipe>Esti bloque forma pasos de serviciu fáciles d’identificar alredor de la maquinaria.<br>
+<br>
+Usu: colócalu como accesu de caltenimientu alredor de máquines, pisos altos y pozos de serviciu.<br>

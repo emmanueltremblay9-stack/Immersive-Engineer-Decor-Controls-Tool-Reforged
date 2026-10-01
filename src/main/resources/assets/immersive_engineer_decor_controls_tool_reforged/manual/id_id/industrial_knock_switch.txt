@@ -1,0 +1,7 @@
+Sakelar Ketukan
+Kendali Redstone
+<&recipe>Komponen kendali ringkas memberi bangunan pabrik titik sakelar redstone yang jelas.<br>
+<br>
+Penggunaan: klik kanan untuk mengganti keadaan keluaran berkekuatan penuh bagi rangkaian di dekatnya.<br>
+<br>
+Catatan: mengeluarkan redstone berkekuatan penuh saat menyala.

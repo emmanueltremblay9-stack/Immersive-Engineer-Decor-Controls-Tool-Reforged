@@ -1,6 +1,8 @@
 Accessways
 Walkways and supports
-Steel poles, treated posts, grating, catwalks, railings, ladders, doors, and hatches form compact service routes through factory interiors.<br>
+Steel poles, treated posts, grating, catwalks, railings, ladders, doors, windows, and hatches form compact service routes through factory interiors.<br>
+<br>
+Steel accessway parts use steel plates. Craft or place a Metal Crafting Table, insert an Immersive Engineering hammer, then hammer steel ingots into steel plates for poles, catwalks, windows, doors, railings, and other steel decorations.<br>
 <br>
 Place them where machines need service access, elevated paths, maintenance shafts, or safer edges.
 <np>
@@ -110,7 +112,7 @@ Steel Framed Window
 Protected sightline
 <&steel_framed_window>This block keeps sightlines open while still matching reinforced factory construction.<br>
 <br>
-Usage: Use it where players should see machinery through a protected barrier.<br>
+Usage: Place it in a 1-block wall opening where players should see machinery through a protected barrier.<br>
 <np>
 Metal Sliding Door
 Industrial access point

@@ -1,0 +1,7 @@
+Light Watcher
+Sensing tokens
+<&recipe>A light watcher turns nearby brightness into redstone ruling.<br>
+<br>
+Use: Run self-starting lights, shutters and sight-driven loops.<br>
+<br>
+Mind: Sends might at raw brightness 8 or higher.

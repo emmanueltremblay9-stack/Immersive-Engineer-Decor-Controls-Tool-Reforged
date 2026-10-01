@@ -1,0 +1,5 @@
+Bar egni Muslee Melange
+Byrbryd gweithdy cyflym
+<&recipe>Bwyd cryno o fara, hadau a ffrwythau.<br>
+<br>
+Defnydd: Bwytewch wrth osod rheolyddion, pibellau, llwyfannau neu linellau peiriannau hir.

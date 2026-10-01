@@ -1,0 +1,7 @@
+Công tắc so sánh
+Tín hiệu từ khối gắn vào
+<&recipe>Công tắc cảm biến gọn đọc khối mà nó gắn lên rồi biến kết quả thành đầu ra đơn giản trên bảng.<br>
+<br>
+Cách dùng: Gắn lên kho đồ, bể hoặc thiết bị redstone. Khi khối được gắn vào báo đầu ra bộ so sánh, thùng chứa hoặc redstone, công tắc phát redstone cường độ tối đa.<br>
+<br>
+Ghi chú: Dùng để biến mức lưu trữ hoặc dây dẫn ẩn thành tuyến điều khiển bật/tắt rõ ràng.

@@ -1,0 +1,5 @@
+Verksmiðjuútspýtari
+Hjálpartól á verkstaðargólvinum
+<&recipe>Hesin kubbin sendir goymdar lutir út gjøgnum eina síðu, ið er vend móti málinum.<br>
+<br>
+Nýtsla: Vend framsíðuni móti útspýtingarstaðnum, fyll innbygdu plássini og stilla kraft, vinkul, seinkan, sílulogikk og reyðgrýtishátt á skerminum.<br>

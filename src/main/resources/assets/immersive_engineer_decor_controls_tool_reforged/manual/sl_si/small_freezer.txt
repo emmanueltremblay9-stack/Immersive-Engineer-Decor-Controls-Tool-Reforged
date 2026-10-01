@@ -1,0 +1,5 @@
+Zamrzovalnik vode
+Kompaktna obdelovalna enota
+<&recipe>Zamrzovalnik vode opravlja kompaktno hlajenje za napajane sisteme s fluidi.<br>
+<br>
+Uporaba: Dovajaj vodo in energijo za postopno proizvodnjo ledu.<br>

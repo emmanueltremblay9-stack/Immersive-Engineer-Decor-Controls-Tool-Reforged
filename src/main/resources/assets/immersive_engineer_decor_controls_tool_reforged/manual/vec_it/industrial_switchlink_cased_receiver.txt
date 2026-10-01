@@ -1,0 +1,7 @@
+Ricevidor de ligamento in cassa
+Comanda ligada
+<&recipe>Un ricevidor ligà in cassa el dà ai panełi distanti un bersałio de redstone robusto.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Fa clic a destra direto sul ricevidor par canbiarghe stato a man.<br>
+<br>
+Da saver: na perla ligada ła canbia el stato de sto ricevidor quando te ła dòpari stando cucà.

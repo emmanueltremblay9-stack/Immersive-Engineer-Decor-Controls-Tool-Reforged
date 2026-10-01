@@ -1,0 +1,7 @@
+Alçapão de impacto
+Pulso por pressão
+<&recipe>Um interruptor de contacto envia um sinal breve com o movimento no piso ou no alçapão.<br>
+<br>
+Uso: Coloca onde entidades passam por um corredor de serviço, carregador ou rota protegida.<br>
+<br>
+Observações: Emite um pulso breve após o contacto com uma entidade.

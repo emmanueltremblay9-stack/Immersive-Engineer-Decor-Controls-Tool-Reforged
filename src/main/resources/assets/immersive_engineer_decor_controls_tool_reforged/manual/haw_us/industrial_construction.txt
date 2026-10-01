@@ -1,0 +1,108 @@
+Kūkulu Halehana
+Nā pā halehana a me nā kae hoʻonani
+Uhi nā lako kūkulu laulā i nā puka, nā puka aniani, nā kukui, nā hōʻailona makaʻala, nā kae hoʻonani, a me nā ʻāpana kūkulu ʻaʻole no kekahi māhele kikoʻī aʻe.<br>
+<br>
+E hoʻohana i kēia mau ʻaoʻao no nā lumi halehana, nā ala mālama, ke kaha pōʻino, a me nā kikoʻī halehana pono.
+<np>
+Kukui ʻŌpuʻu Hao
+Kukui hana paʻapu
+<&iron_bulb_light>Hāʻawi kēia palaka i ka mālamalama halehana paʻapu no nā ala, nā ala hele kiʻekiʻe, a me nā wahi hana.<br>
+<br>
+Hoʻohana: E kau ma nā kaupaku, nā pā, a me nā kae kahi e pono ai ka lumi i ka mālamalama hana mōakāka.<br>
+<np>
+Kukui Kae Kaupaku
+Kukui hana paʻapu
+<&iron_ceiling_edge_light>Hāʻawi kēia palaka i ka mālamalama halehana paʻapu no nā ala, nā ala hele kiʻekiʻe, a me nā wahi hana.<br>
+<br>
+Hoʻohana: E kau ma nā kaupaku, nā pā, a me nā kae kahi e pono ai ka lumi i ka mālamalama hana mōakāka.<br>
+<np>
+Kukui Kae Papahele Hoʻokomo Hohonu
+Kukui hana paʻapu
+<&iron_floor_edge_light>Hāʻawi kēia palaka i ka mālamalama halehana paʻapu no nā ala, nā ala hele kiʻekiʻe, a me nā wahi hana.<br>
+<br>
+Hoʻohana: E kau ma nā kaupaku, nā pā, a me nā kae kahi e pono ai ka lumi i ka mālamalama hana mōakāka.<br>
+<np>
+Kukui Hoʻokomo Hohonu
+Kukui hana paʻapu
+<&iron_inset_light>Hāʻawi kēia palaka i ka mālamalama halehana paʻapu no nā ala, nā ala hele kiʻekiʻe, a me nā wahi hana.<br>
+<br>
+Hoʻohana: E kau ma nā kaupaku, nā pā, a me nā kae kahi e pono ai ka lumi i ka mālamalama hana mōakāka.<br>
+<np>
+Hōʻailona "E Makaʻala
+Hōʻailona pōʻino
+<&sign_caution>Kaha ka Hōʻailona "E Makaʻala", Hōʻailona Makaʻala, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona Pōʻino
+Hōʻailona pōʻino
+<&sign_danger>Kaha ka Hōʻailona "E Makaʻala, Pōʻino Loa Ma ʻŌ", Hōʻailona Pōʻino, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona Hoʻonani
+Hōʻailona pōʻino
+<&sign_decor>Kaha ka Papa Hōʻailona (Hoʻonani ʻEnekinia), Hōʻailona Hoʻonani, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona Pale
+Hōʻailona pōʻino
+<&sign_defense>Kaha ka Hōʻailona "E Makaʻala, He ʻŌnaehana Pale Ma Mua", Hōʻailona Pale, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona Puka
+Hōʻailona pōʻino
+<&sign_exit>Kaha kēia hōʻailona i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona "Hōʻailona Pōʻino Ahi
+Hōʻailona pōʻino
+<&sign_firehazard>Kaha ka Hōʻailona "Pōʻino Ahi", Hōʻailona Pōʻino Ahi, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona "Hōʻailona Makaʻala i ka Hau
+Hōʻailona pōʻino
+<&sign_frost>Kaha ka Hōʻailona "E Makaʻala i ka Hau", Hōʻailona Makaʻala i ka Hau, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona ʻIli Wela
+Hōʻailona pōʻino
+<&sign_hotsurface>Kaha ka Hōʻailona "E Makaʻala, ʻIli Wela", Hōʻailona ʻIli Wela, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona Uea Uila
+Hōʻailona pōʻino
+<&sign_hotwire>Kaha ka Hōʻailona "E Makaʻala, Uea Uila", Hōʻailona Uea Uila, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona "Hōʻailona Pōʻino Kukuna Lēkā
+Hōʻailona pōʻino
+<&sign_laser>Kaha ka Hōʻailona "Pōʻino Kukuna Lēkā", Hōʻailona Pōʻino Kukuna Lēkā, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona Pōʻino Kupua
+Hōʻailona pōʻino
+<&sign_magichazard>Kaha ka Hōʻailona "E Makaʻala, Pōʻino Kupua", Hōʻailona Pōʻino Kupua, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona Kahua Mākēneki
+Hōʻailona pōʻino
+<&sign_magneticfield>Kaha ka Hōʻailona "E Makaʻala, Kahua Mākēneki Ikaika", Hōʻailona Kahua Mākēneki, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>
+Hōʻailona "Pōʻino Pāhawewe
+Hōʻailona pōʻino
+<&sign_radioactive>Kaha ka Hōʻailona "Pōʻino Pāhawewe", Hōʻailona Pāhawewe, i nā pōʻino, nā puka, a me nā wahi hana me ka hōʻailona ʻike palekana no ka halehana.<br>
+<br>
+Hoʻohana: E kau ma ka ʻaoʻao o nā pōʻino, nā puka, nā mīkini, a me nā wahi kapu.<br>
+<np>

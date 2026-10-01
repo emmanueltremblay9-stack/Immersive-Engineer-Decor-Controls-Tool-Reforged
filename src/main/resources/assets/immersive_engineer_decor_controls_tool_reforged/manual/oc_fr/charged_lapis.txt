@@ -1,0 +1,7 @@
+Lapislazuli cargat
+Experiéncia servada
+<&recipe>Lo Lapislazuli cargat sèrva un nivèl d’experiéncia creat per l’Espremedor mental.<br>
+<br>
+Utilizacion : consoma-lo per recuperar un nivèl, suprimir los efièches actius e te rendre un pauc de santat.<br>
+<br>
+Lo modul de recèpta mòstra l’Espremedor mental, perque lo Lapislazuli cargat se produsís en utilizant aquesta aisina amb de lapislazuli e d’XP disponibles.

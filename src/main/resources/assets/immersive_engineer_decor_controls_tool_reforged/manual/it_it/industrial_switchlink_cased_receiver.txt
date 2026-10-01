@@ -1,0 +1,7 @@
+Ricevitore di collegamento incassato
+Comando collegato
+<&recipe>Un ricevitore di collegamento incassato offre ai pannelli remoti un bersaglio redstone robusto.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Fai clic destro direttamente sul ricevitore per commutarlo a mano.<br>
+<br>
+Note: la perla collegata commuta questo ricevitore quando viene usata da accovacciato.

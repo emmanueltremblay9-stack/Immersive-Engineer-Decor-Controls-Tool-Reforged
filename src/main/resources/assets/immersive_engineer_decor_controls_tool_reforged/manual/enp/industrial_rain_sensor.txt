@@ -1,0 +1,7 @@
+Rain Watcher
+Sensing tokens
+<&recipe>A weather watcher turns rainfall where it stands into redstone.<br>
+<br>
+Use: Fix it where rain can reach the clot above.<br>
+<br>
+Mind: Checks for rain above the watcher.

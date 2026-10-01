@@ -1,0 +1,7 @@
+Orë ditore
+Sinjal drite ditore
+<&recipe>Një çelës me kohëmatës ndjek pjesën ditore të ciklit të botës.<br>
+<br>
+Përdorimi: përdore për llamba oborri, grila dhe kontrolle fabrike që punojnë vetëm ditën.<br>
+<br>
+Shënim: kërkon një dimension me dritë qielli.

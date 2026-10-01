@@ -1,0 +1,107 @@
+Máquinas de obradoiro
+Máquinas e entradas/saídas de obradoiro
+As máquinas de obradoiro permiten fabricar, mover obxectos, fundir, eliminar, recoller e realizar tarefas auxiliares no espazo compacto dun só bloque.<br>
+<br>
+Abre as páxinas seguintes para consultar a receita, a imaxe, a ambientación e as notas de uso práctico de cada máquina.
+<np>
+Mesa de aceiro
+Mobiliario de obradoiro
+<&steel_table>Este bloque é un moble práctico de obradoiro para salas de traballo e recunchos de mantemento.<br>
+<br>
+Uso: colócao xunto a bancos de traballo, caixóns e máquinas compactas.<br>
+<np>
+Mesa de madeira tratada
+Mobiliario de obradoiro
+<&treated_wood_table>Este bloque é un moble práctico de obradoiro para salas de traballo e recunchos de mantemento.<br>
+<br>
+Uso: colócao xunto a bancos de traballo, caixóns e máquinas compactas.<br>
+<np>
+Banqueta de madeira tratada
+Mobiliario de obradoiro
+<&treated_wood_stool>Este bloque é un moble práctico de obradoiro para salas de traballo e recunchos de mantemento.<br>
+<br>
+Uso: colócao xunto a bancos de traballo, caixóns e máquinas compactas.<br>
+<np>
+Mesa de traballo do metal
+Posto de fabricación de placas
+<&metal_crafting_table>A mesa de traballo do metal é un posto reforzado de obradoiro cunha rañura para o martelo, unha grella de fabricación de 3x3 e unha rañura de saída ben diferenciada.<br>
+<br>
+Uso: usa a grella para a fabricación normal. Para facer placas de IE, coloca un martelo do enxeñeiro na rañura de ferramenta e o material da placa na grella antes de recoller o resultado. As decoracións de aceiro usan placas de aceiro para postes, pasarelas, ventás, portas, varandas e outras pezas de aceiro.<br>
+<np>
+Funil de fábrica
+Equipamento de planta
+<&factory_hopper>Este bloque move pilas de obxectos dentro dunha carcasa industrial máis compacta.<br>
+<br>
+Uso: oriéntao cara á liña de inventarios e axusta o alcance, a cantidade da pila, os tempos e o modo de redstone na pantalla.<br>
+<np>
+Lanzador de fábrica
+Equipamento de planta
+<&factory_dropper>Este bloque libera obxectos almacenados pola cara á que apunta.<br>
+<br>
+Uso: orienta o frontal cara ao punto de saída, enche as rañuras internas e axusta a forza, o ángulo, o atraso, a lóxica do filtro e o modo de redstone na pantalla.<br>
+<np>
+Colocador de bloques de fábrica
+Equipamento de planta
+<&factory_placer>Este bloque coloca bloques das existencias internas cando se activa.<br>
+<br>
+Uso: apunta a cara de traballo cara ao espazo de destino e introduce pilas que se poidan colocar.<br>
+<np>
+Rompebloques
+Equipamento de planta
+<&small_block_breaker>O rompebloques pequeno é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: orienta a cara de traballo cara ao bloque que queiras retirar.<br>
+<np>
+Incinerador de residuos
+Unidade compacta de procesamento
+<&small_waste_incinerator>O incinerador de residuos destrúe os obxectos que non queres nun espazo reducido de obradoiro.<br>
+<br>
+Uso: introduce na cola só obxectos que non queiras conservar.<br>
+<np>
+Forno de laboratorio
+Unidade compacta de procesamento
+<&small_lab_furnace>O forno de laboratorio fai traballos de fundición con combustible sólido nun espazo reducido de obradoiro.<br>
+<br>
+Uso: usa combustible sólido para fundir pequenas tandas.<br>
+<np>
+Forno eléctrico
+Unidade compacta de procesamento
+<&small_electrical_furnace>O forno eléctrico fai traballos de fundición alimentados con FE nun espazo reducido de obradoiro.<br>
+<br>
+Uso: subministra FE e materiais de entrada aptos para fundir.<br>
+<np>
+Forno de fusión de minerais
+Unidade compacta de procesamento
+<&small_mineral_smelter>O forno de fusión de minerais procesa minerais a alta temperatura nun espazo reducido de obradoiro.<br>
+<br>
+Uso: achega bloques minerais e enerxía para os traballos de fusión a alta temperatura.<br>
+<np>
+Conxelador de auga
+Unidade compacta de procesamento
+<&small_freezer>O conxelador de auga fai traballos compactos de arrefriamento para instalacións de fluídos con alimentación eléctrica.<br>
+<br>
+Uso: subministra auga e enerxía para producir xeo por etapas.<br>
+<np>
+Fluídos pasivos
+Equipamento de tubaxes de fluídos
+<&passive_fluid_accumulator>O acumulador pasivo de fluídos é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: colócao contra fontes de auga axeitadas e deixa espazo para extraer o fluído.<br>
+<np>
+Panel solar
+Equipamento de planta
+<&small_solar_panel>O panel solar pequeno é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: dálle acceso ao ceo aberto e conecta equipamento de baixo consumo.<br>
+<np>
+Muxidora
+Equipamento de planta
+<&small_milking_machine>A muxidora pequena é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: colócaa preto das vacas e proporciona unha vía para retirar os recipientes de leite ou o fluído.<br>
+<np>
+Talador de árbores
+Equipamento de planta
+<&small_tree_cutter>O talador de árbores pequeno é un bloque de equipamento de planta para fabricación, almacenamento, colocación, rotura, recollida ou automatización compacta.<br>
+<br>
+Uso: apunta cara a árbores medradas e recolle os obxectos obtidos por separado.<br>

@@ -1,0 +1,99 @@
+Engineer's Tools
+Portable workshop gear
+The Engineer's Tools set adds handheld equipment, mine markers, emergency consumables, field food, and small material-processing aids to the same manual that covers the decor and control blocks.<br>
+<br>
+These tools are meant for work away from a fully equipped shop: mark the route, carry supplies, recover from mistakes, and finish small processing jobs on site.
+<np>
+REDIA Tool
+Diamond-covered utility
+<&redia_tool>The REDIA Tool is a durable field utility for quick ground work. Use it on workable soil to till farmland.<br>
+<br>
+Use it against a stable face while carrying torches to place a torch marker from your inventory without wearing REDIA. Ground work, shearing, axe work, and tree felling consume durability.
+<np>
+Ore Crushing Hammer
+Hand crushing tool
+<&crushing_hammer>The Ore Crushing Hammer is a manual processing tool for early iron and gold work.<br>
+<br>
+Usage: Craft it with raw iron, raw gold, iron ore, deepslate iron ore, gold ore, or deepslate gold ore to produce Immersive Engineering iron or gold dust. The hammer takes durability damage and returns to the crafting grid until it breaks.<br>
+<br>
+It also wears down from mining and can knock targets back in close combat.
+<np>
+Tracker
+Stored position marker
+<&tracker>The Tracker stores a block position directly in the item.<br>
+<br>
+Usage: Click a block to save its dimension and coordinates. The tooltip shows the stored position. Sneak-use the Tracker to clear the target.<br>
+<br>
+Use it to mark machines, tunnel branches, remote controls, or unfinished construction sites before returning with tools and materials.
+<np>
+Ariadne Coal
+Mine route marker
+<&ariadne_coal>Ariadne Coal places quick black arrow route markers on stable mine faces. Use it on a solid face to mark the next turn, exit, or branch point; the marker supports eight clicked-face directions, including diagonals.<br>
+<br>
+Ariadne Coal is a reusable 100-use marker tool. Each successful marker placement costs one durability. It refuses unsupported faces instead of wearing the item.
+<np>
+Auto Stim Pack
+Emergency injector
+<&stimpack>The Auto Stim Pack is an emergency recovery item for dangerous maintenance work.<br>
+<br>
+Usage: Use it manually to heal, gain brief protection, and get a short movement boost. When carried in inventory, it can also trigger automatically at low health, then enters cooldown.<br>
+<br>
+Keep one available before testing high places, exposed wiring, or hostile mine routes.
+<np>
+Sleeping Bag
+Portable rest kit
+<&sleeping_bag>The Sleeping Bag is a weatherproof rest kit for field work far from a bed.<br>
+<br>
+Usage: Use it at night in the Overworld to rest until morning. It does not set or move your spawn point.<br>
+<br>
+The bag refuses daytime use, unsafe surroundings with nearby monsters, and dimensions that are not suitable for a safe field rest. Each successful rest wears the bag.
+<np>
+Material Storage Box
+Construction supply box
+<&material_box>The Material Storage Box carries a large reserve of one plain, unmodified stackable construction material.<br>
+<br>
+Usage: Hold the box in the main hand and a material stack in the offhand to load that material into the box. Use the box with an empty offhand to pull one stack back out.<br>
+<br>
+The box holds up to 512 items, keeps only one material type at a time, rejects nested boxes, non-stackable gear, and modified named or data-bearing stacks, and reports its stored contents in the tooltip.
+<np>
+Diving Air Capsule
+Emergency air reserve
+<&diving_capsule>The Diving Air Capsule is an emergency air item for underwater work.<br>
+<br>
+Usage: Use it manually to restore air. When carried in inventory, it can also trigger automatically when air is nearly gone, then enters cooldown.<br>
+<br>
+Carry it for flooded mines, submerged pipe runs, and pump-room repairs.
+<np>
+Muslee Bar Press
+Food press
+<&musli_bar_press>The Muslee Bar Press turns common food supplies into compact field rations.<br>
+<br>
+Usage: Carry bread, an apple, and wheat, melon, pumpkin, beetroot, or Industrial Hemp seeds, then use the press. A successful press consumes one of each ingredient, checks that the output can fit, creates four Muslee Melange Power Bars, and damages the press.<br>
+<br>
+If an ingredient is missing or the inventory has no room for the bars, nothing is consumed.
+<np>
+Muslee Melange Power Bar
+Fast shop snack
+<&musli_bar>The Muslee Melange Power Bar is a compact food item made from bread, seeds, and fruit.<br>
+<br>
+Usage: Eat it as field food while placing controls, pipes, platforms, or long machine-room runs.
+<np>
+Mind Squeezer
+Experience condenser
+<&charged_lapis_squeezer>The Mind Squeezer converts one lapis lazuli and one experience level from your inventory into Charged Lapis.<br>
+<br>
+The process hurts, exhausts, and briefly blinds the user on every successful conversion. It refuses to run without lapis, without XP, or when the user is too close to death.
+<np>
+Charged Lapis
+Stored experience
+<&charged_lapis>Charged Lapis stores one experience level. Consume it to restore the level, clear active effects, and recover a small amount of health.<br>
+<br>
+Craft a Mind Squeezer first; Charged Lapis is produced by using that tool with lapis and XP available.
+<np>
+Coarse Iron Grit
+Engineer tool material used by the reconstructed crafting set.
+<&iron_grit>Can be smelted to iron ingots,<br> but is not suitable for advanced<br> material processing.
+<np>
+Coarse Gold Grit
+Engineer tool material used by the reconstructed crafting set.
+<&gold_grit>Can be smelted to gold ingots,<br> but is not suitable for advanced<br> material processing.

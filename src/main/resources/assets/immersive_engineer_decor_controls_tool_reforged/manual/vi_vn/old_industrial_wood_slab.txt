@@ -1,0 +1,5 @@
+Phiến gỗ công nghiệp cũ
+Gỗ xưởng cũ
+<&recipe>Khối này thêm gỗ xưởng cũ cho sàn, bậc, cửa và viền nội thất ấm áp.<br>
+<br>
+Cách dùng: Dùng cho sàn xưởng cũ, cầu thang, cửa và viền.<br>

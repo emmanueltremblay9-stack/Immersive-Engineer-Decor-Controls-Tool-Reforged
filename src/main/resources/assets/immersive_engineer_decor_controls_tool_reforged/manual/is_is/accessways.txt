@@ -1,0 +1,127 @@
+Aðkomuleiðir
+Gönguleiðir og stoðir
+Stálstaurar, meðhöndlaðir viðarstaurar, ristar, göngubrýr, handrið, stigar, hurðir, gluggar og lúgur mynda fyrirferðarlitlar þjónustuleiðir um verksmiðjur.<br>
+<br>
+Stálhlutar aðkomuleiða nota stálplötur. Smíðaðu eða settu niður málmsmíðabekk, settu í hann Immersive Engineering-hamar og hamraðu síðan stálhleifa í stálplötur fyrir staura, göngubrýr, glugga, hurðir, handrið og aðrar stálskreytingar.<br>
+<br>
+Settu hlutana þar sem vélar þurfa þjónustuaðgang, upphækkaðar leiðir, viðhaldssköft eða öruggari brúnir.
+<np>
+Þykkur stálstaur
+Burðargrindarhluti
+<&thick_steel_pole>Beini þykki stálstaurinn veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Höfuð á þykkan staur
+Burðargrindarhluti
+<&thick_steel_pole_head>Höfuð/fótur á beinan þykkan stálstaur veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Þunnur stálstaur
+Burðargrindarhluti
+<&thin_steel_pole>Beini þunni stálstaurinn veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Höfuð á þunnan staur
+Burðargrindarhluti
+<&thin_steel_pole_head>Höfuð/fótur á beinan þunnan stálstaur veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Staur úr meðhöndluðum viði
+Burðargrindarhluti
+<&treated_wood_pole>Beini staurinn úr meðhöndluðum viði veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Höfuð á meðhöndlaðan staur
+Burðargrindarhluti
+<&treated_wood_pole_head>Höfuð/fótur á beinan staur úr meðhöndluðum viði veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Stoð á meðhöndlaðan staur
+Burðargrindarhluti
+<&treated_wood_pole_support>Stoðin á beinan staur úr meðhöndluðum viði veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Tvöföld T-stoð úr stáli
+Burðargrindarhluti
+<&steel_double_t_support>Þessi kubbur veitir sýnilegan burð í vélasölum og aðkomugrindum.<br>
+<br>
+Notkun: Snúðu honum og settu sem sýnilega styrkingu fyrir bita, staura og pallbrúnir.<br>
+<np>
+Stálgólfrist
+Þjónustuaðgangshluti
+<&steel_floor_grating>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Stálgöngubrú
+Þjónustuaðgangshluti
+<&steel_catwalk>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Stálgöngubrúartröppur
+Þjónustuaðgangshluti
+<&steel_catwalk_stairs>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Upphækkuð stálgöngubrú
+Þjónustuaðgangshluti
+<&steel_catwalk_ta>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Stálhandrið
+Þjónustuaðgangshluti
+<&steel_railing>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Stálnetsgirðing
+Þjónustuaðgangshluti
+<&steel_mesh_fence>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Stálnetshlið
+Þjónustuaðgangshluti
+<&steel_mesh_fence_gate>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Stigi með málmþrepum
+Þjónustuaðgangshluti
+<&metal_rung_ladder>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Víxluð málmþrep
+Þjónustuaðgangshluti
+<&metal_rung_steps>Þessi kubbur myndar greinilegar þjónustuleiðir umhverfis vélar.<br>
+<br>
+Notkun: Settu hann sem viðhaldsaðgang umhverfis vélar, efri hæðir og þjónustusköft.<br>
+<np>
+Gluggi með stálramma
+Varið útsýni
+<&steel_framed_window>Þessi kubbur heldur sjónlínum opnum og fellur samt að styrktum verksmiðjubyggingum.<br>
+<br>
+Notkun: Settu hann í 1 kubbs op á vegg þar sem leikmenn eiga að sjá vélar í gegnum varið skilrúm.<br>
+<np>
+Málmrennihurð
+Iðnaðaraðgangur
+<&metal_sliding_door>Þessi kubbur veitir sterkbyggðan aðgang að þjónusturýmum, sköftum, þökum og vélahúsum.<br>
+<br>
+Notkun: Settu hann þar sem byggingin þarf stýrt viðhaldsop.<br>
+<np>
+Járnlúga
+Iðnaðaraðgangur
+<&iron_hatch>Þessi kubbur veitir sterkbyggðan aðgang að þjónusturýmum, sköftum, þökum og vélahúsum.<br>
+<br>
+Notkun: Settu hann þar sem byggingin þarf stýrt viðhaldsop.<br>

@@ -1,0 +1,5 @@
+Scânduri vechi de lemn
+Lemn de atelier învechit
+<&recipe>Scândurile industriale vechi adaugă lemn de atelier învechit pentru podele, trepte, uși și ornamente interioare cu aspect cald.<br>
+<br>
+Utilizare: Folosește-l pentru podele, scări, uși și ornamente de atelier vechi.<br>

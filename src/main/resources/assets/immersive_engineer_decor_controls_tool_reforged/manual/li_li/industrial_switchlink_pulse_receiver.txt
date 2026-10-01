@@ -1,0 +1,7 @@
+Pulskóppelingsontvanger
+Gekóppelde bediening
+<&recipe>Ein gekóppelde pulsontvanger geuf panele op aafstand ein korte redstoneactivatie.<br>
+<br>
+Gebroek: klik mèt ein enderpaerel um ein gekóppelde paerel te maake. Rechtsklik d'rop of activeer de gekóppelde paerel um ein korte puls te gaeve.<br>
+<br>
+Opmerking: de puls geit nao zien geplande duur vanzelf trök.

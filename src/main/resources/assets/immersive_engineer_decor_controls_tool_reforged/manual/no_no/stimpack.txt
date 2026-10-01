@@ -1,0 +1,5 @@
+Automatisk stimpakke
+Nødinjektor
+<&recipe>Den automatiske stim-pakken er et nødverktøy for farlig vedlikehold.<br>
+<br>
+Bruk den manuelt for å helbrede, få kort beskyttelse og en kort fartsøkning. I beholdningen utløses den automatisk ved lav helse og går deretter på nedkjøling. Ha én klar på farlige steder.

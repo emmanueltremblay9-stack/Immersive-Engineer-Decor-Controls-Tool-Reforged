@@ -1,0 +1,5 @@
+Incineradora de residuos
+Unidad compacta de procesamiento
+<&recipe>La incineradora de residuos destruye objetos no deseados y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Introducí en su cola únicamente objetos que no quieras conservar.<br>

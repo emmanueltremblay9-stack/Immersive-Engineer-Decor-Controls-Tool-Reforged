@@ -1,0 +1,5 @@
+Ronilačka vazdušna kapsula
+Zaliha vazduha za nuždu
+<&recipe>Ronilačka kapsula je rezervni vazduh za rad pod vodom.<br>
+<br>
+Koristite je ručno da obnovite vazduh. U inventaru se automatski aktivira kada vazduha skoro nestane, pa ulazi u hlađenje. Nosite je u poplavljene rudnike i do potopljenih cevi.

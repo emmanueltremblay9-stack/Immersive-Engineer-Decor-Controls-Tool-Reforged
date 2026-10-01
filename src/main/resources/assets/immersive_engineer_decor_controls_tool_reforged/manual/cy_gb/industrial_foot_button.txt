@@ -1,0 +1,7 @@
+Botwm Troed
+Rheoli Redstone
+<&recipe>Mae switsh cyswllt yn anfon signal byr o symudiad llawr neu ddrws cudd.<br>
+<br>
+Defnydd: Gosodwch ef lle mae endidau'n pasio drwy eil wasanaethu, llwythwr neu lwybr gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n rhoi pwls byr ar ôl cyswllt ag endid.

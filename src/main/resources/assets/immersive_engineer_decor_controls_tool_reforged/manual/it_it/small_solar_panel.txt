@@ -1,0 +1,5 @@
+Pannello solare
+Attrezzatura per la fabbrica
+<&recipe>Il piccolo pannello solare appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: esponilo al cielo aperto e collegalo ad apparecchiature a basso consumo.<br>

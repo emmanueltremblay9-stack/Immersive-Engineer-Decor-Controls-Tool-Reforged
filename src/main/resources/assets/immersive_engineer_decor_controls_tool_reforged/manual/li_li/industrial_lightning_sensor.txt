@@ -1,0 +1,7 @@
+Ónweerdetector
+Signaolwaorneming
+<&recipe>Ein ónweersensor sjtuurt waarsjoewinge bie donder.<br>
+<br>
+Gebroek: zèt 'm ónger de ope himmel en verbind 'm mèt lampe of alarm.<br>
+<br>
+Opmerking: haet donder en vriej zich op de himmel neudig.

@@ -1,0 +1,7 @@
+Skleněný intervalový signál
+Časovaný impulz
+<&recipe>Kompaktní časový spínač poskytuje naplánovaný redstonový impulz.<br>
+<br>
+Použití: Hodí se tam, kde malý mechanismus potřebuje pravidelné nebo zpožděné ovládání.<br>
+<br>
+Poznámky: Používá plánované redstonové impulzy.

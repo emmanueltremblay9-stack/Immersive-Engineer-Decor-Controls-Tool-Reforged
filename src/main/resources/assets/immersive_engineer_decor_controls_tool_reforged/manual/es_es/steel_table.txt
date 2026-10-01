@@ -1,0 +1,5 @@
+Mesa de acero
+Mobiliario de taller
+<&recipe>Este bloque es un mueble práctico para salas de trabajo y rincones de mantenimiento.<br>
+<br>
+Uso: Colócalo junto a bancos de trabajo, cajones y máquinas compactas.<br>

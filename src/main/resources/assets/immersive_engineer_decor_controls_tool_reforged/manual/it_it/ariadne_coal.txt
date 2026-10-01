@@ -1,0 +1,7 @@
+Carbone di Arianna
+Indicatore di percorso in miniera
+<&recipe>Il carbone di Arianna segna rapidamente percorsi in pozzi, miniere a gallerie e cantieri sotterranei temporanei.<br>
+<br>
+Uso: usalo su una faccia stabile di un blocco per collocare una freccia nera su quel lato. L’indicatore legge il punto del clic e supporta otto direzioni, comprese le diagonali, per segnalare svolte, uscite, vicoli ciechi e percorsi di rifornimento senza portare cartelli separati.<br>
+<br>
+Il carbone di Arianna è un utensile riutilizzabile con 100 utilizzi. Ogni indicatore posato consuma un punto di durabilità; le facce non supportate vengono rifiutate senza usurare l’oggetto.

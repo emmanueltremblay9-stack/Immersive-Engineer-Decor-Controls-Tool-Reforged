@@ -1,0 +1,7 @@
+Caixa de materials
+Subministraments de construcció
+<&recipe>Porta una gran reserva d'un sol material normal, sense modificar i apilable.<br>
+<br>
+Ús: Caixa a la mà principal i material a la secundària per carregar. Amb la secundària buida, extreu una pila.<br>
+<br>
+Admet 512 objectes d'un tipus i rebutja caixes niades, equip no apilable i piles modificades; el contingut apareix a la descripció.

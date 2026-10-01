@@ -1,0 +1,7 @@
+Switsh Cymharydd
+Signal cysylltiedig
+<&recipe>Mae switsh synhwyro cryno yn darllen y bloc y mae wedi'i osod arno ac yn troi'r darlleniad hwnnw yn allbwn panel syml.<br>
+<br>
+Defnydd: Gosodwch ef ar restrau eiddo, tanciau neu offer Redstone. Pan fo'r bloc cysylltiedig yn adrodd allbwn cymharydd, cynhwysydd neu Redstone, mae'r switsh yn allbynnu Redstone ar gryfder llawn.<br>
+<br>
+Nodiadau: Defnyddiwch ef i droi lefelau storio neu wifrau cudd yn llinellau rheoli ymlaen/i ffwrdd clir.

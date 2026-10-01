@@ -1,0 +1,7 @@
+Cloc eadar-amail
+Puls le àm suidhichte
+<&recipe>Bheir suidse cloc-ama dhlùth puls redstone clàraichte.<br>
+<br>
+Cleachdadh: cleachd i far a bheil feum aig uidheam beag air smachd cunbhalach no le dàil.<br>
+<br>
+Nòtaichean: cleachdaidh i pulsaichean redstone clàraichte.

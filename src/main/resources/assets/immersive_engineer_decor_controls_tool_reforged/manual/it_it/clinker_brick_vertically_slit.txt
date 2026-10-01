@@ -1,0 +1,5 @@
+Mattoni di clinker fessurati
+Muratura annerita dalla fuliggine
+<&recipe>I mattoni di clinker con fessure verticali portano muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>

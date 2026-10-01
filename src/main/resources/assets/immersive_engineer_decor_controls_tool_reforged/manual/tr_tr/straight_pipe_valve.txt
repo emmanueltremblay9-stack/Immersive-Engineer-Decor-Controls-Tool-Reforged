@@ -1,0 +1,5 @@
+Sıvı Borusu Çekvalfi
+Sıvı hattı donanımı
+<&recipe>Sıvı çekvalfi; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Vanayı istenen akış yönüne hizalayın.<br>

@@ -1,0 +1,5 @@
+Aruncător de fabrică
+Echipament util în hală
+<&recipe>Acest bloc eliberează obiectele stocate printr-o față orientată spre țintă.<br>
+<br>
+Utilizare: Orientează partea frontală spre punctul de eliberare, încarcă sloturile interne și reglează forța, unghiul, întârzierea, logica filtrului și modul redstone în ecranul său.<br>

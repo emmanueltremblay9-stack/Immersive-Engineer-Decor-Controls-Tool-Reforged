@@ -1,0 +1,7 @@
+Blinkin' white LED
+Signal reported back
+<&recipe>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.

@@ -1,0 +1,5 @@
+Bhalbh lionna analagach
+Uidheam loidhne lionna
+<&recipe>Tha am Bhalbh lionna analagach na phàirt dhlùth de loidhne-lionna airson tancaichean beaga, sreathan phìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: co-thaobhaich am bhalbh ris an treo srutha a tha thu ag iarraidh.<br>

@@ -1,0 +1,789 @@
+sꞁoɹʇuoƆ ǝuoʇspǝᴚ
+sᵷuᴉʇʇᴉɟ ꞁɐuᵷᴉs puɐ sǝᵷnɐ⅁
+˙sᵷuᴉʇʇᴉɟ ꞁɐuᵷᴉs pǝʞuᴉꞁ puɐ 'sɯɹɐꞁɐ 'sǝɥɔʇᴉʍs 'sɹoʇɐɔᴉpuᴉ 'sɹosuǝs 'sꞁǝuɐd ʎɹoʇɔɐɟ ǝꞁqɐpɐǝɹ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ǝɹɐʍpɹɐɥ ꞁoɹʇuoƆ<br>
+<br>
+˙sꞁoɹʇuoɔ ǝʇoɯǝɹ puɐ 'sʇᴉnɔɹᴉɔ ʎʇǝɟɐs 'spɹɐoq ꞁɐuᵷᴉs 'suoᴉʇɐʇs ɹoʇɐɹǝdo ᵷuᴉpꞁᴉnq uǝɥʍ sǝᵷɐd ǝsǝɥʇ ǝs∩
+<np>
+ʇǝᵷɹɐ⟘ ʍoɹɹⱯ
+ǝsꞁnd ʎɹɐʇuǝɯoW
+<&arrow_target>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+ɹosuǝs ɹooᗡ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&door_sensor_switch>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ɹoʇɐʌǝꞁƎ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&elevator_button>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+uoʇʇnᗺ ssɐꞁ⅁
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&glass_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ssɐꞁ⅁
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&glass_small_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ɥɔno⟘ ssɐꞁ⅁
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&glass_touch_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ǝuᴉɥɔɐW
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_double_pole_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ǝuᴉɥɔɐW pǝɔuǝℲ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_fenced_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ʞɔouꞰ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_knock_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ʎɔuɐℲ pꞁO
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&oldfancy_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ʎɔuɐℲ pꞁO
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&oldfancy_small_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ uᴉɐɥƆ ʎɔuɐℲ pꞁO
+ǝsꞁnd ʎɹɐʇuǝɯoW
+<&oldfancy_spring_reset_chain>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ɔᴉʇsnᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&rustic_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ꞁᴉɐN ɔᴉʇsnᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&rustic_nail_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ ꞁꞁɐɯS ɔᴉʇsnᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&rustic_small_button>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+uoʇʇnᗺ uᴉɐɥƆ ɔᴉʇsnᴚ
+ǝsꞁnd ʎɹɐʇuǝɯoW
+<&rustic_spring_reset_chain>˙ǝsꞁnd ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ uɐǝꞁɔ ɐ sǝʌᴉᵷ ɥɔʇᴉʍs ʎɹɐʇuǝɯoɯ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʇoɥs-ǝuo ɹo 'sɯɹɐꞁɐ 'sǝsɐǝꞁǝɹ ɹoop 'sʇɹɐʇs ǝuᴉɥɔɐɯ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ǝsꞁnd pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ sʇǝsǝᴚ :sǝʇoN
+<np>
+ǝʇɐꞁԀ ʇɔɐʇuoƆ ssɐꞁ⅁
+ǝsꞁnd ǝɹnssǝɹԀ
+<&glass_contact_mat>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ʇɔɐʇuoƆ ɹooᗡ ssɐꞁ⅁
+ǝsꞁnd ǝɹnssǝɹԀ
+<&glass_door_contact_mat>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ʇɐW ʇɔɐʇuoƆ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&industrial_contact_mat>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ʇɐW ʇɔɐʇuoƆ ɹooᗡ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&industrial_door_contact_mat>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ɹoʇɔǝʇǝᗡ ɥᵷnoɹɥ⟘-ꞁꞁɐℲ
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&industrial_fallthrough_detector>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+uoʇʇnᗺ ʇooℲ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_foot_button>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ɹooᗡ ʞɔoɥS ꞁɐᴉɹʇsnpuI
+ǝsꞁnd ǝɹnssǝɹԀ
+<&industrial_high_sensitive_trapdoor>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ʇɐW ʇɔɐʇuoƆ ʞɔoɥS
+ǝsꞁnd ǝɹnssǝɹԀ
+<&industrial_shock_sensitive_contact_mat>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ɹoopdɐɹ⟘ ʞɔoɥS
+ǝsꞁnd ǝɹnssǝɹԀ
+<&industrial_shock_sensitive_trapdoor>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ʇuɐꞁd ɹǝʍod pǝᴚ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&red_power_plant>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ǝʇɐꞁԀ ǝɹnssǝɹԀ ɔᴉʇsnᴚ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&rustic_contact_plate>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ǝɹnssǝɹԀ ɹooᗡ ɔᴉʇsnᴚ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&rustic_door_contact_plate>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ɹoʇɔǝʇǝᗡ ꞁꞁɐℲ ɔᴉʇsnᴚ
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&rustic_fallthrough_detector>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ɹooᗡ ʞɔoɥS ɔᴉʇsnᴚ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&rustic_high_sensitive_trapdoor>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ǝʇɐꞁԀ ʞɔoɥS ɔᴉʇsnᴚ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&rustic_shock_sensitive_plate>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ɹooᗡ ʞɔoɥS ɔᴉʇsnᴚ
+ǝsꞁnd ǝɹnssǝɹԀ
+<&rustic_shock_sensitive_trapdoor>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ʇuɐꞁd ɹǝʍod ʍoꞁꞁǝ⅄
+ǝsꞁnd ǝɹnssǝɹԀ
+<&yellow_power_plant>˙ʇuǝɯǝʌoɯ ɹoopdɐɹʇ ɹo ɹooꞁɟ ɯoɹɟ ꞁɐuᵷᴉs ʇɹoɥs ɐ spuǝs ɥɔʇᴉʍs ʇɔɐʇuoɔ Ɐ<br>
+<br>
+˙ǝʇnoɹ pǝpɹɐnᵷ ɹo 'ɹǝpɐoꞁ 'ǝꞁsᴉɐ ǝɔᴉʌɹǝs ɐ ɥᵷnoɹɥʇ ssɐd sǝᴉʇᴉʇuǝ ǝɹǝɥʍ ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ʇɔɐʇuoɔ ʎʇᴉʇuǝ ɹǝʇɟɐ ʎꞁɟǝᴉɹq sǝsꞁnԀ :sǝʇoN
+<np>
+ʞɔoꞁƆ ɹǝɯᴉ⟘ ʎɐᗡ ssɐꞁ⅁
+ꞁɐuᵷᴉs ʇɥᵷᴉꞁʎɐᗡ
+<&glass_day_timer>˙ǝꞁɔʎɔ pꞁɹoʍ ǝɥʇ ɟo ʇɹɐd ǝɯᴉʇʎɐp ǝɥʇ sʍoꞁꞁoɟ ɥɔʇᴉʍs ɹǝɯᴉʇ Ɐ<br>
+<br>
+˙sꞁoɹʇuoɔ ʎɹoʇɔɐɟ ʎꞁuo-ʎɐp puɐ 'sɹǝʇʇnɥs 'sdɯɐꞁ pɹɐʎ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ʇɥᵷᴉꞁʎʞs ɥʇᴉʍ uoᴉsuǝɯᴉp ɐ sǝɹᴉnbǝᴚ :sǝʇoN
+<np>
+ɹoʇɔǝʇǝᗡ ʎʇᴉʇuƎ ssɐꞁ⅁
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&glass_entity_detector>˙ǝʇɐꞁd ɹooꞁɟ ǝꞁqᴉsᴉʌ ɐ ʇnoɥʇᴉʍ ʇuǝɯǝʌoɯ ʎqɹɐǝu sǝɥɔʇɐʍ ɹoʇɔǝʇǝp ʎʇᴉʇuǝ uⱯ<br>
+<br>
+˙sʞɔoꞁɹǝʇuᴉ ǝuᴉɥɔɐɯ ɹo 'sɯɹɐꞁɐ 'sdɯɐꞁ 'sɹoop oʇuᴉ ʇᴉ ǝʇnoᴚ :ǝᵷɐs∩<br>
+<br>
+˙ʞɔoꞁq ǝɥʇ punoɹɐ ɐǝɹɐ ꞁꞁɐɯs ɐ suɐɔS :sǝʇoN
+<np>
+ꞁɐuᵷᴉS ꞁɐʌɹǝʇuI ssɐꞁ⅁
+ǝsꞁnd pǝɯᴉ⟘
+<&glass_interval_timer>˙ǝsꞁnd ǝuoʇspǝɹ pǝꞁnpǝɥɔs ɐ sǝpᴉʌoɹd ɥɔʇᴉʍs ɹǝɯᴉʇ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ꞁoɹʇuoɔ pǝʎɐꞁǝp ɹo ɔᴉpoᴉɹǝd spǝǝu ɯsᴉuɐɥɔǝɯ ꞁꞁɐɯs ɐ ǝɹǝɥʍ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙sǝsꞁnd ǝuoʇspǝɹ pǝꞁnpǝɥɔs sǝs∩ :sǝʇoN
+<np>
+ɹoʇɔǝʇǝᗡ ǝuᴉꞀ ssɐꞁ⅁
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&glass_linear_entity_detector>˙ǝʇɐꞁd ɹooꞁɟ ǝꞁqᴉsᴉʌ ɐ ʇnoɥʇᴉʍ ʇuǝɯǝʌoɯ ʎqɹɐǝu sǝɥɔʇɐʍ ɹoʇɔǝʇǝp ʎʇᴉʇuǝ uⱯ<br>
+<br>
+˙sʞɔoꞁɹǝʇuᴉ ǝuᴉɥɔɐɯ ɹo 'sɯɹɐꞁɐ 'sdɯɐꞁ 'sɹoop oʇuᴉ ʇᴉ ǝʇnoᴚ :ǝᵷɐs∩<br>
+<br>
+˙ʞɔoꞁq ǝɥʇ punoɹɐ ɐǝɹɐ ꞁꞁɐɯs ɐ suɐɔS :sǝʇoN
+<np>
+ɹoʇɔǝʇǝᗡ ʞɔoꞁᗺ
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&industrial_block_detector>˙pǝᴉdnɔɔo sᴉ ǝɔɐds ᵷuᴉɔɐɟ ǝɥʇ ɹǝɥʇǝɥʍ sʞɔǝɥɔ ɹoʇɔǝʇǝp ʞɔoꞁq Ɐ<br>
+<br>
+˙ɥɔʇɐʍ oʇ ǝɔɐds pǝpɹɐnᵷ ɹo 'ɹǝɟɟnq 'ǝɔɐɟ ǝuᴉɥɔɐɯ ǝɥʇ ʇɐ ʇᴉ ʇuᴉoԀ :ǝᵷɐs∩<br>
+<br>
+˙ɹᴉɐ ʇou sᴉ ʞɔoꞁq ᵷuᴉɔɐɟ ǝɥʇ uǝɥʍ sɹǝʍoԀ :sǝʇoN
+<np>
+ʞɔoꞁƆ ɹǝɯᴉ⟘ ʎɐᗡ
+ꞁɐuᵷᴉs ʇɥᵷᴉꞁʎɐᗡ
+<&industrial_day_timer>˙ǝꞁɔʎɔ pꞁɹoʍ ǝɥʇ ɟo ʇɹɐd ǝɯᴉʇʎɐp ǝɥʇ sʍoꞁꞁoɟ ɥɔʇᴉʍs ɹǝɯᴉʇ Ɐ<br>
+<br>
+˙sꞁoɹʇuoɔ ʎɹoʇɔɐɟ ʎꞁuo-ʎɐp puɐ 'sɹǝʇʇnɥs 'sdɯɐꞁ pɹɐʎ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ʇɥᵷᴉꞁʎʞs ɥʇᴉʍ uoᴉsuǝɯᴉp ɐ sǝɹᴉnbǝᴚ :sǝʇoN
+<np>
+ɹoʇɔǝʇǝᗡ ʎʇᴉʇuƎ
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&industrial_entity_detector>˙ǝʇɐꞁd ɹooꞁɟ ǝꞁqᴉsᴉʌ ɐ ʇnoɥʇᴉʍ ʇuǝɯǝʌoɯ ʎqɹɐǝu sǝɥɔʇɐʍ ɹoʇɔǝʇǝp ʎʇᴉʇuǝ uⱯ<br>
+<br>
+˙sʞɔoꞁɹǝʇuᴉ ǝuᴉɥɔɐɯ ɹo 'sɯɹɐꞁɐ 'sdɯɐꞁ 'sɹoop oʇuᴉ ʇᴉ ǝʇnoᴚ :ǝᵷɐs∩<br>
+<br>
+˙ʞɔoꞁq ǝɥʇ punoɹɐ ɐǝɹɐ ꞁꞁɐɯs ɐ suɐɔS :sǝʇoN
+<np>
+ɹǝɯᴉ⟘ ꞁɐʌɹǝʇuI
+ǝsꞁnd pǝɯᴉ⟘
+<&industrial_interval_timer>˙ǝsꞁnd ǝuoʇspǝɹ pǝꞁnpǝɥɔs ɐ sǝpᴉʌoɹd ɥɔʇᴉʍs ɹǝɯᴉʇ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ꞁoɹʇuoɔ pǝʎɐꞁǝp ɹo ɔᴉpoᴉɹǝd spǝǝu ɯsᴉuɐɥɔǝɯ ꞁꞁɐɯs ɐ ǝɹǝɥʍ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙sǝsꞁnd ǝuoʇspǝɹ pǝꞁnpǝɥɔs sǝs∩ :sǝʇoN
+<np>
+ɹosuǝS ʇɥᵷᴉꞀ
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&industrial_light_sensor>˙ꞁoɹʇuoɔ ǝuoʇspǝɹ oʇuᴉ ssǝuʇɥᵷᴉɹq ꞁɐɔoꞁ sʇɹǝʌuoɔ ɹosuǝs ʇɥᵷᴉꞁ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎʇᴉꞁᴉqᴉsᴉʌ puɐ 'sɹǝʇʇnɥs 'sdɯɐꞁ ɔᴉʇɐɯoʇnɐ ɹoɟ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: sɹǝʍoԀ ʇɐ ʍɐɹ ssǝuʇɥᵷᴉɹq 8 ɹo ɹǝɥᵷᴉɥ.
+<np>
+ɹoʇɔǝʇǝᗡ ɯɹoʇS
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&industrial_lightning_sensor>˙suoᴉʇᴉpuoɔ ɹǝpunɥʇ ᵷuᴉɹnp sᵷuᴉuɹɐʍ sǝʌᴉɹp ɹosuǝs ɯɹoʇs Ɐ<br>
+<br>
+˙sɯɹɐꞁɐ ɹo sdɯɐꞁ oʇ ʇᴉ ǝʇnoɹ puɐ ʎʞs uǝdo ɹǝpun ʇᴉ ǝɔɐꞁԀ :ǝᵷɐs∩<br>
+<br>
+˙ssǝɔɔɐ ʎʞs puɐ ɹǝpunɥʇ sǝɹᴉnbǝᴚ :sǝʇoN
+<np>
+ɹoʇɔǝʇǝᗡ ʎʇᴉʇuƎ ǝuᴉꞀ
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&industrial_linear_entity_detector>˙ǝʇɐꞁd ɹooꞁɟ ǝꞁqᴉsᴉʌ ɐ ʇnoɥʇᴉʍ ʇuǝɯǝʌoɯ ʎqɹɐǝu sǝɥɔʇɐʍ ɹoʇɔǝʇǝp ʎʇᴉʇuǝ uⱯ<br>
+<br>
+˙sʞɔoꞁɹǝʇuᴉ ǝuᴉɥɔɐɯ ɹo 'sɯɹɐꞁɐ 'sdɯɐꞁ 'sɹoop oʇuᴉ ʇᴉ ǝʇnoᴚ :ǝᵷɐs∩<br>
+<br>
+˙ʞɔoꞁq ǝɥʇ punoɹɐ ɐǝɹɐ ꞁꞁɐɯs ɐ suɐɔS :sǝʇoN
+<np>
+ɹosuǝS uᴉɐᴚ
+ᵷuᴉsuǝs ꞁɐuᵷᴉS
+<&industrial_rain_sensor>˙ǝuoʇspǝɹ oʇuᴉ uoᴉʇᴉsod sʇᴉ ʇɐ ꞁꞁɐɟuᴉɐɹ suɹnʇ ɹosuǝs ɹǝɥʇɐǝʍ Ɐ<br>
+<br>
+˙uᴉɐɹ ǝʌᴉǝɔǝɹ uɐɔ ǝʌoqɐ ʞɔoꞁq ǝɥʇ ǝɹǝɥʍ ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+˙ɹosuǝs ǝɥʇ ǝʌoqɐ uᴉɐɹ sʞɔǝɥƆ :sǝʇoN
+<np>
+ɥɔʇᴉʍS ssɐꞁ⅁ ǝꞁqɐʇsᴉᗺ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&glass_rotary_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɥɔno⟘ ssɐꞁ⅁ ǝꞁqɐʇsᴉᗺ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&glass_touch_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ssɐꞁᵷǝʌᴉʇᴉsuǝS ǝᵷuɐɹO
+ssɐꞁᵷ ꞁɐuᵷᴉS
+<&orange_sensitiveglass>˙ǝʇɐʇs ꞁɐuᵷᴉs ᵷuᴉʍoɥs ǝꞁᴉɥʍ sǝuᴉꞁʇɥᵷᴉs sdǝǝʞ ʞɔoꞁq ssɐꞁᵷ ǝʌᴉʇɔɐǝɹ-ǝuoʇspǝɹ Ɐ<br>
+<br>
+˙ssɐꞁᵷ ʎɹoʇɔɐɟ pǝpɹɐnᵷ puɐ 'sꞁǝuɐd ʇᴉꞁ 'sʍopuᴉʍ ɯooɹ-ꞁoɹʇuoɔ uᴉ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu ɯoɹɟ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ssɐꞁ⅁ ǝʌᴉʇᴉsuǝS ʇᴉꞀ
+ssɐꞁᵷ ꞁɐuᵷᴉS
+<&sensitive_glass_block>˙ǝʇɐʇs ꞁɐuᵷᴉs ᵷuᴉʍoɥs ǝꞁᴉɥʍ sǝuᴉꞁʇɥᵷᴉs sdǝǝʞ ʞɔoꞁq ssɐꞁᵷ ǝʌᴉʇɔɐǝɹ-ǝuoʇspǝɹ Ɐ<br>
+<br>
+˙ssɐꞁᵷ ʎɹoʇɔɐɟ pǝpɹɐnᵷ puɐ 'sꞁǝuɐd ʇᴉꞁ 'sʍopuᴉʍ ɯooɹ-ꞁoɹʇuoɔ uᴉ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu ɯoɹɟ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ssɐꞁ⅁ ǝʌᴉʇᴉsuǝS pǝɹoꞁoƆ
+ssɐꞁᵷ ꞁɐuᵷᴉS
+<&stained_sensitiveglass>˙ǝʇɐʇs ꞁɐuᵷᴉs ᵷuᴉʍoɥs ǝꞁᴉɥʍ sǝuᴉꞁʇɥᵷᴉs sdǝǝʞ ʞɔoꞁq ssɐꞁᵷ ǝʌᴉʇɔɐǝɹ-ǝuoʇspǝɹ Ɐ<br>
+<br>
+˙ssɐꞁᵷ ʎɹoʇɔɐɟ pǝpɹɐnᵷ puɐ 'sꞁǝuɐd ʇᴉꞁ 'sʍopuᴉʍ ɯooɹ-ꞁoɹʇuoɔ uᴉ ʇᴉ ǝs∩ :ǝᵷɐs∩<br>
+<br>
+˙ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu ɯoɹɟ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ǝᵷnɐ⅁ ɹɐᗺ ssɐꞁ⅁
+ǝᵷnɐᵷ ꞁɐuᵷᴉS
+<&glass_vertical_bar_gauge>˙ᵷuᴉpɐǝɹ ꞁǝuɐd ɹɐǝꞁɔ ɐ sɐ ɥʇᵷuǝɹʇs ǝuoʇspǝɹ sʎɐꞁdsᴉp ǝᵷnɐᵷ ɯooɹ-ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ǝɔuɐꞁᵷ ɐ ʇɐ pǝʞɔǝɥɔ ǝq uɐɔ ɹǝʍod ǝuoʇspǝɹ ᵷuᴉɹoqɥᵷᴉǝu ǝɹǝɥʍ ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: spɐǝᴚ ʎqɹɐǝu ǝuoʇspǝɹ ɥʇᵷuǝɹʇs ɯoɹɟ 0 oʇ 15.
+<np>
+ǝᵷnɐ⅁ ᵷoꞁɐuⱯ
+ǝᵷnɐᵷ ꞁɐuᵷᴉS
+<&industrial_analog_angular_gauge>˙ᵷuᴉpɐǝɹ ꞁǝuɐd ɹɐǝꞁɔ ɐ sɐ ɥʇᵷuǝɹʇs ǝuoʇspǝɹ sʎɐꞁdsᴉp ǝᵷnɐᵷ ɯooɹ-ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ǝɔuɐꞁᵷ ɐ ʇɐ pǝʞɔǝɥɔ ǝq uɐɔ ɹǝʍod ǝuoʇspǝɹ ᵷuᴉɹoqɥᵷᴉǝu ǝɹǝɥʍ ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: spɐǝᴚ ʎqɹɐǝu ǝuoʇspǝɹ ɥʇᵷuǝɹʇs ɯoɹɟ 0 oʇ 15.
+<np>
+ǝᵷnɐ⅁ ɹǝʇǝɯʇꞁoɅ
+ǝᵷnɐᵷ ꞁɐuᵷᴉS
+<&industrial_analog_horizontal_gauge>˙ᵷuᴉpɐǝɹ ꞁǝuɐd ɹɐǝꞁɔ ɐ sɐ ɥʇᵷuǝɹʇs ǝuoʇspǝɹ sʎɐꞁdsᴉp ǝᵷnɐᵷ ɯooɹ-ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ǝɔuɐꞁᵷ ɐ ʇɐ pǝʞɔǝɥɔ ǝq uɐɔ ɹǝʍod ǝuoʇspǝɹ ᵷuᴉɹoqɥᵷᴉǝu ǝɹǝɥʍ ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: spɐǝᴚ ʎqɹɐǝu ǝuoʇspǝɹ ɥʇᵷuǝɹʇs ɯoɹɟ 0 oʇ 15.
+<np>
+ǝᵷnɐ⅁ ꞁɐʇᴉᵷᴉᗡ
+ɥʇᵷuǝɹʇs ꞁɐuᵷᴉs ǝꞁqɐpɐǝᴚ
+<&industrial_small_digital_gauge>˙ᵷuᴉpɐǝɹ ꞁǝuɐd ɹɐǝꞁɔ ɐ sɐ ɥʇᵷuǝɹʇs ǝuoʇspǝɹ sʎɐꞁdsᴉp ǝᵷnɐᵷ ɯooɹ-ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ǝɔuɐꞁᵷ ɐ ʇɐ pǝʞɔǝɥɔ ǝq uɐɔ ɹǝʍod ǝuoʇspǝɹ ᵷuᴉɹoqɥᵷᴉǝu ǝɹǝɥʍ ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: spɐǝᴚ ʎqɹɐǝu ǝuoʇspǝɹ ɥʇᵷuǝɹʇs ɯoɹɟ 0 oʇ 15.
+<np>
+ǝᵷnɐ⅁ ǝqn⟘ ssɐꞁ⅁
+ǝᵷnɐᵷ ꞁɐuᵷᴉS
+<&industrial_tube_gauge>˙ᵷuᴉpɐǝɹ ꞁǝuɐd ɹɐǝꞁɔ ɐ sɐ ɥʇᵷuǝɹʇs ǝuoʇspǝɹ sʎɐꞁdsᴉp ǝᵷnɐᵷ ɯooɹ-ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ǝɔuɐꞁᵷ ɐ ʇɐ pǝʞɔǝɥɔ ǝq uɐɔ ɹǝʍod ǝuoʇspǝɹ ᵷuᴉɹoqɥᵷᴉǝu ǝɹǝɥʍ ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: spɐǝᴚ ʎqɹɐǝu ǝuoʇspǝɹ ɥʇᵷuǝɹʇs ɯoɹɟ 0 oʇ 15.
+<np>
+ǝᵷnɐ⅁ ɹɐᗺ ᵷoꞁɐuⱯ
+ǝᵷnɐᵷ ꞁɐuᵷᴉS
+<&industrial_vertical_bar_gauge>˙ᵷuᴉpɐǝɹ ꞁǝuɐd ɹɐǝꞁɔ ɐ sɐ ɥʇᵷuǝɹʇs ǝuoʇspǝɹ sʎɐꞁdsᴉp ǝᵷnɐᵷ ɯooɹ-ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ǝɔuɐꞁᵷ ɐ ʇɐ pǝʞɔǝɥɔ ǝq uɐɔ ɹǝʍod ǝuoʇspǝɹ ᵷuᴉɹoqɥᵷᴉǝu ǝɹǝɥʍ ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: spɐǝᴚ ʎqɹɐǝu ǝuoʇspǝɹ ɥʇᵷuǝɹʇs ɯoɹɟ 0 oʇ 15.
+<np>
+dɯɐꞀ ɯɹɐꞁⱯ
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_alarm_lamp>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+uǝɹᴉS ɯɹɐꞁ∀
+ʞɔɐqpǝǝɟ ꞁɐuƃᴉS
+<&industrial_alarm_siren>.oʇ pǝɥɔɐʇʇɐ sᴉ ʇᴉ ʞɔoꞁq ǝɥʇ ʎq pǝᴉꞁddns ꞁɐuƃᴉs ǝɥʇ ɯoɹɟ ǝʇɐʇs pǝɹǝʍod sǝƃuɐɥɔ ʇI .ɹoʇɐɔᴉpuᴉ ǝuoʇspǝɹ pǝʇunoɯ-ǝɔɐɟ ɐ sᴉ uǝɹᴉS ɯɹɐꞁ∀ ǝɥꞱ<br>
+<br>
+.sꞁǝuɐd ɹo ,sɯɹɐꞁɐ ,sǝuᴉɥɔɐɯ ,sɹoop ɹoʇᴉuoɯ oʇ ʇᴉ ɹǝʍod puɐ ǝɔɐɟ pᴉꞁos ɐ oʇ ʇᴉ ɥɔɐʇʇ∀ :ǝƃɐs∩<br>
+<br>
+.ǝʌᴉʇɔɐ suᴉɐɯǝɹ ꞁɐuƃᴉs pǝɥɔɐʇʇɐ sʇᴉ ǝꞁᴉɥʍ puoɔǝs ɹǝd ǝɔuo sǝɥsǝɹɟǝɹ uǝɹᴉs ǝɥꞱ :sǝʇoN
+<np>
+pǝꞀ ᵷuᴉʞuᴉꞁᗺ
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_blinking_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+uǝǝɹ⅁ ᵷuᴉʞuᴉꞁᗺ LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_green_blinking_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+uǝǝɹ⅁ LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_green_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+pǝᴚ LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_red_blinking_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+pǝᴚ LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_red_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ǝʇᴉɥM ᵷuᴉʞuᴉꞁᗺ LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_white_blinking_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ǝʇᴉɥM LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_white_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ʍoꞁꞁǝ⅄ ᵷuᴉʞuᴉꞁᗺ LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_yellow_blinking_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ʍoꞁꞁǝ⅄ LED
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&industrial_yellow_led>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ǝɹoɥdɐɯǝS ɔᴉʇsnᴚ
+ʞɔɐqpǝǝɟ ꞁɐuᵷᴉS
+<&rustic_semaphore>˙ʞɔɐqpǝǝɟ ʎɹoʇɔɐɟ ǝꞁqᴉsᴉʌ oʇuᴉ ǝuoʇspǝɹ uǝppᴉɥ suɹnʇ ɹoʇɐɔᴉpuᴉ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sꞁǝuɐd ɹo 'sɯɹɐꞁɐ 'sǝuᴉɥɔɐɯ 'sɹoop ɹoʇᴉuoɯ oʇ ꞁɐuᵷᴉs ǝɥʇ ǝpᴉsǝq ʇᴉ ǝɹᴉM :ǝᵷɐs∩<br>
+<br>
+˙ʇuǝsǝɹd sᴉ ɹǝʍod ǝuoʇspǝɹ ʎqɹɐǝu uǝɥʍ ǝʇɐʇs sǝᵷuɐɥƆ :sǝʇoN
+<np>
+ɥɔʇᴉʍS ɹoʇɐɹɐdɯoƆ
+ꞁɐuᵷᴉs pǝɥɔɐʇʇⱯ
+<&industrial_comparator_switch>˙ʇndʇno ꞁǝuɐd ǝꞁdɯᴉs ɐ oʇuᴉ ᵷuᴉpɐǝɹ ʇɐɥʇ suɹnʇ puɐ uo pǝʇunoɯ sᴉ ʇᴉ ʞɔoꞁq ǝɥʇ spɐǝɹ ɥɔʇᴉʍs ɹosuǝs ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇᴉɯǝ ɥɔʇᴉʍs ǝɥʇ 'ʇndʇno ǝuoʇspǝɹ ɹo 'ɹǝuᴉɐʇuoɔ 'ɹoʇɐɹɐdɯoɔ sʇɹodǝɹ ʞɔoꞁq pǝɥɔɐʇʇɐ ǝɥʇ uǝɥM ˙ǝɹɐʍpɹɐɥ ǝuoʇspǝɹ ɹo 'sʞuɐʇ 'sǝᴉɹoʇuǝʌuᴉ uo ʇᴉ ʇunoW :ǝᵷɐs∩<br>
+<br>
+˙sǝuᴉꞁ ꞁoɹʇuoɔ ɟɟo/uo ɹɐǝꞁɔ oʇuᴉ ᵷuᴉɹᴉʍ uǝppᴉɥ ɹo sꞁǝʌǝꞁ ǝᵷɐɹoʇs uɹnʇ oʇ ʇᴉ ǝs∩ :sǝʇoN
+<np>
+ɹǝɯɯᴉᗡ
+ꞁɐuᵷᴉs ǝꞁqɐᴉɹɐɅ
+<&industrial_dimmer>˙ǝɔɐɟ ꞁǝuɐd ʇɔɐdɯoɔ ɐ ɯoɹɟ ɥʇᵷuǝɹʇs ǝuoʇspǝɹ sꞁɐᴉp ꞁoɹʇuoɔ ʎɹɐʇoɹ Ɐ<br>
+<br>
+˙ɥʇᵷuǝɹʇs ꞁꞁnɟ ɹǝʇɟɐ oɹǝz oʇ ʞɔɐq uǝɥʇ 'pɹɐʍdn ʇndʇno ǝɥʇ dǝʇs oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+sǝʇoN: sʇndʇnO ɥʇᵷuǝɹʇs ɯoɹɟ 0 oʇ 15.
+<np>
+uoʇʇnᗺ ԀO⟘SƎ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_estop_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʞɔoꞁᗺ ɹǝddoH
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_hopper_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɥɔʇᴉʍS ʞɔouꞰ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_knock_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_lever>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɥɔʇᴉʍS ǝuᴉɥɔɐW ˙uʇᗺ-oʍ⟘
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_machine_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ǝꞁpuɐH ꞁꞁnԀ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_pull_handle>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ ʎɹɐʇoᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_rotary_lever>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɥɔʇᴉʍS ǝuᴉɥɔɐW ʎɹɐʇoᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_rotary_machine_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ ʇɔɐʇuoƆ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrial_small_lever>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɥɔʇᴉʍS
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&industrialswitch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɥɔʇᴉʍS ʇɥᵷᴉꞀ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&light_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɥɔʇᴉʍS ǝʌꞁɐɅ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&valve_wheel_switch>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌᴉǝɔǝᴚ ǝsꞁnԀ pǝsɐƆ
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_cased_pulse_receiver>˙ɹǝᵷᵷᴉɹʇ ǝuoʇspǝɹ ʇɹoɥs ɐ sꞁǝuɐd ǝʇoɯǝɹ sǝʌᴉᵷ ɹǝʌᴉǝɔǝɹ ǝsꞁnd pǝʞuᴉꞁ pǝsɐɔ Ɐ<br>
+<br>
+˙ǝsꞁnd ʇɹoɥs ɐ ʇᴉɯǝ oʇ ꞁɹɐǝd pǝʞuᴉꞁ ǝɥʇ ɹǝᵷᵷᴉɹʇ ɹo ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ ˙ꞁɹɐǝd pǝʞuᴉꞁ ɐ ǝʇɐǝɹɔ oʇ ꞁɹɐǝԀ ɹǝpuƎ uɐ ɥʇᴉʍ ʇᴉ ʞɔᴉꞁƆ :ǝᵷɐs∩<br>
+<br>
+˙uoᴉʇɐɹnp pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ ɟꞁǝsʇᴉ sʇǝsǝɹ ǝsꞁnd ǝɥ⟘ :sǝʇoN
+<np>
+ɹǝʌᴉǝɔǝᴚ ʞuᴉꞀ pǝsɐƆ
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_cased_receiver>˙ʇǝᵷɹɐʇ ǝuoʇspǝɹ pǝᵷᵷnɹ ɐ sꞁǝuɐd ǝʇoɯǝɹ sǝʌᴉᵷ ɹǝʌᴉǝɔǝɹ pǝʞuᴉꞁ pǝsɐɔ Ɐ<br>
+<br>
+˙puɐɥ ʎq ʇᴉ ǝꞁᵷᵷoʇ oʇ ʎꞁʇɔǝɹᴉp ɹǝʌᴉǝɔǝɹ ǝɥʇ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ ˙ꞁɹɐǝd pǝʞuᴉꞁ ɐ ǝʇɐǝɹɔ oʇ ꞁɹɐǝԀ ɹǝpuƎ uɐ ɥʇᴉʍ ʇᴉ ʞɔᴉꞁƆ :ǝᵷɐs∩<br>
+<br>
+˙pǝsn-ʞɐǝus uǝɥʍ ɹǝʌᴉǝɔǝɹ sᴉɥʇ sǝꞁᵷᵷoʇ ꞁɹɐǝd pǝʞuᴉꞁ Ɐ :sǝʇoN
+<np>
+ɹǝʌᴉǝɔǝᴚ ʞuᴉꞀ ǝsꞁnԀ
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_pulse_receiver>˙ɹǝᵷᵷᴉɹʇ ǝuoʇspǝɹ ʇɹoɥs ɐ sꞁǝuɐd ǝʇoɯǝɹ sǝʌᴉᵷ ɹǝʌᴉǝɔǝɹ ǝsꞁnd pǝʞuᴉꞁ Ɐ<br>
+<br>
+˙ǝsꞁnd ʇɹoɥs ɐ ʇᴉɯǝ oʇ ꞁɹɐǝd pǝʞuᴉꞁ ǝɥʇ ɹǝᵷᵷᴉɹʇ ɹo ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ ˙ꞁɹɐǝd pǝʞuᴉꞁ ɐ ǝʇɐǝɹɔ oʇ ꞁɹɐǝԀ ɹǝpuƎ uɐ ɥʇᴉʍ ʇᴉ ʞɔᴉꞁƆ :ǝᵷɐs∩<br>
+<br>
+˙uoᴉʇɐɹnp pǝꞁnpǝɥɔs sʇᴉ ɹǝʇɟɐ ɟꞁǝsʇᴉ sʇǝsǝɹ ǝsꞁnd ǝɥ⟘ :sǝʇoN
+<np>
+ʎɐꞁǝᴚ ʞuᴉꞀ ǝsꞁnԀ
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_pulse_relay>˙ʇuᴉod ɥɔʇᴉʍs ꞁɐɔoꞁ ʇɔɐdɯoɔ ɐ spꞁᴉnq ꞁǝuɐd sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ pǝꞁʎʇs-ʎɐꞁǝɹ Ɐ<br>
+<br>
+˙uoᴉʇɐʌᴉʇɔɐ ꞁɹɐǝd pǝʞuᴉꞁ pǝǝu noʎ uǝɥʍ sʞɔoꞁq ɹǝʌᴉǝɔǝɹ ǝs∩ ˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌᴉǝɔǝᴚ ʞuᴉꞀ ɥɔʇᴉʍS
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_receiver>˙ʇǝᵷɹɐʇ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ ɐ sꞁǝuɐd ǝʇoɯǝɹ sǝʌᴉᵷ ɹǝʌᴉǝɔǝɹ pǝʞuᴉꞁ Ɐ<br>
+<br>
+˙puɐɥ ʎq ʇᴉ ǝꞁᵷᵷoʇ oʇ ʎꞁʇɔǝɹᴉp ɹǝʌᴉǝɔǝɹ ǝɥʇ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ ˙ꞁɹɐǝd pǝʞuᴉꞁ ɐ ǝʇɐǝɹɔ oʇ ꞁɹɐǝԀ ɹǝpuƎ uɐ ɥʇᴉʍ ʇᴉ ʞɔᴉꞁƆ :ǝᵷɐs∩<br>
+<br>
+˙pǝsn-ʞɐǝus uǝɥʍ ɹǝʌᴉǝɔǝɹ sᴉɥʇ sǝꞁᵷᵷoʇ ꞁɹɐǝd pǝʞuᴉꞁ Ɐ :sǝʇoN
+<np>
+ɹǝʌᴉǝɔǝᴚ ʞuᴉꞀ ᵷoꞁɐuⱯ
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_receiver_analog>˙ʇǝᵷɹɐʇ ǝʇoɯǝɹ ǝꞁqᴉsᴉʌ ɐ sꞁǝuɐd ꞁoɹʇuoɔ sǝʌᴉᵷ ɹǝʌᴉǝɔǝɹ pǝʞuᴉꞁ Ɐ<br>
+<br>
+˙ʎꞁǝʇoɯǝɹ ɹǝʌᴉǝɔǝɹ ǝɥʇ ǝʇɐʌᴉʇɔɐ oʇ ꞁɹɐǝd ʇɐɥʇ ǝsn-ʞɐǝuS ˙ꞁɹɐǝd pǝʞuᴉꞁ ɐ ǝʇɐǝɹɔ oʇ ꞁɹɐǝԀ ɹǝpuƎ uɐ ɥʇᴉʍ ʇᴉ ʞɔᴉꞁƆ :ǝᵷɐs∩<br>
+<br>
+˙pǝɹǝᵷᵷᴉɹʇ uǝɥʍ ꞁɐuᵷᴉs ǝuoʇspǝɹ ꞁꞁnɟ ɐ sʇᴉɯǝ ɹǝʌᴉǝɔǝɹ sᴉɥ⟘ :sǝʇoN
+<np>
+ʎɐꞁǝᴚ ʞuᴉꞀ ɥɔʇᴉʍS
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_relay>˙ʇuᴉod ɥɔʇᴉʍs ꞁɐɔoꞁ ʇɔɐdɯoɔ ɐ spꞁᴉnq ꞁǝuɐd sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ pǝꞁʎʇs-ʎɐꞁǝɹ Ɐ<br>
+<br>
+˙uoᴉʇɐʌᴉʇɔɐ ꞁɹɐǝd pǝʞuᴉꞁ pǝǝu noʎ uǝɥʍ sʞɔoꞁq ɹǝʌᴉǝɔǝɹ ǝs∩ ˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ʎɐꞁǝᴚ ʞuᴉꞀ ᵷoꞁɐuⱯ
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&industrial_switchlink_relay_analog>˙ʇuᴉod ɥɔʇᴉʍs ꞁɐɔoꞁ ʇɔɐdɯoɔ ɐ spꞁᴉnq ꞁǝuɐd sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ pǝꞁʎʇs-ʎɐꞁǝɹ Ɐ<br>
+<br>
+˙uoᴉʇɐʌᴉʇɔɐ ꞁɹɐǝd pǝʞuᴉꞁ pǝǝu noʎ uǝɥʍ sʞɔoꞁq ɹǝʌᴉǝɔǝɹ ǝs∩ ˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ꞁɹɐǝԀ ʞuᴉꞀ ɥɔʇᴉʍS
+ꞁoɹʇuoɔ pǝʞuᴉꞀ
+<&switchlink_pearl>˙sꞁoɹʇuoɔ ʎɹoʇɔɐɟ ǝʇoɯǝɹ ɹoɟ ʇǝᵷɹɐʇ ɹǝʌᴉǝɔǝɹ ɐ sǝɹoʇs ꞁɹɐǝd pǝʞuᴉꞁ Ɐ<br>
+<br>
+˙ɹǝʌᴉǝɔǝɹ pǝɹoʇs ǝɥʇ ǝʇɐʌᴉʇɔɐ oʇ ꞁɹɐǝd pǝʞuᴉꞁ ǝɥʇ ǝsn-ʞɐǝuS ˙ǝuo ǝʇɐǝɹɔ oʇ ꞁɹɐǝԀ ɹǝpuƎ uɐ ɥʇᴉʍ ɹǝʌᴉǝɔǝɹ ʞuᴉꞀ ɥɔʇᴉʍS ɐ ʞɔᴉꞁƆ :ǝᵷɐs∩<br>
+<br>
+˙ǝᵷuɐɹ uᴉɥʇᴉʍ puɐ 'uoᴉsuǝɯᴉp ǝɯɐs ǝɥʇ uᴉ 'pǝpɐoꞁ ǝq ʇsnɯ ʇǝᵷɹɐʇ ǝɥ⟘ :sǝʇoN
+<np>
+ɹǝʌǝꞀ ʎɔuɐℲ pꞁO
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&oldfancy_bistableswitch1>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ ʎɹɐʇoᴚ ʎɔuɐℲ pꞁO
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&oldfancy_bistableswitch2>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ ʎɹɐʇoᴚ ɔᴉʇsnᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&rustic_angular_lever>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ ɔᴉʇsnᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&rustic_lever>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ ꞁᴉɐN ɔᴉʇsnᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&rustic_nail_lever>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN
+<np>
+ɹǝʌǝꞀ ǝᵷuᴉH-oʍ⟘ ɔᴉʇsnᴚ
+ꞁoɹʇuoƆ ǝuoʇspǝᴚ
+<&rustic_two_hinge_lever>˙ʇuᴉod ɥɔʇᴉʍs ǝuoʇspǝɹ ǝꞁqɐpɐǝɹ ɐ spꞁᴉnq ʎɹoʇɔɐɟ sǝʌᴉᵷ ᵷuᴉʇʇᴉɟ ꞁoɹʇuoɔ ʇɔɐdɯoɔ Ɐ<br>
+<br>
+˙sʇᴉnɔɹᴉɔ ʎqɹɐǝu ɹoɟ ʇndʇno ɥʇᵷuǝɹʇs-ꞁꞁnɟ ǝꞁᵷᵷoʇ oʇ ʇᴉ ʞɔᴉꞁɔ-ʇɥᵷᴉᴚ :ǝᵷɐs∩<br>
+<br>
+˙uo pǝɥɔʇᴉʍs ǝꞁᴉɥʍ ǝuoʇspǝɹ ɥʇᵷuǝɹʇs-ꞁꞁnɟ sʇndʇnO :sǝʇoN

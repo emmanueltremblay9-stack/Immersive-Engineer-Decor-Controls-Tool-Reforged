@@ -1,0 +1,7 @@
+Ariadne's Coal
+Waymarker for the Mines
+<&recipe>Ariadne’s Coal swiftly marks the way through shafts, branching mines and temporary works below ground.<br>
+<br>
+Use: Apply it to a steadfast block face to set a black arrow upon that border. The mark follows the point thou clickest and supports eight directions, diagonal ones included. Mark turns, exits, dead ends and supply routes without bearing separate signposts.<br>
+<br>
+Ariadne’s Coal is a reusable marking tool with 100 uses. Each well-placed mark spends one durability; faces that cannot support it are refused without wearing the item.

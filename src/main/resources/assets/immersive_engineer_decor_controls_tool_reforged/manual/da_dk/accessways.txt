@@ -1,0 +1,127 @@
+Adgangsveje
+Gangveje og støtter
+Stålstolper, stolper af behandlet træ, riste, gangbroer, rækværk, stiger, døre, vinduer og luger danner kompakte serviceveje gennem fabrikkens indre.<br>
+<br>
+Adgangsdelenes stålkomponenter fremstilles af stålplader. Fremstil eller placer et metalarbejdsbord, sæt en hammer fra Immersive Engineering i, og hamr stålbarrer til stålplader til stolper, gangbroer, vinduer, døre, rækværk og andre ståldekorationer.<br>
+<br>
+Placer dem, hvor maskiner kræver serviceadgang, hævede gangveje, vedligeholdelsesskakte eller sikrere kanter.
+<np>
+Tyk stålstolpe
+Del til bærende ramme
+<&thick_steel_pole>Den lige tykke stålstolpe giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Top til tyk stolpe
+Del til bærende ramme
+<&thick_steel_pole_head>Toppen eller foden til den lige tykke stålstolpe giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Tynd stålstolpe
+Del til bærende ramme
+<&thin_steel_pole>Den lige tynde stålstolpe giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Top til tynd stolpe
+Del til bærende ramme
+<&thin_steel_pole_head>Toppen eller foden til den lige tynde stålstolpe giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Stolpe af behandlet træ
+Del til bærende ramme
+<&treated_wood_pole>Den lige stolpe af behandlet træ giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Top til behandlet stolpe
+Del til bærende ramme
+<&treated_wood_pole_head>Toppen eller foden til den lige stolpe af behandlet træ giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Støtte til behandlet stolpe
+Del til bærende ramme
+<&treated_wood_pole_support>Støtten til den lige stolpe af behandlet træ giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Dobbelt-T-støtte af stål
+Del til bærende ramme
+<&steel_double_t_support>Denne blok giver maskinhaller og adgangsrammer en synlig konstruktion.<br>
+<br>
+Brug: Drej og placer delen som synlig afstivning af bjælker, stolper og platformskanter.<br>
+<np>
+Stålgulvrist
+Del til serviceadgang
+<&steel_floor_grating>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Stålgangbro
+Del til serviceadgang
+<&steel_catwalk>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Stålgangbrotrappe
+Del til serviceadgang
+<&steel_catwalk_stairs>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Hævet stålgangbro
+Del til serviceadgang
+<&steel_catwalk_ta>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Stålrækværk
+Del til serviceadgang
+<&steel_railing>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Stålnethegn
+Del til serviceadgang
+<&steel_mesh_fence>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Stålnetlåge
+Del til serviceadgang
+<&steel_mesh_fence_gate>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Metaltrinsstige
+Del til serviceadgang
+<&metal_rung_ladder>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Forskudte metaltrin
+Del til serviceadgang
+<&metal_rung_steps>Denne blok danner tydelige serviceveje rundt om maskiner.<br>
+<br>
+Brug: Placer den som vedligeholdelsesadgang omkring maskiner, øvre etager og serviceskakte.<br>
+<np>
+Vindue med stålramme
+Beskyttet udsyn
+<&steel_framed_window>Denne blok bevarer det frie udsyn og passer samtidig til forstærkede fabriksbygninger.<br>
+<br>
+Brug: Placer den i en vægåbning på én blok, hvor spillere skal kunne se maskiner gennem en beskyttende barriere.<br>
+<np>
+Metalskydedør
+Industrielt adgangspunkt
+<&metal_sliding_door>Denne blok giver et solidt adgangspunkt til servicerum, skakte, tage og maskinindkapslinger.<br>
+<br>
+Brug: Monter den, hvor byggeriet kræver en kontrolleret åbning til vedligeholdelse.<br>
+<np>
+Jernluge
+Industrielt adgangspunkt
+<&iron_hatch>Denne blok giver et solidt adgangspunkt til servicerum, skakte, tage og maskinindkapslinger.<br>
+<br>
+Brug: Monter den, hvor byggeriet kræver en kontrolleret åbning til vedligeholdelse.<br>

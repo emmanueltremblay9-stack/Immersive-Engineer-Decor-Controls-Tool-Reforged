@@ -1,0 +1,7 @@
+Senzor de lumină
+Detectarea semnalelor
+<&recipe>Un senzor de lumină transformă luminozitatea locală într-o comandă redstone.<br>
+<br>
+Utilizare: Folosește-l pentru lămpi automate, obloane și circuite legate de vizibilitate.<br>
+<br>
+Observații: Emite semnal la o luminozitate brută de 8 sau mai mare.

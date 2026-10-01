@@ -1,0 +1,7 @@
+Merülési légkapszula
+Vészhelyzeti levegőtartalék
+<&recipe>A búvárlevegő-kapszula vészhelyzeti levegőtartalék víz alatti munkához.<br>
+<br>
+Használat: Kézzel használd a levegő visszatöltésére. A felszerelésben magától is aktiválódhat, amikor a levegő majdnem elfogyott, majd töltési időre lép.<br>
+<br>
+Vidd elárasztott bányákba, víz alatti csővezetékekhez és szivattyútermi javításokhoz.

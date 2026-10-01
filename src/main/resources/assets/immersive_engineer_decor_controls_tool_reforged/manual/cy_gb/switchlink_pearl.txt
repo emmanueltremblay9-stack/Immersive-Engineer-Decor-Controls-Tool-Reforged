@@ -1,0 +1,7 @@
+Perl Cyswllt Switsh
+Rheolaeth gysylltiedig
+<&recipe>Mae perl gysylltiedig yn cadw targed derbynnydd ar gyfer rheolyddion ffatri o bell.<br>
+<br>
+Defnydd: Cliciwch dderbynnydd Cyswllt Switsh â Pherl Ender i greu un. Defnyddiwch y berl gysylltiedig wrth sleifio i weithredu'r derbynnydd a gadwyd.<br>
+<br>
+Nodiadau: Rhaid i'r targed fod wedi'i lwytho, yn yr un dimensiwn ac o fewn ystod.

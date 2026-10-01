@@ -1,0 +1,7 @@
+Misuradôr a tubul di veri
+Misuradôr di segnâl
+<&recipe>Un misuradôr compat di sale control al mostre la potence di redstone in maniere clare sul panêl.<br>
+<br>
+Ûs: montilu dulà che al covente controlâ la potence di redstone dongje cuntune cjalade.<br>
+<br>
+Notis: al lei la potence di redstone dongje di 0 a 15.

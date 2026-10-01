@@ -1,0 +1,5 @@
+Solas Bolgáin Iarainn
+Solas dlúth oibre
+<&recipe>Soláthraíonn an bloc seo soilsiú dlúth tionsclaíoch do chonairí, siúláin agus bánna oibre.<br>
+<br>
+Úsáid: suiteáil ar shíleálacha, ballaí nó imill é áit a bhfuil soilsiú soiléir oibre de dhíth sa seomra.<br>

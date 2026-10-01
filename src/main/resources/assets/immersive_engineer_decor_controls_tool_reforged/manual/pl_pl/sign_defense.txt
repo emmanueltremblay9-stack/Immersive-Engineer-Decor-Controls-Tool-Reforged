@@ -1,0 +1,5 @@
+Tabliczka obrony
+Oznaczenie zagrożenia
+<&recipe>Tabliczka „Uwaga: system obronny przed tobą” oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>

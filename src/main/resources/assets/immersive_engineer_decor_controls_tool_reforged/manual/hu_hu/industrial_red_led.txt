@@ -1,0 +1,7 @@
+Piros LED
+Jelvisszajelzés
+<&recipe>A kompakt jelző a rejtett redstone-t látható gyári visszajelzéssé alakítja.<br>
+<br>
+Használat: kösd a jel mellé ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.

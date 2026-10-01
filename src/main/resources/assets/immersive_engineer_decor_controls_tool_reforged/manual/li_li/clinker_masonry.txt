@@ -1,0 +1,161 @@
+Klinker en metselwerk
+Hülle van bakstein en beton
+Klinker, slakbakstein, gewapend beton en pantserglaas gaeve zwaore vlakke veur heite ruumtes, werkplaatse en beschermde zichlijne.<br>
+<br>
+Gebroek de passende plate, traeje, sjieve en moere um rande aaf te werke zónger de materiaalsjtiel van de fabriek te verangere.
+<np>
+Klinkerbaksteinblok
+Roetdonker baksteinwerk
+<&clinker_brick_block>Dees blok brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Klinkerbaksteinplaat
+Roetdonker baksteinwerk
+<&clinker_brick_slab>Dees blok brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Klinkerbaksteintraeje
+Roetdonker baksteinwerk
+<&clinker_brick_stairs>Dees blok brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Klinkerbaksteinmoer
+Roetdonker baksteinwerk
+<&clinker_brick_wall>Dees blok brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Bevlekt klinkerblok
+Roetdonker baksteinwerk
+<&clinker_brick_stained_block>De bevlekte klinkerbaksteinblok brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Bevlekte klinkerplaat
+Roetdonker baksteinwerk
+<&clinker_brick_stained_slab>De bevlekte klinkerbaksteinplaat brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Bevlekte klinkertraeje
+Roetdonker baksteinwerk
+<&clinker_brick_stained_stairs>De bevlekte klinkerbaksteintraeje brènge roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Versierde klinkerbakstein
+Roetdonker baksteinwerk
+<&clinker_brick_sastor_corner_block>De klinkerbakstein mèt zandsteinversiering brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Verzónke klinkerbakstein
+Roetdonker baksteinwerk
+<&clinker_brick_recessed>Dees blok brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Ingesjlete klinkerbaksteine
+Roetdonker baksteinwerk
+<&clinker_brick_vertically_slit>De verticaal ingesjlete klinkerbaksteine brènge roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Verticale klinkerplaat
+Roetdonker baksteinwerk
+<&clinker_brick_vertical_slab_structured>De gestructureerde verticale klinkerplaat brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Halve klinkerbaksteinplaat
+Roetdonker baksteinwerk
+<&halfslab_clinker_brick>Dees blok brèngk roetdonker metselwerk nao aovehalle, sjoorsteinvoete en ónnerhouwdsmoere.<br>
+<br>
+Gebroek: maak d'r moere, rande of hittehülle rond aove en ketels van.<br>
+<np>
+Slakbaksteinblok
+Dicht fabrieksmetselwerk
+<&slag_brick_block>Dees blok veugt dicht griesbroen metselwerk toe veur funderinge, keermoere en aajere werksjoppe.<br>
+<br>
+Gebroek: neem 'm veur aaj funderinge, keermoere en vuile fabrieksvloere.<br>
+<np>
+Slakbaksteinplaat
+Dicht fabrieksmetselwerk
+<&slag_brick_slab>Dees blok veugt dicht griesbroen metselwerk toe veur funderinge, keermoere en aajere werksjoppe.<br>
+<br>
+Gebroek: neem 'm veur aaj funderinge, keermoere en vuile fabrieksvloere.<br>
+<np>
+Slakbaksteintraeje
+Dicht fabrieksmetselwerk
+<&slag_brick_stairs>Dees blok veugt dicht griesbroen metselwerk toe veur funderinge, keermoere en aajere werksjoppe.<br>
+<br>
+Gebroek: neem 'm veur aaj funderinge, keermoere en vuile fabrieksvloere.<br>
+<np>
+Slakbaksteinmoer
+Dicht fabrieksmetselwerk
+<&slag_brick_wall>Dees blok veugt dicht griesbroen metselwerk toe veur funderinge, keermoere en aajere werksjoppe.<br>
+<br>
+Gebroek: neem 'm veur aaj funderinge, keermoere en vuile fabrieksvloere.<br>
+<np>
+Blok gewapend beton
+Gewapend beton
+<&rebar_concrete>Dees blok is ein gehard betóndael veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Plaat gewapend beton
+Gewapend beton
+<&rebar_concrete_slab>Dees blok is ein gehard betóndael veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Traeje van gewapend beton
+Gewapend beton
+<&rebar_concrete_stairs>Dees blok is ein gehard betóndael veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Moer van gewapend beton
+Gewapend beton
+<&rebar_concrete_wall>Dees blok is ein gehard betóndael veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Dun sjief gewapend beton
+Gewapend beton
+<&halfslab_rebar_concrete>Dees blok is ein gehard betóndael veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Tegel van gewapend beton
+Gewapend beton
+<&rebar_concrete_tile>Dees blok is ein gehard betóndael veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Tegelplaat van gewapend beton
+Gewapend beton
+<&rebar_concrete_tile_slab>Dees blok is ein gehard betóndael veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Tegel van gewapend beton
+Gewapend beton
+<&rebar_concrete_tile_stairs>De tegeltraeje van gewapend beton zeen geharde betóndiele veur machinevoete, ontploffingsmoere en laaddokvloere.<br>
+<br>
+Gebroek: zèt 'm ónger machines, langs ónnerhouwdsgange of wao de bouw ein versterkte basis neudig haet.<br>
+<np>
+Pantserglaasblok
+Beschermde zichlijn
+<&panzerglass_block>Dees blok laot 't zich vriej en pas toch bie versterkte fabrieksbouw.<br>
+<br>
+Gebroek: zèt 'm wao sjpelers door ein beschermde wand nao machines moete kinne kieke.<br>
+<np>
+Pantserglaasplaat
+Beschermde zichlijn
+<&panzerglass_slab>Dees blok laot 't zich vriej en pas toch bie versterkte fabrieksbouw.<br>
+<br>
+Gebroek: zèt 'm wao sjpelers door ein beschermde wand nao machines moete kinne kieke.<br>

@@ -1,0 +1,5 @@
+Colector de fluide cu pâlnie
+Echipament pentru circuite de fluide
+<&recipe>Colectorul mic de fluide cu pâlnie este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Pune-l sub punctul de colectare a fluidului și direcționează conținutul stocat către rezervoare sau conducte aflate mai jos.<br>

@@ -1,0 +1,7 @@
+Mididor de barra analóxica
+Mididor de señal
+<&recipe>Un mididor compactu de sala de control amuesa la intensidá de redstone nuna llectura clara de panel.<br>
+<br>
+Usu: móntalu onde se deba comprobar d’un vistazu la potencia de redstone axacente.<br>
+<br>
+Notes: llee la intensidá de redstone cercana, de 0 a 15.

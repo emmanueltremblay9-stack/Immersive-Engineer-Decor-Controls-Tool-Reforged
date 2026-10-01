@@ -1,0 +1,7 @@
+Brytarkoplingsperle
+Kopla betening
+<&recipe>Ei kopla perle lagrar ein mottakar som mål for fjernstyring av fabrikken.<br>
+<br>
+Bruk: klikk på ein brytarkoplingsmottakar med ei endeperle for å lage ei. Bruk den kopla perla medan du smyg for å aktivere den lagra mottakaren.<br>
+<br>
+Merknad: målet må vere lasta inn, i same dimensjon og innanfor rekkjevidda.

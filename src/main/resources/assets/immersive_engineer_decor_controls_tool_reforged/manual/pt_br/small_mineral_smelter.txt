@@ -1,0 +1,5 @@
+Forno de fusão mineral
+Unidade compacta de processamento
+<&recipe>O forno de fusão mineral processa minerais em alta temperatura e ocupa pouco espaço na oficina.<br>
+<br>
+Uso: Forneça blocos minerais e energia para trabalhos de fusão em alta temperatura.<br>

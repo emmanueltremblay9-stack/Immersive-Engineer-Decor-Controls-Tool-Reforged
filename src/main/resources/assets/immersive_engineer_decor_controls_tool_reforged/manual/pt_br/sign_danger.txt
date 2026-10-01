@@ -1,0 +1,5 @@
+Placa de perigo
+Sinalização de perigo
+<&recipe>A placa "Atenção: perigo extremo" identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloque ao lado de perigos, saídas, máquinas e áreas restritas.<br>

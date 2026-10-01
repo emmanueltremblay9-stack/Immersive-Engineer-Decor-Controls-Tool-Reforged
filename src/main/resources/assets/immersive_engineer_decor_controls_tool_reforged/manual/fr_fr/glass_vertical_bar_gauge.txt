@@ -1,0 +1,7 @@
+Jauge à barre en verre
+Jauge de signal
+<&recipe>Une jauge compacte de salle de commande affiche clairement la puissance redstone sur un panneau.<br>
+<br>
+Utilisation : montez-la pour lire d'un coup d'œil la puissance redstone voisine.<br>
+<br>
+Remarque : lit la puissance redstone proche de 0 à 15.

@@ -1,0 +1,7 @@
+Pantukoy ng Entidad
+Pagdama ng signal
+<&recipe>Binabantayan ng pantukoy ng entidad ang paggalaw sa paligid nang walang nakikitang plaka sa sahig.<br>
+<br>
+Paggamit: Ikabit sa mga pinto, ilaw, alarma o interlock ng makina.<br>
+<br>
+Tandaan: Sinusuri ang maliit na espasyo sa paligid ng bloke.

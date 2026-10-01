@@ -1,0 +1,7 @@
+Analogais mērītājs
+Signāla mērītājs
+<&recipe>Kompakts vadības telpas mērītājs skaidri attēlo Redstone stiprumu panelī.<br>
+<br>
+Lietošana: uzstādi tur, kur blakus esošo Redstone barošanu var pārbaudīt ar vienu skatienu.<br>
+<br>
+Piezīmes: nolasa tuvumā esošā Redstone stiprumu no 0 līdz 15.

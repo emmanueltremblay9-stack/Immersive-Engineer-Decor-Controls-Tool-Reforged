@@ -1,0 +1,7 @@
+Rustiek deurcontact
+Drukpuls
+<&recipe>Een contactschakelaar geeft een kort signaal bij beweging op de vloer of het valluik.<br>
+<br>
+Gebruik: plaats hem waar entiteiten door een onderhoudsgang, laadpunt of beveiligde route komen.<br>
+<br>
+Opmerking: geeft kort een puls na contact met een entiteit.

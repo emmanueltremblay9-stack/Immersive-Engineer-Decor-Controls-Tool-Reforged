@@ -1,0 +1,99 @@
+Inseneri tööriistad
+Kaasaskantav töökojavarustus
+Inseneri tööriistade komplekt lisab käsiseadmed, kaevandusmärgid, hädaolukorra kulutarvikud, välitoidu ja väikesed materjalitöötluse abivahendid samasse käsiraamatusse, kus kirjeldatakse dekoratiiv- ja juhtplokke.<br>
+<br>
+Need tööriistad on mõeldud tööks eemal täielikult varustatud töökojast: märgi teekond, kanna varusid, taastu eksimustest ja lõpeta väiksed töötlemistööd kohapeal.
+<np>
+REDIA-tööriist
+Teemantkattega universaaltööriist
+<&redia_tool>REDIA-tööriist on vastupidav välitööriist kiireks pinnasetööks. Kasuta seda töödeldaval mullal põllumaa tegemiseks.<br>
+<br>
+Kasuta seda stabiilsel pinnal, kui sul on tõrvikuid kaasas, et paigaldada seljakotist tõrvikumärgis REDIAt kulutamata. Pinnasetöö, pügamine, kirvetöö ja puulangetus kulutavad vastupidavust.
+<np>
+Maagipurustusvasar
+Käsitööriist
+<&crushing_hammer>Käsitööriist varaseks raua- ja kullatööks.<br>
+<br>
+Kasutus: Toorraud, toorkuld, rauamaak, süvakilt-rauamaak, kullamaak või süvakilt-kullamaak annab Immersive Engineeringu raua- või kullatolmu. Vasar kaotab vastupidavust ja naaseb ruudustikku, kuni puruneb.<br>
+<br>
+Kulub ka kaevandades ja tõukab lähivõitluses tagasi.
+<np>
+Jälgija
+Salvestatud asukoha märk
+<&tracker>Salvestab ploki asukoha esemesse.<br>
+<br>
+Kasutus: Klõpsa plokki dimensiooni ja koordinaatide salvestamiseks. Vihje näitab asukohta. Küürutades kasutamine kustutab.<br>
+<br>
+Märgi masinad, tunneliharud, kaugjuhtimised või pooleliolevad ehitused.
+<np>
+Ariadne süsi
+Kaevanduse rajamärgis
+<&ariadne_coal>Ariadne süsi paigaldab kiiresti mustad rajanooled stabiilsetele kaevanduspindadele. Märgi tugeval pinnal järgmine pööre, väljapääs või hargnemiskoht. Märgis toetab klõpsatud pinnal kaheksat suunda, ka diagonaale.<br>
+<br>
+Ariadne süsi on korduskasutatav märgistustööriist saja kasutuskorraga. Iga õnnestunud märgistus kulutab ühe vastupidavuspunkti. Sobimatud pinnad lükatakse tagasi, mitte ei kulutata eset.
+<np>
+Automaatne stimipakk
+Hädasüstal
+<&stimpack>Hädavahend ohtlikuks hoolduseks.<br>
+<br>
+Kasutus: Käsitsi ravib, kaitseb ja kiirendab lühidalt. Seljakotis käivitub madala tervisega ja siis jahtub.<br>
+<br>
+Hoia enne kõrgusi, paljaid juhtmeid või ohtlikke kaevandusi.
+<np>
+Magamiskott
+Kaasaskantav puhkekomplekt
+<&sleeping_bag>Ilmakindel komplekt voodist kaugel töötamiseks.<br>
+<br>
+Kasutus: Öösel Ülamaailmas puhka hommikuni ilma taassünnikohta muutmata.<br>
+<br>
+Keeldub päeval, lähedaste koletistega ja sobimatus dimensioonis. Iga puhkus kulutab.
+<np>
+Materjalikast
+Ehitusvarud
+<&material_box>Kannab suurt varu üht tavalist, muutmata ja virnastatavat materjali.<br>
+<br>
+Kasutus: Kast põhikäes ja materjal kõrvalkäes täidab. Tühi kõrvalkäsi võtab ühe virna.<br>
+<br>
+Mahutab 512 eset üht liiki ning keeldub pesastatud kastidest, virnastamatust varustusest ja muudetud virnadest; sisu on vihjes.
+<np>
+Sukeldumisõhukapsel
+Hädaõhuvaru
+<&diving_capsule>Hädaõhk veealuseks tööks.<br>
+<br>
+Kasutus: Taasta õhk käsitsi. Seljakotis käivitub automaatselt, kui õhk peaaegu lõpeb, ja siis jahtub.<br>
+<br>
+Võta üleujutatud kaevandustesse, veealuste torude ja pumbajaamade juurde.
+<np>
+Muslee batoonipress
+Toidupress
+<&musli_bar_press>Muudab tavalise toidu kompaktseks väliannuseks.<br>
+<br>
+Kasutus: Leib, õun ja nisu-, meloni-, kõrvitsa-, peedi- või tööstuskanepiseeme. Õnnestunud press kulutab ühe kõigist, kontrollib ruumi, teeb neli batooni ja kahjustab pressi.<br>
+<br>
+Kui koostisosa või ruum puudub, ei kulu midagi.
+<np>
+Muslee Melange energiabatoon
+Kiire töökojasnäkk
+<&musli_bar>Kompaktne toit leivast, seemnetest ja puuviljast.<br>
+<br>
+Kasutus: Söö juhtseadmete, torude, platvormide või pikkade masinaliinide paigaldamisel.
+<np>
+Mõttepress
+Kogemuse tihendaja
+<&charged_lapis_squeezer>Mõttepress muudab ühe lasuriidi ja ühe kogemustaseme sinu seljakotist laetud lasuriidiks.<br>
+<br>
+Iga õnnestunud muundamine teeb kasutajale haiget, kurnab teda ja pimestab korraks. Protsess keeldub töötamast ilma lasuriidi või XP-ta või siis, kui kasutaja on surmale liiga lähedal.
+<np>
+Laetud lasuriit
+Salvestatud kogemus
+<&charged_lapis>Laetud lasuriit salvestab ühe kogemustaseme. Tarbi seda taseme tagasisaamiseks, aktiivsete efektide eemaldamiseks ja väikese hulga elupunktide taastamiseks.<br>
+<br>
+Meisterda kõigepealt mõttepress. Laetud lasuriit saadakse seda tööriista kasutades, kui lasuriit ja XP on saadaval.
+<np>
+Jäme rauapuru
+Inseneri tööriistamaterjal, mida kasutatakse taastatud meisterduskomplektis.
+<&iron_grit>Saab sulatada<br>rauakangideks, kuid ei sobi<br>keerukamaks materjalitöötluseks.
+<np>
+Jäme kullapuru
+Inseneri tööriistamaterjal, mida kasutatakse taastatud meisterduskomplektis.
+<&gold_grit>Saab sulatada<br>kullakangideks, kuid ei sobi<br>keerukamaks materjalitöötluseks.

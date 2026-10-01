@@ -1,0 +1,7 @@
+Ricevitore analogico per collegamenti
+Comando collegato
+<&recipe>Un ricevitore collegato offre ai pannelli di controllo un bersaglio remoto visibile.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Usala da accovacciato per attivare il ricevitore a distanza.<br>
+<br>
+Note: questo ricevitore emette redstone alla massima potenza quando viene attivato.

@@ -1,0 +1,7 @@
+Erz-Zerkleinerungshammer
+Handwerkzeug
+<&recipe>Der Erz-Zerkleinerungshammer ist ein manuelles Verarbeitungswerkzeug für frühe Eisen- und Goldarbeiten.<br>
+<br>
+Benutzung: Mit Roheisen, Rohgold, Eisenerz, Tiefenschiefer-Eisenerz, Golderz oder Tiefenschiefer-Golderz herstellen, um Immersive-Engineering-Eisen- oder Goldstaub zu erzeugen. Der Hammer verliert Haltbarkeit und kehrt ins Herstellungsraster zurück, bis er zerbricht.<br>
+<br>
+Er nutzt sich auch beim Abbauen ab und kann Ziele im Nahkampf zurückstossen.

@@ -1,0 +1,7 @@
+Ariadne Coalz
+Markin da mine pathz
+<&recipe>Ariadne Coalz marks routez quickly in shaftz, branch minez, an temporary underground jobz, meow.<br>
+<br>
+How to: Use on a sturdy bluk face fer a black arrow marker on dat side. Da marker reads where on da face u clicked. It supports eight directions, diagonalz too, fer markin turnz, exits, dead ends, an supply pathz without haulin separate signpostz.<br>
+<br>
+Ariadne Coalz iz a reusable marker tool wif 100 usez. Each successful marker costs one durability; unsupported faces get rejected without wearin da item, kitty.

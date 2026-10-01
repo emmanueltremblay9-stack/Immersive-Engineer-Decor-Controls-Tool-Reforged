@@ -1,0 +1,41 @@
+Deposit e traspuart
+Acessoris di inventari e di flus
+I acessoris di deposit e traspuart a gjestissin cassis, caratei, imbûts e valvulis par fâ percors compats di fabriche.<br>
+<br>
+Dopre chestis pagjinis cuant che tu disponis magazens, liniis di tubui, serbatois di servizi e circuits di fluids controlâts.
+<np>
+Casse etichetade
+Etichete di scorte modificabile
+<&labeled_crate>Cheste casse etichetade e covente par ordenâ ben la robe tal magazen. La plache devant si pues cambiâle come un piçul cartel di oficine.<br>
+<br>
+Ûs: fâs clic di diestre su la plache par cambiâ l’etichete de casse. Fâs clic di diestre sul rest de casse par vierzi il deposit di acessoris, tocs e scortis pe manutenzion.<br>
+<np>
+Caratel par fluids
+Acessoris par liniis di fluids
+<&fluid_barrel>Chest acessori al è un toc compat par liniis di fluids, piçui serbatois, tubui, ponts di racuelte e flus controlâts de redstone.<br>
+<br>
+Ûs: metilu dulà che tubui o seglots a puedin rivâ ae muse dal serbatoi.<br>
+<np>
+Imbût par fluids
+Acessoris par liniis di fluids
+<&small_fluid_funnel>Il Piçul imbût par racuei fluids al è un toc compat par liniis di fluids, piçui serbatois, tubui, ponts di racuelte e flus controlâts de redstone.<br>
+<br>
+Ûs: metilu sot dal pont di racuelte dal fluid e puarte il contignût conservât viers serbatois o tubui plui bas.<br>
+<np>
+Valvule di no ritorn par tubui di fluids
+Acessoris par liniis di fluids
+<&straight_pipe_valve>La Valvule di no ritorn par tubui di fluids e je un toc compat par liniis di fluids, piçui serbatois, tubui, ponts di racuelte e flus controlâts de redstone.<br>
+<br>
+Ûs: alinee la valvule cu la direzion volude dal flus.<br>
+<np>
+Valvule par fluids a redstone
+Acessoris par liniis di fluids
+<&straight_pipe_valve_redstone>La Valvule par fluids controlade de redstone e je un toc compat par liniis di fluids, piçui serbatois, tubui, ponts di racuelte e flus controlâts de redstone.<br>
+<br>
+Ûs: alinee la valvule cu la direzion volude dal flus.<br>
+<np>
+Valvule analogjiche par fluids
+Acessoris par liniis di fluids
+<&straight_pipe_valve_redstone_analog>La Valvule analogjiche par fluids a redstone e je un toc compat par liniis di fluids, piçui serbatois, tubui, ponts di racuelte e flus controlâts de redstone.<br>
+<br>
+Ûs: alinee la valvule cu la direzion volude dal flus.<br>

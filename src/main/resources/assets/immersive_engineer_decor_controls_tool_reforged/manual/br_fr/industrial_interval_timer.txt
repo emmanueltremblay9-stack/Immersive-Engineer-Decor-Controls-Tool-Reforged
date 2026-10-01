@@ -1,0 +1,7 @@
+Amzerier etremezioù
+Lusk amzeriet
+<&recipe>Un droc'hell amzerier vihan a gas ul lusk Redstone termenet en amzer.<br>
+<br>
+Implij: Implijit anezhi pa'z eus ezhomm da reoliñ ur mekanik bihan bep an amzer pe gant un dale.<br>
+<br>
+Notenn: Implijout a ra luskoù Redstone termenet en amzer.

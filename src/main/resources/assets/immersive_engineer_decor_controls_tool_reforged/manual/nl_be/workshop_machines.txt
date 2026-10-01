@@ -1,0 +1,107 @@
+Werkplaatsmachines
+Machines en werkplaatsin- en uitvoer
+Werkplaatsmachines bieden compacte vervaardiging, voorwerptransport, smelten, afvalverwerking, verzameling en ondersteunende functies in één blok.<br>
+<br>
+Open de volgende pagina's voor het recept, de afbeelding, de achtergrond en praktische gebruiksaanwijzingen van elke machine.
+<np>
+Stalen tafel
+Werkplaatsmeubilair
+<&steel_table>Dit blok is een praktisch meubelstuk voor werkruimtes en onderhoudshoeken.<br>
+<br>
+Gebruik: zet het naast werkbanken, kisten en compacte machines.<br>
+<np>
+Tafel van behandeld hout
+Werkplaatsmeubilair
+<&treated_wood_table>Dit blok is een praktisch meubelstuk voor werkruimtes en onderhoudshoeken.<br>
+<br>
+Gebruik: zet het naast werkbanken, kisten en compacte machines.<br>
+<np>
+Kruk van behandeld hout
+Werkplaatsmeubilair
+<&treated_wood_stool>Dit blok is een praktisch meubelstuk voor werkruimtes en onderhoudshoeken.<br>
+<br>
+Gebruik: zet het naast werkbanken, kisten en compacte machines.<br>
+<np>
+Metaalwerkbank
+Werkstation voor metaalplaten
+<&metal_crafting_table>De metaalwerkbank is een versterkt werkstation met een hamervak, een vervaardigingsraster van 3×3 en een duidelijk uitvoervak.<br>
+<br>
+Gebruik: gebruik het raster voor gewone vervaardiging. Leg voor IE-platen een ingenieurshamer in het gereedschapsvak en het plaatmateriaal in het raster voordat u het resultaat pakt. Stalen decoraties gebruiken staalplaten voor palen, loopbruggen, ramen, deuren, leuningen en andere stalen onderdelen.<br>
+<np>
+Fabriekstrechter
+Hulpmiddel voor de fabrieksvloer
+<&factory_hopper>Dit blok verplaatst voorwerpstapels door een compacte industriële behuizing.<br>
+<br>
+Gebruik: richt het op de inventarislijn en stel bereik, aantal stapels, timing en redstonemodus in op het scherm.<br>
+<np>
+Fabrieksuitwerper
+Hulpmiddel voor de fabrieksvloer
+<&factory_dropper>Dit blok werpt opgeslagen voorwerpen uit via een gericht vlak.<br>
+<br>
+Gebruik: richt de voorkant op de gewenste uitwerpplaats, vul de interne vakken en stel kracht, hoek, vertraging, filterlogica en redstonemodus in op het scherm.<br>
+<np>
+Fabrieksblokplaatser
+Hulpmiddel voor de fabrieksvloer
+<&factory_placer>Dit blok plaatst bij activering blokken uit zijn interne voorraad.<br>
+<br>
+Gebruik: richt de werkzijde op de doelruimte en vul de voorraad met plaatsbare stapels.<br>
+<np>
+Blokbreker
+Hulpmiddel voor de fabrieksvloer
+<&small_block_breaker>De kleine blokbreker is een hulpmiddel voor de fabrieksvloer, uit een reeks blokken voor vervaardiging, opslag, plaatsing, breken, verzamelen en compacte automatisering.<br>
+<br>
+Gebruik: richt de werkzijde op het blok dat moet worden verwijderd.<br>
+<np>
+Afvalverbrandingsoven
+Compacte verwerkingseenheid
+<&small_waste_incinerator>De afvalverbrandingsoven vernietigt ongewenste voorwerpen en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: voer alleen ongewenste voorwerpen aan de wachtrij toe.<br>
+<np>
+Laboratoriumoven
+Compacte verwerkingseenheid
+<&small_lab_furnace>De laboratoriumoven voert compacte smeltklussen op vaste brandstof uit en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: gebruik vaste brandstof om kleine partijen te smelten.<br>
+<np>
+Elektrische oven
+Compacte verwerkingseenheid
+<&small_electrical_furnace>De elektrische oven voert compacte smeltklussen op FE-energie uit en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: lever FE-energie en geschikt smeltmateriaal aan.<br>
+<np>
+Mineralensmeltoven
+Compacte verwerkingseenheid
+<&small_mineral_smelter>De mineralensmeltoven verwerkt mineralen op hoge temperatuur en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: voer mineraalblokken en energie aan om op hoge temperatuur te smelten.<br>
+<np>
+Watervriezer
+Compacte verwerkingseenheid
+<&small_freezer>De watervriezer voert compacte koelwerkzaamheden uit in aangedreven vloeistofinstallaties.<br>
+<br>
+Gebruik: voer water en energie aan om stapsgewijs ijs te produceren.<br>
+<np>
+Passieve vloeistofopvang
+Onderdelen voor vloeistofleidingen
+<&passive_fluid_accumulator>De passieve vloeistofverzamelaar is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: plaats hem tegen geschikte waterbronnen en houd ruimte vrij voor vloeistofafvoer.<br>
+<np>
+Zonnepaneel
+Hulpmiddel voor de fabrieksvloer
+<&small_solar_panel>Het kleine zonnepaneel is een hulpmiddel voor de fabrieksvloer, uit een reeks blokken voor vervaardiging, opslag, plaatsing, breken, verzamelen en compacte automatisering.<br>
+<br>
+Gebruik: zorg voor vrij zicht op de hemel en sluit apparaten met een laag verbruik aan.<br>
+<np>
+Melkmachine
+Hulpmiddel voor de fabrieksvloer
+<&small_milking_machine>De kleine melkmachine is een hulpmiddel voor de fabrieksvloer, uit een reeks blokken voor vervaardiging, opslag, plaatsing, breken, verzamelen en compacte automatisering.<br>
+<br>
+Gebruik: plaats hem bij koeien en zorg voor afvoer van melkverpakkingen of vloeibare melk.<br>
+<np>
+Boomkapper
+Hulpmiddel voor de fabrieksvloer
+<&small_tree_cutter>De kleine boomkapper is een hulpmiddel voor de fabrieksvloer, uit een reeks blokken voor vervaardiging, opslag, plaatsing, breken, verzamelen en compacte automatisering.<br>
+<br>
+Gebruik: richt hem op volgroeide bomen en verzamel de opbrengst apart.<br>

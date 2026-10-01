@@ -1,0 +1,108 @@
+Construction industrielle
+Murs et finitions d'usine
+Les éléments de construction généraux regroupent portes, fenêtres, éclairages, panneaux d'avertissement, bordures et pièces structurelles sans section plus spécifique.<br>
+<br>
+Consultez ces pages pour les locaux d'usine, couloirs techniques, marquages de dangers et détails industriels fonctionnels.
+<np>
+Ampoule en fer
+Éclairage de travail compact
+<&iron_bulb_light>Ce bloc fournit un éclairage industriel compact aux couloirs, passerelles et zones de travail.<br>
+<br>
+Utilisation : fixez-le aux plafonds, aux murs ou aux bords qui nécessitent un éclairage de travail clair.<br>
+<np>
+Lumière de bord de plafond
+Éclairage de travail compact
+<&iron_ceiling_edge_light>Ce bloc fournit un éclairage industriel compact aux couloirs, passerelles et zones de travail.<br>
+<br>
+Utilisation : fixez-le aux plafonds, aux murs ou aux bords qui nécessitent un éclairage de travail clair.<br>
+<np>
+Lumière encastrée au sol
+Éclairage de travail compact
+<&iron_floor_edge_light>Ce bloc fournit un éclairage industriel compact aux couloirs, passerelles et zones de travail.<br>
+<br>
+Utilisation : fixez-le aux plafonds, aux murs ou aux bords qui nécessitent un éclairage de travail clair.<br>
+<np>
+Lumière encastrée
+Éclairage de travail compact
+<&iron_inset_light>Ce bloc fournit un éclairage industriel compact aux couloirs, passerelles et zones de travail.<br>
+<br>
+Utilisation : fixez-le aux plafonds, aux murs ou aux bords qui nécessitent un éclairage de travail clair.<br>
+<np>
+Pancarte « Avertissement générique »
+Signalisation de danger
+<&sign_caution>La pancarte « Avertissement générique » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau de danger
+Signalisation de danger
+<&sign_danger>La pancarte « Attention vraiment dangereux là-bas » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau décoratif
+Signalisation de danger
+<&sign_decor>La plaque signalétique de décor d'ingénieur signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau de défense
+Signalisation de danger
+<&sign_defense>La pancarte « Attention système de défense devant » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau de sortie
+Signalisation de danger
+<&sign_exit>Ce panneau signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau « Risque d'incendie »
+Signalisation de danger
+<&sign_firehazard>La pancarte « Risque d'incendie » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau « Avertissement de gel »
+Signalisation de danger
+<&sign_frost>La pancarte « Avertissement de gel » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau de surface chaude
+Signalisation de danger
+<&sign_hotsurface>La pancarte « Attention surface chaude » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau de fil sous tension
+Signalisation de danger
+<&sign_hotwire>La pancarte « Attention, fil sous tension » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau « Risque laser »
+Signalisation de danger
+<&sign_laser>La pancarte « Risque laser » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau de danger magique
+Signalisation de danger
+<&sign_magichazard>La pancarte « Attention Danger Magique » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau de champ magnétique
+Signalisation de danger
+<&sign_magneticfield>La pancarte « Attention champ magnétique puissant » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>
+Panneau « Danger radioactif »
+Signalisation de danger
+<&sign_radioactive>La pancarte « Danger radioactif » signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>
+<np>

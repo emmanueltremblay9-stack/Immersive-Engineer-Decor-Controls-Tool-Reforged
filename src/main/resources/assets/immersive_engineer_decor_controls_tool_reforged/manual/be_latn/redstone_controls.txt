@@ -1,0 +1,789 @@
+Redstonavyja elemienty kiravannia
+Vymiaralniki i sihnalnaje abstalavannie
+Pryłady kiravannia pieratvarajuć schavany redston u zrazumiełyja fabryčnyja paneli, datčyki, indykatary, pieraklučalniki, sihnalizacyju i zviazanyja sihnalnyja elemienty.<br>
+<br>
+Vykarystoŭvaj hetyja staronki pry budaŭnictvie apieratarskich stancyj, sihnalnych ščytoŭ, schiem biaspieki i addalenaha kiravannia.
+<np>
+Mišeń dla streł
+Karotkačasovy impuls
+<&arrow_target>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Datčyk dzviarej
+Redstonavaje kiravannie
+<&door_sensor_switch>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Knopka lifta
+Redstonavaje kiravannie
+<&elevator_button>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Šklanaja knopka
+Redstonavaje kiravannie
+<&glass_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Šklanaja knopka
+Redstonavaje kiravannie
+<&glass_small_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Šklanaja sensarnaja knopka
+Redstonavaje kiravannie
+<&glass_touch_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Knopka mašyny
+Redstonavaje kiravannie
+<&industrial_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Knopka
+Redstonavaje kiravannie
+<&industrial_double_pole_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Knopka mašyny z aharodžaj
+Redstonavaje kiravannie
+<&industrial_fenced_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Knopka hruku
+Redstonavaje kiravannie
+<&industrial_knock_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Staraja azdoblenaja knopka
+Redstonavaje kiravannie
+<&oldfancy_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Staraja azdoblenaja knopka
+Redstonavaje kiravannie
+<&oldfancy_small_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Staraja azdoblenaja knopka z łancuhom
+Karotkačasovy impuls
+<&oldfancy_spring_reset_chain>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Viaskovaja knopka
+Redstonavaje kiravannie
+<&rustic_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Viaskovaja knopka-cvik
+Redstonavaje kiravannie
+<&rustic_nail_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Viaskovaja małaja knopka
+Redstonavaje kiravannie
+<&rustic_small_button>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Viaskovaja knopka z łancuhom
+Karotkačasovy impuls
+<&rustic_spring_reset_chain>Impulsny pieraklučalnik daje vyrazny redstonavy impuls poŭnaj siły.<br>
+<br>
+Vykarystannie: skarystaj jaho dla zapusku mašyn, admykannia dzviarej, sihnalizacyi abo schiem adnarazovaha spracoŭvannia.<br>
+<br>
+Zaŭvahi: skidajecca pasla zakančennia zadadzienaha impulsu.
+<np>
+Šklanaja kantaktnaja płascina
+Impuls ad cisku
+<&glass_contact_mat>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Šklany dzviarny kantakt
+Impuls ad cisku
+<&glass_door_contact_mat>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Kantaktny kilimok
+Impuls ad cisku
+<&industrial_contact_mat>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Dzviarny kantaktny kilimok
+Impuls ad cisku
+<&industrial_door_contact_mat>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Detektar padziennia naskroź
+Vyjaŭlennie sihnału
+<&industrial_fallthrough_detector>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Nažnaja knopka
+Redstonavaje kiravannie
+<&industrial_foot_button>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Pramysłovyja dzviery z aktyvacyjaj miechaničnym udaram
+Impuls ad cisku
+<&industrial_high_sensitive_trapdoor>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Kantaktny kilimok dla miechaničnych udaraŭ
+Impuls ad cisku
+<&industrial_shock_sensitive_contact_mat>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Luk dla miechaničnych udaraŭ
+Impuls ad cisku
+<&industrial_shock_sensitive_trapdoor>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Čyrvonaja sihnalnaja kvietka
+Impuls ad cisku
+<&red_power_plant>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Viaskovaja nacisknaja plita
+Impuls ad cisku
+<&rustic_contact_plate>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Viaskovaja dzviarnaja nacisknaja plita
+Impuls ad cisku
+<&rustic_door_contact_plate>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Viaskovy detektar padziennia
+Vyjaŭlennie sihnału
+<&rustic_fallthrough_detector>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Viaskovyja dzviery z aktyvacyjaj miechaničnym udaram
+Impuls ad cisku
+<&rustic_high_sensitive_trapdoor>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Viaskovaja plita dla miechaničnych udaraŭ
+Impuls ad cisku
+<&rustic_shock_sensitive_plate>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Viaskovyja dzviery z aktyvacyjaj miechaničnym udaram
+Impuls ad cisku
+<&rustic_shock_sensitive_trapdoor>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Žoŭtaja sihnalnaja kvietka
+Impuls ad cisku
+<&yellow_power_plant>Kantaktny pieraklučalnik padaje karotki sihnał ad ruchu na padłozie abo luku.<br>
+<br>
+Vykarystannie: staŭ jaho tam, dzie sutnasci prachodziać praz słužbovy prachod, zahruzčyk abo achoŭny maršrut.<br>
+<br>
+Zaŭvahi: daje karotki impuls pasla kantaktu z sutnasciu.
+<np>
+Šklany sutačny tajmier
+Dzionny sihnał
+<&glass_day_timer>Tajmierny pieraklučalnik sočyć za dzionnaj častkaj cykłu svietu.<br>
+<br>
+Vykarystannie: skarystaj jaho dla dvarovych lampaŭ, akanic i fabryčnych elemientaŭ kiravannia, jakija pracujuć tolki ŭdzień.<br>
+<br>
+Zaŭvahi: patrabuje vymiarennia z niabiesnym asviatlenniem.
+<np>
+Šklany detektar sutnasciej
+Vyjaŭlennie sihnału
+<&glass_entity_detector>Detektar sutnasciej sočyć za rucham pablizu biez bačnaj padłohavaj płasciny.<br>
+<br>
+Vykarystannie: padklučaj jaho da dzviarej, lampaŭ, sihnalizacyi abo błakirovak mašyn.<br>
+<br>
+Zaŭvahi: skanuje nievialikuju vobłasć vakoł błoka.
+<np>
+Šklany intervalny sihnał
+Impuls pavodle času
+<&glass_interval_timer>Kampaktny tajmierny pieraklučalnik stvaraje zapłanavany redstonavy impuls.<br>
+<br>
+Vykarystannie: skarystaj jaho tam, dzie małomu miechanizmu patrebna pieryjadyčnaje kiravannie abo kiravannie z zatrymkaj.<br>
+<br>
+Zaŭvahi: vykarystoŭvaje zapłanavanyja redstonavyja impulsy.
+<np>
+Šklany liniejny detektar
+Vyjaŭlennie sihnału
+<&glass_linear_entity_detector>Detektar sutnasciej sočyć za rucham pablizu biez bačnaj padłohavaj płasciny.<br>
+<br>
+Vykarystannie: padklučaj jaho da dzviarej, lampaŭ, sihnalizacyi abo błakirovak mašyn.<br>
+<br>
+Zaŭvahi: skanuje nievialikuju vobłasć vakoł błoka.
+<np>
+Detektar błokaŭ
+Vyjaŭlennie sihnału
+<&industrial_block_detector>Detektar błokaŭ praviaraje, ci zaniata miesca pierad im.<br>
+<br>
+Vykarystannie: nakiruj jaho na hrań mašyny, bufier abo achoŭnuju prastoru dla nazirannia.<br>
+<br>
+Zaŭvahi: padaje sihnał, kali błok pierad im nie zjaŭlajecca pavietram.
+<np>
+Sutačny tajmier
+Dzionny sihnał
+<&industrial_day_timer>Tajmierny pieraklučalnik sočyć za dzionnaj častkaj cykłu svietu.<br>
+<br>
+Vykarystannie: skarystaj jaho dla dvarovych lampaŭ, akanic i fabryčnych elemientaŭ kiravannia, jakija pracujuć tolki ŭdzień.<br>
+<br>
+Zaŭvahi: patrabuje vymiarennia z niabiesnym asviatlenniem.
+<np>
+Detektar sutnasciej
+Vyjaŭlennie sihnału
+<&industrial_entity_detector>Detektar sutnasciej sočyć za rucham pablizu biez bačnaj padłohavaj płasciny.<br>
+<br>
+Vykarystannie: padklučaj jaho da dzviarej, lampaŭ, sihnalizacyi abo błakirovak mašyn.<br>
+<br>
+Zaŭvahi: skanuje nievialikuju vobłasć vakoł błoka.
+<np>
+Intervalny tajmier
+Impuls pavodle času
+<&industrial_interval_timer>Kampaktny tajmierny pieraklučalnik stvaraje zapłanavany redstonavy impuls.<br>
+<br>
+Vykarystannie: skarystaj jaho tam, dzie małomu miechanizmu patrebna pieryjadyčnaje kiravannie abo kiravannie z zatrymkaj.<br>
+<br>
+Zaŭvahi: vykarystoŭvaje zapłanavanyja redstonavyja impulsy.
+<np>
+Datčyk asviatlennia
+Vyjaŭlennie sihnału
+<&industrial_light_sensor>Datčyk asviatlennia pieratvaraje miascovuju jarkasć u redstonavaje kiravannie.<br>
+<br>
+Vykarystannie: skarystaj jaho dla aŭtamatyčnych lampaŭ, akanic i schiem bačnasci.<br>
+<br>
+Zaŭvahi: padaje sihnał pry zychodnaj jarkasci 8 abo vyšej.
+<np>
+Detektar navalnicy
+Vyjaŭlennie sihnału
+<&industrial_lightning_sensor>Datčyk navalnicy ŭklučaje papiaredžanni padčas hromu.<br>
+<br>
+Vykarystannie: pastaŭ jaho pad adkrytym niebam i padklučy da lampaŭ abo sihnalizacyi.<br>
+<br>
+Zaŭvahi: patrabuje hromu i dostupu da nieba.
+<np>
+Liniejny detektar sutnasciej
+Vyjaŭlennie sihnału
+<&industrial_linear_entity_detector>Detektar sutnasciej sočyć za rucham pablizu biez bačnaj padłohavaj płasciny.<br>
+<br>
+Vykarystannie: padklučaj jaho da dzviarej, lampaŭ, sihnalizacyi abo błakirovak mašyn.<br>
+<br>
+Zaŭvahi: skanuje nievialikuju vobłasć vakoł błoka.
+<np>
+Datčyk daždžu
+Vyjaŭlennie sihnału
+<&industrial_rain_sensor>Datčyk nadvorja pieratvaraje doždž u svaim miescy ŭ redstonavy sihnał.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie doždž moža traplać na błok nad im.<br>
+<br>
+Zaŭvahi: praviaraje doždž nad datčykam.
+<np>
+Bistabilny šklany pieraklučalnik
+Redstonavaje kiravannie
+<&glass_rotary_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Bistabilny šklany sensar
+Redstonavaje kiravannie
+<&glass_touch_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Aranžavaje adčuvalnaje škło
+Sihnalnaje škło
+<&orange_sensitiveglass>Šklany błok, jaki reahuje na redston, zachoŭvaje ahlad i pakazvaje stan sihnału.<br>
+<br>
+Vykarystannie: staŭ jaho ŭ voknach dyspietčarskich, asvietlenych panelach i achoŭnym fabryčnym šklenni.<br>
+<br>
+Zaŭvahi: mianiaje stan ad redstonavaha sihnału pobač.
+<np>
+Sviatlivaje adčuvalnaje škło
+Sihnalnaje škło
+<&sensitive_glass_block>Šklany błok, jaki reahuje na redston, zachoŭvaje ahlad i pakazvaje stan sihnału.<br>
+<br>
+Vykarystannie: staŭ jaho ŭ voknach dyspietčarskich, asvietlenych panelach i achoŭnym fabryčnym šklenni.<br>
+<br>
+Zaŭvahi: mianiaje stan ad redstonavaha sihnału pobač.
+<np>
+Kalarovaje adčuvalnaje škło
+Sihnalnaje škło
+<&stained_sensitiveglass>Šklany błok, jaki reahuje na redston, zachoŭvaje ahlad i pakazvaje stan sihnału.<br>
+<br>
+Vykarystannie: staŭ jaho ŭ voknach dyspietčarskich, asvietlenych panelach i achoŭnym fabryčnym šklenni.<br>
+<br>
+Zaŭvahi: mianiaje stan ad redstonavaha sihnału pobač.
+<np>
+Šklany słupkovy vymiaralnik
+Vymiaralnik sihnału
+<&glass_vertical_bar_gauge>Kampaktny vymiaralnik dla dyspietčarskaj vyrazna pakazvaje siłu redstonu na paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie siłu susiedniaha redstonavaha sihnału možna pravieryć adnym pohladam.<br>
+<br>
+Zaŭvahi: sčytvaje siłu susiedniaha redstonavaha sihnału ad 0 da 15.
+<np>
+Anałahavy vymiaralnik
+Vymiaralnik sihnału
+<&industrial_analog_angular_gauge>Kampaktny vymiaralnik dla dyspietčarskaj vyrazna pakazvaje siłu redstonu na paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie siłu susiedniaha redstonavaha sihnału možna pravieryć adnym pohladam.<br>
+<br>
+Zaŭvahi: sčytvaje siłu susiedniaha redstonavaha sihnału ad 0 da 15.
+<np>
+Valtmietr
+Vymiaralnik sihnału
+<&industrial_analog_horizontal_gauge>Kampaktny vymiaralnik dla dyspietčarskaj vyrazna pakazvaje siłu redstonu na paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie siłu susiedniaha redstonavaha sihnału možna pravieryć adnym pohladam.<br>
+<br>
+Zaŭvahi: sčytvaje siłu susiedniaha redstonavaha sihnału ad 0 da 15.
+<np>
+Ličbavy vymiaralnik
+Vyraznaja siła sihnału
+<&industrial_small_digital_gauge>Kampaktny vymiaralnik dla dyspietčarskaj vyrazna pakazvaje siłu redstonu na paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie siłu susiedniaha redstonavaha sihnału možna pravieryć adnym pohladam.<br>
+<br>
+Zaŭvahi: sčytvaje siłu susiedniaha redstonavaha sihnału ad 0 da 15.
+<np>
+Šklany trubkavy vymiaralnik
+Vymiaralnik sihnału
+<&industrial_tube_gauge>Kampaktny vymiaralnik dla dyspietčarskaj vyrazna pakazvaje siłu redstonu na paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie siłu susiedniaha redstonavaha sihnału možna pravieryć adnym pohladam.<br>
+<br>
+Zaŭvahi: sčytvaje siłu susiedniaha redstonavaha sihnału ad 0 da 15.
+<np>
+Anałahavy słupkovy vymiaralnik
+Vymiaralnik sihnału
+<&industrial_vertical_bar_gauge>Kampaktny vymiaralnik dla dyspietčarskaj vyrazna pakazvaje siłu redstonu na paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie siłu susiedniaha redstonavaha sihnału možna pravieryć adnym pohladam.<br>
+<br>
+Zaŭvahi: sčytvaje siłu susiedniaha redstonavaha sihnału ad 0 da 15.
+<np>
+Sihnalnaja lampa
+Adlustravannie sihnału
+<&industrial_alarm_lamp>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Sirena tryvohi
+Indykatar sihnalu
+<&industrial_alarm_siren>Sirena tryvohi — indykatar redstoŭnu, jaki macujecca na hran bloka. Jaje stan silkavannja zmjanjajecca pavodlje sihnalu ad bloka, da jakoha jana prymacavana.<br>
+<br>
+Vykarystannje: Prymacujcje da cvjordaj hrani i padajcje sihnal dlja kantrolju dzvjarej, mašyn, tryvoh abo paneljaŭ.<br>
+<br>
+Zaŭvaha: Pakul dalučany sihnal aktyŭny, sirena abnaŭljajecca raz na sjekundu.
+<np>
+Mirhalny sviatłodyjod
+Adlustravannie sihnału
+<&industrial_blinking_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Zialony mirhalny sviatłodyjod
+Adlustravannie sihnału
+<&industrial_green_blinking_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Zialony sviatłodyjod
+Adlustravannie sihnału
+<&industrial_green_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Čyrvony sviatłodyjod
+Adlustravannie sihnału
+<&industrial_red_blinking_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Čyrvony sviatłodyjod
+Adlustravannie sihnału
+<&industrial_red_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Bieły mirhalny sviatłodyjod
+Adlustravannie sihnału
+<&industrial_white_blinking_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Bieły sviatłodyjod
+Adlustravannie sihnału
+<&industrial_white_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Žoŭty mirhalny sviatłodyjod
+Adlustravannie sihnału
+<&industrial_yellow_blinking_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Žoŭty sviatłodyjod
+Adlustravannie sihnału
+<&industrial_yellow_led>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Viaskovy siemafor
+Adlustravannie sihnału
+<&rustic_semaphore>Kampaktny indykatar robić schavany redstonavy sihnał bačnym na fabrycy.<br>
+<br>
+Vykarystannie: padklučy jaho kala sihnału, kab nazirać za dzviaryma, mašynami, sihnalizacyjaj abo panelami.<br>
+<br>
+Zaŭvahi: mianiaje stan pry najaŭnasci redstonavaha sihnału pobač.
+<np>
+Pieraklučalnik z kamparataram
+Sihnał dałučanaha błoka
+<&industrial_comparator_switch>Kampaktny pieraklučalnik z datčykam sčytvaje błok, na jakim ustalavany, i pieratvaraje pakazannie ŭ prosty vychad paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho na schoviščach, reziervuarach abo redstonavym abstalavanni. Kali dałučany błok paviedamlaje vychad kamparatara, kantejniera abo redstonu, pieraklučalnik padaje redstonavy sihnał poŭnaj siły.<br>
+<br>
+Zaŭvahi: vykarystoŭvaj jaho, kab pieratvarać uzroŭni zapasaŭ abo schavanuju pravodku ŭ zrazumiełyja linii kiravannia ŭklučenniem/vyklučenniem.
+<np>
+Rehulatar siły sihnału
+Zmienny sihnał
+<&industrial_dimmer>Pavarotny rehulatar zadaje siłu redstonu na kampaktnaj piaredniaj paneli.<br>
+<br>
+Vykarystannie: pstrykaj pravaj knopkaj, kab pastupova pavialičvać vychad, a pasla poŭnaj siły viarnucca da nula.<br>
+<br>
+Zaŭvahi: padaje sihnał siłaj ad 0 da 15.
+<np>
+Knopka avaryjnaha spyniennia
+Redstonavaje kiravannie
+<&industrial_estop_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Błakiravalnik varonki
+Redstonavaje kiravannie
+<&industrial_hopper_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Pieraklučalnik hruku
+Redstonavaje kiravannie
+<&industrial_knock_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Ryčah
+Redstonavaje kiravannie
+<&industrial_lever>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Dvuchknopkavy pieraklučalnik mašyny
+Redstonavaje kiravannie
+<&industrial_machine_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Vyciažnaja ručka
+Redstonavaje kiravannie
+<&industrial_pull_handle>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Pavarotny ryčah
+Redstonavaje kiravannie
+<&industrial_rotary_lever>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Pavarotny pieraklučalnik mašyny
+Redstonavaje kiravannie
+<&industrial_rotary_machine_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Kantaktny ryčah
+Redstonavaje kiravannie
+<&industrial_small_lever>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Pieraklučalnik
+Redstonavaje kiravannie
+<&industrialswitch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Pieraklučalnik asviatlennia
+Redstonavaje kiravannie
+<&light_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Vientylny pieraklučalnik
+Redstonavaje kiravannie
+<&valve_wheel_switch>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Impulsny pryjomnik u korpusie
+Kiravannie praz suviaź
+<&industrial_switchlink_cased_pulse_receiver>Zviazany impulsny pryjomnik u korpusie daje addalenym panelam karotki redstonavy puskavy sihnał.<br>
+<br>
+Vykarystannie: pstrykni pa im ender-žamčužynaj, kab stvaryć zviazanuju žamčužynu. Pstrykni pa im pravaj knopkaj abo aktyvuj zviazanuju žamčužynu, kab padać karotki impuls.<br>
+<br>
+Zaŭvahi: impuls samastojna skidajecca pasla zadadzienaha času.
+<np>
+Pryjomnik suviazi ŭ korpusie
+Kiravannie praz suviaź
+<&industrial_switchlink_cased_receiver>Zviazany pryjomnik u korpusie daje addalenym panelam tryvałuju redstonavuju cel.<br>
+<br>
+Vykarystannie: pstrykni pa im ender-žamčužynaj, kab stvaryć zviazanuju žamčužynu. Pstrykni pravaj knopkaj niepasredna pa pryjomniku, kab pieraklučyć jaho ŭručnuju.<br>
+<br>
+Zaŭvahi: zviazanaja žamčužyna pieraklučaje hety pryjomnik, kali vykarystoŭvać jaje kradučysia.
+<np>
+Impulsny pryjomnik suviazi
+Kiravannie praz suviaź
+<&industrial_switchlink_pulse_receiver>Zviazany impulsny pryjomnik daje addalenym panelam karotki redstonavy puskavy sihnał.<br>
+<br>
+Vykarystannie: pstrykni pa im ender-žamčužynaj, kab stvaryć zviazanuju žamčužynu. Pstrykni pa im pravaj knopkaj abo aktyvuj zviazanuju žamčužynu, kab padać karotki impuls.<br>
+<br>
+Zaŭvahi: impuls samastojna skidajecca pasla zadadzienaha času.
+<np>
+Impulsnaje rele suviazi
+Kiravannie praz suviaź
+<&industrial_switchlink_pulse_relay>Elemient u styli rele daje panelnym pabudovam kampaktny punkt miascovaha pieraklučennia.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem. Kali patrebna aktyvacyja zviazanaj žamčužynaj, vykarystoŭvaj błoki pryjomnikaŭ.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Pryjomnik suviazi pieraklučalnikaŭ
+Kiravannie praz suviaź
+<&industrial_switchlink_receiver>Zviazany pryjomnik daje addalenym panelam redstonavuju cel poŭnaj siły.<br>
+<br>
+Vykarystannie: pstrykni pa im ender-žamčužynaj, kab stvaryć zviazanuju žamčužynu. Pstrykni pravaj knopkaj niepasredna pa pryjomniku, kab pieraklučyć jaho ŭručnuju.<br>
+<br>
+Zaŭvahi: zviazanaja žamčužyna pieraklučaje hety pryjomnik, kali vykarystoŭvać jaje kradučysia.
+<np>
+Anałahavy pryjomnik suviazi
+Kiravannie praz suviaź
+<&industrial_switchlink_receiver_analog>Zviazany pryjomnik daje panelam kiravannia bačnuju addalenuju cel.<br>
+<br>
+Vykarystannie: pstrykni pa im ender-žamčužynaj, kab stvaryć zviazanuju žamčužynu. Vykarystaj jaje kradučysia, kab addalena ŭklučyć pryjomnik.<br>
+<br>
+Zaŭvahi: pry spracoŭvanni hety pryjomnik padaje redstonavy sihnał poŭnaj siły.
+<np>
+Rele suviazi pieraklučalnikaŭ
+Kiravannie praz suviaź
+<&industrial_switchlink_relay>Elemient u styli rele daje panelnym pabudovam kampaktny punkt miascovaha pieraklučennia.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem. Kali patrebna aktyvacyja zviazanaj žamčužynaj, vykarystoŭvaj błoki pryjomnikaŭ.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Anałahavaje rele suviazi
+Kiravannie praz suviaź
+<&industrial_switchlink_relay_analog>Elemient u styli rele daje panelnym pabudovam kampaktny punkt miascovaha pieraklučennia.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem. Kali patrebna aktyvacyja zviazanaj žamčužynaj, vykarystoŭvaj błoki pryjomnikaŭ.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Žamčužyna suviazi pieraklučalnikaŭ
+Kiravannie praz suviaź
+<&switchlink_pearl>Zviazanaja žamčužyna zachoŭvaje metavy pryjomnik dla addalenaha fabryčnaha kiravannia.<br>
+<br>
+Vykarystannie: pstrykni ender-žamčužynaj pa pryjomniku suviazi pieraklučalnikaŭ, kab stvaryć jaje. Vykarystaj zviazanuju žamčužynu kradučysia, kab uklučyć zachavany pryjomnik.<br>
+<br>
+Zaŭvahi: cel musić być zahružana, znachodzicca ŭ tym ža vymiarenni i ŭ miežach radyusa dziejannia.
+<np>
+Stary azdobleny ryčah
+Redstonavaje kiravannie
+<&oldfancy_bistableswitch1>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Stary azdobleny pavarotny ryčah
+Redstonavaje kiravannie
+<&oldfancy_bistableswitch2>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Viaskovy pavarotny ryčah
+Redstonavaje kiravannie
+<&rustic_angular_lever>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Viaskovy ryčah
+Redstonavaje kiravannie
+<&rustic_lever>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Viaskovy ryčah-cvik
+Redstonavaje kiravannie
+<&rustic_nail_lever>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.
+<np>
+Viaskovy ryčah z dvuma šarnirami
+Redstonavaje kiravannie
+<&rustic_two_hinge_lever>Kampaktny elemient kiravannia stvaraje zrazumieły punkt redstonavaha pieraklučennia ŭ fabryčnych pabudovach.<br>
+<br>
+Vykarystannie: pstrykni pravaj knopkaj, kab pieraklučyć vychad poŭnaj siły dla susiednich schiem.<br>
+<br>
+Zaŭvahi: pakul uklučany, padaje redstonavy sihnał poŭnaj siły.

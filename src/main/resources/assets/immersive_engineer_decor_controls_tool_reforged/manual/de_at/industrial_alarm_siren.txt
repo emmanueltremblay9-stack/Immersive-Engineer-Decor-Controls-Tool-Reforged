@@ -1,0 +1,7 @@
+Alarmsirene
+Signalanzeige
+<&recipe>Die Alarmsirene ist eine an einer Blockfläche montierte Redstone-Anzeige. Ihr Stromzustand folgt dem Signal des Blocks, an dem sie befestigt ist.<br>
+<br>
+Benutzung: An einer festen Fläche anbringen und mit Strom versorgen, um Türen, Maschinen, Alarme oder Bedienfelder zu überwachen.<br>
+<br>
+Hinweis: Solange das anliegende Signal aktiv ist, aktualisiert sich die Sirene einmal pro Sekunde.

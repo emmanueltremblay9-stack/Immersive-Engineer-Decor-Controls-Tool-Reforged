@@ -1,0 +1,5 @@
+Ur-izozkailua
+Prozesatze-unitate trinkoa
+<&recipe>Ur-izozkailuak hozte-lan trinkoak egiten ditu energiaz elikatutako fluido-instalazioetarako.<br>
+<br>
+Erabilera: hornitu ura eta energia izotza faseka ekoizteko.<br>

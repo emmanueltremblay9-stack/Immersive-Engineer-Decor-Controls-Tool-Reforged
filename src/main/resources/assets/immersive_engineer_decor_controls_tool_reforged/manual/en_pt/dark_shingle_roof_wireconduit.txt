@@ -1,0 +1,5 @@
+Wire passage through the roof
+Weather-worn roof fitting
+<&recipe>Wire passage fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>

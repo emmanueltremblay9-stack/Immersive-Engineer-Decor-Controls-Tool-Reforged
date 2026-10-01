@@ -1,0 +1,789 @@
+Comandes de redstone
+Jaujes e pièces de signa
+Les appareils de comande font de la redstone cachée des paniaos d'uzine lisiblles, des mezurouers, des indicous, des interrupteurs, des alarmes e des pièces de signa liées.<br>
+<br>
+Empllayéz ces pajes pour bâtir des poustes d'opérou, des tableaux de signaux, des circuits de sécuritë e des comandes a distance.
+<np>
+Cibl a flleches
+Pouls momentané
+<&arrow_target>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Mezurouer de porte
+Comande par redstone
+<&door_sensor_switch>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton d'ascensou
+Comande par redstone
+<&elevator_button>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Bouton en verre
+Comande par redstone
+<&glass_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton en verre
+Comande par redstone
+<&glass_small_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton tactile en verre
+Comande par redstone
+<&glass_touch_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton de machine
+Comande par redstone
+<&industrial_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton
+Comande par redstone
+<&industrial_double_pole_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton de machine o garde
+Comande par redstone
+<&industrial_fenced_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton a taper
+Comande par redstone
+<&industrial_knock_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Vieû bouton miriaodë
+Comande par redstone
+<&oldfancy_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Vieû bouton miriaodë
+Comande par redstone
+<&oldfancy_small_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Vieû bouton a chaine miriaodë
+Pouls momentané
+<&oldfancy_spring_reset_chain>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton de campègne
+Comande par redstone
+<&rustic_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton-cllou de campègne
+Comande par redstone
+<&rustic_nail_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Petit bouton de campègne
+Comande par redstone
+<&rustic_small_button>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Bouton a chaine de campègne
+Pouls momentané
+<&rustic_spring_reset_chain>Un interrupteur momentané doune un pouls de redstone net e de plleine force.<br>
+<br>
+Empllai : Empllayéz-le pour démârer les machines, déblloqer les portes, décllancher les alarmes ou les circuits a coup uniqe.<br>
+<br>
+Notes : Se remet a zéro aprés son pouls programmë.
+<np>
+Pllaqe de contact en verre
+Pouls par pression
+<&glass_contact_mat>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Contact de porte en verre
+Pouls par pression
+<&glass_door_contact_mat>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Tapis de contact
+Pouls par pression
+<&industrial_contact_mat>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Tapis de contact de porte
+Pouls par pression
+<&industrial_door_contact_mat>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Détéctouer de chute a travèrs
+Détection de signa
+<&industrial_fallthrough_detector>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Bouton au pië
+Comande par redstone
+<&industrial_foot_button>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Porte d'uzine a choc
+Pouls par pression
+<&industrial_high_sensitive_trapdoor>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Tapis de contact a choc
+Pouls par pression
+<&industrial_shock_sensitive_contact_mat>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Trape a choc
+Pouls par pression
+<&industrial_shock_sensitive_trapdoor>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Pllante a pououair rouje
+Pouls par pression
+<&red_power_plant>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Pllaqe préssouere de campègne
+Pouls par pression
+<&rustic_contact_plate>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Pression de porte de campègne
+Pouls par pression
+<&rustic_door_contact_plate>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Détéctouer de chute de campègne
+Détection de signa
+<&rustic_fallthrough_detector>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Porte a choc de campègne
+Pouls par pression
+<&rustic_high_sensitive_trapdoor>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Pllaqe a choc de campègne
+Pouls par pression
+<&rustic_shock_sensitive_plate>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Porte a choc de campègne
+Pouls par pression
+<&rustic_shock_sensitive_trapdoor>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Pllante a pououair jaone
+Pouls par pression
+<&yellow_power_plant>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.
+<np>
+Orloje de jour en verre
+Signa du jour
+<&glass_day_timer>Un interrupteur a minuterie suit la partie de jour du cycle du monde.<br>
+<br>
+Empllai : Empllayéz-le pour les lampes de cour, les volets e les comandes d'uzine qi ne marchent qe de jour.<br>
+<br>
+Notes : Demande eune dimension o de la lumière du ciel.
+<np>
+Détéctouer d'entités en verre
+Détection de signa
+<&glass_entity_detector>Un détéctouer d'entités guette les mouvements proches sans pllaqe de sol visibl.<br>
+<br>
+Empllai : Reliéz-le ao portes, lampes, alarmes ou verrouillaijes de machines.<br>
+<br>
+Notes : Examine eune petite zone entoure du blloqe.
+<np>
+Signa a intervalle en verre
+Pouls minutë
+<&glass_interval_timer>Un interrupteur a minuterie compact doune un pouls de redstone programmë.<br>
+<br>
+Empllai : Empllayéz-le la où q'un ptit mécanisme demande eune comande périodiqe ou retardée.<br>
+<br>
+Notes : Empllaie des pouls de redstone programmés.
+<np>
+Détéctouer en ligne en verre
+Détection de signa
+<&glass_linear_entity_detector>Un détéctouer d'entités guette les mouvements proches sans pllaqe de sol visibl.<br>
+<br>
+Empllai : Reliéz-le ao portes, lampes, alarmes ou verrouillaijes de machines.<br>
+<br>
+Notes : Examine eune petite zone entoure du blloqe.
+<np>
+Détéctouer de blloqes
+Détection de signa
+<&industrial_block_detector>Un détéctouer de blloqes vérifie si la pllâce devant li ét occupée.<br>
+<br>
+Empllai : Miréz-le devers la face de machine, la réserve tampon ou l'endret gardë a guetter.<br>
+<br>
+Notes : Doune du pououair si le blloqe devant li ét pouint de l'ére.
+<np>
+Orloje minuterie du jour
+Signa du jour
+<&industrial_day_timer>Un interrupteur a minuterie suit la partie de jour du cycle du monde.<br>
+<br>
+Empllai : Empllayéz-le pour les lampes de cour, les volets e les comandes d'uzine qi ne marchent qe de jour.<br>
+<br>
+Notes : Demande eune dimension o de la lumière du ciel.
+<np>
+Détéctouer d'entités
+Détection de signa
+<&industrial_entity_detector>Un détéctouer d'entités guette les mouvements proches sans pllaqe de sol visibl.<br>
+<br>
+Empllai : Reliéz-le ao portes, lampes, alarmes ou verrouillaijes de machines.<br>
+<br>
+Notes : Examine eune petite zone entoure du blloqe.
+<np>
+Minuterie a intervalle
+Pouls minutë
+<&industrial_interval_timer>Un interrupteur a minuterie compact doune un pouls de redstone programmë.<br>
+<br>
+Empllai : Empllayéz-le la où q'un ptit mécanisme demande eune comande périodiqe ou retardée.<br>
+<br>
+Notes : Empllaie des pouls de redstone programmés.
+<np>
+Mezurouer de lumière
+Détection de signa
+<&industrial_light_sensor>Un mezurouer de lumière mue la luzayance locale en comande de redstone.<br>
+<br>
+Empllai : Empllayéz-le pour les lampes automatiqes, les volets e les circuits de visibilité.<br>
+<br>
+Notes : Doune du pououair a eune luzayance brute de 8 ou pus.
+<np>
+Détéctouer d'oraije
+Détection de signa
+<&industrial_lightning_sensor>Un mezurouer d'oraije fait marcher les avertissements durant le tonnerre.<br>
+<br>
+Empllai : Pllacéz-le sous le ciel ouvert e reliéz-le ao lampes ou ao alarmes.<br>
+<br>
+Notes : Demande du tonnerre e un accès au ciel.
+<np>
+Détéctouer d'entités en ligne
+Détection de signa
+<&industrial_linear_entity_detector>Un détéctouer d'entités guette les mouvements proches sans pllaqe de sol visibl.<br>
+<br>
+Empllai : Reliéz-le ao portes, lampes, alarmes ou verrouillaijes de machines.<br>
+<br>
+Notes : Examine eune petite zone entoure du blloqe.
+<np>
+Mezurouer de pllèe
+Détection de signa
+<&industrial_rain_sensor>Un mezurouer du temp mue la pllèe a son endret en redstone.<br>
+<br>
+Empllai : Montéz-le la où qe le blloqe du dessus peut recevoir la pllèe.<br>
+<br>
+Notes : Vérifie la pllèe au-dessus du mezurouer.
+<np>
+Interrupteur bistabl en verre
+Comande par redstone
+<&glass_rotary_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Contact tactile bistabl en verre
+Comande par redstone
+<&glass_touch_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Verre sensibl oranje
+Verre de signa
+<&orange_sensitiveglass>Un blloqe de verre qi réagit a la redstone garde la vue ouverte tout en montrant l'état du signa.<br>
+<br>
+Empllai : Empllayéz-le den les fenétrs des salles de contrôle, les paniaos enlumés e le verre d'uzine gardë.<br>
+<br>
+Notes : Chanje d'état selon le pououair de redstone d'a couté.
+<np>
+Verre sensibl enlumë
+Verre de signa
+<&sensitive_glass_block>Un blloqe de verre qi réagit a la redstone garde la vue ouverte tout en montrant l'état du signa.<br>
+<br>
+Empllai : Empllayéz-le den les fenétrs des salles de contrôle, les paniaos enlumés e le verre d'uzine gardë.<br>
+<br>
+Notes : Chanje d'état selon le pououair de redstone d'a couté.
+<np>
+Verre sensibl colorë
+Verre de signa
+<&stained_sensitiveglass>Un blloqe de verre qi réagit a la redstone garde la vue ouverte tout en montrant l'état du signa.<br>
+<br>
+Empllai : Empllayéz-le den les fenétrs des salles de contrôle, les paniaos enlumés e le verre d'uzine gardë.<br>
+<br>
+Notes : Chanje d'état selon le pououair de redstone d'a couté.
+<np>
+Jauje a barre en verre
+Jauje de signa
+<&glass_vertical_bar_gauge>Eune jauje compacte de salle de contrôle montre la force de redstone par eune lecture cllère su le paniao.<br>
+<br>
+Empllai : Montéz-la la où qe n'en peut vaer d'un coup d'œil le pououair de redstone d'a couté.<br>
+<br>
+Notes : Lit la force de redstone d'a couté de 0 a 15.
+<np>
+Jauje analogiqe
+Jauje de signa
+<&industrial_analog_angular_gauge>Eune jauje compacte de salle de contrôle montre la force de redstone par eune lecture cllère su le paniao.<br>
+<br>
+Empllai : Montéz-la la où qe n'en peut vaer d'un coup d'œil le pououair de redstone d'a couté.<br>
+<br>
+Notes : Lit la force de redstone d'a couté de 0 a 15.
+<np>
+Jauje voltmètre
+Jauje de signa
+<&industrial_analog_horizontal_gauge>Eune jauje compacte de salle de contrôle montre la force de redstone par eune lecture cllère su le paniao.<br>
+<br>
+Empllai : Montéz-la la où qe n'en peut vaer d'un coup d'œil le pououair de redstone d'a couté.<br>
+<br>
+Notes : Lit la force de redstone d'a couté de 0 a 15.
+<np>
+Jauje numériqe
+Force de signa lisibll
+<&industrial_small_digital_gauge>Eune jauje compacte de salle de contrôle montre la force de redstone par eune lecture cllère su le paniao.<br>
+<br>
+Empllai : Montéz-la la où qe n'en peut vaer d'un coup d'œil le pououair de redstone d'a couté.<br>
+<br>
+Notes : Lit la force de redstone d'a couté de 0 a 15.
+<np>
+Jauje a tube en verre
+Jauje de signa
+<&industrial_tube_gauge>Eune jauje compacte de salle de contrôle montre la force de redstone par eune lecture cllère su le paniao.<br>
+<br>
+Empllai : Montéz-la la où qe n'en peut vaer d'un coup d'œil le pououair de redstone d'a couté.<br>
+<br>
+Notes : Lit la force de redstone d'a couté de 0 a 15.
+<np>
+Jauje a barre analogiqe
+Jauje de signa
+<&industrial_vertical_bar_gauge>Eune jauje compacte de salle de contrôle montre la force de redstone par eune lecture cllère su le paniao.<br>
+<br>
+Empllai : Montéz-la la où qe n'en peut vaer d'un coup d'œil le pououair de redstone d'a couté.<br>
+<br>
+Notes : Lit la force de redstone d'a couté de 0 a 15.
+<np>
+Lampe d'alarme
+Indicacion du signa
+<&industrial_alarm_lamp>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+Sirène d'alarme
+Indicacion du signa
+<&industrial_alarm_siren>La sirène d'alarme ét un indiquou redstone atachë a eune façe. Son étât en marche suit le signal du blloqe q'elle ét atachée dessu.<br>
+<br>
+Empllai : Attachéz-la a eune face solide e alimentéz-la pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : La sirène se rafraîchit eune fois par seconde tant qe son signa attachë reste actif.
+<np>
+LED cllignotante
+Indicacion du signa
+<&industrial_blinking_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED verte cllignotante
+Indicacion du signa
+<&industrial_green_blinking_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED verte
+Indicacion du signa
+<&industrial_green_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED rouje
+Indicacion du signa
+<&industrial_red_blinking_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED rouje
+Indicacion du signa
+<&industrial_red_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED bllanche cllignotante
+Indicacion du signa
+<&industrial_white_blinking_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED bllanche
+Indicacion du signa
+<&industrial_white_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED jaone cllignotante
+Indicacion du signa
+<&industrial_yellow_blinking_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+LED jaone
+Indicacion du signa
+<&industrial_yellow_led>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+Sémaphore de campègne
+Indicacion du signa
+<&rustic_semaphore>Un indicou compact fait de la redstone cachée eune indicacion visibl den l'uzine.<br>
+<br>
+Empllai : Câblléz-le a couté du signa pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : Chanje d'état cant q'i y a du pououair de redstone a couté.
+<np>
+Interrupteur a comparouer
+Signa attachë
+<&industrial_comparator_switch>Un interrupteur mezurouer compact lit le blloqe su qhi il ét montë e mue ç'te lecture en eune sortie de paniao simple.<br>
+<br>
+Empllai : Montéz-le su des renabls, des réservouers ou des appareils a redstone. Cant qe le blloqe de support indiçe eune sortie de comparouer, de contenant ou de redstone, l'interrupteur émet de la redstone de plleine force.<br>
+<br>
+Notes : Empllayéz-le pour fére des niveaux de réserve ou du câbllage cachë des lignes de comande marche/arét cllères.
+<np>
+Variatou
+Signa variabl
+<&industrial_dimmer>Eune comande a tourner reglle la force de redstone depés eune petite face de paniao.<br>
+<br>
+Empllai : Fezéz un clic dret pour monter la sortie d'un cran, pis revenir a zéro aprés la plleine force.<br>
+<br>
+Notes : Sort eune force de 0 a 15.
+<np>
+Bouton d'arét d'urjence
+Comande par redstone
+<&industrial_estop_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Arétou d'avouillette
+Comande par redstone
+<&industrial_hopper_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Interrupteur a taper
+Comande par redstone
+<&industrial_knock_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Levier
+Comande par redstone
+<&industrial_lever>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Interrupteur de machine a deux boutons
+Comande par redstone
+<&industrial_machine_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Poignée a tirer
+Comande par redstone
+<&industrial_pull_handle>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Levier a tourner
+Comande par redstone
+<&industrial_rotary_lever>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Interrupteur tournant de machine
+Comande par redstone
+<&industrial_rotary_machine_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Levier a contact
+Comande par redstone
+<&industrial_small_lever>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Interrupteur
+Comande par redstone
+<&industrialswitch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Interrupteur de lumière
+Comande par redstone
+<&light_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Interrupteur a volant de vane
+Comande par redstone
+<&valve_wheel_switch>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Ercevou de pouls en bouéte
+Comande liée
+<&industrial_switchlink_cased_pulse_receiver>Un ercevou de pouls lié en bouéte doune ao paniaos éloignés un court décllanchement de redstone.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Fezéz-y un clic dret ou décllanchéz la perle liée pour émettre un court pouls.<br>
+<br>
+Notes : Le pouls se remet tout seul a zéro aprés sa durée programmée.
+<np>
+Ercevou de liaizon en bouéte
+Comande liée
+<&industrial_switchlink_cased_receiver>Un ercevou lié en bouéte doune ao paniaos éloignés eune cible redstone costaode.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Fezéz un clic dret directement su l'ercevou pour le commuter a la main.<br>
+<br>
+Notes : Eune perle liée commute ç't'ercevou si n'en l'empllaie en s'acroupissant.
+<np>
+Ercevou de liaizon a pouls
+Comande liée
+<&industrial_switchlink_pulse_receiver>Un ercevou de pouls lié doune ao paniaos éloignés un court décllanchement de redstone.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Fezéz-y un clic dret ou décllanchéz la perle liée pour émettre un court pouls.<br>
+<br>
+Notes : Le pouls se remet tout seul a zéro aprés sa durée programmée.
+<np>
+Relais de liaizon a pouls
+Comande liée
+<&industrial_switchlink_pulse_relay>Eune pièce en forme de relais doune ao bâtisses de paniaos un petit pouint d'interruption local.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté. Empllayéz des blloqes ercevous si vous avez besouin du décllanchement par perle liée.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Ercevou de liaizon d'interrupteur
+Comande liée
+<&industrial_switchlink_receiver>Un ercevou lié doune ao paniaos éloignés eune cible redstone de plleine force.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Fezéz un clic dret directement su l'ercevou pour le commuter a la main.<br>
+<br>
+Notes : Eune perle liée commute ç't'ercevou si n'en l'empllaie en s'acroupissant.
+<np>
+Ercevou de liaizon analogiqe
+Comande liée
+<&industrial_switchlink_receiver_analog>Un ercevou lié doune ao paniaos de comande eune cible éloignée visibl.<br>
+<br>
+Empllai : Cliqéz dessus d'o eune Perle de l'Ender pour fére eune perle liée. Empllayéz ç'te perle en vous acroupissant pour décllancher l'ercevou de liain.<br>
+<br>
+Notes : Ç't'ercevou sort un signa de redstone pllein cant q'il ét décllanchë.
+<np>
+Relais de liaizon d'interrupteur
+Comande liée
+<&industrial_switchlink_relay>Eune pièce en forme de relais doune ao bâtisses de paniaos un petit pouint d'interruption local.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté. Empllayéz des blloqes ercevous si vous avez besouin du décllanchement par perle liée.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Relais de liaizon analogiqe
+Comande liée
+<&industrial_switchlink_relay_analog>Eune pièce en forme de relais doune ao bâtisses de paniaos un petit pouint d'interruption local.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté. Empllayéz des blloqes ercevous si vous avez besouin du décllanchement par perle liée.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Perle de Liaizon d'interrupteur
+Comande liée
+<&switchlink_pearl>Eune perle liée garde eune cible d'ercevou pour les comandes d'uzine de liain.<br>
+<br>
+Empllai : Cliqéz su un ercevou de Liaizon d'interrupteur d'o eune Perle de l'Ender pour en fére eune. Empllayéz la perle liée en vous acroupissant pour décllancher l'ercevou gardë.<br>
+<br>
+Notes : La cible doit étr charjée, den la méme dimension e a portée.
+<np>
+Vieû levier miriaodë
+Comande par redstone
+<&oldfancy_bistableswitch1>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Vieû levier tournant miriaodë
+Comande par redstone
+<&oldfancy_bistableswitch2>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Levier tournant de campègne
+Comande par redstone
+<&rustic_angular_lever>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Levier de campègne
+Comande par redstone
+<&rustic_lever>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Levier-cllou de campègne
+Comande par redstone
+<&rustic_nail_lever>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.
+<np>
+Levier de campègne a deûz charnieres
+Comande par redstone
+<&rustic_two_hinge_lever>Eune pièce de comande compacte doune ao bâtisses d'uzine un pouint d'interruption redstone cller.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.

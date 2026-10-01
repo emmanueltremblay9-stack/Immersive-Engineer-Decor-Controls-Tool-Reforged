@@ -1,0 +1,7 @@
+Glass Bar Gauge
+Signal gauge
+<&recipe>A compact control-room gauge displays redstone strength as a clear panel reading.<br>
+<br>
+Usage: Mount it where neighbouring redstone power can be checked at a glance.<br>
+<br>
+Notes: Reads nearby redstone strength from 0 to 15.

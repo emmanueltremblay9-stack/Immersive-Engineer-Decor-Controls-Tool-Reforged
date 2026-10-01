@@ -1,0 +1,41 @@
+Stockage et transport
+Équipements de stockage et de circulation
+Les équipements de stockage et de transport regroupent caisses, barils, entonnoirs et vannes pour organiser des circuits industriels compacts.<br>
+<br>
+Consultez ces pages lors de l'aménagement des réserves, conduites, réservoirs de service et réseaux de fluides contrôlés.
+<np>
+Caisse étiquetée
+Étiquette de stock modifiable
+<&labeled_crate>Cette caisse étiquetée facilite le tri des réserves. Sa plaque avant se modifie comme un petit panneau d'atelier.<br>
+<br>
+Utilisation : faites un clic droit sur la plaque pour modifier l'étiquette. Faites un clic droit sur le reste de la caisse pour accéder aux raccords, pièces et fournitures de maintenance stockés.<br>
+<np>
+Baril de fluide
+Équipement de réseau de fluides
+<&fluid_barrel>Cet élément compact de réseau de fluides convient aux petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : placez-le pour que les tuyaux ou les chaudières puissent atteindre la face du réservoir.<br>
+<np>
+Entonnoir à fluides
+Équipement de réseau de fluides
+<&small_fluid_funnel>Le petit entonnoir de collecte de fluides est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : placez-le sous le point de collecte de fluide et dirigez son contenu vers des réservoirs ou des conduites situés plus bas.<br>
+<np>
+Clapet anti-retour de tuyau de fluide
+Équipement de réseau de fluides
+<&straight_pipe_valve>Le clapet anti-retour de tuyau de fluide est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+<np>
+Vanne de fluide redstone
+Équipement de réseau de fluides
+<&straight_pipe_valve_redstone>La vanne de fluide contrôlée par redstone est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+<np>
+Vanne de fluide analogique
+Équipement de réseau de fluides
+<&straight_pipe_valve_redstone_analog>La vanne de fluide à redstone analogique est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>

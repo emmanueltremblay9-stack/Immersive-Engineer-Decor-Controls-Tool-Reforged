@@ -1,0 +1,7 @@
+Commutator comparatorius
+Signum connexum
+<&recipe>Commutator sensoris compactus cubum cui affixus est legit et mensuram in emissionem tabulae simplicem convertit.<br>
+<br>
+Usus: inventariis, receptaculis fluidi aut apparatibus redstone affige. Cum cubus connexum signum comparatoris, vasis aut redstone refert, commutator redstone plena vi emittit.<br>
+<br>
+Notae: ad gradus copiae aut fila occulta in lineas claras activas/inactivas convertendas adhibe.

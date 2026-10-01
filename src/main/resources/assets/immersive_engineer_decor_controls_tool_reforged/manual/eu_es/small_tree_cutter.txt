@@ -1,0 +1,5 @@
+Zuhaitz-ebakigailua
+Lantegiko tresneria
+<&recipe>Zuhaitz-ebakigailu txikia lantegiko erabilera anitzeko blokea da: fabrikaziorako, biltegiratzeko, jartzeko, hausteko, biltzeko edo automatizazio trinkorako.<br>
+<br>
+Erabilera: zuzendu hazitako zuhaitzetara eta bildu eroritako objektuak bereizita.<br>

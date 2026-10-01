@@ -1,0 +1,7 @@
+Blockdetektor
+Signalerfassung
+<&recipe>A Blockdetektor prüft, ob vor seiner Stirnseitn a Block steht.<br>
+<br>
+Verwendung: Richt eam auf de Maschinenseitn, den Puffer oda den gschützten Raum, denst überwachen willst.<br>
+<br>
+Hinweis: Gibt Strom, wenn da Block davor ka Luft is.

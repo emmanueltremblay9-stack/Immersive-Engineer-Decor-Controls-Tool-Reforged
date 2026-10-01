@@ -1,0 +1,161 @@
+Klinker va g'isht-tosh qurilishi
+G'isht va beton qobiqlar
+Klinker, shlak g'isht, mustahkamlangan beton va zirhli oyna issiq xonalar, ustaxonalar va himoyalangan ko'rish yo'llari uchun og'ir yuzalar beradi.<br>
+<br>
+Zavod materiallari uslubini o'zgartirmasdan chetlarni tugallash uchun mos plita, zinapoya, yupqa qatlam va devorlardan foydalaning.
+<np>
+Klinker g'isht bloki
+Qurumdan qoraygan g'isht
+<&clinker_brick_block>Bu blok pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Klinker g'ishtli plita
+Qurumdan qoraygan g'isht
+<&clinker_brick_slab>Bu blok pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Klinker g'ishtli zinapoya
+Qurumdan qoraygan g'isht
+<&clinker_brick_stairs>Bu blok pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Klinker g'ishtli devor
+Qurumdan qoraygan g'isht
+<&clinker_brick_wall>Bu blok pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Dog'li klinker bloki
+Qurumdan qoraygan g'isht
+<&clinker_brick_stained_block>Dog'li klinker g'isht bloki pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Dog'li klinker plita
+Qurumdan qoraygan g'isht
+<&clinker_brick_stained_slab>Dog'li klinker g'ishtli plita pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Dog'li klinker zinapoya
+Qurumdan qoraygan g'isht
+<&clinker_brick_stained_stairs>Dog'li klinker g'ishtli zinapoya pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Bezatilgan klinker g'isht
+Qurumdan qoraygan g'isht
+<&clinker_brick_sastor_corner_block>Qumtosh bilan bezatilgan klinker g'isht pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+O'yiqli klinker g'isht
+Qurumdan qoraygan g'isht
+<&clinker_brick_recessed>Bu blok pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Tirqishli klinker g'ishtlar
+Qurumdan qoraygan g'isht
+<&clinker_brick_vertically_slit>Tik tirqishli klinker g'ishtlar pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Tik klinker plita
+Qurumdan qoraygan g'isht
+<&clinker_brick_vertical_slab_structured>Naqshli tik klinker plita pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Yarim plitali klinker g'isht
+Qurumdan qoraygan g'isht
+<&halfslab_clinker_brick>Bu blok pech zallari, mo'ri asoslari va xizmat devorlariga qurumdan qoraygan g'isht ko'rinishini beradi.<br>
+<br>
+Ishlatish: pech va qozonlar atrofida devor, hoshiyalar yoki issiq hudud qobig'i sifatida ishlating.<br>
+<np>
+Shlak g'isht bloki
+Zich zavod g'isht-tosh qurilishi
+<&slag_brick_block>Bu blok poydevorlar, tuproq tutuvchi devorlar va eski ish shiyponlariga zich kulrang-qo'ng'ir g'isht-tosh qoplama qo'shadi.<br>
+<br>
+Ishlatish: eski poydevorlar, tuproq tutuvchi devorlar va kir zavod pollari uchun foydalaning.<br>
+<np>
+Shlak g'ishtli plita
+Zich zavod g'isht-tosh qurilishi
+<&slag_brick_slab>Bu blok poydevorlar, tuproq tutuvchi devorlar va eski ish shiyponlariga zich kulrang-qo'ng'ir g'isht-tosh qoplama qo'shadi.<br>
+<br>
+Ishlatish: eski poydevorlar, tuproq tutuvchi devorlar va kir zavod pollari uchun foydalaning.<br>
+<np>
+Shlak g'ishtli zinapoya
+Zich zavod g'isht-tosh qurilishi
+<&slag_brick_stairs>Bu blok poydevorlar, tuproq tutuvchi devorlar va eski ish shiyponlariga zich kulrang-qo'ng'ir g'isht-tosh qoplama qo'shadi.<br>
+<br>
+Ishlatish: eski poydevorlar, tuproq tutuvchi devorlar va kir zavod pollari uchun foydalaning.<br>
+<np>
+Shlak g'ishtli devor
+Zich zavod g'isht-tosh qurilishi
+<&slag_brick_wall>Bu blok poydevorlar, tuproq tutuvchi devorlar va eski ish shiyponlariga zich kulrang-qo'ng'ir g'isht-tosh qoplama qo'shadi.<br>
+<br>
+Ishlatish: eski poydevorlar, tuproq tutuvchi devorlar va kir zavod pollari uchun foydalaning.<br>
+<np>
+Temir-beton bloki
+Mustahkamlangan beton
+<&rebar_concrete>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Temir-beton plita
+Mustahkamlangan beton
+<&rebar_concrete_slab>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Temir-beton zinapoya
+Mustahkamlangan beton
+<&rebar_concrete_stairs>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Temir-beton devor
+Mustahkamlangan beton
+<&rebar_concrete_wall>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Temir-betonning yupqa qatlami
+Mustahkamlangan beton
+<&halfslab_rebar_concrete>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Temir-beton koshin
+Mustahkamlangan beton
+<&rebar_concrete_tile>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Temir-beton koshin plitasi
+Mustahkamlangan beton
+<&rebar_concrete_tile_slab>Bu blok mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismdir.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Temir-beton koshin
+Mustahkamlangan beton
+<&rebar_concrete_tile_stairs>Temir-beton koshin zinapoyasi mashina tagliklari, portlash to'siqlari va yuklash joyi pollari uchun qotirilgan beton qismlardan iborat.<br>
+<br>
+Ishlatish: mashinalar ostida, xizmat yo'laklarida yoki mustahkam asos kerak bo'lgan har qanday joyda ishlating.<br>
+<np>
+Zirhli oyna bloki
+Himoyalangan ko'rish yo'li
+<&panzerglass_block>Bu blok mustahkamlangan zavod qurilishiga mos holda ko'rish yo'lini ochiq saqlaydi.<br>
+<br>
+Ishlatish: o'yinchilar mashinalarni himoyalangan to'siq ortidan ko'rishi kerak bo'lgan joylarda foydalaning.<br>
+<np>
+Zirhli oyna plitasi
+Himoyalangan ko'rish yo'li
+<&panzerglass_slab>Bu blok mustahkamlangan zavod qurilishiga mos holda ko'rish yo'lini ochiq saqlaydi.<br>
+<br>
+Ishlatish: o'yinchilar mashinalarni himoyalangan to'siq ortidan ko'rishi kerak bo'lgan joylarda foydalaning.<br>

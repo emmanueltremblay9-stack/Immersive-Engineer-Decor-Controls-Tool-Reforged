@@ -1,0 +1,127 @@
+Zouganksweeër
+Lafweeër a Stäipen
+Stolpottoen, behandelt Holzpottoen, Gitteren, Lafstegen, Gelänner, Leederen, Dieren, Fënsteren a Luke bilde kompakt Serviceweeër duerch Fabrécksraim.<br>
+<br>
+Stolbaudeeler fir Zouganksweeër brauche Stolplacken. Stell eng Metallwierkbänk hier oder setz eng op, setz en Hummer vun Immersive Engineering an, an hummer da Stolbarren zu Stolplacke fir Pottoen, Lafstegen, Fënsteren, Dieren, Gelänner an aner Stoldekoratiounen.<br>
+<br>
+Setz se do, wou Maschinne Servicezougang, héich Weeër, Ënnerhaltsschächt oder méi sécher Kante brauchen.
+<np>
+Décke Stolpotto
+Deel vun engem Droerahmen
+<&thick_steel_pole>De riichten décke Stolpotto gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Kapp fir en décke Potto
+Deel vun engem Droerahmen
+<&thick_steel_pole_head>De Kapp/Fouss fir e riichten décke Stolpotto gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Dënne Stolpotto
+Deel vun engem Droerahmen
+<&thin_steel_pole>De riichten dënne Stolpotto gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Kapp fir en dënne Potto
+Deel vun engem Droerahmen
+<&thin_steel_pole_head>De Kapp/Fouss fir e riichten dënne Stolpotto gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Potto aus behandeltem Holz
+Deel vun engem Droerahmen
+<&treated_wood_pole>De riichte Potto aus behandeltem Holz gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Kapp fir e behandelte Potto
+Deel vun engem Droerahmen
+<&treated_wood_pole_head>De Kapp/Fouss fir e riichte Potto aus behandeltem Holz gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Stäip fir e behandelte Potto
+Deel vun engem Droerahmen
+<&treated_wood_pole_support>D'Stäip fir e riichte Potto aus behandeltem Holz gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Duebel T-Stäip aus Stol
+Deel vun engem Droerahmen
+<&steel_double_t_support>Dëse Block gëtt Maschinnenhalen an Zougangsrahmen eng siichtbar Struktur.<br>
+<br>
+Benotzung: Dréi a setz en als siichtbar Verstäerkung fir Träger, Pottoen a Plattformkanten.<br>
+<np>
+Stolbuedemgitter
+Baudeel fir Servicezougang
+<&steel_floor_grating>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Stollafsteg
+Baudeel fir Servicezougang
+<&steel_catwalk>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Stollafstegtrap
+Baudeel fir Servicezougang
+<&steel_catwalk_stairs>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Erhéichte Stollafsteg
+Baudeel fir Servicezougang
+<&steel_catwalk_ta>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Stolgelänner
+Baudeel fir Servicezougang
+<&steel_railing>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Stolmaschenzonk
+Baudeel fir Servicezougang
+<&steel_mesh_fence>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Stolmaschepaart
+Baudeel fir Servicezougang
+<&steel_mesh_fence_gate>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Leeder mat Metallsprossen
+Baudeel fir Servicezougang
+<&metal_rung_ladder>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Versate Metalltrëtt
+Baudeel fir Servicezougang
+<&metal_rung_steps>Dëse Block mécht Serviceweeër ronderëm Maschinne kloer erkennbar.<br>
+<br>
+Benotzung: Setz en als Ënnerhaltszougang ronderëm Maschinnen, iewescht Stäck a Serviceschächt.<br>
+<np>
+Fënster mat Stolrahmen
+Geschützte Bléck
+<&steel_framed_window>Dëse Block léisst d'Vue fräi a passt trotzdeem zu enger verstäerkter Fabrickkonstruktioun.<br>
+<br>
+Benotzung: Setz en an eng Ëffnung vun 1 Block an enger Mauer, wou Spiller duerch eng geschützte Barrière op Maschinne kucke sollen.<br>
+<np>
+Metallschiebedier
+Industriellen Zougangspunkt
+<&metal_sliding_door>Dëse Block bitt e robuste Zougang zu Serviceraim, Schächt, Diech a Maschinnegehäiser.<br>
+<br>
+Benotzung: Montéier en do, wou d'Gebai eng kontrolléiert Ënnerhaltsëffnung brauch.<br>
+<np>
+Eiseluk
+Industriellen Zougangspunkt
+<&iron_hatch>Dëse Block bitt e robuste Zougang zu Serviceraim, Schächt, Diech a Maschinnegehäiser.<br>
+<br>
+Benotzung: Montéier en do, wou d'Gebai eng kontrolléiert Ënnerhaltsëffnung brauch.<br>

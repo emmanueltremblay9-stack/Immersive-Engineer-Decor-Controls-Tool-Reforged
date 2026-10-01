@@ -1,0 +1,101 @@
+Tomlar va hovli
+Tashqi zavod jihozlari
+Tom bloklari, hovli shag'ali va eski sanoat yog'och qismlari tashqi shiyponlar, ish hovlilari, yuklash joylari va ob-havo izi bor zavod chetlarini tugallashga yordam beradi.<br>
+<br>
+Tashqi sanoat qurilishlari uzoqdan ham aniq ko'rinishi uchun bu qismlarni g'isht-tosh qurilishi va xizmat yo'llari bilan aralashtiring.
+<np>
+To'q rangli cherepitsa tom
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof>Bu blok ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+Tom qor to'sig'i
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_metallized>To'q rangli cherepitsa tom qor to'sig'i ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+To'q rangli cherepitsa tom
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_skylight>To'q rangli cherepitsa tom yorug'lik oynasi ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+Tom mo'ri asosi
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_chimneytrunk>To'q rangli cherepitsa tom mo'ri asosi ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+Tom sim quvuri
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_wireconduit>To'q rangli cherepitsa tom sim quvuri ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+To'q rangli cherepitsa tom
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_chimney>To'q rangli cherepitsa tom mo'risi ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+To'q rangli cherepitsa tom bloki
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_block>Bu blok ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+To'q rangli cherepitsa tom plitasi
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_slab>Bu blok ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+To'q rangli cherepitsa tom plitasi
+Ob-havo izlari bor tom qismi
+<&dark_shingle_roof_slabslice>To'q rangli cherepitsa tom plitasining yupqa qatlami ustaxonalar va sanoat shiyponlari uchun to'q rangli, amaliy tom chiziqlarini hosil qiladi.<br>
+<br>
+Ishlatish: tabiiy ko'rinadigan tom shakllari uchun qismlarni birga ishlating.<br>
+<np>
+Zich shag'alli tuproq
+Ish joyining zamin qoplamasi
+<&dense_grit_dirt_block>Bu blok tashqi ish maydonlariga zichlangan, bosilgan yuza beradi.<br>
+<br>
+Ishlatish: yuklash eshiklari, tashqi baklar va mashina hovlilari atrofini qoplang.<br>
+<np>
+Zich shag'alli qum
+Ish joyining zamin qoplamasi
+<&dense_grit_sand_block>Bu blok tashqi ish maydonlariga zichlangan, bosilgan yuza beradi.<br>
+<br>
+Ishlatish: yuklash eshiklari, tashqi baklar va mashina hovlilari atrofini qoplang.<br>
+<np>
+Eski yog'och taxtalar
+Eski ustaxona yog'ochi
+<&old_industrial_wood_planks>Eski sanoat yog'och taxtalari pol, pog'ona, eshik va iliq ichki hoshiyalar uchun eski ustaxona yog'ochi ko'rinishini qo'shadi.<br>
+<br>
+Ishlatish: eski ustaxona pollari, zinapoyalari, eshiklari va hoshiyalarida foydalaning.<br>
+<np>
+Eski sanoat yog'och plitasi
+Eski ustaxona yog'ochi
+<&old_industrial_wood_slab>Bu blok pol, pog'ona, eshik va iliq ichki hoshiyalar uchun eski ustaxona yog'ochi ko'rinishini qo'shadi.<br>
+<br>
+Ishlatish: eski ustaxona pollari, zinapoyalari, eshiklari va hoshiyalarida foydalaning.<br>
+<np>
+Eski yog'och zinapoya
+Eski ustaxona yog'ochi
+<&old_industrial_wood_stairs>Eski sanoat yog'och zinapoyasi pol, pog'ona, eshik va iliq ichki hoshiyalar uchun eski ustaxona yog'ochi ko'rinishini qo'shadi.<br>
+<br>
+Ishlatish: eski ustaxona pollari, zinapoyalari, eshiklari va hoshiyalarida foydalaning.<br>
+<np>
+Eski yog'och plitasining yupqa qatlami
+Eski ustaxona yog'ochi
+<&old_industrial_wood_slabslice>Eski sanoat yog'och plitasining yupqa qatlami pol, pog'ona, eshik va iliq ichki hoshiyalar uchun eski ustaxona yog'ochi ko'rinishini qo'shadi.<br>
+<br>
+Ishlatish: eski ustaxona pollari, zinapoyalari, eshiklari va hoshiyalarida foydalaning.<br>
+<np>
+Eski sanoat yog'och eshigi
+Eski ustaxona yog'ochi
+<&old_industrial_wood_door>Bu blok pol, pog'ona, eshik va iliq ichki hoshiyalar uchun eski ustaxona yog'ochi ko'rinishini qo'shadi.<br>
+<br>
+Ishlatish: eski ustaxona pollari, zinapoyalari, eshiklari va hoshiyalarida foydalaning.<br>

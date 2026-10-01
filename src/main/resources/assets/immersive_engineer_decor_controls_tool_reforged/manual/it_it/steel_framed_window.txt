@@ -1,0 +1,5 @@
+Finestra con telaio d’acciaio
+Visuale protetta
+<&recipe>Questo blocco lascia libera la visuale mantenendo lo stile rinforzato della fabbrica.<br>
+<br>
+Uso: posalo dove i giocatori devono vedere i macchinari attraverso una barriera protetta.<br>

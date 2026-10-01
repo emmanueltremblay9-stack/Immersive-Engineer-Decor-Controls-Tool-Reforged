@@ -1,0 +1,7 @@
+Cảm biến ánh sáng
+Cảm nhận tín hiệu
+<&recipe>Cảm biến ánh sáng biến độ sáng tại chỗ thành điều khiển redstone.<br>
+<br>
+Cách dùng: Dùng cho đèn tự động, cửa chớp và mạch điều khiển tầm nhìn.<br>
+<br>
+Ghi chú: Phát tín hiệu khi độ sáng thô từ 8 trở lên.

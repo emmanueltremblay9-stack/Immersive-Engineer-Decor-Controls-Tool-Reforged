@@ -1,0 +1,7 @@
+Folchapparaat
+Markearring fan in bewarre posysje
+<&recipe>De folchapparaat bewarret de posysje fan in blok direkt yn it item.<br>
+<br>
+Gebrûk: Klik op in blok om de dimensje en koördinaten te bewarjen. De tooltip toant it bewarre plak. Brûk it apparaat slûpend om it doel te wiskjen.<br>
+<br>
+Brûk it om masines, tunnelôftakkingen, ôfstânsbestjoeringen of ûnfoltôge bouplakken te markearjen foardatst mei ark en materialen weromkomst.

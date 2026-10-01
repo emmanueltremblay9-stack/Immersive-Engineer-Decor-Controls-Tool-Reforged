@@ -1,0 +1,108 @@
+Sanoat qurilishi
+Zavod devorlari va hoshiyalari
+Umumiy qurilish qismlariga alohida maxsus bo'limga kirmaydigan eshiklar, derazalar, chiroqlar, ogohlantirish belgilari, hoshiyalar va tayanch qismlar kiradi.<br>
+<br>
+Bu sahifalardan zavod xonalari, xizmat yo'laklari, xavfni belgilash va amaliy sanoat detallari uchun foydalaning.
+<np>
+Temir lampochkali chiroq
+Ixcham ish chirog'i
+<&iron_bulb_light>Bu blok yo'laklar, xizmat platformalari va ish bo'linmalari uchun ixcham sanoat yoritishini beradi.<br>
+<br>
+Ishlatish: xonaga aniq ish yorug'ligi kerak bo'lgan shift, devor yoki chetga o'rnating.<br>
+<np>
+Shift cheti chirog'i
+Ixcham ish chirog'i
+<&iron_ceiling_edge_light>Bu blok yo'laklar, xizmat platformalari va ish bo'linmalari uchun ixcham sanoat yoritishini beradi.<br>
+<br>
+Ishlatish: xonaga aniq ish yorug'ligi kerak bo'lgan shift, devor yoki chetga o'rnating.<br>
+<np>
+Pol chetiga botirilgan chiroq
+Ixcham ish chirog'i
+<&iron_floor_edge_light>Bu blok yo'laklar, xizmat platformalari va ish bo'linmalari uchun ixcham sanoat yoritishini beradi.<br>
+<br>
+Ishlatish: xonaga aniq ish yorug'ligi kerak bo'lgan shift, devor yoki chetga o'rnating.<br>
+<np>
+Botirilgan chiroq
+Ixcham ish chirog'i
+<&iron_inset_light>Bu blok yo'laklar, xizmat platformalari va ish bo'linmalari uchun ixcham sanoat yoritishini beradi.<br>
+<br>
+Ishlatish: xonaga aniq ish yorug'ligi kerak bo'lgan shift, devor yoki chetga o'rnating.<br>
+<np>
+"Umumiy ogohlantirish" belgisi
+Xavf belgisi
+<&sign_caution>"Umumiy ogohlantirish" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Xavf belgisi
+Xavf belgisi
+<&sign_danger>"Diqqat, u yer juda xavfli" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Bezak belgisi
+Xavf belgisi
+<&sign_decor>Belgi lavhasi (Engineer's Decor) xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Mudofaa belgisi
+Xavf belgisi
+<&sign_defense>"Diqqat, oldinda mudofaa tizimi" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Chiqish belgisi
+Xavf belgisi
+<&sign_exit>Bu belgi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+"Yong'in xavfi" belgisi
+Xavf belgisi
+<&sign_firehazard>"Yong'in xavfi" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+"Sovuqdan ogohlantirish" belgisi
+Xavf belgisi
+<&sign_frost>"Sovuqdan ogohlantirish" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Issiq yuza belgisi
+Xavf belgisi
+<&sign_hotsurface>"Diqqat, issiq yuza" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Kuchlanishli sim belgisi
+Xavf belgisi
+<&sign_hotwire>"Diqqat, kuchlanishli sim" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+"Lazer xavfi" belgisi
+Xavf belgisi
+<&sign_laser>"Lazer xavfi" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Sehrli xavf belgisi
+Xavf belgisi
+<&sign_magichazard>"Diqqat, sehrli xavf" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+Magnit maydoni belgisi
+Xavf belgisi
+<&sign_magneticfield>"Diqqat, kuchli magnit maydoni" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>
+"Radioaktiv xavf" belgisi
+Xavf belgisi
+<&sign_radioactive>"Radioaktiv xavf" belgisi xavflar, chiqishlar va ish hududlarini zavod xavfsizligiga mos ko'rinarli ishora bilan belgilaydi.<br>
+<br>
+Ishlatish: xavfli joylar, chiqishlar, mashinalar va cheklangan hududlar yoniga qo'ying.<br>
+<np>

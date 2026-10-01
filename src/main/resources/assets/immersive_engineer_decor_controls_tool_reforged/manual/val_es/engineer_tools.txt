@@ -1,0 +1,93 @@
+Ferramentes de l’enginyer
+Equip portàtil de taller
+El conjunt de ferramentes de l’enginyer afig equip de mà, marcadors de mines, consumibles d’emergència, menjar per a treballar fora i ajudes xicotetes de processament de materials al mateix manual que descriu els blocs de decoració i control.<br>
+<br>
+Estes ferramentes estan pensades per a treballar lluny d’un taller ben equipat: marcar la ruta, portar subministraments, recuperar-te dels errors i acabar treballs menuts de processament en el mateix lloc.
+<np>
+Ferramenta REDIA
+Utilitat recoberta de diamant
+<&redia_tool>La ferramenta REDIA és un utensili resistent per a fer treballs ràpids en el terreny. Usa-la en sòls que es puguen llaurar per a fer terra arada.<br>
+<br>
+Usa-la contra una cara ferma mentre portes torxes per a col·locar una torxa de marcatge de l’inventari sense desgastar REDIA. Treballar el terreny, esquilar, tallar amb la destral i talar arbres consumixen durabilitat.
+<np>
+Martell triturador de menes
+Ferramenta de trituració manual
+<&crushing_hammer>El martell triturador de mineral és una ferramenta manual per al processament inicial del ferro i lor.<br>
+<br>
+Useu-lo amb ferro cru, or cru, mineral de ferro o dor i les variants de pissarra profunda per a pols Immersive Engineering. Perd durabilitat, torna a la graella fins que es trenca, es desgasta minant i repel·lix objectius.
+<np>
+Rastrejador
+Marcador de posició guardada
+<&tracker>El rastrejador guarda la posició dun bloc dins de lobjecte.<br>
+<br>
+Cliqueu un bloc per guardar dimensió i coordenades. La descripció mostra la posició. Useu-lo ajupit per esborrar lobjectiu.<br>
+<br>
+Marqueu màquines, túnels, controls remots o construccions inacabades.
+<np>
+Carbó d’Ariadna
+Marcador de rutes de mina
+<&ariadne_coal>El carbó d’Ariadna col·loca ràpidament marques de fletxes negres en les cares fermes de les mines. Usa’l en una cara sòlida per a marcar el pròxim gir, l’eixida o una ramificació; la marca admet huit direccions en la cara on faces clic, incloses les diagonals.<br>
+<br>
+El carbó d’Ariadna és una ferramenta de marcatge reutilitzable de 100 usos. Cada marca col·locada costa un punt de durabilitat. Rebutja les cares no compatibles en lloc de desgastar l’objecte.
+<np>
+Autoinjector estimulant
+Injector d’emergència
+<&stimpack>El paquet estimulant automàtic és un objecte mèdic demergència.<br>
+<br>
+Useu-lo manualment per curar, protegir breument i accelerar. A linventari sactiva amb poca salut i després es refreda. Tingueu-ne un en llocs perillosos.
+<np>
+Sac de dormir
+Equip portàtil de descans
+<&sleeping_bag>El sac de dormir és equip resistent al temps per descansar lluny dun llit.<br>
+<br>
+Useu-lo de nit a lOverworld per descansar fins al matí sense canviar el punt de reaparició.<br>
+<br>
+No funciona de dia, prop de monstres o en dimensions inadequades. Cada descans el desgasta.
+<np>
+Caixa de materials
+Caixa de subministraments de construcció
+<&material_box>La caixa de materials porta una gran reserva dun únic material de construcció comú, sense modificar i apilable.<br>
+<br>
+Sosteniu la caixa a la mà principal i el material a laltra per carregar-lo; amb laltra mà buida traieu una pila.<br>
+<br>
+Conté 512 objectes dun tipus, rebutja altres caixes, equip no apilable i piles modificades i mostra el contingut a la descripció.
+<np>
+Càpsula d’aire de busseig
+Reserva d’aire d’emergència
+<&diving_capsule>La càpsula daire és una reserva demergència per a treball submarí.<br>
+<br>
+Useu-la manualment per recuperar aire. A linventari també sactiva quan laire quasi sacaba i després es refreda. Porteu-la a mines inundades i tubs submergits.
+<np>
+Premsa de barretes Muslee
+Premsa d’aliments
+<&musli_bar_press>La premsa Muslee transforma aliments comuns en racions compactes.<br>
+<br>
+Porteu pa, una poma i llavors de blat, meló, carabassa, remolatxa o cànem industrial i useu la premsa. Consumix una de cada, comprova lespai, crea quatre barres i danya la premsa.<br>
+<br>
+Si falta res o no hi ha espai, no consumix res.
+<np>
+Barreta energètica Muslee Melange
+Mos ràpid de taller
+<&musli_bar>La barra Muslee Melange és menjar compacte de pa, llavors i fruita.<br>
+<br>
+Mengeu-la al camp en instal·lar controls, tubs, plataformes o línies de màquines.
+<np>
+Espremedor mental
+Condensador d’experiència
+<&charged_lapis_squeezer>L’espremedor mental convertix una unitat de lapislàtzuli i un nivell d’experiència del teu inventari en lapislàtzuli carregat.<br>
+<br>
+Cada conversió aconseguida fa mal, provoca esgotament alimentari i encega l’usuari durant un instant. No funciona sense lapislàtzuli, sense XP o quan l’usuari està massa prop de morir.
+<np>
+Lapislàtzuli carregat
+Experiència guardada
+<&charged_lapis>El lapislàtzuli carregat guarda un nivell d’experiència. Consumix-lo per a recuperar el nivell, eliminar els efectes actius i restaurar una quantitat xicoteta de salut.<br>
+<br>
+Fabrica primer un espremedor mental; el lapislàtzuli carregat es produïx usant eixa ferramenta quan es disposa de lapislàtzuli i XP.
+<np>
+Granalla grossa de ferro
+Material per a ferramentes d’enginyer usat en el conjunt reconstruït de receptes.
+<&iron_grit>Es pot fondre per a obtindre lingots<br>de ferro, però no servix per al<br>processament avançat de materials.
+<np>
+Granalla grossa d’or
+Material per a ferramentes d’enginyer usat en el conjunt reconstruït de receptes.
+<&gold_grit>Es pot fondre per a obtindre lingots<br>d’or, però no servix per al<br>processament avançat de materials.

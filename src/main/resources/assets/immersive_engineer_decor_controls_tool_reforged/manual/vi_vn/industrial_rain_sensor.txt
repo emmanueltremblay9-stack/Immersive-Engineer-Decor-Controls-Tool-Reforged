@@ -1,0 +1,7 @@
+Cảm biến mưa
+Cảm nhận tín hiệu
+<&recipe>Cảm biến thời tiết biến mưa tại vị trí của nó thành redstone.<br>
+<br>
+Cách dùng: Gắn ở nơi khối phía trên có thể nhận mưa.<br>
+<br>
+Ghi chú: Kiểm tra mưa phía trên cảm biến.

@@ -1,0 +1,5 @@
+Factory Bluk Plonker
+Shop-floor helperz
+<&recipe>Dis bluk places blukz frum its own stash when activated, kitty.<br>
+<br>
+How to: Point da workin face at da target space an load stackz dat can be placed, meow.<br>

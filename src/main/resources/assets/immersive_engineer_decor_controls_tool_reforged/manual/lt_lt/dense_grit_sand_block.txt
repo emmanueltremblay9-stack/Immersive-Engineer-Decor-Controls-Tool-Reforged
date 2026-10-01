@@ -1,0 +1,5 @@
+Sutankintas žvyringas smėlis
+Darbovietės grunto danga
+<&recipe>Šis blokas suteikia lauko darbo vietoms sutankintą, išmindytą paviršių.<br>
+<br>
+Naudojimas: klok aplink pakrovimo duris, lauko talpyklas ir mašinų kiemus.<br>

@@ -1,0 +1,108 @@
+Industrial Construction
+Factory walls and trim
+General construction fittings cover doors, windows, lights, warning signs, trim, and structural parts that do not belong to a more specific section.<br>
+<br>
+Use these pages for factory rooms, service corridors, hazard marking, and practical industrial detail work.
+<np>
+Iron Bulb Light
+Compact work light
+<&iron_bulb_light>This block provides compact industrial lighting for corridors, catwalks, and work bays.<br>
+<br>
+Usage: Mount it on ceilings, walls, or edges where the room needs clear work lighting.<br>
+<np>
+Ceiling Edge Light
+Compact work light
+<&iron_ceiling_edge_light>This block provides compact industrial lighting for corridors, catwalks, and work bays.<br>
+<br>
+Usage: Mount it on ceilings, walls, or edges where the room needs clear work lighting.<br>
+<np>
+Inset Floor Edge Light
+Compact work light
+<&iron_floor_edge_light>This block provides compact industrial lighting for corridors, catwalks, and work bays.<br>
+<br>
+Usage: Mount it on ceilings, walls, or edges where the room needs clear work lighting.<br>
+<np>
+Inset Light
+Compact work light
+<&iron_inset_light>This block provides compact industrial lighting for corridors, catwalks, and work bays.<br>
+<br>
+Usage: Mount it on ceilings, walls, or edges where the room needs clear work lighting.<br>
+<np>
+Sign "Generic Caution
+Hazard marker
+<&sign_caution>The Sign "Generic Caution" Caution Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Danger Sign
+Hazard marker
+<&sign_danger>The Sign "Caution Really Dangerous There" Danger Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Decor Sign
+Hazard marker
+<&sign_decor>The Sign Plate (Engineer's decor) Decor Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Defence Sign
+Hazard marker
+<&sign_defense>The Sign "Caution Defence System Ahead" Defence Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Exit Sign
+Hazard marker
+<&sign_exit>This sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Sign "Fire Hazard Sign
+Hazard marker
+<&sign_firehazard>The Sign "Fire Hazard" Fire Hazard Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Sign "Frost Warning Sign
+Hazard marker
+<&sign_frost>The Sign "Frost Warning" Frost Warning Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Hot Surface Sign
+Hazard marker
+<&sign_hotsurface>The Sign "Caution Hot Surface" Hot Surface Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Hot Wire Sign
+Hazard marker
+<&sign_hotwire>The Sign "Caution Hot Wire" Hot Wire Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Sign "Laser Hazard Sign
+Hazard marker
+<&sign_laser>The Sign "Laser Hazard" Laser Hazard Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Magic Hazard Sign
+Hazard marker
+<&sign_magichazard>The Sign "Caution Magical Hazard" Magic Hazard Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Magnetic Field Sign
+Hazard marker
+<&sign_magneticfield>The Sign "Caution Strong Magnetic Field" Magnetic Field Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>
+Sign "Radioactive Hazard
+Hazard marker
+<&sign_radioactive>The Sign "Radioactive Hazard" Radioactive Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>
+<np>

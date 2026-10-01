@@ -1,0 +1,5 @@
+Skrautskilti
+Hættumerki
+<&recipe>Skiltaplatan (Engineer's decor) merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>

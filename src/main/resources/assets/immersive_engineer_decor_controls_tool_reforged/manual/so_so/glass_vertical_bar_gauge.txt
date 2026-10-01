@@ -1,0 +1,7 @@
+Cabbiraha baarka muraayadda
+Cabbiraha calaamadda
+<&recipe>Cabbire yar oo qolka xakamaynta ah wuxuu xoogga redstone ku soo bandhigaa akhris looxeed oo cad.<br>
+<br>
+Isticmaal: Ku rakib halka awoodda redstone ee dhow hal mar la eegi karo.<br>
+<br>
+Ogeysiis: Wuxuu akhriyaa xoogga redstone ee dhow laga bilaabo 0 ilaa 15.

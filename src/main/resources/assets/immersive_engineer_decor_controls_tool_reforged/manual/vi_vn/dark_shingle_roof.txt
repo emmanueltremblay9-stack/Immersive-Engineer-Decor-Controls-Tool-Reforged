@@ -1,0 +1,5 @@
+Mái ngói vảy tối màu
+Chi tiết mái phong hóa
+<&recipe>Khối này tạo đường mái tối màu, thực dụng cho xưởng và nhà kho công nghiệp.<br>
+<br>
+Cách dùng: Kết hợp các chi tiết để tạo dáng mái chân thực.<br>

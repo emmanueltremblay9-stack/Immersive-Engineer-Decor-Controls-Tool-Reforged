@@ -1,0 +1,7 @@
+Bryterkoblingsperle
+Koblet betjening
+<&recipe>En koblet perle lagrer en mottaker som mål for fjernstyring av fabrikken.<br>
+<br>
+Bruk: klikk på en bryterkoblingsmottaker med en enderperle for å lage en. Bruk den koblede perlen mens du sniker for å aktivere den lagrede mottakeren.<br>
+<br>
+Merknad: målet må være lastet inn, i samme dimensjon og innenfor rekkevidde.

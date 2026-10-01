@@ -1,0 +1,7 @@
+Zbulues linear entitetesh
+Zbulim sinjali
+<&recipe>Një zbulues entitetesh vëzhgon lëvizjen pranë pa pllakë të dukshme dyshemeje.<br>
+<br>
+Përdorimi: lidhe me dyer, llamba, alarme ose bllokime sigurie makinerish.<br>
+<br>
+Shënim: skanon një zonë të vogël rreth bllokut.

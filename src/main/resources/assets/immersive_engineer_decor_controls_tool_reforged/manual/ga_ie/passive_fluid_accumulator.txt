@@ -1,0 +1,5 @@
+Sreabhán Éighníomhach
+Crua-earraí píblíne sreabháin
+<&recipe>Is páirt dhlúth píblíne sreabháin é an Taiscitheoir Sreabháin Éighníomhach d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: cuir in aice le foinsí oiriúnacha uisce é agus fág spás chun sreabhán a bhaint amach.<br>

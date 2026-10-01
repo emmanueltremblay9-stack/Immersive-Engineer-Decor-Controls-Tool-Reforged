@@ -1,0 +1,5 @@
+Armeret betonflise
+Armeret beton
+<&recipe>Denne blok er en hærdet betondel til maskinfundamenter, eksplosionsvægge og gulve ved læsseramper.<br>
+<br>
+Brug: Brug den under maskiner, langs servicegange eller andre steder, hvor byggeriet kræver en forstærket bund.<br>

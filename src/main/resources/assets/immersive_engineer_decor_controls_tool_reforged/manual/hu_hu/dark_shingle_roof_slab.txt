@@ -1,0 +1,5 @@
+Sötét zsindelytetőlap
+Időjárás koptatta tetőelem
+<&recipe>Ez a blokk sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>

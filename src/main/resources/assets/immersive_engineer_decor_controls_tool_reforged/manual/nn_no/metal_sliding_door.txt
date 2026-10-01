@@ -1,0 +1,5 @@
+Skyvedør av metall
+Industriell inngang
+<&recipe>Denne blokka gjev ein solid inngang til servicerom, sjakter, tak og maskininnhegningar.<br>
+<br>
+Bruk: monter henne der bygget treng ei kontrollert vedlikehaldsopning.<br>

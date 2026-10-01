@@ -1,0 +1,7 @@
+Placa rústica de impactos
+Pulso por presión
+<&recipe>Un interruptor de contacto envía una señal breve al detectar movimiento en el suelo o en una escotilla.<br>
+<br>
+Uso: Colocalo donde las entidades atraviesen un pasillo de mantenimiento, un cargador o una ruta vigilada.<br>
+<br>
+Notas: Emite un pulso breve tras el contacto con una entidad.

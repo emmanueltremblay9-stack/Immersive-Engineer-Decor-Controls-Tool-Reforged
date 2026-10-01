@@ -1,0 +1,7 @@
+Geladener Lapislazuli
+Gespeicherte Erfahrung
+<&recipe>Geladener Lapislazuli speichert eine Erfahrungsstufe, die mit der Gedankenpresse eingebracht wird.<br>
+<br>
+Verwendung: Verbrauche ihn, um eine Stufe zurückzugewinnen, aktive Effekte zu entfernen und etwas Gesundheit wiederherzustellen.<br>
+<br>
+Die Rezeptanzeige zeigt die Gedankenpresse, da geladener Lapislazuli durch Benutzung dieses Werkzeugs mit vorhandenem Lapislazuli und Erfahrung entsteht.

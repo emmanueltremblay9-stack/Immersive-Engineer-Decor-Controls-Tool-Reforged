@@ -1,0 +1,7 @@
+Alat REDIA
+Kegunaan bersalut berlian
+<&recipe>Alat REDIA ialah alat serbaguna gred berlian yang tahan lasak untuk kerja lapangan di sekitar tapak sementara, bengkel dan pintu masuk lombong.<br>
+<br>
+Penggunaan: Gunakan sambil membawa obor untuk meletakkan satu obor daripada inventori tanpa menghauskan REDIA. Gunakan sambil menyelinap untuk memotong tumbuhan atau menukar tanah antara tanah biasa, tanah ladang, tanah kasar dan laluan tanah. Tindakan kapak sandaran asal digunakan dari muka bawah. Pecahkan balak sambil menyelinap untuk menebang blok pokok bersambung.<br>
+<br>
+Baiki dengan berlian. Membaiki alat REDIA yang sudah pulih sepenuhnya melebihi tahap penuh mengembalikan perkembangan Kecekapan dan Tuah asal.

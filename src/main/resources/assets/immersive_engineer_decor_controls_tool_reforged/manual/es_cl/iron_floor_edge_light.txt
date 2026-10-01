@@ -1,0 +1,5 @@
+Lámpara de borde de suelo empotrada
+Luz compacta de trabajo
+<&recipe>Este bloque proporciona iluminación industrial compacta para pasillos, pasarelas y puestos de trabajo.<br>
+<br>
+Uso: Móntalo en techos, paredes o bordes donde la sala necesite una iluminación de trabajo clara.<br>

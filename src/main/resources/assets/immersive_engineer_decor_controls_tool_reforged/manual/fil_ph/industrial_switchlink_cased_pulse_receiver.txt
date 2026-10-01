@@ -1,0 +1,7 @@
+May Kahang Tagatanggap ng Pulso
+Nakakawing na kontrol
+<&recipe>Nagbibigay ang may kahang tagatanggap ng nakakawing na pulso ng maikling pang-udyok ng redstone sa malalayong panel.<br>
+<br>
+Paggamit: Iklik gamit ang Endermutya upang gumawa ng nakakawing na mutya. Iklik nang kanan o gamitin ang nakakawing na mutya upang maglabas ng maikling pulso.<br>
+<br>
+Tandaan: Kusang bumabalik ang pulso sa paunang estado matapos ang nakatakdang tagal.

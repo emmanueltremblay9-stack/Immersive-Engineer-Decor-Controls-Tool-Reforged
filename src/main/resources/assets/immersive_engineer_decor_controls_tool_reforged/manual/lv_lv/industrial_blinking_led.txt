@@ -1,0 +1,7 @@
+Mirgojošs LED
+Signāla atgriezeniskā saite
+<&recipe>Kompakts indikators pārvērš slēptu Redstone redzamā rūpnīcas stāvokļa rādījumā.<br>
+<br>
+Lietošana: pieslēdz to blakus signālam, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: maina stāvokli, kad tuvumā ir Redstone barošana.

@@ -1,0 +1,7 @@
+Analoges Verknüpfungsrelais
+Verknüpfte Steuerung
+<&recipe>Ein Bauteil im Relaisstil bietet Schalttafeln einen kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Stärke für nahe Schaltungen um. Verwende Empfängerblöcke, wenn eine Link-Perle die Betätigung übernehmen soll.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.

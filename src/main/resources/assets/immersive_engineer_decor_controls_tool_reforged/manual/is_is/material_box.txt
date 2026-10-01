@@ -1,0 +1,7 @@
+Efnageymslukassi
+Byggingabirgðakassi
+<&recipe>Efniskassinn geymir mikið af einu einföldu, óbreyttu og staflanlegu byggingarefni.<br>
+<br>
+Notkun: Haltu kassanum í aðalhendi og efnisstafla í aukahendi til að setja hann í kassann. Notaðu kassann með tóma aukahendi til að taka einn stafla út.<br>
+<br>
+Kassinn geymir allt að 512 hluti af einni tegund. Hann hafnar hreiðruðum kössum, óstaflanlegum búnaði og endurnefndum eða gagnabreyttum stöflum; verkfæraráðið sýnir innihaldið.

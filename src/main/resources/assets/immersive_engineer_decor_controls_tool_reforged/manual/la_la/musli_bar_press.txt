@@ -1,0 +1,7 @@
+Prelum taleolarum Muslee
+Prelum cibi
+<&recipe>Prelum virgarum Muslee cibos communes in commeatus militares compactos mutat.<br>
+<br>
+Usus: Panem, malum et semen tritici, peponis, cucurbitae, betae aut Cannabis Industrialis porta, deinde prelo utere. Pressio felix unum cuiusque consumit, spatium probat, quattuor virgas Muslee Melange creat et prelum laedit.<br>
+<br>
+Si quid deest aut in inventario spatium non est, nihil consumitur.

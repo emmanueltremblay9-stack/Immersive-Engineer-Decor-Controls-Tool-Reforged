@@ -1,0 +1,7 @@
+Bloku detektors
+Signāla uztveršana
+<&recipe>Bloku detektors pārbauda, vai priekšā esošā vieta ir aizņemta.<br>
+<br>
+Lietošana: pavērs pret mašīnas pusi, buferi vai apsargājamo vietu, kas jānovēro.<br>
+<br>
+Piezīmes: izvada signālu, ja priekšā esošais bloks nav gaiss.

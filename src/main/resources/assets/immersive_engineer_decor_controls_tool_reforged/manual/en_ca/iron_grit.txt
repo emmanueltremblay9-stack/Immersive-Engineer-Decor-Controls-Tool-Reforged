@@ -1,0 +1,3 @@
+Coarse Iron Grit
+Engineer tool material used by the reconstructed crafting set.
+<&recipe>Can be smelted to iron ingots,<br> but is not suitable for advanced<br> material processing.

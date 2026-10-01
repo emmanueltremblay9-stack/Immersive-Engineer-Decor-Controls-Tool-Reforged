@@ -1,0 +1,5 @@
+Grime-stained clinker stairs
+Brickwork dark with soot
+<&recipe>Grime-stained stairs o' clinker bricks brings soot-dark brickwork to oven halls, chimney bases and service walls, matey.<br>
+<br>
+Orders: Use her as walling, trim or a hot-zone shell round ovens and boilers.<br>

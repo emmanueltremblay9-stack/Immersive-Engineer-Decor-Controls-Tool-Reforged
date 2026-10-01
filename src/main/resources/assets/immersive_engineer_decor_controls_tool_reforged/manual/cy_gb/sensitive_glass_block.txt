@@ -1,0 +1,7 @@
+Gwydr Sensitif sy'n Goleuo
+Gwydr signal
+<&recipe>Mae bloc gwydr sy'n ymateb i Redstone yn cadw llinellau gweld yn agored gan ddangos cyflwr y signal.<br>
+<br>
+Defnydd: Defnyddiwch ef mewn ffenestri ystafelloedd rheoli, paneli goleuedig a gwydr ffatri gwarchodedig.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr yn ôl pŵer Redstone cyfagos.

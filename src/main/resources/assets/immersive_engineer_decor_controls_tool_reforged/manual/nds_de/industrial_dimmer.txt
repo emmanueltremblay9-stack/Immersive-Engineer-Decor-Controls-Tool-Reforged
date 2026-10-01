@@ -1,0 +1,7 @@
+Dimmer
+Ännerbaar Teken
+<&recipe>En Dreihregler stellt vun en lütte Paneelflach de Redstone-Stark in.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav Stoop för Stoop höger to setten un na vulle Stark wedder bi null antofangen.<br>
+<br>
+Anmarken: Gifft Stark vun 0 bet 15.

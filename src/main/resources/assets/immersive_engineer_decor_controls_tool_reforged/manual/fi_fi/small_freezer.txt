@@ -1,0 +1,5 @@
+Vedenjäädytin
+Pieni käsittely-yksikkö
+<&recipe>Vedenjäädytin hoitaa pienet jäähdytystyöt energialla toimivissa nestejärjestelmissä.<br>
+<br>
+Käyttö: Syötä vettä ja energiaa vaiheittaiseen jääntuotantoon.<br>

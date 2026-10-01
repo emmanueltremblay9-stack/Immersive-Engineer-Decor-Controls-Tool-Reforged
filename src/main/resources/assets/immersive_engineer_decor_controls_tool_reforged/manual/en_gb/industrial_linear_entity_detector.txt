@@ -1,0 +1,7 @@
+Line Entity Detector
+Signal sensing
+<&recipe>An entity detector watches nearby movement without a visible floor plate.<br>
+<br>
+Usage: Route it into doors, lamps, alarms, or machine interlocks.<br>
+<br>
+Notes: Scans a small area around the block.

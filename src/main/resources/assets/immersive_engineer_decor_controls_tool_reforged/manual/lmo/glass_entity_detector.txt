@@ -1,0 +1,7 @@
+Rilevador de entità de veder
+Rilevament di segnai
+<&recipe>Un rilevador de entità el varda i moviment lì arent senza una piastra de paviment visibila.<br>
+<br>
+Colegel a porte, lampe, allarmi o bloch de sicurezza di machine.<br>
+<br>
+El controla una piscinina zona in gir al bloch.

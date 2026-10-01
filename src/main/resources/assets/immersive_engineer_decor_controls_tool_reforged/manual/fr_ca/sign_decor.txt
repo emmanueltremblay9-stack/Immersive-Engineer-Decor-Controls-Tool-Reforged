@@ -1,0 +1,5 @@
+Panneau décoratif
+Signalisation de danger
+<&recipe>La plaque signalétique de décor d'ingénieur signale dangers, sorties et zones de travail avec un repère visuel adapté à l'usine.<br>
+<br>
+Utilisation : placez-la à côté des dangers, sorties, machines et zones à accès restreint.<br>

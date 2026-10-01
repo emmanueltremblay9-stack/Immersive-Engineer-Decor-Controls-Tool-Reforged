@@ -1,0 +1,7 @@
+Stol za obradu metala
+Radna stanica za ploče
+<&recipe>Metalni radni stol s posebnim utorom za čekić, mrežom 3x3 i izlaznim utorom.<br>
+<br>
+Uporaba: koristi mrežu poput običnog radnog stola. Za oblikovanje IE ploča stavi Inženjerski čekić na mjesto za alat i materijal ploče u mrežu, pa preuzmi oblikovanu ploču s izlaza.<br>
+<br>
+Čelični ukrasi koriste čelične ploče. Umetni čekić Immersive Engineeringa, oblikuj čelične poluge u ploče i od njih izrađuj stupove, servisne staze, prozore, vrata, ograde i druge čelične ukrase.<br>

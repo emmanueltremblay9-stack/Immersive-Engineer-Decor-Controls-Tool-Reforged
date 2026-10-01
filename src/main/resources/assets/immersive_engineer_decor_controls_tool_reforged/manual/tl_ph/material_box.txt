@@ -1,0 +1,7 @@
+Kahon ng Imbakan ng Materyal
+Kahon ng suplay sa pagtatayo
+<&recipe>Ang material box ay may malaking reserba ng isang karaniwan, di-binago at stackable na materyales sa gusali.<br>
+<br>
+Hawakan sa main hand at ang materyal sa offhand upang ilagay; gamitin na walang laman ang offhand upang kumuha ng isang stack.<br>
+<br>
+Kasya ang 512 item ng isang uri, tinatanggihan ang ibang kahon, di-stackable na gamit at binagong stack, at ipinapakita ang laman sa tooltip.

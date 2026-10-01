@@ -1,0 +1,108 @@
+Construcció industrial
+Parets i remats de fàbrica
+Les peces de construcció general inclouen portes, finestres, llums, cartells d’advertiment, remats i peces estructurals que no pertanyen a una secció més específica.<br>
+<br>
+Usa estes pàgines per a sales de fàbrica, corredors de servici, senyalització de perills i detalls industrials pràctics.
+<np>
+Llum de bombeta de ferro
+Llum de treball compacta
+<&iron_bulb_light>Este bloc proporciona il·luminació industrial compacta per a corredors, passarel·les i llocs de treball.<br>
+<br>
+Ús: munta’l en sostres, parets o vores on la sala necessite una il·luminació clara de treball.<br>
+<np>
+Llum de vora de sostre
+Llum de treball compacta
+<&iron_ceiling_edge_light>Este bloc proporciona il·luminació industrial compacta per a corredors, passarel·les i llocs de treball.<br>
+<br>
+Ús: munta’l en sostres, parets o vores on la sala necessite una il·luminació clara de treball.<br>
+<np>
+Llum encastada de vora de terra
+Llum de treball compacta
+<&iron_floor_edge_light>Este bloc proporciona il·luminació industrial compacta per a corredors, passarel·les i llocs de treball.<br>
+<br>
+Ús: munta’l en sostres, parets o vores on la sala necessite una il·luminació clara de treball.<br>
+<np>
+Llum encastada
+Llum de treball compacta
+<&iron_inset_light>Este bloc proporciona il·luminació industrial compacta per a corredors, passarel·les i llocs de treball.<br>
+<br>
+Ús: munta’l en sostres, parets o vores on la sala necessite una il·luminació clara de treball.<br>
+<np>
+Cartell «Precaució general»
+Marcador de perill
+<&sign_caution>El cartell «Precaució general» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell de perill
+Marcador de perill
+<&sign_danger>El cartell «Atenció, lloc molt perillós» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell decoratiu
+Marcador de perill
+<&sign_decor>La placa de cartell (Engineer's Decor) assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell de defensa
+Marcador de perill
+<&sign_defense>El cartell «Atenció, sistema de defensa davant» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell d’eixida
+Marcador de perill
+<&sign_exit>Este cartell assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell «Risc d’incendi»
+Marcador de perill
+<&sign_firehazard>El cartell «Risc d’incendi» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell «Avís de gelada»
+Marcador de perill
+<&sign_frost>El cartell «Avís de gelada» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell de superfície calenta
+Marcador de perill
+<&sign_hotsurface>El cartell «Atenció, superfície calenta» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell de cable amb tensió
+Marcador de perill
+<&sign_hotwire>El cartell «Atenció, cable amb tensió» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell «Risc de làser»
+Marcador de perill
+<&sign_laser>El cartell «Risc de làser» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell de risc màgic
+Marcador de perill
+<&sign_magichazard>El cartell «Atenció, risc màgic» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell de camp magnètic
+Marcador de perill
+<&sign_magneticfield>El cartell «Atenció, camp magnètic intens» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>
+Cartell «Risc radioactiu»
+Marcador de perill
+<&sign_radioactive>El cartell «Risc radioactiu» assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>
+<np>

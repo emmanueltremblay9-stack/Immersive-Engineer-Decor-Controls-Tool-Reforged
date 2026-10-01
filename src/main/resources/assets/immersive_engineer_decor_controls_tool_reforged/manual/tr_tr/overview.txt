@@ -1,0 +1,5 @@
+Genel Bakış
+Fabrika donanımı ve kontrolleri
+Engineer's Decor; kullanışlı fabrika yapıları için sanayi yapı parçalarını, atölye gereçlerini ve kontrol donanımını bir araya getirir.<br>
+<br>
+Her donanım bloğu veya eşyanın tariflerini, görsellerini, açıklamalarını ve kullanım notlarını görmek için bu kategorideki bölümleri açın.

@@ -1,0 +1,7 @@
+Ljósnemi
+Merkjaskynjun
+<&recipe>Ljósnemi breytir staðbundinni birtu í roðsteinsstýringu.<br>
+<br>
+Notkun: Notaðu hann fyrir sjálfvirka lampa, lokur og skyggnisrásir.<br>
+<br>
+Athugasemdir: Gefur afl við óleiðrétt birtustig 8 eða hærra.

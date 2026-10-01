@@ -1,0 +1,5 @@
+Cartell d’eixida
+Marcador de perill
+<&recipe>Este cartell assenyala perills, eixides i zones de treball amb una indicació visual de seguretat industrial.<br>
+<br>
+Ús: col·loca’l al costat de perills, eixides, màquines i zones d’accés restringit.<br>

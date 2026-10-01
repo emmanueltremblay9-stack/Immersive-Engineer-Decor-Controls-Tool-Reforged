@@ -1,0 +1,5 @@
+Phễu thu chất lỏng
+Thiết bị tuyến chất lỏng
+<&recipe>Phễu thu chất lỏng nhỏ là chi tiết tuyến chất lỏng gọn cho bể nhỏ, đường ống, điểm thu gom và dòng chảy điều khiển bằng redstone.<br>
+<br>
+Cách dùng: Đặt bên dưới điểm thu chất lỏng và dẫn lượng đã chứa vào bể hoặc đường ống thấp hơn.<br>

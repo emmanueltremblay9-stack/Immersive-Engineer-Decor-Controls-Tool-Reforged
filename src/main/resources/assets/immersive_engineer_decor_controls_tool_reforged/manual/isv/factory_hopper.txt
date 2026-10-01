@@ -1,0 +1,5 @@
+Fabričny nasypnik
+Pribor fabričnoj haly
+<&recipe>Sej blok prěnosi kupy prědmetov črěz tesnějši promyslovy obal.<br>
+<br>
+Upotrěbjenje: Usměri go k liniji orudovanij i potom nastroj doseg, čislo kupov, časovanje i redstounovy režim v jego ekranu.<br>

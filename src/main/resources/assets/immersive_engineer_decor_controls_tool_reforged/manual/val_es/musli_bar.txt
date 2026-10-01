@@ -1,0 +1,5 @@
+Barreta energètica Muslee Melange
+Mos ràpid de taller
+<&recipe>La barra Muslee Melange és menjar compacte de pa, llavors i fruita.<br>
+<br>
+Mengeu-la al camp en instal·lar controls, tubs, plataformes o línies de màquines.

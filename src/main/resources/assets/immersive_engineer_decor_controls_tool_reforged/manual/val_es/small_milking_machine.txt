@@ -1,0 +1,5 @@
+Munyidora
+Equipament de terra de taller
+<&recipe>La munyidora xicoteta és un bloc de servici de taller per a manufactura, emmagatzematge, col·locació, trencament, recollida o automatització compacta.<br>
+<br>
+Ús: col·loca-la prop de les vaques i proporciona un mitjà per a traure els recipients de llet o el líquid.<br>

@@ -1,0 +1,789 @@
+Redstone-Stüürige
+Mässaazeige und Signalbauteil
+Stüürtechnik macht versteckts Redstone als lesbari Fabriktafle, Sensore, Aazeige, Schalter, Alarm und verchnüpfti Signalbauteil nutzbar.<br>
+<br>
+Nimm die Siite bim Baue vo Bedienplätz, Signaltafle, Sicherheitsschaltige und Fernstüürige.
+<np>
+Zielschiibe
+Churze Impuls
+<&arrow_target>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Türsensor
+Redstone-Stüürig
+<&door_sensor_switch>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Liftchnopf
+Redstone-Stüürig
+<&elevator_button>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Glaschnopf
+Redstone-Stüürig
+<&glass_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Glaschnopf
+Redstone-Stüürig
+<&glass_small_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Glas-Berüehrigschnopf
+Redstone-Stüürig
+<&glass_touch_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Maschinechnopf
+Redstone-Stüürig
+<&industrial_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Chnopf
+Redstone-Stüürig
+<&industrial_double_pole_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Iigzäunte Maschinechnopf
+Redstone-Stüürig
+<&industrial_fenced_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Klopfchnopf
+Redstone-Stüürig
+<&industrial_knock_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Nostalgische Zierchnopf
+Redstone-Stüürig
+<&oldfancy_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Nostalgische Zierchnopf
+Redstone-Stüürig
+<&oldfancy_small_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Nostalgische Zugchettechnopf
+Churze Impuls
+<&oldfancy_spring_reset_chain>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Rustikale Chnopf
+Redstone-Stüürig
+<&rustic_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Rustikale Nagelchnopf
+Redstone-Stüürig
+<&rustic_nail_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Chliine rustikale Chnopf
+Redstone-Stüürig
+<&rustic_small_button>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Rustikale Zugchettechnopf
+Churze Impuls
+<&rustic_spring_reset_chain>En Taster git en klare Redstone-Impuls mit voller Stärchi.<br>
+<br>
+Verwendig: Nimm en für Maschinestarts, Türfreigabe, Alarm oder einmaligi Schaltvorgäng.<br>
+<br>
+Hiwiis: Setzt sich nach de iigstellte Impulsduur zrugg.
+<np>
+Glaskontaktplatte
+Druckimpuls
+<&glass_contact_mat>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Glas-Türkontakt
+Druckimpuls
+<&glass_door_contact_mat>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Kontaktmatte
+Druckimpuls
+<&industrial_contact_mat>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Türkontaktmatte
+Druckimpuls
+<&industrial_door_contact_mat>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Durchfalldetektor
+Signalerfassig
+<&industrial_fallthrough_detector>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Fuesschnopf
+Redstone-Stüürig
+<&industrial_foot_button>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Industrielli Erschütterigstür
+Druckimpuls
+<&industrial_high_sensitive_trapdoor>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Erschütterigskontaktmatte
+Druckimpuls
+<&industrial_shock_sensitive_contact_mat>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Erschütterigsfalltür
+Druckimpuls
+<&industrial_shock_sensitive_trapdoor>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Roti Stromblueme
+Druckimpuls
+<&red_power_plant>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Rustikali Druckplatte
+Druckimpuls
+<&rustic_contact_plate>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Rustikali Türdruckplatte
+Druckimpuls
+<&rustic_door_contact_plate>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Rustikale Falldetektor
+Signalerfassig
+<&rustic_fallthrough_detector>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Rustikali Erschütterigstür
+Druckimpuls
+<&rustic_high_sensitive_trapdoor>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Rustikali Erschütterigsplatte
+Druckimpuls
+<&rustic_shock_sensitive_plate>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Rustikali Erschütterigstür
+Druckimpuls
+<&rustic_shock_sensitive_trapdoor>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Gälbi Stromblueme
+Druckimpuls
+<&yellow_power_plant>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.
+<np>
+Glas-Ziitschaltuhr
+Tagesliechtsignal
+<&glass_day_timer>En Ziitschalter folgt em Tagesabschnitt vom Wältzyklus.<br>
+<br>
+Verwendig: Nimm en für Hoflüchte, Rollläde und Fabrikstüürige, wo nur am Tag laufe sötted.<br>
+<br>
+Hiwiis: Bruucht e Dimension mit Himmelsliecht.
+<np>
+Glas-Entitätsdetektor
+Signalerfassig
+<&glass_entity_detector>En Entitätsdetektor beobachtet Bewegig ide Nöchi, ohni e sichtbari Bodeplatte z'bruuche.<br>
+<br>
+Verwendig: Schlüss Türe, Lüchte, Alarm oder Maschineverriegelige aa.<br>
+<br>
+Hiwiis: Suecht en chliine Beriich rund um de Block ab.
+<np>
+Glas-Intervallsignalgeber
+Ziitgstüürte Impuls
+<&glass_interval_timer>En kompakte Ziitschalter liefert en ziitlich geplante Redstone-Impuls.<br>
+<br>
+Verwendig: Nimm en, wenn en chliine Mechanismus regelmässig oder verzögert gstüüret werde söll.<br>
+<br>
+Hiwiis: Nutzt ziitlich geplanti Redstone-Impuls.
+<np>
+Glas-Liechtschranke
+Signalerfassig
+<&glass_linear_entity_detector>En Entitätsdetektor beobachtet Bewegig ide Nöchi, ohni e sichtbari Bodeplatte z'bruuche.<br>
+<br>
+Verwendig: Schlüss Türe, Lüchte, Alarm oder Maschineverriegelige aa.<br>
+<br>
+Hiwiis: Suecht en chliine Beriich rund um de Block ab.
+<np>
+Blockdetektor
+Signalerfassig
+<&industrial_block_detector>En Blockdetektor prüeft, ob vor sinere Stirnsiite en Block staht.<br>
+<br>
+Verwendig: Richt en uf d'Maschinesiite, de Puffer oder de gschützte Ruum, wo überwache wotsch.<br>
+<br>
+Hiwiis: Git es Signal, wenn de Block davor kei Luft isch.
+<np>
+Ziitschaltuhr
+Tagesliechtsignal
+<&industrial_day_timer>En Ziitschalter folgt em Tagesabschnitt vom Wältzyklus.<br>
+<br>
+Verwendig: Nimm en für Hoflüchte, Rollläde und Fabrikstüürige, wo nur am Tag laufe sötted.<br>
+<br>
+Hiwiis: Bruucht e Dimension mit Himmelsliecht.
+<np>
+Entitätsdetektor
+Signalerfassig
+<&industrial_entity_detector>En Entitätsdetektor beobachtet Bewegig ide Nöchi, ohni e sichtbari Bodeplatte z'bruuche.<br>
+<br>
+Verwendig: Schlüss Türe, Lüchte, Alarm oder Maschineverriegelige aa.<br>
+<br>
+Hiwiis: Suecht en chliine Beriich rund um de Block ab.
+<np>
+Intervalltimer
+Ziitgstüürte Impuls
+<&industrial_interval_timer>En kompakte Ziitschalter liefert en ziitlich geplante Redstone-Impuls.<br>
+<br>
+Verwendig: Nimm en, wenn en chliine Mechanismus regelmässig oder verzögert gstüüret werde söll.<br>
+<br>
+Hiwiis: Nutzt ziitlich geplanti Redstone-Impuls.
+<np>
+Liechtsensor
+Signalerfassig
+<&industrial_light_sensor>En Liechtsensor macht us de Helligkeit vor Ort e Redstone-Stüürig.<br>
+<br>
+Verwendig: Nimm en für automatischi Lüchte, Rollläde und helligkeitsabhängigi Schaltige.<br>
+<br>
+Hiwiis: Git ab ere rohe Helligkeit vo 8 es Signal uus.
+<np>
+Gwitterdetektor
+Signalerfassig
+<&industrial_lightning_sensor>En Gwittersensor löst Warnige während enem Gwitter uus.<br>
+<br>
+Verwendig: Setz en under de freie Himmel und verbind en mit Lüchte oder Alarm.<br>
+<br>
+Hiwiis: Bruucht Gwitter und freie Himmelszuegang.
+<np>
+Lineari Entitätserkennig
+Signalerfassig
+<&industrial_linear_entity_detector>En Entitätsdetektor beobachtet Bewegig ide Nöchi, ohni e sichtbari Bodeplatte z'bruuche.<br>
+<br>
+Verwendig: Schlüss Türe, Lüchte, Alarm oder Maschineverriegelige aa.<br>
+<br>
+Hiwiis: Suecht en chliine Beriich rund um de Block ab.
+<np>
+Rägesensor
+Signalerfassig
+<&industrial_rain_sensor>En Wättersensor macht usem Räge a sim Standort es Redstone-Signal.<br>
+<br>
+Verwendig: Montier en so, dass Räge de Block drüber erreiche cha.<br>
+<br>
+Hiwiis: Prüeft, ob's über em Sensor rägnet.
+<np>
+Bistabile Glasschalter
+Redstone-Stüürig
+<&glass_rotary_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Bistabile Glas-Berüehrigsschalter
+Redstone-Stüürig
+<&glass_touch_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Oranges signalempfindlichs Glas
+Signalglas
+<&orange_sensitiveglass>En Redstone-empfindliche Glasblock haltet d'Sicht frei und zeigt debii de Signalzuestand.<br>
+<br>
+Verwendig: Nimm en für Kontrollruumfänschter, beleuchteti Tafle und gschützti Fabrikverglasige.<br>
+<br>
+Hiwiis: Redstone ide Nöchi änderet de Zuestand.
+<np>
+Lüchtends signalempfindlichs Glas
+Signalglas
+<&sensitive_glass_block>En Redstone-empfindliche Glasblock haltet d'Sicht frei und zeigt debii de Signalzuestand.<br>
+<br>
+Verwendig: Nimm en für Kontrollruumfänschter, beleuchteti Tafle und gschützti Fabrikverglasige.<br>
+<br>
+Hiwiis: Redstone ide Nöchi änderet de Zuestand.
+<np>
+Farbiges signalempfindlichs Glas
+Signalglas
+<&stained_sensitiveglass>En Redstone-empfindliche Glasblock haltet d'Sicht frei und zeigt debii de Signalzuestand.<br>
+<br>
+Verwendig: Nimm en für Kontrollruumfänschter, beleuchteti Tafle und gschützti Fabrikverglasige.<br>
+<br>
+Hiwiis: Redstone ide Nöchi änderet de Zuestand.
+<np>
+Glas-Balkeaazeig
+Signalmässgrät
+<&glass_vertical_bar_gauge>Es kompakts Mässgrät für de Kontrollruum zeigt d'Redstone-Stärchi guet lesbar uf ere Tafle.<br>
+<br>
+Verwendig: Montier's, wo d'Stärchi näbedraa uf en Blick prüefe wotsch.<br>
+<br>
+Hiwiis: Liest d'Redstone-Stärchi ide Nöchi vo 0 bis 15.
+<np>
+Analogi Mässaazeig
+Signalmässgrät
+<&industrial_analog_angular_gauge>Es kompakts Mässgrät für de Kontrollruum zeigt d'Redstone-Stärchi guet lesbar uf ere Tafle.<br>
+<br>
+Verwendig: Montier's, wo d'Stärchi näbedraa uf en Blick prüefe wotsch.<br>
+<br>
+Hiwiis: Liest d'Redstone-Stärchi ide Nöchi vo 0 bis 15.
+<np>
+Voltmeteraazeig
+Signalmässgrät
+<&industrial_analog_horizontal_gauge>Es kompakts Mässgrät für de Kontrollruum zeigt d'Redstone-Stärchi guet lesbar uf ere Tafle.<br>
+<br>
+Verwendig: Montier's, wo d'Stärchi näbedraa uf en Blick prüefe wotsch.<br>
+<br>
+Hiwiis: Liest d'Redstone-Stärchi ide Nöchi vo 0 bis 15.
+<np>
+Digitalaazeig
+Guet lesbari Signalstärchi
+<&industrial_small_digital_gauge>Es kompakts Mässgrät für de Kontrollruum zeigt d'Redstone-Stärchi guet lesbar uf ere Tafle.<br>
+<br>
+Verwendig: Montier's, wo d'Stärchi näbedraa uf en Blick prüefe wotsch.<br>
+<br>
+Hiwiis: Liest d'Redstone-Stärchi ide Nöchi vo 0 bis 15.
+<np>
+Glasrohraazeig
+Signalmässgrät
+<&industrial_tube_gauge>Es kompakts Mässgrät für de Kontrollruum zeigt d'Redstone-Stärchi guet lesbar uf ere Tafle.<br>
+<br>
+Verwendig: Montier's, wo d'Stärchi näbedraa uf en Blick prüefe wotsch.<br>
+<br>
+Hiwiis: Liest d'Redstone-Stärchi ide Nöchi vo 0 bis 15.
+<np>
+Analogi Balkeaazeig
+Signalmässgrät
+<&industrial_vertical_bar_gauge>Es kompakts Mässgrät für de Kontrollruum zeigt d'Redstone-Stärchi guet lesbar uf ere Tafle.<br>
+<br>
+Verwendig: Montier's, wo d'Stärchi näbedraa uf en Blick prüefe wotsch.<br>
+<br>
+Hiwiis: Liest d'Redstone-Stärchi ide Nöchi vo 0 bis 15.
+<np>
+Alarmlampe
+Signalrückmäldig
+<&industrial_alarm_lamp>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Alarmsirene
+Signalanzeige
+<&industrial_alarm_siren>Die Alarmsirene ist eine an einer Blockfläche montierte Redstone-Anzeige. Ihr Stromzustand folgt dem Signal des Blocks, an dem sie befestigt ist.<br>
+<br>
+Benutzung: An einer festen Fläche anbringen und mit Strom versorgen, um Türen, Maschinen, Alarme oder Bedienfelder zu überwachen.<br>
+<br>
+Hinweis: Solange das anliegende Signal aktiv ist, aktualisiert sich die Sirene einmal pro Sekunde.
+<np>
+Blink-LED
+Signalrückmäldig
+<&industrial_blinking_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Grüeni Blink-LED
+Signalrückmäldig
+<&industrial_green_blinking_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Grüeni LED
+Signalrückmäldig
+<&industrial_green_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Roti LED
+Signalrückmäldig
+<&industrial_red_blinking_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Roti LED
+Signalrückmäldig
+<&industrial_red_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Wiissi Blink-LED
+Signalrückmäldig
+<&industrial_white_blinking_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Wiissi LED
+Signalrückmäldig
+<&industrial_white_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Gälbi Blink-LED
+Signalrückmäldig
+<&industrial_yellow_blinking_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Gälbi LED
+Signalrückmäldig
+<&industrial_yellow_led>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Rustikali Signalfahne
+Signalrückmäldig
+<&rustic_semaphore>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.
+<np>
+Komparatorschalter
+Signal am Befestigungsblock
+<&industrial_comparator_switch>En kompakte Sensorschalter liest sin Befestigungsblock und macht drus en eifache Tafeluusgang.<br>
+<br>
+Verwendig: Montier en a Inventare, Tanks oder Redstone-Bauteil. Mäldet de Befestigungsblock en Komparator-, Behälter- oder Redstone-Uusgang, git de Schalter d'volli Redstone-Stärchi uus.<br>
+<br>
+Hiwiis: Macht us Lagerfüllständ oder versteckte Leitige klari Ii-/Us-Stüürleitige.
+<np>
+Dimmer
+Veränderlichs Signal
+<&industrial_dimmer>En Drehregler stellt d'Redstone-Stärchi uf ere chliine Tafelflächi ii.<br>
+<br>
+Verwendig: Rechtsklick erhöht de Uusgang Schritt für Schritt; nach voller Stärchi gaht's wieder bi null los.<br>
+<br>
+Hiwiis: Git e Stärchi vo 0 bis 15 uus.
+<np>
+Notuuschnopf
+Redstone-Stüürig
+<&industrial_estop_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Trichtersperrschalter
+Redstone-Stüürig
+<&industrial_hopper_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Klopfschalter
+Redstone-Stüürig
+<&industrial_knock_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Hebel
+Redstone-Stüürig
+<&industrial_lever>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Zwei-Chnopf-Maschineschalter
+Redstone-Stüürig
+<&industrial_machine_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Zuggriff
+Redstone-Stüürig
+<&industrial_pull_handle>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Drehhebel
+Redstone-Stüürig
+<&industrial_rotary_lever>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Maschinedrehschalter
+Redstone-Stüürig
+<&industrial_rotary_machine_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Kontakthebel
+Redstone-Stüürig
+<&industrial_small_lever>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Schalter
+Redstone-Stüürig
+<&industrialswitch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Liechtschalter
+Redstone-Stüürig
+<&light_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Handradschalter
+Redstone-Stüürig
+<&valve_wheel_switch>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Impulsempfänger im Ghüüs
+Verchnüpfti Stüürig
+<&industrial_switchlink_cased_pulse_receiver>En verchnüpfte Impulsempfänger im Ghüüs git entfernte Tafle en churze Redstone-Uuslöser.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Rechtsklick oder Betätigung vo de Perle löst en churze Impuls uus.<br>
+<br>
+Hiwiis: De Impuls endet nach sinere feschtgleite Duur vo sälber.
+<np>
+Verchnüpfigsempfänger im Ghüüs
+Verchnüpfti Stüürig
+<&industrial_switchlink_cased_receiver>En verchnüpfte Empfänger im Ghüüs isch es robusts Redstone-Ziel für entfernti Tafle.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Mit enem direkte Rechtsklick chasch de Empfänger vo Hand umschalte.<br>
+<br>
+Hiwiis: Benutz d'Link-Perle bim Schliiche, demit de Empfänger umschaltet.
+<np>
+Verchnüpfte Impulsempfänger
+Verchnüpfti Stüürig
+<&industrial_switchlink_pulse_receiver>En verchnüpfte Impulsempfänger git entfernte Tafle en churze Redstone-Uuslöser.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Rechtsklick oder Betätigung vo de Perle löst en churze Impuls uus.<br>
+<br>
+Hiwiis: De Impuls endet nach sinere feschtgleite Duur vo sälber.
+<np>
+Verchnüpfts Impulsrelais
+Verchnüpfti Stüürig
+<&industrial_switchlink_pulse_relay>Es Teil im Relaisstil git Schalttafle en kompakte lokale Schaltpunkt.<br>
+<br>
+Verwendig: Rechtsklick schaltet de Uusgang mit voller Stärchi für nöchi Schaltige um. Nimm Empfängerblöck, wenn mit ere Link-Perle uuslöse wotsch.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Empfänger für Schalterverchnüpfige
+Verchnüpfti Stüürig
+<&industrial_switchlink_receiver>En verchnüpfte Empfänger bietet entfernte Tafle es Redstone-Ziel mit voller Stärchi.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Mit enem direkte Rechtsklick chasch de Empfänger vo Hand umschalte.<br>
+<br>
+Hiwiis: Benutz d'Link-Perle bim Schliiche, demit de Empfänger umschaltet.
+<np>
+Analoge Verchnüpfigsempfänger
+Verchnüpfti Stüürig
+<&industrial_switchlink_receiver_analog>En verchnüpfte Empfänger git Stüürtafle es sichtbars Fernziel.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Benutz d'Perle bim Schliiche, um de Empfänger us de Fern z'aktiviere.<br>
+<br>
+Hiwiis: Dä Empfänger git bi Uuslösig d'volli Redstone-Stärchi uus.
+<np>
+Relais für Schalterverchnüpfige
+Verchnüpfti Stüürig
+<&industrial_switchlink_relay>Es Teil im Relaisstil git Schalttafle en kompakte lokale Schaltpunkt.<br>
+<br>
+Verwendig: Rechtsklick schaltet de Uusgang mit voller Stärchi für nöchi Schaltige um. Nimm Empfängerblöck, wenn mit ere Link-Perle uuslöse wotsch.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Analoges Verchnüpfigsrelais
+Verchnüpfti Stüürig
+<&industrial_switchlink_relay_analog>Es Teil im Relaisstil git Schalttafle en kompakte lokale Schaltpunkt.<br>
+<br>
+Verwendig: Rechtsklick schaltet de Uusgang mit voller Stärchi für nöchi Schaltige um. Nimm Empfängerblöck, wenn mit ere Link-Perle uuslöse wotsch.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Link-Perle
+Verchnüpfti Stüürig
+<&switchlink_pearl>E Link-Perle speicheret en Empfänger als Ziel für d'Fernstüürig vo de Fabrik.<br>
+<br>
+Verwendig: Klick en Verchnüpfigsempfänger mit ere Enderperle aa. Benutz d'entstandeni Link-Perle bim Schliiche, um de gspeicherete Empfänger z'aktiviere.<br>
+<br>
+Hiwiis: S'Ziel muess glade sii, ide gliiche Dimension ligge und i Riichwiiti sii.
+<np>
+Nostalgische Zierhebel
+Redstone-Stüürig
+<&oldfancy_bistableswitch1>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Nostalgische Zierdrehhebel
+Redstone-Stüürig
+<&oldfancy_bistableswitch2>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Rustikale Drehhebel
+Redstone-Stüürig
+<&rustic_angular_lever>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Rustikale Hebel
+Redstone-Stüürig
+<&rustic_lever>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Rustikale Nagelhebel
+Redstone-Stüürig
+<&rustic_nail_lever>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.
+<np>
+Rustikale Doppelgelenkhebel
+Redstone-Stüürig
+<&rustic_two_hinge_lever>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.

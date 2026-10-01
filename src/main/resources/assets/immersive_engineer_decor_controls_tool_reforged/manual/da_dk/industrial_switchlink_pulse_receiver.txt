@@ -1,0 +1,7 @@
+Pulslinkmodtager
+Forbundet styring
+<&recipe>En tilknyttet pulsmodtager giver fjernpaneler en kort redstoneudløsning.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Højreklik på modtageren, eller aktivér den tilknyttede perle for at udsende en kort puls.<br>
+<br>
+Bemærk: Pulsen nulstilles automatisk efter den indstillede varighed.

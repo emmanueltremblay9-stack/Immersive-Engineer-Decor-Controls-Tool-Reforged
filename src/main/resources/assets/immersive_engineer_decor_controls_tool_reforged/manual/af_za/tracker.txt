@@ -1,0 +1,7 @@
+Spoorsnyer
+Gestoorde posisie-merker
+<&recipe>Die Spoorsnyer stoor 'n blokposisie direk in die item.<br>
+<br>
+Gebruik: Klik 'n blok om sy dimensie en koördinate te stoor. Die nutswenk wys die gestoorde posisie. Sluip-gebruik die Spoorsnyer om die teiken te wis.<br>
+<br>
+Gebruik dit om masjiene, tonneltakke, afstandbeheerders of onvoltooide bouplekke te merk voordat jy met gereedskap en materiaal terugkeer.

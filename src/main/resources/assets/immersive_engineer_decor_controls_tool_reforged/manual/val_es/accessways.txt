@@ -1,0 +1,127 @@
+Passos d’accés
+Passos i suports
+Els pals d’acer i de fusta tractada, les reixetes, passarel·les, baranes, escales de mà, portes, finestres i escotilles formen passos de servici compactes per l’interior de les fàbriques.<br>
+<br>
+Les peces d’acer dels passos d’accés necessiten plaques d’acer. Fabrica o col·loca una taula de treball del metall, posa-hi un martell d’Immersive Engineering i martelleja lingots d’acer per a fer plaques d’acer per a pals, passarel·les, finestres, portes, baranes i altres decoracions d’acer.<br>
+<br>
+Col·loca-les on les màquines necessiten accés de servici, passos elevats, pous de manteniment o vores més segures.
+<np>
+Pal gruixut d’acer
+Peça de bastidor estructural
+<&thick_steel_pole>El pal recte gruixut d’acer aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Cap de pal gruixut
+Peça de bastidor estructural
+<&thick_steel_pole_head>El cap/base de pal recte gruixut d’acer aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Pal prim d’acer
+Peça de bastidor estructural
+<&thin_steel_pole>El pal recte prim d’acer aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Cap de pal prim
+Peça de bastidor estructural
+<&thin_steel_pole_head>El cap/base de pal recte prim d’acer aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Pal de fusta tractada
+Peça de bastidor estructural
+<&treated_wood_pole>El pal recte de fusta tractada aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Cap de pal de fusta tractada
+Peça de bastidor estructural
+<&treated_wood_pole_head>El cap/base de pal recte de fusta tractada aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Suport de pal de fusta tractada
+Peça de bastidor estructural
+<&treated_wood_pole_support>El suport de pal recte de fusta tractada aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Suport d’acer de doble T
+Peça de bastidor estructural
+<&steel_double_t_support>Este bloc aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>
+<np>
+Reixeta de terra d’acer
+Peça d’accés de servici
+<&steel_floor_grating>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Passarel·la d’acer
+Peça d’accés de servici
+<&steel_catwalk>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Escales de passarel·la d’acer
+Peça d’accés de servici
+<&steel_catwalk_stairs>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Passarel·la d’acer elevada
+Peça d’accés de servici
+<&steel_catwalk_ta>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Barana d’acer
+Peça d’accés de servici
+<&steel_railing>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Tanca de malla d’acer
+Peça d’accés de servici
+<&steel_mesh_fence>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Porta de tanca de malla d’acer
+Peça d’accés de servici
+<&steel_mesh_fence_gate>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Escala de barrots metàl·lics
+Peça d’accés de servici
+<&metal_rung_ladder>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Esglaons metàl·lics alterns
+Peça d’accés de servici
+<&metal_rung_steps>Este bloc forma passos de servici fàcils d’identificar al voltant de la maquinària.<br>
+<br>
+Ús: col·loca’l com a accés de manteniment al voltant de màquines, plantes altes i pous de servici.<br>
+<np>
+Finestra amb marc d’acer
+Vista protegida
+<&steel_framed_window>Este bloc permet vore a través seu i combina amb la construcció industrial reforçada.<br>
+<br>
+Ús: col·loca’l en un buit d’un bloc en la paret on els jugadors hagen de vore la maquinària a través d’una barrera protegida.<br>
+<np>
+Porta corredissa metàl·lica
+Punt d’accés industrial
+<&metal_sliding_door>Este bloc proporciona un accés resistent a sales de servici, pous, teulades i recintes de màquines.<br>
+<br>
+Ús: instal·la’l on la construcció necessite una obertura controlada per a manteniment.<br>
+<np>
+Escotilla de ferro
+Punt d’accés industrial
+<&iron_hatch>Este bloc proporciona un accés resistent a sales de servici, pous, teulades i recintes de màquines.<br>
+<br>
+Ús: instal·la’l on la construcció necessite una obertura controlada per a manteniment.<br>

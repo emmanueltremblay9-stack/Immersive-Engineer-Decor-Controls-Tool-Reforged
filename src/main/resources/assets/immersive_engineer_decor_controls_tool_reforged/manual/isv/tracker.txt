@@ -1,0 +1,7 @@
+Slěditelj
+Označatelj uloženogo položenja
+<&recipe>Slěditelj hrani položenje bloka prěmo v prědmetu.<br>
+<br>
+Upotrěbjenje: Klikni blok, da sohraniš dimenziju i koordinate. Podskazka pokazuje položenje. Upotrěbi slěditelj pri prigibanju, da odstraniš cělj.<br>
+<br>
+Upotrěbi go dlja označanja mašin, razvětvenij tunelov, oddalenyh upravnyh ustrojstv ili nezavršenih budovnych měst prěd vrnjenjem s orudjami i materialami.

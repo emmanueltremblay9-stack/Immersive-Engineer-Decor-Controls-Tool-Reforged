@@ -1,0 +1,107 @@
+Wurkpleatsmasines
+Masines en wurkpleatsyn-/útfier
+Wurkpleatsmasines biede nifeljen, foarwerpferpleatsing, smelten, ôffalferwurking, sammeljen en helptaken yn de romte fan ien blok.<br>
+<br>
+Iepenje de folgjende siden foar it resept, de ôfbylding, eftergrûn en praktyske gebrûksoanwizingen fan elke masine.
+<np>
+Stielen tafel
+Wurkpleatsmeubilêr
+<&steel_table>Dit blok is in praktysk meubel foar wurkromten en ûnderhâldshoeken.<br>
+<br>
+Gebrûk: Set it njonken wurkbanken, kratten en kompakte masines.<br>
+<np>
+Tafel fan behannele hout
+Wurkpleatsmeubilêr
+<&treated_wood_table>Dit blok is in praktysk meubel foar wurkromten en ûnderhâldshoeken.<br>
+<br>
+Gebrûk: Set it njonken wurkbanken, kratten en kompakte masines.<br>
+<np>
+Kruk fan behannele hout
+Wurkpleatsmeubilêr
+<&treated_wood_stool>Dit blok is in praktysk meubel foar wurkromten en ûnderhâldshoeken.<br>
+<br>
+Gebrûk: Set it njonken wurkbanken, kratten en kompakte masines.<br>
+<np>
+Metaalwurkbank
+Wurkplak foar platen
+<&metal_crafting_table>De metaalwurkbank is in fersterke wurkpost mei in hammerfak, in nifelroaster fan 3x3 en in dúdlik útfierfak.<br>
+<br>
+Gebrûk: Brûk it roaster om gewoan te nifeljen. Set foar IE-platen in yngenieurshammer yn it arkfak en it plaatmateriaal yn it roaster foardatst it resultaat nimst. Stielen fersieringen brûke stielplaten foar peallen, rinbrêgen, finsters, doarren, leuningen en oare stielen ûnderdielen.<br>
+<np>
+Fabrykstrachter
+Helpapparaat foar de wurkflier
+<&factory_hopper>Dit blok ferpleatst foarwerpsteapels troch in kompaktere yndustriële kast.<br>
+<br>
+Gebrûk: Rjochtsje it op de ynventarisketen en stel dêrnei berik, steapeloantal, tiden en redstonemodus yn op it skerm.<br>
+<np>
+Fabryksjouwer
+Helpapparaat foar de wurkflier
+<&factory_dropper>Dit blok jout opsleine foarwerpen út troch in rjochte kant.<br>
+<br>
+Gebrûk: Rjochtsje de foarkant op it útjefteplak, folje de ynterne fakken en stel krêft, hoeke, fertraging, filterlogika en redstonemodus yn op it skerm.<br>
+<np>
+Fabryksblokpleatser
+Helpapparaat foar de wurkflier
+<&factory_placer>Dit blok pleatst blokken út syn ynterne foarried as it aktivearre wurdt.<br>
+<br>
+Gebrûk: Rjochtsje de wurkkant op de doelromte en folje it mei steapels dy't pleatst wurde kinne.<br>
+<np>
+Blokbrekker
+Helpapparaat foar de wurkflier
+<&small_block_breaker>De lytse blokbrekker is in helpblok foar de wurkflier foar nifeljen, opslach, pleatsen, brekken, sammeljen of kompakte automatisearring.<br>
+<br>
+Gebrûk: Rjochtsje de wurkkant op it blok dat fuorthelle wurde moat.<br>
+<np>
+Ôffalferbaarningsoven
+Kompakte ferwurkingsienheid
+<&small_waste_incinerator>De ôffalferbaarningsoven ferneatiget net winske foarwerpen en nimt mar in bytsje plak yn de wurkpleats yn.<br>
+<br>
+Gebrûk: Fier allinnich net winske foarwerpen yn syn wachtrige yn.<br>
+<np>
+Laboratoariumoven
+Kompakte ferwurkingsienheid
+<&small_lab_furnace>De laboratoariumoven fiert lytse smelttaken op fêste brânstof út en nimt mar in bytsje plak yn de wurkpleats yn.<br>
+<br>
+Gebrûk: Brûk fêste brânstof foar lytse smeltpartijen.<br>
+<np>
+Elektryske oven
+Kompakte ferwurkingsienheid
+<&small_electrical_furnace>De elektryske oven fiert lytse, troch FE oandreaune smelttaken út en nimt mar in bytsje plak yn de wurkpleats yn.<br>
+<br>
+Gebrûk: Fier FE en jildich smeltmateriaal oan.<br>
+<np>
+Mineraalsmeltoven
+Kompakte ferwurkingsienheid
+<&small_mineral_smelter>De mineraalsmeltoven ferwurket mineralen by hege temperatueren en nimt mar in bytsje plak yn de wurkpleats yn.<br>
+<br>
+Gebrûk: Fier mineraalblokken en enerzjy oan foar smeltwurk by hege temperatueren.<br>
+<np>
+Wetterfriezer
+Kompakte ferwurkingsienheid
+<&small_freezer>De wetterfriezer fiert lyts kuolwurk út foar floeistofynstallaasjes mei enerzjyfoarsjenning.<br>
+<br>
+Gebrûk: Fier wetter en enerzjy oan foar iisproduksje yn fazen.<br>
+<np>
+Passive floeistof
+Ûnderdielen foar floeistofliedingen
+<&passive_fluid_accumulator>De passive floeistofsamler is in kompakt ûnderdiel foar floeistofliedingen by lytse tanks, piiprûtes, sammelpunten en troch redstone bestjoerde trochstreaming.<br>
+<br>
+Gebrûk: Pleats him tsjin geskikte wetterboarnen oan en lit romte oer om floeistof ôf te fieren.<br>
+<np>
+Sinnepaniel
+Helpapparaat foar de wurkflier
+<&small_solar_panel>It lytse sinnepaniel is in helpblok foar de wurkflier foar nifeljen, opslach, pleatsen, brekken, sammeljen of kompakte automatisearring.<br>
+<br>
+Gebrûk: Jou it frij sicht op de himel en slút apparatuer mei leech ferbrûk oan.<br>
+<np>
+Melkmasine
+Helpapparaat foar de wurkflier
+<&small_milking_machine>De lytse melkmasine is in helpblok foar de wurkflier foar nifeljen, opslach, pleatsen, brekken, sammeljen of kompakte automatisearring.<br>
+<br>
+Gebrûk: Pleats har by kij en soargje foar in manier om molkefetten of floeistof ôf te fieren.<br>
+<np>
+Beamfeller
+Helpapparaat foar de wurkflier
+<&small_tree_cutter>De lytse beamfeller is in helpblok foar de wurkflier foar nifeljen, opslach, pleatsen, brekken, sammeljen of kompakte automatisearring.<br>
+<br>
+Gebrûk: Rjochtsje him op folgroeide beammen en sammelje de fallen foarwerpen apart.<br>

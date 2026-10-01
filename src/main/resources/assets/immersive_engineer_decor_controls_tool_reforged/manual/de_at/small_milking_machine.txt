@@ -1,0 +1,5 @@
+Melkmaschin
+Hüfsgerät für de Werkstatt
+<&recipe>De kloane Melkmaschin is a Werkstatthüfsblock für Herstellung, Lagern, Setzn, Obbau, Sammeln oda kompakte Automation.<br>
+<br>
+Verwendung: Setz's zu de Küah und sorg dafür, dass Müchbehälter oda Flüssigkeit herauskumman.<br>

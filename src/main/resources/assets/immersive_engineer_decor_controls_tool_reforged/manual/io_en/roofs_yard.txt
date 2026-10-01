@@ -1,0 +1,101 @@
+Tekti e korto
+Externa fabrikinstaluri
+Tektobloki, kortogranuli e peci ek olda industriala ligno helpas finar externa hangari, laborkorti, kargozoni e veteruzita fabrikbordi.<br>
+<br>
+Mixez ca peci kun masonuro ed acesovoyi por ke la externa industriala konstrukti restez klare komprenebla de fore.
+<np>
+Tekto di obskura shindoli
+Veteruzita tektoinstaluro
+<&dark_shingle_roof>Ca bloko formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Tektala nivoretenero
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_metallized>La Nivoretenero di tekto di obskura shindoli formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Tekto di obskura shindoli
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_skylight>La Tektofenestro di obskura shindoli formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Tektala fumotubobazo
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_chimneytrunk>La Bazo di fumotubo di tekto di obskura shindoli formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Tektala filkonduktilo
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_wireconduit>La Filkonduktilo di tekto di obskura shindoli formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Tekto di obskura shindoli
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_chimney>La Fumotubo di tekto di obskura shindoli formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Bloko di tekto di obskura shindoli
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_block>Ca bloko formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Plako di tekto di obskura shindoli
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_slab>Ca bloko formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Plako di tekto di obskura shindoli
+Veteruzita tektoinstaluro
+<&dark_shingle_roof_slabslice>La Trancho di plako di tekto di obskura shindoli formas obskura, praktika tektolinii por laboreyi ed industriala hangari.<br>
+<br>
+Uzo: Uzez la peci kune por formar kredebla tektoprofili.<br>
+<np>
+Kompakta granulatra sulo
+Grundotegilo por laboreyo
+<&dense_grit_dirt_block>Ca bloko donas kompakta, tretata surfaco a externa laborzoni.<br>
+<br>
+Uzo: Pozez ol cirkum kargopordi, externa rezervuyi e mashinkorti.<br>
+<np>
+Kompakta granulatra sablo
+Grundotegilo por laboreyo
+<&dense_grit_sand_block>Ca bloko donas kompakta, tretata surfaco a externa laborzoni.<br>
+<br>
+Uzo: Pozez ol cirkum kargopordi, externa rezervuyi e mashinkorti.<br>
+<np>
+Planki ek olda ligno
+Oldigita laboreyligno
+<&old_industrial_wood_planks>La Planki ek olda industriala ligno adjuntas oldigita laboreyligno por planki, skaluni, pordi e varma internborduri.<br>
+<br>
+Uzo: Uzez ol por olda laboreyplanki, eskaleri, pordi e borduri.<br>
+<np>
+Plako ek olda industriala ligno
+Oldigita laboreyligno
+<&old_industrial_wood_slab>Ca bloko adjuntas oldigita laboreyligno por planki, skaluni, pordi e varma internborduri.<br>
+<br>
+Uzo: Uzez ol por olda laboreyplanki, eskaleri, pordi e borduri.<br>
+<np>
+Eskalero ek olda ligno
+Oldigita laboreyligno
+<&old_industrial_wood_stairs>La Eskalero ek olda industriala ligno adjuntas oldigita laboreyligno por planki, skaluni, pordi e varma internborduri.<br>
+<br>
+Uzo: Uzez ol por olda laboreyplanki, eskaleri, pordi e borduri.<br>
+<np>
+Trancho di plako ek olda ligno
+Oldigita laboreyligno
+<&old_industrial_wood_slabslice>La Trancho di plako ek olda industriala ligno adjuntas oldigita laboreyligno por planki, skaluni, pordi e varma internborduri.<br>
+<br>
+Uzo: Uzez ol por olda laboreyplanki, eskaleri, pordi e borduri.<br>
+<np>
+Pordo ek olda industriala ligno
+Oldigita laboreyligno
+<&old_industrial_wood_door>Ca bloko adjuntas oldigita laboreyligno por planki, skaluni, pordi e varma internborduri.<br>
+<br>
+Uzo: Uzez ol por olda laboreyplanki, eskaleri, pordi e borduri.<br>

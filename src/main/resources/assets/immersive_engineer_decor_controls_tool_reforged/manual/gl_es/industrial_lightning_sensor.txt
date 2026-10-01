@@ -1,0 +1,7 @@
+Detector de treboadas
+Detección de sinais
+<&recipe>Un sensor de treboadas activa avisos cando hai tronos.<br>
+<br>
+Uso: colócao a ceo aberto e conéctao a luces ou alarmas.<br>
+<br>
+Notas: require tronos e acceso ao ceo.

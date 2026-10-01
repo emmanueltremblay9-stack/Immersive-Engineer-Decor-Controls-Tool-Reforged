@@ -1,0 +1,7 @@
+Loftshylki fyrir köfun
+Neyðarloftbirgðir
+<&recipe>Köfunarlofthylkið er neyðarforði af lofti fyrir vinnu neðansjávar.<br>
+<br>
+Notkun: Notaðu það handvirkt til að endurheimta loft. Þegar það er í birgðunum getur það einnig virkjast sjálfkrafa þegar loftið er nær búið og fer síðan í biðtíma.<br>
+<br>
+Hafðu það með í flóðfullar námur, neðansjávarlagnir og viðgerðir í dæluherbergjum.

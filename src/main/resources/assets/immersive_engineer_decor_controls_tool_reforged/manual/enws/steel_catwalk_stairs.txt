@@ -1,0 +1,5 @@
+Steel Walkway Stairs
+Fitting for a Service Passage
+<&recipe>This block marks out clear paths of service about the engines.<br>
+<br>
+Use: Set it to grant access for upkeep about engines, upper floors and service shafts.<br>

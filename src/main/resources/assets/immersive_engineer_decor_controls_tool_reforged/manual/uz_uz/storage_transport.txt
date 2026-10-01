@@ -1,0 +1,41 @@
+Saqlash va tashish
+Inventar va oqim jihozlari
+Saqlash va tashish jihozlari ixcham zavod yo'nalishlari uchun yashik, bochka, voronka va klapanlarni qamraydi.<br>
+<br>
+Omborlar, quvur yo'llari, xizmat baklari va boshqariladigan suyuqlik liniyalarini rejalashda bu sahifalardan foydalaning.
+<np>
+Yorliqli yashik
+Tahrirlanadigan zaxira yorlig'i
+<&labeled_crate>Bu yorliqli yashik omborni aniq saralash uchun mo'ljallangan. Old lavhasini kichik ustaxona belgisi kabi tahrirlash mumkin.<br>
+<br>
+Ishlatish: yashik yorlig'ini tahrirlash uchun yorliq lavhasiga o'ng tugma bilan bosing. Jihozlar, qismlar va texnik zaxiralar omborini ochish uchun yashikning boshqa qismiga o'ng tugma bilan bosing.<br>
+<np>
+Suyuqlik bochkasi
+Suyuqlik liniyasi jihozi
+<&fluid_barrel>Bu jihoz kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: quvurlar yoki chelaklar bak yuzasiga yeta oladigan joyga qo'ying.<br>
+<np>
+Suyuqlik voronkasi
+Suyuqlik liniyasi jihozi
+<&small_fluid_funnel>Kichik suyuqlik voronkasi kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: suyuqlik yig'ish nuqtasi ostiga qo'ying va saqlangan tarkibini bak yoki pastdagi quvurlarga yo'naltiring.<br>
+<np>
+Suyuqlik quvurining bir yo'nalishli klapani
+Suyuqlik liniyasi jihozi
+<&straight_pipe_valve>Suyuqlikning bir yo'nalishli klapani kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: klapanni kerakli oqim yo'nalishiga tekislang.<br>
+<np>
+Redstone suyuqlik klapani
+Suyuqlik liniyasi jihozi
+<&straight_pipe_valve_redstone>Redstone suyuqlik klapani kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: klapanni kerakli oqim yo'nalishiga tekislang.<br>
+<np>
+Analog suyuqlik klapani
+Suyuqlik liniyasi jihozi
+<&straight_pipe_valve_redstone_analog>Analog suyuqlik klapani kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: klapanni kerakli oqim yo'nalishiga tekislang.<br>

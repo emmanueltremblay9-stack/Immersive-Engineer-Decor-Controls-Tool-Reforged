@@ -1,0 +1,5 @@
+Autoinietor stimołante
+Inietor de emergensa
+<&recipe>El stimpack automatico xe un ogjeto medico de emergenza.<br>
+<br>
+Doparalo a man par curar, protezion breve e velocità. In inventario el parte co poca salute e dopo el recupera. Tienghelo pronto in posti pericolosi.

@@ -1,0 +1,7 @@
+Receptor nexus pulsans
+Moderatio conexa
+<&recipe>Receptor pulsans conexus tabulis remotis breve incitamentum redstone dat.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Dextro clicco aut margarita conexa incitata pulsum brevem emitte.<br>
+<br>
+Notae: pulsus ipse finitur post tempus constitutum.

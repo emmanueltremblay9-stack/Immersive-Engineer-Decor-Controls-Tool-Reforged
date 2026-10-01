@@ -1,0 +1,5 @@
+Subministrador de fàbrica
+Equipament de planta
+<&recipe>Aquest bloc expulsa objectes emmagatzemats per la cara cap on apunta.<br>
+<br>
+Ús: orienta el frontal cap al punt d’expulsió, omple les ranures internes i ajusta la força, l’angle, el retard, la lògica del filtre i el mode de redstone a la pantalla.<br>

@@ -1,0 +1,7 @@
+Ariadnės anglis
+Kasyklos kelio žymeklis
+<&recipe>Ariadnės anglis leidžia greitai žymėti kelius šachtose, šakotose kasyklose ir laikinose požeminėse darbo vietose.<br>
+<br>
+Naudojimas: panaudok ant tvirto bloko paviršiaus, kad ant jo padėtum juodą rodyklę. Žymeklis atsižvelgia į spustelėtą paviršiaus vietą ir palaiko aštuonias kryptis, įskaitant įstrižas. Taip galima žymėti posūkius, išėjimus, aklavietes ir tiekimo kelius nesinešiojant atskirų kelrodžių.<br>
+<br>
+Ariadnės anglis yra daugkartinis žymėjimo įrankis, skirtas 100 naudojimų. Kiekvienas sėkmingas žymeklio padėjimas sunaudoja vieną patvarumo tašką, o netinkami paviršiai atmetami nedėvint įrankio.

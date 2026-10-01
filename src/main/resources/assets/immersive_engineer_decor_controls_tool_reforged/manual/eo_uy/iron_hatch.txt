@@ -1,0 +1,5 @@
+Fera lukokovrilo
+Industria alirejo
+<&recipe>Ĉi tiu bloko provizas fortikan alirejon al prizorgaj ĉambroj, ŝaktoj, tegmentoj kaj maŝinujoj.<br>
+<br>
+Uzado: instalu ĝin kie la konstruaĵo bezonas regatan prizorgan aperturon.<br>

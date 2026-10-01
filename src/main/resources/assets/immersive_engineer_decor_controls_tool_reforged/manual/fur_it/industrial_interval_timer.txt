@@ -1,0 +1,7 @@
+Temporizadôr a intervaî
+Impuls a timp
+<&recipe>Un interutôr a timp compat al da un impuls di redstone programât.<br>
+<br>
+Ûs: doprilu dulà che un piçul mecanisim al à bisugne di un comant periodic o ritardât.<br>
+<br>
+Notis: al dopre impuls di redstone programâts.

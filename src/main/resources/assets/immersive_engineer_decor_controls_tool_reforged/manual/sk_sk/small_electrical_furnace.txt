@@ -1,0 +1,5 @@
+Elektrická pec
+Kompaktná spracovacia jednotka
+<&recipe>Elektrická pec vykonáva menšie taviace práce s napájaním FE a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Priveď FE a vhodnú surovinu na tavenie.<br>

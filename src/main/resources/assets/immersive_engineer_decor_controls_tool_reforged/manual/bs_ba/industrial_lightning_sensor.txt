@@ -1,0 +1,7 @@
+Detektor oluje
+Otkrivanje signala
+<&recipe>Senzor oluje pokreće upozorenja tokom grmljavine.<br>
+<br>
+Upotreba: Postavite ga pod otvoreno nebo i povežite s lampama ili alarmima.<br>
+<br>
+Napomene: Potrebni su grmljavina i pristup nebu.

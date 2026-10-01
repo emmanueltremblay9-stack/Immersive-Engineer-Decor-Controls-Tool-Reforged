@@ -1,0 +1,7 @@
+Rele lidhjeje pulsi
+Kontroll i lidhur
+<&recipe>Një pajisje me pamje releje u jep paneleve një pikë kompakte çelësi lokal.<br>
+<br>
+Përdorimi: kliko djathtas për të ndezur ose fikur daljen me fuqi të plotë për qarqet pranë. Përdor blloqe marrëse kur duhet aktivizim me perlë të lidhur.<br>
+<br>
+Shënim: jep redston me fuqi të plotë sa kohë është ndezur.

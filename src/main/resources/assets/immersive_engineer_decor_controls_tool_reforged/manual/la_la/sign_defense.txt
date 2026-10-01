@@ -1,0 +1,5 @@
+Tabula defensionis
+Signum periculi
+<&recipe>Tabula «Cave, apparatus defensionis ante te» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>

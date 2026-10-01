@@ -1,0 +1,7 @@
+Aztarnaria
+Gordetako posizio-marka
+<&recipe>Bloke-posizioa elementuan gordetzen du.<br>
+<br>
+Erabilera: Egin klik blokean dimentsioa eta koordenatuak gordetzeko. Argibideak posizioa erakusten du. Makurtuta erabiltzeak ezabatzen du.<br>
+<br>
+Markatu makinak, tunel-adarrak, urruneko kontrolak edo amaitu gabeko obrak.

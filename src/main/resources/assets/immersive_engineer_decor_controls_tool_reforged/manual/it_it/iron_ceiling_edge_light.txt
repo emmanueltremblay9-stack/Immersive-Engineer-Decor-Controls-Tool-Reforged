@@ -1,0 +1,5 @@
+Luce da bordo del soffitto
+Luce da lavoro compatta
+<&recipe>Questo blocco offre un’illuminazione industriale compatta per corridoi, passerelle e postazioni di lavoro.<br>
+<br>
+Uso: montalo su soffitti, pareti o bordi dove serve una buona illuminazione da lavoro.<br>

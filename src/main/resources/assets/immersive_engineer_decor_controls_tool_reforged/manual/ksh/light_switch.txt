@@ -1,0 +1,7 @@
+Lichtschalter
+Redstone-Stüerung
+<&recipe>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.

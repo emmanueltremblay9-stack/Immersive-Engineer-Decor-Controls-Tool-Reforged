@@ -1,0 +1,7 @@
+Brytarlänkmottagare
+Länkad styrning
+<&recipe>En länkmottagare ger fjärrpaneler ett redstonemål med full styrka.<br>
+<br>
+Användning: Klicka på den med en enderpärla för att skapa en länkad pärla. Högerklicka direkt på mottagaren för att växla den för hand.<br>
+<br>
+Anmärkning: En länkad pärla växlar mottagaren när den används medan du smyger.

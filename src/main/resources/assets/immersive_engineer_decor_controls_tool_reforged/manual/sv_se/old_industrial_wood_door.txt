@@ -1,0 +1,5 @@
+Gammal fabriksdörr av trä
+Åldrat verkstadsträ
+<&recipe>Det här blocket ger åldrat verkstadsträ till golv, trappsteg, dörrar och varm invändig dekor.<br>
+<br>
+Användning: Använd det till gamla verkstadsgolv, trappor, dörrar och dekor.<br>

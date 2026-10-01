@@ -1,0 +1,7 @@
+Pulsmóttakari í húsi
+Bundin stýring
+<&recipe>Ein bundin pulsmóttakari í húsi gevur fjarpanelum eina stutta reyðgrýtisvirking.<br>
+<br>
+Nýtsla: Klikk á hann við einari Enderperlu fyri at gera eina bundna perlu. Høgraklikk á hann ella virkja bundnu perluna fyri at geva ein stuttan puls.<br>
+<br>
+Viðmerking: Pulsurin sløknar av sær sjálvum eftir ásettu tíðina.

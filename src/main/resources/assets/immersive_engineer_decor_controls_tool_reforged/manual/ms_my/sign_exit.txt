@@ -1,0 +1,5 @@
+Papan Tanda Keluar
+Penanda bahaya
+<&recipe>Papan tanda ini menandakan bahaya, jalan keluar dan zon kerja dengan petunjuk visual bagi keselamatan kilang.<br>
+<br>
+Penggunaan: Letakkan di sisi bahaya, jalan keluar, mesin dan zon larangan.<br>

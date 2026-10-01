@@ -1,0 +1,7 @@
+Zoeker
+Opgeslagen positiemarkering
+<&recipe>De zoeker slaat een blokpositie rechtstreeks in het voorwerp op.<br>
+<br>
+Klik op een blok om dimensie en coördinaten op te slaan. De tooltip toont de positie. Sluip en gebruik de zoeker om het doel te wissen.<br>
+<br>
+Gebruik hem om machines, tunnels, afstandsbedieningen of onafgewerkte bouwplaatsen te markeren.

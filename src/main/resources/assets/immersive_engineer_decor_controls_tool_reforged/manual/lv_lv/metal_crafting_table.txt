@@ -1,0 +1,7 @@
+Metālapstrādes galds
+Plākšņu izgatavošanas stacija
+<&recipe>Metāla darbgalds ar īpašu āmura vietu, 3x3 izgatavošanas režģi un izvades vietu.<br>
+<br>
+Lietošana: izmanto režģi kā parastu darbagaldu. Lai veidotu IE plāksnes, ievieto inženiera āmuru rīka nodalījumā un plāksnes materiālu režģī, tad paņem gatavo plāksni no izvades.<br>
+<br>
+Tērauda dekorācijām izmanto tērauda plāksnes. Ievieto Immersive Engineering āmuru, izkal tērauda stieņus plāksnēs un no tām izgatavo stabus, apkopes laipas, logus, durvis, margas un citas tērauda dekorācijas.<br>

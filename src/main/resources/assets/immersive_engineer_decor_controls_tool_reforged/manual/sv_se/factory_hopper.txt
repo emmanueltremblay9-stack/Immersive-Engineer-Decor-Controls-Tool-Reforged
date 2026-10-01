@@ -1,0 +1,5 @@
+Fabrikstratt
+Hjälpmedel för verkstadsgolvet
+<&recipe>Det här blocket flyttar föremålsstaplar genom ett kompakt industrihölje.<br>
+<br>
+Användning: Rikta det mot lagerlinjen och ställ sedan in räckvidd, stapelantal, tider och redstoneläge på skärmen.<br>

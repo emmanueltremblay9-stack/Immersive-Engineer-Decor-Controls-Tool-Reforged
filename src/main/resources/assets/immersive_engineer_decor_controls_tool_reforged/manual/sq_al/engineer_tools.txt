@@ -1,0 +1,93 @@
+Vegla të inxhinierit
+Pajisje portative punishteje
+Grupi i Veglave të inxhinierit shton pajisje dore, shenjues minierash, mjete emergjente konsumi, ushqim terreni dhe ndihmës të vegjël për përpunimin e materialeve në të njëjtin manual që mbulon blloqet dekorative dhe të kontrollit.<br>
+<br>
+Këto vegla janë për punë larg një punishteje të pajisur plotësisht: shëno rrugën, mbaj furnizime, rikuperohu nga gabimet dhe përfundo punime të vogla përpunimi në vend.
+<np>
+Vegël REDIA
+Vegël e veshur me diamant
+<&redia_tool>Vegla REDIA është një mjet i qëndrueshëm terreni për punë të shpejta toke. Përdore mbi dhe të punueshëm për ta kthyer në tokë bujqësore.<br>
+<br>
+Përdore mbi një faqe të qëndrueshme ndërsa mban pishtarë për të vendosur një pishtar nga inventari pa konsumuar REDIA-n. Punimi i tokës, qethja, puna me sëpatë dhe prerja e pemëve harxhojnë qëndrueshmëri.
+<np>
+Çekiç thërrmues xeherorësh
+Vegël dore për thërrmim
+<&crushing_hammer>Çekiçi i thërrmimit të mineralit është vegël dore për përpunimin e hershëm të hekurit dhe arit.<br>
+<br>
+Përdoreni me hekur të papërpunuar, ar të papërpunuar, mineral hekuri ose ari dhe variantet e tyre deepslate për pluhur Immersive Engineering. Çekiçi humbet qëndrueshmëri, kthehet në rrjetë derisa thyhet, konsumohet në minierë dhe zmbraps objektivat.
+<np>
+Gjurmues
+Shenjues pozicioni të ruajtur
+<&tracker>Gjurmuesi ruan pozicionin e një blloku në send.<br>
+<br>
+Klikoni bllokun për dimensionin dhe koordinatat. Përshkrimi tregon pozicionin. Përdoreni i ulur për të fshirë objektivin.<br>
+<br>
+Shënoni makina, tunele, kontrolle në largësi ose ndërtime të papërfunduara.
+<np>
+Qymyrgur Ariadne
+Shenjues rrugësh minierash
+<&ariadne_coal>Qymyrguri Ariadne vendos shpejt shigjeta të zeza rrugëzimi në faqet e qëndrueshme të minierës. Përdore mbi një faqe të ngurtë për të shënuar kthesën, daljen ose degëzimin tjetër; shenja mbështet tetë drejtime në faqen e klikuar, përfshirë diagonalet.<br>
+<br>
+Qymyrguri Ariadne është vegël shënimi e ripërdorshme me 100 përdorime. Çdo vendosje e suksesshme kushton një pikë qëndrueshmërie. Faqet e papërshtatshme refuzohen pa konsumuar veglën.
+<np>
+Injektor automatik stimulues
+Injektor emergjent
+<&stimpack>Paketa automatike stimuluese është mjet mjekësor emergjent.<br>
+<br>
+Përdoreni me dorë për shërim, mbrojtje të shkurtër dhe shpejtësi. Në inventar ndizet automatikisht me pak shëndet dhe pastaj ftohet. Mbajeni në vende të rrezikshme.
+<np>
+Thes gjumi
+Pajisje portative pushimi
+<&sleeping_bag>Thesi i gjumit është pajisje pushimi rezistente ndaj motit larg shtratit.<br>
+<br>
+Përdoreni natën në Overworld për të pushuar deri në mëngjes pa ndryshuar pikën e ringjalljes.<br>
+<br>
+Nuk punon ditën, pranë përbindëshave ose në dimensione të papërshtatshme. Çdo pushim e konsumon.
+<np>
+Kuti magazinimi materialesh
+Kuti furnizimi ndërtimi
+<&material_box>Kutia e materialeve mban shumë nga një material i vetëm ndërtimi, i zakonshëm, i pandryshuar dhe i grumbullueshëm.<br>
+<br>
+Mbajeni kutinë në dorën kryesore dhe materialin në tjetrën për ta futur; me dorën tjetër bosh nxirrni një grumbull.<br>
+<br>
+Mban 512 sende të një lloji, refuzon kuti të tjera, pajisje të pagrumbullueshme e grumbuj të ndryshuar dhe e tregon përmbajtjen në përshkrim.
+<np>
+Kapsulë ajri për zhytje
+Rezervë ajri emergjente
+<&diving_capsule>Kapsula e ajrit është rezervë emergjente për punë nën ujë.<br>
+<br>
+Përdoreni me dorë për të rikthyer ajrin. Në inventar ndizet automatikisht kur ajri pothuajse mbaron dhe pastaj hyn në ftohje. Merreni në miniera të përmbytura dhe pranë tubave nën ujë.
+<np>
+Presë shufrash Muslee
+Presë ushqimi
+<&musli_bar_press>Presa Muslee i kthen ushqimet e zakonshme në racione kompakte.<br>
+<br>
+Mbani bukë, mollë dhe fara gruri, pjepri, kungulli, panxhari ose kërpi industrial dhe përdorni presën. Ajo harxhon nga një, kontrollon hapësirën, krijon katër shufra dhe dëmtohet.<br>
+<br>
+Nëse mungon diçka ose nuk ka vend, asgjë nuk harxhohet.
+<np>
+Shufër energjie Muslee Melange
+Ushqim i shpejtë punishteje
+<&musli_bar>Shufra Muslee Melange është ushqim kompakt nga bukë, fara dhe fruta.<br>
+<br>
+Hajeni në terren kur vendosni kontrolle, tuba, platforma ose linja të gjata makinash.
+<np>
+Shtrydhës mendjeje
+Kondensues përvoje
+<&charged_lapis_squeezer>Shtrydhësi i mendjes kthen një lazurit dhe një nivel përvoje nga inventari yt në Lazurit të ngarkuar.<br>
+<br>
+Çdo shndërrim i suksesshëm e dëmton përdoruesin, i shton lodhjen që rrit urinë dhe e verbon për pak kohë. Procesi nuk nis pa lazurit, pa XP ose kur përdoruesi është tepër pranë vdekjes.
+<np>
+Lazurit i ngarkuar
+Përvojë e ruajtur
+<&charged_lapis>Lazuriti i ngarkuar ruan një nivel përvoje. Konsumoje për të rimarrë nivelin, për të hequr efektet aktive dhe për të rikthyer pak shëndet.<br>
+<br>
+Krijo fillimisht një Shtrydhës mendjeje; Lazuriti i ngarkuar prodhohet duke përdorur atë vegël kur ke lazurit dhe XP.
+<np>
+Grimca të trasha hekuri
+Material veglash inxhinieri, i përdorur nga grupi i recetave të rindërtuara.
+<&iron_grit>Mund të shkrihen në shufra hekuri,<br>por nuk vlejnë për përpunim<br>të përparuar materialesh.
+<np>
+Grimca të trasha ari
+Material veglash inxhinieri, i përdorur nga grupi i recetave të rindërtuara.
+<&gold_grit>Mund të shkrihen në shufra ari,<br>por nuk vlejnë për përpunim<br>të përparuar materialesh.

@@ -1,0 +1,7 @@
+Automatikus stimulánscsomag
+Vészhelyzeti injektor
+<&recipe>Az Auto Stim Pack vészhelyzeti orvosi eszköz veszélyes karbantartási munkához.<br>
+<br>
+Használat: Kézzel aktiváld gyógyulásért, rövid védelemért és rövid mozgásgyorsításért. A felszerelésben alacsony életerőnél magától is aktiválódhat, majd töltési időre lép.<br>
+<br>
+Legyen nálad, mielőtt magas helyeket, szabad vezetékeket vagy ellenséges bányaútvonalakat próbálsz ki.

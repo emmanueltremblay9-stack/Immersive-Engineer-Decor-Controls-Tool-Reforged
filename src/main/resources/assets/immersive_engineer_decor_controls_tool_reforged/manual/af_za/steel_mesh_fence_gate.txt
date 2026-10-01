@@ -1,0 +1,5 @@
+Staalmaasheininghek
+Dienstoegangstoebehoor
+<&recipe>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>

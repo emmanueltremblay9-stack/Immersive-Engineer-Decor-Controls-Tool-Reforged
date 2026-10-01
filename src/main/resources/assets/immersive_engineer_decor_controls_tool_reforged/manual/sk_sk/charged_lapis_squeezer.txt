@@ -1,0 +1,7 @@
+Žmýkač mysle
+Kondenzátor skúseností
+<&recipe>Žmýkač mysle premieňa lazurit a skúsenosti na nabitý lazurit.<br>
+<br>
+Použitie: Maj pri sebe lazurit a aspoň jednu úroveň skúseností, potom nástroj použi. Úspešné vyžmýkanie spotrebuje jednu úroveň a jeden lazurit, zraní používateľa, opotrebuje žmýkač a vytvorí jeden nabitý lazurit.<br>
+<br>
+Odmietne pracovať, ak používateľ nemá lazurit, skúsenosti alebo je príliš blízko smrti.

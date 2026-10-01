@@ -1,0 +1,5 @@
+Znak za izlaz
+Oznaka opasnosti
+<&recipe>Ovaj znak obeležava opasnosti, izlaze i radne zone jasnom oznakom za fabričku bezbednost.<br>
+<br>
+Upotreba: postavi ga pored opasnosti, izlaza, mašina i zabranjenih zona.<br>

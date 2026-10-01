@@ -1,0 +1,5 @@
+Tovární pokladač bloků
+Vybavení provozu
+<&recipe>Tento blok při aktivaci pokládá bloky z vnitřní zásoby.<br>
+<br>
+Použití: Namiř pracovní stranu na cílový prostor a vlož stohy předmětů, které lze položit.<br>

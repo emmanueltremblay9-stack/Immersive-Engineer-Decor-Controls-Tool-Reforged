@@ -1,0 +1,5 @@
+Metallschiebetür
+Industrielle Zuegang
+<&recipe>Dä Block schafft en robuste Zuegang zu Betriebsrüüm, Schächt, Dächer und Maschineghüüs.<br>
+<br>
+Verwendig: Bau en ii, wo din Bau e kontrollierbari Wartigsöffnig bruucht.<br>

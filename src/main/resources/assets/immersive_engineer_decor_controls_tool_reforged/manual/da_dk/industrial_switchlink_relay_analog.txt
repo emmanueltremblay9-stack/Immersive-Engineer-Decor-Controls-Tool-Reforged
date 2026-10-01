@@ -1,0 +1,7 @@
+Analogt linkrelæ
+Forbundet styring
+<&recipe>En relæformet komponent giver panelbyggerier et kompakt lokalt kontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb. Brug modtagerblokke, når du har brug for aktivering med en tilknyttet perle.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.

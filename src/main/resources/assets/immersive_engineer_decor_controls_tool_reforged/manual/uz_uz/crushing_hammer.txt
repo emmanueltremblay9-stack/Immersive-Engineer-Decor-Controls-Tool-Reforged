@@ -1,0 +1,5 @@
+Ruda maydalash bolg'asi
+Qo'lda maydalash asbobi
+<&recipe>Ruda maydalash bolgasi temir va oltinni erta qayta ishlash uchun qol asbobidir.<br>
+<br>
+Immersive Engineering changi uchun xom temir, xom oltin, temir yoki oltin rudasi va deepslate turlari bilan ishlating. Bolga chidamlilik yoqotadi, singuncha torga qaytadi, qazishda yeyiladi va nishonni orqaga suradi.

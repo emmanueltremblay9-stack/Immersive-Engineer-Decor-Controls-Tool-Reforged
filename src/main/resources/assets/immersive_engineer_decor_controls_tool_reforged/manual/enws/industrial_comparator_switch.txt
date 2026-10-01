@@ -1,0 +1,7 @@
+Redstone Metre Switch
+Signal from the Attached Block
+<&recipe>A compact sensor switch reads the block that bears it, turning that reading into a simple panel output.<br>
+<br>
+Use: Mount it upon inventories, tanks or redstone fittings. When the attached block reports comparator, vessel or redstone output, the switch sends redstone at full strength.<br>
+<br>
+Note: Use it to turn storage levels or hidden wiring into clear lines of on/off control.

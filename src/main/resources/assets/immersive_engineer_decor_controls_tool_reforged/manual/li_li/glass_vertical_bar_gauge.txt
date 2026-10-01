@@ -1,0 +1,7 @@
+Glaze balkmaeter
+Signaalmaeter
+<&recipe>Ein kleine maeter veur de bedieningsruumte laot de redstonesjtèrkte duidelik op 't paneel zeen.<br>
+<br>
+Gebroek: zèt 'm wao de redstone-energie in de buurt in eine blik te controlere is.<br>
+<br>
+Opmerking: lieës de redstonesjtèrkte in de buurt van 0 tot 15 aaf.

@@ -1,0 +1,5 @@
+Incinérateur de déchets
+Unité de traitement compacte
+<&recipe>L'incinérateur de déchets détruit les objets indésirables dans un espace d'atelier réduit.<br>
+<br>
+Utilisation : n'envoyez dans sa file que des objets à détruire.<br>

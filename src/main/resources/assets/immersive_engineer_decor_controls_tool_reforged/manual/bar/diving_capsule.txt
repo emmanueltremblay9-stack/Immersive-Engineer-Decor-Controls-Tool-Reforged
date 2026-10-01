@@ -1,0 +1,7 @@
+Taucher-Luftkapsel
+Notluftvorrat
+<&recipe>Die Taucher-Luftkapsel is a Notluftgegenstand für Unterwasserarbeit.<br>
+<br>
+Benutzung: Manuell zum Luftauffülln nutzn. Im Inventar kann s' kurz vorm Luftausgang automatisch auslösn und geht dann in Abklingzeit.<br>
+<br>
+Für überflutete Grubn, Unterwasserrohre und Pumpenraumreparaturn mitnehma.

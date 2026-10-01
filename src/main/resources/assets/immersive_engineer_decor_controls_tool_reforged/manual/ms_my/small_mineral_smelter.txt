@@ -1,0 +1,5 @@
+Pelebur Mineral
+Unit pemprosesan padat
+<&recipe>Pelebur mineral memproses mineral pada haba tinggi dalam ruang bengkel kecil.<br>
+<br>
+Penggunaan: Bekalkan blok mineral dan kuasa untuk peleburan haba tinggi.<br>

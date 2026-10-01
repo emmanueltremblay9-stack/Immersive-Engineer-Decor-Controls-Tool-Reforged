@@ -1,0 +1,107 @@
+Wergschdaddmaschinen
+Maschinen un Wergschdadd-Ein-/Ausgabe
+Wergschdaddmaschinen biedn Handwersch, Dingtransport, Schmelzn, Endsorgung, Sammeln un Hilfsarbeed uff’m Pladdz von eem Blogg.<br>
+<br>
+Machde nächsten Seidn uff, um Rezäbd, Bild, Hindorgrund un pragd’sche Nuddzungshinweise für jede Maschine zu findn.
+<np>
+Schdahldisch
+Wergschdaddmeebl
+<&steel_table>Dieser Blogg is ä zweggmäßiges Wergschdaddmeebl für Arbeedsräume un Wardungseggn.<br>
+<br>
+Nuddzung: Seddz’n neben Wergbängn, Druhn un gleene Maschinen.<br>
+<np>
+Disch aus behandeldm Holz
+Wergschdaddmeebl
+<&treated_wood_table>Dieser Blogg is ä zweggmäßiges Wergschdaddmeebl für Arbeedsräume un Wardungseggn.<br>
+<br>
+Nuddzung: Seddz’n neben Wergbängn, Druhn un gleene Maschinen.<br>
+<np>
+Hoggor aus behandeldm Holz
+Wergschdaddmeebl
+<&treated_wood_stool>Dieser Blogg is ä zweggmäßiges Wergschdaddmeebl für Arbeedsräume un Wardungseggn.<br>
+<br>
+Nuddzung: Seddz’n neben Wergbängn, Druhn un gleene Maschinen.<br>
+<np>
+Medallwergbang
+Bladdnwergschdadd
+<&metal_crafting_table>De Medallwergbang is ä vorschdärgde Wergschdaddschdation mid Hammorfach, eem 3x3-Handwerschrasdor un eem deidlichn Ausgabefach.<br>
+<br>
+Nuddzung: Nimm’s Rasdor für normaln Handwersch. Für IE-Bladdn legsde än Ingenieurshammor ins Wergzeuschfach un’s Bladdnmaderial ins Rasdor, ehe de’s Ergebnis nimmsd. Schdahlzier brauchd Schdahlbladdn für Pfähle, Laufschdeege, Fänsdor, Diern, Geländor un andre Schdahldeile.<br>
+<np>
+Fabrigdrischdorr
+Wergschdaddhilfe
+<&factory_hopper>Dieser Blogg vorschiebd Dingschdabl durch ä ängeres Indusdriegehäuse.<br>
+<br>
+Nuddzung: Richd’n nach dor Lagerreihe aus un schdell dann Reichweide, Schdablzahl, Zeidn un Redstone-Ard im Menü ein.<br>
+<np>
+Fabrigschbendorr
+Wergschdaddhilfe
+<&factory_dropper>Dieser Blogg gibd gelagorde Dingor durch ä ausgerichde Seide aus.<br>
+<br>
+Nuddzung: Richd de Vorderseide uff dän Ausgabepladdz, fill de innorn Fächor un schdell Graft, Wingl, Vorzögerung, Fildorlogig un Redstone-Ard im Menü ein.<br>
+<np>
+Fabrigbloggseddzor
+Wergschdaddhilfe
+<&factory_placer>Dieser Blogg seddzd Blögge aus seim innorn Vorrad, wenn or ausgelösd wird.<br>
+<br>
+Nuddzung: Richd de Arbeedsseide uff dän Zielraum un fill seddzbare Schdabl nei.<br>
+<np>
+Bloggbrächor
+Wergschdaddhilfe
+<&small_block_breaker>Dor gleene Bloggbrächor is ä Wergschdaddhilfsblogg für Handwersch, Lagorn, Seddzn, Brechn, Sammeln oddor gleene Automadisierung.<br>
+<br>
+Nuddzung: Richd de Arbeedsseide uff dän Blogg, dor weg soll.<br>
+<np>
+Müllvorbrännor
+Gleene Vorarbeedungseenheed
+<&small_waste_incinerator>Dor Müllvorbrännor vernichded unerwünschde Dingor uff wen’sch Wergschdaddpladdz.<br>
+<br>
+Nuddzung: Gibb bloß Dingor in seine Wardeschlange, die weg solln.<br>
+<np>
+Laborofn
+Gleene Vorarbeedungseenheed
+<&small_lab_furnace>Dor Laborofn erledigd gleene Schmelzarbeedn mid fesdem Brennschdoff uff wen’sch Wergschdaddpladdz.<br>
+<br>
+Nuddzung: Nimm fesdn Brennschdoff für gleene Schmelzladungen.<br>
+<np>
+Eleggroofn
+Gleene Vorarbeedungseenheed
+<&small_electrical_furnace>Dor Eleggroofn erledigd gleene Schmelzarbeedn mid FE-Energie uff wen’sch Wergschdaddpladdz.<br>
+<br>
+Nuddzung: Führ FE un bassndes Schmelzmaderial zu.<br>
+<np>
+Mineralschmelzor
+Gleene Vorarbeedungseenheed
+<&small_mineral_smelter>Dor Mineralschmelzor vorarbeeded Minerale bei hoher Hiddze uff wen’sch Wergschdaddpladdz.<br>
+<br>
+Nuddzung: Führ Mineralblögge un Energie für Schmelzarbeedn bei hoher Hiddze zu.<br>
+<np>
+Wassorfrosdor
+Gleene Vorarbeedungseenheed
+<&small_freezer>Dor Wassorfrosdor erledigd gleene Gühlarbeedn für schdrombedriebne Flissichgeedsanlagen.<br>
+<br>
+Nuddzung: Führ Wassorr un Energie zu, um Eis in Schdufn zu machn.<br>
+<np>
+Passive Flissichgeed
+Flissichgeedsleidungsbaudeile
+<&passive_fluid_accumulator>Dor passive Flissichgeedssammlor is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Seddz’n an bassnde Wassorquelln un lass Raum, um Flissichgeed abzunehm.<br>
+<np>
+Solarpaneel
+Wergschdaddhilfe
+<&small_solar_panel>Das gleene Solarpaneel is ä Wergschdaddhilfsblogg für Handwersch, Lagorn, Seddzn, Brechn, Sammeln oddor gleene Automadisierung.<br>
+<br>
+Nuddzung: Gibb’m freien Bligg zum Himmel un schließ Geräde mid wen’sch Vorbrauch an.<br>
+<np>
+Melgmaschine
+Wergschdaddhilfe
+<&small_milking_machine>De gleene Melgmaschine is ä Wergschdaddhilfsblogg für Handwersch, Lagorn, Seddzn, Brechn, Sammeln oddor gleene Automadisierung.<br>
+<br>
+Nuddzung: Seddz se nah bei Giehen hin un sorg dafür, dass Milchbehäldor oddor Flissichgeed abgehold wärn könn.<br>
+<np>
+Baumfällor
+Wergschdaddhilfe
+<&small_tree_cutter>Dor gleene Baumfällor is ä Wergschdaddhilfsblogg für Handwersch, Lagorn, Seddzn, Brechn, Sammeln oddor gleene Automadisierung.<br>
+<br>
+Nuddzung: Richd’n uff ausgewachsne Bäume un sammel de gefallnen Dingor extra ein.<br>

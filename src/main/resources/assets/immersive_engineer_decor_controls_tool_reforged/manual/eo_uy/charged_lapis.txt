@@ -1,0 +1,7 @@
+Ŝargita lazurito
+Stokita sperto
+<&recipe>Ŝargita lazurito stokas unu spertonivelon kreitan per la menspremilo.<br>
+<br>
+Uzado: konsumu ĝin por rericevi unu nivelon, forigi aktivajn efikojn kaj redoni iom da sano.<br>
+<br>
+La recepta fenestreto montras la menspremilon, ĉar ŝargita lazurito estas farata per tiu ilo kiam disponeblas lazurito kaj sperto.

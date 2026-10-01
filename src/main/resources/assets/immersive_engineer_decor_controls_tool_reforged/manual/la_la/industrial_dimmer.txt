@@ -1,0 +1,7 @@
+Moderator vis
+Signum variabile
+<&recipe>Moderamen rotarium vim redstone in facie tabulae compacta constituit.<br>
+<br>
+Usus: dextro clicco emissionem gradatim auge; post vim plenam ad nihil redit.<br>
+<br>
+Notae: vim a 0 ad 15 emittit.

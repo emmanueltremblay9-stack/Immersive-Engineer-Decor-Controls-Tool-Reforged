@@ -1,0 +1,108 @@
+Constructio industrialis
+Muri et margines officinae
+Partes constructionis generales ostia, fenestras, lumina, signa monentia, margines et partes structurales complectuntur quae ad sectionem magis propriam non pertinent.<br>
+<br>
+His paginis pro conclavibus officinae, corridoribus curationis, periculis notandis et minutis partibus industrialibus utilibus utere.
+<np>
+Lumen bulbi ferrei
+Lumen laboris compactum
+<&iron_bulb_light>Hic cubus lumen industriale compactum corridoribus, ambulacris et locis laboris praebet.<br>
+<br>
+Usus: laquearibus, muris aut marginibus affige ubi conclave lumine laboris claro eget.<br>
+<np>
+Lumen marginis laquearis
+Lumen laboris compactum
+<&iron_ceiling_edge_light>Hic cubus lumen industriale compactum corridoribus, ambulacris et locis laboris praebet.<br>
+<br>
+Usus: laquearibus, muris aut marginibus affige ubi conclave lumine laboris claro eget.<br>
+<np>
+Lumen insertum marginis pavimenti
+Lumen laboris compactum
+<&iron_floor_edge_light>Hic cubus lumen industriale compactum corridoribus, ambulacris et locis laboris praebet.<br>
+<br>
+Usus: laquearibus, muris aut marginibus affige ubi conclave lumine laboris claro eget.<br>
+<np>
+Lumen insertum
+Lumen laboris compactum
+<&iron_inset_light>Hic cubus lumen industriale compactum corridoribus, ambulacris et locis laboris praebet.<br>
+<br>
+Usus: laquearibus, muris aut marginibus affige ubi conclave lumine laboris claro eget.<br>
+<np>
+Tabula «Cautio generalis»
+Signum periculi
+<&sign_caution>Tabula «Cautio generalis» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula periculi
+Signum periculi
+<&sign_danger>Tabula «Cave, ibi magnum periculum» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula ornatus
+Signum periculi
+<&sign_decor>Tabula signi Engineer’s Decor pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula defensionis
+Signum periculi
+<&sign_defense>Tabula «Cave, apparatus defensionis ante te» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula exitus
+Signum periculi
+<&sign_exit>Haec tabula pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula «Periculum incendii»
+Signum periculi
+<&sign_firehazard>Tabula «Periculum incendii» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula «Cave gelu»
+Signum periculi
+<&sign_frost>Tabula «Cave gelu» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula superficiei ardentis
+Signum periculi
+<&sign_hotsurface>Tabula «Cave superficiem ardentem» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula fili electrici
+Signum periculi
+<&sign_hotwire>Tabula «Cave filum electricum» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula «Periculum radii laser»
+Signum periculi
+<&sign_laser>Tabula «Periculum radii laser» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula periculi magici
+Signum periculi
+<&sign_magichazard>Tabula «Cave periculum magicum» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula campi magnetici
+Signum periculi
+<&sign_magneticfield>Tabula «Cave campum magneticum validum» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>
+Tabula «Periculum radiationis»
+Signum periculi
+<&sign_radioactive>Tabula «Periculum radiationis» pericula, exitus et zonas laboris indicio visibili securitatis officinae notat.<br>
+<br>
+Usus: iuxta pericula, exitus, machinas et zonas prohibitas pone.<br>
+<np>

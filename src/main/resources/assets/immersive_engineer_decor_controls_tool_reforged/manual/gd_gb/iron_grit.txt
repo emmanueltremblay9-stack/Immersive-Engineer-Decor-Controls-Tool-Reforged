@@ -1,0 +1,3 @@
+Greabhal garbh iarainn
+Stuth innealan innleadair a chleachdar san t-seata ciùird ath-thogte.
+<&recipe>Gabhaidh a leaghadh na ungaichean<br>iarainn, ach chan eil e freagarrach<br>airson pròiseasadh stuthan adhartach.

@@ -1,0 +1,7 @@
+Rustikale Signalfahn
+Signalrückmeldung
+<&recipe>A kompakte Onzeig macht unsichtbores Redstone ois Rückmeldung in da Fabrik sichtbor.<br>
+<br>
+Verwendung: Verkobel's beim Signal, um Tirn, Maschinen, Alarme oda Tafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in da Nähe Redstone onliegt.

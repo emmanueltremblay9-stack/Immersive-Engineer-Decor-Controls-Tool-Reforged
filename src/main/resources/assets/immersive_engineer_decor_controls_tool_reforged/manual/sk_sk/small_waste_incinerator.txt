@@ -1,0 +1,5 @@
+Spaľovňa odpadu
+Kompaktná spracovacia jednotka
+<&recipe>Spaľovňa odpadu ničí nepotrebné predmety a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Do jej čakacieho radu vkladaj iba nepotrebné predmety.<br>

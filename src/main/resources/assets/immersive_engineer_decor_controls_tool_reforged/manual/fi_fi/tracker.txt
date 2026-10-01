@@ -1,0 +1,7 @@
+Paikannin
+Tallennetun sijainnin merkki
+<&recipe>Tallentaa lohkon sijainnin esineeseen.<br>
+<br>
+Käyttö: Napsauta lohkoa ulottuvuuden ja koordinaattien tallentamiseksi. Vihje näyttää sijainnin. Hiivintäkäyttö tyhjentää sen.<br>
+<br>
+Merkitse koneita, tunnelinhaaroja, kauko-ohjaimia tai keskeneräisiä työmaita.

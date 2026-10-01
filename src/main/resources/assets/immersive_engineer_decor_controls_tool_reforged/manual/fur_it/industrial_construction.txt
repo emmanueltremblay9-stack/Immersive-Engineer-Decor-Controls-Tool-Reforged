@@ -1,0 +1,108 @@
+Costruzion industriâl
+Mûrs e finiduris di fabriche
+I acessoris gjenerâi di costruzion a cjapin dentri puartis, barcons, lûs, cartei di avîs, finiduris e tocs struturâi che no van intune sezion plui precise.<br>
+<br>
+Dopre chestis pagjinis pes stanziis di fabriche, i coridôrs di servizi, i segns di pericul e i detais industriâi pratics.
+<np>
+Lampadine di fier
+Lûs compacte di lavôr
+<&iron_bulb_light>Chest bloc al da iluminazion industriâl compacte par coridôrs, passarelis e postazions di lavôr.<br>
+<br>
+Ûs: montilu su sofits, mûrs o ôrs dulà che e covente lûs clare par lavorâ.<br>
+<np>
+Lûs di ôr dal sofit
+Lûs compacte di lavôr
+<&iron_ceiling_edge_light>Chest bloc al da iluminazion industriâl compacte par coridôrs, passarelis e postazions di lavôr.<br>
+<br>
+Ûs: montilu su sofits, mûrs o ôrs dulà che e covente lûs clare par lavorâ.<br>
+<np>
+Lûs incassade di ôr dal paviment
+Lûs compacte di lavôr
+<&iron_floor_edge_light>Chest bloc al da iluminazion industriâl compacte par coridôrs, passarelis e postazions di lavôr.<br>
+<br>
+Ûs: montilu su sofits, mûrs o ôrs dulà che e covente lûs clare par lavorâ.<br>
+<np>
+Lûs incassade
+Lûs compacte di lavôr
+<&iron_inset_light>Chest bloc al da iluminazion industriâl compacte par coridôrs, passarelis e postazions di lavôr.<br>
+<br>
+Ûs: montilu su sofits, mûrs o ôrs dulà che e covente lûs clare par lavorâ.<br>
+<np>
+Cartel « Atenzion »
+Segn di pericul
+<&sign_caution>Il Cartel « Atenzion » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel di pericul
+Segn di pericul
+<&sign_danger>Il Cartel « Atenzion, là al è pardabon pericolôs » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel decoratîf
+Segn di pericul
+<&sign_decor>La Plache par cartei (Engineer's Decor) e segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel di difese
+Segn di pericul
+<&sign_defense>Il Cartel « Atenzion, sisteme di difese indenant » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel di jessude
+Segn di pericul
+<&sign_exit>Chest cartel al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel « Pericul di fûc »
+Segn di pericul
+<&sign_firehazard>Il Cartel « Pericul di fûc » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel « Atenzion al glaç »
+Segn di pericul
+<&sign_frost>Il Cartel « Atenzion al glaç » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel di superficie cjalde
+Segn di pericul
+<&sign_hotsurface>Il Cartel « Atenzion, superficie cjalde » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel di fîl in tension
+Segn di pericul
+<&sign_hotwire>Il Cartel « Atenzion, fîl in tension » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel « Pericul laser »
+Segn di pericul
+<&sign_laser>Il Cartel « Pericul laser » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel di pericul magjic
+Segn di pericul
+<&sign_magichazard>Il Cartel « Atenzion, pericul magjic » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel di cjamp magnetic
+Segn di pericul
+<&sign_magneticfield>Il Cartel « Atenzion, cjamp magnetic fuart » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>
+Cartel « Pericul radioatîf »
+Segn di pericul
+<&sign_radioactive>Il Cartel « Pericul radioatîf » al segne pericui, jessudis e zonis di lavôr cuntun avîs visibil pe sigurece di fabriche.<br>
+<br>
+Ûs: metilu dongje di pericui, jessudis, machinis e zonis a acès limitât.<br>
+<np>

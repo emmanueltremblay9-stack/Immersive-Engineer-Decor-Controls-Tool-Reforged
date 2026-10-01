@@ -1,0 +1,7 @@
+Nardymo oro kapsulė
+Avarinė oro atsarga
+<&recipe>Nardymo oro kapsulė yra avarinė oro atsarga darbui po vandeniu.<br>
+<br>
+Naudojimas: Naudok rankomis orui atkurti. Būdama inventoriuje ji gali automatiškai suveikti, kai oras beveik baigėsi, tada prasideda laukimo laikas.<br>
+<br>
+Nešiok ją į užtvindytas kasyklas, povandenines vamzdynų trasas ir remontuodamas siurblines.

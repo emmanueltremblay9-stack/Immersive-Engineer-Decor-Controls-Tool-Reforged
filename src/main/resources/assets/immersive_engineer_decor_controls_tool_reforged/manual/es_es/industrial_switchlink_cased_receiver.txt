@@ -1,0 +1,7 @@
+Receptor de enlace con carcasa
+Control enlazado
+<&recipe>Un receptor enlazado con carcasa proporciona un destino de redstone resistente para paneles remotos.<br>
+<br>
+Uso: Haz clic con una perla de ender para crear una perla enlazada. Haz clic derecho directamente en el receptor para conmutarlo a mano.<br>
+<br>
+Notas: Una perla enlazada conmuta este receptor cuando se usa mientras te agachas.

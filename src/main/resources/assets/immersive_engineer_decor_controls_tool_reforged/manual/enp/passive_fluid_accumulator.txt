@@ -1,0 +1,5 @@
+Self-Filling Flowstuff
+Flow-line gear
+<&recipe>The Self-Filling Flowstuff Gatherer is a small flow-line fitting for little vats, pipe runs, gathering spots and redstone-ruled flow.<br>
+<br>
+Use: Set it against fitting water springs and leave room to draw flowstuff out.<br>

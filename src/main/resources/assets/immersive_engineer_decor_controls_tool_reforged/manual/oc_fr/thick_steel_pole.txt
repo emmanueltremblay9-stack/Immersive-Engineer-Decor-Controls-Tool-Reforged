@@ -1,0 +1,5 @@
+Pal espés d’acièr
+Pèça d’ossatura
+<&recipe>Lo Pal drech espés d’acièr forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>

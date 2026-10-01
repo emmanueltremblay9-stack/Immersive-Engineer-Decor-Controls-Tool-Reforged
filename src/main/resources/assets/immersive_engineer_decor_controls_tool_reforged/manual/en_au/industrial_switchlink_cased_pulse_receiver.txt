@@ -1,0 +1,7 @@
+Cased Pulse Receiver
+Linked control
+<&recipe>A cased linked pulse receiver gives remote panels a short redstone trigger.<br>
+<br>
+Usage: Click it with an Ender Pearl to create a linked pearl. Right-click it or trigger the linked pearl to emit a short pulse.<br>
+<br>
+Notes: The pulse resets itself after its scheduled duration.

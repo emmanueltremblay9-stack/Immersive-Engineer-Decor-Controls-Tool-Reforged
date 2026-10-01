@@ -1,0 +1,7 @@
+Spuerer
+Gespäichert Positiounsmarkéierung
+<&recipe>De Spuerer späichert d'Positioun vun engem Block direkt am Géigestand.<br>
+<br>
+Benotzung: Klick op e Block fir Dimensioun a Koordinaten ze späicheren. Den Tooltip weist d'Positioun. Benotz de Spuerer beim Schleichen fir d'Zil ze läschen.<br>
+<br>
+Benotz en fir Maschinnen, Tunnelverzweigungen, Fernsteierungen oder onfäerdeg Chantieren ze markéieren, éier s du mat Geschier a Material zeréckkënns.

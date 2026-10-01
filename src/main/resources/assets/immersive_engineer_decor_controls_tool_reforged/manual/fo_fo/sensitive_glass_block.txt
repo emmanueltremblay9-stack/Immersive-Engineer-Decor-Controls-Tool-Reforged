@@ -1,0 +1,7 @@
+Lýsandi viðkvæmt glas
+Teknaglas
+<&recipe>Ein reyðgrýtisviðkvæmur glaskubbi varðveitir útsýnið og vísir samstundis teknastøðuna.<br>
+<br>
+Nýtsla: Brúka hann í stýrirúmsvindeygum, lýsandi panelum og vardum verksmiðjuglasi.<br>
+<br>
+Viðmerking: Skiftir støðu við reyðgrýti nærhendis.

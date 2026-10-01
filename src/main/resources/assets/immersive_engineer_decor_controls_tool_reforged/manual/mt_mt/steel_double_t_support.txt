@@ -1,0 +1,5 @@
+Appoġġ tal-azzar f'forma ta' T doppja
+Parti tal-qafas strutturali
+<&recipe>Din il-blokka tagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>

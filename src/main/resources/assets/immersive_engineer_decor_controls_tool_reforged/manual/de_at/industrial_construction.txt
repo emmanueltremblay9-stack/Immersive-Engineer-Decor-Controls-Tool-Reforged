@@ -1,0 +1,108 @@
+Industriebau
+Fabrikwänd und Einfassungen
+De allgemeinen Bauteile umfassen Tirn, Fensta, Liachta, Wornschüda, Einfassungen und Tragwerksteile, de in ka speziellere Kategorie fallen.<br>
+<br>
+Nimm de Seiten für Fabrikräume, Wartungsgänge, Gfoahrenmarkierung und zweckmäßige Industriedetails.
+<np>
+Eiserne Kuglleichtn
+Kompakts Arbeitsliacht
+<&iron_bulb_light>Der Block sorgt für kompakte Industriebeleuchtung in Gängn, auf Laufstegen und in Arbeitsbuchten.<br>
+<br>
+Verwendung: Montier eam an Deckn, Wänd oda Kantn, wo guats Arbeitsliacht braucht wird.<br>
+<np>
+Decknkantnleichtn
+Kompakts Arbeitsliacht
+<&iron_ceiling_edge_light>Der Block sorgt für kompakte Industriebeleuchtung in Gängn, auf Laufstegen und in Arbeitsbuchten.<br>
+<br>
+Verwendung: Montier eam an Deckn, Wänd oda Kantn, wo guats Arbeitsliacht braucht wird.<br>
+<np>
+Einglossene Bodnkantnleichtn
+Kompakts Arbeitsliacht
+<&iron_floor_edge_light>Der Block sorgt für kompakte Industriebeleuchtung in Gängn, auf Laufstegen und in Arbeitsbuchten.<br>
+<br>
+Verwendung: Montier eam an Deckn, Wänd oda Kantn, wo guats Arbeitsliacht braucht wird.<br>
+<np>
+Einbauleichtn
+Kompakts Arbeitsliacht
+<&iron_inset_light>Der Block sorgt für kompakte Industriebeleuchtung in Gängn, auf Laufstegen und in Arbeitsbuchten.<br>
+<br>
+Verwendung: Montier eam an Deckn, Wänd oda Kantn, wo guats Arbeitsliacht braucht wird.<br>
+<np>
+Schüd „Allgemeine Wornung“
+Gfoahrenmarkierung
+<&sign_caution>Des Schüd „Allgemeine Wornung“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Gfoahrenschüd
+Gfoahrenmarkierung
+<&sign_danger>Des Schüd „Vorsicht, do is's echt gefährlich“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Dekorschüd
+Gfoahrenmarkierung
+<&sign_decor>De Schüdtafl (Engineer's Decor) kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Vateidigungsschüd
+Gfoahrenmarkierung
+<&sign_defense>Des Schüd „Vorsicht, Vateidigungsanlog“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Ausgongsschüd
+Gfoahrenmarkierung
+<&sign_exit>Des Schüd kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Brondgfoahr“
+Gfoahrenmarkierung
+<&sign_firehazard>Des Schüd „Brondgfoahr“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Frostwornung“
+Gfoahrenmarkierung
+<&sign_frost>Des Schüd „Frostwornung“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Hoaße Oberfläche“
+Gfoahrenmarkierung
+<&sign_hotsurface>Des Schüd „Vorsicht, hoaße Oberfläche“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Kobl unter Sponnung“
+Gfoahrenmarkierung
+<&sign_hotwire>Des Schüd „Vorsicht, Kobl unter Sponnung“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Lasergfoahr“
+Gfoahrenmarkierung
+<&sign_laser>Des Schüd „Lasergfoahr“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Magische Gfoahr“
+Gfoahrenmarkierung
+<&sign_magichazard>Des Schüd „Vorsicht, magische Gfoahr“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Magnetfeld“
+Gfoahrenmarkierung
+<&sign_magneticfield>Des Schüd „Vorsicht, storkes Magnetfeld“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>
+Schüd „Radioaktive Gfoahr“
+Gfoahrenmarkierung
+<&sign_radioactive>Des Schüd „Radioaktive Gfoahr“ kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>
+<np>

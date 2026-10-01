@@ -1,0 +1,5 @@
+Biển cảnh báo băng giá
+Dấu cảnh báo nguy hiểm
+<&recipe>Biển «Cảnh báo băng giá» đánh dấu mối nguy, lối ra và khu làm việc bằng tín hiệu trực quan phục vụ an toàn nhà máy.<br>
+<br>
+Cách dùng: Đặt cạnh mối nguy, lối ra, máy móc và vùng hạn chế.<br>

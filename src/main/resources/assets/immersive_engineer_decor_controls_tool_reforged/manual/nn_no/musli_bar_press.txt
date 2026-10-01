@@ -1,0 +1,7 @@
+Muslee-presse
+Matpresse
+<&recipe>Muslee-pressen gjør vanlige matvarer til kompakte feltrasjoner.<br>
+<br>
+Ha brød, et eple og hvete-, melon-, gresskar-, rødbete- eller industrihampfrø, og bruk pressen. Den bruker én av hver ingrediens, kontrollerer plassen, lager fire barer og skader pressen.<br>
+<br>
+Mangler noe eller finnes det ikke plass, brukes ingenting.

@@ -1,0 +1,5 @@
+Analoges Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitungen
+<&recipe>Das analoge Flüssigkeitsventil ist ein kompaktes Leitungsteil für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richte das Ventil in der gewünschten Fließrichtung aus.<br>

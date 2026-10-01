@@ -1,0 +1,5 @@
+Mineralschmelzer
+Klein Verarbeitungseinheit
+<&recipe>Dä Mineralschmelzer verarbeitet Minerale bei huh Hitz op winnich Werkstattplatz.<br>
+<br>
+Bruuch: Föhr Mineralblöck un Energie för Schmelzarbeite bei huh Hitz zo.<br>

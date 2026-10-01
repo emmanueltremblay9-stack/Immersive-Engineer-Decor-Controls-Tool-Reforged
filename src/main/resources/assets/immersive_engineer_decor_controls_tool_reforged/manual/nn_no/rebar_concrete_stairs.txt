@@ -1,0 +1,5 @@
+Trapp av armert betong
+Armert betong
+<&recipe>Denne blokka er ein herda betongdel for maskinfundament, eksplosjonsvegger og lasterampegolv.<br>
+<br>
+Bruk: legg henne under maskiner, langs servicegangar eller der bygget treng eit forsterka underlag.<br>

@@ -1,0 +1,5 @@
+Tellado de tellas escuras
+Peza de tellado envellecida
+<&recipe>Este bloque crea perfís de tellado escuros e prácticos para obradoiros e alpendres industriais.<br>
+<br>
+Uso: combina as pezas para formar perfís de tellado verosímiles.<br>

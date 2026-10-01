@@ -1,0 +1,7 @@
+Schlafsack
+Tragbare Ruheausrüstung
+<&recipe>Der Schlafsack ist wetterfeste Ruheausrüstung für Feldarbeit weit entfernt von einem Bett.<br>
+<br>
+Benutzung: Nachts in der Oberwelt bis zum Morgen ruhen. Er setzt oder verschiebt den Einstiegspunkt nicht.<br>
+<br>
+Er verweigert Nutzung am Tag, bei Monstern in der Nähe und in ungeeigneten Dimensionen. Jede erfolgreiche Ruhe nutzt ihn ab.

@@ -1,0 +1,7 @@
+Diver's Air Bubblie Capsule
+Emergency air stashez
+<&recipe>Divin Air Capsule iz emergency air stash fer underwater werk.<br>
+<br>
+How 2 use: Use it urself 2 refill air. In inventoree it can also trigger automatic when air iz almost gone, den enter cooldown.<br>
+<br>
+Bring it fer flooded minez, underwater pipe routez, an pump-room repairz, kitty.

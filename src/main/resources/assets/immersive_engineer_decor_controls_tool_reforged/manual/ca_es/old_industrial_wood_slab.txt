@@ -1,0 +1,5 @@
+Llosa de fusta industrial vella
+Fusta envellida de taller
+<&recipe>Aquest bloc afegeix fusta envellida de taller per a terres, graons, portes i acabats interiors càlids.<br>
+<br>
+Ús: fes-lo servir per a terres, escales, portes i acabats de tallers antics.<br>

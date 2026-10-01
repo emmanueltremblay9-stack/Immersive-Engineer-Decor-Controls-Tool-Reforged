@@ -1,0 +1,5 @@
+Laboratoriya sobası
+Yığcam emal qurğusu
+<&recipe>Laboratoriya sobası emalatxanada kiçik yer tutaraq bərk yanacaqla yığcam əritmə işləri görür.<br>
+<br>
+İstifadə: Kiçik əritmə dəstələri üçün bərk yanacaq istifadə edin.<br>

@@ -1,0 +1,7 @@
+Saites uztvērējs korpusā
+Sasaistīta vadība
+<&recipe>Sasaistīts uztvērējs korpusā dod attāliem paneļiem izturīgu Redstone mērķi.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Noklikšķini tieši uz uztvērēja ar labo peles pogu, lai pārslēgtu to manuāli.<br>
+<br>
+Piezīmes: lietojot sasaistīto pērli lavoties, šis uztvērējs pārslēdzas.

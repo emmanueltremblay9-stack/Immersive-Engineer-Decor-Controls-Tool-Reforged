@@ -1,0 +1,7 @@
+Stmievač
+Premenlivý signál
+<&recipe>Otočný ovládač nastavuje silu redstonu na prednej strane kompaktného panela.<br>
+<br>
+Použitie: Pravým tlačidlom postupne zvyšuj výstup; po plnej sile sa vráti na nulu.<br>
+<br>
+Poznámky: Výstup má silu od 0 do 15.

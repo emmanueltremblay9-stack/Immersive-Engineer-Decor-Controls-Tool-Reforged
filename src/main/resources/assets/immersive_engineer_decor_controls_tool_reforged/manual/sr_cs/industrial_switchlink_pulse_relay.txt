@@ -1,0 +1,7 @@
+Impulsni relej veze
+Povezano upravljanje
+<&recipe>Deo u obliku releja daje panelima kompaktnu tačku lokalnog upravljanja.<br>
+<br>
+Upotreba: desnim klikom uključi ili isključi izlaz najveće snage za obližnja kola. Koristi prijemnike kada ti treba aktiviranje povezanim biserom.<br>
+<br>
+Napomene: dok je uključen, emituje redstoun najveće snage.

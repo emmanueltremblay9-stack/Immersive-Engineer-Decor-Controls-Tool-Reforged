@@ -1,0 +1,5 @@
+Lespede de acoperiș din șindrilă închisă
+Piesă de acoperiș cu aspect învechit
+<&recipe>Acest bloc formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>

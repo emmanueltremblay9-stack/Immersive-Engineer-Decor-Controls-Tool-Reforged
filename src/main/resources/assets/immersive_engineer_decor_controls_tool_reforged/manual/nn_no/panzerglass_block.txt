@@ -1,0 +1,5 @@
+Panserglasblokk
+Verna sikt
+<&recipe>Denne blokka held sikta open og høver samstundes til forsterka fabrikkonstruksjonar.<br>
+<br>
+Bruk: plasser henne der spelarar skal sjå maskiner gjennom eit vern.<br>

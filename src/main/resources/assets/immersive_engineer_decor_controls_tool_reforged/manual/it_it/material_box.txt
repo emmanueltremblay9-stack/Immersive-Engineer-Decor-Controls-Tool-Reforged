@@ -1,0 +1,7 @@
+Cassa portamateriali
+Cassa per materiali da costruzione
+<&recipe>La cassa dei materiali trasporta una grande scorta di un solo materiale da costruzione semplice, non modificato e impilabile.<br>
+<br>
+Uso: Tieni la cassa nella mano principale e una pila di materiale nella secondaria per caricarla. Usa la cassa con la mano secondaria vuota per estrarre una pila.<br>
+<br>
+Contiene fino a 512 oggetti di un solo tipo. Rifiuta casse annidate, equipaggiamento non impilabile e pile rinominate o con dati modificati; il suggerimento ne mostra il contenuto.

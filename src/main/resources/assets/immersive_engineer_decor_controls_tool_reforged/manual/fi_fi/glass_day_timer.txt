@@ -1,0 +1,7 @@
+Lasinen vuorokausiajastin
+Päivänvalosignaali
+<&recipe>Ajastinkytkin seuraa maailman vuorokauden valoisaa osaa.<br>
+<br>
+Käyttö: Käytä pihavaloihin, sulkimiin ja vain päivällä toimiviin tehdasohjaimiin.<br>
+<br>
+Huomaa: Vaatii ulottuvuuden, jossa on taivasvalo.

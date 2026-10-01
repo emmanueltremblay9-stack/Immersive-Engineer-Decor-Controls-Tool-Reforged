@@ -1,0 +1,5 @@
+Tranche de dalle en vieux bois
+Vieux bois d'atelier
+<&recipe>La tranche en vieux bois industriel apporte un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>

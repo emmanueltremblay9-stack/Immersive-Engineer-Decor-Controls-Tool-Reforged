@@ -1,0 +1,7 @@
+Rustic Door Pressure
+Pulse from Pressure
+<&recipe>A contact switch sends a brief signal when a floor plate or trapdoor moves.<br>
+<br>
+Use: Set it where entities pass through a service aisle, loader or guarded way.<br>
+<br>
+Note: It sends a brief pulse after contact with an entity.

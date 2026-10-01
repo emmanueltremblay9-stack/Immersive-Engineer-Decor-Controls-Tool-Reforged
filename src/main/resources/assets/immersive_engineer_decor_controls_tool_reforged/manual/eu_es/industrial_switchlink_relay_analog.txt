@@ -1,0 +1,7 @@
+Loturaren errele analogikoa
+Lotutako agintea
+<&recipe>Errele-itxurako osagarriak tokiko etengailu-puntu trinkoa eskaintzen du panelak eraikitzeko.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko. Erabili hargailu-blokeak lotutako perla bidezko aktibazioa behar duzunean.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.

@@ -1,0 +1,5 @@
+Taca Cuaille Chóireáilte
+Páirt den fhráma struchtúrach
+<&recipe>Tugann Taca Cuaille Dhírigh Adhmaid Chóireáilte struchtúr infheicthe do hallaí meaisín agus frámaí rochtana.<br>
+<br>
+Úsáid: rothlaigh agus cuir é mar thaca infheicthe do bhíomaí, cuaillí agus imill ardán.<br>

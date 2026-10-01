@@ -1,0 +1,7 @@
+Perlë lidhëse çelësash
+Kontroll i lidhur
+<&recipe>Një perlë e lidhur ruan një marrës si objektiv për kontrollet e largëta të fabrikës.<br>
+<br>
+Përdorimi: kliko një marrës lidhjeje çelësash me një perlë të Ender-it për ta krijuar. Përdore perlën e lidhur duke u përkulur për të aktivizuar marrësin e ruajtur.<br>
+<br>
+Shënim: objektivi duhet të jetë i ngarkuar, në të njëjtin dimension dhe brenda rrezes.

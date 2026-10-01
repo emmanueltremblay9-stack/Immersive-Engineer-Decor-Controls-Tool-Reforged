@@ -1,0 +1,5 @@
+Finestra amb marc d’acer
+Visibilitat protegida
+<&recipe>Aquest bloc manté la visibilitat sense desentonar amb la construcció reforçada de la fàbrica.<br>
+<br>
+Ús: posa’l on els jugadors hagin de veure les màquines a través d’una barrera protectora.<br>

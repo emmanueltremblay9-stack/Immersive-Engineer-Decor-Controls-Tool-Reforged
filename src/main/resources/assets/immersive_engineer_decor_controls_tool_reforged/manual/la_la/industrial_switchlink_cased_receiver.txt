@@ -1,0 +1,7 @@
+Receptor nexus in theca
+Moderatio conexa
+<&recipe>Receptor conexus in theca destinationem redstone robustam tabulis remotis praebet.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Receptorem ipsum dextro clicco manu activa aut deactiva.<br>
+<br>
+Notae: margarita conexa furtim adhibita hunc receptorem activat aut deactivat.

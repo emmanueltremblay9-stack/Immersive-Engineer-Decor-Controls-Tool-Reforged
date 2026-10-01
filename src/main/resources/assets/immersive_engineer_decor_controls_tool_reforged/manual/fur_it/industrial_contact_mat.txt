@@ -1,0 +1,7 @@
+Tapon di contat
+Impuls di pression
+<&recipe>Un interutôr di contat al mande un segnâl curt cuant che al è moviment sul paviment o suntun trabuchel.<br>
+<br>
+Ûs: metilu dulà che lis entitâts a passin, intun coridôr di servizi, un cjariadôr o un percors protet.<br>
+<br>
+Notis: al da un impuls curt dopo il contat cuntune entitât.

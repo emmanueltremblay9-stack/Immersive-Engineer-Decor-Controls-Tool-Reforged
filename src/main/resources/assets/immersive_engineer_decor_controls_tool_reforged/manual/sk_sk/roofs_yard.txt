@@ -1,0 +1,101 @@
+Strechy a dvory
+Vonkajšie továrenské vybavenie
+Strešné bloky, dvorný štrk a diely zo starého priemyselného dreva pomáhajú dokončiť vonkajšie prístrešky, pracovné dvory, nakladacie plochy a ošumelé okraje tovární.<br>
+<br>
+Kombinuj tieto diely s murivom a prístupovými cestami, aby boli vonkajšie priemyselné stavby prehľadné aj z diaľky.
+<np>
+Tmavá šindľová strecha
+Ošumelý strešný prvok
+<&dark_shingle_roof>Tento blok vytvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Strešná snehová zábrana
+Ošumelý strešný prvok
+<&dark_shingle_roof_metallized>Snehová zábrana tmavej šindľovej strechy dotvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Tmavá šindľová strecha
+Ošumelý strešný prvok
+<&dark_shingle_roof_skylight>Svetlík tmavej šindľovej strechy dotvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Strešná komínová základňa
+Ošumelý strešný prvok
+<&dark_shingle_roof_chimneytrunk>Komínová základňa tmavej šindľovej strechy dotvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Strešná káblová priechodka
+Ošumelý strešný prvok
+<&dark_shingle_roof_wireconduit>Káblová priechodka tmavej šindľovej strechy dotvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Tmavá šindľová strecha
+Ošumelý strešný prvok
+<&dark_shingle_roof_chimney>Komín tmavej šindľovej strechy dotvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Blok tmavej šindľovej strechy
+Ošumelý strešný prvok
+<&dark_shingle_roof_block>Tento blok vytvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Stupienok tmavej šindľovej strechy
+Ošumelý strešný prvok
+<&dark_shingle_roof_slab>Tento blok vytvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Stupienok tmavej šindľovej strechy
+Ošumelý strešný prvok
+<&dark_shingle_roof_slabslice>Tenká platňa tmavej šindľovej strechy dotvára tmavé praktické strechy dielní a priemyselných prístreškov.<br>
+<br>
+Použitie: Kombinuj jednotlivé diely do vierohodných strešných profilov.<br>
+<np>
+Zhutnená hlina so štrkom
+Povrch pracoviska
+<&dense_grit_dirt_block>Tento blok dodáva vonkajším pracovným plochám zhutnený udupaný povrch.<br>
+<br>
+Použitie: Polož ho okolo nakladacích dverí, vonkajších nádrží a strojových dvorov.<br>
+<np>
+Zhutnený piesok so štrkom
+Povrch pracoviska
+<&dense_grit_sand_block>Tento blok dodáva vonkajším pracovným plochám zhutnený udupaný povrch.<br>
+<br>
+Použitie: Polož ho okolo nakladacích dverí, vonkajších nádrží a strojových dvorov.<br>
+<np>
+Staré drevené dosky
+Staré dielenské drevo
+<&old_industrial_wood_planks>Staré priemyselné dosky pridávajú staré dielenské drevo na podlahy, stupne, dvere a útulné vnútorné lemovanie.<br>
+<br>
+Použitie: Použi ho na staré dielenské podlahy, schody, dvere a lemovanie.<br>
+<np>
+Stupienok zo starého priemyselného dreva
+Staré dielenské drevo
+<&old_industrial_wood_slab>Tento blok pridáva staré dielenské drevo na podlahy, stupne, dvere a útulné vnútorné lemovanie.<br>
+<br>
+Použitie: Použi ho na staré dielenské podlahy, schody, dvere a lemovanie.<br>
+<np>
+Schody zo starého dreva
+Staré dielenské drevo
+<&old_industrial_wood_stairs>Schody zo starého priemyselného dreva pridávajú staré dielenské drevo na podlahy, stupne, dvere a útulné vnútorné lemovanie.<br>
+<br>
+Použitie: Použi ho na staré dielenské podlahy, schody, dvere a lemovanie.<br>
+<np>
+Tenká platňa starého dreva
+Staré dielenské drevo
+<&old_industrial_wood_slabslice>Tenká platňa starého priemyselného dreva pridáva staré dielenské drevo na podlahy, stupne, dvere a útulné vnútorné lemovanie.<br>
+<br>
+Použitie: Použi ho na staré dielenské podlahy, schody, dvere a lemovanie.<br>
+<np>
+Staré priemyselné drevené dvere
+Staré dielenské drevo
+<&old_industrial_wood_door>Tento blok pridáva staré dielenské drevo na podlahy, stupne, dvere a útulné vnútorné lemovanie.<br>
+<br>
+Použitie: Použi ho na staré dielenské podlahy, schody, dvere a lemovanie.<br>

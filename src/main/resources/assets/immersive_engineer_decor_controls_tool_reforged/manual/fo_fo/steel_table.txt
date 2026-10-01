@@ -1,0 +1,5 @@
+Stálborð
+Verkstaðarmøblar
+<&recipe>Hesin kubbin er ein nýtiligur møbil til arbeiðsrúm og viðlíkahaldshorn.<br>
+<br>
+Nýtsla: Set hann við arbeiðsborð, kassar og smáar maskinur.<br>

@@ -1,0 +1,7 @@
+Glas-Intervallsignalgeber
+Ziitgstüürte Impuls
+<&recipe>En kompakte Ziitschalter liefert en ziitlich geplante Redstone-Impuls.<br>
+<br>
+Verwendig: Nimm en, wenn en chliine Mechanismus regelmässig oder verzögert gstüüret werde söll.<br>
+<br>
+Hiwiis: Nutzt ziitlich geplanti Redstone-Impuls.

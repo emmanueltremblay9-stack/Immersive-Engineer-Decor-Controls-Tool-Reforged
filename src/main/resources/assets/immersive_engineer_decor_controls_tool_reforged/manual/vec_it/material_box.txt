@@ -1,0 +1,7 @@
+Cassa par materiałi
+Cassa de scorte par costrusion
+<&recipe>La cassa materiali porta tanta roba de un solo material comune, mia modificà e impilabile.<br>
+<br>
+Tien la cassa in man principale e el material in altra par caricarlo; con altra man voda tira fora una pila.<br>
+<br>
+La tien 512 ogjeti de un tipo, refiuta altre casse, atrezi mia impilabili e pile modificate e mostra el contenùo nel suggerimento.

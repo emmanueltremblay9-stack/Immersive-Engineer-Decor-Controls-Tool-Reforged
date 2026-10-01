@@ -1,0 +1,5 @@
+Fabrikträchter
+Wiärksteedhülp
+<&recipe>Disse Block verschufft Saakstapels dörch en engere Industriekast.<br>
+<br>
+Bruuk: Richt em na de Lagerreeg un stell denn Wied, Stapeltall, Tieden un Redstone-Hanterung op den Schirm in.<br>

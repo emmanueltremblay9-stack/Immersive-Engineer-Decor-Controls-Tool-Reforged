@@ -1,0 +1,5 @@
+Factory Hopper
+Shop-floor utility
+<&recipe>This block moves item stacks through a tighter industrial casing.<br>
+<br>
+Usage: Face it toward the inventory line, then set range, stack count, timing, and redstone mode in its screen.<br>

@@ -1,0 +1,7 @@
+Metallwierkbänk
+Aarbechtsstatioun fir Placken
+<&recipe>Metallaarbechtsbänk mat engem eegene Hummer-Slot, engem 3x3-Craftinggitter an engem Ausgang.<br>
+<br>
+Benotzung: Benotz de Raster wéi eng normal Wierkbänk. Fir IE-Placke setzt du en Ingenieurshummer an d'Geschierfach an d'Plackematerial an de Raster. Huel duerno déi geformte Plack aus dem Ausgang.<br>
+<br>
+Stoldekoratioune benotze Stolplacken. Setz en Hummer vun Immersive Engineering an, hummer Stolbarren zu Stolplacken a benotz d'Placke fir Pottoen, Lafstegen, Fënsteren, Dieren, Gelänner an aner Stoldekoratiounen hierzestellen.<br>

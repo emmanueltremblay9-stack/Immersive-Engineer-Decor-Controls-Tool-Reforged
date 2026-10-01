@@ -1,0 +1,7 @@
+Schaltlinkrelais
+Verbundene Steuerung
+<&recipe>A Bauteil im Relaisstil schafft an kloanen Schaltpunkt direkt am Paneel.<br>
+<br>
+So geht's: Rechtsklick zum Umschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh. Nutz Empfängablöck, wennst mit ana verbundenen Perle auslösn mogst.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.

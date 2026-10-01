@@ -1,0 +1,5 @@
+Fornu de llaboratoriu
+Unidá compacta de procesamientu
+<&recipe>El fornu de llaboratoriu encárgase de trabayos compactos de fundición con combustible sólido y ocupa poco espaciu nel taller.<br>
+<br>
+Usu: usa combustible sólido pa fundir en tandes pequeñes.<br>

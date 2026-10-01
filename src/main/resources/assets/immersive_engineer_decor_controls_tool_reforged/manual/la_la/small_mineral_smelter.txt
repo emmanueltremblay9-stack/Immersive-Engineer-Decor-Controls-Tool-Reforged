@@ -1,0 +1,5 @@
+Fornax mineralium
+Unitas tractationis compacta
+<&recipe>Fornax mineralium materias minerales calore alto tractat, parvum spatium officinae occupans.<br>
+<br>
+Usus: cubos minerales et energiam praebe ad liquefactionem calore alto.<br>

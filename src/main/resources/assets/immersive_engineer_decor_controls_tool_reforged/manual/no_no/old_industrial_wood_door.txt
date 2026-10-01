@@ -1,0 +1,5 @@
+Gammel fabrikkdør av tre
+Gammelt verkstedtre
+<&recipe>Denne blokken gir gammelt verkstedtre til gulv, trinn, dører og lunt innvendig listverk.<br>
+<br>
+Bruk: bruk den til gamle verkstedgulv, trapper, dører og listverk.<br>

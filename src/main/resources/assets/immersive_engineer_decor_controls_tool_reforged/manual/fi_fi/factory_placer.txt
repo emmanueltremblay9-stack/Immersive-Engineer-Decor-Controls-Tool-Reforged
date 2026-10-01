@@ -1,0 +1,5 @@
+Tehtaan kuutionasettaja
+Työpajan apulaite
+<&recipe>Tämä kuutio asettaa kuutioita sisäisestä varastostaan aktivoitaessa.<br>
+<br>
+Käyttö: Suuntaa työpuoli kohdetilaan ja täytä asetettavien esineiden pinoilla.<br>

@@ -1,0 +1,5 @@
+Beira blindatuko blokea
+Ikuslerro babestua
+<&recipe>Bloke honek ikuslerroak irekita mantentzen ditu, fabrikako eraikuntza indartuarekin bat eginez.<br>
+<br>
+Erabilera: erabili jokalariek makineria hesi babestu baten bidez ikusi behar duten tokian.<br>

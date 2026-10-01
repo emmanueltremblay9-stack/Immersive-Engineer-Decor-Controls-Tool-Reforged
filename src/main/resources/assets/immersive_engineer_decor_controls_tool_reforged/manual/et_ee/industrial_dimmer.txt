@@ -1,0 +1,7 @@
+Hämardi
+Muutuv signaal
+<&recipe>Pöördnupp määrab redstone'i tugevuse kompaktsel paneelipinnal.<br>
+<br>
+Kasutamine: Paremklõpsuga suurenda väljundit sammhaaval. Täistugevuse järel jõuab see tagasi nulli.<br>
+<br>
+Märkus: Väljastab tugevust vahemikus 0–15.

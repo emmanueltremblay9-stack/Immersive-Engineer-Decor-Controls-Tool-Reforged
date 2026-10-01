@@ -1,0 +1,7 @@
+Ariadné szene
+Bányabeli útjelölő
+<&recipe>Ariadné szene gyors útjelölő aknákhoz, elágazó bányákhoz és ideiglenes föld alatti munkákhoz.<br>
+<br>
+Használat: használd stabil blokkfelületen, hogy fekete nyíl kerüljön arra az oldalra. A jelölő a kattintás helyét figyeli, és nyolc irányt támogat, az átlókat is. Így külön útjelző táblák cipelése nélkül jelölhetsz kanyarokat, kijáratokat, zsákutcákat és ellátási útvonalakat.<br>
+<br>
+Ariadné szene újrahasználható jelölőeszköz 100 használattal. Minden sikeres jelölés egy tartósságpontba kerül; a nem megfelelő felületeket az eszköz kopása nélkül utasítja el.

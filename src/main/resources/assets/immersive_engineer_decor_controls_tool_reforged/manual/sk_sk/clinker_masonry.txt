@@ -1,0 +1,161 @@
+Klinker a murivo
+Tehlové a betónové plášte
+Klinker, troskové tehly, vystužený betón a pancierové sklo poskytujú masívne povrchy pre horúce miestnosti, dielne a chránené výhľady.<br>
+<br>
+Zodpovedajúcimi stupienkami, schodmi, tenkými platňami a múrikmi dokonči okraje bez narušenia jednotného materiálového vzhľadu továrne.
+<np>
+Klinkerové tehly
+Murivo stmavnuté od sadzí
+<&clinker_brick_block>Tento blok pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Stupienok z klinkerových tehál
+Murivo stmavnuté od sadzí
+<&clinker_brick_slab>Tento blok pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Schody z klinkerových tehál
+Murivo stmavnuté od sadzí
+<&clinker_brick_stairs>Tento blok pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Múrik z klinkerových tehál
+Murivo stmavnuté od sadzí
+<&clinker_brick_wall>Tento blok pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Zašpinený klinkerový blok
+Murivo stmavnuté od sadzí
+<&clinker_brick_stained_block>Zašpinené klinkerové tehly pridávajú murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Zašpinený klinkerový stupienok
+Murivo stmavnuté od sadzí
+<&clinker_brick_stained_slab>Stupienok zo zašpinených klinkerových tehál pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Zašpinené klinkerové schody
+Murivo stmavnuté od sadzí
+<&clinker_brick_stained_stairs>Schody zo zašpinených klinkerových tehál pridávajú murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Zdobené klinkerové tehly
+Murivo stmavnuté od sadzí
+<&clinker_brick_sastor_corner_block>Klinkerové tehly zdobené pieskovcom pridávajú murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Zapustené klinkerové tehly
+Murivo stmavnuté od sadzí
+<&clinker_brick_recessed>Tento blok pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Klinkerové tehly so štrbinami
+Murivo stmavnuté od sadzí
+<&clinker_brick_vertically_slit>Klinkerové tehly so zvislými štrbinami pridávajú murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Zvislý klinkerový stupienok
+Murivo stmavnuté od sadzí
+<&clinker_brick_vertical_slab_structured>Zvislý klinkerový stupienok s reliéfom pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Tenká platňa klinkerových tehál
+Murivo stmavnuté od sadzí
+<&halfslab_clinker_brick>Tento blok pridáva murivo stmavnuté od sadzí do pecných hál, komínových základní a servisných stien.<br>
+<br>
+Použitie: Použi ho na steny, lemovanie alebo plášť horúcej zóny okolo pecí a kotlov.<br>
+<np>
+Troskové tehly
+Hutné továrenské murivo
+<&slag_brick_block>Tento blok pridáva hutné sivohnedé murivo na základy, oporné múry a staršie dielne.<br>
+<br>
+Použitie: Hodí sa na staršie základy, oporné múry a špinavé továrenské podlahy.<br>
+<np>
+Stupienok z troskových tehál
+Hutné továrenské murivo
+<&slag_brick_slab>Tento blok pridáva hutné sivohnedé murivo na základy, oporné múry a staršie dielne.<br>
+<br>
+Použitie: Hodí sa na staršie základy, oporné múry a špinavé továrenské podlahy.<br>
+<np>
+Schody z troskových tehál
+Hutné továrenské murivo
+<&slag_brick_stairs>Tento blok pridáva hutné sivohnedé murivo na základy, oporné múry a staršie dielne.<br>
+<br>
+Použitie: Hodí sa na staršie základy, oporné múry a špinavé továrenské podlahy.<br>
+<np>
+Múrik z troskových tehál
+Hutné továrenské murivo
+<&slag_brick_wall>Tento blok pridáva hutné sivohnedé murivo na základy, oporné múry a staršie dielne.<br>
+<br>
+Použitie: Hodí sa na staršie základy, oporné múry a špinavé továrenské podlahy.<br>
+<np>
+Železobetónový blok
+Vystužený betón
+<&rebar_concrete>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Železobetónový stupienok
+Vystužený betón
+<&rebar_concrete_slab>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Železobetónové schody
+Vystužený betón
+<&rebar_concrete_stairs>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Železobetónový múrik
+Vystužený betón
+<&rebar_concrete_wall>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Tenká železobetónová platňa
+Vystužený betón
+<&halfslab_rebar_concrete>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Železobetónová dlaždica
+Vystužený betón
+<&rebar_concrete_tile>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Stupienok zo železobetónových dlaždíc
+Vystužený betón
+<&rebar_concrete_tile_slab>Tento blok je spevnený betónový diel na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Železobetónová dlaždica
+Vystužený betón
+<&rebar_concrete_tile_stairs>Schody zo železobetónových dlaždíc sú spevnené betónové diely na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>
+<np>
+Blok pancierového skla
+Chránený výhľad
+<&panzerglass_block>Tento blok ponecháva voľný výhľad a zároveň ladí so zosilnenou továrenskou stavbou.<br>
+<br>
+Použitie: Použi ho tam, kde majú hráči vidieť stroje cez ochrannú bariéru.<br>
+<np>
+Stupienok z pancierového skla
+Chránený výhľad
+<&panzerglass_slab>Tento blok ponecháva voľný výhľad a zároveň ladí so zosilnenou továrenskou stavbou.<br>
+<br>
+Použitie: Použi ho tam, kde majú hráči vidieť stroje cez ochrannú bariéru.<br>

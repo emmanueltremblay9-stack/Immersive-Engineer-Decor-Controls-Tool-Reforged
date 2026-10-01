@@ -1,0 +1,5 @@
+Atkritumu dedzinātājs
+Kompakta apstrādes ierīce
+<&recipe>Atkritumu dedzinātājs iznīcina nevajadzīgus priekšmetus, aizņemot maz vietas darbnīcā.<br>
+<br>
+Lietošana: padod tā rindā tikai nevajadzīgus priekšmetus.<br>

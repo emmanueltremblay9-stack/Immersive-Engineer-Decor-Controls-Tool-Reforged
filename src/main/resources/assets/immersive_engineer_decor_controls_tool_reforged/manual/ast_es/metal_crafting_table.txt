@@ -1,0 +1,7 @@
+Mesa metálica de fabricación
+Puestu de plaques
+<&recipe>La Mesa metálica ye un puestu reforzáu con ranura pa martiellu, cuadrícula completa 3x3 y salida clara.<br>
+<br>
+Usu: Usa la cuadrícula como una mesa normal. Pa formar plaques d'IE, pon un Martiellu del inxenieru na ranura de ferramienta y el material na cuadrícula, y saca la placa formada de la salida.<br>
+<br>
+Les decoraciones con marcu d'aceru usen plaques d'aceru formaes nesta mesa.

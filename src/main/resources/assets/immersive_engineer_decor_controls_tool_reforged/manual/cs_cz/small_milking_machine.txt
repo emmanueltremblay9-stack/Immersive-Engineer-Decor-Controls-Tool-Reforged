@@ -1,0 +1,5 @@
+Dojicí stroj
+Vybavení provozu
+<&recipe>Malý dojicí stroj patří k dílenskému vybavení pro výrobu, skladování, pokládání, rozbíjení, sběr a kompaktní automatizaci.<br>
+<br>
+Použití: Umísti jej poblíž krav a zajisti odebírání nádob s mlékem nebo kapaliny.<br>

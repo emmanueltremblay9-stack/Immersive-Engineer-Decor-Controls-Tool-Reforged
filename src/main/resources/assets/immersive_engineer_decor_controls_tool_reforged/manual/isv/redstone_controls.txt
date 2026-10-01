@@ -1,0 +1,789 @@
+Redstone Controls
+Měritelji i signalne dodatky
+Upravne ustrojstva prětvarjajut skryty redstoun v čitljive fabrične panely, senzory, ukazatelje, prěključatelje, trevogy i vezane signalne dodatky.<br>
+<br>
+Upotrěbi te stranice pri budovanju operatorskyh měst, signalnyh tablic, zaščitnyh obvodov i oddalenogo upravljanja.
+<np>
+Cělj dlja strěl
+Kratkotrajny impuls
+<&arrow_target>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Dverny senzor
+Redstounovo upravljanje
+<&door_sensor_switch>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Knopka lifta
+Redstounovo upravljanje
+<&elevator_button>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Steklěna knopka
+Redstounovo upravljanje
+<&glass_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Steklěna knopka
+Redstounovo upravljanje
+<&glass_small_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Steklěna dotykova knopka
+Redstounovo upravljanje
+<&glass_touch_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Mašinna knopka
+Redstounovo upravljanje
+<&industrial_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Knopka
+Redstounovo upravljanje
+<&industrial_double_pole_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Ogradžena mašinna knopka
+Redstounovo upravljanje
+<&industrial_fenced_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Knopka klepanja
+Redstounovo upravljanje
+<&industrial_knock_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Stara ozdobna knopka
+Redstounovo upravljanje
+<&oldfancy_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Stara ozdobna knopka
+Redstounovo upravljanje
+<&oldfancy_small_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Stara ozdobna knopka s lancuhom
+Kratkotrajny impuls
+<&oldfancy_spring_reset_chain>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Starodavna knopka
+Redstounovo upravljanje
+<&rustic_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Starodavna gvozdna knopka
+Redstounovo upravljanje
+<&rustic_nail_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Starodavna mala knopka
+Redstounovo upravljanje
+<&rustic_small_button>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Starodavna knopka s lancuhom
+Kratkotrajny impuls
+<&rustic_spring_reset_chain>Kratkotrajny prěključatelj davaje jasny redstounovy impuls polnoj sily.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja starta mašin, odključanja dverij, trevog ili jednokratnyh obvodov.<br>
+<br>
+Primětky: Vrati se v početny stan poslě zaplanovanogo impulsa.
+<np>
+Steklěna kontaktna ploča
+Tlakovy impuls
+<&glass_contact_mat>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Steklěny dverny kontakt
+Tlakovy impuls
+<&glass_door_contact_mat>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Kontaktna podložka
+Tlakovy impuls
+<&industrial_contact_mat>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Dverna kontaktna podložka
+Tlakovy impuls
+<&industrial_door_contact_mat>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Detektor propadanja
+Čutje signala
+<&industrial_fallthrough_detector>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Nožna knopka
+Redstounovo upravljanje
+<&industrial_foot_button>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Promyslove udarove dveri
+Tlakovy impuls
+<&industrial_high_sensitive_trapdoor>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Udarova kontaktna podložka
+Tlakovy impuls
+<&industrial_shock_sensitive_contact_mat>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Udarovy poklop
+Tlakovy impuls
+<&industrial_shock_sensitive_trapdoor>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Črvena signalna rastlina
+Tlakovy impuls
+<&red_power_plant>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Starodavna tlakova ploča
+Tlakovy impuls
+<&rustic_contact_plate>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Starodavny dverny tlak
+Tlakovy impuls
+<&rustic_door_contact_plate>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Starodavny detektor propadanja
+Čutje signala
+<&rustic_fallthrough_detector>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Starodavne udarove dveri
+Tlakovy impuls
+<&rustic_high_sensitive_trapdoor>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Starodavna udarova ploča
+Tlakovy impuls
+<&rustic_shock_sensitive_plate>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Starodavne udarove dveri
+Tlakovy impuls
+<&rustic_shock_sensitive_trapdoor>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Žolta signalna rastlina
+Tlakovy impuls
+<&yellow_power_plant>Kontaktny prěključatelj posylaje kratky signal pri dviženju na podlogě ili poklopu.<br>
+<br>
+Upotrěbjenje: Postavi go tam, kde entitety prohodjat črěz obslužny prohod, nakladač ili čuvanu put.<br>
+<br>
+Primětky: Kratko impulsuje poslě kontakta s entitetom.
+<np>
+Steklěny dnevny časovnik
+Signal dnevnogo světa
+<&glass_day_timer>Časovny prěključatelj slěduje dnevnu čest cikla světa.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja dvorovyh lamp, žaluzij i fabričnogo upravljanja samo v denj.<br>
+<br>
+Primětky: Potrěbuje dimenziju s nebesnym světlom.
+<np>
+Steklěny detektor entitetov
+Čutje signala
+<&glass_entity_detector>Detektor entitetov nabljudaje blizko dviženje bez vidimoj podložnoj ploče.<br>
+<br>
+Upotrěbjenje: Poveži go s dverjami, lampami, trevogami ili mašinnymi blokirovkami.<br>
+<br>
+Primětky: Skanuje malu oblast okolo bloka.
+<np>
+Steklěny intervalny signal
+Časovany impuls
+<&glass_interval_timer>Kompaktny časovny prěključatelj davaje zaplanovany redstounovy impuls.<br>
+<br>
+Upotrěbjenje: Upotrěbi go tam, kde maly mehanizm potrěbuje periodično ili odloženo upravljanje.<br>
+<br>
+Primětky: Upotrěbjaje zaplanovane redstounove impulsy.
+<np>
+Steklěny linijny detektor
+Čutje signala
+<&glass_linear_entity_detector>Detektor entitetov nabljudaje blizko dviženje bez vidimoj podložnoj ploče.<br>
+<br>
+Upotrěbjenje: Poveži go s dverjami, lampami, trevogami ili mašinnymi blokirovkami.<br>
+<br>
+Primětky: Skanuje malu oblast okolo bloka.
+<np>
+Detektor blokov
+Čutje signala
+<&industrial_block_detector>Detektor blokov prověrjaje, jest li prostor prěd njim zajety.<br>
+<br>
+Upotrěbjenje: Usměri go na stranu mašiny, hranilišče ili čuvany prostor, ktory hočeš nabljudati.<br>
+<br>
+Primětky: Podavaje signal, kogda blok prěd njim ne jest vozduhom.
+<np>
+Dnevny časovnik
+Signal dnevnogo světa
+<&industrial_day_timer>Časovny prěključatelj slěduje dnevnu čest cikla světa.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja dvorovyh lamp, žaluzij i fabričnogo upravljanja samo v denj.<br>
+<br>
+Primětky: Potrěbuje dimenziju s nebesnym světlom.
+<np>
+Detektor entitetov
+Čutje signala
+<&industrial_entity_detector>Detektor entitetov nabljudaje blizko dviženje bez vidimoj podložnoj ploče.<br>
+<br>
+Upotrěbjenje: Poveži go s dverjami, lampami, trevogami ili mašinnymi blokirovkami.<br>
+<br>
+Primětky: Skanuje malu oblast okolo bloka.
+<np>
+Intervalny časovnik
+Časovany impuls
+<&industrial_interval_timer>Kompaktny časovny prěključatelj davaje zaplanovany redstounovy impuls.<br>
+<br>
+Upotrěbjenje: Upotrěbi go tam, kde maly mehanizm potrěbuje periodično ili odloženo upravljanje.<br>
+<br>
+Primětky: Upotrěbjaje zaplanovane redstounove impulsy.
+<np>
+Světlosenzor
+Čutje signala
+<&industrial_light_sensor>Světlosenzor prětvarjaje městnu jasnost v redstounovo upravljanje.<br>
+<br>
+Upotrěbjenje: Upotrěbi go dlja avtomatičnyh lamp, žaluzij i obvodov vidimosti.<br>
+<br>
+Primětky: Podavaje signal pri syrovej jasnosti 8 ili vyše.
+<np>
+Detektor burje
+Čutje signala
+<&industrial_lightning_sensor>Senzor burje upravljaje prěduprědženjami pri grměnju.<br>
+<br>
+Upotrěbjenje: Postavi go pod otvorjenym nebom i poveži s lampami ili trevogami.<br>
+<br>
+Primětky: Potrěbuje grměnje i pristup k nebu.
+<np>
+Linijny detektor entitetov
+Čutje signala
+<&industrial_linear_entity_detector>Detektor entitetov nabljudaje blizko dviženje bez vidimoj podložnoj ploče.<br>
+<br>
+Upotrěbjenje: Poveži go s dverjami, lampami, trevogami ili mašinnymi blokirovkami.<br>
+<br>
+Primětky: Skanuje malu oblast okolo bloka.
+<np>
+Doždževy senzor
+Čutje signala
+<&industrial_rain_sensor>Senzor pogody prětvarjaje doždž na svojem městu v redstounovy signal.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde blok nad njim može prijmati doždž.<br>
+<br>
+Primětky: Prověrjaje doždž nad senzorom.
+<np>
+Bistabilny steklěny prěključatelj
+Redstounovo upravljanje
+<&glass_rotary_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Bistabilny steklěny dotyk
+Redstounovo upravljanje
+<&glass_touch_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Oranževo čuvstvitelno steklo
+Signalno steklo
+<&orange_sensitiveglass>Steklěny blok reagujuči na redstoun sohranjaje pogled i odnovremenno pokazyvaje stan signala.<br>
+<br>
+Upotrěbjenje: Upotrěbi go v oknah upravnyh komor, osvětljenyh panelah i zaščiščenom fabričnom steklu.<br>
+<br>
+Primětky: Měnja stan od blizkogo redstounovogo signala.
+<np>
+Světleče čuvstvitelno steklo
+Signalno steklo
+<&sensitive_glass_block>Steklěny blok reagujuči na redstoun sohranjaje pogled i odnovremenno pokazyvaje stan signala.<br>
+<br>
+Upotrěbjenje: Upotrěbi go v oknah upravnyh komor, osvětljenyh panelah i zaščiščenom fabričnom steklu.<br>
+<br>
+Primětky: Měnja stan od blizkogo redstounovogo signala.
+<np>
+Barvno čuvstvitelno steklo
+Signalno steklo
+<&stained_sensitiveglass>Steklěny blok reagujuči na redstoun sohranjaje pogled i odnovremenno pokazyvaje stan signala.<br>
+<br>
+Upotrěbjenje: Upotrěbi go v oknah upravnyh komor, osvětljenyh panelah i zaščiščenom fabričnom steklu.<br>
+<br>
+Primětky: Měnja stan od blizkogo redstounovogo signala.
+<np>
+Steklěny stolbčaty měritelj
+Měritelj signala
+<&glass_vertical_bar_gauge>Kompaktny měritelj upravnoj komory pokazyvaje redstounovu silu kak jasno vidimu veličinu na panelu.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde možno na jedin pogled prověriti blizku redstounovu silu.<br>
+<br>
+Primětky: Čitaje blizku redstounovu silu od 0 do 15.
+<np>
+Analogovy měritelj
+Měritelj signala
+<&industrial_analog_angular_gauge>Kompaktny měritelj upravnoj komory pokazyvaje redstounovu silu kak jasno vidimu veličinu na panelu.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde možno na jedin pogled prověriti blizku redstounovu silu.<br>
+<br>
+Primětky: Čitaje blizku redstounovu silu od 0 do 15.
+<np>
+Voltmeterny měritelj
+Měritelj signala
+<&industrial_analog_horizontal_gauge>Kompaktny měritelj upravnoj komory pokazyvaje redstounovu silu kak jasno vidimu veličinu na panelu.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde možno na jedin pogled prověriti blizku redstounovu silu.<br>
+<br>
+Primětky: Čitaje blizku redstounovu silu od 0 do 15.
+<np>
+Cifrovy měritelj
+Jasno čitljiva sila signala
+<&industrial_small_digital_gauge>Kompaktny měritelj upravnoj komory pokazyvaje redstounovu silu kak jasno vidimu veličinu na panelu.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde možno na jedin pogled prověriti blizku redstounovu silu.<br>
+<br>
+Primětky: Čitaje blizku redstounovu silu od 0 do 15.
+<np>
+Steklěny trubny měritelj
+Měritelj signala
+<&industrial_tube_gauge>Kompaktny měritelj upravnoj komory pokazyvaje redstounovu silu kak jasno vidimu veličinu na panelu.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde možno na jedin pogled prověriti blizku redstounovu silu.<br>
+<br>
+Primětky: Čitaje blizku redstounovu silu od 0 do 15.
+<np>
+Analogovy stolbčaty měritelj
+Měritelj signala
+<&industrial_vertical_bar_gauge>Kompaktny měritelj upravnoj komory pokazyvaje redstounovu silu kak jasno vidimu veličinu na panelu.<br>
+<br>
+Upotrěbjenje: Montuj go tam, kde možno na jedin pogled prověriti blizku redstounovu silu.<br>
+<br>
+Primětky: Čitaje blizku redstounovu silu od 0 do 15.
+<np>
+Trevogova lampa
+Povratna informacija signala
+<&industrial_alarm_lamp>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Trevogova sirena
+Povratna informacija signala
+<&industrial_alarm_siren>Trevogova sirena jest redstounovy pokazatelj, pričěpljeny k strani bloka. Jej napojeno stanje slěduje signal bloka, k kojemu je pričěpljena.<br>
+<br>
+Upotrěbjenje: Pričěpi ju k tverdoj straně i podaj signal dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Sirena se obnovjaje raz na sekundu, dokolě jej pripojeny signal ostavaje aktivny.
+<np>
+Migajuči LED
+Povratna informacija signala
+<&industrial_blinking_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Zeleny migajuči LED
+Povratna informacija signala
+<&industrial_green_blinking_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Zeleny LED
+Povratna informacija signala
+<&industrial_green_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Črveny LED
+Povratna informacija signala
+<&industrial_red_blinking_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Črveny LED
+Povratna informacija signala
+<&industrial_red_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Běly migajuči LED
+Povratna informacija signala
+<&industrial_white_blinking_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Běly LED
+Povratna informacija signala
+<&industrial_white_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Žolty migajuči LED
+Povratna informacija signala
+<&industrial_yellow_blinking_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Žolty LED
+Povratna informacija signala
+<&industrial_yellow_led>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Starodavny semafor
+Povratna informacija signala
+<&rustic_semaphore>Kompaktny ukazatelj prětvarjaje skryty redstoun v vidimu fabričnu povratnu informaciju.<br>
+<br>
+Upotrěbjenje: Poveži go blizko signala dlja nadzora dverij, mašin, trevog ili panelov.<br>
+<br>
+Primětky: Měnja stan, kogda jest prisutny blizky redstounovy signal.
+<np>
+Sravnjateljny prěključatelj
+Pripojeny signal
+<&industrial_comparator_switch>Kompaktny senzorny prěključatelj čitaje blok, na ktorom jest montovany, i prětvarjaje rezultat v prosty panelny izhod.<br>
+<br>
+Upotrěbjenje: Montuj go na orudovanja, rezervuary ili redstounove ustrojstva. Kogda pripojeny blok davaje izhod sravnjatelja, posudy ili redstouna, prěključatelj izdavaje redstoun polnoj sily.<br>
+<br>
+Primětky: Upotrěbi go dlja prětvorjenja skladovyh urovnjev ili skrytyh provodov v jasne upravne linije vključeno/izključeno.
+<np>
+Regulator sily
+Proměnny signal
+<&industrial_dimmer>Rotacijny upravny element nastrojuje redstounovu silu s kompaktnoj panelnoj strany.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja postupnogo povyšenja izhoda, potom vrnjenja na nulu poslě polnoj sily.<br>
+<br>
+Primětky: Izdavaje silu od 0 do 15.
+<np>
+Knopka avarijnogo ostanovjenja ESTOP
+Redstounovo upravljanje
+<&industrial_estop_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Blokovatelj nasypnika
+Redstounovo upravljanje
+<&industrial_hopper_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Prěključatelj klepanja
+Redstounovo upravljanje
+<&industrial_knock_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Držka
+Redstounovo upravljanje
+<&industrial_lever>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Mašinny prěključatelj s dvěma knopkami
+Redstounovo upravljanje
+<&industrial_machine_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Potezna ručka
+Redstounovo upravljanje
+<&industrial_pull_handle>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Rotacijna držka
+Redstounovo upravljanje
+<&industrial_rotary_lever>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Rotacijny mašinny prěključatelj
+Redstounovo upravljanje
+<&industrial_rotary_machine_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Kontaktna držka
+Redstounovo upravljanje
+<&industrial_small_lever>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Prěključatelj
+Redstounovo upravljanje
+<&industrialswitch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Prěključatelj světa
+Redstounovo upravljanje
+<&light_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Ventilny prěključatelj
+Redstounovo upravljanje
+<&valve_wheel_switch>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Impulsny prijemnik v obalu
+Vezano upravljanje
+<&industrial_switchlink_cased_pulse_receiver>Vezany impulsny prijemnik v obalu davaje oddalenym panelam kratky redstounovy spustnik.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Klikni go pravoj knopkoj ili aktivuj vezanu perlu dlja izdavanja kratkogo impulsa.<br>
+<br>
+Primětky: Impuls se sam zaveršaje poslě zaplanovanogo trvanja.
+<np>
+Vezany prijemnik v obalu
+Vezano upravljanje
+<&industrial_switchlink_cased_receiver>Vezany prijemnik v obalu davaje oddalenym panelam krěpky redstounovy cělj.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Klikni prěmo na prijemnik pravoj knopkoj dlja ručnogo prěključanja.<br>
+<br>
+Primětky: Vezana perla prěključaje sej prijemnik pri upotrěbjenju kraduči se.
+<np>
+Vezany impulsny prijemnik
+Vezano upravljanje
+<&industrial_switchlink_pulse_receiver>Vezany impulsny prijemnik davaje oddalenym panelam kratky redstounovy spustnik.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Klikni go pravoj knopkoj ili aktivuj vezanu perlu dlja izdavanja kratkogo impulsa.<br>
+<br>
+Primětky: Impuls se sam zaveršaje poslě zaplanovanogo trvanja.
+<np>
+Vezano impulsno rele
+Vezano upravljanje
+<&industrial_switchlink_pulse_relay>Element v stilu rele davaje panelnym konstrukcijam kompaktno město dlja městnogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni go pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam. Upotrěbi bloky prijemnikov, kogda potrěbuješ aktivovanje vezanoju perloju.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Prijemnik vezanogo prěključanja
+Vezano upravljanje
+<&industrial_switchlink_receiver>Vezany prijemnik davaje oddalenym panelam redstounovy cělj polnoj sily.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Klikni prěmo na prijemnik pravoj knopkoj dlja ručnogo prěključanja.<br>
+<br>
+Primětky: Vezana perla prěključaje sej prijemnik pri upotrěbjenju kraduči se.
+<np>
+Vezany analogovy prijemnik
+Vezano upravljanje
+<&industrial_switchlink_receiver_analog>Vezany prijemnik davaje upravnym panelam vidimy oddaleny cělj.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Upotrěbi tu perlu kraduči se dlja oddalenogo aktivovanja prijemnika.<br>
+<br>
+Primětky: Sej prijemnik izdavaje polny redstounovy signal pri spuščenju.
+<np>
+Rele vezanogo prěključanja
+Vezano upravljanje
+<&industrial_switchlink_relay>Element v stilu rele davaje panelnym konstrukcijam kompaktno město dlja městnogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni go pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam. Upotrěbi bloky prijemnikov, kogda potrěbuješ aktivovanje vezanoju perloju.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Vezano analogovo rele
+Vezano upravljanje
+<&industrial_switchlink_relay_analog>Element v stilu rele davaje panelnym konstrukcijam kompaktno město dlja městnogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni go pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam. Upotrěbi bloky prijemnikov, kogda potrěbuješ aktivovanje vezanoju perloju.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Perla vezanogo prěključanja
+Vezano upravljanje
+<&switchlink_pearl>Vezana perla hrani cěljevy prijemnik dlja oddalenogo fabričnogo upravljanja.<br>
+<br>
+Upotrěbjenje: Klikni Ender-perloju na prijemnik vezanogo prěključanja dlja tvorjenja perly. Upotrěbi vezanu perlu kraduči se dlja aktivovanja zapisanogo prijemnika.<br>
+<br>
+Primětky: Cělj mora byti načitany, v toj samoj dimenziji i v dosegu.
+<np>
+Stara ozdobna držka
+Redstounovo upravljanje
+<&oldfancy_bistableswitch1>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Stara ozdobna rotacijna držka
+Redstounovo upravljanje
+<&oldfancy_bistableswitch2>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Starodavna rotacijna držka
+Redstounovo upravljanje
+<&rustic_angular_lever>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Starodavna držka
+Redstounovo upravljanje
+<&rustic_lever>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Starodavna gvozdna držka
+Redstounovo upravljanje
+<&rustic_nail_lever>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.
+<np>
+Starodavna držka s dvěma šarnirami
+Redstounovo upravljanje
+<&rustic_two_hinge_lever>Kompaktny upravny element davaje fabričnym budynkam jasno vidimo město redstounovogo prěključanja.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj dlja prěključanja izhoda polnoj sily k blizkym obvodam.<br>
+<br>
+Primětky: Izdavaje redstoun polnoj sily, dokolě jest vključeny.

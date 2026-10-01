@@ -1,0 +1,5 @@
+Stolp iz obrabotanogo drěva
+Čest konstrukcijnogo rama
+<&recipe>Pravy stolp iz obrabotanogo drěva davaje vidimu konstrukciju mašinnym halam i pristupnym ramam.<br>
+<br>
+Upotrěbjenje: Obrati i postavi go kak vidimo ukrěpljenje breven, stolpov i krajev ploščin.<br>

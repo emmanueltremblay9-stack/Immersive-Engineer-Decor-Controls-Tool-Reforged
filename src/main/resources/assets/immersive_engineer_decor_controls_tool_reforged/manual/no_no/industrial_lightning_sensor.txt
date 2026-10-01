@@ -1,0 +1,7 @@
+Tordendetektor
+Signalføling
+<&recipe>En tordensensor styrer varsler under tordenvær.<br>
+<br>
+Bruk: plasser den under åpen himmel og koble den til lamper eller alarmer.<br>
+<br>
+Merknad: krever torden og tilgang til himmelen.

@@ -1,0 +1,7 @@
+Qaataha xiriirka qiyaasan
+Xakamayn xiriirsan
+<&recipe>Qaate xiriirsan wuxuu looxyada xakamaynta siiyaa bartilmaameed fog oo muuqda.<br>
+<br>
+Isticmaal: Ku guji luul Ender ah si aad u samayso luul xiriirsan. Adigoo dhuumaaleysanaya isticmaal luulkaas si aad qaataha meel fog uga kiciso.<br>
+<br>
+Ogeysiis: Qaatahani wuxuu bixiyaa calaamad redstone oo buuxda marka la kiciyo.

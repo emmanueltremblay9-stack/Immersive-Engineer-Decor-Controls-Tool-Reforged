@@ -1,0 +1,5 @@
+Folyadékgyűjtő tölcsér
+Folyadékvezeték-szerelvények
+<&recipe>A kis folyadékgyűjtő tölcsér kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: tedd a folyadékgyűjtő pont alá, és vezesd a tárolt tartalmat tartályokba vagy alacsonyabban lévő csövekbe.<br>

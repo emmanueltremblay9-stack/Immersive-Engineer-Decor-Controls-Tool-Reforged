@@ -1,0 +1,7 @@
+Sirenenn alarm
+Diskouez ar signal
+<&recipe>Ar Sirenenn alarm zo un diskouez redstone stag ouzh tal ur bloc'h. He stad tredan a heuilh signal ar bloc'h ma'z eo staget.<br>
+<br>
+Implij: Stagañ ouzh un tal solut ha reiñ tredan da evezhiañ dorioù, mekanikoù, alarmoù pe panelloù.<br>
+<br>
+Notenn: Freskaat a ra ar sirenenn ur wech bep eilenn keit ma chom ar signal bev.

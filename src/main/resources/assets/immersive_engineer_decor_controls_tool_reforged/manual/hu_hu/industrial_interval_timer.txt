@@ -1,0 +1,7 @@
+Ciklikus időzítő
+Időzített impulzus
+<&recipe>A kompakt időzítőkapcsoló ütemezett redstone-impulzust biztosít.<br>
+<br>
+Használat: ott használd, ahol egy kis szerkezetnek időszakos vagy késleltetett vezérlésre van szüksége.<br>
+<br>
+Megjegyzés: ütemezett redstone-impulzusokat használ.

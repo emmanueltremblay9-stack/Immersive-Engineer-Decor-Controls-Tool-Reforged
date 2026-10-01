@@ -1,0 +1,7 @@
+Rustikali Signalfahne
+Signalrückmäldig
+<&recipe>E kompakti Aazeig macht unsichtbars Redstone als Rückmäldig ide Fabrik sichtbar.<br>
+<br>
+Verwendig: Verkabel si bim Signal, um Türe, Maschine, Alarm oder Tafle z'überwache.<br>
+<br>
+Hiwiis: Änderet de Zuestand, wenn ide Nöchi Redstone aaliit.

@@ -1,0 +1,7 @@
+Blink-LED
+Signalrückmeldung
+<&recipe>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.

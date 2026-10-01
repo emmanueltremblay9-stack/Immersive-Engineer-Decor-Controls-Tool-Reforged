@@ -1,0 +1,7 @@
+Clot Watcher
+Sensing tokens
+<&recipe>A clot watcher checks whether something fills the space ahead.<br>
+<br>
+Use: Point it toward the loom side, holding store or guarded space to watch.<br>
+<br>
+Mind: Sends might when the clot ahead is not air.

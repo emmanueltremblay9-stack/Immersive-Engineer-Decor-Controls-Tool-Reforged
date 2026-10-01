@@ -1,0 +1,7 @@
+Glass signal at intervals
+Pulse on a timer
+<&recipe>A small timer switch sends redstone pulses on schedule, matey.<br>
+<br>
+Orders: Use her where a little mechanism needs orders after a delay or at regular intervals.<br>
+<br>
+Mind ye: She sends scheduled redstone pulses.

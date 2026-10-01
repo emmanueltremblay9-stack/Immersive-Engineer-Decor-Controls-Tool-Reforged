@@ -1,0 +1,7 @@
+Napunjeni lapis
+Sačuvano iskustvo
+<&recipe>Napunjeni lapis čuva jedan nivo iskustva dobijen cedilicom uma.<br>
+<br>
+Upotreba: potroši ga da vratiš jedan nivo, ukloniš aktivne efekte i povratiš malo zdravlja.<br>
+<br>
+Prikaz recepta pokazuje cedilicu uma jer se napunjeni lapis proizvodi upotrebom tog alata uz dostupan lapis i iskustvo.

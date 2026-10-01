@@ -1,0 +1,7 @@
+Penerima Pautan Bersarung
+Kawalan berpaut
+<&recipe>Penerima berpaut bersarung memberikan sasaran redstone lasak kepada panel jauh.<br>
+<br>
+Penggunaan: Klik dengan mutiara Ender untuk menghasilkan mutiara berpaut. Klik kanan terus pada penerima untuk menukarnya secara manual.<br>
+<br>
+Nota: Mutiara berpaut menukar penerima ini apabila digunakan sambil menyelinap.

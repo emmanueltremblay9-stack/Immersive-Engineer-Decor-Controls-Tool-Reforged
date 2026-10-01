@@ -1,0 +1,7 @@
+Intervallur
+Tidsstyrt puls
+<&recipe>Et kompakt tidsur gir en planlagt redstonepuls.<br>
+<br>
+Bruk: bruk det der en liten mekanisme trenger periodisk eller forsinket styring.<br>
+<br>
+Merknad: bruker planlagte redstonepulser.

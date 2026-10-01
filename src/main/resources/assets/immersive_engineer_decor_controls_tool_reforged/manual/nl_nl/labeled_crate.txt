@@ -1,0 +1,5 @@
+Kist met etiket
+Bewerkbaar voorraadetiket
+<&recipe>Deze kist met etiket is bedoeld voor overzichtelijke sortering in het magazijn. Het voorplaatje kan als een klein werkplaatsbord worden bewerkt.<br>
+<br>
+Gebruik: rechtsklik op het etiketplaatje om het kistetiket te bewerken. Rechtsklik op de rest van de kist om de opslag voor hulpstukken, onderdelen en onderhoudsvoorraden te openen.<br>

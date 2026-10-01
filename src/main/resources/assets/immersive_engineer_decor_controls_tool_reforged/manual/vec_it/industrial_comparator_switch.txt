@@ -1,0 +1,7 @@
+Interutor comparator
+Segnal de’l bloco de sostegno
+<&recipe>Un interutor sensor conpato el leze el bloco dove el xe montà e el transforma ła letura in na usita sénplise de paneło.<br>
+<br>
+Uso: mòntalo su inventari, serbatoi o apareci de redstone. Quando el bloco de sostegno el dà na usita de comparator, de contenidor o de redstone, l’interutor el manda redstone a piena potensa.<br>
+<br>
+Da saver: dòparalo par far de i łivełi de deposito o de i cai sconti de linee ciare de avio e distaco.

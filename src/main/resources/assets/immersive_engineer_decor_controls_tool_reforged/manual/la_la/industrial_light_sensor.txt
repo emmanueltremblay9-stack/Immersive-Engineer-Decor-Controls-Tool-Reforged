@@ -1,0 +1,7 @@
+Sensor lucis
+Sensus signorum
+<&recipe>Sensor lucis claritatem localem in moderationem redstone convertit.<br>
+<br>
+Usus: ad lucernas automaticas, valvas fenestrarum et circuitus visibilitatis adhibe.<br>
+<br>
+Notae: signum emittit si claritas rudis est 8 aut maior.

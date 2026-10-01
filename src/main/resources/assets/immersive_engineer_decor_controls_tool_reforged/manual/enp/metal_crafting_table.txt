@@ -1,0 +1,7 @@
+Metal Crafting Table
+Plate workstation
+<&recipe>Heed this: The Metal Crafting Table is a reinforced shop station with a hammer slot, a full 3x3 crafting grid, and a clear outcome slot.<br>
+<br>
+Usage: Use the grid like a normal crafting table. To form IE plates, place an Engineer's Hammer in the tool slot and put the plate stuff in the grid, then take the formed plate from the outcome.<br>
+<br>
+Steel-framed decorations use steel plates formed at this table.

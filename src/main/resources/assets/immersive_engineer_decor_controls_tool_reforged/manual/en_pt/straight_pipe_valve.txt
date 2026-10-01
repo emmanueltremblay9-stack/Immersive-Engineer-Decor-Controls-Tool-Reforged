@@ -1,0 +1,5 @@
+One-way fluid-pipe valve
+Gear fer fluid lines
+<&recipe>One-way fluid-pipe valve be a compact fluid-line fitting fer small tanks, pipe runs, gatherin' points and flow under redstone orders.<br>
+<br>
+Orders: Align the valve with the way ye want fluid to flow.<br>

@@ -1,0 +1,7 @@
+Hộp chứa vật liệu
+Hộp vật tư xây dựng
+<&recipe>Hộp vật liệu mang lượng lớn một loại vật liệu xây dựng thường, chưa sửa đổi và có thể xếp chồng.<br>
+<br>
+Cầm hộp ở tay chính và vật liệu ở tay phụ để nạp; dùng khi tay phụ trống để lấy ra một chồng.<br>
+<br>
+Hộp chứa 512 vật phẩm một loại, từ chối hộp khác, trang bị không xếp chồng và chồng đã sửa đổi, đồng thời hiện nội dung trong chú thích.

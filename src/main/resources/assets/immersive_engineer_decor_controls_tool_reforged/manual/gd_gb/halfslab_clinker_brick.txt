@@ -1,0 +1,5 @@
+Leth-leac bhreigichean clincir
+Obair bhreigichean dorcha le sùith
+<&recipe>Bheir am bloca seo obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>

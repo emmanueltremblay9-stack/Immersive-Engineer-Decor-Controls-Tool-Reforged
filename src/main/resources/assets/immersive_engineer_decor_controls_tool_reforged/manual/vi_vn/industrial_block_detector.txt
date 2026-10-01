@@ -1,0 +1,7 @@
+Bộ phát hiện khối
+Cảm nhận tín hiệu
+<&recipe>Bộ phát hiện khối kiểm tra xem khoảng trống trước mặt có bị chiếm không.<br>
+<br>
+Cách dùng: Hướng về mặt máy, bộ đệm hoặc khoảng trống cần bảo vệ để theo dõi.<br>
+<br>
+Ghi chú: Phát tín hiệu khi khối trước mặt không phải không khí.

@@ -1,0 +1,5 @@
+Kapalinová výlevka
+Vybavení kapalinových rozvodů
+<&recipe>Malá kapalinová výlevka je kompaktní díl pro malé nádrže, potrubní trasy, sběrná místa a tok řízený redstonem.<br>
+<br>
+Použití: Umísti ji pod místo sběru kapaliny a převeď uložený obsah do nádrží nebo nižšího potrubí.<br>

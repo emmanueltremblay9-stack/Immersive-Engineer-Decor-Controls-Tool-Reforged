@@ -1,0 +1,5 @@
+Drabhailt factaraidh
+Goireas làir bùth-obrach
+<&recipe>Gluaisidh am bloca seo cruachan nithean tro chèis ghnìomhachais nas dlùithe.<br>
+<br>
+Cleachdadh: cuir e a' coimhead air loidhne nan clàran-stuthan, agus suidhich raon, àireamh cruachan, ùine agus modh redstone air an sgrìn aige.<br>

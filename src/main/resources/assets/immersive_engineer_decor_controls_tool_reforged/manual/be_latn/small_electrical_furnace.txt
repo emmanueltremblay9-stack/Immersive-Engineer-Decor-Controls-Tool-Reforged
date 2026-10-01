@@ -1,0 +1,5 @@
+Elektryčnaja pieč
+Kampaktnaja pierapracoŭčaja pryłada
+<&recipe>Elektryčnaja pieč vykonvaje kampaktnyja zadanni pierapłaŭki na enierhii FE, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: padaj FE i prydatnuju syravinu dla pierapłaŭki.<br>

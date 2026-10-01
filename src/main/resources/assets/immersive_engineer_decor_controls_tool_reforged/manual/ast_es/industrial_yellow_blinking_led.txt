@@ -1,0 +1,7 @@
+LED mariellu intermitente
+Indicación de señal
+<&recipe>Un indicador compactu fai visible na fábrica una señal de redstone oculta.<br>
+<br>
+Usu: cabléalu al llau de la señal pa vixilar puertes, máquines, alarmes o paneles.<br>
+<br>
+Notes: cambia d’estáu cuando hai potencia de redstone cerca.

@@ -1,0 +1,7 @@
+Pulsûntfanger yn kast
+Keppele bestjoering
+<&recipe>In keppele pulsûntfanger yn in kast jout panielen op ôfstân in koarte redstone-aktivearring.<br>
+<br>
+Gebrûk: Klik der mei in Ender-pearel op om in keppele pearel te meitsjen. Rjochtsklik op de ûntfanger of aktivearje de keppele pearel om in koarte puls te jaan.<br>
+<br>
+Opmerking: De puls set himsels werom nei syn ynplande doer.

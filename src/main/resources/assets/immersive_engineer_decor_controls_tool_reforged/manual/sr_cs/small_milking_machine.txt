@@ -1,0 +1,5 @@
+Mašina za mužu
+Oprema za fabričku halu
+<&recipe>Mala mašina za mužu pripada radioničkoj opremi za izradu, čuvanje, postavljanje, razbijanje, sakupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: postavi je blizu krava i obezbedi preuzimanje posuda za mleko ili tečnosti.<br>

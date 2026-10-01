@@ -1,0 +1,5 @@
+Capsuła de aria par andar soto àcua
+Resèrva de aria de emergensa
+<&recipe>La capsula de aria xe una riserva de emergenza par lavorar soto aqua.<br>
+<br>
+Doparala a man par recuperar aria. In inventario la parte da sola quando aria xe quasi finia, dopo la va in recupero. Portala in miniere alagate e tubi soto aqua.

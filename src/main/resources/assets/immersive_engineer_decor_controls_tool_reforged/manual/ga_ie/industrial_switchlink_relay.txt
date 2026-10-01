@@ -1,0 +1,7 @@
+Athsheachadán Naisc Lasc
+Rialú nasctha
+<&recipe>Tugann feisteas i stíl athsheachadáin pointe dlúth áitiúil lasctha do thógálacha painéil.<br>
+<br>
+Úsáid: deaschliceáil air chun aschur lán-neart a scoránú do chiorcaid in aice láimhe. Úsáid bloic ghlacadóra nuair atá gníomhachtú le péarla nasctha de dhíth.<br>
+<br>
+Nótaí: aschuireann sé Redstone lán-neart fad atá sé casta air.

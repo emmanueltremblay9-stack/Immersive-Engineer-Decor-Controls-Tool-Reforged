@@ -1,0 +1,7 @@
+Metalni radni sto
+Stanica za ploče
+<&recipe>Ojačani sto s utorom za čekić, mrežom 3x3 i izlazom.<br>
+<br>
+Upotreba: Koristite kao obični sto. Za IE ploče stavite Inženjerski čekić u utor, materijal u mrežu i uzmite ploču s izlaza.<br>
+<br>
+Dekoracije sa čeličnim okvirom koriste čelične ploče oblikovane ovdje.

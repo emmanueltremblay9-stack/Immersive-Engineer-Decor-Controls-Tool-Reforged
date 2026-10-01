@@ -1,0 +1,7 @@
+Avtomatična stim-kapsula
+Avarijny injektor
+<&recipe>Avtomatična stim-kapsula jest avarijno medicinsko orudje za nebezpečnu obslugu.<br>
+<br>
+Upotrěbjenje: Upotrěbi ju ručno za izcěljenje, kratku zaščitu i kratko uskorjenje. V orudovanju može se avtomatično aktivovati pri nizkom zdravju, potom vhodi v ohladženje.<br>
+<br>
+Drži jednu dostupnu prěd probami na vysokyh městah, pri odkrytyh provodah ili na neprijateljskyh rudničnyh putjah.

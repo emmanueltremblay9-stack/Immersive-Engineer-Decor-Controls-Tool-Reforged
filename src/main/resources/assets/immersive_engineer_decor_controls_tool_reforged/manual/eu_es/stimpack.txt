@@ -1,0 +1,7 @@
+Stim-pakete automatikoa
+Larrialdiko injektorea
+<&recipe>Mantentze arriskutsurako larrialdiko tresna.<br>
+<br>
+Erabilera: Eskuz sendatu, babestu eta labur bizkortzen du. Inbentarioan osasun baxuan aktibatu eta gero hozten da.<br>
+<br>
+Eraman altuerak, agerian dauden kableak edo meategi arriskutsuak probatu aurretik.

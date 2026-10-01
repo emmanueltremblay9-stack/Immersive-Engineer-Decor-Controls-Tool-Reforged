@@ -1,0 +1,5 @@
+Tisch aus imprägniertem Holz
+Werkstatteinrichtung
+<&recipe>Dieser Block ist eine praktische Werkstatteinrichtung für Arbeitsräume und Wartungsecken.<br>
+<br>
+Verwendung: Stelle ihn neben Werkbänke, Kisten und kompakte Maschinen.<br>

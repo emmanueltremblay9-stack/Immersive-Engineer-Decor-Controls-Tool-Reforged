@@ -1,0 +1,5 @@
+Stará prkna
+Staré dílenské dřevo
+<&recipe>Stará průmyslová prkna přidávají staré dílenské dřevo na podlahy, stupně, dveře a útulné vnitřní lemování.<br>
+<br>
+Použití: Hodí se na staré dílenské podlahy, schody, dveře a lemování.<br>

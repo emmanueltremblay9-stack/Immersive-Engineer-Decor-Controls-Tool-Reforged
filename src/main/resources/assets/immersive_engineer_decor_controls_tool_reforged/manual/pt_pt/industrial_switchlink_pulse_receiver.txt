@@ -1,0 +1,7 @@
+Recetor de pulsos de ligação
+Controlo vinculado
+<&recipe>Um recetor vinculado de pulsos fornece um acionamento breve de redstone para painéis remotos.<br>
+<br>
+Uso: Clica com uma pérola do Ender para criar uma pérola vinculada. Clica com o botão direito no recetor ou aciona a pérola para emitir um pulso breve.<br>
+<br>
+Observações: O pulso termina automaticamente após a duração programada.

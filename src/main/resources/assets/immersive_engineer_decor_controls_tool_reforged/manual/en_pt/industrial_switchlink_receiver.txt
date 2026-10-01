@@ -1,0 +1,7 @@
+Receiver fer switch links
+Orders through a link
+<&recipe>A linked receiver gives remote panels a full-strength redstone target, matey.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Right-click the receiver herself to toggle her by hand.<br>
+<br>
+Mind ye: Creep while usin' a linked pearl to toggle this receiver.

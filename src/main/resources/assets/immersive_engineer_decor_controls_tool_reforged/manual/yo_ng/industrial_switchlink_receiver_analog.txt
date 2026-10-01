@@ -1,0 +1,7 @@
+Olùgbà Ìsopọ̀ Oníwọ̀n
+Ìdarí tí a so pọ̀
+<&recipe>Olùgbà tí a so pọ̀ ń fún àwọn pánẹ́ẹ̀lì ìdarí ní àfojúsùn jíjìnnà tí a lè rí.<br>
+<br>
+Lílò: Tẹ̀ ẹ́ pẹ̀lú péálì Ender láti dá péálì tí a so pọ̀ sílẹ̀. Wólẹ̀ díẹ̀ nígbà lílo péálì náà láti mú olùgbà ṣiṣẹ́ láti ọ̀nà jíjìn.<br>
+<br>
+Àkíyèsí: Olùgbà yìí ń mú àmì Redstone kíkún jáde nígbà tí a mú un ṣiṣẹ́.

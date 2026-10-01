@@ -1,0 +1,5 @@
+Redstone fluido-balbula
+Fluido-lineako ekipamendua
+<&recipe>Redstone fluido-balbula fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: lerrokatu balbula nahi duzun fluxuaren norabidearekin.<br>

@@ -1,0 +1,5 @@
+Gelžbetonio blokas
+Gelžbetonis
+<&recipe>Šis blokas yra sukietėjusio betono dalis mašinų pagrindams, apsauginėms sienoms nuo sprogimų ir pakrovimo aikštelių grindims.<br>
+<br>
+Naudojimas: dėk po mašinomis, palei aptarnavimo koridorius arba visur, kur statiniui reikia sutvirtinto pagrindo.<br>

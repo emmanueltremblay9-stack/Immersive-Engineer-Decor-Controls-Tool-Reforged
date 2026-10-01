@@ -1,0 +1,7 @@
+Récepteur Switch Link
+Commande liée
+<&recipe>Un récepteur lié offre une cible redstone à puissance maximale aux panneaux distants.<br>
+<br>
+Utilisation : cliquez dessus avec une Ender perle pour créer une perle liée. Faites directement un clic droit sur le récepteur pour le basculer manuellement.<br>
+<br>
+Remarque : une perle liée bascule ce récepteur lorsqu'elle est utilisée en vous baissant.

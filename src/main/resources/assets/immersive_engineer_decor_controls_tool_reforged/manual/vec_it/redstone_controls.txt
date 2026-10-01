@@ -1,0 +1,789 @@
+Controłi de redstone
+Misuradori e equipamenti de segnal
+I apareci de controło i transforma ła redstone sconta in panełi de fàbrica ciari, sensori, indicatori, interutori, alarmi e equipamenti de segnal ligadi.<br>
+<br>
+Dòpara ste pàjine quando te fa postasion par operatori, tabele de segnalasion, circuiti de sicuresa e comande da distante.
+<np>
+Bersałio par frese
+Inpulso par un momento
+<&arrow_target>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Sensor de porta
+Controło co redstone
+<&door_sensor_switch>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton de ascensor
+Controło co redstone
+<&elevator_button>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Boton de vero
+Controło co redstone
+<&glass_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton de vero
+Controło co redstone
+<&glass_small_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton tàtiłe de vero
+Controło co redstone
+<&glass_touch_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton da màchina
+Controło co redstone
+<&industrial_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton
+Controło co redstone
+<&industrial_double_pole_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton da màchina co protesion
+Controło co redstone
+<&industrial_fenced_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton che sente i colpi
+Controło co redstone
+<&industrial_knock_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Vecio boton ornà
+Controło co redstone
+<&oldfancy_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Vecio boton ornà
+Controło co redstone
+<&oldfancy_small_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Vecio boton ornà co cadena
+Inpulso par un momento
+<&oldfancy_spring_reset_chain>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton rùstego
+Controło co redstone
+<&rustic_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton rùstego a ciòdo
+Controło co redstone
+<&rustic_nail_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Pìcolo boton rùstego
+Controło co redstone
+<&rustic_small_button>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Boton rùstego co cadena
+Inpulso par un momento
+<&rustic_spring_reset_chain>Un interutor momentaneo el dà un inpulso neto de redstone a piena potensa.<br>
+<br>
+Uso: dòparalo par far partir machine, vèrzar porte, mandar alarmi o comandar circuiti de un colpo soło.<br>
+<br>
+Da saver: el torna a posto dopo el so inpulso programà.
+<np>
+Piaca de contato de vero
+Inpulso da pression
+<&glass_contact_mat>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Contato de porta de vero
+Inpulso da pression
+<&glass_door_contact_mat>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Tapeto de contato
+Inpulso da pression
+<&industrial_contact_mat>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Tapeto de contato da porta
+Inpulso da pression
+<&industrial_door_contact_mat>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Rilevador de cascate atraverso
+Rilevamento de segnal
+<&industrial_fallthrough_detector>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Boton da piè
+Controło co redstone
+<&industrial_foot_button>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Rebalta industrial par colpi
+Inpulso da pression
+<&industrial_high_sensitive_trapdoor>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Tapeto de contato par colpi
+Inpulso da pression
+<&industrial_shock_sensitive_contact_mat>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Rebalta par colpi
+Inpulso da pression
+<&industrial_shock_sensitive_trapdoor>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Pianta de potensa rossa
+Inpulso da pression
+<&red_power_plant>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Piaca de pression rùstega
+Inpulso da pression
+<&rustic_contact_plate>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Pression rùstega da porta
+Inpulso da pression
+<&rustic_door_contact_plate>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Rilevador rùstego de cascate
+Rilevamento de segnal
+<&rustic_fallthrough_detector>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Rebalta rùstega par colpi
+Inpulso da pression
+<&rustic_high_sensitive_trapdoor>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Piaca rùstega par colpi
+Inpulso da pression
+<&rustic_shock_sensitive_plate>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Rebalta rùstega par colpi
+Inpulso da pression
+<&rustic_shock_sensitive_trapdoor>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Pianta de potensa zała
+Inpulso da pression
+<&yellow_power_plant>Un interutor de contato el manda un segnal curto quando ghe xe movimento sul pavimento o su na rebalta.<br>
+<br>
+Uso: mètelo dove łe entidà łe passa, in un coridor de servisio, un cargador o un percorso proteto.<br>
+<br>
+Da saver: el dà un inpulso curto dopo el contato co un’entidà.
+<np>
+Rełojo giornaliero de vero
+Segnal de giorno
+<&glass_day_timer>Un interutor a tenpo el segue ła parte de giorno de’l siclo de’l mondo.<br>
+<br>
+Uso: dòparalo par lànpade de corte, scuri e controłi de fàbrica da far andar soło de giorno.<br>
+<br>
+Da saver: ghe vol na dimension co łuse de’l ciel.
+<np>
+Rilevador de entidà de vero
+Rilevamento de segnal
+<&glass_entity_detector>Un rilevador de entidà el varda i movimenti visini sensa na piaca visìbiłe sul pavimento.<br>
+<br>
+Uso: colegalo a porte, lànpade, alarmi o blocagi de sicuresa de łe machine.<br>
+<br>
+Da saver: el controła na pìcola zona torno el bloco.
+<np>
+Segnal a intervałi de vero
+Inpulso a tenpo
+<&glass_interval_timer>Un interutor a tenpo conpato el dà un inpulso de redstone programà.<br>
+<br>
+Uso: dòparalo dove un pìcolo mecanismo el ga bisogno de na comanda periodica o ritardada.<br>
+<br>
+Da saver: el dòpara inpulsi de redstone programadi.
+<np>
+Rilevador lineare de vero
+Rilevamento de segnal
+<&glass_linear_entity_detector>Un rilevador de entidà el varda i movimenti visini sensa na piaca visìbiłe sul pavimento.<br>
+<br>
+Uso: colegalo a porte, lànpade, alarmi o blocagi de sicuresa de łe machine.<br>
+<br>
+Da saver: el controła na pìcola zona torno el bloco.
+<np>
+Rilevador de blochi
+Rilevamento de segnal
+<&industrial_block_detector>Un rilevador de blochi el controła se el posto davanti el xe ocupà.<br>
+<br>
+Uso: pùntalo verso ła fasa de ła màchina, ła resèrva o el posto proteto da controlar.<br>
+<br>
+Da saver: el se inpisa se el bloco davanti no’l xe aria.
+<np>
+Rełojo giornaliero
+Segnal de giorno
+<&industrial_day_timer>Un interutor a tenpo el segue ła parte de giorno de’l siclo de’l mondo.<br>
+<br>
+Uso: dòparalo par lànpade de corte, scuri e controłi de fàbrica da far andar soło de giorno.<br>
+<br>
+Da saver: ghe vol na dimension co łuse de’l ciel.
+<np>
+Rilevador de entidà
+Rilevamento de segnal
+<&industrial_entity_detector>Un rilevador de entidà el varda i movimenti visini sensa na piaca visìbiłe sul pavimento.<br>
+<br>
+Uso: colegalo a porte, lànpade, alarmi o blocagi de sicuresa de łe machine.<br>
+<br>
+Da saver: el controła na pìcola zona torno el bloco.
+<np>
+Tenporizador a intervałi
+Inpulso a tenpo
+<&industrial_interval_timer>Un interutor a tenpo conpato el dà un inpulso de redstone programà.<br>
+<br>
+Uso: dòparalo dove un pìcolo mecanismo el ga bisogno de na comanda periodica o ritardada.<br>
+<br>
+Da saver: el dòpara inpulsi de redstone programadi.
+<np>
+Sensor de łuse
+Rilevamento de segnal
+<&industrial_light_sensor>Un sensor de łuse el transforma ła luminosità locale in comanda de redstone.<br>
+<br>
+Uso: dòparalo par lànpade automàteghe, scuri e circuiti de visibiłità.<br>
+<br>
+Da saver: el se inpisa co luminosità greza 8 o pì.
+<np>
+Rilevador de tenporai
+Rilevamento de segnal
+<&industrial_lightning_sensor>Un sensor de tenporai el avia i avisi quando ghe xe troni.<br>
+<br>
+Uso: mètelo soto el ciel verto e colegalo a lànpade o alarmi.<br>
+<br>
+Da saver: ghe vol troni e acesso al ciel.
+<np>
+Rilevador lineare de entidà
+Rilevamento de segnal
+<&industrial_linear_entity_detector>Un rilevador de entidà el varda i movimenti visini sensa na piaca visìbiłe sul pavimento.<br>
+<br>
+Uso: colegalo a porte, lànpade, alarmi o blocagi de sicuresa de łe machine.<br>
+<br>
+Da saver: el controła na pìcola zona torno el bloco.
+<np>
+Sensor de piova
+Rilevamento de segnal
+<&industrial_rain_sensor>Un sensor de’l tenpo el transforma ła piova nel so posto in redstone.<br>
+<br>
+Uso: mòntalo dove el bloco sora el pol ciapar ła piova.<br>
+<br>
+Da saver: el controła ła piova sora el sensor.
+<np>
+Interutor bistàbiłe de vero
+Controło co redstone
+<&glass_rotary_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Contato tàtiłe bistàbiłe de vero
+Controło co redstone
+<&glass_touch_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Vero sensìbiłe naransa
+Vero de segnal
+<&orange_sensitiveglass>Un bloco de vero che reagisse a ła redstone el łassa védar atraverso mentre el mostra el stato de’l segnal.<br>
+<br>
+Uso: dòparalo par finestre de sala controło, panełi iluminadi e lastre de vero protete de fàbrica.<br>
+<br>
+Da saver: el canbia stato co l’energia de redstone visina.
+<np>
+Vero sensìbiłe che fa łuse
+Vero de segnal
+<&sensitive_glass_block>Un bloco de vero che reagisse a ła redstone el łassa védar atraverso mentre el mostra el stato de’l segnal.<br>
+<br>
+Uso: dòparalo par finestre de sala controło, panełi iluminadi e lastre de vero protete de fàbrica.<br>
+<br>
+Da saver: el canbia stato co l’energia de redstone visina.
+<np>
+Vero sensìbiłe cołorà
+Vero de segnal
+<&stained_sensitiveglass>Un bloco de vero che reagisse a ła redstone el łassa védar atraverso mentre el mostra el stato de’l segnal.<br>
+<br>
+Uso: dòparalo par finestre de sala controło, panełi iluminadi e lastre de vero protete de fàbrica.<br>
+<br>
+Da saver: el canbia stato co l’energia de redstone visina.
+<np>
+Misurador a bara de vero
+Misurador de segnal
+<&glass_vertical_bar_gauge>Un misurador conpato da sala controło el mostra ła potensa de redstone in modo ciaro sul paneło.<br>
+<br>
+Uso: mòntalo dove serve controlar ła potensa de redstone visina co un colpo de ocio.<br>
+<br>
+Da saver: el leze ła potensa de redstone visina da 0 a 15.
+<np>
+Misurador anałòjego
+Misurador de segnal
+<&industrial_analog_angular_gauge>Un misurador conpato da sala controło el mostra ła potensa de redstone in modo ciaro sul paneło.<br>
+<br>
+Uso: mòntalo dove serve controlar ła potensa de redstone visina co un colpo de ocio.<br>
+<br>
+Da saver: el leze ła potensa de redstone visina da 0 a 15.
+<np>
+Voltmetro
+Misurador de segnal
+<&industrial_analog_horizontal_gauge>Un misurador conpato da sala controło el mostra ła potensa de redstone in modo ciaro sul paneło.<br>
+<br>
+Uso: mòntalo dove serve controlar ła potensa de redstone visina co un colpo de ocio.<br>
+<br>
+Da saver: el leze ła potensa de redstone visina da 0 a 15.
+<np>
+Misurador numèrego
+Potensa de’l segnal ben visìbiłe
+<&industrial_small_digital_gauge>Un misurador conpato da sala controło el mostra ła potensa de redstone in modo ciaro sul paneło.<br>
+<br>
+Uso: mòntalo dove serve controlar ła potensa de redstone visina co un colpo de ocio.<br>
+<br>
+Da saver: el leze ła potensa de redstone visina da 0 a 15.
+<np>
+Misurador a tubo de vero
+Misurador de segnal
+<&industrial_tube_gauge>Un misurador conpato da sala controło el mostra ła potensa de redstone in modo ciaro sul paneło.<br>
+<br>
+Uso: mòntalo dove serve controlar ła potensa de redstone visina co un colpo de ocio.<br>
+<br>
+Da saver: el leze ła potensa de redstone visina da 0 a 15.
+<np>
+Misurador anałòjego a bara
+Misurador de segnal
+<&industrial_vertical_bar_gauge>Un misurador conpato da sala controło el mostra ła potensa de redstone in modo ciaro sul paneło.<br>
+<br>
+Uso: mòntalo dove serve controlar ła potensa de redstone visina co un colpo de ocio.<br>
+<br>
+Da saver: el leze ła potensa de redstone visina da 0 a 15.
+<np>
+Lànpada de alarme
+Indicasion de’l segnal
+<&industrial_alarm_lamp>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+Sirena de alarme
+Indicasion de’l segnal
+<&industrial_alarm_siren>La sirena de alarme xe un indicador redstone montà su la facia de un bloco. El stato alimentà el segue el segnal del bloco dove la xe tacà.<br>
+<br>
+Tachela a una facia solida e dagli corrente par controlar porte, machine, alarmi o paneli.<br>
+<br>
+La sirena se aggiorna una volta al secondo fin che el segnal resta ativo.
+<np>
+LED lanpejante
+Indicasion de’l segnal
+<&industrial_blinking_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED verda lanpejante
+Indicasion de’l segnal
+<&industrial_green_blinking_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED verda
+Indicasion de’l segnal
+<&industrial_green_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED rossa
+Indicasion de’l segnal
+<&industrial_red_blinking_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED rossa
+Indicasion de’l segnal
+<&industrial_red_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED bianca lanpejante
+Indicasion de’l segnal
+<&industrial_white_blinking_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED bianca
+Indicasion de’l segnal
+<&industrial_white_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED zała lanpejante
+Indicasion de’l segnal
+<&industrial_yellow_blinking_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+LED zała
+Indicasion de’l segnal
+<&industrial_yellow_led>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+Semàforo rùstego
+Indicasion de’l segnal
+<&rustic_semaphore>Un indicador conpato el fa védar el stato de ła redstone sconta inte ła fàbrica.<br>
+<br>
+Uso: colegalo rente al segnal par controlar porte, machine, alarmi o panełi.<br>
+<br>
+Da saver: el canbia stato quando ghe xe energia de redstone visina.
+<np>
+Interutor comparator
+Segnal de’l bloco de sostegno
+<&industrial_comparator_switch>Un interutor sensor conpato el leze el bloco dove el xe montà e el transforma ła letura in na usita sénplise de paneło.<br>
+<br>
+Uso: mòntalo su inventari, serbatoi o apareci de redstone. Quando el bloco de sostegno el dà na usita de comparator, de contenidor o de redstone, l’interutor el manda redstone a piena potensa.<br>
+<br>
+Da saver: dòparalo par far de i łivełi de deposito o de i cai sconti de linee ciare de avio e distaco.
+<np>
+Regolador de intensità
+Segnal variàbiłe
+<&industrial_dimmer>Una comanda a giro ła regola ła potensa de redstone da ła fasa de un paneło conpato.<br>
+<br>
+Uso: fa clic a destra par alsar ła usita un passo a ła volta; dopo ła potensa màsima ła torna a zero.<br>
+<br>
+Da saver: ła potensa de usita ła va da 0 a 15.
+<np>
+Boton de fermada de emergensa
+Controło co redstone
+<&industrial_estop_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Blocador de tramoza
+Controło co redstone
+<&industrial_hopper_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Interutor che sente i colpi
+Controło co redstone
+<&industrial_knock_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Łieva
+Controło co redstone
+<&industrial_lever>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Interutor da màchina co do botoni
+Controło co redstone
+<&industrial_machine_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Manigo da tirar
+Controło co redstone
+<&industrial_pull_handle>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Łieva a giro
+Controło co redstone
+<&industrial_rotary_lever>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Interutor da màchina a giro
+Controło co redstone
+<&industrial_rotary_machine_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Łieva de contato
+Controło co redstone
+<&industrial_small_lever>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Interutor
+Controło co redstone
+<&industrialswitch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Interutor de łuse
+Controło co redstone
+<&light_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Interutor a vałvoła
+Controło co redstone
+<&valve_wheel_switch>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Ricevidor a inpulso in cassa
+Comanda ligada
+<&industrial_switchlink_cased_pulse_receiver>Un ricevidor ligà a inpulso in cassa el dà ai panełi distanti un curto avio de redstone.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Fa clic a destra sul ricevidor o ativa ła perla ligada par mandar un inpulso curto.<br>
+<br>
+Da saver: l’inpulso el se ferma da soło dopo ła durada inpostada.
+<np>
+Ricevidor de ligamento in cassa
+Comanda ligada
+<&industrial_switchlink_cased_receiver>Un ricevidor ligà in cassa el dà ai panełi distanti un bersałio de redstone robusto.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Fa clic a destra direto sul ricevidor par canbiarghe stato a man.<br>
+<br>
+Da saver: na perla ligada ła canbia el stato de sto ricevidor quando te ła dòpari stando cucà.
+<np>
+Ricevidor a inpulso de ligamento
+Comanda ligada
+<&industrial_switchlink_pulse_receiver>Un ricevidor ligà a inpulso el dà ai panełi distanti un curto avio de redstone.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Fa clic a destra sul ricevidor o ativa ła perla ligada par mandar un inpulso curto.<br>
+<br>
+Da saver: l’inpulso el se ferma da soło dopo ła durada inpostada.
+<np>
+Relè a inpulso de ligamento
+Comanda ligada
+<&industrial_switchlink_pulse_relay>Un equipamento in forma de relè el dà ai panełi un ponto local de comutasion conpato.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini. Dòpara blochi ricevidori quando te ga bisogno de ativasion co na perla ligada.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Ricevidor de ligamento de interutori
+Comanda ligada
+<&industrial_switchlink_receiver>Un ricevidor ligà el dà ai panełi distanti un bersałio de redstone a piena potensa.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Fa clic a destra direto sul ricevidor par canbiarghe stato a man.<br>
+<br>
+Da saver: na perla ligada ła canbia el stato de sto ricevidor quando te ła dòpari stando cucà.
+<np>
+Ricevidor anałòjego de ligamento
+Comanda ligada
+<&industrial_switchlink_receiver_analog>Un ricevidor ligà el dà ai panełi de controło un bersałio visìbiłe da distante.<br>
+<br>
+Uso: fa clic co na perla de ender par crear na perla ligada. Dòpara sta perla stando cucà par ativar el ricevidor da distante.<br>
+<br>
+Da saver: sto ricevidor el manda un segnal de redstone pieno quando el vien ativà.
+<np>
+Relè de ligamento de interutori
+Comanda ligada
+<&industrial_switchlink_relay>Un equipamento in forma de relè el dà ai panełi un ponto local de comutasion conpato.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini. Dòpara blochi ricevidori quando te ga bisogno de ativasion co na perla ligada.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Relè anałòjego de ligamento
+Comanda ligada
+<&industrial_switchlink_relay_analog>Un equipamento in forma de relè el dà ai panełi un ponto local de comutasion conpato.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini. Dòpara blochi ricevidori quando te ga bisogno de ativasion co na perla ligada.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Perla de ligamento de interutori
+Comanda ligada
+<&switchlink_pearl>Na perla ligada ła conserva un ricevidor bersałio par i controłi de fàbrica da distante.<br>
+<br>
+Uso: fa clic su un ricevidor de ligamento de interutori co na perla de ender par crearghene una. Dòpara ła perla ligada stando cucà par ativar el ricevidor registrà.<br>
+<br>
+Da saver: el bersałio el ga da èsar cargà, inte ła stesa dimension e a portata.
+<np>
+Vecia łieva ornada
+Controło co redstone
+<&oldfancy_bistableswitch1>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Vecia łieva ornada a giro
+Controło co redstone
+<&oldfancy_bistableswitch2>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Łieva rùstega a giro
+Controło co redstone
+<&rustic_angular_lever>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Łieva rùstega
+Controło co redstone
+<&rustic_lever>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Łieva rùstega a ciòdo
+Controło co redstone
+<&rustic_nail_lever>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.
+<np>
+Łieva rùstega co do sarnìere
+Controło co redstone
+<&rustic_two_hinge_lever>Una comanda conpata ła dà a łe costrusion de fàbrica un ponto de interusion de redstone che se vede ben.<br>
+<br>
+Uso: fa clic a destra par inpisar o smorsar ła usita a piena potensa par i circuiti visini.<br>
+<br>
+Da saver: el manda redstone a piena potensa fin che el xe inpisà.

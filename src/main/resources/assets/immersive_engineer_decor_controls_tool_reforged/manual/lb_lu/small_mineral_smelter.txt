@@ -1,0 +1,5 @@
+Mineralschmelzer
+Kompakt Veraarbechtungseenheet
+<&recipe>De Mineralschmelzer verschafft Mineraler bei héijen Temperaturen op wéineg Plaz am Atelier.<br>
+<br>
+Benotzung: Féier Mineralbléck a Stroum fir d'Schmëlze bei héijer Temperatur zou.<br>

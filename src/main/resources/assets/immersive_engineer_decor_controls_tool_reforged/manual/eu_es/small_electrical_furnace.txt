@@ -1,0 +1,5 @@
+Labe elektrikoa
+Prozesatze-unitate trinkoa
+<&recipe>Labe elektrikoak FE bidezko urtze-lan trinkoak egiten ditu lantegian toki gutxi hartuta.<br>
+<br>
+Erabilera: hornitu FE energia eta urtzeko sarrera egokia.<br>

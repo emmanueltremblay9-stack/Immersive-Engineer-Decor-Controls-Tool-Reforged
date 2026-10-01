@@ -1,0 +1,5 @@
+Elektrofurnazo
+Kompakta procesunajo
+<&recipe>La elektrofurnazo exekutas kompakta fuzadolabori per FE-energio en mikra laboreyspaco.<br>
+<br>
+Uzo: Provizez FE ed apta fuzadoeniro.<br>

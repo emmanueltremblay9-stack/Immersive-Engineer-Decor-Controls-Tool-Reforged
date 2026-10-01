@@ -1,0 +1,127 @@
+Erişim Yolları
+Yürüyüş yolları ve destekler
+Çelik direkler, işlenmiş ahşap dikmeler, ızgaralar, servis yolları, korkuluklar, merdivenler, kapılar, pencereler ve ambar kapakları fabrika içinde dar alanlara sığan bakım yolları oluşturur.<br>
+<br>
+Çelik erişim yolu parçaları çelik levha kullanır. Metal çalışma masası üretin veya yerleştirin, Immersive Engineering çekicini takın ve çelik külçeleri direkler, servis yolları, pencereler, kapılar, korkuluklar ve diğer çelik süslemeler için levhaya dönüştürün.<br>
+<br>
+Makinelerin bakım erişimine, yükseltilmiş yollara, bakım boşluklarına veya daha güvenli kenarlara ihtiyaç duyduğu yerlere yerleştirin.
+<np>
+Kalın Çelik Direk
+Yapısal çerçeve parçası
+<&thick_steel_pole>Düz kalın çelik direk, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+Kalın Direk Başlığı
+Yapısal çerçeve parçası
+<&thick_steel_pole_head>Düz kalın çelik direk başlığı/ayağı, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+İnce Çelik Direk
+Yapısal çerçeve parçası
+<&thin_steel_pole>Düz ince çelik direk, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+İnce Direk Başlığı
+Yapısal çerçeve parçası
+<&thin_steel_pole_head>Düz ince çelik direk başlığı/ayağı, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+İşlenmiş Ahşap Direk
+Yapısal çerçeve parçası
+<&treated_wood_pole>Düz işlenmiş ahşap direk, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+İşlenmiş Direk Başlığı
+Yapısal çerçeve parçası
+<&treated_wood_pole_head>Düz işlenmiş ahşap direk başlığı/ayağı, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+İşlenmiş Direk Desteği
+Yapısal çerçeve parçası
+<&treated_wood_pole_support>Düz işlenmiş ahşap direk desteği, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+Çift T Çelik Destek
+Yapısal çerçeve parçası
+<&steel_double_t_support>Bu blok, makine salonları ve erişim çerçeveleri için görünür bir taşıyıcı yapı sağlar.<br>
+<br>
+Kullanım: Kirişleri, direkleri ve platform kenarlarını görünür biçimde desteklemek için döndürüp yerleştirin.<br>
+<np>
+Çelik Zemin Izgarası
+Bakım erişim parçası
+<&steel_floor_grating>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Çelik Servis Yolu
+Bakım erişim parçası
+<&steel_catwalk>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Çelik Servis Yolu Merdiveni
+Bakım erişim parçası
+<&steel_catwalk_stairs>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Üst Hizalı Çelik Servis Yolu
+Bakım erişim parçası
+<&steel_catwalk_ta>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Çelik Korkuluk
+Bakım erişim parçası
+<&steel_railing>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Çelik Tel Örgü Çit
+Bakım erişim parçası
+<&steel_mesh_fence>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Çelik Tel Örgü Çit Kapısı
+Bakım erişim parçası
+<&steel_mesh_fence_gate>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Metal Çubuk Merdiven
+Bakım erişim parçası
+<&metal_rung_ladder>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Şaşırtmalı Metal Basamaklar
+Bakım erişim parçası
+<&metal_rung_steps>Bu blok, makinelerin çevresinde kolayca görülen bakım yolları oluşturur.<br>
+<br>
+Kullanım: Makinelerin çevresinde, üst katlarda ve bakım boşluklarında bakım erişimi sağlamak için yerleştirin.<br>
+<np>
+Çelik Çerçeveli Pencere
+Korunan görüş hattı
+<&steel_framed_window>Bu blok, güçlendirilmiş fabrika yapısına uyum sağlarken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Oyuncuların makineleri koruyucu bir engelin ardından görmesi gereken 1 blok genişliğindeki duvar açıklıklarına yerleştirin.<br>
+<np>
+Metal Sürgülü Kapı
+Sanayi tipi erişim noktası
+<&metal_sliding_door>Bu blok; servis odaları, boşluklar, çatılar ve makine muhafazaları için sağlam bir erişim noktası sağlar.<br>
+<br>
+Kullanım: Yapıda kontrollü bir bakım açıklığı gereken yere takın.<br>
+<np>
+Demir Ambar Kapağı
+Sanayi tipi erişim noktası
+<&iron_hatch>Bu blok; servis odaları, boşluklar, çatılar ve makine muhafazaları için sağlam bir erişim noktası sağlar.<br>
+<br>
+Kullanım: Yapıda kontrollü bir bakım açıklığı gereken yere takın.<br>

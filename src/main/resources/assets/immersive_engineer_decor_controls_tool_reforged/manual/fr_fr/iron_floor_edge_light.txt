@@ -1,0 +1,5 @@
+Lumière encastrée au sol
+Éclairage de travail compact
+<&recipe>Ce bloc fournit un éclairage industriel compact aux couloirs, passerelles et zones de travail.<br>
+<br>
+Utilisation : fixez-le aux plafonds, aux murs ou aux bords qui nécessitent un éclairage de travail clair.<br>

@@ -1,0 +1,5 @@
+Fertichte grúsierde
+Grûnbedekking foar wurkterreinen
+<&recipe>Dit blok jout wurkplakken bûten in ferticht, fertrape oerflak.<br>
+<br>
+Gebrûk: Lis it om laaddoarren, bûtentanks en masinehiemen hinne.<br>

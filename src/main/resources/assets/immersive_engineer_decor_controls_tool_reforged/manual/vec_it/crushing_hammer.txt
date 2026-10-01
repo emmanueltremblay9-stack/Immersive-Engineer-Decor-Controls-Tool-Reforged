@@ -1,0 +1,5 @@
+Marteło par sbrisiolar minerałi
+Atreso da sbrisiolar a man
+<&recipe>El martelo spaca-mineral xe un atreso a man par lavorar ferro e oro al inizio.<br>
+<br>
+Doparalo con fero grezo, oro grezo, mineral de fero o oro e le varianti deepslate par polvere Immersive Engineering. El martelo perde durata, torna in griglia fin che se rompe, se consuma cavando e sbalza i bersagli.

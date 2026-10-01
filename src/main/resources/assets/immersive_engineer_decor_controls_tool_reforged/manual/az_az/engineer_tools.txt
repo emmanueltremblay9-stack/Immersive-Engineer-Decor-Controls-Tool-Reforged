@@ -1,0 +1,99 @@
+Mühəndis alətləri
+Daşınan emalatxana avadanlığı
+Mühəndis alətləri dəsti dekor və idarəetmə bloklarını izah edən eyni təlimata əl avadanlığı, mədən nişanlayıcıları, təcili sərf materialları, səyyar qida və kiçik material emalı vasitələri əlavə edir.<br>
+<br>
+Bu alətlər tam təchiz olunmuş emalatxanadan uzaqda işləmək üçündür: yolu nişanlayın, ləvazimat daşıyın, səhvlərin nəticələrindən qurtulun və kiçik emal işlərini yerində bitirin.
+<np>
+REDIA aləti
+Almaz örtüklü yardımçı alət
+<&redia_tool>REDIA aləti sürətli torpaq işləri üçün davamlı səyyar alətdir. Tarla ərazisi yaratmaq üçün becərilə bilən torpaqda istifadə edin.<br>
+<br>
+Yanınızda məşəllər olduqda sabit səthdə istifadə edin; inventarınızdan məşəl nişanı yerləşdirəcək və REDIA-nı köhnəltməyəcək. Torpaq işi, qırxma, balta işi və ağac kəsmə davamlılıq sərf edir.
+<np>
+Filiz əzmə çəkici
+Əl ilə əzmə aləti
+<&crushing_hammer>Filiz əzmə çəkici erkən dəmir və qızıl işi üçün əl emalı alətidir.<br>
+<br>
+İstifadə: Xam dəmir, xam qızıl, dəmir filizi, dərin şist dəmir filizi, qızıl filizi və ya dərin şist qızıl filizi ilə hazırlayaraq Immersive Engineering dəmir və ya qızıl tozu alın. Çəkicin davamlılığı azalır və qırılanadək toruna qayıdır.<br>
+<br>
+Mədən çıxararkən də köhnəlir və yaxın döyüşdə hədəfləri geri itələyə bilər.
+<np>
+İzləyici
+Saxlanmış mövqe nişanı
+<&tracker>İzləyici blok mövqeyini birbaşa əşyada saxlayır.<br>
+<br>
+İstifadə: Ölçünü və koordinatları saxlamaq üçün bloka klikləyin. Məsləhət saxlanmış mövqeyi göstərir. Hədəfi silmək üçün İzləyicini əyilərək istifadə edin.<br>
+<br>
+Alətlər və materiallarla qayıtmazdan əvvəl maşınları, tunel qollarını, uzaq idarəetmələri və ya yarımçıq tikintiləri nişanlamaq üçün istifadə edin.
+<np>
+Ariadna kömürü
+Mədən yolu nişanlayıcısı
+<&ariadne_coal>Ariadna kömürü sabit mədən səthlərinə tez qara ox yol nişanları qoyur. Növbəti döngəni, çıxışı və ya ayrıcı nişanlamaq üçün bütöv səthdə istifadə edin; nişan kliklənən üzdə diaqonallar da daxil olmaqla səkkiz istiqaməti dəstəkləyir.<br>
+<br>
+Ariadna kömürü 100 istifadəyə çatan təkrar işlənən nişanlama alətidir. Hər uğurlu nişan yerləşdirmə bir davamlılıq vahidi sərf edir. Uyğun olmayan səthlər əşyanı köhnəltmək əvəzinə rədd edilir.
+<np>
+Avtomatik stim paketi
+Təcili inyektor
+<&stimpack>Avtomatik stim paketi təhlükəli texniki xidmət üçün təcili bərpa əşyasıdır.<br>
+<br>
+İstifadə: Sağalmaq, qısa qorunma və hərəkət sürəti almaq üçün əl ilə istifadə edin. İnventarda daşındıqda aşağı sağlamlıqda avtomatik işə düşə, sonra soyuma müddətinə keçə bilər.<br>
+<br>
+Hündür yerləri, açıq naqilləri və ya düşmən mədən yollarını sınaqdan keçirməzdən əvvəl birini hazır saxlayın.
+<np>
+Yuxu kisəsi
+Daşınan istirahət dəsti
+<&sleeping_bag>Yuxu kisəsi yataqdan uzaq sahə işi üçün havaya davamlı istirahət dəstidir.<br>
+<br>
+İstifadə: Üst Dünyada gecə istifadə edərək səhərə qədər dincəlin. Doğulma nöqtəsini təyin etmir və dəyişmir.<br>
+<br>
+Gündüz istifadəsini, yaxınlıqdakı canavarlarla təhlükəli mühiti və təhlükəsiz istirahətə uyğun olmayan ölçüləri rədd edir. Hər uğurlu istirahət kisəni köhnəldir.
+<np>
+Material saxlama qutusu
+Tikinti təchizatı qutusu
+<&material_box>Material saxlama qutusu bir adi, dəyişdirilməmiş, yığıla bilən tikinti materialından böyük ehtiyat daşıyır.<br>
+<br>
+İstifadə: Qutunu əsas əldə, material yığınını digər əldə tutaraq yükləyin. Bir yığın çıxarmaq üçün digər əl boşkən qutudan istifadə edin.<br>
+<br>
+Qutu 512-dək əşya saxlayır, eyni anda yalnız bir material növü qəbul edir, iç-içə qutuları, yığılmayan avadanlığı və dəyişdirilmiş, adlandırılmış və ya məlumatlı yığınları rədd edir; məzmunu məsləhətdə göstərir.
+<np>
+Dalğıc hava kapsulu
+Təcili hava ehtiyatı
+<&diving_capsule>Dalğıc hava kapsulu sualtı iş üçün təcili hava əşyasıdır.<br>
+<br>
+İstifadə: Havanı bərpa etmək üçün əl ilə istifadə edin. İnventarda daşındıqda hava demək olar bitəndə avtomatik işə düşə, sonra soyuma müddətinə keçə bilər.<br>
+<br>
+Onu su basmış mədənlər, sualtı borular və nasos otağı təmiri üçün daşıyın.
+<np>
+Muslee Baton Presi
+Qida presi
+<&musli_bar_press>Muslee Baton Presi adi ərzaqları yığcam sahə payına çevirir.<br>
+<br>
+İstifadə: Çörək, alma və buğda, qarpız, balqabaq, çuğundur və ya sənaye çətənə toxumu daşıyın, sonra presdən istifadə edin. Uğurlu pres hər inqrediyentdən birini sərf edir, çıxış yerini yoxlayır, dörd Muslee Melange batonu yaradır və presə zərər verir.<br>
+<br>
+İnqrediyent çatmırsa və ya inventarda yer yoxdursa, heç nə sərf olunmur.
+<np>
+Muslee Melange enerji batonu
+Sürətli emalatxana qəlyanaltısı
+<&musli_bar>Muslee Melange enerji batonu çörək, toxum və meyvədən hazırlanan yığcam qidadır.<br>
+<br>
+İstifadə: İdarəetmə qurğuları, borular, platformalar və ya uzun maşın otağı xətləri qurarkən sahə yeməyi kimi yeyin.
+<np>
+Zehin sıxıcısı
+Təcrübə sıxlaşdırıcısı
+<&charged_lapis_squeezer>Zehin sıxıcısı inventarınızdakı bir lapis lazulini və bir təcrübə səviyyəsini yüklənmiş lapisə çevirir.<br>
+<br>
+Hər uğurlu çevrilmədə proses istifadəçiyə zərər vurur, aclığı artıran tükənmə yaradır və qısa müddətə kor edir. Lapis və ya XP olmadıqda, yaxud istifadəçi ölümə çox yaxın olduqda işləmir.
+<np>
+Yüklənmiş lapis
+Saxlanılan təcrübə
+<&charged_lapis>Yüklənmiş lapis bir təcrübə səviyyəsi saxlayır. Səviyyəni geri almaq, aktiv təsirləri silmək və az miqdarda sağlamlıq bərpa etmək üçün istehlak edin.<br>
+<br>
+Əvvəlcə Zehin sıxıcısı hazırlayın; yüklənmiş lapis lapis və XP olduğu halda həmin aləti işlətməklə yaradılır.
+<np>
+İri dəmir qırıntıları
+Yenidən qurulmuş hazırlama dəstində istifadə edilən mühəndis aləti materialı.
+<&iron_grit>Dəmir külçələrə əridilə<br>bilər, lakin qabaqcıl<br>material emalına uyğun deyil.
+<np>
+İri qızıl qırıntıları
+Yenidən qurulmuş hazırlama dəstində istifadə edilən mühəndis aləti materialı.
+<&gold_grit>Qızıl külçələrə əridilə<br>bilər, lakin qabaqcıl<br>material emalına uyğun deyil.

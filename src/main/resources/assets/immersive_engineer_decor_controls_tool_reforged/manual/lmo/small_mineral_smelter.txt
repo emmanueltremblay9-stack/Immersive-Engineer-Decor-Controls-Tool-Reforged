@@ -1,0 +1,5 @@
+Fornas per fond mineraj
+Unità compata de lavorazzion
+<&recipe>La Fornas per fond mineraj la lavora i mineraj a temperatura volta in d’un spazzi piscinin de laboratori.<br>
+<br>
+Dà bloch de mineral e energia per la fusion a temperatura volta.<br>

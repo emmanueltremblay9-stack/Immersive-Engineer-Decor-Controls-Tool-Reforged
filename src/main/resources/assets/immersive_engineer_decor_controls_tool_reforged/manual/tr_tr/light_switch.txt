@@ -1,0 +1,7 @@
+Işık Anahtarı
+Redstone Kontrolü
+<&recipe>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.

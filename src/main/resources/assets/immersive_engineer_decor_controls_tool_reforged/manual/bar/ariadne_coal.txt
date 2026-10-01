@@ -1,0 +1,7 @@
+Ariadne-Kuin
+Wegmarkierung fia Minen
+<&recipe>Ariadne-Kuin is a schneller Wegmarkierer fia Schächt, Seitenstolln und vorübergehende Arbeit unter da Eadn.<br>
+<br>
+So geht's: Benutz's auf ana festen Blockseit, damit dort a schwarzer Pfeil entsteht. De Markierung richtet si nachm Klickpunkt und kennt acht Richtunga, a schräg. So markierst Abbiegunga, Ausgäng, Sackgassn und Versorgungsweg, ohne extra Wegschuidln mitzuschleppn.<br>
+<br>
+Ariadne-Kuin is a wiederverwendbars Markierwerkzeig mit 100 Benutzunga. Jede erfolgreiche Markierung kostet oan Haltbarkeitspunkt. Unpassende Flächen werdn abglehnt, ohne de Sach abzunutzn.

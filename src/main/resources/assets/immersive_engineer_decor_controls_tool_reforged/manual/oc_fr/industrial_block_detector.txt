@@ -1,0 +1,7 @@
+Detector de blòcs
+Deteccion de senhal
+<&recipe>Un detector de blòcs verifica se l’espaci davant sa fàcia es ocupat.<br>
+<br>
+Utilizacion : orienta-lo cap a la fàcia de maquina, la resèrva o l’espaci protegit de susvelhar.<br>
+<br>
+Nòta : s’alimenta quand lo blòc de davant es pas d’aire.

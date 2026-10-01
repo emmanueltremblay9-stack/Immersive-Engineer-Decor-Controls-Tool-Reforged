@@ -1,0 +1,7 @@
+Ricevidôr analogjic di leam
+Comant leât
+<&recipe>Un ricevidôr leât al da ai panei di control une destinazion visibile a distance.<br>
+<br>
+Ûs: fâs clic cuntune perle dal End par creâ une perle leade. Dopre chê perle biel che tu sês sbassât par ativâ il ricevidôr a distance.<br>
+<br>
+Notis: chest ricevidôr al mande un segnâl di redstone plen cuant che al ven ativât.

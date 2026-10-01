@@ -1,0 +1,5 @@
+Styrktur betongflísakubbi
+Styrkt betong
+<&recipe>Styrktu betongflísatrappurnar eru herdir betongpartar til maskinupallar, spreingiverjumúrar og gólv á fermiplássum.<br>
+<br>
+Nýtsla: Brúka hann undir maskinum, fram við viðlíkahaldsgongum ella har, sum bygninginum tørvar ein styrktan botn.<br>

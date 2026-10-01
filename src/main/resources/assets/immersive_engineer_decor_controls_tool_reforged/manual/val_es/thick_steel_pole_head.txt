@@ -1,0 +1,5 @@
+Cap de pal gruixut
+Peça de bastidor estructural
+<&recipe>El cap/base de pal recte gruixut d’acer aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>

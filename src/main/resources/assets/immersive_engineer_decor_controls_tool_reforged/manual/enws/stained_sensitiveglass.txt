@@ -1,0 +1,7 @@
+Coloured Sensitive Glass
+Glass for Signals
+<&recipe>Glass that answers redstone preserves thy view whilst showing the signal’s state.<br>
+<br>
+Use: Fit it in control-chamber windows, lighted panels and guarded glasswork of the manufactory.<br>
+<br>
+Note: Redstone power nearby changes its state.

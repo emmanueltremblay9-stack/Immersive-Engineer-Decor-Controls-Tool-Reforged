@@ -1,0 +1,127 @@
+Pasi de acesso
+Pasarełe e sostegni
+Pałi de assàl, pałi tratadi, grate, pasarełe, ringhiere, scałioni, porte, finestre e rebalte i forma pasi de servisio conpati dentro łe fàbriche.<br>
+<br>
+I tochi de acesso de assàl i dòpara piastre de assàl. Fàbrica o meti zo un Banco par łaorar i metałi, inserissi un marteło de Immersive Engineering e bati i lingoti de assàl par far piastre da doparar par pałi, pasarełe, finestre, porte, ringhiere e altri decori de assàl.<br>
+<br>
+Mètili dove łe machine łe ga bisogno de acesso par el servisio, pasi alti, pasi verticałi de manutension o bordi pì seguri.
+<np>
+Pało grosso de assàl
+Toco de strutura
+<&thick_steel_pole>El Pało drito grosso de assàl el dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Testa de pało grosso
+Toco de strutura
+<&thick_steel_pole_head>Ła Testa/piè de pało drito grosso de assàl ła dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Pało fin de assàl
+Toco de strutura
+<&thin_steel_pole>El Pało drito fin de assàl el dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Testa de pało fin
+Toco de strutura
+<&thin_steel_pole_head>Ła Testa/piè de pało drito fin de assàl ła dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Pało de łenjo tratà
+Toco de strutura
+<&treated_wood_pole>El Pało drito de łenjo tratà el dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Testa de pało tratà
+Toco de strutura
+<&treated_wood_pole_head>Ła Testa/piè de pało drito de łenjo tratà ła dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Suporto de pało tratà
+Toco de strutura
+<&treated_wood_pole_support>El Suporto de pało drito de łenjo tratà el dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Suporto de assàl a dopia T
+Toco de strutura
+<&steel_double_t_support>Sto bloco el dà na strutura visìbiłe a łe sale de machine e ai tełari de acesso.<br>
+<br>
+Uso: gìralo e mètelo come rinforso visìbiłe par travi, pałi e bordi de piattaforma.<br>
+<np>
+Grata da pavimento de assàl
+Equipamento de acesso par el servisio
+<&steel_floor_grating>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Pasareła de assàl
+Equipamento de acesso par el servisio
+<&steel_catwalk>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Scałe de pasareła de assàl
+Equipamento de acesso par el servisio
+<&steel_catwalk_stairs>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Pasareła de assàl alsada
+Equipamento de acesso par el servisio
+<&steel_catwalk_ta>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Ringhiera de assàl
+Equipamento de acesso par el servisio
+<&steel_railing>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Recinsion de rete de assàl
+Equipamento de acesso par el servisio
+<&steel_mesh_fence>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Sarajo de rete de assàl
+Equipamento de acesso par el servisio
+<&steel_mesh_fence_gate>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Scałion co pioli de metal
+Equipamento de acesso par el servisio
+<&metal_rung_ladder>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Scałini de metal sfasadi
+Equipamento de acesso par el servisio
+<&metal_rung_steps>Sto bloco el forma percorsi de servisio che se reconosse ben torno łe machine.<br>
+<br>
+Uso: mètelo par dar acesso a ła manutension torno łe machine, ai piani de sora e nei pasi verticałi de servisio.<br>
+<np>
+Finestra co tełaro de assàl
+Vista proteta
+<&steel_framed_window>Sto bloco el łassa védar atraverso e el va ben co ła costrusion rinforzada de fàbrica.<br>
+<br>
+Uso: mètelo in un buso de muro da 1 bloco dove i zugadori i ga da védar łe machine atraverso na bariera proteta.<br>
+<np>
+Porta scorevołe de metal
+Ponto de acesso industrial
+<&metal_sliding_door>Sto bloco el dà un acesso robusto a łe sale de servisio, ai pasi verticałi, ai coèrti e ai recinti de łe machine.<br>
+<br>
+Uso: instàlalo dove ła costrusion ła ga bisogno de na verta controłada par ła manutension.<br>
+<np>
+Rebalta de fero roversa
+Ponto de acesso industrial
+<&iron_hatch>Sto bloco el dà un acesso robusto a łe sale de servisio, ai pasi verticałi, ai coèrti e ai recinti de łe machine.<br>
+<br>
+Uso: instàlalo dove ła costrusion ła ga bisogno de na verta controłada par ła manutension.<br>

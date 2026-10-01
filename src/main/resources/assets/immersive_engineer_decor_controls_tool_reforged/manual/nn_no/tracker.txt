@@ -1,0 +1,7 @@
+Sporingsenhet
+Lagret posisjonsmerke
+<&recipe>Sporeren lagrer en blokkposisjon direkte i gjenstanden.<br>
+<br>
+Klikk en blokk for å lagre dimensjon og koordinater. Verktøytipset viser posisjonen. Snikbruk sporeren for å slette målet.<br>
+<br>
+Bruk den til å merke maskiner, tunneler, fjernkontroller eller uferdige bygg.

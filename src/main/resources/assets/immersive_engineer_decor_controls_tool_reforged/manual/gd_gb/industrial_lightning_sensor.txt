@@ -1,0 +1,7 @@
+Mothaiche stoirme
+Mothachadh chomharran
+<&recipe>Cuiridh mothaiche stoirme rabhaidhean an gnìomh nuair a bhios tàirneanach ann.<br>
+<br>
+Cleachdadh: cuir e fon adhar fhosgailte agus ceangail e ri lampaichean no rabhaidhean.<br>
+<br>
+Nòtaichean: feumaidh tàirneanach a bhith ann agus an t-adhar os a chionn a bhith fosgailte.

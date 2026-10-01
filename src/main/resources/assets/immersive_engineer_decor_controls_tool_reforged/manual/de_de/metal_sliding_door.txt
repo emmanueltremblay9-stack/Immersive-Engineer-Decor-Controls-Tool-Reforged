@@ -1,0 +1,5 @@
+Metallschiebetür
+Industrieller Zugang
+<&recipe>Dieser Block bietet einen robusten Zugang zu Betriebsräumen, Schächten, Dächern und Maschinengehäusen.<br>
+<br>
+Verwendung: Baue ihn dort ein, wo eine kontrollierbare Wartungsöffnung benötigt wird.<br>

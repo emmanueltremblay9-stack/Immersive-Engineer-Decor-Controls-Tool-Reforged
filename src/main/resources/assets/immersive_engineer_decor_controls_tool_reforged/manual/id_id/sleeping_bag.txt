@@ -1,0 +1,7 @@
+Kantong Tidur
+Perlengkapan istirahat portabel
+<&recipe>Kantong tidur adalah perangkat istirahat tahan cuaca untuk pekerjaan jauh dari ranjang.<br>
+<br>
+Penggunaan: Pakai pada malam hari di Overworld untuk beristirahat sampai pagi. Ini tidak mengatur atau memindahkan titik kemunculanmu.<br>
+<br>
+Kantong menolak penggunaan siang hari, lingkungan berbahaya dengan monster di dekatnya, dan dimensi yang tidak cocok untuk istirahat aman. Setiap istirahat berhasil mengurangi ketahanannya.

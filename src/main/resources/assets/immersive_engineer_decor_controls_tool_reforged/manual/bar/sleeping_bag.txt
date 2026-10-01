@@ -1,0 +1,7 @@
+Schlafsack
+Tragbars Ruahset
+<&recipe>Da Schlafsack is a wetterfests Ruahset für Feldarbeit weit weg vom Bett.<br>
+<br>
+Benutzung: Nachts in da Oberwelt bis in da Fruah ruhn. Er setzt oda verschiebt koan Spawnpunkt.<br>
+<br>
+Am Tag, bei Monstern in da Näh und in ungeeigneten Dimensionen geht er net. Jede erfolgreiche Ruah nutzt eam ab.

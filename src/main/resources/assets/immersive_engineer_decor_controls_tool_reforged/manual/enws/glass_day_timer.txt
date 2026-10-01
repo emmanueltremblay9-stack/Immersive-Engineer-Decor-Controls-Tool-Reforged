@@ -1,0 +1,7 @@
+Glass Clock for the Hours of Day
+Signal by Daylight
+<&recipe>A time switch follows the daylight part of the world’s cycle.<br>
+<br>
+Use: Govern yard lamps, shutters and manufactory controls that work by day alone.<br>
+<br>
+Note: The dimension must have skylight.

@@ -1,0 +1,5 @@
+Etiketli yeşik
+Dəyişdirilə bilən ehtiyat etiketi
+<&recipe>Bu etiketli yeşik anbarda aydın çeşidləmə üçün hazırlanıb. Ön lövhəsi kiçik emalatxana nişanı kimi dəyişdirilə bilər.<br>
+<br>
+İstifadə: Yeşik etiketini dəyişmək üçün etiket lövhəsinə sağ klikləyin. Avadanlıq, hissələr və texniki xidmət ləvazimatlarının anbarını açmaq üçün yeşiyin qalan hissəsinə sağ klikləyin.<br>

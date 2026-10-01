@@ -1,0 +1,7 @@
+Casse pai materiâi
+Casse di scortis pe costruzion
+<&recipe>La scjatule dai materiâi e puarte une grande risierve di un sôl materiâl di costruzion sempliç, no modificât e impilabil.<br>
+<br>
+Ûs: Ten la scjatule te man principâl e une pile di materiâl te altre man par cjariâle. Doprele cu la altre man vueide par tirâ fûr une pile.<br>
+<br>
+E ten fin a 512 ogjets di un sôl gjenar. E refude scjatulis une dentri di chê altre, furniment no impilabil e pilis tornadis a nomenâ o cun dâts modificâts; il tooltip al mostre il contignût.

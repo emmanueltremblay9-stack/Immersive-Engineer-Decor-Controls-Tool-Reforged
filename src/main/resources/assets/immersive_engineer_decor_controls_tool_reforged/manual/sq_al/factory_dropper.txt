@@ -1,0 +1,5 @@
+Hedhës fabrike
+Pajisje ndihmëse punishteje
+<&recipe>Ky bllok nxjerr objektet e ruajtura nga një faqe e drejtuar.<br>
+<br>
+Përdorimi: drejto faqen e përparme te pika e lëshimit, mbush vendet e brendshme dhe rregullo forcën, këndin, vonesën, logjikën e filtrit dhe mënyrën e redstonit në ekran.<br>

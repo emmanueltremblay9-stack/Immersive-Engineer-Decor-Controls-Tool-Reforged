@@ -1,0 +1,7 @@
+Jam Pemasa Siang
+Isyarat siang
+<&recipe>Suis pemasa mengikuti bahagian siang dalam kitaran dunia.<br>
+<br>
+Penggunaan: Gunakan untuk lampu halaman, pengatup dan kawalan kilang yang hanya berjalan pada siang hari.<br>
+<br>
+Nota: Memerlukan dimensi dengan cahaya langit.

@@ -1,0 +1,5 @@
+Medžių kirtiklis
+Dirbtuvių pagalbininkas
+<&recipe>Mažas medžių kirtiklis yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: nukreipk į užaugusius medžius ir iškritusius daiktus surink atskirai.<br>

@@ -1,0 +1,5 @@
+Laboratorijska peć
+Kompaktna jedinica za obradu
+<&recipe>Laboratorijska peć obavlja kompaktno taljenje na kruto gorivo na maloj površini radionice.<br>
+<br>
+Uporaba: koristi kruto gorivo za manje serije taljenja.<br>

@@ -1,0 +1,7 @@
+Analógové prepojovacie relé
+Prepojené ovládanie
+<&recipe>Prvok v podobe relé poskytuje panelovým zostavám kompaktné miesto miestneho spínania.<br>
+<br>
+Použitie: Pravým tlačidlom prepínaj výstup plnej sily pre blízke obvody. Na spúšťanie prepojenou perlou používaj bloky prijímačov.<br>
+<br>
+Poznámky: Keď je zapnutý, vysiela redstone plnej sily.

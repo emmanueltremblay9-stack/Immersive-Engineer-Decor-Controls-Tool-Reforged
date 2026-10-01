@@ -1,0 +1,7 @@
+Light Sensor
+Signal sensing
+<&recipe>A light sensor converts local brightness into redstone control.<br>
+<br>
+Usage: Use it for automatic lamps, shutters, and visibility circuits.<br>
+<br>
+Notes: Powers at raw brightness 8 or higher.

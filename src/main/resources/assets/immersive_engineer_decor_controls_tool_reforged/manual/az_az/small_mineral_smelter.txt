@@ -1,0 +1,5 @@
+Mineral əridici
+Yığcam emal qurğusu
+<&recipe>Mineral əridici emalatxanada kiçik yer tutaraq yüksək istiliklə mineral emalı aparır.<br>
+<br>
+İstifadə: Yüksək istiliklə əritmə üçün mineral bloklar və enerji verin.<br>

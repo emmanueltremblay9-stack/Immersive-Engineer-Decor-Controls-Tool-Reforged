@@ -1,0 +1,7 @@
+Impulssühenduse vastuvõtja
+Ühendatud juhtimine
+<&recipe>Ühendatud impulssvastuvõtja annab kaugpaneelidele lühikese redstone'i käivituse.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Lühikese impulsi andmiseks paremklõpsa vastuvõtjal või aktiveeri ühendatud pärl.<br>
+<br>
+Märkus: Impulss lähtestub pärast määratud kestust ise.

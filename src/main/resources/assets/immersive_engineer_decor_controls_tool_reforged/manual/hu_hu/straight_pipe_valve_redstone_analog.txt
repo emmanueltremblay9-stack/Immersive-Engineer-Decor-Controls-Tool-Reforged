@@ -1,0 +1,5 @@
+Analóg folyadékszelep
+Folyadékvezeték-szerelvények
+<&recipe>Az analóg folyadékszelep kompakt folyadékvezeték-elem kis tartályokhoz, csőszakaszokhoz, gyűjtőpontokhoz és redstone-vezérelt áramláshoz.<br>
+<br>
+Használat: igazítsd a szelepet a kívánt áramlási irányhoz.<br>

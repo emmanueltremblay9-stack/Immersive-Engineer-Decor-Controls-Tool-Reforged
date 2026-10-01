@@ -1,0 +1,7 @@
+Zbulues blloqesh
+Zbulim sinjali
+<&recipe>Një zbulues blloqesh kontrollon nëse hapësira përballë është e zënë.<br>
+<br>
+Përdorimi: drejtoje te faqja e makinerisë, buferi ose hapësira e ruajtur që do të vëzhgosh.<br>
+<br>
+Shënim: jep fuqi kur blloku përballë nuk është ajër.

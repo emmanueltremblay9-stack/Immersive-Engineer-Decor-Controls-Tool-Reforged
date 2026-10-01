@@ -1,0 +1,5 @@
+Shkallare të vjetra druri
+Dru i vjetruar punishteje
+<&recipe>Shkallaret e vjetra industriale prej druri shtojnë dru të vjetruar punishteje për dysheme, këmbëza, dyer dhe zbukurime të ngrohta të brendshme.<br>
+<br>
+Përdorimi: përdore për dysheme të vjetra punishteje, shkallare, dyer dhe zbukurime.<br>

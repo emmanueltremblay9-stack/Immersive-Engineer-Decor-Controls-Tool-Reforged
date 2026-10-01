@@ -1,0 +1,5 @@
+Blòc de teulat escur de bardèls
+Pèça de teulat usat pel temps
+<&recipe>Aqueste blòc forma de linhas de teulat escuras e practicas per los obradors e los cobèrts industrials.<br>
+<br>
+Utilizacion : combina las pèças per crear de perfils de teulat versemblants.<br>

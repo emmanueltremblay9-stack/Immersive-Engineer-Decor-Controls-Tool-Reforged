@@ -1,0 +1,5 @@
+Betonarme Karo
+Güçlendirilmiş beton
+<&recipe>Bu blok; makine kaideleri, patlama duvarları ve yükleme alanı zeminleri için sertleştirilmiş beton parçasıdır.<br>
+<br>
+Kullanım: Makinelerin altında, servis koridorlarında veya yapının güçlendirilmiş bir tabana ihtiyaç duyduğu her yerde kullanın.<br>

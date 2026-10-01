@@ -1,0 +1,7 @@
+Prensa de barras de müsli
+Prensa de alimentos
+<&recipe>A prensa Muslee transforma alimentos comuns em rações compactas.<br>
+<br>
+Tenha pão, uma maçã e sementes de trigo, melancia, abóbora, beterraba ou cânhamo industrial e use a prensa. Ela consome um de cada ingrediente, verifica o espaço, cria quatro barras e sofre dano.<br>
+<br>
+Se faltar ingrediente ou espaço, nada é consumido.

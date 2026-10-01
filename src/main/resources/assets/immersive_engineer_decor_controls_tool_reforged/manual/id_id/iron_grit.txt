@@ -1,0 +1,3 @@
+Butiran Besi Kasar
+Bahan perkakas insinyur yang dipakai dalam kumpulan resep hasil rekonstruksi.
+<&recipe>Dapat dilebur menjadi besi batangan,<br>tetapi tidak cocok untuk pemrosesan<br>bahan tingkat lanjut.

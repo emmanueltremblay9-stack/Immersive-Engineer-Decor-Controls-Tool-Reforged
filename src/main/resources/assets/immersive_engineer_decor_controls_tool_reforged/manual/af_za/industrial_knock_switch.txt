@@ -1,0 +1,7 @@
+Klopskakelaar
+Redstone-beheer
+<&recipe>’n Kompakte beheertoebehoor gee fabrieksgeboue ’n duidelike redstone-skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.

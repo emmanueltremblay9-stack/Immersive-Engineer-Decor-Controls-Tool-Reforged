@@ -1,0 +1,3 @@
+Rough Gold Grit
+Sareman's tool stuff used by the rebuilt crafting set.
+<&recipe>Smelts into Gold Ingots, but<br>will not work with<br>further kinds of stuff working.

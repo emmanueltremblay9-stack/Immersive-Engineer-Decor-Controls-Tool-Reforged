@@ -1,0 +1,5 @@
+Mineraalsmeltoven
+Kompakte ferwurkingsienheid
+<&recipe>De mineraalsmeltoven ferwurket mineralen by hege temperatueren en nimt mar in bytsje plak yn de wurkpleats yn.<br>
+<br>
+Gebrûk: Fier mineraalblokken en enerzjy oan foar smeltwurk by hege temperatueren.<br>

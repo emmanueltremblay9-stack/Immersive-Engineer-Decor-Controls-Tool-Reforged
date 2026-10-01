@@ -1,0 +1,7 @@
+Snúningshandtak
+Reyðgrýtisstýring
+<&recipe>Ein lítil stýripartur gevur verksmiðjubygging ein greiðan reyðgrýtisrofa.<br>
+<br>
+Nýtsla: Høgraklikk fyri at tendra ella sløkkja úttak við fullari styrki til rásir nærhendis.<br>
+<br>
+Viðmerking: Sendir reyðgrýti við fullari styrki, meðan hann er tendraður.

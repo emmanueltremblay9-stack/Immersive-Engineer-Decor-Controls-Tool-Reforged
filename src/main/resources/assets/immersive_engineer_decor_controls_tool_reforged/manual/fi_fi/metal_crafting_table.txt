@@ -1,0 +1,7 @@
+Metallinen valmistuspöytä
+Levytyöpiste
+<&recipe>Vahvistettu piste, jossa on vasarapaikka, täysi 3x3-ruudukko ja tulos.<br>
+<br>
+Käyttö: Kuten tavallinen pöytä. IE-levyihin Insinöörin vasara työkalupaikkaan ja materiaali ruudukkoon; ota levy tuloksesta.<br>
+<br>
+Teräskehyskoristeet käyttävät tässä muotoiltuja teräslevyjä.

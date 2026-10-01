@@ -1,0 +1,7 @@
+Skeakelferbiningspearel
+Keppele bestjoering
+<&recipe>In keppele pearel bewarret in ûntfangerdoel foar fabryksbestjoering op ôfstân.<br>
+<br>
+Gebrûk: Klik mei in Ender-pearel op in ûntfanger foar skeakelferbiningen om sa'n pearel te meitsjen. Brûk de keppele pearel by it slûpen om de bewarre ûntfanger te aktivearjen.<br>
+<br>
+Opmerking: It doel moat laden wêze, yn deselde diminsje stean en binnen berik wêze.

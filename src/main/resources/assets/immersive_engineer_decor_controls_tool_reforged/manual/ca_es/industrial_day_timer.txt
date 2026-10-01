@@ -1,0 +1,7 @@
+Rellotge programador diari
+Senyal diürn
+<&recipe>Un interruptor temporitzat segueix la part diürna del cicle del món.<br>
+<br>
+Ús: fes-lo servir per a llums de pati, persianes i controls de fàbrica que només funcionin de dia.<br>
+<br>
+Notes: requereix una dimensió amb llum del cel.

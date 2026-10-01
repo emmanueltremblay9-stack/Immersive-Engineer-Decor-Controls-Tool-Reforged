@@ -1,0 +1,7 @@
+Hand-set dimmer
+Signal ye can vary
+<&recipe>A turnin' control lets ye dial redstone strength from a little panel face.<br>
+<br>
+Orders: Right-click her to raise output a step at a time. After full strength she returns to zero.<br>
+<br>
+Mind ye: Her output runs from 0 to 15.

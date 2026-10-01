@@ -1,0 +1,5 @@
+Tabliczka zagrożenia pożarowego
+Oznaczenie zagrożenia
+<&recipe>Tabliczka zagrożenia pożarowego oznacza zagrożenia, wyjścia i strefy robocze czytelnym symbolem bezpieczeństwa fabrycznego.<br>
+<br>
+Użycie: Umieść ją przy zagrożeniach, wyjściach, maszynach i strefach z ograniczonym dostępem.<br>

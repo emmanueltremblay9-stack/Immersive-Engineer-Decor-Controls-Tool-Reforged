@@ -1,0 +1,7 @@
+Węgiel Ariadny
+Znacznik dróg w kopalni
+<&recipe>Węgiel Ariadny pozwala szybko oznaczać drogę w szybach, rozgałęzionych kopalniach i tymczasowych robotach podziemnych.<br>
+<br>
+Użycie: Użyj go na stabilnej ścianie bloku, aby umieścić tam czarną strzałkę. Znacznik odczytuje punkt kliknięcia i obsługuje osiem kierunków, w tym ukośne. Pozwala oznaczać zakręty, wyjścia, ślepe zaułki i trasy zaopatrzenia bez noszenia osobnych drogowskazów.<br>
+<br>
+Węgiel Ariadny to wielorazowe narzędzie do oznaczania z zapasem 100 użyć. Każde udane umieszczenie znacznika kosztuje jeden punkt trwałości. Nieodpowiednie powierzchnie są odrzucane bez zużycia przedmiotu.

@@ -1,0 +1,5 @@
+Stained Clinker Block
+Soot-dark brickwork
+<&recipe>The Stained Clinker Brick Block brings soot-darkened brickwork to furnace halls, chimney bases, and service walls.<br>
+<br>
+Usage: Use it as a wall, trim, or heat-zone shell around furnaces and boilers.<br>

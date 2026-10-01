@@ -1,0 +1,5 @@
+Thick pole o' steel
+Piece o' structural framing
+<&recipe>Straight thick pole o' steel gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>

@@ -1,0 +1,5 @@
+Paksun pylvään pää
+Rungon rakenneosa
+<&recipe>Suoran paksun teräspylvään pää tai jalka antaa konehalleille ja kulkurungoille näkyvän rakenteen.<br>
+<br>
+Käyttö: Käännä ja aseta osa palkkien, pylväiden ja tasojen reunojen näkyväksi tueksi.<br>

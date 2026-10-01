@@ -1,0 +1,5 @@
+Armita betona ŝtupo
+Armita betono
+<&recipe>Ĉi tiu bloko estas hardita betona parto por maŝinbazoj, eksplodmuroj kaj ŝarĝejaj plankoj.<br>
+<br>
+Uzado: metu ĝin sub maŝinojn, laŭ prizorgaj koridoroj aŭ ĉie kie la konstruaĵo bezonas plifortigitan bazon.<br>

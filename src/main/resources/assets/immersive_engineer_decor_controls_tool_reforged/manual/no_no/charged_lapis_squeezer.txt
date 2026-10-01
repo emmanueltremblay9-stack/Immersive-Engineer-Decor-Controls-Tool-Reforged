@@ -1,0 +1,7 @@
+Tankepresse
+Erfaringskondensator
+<&recipe>Tankepressen gjør lasurstein og erfaring om til ladet lasurstein.<br>
+<br>
+Bruk: ha lasurstein og minst ett erfaringsnivå, og bruk så verktøyet. En vellykket pressing forbruker ett nivå og én lasurstein, skader brukeren, sliter på pressen og lager én ladet lasurstein.<br>
+<br>
+Den nekter å virke hvis brukeren mangler lasurstein eller erfaring, eller er for nær døden.

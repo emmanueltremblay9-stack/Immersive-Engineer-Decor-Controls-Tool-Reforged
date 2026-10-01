@@ -1,0 +1,5 @@
+Okrasna tabla
+Oznaka nevarnosti
+<&recipe>Tabla za znak (Inženirski okrasni elementi) označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>

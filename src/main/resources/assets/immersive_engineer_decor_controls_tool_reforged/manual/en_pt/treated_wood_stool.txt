@@ -1,0 +1,5 @@
+Stool o' treated timber
+Furniture fer work
+<&recipe>This block be practical workshop furniture fer workrooms and upkeep corners.<br>
+<br>
+Orders: Set her beside benches, crates and compact contraptions.<br>

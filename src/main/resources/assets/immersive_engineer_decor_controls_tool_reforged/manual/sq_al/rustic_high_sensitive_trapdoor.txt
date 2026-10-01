@@ -1,0 +1,7 @@
+Derë rustike e aktivizuar me goditje
+Puls presioni
+<&recipe>Një çelës kontakti dërgon sinjal të shkurtër nga lëvizja mbi dysheme ose kapanxhë.<br>
+<br>
+Përdorimi: vendose ku entitetet kalojnë nëpër një korridor shërbimi, ngarkues ose rrugë të ruajtur.<br>
+<br>
+Shënim: jep një puls të shkurtër pas kontaktit me entitetin.

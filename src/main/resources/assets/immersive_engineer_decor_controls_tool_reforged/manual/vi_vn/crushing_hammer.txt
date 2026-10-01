@@ -1,0 +1,5 @@
+Búa nghiền quặng
+Dụng cụ nghiền cầm tay
+<&recipe>Búa nghiền quặng là dụng cụ cầm tay để xử lý sớm sắt và vàng.<br>
+<br>
+Dùng với sắt thô, vàng thô, quặng sắt hoặc vàng và biến thể đá phiến sâu để tạo bột Immersive Engineering. Búa mất độ bền, trở lại lưới đến khi vỡ, mòn khi đào và đẩy lùi mục tiêu.

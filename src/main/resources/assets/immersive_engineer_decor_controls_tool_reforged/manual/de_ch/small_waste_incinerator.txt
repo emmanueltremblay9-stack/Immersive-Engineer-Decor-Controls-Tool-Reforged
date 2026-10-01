@@ -1,0 +1,5 @@
+Abfallverbrennigsaalag
+Kompakti Verarbeitigseinheit
+<&recipe>D'Abfallverbrennigsaalag vernichtet unerwünschti Gägeständ uf wenig Werkstattflächi.<br>
+<br>
+Verwendig: Gib nur unerwünschti Gägeständ i ihri Warteschlange.<br>

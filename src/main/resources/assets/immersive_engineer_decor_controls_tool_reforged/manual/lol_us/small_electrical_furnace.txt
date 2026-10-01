@@ -1,0 +1,5 @@
+Zap Furnace Thing
+Lil processing gadget
+<&recipe>Zap Furnace does FE-powered smeltin jobz in a lil patch of ur workshop, kitty.<br>
+<br>
+How to: Gib FE an valid smeltin inputz, meow.<br>

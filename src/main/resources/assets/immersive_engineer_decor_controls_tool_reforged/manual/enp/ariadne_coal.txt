@@ -1,0 +1,7 @@
+Ariadne Coal
+Mine waymarker
+<&recipe>Ariadne Coal quickly marks the way through shafts, branch mines and short-lived underground works.<br>
+<br>
+Use: Use it on a steady clot side to set a black arrow mark along that edge. The mark follows where you click and points in eight ways, including slantwise. Mark turns, ways out, dead ends and stock paths without carrying lone signposts.<br>
+<br>
+Ariadne Coal is a reusable marking tool with 100 uses. Each well-set mark costs one wear point; sides that cannot hold it are turned down without tool wear.

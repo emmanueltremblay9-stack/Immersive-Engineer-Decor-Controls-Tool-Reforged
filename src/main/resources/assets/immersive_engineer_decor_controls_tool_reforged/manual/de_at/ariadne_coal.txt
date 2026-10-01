@@ -1,0 +1,7 @@
+Ariadne-Kohln
+Wegmarkierung für Minen
+<&recipe>Ariadne-Kohln markiert schnöll Wege in Schächten, Zweigminen und vorübergehenden unterirdischen Arbeitsbereichen.<br>
+<br>
+Verwendung: Benutz's auf ana festen Blockfläche, um an schworzen Richtungspfeil anzubringen. De Markierung richtet si nachm Klickpunkt und kennt acht Richtungen inklusive Diagonalen. So kannst Kurven, Ausgänge, Sackgassen und Versorgungswege kennzeichnen, ohne eigene Wegweiser mitzunehmen.<br>
+<br>
+Ariadne-Kohln is a wiederverwendbors Markierwerkzeig für 100 Einsätze. Jede erfolgreiche Markierung kostet oan Haltbarkeitspunkt. Ungeeignete Flächen werdn abgelehnt, ohne's Werkzeig abzunutzn.

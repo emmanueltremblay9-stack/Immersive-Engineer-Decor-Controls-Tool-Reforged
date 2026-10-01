@@ -1,0 +1,7 @@
+Brytarlänkrelä
+Länkad styrning
+<&recipe>En reläformad enhet ger panelbyggen en kompakt lokal brytpunkt.<br>
+<br>
+Användning: Högerklicka för att slå på eller av en utgång med full styrka för närliggande kretsar. Använd mottagarblock när du behöver aktivering med en länkad pärla.<br>
+<br>
+Anmärkning: Ger redstone med full styrka när den är påslagen.

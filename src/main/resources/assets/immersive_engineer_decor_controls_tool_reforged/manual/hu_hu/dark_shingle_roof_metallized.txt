@@ -1,0 +1,5 @@
+Tetőhófogó
+Időjárás koptatta tetőelem
+<&recipe>A sötét zsindelytető hófogója sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>

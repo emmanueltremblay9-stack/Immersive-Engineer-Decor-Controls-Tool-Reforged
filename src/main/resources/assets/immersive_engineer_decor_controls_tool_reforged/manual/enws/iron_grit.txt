@@ -1,0 +1,3 @@
+Coarse Grit of Iron
+A material for the engineer’s tools, used by the reconstructed set of crafts.
+<&recipe>May be smelted into iron<br>ingots, but suits not<br>the further processing of materials.

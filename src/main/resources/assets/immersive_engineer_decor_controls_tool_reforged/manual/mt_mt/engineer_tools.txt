@@ -1,0 +1,93 @@
+Għodod tal-Inġinier
+Tagħmir portabbli tal-ħanut tax-xogħol
+Is-sett tal-Għodod tal-Inġinier iżid tagħmir li jinżamm fl-id, markaturi tal-minjieri, konsumabbli ta' emerġenza, ikel għall-post tax-xogħol u għodod żgħar għall-ipproċessar tal-materjal mal-istess manwal tal-blokok tad-dekor u tal-kontroll.<br>
+<br>
+Dawn l-għodod huma maħsuba għal xogħol 'il bogħod minn ħanut tax-xogħol mgħammar sew: immarka r-rotta, ġorr provvisti, irkupra mill-iżbalji u lesti xogħol żgħir ta' pproċessar fuq il-post.
+<np>
+Għodda REDIA
+Għodda utli miksija bid-djamanti
+<&redia_tool>L-għodda REDIA hi għodda dejjiema għal xogħol malajr fl-art fuq il-post. Użaha fuq ħamrija li tista' tinħadem biex taħrat ir-raba'.<br>
+<br>
+Użaha kontra wiċċ stabbli waqt li ġġorr torċi biex tqiegħed markatur b'torċa mill-inventarju mingħajr ma tnaqqas id-durabbiltà ta' REDIA. Xogħol fl-art, ġżież, xogħol bil-mannara u twaqqigħ tas-siġar jikkonsmaw durabbiltà.
+<np>
+Martell għat-tgħaffiġ tal-minerali
+Għodda għat-tgħaffiġ bl-idejn
+<&crushing_hammer>Il-martell li jfarrak il-mineral huwa għodda tal-idejn għall-ipproċessar bikri tal-ħadid u d-deheb.<br>
+<br>
+Użah ma ħadid jew deheb nej, mineral tal-ħadid jew tad-deheb u l-varjanti deepslate għal trab Immersive Engineering. Jitlef id-durabilità, jerġa fil-gradilja sakemm jinkiser, jintlibes fit-tħaffir u jwarrab il-miri.
+<np>
+Traċċatur
+Markatur ta' pożizzjoni maħżuna
+<&tracker>It-tracker jaħżen il-pożizzjoni ta blokka fl-oġġett.<br>
+<br>
+Ikklikkja blokka biex taħżen id-dimensjoni u l-koordinati. It-tagħrif juri l-pożizzjoni. Użah waqt li titbaxxa biex tħassar il-mira.<br>
+<br>
+Immarka magni, mini, kontrolli mill-bogħod jew bini mhux lest.
+<np>
+Faħam ta' Ariadne
+Markatur tar-rotta fil-minjiera
+<&ariadne_coal>Il-faħam ta' Ariadne jqiegħed malajr markaturi tar-rotta bi vleġġa sewda fuq uċuħ stabbli tal-minjiera. Użah fuq wiċċ solidu biex timmarka d-dawra, il-ħruġ jew il-fergħa li jmiss; il-markatur jappoġġja tmien direzzjonijiet fuq il-wiċċ ikklikkjat, inklużi djagonali.<br>
+<br>
+Il-faħam ta' Ariadne hu għodda tal-marki li terġa' tintuża b'100 użu. Kull tqegħid ta' markatur b'suċċess jiswa punt wieħed ta' durabbiltà. Jirrifjuta uċuħ mhux appoġġjati minflok ma jnaqqas id-durabbiltà tal-oġġett.
+<np>
+Pakkett awtomatiku ta' stimulanti
+Injettur ta' emerġenza
+<&stimpack>Il-pakkett stim awtomatiku huwa oġġett mediku ta emerġenza.<br>
+<br>
+Użah bl-idejn għall-fejqan, protezzjoni qasira u veloċità. Fl-inventarju jattiva meta s-saħħa tkun baxxa u mbagħad jistenna. Żommu lest fpostijiet perikolużi.
+<np>
+Borża tal-irqad
+Tagħmir portabbli għall-mistrieħ
+<&sleeping_bag>Il-borża tal-irqad hija tagħmir reżistenti għat-temp għal mistrieħ bogħod mis-sodda.<br>
+<br>
+Użaha billejl fl-Overworld biex tistrieħ sa filgħodu mingħajr tibdel il-punt tat-twelid.<br>
+<br>
+Ma taħdimx binhar, qrib monsters jew fdimensjonijiet mhux adattati. Kull mistrieħ jilbisha.
+<np>
+Kaxxa għall-ħażna tal-materjali
+Kaxxa tal-provvisti tal-bini
+<&material_box>Il-kaxxa tal-materjal iġġorr riżerva kbira ta materjal wieħed komuni, mhux mibdul u impilabbli.<br>
+<br>
+Żomm il-kaxxa fl-id ewlenija u l-materjal fl-oħra biex iddaħħlu; meta l-id l-oħra vojta oħroġ munzell wieħed.<br>
+<br>
+Iżżomm 512 oġġett ta tip wieħed, tirrifjuta kaxxi oħra, tagħmir mhux impilabbli u munzelli mibdula u turi l-kontenut fit-tagħrif.
+<np>
+Kapsula tal-arja għall-għadis
+Riżerva tal-arja ta' emerġenza
+<&diving_capsule>Il-kapsula tal-arja hija riżerva ta emerġenza għax-xogħol taħt l-ilma.<br>
+<br>
+Użaha bl-idejn biex tirrestawra l-arja. Fl-inventarju tattiva waħedha meta l-arja kważi tispiċċa, imbagħad tidħol fperjodu ta stennija. Ġorrha fmini mgħarrqa u ħdejn pajpijiet mgħaddsa.
+<np>
+Pressa tal-barretti Muslee
+Pressa tal-ikel
+<&musli_bar_press>L-istampa Muslee tibdel ikel komuni frazzjonijiet kompatti.<br>
+<br>
+Ġorr ħobż, tuffieħa u żerriegħa tal-qamħ, bettieħ, qara, pitravi jew qanneb industrijali u uża l-istampa. Tuża waħda minn kull ingredjent, tiċċekkja l-ispazju, tagħmel erba bars u ssirilha ħsara.<br>
+<br>
+Jekk jonqos xi ħaġa jew spazju, ma jintuża xejn.
+<np>
+Barretta tal-enerġija b'taħlita Muslee
+Ikla ħafifa ta' malajr fil-ħanut tax-xogħol
+<&musli_bar>Il-bar Muslee Melange huwa ikel kompatt mill-ħobż, żrieragħ u frott.<br>
+<br>
+Kulha fuq il-post waqt li tqiegħed kontrolli, pajpijiet, pjattaformi jew linji twal ta magni.
+<np>
+Magna li tagħsar il-moħħ
+Kondensatur tal-esperjenza
+<&charged_lapis_squeezer>Il-magna li tagħsar il-moħħ tibdel lapislazzul wieħed u livell wieħed ta' esperjenza mill-inventarju tiegħek f'lapislazzul iċċarġjat.<br>
+<br>
+Kull konverżjoni b'suċċess tweġġa' lill-utent, tikkawżalu għeja u tagħmih għal ftit żmien. Tirrifjuta li taħdem mingħajr lapislazzul, mingħajr XP jew meta l-utent ikun qrib wisq il-mewt.
+<np>
+Lapislazzul iċċarġjat
+Esperjenza maħżuna
+<&charged_lapis>Il-lapislazzul iċċarġjat jaħżen livell wieħed ta' esperjenza. Ikkonsmah biex trodd il-livell, tneħħi l-effetti attivi u tirkupra ammont żgħir ta' saħħa.<br>
+<br>
+L-ewwel agħmel magna li tagħsar il-moħħ; il-lapislazzul iċċarġjat jiġi prodott billi tuża dik l-għodda bil-lapislazzul u l-XP disponibbli.
+<np>
+Granuli ħoxnin tal-ħadid
+Materjal tal-għodod tal-inġinier użat mis-sett rikostruwit tas-snajja.
+<&iron_grit>Jistgħu jindubu f'ingotti<br>tal-ħadid, iżda mhumiex adattati<br>għall-ipproċessar avvanzat tal-materjali.
+<np>
+Granuli ħoxnin tad-deheb
+Materjal tal-għodod tal-inġinier użat mis-sett rikostruwit tas-snajja.
+<&gold_grit>Jistgħu jindubu f'ingotti<br>tad-deheb, iżda mhumiex adattati<br>għall-ipproċessar avvanzat tal-materjali.

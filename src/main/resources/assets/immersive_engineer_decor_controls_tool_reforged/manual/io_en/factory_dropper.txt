@@ -1,0 +1,5 @@
+Fabrikala distributilo
+Laboreyaparato
+<&recipe>Ca bloko ekprojetas stokita objekti de direktita facio.<br>
+<br>
+Uzo: Direktez la avanfacio vers la ekireypunkto, plenigez lua interna faki, ed ajustez forco, angulo, intertempo, filtrilologiko e redstonea modo en lua ekrano.<br>

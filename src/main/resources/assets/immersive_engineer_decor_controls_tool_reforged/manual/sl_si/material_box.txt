@@ -1,0 +1,7 @@
+Škatla za material
+Škatla za gradbene zaloge
+<&recipe>Škatla za material nosi veliko zalogo ene običajne, nespremenjene in zložljive gradbene snovi.<br>
+<br>
+Držite škatlo v glavni roki in material v drugi za nalaganje; s prazno drugo roko izvlečete en sklad.<br>
+<br>
+Sprejme 512 predmetov ene vrste, zavrne druge škatle, nezložljivo opremo in spremenjene sklade ter vsebino pokaže v namigu.

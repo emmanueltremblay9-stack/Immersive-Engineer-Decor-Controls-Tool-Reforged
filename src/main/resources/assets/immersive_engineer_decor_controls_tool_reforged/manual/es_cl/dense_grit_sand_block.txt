@@ -1,0 +1,5 @@
+Arena con gravilla compactada
+Pavimento de zona de trabajo
+<&recipe>Este bloque da a las zonas de trabajo exteriores una superficie compactada y pisoteada.<br>
+<br>
+Uso: Colócalo alrededor de puertas de carga, depósitos exteriores y patios de maquinaria.<br>

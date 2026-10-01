@@ -1,0 +1,7 @@
+Rilevadôr di blocs
+Rilevament dal segnâl
+<&recipe>Un rilevadôr di blocs al controle se il spazi devant al è ocupât.<br>
+<br>
+Ûs: voltilu viers la muse de machine, la risierve o il spazi protet di controlâ.<br>
+<br>
+Notis: si impie se il bloc devant nol è aiar.

@@ -1,0 +1,7 @@
+LED Coch
+Adborth signal
+<&recipe>Mae dangosydd cryno yn troi Redstone cudd yn adborth ffatri gweladwy.<br>
+<br>
+Defnydd: Cysylltwch ef wrth ochr y signal i fonitro drysau, peiriannau, larymau neu baneli.<br>
+<br>
+Nodiadau: Mae'n newid cyflwr pan fo pŵer Redstone cyfagos yn bresennol.

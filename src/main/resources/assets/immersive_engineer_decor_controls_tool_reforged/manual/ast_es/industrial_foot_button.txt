@@ -1,0 +1,7 @@
+Botón de pie
+Control por redstone
+<&recipe>Un interruptor de contautu emite una señal curtia al movese’l suelu o una trapiella.<br>
+<br>
+Usu: colócalu onde les entidaes pasen per un pasu de serviciu, un cargador o una ruta vixilada.<br>
+<br>
+Notes: emite un pulsu curtiu dempués del contautu d’una entidá.

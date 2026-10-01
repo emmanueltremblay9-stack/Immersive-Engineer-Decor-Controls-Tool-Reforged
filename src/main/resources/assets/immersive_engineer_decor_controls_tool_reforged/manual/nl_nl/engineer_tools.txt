@@ -1,0 +1,93 @@
+Ingenieursgereedschap
+Draagbare werkplaatsuitrusting
+De verzameling ingenieursgereedschap voegt handgereedschap, mijnmarkeringen, noodverbruiksartikelen, voedsel voor onderweg en kleine verwerkingshulpmiddelen toe aan hetzelfde handboek als de decoratie- en bedieningsblokken.<br>
+<br>
+Dit gereedschap is bedoeld voor werk buiten een volledig uitgeruste werkplaats: markeer de route, neem voorraad mee, herstel van fouten en voer kleine verwerkingsklussen ter plekke uit.
+<np>
+REDIA-gereedschap
+Veelzijdig gereedschap met diamantlaag
+<&redia_tool>Het REDIA-gereedschap is duurzaam gereedschap voor snel grondwerk op locatie. Gebruik het op geschikte grond om akkerland te maken.<br>
+<br>
+Gebruik het op een stevig vlak terwijl je fakkels bij je hebt om een fakkel uit je inventaris te plaatsen zonder slijtage aan REDIA. Grondwerk, scheren, hakken en bomen vellen kosten wel duurzaamheid.
+<np>
+Ertsvergruishamer
+Handgereedschap voor vergruizen
+<&crushing_hammer>De ertsvergruishamer is een handgereedschap voor de vroege bewerking van ijzer en goud.<br>
+<br>
+Gebruik: verwerk ruw ijzer, ruw goud, ijzererts, diepliggend ijzererts, gouderts of diepliggend gouderts tot ijzer- of goudstof van Immersive Engineering. De hamer verliest duurzaamheid, keert terug naar het raster tot hij breekt, slijt bij het mijnen en kan doelen in gevechten terugslaan.
+<np>
+Zoeker
+Opgeslagen positiemarkering
+<&tracker>De zoeker slaat een blokpositie rechtstreeks in het voorwerp op.<br>
+<br>
+Klik op een blok om dimensie en coördinaten op te slaan. De tooltip toont de positie. Sluip en gebruik de zoeker om het doel te wissen.<br>
+<br>
+Gebruik hem om machines, tunnels, afstandsbedieningen of onafgewerkte bouwplaatsen te markeren.
+<np>
+Ariadne-kool
+Routemarkering voor mijnen
+<&ariadne_coal>Ariadne-kool plaatst snel zwarte pijlen op stevige mijnwanden. Gebruik de kool op een stevig vlak om de volgende bocht, uitgang of splitsing te markeren. De markering ondersteunt acht richtingen op het aangeklikte vlak, waaronder diagonalen.<br>
+<br>
+Ariadne-kool is herbruikbaar markeringsgereedschap voor 100 markeringen. Elke geslaagde plaatsing kost één duurzaamheidspunt. Ongeschikte vlakken worden geweigerd zonder slijtage te veroorzaken.
+<np>
+Automatisch stimpakket
+Noodinjector
+<&stimpack>Het automatische stimpakket is een noodhulpmiddel voor gevaarlijk onderhoud.<br>
+<br>
+Gebruik het handmatig om te genezen, kort bescherming te krijgen en even sneller te bewegen. In de inventaris activeert het automatisch bij weinig gezondheid en gaat daarna op afkoeltijd. Houd er een bij de hand op gevaarlijke locaties.
+<np>
+Slaapzak
+Draagbare slaapuitrusting
+<&sleeping_bag>De slaapzak is een weerbestendige rustuitrusting voor veldwerk ver van een bed.<br>
+<br>
+Gebruik hem s nachts in de Overworld om tot de ochtend te rusten zonder je verschijnpunt in te stellen of te verplaatsen.<br>
+<br>
+Hij weigert gebruik overdag, bij nabije monsters en in ongeschikte dimensies. Elke geslaagde rust verslijt de zak.
+<np>
+Materiaalopslagkist
+Voorraadkist voor bouwwerkzaamheden
+<&material_box>De materiaalopslagkist draagt een grote voorraad van één gewoon, ongewijzigd en stapelbaar bouwmateriaal.<br>
+<br>
+Houd de kist in de hoofdhand en een materiaalstapel in de andere hand om die op te slaan; gebruik hem met een lege andere hand om één stapel terug te nemen.<br>
+<br>
+Hij bevat maximaal 512 voorwerpen, bewaart één materiaalsoort, weigert geneste kisten, niet-stapelbare uitrusting en gewijzigde stapels, en toont de inhoud in de tooltip.
+<np>
+Duikluchtcapsule
+Noodluchtvoorraad
+<&diving_capsule>De duikluchtcapsule is een noodvoorraad voor werk onder water.<br>
+<br>
+Gebruik hem handmatig om lucht te herstellen. In de inventaris activeert hij ook automatisch wanneer de lucht bijna op is en gaat daarna op afkoeltijd. Neem hem mee naar ondergelopen mijnen, leidingen en pompkamers.
+<np>
+Muslee-pers
+Voedselpers
+<&musli_bar_press>De Muslee-pers verandert gewone voedselvoorraden in compacte veldrantsoenen.<br>
+<br>
+Draag brood, een appel en tarwe-, meloen-, pompoen-, bieten- of industriële hennepzaden en gebruik de pers. Een geslaagde persing verbruikt één van elk ingrediënt, controleert de uitvoerruimte, maakt vier repen en beschadigt de pers.<br>
+<br>
+Als een ingrediënt ontbreekt of er geen ruimte is, wordt niets verbruikt.
+<np>
+Muslee Melange-energiereep
+Snelle werkplaatssnack
+<&musli_bar>De Muslee Melange-energiereep is compact voedsel van brood, zaden en fruit.<br>
+<br>
+Eet hem als veldvoedsel tijdens het plaatsen van bedieningselementen, leidingen, platforms of lange machinekamerroutes.
+<np>
+Geestpers
+Ervaringsverdichter
+<&charged_lapis_squeezer>De geestpers zet één lapis lazuli en één ervaringsniveau uit je inventaris om in geladen lapis.<br>
+<br>
+Elke geslaagde omzetting verwondt en vermoeit de gebruiker en maakt die kort blind. De pers werkt niet zonder lapis of ervaring, of als de gebruiker bijna dood is.
+<np>
+Geladen lapis
+Opgeslagen ervaring
+<&charged_lapis>Geladen lapis bewaart één ervaringsniveau. Verbruik de lapis om het niveau terug te krijgen, actieve effecten te wissen en een beetje gezondheid te herstellen.<br>
+<br>
+Maak eerst een geestpers. Je maakt geladen lapis door dit gereedschap te gebruiken terwijl je lapis en ervaring bij je hebt.
+<np>
+Grof ijzergruis
+Materiaal voor ingenieursgereedschap uit de gereconstrueerde receptenset.
+<&iron_grit>Kan tot ijzerstaven worden<br>gesmolten, maar is niet geschikt<br>voor geavanceerde materiaalverwerking.
+<np>
+Grof goudgruis
+Materiaal voor ingenieursgereedschap uit de gereconstrueerde receptenset.
+<&gold_grit>Kan tot goudstaven worden<br>gesmolten, maar is niet geschikt<br>voor geavanceerde materiaalverwerking.

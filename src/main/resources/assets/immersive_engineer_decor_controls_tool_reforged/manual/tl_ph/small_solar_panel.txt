@@ -1,0 +1,5 @@
+Panel ng Araw
+Pantulong sa sahig ng pagawaan
+<&recipe>Ang Maliit na Panel ng Araw ay pantulong sa sahig ng pagawaan para sa paggawa, pag-iimbak, paglalagay, pagsira, pagkolekta o maliit na awtomasyon.<br>
+<br>
+Paggamit: Bigyan ng bukas na langit at ikabit sa kagamitang mababa ang konsumo.<br>

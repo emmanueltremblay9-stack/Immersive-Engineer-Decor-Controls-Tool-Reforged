@@ -1,0 +1,5 @@
+Forn tat-tidwib tal-minerali
+Unità kompatta tal-ipproċessar
+<&recipe>Il-forn tat-tidwib tal-minerali jipproċessa minerali b'sħana għolja fi spazju kompatt tal-ħanut tax-xogħol.<br>
+<br>
+Użu: ipprovdi blokok minerali u enerġija għal xogħol ta' tidwib b'sħana għolja.<br>

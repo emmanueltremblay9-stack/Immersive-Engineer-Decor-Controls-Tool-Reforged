@@ -1,0 +1,5 @@
+Bakal na Bukasan
+Pang-industriyang pasukan
+<&recipe>Nagbibigay ang blokeng ito ng matibay na pasukan para sa silid ng pagpapanatili, balon, bubong at kulob ng makina.<br>
+<br>
+Paggamit: Ikabit kung saan kailangan ng kontroladong bukasan para sa pagpapanatili.<br>

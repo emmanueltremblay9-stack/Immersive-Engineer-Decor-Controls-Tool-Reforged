@@ -1,0 +1,5 @@
+Válvula de líquidos de redstone
+Equipamento de tubaxes de fluídos
+<&recipe>A válvula de líquidos controlada por redstone é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: aliña a válvula coa dirección de caudal prevista.<br>

@@ -1,0 +1,7 @@
+Rustikk knapp
+Redstonestyring
+<&recipe>En momentbryter gir en tydelig redstonepuls med full styrke.<br>
+<br>
+Bruk: bruk den til maskinstart, døråpning, alarmer eller engangskretser.<br>
+<br>
+Merknad: tilbakestilles når den innstilte pulsen er over.

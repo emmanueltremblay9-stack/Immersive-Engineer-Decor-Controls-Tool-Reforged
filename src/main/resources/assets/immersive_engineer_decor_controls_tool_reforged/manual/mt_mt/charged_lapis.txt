@@ -1,0 +1,7 @@
+Lapislazzul iċċarġjat
+Esperjenza maħżuna
+<&recipe>Il-lapislazzul iċċarġjat jaħżen livell wieħed ta' esperjenza maħluq bil-magna li tagħsar il-moħħ.<br>
+<br>
+Użu: ikkonsmah biex trodd livell wieħed, tneħħi l-effetti attivi u tirkupra ammont żgħir ta' saħħa.<br>
+<br>
+Il-komponent tar-riċetta juri l-magna li tagħsar il-moħħ għax il-lapislazzul iċċarġjat jinħoloq billi tuża dik l-għodda bil-lapislazzul u l-XP disponibbli.

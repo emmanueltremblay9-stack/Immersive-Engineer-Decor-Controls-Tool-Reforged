@@ -1,0 +1,7 @@
+Reda energioplanto
+Presoimpulso
+<&recipe>Kontaktokomutilo sendas kurta signalo pro movado sur planko o trapo.<br>
+<br>
+Uzo: Pozez ol ube enti pasas tra servokoridoro, kargilo o gardata voyo.<br>
+<br>
+Noti: Emisas kurta impulso pos kontakto kun ento.

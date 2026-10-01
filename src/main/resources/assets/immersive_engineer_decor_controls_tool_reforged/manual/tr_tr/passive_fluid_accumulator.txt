@@ -1,0 +1,5 @@
+Pasif Sıvı
+Sıvı hattı donanımı
+<&recipe>Pasif sıvı biriktirici; küçük tanklar, boru hatları, toplama noktaları ve redstone kontrollü akış için az yer kaplayan bir sıvı hattı elemanıdır.<br>
+<br>
+Kullanım: Uygun su kaynaklarının yanına yerleştirin ve sıvının alınabilmesi için yer bırakın.<br>

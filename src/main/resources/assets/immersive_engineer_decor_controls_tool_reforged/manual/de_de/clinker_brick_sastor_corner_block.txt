@@ -1,0 +1,5 @@
+Verzierter Klinkerziegel
+Rußdunkles Ziegelmauerwerk
+<&recipe>Der Klinkerziegel mit Sandsteinverzierung verleiht Ofenhallen, Schornsteinsockeln und Betriebswänden rußdunkles Ziegelmauerwerk.<br>
+<br>
+Verwendung: Nutze ihn für Wände, Einfassungen oder hitzenahe Verkleidungen an Öfen und Kesseln.<br>

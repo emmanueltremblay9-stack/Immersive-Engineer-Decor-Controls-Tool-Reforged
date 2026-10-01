@@ -1,0 +1,7 @@
+Perla tar-rabta tal-iswiċċ
+Kontroll marbut
+<&recipe>Perla marbuta taħżen mira ta' riċevitur għal kontrolli remoti tal-fabbrika.<br>
+<br>
+Użu: ikklikkja riċevitur tar-rabta tal-iswiċċ b'perla tal-Ender biex toħloq waħda. Uża l-perla marbuta waqt li timxi nkiss inkiss biex tattiva r-riċevitur maħżun.<br>
+<br>
+Noti: il-mira trid tkun mgħobbija, fl-istess dimensjoni u fil-firxa.

@@ -1,0 +1,107 @@
+Meaisíní Ceardlainne
+Meaisíní agus I/A Ceardlainne
+Déanann meaisíní ceardlainne ceardaíocht dhlúth, bogadh earraí, bruithniú, diúscairt, bailiú agus obair áisiúil laistigh de spás aon bhloc amháin.<br>
+<br>
+Oscail na leathanaigh seo a leanas chun oidis, íomhánna, cúlra agus nótaí praiticiúla úsáide gach meaisín a fháil.
+<np>
+Bord Cruach
+Troscán ceardlainne
+<&steel_table>Is píosa praiticiúil troscáin cheardlainne é an bloc seo do sheomraí oibre agus coirnéil chothabhála.<br>
+<br>
+Úsáid: cuir in aice le binsí, cliathbhoscaí agus meaisíní dlútha é.<br>
+<np>
+Bord Adhmaid Chóireáilte
+Troscán ceardlainne
+<&treated_wood_table>Is píosa praiticiúil troscáin cheardlainne é an bloc seo do sheomraí oibre agus coirnéil chothabhála.<br>
+<br>
+Úsáid: cuir in aice le binsí, cliathbhoscaí agus meaisíní dlútha é.<br>
+<np>
+Stól Adhmaid Chóireáilte
+Troscán ceardlainne
+<&treated_wood_stool>Is píosa praiticiúil troscáin cheardlainne é an bloc seo do sheomraí oibre agus coirnéil chothabhála.<br>
+<br>
+Úsáid: cuir in aice le binsí, cliathbhoscaí agus meaisíní dlútha é.<br>
+<np>
+Bord Ceardaíochta Miotail
+Stáisiún oibre plátaí
+<&metal_crafting_table>Is stáisiún treisithe ceardlainne é an Bord Ceardaíochta Miotail, le sliotán casúir, greille ceardaíochta 3x3 agus sliotán soiléir aschuir.<br>
+<br>
+Úsáid: úsáid an ghreille don ghnáthcheardaíocht. Do phlátaí IE, cuir Casúr an Innealtóra sa sliotán uirlise agus ábhar an phláta sa ghreille sula dtógfaidh tú an toradh. Úsáidtear plátaí cruach i maisiúcháin chruach do chuaillí, siúláin, fuinneoga, doirse, ráillí agus páirteanna cruach eile.<br>
+<np>
+Crannóg Monarchan
+Áis urláir ceardlainne
+<&factory_hopper>Bogann an bloc seo cruacha earraí trí chásáil thionsclaíoch níos dlúithe.<br>
+<br>
+Úsáid: dírigh é i dtreo na líne fardail, agus ansin socraigh raon, líon cruacha, uainiú agus mód Redstone ar a scáileán.<br>
+<np>
+Dáileoir Monarchan
+Áis urláir ceardlainne
+<&factory_dropper>Scaoileann an bloc seo earraí stóráilte ó aghaidh atá dírithe ar sprioc.<br>
+<br>
+Úsáid: dírigh an t-éadan ar an bpointe scaoilte, líon na sliotáin inmheánacha agus coigeartaigh fórsa, uillinn, moill, loighic scagaire agus mód Redstone ar a scáileán.<br>
+<np>
+Leagthóir Bloc Monarchan
+Áis urláir ceardlainne
+<&factory_placer>Cuireann an bloc seo bloic óna stoc inmheánach ann nuair a ghníomhachtaítear é.<br>
+<br>
+Úsáid: dírigh an aghaidh oibre ar an spás sprice agus cuir cruacha inleagtha isteach.<br>
+<np>
+Bristeoir Bloc
+Áis urláir ceardlainne
+<&small_block_breaker>Is bloc áisiúil urláir ceardlainne é an Bristeoir Beag Bloc le haghaidh ceardaíochta, stórála, leagan bloc, briste, bailithe nó uathoibrithe dhlúith.<br>
+<br>
+Úsáid: cuir an aghaidh oibre i dtreo an bhloic atá le baint.<br>
+<np>
+Loisceoir Dramhaíola
+Aonad dlúth próiseála
+<&small_waste_incinerator>Scriosann an Loisceoir Dramhaíola earraí nach dteastaíonn gan mórán spáis a ghlacadh sa cheardlann.<br>
+<br>
+Úsáid: ná cuir ina scuaine ach earraí nach dteastaíonn.<br>
+<np>
+Foirnéis Saotharlainne
+Aonad dlúth próiseála
+<&small_lab_furnace>Déanann an Foirnéis Saotharlainne jabanna dlútha bruithnithe le breosla soladach gan mórán spáis a ghlacadh sa cheardlann.<br>
+<br>
+Úsáid: úsáid breosla soladach do bhaisceanna dlútha bruithnithe.<br>
+<np>
+Foirnéis Leictreach
+Aonad dlúth próiseála
+<&small_electrical_furnace>Déanann an Foirnéis Leictreach jabanna dlútha bruithnithe faoi chumhacht FE gan mórán spáis a ghlacadh sa cheardlann.<br>
+<br>
+Úsáid: soláthair FE agus ionchur bailí bruithnithe.<br>
+<np>
+Foirnéis Leáite Mianraí
+Aonad dlúth próiseála
+<&small_mineral_smelter>Déanann an Fhoirnéis Leáite Mianraí próiseáil mianraí ag ardteocht gan mórán spáis a ghlacadh sa cheardlann.<br>
+<br>
+Úsáid: soláthair bloic mhianracha agus cumhacht le haghaidh leá ag ardteocht.<br>
+<np>
+Reoiteoir Uisce
+Aonad dlúth próiseála
+<&small_freezer>Déanann an Reoiteoir Uisce obair dhlúth fuaraithe do chórais chumhachtaithe sreabháin.<br>
+<br>
+Úsáid: soláthair uisce agus cumhacht chun oighear a tháirgeadh i gcéimeanna.<br>
+<np>
+Sreabhán Éighníomhach
+Crua-earraí píblíne sreabháin
+<&passive_fluid_accumulator>Is páirt dhlúth píblíne sreabháin é an Taiscitheoir Sreabháin Éighníomhach d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: cuir in aice le foinsí oiriúnacha uisce é agus fág spás chun sreabhán a bhaint amach.<br>
+<np>
+Painéal Gréine
+Áis urláir ceardlainne
+<&small_solar_panel>Is bloc áisiúil urláir ceardlainne é an Painéal Beag Gréine le haghaidh ceardaíochta, stórála, leagan bloc, briste, bailithe nó uathoibrithe dhlúith.<br>
+<br>
+Úsáid: tabhair rochtain ar an spéir oscailte dó agus nasc trealamh ar bheagán tomhaltais leis.<br>
+<np>
+Meaisín Crúite
+Áis urláir ceardlainne
+<&small_milking_machine>Is bloc áisiúil urláir ceardlainne é an Meaisín Beag Crúite le haghaidh ceardaíochta, stórála, leagan bloc, briste, bailithe nó uathoibrithe dhlúith.<br>
+<br>
+Úsáid: cuir in aice le ba é agus cuir bealach ar fáil chun coimeádáin bhainne nó sreabhán a bhaint amach.<br>
+<np>
+Gearrthóir Crann
+Áis urláir ceardlainne
+<&small_tree_cutter>Is bloc áisiúil urláir ceardlainne é an Gearrthóir Beag Crann le haghaidh ceardaíochta, stórála, leagan bloc, briste, bailithe nó uathoibrithe dhlúith.<br>
+<br>
+Úsáid: dírigh ar chrainn fhásta é agus bailigh na hearraí a thiteann astu ar leithligh.<br>

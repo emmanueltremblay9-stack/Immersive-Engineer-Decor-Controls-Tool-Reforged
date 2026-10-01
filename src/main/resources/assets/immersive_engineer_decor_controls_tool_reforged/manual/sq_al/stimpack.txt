@@ -1,0 +1,5 @@
+Injektor automatik stimulues
+Injektor emergjent
+<&recipe>Paketa automatike stimuluese është mjet mjekësor emergjent.<br>
+<br>
+Përdoreni me dorë për shërim, mbrojtje të shkurtër dhe shpejtësi. Në inventar ndizet automatikisht me pak shëndet dhe pastaj ftohet. Mbajeni në vende të rrezikshme.

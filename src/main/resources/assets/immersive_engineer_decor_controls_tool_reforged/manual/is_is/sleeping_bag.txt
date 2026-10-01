@@ -1,0 +1,7 @@
+Svefnpoki
+Færanlegur hvíldarbúnaður
+<&recipe>Svefnpokinn er veðurþolin hvíldarbúnaður fyrir vinnu langt frá rúmi.<br>
+<br>
+Notkun: Notaðu hann að nóttu í Overworld til að hvílast til morguns. Hann stillir hvorki né flytur endurfæðingarstaðinn.<br>
+<br>
+Pokinn hafnar notkun að degi, óöruggu umhverfi með skrímsli nærri og víddum sem henta ekki öruggri hvíld. Hver vel heppnuð hvíld slítur pokanum.

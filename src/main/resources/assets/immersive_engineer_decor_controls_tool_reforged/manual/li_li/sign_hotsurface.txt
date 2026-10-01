@@ -1,0 +1,5 @@
+Börd veur heit vlak
+Gevaormarkering
+<&recipe>'t Börd "Pas op, heit vlak" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>

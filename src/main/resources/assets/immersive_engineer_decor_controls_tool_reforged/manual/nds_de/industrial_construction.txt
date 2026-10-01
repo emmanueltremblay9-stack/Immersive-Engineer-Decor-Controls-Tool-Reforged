@@ -1,0 +1,108 @@
+Industriebauten
+Fabrikwänn un Kanten
+Allgemeene Buudeelen sünd Düörn, Finstern, Lichten, Wohrschauschiller, Kanten un Dragparts, de nich in en nauere Afdeling höört.<br>
+<br>
+Bruuk disse Sieden för Fabrikruum, Wartoongsgäng, Gefohrmarken un nütte Industriedetails.
+<np>
+Isenbirnenlicht
+Lütt Wiärklicht
+<&iron_bulb_light>Disse Block gifft lütt Industrielicht för Gäng, Loopstegen un Wiärkplätz.<br>
+<br>
+Bruuk: Maak em op Decken, Wänn oder Kanten fast, wo de Ruum düütlich Wiärklicht bruukt.<br>
+<np>
+Deckenkantenlicht
+Lütt Wiärklicht
+<&iron_ceiling_edge_light>Disse Block gifft lütt Industrielicht för Gäng, Loopstegen un Wiärkplätz.<br>
+<br>
+Bruuk: Maak em op Decken, Wänn oder Kanten fast, wo de Ruum düütlich Wiärklicht bruukt.<br>
+<np>
+Inlaten Boddenkantenlicht
+Lütt Wiärklicht
+<&iron_floor_edge_light>Disse Block gifft lütt Industrielicht för Gäng, Loopstegen un Wiärkplätz.<br>
+<br>
+Bruuk: Maak em op Decken, Wänn oder Kanten fast, wo de Ruum düütlich Wiärklicht bruukt.<br>
+<np>
+Inlaten Licht
+Lütt Wiärklicht
+<&iron_inset_light>Disse Block gifft lütt Industrielicht för Gäng, Loopstegen un Wiärkplätz.<br>
+<br>
+Bruuk: Maak em op Decken, Wänn oder Kanten fast, wo de Ruum düütlich Wiärklicht bruukt.<br>
+<np>
+Schild „Allgemeene Wohrschau
+Gefohrmark
+<&sign_caution>Dat Schild „Allgemeene Wohrschau“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Gefohrschild
+Gefohrmark
+<&sign_danger>Dat Schild „Pass op, hier is dat bannig gefährlich“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Prunkschild
+Gefohrmark
+<&sign_decor>De Schillerplaat (Engineer's decor) markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Afwehrschild
+Gefohrmark
+<&sign_defense>Dat Schild „Pass op, Afwehrsysteem vörut“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Utgangsschild
+Gefohrmark
+<&sign_exit>Dit Schild markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Schild „Füergefohr
+Gefohrmark
+<&sign_firehazard>Dat Schild „Füergefohr“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Schild „Frostwohrschau
+Gefohrmark
+<&sign_frost>Dat Schild „Frostwohrschau“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Schild för hete Flach
+Gefohrmark
+<&sign_hotsurface>Dat Schild „Pass op, heet Flach“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Schild för Draht ünner Stroom
+Gefohrmark
+<&sign_hotwire>Dat Schild „Pass op, Draht ünner Stroom“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Schild „Lasergefohr
+Gefohrmark
+<&sign_laser>Dat Schild „Lasergefohr“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Zaubergefohrschild
+Gefohrmark
+<&sign_magichazard>Dat Schild „Pass op, Zaubergefohr“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Magnetfeldschild
+Gefohrmark
+<&sign_magneticfield>Dat Schild „Pass op, stark Magnetfeld“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>
+Schild „Strahlengefohr
+Gefohrmark
+<&sign_radioactive>Dat Schild „Strahlengefohr“ markt Gefohren, Utgäng un Wiärkrebeten mit en düütlich Fabrik-Sekerheitsteken.<br>
+<br>
+Bruuk: Sett dat blangen Gefohren, Utgäng, Maschinen un sperrte Rebeten.<br>
+<np>

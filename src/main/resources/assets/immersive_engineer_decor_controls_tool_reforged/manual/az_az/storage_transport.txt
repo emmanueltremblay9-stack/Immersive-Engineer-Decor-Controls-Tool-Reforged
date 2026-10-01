@@ -1,0 +1,41 @@
+Saxlama və daşıma
+İnventar və axın elementləri
+Saxlama və daşıma elementlərinə yığcam zavod xətləri üçün yeşiklər, çəlləklər, qıflar və klapanlar daxildir.<br>
+<br>
+Anbarlar, boru xətləri, xidmət çənləri və idarə olunan maye xətləri planlaşdırarkən bu səhifələrdən istifadə edin.
+<np>
+Etiketli yeşik
+Dəyişdirilə bilən ehtiyat etiketi
+<&labeled_crate>Bu etiketli yeşik anbarda aydın çeşidləmə üçün hazırlanıb. Ön lövhəsi kiçik emalatxana nişanı kimi dəyişdirilə bilər.<br>
+<br>
+İstifadə: Yeşik etiketini dəyişmək üçün etiket lövhəsinə sağ klikləyin. Avadanlıq, hissələr və texniki xidmət ləvazimatlarının anbarını açmaq üçün yeşiyin qalan hissəsinə sağ klikləyin.<br>
+<np>
+Maye çəlləyi
+Maye xətti avadanlığı
+<&fluid_barrel>Bu element kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Boruların və ya vedrələrin çənin üzünə çata biləcəyi yerə yerləşdirin.<br>
+<np>
+Maye qıfı
+Maye xətti avadanlığı
+<&small_fluid_funnel>Kiçik maye qıfı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Maye toplama nöqtəsinin altına qoyub içindəkiləri çənlərə və ya aşağıdakı borulara yönəldin.<br>
+<np>
+Maye borusunun əksaxın klapanı
+Maye xətti avadanlığı
+<&straight_pipe_valve>Maye əksaxın klapanı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Klapanı nəzərdə tutulan axın istiqamətinə uyğun düzləndirin.<br>
+<np>
+Qızıl daş maye klapanı
+Maye xətti avadanlığı
+<&straight_pipe_valve_redstone>Qızıl daş maye klapanı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Klapanı nəzərdə tutulan axın istiqamətinə uyğun düzləndirin.<br>
+<np>
+Analoq maye klapanı
+Maye xətti avadanlığı
+<&straight_pipe_valve_redstone_analog>Analoq maye klapanı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Klapanı nəzərdə tutulan axın istiqamətinə uyğun düzləndirin.<br>

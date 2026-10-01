@@ -1,0 +1,7 @@
+Menspremilo
+Spertokondensilo
+<&recipe>La menspremilo transformas lazuriton kaj sperton al ŝargita lazurito.<br>
+<br>
+Uzado: portu lazuriton kaj almenaŭ unu spertonivelon, poste uzu la ilon. Sukcesa premado konsumas unu nivelon kaj unu lazuriton, vundas la uzanton, eluzas la premilon kaj faras unu ŝargitan lazuriton.<br>
+<br>
+Ĝi rifuzas funkcii kiam la uzanto ne havas lazuriton aŭ sperton, aŭ estas tro proksima al morto.

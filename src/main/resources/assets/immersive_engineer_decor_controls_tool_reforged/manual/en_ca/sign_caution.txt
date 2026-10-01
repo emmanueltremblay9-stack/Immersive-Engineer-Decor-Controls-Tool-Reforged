@@ -1,0 +1,5 @@
+Sign "Generic Caution
+Hazard marker
+<&recipe>The Sign "Generic Caution" Caution Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>

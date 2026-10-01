@@ -1,0 +1,7 @@
+Regnsensor
+Signalavkänning
+<&recipe>En vädersensor omvandlar regn vid sin position till redstone.<br>
+<br>
+Användning: Montera den där blocket ovanför kan utsättas för regn.<br>
+<br>
+Anmärkning: Kontrollerar regn ovanför sensorn.

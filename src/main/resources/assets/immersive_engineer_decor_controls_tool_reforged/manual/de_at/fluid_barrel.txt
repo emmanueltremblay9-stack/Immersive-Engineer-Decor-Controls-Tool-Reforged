@@ -1,0 +1,5 @@
+Flüssigkeitsfoss
+Bauteil für Flüssigkeitsleitungen
+<&recipe>Des kompakte Leitungsteil passt für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setz es so, dass Rohr oda Kiwe zur Tankseitn dazukumman.<br>

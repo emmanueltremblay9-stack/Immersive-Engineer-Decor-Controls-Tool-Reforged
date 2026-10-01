@@ -1,0 +1,108 @@
+Industriell konstruktion
+Fabriksväggar och dekor
+De allmänna byggdelarna omfattar dörrar, fönster, lampor, varningsskyltar, dekor och konstruktionsdelar som inte hör hemma i någon mer specifik avdelning.<br>
+<br>
+Använd de här sidorna för fabriksrum, servicekorridorer, riskmarkeringar och praktiska industridetaljer.
+<np>
+Järnlampa
+Kompakt arbetsbelysning
+<&iron_bulb_light>Det här blocket ger kompakt industribelysning för korridorer, gångbryggor och arbetsplatser.<br>
+<br>
+Användning: Montera det i tak, på väggar eller längs kanter där rummet behöver tydlig arbetsbelysning.<br>
+<np>
+Takkantslampa
+Kompakt arbetsbelysning
+<&iron_ceiling_edge_light>Det här blocket ger kompakt industribelysning för korridorer, gångbryggor och arbetsplatser.<br>
+<br>
+Användning: Montera det i tak, på väggar eller längs kanter där rummet behöver tydlig arbetsbelysning.<br>
+<np>
+Infälld golvkantslampa
+Kompakt arbetsbelysning
+<&iron_floor_edge_light>Det här blocket ger kompakt industribelysning för korridorer, gångbryggor och arbetsplatser.<br>
+<br>
+Användning: Montera det i tak, på väggar eller längs kanter där rummet behöver tydlig arbetsbelysning.<br>
+<np>
+Infälld lampa
+Kompakt arbetsbelysning
+<&iron_inset_light>Det här blocket ger kompakt industribelysning för korridorer, gångbryggor och arbetsplatser.<br>
+<br>
+Användning: Montera det i tak, på väggar eller längs kanter där rummet behöver tydlig arbetsbelysning.<br>
+<np>
+Skylt: allmän varning
+Riskmarkering
+<&sign_caution>Den allmänna varningsskylten markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Fareskylt
+Riskmarkering
+<&sign_danger>Skylten som varnar för verkligt stor fara markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Decorskylt
+Riskmarkering
+<&sign_decor>Skyltplattan från Engineer's Decor markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt för försvarssystem
+Riskmarkering
+<&sign_defense>Skylten som varnar för försvarssystem längre fram markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Utgångsskylt
+Riskmarkering
+<&sign_exit>Den här skylten markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt: brandfara
+Riskmarkering
+<&sign_firehazard>Skylten för brandfara markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt: frostvarning
+Riskmarkering
+<&sign_frost>Skylten för frostvarning markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt för het yta
+Riskmarkering
+<&sign_hotsurface>Skylten som varnar för heta ytor markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt för spänningsförande ledning
+Riskmarkering
+<&sign_hotwire>Skylten som varnar för spänningsförande ledningar markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt: laserfara
+Riskmarkering
+<&sign_laser>Skylten för laserfara markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt för magisk fara
+Riskmarkering
+<&sign_magichazard>Skylten som varnar för magiska faror markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt för magnetfält
+Riskmarkering
+<&sign_magneticfield>Skylten som varnar för starka magnetfält markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>
+Skylt: radioaktiv fara
+Riskmarkering
+<&sign_radioactive>Skylten för radioaktiv fara markerar faror, utgångar och arbetszoner med en tydlig säkerhetssymbol för fabriken.<br>
+<br>
+Användning: Placera den intill faror, utgångar, maskiner och avspärrade zoner.<br>
+<np>

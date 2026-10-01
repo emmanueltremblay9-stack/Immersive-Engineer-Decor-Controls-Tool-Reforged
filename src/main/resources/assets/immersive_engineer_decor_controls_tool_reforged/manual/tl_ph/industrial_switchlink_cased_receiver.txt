@@ -1,0 +1,7 @@
+May Kahang Tagatanggap ng Kawing
+Nakakawing na kontrol
+<&recipe>Nagbibigay ang may kahang tagatanggap ng kawing ng matibay na target ng redstone sa malalayong panel.<br>
+<br>
+Paggamit: Iklik gamit ang Mutyang Ender upang gumawa ng nakakawing na mutya. Direktang iklik nang kanan ang tagatanggap upang ilipat nang mano-mano ang estado.<br>
+<br>
+Tandaan: Inililipat ng nakakawing na mutya ang estado ng tagatanggap na ito kapag ginamit habang nakayuko.

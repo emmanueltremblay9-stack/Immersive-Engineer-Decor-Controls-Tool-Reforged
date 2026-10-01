@@ -1,0 +1,5 @@
+Gerilimli Tel Levhası
+Tehlike işareti
+<&recipe>“Dikkat, Gerilimli Tel” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>

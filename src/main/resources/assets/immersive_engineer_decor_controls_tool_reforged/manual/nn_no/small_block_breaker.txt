@@ -1,0 +1,5 @@
+Blokkbrytar
+Hjelpemiddel på fabrikkgolvet
+<&recipe>Den vesle blokkbrytaren er ei nytteblokk for fabrikkgolvet, innan emning, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: rett arbeidssida mot blokka som skal bort.<br>

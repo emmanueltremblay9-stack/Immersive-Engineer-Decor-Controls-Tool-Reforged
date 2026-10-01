@@ -1,0 +1,5 @@
+Máquina de ordeño
+Utilidad de taller
+<&recipe>La pequeña máquina de ordeño es una utilidad de taller para fabricación, almacenamiento, colocación, rotura, recogida o automatización compacta.<br>
+<br>
+Uso: Colócala cerca de vacas y proporciona una forma de extraer los recipientes de leche o el fluido.<br>

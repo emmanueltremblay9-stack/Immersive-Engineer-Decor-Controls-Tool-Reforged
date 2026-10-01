@@ -1,0 +1,41 @@
+Storio a Chludo
+Elfennau rhestr eiddo a llif
+Mae elfennau storio a chludo yn trin cratiau, casgenni, twmffatiau a falfiau ar gyfer llwybro ffatri cryno.<br>
+<br>
+Defnyddiwch y tudalennau hyn wrth gynllunio storfeydd, rhediadau pibellau, tanciau gwasanaethu a llinellau hylif dan reolaeth.
+<np>
+Crât â Label
+Label stoc golygadwy
+<&labeled_crate>Mae'r crât â label hwn wedi'i gynllunio i drefnu storfa'n glir. Gellir golygu ei blât blaen fel arwydd gweithdy bach.<br>
+<br>
+Defnydd: Cliciwch y plât label â'r botwm de i olygu label y crât. Cliciwch weddill y crât â'r botwm de i agor storfa ar gyfer elfennau gosod, rhannau a chyflenwadau cynnal a chadw.<br>
+<np>
+Casgen Hylif
+Offer llinell hylif
+<&fluid_barrel>Rhan gryno o linell hylif yw'r elfen hon, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Gosodwch hi lle gall pibellau neu fwcedi gyrraedd wyneb y tanc.<br>
+<np>
+Twmffat Hylif
+Offer llinell hylif
+<&small_fluid_funnel>Rhan gryno o linell hylif yw'r Twmffat Hylif Bach, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Rhowch ef o dan y man casglu hylif a chyfeiriwch ei gynnwys wedi'i storio i danciau neu bibellau is.<br>
+<np>
+Falf Unffordd Pibell Hylif
+Offer llinell hylif
+<&straight_pipe_valve>Rhan gryno o linell hylif yw'r Falf Unffordd Hylif, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Aliniwch y falf â'r cyfeiriad llif a fwriedir.<br>
+<np>
+Falf Hylif Redstone
+Offer llinell hylif
+<&straight_pipe_valve_redstone>Rhan gryno o linell hylif yw'r Falf Hylif Redstone, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Aliniwch y falf â'r cyfeiriad llif a fwriedir.<br>
+<np>
+Falf Hylif Analog
+Offer llinell hylif
+<&straight_pipe_valve_redstone_analog>Rhan gryno o linell hylif yw'r Falf Hylif Analog, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Aliniwch y falf â'r cyfeiriad llif a fwriedir.<br>

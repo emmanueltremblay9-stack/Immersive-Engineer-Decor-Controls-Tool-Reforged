@@ -1,0 +1,7 @@
+Sensor de luz
+Detección de señales
+<&recipe>Un sensor de luz convierte la luminosidad local en control por redstone.<br>
+<br>
+Uso: Úsalo para lámparas automáticas, persianas y circuitos de visibilidad.<br>
+<br>
+Notas: Se activa con una luminosidad bruta de 8 o más.

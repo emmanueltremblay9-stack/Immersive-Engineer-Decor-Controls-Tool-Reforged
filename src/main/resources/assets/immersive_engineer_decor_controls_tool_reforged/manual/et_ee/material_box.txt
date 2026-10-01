@@ -1,0 +1,7 @@
+Materjalikast
+Ehitusvarud
+<&recipe>Kannab suurt varu üht tavalist, muutmata ja virnastatavat materjali.<br>
+<br>
+Kasutus: Kast põhikäes ja materjal kõrvalkäes täidab. Tühi kõrvalkäsi võtab ühe virna.<br>
+<br>
+Mahutab 512 eset üht liiki ning keeldub pesastatud kastidest, virnastamatust varustusest ja muudetud virnadest; sisu on vihjes.

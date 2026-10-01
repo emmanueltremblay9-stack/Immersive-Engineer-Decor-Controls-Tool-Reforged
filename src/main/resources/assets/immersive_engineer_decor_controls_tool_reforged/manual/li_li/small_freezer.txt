@@ -1,0 +1,5 @@
+Watervriezer
+Kleine verwerkingseenheid
+<&recipe>De watervriezer duit klein koelwerk veur aangedraeve vloeistofinstallaties.<br>
+<br>
+Gebroek: voer water en energie toe um ies in fases te maake.<br>

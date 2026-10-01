@@ -1,0 +1,7 @@
+Rilevatore di temporali
+Rilevamento del segnale
+<&recipe>Un sensore di temporali aziona avvisi durante i tuoni.<br>
+<br>
+Uso: posalo sotto il cielo aperto e collegalo a lampade o allarmi.<br>
+<br>
+Note: richiede un temporale e accesso al cielo.

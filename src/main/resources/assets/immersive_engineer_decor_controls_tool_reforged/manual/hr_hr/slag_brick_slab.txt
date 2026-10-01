@@ -1,0 +1,5 @@
+Ploča od opeke od troske
+Gusto tvorničko ziđe
+<&recipe>Ovaj blok dodaje gusto sivosmeđe ziđe za temelje, potporne zidove i starije radne šupe.<br>
+<br>
+Uporaba: koristi ga za starije temelje, potporne zidove i prljave tvorničke podove.<br>

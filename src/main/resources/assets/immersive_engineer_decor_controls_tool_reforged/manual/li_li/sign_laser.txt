@@ -1,0 +1,5 @@
+Börd "Lasergevaor
+Gevaormarkering
+<&recipe>'t Börd "Lasergevaor" markeert gevaore, oetgange en werkzones mèt ein duidelik fabrieksveiligheidsteike.<br>
+<br>
+Gebroek: zèt 't naeve gevaore, oetgange, machines en aafgesjlaote zones.<br>

@@ -1,0 +1,5 @@
+Laboratoriala furnazo
+Kompakta procesunajo
+<&recipe>La laboratoriala furnazo exekutas kompakta fuzadolabori per solida brulajo en mikra laboreyspaco.<br>
+<br>
+Uzo: Uzez solida brulajo por kompakta fuzadolotari.<br>

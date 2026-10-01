@@ -1,0 +1,99 @@
+Verkfæri verkfræðingsins
+Færanlegur verkstæðisbúnaður
+Verkfæri verkfræðingsins bæta handbúnaði, námumerkjum, neyðarbirgðum, nesti og litlum efnisvinnslutækjum við sömu handbók og fjallar um skraut- og stýrikubbana.<br>
+<br>
+Þessi verkfæri eru ætluð til vinnu fjarri fullbúnu verkstæði: merktu leiðina, berðu birgðir, jafnaðu þig eftir mistök og ljúktu smærri vinnsluverkum á staðnum.
+<np>
+REDIA-verkfæri
+Demantshúðað nytjaverkfæri
+<&redia_tool>REDIA-verkfærið er endingargott vettvangsverkfæri fyrir snögga jarðvinnslu. Notaðu það á vinnanlegan jarðveg til að rækta land.<br>
+<br>
+Notaðu það á trausta hlið á meðan þú berð kyndla til að setja kyndilmerki úr bakpokanum án þess að slíta REDIA. Jarðvinnsla, klipping, axarvinna og trjáfelling eyða þoli.
+<np>
+Málmgrýtismölunarhamar
+Handverkfæri til mölunar
+<&crushing_hammer>Málmgrýtismulningshamarinn er handverkfæri fyrir fyrstu vinnslu á járni og gulli.<br>
+<br>
+Notkun: Smíðaðu hann með hrájárni, hrágulli, járngrýti, djúpskíferjárngrýti, gullgrýti eða djúpskífergullgrýti til að búa til járn- eða gullduft frá Immersive Engineering. Hamarinn missir endingu og kemur aftur í smíðareitinn þar til hann brotnar.<br>
+<br>
+Hann slitnar líka við námugröft og getur hrint skotmörkum frá sér í návígi.
+<np>
+Sporrekjari
+Merki fyrir vistaða staðsetningu
+<&tracker>Sporrekjarinn geymir staðsetningu kubbs beint í hlutnum.<br>
+<br>
+Notkun: Smelltu á kubb til að vista vídd og hnit. Verkfæraráðið sýnir vistuðu staðsetninguna. Laumunotaðu sporrekjarann til að hreinsa markið.<br>
+<br>
+Notaðu hann til að merkja vélar, gangnamót, fjarstýringar eða ólokin byggingarsvæði áður en þú snýrð aftur með verkfæri og efni.
+<np>
+Aríöðnukol
+Leiðarmerki í námu
+<&ariadne_coal>Aríöðnukol setja fljótleg svört örvamerki á traustar námuhliðar. Notaðu þau á trausta hlið til að merkja næstu beygju, útgang eða greinipunkt; merkið styður átta áttir á smelltu hliðinni, þar á meðal skááttir.<br>
+<br>
+Aríöðnukol eru endurnýtanlegt merkiverkfæri sem endist í 100 skipti. Hvert vel heppnað merki kostar eitt þolstig. Verkfærið hafnar óstuddu yfirborði í stað þess að slitna.
+<np>
+Sjálfvirkur örvunarpakki
+Neyðarsprauta
+<&stimpack>Auto Stim Pack er neyðarlækningatæki fyrir hættulegt viðhald.<br>
+<br>
+Notkun: Notaðu það handvirkt til að læknast, fá stutta vörn og skamma hreyfihvatningu. Í birgðunum getur það einnig virkjast sjálfkrafa við litla heilsu og fer síðan í biðtíma.<br>
+<br>
+Hafðu einn tiltækan áður en þú prófar háa staði, óvarðar raflagnir eða námuleiðir með óvinum.
+<np>
+Svefnpoki
+Færanlegur hvíldarbúnaður
+<&sleeping_bag>Svefnpokinn er veðurþolin hvíldarbúnaður fyrir vinnu langt frá rúmi.<br>
+<br>
+Notkun: Notaðu hann að nóttu í Overworld til að hvílast til morguns. Hann stillir hvorki né flytur endurfæðingarstaðinn.<br>
+<br>
+Pokinn hafnar notkun að degi, óöruggu umhverfi með skrímsli nærri og víddum sem henta ekki öruggri hvíld. Hver vel heppnuð hvíld slítur pokanum.
+<np>
+Efnageymslukassi
+Byggingabirgðakassi
+<&material_box>Efniskassinn geymir mikið af einu einföldu, óbreyttu og staflanlegu byggingarefni.<br>
+<br>
+Notkun: Haltu kassanum í aðalhendi og efnisstafla í aukahendi til að setja hann í kassann. Notaðu kassann með tóma aukahendi til að taka einn stafla út.<br>
+<br>
+Kassinn geymir allt að 512 hluti af einni tegund. Hann hafnar hreiðruðum kössum, óstaflanlegum búnaði og endurnefndum eða gagnabreyttum stöflum; verkfæraráðið sýnir innihaldið.
+<np>
+Loftshylki fyrir köfun
+Neyðarloftbirgðir
+<&diving_capsule>Köfunarlofthylkið er neyðarforði af lofti fyrir vinnu neðansjávar.<br>
+<br>
+Notkun: Notaðu það handvirkt til að endurheimta loft. Þegar það er í birgðunum getur það einnig virkjast sjálfkrafa þegar loftið er nær búið og fer síðan í biðtíma.<br>
+<br>
+Hafðu það með í flóðfullar námur, neðansjávarlagnir og viðgerðir í dæluherbergjum.
+<np>
+Muslee-pressa
+Matarpressa
+<&musli_bar_press>Muslee-stykkjapressan breytir algengum mat í þétt ferðaviðurværi.<br>
+<br>
+Notkun: Hafðu brauð, epli og hveiti-, melónu-, graskers-, rauðrófu- eða Industrial Hemp-fræ og notaðu pressuna. Vel heppnuð pressun eyðir einu af hverju, athugar pláss, býr til fjögur Muslee Melange-stykki og skemmir pressuna.<br>
+<br>
+Ef hráefni vantar eða birgðirnar hafa ekki pláss fyrir stykkin er engu eytt.
+<np>
+Muslee Melange orkustykki
+Fljótlegt verkstæðissnarl
+<&musli_bar>Muslee Melange orkustykkið er þétt fæða úr brauði, fræjum og ávöxtum.<br>
+<br>
+Notkun: Borðaðu það sem nesti við uppsetningu stýringa, röra, palla eða langra lagna í vélaherbergjum.
+<np>
+Hugapressa
+Reynsluþéttir
+<&charged_lapis_squeezer>Hugapressan breytir einum asúrsteini og einu reynslustigi úr bakpokanum þínum í hlaðinn asúrstein.<br>
+<br>
+Ferlið meiðir notandann, eykur þreytu sem veldur hungri og blindar hann stuttlega við hverja vel heppnaða umbreytingu. Það neitar að vinna án asúrsteins eða reynslu eða þegar notandinn er of nálægt dauða.
+<np>
+Hlaðinn asúrsteinn
+Geymd reynsla
+<&charged_lapis>Hlaðinn asúrsteinn geymir eitt reynslustig. Neyttu hans til að endurheimta stigið, hreinsa virk áhrif og endurheimta svolítið líf.<br>
+<br>
+Smíðaðu fyrst hugapressu; hlaðinn asúrsteinn er framleiddur með því verkfæri þegar asúrsteinn og reynsla eru tiltæk.
+<np>
+Gróft járnkurl
+Verkfæraefni verkfræðings sem er notað í endurgerðu smíðasafni.
+<&iron_grit>Má bræða í járnhleifa,<br>en hentar ekki fyrir<br>háþróaða efnisvinnslu.
+<np>
+Gróft gullkurl
+Verkfæraefni verkfræðings sem er notað í endurgerðu smíðasafni.
+<&gold_grit>Má bræða í gullhleifa,<br>en hentar ekki fyrir<br>háþróaða efnisvinnslu.

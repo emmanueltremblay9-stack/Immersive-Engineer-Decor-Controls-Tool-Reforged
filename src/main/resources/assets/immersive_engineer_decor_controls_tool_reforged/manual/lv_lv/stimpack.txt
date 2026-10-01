@@ -1,0 +1,7 @@
+Automātiskais stimulantu komplekts
+Avārijas injektors
+<&recipe>Auto Stim Pack ir ārkārtas medicīnisks rīks bīstamiem apkopes darbiem.<br>
+<br>
+Lietošana: Izmanto to manuāli, lai ārstētos, īslaicīgi saņemtu aizsardzību un kustības paātrinājumu. Inventārā tas var automātiski aktivizēties pie zemas veselības, un pēc tam sākas atdzišanas laiks.<br>
+<br>
+Turi vienu pa rokai pirms augstu vietu, atklātu vadu vai bīstamu raktuvju ceļu izmēģināšanas.

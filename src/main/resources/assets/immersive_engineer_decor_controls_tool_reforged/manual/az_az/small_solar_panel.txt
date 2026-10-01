@@ -1,0 +1,5 @@
+Günəş paneli
+Emalatxana yardımçısı
+<&recipe>Kiçik günəş paneli hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: Üstünü səmaya açıq saxlayın və az enerji tələb edən avadanlıq qoşun.<br>

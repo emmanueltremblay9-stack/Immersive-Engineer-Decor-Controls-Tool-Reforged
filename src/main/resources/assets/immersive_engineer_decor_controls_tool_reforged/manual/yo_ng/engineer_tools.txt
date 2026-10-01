@@ -1,0 +1,93 @@
+Àwọn Irinṣẹ́ Ẹlẹ́rọ̀
+Ohun èlò ilé ìṣẹ́ ọwọ́ alágbèéká
+Àkójọpọ̀ Àwọn Irinṣẹ́ Ẹlẹ́rọ̀ ń fi ohun èlò ọwọ́, àmì ibi ìwakùsà, ohun pàjáwìrì tí ń tán nígbà lílò, oúnjẹ ibi iṣẹ́, àti ohun ìrànwọ́ ìṣiṣẹ́ ohun èlò kékeré kún ìwé ìtọ́sọ́nà kan náà tó ṣàlàyé àwọn búlọ́ọ̀kù ọ̀ṣọ́ àti ìdarí.<br>
+<br>
+Àwọn irinṣẹ́ yìí jẹ́ fún iṣẹ́ níbi jíjìnnà sí ilé ìṣẹ́ ọwọ́ tó ní gbogbo ohun èlò: fi àmì sí ọ̀nà, gbé ìpèsè, bọ́ lọ́wọ́ àṣìṣe, kí o sì parí iṣẹ́ ìṣiṣẹ́ kékeré níbẹ̀.
+<np>
+Irinṣẹ́ REDIA
+Ohun ìrànwọ́ tí a bo pẹ̀lú dáyámọ́ńdì
+<&redia_tool>Irinṣẹ́ REDIA jẹ́ ohun ìrànwọ́ ibi iṣẹ́ tó lè pẹ́ fún iṣẹ́ ilẹ̀ kíákíá. Lo ó lórí ilẹ̀ tí a lè ṣiṣẹ́ láti ro ilẹ̀ oko.<br>
+<br>
+Lo ó lórí ojú tó dúró ṣinṣin nígbà tí o gbé ògùṣọ láti gbé àmì ògùṣọ láti ibi ìpamọ́ rẹ láì dín ìfaradà REDIA kù. Iṣẹ́ ilẹ̀, gígé pẹ̀lú ohun èlò gígé oníabẹ́ méjì, iṣẹ́ àáké, àti gígé igi lulẹ̀ ń dín ìfaradà kù.
+<np>
+Òòlù Fífọ́ Òkúta Àlùmọ́ọ́nì
+Irinṣẹ́ fífọ́ lọ́wọ́
+<&crushing_hammer>Olo to n fota ore je irinse owo fun sise iron ati gold ni ibere.<br>
+<br>
+Lo pelu raw iron, raw gold, iron tabi gold ore ati iru deepslate lati se dust Immersive Engineering. Olo naa padanu agbara, pada si crafting grid titi yoo fi baje, n ro nigba iwakusa, o si le ta afojusun seyin.
+<np>
+Olùtọpinpin
+Àmì ibi tí a pamọ́
+<&tracker>Tracker n fi ipo block pamọ sinu item.<br>
+<br>
+Te block lati fi dimension ati coordinates pamọ. Tooltip n fi ipo han. Lo nigba sneak lati pa target re.<br>
+<br>
+Samisi ero, tunnel, remote control tabi ile ti ko pari.
+<np>
+Èédú Ariadne
+Àmì ọ̀nà ibi ìwakùsà
+<&ariadne_coal>Èédú Ariadne ń gbé àmì ọfà ọ̀nà dúdú kíákíá sí àwọn ojú ibi ìwakùsà tó dúró ṣinṣin. Lo ó lórí ojú líle láti fi àmì sí ìyípo tó kàn, àbájáde, tàbí ẹ̀ka ọ̀nà; àmì ń ṣe àtìlẹ́yìn fún ọ̀nà mẹ́jọ ojú tí a tẹ̀, títí kan àwọn onígun.<br>
+<br>
+Èédú Ariadne jẹ́ irinṣẹ́ àmì àtúnlò onílílò 100. Ìgbékalẹ̀ àmì tó yọrí kọ̀ọ̀kan ń dín ìfaradà kù ní ẹyọ kan. Ó ń kọ àwọn ojú tí kò bá a mu dípò dídín ìfaradà ohun náà kù.
+<np>
+Àpò Abẹ́rẹ́ Ìrànwọ́ Àdáṣe
+Ẹ̀rọ abẹ́rẹ́ pàjáwìrì
+<&stimpack>Auto stim pack je ohun iwosan pajawiri.<br>
+<br>
+Lo pelu owo fun iwosan, aabo kukuru ati iyara. Ninu inventory o n sise laifowoyi nigbati health kere, leyin naa o cooldown. Pa mo ni ibi ewu.
+<np>
+Àpò Oorun
+Ohun èlò ìsinmi alágbèéká
+<&sleeping_bag>Apo orun je irinse isinmi ti oju ojo ko ni ba fun ise jina si ibusun.<br>
+<br>
+Lo ni ale ni Overworld lati sinmi de owuro lai yi spawn point pada.<br>
+<br>
+Ko sise ni osan, legbe monster tabi dimension ti ko dara. Isinmi kọọkan n din agbara apo.
+<np>
+Àpótí Ìpamọ́ Ohun Èlò
+Àpótí ìpèsè ìkọ́lé
+<&material_box>Apoti ohun elo gbe ipese nla ti ohun elo ikole kan ti ko yipada ati ti a le ko jo.<br>
+<br>
+Di apoti ni main hand ati ohun elo ni offhand lati fi sii; lo pelu offhand ofo lati yo stack kan.<br>
+<br>
+O gba ohun 512 ti iru kan, ko gba apoti miiran, irinse ti ko le stack ati stack ti a yipada, o si fi akoonu han ninu tooltip.
+<np>
+Àpò Afẹ́fẹ́ Ìlúwẹ̀
+Ìpamọ́ afẹ́fẹ́ pàjáwìrì
+<&diving_capsule>Capsule afefe omi je afefe pajawiri fun ise labe omi.<br>
+<br>
+Lo pelu owo lati mu afefe pada. Ninu inventory o n sise laifowoyi nigbati afefe fe tan, leyin naa o duro fun cooldown. Mu lo si iho omi ati paipu labe omi.
+<np>
+Ẹ̀rọ Títẹ̀ Ọ̀pá Muslee
+Ẹ̀rọ títẹ̀ oúnjẹ
+<&musli_bar_press>Muslee press n yi ounje deede si ration oko kekere.<br>
+<br>
+Mu bread, apple ati seed wheat, melon, pumpkin, beetroot tabi industrial hemp ki o lo press. O n lo okan ninu kookan, wo aye, se bar merin, press naa si n baje die.<br>
+<br>
+Ti nkan tabi aye ko ba to, ko si ohun ti yoo lo.
+<np>
+Ọ̀pá Oúnjẹ Àdàpọ̀ Muslee
+Ìpápánu ilé iṣẹ́ kíákíá
+<&musli_bar>Muslee Melange bar je ounje kekere lati bread, seed ati fruit.<br>
+<br>
+Je nigba fifi control, pipe, platform tabi ila ero gigun si ipo.
+<np>
+Ẹ̀rọ Fífa Ìrírí
+Olùfúnpọ̀ ìrírí
+<&charged_lapis_squeezer>Ẹ̀rọ Fífa Ìrírí ń yí lápísì làsúlì kan àti ìpele ìrírí kan láti ibi ìpamọ́ rẹ sí Lápísì Alágbára.<br>
+<br>
+Ìlànà náà ń pa olùlò lára, ó ń fa àárẹ̀ tó ń mú ebi wá, ó sì ń jẹ́ kí olùlò má ríran fún àkókò díẹ̀ ní gbogbo ìyípadà tó yọrí. Ó ń kọ láti ṣiṣẹ́ láìsí lápísì, láìsí XP, tàbí nígbà tí olùlò bá sún mọ́ ikú jù.
+<np>
+Lápísì Alágbára
+Ìrírí tí a pamọ́
+<&charged_lapis>Lápísì Alágbára ń pa ìpele ìrírí kan mọ́. Jẹ ẹ́ láti dá ìpele náà padà, yọ àwọn ipa tí ń ṣiṣẹ́, kí o sì gba ìlera díẹ̀ padà.<br>
+<br>
+Kọ́kọ́ ṣe Ẹ̀rọ Fífa Ìrírí; a ń ṣe Lápísì Alágbára nípa lílo irinṣẹ́ yẹn nígbà tí lápísì àti XP wà.
+<np>
+Ìyẹ̀fun Irin Gágá
+Ohun èlò irinṣẹ́ ẹlẹ́rọ̀ tí àkójọpọ̀ iṣẹ́ ọwọ́ tí a tún kọ́ ń lò.
+<&iron_grit>A lè yọ́ ọ sí àwọn ọ̀pá irin,<br>ṣùgbọ́n kò yẹ fún ìṣiṣẹ́ ohun<br>èlò tó ti ní ìtẹ̀síwájú.
+<np>
+Ìyẹ̀fun Wúrà Gágá
+Ohun èlò irinṣẹ́ ẹlẹ́rọ̀ tí àkójọpọ̀ iṣẹ́ ọwọ́ tí a tún kọ́ ń lò.
+<&gold_grit>A lè yọ́ ọ sí àwọn ọ̀pá wúrà,<br>ṣùgbọ́n kò yẹ fún ìṣiṣẹ́ ohun<br>èlò tó ti ní ìtẹ̀síwájú.

@@ -1,0 +1,7 @@
+Detetor linear de entidades
+Deteção de sinais
+<&recipe>Um detetor de entidades observa o movimento próximo sem uma placa visível no piso.<br>
+<br>
+Uso: Liga-o a portas, lâmpadas, alarmes ou interbloqueios de máquinas.<br>
+<br>
+Observações: Verifica uma pequena área ao redor do bloco.

@@ -1,0 +1,5 @@
+Thanh năng lượng hỗn hợp Muslee
+Món ăn nhanh trong xưởng
+<&recipe>Thanh Muslee Melange là thức ăn gọn làm từ bánh mì, hạt và trái cây.<br>
+<br>
+Ăn khi lắp bộ điều khiển, ống, sàn hoặc dây chuyền máy dài.

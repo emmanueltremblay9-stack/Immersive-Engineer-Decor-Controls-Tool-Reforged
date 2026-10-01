@@ -1,0 +1,5 @@
+Zbijeni šljunkoviti pesak
+Podna obloga gradilišta
+<&recipe>Ovaj blok daje spoljnim radnim površinama zbijen, ugažen izgled.<br>
+<br>
+Upotreba: postavi ga oko utovarnih vrata, spoljnih rezervoara i mašinskih dvorišta.<br>

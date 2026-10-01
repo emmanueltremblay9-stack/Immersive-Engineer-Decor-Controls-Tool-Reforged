@@ -1,0 +1,7 @@
+Kontakthebel
+Redstone-Steuerung
+<&recipe>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.

@@ -1,0 +1,7 @@
+Világító érzékeny üveg
+Jelzőüveg
+<&recipe>A redstone-ra reagáló üvegblokk megtartja az átláthatóságot, és közben jelzi a jel állapotát.<br>
+<br>
+Használat: vezérlőtermi ablakokban, világító panelekben és védett gyári üvegezésként használd.<br>
+<br>
+Megjegyzés: közeli redstone-táplálás hatására állapotot vált.

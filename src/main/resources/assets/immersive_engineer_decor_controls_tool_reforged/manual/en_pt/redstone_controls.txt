@@ -1,0 +1,789 @@
+Redstone command gear
+Gauges and signal gear
+Control fittings make hidden redstone readable through factory panels, sensor lookouts, indicators, switches, alarms and linked signal gear.<br>
+<br>
+Turn to these pages when ye build operator stations, signal boards, safety circuits and controls that reach afar.
+<np>
+Target fer arrows
+A brief signal pulse
+<&arrow_target>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Doorway lookout
+Redstone orders
+<&door_sensor_switch>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Lift-call button
+Redstone orders
+<&elevator_button>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Porthole-glass button
+Redstone orders
+<&glass_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Porthole-glass button
+Redstone orders
+<&glass_small_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Touch button o' glass
+Redstone orders
+<&glass_touch_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Button fer a machine
+Redstone orders
+<&industrial_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Button to press
+Redstone orders
+<&industrial_double_pole_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Guarded button fer a machine
+Redstone orders
+<&industrial_fenced_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Button that hears a knock
+Redstone orders
+<&industrial_knock_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Button o' old finery
+Redstone orders
+<&oldfancy_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Button o' old finery
+Redstone orders
+<&oldfancy_small_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Chain button o' old finery
+A brief signal pulse
+<&oldfancy_spring_reset_chain>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Button o' rustic style
+Redstone orders
+<&rustic_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Rustic nail-shaped button
+Redstone orders
+<&rustic_nail_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Little rustic button
+Redstone orders
+<&rustic_small_button>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Rustic pull-chain button
+A brief signal pulse
+<&rustic_spring_reset_chain>A momentary switch sends a clean redstone pulse at full strength, matey.<br>
+<br>
+Orders: Use her to start contraptions, release doors, sound alarms or fire a circuit once.<br>
+<br>
+Mind ye: She resets when her appointed pulse ends.
+<np>
+Porthole-glass tread plate
+Pulse from pressure
+<&glass_contact_mat>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Glass contact fer doorways
+Pulse from pressure
+<&glass_door_contact_mat>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Mat that feels contact
+Pulse from pressure
+<&industrial_contact_mat>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Doorway contact mat
+Pulse from pressure
+<&industrial_door_contact_mat>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Lookout fer fall-throughs
+Sensin' a signal
+<&industrial_fallthrough_detector>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Button fer yer foot
+Redstone orders
+<&industrial_foot_button>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Factory impact door
+Pulse from pressure
+<&industrial_high_sensitive_trapdoor>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Contact mat that feels impacts
+Pulse from pressure
+<&industrial_shock_sensitive_contact_mat>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Hatch tripped by impact
+Pulse from pressure
+<&industrial_shock_sensitive_trapdoor>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Red power-givin' flower
+Pulse from pressure
+<&red_power_plant>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Rustic plate fer pressure
+Pulse from pressure
+<&rustic_contact_plate>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Rustic pressure contact fer doorways
+Pulse from pressure
+<&rustic_door_contact_plate>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Rustic lookout fer falls
+Sensin' a signal
+<&rustic_fallthrough_detector>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Rustic impact door
+Pulse from pressure
+<&rustic_high_sensitive_trapdoor>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Rustic plate that feels impacts
+Pulse from pressure
+<&rustic_shock_sensitive_plate>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Rustic impact door
+Pulse from pressure
+<&rustic_shock_sensitive_trapdoor>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Yellow power-givin' flower
+Pulse from pressure
+<&yellow_power_plant>A contact switch sends a short signal when movement meets the deck plate or hatch.<br>
+<br>
+Orders: Put her where entities pass through a service aisle, loader or guarded route.<br>
+<br>
+Mind ye: She pulses briefly after an entity makes contact.
+<np>
+Porthole-glass daylight clock
+Signal by daylight
+<&glass_day_timer>A timer switch follows the daylight part o' the world's cycle.<br>
+<br>
+Orders: Use her fer yard lamps, shutters and factory controls that work only by day.<br>
+<br>
+Mind ye: Her dimension must have skylight.
+<np>
+Glass lookout fer entities
+Sensin' a signal
+<&glass_entity_detector>An entity lookout watches nearby movement without a visible plate on the deck.<br>
+<br>
+Orders: Wire her to doors, lamps, alarms or machine interlocks.<br>
+<br>
+Mind ye: She scans a small patch round the block.
+<np>
+Glass signal at intervals
+Pulse on a timer
+<&glass_interval_timer>A small timer switch sends redstone pulses on schedule, matey.<br>
+<br>
+Orders: Use her where a little mechanism needs orders after a delay or at regular intervals.<br>
+<br>
+Mind ye: She sends scheduled redstone pulses.
+<np>
+Glass straight-line lookout
+Sensin' a signal
+<&glass_linear_entity_detector>An entity lookout watches nearby movement without a visible plate on the deck.<br>
+<br>
+Orders: Wire her to doors, lamps, alarms or machine interlocks.<br>
+<br>
+Mind ye: She scans a small patch round the block.
+<np>
+Lookout fer blocks
+Sensin' a signal
+<&industrial_block_detector>A block lookout checks whether the space she faces be occupied.<br>
+<br>
+Orders: Aim her at the machine face, buffer or guarded space ye want watched.<br>
+<br>
+Mind ye: She powers on when the block ahead ain't air.
+<np>
+Clock fer day-timin'
+Signal by daylight
+<&industrial_day_timer>A timer switch follows the daylight part o' the world's cycle.<br>
+<br>
+Orders: Use her fer yard lamps, shutters and factory controls that work only by day.<br>
+<br>
+Mind ye: Her dimension must have skylight.
+<np>
+Lookout fer entities
+Sensin' a signal
+<&industrial_entity_detector>An entity lookout watches nearby movement without a visible plate on the deck.<br>
+<br>
+Orders: Wire her to doors, lamps, alarms or machine interlocks.<br>
+<br>
+Mind ye: She scans a small patch round the block.
+<np>
+Timer fer intervals
+Pulse on a timer
+<&industrial_interval_timer>A small timer switch sends redstone pulses on schedule, matey.<br>
+<br>
+Orders: Use her where a little mechanism needs orders after a delay or at regular intervals.<br>
+<br>
+Mind ye: She sends scheduled redstone pulses.
+<np>
+Lookout fer light
+Sensin' a signal
+<&industrial_light_sensor>A light lookout turns the brightness where she stands into redstone orders.<br>
+<br>
+Orders: Use her fer automatic lamps, shutters and visibility circuits.<br>
+<br>
+Mind ye: She powers on at raw brightness 8 or higher.
+<np>
+Lookout fer storms
+Sensin' a signal
+<&industrial_lightning_sensor>A storm lookout sends warnings when thunder be about.<br>
+<br>
+Orders: Set her beneath open sky and wire her to lamps or alarms.<br>
+<br>
+Mind ye: She needs thunder and a clear view o' the sky.
+<np>
+Straight-line entity lookout
+Sensin' a signal
+<&industrial_linear_entity_detector>An entity lookout watches nearby movement without a visible plate on the deck.<br>
+<br>
+Orders: Wire her to doors, lamps, alarms or machine interlocks.<br>
+<br>
+Mind ye: She scans a small patch round the block.
+<np>
+Lookout fer rain
+Sensin' a signal
+<&industrial_rain_sensor>A weather lookout turns rain at her berth into redstone.<br>
+<br>
+Orders: Mount her where rain can reach the block above.<br>
+<br>
+Mind ye: She checks fer rain above the sensor.
+<np>
+Glass switch with two steady states
+Redstone orders
+<&glass_rotary_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Glass touch control with two steady states
+Redstone orders
+<&glass_touch_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Orange glass that feels redstone
+Glass fer signals
+<&orange_sensitiveglass>A glass block that feels redstone keeps the view clear while showin' the signal's state.<br>
+<br>
+Orders: Use her in control-room portholes, lit panels and guarded factory glazing.<br>
+<br>
+Mind ye: Nearby redstone power changes her state.
+<np>
+Shinin' sensitive glass
+Glass fer signals
+<&sensitive_glass_block>A glass block that feels redstone keeps the view clear while showin' the signal's state.<br>
+<br>
+Orders: Use her in control-room portholes, lit panels and guarded factory glazing.<br>
+<br>
+Mind ye: Nearby redstone power changes her state.
+<np>
+Coloured glass that feels signals
+Glass fer signals
+<&stained_sensitiveglass>A glass block that feels redstone keeps the view clear while showin' the signal's state.<br>
+<br>
+Orders: Use her in control-room portholes, lit panels and guarded factory glazing.<br>
+<br>
+Mind ye: Nearby redstone power changes her state.
+<np>
+Bar gauge o' glass
+Gauge fer signals
+<&glass_vertical_bar_gauge>A small control-room gauge shows redstone strength as an easy panel reading, matey.<br>
+<br>
+Orders: Mount her where ye can read nearby redstone power at a glance.<br>
+<br>
+Mind ye: She reads nearby redstone strength from 0 to 15.
+<np>
+Gauge o' the analog sort
+Gauge fer signals
+<&industrial_analog_angular_gauge>A small control-room gauge shows redstone strength as an easy panel reading, matey.<br>
+<br>
+Orders: Mount her where ye can read nearby redstone power at a glance.<br>
+<br>
+Mind ye: She reads nearby redstone strength from 0 to 15.
+<np>
+Voltmeter readout
+Gauge fer signals
+<&industrial_analog_horizontal_gauge>A small control-room gauge shows redstone strength as an easy panel reading, matey.<br>
+<br>
+Orders: Mount her where ye can read nearby redstone power at a glance.<br>
+<br>
+Mind ye: She reads nearby redstone strength from 0 to 15.
+<np>
+Gauge with a digital readout
+Signal strength ye can read
+<&industrial_small_digital_gauge>A small control-room gauge shows redstone strength as an easy panel reading, matey.<br>
+<br>
+Orders: Mount her where ye can read nearby redstone power at a glance.<br>
+<br>
+Mind ye: She reads nearby redstone strength from 0 to 15.
+<np>
+Gauge o' glass tubing
+Gauge fer signals
+<&industrial_tube_gauge>A small control-room gauge shows redstone strength as an easy panel reading, matey.<br>
+<br>
+Orders: Mount her where ye can read nearby redstone power at a glance.<br>
+<br>
+Mind ye: She reads nearby redstone strength from 0 to 15.
+<np>
+Bar gauge o' the analog sort
+Gauge fer signals
+<&industrial_vertical_bar_gauge>A small control-room gauge shows redstone strength as an easy panel reading, matey.<br>
+<br>
+Orders: Mount her where ye can read nearby redstone power at a glance.<br>
+<br>
+Mind ye: She reads nearby redstone strength from 0 to 15.
+<np>
+Lamp fer the alarm
+Signal reported back
+<&industrial_alarm_lamp>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Alarm Siren
+Signal feedback
+<&industrial_alarm_siren>The Alarm Siren is a face-mounted redstone indicator. It changes powered state from the signal supplied by the block it is attached to.<br>
+<br>
+Usage: Attach it to a solid face and power it to monitor doors, machines, alarms, or panels.<br>
+<br>
+Notes: The siren refreshes once per second while its attached signal remains active.
+<np>
+Blinkin' LED
+Signal reported back
+<&industrial_blinking_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Blinkin' green LED
+Signal reported back
+<&industrial_green_blinking_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Green LED lookout
+Signal reported back
+<&industrial_green_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Scarlet LED lookout
+Signal reported back
+<&industrial_red_blinking_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Scarlet LED lookout
+Signal reported back
+<&industrial_red_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Blinkin' white LED
+Signal reported back
+<&industrial_white_blinking_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+White LED lookout
+Signal reported back
+<&industrial_white_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Blinkin' yellow LED
+Signal reported back
+<&industrial_yellow_blinking_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Yellow LED lookout
+Signal reported back
+<&industrial_yellow_led>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Rustic signal flag
+Signal reported back
+<&rustic_semaphore>A small indicator makes hidden redstone visible in yer factory.<br>
+<br>
+Orders: Wire her beside the signal to watch doors, contraptions, alarms or panels.<br>
+<br>
+Mind ye: Her state changes when nearby redstone power be present.
+<np>
+Compaaratorrr switch
+Signal from the support
+<&industrial_comparator_switch>A little sensor switch reads her support block and turns that reading into a plain panel output.<br>
+<br>
+Orders: Mount her on loot bags, tanks or redstone gear. When her support block reports compaaratorrr, container or redstone output, she sends redstone at full strength.<br>
+<br>
+Mind ye: Use her to turn storage levels or hidden wires into clear on/off control lines.
+<np>
+Hand-set dimmer
+Signal ye can vary
+<&industrial_dimmer>A turnin' control lets ye dial redstone strength from a little panel face.<br>
+<br>
+Orders: Right-click her to raise output a step at a time. After full strength she returns to zero.<br>
+<br>
+Mind ye: Her output runs from 0 to 15.
+<np>
+ESTOP emergency button
+Redstone orders
+<&industrial_estop_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Stopper fer suckin' devices
+Redstone orders
+<&industrial_hopper_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Switch that hears a knock
+Redstone orders
+<&industrial_knock_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Lever to throw
+Redstone orders
+<&industrial_lever>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Machine switch, two buttons
+Redstone orders
+<&industrial_machine_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Handle ye pull
+Redstone orders
+<&industrial_pull_handle>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Lever ye turn
+Redstone orders
+<&industrial_rotary_lever>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Turnin' machine switch
+Redstone orders
+<&industrial_rotary_machine_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Lever fer contact
+Redstone orders
+<&industrial_small_lever>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Switch to throw
+Redstone orders
+<&industrialswitch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Switch fer light
+Redstone orders
+<&light_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Valve-wheel switch
+Redstone orders
+<&valve_wheel_switch>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Boxed pulse receiver
+Orders through a link
+<&industrial_switchlink_cased_pulse_receiver>A boxed, linked pulse receiver gives remote panels a short redstone trigger, matey.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Right-click her or trigger that pearl to send a short pulse.<br>
+<br>
+Mind ye: The pulse resets itself when its appointed span ends.
+<np>
+Boxed link receiver
+Orders through a link
+<&industrial_switchlink_cased_receiver>A boxed, linked receiver gives remote panels a stout redstone target, matey.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Right-click the receiver herself to toggle her by hand.<br>
+<br>
+Mind ye: Creep while usin' a linked pearl to toggle this receiver.
+<np>
+Receiver fer pulse links
+Orders through a link
+<&industrial_switchlink_pulse_receiver>A linked pulse receiver gives remote panels a short redstone trigger, matey.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Right-click her or trigger that pearl to send a short pulse.<br>
+<br>
+Mind ye: The pulse resets itself when its appointed span ends.
+<np>
+Relay fer pulse links
+Orders through a link
+<&industrial_switchlink_pulse_relay>A relay-shaped fitting gives yer panel a small point fer a local switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits. Choose receiver blocks if ye need a linked pearl to trigger them.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Receiver fer switch links
+Orders through a link
+<&industrial_switchlink_receiver>A linked receiver gives remote panels a full-strength redstone target, matey.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Right-click the receiver herself to toggle her by hand.<br>
+<br>
+Mind ye: Creep while usin' a linked pearl to toggle this receiver.
+<np>
+Analog receiver fer links
+Orders through a link
+<&industrial_switchlink_receiver_analog>A linked receiver gives yer control panels a visible target to reach from afar.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Creep while usin' that pearl to trigger the receiver from afar.<br>
+<br>
+Mind ye: This receiver sends redstone at full strength when triggered.
+<np>
+Relay fer switch links
+Orders through a link
+<&industrial_switchlink_relay>A relay-shaped fitting gives yer panel a small point fer a local switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits. Choose receiver blocks if ye need a linked pearl to trigger them.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Analog relay fer links
+Orders through a link
+<&industrial_switchlink_relay_analog>A relay-shaped fitting gives yer panel a small point fer a local switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits. Choose receiver blocks if ye need a linked pearl to trigger them.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Pearl fer a switch link
+Orders through a link
+<&switchlink_pearl>A linked pearl remembers a receiver target fer factory controls that reach afar.<br>
+<br>
+Orders: Click a switch-link receiver with a pearl o' ender to make one. Creep while usin' the linked pearl to trigger the receiver she's remembered.<br>
+<br>
+Mind ye: The target must be loaded, in yer own dimension and within range.
+<np>
+Lever o' old finery
+Redstone orders
+<&oldfancy_bistableswitch1>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Turnin' lever o' old finery
+Redstone orders
+<&oldfancy_bistableswitch2>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Rustic turnin' lever
+Redstone orders
+<&rustic_angular_lever>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Lever o' rustic style
+Redstone orders
+<&rustic_lever>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Rustic nail-shaped lever
+Redstone orders
+<&rustic_nail_lever>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.
+<np>
+Rustic lever on two hinges
+Redstone orders
+<&rustic_two_hinge_lever>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.

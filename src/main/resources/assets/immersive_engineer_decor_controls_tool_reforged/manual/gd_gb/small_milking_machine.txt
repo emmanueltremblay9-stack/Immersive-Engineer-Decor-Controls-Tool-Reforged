@@ -1,0 +1,5 @@
+Inneal bleoghainn
+Goireas làir bùth-obrach
+<&recipe>Tha an Inneal beag bleoghainn na bhloca goireis bùth-obrach airson obair-chiùird, stòradh, cur, briseadh, cruinneachadh no fèin-obrachadh dlùth.<br>
+<br>
+Cleachdadh: cuir faisg air crodh e agus thoir seachad dòigh air soithichean bainne no lionn a thoirt air falbh.<br>

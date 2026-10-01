@@ -1,0 +1,5 @@
+Milking Engine
+Convenience for the Workshop Floor
+<&recipe>The Little Milking Engine is a workshop convenience for crafts, storage, placement, breaking, gathering or compact automatic works.<br>
+<br>
+Use: Set it near cows and provide a means to draw off milk vessels or liquid.<br>

@@ -1,0 +1,7 @@
+Glassdørkontakt
+Trykkpuls
+<&recipe>En kontaktbryter gir et kort signal ved bevegelse på gulvet eller fallemmen.<br>
+<br>
+Bruk: plasser den der entiteter går gjennom en servicegang, laster eller sikret rute.<br>
+<br>
+Merknad: gir en kort puls etter kontakt med en entitet.

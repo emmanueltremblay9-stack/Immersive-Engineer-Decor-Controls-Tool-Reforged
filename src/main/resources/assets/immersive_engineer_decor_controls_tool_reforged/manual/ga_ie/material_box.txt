@@ -1,0 +1,7 @@
+Bosca Stórála Ábhar
+Bosca soláthairtí tógála
+<&recipe>Iompraíonn an bosca ábhar stór mór d’aon ábhar tógála simplí, gan athrú agus inchruachta.<br>
+<br>
+Úsáid: Coinnigh an bosca sa phríomhlámh agus cruach ábhair sa lámh eile lena luchtú. Úsáid an bosca leis an lámh eile folamh chun cruach amháin a bhaint.<br>
+<br>
+Coinníonn sé suas le 512 earra d’aon chineál amháin. Diúltaíonn sé boscaí neadaithe, trealamh nach cruachtaítear agus cruacha athainmnithe nó sonraí-athraithe; taispeántar an t-ábhar sa leid uirlise.

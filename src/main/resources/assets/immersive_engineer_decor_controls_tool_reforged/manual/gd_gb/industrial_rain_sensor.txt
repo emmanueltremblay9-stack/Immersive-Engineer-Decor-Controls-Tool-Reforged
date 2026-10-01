@@ -1,0 +1,7 @@
+Mothaiche uisge-adhair
+Mothachadh chomharran
+<&recipe>Tionndaidhidh mothaiche sìde uisge-adhair san àite aige gu redstone.<br>
+<br>
+Cleachdadh: cuir e far am faigh am bloca os a chionn uisge-adhair.<br>
+<br>
+Nòtaichean: dearbhaidh e uisge-adhair os cionn a' mhothaiche.

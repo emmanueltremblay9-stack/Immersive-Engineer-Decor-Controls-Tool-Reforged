@@ -1,0 +1,5 @@
+Horno de laboratorio
+Unidad compacta de procesamiento
+<&recipe>El horno de laboratorio realiza pequeños trabajos de fundición con combustible sólido y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Utilizá combustible sólido para fundir lotes pequeños.<br>

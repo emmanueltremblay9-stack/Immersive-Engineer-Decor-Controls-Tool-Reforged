@@ -1,0 +1,5 @@
+Fabryčnaja varonka
+Abstalavannie cecha
+<&recipe>Hety błok pieramiaščaje stosy pradmietaŭ praz bolš kampaktny pramysłovy korpus.<br>
+<br>
+Vykarystannie: paviarni jaho da linii schoviščaŭ, zatym zadaj u jaho ekranie radyus dziejannia, kolkasć u stosie, čas i redstonavy režym.<br>

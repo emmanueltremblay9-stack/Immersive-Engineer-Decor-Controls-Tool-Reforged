@@ -1,0 +1,5 @@
+Koufr gant skritell
+Skritell stok kemmadus
+<&recipe>Ar c'houfr gant skritell-mañ zo graet evit renkañ sklaer ur sal stokañ. E blakenn a-raok a c'haller kemmañ evel ur banell atalier vihan.<br>
+<br>
+Implij: Klikit a-zehoù war ar blakenn skritell evit kemmañ skritell ar c'houfr. Klikit a-zehoù war peurrest ar c'houfr evit digeriñ ar stok tammoù, pezhioù ha pourvezioù trezalc'h.<br>

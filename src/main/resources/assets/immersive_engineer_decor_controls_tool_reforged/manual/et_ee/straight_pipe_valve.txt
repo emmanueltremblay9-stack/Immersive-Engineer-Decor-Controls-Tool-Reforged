@@ -1,0 +1,5 @@
+Vedelikutoru tagasilöögiklapp
+Vedelikutrassi seadmed
+<&recipe>Vedelikutoru tagasilöögiklapp on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Joonda ventiil soovitud voolusuunaga.<br>

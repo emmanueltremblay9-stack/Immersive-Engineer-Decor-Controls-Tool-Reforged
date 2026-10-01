@@ -1,0 +1,7 @@
+Leuchdendes empfindl’sches Glas
+Signalglas
+<&recipe>Ä Glasblogg, dor uff Redstone reagierd, häld dän Durchbligg frei un zeigd dabei dän Signalzuschdand.<br>
+<br>
+Nuddzung: Nimm’n in Schdeuorraumfänsdorn, leuchdendn Paneelen un geschiddzdor Fabrigvorglasung.<br>
+<br>
+Hinweis: Ändord sein Zuschdand durch Redstone-Energie in dor Nähe.

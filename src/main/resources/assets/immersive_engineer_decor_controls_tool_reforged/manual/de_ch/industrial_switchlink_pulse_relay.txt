@@ -1,0 +1,7 @@
+Verchnüpfts Impulsrelais
+Verchnüpfti Stüürig
+<&recipe>Es Teil im Relaisstil git Schalttafle en kompakte lokale Schaltpunkt.<br>
+<br>
+Verwendig: Rechtsklick schaltet de Uusgang mit voller Stärchi für nöchi Schaltige um. Nimm Empfängerblöck, wenn mit ere Link-Perle uuslöse wotsch.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.

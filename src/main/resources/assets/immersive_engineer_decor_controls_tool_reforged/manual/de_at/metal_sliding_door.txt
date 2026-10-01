@@ -1,0 +1,5 @@
+Metallschiebetir
+Industrieller Zugang
+<&recipe>Der Block schafft an robusten Zugang zu Betriebsräumen, Schächten, Dächern und Maschinengehäusen.<br>
+<br>
+Verwendung: Bau eam ein, wo dei Bau a kontrollierbore Wartungsöffnung braucht.<br>

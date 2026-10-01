@@ -1,0 +1,7 @@
+Rustikalna lančana tipka
+Kratkotrajni impuls
+<&recipe>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.

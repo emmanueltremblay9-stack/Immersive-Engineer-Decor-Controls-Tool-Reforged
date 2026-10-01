@@ -1,0 +1,7 @@
+Slēdža saites pērle
+Sasaistīta vadība
+<&recipe>Sasaistīta pērle glabā uztvērēja mērķi rūpnīcas attālinātai vadībai.<br>
+<br>
+Lietošana: noklikšķini uz slēdža saites uztvērēja ar Ender pērli, lai to izveidotu. Lieto sasaistīto pērli lavoties, lai aktivizētu saglabāto uztvērēju.<br>
+<br>
+Piezīmes: mērķim jābūt ielādētam, tajā pašā dimensijā un sasniedzamā attālumā.

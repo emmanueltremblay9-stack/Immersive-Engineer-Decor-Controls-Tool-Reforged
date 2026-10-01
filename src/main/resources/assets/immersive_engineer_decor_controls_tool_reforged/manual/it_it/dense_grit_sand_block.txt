@@ -1,0 +1,5 @@
+Sabbia granulosa compatta
+Rivestimento del suolo del cantiere
+<&recipe>Questo blocco dà alle aree di lavoro all’aperto una superficie compatta e calpestata.<br>
+<br>
+Uso: posalo attorno a porte di carico, serbatoi esterni e piazzali per macchinari.<br>

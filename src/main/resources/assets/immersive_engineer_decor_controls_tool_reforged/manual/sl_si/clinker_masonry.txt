@@ -1,0 +1,161 @@
+Klinker in zidovje
+Opečni in betonski ovoji
+Klinker, žlindrina opeka, armiran beton in oklepno steklo zagotavljajo masivne površine za vroče prostore, delavnice in zaščitene poglede.<br>
+<br>
+Z ustreznimi ploščami, stopnicami, tankimi ploščami in zidovi dokončaj robove, ne da bi spremenil značilni materialni videz tovarne.
+<np>
+Blok klinkerjeve opeke
+Od saj potemnela opeka
+<&clinker_brick_block>Ta blok prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Plošča klinkerjeve opeke
+Od saj potemnela opeka
+<&clinker_brick_slab>Ta blok prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Stopnice klinkerjeve opeke
+Od saj potemnela opeka
+<&clinker_brick_stairs>Ta blok prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Zid klinkerjeve opeke
+Od saj potemnela opeka
+<&clinker_brick_wall>Ta blok prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Blok umazanega klinkerja
+Od saj potemnela opeka
+<&clinker_brick_stained_block>Blok umazane klinkerjeve opeke prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Plošča umazanega klinkerja
+Od saj potemnela opeka
+<&clinker_brick_stained_slab>Plošča umazane klinkerjeve opeke prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Stopnice umazanega klinkerja
+Od saj potemnela opeka
+<&clinker_brick_stained_stairs>Stopnice umazane klinkerjeve opeke prinašajo od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Okrašena klinkerjeva opeka
+Od saj potemnela opeka
+<&clinker_brick_sastor_corner_block>Klinkerjeva opeka z okrasjem iz peščenjaka prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Vdolbena klinkerjeva opeka
+Od saj potemnela opeka
+<&clinker_brick_recessed>Ta blok prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Klinkerjeva opeka z režami
+Od saj potemnela opeka
+<&clinker_brick_vertically_slit>Klinkerjeva opeka z navpičnimi režami prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Navpična klinkerjeva plošča
+Od saj potemnela opeka
+<&clinker_brick_vertical_slab_structured>Reliefna navpična klinkerjeva plošča prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Polovična plošča iz klinkerjeve opeke
+Od saj potemnela opeka
+<&halfslab_clinker_brick>Ta blok prinaša od saj potemnelo opeko v dvorane s pečmi, temelje dimnikov in servisne zidove.<br>
+<br>
+Uporaba: Uporabi ga kot zid, obrobo ali ovoj vročih območij okoli peči in kotlov.<br>
+<np>
+Blok žlindrine opeke
+Gosto tovarniško zidovje
+<&slag_brick_block>Ta blok dodaja gosto sivo-rjavo zidovje za temelje, podporne zidove in starejše delovne lope.<br>
+<br>
+Uporaba: Uporabi ga za starejše temelje, podporne zidove in umazana tovarniška tla.<br>
+<np>
+Plošča žlindrine opeke
+Gosto tovarniško zidovje
+<&slag_brick_slab>Ta blok dodaja gosto sivo-rjavo zidovje za temelje, podporne zidove in starejše delovne lope.<br>
+<br>
+Uporaba: Uporabi ga za starejše temelje, podporne zidove in umazana tovarniška tla.<br>
+<np>
+Stopnice žlindrine opeke
+Gosto tovarniško zidovje
+<&slag_brick_stairs>Ta blok dodaja gosto sivo-rjavo zidovje za temelje, podporne zidove in starejše delovne lope.<br>
+<br>
+Uporaba: Uporabi ga za starejše temelje, podporne zidove in umazana tovarniška tla.<br>
+<np>
+Zid žlindrine opeke
+Gosto tovarniško zidovje
+<&slag_brick_wall>Ta blok dodaja gosto sivo-rjavo zidovje za temelje, podporne zidove in starejše delovne lope.<br>
+<br>
+Uporaba: Uporabi ga za starejše temelje, podporne zidove in umazana tovarniška tla.<br>
+<np>
+Blok armiranega betona
+Ojačan beton
+<&rebar_concrete>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Plošča armiranega betona
+Ojačan beton
+<&rebar_concrete_slab>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Stopnice armiranega betona
+Ojačan beton
+<&rebar_concrete_stairs>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Zid armiranega betona
+Ojačan beton
+<&rebar_concrete_wall>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Tanka plošča armiranega betona
+Ojačan beton
+<&halfslab_rebar_concrete>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Ploščica armiranega betona
+Ojačan beton
+<&rebar_concrete_tile>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Plošča iz ploščic armiranega betona
+Ojačan beton
+<&rebar_concrete_tile_slab>Ta blok je utrjen betonski del za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Ploščica armiranega betona
+Ojačan beton
+<&rebar_concrete_tile_stairs>Stopnice iz ploščic armiranega betona so utrjeni betonski deli za podstavke strojev, protieksplozijske zidove in tla nakladalnih prostorov.<br>
+<br>
+Uporaba: Uporabi ga pod stroji, ob servisnih hodnikih ali povsod, kjer gradnja potrebuje ojačano podlago.<br>
+<np>
+Blok oklepnega stekla
+Zaščiten pogled
+<&panzerglass_block>Ta blok ohranja odprt pogled in se hkrati ujema z ojačano tovarniško gradnjo.<br>
+<br>
+Uporaba: Uporabi ga tam, kjer naj igralci vidijo stroje skozi zaščitno pregrado.<br>
+<np>
+Plošča oklepnega stekla
+Zaščiten pogled
+<&panzerglass_slab>Ta blok ohranja odprt pogled in se hkrati ujema z ojačano tovarniško gradnjo.<br>
+<br>
+Uporaba: Uporabi ga tam, kjer naj igralci vidijo stroje skozi zaščitno pregrado.<br>

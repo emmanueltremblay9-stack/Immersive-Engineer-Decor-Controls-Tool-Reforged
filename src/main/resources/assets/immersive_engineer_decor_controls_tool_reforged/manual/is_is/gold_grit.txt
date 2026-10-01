@@ -1,0 +1,3 @@
+Gróft gullkurl
+Verkfæraefni verkfræðings sem er notað í endurgerðu smíðasafni.
+<&recipe>Má bræða í gullhleifa,<br>en hentar ekki fyrir<br>háþróaða efnisvinnslu.

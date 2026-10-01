@@ -1,0 +1,127 @@
+Gangways and passages
+Gangways and braces
+Steel poles, treated posts, grating, service gangways, guardrails, riggin', doors, portholes and hatches make compact service routes through yer factory.<br>
+<br>
+Steel passage fittings call fer steel plates. Craft or place a metal craftin' table, put an Immersive Engineering hammer aboard, then hammer steel ingots into plates fer poles, gangways, portholes, doors, guardrails and other steel finery.<br>
+<br>
+Set them where contraptions need service access, raised paths, maintenance shafts or safer edges.
+<np>
+Thick pole o' steel
+Piece o' structural framing
+<&thick_steel_pole>Straight thick pole o' steel gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Head fer a thick pole
+Piece o' structural framing
+<&thick_steel_pole_head>Head or foot fer a thick steel pole gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Thin pole o' steel
+Piece o' structural framing
+<&thin_steel_pole>Straight thin pole o' steel gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Head fer a thin pole
+Piece o' structural framing
+<&thin_steel_pole_head>Head or foot fer a thin steel pole gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Pole o' treated timber
+Piece o' structural framing
+<&treated_wood_pole>Straight pole o' treated timber gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Head fer a treated pole
+Piece o' structural framing
+<&treated_wood_pole_head>Head or foot fer a treated-timber pole gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Brace fer a treated pole
+Piece o' structural framing
+<&treated_wood_pole_support>Brace fer a treated-timber pole gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Steel double-T brace
+Piece o' structural framing
+<&steel_double_t_support>This block gives visible bracin' to machine halls and frames round yer passages.<br>
+<br>
+Orders: Turn and place her as visible bracin' fer beams, poles and platform edges.<br>
+<np>
+Steel deck grating
+Fitting fer service access
+<&steel_floor_grating>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Steel service gangway
+Fitting fer service access
+<&steel_catwalk>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Stairs fer a steel gangway
+Fitting fer service access
+<&steel_catwalk_stairs>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+High-set steel gangway
+Fitting fer service access
+<&steel_catwalk_ta>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Steel guardrail
+Fitting fer service access
+<&steel_railing>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Steel-mesh fencework
+Fitting fer service access
+<&steel_mesh_fence>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Gate fer steel-mesh fencework
+Fitting fer service access
+<&steel_mesh_fence_gate>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Riggin' with metal rungs
+Fitting fer service access
+<&metal_rung_ladder>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Staggered metal footholds
+Fitting fer service access
+<&metal_rung_steps>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>
+<np>
+Window in a steel frame
+A guarded view
+<&steel_framed_window>This block lets ye see through while keepin' the look o' reinforced factory walls.<br>
+<br>
+Orders: Set her in a 1-block wall gap where sailors must see machinery through a protected barrier.<br>
+<np>
+Slidin' metal door
+Factory access berth
+<&metal_sliding_door>This block gives a stout point o' access to service rooms, shafts, roofs and machine enclosures.<br>
+<br>
+Orders: Fit her where yer build needs a controlled opening fer upkeep.<br>
+<np>
+Hatch o' iron
+Factory access berth
+<&iron_hatch>This block gives a stout point o' access to service rooms, shafts, roofs and machine enclosures.<br>
+<br>
+Orders: Fit her where yer build needs a controlled opening fer upkeep.<br>

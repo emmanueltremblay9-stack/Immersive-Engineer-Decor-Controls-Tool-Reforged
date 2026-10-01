@@ -1,0 +1,7 @@
+Távkapcsolati vevő
+Összekapcsolt vezérlés
+<&recipe>A hozzárendelt vevő teljes erősségű redstone-célpontot ad a távoli paneleknek.<br>
+<br>
+Használat: kattints rá endergyönggyel egy hozzárendelt gyöngy létrehozásához. Közvetlenül a vevőre jobb kattintva kézzel kapcsolhatod át.<br>
+<br>
+Megjegyzés: a hozzárendelt gyöngy lopakodó használata átkapcsolja ezt a vevőt.

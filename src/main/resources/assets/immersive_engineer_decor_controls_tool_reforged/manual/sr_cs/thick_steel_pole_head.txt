@@ -1,0 +1,5 @@
+Glava debelog stuba
+Deo nosećeg okvira
+<&recipe>Glava/podnožje pravog debelog čeličnog stuba daje vidljivu noseću strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: okreni ga i postavi kao vidljivo ukrućenje greda, stubova i ivica platformi.<br>

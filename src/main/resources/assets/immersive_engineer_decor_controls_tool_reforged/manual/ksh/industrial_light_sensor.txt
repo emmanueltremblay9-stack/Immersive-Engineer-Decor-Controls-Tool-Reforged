@@ -1,0 +1,7 @@
+Lichtsensor
+Signalerkennung
+<&recipe>Ene Lichtsensor mäht us d'r Helligkeit vür Ort en Redstone-Stüerung.<br>
+<br>
+Bruuch: Nimm en för automatische Lampe, Finsterluuke un Sichtschaltunge.<br>
+<br>
+Henwies: Jit Energie av en rohe Helligkeit vun 8.

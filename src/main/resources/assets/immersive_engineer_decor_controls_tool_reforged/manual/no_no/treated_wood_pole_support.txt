@@ -1,0 +1,5 @@
+Støtte for behandlet stolpe
+Del til bærende ramme
+<&recipe>Støtten for rette stolper av behandlet tre gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>

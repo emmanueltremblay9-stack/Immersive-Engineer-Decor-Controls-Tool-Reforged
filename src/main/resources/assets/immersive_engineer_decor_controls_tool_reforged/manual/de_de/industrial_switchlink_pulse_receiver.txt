@@ -1,0 +1,7 @@
+Verknüpfter Impulsempfänger
+Verknüpfte Steuerung
+<&recipe>Ein verknüpfter Impulsempfänger liefert entfernten Schalttafeln einen kurzen Redstone-Auslöser.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Ein Rechtsklick auf den Empfänger oder das Betätigen der Link-Perle löst einen kurzen Impuls aus.<br>
+<br>
+Hinweis: Der Impuls endet nach seiner festgelegten Dauer von selbst.

@@ -1,0 +1,7 @@
+Blokverklikker
+Seinwaarneming
+<&recipe>’n Blokverklikker bepaal of die ruimte voor dit beset is.<br>
+<br>
+Gebruik: rig dit na die masjienvlak, buffer of bewaakte ruimte wat jy wil dophou.<br>
+<br>
+Nota: gee krag wanneer die blok voor dit nie lug is nie.

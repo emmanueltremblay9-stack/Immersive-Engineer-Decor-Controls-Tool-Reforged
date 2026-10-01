@@ -1,0 +1,7 @@
+Zbulues stuhish
+Zbulim sinjali
+<&recipe>Një sensor stuhie aktivizon paralajmërime gjatë bubullimave.<br>
+<br>
+Përdorimi: vendose nën qiell të hapur dhe lidhe me llamba ose alarme.<br>
+<br>
+Shënim: kërkon bubullima dhe pamje të hapur drejt qiellit.

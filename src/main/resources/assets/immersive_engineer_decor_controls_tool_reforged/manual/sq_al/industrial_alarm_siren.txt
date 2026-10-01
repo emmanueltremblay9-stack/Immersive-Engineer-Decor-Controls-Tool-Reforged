@@ -1,0 +1,7 @@
+Sirenë alarmi
+Tregim gjendjeje sinjali
+<&recipe>Sirena e alarmit është tregues redstone i montuar në faqen e bllokut. Gjendja e saj me energji ndjek sinjalin e bllokut ku është lidhur.<br>
+<br>
+Lidheni në një faqe të fortë dhe furnizojeni për të mbikëqyrur dyer, makina, alarme ose panele.<br>
+<br>
+Sirena rifreskohet një herë në sekondë sa kohë sinjali mbetet aktiv.

@@ -1,0 +1,5 @@
+Innfelt golvkantlampe
+Kompakt arbeidslys
+<&recipe>Denne blokka gjev kompakt industrilys til gangar, gangbruer og arbeidsbåsar.<br>
+<br>
+Bruk: monter henne i tak, på vegger eller langs kantar der rommet treng tydeleg arbeidslys.<br>

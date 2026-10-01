@@ -1,0 +1,5 @@
+Lijak za fluide
+Oprema cevovodov za fluide
+<&recipe>Majhen lijak za zbiranje fluidov je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Postavi ga pod zbiralno točko fluida in njegovo shranjeno vsebino spelji v rezervoarje ali nižje cevovode.<br>

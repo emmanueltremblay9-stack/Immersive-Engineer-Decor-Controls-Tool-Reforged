@@ -1,0 +1,5 @@
+Porta corredissa metàl·lica
+Punt d’accés industrial
+<&recipe>Este bloc proporciona un accés resistent a sales de servici, pous, teulades i recintes de màquines.<br>
+<br>
+Ús: instal·la’l on la construcció necessite una obertura controlada per a manteniment.<br>

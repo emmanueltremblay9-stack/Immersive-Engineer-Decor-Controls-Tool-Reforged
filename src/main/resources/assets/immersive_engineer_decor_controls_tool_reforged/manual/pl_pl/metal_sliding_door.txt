@@ -1,0 +1,5 @@
+Metalowe drzwi przesuwne
+Przemysłowe przejście
+<&recipe>Ten blok zapewnia wytrzymałe przejście do pomieszczeń serwisowych, szybów, dachów i osłon maszyn.<br>
+<br>
+Użycie: Zamontuj go tam, gdzie potrzebny jest kontrolowany otwór serwisowy.<br>

@@ -1,0 +1,7 @@
+Analógový prijímač prepojenia
+Prepojené ovládanie
+<&recipe>Prepojený prijímač poskytuje ovládacím panelom viditeľný vzdialený cieľ.<br>
+<br>
+Použitie: Kliknutím Ender perlou vytvor prepojenú perlu. Použi ju počas zakrádania a spusti prijímač na diaľku.<br>
+<br>
+Poznámky: Tento prijímač po spustení vyšle redstonový signál plnej sily.

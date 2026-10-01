@@ -1,0 +1,99 @@
+Outils de l'ingénieur
+Équipement d'atelier portatif
+Les outils de l'ingénieur ajoutent des équipements portatifs, des balises de mine, des consommables d'urgence, des vivres et de petits outils de traitement des matériaux au même manuel que les blocs de décor et de commande.<br>
+<br>
+Ces outils servent loin d'un atelier entièrement équipé : balisez votre route, transportez des provisions, récupérez après les imprévus et terminez de petites transformations sur place.
+<np>
+Outil REDIA
+Polyvalence recouverte de diamant
+<&redia_tool>L'outil REDIA est un outil de terrain durable pour les petits travaux du sol. Utilisez-le sur une terre appropriée pour la labourer.<br>
+<br>
+Utilisez-le contre une face stable en portant des torches pour poser une torche de votre inventaire sans user REDIA. Le travail du sol, la tonte, les actions de hache et l'abattage des arbres consomment de la durabilité.
+<np>
+Marteau de concassage de minerais
+Outil de concassage manuel
+<&crushing_hammer>Le marteau de concassage de minerais est un outil manuel destiné aux premiers travaux sur le fer et l’or.<br>
+<br>
+Utilisation : combinez-le avec du fer brut, de l’or brut, du minerai de fer, du minerai de fer des abîmes, du minerai d’or ou du minerai d’or des abîmes pour produire de la poudre de fer ou d’or d’Immersive Engineering. Le marteau perd de la durabilité et revient dans la grille de fabrication jusqu’à sa rupture.<br>
+<br>
+Il s'use aussi lors du minage et peut repousser les cibles au corps à corps.
+<np>
+Traqueur
+Repère de position mémorisée
+<&tracker>Le traqueur enregistre directement la position d’un bloc dans l’objet.<br>
+<br>
+Utilisation : cliquez sur un bloc pour sauvegarder sa dimension et ses coordonnées. L’infobulle affiche la position. Utilisez le traqueur en vous accroupissant pour effacer la cible.<br>
+<br>
+Utilisez-le pour repérer des machines, bifurcations de tunnels, commandes distantes ou chantiers inachevés avant de revenir avec des outils et des matériaux.
+<np>
+Charbon d'Ariane
+Balisage des mines
+<&ariadne_coal>Le charbon d'Ariane place rapidement des flèches noires sur les parois stables des mines. Utilisez-le sur une face solide pour indiquer le prochain virage, une sortie ou une bifurcation ; le point cliqué permet de choisir huit directions, diagonales comprises.<br>
+<br>
+Le charbon d'Ariane est un outil de balisage réutilisable offrant 100 utilisations. Chaque placement réussi consomme un point de durabilité. Les faces incompatibles sont refusées sans user l'objet.
+<np>
+Auto-injecteur stimulant
+Injecteur d'urgence
+<&stimpack>L’Auto Stim Pack est un outil médical d’urgence pour les travaux d’entretien dangereux.<br>
+<br>
+Utilisation : activez-le manuellement pour vous soigner, obtenir une brève protection et une courte accélération. Dans l’inventaire, il peut aussi s’activer automatiquement quand la santé est faible, puis entre en recharge.<br>
+<br>
+Gardez-en un sur vous avant de travailler en hauteur, de tester des câbles exposés ou de parcourir des mines hostiles.
+<np>
+Sac de couchage
+Couchage portatif
+<&sleeping_bag>Le sac de couchage est un nécessaire de repos résistant aux intempéries pour les travaux loin d’un lit.<br>
+<br>
+Utilisation : utilisez-le la nuit dans l’Overworld pour vous reposer jusqu’au matin. Il ne définit ni ne déplace votre point de réapparition.<br>
+<br>
+Il refuse l’utilisation de jour, les environs dangereux avec des monstres proches et les dimensions impropres à un repos sûr. Chaque repos réussi use le sac.
+<np>
+Caisse de matériaux
+Caisse de fournitures de chantier
+<&material_box>La caisse de matériaux transporte une grande réserve d’un seul matériau de construction simple, non modifié et empilable.<br>
+<br>
+Utilisation : tenez la caisse en main principale et une pile de matériau en main secondaire pour la charger. Utilisez-la avec la main secondaire vide pour retirer une pile.<br>
+<br>
+Elle contient jusqu’à 512 objets d’un seul type. Elle refuse les caisses imbriquées, l’équipement non empilable et les piles renommées ou porteuses de données modifiées; l’infobulle indique son contenu.
+<np>
+Capsule d'air de plongée
+Réserve d'air d'urgence
+<&diving_capsule>La capsule d’air de plongée est une réserve d’urgence pour les travaux sous-marins.<br>
+<br>
+Utilisation : utilisez-la manuellement pour restaurer votre air. Dans l’inventaire, elle peut aussi s’activer automatiquement quand l’air est presque épuisé, puis entre en recharge.<br>
+<br>
+Emportez-la dans les mines inondées, le long des tuyaux immergés et pour réparer les salles de pompes.
+<np>
+Presse à barres de muesli
+Presse alimentaire
+<&musli_bar_press>La presse à barres de muesli transforme des aliments courants en rations de terrain compactes.<br>
+<br>
+Utilisation : emportez du pain, une pomme et des graines de blé, de pastèque, de citrouille, de betterave ou de chanvre industriel, puis utilisez la presse. Un pressage réussi consomme un exemplaire de chaque ingrédient, vérifie la place, crée quatre barres Muslee Melange et endommage la presse.<br>
+<br>
+S’il manque un ingrédient ou si l’inventaire n’a pas de place, rien n’est consommé.
+<np>
+Barre énergétique au mélange de muesli
+En-cas rapide d'atelier
+<&musli_bar>La barre énergétique au mélange de muesli est un aliment compact à base de pain, de graines et de fruit.<br>
+<br>
+Utilisation : mangez-la sur le terrain pendant la pose de commandes, tuyaux, plateformes ou longues installations en salle des machines.
+<np>
+Presse-esprit
+Condensateur d'expérience
+<&charged_lapis_squeezer>Le presse-esprit transforme un lapis-lazuli et un niveau d'expérience de votre inventaire en lapis chargé.<br>
+<br>
+Chaque transformation réussie blesse, épuise et aveugle brièvement l'utilisateur. L'appareil refuse de fonctionner sans lapis, sans XP ou si l'utilisateur est trop proche de la mort.
+<np>
+Lapis chargé
+Expérience stockée
+<&charged_lapis>Le lapis chargé stocke un niveau d'expérience. Consommez-le pour récupérer ce niveau, supprimer les effets actifs et restaurer un peu de santé.<br>
+<br>
+Fabriquez d'abord un presse-esprit ; utilisez-le avec du lapis et de l'XP disponibles pour produire du lapis chargé.
+<np>
+Fragments grossiers de fer
+Matériau d'outil d'ingénieur utilisé par l'ensemble de recettes reconstitué.
+<&iron_grit>Peuvent être fondus en lingots<br>de fer, mais ne conviennent pas<br>au traitement avancé des matériaux.
+<np>
+Fragments grossiers d'or
+Matériau d'outil d'ingénieur utilisé par l'ensemble de recettes reconstitué.
+<&gold_grit>Peuvent être fondus en lingots<br>d'or, mais ne conviennent pas au<br>traitement avancé des matériaux.

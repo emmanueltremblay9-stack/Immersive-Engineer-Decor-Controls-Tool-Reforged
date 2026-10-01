@@ -1,0 +1,7 @@
+Impulzní přijímač propojení
+Propojené ovládání
+<&recipe>Propojený impulzní přijímač poskytuje vzdáleným panelům krátký redstonový spouštěcí signál.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Pravým kliknutím na přijímač nebo spuštěním propojené perly vyšleš krátký impulz.<br>
+<br>
+Poznámky: Impulz po nastavené době sám skončí.

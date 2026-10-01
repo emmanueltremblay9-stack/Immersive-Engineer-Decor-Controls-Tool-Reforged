@@ -1,0 +1,7 @@
+Ariadnino uhlie
+Značka banskej cesty
+<&recipe>Ariadnino uhlie rýchlo označuje trasy v šachtách, rozvetvených baniach a na dočasných podzemných pracoviskách.<br>
+<br>
+Použitie: Použi ho na pevnej stene bloku a na jej okraji nakresli čiernu šípku. Značka vyhodnotí miesto kliknutia a podporuje osem smerov vrátane uhlopriečnych. Označíš tak odbočky, východy, slepé konce a zásobovacie trasy bez samostatných smerovníkov.<br>
+<br>
+Ariadnino uhlie je opakovane použiteľný značkovací nástroj na 100 použití. Každá úspešná značka spotrebuje jeden bod odolnosti. Nepodporované plochy odmietne bez opotrebovania predmetu.

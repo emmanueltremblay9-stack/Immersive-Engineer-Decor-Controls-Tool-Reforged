@@ -1,0 +1,5 @@
+Dekoratyvinis ženklas
+Pavojaus žymeklis
+<&recipe>Ženklo plokštė („Engineer's Decor“) žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>

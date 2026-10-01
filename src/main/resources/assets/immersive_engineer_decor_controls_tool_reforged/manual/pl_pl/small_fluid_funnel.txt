@@ -1,0 +1,5 @@
+Lejek do płynów
+Elementy instalacji płynów
+<&recipe>Mały lejek do płynów to niewielki element instalacji służący do małych zbiorników, rurociągów, punktów zbierania i przepływu sterowanego redstone.<br>
+<br>
+Użycie: Postaw go pod punktem zbierania płynu i skieruj jego zawartość do zbiorników lub rur położonych niżej.<br>

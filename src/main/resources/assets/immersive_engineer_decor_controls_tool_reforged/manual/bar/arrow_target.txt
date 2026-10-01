@@ -1,0 +1,7 @@
+Pfeilziel
+Kurzer Impuls
+<&recipe>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.

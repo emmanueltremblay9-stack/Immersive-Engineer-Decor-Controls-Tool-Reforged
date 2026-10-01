@@ -1,0 +1,7 @@
+Intervalltimer
+Zeitgesteuerter Impuls
+<&recipe>Ein kompakter Zeitschalter liefert einen zeitlich gesteuerten Redstone-Impuls.<br>
+<br>
+Verwendung: Nutze ihn, wenn ein kleiner Mechanismus regelmäßig oder verzögert angesteuert werden soll.<br>
+<br>
+Hinweis: Verwendet zeitgesteuerte Redstone-Impulse.

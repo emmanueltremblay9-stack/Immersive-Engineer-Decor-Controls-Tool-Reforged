@@ -1,0 +1,7 @@
+Ariadne-Kohle
+Wegmarkierung für Minen
+<&recipe>Ariadne-Kohle markiert schnell Wege in Schächten, Zweigminen und vorübergehenden unterirdischen Arbeitsbereichen.<br>
+<br>
+Verwendung: Benutze sie auf einer tragfähigen Blockfläche, um dort einen schwarzen Richtungspfeil anzubringen. Die Markierung richtet sich nach dem angeklickten Punkt und unterstützt acht Richtungen einschließlich Diagonalen. So markierst du Abzweigungen, Ausgänge, Sackgassen und Versorgungswege, ohne zusätzliche Wegweiser mitzunehmen.<br>
+<br>
+Ariadne-Kohle ist ein wiederverwendbares Markierwerkzeug für 100 Einsätze. Jede erfolgreiche Markierung kostet einen Haltbarkeitspunkt. Ungeeignete Flächen werden abgelehnt, ohne das Werkzeug abzunutzen.

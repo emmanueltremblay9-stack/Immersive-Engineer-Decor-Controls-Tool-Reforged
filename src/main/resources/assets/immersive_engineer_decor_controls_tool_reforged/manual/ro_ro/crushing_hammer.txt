@@ -1,0 +1,5 @@
+Ciocan de zdrobit minereuri
+Unealtă de zdrobire manuală
+<&recipe>Ciocanul de zdrobit minereuri este o unealtă manuală pentru prelucrarea timpurie a fierului și aurului.<br>
+<br>
+Folosește-l cu fier brut, aur brut, minereu de fier, minereu de fier din ardezie adâncă, minereu de aur sau minereu de aur din ardezie adâncă pentru pulbere Immersive Engineering. Ciocanul pierde durabilitate, revine în grilă până se rupe, se uzează la minerit și respinge ținte.

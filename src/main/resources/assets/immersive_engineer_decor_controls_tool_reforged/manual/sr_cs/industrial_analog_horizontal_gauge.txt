@@ -1,0 +1,7 @@
+Voltmetarski merač
+Merač signala
+<&recipe>Kompaktan merač za komandnu prostoriju jasno prikazuje redstoun snagu na panelu.<br>
+<br>
+Upotreba: montiraj ga tamo gde obližnju redstoun snagu treba proveriti jednim pogledom.<br>
+<br>
+Napomene: čita obližnju redstoun snagu od 0 do 15.

@@ -1,0 +1,5 @@
+Incinerador de degalhs
+Unitat de tractament compacta
+<&recipe>L’Incinerador de degalhs destrutz los objèctes indesirables en ocupant pauc de plaça dins l’obrador.<br>
+<br>
+Utilizacion : inserís sonque los objèctes indesirables dins sa fila.<br>

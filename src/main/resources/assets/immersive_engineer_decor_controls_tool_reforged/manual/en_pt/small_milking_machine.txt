@@ -1,0 +1,5 @@
+Cow-milkin' contraption
+Gear fer the workshop deck
+<&recipe>Little cow milker be workshop-deck gear fer craftin', stowage, placement, breakin', gatherin' or compact automation.<br>
+<br>
+Orders: Put her near cows and provide a way to take out milk containers or fluid milk.<br>

@@ -1,0 +1,127 @@
+Toegangspaaie
+Looppaadjies en stutte
+Staalpale, behandeldehoutpale, roosters, loopbrûe, relings, lere, deure, vensters en luike vorm kompakte diensroetes binne fabrieke.<br>
+<br>
+Staaltoegangsonderdele gebruik staalplate. Maak of plaas ’n Metaalwerksbank, plaas ’n Immersive Engineering-hamer daarin en hamer staalstawe tot staalplate vir pale, loopbrûe, vensters, deure, relings en ander staalversierings.<br>
+<br>
+Plaas hulle waar masjiene dienstoegang, verhoogde paaie, onderhoudskagte of veiliger rande nodig het.
+<np>
+Dik Staalpaal
+Struktuurraamonderdeel
+<&thick_steel_pole>Die Reguit Dik Staalpaal verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Dik Paalkop
+Struktuurraamonderdeel
+<&thick_steel_pole_head>Die Reguit Dik Staalpaalkop/-voet verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Dun Staalpaal
+Struktuurraamonderdeel
+<&thin_steel_pole>Die Reguit Dun Staalpaal verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Dun Paalkop
+Struktuurraamonderdeel
+<&thin_steel_pole_head>Die Reguit Dun Staalpaalkop/-voet verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Behandeldehoutpaal
+Struktuurraamonderdeel
+<&treated_wood_pole>Die Reguit Behandeldehoutpaal verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Behandeldehoutpaalkop
+Struktuurraamonderdeel
+<&treated_wood_pole_head>Die Reguit Behandeldehoutpaalkop/-voet verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Behandeldehoutpaalstut
+Struktuurraamonderdeel
+<&treated_wood_pole_support>Die Reguit Behandeldehoutpaalstut verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Staal Dubbel-T-stut
+Struktuurraamonderdeel
+<&steel_double_t_support>Hierdie blok verskaf ’n sigbare struktuur vir masjiensale en toegangsrame.<br>
+<br>
+Gebruik: draai en plaas dit as sigbare versterking vir balke, pale en platformrande.<br>
+<np>
+Staalvloerrooster
+Dienstoegangstoebehoor
+<&steel_floor_grating>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Staalloopbrug
+Dienstoegangstoebehoor
+<&steel_catwalk>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Staalloopbrugtrappe
+Dienstoegangstoebehoor
+<&steel_catwalk_stairs>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Verhoogde Staalloopbrug
+Dienstoegangstoebehoor
+<&steel_catwalk_ta>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Staalreling
+Dienstoegangstoebehoor
+<&steel_railing>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Staalmaasheining
+Dienstoegangstoebehoor
+<&steel_mesh_fence>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Staalmaasheininghek
+Dienstoegangstoebehoor
+<&steel_mesh_fence_gate>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Metaalsportleer
+Dienstoegangstoebehoor
+<&metal_rung_ladder>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Verspringende Metaaltrappe
+Dienstoegangstoebehoor
+<&metal_rung_steps>Hierdie blok skep duidelike diensroetes rondom masjinerie.<br>
+<br>
+Gebruik: plaas dit as onderhoudstoegang rondom masjiene, boonste verdiepings en diensskagte.<br>
+<np>
+Staalraamvenster
+Beskermde uitsig
+<&steel_framed_window>Hierdie blok behou oop siglyne en pas steeds by gewapende fabriekskonstruksie.<br>
+<br>
+Gebruik: plaas dit in ’n muuropening van 1 blok waar spelers masjinerie deur ’n beskermende versperring moet kan sien.<br>
+<np>
+Metaalskuifdeur
+Industriële toegangspunt
+<&metal_sliding_door>Hierdie blok verskaf ’n stewige toegangspunt tot dienskamers, skagte, dakke en masjienomhulsels.<br>
+<br>
+Gebruik: installeer dit waar die gebou ’n beheerde onderhoudsopening nodig het.<br>
+<np>
+Ysterluik
+Industriële toegangspunt
+<&iron_hatch>Hierdie blok verskaf ’n stewige toegangspunt tot dienskamers, skagte, dakke en masjienomhulsels.<br>
+<br>
+Gebruik: installeer dit waar die gebou ’n beheerde onderhoudsopening nodig het.<br>

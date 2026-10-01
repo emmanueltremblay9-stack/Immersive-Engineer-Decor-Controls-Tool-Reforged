@@ -1,0 +1,5 @@
+Backventil för vätskerör
+Utrustning för vätskeledningar
+<&recipe>Backventilen för vätskerör är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Rikta ventilen efter den avsedda flödesriktningen.<br>

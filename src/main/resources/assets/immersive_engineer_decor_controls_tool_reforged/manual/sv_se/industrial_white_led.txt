@@ -1,0 +1,7 @@
+Vit lysdiod
+Signalåterkoppling
+<&recipe>En kompakt indikator gör dold redstone till synlig återkoppling i fabriken.<br>
+<br>
+Användning: Anslut den intill signalen för att övervaka dörrar, maskiner, larm eller paneler.<br>
+<br>
+Anmärkning: Ändrar tillstånd när det finns redstonekraft i närheten.

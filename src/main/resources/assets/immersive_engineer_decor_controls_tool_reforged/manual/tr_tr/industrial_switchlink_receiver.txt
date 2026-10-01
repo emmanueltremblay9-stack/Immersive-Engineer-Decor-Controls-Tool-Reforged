@@ -1,0 +1,7 @@
+Anahtar Bağlantısı Alıcısı
+Bağlantılı kontrol
+<&recipe>Bağlantılı alıcı, uzak paneller için tam güçlü bir redstone hedefi sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Elle açıp kapatmak için doğrudan alıcıya sağ tıklayın.<br>
+<br>
+Notlar: Bağlı inci eğilerek kullanıldığında bu alıcının durumunu değiştirir.

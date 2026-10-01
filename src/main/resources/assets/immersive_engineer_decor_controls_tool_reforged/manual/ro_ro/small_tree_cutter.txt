@@ -1,0 +1,5 @@
+Tăietor de copaci
+Echipament util în hală
+<&recipe>Tăietorul mic de copaci este un bloc util în hală pentru fabricare, depozitare, amplasare, spargere, colectare sau automatizare compactă.<br>
+<br>
+Utilizare: Orientează-l spre copaci crescuți și adună separat obiectele căzute.<br>

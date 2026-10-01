@@ -1,0 +1,7 @@
+Dimmer
+Veränderlichs Signal
+<&recipe>A Drehregler stöllt de Redstone-Stärke auf ana kloanen Tafelfläche ein.<br>
+<br>
+Verwendung: Rechtsklick erhöht den Ausgang Schritt für Schritt; nach voller Stärke geht's wieder bei null los.<br>
+<br>
+Hinweis: Gibt a Stärke von 0 bis 15 aus.

@@ -1,0 +1,107 @@
+Machine de oficina
+Machine e ingress/sortide de oficina
+I machine de laboratori i lassen fabregà, spostà oget, fond, butà via, catà su e fà olter lavor de servizzi in del spazzi de un bloch sol.<br>
+<br>
+Derva i pagine che vegnen adess per la riceta, l’imagine, la descrizzion e i istruzzion pratiche de ogni machina.
+<np>
+Tavol d’azzal
+Mobil de laboratori
+<&steel_table>Quell bloch chì l’è un mobil pratich per i locai de lavor e i canton de manutenzion.<br>
+<br>
+Metel arent a banch, casse e machine piscinine.<br>
+<np>
+Tavol de legn tratad
+Mobil de laboratori
+<&treated_wood_table>Quell bloch chì l’è un mobil pratich per i locai de lavor e i canton de manutenzion.<br>
+<br>
+Metel arent a banch, casse e machine piscinine.<br>
+<np>
+Scagn de legn tratad
+Mobil de laboratori
+<&treated_wood_stool>Quell bloch chì l’è un mobil pratich per i locai de lavor e i canton de manutenzion.<br>
+<br>
+Metel arent a banch, casse e machine piscinine.<br>
+<np>
+Banch per lavorà i metai
+Post de lavor per piastre
+<&metal_crafting_table>El Banch per lavorà i metai l’è una postazzion de laboratori rinforzada cont una casella per el martell, una griglia de fabricazzion 3x3 e una casella de sortida ben visibila.<br>
+<br>
+Dovra la griglia per fabregà come de solit. Per i piastre de IE, met un Martell de l’inzegner in de la casella di arnea e el material de la piastra in de la griglia, poeu cata su el risultad. I decorazzion d’azzal i dovren piastre d’azzal per pai, passarelle, finestre, porte, ringhere e olter tocch d’azzal.<br>
+<np>
+Tremoeusgia de fabrica
+Arnea de servizzi per la fabrica
+<&factory_hopper>Quell bloch chì el sposta pile de oget travers de una cassa industrial pussee compata.<br>
+<br>
+Voltel vers la linea di inventari, poeu regola portada, grandezza di pile, temp e manera de prejarossa in de la schermada.<br>
+<np>
+Lassador de fabrica
+Arnea de servizzi per la fabrica
+<&factory_dropper>Quell bloch chì el lassa foeura i oget conservad de una faccia pontada in de la direzzion scernida.<br>
+<br>
+Ponta el denanz vers el pont indove che gh’han de vegnì foeura i oget, impieniss i caselle de denter e regola forza, angol, speta, logica di filtri e manera de prejarossa in de la schermada.<br>
+<np>
+Posador de bloch de fabrica
+Arnea de servizzi per la fabrica
+<&factory_placer>Quell bloch chì el met sgiò bloch ciapad de la so riserva de denter quand che el vegn ativad.<br>
+<br>
+Ponta la faccia de lavor vers el spazzi de destinazzion e carga pile de bloch che se poeuden mett sgiò.<br>
+<np>
+Rompidor de bloch
+Arnea de servizzi per la fabrica
+<&small_block_breaker>El Piscinin rompidor de bloch l’è un bloch de servizzi per la fabrica che el serviss a fabregà, conservà, mett sgiò, romp, catà su o fà piscinina automazzion.<br>
+<br>
+Met la faccia de lavor vers el bloch de cavà via.<br>
+<np>
+Inceneridor di rud
+Unità compata de lavorazzion
+<&small_waste_incinerator>El Inceneridor di rud el destrugg i oget che servissen pussee minga, in d’un spazzi piscinin de laboratori.<br>
+<br>
+Met in de la so coda domà i oget de butà via.<br>
+<np>
+Fornas de laboratori
+Unità compata de lavorazzion
+<&small_lab_furnace>La Fornas de laboratori la fa lavor de fusion cont combustibel solid in d’un spazzi piscinin de laboratori.<br>
+<br>
+Dovra combustibel solid per piscinine partide de fusion.<br>
+<np>
+Fornas eletrica
+Unità compata de lavorazzion
+<&small_electrical_furnace>La Fornas eletrica la fa lavor de fusion cont energia FE in d’un spazzi piscinin de laboratori.<br>
+<br>
+Dà FE e un material de fond adat.<br>
+<np>
+Fornas per fond mineraj
+Unità compata de lavorazzion
+<&small_mineral_smelter>La Fornas per fond mineraj la lavora i mineraj a temperatura volta in d’un spazzi piscinin de laboratori.<br>
+<br>
+Dà bloch de mineral e energia per la fusion a temperatura volta.<br>
+<np>
+Congelador de aqua
+Unità compata de lavorazzion
+<&small_freezer>El Congelador de aqua el fa lavor piscinin de rafredament per impiant de fluid cont energia.<br>
+<br>
+Dà aqua e energia per fà giazz a stad successiv.<br>
+<np>
+Fluid passiv
+Acessori per linee de fluid
+<&passive_fluid_accumulator>El Acumulator passiv di fluid l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Metel contra sorgent de aqua adate e lassa spazzi per tirà foeura el fluid.<br>
+<np>
+Panell solar
+Arnea de servizzi per la fabrica
+<&small_solar_panel>El Piscinin panell solar l’è un bloch de servizzi per la fabrica che el serviss a fabregà, conservà, mett sgiò, romp, catà su o fà piscinina automazzion.<br>
+<br>
+Dagh el ciel avert e colegel a aparecc che consomen poch.<br>
+<np>
+Machina de molger
+Arnea de servizzi per la fabrica
+<&small_milking_machine>La Piscinina machina de molger l’è un bloch de servizzi per la fabrica che el serviss a fabregà, conservà, mett sgiò, romp, catà su o fà piscinina automazzion.<br>
+<br>
+Metela vesin a i vache e dagh una manera de tirà foeura i contenidor de lacc o el fluid.<br>
+<np>
+Tajador de piante
+Arnea de servizzi per la fabrica
+<&small_tree_cutter>El Piscinin tajador de piante l’è un bloch de servizzi per la fabrica che el serviss a fabregà, conservà, mett sgiò, romp, catà su o fà piscinina automazzion.<br>
+<br>
+Pontel vers piante cressude e cata su a part i oget che croden.<br>

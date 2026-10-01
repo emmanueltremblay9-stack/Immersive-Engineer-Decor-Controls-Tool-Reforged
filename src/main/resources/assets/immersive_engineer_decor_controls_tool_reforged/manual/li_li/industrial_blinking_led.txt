@@ -1,0 +1,7 @@
+Knipperende LED
+Signaaltrökmelding
+<&recipe>Ein kleine aanwiezer maak versjtaoke redstone tot zeenbare fabriekströkmelding.<br>
+<br>
+Gebroek: sluit 'm naeve 't signaal aan um deure, machines, alarm of panele te bewake.<br>
+<br>
+Opmerking: verangert van toestand es d'r redstone-energie in de buurt is.

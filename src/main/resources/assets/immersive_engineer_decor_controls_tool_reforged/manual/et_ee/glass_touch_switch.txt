@@ -1,0 +1,7 @@
+Bistabiilne klaasist puutelüliti
+Redstone'i juhtimine
+<&recipe>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.

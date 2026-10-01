@@ -1,0 +1,7 @@
+Bouéte a matériaux
+Bouéte de fournitures de bâtisse
+<&recipe>La caesse de matérriaos porte eune grande réserve d'un seul matérriao de construccion simpll, pouint changë e empilabl.<br>
+<br>
+Usaije : Tenez la caesse den la main perméire e eune pile de matérriao den l'aotr main pour la charjer. Servez-vous de la caesse avèq l'aotr main vide pour tirer eune pile.<br>
+<br>
+Elle garde jusq'a 512 objets d'un seul genre. Elle refuse les caesses emboîtëes, les outils pouint empilabls e les piles renommëes ou changëes par des donnëes; l'infobulle montre le contenu.

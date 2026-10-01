@@ -1,0 +1,7 @@
+Impulsempfänger im Ghäus
+Verknüpfte Steuerung
+<&recipe>A verknüpfter Impulsempfänger im Ghäus gibt entfernten Tafeln an kurzen Redstone-Auslöser.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Rechtsklick oda Betätigung von da Perle löst an kurzen Impuls aus.<br>
+<br>
+Hinweis: Da Impuls endet nach seiner festgelegten Dauer von söba.

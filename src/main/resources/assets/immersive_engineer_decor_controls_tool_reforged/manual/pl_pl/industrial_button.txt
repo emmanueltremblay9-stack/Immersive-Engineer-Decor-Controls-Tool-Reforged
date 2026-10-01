@@ -1,0 +1,7 @@
+Przycisk maszynowy
+Sterowanie redstone
+<&recipe>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.

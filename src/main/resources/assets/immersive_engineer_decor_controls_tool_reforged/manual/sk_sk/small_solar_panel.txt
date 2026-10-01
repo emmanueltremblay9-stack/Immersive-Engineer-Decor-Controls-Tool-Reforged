@@ -1,0 +1,5 @@
+Solárny panel
+Vybavenie výrobnej haly
+<&recipe>Malý solárny panel patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Zabezpeč mu otvorené nebo a pripoj zariadenia s nízkou spotrebou.<br>

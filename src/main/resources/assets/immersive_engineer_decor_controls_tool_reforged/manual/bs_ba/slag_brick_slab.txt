@@ -1,0 +1,5 @@
+Ploča od cigli od šljake
+Gusto fabričko ziđe
+<&recipe>Ovaj blok daje gusto sivosmeđe ziđe za temelje, potporne zidove i stare radionice.<br>
+<br>
+Upotreba: Koristite ga za stare temelje, potporne zidove i prljave fabričke podove.<br>

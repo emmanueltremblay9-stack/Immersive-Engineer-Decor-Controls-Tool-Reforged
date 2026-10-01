@@ -1,0 +1,5 @@
+Beschriftete Kiste
+Bearbeitbare Lagerbeschriftung
+<&recipe>Diese beschriftete Kiste sorgt für übersichtliche Lagerräume. Ihr Frontschild lässt sich wie ein kleines Werkstattschild bearbeiten.<br>
+<br>
+Verwendung: Klicke mit rechts auf das Frontschild, um die Beschriftung zu ändern. Ein Rechtsklick auf den übrigen Kistenkörper öffnet das Lager für Bauteile, Zubehör und Wartungsmaterial.<br>

@@ -1,0 +1,5 @@
+Fabrikkutslipper
+Hjelpemiddel på fabrikkgulvet
+<&recipe>Denne blokken slipper ut lagrede gjenstander fra en rettet side.<br>
+<br>
+Bruk: rett fronten mot utslippsstedet, fyll de interne plassene og still kraft, vinkel, forsinkelse, filterlogikk og redstonemodus på skjermen.<br>

@@ -1,0 +1,5 @@
+Bačva za tekućine
+Oprema vodova tekućine
+<&recipe>Ovaj je dio kompaktna oprema vodova tekućine za male spremnike, cjevovode, sabirne točke i redstone upravljani protok.<br>
+<br>
+Uporaba: postavi ga gdje cijevi ili kante mogu dosegnuti stranu spremnika.<br>

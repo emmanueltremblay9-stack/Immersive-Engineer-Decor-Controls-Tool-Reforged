@@ -1,0 +1,7 @@
+Tempestodetektilo
+Signaldetekto
+<&recipe>Tempestosensilo startigas averti dum fulmotondro.<br>
+<br>
+Uzo: Pozez ol sub libera cielo e konektez ol a lampi o alarmi.<br>
+<br>
+Noti: Bezonas fulmotondro ed aceso a cielo.

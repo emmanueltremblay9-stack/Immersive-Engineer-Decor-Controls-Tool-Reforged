@@ -1,0 +1,7 @@
+Vièlh agre ornamentat
+Comanda per redstone
+<&recipe>Una comanda compacta balha als bastiments de fabrica un ponch d’interrupcion de redstone aisit de reconéisser.<br>
+<br>
+Utilizacion : fai un clic drech per activar o arrestar la sortida a plena poténcia dels circuits vesins.<br>
+<br>
+Nòta : manda de redstone a plena poténcia tant qu’es en marcha.

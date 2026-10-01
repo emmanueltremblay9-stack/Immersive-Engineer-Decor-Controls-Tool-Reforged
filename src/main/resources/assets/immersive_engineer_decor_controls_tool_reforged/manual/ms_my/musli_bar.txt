@@ -1,0 +1,5 @@
+Bar Tenaga Campuran Muslee
+Snek bengkel pantas
+<&recipe>Bar Muslee Melange ialah makanan padat daripada roti, biji dan buah.<br>
+<br>
+Makan sebagai bekalan lapangan ketika memasang kawalan, paip, pelantar atau barisan mesin.

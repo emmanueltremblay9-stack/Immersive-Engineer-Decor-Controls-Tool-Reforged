@@ -1,0 +1,7 @@
+Uyqu qopi
+Ko'chma dam olish to'plami
+<&recipe>Uyqu qopi yotoqdan uzoqda dam olish uchun ob-havoga chidamli jihozdir.<br>
+<br>
+Qayta tugilish joyini ozgartirmay ertalabgacha dam olish uchun Overworldda tunda ishlating.<br>
+<br>
+Kunduzi, yaqin maxluqlar yoki mos bolmagan olchamda ishlamaydi. Har dam olish uni yeydiradi.

@@ -1,0 +1,108 @@
+pali tomo pi nasin ilo
+sinpin en poka lukin pi tomo pali
+kipisi pali ale li jo e lupa, e kiwen lukin, e suno, e sitelen pi toki awen, e poka lukin, e kipisi sijelo awen pi lon ala kulupu lili ante.<br>
+<br>
+o kepeken lipu ni tawa tomo pali, tawa nasin pi pali awen, tawa sitelen ken pakala, tawa kipisi lili kepeken pi tomo pali.
+<np>
+suno sike pi kiwen walo
+suno pali lili
+<&iron_bulb_light>leko ni li pana e suno lili pi tomo pali tawa nasin tomo, tawa nasin supa, tawa ma pali.<br>
+<br>
+kepeken: o pana e ona lon sewi tomo, lon sinpin, anu lon poka pi wile suno pona tawa pali lon tomo.<br>
+<np>
+suno pi poka sewi
+suno pali lili
+<&iron_ceiling_edge_light>leko ni li pana e suno lili pi tomo pali tawa nasin tomo, tawa nasin supa, tawa ma pali.<br>
+<br>
+kepeken: o pana e ona lon sewi tomo, lon sinpin, anu lon poka pi wile suno pona tawa pali lon tomo.<br>
+<np>
+suno insa pi poka ma
+suno pali lili
+<&iron_floor_edge_light>leko ni li pana e suno lili pi tomo pali tawa nasin tomo, tawa nasin supa, tawa ma pali.<br>
+<br>
+kepeken: o pana e ona lon sewi tomo, lon sinpin, anu lon poka pi wile suno pona tawa pali lon tomo.<br>
+<np>
+suno insa
+suno pali lili
+<&iron_inset_light>leko ni li pana e suno lili pi tomo pali tawa nasin tomo, tawa nasin supa, tawa ma pali.<br>
+<br>
+kepeken: o pana e ona lon sewi tomo, lon sinpin, anu lon poka pi wile suno pona tawa pali lon tomo.<br>
+<np>
+sitelen "o awen e sina
+sitelen ken pakala
+<&sign_caution>sitelen "o awen e sina", sitelen awen, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen ken pakala
+sitelen ken pakala
+<&sign_danger>sitelen "o awen: ma ni li pakala mute", sitelen ken pakala, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen pi pona lukin
+sitelen ken pakala
+<&sign_decor>supa sitelen (Engineer's Decor), sitelen pi pona lukin, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen awen ma
+sitelen ken pakala
+<&sign_defense>sitelen "o awen: kulupu ilo pi awen ma li lon sinpin", sitelen awen ma, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen pi nasin weka
+sitelen ken pakala
+<&sign_exit>sitelen ni li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen "seli li ken pakala sitelen
+sitelen ken pakala
+<&sign_firehazard>sitelen "seli li ken pakala", sitelen ken pakala seli, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen "o awen tan lete sitelen
+sitelen ken pakala
+<&sign_frost>sitelen "o awen tan lete", sitelen awen lete, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen sinpin seli
+sitelen ken pakala
+<&sign_hotsurface>sitelen "o awen: sinpin ijo li seli", sitelen sinpin seli, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen linja wawa
+sitelen ken pakala
+<&sign_hotwire>sitelen "o awen: linja li jo e wawa", sitelen linja wawa, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen "linja suno li ken pakala sitelen
+sitelen ken pakala
+<&sign_laser>sitelen "linja suno li ken pakala", sitelen ken pakala pi linja suno, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen ken pakala nasa
+sitelen ken pakala
+<&sign_magichazard>sitelen "o awen: wawa nasa li ken pakala", sitelen ken pakala nasa, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen ma pi wawa kiwen
+sitelen ken pakala
+<&sign_magneticfield>sitelen "o awen: ma pi wawa mute pi kama jo kiwen", sitelen ma pi wawa kiwen, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>
+sitelen "wawa tan insa kiwen li ken pakala
+sitelen ken pakala
+<&sign_radioactive>sitelen "wawa tan insa kiwen li ken pakala", sitelen wawa tan insa kiwen, li toki e ken pakala, e nasin weka, e ma pali kepeken sitelen lukin pi awen tomo pali.<br>
+<br>
+kepeken: o pana e ona lon poka pi ken pakala, pi nasin weka, pi ilo, pi ma pi ken tawa ala.<br>
+<np>

@@ -1,0 +1,5 @@
+Automatyczny wstrzykiwacz stymulantów
+Awaryjny wstrzykiwacz
+<&recipe>Automatyczny stymulator to awaryjny przedmiot medyczny do niebezpiecznej pracy.<br>
+<br>
+Użyj go ręcznie, aby się uleczyć, krótko chronić i przyspieszyć. W ekwipunku uruchamia się automatycznie przy niskim zdrowiu, po czym ma czas odnowienia. Trzymaj go przy sobie w niebezpiecznych miejscach.

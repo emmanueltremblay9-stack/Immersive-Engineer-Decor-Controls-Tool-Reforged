@@ -1,0 +1,5 @@
+Sunken glowstone lamp
+Little light fer work
+<&recipe>This block gives ye compact factory lighting along passages, gangways and work bays.<br>
+<br>
+Orders: Mount her on ceilings, walls or edges where ye need clear light fer work.<br>

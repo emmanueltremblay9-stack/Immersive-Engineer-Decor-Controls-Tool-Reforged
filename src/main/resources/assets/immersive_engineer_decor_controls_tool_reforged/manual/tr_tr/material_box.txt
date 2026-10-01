@@ -1,0 +1,7 @@
+Malzeme Saklama Kutusu
+İnşaat ikmal kutusu
+<&recipe>Malzeme kutusu, tek tür sade, değiştirilmemiş ve yığınlanabilir yapı malzemesinden büyük bir stok taşır.<br>
+<br>
+Doldurmak için kutuyu ana elde, malzemeyi diğer elde tutun; bir yığın almak için diğer el boşken kullanın.<br>
+<br>
+Bir türden 512 eşya tutar; başka kutuları, yığınlanamayan ekipmanı ve değiştirilmiş yığınları reddeder ve içeriği ipucunda gösterir.

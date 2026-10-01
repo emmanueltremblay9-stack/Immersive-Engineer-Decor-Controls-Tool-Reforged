@@ -1,0 +1,7 @@
+Analog o'lchagich
+Signal o'lchagichi
+<&recipe>Boshqaruv xonasidagi ixcham o'lchagich redstone kuchini panelda aniq ko'rsatadi.<br>
+<br>
+Ishlatish: qo'shni redstone quvvatini bir qarashda tekshirish mumkin joyga mahkamlang.<br>
+<br>
+Eslatma: yaqin redstone kuchini 0 dan 15 gacha o'qiydi.

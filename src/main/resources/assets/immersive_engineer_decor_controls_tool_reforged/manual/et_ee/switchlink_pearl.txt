@@ -1,0 +1,7 @@
+Lülitiühenduse pärl
+Ühendatud juhtimine
+<&recipe>Ühendatud pärl salvestab vastuvõtja tehase kaugjuhtimise sihtmärgiks.<br>
+<br>
+Kasutamine: Loo see, klõpsates lülitiühenduse vastuvõtjal enderipärliga. Salvestatud vastuvõtja aktiveerimiseks kasuta ühendatud pärli hiilides.<br>
+<br>
+Märkus: Sihtmärk peab olema laaditud, samas dimensioonis ja ulatuse piires.

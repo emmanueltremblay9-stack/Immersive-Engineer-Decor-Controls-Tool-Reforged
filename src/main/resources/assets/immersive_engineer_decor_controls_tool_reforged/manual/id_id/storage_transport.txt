@@ -1,0 +1,41 @@
+Penyimpanan dan Pengangkutan
+Perlengkapan persediaan dan aliran
+Perlengkapan penyimpanan dan pengangkutan menangani peti, tong, corong, dan katup untuk jalur pabrik yang ringkas.<br>
+<br>
+Gunakan halaman ini saat menata ruang penyimpanan, jalur pipa, tangki servis, dan jalur cairan terkendali.
+<np>
+Peti Berlabel
+Label stok yang dapat diedit
+<&labeled_crate>Peti berlabel ini dibuat untuk penataan ruang penyimpanan yang jelas. Pelat depannya dapat diedit seperti papan kecil di bengkel.<br>
+<br>
+Penggunaan: klik kanan pelat label untuk mengedit label peti. Klik kanan bagian peti lainnya untuk membuka penyimpanan perlengkapan, suku cadang, dan pasokan perawatan.<br>
+<np>
+Tong Cairan
+Perlengkapan jalur cairan
+<&fluid_barrel>Komponen ini adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: pasang di tempat pipa atau ember dapat menjangkau sisi tangki.<br>
+<np>
+Corong Cairan
+Perlengkapan jalur cairan
+<&small_fluid_funnel>Corong cairan kecil adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: letakkan di bawah titik pengumpulan cairan dan alirkan isi tersimpannya ke tangki atau pipa yang lebih rendah.<br>
+<np>
+Katup Searah Pipa Cairan
+Perlengkapan jalur cairan
+<&straight_pipe_valve>Katup searah cairan adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: sejajarkan katup dengan arah aliran yang diinginkan.<br>
+<np>
+Katup Cairan Redstone
+Perlengkapan jalur cairan
+<&straight_pipe_valve_redstone>Katup cairan redstone adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: sejajarkan katup dengan arah aliran yang diinginkan.<br>
+<np>
+Katup Cairan Analog
+Perlengkapan jalur cairan
+<&straight_pipe_valve_redstone_analog>Katup cairan analog adalah bagian jalur cairan yang ringkas untuk tangki kecil, jalur pipa, titik pengumpulan, dan aliran yang dikendalikan redstone.<br>
+<br>
+Penggunaan: sejajarkan katup dengan arah aliran yang diinginkan.<br>

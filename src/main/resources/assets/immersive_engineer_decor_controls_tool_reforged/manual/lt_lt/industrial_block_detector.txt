@@ -1,0 +1,7 @@
+Blokų jutiklis
+Signalo jutimas
+<&recipe>Blokų jutiklis tikrina, ar priešais jį esanti vieta užimta.<br>
+<br>
+Naudojimas: nukreipk į stebimą mašinos paviršių, tarpinį sandėlį arba saugomą vietą.<br>
+<br>
+Pastabos: siunčia signalą, kai priešais esantis blokas nėra oras.

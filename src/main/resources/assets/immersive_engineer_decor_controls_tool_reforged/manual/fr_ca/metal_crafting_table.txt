@@ -1,0 +1,7 @@
+Établi de métallurgie
+Poste de fabrication de plaques
+<&recipe>Établi métallique avec un emplacement réservé au marteau, une grille de fabrication 3x3 et une sortie.<br>
+<br>
+Utilisation : employez la grille comme une table de fabrication ordinaire. Pour produire des plaques IE, placez un marteau d'ingénieur dans l'emplacement d'outil et le matériau dans la grille, puis prenez la plaque formée dans la sortie.<br>
+<br>
+Les décors en acier utilisent des plaques d'acier. Insérez un marteau d'Immersive Engineering, martelez les lingots d'acier en plaques, puis utilisez-les pour fabriquer poteaux, passerelles, fenêtres, portes, garde-corps et autres décors en acier.<br>

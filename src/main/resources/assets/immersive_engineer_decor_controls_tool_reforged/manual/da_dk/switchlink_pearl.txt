@@ -1,0 +1,7 @@
+Kontaktlinkperle
+Forbundet styring
+<&recipe>En tilknyttet perle gemmer en modtager som mål for fabrikkens fjernbetjening.<br>
+<br>
+Brug: Klik på en kontaktlinkmodtager med en Ender-perle for at skabe en. Brug den tilknyttede perle, mens du sniger, for at aktivere den gemte modtager.<br>
+<br>
+Bemærk: Målet skal være indlæst, være i samme dimension og befinde sig inden for rækkevidde.

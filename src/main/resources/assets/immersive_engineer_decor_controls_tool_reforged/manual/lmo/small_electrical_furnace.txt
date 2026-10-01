@@ -1,0 +1,5 @@
+Fornas eletrica
+Unità compata de lavorazzion
+<&recipe>La Fornas eletrica la fa lavor de fusion cont energia FE in d’un spazzi piscinin de laboratori.<br>
+<br>
+Dà FE e un material de fond adat.<br>

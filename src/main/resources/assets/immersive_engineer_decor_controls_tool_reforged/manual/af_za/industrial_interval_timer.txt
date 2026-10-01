@@ -1,0 +1,7 @@
+Intervaltydskakelaar
+Tydpuls
+<&recipe>’n Kompakte tydskakelaar verskaf ’n geskeduleerde redstone-puls.<br>
+<br>
+Gebruik: gebruik dit waar ’n klein meganisme periodieke of vertraagde beheer nodig het.<br>
+<br>
+Nota: gebruik geskeduleerde redstone-pulse.

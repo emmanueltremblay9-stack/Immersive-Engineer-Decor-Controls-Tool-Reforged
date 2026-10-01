@@ -1,0 +1,789 @@
+Sterowanie redstone
+Mierniki i elementy sygnalizacyjne
+Urządzenia sterujące przekształcają ukryte obwody redstone w czytelne panele fabryczne, czujniki, wskaźniki, przełączniki, alarmy i powiązane elementy sygnalizacyjne.<br>
+<br>
+Korzystaj z tych stron przy budowie stanowisk operatorów, tablic sygnałowych, obwodów bezpieczeństwa i zdalnego sterowania.
+<np>
+Cel strzelecki
+Krótki impuls
+<&arrow_target>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Czujnik drzwiowy
+Sterowanie redstone
+<&door_sensor_switch>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Przycisk windy
+Sterowanie redstone
+<&elevator_button>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Szklany przycisk
+Sterowanie redstone
+<&glass_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Szklany przycisk
+Sterowanie redstone
+<&glass_small_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Szklany przycisk dotykowy
+Sterowanie redstone
+<&glass_touch_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Przycisk maszynowy
+Sterowanie redstone
+<&industrial_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Przycisk
+Sterowanie redstone
+<&industrial_double_pole_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Osłonięty przycisk maszynowy
+Sterowanie redstone
+<&industrial_fenced_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Przycisk stukowy
+Sterowanie redstone
+<&industrial_knock_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Stary ozdobny przycisk
+Sterowanie redstone
+<&oldfancy_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Stary ozdobny przycisk
+Sterowanie redstone
+<&oldfancy_small_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Stary ozdobny przycisk łańcuszkowy
+Krótki impuls
+<&oldfancy_spring_reset_chain>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Rustykalny przycisk
+Sterowanie redstone
+<&rustic_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Rustykalny przycisk gwoździowy
+Sterowanie redstone
+<&rustic_nail_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Mały rustykalny przycisk
+Sterowanie redstone
+<&rustic_small_button>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Rustykalny przycisk łańcuszkowy
+Krótki impuls
+<&rustic_spring_reset_chain>Przełącznik chwilowy wysyła wyraźny impuls redstone o pełnej sile.<br>
+<br>
+Użycie: Stosuj go do uruchamiania maszyn, odblokowywania drzwi, alarmów lub układów jednorazowego wyzwalania.<br>
+<br>
+Uwagi: Wraca do stanu początkowego po zaprogramowanym impulsie.
+<np>
+Szklana płytka naciskowa
+Impuls naciskowy
+<&glass_contact_mat>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Szklany czujnik naciskowy do drzwi
+Impuls naciskowy
+<&glass_door_contact_mat>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Mata naciskowa
+Impuls naciskowy
+<&industrial_contact_mat>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Drzwiowa mata naciskowa
+Impuls naciskowy
+<&industrial_door_contact_mat>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Wykrywacz przelatywania
+Wykrywanie sygnałów
+<&industrial_fallthrough_detector>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Przycisk nożny
+Sterowanie redstone
+<&industrial_foot_button>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Przemysłowa klapa udarowa
+Impuls naciskowy
+<&industrial_high_sensitive_trapdoor>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Mata reagująca na uderzenia
+Impuls naciskowy
+<&industrial_shock_sensitive_contact_mat>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Klapa udarowa
+Impuls naciskowy
+<&industrial_shock_sensitive_trapdoor>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Czerwony kwiat redstone
+Impuls naciskowy
+<&red_power_plant>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Rustykalna płytka naciskowa
+Impuls naciskowy
+<&rustic_contact_plate>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Rustykalny drzwiowy element naciskowy
+Impuls naciskowy
+<&rustic_door_contact_plate>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Rustykalny wykrywacz spadania
+Wykrywanie sygnałów
+<&rustic_fallthrough_detector>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Rustykalna klapa udarowa
+Impuls naciskowy
+<&rustic_high_sensitive_trapdoor>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Rustykalna płytka udarowa
+Impuls naciskowy
+<&rustic_shock_sensitive_plate>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Rustykalna klapa udarowa
+Impuls naciskowy
+<&rustic_shock_sensitive_trapdoor>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Żółty kwiat redstone
+Impuls naciskowy
+<&yellow_power_plant>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.
+<np>
+Szklany zegar dobowy
+Sygnał dzienny
+<&glass_day_timer>Przełącznik czasowy śledzi dzienną część cyklu świata.<br>
+<br>
+Użycie: Stosuj go do lamp na placach, żaluzji i układów sterowania fabryką działających tylko w dzień.<br>
+<br>
+Uwagi: Wymaga wymiaru ze światłem nieba.
+<np>
+Szklany wykrywacz bytów
+Wykrywanie sygnałów
+<&glass_entity_detector>Wykrywacz bytów obserwuje pobliski ruch bez widocznej płytki podłogowej.<br>
+<br>
+Użycie: Podłącz go do drzwi, lamp, alarmów lub blokad bezpieczeństwa maszyn.<br>
+<br>
+Uwagi: Skanuje niewielki obszar wokół bloku.
+<np>
+Szklany generator sygnału okresowego
+Impuls czasowy
+<&glass_interval_timer>Mały przełącznik czasowy dostarcza zaprogramowany impuls redstone.<br>
+<br>
+Użycie: Stosuj go tam, gdzie niewielki mechanizm wymaga sterowania okresowego lub z opóźnieniem.<br>
+<br>
+Uwagi: Korzysta z zaprogramowanych impulsów redstone.
+<np>
+Szklany wykrywacz liniowy
+Wykrywanie sygnałów
+<&glass_linear_entity_detector>Wykrywacz bytów obserwuje pobliski ruch bez widocznej płytki podłogowej.<br>
+<br>
+Użycie: Podłącz go do drzwi, lamp, alarmów lub blokad bezpieczeństwa maszyn.<br>
+<br>
+Uwagi: Skanuje niewielki obszar wokół bloku.
+<np>
+Wykrywacz bloków
+Wykrywanie sygnałów
+<&industrial_block_detector>Wykrywacz bloków sprawdza, czy miejsce przed nim jest zajęte.<br>
+<br>
+Użycie: Skieruj go ku ścianie maszyny, buforowi lub chronionemu obszarowi, który chcesz obserwować.<br>
+<br>
+Uwagi: Włącza sygnał, gdy blok przed nim nie jest powietrzem.
+<np>
+Zegar dobowy
+Sygnał dzienny
+<&industrial_day_timer>Przełącznik czasowy śledzi dzienną część cyklu świata.<br>
+<br>
+Użycie: Stosuj go do lamp na placach, żaluzji i układów sterowania fabryką działających tylko w dzień.<br>
+<br>
+Uwagi: Wymaga wymiaru ze światłem nieba.
+<np>
+Wykrywacz bytów
+Wykrywanie sygnałów
+<&industrial_entity_detector>Wykrywacz bytów obserwuje pobliski ruch bez widocznej płytki podłogowej.<br>
+<br>
+Użycie: Podłącz go do drzwi, lamp, alarmów lub blokad bezpieczeństwa maszyn.<br>
+<br>
+Uwagi: Skanuje niewielki obszar wokół bloku.
+<np>
+Timer okresowy
+Impuls czasowy
+<&industrial_interval_timer>Mały przełącznik czasowy dostarcza zaprogramowany impuls redstone.<br>
+<br>
+Użycie: Stosuj go tam, gdzie niewielki mechanizm wymaga sterowania okresowego lub z opóźnieniem.<br>
+<br>
+Uwagi: Korzysta z zaprogramowanych impulsów redstone.
+<np>
+Czujnik światła
+Wykrywanie sygnałów
+<&industrial_light_sensor>Czujnik światła przekształca lokalną jasność w sterowanie redstone.<br>
+<br>
+Użycie: Stosuj go do automatycznych lamp, żaluzji i obwodów sterujących widocznością.<br>
+<br>
+Uwagi: Włącza sygnał przy surowym poziomie jasności 8 lub wyższym.
+<np>
+Wykrywacz burz
+Wykrywanie sygnałów
+<&industrial_lightning_sensor>Czujnik burzy uruchamia ostrzeżenia podczas wyładowań atmosferycznych.<br>
+<br>
+Użycie: Postaw go pod otwartym niebem i podłącz do lamp lub alarmów.<br>
+<br>
+Uwagi: Wymaga burzy i dostępu do nieba.
+<np>
+Liniowy wykrywacz bytów
+Wykrywanie sygnałów
+<&industrial_linear_entity_detector>Wykrywacz bytów obserwuje pobliski ruch bez widocznej płytki podłogowej.<br>
+<br>
+Użycie: Podłącz go do drzwi, lamp, alarmów lub blokad bezpieczeństwa maszyn.<br>
+<br>
+Uwagi: Skanuje niewielki obszar wokół bloku.
+<np>
+Czujnik deszczu
+Wykrywanie sygnałów
+<&industrial_rain_sensor>Czujnik pogody zamienia padający na niego deszcz w sygnał redstone.<br>
+<br>
+Użycie: Zamontuj go tak, aby deszcz mógł padać na blok nad nim.<br>
+<br>
+Uwagi: Sprawdza deszcz nad czujnikiem.
+<np>
+Szklany przełącznik bistabilny
+Sterowanie redstone
+<&glass_rotary_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Szklany bistabilny element dotykowy
+Sterowanie redstone
+<&glass_touch_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Pomarańczowe szkło reagujące
+Szkło sygnalizacyjne
+<&orange_sensitiveglass>Blok szkła reagującego na redstone zachowuje widoczność i jednocześnie pokazuje stan sygnału.<br>
+<br>
+Użycie: Stosuj go w oknach sterowni, podświetlanych panelach i osłonowych przeszkleniach fabryki.<br>
+<br>
+Uwagi: Zmienia stan pod wpływem pobliskiego sygnału redstone.
+<np>
+Świecące szkło reagujące
+Szkło sygnalizacyjne
+<&sensitive_glass_block>Blok szkła reagującego na redstone zachowuje widoczność i jednocześnie pokazuje stan sygnału.<br>
+<br>
+Użycie: Stosuj go w oknach sterowni, podświetlanych panelach i osłonowych przeszkleniach fabryki.<br>
+<br>
+Uwagi: Zmienia stan pod wpływem pobliskiego sygnału redstone.
+<np>
+Kolorowe szkło reagujące
+Szkło sygnalizacyjne
+<&stained_sensitiveglass>Blok szkła reagującego na redstone zachowuje widoczność i jednocześnie pokazuje stan sygnału.<br>
+<br>
+Użycie: Stosuj go w oknach sterowni, podświetlanych panelach i osłonowych przeszkleniach fabryki.<br>
+<br>
+Uwagi: Zmienia stan pod wpływem pobliskiego sygnału redstone.
+<np>
+Szklany miernik słupkowy
+Miernik sygnału
+<&glass_vertical_bar_gauge>Mały miernik do sterowni pokazuje siłę redstone jako czytelny odczyt na panelu.<br>
+<br>
+Użycie: Zamontuj go w miejscu, w którym pobliski sygnał redstone powinien być widoczny na pierwszy rzut oka.<br>
+<br>
+Uwagi: Odczytuje pobliską siłę redstone od 0 do 15.
+<np>
+Miernik analogowy
+Miernik sygnału
+<&industrial_analog_angular_gauge>Mały miernik do sterowni pokazuje siłę redstone jako czytelny odczyt na panelu.<br>
+<br>
+Użycie: Zamontuj go w miejscu, w którym pobliski sygnał redstone powinien być widoczny na pierwszy rzut oka.<br>
+<br>
+Uwagi: Odczytuje pobliską siłę redstone od 0 do 15.
+<np>
+Woltomierz
+Miernik sygnału
+<&industrial_analog_horizontal_gauge>Mały miernik do sterowni pokazuje siłę redstone jako czytelny odczyt na panelu.<br>
+<br>
+Użycie: Zamontuj go w miejscu, w którym pobliski sygnał redstone powinien być widoczny na pierwszy rzut oka.<br>
+<br>
+Uwagi: Odczytuje pobliską siłę redstone od 0 do 15.
+<np>
+Miernik cyfrowy
+Czytelna siła sygnału
+<&industrial_small_digital_gauge>Mały miernik do sterowni pokazuje siłę redstone jako czytelny odczyt na panelu.<br>
+<br>
+Użycie: Zamontuj go w miejscu, w którym pobliski sygnał redstone powinien być widoczny na pierwszy rzut oka.<br>
+<br>
+Uwagi: Odczytuje pobliską siłę redstone od 0 do 15.
+<np>
+Szklany miernik rurowy
+Miernik sygnału
+<&industrial_tube_gauge>Mały miernik do sterowni pokazuje siłę redstone jako czytelny odczyt na panelu.<br>
+<br>
+Użycie: Zamontuj go w miejscu, w którym pobliski sygnał redstone powinien być widoczny na pierwszy rzut oka.<br>
+<br>
+Uwagi: Odczytuje pobliską siłę redstone od 0 do 15.
+<np>
+Analogowy miernik słupkowy
+Miernik sygnału
+<&industrial_vertical_bar_gauge>Mały miernik do sterowni pokazuje siłę redstone jako czytelny odczyt na panelu.<br>
+<br>
+Użycie: Zamontuj go w miejscu, w którym pobliski sygnał redstone powinien być widoczny na pierwszy rzut oka.<br>
+<br>
+Uwagi: Odczytuje pobliską siłę redstone od 0 do 15.
+<np>
+Lampa alarmowa
+Sygnalizacja stanu
+<&industrial_alarm_lamp>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Syrena alarmowa
+Sygnalizacja stanu
+<&industrial_alarm_siren>Syrena alarmowa to wskaźnik redstone montowany na powierzchni bloku. Jej stan zasilania odpowiada sygnałowi z bloku, do którego jest przymocowana.<br>
+<br>
+Przymocuj ją do pełnej powierzchni i zasil, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Syrena odświeża stan raz na sekundę, dopóki sygnał pozostaje aktywny.
+<np>
+Migająca dioda LED
+Sygnalizacja stanu
+<&industrial_blinking_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Migająca zielona dioda LED
+Sygnalizacja stanu
+<&industrial_green_blinking_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Zielona dioda LED
+Sygnalizacja stanu
+<&industrial_green_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Czerwona dioda LED
+Sygnalizacja stanu
+<&industrial_red_blinking_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Czerwona dioda LED
+Sygnalizacja stanu
+<&industrial_red_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Migająca biała dioda LED
+Sygnalizacja stanu
+<&industrial_white_blinking_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Biała dioda LED
+Sygnalizacja stanu
+<&industrial_white_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Migająca żółta dioda LED
+Sygnalizacja stanu
+<&industrial_yellow_blinking_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Żółta dioda LED
+Sygnalizacja stanu
+<&industrial_yellow_led>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Rustykalny semafor
+Sygnalizacja stanu
+<&rustic_semaphore>Mały wskaźnik zamienia ukryty sygnał redstone w widoczną informację dla obsługi fabryki.<br>
+<br>
+Użycie: Podłącz go obok sygnału, aby monitorować drzwi, maszyny, alarmy lub panele.<br>
+<br>
+Uwagi: Zmienia stan, gdy w pobliżu pojawia się sygnał redstone.
+<np>
+Przełącznik komparatorowy
+Sygnał bloku mocującego
+<&industrial_comparator_switch>Mały przełącznik z czujnikiem odczytuje blok, na którym jest zamontowany, i przekształca odczyt w proste wyjście panelu.<br>
+<br>
+Użycie: Zamontuj go na ekwipunku, zbiorniku lub urządzeniu redstone. Gdy podłączony blok udostępnia wyjście komparatora, pojemnika lub redstone, przełącznik emituje redstone o pełnej sile.<br>
+<br>
+Uwagi: Zamieniaj nim poziomy zapasów lub ukryte przewody w czytelne linie sterowania włącz/wyłącz.
+<np>
+Regulator sygnału
+Zmienny sygnał
+<&industrial_dimmer>Obrotowy element sterujący reguluje siłę redstone z przodu niewielkiego panelu.<br>
+<br>
+Użycie: Klikaj prawym przyciskiem myszy, aby stopniowo zwiększać sygnał. Po osiągnięciu maksymalnej siły wartość wraca do zera.<br>
+<br>
+Uwagi: Wytwarza sygnał o sile od 0 do 15.
+<np>
+Przycisk awaryjnego zatrzymania
+Sterowanie redstone
+<&industrial_estop_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Blokada leja
+Sterowanie redstone
+<&industrial_hopper_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Przełącznik stukowy
+Sterowanie redstone
+<&industrial_knock_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Dźwignia
+Sterowanie redstone
+<&industrial_lever>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Dwuprzyciskowy przełącznik maszynowy
+Sterowanie redstone
+<&industrial_machine_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Uchwyt pociągany
+Sterowanie redstone
+<&industrial_pull_handle>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Dźwignia obrotowa
+Sterowanie redstone
+<&industrial_rotary_lever>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Obrotowy przełącznik maszynowy
+Sterowanie redstone
+<&industrial_rotary_machine_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Dźwignia stykowa
+Sterowanie redstone
+<&industrial_small_lever>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Przełącznik
+Sterowanie redstone
+<&industrialswitch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Włącznik światła
+Sterowanie redstone
+<&light_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Przełącznik zaworowy
+Sterowanie redstone
+<&valve_wheel_switch>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Odbiornik impulsowy w obudowie
+Powiązany element sterujący
+<&industrial_switchlink_cased_pulse_receiver>Powiązany odbiornik impulsowy w obudowie dostarcza krótkie wyzwolenie redstone do zdalnych paneli.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Kliknij odbiornik prawym przyciskiem myszy lub uruchom perłę, aby wyemitować krótki impuls.<br>
+<br>
+Uwagi: Impuls kończy się sam po zaprogramowanym czasie.
+<np>
+Odbiornik połączenia w obudowie
+Powiązany element sterujący
+<&industrial_switchlink_cased_receiver>Powiązany odbiornik w obudowie zapewnia wytrzymały cel redstone do zdalnych paneli.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Kliknij bezpośrednio odbiornik prawym przyciskiem myszy, aby ręcznie zmienić jego stan.<br>
+<br>
+Uwagi: Powiązana perła przełącza ten odbiornik, gdy użyjesz jej podczas skradania.
+<np>
+Odbiornik impulsowy połączenia
+Powiązany element sterujący
+<&industrial_switchlink_pulse_receiver>Powiązany odbiornik impulsowy dostarcza krótkie wyzwolenie redstone do zdalnych paneli.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Kliknij odbiornik prawym przyciskiem myszy lub uruchom perłę, aby wyemitować krótki impuls.<br>
+<br>
+Uwagi: Impuls kończy się sam po zaprogramowanym czasie.
+<np>
+Przekaźnik impulsowy połączenia
+Powiązany element sterujący
+<&industrial_switchlink_pulse_relay>Element o wyglądzie przekaźnika zapewnia mały lokalny punkt przełączania w panelu.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać wyjście o pełnej sile dla pobliskich obwodów. Do wyzwalania powiązanymi perłami używaj bloków odbiorników.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Odbiornik połączenia przełączników
+Powiązany element sterujący
+<&industrial_switchlink_receiver>Powiązany odbiornik zapewnia cel redstone o pełnej sile do zdalnych paneli.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Kliknij bezpośrednio odbiornik prawym przyciskiem myszy, aby ręcznie zmienić jego stan.<br>
+<br>
+Uwagi: Powiązana perła przełącza ten odbiornik, gdy użyjesz jej podczas skradania.
+<np>
+Analogowy odbiornik połączenia
+Powiązany element sterujący
+<&industrial_switchlink_receiver_analog>Powiązany odbiornik zapewnia widoczny zdalny cel do paneli sterowania.<br>
+<br>
+Użycie: Kliknij go enderperłą, aby utworzyć powiązaną perłę. Użyj tej perły podczas skradania, aby zdalnie uruchomić odbiornik.<br>
+<br>
+Uwagi: Po wyzwoleniu odbiornik emituje redstone o pełnej sile.
+<np>
+Przekaźnik połączenia przełączników
+Powiązany element sterujący
+<&industrial_switchlink_relay>Element o wyglądzie przekaźnika zapewnia mały lokalny punkt przełączania w panelu.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać wyjście o pełnej sile dla pobliskich obwodów. Do wyzwalania powiązanymi perłami używaj bloków odbiorników.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Analogowy przekaźnik połączenia
+Powiązany element sterujący
+<&industrial_switchlink_relay_analog>Element o wyglądzie przekaźnika zapewnia mały lokalny punkt przełączania w panelu.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać wyjście o pełnej sile dla pobliskich obwodów. Do wyzwalania powiązanymi perłami używaj bloków odbiorników.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Perła łącząca przełączniki
+Powiązany element sterujący
+<&switchlink_pearl>Powiązana perła zapisuje odbiornik docelowy do zdalnego sterowania fabryką.<br>
+<br>
+Użycie: Kliknij enderperłą odbiornik połączenia przełączników, aby ją utworzyć. Użyj powiązanej perły podczas skradania, aby uruchomić zapisany odbiornik.<br>
+<br>
+Uwagi: Cel musi być wczytany, w tym samym wymiarze i w zasięgu.
+<np>
+Stara ozdobna dźwignia
+Sterowanie redstone
+<&oldfancy_bistableswitch1>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Stara ozdobna dźwignia obrotowa
+Sterowanie redstone
+<&oldfancy_bistableswitch2>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Rustykalna dźwignia obrotowa
+Sterowanie redstone
+<&rustic_angular_lever>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Rustykalna dźwignia
+Sterowanie redstone
+<&rustic_lever>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Rustykalna dźwignia gwoździowa
+Sterowanie redstone
+<&rustic_nail_lever>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.
+<np>
+Rustykalna dźwignia dwuzawiasowa
+Sterowanie redstone
+<&rustic_two_hinge_lever>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.

@@ -1,0 +1,7 @@
+Sensor Hujan
+Pengindraan sinyal
+<&recipe>Sensor cuaca mengubah curah hujan di posisinya menjadi redstone.<br>
+<br>
+Penggunaan: pasang di tempat blok di atasnya dapat terkena hujan.<br>
+<br>
+Catatan: memeriksa hujan di atas sensor.

@@ -1,0 +1,5 @@
+Bloku lauzējs
+Darbnīcas palīgierīce
+<&recipe>Mazs bloku lauzējs ir darbnīcas palīgbloks izgatavošanai, glabāšanai, novietošanai, laušanai, savākšanai vai kompaktai automatizācijai.<br>
+<br>
+Lietošana: pavērs darba pusi pret noņemamo bloku.<br>

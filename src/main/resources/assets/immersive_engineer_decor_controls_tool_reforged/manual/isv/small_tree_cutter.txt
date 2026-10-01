@@ -1,0 +1,5 @@
+Rězač drěv
+Pribor fabričnoj haly
+<&recipe>Maly rězač drěv jest priborni blok fabričnoj haly dlja tvorjenja, hranjenja, stavjanja, lomjenja, sbiranja ili kompaktnoj avtomatizacije.<br>
+<br>
+Upotrěbjenje: Usměri go na dorastle drěva i sbiraj vypale prědmety odděljeno.<br>

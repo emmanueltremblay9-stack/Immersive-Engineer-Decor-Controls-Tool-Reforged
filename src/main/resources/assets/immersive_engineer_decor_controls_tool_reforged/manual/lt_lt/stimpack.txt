@@ -1,0 +1,7 @@
+Automatinis stimuliantų rinkinys
+Avarinis injektorius
+<&recipe>Auto Stim Pack yra avarinė medicinos priemonė pavojingiems priežiūros darbams.<br>
+<br>
+Naudojimas: Naudok rankomis, kad išgytum, trumpam gautum apsaugą ir judėjimo pagreitį. Inventoriuje jis gali automatiškai suveikti esant mažai sveikatos, tada prasideda laukimo laikas.<br>
+<br>
+Turėk jį po ranka prieš bandymus aukštai, prie atvirų laidų arba pavojinguose kasyklų keliuose.

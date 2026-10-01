@@ -1,0 +1,5 @@
+Torrwr Blociau
+Cyfleustod llawr gweithdy
+<&recipe>Bloc cyfleustod llawr gweithdy yw'r Torrwr Blociau Bach, ar gyfer crefftio, storio, gosod, torri, casglu neu awtomeiddio cryno.<br>
+<br>
+Defnydd: Gosodwch yr wyneb gweithio tuag at y bloc i'w dynnu.<br>

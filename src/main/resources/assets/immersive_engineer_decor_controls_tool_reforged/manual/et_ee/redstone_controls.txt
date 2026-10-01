@@ -1,0 +1,789 @@
+Redstone'i juhtseadmed
+Näidikud ja signaaliosad
+Juhtseadmed muudavad peidetud redstone'i loetavateks tehasepaneelideks, anduriteks, indikaatoriteks, lülititeks, häireteks ja ühendatud signaaliosadeks.<br>
+<br>
+Kasuta neid lehti operaatorikohtade, signaaltahvlite, ohutusringide ja kaugjuhtimise ehitamisel.
+<np>
+Noolte märklaud
+Hetkeline impulss
+<&arrow_target>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Ukseandur
+Redstone'i juhtimine
+<&door_sensor_switch>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Liftinupp
+Redstone'i juhtimine
+<&elevator_button>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Klaasnupp
+Redstone'i juhtimine
+<&glass_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Klaasnupp
+Redstone'i juhtimine
+<&glass_small_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Klaasist puutenupp
+Redstone'i juhtimine
+<&glass_touch_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Masinanupp
+Redstone'i juhtimine
+<&industrial_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Nupp
+Redstone'i juhtimine
+<&industrial_double_pole_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Piirdega masinanupp
+Redstone'i juhtimine
+<&industrial_fenced_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Koputusnupp
+Redstone'i juhtimine
+<&industrial_knock_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Vana ehitud nupp
+Redstone'i juhtimine
+<&oldfancy_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Vana ehitud nupp
+Redstone'i juhtimine
+<&oldfancy_small_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Vana ehitud kettnupp
+Hetkeline impulss
+<&oldfancy_spring_reset_chain>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Rustikaalne nupp
+Redstone'i juhtimine
+<&rustic_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Rustikaalne naelanupp
+Redstone'i juhtimine
+<&rustic_nail_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Väike rustikaalne nupp
+Redstone'i juhtimine
+<&rustic_small_button>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Rustikaalne kettnupp
+Hetkeline impulss
+<&rustic_spring_reset_chain>Hetklüliti annab selge täistugevusega redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta masinate käivitamiseks, uste vabastamiseks, häireteks või ühekordselt käivituvates vooluringides.<br>
+<br>
+Märkus: Lähtestub pärast määratud impulssi.
+<np>
+Klaasist kontaktplaat
+Surveimpulss
+<&glass_contact_mat>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Klaasist uksekontakt
+Surveimpulss
+<&glass_door_contact_mat>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Kontaktmatt
+Surveimpulss
+<&industrial_contact_mat>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Uksekontaktmatt
+Surveimpulss
+<&industrial_door_contact_mat>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Läbikukkumise tuvastaja
+Signaali tuvastamine
+<&industrial_fallthrough_detector>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Jalanupp
+Redstone'i juhtimine
+<&industrial_foot_button>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Tööstuslik löögiuks
+Surveimpulss
+<&industrial_high_sensitive_trapdoor>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Löögitundlik kontaktmatt
+Surveimpulss
+<&industrial_shock_sensitive_contact_mat>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Löögiga avanev luuk
+Surveimpulss
+<&industrial_shock_sensitive_trapdoor>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Punane voolutaim
+Surveimpulss
+<&red_power_plant>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Rustikaalne surveplaat
+Surveimpulss
+<&rustic_contact_plate>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Rustikaalne ukse surveplaat
+Surveimpulss
+<&rustic_door_contact_plate>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Rustikaalne kukkumistuvastaja
+Signaali tuvastamine
+<&rustic_fallthrough_detector>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Rustikaalne löögiuks
+Surveimpulss
+<&rustic_high_sensitive_trapdoor>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Rustikaalne löögiplaat
+Surveimpulss
+<&rustic_shock_sensitive_plate>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Rustikaalne löögiuks
+Surveimpulss
+<&rustic_shock_sensitive_trapdoor>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Kollane voolutaim
+Surveimpulss
+<&yellow_power_plant>Kontaktlüliti saadab lühikese signaali põrandal või luugil toimuvast liikumisest.<br>
+<br>
+Kasutamine: Paigalda sinna, kus olemid läbivad hoolduskäiku, laadijat või valvatud teed.<br>
+<br>
+Märkus: Annab lühikese impulsi pärast olemiga kokkupuudet.
+<np>
+Klaasist ööpäevataimer
+Päevavalgussignaal
+<&glass_day_timer>Taimerlüliti järgib maailma ööpäeva päevast osa.<br>
+<br>
+Kasutamine: Kasuta õuelampide, aknaluukide ja ainult päeval töötavate tehasejuhtseadmete jaoks.<br>
+<br>
+Märkus: Vajab taevavalgusega dimensiooni.
+<np>
+Klaasist olemituvastaja
+Signaali tuvastamine
+<&glass_entity_detector>Olemituvastaja jälgib lähedast liikumist ilma nähtava põrandaplaadita.<br>
+<br>
+Kasutamine: Ühenda uste, lampide, häirete või masinate turvablokeeringutega.<br>
+<br>
+Märkus: Skannib väikest ala ploki ümber.
+<np>
+Klaasist intervallsignaal
+Ajastatud impulss
+<&glass_interval_timer>Kompaktne taimerlüliti annab ajastatud redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta seal, kus väike mehhanism vajab perioodilist või viivitatud juhtimist.<br>
+<br>
+Märkus: Kasutab ajastatud redstone'i impulsse.
+<np>
+Klaasist joontuvastaja
+Signaali tuvastamine
+<&glass_linear_entity_detector>Olemituvastaja jälgib lähedast liikumist ilma nähtava põrandaplaadita.<br>
+<br>
+Kasutamine: Ühenda uste, lampide, häirete või masinate turvablokeeringutega.<br>
+<br>
+Märkus: Skannib väikest ala ploki ümber.
+<np>
+Plokituvastaja
+Signaali tuvastamine
+<&industrial_block_detector>Plokituvastaja kontrollib, kas selle ees olev ruum on hõivatud.<br>
+<br>
+Kasutamine: Suuna see jälgitavale masinapinnale, puhvrile või kaitstud alale.<br>
+<br>
+Märkus: Annab toidet, kui ees olev plokk pole õhk.
+<np>
+Ööpäevataimer
+Päevavalgussignaal
+<&industrial_day_timer>Taimerlüliti järgib maailma ööpäeva päevast osa.<br>
+<br>
+Kasutamine: Kasuta õuelampide, aknaluukide ja ainult päeval töötavate tehasejuhtseadmete jaoks.<br>
+<br>
+Märkus: Vajab taevavalgusega dimensiooni.
+<np>
+Olemituvastaja
+Signaali tuvastamine
+<&industrial_entity_detector>Olemituvastaja jälgib lähedast liikumist ilma nähtava põrandaplaadita.<br>
+<br>
+Kasutamine: Ühenda uste, lampide, häirete või masinate turvablokeeringutega.<br>
+<br>
+Märkus: Skannib väikest ala ploki ümber.
+<np>
+Intervalltaimer
+Ajastatud impulss
+<&industrial_interval_timer>Kompaktne taimerlüliti annab ajastatud redstone'i impulsi.<br>
+<br>
+Kasutamine: Kasuta seal, kus väike mehhanism vajab perioodilist või viivitatud juhtimist.<br>
+<br>
+Märkus: Kasutab ajastatud redstone'i impulsse.
+<np>
+Valgusandur
+Signaali tuvastamine
+<&industrial_light_sensor>Valgusandur teisendab kohaliku valguse tugevuse redstone'i juhtimiseks.<br>
+<br>
+Kasutamine: Kasuta automaatsete lampide, aknaluukide ja nähtavusest sõltuvate vooluringide jaoks.<br>
+<br>
+Märkus: Annab toidet töötlemata valgustasemel 8 või rohkem.
+<np>
+Tormituvastaja
+Signaali tuvastamine
+<&industrial_lightning_sensor>Tormiandur käivitab äikese ajal hoiatusi.<br>
+<br>
+Kasutamine: Paigalda lageda taeva alla ning ühenda lampide või häiretega.<br>
+<br>
+Märkus: Vajab äikest ja avatud taevast.
+<np>
+Lineaarne olemituvastaja
+Signaali tuvastamine
+<&industrial_linear_entity_detector>Olemituvastaja jälgib lähedast liikumist ilma nähtava põrandaplaadita.<br>
+<br>
+Kasutamine: Ühenda uste, lampide, häirete või masinate turvablokeeringutega.<br>
+<br>
+Märkus: Skannib väikest ala ploki ümber.
+<np>
+Vihmaandur
+Signaali tuvastamine
+<&industrial_rain_sensor>Ilmaandur teisendab oma asukoha vihmasaju redstone'iks.<br>
+<br>
+Kasutamine: Kinnita sinna, kus ülemine plokk saab vihma.<br>
+<br>
+Märkus: Kontrollib vihma anduri kohal.
+<np>
+Bistabiilne klaaslüliti
+Redstone'i juhtimine
+<&glass_rotary_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Bistabiilne klaasist puutelüliti
+Redstone'i juhtimine
+<&glass_touch_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Oranž tundlik klaas
+Signaaliklaas
+<&orange_sensitiveglass>Redstone'ile reageeriv klaasiplokk säilitab vaate ja näitab signaali olekut.<br>
+<br>
+Kasutamine: Kasuta juhtimisruumi akendes, valgustatud paneelides ja kaitstud tehaseklaasis.<br>
+<br>
+Märkus: Muudab olekut lähedase redstone'i toite järgi.
+<np>
+Valgustatud tundlik klaas
+Signaaliklaas
+<&sensitive_glass_block>Redstone'ile reageeriv klaasiplokk säilitab vaate ja näitab signaali olekut.<br>
+<br>
+Kasutamine: Kasuta juhtimisruumi akendes, valgustatud paneelides ja kaitstud tehaseklaasis.<br>
+<br>
+Märkus: Muudab olekut lähedase redstone'i toite järgi.
+<np>
+Värviline tundlik klaas
+Signaaliklaas
+<&stained_sensitiveglass>Redstone'ile reageeriv klaasiplokk säilitab vaate ja näitab signaali olekut.<br>
+<br>
+Kasutamine: Kasuta juhtimisruumi akendes, valgustatud paneelides ja kaitstud tehaseklaasis.<br>
+<br>
+Märkus: Muudab olekut lähedase redstone'i toite järgi.
+<np>
+Klaasist tulpnäidik
+Signaalinäidik
+<&glass_vertical_bar_gauge>Kompaktne juhtimisruumi näidik kuvab redstone'i tugevuse selge paneelinäiduna.<br>
+<br>
+Kasutamine: Paigalda sinna, kus lähedast redstone'i toidet peab saama ühe pilguga kontrollida.<br>
+<br>
+Märkus: Loeb lähedase redstone'i tugevust vahemikus 0–15.
+<np>
+Analoognäidik
+Signaalinäidik
+<&industrial_analog_angular_gauge>Kompaktne juhtimisruumi näidik kuvab redstone'i tugevuse selge paneelinäiduna.<br>
+<br>
+Kasutamine: Paigalda sinna, kus lähedast redstone'i toidet peab saama ühe pilguga kontrollida.<br>
+<br>
+Märkus: Loeb lähedase redstone'i tugevust vahemikus 0–15.
+<np>
+Voltmeetrinäidik
+Signaalinäidik
+<&industrial_analog_horizontal_gauge>Kompaktne juhtimisruumi näidik kuvab redstone'i tugevuse selge paneelinäiduna.<br>
+<br>
+Kasutamine: Paigalda sinna, kus lähedast redstone'i toidet peab saama ühe pilguga kontrollida.<br>
+<br>
+Märkus: Loeb lähedase redstone'i tugevust vahemikus 0–15.
+<np>
+Digitaalnäidik
+Loetav signaalitugevus
+<&industrial_small_digital_gauge>Kompaktne juhtimisruumi näidik kuvab redstone'i tugevuse selge paneelinäiduna.<br>
+<br>
+Kasutamine: Paigalda sinna, kus lähedast redstone'i toidet peab saama ühe pilguga kontrollida.<br>
+<br>
+Märkus: Loeb lähedase redstone'i tugevust vahemikus 0–15.
+<np>
+Klaastorunäidik
+Signaalinäidik
+<&industrial_tube_gauge>Kompaktne juhtimisruumi näidik kuvab redstone'i tugevuse selge paneelinäiduna.<br>
+<br>
+Kasutamine: Paigalda sinna, kus lähedast redstone'i toidet peab saama ühe pilguga kontrollida.<br>
+<br>
+Märkus: Loeb lähedase redstone'i tugevust vahemikus 0–15.
+<np>
+Analoogne tulpnäidik
+Signaalinäidik
+<&industrial_vertical_bar_gauge>Kompaktne juhtimisruumi näidik kuvab redstone'i tugevuse selge paneelinäiduna.<br>
+<br>
+Kasutamine: Paigalda sinna, kus lähedast redstone'i toidet peab saama ühe pilguga kontrollida.<br>
+<br>
+Märkus: Loeb lähedase redstone'i tugevust vahemikus 0–15.
+<np>
+Häirelamp
+Signaali tagasiside
+<&industrial_alarm_lamp>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Häiresireen
+Signaalinäidik
+<&industrial_alarm_siren>Häiresireen on ploki küljele kinnitatav redstone'i näidik. Selle toiteolek järgib kinnitusploki signaali.<br>
+<br>
+Kasutus: Kinnita tugevale küljele ja anna toide uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Aktiivse signaali ajal uueneb sireen kord sekundis.
+<np>
+Vilkuv LED
+Signaali tagasiside
+<&industrial_blinking_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Roheline vilkuv LED
+Signaali tagasiside
+<&industrial_green_blinking_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Roheline LED
+Signaali tagasiside
+<&industrial_green_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Punane LED
+Signaali tagasiside
+<&industrial_red_blinking_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Punane LED
+Signaali tagasiside
+<&industrial_red_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Valge vilkuv LED
+Signaali tagasiside
+<&industrial_white_blinking_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Valge LED
+Signaali tagasiside
+<&industrial_white_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Kollane vilkuv LED
+Signaali tagasiside
+<&industrial_yellow_blinking_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Kollane LED
+Signaali tagasiside
+<&industrial_yellow_led>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Rustikaalne semafor
+Signaali tagasiside
+<&rustic_semaphore>Kompaktne indikaator muudab peidetud redstone'i tehase nähtavaks tagasisideks.<br>
+<br>
+Kasutamine: Ühenda signaali kõrvale uste, masinate, häirete või paneelide jälgimiseks.<br>
+<br>
+Märkus: Muudab olekut, kui lähedal on redstone'i toide.
+<np>
+Komparaatorlüliti
+Kinnitusploki signaal
+<&industrial_comparator_switch>Kompaktne andurlüliti loeb oma kinnitusplokki ja muudab näidu lihtsaks paneeliväljundiks.<br>
+<br>
+Kasutamine: Kinnita ladudele, mahutitele või redstone'i seadmetele. Kui kinnitusplokk annab komparaatori-, mahuti- või redstone'i väljundi, väljastab lüliti täistugevusega redstone'i.<br>
+<br>
+Märkus: Kasuta laotasemete või peidetud juhtmete teisendamiseks selgeteks sisse/välja-juhtliinideks.
+<np>
+Hämardi
+Muutuv signaal
+<&industrial_dimmer>Pöördnupp määrab redstone'i tugevuse kompaktsel paneelipinnal.<br>
+<br>
+Kasutamine: Paremklõpsuga suurenda väljundit sammhaaval. Täistugevuse järel jõuab see tagasi nulli.<br>
+<br>
+Märkus: Väljastab tugevust vahemikus 0–15.
+<np>
+Hädaseiskamisnupp
+Redstone'i juhtimine
+<&industrial_estop_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Püüdja blokeerija
+Redstone'i juhtimine
+<&industrial_hopper_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Koputuslüliti
+Redstone'i juhtimine
+<&industrial_knock_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Kang
+Redstone'i juhtimine
+<&industrial_lever>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Kahe nupuga masinalüliti
+Redstone'i juhtimine
+<&industrial_machine_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Tõmbekäepide
+Redstone'i juhtimine
+<&industrial_pull_handle>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Pöördkang
+Redstone'i juhtimine
+<&industrial_rotary_lever>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Pööratav masinalüliti
+Redstone'i juhtimine
+<&industrial_rotary_machine_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Kontaktkang
+Redstone'i juhtimine
+<&industrial_small_lever>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Lüliti
+Redstone'i juhtimine
+<&industrialswitch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Valguslüliti
+Redstone'i juhtimine
+<&light_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Ventiililüliti
+Redstone'i juhtimine
+<&valve_wheel_switch>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Korpuses impulssvastuvõtja
+Ühendatud juhtimine
+<&industrial_switchlink_cased_pulse_receiver>Korpuses ühendatud impulssvastuvõtja annab kaugpaneelidele lühikese redstone'i käivituse.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Lühikese impulsi andmiseks paremklõpsa vastuvõtjal või aktiveeri ühendatud pärl.<br>
+<br>
+Märkus: Impulss lähtestub pärast määratud kestust ise.
+<np>
+Korpuses ühendusvastuvõtja
+Ühendatud juhtimine
+<&industrial_switchlink_cased_receiver>Korpuses ühendusvastuvõtja annab kaugpaneelidele tugeva redstone'i sihtmärgi.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Käsitsi lülitamiseks paremklõpsa otse vastuvõtjal.<br>
+<br>
+Märkus: Ühendatud pärl lülitab seda vastuvõtjat, kui pärli kasutatakse hiilides.
+<np>
+Impulssühenduse vastuvõtja
+Ühendatud juhtimine
+<&industrial_switchlink_pulse_receiver>Ühendatud impulssvastuvõtja annab kaugpaneelidele lühikese redstone'i käivituse.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Lühikese impulsi andmiseks paremklõpsa vastuvõtjal või aktiveeri ühendatud pärl.<br>
+<br>
+Märkus: Impulss lähtestub pärast määratud kestust ise.
+<np>
+Impulssühenduse relee
+Ühendatud juhtimine
+<&industrial_switchlink_pulse_relay>Relee moodi seade annab paneeliehitustele kompaktse kohaliku lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja. Ühendatud pärliga aktiveerimiseks kasuta vastuvõtjaplokke.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Lülitiühenduse vastuvõtja
+Ühendatud juhtimine
+<&industrial_switchlink_receiver>Ühendatud vastuvõtja annab kaugpaneelidele täistugevusega redstone'i sihtmärgi.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Käsitsi lülitamiseks paremklõpsa otse vastuvõtjal.<br>
+<br>
+Märkus: Ühendatud pärl lülitab seda vastuvõtjat, kui pärli kasutatakse hiilides.
+<np>
+Analoogne ühendusvastuvõtja
+Ühendatud juhtimine
+<&industrial_switchlink_receiver_analog>Ühendatud vastuvõtja annab juhtpaneelidele nähtava kaugsihtmärgi.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Vastuvõtja kaugaktiveerimiseks kasuta pärli hiilides.<br>
+<br>
+Märkus: See vastuvõtja väljastab käivitamisel täistugevusega redstone'i signaali.
+<np>
+Lülitiühenduse relee
+Ühendatud juhtimine
+<&industrial_switchlink_relay>Relee moodi seade annab paneeliehitustele kompaktse kohaliku lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja. Ühendatud pärliga aktiveerimiseks kasuta vastuvõtjaplokke.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Analoogne ühendusrelee
+Ühendatud juhtimine
+<&industrial_switchlink_relay_analog>Relee moodi seade annab paneeliehitustele kompaktse kohaliku lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja. Ühendatud pärliga aktiveerimiseks kasuta vastuvõtjaplokke.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Lülitiühenduse pärl
+Ühendatud juhtimine
+<&switchlink_pearl>Ühendatud pärl salvestab vastuvõtja tehase kaugjuhtimise sihtmärgiks.<br>
+<br>
+Kasutamine: Loo see, klõpsates lülitiühenduse vastuvõtjal enderipärliga. Salvestatud vastuvõtja aktiveerimiseks kasuta ühendatud pärli hiilides.<br>
+<br>
+Märkus: Sihtmärk peab olema laaditud, samas dimensioonis ja ulatuse piires.
+<np>
+Vana ehitud kang
+Redstone'i juhtimine
+<&oldfancy_bistableswitch1>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Vana ehitud pöördkang
+Redstone'i juhtimine
+<&oldfancy_bistableswitch2>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Rustikaalne pöördkang
+Redstone'i juhtimine
+<&rustic_angular_lever>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Rustikaalne kang
+Redstone'i juhtimine
+<&rustic_lever>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Rustikaalne naelakang
+Redstone'i juhtimine
+<&rustic_nail_lever>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.
+<np>
+Rustikaalne kahe hingega kang
+Redstone'i juhtimine
+<&rustic_two_hinge_lever>Kompaktne juhtseade annab tehaseehitistele selge redstone'i lülituspunkti.<br>
+<br>
+Kasutamine: Paremklõpsuga lülita täistugevusega väljund lähedaste vooluringide jaoks sisse või välja.<br>
+<br>
+Märkus: Annab sisselülitatuna täistugevusega redstone'i.

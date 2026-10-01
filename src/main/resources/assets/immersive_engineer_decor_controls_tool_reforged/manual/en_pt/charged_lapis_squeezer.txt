@@ -1,0 +1,7 @@
+Mind squeezin' contraption
+Condenser o' experience
+<&recipe>The mind squeezin' contraption turns lāzhward and experience into charged lāzhward.<br>
+<br>
+Orders: Carry lāzhward and at least one experience level, then use the tool. A successful squeeze takes one level and one lāzhward, hurts ye, wears the squeezer and makes one charged lāzhward.<br>
+<br>
+She refuses to work if ye lack lāzhward or XP, or stand too close to Davy Jones.

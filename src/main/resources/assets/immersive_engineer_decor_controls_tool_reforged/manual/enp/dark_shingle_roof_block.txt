@@ -1,0 +1,5 @@
+Dark Shingle Roof Clot
+Weathered roof fitting
+<&recipe>This clot builds dark, work-worthy roof lines for workshops and workstead sheds.<br>
+<br>
+Use: Fit the bits together to make true-to-life roof shapes.<br>

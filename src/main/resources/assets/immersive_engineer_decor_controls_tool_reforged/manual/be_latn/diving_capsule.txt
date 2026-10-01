@@ -1,0 +1,7 @@
+Pavjetranaja kapsula dajvjera
+Avaryjny zapas pavjetra
+<&recipe>Pavjetranaja kapsula dajvjera — avaryjny pradmjet dlja padvodnaj pracy.<br>
+<br>
+Vykarystannje: Užyvajcje ŭručnuju dlja adnaŭljennja pavjetra. U invjentary jana moža aŭtamatyčna spracavac, kali pavjetra amal skončylasja, i zatym pjerazaradžajecca.<br>
+<br>
+Bjarycje jaje ŭ zatopljenyja šachty, na padvodnyja trubapravody i ramont pompavych pamjaškannjaŭ.

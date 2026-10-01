@@ -1,0 +1,5 @@
+Fabriksblockplacerare
+Hjälpmedel för verkstadsgolvet
+<&recipe>Det här blocket placerar block från sitt interna lager när det aktiveras.<br>
+<br>
+Användning: Rikta arbetsytan mot målutrymmet och fyll på med staplar av placerbara block.<br>

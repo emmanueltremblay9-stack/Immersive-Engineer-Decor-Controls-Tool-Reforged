@@ -1,0 +1,5 @@
+Fabrički levak
+Oprema za fabričku halu
+<&recipe>Ovaj blok prenosi gomile predmeta kroz kompaktnije industrijsko kućište.<br>
+<br>
+Upotreba: okreni ga ka liniji inventara, pa u ekranu podesi domet, broj predmeta u gomili, vremenske razmake i redstoun režim.<br>

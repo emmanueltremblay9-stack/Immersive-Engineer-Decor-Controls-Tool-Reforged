@@ -1,0 +1,5 @@
+Elektrikli Ocak
+Küçük işleme birimi
+<&recipe>Elektrikli ocak, az atölye alanında küçük ölçekli FE gücüyle eritme işleri yapar.<br>
+<br>
+Kullanım: FE ve uygun eritme girdisi sağlayın.<br>

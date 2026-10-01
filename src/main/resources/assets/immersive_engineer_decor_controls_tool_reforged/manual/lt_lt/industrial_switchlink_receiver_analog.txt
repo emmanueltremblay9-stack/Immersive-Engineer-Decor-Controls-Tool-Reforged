@@ -1,0 +1,7 @@
+Analoginio ryšio imtuvas
+Susietas valdymas
+<&recipe>Susietas imtuvas suteikia valdymo skydams matomą nuotolinį taikinį.<br>
+<br>
+Naudojimas: spustelėk laikydamas Enderio perlą, kad sukurtum susietą perlą. Naudok tą perlą sėlindamas, kad nuotoliniu būdu įjungtum imtuvą.<br>
+<br>
+Pastabos: sužadintas šis imtuvas siunčia viso stiprumo redstono signalą.

@@ -1,0 +1,7 @@
+Blokdetektilo
+Signala sentado
+<&recipe>Blokdetektilo kontrolas ĉu la spaco antaŭ ĝi estas okupita.<br>
+<br>
+Uzado: direktu ĝin al la observota maŝinflanko, bufro aŭ gardata spaco.<br>
+<br>
+Notoj: ĝi eligas signalon kiam la bloko antaŭ ĝi ne estas aero.

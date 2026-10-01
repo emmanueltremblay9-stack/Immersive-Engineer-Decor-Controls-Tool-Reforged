@@ -1,0 +1,7 @@
+Gewitterdetektor
+Signalerfassung
+<&recipe>A Gewittersensor löst Wornungen während am Gewitter aus.<br>
+<br>
+Verwendung: Setz eam untern freien Himmel und verbinde eam mit Liachtern oda Alarmen.<br>
+<br>
+Hinweis: Braucht Gewitter und freien Himmelszugang.

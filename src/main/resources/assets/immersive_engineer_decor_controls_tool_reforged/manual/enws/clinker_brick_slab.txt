@@ -1,0 +1,5 @@
+Slab of Clinker Brick
+Brickwork Darkened by Soot
+<&recipe>This block brings the hue of sooty brickwork to furnace halls, chimney bases and service walls.<br>
+<br>
+Use: Make walls, trim or a shell for the heated area about furnaces and boilers.<br>

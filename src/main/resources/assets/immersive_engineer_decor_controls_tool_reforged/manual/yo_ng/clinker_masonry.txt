@@ -1,0 +1,161 @@
+Bíríkì tí A Sun Líle àti Iṣẹ́ Òkúta
+Àwọn ìbòrí bíríkì àti kọnkírítì
+Bíríkì tí a sun líle, bíríkì àṣẹ́kù yíyọ́ irin, kọnkírítì aláfikún irin, àti gíláàsì ààbò ń pèsè àwọn ojú wúwo fún yàrá gbígbóná, ilé ìṣẹ́ ọwọ́, àti ọ̀nà ìríran aláàbò.<br>
+<br>
+Lo àwọn pẹlẹbẹ, àtẹ̀gùn, èérún, àti ògiri tí ó bá wọn mu láti parí etí láì yí àṣà ohun èlò ilé iṣẹ́ padà.
+<np>
+Búlọ́ọ̀kù Bíríkì Tí A Sun Líle
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_block>Búlọ́ọ̀kù yìí ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Pẹlẹbẹ Bíríkì Tí A Sun Líle
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_slab>Búlọ́ọ̀kù yìí ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Àtẹ̀gùn Bíríkì Tí A Sun Líle
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_stairs>Búlọ́ọ̀kù yìí ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Ògiri Bíríkì Tí A Sun Líle
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_wall>Búlọ́ọ̀kù yìí ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Búlọ́ọ̀kù Bíríkì Tí A Sun Líle Alábàwọ́n
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_stained_block>Búlọ́ọ̀kù Bíríkì Tí A Sun Líle Alábàwọ́n ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Pẹlẹbẹ Bíríkì Tí A Sun Líle Alábàwọ́n
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_stained_slab>Pẹlẹbẹ Bíríkì Tí A Sun Líle Alábàwọ́n ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Àtẹ̀gùn Bíríkì Tí A Sun Líle Alábàwọ́n
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_stained_stairs>Àtẹ̀gùn Bíríkì Tí A Sun Líle Alábàwọ́n ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Bíríkì Ọ̀ṣọ́ tí A Sun Líle
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_sastor_corner_block>Bíríkì tí A Sun Líle Pẹ̀lú Ọ̀ṣọ́ Òkúta Iyanrìn ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Bíríkì Tí A Sun Líle Tí A Rì Sínú
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_recessed>Búlọ́ọ̀kù yìí ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Bíríkì tí A Sun Líle Pẹ̀lú Àlàfo
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_vertically_slit>Bíríkì Tí A Sun Líle Pẹ̀lú Àlàfo Ináró ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Pẹlẹbẹ Bíríkì tí A Sun Líle Tí Ó Dúró
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&clinker_brick_vertical_slab_structured>Pẹlẹbẹ Bíríkì Tí A Sun Líle Ináró Onílà ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Ìdajì Pẹlẹbẹ Bíríkì tí A Sun Líle
+Iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú
+<&halfslab_clinker_brick>Búlọ́ọ̀kù yìí ń mú iṣẹ́ bíríkì tí eruku èéfín sọ di dúdú wá sí àwọn gbọ̀ngàn ààrò, ìpìlẹ̀ ilé èéfín, àti ògiri iṣẹ́.<br>
+<br>
+Lílò: Lo ó gẹ́gẹ́ bí ògiri, ọ̀ṣọ́ etí, tàbí ìbòrí agbègbè ooru yí ká àwọn ààrò àti ẹ̀rọ omi gbígbóná.<br>
+<np>
+Búlọ́ọ̀kù Bíríkì Àṣẹ́kù Yíyọ́ Irin
+Iṣẹ́ òkúta ilé iṣẹ́ tó nípọn
+<&slag_brick_block>Búlọ́ọ̀kù yìí ń fi iṣẹ́ òkúta eérú-búráùn tó nípọn kún àwọn ìpìlẹ̀, ògiri ìdádúró ilẹ̀, àti ilé ìṣẹ́ ọwọ́ àtijọ́.<br>
+<br>
+Lílò: Lo ó fún ìpìlẹ̀ àtijọ́, ògiri ìdádúró ilẹ̀, àti ilẹ̀ ilé iṣẹ́ tí ó dọ̀tí.<br>
+<np>
+Pẹlẹbẹ Bíríkì Àṣẹ́kù Yíyọ́ Irin
+Iṣẹ́ òkúta ilé iṣẹ́ tó nípọn
+<&slag_brick_slab>Búlọ́ọ̀kù yìí ń fi iṣẹ́ òkúta eérú-búráùn tó nípọn kún àwọn ìpìlẹ̀, ògiri ìdádúró ilẹ̀, àti ilé ìṣẹ́ ọwọ́ àtijọ́.<br>
+<br>
+Lílò: Lo ó fún ìpìlẹ̀ àtijọ́, ògiri ìdádúró ilẹ̀, àti ilẹ̀ ilé iṣẹ́ tí ó dọ̀tí.<br>
+<np>
+Àtẹ̀gùn Bíríkì Àṣẹ́kù Yíyọ́ Irin
+Iṣẹ́ òkúta ilé iṣẹ́ tó nípọn
+<&slag_brick_stairs>Búlọ́ọ̀kù yìí ń fi iṣẹ́ òkúta eérú-búráùn tó nípọn kún àwọn ìpìlẹ̀, ògiri ìdádúró ilẹ̀, àti ilé ìṣẹ́ ọwọ́ àtijọ́.<br>
+<br>
+Lílò: Lo ó fún ìpìlẹ̀ àtijọ́, ògiri ìdádúró ilẹ̀, àti ilẹ̀ ilé iṣẹ́ tí ó dọ̀tí.<br>
+<np>
+Ògiri Bíríkì Àṣẹ́kù Yíyọ́ Irin
+Iṣẹ́ òkúta ilé iṣẹ́ tó nípọn
+<&slag_brick_wall>Búlọ́ọ̀kù yìí ń fi iṣẹ́ òkúta eérú-búráùn tó nípọn kún àwọn ìpìlẹ̀, ògiri ìdádúró ilẹ̀, àti ilé ìṣẹ́ ọwọ́ àtijọ́.<br>
+<br>
+Lílò: Lo ó fún ìpìlẹ̀ àtijọ́, ògiri ìdádúró ilẹ̀, àti ilẹ̀ ilé iṣẹ́ tí ó dọ̀tí.<br>
+<np>
+Búlọ́ọ̀kù Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&rebar_concrete>Búlọ́ọ̀kù yìí jẹ́ apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Pẹlẹbẹ Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&rebar_concrete_slab>Búlọ́ọ̀kù yìí jẹ́ apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Àtẹ̀gùn Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&rebar_concrete_stairs>Búlọ́ọ̀kù yìí jẹ́ apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Ògiri Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&rebar_concrete_wall>Búlọ́ọ̀kù yìí jẹ́ apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Èérún Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&halfslab_rebar_concrete>Búlọ́ọ̀kù yìí jẹ́ apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Táìlì Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&rebar_concrete_tile>Búlọ́ọ̀kù yìí jẹ́ apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Pẹlẹbẹ Táìlì Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&rebar_concrete_tile_slab>Búlọ́ọ̀kù yìí jẹ́ apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Táìlì Kọnkírítì Aláfikún Irin
+Kọnkírítì aláfikún irin
+<&rebar_concrete_tile_stairs>Àtẹ̀gùn Táìlì Kọnkírítì Aláfikún Irin jẹ́ àwọn apá kọnkírítì líle fún ìpìlẹ̀ ẹ̀rọ, ògiri ìdènà ìbúgbàù, àti ilẹ̀ ibi gbígbé ẹrù.<br>
+<br>
+Lílò: Lo ó lábẹ́ àwọn ẹ̀rọ, lẹ́gbẹ̀ẹ́ ọ̀nà ìtọ́jú, tàbí níbikíbi tí ìkọ́lé ti nílò ìpìlẹ̀ aláfikún.<br>
+<np>
+Búlọ́ọ̀kù Gíláàsì Ààbò
+Ọ̀nà ìríran aláàbò
+<&panzerglass_block>Búlọ́ọ̀kù yìí ń jẹ́ kí ọ̀nà ìríran ṣí sílẹ̀, síbẹ̀ ó bá ìkọ́lé ilé iṣẹ́ aláfikún mu.<br>
+<br>
+Lílò: Lo ó níbi tí àwọn olùṣeré gbọ́dọ̀ rí ẹ̀rọ kọjá ìdènà aláàbò.<br>
+<np>
+Pẹlẹbẹ Gíláàsì Ààbò
+Ọ̀nà ìríran aláàbò
+<&panzerglass_slab>Búlọ́ọ̀kù yìí ń jẹ́ kí ọ̀nà ìríran ṣí sílẹ̀, síbẹ̀ ó bá ìkọ́lé ilé iṣẹ́ aláfikún mu.<br>
+<br>
+Lílò: Lo ó níbi tí àwọn olùṣeré gbọ́dọ̀ rí ẹ̀rọ kọjá ìdènà aláàbò.<br>

@@ -1,0 +1,5 @@
+Barra enerxética Muslee Melange
+Aperitivu rápidu de taller
+<&recipe>La Barra Muslee Melange ye un alimentu compactu fechu con pan, semientes y fruta.<br>
+<br>
+Usu: Cómela como comida de campu al instalar controles, tuberíes, plataformes o tramos llargos de sala de máquines.

@@ -1,0 +1,5 @@
+Muro de ladrillos de escoura
+Albanelaría industrial densa
+<&recipe>Este bloque engade albanelaría densa de cor marrón agrisada para alicerces, muros de contención e obradoiros antigos.<br>
+<br>
+Uso: úsao en alicerces antigos, muros de contención e chans sucios de fábrica.<br>

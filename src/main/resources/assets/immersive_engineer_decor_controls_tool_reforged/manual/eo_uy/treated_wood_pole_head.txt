@@ -1,0 +1,5 @@
+Kapo de traktligna fosto
+Struktura kadroparto
+<&recipe>La kapo/piedo de rekta traktligna fosto donas videblan strukturon al maŝinhaloj kaj alirkadroj.<br>
+<br>
+Uzado: turnu kaj metu ĝin kiel videblan apogilon por traboj, fostoj kaj platformrandoj.<br>

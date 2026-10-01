@@ -1,0 +1,7 @@
+Trauksmes sirēna
+Signāla atgriezeniskā saite
+<&recipe>Trauksmes sirēna ir pie virsmas stiprināms redstone indikators. Tās ieslēgtais stāvoklis seko blokam, pie kura tā piestiprināta, pievadītajam signālam.<br>
+<br>
+Lietošana: piestiprini cietai virsmai un pievadi signālu, lai uzraudzītu durvis, mašīnas, trauksmes vai paneļus.<br>
+<br>
+Piezīmes: sirēna atjaunojas reizi sekundē, kamēr pievienotais signāls ir aktīvs.

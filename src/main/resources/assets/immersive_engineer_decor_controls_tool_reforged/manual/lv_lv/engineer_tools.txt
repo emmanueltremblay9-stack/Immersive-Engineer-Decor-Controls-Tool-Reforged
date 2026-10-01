@@ -1,0 +1,99 @@
+Inženiera rīki
+Pārnēsājams darbnīcas aprīkojums
+Inženiera rīku komplekts pievieno rokas aprīkojumu, raktuvju marķierus, avārijas patērējamos piederumus, pārtiku darbam izbraukumā un nelielus materiālu apstrādes palīgrīkus tai pašai rokasgrāmatai, kas apraksta dekoru un vadības blokus.<br>
+<br>
+Šie rīki paredzēti darbam prom no pilnībā aprīkotas darbnīcas: atzīmē ceļu, nes krājumus, atgūsties pēc kļūdām un pabeidz nelielus apstrādes darbus uz vietas.
+<np>
+REDIA rīks
+Ar dimantiem klāts palīgrīks
+<&redia_tool>REDIA rīks ir izturīgs palīgs ātriem zemes darbiem. Lieto to uz apstrādājamas augsnes, lai izveidotu aramzemi.<br>
+<br>
+Lietojot to pret stabilu virsmu un turot lāpas inventārā, vari novietot lāpas marķieri, nenolietojot REDIA. Zemes darbi, cirpšana, cirvja darbi un koku gāšana patērē izturību.
+<np>
+Rūdas smalcināšanas āmurs
+Rokas smalcināšanas rīks
+<&crushing_hammer>Rūdas drupināšanas āmurs ir rokas rīks dzelzs un zelta sākotnējai apstrādei.<br>
+<br>
+Lietošana: Izgatavo to kopā ar jēldzelzi, jēlzeltu, dzelzs rūdu, dziļslānekļa dzelzs rūdu, zelta rūdu vai dziļslānekļa zelta rūdu, lai iegūtu Immersive Engineering dzelzs vai zelta putekļus. Āmurs zaudē izturību un atgriežas izgatavošanas režģī, līdz salūst.<br>
+<br>
+Tas nolietojas arī rakšanas laikā un tuvcīņā var atgrūst mērķus.
+<np>
+Izsekotājs
+Saglabātas vietas marķieris
+<&tracker>Izsekotājs saglabā bloka atrašanās vietu tieši priekšmetā.<br>
+<br>
+Lietošana: Noklikšķini uz bloka, lai saglabātu dimensiju un koordinātas. Paskaidre rāda vietu. Izmanto izsekotāju pieliecoties, lai notīrītu mērķi.<br>
+<br>
+Izmanto to, lai atzīmētu mašīnas, tuneļu atzarus, attālinātas vadības ierīces vai nepabeigtas būvvietas, pirms atgriezies ar rīkiem un materiāliem.
+<np>
+Ariadnes ogle
+Raktuvju ceļa marķieris
+<&ariadne_coal>Ariadnes ogle ātri novieto melnas ceļa bultas uz stabilām raktuvju virsmām. Lieto uz cietas virsmas, lai atzīmētu nākamo pagriezienu, izeju vai atzaru; marķieris atbalsta astoņus virzienus pēc klikšķa vietas, tostarp diagonāles.<br>
+<br>
+Ariadnes ogle ir atkārtoti lietojams marķēšanas rīks ar 100 lietošanas reizēm. Katra veiksmīga marķiera novietošana patērē vienu izturības punktu. Nepiemērotas virsmas tiek noraidītas, nevis nolieto rīku.
+<np>
+Automātiskais stimulantu komplekts
+Avārijas injektors
+<&stimpack>Auto Stim Pack ir ārkārtas medicīnisks rīks bīstamiem apkopes darbiem.<br>
+<br>
+Lietošana: Izmanto to manuāli, lai ārstētos, īslaicīgi saņemtu aizsardzību un kustības paātrinājumu. Inventārā tas var automātiski aktivizēties pie zemas veselības, un pēc tam sākas atdzišanas laiks.<br>
+<br>
+Turi vienu pa rokai pirms augstu vietu, atklātu vadu vai bīstamu raktuvju ceļu izmēģināšanas.
+<np>
+Guļammaiss
+Pārnēsājams atpūtas komplekts
+<&sleeping_bag>Guļammaiss ir laikapstākļu izturīgs atpūtas komplekts darbam tālu no gultas.<br>
+<br>
+Lietošana: Izmanto to naktī Overworld, lai atpūstos līdz rītam. Tas neiestata un nepārvieto atdzimšanas punktu.<br>
+<br>
+Tas atsakās darboties dienā, bīstamā vietā ar tuvumā esošiem briesmoņiem un drošai atpūtai nepiemērotās dimensijās. Katra veiksmīga atpūta nolieto maisu.
+<np>
+Materiālu glabāšanas kaste
+Būvniecības krājumu kaste
+<&material_box>Materiālu kaste pārnēsā lielu viena vienkārša, nemainīta un kraujama būvmateriāla krājumu.<br>
+<br>
+Lietošana: Turi kasti galvenajā rokā un materiāla kaudzi otrā rokā, lai to ielādētu. Izmanto kasti ar tukšu otru roku, lai izņemtu vienu kaudzi.<br>
+<br>
+Tā glabā līdz 512 viena veida priekšmetiem. Tā nepieņem ligzdotas kastes, nekraujamu aprīkojumu un pārdēvētas vai datos mainītas kaudzes; paskaidre rāda saturu.
+<np>
+Niršanas gaisa kapsula
+Avārijas gaisa rezerve
+<&diving_capsule>Niršanas gaisa kapsula ir ārkārtas gaisa rezerve darbam zem ūdens.<br>
+<br>
+Lietošana: Izmanto to manuāli, lai atjaunotu gaisu. Inventārā tā var automātiski aktivizēties, kad gaiss gandrīz beidzies, un pēc tam sākas atdzišanas laiks.<br>
+<br>
+Ņem to līdzi uz applūdušām raktuvēm, zemūdens cauruļvadu trasēm un sūkņu telpu remontiem.
+<np>
+Muslee batoniņu spiede
+Pārtikas spiede
+<&musli_bar_press>Muslee batoniņu prese parastu pārtiku pārvērš kompaktās lauka devās.<br>
+<br>
+Lietošana: Paņem maizi, ābolu un kviešu, melones, ķirbja, biešu vai Industrial Hemp sēklu, tad izmanto presi. Veiksmīga spiešana patērē pa vienam, pārbauda vietu, izveido četrus Muslee Melange batoniņus un bojā presi.<br>
+<br>
+Ja trūkst sastāvdaļas vai inventārā nav vietas, nekas netiek patērēts.
+<np>
+Muslee Melange enerģijas batoniņš
+Ātra darbnīcas uzkoda
+<&musli_bar>Muslee Melange enerģijas batoniņš ir kompakts ēdiens no maizes, sēklām un augļa.<br>
+<br>
+Lietošana: ēd to darbā izbraukumā, novietojot vadības ierīces, caurules, platformas vai garas trases mašīnu telpās.
+<np>
+Prāta spiede
+Pieredzes kondensators
+<&charged_lapis_squeezer>Prāta spiede pārvērš vienu lazurītu un vienu pieredzes līmeni no tava inventāra uzlādētā lazurītā.<br>
+<br>
+Katra veiksmīga pārveide ievaino lietotāju, palielina izsalkuma izsīkumu un īslaicīgi padara aklu. Ierīce atsakās darboties bez lazurīta, bez pieredzes vai tad, ja lietotājs ir pārāk tuvu nāvei.
+<np>
+Uzlādēts lazurīts
+Uzkrāta pieredze
+<&charged_lapis>Uzlādēts lazurīts glabā vienu pieredzes līmeni. Patērē to, lai atgūtu līmeni, noņemtu aktīvos efektus un atjaunotu nedaudz veselības.<br>
+<br>
+Vispirms izgatavo prāta spiedi; uzlādētu lazurītu iegūst, lietojot šo rīku, kad pieejams lazurīts un pieredze.
+<np>
+Rupji dzelzs graudi
+Inženiera rīku materiāls, ko izmanto atjaunotajā izgatavošanas komplektā.
+<&iron_grit>Var pārkausēt dzelzs<br>stieņos, taču nav piemēroti<br>sarežģītākai materiālu apstrādei.
+<np>
+Rupji zelta graudi
+Inženiera rīku materiāls, ko izmanto atjaunotajā izgatavošanas komplektā.
+<&gold_grit>Var pārkausēt zelta<br>stieņos, taču nav piemēroti<br>sarežģītākai materiālu apstrādei.

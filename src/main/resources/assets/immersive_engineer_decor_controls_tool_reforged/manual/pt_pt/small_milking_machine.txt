@@ -1,0 +1,5 @@
+Máquina de ordenha
+Utilidade de oficina
+<&recipe>A pequena máquina de ordenha é uma utilidade de oficina para criação, armazenamento, colocação, quebra, recolha ou automação compacta.<br>
+<br>
+Uso: Coloca-a perto de vacas e assegura um meio de retirar os recipientes de leite ou o fluido.<br>

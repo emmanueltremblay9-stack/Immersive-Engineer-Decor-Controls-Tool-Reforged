@@ -1,0 +1,5 @@
+Automatisch stimpakket
+Noodinjector
+<&recipe>Het automatische stimpakket is een noodhulpmiddel voor gevaarlijk onderhoud.<br>
+<br>
+Gebruik het handmatig om te genezen, kort bescherming te krijgen en even sneller te bewegen. In de inventaris activeert het automatisch bij weinig gezondheid en gaat daarna op afkoeltijd. Houd er een bij de hand op gevaarlijke locaties.

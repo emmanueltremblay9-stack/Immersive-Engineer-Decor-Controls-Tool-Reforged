@@ -1,0 +1,5 @@
+Tunn platta av armerad betong
+Armerad betong
+<&recipe>Det här blocket är en härdad betongdel för maskinfundament, skyddsväggar mot explosioner och lastkajsgolv.<br>
+<br>
+Användning: Använd det under maskiner, längs servicekorridorer eller där byggnaden behöver ett förstärkt fundament.<br>

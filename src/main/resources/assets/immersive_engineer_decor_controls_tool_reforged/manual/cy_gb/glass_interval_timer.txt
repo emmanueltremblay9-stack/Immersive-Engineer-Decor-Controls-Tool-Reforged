@@ -1,0 +1,7 @@
+Signal Ysbeidiol Gwydr
+Pwls wedi'i amseru
+<&recipe>Mae switsh amserydd cryno yn darparu pwls Redstone wedi'i amseru.<br>
+<br>
+Defnydd: Defnyddiwch ef lle mae angen rheolaeth gyfnodol neu oedi ar fecanwaith bach.<br>
+<br>
+Nodiadau: Mae'n defnyddio pylsiau Redstone wedi'u hamseru.

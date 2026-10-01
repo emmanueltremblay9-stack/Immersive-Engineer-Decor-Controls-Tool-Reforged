@@ -1,0 +1,7 @@
+Prijemnik veze prekidača
+Povezano upravljanje
+<&recipe>Povezani prijemnik daje udaljenim panelima redstoun cilj najveće snage.<br>
+<br>
+Upotreba: klikni ender biserom da napraviš povezani biser. Desnim klikom direktno na prijemnik ručno menjaj njegovo stanje.<br>
+<br>
+Napomene: povezani biser menja stanje ovog prijemnika kada se upotrebi pri šunjanju.

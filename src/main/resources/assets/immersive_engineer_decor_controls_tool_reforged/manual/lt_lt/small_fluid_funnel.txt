@@ -1,0 +1,5 @@
+Skysčių surinkimo piltuvas
+Skysčių linijos įranga
+<&recipe>Mažas skysčių surinkimo piltuvas yra kompaktiška skysčių linijos dalis mažoms talpykloms, vamzdynams, surinkimo vietoms ir redstonu valdomam srautui.<br>
+<br>
+Naudojimas: statyk po skysčių surinkimo vieta ir nukreipk sukauptą turinį į talpyklas arba žemiau esančius vamzdžius.<br>

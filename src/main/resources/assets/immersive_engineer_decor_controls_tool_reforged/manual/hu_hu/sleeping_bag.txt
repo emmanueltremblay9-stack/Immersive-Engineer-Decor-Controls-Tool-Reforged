@@ -1,0 +1,7 @@
+Hálózsák
+Hordozható pihenőkészlet
+<&recipe>A hálózsák időjárásálló pihenőkészlet ágytól távoli munkához.<br>
+<br>
+Használat: Éjjel használd az Overworldben, hogy reggelig pihenj. Nem állítja be és nem mozgatja az újraéledési pontot.<br>
+<br>
+Nappal, közeli szörnyekkel veszélyes környezetben és biztonságos pihenésre alkalmatlan dimenzióban nem működik. Minden sikeres pihenés koptatja.

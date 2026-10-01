@@ -1,0 +1,5 @@
+Mineraalsmeltoond
+Kompakte verwerkingseenheid
+<&recipe>Die Mineraalsmeltoond verwerk minerale teen hoë hitte en neem min plek in die werkswinkel in.<br>
+<br>
+Gebruik: voer mineraalblokke en krag in vir smeltwerk teen hoë hitte.<br>

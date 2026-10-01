@@ -1,0 +1,7 @@
+Komparatorschalter
+Teken vun den Dragblock
+<&recipe>En lütte Sensorschalter leest den Block, wo he op sitt, un maakt dor en eenfache Paneelutgaav ut.<br>
+<br>
+Bruuk: Maak em op Lagern, Tanks oder Redstone-Apparaten fast. Wenn de Block Komparator-, Beholler- oder Redstone-Utgaav meldt, gifft de Schalter Redstone mit vulle Stark.<br>
+<br>
+Anmarken: So maakst du Lagerstänn oder versteckte Drahten to düütliche An-/Utstüerleitungen.

@@ -1,0 +1,5 @@
+Cupa fluidorum
+Apparatus linearum fluidi
+<&recipe>Haec pars compacta lineae fluidi receptaculis parvis, fistulis, locis collectionis et fluxui redstone moderato apta est.<br>
+<br>
+Usus: pone ubi fistulae aut hamae faciem receptaculi attingere possunt.<br>

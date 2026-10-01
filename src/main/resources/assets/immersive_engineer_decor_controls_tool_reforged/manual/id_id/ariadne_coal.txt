@@ -1,0 +1,7 @@
+Batu Bara Ariadne
+Penanda rute tambang
+<&recipe>Batu bara Ariadne menandai rute dengan cepat untuk lubang tambang, cabang penambangan, dan pekerjaan bawah tanah sementara.<br>
+<br>
+Penggunaan: pakai pada sisi blok yang stabil untuk memasang penanda panah hitam pada batas itu. Penanda membaca titik klik pada sisi dan mendukung delapan arah, termasuk diagonal. Ini membantu menandai belokan, pintu keluar, jalan buntu, dan jalur pasokan tanpa membawa papan penunjuk terpisah.<br>
+<br>
+Batu bara Ariadne adalah perkakas penanda berulang pakai dengan 100 kali penggunaan. Setiap penanda yang berhasil dipasang mengurangi satu daya tahan; sisi yang tidak didukung ditolak tanpa mengauskan barang.

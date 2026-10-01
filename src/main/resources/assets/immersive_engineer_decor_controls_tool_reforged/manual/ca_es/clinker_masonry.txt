@@ -1,0 +1,161 @@
+Clínquer i maçoneria
+Revestiments de maó i formigó
+El clínquer, els maons d’escòria, el formigó armat i el vidre blindat proporcionen superfícies robustes per a sales calentes, tallers i punts de visibilitat protegida.<br>
+<br>
+Fes servir les lloses, escales, làmines i murs corresponents per acabar les vores sense trencar la coherència dels materials de la fàbrica.
+<np>
+Bloc de maons de clínquer
+Maçoneria enfosquida pel sutge
+<&clinker_brick_block>Aquest bloc aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Llosa de maons de clínquer
+Maçoneria enfosquida pel sutge
+<&clinker_brick_slab>Aquest bloc aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Escales de maons de clínquer
+Maçoneria enfosquida pel sutge
+<&clinker_brick_stairs>Aquest bloc aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Mur de maons de clínquer
+Maçoneria enfosquida pel sutge
+<&clinker_brick_wall>Aquest bloc aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Bloc de clínquer tacat
+Maçoneria enfosquida pel sutge
+<&clinker_brick_stained_block>El bloc de maons de clínquer tacats aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Llosa de clínquer tacat
+Maçoneria enfosquida pel sutge
+<&clinker_brick_stained_slab>La llosa de maons de clínquer tacats aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Escales de clínquer tacat
+Maçoneria enfosquida pel sutge
+<&clinker_brick_stained_stairs>Les escales de maons de clínquer tacats aporten maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Maons de clínquer ornamentats
+Maçoneria enfosquida pel sutge
+<&clinker_brick_sastor_corner_block>Els maons de clínquer ornamentats amb gres aporten maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Maons de clínquer rebaixats
+Maçoneria enfosquida pel sutge
+<&clinker_brick_recessed>Aquest bloc aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Maons de clínquer amb ranures
+Maçoneria enfosquida pel sutge
+<&clinker_brick_vertically_slit>Els maons de clínquer amb ranures verticals aporten maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Llosa vertical de clínquer
+Maçoneria enfosquida pel sutge
+<&clinker_brick_vertical_slab_structured>La llosa vertical de clínquer amb relleu aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Mitja llosa de maó de clínquer
+Maçoneria enfosquida pel sutge
+<&halfslab_clinker_brick>Aquest bloc aporta maçoneria enfosquida pel sutge a sales de forns, bases de xemeneies i parets de servei.<br>
+<br>
+Ús: fes-lo servir com a paret, motllura o revestiment de zones calentes al voltant de forns i calderes.<br>
+<np>
+Bloc de maons d’escòria
+Maçoneria densa de fàbrica
+<&slag_brick_block>Aquest bloc afegeix maçoneria densa de color marró grisós per a fonaments, murs de contenció i tallers antics.<br>
+<br>
+Ús: fes-lo servir per a fonaments antics, murs de contenció i terres bruts de fàbrica.<br>
+<np>
+Llosa de maons d’escòria
+Maçoneria densa de fàbrica
+<&slag_brick_slab>Aquest bloc afegeix maçoneria densa de color marró grisós per a fonaments, murs de contenció i tallers antics.<br>
+<br>
+Ús: fes-lo servir per a fonaments antics, murs de contenció i terres bruts de fàbrica.<br>
+<np>
+Escales de maons d’escòria
+Maçoneria densa de fàbrica
+<&slag_brick_stairs>Aquest bloc afegeix maçoneria densa de color marró grisós per a fonaments, murs de contenció i tallers antics.<br>
+<br>
+Ús: fes-lo servir per a fonaments antics, murs de contenció i terres bruts de fàbrica.<br>
+<np>
+Mur de maons d’escòria
+Maçoneria densa de fàbrica
+<&slag_brick_wall>Aquest bloc afegeix maçoneria densa de color marró grisós per a fonaments, murs de contenció i tallers antics.<br>
+<br>
+Ús: fes-lo servir per a fonaments antics, murs de contenció i terres bruts de fàbrica.<br>
+<np>
+Bloc de formigó armat
+Formigó reforçat
+<&rebar_concrete>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Llosa de formigó armat
+Formigó reforçat
+<&rebar_concrete_slab>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Escales de formigó armat
+Formigó reforçat
+<&rebar_concrete_stairs>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Mur de formigó armat
+Formigó reforçat
+<&rebar_concrete_wall>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Làmina de formigó armat
+Formigó reforçat
+<&halfslab_rebar_concrete>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Rajola de formigó armat
+Formigó reforçat
+<&rebar_concrete_tile>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Llosa de rajoles de formigó armat
+Formigó reforçat
+<&rebar_concrete_tile_slab>Aquest bloc és una peça de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Rajola de formigó armat
+Formigó reforçat
+<&rebar_concrete_tile_stairs>Les escales de rajoles de formigó armat són peces de formigó endurit per a bases de màquines, murs contra explosions i terres de molls de càrrega.<br>
+<br>
+Ús: posa’l sota les màquines, al llarg dels passadissos de servei o allà on calgui una base reforçada.<br>
+<np>
+Bloc de vidre blindat
+Visibilitat protegida
+<&panzerglass_block>Aquest bloc manté la visibilitat sense desentonar amb la construcció reforçada de la fàbrica.<br>
+<br>
+Ús: posa’l on els jugadors hagin de veure les màquines a través d’una barrera protectora.<br>
+<np>
+Llosa de vidre blindat
+Visibilitat protegida
+<&panzerglass_slab>Aquest bloc manté la visibilitat sense desentonar amb la construcció reforçada de la fàbrica.<br>
+<br>
+Ús: posa’l on els jugadors hagin de veure les màquines a través d’una barrera protectora.<br>

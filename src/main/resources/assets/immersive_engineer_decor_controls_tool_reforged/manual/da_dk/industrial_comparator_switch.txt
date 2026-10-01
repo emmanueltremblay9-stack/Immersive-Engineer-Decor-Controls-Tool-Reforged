@@ -1,0 +1,7 @@
+Komparatorkontakt
+Signal fra fæsteblokken
+<&recipe>En kompakt sensorkontakt aflæser den blok, den sidder på, og omdanner aflæsningen til en enkel paneludgang.<br>
+<br>
+Brug: Monter den på lagre, tanke eller redstoneudstyr. Når fæsteblokken giver et komparator-, beholder- eller redstonesignal, udsender kontakten redstone med fuld styrke.<br>
+<br>
+Bemærk: Brug den til at omsætte lagerniveauer eller skjulte ledninger til tydelige til/fra-styreledninger.

@@ -1,0 +1,5 @@
+Sekač dreves
+Tovarniški pripomoček
+<&recipe>Majhen sekač dreves je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Usmeri ga proti odraslim drevesom in izplen zbiraj ločeno.<br>

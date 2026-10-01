@@ -1,0 +1,5 @@
+Lastra di clinker macchiato
+Muratura annerita dalla fuliggine
+<&recipe>La lastra di mattoni di clinker macchiati porta muratura annerita dalla fuliggine nelle sale delle fornaci, nelle basi dei camini e nelle pareti di servizio.<br>
+<br>
+Uso: usalo come parete, rifinitura o rivestimento delle zone calde attorno a fornaci e caldaie.<br>

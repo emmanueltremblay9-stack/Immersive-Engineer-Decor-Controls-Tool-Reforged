@@ -1,0 +1,127 @@
+Pasabideak
+Pasabideak eta euskarriak
+Altzairuzko zutoinek, zutoin tratatuek, saretek, pasabideek, barandek, zurubiek, ateek, leihoek eta tranpolek mantentze-bide trinkoak osatzen dituzte fabriken barruan.<br>
+<br>
+Altzairuzko pasabide-piezek altzairuzko xaflak erabiltzen dituzte. Fabrikatu edo jarri metalgintzako lan-mahai bat, sartu Immersive Engineering mailu bat eta mailukatu altzairuzko lingoteak xaflak egiteko; horiekin zutoinak, pasabideak, leihoak, ateak, barandak eta altzairuzko beste apaingarriak egin ditzakezu.<br>
+<br>
+Jarri makinek mantentze-sarbidea, bide goratuak, mantentze-zuloak edo ertz seguruagoak behar dituzten tokietan.
+<np>
+Altzairuzko zutoin lodia
+Egituraren marko-pieza
+<&thick_steel_pole>Altzairuzko zutoin lodi zuzenak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Zutoin lodiaren burua
+Egituraren marko-pieza
+<&thick_steel_pole_head>Altzairuzko zutoin lodi zuzenaren buruak/oinak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Altzairuzko zutoin mehea
+Egituraren marko-pieza
+<&thin_steel_pole>Altzairuzko zutoin mehe zuzenak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Zutoin mehearen burua
+Egituraren marko-pieza
+<&thin_steel_pole_head>Altzairuzko zutoin mehe zuzenaren buruak/oinak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Zur tratatuzko zutoina
+Egituraren marko-pieza
+<&treated_wood_pole>Zur tratatuzko zutoin zuzenak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Zutoin tratatuaren burua
+Egituraren marko-pieza
+<&treated_wood_pole_head>Zur tratatuzko zutoin zuzenaren buruak/oinak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Zutoin tratatuaren euskarria
+Egituraren marko-pieza
+<&treated_wood_pole_support>Zur tratatuzko zutoin zuzenaren euskarriak ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Altzairuzko T bikoitzeko euskarria
+Egituraren marko-pieza
+<&steel_double_t_support>Bloke honek ageriko egitura ematen die makina-aretoei eta sarbide-markoei.<br>
+<br>
+Erabilera: biratu eta jarri habeen, zutoinen eta plataformen ertzen ageriko sendogarri gisa.<br>
+<np>
+Altzairuzko zoru-sareta
+Mantentze-sarbideko osagarria
+<&steel_floor_grating>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Altzairuzko pasabidea
+Mantentze-sarbideko osagarria
+<&steel_catwalk>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Altzairuzko pasabide-eskailerak
+Mantentze-sarbideko osagarria
+<&steel_catwalk_stairs>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Altzairuzko pasabide goratua
+Mantentze-sarbideko osagarria
+<&steel_catwalk_ta>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Altzairuzko baranda
+Mantentze-sarbideko osagarria
+<&steel_railing>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Altzairuzko sare-hesia
+Mantentze-sarbideko osagarria
+<&steel_mesh_fence>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Altzairuzko sare-hesiaren atea
+Mantentze-sarbideko osagarria
+<&steel_mesh_fence_gate>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Metalezko barren zurubia
+Mantentze-sarbideko osagarria
+<&metal_rung_ladder>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Metalezko maila mailakatuak
+Mantentze-sarbideko osagarria
+<&metal_rung_steps>Bloke honek makinen inguruko mantentze-bide argiak osatzen ditu.<br>
+<br>
+Erabilera: jarri makinen, goiko solairuen eta mantentze-zuloen inguruko mantentze-sarbide gisa.<br>
+<np>
+Altzairuzko markodun leihoa
+Ikuslerro babestua
+<&steel_framed_window>Bloke honek ikuslerroak irekita mantentzen ditu, fabrikako eraikuntza indartuarekin bat eginez.<br>
+<br>
+Erabilera: jarri bloke 1eko horma-irekidura batean, jokalariek makineria hesi babestu baten bidez ikusi behar duten tokian.<br>
+<np>
+Metalezko ate irristakorra
+Industria-sarbidea
+<&metal_sliding_door>Bloke honek sarbide sendoa eskaintzen du mantentze-geletan, zuloetan, teilatuetan eta makinen itxituretan.<br>
+<br>
+Erabilera: instalatu eraikuntzak mantentze-irekidura kontrolatua behar duen tokian.<br>
+<np>
+Burdinazko mantentze-tranpola
+Industria-sarbidea
+<&iron_hatch>Bloke honek sarbide sendoa eskaintzen du mantentze-geletan, zuloetan, teilatuetan eta makinen itxituretan.<br>
+<br>
+Erabilera: instalatu eraikuntzak mantentze-irekidura kontrolatua behar duen tokian.<br>

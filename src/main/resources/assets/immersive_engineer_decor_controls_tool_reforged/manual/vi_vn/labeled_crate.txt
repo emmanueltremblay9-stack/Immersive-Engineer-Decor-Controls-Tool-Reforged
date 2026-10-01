@@ -1,0 +1,5 @@
+Thùng có nhãn
+Nhãn kho có thể sửa
+<&recipe>Thùng có nhãn này giúp phân loại rõ ràng trong kho. Tấm nhãn trước có thể sửa như biển nhỏ trong xưởng.<br>
+<br>
+Cách dùng: Nhấp phải vào tấm nhãn để sửa nhãn thùng. Nhấp phải vào phần còn lại của thùng để mở kho phụ kiện, linh kiện và vật tư bảo trì.<br>

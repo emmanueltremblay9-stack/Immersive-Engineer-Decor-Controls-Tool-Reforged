@@ -1,0 +1,7 @@
+Verchnüpfte Impulsempfänger
+Verchnüpfti Stüürig
+<&recipe>En verchnüpfte Impulsempfänger git entfernte Tafle en churze Redstone-Uuslöser.<br>
+<br>
+Verwendig: Klick mit ere Enderperle druf, um e Link-Perle z'mache. Rechtsklick oder Betätigung vo de Perle löst en churze Impuls uus.<br>
+<br>
+Hiwiis: De Impuls endet nach sinere feschtgleite Duur vo sälber.

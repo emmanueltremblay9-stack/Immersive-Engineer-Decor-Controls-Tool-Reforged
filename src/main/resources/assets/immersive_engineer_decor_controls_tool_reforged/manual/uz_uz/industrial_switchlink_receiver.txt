@@ -1,0 +1,7 @@
+Kalit aloqa qabul qilgichi
+Bog'langan boshqaruv
+<&recipe>Bog'langan qabul qilgich masofaviy panellar uchun to'liq quvvatli redstone nishoni beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qo'lda almashtirish uchun bevosita qabul qilgichga o'ng tugma bilan bosing.<br>
+<br>
+Eslatma: bog'langan injudan egilib foydalanilganda bu qabul qilgich almashadi.

@@ -1,0 +1,7 @@
+Buerige Hiäwel mit twee Scharnieren
+Redstone-Stüern
+<&recipe>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.

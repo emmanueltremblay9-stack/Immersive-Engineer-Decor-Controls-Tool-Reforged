@@ -1,0 +1,7 @@
+Derbynnydd Pwls mewn Casin
+Rheolaeth gysylltiedig
+<&recipe>Mae derbynnydd pwls cysylltiedig mewn casin yn rhoi sbardun Redstone byr i baneli o bell.<br>
+<br>
+Defnydd: Cliciwch ef â Pherl Ender i greu perl gysylltiedig. Cliciwch ef â'r botwm de neu sbardunwch y berl gysylltiedig i allbynnu pwls byr.<br>
+<br>
+Nodiadau: Mae'r pwls yn ailosod ei hun ar ôl y cyfnod a osodwyd.

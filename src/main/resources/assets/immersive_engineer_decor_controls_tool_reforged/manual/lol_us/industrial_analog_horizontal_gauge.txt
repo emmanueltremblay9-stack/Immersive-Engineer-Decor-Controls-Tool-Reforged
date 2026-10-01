@@ -1,0 +1,7 @@
+Voltmeter Thingy
+Signal meterz
+<&recipe>Lil control-room meter shows redstone strength as a clear panel reading, kitty.<br>
+<br>
+How to: Mount where u can check neighboring redstone powah at a glance, meow.<br>
+<br>
+Kitty note: Reads nearby redstone strength frum 0 to 15.

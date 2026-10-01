@@ -1,0 +1,5 @@
+Jeklena dvojna T-podpora
+Del nosilnega ogrodja
+<&recipe>Ta blok daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>

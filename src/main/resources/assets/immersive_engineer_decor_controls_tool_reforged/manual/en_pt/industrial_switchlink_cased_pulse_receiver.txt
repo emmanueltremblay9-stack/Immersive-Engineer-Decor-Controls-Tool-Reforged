@@ -1,0 +1,7 @@
+Boxed pulse receiver
+Orders through a link
+<&recipe>A boxed, linked pulse receiver gives remote panels a short redstone trigger, matey.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Right-click her or trigger that pearl to send a short pulse.<br>
+<br>
+Mind ye: The pulse resets itself when its appointed span ends.

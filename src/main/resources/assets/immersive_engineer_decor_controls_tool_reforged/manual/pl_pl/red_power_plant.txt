@@ -1,0 +1,7 @@
+Czerwony kwiat redstone
+Impuls naciskowy
+<&recipe>Przełącznik naciskowy wysyła krótki sygnał po ruchu na podłodze lub klapie.<br>
+<br>
+Użycie: Umieść go na drodze bytów przechodzących przez korytarz techniczny, układ załadunku lub chronione przejście.<br>
+<br>
+Uwagi: Po kontakcie z bytem emituje krótki impuls.

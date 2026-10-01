@@ -1,0 +1,7 @@
+Blinkende LED
+Signalvisning
+<&recipe>En kompakt indikator gjør skjulte redstonesignaler synlige i fabrikken.<br>
+<br>
+Bruk: koble den ved siden av signalet for å overvåke dører, maskiner, alarmer eller paneler.<br>
+<br>
+Merknad: skifter tilstand når redstonestrøm finnes i nærheten.

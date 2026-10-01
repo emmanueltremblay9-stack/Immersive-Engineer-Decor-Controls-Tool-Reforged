@@ -1,0 +1,7 @@
+Kolpe mekanikoz aktibatutako landa-estiloko atea
+Presio-pultsua
+<&recipe>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.

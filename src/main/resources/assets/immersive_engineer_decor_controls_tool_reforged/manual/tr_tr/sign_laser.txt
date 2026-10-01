@@ -1,0 +1,5 @@
+“Lazer Tehlikesi” Levhası
+Tehlike işareti
+<&recipe>“Lazer Tehlikesi” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>

@@ -1,0 +1,5 @@
+Mineral eritgich
+Ixcham ishlov birligi
+<&recipe>Mineral eritgich ustaxonada kichik joy egallab, yuqori haroratli mineral ishlovini bajaradi.<br>
+<br>
+Ishlatish: yuqori haroratda eritish uchun mineral bloklar va quvvat bering.<br>

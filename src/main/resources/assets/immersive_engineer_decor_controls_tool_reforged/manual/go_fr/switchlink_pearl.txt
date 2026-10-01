@@ -1,0 +1,7 @@
+Perle de Liaizon d'interrupteur
+Comande liée
+<&recipe>Eune perle liée garde eune cible d'ercevou pour les comandes d'uzine de liain.<br>
+<br>
+Empllai : Cliqéz su un ercevou de Liaizon d'interrupteur d'o eune Perle de l'Ender pour en fére eune. Empllayéz la perle liée en vous acroupissant pour décllancher l'ercevou gardë.<br>
+<br>
+Notes : La cible doit étr charjée, den la méme dimension e a portée.

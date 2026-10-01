@@ -1,0 +1,5 @@
+Sud na kvapaliny
+Vybavenie kvapalinových rozvodov
+<&recipe>Tento kompaktný diel kvapalinových rozvodov sa hodí pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Umiestni ho tak, aby potrubie alebo vedrá dosiahli na príslušnú stranu nádrže.<br>

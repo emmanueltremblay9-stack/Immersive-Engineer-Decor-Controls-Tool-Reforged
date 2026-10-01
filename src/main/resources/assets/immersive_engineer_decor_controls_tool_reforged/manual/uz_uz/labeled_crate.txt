@@ -1,0 +1,5 @@
+Yorliqli yashik
+Tahrirlanadigan zaxira yorlig'i
+<&recipe>Bu yorliqli yashik omborni aniq saralash uchun mo'ljallangan. Old lavhasini kichik ustaxona belgisi kabi tahrirlash mumkin.<br>
+<br>
+Ishlatish: yashik yorlig'ini tahrirlash uchun yorliq lavhasiga o'ng tugma bilan bosing. Jihozlar, qismlar va texnik zaxiralar omborini ochish uchun yashikning boshqa qismiga o'ng tugma bilan bosing.<br>

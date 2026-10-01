@@ -1,0 +1,127 @@
+Tilkomstveier
+Gangveier og støtter
+Stålstolper, behandlede trestolper, rister, gangbroer, rekkverk, stiger, dører, vinduer og luker danner kompakte vedlikeholdsveier gjennom fabrikker.<br>
+<br>
+Ståldeler til tilkomstveier bruker stålplater. Lag eller plasser en metallarbeidsbenk, sett inn en hammer fra Immersive Engineering og hamre stålbarrer til plater for stolper, gangbroer, vinduer, dører, rekkverk og annen ståldekor.<br>
+<br>
+Plasser dem der maskiner trenger vedlikeholdstilgang, hevede gangveier, servicesjakter eller tryggere kanter.
+<np>
+Tykk stålstolpe
+Del til bærende ramme
+<&thick_steel_pole>Den rette tykke stålstolpen gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Topp for tykk stolpe
+Del til bærende ramme
+<&thick_steel_pole_head>Toppen eller foten for rette tykke stålstolper gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Tynn stålstolpe
+Del til bærende ramme
+<&thin_steel_pole>Den rette tynne stålstolpen gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Topp for tynn stolpe
+Del til bærende ramme
+<&thin_steel_pole_head>Toppen eller foten for rette tynne stålstolper gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Stolpe av behandlet tre
+Del til bærende ramme
+<&treated_wood_pole>Den rette stolpen av behandlet tre gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Topp for behandlet stolpe
+Del til bærende ramme
+<&treated_wood_pole_head>Toppen eller foten for rette stolper av behandlet tre gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Støtte for behandlet stolpe
+Del til bærende ramme
+<&treated_wood_pole_support>Støtten for rette stolper av behandlet tre gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Dobbel T-bjelke av stål
+Del til bærende ramme
+<&steel_double_t_support>Denne blokken gir synlig bærekonstruksjon i maskinhaller og tilkomstrammer.<br>
+<br>
+Bruk: roter og plasser delen som synlig avstiving av bjelker, stolper og plattformkanter.<br>
+<np>
+Stålgulvrist
+Del for vedlikeholdstilgang
+<&steel_floor_grating>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Stålgangbro
+Del for vedlikeholdstilgang
+<&steel_catwalk>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Stålgangbrotrapp
+Del for vedlikeholdstilgang
+<&steel_catwalk_stairs>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Hevet stålgangbro
+Del for vedlikeholdstilgang
+<&steel_catwalk_ta>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Stålrekkverk
+Del for vedlikeholdstilgang
+<&steel_railing>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Stålnettinggjerde
+Del for vedlikeholdstilgang
+<&steel_mesh_fence>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Stålnettingport
+Del for vedlikeholdstilgang
+<&steel_mesh_fence_gate>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Metallstige
+Del for vedlikeholdstilgang
+<&metal_rung_ladder>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Forskjøvede metalltrinn
+Del for vedlikeholdstilgang
+<&metal_rung_steps>Denne blokken lager tydelige vedlikeholdsveier rundt maskiner.<br>
+<br>
+Bruk: plasser den som vedlikeholdstilgang rundt maskiner, i øvre etasjer og i servicesjakter.<br>
+<np>
+Vindu med stålramme
+Beskyttet sikt
+<&steel_framed_window>Denne blokken holder sikten åpen og passer samtidig til forsterkede fabrikkonstruksjoner.<br>
+<br>
+Bruk: plasser den i en veggåpning på én blokk der spillere skal se maskiner gjennom en beskyttende barriere.<br>
+<np>
+Skyvedør av metall
+Industriell inngang
+<&metal_sliding_door>Denne blokken gir en solid inngang til servicerom, sjakter, tak og maskininnhegninger.<br>
+<br>
+Bruk: monter den der bygget trenger en kontrollert vedlikeholdsåpning.<br>
+<np>
+Jernluke
+Industriell inngang
+<&iron_hatch>Denne blokken gir en solid inngang til servicerom, sjakter, tak og maskininnhegninger.<br>
+<br>
+Bruk: monter den der bygget trenger en kontrollert vedlikeholdsåpning.<br>

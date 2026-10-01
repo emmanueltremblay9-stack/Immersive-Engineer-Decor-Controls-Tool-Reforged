@@ -1,0 +1,7 @@
+Impulzni sprejemnik povezave
+Povezano krmiljenje
+<&recipe>Povezan impulzni sprejemnik oddaljenim ploščam zagotavlja kratko proženje redstone.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Klikni ga z desnim gumbom miške ali sproži povezan biser, da odda kratek impulz.<br>
+<br>
+Opombe: Impulz se po predvidenem trajanju sam ponastavi.

@@ -1,0 +1,107 @@
+Maquinas d’obrador
+Maquinas e entradas/sortidas d’obrador
+Las maquinas d’obrador realizan de trabalhs de fabricacion, de desplaçament d’objèctes, de fusion, d’eliminacion, de recampatge e d’autras operacions utilitàrias dins l’espaci d’un sol blòc.<br>
+<br>
+Dobrís las paginas seguentas per trobar la recèpta, las illustracions, las explicacions e las nòtas d’utilizacion practica de cada maquina.
+<np>
+Taula d’acièr
+Mòble d’obrador
+<&steel_table>Aqueste blòc es un mòble practic pels locals de trabalh e los cantons d’entreten.<br>
+<br>
+Utilizacion : pausa-lo al costat dels bancs de trabalh, de las caissas e de las maquinas compactas.<br>
+<np>
+Taula de fusta tractada
+Mòble d’obrador
+<&treated_wood_table>Aqueste blòc es un mòble practic pels locals de trabalh e los cantons d’entreten.<br>
+<br>
+Utilizacion : pausa-lo al costat dels bancs de trabalh, de las caissas e de las maquinas compactas.<br>
+<np>
+Taboret de fusta tractada
+Mòble d’obrador
+<&treated_wood_stool>Aqueste blòc es un mòble practic pels locals de trabalh e los cantons d’entreten.<br>
+<br>
+Utilizacion : pausa-lo al costat dels bancs de trabalh, de las caissas e de las maquinas compactas.<br>
+<np>
+Taula de trabalh del metal
+Pòste de fabricacion de placas
+<&metal_crafting_table>La Taula de trabalh del metal es un pòste d’obrador renforçat amb un emplaçament de martèl, una grasilha de fabricacion 3x3 e un emplaçament de sortida clar.<br>
+<br>
+Utilizacion : emplega la grasilha per la fabricacion ordinària. Per las placas d’IE, met un martèl d’engenhaire dins l’emplaçament d’aisina e lo material de la placa dins la grasilha abans de prene lo resultat. Los decòrs d’acièr utilizan de placas d’acièr pels pals, las passarèlas, las fenèstras, las pòrtas, las baranas e las autras pèças d’acièr.<br>
+<np>
+Embut de fabrica
+Equipament utilitari d’obrador
+<&factory_hopper>Aqueste blòc desplaça de pilas d’objèctes dins una bóstia industriala mai estrecha.<br>
+<br>
+Utilizacion : orienta-lo cap a la linha d’inventaris, puèi règla la portada, lo nombre d’objèctes de la pila, la temporizacion e lo mòde de redstone dins son ecran.<br>
+<np>
+Donaire de fabrica
+Equipament utilitari d’obrador
+<&factory_dropper>Aqueste blòc expulsa los objèctes servats per una fàcia orientada.<br>
+<br>
+Utilizacion : orienta la fàcia de davant cap al ponch d’expulsion, emplena los emplaçaments intèrnes e règla la fòrça, l’angle, lo relambi, la logica dels filtres e lo mòde de redstone dins son ecran.<br>
+<np>
+Pausaire de blòcs de fabrica
+Equipament utilitari d’obrador
+<&factory_placer>Aqueste blòc pausa de blòcs de sa resèrva intèrna quand es activat.<br>
+<br>
+Utilizacion : orienta la fàcia de trabalh cap a l’espaci visat e inserís de pilas que se pòdon pausar.<br>
+<np>
+Trencaire de blòcs
+Equipament utilitari d’obrador
+<&small_block_breaker>Lo Pichon trencaire de blòcs es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : orienta sa fàcia de trabalh cap al blòc de tirar.<br>
+<np>
+Incinerador de degalhs
+Unitat de tractament compacta
+<&small_waste_incinerator>L’Incinerador de degalhs destrutz los objèctes indesirables en ocupant pauc de plaça dins l’obrador.<br>
+<br>
+Utilizacion : inserís sonque los objèctes indesirables dins sa fila.<br>
+<np>
+Forn de laboratòri
+Unitat de tractament compacta
+<&small_lab_furnace>Lo Forn de laboratòri realiza de trabalhs de fusion amb combustible solid en ocupant pauc de plaça dins l’obrador.<br>
+<br>
+Utilizacion : emplega de combustible solid per fondre de pichons lòts.<br>
+<np>
+Forn electric
+Unitat de tractament compacta
+<&small_electrical_furnace>Lo Forn electric realiza de trabalhs de fusion alimentats en FE en ocupant pauc de plaça dins l’obrador.<br>
+<br>
+Utilizacion : fornís de FE e un objècte valid per la fusion.<br>
+<np>
+Forn de fusion minerala
+Unitat de tractament compacta
+<&small_mineral_smelter>Lo Forn de fusion minerala tracta los minerals a nauta temperatura en ocupant pauc de plaça dins l’obrador.<br>
+<br>
+Utilizacion : fornís de blòcs minerals e d’energia pels trabalhs de fusion a nauta temperatura.<br>
+<np>
+Congelador d’aiga
+Unitat de tractament compacta
+<&small_freezer>Lo Congelador d’aiga realiza de trabalhs de refregiment compactes per las installacions de fluids alimentadas en energia.<br>
+<br>
+Utilizacion : fornís d’aiga e d’energia per produsir lo glaç per estadis.<br>
+<np>
+Fluids passius
+Equipament de conducha de fluids
+<&passive_fluid_accumulator>L’Acumulador passiu de fluids es una pèça compacta de circuit de fluids per las pichonas cuvas, las conduchas, los ponches de recampatge e los debits comandats per redstone.<br>
+<br>
+Utilizacion : pausa-lo contra de fonts d’aiga adaptadas e daissa de plaça per tirar lo fluid.<br>
+<np>
+Panèl solar
+Equipament utilitari d’obrador
+<&small_solar_panel>Lo Pichon panèl solar es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : daissa-li lo cèl desgatjat e connecta d’aparelhs que demandan pauc d’energia.<br>
+<np>
+Maquina de mólzer
+Equipament utilitari d’obrador
+<&small_milking_machine>La Pichona maquina de mólzer es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : pausa-la près de las vacas e prevei un mejan de tirar los recipients de lach o lo fluid.<br>
+<np>
+Copaire d’arbres
+Equipament utilitari d’obrador
+<&small_tree_cutter>Lo Pichon copaire d’arbres es un blòc utilitari d’obrador per la fabricacion, lo depaus, la pausa, lo trencatge, lo recampatge o l’automatizacion compacta.<br>
+<br>
+Utilizacion : orienta-lo cap a d’arbres adultes e recampa los objèctes tombats a despart.<br>

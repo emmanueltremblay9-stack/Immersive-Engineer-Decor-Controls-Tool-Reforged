@@ -1,0 +1,7 @@
+Schaltlinkpäl
+Verbungene Stüerung
+<&recipe>En verbungene Päl speichert e Empfängerziel för Fabrikfäänstüerunge.<br>
+<br>
+Bruuch: Klick met en Enderpäl op ene Schaltlinkempfänger, öm ein ze maache. Bruch de verbungene Päl beim Schliche, öm dä jespeicherte Empfänger uszelöse.<br>
+<br>
+Henwies: Et Ziel moß jelaade, en d'r selve Dimension un en Reichwitt sin.

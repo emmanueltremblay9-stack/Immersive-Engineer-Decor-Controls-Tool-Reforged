@@ -1,0 +1,5 @@
+Avfallsforbrenningsovn
+Kompakt behandlingsenhet
+<&recipe>Avfallsforbrenningsovnen ødelegger uønskede gjenstander på liten verkstedplass.<br>
+<br>
+Bruk: legg bare uønskede gjenstander i køen.<br>

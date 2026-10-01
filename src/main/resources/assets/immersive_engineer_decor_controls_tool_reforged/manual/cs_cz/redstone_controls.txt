@@ -1,0 +1,789 @@
+Redstonové ovládání
+Měřiče a signalizační prvky
+Ovládací zařízení převádějí skrytý redstone na přehledné tovární panely, čidla, kontrolky, spínače, poplachy a propojené signalizační prvky.<br>
+<br>
+Tyto stránky využij při stavbě stanovišť obsluhy, signalizačních tabulí, bezpečnostních obvodů a dálkového ovládání.
+<np>
+Terč na šípy
+Krátký impulz
+<&arrow_target>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Dveřní čidlo
+Redstonové řízení
+<&door_sensor_switch>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Výtahové tlačítko
+Redstonové řízení
+<&elevator_button>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Skleněné tlačítko
+Redstonové řízení
+<&glass_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Skleněné tlačítko
+Redstonové řízení
+<&glass_small_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Skleněné dotykové tlačítko
+Redstonové řízení
+<&glass_touch_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Strojní tlačítko
+Redstonové řízení
+<&industrial_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Tlačítko
+Redstonové řízení
+<&industrial_double_pole_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Chráněné strojní tlačítko
+Redstonové řízení
+<&industrial_fenced_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Tlačítko na klepání
+Redstonové řízení
+<&industrial_knock_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Staré zdobené tlačítko
+Redstonové řízení
+<&oldfancy_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Staré zdobené tlačítko
+Redstonové řízení
+<&oldfancy_small_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Staré zdobené řetízkové tlačítko
+Krátký impulz
+<&oldfancy_spring_reset_chain>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Rustikální tlačítko
+Redstonové řízení
+<&rustic_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Rustikální hřebíkové tlačítko
+Redstonové řízení
+<&rustic_nail_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Malé rustikální tlačítko
+Redstonové řízení
+<&rustic_small_button>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Rustikální řetízkové tlačítko
+Krátký impulz
+<&rustic_spring_reset_chain>Tlačítkový spínač poskytuje čistý redstonový impulz plné síly.<br>
+<br>
+Použití: Hodí se ke spouštění strojů, odemykání dveří, poplachům a jednorázovým obvodům.<br>
+<br>
+Poznámky: Po nastaveném impulzu se vrátí do výchozího stavu.
+<np>
+Skleněná nášlapná deska
+Impulz z tlaku
+<&glass_contact_mat>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Skleněný dveřní kontakt
+Impulz z tlaku
+<&glass_door_contact_mat>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Nášlapná rohož
+Impulz z tlaku
+<&industrial_contact_mat>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Dveřní nášlapná rohož
+Impulz z tlaku
+<&industrial_door_contact_mat>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Detektor propadnutí
+Snímání signálu
+<&industrial_fallthrough_detector>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Nožní tlačítko
+Redstonové řízení
+<&industrial_foot_button>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Průmyslový nárazový poklop
+Impulz z tlaku
+<&industrial_high_sensitive_trapdoor>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Nárazová rohož
+Impulz z tlaku
+<&industrial_shock_sensitive_contact_mat>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Nárazový poklop
+Impulz z tlaku
+<&industrial_shock_sensitive_trapdoor>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Červená redstonová květina
+Impulz z tlaku
+<&red_power_plant>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Rustikální nášlapná deska
+Impulz z tlaku
+<&rustic_contact_plate>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Rustikální dveřní nášlapný prvek
+Impulz z tlaku
+<&rustic_door_contact_plate>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Rustikální detektor pádu
+Snímání signálu
+<&rustic_fallthrough_detector>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Rustikální nárazový poklop
+Impulz z tlaku
+<&rustic_high_sensitive_trapdoor>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Rustikální nárazová deska
+Impulz z tlaku
+<&rustic_shock_sensitive_plate>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Rustikální nárazový poklop
+Impulz z tlaku
+<&rustic_shock_sensitive_trapdoor>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Žlutá redstonová květina
+Impulz z tlaku
+<&yellow_power_plant>Kontaktní spínač vyšle krátký signál při pohybu na podlaze nebo poklopu.<br>
+<br>
+Použití: Umísti jej tam, kde entity procházejí servisní uličkou, nakladačem nebo střeženou cestou.<br>
+<br>
+Poznámky: Po kontaktu s entitou vyšle krátký impulz.
+<np>
+Skleněný denní časovač
+Signál denního světla
+<&glass_day_timer>Časový spínač sleduje denní část cyklu světa.<br>
+<br>
+Použití: Hodí se pro dvorní lampy, okenice a tovární ovládání fungující jen ve dne.<br>
+<br>
+Poznámky: Vyžaduje dimenzi s nebeským světlem.
+<np>
+Skleněný detektor entit
+Snímání signálu
+<&glass_entity_detector>Detektor entit sleduje pohyb poblíž bez viditelné podlahové desky.<br>
+<br>
+Použití: Připoj jej ke dveřím, lampám, poplachům nebo bezpečnostnímu blokování strojů.<br>
+<br>
+Poznámky: Snímá malou oblast kolem bloku.
+<np>
+Skleněný intervalový signál
+Časovaný impulz
+<&glass_interval_timer>Kompaktní časový spínač poskytuje naplánovaný redstonový impulz.<br>
+<br>
+Použití: Hodí se tam, kde malý mechanismus potřebuje pravidelné nebo zpožděné ovládání.<br>
+<br>
+Poznámky: Používá plánované redstonové impulzy.
+<np>
+Skleněný přímý detektor
+Snímání signálu
+<&glass_linear_entity_detector>Detektor entit sleduje pohyb poblíž bez viditelné podlahové desky.<br>
+<br>
+Použití: Připoj jej ke dveřím, lampám, poplachům nebo bezpečnostnímu blokování strojů.<br>
+<br>
+Poznámky: Snímá malou oblast kolem bloku.
+<np>
+Detektor bloků
+Snímání signálu
+<&industrial_block_detector>Detektor bloků zjišťuje, zda je prostor před ním obsazený.<br>
+<br>
+Použití: Namiř jej na sledovanou stranu stroje, zásobník nebo střežený prostor.<br>
+<br>
+Poznámky: Vysílá signál, pokud před ním není vzduch.
+<np>
+Denní časovač
+Signál denního světla
+<&industrial_day_timer>Časový spínač sleduje denní část cyklu světa.<br>
+<br>
+Použití: Hodí se pro dvorní lampy, okenice a tovární ovládání fungující jen ve dne.<br>
+<br>
+Poznámky: Vyžaduje dimenzi s nebeským světlem.
+<np>
+Detektor entit
+Snímání signálu
+<&industrial_entity_detector>Detektor entit sleduje pohyb poblíž bez viditelné podlahové desky.<br>
+<br>
+Použití: Připoj jej ke dveřím, lampám, poplachům nebo bezpečnostnímu blokování strojů.<br>
+<br>
+Poznámky: Snímá malou oblast kolem bloku.
+<np>
+Intervalový časovač
+Časovaný impulz
+<&industrial_interval_timer>Kompaktní časový spínač poskytuje naplánovaný redstonový impulz.<br>
+<br>
+Použití: Hodí se tam, kde malý mechanismus potřebuje pravidelné nebo zpožděné ovládání.<br>
+<br>
+Poznámky: Používá plánované redstonové impulzy.
+<np>
+Světelné čidlo
+Snímání signálu
+<&industrial_light_sensor>Světelné čidlo převádí místní jas na redstonové ovládání.<br>
+<br>
+Použití: Hodí se pro automatické lampy, okenice a obvody reagující na viditelnost.<br>
+<br>
+Poznámky: Vysílá signál při hrubé hodnotě jasu 8 nebo vyšší.
+<np>
+Detektor bouřky
+Snímání signálu
+<&industrial_lightning_sensor>Bouřkové čidlo spouští varování během bouřky.<br>
+<br>
+Použití: Umísti jej pod otevřené nebe a připoj k lampám nebo poplachům.<br>
+<br>
+Poznámky: Vyžaduje bouřku a přístup k nebi.
+<np>
+Přímý detektor entit
+Snímání signálu
+<&industrial_linear_entity_detector>Detektor entit sleduje pohyb poblíž bez viditelné podlahové desky.<br>
+<br>
+Použití: Připoj jej ke dveřím, lampám, poplachům nebo bezpečnostnímu blokování strojů.<br>
+<br>
+Poznámky: Snímá malou oblast kolem bloku.
+<np>
+Dešťové čidlo
+Snímání signálu
+<&industrial_rain_sensor>Čidlo počasí převádí déšť ve svém místě na redstone.<br>
+<br>
+Použití: Připevni jej tam, kde na blok nad ním může pršet.<br>
+<br>
+Poznámky: Kontroluje déšť nad čidlem.
+<np>
+Bistabilní skleněný spínač
+Redstonové řízení
+<&glass_rotary_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Bistabilní skleněné dotykové ovládání
+Redstonové řízení
+<&glass_touch_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Oranžové citlivé sklo
+Signalizační sklo
+<&orange_sensitiveglass>Skleněný blok reagující na redstone zachovává výhled a zároveň ukazuje stav signálu.<br>
+<br>
+Použití: Hodí se do oken řídicích místností, osvětlených panelů a ochranného továrního zasklení.<br>
+<br>
+Poznámky: Mění stav podle blízkého redstonového signálu.
+<np>
+Svítící citlivé sklo
+Signalizační sklo
+<&sensitive_glass_block>Skleněný blok reagující na redstone zachovává výhled a zároveň ukazuje stav signálu.<br>
+<br>
+Použití: Hodí se do oken řídicích místností, osvětlených panelů a ochranného továrního zasklení.<br>
+<br>
+Poznámky: Mění stav podle blízkého redstonového signálu.
+<np>
+Barevné citlivé sklo
+Signalizační sklo
+<&stained_sensitiveglass>Skleněný blok reagující na redstone zachovává výhled a zároveň ukazuje stav signálu.<br>
+<br>
+Použití: Hodí se do oken řídicích místností, osvětlených panelů a ochranného továrního zasklení.<br>
+<br>
+Poznámky: Mění stav podle blízkého redstonového signálu.
+<np>
+Skleněný sloupcový měřič
+Měřič signálu
+<&glass_vertical_bar_gauge>Kompaktní měřič v řídicí místnosti zobrazuje sílu redstonu na přehledném panelu.<br>
+<br>
+Použití: Připevni jej tam, kde má být síla sousedního redstonu vidět na první pohled.<br>
+<br>
+Poznámky: Odečítá okolní sílu redstonu od 0 do 15.
+<np>
+Analogový měřič
+Měřič signálu
+<&industrial_analog_angular_gauge>Kompaktní měřič v řídicí místnosti zobrazuje sílu redstonu na přehledném panelu.<br>
+<br>
+Použití: Připevni jej tam, kde má být síla sousedního redstonu vidět na první pohled.<br>
+<br>
+Poznámky: Odečítá okolní sílu redstonu od 0 do 15.
+<np>
+Voltmetr
+Měřič signálu
+<&industrial_analog_horizontal_gauge>Kompaktní měřič v řídicí místnosti zobrazuje sílu redstonu na přehledném panelu.<br>
+<br>
+Použití: Připevni jej tam, kde má být síla sousedního redstonu vidět na první pohled.<br>
+<br>
+Poznámky: Odečítá okolní sílu redstonu od 0 do 15.
+<np>
+Digitální měřič
+Přehledná síla signálu
+<&industrial_small_digital_gauge>Kompaktní měřič v řídicí místnosti zobrazuje sílu redstonu na přehledném panelu.<br>
+<br>
+Použití: Připevni jej tam, kde má být síla sousedního redstonu vidět na první pohled.<br>
+<br>
+Poznámky: Odečítá okolní sílu redstonu od 0 do 15.
+<np>
+Měřič se skleněnou trubicí
+Měřič signálu
+<&industrial_tube_gauge>Kompaktní měřič v řídicí místnosti zobrazuje sílu redstonu na přehledném panelu.<br>
+<br>
+Použití: Připevni jej tam, kde má být síla sousedního redstonu vidět na první pohled.<br>
+<br>
+Poznámky: Odečítá okolní sílu redstonu od 0 do 15.
+<np>
+Analogový sloupcový měřič
+Měřič signálu
+<&industrial_vertical_bar_gauge>Kompaktní měřič v řídicí místnosti zobrazuje sílu redstonu na přehledném panelu.<br>
+<br>
+Použití: Připevni jej tam, kde má být síla sousedního redstonu vidět na první pohled.<br>
+<br>
+Poznámky: Odečítá okolní sílu redstonu od 0 do 15.
+<np>
+Výstražná lampa
+Zpětná vazba signálu
+<&industrial_alarm_lamp>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Poplašná siréna
+Ukazatel signálu
+<&industrial_alarm_siren>Poplašná siréna je redstone ukazatel upevněný na stěně bloku. Stav napájení sleduje signál bloku, ke kterému je připojena.<br>
+<br>
+Použití: Připevněte na pevnou stěnu a napájejte pro sledování dveří, strojů, poplachů či panelů.<br>
+<br>
+Poznámka: Při aktivním signálu se siréna obnovuje jednou za sekundu.
+<np>
+Blikající LED
+Zpětná vazba signálu
+<&industrial_blinking_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Zelená blikající LED
+Zpětná vazba signálu
+<&industrial_green_blinking_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Zelená LED
+Zpětná vazba signálu
+<&industrial_green_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Červená LED
+Zpětná vazba signálu
+<&industrial_red_blinking_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Červená LED
+Zpětná vazba signálu
+<&industrial_red_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Bílá blikající LED
+Zpětná vazba signálu
+<&industrial_white_blinking_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Bílá LED
+Zpětná vazba signálu
+<&industrial_white_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Žlutá blikající LED
+Zpětná vazba signálu
+<&industrial_yellow_blinking_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Žlutá LED
+Zpětná vazba signálu
+<&industrial_yellow_led>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Rustikální semafor
+Zpětná vazba signálu
+<&rustic_semaphore>Kompaktní kontrolka převádí skrytý redstone na viditelnou tovární signalizaci.<br>
+<br>
+Použití: Zapoj ji vedle signálu pro sledování dveří, strojů, poplachů nebo panelů.<br>
+<br>
+Poznámky: Mění stav při přítomnosti blízkého redstonového signálu.
+<np>
+Komparátorový spínač
+Signál připojeného bloku
+<&industrial_comparator_switch>Kompaktní čidlový spínač snímá blok, na kterém je připevněný, a převádí údaj na jednoduchý panelový výstup.<br>
+<br>
+Použití: Připevni jej na inventář, nádrž nebo redstonové zařízení. Když připojený blok poskytne výstup komparátoru, kontejneru nebo redstonu, spínač vyšle redstone plné síly.<br>
+<br>
+Poznámky: Převádí úroveň zásob nebo skryté rozvody na přehledné ovládací linky zapnuto/vypnuto.
+<np>
+Stmívač
+Proměnlivý signál
+<&industrial_dimmer>Otočný ovladač nastavuje sílu redstonu na kompaktním panelu.<br>
+<br>
+Použití: Pravým tlačítkem postupně zvyšuj výstup. Po dosažení plné síly se vrátí na nulu.<br>
+<br>
+Poznámky: Vysílá signál o síle 0 až 15.
+<np>
+Tlačítko nouzového zastavení
+Redstonové řízení
+<&industrial_estop_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Blokovač násypky
+Redstonové řízení
+<&industrial_hopper_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Spínač na klepání
+Redstonové řízení
+<&industrial_knock_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Páka
+Redstonové řízení
+<&industrial_lever>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Dvoutlačítkový strojní spínač
+Redstonové řízení
+<&industrial_machine_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Tahová rukojeť
+Redstonové řízení
+<&industrial_pull_handle>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Otočná páka
+Redstonové řízení
+<&industrial_rotary_lever>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Otočný strojní spínač
+Redstonové řízení
+<&industrial_rotary_machine_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Kontaktní páka
+Redstonové řízení
+<&industrial_small_lever>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Spínač
+Redstonové řízení
+<&industrialswitch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Vypínač světla
+Redstonové řízení
+<&light_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Ventilový spínač
+Redstonové řízení
+<&valve_wheel_switch>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Krytý impulzní přijímač
+Propojené ovládání
+<&industrial_switchlink_cased_pulse_receiver>Krytý propojený impulzní přijímač poskytuje vzdáleným panelům krátký redstonový spouštěcí signál.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Pravým kliknutím na přijímač nebo spuštěním propojené perly vyšleš krátký impulz.<br>
+<br>
+Poznámky: Impulz po nastavené době sám skončí.
+<np>
+Krytý přijímač propojení
+Propojené ovládání
+<&industrial_switchlink_cased_receiver>Krytý propojený přijímač poskytuje vzdáleným panelům odolný redstonový cíl.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Pravým kliknutím přímo na přijímač jej ručně přepneš.<br>
+<br>
+Poznámky: Propojená perla při použití během plížení přepne tento přijímač.
+<np>
+Impulzní přijímač propojení
+Propojené ovládání
+<&industrial_switchlink_pulse_receiver>Propojený impulzní přijímač poskytuje vzdáleným panelům krátký redstonový spouštěcí signál.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Pravým kliknutím na přijímač nebo spuštěním propojené perly vyšleš krátký impulz.<br>
+<br>
+Poznámky: Impulz po nastavené době sám skončí.
+<np>
+Impulzní propojovací relé
+Propojené ovládání
+<&industrial_switchlink_pulse_relay>Prvek ve stylu relé poskytuje panelovým sestavám kompaktní místní spínací bod.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody. Pro spouštění propojenou perlou používej bloky přijímačů.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Přijímač propojení spínačů
+Propojené ovládání
+<&industrial_switchlink_receiver>Propojený přijímač poskytuje vzdáleným panelům redstonový cíl s plnou silou.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Pravým kliknutím přímo na přijímač jej ručně přepneš.<br>
+<br>
+Poznámky: Propojená perla při použití během plížení přepne tento přijímač.
+<np>
+Analogový přijímač propojení
+Propojené ovládání
+<&industrial_switchlink_receiver_analog>Propojený přijímač poskytuje ovládacím panelům viditelný vzdálený cíl.<br>
+<br>
+Použití: Kliknutím endovou perlou vytvoř propojenou perlu. Použij ji při plížení pro dálkové spuštění přijímače.<br>
+<br>
+Poznámky: Po spuštění tento přijímač vyšle redstonový signál plné síly.
+<np>
+Relé propojení spínačů
+Propojené ovládání
+<&industrial_switchlink_relay>Prvek ve stylu relé poskytuje panelovým sestavám kompaktní místní spínací bod.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody. Pro spouštění propojenou perlou používej bloky přijímačů.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Analogové propojovací relé
+Propojené ovládání
+<&industrial_switchlink_relay_analog>Prvek ve stylu relé poskytuje panelovým sestavám kompaktní místní spínací bod.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody. Pro spouštění propojenou perlou používej bloky přijímačů.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Perla pro propojení spínačů
+Propojené ovládání
+<&switchlink_pearl>Propojená perla uchovává cílový přijímač pro dálkové tovární ovládání.<br>
+<br>
+Použití: Vytvoř ji kliknutím endovou perlou na přijímač propojení spínačů. Použitím propojené perly při plížení spustíš uložený přijímač.<br>
+<br>
+Poznámky: Cíl musí být načtený, ve stejné dimenzi a v dosahu.
+<np>
+Stará zdobená páka
+Redstonové řízení
+<&oldfancy_bistableswitch1>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Stará zdobená otočná páka
+Redstonové řízení
+<&oldfancy_bistableswitch2>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Rustikální otočná páka
+Redstonové řízení
+<&rustic_angular_lever>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Rustikální páka
+Redstonové řízení
+<&rustic_lever>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Rustikální hřebíková páka
+Redstonové řízení
+<&rustic_nail_lever>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.
+<np>
+Rustikální páka se dvěma klouby
+Redstonové řízení
+<&rustic_two_hinge_lever>Kompaktní ovládací prvek poskytuje továrním stavbám přehledné místo redstonového spínání.<br>
+<br>
+Použití: Pravým tlačítkem přepínej výstup plné síly pro okolní obvody.<br>
+<br>
+Poznámky: Při zapnutí vysílá redstone plné síly.

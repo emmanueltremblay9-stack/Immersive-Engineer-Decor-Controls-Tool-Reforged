@@ -1,0 +1,7 @@
+Clach-chopair luchdaichte
+Eòlas stòraichte
+<&recipe>Stòraidh Clach-chopair luchdaichte aon ìre eòlais a rinneadh leis a' Bhrùthadair inntinn.<br>
+<br>
+Cleachdadh: ith i gus aon ìre aiseag, buaidhean gnìomhach a thoirt air falbh agus beagan slàinte fhaighinn air ais.<br>
+<br>
+Seallaidh a' widget reasabaidh am Brùthadair inntinn oir dèanar Clach-chopair luchdaichte le bhith a' cleachdadh an inneil sin fhad 's a tha clach-chopair agus XP agad.

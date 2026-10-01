@@ -1,0 +1,5 @@
+Crate with a label
+Stock label ye can change
+<&recipe>This labelled crate makes storeroom sorting clear, matey. Edit her front plate like a little workshop sign.<br>
+<br>
+Orders: Right-click the label plate to change the crate's label. Right-click elsewhere on the crate to open storage fer fittings, parts and upkeep supplies.<br>

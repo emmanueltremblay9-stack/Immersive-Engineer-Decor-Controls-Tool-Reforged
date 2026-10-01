@@ -1,0 +1,7 @@
+Metall yasash stoli
+Tunuka ish joyi
+<&recipe>Metall dastgohida bolga joyi, toliq 3x3 tor va chiqish bor.<br>
+<br>
+Torni oddiy dastgoh kabi ishlating. IE plastina uchun muhandis bolgasini asbob joyiga, materialni torga qoying va plastinani chiqishdan oling.<br>
+<br>
+Polat bezaklar shu dastgohda shakllangan polat plastinalardan foydalanadi.

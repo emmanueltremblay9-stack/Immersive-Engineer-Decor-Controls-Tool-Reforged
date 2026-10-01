@@ -1,0 +1,7 @@
+Mea xehatzeko mailua
+Eskuko tresna
+<&recipe>Burdin eta urre lan goiztiarrerako eskuko tresna.<br>
+<br>
+Erabilera: Burdin gordina, urre gordina, burdin mea, arbel sakoneko burdin mea, urre mea edo arbel sakoneko urre mea erabiliz Immersive Engineeringeko burdin edo urre hautsa egiten du. Iraunkortasuna galtzen du eta saretara itzultzen da apurtu arte.<br>
+<br>
+Meatzaritzan ere higatzen da eta borroka hurbilean atzera botatzen du.

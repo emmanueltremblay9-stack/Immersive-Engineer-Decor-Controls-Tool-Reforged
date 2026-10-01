@@ -1,0 +1,7 @@
+Sinyal Ayarlayıcı
+Değişken sinyal
+<&recipe>Döner kontrol, küçük bir panel yüzünden redstone gücünü ayarlar.<br>
+<br>
+Kullanım: Çıkışı kademeli artırmak, tam güce ulaştıktan sonra sıfıra dönmek için sağ tıklayın.<br>
+<br>
+Notlar: 0 ile 15 arasında güç verir.

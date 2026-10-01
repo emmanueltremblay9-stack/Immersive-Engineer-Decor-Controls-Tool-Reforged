@@ -1,0 +1,5 @@
+Prerës pemësh
+Pajisje ndihmëse punishteje
+<&recipe>Prerësi i vogël i pemëve është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: drejtoje te pemët e rritura dhe mblidhi veçmas objektet e rëna.<br>

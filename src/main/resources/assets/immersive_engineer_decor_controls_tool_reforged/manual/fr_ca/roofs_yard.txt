@@ -1,0 +1,101 @@
+Toitures et cour
+Équipements industriels extérieurs
+Les blocs de toiture, les revêtements graveleux de cour et les pièces en vieux bois industriel complètent les hangars, cours de travail, zones de chargement et abords d'usine patinés.<br>
+<br>
+Associez ces pièces à la maçonnerie et aux voies d'accès pour que les constructions industrielles extérieures restent faciles à lire de loin.
+<np>
+Toit en bardeaux foncés
+Élément de toiture patinée
+<&dark_shingle_roof>Ce bloc forme des toitures sombres et fonctionnelles pour les ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Pare-neige de toit
+Élément de toiture patinée
+<&dark_shingle_roof_metallized>Le pare-neige pour toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Toit en bardeaux foncés
+Élément de toiture patinée
+<&dark_shingle_roof_skylight>Le puits de lumière de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Tronc de cheminée de toit
+Élément de toiture patinée
+<&dark_shingle_roof_chimneytrunk>Le tronc de cheminée de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Conduit de câble de toit
+Élément de toiture patinée
+<&dark_shingle_roof_wireconduit>Le conduit de câble de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Toit en bardeaux foncés
+Élément de toiture patinée
+<&dark_shingle_roof_chimney>La cheminée de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Bloc de toit en bardeaux foncés
+Élément de toiture patinée
+<&dark_shingle_roof_block>Ce bloc forme des toitures sombres et fonctionnelles pour les ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Dalle de toit en bardeaux foncés
+Élément de toiture patinée
+<&dark_shingle_roof_slab>Ce bloc forme des toitures sombres et fonctionnelles pour les ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Dalle de toit en bardeaux foncés
+Élément de toiture patinée
+<&dark_shingle_roof_slabslice>La tranche de dalle de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+<br>
+Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+<np>
+Terre graveleuse compactée
+Revêtement de chantier
+<&dense_grit_dirt_block>Ce bloc donne aux zones de travail extérieures une surface compactée et piétinée.<br>
+<br>
+Utilisation : posez-le autour des portes de chargement, des réservoirs extérieurs et des cours de machines.<br>
+<np>
+Sable graveleux compacté
+Revêtement de chantier
+<&dense_grit_sand_block>Ce bloc donne aux zones de travail extérieures une surface compactée et piétinée.<br>
+<br>
+Utilisation : posez-le autour des portes de chargement, des réservoirs extérieurs et des cours de machines.<br>
+<np>
+Vieilles planches de bois
+Vieux bois d'atelier
+<&old_industrial_wood_planks>Les vieilles planches de bois industrielles apportent un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>
+<np>
+Dalle en vieux bois industriel
+Vieux bois d'atelier
+<&old_industrial_wood_slab>Ce bloc apporte un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>
+<np>
+Escaliers en vieux bois
+Vieux bois d'atelier
+<&old_industrial_wood_stairs>Les escaliers en vieux bois industriel apportent un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>
+<np>
+Tranche de dalle en vieux bois
+Vieux bois d'atelier
+<&old_industrial_wood_slabslice>La tranche en vieux bois industriel apporte un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>
+<np>
+Vieille porte en bois industrielle
+Vieux bois d'atelier
+<&old_industrial_wood_door>Ce bloc apporte un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>

@@ -1,0 +1,7 @@
+Metallwerkbank
+Plattewerkstatt
+<&recipe>Metall-Werkbank met enem eijene Hammerplatz, enem 3x3-Craftingjitter un enem Uusjang.<br>
+<br>
+Bruuch: Nimm et Raster wie en normale Werkbank. För IE-Platte stellste ene Ingenieurshammer en et Werkzüchfach un dat Plattematerial en et Raster. Nimm dann de jeförmte Platt us d'r Ußjaav.<br>
+<br>
+Stahlzier brucht Stahlplatte. Setz ene Hammer vun Immersive Engineering en, hammer Stahlbrikette zo Stahlplatte un bruch de Platte för Pöhl, Laufsteje, Finster, Düre, Jeländer un andere Stahlzier.<br>

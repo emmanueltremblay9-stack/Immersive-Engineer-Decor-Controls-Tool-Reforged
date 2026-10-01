@@ -1,0 +1,7 @@
+Şüşə gündəlik taymer saatı
+Gündüz işığı siqnalı
+<&recipe>Taymer açarı dünyanın dövrünün gündüz hissəsinə uyğun işləyir.<br>
+<br>
+İstifadə: Həyət lampaları, pəncərə qapaqları və yalnız gündüz işləyən zavod idarələri üçün istifadə edin.<br>
+<br>
+Qeydlər: Göy işığı olan ölçü tələb edir.

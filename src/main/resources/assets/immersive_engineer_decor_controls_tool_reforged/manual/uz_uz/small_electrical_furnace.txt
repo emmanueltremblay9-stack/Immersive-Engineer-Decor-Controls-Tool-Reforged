@@ -1,0 +1,5 @@
+Elektr pech
+Ixcham ishlov birligi
+<&recipe>Elektr pech ustaxonada kichik joy egallab, FE quvvati bilan ixcham eritish ishlarini bajaradi.<br>
+<br>
+Ishlatish: FE va eritishga mos buyum bering.<br>

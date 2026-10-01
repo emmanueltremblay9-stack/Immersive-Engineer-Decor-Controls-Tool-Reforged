@@ -1,0 +1,5 @@
+Resns tērauda stabs
+Konstrukcijas karkasa daļa
+<&recipe>Taisns resns tērauda stabs piešķir redzamu konstrukciju mašīnu hallēm un piekļuves rāmjiem.<br>
+<br>
+Lietošana: pagriez un novieto kā redzamu siju, stabu un platformu malu stiprinājumu.<br>

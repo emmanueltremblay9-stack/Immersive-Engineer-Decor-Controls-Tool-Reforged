@@ -1,0 +1,7 @@
+Detector de blocs
+Detecció de senyals
+<&recipe>Un detector de blocs comprova si l’espai que té davant està ocupat.<br>
+<br>
+Ús: apunta’l a la cara de màquina, reserva o espai protegit que vulgues vigilar.<br>
+<br>
+Notes: emet energia quan el bloc que té davant no és aire.

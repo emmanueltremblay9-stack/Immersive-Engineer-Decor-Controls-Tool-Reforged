@@ -1,0 +1,5 @@
+Įtampą turinčio laido ženklas
+Pavojaus žymeklis
+<&recipe>Ženklas „Laidas su įtampa“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>

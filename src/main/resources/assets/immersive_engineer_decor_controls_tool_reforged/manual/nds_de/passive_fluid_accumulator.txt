@@ -1,0 +1,5 @@
+Passive Flüssigkeit
+Deelen för Flüssigkeitsleitungen
+<&recipe>De passive Flüssigkeitssammler is en lütten Flüssigkeitsleitungsdeel för lütte Tanks, Röhrenwegen, Sammelsteden un Redstone-stüerten Dörchfluss.<br>
+<br>
+Bruuk: Sett em an passende Waterbornen un laat Platz, üm Flüssigkeit aftonehmen.<br>

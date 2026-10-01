@@ -1,0 +1,7 @@
+Tracker
+Gespeicherte Positionsmarkierung
+<&recipe>Der Tracker speichert eine Blockposition direkt im Gegenstand.<br>
+<br>
+Benutzung: Einen Block anklicken, um Dimension und Koordinaten zu speichern. Der Tooltip zeigt die Position. Durch Schleichen-Benutzung wird das Ziel gelöscht.<br>
+<br>
+Zum Markieren von Maschinen, Tunnelabzweigungen, Fernsteuerungen oder unfertigen Baustellen vor der Rückkehr mit Werkzeug und Material.

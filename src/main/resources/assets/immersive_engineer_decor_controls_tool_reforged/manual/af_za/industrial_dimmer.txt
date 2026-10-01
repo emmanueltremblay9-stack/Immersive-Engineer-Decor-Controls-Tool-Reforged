@@ -1,0 +1,7 @@
+Domper
+Veranderlike sein
+<&recipe>’n Draaiknop stel redstone-sterkte vanaf ’n kompakte paneelvlak in.<br>
+<br>
+Gebruik: regsklik dit om die uitset stapsgewys te verhoog en ná volle sterkte weer na nul terug te keer.<br>
+<br>
+Nota: gee ’n sterkte van 0 tot 15 uit.

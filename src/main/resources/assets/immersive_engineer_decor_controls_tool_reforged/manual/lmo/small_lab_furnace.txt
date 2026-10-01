@@ -1,0 +1,5 @@
+Fornas de laboratori
+Unità compata de lavorazzion
+<&recipe>La Fornas de laboratori la fa lavor de fusion cont combustibel solid in d’un spazzi piscinin de laboratori.<br>
+<br>
+Dovra combustibel solid per piscinine partide de fusion.<br>

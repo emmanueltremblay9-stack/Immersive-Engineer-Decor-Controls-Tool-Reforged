@@ -1,0 +1,93 @@
+Qalabka injineerka
+Qalabka goobta shaqada ee la qaadi karo
+Qaybta qalabka injineerku waxay isla buugga daboolaya baloogyada qurxinta iyo xakamaynta ku dartaa qalab gacanta lagu qaado, calaamadaha macdanta, waxyaabo xaalad degdeg ah la isticmaalo, cunto safar iyo kaalmooyin yaryar oo agab-farsamayn ah.<br>
+<br>
+Qalabkan waxaa loogu talagalay shaqada ka fog goob si buuxda u qalabaysan: calaamadee jidka, qaado sahay, ka soo kabso khaladaadka oo goobta ku dhammee hawlo farsamayn yar yar.
+<np>
+Qalabka REDIA
+Qalab dheeman ku daboolan
+<&redia_tool>Qalabka REDIA waa qalab hawlgoobeed adkaysi leh oo shaqada dhulka si degdeg ah u qabta. Ku isticmaal carro la shaqayn karo si aad dhul-beereed u qoddo.<br>
+<br>
+Ku isticmaal wejiga deggan adigoo tooshyo sida si aad calaamad toosh ah uga dhigto kaydkaaga iyadoon la dhimin adkaysiga REDIA. Shaqada dhulka, xiirista, shaqada faaska iyo jarista geeduhu waxay isticmaalaan adkaysiga.
+<np>
+Dubbaha burburinta macdanta
+Qalabka burburinta gacanta
+<&crushing_hammer>Dubbaha burburiya macdantu waa qalab gacanta ah oo birta iyo dahabka hore loogu farsameeyo.<br>
+<br>
+Ku isticmaal bir ceeriin, dahab ceeriin, macdan bir ama dahab iyo noocyada deepslate si aad u hesho budada Immersive Engineering. Dubbuhu adkaysi buu lumiyaa, shabagga ayuu ku noqdaa ilaa uu jabo, qodistu way xirtaa, bartilmaameedkana dib ayuu u tuuraa.
+<np>
+Raadraacaha
+Calaamadda goobta la xafiday
+<&tracker>Raadraacuhu wuxuu shayga ku kaydiyaa booska block.<br>
+<br>
+Guji block si dimension iyo isku-duwayaal loo kaydiyo. Tilmaantu booska ayay muujisaa. Intaad dhuumanayso isticmaal si aad bartilmaameedka u tirtirto.<br>
+<br>
+Calaamadee mashiin, tunnel, kontarool fog ama dhisme aan dhammaan.
+<np>
+Dhuxusha Ariadne
+Calaamadda jidka macdanta
+<&ariadne_coal>Dhuxusha Ariadne waxay wejiyada macdanta ee deggan si degdeg ah ugu dhigtaa calaamado jid oo fallaaro madow ah. Ku isticmaal wejiga adag si aad u calaamadiso leexashada xigta, bixitaanka ama meesha jidku u kala baxo; calaamaddu waxay taageertaa siddeed jiho oo ku salaysan wejiga la gujiyey, oo ay ku jiraan jihooyinka qalloocan.<br>
+<br>
+Dhuxusha Ariadne waa qalab calaamadayn oo marar badan la isticmaalo, lehna 100 isticmaal. Dhigid kasta oo calaamad ah oo guulaysata waxay isticmaashaa hal dhibic adkaysi. Wuxuu diidaa wejiyada aan la taageerin halkii uu ka dhimi lahaa adkaysiga shayga.
+<np>
+Xirmada kicinta tooska ah
+Duriyaha degdegga ah
+<&stimpack>Xidhmada stim-ka tooska ahi waa shay caafimaad oo degdeg ah.<br>
+<br>
+Gacanta ku isticmaal bogsiin, difaac gaaban iyo xawaare. Kaydka dhexdiisa wuxuu shaqeeyaa marka caafimaadku hooseeyo, dabadeed wuu qaboojaa. Meelaha khatarta ah ku hay.
+<np>
+Bacda hurdada
+Qalabka nasashada ee la qaadi karo
+<&sleeping_bag>Bacda hurdadu waa qalab cimilo u adkaysta oo meel sariir ka fog lagu nasto.<br>
+<br>
+Habeenkii Overworld ku isticmaal si aad subaxda u gaadho adigoon beddelin meesha dhalashada.<br>
+<br>
+Maalin, bahallo dhow ama dimension aan habboonayn kama shaqayso. Nasasho kastaa way xirtaa.
+<np>
+Sanduuqa kaydinta agabka
+Sanduuqa sahayda dhismaha
+<&material_box>Sanduuqa agabku wuxuu qaadaa kayd weyn oo hal agab dhisme caadi ah, aan la beddelin oo la isku ridi karo.<br>
+<br>
+Ku hay sanduuqa gacanta weyn, agabkana tan kale si aad u geliso; gacanta kale oo madhan ku isticmaal si aad hal raso uga saarto.<br>
+<br>
+Wuxuu qaadaa 512 shay oo hal nooc ah, wuxuu diidaa sanduuqyo kale, qalab aan la rasayn iyo rasooyin la beddelay, waxa ku jirana tilmaanta ayuu ku muujiyaa.
+<np>
+Kaabsulka hawada quusitaanka
+Kaydka hawada degdegga ah
+<&diving_capsule>Kaabsalka hawada quusiddu waa kayd degdeg ah oo shaqada biyaha hoostooda.<br>
+<br>
+Gacanta ku isticmaal si hawada loo soo celiyo. Kaydka dhexdiisa si toos ah ayuu u shaqeeyaa marka hawadu dhammaanayso, dabadeed wuu qaboojaa. U qaado godadka biyuhu galeen iyo tuubooyinka hoostooda.
+<np>
+Cadaadiyaha ulaha Muslee
+Cadaadiyaha cuntada
+<&musli_bar_press>Madbacadda Muslee waxay cuntada caadiga ah u beddeshaa sahay yar.<br>
+<br>
+Hayso rooti, tufaax iyo iniin qamadi, qaraha, bocor, dabocase ama hemp warshadeed oo isticmaal madbacadda. Mid kasta ayay isticmaashaa, booska hubisaa, afar baar samaysaa, wayna dhaawacantaa.<br>
+<br>
+Haddii wax ama boos maqnaado, waxba lama isticmaalo.
+<np>
+Ulka tamarta ee isku-darka Muslee
+Cunto fudud oo degdeg ah ee goobta shaqada
+<&musli_bar>Baarka Muslee Melange waa cunto yar oo laga sameeyo rooti, iniin iyo miro.<br>
+<br>
+Cun markaad rakibayso kontarool, tuubo, madal ama saf mashiin dheer.
+<np>
+Cadaadiyaha maskaxda
+Cufiyaha khibradda
+<&charged_lapis_squeezer>Cadaadiyaha maskaxdu wuxuu hal lapis lazuli iyo hal heer khibrad ah oo aad haysato ugu beddelaa lapis dallacan.<br>
+<br>
+Habkani mar kasta oo beddeliddu guulaysato wuxuu dhaawacaa isticmaalaha, wuxuu ku keenaa daal gaajada kordhiya, muddo gaabanna indhaha ayuu ka ridaa. Wuu diidaa inuu shaqeeyo haddii lapis la waayo, XP la waayo ama isticmaaluhu aad ugu dhow yahay dhimasho.
+<np>
+Lapis dallacan
+Khibrad kaydsan
+<&charged_lapis>Lapis-ka dallacan wuxuu kaydiyaa hal heer khibrad ah. Cun si aad heerka u soo ceshato, uga saarto saamaynta shaqaynaysa, una soo celiso caafimaad yar.<br>
+<br>
+Marka hore samee cadaadiyaha maskaxda; lapis-ka dallacan waxaa lagu soo saaraa isticmaalka qalabkaas iyadoo lapis iyo XP la hayo.
+<np>
+Jayga birta qallafsan
+Agab qalabka injineerka ah oo uu isticmaalo qaybta farsamaynta ee dib loo dhisay.
+<&iron_grit>Waxaa loo dhalaalin karaa bir<br>la shubay, laakiin kuma<br>habboona farsamaynta agabka ee horumarsan.
+<np>
+Jayga dahabka qallafsan
+Agab qalabka injineerka ah oo uu isticmaalo qaybta farsamaynta ee dib loo dhisay.
+<&gold_grit>Waxaa loo dhalaalin karaa biraha<br>dahabka la shubay, laakiin kuma<br>habboona farsamaynta agabka ee horumarsan.

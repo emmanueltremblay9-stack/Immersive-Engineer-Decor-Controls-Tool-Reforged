@@ -1,0 +1,107 @@
+Mašyny majsterni
+Mašyny i ŭvod/vyvad majsterni
+Mašyny majsterni zabiaspiečvajuć kampaktny vyrab, pieramiaščennie pradmietaŭ, pierapłaŭku, utylizacyju, zbor i dapamožnuju pracu, zajmajučy adzin błok.<br>
+<br>
+Adkryj nastupnyja staronki, kab ubačyć recept, vyjavu, apisannie i praktyčnyja zaŭvahi pa vykarystanni kožnaj mašyny.
+<np>
+Stalovy stoł
+Mebla majsterni
+<&steel_table>Hety błok — praktyčnaja mebla dla rabočych pamiaškanniaŭ i kutkoŭ absłuhoŭvannia.<br>
+<br>
+Vykarystannie: staŭ jaho kala varštataŭ, skryniaŭ i kampaktnych mašyn.<br>
+<np>
+Stoł z apracavanaj draŭniny
+Mebla majsterni
+<&treated_wood_table>Hety błok — praktyčnaja mebla dla rabočych pamiaškanniaŭ i kutkoŭ absłuhoŭvannia.<br>
+<br>
+Vykarystannie: staŭ jaho kala varštataŭ, skryniaŭ i kampaktnych mašyn.<br>
+<np>
+Taburet z apracavanaj draŭniny
+Mebla majsterni
+<&treated_wood_stool>Hety błok — praktyčnaja mebla dla rabočych pamiaškanniaŭ i kutkoŭ absłuhoŭvannia.<br>
+<br>
+Vykarystannie: staŭ jaho kala varštataŭ, skryniaŭ i kampaktnych mašyn.<br>
+<np>
+Varštat dla mietałaapracoŭki
+Pracoŭnaje miesca dla płascin
+<&metal_crafting_table>Varštat dla mietałaapracoŭki — uzmocnienaje pracoŭnaje miesca majsterni z jačejkaj mołata, sietkaj vyrabu 3x3 i vyrazna vyznačanaj vychadnoj jačejkaj.<br>
+<br>
+Vykarystannie: skarystaj sietku dla zvyčajnaha vyrabu. Dla płascin IE pakładzi inžynierski mołat u jačejku instrumienta i materyjał płasciny ŭ sietku, pierš čym zabrać vynik. Stalovyja ŭpryhožvanni vykarystoŭvajuć stalovyja płasciny dla słupoŭ, słužbovych mastkoŭ, voknaŭ, dzviarej, parenčaŭ i inšych stalovych detalaŭ.<br>
+<np>
+Fabryčnaja varonka
+Abstalavannie cecha
+<&factory_hopper>Hety błok pieramiaščaje stosy pradmietaŭ praz bolš kampaktny pramysłovy korpus.<br>
+<br>
+Vykarystannie: paviarni jaho da linii schoviščaŭ, zatym zadaj u jaho ekranie radyus dziejannia, kolkasć u stosie, čas i redstonavy režym.<br>
+<np>
+Fabryčny vykidalnik
+Abstalavannie cecha
+<&factory_dropper>Hety błok vypuskaje zachavanyja pradmiety z nakiravanaj hrani.<br>
+<br>
+Vykarystannie: nakiruj piaredniuju hrań da miesca vypusku, zapoŭni ŭnutranyja jačejki i naładź u jaho ekranie siłu, vuhał, zatrymku, łohiku filtra i redstonavy režym.<br>
+<np>
+Fabryčny ŭstaloŭščyk błokaŭ
+Abstalavannie cecha
+<&factory_placer>Hety błok pry ŭklučenni ŭstaloŭvaje błoki sa svajho ŭnutranaha zapasu.<br>
+<br>
+Vykarystannie: nakiruj rabočuju hrań na metavaje miesca i zahruzi stosy pradmietaŭ, jakija možna ŭstaloŭvać.<br>
+<np>
+Razburalnik błokaŭ
+Abstalavannie cecha
+<&small_block_breaker>Mały razburalnik błokaŭ — dapamožny cechavy błok dla vyrabu, zachoŭvannia, ustalavannia, razbivannia, zboru abo kampaktnaj aŭtamatyzacyi.<br>
+<br>
+Vykarystannie: nakiruj rabočuju hrań da błoka, jaki treba prybrać.<br>
+<np>
+Spalvalnik adchodaŭ
+Kampaktnaja pierapracoŭčaja pryłada
+<&small_waste_incinerator>Spalvalnik adchodaŭ zniščaje niepatrebnyja pradmiety, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: padavaj u jaho čarhu tolki niepatrebnyja pradmiety.<br>
+<np>
+Łabaratornaja pieč
+Kampaktnaja pierapracoŭčaja pryłada
+<&small_lab_furnace>Łabaratornaja pieč vykonvaje kampaktnyja zadanni pierapłaŭki na cviordym palivie, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: užyvaj cviordaje paliva dla pierapłaŭki małych partyj.<br>
+<np>
+Elektryčnaja pieč
+Kampaktnaja pierapracoŭčaja pryłada
+<&small_electrical_furnace>Elektryčnaja pieč vykonvaje kampaktnyja zadanni pierapłaŭki na enierhii FE, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: padaj FE i prydatnuju syravinu dla pierapłaŭki.<br>
+<np>
+Pieč dla płaŭlennia minierałaŭ
+Kampaktnaja pierapracoŭčaja pryłada
+<&small_mineral_smelter>Pieč dla płaŭlennia minierałaŭ vykonvaje vysokatempieraturnuju pierapracoŭku minierałaŭ, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: padaj minieralnyja błoki i enierhiju dla vysokatempieraturnaha płaŭlennia.<br>
+<np>
+Zamarožvalnik vady
+Kampaktnaja pierapracoŭčaja pryłada
+<&small_freezer>Zamarožvalnik vady vykonvaje kampaktnyja zadačy achałodžvannia ŭ fluidnych sistemach z siłkavanniem.<br>
+<br>
+Vykarystannie: padaj vadu i enierhiju dla paetapnaj vytvorčasci lodu.<br>
+<np>
+Pasiŭny fluid
+Abstalavannie fluidnych linij
+<&passive_fluid_accumulator>Pasiŭny nazapašvalnik fluidaŭ — kampaktnaja detal fluidnaj linii dla małych reziervuaraŭ, trubapravodaŭ, punktaŭ zboru i patoku z redstonavym kiravanniem.<br>
+<br>
+Vykarystannie: staŭ jaho pobač z prydatnymi krynicami vady i pakidaj miesca dla advodu fluidu.<br>
+<np>
+Soniečnaja panel
+Abstalavannie cecha
+<&small_solar_panel>Małaja soniečnaja panel — dapamožny cechavy błok dla vyrabu, zachoŭvannia, ustalavannia, razbivannia, zboru abo kampaktnaj aŭtamatyzacyi.<br>
+<br>
+Vykarystannie: zabiaspieč dostup da adkrytaha nieba i padklučy abstalavannie z małym spažyvanniem.<br>
+<np>
+Dailny aparat
+Abstalavannie cecha
+<&small_milking_machine>Mały dailny aparat — dapamožny cechavy błok dla vyrabu, zachoŭvannia, ustalavannia, razbivannia, zboru abo kampaktnaj aŭtamatyzacyi.<br>
+<br>
+Vykarystannie: pastaŭ jaho kala karoŭ i zabiaspieč advod jomistasciej z małakom abo fluidu.<br>
+<np>
+Dryvasiek
+Abstalavannie cecha
+<&small_tree_cutter>Mały dryvasiek — dapamožny cechavy błok dla vyrabu, zachoŭvannia, ustalavannia, razbivannia, zboru abo kampaktnaj aŭtamatyzacyi.<br>
+<br>
+Vykarystannie: nakiruj jaho na darosłyja drevy i zbiraj zdabyču asobna.<br>

@@ -1,0 +1,5 @@
+Ŝildo pri magia danĝero
+Danĝermarkilo
+<&recipe>La ŝildo «Atentu, magia danĝero» markas danĝerojn, elirejojn kaj laborzonojn per vida indiko por fabrika sekureco.<br>
+<br>
+Uzado: metu ĝin apud danĝeroj, elirejoj, maŝinoj kaj limigitaj zonoj.<br>

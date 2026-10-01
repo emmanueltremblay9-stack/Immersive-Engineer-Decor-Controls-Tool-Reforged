@@ -1,0 +1,7 @@
+Yüklənmiş lapis
+Saxlanılan təcrübə
+<&recipe>Yüklənmiş lapis Zehin sıxıcısı ilə yaradılan bir təcrübə səviyyəsini saxlayır.<br>
+<br>
+İstifadə: Bir səviyyə bərpa etmək, aktiv təsirləri silmək və az miqdarda sağlamlıq qaytarmaq üçün istehlak edin.<br>
+<br>
+Resept pəncərəsi Zehin sıxıcısını göstərir, çünki yüklənmiş lapis lapis və XP olduğu halda həmin alətdən istifadə etməklə hazırlanır.

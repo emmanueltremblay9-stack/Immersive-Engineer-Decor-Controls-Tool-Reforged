@@ -1,0 +1,5 @@
+Zídka ze struskových cihel
+Hutné tovární zdivo
+<&recipe>Tento blok přidává hutné šedohnědé zdivo pro základy, opěrné zdi a starší dílny.<br>
+<br>
+Použití: Hodí se na staré základy, opěrné zdi a špinavé tovární podlahy.<br>

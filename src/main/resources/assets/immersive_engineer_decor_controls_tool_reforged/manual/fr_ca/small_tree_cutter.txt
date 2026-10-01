@@ -1,0 +1,5 @@
+Coupe-arbre
+Équipement d'atelier
+<&recipe>Le petit coupe-arbre est un équipement d'atelier de la famille des outils de fabrication, stockage, placement, cassage, collecte et automatisation compacte.<br>
+<br>
+Utilisation : dirigez-le vers des arbres adultes et ramassez séparément les objets lâchés.<br>

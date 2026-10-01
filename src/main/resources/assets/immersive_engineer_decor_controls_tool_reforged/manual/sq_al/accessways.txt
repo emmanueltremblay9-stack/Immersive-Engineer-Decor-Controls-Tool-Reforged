@@ -1,0 +1,127 @@
+Rrugë hyrjeje
+Kalime dhe mbështetëse
+Shtyllat e çelikut, shtyllat e drurit të trajtuar, zgarat, pasarelat, parmakët, shkallët, dyert, dritaret dhe kapakët formojnë rrugë kompakte shërbimi brenda fabrikave.<br>
+<br>
+Pjesët prej çeliku të rrugëve të hyrjes përdorin pllaka çeliku. Krijo ose vendos një Tavolinë përpunimi metali, fut një çekiç Immersive Engineering dhe farkëto shufra çeliku në pllaka për shtylla, pasarela, dritare, dyer, parmakë dhe zbukurime të tjera çeliku.<br>
+<br>
+Vendosi aty ku makineritë kanë nevojë për qasje shërbimi, kalime të ngritura, puse mirëmbajtjeje ose skaje më të sigurta.
+<np>
+Shtyllë e trashë çeliku
+Pjesë skeleti strukturor
+<&thick_steel_pole>Shtylla e drejtë e trashë e çelikut jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Kokë shtylle të trashë
+Pjesë skeleti strukturor
+<&thick_steel_pole_head>Koka/këmba e shtyllës së drejtë të trashë të çelikut jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Shtyllë e hollë çeliku
+Pjesë skeleti strukturor
+<&thin_steel_pole>Shtylla e drejtë e hollë e çelikut jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Kokë shtylle të hollë
+Pjesë skeleti strukturor
+<&thin_steel_pole_head>Koka/këmba e shtyllës së drejtë të hollë të çelikut jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Shtyllë druri të trajtuar
+Pjesë skeleti strukturor
+<&treated_wood_pole>Shtylla e drejtë e drurit të trajtuar jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Kokë shtylle druri të trajtuar
+Pjesë skeleti strukturor
+<&treated_wood_pole_head>Koka/këmba e shtyllës së drejtë të drurit të trajtuar jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Mbështetëse shtylle druri të trajtuar
+Pjesë skeleti strukturor
+<&treated_wood_pole_support>Mbështetësja e shtyllës së drejtë të drurit të trajtuar jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Mbështetëse çeliku me T të dyfishtë
+Pjesë skeleti strukturor
+<&steel_double_t_support>Ky bllok jep strukturë të dukshme për salla makinerish dhe skelete hyrjesh.<br>
+<br>
+Përdorimi: rrotulloje dhe vendose si përforcim të dukshëm për trarë, shtylla dhe skaje platformash.<br>
+<np>
+Zgarë dyshemeje çeliku
+Pajisje hyrjeje shërbimi
+<&steel_floor_grating>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Pasarelë çeliku
+Pajisje hyrjeje shërbimi
+<&steel_catwalk>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Shkallare pasarele çeliku
+Pajisje hyrjeje shërbimi
+<&steel_catwalk_stairs>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Pasarelë e ngritur çeliku
+Pajisje hyrjeje shërbimi
+<&steel_catwalk_ta>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Parmak çeliku
+Pajisje hyrjeje shërbimi
+<&steel_railing>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Gard rrjete çeliku
+Pajisje hyrjeje shërbimi
+<&steel_mesh_fence>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Portë gardhi me rrjetë çeliku
+Pajisje hyrjeje shërbimi
+<&steel_mesh_fence_gate>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Shkallë me shufra metalike
+Pajisje hyrjeje shërbimi
+<&metal_rung_ladder>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Këmbëza metalike të alternuara
+Pajisje hyrjeje shërbimi
+<&metal_rung_steps>Ky bllok formon rrugë të qarta shërbimi rreth makinerive.<br>
+<br>
+Përdorimi: vendose si hyrje mirëmbajtjeje rreth makinerive, kateve të sipërme dhe puseve të shërbimit.<br>
+<np>
+Dritare me kornizë çeliku
+Pamje e mbrojtur
+<&steel_framed_window>Ky bllok ruan vijat e shikimit të hapura dhe përshtatet me ndërtimin e përforcuar të fabrikës.<br>
+<br>
+Përdorimi: vendose në një hapje muri prej 1 blloku ku lojtarët duhet të shohin makineritë përmes një pengese mbrojtëse.<br>
+<np>
+Derë metalike rrëshqitëse
+Pikë hyrjeje industriale
+<&metal_sliding_door>Ky bllok jep një hyrje të fortë për dhoma shërbimi, puse, çati dhe mbulesa makinerish.<br>
+<br>
+Përdorimi: instaloje aty ku ndërtesa kërkon një hapje të kontrolluar mirëmbajtjeje.<br>
+<np>
+Kapak hekuri
+Pikë hyrjeje industriale
+<&iron_hatch>Ky bllok jep një hyrje të fortë për dhoma shërbimi, puse, çati dhe mbulesa makinerish.<br>
+<br>
+Përdorimi: instaloje aty ku ndërtesa kërkon një hapje të kontrolluar mirëmbajtjeje.<br>

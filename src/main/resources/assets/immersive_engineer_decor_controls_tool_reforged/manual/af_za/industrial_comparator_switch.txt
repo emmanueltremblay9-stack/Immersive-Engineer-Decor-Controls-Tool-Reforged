@@ -1,0 +1,7 @@
+Vergelykerskakelaar
+Gekoppelde sein
+<&recipe>’n Kompakte sensorskakelaar lees die blok waarop dit gemonteer is en verander die lesing in ’n eenvoudige paneeluitset.<br>
+<br>
+Gebruik: monteer dit op voorrade, tenks of redstone-toerusting. Wanneer die monteerblok vergelyker-, houer- of redstone-uitset gee, stuur die skakelaar redstone op volle sterkte uit.<br>
+<br>
+Nota: gebruik dit om bergingsvlakke of versteekte bedrading in duidelike aan-/afbeheerlyne te verander.

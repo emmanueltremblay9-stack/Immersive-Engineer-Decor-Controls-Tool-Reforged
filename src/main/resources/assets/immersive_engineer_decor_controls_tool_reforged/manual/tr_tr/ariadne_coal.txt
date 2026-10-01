@@ -1,0 +1,7 @@
+Ariadne Kömürü
+Maden rotası işaretleyicisi
+<&recipe>Ariadne kömürü; kuyular, dallanan maden tünelleri ve geçici yer altı çalışmaları için hızlı bir rota işaretleyicisidir.<br>
+<br>
+Kullanım: Sağlam bir blok yüzeyinde kullanarak o sınıra siyah bir ok işareti yerleştirin. İşaret, yüzeyde tıklanan noktayı okur ve çaprazlar dahil sekiz yönü destekler. Böylece ayrı yön levhaları taşımadan dönüşleri, çıkışları, çıkmazları ve ikmal yollarını işaretleyebilirsiniz.<br>
+<br>
+Ariadne kömürü, 100 kullanımlık ve tekrar kullanılabilir bir işaretleme aletidir. Başarılı her işaret bir dayanıklılık harcar; desteklenmeyen yüzeyler alet yıpratılmadan reddedilir.

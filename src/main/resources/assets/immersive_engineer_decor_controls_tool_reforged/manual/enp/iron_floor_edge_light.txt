@@ -1,0 +1,5 @@
+Sunken Floor Edge Light
+Small work light
+<&recipe>This clot gives small workstead lighting for hallways, walkways and work bays.<br>
+<br>
+Use: Fix it overhead, on walls or on edges where the room needs clear working light.<br>

@@ -1,0 +1,5 @@
+Dekorschüd
+Gfoahrenmarkierung
+<&recipe>De Schüdtafl (Engineer's Decor) kennzeichnet Gfoahren, Ausgänge und Arbeitszonen mit am guat erkennbaren Fabrikhinweis.<br>
+<br>
+Verwendung: Setz es neben Gfoahrenstelln, Ausgänge, Maschinen und gsperrte Bereiche.<br>

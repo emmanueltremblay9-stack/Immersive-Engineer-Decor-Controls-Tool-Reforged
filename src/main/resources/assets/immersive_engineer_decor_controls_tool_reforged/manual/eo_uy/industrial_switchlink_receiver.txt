@@ -1,0 +1,7 @@
+Ŝaltilliga ricevilo
+Ligita regado
+<&recipe>Ligita ricevilo donas plenfortan redstone’an celon al foraj paneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Dekstre klaku la ricevilon mem por mane baskulŝalti ĝin.<br>
+<br>
+Notoj: ligita perlo baskulŝaltas ĉi tiun ricevilon kiam oni uzas ĝin kaŭrante.

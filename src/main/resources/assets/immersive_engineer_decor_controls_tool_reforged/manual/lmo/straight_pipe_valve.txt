@@ -1,0 +1,5 @@
+Valvola de minga retorn per tub di fluid
+Acessori per linee de fluid
+<&recipe>La Valvola de minga retorn di fluid l’è un tocch piscinin de linea de fluid, per piscinin serbatoi, corsei de tub, pont de recolta e fluss controlad de la prejarossa.<br>
+<br>
+Alinèa la valvola cont la direzzion che el fluid el gh’ha de seguì.<br>

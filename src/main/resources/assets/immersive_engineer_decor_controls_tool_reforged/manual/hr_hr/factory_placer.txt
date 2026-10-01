@@ -1,0 +1,5 @@
+Tvornički postavljač blokova
+Oprema tvorničkog poda
+<&recipe>Ovaj blok pri aktivaciji postavlja blokove iz unutarnjih zaliha.<br>
+<br>
+Uporaba: usmjeri radnu stranu prema ciljnom prostoru i umetni hrpe koje se mogu postaviti.<br>

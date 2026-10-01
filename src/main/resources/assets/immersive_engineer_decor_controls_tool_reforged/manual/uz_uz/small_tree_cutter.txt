@@ -1,0 +1,5 @@
+Daraxt kesgich
+Ustaxona yordamchi qurilmasi
+<&recipe>Kichik daraxt kesgich yasash, saqlash, joylashtirish, buzish, yig'ish yoki ixcham avtomatika uchun ustaxona yordamchi blokidir.<br>
+<br>
+Ishlatish: o'sib bo'lgan daraxtlarga qarating va tushgan buyumlarni alohida yig'ing.<br>

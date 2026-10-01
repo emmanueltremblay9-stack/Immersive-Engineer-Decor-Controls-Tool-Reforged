@@ -1,0 +1,5 @@
+Fabriko blokų statytuvas
+Dirbtuvių pagalbininkas
+<&recipe>Suaktyvintas šis blokas stato blokus iš vidinių atsargų.<br>
+<br>
+Naudojimas: nukreipk darbinį paviršių į norimą vietą ir įdėk statomų daiktų krūvelių.<br>

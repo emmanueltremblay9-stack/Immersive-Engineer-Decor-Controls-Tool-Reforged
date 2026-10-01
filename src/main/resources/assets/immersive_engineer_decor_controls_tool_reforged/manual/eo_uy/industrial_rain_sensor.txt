@@ -1,0 +1,7 @@
+Pluvosensilo
+Signala sentado
+<&recipe>Vetersensilo transformas pluvon ĉe sia loko en redstone’an signalon.<br>
+<br>
+Uzado: muntu ĝin kie la bloko super ĝi povas ricevi pluvon.<br>
+<br>
+Notoj: ĝi kontrolas pluvon super la sensilo.

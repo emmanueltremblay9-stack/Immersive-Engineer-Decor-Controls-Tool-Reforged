@@ -1,0 +1,5 @@
+Slakstiennen muorre
+Ticht fabryksmitselwurk
+<&recipe>Dit blok foeget ticht griisbrún mitselwurk ta foar fûneminten, kearmuorren en âldere wurkskuorren.<br>
+<br>
+Gebrûk: Brûk it foar âldere fûneminten, kearmuorren en smoarge fabryksflierren.<br>

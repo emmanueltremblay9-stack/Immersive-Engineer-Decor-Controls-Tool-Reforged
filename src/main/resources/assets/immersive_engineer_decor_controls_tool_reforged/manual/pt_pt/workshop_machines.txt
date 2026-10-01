@@ -1,0 +1,107 @@
+Máquinas de oficina
+Máquinas e entradas/saídas da oficina
+As máquinas de oficina permitem criar e movimentar itens, fundir materiais, eliminar resíduos, recolher recursos e executar outros trabalhos no espaço de um único bloco.<br>
+<br>
+Abre as páginas seguintes para consultar a receita, a imagem, a ambientação e as notas práticas de uso de cada máquina.
+<np>
+Mesa de aço
+Móvel de oficina
+<&steel_table>Este bloco é um móvel prático para salas de trabalho e cantos de manutenção.<br>
+<br>
+Uso: Coloca ao lado de bancadas, caixotes e máquinas compactas.<br>
+<np>
+Mesa de madeira tratada
+Móvel de oficina
+<&treated_wood_table>Este bloco é um móvel prático para salas de trabalho e cantos de manutenção.<br>
+<br>
+Uso: Coloca ao lado de bancadas, caixotes e máquinas compactas.<br>
+<np>
+Banco de madeira tratada
+Móvel de oficina
+<&treated_wood_stool>Este bloco é um móvel prático para salas de trabalho e cantos de manutenção.<br>
+<br>
+Uso: Coloca ao lado de bancadas, caixotes e máquinas compactas.<br>
+<np>
+Mesa de trabalho de metal
+Posto de produção de chapas
+<&metal_crafting_table>A mesa de trabalho de metal é um posto reforçado de oficina com espaço para martelo, uma grelha de criação 3x3 e um espaço de saída bem definido.<br>
+<br>
+Uso: Usa a grelha para criação normal. Para chapas de IE, coloca um martelo do engenheiro no espaço de ferramentas e o material da chapa na grelha antes de retirar o resultado. As decorações de aço usam chapas de aço para postes, passadiços, janelas, portas, guarda-corpos e outras peças de aço.<br>
+<np>
+Funil de fábrica
+Utilidade de oficina
+<&factory_hopper>Este bloco movimenta pilhas de itens por uma carcaça industrial mais compacta.<br>
+<br>
+Uso: Orienta-o para a linha de inventários e define o alcance, o tamanho da pilha, os tempos e o modo de redstone no ecrã.<br>
+<np>
+Ejetor de fábrica
+Utilidade de oficina
+<&factory_dropper>Este bloco liberta itens armazenados por uma face direcionada.<br>
+<br>
+Uso: Orienta a frente para o ponto de saída, carrega os espaços internos e ajusta a força, o ângulo, o intervalo, a lógica dos filtros e o modo de redstone no ecrã.<br>
+<np>
+Colocador de blocos de fábrica
+Utilidade de oficina
+<&factory_placer>Este bloco coloca blocos da sua reserva interna quando é acionado.<br>
+<br>
+Uso: Aponta a face de trabalho para o espaço-alvo e carrega pilhas de itens que possam ser colocados.<br>
+<np>
+Quebrador de blocos
+Utilidade de oficina
+<&small_block_breaker>O pequeno quebrador de blocos é uma utilidade de oficina para criação, armazenamento, colocação, quebra, recolha ou automação compacta.<br>
+<br>
+Uso: Aponta a face de trabalho para o bloco a remover.<br>
+<np>
+Incinerador de resíduos
+Unidade compacta de processamento
+<&small_waste_incinerator>O incinerador de resíduos destrói itens indesejados e ocupa pouco espaço na oficina.<br>
+<br>
+Uso: Insere apenas itens indesejados na fila.<br>
+<np>
+Forno de laboratório
+Unidade compacta de processamento
+<&small_lab_furnace>O forno de laboratório realiza pequenos trabalhos de fundição com combustível sólido e ocupa pouco espaço na oficina.<br>
+<br>
+Uso: Usa combustível sólido para fundir pequenos lotes.<br>
+<np>
+Forno elétrico
+Unidade compacta de processamento
+<&small_electrical_furnace>O forno elétrico realiza pequenos trabalhos de fundição alimentados com FE e ocupa pouco espaço na oficina.<br>
+<br>
+Uso: Fornece FE e materiais válidos para fundição.<br>
+<np>
+Forno de fusão mineral
+Unidade compacta de processamento
+<&small_mineral_smelter>O forno de fusão mineral processa minerais em alta temperatura e ocupa pouco espaço na oficina.<br>
+<br>
+Uso: Fornece blocos minerais e energia para trabalhos de fusão em alta temperatura.<br>
+<np>
+Congelador de água
+Unidade compacta de processamento
+<&small_freezer>O congelador de água realiza trabalhos compactos de arrefecimento para instalações de fluidos alimentadas por energia.<br>
+<br>
+Uso: Fornece água e energia para produzir gelo em etapas.<br>
+<np>
+Fluido passivo
+Componentes de tubagem de fluidos
+<&passive_fluid_accumulator>O acumulador passivo de fluidos é um componente compacto para pequenos depósitos, tubagens, pontos de recolha e caudal controlado por redstone.<br>
+<br>
+Uso: Coloca-o junto de fontes de água adequadas e deixa espaço para retirar o fluido.<br>
+<np>
+Painel solar
+Utilidade de oficina
+<&small_solar_panel>O pequeno painel solar é uma utilidade de oficina para criação, armazenamento, colocação, quebra, recolha ou automação compacta.<br>
+<br>
+Uso: Coloca-o a céu aberto e liga equipamento de baixo consumo.<br>
+<np>
+Máquina de ordenha
+Utilidade de oficina
+<&small_milking_machine>A pequena máquina de ordenha é uma utilidade de oficina para criação, armazenamento, colocação, quebra, recolha ou automação compacta.<br>
+<br>
+Uso: Coloca-a perto de vacas e assegura um meio de retirar os recipientes de leite ou o fluido.<br>
+<np>
+Cortador de árvores
+Utilidade de oficina
+<&small_tree_cutter>O pequeno cortador de árvores é uma utilidade de oficina para criação, armazenamento, colocação, quebra, recolha ou automação compacta.<br>
+<br>
+Uso: Aponta para árvores crescidas e recolhe os itens derrubados separadamente.<br>

@@ -1,0 +1,5 @@
+Elektrik sobası
+Yığcam emal qurğusu
+<&recipe>Elektrik sobası emalatxanada kiçik yer tutaraq FE enerjisi ilə yığcam əritmə işləri görür.<br>
+<br>
+İstifadə: FE və uyğun əritmə materialı verin.<br>

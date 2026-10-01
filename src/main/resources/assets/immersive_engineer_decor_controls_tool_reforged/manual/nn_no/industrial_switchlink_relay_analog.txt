@@ -1,0 +1,7 @@
+Analogt koplingsrelé
+Kopla betening
+<&recipe>Ein del i reléstil gjev panelbygg eit kompakt, lokalt brytarpunkt.<br>
+<br>
+Bruk: høgreklikk for å slå full utgangsstyrke av eller på for krinsar i nærleiken. Bruk mottakarblokker når du treng utløysing med kopla perler.<br>
+<br>
+Merknad: gjev redstone med full styrke medan han er på.

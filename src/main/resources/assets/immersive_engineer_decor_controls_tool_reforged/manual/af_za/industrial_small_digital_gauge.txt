@@ -1,0 +1,7 @@
+Digitale Meter
+Leesbare seinsterkte
+<&recipe>’n Kompakte beheerkamermeter wys redstone-sterkte as ’n duidelike paneellesing.<br>
+<br>
+Gebruik: monteer dit waar aangrensende redstone-krag met een oogopslag nagegaan kan word.<br>
+<br>
+Nota: lees nabygeleë redstone-sterkte van 0 tot 15.

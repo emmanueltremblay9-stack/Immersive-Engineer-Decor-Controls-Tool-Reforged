@@ -1,0 +1,5 @@
+Plokilõhkuja
+Töökoja abiseade
+<&recipe>Väike plokilõhkuja on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Suuna tööpind eemaldatava ploki poole.<br>

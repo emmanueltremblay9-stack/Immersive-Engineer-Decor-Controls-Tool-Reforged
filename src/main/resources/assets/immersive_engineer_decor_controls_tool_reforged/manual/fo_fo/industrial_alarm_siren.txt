@@ -1,0 +1,7 @@
+Ávaringarsirena
+Afturmelding um tekin
+<&recipe>Ávaringarhorn er ein redstone-vísari, sum verður festur á eina síðu. Tendra støðan fylgir signalinum frá kubbanum, ið hann er festur á.<br>
+<br>
+Nýtsla: Fest hana á eina fasta síðu og gev henni orku fyri at hava eftirlit við hurðum, maskinum, ávaringum ella panelum.<br>
+<br>
+Viðmerking: Sirenan verður endurnýggjað eina ferð um sekundið, so leingi bundna teknið er virkið.

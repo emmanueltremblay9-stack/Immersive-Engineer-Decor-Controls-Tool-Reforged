@@ -1,0 +1,161 @@
+Clinker e maçounnerie
+Coques en briqes e béton
+Le clinker, les briqes de scorie, le béton armë e le verre bllindë dounent des surfaces lourdes pour les pièces chaodes, les ateliers e les vues protégées.<br>
+<br>
+Empllayéz les pavës, degrës, tranches e murs assortis pour finir les bords sans chanjer le stile des matériaux de l'uzine.
+<np>
+Blloqe de briqes de clinker
+Briqes naircies de souée
+<&clinker_brick_block>Çu blloqe amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Pavë de briqes de clinker
+Briqes naircies de souée
+<&clinker_brick_slab>Çu blloqe amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Degrë de briqes de clinker
+Briqes naircies de souée
+<&clinker_brick_stairs>Çu blloqe amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Mur de briqes de clinker
+Briqes naircies de souée
+<&clinker_brick_wall>Çu blloqe amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Blloqe de clinker tachë
+Briqes naircies de souée
+<&clinker_brick_stained_block>Le Blloqe de briqes de clinker tachées amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Pavë de clinker tachë
+Briqes naircies de souée
+<&clinker_brick_stained_slab>Le Pavë de briqes de clinker tachées amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Degrë de clinker tachë
+Briqes naircies de souée
+<&clinker_brick_stained_stairs>Le Degrë de briqes de clinker tachées amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Briqe de clinker miriaodée
+Briqes naircies de souée
+<&clinker_brick_sastor_corner_block>La Briqe de clinker miriaodée de grés amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Briqe de clinker en creû
+Briqes naircies de souée
+<&clinker_brick_recessed>Çu blloqe amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Briqes de clinker fendues
+Briqes naircies de souée
+<&clinker_brick_vertically_slit>Les Briqes de clinker fendues debout amènent des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Pavë de clinker debout
+Briqes naircies de souée
+<&clinker_brick_vertical_slab_structured>Le Pavë debout de clinker a relief amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Demi-pavë de briqes de clinker
+Briqes naircies de souée
+<&halfslab_clinker_brick>Çu blloqe amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>
+<np>
+Blloqe de briqes de scorie
+Maçounnerie d'uzine dense
+<&slag_brick_block>Çu blloqe ajoute eune maçounnerie griz-brun dense pour les fondacions, les murs de soutènement e les vieilles remizes d'atelier.<br>
+<br>
+Empllai : Empllayéz-le pour de vieilles fondacions, des murs de soutènement e des sols d'uzine sales.<br>
+<np>
+Pavë de briqes de scorie
+Maçounnerie d'uzine dense
+<&slag_brick_slab>Çu blloqe ajoute eune maçounnerie griz-brun dense pour les fondacions, les murs de soutènement e les vieilles remizes d'atelier.<br>
+<br>
+Empllai : Empllayéz-le pour de vieilles fondacions, des murs de soutènement e des sols d'uzine sales.<br>
+<np>
+Degrë de briqes de scorie
+Maçounnerie d'uzine dense
+<&slag_brick_stairs>Çu blloqe ajoute eune maçounnerie griz-brun dense pour les fondacions, les murs de soutènement e les vieilles remizes d'atelier.<br>
+<br>
+Empllai : Empllayéz-le pour de vieilles fondacions, des murs de soutènement e des sols d'uzine sales.<br>
+<np>
+Mur de briqes de scorie
+Maçounnerie d'uzine dense
+<&slag_brick_wall>Çu blloqe ajoute eune maçounnerie griz-brun dense pour les fondacions, les murs de soutènement e les vieilles remizes d'atelier.<br>
+<br>
+Empllai : Empllayéz-le pour de vieilles fondacions, des murs de soutènement e des sols d'uzine sales.<br>
+<np>
+Blloqe de béton armë
+Béton renforcë
+<&rebar_concrete>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Pavë de béton armë
+Béton renforcë
+<&rebar_concrete_slab>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Degrë de béton armë
+Béton renforcë
+<&rebar_concrete_stairs>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Mur de béton armë
+Béton renforcë
+<&rebar_concrete_wall>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Tranche de béton armë
+Béton renforcë
+<&halfslab_rebar_concrete>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Carè de béton armë
+Béton renforcë
+<&rebar_concrete_tile>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Pavë de cariaos de béton armë
+Béton renforcë
+<&rebar_concrete_tile_slab>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Carè de béton armë
+Béton renforcë
+<&rebar_concrete_tile_stairs>Les Degrës de cariaos de béton armë sont des pièces de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>
+<np>
+Blloqe de verre bllindë
+Vue protégée
+<&panzerglass_block>Çu blloqe garde la vue ouverte tout en allant o la bâtisse d'uzine renforcée.<br>
+<br>
+Empllai : Empllayéz-le la où qe les jouous doivent vaer les machines a travèrs eune barrie protégée.<br>
+<np>
+Pavë de verre bllindë
+Vue protégée
+<&panzerglass_slab>Çu blloqe garde la vue ouverte tout en allant o la bâtisse d'uzine renforcée.<br>
+<br>
+Empllai : Empllayéz-le la où qe les jouous doivent vaer les machines a travèrs eune barrie protégée.<br>

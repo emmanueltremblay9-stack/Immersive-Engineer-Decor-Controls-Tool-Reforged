@@ -1,0 +1,7 @@
+Analoger Verknüpfungsempfänger
+Verknüpfte Steuerung
+<&recipe>A verknüpfter Empfänger gibt Steuerungstafeln a sichtbors Fernziel.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Benutz de Perle beim Schleichn, um den Empfänger aus da Ferne zu aktivieren.<br>
+<br>
+Hinweis: Der Empfänger gibt bei Auslösung volle Redstone-Stärke aus.

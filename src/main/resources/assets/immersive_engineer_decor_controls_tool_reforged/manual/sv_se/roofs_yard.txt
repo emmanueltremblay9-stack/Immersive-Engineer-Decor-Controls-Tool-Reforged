@@ -1,0 +1,101 @@
+Tak och gård
+Fabriksdelar för utomhusbruk
+Takblock, gårdsgrus och gamla delar av industriträ hjälper dig att färdigställa utvändiga skjul, arbetsgårdar, lastområden och väderbitna fabrikskanter.<br>
+<br>
+Blanda delarna med murverk och gångvägar så att industribyggnader utomhus förblir tydliga på avstånd.
+<np>
+Mörkt spåntak
+Väderbiten takdel
+<&dark_shingle_roof>Det här blocket skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Snörasskydd för tak
+Väderbiten takdel
+<&dark_shingle_roof_metallized>Snörasskyddet för mörkt spåntak skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Mörkt spåntak
+Väderbiten takdel
+<&dark_shingle_roof_skylight>Takfönstret för mörkt spåntak skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Skorstensstam för tak
+Väderbiten takdel
+<&dark_shingle_roof_chimneytrunk>Skorstensstammen för mörkt spåntak skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Kabelgenomföring för tak
+Väderbiten takdel
+<&dark_shingle_roof_wireconduit>Kabelgenomföringen för mörkt spåntak skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Mörkt spåntak
+Väderbiten takdel
+<&dark_shingle_roof_chimney>Skorstenen för mörkt spåntak skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Mörkt spåntaksblock
+Väderbiten takdel
+<&dark_shingle_roof_block>Det här blocket skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Mörk spåntaksplatta
+Väderbiten takdel
+<&dark_shingle_roof_slab>Det här blocket skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Mörk spåntaksplatta
+Väderbiten takdel
+<&dark_shingle_roof_slabslice>Den tunna mörka spåntaksplattan skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>
+<np>
+Packad grusjord
+Markbeläggning för arbetsplatser
+<&dense_grit_dirt_block>Det här blocket ger arbetsplatser utomhus en packad och nedtrampad yta.<br>
+<br>
+Användning: Lägg det runt lastportar, tankar utomhus och maskinplaner.<br>
+<np>
+Packad grussand
+Markbeläggning för arbetsplatser
+<&dense_grit_sand_block>Det här blocket ger arbetsplatser utomhus en packad och nedtrampad yta.<br>
+<br>
+Användning: Lägg det runt lastportar, tankar utomhus och maskinplaner.<br>
+<np>
+Gamla träplankor
+Åldrat verkstadsträ
+<&old_industrial_wood_planks>De gamla industriplankorna ger åldrat verkstadsträ till golv, trappsteg, dörrar och varm invändig dekor.<br>
+<br>
+Användning: Använd det till gamla verkstadsgolv, trappor, dörrar och dekor.<br>
+<np>
+Gammal fabriksplatta av trä
+Åldrat verkstadsträ
+<&old_industrial_wood_slab>Det här blocket ger åldrat verkstadsträ till golv, trappsteg, dörrar och varm invändig dekor.<br>
+<br>
+Användning: Använd det till gamla verkstadsgolv, trappor, dörrar och dekor.<br>
+<np>
+Gammal trätrappa
+Åldrat verkstadsträ
+<&old_industrial_wood_stairs>Den gamla industriträtrappan ger åldrat verkstadsträ till golv, trappsteg, dörrar och varm invändig dekor.<br>
+<br>
+Användning: Använd det till gamla verkstadsgolv, trappor, dörrar och dekor.<br>
+<np>
+Tunn gammal träplatta
+Åldrat verkstadsträ
+<&old_industrial_wood_slabslice>Den tunna gamla industriträplattan ger åldrat verkstadsträ till golv, trappsteg, dörrar och varm invändig dekor.<br>
+<br>
+Användning: Använd det till gamla verkstadsgolv, trappor, dörrar och dekor.<br>
+<np>
+Gammal fabriksdörr av trä
+Åldrat verkstadsträ
+<&old_industrial_wood_door>Det här blocket ger åldrat verkstadsträ till golv, trappsteg, dörrar och varm invändig dekor.<br>
+<br>
+Användning: Använd det till gamla verkstadsgolv, trappor, dörrar och dekor.<br>

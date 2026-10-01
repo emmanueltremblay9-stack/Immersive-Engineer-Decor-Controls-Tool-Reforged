@@ -1,0 +1,101 @@
+Telhados e pátios
+Elementos externos de fábrica
+Blocos de telhado, cascalho de pátio e peças de madeira industrial antiga ajudam a finalizar galpões externos, pátios de trabalho, áreas de carga e bordas envelhecidas de fábricas.<br>
+<br>
+Combine estas peças com alvenaria e vias de acesso para que as construções industriais externas sejam fáceis de reconhecer à distância.
+<np>
+Telhado de telhas escuras
+Elemento de telhado envelhecido
+<&dark_shingle_roof>Este bloco cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Retentor de neve de telhado
+Elemento de telhado envelhecido
+<&dark_shingle_roof_metallized>O retentor de neve para telhado de telhas escuras cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Telhado de telhas escuras
+Elemento de telhado envelhecido
+<&dark_shingle_roof_skylight>A claraboia de telhado de telhas escuras cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Corpo de chaminé de telhado
+Elemento de telhado envelhecido
+<&dark_shingle_roof_chimneytrunk>O corpo de chaminé de telhado de telhas escuras cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Passagem de fios de telhado
+Elemento de telhado envelhecido
+<&dark_shingle_roof_wireconduit>A passagem de fios para telhado de telhas escuras cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Telhado de telhas escuras
+Elemento de telhado envelhecido
+<&dark_shingle_roof_chimney>A chaminé de telhado de telhas escuras cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Bloco de telhado de telhas escuras
+Elemento de telhado envelhecido
+<&dark_shingle_roof_block>Este bloco cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Laje de telhado de telhas escuras
+Elemento de telhado envelhecido
+<&dark_shingle_roof_slab>Este bloco cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Laje de telhado de telhas escuras
+Elemento de telhado envelhecido
+<&dark_shingle_roof_slabslice>A fatia de laje de telhado de telhas escuras cria perfis de telhado escuros e práticos para oficinas e galpões industriais.<br>
+<br>
+Uso: Combine as peças para criar perfis de telhado convincentes.<br>
+<np>
+Terra com cascalho compactada
+Cobertura de solo de canteiro
+<&dense_grit_dirt_block>Este bloco dá às áreas de trabalho externas uma superfície compactada e pisoteada.<br>
+<br>
+Uso: Coloque ao redor de portas de carga, tanques externos e pátios de máquinas.<br>
+<np>
+Areia com cascalho compactada
+Cobertura de solo de canteiro
+<&dense_grit_sand_block>Este bloco dá às áreas de trabalho externas uma superfície compactada e pisoteada.<br>
+<br>
+Uso: Coloque ao redor de portas de carga, tanques externos e pátios de máquinas.<br>
+<np>
+Tábuas de madeira antiga
+Madeira envelhecida de oficina
+<&old_industrial_wood_planks>As tábuas industriais de madeira antiga acrescentam madeira envelhecida de oficina para pisos, degraus, portas e acabamentos internos aconchegantes.<br>
+<br>
+Uso: Use em pisos, escadas, portas e acabamentos de oficinas antigas.<br>
+<np>
+Laje industrial de madeira antiga
+Madeira envelhecida de oficina
+<&old_industrial_wood_slab>Este bloco acrescenta madeira envelhecida de oficina para pisos, degraus, portas e acabamentos internos aconchegantes.<br>
+<br>
+Uso: Use em pisos, escadas, portas e acabamentos de oficinas antigas.<br>
+<np>
+Escadas de madeira antiga
+Madeira envelhecida de oficina
+<&old_industrial_wood_stairs>As escadas industriais de madeira antiga acrescentam madeira envelhecida de oficina para pisos, degraus, portas e acabamentos internos aconchegantes.<br>
+<br>
+Uso: Use em pisos, escadas, portas e acabamentos de oficinas antigas.<br>
+<np>
+Fatia de laje de madeira antiga
+Madeira envelhecida de oficina
+<&old_industrial_wood_slabslice>A fatia de laje industrial de madeira antiga acrescenta madeira envelhecida de oficina para pisos, degraus, portas e acabamentos internos aconchegantes.<br>
+<br>
+Uso: Use em pisos, escadas, portas e acabamentos de oficinas antigas.<br>
+<np>
+Porta industrial de madeira antiga
+Madeira envelhecida de oficina
+<&old_industrial_wood_door>Este bloco acrescenta madeira envelhecida de oficina para pisos, degraus, portas e acabamentos internos aconchegantes.<br>
+<br>
+Uso: Use em pisos, escadas, portas e acabamentos de oficinas antigas.<br>

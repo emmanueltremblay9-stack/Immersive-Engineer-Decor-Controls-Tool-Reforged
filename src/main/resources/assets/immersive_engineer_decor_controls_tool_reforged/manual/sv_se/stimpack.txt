@@ -1,0 +1,5 @@
+Automatiskt stimpaket
+Nödinjektor
+<&recipe>Det automatiska stim-paketet är ett medicinskt nödföremål.<br>
+<br>
+Använd det manuellt för läkning, kort skydd och fartökning. I förrådet aktiveras det automatiskt vid låg hälsa och går sedan på nedkylning. Ha ett nära till hands på farliga platser.

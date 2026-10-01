@@ -1,0 +1,5 @@
+Entonnoir d'usine
+Équipement d'atelier
+<&recipe>Ce bloc transfère les piles d'objets dans un boîtier industriel compact.<br>
+<br>
+Utilisation : orientez-le vers la ligne d'inventaires, puis réglez la portée, le nombre d'objets, la temporisation et le mode redstone dans son interface.<br>

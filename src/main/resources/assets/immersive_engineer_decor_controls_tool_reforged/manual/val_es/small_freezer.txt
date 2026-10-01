@@ -1,0 +1,5 @@
+Congelador d’aigua
+Unitat compacta de processament
+<&recipe>El congelador d’aigua fa treballs compactes de refredament per a sistemes de líquids alimentats amb energia.<br>
+<br>
+Ús: subministra aigua i energia per a produir gel per fases.<br>

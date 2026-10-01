@@ -1,0 +1,7 @@
+Sensor Cahaya
+Pengindraan sinyal
+<&recipe>Sensor cahaya mengubah kecerahan setempat menjadi kendali redstone.<br>
+<br>
+Penggunaan: gunakan untuk lampu otomatis, penutup jendela, dan rangkaian visibilitas.<br>
+<br>
+Catatan: mengeluarkan daya pada kecerahan mentah 8 atau lebih.

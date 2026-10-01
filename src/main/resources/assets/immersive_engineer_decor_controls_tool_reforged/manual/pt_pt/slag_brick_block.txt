@@ -1,0 +1,5 @@
+Bloco de tijolos de escória
+Alvenaria industrial densa
+<&recipe>Este bloco acrescenta alvenaria densa castanho-acinzentada para fundações, muros de contenção e oficinas antigas.<br>
+<br>
+Uso: Usa em fundações antigas, muros de contenção e pisos sujos de fábricas.<br>

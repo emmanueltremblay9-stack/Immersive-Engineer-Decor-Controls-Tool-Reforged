@@ -1,0 +1,5 @@
+Blīvas grantainas smiltis
+Darba vietas grunts segums
+<&recipe>Šis bloks piešķir āra darba laukumiem sablīvētu, nomīdītu virsmu.<br>
+<br>
+Lietošana: klāj pie iekraušanas durvīm, āra tvertnēm un mašīnu pagalmos.<br>

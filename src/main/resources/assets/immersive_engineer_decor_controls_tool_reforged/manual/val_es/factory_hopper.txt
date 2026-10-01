@@ -1,0 +1,5 @@
+Tremuja de fàbrica
+Equipament de terra de taller
+<&recipe>Este bloc mou piles d’objectes a través d’una carcassa industrial més compacta.<br>
+<br>
+Ús: orienta’l cap a la línia d’inventaris i ajusta l’abast, la quantitat de la pila, els temps i el mode de redstone en la seua pantalla.<br>

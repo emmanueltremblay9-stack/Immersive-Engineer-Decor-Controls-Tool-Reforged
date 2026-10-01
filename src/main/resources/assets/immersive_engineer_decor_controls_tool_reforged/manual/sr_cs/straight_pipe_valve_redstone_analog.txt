@@ -1,0 +1,5 @@
+Analogni ventil za tečnosti
+Oprema za vodove tečnosti
+<&recipe>Analogni ventil za tečnosti je kompaktan deo za male rezervoare, cevovode, mesta sakupljanja i protok kojim upravlja redstoun.<br>
+<br>
+Upotreba: poravnaj ventil sa željenim smerom protoka.<br>

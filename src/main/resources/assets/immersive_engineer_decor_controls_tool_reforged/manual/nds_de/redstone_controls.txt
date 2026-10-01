@@ -1,0 +1,789 @@
+Redstone-Stüern
+Meters un Tekendeelen
+Stüerapparaten maakt versteckt Redstone to afleesbare Fabrikpaneels, Sensoren, Anwiesers, Schaltern, Alarmen un verbunnen Tekendeelen.<br>
+<br>
+Bruuk disse Sieden, wenn du Bedeensteden, Tekenborden, Sekerheitsschaltungen un Fernstüern buust.
+<np>
+Pielteel
+Kort Puls
+<&arrow_target>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Düörsensor
+Redstone-Stüern
+<&door_sensor_switch>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Liftknop
+Redstone-Stüern
+<&elevator_button>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Glasknop
+Redstone-Stüern
+<&glass_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Glasknop
+Redstone-Stüern
+<&glass_small_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Glas-Anröhrknop
+Redstone-Stüern
+<&glass_touch_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Maschinenknop
+Redstone-Stüern
+<&industrial_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Knop
+Redstone-Stüern
+<&industrial_double_pole_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Maschinenknop mit Schutzbügel
+Redstone-Stüern
+<&industrial_fenced_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Kloppknop
+Redstone-Stüern
+<&industrial_knock_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Ole prunkvolle Knop
+Redstone-Stüern
+<&oldfancy_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Ole prunkvolle Knop
+Redstone-Stüern
+<&oldfancy_small_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Ole prunkvolle Kedenknop
+Kort Puls
+<&oldfancy_spring_reset_chain>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Buerige Knop
+Redstone-Stüern
+<&rustic_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Buerige Nagelknop
+Redstone-Stüern
+<&rustic_nail_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Lütte buerige Knop
+Redstone-Stüern
+<&rustic_small_button>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Buerige Kedenknop
+Kort Puls
+<&rustic_spring_reset_chain>En Korttiedschalter gifft en kloor Redstone-Puls mit vulle Stark.<br>
+<br>
+Bruuk: Bruuk em för Maschinenstart, Düörfrigaav, Alarm oder Schaltungen, de eenmal lopen schüllt.<br>
+<br>
+Anmarken: Sett sik na sien vörgeven Puls torüch.
+<np>
+Glaskontaktplaat
+Druckpuls
+<&glass_contact_mat>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Glasdüörkontakt
+Druckpuls
+<&glass_door_contact_mat>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Kontaktmatt
+Druckpuls
+<&industrial_contact_mat>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Düörkontaktmatt
+Druckpuls
+<&industrial_door_contact_mat>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Dörchfallsensor
+Tekenmeten
+<&industrial_fallthrough_detector>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Footknop
+Redstone-Stüern
+<&industrial_foot_button>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Industrie-Stootluuk
+Druckpuls
+<&industrial_high_sensitive_trapdoor>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Stootkontaktmatt
+Druckpuls
+<&industrial_shock_sensitive_contact_mat>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Stootluuk
+Druckpuls
+<&industrial_shock_sensitive_trapdoor>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Rode Stroomplant
+Druckpuls
+<&red_power_plant>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Buerige Drükplaat
+Druckpuls
+<&rustic_contact_plate>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Buerige Düördrükplaat
+Druckpuls
+<&rustic_door_contact_plate>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Buerige Dörchfallsensor
+Tekenmeten
+<&rustic_fallthrough_detector>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Buerige Stootluuk
+Druckpuls
+<&rustic_high_sensitive_trapdoor>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Buerige Stootplaat
+Druckpuls
+<&rustic_shock_sensitive_plate>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Buerige Stootluuk
+Druckpuls
+<&rustic_shock_sensitive_trapdoor>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Gele Stroomplant
+Druckpuls
+<&yellow_power_plant>En Kontaktschalter sendet en kort Teken, wenn sik op den Bodden oder an de Luuk wat beweegt.<br>
+<br>
+Bruuk: Sett em dor, wo Entitäten dörch en Wartoongsgang, en Laadsteed oder en bewaakten Weeg kaamt.<br>
+<br>
+Anmarken: Gifft kort en Puls na Kontakt mit en Entität.
+<np>
+Glas-Dagstiedklock
+Dagslichtteken
+<&glass_day_timer>En Tiedschalter folgt den Dagslichtdeel vun den Weltloop.<br>
+<br>
+Bruuk: Bruuk em för Hofflampen, Finsterluuken un Fabrikstüern, de bloots bi Dag lopen schüllt.<br>
+<br>
+Anmarken: Bruukt en Dimenschoon mit Himmelslicht.
+<np>
+Glasentitätensensor
+Tekenmeten
+<&glass_entity_detector>En Entitätensensor bekiekt Bewegen dichtbi, ahn en sichtbare Boddenplaat.<br>
+<br>
+Bruuk: Sluut em an Düörn, Lampen, Alarmen oder Maschinenverriegeln an.<br>
+<br>
+Anmarken: Söcht en lütt Rebeet üm den Block af.
+<np>
+Glasintervallteken
+Tiedpuls
+<&glass_interval_timer>En lütte Tiedschalter gifft en vörgeven Redstone-Puls.<br>
+<br>
+Bruuk: Bruuk em, wenn en lütt Mechanismus regelmäßig oder verzögert stüert warrn schall.<br>
+<br>
+Anmarken: Bruukt vörgeven Redstone-Pulsen.
+<np>
+Glas-Liniensensor
+Tekenmeten
+<&glass_linear_entity_detector>En Entitätensensor bekiekt Bewegen dichtbi, ahn en sichtbare Boddenplaat.<br>
+<br>
+Bruuk: Sluut em an Düörn, Lampen, Alarmen oder Maschinenverriegeln an.<br>
+<br>
+Anmarken: Söcht en lütt Rebeet üm den Block af.
+<np>
+Blocksensor
+Tekenmeten
+<&industrial_block_detector>En Blocksensor pröövt, wat de Ruum vör em besett is.<br>
+<br>
+Bruuk: Richt em op de Maschinensiet, den Puffer oder den bewaakten Ruum, den du in't Oog behollen wullt.<br>
+<br>
+Anmarken: Gifft Energie, wenn de Block vör em keen Luft is.
+<np>
+Dagstiedklock
+Dagslichtteken
+<&industrial_day_timer>En Tiedschalter folgt den Dagslichtdeel vun den Weltloop.<br>
+<br>
+Bruuk: Bruuk em för Hofflampen, Finsterluuken un Fabrikstüern, de bloots bi Dag lopen schüllt.<br>
+<br>
+Anmarken: Bruukt en Dimenschoon mit Himmelslicht.
+<np>
+Entitätensensor
+Tekenmeten
+<&industrial_entity_detector>En Entitätensensor bekiekt Bewegen dichtbi, ahn en sichtbare Boddenplaat.<br>
+<br>
+Bruuk: Sluut em an Düörn, Lampen, Alarmen oder Maschinenverriegeln an.<br>
+<br>
+Anmarken: Söcht en lütt Rebeet üm den Block af.
+<np>
+Intervallklock
+Tiedpuls
+<&industrial_interval_timer>En lütte Tiedschalter gifft en vörgeven Redstone-Puls.<br>
+<br>
+Bruuk: Bruuk em, wenn en lütt Mechanismus regelmäßig oder verzögert stüert warrn schall.<br>
+<br>
+Anmarken: Bruukt vörgeven Redstone-Pulsen.
+<np>
+Lichtsensor
+Tekenmeten
+<&industrial_light_sensor>En Lichtsensor maakt de Helligkeit vör Ort to Redstone-Stüern.<br>
+<br>
+Bruuk: Bruuk em för automaatsche Lampen, Luuken un Sichtschaltungen.<br>
+<br>
+Anmarken: Gifft Energie bi en rohe Helligkeit vun 8 oder mehr.
+<np>
+Dunnerwedersensor
+Tekenmeten
+<&industrial_lightning_sensor>En Dunnerwedersensor lööst bi Dunner Wohrschaun ut.<br>
+<br>
+Bruuk: Sett em ünner frien Himmel un sluut em an Lampen oder Alarmen an.<br>
+<br>
+Anmarken: Bruukt Dunner un frien Himmelskiek.
+<np>
+Linienentitätensensor
+Tekenmeten
+<&industrial_linear_entity_detector>En Entitätensensor bekiekt Bewegen dichtbi, ahn en sichtbare Boddenplaat.<br>
+<br>
+Bruuk: Sluut em an Düörn, Lampen, Alarmen oder Maschinenverriegeln an.<br>
+<br>
+Anmarken: Söcht en lütt Rebeet üm den Block af.
+<np>
+Regensensor
+Tekenmeten
+<&industrial_rain_sensor>En Wedersensor maakt Regen op sien Steed to Redstone.<br>
+<br>
+Bruuk: Maak em dor fast, wo de Block över em Regen kriegen kann.<br>
+<br>
+Anmarken: Pröövt Regen över den Sensor.
+<np>
+Bistabile Glasschalter
+Redstone-Stüern
+<&glass_rotary_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Bistabile Glas-Anröhrschalter
+Redstone-Stüern
+<&glass_touch_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Geelroot empfindlich Glas
+Tekenglas
+<&orange_sensitiveglass>En Redstone-empfindliche Glasblock lett di dörchkieken un wiest dorbi den Tekenstand.<br>
+<br>
+Bruuk: Bruuk em in Stüerruumfinstern, lüchten Paneels un schützt Fabrikglas.<br>
+<br>
+Anmarken: Wesselt den Stand dörch Redstone dichtbi.
+<np>
+Lüchten empfindlich Glas
+Tekenglas
+<&sensitive_glass_block>En Redstone-empfindliche Glasblock lett di dörchkieken un wiest dorbi den Tekenstand.<br>
+<br>
+Bruuk: Bruuk em in Stüerruumfinstern, lüchten Paneels un schützt Fabrikglas.<br>
+<br>
+Anmarken: Wesselt den Stand dörch Redstone dichtbi.
+<np>
+Farvig empfindlich Glas
+Tekenglas
+<&stained_sensitiveglass>En Redstone-empfindliche Glasblock lett di dörchkieken un wiest dorbi den Tekenstand.<br>
+<br>
+Bruuk: Bruuk em in Stüerruumfinstern, lüchten Paneels un schützt Fabrikglas.<br>
+<br>
+Anmarken: Wesselt den Stand dörch Redstone dichtbi.
+<np>
+Glasbalkenmeter
+Tekenmeter
+<&glass_vertical_bar_gauge>En lütte Meter för den Stüerruum wiest de Redstone-Stark düütlich op en Paneel.<br>
+<br>
+Bruuk: Maak em dor fast, wo du dat Redstone dichtbi mit een Blick pröven wullt.<br>
+<br>
+Anmarken: Leest Redstone-Stark vun 0 bet 15 dichtbi af.
+<np>
+Analoge Meter
+Tekenmeter
+<&industrial_analog_angular_gauge>En lütte Meter för den Stüerruum wiest de Redstone-Stark düütlich op en Paneel.<br>
+<br>
+Bruuk: Maak em dor fast, wo du dat Redstone dichtbi mit een Blick pröven wullt.<br>
+<br>
+Anmarken: Leest Redstone-Stark vun 0 bet 15 dichtbi af.
+<np>
+Voltmeter
+Tekenmeter
+<&industrial_analog_horizontal_gauge>En lütte Meter för den Stüerruum wiest de Redstone-Stark düütlich op en Paneel.<br>
+<br>
+Bruuk: Maak em dor fast, wo du dat Redstone dichtbi mit een Blick pröven wullt.<br>
+<br>
+Anmarken: Leest Redstone-Stark vun 0 bet 15 dichtbi af.
+<np>
+Digitale Meter
+Afleesbare Tekenstark
+<&industrial_small_digital_gauge>En lütte Meter för den Stüerruum wiest de Redstone-Stark düütlich op en Paneel.<br>
+<br>
+Bruuk: Maak em dor fast, wo du dat Redstone dichtbi mit een Blick pröven wullt.<br>
+<br>
+Anmarken: Leest Redstone-Stark vun 0 bet 15 dichtbi af.
+<np>
+Glasröhrenmeter
+Tekenmeter
+<&industrial_tube_gauge>En lütte Meter för den Stüerruum wiest de Redstone-Stark düütlich op en Paneel.<br>
+<br>
+Bruuk: Maak em dor fast, wo du dat Redstone dichtbi mit een Blick pröven wullt.<br>
+<br>
+Anmarken: Leest Redstone-Stark vun 0 bet 15 dichtbi af.
+<np>
+Analoge Balkenmeter
+Tekenmeter
+<&industrial_vertical_bar_gauge>En lütte Meter för den Stüerruum wiest de Redstone-Stark düütlich op en Paneel.<br>
+<br>
+Bruuk: Maak em dor fast, wo du dat Redstone dichtbi mit een Blick pröven wullt.<br>
+<br>
+Anmarken: Leest Redstone-Stark vun 0 bet 15 dichtbi af.
+<np>
+Alarmlamp
+Tekentorüchmellen
+<&industrial_alarm_lamp>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Alarmsireen
+Tekentorüchmellen
+<&industrial_alarm_siren>De Alarmsireen is en Redstone-Wieser op de Siet vun en Block. Ehr Stroomstand folgt dat Signaal vun den Block, an den se fastmaakt is.<br>
+<br>
+Maak se an en faste Siet un geev Stroom, üm Dören, Maschinen, Alarm oder Paneelen to överwaken.<br>
+<br>
+De Sireen frischt sik eenmaal per Sekunn op, solang dat Signaal aktiv is.
+<np>
+Blinkende LED
+Tekentorüchmellen
+<&industrial_blinking_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Grööne blinkende LED
+Tekentorüchmellen
+<&industrial_green_blinking_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Grööne LED
+Tekentorüchmellen
+<&industrial_green_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Rode LED
+Tekentorüchmellen
+<&industrial_red_blinking_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Rode LED
+Tekentorüchmellen
+<&industrial_red_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Witte blinkende LED
+Tekentorüchmellen
+<&industrial_white_blinking_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Witte LED
+Tekentorüchmellen
+<&industrial_white_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Gele blinkende LED
+Tekentorüchmellen
+<&industrial_yellow_blinking_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Gele LED
+Tekentorüchmellen
+<&industrial_yellow_led>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Buerige Semafoor
+Tekentorüchmellen
+<&rustic_semaphore>En lütte Anwieser maakt versteckt Redstone in de Fabrik sichtbaar.<br>
+<br>
+Bruuk: Sluut em blangen dat Teken an, üm Düörn, Maschinen, Alarmen oder Paneels to bewaken.<br>
+<br>
+Anmarken: Wesselt sien Stand, wenn Redstone-Energie dichtbi anliggt.
+<np>
+Komparatorschalter
+Teken vun den Dragblock
+<&industrial_comparator_switch>En lütte Sensorschalter leest den Block, wo he op sitt, un maakt dor en eenfache Paneelutgaav ut.<br>
+<br>
+Bruuk: Maak em op Lagern, Tanks oder Redstone-Apparaten fast. Wenn de Block Komparator-, Beholler- oder Redstone-Utgaav meldt, gifft de Schalter Redstone mit vulle Stark.<br>
+<br>
+Anmarken: So maakst du Lagerstänn oder versteckte Drahten to düütliche An-/Utstüerleitungen.
+<np>
+Dimmer
+Ännerbaar Teken
+<&industrial_dimmer>En Dreihregler stellt vun en lütte Paneelflach de Redstone-Stark in.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav Stoop för Stoop höger to setten un na vulle Stark wedder bi null antofangen.<br>
+<br>
+Anmarken: Gifft Stark vun 0 bet 15.
+<np>
+Noodstoppknop
+Redstone-Stüern
+<&industrial_estop_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Trächterstopper
+Redstone-Stüern
+<&industrial_hopper_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Kloppschalter
+Redstone-Stüern
+<&industrial_knock_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Hiäwel
+Redstone-Stüern
+<&industrial_lever>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Maschinenschalter mit twee Knööp
+Redstone-Stüern
+<&industrial_machine_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Toggriff
+Redstone-Stüern
+<&industrial_pull_handle>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Dreihhiäwel
+Redstone-Stüern
+<&industrial_rotary_lever>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Maschinen-Dreihschalter
+Redstone-Stüern
+<&industrial_rotary_machine_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Kontakthiäwel
+Redstone-Stüern
+<&industrial_small_lever>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Schalter
+Redstone-Stüern
+<&industrialswitch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Lichtschalter
+Redstone-Stüern
+<&light_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Ventielschalter
+Redstone-Stüern
+<&valve_wheel_switch>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Pulsempfanger in en Kast
+Verbunnen Stüern
+<&industrial_switchlink_cased_pulse_receiver>En verbunnen Pulsempfanger in en Kast gifft feerne Paneels en korte Redstone-Utlöser.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Rechtsklick op den Empfanger oder löös de verbunnen Parrel ut, üm en korten Puls to geven.<br>
+<br>
+Anmarken: De Puls sett sik na sien vörgeven Tied sülven torüch.
+<np>
+Linkempfanger in en Kast
+Verbunnen Stüern
+<&industrial_switchlink_cased_receiver>En verbunnen Empfanger in en Kast gifft feerne Paneels en robustes Redstone-Teel.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Rechtsklick direkt op den Empfanger, üm em mit de Hand ümtostellen.<br>
+<br>
+Anmarken: En verbunnen Parrel stellt dissen Empfanger üm, wenn du ehr bi't Sliken bruukst.
+<np>
+Pulslinkempfanger
+Verbunnen Stüern
+<&industrial_switchlink_pulse_receiver>En verbunnen Pulsempfanger gifft feerne Paneels en korte Redstone-Utlöser.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Rechtsklick op den Empfanger oder löös de verbunnen Parrel ut, üm en korten Puls to geven.<br>
+<br>
+Anmarken: De Puls sett sik na sien vörgeven Tied sülven torüch.
+<np>
+Pulslinkrelé
+Verbunnen Stüern
+<&industrial_switchlink_pulse_relay>En Deel in Reléstil gifft Paneelbauten en lütten Schaltpunkt vör Ort.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen. Bruuk Empfangerblöck, wenn du Utlösen mit en verbunnen Parrel bruukst.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Schaltlinkempfanger
+Verbunnen Stüern
+<&industrial_switchlink_receiver>En verbunnen Empfanger gifft feerne Paneels en Redstone-Teel mit vulle Stark.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Rechtsklick direkt op den Empfanger, üm em mit de Hand ümtostellen.<br>
+<br>
+Anmarken: En verbunnen Parrel stellt dissen Empfanger üm, wenn du ehr bi't Sliken bruukst.
+<np>
+Analoge Linkempfanger
+Verbunnen Stüern
+<&industrial_switchlink_receiver_analog>En verbunnen Empfanger gifft Stüerpaneels en sichtbaar Teel in de Feern.<br>
+<br>
+Bruuk: Klick mit en Enderparrel dorop, üm en verbunnen Parrel to maken. Bruuk de Parrel bi't Sliken, üm den Empfanger ut de Feern to bedenen.<br>
+<br>
+Anmarken: Disse Empfanger gifft en vull Redstone-Teken, wenn he utlööst warrt.
+<np>
+Schaltlinkrelé
+Verbunnen Stüern
+<&industrial_switchlink_relay>En Deel in Reléstil gifft Paneelbauten en lütten Schaltpunkt vör Ort.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen. Bruuk Empfangerblöck, wenn du Utlösen mit en verbunnen Parrel bruukst.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Analog Linkrelé
+Verbunnen Stüern
+<&industrial_switchlink_relay_analog>En Deel in Reléstil gifft Paneelbauten en lütten Schaltpunkt vör Ort.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen. Bruuk Empfangerblöck, wenn du Utlösen mit en verbunnen Parrel bruukst.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Schaltlinkparrel
+Verbunnen Stüern
+<&switchlink_pearl>En verbunnen Parrel spiekert en Empfangerteel för Fabrikfernstüern.<br>
+<br>
+Bruuk: Klick mit en Enderparrel op en Schaltlinkempfanger, üm een to maken. Bruuk de verbunnen Parrel bi't Sliken, üm den spiekerten Empfanger to bedenen.<br>
+<br>
+Anmarken: Dat Teel mutt laadt, in de sülve Dimenschoon un binnen de Riekwied wesen.
+<np>
+Ole prunkvolle Hiäwel
+Redstone-Stüern
+<&oldfancy_bistableswitch1>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Ole prunkvolle Dreihhiäwel
+Redstone-Stüern
+<&oldfancy_bistableswitch2>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Buerige Dreihhiäwel
+Redstone-Stüern
+<&rustic_angular_lever>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Buerige Hiäwel
+Redstone-Stüern
+<&rustic_lever>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Buerige Nagelhiäwel
+Redstone-Stüern
+<&rustic_nail_lever>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.
+<np>
+Buerige Hiäwel mit twee Scharnieren
+Redstone-Stüern
+<&rustic_two_hinge_lever>En lütt Stüerdeel gifft Fabrikbauten en düütlichen Redstone-Schaltpunkt.<br>
+<br>
+Bruuk: Rechtsklick, üm de Utgaav mit vulle Stark för Schaltungen dichtbi an- oder uttostellen.<br>
+<br>
+Anmarken: Gifft Redstone mit vulle Stark, solang he an is.

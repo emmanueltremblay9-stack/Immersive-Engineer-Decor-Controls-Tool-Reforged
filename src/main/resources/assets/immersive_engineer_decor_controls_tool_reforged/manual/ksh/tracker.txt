@@ -1,0 +1,7 @@
+Spuursöker
+Jespeicherte Plätzmarkierung
+<&recipe>Dä Spuursöker speichert de Position vun einem Block direk em Jäjestand.<br>
+<br>
+Jebruch: Klick op ene Block, öm Dimension un Koordinate ze speichere. Dä Tooltip zeijt dä Platz. Bruch dä Spuursöker beim Schleiche, öm et Ziel ze lösche.<br>
+<br>
+Bruch en, öm Maschine, Tunnelavzweijunge, Fäänstüerunge udder onfädije Baustelle ze markiere, ih de met Werkzüch un Material zoröckkütts.

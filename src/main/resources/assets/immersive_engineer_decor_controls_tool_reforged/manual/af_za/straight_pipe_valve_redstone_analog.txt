@@ -1,0 +1,5 @@
+Analoë Vloeistofklep
+Vloeistoflyntoerusting
+<&recipe>Die Analoë Vloeistofklep is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: rig die klep volgens die gewenste vloeirigting.<br>

@@ -1,0 +1,7 @@
+Medidor digital
+Intensidad de señal legible
+<&recipe>Un medidor compacto de sala de control muestra la intensidad de redstone mediante una lectura clara en el panel.<br>
+<br>
+Uso: Montalo donde puedas comprobar de un vistazo la señal de redstone cercana.<br>
+<br>
+Notas: Lee la intensidad de redstone cercana, de 0 a 15.

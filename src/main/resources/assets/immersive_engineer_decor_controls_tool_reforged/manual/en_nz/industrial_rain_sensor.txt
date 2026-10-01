@@ -1,0 +1,7 @@
+Rain Sensor
+Signal sensing
+<&recipe>A weather sensor turns rainfall at its position into redstone.<br>
+<br>
+Usage: Mount it where the block above can receive rain.<br>
+<br>
+Notes: Checks rain above the sensor.

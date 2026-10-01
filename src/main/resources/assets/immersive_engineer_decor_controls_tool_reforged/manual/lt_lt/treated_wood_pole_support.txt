@@ -1,0 +1,5 @@
+Apdorotos medienos stulpo atrama
+Karkaso dalis
+<&recipe>Tiesaus apdorotos medienos stulpo atrama suteikia matomą konstrukcinę atramą mašinų salėms ir priėjimo rėmams.<br>
+<br>
+Naudojimas: pasuk ir pastatyk kaip matomą sijų, stulpų ir platformų kraštų sutvirtinimą.<br>

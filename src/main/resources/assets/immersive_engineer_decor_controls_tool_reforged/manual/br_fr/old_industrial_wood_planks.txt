@@ -1,0 +1,5 @@
+Plankennoù koad kozh
+Koad atalier kozh
+<&recipe>Ar plankennoù koad kozh greantel a ouzhpenn koad atalier kozh evit leurioù, pazioù, dorioù ha ribloù diabarzh tomm.<br>
+<br>
+Implij: Implijit anezhañ evit leurioù, diri, dorioù ha ribloù atalieroù kozh.<br>

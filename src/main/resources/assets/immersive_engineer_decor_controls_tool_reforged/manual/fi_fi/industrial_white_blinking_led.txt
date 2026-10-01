@@ -1,0 +1,7 @@
+Valkoinen vilkkuva LED
+Signaalipalaute
+<&recipe>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.

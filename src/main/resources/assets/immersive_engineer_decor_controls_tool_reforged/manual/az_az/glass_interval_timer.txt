@@ -1,0 +1,7 @@
+Şüşə aralıqlı siqnal
+Vaxtlanmış impuls
+<&recipe>Yığcam taymer açarı təyin edilmiş vaxtda qızıl daş impulsu verir.<br>
+<br>
+İstifadə: Kiçik mexanizmə dövri və ya gecikdirilmiş idarəetmə lazım olan yerlərdə istifadə edin.<br>
+<br>
+Qeydlər: Vaxtı təyin edilmiş qızıl daş impulslarından istifadə edir.

@@ -1,0 +1,7 @@
+Pression de porte de campègne
+Pouls par pression
+<&recipe>Un interrupteur a contact envoie un court signa depés le mouvement du sol ou d'eune trape.<br>
+<br>
+Empllai : Pllacéz-le la où qe les entités passent den eune allée de service, un charjou ou eune voie gardée.<br>
+<br>
+Notes : Doune un court pouls aprés le contact d'eune entitë.

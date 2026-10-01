@@ -1,0 +1,5 @@
+Forsænket gulvkantlampe
+Kompakt arbejdslys
+<&recipe>Denne blok giver kompakt industribelysning til gange, gangbroer og arbejdsbåse.<br>
+<br>
+Brug: Monter den i lofter, på vægge eller langs kanter, hvor rummet kræver tydelig arbejdsbelysning.<br>

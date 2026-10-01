@@ -1,0 +1,5 @@
+Fatia de laje de madeira antiga
+Madeira envelhecida de oficina
+<&recipe>A fatia de laje industrial de madeira antiga acrescenta madeira envelhecida de oficina para pisos, degraus, portas e remates internos aconchegantes.<br>
+<br>
+Uso: Usa em pisos, escadas, portas e remates de oficinas antigas.<br>

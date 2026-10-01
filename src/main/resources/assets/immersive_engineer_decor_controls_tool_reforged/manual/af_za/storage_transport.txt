@@ -1,0 +1,41 @@
+Berging en Vervoer
+Voorraad- en vloeioorvoertoebehore
+Bergings- en vervoertoebehore hanteer kratte, vate, tregters en kleppe vir kompakte fabrieksroetes.<br>
+<br>
+Gebruik hierdie bladsye wanneer jy stoorkamers, pyplyne, dienstetenks en beheerde vloeistoflyne uitlê.
+<np>
+Krat met Etiket
+Wysigbare voorraadetiket
+<&labeled_crate>Hierdie krat met etiket is vir duidelike sortering in die stoorkamer gemaak. Sy voorplaat kan soos ’n klein werkswinkelteken gewysig word.<br>
+<br>
+Gebruik: regsklik die etiketplaat om die kratetiket te wysig. Regsklik die res van die krat om berging vir toebehore, onderdele en onderhoudsvoorraad oop te maak.<br>
+<np>
+Vloeistofvat
+Vloeistoflyntoerusting
+<&fluid_barrel>Hierdie toebehoor is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: plaas dit waar pype of emmers die tenkvlak kan bereik.<br>
+<np>
+Vloeistofversameltregter
+Vloeistoflyntoerusting
+<&small_fluid_funnel>Die Klein Vloeistofversameltregter is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: plaas dit onder die vloeistofversamelpunt en lei sy gestoorde inhoud na tenks of laer pypwerk.<br>
+<np>
+Vloeistofpyp-terugslagklep
+Vloeistoflyntoerusting
+<&straight_pipe_valve>Die Vloeistofterugslagklep is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: rig die klep volgens die gewenste vloeirigting.<br>
+<np>
+Redstone-vloeistofklep
+Vloeistoflyntoerusting
+<&straight_pipe_valve_redstone>Die Redstone-vloeistofklep is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: rig die klep volgens die gewenste vloeirigting.<br>
+<np>
+Analoë Vloeistofklep
+Vloeistoflyntoerusting
+<&straight_pipe_valve_redstone_analog>Die Analoë Vloeistofklep is ’n kompakte vloeistoflyndeel vir klein tenks, pyplyne, versamelpunte en redstone-beheerde vloei.<br>
+<br>
+Gebruik: rig die klep volgens die gewenste vloeirigting.<br>

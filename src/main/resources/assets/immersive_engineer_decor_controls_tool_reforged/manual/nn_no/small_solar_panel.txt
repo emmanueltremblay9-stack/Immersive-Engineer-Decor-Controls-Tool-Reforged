@@ -1,0 +1,5 @@
+Solcellepanel
+Hjelpemiddel på fabrikkgolvet
+<&recipe>Det vesle solcellepanelet er ei nytteblokk for fabrikkgolvet, innan emning, lagring, plassering, bryting, innsamling eller kompakt automatisering.<br>
+<br>
+Bruk: gje det open himmel og kople til utstyr med lite forbruk.<br>

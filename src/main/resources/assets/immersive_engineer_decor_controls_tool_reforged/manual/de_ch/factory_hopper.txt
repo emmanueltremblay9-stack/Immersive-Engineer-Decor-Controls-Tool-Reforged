@@ -1,0 +1,5 @@
+Fabrik-Trichter
+Hilfsgrät für d'Werkstatt
+<&recipe>Dä Block bewegt Gägestandsstapel dur es ängers Industrieghüüs.<br>
+<br>
+Verwendig: Richt en zur Inventarstrecke uus und stell Riichwiiti, Stapelmängi, Ziitverhalte und Redstone-Modus ide Oberflächi ii.<br>

@@ -1,0 +1,7 @@
+Sklenená nášľapná doska
+Impulz z tlaku
+<&recipe>Kontaktný spínač vyšle krátky signál pri pohybe na podlahe alebo poklope.<br>
+<br>
+Použitie: Umiestni ho tam, kde entity prechádzajú servisnou uličkou, nakladačom alebo chránenou trasou.<br>
+<br>
+Poznámky: Po kontakte s entitou vyšle krátky impulz.

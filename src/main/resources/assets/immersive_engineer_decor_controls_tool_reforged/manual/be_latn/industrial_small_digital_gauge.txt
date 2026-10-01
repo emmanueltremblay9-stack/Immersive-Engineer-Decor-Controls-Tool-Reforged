@@ -1,0 +1,7 @@
+Ličbavy vymiaralnik
+Vyraznaja siła sihnału
+<&recipe>Kampaktny vymiaralnik dla dyspietčarskaj vyrazna pakazvaje siłu redstonu na paneli.<br>
+<br>
+Vykarystannie: ustaluj jaho tam, dzie siłu susiedniaha redstonavaha sihnału možna pravieryć adnym pohladam.<br>
+<br>
+Zaŭvahi: sčytvaje siłu susiedniaha redstonavaha sihnału ad 0 da 15.

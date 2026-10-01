@@ -1,0 +1,99 @@
+Orudja inženera
+Prěnosno vybavjenje rabotilnje
+Sostav orudij inženera dodavaje ručno vybavjenje, rudnične značky, avarijne potrošne prědmety, poljnu jedu i male pomočne ustrojstva za obrabotku materialov v toj samy priručnik, ktory pokryvaje ozdobne i upravne bloky.<br>
+<br>
+Te orudja sut za dělo daleko od polno vybavjene rabotilnje: označaj put, nosi zalihe, opravjaj slědstva pogrěšek i završaj male obrabotne děla na městu.
+<np>
+Orudje REDIA
+Pribor pokryty diamantami
+<&redia_tool>Orudje REDIA jest trajny poljny pribor dlja bystroj raboty s zemjeju. Upotrěbi go na obrabotivoj zemji dlja oranja oranice.<br>
+<br>
+Upotrěbi go na stabilnoj straně, noseči faklje, dlja stavjanja fakljovoj značky iz orudovanja bez sniženja trajnosti REDIA. Rabota s zemjeju, striženje, rabota sěkyroju i srubanje drěv potrěbujut trajnost.
+<np>
+Molot dlja drobljenja rudy
+Ručne drobilne orudje
+<&crushing_hammer>Molot dlja drobljenja rudy jest ručno orudje za rannu obrabotku želěza i zlata.<br>
+<br>
+Upotrěbjenje: Tvori go s syrovym želězom, syrovym zlatom, želěznoj rudoju, glubokoslančevoj želěznoj rudoju, zlatoj rudoju ili glubokoslančevoj zlatoj rudoju, da dobudeš prah želěza ili zlata Immersive Engineering. Molot gubi trajnost i vrača se v sětku do razbitja.<br>
+<br>
+Takože gubi trajnost pri kopanju i može odmetati cělje v blizkom boju.
+<np>
+Slěditelj
+Označatelj uloženogo položenja
+<&tracker>Slěditelj hrani položenje bloka prěmo v prědmetu.<br>
+<br>
+Upotrěbjenje: Klikni blok, da sohraniš dimenziju i koordinate. Podskazka pokazuje položenje. Upotrěbi slěditelj pri prigibanju, da odstraniš cělj.<br>
+<br>
+Upotrěbi go dlja označanja mašin, razvětvenij tunelov, oddalenyh upravnyh ustrojstv ili nezavršenih budovnych měst prěd vrnjenjem s orudjami i materialami.
+<np>
+Vugolj Ariadne
+Označatelj puti v rudniku
+<&ariadne_coal>Vugolj Ariadne bystro stavi črne strělne putne značky na stabilnyh stranah rudnika. Upotrěbi go na tverdoj straně dlja označenja slědujučego obrata, izhoda ili razvětvenja; značka poddrživaje vosem směrov kliknutoj povrhnosti, vključajuči diagonalne.<br>
+<br>
+Vugolj Ariadne jest ponovno upotrěbimo označateljno orudje s 100 upotrěbjenjami. Vsako uspěšno stavjanje značky potrěbuje jednu jedinicu trajnosti. Odmětaje nepoddržane strany vměsto sniženja trajnosti prědmeta.
+<np>
+Avtomatična stim-kapsula
+Avarijny injektor
+<&stimpack>Avtomatična stim-kapsula jest avarijno medicinsko orudje za nebezpečnu obslugu.<br>
+<br>
+Upotrěbjenje: Upotrěbi ju ručno za izcěljenje, kratku zaščitu i kratko uskorjenje. V orudovanju može se avtomatično aktivovati pri nizkom zdravju, potom vhodi v ohladženje.<br>
+<br>
+Drži jednu dostupnu prěd probami na vysokyh městah, pri odkrytyh provodah ili na neprijateljskyh rudničnyh putjah.
+<np>
+Spalny měh
+Prěnosny pribor za odpočinek
+<&sleeping_bag>Spalny měh jest pogodootporny pribor za odpočinek daleko od ležišča.<br>
+<br>
+Upotrěbjenje: Upotrěbi go nočju v Overworldu, da odpočineš do jutra. Ne ustanjuje ni prěměšča města prěrodženja.<br>
+<br>
+Otkazuje dnevno upotrěbjenje, nebezpečnu okolinu s blizkymi čudovišči i dimenzije, neugodny za bezopasny odpočinek. Vsaky uspěšny odpočinek troši měh.
+<np>
+Skladova skrinja dlja materialov
+Skrinja budovnyh zalih
+<&material_box>Skladova skrinja dlja materialov nosi veliku zalihu jednogo prostogo, neizměnjenogo i skladanogo budovnogo materiala.<br>
+<br>
+Upotrěbjenje: Drži skrinju v glavnoj rukě i kupu materiala v drugoj, da ju napolniš. Upotrěbi skrinju s prazdnoj drugoj rukoju, da izvadiš jednu kupu.<br>
+<br>
+Hrani do 512 prědmetov jednogo roda. Otkazuje vgněždene skrinje, neskladano orudje i prěimenovane ili podatkami izměnjene kupy; podskazka pokazuje sodržanje.
+<np>
+Potapjačka vozdušna kapsula
+Avarijna vozdušna zaliha
+<&diving_capsule>Potapjačka vozdušna kapsula jest avarijna zaliha vozduha za rabotu pod vodoju.<br>
+<br>
+Upotrěbjenje: Upotrěbi ju ručno, da obnoviš vozduh. V orudovanju može se takože avtomatično aktivovati, kogda vozduh skoro izčezne, potom vhodi v ohladženje.<br>
+<br>
+Nosi ju dlja potopjenyh rudnikov, podvodnyh trubnih putij i poprav v pumpnyh komorah.
+<np>
+Pres dlja pločic Muslee
+Pres dlja jedy
+<&musli_bar_press>Pres dlja pločic Muslee prětvarja obyčnu jedu v kompaktne poljeve racije.<br>
+<br>
+Upotrěbjenje: Nosi hlěb, jabloko i sěme pšenice, dynje, tykvy, cvekly ili Industrial Hemp, potom upotrěbi pres. Uspěšno presovanje potrěbuje jedno iz vsakogo, prověrja město, tvori četyri pločice Muslee Melange i povrědžuje pres.<br>
+<br>
+Ako nedostaje ingredient ili nema města v orudovanju, ničto ne potrěbuje se.
+<np>
+Energetična pločica Muslee Melange
+Bystra zakuska v rabotilnji
+<&musli_bar>Energetična pločica Muslee Melange jest kompaktna jeda iz hlěba, sěmen i ovoca.<br>
+<br>
+Upotrěbjenje: Jedi ju kak poljnu jedu pri stavjanju upravnyh ustrojstv, trub, ploščin ili dolgyh linij v mašinnoj komorě.
+<np>
+Umova iztiskivača
+Kondensator opyta
+<&charged_lapis_squeezer>Umova iztiskivača prětvarjaje jedin lazurit i jedin urovnj opyta iz tvojego orudovanja v nabity lazurit.<br>
+<br>
+Pri vsakom uspěšnom prětvorjenju proces rani koristnika, vyzyvaje izčrpanost, ktora povyšaje glad, i kratko go oslepljaje. Odmětaje rabotati bez lazurita, bez XP ili kogda koristnik jest prěblizko smrti.
+<np>
+Nabity lazurit
+Uloženy opyt
+<&charged_lapis>Nabity lazurit hrani jedin urovnj opyta. Upotrěbi go dlja vrnjenja urovnja, odstranjenja aktivnyh efektov i obnovjenja malogo množstva zdravja.<br>
+<br>
+Prvo iztvori umovu iztiskivaču; nabity lazurit se proizvodi upotrěbjenjem togo orudja pri dostupnosti lazurita i XP.
+<np>
+Gruby želězny drobok
+Material orudij inženera, upotrěbjany rekonstruovanym sostavom tvorjenja.
+<&iron_grit>Možno go stopiti v želězne<br>kovky, ale ne jest prigodny dlja<br>naprednoj obrabotky materialov.
+<np>
+Gruby zlaty drobok
+Material orudij inženera, upotrěbjany rekonstruovanym sostavom tvorjenja.
+<&gold_grit>Možno go stopiti v zlate<br>kovky, ale ne jest prigodny dlja<br>naprednoj obrabotky materialov.

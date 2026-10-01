@@ -1,0 +1,7 @@
+Presa za Muslee pločice
+Presa za hranu
+<&recipe>Običnu hranu pretvara u kompaktne terenske obroke.<br>
+<br>
+Upotreba: Hljeb, jabuka i sjemenka pšenice, lubenice, bundeve, cikle ili industrijske konoplje. Uspješno presovanje troši po jednu, provjerava mjesto, stvara četiri pločice i oštećuje presu.<br>
+<br>
+Ako nešto nedostaje ili nema mjesta, ništa se ne troši.

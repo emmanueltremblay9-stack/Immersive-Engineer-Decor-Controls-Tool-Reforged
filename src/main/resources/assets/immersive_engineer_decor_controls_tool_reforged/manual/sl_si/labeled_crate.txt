@@ -1,0 +1,5 @@
+Zaboj z oznako
+Uredljiva oznaka zaloge
+<&recipe>Ta zaboj z oznako omogoča jasno razvrščanje v skladišču. Njegovo sprednjo ploščico lahko urejaš kot majhno delavniško tablo.<br>
+<br>
+Uporaba: Z desnim klikom na ploščico uredi oznako zaboja. Z desnim klikom na preostanek zaboja odpri shrambo za opremo, dele in vzdrževalne zaloge.<br>

@@ -1,0 +1,7 @@
+Variatou
+Signa variabl
+<&recipe>Eune comande a tourner reglle la force de redstone depés eune petite face de paniao.<br>
+<br>
+Empllai : Fezéz un clic dret pour monter la sortie d'un cran, pis revenir a zéro aprés la plleine force.<br>
+<br>
+Notes : Sort eune force de 0 a 15.

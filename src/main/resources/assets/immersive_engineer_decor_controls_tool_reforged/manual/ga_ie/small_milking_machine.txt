@@ -1,0 +1,5 @@
+Meaisín Crúite
+Áis urláir ceardlainne
+<&recipe>Is bloc áisiúil urláir ceardlainne é an Meaisín Beag Crúite le haghaidh ceardaíochta, stórála, leagan bloc, briste, bailithe nó uathoibrithe dhlúith.<br>
+<br>
+Úsáid: cuir in aice le ba é agus cuir bealach ar fáil chun coimeádáin bhainne nó sreabhán a bhaint amach.<br>

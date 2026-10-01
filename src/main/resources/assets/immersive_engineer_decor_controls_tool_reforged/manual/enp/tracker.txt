@@ -1,0 +1,7 @@
+Tracker
+Stored stead marker
+<&recipe>Heed this: The Tracker stores a block stead directly in the thing.<br>
+<br>
+Usage: Click a block to save its world-room and bearings. The helptext shows the stored stead. Sneak-use the Tracker to clear the target.<br>
+<br>
+Use it to mark machines, tunnel branches, remote controls, or unfinished building sites before returning with tools and stuffs.

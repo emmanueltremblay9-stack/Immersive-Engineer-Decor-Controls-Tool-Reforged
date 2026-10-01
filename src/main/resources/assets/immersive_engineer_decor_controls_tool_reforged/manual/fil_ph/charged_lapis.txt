@@ -1,0 +1,7 @@
+May Kargang Lapis
+Nakaimbak na karanasan
+<&recipe>Nag-iimbak ang May Kargang Lapis ng isang antas ng karanasan na ginawa sa Pampiga ng Isip.<br>
+<br>
+Paggamit: Kainin upang mabawi ang isang antas, alisin ang mga aktibong epekto at maibalik ang kaunting buhay.<br>
+<br>
+Ipinapakita ng kahon ng resipe ang Pampiga ng Isip dahil ginagawa ang May Kargang Lapis sa paggamit ng kasangkapang iyon habang may lapis at XP.

@@ -1,0 +1,161 @@
+Clincir is clachaireachd
+Còmhdaichean bhreigichean is concrait
+Bheir clincir, breigichean sgudail-leaghaidh, concrait neartaichte agus glainne armachd uachdaran troma airson seòmraichean teth, bùthan-obrach agus loidhnichean-seallaidh dìonta.<br>
+<br>
+Cleachd na leacan, staidhrean, sliseagan agus ballachan freagarrach gus oirean a chrìochnachadh gun stoidhle stuthan na factaraidh atharrachadh.
+<np>
+Bloca bhreigichean clincir
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_block>Bheir am bloca seo obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Leac bhreigichean clincir
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_slab>Bheir am bloca seo obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Staidhre bhreigichean clincir
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_stairs>Bheir am bloca seo obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Balla bhreigichean clincir
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_wall>Bheir am bloca seo obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Bloca clincir salaich
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_stained_block>Bheir am Bloca bhreigichean clincir salaich obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Leac clincir salaich
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_stained_slab>Bheir an Leac bhreigichean clincir salaich obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Staidhre clincir salaich
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_stained_stairs>Bheir an Staidhre bhreigichean clincir salaich obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Breige clincir sgeadaichte
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_sastor_corner_block>Bheir a' Bhreige clincir sgeadaichte le clach-ghainmhich obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Breige clincir cùlaichte
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_recessed>Bheir am bloca seo obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Breigichean clincir sgolta
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_vertically_slit>Bheir na Breigichean clincir le sgoltaidhean dìreach obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Leac dhìreach clincir
+Obair bhreigichean dorcha le sùith
+<&clinker_brick_vertical_slab_structured>Bheir an Leac dhìreach clincir le pàtran obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Leth-leac bhreigichean clincir
+Obair bhreigichean dorcha le sùith
+<&halfslab_clinker_brick>Bheir am bloca seo obair bhreigichean air a dorchachadh le sùith do thallachan fhùirneisean, bunaitean simileir agus ballachan-seirbheis.<br>
+<br>
+Cleachdadh: cleachd e mar bhalla, iomall sgeadachaidh no còmhdach àite teth timcheall air fùirneisean agus goileadairean.<br>
+<np>
+Bloca bhreigichean sgudail-leaghaidh
+Clachaireachd dhlùth factaraidh
+<&slag_brick_block>Bheir am bloca seo clachaireachd dhlùth ghlas-dhonn airson bunaitean, ballachan-glèidhidh agus seann seadaichean-obrach.<br>
+<br>
+Cleachdadh: cleachd e airson seann bhunaitean, ballachan-glèidhidh agus làir shalach ionadan-obrach.<br>
+<np>
+Leac bhreigichean sgudail-leaghaidh
+Clachaireachd dhlùth factaraidh
+<&slag_brick_slab>Bheir am bloca seo clachaireachd dhlùth ghlas-dhonn airson bunaitean, ballachan-glèidhidh agus seann seadaichean-obrach.<br>
+<br>
+Cleachdadh: cleachd e airson seann bhunaitean, ballachan-glèidhidh agus làir shalach ionadan-obrach.<br>
+<np>
+Staidhre bhreigichean sgudail-leaghaidh
+Clachaireachd dhlùth factaraidh
+<&slag_brick_stairs>Bheir am bloca seo clachaireachd dhlùth ghlas-dhonn airson bunaitean, ballachan-glèidhidh agus seann seadaichean-obrach.<br>
+<br>
+Cleachdadh: cleachd e airson seann bhunaitean, ballachan-glèidhidh agus làir shalach ionadan-obrach.<br>
+<np>
+Balla bhreigichean sgudail-leaghaidh
+Clachaireachd dhlùth factaraidh
+<&slag_brick_wall>Bheir am bloca seo clachaireachd dhlùth ghlas-dhonn airson bunaitean, ballachan-glèidhidh agus seann seadaichean-obrach.<br>
+<br>
+Cleachdadh: cleachd e airson seann bhunaitean, ballachan-glèidhidh agus làir shalach ionadan-obrach.<br>
+<np>
+Bloca concrait neartaichte
+Concrait neartaichte
+<&rebar_concrete>Tha am bloca seo na phàirt concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Leac concrait neartaichte
+Concrait neartaichte
+<&rebar_concrete_slab>Tha am bloca seo na phàirt concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Staidhre concrait neartaichte
+Concrait neartaichte
+<&rebar_concrete_stairs>Tha am bloca seo na phàirt concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Balla concrait neartaichte
+Concrait neartaichte
+<&rebar_concrete_wall>Tha am bloca seo na phàirt concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Sliseag concrait neartaichte
+Concrait neartaichte
+<&halfslab_rebar_concrete>Tha am bloca seo na phàirt concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Leacag concrait neartaichte
+Concrait neartaichte
+<&rebar_concrete_tile>Tha am bloca seo na phàirt concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Leac leacagan concrait neartaichte
+Concrait neartaichte
+<&rebar_concrete_tile_slab>Tha am bloca seo na phàirt concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Leacag concrait neartaichte
+Concrait neartaichte
+<&rebar_concrete_tile_stairs>Tha an Staidhre leacagan concrait neartaichte air a dèanamh de phàirtean concrait chruaidh airson bunaitean innealan, ballachan dìon-spreadhaidh agus làir bàghan luchdachaidh.<br>
+<br>
+Cleachdadh: cleachd e fo innealan, ri taobh thrannsaichean-seirbheis no far sam bith a bheil bunait neartaichte a dhìth.<br>
+<np>
+Bloca glainne armachd
+Loidhne-seallaidh dhìonta
+<&panzerglass_block>Cumaidh am bloca seo loidhnichean-seallaidh fosgailte agus freagraidh e fhathast air togail factaraidh neartaichte.<br>
+<br>
+Cleachdadh: cleachd e far am bu chòir do chluicheadairean innealan fhaicinn tro chnap-starra dìonta.<br>
+<np>
+Leac glainne armachd
+Loidhne-seallaidh dhìonta
+<&panzerglass_slab>Cumaidh am bloca seo loidhnichean-seallaidh fosgailte agus freagraidh e fhathast air togail factaraidh neartaichte.<br>
+<br>
+Cleachdadh: cleachd e far am bu chòir do chluicheadairean innealan fhaicinn tro chnap-starra dìonta.<br>

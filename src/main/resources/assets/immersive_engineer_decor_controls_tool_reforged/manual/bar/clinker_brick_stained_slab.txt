@@ -1,0 +1,5 @@
+Fleckige Klinkastufn
+Rußdunkls Zieglmauerwerk
+<&recipe>De fleckige Klinkazieglstufn bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>

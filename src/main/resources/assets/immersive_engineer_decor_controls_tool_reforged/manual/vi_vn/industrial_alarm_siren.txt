@@ -1,0 +1,7 @@
+Còi báo động
+Phản hồi tín hiệu
+<&recipe>Còi báo động là bộ chỉ thị redstone gắn lên mặt khối. Trạng thái có điện thay đổi theo tín hiệu của khối mà nó được gắn vào.<br>
+<br>
+Gắn vào mặt khối đặc và cấp điện để theo dõi cửa, máy, báo động hoặc bảng điều khiển.<br>
+<br>
+Còi cập nhật mỗi giây một lần khi tín hiệu kết nối còn hoạt động.

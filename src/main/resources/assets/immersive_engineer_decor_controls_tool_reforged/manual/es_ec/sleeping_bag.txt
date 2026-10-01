@@ -1,0 +1,7 @@
+Saco de dormir
+Equipo de descanso portátil
+<&recipe>El Saco de dormir es un equipo resistente para trabajar lejos de una cama.<br>
+<br>
+Uso: Úsalo de noche en el Supramundo para descansar hasta la mañana. No fija ni mueve tu punto de reaparición.<br>
+<br>
+Rechaza el uso diurno, los alrededores inseguros con monstruos cercanos y las dimensiones no aptas. Cada descanso correcto lo desgasta.

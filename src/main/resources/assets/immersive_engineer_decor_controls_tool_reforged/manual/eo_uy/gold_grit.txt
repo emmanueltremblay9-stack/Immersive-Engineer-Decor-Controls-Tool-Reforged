@@ -1,0 +1,3 @@
+Kruda orgrio
+Materialo por inĝenieraj iloj, uzata de la rekonstruita receptaro.
+<&recipe>Ĝi estas fandebla al oraj ingotoj,<br>sed ne taŭgas por altnivela<br>materialprilaborado.

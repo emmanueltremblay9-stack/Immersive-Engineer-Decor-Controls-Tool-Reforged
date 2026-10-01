@@ -1,0 +1,5 @@
+Corp de coș pentru acoperiș
+Piesă de acoperiș cu aspect învechit
+<&recipe>Corpul de coș pentru acoperiș din șindrilă închisă formează acoperișuri întunecate și practice pentru ateliere și hale industriale.<br>
+<br>
+Utilizare: Combină piesele pentru a obține contururi realiste de acoperiș.<br>

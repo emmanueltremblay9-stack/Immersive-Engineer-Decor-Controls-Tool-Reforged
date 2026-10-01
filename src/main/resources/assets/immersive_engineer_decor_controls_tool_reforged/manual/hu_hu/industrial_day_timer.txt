@@ -1,0 +1,7 @@
+Napszakidőzítő
+Nappali jel
+<&recipe>Az időzítőkapcsoló a világciklus nappali szakaszát követi.<br>
+<br>
+Használat: udvari lámpákhoz, zsalukhoz és csak nappal működő gyári vezérlőkhöz használd.<br>
+<br>
+Megjegyzés: égboltfénnyel rendelkező dimenziót igényel.

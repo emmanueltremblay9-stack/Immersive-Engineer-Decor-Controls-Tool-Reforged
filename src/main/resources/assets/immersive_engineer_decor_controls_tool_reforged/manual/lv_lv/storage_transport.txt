@@ -1,0 +1,41 @@
+Glabāšana un pārvadāšana
+Krātuvju un plūsmas aprīkojums
+Glabāšanas un pārvadāšanas aprīkojums ietver kastes, mucas, piltuves un vārstus kompaktām rūpnīcas trasēm.<br>
+<br>
+Izmanto šīs lapas, plānojot noliktavas, cauruļvadu trases, apkopes tvertnes un vadāmas šķidrumu līnijas.
+<np>
+Kaste ar etiķeti
+Rediģējama krājumu etiķete
+<&labeled_crate>Šī kaste ar etiķeti paredzēta skaidrai noliktavas krājumu šķirošanai. Priekšējo plāksnīti var rediģēt kā nelielu darbnīcas zīmi.<br>
+<br>
+Lietošana: noklikšķini uz etiķetes plāksnītes ar labo peles pogu, lai rediģētu kastes etiķeti. Noklikšķini uz pārējās kastes, lai atvērtu aprīkojuma, detaļu un apkopes krājumu glabātavu.<br>
+<np>
+Šķidrumu muca
+Šķidrumu līnijas aprīkojums
+<&fluid_barrel>Šī ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto tur, kur caurules vai spaiņi var piekļūt tvertnes pusei.<br>
+<np>
+Šķidrumu savākšanas piltuve
+Šķidrumu līnijas aprīkojums
+<&small_fluid_funnel>Maza šķidrumu savākšanas piltuve ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto zem šķidruma savākšanas vietas un novadi uzkrāto saturu tvertnēs vai zemāk esošās caurulēs.<br>
+<np>
+Šķidruma caurules pretvārsts
+Šķidrumu līnijas aprīkojums
+<&straight_pipe_valve>Šķidruma caurules pretvārsts ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto vārstu atbilstoši paredzētajam plūsmas virzienam.<br>
+<np>
+Redstone šķidruma vārsts
+Šķidrumu līnijas aprīkojums
+<&straight_pipe_valve_redstone>Redstone šķidruma vārsts ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto vārstu atbilstoši paredzētajam plūsmas virzienam.<br>
+<np>
+Analogais šķidruma vārsts
+Šķidrumu līnijas aprīkojums
+<&straight_pipe_valve_redstone_analog>Analogais šķidruma vārsts ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto vārstu atbilstoši paredzētajam plūsmas virzienam.<br>

@@ -1,0 +1,5 @@
+Gradus vitri loricati
+Prospectus munitus
+<&recipe>Hic cubus prospectum apertum servat et constructioni officinae firmatae congruit.<br>
+<br>
+Usus: adhibe ubi lusores machinas per saeptum munitum videre debent.<br>

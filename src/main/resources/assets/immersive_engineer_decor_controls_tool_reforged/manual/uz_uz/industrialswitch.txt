@@ -1,0 +1,7 @@
+Kalit
+Redstone boshqaruvi
+<&recipe>Ixcham boshqaruv qismi zavod qurilishlarida yaqqol redstone kalit nuqtasi beradi.<br>
+<br>
+Ishlatish: yaqin sxemalar uchun to'liq quvvatli chiqishni yoqib-o'chirishga o'ng tugmani bosing.<br>
+<br>
+Eslatma: yoqiq holatda to'liq quvvatli redstone chiqaradi.

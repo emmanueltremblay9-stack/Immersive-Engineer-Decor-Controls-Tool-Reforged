@@ -1,0 +1,3 @@
+Hrubá železná drvina
+Materiál inžinierskych nástrojov používaný obnovenou súpravou výrobných receptov.
+<&recipe>Dá sa pretaviť na železné<br>tehličky, ale nie je vhodná na<br>pokročilé spracovanie materiálov.

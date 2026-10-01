@@ -1,0 +1,5 @@
+Máquina de mecer
+Equipamientu de suelu de taller
+<&recipe>La máquina de mecer pequeña ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: colócala cerca de les vaques y apurre un mediu pa sacar los recipientes de lleche o’l líquidu.<br>

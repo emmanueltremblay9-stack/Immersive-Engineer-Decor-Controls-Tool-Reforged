@@ -1,0 +1,7 @@
+Poluga
+Redstone upravljanje
+<&recipe>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.

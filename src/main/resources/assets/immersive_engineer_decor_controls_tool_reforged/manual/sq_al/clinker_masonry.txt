@@ -1,0 +1,161 @@
+Klinker dhe muraturë
+Mbulesa tullash dhe betoni
+Klinkeri, tullat e skorjes, betoni i armuar dhe xhami i blinduar japin sipërfaqe të rënda për dhoma të nxehta, punishte dhe vija shikimi të mbrojtura.<br>
+<br>
+Përdor rrasat, shkallaret, shtresat e holla dhe muret përkatëse për të përfunduar skajet pa ndryshuar stilin e materialeve të fabrikës.
+<np>
+Bllok tullash klinkeri
+Muraturë e nxirë nga bloza
+<&clinker_brick_block>Ky bllok sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Rrasë tullash klinkeri
+Muraturë e nxirë nga bloza
+<&clinker_brick_slab>Ky bllok sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Shkallare tullash klinkeri
+Muraturë e nxirë nga bloza
+<&clinker_brick_stairs>Ky bllok sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Mur tullash klinkeri
+Muraturë e nxirë nga bloza
+<&clinker_brick_wall>Ky bllok sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Bllok klinkeri me njolla
+Muraturë e nxirë nga bloza
+<&clinker_brick_stained_block>Blloku i tullave të klinkerit me njolla sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Rrasë klinkeri me njolla
+Muraturë e nxirë nga bloza
+<&clinker_brick_stained_slab>Rrasa e tullave të klinkerit me njolla sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Shkallare klinkeri me njolla
+Muraturë e nxirë nga bloza
+<&clinker_brick_stained_stairs>Shkallaret e tullave të klinkerit me njolla sjellin muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Tullë klinkeri e zbukuruar
+Muraturë e nxirë nga bloza
+<&clinker_brick_sastor_corner_block>Tulla e klinkerit e zbukuruar me gur ranor sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Tullë klinkeri e futur brenda
+Muraturë e nxirë nga bloza
+<&clinker_brick_recessed>Ky bllok sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Tulla klinkeri me çarje
+Muraturë e nxirë nga bloza
+<&clinker_brick_vertically_slit>Tullat e klinkerit me çarje vertikale sjellin muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Rrasë vertikale klinkeri
+Muraturë e nxirë nga bloza
+<&clinker_brick_vertical_slab_structured>Rrasa vertikale e klinkerit me reliev sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Gjysmërrasë tullash klinkeri
+Muraturë e nxirë nga bloza
+<&halfslab_clinker_brick>Ky bllok sjell muraturë të nxirë nga bloza në salla furrash, baza oxhakësh dhe mure shërbimi.<br>
+<br>
+Përdorimi: përdore si mur, zbukurim ose mbulesë zone të nxehtë rreth furrave dhe kaldajave.<br>
+<np>
+Bllok tullash skorjeje
+Muraturë e dendur fabrike
+<&slag_brick_block>Ky bllok shton muraturë të dendur gri-kafe për themele, mure mbajtëse dhe punishte të vjetra.<br>
+<br>
+Përdorimi: përdore për themele të vjetra, mure mbajtëse dhe dysheme fabrike të ndotura.<br>
+<np>
+Rrasë tullash skorjeje
+Muraturë e dendur fabrike
+<&slag_brick_slab>Ky bllok shton muraturë të dendur gri-kafe për themele, mure mbajtëse dhe punishte të vjetra.<br>
+<br>
+Përdorimi: përdore për themele të vjetra, mure mbajtëse dhe dysheme fabrike të ndotura.<br>
+<np>
+Shkallare tullash skorjeje
+Muraturë e dendur fabrike
+<&slag_brick_stairs>Ky bllok shton muraturë të dendur gri-kafe për themele, mure mbajtëse dhe punishte të vjetra.<br>
+<br>
+Përdorimi: përdore për themele të vjetra, mure mbajtëse dhe dysheme fabrike të ndotura.<br>
+<np>
+Mur tullash skorjeje
+Muraturë e dendur fabrike
+<&slag_brick_wall>Ky bllok shton muraturë të dendur gri-kafe për themele, mure mbajtëse dhe punishte të vjetra.<br>
+<br>
+Përdorimi: përdore për themele të vjetra, mure mbajtëse dhe dysheme fabrike të ndotura.<br>
+<np>
+Bllok betoni të armuar
+Beton i përforcuar
+<&rebar_concrete>Ky bllok është pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Rrasë betoni të armuar
+Beton i përforcuar
+<&rebar_concrete_slab>Ky bllok është pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Shkallare betoni të armuar
+Beton i përforcuar
+<&rebar_concrete_stairs>Ky bllok është pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Mur betoni të armuar
+Beton i përforcuar
+<&rebar_concrete_wall>Ky bllok është pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Rrasë e hollë betoni të armuar
+Beton i përforcuar
+<&halfslab_rebar_concrete>Ky bllok është pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Pllakë betoni të armuar
+Beton i përforcuar
+<&rebar_concrete_tile>Ky bllok është pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Rrasë pllake betoni të armuar
+Beton i përforcuar
+<&rebar_concrete_tile_slab>Ky bllok është pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Pllakë betoni të armuar
+Beton i përforcuar
+<&rebar_concrete_tile_stairs>Shkallaret e pllakave të betonit të armuar janë pjesë betoni të fortësuar për baza makinerish, mure mbrojtëse ndaj shpërthimit dhe dysheme zonash ngarkimi.<br>
+<br>
+Përdorimi: vendose nën makineri, përgjatë korridoreve të shërbimit ose kudo ku duhet një bazë e përforcuar.<br>
+<np>
+Bllok xhami të blinduar
+Pamje e mbrojtur
+<&panzerglass_block>Ky bllok ruan vijat e shikimit të hapura dhe përshtatet me ndërtimin e përforcuar të fabrikës.<br>
+<br>
+Përdorimi: përdore ku lojtarët duhet të shohin makineritë përmes një pengese mbrojtëse.<br>
+<np>
+Rrasë xhami të blinduar
+Pamje e mbrojtur
+<&panzerglass_slab>Ky bllok ruan vijat e shikimit të hapura dhe përshtatet me ndërtimin e përforcuar të fabrikës.<br>
+<br>
+Përdorimi: përdore ku lojtarët duhet të shohin makineritë përmes një pengese mbrojtëse.<br>

@@ -1,0 +1,5 @@
+Vałvoła de no ritorno par tubi de fluidi
+Equipamento par linee de fluidi
+<&recipe>Ła Vałvoła de no ritorno par tubi de fluidi ła xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: alinea ła vałvoła co ła diresion voluda de’l flusso.<br>

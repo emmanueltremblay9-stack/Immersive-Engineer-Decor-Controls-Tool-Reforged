@@ -1,0 +1,5 @@
+Cartello «Pericolo d’incendio»
+Indicatore di pericolo
+<&recipe>Il cartello «Pericolo d’incendio» segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>

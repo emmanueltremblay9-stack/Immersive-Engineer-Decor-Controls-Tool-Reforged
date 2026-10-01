@@ -1,0 +1,41 @@
+Opslag en vervoer
+Onderdelen voor opslag en doorvoer
+De opslag- en transportonderdelen omvatten kisten, vaten, opvangtrechters en ventielen voor compacte transportroutes in de fabriek.<br>
+<br>
+Gebruik deze pagina's bij het inrichten van magazijnen, leidingtrajecten, servicetanks en geregelde vloeistofleidingen.
+<np>
+Kist met etiket
+Bewerkbaar voorraadetiket
+<&labeled_crate>Deze kist met etiket is bedoeld voor overzichtelijke sortering in het magazijn. Het voorplaatje kan als een klein werkplaatsbord worden bewerkt.<br>
+<br>
+Gebruik: rechtsklik op het etiketplaatje om het kistetiket te bewerken. Rechtsklik op de rest van de kist om de opslag voor hulpstukken, onderdelen en onderhoudsvoorraden te openen.<br>
+<np>
+Vloeistofvat
+Onderdelen voor vloeistofleidingen
+<&fluid_barrel>Dit compacte onderdeel voor vloeistofleidingen past bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: plaats het waar leidingen of emmers de tankzijde kunnen bereiken.<br>
+<np>
+Vloeistofopvangtrechter
+Onderdelen voor vloeistofleidingen
+<&small_fluid_funnel>De kleine vloeistofopvangtrechter is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: plaats hem onder het vloeistofverzamelpunt en voer de opgeslagen inhoud af naar tanks of lager gelegen leidingen.<br>
+<np>
+Vloeistofterugslagklep
+Onderdelen voor vloeistofleidingen
+<&straight_pipe_valve>De vloeistofterugslagklep is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: lijn de klep uit met de gewenste stroomrichting.<br>
+<np>
+Redstonegestuurd vloeistofventiel
+Onderdelen voor vloeistofleidingen
+<&straight_pipe_valve_redstone>Het redstonegestuurde vloeistofventiel is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: lijn de klep uit met de gewenste stroomrichting.<br>
+<np>
+Analoog vloeistofventiel
+Onderdelen voor vloeistofleidingen
+<&straight_pipe_valve_redstone_analog>Het analoge vloeistofventiel is een compact onderdeel voor vloeistofleidingen bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: lijn de klep uit met de gewenste stroomrichting.<br>

@@ -1,0 +1,7 @@
+Ariadna kömürü
+Mədən yolu nişanlayıcısı
+<&recipe>Ariadna kömürü şaxtalar, şaxəli mədənlər və müvəqqəti yeraltı işlər üçün sürətli yol nişanlayıcısıdır.<br>
+<br>
+İstifadə: Sabit blok üzündə istifadə edərək həmin səthə qara ox nişanı qoyun. Nişan səthdə kliklənən nöqtəni oxuyur və diaqonallar da daxil olmaqla səkkiz istiqaməti dəstəkləyir. Ayrı nişan dirəkləri daşımadan döngələri, çıxışları, dalanları və təchizat yollarını işarələməyə kömək edir.<br>
+<br>
+Ariadna kömürü 100 istifadəyə çatan təkrar işlənən nişanlama alətidir. Hər uğurlu nişan yerləşdirmə bir davamlılıq vahidi sərf edir; uyğun olmayan səthlər əşyanı köhnəltmədən rədd edilir.

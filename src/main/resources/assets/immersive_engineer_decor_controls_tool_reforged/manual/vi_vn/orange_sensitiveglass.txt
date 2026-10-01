@@ -1,0 +1,7 @@
+Kính nhạy màu cam
+Kính tín hiệu
+<&recipe>Khối kính phản ứng với redstone vừa giữ tầm nhìn vừa hiển thị trạng thái tín hiệu.<br>
+<br>
+Cách dùng: Dùng trong cửa sổ phòng điều khiển, bảng sáng và kính nhà máy được bảo vệ.<br>
+<br>
+Ghi chú: Đổi trạng thái theo năng lượng redstone gần đó.

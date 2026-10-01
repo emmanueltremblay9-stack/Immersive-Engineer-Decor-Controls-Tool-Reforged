@@ -1,0 +1,5 @@
+Pembakar Limbah
+Unit pemrosesan ringkas
+<&recipe>Pembakar limbah memusnahkan barang yang tidak diinginkan dengan ruang bengkel yang kecil.<br>
+<br>
+Penggunaan: masukkan hanya barang yang tidak diinginkan ke antreannya.<br>

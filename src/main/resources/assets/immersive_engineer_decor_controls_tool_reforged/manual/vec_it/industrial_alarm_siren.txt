@@ -1,0 +1,7 @@
+Sirena de alarme
+Indicasion de’l segnal
+<&recipe>La sirena de alarme xe un indicador redstone montà su la facia de un bloco. El stato alimentà el segue el segnal del bloco dove la xe tacà.<br>
+<br>
+Tachela a una facia solida e dagli corrente par controlar porte, machine, alarmi o paneli.<br>
+<br>
+La sirena se aggiorna una volta al secondo fin che el segnal resta ativo.

@@ -1,0 +1,7 @@
+Kalit aloqa injusi
+Bog'langan boshqaruv
+<&recipe>Bog'langan inju zavodni masofadan boshqarish uchun qabul qilgich nishonini saqlaydi.<br>
+<br>
+Ishlatish: yaratish uchun kalit aloqa qabul qilgichini ender injusi bilan bosing. Saqlangan qabul qilgichni faollashtirish uchun bog'langan injudan egilib foydalaning.<br>
+<br>
+Eslatma: nishon yuklangan, bir xil o'lchamda va masofa chegarasida bo'lishi kerak.

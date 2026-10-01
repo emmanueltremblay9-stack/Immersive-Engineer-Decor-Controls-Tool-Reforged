@@ -1,0 +1,5 @@
+Stålgångbrygga
+Del för serviceåtkomst
+<&recipe>Det här blocket bildar tydliga servicevägar runt maskiner.<br>
+<br>
+Användning: Placera delen som underhållsväg runt maskiner, övre våningar och serviceschakt.<br>

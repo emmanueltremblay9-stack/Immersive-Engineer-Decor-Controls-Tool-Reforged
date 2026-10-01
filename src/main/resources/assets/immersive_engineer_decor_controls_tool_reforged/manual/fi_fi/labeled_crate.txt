@@ -1,0 +1,5 @@
+Nimikylttilaatikko
+Muokattava varastonimikyltti
+<&recipe>Tämä nimikylttilaatikko on tehty varastohuoneen selkeään järjestelyyn. Etulevyä voi muokata pienen työpajakyltin tavoin.<br>
+<br>
+Käyttö: Muokkaa laatikon nimikylttiä napsauttamalla kylttilevyä oikealla painikkeella. Avaa osien, liittimien ja huoltotarvikkeiden varasto napsauttamalla laatikon muita kohtia oikealla painikkeella.<br>

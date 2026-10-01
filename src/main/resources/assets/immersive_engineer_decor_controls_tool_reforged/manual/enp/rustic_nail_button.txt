@@ -1,0 +1,7 @@
+Country Nail Knap
+Redstone Ruling
+<&recipe>A short-lived switch gives a clear full-strength redstone beat.<br>
+<br>
+Use: Start looms, open doors, give warnings or start a loop once.<br>
+<br>
+Mind: It resets after the set beat length.

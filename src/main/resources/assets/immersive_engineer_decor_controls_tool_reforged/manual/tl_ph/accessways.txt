@@ -1,0 +1,127 @@
+Mga Daanan
+Mga Lakaran at Suporta
+Ang mga aserong poste, poste ng ginamot na kahoy, rehas, daang panserbisyo, gabay, hagdan, pinto, bintana at bukasan ay bumubuo ng masisikip na daan para sa pagpapanatili sa loob ng pabrika.<br>
+<br>
+Gumagamit ng aserong plaka ang mga bahagi ng aserong daanan. Gumawa o maglagay ng Gawaan ng Metal, isaksak ang martilyo ng Immersive Engineering, saka martilyuhin ang mga kabubong asero upang maging plakang gagamitin sa mga poste, daang panserbisyo, bintana, pinto, gabay at iba pang palamuting asero.<br>
+<br>
+Ilagay ang mga ito kung saan kailangan ng daan para sa pagpapanatili ng makina, mataas na daanan, balon ng pagpapanatili o mas ligtas na mga gilid.
+<np>
+Makapal na Aserong Poste
+Bahagi ng balangkas
+<&thick_steel_pole>Ang Tuwid na Makapal na Aserong Poste ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Ulo ng Makapal na Poste
+Bahagi ng balangkas
+<&thick_steel_pole_head>Ang Ulo/Paa ng Tuwid na Makapal na Aserong Poste ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Manipis na Aserong Poste
+Bahagi ng balangkas
+<&thin_steel_pole>Ang Tuwid na Manipis na Aserong Poste ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Ulo ng Manipis na Poste
+Bahagi ng balangkas
+<&thin_steel_pole_head>Ang Ulo/Paa ng Tuwid na Manipis na Aserong Poste ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Poste ng Ginamot na Kahoy
+Bahagi ng balangkas
+<&treated_wood_pole>Ang Tuwid na Poste ng Ginamot na Kahoy ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Ulo ng Ginamot na Poste
+Bahagi ng balangkas
+<&treated_wood_pole_head>Ang Ulo/Paa ng Tuwid na Poste ng Ginamot na Kahoy ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Suporta ng Ginamot na Poste
+Bahagi ng balangkas
+<&treated_wood_pole_support>Ang Suporta ng Tuwid na Poste ng Ginamot na Kahoy ay nagbibigay ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Aserong Suportang Dobleng T
+Bahagi ng balangkas
+<&steel_double_t_support>Nagbibigay ang blokeng ito ng nakikitang balangkas sa mga bulwagan ng makina at balangkas ng daanan.<br>
+<br>
+Paggamit: Ikutin at ilagay bilang nakikitang suporta sa mga biga, poste at gilid ng plataporma.<br>
+<np>
+Aserong Rehas ng Sahig
+Bahagi ng daan ng pagpapanatili
+<&steel_floor_grating>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Aserong Daang Panserbisyo
+Bahagi ng daan ng pagpapanatili
+<&steel_catwalk>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Hagdanan ng Aserong Daang Panserbisyo
+Bahagi ng daan ng pagpapanatili
+<&steel_catwalk_stairs>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Nakaangat na Aserong Daang Panserbisyo
+Bahagi ng daan ng pagpapanatili
+<&steel_catwalk_ta>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Aserong Barandilya
+Bahagi ng daan ng pagpapanatili
+<&steel_railing>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Bakod na Aserong Lambat
+Bahagi ng daan ng pagpapanatili
+<&steel_mesh_fence>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Tarangkahan ng Bakod na Aserong Lambat
+Bahagi ng daan ng pagpapanatili
+<&steel_mesh_fence_gate>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Hagdang Metal ang Baytang
+Bahagi ng daan ng pagpapanatili
+<&metal_rung_ladder>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Salit-salitang Metal na Baytang
+Bahagi ng daan ng pagpapanatili
+<&metal_rung_steps>Bumubuo ang blokeng ito ng malinaw na daan para sa pagpapanatili sa paligid ng makinarya.<br>
+<br>
+Paggamit: Ilagay bilang daan para sa pagpapanatili sa paligid ng makina, mataas na palapag at balon ng pagpapanatili.<br>
+<np>
+Bintanang Asero ang Balangkas
+Tanaw na may proteksiyon
+<&steel_framed_window>Pinananatiling bukas ng blokeng ito ang tanaw habang bumabagay sa pinatibay na konstruksyon ng pabrika.<br>
+<br>
+Paggamit: Ilagay sa butas ng pader na 1 bloke kung saan dapat makita ng manlalaro ang makinarya sa likod ng pananggalang.<br>
+<np>
+Dumudulas na Pintong Metal
+Pang-industriyang pasukan
+<&metal_sliding_door>Nagbibigay ang blokeng ito ng matibay na pasukan para sa silid ng pagpapanatili, balon, bubong at kulob ng makina.<br>
+<br>
+Paggamit: Ikabit kung saan kailangan ng kontroladong bukasan para sa pagpapanatili.<br>
+<np>
+Bakal na Bukasan
+Pang-industriyang pasukan
+<&iron_hatch>Nagbibigay ang blokeng ito ng matibay na pasukan para sa silid ng pagpapanatili, balon, bubong at kulob ng makina.<br>
+<br>
+Paggamit: Ikabit kung saan kailangan ng kontroladong bukasan para sa pagpapanatili.<br>

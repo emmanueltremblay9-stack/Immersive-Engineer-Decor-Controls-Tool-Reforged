@@ -1,0 +1,7 @@
+Komparatorski prekidač
+Signal priključenog bloka
+<&recipe>Kompaktan senzorski prekidač čita blok na kom je montiran i pretvara očitavanje u jednostavan izlaz za panel.<br>
+<br>
+Upotreba: montiraj ga na inventare, rezervoare ili redstoun opremu. Kada priključeni blok prijavi komparatorski, kontejnerski ili redstoun izlaz, prekidač emituje redstoun najveće snage.<br>
+<br>
+Napomene: koristi ga da pretvoriš nivo zaliha ili skrivene provodnike u jasne uključeno/isključeno upravljačke linije.

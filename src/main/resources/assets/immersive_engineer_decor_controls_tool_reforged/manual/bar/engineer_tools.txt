@@ -1,0 +1,99 @@
+Ingenieurswerkzeig
+Tragbars Werkstattzeig
+D'Ingenieurswerkzeigsammlung bringt Handgeräte, Minenmarkierer, Notfallverbrauchssachn, Unterwegsessen und kloane Materialverarbeitungshilfn ins gleiche Handbuach wia de Verzierungs- und Steuerblöck.<br>
+<br>
+Des Werkzeig is fia d'Arbeit abseits vo ana voll ausgrüsteten Werkstatt dacht: markier den Weg, nimm Vorrat mit, erhol di vo Fehlern und erledig kloane Verarbeitungsarbeiten direkt vor Ort.
+<np>
+REDIA-Werkzeig
+Allzweckhilf mit Diamantbelag
+<&redia_tool>S'REDIA-Werkzeig is a haltbare Hilf fia schnelle Bodnarbeit vor Ort. Benutz's auf bearbeitbarer Eadn, zum Umgrabn in Ackabodn.<br>
+<br>
+Benutz's an ana festen Fläch, wennst Fackeln dabeihost. Dann setzt's a Fackelmarkierung ausm Imventar, ohne REDIA abzunutzn. Bodnarbeit, Schern, Hogg-Arbeit und Baamfälln brauchn Haltbarkeit.
+<np>
+Erz-Zerkleinerungshamma
+Handwerkzeug
+<&crushing_hammer>Da Erz-Zerkleinerungshamma is a manuelles Werkzeug für frühe Eisen- und Goldarbeit.<br>
+<br>
+Benutzung: Mit Roheisn, Rohgold, Eisenerz, Tiefenschiefer-Eisenerz, Golderz oda Tiefenschiefer-Golderz kombiniern, um Immersive-Engineering-Eisn- oda Goldstaub z'macha. Da Hamma verliert Haltbarkeit und kehrt bis zum Brecha ins Raster zruck.<br>
+<br>
+Er nutzt si aa beim Abbau ab und kann Ziele im Nahkampf zruckstoßn.
+<np>
+Tracker
+Gespeicherte Positionsmarkn
+<&tracker>Da Tracker speichert a Blockposition direkt im Gegenstand.<br>
+<br>
+Benutzung: Block anklicka, um Dimension und Koordinaten zu speichern. Da Hinweis zoagt d'Position. Schleich-Benutzung löscht s' Ziel.<br>
+<br>
+Zum Markiern von Maschina, Tunnelzweigen, Fernsteuerungen oda unfertign Baustelln vor da Rückkehr mit Werkzeug und Material.
+<np>
+Ariadne-Kuin
+Wegmarkierung fia Minen
+<&ariadne_coal>Ariadne-Kuin setzt schnell schwarze Richtungspfeil auf feste Minenflächen. Benutz's auf ana festen Fläch, zum Markiern vo da nächsten Kurvn, am Ausgang oder ana Abzweigung. De Markierung kennt acht Richtunga auf da anklickten Fläch, a schräg.<br>
+<br>
+Ariadne-Kuin is a wiederverwendbars Markierwerkzeig mit 100 Benutzunga. Jede erfolgreiche Markierung kostet oan Haltbarkeitspunkt. Unpassende Flächen werdn abglehnt, statt de Sach abzunutzn.
+<np>
+Auto-Stimpack
+Notinjektor
+<&stimpack>Da Auto-Stimpack is a Notfall-Heilgegenstand für gefährliche Wartungsarbeit.<br>
+<br>
+Benutzung: Manuell heiln, kurz Schutz und Bewegungsschub kriegn. Im Inventar kann er bei wenig Gsundheit automatisch auslösn und geht dann in Abklingzeit.<br>
+<br>
+Oans bereithaltn vor Höhen, offener Verdrahtung oda feindlichen Grubnwegen.
+<np>
+Schlafsack
+Tragbars Ruahset
+<&sleeping_bag>Da Schlafsack is a wetterfests Ruahset für Feldarbeit weit weg vom Bett.<br>
+<br>
+Benutzung: Nachts in da Oberwelt bis in da Fruah ruhn. Er setzt oda verschiebt koan Spawnpunkt.<br>
+<br>
+Am Tag, bei Monstern in da Näh und in ungeeigneten Dimensionen geht er net. Jede erfolgreiche Ruah nutzt eam ab.
+<np>
+Materialkistn
+Bauvorrat
+<&material_box>Die Materialkistn trägt an großn Vorrat von genau oan normalen, unveränderten, stapelbaren Baumaterial.<br>
+<br>
+Benutzung: Kistn in da Haupthand und Materialstapel in da Nebenhand zum Laden. Mit leerer Nebenhand oan Stapel ausnehma.<br>
+<br>
+Sie hält bis 512 Stück, nur oa Sorte, und verweigert verschachtelte Kistn, net stapelbare Ausrüstung und veränderte Stapel; Inhalt steht im Hinweis.
+<np>
+Taucher-Luftkapsel
+Notluftvorrat
+<&diving_capsule>Die Taucher-Luftkapsel is a Notluftgegenstand für Unterwasserarbeit.<br>
+<br>
+Benutzung: Manuell zum Luftauffülln nutzn. Im Inventar kann s' kurz vorm Luftausgang automatisch auslösn und geht dann in Abklingzeit.<br>
+<br>
+Für überflutete Grubn, Unterwasserrohre und Pumpenraumreparaturn mitnehma.
+<np>
+Muslee-Riegelpress
+Essnspress
+<&musli_bar_press>Die Muslee-Riegelpress macht aus üblichen Lebensmitteln kompakte Feldrationen.<br>
+<br>
+Benutzung: Brot, Apfe und Weizn-, Melona-, Kürbis-, Rübn- oda Industriehanfsamen mitführn und pressn. A erfolgreicher Vorgang verbraucht je oans, prüft an Platz, macht vier Riegl und beschädigt d'Press.<br>
+<br>
+Fehlt was oda is koa Platz, wird nix verbraucht.
+<np>
+Muslee-Melange-Energieriegl
+Schnella Werkstattimbiss
+<&musli_bar>Da Muslee-Melange-Energieriegl is a kompakte Speis aus Brot, Samen und Obst.<br>
+<br>
+Benutzung: Als Feldkost essn beim Setzn von Steuerungen, Rohren, Plattformen oda langn Maschinenraumstreckn.
+<np>
+Gedankenpressn
+Erfahrungsverdichter
+<&charged_lapis_squeezer>De Gedankenpressn macht aus oam Lapislazuli und oana Erfahrungsstufn aus deim Imventar aufgladenen Lapislazuli.<br>
+<br>
+Jede erfolgreiche Umwandlung tuat dem Benutzer weh, erschöpft'n, wos Hunger auslöst, und macht'n kurz blind. Ohne Lapislazuli, ohne XP oder wenn er z'nah am Sterbn is, geht's ned.
+<np>
+Aufgladener Lapislazuli
+Gspeicherte Erfahrung
+<&charged_lapis>Aufgladener Lapislazuli speichert oa Erfahrungsstufn. Verbrauch'n zum Zruckholn vo da Stufn, zum Entfernen aktiver Effekte und zum Heilen vo a bisserl Lebn.<br>
+<br>
+Mach z'erst a Gedankenpressn. Aufgladener Lapislazuli entsteht, wennst des Werkzeig mit Lapislazuli und XP benutzt.
+<np>
+Grober Eisenschrot
+Ingenieurswerkzeigmaterial fia de wiederhergstellten Handweaksrezepte.
+<&iron_grit>Lasst si zu Eisenbarren<br>schmelzn, taugt oba ned fia<br>weiterführende Materialverarbeitung.
+<np>
+Grober Goidschrot
+Ingenieurswerkzeigmaterial fia de wiederhergstellten Handweaksrezepte.
+<&gold_grit>Lasst si zu Goidbarren<br>schmelzn, taugt oba ned fia<br>weiterführende Materialverarbeitung.

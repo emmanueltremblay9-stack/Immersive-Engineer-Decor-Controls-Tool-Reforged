@@ -1,0 +1,41 @@
+Lagring och transport
+Lager- och flödesdelar
+Förvarings- och transportdelarna omfattar lådor, tunnor, trattar och ventiler för kompakta transportvägar i fabriker.<br>
+<br>
+Använd de här sidorna när du planerar förråd, rörsträckor, servicetankar och styrda vätskeledningar.
+<np>
+Märkt låda
+Redigerbar lageretikett
+<&labeled_crate>Den här märkta lådan är gjord för tydlig sortering i förråd. Frontskylten kan redigeras som en liten verkstadsskylt.<br>
+<br>
+Användning: Högerklicka på skyltplattan för att ändra lådans etikett. Högerklicka på resten av lådan för att öppna förvaringen för fästen, delar och underhållsmaterial.<br>
+<np>
+Vätsketunna
+Utrustning för vätskeledningar
+<&fluid_barrel>Den här delen är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Placera den så att rör eller hinkar når tankytan.<br>
+<np>
+Vätskeuppsamlingstratt
+Utrustning för vätskeledningar
+<&small_fluid_funnel>Den lilla vätskeuppsamlingstratten är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Placera den under vätskans uppsamlingspunkt och led det lagrade innehållet till tankar eller lägre rörledningar.<br>
+<np>
+Backventil för vätskerör
+Utrustning för vätskeledningar
+<&straight_pipe_valve>Backventilen för vätskerör är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Rikta ventilen efter den avsedda flödesriktningen.<br>
+<np>
+Redstonestyrd vätskeventil
+Utrustning för vätskeledningar
+<&straight_pipe_valve_redstone>Den redstonestyrda vätskeventilen är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Rikta ventilen efter den avsedda flödesriktningen.<br>
+<np>
+Analog vätskeventil
+Utrustning för vätskeledningar
+<&straight_pipe_valve_redstone_analog>Den analoga vätskeventilen är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Rikta ventilen efter den avsedda flödesriktningen.<br>

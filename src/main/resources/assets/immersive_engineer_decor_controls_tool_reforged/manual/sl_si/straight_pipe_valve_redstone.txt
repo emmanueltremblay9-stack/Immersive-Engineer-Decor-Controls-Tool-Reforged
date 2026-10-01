@@ -1,0 +1,5 @@
+Ventil za fluide redstone
+Oprema cevovodov za fluide
+<&recipe>Ventil za fluide redstone je kompakten del napeljave za fluide, namenjen majhnim rezervoarjem, cevovodom, zbiralnim točkam in pretoku, krmiljenemu z redstonom.<br>
+<br>
+Uporaba: Ventil poravnaj s predvideno smerjo pretoka.<br>

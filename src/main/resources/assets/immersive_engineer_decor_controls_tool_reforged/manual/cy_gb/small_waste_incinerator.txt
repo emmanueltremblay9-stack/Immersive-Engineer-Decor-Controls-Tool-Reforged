@@ -1,0 +1,5 @@
+Llosgydd Gwastraff
+Uned brosesu gryno
+<&recipe>Mae'r Llosgydd Gwastraff yn dinistrio eitemau diangen mewn arwynebedd gweithdy cryno.<br>
+<br>
+Defnydd: Rhowch eitemau diangen yn unig yn ei giw.<br>

@@ -1,0 +1,5 @@
+Járnlúga
+Iðnaðaraðgangur
+<&recipe>Þessi kubbur veitir sterkbyggðan aðgang að þjónusturýmum, sköftum, þökum og vélahúsum.<br>
+<br>
+Notkun: Settu hann þar sem byggingin þarf stýrt viðhaldsop.<br>

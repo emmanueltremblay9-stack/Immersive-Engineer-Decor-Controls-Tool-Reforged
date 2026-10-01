@@ -1,0 +1,7 @@
+Prensa de Barritas Muslee
+Prensa de comida
+<&recipe>La Prensa de Barritas Muslee convierte alimentos comunes en raciones compactas de campo.<br>
+<br>
+Uso: Lleva pan, una manzana y semillas de trigo, sandía, calabaza, remolacha o cáñamo industrial y usa la prensa. Una operación correcta consume una unidad de cada ingrediente, comprueba el espacio, crea cuatro barritas y daña la prensa.<br>
+<br>
+Si falta un ingrediente o no hay espacio, no se consume nada.

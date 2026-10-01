@@ -1,0 +1,5 @@
+Area compactada con cascallo
+Pavimento de obra
+<&recipe>Este bloque dálle ás zonas de traballo exteriores unha superficie compactada e pisada.<br>
+<br>
+Uso: colócao arredor de portas de carga, depósitos exteriores e patios de máquinas.<br>

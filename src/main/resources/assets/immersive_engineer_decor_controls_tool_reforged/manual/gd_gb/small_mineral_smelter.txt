@@ -1,0 +1,5 @@
+Leaghadair mèinnearach
+Aonad giullachd dlùth
+<&recipe>Nì an Leaghadair mèinnearach giullachd mhèinnearan aig teas àrd ann an àite beag bùth-obrach.<br>
+<br>
+Cleachdadh: thoir blocaichean mèinnearach agus cumhachd dha airson obair leaghaidh aig teas àrd.<br>

@@ -1,0 +1,7 @@
+Krytý prijímač prepojenia
+Prepojené ovládanie
+<&recipe>Krytý prepojený prijímač poskytuje vzdialeným panelom odolný redstonový cieľ.<br>
+<br>
+Použitie: Kliknutím Ender perlou vytvor prepojenú perlu. Pravým kliknutím priamo na prijímač ho ručne prepneš.<br>
+<br>
+Poznámky: Prepojená perla pri použití počas zakrádania prepne tento prijímač.

@@ -1,0 +1,127 @@
+Slighean-ruigsinn
+Slighean-coise is taicean
+Nì puist stàilinn, puist làimhsichte, grèidean, slighean-coise, rèilean, fàraidhean, dorsan, uinneagan agus dorsan-beòil slighean-seirbheis dlùtha tro thaobh a-staigh factaraidhean.<br>
+<br>
+Cleachdaidh pàirtean stàilinn slighean-ruigsinn pleataichean stàilinn. Dèan no cuir Bòrd-ciùird meatailt ann, cuir òrd Immersive Engineering a-steach, agus an uair sin buail ungaichean stàilinn leis an òrd gus pleataichean stàilinn a dhèanamh airson puist, slighean-coise, uinneagan, dorsan, rèilean agus sgeadachaidhean stàilinn eile.<br>
+<br>
+Cuir iad far a bheil feum aig innealan air ruigsinn seirbheis, slighean àrdaichte, slocan cumail suas no oirean nas sàbhailte.
+<np>
+Post tiugh stàilinn
+Pàirt frèam structair
+<&thick_steel_pole>Bheir am Post dìreach tiugh stàilinn structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Ceann puist thiugh
+Pàirt frèam structair
+<&thick_steel_pole_head>Bheir Ceann/Bun puist dhìrich thiugh stàilinn structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Post tana stàilinn
+Pàirt frèam structair
+<&thin_steel_pole>Bheir am Post dìreach tana stàilinn structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Ceann puist thana
+Pàirt frèam structair
+<&thin_steel_pole_head>Bheir Ceann/Bun puist dhìrich thana stàilinn structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Post fiodha làimhsichte
+Pàirt frèam structair
+<&treated_wood_pole>Bheir am Post dìreach fiodha làimhsichte structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Ceann puist làimhsichte
+Pàirt frèam structair
+<&treated_wood_pole_head>Bheir Ceann/Bun puist dhìrich fiodha làimhsichte structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Taic puist làimhsichte
+Pàirt frèam structair
+<&treated_wood_pole_support>Bheir Taic puist dhìrich fiodha làimhsichte structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Taic stàilinn T dùbailte
+Pàirt frèam structair
+<&steel_double_t_support>Bheir am bloca seo structar faicsinneach do thallachan innealan agus frèamaichean-ruigsinn.<br>
+<br>
+Cleachdadh: tionndaidh agus cuir e mar thaic fhaicsinneach airson sailean, puist agus oirean àrd-ùrlair.<br>
+<np>
+Grèid làir stàilinn
+Uidheam-ruigsinn seirbheis
+<&steel_floor_grating>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Slighe-coise stàilinn
+Uidheam-ruigsinn seirbheis
+<&steel_catwalk>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Staidhre slighe-coise stàilinn
+Uidheam-ruigsinn seirbheis
+<&steel_catwalk_stairs>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Slighe-coise stàilinn àrdaichte
+Uidheam-ruigsinn seirbheis
+<&steel_catwalk_ta>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Rèile stàilinn
+Uidheam-ruigsinn seirbheis
+<&steel_railing>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Feansa mogail stàilinn
+Uidheam-ruigsinn seirbheis
+<&steel_mesh_fence>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Geata feansa mogail stàilinn
+Uidheam-ruigsinn seirbheis
+<&steel_mesh_fence_gate>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Fàradh rungan meatailt
+Uidheam-ruigsinn seirbheis
+<&metal_rung_ladder>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Ceumannan meatailt mu seach
+Uidheam-ruigsinn seirbheis
+<&metal_rung_steps>Nì am bloca seo slighean-seirbheis soilleir timcheall air innealan.<br>
+<br>
+Cleachdadh: cuir e mar ruigsinn cumail suas timcheall air innealan, làir àrda agus slocan-seirbheis.<br>
+<np>
+Uinneag le frèam stàilinn
+Loidhne-seallaidh dhìonta
+<&steel_framed_window>Cumaidh am bloca seo loidhnichean-seallaidh fosgailte agus freagraidh e fhathast air togail factaraidh neartaichte.<br>
+<br>
+Cleachdadh: cuir e ann am fosgladh 1 bhloca ann am balla far am bu chòir do chluicheadairean innealan fhaicinn tro chnap-starra dìonta.<br>
+<np>
+Doras-sleamhnachaidh meatailt
+Puing-ruigsinn gnìomhachais
+<&metal_sliding_door>Bheir am bloca seo puing-ruigsinn làidir do sheòmraichean-seirbheis, slocan, mullaichean agus cuairteachain innealan.<br>
+<br>
+Cleachdadh: stàlaich e far a bheil fosgladh cumail suas fo smachd a dhìth san togalach.<br>
+<np>
+Doras-beòil iarainn
+Puing-ruigsinn gnìomhachais
+<&iron_hatch>Bheir am bloca seo puing-ruigsinn làidir do sheòmraichean-seirbheis, slocan, mullaichean agus cuairteachain innealan.<br>
+<br>
+Cleachdadh: stàlaich e far a bheil fosgladh cumail suas fo smachd a dhìth san togalach.<br>

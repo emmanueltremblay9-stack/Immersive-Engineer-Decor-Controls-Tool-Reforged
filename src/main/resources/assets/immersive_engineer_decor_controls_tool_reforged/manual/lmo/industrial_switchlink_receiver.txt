@@ -1,0 +1,7 @@
+Ricevidor de ligam de interutor
+Comand ligad
+<&recipe>Un ricevidor ligad el dà una destinazzion de prejarossa a piena potenza a i panei distant.<br>
+<br>
+Fà clic cont una Perla de l’ender per creà una perla ligada. Fà clic drizz diretamente in sul ricevidor per pizzall o smorzall a man.<br>
+<br>
+Una perla ligada la pìzza o la smorza quell ricevidor chì quand che se la dovra strusando via.

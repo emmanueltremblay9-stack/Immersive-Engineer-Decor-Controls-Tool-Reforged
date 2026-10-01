@@ -1,0 +1,7 @@
+Kontakthebel
+Redstone-Stüürig
+<&recipe>Es kompakts Bedienteil git de Fabrik en guet erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Verwendig: Mit Rechtsklick schaltisch de Uusgang mit voller Stärchi für nöchi Schaltige um.<br>
+<br>
+Hiwiis: Iigschaltet git er d'volli Redstone-Stärchi uus.

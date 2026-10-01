@@ -1,0 +1,5 @@
+Base fer a roof chimney
+Weather-worn roof fitting
+<&recipe>Chimney base fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>

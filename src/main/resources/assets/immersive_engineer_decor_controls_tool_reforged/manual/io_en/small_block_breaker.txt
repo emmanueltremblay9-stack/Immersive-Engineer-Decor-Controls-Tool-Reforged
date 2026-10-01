@@ -1,0 +1,5 @@
+Blokoruptilo
+Laboreyaparato
+<&recipe>La Mikra blokoruptilo esas laboreyaparato por fabrikado, stokado, pozado, ruptado, kolektado o kompakta automatigo.<br>
+<br>
+Uzo: Direktez la laborfacio vers la bloko forprenenda.<br>

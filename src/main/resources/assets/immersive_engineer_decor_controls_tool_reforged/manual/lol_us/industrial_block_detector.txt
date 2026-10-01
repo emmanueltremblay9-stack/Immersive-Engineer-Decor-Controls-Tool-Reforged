@@ -1,0 +1,7 @@
+Bluk Spotter
+Signal sniffin
+<&recipe>Bluk spotter checks whether da space it faces haz somethin in it, kitty.<br>
+<br>
+How to: Point at da machine face, buffer, or guarded space u wants to watch, meow.<br>
+<br>
+Kitty note: Powers up when da bluk it faces iz NOT air.

@@ -1,0 +1,101 @@
+Tetők és udvar
+Kültéri gyári szerelvények
+A tetőblokkok, kavicsos udvari burkolatok és régi ipari faelemek segítenek befejezni a kültéri fészereket, munkaudvarokat, rakodóterületeket és az időjárás koptatta gyárszéleket.<br>
+<br>
+Keverd ezeket falazattal és megközelítőutakkal, hogy a kültéri ipari építmények távolról is jól értelmezhetők maradjanak.
+<np>
+Sötét zsindelytető
+Időjárás koptatta tetőelem
+<&dark_shingle_roof>Ez a blokk sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Tetőhófogó
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_metallized>A sötét zsindelytető hófogója sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Sötét zsindelytető
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_skylight>A sötét zsindelytető tetőablaka sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Tetőkémény teste
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_chimneytrunk>A sötét zsindelytető kéményteste sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Tetővezeték-átvezető
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_wireconduit>A sötét zsindelytető vezetékátvezetője sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Sötét zsindelytető
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_chimney>A sötét zsindelytető kéménye sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Sötét zsindelytetőblokk
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_block>Ez a blokk sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Sötét zsindelytetőlap
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_slab>Ez a blokk sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Sötét zsindelytetőlap
+Időjárás koptatta tetőelem
+<&dark_shingle_roof_slabslice>A vékony sötét zsindelytetőlap sötét, praktikus tetővonalakat alakít ki műhelyekhez és ipari fészerekhez.<br>
+<br>
+Használat: az elemeket együtt használva építs hihető tetőformákat.<br>
+<np>
+Tömör kavicsos föld
+Munkaterületi talajburkolat
+<&dense_grit_dirt_block>Ez a blokk tömörített, kitaposott felületet ad a kültéri munkaterületeknek.<br>
+<br>
+Használat: rakodóajtók, kültéri tartályok köré és gépudvarokra fektesd.<br>
+<np>
+Tömör kavicsos homok
+Munkaterületi talajburkolat
+<&dense_grit_sand_block>Ez a blokk tömörített, kitaposott felületet ad a kültéri munkaterületeknek.<br>
+<br>
+Használat: rakodóajtók, kültéri tartályok köré és gépudvarokra fektesd.<br>
+<np>
+Régi fadeszkák
+Öreg műhelyfa
+<&old_industrial_wood_planks>A régi ipari fadeszkák öreg műhelyfát adnak padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>
+<np>
+Régi ipari falap
+Öreg műhelyfa
+<&old_industrial_wood_slab>Ez a blokk öreg műhelyfát ad padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>
+<np>
+Régi falépcső
+Öreg műhelyfa
+<&old_industrial_wood_stairs>A régi ipari falépcső öreg műhelyfát ad padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>
+<np>
+Vékony régi falap
+Öreg műhelyfa
+<&old_industrial_wood_slabslice>A vékony régi ipari falap öreg műhelyfát ad padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>
+<np>
+Régi ipari faajtó
+Öreg műhelyfa
+<&old_industrial_wood_door>Ez a blokk öreg műhelyfát ad padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>

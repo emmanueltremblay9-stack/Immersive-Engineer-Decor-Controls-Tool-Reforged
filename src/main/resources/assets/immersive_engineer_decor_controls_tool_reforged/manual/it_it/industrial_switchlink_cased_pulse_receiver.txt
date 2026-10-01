@@ -1,0 +1,7 @@
+Ricevitore incassato a impulsi
+Comando collegato
+<&recipe>Un ricevitore incassato a impulsi offre ai pannelli remoti una breve attivazione redstone.<br>
+<br>
+Uso: fai clic con una perla di ender per creare una perla collegata. Fai clic destro sul ricevitore o attiva la perla collegata per emettere un breve impulso.<br>
+<br>
+Note: l’impulso si ripristina da solo al termine della durata programmata.

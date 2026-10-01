@@ -1,0 +1,7 @@
+Deyfir
+Breytilegt merki
+<&recipe>Snúningsstýring stillir roðsteinsstyrk á litlu stjórnborði.<br>
+<br>
+Notkun: Hægrismelltu til að hækka úttakið í skrefum; eftir fullan styrk fer það aftur í núll.<br>
+<br>
+Athugasemdir: Gefur úttaksstyrk frá 0 til 15.

@@ -1,0 +1,5 @@
+Danger Sign
+Hazard marker
+<&recipe>The Sign "Caution Really Dangerous There" Danger Sign marks hazards, exits, and work zones with a factory-safe visual cue.<br>
+<br>
+Usage: Place it beside hazards, exits, machines, and restricted zones.<br>

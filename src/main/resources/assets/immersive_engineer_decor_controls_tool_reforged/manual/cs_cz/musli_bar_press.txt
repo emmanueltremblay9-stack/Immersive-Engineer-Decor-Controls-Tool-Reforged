@@ -1,0 +1,7 @@
+Lis na tyčinky Muslee
+Lis na jídlo
+<&recipe>Mění běžné potraviny na kompaktní polní dávky.<br>
+<br>
+Použití: Chléb, jablko a semeno pšenice, melounu, dýně, řepy či technického konopí. Úspěšné lisování spotřebuje po jednom, ověří místo, vytvoří čtyři tyčinky a poškodí lis.<br>
+<br>
+Když přísada či místo chybí, nic se nespotřebuje.

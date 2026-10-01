@@ -1,0 +1,7 @@
+Pengepres Batang Muslee
+Pengepres makanan
+<&recipe>Muslee Bar Press mengubah bahan makanan biasa menjadi ransum lapangan yang ringkas.<br>
+<br>
+Penggunaan: Bawa roti, apel, dan biji gandum, melon, labu, bit, atau Industrial Hemp, lalu gunakan alat pres. Proses berhasil memakai satu dari tiap bahan, memeriksa ruang keluaran, menghasilkan empat Muslee Melange Power Bar, dan mengurangi ketahanan alat pres.<br>
+<br>
+Jika bahan kurang atau inventaris tidak muat menampung bar, tidak ada yang dikonsumsi.

@@ -1,0 +1,5 @@
+Fabrički postavljač blokova
+Oprema za fabričku halu
+<&recipe>Ovaj blok pri aktiviranju postavlja blokove iz unutrašnjih zaliha.<br>
+<br>
+Upotreba: usmeri radnu stranu ka ciljnom prostoru i ubaci gomile predmeta koji se mogu postaviti.<br>

@@ -1,0 +1,5 @@
+Blockbrecha
+Werkstatthilf
+<&recipe>Da kloana Blockbrecha is a Werkstatthilfsblock fia Handweak, Lagerung, Setzn, Abbrechn, Sammeln oder kloane Automatisierung.<br>
+<br>
+So geht's: Richt d'Arbeitsseit auf den Block, der weg soll.<br>

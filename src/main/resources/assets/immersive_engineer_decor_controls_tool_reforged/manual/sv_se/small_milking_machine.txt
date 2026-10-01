@@ -1,0 +1,5 @@
+Mjölkmaskin
+Hjälpmedel för verkstadsgolvet
+<&recipe>Den lilla mjölkmaskinen är ett hjälpblock för verkstadsgolvet, för tillverkning, förvaring, placering, brytning, insamling eller kompakt automation.<br>
+<br>
+Användning: Placera den nära kor och ordna bortförsel av mjölkbehållare eller vätska.<br>

@@ -1,0 +1,5 @@
+Hlavica tenkého stĺpa
+Diel nosného rámu
+<&recipe>Pätka/hlavica rovného tenkého oceľového stĺpa dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>

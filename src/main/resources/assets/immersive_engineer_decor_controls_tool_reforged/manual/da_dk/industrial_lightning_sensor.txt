@@ -1,0 +1,7 @@
+Tordenvejrsdetektor
+Signalregistrering
+<&recipe>En tordenvejrssensor aktiverer advarsler, når det tordner.<br>
+<br>
+Brug: Placer den under åben himmel, og forbind den til lamper eller alarmer.<br>
+<br>
+Bemærk: Kræver torden og fri adgang til himlen.

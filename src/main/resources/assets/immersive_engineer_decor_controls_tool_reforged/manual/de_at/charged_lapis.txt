@@ -1,0 +1,7 @@
+Glodner Lapislazuli
+Gspeicherte Erfahrung
+<&recipe>Glodner Lapislazuli speichert a Erfahrungsstufn, de mit da Gedonknpressn eingebracht wird.<br>
+<br>
+Verwendung: Verbrauch eam, um a Stufn zruckzukriagn, aktive Effekte loszuwerdn und a bissl Gsundheit aufzufülln.<br>
+<br>
+De Rezeptonzeig zeigt de Gedonknpressn, weil glodner Lapislazuli mit dem Werkzeig entsteht, wenn Lapislazuli und Erfahrung vorhanden san.

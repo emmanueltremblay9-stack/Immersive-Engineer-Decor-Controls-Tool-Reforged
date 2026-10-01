@@ -1,0 +1,7 @@
+Troc'hell geñverier
+Signal staget
+<&recipe>Un droc'hell sensor vihan a lenn ar bloc'h emañ staget outañ hag a dro al lennadenn-se da un ec'hank panell eeun.<br>
+<br>
+Implij: Stagit anezhi ouzh renabloù, beolioù pe ardivinkoù Redstone. Pa ziskouez ar bloc'h staget un ec'hank keñverier, lestr pe Redstone, e kas an droc'hell Redstone gant an nerzh uhelañ.<br>
+<br>
+Notenn: Implijit anezhi evit treiñ liveoù stok pe funioù kuzhet da linennoù reoliñ gweredekaet/lazhet sklaer.

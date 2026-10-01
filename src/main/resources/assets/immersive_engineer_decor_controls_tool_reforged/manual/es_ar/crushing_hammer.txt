@@ -1,0 +1,7 @@
+Martillo triturador de mineral
+Herramienta manual
+<&recipe>El Martillo triturador de mineral es una herramienta manual para las primeras tareas con hierro y oro.<br>
+<br>
+Uso: Combínalo con hierro en bruto, oro en bruto, mineral de hierro, mineral de hierro de pizarra profunda, mineral de oro o mineral de oro de pizarra profunda para producir polvo de hierro u oro de Immersive Engineering. Pierde durabilidad y vuelve a la cuadrícula hasta romperse.<br>
+<br>
+También se desgasta al minar y puede empujar objetivos en combate cercano.

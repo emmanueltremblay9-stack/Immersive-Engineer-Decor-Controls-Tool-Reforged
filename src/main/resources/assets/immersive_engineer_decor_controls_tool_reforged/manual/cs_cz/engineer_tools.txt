@@ -1,0 +1,99 @@
+Inženýrovy nástroje
+Přenosné dílenské vybavení
+Sada „Inženýrovy nástroje“ přidává ruční vybavení, důlní značky, nouzové spotřební předměty, jídlo do terénu a drobné pomůcky pro zpracování materiálu do stejné příručky jako dekorativní a ovládací bloky.<br>
+<br>
+Nástroje jsou určené pro práci mimo plně vybavenou dílnu: označ cestu, vezmi zásoby, naprav chyby a dokonči drobné zpracování přímo na místě.
+<np>
+Nástroj REDIA
+Nástroj s diamantovým povlakem
+<&redia_tool>Nástroj REDIA je odolná terénní pomůcka pro rychlou práci se zemí. Použij jej na obdělávatelné půdě a vytvoř ornici.<br>
+<br>
+Máš-li u sebe louče, použij jej na pevné ploše pro umístění značkovací louče z inventáře bez opotřebení REDIA. Práce se zemí, stříhání, práce sekerou a kácení spotřebovávají odolnost.
+<np>
+Kladivo na drcení rudy
+Ruční nástroj
+<&crushing_hammer>Ruční nástroj pro počáteční práci se železem a zlatem.<br>
+<br>
+Použití: Se surovým železem, zlatem, železnou rudou, břidlicovou železnou rudou, zlatou rudou či břidlicovou zlatou rudou vyrábí železný nebo zlatý prach Immersive Engineering. Ztrácí odolnost a vrací se do mřížky, dokud se nerozbije.<br>
+<br>
+Opotřebuje se i těžbou a v boji odhazuje.
+<np>
+Sledovač
+Značka uložené pozice
+<&tracker>Ukládá pozici bloku přímo do předmětu.<br>
+<br>
+Použití: Klikněte na blok pro dimenzi a souřadnice. Popisek ukáže pozici. V přikrčení ji smažete.<br>
+<br>
+Označte stroje, tunely, dálková ovládání nebo nedokončené stavby.
+<np>
+Ariadnino uhlí
+Značka důlní cesty
+<&ariadne_coal>Ariadnino uhlí rychle kreslí černé směrové šipky na pevné důlní povrchy. Použij je na plné ploše k označení další odbočky, východu či rozvětvení. Podporuje osm směrů podle místa kliknutí, včetně úhlopříčných.<br>
+<br>
+Ariadnino uhlí je opakovaně použitelný značkovací nástroj na 100 použití. Každá úspěšná značka spotřebuje jeden bod odolnosti. Nepodporované plochy odmítne místo opotřebení předmětu.
+<np>
+Automatický stimpack
+Nouzový injektor
+<&stimpack>Nouzový předmět pro nebezpečnou údržbu.<br>
+<br>
+Použití: Ručně léčí, krátce chrání a zrychlí. V inventáři se spustí při nízkém zdraví a poté se obnovuje.<br>
+<br>
+Noste před prací ve výškách, s odkrytými vodiči či v nebezpečných dolech.
+<np>
+Spací pytel
+Přenosná odpočinková souprava
+<&sleeping_bag>Odolná souprava pro práci daleko od postele.<br>
+<br>
+Použití: V noci v Nadzemí odpočívejte do rána bez nastavení místa zrození.<br>
+<br>
+Odmítá den, blízké příšery a nevhodné dimenze. Každý úspěšný odpočinek ho opotřebí.
+<np>
+Krabice na materiál
+Stavební zásoby
+<&material_box>Nese velkou zásobu jednoho běžného, nezměněného a stohovatelného materiálu.<br>
+<br>
+Použití: Krabice v hlavní a materiál ve vedlejší ruce ji naplní. S prázdnou vedlejší rukou vyjmete stoh.<br>
+<br>
+Pojme 512 kusů jednoho typu a odmítá vnořené krabice, nestohovatelné vybavení a změněné stohy; obsah je v popisku.
+<np>
+Potápěčská vzduchová kapsle
+Nouzová zásoba vzduchu
+<&diving_capsule>Nouzový předmět pro práci pod vodou.<br>
+<br>
+Použití: Ručně doplní vzduch. V inventáři se automaticky spustí těsně před jeho vyčerpáním a poté se obnovuje.<br>
+<br>
+Noste ji do zatopených dolů, k ponořeným trubkám a čerpadlům.
+<np>
+Lis na tyčinky Muslee
+Lis na jídlo
+<&musli_bar_press>Mění běžné potraviny na kompaktní polní dávky.<br>
+<br>
+Použití: Chléb, jablko a semeno pšenice, melounu, dýně, řepy či technického konopí. Úspěšné lisování spotřebuje po jednom, ověří místo, vytvoří čtyři tyčinky a poškodí lis.<br>
+<br>
+Když přísada či místo chybí, nic se nespotřebuje.
+<np>
+Energetická tyčinka Muslee Melange
+Rychlá dílenská svačina
+<&musli_bar>Kompaktní jídlo z chleba, semen a ovoce.<br>
+<br>
+Použití: Jezte při umisťování ovládání, trubek, plošin nebo dlouhých strojních tras.
+<np>
+Ždímač mysli
+Kondenzátor zkušeností
+<&charged_lapis_squeezer>Ždímač mysli přemění jeden lazurit a jednu úroveň zkušeností z inventáře na nabitý lazurit.<br>
+<br>
+Každá úspěšná přeměna uživatele zraní, vyčerpá a krátce oslepí. Nespustí se bez lazuritu, zkušeností nebo pokud je uživatel příliš blízko smrti.
+<np>
+Nabitý lazurit
+Uložené zkušenosti
+<&charged_lapis>Nabitý lazurit uchovává jednu úroveň zkušeností. Spotřebováním obnovíš úroveň, odstraníš aktivní účinky a získáš zpět trochu zdraví.<br>
+<br>
+Nejprve vyrob ždímač mysli. Nabitý lazurit vzniká použitím tohoto nástroje s dostupným lazuritem a zkušenostmi.
+<np>
+Hrubá železná drť
+Materiál inženýrských nástrojů používaný obnovenou sadou výrobních receptů.
+<&iron_grit>Lze přetavit na železné<br>ingoty, ale nehodí se k<br>pokročilému zpracování materiálů.
+<np>
+Hrubá zlatá drť
+Materiál inženýrských nástrojů používaný obnovenou sadou výrobních receptů.
+<&gold_grit>Lze přetavit na zlaté ingoty,<br>ale nehodí se k pokročilému<br>zpracování materiálů.

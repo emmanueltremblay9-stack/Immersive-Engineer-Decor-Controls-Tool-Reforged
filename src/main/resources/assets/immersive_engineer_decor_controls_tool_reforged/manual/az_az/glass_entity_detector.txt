@@ -1,0 +1,7 @@
+Şüşə varlıq detektoru
+Siqnalın aşkar edilməsi
+<&recipe>Varlıq detektoru görünən döşəmə lövhəsi olmadan yaxınlıqdakı hərəkəti izləyir.<br>
+<br>
+İstifadə: Qapılara, lampalara, həyəcan siqnallarına və ya maşınların təhlükəsizlik kilidlərinə qoşun.<br>
+<br>
+Qeydlər: Blokun ətrafında kiçik sahəni yoxlayır.

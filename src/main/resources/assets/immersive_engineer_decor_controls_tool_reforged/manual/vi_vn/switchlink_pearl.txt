@@ -1,0 +1,7 @@
+Ngọc liên kết công tắc
+Điều khiển liên kết
+<&recipe>Viên ngọc liên kết lưu mục tiêu bộ nhận cho điều khiển nhà máy từ xa.<br>
+<br>
+Cách dùng: Nhấp bộ nhận liên kết công tắc bằng ngọc Ender để tạo viên ngọc liên kết. Dùng viên ngọc đó khi cúi để kích hoạt bộ nhận đã lưu.<br>
+<br>
+Ghi chú: Mục tiêu phải được tải, ở cùng chiều không gian và trong phạm vi.

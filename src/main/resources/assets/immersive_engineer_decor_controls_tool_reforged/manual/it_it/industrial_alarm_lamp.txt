@@ -1,0 +1,7 @@
+Lampada d’allarme
+Indicazione del segnale
+<&recipe>Un indicatore compatto rende visibile nella fabbrica un segnale redstone nascosto.<br>
+<br>
+Uso: collegalo accanto al segnale per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: cambia stato in presenza di redstone nelle vicinanze.

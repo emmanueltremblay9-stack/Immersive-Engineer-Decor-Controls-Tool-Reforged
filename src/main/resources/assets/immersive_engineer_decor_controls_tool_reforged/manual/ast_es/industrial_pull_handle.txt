@@ -1,0 +1,7 @@
+Tirador
+Control por redstone
+<&recipe>Una pieza compacta de control da a les construcciones industriales un puntu d’interrupción de redstone fácil d’identificar.<br>
+<br>
+Usu: fai clic derechu pa conmutar una salida a plena potencia pa los circuitos cercanos.<br>
+<br>
+Notes: emite redstone a plena potencia mientres ta encendíu.

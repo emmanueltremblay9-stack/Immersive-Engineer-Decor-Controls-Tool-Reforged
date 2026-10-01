@@ -1,0 +1,7 @@
+Pulskóppelingsrelais
+Gekóppelde bediening
+<&recipe>Ein óngerdael in relaisvorm geuf paneelbouw ein klein plaatselik sjakelpunt.<br>
+<br>
+Gebroek: rechtsklik um oetvoer op volle sjtèrkte veur sjakelinge in de buurt aan of oet te zètte. Gebroek ontvangerblök veur activatie mèt ein gekóppelde paerel.<br>
+<br>
+Opmerking: geuf redstone op volle sjtèrkte zolang 't aan is.

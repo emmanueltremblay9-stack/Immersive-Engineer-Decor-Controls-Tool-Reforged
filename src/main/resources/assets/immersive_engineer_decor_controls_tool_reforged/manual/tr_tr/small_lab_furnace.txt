@@ -1,0 +1,5 @@
+Laboratuvar Ocağı
+Küçük işleme birimi
+<&recipe>Laboratuvar ocağı, az atölye alanında küçük ölçekli katı yakıtlı eritme işleri yapar.<br>
+<br>
+Kullanım: Küçük eritme partileri için katı yakıt kullanın.<br>

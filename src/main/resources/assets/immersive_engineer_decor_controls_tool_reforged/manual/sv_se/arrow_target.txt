@@ -1,0 +1,7 @@
+Pilmåltavla
+Kort puls
+<&recipe>En återfjädrande brytare ger en tydlig redstonepuls med full styrka.<br>
+<br>
+Användning: Använd den för maskinstart, dörröppning, larm eller kretsar som ska aktiveras en gång.<br>
+<br>
+Anmärkning: Återställs efter den inställda pulsen.

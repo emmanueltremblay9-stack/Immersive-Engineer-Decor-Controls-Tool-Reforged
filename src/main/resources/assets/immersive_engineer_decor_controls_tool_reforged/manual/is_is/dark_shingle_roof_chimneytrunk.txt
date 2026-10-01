@@ -1,0 +1,5 @@
+Reykháfsstokkur á þak
+Veðraður þakhluti
+<&recipe>Reykháfsstokkurinn fyrir dökkt spónaþak myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>

@@ -1,0 +1,3 @@
+Durva aranyszemcse
+Az újjáépített barkácskészletben használt mérnöki szerszámanyag.
+<&recipe>Aranyrúddá olvasztható,<br>de fejlettebb<br>anyagfeldolgozásra nem alkalmas.

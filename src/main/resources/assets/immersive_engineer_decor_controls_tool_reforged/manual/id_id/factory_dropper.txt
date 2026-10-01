@@ -1,0 +1,5 @@
+Penjatuh Pabrik
+Peralatan lantai bengkel
+<&recipe>Blok ini mengeluarkan barang yang tersimpan dari sisi yang diarahkan.<br>
+<br>
+Penggunaan: arahkan bagian depan ke titik pengeluaran, isi slot internal, lalu atur gaya, sudut, jeda, logika penyaring, dan mode redstone melalui layarnya.<br>

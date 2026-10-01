@@ -1,0 +1,161 @@
+Klinkkeritiili ja muuraus
+Tiili- ja betonikuoret
+Klinkkeritiili, kuonatiili, raudoitettu betoni ja panssarilasi tarjoavat raskaita pintoja kuumiin tiloihin, työpajoihin ja suojattuihin näkymiin.<br>
+<br>
+Viimeistele reunat yhteensopivilla laatoilla, portailla, ohuilla laatoilla ja muureilla muuttamatta tehtaan materiaalien tyyliä.
+<np>
+Klinkkeritiilikuutio
+Noentumma tiilimuuraus
+<&clinker_brick_block>Tämä kuutio tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Klinkkeritiililaatta
+Noentumma tiilimuuraus
+<&clinker_brick_slab>Tämä kuutio tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Klinkkeritiiliportaat
+Noentumma tiilimuuraus
+<&clinker_brick_stairs>Tämä kuutio tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Klinkkeritiilimuuri
+Noentumma tiilimuuraus
+<&clinker_brick_wall>Tämä kuutio tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Likainen klinkkerikuutio
+Noentumma tiilimuuraus
+<&clinker_brick_stained_block>Likainen klinkkeritiilikuutio tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Likainen klinkkerilaatta
+Noentumma tiilimuuraus
+<&clinker_brick_stained_slab>Likainen klinkkeritiililaatta tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Likaiset klinkkeriportaat
+Noentumma tiilimuuraus
+<&clinker_brick_stained_stairs>Likaiset klinkkeritiiliportaat tuovat noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Koristeltu klinkkeritiili
+Noentumma tiilimuuraus
+<&clinker_brick_sastor_corner_block>Hiekkakivikoristeinen klinkkeritiili tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Syvennetty klinkkeritiili
+Noentumma tiilimuuraus
+<&clinker_brick_recessed>Tämä kuutio tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Uurretut klinkkeritiilet
+Noentumma tiilimuuraus
+<&clinker_brick_vertically_slit>Pystyuurteiset klinkkeritiilet tuovat noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Pystysuora klinkkerilaatta
+Noentumma tiilimuuraus
+<&clinker_brick_vertical_slab_structured>Kuvioitu pystysuora klinkkerilaatta tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Puolikas klinkkeritiililaatta
+Noentumma tiilimuuraus
+<&halfslab_clinker_brick>Tämä kuutio tuo noentummaa tiilimuurausta uunihalleihin, savupiippujen juureen ja huoltoseiniin.<br>
+<br>
+Käyttö: Käytä seinänä, koristeena tai kuumien alueiden kuorena uunien ja kattiloiden ympärillä.<br>
+<np>
+Kuonatiilikuutio
+Tiivis tehdasmuuraus
+<&slag_brick_block>Tämä kuutio tarjoaa tiivistä harmaanruskeaa muurausta perustuksiin, tukimuureihin ja vanhempiin työvajoihin.<br>
+<br>
+Käyttö: Käytä vanhoihin perustuksiin, tukimuureihin ja likaisiin tehdaslattioihin.<br>
+<np>
+Kuonatiililaatta
+Tiivis tehdasmuuraus
+<&slag_brick_slab>Tämä kuutio tarjoaa tiivistä harmaanruskeaa muurausta perustuksiin, tukimuureihin ja vanhempiin työvajoihin.<br>
+<br>
+Käyttö: Käytä vanhoihin perustuksiin, tukimuureihin ja likaisiin tehdaslattioihin.<br>
+<np>
+Kuonatiiliportaat
+Tiivis tehdasmuuraus
+<&slag_brick_stairs>Tämä kuutio tarjoaa tiivistä harmaanruskeaa muurausta perustuksiin, tukimuureihin ja vanhempiin työvajoihin.<br>
+<br>
+Käyttö: Käytä vanhoihin perustuksiin, tukimuureihin ja likaisiin tehdaslattioihin.<br>
+<np>
+Kuonatiilimuuri
+Tiivis tehdasmuuraus
+<&slag_brick_wall>Tämä kuutio tarjoaa tiivistä harmaanruskeaa muurausta perustuksiin, tukimuureihin ja vanhempiin työvajoihin.<br>
+<br>
+Käyttö: Käytä vanhoihin perustuksiin, tukimuureihin ja likaisiin tehdaslattioihin.<br>
+<np>
+Raudoitettu betonikuutio
+Raudoitettu betoni
+<&rebar_concrete>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Raudoitettu betonilaatta
+Raudoitettu betoni
+<&rebar_concrete_slab>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Raudoitetut betoniportaat
+Raudoitettu betoni
+<&rebar_concrete_stairs>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Raudoitettu betonimuuri
+Raudoitettu betoni
+<&rebar_concrete_wall>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Ohut raudoitettu betonilaatta
+Raudoitettu betoni
+<&halfslab_rebar_concrete>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Raudoitettu betonikaakeli
+Raudoitettu betoni
+<&rebar_concrete_tile>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Raudoitettu betonikaakelilaatta
+Raudoitettu betoni
+<&rebar_concrete_tile_slab>Tämä kuutio on kovetettu betoniosa konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Raudoitettu betonikaakeli
+Raudoitettu betoni
+<&rebar_concrete_tile_stairs>Raudoitetut betonikaakeliportaat ovat kovetettuja betoniosia konealustoihin, räjähdyssuojaseiniin ja lastaustilojen lattioihin.<br>
+<br>
+Käyttö: Käytä koneiden alla, huoltokäytävillä tai kaikkialla, missä rakennelma tarvitsee vahvistetun pohjan.<br>
+<np>
+Panssarilasikuutio
+Suojattu näkymä
+<&panzerglass_block>Tämä kuutio säilyttää avoimet näkymät ja sopii samalla vahvistettuun tehdasrakentamiseen.<br>
+<br>
+Käyttö: Käytä siellä, missä pelaajien tulisi nähdä koneet suojatun esteen läpi.<br>
+<np>
+Panssarilasilaatta
+Suojattu näkymä
+<&panzerglass_slab>Tämä kuutio säilyttää avoimet näkymät ja sopii samalla vahvistettuun tehdasrakentamiseen.<br>
+<br>
+Käyttö: Käytä siellä, missä pelaajien tulisi nähdä koneet suojatun esteen läpi.<br>

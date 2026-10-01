@@ -1,0 +1,5 @@
+Vendosës blloqesh fabrike
+Pajisje ndihmëse punishteje
+<&recipe>Ky bllok vendos blloqe nga rezerva e brendshme kur aktivizohet.<br>
+<br>
+Përdorimi: drejto faqen e punës te hapësira e synuar dhe fut grumbuj që mund të vendosen.<br>

@@ -1,0 +1,5 @@
+Bộ tiêm kích thích tự động
+Bộ tiêm khẩn cấp
+<&recipe>Gói kích thích tự động là vật phẩm y tế khẩn cấp.<br>
+<br>
+Dùng thủ công để hồi máu, nhận bảo vệ ngắn và tăng tốc. Trong kho đồ, nó tự kích hoạt khi ít máu rồi hồi chiêu. Giữ sẵn ở nơi nguy hiểm.

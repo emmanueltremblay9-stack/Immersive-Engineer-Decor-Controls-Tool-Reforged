@@ -1,0 +1,5 @@
+Šķidrumu savākšanas piltuve
+Šķidrumu līnijas aprīkojums
+<&recipe>Maza šķidrumu savākšanas piltuve ir kompakta šķidrumu līnijas detaļa mazām tvertnēm, cauruļvadiem, savākšanas vietām un ar Redstone vadāmai plūsmai.<br>
+<br>
+Lietošana: novieto zem šķidruma savākšanas vietas un novadi uzkrāto saturu tvertnēs vai zemāk esošās caurulēs.<br>

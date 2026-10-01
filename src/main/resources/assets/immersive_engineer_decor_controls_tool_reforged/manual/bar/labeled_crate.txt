@@ -1,0 +1,5 @@
+Beschriftete Kistn
+Änderbare Lagerbeschriftung
+<&recipe>De beschriftete Kistn is fia übersichtlichs Sortiern im Lager gmacht. Ihre Vorderplattn lasst si wia a kloans Werkstattschuidl beschriftn.<br>
+<br>
+So geht's: Rechtsklick auf d'Schuidlplattn zum Ändern vo da Kistnbeschriftung. Rechtsklick auf'n Rest vo da Kistn zum Öffnen vom Lager fia Anbauteil, Bauteil und Wartungsvorrat.<br>

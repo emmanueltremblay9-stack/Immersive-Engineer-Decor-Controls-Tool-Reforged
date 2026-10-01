@@ -1,0 +1,5 @@
+Sgabello in legno trattato
+Arredamento d’officina
+<&recipe>Questo blocco è un mobile pratico per locali di lavoro e angoli di manutenzione.<br>
+<br>
+Uso: posalo vicino a banchi, casse e macchinari compatti.<br>

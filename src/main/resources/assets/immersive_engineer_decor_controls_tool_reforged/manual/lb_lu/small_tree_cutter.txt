@@ -1,0 +1,5 @@
+Bamfäller
+Hëllefsmëttel um Ateliersbuedem
+<&recipe>De klenge Bamfäller ass en Ateliersnotzblock fir Handwierk, Lagerung, Plazéierung, Ofbau, Sammelen oder kompakt Automatiséierung.<br>
+<br>
+Benotzung: Riicht en op ausgewuesse Beem a sammel d'Ausbeut separat.<br>

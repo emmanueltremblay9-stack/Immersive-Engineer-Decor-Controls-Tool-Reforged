@@ -1,0 +1,7 @@
+Spremimente
+Condensatore d’esperienza
+<&recipe>Lo spremimente trasforma lapislazzuli ed esperienza in lapislazzuli caricati.<br>
+<br>
+Uso: porta lapislazzuli e almeno un livello d’esperienza, poi usa l’utensile. Un’operazione riuscita consuma un livello e un lapislazzuli, ferisce l’utilizzatore, danneggia lo spremimente e crea un lapislazzuli caricato.<br>
+<br>
+Non funziona se mancano lapislazzuli o esperienza, oppure se l’utilizzatore è troppo vicino alla morte.

@@ -1,0 +1,5 @@
+Glava debelog stuba
+Dio nosećeg okvira
+<&recipe>Glava/postolje ravnog debelog čeličnog stuba daje vidljivu strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: Okrenite ga i postavite kao vidljivu potporu gredama, stubovima i rubovima platformi.<br>

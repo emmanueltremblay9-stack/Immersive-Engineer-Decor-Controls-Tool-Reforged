@@ -1,0 +1,5 @@
+Mörkt spåntak
+Väderbiten takdel
+<&recipe>Det här blocket skapar mörka, praktiska taklinjer för verkstäder och industriskjul.<br>
+<br>
+Användning: Kombinera delarna för att skapa trovärdiga takprofiler.<br>

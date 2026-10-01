@@ -1,0 +1,7 @@
+Martiellu pa machacar mineral
+Ferramienta manual de machacáu
+<&recipe>El Martiellu pa machacar mineral ye una ferramienta manual de procesamientu pa trabayos iniciales con fierro y oru.<br>
+<br>
+Usu: Combínalu con fierro en bruto, oru en bruto, mineral de fierro, mineral de fierro de pizarra fonda, mineral d'oru o mineral d'oru de pizarra fonda pa producir polvu de fierro o d'oru d'Immersive Engineering. El martiellu pierde durabilidá y vuelve a la cuadrícula hasta que rompe.<br>
+<br>
+Tamién se gasta al picar y pue facer retroceder oxetivos nel combate cercanu.

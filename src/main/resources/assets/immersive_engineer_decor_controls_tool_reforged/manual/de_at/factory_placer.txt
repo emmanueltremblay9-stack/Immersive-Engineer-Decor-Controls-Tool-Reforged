@@ -1,0 +1,5 @@
+Fabrik-Blocksetza
+Hüfsgerät für de Werkstatt
+<&recipe>Der Block setzt beim Aktivieren Blöcke aus seinem eigenen Vorrat.<br>
+<br>
+Verwendung: Richt de Arbeitsseitn aufn Zielraum und füll setzbore Stapl ein.<br>

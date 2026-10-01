@@ -1,0 +1,7 @@
+Switch Link Mergroat
+Linked switchgear
+<&recipe>A linked mergroat saves a catcher mark for faraway workstead switching.<br>
+<br>
+Use: Click a Switch Link catcher with an Ender Mergroat to make one. Sneak-use the linked mergroat to start the saved catcher.<br>
+<br>
+Mind: The mark must be loaded, in the same worldfold and within reach.

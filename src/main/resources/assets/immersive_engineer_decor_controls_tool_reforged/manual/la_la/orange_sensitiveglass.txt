@@ -1,0 +1,7 @@
+Vitrum sensibile aurantium
+Vitrum signi
+<&recipe>Cubus vitreus redstone respondens prospectum servat dum statum signi ostendit.<br>
+<br>
+Usus: in fenestris conclavis moderandi, tabulis lucentibus et vitro officinae munito adhibe.<br>
+<br>
+Notae: statum signo redstone vicino mutat.

@@ -1,0 +1,7 @@
+REDIA aləti
+Almaz örtüklü yardımçı alət
+<&recipe>REDIA aləti müvəqqəti sahələr, emalatxanalar və mədən girişləri ətrafında səyyar iş üçün almaz səviyyəli davamlı çoxfunksiyalı alətdir.<br>
+<br>
+İstifadə: Yanınızda məşəllər olduqda işlədin; inventarınızdan bir məşəl yerləşdirəcək və REDIA-nı köhnəltməyəcək. Bitkiləri qırxmaq və ya zəmini torpaq, tarla ərazisi, cod torpaq və torpaq yol arasında dəyişmək üçün əyilərək istifadə edin. Alt üzdə əvvəlki balta əməliyyatı ehtiyat davranış kimi tətbiq olunur. Birləşmiş ağac bloklarını kəsmək üçün kötükləri qırarkən əyilin.<br>
+<br>
+Almazlarla təmir edin. Tam təmir edilmiş REDIA alətini əlavə təmir etmək ilkin Effektivlik və Sərvət inkişafını bərpa edir.

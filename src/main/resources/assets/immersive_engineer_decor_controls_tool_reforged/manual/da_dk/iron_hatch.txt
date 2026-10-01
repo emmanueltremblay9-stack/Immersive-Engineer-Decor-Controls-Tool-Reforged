@@ -1,0 +1,5 @@
+Jernluge
+Industrielt adgangspunkt
+<&recipe>Denne blok giver et solidt adgangspunkt til servicerum, skakte, tage og maskinindkapslinger.<br>
+<br>
+Brug: Monter den, hvor byggeriet kræver en kontrolleret åbning til vedligeholdelse.<br>

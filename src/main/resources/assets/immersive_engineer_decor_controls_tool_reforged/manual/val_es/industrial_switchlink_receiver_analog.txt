@@ -1,0 +1,7 @@
+Receptor analògic d’enllaç
+Control enllaçat
+<&recipe>Un receptor enllaçat dona als panells de control un destí remot visible.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per a crear una perla enllaçada. Usa eixa perla mentre estàs acatxat per a activar el receptor a distància.<br>
+<br>
+Notes: este receptor emet un senyal de redstone a plena potència quan s’activa.

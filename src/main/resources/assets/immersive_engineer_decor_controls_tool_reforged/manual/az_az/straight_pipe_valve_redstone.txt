@@ -1,0 +1,5 @@
+Qızıl daş maye klapanı
+Maye xətti avadanlığı
+<&recipe>Qızıl daş maye klapanı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Klapanı nəzərdə tutulan axın istiqamətinə uyğun düzləndirin.<br>

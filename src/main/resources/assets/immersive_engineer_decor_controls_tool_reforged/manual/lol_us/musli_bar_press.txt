@@ -1,0 +1,7 @@
+Muslee Nom-Bar Press
+Food squishin press
+<&recipe>Muslee Bar Press turnz common noms into compact field rations.<br>
+<br>
+How 2 use: Bring bread, apple, an wheat, melon, pumpkin, beetroot, or Industrial Hemp seed, den use press. Gud press eats one of each, checkz output room, makes four Muslee Melange Power Bars, an hurts press durability.<br>
+<br>
+If ingredient iz missin or inventoree haz no room fer bars, nothin iz eaten.

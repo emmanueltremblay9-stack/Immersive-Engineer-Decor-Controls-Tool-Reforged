@@ -1,0 +1,7 @@
+Riċevitur analogu tar-rabta
+Kontroll marbut
+<&recipe>Riċevitur marbut jagħti mira remota viżibbli lil pannelli tal-kontroll.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Uża dik il-perla waqt li timxi nkiss inkiss biex tattiva r-riċevitur mill-bogħod.<br>
+<br>
+Noti: dan ir-riċevitur jibgħat sinjal sħiħ tar-Redstone meta jiġi attivat.

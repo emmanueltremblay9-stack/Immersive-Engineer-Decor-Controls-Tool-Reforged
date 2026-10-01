@@ -1,0 +1,7 @@
+Komparila ŝaltilo
+Konektita signalo
+<&recipe>Kompakta sensila ŝaltilo legas la blokon sur kiu ĝi estas muntita kaj transformas tiun legon en simplan panelan eligon.<br>
+<br>
+Uzado: muntu ĝin sur inventaroj, tankoj aŭ redstone’aj aparatoj. Kiam la konektita bloko raportas komparilan, ujan aŭ redstone’an eligon, la ŝaltilo eligas plenfortan redstone’an signalon.<br>
+<br>
+Notoj: uzu ĝin por transformi stoknivelojn aŭ kaŝitajn dratojn en klarajn ŝaltajn/malŝaltajn regliniojn.

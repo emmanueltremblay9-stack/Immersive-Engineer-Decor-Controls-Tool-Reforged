@@ -1,0 +1,7 @@
+Mothaiche solais
+Mothachadh chomharran
+<&recipe>Tionndaidhidh mothaiche solais soilleireachd ionadail gu smachd redstone.<br>
+<br>
+Cleachdadh: cleachd e airson lampaichean fèin-obrachail, còmhlaichean agus cuairtean faicsinneachd.<br>
+<br>
+Nòtaichean: bheir e cumhachd aig soilleireachd amh 8 no nas àirde.

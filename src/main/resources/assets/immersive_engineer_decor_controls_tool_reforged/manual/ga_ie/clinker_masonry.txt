@@ -1,0 +1,161 @@
+Clincéar agus Saoirseacht
+Blaoscanna brící agus coincréite
+Soláthraíonn clincéar, brící slaige, coincréit threisithe agus gloine armúrtha dromchlaí troma do sheomraí teo, ceardlanna agus línte radhairc cosanta.<br>
+<br>
+Úsáid na leaca, staighrí, sraitheanna agus ballaí comhfhreagracha chun imill a chríochnú gan stíl ábhar na monarchan a athrú.
+<np>
+Bloc Brící Clincéir
+Brící dorchaithe le súiche
+<&clinker_brick_block>Tugann an bloc seo obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Leac Brící Clincéir
+Brící dorchaithe le súiche
+<&clinker_brick_slab>Tugann an bloc seo obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Staighre Brící Clincéir
+Brící dorchaithe le súiche
+<&clinker_brick_stairs>Tugann an bloc seo obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Balla Brící Clincéir
+Brící dorchaithe le súiche
+<&clinker_brick_wall>Tugann an bloc seo obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Bloc Clincéir Shalaigh
+Brící dorchaithe le súiche
+<&clinker_brick_stained_block>Tugann an Bloc Brící Clincéir Salacha obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Leac Chlincéir Shalaigh
+Brící dorchaithe le súiche
+<&clinker_brick_stained_slab>Tugann an Leac Brící Clincéir Salacha obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Staighre Clincéir Shalaigh
+Brící dorchaithe le súiche
+<&clinker_brick_stained_stairs>Tugann an Staighre Brící Clincéir Salacha obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Bríce Clincéir Maisithe
+Brící dorchaithe le súiche
+<&clinker_brick_sastor_corner_block>Tugann an Bhríce Clincéir Maisithe le Gaineamhchloch obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Bríce Clincéir Cuasaithe
+Brící dorchaithe le súiche
+<&clinker_brick_recessed>Tugann an bloc seo obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Brící Clincéir Scoilte
+Brící dorchaithe le súiche
+<&clinker_brick_vertically_slit>Tugann na Brící Clincéir le Scoilteanna Ingearacha obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Leac Chlincéir Ingearach
+Brící dorchaithe le súiche
+<&clinker_brick_vertical_slab_structured>Tugann an Leac Chlincéir Ingearach Phatrúnaithe obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Leathleac Brící Clincéir
+Brící dorchaithe le súiche
+<&halfslab_clinker_brick>Tugann an bloc seo obair bhrící atá dorchaithe le súiche do hallaí foirnéise, bunanna simléir agus ballaí seirbhíse.<br>
+<br>
+Úsáid: úsáid é mar bhalla, mar imeall maisiúil nó mar bhlaosc limistéir the timpeall ar fhoirnéisí agus coirí.<br>
+<np>
+Bloc Brící Slaige
+Saoirseacht dhlúth monarchan
+<&slag_brick_block>Cuireann an bloc seo saoirseacht dhlúth liathdhonn ar fáil do bhunsraitheanna, ballaí coinneála agus seanbhotháin oibre.<br>
+<br>
+Úsáid: úsáid é do sheanbhunsraitheanna, ballaí coinneála agus urláir shalacha monarchan.<br>
+<np>
+Leac Brící Slaige
+Saoirseacht dhlúth monarchan
+<&slag_brick_slab>Cuireann an bloc seo saoirseacht dhlúth liathdhonn ar fáil do bhunsraitheanna, ballaí coinneála agus seanbhotháin oibre.<br>
+<br>
+Úsáid: úsáid é do sheanbhunsraitheanna, ballaí coinneála agus urláir shalacha monarchan.<br>
+<np>
+Staighre Brící Slaige
+Saoirseacht dhlúth monarchan
+<&slag_brick_stairs>Cuireann an bloc seo saoirseacht dhlúth liathdhonn ar fáil do bhunsraitheanna, ballaí coinneála agus seanbhotháin oibre.<br>
+<br>
+Úsáid: úsáid é do sheanbhunsraitheanna, ballaí coinneála agus urláir shalacha monarchan.<br>
+<np>
+Balla Brící Slaige
+Saoirseacht dhlúth monarchan
+<&slag_brick_wall>Cuireann an bloc seo saoirseacht dhlúth liathdhonn ar fáil do bhunsraitheanna, ballaí coinneála agus seanbhotháin oibre.<br>
+<br>
+Úsáid: úsáid é do sheanbhunsraitheanna, ballaí coinneála agus urláir shalacha monarchan.<br>
+<np>
+Bloc Coincréite Treisithe
+Coincréit threisithe
+<&rebar_concrete>Is páirt chruaite choincréite é an bloc seo do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Leac Choincréite Treisithe
+Coincréit threisithe
+<&rebar_concrete_slab>Is páirt chruaite choincréite é an bloc seo do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Staighre Coincréite Treisithe
+Coincréit threisithe
+<&rebar_concrete_stairs>Is páirt chruaite choincréite é an bloc seo do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Balla Coincréite Treisithe
+Coincréit threisithe
+<&rebar_concrete_wall>Is páirt chruaite choincréite é an bloc seo do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Sraith Coincréite Treisithe
+Coincréit threisithe
+<&halfslab_rebar_concrete>Is páirt chruaite choincréite é an bloc seo do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Tíl Choincréite Treisithe
+Coincréit threisithe
+<&rebar_concrete_tile>Is páirt chruaite choincréite é an bloc seo do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Leac Tíleanna Coincréite Treisithe
+Coincréit threisithe
+<&rebar_concrete_tile_slab>Is páirt chruaite choincréite é an bloc seo do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Tíl Choincréite Treisithe
+Coincréit threisithe
+<&rebar_concrete_tile_stairs>Is páirteanna cruaite coincréite iad na Staighrí Tíleanna Coincréite Treisithe do bhoinn meaisín, ballaí cosanta ar phléascanna agus urláir bánna luchtaithe.<br>
+<br>
+Úsáid: úsáid é faoi mheaisíní, feadh conairí seirbhíse nó áit ar bith a bhfuil bonn treisithe de dhíth sa tógáil.<br>
+<np>
+Bloc Gloine Armúrtha
+Radharc cosanta
+<&panzerglass_block>Coinníonn an bloc seo línte radhairc oscailte agus oireann sé do thógáil threisithe monarchan fós.<br>
+<br>
+Úsáid: úsáid é áit ar chóir d'imreoirí innealra a fheiceáil trí bhac cosanta.<br>
+<np>
+Leac Ghloine Armúrtha
+Radharc cosanta
+<&panzerglass_slab>Coinníonn an bloc seo línte radhairc oscailte agus oireann sé do thógáil threisithe monarchan fós.<br>
+<br>
+Úsáid: úsáid é áit ar chóir d'imreoirí innealra a fheiceáil trí bhac cosanta.<br>

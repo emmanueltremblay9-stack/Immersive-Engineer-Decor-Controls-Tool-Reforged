@@ -1,0 +1,7 @@
+Bemeter Switch
+Backing token
+<&recipe>A small watcher switch reads its backing clot and turns that reading into a plain board outflow.<br>
+<br>
+Use: Fix it to inholdings, vats or redstone gear. When the backing clot gives a Bemeter, holder or redstone outflow, the switch sends full-strength redstone.<br>
+<br>
+Mind: Turn stock levels or hidden wiring into clear on/off switch lines.

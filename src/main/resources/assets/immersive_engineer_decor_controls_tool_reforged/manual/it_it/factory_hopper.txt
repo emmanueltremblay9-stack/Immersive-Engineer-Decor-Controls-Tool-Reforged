@@ -1,0 +1,5 @@
+Tramoggia industriale
+Attrezzatura per la fabbrica
+<&recipe>Questo blocco trasferisce pile di oggetti in un involucro industriale più compatto.<br>
+<br>
+Uso: orientalo verso la linea degli inventari, poi imposta portata, dimensione delle pile, tempi e modalità redstone nella schermata.<br>

@@ -1,0 +1,5 @@
+Embut de líquids
+Accessoris de conducció de líquids
+<&recipe>L’embut de líquids xicotet és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: posa’l davall del punt de recollida de líquids i conduïx el contingut guardat a depòsits o canonades més baixes.<br>

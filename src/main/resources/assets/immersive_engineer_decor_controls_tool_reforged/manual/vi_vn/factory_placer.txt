@@ -1,0 +1,5 @@
+Máy đặt khối công nghiệp
+Tiện ích sàn xưởng
+<&recipe>Khối này đặt khối từ kho bên trong khi được kích hoạt.<br>
+<br>
+Cách dùng: Hướng mặt làm việc về khoảng trống mục tiêu rồi nạp các chồng đồ có thể đặt.<br>

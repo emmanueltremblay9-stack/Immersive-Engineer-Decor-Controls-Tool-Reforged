@@ -1,0 +1,107 @@
+Laboreymashini
+Mashini e laboreya eniri/ekiri
+Laboreymashini furnisas kompakta fabrikado, objektomovado, fuzado, deshejoforpreno, kolektado ed utila laboro en spaco di un bloko.<br>
+<br>
+Apertez la sequanta pagini por la recepto, imajo, priskribo e praktika uzonoti di singla mashino.
+<np>
+Acera tablo
+Laboreymeblo
+<&steel_table>Ca bloko esas praktika laboreymeblo por laborchambri e manutenokoini.<br>
+<br>
+Uzo: Pozez ol apud labortabli, kesti e kompakta mashini.<br>
+<np>
+Tablo ek traktita ligno
+Laboreymeblo
+<&treated_wood_table>Ca bloko esas praktika laboreymeblo por laborchambri e manutenokoini.<br>
+<br>
+Uzo: Pozez ol apud labortabli, kesti e kompakta mashini.<br>
+<np>
+Skabelo ek traktita ligno
+Laboreymeblo
+<&treated_wood_stool>Ca bloko esas praktika laboreymeblo por laborchambri e manutenokoini.<br>
+<br>
+Uzo: Pozez ol apud labortabli, kesti e kompakta mashini.<br>
+<np>
+Metala tablo di fabrikado
+Labortablo por plaki
+<&metal_crafting_table>La metala tablo di fabrikado esas plufortigita laboreystaciono kun martelofako, fabrikoreto 3x3 e klare aparta ekirfako.<br>
+<br>
+Uzo: Uzez la reto por ordinara fabrikado. Por IE-plaki, pozez injenioromartelo en la utensilofako e la plakmaterialo en la reto ante prenar la rezultajo. Acerdekoraji uzas acerplaki por stangi, pasareli, fenestri, pordi, balustradi ed altra acerpeci.<br>
+<np>
+Fabrikala funelego
+Laboreyaparato
+<&factory_hopper>Ca bloko movas objektostaki tra plu kompakta industriala korpuso.<br>
+<br>
+Uzo: Direktez ol vers la inventaria linio, pose ajustez distanco, stakokvanto, tempo e redstonea modo en lua ekrano.<br>
+<np>
+Fabrikala distributilo
+Laboreyaparato
+<&factory_dropper>Ca bloko ekprojetas stokita objekti de direktita facio.<br>
+<br>
+Uzo: Direktez la avanfacio vers la ekireypunkto, plenigez lua interna faki, ed ajustez forco, angulo, intertempo, filtrilologiko e redstonea modo en lua ekrano.<br>
+<np>
+Fabrikala blokopozilo
+Laboreyaparato
+<&factory_placer>Ca bloko instalas bloki de sua interna stoko kande aktigita.<br>
+<br>
+Uzo: Direktez la laborfacio vers la skopspaco e plenigez ol per pozebla staki.<br>
+<np>
+Blokoruptilo
+Laboreyaparato
+<&small_block_breaker>La Mikra blokoruptilo esas laboreyaparato por fabrikado, stokado, pozado, ruptado, kolektado o kompakta automatigo.<br>
+<br>
+Uzo: Direktez la laborfacio vers la bloko forprenenda.<br>
+<np>
+Deshejobruligilo
+Kompakta procesunajo
+<&small_waste_incinerator>La deshejobruligilo destruktas nedezirata objekti en kompakta laboreyspaco.<br>
+<br>
+Uzo: Enmetez nur nedezirata objekti en lua vartorango.<br>
+<np>
+Laboratoriala furnazo
+Kompakta procesunajo
+<&small_lab_furnace>La laboratoriala furnazo exekutas kompakta fuzadolabori per solida brulajo en mikra laboreyspaco.<br>
+<br>
+Uzo: Uzez solida brulajo por kompakta fuzadolotari.<br>
+<np>
+Elektrofurnazo
+Kompakta procesunajo
+<&small_electrical_furnace>La elektrofurnazo exekutas kompakta fuzadolabori per FE-energio en mikra laboreyspaco.<br>
+<br>
+Uzo: Provizez FE ed apta fuzadoeniro.<br>
+<np>
+Mineralfuzilo
+Kompakta procesunajo
+<&small_mineral_smelter>La mineralfuzilo exekutas mineraloprocesado ye alta temperaturo en kompakta laboreyspaco.<br>
+<br>
+Uzo: Provizez mineralbloki ed energio por fuzado ye alta temperaturo.<br>
+<np>
+Aquofrostigilo
+Kompakta procesunajo
+<&small_freezer>La aquofrostigilo exekutas kompakta koldigolaboro por energioalimentata fluidoinstaluri.<br>
+<br>
+Uzo: Provizez aquo ed energio por glacioproduktado per stadii.<br>
+<np>
+Pasiva fluido
+Fluidotuba aparataro
+<&passive_fluid_accumulator>La Pasiva fluidoakumulilo esas kompakta fluidotubpeco por mikra rezervuyi, tublinei, kolektopunkti e fluoregado per redstoneo.<br>
+<br>
+Uzo: Pozez ol kontre apta aquofonti e lasez spaco por forprenar fluido.<br>
+<np>
+Sunopanelo
+Laboreyaparato
+<&small_solar_panel>La Mikra sunopanelo esas laboreyaparato por fabrikado, stokado, pozado, ruptado, kolektado o kompakta automatigo.<br>
+<br>
+Uzo: Donez aceso a libera cielo e konektez ekipuro kun basa konsumo.<br>
+<np>
+Melkmashino
+Laboreyaparato
+<&small_milking_machine>La Mikra melkmashino esas laboreyaparato por fabrikado, stokado, pozado, ruptado, kolektado o kompakta automatigo.<br>
+<br>
+Uzo: Pozez ol apud bovi e provizez moyeno por forprenar laktorecipienti o fluido.<br>
+<np>
+Arbortrancho-mashino
+Laboreyaparato
+<&small_tree_cutter>La Mikra arbortrancho-mashino esas laboreyaparato por fabrikado, stokado, pozado, ruptado, kolektado o kompakta automatigo.<br>
+<br>
+Uzo: Direktez ol vers matura arbori e kolektez la falaji aparte.<br>

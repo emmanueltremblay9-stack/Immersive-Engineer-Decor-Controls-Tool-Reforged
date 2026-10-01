@@ -1,0 +1,7 @@
+Hapag-gawaan ng Metal
+Lugar ng paggawa ng plaka
+<&recipe>Hapag-gawaan ng metal na may natatanging puwesto para sa martilyo, 3x3 na crafting grid, at puwesto ng output.<br>
+<br>
+Paggamit: Gamitin ang grid tulad ng karaniwang hapag-gawaan. Upang gumawa ng mga plaka ng IE, ilagay ang Martilyo ng Inhinyero sa puwesto ng kasangkapan at ang materyal ng plaka sa grid, saka kunin ang nabuong plaka sa labasan.<br>
+<br>
+Gumagamit ng aserong plaka ang mga palamuting asero. Isaksak ang martilyo ng Immersive Engineering, martilyuhin ang mga linggote ng asero upang maging plaka, saka gamitin ang mga plaka para sa mga poste, daang panserbisyo, bintana, pinto, gabay at iba pang palamuting asero.<br>

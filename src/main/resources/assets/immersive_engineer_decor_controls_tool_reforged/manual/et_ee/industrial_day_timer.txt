@@ -1,0 +1,7 @@
+Ööpäevataimer
+Päevavalgussignaal
+<&recipe>Taimerlüliti järgib maailma ööpäeva päevast osa.<br>
+<br>
+Kasutamine: Kasuta õuelampide, aknaluukide ja ainult päeval töötavate tehasejuhtseadmete jaoks.<br>
+<br>
+Märkus: Vajab taevavalgusega dimensiooni.

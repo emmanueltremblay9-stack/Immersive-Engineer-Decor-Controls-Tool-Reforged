@@ -1,0 +1,5 @@
+Embut de fabrica
+Equipament utilitari d’obrador
+<&recipe>Aqueste blòc desplaça de pilas d’objèctes dins una bóstia industriala mai estrecha.<br>
+<br>
+Utilizacion : orienta-lo cap a la linha d’inventaris, puèi règla la portada, lo nombre d’objèctes de la pila, la temporizacion e lo mòde de redstone dins son ecran.<br>

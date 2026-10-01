@@ -1,0 +1,5 @@
+Skilt: frostadvarsel
+Faremarkering
+<&recipe>Skiltet med frostadvarsel markerer farer, udgange og arbejdszoner med et tydeligt visuelt sikkerhedssignal til fabrikken.<br>
+<br>
+Brug: Placer det ved farer, udgange, maskiner og afspærrede zoner.<br>

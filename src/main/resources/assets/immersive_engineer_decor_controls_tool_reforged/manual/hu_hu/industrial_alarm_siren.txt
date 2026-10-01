@@ -1,0 +1,7 @@
+Riasztósziréna
+Jelvisszajelzés
+<&recipe>A riasztósziréna oldalra szerelhető redstone-jelző. Bekapcsolt állapota a rögzítési blokk által adott jelet követi.<br>
+<br>
+Használat: rögzítsd szilárd felületre, és tápláld meg ajtók, gépek, riasztások vagy panelek figyeléséhez.<br>
+<br>
+Megjegyzés: a sziréna másodpercenként frissül, amíg a csatlakozó jele aktív.

@@ -1,0 +1,5 @@
+Válvula antirretorno para tubaxe de líquidos
+Equipamento de tubaxes de fluídos
+<&recipe>A válvula antirretorno para tubaxe de líquidos é unha peza compacta de condución de fluídos para pequenos depósitos, tubaxes, puntos de recollida e caudais controlados por redstone.<br>
+<br>
+Uso: aliña a válvula coa dirección de caudal prevista.<br>

@@ -1,0 +1,5 @@
+Stahltisch
+Werkstattmöbl
+<&recipe>Der Block is a praktisches Werkstattmöbl fia Arbeitsräum und Wartungseckn.<br>
+<br>
+So geht's: Stell'n nebn Werkbänk, Kistn und kloane Maschinen.<br>

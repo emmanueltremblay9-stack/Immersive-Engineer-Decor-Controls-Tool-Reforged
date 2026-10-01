@@ -1,0 +1,99 @@
+Ingeniørværktøjer
+Bærbart værkstedsudstyr
+Sættet med ingeniørværktøjer føjer håndholdt udstyr, minemarkører, nødforbrugsartikler, feltmad og små hjælpemidler til materialebearbejdning til samme håndbog som dekorations- og styringsblokkene.<br>
+<br>
+Disse værktøjer er beregnet til arbejde væk fra et fuldt udstyret værksted: marker ruten, medbring forsyninger, kom dig efter fejl, og afslut små bearbejdningsopgaver på stedet.
+<np>
+REDIA-værktøj
+Diamantbeklædt universalværktøj
+<&redia_tool>REDIA-værktøjet er et holdbart feltværktøj til hurtigt jordarbejde. Brug det på egnet jord for at lave landbrugsjord.<br>
+<br>
+Brug det mod en stabil flade, mens du har fakler med, for at placere en fakkelmarkering fra tasken uden at slide på REDIA. Jordarbejde, klipning, øksearbejde og træfældning bruger holdbarhed.
+<np>
+Malmknusningshammer
+Manuelt værktøj
+<&crushing_hammer>Et manuelt værktøj til tidligt jern- og guldarbejde.<br>
+<br>
+Brug: Fremstil med råjern, råguld, jernmalm, dybskiferjernmalm, guldmalm eller dybskiferguldmalm for Immersive Engineering-jern- eller guldstøv. Hammeren mister holdbarhed og vender tilbage til gitteret, til den knækker.<br>
+<br>
+Den slides også ved minedrift og kan slå mål tilbage i nærkamp.
+<np>
+Sporer
+Gemt positionsmærke
+<&tracker>Gemmer en blokposition i genstanden.<br>
+<br>
+Brug: Klik på en blok for dimension og koordinater. Tippet viser positionen. Snige-brug rydder den.<br>
+<br>
+Markér maskiner, tunnelgrene, fjernstyringer eller ufærdige byggepladser.
+<np>
+Ariadnekul
+Rutemarkør til miner
+<&ariadne_coal>Ariadnekul placerer hurtigt sorte rutepile på stabile mineflader. Brug det på en solid flade for at markere næste sving, udgang eller forgrening. Markøren understøtter otte retninger på den flade, du klikker på, også diagonalt.<br>
+<br>
+Ariadnekul er et genanvendeligt markeringsværktøj med 100 anvendelser. Hver vellykket markering koster ét holdbarhedspoint. Det afviser flader, som ikke understøttes, i stedet for at slide på genstanden.
+<np>
+Auto-stimpakke
+Nødinjektor
+<&stimpack>Nødgenstand til farligt vedligehold.<br>
+<br>
+Brug: Manuelt heler, beskytter kort og øger bevægelse. I inventaret udløses den ved lavt helbred og går derefter på nedkøling.<br>
+<br>
+Hav én klar før højder, blotlagte ledninger eller farlige miner.
+<np>
+Sovepose
+Bærbart hvilesæt
+<&sleeping_bag>Vejrbestandigt sæt til arbejde langt fra en seng.<br>
+<br>
+Brug: Om natten i Oververdenen hviler du til morgen uden at sætte eller flytte genoplivningspunkt.<br>
+<br>
+Afviser dag, nærliggende monstre og uegnede dimensioner. Hvert vellykket hvil slider den.
+<np>
+Materialekasse
+Byggeforsyninger
+<&material_box>Rummer et stort lager af ét almindeligt, uændret og stabelbart byggemateriale.<br>
+<br>
+Brug: Kasse i hovedhånden og materiale i den anden for at fylde. Tom anden hånd tager én stak ud.<br>
+<br>
+Rummer 512 genstande af én type og afviser indlejrede kasser, ikke-stabelbart udstyr og ændrede stakke; indholdet vises i tippet.
+<np>
+Dykkerluftkapsel
+Nødluftreserve
+<&diving_capsule>Nødluft til arbejde under vand.<br>
+<br>
+Brug: Gendan luft manuelt. I inventaret udløses den automatisk, når luften næsten er væk, og går derefter på nedkøling.<br>
+<br>
+Tag den med i oversvømmede miner, under vand-rør og pumperum.
+<np>
+Muslee-barpresse
+Madpresse
+<&musli_bar_press>Gør almindelige fødevarer til kompakte feltrationer.<br>
+<br>
+Brug: Brød, æble og frø af hvede, melon, græskar, rødbede eller industrihamp. En vellykket presning bruger én af hver, kontrollerer plads, laver fire barer og skader pressen.<br>
+<br>
+Mangler en ingrediens eller plads, bruges intet.
+<np>
+Muslee Melange-energibar
+Hurtig værkstedssnack
+<&musli_bar>Kompakt mad af brød, frø og frugt.<br>
+<br>
+Brug: Spis som feltmad ved opsætning af styringer, rør, platforme eller lange maskinlinjer.
+<np>
+Tankepresser
+Erfaringskondensator
+<&charged_lapis_squeezer>Tankepresseren omdanner én lapis lazuli og ét erfaringsniveau fra din taske til opladet lapis.<br>
+<br>
+Hver vellykket omdannelse skader, udmatter og kortvarigt blænder brugeren. Processen nægter at starte uden lapis eller XP, eller når brugeren er for tæt på at dø.
+<np>
+Opladet lapis
+Lagret erfaring
+<&charged_lapis>Opladet lapis gemmer ét erfaringsniveau. Indtag den for at få niveauet tilbage, fjerne aktive effekter og genvinde lidt helbred.<br>
+<br>
+Fremstil først en tankepresser. Opladet lapis fremstilles ved at bruge det værktøj med lapis og XP til rådighed.
+<np>
+Groft jerngrus
+Ingeniørværktøjsmateriale til det rekonstruerede opskriftssæt.
+<&iron_grit>Kan smeltes til jernbarrer,<br>men egner sig ikke til<br>avanceret materialebearbejdning.
+<np>
+Groft guldgrus
+Ingeniørværktøjsmateriale til det rekonstruerede opskriftssæt.
+<&gold_grit>Kan smeltes til guldbarrer,<br>men egner sig ikke til<br>avanceret materialebearbejdning.

@@ -1,0 +1,7 @@
+Temporizator intervallorum
+Pulsus temporatus
+<&recipe>Commutator temporis compactus pulsum redstone constitutum praebet.<br>
+<br>
+Usus: adhibe ubi machina parva moderatione periodica aut dilata eget.<br>
+<br>
+Notae: pulsibus redstone constitutis utitur.

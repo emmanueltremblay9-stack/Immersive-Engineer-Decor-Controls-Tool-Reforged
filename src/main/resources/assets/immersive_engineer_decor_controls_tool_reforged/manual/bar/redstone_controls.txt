@@ -1,0 +1,789 @@
+Redstone-Steuerunga
+Messgeräte und Signalbauteil
+Steuergeräte machen versteckts Redstone zu ablesbare Fabrikpaneele, Sensoren, Anzeiger, Schalter, Alarmgeräte und verbundenen Signalbauteiln.<br>
+<br>
+Nutz de Seiten, wennst Bedienplätz, Signaltafeln, Sicherheitsschaltungen und Fernsteuerunga baust.
+<np>
+Pfeilziel
+Kurzer Impuls
+<&arrow_target>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Tiasensor
+Redstone-Steuerung
+<&door_sensor_switch>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Liftknopf
+Redstone-Steuerung
+<&elevator_button>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Glosknopf
+Redstone-Steuerung
+<&glass_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Glosknopf
+Redstone-Steuerung
+<&glass_small_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Glos-Berührungsknopf
+Redstone-Steuerung
+<&glass_touch_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Maschinenknopf
+Redstone-Steuerung
+<&industrial_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Knopf
+Redstone-Steuerung
+<&industrial_double_pole_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Maschinenknopf mit Schutzbügl
+Redstone-Steuerung
+<&industrial_fenced_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Klopfknopf
+Redstone-Steuerung
+<&industrial_knock_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Oida verzierter Knopf
+Redstone-Steuerung
+<&oldfancy_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Oida verzierter Knopf
+Redstone-Steuerung
+<&oldfancy_small_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Oida verzierter Kettnknopf
+Kurzer Impuls
+<&oldfancy_spring_reset_chain>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Bäuerlicher Knopf
+Redstone-Steuerung
+<&rustic_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Bäuerlicher Naglknopf
+Redstone-Steuerung
+<&rustic_nail_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Kloana bäuerlicher Knopf
+Redstone-Steuerung
+<&rustic_small_button>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Bäuerlicher Kettnknopf
+Kurzer Impuls
+<&rustic_spring_reset_chain>A Momentschalter gibt an saubern Redstone-Impuls mit voller Stärk ab.<br>
+<br>
+So geht's: Nutz'n zum Maschinenstart, zur Tiafreigab, fia Alarm oder fia Schaltungen, de bloß oamoi laufn solln.<br>
+<br>
+Hinweis: Setzt si nach seim festgelegten Impuls zruck.
+<np>
+Gloskontaktplattn
+Druckimpuls
+<&glass_contact_mat>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Glos-Tiakontakt
+Druckimpuls
+<&glass_door_contact_mat>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Kontaktmattn
+Druckimpuls
+<&industrial_contact_mat>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Tiakontaktmattn
+Druckimpuls
+<&industrial_door_contact_mat>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Durchfalldetektor
+Signalerkennung
+<&industrial_fallthrough_detector>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Fuassknopf
+Redstone-Steuerung
+<&industrial_foot_button>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Industrie-Stoßklappdierl
+Druckimpuls
+<&industrial_high_sensitive_trapdoor>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Stoßkontaktmattn
+Druckimpuls
+<&industrial_shock_sensitive_contact_mat>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Stoßklappdierl
+Druckimpuls
+<&industrial_shock_sensitive_trapdoor>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Rote Strompflanzn
+Druckimpuls
+<&red_power_plant>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Bäuerliche Druckplattn
+Druckimpuls
+<&rustic_contact_plate>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Bäuerliche Tiadruckplattn
+Druckimpuls
+<&rustic_door_contact_plate>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Bäuerlicher Falldetektor
+Signalerkennung
+<&rustic_fallthrough_detector>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Bäuerlichs Stoßklappdierl
+Druckimpuls
+<&rustic_high_sensitive_trapdoor>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Bäuerliche Stoßplattn
+Druckimpuls
+<&rustic_shock_sensitive_plate>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Bäuerlichs Stoßklappdierl
+Druckimpuls
+<&rustic_shock_sensitive_trapdoor>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Gelbe Strompflanzn
+Druckimpuls
+<&yellow_power_plant>A Kontaktschalter gibt bei Bewegung am Bodn oder Klappdierl a kurzes Signal ab.<br>
+<br>
+So geht's: Setz'n dorthin, wo Entitäten durch an Wartungsgang, a Beladestation oder an bewachten Weg gehn.<br>
+<br>
+Hinweis: Gibt nachm Kontakt mit ana Entität kurz an Impuls ab.
+<np>
+Glos-Tageszeitschaltuhr
+Tagesliachtsignal
+<&glass_day_timer>A Zeitschalter folgt dem Tagesabschnitt vom Weltzyklus.<br>
+<br>
+So geht's: Nutz'n fia Hoflampn, Fensterlädn und Fabriksteuerunga, de bloß tagsüber laufn solln.<br>
+<br>
+Hinweis: Braucht a Dimension mit Himmelsliacht.
+<np>
+Glos-Entitätendetektor
+Signalerkennung
+<&glass_entity_detector>A Entitätendetektor beobachtet Bewegunga in da Näh, ohne sichtbare Bodnplattn.<br>
+<br>
+So geht's: Verbind'n mit Tiern, Lampn, Alarm oder Maschinenverriegelunga.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich um den Block ab.
+<np>
+Glos-Intervallsignal
+Zeitgsteuerter Impuls
+<&glass_interval_timer>A kloana Zeitschalter liefert an festgelegten Redstone-Impuls.<br>
+<br>
+So geht's: Nutz'n, wenn a kloana Mechanismus regelmäßig oder verzögert gsteuert werdn soll.<br>
+<br>
+Hinweis: Nutzt festgelegte Redstone-Impulse.
+<np>
+Glos-Liniendetektor
+Signalerkennung
+<&glass_linear_entity_detector>A Entitätendetektor beobachtet Bewegunga in da Näh, ohne sichtbare Bodnplattn.<br>
+<br>
+So geht's: Verbind'n mit Tiern, Lampn, Alarm oder Maschinenverriegelunga.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich um den Block ab.
+<np>
+Blockdetektor
+Signalerkennung
+<&industrial_block_detector>A Blockdetektor prüft, ob da Raum vor ihm belegt is.<br>
+<br>
+So geht's: Richt'n auf de Maschinenseit, den Puffer oder den gschützten Raum, denst im Augn behaltn mogst.<br>
+<br>
+Hinweis: Gibt Energie ab, wenn da Block vor ihm koa Luft is.
+<np>
+Tageszeitschaltuhr
+Tagesliachtsignal
+<&industrial_day_timer>A Zeitschalter folgt dem Tagesabschnitt vom Weltzyklus.<br>
+<br>
+So geht's: Nutz'n fia Hoflampn, Fensterlädn und Fabriksteuerunga, de bloß tagsüber laufn solln.<br>
+<br>
+Hinweis: Braucht a Dimension mit Himmelsliacht.
+<np>
+Entitätendetektor
+Signalerkennung
+<&industrial_entity_detector>A Entitätendetektor beobachtet Bewegunga in da Näh, ohne sichtbare Bodnplattn.<br>
+<br>
+So geht's: Verbind'n mit Tiern, Lampn, Alarm oder Maschinenverriegelunga.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich um den Block ab.
+<np>
+Intervallzeitgeber
+Zeitgsteuerter Impuls
+<&industrial_interval_timer>A kloana Zeitschalter liefert an festgelegten Redstone-Impuls.<br>
+<br>
+So geht's: Nutz'n, wenn a kloana Mechanismus regelmäßig oder verzögert gsteuert werdn soll.<br>
+<br>
+Hinweis: Nutzt festgelegte Redstone-Impulse.
+<np>
+Liachtsensor
+Signalerkennung
+<&industrial_light_sensor>A Liachtsensor macht aus da örtlichen Helligkeit a Redstone-Steuerung.<br>
+<br>
+So geht's: Nutz'n fia automatische Lampn, Klapplädn und Sichtbarkeitsschaltungen.<br>
+<br>
+Hinweis: Gibt ab ana rohen Helligkeit vo 8 Energie ab.
+<np>
+Gwitterdetektor
+Signalerkennung
+<&industrial_lightning_sensor>A Gwittersensor löst bei Donner Warnungen aus.<br>
+<br>
+So geht's: Setz'n untern freien Himml und verbind'n mit Lampn oder Alarm.<br>
+<br>
+Hinweis: Braucht Donner und freie Sicht zum Himml.
+<np>
+Linien-Entitätendetektor
+Signalerkennung
+<&industrial_linear_entity_detector>A Entitätendetektor beobachtet Bewegunga in da Näh, ohne sichtbare Bodnplattn.<br>
+<br>
+So geht's: Verbind'n mit Tiern, Lampn, Alarm oder Maschinenverriegelunga.<br>
+<br>
+Hinweis: Sucht an kloanen Bereich um den Block ab.
+<np>
+Regnsensor
+Signalerkennung
+<&industrial_rain_sensor>A Wettersensor macht ausm Regn an seim Standort a Redstone-Signal.<br>
+<br>
+So geht's: Montier'n dort, wo da Block über ihm Regn abkriegn ko.<br>
+<br>
+Hinweis: Prüft den Regn überm Sensor.
+<np>
+Bistabiler Glosschalter
+Redstone-Steuerung
+<&glass_rotary_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Bistabiler Glos-Berührungsschalter
+Redstone-Steuerung
+<&glass_touch_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Oranges empfindlichs Glos
+Signalglas
+<&orange_sensitiveglass>A Glosblock, der auf Redstone reagiert, lasst den Durchblick frei und zeigt dabei den Signalzustand.<br>
+<br>
+So geht's: Nutz'n in Steuerraumfenster, leuchtenden Paneele und gschützten Fabrikverglosungen.<br>
+<br>
+Hinweis: Ändert sein Zustand durch Redstone-Energie in da Näh.
+<np>
+Leuchtends empfindlichs Glos
+Signalglas
+<&sensitive_glass_block>A Glosblock, der auf Redstone reagiert, lasst den Durchblick frei und zeigt dabei den Signalzustand.<br>
+<br>
+So geht's: Nutz'n in Steuerraumfenster, leuchtenden Paneele und gschützten Fabrikverglosungen.<br>
+<br>
+Hinweis: Ändert sein Zustand durch Redstone-Energie in da Näh.
+<np>
+Gfärbts empfindlichs Glos
+Signalglas
+<&stained_sensitiveglass>A Glosblock, der auf Redstone reagiert, lasst den Durchblick frei und zeigt dabei den Signalzustand.<br>
+<br>
+So geht's: Nutz'n in Steuerraumfenster, leuchtenden Paneele und gschützten Fabrikverglosungen.<br>
+<br>
+Hinweis: Ändert sein Zustand durch Redstone-Energie in da Näh.
+<np>
+Glosbalken-Messgerät
+Signalmessgerät
+<&glass_vertical_bar_gauge>A kloans Messgerät fia'n Steuerraum zeigt d'Redstone-Stärk ois klare Paneelanzeig.<br>
+<br>
+So geht's: Montier's dort, wo du d'Redstone-Energie in da Näh auf oan Blick prüfn mogst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärk in da Näh vo 0 bis 15.
+<np>
+Analoges Messgerät
+Signalmessgerät
+<&industrial_analog_angular_gauge>A kloans Messgerät fia'n Steuerraum zeigt d'Redstone-Stärk ois klare Paneelanzeig.<br>
+<br>
+So geht's: Montier's dort, wo du d'Redstone-Energie in da Näh auf oan Blick prüfn mogst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärk in da Näh vo 0 bis 15.
+<np>
+Voltmeter-Messgerät
+Signalmessgerät
+<&industrial_analog_horizontal_gauge>A kloans Messgerät fia'n Steuerraum zeigt d'Redstone-Stärk ois klare Paneelanzeig.<br>
+<br>
+So geht's: Montier's dort, wo du d'Redstone-Energie in da Näh auf oan Blick prüfn mogst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärk in da Näh vo 0 bis 15.
+<np>
+Digitales Messgerät
+Ablesbare Signalstärk
+<&industrial_small_digital_gauge>A kloans Messgerät fia'n Steuerraum zeigt d'Redstone-Stärk ois klare Paneelanzeig.<br>
+<br>
+So geht's: Montier's dort, wo du d'Redstone-Energie in da Näh auf oan Blick prüfn mogst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärk in da Näh vo 0 bis 15.
+<np>
+Glosröhrn-Messgerät
+Signalmessgerät
+<&industrial_tube_gauge>A kloans Messgerät fia'n Steuerraum zeigt d'Redstone-Stärk ois klare Paneelanzeig.<br>
+<br>
+So geht's: Montier's dort, wo du d'Redstone-Energie in da Näh auf oan Blick prüfn mogst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärk in da Näh vo 0 bis 15.
+<np>
+Analoges Balkenmessgerät
+Signalmessgerät
+<&industrial_vertical_bar_gauge>A kloans Messgerät fia'n Steuerraum zeigt d'Redstone-Stärk ois klare Paneelanzeig.<br>
+<br>
+So geht's: Montier's dort, wo du d'Redstone-Energie in da Näh auf oan Blick prüfn mogst.<br>
+<br>
+Hinweis: Liest de Redstone-Stärk in da Näh vo 0 bis 15.
+<np>
+Alarmlampn
+Signalrückmeldung
+<&industrial_alarm_lamp>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Alarmsirena
+Signalanzoag
+<&industrial_alarm_siren>Die Alarmsirena is a Redstone-Anzoag, de auf a Blockfläch montiert wird. Ihr Stromzustand folgt am Signal vom Block, an dem s' hängt.<br>
+<br>
+Benutzung: Auf a feste Fläch setzn und mit Strom versorgn, um Türn, Maschina, Alarm oda Paneele zu überwacha.<br>
+<br>
+Hinweis: Solang as Signal aktiv is, aktualisiert si de Sirena jede Sekund.
+<np>
+Blinkende LED
+Signalrückmeldung
+<&industrial_blinking_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Greane blinkende LED
+Signalrückmeldung
+<&industrial_green_blinking_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Greane LED
+Signalrückmeldung
+<&industrial_green_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Rote LED
+Signalrückmeldung
+<&industrial_red_blinking_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Rote LED
+Signalrückmeldung
+<&industrial_red_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Weiße blinkende LED
+Signalrückmeldung
+<&industrial_white_blinking_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Weiße LED
+Signalrückmeldung
+<&industrial_white_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Gelbe blinkende LED
+Signalrückmeldung
+<&industrial_yellow_blinking_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Gelbe LED
+Signalrückmeldung
+<&industrial_yellow_led>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Bäuerlicher Semaphor
+Signalrückmeldung
+<&rustic_semaphore>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.
+<np>
+Komparatoaschalter
+Signal vom Trägerblock
+<&industrial_comparator_switch>A kloana Sensorschalter liest sein Trägerblock und macht ausm Messwert a oafache Paneelausgab.<br>
+<br>
+So geht's: Montier'n auf Lager, Tanks oder Redstone-Geräte. Wenn da Trägerblock Komparatoa-, Behälter- oder Redstone-Ausgab meldt, gibt da Schalter Redstone mit voller Stärk ab.<br>
+<br>
+Hinweis: So machst Lagerständ oder versteckte Verkabelung zu klare Ein-/Aus-Steuerleitungen.
+<np>
+Dimmer
+Veränderbars Signal
+<&industrial_dimmer>A Drehregler stellt d'Stärk vo Redstone über a kloane Paneelfläch ei.<br>
+<br>
+So geht's: Rechtsklick, dann geht d'Ausgab schrittweis aufi und nach voller Stärk wieder auf null zruck.<br>
+<br>
+Hinweis: Gibt a Stärk vo 0 bis 15 aus.
+<np>
+Not-Aus-Knopf
+Redstone-Steuerung
+<&industrial_estop_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Trichtasperre
+Redstone-Steuerung
+<&industrial_hopper_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Klopfschalter
+Redstone-Steuerung
+<&industrial_knock_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Hebl
+Redstone-Steuerung
+<&industrial_lever>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Maschinenschalter mit zwoa Knöpf
+Redstone-Steuerung
+<&industrial_machine_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Zuggriff
+Redstone-Steuerung
+<&industrial_pull_handle>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Drehhebl
+Redstone-Steuerung
+<&industrial_rotary_lever>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Maschinen-Drehschalter
+Redstone-Steuerung
+<&industrial_rotary_machine_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Kontakthebl
+Redstone-Steuerung
+<&industrial_small_lever>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Schalter
+Redstone-Steuerung
+<&industrialswitch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Liachtschalter
+Redstone-Steuerung
+<&light_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Ventilschalter
+Redstone-Steuerung
+<&valve_wheel_switch>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Impulsempfänga im Ghäus
+Verbundene Steuerung
+<&industrial_switchlink_cased_pulse_receiver>A verbundener Impulsempfänga im Ghäus gibt entfernten Paneele an kurzen Redstone-Auslöser.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Rechtsklick auf'n Empfänga oder Auslösn vo da verbundenen Perle gibt an kurzen Impuls ab.<br>
+<br>
+Hinweis: Da Impuls setzt si nach seiner festgelegten Dauer selber zruck.
+<np>
+Linkempfänga im Ghäus
+Verbundene Steuerung
+<&industrial_switchlink_cased_receiver>A verbundener Empfänga im Ghäus gibt entfernten Paneele a robusts Redstone-Ziel.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Rechtsklick direkt auf'n Empfänga zum Umschaltn mit da Hand.<br>
+<br>
+Hinweis: A verbundene Perle schaltet den Empfänga um, wennst's beim Schleichn benutzt.
+<np>
+Impulslinkempfänga
+Verbundene Steuerung
+<&industrial_switchlink_pulse_receiver>A verbundener Impulsempfänga gibt entfernten Paneele an kurzen Redstone-Auslöser.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Rechtsklick auf'n Empfänga oder Auslösn vo da verbundenen Perle gibt an kurzen Impuls ab.<br>
+<br>
+Hinweis: Da Impuls setzt si nach seiner festgelegten Dauer selber zruck.
+<np>
+Impulslinkrelais
+Verbundene Steuerung
+<&industrial_switchlink_pulse_relay>A Bauteil im Relaisstil schafft an kloanen Schaltpunkt direkt am Paneel.<br>
+<br>
+So geht's: Rechtsklick zum Umschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh. Nutz Empfängablöck, wennst mit ana verbundenen Perle auslösn mogst.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Schaltlinkempfänga
+Verbundene Steuerung
+<&industrial_switchlink_receiver>A verbundener Empfänga gibt entfernten Paneele a Redstone-Ziel mit voller Stärk.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Rechtsklick direkt auf'n Empfänga zum Umschaltn mit da Hand.<br>
+<br>
+Hinweis: A verbundene Perle schaltet den Empfänga um, wennst's beim Schleichn benutzt.
+<np>
+Analoger Linkempfänga
+Verbundene Steuerung
+<&industrial_switchlink_receiver_analog>A verbundener Empfänga gibt Steuerpaneele a sichtbars Ziel in da Fern.<br>
+<br>
+So geht's: Klick mit ana Enderperle drauf, damit a verbundene Perle entsteht. Benutz de Perle beim Schleichn, zum Auslösn vom Empfänga aus da Fern.<br>
+<br>
+Hinweis: Der Empfänga gibt beim Auslösn a volles Redstone-Signal ab.
+<np>
+Schaltlinkrelais
+Verbundene Steuerung
+<&industrial_switchlink_relay>A Bauteil im Relaisstil schafft an kloanen Schaltpunkt direkt am Paneel.<br>
+<br>
+So geht's: Rechtsklick zum Umschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh. Nutz Empfängablöck, wennst mit ana verbundenen Perle auslösn mogst.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Analoges Linkrelais
+Verbundene Steuerung
+<&industrial_switchlink_relay_analog>A Bauteil im Relaisstil schafft an kloanen Schaltpunkt direkt am Paneel.<br>
+<br>
+So geht's: Rechtsklick zum Umschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh. Nutz Empfängablöck, wennst mit ana verbundenen Perle auslösn mogst.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Schaltlinkperle
+Verbundene Steuerung
+<&switchlink_pearl>A verbundene Perle speichert a Empfängaziel fia d'Fabrikfernsteuerung.<br>
+<br>
+So geht's: Klick mit ana Enderperle auf an Schaltlinkempfänga, damit oane entsteht. Benutz de verbundene Perle beim Schleichn, zum Aktiviern vom gspeicherten Empfänga.<br>
+<br>
+Hinweis: S'Ziel muaß gladn, in da gleichen Dimension und innerhalb vo da Reichweit sei.
+<np>
+Oida verzierter Hebl
+Redstone-Steuerung
+<&oldfancy_bistableswitch1>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Oida verzierter Drehhebl
+Redstone-Steuerung
+<&oldfancy_bistableswitch2>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Bäuerlicher Drehhebl
+Redstone-Steuerung
+<&rustic_angular_lever>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Bäuerlicher Hebl
+Redstone-Steuerung
+<&rustic_lever>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Bäuerlicher Naglhebl
+Redstone-Steuerung
+<&rustic_nail_lever>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.
+<np>
+Bäuerlicher Hebl mit zwoa Scharniern
+Redstone-Steuerung
+<&rustic_two_hinge_lever>A kloans Steuerbauteil schafft an guat erkennbaren Redstone-Schaltpunkt in da Fabrik.<br>
+<br>
+So geht's: Rechtsklick zum Ein- oder Ausschaltn vo da Ausgab mit voller Stärk fia Schaltungen in da Näh.<br>
+<br>
+Hinweis: Gibt Redstone mit voller Stärk ab, solang's eingschalt is.

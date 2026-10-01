@@ -1,0 +1,7 @@
+Caja de materiales
+Caja de suministros
+<&recipe>La Caja de materiales transporta una gran reserva de un único material de construcción normal, sin modificar y apilable.<br>
+<br>
+Uso: Sostén la caja en la mano principal y la pila de material en la secundaria para cargarla. Con la secundaria vacía, retira una pila.<br>
+<br>
+Admite hasta 512 objetos, un solo tipo a la vez, y rechaza cajas anidadas, equipo no apilable y pilas modificadas, nombradas o con datos; la descripción muestra el contenido.

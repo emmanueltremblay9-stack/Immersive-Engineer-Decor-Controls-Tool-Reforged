@@ -1,0 +1,7 @@
+Lichtsensor
+Signalerfassung
+<&recipe>Ein Lichtsensor wandelt die örtliche Helligkeit in ein Redstone-Steuersignal um.<br>
+<br>
+Verwendung: Nutze ihn für automatische Leuchten, Rollläden und helligkeitsabhängige Schaltungen.<br>
+<br>
+Hinweis: Gibt ab einer rohen Helligkeit von 8 ein Signal aus.

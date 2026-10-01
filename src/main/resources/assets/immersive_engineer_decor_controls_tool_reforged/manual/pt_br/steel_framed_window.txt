@@ -1,0 +1,5 @@
+Janela com moldura de aço
+Visibilidade protegida
+<&recipe>Este bloco mantém a visão desobstruída sem destoar da construção reforçada da fábrica.<br>
+<br>
+Uso: Use onde os jogadores devam ver as máquinas através de uma barreira protetora.<br>

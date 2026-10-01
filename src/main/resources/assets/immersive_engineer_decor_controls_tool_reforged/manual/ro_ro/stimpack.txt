@@ -1,0 +1,5 @@
+Injector automat de urgență
+Injector de urgență
+<&recipe>Pachetul stimulant automat este un obiect medical de urgență.<br>
+<br>
+Folosește-l manual pentru vindecare, protecție scurtă și impuls de mișcare. În inventar se declanșează automat la sănătate scăzută, apoi intră în reîncărcare. Păstrează unul în locuri periculoase.

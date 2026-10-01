@@ -1,0 +1,7 @@
+Gewittersensor
+Signalerkennung
+<&recipe>E Gewittersensor aktivéiert Warnunge bei Donnerwieder.<br>
+<br>
+Benotzung: Setz en ënner de fräien Himmel a verbann e mat Luuchten oder Alarmer.<br>
+<br>
+Hiweiser: Braucht Donner an Zougang zum Himmel.

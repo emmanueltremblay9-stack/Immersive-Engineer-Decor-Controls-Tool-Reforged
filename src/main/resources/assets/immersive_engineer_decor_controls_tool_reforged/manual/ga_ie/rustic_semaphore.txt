@@ -1,0 +1,7 @@
+Séamafór Tuaithe
+Aiseolas comhartha
+<&recipe>Déanann táscaire dlúth aiseolas infheicthe monarchan de Redstone ceilte.<br>
+<br>
+Úsáid: sreangaigh in aice leis an gcomhartha é chun monatóireacht a dhéanamh ar dhoirse, meaisíní, aláraim nó painéil.<br>
+<br>
+Nótaí: athraíonn sé staid nuair atá cumhacht Redstone in aice láimhe ann.

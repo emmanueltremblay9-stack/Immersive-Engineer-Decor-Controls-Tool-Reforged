@@ -1,0 +1,5 @@
+Supòrt d’acièr en doble T
+Pèça d’ossatura
+<&recipe>Aqueste blòc forma una estructura visibla per las salas de maquinas e los quadres d’accès.<br>
+<br>
+Utilizacion : orienta-lo e pausa-lo per formar un sosten visible de las bigas, dels pals e dels bòrds de platafòrma.<br>

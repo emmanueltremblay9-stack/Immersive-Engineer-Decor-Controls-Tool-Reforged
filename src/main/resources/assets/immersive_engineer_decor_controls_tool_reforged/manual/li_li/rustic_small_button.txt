@@ -1,0 +1,7 @@
+Kleine landelike knóp
+Redstonebediening
+<&recipe>Ein momentsjakelaar geuf ein duidelike redstonepuls op volle sjtèrkte.<br>
+<br>
+Gebroek: gebroek 'm veur machinestart, deurvriejaaf, alarm of sjakelinge die mer ein keer moete werke.<br>
+<br>
+Opmerking: geit nao zien geplande puls vanzelf trök.

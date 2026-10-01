@@ -1,0 +1,5 @@
+Tamsių malksnų stogo blokas
+Apdūlėjusi stogo dalis
+<&recipe>Šis blokas kuria tamsias, praktiškas dirbtuvių ir pramoninių pašiūrių stogų formas.<br>
+<br>
+Naudojimas: derink dalis tarpusavyje, kad sukurtum įtikinamus stogo profilius.<br>

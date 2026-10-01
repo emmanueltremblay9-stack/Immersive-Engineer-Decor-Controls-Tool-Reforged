@@ -1,0 +1,5 @@
+Escales de rajoles de clínquer
+Rajoles enfosquides pel sutge
+<&recipe>Este bloc aporta rajoles enfosquides pel sutge a sales de forns, bases de xemeneies i parets de servici.<br>
+<br>
+Ús: usa’l com a paret, remat o envolupant de zona calenta al voltant de forns i calderes.<br>

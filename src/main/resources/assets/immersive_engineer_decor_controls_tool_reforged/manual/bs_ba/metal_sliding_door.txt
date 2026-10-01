@@ -1,0 +1,5 @@
+Metalna klizna vrata
+Industrijski pristup
+<&recipe>Ovaj blok pruža čvrst pristup servisnim prostorijama, šahtovima, krovovima i kućištima mašina.<br>
+<br>
+Upotreba: Ugradite ga gdje građevini treba kontrolisani otvor za održavanje.<br>

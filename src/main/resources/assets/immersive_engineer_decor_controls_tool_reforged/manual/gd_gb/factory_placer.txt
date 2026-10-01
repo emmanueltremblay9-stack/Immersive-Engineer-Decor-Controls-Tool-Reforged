@@ -1,0 +1,5 @@
+Inneal cur bhlocaichean factaraidh
+Goireas làir bùth-obrach
+<&recipe>Cuiridh am bloca seo blocaichean on stòras a-staigh aige nuair a ghnìomhaichear e.<br>
+<br>
+Cleachdadh: amas an aghaidh obrach air an àite-targaid agus cuir cruachan a ghabhas suidheachadh a-steach.<br>

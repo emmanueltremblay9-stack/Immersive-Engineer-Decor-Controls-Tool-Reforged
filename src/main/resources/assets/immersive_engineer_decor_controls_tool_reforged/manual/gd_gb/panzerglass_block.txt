@@ -1,0 +1,5 @@
+Bloca glainne armachd
+Loidhne-seallaidh dhìonta
+<&recipe>Cumaidh am bloca seo loidhnichean-seallaidh fosgailte agus freagraidh e fhathast air togail factaraidh neartaichte.<br>
+<br>
+Cleachdadh: cleachd e far am bu chòir do chluicheadairean innealan fhaicinn tro chnap-starra dìonta.<br>

@@ -1,0 +1,41 @@
+Skladištenje i prijenos
+Oprema inventara i protoka
+Skladišna i transportna oprema obuhvata sanduke, bačve, lijevke i ventile za kompaktne fabričke trase.<br>
+<br>
+Koristite ove stranice pri planiranju skladišta, cjevovoda, servisnih spremnika i kontrolisanih vodova za fluide.
+<np>
+Sanduk s natpisom
+Izmjenjiva oznaka zaliha
+<&labeled_crate>Ovaj sanduk s natpisom namijenjen je jasnom razvrstavanju u skladištu. Prednja ploča može se uređivati kao mali radionički znak.<br>
+<br>
+Upotreba: Desnim klikom na ploču s natpisom uredite oznaku sanduka. Desnim klikom na ostatak sanduka otvorite skladište za pribor, dijelove i zalihe za održavanje.<br>
+<np>
+Bačva za fluide
+Oprema vodova za fluide
+<&fluid_barrel>Ova komponenta je kompaktni dio voda za fluide za male spremnike, cjevovode, sabirna mjesta i protok upravljan redstoneom.<br>
+<br>
+Upotreba: Postavite je gdje cijevi ili kante mogu pristupiti strani spremnika.<br>
+<np>
+Lijevak za fluide
+Oprema vodova za fluide
+<&small_fluid_funnel>Mali lijevak za prikupljanje fluida je kompaktni dio voda za fluide za male spremnike, cjevovode, sabirna mjesta i protok upravljan redstoneom.<br>
+<br>
+Upotreba: Stavite ga ispod mjesta prikupljanja fluida i usmjerite pohranjeni sadržaj u spremnike ili cijevi ispod njega.<br>
+<np>
+Nepovratni ventil za fluide
+Oprema vodova za fluide
+<&straight_pipe_valve>Nepovratni ventil za fluide je kompaktni dio voda za fluide za male spremnike, cjevovode, sabirna mjesta i protok upravljan redstoneom.<br>
+<br>
+Upotreba: Poravnajte ventil sa željenim smjerom protoka.<br>
+<np>
+Redstone ventil za fluide
+Oprema vodova za fluide
+<&straight_pipe_valve_redstone>Redstone ventil za fluide je kompaktni dio voda za fluide za male spremnike, cjevovode, sabirna mjesta i protok upravljan redstoneom.<br>
+<br>
+Upotreba: Poravnajte ventil sa željenim smjerom protoka.<br>
+<np>
+Analogni ventil za fluide
+Oprema vodova za fluide
+<&straight_pipe_valve_redstone_analog>Analogni ventil za fluide je kompaktni dio voda za fluide za male spremnike, cjevovode, sabirna mjesta i protok upravljan redstoneom.<br>
+<br>
+Upotreba: Poravnajte ventil sa željenim smjerom protoka.<br>

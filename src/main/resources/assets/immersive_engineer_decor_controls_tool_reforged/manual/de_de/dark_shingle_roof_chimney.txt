@@ -1,0 +1,5 @@
+Dunkles Schindeldach
+Verwittertes Dachbauteil
+<&recipe>Der Schornstein für dunkle Schindeldächer ergänzt dunkle, zweckmäßige Dachformen für Werkstätten und Industrieschuppen.<br>
+<br>
+Verwendung: Kombiniere die Teile zu glaubhaften Dachformen.<br>

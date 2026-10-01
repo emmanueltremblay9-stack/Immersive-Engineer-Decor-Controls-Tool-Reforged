@@ -1,0 +1,127 @@
+Zugangswege
+Laufwege und Stützn
+Stahlpfostn, imprägnierte Hoizpfostn, Gitterroste, Laufstege, Geländer, Leitern, Tirn, Fensta und Lukn mochn kompakte Wartungswege durch de Fabrik.<br>
+<br>
+Zugangsteile aus Stahl brauchn Stahlplottn. Bau oda setz a Metallwerkbonk, steck an Homma aus Immersive Engineering ein und hämmer Stahlbarrn zu Plottn. Daraus mochst Pfostn, Laufstege, Fensta, Tirn, Geländer und andere Stahldekorationen.<br>
+<br>
+Setz de Teile dorthin, wo Maschinen Wartungszugänge, erhöhte Wege, Schächte oda gschützte Kantn brauchn.
+<np>
+Dicker Stahlpfostn
+Teil vom Tragwerk
+<&thick_steel_pole>Da grade dicke Stahlpfostn bildet sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Kopf für dicken Stahlpfostn
+Teil vom Tragwerk
+<&thick_steel_pole_head>Da Kopf/Fuaß für graden dicken Stahlpfostn bildet sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Dünner Stahlpfostn
+Teil vom Tragwerk
+<&thin_steel_pole>Da grade dünne Stahlpfostn bildet sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Kopf für dünnen Stahlpfostn
+Teil vom Tragwerk
+<&thin_steel_pole_head>Da Kopf/Fuaß für graden dünnen Stahlpfostn bildet sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Pfostn aus imprägniertem Hoiz
+Teil vom Tragwerk
+<&treated_wood_pole>Da grade Pfostn aus imprägniertem Hoiz bildet sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Kopf für imprägnierten Hoizpfostn
+Teil vom Tragwerk
+<&treated_wood_pole_head>Da Kopf/Fuaß für graden Pfostn aus imprägniertem Hoiz bildet sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Stützn für imprägnierten Hoizpfostn
+Teil vom Tragwerk
+<&treated_wood_pole_support>De Stützn für graden Pfostn aus imprägniertem Hoiz bildet sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Stahl-Doppl-T-Träga
+Teil vom Tragwerk
+<&steel_double_t_support>Mit dem Block kriagst sichtbore Tragstrukturen für Maschinenhalln und Zugangsrahmen.<br>
+<br>
+Verwendung: Dreh und setz des Teil ois sichtbore Verstrebung für Träga, Pfostn und Plattformränder.<br>
+<np>
+Stahlgitterrost
+Bauteil für Wartungszugänge
+<&steel_floor_grating>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Stahllaufsteg
+Bauteil für Wartungszugänge
+<&steel_catwalk>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Stahllaufstegtreppn
+Bauteil für Wartungszugänge
+<&steel_catwalk_stairs>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Erhöhter Stahllaufsteg
+Bauteil für Wartungszugänge
+<&steel_catwalk_ta>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Stahlgeländer
+Bauteil für Wartungszugänge
+<&steel_railing>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Stahlgitterzaun
+Bauteil für Wartungszugänge
+<&steel_mesh_fence>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Stahlgitterzauntor
+Bauteil für Wartungszugänge
+<&steel_mesh_fence_gate>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Metallsprossnleita
+Bauteil für Wartungszugänge
+<&metal_rung_ladder>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Versetzte Metalltritt
+Bauteil für Wartungszugänge
+<&metal_rung_steps>Mit dem Block werden de Wartungswege rund um Maschinen guat erkennbor.<br>
+<br>
+Verwendung: Setz eam ois Wartungszugang bei Maschinen, Obergschossn und Versorgungsschächten.<br>
+<np>
+Fensta mit Stahlrahmen
+Gschützter Einblick
+<&steel_framed_window>Mit dem Block bleibt de Sicht frei, und er passt trotzdem zur verstärkten Fabrikbauweise.<br>
+<br>
+Verwendung: Setz eam in a Wandöffnung von oan Block, wo Spieler durch a gschützte Scheibn de Maschinen sehn solln.<br>
+<np>
+Metallschiebetir
+Industrieller Zugang
+<&metal_sliding_door>Der Block schafft an robusten Zugang zu Betriebsräumen, Schächten, Dächern und Maschinengehäusen.<br>
+<br>
+Verwendung: Bau eam ein, wo dei Bau a kontrollierbore Wartungsöffnung braucht.<br>
+<np>
+Eiserne Lukn
+Industrieller Zugang
+<&iron_hatch>Der Block schafft an robusten Zugang zu Betriebsräumen, Schächten, Dächern und Maschinengehäusen.<br>
+<br>
+Verwendung: Bau eam ein, wo dei Bau a kontrollierbore Wartungsöffnung braucht.<br>

@@ -1,0 +1,7 @@
+Liachtsensor
+Signalerfassung
+<&recipe>A Liachtsensor macht aus da Helligkeit vor Ort a Redstone-Steuerung.<br>
+<br>
+Verwendung: Nimm eam für automatische Liachta, Rolläden und helligkeitsabhängige Schaltungen.<br>
+<br>
+Hinweis: Gibt ab ana rohen Helligkeit von 8 a Signal aus.

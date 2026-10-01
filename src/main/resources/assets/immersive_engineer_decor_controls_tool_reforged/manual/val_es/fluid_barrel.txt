@@ -1,0 +1,5 @@
+Barril de líquids
+Accessoris de conducció de líquids
+<&recipe>Esta peça és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: col·loca-la on les canonades o els poals puguen arribar a la cara del depòsit.<br>

@@ -1,0 +1,7 @@
+Verre sensible coloré
+Verre de signalisation
+<&recipe>Un bloc de verre réactif à la redstone préserve la visibilité tout en affichant l'état du signal.<br>
+<br>
+Utilisation : intégrez-le aux fenêtres des salles de commande, aux panneaux lumineux et aux vitrages industriels protégés.<br>
+<br>
+Remarque : change d'état en présence d'un signal de redstone à proximité.

@@ -1,0 +1,7 @@
+Verknüpfungsempfänger im Ghäus
+Verknüpfte Steuerung
+<&recipe>A verknüpfter Empfänger im Ghäus is a robusts Redstone-Ziel für entfernte Tafeln.<br>
+<br>
+Verwendung: Klick mit ana Enderperle drauf, um a Link-Perle zu mochn. Mit am direkten Rechtsklick kannst den Empfänger von Hond umschaltn.<br>
+<br>
+Hinweis: Benutz de Link-Perle beim Schleichn, damit da Empfänger umschaltet.

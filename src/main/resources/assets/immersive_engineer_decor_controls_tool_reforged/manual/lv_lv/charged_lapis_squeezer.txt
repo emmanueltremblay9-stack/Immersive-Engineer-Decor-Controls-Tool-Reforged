@@ -1,0 +1,7 @@
+Prāta spiede
+Pieredzes kondensators
+<&recipe>Prāta spiede pārvērš lazurītu un pieredzi uzlādētā lazurītā.<br>
+<br>
+Lietošana: paņem lazurītu un vismaz vienu pieredzes līmeni, tad lieto rīku. Veiksmīga izspiešana patērē vienu līmeni un vienu lazurītu, ievaino lietotāju, nolieto spiedi un rada vienu uzlādētu lazurītu.<br>
+<br>
+Tā atsakās darboties, ja lietotājam trūkst lazurīta vai pieredzes vai ja nāve ir pārāk tuvu.

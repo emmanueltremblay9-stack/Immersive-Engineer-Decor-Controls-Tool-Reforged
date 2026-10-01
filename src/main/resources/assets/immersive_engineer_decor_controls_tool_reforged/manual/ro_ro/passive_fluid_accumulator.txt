@@ -1,0 +1,5 @@
+Fluide pasive
+Echipament pentru circuite de fluide
+<&recipe>Acumulatorul pasiv de fluide este o piesă compactă de circuit de fluide pentru rezervoare mici, trasee de conducte, puncte de colectare și debit controlat prin redstone.<br>
+<br>
+Utilizare: Amplasează-l lângă surse de apă potrivite și lasă loc pentru extragerea fluidului.<br>

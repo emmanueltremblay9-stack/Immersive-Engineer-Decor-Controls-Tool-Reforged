@@ -1,0 +1,5 @@
+Haen Hen Slab Pren
+Hen bren gweithdy
+<&recipe>Mae Haen Hen Slab Pren Diwydiannol yn ychwanegu hen bren gweithdy ar gyfer lloriau, camau, drysau ac ymylon addurnol cynnes dan do.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer hen loriau gweithdy, grisiau, drysau ac ymylon addurnol.<br>

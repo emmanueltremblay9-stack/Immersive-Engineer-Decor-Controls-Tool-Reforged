@@ -1,0 +1,5 @@
+Lypsykone
+Työpajan apulaite
+<&recipe>Pieni lypsykone on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Aseta lehmien lähelle ja järjestä maitoastioiden tai nesteen poistaminen.<br>

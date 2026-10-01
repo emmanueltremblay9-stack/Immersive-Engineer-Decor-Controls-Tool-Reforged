@@ -1,0 +1,5 @@
+Masă de oțel
+Mobilier de atelier
+<&recipe>Acest bloc este o piesă practică de mobilier de atelier pentru încăperi de lucru și colțuri de întreținere.<br>
+<br>
+Utilizare: Așază-l lângă bancuri de lucru, lăzi și mașini compacte.<br>

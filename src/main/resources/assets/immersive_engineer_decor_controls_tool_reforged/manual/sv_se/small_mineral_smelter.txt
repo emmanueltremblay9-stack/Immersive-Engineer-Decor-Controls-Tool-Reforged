@@ -1,0 +1,5 @@
+Mineralsmältugn
+Kompakt bearbetningsenhet
+<&recipe>Mineralsmältugnen bearbetar mineraler vid hög temperatur på liten verkstadsyta.<br>
+<br>
+Användning: Mata in mineralblock och ström för smältning vid hög temperatur.<br>

@@ -1,0 +1,5 @@
+Platform iz bronovanogo stekla
+Zaščiščeny pogled
+<&recipe>Sej blok sohranjaje otvorjeny pogled, ale vsegda odgovarjaje ojačenoj fabričnoj konstrukciji.<br>
+<br>
+Upotrěbjenje: Upotrěbi go tam, kde igrači majut viděti mašiny črěz zaščiščenu prěgradu.<br>

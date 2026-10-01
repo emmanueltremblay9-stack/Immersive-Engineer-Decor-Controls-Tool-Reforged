@@ -1,0 +1,5 @@
+Régi falépcső
+Öreg műhelyfa
+<&recipe>A régi ipari falépcső öreg műhelyfát ad padlókhoz, lépcsőfokokhoz, ajtókhoz és meleg hangulatú belső szegélyekhez.<br>
+<br>
+Használat: régi műhelypadlókhoz, lépcsőkhöz, ajtókhoz és szegélyekhez használd.<br>

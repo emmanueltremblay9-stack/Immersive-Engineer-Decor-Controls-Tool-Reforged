@@ -1,0 +1,5 @@
+Päikesepaneel
+Töökoja abiseade
+<&recipe>Väike päikesepaneel on töökoja abiplokk meisterdamiseks, hoiustamiseks, paigaldamiseks, lõhkumiseks, kogumiseks või kompaktseks automaatikaks.<br>
+<br>
+Kasutamine: Taga avatud taevas ja ühenda väikese tarbimisega seadmed.<br>

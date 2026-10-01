@@ -1,0 +1,5 @@
+Hormigoi armatuzko baldosa
+Hormigoi armatua
+<&recipe>Hormigoi armatuzko baldosa-eskailerak hormigoi gogortuzko piezak dira makinen oinarrietarako, leherketen aurkako hormetarako eta zamalanetako zorurako.<br>
+<br>
+Erabilera: erabili makinen azpian, mantentze-korridoreetan edo eraikuntzak oinarri indartua behar duen edonon.<br>

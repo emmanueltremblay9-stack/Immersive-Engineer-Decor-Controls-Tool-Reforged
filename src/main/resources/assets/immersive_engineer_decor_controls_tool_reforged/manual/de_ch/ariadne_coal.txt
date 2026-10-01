@@ -1,0 +1,7 @@
+Ariadne-Chohle
+Wägmarkierig für Mine
+<&recipe>Ariadne-Chohle markiert schnäll Wäg i Schächt, Zwiigmine und vorübergehende unterirdische Arbeitsberiich.<br>
+<br>
+Verwendig: Benutz si uf ere tragfähige Blockflächi, um en schwarze Richtigspfiil aazbringe. D'Markierig richtet sich nach em Klickpunkt und kennt acht Richtige inklusive Diagonale. So chasch Churve, Uusgäng, Sackgasse und Versorgigswäg kennzeichne, ohni eigeti Wägwiiser mitzneh.<br>
+<br>
+Ariadne-Chohle isch es wiederverwendbars Markierwärchzüüg für 100 Iisätz. Jedi erfolgrichi Markierig choschtet ein Haltbarkeitspunkt. Ungeeigneti Fläche werded abglehnt, ohni s'Wärchzüüg abznutze.

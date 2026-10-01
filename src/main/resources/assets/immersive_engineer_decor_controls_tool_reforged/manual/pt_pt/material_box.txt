@@ -1,0 +1,7 @@
+Caixa de materiais
+Caixa de suprimentos de construção
+<&recipe>A caixa de materiais carrega uma grande reserva de um único material de construção comum, inalterado e empilhável.<br>
+<br>
+Segure a caixa na mão principal e o material na outra para guardá-lo; use-a com a outra mão vazia para retirar uma pilha.<br>
+<br>
+Ela comporta 512 itens de um tipo, rejeita outras caixas, equipamento não empilhável e pilhas modificadas, e mostra o conteúdo na descrição.

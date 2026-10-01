@@ -1,0 +1,7 @@
+Mind Squeezer
+XP squeeze loom
+<&recipe>The Mind Squeezer turns Hewnstone and XP into Loaded Hewnstone.<br>
+<br>
+Use: Carry Hewnstone and at least one XP level, then use the tool. A good squeeze spends one level and one Hewnstone, hurts you, wears the squeezer and makes one Loaded Hewnstone.<br>
+<br>
+It will not work when you lack Hewnstone or XP, or are too near death.

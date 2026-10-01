@@ -1,0 +1,7 @@
+Sensor drite
+Zbulim sinjali
+<&recipe>Një sensor drite e kthen ndriçimin lokal në kontroll redstoni.<br>
+<br>
+Përdorimi: përdore për llamba automatike, grila dhe qarqe dukshmërie.<br>
+<br>
+Shënim: jep fuqi kur ndriçimi i papërpunuar është 8 ose më shumë.

@@ -1,0 +1,7 @@
+Farbiges signalempfindlichs Glas
+Signalglas
+<&recipe>En Redstone-empfindliche Glasblock haltet d'Sicht frei und zeigt debii de Signalzuestand.<br>
+<br>
+Verwendig: Nimm en für Kontrollruumfänschter, beleuchteti Tafle und gschützti Fabrikverglasige.<br>
+<br>
+Hiwiis: Redstone ide Nöchi änderet de Zuestand.

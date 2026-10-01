@@ -1,0 +1,5 @@
+Fabriko mėtytuvas
+Dirbtuvių pagalbininkas
+<&recipe>Šis blokas išmeta sukauptus daiktus iš nukreipto paviršiaus.<br>
+<br>
+Naudojimas: nukreipk priekį į išmetimo vietą, pripildyk vidinius lizdus ir sąsajoje sureguliuok jėgą, kampą, delsą, filtro logiką bei redstono režimą.<br>

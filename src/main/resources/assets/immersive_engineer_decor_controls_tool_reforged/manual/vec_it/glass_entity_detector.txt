@@ -1,0 +1,7 @@
+Rilevador de entidà de vero
+Rilevamento de segnal
+<&recipe>Un rilevador de entidà el varda i movimenti visini sensa na piaca visìbiłe sul pavimento.<br>
+<br>
+Uso: colegalo a porte, lànpade, alarmi o blocagi de sicuresa de łe machine.<br>
+<br>
+Da saver: el controła na pìcola zona torno el bloco.

@@ -1,0 +1,5 @@
+Debeli čelični stub
+Deo nosećeg okvira
+<&recipe>Prav debeli čelični stub daje vidljivu noseću strukturu mašinskim halama i pristupnim okvirima.<br>
+<br>
+Upotreba: okreni ga i postavi kao vidljivo ukrućenje greda, stubova i ivica platformi.<br>

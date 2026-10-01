@@ -1,0 +1,7 @@
+Feilzil
+Kuerzen Impuls
+<&recipe>En Taschtschalter gëtt e proppere Redstone-Impuls mat voller Stäerkt aus.<br>
+<br>
+Benotzung: Benotz en fir Maschinnen ze starten, Dieren opzemaachen, Alarmer oder eemoleg Schaltungen.<br>
+<br>
+Hiweiser: Setzt sech no sengem geplangten Impuls zeréck.

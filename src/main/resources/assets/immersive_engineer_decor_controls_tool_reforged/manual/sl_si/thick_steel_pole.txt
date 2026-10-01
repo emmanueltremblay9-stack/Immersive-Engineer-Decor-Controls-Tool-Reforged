@@ -1,0 +1,5 @@
+Debel jeklen steber
+Del nosilnega ogrodja
+<&recipe>Raven debel jeklen steber daje strojnim halam in ogrodjem prehodov vidno nosilno strukturo.<br>
+<br>
+Uporaba: Obrni in postavi ga kot vidno oporo za nosilce, stebre in robove ploščadi.<br>

@@ -1,0 +1,7 @@
+Farga følsamt glas
+Signalglas
+<&recipe>Ei glasblokk som reagerer på redstone held sikta open og viser samstundes signaltilstanden.<br>
+<br>
+Bruk: nytt henne i kontrollromsvindauge, opplyste panel og verneglas i fabrikken.<br>
+<br>
+Merknad: endrar tilstand ved redstone-signal i nærleiken.

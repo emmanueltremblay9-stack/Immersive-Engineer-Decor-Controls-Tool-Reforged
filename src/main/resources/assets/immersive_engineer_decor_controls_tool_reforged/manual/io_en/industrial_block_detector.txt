@@ -1,0 +1,7 @@
+Blokodetektilo
+Signaldetekto
+<&recipe>Blokodetektilo kontrolas ka la spaco avan ol esas okupata.<br>
+<br>
+Uzo: Direktez ol vers la surveyenda mashinfacio, buffer o gardata spaco.<br>
+<br>
+Noti: Ol emisas energio kande la bloko avan ne esas aero.

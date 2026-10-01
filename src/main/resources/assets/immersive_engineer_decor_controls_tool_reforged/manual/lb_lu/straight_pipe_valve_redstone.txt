@@ -1,0 +1,5 @@
+Redstone-Flëssegkeetsventil
+Flëssegkeetsleitungsbaudeeler
+<&recipe>Dat Redstone-gesteiert Flëssegkeetsventil ass e kompakt Stéck Flëssegkeetsleitung fir kleng Tanken, Päifestrecken, Sammelpunkten a Redstone-gesteierten Duerchfloss.<br>
+<br>
+Benotzung: Riicht d'Ventil an déi gewënschten Duerchflossrichtung.<br>

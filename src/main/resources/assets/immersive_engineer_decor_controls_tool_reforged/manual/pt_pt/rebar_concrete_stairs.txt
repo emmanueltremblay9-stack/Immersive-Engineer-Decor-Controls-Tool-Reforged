@@ -1,0 +1,5 @@
+Escadas de betão armado
+Betão reforçado
+<&recipe>Este bloco é uma peça de betão endurecido para bases de máquinas, muros contra explosões e pisos de docas de carga.<br>
+<br>
+Uso: Usa-o por baixo de máquinas, ao longo de corredores de serviço ou onde a construção precisa de uma base reforçada.<br>

@@ -1,0 +1,5 @@
+Lamina tenuis ligni veteris
+Lignum officinae vetustum
+<&recipe>Lamina tenuis veteris ligni industrialis lignum officinae vetustum pavimentis, gradibus, ostiis et marginibus interioribus calidis addit.<br>
+<br>
+Usus: ad pavimenta officinae vetera, scalas, ostia et margines adhibe.<br>

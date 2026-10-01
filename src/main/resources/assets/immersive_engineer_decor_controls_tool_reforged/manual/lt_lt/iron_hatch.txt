@@ -1,0 +1,5 @@
+Geležinis aptarnavimo liukas
+Pramoninis prieigos taškas
+<&recipe>Šis blokas suteikia tvirtą prieigą prie aptarnavimo patalpų, šachtų, stogų ir mašinų gaubtų.<br>
+<br>
+Naudojimas: montuok ten, kur statinyje reikia valdomos angos priežiūrai.<br>

@@ -1,0 +1,7 @@
+Trousse d'injéction automatiqe
+Injectou de secours
+<&recipe>L'Auto Stim Pack ét un outil de médecine d'urgence pour l'entretien dangëreu.<br>
+<br>
+Usaije : Servez-vous-en a la main pour vous soigner, avair eune courte protection e un petit coup de vitesse. Den l'inventaire i peut etout se décllencher tout seul avèq peu de santë, pis entrer en recharge.<br>
+<br>
+Gardéz-en eune disponible avant d'essayer les endrets en haoteur, les fils découverts ou les chemins de mine hostiles.

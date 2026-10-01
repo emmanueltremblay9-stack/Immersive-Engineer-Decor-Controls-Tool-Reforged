@@ -1,0 +1,7 @@
+Sirene de alarme
+Indicação de sinais
+<&recipe>A sirene de alarme é um indicador de redstone montado na face de um bloco. Seu estado energizado segue o sinal do bloco ao qual está fixada.<br>
+<br>
+Fixe-a a uma face sólida e energize-a para monitorar portas, máquinas, alarmes ou painéis.<br>
+<br>
+A sirene atualiza uma vez por segundo enquanto o sinal conectado estiver ativo.

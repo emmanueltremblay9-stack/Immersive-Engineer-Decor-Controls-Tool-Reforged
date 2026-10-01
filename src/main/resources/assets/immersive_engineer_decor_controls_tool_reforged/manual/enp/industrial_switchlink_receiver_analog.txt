@@ -1,0 +1,7 @@
+Graded Link Catcher
+Linked switchgear
+<&recipe>A linked catcher gives switchboards a seen mark for faraway use.<br>
+<br>
+Use: Click it with an Ender Mergroat to make a linked mergroat. Sneak-use that mergroat to start the catcher from afar.<br>
+<br>
+Mind: This catcher sends a full redstone token when started.

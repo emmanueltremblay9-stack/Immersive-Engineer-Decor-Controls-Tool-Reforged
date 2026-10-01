@@ -1,0 +1,5 @@
+Sign "Brrr, Freezy Danger"
+Danger-marker thingz
+<&recipe>Da "Brrr, Freezy Danger" sign marks hazards, exits, an work zones wif a clear factory-safety picture, kitty.<br>
+<br>
+How to: Place beside hazards, exits, machinez, an restricted zones, meow.<br>

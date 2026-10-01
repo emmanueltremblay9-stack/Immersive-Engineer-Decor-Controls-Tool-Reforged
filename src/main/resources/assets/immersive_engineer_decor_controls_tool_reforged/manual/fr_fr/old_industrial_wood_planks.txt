@@ -1,0 +1,5 @@
+Vieilles planches de bois
+Vieux bois d'atelier
+<&recipe>Les vieilles planches de bois industrielles apportent un bois d'atelier vieilli aux sols, marches, portes et finitions intérieures chaleureuses.<br>
+<br>
+Utilisation : réalisez de vieux planchers d'atelier, escaliers, portes et bordures.<br>

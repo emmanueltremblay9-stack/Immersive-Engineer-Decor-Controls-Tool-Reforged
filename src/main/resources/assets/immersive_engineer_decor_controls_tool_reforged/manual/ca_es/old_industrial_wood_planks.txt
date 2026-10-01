@@ -1,0 +1,5 @@
+Taulons de fusta vella
+Fusta envellida de taller
+<&recipe>Els taulons de fusta industrial vella aporten fusta envellida de taller per a terres, graons, portes i acabats interiors càlids.<br>
+<br>
+Ús: fes-lo servir per a terres, escales, portes i acabats de tallers antics.<br>

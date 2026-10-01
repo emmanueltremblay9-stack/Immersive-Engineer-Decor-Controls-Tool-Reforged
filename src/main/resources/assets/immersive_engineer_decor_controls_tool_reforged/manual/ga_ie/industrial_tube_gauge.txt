@@ -1,0 +1,7 @@
+Tomhsaire Feadáin Ghloine
+Tomhsaire comhartha
+<&recipe>Taispeánann tomhsaire dlúth seomra rialaithe neart Redstone mar léamh soiléir ar phainéal.<br>
+<br>
+Úsáid: suiteáil é in áit ar féidir cumhacht Redstone in aice láimhe a sheiceáil le spléachadh.<br>
+<br>
+Nótaí: léann sé neart Redstone in aice láimhe ó 0 go 15.

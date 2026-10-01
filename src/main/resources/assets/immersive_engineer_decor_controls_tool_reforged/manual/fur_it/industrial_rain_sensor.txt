@@ -1,0 +1,7 @@
+Sensôr di ploie
+Rilevament dal segnâl
+<&recipe>Un sensôr dal timp al transforme la ploie tal so puest in redstone.<br>
+<br>
+Ûs: montilu dulà che il bloc parsore al pues cjapâ la ploie.<br>
+<br>
+Notis: al controle la ploie parsore dal sensôr.

@@ -1,0 +1,7 @@
+Sirena d’allarme
+Indicazione del segnale
+<&recipe>La sirena d'allarme è un indicatore redstone montato su una faccia. Il suo stato alimentato segue il segnale del blocco al quale è fissata.<br>
+<br>
+Uso: fissala a una faccia solida e alimentala per monitorare porte, macchinari, allarmi o pannelli.<br>
+<br>
+Note: la sirena ripete il suono ogni secondo finché il segnale collegato resta attivo.

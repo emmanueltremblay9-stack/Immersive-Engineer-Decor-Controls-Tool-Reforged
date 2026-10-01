@@ -1,0 +1,5 @@
+Znak »Opozorilo pred zmrzaljo«
+Oznaka nevarnosti
+<&recipe>Znak »Opozorilo pred zmrzaljo« označuje nevarnosti, izhode in delovna območja z vidnim opozorilom za varnost v tovarni.<br>
+<br>
+Uporaba: Postavi ga ob nevarnostih, izhodih, strojih in območjih z omejenim dostopom.<br>

@@ -1,0 +1,7 @@
+Sledilnik
+Označevalnik shranjenega položaja
+<&recipe>Sledilnik shrani položaj bloka neposredno v predmet.<br>
+<br>
+Kliknite blok za shranjevanje dimenzije in koordinat. Namig pokaže položaj. Uporabite ga med prikradanjem za brisanje cilja.<br>
+<br>
+Označite stroje, predore, oddaljena krmila ali nedokončana gradbišča.

@@ -1,0 +1,7 @@
+Lapis charjë
+Expérience gardée
+<&recipe>Le Lapis charjë garde un livè d'expérience fait par le Pressou d'esprit.<br>
+<br>
+Empllai : Manjéz-le pour ravoir un livè, ôter les effets actifs e regagner un ptit de santé.<br>
+<br>
+La vue de recette montre le Pressou d'esprit, pace qe le Lapis charjë se fait en empllayant ç't'outil o du lapis e des XP disponibles.

@@ -1,0 +1,7 @@
+Taula de fabricació metàl·lica
+Estació de plaques
+<&recipe>Estació reforçada amb ranura de martell, graella completa 3x3 i sortida.<br>
+<br>
+Ús: Fes-la servir com una taula normal. Per a plaques d'IE, posa el Martell de l'enginyer a la ranura, el material a la graella i pren la placa de la sortida.<br>
+<br>
+Les decoracions amb marc d'acer usen plaques d'acer formades en aquesta taula.

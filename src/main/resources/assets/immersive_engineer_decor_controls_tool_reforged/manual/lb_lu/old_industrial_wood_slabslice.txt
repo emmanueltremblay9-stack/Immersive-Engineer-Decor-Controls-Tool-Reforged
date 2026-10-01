@@ -1,0 +1,5 @@
+Dënn Schicht aus alem Holz
+Aalt Ateliersholz
+<&recipe>Déi dënn Schicht aus alem Industrieholz bréngt aalt Ateliersholz fir Biedem, Trëtt, Dieren a waarm bannenzeg Bordüren.<br>
+<br>
+Benotzung: Benotz en fir al Ateliersbiedem, Trapen, Dieren a Bordüren.<br>

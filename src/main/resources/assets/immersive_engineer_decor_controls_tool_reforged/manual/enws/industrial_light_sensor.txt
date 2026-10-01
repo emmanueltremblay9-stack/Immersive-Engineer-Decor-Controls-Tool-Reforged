@@ -1,0 +1,7 @@
+Watcher of Light
+Watching for Signals
+<&recipe>A light watcher turns local brightness into control by redstone.<br>
+<br>
+Use: Govern automatic lamps, shutters and circuits for visibility.<br>
+<br>
+Note: It gives power at raw brightness 8 or above.

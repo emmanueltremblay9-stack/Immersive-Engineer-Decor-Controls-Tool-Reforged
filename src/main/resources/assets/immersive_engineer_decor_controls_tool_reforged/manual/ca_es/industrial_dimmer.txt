@@ -1,0 +1,7 @@
+Regulador
+Senyal variable
+<&recipe>Un control giratori ajusta la força de redstone des d’un frontal compacte de panell.<br>
+<br>
+Ús: fes-hi clic dret per augmentar la sortida pas a pas; després de la força màxima, torna a zero.<br>
+<br>
+Notes: emet una força entre 0 i 15.

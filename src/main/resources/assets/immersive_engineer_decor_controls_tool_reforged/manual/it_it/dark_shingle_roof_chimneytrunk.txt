@@ -1,0 +1,5 @@
+Canna fumaria del tetto
+Accessorio per tetti usurati
+<&recipe>La canna fumaria per tetto in scandole scure crea profili di tetto scuri e pratici per officine e capannoni industriali.<br>
+<br>
+Uso: combina gli elementi per costruire profili di tetto credibili.<br>

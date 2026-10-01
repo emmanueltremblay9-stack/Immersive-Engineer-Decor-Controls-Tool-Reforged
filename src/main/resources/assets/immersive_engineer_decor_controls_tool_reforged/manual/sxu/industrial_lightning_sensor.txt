@@ -1,0 +1,7 @@
+Gewiddorsensor
+Signalergennung
+<&recipe>Ä Gewiddorsensor lösd Warnungen aus, wenn’s donnord.<br>
+<br>
+Nuddzung: Seddz’n undor freien Himmel un vorbind’n mid Lambn oddor Alarmen.<br>
+<br>
+Hinweis: Brauchd Donnor un freien Himmel.

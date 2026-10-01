@@ -1,0 +1,5 @@
+Zur zaharreko lauza-xafla
+Lantegiko zur zahartua
+<&recipe>Fabrika zaharreko zurezko lauza-xaflak lantegiko zur zahartua eskaintzen du zoruetarako, mailetarako, ateetarako eta barrualdeko apaingarri beroetarako.<br>
+<br>
+Erabilera: erabili lantegi zaharren zoruetan, eskaileretan, ateetan eta ertz-apaingarrietan.<br>

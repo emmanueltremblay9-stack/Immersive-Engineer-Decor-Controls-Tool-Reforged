@@ -1,0 +1,5 @@
+Rrasë xhami të blinduar
+Pamje e mbrojtur
+<&recipe>Ky bllok ruan vijat e shikimit të hapura dhe përshtatet me ndërtimin e përforcuar të fabrikës.<br>
+<br>
+Përdorimi: përdore ku lojtarët duhet të shohin makineritë përmes një pengese mbrojtëse.<br>

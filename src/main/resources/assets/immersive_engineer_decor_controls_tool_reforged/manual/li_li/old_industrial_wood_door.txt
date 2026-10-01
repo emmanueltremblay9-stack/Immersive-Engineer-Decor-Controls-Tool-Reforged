@@ -1,0 +1,5 @@
+Aaj industriële houten deur
+Aaj werkplaatshout
+<&recipe>Dees blok veugt aaj werkplaatshout toe veur vloere, treje, deure en warme binneversiering.<br>
+<br>
+Gebroek: neem 'm veur aaj werkplaatsvloere, traeje, deure en rande.<br>

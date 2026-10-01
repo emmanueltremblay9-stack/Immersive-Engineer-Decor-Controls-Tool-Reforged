@@ -1,0 +1,7 @@
+Aralık Zamanlayıcısı
+Zamanlı darbe
+<&recipe>Küçük zamanlayıcı anahtarı, zamanlanmış redstone darbesi verir.<br>
+<br>
+Kullanım: Küçük bir mekanizmanın düzenli aralıklarla veya gecikmeli kontrol edilmesi gerektiğinde kullanın.<br>
+<br>
+Notlar: Zamanlanmış redstone darbeleri kullanır.

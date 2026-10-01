@@ -1,0 +1,5 @@
+Blok qırıcı
+Emalatxana yardımçısı
+<&recipe>Kiçik blok qırıcı hazırlama, saxlama, yerləşdirmə, qırma, toplama və ya yığcam avtomatlaşdırma üçün emalatxana yardımçı blokudur.<br>
+<br>
+İstifadə: İşçi üzü götürüləcək bloka yönəldin.<br>

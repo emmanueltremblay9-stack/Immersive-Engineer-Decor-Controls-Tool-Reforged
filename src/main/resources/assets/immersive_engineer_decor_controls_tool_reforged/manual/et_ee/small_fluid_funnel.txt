@@ -1,0 +1,5 @@
+Vedelikulehter
+Vedelikutrassi seadmed
+<&recipe>Väike vedelikukogumislehter on kompaktne vedelikutrassi osa väikeste mahutite, torujuhtmete, kogumispunktide ja redstone'iga juhitava voolu jaoks.<br>
+<br>
+Kasutamine: Pane see vedeliku kogumispunkti alla ning juhi salvestatud sisu mahutitesse või madalamatesse torudesse.<br>

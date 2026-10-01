@@ -1,0 +1,41 @@
+Emmagatzematge i transport
+Components d’inventari i circulació
+Els accessoris d’emmagatzematge i transport inclouen caixons, barrils, embuts i vàlvules per a distribucions compactes de fàbrica.<br>
+<br>
+Usa estes pàgines quan dissenyes magatzems, traçats de canonades, depòsits de servici i conduccions controlades de líquids.
+<np>
+Caixó amb etiqueta
+Etiqueta editable d’existències
+<&labeled_crate>Este caixó amb etiqueta està pensat per a ordenar clarament el magatzem. La placa frontal es pot editar com un cartell xicotet de taller.<br>
+<br>
+Ús: fes clic dret en la placa de l’etiqueta per a editar l’etiqueta del caixó. Fes clic dret en la resta del caixó per a obrir l’emmagatzematge d’accessoris, peces i subministraments de manteniment.<br>
+<np>
+Barril de líquids
+Accessoris de conducció de líquids
+<&fluid_barrel>Esta peça és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: col·loca-la on les canonades o els poals puguen arribar a la cara del depòsit.<br>
+<np>
+Embut de líquids
+Accessoris de conducció de líquids
+<&small_fluid_funnel>L’embut de líquids xicotet és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: posa’l davall del punt de recollida de líquids i conduïx el contingut guardat a depòsits o canonades més baixes.<br>
+<np>
+Vàlvula antiretorn per a canonada de líquids
+Accessoris de conducció de líquids
+<&straight_pipe_valve>La vàlvula antiretorn per a canonada de líquids és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció desitjada del cabal.<br>
+<np>
+Vàlvula de líquids de redstone
+Accessoris de conducció de líquids
+<&straight_pipe_valve_redstone>La vàlvula de líquids de redstone és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció desitjada del cabal.<br>
+<np>
+Vàlvula analògica de líquids
+Accessoris de conducció de líquids
+<&straight_pipe_valve_redstone_analog>La vàlvula analògica de líquids és un element compacte de conducció de líquids per a depòsits xicotets, traçats de canonades, punts de recollida i control del cabal per redstone.<br>
+<br>
+Ús: alinea la vàlvula amb la direcció desitjada del cabal.<br>

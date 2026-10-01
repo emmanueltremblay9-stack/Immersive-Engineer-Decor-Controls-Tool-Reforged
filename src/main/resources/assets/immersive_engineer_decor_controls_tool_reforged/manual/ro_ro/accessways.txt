@@ -1,0 +1,127 @@
+Căi de acces
+Pasarele și suporturi
+Stâlpii de oțel, stâlpii din lemn tratat, grătarele, pasarelele, balustradele, scările verticale, ușile, ferestrele și trapele formează căi de acces compacte pentru întreținere în interiorul fabricilor.<br>
+<br>
+Piesele de oțel pentru căile de acces folosesc plăci de oțel. Fabrică sau amplasează o masă de lucru pentru metal, introdu un ciocan Immersive Engineering, apoi bate lingourile de oțel cu ciocanul pentru a obține plăci de oțel pentru stâlpi, pasarele, ferestre, uși, balustrade și alte decorațiuni de oțel.<br>
+<br>
+Amplasează-le acolo unde mașinile au nevoie de acces pentru întreținere, căi suspendate, puțuri de serviciu sau margini mai sigure.
+<np>
+Stâlp gros de oțel
+Piesă pentru structuri de susținere
+<&thick_steel_pole>Stâlpul drept gros de oțel oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Cap de stâlp gros
+Piesă pentru structuri de susținere
+<&thick_steel_pole_head>Capul/baza pentru stâlpul drept gros de oțel oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Stâlp subțire de oțel
+Piesă pentru structuri de susținere
+<&thin_steel_pole>Stâlpul drept subțire de oțel oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Cap de stâlp subțire
+Piesă pentru structuri de susținere
+<&thin_steel_pole_head>Capul/baza pentru stâlpul drept subțire de oțel oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Stâlp din lemn tratat
+Piesă pentru structuri de susținere
+<&treated_wood_pole>Stâlpul drept din lemn tratat oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Cap de stâlp din lemn tratat
+Piesă pentru structuri de susținere
+<&treated_wood_pole_head>Capul/baza pentru stâlpul drept din lemn tratat oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Suport de stâlp din lemn tratat
+Piesă pentru structuri de susținere
+<&treated_wood_pole_support>Suportul pentru stâlpul drept din lemn tratat oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Suport de oțel dublu T
+Piesă pentru structuri de susținere
+<&steel_double_t_support>Acest bloc oferă o structură vizibilă pentru halele de mașini și cadrele căilor de acces.<br>
+<br>
+Utilizare: Rotește-l și amplasează-l ca element vizibil de rigidizare pentru grinzi, stâlpi și marginile platformelor.<br>
+<np>
+Grătar de podea din oțel
+Piesă pentru accesul la întreținere
+<&steel_floor_grating>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Pasarelă de oțel
+Piesă pentru accesul la întreținere
+<&steel_catwalk>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Trepte de pasarelă de oțel
+Piesă pentru accesul la întreținere
+<&steel_catwalk_stairs>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Pasarelă de oțel înălțată
+Piesă pentru accesul la întreținere
+<&steel_catwalk_ta>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Balustradă de oțel
+Piesă pentru accesul la întreținere
+<&steel_railing>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Gard din plasă de oțel
+Piesă pentru accesul la întreținere
+<&steel_mesh_fence>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Portiță din plasă de oțel
+Piesă pentru accesul la întreținere
+<&steel_mesh_fence_gate>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Scară cu trepte metalice
+Piesă pentru accesul la întreținere
+<&metal_rung_ladder>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Trepte metalice alternante
+Piesă pentru accesul la întreținere
+<&metal_rung_steps>Acest bloc formează căi de acces ușor de identificat în jurul mașinilor.<br>
+<br>
+Utilizare: Amplasează-l pentru a permite accesul la întreținere în jurul mașinilor, la etajele superioare și în puțurile de serviciu.<br>
+<np>
+Fereastră cu ramă de oțel
+Vizibilitate printr-o barieră de protecție
+<&steel_framed_window>Acest bloc păstrează vizibilitatea și se încadrează totodată în construcțiile industriale ranforsate.<br>
+<br>
+Utilizare: Amplasează-l într-o deschidere de 1 bloc din perete, acolo unde jucătorii trebuie să vadă mașinile printr-o barieră de protecție.<br>
+<np>
+Ușă metalică glisantă
+Punct de acces industrial
+<&metal_sliding_door>Acest bloc oferă un punct de acces robust pentru încăperi tehnice, puțuri, acoperișuri și incinte pentru mașini.<br>
+<br>
+Utilizare: Montează-l acolo unde construcția are nevoie de o deschidere controlată pentru întreținere.<br>
+<np>
+Trapă de fier pentru acces
+Punct de acces industrial
+<&iron_hatch>Acest bloc oferă un punct de acces robust pentru încăperi tehnice, puțuri, acoperișuri și incinte pentru mașini.<br>
+<br>
+Utilizare: Montează-l acolo unde construcția are nevoie de o deschidere controlată pentru întreținere.<br>

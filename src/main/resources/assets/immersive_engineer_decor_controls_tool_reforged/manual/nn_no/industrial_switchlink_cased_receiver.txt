@@ -1,0 +1,7 @@
+Koplingsmottakar med kasse
+Kopla betening
+<&recipe>Ein kopla mottakar med kasse gjev fjernpanel eit solid redstone-mål.<br>
+<br>
+Bruk: klikk på han med ei endeperle for å lage ei kopla perle. Høgreklikk rett på mottakaren for å slå han om for hand.<br>
+<br>
+Merknad: ei kopla perle slår om denne mottakaren når ho blir brukt medan du smyg.

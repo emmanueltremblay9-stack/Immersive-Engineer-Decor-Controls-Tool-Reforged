@@ -1,0 +1,5 @@
+Fluida barelo
+Fluidliniaj ekipaĵoj
+<&recipe>Ĉi tiu ekipaĵo estas kompakta fluidlinia parto por malgrandaj tankoj, tuboj, kolektopunktoj kaj redstone’e regata fluo.<br>
+<br>
+Uzado: metu ĝin kie tuboj aŭ siteloj povas atingi la tankoflankon.<br>

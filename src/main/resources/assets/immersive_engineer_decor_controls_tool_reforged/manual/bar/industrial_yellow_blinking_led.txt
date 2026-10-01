@@ -1,0 +1,7 @@
+Gelbe blinkende LED
+Signalrückmeldung
+<&recipe>A kloana Anzeiger macht versteckts Redstone ois Fabrikrückmeldung sichtbar.<br>
+<br>
+So geht's: Verkabel'n nebn dem Signal, zum Überwachn vo Tiern, Maschinen, Alarm oder Paneele.<br>
+<br>
+Hinweis: Ändert sein Zustand, wenn Redstone-Energie in da Näh anliegt.

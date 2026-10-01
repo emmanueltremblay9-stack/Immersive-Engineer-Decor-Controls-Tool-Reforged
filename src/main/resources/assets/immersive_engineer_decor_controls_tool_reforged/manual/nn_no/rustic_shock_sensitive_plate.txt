@@ -1,0 +1,7 @@
+Rustikk støytplate
+Trykkpuls
+<&recipe>Ein kontaktbrytar gjev eit kort signal ved rørsle på golvet eller lemmen.<br>
+<br>
+Bruk: plasser han der entitetar går gjennom ein servicegang, ei lasteinnretning eller ei sikra rute.<br>
+<br>
+Merknad: gjev ein kort puls etter kontakt med ein entitet.

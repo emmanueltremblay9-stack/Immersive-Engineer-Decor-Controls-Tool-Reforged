@@ -1,0 +1,5 @@
+Burner o' rubbish
+Small processin' contraption
+<&recipe>The rubbish burner destroys unwanted loot in a small corner o' yer workshop.<br>
+<br>
+Orders: Feed only loot ye don't want into her queue.<br>

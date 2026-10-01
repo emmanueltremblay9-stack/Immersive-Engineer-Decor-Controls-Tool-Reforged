@@ -1,0 +1,41 @@
+Deposito e trasporto
+Equipamenti de inventario e de flusso
+I equipamenti de deposito e trasporto i gestisse casse, bóte, inbuti e vałvołe par far percorsi conpati de fàbrica.<br>
+<br>
+Dòpara ste pàjine quando te organizi magazeni, linee de tubi, serbatoi de servisio e circuiti de fluidi controładi.
+<np>
+Cassa etichetada
+Eticheta de scorta da poder canbiar
+<&labeled_crate>Sta cassa etichetada ła serve par sistemar ben ła roba in magazen. Ła piaca davanti se pol canbiarla come un pìcolo cartel de ofisina.<br>
+<br>
+Uso: fa clic a destra su ła piaca par canbiar l’eticheta de ła cassa. Fa clic a destra sul resto de ła cassa par vèrzar el deposito par equipamenti, tochi e scorte da manutension.<br>
+<np>
+Bóta par lìcuidi
+Equipamento par linee de fluidi
+<&fluid_barrel>Sto equipamento el xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: mètelo dove tubi o seci i pol rivar a ła fasa de’l serbatoio.<br>
+<np>
+Inbuto par fluidi
+Equipamento par linee de fluidi
+<&small_fluid_funnel>El Pìcolo inbuto par catar su fluidi el xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: mètelo soto el ponto de racòlta de’l fluido e porta el contenuto conservà verso serbatoi o tubi pì bassi.<br>
+<np>
+Vałvoła de no ritorno par tubi de fluidi
+Equipamento par linee de fluidi
+<&straight_pipe_valve>Ła Vałvoła de no ritorno par tubi de fluidi ła xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: alinea ła vałvoła co ła diresion voluda de’l flusso.<br>
+<np>
+Vałvoła par fluidi a redstone
+Equipamento par linee de fluidi
+<&straight_pipe_valve_redstone>Ła Vałvoła par fluidi comandada da redstone ła xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: alinea ła vałvoła co ła diresion voluda de’l flusso.<br>
+<np>
+Vałvoła anałòjega par fluidi
+Equipamento par linee de fluidi
+<&straight_pipe_valve_redstone_analog>Ła Vałvoła anałòjega par fluidi a redstone ła xe un toco conpato par circuiti de fluidi, pìcoli serbatoi, tubi, punti de racòlta e flussi controładi da redstone.<br>
+<br>
+Uso: alinea ła vałvoła co ła diresion voluda de’l flusso.<br>

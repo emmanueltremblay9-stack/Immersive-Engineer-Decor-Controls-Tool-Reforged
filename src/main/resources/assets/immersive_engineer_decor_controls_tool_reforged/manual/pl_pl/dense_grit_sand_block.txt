@@ -1,0 +1,5 @@
+Ubity piasek ze żwirem
+Podłoże placu robót
+<&recipe>Ten blok nadaje zewnętrznym obszarom roboczym wygląd ubitej, wydeptanej nawierzchni.<br>
+<br>
+Użycie: Układaj go wokół bram załadunkowych, zbiorników na zewnątrz i placów maszynowych.<br>

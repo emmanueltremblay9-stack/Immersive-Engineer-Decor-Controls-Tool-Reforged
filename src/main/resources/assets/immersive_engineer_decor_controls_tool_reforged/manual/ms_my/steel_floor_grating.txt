@@ -1,0 +1,5 @@
+Jeriji Lantai Keluli
+Kelengkapan akses servis
+<&recipe>Blok ini membentuk laluan servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: Letakkan sebagai akses penyelenggaraan di sekitar mesin, tingkat atas dan aci servis.<br>

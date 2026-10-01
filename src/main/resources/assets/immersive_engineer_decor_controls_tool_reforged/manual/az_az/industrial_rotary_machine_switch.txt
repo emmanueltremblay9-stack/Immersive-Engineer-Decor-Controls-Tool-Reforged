@@ -1,0 +1,7 @@
+Fırlanan maşın açarı
+Qızıl daşla idarəetmə
+<&recipe>Yığcam idarəetmə elementi zavod tikililərində aydın seçilən qızıl daş açar nöqtəsi yaradır.<br>
+<br>
+İstifadə: Yaxın dövrələrə tam güclü çıxışı açıb-bağlamaq üçün sağ klikləyin.<br>
+<br>
+Qeydlər: Açıq olduqda tam güclü qızıl daş siqnalı verir.

@@ -1,0 +1,5 @@
+Blok armiranog betona
+Ojačani beton
+<&recipe>Ovaj blok je ojačani betonski deo za mašinske podloge, zidove protiv eksplozija i podove utovarnih mesta.<br>
+<br>
+Upotreba: postavi ga ispod mašina, duž servisnih hodnika ili gde god je potrebna ojačana osnova.<br>

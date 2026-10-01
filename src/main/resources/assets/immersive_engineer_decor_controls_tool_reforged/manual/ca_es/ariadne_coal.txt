@@ -1,0 +1,7 @@
+Carbó d’Ariadna
+Marcador de rutes de mina
+<&recipe>El carbó d’Ariadna permet marcar ràpidament rutes en pous, mines ramificades i treballs subterranis temporals.<br>
+<br>
+Ús: fes-lo servir sobre una cara estable d’un bloc per col·locar-hi una fletxa negra a la vora. El marcador interpreta el punt de la cara on fas clic i admet vuit direccions, incloses les diagonals, per marcar girs, sortides, atzucacs i rutes de subministrament sense haver de dur cartells addicionals.<br>
+<br>
+El carbó d’Ariadna és una eina de marcatge reutilitzable amb 100 usos. Cada marcador col·locat correctament consumeix un punt de durabilitat; les cares no admeses es rebutgen sense desgastar l’objecte.

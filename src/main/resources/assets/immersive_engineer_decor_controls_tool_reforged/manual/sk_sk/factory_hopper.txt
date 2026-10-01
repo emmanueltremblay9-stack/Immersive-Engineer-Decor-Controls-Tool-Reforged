@@ -1,0 +1,5 @@
+Továrenský násypník
+Vybavenie výrobnej haly
+<&recipe>Tento blok presúva stohy predmetov v menšom priemyselnom obale.<br>
+<br>
+Použitie: Namier ho na líniu inventárov a v rozhraní nastav dosah, množstvo v stohu, časovanie a redstonový režim.<br>

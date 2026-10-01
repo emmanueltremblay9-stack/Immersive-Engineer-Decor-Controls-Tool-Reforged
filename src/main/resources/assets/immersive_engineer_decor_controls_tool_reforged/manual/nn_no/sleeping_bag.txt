@@ -1,0 +1,7 @@
+Sovepose
+Bærbart hvileutstyr
+<&recipe>Soveposen er et værbestandig hvilesett for feltarbeid langt fra en seng.<br>
+<br>
+Bruk den om natten i Overworld for å hvile til morgen uten å sette eller flytte startpunktet.<br>
+<br>
+Den nekter bruk på dagtid, ved monstre i nærheten og i uegnede dimensjoner. Hver vellykkede hvile sliter på posen.

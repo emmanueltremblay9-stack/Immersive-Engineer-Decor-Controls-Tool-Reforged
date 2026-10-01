@@ -1,0 +1,789 @@
+Redstonestyring
+Målere og signalkomponenter
+Styringsudstyret gør skjult redstone til aflæselige fabrikspaneler, sensorer, indikatorer, kontakter, alarmer og forbundne signalkomponenter.<br>
+<br>
+Brug disse sider, når du bygger operatørstationer, signaltavler, sikkerhedskredsløb og fjernbetjeninger.
+<np>
+Pilemål
+Kortvarig puls
+<&arrow_target>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Dørsensor
+Redstonestyring
+<&door_sensor_switch>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Elevatorknap
+Redstonestyring
+<&elevator_button>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Glasknap
+Redstonestyring
+<&glass_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Glasknap
+Redstonestyring
+<&glass_small_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Glasberøringsknap
+Redstonestyring
+<&glass_touch_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Maskinknap
+Redstonestyring
+<&industrial_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Knap
+Redstonestyring
+<&industrial_double_pole_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Afskærmet maskinknap
+Redstonestyring
+<&industrial_fenced_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Slagknap
+Redstonestyring
+<&industrial_knock_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Gammel pyntet knap
+Redstonestyring
+<&oldfancy_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Gammel pyntet knap
+Redstonestyring
+<&oldfancy_small_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Gammel pyntet kædeknap
+Kortvarig puls
+<&oldfancy_spring_reset_chain>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Rustik knap
+Redstonestyring
+<&rustic_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Rustik sømknap
+Redstonestyring
+<&rustic_nail_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Lille rustik knap
+Redstonestyring
+<&rustic_small_button>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Rustik kædeknap
+Kortvarig puls
+<&rustic_spring_reset_chain>En momentankontakt giver en ren redstonepuls med fuld styrke.<br>
+<br>
+Brug: Brug den til maskinstart, dørfrigivelse, alarmer eller kredsløb, som skal udløses én gang.<br>
+<br>
+Bemærk: Nulstilles efter den indstillede puls.
+<np>
+Glaskontaktplade
+Trykpuls
+<&glass_contact_mat>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Dørkontakt af glas
+Trykpuls
+<&glass_door_contact_mat>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Kontaktmåtte
+Trykpuls
+<&industrial_contact_mat>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Dørkontaktmåtte
+Trykpuls
+<&industrial_door_contact_mat>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Gennemfaldsdetektor
+Signalregistrering
+<&industrial_fallthrough_detector>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Fodknap
+Redstonestyring
+<&industrial_foot_button>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Industriel slagudløst dør
+Trykpuls
+<&industrial_high_sensitive_trapdoor>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Slagfølsom kontaktmåtte
+Trykpuls
+<&industrial_shock_sensitive_contact_mat>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Slagudløst lem
+Trykpuls
+<&industrial_shock_sensitive_trapdoor>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Rød strømplante
+Trykpuls
+<&red_power_plant>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Rustik trykplade
+Trykpuls
+<&rustic_contact_plate>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Rustik dørtrykplade
+Trykpuls
+<&rustic_door_contact_plate>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Rustik falddetektor
+Signalregistrering
+<&rustic_fallthrough_detector>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Rustik slagudløst dør
+Trykpuls
+<&rustic_high_sensitive_trapdoor>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Rustik slagplade
+Trykpuls
+<&rustic_shock_sensitive_plate>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Rustik slagudløst dør
+Trykpuls
+<&rustic_shock_sensitive_trapdoor>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Gul strømplante
+Trykpuls
+<&yellow_power_plant>En berøringskontakt sender et kort signal ved bevægelse på gulvet eller gennem en lem.<br>
+<br>
+Brug: Placer den, hvor entiteter passerer gennem en servicegang, læsser eller bevogtet rute.<br>
+<br>
+Bemærk: Giver en kort puls efter kontakt med en entitet.
+<np>
+Døgnur af glas
+Dagslyssignal
+<&glass_day_timer>En timerkontakt følger den lyse del af verdens døgn.<br>
+<br>
+Brug: Brug den til gårdlamper, skodder og fabriksstyring, der kun skal være aktiv om dagen.<br>
+<br>
+Bemærk: Kræver en dimension med himmellys.
+<np>
+Entitetsdetektor af glas
+Signalregistrering
+<&glass_entity_detector>En entitetsdetektor overvåger bevægelse i nærheden uden en synlig gulvplade.<br>
+<br>
+Brug: Forbind den til døre, lamper, alarmer eller maskinforriglinger.<br>
+<br>
+Bemærk: Afsøger et lille område omkring blokken.
+<np>
+Intervalsignal af glas
+Tidsstyret puls
+<&glass_interval_timer>En kompakt timerkontakt giver en tidsindstillet redstonepuls.<br>
+<br>
+Brug: Brug den, hvor en lille mekanisme kræver periodisk eller forsinket styring.<br>
+<br>
+Bemærk: Bruger tidsindstillede redstonepulser.
+<np>
+Lineær glasdetektor
+Signalregistrering
+<&glass_linear_entity_detector>En entitetsdetektor overvåger bevægelse i nærheden uden en synlig gulvplade.<br>
+<br>
+Brug: Forbind den til døre, lamper, alarmer eller maskinforriglinger.<br>
+<br>
+Bemærk: Afsøger et lille område omkring blokken.
+<np>
+Blokdetektor
+Signalregistrering
+<&industrial_block_detector>En blokdetektor kontrollerer, om pladsen foran den er optaget.<br>
+<br>
+Brug: Ret den mod den maskinflade, buffer eller beskyttede plads, der skal overvåges.<br>
+<br>
+Bemærk: Giver strøm, når blokken foran den ikke er luft.
+<np>
+Døgnur
+Dagslyssignal
+<&industrial_day_timer>En timerkontakt følger den lyse del af verdens døgn.<br>
+<br>
+Brug: Brug den til gårdlamper, skodder og fabriksstyring, der kun skal være aktiv om dagen.<br>
+<br>
+Bemærk: Kræver en dimension med himmellys.
+<np>
+Entitetsdetektor
+Signalregistrering
+<&industrial_entity_detector>En entitetsdetektor overvåger bevægelse i nærheden uden en synlig gulvplade.<br>
+<br>
+Brug: Forbind den til døre, lamper, alarmer eller maskinforriglinger.<br>
+<br>
+Bemærk: Afsøger et lille område omkring blokken.
+<np>
+Intervaltimer
+Tidsstyret puls
+<&industrial_interval_timer>En kompakt timerkontakt giver en tidsindstillet redstonepuls.<br>
+<br>
+Brug: Brug den, hvor en lille mekanisme kræver periodisk eller forsinket styring.<br>
+<br>
+Bemærk: Bruger tidsindstillede redstonepulser.
+<np>
+Lyssensor
+Signalregistrering
+<&industrial_light_sensor>En lyssensor omsætter lokal lysstyrke til redstonestyring.<br>
+<br>
+Brug: Brug den til automatiske lamper, skodder og kredsløb, der reagerer på sigtbarheden.<br>
+<br>
+Bemærk: Giver strøm ved rå lysstyrke 8 eller højere.
+<np>
+Tordenvejrsdetektor
+Signalregistrering
+<&industrial_lightning_sensor>En tordenvejrssensor aktiverer advarsler, når det tordner.<br>
+<br>
+Brug: Placer den under åben himmel, og forbind den til lamper eller alarmer.<br>
+<br>
+Bemærk: Kræver torden og fri adgang til himlen.
+<np>
+Lineær entitetsdetektor
+Signalregistrering
+<&industrial_linear_entity_detector>En entitetsdetektor overvåger bevægelse i nærheden uden en synlig gulvplade.<br>
+<br>
+Brug: Forbind den til døre, lamper, alarmer eller maskinforriglinger.<br>
+<br>
+Bemærk: Afsøger et lille område omkring blokken.
+<np>
+Regnsensor
+Signalregistrering
+<&industrial_rain_sensor>En vejrsensor omdanner regn ved sin placering til redstone.<br>
+<br>
+Brug: Monter den, hvor blokken ovenover kan modtage regn.<br>
+<br>
+Bemærk: Kontrollerer regn over sensoren.
+<np>
+Bistabil glaskontakt
+Redstonestyring
+<&glass_rotary_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Bistabil glasberøringskontakt
+Redstonestyring
+<&glass_touch_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Orange følsomt glas
+Signalglas
+<&orange_sensitiveglass>En redstonereagerende glasblok bevarer udsynet og viser samtidig signalets tilstand.<br>
+<br>
+Brug: Brug den i kontrolrumsvinduer, oplyste paneler og beskyttede glaspartier i fabrikken.<br>
+<br>
+Bemærk: Skifter tilstand ud fra redstonekraft i nærheden.
+<np>
+Lysende følsomt glas
+Signalglas
+<&sensitive_glass_block>En redstonereagerende glasblok bevarer udsynet og viser samtidig signalets tilstand.<br>
+<br>
+Brug: Brug den i kontrolrumsvinduer, oplyste paneler og beskyttede glaspartier i fabrikken.<br>
+<br>
+Bemærk: Skifter tilstand ud fra redstonekraft i nærheden.
+<np>
+Farvet følsomt glas
+Signalglas
+<&stained_sensitiveglass>En redstonereagerende glasblok bevarer udsynet og viser samtidig signalets tilstand.<br>
+<br>
+Brug: Brug den i kontrolrumsvinduer, oplyste paneler og beskyttede glaspartier i fabrikken.<br>
+<br>
+Bemærk: Skifter tilstand ud fra redstonekraft i nærheden.
+<np>
+Glassøjlemåler
+Signalmåler
+<&glass_vertical_bar_gauge>En kompakt måler til kontrolrum viser redstonestyrken som en tydelig panelaflæsning.<br>
+<br>
+Brug: Monter den, hvor styrken af redstone i nærheden skal kunne ses med et enkelt blik.<br>
+<br>
+Bemærk: Aflæser nærliggende redstonestyrke fra 0 til 15.
+<np>
+Analog måler
+Signalmåler
+<&industrial_analog_angular_gauge>En kompakt måler til kontrolrum viser redstonestyrken som en tydelig panelaflæsning.<br>
+<br>
+Brug: Monter den, hvor styrken af redstone i nærheden skal kunne ses med et enkelt blik.<br>
+<br>
+Bemærk: Aflæser nærliggende redstonestyrke fra 0 til 15.
+<np>
+Voltmetermåler
+Signalmåler
+<&industrial_analog_horizontal_gauge>En kompakt måler til kontrolrum viser redstonestyrken som en tydelig panelaflæsning.<br>
+<br>
+Brug: Monter den, hvor styrken af redstone i nærheden skal kunne ses med et enkelt blik.<br>
+<br>
+Bemærk: Aflæser nærliggende redstonestyrke fra 0 til 15.
+<np>
+Digital måler
+Aflæselig signalstyrke
+<&industrial_small_digital_gauge>En kompakt måler til kontrolrum viser redstonestyrken som en tydelig panelaflæsning.<br>
+<br>
+Brug: Monter den, hvor styrken af redstone i nærheden skal kunne ses med et enkelt blik.<br>
+<br>
+Bemærk: Aflæser nærliggende redstonestyrke fra 0 til 15.
+<np>
+Glasrørsmåler
+Signalmåler
+<&industrial_tube_gauge>En kompakt måler til kontrolrum viser redstonestyrken som en tydelig panelaflæsning.<br>
+<br>
+Brug: Monter den, hvor styrken af redstone i nærheden skal kunne ses med et enkelt blik.<br>
+<br>
+Bemærk: Aflæser nærliggende redstonestyrke fra 0 til 15.
+<np>
+Analog søjlemåler
+Signalmåler
+<&industrial_vertical_bar_gauge>En kompakt måler til kontrolrum viser redstonestyrken som en tydelig panelaflæsning.<br>
+<br>
+Brug: Monter den, hvor styrken af redstone i nærheden skal kunne ses med et enkelt blik.<br>
+<br>
+Bemærk: Aflæser nærliggende redstonestyrke fra 0 til 15.
+<np>
+Alarmlampe
+Signaltilbagemelding
+<&industrial_alarm_lamp>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Alarmsirene
+Signalindikator
+<&industrial_alarm_siren>Alarmsirenen er en redstone-indikator monteret på en blokside. Dens strømtilstand følger signalet fra blokken, den sidder på.<br>
+<br>
+Brug: Monter på en fast side og giv strøm for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Sirenen opdateres én gang i sekundet, mens signalet er aktivt.
+<np>
+Blinkende LED
+Signaltilbagemelding
+<&industrial_blinking_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Grøn blinkende LED
+Signaltilbagemelding
+<&industrial_green_blinking_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Grøn LED
+Signaltilbagemelding
+<&industrial_green_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Rød LED
+Signaltilbagemelding
+<&industrial_red_blinking_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Rød LED
+Signaltilbagemelding
+<&industrial_red_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Hvid blinkende LED
+Signaltilbagemelding
+<&industrial_white_blinking_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Hvid LED
+Signaltilbagemelding
+<&industrial_white_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Gul blinkende LED
+Signaltilbagemelding
+<&industrial_yellow_blinking_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Gul LED
+Signaltilbagemelding
+<&industrial_yellow_led>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Rustik semafor
+Signaltilbagemelding
+<&rustic_semaphore>En kompakt indikator gør skjult redstone til synlig tilbagemelding i fabrikken.<br>
+<br>
+Brug: Tilslut den ved signalet for at overvåge døre, maskiner, alarmer eller paneler.<br>
+<br>
+Bemærk: Skifter tilstand, når der er redstonekraft i nærheden.
+<np>
+Komparatorkontakt
+Signal fra fæsteblokken
+<&industrial_comparator_switch>En kompakt sensorkontakt aflæser den blok, den sidder på, og omdanner aflæsningen til en enkel paneludgang.<br>
+<br>
+Brug: Monter den på lagre, tanke eller redstoneudstyr. Når fæsteblokken giver et komparator-, beholder- eller redstonesignal, udsender kontakten redstone med fuld styrke.<br>
+<br>
+Bemærk: Brug den til at omsætte lagerniveauer eller skjulte ledninger til tydelige til/fra-styreledninger.
+<np>
+Dæmper
+Variabelt signal
+<&industrial_dimmer>En drejeknap indstiller redstonestyrken på en kompakt panelfront.<br>
+<br>
+Brug: Højreklik for at øge udgangen trinvist. Efter fuld styrke går den tilbage til nul.<br>
+<br>
+Bemærk: Giver en styrke fra 0 til 15.
+<np>
+Nødstopknap
+Redstonestyring
+<&industrial_estop_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Tragtspærre
+Redstonestyring
+<&industrial_hopper_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Slagkontakt
+Redstonestyring
+<&industrial_knock_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Håndtag
+Redstonestyring
+<&industrial_lever>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Maskinkontakt med to knapper
+Redstonestyring
+<&industrial_machine_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Trækhåndtag
+Redstonestyring
+<&industrial_pull_handle>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Drejehåndtag
+Redstonestyring
+<&industrial_rotary_lever>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Drejemaskinkontakt
+Redstonestyring
+<&industrial_rotary_machine_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Kontakthåndtag
+Redstonestyring
+<&industrial_small_lever>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Kontakt
+Redstonestyring
+<&industrialswitch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Lyskontakt
+Redstonestyring
+<&light_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Ventilkontakt
+Redstonestyring
+<&valve_wheel_switch>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Indkapslet pulsmodtager
+Forbundet styring
+<&industrial_switchlink_cased_pulse_receiver>En indkapslet tilknyttet pulsmodtager giver fjernpaneler en kort redstoneudløsning.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Højreklik på modtageren, eller aktivér den tilknyttede perle for at udsende en kort puls.<br>
+<br>
+Bemærk: Pulsen nulstilles automatisk efter den indstillede varighed.
+<np>
+Indkapslet linkmodtager
+Forbundet styring
+<&industrial_switchlink_cased_receiver>En indkapslet linkmodtager giver fjernpaneler et robust redstonemål.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Højreklik direkte på modtageren for at skifte dens tilstand manuelt.<br>
+<br>
+Bemærk: En tilknyttet perle skifter modtagerens tilstand, når den bruges, mens du sniger.
+<np>
+Pulslinkmodtager
+Forbundet styring
+<&industrial_switchlink_pulse_receiver>En tilknyttet pulsmodtager giver fjernpaneler en kort redstoneudløsning.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Højreklik på modtageren, eller aktivér den tilknyttede perle for at udsende en kort puls.<br>
+<br>
+Bemærk: Pulsen nulstilles automatisk efter den indstillede varighed.
+<np>
+Pulslinkrelæ
+Forbundet styring
+<&industrial_switchlink_pulse_relay>En relæformet komponent giver panelbyggerier et kompakt lokalt kontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb. Brug modtagerblokke, når du har brug for aktivering med en tilknyttet perle.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Kontaktlinkmodtager
+Forbundet styring
+<&industrial_switchlink_receiver>En linkmodtager giver fjernpaneler et redstonemål med fuld styrke.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Højreklik direkte på modtageren for at skifte dens tilstand manuelt.<br>
+<br>
+Bemærk: En tilknyttet perle skifter modtagerens tilstand, når den bruges, mens du sniger.
+<np>
+Analog linkmodtager
+Forbundet styring
+<&industrial_switchlink_receiver_analog>En linkmodtager giver kontrolpaneler et synligt fjernmål.<br>
+<br>
+Brug: Klik på den med en Ender-perle for at skabe en tilknyttet perle. Brug perlen, mens du sniger, for at aktivere modtageren på afstand.<br>
+<br>
+Bemærk: Denne modtager udsender et redstonesignal med fuld styrke, når den udløses.
+<np>
+Kontaktlinkrelæ
+Forbundet styring
+<&industrial_switchlink_relay>En relæformet komponent giver panelbyggerier et kompakt lokalt kontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb. Brug modtagerblokke, når du har brug for aktivering med en tilknyttet perle.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Analogt linkrelæ
+Forbundet styring
+<&industrial_switchlink_relay_analog>En relæformet komponent giver panelbyggerier et kompakt lokalt kontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb. Brug modtagerblokke, når du har brug for aktivering med en tilknyttet perle.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Kontaktlinkperle
+Forbundet styring
+<&switchlink_pearl>En tilknyttet perle gemmer en modtager som mål for fabrikkens fjernbetjening.<br>
+<br>
+Brug: Klik på en kontaktlinkmodtager med en Ender-perle for at skabe en. Brug den tilknyttede perle, mens du sniger, for at aktivere den gemte modtager.<br>
+<br>
+Bemærk: Målet skal være indlæst, være i samme dimension og befinde sig inden for rækkevidde.
+<np>
+Gammelt pyntet håndtag
+Redstonestyring
+<&oldfancy_bistableswitch1>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Gammelt pyntet drejehåndtag
+Redstonestyring
+<&oldfancy_bistableswitch2>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Rustikt drejehåndtag
+Redstonestyring
+<&rustic_angular_lever>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Rustikt håndtag
+Redstonestyring
+<&rustic_lever>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Rustikt sømhåndtag
+Redstonestyring
+<&rustic_nail_lever>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.
+<np>
+Rustikt håndtag med to hængsler
+Redstonestyring
+<&rustic_two_hinge_lever>En kompakt betjeningsenhed giver fabriksbygninger et tydeligt redstonekontaktpunkt.<br>
+<br>
+Brug: Højreklik for at slå en udgang med fuld styrke til eller fra for nærliggende kredsløb.<br>
+<br>
+Bemærk: Giver redstone med fuld styrke, mens den er tændt.

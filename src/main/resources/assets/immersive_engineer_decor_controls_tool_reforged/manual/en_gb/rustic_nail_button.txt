@@ -1,0 +1,7 @@
+Rustic Nail Button
+Redstone control
+<&recipe>A momentary switch gives a clean full-strength redstone pulse.<br>
+<br>
+Usage: Use it for machine starts, door releases, alarms, or one-shot circuits.<br>
+<br>
+Notes: Resets after its scheduled pulse.

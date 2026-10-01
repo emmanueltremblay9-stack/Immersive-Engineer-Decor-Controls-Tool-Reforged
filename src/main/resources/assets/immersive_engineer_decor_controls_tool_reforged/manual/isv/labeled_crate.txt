@@ -1,0 +1,5 @@
+Skrinja s etiketoj
+Redigujema skladova etiketa
+<&recipe>Seja skrinja s etiketoj jest dlja jasnogo skladovogo sortiranja. Jej prědnju ploču možno redigovati kak maly znak rabotilnje.<br>
+<br>
+Upotrěbjenje: Klikni pravoj knopkoj na ploču etikety dlja redigovanja etikety skrinje. Klikni pravoj knopkoj na ostatok skrinje dlja otvorjenja sklada dodatkov, čestij i obslužnyh zalih.<br>

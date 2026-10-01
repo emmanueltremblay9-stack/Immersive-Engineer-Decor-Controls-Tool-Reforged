@@ -1,0 +1,5 @@
+Panel Surya
+Peralatan lantai bengkel
+<&recipe>Panel surya kecil adalah blok peralatan lantai bengkel untuk kerajinan, penyimpanan, pemasangan, penghancuran, pengumpulan, atau otomatisasi ringkas.<br>
+<br>
+Penggunaan: berikan akses ke langit terbuka dan hubungkan peralatan berdaya rendah.<br>

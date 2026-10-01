@@ -1,0 +1,7 @@
+Mâner de tragere
+Control prin redstone
+<&recipe>O piesă de comandă compactă oferă construcțiilor industriale un punct de comutare redstone ușor de identificat.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.

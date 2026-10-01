@@ -1,0 +1,7 @@
+Analógový merač
+Merač signálu
+<&recipe>Kompaktný merač v riadiacej miestnosti zobrazuje silu redstonu ako prehľadný údaj na paneli.<br>
+<br>
+Použitie: Pripevni ho tam, kde má byť sila susedného redstonu viditeľná na prvý pohľad.<br>
+<br>
+Poznámky: Odčítava blízku silu redstonu od 0 do 15.

@@ -1,0 +1,7 @@
+Marrës pulsi me kasë
+Kontroll i lidhur
+<&recipe>Një marrës pulsi i lidhur me kasë u jep paneleve të largëta një aktivizim të shkurtër redstoni.<br>
+<br>
+Përdorimi: kliko me një perlë të Ender-it për të krijuar një perlë të lidhur. Kliko djathtas marrësin ose aktivizo perlën për të dhënë një puls të shkurtër.<br>
+<br>
+Shënim: pulsi rikthehet vetë pas kohëzgjatjes së planifikuar.

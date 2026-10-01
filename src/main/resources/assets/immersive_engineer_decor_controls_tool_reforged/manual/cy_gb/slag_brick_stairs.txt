@@ -1,0 +1,5 @@
+Grisiau Briciau Sorod
+Gwaith maen ffatri dwys
+<&recipe>Mae'r bloc hwn yn ychwanegu gwaith maen llwydfrown dwys ar gyfer sylfeini, waliau cynnal a hen weithdai.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer sylfeini hŷn, waliau cynnal a lloriau ffatri budr.<br>

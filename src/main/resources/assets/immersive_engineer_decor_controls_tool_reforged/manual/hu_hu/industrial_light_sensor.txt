@@ -1,0 +1,7 @@
+Fényérzékelő
+Jelérzékelés
+<&recipe>A fényérzékelő a helyi fényerőt redstone-vezérléssé alakítja.<br>
+<br>
+Használat: automatikus lámpákhoz, zsalukhoz és láthatósági áramkörökhöz használd.<br>
+<br>
+Megjegyzés: legalább 8-as nyers fényszintnél ad jelet.

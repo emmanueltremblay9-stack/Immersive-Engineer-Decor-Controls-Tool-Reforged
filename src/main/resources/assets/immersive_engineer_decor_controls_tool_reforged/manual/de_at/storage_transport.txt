@@ -1,0 +1,41 @@
+Lagern und Transport
+Lager- und Durchflussbauteile
+Bauteile für Lagern und Transport umfassen Kistn, Fässer, Trichta und Ventile für kompakte Wege durch de Fabrik.<br>
+<br>
+Nimm de Seiten beim Planen von Lagerräumen, Rohrstreckn, Versorgungstanks und geregelten Flüssigkeitsleitungen.
+<np>
+Beschriftete Kistn
+Änderbore Lagerbeschriftung
+<&labeled_crate>De beschriftete Kistn sorgt für Übersicht im Lager. Des Frontschüd kannst wia a kloans Werkstattschüd ändern.<br>
+<br>
+Verwendung: Rechtsklick aufs Frontschüd ändert de Beschriftung. Rechtsklick aufn Rest von da Kistn öffnet's Lager für Teile, Zubehör und Wartungsmaterial.<br>
+<np>
+Flüssigkeitsfoss
+Bauteil für Flüssigkeitsleitungen
+<&fluid_barrel>Des kompakte Leitungsteil passt für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setz es so, dass Rohr oda Kiwe zur Tankseitn dazukumman.<br>
+<np>
+Flüssigkeitstrichta
+Bauteil für Flüssigkeitsleitungen
+<&small_fluid_funnel>Da kloane Flüssigkeitssammeltrichta is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Setz eam unter de Sammelstell und leit seinen Inhalt in Tanks oda tiefer gelegene Rohr.<br>
+<np>
+Flüssigkeits-Rückschlagventil
+Bauteil für Flüssigkeitsleitungen
+<&straight_pipe_valve>Des Flüssigkeits-Rückschlagventil is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richt des Ventil in de gewünschte Fließrichtung aus.<br>
+<np>
+Redstone-Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone>Des Redstone-Flüssigkeitsventil is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richt des Ventil in de gewünschte Fließrichtung aus.<br>
+<np>
+Analoges Flüssigkeitsventil
+Bauteil für Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone_analog>Des analoge Flüssigkeitsventil is a kompakts Leitungsteil für kloane Tanks, Rohrstreckn, Sammelstelln und Redstone-gsteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Richt des Ventil in de gewünschte Fließrichtung aus.<br>

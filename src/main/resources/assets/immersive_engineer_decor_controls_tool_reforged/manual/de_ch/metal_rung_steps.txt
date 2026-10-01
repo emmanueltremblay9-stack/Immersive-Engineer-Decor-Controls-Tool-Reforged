@@ -1,0 +1,5 @@
+Versetzti Metalltritt
+Bauteil für Wartigszuegäng
+<&recipe>Mit dem Block werded d'Wartigswäg rund um Maschine guet erkennbar.<br>
+<br>
+Verwendig: Setz en als Wartigszuegang bi Maschine, Obergschoss und Versorgigsschächt.<br>

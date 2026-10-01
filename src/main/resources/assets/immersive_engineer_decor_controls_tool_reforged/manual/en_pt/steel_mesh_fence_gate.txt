@@ -1,0 +1,5 @@
+Gate fer steel-mesh fencework
+Fitting fer service access
+<&recipe>This block lays out clear service routes round yer machinery.<br>
+<br>
+Orders: Set her round contraptions, upper decks and service shafts to give access fer upkeep.<br>

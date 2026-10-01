@@ -1,0 +1,7 @@
+Receptor nexus commutatorum
+Moderatio conexa
+<&recipe>Receptor conexus tabulis remotis destinationem redstone plenae vis dat.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Receptorem ipsum dextro clicco manu activa aut deactiva.<br>
+<br>
+Notae: margarita conexa furtim adhibita hunc receptorem activat aut deactivat.

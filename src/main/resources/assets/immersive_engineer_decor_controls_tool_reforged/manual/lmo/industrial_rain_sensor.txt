@@ -1,0 +1,7 @@
+Sensor de pioeuva
+Rilevament di segnai
+<&recipe>Un sensor del temp el trasforma la pioeuva che la croda in de la so posizzion in un segnal de prejarossa.<br>
+<br>
+Montel indove che el bloch de sora el poeu ciapà la pioeuva.<br>
+<br>
+El controla se pioeuv sora el sensor.

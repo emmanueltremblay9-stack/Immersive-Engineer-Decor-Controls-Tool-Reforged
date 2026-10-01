@@ -1,0 +1,7 @@
+Signal rostlagichi
+O'zgaruvchan signal
+<&recipe>Burama boshqaruv ixcham panel yuzasidan redstone kuchini belgilaydi.<br>
+<br>
+Ishlatish: chiqishni bosqichma-bosqich oshirish uchun o'ng tugmani bosing; eng yuqori kuchdan keyin yana nolga qaytadi.<br>
+<br>
+Eslatma: 0 dan 15 gacha kuch chiqaradi.

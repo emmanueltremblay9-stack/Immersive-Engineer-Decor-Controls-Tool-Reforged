@@ -1,0 +1,7 @@
+Glassy Line Spotter
+Signal sniffin
+<&recipe>Entity spotter watches nearby movement without a visible floor plate, kitty.<br>
+<br>
+How to: Connect to doorz, lampz, alarmz, or machine interlocks, meow.<br>
+<br>
+Kitty note: Scans a lil area round da bluk.

@@ -1,0 +1,789 @@
+Redstone aginteak
+Neurgailuak eta seinale-osagarriak
+Aginte-ekipoek ezkutuko redstonea fabrikako panel, sentsore, adierazle, etengailu, alarma eta lotutako seinale-osagarri irakurgarri bihurtzen dute.<br>
+<br>
+Erabili orrialde hauek operadore-postuak, seinale-panelak, segurtasun-zirkuituak eta urruneko aginteak eraikitzeko.
+<np>
+Gezientzako itua
+Uneko pultsua
+<&arrow_target>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Ate-sentsorea
+Redstone-kontrola
+<&door_sensor_switch>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Igogailuaren botoia
+Redstone-kontrola
+<&elevator_button>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Beirazko botoia
+Redstone-kontrola
+<&glass_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Beirazko botoia
+Redstone-kontrola
+<&glass_small_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Beirazko ukipen-botoia
+Redstone-kontrola
+<&glass_touch_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Makina-botoia
+Redstone-kontrola
+<&industrial_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Botoia
+Redstone-kontrola
+<&industrial_double_pole_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Babestutako makina-botoia
+Redstone-kontrola
+<&industrial_fenced_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Jotze-botoia
+Redstone-kontrola
+<&industrial_knock_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Apaindutako botoi zaharra
+Redstone-kontrola
+<&oldfancy_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Apaindutako botoi zaharra
+Redstone-kontrola
+<&oldfancy_small_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Apaindutako kate-botoi zaharra
+Uneko pultsua
+<&oldfancy_spring_reset_chain>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Landa-estiloko botoia
+Redstone-kontrola
+<&rustic_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Landa-estiloko iltze-botoia
+Redstone-kontrola
+<&rustic_nail_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Landa-estiloko botoi txikia
+Redstone-kontrola
+<&rustic_small_button>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Landa-estiloko kate-botoia
+Uneko pultsua
+<&rustic_spring_reset_chain>Uneko etengailuak indar osoko redstone-pultsu garbia ematen du.<br>
+<br>
+Erabilera: erabili makinak abiarazteko, ateak askatzeko, alarmetarako edo ekintza bakarreko zirkuituetarako.<br>
+<br>
+Oharrak: programatutako pultsuaren ondoren berrezartzen da.
+<np>
+Beirazko kontaktu-plaka
+Presio-pultsua
+<&glass_contact_mat>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Beirazko ate-kontaktua
+Presio-pultsua
+<&glass_door_contact_mat>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Kontaktu-esterilla
+Presio-pultsua
+<&industrial_contact_mat>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Ate-kontaktuaren esterilla
+Presio-pultsua
+<&industrial_door_contact_mat>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Zeharkako erorketa-detektagailua
+Seinaleak hautematea
+<&industrial_fallthrough_detector>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Oinbotoia
+Redstone-kontrola
+<&industrial_foot_button>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Kolpe mekanikoz aktibatutako industria-atea
+Presio-pultsua
+<&industrial_high_sensitive_trapdoor>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Kolpe mekanikoaren kontaktu-esterilla
+Presio-pultsua
+<&industrial_shock_sensitive_contact_mat>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Kolpe mekanikoz aktibatutako tranpola
+Presio-pultsua
+<&industrial_shock_sensitive_trapdoor>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Energia-landare gorria
+Presio-pultsua
+<&red_power_plant>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Landa-estiloko presio-plaka
+Presio-pultsua
+<&rustic_contact_plate>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Landa-estiloko ate-presioa
+Presio-pultsua
+<&rustic_door_contact_plate>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Landa-estiloko erorketa-detektagailua
+Seinaleak hautematea
+<&rustic_fallthrough_detector>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Kolpe mekanikoz aktibatutako landa-estiloko atea
+Presio-pultsua
+<&rustic_high_sensitive_trapdoor>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Landa-estiloko kolpe mekanikoaren plaka
+Presio-pultsua
+<&rustic_shock_sensitive_plate>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Kolpe mekanikoz aktibatutako landa-estiloko atea
+Presio-pultsua
+<&rustic_shock_sensitive_trapdoor>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Energia-landare horia
+Presio-pultsua
+<&yellow_power_plant>Kontaktu-etengailuak seinale laburra bidaltzen du zoruko edo tranpolako mugimendutik.<br>
+<br>
+Erabilera: jarri entitateak mantentze-pasabide, kargagailu edo zaindutako ibilbide batetik igarotzen diren tokian.<br>
+<br>
+Oharrak: entitatearekin kontaktua izan ondoren pultsu laburra ematen du.
+<np>
+Beirazko eguneko tenporizadore-erlojua
+Eguneko argiaren seinalea
+<&glass_day_timer>Tenporizadore-etengailuak munduaren zikloko eguneko zatiari jarraitzen dio.<br>
+<br>
+Erabilera: erabili patioko argietarako, pertsianetarako eta egunez soilik dabiltzan fabrikako aginteetarako.<br>
+<br>
+Oharrak: zeruko argia duen dimentsioa behar du.
+<np>
+Beirazko entitate-detektagailua
+Seinaleak hautematea
+<&glass_entity_detector>Entitate-detektagailuak inguruko mugimendua behatzen du ageriko zoru-plakarik gabe.<br>
+<br>
+Erabilera: konektatu ateekin, argiekin, alarmekin edo makinen segurtasun-blokeoekin.<br>
+<br>
+Oharrak: blokearen inguruko eremu txiki bat aztertzen du.
+<np>
+Beirazko tarte-seinalea
+Pultsu tenporizatua
+<&glass_interval_timer>Tenporizadore-etengailu trinko batek redstone-pultsu programatua ematen du.<br>
+<br>
+Erabilera: erabili mekanismo txiki batek aldizkako kontrola edo kontrol atzeratua behar duenean.<br>
+<br>
+Oharrak: programatutako redstone-pultsuak erabiltzen ditu.
+<np>
+Beirazko lerro-detektagailua
+Seinaleak hautematea
+<&glass_linear_entity_detector>Entitate-detektagailuak inguruko mugimendua behatzen du ageriko zoru-plakarik gabe.<br>
+<br>
+Erabilera: konektatu ateekin, argiekin, alarmekin edo makinen segurtasun-blokeoekin.<br>
+<br>
+Oharrak: blokearen inguruko eremu txiki bat aztertzen du.
+<np>
+Bloke-detektagailua
+Seinaleak hautematea
+<&industrial_block_detector>Bloke-detektagailuak aurrez aurreko espazioa beteta dagoen egiaztatzen du.<br>
+<br>
+Erabilera: zuzendu behatu nahi duzun makinaren aurpegira, erreserbara edo zaindutako espaziora.<br>
+<br>
+Oharrak: aurrez aurreko blokea airea ez denean energia ematen du.
+<np>
+Eguneko tenporizadore-erlojua
+Eguneko argiaren seinalea
+<&industrial_day_timer>Tenporizadore-etengailuak munduaren zikloko eguneko zatiari jarraitzen dio.<br>
+<br>
+Erabilera: erabili patioko argietarako, pertsianetarako eta egunez soilik dabiltzan fabrikako aginteetarako.<br>
+<br>
+Oharrak: zeruko argia duen dimentsioa behar du.
+<np>
+Entitate-detektagailua
+Seinaleak hautematea
+<&industrial_entity_detector>Entitate-detektagailuak inguruko mugimendua behatzen du ageriko zoru-plakarik gabe.<br>
+<br>
+Erabilera: konektatu ateekin, argiekin, alarmekin edo makinen segurtasun-blokeoekin.<br>
+<br>
+Oharrak: blokearen inguruko eremu txiki bat aztertzen du.
+<np>
+Tarteen tenporizadorea
+Pultsu tenporizatua
+<&industrial_interval_timer>Tenporizadore-etengailu trinko batek redstone-pultsu programatua ematen du.<br>
+<br>
+Erabilera: erabili mekanismo txiki batek aldizkako kontrola edo kontrol atzeratua behar duenean.<br>
+<br>
+Oharrak: programatutako redstone-pultsuak erabiltzen ditu.
+<np>
+Argi-sentsorea
+Seinaleak hautematea
+<&industrial_light_sensor>Argi-sentsoreak tokiko distira redstone-kontrol bihurtzen du.<br>
+<br>
+Erabilera: erabili argi automatikoetarako, pertsianetarako eta ikusgarritasun-zirkuituetarako.<br>
+<br>
+Oharrak: distira gordina 8 edo handiagoa denean energia ematen du.
+<np>
+Ekaitz-detektagailua
+Seinaleak hautematea
+<&industrial_lightning_sensor>Ekaitz-sentsoreak abisuak aktibatzen ditu trumoi-baldintzetan.<br>
+<br>
+Erabilera: jarri zeru irekian eta konektatu argiekin edo alarmekin.<br>
+<br>
+Oharrak: trumoiak eta zerurako sarbidea behar ditu.
+<np>
+Lerroko entitate-detektagailua
+Seinaleak hautematea
+<&industrial_linear_entity_detector>Entitate-detektagailuak inguruko mugimendua behatzen du ageriko zoru-plakarik gabe.<br>
+<br>
+Erabilera: konektatu ateekin, argiekin, alarmekin edo makinen segurtasun-blokeoekin.<br>
+<br>
+Oharrak: blokearen inguruko eremu txiki bat aztertzen du.
+<np>
+Euri-sentsorea
+Seinaleak hautematea
+<&industrial_rain_sensor>Eguraldi-sentsoreak bere kokapeneko euria redstone-seinale bihurtzen du.<br>
+<br>
+Erabilera: muntatu gaineko blokeak euria jaso dezakeen tokian.<br>
+<br>
+Oharrak: sentsorearen gaineko euria egiaztatzen du.
+<np>
+Beirazko etengailu biegonkorra
+Redstone-kontrola
+<&glass_rotary_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Beirazko ukipen-aginte biegonkorra
+Redstone-kontrola
+<&glass_touch_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Beira sentikor laranja
+Seinale-beira
+<&orange_sensitiveglass>Redstoneari erantzuten dion beira-blokeak ikuslerroak mantentzen ditu seinalearen egoera erakusten duen bitartean.<br>
+<br>
+Erabilera: erabili aginte-gelako leihoetan, panel argiztatuetan eta fabrikako beira babestuetan.<br>
+<br>
+Oharrak: egoera aldatzen du inguruko redstone-potentziaren arabera.
+<np>
+Argia ematen duen beira sentikorra
+Seinale-beira
+<&sensitive_glass_block>Redstoneari erantzuten dion beira-blokeak ikuslerroak mantentzen ditu seinalearen egoera erakusten duen bitartean.<br>
+<br>
+Erabilera: erabili aginte-gelako leihoetan, panel argiztatuetan eta fabrikako beira babestuetan.<br>
+<br>
+Oharrak: egoera aldatzen du inguruko redstone-potentziaren arabera.
+<np>
+Beira sentikor koloreduna
+Seinale-beira
+<&stained_sensitiveglass>Redstoneari erantzuten dion beira-blokeak ikuslerroak mantentzen ditu seinalearen egoera erakusten duen bitartean.<br>
+<br>
+Erabilera: erabili aginte-gelako leihoetan, panel argiztatuetan eta fabrikako beira babestuetan.<br>
+<br>
+Oharrak: egoera aldatzen du inguruko redstone-potentziaren arabera.
+<np>
+Beirazko barra-neurgailua
+Seinale-neurgailua
+<&glass_vertical_bar_gauge>Aginte-gelako neurgailu trinko batek redstonearen indarra erakusten du, panelean argi irakurtzeko moduan.<br>
+<br>
+Erabilera: muntatu inguruko redstone-potentzia begirada batean egiaztatzeko tokian.<br>
+<br>
+Oharrak: inguruko redstonearen indarra irakurtzen du, 0 eta 15 artean.
+<np>
+Neurgailu analogikoa
+Seinale-neurgailua
+<&industrial_analog_angular_gauge>Aginte-gelako neurgailu trinko batek redstonearen indarra erakusten du, panelean argi irakurtzeko moduan.<br>
+<br>
+Erabilera: muntatu inguruko redstone-potentzia begirada batean egiaztatzeko tokian.<br>
+<br>
+Oharrak: inguruko redstonearen indarra irakurtzen du, 0 eta 15 artean.
+<np>
+Voltmetro-neurgailua
+Seinale-neurgailua
+<&industrial_analog_horizontal_gauge>Aginte-gelako neurgailu trinko batek redstonearen indarra erakusten du, panelean argi irakurtzeko moduan.<br>
+<br>
+Erabilera: muntatu inguruko redstone-potentzia begirada batean egiaztatzeko tokian.<br>
+<br>
+Oharrak: inguruko redstonearen indarra irakurtzen du, 0 eta 15 artean.
+<np>
+Neurgailu digitala
+Seinalearen indar irakurgarria
+<&industrial_small_digital_gauge>Aginte-gelako neurgailu trinko batek redstonearen indarra erakusten du, panelean argi irakurtzeko moduan.<br>
+<br>
+Erabilera: muntatu inguruko redstone-potentzia begirada batean egiaztatzeko tokian.<br>
+<br>
+Oharrak: inguruko redstonearen indarra irakurtzen du, 0 eta 15 artean.
+<np>
+Beirazko hodi-neurgailua
+Seinale-neurgailua
+<&industrial_tube_gauge>Aginte-gelako neurgailu trinko batek redstonearen indarra erakusten du, panelean argi irakurtzeko moduan.<br>
+<br>
+Erabilera: muntatu inguruko redstone-potentzia begirada batean egiaztatzeko tokian.<br>
+<br>
+Oharrak: inguruko redstonearen indarra irakurtzen du, 0 eta 15 artean.
+<np>
+Barra analogikoko neurgailua
+Seinale-neurgailua
+<&industrial_vertical_bar_gauge>Aginte-gelako neurgailu trinko batek redstonearen indarra erakusten du, panelean argi irakurtzeko moduan.<br>
+<br>
+Erabilera: muntatu inguruko redstone-potentzia begirada batean egiaztatzeko tokian.<br>
+<br>
+Oharrak: inguruko redstonearen indarra irakurtzen du, 0 eta 15 artean.
+<np>
+Alarma-argia
+Seinalearen adierazpena
+<&industrial_alarm_lamp>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+Alarma-sirena
+Seinale-adierazlea
+<&industrial_alarm_siren>Alarma-sirena bloke-aurpegi batean muntatutako redstone adierazlea da. Piztutako egoerak atxikita dagoen blokearen seinalea jarraitzen du.<br>
+<br>
+Erabilera: Lotu aurpegi sendo bati eta elikatu ateak, makinak, alarmak edo panelak kontrolatzeko.<br>
+<br>
+Oharra: Seinalea aktibo dagoen bitartean, sirena segundoko behin freskatzen da.
+<np>
+LED keinukaria
+Seinalearen adierazpena
+<&industrial_blinking_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED orlegi keinukaria
+Seinalearen adierazpena
+<&industrial_green_blinking_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED orlegia
+Seinalearen adierazpena
+<&industrial_green_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED gorria
+Seinalearen adierazpena
+<&industrial_red_blinking_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED gorria
+Seinalearen adierazpena
+<&industrial_red_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED zuri keinukaria
+Seinalearen adierazpena
+<&industrial_white_blinking_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED zuria
+Seinalearen adierazpena
+<&industrial_white_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED hori keinukaria
+Seinalearen adierazpena
+<&industrial_yellow_blinking_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+LED horia
+Seinalearen adierazpena
+<&industrial_yellow_led>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+Landa-estiloko semaforoa
+Seinalearen adierazpena
+<&rustic_semaphore>Adierazle trinko batek ezkutuko redstonearen egoera fabrikako adierazpen ikusgarri bihurtzen du.<br>
+<br>
+Erabilera: kableatu seinalearen alboan ateak, makinak, alarmak edo panelak gainbegiratzeko.<br>
+<br>
+Oharrak: egoera aldatzen du inguruan redstone-potentzia dagoenean.
+<np>
+Etengailu konparatzailea
+Lotutako seinalea
+<&industrial_comparator_switch>Sentsore-etengailu trinkoak muntatuta dagoen blokea irakurtzen du eta irakurketa hori panel-irteera sinple bihurtzen du.<br>
+<br>
+Erabilera: muntatu inbentarioetan, deposituetan edo redstone-ekipoetan. Lotutako blokeak konparadore-, edukiontzi- edo redstone-irteera adierazten duenean, etengailuak indar osoko redstone-seinalea igortzen du.<br>
+<br>
+Oharrak: erabili biltegiratze-mailak edo ezkutuko kableatua piztu/itzali aginte-linea argi bihurtzeko.
+<np>
+Erregulagailua
+Seinale aldakorra
+<&industrial_dimmer>Aginte birakari batek redstonearen indarra doitzen du panel-aurpegi trinko batetik.<br>
+<br>
+Erabilera: egin eskuineko klik irteera mailaz maila igotzeko, eta indar osora iritsi ondoren berriro zerora itzultzeko.<br>
+<br>
+Oharrak: 0 eta 15 arteko indarra igortzen du.
+<np>
+Larrialdiko gelditze-botoia
+Redstone-kontrola
+<&industrial_estop_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Tobera-blokeatzailea
+Redstone-kontrola
+<&industrial_hopper_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Jotze-etengailua
+Redstone-kontrola
+<&industrial_knock_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Palanka
+Redstone-kontrola
+<&industrial_lever>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Bi botoiko makina-etengailua
+Redstone-kontrola
+<&industrial_machine_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Tiratzeko heldulekua
+Redstone-kontrola
+<&industrial_pull_handle>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Palanka birakaria
+Redstone-kontrola
+<&industrial_rotary_lever>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Makina-etengailu birakaria
+Redstone-kontrola
+<&industrial_rotary_machine_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Kontaktu-palanka
+Redstone-kontrola
+<&industrial_small_lever>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Etengailua
+Redstone-kontrola
+<&industrialswitch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Argi-etengailua
+Redstone-kontrola
+<&light_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Balbula-etengailua
+Redstone-kontrola
+<&valve_wheel_switch>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Karkasadun pultsu-hargailua
+Lotutako agintea
+<&industrial_switchlink_cased_pulse_receiver>Karkasadun lotutako pultsu-hargailuak redstone-abiarazle laburra eskaintzen die urruneko panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Egin eskuineko klik hargailuan edo aktibatu lotutako perla pultsu laburra igortzeko.<br>
+<br>
+Oharrak: pultsua berez berrezartzen da programatutako iraupena amaitzean.
+<np>
+Karkasadun lotura-hargailua
+Lotutako agintea
+<&industrial_switchlink_cased_receiver>Karkasadun lotutako hargailuak redstone-helburu sendoa eskaintzen die urruneko panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Egin eskuineko klik zuzenean hargailuan eskuz piztu edo itzaltzeko.<br>
+<br>
+Oharrak: lotutako perlak hargailu hau piztu edo itzaltzen du makurtuta erabiltzean.
+<np>
+Pultsu-loturaren hargailua
+Lotutako agintea
+<&industrial_switchlink_pulse_receiver>Lotutako pultsu-hargailuak redstone-abiarazle laburra eskaintzen die urruneko panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Egin eskuineko klik hargailuan edo aktibatu lotutako perla pultsu laburra igortzeko.<br>
+<br>
+Oharrak: pultsua berez berrezartzen da programatutako iraupena amaitzean.
+<np>
+Pultsu-loturaren errelea
+Lotutako agintea
+<&industrial_switchlink_pulse_relay>Errele-itxurako osagarriak tokiko etengailu-puntu trinkoa eskaintzen du panelak eraikitzeko.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko. Erabili hargailu-blokeak lotutako perla bidezko aktibazioa behar duzunean.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Etengailu-loturaren hargailua
+Lotutako agintea
+<&industrial_switchlink_receiver>Lotutako hargailuak indar osoko redstone-helburua eskaintzen die urruneko panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Egin eskuineko klik zuzenean hargailuan eskuz piztu edo itzaltzeko.<br>
+<br>
+Oharrak: lotutako perlak hargailu hau piztu edo itzaltzen du makurtuta erabiltzean.
+<np>
+Loturaren hargailu analogikoa
+Lotutako agintea
+<&industrial_switchlink_receiver_analog>Lotutako hargailuak urruneko helburu ikusgarria eskaintzen die aginte-panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Erabili perla hori makurtuta, hargailua urrunetik aktibatzeko.<br>
+<br>
+Oharrak: hargailu honek redstone-seinale osoa igortzen du aktibatzean.
+<np>
+Etengailu-loturaren errelea
+Lotutako agintea
+<&industrial_switchlink_relay>Errele-itxurako osagarriak tokiko etengailu-puntu trinkoa eskaintzen du panelak eraikitzeko.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko. Erabili hargailu-blokeak lotutako perla bidezko aktibazioa behar duzunean.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Loturaren errele analogikoa
+Lotutako agintea
+<&industrial_switchlink_relay_analog>Errele-itxurako osagarriak tokiko etengailu-puntu trinkoa eskaintzen du panelak eraikitzeko.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko. Erabili hargailu-blokeak lotutako perla bidezko aktibazioa behar duzunean.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Etengailu-loturaren perla
+Lotutako agintea
+<&switchlink_pearl>Lotutako perlak hargailuaren helburua gordetzen du fabrikako urruneko aginteetarako.<br>
+<br>
+Erabilera: egin klik etengailu-loturaren hargailu batean Ender perla batekin perla lotua sortzeko. Erabili lotutako perla makurtuta, gordetako hargailua aktibatzeko.<br>
+<br>
+Oharrak: helburuak kargatuta, dimentsio berean eta irismenaren barruan egon behar du.
+<np>
+Apaindutako palanka zaharra
+Redstone-kontrola
+<&oldfancy_bistableswitch1>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Apaindutako palanka birakari zaharra
+Redstone-kontrola
+<&oldfancy_bistableswitch2>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Landa-estiloko palanka birakaria
+Redstone-kontrola
+<&rustic_angular_lever>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Landa-estiloko palanka
+Redstone-kontrola
+<&rustic_lever>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Landa-estiloko iltze-palanka
+Redstone-kontrola
+<&rustic_nail_lever>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.
+<np>
+Landa-estiloko bi bisagrako palanka
+Redstone-kontrola
+<&rustic_two_hinge_lever>Aginte-osagarri trinko batek redstone-etengailuaren puntu argia eskaintzen die fabrikako eraikuntzei.<br>
+<br>
+Erabilera: egin eskuineko klik inguruko zirkuituetarako indar osoko irteera piztu edo itzaltzeko.<br>
+<br>
+Oharrak: piztuta dagoen bitartean indar osoko redstone-seinalea igortzen du.

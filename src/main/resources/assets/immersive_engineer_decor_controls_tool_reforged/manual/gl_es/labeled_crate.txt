@@ -1,0 +1,5 @@
+Caixón etiquetado
+Etiqueta de existencias editable
+<&recipe>Este caixón etiquetado está pensado para ordenar o almacén con claridade. A placa frontal pódese editar coma un pequeno sinal de obradoiro.<br>
+<br>
+Uso: fai clic dereito na placa para editar a etiqueta do caixón. Fai clic dereito no resto do caixón para abrir o almacenamento de accesorios, pezas e subministracións de mantemento.<br>

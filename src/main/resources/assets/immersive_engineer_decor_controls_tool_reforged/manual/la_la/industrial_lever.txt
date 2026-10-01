@@ -1,0 +1,7 @@
+Vectis
+Moderatio redstone
+<&recipe>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.

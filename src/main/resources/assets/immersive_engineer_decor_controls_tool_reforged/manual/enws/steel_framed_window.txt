@@ -1,0 +1,5 @@
+Window Framed in Steel
+Guarded View
+<&recipe>This block leaves thy view open whilst matching the manufactory’s strengthened construction.<br>
+<br>
+Use: Set it where players ought to see engines through a guarded barrier.<br>

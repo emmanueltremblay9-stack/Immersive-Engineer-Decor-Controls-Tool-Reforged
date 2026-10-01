@@ -1,0 +1,7 @@
+Etengailu konparatzailea
+Lotutako seinalea
+<&recipe>Sentsore-etengailu trinkoak muntatuta dagoen blokea irakurtzen du eta irakurketa hori panel-irteera sinple bihurtzen du.<br>
+<br>
+Erabilera: muntatu inbentarioetan, deposituetan edo redstone-ekipoetan. Lotutako blokeak konparadore-, edukiontzi- edo redstone-irteera adierazten duenean, etengailuak indar osoko redstone-seinalea igortzen du.<br>
+<br>
+Oharrak: erabili biltegiratze-mailak edo ezkutuko kableatua piztu/itzali aginte-linea argi bihurtzeko.

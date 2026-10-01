@@ -1,0 +1,5 @@
+Gewapendbetontegelplaat
+Gewapend beton
+<&recipe>Dit blok is een uitgehard betonnen onderdeel voor machinefunderingen, explosiewanden en vloeren van laadperrons.<br>
+<br>
+Gebruik: plaats het onder machines, langs onderhoudsgangen of overal waar een versterkte ondergrond nodig is.<br>

@@ -1,0 +1,5 @@
+Poste de madera tratada
+Pieza de estructura
+<&recipe>El poste recto de madera tratada aporta una estructura visible a las naves de máquinas y los marcos de acceso.<br>
+<br>
+Uso: Girá y colocá la pieza como refuerzo visible de vigas, postes y bordes de plataformas.<br>

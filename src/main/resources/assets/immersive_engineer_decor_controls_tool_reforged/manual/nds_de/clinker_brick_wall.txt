@@ -1,0 +1,5 @@
+Klinkertegelmuur
+Sootdüüster Muurwiärk
+<&recipe>Disse Block bringt sootdüüster Muurwiärk in Avenhallen, Schösteenfööt un Wartoongswänn.<br>
+<br>
+Bruuk: Bruuk em as Muur, Kant oder Hüll vun Hitztrebeten üm Avens un Ketels.<br>

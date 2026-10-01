@@ -1,0 +1,7 @@
+Thiết bị theo dấu
+Dấu vị trí đã lưu
+<&recipe>Thiết bị theo dõi lưu vị trí khối trong vật phẩm.<br>
+<br>
+Nhấp khối để lưu chiều và tọa độ. Chú thích hiện vị trí. Dùng khi cúi để xóa mục tiêu.<br>
+<br>
+Đánh dấu máy, đường hầm, điều khiển từ xa hoặc công trình chưa xong.

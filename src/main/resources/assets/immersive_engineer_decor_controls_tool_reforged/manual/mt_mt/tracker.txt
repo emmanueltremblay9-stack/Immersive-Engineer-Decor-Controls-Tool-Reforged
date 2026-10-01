@@ -1,0 +1,7 @@
+Traċċatur
+Markatur ta' pożizzjoni maħżuna
+<&recipe>It-tracker jaħżen il-pożizzjoni ta blokka fl-oġġett.<br>
+<br>
+Ikklikkja blokka biex taħżen id-dimensjoni u l-koordinati. It-tagħrif juri l-pożizzjoni. Użah waqt li titbaxxa biex tħassar il-mira.<br>
+<br>
+Immarka magni, mini, kontrolli mill-bogħod jew bini mhux lest.

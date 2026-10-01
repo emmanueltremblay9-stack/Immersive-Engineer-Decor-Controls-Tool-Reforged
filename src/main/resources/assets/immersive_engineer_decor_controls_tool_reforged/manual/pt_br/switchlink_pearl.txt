@@ -1,0 +1,7 @@
+Pérola de enlace de interruptor
+Controle vinculado
+<&recipe>Uma pérola vinculada guarda um receptor de destino para controles remotos de fábrica.<br>
+<br>
+Uso: Clique com uma pérola de Ender em um receptor de enlace de interruptor para criá-la. Use a pérola vinculada agachado para acionar o receptor salvo.<br>
+<br>
+Observações: O destino deve estar carregado, na mesma dimensão e dentro do alcance.

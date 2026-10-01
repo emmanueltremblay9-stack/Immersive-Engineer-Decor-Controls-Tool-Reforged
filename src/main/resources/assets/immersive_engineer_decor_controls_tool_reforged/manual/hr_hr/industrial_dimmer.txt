@@ -1,0 +1,7 @@
+Regulator jačine
+Promjenjivi signal
+<&recipe>Okretna kontrola podešava jačinu redstonea na kompaktnom panelu.<br>
+<br>
+Uporaba: desnim klikom povećavaj izlaz korak po korak; nakon pune snage vraća se na nulu.<br>
+<br>
+Napomene: izlazna snaga iznosi od 0 do 15.

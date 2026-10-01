@@ -1,0 +1,5 @@
+Vloeistofvat
+Onderdelen voor vloeistofleidingen
+<&recipe>Dit compacte onderdeel voor vloeistofleidingen past bij kleine tanks, leidingtrajecten, verzamelpunten en vloeistofstromen die met redstone worden geregeld.<br>
+<br>
+Gebruik: plaats het waar leidingen of emmers de tankzijde kunnen bereiken.<br>

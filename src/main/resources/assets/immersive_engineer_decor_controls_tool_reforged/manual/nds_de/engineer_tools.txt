@@ -1,0 +1,93 @@
+Ingenieurswiärktüüch
+Draagbare Wiärksteedtüüch
+De Engineer's Tools-Sammlung föögt Handwiärktüüch, Minenmarkerer, Noodverbruuksgood, Eten för ünnerwegens un lütte Materialhülpen to dat sülve Handbook, dat de Prunk- un Stüerblöck beschrievt.<br>
+<br>
+Dit Wiärktüüch is för Arbeit wied weg vun en vulle Wiärksteed: markeer den Weeg, draag Vörraad, kumm na Fehlers wedder op de Been un maak lütte Verarbeitungsarbeiden vör Ort fardig.
+<np>
+REDIA-Wiärktüüch
+Veelsiedig mit Demantlaag
+<&redia_tool>Dat REDIA-Wiärktüüch is en haltbare Hülp för fixe Grundarbeit vör Ort. Bruuk dat op bewerkbare Äer, üm Plügland to maken.<br>
+<br>
+Bruuk dat an en faste Siet, wenn du Lunten bi di hest, üm en Luntmark ut dien Taske to setten, ahn REDIA to sliten. Grundarbeit, Scheren, Äksenarbeit un Boomfällen bruukt Hoolt.
+<np>
+Ärtsgruus-Hamer
+Handwiärktüüch för't Gruusen
+<&crushing_hammer>De Erzquetschhamer is en Handwarktüüch för de fröhe Bearbeitung vun Iesen un Gold.<br>
+<br>
+Bruuk em mit Rohiesen, Rohgold, Iesen- oder Golderz un de Deepslate-Sorten för Immersive-Engineering-Stoff. De Hamer verleert Holtborheit, kümmt bit to Breken torüch, slitt bi Bargwark un stööt Teelen weg.
+<np>
+Spoorsöker
+Spiekerte Steedmark
+<&tracker>De Tracker wohrt en Blocksteed in dat Item.<br>
+<br>
+Klick en Block för Dimension un Koordinaten. De Tipp toont de Steed. Bruuk em sluukend, üm dat Teel to löschen.<br>
+<br>
+Markeer Maschinen, Tunnels, Feernstüern oder unfardige Buusteden.
+<np>
+Ariadne-Kuole
+Minenweegmark
+<&ariadne_coal>Ariadne-Kuole sett fix swarte Richtungsmarken op faste Minensieden. Bruuk ehr op en faste Siet, üm de neegste Afböög, Utgang oder Vertwiegen to markeren; de Mark kann acht Richtungen op de anklickte Siet, ok schuun.<br>
+<br>
+Ariadne-Kuole is en wedder bruukbaren Markerer mit 100 Bruken. Elkeen glückte Mark bruukt een Hooltpunkt. Sieden, de nich ünnerstütt warrt, warrt afwiest, statt de Saak to sliten.
+<np>
+Automaatsch Stimulanspaket
+Noodsprütt
+<&stimpack>Dat automaatsche Stimpack is en Nootmedizin-Item.<br>
+<br>
+Bruuk dat vun Hand för Heelen, kort Schutz un Gauheit. In Inventar lööst dat bi wenig Leven automaatsch ut un köhlt af. Holl dat an gefährliche Steden praat.
+<np>
+Slaapbüdel
+Draagbare Ruhtüüch
+<&sleeping_bag>De Slaapsack is en weerfast Rusttüüch för Wark wiet vun en Bett.<br>
+<br>
+Bruuk em nachts in Overworld bit Morgen, ahn den Spawnpunkt to ännern.<br>
+<br>
+He warkt nich dags, bi Monsters in Neegde oder in falsche Dimensionen. Elke gode Rust slitt em.
+<np>
+Materialkist
+Kist för Buuvörraad
+<&material_box>De Materiaalkist dreegt vele vun een eenfach, nich ännert un stapelbor Buumateriaal.<br>
+<br>
+Holl de Kist in de Hööfthand un dat Materiaal in de anner Hand to Laden; mit leddige anner Hand kummt een Stapel rut.<br>
+<br>
+Se höllt 512 vun een Sort, wiest anner Kisten, nich stapelbor Tüüch un ännert Stapeln af un toont den Inholt in Tipp.
+<np>
+Duukluftkapsel
+Noodluftvörraad
+<&diving_capsule>De Duukluftkapsel is en Nootvörraat för Wark ünner Water.<br>
+<br>
+Bruuk ehr vun Hand för Luft. In Inventar lööst se automaatsch ut, wenn de Luft meist all is, un geiht denn op Afköhltiet. Nimm se in överflöödte Bargwarken un to Waterrohren.
+<np>
+Muslee-Reegelpress
+Etenspress
+<&musli_bar_press>De Muslee-Pers maakt ut Eten kompakte Feldkost.<br>
+<br>
+Holl Brood, en Appel un Weet-, Meloon-, Kürbis-, Rootbeet- oder Industriehanfsaat un bruuk de Pers. Se nimmt een vun elke, prüüvt Platz, maakt veer Riegel un warrt beschädigt.<br>
+<br>
+Fehlt wat oder Platz, warrt nix bruukt.
+<np>
+Muslee Melange Kraftreegel
+Fixt Wiärksteedhappen
+<&musli_bar>De Muslee-Melange-Riegel is kompakt Eten ut Brood, Saat un Frucht.<br>
+<br>
+Eet em bi Wark an Stüern, Rohren, Plattformen oder lange Maschinenreegen.
+<np>
+Sinnpress
+Erfahrungsverdichter
+<&charged_lapis_squeezer>De Sinnpress maakt ut een Lapislatsuli un een Erfahrungsstoop ut dien Taske oplaadt Lapislatsuli.<br>
+<br>
+Elkeen glückte Ümwandeln deit den Bruker weh, maakt em mööd, wat Hunger maakt, un maakt em kort blind. Se will ahn Lapislatsuli, ahn XP oder bi en Bruker to dicht an'n Dood nich lopen.
+<np>
+Oplaadt Lapislatsuli
+Spiekerte Erfahrung
+<&charged_lapis>Oplaadt Lapislatsuli spiekert een Erfahrungsstoop. Bruuk dat op, üm de Stoop torüch to kriegen, aktive Wirkungen wegtonehmen un en beten Leven to heelen.<br>
+<br>
+Maak eerst en Sinnpress; oplaadt Lapislatsuli warrt maakt, wenn du dat Wiärktüüch mit Lapislatsuli un XP parat bruukst.
+<np>
+Gruuv Isengruus
+Ingenieurswiärktüüchmaterial för de wedder opbuute Handwiärksrezepte.
+<&iron_grit>Lett sik to Isenbarren<br>smölten, deegt aver nich för<br>wiederföhrende Materialverarbeiden.
+<np>
+Gruuv Güldgruus
+Ingenieurswiärktüüchmaterial för de wedder opbuute Handwiärksrezepte.
+<&gold_grit>Lett sik to Güldbarren<br>smölten, deegt aver nich för<br>wiederföhrende Materialverarbeiden.

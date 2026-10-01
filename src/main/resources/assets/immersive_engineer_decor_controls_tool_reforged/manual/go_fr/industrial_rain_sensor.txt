@@ -1,0 +1,7 @@
+Mezurouer de pllèe
+Détection de signa
+<&recipe>Un mezurouer du temp mue la pllèe a son endret en redstone.<br>
+<br>
+Empllai : Montéz-le la où qe le blloqe du dessus peut recevoir la pllèe.<br>
+<br>
+Notes : Vérifie la pllèe au-dessus du mezurouer.

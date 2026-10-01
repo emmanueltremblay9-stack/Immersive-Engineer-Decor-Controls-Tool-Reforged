@@ -1,0 +1,7 @@
+Analoë Koppelrelais
+Gekoppelde beheer
+<&recipe>’n Toebehoor met ’n relaisvoorkoms gee panele ’n kompakte plaaslike skakelpunt.<br>
+<br>
+Gebruik: regsklik dit om uitset op volle sterkte vir nabygeleë stroombane aan of af te skakel. Gebruik ontvangerblokke wanneer jy aktivering deur gekoppelde pêrels nodig het.<br>
+<br>
+Nota: gee redstone op volle sterkte terwyl dit aangeskakel is.

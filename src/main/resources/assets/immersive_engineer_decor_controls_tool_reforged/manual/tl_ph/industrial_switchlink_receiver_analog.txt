@@ -1,0 +1,7 @@
+Analogong Tagatanggap ng Kawing
+Nakakawing na kontrol
+<&recipe>Nagbibigay ang tagatanggap ng kawing ng nakikitang malayong target sa mga panel ng kontrol.<br>
+<br>
+Paggamit: Iklik gamit ang Mutyang Ender upang gumawa ng nakakawing na mutya. Gamitin ang mutyang iyon habang nakayuko upang paganahin ang tagatanggap mula sa malayo.<br>
+<br>
+Tandaan: Naglalabas ng buong redstone signal ang tagatanggap na ito kapag inudyukan.

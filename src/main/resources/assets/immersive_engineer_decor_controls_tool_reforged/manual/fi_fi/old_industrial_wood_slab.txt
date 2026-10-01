@@ -1,0 +1,5 @@
+Vanha tehdaspuulaatta
+Vanha työpajapuu
+<&recipe>Tämä kuutio tuo vanhentunutta työpajapuuta lattioihin, askelmiin, oviin ja lämpimän sävyiseen sisäkoristeluun.<br>
+<br>
+Käyttö: Käytä vanhoihin työpajalattioihin, portaisiin, oviin ja koristeisiin.<br>

@@ -1,0 +1,107 @@
+Magni tal-ħanut tax-xogħol
+Magni u dħul/ħruġ tal-ħanut tax-xogħol
+Il-magni tal-ħanut tax-xogħol jipprovdu snajja, ċaqliq ta' oġġetti, tidwib, rimi, ġbir u xogħol utli kompatt fi spazju ta' blokka waħda.<br>
+<br>
+Iftaħ il-paġni li ġejjin għar-riċetta, stampa, sfond u noti prattiċi tal-użu ta' kull magna.
+<np>
+Mejda tal-azzar
+Għamara tal-ħanut tax-xogħol
+<&steel_table>Din il-blokka hi għamara prattika għal kmamar tax-xogħol u rkejjen tal-manutenzjoni.<br>
+<br>
+Użu: qegħedha maġenb bankijiet, kaxxi u magni kompatti.<br>
+<np>
+Mejda tal-injam trattat
+Għamara tal-ħanut tax-xogħol
+<&treated_wood_table>Din il-blokka hi għamara prattika għal kmamar tax-xogħol u rkejjen tal-manutenzjoni.<br>
+<br>
+Użu: qegħedha maġenb bankijiet, kaxxi u magni kompatti.<br>
+<np>
+Banketta tal-injam trattat
+Għamara tal-ħanut tax-xogħol
+<&treated_wood_stool>Din il-blokka hi għamara prattika għal kmamar tax-xogħol u rkejjen tal-manutenzjoni.<br>
+<br>
+Użu: qegħedha maġenb bankijiet, kaxxi u magni kompatti.<br>
+<np>
+Mejda tax-xogħol tal-metall
+Stazzjon tax-xogħol tal-pjanċi
+<&metal_crafting_table>Il-mejda tax-xogħol tal-metall hi stazzjon rinfurzat tal-ħanut tax-xogħol bi slot għall-martell, gradilja tas-snajja 3x3 u slot ċar tal-ħruġ.<br>
+<br>
+Użu: uża l-gradilja għas-snajja normali. Għall-pjanċi IE, qiegħed martell tal-inġinier fis-slot tal-għodda u l-materjal tal-pjanċa fil-gradilja qabel tieħu r-riżultat. Id-dekorazzjonijiet tal-azzar jużaw pjanċi tal-azzar għal arbli, passaġġi, twieqi, bibien, poġġamani u partijiet oħra tal-azzar.<br>
+<np>
+Lembut tal-fabbrika
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&factory_hopper>Din il-blokka tmexxi munzelli ta' oġġetti minn ġo kaxxa industrijali aktar dejqa.<br>
+<br>
+Użu: dawwarha lejn il-linja tal-inventarji, imbagħad issettja l-firxa, l-għadd tal-munzelli, il-ħinijiet u l-modalità tar-Redstone fl-iskrin tagħha.<br>
+<np>
+Qattara tal-fabbrika
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&factory_dropper>Din il-blokka toħroġ oġġetti maħżuna minn wiċċ immirat.<br>
+<br>
+Użu: immira l-faċċata lejn il-punt tal-ħruġ, imla s-slots interni u aġġusta l-forza, l-angolu, id-dewmien, il-loġika tal-filtru u l-modalità tar-Redstone mill-iskrin tagħha.<br>
+<np>
+Apparat tal-fabbrika għat-tqegħid tal-blokok
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&factory_placer>Din il-blokka tinstalla blokok mill-ħażna interna tagħha meta tiġi attivata.<br>
+<br>
+Użu: ipponta l-wiċċ tax-xogħol lejn l-ispazju fil-mira u daħħal munzelli li jistgħu jitqiegħdu.<br>
+<np>
+Magna għat-tkissir tal-blokok
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&small_block_breaker>Il-magna żgħira għat-tkissir tal-blokok hi blokka utli tal-ħanut tax-xogħol għas-snajja, ħażna, tqegħid, tkissir, ġbir jew awtomazzjoni kompatta.<br>
+<br>
+Użu: qiegħed il-wiċċ tax-xogħol lejn il-blokka li trid tneħħi.<br>
+<np>
+Inċineratur tal-iskart
+Unità kompatta tal-ipproċessar
+<&small_waste_incinerator>L-inċineratur tal-iskart jeqred oġġetti mhux mixtieqa fi spazju kompatt tal-ħanut tax-xogħol.<br>
+<br>
+Użu: daħħal biss oġġetti mhux mixtieqa fil-kju tiegħu.<br>
+<np>
+Forn tal-laboratorju
+Unità kompatta tal-ipproċessar
+<&small_lab_furnace>Il-forn tal-laboratorju jagħmel xogħol kompatt ta' tidwib bi fjuwil solidu, fi spazju żgħir fil-ħanut tax-xogħol.<br>
+<br>
+Użu: uża fjuwil solidu għal lottijiet kompatti ta' tidwib.<br>
+<np>
+Forn elettriku
+Unità kompatta tal-ipproċessar
+<&small_electrical_furnace>Il-forn elettriku jagħmel xogħol kompatt ta' tidwib b'FE, fi spazju żgħir fil-ħanut tax-xogħol.<br>
+<br>
+Użu: ipprovdi FE u materjal validu għat-tidwib.<br>
+<np>
+Forn tat-tidwib tal-minerali
+Unità kompatta tal-ipproċessar
+<&small_mineral_smelter>Il-forn tat-tidwib tal-minerali jipproċessa minerali b'sħana għolja fi spazju kompatt tal-ħanut tax-xogħol.<br>
+<br>
+Użu: ipprovdi blokok minerali u enerġija għal xogħol ta' tidwib b'sħana għolja.<br>
+<np>
+Friża tal-ilma
+Unità kompatta tal-ipproċessar
+<&small_freezer>Il-friża tal-ilma tagħmel xogħol kompatt ta' tkessiħ għal sistemi tal-fluwidu mitmugħa bl-enerġija.<br>
+<br>
+Użu: ipprovdi ilma u enerġija għal produzzjoni tas-silġ f'fażijiet.<br>
+<np>
+Fluwidu passiv
+Tagħmir tal-linji tal-fluwidu
+<&passive_fluid_accumulator>L-akkumulatur passiv tal-fluwidu hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: qiegħdu ma' sorsi adattati tal-ilma u ħalli spazju biex jitneħħa l-fluwidu.<br>
+<np>
+Pannell solari
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&small_solar_panel>Il-pannell solari żgħir hu blokka utli tal-ħanut tax-xogħol għas-snajja, ħażna, tqegħid, tkissir, ġbir jew awtomazzjoni kompatta.<br>
+<br>
+Użu: agħtih sema miftuħ u qabbad tagħmir b'domanda baxxa.<br>
+<np>
+Magna tal-ħlib
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&small_milking_machine>Il-magna żgħira tal-ħlib hi blokka utli tal-ħanut tax-xogħol għas-snajja, ħażna, tqegħid, tkissir, ġbir jew awtomazzjoni kompatta.<br>
+<br>
+Użu: qegħedha qrib il-baqar u pprovdi mod kif jitneħħew il-kontenituri tal-ħalib jew il-fluwidu.<br>
+<np>
+Magna għall-qtugħ tas-siġar
+Tagħmir tal-art tal-ħanut tax-xogħol
+<&small_tree_cutter>Il-magna żgħira għall-qtugħ tas-siġar hi blokka utli tal-ħanut tax-xogħol għas-snajja, ħażna, tqegħid, tkissir, ġbir jew awtomazzjoni kompatta.<br>
+<br>
+Użu: immiraha lejn siġar imkabbra u iġbor l-oġġetti li jaqgħu separatament.<br>

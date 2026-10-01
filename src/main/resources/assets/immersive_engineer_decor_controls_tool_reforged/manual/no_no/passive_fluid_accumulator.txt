@@ -1,0 +1,5 @@
+Passiv væskeoppsamling
+Utstyr for væskelinjer
+<&recipe>Den passive væskesamleren er en kompakt væskerørdel for små tanker, rørstrekk, oppsamlingspunkter og redstonestyrt væskestrøm.<br>
+<br>
+Bruk: plasser den mot egnede vannkilder og la det være plass til væskeuttak.<br>

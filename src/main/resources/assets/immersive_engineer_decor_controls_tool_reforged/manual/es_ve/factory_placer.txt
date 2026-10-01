@@ -1,0 +1,5 @@
+Colocador de bloques de fábrica
+Utilidad de taller
+<&recipe>Este bloque coloca bloques de su reserva interna cuando se activa.<br>
+<br>
+Uso: Orienta la cara de trabajo hacia el espacio de destino y carga pilas de objetos que se puedan colocar.<br>

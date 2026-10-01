@@ -1,0 +1,789 @@
+Redstone Kontrolleri
+Göstergeler ve sinyal parçaları
+Kontrol donanımı; gizli redstone sinyalini okunabilir fabrika panellerine, algılayıcılara, durum göstergelerine, anahtarlara, alarmlara ve bağlantılı sinyal parçalarına dönüştürür.<br>
+<br>
+Operatör istasyonları, sinyal panoları, güvenlik devreleri ve uzaktan kontroller kurarken bu sayfaları kullanın.
+<np>
+Ok Hedefi
+Anlık darbe
+<&arrow_target>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Kapı Algılayıcısı
+Redstone Kontrolü
+<&door_sensor_switch>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Asansör Düğmesi
+Redstone Kontrolü
+<&elevator_button>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Cam Düğme
+Redstone Kontrolü
+<&glass_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Cam Düğme
+Redstone Kontrolü
+<&glass_small_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Cam Dokunmatik Düğme
+Redstone Kontrolü
+<&glass_touch_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Makine Düğmesi
+Redstone Kontrolü
+<&industrial_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Düğme
+Redstone Kontrolü
+<&industrial_double_pole_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Korumalı Makine Düğmesi
+Redstone Kontrolü
+<&industrial_fenced_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Vuruş Düğmesi
+Redstone Kontrolü
+<&industrial_knock_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Eski Süslü Düğme
+Redstone Kontrolü
+<&oldfancy_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Eski Süslü Düğme
+Redstone Kontrolü
+<&oldfancy_small_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Eski Süslü Zincirli Düğme
+Anlık darbe
+<&oldfancy_spring_reset_chain>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Rustik Düğme
+Redstone Kontrolü
+<&rustic_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Rustik Çivili Düğme
+Redstone Kontrolü
+<&rustic_nail_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Rustik Küçük Düğme
+Redstone Kontrolü
+<&rustic_small_button>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Rustik Zincirli Düğme
+Anlık darbe
+<&rustic_spring_reset_chain>Anlık anahtar, belirgin ve tam güçlü bir redstone darbesi verir.<br>
+<br>
+Kullanım: Makine başlatma, kapı açma, alarm veya tek seferlik devrelerde kullanın.<br>
+<br>
+Notlar: Zamanlanmış darbeden sonra sıfırlanır.
+<np>
+Cam Temas Plakası
+Basınç darbesi
+<&glass_contact_mat>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Cam Kapı Kontağı
+Basınç darbesi
+<&glass_door_contact_mat>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Temas Paspası
+Basınç darbesi
+<&industrial_contact_mat>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Kapı Temas Paspası
+Basınç darbesi
+<&industrial_door_contact_mat>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Düşüş Algılayıcısı
+Sinyal algılama
+<&industrial_fallthrough_detector>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Ayak Düğmesi
+Redstone Kontrolü
+<&industrial_foot_button>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Sanayi Tipi Darbeli Kapı
+Basınç darbesi
+<&industrial_high_sensitive_trapdoor>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Darbeye Duyarlı Temas Paspası
+Basınç darbesi
+<&industrial_shock_sensitive_contact_mat>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Darbeyle Açılan Tuzak Kapısı
+Basınç darbesi
+<&industrial_shock_sensitive_trapdoor>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Kırmızı Sinyal Bitkisi
+Basınç darbesi
+<&red_power_plant>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Rustik Basınç Plakası
+Basınç darbesi
+<&rustic_contact_plate>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Rustik Kapı Basıncı
+Basınç darbesi
+<&rustic_door_contact_plate>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Rustik Düşüş Algılayıcısı
+Sinyal algılama
+<&rustic_fallthrough_detector>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Rustik Darbeli Kapı
+Basınç darbesi
+<&rustic_high_sensitive_trapdoor>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Rustik Darbe Plakası
+Basınç darbesi
+<&rustic_shock_sensitive_plate>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Rustik Darbeli Kapı
+Basınç darbesi
+<&rustic_shock_sensitive_trapdoor>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Sarı Sinyal Bitkisi
+Basınç darbesi
+<&yellow_power_plant>Temas anahtarı, zemin veya tuzak kapısı hareketinden kısa sinyal üretir.<br>
+<br>
+Kullanım: Varlıkların servis koridorundan, yükleyiciden veya korunan yoldan geçtiği yere yerleştirin.<br>
+<br>
+Notlar: Varlık temasından sonra kısa bir darbe verir.
+<np>
+Cam Gün Zamanlayıcısı
+Gün ışığı sinyali
+<&glass_day_timer>Zamanlayıcı anahtarı, dünya döngüsünün gündüz bölümünü izler.<br>
+<br>
+Kullanım: Avlu lambaları, panjurlar ve yalnızca gündüz çalışan fabrika kontrolleri için kullanın.<br>
+<br>
+Notlar: Gökyüzü ışığı bulunan bir boyut gerekir.
+<np>
+Cam Varlık Algılayıcısı
+Sinyal algılama
+<&glass_entity_detector>Varlık algılayıcısı, görünür bir zemin plakası olmadan yakındaki hareketi izler.<br>
+<br>
+Kullanım: Kapılara, lambalara, alarmlara veya makine güvenlik kilitlerine bağlayın.<br>
+<br>
+Notlar: Bloğun çevresinde küçük bir alanı tarar.
+<np>
+Cam Aralıklı Sinyal
+Zamanlı darbe
+<&glass_interval_timer>Küçük zamanlayıcı anahtarı, zamanlanmış redstone darbesi verir.<br>
+<br>
+Kullanım: Küçük bir mekanizmanın düzenli aralıklarla veya gecikmeli kontrol edilmesi gerektiğinde kullanın.<br>
+<br>
+Notlar: Zamanlanmış redstone darbeleri kullanır.
+<np>
+Cam Çizgi Algılayıcısı
+Sinyal algılama
+<&glass_linear_entity_detector>Varlık algılayıcısı, görünür bir zemin plakası olmadan yakındaki hareketi izler.<br>
+<br>
+Kullanım: Kapılara, lambalara, alarmlara veya makine güvenlik kilitlerine bağlayın.<br>
+<br>
+Notlar: Bloğun çevresinde küçük bir alanı tarar.
+<np>
+Blok Algılayıcısı
+Sinyal algılama
+<&industrial_block_detector>Blok algılayıcısı, baktığı alanın dolu olup olmadığını kontrol eder.<br>
+<br>
+Kullanım: İzlenecek makine yüzüne, ara depoya veya korunan alana yöneltin.<br>
+<br>
+Notlar: Önündeki blok hava olmadığında güç verir.
+<np>
+Gün Zamanlayıcısı
+Gün ışığı sinyali
+<&industrial_day_timer>Zamanlayıcı anahtarı, dünya döngüsünün gündüz bölümünü izler.<br>
+<br>
+Kullanım: Avlu lambaları, panjurlar ve yalnızca gündüz çalışan fabrika kontrolleri için kullanın.<br>
+<br>
+Notlar: Gökyüzü ışığı bulunan bir boyut gerekir.
+<np>
+Varlık Algılayıcısı
+Sinyal algılama
+<&industrial_entity_detector>Varlık algılayıcısı, görünür bir zemin plakası olmadan yakındaki hareketi izler.<br>
+<br>
+Kullanım: Kapılara, lambalara, alarmlara veya makine güvenlik kilitlerine bağlayın.<br>
+<br>
+Notlar: Bloğun çevresinde küçük bir alanı tarar.
+<np>
+Aralık Zamanlayıcısı
+Zamanlı darbe
+<&industrial_interval_timer>Küçük zamanlayıcı anahtarı, zamanlanmış redstone darbesi verir.<br>
+<br>
+Kullanım: Küçük bir mekanizmanın düzenli aralıklarla veya gecikmeli kontrol edilmesi gerektiğinde kullanın.<br>
+<br>
+Notlar: Zamanlanmış redstone darbeleri kullanır.
+<np>
+Işık Algılayıcısı
+Sinyal algılama
+<&industrial_light_sensor>Işık algılayıcısı, yerel parlaklığı redstone kontrolüne dönüştürür.<br>
+<br>
+Kullanım: Otomatik lambalar, panjurlar ve görüş devreleri için kullanın.<br>
+<br>
+Notlar: Ham parlaklık 8 veya daha yüksek olduğunda güç verir.
+<np>
+Fırtına Algılayıcısı
+Sinyal algılama
+<&industrial_lightning_sensor>Fırtına algılayıcısı, gök gürültülü koşullarda uyarıları etkinleştirir.<br>
+<br>
+Kullanım: Açık gökyüzünün altına yerleştirip lambalara veya alarmlara bağlayın.<br>
+<br>
+Notlar: Gök gürültüsü ve gökyüzüne açık erişim gerekir.
+<np>
+Doğrusal Varlık Algılayıcısı
+Sinyal algılama
+<&industrial_linear_entity_detector>Varlık algılayıcısı, görünür bir zemin plakası olmadan yakındaki hareketi izler.<br>
+<br>
+Kullanım: Kapılara, lambalara, alarmlara veya makine güvenlik kilitlerine bağlayın.<br>
+<br>
+Notlar: Bloğun çevresinde küçük bir alanı tarar.
+<np>
+Yağmur Algılayıcısı
+Sinyal algılama
+<&industrial_rain_sensor>Hava durumu algılayıcısı, bulunduğu yerdeki yağmuru redstone sinyaline dönüştürür.<br>
+<br>
+Kullanım: Üstündeki bloğun yağmur alabileceği yere takın.<br>
+<br>
+Notlar: Algılayıcının üzerindeki yağmuru denetler.
+<np>
+Çift Kararlı Cam Anahtar
+Redstone Kontrolü
+<&glass_rotary_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Çift Kararlı Cam Dokunmatik
+Redstone Kontrolü
+<&glass_touch_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Turuncu Duyarlı Cam
+Sinyal camı
+<&orange_sensitiveglass>Redstone tepkili cam bloğu, sinyal durumunu gösterirken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Kontrol odası pencerelerinde, ışıklı panellerde ve fabrikanın koruyucu camlarında kullanın.<br>
+<br>
+Notlar: Yakındaki redstone gücüne göre durum değiştirir.
+<np>
+Işıklı Duyarlı Cam
+Sinyal camı
+<&sensitive_glass_block>Redstone tepkili cam bloğu, sinyal durumunu gösterirken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Kontrol odası pencerelerinde, ışıklı panellerde ve fabrikanın koruyucu camlarında kullanın.<br>
+<br>
+Notlar: Yakındaki redstone gücüne göre durum değiştirir.
+<np>
+Renkli Duyarlı Cam
+Sinyal camı
+<&stained_sensitiveglass>Redstone tepkili cam bloğu, sinyal durumunu gösterirken görüş hatlarını açık tutar.<br>
+<br>
+Kullanım: Kontrol odası pencerelerinde, ışıklı panellerde ve fabrikanın koruyucu camlarında kullanın.<br>
+<br>
+Notlar: Yakındaki redstone gücüne göre durum değiştirir.
+<np>
+Cam Çubuk Gösterge
+Sinyal göstergesi
+<&glass_vertical_bar_gauge>Kontrol odasına uygun küçük gösterge, redstone gücünü anlaşılır bir panel değeri olarak gösterir.<br>
+<br>
+Kullanım: Yakındaki redstone gücünün bir bakışta kontrol edilebileceği yere takın.<br>
+<br>
+Notlar: Yakındaki redstone gücünü 0 ile 15 arasında okur.
+<np>
+Analog Gösterge
+Sinyal göstergesi
+<&industrial_analog_angular_gauge>Kontrol odasına uygun küçük gösterge, redstone gücünü anlaşılır bir panel değeri olarak gösterir.<br>
+<br>
+Kullanım: Yakındaki redstone gücünün bir bakışta kontrol edilebileceği yere takın.<br>
+<br>
+Notlar: Yakındaki redstone gücünü 0 ile 15 arasında okur.
+<np>
+Voltmetre Göstergesi
+Sinyal göstergesi
+<&industrial_analog_horizontal_gauge>Kontrol odasına uygun küçük gösterge, redstone gücünü anlaşılır bir panel değeri olarak gösterir.<br>
+<br>
+Kullanım: Yakındaki redstone gücünün bir bakışta kontrol edilebileceği yere takın.<br>
+<br>
+Notlar: Yakındaki redstone gücünü 0 ile 15 arasında okur.
+<np>
+Dijital Gösterge
+Okunabilir sinyal gücü
+<&industrial_small_digital_gauge>Kontrol odasına uygun küçük gösterge, redstone gücünü anlaşılır bir panel değeri olarak gösterir.<br>
+<br>
+Kullanım: Yakındaki redstone gücünün bir bakışta kontrol edilebileceği yere takın.<br>
+<br>
+Notlar: Yakındaki redstone gücünü 0 ile 15 arasında okur.
+<np>
+Cam Tüplü Gösterge
+Sinyal göstergesi
+<&industrial_tube_gauge>Kontrol odasına uygun küçük gösterge, redstone gücünü anlaşılır bir panel değeri olarak gösterir.<br>
+<br>
+Kullanım: Yakındaki redstone gücünün bir bakışta kontrol edilebileceği yere takın.<br>
+<br>
+Notlar: Yakındaki redstone gücünü 0 ile 15 arasında okur.
+<np>
+Analog Çubuk Gösterge
+Sinyal göstergesi
+<&industrial_vertical_bar_gauge>Kontrol odasına uygun küçük gösterge, redstone gücünü anlaşılır bir panel değeri olarak gösterir.<br>
+<br>
+Kullanım: Yakındaki redstone gücünün bir bakışta kontrol edilebileceği yere takın.<br>
+<br>
+Notlar: Yakındaki redstone gücünü 0 ile 15 arasında okur.
+<np>
+Alarm Lambası
+Sinyal geri bildirimi
+<&industrial_alarm_lamp>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Alarm Sireni
+Sinyal geri bildirimi
+<&industrial_alarm_siren>Alarm sireni, blok yüzüne takılan bir redstone göstergesidir. Güç durumu, takılı olduğu bloktan gelen sinyale göre değişir.<br>
+<br>
+Kapıları, makineleri, alarmları veya panelleri izlemek için sağlam bir yüzeye takın ve güç verin.<br>
+<br>
+Bağlı sinyal etkin kaldığı sürece siren saniyede bir yenilenir.
+<np>
+Yanıp Sönen LED
+Sinyal geri bildirimi
+<&industrial_blinking_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Yeşil Yanıp Sönen LED
+Sinyal geri bildirimi
+<&industrial_green_blinking_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Yeşil LED
+Sinyal geri bildirimi
+<&industrial_green_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Kırmızı LED
+Sinyal geri bildirimi
+<&industrial_red_blinking_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Kırmızı LED
+Sinyal geri bildirimi
+<&industrial_red_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Beyaz Yanıp Sönen LED
+Sinyal geri bildirimi
+<&industrial_white_blinking_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Beyaz LED
+Sinyal geri bildirimi
+<&industrial_white_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Sarı Yanıp Sönen LED
+Sinyal geri bildirimi
+<&industrial_yellow_blinking_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Sarı LED
+Sinyal geri bildirimi
+<&industrial_yellow_led>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Rustik Semafor
+Sinyal geri bildirimi
+<&rustic_semaphore>Küçük durum göstergesi, gizli redstone sinyalini görünür fabrika geri bildirimine dönüştürür.<br>
+<br>
+Kullanım: Kapıları, makineleri, alarmları veya panelleri izlemek için sinyalin yanına bağlayın.<br>
+<br>
+Notlar: Yakında redstone gücü bulunduğunda durum değiştirir.
+<np>
+Karşılaştırıcı Anahtarı
+Bağlı sinyal
+<&industrial_comparator_switch>Küçük algılayıcı anahtar, takılı olduğu bloğu okuyup bu değeri basit bir panel çıkışına dönüştürür.<br>
+<br>
+Kullanım: Envanterlere, tanklara veya redstone donanımına takın. Takılı olduğu blok karşılaştırıcı, kap veya redstone çıkışı bildirdiğinde anahtar tam güçlü redstone sinyali verir.<br>
+<br>
+Notlar: Depolama seviyelerini veya gizli kabloları anlaşılır aç/kapat kontrol hatlarına dönüştürmek için kullanın.
+<np>
+Sinyal Ayarlayıcı
+Değişken sinyal
+<&industrial_dimmer>Döner kontrol, küçük bir panel yüzünden redstone gücünü ayarlar.<br>
+<br>
+Kullanım: Çıkışı kademeli artırmak, tam güce ulaştıktan sonra sıfıra dönmek için sağ tıklayın.<br>
+<br>
+Notlar: 0 ile 15 arasında güç verir.
+<np>
+Acil Durdurma Düğmesi
+Redstone Kontrolü
+<&industrial_estop_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Huni Engelleyici
+Redstone Kontrolü
+<&industrial_hopper_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Vuruş Anahtarı
+Redstone Kontrolü
+<&industrial_knock_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Şalter
+Redstone Kontrolü
+<&industrial_lever>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+İki Düğmeli Makine Anahtarı
+Redstone Kontrolü
+<&industrial_machine_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Çekme Kolu
+Redstone Kontrolü
+<&industrial_pull_handle>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Döner Şalter
+Redstone Kontrolü
+<&industrial_rotary_lever>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Döner Makine Anahtarı
+Redstone Kontrolü
+<&industrial_rotary_machine_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Temas Şalteri
+Redstone Kontrolü
+<&industrial_small_lever>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Anahtar
+Redstone Kontrolü
+<&industrialswitch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Işık Anahtarı
+Redstone Kontrolü
+<&light_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Vana Anahtarı
+Redstone Kontrolü
+<&valve_wheel_switch>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Kasalı Darbe Alıcısı
+Bağlantılı kontrol
+<&industrial_switchlink_cased_pulse_receiver>Kasalı bağlantılı darbe alıcısı, uzak panellere kısa bir redstone tetiklemesi sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Kısa darbe vermek için alıcıya sağ tıklayın veya bağlı inciyi tetikleyin.<br>
+<br>
+Notlar: Darbe, zamanlanmış süresi dolduğunda kendini sıfırlar.
+<np>
+Kasalı Bağlantı Alıcısı
+Bağlantılı kontrol
+<&industrial_switchlink_cased_receiver>Kasalı bağlantılı alıcı, uzak paneller için sağlam bir redstone hedefi sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Elle açıp kapatmak için doğrudan alıcıya sağ tıklayın.<br>
+<br>
+Notlar: Bağlı inci eğilerek kullanıldığında bu alıcının durumunu değiştirir.
+<np>
+Darbeli Bağlantı Alıcısı
+Bağlantılı kontrol
+<&industrial_switchlink_pulse_receiver>Bağlantılı darbe alıcısı, uzak panellere kısa bir redstone tetiklemesi sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Kısa darbe vermek için alıcıya sağ tıklayın veya bağlı inciyi tetikleyin.<br>
+<br>
+Notlar: Darbe, zamanlanmış süresi dolduğunda kendini sıfırlar.
+<np>
+Darbeli Bağlantı Rölesi
+Bağlantılı kontrol
+<&industrial_switchlink_pulse_relay>Röle biçimindeki parça, panel yapıları için küçük bir yerel anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın. Bağlı inciyle etkinleştirme gerektiğinde alıcı blokları kullanın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Anahtar Bağlantısı Alıcısı
+Bağlantılı kontrol
+<&industrial_switchlink_receiver>Bağlantılı alıcı, uzak paneller için tam güçlü bir redstone hedefi sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Elle açıp kapatmak için doğrudan alıcıya sağ tıklayın.<br>
+<br>
+Notlar: Bağlı inci eğilerek kullanıldığında bu alıcının durumunu değiştirir.
+<np>
+Analog Bağlantı Alıcısı
+Bağlantılı kontrol
+<&industrial_switchlink_receiver_analog>Bağlantılı alıcı, kontrol panelleri için görünür bir uzak hedef sağlar.<br>
+<br>
+Kullanım: Bağlı inci oluşturmak için Ender incisiyle tıklayın. Alıcıyı uzaktan etkinleştirmek için inciyi eğilerek kullanın.<br>
+<br>
+Notlar: Bu alıcı tetiklendiğinde tam güçlü redstone sinyali verir.
+<np>
+Anahtar Bağlantısı Rölesi
+Bağlantılı kontrol
+<&industrial_switchlink_relay>Röle biçimindeki parça, panel yapıları için küçük bir yerel anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın. Bağlı inciyle etkinleştirme gerektiğinde alıcı blokları kullanın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Analog Bağlantı Rölesi
+Bağlantılı kontrol
+<&industrial_switchlink_relay_analog>Röle biçimindeki parça, panel yapıları için küçük bir yerel anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın. Bağlı inciyle etkinleştirme gerektiğinde alıcı blokları kullanın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Anahtar Bağlantısı İncisi
+Bağlantılı kontrol
+<&switchlink_pearl>Bağlı inci, uzaktan fabrika kontrolleri için bir alıcı hedefi saklar.<br>
+<br>
+Kullanım: Oluşturmak için anahtar bağlantısı alıcısına Ender incisiyle tıklayın. Kayıtlı alıcıyı etkinleştirmek için bağlı inciyi eğilerek kullanın.<br>
+<br>
+Notlar: Hedef yüklenmiş, aynı boyutta ve menzil içinde olmalıdır.
+<np>
+Eski Süslü Şalter
+Redstone Kontrolü
+<&oldfancy_bistableswitch1>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Eski Süslü Döner Şalter
+Redstone Kontrolü
+<&oldfancy_bistableswitch2>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Rustik Döner Şalter
+Redstone Kontrolü
+<&rustic_angular_lever>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Rustik Şalter
+Redstone Kontrolü
+<&rustic_lever>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Rustik Çivili Şalter
+Redstone Kontrolü
+<&rustic_nail_lever>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.
+<np>
+Rustik Çift Menteşeli Şalter
+Redstone Kontrolü
+<&rustic_two_hinge_lever>Küçük kontrol parçası, fabrika yapılarına kolayca görülen bir redstone anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.

@@ -1,0 +1,7 @@
+Rastreador
+Marcador de posição salva
+<&recipe>O rastreador guarda a posição de um bloco no próprio item.<br>
+<br>
+Clique em um bloco para salvar dimensão e coordenadas. A descrição mostra a posição. Use agachado para apagar o alvo.<br>
+<br>
+Marque máquinas, túneis, controles remotos ou obras inacabadas.

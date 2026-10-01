@@ -1,0 +1,7 @@
+Perla vezanogo prěključanja
+Vezano upravljanje
+<&recipe>Vezana perla hrani cěljevy prijemnik dlja oddalenogo fabričnogo upravljanja.<br>
+<br>
+Upotrěbjenje: Klikni Ender-perloju na prijemnik vezanogo prěključanja dlja tvorjenja perly. Upotrěbi vezanu perlu kraduči se dlja aktivovanja zapisanogo prijemnika.<br>
+<br>
+Primětky: Cělj mora byti načitany, v toj samoj dimenziji i v dosegu.

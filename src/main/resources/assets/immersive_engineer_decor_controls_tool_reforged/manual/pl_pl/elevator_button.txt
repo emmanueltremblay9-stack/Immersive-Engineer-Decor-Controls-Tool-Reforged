@@ -1,0 +1,7 @@
+Przycisk windy
+Sterowanie redstone
+<&recipe>Mały element sterujący zapewnia łatwo rozpoznawalny punkt przełączania redstone w fabryce.<br>
+<br>
+Użycie: Kliknij prawym przyciskiem myszy, aby włączać i wyłączać sygnał o pełnej sile dla pobliskich obwodów.<br>
+<br>
+Uwagi: Gdy jest włączony, emituje redstone o pełnej sile.

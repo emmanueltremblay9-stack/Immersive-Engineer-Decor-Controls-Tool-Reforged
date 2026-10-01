@@ -1,0 +1,7 @@
+Bryterkoblingsmottaker
+Koblet betjening
+<&recipe>En koblet mottaker gir fjernpaneler et redstonemål med full styrke.<br>
+<br>
+Bruk: klikk på den med en enderperle for å lage en koblet perle. Høyreklikk direkte på mottakeren for å slå den om for hånd.<br>
+<br>
+Merknad: en koblet perle slår om denne mottakeren når den brukes mens du sniker.

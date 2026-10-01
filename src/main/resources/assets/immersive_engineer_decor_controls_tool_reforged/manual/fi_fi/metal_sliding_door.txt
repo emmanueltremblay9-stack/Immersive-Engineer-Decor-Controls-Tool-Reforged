@@ -1,0 +1,5 @@
+Metallinen liukuovi
+Teollinen kulkuaukko
+<&recipe>Tämä kuutio tarjoaa tukevan kulkuaukon huoltohuoneisiin, kuiluihin, katoille ja konekoteloihin.<br>
+<br>
+Käyttö: Asenna sinne, missä rakennelma tarvitsee hallittavan huoltoaukon.<br>

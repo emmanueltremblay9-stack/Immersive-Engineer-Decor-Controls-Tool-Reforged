@@ -1,0 +1,5 @@
+Ertsvergruishamer
+Handgereedschap voor vergruizen
+<&recipe>De ertsvergruishamer is een handgereedschap voor de vroege bewerking van ijzer en goud.<br>
+<br>
+Gebruik: verwerk ruw ijzer, ruw goud, ijzererts, diepliggend ijzererts, gouderts of diepliggend gouderts tot ijzer- of goudstof van Immersive Engineering. De hamer verliest duurzaamheid, keert terug naar het raster tot hij breekt, slijt bij het mijnen en kan doelen in gevechten terugslaan.

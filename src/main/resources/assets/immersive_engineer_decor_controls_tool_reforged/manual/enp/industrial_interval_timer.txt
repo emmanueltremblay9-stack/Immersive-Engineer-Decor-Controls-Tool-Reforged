@@ -1,0 +1,7 @@
+Beat-and-Wait Timer
+Timed beat
+<&recipe>A small timer switch gives redstone beats at set times.<br>
+<br>
+Use: Fit it where small workings need timed starts or waits.<br>
+<br>
+Mind: Uses redstone beats at set times.

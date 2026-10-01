@@ -1,0 +1,5 @@
+Redstonestyrd vätskeventil
+Utrustning för vätskeledningar
+<&recipe>Den redstonestyrda vätskeventilen är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Rikta ventilen efter den avsedda flödesriktningen.<br>

@@ -1,0 +1,7 @@
+Iskuherkkä kosketusmatto
+Painepulssi
+<&recipe>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.

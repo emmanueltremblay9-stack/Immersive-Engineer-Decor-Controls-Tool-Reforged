@@ -1,0 +1,7 @@
+Kapsula zraka za ronjenje
+Pričuvni zrak za nuždu
+<&recipe>Ronilačka zračna kapsula pričuvni je izvor zraka za rad pod vodom.<br>
+<br>
+Uporaba: Ručno je upotrijebi za obnovu zraka. U inventaru se može i automatski aktivirati kad je zrak gotovo potrošen, a zatim ulazi u hlađenje.<br>
+<br>
+Nosi je za poplavljene rudnike, podvodne cjevovode i popravke crpnih prostorija.

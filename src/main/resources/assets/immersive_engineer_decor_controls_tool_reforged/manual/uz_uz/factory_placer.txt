@@ -1,0 +1,5 @@
+Zavod blok joylashtirgichi
+Ustaxona yordamchi qurilmasi
+<&recipe>Bu blok faollashganda ichki zaxirasidagi bloklarni joylashtiradi.<br>
+<br>
+Ishlatish: ishchi yuzasini nishon joyga qarating va joylashtiriladigan to'plamlarni yuklang.<br>

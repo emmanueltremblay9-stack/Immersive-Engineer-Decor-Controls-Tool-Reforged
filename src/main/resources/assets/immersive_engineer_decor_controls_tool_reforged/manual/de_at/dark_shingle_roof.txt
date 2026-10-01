@@ -1,0 +1,5 @@
+Dunkls Schindldoch
+Verwitterts Dochbauteil
+<&recipe>Der Block gibt Werkstätten und Industrieschuppn a dunkle, zweckmäßige Dochform.<br>
+<br>
+Verwendung: Kombinier de Teile zu glaubwürdigen Dochformen.<br>

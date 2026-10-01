@@ -1,0 +1,108 @@
+Sanayi Yapıları
+Fabrika duvarları ve süslemeler
+Genel yapı parçaları; daha özel bir bölüme girmeyen kapılar, pencereler, lambalar, uyarı levhaları, süslemeler ve yapısal elemanları kapsar.<br>
+<br>
+Bu sayfaları fabrika odaları, servis koridorları, tehlike işaretleri ve kullanışlı sanayi ayrıntıları için kullanın.
+<np>
+Demir Ampul
+Küçük çalışma lambası
+<&iron_bulb_light>Bu blok; koridorlar, servis yolları ve çalışma bölmeleri için az yer kaplayan sanayi tipi aydınlatma sağlar.<br>
+<br>
+Kullanım: Odanın belirgin çalışma aydınlatmasına ihtiyaç duyduğu tavanlara, duvarlara veya kenarlara takın.<br>
+<np>
+Tavan Kenarı Lambası
+Küçük çalışma lambası
+<&iron_ceiling_edge_light>Bu blok; koridorlar, servis yolları ve çalışma bölmeleri için az yer kaplayan sanayi tipi aydınlatma sağlar.<br>
+<br>
+Kullanım: Odanın belirgin çalışma aydınlatmasına ihtiyaç duyduğu tavanlara, duvarlara veya kenarlara takın.<br>
+<np>
+Gömme Zemin Kenarı Lambası
+Küçük çalışma lambası
+<&iron_floor_edge_light>Bu blok; koridorlar, servis yolları ve çalışma bölmeleri için az yer kaplayan sanayi tipi aydınlatma sağlar.<br>
+<br>
+Kullanım: Odanın belirgin çalışma aydınlatmasına ihtiyaç duyduğu tavanlara, duvarlara veya kenarlara takın.<br>
+<np>
+Gömme Lamba
+Küçük çalışma lambası
+<&iron_inset_light>Bu blok; koridorlar, servis yolları ve çalışma bölmeleri için az yer kaplayan sanayi tipi aydınlatma sağlar.<br>
+<br>
+Kullanım: Odanın belirgin çalışma aydınlatmasına ihtiyaç duyduğu tavanlara, duvarlara veya kenarlara takın.<br>
+<np>
+“Genel Uyarı” Levhası
+Tehlike işareti
+<&sign_caution>“Genel Uyarı” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Tehlike Levhası
+Tehlike işareti
+<&sign_danger>“Dikkat, Burası Gerçekten Tehlikeli” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Dekoratif Levha
+Tehlike işareti
+<&sign_decor>Levha plakası (Engineer's Decor); tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Savunma Levhası
+Tehlike işareti
+<&sign_defense>“Dikkat, İleride Savunma Sistemi” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Çıkış Levhası
+Tehlike işareti
+<&sign_exit>Bu levha; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+“Yangın Tehlikesi” Levhası
+Tehlike işareti
+<&sign_firehazard>“Yangın Tehlikesi” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+“Don Uyarısı” Levhası
+Tehlike işareti
+<&sign_frost>“Don Uyarısı” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Sıcak Yüzey Levhası
+Tehlike işareti
+<&sign_hotsurface>“Dikkat, Sıcak Yüzey” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Gerilimli Tel Levhası
+Tehlike işareti
+<&sign_hotwire>“Dikkat, Gerilimli Tel” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+“Lazer Tehlikesi” Levhası
+Tehlike işareti
+<&sign_laser>“Lazer Tehlikesi” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Büyü Tehlikesi Levhası
+Tehlike işareti
+<&sign_magichazard>“Dikkat, Büyü Tehlikesi” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+Manyetik Alan Levhası
+Tehlike işareti
+<&sign_magneticfield>“Dikkat, Güçlü Manyetik Alan” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>
+“Radyoaktif Tehlike” Levhası
+Tehlike işareti
+<&sign_radioactive>“Radyoaktif Tehlike” levhası; tehlikeleri, çıkışları ve çalışma alanlarını fabrika güvenliğine uygun görsel bir işaretle belirtir.<br>
+<br>
+Kullanım: Tehlikelerin, çıkışların, makinelerin ve girişe kapalı alanların yanına yerleştirin.<br>
+<np>

@@ -1,0 +1,3 @@
+Magaspang na Butil ng Bakal
+Materyal ng kasangkapan ng inhinyero na ginagamit sa muling binuong hanay ng mga resipe.
+<&recipe>Maaaring tunawin upang maging kabubong<br>bakal, ngunit hindi angkop sa mas<br>masalimuot na pagproseso ng materyal.

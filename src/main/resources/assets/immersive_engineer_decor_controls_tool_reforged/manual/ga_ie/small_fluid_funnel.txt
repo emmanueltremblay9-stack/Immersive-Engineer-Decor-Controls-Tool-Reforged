@@ -1,0 +1,5 @@
+Tonnadóir Leachta
+Crua-earraí píblíne sreabháin
+<&recipe>Is páirt dhlúth píblíne sreabháin é an Tonnadóir Beag Bailithe Leachta d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: cuir faoin bpointe bailithe sreabháin é agus treoraigh a inneachar stóráilte isteach in umair nó i bpíblínte níos ísle.<br>

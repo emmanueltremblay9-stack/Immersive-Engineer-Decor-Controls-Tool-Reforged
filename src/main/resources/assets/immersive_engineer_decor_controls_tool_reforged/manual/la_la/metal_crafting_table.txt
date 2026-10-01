@@ -1,0 +1,7 @@
+Mensa metallaria
+Statio laminarum
+<&recipe>Mensa metallica cum loco mallei proprio, reticulo 3x3 et loco exitus.<br>
+<br>
+Usus: reticulo sicut mensa fabricationis ordinaria utere. Ad laminas IE formandas malleum ingeniarii in cellulam instrumenti et materiam laminae in reticulum pone, deinde laminam formatam ex exitu accipe.<br>
+<br>
+Ornamenta chalybea laminis chalybeis utuntur. Malleum Immersive Engineering insere, lateres chalybeos in laminas chalybeas mallea, deinde laminis utere ad palos, ambulacra, fenestras, ostia, cancellos et cetera ornamenta chalybea fabricanda.<br>

@@ -1,0 +1,7 @@
+Senyal d’interval de vidre
+Pols temporitzat
+<&recipe>Un interruptor temporitzat compacte emet un pols de redstone programat.<br>
+<br>
+Ús: usa’l on un mecanisme xicotet necessite un control periòdic o amb retard.<br>
+<br>
+Notes: usa polsos de redstone programats.

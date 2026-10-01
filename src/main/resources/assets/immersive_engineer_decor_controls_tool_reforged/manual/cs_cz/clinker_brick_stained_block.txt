@@ -1,0 +1,5 @@
+Zašpiněný klinkerový blok
+Zdivo ztmavlé sazemi
+<&recipe>Zašpiněné klinkerové cihly přidávají zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>

@@ -1,0 +1,5 @@
+Panel solar
+Equipamientu de suelu de taller
+<&recipe>El panel solar pequeñu ye un bloque de serviciu de taller pa ellaboración, almacenamientu, colocación, rotura, recoyida o automatización compacta.<br>
+<br>
+Usu: dexa que tenga accesu al cielu abiertu y conecta equipu de baxu consumu.<br>

@@ -1,0 +1,7 @@
+Horologium diurnum vitreum
+Signum lucis diurnae
+<&recipe>Commutator temporis partem diurnam cycli mundi sequitur.<br>
+<br>
+Usus: ad lucernas areae, valvas fenestrarum et moderamina officinae tantum diurna adhibe.<br>
+<br>
+Notae: dimensionem luce caelesti praeditam requirit.

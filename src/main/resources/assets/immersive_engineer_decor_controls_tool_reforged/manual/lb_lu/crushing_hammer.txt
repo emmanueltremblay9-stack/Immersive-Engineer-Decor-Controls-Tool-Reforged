@@ -1,0 +1,7 @@
+Äerzmuelhummer
+Handgeschier fir Äerz ze muelen
+<&recipe>Den Äerzzerklenghamer ass en Handwierksgeschier fir déi fréi Veraarbechtung vun Eisen a Gold.<br>
+<br>
+Benotzung: Craft en mat réiem Eisen, réiem Gold, Eisenäerz, Déifschifer-Eisenäerz, Goldäerz oder Déifschifer-Goldäerz fir Eisen- oder Goldstëbs vun Immersive Engineering ze maachen. Den Hummer verléiert Haltbarkeet a kënnt an d'Craftinggitter zeréck, bis en brécht.<br>
+<br>
+En notzt sech och beim Ofbau of a ka Géigner am Nokampf zeréckstoussen.

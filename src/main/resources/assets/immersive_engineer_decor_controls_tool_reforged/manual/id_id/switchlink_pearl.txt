@@ -1,0 +1,7 @@
+Mutiara Tautan Sakelar
+Kendali tertaut
+<&recipe>Mutiara tertaut menyimpan sasaran penerima untuk kendali pabrik dari jarak jauh.<br>
+<br>
+Penggunaan: klik penerima tautan sakelar dengan mutiara Ender untuk membuatnya. Gunakan mutiara tertaut sambil menyelinap untuk mengaktifkan penerima yang tersimpan.<br>
+<br>
+Catatan: sasaran harus dimuat, berada dalam dimensi yang sama, dan masih dalam jangkauan.

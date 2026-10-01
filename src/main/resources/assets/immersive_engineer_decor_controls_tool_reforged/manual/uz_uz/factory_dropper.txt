@@ -1,0 +1,5 @@
+Zavod tashlagichi
+Ustaxona yordamchi qurilmasi
+<&recipe>Bu blok saqlangan buyumlarni mo'ljallangan yuzasidan chiqaradi.<br>
+<br>
+Ishlatish: oldini chiqarish joyiga qarating, ichki kataklarini to'ldiring, oynada kuch, burchak, kechikish, filtr mantiqi va redstone rejimini sozlang.<br>

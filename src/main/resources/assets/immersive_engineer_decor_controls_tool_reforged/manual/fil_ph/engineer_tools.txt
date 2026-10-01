@@ -1,0 +1,99 @@
+Mga Kasangkapan ng Inhinyero
+Dalang kagamitan sa pagawaan
+Idinaragdag ng hanay ng mga Kasangkapan ng Inhinyero ang mga kagamitang hawak-kamay, pananda sa mina, nauubos na gamit sa kagipitan, pagkain sa lugar ng trabaho at maliliit na pantulong sa pagproseso ng materyal sa manwal ding tumatalakay sa mga bloke ng palamuti at kontrol.<br>
+<br>
+Para ang mga kasangkapang ito sa trabaho na malayo sa lubos na kagamitang pagawaan: markahan ang ruta, magdala ng suplay, bumawi sa pagkakamali at tapusin ang maliliit na gawaing pagproseso sa mismong lugar.
+<np>
+Kasangkapang REDIA
+Gamit na balot ng diyamante
+<&redia_tool>Ang Kasangkapang REDIA ay matibay na gamit para sa mabilis na paghahanda ng lupa sa lugar ng trabaho. Gamitin sa lupang nabubungkal upang gawing lupang sakahin.<br>
+<br>
+Gamitin sa matatag na mukha habang may dalang sulo upang maglagay ng sulong pananda mula sa imbentaryo nang hindi nauupod ang REDIA. Gumagamit ng tibay ang pagbubungkal, paggugupit, pagpapalakol at pagpuputol ng puno.
+<np>
+Martilyong Pandurog ng Mineral
+Mano-manong kasangkapang pandurog
+<&crushing_hammer>Ang martilyong pandurog ng mineral ay mano-manong kasangkapan para sa maagang pagproseso ng bakal at ginto.<br>
+<br>
+Paggamit: I-craft ito kasama ng hilaw na bakal, hilaw na ginto, iron ore, deepslate iron ore, gold ore, o deepslate gold ore upang makagawa ng iron o gold dust ng Immersive Engineering. Nababawasan ang durability ng martilyo at bumabalik ito sa crafting grid hanggang sa masira.<br>
+<br>
+Nauupod din ito sa pagmimina at nakapagpapatulak ng mga target sa malapitang labanan.
+<np>
+Pangsundan
+Pananda ng nakaimbak na posisyon
+<&tracker>Direktang nag-iimbak ang tracker ng posisyon ng isang bloke sa item.<br>
+<br>
+Paggamit: I-click ang isang bloke upang itala ang dimensiyon at mga coordinate nito. Ipinapakita ng tooltip ang nakaimbak na posisyon. Sneak-use ang tracker upang burahin ang target.<br>
+<br>
+Gamitin upang markahan ang mga makina, sangahan ng lagusan, kontrol mula sa malayo o hindi tapos na lugar ng pagtatayo bago bumalik na may mga kasangkapan at materyal.
+<np>
+Batong-uling ni Ariadne
+Pananda ng ruta sa mina
+<&ariadne_coal>Mabilis na naglalagay ang Batong-uling ni Ariadne ng itim na palasong pananda ng ruta sa matatag na mukha ng mina. Gamitin sa solidong mukha upang markahan ang susunod na liko, labasan o sangahan; sinusuportahan ng marka ang walong direksiyon sa ikiniklik na mukha, pati pahilis.<br>
+<br>
+Ang Batong-uling ni Ariadne ay magagamit muli na panandang may 100 gamit. Bawat nailagay na marka ay kumukuha ng isang tibay. Tinatanggihan nito ang hindi sinusuportahang mukha sa halip na upurin ang bagay.
+<np>
+Awtomatikong Pampasiglang Iniksiyon
+Pang-iniksiyon sa kagipitan
+<&stimpack>Ang Auto Stim Pack ay pang-emerhensiyang gamit sa paggaling para sa mapanganib na gawaing pagmementena.<br>
+<br>
+Paggamit: Gamitin ito nang mano-mano upang gumaling, magkaroon ng maikling proteksiyon, at sandaling bumilis. Kapag dala sa inventory, maaari rin itong awtomatikong gumana sa mababang kalusugan, saka papasok sa cooldown.<br>
+<br>
+Magdala nito bago subukan ang matataas na lugar, nakalantad na kawad o mapanganib na ruta sa mina.
+<np>
+Supot-tulugan
+Dalang gamit sa pahinga
+<&sleeping_bag>Ang sleeping bag ay matibay-sa-panahong gamit sa pahinga para sa gawaing malayo sa kama.<br>
+<br>
+Paggamit: Gamitin ito sa gabi sa Overworld upang magpahinga hanggang umaga. Hindi nito itinatakda o inililipat ang iyong spawn point.<br>
+<br>
+Hindi ito gagana sa araw, kapag may malapit na halimaw, o sa dimensiyong hindi angkop sa ligtas na pahinga. Bawat matagumpay na pahinga ay nakakabawas sa durability nito.
+<np>
+Kahon ng Imbakan ng Materyal
+Kahon ng suplay sa pagtatayo
+<&material_box>Ang kahon ng materyales ay nagdadala ng malaking reserba ng iisang payak, hindi binago, at nasasalansang materyales sa konstruksyon.<br>
+<br>
+Paggamit: Hawakan ang kahon sa pangunahing kamay at ang salansan ng materyales sa kabilang kamay upang ipasok ito. Gamitin ang kahon habang walang laman ang kabilang kamay upang maglabas ng isang salansan.<br>
+<br>
+Hanggang 512 item ang kasya, iisang uri lamang sa bawat pagkakataon, at hindi nito tinatanggap ang kapwa kahon, hindi nasasalansang kagamitan, o binago, pinangalanan, at may data na salansan. Makikita ang laman sa tooltip.
+<np>
+Kapsula ng Hangin sa Pagsisid
+Reserbang hangin sa kagipitan
+<&diving_capsule>Ang kapsula ng hangin sa pagsisid ay pang-emerhensiyang reserba ng hangin para sa gawaing nasa ilalim ng tubig.<br>
+<br>
+Paggamit: Gamitin ito nang mano-mano upang maibalik ang hangin. Kapag dala sa inventory, maaari rin itong awtomatikong gumana kapag halos ubos na ang hangin, saka papasok sa cooldown.<br>
+<br>
+Dalhin para sa binahang mina, mga tubong nakalubog sa tubig at pagkukumpuni sa silid ng bomba.
+<np>
+Pangpresa ng Bar na Muslee
+Pangpresa ng pagkain
+<&musli_bar_press>Ginagawang siksik na rasyong pantrabaho ng Muslee Bar Press ang karaniwang pagkain.<br>
+<br>
+Paggamit: Magdala ng tinapay, mansanas, at buto ng trigo, melon, kalabasa, beetroot, o Industrial Hemp, saka gamitin ang press. Kapag matagumpay, kumokonsumo ito ng tig-isa, tinitiyak na kasya ang output, gumagawa ng apat na Muslee Melange Power Bar, at binabawasan ang durability ng press.<br>
+<br>
+Kung kulang ang sangkap o walang puwang sa inventory para sa mga bar, walang makokonsumo.
+<np>
+Bar ng Enerhiyang Muslee Melange
+Mabilis na meryenda sa pagawaan
+<&musli_bar>Ang Muslee Melange Power Bar ay siksik na pagkain na gawa sa tinapay, mga buto, at prutas.<br>
+<br>
+Paggamit: Kainin bilang pagkaing pambiyahe habang naglalagay ng mga kontrol, tubo, plataporma o mahabang linya sa silid ng makina.
+<np>
+Pampiga ng Isip
+Tagapag-ipon ng karanasan
+<&charged_lapis_squeezer>Ginagawang May Kargang Lapis ng Pampiga ng Isip ang isang lapis lazuli at isang antas ng karanasan mula sa iyong imbentaryo.<br>
+<br>
+Sa bawat matagumpay na pagbabago, nananakit ang proseso, nagdudulot ng pagkapagod na nagpapataas ng gutom at sandaling bumubulag sa gumagamit. Hindi ito gumagana kung walang lapis, walang XP o napakalapit na sa kamatayan ang gumagamit.
+<np>
+May Kargang Lapis
+Nakaimbak na karanasan
+<&charged_lapis>Nag-iimbak ang May Kargang Lapis ng isang antas ng karanasan. Kainin upang mabawi ang antas, alisin ang mga aktibong epekto at maibalik ang kaunting buhay.<br>
+<br>
+Gumawa muna ng Pampiga ng Isip; ginagawa ang May Kargang Lapis sa paggamit ng kasangkapang iyon habang may lapis at XP.
+<np>
+Magaspang na Butil ng Bakal
+Materyal ng kasangkapan ng inhinyero na ginagamit sa muling binuong hanay ng mga resipe.
+<&iron_grit>Maaaring tunawin upang maging linggote ng<br>bakal, ngunit hindi angkop sa<br>mas masalimuot na pagproseso ng materyal.
+<np>
+Magaspang na Butil ng Ginto
+Materyal ng kasangkapan ng inhinyero na ginagamit sa muling binuong hanay ng mga resipe.
+<&gold_grit>Maaaring tunawin upang maging linggote ng<br>ginto, ngunit hindi angkop sa<br>mas masalimuot na pagproseso ng materyal.

@@ -1,0 +1,5 @@
+Električna peć
+Kompaktna jedinica za obradu
+<&recipe>Električna peć obavlja kompaktno taljenje na FE energiju na maloj površini radionice.<br>
+<br>
+Uporaba: dovedi FE i valjanu sirovinu za taljenje.<br>

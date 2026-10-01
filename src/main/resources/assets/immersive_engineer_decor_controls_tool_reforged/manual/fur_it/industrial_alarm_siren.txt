@@ -1,0 +1,7 @@
+Sirene di alarme
+Indicazion dal segnâl
+<&recipe>La sirene di alarme e je un indicadôr redstone montât suntune face. Il so stât alimentât al seguìs il segnâl dal bloc dulà che e je tacade.<br>
+<br>
+Ûs: tachile suntune muse solide e alimentile par controlâ puartis, machinis, alarmis o panei.<br>
+<br>
+Notis: la sirene si rinove une volte par secont fintremai che il so segnâl al reste atîf.

@@ -1,0 +1,99 @@
+Mérnöki szerszámok
+Hordozható műhelyfelszerelés
+A mérnöki szerszámkészlet kézi eszközökkel, bányajelölőkkel, vészhelyzeti fogyóeszközökkel, terepi élelemmel és kis anyagfeldolgozó segédeszközökkel bővíti ugyanazt a kézikönyvet, amely a dekorációs és vezérlőblokkokat ismerteti.<br>
+<br>
+Ezeket a szerszámokat jól felszerelt műhelytől távoli munkához tervezték: jelöld az utat, vigyél készleteket, heverd ki a hibákat, és végezd el helyben a kisebb feldolgozási munkákat.
+<np>
+REDIA-szerszám
+Gyémántborítású segédeszköz
+<&redia_tool>A REDIA-szerszám tartós terepi segédeszköz gyors földmunkához. Használd megművelhető talajon termőföld kialakításához.<br>
+<br>
+Stabil felületen használva, fáklyát tartva a felszerelésedben, a készletből helyez el jelölőfáklyát a REDIA koptatása nélkül. A földmunka, nyírás, fejszemunka és fakidöntés tartósságot fogyaszt.
+<np>
+Érczúzó kalapács
+Kézi zúzóeszköz
+<&crushing_hammer>Az érctörő kalapács kézi szerszám a vas és az arany korai feldolgozásához.<br>
+<br>
+Használat: Készítsd nyersvassal, nyersarannyal, vasérccel, mélypalavasérccel, aranyérccel vagy mélypalaaranyérccel, hogy Immersive Engineering vas- vagy aranyport kapj. A kalapács tartóssága csökken, és töréséig visszatér a barkácsrácsba.<br>
+<br>
+Bányászattól is kopik, közelharcban pedig hátralökheti a célpontokat.
+<np>
+Nyomkövető
+Tárolt helyzetjelölő
+<&tracker>A nyomkövető közvetlenül a tárgyban tárolja egy blokk helyét.<br>
+<br>
+Használat: Kattints egy blokkra a dimenzió és koordináták mentéséhez. A súgó mutatja a helyet. Lopakodva használd a nyomkövetőt a cél törléséhez.<br>
+<br>
+Jelölj vele gépeket, alagútelágazásokat, távoli vezérlőket vagy befejezetlen építési helyeket, mielőtt szerszámokkal és anyagokkal visszatérsz.
+<np>
+Ariadné szene
+Bányabeli útjelölő
+<&ariadne_coal>Ariadné szene gyorsan helyez el fekete útjelző nyilakat a bánya stabil felületein. Tömör felületen jelöld vele a következő kanyart, kijáratot vagy elágazást; a kattintás helye nyolc irányt választhat ki, az átlókat is.<br>
+<br>
+Ariadné szene újrahasználható jelölőeszköz 100 használattal. Minden sikeres jelölés egy tartósságpontba kerül. A nem megfelelő felületeket elutasítja az eszköz koptatása helyett.
+<np>
+Automatikus stimulánscsomag
+Vészhelyzeti injektor
+<&stimpack>Az Auto Stim Pack vészhelyzeti orvosi eszköz veszélyes karbantartási munkához.<br>
+<br>
+Használat: Kézzel aktiváld gyógyulásért, rövid védelemért és rövid mozgásgyorsításért. A felszerelésben alacsony életerőnél magától is aktiválódhat, majd töltési időre lép.<br>
+<br>
+Legyen nálad, mielőtt magas helyeket, szabad vezetékeket vagy ellenséges bányaútvonalakat próbálsz ki.
+<np>
+Hálózsák
+Hordozható pihenőkészlet
+<&sleeping_bag>A hálózsák időjárásálló pihenőkészlet ágytól távoli munkához.<br>
+<br>
+Használat: Éjjel használd az Overworldben, hogy reggelig pihenj. Nem állítja be és nem mozgatja az újraéledési pontot.<br>
+<br>
+Nappal, közeli szörnyekkel veszélyes környezetben és biztonságos pihenésre alkalmatlan dimenzióban nem működik. Minden sikeres pihenés koptatja.
+<np>
+Anyagtároló doboz
+Építési készletdoboz
+<&material_box>Az anyagládában egyetlen egyszerű, módosítatlan és halmozható építőanyag nagy készlete hordozható.<br>
+<br>
+Használat: Tartsd a ládát a fő kézben, az anyaghalmot a másikban a betöltéshez. Üres másik kézzel használd a ládát egy halom kivételéhez.<br>
+<br>
+Egyféle anyagból legfeljebb 512 darabot tárol. Nem fogad be másik ládát, nem halmozható felszerelést, átnevezett vagy adatában módosított halmot; a súgó mutatja a tartalmat.
+<np>
+Merülési légkapszula
+Vészhelyzeti levegőtartalék
+<&diving_capsule>A búvárlevegő-kapszula vészhelyzeti levegőtartalék víz alatti munkához.<br>
+<br>
+Használat: Kézzel használd a levegő visszatöltésére. A felszerelésben magától is aktiválódhat, amikor a levegő majdnem elfogyott, majd töltési időre lép.<br>
+<br>
+Vidd elárasztott bányákba, víz alatti csővezetékekhez és szivattyútermi javításokhoz.
+<np>
+Muslee-szeletprés
+Élelmiszerprés
+<&musli_bar_press>A Muslee-szeletprés közönséges élelmiszerből tömör terepi ellátmányt készít.<br>
+<br>
+Használat: Legyen nálad kenyér, alma és búza-, dinnye-, tök-, cékla- vagy Industrial Hemp-mag, majd használd a prést. A sikeres préselés mindegyikből egyet elfogyaszt, helyet ellenőriz, négy Muslee Melange-szeletet készít és sérti a prést.<br>
+<br>
+Ha hiányzik egy összetevő vagy nincs hely a felszerelésben, semmi sem fogy el.
+<np>
+Muslee Melange energiaszelet
+Gyors műhelyi harapnivaló
+<&musli_bar>A Muslee Melange energiaszelet kenyérből, magvakból és gyümölcsből készült tömör étel.<br>
+<br>
+Használat: terepi élelemként fogyaszd vezérlők, csövek, platformok vagy hosszú géptermi nyomvonalak telepítése közben.
+<np>
+Elmeprés
+Tapasztalatsűrítő
+<&charged_lapis_squeezer>Az elmeprés egy lazuritot és egy tapasztalati szintet alakít feltöltött lazurittá a felszerelésedből.<br>
+<br>
+Minden sikeres átalakítás megsebez, növeli az éhségi kimerültséget, és rövid időre megvakít. Lazurit vagy tapasztalat nélkül, illetve halálközeli állapotban nem működik.
+<np>
+Feltöltött lazurit
+Tárolt tapasztalat
+<&charged_lapis>A feltöltött lazurit egy tapasztalati szintet tárol. Fogyaszd el a szint visszanyeréséhez, az aktív hatások törléséhez és kevés életerő visszatöltéséhez.<br>
+<br>
+Először készíts elmeprést; feltöltött lazurit úgy készül, hogy lazurit és tapasztalat birtokában használod ezt az eszközt.
+<np>
+Durva vasszemcse
+Az újjáépített barkácskészletben használt mérnöki szerszámanyag.
+<&iron_grit>Vasrúddá olvasztható,<br>de fejlettebb<br>anyagfeldolgozásra nem alkalmas.
+<np>
+Durva aranyszemcse
+Az újjáépített barkácskészletben használt mérnöki szerszámanyag.
+<&gold_grit>Aranyrúddá olvasztható,<br>de fejlettebb<br>anyagfeldolgozásra nem alkalmas.

@@ -1,0 +1,127 @@
+Keçid yolları
+Keçidlər və dayaqlar
+Polad dirəklər, emal edilmiş ağac dirəklər, barmaqlıqlar, keçidlər, məhəccərlər, nərdivanlar, qapılar, pəncərələr və lyuklar zavodların içində yığcam xidmət yolları yaradır.<br>
+<br>
+Polad keçid yolu hissələri polad lövhələrdən hazırlanır. Metal hazırlama masası hazırlayın və ya yerləşdirin, Immersive Engineering çəkici taxın, sonra polad külçələri çəkiclə lövhələrə çevirin. Bu lövhələr dirəklər, keçidlər, pəncərələr, qapılar, məhəccərlər və başqa polad bəzəklər üçündür.<br>
+<br>
+Onları maşınlara xidmət girişi, hündür yollar, texniki xidmət şaxtaları və ya daha təhlükəsiz kənarlar lazım olan yerlərə qoyun.
+<np>
+Qalın polad dirək
+Konstruksiya karkasının hissəsi
+<&thick_steel_pole>Düz qalın polad dirək, yəni Qalın polad dirək, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Qalın dirək başlığı
+Konstruksiya karkasının hissəsi
+<&thick_steel_pole_head>Düz qalın polad dirəyin başlığı/ayaqlığı, yəni Qalın polad dirəyin başlığı/ayaqlığı, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Nazik polad dirək
+Konstruksiya karkasının hissəsi
+<&thin_steel_pole>Düz nazik polad dirək, yəni Nazik polad dirək, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Nazik dirək başlığı
+Konstruksiya karkasının hissəsi
+<&thin_steel_pole_head>Düz nazik polad dirəyin başlığı/ayaqlığı, yəni Nazik polad dirəyin başlığı/ayaqlığı, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Emal edilmiş ağac dirək
+Konstruksiya karkasının hissəsi
+<&treated_wood_pole>Düz emal edilmiş ağac dirək, yəni Emal edilmiş ağac dirək, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Emal edilmiş dirək başlığı
+Konstruksiya karkasının hissəsi
+<&treated_wood_pole_head>Düz emal edilmiş ağac dirəyin başlığı/ayaqlığı, yəni Emal edilmiş ağac dirəyin başlığı/ayaqlığı, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Emal edilmiş dirək dayağı
+Konstruksiya karkasının hissəsi
+<&treated_wood_pole_support>Düz emal edilmiş ağac dirəyin dayağı, yəni Emal edilmiş ağac dirəyin dayağı, maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Polad ikitavr dayaq
+Konstruksiya karkasının hissəsi
+<&steel_double_t_support>Bu blok maşın zalları və keçid çərçivələri üçün görünən konstruksiya yaradır.<br>
+<br>
+İstifadə: Tirlərə, dirəklərə və platforma kənarlarına görünən dayaq kimi döndərib yerləşdirin.<br>
+<np>
+Polad döşəmə barmaqlığı
+Xidmət keçidi elementi
+<&steel_floor_grating>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Polad keçid
+Xidmət keçidi elementi
+<&steel_catwalk>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Polad keçid pilləkəni
+Xidmət keçidi elementi
+<&steel_catwalk_stairs>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Hündür polad keçid
+Xidmət keçidi elementi
+<&steel_catwalk_ta>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Polad məhəccər
+Xidmət keçidi elementi
+<&steel_railing>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Polad tor çəpər
+Xidmət keçidi elementi
+<&steel_mesh_fence>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Polad tor çəpər qapısı
+Xidmət keçidi elementi
+<&steel_mesh_fence_gate>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Metal çubuqlu nərdivan
+Xidmət keçidi elementi
+<&metal_rung_ladder>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Şahmat düzülüşlü metal pillələr
+Xidmət keçidi elementi
+<&metal_rung_steps>Bu blok maşınların ətrafında aydın seçilən xidmət yolları yaradır.<br>
+<br>
+İstifadə: Maşınların, yuxarı mərtəbələrin və xidmət şaxtalarının ətrafında texniki xidmət keçidi kimi yerləşdirin.<br>
+<np>
+Polad çərçivəli pəncərə
+Qorunan görünüş
+<&steel_framed_window>Bu blok möhkəmləndirilmiş zavod tikintisinə uyğun olmaqla görünüşü açıq saxlayır.<br>
+<br>
+İstifadə: Oyunçuların qoruyucu maneənin arxasındakı maşınları görməli olduğu yerlərdə divardakı 1 blokluq boşluğa yerləşdirin.<br>
+<np>
+Metal sürüşən qapı
+Sənaye giriş nöqtəsi
+<&metal_sliding_door>Bu blok xidmət otaqları, şaxtalar, damlar və maşın örtükləri üçün möhkəm giriş nöqtəsi yaradır.<br>
+<br>
+İstifadə: Tikilidə idarə olunan texniki xidmət açılışı lazım olan yerlərə quraşdırın.<br>
+<np>
+Dəmir lyuk
+Sənaye giriş nöqtəsi
+<&iron_hatch>Bu blok xidmət otaqları, şaxtalar, damlar və maşın örtükləri üçün möhkəm giriş nöqtəsi yaradır.<br>
+<br>
+İstifadə: Tikilidə idarə olunan texniki xidmət açılışı lazım olan yerlərə quraşdırın.<br>

@@ -1,0 +1,5 @@
+Penutup Lubang Besi
+Titik akses industri
+<&recipe>Blok ini menyediakan titik akses lasak untuk bilik servis, aci, bumbung dan sarung mesin.<br>
+<br>
+Penggunaan: Pasang di tempat binaan memerlukan bukaan penyelenggaraan terkawal.<br>

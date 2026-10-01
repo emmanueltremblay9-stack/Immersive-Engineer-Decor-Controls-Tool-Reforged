@@ -1,0 +1,5 @@
+Laboratorijska peć
+Kompaktna jedinica za obradu
+<&recipe>Laboratorijska peć obavlja kompaktne poslove topljenja na čvrsto gorivo, zauzimajući malo mjesta u radionici.<br>
+<br>
+Upotreba: Koristite čvrsto gorivo za male ture topljenja.<br>

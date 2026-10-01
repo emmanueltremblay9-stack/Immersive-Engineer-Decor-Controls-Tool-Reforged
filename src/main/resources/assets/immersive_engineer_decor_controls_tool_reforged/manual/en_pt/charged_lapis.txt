@@ -1,0 +1,7 @@
+Charged lāzhward
+Experience stowed away
+<&recipe>Charged lāzhward holds one experience level made by the mind squeezin' contraption.<br>
+<br>
+Orders: Swallow it to get one level back, clear active effects and regain a little health.<br>
+<br>
+The recipe display shows the mind squeezin' contraption, since ye make charged lāzhward by usin' that tool with lāzhward and XP aboard.

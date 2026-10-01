@@ -1,0 +1,5 @@
+Luz de lámpada de ferro
+Luz de traballo compacta
+<&recipe>Este bloque proporciona iluminación industrial compacta para corredores, pasarelas e zonas de traballo.<br>
+<br>
+Uso: móntao en teitos, paredes ou bordos onde se precise unha iluminación de traballo clara.<br>

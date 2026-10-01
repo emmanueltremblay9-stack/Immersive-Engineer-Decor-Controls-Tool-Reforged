@@ -1,0 +1,5 @@
+Stare drewniane deski
+Postarzane drewno warsztatowe
+<&recipe>Stare przemysłowe deski dodają postarzane drewno warsztatowe na podłogi, stopnie, drzwi i przytulne wykończenia wnętrz.<br>
+<br>
+Użycie: Buduj z niego podłogi, schody, drzwi i wykończenia starych warsztatów.<br>

@@ -1,0 +1,7 @@
+Caixa de materials
+Caixa de subministraments de construcció
+<&recipe>La caixa de materials porta una gran reserva dun únic material de construcció comú, sense modificar i apilable.<br>
+<br>
+Sosteniu la caixa a la mà principal i el material a laltra per carregar-lo; amb laltra mà buida traieu una pila.<br>
+<br>
+Conté 512 objectes dun tipus, rebutja altres caixes, equip no apilable i piles modificades i mostra el contingut a la descripció.

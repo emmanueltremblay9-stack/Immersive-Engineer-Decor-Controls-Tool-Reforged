@@ -1,0 +1,5 @@
+Old Wood Slab Slice
+Aged shop timber
+<&recipe>The Old Industrial Wood Slab Slice adds aged shop timber for floors, steps, doors, and warm interior trim.<br>
+<br>
+Usage: Use it for old shop floors, stairs, doors, and trim.<br>

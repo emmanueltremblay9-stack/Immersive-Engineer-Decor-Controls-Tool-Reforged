@@ -1,0 +1,7 @@
+Rustikali Druckplatte
+Druckimpuls
+<&recipe>En Kontaktschalter git nach ere Bewegig uf de Bodeplatte oder Falltür es churzes Signal.<br>
+<br>
+Verwendig: Setz en dert hii, wo Entitäte dur en Wartigsgang, e Ladestell oder en gschützte Wäg müend.<br>
+<br>
+Hiwiis: Git nach Entitätskontakt churz en Impuls.

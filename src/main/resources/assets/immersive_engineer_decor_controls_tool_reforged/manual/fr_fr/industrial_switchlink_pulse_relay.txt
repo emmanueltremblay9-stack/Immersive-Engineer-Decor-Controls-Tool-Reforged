@@ -1,0 +1,7 @@
+Relais de liaison à impulsion
+Commande liée
+<&recipe>Un élément de type relais offre un point de commutation local compact aux panneaux.<br>
+<br>
+Utilisation : faites un clic droit pour activer ou désactiver une sortie à puissance maximale destinée aux circuits voisins. Utilisez des blocs récepteurs pour une activation par perle liée.<br>
+<br>
+Remarque : émet un signal de redstone à puissance maximale tant qu'il est activé.

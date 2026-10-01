@@ -1,0 +1,5 @@
+Malmkrosshammare
+Handverktyg för krossning
+<&recipe>Malmkrosshammaren är ett handverktyg för tidig bearbetning av järn och guld.<br>
+<br>
+Använd den med råjärn, råguld, järnmalm eller guldmalm och deras djupskiffervarianter för Immersive Engineering-stoft. Hammaren tappar hållbarhet, återgår till rutan tills den går sönder, slits vid gruvdrift och knuffar tillbaka mål.

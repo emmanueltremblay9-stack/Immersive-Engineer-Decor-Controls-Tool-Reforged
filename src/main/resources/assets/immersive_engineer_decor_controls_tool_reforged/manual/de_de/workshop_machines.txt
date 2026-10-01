@@ -1,0 +1,107 @@
+Werkstattmaschinen
+Maschinen sowie Werkstattein- und -ausgänge
+Werkstattmaschinen ermöglichen kompakte Herstellung, Gegenstandstransport, Schmelzen, Entsorgung, Sammlung und Hilfsarbeiten auf der Fläche eines einzigen Blocks.<br>
+<br>
+Die folgenden Seiten zeigen für jede Maschine Rezept, Abbildung, Hintergrund und praktische Verwendungshinweise.
+<np>
+Stahltisch
+Werkstatteinrichtung
+<&steel_table>Dieser Block ist eine praktische Werkstatteinrichtung für Arbeitsräume und Wartungsecken.<br>
+<br>
+Verwendung: Stelle ihn neben Werkbänke, Kisten und kompakte Maschinen.<br>
+<np>
+Tisch aus imprägniertem Holz
+Werkstatteinrichtung
+<&treated_wood_table>Dieser Block ist eine praktische Werkstatteinrichtung für Arbeitsräume und Wartungsecken.<br>
+<br>
+Verwendung: Stelle ihn neben Werkbänke, Kisten und kompakte Maschinen.<br>
+<np>
+Hocker aus imprägniertem Holz
+Werkstatteinrichtung
+<&treated_wood_stool>Dieser Block ist eine praktische Werkstatteinrichtung für Arbeitsräume und Wartungsecken.<br>
+<br>
+Verwendung: Stelle ihn neben Werkbänke, Kisten und kompakte Maschinen.<br>
+<np>
+Metallwerkbank
+Arbeitsplatz für Platten
+<&metal_crafting_table>Die Metallwerkbank ist ein verstärkter Werkstattarbeitsplatz mit Hammerfach, 3x3-Handwerksfeld und deutlich erkennbarem Ausgabefach.<br>
+<br>
+Verwendung: Nutze das Feld für normales Handwerk. Für IE-Platten setzt du einen Hammer des Ingenieurs ins Werkzeugfach und das Plattenmaterial ins Handwerksfeld, bevor du das Ergebnis entnimmst. Stahldekorationen verwenden Stahlplatten für Pfosten, Laufstege, Fenster, Türen, Geländer und andere Stahlteile.<br>
+<np>
+Fabrik-Trichter
+Hilfsgerät für die Werkstatt
+<&factory_hopper>Dieser Block bewegt Gegenstandsstapel durch ein kompaktes Industriegehäuse.<br>
+<br>
+Verwendung: Richte ihn auf die Inventarstrecke aus und stelle dann Reichweite, Stapelmenge, Zeitverhalten und Redstone-Modus in der Oberfläche ein.<br>
+<np>
+Fabrik-Auswerfer
+Hilfsgerät für die Werkstatt
+<&factory_dropper>Dieser Block gibt gespeicherte Gegenstände aus einer ausgerichteten Seite aus.<br>
+<br>
+Verwendung: Richte die Vorderseite auf den Auswurfpunkt, fülle die internen Fächer und stelle Kraft, Winkel, Verzögerung, Filterlogik und Redstone-Modus in der Oberfläche ein.<br>
+<np>
+Fabrik-Blocksetzer
+Hilfsgerät für die Werkstatt
+<&factory_placer>Dieser Block platziert bei Aktivierung Blöcke aus seinem internen Vorrat.<br>
+<br>
+Verwendung: Richte die Arbeitsseite auf den Zielbereich und fülle platzierbare Stapel ein.<br>
+<np>
+Blockbrecher
+Hilfsgerät für die Werkstatt
+<&small_block_breaker>Der kleine Blockbrecher ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Richte die Arbeitsseite auf den abzubauenden Block.<br>
+<np>
+Müllverbrennungsanlage
+Kompakte Verarbeitungseinheit
+<&small_waste_incinerator>Die Müllverbrennungsanlage vernichtet unerwünschte Gegenstände auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Führe ihrer Warteschlange ausschließlich unerwünschte Gegenstände zu.<br>
+<np>
+Laborofen
+Kompakte Verarbeitungseinheit
+<&small_lab_furnace>Der Laborofen erledigt Schmelzarbeiten mit Festbrennstoff auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Nutze Festbrennstoff für kleinere Schmelzchargen.<br>
+<np>
+Elektroofen
+Kompakte Verarbeitungseinheit
+<&small_electrical_furnace>Der Elektroofen erledigt FE-betriebene Schmelzarbeiten auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Führe FE-Energie und geeignetes Schmelzgut zu.<br>
+<np>
+Mineralschmelzer
+Kompakte Verarbeitungseinheit
+<&small_mineral_smelter>Der Mineralschmelzer verarbeitet Mineralien bei hoher Temperatur auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Führe Mineralblöcke und Energie für Schmelzarbeiten bei hoher Temperatur zu.<br>
+<np>
+Wassergefrierer
+Kompakte Verarbeitungseinheit
+<&small_freezer>Der Wassergefrierer erledigt kompakte Kühlarbeiten in energieversorgten Flüssigkeitsanlagen.<br>
+<br>
+Verwendung: Führe Wasser und Energie für die stufenweise Eisherstellung zu.<br>
+<np>
+Passive Flüssigkeitssammlung
+Bauteil für Flüssigkeitsleitungen
+<&passive_fluid_accumulator>Der passive Flüssigkeitssammler ist ein kompaktes Leitungsteil für kleine Tanks, Rohrstrecken, Sammelstellen und Redstone-gesteuerten Flüssigkeitsfluss.<br>
+<br>
+Verwendung: Platziere ihn an geeigneten Wasserquellen und lasse Platz für die Flüssigkeitsentnahme.<br>
+<np>
+Solarpanel
+Hilfsgerät für die Werkstatt
+<&small_solar_panel>Das kleine Solarpanel ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Sorge für freien Himmel und schließe Geräte mit geringem Energiebedarf an.<br>
+<np>
+Melkmaschine
+Hilfsgerät für die Werkstatt
+<&small_milking_machine>Die kleine Melkmaschine ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Platziere sie in Kuhnähe und sorge für die Entnahme von Milchbehältern oder Flüssigkeit.<br>
+<np>
+Baumfäller
+Hilfsgerät für die Werkstatt
+<&small_tree_cutter>Der kleine Baumfäller ist ein Werkstatthilfsblock für Herstellung, Lagerung, Platzierung, Abbau, Sammlung oder kompakte Automation.<br>
+<br>
+Verwendung: Richte ihn auf ausgewachsene Bäume und sammle die Beute separat ein.<br>

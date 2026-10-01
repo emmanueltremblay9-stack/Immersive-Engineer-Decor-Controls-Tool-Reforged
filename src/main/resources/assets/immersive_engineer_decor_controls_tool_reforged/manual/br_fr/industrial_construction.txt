@@ -1,0 +1,108 @@
+Sevel greantel
+Mogerioù ha ribloù uzin
+Dafar sevel hollek a vod dorioù, prenestroù, gouloù, panelloù diwall, ribloù ha tammoù framm na glotont ket gant ur rann resisoc'h.<br>
+<br>
+Implijit ar pajennoù-mañ evit salioù uzin, trepasoù trezalc'h, merkoù dañjer ha labour munut greantel talvoudus.
+<np>
+Gouloù klogor houarn
+Gouloù labour bihan
+<&iron_bulb_light>Ar bloc'h-mañ a ro gouloù greantel bihan evit trepasoù, hentoù-gwenodennoù ha takadoù labour.<br>
+<br>
+Implij: Stagit anezhañ ouzh leinoù, mogerioù pe ribloù el lec'h ma'z eus ezhomm eus gouloù labour sklaer.<br>
+<np>
+Gouloù ribl lein
+Gouloù labour bihan
+<&iron_ceiling_edge_light>Ar bloc'h-mañ a ro gouloù greantel bihan evit trepasoù, hentoù-gwenodennoù ha takadoù labour.<br>
+<br>
+Implij: Stagit anezhañ ouzh leinoù, mogerioù pe ribloù el lec'h ma'z eus ezhomm eus gouloù labour sklaer.<br>
+<np>
+Gouloù ribl leur enframmet
+Gouloù labour bihan
+<&iron_floor_edge_light>Ar bloc'h-mañ a ro gouloù greantel bihan evit trepasoù, hentoù-gwenodennoù ha takadoù labour.<br>
+<br>
+Implij: Stagit anezhañ ouzh leinoù, mogerioù pe ribloù el lec'h ma'z eus ezhomm eus gouloù labour sklaer.<br>
+<np>
+Gouloù enframmet
+Gouloù labour bihan
+<&iron_inset_light>Ar bloc'h-mañ a ro gouloù greantel bihan evit trepasoù, hentoù-gwenodennoù ha takadoù labour.<br>
+<br>
+Implij: Stagit anezhañ ouzh leinoù, mogerioù pe ribloù el lec'h ma'z eus ezhomm eus gouloù labour sklaer.<br>
+<np>
+Panell «Diwallit
+Merker dañjer
+<&sign_caution>Ar banell «Diwallit» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell dañjer
+Merker dañjer
+<&sign_danger>Ar banell «Diwallit, dañjerus-tre eo aze» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell kinklañ
+Merker dañjer
+<&sign_decor>Ar blakenn banell (Engineer's decor) a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell difenn
+Merker dañjer
+<&sign_defense>Ar banell «Diwallit, sistem difenn dirazoc'h» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell er-maez
+Merker dañjer
+<&sign_exit>Ar banell-mañ a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell «Riskl tan
+Merker dañjer
+<&sign_firehazard>Ar banell «Riskl tan» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell «Diwallit ouzh ar rev
+Merker dañjer
+<&sign_frost>Ar banell «Diwallit ouzh ar rev» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell gorread tomm
+Merker dañjer
+<&sign_hotsurface>Ar banell «Diwallit, gorread tomm» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell orjal tredan
+Merker dañjer
+<&sign_hotwire>Ar banell «Diwallit, orjal tredan» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell «Riskl laser
+Merker dañjer
+<&sign_laser>Ar banell «Riskl laser» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell dañjer hud
+Merker dañjer
+<&sign_magichazard>Ar banell «Diwallit, dañjer hud» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell takad gwarellek
+Merker dañjer
+<&sign_magneticfield>Ar banell «Diwallit, takad gwarellek kreñv» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>
+Panell «Riskl skinoberiant
+Merker dañjer
+<&sign_radioactive>Ar banell «Riskl skinoberiant» a verk dañjerioù, dorioù er-maez ha takadoù labour gant ur merk gwelet evit surentez an uzin.<br>
+<br>
+Implij: Lakait anezhi e-kichen dañjerioù, dorioù er-maez, mekanikoù ha takadoù difennet.<br>
+<np>

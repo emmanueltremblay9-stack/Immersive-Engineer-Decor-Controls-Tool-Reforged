@@ -1,0 +1,7 @@
+Traqueur
+Repère de position mémorisée
+<&recipe>Le traqueur enregistre directement la position d’un bloc dans l’objet.<br>
+<br>
+Utilisation : cliquez sur un bloc pour sauvegarder sa dimension et ses coordonnées. L’infobulle affiche la position. Utilisez le traqueur en vous accroupissant pour effacer la cible.<br>
+<br>
+Utilisez-le pour repérer des machines, bifurcations de tunnels, commandes distantes ou chantiers inachevés avant de revenir avec des outils et des matériaux.

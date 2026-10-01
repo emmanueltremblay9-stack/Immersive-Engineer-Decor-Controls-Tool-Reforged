@@ -1,0 +1,5 @@
+Stalen loopbrugtrap
+Onderdeel voor onderhoudstoegang
+<&recipe>Dit blok maakt onderhoudsroutes rond machines duidelijk herkenbaar.<br>
+<br>
+Gebruik: plaats het als onderhoudstoegang rond machines, op verdiepingen en in onderhoudsschachten.<br>

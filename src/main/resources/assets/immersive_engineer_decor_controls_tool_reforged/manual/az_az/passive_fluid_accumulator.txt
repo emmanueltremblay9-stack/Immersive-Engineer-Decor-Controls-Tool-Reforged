@@ -1,0 +1,5 @@
+Passiv maye
+Maye xətti avadanlığı
+<&recipe>Passiv maye toplayıcısı kiçik çənlər, boru xətləri, toplama nöqtələri və qızıl daşla idarə olunan axın üçün yığcam maye xətti hissəsidir.<br>
+<br>
+İstifadə: Uyğun su mənbələrinə bitişik yerləşdirin və maye çıxarılması üçün yer saxlayın.<br>

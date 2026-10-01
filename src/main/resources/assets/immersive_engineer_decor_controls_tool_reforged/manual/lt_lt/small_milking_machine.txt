@@ -1,0 +1,5 @@
+Melžimo mašina
+Dirbtuvių pagalbininkas
+<&recipe>Maža melžimo mašina yra dirbtuvių pagalbinis blokas gaminimui, sandėliavimui, statymui, laužymui, surinkimui arba kompaktiškam automatizavimui.<br>
+<br>
+Naudojimas: statyk prie karvių ir pasirūpink pieno indų arba skysčio išvedimu.<br>

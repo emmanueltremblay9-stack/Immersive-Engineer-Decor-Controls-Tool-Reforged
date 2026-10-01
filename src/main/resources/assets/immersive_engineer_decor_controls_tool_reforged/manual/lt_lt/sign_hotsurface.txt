@@ -1,0 +1,5 @@
+Karšto paviršiaus ženklas
+Pavojaus žymeklis
+<&recipe>Ženklas „Karštas paviršius“ žymi pavojus, išėjimus ir darbo zonas aiškiu fabriko saugos simboliu.<br>
+<br>
+Naudojimas: dėk prie pavojų, išėjimų, mašinų ir riboto patekimo zonų.<br>

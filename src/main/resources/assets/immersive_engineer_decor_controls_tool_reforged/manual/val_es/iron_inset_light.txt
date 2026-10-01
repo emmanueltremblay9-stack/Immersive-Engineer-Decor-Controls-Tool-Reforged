@@ -1,0 +1,5 @@
+Llum encastada
+Llum de treball compacta
+<&recipe>Este bloc proporciona il·luminació industrial compacta per a corredors, passarel·les i llocs de treball.<br>
+<br>
+Ús: munta’l en sostres, parets o vores on la sala necessite una il·luminació clara de treball.<br>

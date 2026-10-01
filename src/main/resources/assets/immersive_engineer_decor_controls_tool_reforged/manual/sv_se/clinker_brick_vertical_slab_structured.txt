@@ -1,0 +1,5 @@
+Lodrät klinkerplatta
+Sotmörkt tegelmurverk
+<&recipe>Den lodräta klinkerplattan med struktur ger sotmörkt tegelmurverk åt ugnshallar, skorstenssocklar och serviceväggar.<br>
+<br>
+Användning: Använd det som vägg, dekor eller hölje runt värmezoner vid ugnar och pannor.<br>

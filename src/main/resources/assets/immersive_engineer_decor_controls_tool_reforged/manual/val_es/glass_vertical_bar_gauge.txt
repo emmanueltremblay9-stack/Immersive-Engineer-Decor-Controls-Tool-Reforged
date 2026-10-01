@@ -1,0 +1,7 @@
+Mesurador de barra de vidre
+Mesurador de senyal
+<&recipe>Un mesurador compacte de sala de control mostra la intensitat de redstone en una lectura clara de panell.<br>
+<br>
+Ús: munta’l on calga comprovar d’un colp d’ull la potència de redstone adjacent.<br>
+<br>
+Notes: llig la intensitat de redstone pròxima, de 0 a 15.

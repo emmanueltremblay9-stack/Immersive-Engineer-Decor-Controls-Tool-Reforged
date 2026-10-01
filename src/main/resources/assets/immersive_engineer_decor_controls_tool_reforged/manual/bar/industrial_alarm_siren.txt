@@ -1,0 +1,7 @@
+Alarmsirena
+Signalanzoag
+<&recipe>Die Alarmsirena is a Redstone-Anzoag, de auf a Blockfläch montiert wird. Ihr Stromzustand folgt am Signal vom Block, an dem s' hängt.<br>
+<br>
+Benutzung: Auf a feste Fläch setzn und mit Strom versorgn, um Türn, Maschina, Alarm oda Paneele zu überwacha.<br>
+<br>
+Hinweis: Solang as Signal aktiv is, aktualisiert si de Sirena jede Sekund.

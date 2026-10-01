@@ -1,0 +1,7 @@
+Sensor de chuva
+Deteção de sinais
+<&recipe>Um sensor meteorológico transforma a chuva no local em redstone.<br>
+<br>
+Uso: Instala-o onde o bloco por cima possa receber chuva.<br>
+<br>
+Observações: Verifica a chuva acima do sensor.

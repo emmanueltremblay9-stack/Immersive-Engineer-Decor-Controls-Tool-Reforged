@@ -1,0 +1,5 @@
+Mesa de madeira tratada
+Móvel de oficina
+<&recipe>Este bloco é um móvel prático para salas de trabalho e cantos de manutenção.<br>
+<br>
+Uso: Coloque ao lado de bancadas, caixotes e máquinas compactas.<br>

@@ -1,0 +1,5 @@
+Snow guard fer the roof
+Weather-worn roof fitting
+<&recipe>Snow guard fer a dark shingle roof shapes a dark, workmanlike roofline fer workshops and factory sheds.<br>
+<br>
+Orders: Combine the pieces to shape roofs that look the part.<br>

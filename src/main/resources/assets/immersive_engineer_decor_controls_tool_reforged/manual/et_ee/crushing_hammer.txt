@@ -1,0 +1,7 @@
+Maagipurustusvasar
+Käsitööriist
+<&recipe>Käsitööriist varaseks raua- ja kullatööks.<br>
+<br>
+Kasutus: Toorraud, toorkuld, rauamaak, süvakilt-rauamaak, kullamaak või süvakilt-kullamaak annab Immersive Engineeringu raua- või kullatolmu. Vasar kaotab vastupidavust ja naaseb ruudustikku, kuni puruneb.<br>
+<br>
+Kulub ka kaevandades ja tõukab lähivõitluses tagasi.

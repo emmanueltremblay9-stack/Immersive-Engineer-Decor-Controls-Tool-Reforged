@@ -1,0 +1,5 @@
+Sorpbrennsluofn
+Fyrirferðarlítil vinnslueining
+<&recipe>Sorpbrennsluofninn eyðir óæskilegum hlutum á litlu verkstæðisrými.<br>
+<br>
+Notkun: Settu aðeins óæskilega hluti í biðröðina.<br>

@@ -1,0 +1,7 @@
+Reënsensor
+Seinwaarneming
+<&recipe>’n Weersensor omskep reënval op sy plek in redstone.<br>
+<br>
+Gebruik: monteer dit waar die blok bo dit reën kan ontvang.<br>
+<br>
+Nota: gaan reën bo die sensor na.

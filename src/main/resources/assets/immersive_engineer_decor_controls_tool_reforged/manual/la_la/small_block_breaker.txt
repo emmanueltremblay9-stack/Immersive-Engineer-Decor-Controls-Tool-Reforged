@@ -1,0 +1,5 @@
+Fractor cuborum
+Auxilium pavimenti officinae
+<&recipe>Fractor cuborum parvus est cubus utilis officinae ad fabricationem, repositionem, positionem, fractionem, collectionem aut automationem compactam.<br>
+<br>
+Usus: faciem operantem ad cubum tollendum dirige.<br>

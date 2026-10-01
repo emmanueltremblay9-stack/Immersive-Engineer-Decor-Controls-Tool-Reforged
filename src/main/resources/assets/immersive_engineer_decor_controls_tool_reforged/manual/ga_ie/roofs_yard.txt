@@ -1,0 +1,101 @@
+Díonta agus Clós
+Feistis mhonarchan lasmuigh
+Cabhraíonn bloic dín, grean clóis agus páirteanna seanadhmaid thionsclaíoch le seideanna lasmuigh, clóis oibre, limistéir luchtaithe agus imill shíonchaite monarchan a chríochnú.<br>
+<br>
+Measc na píosaí seo le saoirseacht agus bealaí rochtana chun tógálacha tionsclaíocha lasmuigh a choinneáil soiléir ó chian.
+<np>
+Díon Slinníní Dorcha
+Feisteas dín síonchaite
+<&dark_shingle_roof>Cruthaíonn an bloc seo línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Garda Sneachta Dín
+Feisteas dín síonchaite
+<&dark_shingle_roof_metallized>Cruthaíonn an Garda Sneachta Dín Slinníní Dorcha línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Díon Slinníní Dorcha
+Feisteas dín síonchaite
+<&dark_shingle_roof_skylight>Cruthaíonn an Spéirléas Dín Slinníní Dorcha línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Stoc Simléir Dín
+Feisteas dín síonchaite
+<&dark_shingle_roof_chimneytrunk>Cruthaíonn an Stoc Simléir Dín Slinníní Dorcha línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Seoladán Sreinge Dín
+Feisteas dín síonchaite
+<&dark_shingle_roof_wireconduit>Cruthaíonn an Seoladán Sreinge Dín Slinníní Dorcha línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Díon Slinníní Dorcha
+Feisteas dín síonchaite
+<&dark_shingle_roof_chimney>Cruthaíonn an Simléar Dín Slinníní Dorcha línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Bloc Dín Slinníní Dorcha
+Feisteas dín síonchaite
+<&dark_shingle_roof_block>Cruthaíonn an bloc seo línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Leac Dín Slinníní Dorcha
+Feisteas dín síonchaite
+<&dark_shingle_roof_slab>Cruthaíonn an bloc seo línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Leac Dín Slinníní Dorcha
+Feisteas dín síonchaite
+<&dark_shingle_roof_slabslice>Cruthaíonn an Sraith Leice Dín Slinníní Dorcha línte dorcha praiticiúla dín do cheardlanna agus seideanna tionsclaíocha.<br>
+<br>
+Úsáid: úsáid na píosaí le chéile chun cruthanna inchreidte dín a dhéanamh.<br>
+<np>
+Ithir Ghreanta Dhlúth
+Clúdach talún láithreáin oibre
+<&dense_grit_dirt_block>Tugann an bloc seo dromchla comhbhrúite satailte do limistéir oibre lasmuigh.<br>
+<br>
+Úsáid: leag é timpeall ar dhoirse luchtaithe, umair lasmuigh agus clóis innealra.<br>
+<np>
+Gaineamh Greanta Dlúth
+Clúdach talún láithreáin oibre
+<&dense_grit_sand_block>Tugann an bloc seo dromchla comhbhrúite satailte do limistéir oibre lasmuigh.<br>
+<br>
+Úsáid: leag é timpeall ar dhoirse luchtaithe, umair lasmuigh agus clóis innealra.<br>
+<np>
+Seanchláir Adhmaid
+Seanadhmad ceardlainne
+<&old_industrial_wood_planks>Cuireann na Seanchláir Adhmaid Thionsclaíocha seanadhmad ceardlainne ar fáil d'urláir, céimeanna, doirse agus imill mhaisiúla theo istigh.<br>
+<br>
+Úsáid: úsáid é do sheanurláir cheardlainne, staighrí, doirse agus imill mhaisiúla.<br>
+<np>
+Seanleac Adhmaid Thionsclaíoch
+Seanadhmad ceardlainne
+<&old_industrial_wood_slab>Cuireann an bloc seo seanadhmad ceardlainne ar fáil d'urláir, céimeanna, doirse agus imill mhaisiúla theo istigh.<br>
+<br>
+Úsáid: úsáid é do sheanurláir cheardlainne, staighrí, doirse agus imill mhaisiúla.<br>
+<np>
+Seanstaighre Adhmaid
+Seanadhmad ceardlainne
+<&old_industrial_wood_stairs>Cuireann an Seanstaighre Adhmaid Tionsclaíoch seanadhmad ceardlainne ar fáil d'urláir, céimeanna, doirse agus imill mhaisiúla theo istigh.<br>
+<br>
+Úsáid: úsáid é do sheanurláir cheardlainne, staighrí, doirse agus imill mhaisiúla.<br>
+<np>
+Sraith Seanleice Adhmaid
+Seanadhmad ceardlainne
+<&old_industrial_wood_slabslice>Cuireann an Sraith Seanleice Adhmaid Thionsclaíoch seanadhmad ceardlainne ar fáil d'urláir, céimeanna, doirse agus imill mhaisiúla theo istigh.<br>
+<br>
+Úsáid: úsáid é do sheanurláir cheardlainne, staighrí, doirse agus imill mhaisiúla.<br>
+<np>
+Seandoras Adhmaid Tionsclaíoch
+Seanadhmad ceardlainne
+<&old_industrial_wood_door>Cuireann an bloc seo seanadhmad ceardlainne ar fáil d'urláir, céimeanna, doirse agus imill mhaisiúla theo istigh.<br>
+<br>
+Úsáid: úsáid é do sheanurláir cheardlainne, staighrí, doirse agus imill mhaisiúla.<br>

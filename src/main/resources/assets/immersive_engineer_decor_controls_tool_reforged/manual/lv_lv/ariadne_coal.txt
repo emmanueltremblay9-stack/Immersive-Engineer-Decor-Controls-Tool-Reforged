@@ -1,0 +1,7 @@
+Ariadnes ogle
+Raktuvju ceļa marķieris
+<&recipe>Ariadnes ogle ātri marķē ceļus šahtās, sazarotās raktuvēs un pagaidu pazemes darba vietās.<br>
+<br>
+Lietošana: izmanto uz stabilas bloka virsmas, lai uz tās novietotu melnu bultas marķieri. Marķieris nolasa klikšķa vietu un atbalsta astoņus virzienus, tostarp diagonāles. Tas palīdz atzīmēt pagriezienus, izejas, strupceļus un piegādes ceļus, nenēsājot atsevišķas norāžu zīmes.<br>
+<br>
+Ariadnes ogle ir atkārtoti lietojams marķēšanas rīks ar 100 lietošanas reizēm. Katra veiksmīga marķiera novietošana patērē vienu izturības punktu, bet nepiemērotas virsmas tiek noraidītas, rīku nenolietojot.

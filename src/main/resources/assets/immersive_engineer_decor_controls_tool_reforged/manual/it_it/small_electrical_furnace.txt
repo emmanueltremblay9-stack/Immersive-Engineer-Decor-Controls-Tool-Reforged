@@ -1,0 +1,5 @@
+Fornace elettrica
+Unità di lavorazione compatta
+<&recipe>La fornace elettrica esegue lavorazioni di cottura alimentate a FE in uno spazio d’officina ridotto.<br>
+<br>
+Uso: fornisci FE e ingredienti validi per la cottura.<br>

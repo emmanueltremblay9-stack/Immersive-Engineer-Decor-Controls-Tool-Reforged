@@ -1,0 +1,7 @@
+Vezany prijemnik v obalu
+Vezano upravljanje
+<&recipe>Vezany prijemnik v obalu davaje oddalenym panelam krěpky redstounovy cělj.<br>
+<br>
+Upotrěbjenje: Klikni go Ender-perloju dlja tvorjenja vezanoj perly. Klikni prěmo na prijemnik pravoj knopkoj dlja ručnogo prěključanja.<br>
+<br>
+Primětky: Vezana perla prěključaje sej prijemnik pri upotrěbjenju kraduči se.

@@ -1,0 +1,5 @@
+Fluwidu passiv
+Tagħmir tal-linji tal-fluwidu
+<&recipe>L-akkumulatur passiv tal-fluwidu hu parti kompatta tal-linja tal-fluwidu għal tankijiet żgħar, pajpijiet, punti tal-ġbir u fluss ikkontrollat bir-Redstone.<br>
+<br>
+Użu: qiegħdu ma' sorsi adattati tal-ilma u ħalli spazju biex jitneħħa l-fluwidu.<br>

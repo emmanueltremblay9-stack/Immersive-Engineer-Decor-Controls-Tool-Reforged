@@ -1,0 +1,5 @@
+Escadas de clínquer manchado
+Tijolos escurecidos pela fuligem
+<&recipe>As escadas de tijolos de clínquer manchados acrescentam tijolos escurecidos pela fuligem a salas de fornos, bases de chaminés e paredes de serviço.<br>
+<br>
+Uso: Usa em paredes, remates ou revestimentos de zonas quentes ao redor de fornos e caldeiras.<br>

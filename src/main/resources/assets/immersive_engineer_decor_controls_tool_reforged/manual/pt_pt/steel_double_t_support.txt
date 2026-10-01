@@ -1,0 +1,5 @@
+Suporte de aço em duplo T
+Peça de estrutura
+<&recipe>Este bloco fornece estrutura visível para pavilhões de máquinas e armações de acesso.<br>
+<br>
+Uso: Roda a peça e coloca-a como reforço visível de vigas, postes e rebordos de plataformas.<br>

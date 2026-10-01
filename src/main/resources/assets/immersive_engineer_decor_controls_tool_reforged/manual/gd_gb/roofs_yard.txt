@@ -1,0 +1,101 @@
+Mullaichean is clòs
+Uidheam factaraidh a-muigh
+Cuidichidh blocaichean mullaich, grinneal-cùirte agus seann phàirtean fiodha gnìomhachais le seadaichean a-muigh, cùirtean-obrach, raointean luchdaidh agus oirean factaraidh air an caitheamh leis an aimsir a chrìochnachadh.<br>
+<br>
+Measgaich na pàirtean seo le clachaireachd agus slighean-ruigsinn gus am bi togalaichean gnìomhachais a-muigh furasta aithneachadh o astar.
+<np>
+Mullach dorcha de leacan beaga
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof>Nì am bloca seo loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Dìon-sneachda mullaich
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_metallized>Nì Dìon-sneachda mullaich dhorcha de leacan beaga loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Mullach dorcha de leacan beaga
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_skylight>Nì Uinneag mullaich dhorcha de leacan beaga loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Bonn simileir mullaich
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_chimneytrunk>Nì Bonn simileir mullaich dhorcha de leacan beaga loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Seòl-uèir mullaich
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_wireconduit>Nì Seòl-uèir mullaich dhorcha de leacan beaga loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Mullach dorcha de leacan beaga
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_chimney>Nì an Similear mullaich dhorcha de leacan beaga loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Bloca mullaich dhorcha de leacan beaga
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_block>Nì am bloca seo loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Leac mullaich dhorcha de leacan beaga
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_slab>Nì am bloca seo loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Leac mullaich dhorcha de leacan beaga
+Uidheam mullaich air a chaitheamh leis an aimsir
+<&dark_shingle_roof_slabslice>Nì Sliseag leice mullaich dhorcha de leacan beaga loidhnichean mullaich dorcha practaigeach airson bùthan-obrach agus seadaichean gnìomhachais.<br>
+<br>
+Cleachdadh: cleachd na pìosan còmhla gus cumaidhean mullaich creidsinneach a dhèanamh.<br>
+<np>
+Ùir ghreabhail dhlùth
+Còmhdach talmhainn làraich-obrach
+<&dense_grit_dirt_block>Bheir am bloca seo uachdar dùmhlaichte, air a stampadh, do dh'àiteachan-obrach a-muigh.<br>
+<br>
+Cleachdadh: cuir e timcheall air dorsan luchdachaidh, tancaichean a-muigh agus clòsan innealan.<br>
+<np>
+Gainmheach ghreabhail dhlùth
+Còmhdach talmhainn làraich-obrach
+<&dense_grit_sand_block>Bheir am bloca seo uachdar dùmhlaichte, air a stampadh, do dh'àiteachan-obrach a-muigh.<br>
+<br>
+Cleachdadh: cuir e timcheall air dorsan luchdachaidh, tancaichean a-muigh agus clòsan innealan.<br>
+<np>
+Seann dèilean fiodha
+Seann fhiodh bùth-obrach
+<&old_industrial_wood_planks>Cuiridh na Seann dèilean fiodha gnìomhachais seann fhiodh bùth-obrach ri làir, ceumannan, dorsan agus oir-sgeadachadh blàth a-staigh.<br>
+<br>
+Cleachdadh: cleachd e airson seann làir bùth-obrach, staidhrichean, dorsan agus oir-sgeadachadh.<br>
+<np>
+Seann leac fiodha gnìomhachais
+Seann fhiodh bùth-obrach
+<&old_industrial_wood_slab>Cuiridh am bloca seo seann fhiodh bùth-obrach ri làir, ceumannan, dorsan agus oir-sgeadachadh blàth a-staigh.<br>
+<br>
+Cleachdadh: cleachd e airson seann làir bùth-obrach, staidhrichean, dorsan agus oir-sgeadachadh.<br>
+<np>
+Seann staidhre fiodha
+Seann fhiodh bùth-obrach
+<&old_industrial_wood_stairs>Cuiridh an Seann staidhre fiodha gnìomhachais seann fhiodh bùth-obrach ri làir, ceumannan, dorsan agus oir-sgeadachadh blàth a-staigh.<br>
+<br>
+Cleachdadh: cleachd e airson seann làir bùth-obrach, staidhrichean, dorsan agus oir-sgeadachadh.<br>
+<np>
+Sliseag seann leice fiodha
+Seann fhiodh bùth-obrach
+<&old_industrial_wood_slabslice>Cuiridh an Sliseag seann leice fiodha gnìomhachais seann fhiodh bùth-obrach ri làir, ceumannan, dorsan agus oir-sgeadachadh blàth a-staigh.<br>
+<br>
+Cleachdadh: cleachd e airson seann làir bùth-obrach, staidhrichean, dorsan agus oir-sgeadachadh.<br>
+<np>
+Seann doras fiodha gnìomhachais
+Seann fhiodh bùth-obrach
+<&old_industrial_wood_door>Cuiridh am bloca seo seann fhiodh bùth-obrach ri làir, ceumannan, dorsan agus oir-sgeadachadh blàth a-staigh.<br>
+<br>
+Cleachdadh: cleachd e airson seann làir bùth-obrach, staidhrichean, dorsan agus oir-sgeadachadh.<br>

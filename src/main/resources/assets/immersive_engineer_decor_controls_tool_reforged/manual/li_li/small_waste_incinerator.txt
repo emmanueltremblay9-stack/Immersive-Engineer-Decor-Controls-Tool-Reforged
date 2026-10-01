@@ -1,0 +1,5 @@
+Aafvalverbrander
+Kleine verwerkingseenheid
+<&recipe>De aafvalverbrander vernietigt óngewilde veurwèrpe op weinig werkplaatsruumte.<br>
+<br>
+Gebroek: voer allein óngewilde veurwèrpe aan zien wachtriej toe.<br>

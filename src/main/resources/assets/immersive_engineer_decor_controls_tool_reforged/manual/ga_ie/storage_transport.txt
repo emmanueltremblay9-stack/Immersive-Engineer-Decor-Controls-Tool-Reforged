@@ -1,0 +1,41 @@
+Stóráil agus Iompar
+Feistis fhardail agus sreafa
+Láimhseálann feistis stórála agus iompair cliathbhoscaí, bairillí, tonnadóirí agus comhlaí chun bealaí dlútha a leagan amach sa mhonarcha.<br>
+<br>
+Úsáid na leathanaigh seo agus seomraí stórais, píblínte, umair sheirbhíse agus línte rialaithe sreabháin á leagan amach agat.
+<np>
+Cliathbhosca Lipéadaithe
+Lipéad stoic is féidir a chur in eagar
+<&labeled_crate>Tá an cliathbhosca lipéadaithe seo déanta chun earraí i seomra stórais a shórtáil go soiléir. Is féidir a phláta tosaigh a chur in eagar cosúil le comhartha beag ceardlainne.<br>
+<br>
+Úsáid: deaschliceáil ar an bpláta lipéid chun lipéad an chliathbhosca a chur in eagar. Deaschliceáil ar an gcuid eile den chliathbhosca chun stóras d'fheistis, páirteanna agus soláthairtí cothabhála a oscailt.<br>
+<np>
+Bairille Leachta
+Crua-earraí píblíne sreabháin
+<&fluid_barrel>Is páirt dhlúth píblíne sreabháin é an feisteas seo d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: cuir é in áit ar féidir le píopaí nó buicéid aghaidh an umair a bhaint amach.<br>
+<np>
+Tonnadóir Leachta
+Crua-earraí píblíne sreabháin
+<&small_fluid_funnel>Is páirt dhlúth píblíne sreabháin é an Tonnadóir Beag Bailithe Leachta d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: cuir faoin bpointe bailithe sreabháin é agus treoraigh a inneachar stóráilte isteach in umair nó i bpíblínte níos ísle.<br>
+<np>
+Comhla Aontreo Píopa Leachta
+Crua-earraí píblíne sreabháin
+<&straight_pipe_valve>Is páirt dhlúth píblíne sreabháin í an Chomhla Aontreo Píopa Leachta d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: ailínigh an chomhla leis an treo sreafa atá beartaithe.<br>
+<np>
+Comhla Leachta faoi Rialú Redstone
+Crua-earraí píblíne sreabháin
+<&straight_pipe_valve_redstone>Is páirt dhlúth píblíne sreabháin í an Chomhla Leachta faoi Rialú Redstone d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: ailínigh an chomhla leis an treo sreafa atá beartaithe.<br>
+<np>
+Comhla Leachta Analógach
+Crua-earraí píblíne sreabháin
+<&straight_pipe_valve_redstone_analog>Is páirt dhlúth píblíne sreabháin í an Chomhla Leachta Analógach d'umair bheaga, píblínte, pointí bailithe agus sreabhadh rialaithe le Redstone.<br>
+<br>
+Úsáid: ailínigh an chomhla leis an treo sreafa atá beartaithe.<br>

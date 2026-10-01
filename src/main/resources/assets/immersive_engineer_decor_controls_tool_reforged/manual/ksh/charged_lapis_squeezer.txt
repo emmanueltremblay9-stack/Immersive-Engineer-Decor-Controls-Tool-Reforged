@@ -1,0 +1,7 @@
+Jedankepräß
+Erfahrungsverdichter
+<&recipe>De Jedankepräß mäht us Lapislazoli un Erfahrung jelade Lapislazoli.<br>
+<br>
+Bruuch: Nimm Lapislazoli un mindestens ein Erfahrungsstuf met un bruch dann et Werkzüch. E erfoljreich Pröße verbrucht ein Stuf un eine Lapislazoli, deit däm Benutzer wieh, nutz de Präß av un mäht eine jelade Lapislazoli.<br>
+<br>
+Se jeiht nit, wann Lapislazoli udder XP fählt udder dä Benutzer ze noh am Dud es.

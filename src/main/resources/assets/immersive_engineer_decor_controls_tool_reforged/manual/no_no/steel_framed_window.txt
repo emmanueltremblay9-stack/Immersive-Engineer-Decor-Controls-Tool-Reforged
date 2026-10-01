@@ -1,0 +1,5 @@
+Vindu med stålramme
+Beskyttet sikt
+<&recipe>Denne blokken holder sikten åpen og passer samtidig til forsterkede fabrikkonstruksjoner.<br>
+<br>
+Bruk: plasser den der spillere skal se maskiner gjennom en beskyttende barriere.<br>

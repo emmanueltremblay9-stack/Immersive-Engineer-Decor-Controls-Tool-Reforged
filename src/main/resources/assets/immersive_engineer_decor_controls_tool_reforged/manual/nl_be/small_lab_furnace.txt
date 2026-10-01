@@ -1,0 +1,5 @@
+Laboratoriumoven
+Compacte verwerkingseenheid
+<&recipe>De laboratoriumoven voert compacte smeltklussen op vaste brandstof uit en neemt weinig werkplaatsruimte in.<br>
+<br>
+Gebruik: gebruik vaste brandstof om kleine partijen te smelten.<br>

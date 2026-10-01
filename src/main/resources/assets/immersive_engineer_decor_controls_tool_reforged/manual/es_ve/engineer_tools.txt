@@ -1,0 +1,99 @@
+Herramientas del ingeniero
+Equipo portátil de taller
+El conjunto Herramientas del ingeniero añade equipo de mano, marcadores de mina, consumibles de emergencia, comida de campo y pequeñas herramientas de procesamiento al mismo manual que documenta los bloques decorativos y de control.<br>
+<br>
+Estas herramientas están pensadas para trabajar lejos de un taller equipado: marcar rutas, llevar suministros, recuperarse de errores y realizar pequeños trabajos de procesamiento sobre el terreno.
+<np>
+Herramienta REDIA
+Utilidad recubierta de diamante
+<&redia_tool>La herramienta REDIA es una utilidad de campo duradera para trabajos rápidos en el suelo. Úsala sobre terreno apto para labrar tierra de cultivos.<br>
+<br>
+Úsala sobre una cara estable mientras llevas antorchas para colocar una antorcha de señalización del inventario sin desgastar REDIA. El trabajo del suelo, el esquilado, las acciones de hacha y la tala consumen durabilidad.
+<np>
+Martillo triturador de mineral
+Herramienta manual
+<&crushing_hammer>El Martillo triturador de mineral es una herramienta manual para las primeras tareas con hierro y oro.<br>
+<br>
+Uso: Combínalo con hierro en bruto, oro en bruto, mineral de hierro, mineral de hierro de pizarra profunda, mineral de oro o mineral de oro de pizarra profunda para producir polvo de hierro u oro de Immersive Engineering. Pierde durabilidad y vuelve a la cuadrícula hasta romperse.<br>
+<br>
+También se desgasta al minar y puede empujar objetivos en combate cercano.
+<np>
+Rastreador
+Marcador de posición guardada
+<&tracker>El Rastreador guarda una posición de bloque directamente en el objeto.<br>
+<br>
+Uso: Pulsa un bloque para guardar su dimensión y coordenadas. La descripción muestra la posición. Usa el Rastreador agachado para borrar el objetivo.<br>
+<br>
+Úsalo para marcar máquinas, ramales de túneles, controles remotos u obras sin terminar antes de volver con herramientas y materiales.
+<np>
+Carbón de Ariadna
+Marcador de rutas de mina
+<&ariadne_coal>El carbón de Ariadna coloca rápidamente flechas negras de ruta en superficies estables de la mina. Úsalo en una cara sólida para señalar el siguiente giro, salida o bifurcación; la marca admite ocho direcciones según el punto pulsado, incluidas las diagonales.<br>
+<br>
+El carbón de Ariadna es una herramienta reutilizable con 100 usos. Cada marca colocada consume un punto de durabilidad. Rechaza las caras no aptas en lugar de desgastar el objeto.
+<np>
+Paquete de estimulante automático
+Inyector de emergencia
+<&stimpack>El Paquete de estimulante automático es un objeto de recuperación para trabajos de mantenimiento peligrosos.<br>
+<br>
+Uso: Úsalo manualmente para curarte, obtener protección breve y un impulso de movimiento corto. En el inventario también puede activarse solo con poca salud y después entra en recarga.<br>
+<br>
+Ten uno listo antes de probar alturas, cableado expuesto o rutas mineras hostiles.
+<np>
+Saco de dormir
+Equipo de descanso portátil
+<&sleeping_bag>El Saco de dormir es un equipo resistente para trabajar lejos de una cama.<br>
+<br>
+Uso: Úsalo de noche en el Supramundo para descansar hasta la mañana. No fija ni mueve tu punto de reaparición.<br>
+<br>
+Rechaza el uso diurno, los alrededores inseguros con monstruos cercanos y las dimensiones no aptas. Cada descanso correcto lo desgasta.
+<np>
+Caja de materiales
+Caja de suministros
+<&material_box>La Caja de materiales transporta una gran reserva de un único material de construcción normal, sin modificar y apilable.<br>
+<br>
+Uso: Sostén la caja en la mano principal y la pila de material en la secundaria para cargarla. Con la secundaria vacía, retira una pila.<br>
+<br>
+Admite hasta 512 objetos, un solo tipo a la vez, y rechaza cajas anidadas, equipo no apilable y pilas modificadas, nombradas o con datos; la descripción muestra el contenido.
+<np>
+Cápsula de aire de buceo
+Reserva de aire de emergencia
+<&diving_capsule>La Cápsula de aire de buceo es un objeto de emergencia para trabajar bajo el agua.<br>
+<br>
+Uso: Úsala manualmente para restaurar aire. En el inventario también puede activarse sola cuando el aire casi se agota y después entra en recarga.<br>
+<br>
+Llévala a minas inundadas, tuberías sumergidas y reparaciones de salas de bombas.
+<np>
+Prensa de Barritas Muslee
+Prensa de comida
+<&musli_bar_press>La Prensa de Barritas Muslee convierte alimentos comunes en raciones compactas de campo.<br>
+<br>
+Uso: Lleva pan, una manzana y semillas de trigo, sandía, calabaza, remolacha o cáñamo industrial y usa la prensa. Una operación correcta consume una unidad de cada ingrediente, comprueba el espacio, crea cuatro barritas y daña la prensa.<br>
+<br>
+Si falta un ingrediente o no hay espacio, no se consume nada.
+<np>
+Barrita energética Muslee Melange
+Tentempié rápido de taller
+<&musli_bar>La Barrita energética Muslee Melange es un alimento compacto hecho con pan, semillas y fruta.<br>
+<br>
+Uso: Cómela como alimento de campo mientras colocas controles, tuberías, plataformas o largos tramos de sala de máquinas.
+<np>
+Exprimidor de mentes
+Condensador de experiencia
+<&charged_lapis_squeezer>El exprimidor de mentes convierte un lapislázuli y un nivel de experiencia de tu inventario en lapislázuli cargado.<br>
+<br>
+Cada conversión válida hiere, agota y ciega brevemente al usuario. No funciona si falta lapislázuli o experiencia, o si el usuario está demasiado cerca de morir.
+<np>
+Lapislázuli cargado
+Experiencia almacenada
+<&charged_lapis>El lapislázuli cargado almacena un nivel de experiencia. Consúmelo para recuperar ese nivel, eliminar los efectos activos y restaurar un poco de salud.<br>
+<br>
+Primero fabrica un exprimidor de mentes; el lapislázuli cargado se produce utilizando esa herramienta con lapislázuli y experiencia disponibles.
+<np>
+Granalla gruesa de hierro
+Material de herramientas de ingeniero utilizado por el conjunto de recetas reconstruido.
+<&iron_grit>Se puede fundir en lingotes de<br>hierro, pero no sirve para el<br>procesamiento avanzado de materiales.
+<np>
+Granalla gruesa de oro
+Material de herramientas de ingeniero utilizado por el conjunto de recetas reconstruido.
+<&gold_grit>Se puede fundir en lingotes de<br>oro, pero no sirve para el<br>procesamiento avanzado de materiales.

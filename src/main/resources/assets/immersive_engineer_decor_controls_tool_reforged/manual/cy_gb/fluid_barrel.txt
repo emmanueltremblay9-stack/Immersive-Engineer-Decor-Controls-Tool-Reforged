@@ -1,0 +1,5 @@
+Casgen Hylif
+Offer llinell hylif
+<&recipe>Rhan gryno o linell hylif yw'r elfen hon, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Gosodwch hi lle gall pibellau neu fwcedi gyrraedd wyneb y tanc.<br>

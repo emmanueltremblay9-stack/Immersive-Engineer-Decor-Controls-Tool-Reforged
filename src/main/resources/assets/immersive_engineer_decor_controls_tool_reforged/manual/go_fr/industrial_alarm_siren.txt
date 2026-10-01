@@ -1,0 +1,7 @@
+Sirène d'alarme
+Indicacion du signa
+<&recipe>La sirène d'alarme ét un indiquou redstone atachë a eune façe. Son étât en marche suit le signal du blloqe q'elle ét atachée dessu.<br>
+<br>
+Empllai : Attachéz-la a eune face solide e alimentéz-la pour guetter les portes, les machines, les alarmes ou les paniaos.<br>
+<br>
+Notes : La sirène se rafraîchit eune fois par seconde tant qe son signa attachë reste actif.

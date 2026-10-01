@@ -1,0 +1,7 @@
+Verre sensibl colorë
+Verre de signa
+<&recipe>Un blloqe de verre qi réagit a la redstone garde la vue ouverte tout en montrant l'état du signa.<br>
+<br>
+Empllai : Empllayéz-le den les fenétrs des salles de contrôle, les paniaos enlumés e le verre d'uzine gardë.<br>
+<br>
+Notes : Chanje d'état selon le pououair de redstone d'a couté.

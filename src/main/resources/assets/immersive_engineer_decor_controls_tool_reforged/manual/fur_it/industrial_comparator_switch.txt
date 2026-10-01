@@ -1,0 +1,7 @@
+Interutôr comparadôr
+Segnâl dal bloc di supuart
+<&recipe>Un interutôr sensôr compat al lei il bloc dulà che al è montât e al transforme la leture intune jessude sempliçe di panêl.<br>
+<br>
+Ûs: montilu su inventaris, serbatois o aparechis di redstone. Cuant che il bloc di supuart al da une jessude di comparadôr, di contignidôr o di redstone, l’interutôr al mande redstone a plene potence.<br>
+<br>
+Notis: doprilu par trasformâ nivei di deposit o fîi platâts in liniis claris di ativazion e disativazion.

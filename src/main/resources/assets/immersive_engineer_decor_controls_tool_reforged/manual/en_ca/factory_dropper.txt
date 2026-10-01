@@ -1,0 +1,5 @@
+Factory Dropper
+Shop-floor utility
+<&recipe>This block releases stored items from an aimed face.<br>
+<br>
+Usage: Aim the front toward the release point, load its internal slots, and tune force, angle, delay, filter logic, and redstone mode in its screen.<br>

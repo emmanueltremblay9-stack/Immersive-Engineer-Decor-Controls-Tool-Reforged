@@ -1,0 +1,3 @@
+Vụn sắt thô
+Vật liệu dụng cụ kỹ sư dùng trong bộ công thức được tái dựng.
+<&recipe>Có thể nung thành phôi sắt<br>nhưng không phù hợp với xử<br>lý vật liệu nâng cao.

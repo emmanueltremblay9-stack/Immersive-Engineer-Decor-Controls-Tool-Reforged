@@ -1,0 +1,5 @@
+Fluido-inbutua
+Fluido-lineako ekipamendua
+<&recipe>Fluido-inbutu txikia fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: jarri fluidoak biltzeko puntuaren azpian eta bideratu gordetako edukia deposituetara edo beheragoko hodietara.<br>

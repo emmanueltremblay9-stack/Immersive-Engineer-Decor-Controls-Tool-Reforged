@@ -1,0 +1,7 @@
+Stakleni stupčasti mjerač
+Mjerač signala
+<&recipe>Kompaktni mjerač za upravljačku sobu jasno prikazuje jačinu redstonea na panelu.<br>
+<br>
+Uporaba: postavi ga gdje se obližnji redstone signal treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: očitava obližnju jačinu redstonea od 0 do 15.

@@ -1,0 +1,7 @@
+Dispozitiv de urmărire
+Marcaj de poziție memorată
+<&recipe>Localizatorul stochează poziția unui bloc în obiect.<br>
+<br>
+Apasă pe un bloc pentru dimensiune și coordonate. Descrierea arată poziția. Folosește-l pe furiș pentru a șterge ținta.<br>
+<br>
+Marchează mașini, tuneluri, comenzi la distanță sau construcții neterminate.

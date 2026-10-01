@@ -1,0 +1,107 @@
+Dielenské stroje
+Stroje a dielenské vstupy/výstupy
+Dielenské stroje poskytujú výrobu, presúvanie predmetov, tavenie, likvidáciu, zbieranie a ďalšie pomocné práce na ploche jediného bloku.<br>
+<br>
+Otvor nasledujúce stránky a pozri si recept, obrázok, opis a praktické poznámky k používaniu každého stroja.
+<np>
+Oceľový stôl
+Dielenský nábytok
+<&steel_table>Tento blok je praktický dielenský nábytok do pracovných miestností a údržbových kútov.<br>
+<br>
+Použitie: Postav ho vedľa pracovných stolov, debien a kompaktných strojov.<br>
+<np>
+Stôl z ošetreného dreva
+Dielenský nábytok
+<&treated_wood_table>Tento blok je praktický dielenský nábytok do pracovných miestností a údržbových kútov.<br>
+<br>
+Použitie: Postav ho vedľa pracovných stolov, debien a kompaktných strojov.<br>
+<np>
+Stolička bez operadla z ošetreného dreva
+Dielenský nábytok
+<&treated_wood_stool>Tento blok je praktický dielenský nábytok do pracovných miestností a údržbových kútov.<br>
+<br>
+Použitie: Postav ho vedľa pracovných stolov, debien a kompaktných strojov.<br>
+<np>
+Stôl na spracovanie kovov
+Pracovisko na výrobu plátov
+<&metal_crafting_table>Stôl na spracovanie kovov je vystužené dielenské pracovisko s pozíciou na kladivo, výrobnou mriežkou 3x3 a prehľadnou výstupnou pozíciou.<br>
+<br>
+Použitie: Mriežku používaj na bežnú výrobu. Na výrobu plátov IE vlož inžinierske kladivo do nástrojovej pozície a materiál plátu do mriežky, potom odober výsledok. Oceľové dekorácie používajú oceľové pláty na stĺpy, lávky, okná, dvere, zábradlia a ďalšie oceľové diely.<br>
+<np>
+Továrenský násypník
+Vybavenie výrobnej haly
+<&factory_hopper>Tento blok presúva stohy predmetov v menšom priemyselnom obale.<br>
+<br>
+Použitie: Namier ho na líniu inventárov a v rozhraní nastav dosah, množstvo v stohu, časovanie a redstonový režim.<br>
+<np>
+Továrenský vyhadzovač
+Vybavenie výrobnej haly
+<&factory_dropper>Tento blok vypúšťa uložené predmety z namierenej strany.<br>
+<br>
+Použitie: Namier prednú stranu na miesto vypúšťania, naplň vnútorné pozície a v rozhraní nastav silu, uhol, prestávku, logiku filtrov a redstonový režim.<br>
+<np>
+Továrenský ukladač blokov
+Vybavenie výrobnej haly
+<&factory_placer>Tento blok po spustení ukladá bloky z vnútornej zásoby.<br>
+<br>
+Použitie: Namier pracovnú stranu na cieľový priestor a vlož stohy predmetov, ktoré možno položiť.<br>
+<np>
+Rozbíjač blokov
+Vybavenie výrobnej haly
+<&small_block_breaker>Malý rozbíjač blokov patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Namier pracovnú stranu na blok, ktorý chceš odstrániť.<br>
+<np>
+Spaľovňa odpadu
+Kompaktná spracovacia jednotka
+<&small_waste_incinerator>Spaľovňa odpadu ničí nepotrebné predmety a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Do jej čakacieho radu vkladaj iba nepotrebné predmety.<br>
+<np>
+Laboratórna pec
+Kompaktná spracovacia jednotka
+<&small_lab_furnace>Laboratórna pec vykonáva menšie taviace práce s tuhým palivom a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Na tavenie malých dávok použi tuhé palivo.<br>
+<np>
+Elektrická pec
+Kompaktná spracovacia jednotka
+<&small_electrical_furnace>Elektrická pec vykonáva menšie taviace práce s napájaním FE a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Priveď FE a vhodnú surovinu na tavenie.<br>
+<np>
+Pec na tavenie minerálov
+Kompaktná spracovacia jednotka
+<&small_mineral_smelter>Pec na tavenie minerálov spracúva minerály pri vysokej teplote a v dielni zaberá málo miesta.<br>
+<br>
+Použitie: Dodávaj minerálne bloky a energiu na vysokoteplotné tavenie.<br>
+<np>
+Zmrazovač vody
+Kompaktná spracovacia jednotka
+<&small_freezer>Zmrazovač vody zabezpečuje menšie chladiace práce v napájaných kvapalinových zostavách.<br>
+<br>
+Použitie: Priveď vodu a energiu na postupnú výrobu ľadu.<br>
+<np>
+Pasívne kvapalinové vybavenie
+Vybavenie kvapalinových rozvodov
+<&passive_fluid_accumulator>Pasívny zberač kvapalín je kompaktný diel pre malé nádrže, potrubné trasy, zberné miesta a tok riadený redstonom.<br>
+<br>
+Použitie: Umiestni ho k vhodným zdrojom vody a nechaj priestor na odoberanie kvapaliny.<br>
+<np>
+Solárny panel
+Vybavenie výrobnej haly
+<&small_solar_panel>Malý solárny panel patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Zabezpeč mu otvorené nebo a pripoj zariadenia s nízkou spotrebou.<br>
+<np>
+Dojací stroj
+Vybavenie výrobnej haly
+<&small_milking_machine>Malý dojací stroj patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Umiestni ho pri kravách a zabezpeč odoberanie nádob s mliekom alebo kvapaliny.<br>
+<np>
+Rúbací stroj
+Vybavenie výrobnej haly
+<&small_tree_cutter>Malý rúbací stroj patrí k dielenskému vybaveniu na výrobu, skladovanie, ukladanie, rozbíjanie, zbieranie a kompaktnú automatizáciu.<br>
+<br>
+Použitie: Namier ho na vyrastené stromy a vypadnuté predmety zbieraj samostatne.<br>

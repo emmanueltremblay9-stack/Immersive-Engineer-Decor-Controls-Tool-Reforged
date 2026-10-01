@@ -1,0 +1,5 @@
+Rrasë tullash skorjeje
+Muraturë e dendur fabrike
+<&recipe>Ky bllok shton muraturë të dendur gri-kafe për themele, mure mbajtëse dhe punishte të vjetra.<br>
+<br>
+Përdorimi: përdore për themele të vjetra, mure mbajtëse dhe dysheme fabrike të ndotura.<br>

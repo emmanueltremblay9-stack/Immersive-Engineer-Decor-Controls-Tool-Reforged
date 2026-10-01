@@ -1,0 +1,5 @@
+Blokbryder
+Hjælpemiddel til værkstedsgulvet
+<&recipe>Den lille blokbryder er en værkstedsblok til fremstilling, opbevaring, placering, brydning, opsamling eller kompakt automatisering.<br>
+<br>
+Brug: Ret arbejdsfladen mod den blok, der skal fjernes.<br>

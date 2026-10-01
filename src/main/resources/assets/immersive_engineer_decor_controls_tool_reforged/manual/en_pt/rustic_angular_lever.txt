@@ -1,0 +1,7 @@
+Rustic turnin' lever
+Redstone orders
+<&recipe>A little control fitting gives yer factory a clear point fer throwin' a redstone switch.<br>
+<br>
+Orders: Right-click her to toggle full-strength output fer nearby circuits.<br>
+<br>
+Mind ye: She sends redstone at full strength while switched on.

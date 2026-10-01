@@ -1,0 +1,127 @@
+Mogħdijiet tal-aċċess
+Passaġġi u appoġġi
+Arbli tal-azzar, arbli trattati, gradilji, passaġġi, poġġamani, slielem, bibien, twieqi u bokkaporti jiffurmaw rotot kompatti ta' manutenzjoni ġewwa l-fabbriki.<br>
+<br>
+Il-partijiet tal-mogħdijiet tal-azzar jużaw pjanċi tal-azzar. Agħmel jew qiegħed mejda tax-xogħol tal-metall, daħħal martell ta' Immersive Engineering u sawwar ingotti tal-azzar fi pjanċi bil-martell, għall-arbli, passaġġi, twieqi, bibien, poġġamani u dekorazzjonijiet oħra tal-azzar.<br>
+<br>
+Qegħedhom fejn il-magni jeħtieġu aċċess għall-manutenzjoni, mogħdijiet merfugħin, xaftijiet tal-manutenzjoni jew truf aktar siguri.
+<np>
+Arblu oħxon tal-azzar
+Parti tal-qafas strutturali
+<&thick_steel_pole>L-arblu oħxon dritt tal-azzar jagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Ras tal-arblu oħxon
+Parti tal-qafas strutturali
+<&thick_steel_pole_head>Ir-ras/sieq tal-arblu oħxon dritt tal-azzar tagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Arblu rqiq tal-azzar
+Parti tal-qafas strutturali
+<&thin_steel_pole>L-arblu rqiq dritt tal-azzar jagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Ras tal-arblu rqiq
+Parti tal-qafas strutturali
+<&thin_steel_pole_head>Ir-ras/sieq tal-arblu rqiq dritt tal-azzar tagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Arblu tal-injam trattat
+Parti tal-qafas strutturali
+<&treated_wood_pole>L-arblu dritt tal-injam trattat jagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Ras tal-arblu trattat
+Parti tal-qafas strutturali
+<&treated_wood_pole_head>Ir-ras/sieq tal-arblu dritt tal-injam trattat tagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Appoġġ tal-arblu trattat
+Parti tal-qafas strutturali
+<&treated_wood_pole_support>L-appoġġ tal-arblu dritt tal-injam trattat jagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Appoġġ tal-azzar f'forma ta' T doppja
+Parti tal-qafas strutturali
+<&steel_double_t_support>Din il-blokka tagħti struttura viżibbli lis-swali tal-magni u l-oqfsa tal-aċċess.<br>
+<br>
+Użu: dawwar u qiegħed bħala rinforz viżibbli għal travi, arbli u truf ta' pjattaformi.<br>
+<np>
+Gradilja tal-art tal-azzar
+Tagħmir tal-aċċess għall-manutenzjoni
+<&steel_floor_grating>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Passaġġ tal-azzar
+Tagħmir tal-aċċess għall-manutenzjoni
+<&steel_catwalk>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Taraġ tal-passaġġ tal-azzar
+Tagħmir tal-aċċess għall-manutenzjoni
+<&steel_catwalk_stairs>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Passaġġ tal-azzar merfugħ
+Tagħmir tal-aċċess għall-manutenzjoni
+<&steel_catwalk_ta>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Poġġaman tal-azzar
+Tagħmir tal-aċċess għall-manutenzjoni
+<&steel_railing>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Ilqugħ tax-xibka tal-azzar
+Tagħmir tal-aċċess għall-manutenzjoni
+<&steel_mesh_fence>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Xatba tal-ilqugħ tax-xibka tal-azzar
+Tagħmir tal-aċċess għall-manutenzjoni
+<&steel_mesh_fence_gate>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Sellum bi skaluni tal-metall
+Tagħmir tal-aċċess għall-manutenzjoni
+<&metal_rung_ladder>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Skaluni tal-metall alternati
+Tagħmir tal-aċċess għall-manutenzjoni
+<&metal_rung_steps>Din il-blokka tifforma rotot ċari ta' manutenzjoni madwar il-makkinarju.<br>
+<br>
+Użu: qegħedha bħala aċċess għall-manutenzjoni madwar magni, sulari ta' fuq u xaftijiet tal-manutenzjoni.<br>
+<np>
+Tieqa b'qafas tal-azzar
+Linja tal-vista protetta
+<&steel_framed_window>Din il-blokka żżomm il-linji tal-vista miftuħa waqt li taqbel mal-kostruzzjoni rinfurzata tal-fabbrika.<br>
+<br>
+Użu: qegħedha f'fetħa ta' blokka 1 fil-ħajt, fejn il-plejers għandhom jaraw il-makkinarju minn wara barriera protetta.<br>
+<np>
+Bieb tal-metall li jiżżerżaq
+Punt ta' aċċess industrijali
+<&metal_sliding_door>Din il-blokka tipprovdi aċċess robust għal kmamar tal-manutenzjoni, xaftijiet, soqfa u għeluq tal-magni.<br>
+<br>
+Użu: installaha fejn il-bini jeħtieġ fetħa kkontrollata għall-manutenzjoni.<br>
+<np>
+Bokkaport tal-ħadid
+Punt ta' aċċess industrijali
+<&iron_hatch>Din il-blokka tipprovdi aċċess robust għal kmamar tal-manutenzjoni, xaftijiet, soqfa u għeluq tal-magni.<br>
+<br>
+Użu: installaha fejn il-bini jeħtieġ fetħa kkontrollata għall-manutenzjoni.<br>

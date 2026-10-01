@@ -1,0 +1,7 @@
+Analog Link Relay
+Linked control
+<&recipe>A relay-styled fitting gives panel builds a compact local switch point.<br>
+<br>
+Usage: Right-click it to toggle full-strength output for nearby circuits. Use receiver blocks when you need linked pearl activation.<br>
+<br>
+Notes: Outputs full-strength redstone while switched on.

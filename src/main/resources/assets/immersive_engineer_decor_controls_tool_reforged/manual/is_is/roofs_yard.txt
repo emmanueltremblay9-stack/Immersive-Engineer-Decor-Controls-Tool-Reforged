@@ -1,0 +1,101 @@
+Þök og hlað
+Verksmiðjubúnaður utandyra
+Þakkubbar, hlaðmöl og gamlir iðnaðarviðarhlutar hjálpa til við að fullgera útiskúra, vinnuhlað, hleðslusvæði og veðraðar verksmiðjubrúnir.<br>
+<br>
+Blandaðu þessum hlutum við múrverk og aðkomuleiðir svo iðnaðarbyggingar utandyra séu auðlæsilegar úr fjarlægð.
+<np>
+Dökkt spónaþak
+Veðraður þakhluti
+<&dark_shingle_roof>Þessi kubbur myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Snjóvörn á þak
+Veðraður þakhluti
+<&dark_shingle_roof_metallized>Snjóvörnin fyrir dökkt spónaþak myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Dökkt spónaþak
+Veðraður þakhluti
+<&dark_shingle_roof_skylight>Þakglugginn fyrir dökkt spónaþak myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Reykháfsstokkur á þak
+Veðraður þakhluti
+<&dark_shingle_roof_chimneytrunk>Reykháfsstokkurinn fyrir dökkt spónaþak myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Vírrás á þak
+Veðraður þakhluti
+<&dark_shingle_roof_wireconduit>Vírrásin fyrir dökkt spónaþak myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Dökkt spónaþak
+Veðraður þakhluti
+<&dark_shingle_roof_chimney>Reykháfurinn fyrir dökkt spónaþak myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Kubbur úr dökku spónaþaki
+Veðraður þakhluti
+<&dark_shingle_roof_block>Þessi kubbur myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Hella úr dökku spónaþaki
+Veðraður þakhluti
+<&dark_shingle_roof_slab>Þessi kubbur myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Hella úr dökku spónaþaki
+Veðraður þakhluti
+<&dark_shingle_roof_slabslice>Þunna lagið úr dökku spónaþaki myndar dökk, hagnýt þök fyrir verkstæði og iðnaðarskúra.<br>
+<br>
+Notkun: Notaðu hlutana saman til að mynda trúverðug þakform.<br>
+<np>
+Þjöppuð malarmold
+Jarðþekja á vinnusvæði
+<&dense_grit_dirt_block>Þessi kubbur gefur vinnusvæðum utandyra þjappað og troðið yfirborð.<br>
+<br>
+Notkun: Leggðu hann við hleðsludyr, útigeyma og vélahlað.<br>
+<np>
+Þjappaður malarsandur
+Jarðþekja á vinnusvæði
+<&dense_grit_sand_block>Þessi kubbur gefur vinnusvæðum utandyra þjappað og troðið yfirborð.<br>
+<br>
+Notkun: Leggðu hann við hleðsludyr, útigeyma og vélahlað.<br>
+<np>
+Gamlir viðarplankar
+Gamall verkstæðisviður
+<&old_industrial_wood_planks>Gömlu iðnaðarplankarnir bæta við gömlum verkstæðisviði fyrir gólf, þrep, hurðir og hlýlega innanhússkanta.<br>
+<br>
+Notkun: Notaðu hann í gömul verkstæðisgólf, tröppur, hurðir og kanta.<br>
+<np>
+Hella úr gömlum iðnaðarviði
+Gamall verkstæðisviður
+<&old_industrial_wood_slab>Þessi kubbur bætir við gömlum verkstæðisviði fyrir gólf, þrep, hurðir og hlýlega innanhússkanta.<br>
+<br>
+Notkun: Notaðu hann í gömul verkstæðisgólf, tröppur, hurðir og kanta.<br>
+<np>
+Gamlar viðartröppur
+Gamall verkstæðisviður
+<&old_industrial_wood_stairs>Tröppurnar úr gömlum iðnaðarviði bæta við gömlum verkstæðisviði fyrir gólf, þrep, hurðir og hlýlega innanhússkanta.<br>
+<br>
+Notkun: Notaðu hann í gömul verkstæðisgólf, tröppur, hurðir og kanta.<br>
+<np>
+Þunnt lag af gömlum viði
+Gamall verkstæðisviður
+<&old_industrial_wood_slabslice>Þunna lagið af gömlum iðnaðarviði bætir við gömlum verkstæðisviði fyrir gólf, þrep, hurðir og hlýlega innanhússkanta.<br>
+<br>
+Notkun: Notaðu hann í gömul verkstæðisgólf, tröppur, hurðir og kanta.<br>
+<np>
+Gömul iðnaðarhurð úr viði
+Gamall verkstæðisviður
+<&old_industrial_wood_door>Þessi kubbur bætir við gömlum verkstæðisviði fyrir gólf, þrep, hurðir og hlýlega innanhússkanta.<br>
+<br>
+Notkun: Notaðu hann í gömul verkstæðisgólf, tröppur, hurðir og kanta.<br>

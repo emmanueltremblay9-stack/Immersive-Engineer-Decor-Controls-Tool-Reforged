@@ -1,0 +1,7 @@
+Schaltlinkrelais
+Verbungene Stüerung
+<&recipe>E Bauteil em Relaisstil jit Paneelboute ene kleine Schaltpunkt vür Ort.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte. Nimm Empfängerblöck, wann de met en verbungene Päl uslöse wells.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.

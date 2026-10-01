@@ -1,0 +1,7 @@
+Materiala skatolo
+Konstruaj provizoj
+<&recipe>Portas grandan rezervon de unu ordinara, nemodifita kaj stakigebla materialo.<br>
+<br>
+Uzo: Skatolo en ĉefa mano kaj materialo en la alia ŝargas. Malplena alia mano elprenas unu stakon.<br>
+<br>
+Tenas 512 erojn de unu tipo kaj rifuzas nestitajn skatolojn, nestakigeblajn ilojn kaj modifitajn stakojn; enhavo aperas en la helpilo.

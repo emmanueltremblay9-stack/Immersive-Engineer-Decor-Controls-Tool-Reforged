@@ -1,0 +1,5 @@
+Fabriksutmatare
+Hjälpmedel för verkstadsgolvet
+<&recipe>Det här blocket släpper ut lagrade föremål från en riktad framsida.<br>
+<br>
+Användning: Rikta framsidan mot utsläppspunkten, fyll de interna platserna och ställ in kraft, vinkel, fördröjning, filterlogik och redstoneläge på skärmen.<br>

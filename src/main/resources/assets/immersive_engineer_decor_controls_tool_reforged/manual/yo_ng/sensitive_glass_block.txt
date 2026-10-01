@@ -1,0 +1,7 @@
+Gíláàsì Tí Ń Fèsì Tí Ń Tàn
+Gíláàsì àmì
+<&recipe>Búlọ́ọ̀kù gíláàsì tí ń fèsì sí Redstone ń pa ọ̀nà ìríran mọ́ nígbà tí ó ń fi ipò àmì hàn.<br>
+<br>
+Lílò: Lo ó nínú fèrèsé yàrá ìdarí, pánẹ́ẹ̀lì tí ń tàn, àti gíláàsì ilé iṣẹ́ aláàbò.<br>
+<br>
+Àkíyèsí: Ó ń yí ipò padà nítorí agbára Redstone tó wà nítòsí.

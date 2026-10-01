@@ -1,0 +1,7 @@
+Degemerer kennask analogel
+Reolerezh kennasket
+<&recipe>Un degemerer kennasket a ro ur buk pell gwelet da banelloù reoliñ.<br>
+<br>
+Implij: Klikit warnañ gant ur berlezenn an End evit krouiñ ur berlezenn gennasket. Implijit ar berlezenn-se en ur gluchañ evit gweredekaat an degemerer a-bell.<br>
+<br>
+Notenn: An degemerer-mañ a gas ur signal Redstone gant an nerzh uhelañ pa vez delusket.

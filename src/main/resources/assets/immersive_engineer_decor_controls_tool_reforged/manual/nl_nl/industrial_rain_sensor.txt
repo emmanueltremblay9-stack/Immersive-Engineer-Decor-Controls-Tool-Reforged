@@ -1,0 +1,7 @@
+Regensensor
+Signaaldetectie
+<&recipe>Een weersensor zet regen op zijn positie om in een redstonesignaal.<br>
+<br>
+Gebruik: monteer hem waar het blok erboven regen kan ontvangen.<br>
+<br>
+Opmerking: controleert of het boven de sensor regent.

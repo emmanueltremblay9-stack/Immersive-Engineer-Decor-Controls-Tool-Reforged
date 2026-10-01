@@ -1,0 +1,5 @@
+Pavë de briqes de clinker
+Briqes naircies de souée
+<&recipe>Çu blloqe amène des briqes naircies de souée den les halles a fournès, les bases de cheminées e les murs de service.<br>
+<br>
+Empllai : Fezéz-en des murs, des bordures ou eune coque de zone chaode entoure des fournès e des chaudières.<br>

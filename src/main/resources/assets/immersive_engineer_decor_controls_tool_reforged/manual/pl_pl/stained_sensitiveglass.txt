@@ -1,0 +1,7 @@
+Kolorowe szkło reagujące
+Szkło sygnalizacyjne
+<&recipe>Blok szkła reagującego na redstone zachowuje widoczność i jednocześnie pokazuje stan sygnału.<br>
+<br>
+Użycie: Stosuj go w oknach sterowni, podświetlanych panelach i osłonowych przeszkleniach fabryki.<br>
+<br>
+Uwagi: Zmienia stan pod wpływem pobliskiego sygnału redstone.

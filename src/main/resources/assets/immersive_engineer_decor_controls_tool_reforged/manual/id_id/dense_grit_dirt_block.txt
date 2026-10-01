@@ -1,0 +1,5 @@
+Tanah Berkerikil Padat
+Penutup tanah lokasi kerja
+<&recipe>Blok ini memberi permukaan padat dan terinjak pada area kerja luar ruangan.<br>
+<br>
+Penggunaan: pasang di sekitar pintu bongkar muat, tangki luar ruangan, dan halaman mesin.<br>

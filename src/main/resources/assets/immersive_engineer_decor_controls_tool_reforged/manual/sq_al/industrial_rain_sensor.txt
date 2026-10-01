@@ -1,0 +1,7 @@
+Sensor shiu
+Zbulim sinjali
+<&recipe>Një sensor moti e kthen shiun në vendndodhjen e tij në redston.<br>
+<br>
+Përdorimi: montoje ku blloku sipër mund të marrë shi.<br>
+<br>
+Shënim: kontrollon shiun mbi sensor.

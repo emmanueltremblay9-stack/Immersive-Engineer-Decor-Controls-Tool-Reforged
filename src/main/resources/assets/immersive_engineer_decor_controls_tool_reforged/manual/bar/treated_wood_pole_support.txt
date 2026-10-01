@@ -1,0 +1,5 @@
+Stützn fia an behandelten Pfeila
+Teil vom Tragrahma
+<&recipe>De Stützn fia an graden Pfeila aus behandltem Hoiz gibt Maschinenhallen und Zugangsrahmen a sichtbare Tragstruktur.<br>
+<br>
+So geht's: Dreh'n und setz'n ois sichtbare Verstrebung fia Balkn, Pfeila und Plattformkantn.<br>

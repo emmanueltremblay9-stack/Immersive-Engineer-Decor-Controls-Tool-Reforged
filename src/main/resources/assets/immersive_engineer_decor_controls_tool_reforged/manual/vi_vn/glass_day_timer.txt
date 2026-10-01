@@ -1,0 +1,7 @@
+Đồng hồ hẹn giờ ngày bằng kính
+Tín hiệu ban ngày
+<&recipe>Công tắc hẹn giờ tuân theo phần ban ngày của chu kỳ thế giới.<br>
+<br>
+Cách dùng: Dùng cho đèn sân, cửa chớp và điều khiển nhà máy chỉ hoạt động ban ngày.<br>
+<br>
+Ghi chú: Cần chiều không gian có ánh sáng bầu trời.

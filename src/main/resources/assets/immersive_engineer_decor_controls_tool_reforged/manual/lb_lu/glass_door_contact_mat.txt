@@ -1,0 +1,7 @@
+Glasdierkontakt
+Drockimpuls
+<&recipe>E Kontaktschalter schéckt e kuerzt Signal duerch Beweegung um Buedem oder un enger Klappdier.<br>
+<br>
+Benotzung: Setz en do, wou Entitéiten duerch e Servicegang, e Luedegerät oder e geschützte Wee passéieren.<br>
+<br>
+Hiweiser: Gëtt nom Kontakt mat enger Entitéit e kuerzen Impuls.

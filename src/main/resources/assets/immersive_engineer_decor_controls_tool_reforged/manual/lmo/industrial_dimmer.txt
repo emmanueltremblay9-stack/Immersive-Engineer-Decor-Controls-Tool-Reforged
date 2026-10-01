@@ -1,0 +1,7 @@
+Regolador de intensità
+Segnal variabil
+<&recipe>Un comand rotativ el regola la potenza de prejarossa de la faccia de un panell piscinin.<br>
+<br>
+Fà clic cont el boton drizz per aumentà la sortida un pass a la volta, poeu tornà a zero dopo la piena potenza.<br>
+<br>
+El dà una potenza de 0 a 15.

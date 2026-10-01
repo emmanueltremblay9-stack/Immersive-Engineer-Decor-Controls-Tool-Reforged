@@ -1,0 +1,7 @@
+Zihin Sıkacağı
+Deneyim yoğunlaştırıcı
+<&recipe>Zihin sıkacağı, lapis ve deneyimi yüklü lapise dönüştürür.<br>
+<br>
+Kullanım: Yanınızda lapis lazuli ve en az bir deneyim seviyesi bulundurup aleti kullanın. Başarılı sıkma bir seviye ve bir lapis harcar, kullanıcıya zarar verir, aleti yıpratır ve bir yüklü lapis oluşturur.<br>
+<br>
+Kullanıcının lapisi veya deneyimi yoksa ya da sağlığı ölüm sınırına çok yakınsa çalışmayı reddeder.

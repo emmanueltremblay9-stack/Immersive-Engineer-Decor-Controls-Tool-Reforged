@@ -1,0 +1,5 @@
+Lanzador de fábrica
+Equipamento de planta
+<&recipe>Este bloque libera obxectos almacenados pola cara á que apunta.<br>
+<br>
+Uso: orienta o frontal cara ao punto de saída, enche as rañuras internas e axusta a forza, o ángulo, o atraso, a lóxica do filtro e o modo de redstone na pantalla.<br>

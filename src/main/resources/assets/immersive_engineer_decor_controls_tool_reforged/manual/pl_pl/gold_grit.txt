@@ -1,0 +1,3 @@
+Gruby granulat złota
+Materiał narzędzi inżyniera używany w odtworzonym zestawie receptur.
+<&recipe>Można przetopić na sztabki złota,<br>ale nie nadaje się do zaawansowanego<br>przetwarzania materiałów.

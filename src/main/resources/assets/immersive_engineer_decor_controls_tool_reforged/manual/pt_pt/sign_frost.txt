@@ -1,0 +1,5 @@
+Tabuleta de alerta de geada
+Sinalização de perigo
+<&recipe>A tabuleta de alerta de geada identifica perigos, saídas e zonas de trabalho com um aviso visual de segurança industrial.<br>
+<br>
+Uso: Coloca ao lado de perigos, saídas, máquinas e áreas restritas.<br>

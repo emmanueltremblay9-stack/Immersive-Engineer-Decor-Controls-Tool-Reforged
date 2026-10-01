@@ -1,0 +1,7 @@
+Lülitiühenduse vastuvõtja
+Ühendatud juhtimine
+<&recipe>Ühendatud vastuvõtja annab kaugpaneelidele täistugevusega redstone'i sihtmärgi.<br>
+<br>
+Kasutamine: Ühendatud pärli loomiseks klõpsa sellel enderipärliga. Käsitsi lülitamiseks paremklõpsa otse vastuvõtjal.<br>
+<br>
+Märkus: Ühendatud pärl lülitab seda vastuvõtjat, kui pärli kasutatakse hiilides.

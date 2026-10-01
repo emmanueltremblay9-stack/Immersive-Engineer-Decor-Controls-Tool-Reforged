@@ -1,0 +1,7 @@
+Analogās saites uztvērējs
+Sasaistīta vadība
+<&recipe>Sasaistīts uztvērējs dod vadības paneļiem redzamu attālinātu mērķi.<br>
+<br>
+Lietošana: noklikšķini ar Ender pērli, lai izveidotu sasaistītu pērli. Lieto šo pērli lavoties, lai attālināti aktivizētu uztvērēju.<br>
+<br>
+Piezīmes: pēc ierosinājuma šis uztvērējs izvada pilna stipruma Redstone signālu.

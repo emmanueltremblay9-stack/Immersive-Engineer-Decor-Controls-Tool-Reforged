@@ -1,0 +1,5 @@
+Vecchie assi di legno
+Legname d’officina invecchiato
+<&recipe>Le vecchie assi industriali in legno aggiungono legname d’officina invecchiato per pavimenti, gradini, porte e calde rifiniture interne.<br>
+<br>
+Uso: usalo per vecchi pavimenti d’officina, scale, porte e rifiniture.<br>

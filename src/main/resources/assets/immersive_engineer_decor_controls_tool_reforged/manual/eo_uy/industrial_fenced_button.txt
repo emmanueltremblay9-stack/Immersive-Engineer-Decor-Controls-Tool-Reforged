@@ -1,0 +1,7 @@
+Ĉirkaŭbarita maŝinbutono
+Redstone’a regado
+<&recipe>Momenta ŝaltilo donas klaran plenfortan redstone’an pulson.<br>
+<br>
+Uzado: uzu ĝin por ekfunkciigi maŝinojn, malŝlosi pordojn, ekigi alarmojn aŭ unufojajn cirkvitojn.<br>
+<br>
+Notoj: ĝi rekomenciĝas post la agordita pulso.

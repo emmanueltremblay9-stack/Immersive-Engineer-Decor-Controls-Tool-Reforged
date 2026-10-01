@@ -1,0 +1,7 @@
+Commutateur de comparateur
+Signal du bloc porteur
+<&recipe>Un interrupteur à capteur compact lit le bloc qui le porte et convertit cette mesure en une simple sortie de panneau.<br>
+<br>
+Utilisation : montez-le sur des inventaires, réservoirs ou composants redstone. Lorsque le bloc porteur fournit une sortie de comparateur, de conteneur ou de redstone, l'interrupteur émet un signal de redstone à puissance maximale.<br>
+<br>
+Remarque : convertit les niveaux de stockage ou les câblages cachés en commandes marche/arrêt faciles à lire.

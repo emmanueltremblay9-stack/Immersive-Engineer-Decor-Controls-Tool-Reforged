@@ -1,0 +1,5 @@
+Zavod blok yerləşdiricisi
+Emalatxana yardımçısı
+<&recipe>Bu blok işə salındıqda daxili ehtiyatından bloklar yerləşdirir.<br>
+<br>
+İstifadə: İşçi üzü hədəf boşluğa yönəldib yerləşdirilə bilən yığınlarla doldurun.<br>

@@ -1,0 +1,7 @@
+Releu analogic de legături
+Comandă prin legătură
+<&recipe>O piesă cu aspect de releu oferă panourilor un punct local compact de comutare.<br>
+<br>
+Utilizare: Fă clic dreapta pentru a comuta ieșirea la intensitate maximă pentru circuitele din apropiere. Folosește blocuri receptor când ai nevoie de activare prin perle asociate.<br>
+<br>
+Observații: Emite redstone la intensitate maximă cât timp este pornit.

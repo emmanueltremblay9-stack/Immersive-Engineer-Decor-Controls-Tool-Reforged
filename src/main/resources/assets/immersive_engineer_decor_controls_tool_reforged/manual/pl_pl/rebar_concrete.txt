@@ -1,0 +1,5 @@
+Blok żelbetu
+Beton zbrojony
+<&recipe>Ten blok jest elementem wzmocnionego betonu na podstawy maszyn, ściany przeciwwybuchowe i podłogi ramp załadunkowych.<br>
+<br>
+Użycie: Układaj go pod maszynami, wzdłuż korytarzy technicznych i wszędzie tam, gdzie potrzebna jest wzmocniona podstawa.<br>

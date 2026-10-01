@@ -1,0 +1,5 @@
+Milking Loom
+Workshop-floor helper
+<&recipe>The Small Milking Loom is a workshop-floor helper clot for crafting, stockkeeping, setting, breaking, gathering or small self-running works.<br>
+<br>
+Use: Set it near cows and give it a way to send milk holders or flowing milk out.<br>

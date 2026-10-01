@@ -1,0 +1,161 @@
+Klinker a zdivo
+Cihlové a betonové pláště
+Klinker, struskové cihly, železobeton a pancéřové sklo tvoří odolné povrchy pro horké provozy, dílny a chráněné výhledy.<br>
+<br>
+Odpovídajícími půlbloky, schody, tenkými pláty a zídkami dokonči okraje při zachování jednotného továrního materiálu.
+<np>
+Klinkerové cihly
+Zdivo ztmavlé sazemi
+<&clinker_brick_block>Tento blok přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Půlblok z klinkerových cihel
+Zdivo ztmavlé sazemi
+<&clinker_brick_slab>Tento blok přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Schody z klinkerových cihel
+Zdivo ztmavlé sazemi
+<&clinker_brick_stairs>Tento blok přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Zídka z klinkerových cihel
+Zdivo ztmavlé sazemi
+<&clinker_brick_wall>Tento blok přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Zašpiněný klinkerový blok
+Zdivo ztmavlé sazemi
+<&clinker_brick_stained_block>Zašpiněné klinkerové cihly přidávají zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Zašpiněný klinkerový půlblok
+Zdivo ztmavlé sazemi
+<&clinker_brick_stained_slab>Půlblok ze zašpiněných klinkerových cihel přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Zašpiněné klinkerové schody
+Zdivo ztmavlé sazemi
+<&clinker_brick_stained_stairs>Schody ze zašpiněných klinkerových cihel přidávají zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Zdobené klinkerové cihly
+Zdivo ztmavlé sazemi
+<&clinker_brick_sastor_corner_block>Klinkerové cihly s pískovcovým zdobením přidávají zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Zapuštěné klinkerové cihly
+Zdivo ztmavlé sazemi
+<&clinker_brick_recessed>Tento blok přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Klinkerové cihly se štěrbinami
+Zdivo ztmavlé sazemi
+<&clinker_brick_vertically_slit>Klinkerové cihly se svislými štěrbinami přidávají zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Svislý klinkerový půlblok
+Zdivo ztmavlé sazemi
+<&clinker_brick_vertical_slab_structured>Svislý klinkerový půlblok s reliéfem přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Tenký plát klinkerových cihel
+Zdivo ztmavlé sazemi
+<&halfslab_clinker_brick>Tento blok přidává zdivo ztmavlé sazemi do pecních hal, komínových základen a servisních zdí.<br>
+<br>
+Použití: Použij jej na zdi, lemování nebo plášť horké zóny kolem pecí a kotlů.<br>
+<np>
+Struskové cihly
+Hutné tovární zdivo
+<&slag_brick_block>Tento blok přidává hutné šedohnědé zdivo pro základy, opěrné zdi a starší dílny.<br>
+<br>
+Použití: Hodí se na staré základy, opěrné zdi a špinavé tovární podlahy.<br>
+<np>
+Půlblok ze struskových cihel
+Hutné tovární zdivo
+<&slag_brick_slab>Tento blok přidává hutné šedohnědé zdivo pro základy, opěrné zdi a starší dílny.<br>
+<br>
+Použití: Hodí se na staré základy, opěrné zdi a špinavé tovární podlahy.<br>
+<np>
+Schody ze struskových cihel
+Hutné tovární zdivo
+<&slag_brick_stairs>Tento blok přidává hutné šedohnědé zdivo pro základy, opěrné zdi a starší dílny.<br>
+<br>
+Použití: Hodí se na staré základy, opěrné zdi a špinavé tovární podlahy.<br>
+<np>
+Zídka ze struskových cihel
+Hutné tovární zdivo
+<&slag_brick_wall>Tento blok přidává hutné šedohnědé zdivo pro základy, opěrné zdi a starší dílny.<br>
+<br>
+Použití: Hodí se na staré základy, opěrné zdi a špinavé tovární podlahy.<br>
+<np>
+Železobetonový blok
+Vyztužený beton
+<&rebar_concrete>Tento blok je zpevněný betonový díl pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Železobetonový půlblok
+Vyztužený beton
+<&rebar_concrete_slab>Tento blok je zpevněný betonový díl pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Železobetonové schody
+Vyztužený beton
+<&rebar_concrete_stairs>Tento blok je zpevněný betonový díl pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Železobetonová zídka
+Vyztužený beton
+<&rebar_concrete_wall>Tento blok je zpevněný betonový díl pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Tenký železobetonový plát
+Vyztužený beton
+<&halfslab_rebar_concrete>Tento blok je zpevněný betonový díl pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Železobetonová dlaždice
+Vyztužený beton
+<&rebar_concrete_tile>Tento blok je zpevněný betonový díl pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Půlblok ze železobetonových dlaždic
+Vyztužený beton
+<&rebar_concrete_tile_slab>Tento blok je zpevněný betonový díl pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Železobetonová dlaždice
+Vyztužený beton
+<&rebar_concrete_tile_stairs>Schody ze železobetonových dlaždic jsou zpevněné betonové díly pro podstavce strojů, protivýbuchové stěny a podlahy nakládacích prostor.<br>
+<br>
+Použití: Použij jej pod stroje, podél servisních chodeb nebo kdekoli stavba potřebuje vyztužený základ.<br>
+<np>
+Blok pancéřového skla
+Chráněný výhled
+<&panzerglass_block>Tento blok zachovává výhled a současně ladí se zesílenou tovární konstrukcí.<br>
+<br>
+Použití: Použij jej tam, kde mají hráči vidět stroje přes ochrannou přepážku.<br>
+<np>
+Půlblok z pancéřového skla
+Chráněný výhled
+<&panzerglass_slab>Tento blok zachovává výhled a současně ladí se zesílenou tovární konstrukcí.<br>
+<br>
+Použití: Použij jej tam, kde mají hráči vidět stroje přes ochrannou přepážku.<br>

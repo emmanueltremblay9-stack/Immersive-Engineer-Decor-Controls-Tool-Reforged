@@ -1,0 +1,7 @@
+Érczúzó kalapács
+Kézi zúzóeszköz
+<&recipe>Az érctörő kalapács kézi szerszám a vas és az arany korai feldolgozásához.<br>
+<br>
+Használat: Készítsd nyersvassal, nyersarannyal, vasérccel, mélypalavasérccel, aranyérccel vagy mélypalaaranyérccel, hogy Immersive Engineering vas- vagy aranyport kapj. A kalapács tartóssága csökken, és töréséig visszatér a barkácsrácsba.<br>
+<br>
+Bányászattól is kopik, közelharcban pedig hátralökheti a célpontokat.

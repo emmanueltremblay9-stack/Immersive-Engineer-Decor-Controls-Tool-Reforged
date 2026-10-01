@@ -1,0 +1,5 @@
+Stahlbetonstufe
+Stahlbewehrte Beton
+<&recipe>Dä Block isch es ghärtets Betonteil für Maschinefundamänt, Schutzwänd und Ladehalleböde.<br>
+<br>
+Verwendig: Setz en under Maschine, entlang vo Wartigsgäng oder überall, wo e verstärkti Basis bruucht wird.<br>

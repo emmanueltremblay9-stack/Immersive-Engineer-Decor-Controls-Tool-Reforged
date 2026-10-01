@@ -1,0 +1,7 @@
+Analog Bağlantı Rölesi
+Bağlantılı kontrol
+<&recipe>Röle biçimindeki parça, panel yapıları için küçük bir yerel anahtarlama noktası sağlar.<br>
+<br>
+Kullanım: Yakındaki devrelere tam güçlü çıkışı açmak veya kapatmak için sağ tıklayın. Bağlı inciyle etkinleştirme gerektiğinde alıcı blokları kullanın.<br>
+<br>
+Notlar: Açıkken tam güçlü redstone sinyali verir.

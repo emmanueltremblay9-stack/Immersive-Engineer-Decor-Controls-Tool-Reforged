@@ -1,0 +1,161 @@
+Klinka und Mauerwerk
+Hüllen aus Ziegl und Beton
+Klinka, Schlacknziegl, Stahlbeton und Panzerglos geben hoaßen Räumen, Werkstätten und gschützten Sichtbereichen schwere Oberflächen.<br>
+<br>
+Nimm de passenden Stufn, Schdiang, dünnen Scheibn und Mauern, damit d'Kantn fertig werdn und da Materialstil vo da Fabrik gleich bleibt.
+<np>
+Klinkazieglblock
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_block>Der Block bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Klinkazieglstufn
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_slab>Der Block bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Klinkazieglschdiang
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_stairs>Der Block bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Klinkazieglmauer
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_wall>Der Block bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Fleckiger Klinkablock
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_stained_block>Da fleckige Klinkazieglblock bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Fleckige Klinkastufn
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_stained_slab>De fleckige Klinkazieglstufn bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Fleckige Klinkaschdiang
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_stained_stairs>De fleckige Klinkazieglschdiang bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Verzierter Klinkaziegl
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_sastor_corner_block>Da Klinkaziegl mit Sondstoaverzierung bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Eilassna Klinkaziegl
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_recessed>Der Block bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Gschlitzte Klinkaziegl
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_vertically_slit>De senkrecht gschlitzten Klinkaziegl bringen rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Senkrechte Klinkastufn
+Rußdunkls Zieglmauerwerk
+<&clinker_brick_vertical_slab_structured>De strukturierte senkrechte Klinkastufn bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Halbe Klinkazieglstufn
+Rußdunkls Zieglmauerwerk
+<&halfslab_clinker_brick>Der Block bringt rußdunkls Mauerwerk in Ofnhallen, Kaminfundamente und Wartungswänd.<br>
+<br>
+So geht's: Nutz'n ois Mauer, Einfassung oder Hitzebereich-Verkleidung um Öfn und Kessl herum.<br>
+<np>
+Schlacknzieglblock
+Dichts Fabrikmauerwerk
+<&slag_brick_block>Der Block ergänzt dichts graubrauns Mauerwerk fia Fundamente, Stützmauern und ältere Werkhüttn.<br>
+<br>
+So geht's: Nutz'n fia oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Schlacknzieglstufn
+Dichts Fabrikmauerwerk
+<&slag_brick_slab>Der Block ergänzt dichts graubrauns Mauerwerk fia Fundamente, Stützmauern und ältere Werkhüttn.<br>
+<br>
+So geht's: Nutz'n fia oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Schlacknzieglschdiang
+Dichts Fabrikmauerwerk
+<&slag_brick_stairs>Der Block ergänzt dichts graubrauns Mauerwerk fia Fundamente, Stützmauern und ältere Werkhüttn.<br>
+<br>
+So geht's: Nutz'n fia oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Schlacknzieglmauer
+Dichts Fabrikmauerwerk
+<&slag_brick_wall>Der Block ergänzt dichts graubrauns Mauerwerk fia Fundamente, Stützmauern und ältere Werkhüttn.<br>
+<br>
+So geht's: Nutz'n fia oide Fundamente, Stützmauern und dreckige Fabrikbödn.<br>
+<np>
+Stahlbetonblock
+Verstärkter Beton
+<&rebar_concrete>Der Block is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Stahlbetonstufn
+Verstärkter Beton
+<&rebar_concrete_slab>Der Block is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Stahlbetonschdiang
+Verstärkter Beton
+<&rebar_concrete_stairs>Der Block is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Stahlbetonmauer
+Verstärkter Beton
+<&rebar_concrete_wall>Der Block is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Dünne Stahlbetonscheibn
+Verstärkter Beton
+<&halfslab_rebar_concrete>Der Block is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Stahlbetonfliasn
+Verstärkter Beton
+<&rebar_concrete_tile>Der Block is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Stahlbetonfliasnstufn
+Verstärkter Beton
+<&rebar_concrete_tile_slab>Der Block is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Stahlbetonfliasn
+Verstärkter Beton
+<&rebar_concrete_tile_stairs>De Stahlbetonfliasnschdiang is a hartes Betonteil fia Maschinensockl, Explosionsschutzwänd und Bödn vo Ladebuchtn.<br>
+<br>
+So geht's: Setz'n unter Maschinen, entlang vo Wartungsgäng oder überall, wo da Bau a verstärkte Basis braucht.<br>
+<np>
+Panzerglosblock
+Gschützter Durchblick
+<&panzerglass_block>Mit dem Block bleibt da Durchblick frei, und er passt trotzdem zu verstärkte Fabrikbauten.<br>
+<br>
+So geht's: Nutz'n dort, wo Spiela durch a gschützte Wand auf Maschinen schaun solln.<br>
+<np>
+Panzerglosstufn
+Gschützter Durchblick
+<&panzerglass_slab>Mit dem Block bleibt da Durchblick frei, und er passt trotzdem zu verstärkte Fabrikbauten.<br>
+<br>
+So geht's: Nutz'n dort, wo Spiela durch a gschützte Wand auf Maschinen schaun solln.<br>

@@ -1,0 +1,5 @@
+Skilti „Almenn viðvörun“
+Hættumerki
+<&recipe>Skiltið „Almenn viðvörun“ merkir hættur, útganga og vinnusvæði með sjónrænni öryggismerkingu í verksmiðjustíl.<br>
+<br>
+Notkun: Settu það við hættur, útganga, vélar og lokuð svæði.<br>

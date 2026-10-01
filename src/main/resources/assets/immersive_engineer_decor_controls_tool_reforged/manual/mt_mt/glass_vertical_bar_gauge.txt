@@ -1,0 +1,7 @@
+Arloġġ tal-kejl b'virga tal-ħġieġ
+Arloġġ tal-kejl tas-sinjal
+<&recipe>Arloġġ kompatt tal-kamra tal-kontroll juri s-saħħa tar-Redstone bħala qari ċar fuq pannell.<br>
+<br>
+Użu: immuntah fejn tista' tiċċekkja l-qawwa tar-Redstone fil-qrib b'daqqa t'għajn.<br>
+<br>
+Noti: jaqra s-saħħa tar-Redstone fil-qrib minn 0 sa 15.

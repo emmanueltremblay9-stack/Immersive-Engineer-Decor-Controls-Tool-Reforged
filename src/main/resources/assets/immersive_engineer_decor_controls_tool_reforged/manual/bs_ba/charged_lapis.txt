@@ -1,0 +1,7 @@
+Napunjeni lapis
+Pohranjeno iskustvo
+<&recipe>Napunjeni lapis čuva jedan nivo iskustva i dobiva se pomoću cjedila za um.<br>
+<br>
+Upotreba: Potrošite ga da vratite jedan nivo, uklonite aktivne efekte i obnovite malo zdravlja.<br>
+<br>
+Prikaz recepta pokazuje cjedilo za um jer se napunjeni lapis dobiva upotrebom tog alata uz dostupan lapis i iskustvo.

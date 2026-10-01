@@ -1,0 +1,3 @@
+Grovt guldgrus
+Ingenjörsverktygsmaterial som används i den rekonstruerade receptuppsättningen.
+<&recipe>Kan smältas till<br>guldtackor men passar inte för<br>avancerad materialbearbetning.

@@ -1,0 +1,5 @@
+Fenèstra amb quadre d’acièr
+Vista protegida
+<&recipe>Aqueste blòc manten una vista desgatjada e s’acòrda amb la construccion de fabrica renforçada.<br>
+<br>
+Utilizacion : emplega-lo ont los jogaires devon veire las maquinas a travèrs una barralha protegida.<br>

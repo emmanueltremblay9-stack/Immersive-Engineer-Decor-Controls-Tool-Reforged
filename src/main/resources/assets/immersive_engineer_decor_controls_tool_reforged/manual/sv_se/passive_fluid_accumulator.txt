@@ -1,0 +1,5 @@
+Passiv vätska
+Utrustning för vätskeledningar
+<&recipe>Den passiva vätskeackumulatorn är en kompakt komponent för vätskeledningar, små tankar, rörsträckor, uppsamlingspunkter och redstonestyrt flöde.<br>
+<br>
+Användning: Placera den intill lämpliga vattenkällor och lämna plats för vätskeutmatning.<br>

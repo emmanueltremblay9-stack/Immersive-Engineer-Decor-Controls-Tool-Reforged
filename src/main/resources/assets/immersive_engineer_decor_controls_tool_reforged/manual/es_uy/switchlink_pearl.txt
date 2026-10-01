@@ -1,0 +1,7 @@
+Perla de enlace de interruptor
+Control enlazado
+<&recipe>Una perla enlazada guarda un receptor de destino para controles remotos de fábrica.<br>
+<br>
+Uso: Hacé clic con una perla de ender en un receptor de enlace de interruptor para crearla. Usá la perla enlazada mientras te agachás para activar el receptor guardado.<br>
+<br>
+Notas: El destino debe estar cargado, en la misma dimensión y dentro del alcance.

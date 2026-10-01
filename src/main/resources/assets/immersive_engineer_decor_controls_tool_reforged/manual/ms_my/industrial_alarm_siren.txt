@@ -1,0 +1,7 @@
+Siren Penggera
+Maklum balas isyarat
+<&recipe>Siren penggera ialah penunjuk redstone yang dipasang pada muka blok. Keadaan kuasanya berubah mengikut isyarat blok tempat ia dilekatkan.<br>
+<br>
+Lekatkan pada muka pepejal dan bekalkan kuasa untuk memantau pintu, mesin, penggera atau panel.<br>
+<br>
+Siren dikemas kini sekali sesaat selagi isyarat kekal aktif.

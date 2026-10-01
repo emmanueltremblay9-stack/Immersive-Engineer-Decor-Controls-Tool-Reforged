@@ -1,0 +1,5 @@
+Gaineamh Greanta Dlúth
+Clúdach talún láithreáin oibre
+<&recipe>Tugann an bloc seo dromchla comhbhrúite satailte do limistéir oibre lasmuigh.<br>
+<br>
+Úsáid: leag é timpeall ar dhoirse luchtaithe, umair lasmuigh agus clóis innealra.<br>

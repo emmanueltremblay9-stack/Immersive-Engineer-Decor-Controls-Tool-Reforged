@@ -1,0 +1,5 @@
+Blockbriecher
+Hëllefsmëttel um Ateliersbuedem
+<&recipe>De klenge Blockbriecher ass en Ateliersnotzblock fir Handwierk, Lagerung, Plazéierung, Ofbau, Sammelen oder kompakt Automatiséierung.<br>
+<br>
+Benotzung: Riicht d'Aarbechtssäit op de Block, deen ewechgeholl soll ginn.<br>

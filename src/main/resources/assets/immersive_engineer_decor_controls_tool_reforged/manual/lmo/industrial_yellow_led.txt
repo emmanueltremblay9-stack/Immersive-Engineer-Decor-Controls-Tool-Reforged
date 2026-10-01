@@ -1,0 +1,7 @@
+LED sgiald
+Risposta visibila del segnal
+<&recipe>Un indicador piscinin el fa vegnì visibila la prejarossa sconduda, per vedè come che la va la fabrica.<br>
+<br>
+Colegel arent al segnal per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+El cambia stat quand che gh’è energia de prejarossa lì arent.

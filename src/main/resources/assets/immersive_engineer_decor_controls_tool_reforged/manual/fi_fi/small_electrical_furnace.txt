@@ -1,0 +1,5 @@
+Sähköuuni
+Pieni käsittely-yksikkö
+<&recipe>Sähköuuni hoitaa pienet FE-käyttöiset sulatustyöt vähäisessä työpajatilassa.<br>
+<br>
+Käyttö: Syötä FE:tä ja kelvollista sulatettavaa materiaalia.<br>

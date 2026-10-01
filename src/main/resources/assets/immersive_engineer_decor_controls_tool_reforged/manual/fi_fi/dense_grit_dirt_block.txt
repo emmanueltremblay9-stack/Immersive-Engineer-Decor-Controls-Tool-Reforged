@@ -1,0 +1,5 @@
+Tiivis soramulta
+Työmaan maanpäällyste
+<&recipe>Tämä kuutio antaa ulkotyöalueille tiivistetyn, tallotun pinnan.<br>
+<br>
+Käyttö: Aseta lastausovien, ulkosäiliöiden ja konepihojen ympärille.<br>

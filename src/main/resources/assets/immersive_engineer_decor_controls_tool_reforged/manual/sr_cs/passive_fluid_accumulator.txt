@@ -1,0 +1,5 @@
+Pasivna tečnost
+Oprema za vodove tečnosti
+<&recipe>Pasivni sakupljač tečnosti je kompaktan deo za male rezervoare, cevovode, mesta sakupljanja i protok kojim upravlja redstoun.<br>
+<br>
+Upotreba: postavi ga uz odgovarajuće izvore vode i ostavi prostor za odvođenje tečnosti.<br>

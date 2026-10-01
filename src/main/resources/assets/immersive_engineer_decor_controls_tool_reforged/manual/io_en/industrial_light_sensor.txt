@@ -1,0 +1,7 @@
+Lumsensilo
+Signaldetekto
+<&recipe>Lumsensilo konvertas la lokala lumintenseso a redstonea regado.<br>
+<br>
+Uzo: Uzez ol por automata lampi, fenestroklapi e videblesocirkuiti.<br>
+<br>
+Noti: Emisas energio ye kruda lumintenseso 8 o plu alta.

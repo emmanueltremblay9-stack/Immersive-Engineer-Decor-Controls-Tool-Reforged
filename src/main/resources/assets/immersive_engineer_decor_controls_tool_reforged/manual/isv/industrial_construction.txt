@@ -1,0 +1,108 @@
+Promyslovo budovanje
+Fabrične stěny i obrobka
+Obče budovne dodatky pokrivajut dveri, okna, světa, prěduprědžajuče znaky, obrobku i konstrukcijne česti, ktore ne pripadajut do podrobnějšego odděla.<br>
+<br>
+Upotrěbi te stranice dlja fabričnyh komor, obslužnyh koridorov, označanja opasnostij i praktičnyh promyslovyh podrobnostij.
+<np>
+Želězna lampica
+Kompaktno rabotno světlo
+<&iron_bulb_light>Sej blok davaje kompaktno promyslovo osvětljenje dlja koridorov, obslužnyh ploščin i rabotnyh měst.<br>
+<br>
+Upotrěbjenje: Montuj go na stropah, stěnah ili krajah, kde komora potrěbuje jasno rabotno osvětljenje.<br>
+<np>
+Světlo na kraju stropa
+Kompaktno rabotno světlo
+<&iron_ceiling_edge_light>Sej blok davaje kompaktno promyslovo osvětljenje dlja koridorov, obslužnyh ploščin i rabotnyh měst.<br>
+<br>
+Upotrěbjenje: Montuj go na stropah, stěnah ili krajah, kde komora potrěbuje jasno rabotno osvětljenje.<br>
+<np>
+Vglobljeno světlo na kraju podlogy
+Kompaktno rabotno světlo
+<&iron_floor_edge_light>Sej blok davaje kompaktno promyslovo osvětljenje dlja koridorov, obslužnyh ploščin i rabotnyh měst.<br>
+<br>
+Upotrěbjenje: Montuj go na stropah, stěnah ili krajah, kde komora potrěbuje jasno rabotno osvětljenje.<br>
+<np>
+Vglobljeno světlo
+Kompaktno rabotno světlo
+<&iron_inset_light>Sej blok davaje kompaktno promyslovo osvětljenje dlja koridorov, obslužnyh ploščin i rabotnyh měst.<br>
+<br>
+Upotrěbjenje: Montuj go na stropah, stěnah ili krajah, kde komora potrěbuje jasno rabotno osvětljenje.<br>
+<np>
+Znak "Obča ostrožnost
+Označatelj opasnosti
+<&sign_caution>Znak "Obča ostrožnost" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak nebezpečnosti
+Označatelj opasnosti
+<&sign_danger>Znak "Pozor, tam jest istinno nebezpečno" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Ozdobny znak
+Označatelj opasnosti
+<&sign_decor>Znakova ploča (Engineer's Decor) označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Obranny znak
+Označatelj opasnosti
+<&sign_defense>Znak "Pozor, vprěd jest obranny sistem" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak izhoda
+Označatelj opasnosti
+<&sign_exit>Sej znak označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak "Opasnost požara
+Označatelj opasnosti
+<&sign_firehazard>Znak "Opasnost požara" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak "Pozor, mraz
+Označatelj opasnosti
+<&sign_frost>Znak "Pozor, mraz" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak gorečej povrhnosti
+Označatelj opasnosti
+<&sign_hotsurface>Znak "Pozor, goreča povrhnost" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak drata pod napetostju
+Označatelj opasnosti
+<&sign_hotwire>Znak "Pozor, drat pod napetostju" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak "Opasnost lasera
+Označatelj opasnosti
+<&sign_laser>Znak "Opasnost lasera" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak magičnoj opasnosti
+Označatelj opasnosti
+<&sign_magichazard>Znak "Pozor, magična opasnost" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak magnetičnogo polja
+Označatelj opasnosti
+<&sign_magneticfield>Znak "Pozor, silno magnetično polje" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>
+Znak "Radioaktivna opasnost
+Označatelj opasnosti
+<&sign_radioactive>Znak "Radioaktivna opasnost" označaje opasnosti, izhody i rabotne zony vidimym symbolom prigodnym dlja bezpečnosti fabriky.<br>
+<br>
+Upotrěbjenje: Postavi go blizko opasnostij, izhodov, mašin i ograničenyh zon.<br>
+<np>

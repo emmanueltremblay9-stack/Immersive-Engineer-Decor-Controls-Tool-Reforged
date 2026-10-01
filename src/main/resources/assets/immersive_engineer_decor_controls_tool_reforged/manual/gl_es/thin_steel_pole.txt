@@ -1,0 +1,5 @@
+Poste de aceiro fino
+Peza de armazón estrutural
+<&recipe>O poste recto de aceiro fino achega unha estrutura visible ás naves de máquinas e aos marcos de acceso.<br>
+<br>
+Uso: xírao e colócao como reforzo visible de vigas, postes e bordos de plataformas.<br>

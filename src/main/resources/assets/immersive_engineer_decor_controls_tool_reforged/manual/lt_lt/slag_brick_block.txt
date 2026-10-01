@@ -1,0 +1,5 @@
+Šlako plytų blokas
+Tankus fabriko mūras
+<&recipe>Šis blokas suteikia tankų pilkai rudą mūrą pamatams, atraminėms sienoms ir senesnėms dirbtuvėms.<br>
+<br>
+Naudojimas: naudok seniems pamatams, atraminėms sienoms ir purvinoms gamyklos grindims.<br>

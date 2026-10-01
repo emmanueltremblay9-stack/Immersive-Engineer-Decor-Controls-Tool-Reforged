@@ -1,0 +1,5 @@
+Blok žlindrine opeke
+Gosto tovarniško zidovje
+<&recipe>Ta blok dodaja gosto sivo-rjavo zidovje za temelje, podporne zidove in starejše delovne lope.<br>
+<br>
+Uporaba: Uporabi ga za starejše temelje, podporne zidove in umazana tovarniška tla.<br>

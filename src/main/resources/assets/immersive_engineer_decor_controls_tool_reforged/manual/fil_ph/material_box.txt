@@ -1,0 +1,7 @@
+Kahon ng Imbakan ng Materyal
+Kahon ng suplay sa pagtatayo
+<&recipe>Ang kahon ng materyales ay nagdadala ng malaking reserba ng iisang payak, hindi binago, at nasasalansang materyales sa konstruksyon.<br>
+<br>
+Paggamit: Hawakan ang kahon sa pangunahing kamay at ang salansan ng materyales sa kabilang kamay upang ipasok ito. Gamitin ang kahon habang walang laman ang kabilang kamay upang maglabas ng isang salansan.<br>
+<br>
+Hanggang 512 item ang kasya, iisang uri lamang sa bawat pagkakataon, at hindi nito tinatanggap ang kapwa kahon, hindi nasasalansang kagamitan, o binago, pinangalanan, at may data na salansan. Makikita ang laman sa tooltip.

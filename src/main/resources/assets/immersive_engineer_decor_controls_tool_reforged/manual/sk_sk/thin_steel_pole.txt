@@ -1,0 +1,5 @@
+Tenký oceľový stĺp
+Diel nosného rámu
+<&recipe>Rovný tenký oceľový stĺp dodáva strojovým halám a prístupovým rámom viditeľnú nosnú konštrukciu.<br>
+<br>
+Použitie: Natoč ho a umiestni ako viditeľnú výstuhu nosníkov, stĺpov a okrajov plošín.<br>

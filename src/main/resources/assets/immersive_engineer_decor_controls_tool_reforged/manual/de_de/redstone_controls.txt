@@ -1,0 +1,789 @@
+Redstone-Steuerungen
+Messanzeigen und Signalbauteile
+Steuerungstechnik macht verborgene Redstone-Signale als übersichtliche Fabrikschalttafeln, Sensoren, Anzeigen, Schalter, Alarme und verknüpfte Signalbauteile nutzbar.<br>
+<br>
+Nutze diese Seiten beim Bau von Bedienplätzen, Signaltafeln, Sicherheitsschaltungen und Fernsteuerungen.
+<np>
+Zielscheibe
+Kurzer Impuls
+<&arrow_target>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Türöffner
+Redstone-Steuerung
+<&door_sensor_switch>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Fahrstuhl-Knopf
+Redstone-Steuerung
+<&elevator_button>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Glasknopf
+Redstone-Steuerung
+<&glass_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Glasknopf
+Redstone-Steuerung
+<&glass_small_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Glas Touch-Knopf
+Redstone-Steuerung
+<&glass_touch_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Maschinentaster
+Redstone-Steuerung
+<&industrial_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Knopf
+Redstone-Steuerung
+<&industrial_double_pole_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Maschinentaster
+Redstone-Steuerung
+<&industrial_fenced_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Klopftaster
+Redstone-Steuerung
+<&industrial_knock_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Nostalgischer Zierknopf
+Redstone-Steuerung
+<&oldfancy_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Nostalgischer Zierknopf
+Redstone-Steuerung
+<&oldfancy_small_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Nostalgischer Zugkettenknopf
+Kurzer Impuls
+<&oldfancy_spring_reset_chain>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Rustikaler Knopf
+Redstone-Steuerung
+<&rustic_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Rustikaler Nagel-Knopf
+Redstone-Steuerung
+<&rustic_nail_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Kleiner Rustikaler Knopf
+Redstone-Steuerung
+<&rustic_small_button>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Rustikaler Ziehketten-Taster
+Kurzer Impuls
+<&rustic_spring_reset_chain>Ein Taster liefert einen klaren Redstone-Impuls mit voller Signalstärke.<br>
+<br>
+Verwendung: Nutze ihn für Maschinenstarts, Türfreigaben, Alarme oder einmalige Schaltvorgänge.<br>
+<br>
+Hinweis: Setzt sich nach der festgelegten Impulsdauer zurück.
+<np>
+Redstone-Glasplatte
+Druckimpuls
+<&glass_contact_mat>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Glas-Türkontakt
+Druckimpuls
+<&glass_door_contact_mat>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Kontaktmatte
+Druckimpuls
+<&industrial_contact_mat>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Türkontaktmatte
+Druckimpuls
+<&industrial_door_contact_mat>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Durchfalldetektor
+Signalerfassung
+<&industrial_fallthrough_detector>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Fußtaster
+Redstone-Steuerung
+<&industrial_foot_button>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Industrielle Erschütterungstür
+Druckimpuls
+<&industrial_high_sensitive_trapdoor>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Erschütterungskontaktmatte
+Druckimpuls
+<&industrial_shock_sensitive_contact_mat>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Erschütterungsfalltür
+Druckimpuls
+<&industrial_shock_sensitive_trapdoor>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Rote Powerblume
+Druckimpuls
+<&red_power_plant>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Rustikale Eisenplatte
+Druckimpuls
+<&rustic_contact_plate>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Rustikale Türdruckplatte
+Druckimpuls
+<&rustic_door_contact_plate>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Rustikaler Falldetektor
+Signalerfassung
+<&rustic_fallthrough_detector>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Rustikale Erschütterungstür
+Druckimpuls
+<&rustic_high_sensitive_trapdoor>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Rustikale Erschütterungsplatte
+Druckimpuls
+<&rustic_shock_sensitive_plate>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Rustikale Erschütterungstür
+Druckimpuls
+<&rustic_shock_sensitive_trapdoor>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Gelbe Powerblume
+Druckimpuls
+<&yellow_power_plant>Ein Kontaktschalter gibt nach Bewegungen auf einer Bodenplatte oder Falltür ein kurzes Signal aus.<br>
+<br>
+Verwendung: Platziere ihn dort, wo Entitäten einen Wartungsgang, eine Ladestelle oder einen gesicherten Weg passieren.<br>
+<br>
+Hinweis: Gibt nach Entitätskontakt kurz einen Impuls aus.
+<np>
+Glas-Zeitschaltuhr
+Tageslichtsignal
+<&glass_day_timer>Ein Zeitschalter folgt dem Tagesabschnitt des Weltzyklus.<br>
+<br>
+Verwendung: Nutze ihn für Hofleuchten, Rollläden und Fabriksteuerungen, die nur tagsüber aktiv sein sollen.<br>
+<br>
+Hinweis: Benötigt eine Dimension mit Himmelslicht.
+<np>
+Glas-Entitätsdetektor
+Signalerfassung
+<&glass_entity_detector>Ein Entitätsdetektor überwacht Bewegungen in der Nähe, ohne eine sichtbare Bodenplatte zu benötigen.<br>
+<br>
+Verwendung: Verbinde ihn mit Türen, Leuchten, Alarmen oder Maschinenverriegelungen.<br>
+<br>
+Hinweis: Überwacht einen kleinen Bereich um den Block.
+<np>
+Glas-Intervallsignalgeber
+Zeitgesteuerter Impuls
+<&glass_interval_timer>Ein kompakter Zeitschalter liefert einen zeitlich gesteuerten Redstone-Impuls.<br>
+<br>
+Verwendung: Nutze ihn, wenn ein kleiner Mechanismus regelmäßig oder verzögert angesteuert werden soll.<br>
+<br>
+Hinweis: Verwendet zeitgesteuerte Redstone-Impulse.
+<np>
+Glas-Lichtschranke
+Signalerfassung
+<&glass_linear_entity_detector>Ein Entitätsdetektor überwacht Bewegungen in der Nähe, ohne eine sichtbare Bodenplatte zu benötigen.<br>
+<br>
+Verwendung: Verbinde ihn mit Türen, Leuchten, Alarmen oder Maschinenverriegelungen.<br>
+<br>
+Hinweis: Überwacht einen kleinen Bereich um den Block.
+<np>
+Blockdetektor
+Signalerfassung
+<&industrial_block_detector>Ein Blockdetektor prüft, ob der Raum vor seiner Stirnseite belegt ist.<br>
+<br>
+Verwendung: Richte ihn auf die zu überwachende Maschinenseite, den Puffer oder den gesicherten Bereich.<br>
+<br>
+Hinweis: Gibt ein Signal aus, wenn der gegenüberliegende Block keine Luft ist.
+<np>
+Zeitschaltuhr
+Tageslichtsignal
+<&industrial_day_timer>Ein Zeitschalter folgt dem Tagesabschnitt des Weltzyklus.<br>
+<br>
+Verwendung: Nutze ihn für Hofleuchten, Rollläden und Fabriksteuerungen, die nur tagsüber aktiv sein sollen.<br>
+<br>
+Hinweis: Benötigt eine Dimension mit Himmelslicht.
+<np>
+Entitätsdetektor
+Signalerfassung
+<&industrial_entity_detector>Ein Entitätsdetektor überwacht Bewegungen in der Nähe, ohne eine sichtbare Bodenplatte zu benötigen.<br>
+<br>
+Verwendung: Verbinde ihn mit Türen, Leuchten, Alarmen oder Maschinenverriegelungen.<br>
+<br>
+Hinweis: Überwacht einen kleinen Bereich um den Block.
+<np>
+Intervalltimer
+Zeitgesteuerter Impuls
+<&industrial_interval_timer>Ein kompakter Zeitschalter liefert einen zeitlich gesteuerten Redstone-Impuls.<br>
+<br>
+Verwendung: Nutze ihn, wenn ein kleiner Mechanismus regelmäßig oder verzögert angesteuert werden soll.<br>
+<br>
+Hinweis: Verwendet zeitgesteuerte Redstone-Impulse.
+<np>
+Lichtsensor
+Signalerfassung
+<&industrial_light_sensor>Ein Lichtsensor wandelt die örtliche Helligkeit in ein Redstone-Steuersignal um.<br>
+<br>
+Verwendung: Nutze ihn für automatische Leuchten, Rollläden und helligkeitsabhängige Schaltungen.<br>
+<br>
+Hinweis: Gibt ab einer rohen Helligkeit von 8 ein Signal aus.
+<np>
+Gewitterdetektor
+Signalerfassung
+<&industrial_lightning_sensor>Ein Gewittersensor löst während eines Gewitters Warnsignale aus.<br>
+<br>
+Verwendung: Platziere ihn unter freiem Himmel und verbinde ihn mit Leuchten oder Alarmen.<br>
+<br>
+Hinweis: Benötigt Gewitter und freien Himmelszugang.
+<np>
+Lineare Entitätserkennung
+Signalerfassung
+<&industrial_linear_entity_detector>Ein Entitätsdetektor überwacht Bewegungen in der Nähe, ohne eine sichtbare Bodenplatte zu benötigen.<br>
+<br>
+Verwendung: Verbinde ihn mit Türen, Leuchten, Alarmen oder Maschinenverriegelungen.<br>
+<br>
+Hinweis: Überwacht einen kleinen Bereich um den Block.
+<np>
+Regensensor
+Signalerfassung
+<&industrial_rain_sensor>Ein Wettersensor wandelt Regen an seinem Standort in ein Redstone-Signal um.<br>
+<br>
+Verwendung: Montiere ihn so, dass Regen den Block darüber erreichen kann.<br>
+<br>
+Hinweis: Prüft Regen oberhalb des Sensors.
+<np>
+Glasschalter
+Redstone-Steuerung
+<&glass_rotary_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Bistabiler Glas-Berührungsschalter
+Redstone-Steuerung
+<&glass_touch_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Oranges signalempfindliches Glas
+Signalglas
+<&orange_sensitiveglass>Ein auf Redstone reagierender Glasblock lässt die Sicht frei und zeigt zugleich den Signalzustand an.<br>
+<br>
+Verwendung: Nutze ihn in Kontrollraumfenstern, beleuchteten Tafeln und geschützten Fabrikverglasungen.<br>
+<br>
+Hinweis: Ändert seinen Zustand durch Redstone-Signale in der Nähe.
+<np>
+Leuchtendes signalempfindliches Glas
+Signalglas
+<&sensitive_glass_block>Ein auf Redstone reagierender Glasblock lässt die Sicht frei und zeigt zugleich den Signalzustand an.<br>
+<br>
+Verwendung: Nutze ihn in Kontrollraumfenstern, beleuchteten Tafeln und geschützten Fabrikverglasungen.<br>
+<br>
+Hinweis: Ändert seinen Zustand durch Redstone-Signale in der Nähe.
+<np>
+Farbiges signalempfindliches Glas
+Signalglas
+<&stained_sensitiveglass>Ein auf Redstone reagierender Glasblock lässt die Sicht frei und zeigt zugleich den Signalzustand an.<br>
+<br>
+Verwendung: Nutze ihn in Kontrollraumfenstern, beleuchteten Tafeln und geschützten Fabrikverglasungen.<br>
+<br>
+Hinweis: Ändert seinen Zustand durch Redstone-Signale in der Nähe.
+<np>
+Glas-Balkenanzeige
+Signalmessgerät
+<&glass_vertical_bar_gauge>Ein kompaktes Messgerät für Kontrollräume zeigt die Redstone-Stärke gut lesbar auf einer Schalttafel an.<br>
+<br>
+Verwendung: Montiere es dort, wo die Redstone-Stärke benachbarter Bauteile auf einen Blick erkennbar sein soll.<br>
+<br>
+Hinweis: Erfasst die Redstone-Stärke in der Nähe von 0 bis 15.
+<np>
+Analoge Messanzeige
+Signalmessgerät
+<&industrial_analog_angular_gauge>Ein kompaktes Messgerät für Kontrollräume zeigt die Redstone-Stärke gut lesbar auf einer Schalttafel an.<br>
+<br>
+Verwendung: Montiere es dort, wo die Redstone-Stärke benachbarter Bauteile auf einen Blick erkennbar sein soll.<br>
+<br>
+Hinweis: Erfasst die Redstone-Stärke in der Nähe von 0 bis 15.
+<np>
+Voltmeteranzeige
+Signalmessgerät
+<&industrial_analog_horizontal_gauge>Ein kompaktes Messgerät für Kontrollräume zeigt die Redstone-Stärke gut lesbar auf einer Schalttafel an.<br>
+<br>
+Verwendung: Montiere es dort, wo die Redstone-Stärke benachbarter Bauteile auf einen Blick erkennbar sein soll.<br>
+<br>
+Hinweis: Erfasst die Redstone-Stärke in der Nähe von 0 bis 15.
+<np>
+Digitalanzeige
+Gut ablesbare Signalstärke
+<&industrial_small_digital_gauge>Ein kompaktes Messgerät für Kontrollräume zeigt die Redstone-Stärke gut lesbar auf einer Schalttafel an.<br>
+<br>
+Verwendung: Montiere es dort, wo die Redstone-Stärke benachbarter Bauteile auf einen Blick erkennbar sein soll.<br>
+<br>
+Hinweis: Erfasst die Redstone-Stärke in der Nähe von 0 bis 15.
+<np>
+Glasröhrenanzeige
+Signalmessgerät
+<&industrial_tube_gauge>Ein kompaktes Messgerät für Kontrollräume zeigt die Redstone-Stärke gut lesbar auf einer Schalttafel an.<br>
+<br>
+Verwendung: Montiere es dort, wo die Redstone-Stärke benachbarter Bauteile auf einen Blick erkennbar sein soll.<br>
+<br>
+Hinweis: Erfasst die Redstone-Stärke in der Nähe von 0 bis 15.
+<np>
+Analoge Balkenanzeige
+Signalmessgerät
+<&industrial_vertical_bar_gauge>Ein kompaktes Messgerät für Kontrollräume zeigt die Redstone-Stärke gut lesbar auf einer Schalttafel an.<br>
+<br>
+Verwendung: Montiere es dort, wo die Redstone-Stärke benachbarter Bauteile auf einen Blick erkennbar sein soll.<br>
+<br>
+Hinweis: Erfasst die Redstone-Stärke in der Nähe von 0 bis 15.
+<np>
+Alarm-Lampe
+Signalrückmeldung
+<&industrial_alarm_lamp>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Alarmsirene
+Signalanzeige
+<&industrial_alarm_siren>Die Alarmsirene ist eine an einer Blockfläche montierte Redstone-Anzeige. Ihr Stromzustand folgt dem Signal des Blocks, an dem sie befestigt ist.<br>
+<br>
+Benutzung: An einer festen Fläche anbringen und mit Strom versorgen, um Türen, Maschinen, Alarme oder Bedienfelder zu überwachen.<br>
+<br>
+Hinweis: Solange das anliegende Signal aktiv ist, aktualisiert sich die Sirene einmal pro Sekunde.
+<np>
+Blink-LED
+Signalrückmeldung
+<&industrial_blinking_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Grüne Blink-LED
+Signalrückmeldung
+<&industrial_green_blinking_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Grüne LED
+Signalrückmeldung
+<&industrial_green_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Rote LED
+Signalrückmeldung
+<&industrial_red_blinking_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Rote LED
+Signalrückmeldung
+<&industrial_red_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Weiße Blink-LED
+Signalrückmeldung
+<&industrial_white_blinking_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Weiße LED
+Signalrückmeldung
+<&industrial_white_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Gelbe Blink-LED
+Signalrückmeldung
+<&industrial_yellow_blinking_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Gelbe LED
+Signalrückmeldung
+<&industrial_yellow_led>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Rustikale Signalfahne
+Signalrückmeldung
+<&rustic_semaphore>Eine kompakte Anzeige macht verborgene Redstone-Signale als Rückmeldung in der Fabrik sichtbar.<br>
+<br>
+Verwendung: Verkabele sie neben dem Signal, um Türen, Maschinen, Alarme oder Schalttafeln zu überwachen.<br>
+<br>
+Hinweis: Ändert den Zustand, wenn in der Nähe ein Redstone-Signal anliegt.
+<np>
+Komparatorschalter
+Signal am Befestigungsblock
+<&industrial_comparator_switch>Ein kompakter Sensorschalter liest seinen Befestigungsblock aus und wandelt den Messwert in einen einfachen Schalttafelausgang um.<br>
+<br>
+Verwendung: Montiere ihn an Inventaren, Tanks oder Redstone-Bauteilen. Meldet der Befestigungsblock einen Komparator-, Behälter- oder Redstone-Ausgang, gibt der Schalter ein Redstone-Signal voller Stärke aus.<br>
+<br>
+Hinweis: Wandelt Lagerfüllstände oder verborgene Leitungen in klare Ein-/Aus-Steuerleitungen um.
+<np>
+Dimmer
+Veränderliches Signal
+<&industrial_dimmer>Ein Drehregler stellt die Redstone-Stärke an einer kompakten Schalttafelfläche ein.<br>
+<br>
+Verwendung: Erhöhe den Ausgang schrittweise per Rechtsklick; nach voller Stärke beginnt er wieder bei null.<br>
+<br>
+Hinweis: Gibt Signalstärken von 0 bis 15 aus.
+<np>
+Notaus-Pilz
+Redstone-Steuerung
+<&industrial_estop_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Hopper-Schiebeschalter
+Redstone-Steuerung
+<&industrial_hopper_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Klopfschalter
+Redstone-Steuerung
+<&industrial_knock_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Hebel
+Redstone-Steuerung
+<&industrial_lever>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Zwei-Tasten-Maschinenschalter
+Redstone-Steuerung
+<&industrial_machine_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Zuggriff
+Redstone-Steuerung
+<&industrial_pull_handle>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Drehhebel
+Redstone-Steuerung
+<&industrial_rotary_lever>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Maschinen-Drehschalter
+Redstone-Steuerung
+<&industrial_rotary_machine_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Kontakthebel
+Redstone-Steuerung
+<&industrial_small_lever>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Schalter
+Redstone-Steuerung
+<&industrialswitch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Lichtschalter
+Redstone-Steuerung
+<&light_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Handrad-Schalter
+Redstone-Steuerung
+<&valve_wheel_switch>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Impulsempfänger im Gehäuse
+Verknüpfte Steuerung
+<&industrial_switchlink_cased_pulse_receiver>Ein verknüpfter Impulsempfänger im Gehäuse liefert entfernten Schalttafeln einen kurzen Redstone-Auslöser.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Ein Rechtsklick auf den Empfänger oder das Betätigen der Link-Perle löst einen kurzen Impuls aus.<br>
+<br>
+Hinweis: Der Impuls endet nach seiner festgelegten Dauer von selbst.
+<np>
+Verknüpfungsempfänger im Gehäuse
+Verknüpfte Steuerung
+<&industrial_switchlink_cased_receiver>Ein verknüpfter Empfänger im Gehäuse bietet entfernten Schalttafeln ein robustes Redstone-Ziel.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Klicke den Empfänger direkt mit rechts an, um ihn von Hand umzuschalten.<br>
+<br>
+Hinweis: Eine beim Schleichen benutzte Link-Perle schaltet diesen Empfänger um.
+<np>
+Verknüpfter Impulsempfänger
+Verknüpfte Steuerung
+<&industrial_switchlink_pulse_receiver>Ein verknüpfter Impulsempfänger liefert entfernten Schalttafeln einen kurzen Redstone-Auslöser.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Ein Rechtsklick auf den Empfänger oder das Betätigen der Link-Perle löst einen kurzen Impuls aus.<br>
+<br>
+Hinweis: Der Impuls endet nach seiner festgelegten Dauer von selbst.
+<np>
+Verknüpftes Impulsrelais
+Verknüpfte Steuerung
+<&industrial_switchlink_pulse_relay>Ein Bauteil im Relaisstil bietet Schalttafeln einen kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Stärke für nahe Schaltungen um. Verwende Empfängerblöcke, wenn eine Link-Perle die Betätigung übernehmen soll.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Empfänger für Schalterverknüpfungen
+Verknüpfte Steuerung
+<&industrial_switchlink_receiver>Ein verknüpfter Empfänger bietet entfernten Schalttafeln ein Redstone-Ziel mit voller Signalstärke.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Klicke den Empfänger direkt mit rechts an, um ihn von Hand umzuschalten.<br>
+<br>
+Hinweis: Eine beim Schleichen benutzte Link-Perle schaltet diesen Empfänger um.
+<np>
+Analoger Verknüpfungsempfänger
+Verknüpfte Steuerung
+<&industrial_switchlink_receiver_analog>Ein verknüpfter Empfänger bietet Schalttafeln ein sichtbares Fernsteuerziel.<br>
+<br>
+Verwendung: Klicke ihn mit einer Enderperle an, um eine Link-Perle zu erzeugen. Benutze diese beim Schleichen, um den Empfänger aus der Ferne zu aktivieren.<br>
+<br>
+Hinweis: Dieser Empfänger gibt bei Auslösung ein Redstone-Signal voller Stärke aus.
+<np>
+Relais für Schalterverknüpfungen
+Verknüpfte Steuerung
+<&industrial_switchlink_relay>Ein Bauteil im Relaisstil bietet Schalttafeln einen kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Stärke für nahe Schaltungen um. Verwende Empfängerblöcke, wenn eine Link-Perle die Betätigung übernehmen soll.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Analoges Verknüpfungsrelais
+Verknüpfte Steuerung
+<&industrial_switchlink_relay_analog>Ein Bauteil im Relaisstil bietet Schalttafeln einen kompakten lokalen Schaltpunkt.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Stärke für nahe Schaltungen um. Verwende Empfängerblöcke, wenn eine Link-Perle die Betätigung übernehmen soll.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Link-Perle
+Verknüpfte Steuerung
+<&switchlink_pearl>Eine Link-Perle speichert einen Empfänger als Ziel für die Fernsteuerung von Fabrikanlagen.<br>
+<br>
+Verwendung: Klicke einen Empfänger für Schalterverknüpfungen mit einer Enderperle an, um sie zu erzeugen. Benutze die Link-Perle beim Schleichen, um den gespeicherten Empfänger zu aktivieren.<br>
+<br>
+Hinweis: Das Ziel muss geladen sein, in derselben Dimension liegen und sich in Reichweite befinden.
+<np>
+Nostalgischer Zierhebel
+Redstone-Steuerung
+<&oldfancy_bistableswitch1>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Nostalgischer Zierdrehhebel
+Redstone-Steuerung
+<&oldfancy_bistableswitch2>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Rustikaler Wellen-Endhebel
+Redstone-Steuerung
+<&rustic_angular_lever>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Rustikaler Hebel
+Redstone-Steuerung
+<&rustic_lever>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Rustikaler Nagel-Hebel
+Redstone-Steuerung
+<&rustic_nail_lever>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.
+<np>
+Rustikaler Doppelgelenk-Hebel
+Redstone-Steuerung
+<&rustic_two_hinge_lever>Ein kompaktes Bedienelement bietet einen klar erkennbaren Redstone-Schaltpunkt für Fabrikbauten.<br>
+<br>
+Verwendung: Schalte per Rechtsklick den Ausgang mit voller Signalstärke für nahe Schaltungen um.<br>
+<br>
+Hinweis: Gibt im eingeschalteten Zustand ein Redstone-Signal voller Stärke aus.

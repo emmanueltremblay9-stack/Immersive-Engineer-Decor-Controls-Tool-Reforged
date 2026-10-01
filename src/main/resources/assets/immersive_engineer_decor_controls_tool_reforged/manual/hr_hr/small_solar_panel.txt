@@ -1,0 +1,5 @@
+Solarna ploča
+Oprema tvorničkog poda
+<&recipe>Mala solarna ploča pripada skupini radioničkih blokova za izradu, pohranu, postavljanje, razbijanje, skupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Uporaba: omogući joj otvoren pogled na nebo i spoji opremu male potrošnje.<br>

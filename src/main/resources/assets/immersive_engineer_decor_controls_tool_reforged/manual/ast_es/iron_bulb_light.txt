@@ -1,0 +1,5 @@
+Lluz de bombilla de fierro
+Lluz de trabayu compacta
+<&recipe>Esti bloque apurre allumáu industrial compactu pa pasillos, pasareles y puestos de trabayu.<br>
+<br>
+Usu: móntalu en techos, parés o bordes onde la sala precise un allumáu claru de trabayu.<br>

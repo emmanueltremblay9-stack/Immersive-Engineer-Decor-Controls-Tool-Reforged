@@ -1,0 +1,93 @@
+Dụng cụ kỹ sư
+Trang bị xưởng di động
+Bộ dụng cụ kỹ sư bổ sung thiết bị cầm tay, dấu mỏ, vật phẩm khẩn cấp dùng hết, lương thực dã ngoại và hỗ trợ xử lý vật liệu nhỏ vào cùng sổ tay mô tả các khối trang trí và điều khiển.<br>
+<br>
+Các dụng cụ này dành cho công việc xa xưởng đầy đủ: đánh dấu đường, mang vật tư, khắc phục sai sót và hoàn thành các bước xử lý nhỏ tại chỗ.
+<np>
+Dụng cụ REDIA
+Dụng cụ đa năng bọc kim cương
+<&redia_tool>Dụng cụ REDIA là thiết bị dã ngoại bền bỉ để xử lý nền đất nhanh. Dùng trên đất có thể canh tác để cày thành đất ruộng.<br>
+<br>
+Khi mang đuốc, dùng lên mặt chắc chắn để đặt dấu đuốc từ túi đồ mà không làm mòn REDIA. Xử lý đất, cắt bằng kéo, chặt bằng rìu và đốn cây đều hao độ bền.
+<np>
+Búa nghiền quặng
+Dụng cụ nghiền cầm tay
+<&crushing_hammer>Búa nghiền quặng là dụng cụ cầm tay để xử lý sớm sắt và vàng.<br>
+<br>
+Dùng với sắt thô, vàng thô, quặng sắt hoặc vàng và biến thể đá phiến sâu để tạo bột Immersive Engineering. Búa mất độ bền, trở lại lưới đến khi vỡ, mòn khi đào và đẩy lùi mục tiêu.
+<np>
+Thiết bị theo dấu
+Dấu vị trí đã lưu
+<&tracker>Thiết bị theo dõi lưu vị trí khối trong vật phẩm.<br>
+<br>
+Nhấp khối để lưu chiều và tọa độ. Chú thích hiện vị trí. Dùng khi cúi để xóa mục tiêu.<br>
+<br>
+Đánh dấu máy, đường hầm, điều khiển từ xa hoặc công trình chưa xong.
+<np>
+Than Ariadne
+Dấu chỉ đường trong mỏ
+<&ariadne_coal>Than Ariadne đặt nhanh dấu mũi tên đen chỉ đường trên mặt mỏ chắc chắn. Dùng trên mặt rắn để đánh dấu chỗ rẽ tiếp theo, lối ra hoặc ngã rẽ; dấu hỗ trợ tám hướng trên mặt được nhấp, kể cả đường chéo.<br>
+<br>
+Than Ariadne là dụng cụ đánh dấu tái sử dụng với 100 lần dùng. Mỗi dấu đặt thành công tốn một độ bền. Các mặt không được hỗ trợ bị từ chối thay vì làm mòn vật phẩm.
+<np>
+Bộ tiêm kích thích tự động
+Bộ tiêm khẩn cấp
+<&stimpack>Gói kích thích tự động là vật phẩm y tế khẩn cấp.<br>
+<br>
+Dùng thủ công để hồi máu, nhận bảo vệ ngắn và tăng tốc. Trong kho đồ, nó tự kích hoạt khi ít máu rồi hồi chiêu. Giữ sẵn ở nơi nguy hiểm.
+<np>
+Túi ngủ
+Bộ nghỉ ngơi di động
+<&sleeping_bag>Túi ngủ là bộ nghỉ chịu thời tiết khi làm việc xa giường.<br>
+<br>
+Dùng ban đêm ở Overworld để nghỉ đến sáng mà không đổi điểm hồi sinh.<br>
+<br>
+Không dùng được ban ngày, gần quái vật hoặc ở chiều không phù hợp. Mỗi lần nghỉ thành công làm mòn túi.
+<np>
+Hộp chứa vật liệu
+Hộp vật tư xây dựng
+<&material_box>Hộp vật liệu mang lượng lớn một loại vật liệu xây dựng thường, chưa sửa đổi và có thể xếp chồng.<br>
+<br>
+Cầm hộp ở tay chính và vật liệu ở tay phụ để nạp; dùng khi tay phụ trống để lấy ra một chồng.<br>
+<br>
+Hộp chứa 512 vật phẩm một loại, từ chối hộp khác, trang bị không xếp chồng và chồng đã sửa đổi, đồng thời hiện nội dung trong chú thích.
+<np>
+Viên khí lặn
+Dự trữ khí khẩn cấp
+<&diving_capsule>Viên nang khí lặn là nguồn khí khẩn cấp cho công việc dưới nước.<br>
+<br>
+Dùng thủ công để phục hồi khí. Trong kho đồ, nó tự kích hoạt khi khí gần cạn rồi hồi chiêu. Mang theo vào mỏ ngập và đường ống chìm.
+<np>
+Máy ép thanh năng lượng hỗn hợp Muslee
+Máy ép thực phẩm
+<&musli_bar_press>Máy ép Muslee biến thực phẩm thường thành khẩu phần gọn.<br>
+<br>
+Mang bánh mì, táo và hạt lúa mì, dưa hấu, bí ngô, củ dền hoặc gai dầu công nghiệp rồi dùng máy ép. Máy dùng mỗi thứ một, kiểm tra chỗ trống, tạo bốn thanh và bị hao mòn.<br>
+<br>
+Nếu thiếu nguyên liệu hoặc chỗ trống, không có gì bị tiêu thụ.
+<np>
+Thanh năng lượng hỗn hợp Muslee
+Món ăn nhanh trong xưởng
+<&musli_bar>Thanh Muslee Melange là thức ăn gọn làm từ bánh mì, hạt và trái cây.<br>
+<br>
+Ăn khi lắp bộ điều khiển, ống, sàn hoặc dây chuyền máy dài.
+<np>
+Máy ép tâm trí
+Bộ cô đặc kinh nghiệm
+<&charged_lapis_squeezer>Máy ép tâm trí biến một ngọc lưu ly và một cấp kinh nghiệm từ túi đồ thành ngọc lưu ly tích năng.<br>
+<br>
+Mỗi lần chuyển đổi thành công đều gây đau, kiệt sức và mù tạm thời cho người dùng. Máy từ chối hoạt động khi thiếu ngọc, thiếu kinh nghiệm hoặc người dùng quá gần cái chết.
+<np>
+Ngọc lưu ly tích năng
+Kinh nghiệm lưu trữ
+<&charged_lapis>Ngọc lưu ly tích năng lưu một cấp kinh nghiệm. Tiêu thụ để lấy lại cấp đó, xóa hiệu ứng đang hoạt động và hồi một ít máu.<br>
+<br>
+Chế tạo máy ép tâm trí trước; ngọc lưu ly tích năng được tạo khi dùng dụng cụ này với ngọc lưu ly và kinh nghiệm sẵn có.
+<np>
+Vụn sắt thô
+Vật liệu dụng cụ kỹ sư dùng trong bộ công thức được tái dựng.
+<&iron_grit>Có thể nung thành phôi sắt<br>nhưng không phù hợp với xử<br>lý vật liệu nâng cao.
+<np>
+Vụn vàng thô
+Vật liệu dụng cụ kỹ sư dùng trong bộ công thức được tái dựng.
+<&gold_grit>Có thể nung thành phôi vàng<br>nhưng không phù hợp với xử<br>lý vật liệu nâng cao.

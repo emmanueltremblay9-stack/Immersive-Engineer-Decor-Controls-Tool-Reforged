@@ -1,0 +1,7 @@
+Taqqoslagich kaliti
+Mahkamlangan blok signali
+<&recipe>Ixcham sensor kaliti o'zi mahkamlangan blokni o'qib, natijani oddiy panel chiqishiga aylantiradi.<br>
+<br>
+Ishlatish: inventar, bak yoki redstone jihoziga mahkamlang. Ulangan blok taqqoslagich, idish yoki redstone chiqishini bildirganda, kalit to'liq quvvatli redstone chiqaradi.<br>
+<br>
+Eslatma: zaxira sathi yoki yashirin simlarni aniq yoqiq/o'chiq boshqaruv liniyasiga aylantirishda foydalaning.

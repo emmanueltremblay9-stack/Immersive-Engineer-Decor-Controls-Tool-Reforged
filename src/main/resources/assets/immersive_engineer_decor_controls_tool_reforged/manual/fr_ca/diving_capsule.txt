@@ -1,0 +1,7 @@
+Capsule d'air de plongée
+Réserve d'air d'urgence
+<&recipe>La capsule d’air de plongée est une réserve d’urgence pour les travaux sous-marins.<br>
+<br>
+Utilisation : utilisez-la manuellement pour restaurer votre air. Dans l’inventaire, elle peut aussi s’activer automatiquement quand l’air est presque épuisé, puis entre en recharge.<br>
+<br>
+Emportez-la dans les mines inondées, le long des tuyaux immergés et pour réparer les salles de pompes.

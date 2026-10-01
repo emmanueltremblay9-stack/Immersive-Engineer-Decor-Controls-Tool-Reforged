@@ -1,0 +1,127 @@
+Voies d'accès
+Passerelles et supports
+Poteaux en acier ou en bois traité, caillebotis, passerelles, garde-corps, échelles, portes, fenêtres et trappes forment des voies de service compactes à l'intérieur des usines.<br>
+<br>
+Les éléments d'accès en acier utilisent des plaques d'acier. Fabriquez ou placez un établi de métallurgie, insérez un marteau d'Immersive Engineering et martelez des lingots d'acier pour obtenir les plaques nécessaires aux poteaux, passerelles, fenêtres, portes, garde-corps et autres décors en acier.<br>
+<br>
+Placez-les pour accéder aux machines, créer des passages surélevés, aménager des puits de maintenance ou sécuriser les bords.
+<np>
+Poteau épais en acier
+Élément d'ossature
+<&thick_steel_pole>Le poteau droit épais en acier forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Tête de poteau épais
+Élément d'ossature
+<&thick_steel_pole_head>La tête ou le pied de poteau droit épais en acier forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Poteau fin en acier
+Élément d'ossature
+<&thin_steel_pole>Le poteau droit fin en acier forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Tête de poteau fin
+Élément d'ossature
+<&thin_steel_pole_head>La tête ou le pied de poteau droit fin en acier forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Poteau en bois traité
+Élément d'ossature
+<&treated_wood_pole>Le poteau droit en bois traité forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Tête de poteau traité
+Élément d'ossature
+<&treated_wood_pole_head>La tête ou le pied de poteau droit en bois traité forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Support de poteau traité
+Élément d'ossature
+<&treated_wood_pole_support>Le support de poteau droit en bois traité forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Support en acier double T
+Élément d'ossature
+<&steel_double_t_support>Ce bloc forme une structure apparente dans les halls de machines et les cadres d'accès.<br>
+<br>
+Utilisation : orientez-le et placez-le comme renfort apparent pour les poutres, poteaux et bords de plateformes.<br>
+<np>
+Caillebotis en acier
+Élément de voie de service
+<&steel_floor_grating>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Passerelle en acier
+Élément de voie de service
+<&steel_catwalk>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Escaliers de passerelle en acier
+Élément de voie de service
+<&steel_catwalk_stairs>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Passerelle en acier surélevée
+Élément de voie de service
+<&steel_catwalk_ta>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Garde-corps en acier
+Élément de voie de service
+<&steel_railing>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Clôture en maille d'acier
+Élément de voie de service
+<&steel_mesh_fence>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Porte de clôture en maille d'acier
+Élément de voie de service
+<&steel_mesh_fence_gate>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Échelle à échelons en métal
+Élément de voie de service
+<&metal_rung_ladder>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Marches en métal échelonnées
+Élément de voie de service
+<&metal_rung_steps>Ce bloc délimite clairement les voies de service autour des machines.<br>
+<br>
+Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<np>
+Fenêtre encadrée en acier
+Vue protégée
+<&steel_framed_window>Ce bloc préserve la visibilité tout en s'intégrant à une construction industrielle renforcée.<br>
+<br>
+Utilisation : placez-le dans une ouverture murale d'un bloc pour observer les machines à travers une barrière protectrice.<br>
+<np>
+Porte coulissante en métal
+Point d'accès industriel
+<&metal_sliding_door>Ce bloc offre un accès robuste aux locaux techniques, puits, toitures et enceintes de machines.<br>
+<br>
+Utilisation : installez-le lorsqu'une ouverture de maintenance contrôlée est nécessaire.<br>
+<np>
+Trappe en fer
+Point d'accès industriel
+<&iron_hatch>Ce bloc offre un accès robuste aux locaux techniques, puits, toitures et enceintes de machines.<br>
+<br>
+Utilisation : installez-le lorsqu'une ouverture de maintenance contrôlée est nécessaire.<br>

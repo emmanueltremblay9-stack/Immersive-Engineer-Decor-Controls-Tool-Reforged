@@ -1,0 +1,7 @@
+Stakleni dnevni vremenski prekidač
+Signal dnevnog svjetla
+<&recipe>Vremenski prekidač prati dnevni dio ciklusa svijeta.<br>
+<br>
+Uporaba: koristi ga za dvorišna svjetla, zatvarače i tvorničko upravljanje koje radi samo danju.<br>
+<br>
+Napomene: potrebna je dimenzija s nebeskim svjetlom.

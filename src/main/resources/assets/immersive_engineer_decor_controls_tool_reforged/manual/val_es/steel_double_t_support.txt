@@ -1,0 +1,5 @@
+Suport d’acer de doble T
+Peça de bastidor estructural
+<&recipe>Este bloc aporta una estructura visible a les naus de màquines i als marcs d’accés.<br>
+<br>
+Ús: gira’l i col·loca’l com a reforç visible de bigues, pals i vores de plataformes.<br>

@@ -1,0 +1,5 @@
+Nisip compactat cu pietriș fin
+Suprafață de teren pentru șantier
+<&recipe>Acest bloc oferă zonelor de lucru în aer liber o suprafață compactată și bătătorită.<br>
+<br>
+Utilizare: Așază-l în jurul ușilor de încărcare, rezervoarelor exterioare și curților cu mașini.<br>

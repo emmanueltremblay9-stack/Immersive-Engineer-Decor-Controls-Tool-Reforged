@@ -1,0 +1,7 @@
+Espremedor de mentes
+Condensador de experiência
+<&recipe>O espremedor de mentes converte lápis-lazúli e experiência em lápis-lazúli carregado.<br>
+<br>
+Uso: Leva lápis-lazúli e pelo menos um nível de experiência e usa a ferramenta. Uma extração bem-sucedida consome um nível e um lápis-lazúli, causa dano ao utilizador, desgasta o espremedor e cria um lápis-lazúli carregado.<br>
+<br>
+Não funciona se faltar lápis-lazúli ou experiência, ou se o utilizador estiver demasiado perto da morte.

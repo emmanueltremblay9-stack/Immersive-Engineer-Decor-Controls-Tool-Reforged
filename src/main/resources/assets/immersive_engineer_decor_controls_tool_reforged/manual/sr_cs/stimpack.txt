@@ -1,0 +1,5 @@
+Automatski stimulator
+Ubrizgavač za nuždu
+<&recipe>Automatski stimulans je hitan medicinski predmet.<br>
+<br>
+Koristite ga ručno za lečenje, kratku zaštitu i ubrzanje. U inventaru se automatski aktivira pri slabom zdravlju, pa se hladi. Držite ga pri ruci na opasnim mestima.

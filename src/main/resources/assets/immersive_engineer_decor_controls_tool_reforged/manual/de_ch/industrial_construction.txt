@@ -1,0 +1,108 @@
+Industriebau
+Fabrikwänd und Iifassige
+D'allgemeine Bauteil umfassed Türe, Fänschter, Lüchte, Warnschilder, Iifassige und Tragwärchsteil, wo i kei spezielleri Kategorie ghöred.<br>
+<br>
+Nimm die Siite für Fabrikrüüm, Wartigsgäng, Gfahremarkierig und zweckmässigi Industriedetail.
+<np>
+Iisigi Chugellüchte
+Kompakts Arbeitsliecht
+<&iron_bulb_light>Dä Block sorgt für kompakti Industriebeleuchtig i Gäng, uf Laufsteg und i Arbeitsbuchte.<br>
+<br>
+Verwendig: Montier en a Deckene, Wänd oder Kante, wo guets Arbeitsliecht bruucht wird.<br>
+<np>
+Deckekantelüchte
+Kompakts Arbeitsliecht
+<&iron_ceiling_edge_light>Dä Block sorgt für kompakti Industriebeleuchtig i Gäng, uf Laufsteg und i Arbeitsbuchte.<br>
+<br>
+Verwendig: Montier en a Deckene, Wänd oder Kante, wo guets Arbeitsliecht bruucht wird.<br>
+<np>
+Iiglasseni Bodekantelüchte
+Kompakts Arbeitsliecht
+<&iron_floor_edge_light>Dä Block sorgt für kompakti Industriebeleuchtig i Gäng, uf Laufsteg und i Arbeitsbuchte.<br>
+<br>
+Verwendig: Montier en a Deckene, Wänd oder Kante, wo guets Arbeitsliecht bruucht wird.<br>
+<np>
+Iibaulüchte
+Kompakts Arbeitsliecht
+<&iron_inset_light>Dä Block sorgt für kompakti Industriebeleuchtig i Gäng, uf Laufsteg und i Arbeitsbuchte.<br>
+<br>
+Verwendig: Montier en a Deckene, Wänd oder Kante, wo guets Arbeitsliecht bruucht wird.<br>
+<np>
+Schild «Allgemeini Warnig»
+Gfahremarkierig
+<&sign_caution>S'Schild «Allgemeini Warnig» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Gfahreschild
+Gfahremarkierig
+<&sign_danger>S'Schild «Vorsicht, da isch's würkli gfährlich» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Dekorschild
+Gfahremarkierig
+<&sign_decor>D'Schildtafle (Engineer's Decor) kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Verteidigungsschild
+Gfahremarkierig
+<&sign_defense>S'Schild «Vorsicht, Verteidigigsaalag» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Uusgangsschild
+Gfahremarkierig
+<&sign_exit>Das Schild kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Brandgfahr»
+Gfahremarkierig
+<&sign_firehazard>S'Schild «Brandgfahr» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Froschtwarnig»
+Gfahremarkierig
+<&sign_frost>S'Schild «Froschtwarnig» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Heissi Oberflächi»
+Gfahremarkierig
+<&sign_hotsurface>S'Schild «Vorsicht, heissi Oberflächi» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Kabel under Spannig»
+Gfahremarkierig
+<&sign_hotwire>S'Schild «Vorsicht, Kabel under Spannig» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Lasergfahr»
+Gfahremarkierig
+<&sign_laser>S'Schild «Lasergfahr» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Magischi Gfahr»
+Gfahremarkierig
+<&sign_magichazard>S'Schild «Vorsicht, magischi Gfahr» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Magnetfäld»
+Gfahremarkierig
+<&sign_magneticfield>S'Schild «Vorsicht, starchs Magnetfäld» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>
+Schild «Radioaktivi Gfahr»
+Gfahremarkierig
+<&sign_radioactive>S'Schild «Radioaktivi Gfahr» kennzeichnet Gfahre, Uusgäng und Arbeitszone mit enem guet erkennbare Fabrikhiwiis.<br>
+<br>
+Verwendig: Setz es näbe Gfahrestelle, Uusgäng, Maschine und gsperrti Beriich.<br>
+<np>

@@ -1,0 +1,5 @@
+Puunkaataja
+Työpajan apulaite
+<&recipe>Pieni puunkaataja on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Suuntaa täysikasvuisiin puihin ja kerää pudonneet esineet erikseen.<br>

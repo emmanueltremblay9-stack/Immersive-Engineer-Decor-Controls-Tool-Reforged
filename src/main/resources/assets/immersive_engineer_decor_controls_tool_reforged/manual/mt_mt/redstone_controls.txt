@@ -1,0 +1,789 @@
+Kontrolli tar-Redstone
+Arloġġi tal-kejl u tagħmir tas-sinjali
+It-tagħmir tal-kontroll jibdel Redstone moħbi f'pannelli ċari tal-fabbrika, sensuri, indikaturi, swiċċijiet, allarmi u tagħmir tas-sinjali marbut.<br>
+<br>
+Uża dawn il-paġni meta tibni stazzjonijiet tal-operaturi, bordijiet tas-sinjali, ċirkwiti tas-sigurtà u kontrolli remoti.
+<np>
+Mira għall-vleġeġ
+Impuls momentanju
+<&arrow_target>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Sensur tal-bieb
+Kontroll tar-Redstone
+<&door_sensor_switch>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna tal-lift
+Kontroll tar-Redstone
+<&elevator_button>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Buttuna tal-ħġieġ
+Kontroll tar-Redstone
+<&glass_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna tal-ħġieġ
+Kontroll tar-Redstone
+<&glass_small_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna tal-ħġieġ li taħdem bil-mess
+Kontroll tar-Redstone
+<&glass_touch_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna tal-magna
+Kontroll tar-Redstone
+<&industrial_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna
+Kontroll tar-Redstone
+<&industrial_double_pole_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna tal-magna protetta b'ċint
+Kontroll tar-Redstone
+<&industrial_fenced_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna tat-taħbit
+Kontroll tar-Redstone
+<&industrial_knock_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna qadima mżejna
+Kontroll tar-Redstone
+<&oldfancy_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna qadima mżejna
+Kontroll tar-Redstone
+<&oldfancy_small_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna qadima mżejna b'katina
+Impuls momentanju
+<&oldfancy_spring_reset_chain>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna rustika
+Kontroll tar-Redstone
+<&rustic_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna rustika b'musmar
+Kontroll tar-Redstone
+<&rustic_nail_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna rustika żgħira
+Kontroll tar-Redstone
+<&rustic_small_button>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Buttuna rustika b'katina
+Impuls momentanju
+<&rustic_spring_reset_chain>Swiċċ momentanju jagħti impuls nadif tar-Redstone bis-saħħa kollha.<br>
+<br>
+Użu: użah biex tibda magni, tiftaħ serraturi tal-bibien, tħaddem allarmi jew ċirkwiti ta' darba.<br>
+<br>
+Noti: jerġa' lura għall-istat inizjali wara l-impuls skedat.
+<np>
+Pjanċa tal-kuntatt tal-ħġieġ
+Impuls tal-pressjoni
+<&glass_contact_mat>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Kuntatt tal-bieb tal-ħġieġ
+Impuls tal-pressjoni
+<&glass_door_contact_mat>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Tapit tal-kuntatt
+Impuls tal-pressjoni
+<&industrial_contact_mat>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Tapit tal-kuntatt tal-bieb
+Impuls tal-pressjoni
+<&industrial_door_contact_mat>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Detettur tal-waqgħat minn ġo fih
+Sejbien tas-sinjal
+<&industrial_fallthrough_detector>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Buttuna tas-sieq
+Kontroll tar-Redstone
+<&industrial_foot_button>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Bieb industrijali attivat b'impatt mekkaniku
+Impuls tal-pressjoni
+<&industrial_high_sensitive_trapdoor>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Tapit tal-kuntatt għall-impatti mekkaniċi
+Impuls tal-pressjoni
+<&industrial_shock_sensitive_contact_mat>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Bokkaport għall-impatti mekkaniċi
+Impuls tal-pressjoni
+<&industrial_shock_sensitive_trapdoor>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Pjanta ħamra tal-enerġija
+Impuls tal-pressjoni
+<&red_power_plant>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Pjanċa rustika tal-pressjoni
+Impuls tal-pressjoni
+<&rustic_contact_plate>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Pressjoni rustika tal-bieb
+Impuls tal-pressjoni
+<&rustic_door_contact_plate>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Detettur rustiku tal-waqgħat
+Sejbien tas-sinjal
+<&rustic_fallthrough_detector>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Bieb rustiku attivat b'impatt mekkaniku
+Impuls tal-pressjoni
+<&rustic_high_sensitive_trapdoor>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Pjanċa rustika għall-impatti mekkaniċi
+Impuls tal-pressjoni
+<&rustic_shock_sensitive_plate>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Bieb rustiku attivat b'impatt mekkaniku
+Impuls tal-pressjoni
+<&rustic_shock_sensitive_trapdoor>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Pjanta safra tal-enerġija
+Impuls tal-pressjoni
+<&yellow_power_plant>Swiċċ tal-kuntatt jibgħat sinjal qasir mill-moviment fl-art jew fuq bokkaport.<br>
+<br>
+Użu: qiegħdu fejn jgħaddu entitajiet minn korsija tal-manutenzjoni, apparat tat-tagħbija jew rotta mgħassa.<br>
+<br>
+Noti: jagħti impuls qasir wara kuntatt ma' entità.
+<np>
+Arloġġ tat-tajmer ta' jum tal-ħġieġ
+Sinjal tad-dawl tal-jum
+<&glass_day_timer>Swiċċ tat-tajmer isegwi l-parti ta' matul il-jum taċ-ċiklu tad-dinja.<br>
+<br>
+Użu: użah għal lampi tal-bitħa, persjani u kontrolli tal-fabbrika li jaħdmu biss bi nhar.<br>
+<br>
+Noti: jeħtieġ dimensjoni bid-dawl tas-sema.
+<np>
+Detettur tal-entitajiet tal-ħġieġ
+Sejbien tas-sinjal
+<&glass_entity_detector>Detettur tal-entitajiet josserva moviment fil-qrib mingħajr pjanċa viżibbli fl-art.<br>
+<br>
+Użu: qabbdu ma' bibien, lampi, allarmi jew mekkaniżmi ta' interblokk tal-magni.<br>
+<br>
+Noti: jiskennja żona żgħira madwar il-blokka.
+<np>
+Sinjal tal-intervalli tal-ħġieġ
+Impuls bil-ħin
+<&glass_interval_timer>Swiċċ kompatt tat-tajmer jipprovdi impuls tar-Redstone skedat.<br>
+<br>
+Użu: użah fejn mekkaniżmu żgħir jeħtieġ kontroll perjodiku jew imdewwem.<br>
+<br>
+Noti: juża impulsi tar-Redstone skedati.
+<np>
+Detettur lineari tal-ħġieġ
+Sejbien tas-sinjal
+<&glass_linear_entity_detector>Detettur tal-entitajiet josserva moviment fil-qrib mingħajr pjanċa viżibbli fl-art.<br>
+<br>
+Użu: qabbdu ma' bibien, lampi, allarmi jew mekkaniżmi ta' interblokk tal-magni.<br>
+<br>
+Noti: jiskennja żona żgħira madwar il-blokka.
+<np>
+Detettur tal-blokok
+Sejbien tas-sinjal
+<&industrial_block_detector>Detettur tal-blokok jiċċekkja jekk l-ispazju quddiemu huwiex okkupat.<br>
+<br>
+Użu: ippontah lejn il-wiċċ tal-magna, ir-riżerva jew l-ispazju mgħasses li trid tosserva.<br>
+<br>
+Noti: jagħti l-enerġija meta l-blokka quddiemu ma tkunx arja.
+<np>
+Arloġġ tat-tajmer ta' jum
+Sinjal tad-dawl tal-jum
+<&industrial_day_timer>Swiċċ tat-tajmer isegwi l-parti ta' matul il-jum taċ-ċiklu tad-dinja.<br>
+<br>
+Użu: użah għal lampi tal-bitħa, persjani u kontrolli tal-fabbrika li jaħdmu biss bi nhar.<br>
+<br>
+Noti: jeħtieġ dimensjoni bid-dawl tas-sema.
+<np>
+Detettur tal-entitajiet
+Sejbien tas-sinjal
+<&industrial_entity_detector>Detettur tal-entitajiet josserva moviment fil-qrib mingħajr pjanċa viżibbli fl-art.<br>
+<br>
+Użu: qabbdu ma' bibien, lampi, allarmi jew mekkaniżmi ta' interblokk tal-magni.<br>
+<br>
+Noti: jiskennja żona żgħira madwar il-blokka.
+<np>
+Tajmer tal-intervalli
+Impuls bil-ħin
+<&industrial_interval_timer>Swiċċ kompatt tat-tajmer jipprovdi impuls tar-Redstone skedat.<br>
+<br>
+Użu: użah fejn mekkaniżmu żgħir jeħtieġ kontroll perjodiku jew imdewwem.<br>
+<br>
+Noti: juża impulsi tar-Redstone skedati.
+<np>
+Sensur tad-dawl
+Sejbien tas-sinjal
+<&industrial_light_sensor>Sensur tad-dawl jibdel il-luminożità lokali f'kontroll tar-Redstone.<br>
+<br>
+Użu: użah għal lampi awtomatiċi, persjani u ċirkwiti tal-viżibbiltà.<br>
+<br>
+Noti: jagħti l-enerġija b'luminożità mhux ipproċessata ta' 8 jew aktar.
+<np>
+Detettur tal-maltempati
+Sejbien tas-sinjal
+<&industrial_lightning_sensor>Sensur tal-maltempati jħaddem twissijiet waqt kundizzjonijiet bir-ragħad.<br>
+<br>
+Użu: qiegħdu taħt sema miftuħ u qabbdu ma' lampi jew allarmi.<br>
+<br>
+Noti: jeħtieġ ragħad u aċċess għas-sema.
+<np>
+Detettur lineari tal-entitajiet
+Sejbien tas-sinjal
+<&industrial_linear_entity_detector>Detettur tal-entitajiet josserva moviment fil-qrib mingħajr pjanċa viżibbli fl-art.<br>
+<br>
+Użu: qabbdu ma' bibien, lampi, allarmi jew mekkaniżmi ta' interblokk tal-magni.<br>
+<br>
+Noti: jiskennja żona żgħira madwar il-blokka.
+<np>
+Sensur tax-xita
+Sejbien tas-sinjal
+<&industrial_rain_sensor>Sensur tat-temp jibdel ix-xita fil-pożizzjoni tiegħu f'Redstone.<br>
+<br>
+Użu: immuntah fejn il-blokka ta' fuqu tista' tirċievi x-xita.<br>
+<br>
+Noti: jiċċekkja x-xita fuq is-sensur.
+<np>
+Swiċċ bistabbli tal-ħġieġ
+Kontroll tar-Redstone
+<&glass_rotary_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Kuntatt bistabbli tal-ħġieġ
+Kontroll tar-Redstone
+<&glass_touch_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Ħġieġ sensittiv oranġjo
+Ħġieġ tas-sinjal
+<&orange_sensitiveglass>Blokka tal-ħġieġ li tirreaġixxi għar-Redstone żżomm il-linji tal-vista waqt li turi l-istat tas-sinjal.<br>
+<br>
+Użu: użaha fit-twieqi tal-kamra tal-kontroll, pannelli mdawla u ħġieġ protett tal-fabbrika.<br>
+<br>
+Noti: tibdel l-istat skont il-qawwa tar-Redstone fil-qrib.
+<np>
+Ħġieġ sensittiv imdawwal
+Ħġieġ tas-sinjal
+<&sensitive_glass_block>Blokka tal-ħġieġ li tirreaġixxi għar-Redstone żżomm il-linji tal-vista waqt li turi l-istat tas-sinjal.<br>
+<br>
+Użu: użaha fit-twieqi tal-kamra tal-kontroll, pannelli mdawla u ħġieġ protett tal-fabbrika.<br>
+<br>
+Noti: tibdel l-istat skont il-qawwa tar-Redstone fil-qrib.
+<np>
+Ħġieġ sensittiv ikkulurit
+Ħġieġ tas-sinjal
+<&stained_sensitiveglass>Blokka tal-ħġieġ li tirreaġixxi għar-Redstone żżomm il-linji tal-vista waqt li turi l-istat tas-sinjal.<br>
+<br>
+Użu: użaha fit-twieqi tal-kamra tal-kontroll, pannelli mdawla u ħġieġ protett tal-fabbrika.<br>
+<br>
+Noti: tibdel l-istat skont il-qawwa tar-Redstone fil-qrib.
+<np>
+Arloġġ tal-kejl b'virga tal-ħġieġ
+Arloġġ tal-kejl tas-sinjal
+<&glass_vertical_bar_gauge>Arloġġ kompatt tal-kamra tal-kontroll juri s-saħħa tar-Redstone bħala qari ċar fuq pannell.<br>
+<br>
+Użu: immuntah fejn tista' tiċċekkja l-qawwa tar-Redstone fil-qrib b'daqqa t'għajn.<br>
+<br>
+Noti: jaqra s-saħħa tar-Redstone fil-qrib minn 0 sa 15.
+<np>
+Arloġġ tal-kejl analogu
+Arloġġ tal-kejl tas-sinjal
+<&industrial_analog_angular_gauge>Arloġġ kompatt tal-kamra tal-kontroll juri s-saħħa tar-Redstone bħala qari ċar fuq pannell.<br>
+<br>
+Użu: immuntah fejn tista' tiċċekkja l-qawwa tar-Redstone fil-qrib b'daqqa t'għajn.<br>
+<br>
+Noti: jaqra s-saħħa tar-Redstone fil-qrib minn 0 sa 15.
+<np>
+Arloġġ tal-kejl b'voltmetru
+Arloġġ tal-kejl tas-sinjal
+<&industrial_analog_horizontal_gauge>Arloġġ kompatt tal-kamra tal-kontroll juri s-saħħa tar-Redstone bħala qari ċar fuq pannell.<br>
+<br>
+Użu: immuntah fejn tista' tiċċekkja l-qawwa tar-Redstone fil-qrib b'daqqa t'għajn.<br>
+<br>
+Noti: jaqra s-saħħa tar-Redstone fil-qrib minn 0 sa 15.
+<np>
+Arloġġ tal-kejl diġitali
+Saħħa tas-sinjal li tinqara ċar
+<&industrial_small_digital_gauge>Arloġġ kompatt tal-kamra tal-kontroll juri s-saħħa tar-Redstone bħala qari ċar fuq pannell.<br>
+<br>
+Użu: immuntah fejn tista' tiċċekkja l-qawwa tar-Redstone fil-qrib b'daqqa t'għajn.<br>
+<br>
+Noti: jaqra s-saħħa tar-Redstone fil-qrib minn 0 sa 15.
+<np>
+Arloġġ tal-kejl b'tubu tal-ħġieġ
+Arloġġ tal-kejl tas-sinjal
+<&industrial_tube_gauge>Arloġġ kompatt tal-kamra tal-kontroll juri s-saħħa tar-Redstone bħala qari ċar fuq pannell.<br>
+<br>
+Użu: immuntah fejn tista' tiċċekkja l-qawwa tar-Redstone fil-qrib b'daqqa t'għajn.<br>
+<br>
+Noti: jaqra s-saħħa tar-Redstone fil-qrib minn 0 sa 15.
+<np>
+Arloġġ tal-kejl b'virga analoga
+Arloġġ tal-kejl tas-sinjal
+<&industrial_vertical_bar_gauge>Arloġġ kompatt tal-kamra tal-kontroll juri s-saħħa tar-Redstone bħala qari ċar fuq pannell.<br>
+<br>
+Użu: immuntah fejn tista' tiċċekkja l-qawwa tar-Redstone fil-qrib b'daqqa t'għajn.<br>
+<br>
+Noti: jaqra s-saħħa tar-Redstone fil-qrib minn 0 sa 15.
+<np>
+Lampa tal-allarm
+Rispons viżibbli tas-sinjal
+<&industrial_alarm_lamp>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+Sirena tal-allarm
+Rispons viżibbli tas-sinjal
+<&industrial_alarm_siren>Is-sirena tal-allarm hija indikatur redstone mwaħħal ma wiċċ ta blokka. L-istat mixgħul tagħha jimxi mas-sinjal tal-blokka li magħha hi mwaħħla.<br>
+<br>
+Waħħalha ma wiċċ solidu u agħtiha l-enerġija biex tissorvelja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Is-sirena taġġorna darba kull sekonda sakemm is-sinjal jibqa attiv.
+<np>
+LED jteptep
+Rispons viżibbli tas-sinjal
+<&industrial_blinking_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED aħdar iteptep
+Rispons viżibbli tas-sinjal
+<&industrial_green_blinking_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED aħdar
+Rispons viżibbli tas-sinjal
+<&industrial_green_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED aħmar
+Rispons viżibbli tas-sinjal
+<&industrial_red_blinking_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED aħmar
+Rispons viżibbli tas-sinjal
+<&industrial_red_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED abjad iteptep
+Rispons viżibbli tas-sinjal
+<&industrial_white_blinking_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED abjad
+Rispons viżibbli tas-sinjal
+<&industrial_white_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED isfar iteptep
+Rispons viżibbli tas-sinjal
+<&industrial_yellow_blinking_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+LED isfar
+Rispons viżibbli tas-sinjal
+<&industrial_yellow_led>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+Semaforu rustiku
+Rispons viżibbli tas-sinjal
+<&rustic_semaphore>Indikatur kompatt jibdel Redstone moħbi f'rispons viżibbli fil-fabbrika.<br>
+<br>
+Użu: qabbdu maġenb is-sinjal biex timmonitorja bibien, magni, allarmi jew pannelli.<br>
+<br>
+Noti: jibdel l-istat meta jkun hemm qawwa tar-Redstone fil-qrib.
+<np>
+Swiċċ komparatur
+Sinjal imqabbad
+<&industrial_comparator_switch>Swiċċ b'sensur kompatt jaqra l-blokka mmuntat fuqha u jibdel dak il-qari fi ħruġ sempliċi tal-pannell.<br>
+<br>
+Użu: immuntah fuq inventarji, tankijiet jew tagħmir tar-Redstone. Meta l-blokka mwaħħal magħha tirrapporta ħruġ ta' komparatur, kontenitur jew Redstone, l-iswiċċ joħroġ Redstone bis-saħħa kollha.<br>
+<br>
+Noti: użah biex tibdel livelli tal-ħażna jew wajers moħbija f'linji ċari ta' kontroll mixgħul/mitfi.
+<np>
+Regolatur tal-intensità
+Sinjal varjabbli
+<&industrial_dimmer>Kontroll li jdur jaġġusta s-saħħa tar-Redstone minn faċċata kompatta tal-pannell.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex iżżid il-ħruġ pass pass, imbagħad terġa' lura għal żero wara s-saħħa kollha.<br>
+<br>
+Noti: joħroġ saħħa minn 0 sa 15.
+<np>
+Buttuna ta' waqfien ta' emerġenza
+Kontroll tar-Redstone
+<&industrial_estop_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Imblokkatur tal-lembut
+Kontroll tar-Redstone
+<&industrial_hopper_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Swiċċ tat-taħbit
+Kontroll tar-Redstone
+<&industrial_knock_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva
+Kontroll tar-Redstone
+<&industrial_lever>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Swiċċ tal-magna b'żewġ buttuni
+Kontroll tar-Redstone
+<&industrial_machine_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Manku li jinġibed
+Kontroll tar-Redstone
+<&industrial_pull_handle>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva li ddur
+Kontroll tar-Redstone
+<&industrial_rotary_lever>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Swiċċ tal-magna li jdur
+Kontroll tar-Redstone
+<&industrial_rotary_machine_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva tal-kuntatt
+Kontroll tar-Redstone
+<&industrial_small_lever>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Swiċċ
+Kontroll tar-Redstone
+<&industrialswitch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Swiċċ tad-dawl
+Kontroll tar-Redstone
+<&light_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Swiċċ tal-valv
+Kontroll tar-Redstone
+<&valve_wheel_switch>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Riċevitur tal-impulsi f'kaxxa
+Kontroll marbut
+<&industrial_switchlink_cased_pulse_receiver>Riċevitur marbut tal-impulsi f'kaxxa jagħti attivazzjoni qasira tar-Redstone lil pannelli remoti.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Ikklikkjah bil-lemin jew attiva l-perla marbuta biex tibgħat impuls qasir.<br>
+<br>
+Noti: l-impuls jerġa' lura waħdu wara t-tul skedat tiegħu.
+<np>
+Riċevitur tar-rabta f'kaxxa
+Kontroll marbut
+<&industrial_switchlink_cased_receiver>Riċevitur marbut f'kaxxa jagħti mira robusta tar-Redstone lil pannelli remoti.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Ikklikkja r-riċevitur direttament bil-lemin biex taqilbu bl-idejn.<br>
+<br>
+Noti: perla marbuta taqleb dan ir-riċevitur meta tintuża waqt li timxi nkiss inkiss.
+<np>
+Riċevitur tar-rabta tal-impulsi
+Kontroll marbut
+<&industrial_switchlink_pulse_receiver>Riċevitur marbut tal-impulsi jagħti attivazzjoni qasira tar-Redstone lil pannelli remoti.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Ikklikkjah bil-lemin jew attiva l-perla marbuta biex tibgħat impuls qasir.<br>
+<br>
+Noti: l-impuls jerġa' lura waħdu wara t-tul skedat tiegħu.
+<np>
+Rilej tar-rabta tal-impulsi
+Kontroll marbut
+<&industrial_switchlink_pulse_relay>Tagħmir bi stil ta' rilej jagħti punt kompatt ta' swiċċjar lokali lill-bini tal-pannelli.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib. Uża blokok riċevituri meta jkollok bżonn attivazzjoni bil-perla marbuta.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Riċevitur tar-rabta tal-iswiċċ
+Kontroll marbut
+<&industrial_switchlink_receiver>Riċevitur marbut jagħti mira tar-Redstone bis-saħħa kollha lil pannelli remoti.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Ikklikkja r-riċevitur direttament bil-lemin biex taqilbu bl-idejn.<br>
+<br>
+Noti: perla marbuta taqleb dan ir-riċevitur meta tintuża waqt li timxi nkiss inkiss.
+<np>
+Riċevitur analogu tar-rabta
+Kontroll marbut
+<&industrial_switchlink_receiver_analog>Riċevitur marbut jagħti mira remota viżibbli lil pannelli tal-kontroll.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Uża dik il-perla waqt li timxi nkiss inkiss biex tattiva r-riċevitur mill-bogħod.<br>
+<br>
+Noti: dan ir-riċevitur jibgħat sinjal sħiħ tar-Redstone meta jiġi attivat.
+<np>
+Rilej tar-rabta tal-iswiċċ
+Kontroll marbut
+<&industrial_switchlink_relay>Tagħmir bi stil ta' rilej jagħti punt kompatt ta' swiċċjar lokali lill-bini tal-pannelli.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib. Uża blokok riċevituri meta jkollok bżonn attivazzjoni bil-perla marbuta.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Rilej analogu tar-rabta
+Kontroll marbut
+<&industrial_switchlink_relay_analog>Tagħmir bi stil ta' rilej jagħti punt kompatt ta' swiċċjar lokali lill-bini tal-pannelli.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib. Uża blokok riċevituri meta jkollok bżonn attivazzjoni bil-perla marbuta.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Perla tar-rabta tal-iswiċċ
+Kontroll marbut
+<&switchlink_pearl>Perla marbuta taħżen mira ta' riċevitur għal kontrolli remoti tal-fabbrika.<br>
+<br>
+Użu: ikklikkja riċevitur tar-rabta tal-iswiċċ b'perla tal-Ender biex toħloq waħda. Uża l-perla marbuta waqt li timxi nkiss inkiss biex tattiva r-riċevitur maħżun.<br>
+<br>
+Noti: il-mira trid tkun mgħobbija, fl-istess dimensjoni u fil-firxa.
+<np>
+Lieva qadima mżejna
+Kontroll tar-Redstone
+<&oldfancy_bistableswitch1>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva qadima mżejna li ddur
+Kontroll tar-Redstone
+<&oldfancy_bistableswitch2>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva rustika li ddur
+Kontroll tar-Redstone
+<&rustic_angular_lever>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva rustika
+Kontroll tar-Redstone
+<&rustic_lever>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva rustika b'musmar
+Kontroll tar-Redstone
+<&rustic_nail_lever>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.
+<np>
+Lieva rustika b'żewġ ċappetti
+Kontroll tar-Redstone
+<&rustic_two_hinge_lever>Kontroll kompatt jagħti punt ċar ta' swiċċjar tar-Redstone lill-bini tal-fabbriki.<br>
+<br>
+Użu: ikklikkjah bil-lemin biex taqleb ħruġ bis-saħħa kollha għal ċirkwiti fil-qrib.<br>
+<br>
+Noti: joħroġ Redstone bis-saħħa kollha waqt li jkun mixgħul.

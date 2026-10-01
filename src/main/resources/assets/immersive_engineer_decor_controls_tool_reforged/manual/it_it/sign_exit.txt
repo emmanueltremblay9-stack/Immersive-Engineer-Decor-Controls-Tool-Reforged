@@ -1,0 +1,5 @@
+Cartello di uscita
+Indicatore di pericolo
+<&recipe>Questo cartello segnala pericoli, uscite e zone di lavoro con un’indicazione visiva adatta alla sicurezza della fabbrica.<br>
+<br>
+Uso: posalo vicino a pericoli, uscite, macchinari e zone riservate.<br>

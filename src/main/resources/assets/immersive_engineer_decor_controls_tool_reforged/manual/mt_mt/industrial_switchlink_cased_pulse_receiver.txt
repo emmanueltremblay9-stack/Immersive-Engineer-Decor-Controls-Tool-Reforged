@@ -1,0 +1,7 @@
+Riċevitur tal-impulsi f'kaxxa
+Kontroll marbut
+<&recipe>Riċevitur marbut tal-impulsi f'kaxxa jagħti attivazzjoni qasira tar-Redstone lil pannelli remoti.<br>
+<br>
+Użu: ikklikkjah b'perla tal-Ender biex toħloq perla marbuta. Ikklikkjah bil-lemin jew attiva l-perla marbuta biex tibgħat impuls qasir.<br>
+<br>
+Noti: l-impuls jerġa' lura waħdu wara t-tul skedat tiegħu.

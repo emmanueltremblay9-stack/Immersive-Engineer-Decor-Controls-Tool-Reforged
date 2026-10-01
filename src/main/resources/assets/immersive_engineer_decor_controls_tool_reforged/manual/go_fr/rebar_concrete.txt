@@ -1,0 +1,5 @@
+Blloqe de béton armë
+Béton renforcë
+<&recipe>Çu blloqe ét eune pièce de béton durci pour les bases de machines, les murs anti-écllatées e les sols des qhais de charjement.<br>
+<br>
+Empllai : Météz-le sous les machines, le long des couloirs de service ou partout où qe la bâtisse demande eune base renforcée.<br>

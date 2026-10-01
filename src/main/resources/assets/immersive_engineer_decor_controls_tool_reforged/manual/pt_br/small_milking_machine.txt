@@ -1,0 +1,5 @@
+Ordenhadeira
+Utilidade de oficina
+<&recipe>A pequena ordenhadeira é uma utilidade de oficina para fabricação, armazenamento, colocação, quebra, coleta ou automação compacta.<br>
+<br>
+Uso: Coloque perto de vacas e providencie uma forma de retirar recipientes de leite ou o fluido.<br>

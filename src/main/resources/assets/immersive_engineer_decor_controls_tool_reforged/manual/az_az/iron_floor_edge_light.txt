@@ -1,0 +1,5 @@
+Döşəmə kənarına gömülən işıq
+Yığcam iş işığı
+<&recipe>Bu blok dəhlizlər, keçidlər və iş bölmələri üçün yığcam sənaye işıqlandırması yaradır.<br>
+<br>
+İstifadə: Otaqda aydın iş işıqlandırması lazım olan tavanlara, divarlara və ya kənarlara quraşdırın.<br>

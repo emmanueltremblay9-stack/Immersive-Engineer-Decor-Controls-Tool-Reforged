@@ -1,0 +1,5 @@
+Spaljalnica odpada
+Kompaktna obrabotna jedinica
+<&recipe>Spaljalnica odpada uniščaje neželane prědmety, zajmajuči malo města v rabotilnji.<br>
+<br>
+Upotrěbjenje: Podavaj v jej red samo neželane prědmety.<br>

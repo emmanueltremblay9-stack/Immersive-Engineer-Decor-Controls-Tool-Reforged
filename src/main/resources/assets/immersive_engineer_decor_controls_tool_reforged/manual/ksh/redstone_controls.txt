@@ -1,0 +1,789 @@
+Redstone-Stüerunge
+Mäßjeräte un Signalbauteile
+Stüerjeräte maache verstoche Redstone zo avlesbare Fabrikpaneele, Sensore, Aanzeichjeräte, Schalter, Alarm un verbungene Signalbauteile.<br>
+<br>
+Bruch heh die Sigge, wann de Bedeenplätz, Signaltafle, Sicherheitsschaltunge un Fäänstüerunge bous.
+<np>
+Pielziel
+Koote Impuls
+<&arrow_target>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Dürsensor
+Redstone-Stüerung
+<&door_sensor_switch>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Liftknopp
+Redstone-Stüerung
+<&elevator_button>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Jlasknopp
+Redstone-Stüerung
+<&glass_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Jlasknopp
+Redstone-Stüerung
+<&glass_small_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Jlas-Aanröhrknopp
+Redstone-Stüerung
+<&glass_touch_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Maschineknopp
+Redstone-Stüerung
+<&industrial_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Knopp
+Redstone-Stüerung
+<&industrial_double_pole_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Maschineknopp met Schutzbüjel
+Redstone-Stüerung
+<&industrial_fenced_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Kloppknopp
+Redstone-Stüerung
+<&industrial_knock_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Ahle verzierte Knopp
+Redstone-Stüerung
+<&oldfancy_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Ahle verzierte Knopp
+Redstone-Stüerung
+<&oldfancy_small_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Ahle verzierte Ketteknopp
+Koote Impuls
+<&oldfancy_spring_reset_chain>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Büüerliche Knopp
+Redstone-Stüerung
+<&rustic_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Büüerliche Naajelknopp
+Redstone-Stüerung
+<&rustic_nail_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Kleine büüerliche Knopp
+Redstone-Stüerung
+<&rustic_small_button>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Büüerliche Ketteknopp
+Koote Impuls
+<&rustic_spring_reset_chain>Ene Momentschalter jit ene klare Redstone-Impuls met voller Stärk.<br>
+<br>
+Bruuch: Nimm en för Maschinestart, Dürfreijaav, Alarm udder Schaltunge, die bloß einmol loofe solle.<br>
+<br>
+Henwies: Setzt sich noh singem feste Impuls zoröck.
+<np>
+Jlaskontaktplatt
+Druckimpuls
+<&glass_contact_mat>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Jlasdürkontakt
+Druckimpuls
+<&glass_door_contact_mat>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Kontaktmatt
+Druckimpuls
+<&industrial_contact_mat>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Dürkontaktmatt
+Druckimpuls
+<&industrial_door_contact_mat>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Durchfallsensor
+Signalerkennung
+<&industrial_fallthrough_detector>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Fußknopp
+Redstone-Stüerung
+<&industrial_foot_button>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Industrie-Stoßtrappdür
+Druckimpuls
+<&industrial_high_sensitive_trapdoor>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Stoßkontaktmatt
+Druckimpuls
+<&industrial_shock_sensitive_contact_mat>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Stoßtrappdür
+Druckimpuls
+<&industrial_shock_sensitive_trapdoor>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Rude Strompflanz
+Druckimpuls
+<&red_power_plant>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Büüerliche Druckplatt
+Druckimpuls
+<&rustic_contact_plate>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Büüerliche Dürdruckplatt
+Druckimpuls
+<&rustic_door_contact_plate>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Büüerliche Fallsensor
+Signalerkennung
+<&rustic_fallthrough_detector>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Büüerliche Stoßtrappdür
+Druckimpuls
+<&rustic_high_sensitive_trapdoor>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Büüerliche Stoßplatt
+Druckimpuls
+<&rustic_shock_sensitive_plate>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Büüerliche Stoßtrappdür
+Druckimpuls
+<&rustic_shock_sensitive_trapdoor>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Jäle Strompflanz
+Druckimpuls
+<&yellow_power_plant>Ene Kontaktschalter jit e koot Signal bei Bewääjung am Bodde udder aan d'r Trappdür.<br>
+<br>
+Bruuch: Setz en dohin, wo Entitäte durch ene Wartungsjang, en Laadestell udder ene bewaachte Wääch kumme.<br>
+<br>
+Henwies: Jit koot ene Impuls noh Kontakt met en Entität.
+<np>
+Jlas-Dageszickschaltuhr
+Dageslichtsignal
+<&glass_day_timer>Ene Zickschalter folch däm Dagesdeel vum Weltzyklus.<br>
+<br>
+Bruuch: Nimm en för Hoflampe, Finsterluuke un Fabrikstüerunge, die bloß am Daach loofe solle.<br>
+<br>
+Henwies: Brucht en Dimension met Himmelslicht.
+<np>
+Jlasentitätensensor
+Signalerkennung
+<&glass_entity_detector>Ene Entitätensensor beobacht Bewääjung en d'r Nöh, ohne en sichtbare Boddeplatt.<br>
+<br>
+Bruuch: Verbind en met Düre, Lampe, Alarm udder Maschineverriejelunge.<br>
+<br>
+Henwies: Söök e klein Jebiet öm dä Block av.
+<np>
+Jlasintervallsignal
+Zickjestüerte Impuls
+<&glass_interval_timer>Ene kleine Zickschalter jit ene festjelaate Redstone-Impuls.<br>
+<br>
+Bruuch: Nimm en, wann e kleine Mechanismus rejelmäßich udder verzögert jestüert wäde soll.<br>
+<br>
+Henwies: Brucht festjelaate Redstone-Impulse.
+<np>
+Jlas-Liniensensor
+Signalerkennung
+<&glass_linear_entity_detector>Ene Entitätensensor beobacht Bewääjung en d'r Nöh, ohne en sichtbare Boddeplatt.<br>
+<br>
+Bruuch: Verbind en met Düre, Lampe, Alarm udder Maschineverriejelunge.<br>
+<br>
+Henwies: Söök e klein Jebiet öm dä Block av.
+<np>
+Blocksensor
+Signalerkennung
+<&industrial_block_detector>Ene Blocksensor pröf, of dä Ruum vür ihm beleijt es.<br>
+<br>
+Bruuch: Richt en op de Maschinesigg, dä Puffer udder dä jeschötzte Ruum, dä de em Ooch halde wells.<br>
+<br>
+Henwies: Jit Energie, wann dä Block vür ihm kein Luff es.
+<np>
+Dageszickschaltuhr
+Dageslichtsignal
+<&industrial_day_timer>Ene Zickschalter folch däm Dagesdeel vum Weltzyklus.<br>
+<br>
+Bruuch: Nimm en för Hoflampe, Finsterluuke un Fabrikstüerunge, die bloß am Daach loofe solle.<br>
+<br>
+Henwies: Brucht en Dimension met Himmelslicht.
+<np>
+Entitätensensor
+Signalerkennung
+<&industrial_entity_detector>Ene Entitätensensor beobacht Bewääjung en d'r Nöh, ohne en sichtbare Boddeplatt.<br>
+<br>
+Bruuch: Verbind en met Düre, Lampe, Alarm udder Maschineverriejelunge.<br>
+<br>
+Henwies: Söök e klein Jebiet öm dä Block av.
+<np>
+Intervallzickjävver
+Zickjestüerte Impuls
+<&industrial_interval_timer>Ene kleine Zickschalter jit ene festjelaate Redstone-Impuls.<br>
+<br>
+Bruuch: Nimm en, wann e kleine Mechanismus rejelmäßich udder verzögert jestüert wäde soll.<br>
+<br>
+Henwies: Brucht festjelaate Redstone-Impulse.
+<np>
+Lichtsensor
+Signalerkennung
+<&industrial_light_sensor>Ene Lichtsensor mäht us d'r Helligkeit vür Ort en Redstone-Stüerung.<br>
+<br>
+Bruuch: Nimm en för automatische Lampe, Finsterluuke un Sichtschaltunge.<br>
+<br>
+Henwies: Jit Energie av en rohe Helligkeit vun 8.
+<np>
+Jeweddersensor
+Signalerkennung
+<&industrial_lightning_sensor>Ene Jeweddersensor löst bei Donner Warnunge us.<br>
+<br>
+Bruuch: Setz en unger freie Himmel un verbind en met Lampe udder Alarm.<br>
+<br>
+Henwies: Brucht Donner un freie Himmelssicht.
+<np>
+Linienentitätensensor
+Signalerkennung
+<&industrial_linear_entity_detector>Ene Entitätensensor beobacht Bewääjung en d'r Nöh, ohne en sichtbare Boddeplatt.<br>
+<br>
+Bruuch: Verbind en met Düre, Lampe, Alarm udder Maschineverriejelunge.<br>
+<br>
+Henwies: Söök e klein Jebiet öm dä Block av.
+<np>
+Ränsensor
+Signalerkennung
+<&industrial_rain_sensor>Ene Weddersensor mäht us Rän aan singem Plätz e Redstone-Signal.<br>
+<br>
+Bruuch: Befestig en do, wo dä Block övver ihm Rän avkrieje kann.<br>
+<br>
+Henwies: Pröf dä Rän övver däm Sensor.
+<np>
+Bistabile Jlasschalter
+Redstone-Stüerung
+<&glass_rotary_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Bistabile Jlas-Aanröhrschalter
+Redstone-Stüerung
+<&glass_touch_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Orangsch empfindlich Jlas
+Signaljlas
+<&orange_sensitiveglass>Ene Jlasblock, dä op Redstone reajeert, löht dä Durchbleck frei un zeijt dobei dä Signalzostand.<br>
+<br>
+Bruuch: Nimm en en Stüerruumfinster, lööchende Paneele un jeschötzte Fabrikverjlasunge.<br>
+<br>
+Henwies: Ängert dä Zostand durch Redstone-Energie en d'r Nöh.
+<np>
+Lööchend empfindlich Jlas
+Signaljlas
+<&sensitive_glass_block>Ene Jlasblock, dä op Redstone reajeert, löht dä Durchbleck frei un zeijt dobei dä Signalzostand.<br>
+<br>
+Bruuch: Nimm en en Stüerruumfinster, lööchende Paneele un jeschötzte Fabrikverjlasunge.<br>
+<br>
+Henwies: Ängert dä Zostand durch Redstone-Energie en d'r Nöh.
+<np>
+Jefärv empfindlich Jlas
+Signaljlas
+<&stained_sensitiveglass>Ene Jlasblock, dä op Redstone reajeert, löht dä Durchbleck frei un zeijt dobei dä Signalzostand.<br>
+<br>
+Bruuch: Nimm en en Stüerruumfinster, lööchende Paneele un jeschötzte Fabrikverjlasunge.<br>
+<br>
+Henwies: Ängert dä Zostand durch Redstone-Energie en d'r Nöh.
+<np>
+Jlasbalkemäßjerät
+Signalmäßjerät
+<&glass_vertical_bar_gauge>E klein Mäßjerät för dä Stüerruum zeijt de Redstone-Stärk als klare Paneelaanzeich.<br>
+<br>
+Bruuch: Befestig et do, wo de Redstone-Energie en d'r Nöh met einem Bleck pröfe wells.<br>
+<br>
+Henwies: Ließ Redstone-Stärk en d'r Nöh vun 0 bes 15 av.
+<np>
+Analog Mäßjerät
+Signalmäßjerät
+<&industrial_analog_angular_gauge>E klein Mäßjerät för dä Stüerruum zeijt de Redstone-Stärk als klare Paneelaanzeich.<br>
+<br>
+Bruuch: Befestig et do, wo de Redstone-Energie en d'r Nöh met einem Bleck pröfe wells.<br>
+<br>
+Henwies: Ließ Redstone-Stärk en d'r Nöh vun 0 bes 15 av.
+<np>
+Voltmeter-Mäßjerät
+Signalmäßjerät
+<&industrial_analog_horizontal_gauge>E klein Mäßjerät för dä Stüerruum zeijt de Redstone-Stärk als klare Paneelaanzeich.<br>
+<br>
+Bruuch: Befestig et do, wo de Redstone-Energie en d'r Nöh met einem Bleck pröfe wells.<br>
+<br>
+Henwies: Ließ Redstone-Stärk en d'r Nöh vun 0 bes 15 av.
+<np>
+Dijital Mäßjerät
+Avlesbare Signalstärk
+<&industrial_small_digital_gauge>E klein Mäßjerät för dä Stüerruum zeijt de Redstone-Stärk als klare Paneelaanzeich.<br>
+<br>
+Bruuch: Befestig et do, wo de Redstone-Energie en d'r Nöh met einem Bleck pröfe wells.<br>
+<br>
+Henwies: Ließ Redstone-Stärk en d'r Nöh vun 0 bes 15 av.
+<np>
+Jlasröhrmäßjerät
+Signalmäßjerät
+<&industrial_tube_gauge>E klein Mäßjerät för dä Stüerruum zeijt de Redstone-Stärk als klare Paneelaanzeich.<br>
+<br>
+Bruuch: Befestig et do, wo de Redstone-Energie en d'r Nöh met einem Bleck pröfe wells.<br>
+<br>
+Henwies: Ließ Redstone-Stärk en d'r Nöh vun 0 bes 15 av.
+<np>
+Analog Balkemäßjerät
+Signalmäßjerät
+<&industrial_vertical_bar_gauge>E klein Mäßjerät för dä Stüerruum zeijt de Redstone-Stärk als klare Paneelaanzeich.<br>
+<br>
+Bruuch: Befestig et do, wo de Redstone-Energie en d'r Nöh met einem Bleck pröfe wells.<br>
+<br>
+Henwies: Ließ Redstone-Stärk en d'r Nöh vun 0 bes 15 av.
+<np>
+Alarmlamp
+Signalröckmeldung
+<&industrial_alarm_lamp>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Alarmsiren
+Signalröckmeldung
+<&industrial_alarm_siren>De Alarmsirän es ene Redstone-Anzeijer, dä op en Sigg jemaat weed. Sing Stromzustand follesch däm Signal vum Block, wo hä draan hängk.<br>
+<br>
+Bruuch: Befestig se aan en feste Sigg un jevv Energie dobei, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: De Siren frischt sich einmol de Sekund op, sulang dat aanjeschlosse Signal aktiv bliev.
+<np>
+Blinkende LED
+Signalröckmeldung
+<&industrial_blinking_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Jröne blinkende LED
+Signalröckmeldung
+<&industrial_green_blinking_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Jröne LED
+Signalröckmeldung
+<&industrial_green_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Rude LED
+Signalröckmeldung
+<&industrial_red_blinking_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Rude LED
+Signalröckmeldung
+<&industrial_red_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Wieße blinkende LED
+Signalröckmeldung
+<&industrial_white_blinking_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Wieße LED
+Signalröckmeldung
+<&industrial_white_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Jäle blinkende LED
+Signalröckmeldung
+<&industrial_yellow_blinking_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Jäle LED
+Signalröckmeldung
+<&industrial_yellow_led>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Büüerliche Semaphor
+Signalröckmeldung
+<&rustic_semaphore>Ene kleine Aanzeijer mäht verstoche Redstone als Fabrikröckmeldung sichtbar.<br>
+<br>
+Bruuch: Verkabel en nevve däm Signal, öm Düre, Maschine, Alarm udder Paneele ze bewaache.<br>
+<br>
+Henwies: Ängert singe Zostand, wann Redstone-Energie en d'r Nöh aanleit.
+<np>
+Verjlicheschalter
+Signal vum Draachblock
+<&industrial_comparator_switch>Ene kleine Sensorschalter ließ singe Draachblock av un mäht us däm Wäät en einfache Paneelußjaav.<br>
+<br>
+Bruuch: Befestig en op Lajer, Tanks udder Redstone-Jeräte. Wann dä Draachblock Verjliche-, Behälter- udder Redstone-Ußjaav meldt, jit dä Schalter Redstone met voller Stärk.<br>
+<br>
+Henwies: Su maachs de Lajerstäng udder verstoche Kabel zo klare Aan-/Us-Stüerleitunge.
+<np>
+Dimmer
+Verängerbar Signal
+<&industrial_dimmer>Ene Dreihregler stellt vun en kleine Paneelfläch de Redstone-Stärk en.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav schrettweis huh ze setze un noh voller Stärk widder bei null aanzefange.<br>
+<br>
+Henwies: Jit en Stärk vun 0 bes 15.
+<np>
+Not-Us-Knopp
+Redstone-Stüerung
+<&industrial_estop_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Treechtersperr
+Redstone-Stüerung
+<&industrial_hopper_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Kloppschalter
+Redstone-Stüerung
+<&industrial_knock_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Hävvel
+Redstone-Stüerung
+<&industrial_lever>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Maschineschalter met zwei Knöpp
+Redstone-Stüerung
+<&industrial_machine_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Zochjreff
+Redstone-Stüerung
+<&industrial_pull_handle>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Dreihhävvel
+Redstone-Stüerung
+<&industrial_rotary_lever>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Maschine-Dreihschalter
+Redstone-Stüerung
+<&industrial_rotary_machine_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Kontakthävvel
+Redstone-Stüerung
+<&industrial_small_lever>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Schalter
+Redstone-Stüerung
+<&industrialswitch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Lichtschalter
+Redstone-Stüerung
+<&light_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Ventilschalter
+Redstone-Stüerung
+<&valve_wheel_switch>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Impulsempfänger em Jehüüs
+Verbungene Stüerung
+<&industrial_switchlink_cased_pulse_receiver>Ene verbungene Impulsempfänger em Jehüüs jit fottjeleje Paneele ene koote Redstone-Uslöser.<br>
+<br>
+Bruuch: Klick met en Enderpäl drop, öm en verbungene Päl ze maache. Rechtsklick op dä Empfänger udder et Uslöse vun d'r verbungene Päl jit ene koote Impuls.<br>
+<br>
+Henwies: Dä Impuls setzt sich noh sing feste Zick vun selve zoröck.
+<np>
+Linkempfänger em Jehüüs
+Verbungene Stüerung
+<&industrial_switchlink_cased_receiver>Ene verbungene Empfänger em Jehüüs jit fottjeleje Paneele e robust Redstone-Ziel.<br>
+<br>
+Bruuch: Klick met en Enderpäl drop, öm en verbungene Päl ze maache. Rechtsklick direkt op dä Empfänger, öm en met d'r Hand ömzeschalte.<br>
+<br>
+Henwies: En verbungene Päl schalt dä Empfänger öm, wann de se beim Schliche bruchs.
+<np>
+Impulslinkempfänger
+Verbungene Stüerung
+<&industrial_switchlink_pulse_receiver>Ene verbungene Impulsempfänger jit fottjeleje Paneele ene koote Redstone-Uslöser.<br>
+<br>
+Bruuch: Klick met en Enderpäl drop, öm en verbungene Päl ze maache. Rechtsklick op dä Empfänger udder et Uslöse vun d'r verbungene Päl jit ene koote Impuls.<br>
+<br>
+Henwies: Dä Impuls setzt sich noh sing feste Zick vun selve zoröck.
+<np>
+Impulslinkrelais
+Verbungene Stüerung
+<&industrial_switchlink_pulse_relay>E Bauteil em Relaisstil jit Paneelboute ene kleine Schaltpunkt vür Ort.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte. Nimm Empfängerblöck, wann de met en verbungene Päl uslöse wells.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Schaltlinkempfänger
+Verbungene Stüerung
+<&industrial_switchlink_receiver>Ene verbungene Empfänger jit fottjeleje Paneele e Redstone-Ziel met voller Stärk.<br>
+<br>
+Bruuch: Klick met en Enderpäl drop, öm en verbungene Päl ze maache. Rechtsklick direkt op dä Empfänger, öm en met d'r Hand ömzeschalte.<br>
+<br>
+Henwies: En verbungene Päl schalt dä Empfänger öm, wann de se beim Schliche bruchs.
+<np>
+Analoge Linkempfänger
+Verbungene Stüerung
+<&industrial_switchlink_receiver_analog>Ene verbungene Empfänger jit Stüerpaneele e sichtbare Ziel en d'r Fään.<br>
+<br>
+Bruuch: Klick met en Enderpäl drop, öm en verbungene Päl ze maache. Bruch die Päl beim Schliche, öm dä Empfänger us d'r Fään uszelöse.<br>
+<br>
+Henwies: Dä Empfänger jit e voll Redstone-Signal, wann hä usjelöst weed.
+<np>
+Schaltlinkrelais
+Verbungene Stüerung
+<&industrial_switchlink_relay>E Bauteil em Relaisstil jit Paneelboute ene kleine Schaltpunkt vür Ort.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte. Nimm Empfängerblöck, wann de met en verbungene Päl uslöse wells.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Analog Linkrelais
+Verbungene Stüerung
+<&industrial_switchlink_relay_analog>E Bauteil em Relaisstil jit Paneelboute ene kleine Schaltpunkt vür Ort.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte. Nimm Empfängerblöck, wann de met en verbungene Päl uslöse wells.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Schaltlinkpäl
+Verbungene Stüerung
+<&switchlink_pearl>En verbungene Päl speichert e Empfängerziel för Fabrikfäänstüerunge.<br>
+<br>
+Bruuch: Klick met en Enderpäl op ene Schaltlinkempfänger, öm ein ze maache. Bruch de verbungene Päl beim Schliche, öm dä jespeicherte Empfänger uszelöse.<br>
+<br>
+Henwies: Et Ziel moß jelaade, en d'r selve Dimension un en Reichwitt sin.
+<np>
+Ahle verzierte Hävvel
+Redstone-Stüerung
+<&oldfancy_bistableswitch1>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Ahle verzierte Dreihhävvel
+Redstone-Stüerung
+<&oldfancy_bistableswitch2>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Büüerliche Dreihhävvel
+Redstone-Stüerung
+<&rustic_angular_lever>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Büüerliche Hävvel
+Redstone-Stüerung
+<&rustic_lever>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Büüerliche Naajelhävvel
+Redstone-Stüerung
+<&rustic_nail_lever>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.
+<np>
+Büüerliche Hävvel met zwei Scharnier
+Redstone-Stüerung
+<&rustic_two_hinge_lever>E klein Stüerbauteil jit Fabrikboute ene jot erkennbare Redstone-Schaltpunkt.<br>
+<br>
+Bruuch: Rechtsklick, öm de Ußjaav met voller Stärk för nohe Schaltunge aan- udder uszeschalte.<br>
+<br>
+Henwies: Jit Redstone met voller Stärk, sulang et aan es.

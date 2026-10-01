@@ -1,0 +1,7 @@
+Pulsa liga ricevilo
+Ligita regado
+<&recipe>Ligita pulsa ricevilo donas mallongan redstone’an ekigon al foraj paneloj.<br>
+<br>
+Uzado: klaku ĝin per Enderperlo por krei ligitan perlon. Dekstre klaku ĝin aŭ ekigu la ligitan perlon por eligi mallongan pulson.<br>
+<br>
+Notoj: la pulso mem ĉesas post la agordita daŭro.

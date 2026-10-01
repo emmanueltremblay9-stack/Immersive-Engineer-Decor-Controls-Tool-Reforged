@@ -1,0 +1,7 @@
+Sporrekjari
+Merki fyrir vistaða staðsetningu
+<&recipe>Sporrekjarinn geymir staðsetningu kubbs beint í hlutnum.<br>
+<br>
+Notkun: Smelltu á kubb til að vista vídd og hnit. Verkfæraráðið sýnir vistuðu staðsetninguna. Laumunotaðu sporrekjarann til að hreinsa markið.<br>
+<br>
+Notaðu hann til að merkja vélar, gangnamót, fjarstýringar eða ólokin byggingarsvæði áður en þú snýrð aftur með verkfæri og efni.

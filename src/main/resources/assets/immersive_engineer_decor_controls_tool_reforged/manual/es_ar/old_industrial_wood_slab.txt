@@ -1,0 +1,5 @@
+Baldosa industrial antigua de madera
+Madera de taller envejecida
+<&recipe>Este bloque aporta madera de taller envejecida para suelos, peldaños, puertas y remates interiores cálidos.<br>
+<br>
+Uso: Usalo para suelos, escaleras, puertas y remates de talleres antiguos.<br>

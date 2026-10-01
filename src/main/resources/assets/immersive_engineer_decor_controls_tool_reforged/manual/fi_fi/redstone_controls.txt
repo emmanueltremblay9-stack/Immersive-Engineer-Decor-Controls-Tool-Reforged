@@ -1,0 +1,789 @@
+Redstone-ohjaimet
+Mittarit ja signaaliosat
+Ohjauslaitteet muuttavat piilossa olevan redstonen luettaviksi tehdaspaneeleiksi, antureiksi, ilmaisimiksi, kytkimiksi, hälytyksiksi ja toisiinsa yhdistetyiksi signaaliosiksi.<br>
+<br>
+Käytä näitä sivuja rakentaessasi käyttöasemia, signaalitauluja, turvapiirejä ja etäohjaimia.
+<np>
+Nuolitaulu
+Hetkellinen pulssi
+<&arrow_target>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Ovianturi
+Redstone-ohjaus
+<&door_sensor_switch>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Hissipainike
+Redstone-ohjaus
+<&elevator_button>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Lasipainike
+Redstone-ohjaus
+<&glass_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Lasipainike
+Redstone-ohjaus
+<&glass_small_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Lasinen kosketuspainike
+Redstone-ohjaus
+<&glass_touch_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Konepainike
+Redstone-ohjaus
+<&industrial_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Painike
+Redstone-ohjaus
+<&industrial_double_pole_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Suojattu konepainike
+Redstone-ohjaus
+<&industrial_fenced_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Koputuspainike
+Redstone-ohjaus
+<&industrial_knock_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Vanha koristeellinen painike
+Redstone-ohjaus
+<&oldfancy_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Vanha koristeellinen painike
+Redstone-ohjaus
+<&oldfancy_small_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Vanha koristeellinen ketjupainike
+Hetkellinen pulssi
+<&oldfancy_spring_reset_chain>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Rustiikkinen painike
+Redstone-ohjaus
+<&rustic_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Rustiikkinen naulapainike
+Redstone-ohjaus
+<&rustic_nail_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Pieni rustiikkinen painike
+Redstone-ohjaus
+<&rustic_small_button>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Rustiikkinen ketjupainike
+Hetkellinen pulssi
+<&rustic_spring_reset_chain>Hetkellinen kytkin antaa selkeän täysivahvuisen redstone-pulssin.<br>
+<br>
+Käyttö: Käytä koneiden käynnistykseen, ovien vapauttamiseen, hälytyksiin tai kertatoimisiin piireihin.<br>
+<br>
+Huomaa: Palautuu asetetun pulssin jälkeen.
+<np>
+Lasinen kosketuslevy
+Painepulssi
+<&glass_contact_mat>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Lasinen ovikosketin
+Painepulssi
+<&glass_door_contact_mat>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Kosketusmatto
+Painepulssi
+<&industrial_contact_mat>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Oven kosketusmatto
+Painepulssi
+<&industrial_door_contact_mat>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Läpiputoamisen tunnistin
+Signaalin tunnistus
+<&industrial_fallthrough_detector>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Jalkapainike
+Redstone-ohjaus
+<&industrial_foot_button>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Teollinen iskuovi
+Painepulssi
+<&industrial_high_sensitive_trapdoor>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Iskuherkkä kosketusmatto
+Painepulssi
+<&industrial_shock_sensitive_contact_mat>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Iskusta avautuva luukku
+Painepulssi
+<&industrial_shock_sensitive_trapdoor>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Punainen virtakasvi
+Painepulssi
+<&red_power_plant>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Rustiikkinen painelevy
+Painepulssi
+<&rustic_contact_plate>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Rustiikkinen oven painelevy
+Painepulssi
+<&rustic_door_contact_plate>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Rustiikkinen putoamistunnistin
+Signaalin tunnistus
+<&rustic_fallthrough_detector>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Rustiikkinen iskuovi
+Painepulssi
+<&rustic_high_sensitive_trapdoor>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Rustiikkinen iskulevy
+Painepulssi
+<&rustic_shock_sensitive_plate>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Rustiikkinen iskuovi
+Painepulssi
+<&rustic_shock_sensitive_trapdoor>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Keltainen virtakasvi
+Painepulssi
+<&yellow_power_plant>Kosketuskytkin lähettää lyhyen signaalin lattian tai luukun liikkeestä.<br>
+<br>
+Käyttö: Aseta sinne, missä entiteetit kulkevat huoltokäytävän, lastaajan tai vartioidun reitin läpi.<br>
+<br>
+Huomaa: Antaa lyhyen pulssin entiteettikosketuksen jälkeen.
+<np>
+Lasinen vuorokausiajastin
+Päivänvalosignaali
+<&glass_day_timer>Ajastinkytkin seuraa maailman vuorokauden valoisaa osaa.<br>
+<br>
+Käyttö: Käytä pihavaloihin, sulkimiin ja vain päivällä toimiviin tehdasohjaimiin.<br>
+<br>
+Huomaa: Vaatii ulottuvuuden, jossa on taivasvalo.
+<np>
+Lasinen entiteettitunnistin
+Signaalin tunnistus
+<&glass_entity_detector>Entiteettitunnistin tarkkailee lähellä tapahtuvaa liikettä ilman näkyvää lattialevyä.<br>
+<br>
+Käyttö: Kytke oviin, valoihin, hälytyksiin tai koneiden lukituksiin.<br>
+<br>
+Huomaa: Tarkkailee pientä aluetta kuution ympärillä.
+<np>
+Lasinen jaksosignaali
+Ajastettu pulssi
+<&glass_interval_timer>Pieni ajastinkytkin antaa ajastetun redstone-pulssin.<br>
+<br>
+Käyttö: Käytä siellä, missä pieni mekanismi tarvitsee säännöllistä tai viivästettyä ohjausta.<br>
+<br>
+Huomaa: Käyttää ajastettuja redstone-pulsseja.
+<np>
+Lasinen linjatunnistin
+Signaalin tunnistus
+<&glass_linear_entity_detector>Entiteettitunnistin tarkkailee lähellä tapahtuvaa liikettä ilman näkyvää lattialevyä.<br>
+<br>
+Käyttö: Kytke oviin, valoihin, hälytyksiin tai koneiden lukituksiin.<br>
+<br>
+Huomaa: Tarkkailee pientä aluetta kuution ympärillä.
+<np>
+Kuutiotunnistin
+Signaalin tunnistus
+<&industrial_block_detector>Kuutiotunnistin tarkistaa, onko sen edessä oleva tila varattu.<br>
+<br>
+Käyttö: Suuntaa valvottavaan konepintaan, puskuriin tai suojattuun tilaan.<br>
+<br>
+Huomaa: Antaa virtaa, kun edessä oleva kuutio ei ole ilmaa.
+<np>
+Vuorokausiajastin
+Päivänvalosignaali
+<&industrial_day_timer>Ajastinkytkin seuraa maailman vuorokauden valoisaa osaa.<br>
+<br>
+Käyttö: Käytä pihavaloihin, sulkimiin ja vain päivällä toimiviin tehdasohjaimiin.<br>
+<br>
+Huomaa: Vaatii ulottuvuuden, jossa on taivasvalo.
+<np>
+Entiteettitunnistin
+Signaalin tunnistus
+<&industrial_entity_detector>Entiteettitunnistin tarkkailee lähellä tapahtuvaa liikettä ilman näkyvää lattialevyä.<br>
+<br>
+Käyttö: Kytke oviin, valoihin, hälytyksiin tai koneiden lukituksiin.<br>
+<br>
+Huomaa: Tarkkailee pientä aluetta kuution ympärillä.
+<np>
+Jaksoajastin
+Ajastettu pulssi
+<&industrial_interval_timer>Pieni ajastinkytkin antaa ajastetun redstone-pulssin.<br>
+<br>
+Käyttö: Käytä siellä, missä pieni mekanismi tarvitsee säännöllistä tai viivästettyä ohjausta.<br>
+<br>
+Huomaa: Käyttää ajastettuja redstone-pulsseja.
+<np>
+Valoanturi
+Signaalin tunnistus
+<&industrial_light_sensor>Valoanturi muuntaa paikallisen kirkkauden redstone-ohjaukseksi.<br>
+<br>
+Käyttö: Käytä automaattisiin valoihin, sulkimiin ja näkyvyydestä riippuviin piireihin.<br>
+<br>
+Huomaa: Antaa virtaa raakakirkkauden ollessa vähintään 8.
+<np>
+Myrskyntunnistin
+Signaalin tunnistus
+<&industrial_lightning_sensor>Myrskyanturi käynnistää varoitukset ukkosen aikana.<br>
+<br>
+Käyttö: Aseta avoimen taivaan alle ja kytke valoihin tai hälytyksiin.<br>
+<br>
+Huomaa: Vaatii ukkosta ja avoimen yhteyden taivaalle.
+<np>
+Lineaarinen entiteettitunnistin
+Signaalin tunnistus
+<&industrial_linear_entity_detector>Entiteettitunnistin tarkkailee lähellä tapahtuvaa liikettä ilman näkyvää lattialevyä.<br>
+<br>
+Käyttö: Kytke oviin, valoihin, hälytyksiin tai koneiden lukituksiin.<br>
+<br>
+Huomaa: Tarkkailee pientä aluetta kuution ympärillä.
+<np>
+Sadeanturi
+Signaalin tunnistus
+<&industrial_rain_sensor>Sääanturi muuttaa sijaintinsa sateen redstoneksi.<br>
+<br>
+Käyttö: Asenna paikkaan, jonka yläpuoliseen kuutioon voi sataa.<br>
+<br>
+Huomaa: Tarkistaa sateen anturin yläpuolelta.
+<np>
+Kaksitilainen lasikytkin
+Redstone-ohjaus
+<&glass_rotary_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kaksitilainen lasikosketin
+Redstone-ohjaus
+<&glass_touch_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Oranssi herkkä lasi
+Signaalilasi
+<&orange_sensitiveglass>Redstoneen reagoiva lasikuutio säilyttää näkymän ja näyttää samalla signaalin tilan.<br>
+<br>
+Käyttö: Käytä valvomoiden ikkunoihin, valaistuihin paneeleihin ja tehtaan suojattuihin lasipintoihin.<br>
+<br>
+Huomaa: Vaihtaa tilaa lähellä olevan redstone-virran mukaan.
+<np>
+Valaiseva herkkä lasi
+Signaalilasi
+<&sensitive_glass_block>Redstoneen reagoiva lasikuutio säilyttää näkymän ja näyttää samalla signaalin tilan.<br>
+<br>
+Käyttö: Käytä valvomoiden ikkunoihin, valaistuihin paneeleihin ja tehtaan suojattuihin lasipintoihin.<br>
+<br>
+Huomaa: Vaihtaa tilaa lähellä olevan redstone-virran mukaan.
+<np>
+Värillinen herkkä lasi
+Signaalilasi
+<&stained_sensitiveglass>Redstoneen reagoiva lasikuutio säilyttää näkymän ja näyttää samalla signaalin tilan.<br>
+<br>
+Käyttö: Käytä valvomoiden ikkunoihin, valaistuihin paneeleihin ja tehtaan suojattuihin lasipintoihin.<br>
+<br>
+Huomaa: Vaihtaa tilaa lähellä olevan redstone-virran mukaan.
+<np>
+Lasinen pylväsmittari
+Signaalimittari
+<&glass_vertical_bar_gauge>Pieni valvomomittari näyttää redstone-voimakkuuden selkeänä paneelilukemana.<br>
+<br>
+Käyttö: Asenna paikkaan, jossa viereinen redstone-virta on voitava tarkistaa yhdellä silmäyksellä.<br>
+<br>
+Huomaa: Lukee lähellä olevan redstonen voimakkuuden väliltä 0–15.
+<np>
+Analoginen mittari
+Signaalimittari
+<&industrial_analog_angular_gauge>Pieni valvomomittari näyttää redstone-voimakkuuden selkeänä paneelilukemana.<br>
+<br>
+Käyttö: Asenna paikkaan, jossa viereinen redstone-virta on voitava tarkistaa yhdellä silmäyksellä.<br>
+<br>
+Huomaa: Lukee lähellä olevan redstonen voimakkuuden väliltä 0–15.
+<np>
+Jännitemittari
+Signaalimittari
+<&industrial_analog_horizontal_gauge>Pieni valvomomittari näyttää redstone-voimakkuuden selkeänä paneelilukemana.<br>
+<br>
+Käyttö: Asenna paikkaan, jossa viereinen redstone-virta on voitava tarkistaa yhdellä silmäyksellä.<br>
+<br>
+Huomaa: Lukee lähellä olevan redstonen voimakkuuden väliltä 0–15.
+<np>
+Digitaalinen mittari
+Luettava signaalivoimakkuus
+<&industrial_small_digital_gauge>Pieni valvomomittari näyttää redstone-voimakkuuden selkeänä paneelilukemana.<br>
+<br>
+Käyttö: Asenna paikkaan, jossa viereinen redstone-virta on voitava tarkistaa yhdellä silmäyksellä.<br>
+<br>
+Huomaa: Lukee lähellä olevan redstonen voimakkuuden väliltä 0–15.
+<np>
+Lasiputkimittari
+Signaalimittari
+<&industrial_tube_gauge>Pieni valvomomittari näyttää redstone-voimakkuuden selkeänä paneelilukemana.<br>
+<br>
+Käyttö: Asenna paikkaan, jossa viereinen redstone-virta on voitava tarkistaa yhdellä silmäyksellä.<br>
+<br>
+Huomaa: Lukee lähellä olevan redstonen voimakkuuden väliltä 0–15.
+<np>
+Analoginen pylväsmittari
+Signaalimittari
+<&industrial_vertical_bar_gauge>Pieni valvomomittari näyttää redstone-voimakkuuden selkeänä paneelilukemana.<br>
+<br>
+Käyttö: Asenna paikkaan, jossa viereinen redstone-virta on voitava tarkistaa yhdellä silmäyksellä.<br>
+<br>
+Huomaa: Lukee lähellä olevan redstonen voimakkuuden väliltä 0–15.
+<np>
+Hälytysvalaisin
+Signaalipalaute
+<&industrial_alarm_lamp>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Hälytyssireeni
+Signaalin ilmaisin
+<&industrial_alarm_siren>Hälytyssireeni on lohkon sivulle kiinnitettävä redstone-ilmaisin. Sen virtatila seuraa kiinnityslohkon signaalia.<br>
+<br>
+Käyttö: Kiinnitä kiinteään sivuun ja anna virtaa ovien, koneiden, hälytysten tai paneelien valvontaan.<br>
+<br>
+Huomio: Sireeni päivittyy kerran sekunnissa niin kauan kuin signaali on aktiivinen.
+<np>
+Vilkkuva LED
+Signaalipalaute
+<&industrial_blinking_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Vihreä vilkkuva LED
+Signaalipalaute
+<&industrial_green_blinking_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Vihreä LED
+Signaalipalaute
+<&industrial_green_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Punainen LED
+Signaalipalaute
+<&industrial_red_blinking_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Punainen LED
+Signaalipalaute
+<&industrial_red_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Valkoinen vilkkuva LED
+Signaalipalaute
+<&industrial_white_blinking_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Valkoinen LED
+Signaalipalaute
+<&industrial_white_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Keltainen vilkkuva LED
+Signaalipalaute
+<&industrial_yellow_blinking_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Keltainen LED
+Signaalipalaute
+<&industrial_yellow_led>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Rustiikkinen semafori
+Signaalipalaute
+<&rustic_semaphore>Pieni ilmaisin muuttaa piilossa olevan redstonen näkyväksi tehdaspalautteeksi.<br>
+<br>
+Käyttö: Kytke signaalin viereen valvomaan ovia, koneita, hälytyksiä tai paneeleja.<br>
+<br>
+Huomaa: Vaihtaa tilaa, kun lähellä on redstone-virtaa.
+<np>
+Komparaattorikytkin
+Kiinnityspinnan signaali
+<&industrial_comparator_switch>Pieni anturikytkin lukee kiinnityskuutionsa ja muuttaa lukeman yksinkertaiseksi paneelilähdöksi.<br>
+<br>
+Käyttö: Asenna varastoihin, säiliöihin tai redstone-laitteisiin. Kun kiinnityskuutio antaa komparaattorin, säiliön tai redstonen lähtösignaalin, kytkin lähettää täysivahvuista redstonea.<br>
+<br>
+Huomaa: Käytä muuttamaan varastotasot tai piilojohdotukset selkeiksi päällä/pois-ohjauslinjoiksi.
+<np>
+Himmennin
+Säädettävä signaali
+<&industrial_dimmer>Kiertosäädin asettaa redstone-voimakkuuden pieneltä paneelipinnalta.<br>
+<br>
+Käyttö: Kasvata lähtöä askel kerrallaan oikealla napsautuksella. Täyden voimakkuuden jälkeen se palaa nollaan.<br>
+<br>
+Huomaa: Antaa voimakkuuden väliltä 0–15.
+<np>
+Hätäpysäytyspainike
+Redstone-ohjaus
+<&industrial_estop_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Suppilon estokytkin
+Redstone-ohjaus
+<&industrial_hopper_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Koputuskytkin
+Redstone-ohjaus
+<&industrial_knock_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Vipu
+Redstone-ohjaus
+<&industrial_lever>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kahden painikkeen konekytkin
+Redstone-ohjaus
+<&industrial_machine_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Vetokahva
+Redstone-ohjaus
+<&industrial_pull_handle>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kiertovipu
+Redstone-ohjaus
+<&industrial_rotary_lever>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kiertokonekatkaisin
+Redstone-ohjaus
+<&industrial_rotary_machine_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kosketusvipu
+Redstone-ohjaus
+<&industrial_small_lever>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kytkin
+Redstone-ohjaus
+<&industrialswitch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Valokytkin
+Redstone-ohjaus
+<&light_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Venttiilikytkin
+Redstone-ohjaus
+<&valve_wheel_switch>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Koteloitu pulssivastaanotin
+Yhteysohjaus
+<&industrial_switchlink_cased_pulse_receiver>Koteloitu yhteyden pulssivastaanotin antaa etäpaneeleille lyhyen redstone-liipaisun.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Lähetä lyhyt pulssi napsauttamalla vastaanotinta oikealla painikkeella tai liipaisemalla yhteyshelmellä.<br>
+<br>
+Huomaa: Pulssi palautuu itsestään asetetun ajan jälkeen.
+<np>
+Koteloitu yhteysvastaanotin
+Yhteysohjaus
+<&industrial_switchlink_cased_receiver>Koteloitu yhteysvastaanotin antaa etäpaneeleille kestävän redstone-kohteen.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Vaihda vastaanottimen tilaa käsin napsauttamalla sitä suoraan oikealla painikkeella.<br>
+<br>
+Huomaa: Yhteyshelmi vaihtaa tämän vastaanottimen tilaa, kun sitä käytetään hiipien.
+<np>
+Pulssiyhteysvastaanotin
+Yhteysohjaus
+<&industrial_switchlink_pulse_receiver>Yhteyden pulssivastaanotin antaa etäpaneeleille lyhyen redstone-liipaisun.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Lähetä lyhyt pulssi napsauttamalla vastaanotinta oikealla painikkeella tai liipaisemalla yhteyshelmellä.<br>
+<br>
+Huomaa: Pulssi palautuu itsestään asetetun ajan jälkeen.
+<np>
+Pulssiyhteysrele
+Yhteysohjaus
+<&industrial_switchlink_pulse_relay>Releen muotoinen osa tarjoaa paneelirakennelmiin pienen paikallisen kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella. Käytä vastaanotinkuutioita, kun tarvitset aktivointia yhteyshelmellä.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kytkinyhteysvastaanotin
+Yhteysohjaus
+<&industrial_switchlink_receiver>Yhteysvastaanotin antaa etäpaneeleille täysivahvuisen redstone-kohteen.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Vaihda vastaanottimen tilaa käsin napsauttamalla sitä suoraan oikealla painikkeella.<br>
+<br>
+Huomaa: Yhteyshelmi vaihtaa tämän vastaanottimen tilaa, kun sitä käytetään hiipien.
+<np>
+Analoginen yhteysvastaanotin
+Yhteysohjaus
+<&industrial_switchlink_receiver_analog>Yhteysvastaanotin antaa ohjauspaneeleille näkyvän etäkohteen.<br>
+<br>
+Käyttö: Luo yhteyshelmi napsauttamalla Ender-helmellä. Käytä helmeä hiipien aktivoidaksesi vastaanottimen etänä.<br>
+<br>
+Huomaa: Tämä vastaanotin antaa täyden redstone-signaalin liipaistaessa.
+<np>
+Kytkinyhteysrele
+Yhteysohjaus
+<&industrial_switchlink_relay>Releen muotoinen osa tarjoaa paneelirakennelmiin pienen paikallisen kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella. Käytä vastaanotinkuutioita, kun tarvitset aktivointia yhteyshelmellä.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Analoginen yhteysrele
+Yhteysohjaus
+<&industrial_switchlink_relay_analog>Releen muotoinen osa tarjoaa paneelirakennelmiin pienen paikallisen kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella. Käytä vastaanotinkuutioita, kun tarvitset aktivointia yhteyshelmellä.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Kytkinyhteyshelmi
+Yhteysohjaus
+<&switchlink_pearl>Yhteyshelmi tallentaa vastaanottimen tehtaan etäohjauksen kohteeksi.<br>
+<br>
+Käyttö: Luo helmi napsauttamalla kytkinyhteysvastaanotinta Ender-helmellä. Käytä yhteyshelmeä hiipien aktivoidaksesi tallennetun vastaanottimen.<br>
+<br>
+Huomaa: Kohteen on oltava ladattuna, samassa ulottuvuudessa ja kantaman sisällä.
+<np>
+Vanha koristeellinen vipu
+Redstone-ohjaus
+<&oldfancy_bistableswitch1>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Vanha koristeellinen kiertovipu
+Redstone-ohjaus
+<&oldfancy_bistableswitch2>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Rustiikkinen kiertovipu
+Redstone-ohjaus
+<&rustic_angular_lever>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Rustiikkinen vipu
+Redstone-ohjaus
+<&rustic_lever>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Rustiikkinen naulavipu
+Redstone-ohjaus
+<&rustic_nail_lever>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.
+<np>
+Rustiikkinen kaksisaranainen vipu
+Redstone-ohjaus
+<&rustic_two_hinge_lever>Pieni ohjain tarjoaa tehdasrakennuksiin selkeän redstone-kytkentäpisteen.<br>
+<br>
+Käyttö: Vaihda täysivahvuinen lähtö lähellä oleville piireille päälle tai pois oikealla napsautuksella.<br>
+<br>
+Huomaa: Antaa täysivahvuista redstonea ollessaan päällä.

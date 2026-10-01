@@ -1,0 +1,5 @@
+Media lastra de ladrillo de clínker
+Ladrillos ennegrecidos pola feluxe
+<&recipe>Este bloque achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>

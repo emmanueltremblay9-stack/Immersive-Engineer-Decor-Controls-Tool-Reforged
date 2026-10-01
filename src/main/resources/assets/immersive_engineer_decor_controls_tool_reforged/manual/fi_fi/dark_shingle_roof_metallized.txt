@@ -1,0 +1,5 @@
+Katon lumieste
+Sään kuluttama katto-osa
+<&recipe>Tumman paanukaton lumieste muodostaa tummia, käytännöllisiä kattolinjoja työpajoihin ja teollisuusvajoihin.<br>
+<br>
+Käyttö: Yhdistä osat uskottaviksi kattoprofiileiksi.<br>

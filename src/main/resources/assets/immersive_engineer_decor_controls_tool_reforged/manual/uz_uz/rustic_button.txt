@@ -1,0 +1,7 @@
+Qishloqcha tugma
+Redstone boshqaruvi
+<&recipe>Qisqa muddatli kalit aniq, to'liq quvvatli redstone impulsi beradi.<br>
+<br>
+Ishlatish: mashinalarni ishga tushirish, eshiklarni ochish, ogohlantirish yoki bir martalik sxemalarda foydalaning.<br>
+<br>
+Eslatma: belgilangan impulsidan keyin dastlabki holatiga qaytadi.

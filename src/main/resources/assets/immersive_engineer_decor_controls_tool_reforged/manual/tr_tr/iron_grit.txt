@@ -1,0 +1,3 @@
+İri Demir Kırıntısı
+Yeniden oluşturulmuş üretim tariflerinde kullanılan mühendis aleti malzemesi.
+<&recipe>Eritilerek demir külçesi yapılabilir,<br>ancak ileri malzeme işleme<br>için uygun değildir.

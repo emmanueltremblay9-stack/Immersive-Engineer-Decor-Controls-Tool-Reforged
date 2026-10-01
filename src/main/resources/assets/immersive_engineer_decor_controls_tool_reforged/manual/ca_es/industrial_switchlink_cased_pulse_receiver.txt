@@ -1,0 +1,7 @@
+Receptor de polsos amb carcassa
+Control enllaçat
+<&recipe>Un receptor enllaçat de polsos amb carcassa proporciona una activació breu de redstone per a panells remots.<br>
+<br>
+Ús: fes-hi clic amb una perla d’Ender per crear una perla enllaçada. Fes-hi clic dret o activa la perla enllaçada per emetre un pols breu.<br>
+<br>
+Notes: el pols es restableix automàticament després de la durada programada.

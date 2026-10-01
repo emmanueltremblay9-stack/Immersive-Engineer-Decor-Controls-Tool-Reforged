@@ -1,0 +1,5 @@
+Apurridor de fábrica
+Equipamientu de suelu de taller
+<&recipe>Esti bloque suelta oxetos almacenaos pela cara escontra la que s’oriente.<br>
+<br>
+Usu: orienta’l frontal escontra’l puntu de salida, enllena les ranures internes y axusta la fuercia, l’ángulu, la espera, la lóxica de filtros y el mou de redstone na so pantalla.<br>

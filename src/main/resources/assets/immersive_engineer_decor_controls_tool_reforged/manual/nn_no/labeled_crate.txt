@@ -1,0 +1,5 @@
+Merkt kasse
+Lageretikett som kan endrast
+<&recipe>Denne merkte kassa er laga for oversynleg sortering i lagerrommet. Frontplata kan endrast som eit lite verkstadskilt.<br>
+<br>
+Bruk: høgreklikk på etikettplata for å endre kasseetiketten. Høgreklikk på resten av kassa for å opne lageret for beslag, delar og vedlikehaldsutstyr.<br>

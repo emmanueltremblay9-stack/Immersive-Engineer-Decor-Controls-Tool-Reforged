@@ -1,0 +1,7 @@
+Dimmer
+Veränderlichs Signal
+<&recipe>En Drehregler stellt d'Redstone-Stärchi uf ere chliine Tafelflächi ii.<br>
+<br>
+Verwendig: Rechtsklick erhöht de Uusgang Schritt für Schritt; nach voller Stärchi gaht's wieder bi null los.<br>
+<br>
+Hiwiis: Git e Stärchi vo 0 bis 15 uus.

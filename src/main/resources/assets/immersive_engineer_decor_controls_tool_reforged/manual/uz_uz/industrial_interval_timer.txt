@@ -1,0 +1,7 @@
+Oraliq taymer
+Vaqtli impuls
+<&recipe>Ixcham taymer kaliti rejalashtirilgan redstone impulsi beradi.<br>
+<br>
+Ishlatish: kichik mexanizmga davriy yoki kechiktirilgan boshqaruv kerak joyda foydalaning.<br>
+<br>
+Eslatma: rejalashtirilgan redstone impulslaridan foydalanadi.

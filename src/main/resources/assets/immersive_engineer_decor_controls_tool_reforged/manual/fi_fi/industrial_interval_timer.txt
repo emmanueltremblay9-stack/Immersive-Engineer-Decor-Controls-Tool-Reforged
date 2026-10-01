@@ -1,0 +1,7 @@
+Jaksoajastin
+Ajastettu pulssi
+<&recipe>Pieni ajastinkytkin antaa ajastetun redstone-pulssin.<br>
+<br>
+Käyttö: Käytä siellä, missä pieni mekanismi tarvitsee säännöllistä tai viivästettyä ohjausta.<br>
+<br>
+Huomaa: Käyttää ajastettuja redstone-pulsseja.

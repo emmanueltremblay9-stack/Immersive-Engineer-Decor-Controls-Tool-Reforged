@@ -1,0 +1,161 @@
+Clínker e albanelaría
+Revestimentos de ladrillo e formigón
+O clínker, os ladrillos de escoura, o formigón reforzado e o vidro blindado ofrecen superficies robustas para salas quentes, obradoiros e zonas de visibilidade protexida.<br>
+<br>
+Usa as lastras, escaleiras, láminas e muros correspondentes para rematar os bordos sen romper a coherencia dos materiais da fábrica.
+<np>
+Bloque de ladrillos de clínker
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_block>Este bloque achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Lastra de ladrillos de clínker
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_slab>Este bloque achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Escaleiras de ladrillos de clínker
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_stairs>Este bloque achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Muro de ladrillos de clínker
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_wall>Este bloque achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Bloque de clínker manchado
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_stained_block>O bloque de ladrillos de clínker manchados achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Lastra de clínker manchado
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_stained_slab>A lastra de ladrillos de clínker manchados achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Escaleiras de clínker manchado
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_stained_stairs>As escaleiras de ladrillos de clínker manchados achegan ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Ladrillo de clínker ornamentado
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_sastor_corner_block>O ladrillo de clínker ornamentado con arenito achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Ladrillo de clínker rebaixado
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_recessed>Este bloque achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Ladrillos de clínker con fendas
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_vertically_slit>Os ladrillos de clínker con fendas verticais achegan ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Lastra vertical de clínker
+Ladrillos ennegrecidos pola feluxe
+<&clinker_brick_vertical_slab_structured>A lastra vertical de clínker con relevo achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Media lastra de ladrillo de clínker
+Ladrillos ennegrecidos pola feluxe
+<&halfslab_clinker_brick>Este bloque achega ladrillos ennegrecidos pola feluxe a salas de fornos, bases de chemineas e paredes de servizo.<br>
+<br>
+Uso: úsao como parede, moldura ou revestimento de zonas quentes arredor de fornos e caldeiras.<br>
+<np>
+Bloque de ladrillos de escoura
+Albanelaría industrial densa
+<&slag_brick_block>Este bloque engade albanelaría densa de cor marrón agrisada para alicerces, muros de contención e obradoiros antigos.<br>
+<br>
+Uso: úsao en alicerces antigos, muros de contención e chans sucios de fábrica.<br>
+<np>
+Lastra de ladrillos de escoura
+Albanelaría industrial densa
+<&slag_brick_slab>Este bloque engade albanelaría densa de cor marrón agrisada para alicerces, muros de contención e obradoiros antigos.<br>
+<br>
+Uso: úsao en alicerces antigos, muros de contención e chans sucios de fábrica.<br>
+<np>
+Escaleiras de ladrillos de escoura
+Albanelaría industrial densa
+<&slag_brick_stairs>Este bloque engade albanelaría densa de cor marrón agrisada para alicerces, muros de contención e obradoiros antigos.<br>
+<br>
+Uso: úsao en alicerces antigos, muros de contención e chans sucios de fábrica.<br>
+<np>
+Muro de ladrillos de escoura
+Albanelaría industrial densa
+<&slag_brick_wall>Este bloque engade albanelaría densa de cor marrón agrisada para alicerces, muros de contención e obradoiros antigos.<br>
+<br>
+Uso: úsao en alicerces antigos, muros de contención e chans sucios de fábrica.<br>
+<np>
+Bloque de formigón armado
+Formigón reforzado
+<&rebar_concrete>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Lastra de formigón armado
+Formigón reforzado
+<&rebar_concrete_slab>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Escaleiras de formigón armado
+Formigón reforzado
+<&rebar_concrete_stairs>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Muro de formigón armado
+Formigón reforzado
+<&rebar_concrete_wall>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Lámina de formigón armado
+Formigón reforzado
+<&halfslab_rebar_concrete>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Baldosa de formigón armado
+Formigón reforzado
+<&rebar_concrete_tile>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Lastra de baldosas de formigón armado
+Formigón reforzado
+<&rebar_concrete_tile_slab>Este bloque é unha peza de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Baldosa de formigón armado
+Formigón reforzado
+<&rebar_concrete_tile_stairs>As escaleiras de baldosas de formigón armado son pezas de formigón endurecido para bases de máquinas, muros contra explosións e chans de peiraos de carga.<br>
+<br>
+Uso: colócao debaixo das máquinas, ao longo dos corredores de servizo ou onde a construción precise unha base reforzada.<br>
+<np>
+Bloque de vidro blindado
+Visibilidade protexida
+<&panzerglass_block>Este bloque mantén a visibilidade sen desentoar coa construción reforzada da fábrica.<br>
+<br>
+Uso: úsao onde os xogadores deban ver as máquinas a través dunha barreira protectora.<br>
+<np>
+Lastra de vidro blindado
+Visibilidade protexida
+<&panzerglass_slab>Este bloque mantén a visibilidade sen desentoar coa construción reforzada da fábrica.<br>
+<br>
+Uso: úsao onde os xogadores deban ver as máquinas a través dunha barreira protectora.<br>

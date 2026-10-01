@@ -1,0 +1,7 @@
+Rustic Lever
+Governance of Redstone
+<&recipe>A compact control fitting marks a clear redstone switching point in thy manufactory.<br>
+<br>
+Use: Right-click to turn a full-strength output on or off for nearby circuits.<br>
+<br>
+Note: Whilst turned on, it sends redstone at full strength.

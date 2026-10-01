@@ -1,0 +1,5 @@
+Podignuta čelična servisna staza
+Dio pristupa za održavanje
+<&recipe>Ovaj blok oblikuje jasno prepoznatljive pristupne puteve oko mašina.<br>
+<br>
+Upotreba: Postavite ga za pristup pri održavanju oko mašina, na gornjim spratovima i u servisnim šahtovima.<br>

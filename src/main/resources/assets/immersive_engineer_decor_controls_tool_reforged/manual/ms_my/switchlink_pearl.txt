@@ -1,0 +1,7 @@
+Mutiara Pautan Suis
+Kawalan berpaut
+<&recipe>Mutiara berpaut menyimpan sasaran penerima untuk kawalan kilang jauh.<br>
+<br>
+Penggunaan: Klik penerima pautan suis dengan mutiara Ender untuk menghasilkannya. Gunakan mutiara berpaut sambil menyelinap untuk mengaktifkan penerima tersimpan.<br>
+<br>
+Nota: Sasaran mesti dimuatkan, berada dalam dimensi yang sama dan dalam julat.

@@ -1,0 +1,7 @@
+Loaded Hewnstone
+XP held in store
+<&recipe>Loaded Hewnstone holds one XP level, made with the Mind Squeezer.<br>
+<br>
+Use: Eat it to get one level back, clear ongoing workings and regain a little health.<br>
+<br>
+The crafting viewer shows the Mind Squeezer because Loaded Hewnstone is made by using that tool while Hewnstone and XP are at hand.

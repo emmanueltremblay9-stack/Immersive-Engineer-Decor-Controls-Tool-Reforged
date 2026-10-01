@@ -1,0 +1,7 @@
+Vetro sensibile colorato
+Vetro di segnalazione
+<&recipe>Un blocco di vetro reattivo alla redstone mantiene la visuale mostrando lo stato del segnale.<br>
+<br>
+Uso: usalo nelle finestre delle sale di controllo, nei pannelli luminosi e nelle vetrate protette della fabbrica.<br>
+<br>
+Note: cambia stato in base alla redstone vicina.

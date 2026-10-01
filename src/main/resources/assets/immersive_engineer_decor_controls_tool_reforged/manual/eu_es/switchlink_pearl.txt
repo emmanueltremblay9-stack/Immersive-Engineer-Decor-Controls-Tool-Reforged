@@ -1,0 +1,7 @@
+Etengailu-loturaren perla
+Lotutako agintea
+<&recipe>Lotutako perlak hargailuaren helburua gordetzen du fabrikako urruneko aginteetarako.<br>
+<br>
+Erabilera: egin klik etengailu-loturaren hargailu batean Ender perla batekin perla lotua sortzeko. Erabili lotutako perla makurtuta, gordetako hargailua aktibatzeko.<br>
+<br>
+Oharrak: helburuak kargatuta, dimentsio berean eta irismenaren barruan egon behar du.

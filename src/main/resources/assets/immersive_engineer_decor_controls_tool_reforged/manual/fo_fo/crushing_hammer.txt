@@ -1,0 +1,7 @@
+Málmknúsingarhamari
+Handamboð til knúsing
+<&recipe>Málmknúsingarhamarin er eitt handamboð til fyrstu viðgerð av jarni og gulli.<br>
+<br>
+Nýtsla: Smíða hann saman við rájárni, rágulli, jarnmámi, djúpskíferjarnmámi, gullmámi ella djúpskífergullmámi fyri at gera jarn- ella gullpulvur frá Immersive Engineering. Hamarin missir haldføri og kemur aftur í smíðirútin, til hann brotnar.<br>
+<br>
+Hann slítist eisini av námaarbeiði og kann sláa mál afturút í nærbardaga.

@@ -1,0 +1,789 @@
+Moderamina redstone
+Indices mensurae et apparatus signorum
+Apparatus moderandi redstone occultam in tabulas officinae claras, sensores, indices, commutatores, terrores et apparatus signorum conexos convertunt.<br>
+<br>
+His paginis utere dum stationes operatorum, tabulas signorum, circuitus securitatis et moderamina remota aedificas.
+<np>
+Meta sagittarum
+Pulsus momentaneus
+<&arrow_target>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Sensor ostii
+Moderatio redstone
+<&door_sensor_switch>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla ascensoris
+Moderatio redstone
+<&elevator_button>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Bulla vitrea
+Moderatio redstone
+<&glass_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla vitrea
+Moderatio redstone
+<&glass_small_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla vitrea tactilis
+Moderatio redstone
+<&glass_touch_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla machinae
+Moderatio redstone
+<&industrial_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla
+Moderatio redstone
+<&industrial_double_pole_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla machinae saepta
+Moderatio redstone
+<&industrial_fenced_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla ictu acta
+Moderatio redstone
+<&industrial_knock_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla vetus ornata
+Moderatio redstone
+<&oldfancy_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla vetus ornata
+Moderatio redstone
+<&oldfancy_small_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla vetus ornata catenaria
+Pulsus momentaneus
+<&oldfancy_spring_reset_chain>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla rustica
+Moderatio redstone
+<&rustic_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla rustica clavi
+Moderatio redstone
+<&rustic_nail_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla rustica parva
+Moderatio redstone
+<&rustic_small_button>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Bulla rustica catenaria
+Pulsus momentaneus
+<&rustic_spring_reset_chain>Commutator momentaneus pulsum redstone clarum plena vi dat.<br>
+<br>
+Usus: ad machinas incipiendas, ostia aperienda, terrores aut circuitus unius actus adhibe.<br>
+<br>
+Notae: post pulsum constitutum ad statum initialem redit.
+<np>
+Lamina contactus vitrea
+Pulsus pressionis
+<&glass_contact_mat>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Contactus vitreus ostii
+Pulsus pressionis
+<&glass_door_contact_mat>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Teges contactus
+Pulsus pressionis
+<&industrial_contact_mat>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Teges contactus ostii
+Pulsus pressionis
+<&industrial_door_contact_mat>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Detector transitus cadentium
+Sensus signorum
+<&industrial_fallthrough_detector>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Bulla pedalis
+Moderatio redstone
+<&industrial_foot_button>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Ostium industriale ictu activatum
+Pulsus pressionis
+<&industrial_high_sensitive_trapdoor>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Teges contactus ictui sensibilis
+Pulsus pressionis
+<&industrial_shock_sensitive_contact_mat>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Ostium horizontale ictu activatum
+Pulsus pressionis
+<&industrial_shock_sensitive_trapdoor>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Planta rubra signum emittens
+Pulsus pressionis
+<&red_power_plant>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Lamina pressionis rustica
+Pulsus pressionis
+<&rustic_contact_plate>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Pressio ostii rustica
+Pulsus pressionis
+<&rustic_door_contact_plate>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Detector casus rusticus
+Sensus signorum
+<&rustic_fallthrough_detector>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Ostium rusticum ictu activatum
+Pulsus pressionis
+<&rustic_high_sensitive_trapdoor>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Lamina rustica ictui sensibilis
+Pulsus pressionis
+<&rustic_shock_sensitive_plate>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Ostium rusticum ictu activatum
+Pulsus pressionis
+<&rustic_shock_sensitive_trapdoor>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Planta flava signum emittens
+Pulsus pressionis
+<&yellow_power_plant>Commutator contactus signum breve ex motu pavimenti aut ostii horizontalis mittit.<br>
+<br>
+Usus: pone ubi entia per corridorem ministerii, oneratorum locum aut viam custoditam transeunt.<br>
+<br>
+Notae: post contactum entis breviter pulsat.
+<np>
+Horologium diurnum vitreum
+Signum lucis diurnae
+<&glass_day_timer>Commutator temporis partem diurnam cycli mundi sequitur.<br>
+<br>
+Usus: ad lucernas areae, valvas fenestrarum et moderamina officinae tantum diurna adhibe.<br>
+<br>
+Notae: dimensionem luce caelesti praeditam requirit.
+<np>
+Detector vitreus entium
+Sensus signorum
+<&glass_entity_detector>Detector entium motum vicinum observat sine lamina pavimenti visibili.<br>
+<br>
+Usus: ostiis, lucernis, terroribus aut nexibus securitatis machinarum coniunge.<br>
+<br>
+Notae: parvam aream circa cubum explorat.
+<np>
+Signum vitreum intervallis
+Pulsus temporatus
+<&glass_interval_timer>Commutator temporis compactus pulsum redstone constitutum praebet.<br>
+<br>
+Usus: adhibe ubi machina parva moderatione periodica aut dilata eget.<br>
+<br>
+Notae: pulsibus redstone constitutis utitur.
+<np>
+Detector vitreus linearis
+Sensus signorum
+<&glass_linear_entity_detector>Detector entium motum vicinum observat sine lamina pavimenti visibili.<br>
+<br>
+Usus: ostiis, lucernis, terroribus aut nexibus securitatis machinarum coniunge.<br>
+<br>
+Notae: parvam aream circa cubum explorat.
+<np>
+Detector cuborum
+Sensus signorum
+<&industrial_block_detector>Detector cuborum inspicit num spatium ante se occupatum sit.<br>
+<br>
+Usus: ad faciem machinae, receptaculum aut spatium custoditum observandum dirige.<br>
+<br>
+Notae: signum emittit si cubus ante se aer non est.
+<np>
+Horologium diurnum
+Signum lucis diurnae
+<&industrial_day_timer>Commutator temporis partem diurnam cycli mundi sequitur.<br>
+<br>
+Usus: ad lucernas areae, valvas fenestrarum et moderamina officinae tantum diurna adhibe.<br>
+<br>
+Notae: dimensionem luce caelesti praeditam requirit.
+<np>
+Detector entium
+Sensus signorum
+<&industrial_entity_detector>Detector entium motum vicinum observat sine lamina pavimenti visibili.<br>
+<br>
+Usus: ostiis, lucernis, terroribus aut nexibus securitatis machinarum coniunge.<br>
+<br>
+Notae: parvam aream circa cubum explorat.
+<np>
+Temporizator intervallorum
+Pulsus temporatus
+<&industrial_interval_timer>Commutator temporis compactus pulsum redstone constitutum praebet.<br>
+<br>
+Usus: adhibe ubi machina parva moderatione periodica aut dilata eget.<br>
+<br>
+Notae: pulsibus redstone constitutis utitur.
+<np>
+Sensor lucis
+Sensus signorum
+<&industrial_light_sensor>Sensor lucis claritatem localem in moderationem redstone convertit.<br>
+<br>
+Usus: ad lucernas automaticas, valvas fenestrarum et circuitus visibilitatis adhibe.<br>
+<br>
+Notae: signum emittit si claritas rudis est 8 aut maior.
+<np>
+Detector tempestatis
+Sensus signorum
+<&industrial_lightning_sensor>Sensor tempestatis monita in tonitruis agit.<br>
+<br>
+Usus: sub caelo aperto pone et lucernis aut terroribus coniunge.<br>
+<br>
+Notae: tonitrua et accessum ad caelum requirit.
+<np>
+Detector entium linearis
+Sensus signorum
+<&industrial_linear_entity_detector>Detector entium motum vicinum observat sine lamina pavimenti visibili.<br>
+<br>
+Usus: ostiis, lucernis, terroribus aut nexibus securitatis machinarum coniunge.<br>
+<br>
+Notae: parvam aream circa cubum explorat.
+<np>
+Sensor pluviae
+Sensus signorum
+<&industrial_rain_sensor>Sensor caeli pluviam loco suo in redstone convertit.<br>
+<br>
+Usus: pone ubi cubus superior pluviam accipere potest.<br>
+<br>
+Notae: pluviam supra sensorem inspicit.
+<np>
+Commutator vitreus bistabilis
+Moderatio redstone
+<&glass_rotary_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Contactus vitreus bistabilis
+Moderatio redstone
+<&glass_touch_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vitrum sensibile aurantium
+Vitrum signi
+<&orange_sensitiveglass>Cubus vitreus redstone respondens prospectum servat dum statum signi ostendit.<br>
+<br>
+Usus: in fenestris conclavis moderandi, tabulis lucentibus et vitro officinae munito adhibe.<br>
+<br>
+Notae: statum signo redstone vicino mutat.
+<np>
+Vitrum sensibile lucens
+Vitrum signi
+<&sensitive_glass_block>Cubus vitreus redstone respondens prospectum servat dum statum signi ostendit.<br>
+<br>
+Usus: in fenestris conclavis moderandi, tabulis lucentibus et vitro officinae munito adhibe.<br>
+<br>
+Notae: statum signo redstone vicino mutat.
+<np>
+Vitrum sensibile coloratum
+Vitrum signi
+<&stained_sensitiveglass>Cubus vitreus redstone respondens prospectum servat dum statum signi ostendit.<br>
+<br>
+Usus: in fenestris conclavis moderandi, tabulis lucentibus et vitro officinae munito adhibe.<br>
+<br>
+Notae: statum signo redstone vicino mutat.
+<np>
+Index vitreus linearis
+Index signi
+<&glass_vertical_bar_gauge>Index compactus conclavis moderandi vim redstone in tabula clare ostendit.<br>
+<br>
+Usus: pone ubi vis redstone vicina uno aspectu inspici potest.<br>
+<br>
+Notae: vim redstone vicinam a 0 ad 15 legit.
+<np>
+Index analogicus
+Index signi
+<&industrial_analog_angular_gauge>Index compactus conclavis moderandi vim redstone in tabula clare ostendit.<br>
+<br>
+Usus: pone ubi vis redstone vicina uno aspectu inspici potest.<br>
+<br>
+Notae: vim redstone vicinam a 0 ad 15 legit.
+<np>
+Index voltmetri
+Index signi
+<&industrial_analog_horizontal_gauge>Index compactus conclavis moderandi vim redstone in tabula clare ostendit.<br>
+<br>
+Usus: pone ubi vis redstone vicina uno aspectu inspici potest.<br>
+<br>
+Notae: vim redstone vicinam a 0 ad 15 legit.
+<np>
+Index digitalis
+Vis signi clare legenda
+<&industrial_small_digital_gauge>Index compactus conclavis moderandi vim redstone in tabula clare ostendit.<br>
+<br>
+Usus: pone ubi vis redstone vicina uno aspectu inspici potest.<br>
+<br>
+Notae: vim redstone vicinam a 0 ad 15 legit.
+<np>
+Index tubi vitrei
+Index signi
+<&industrial_tube_gauge>Index compactus conclavis moderandi vim redstone in tabula clare ostendit.<br>
+<br>
+Usus: pone ubi vis redstone vicina uno aspectu inspici potest.<br>
+<br>
+Notae: vim redstone vicinam a 0 ad 15 legit.
+<np>
+Index analogicus linearis
+Index signi
+<&industrial_vertical_bar_gauge>Index compactus conclavis moderandi vim redstone in tabula clare ostendit.<br>
+<br>
+Usus: pone ubi vis redstone vicina uno aspectu inspici potest.<br>
+<br>
+Notae: vim redstone vicinam a 0 ad 15 legit.
+<np>
+Lucerna terroris
+Ostensio signi
+<&industrial_alarm_lamp>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+Sirena terroris
+Ostensio signi
+<&industrial_alarm_siren>Sirena monitrice index redstone in facie affixus est. Status eius potentiae signum cubi cui affixa est sequitur.<br>
+<br>
+Usus: faciei solidae affige et signum praebe ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: sirena semel in secundo renovatur dum signum connexum activum manet.
+<np>
+LED micans
+Ostensio signi
+<&industrial_blinking_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED viridis micans
+Ostensio signi
+<&industrial_green_blinking_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED viridis
+Ostensio signi
+<&industrial_green_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED ruber
+Ostensio signi
+<&industrial_red_blinking_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED ruber
+Ostensio signi
+<&industrial_red_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED albus micans
+Ostensio signi
+<&industrial_white_blinking_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED albus
+Ostensio signi
+<&industrial_white_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED flavus micans
+Ostensio signi
+<&industrial_yellow_blinking_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+LED flavus
+Ostensio signi
+<&industrial_yellow_led>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+Semaphorum rusticum
+Ostensio signi
+<&rustic_semaphore>Index compactus redstone occultam in indicium officinae visibile convertit.<br>
+<br>
+Usus: iuxta signum filis coniunge ut ostia, machinas, terrores aut tabulas observes.<br>
+<br>
+Notae: statum mutat cum signum redstone vicinum adest.
+<np>
+Commutator comparatorius
+Signum connexum
+<&industrial_comparator_switch>Commutator sensoris compactus cubum cui affixus est legit et mensuram in emissionem tabulae simplicem convertit.<br>
+<br>
+Usus: inventariis, receptaculis fluidi aut apparatibus redstone affige. Cum cubus connexum signum comparatoris, vasis aut redstone refert, commutator redstone plena vi emittit.<br>
+<br>
+Notae: ad gradus copiae aut fila occulta in lineas claras activas/inactivas convertendas adhibe.
+<np>
+Moderator vis
+Signum variabile
+<&industrial_dimmer>Moderamen rotarium vim redstone in facie tabulae compacta constituit.<br>
+<br>
+Usus: dextro clicco emissionem gradatim auge; post vim plenam ad nihil redit.<br>
+<br>
+Notae: vim a 0 ad 15 emittit.
+<np>
+Bulla sistendi in periculo
+Moderatio redstone
+<&industrial_estop_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Obstructor infundibuli
+Moderatio redstone
+<&industrial_hopper_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Commutator ictu actus
+Moderatio redstone
+<&industrial_knock_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis
+Moderatio redstone
+<&industrial_lever>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Commutator machinae duarum bullarum
+Moderatio redstone
+<&industrial_machine_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Manubrium trahendi
+Moderatio redstone
+<&industrial_pull_handle>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis rotarius
+Moderatio redstone
+<&industrial_rotary_lever>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Commutator machinae rotarius
+Moderatio redstone
+<&industrial_rotary_machine_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis contactus
+Moderatio redstone
+<&industrial_small_lever>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Commutator
+Moderatio redstone
+<&industrialswitch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Commutator lucis
+Moderatio redstone
+<&light_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Commutator valvulae
+Moderatio redstone
+<&valve_wheel_switch>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Receptor pulsans in theca
+Moderatio conexa
+<&industrial_switchlink_cased_pulse_receiver>Receptor pulsans conexus in theca tabulis remotis breve incitamentum redstone dat.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Dextro clicco aut margarita conexa incitata pulsum brevem emitte.<br>
+<br>
+Notae: pulsus ipse finitur post tempus constitutum.
+<np>
+Receptor nexus in theca
+Moderatio conexa
+<&industrial_switchlink_cased_receiver>Receptor conexus in theca destinationem redstone robustam tabulis remotis praebet.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Receptorem ipsum dextro clicco manu activa aut deactiva.<br>
+<br>
+Notae: margarita conexa furtim adhibita hunc receptorem activat aut deactivat.
+<np>
+Receptor nexus pulsans
+Moderatio conexa
+<&industrial_switchlink_pulse_receiver>Receptor pulsans conexus tabulis remotis breve incitamentum redstone dat.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Dextro clicco aut margarita conexa incitata pulsum brevem emitte.<br>
+<br>
+Notae: pulsus ipse finitur post tempus constitutum.
+<np>
+Repetitor nexus pulsans
+Moderatio conexa
+<&industrial_switchlink_pulse_relay>Pars specie repetitoris tabulis punctum commutandi locale compactum dat.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva. Cubis receptoribus utere cum activatione margaritae conexae opus est.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Receptor nexus commutatorum
+Moderatio conexa
+<&industrial_switchlink_receiver>Receptor conexus tabulis remotis destinationem redstone plenae vis dat.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Receptorem ipsum dextro clicco manu activa aut deactiva.<br>
+<br>
+Notae: margarita conexa furtim adhibita hunc receptorem activat aut deactivat.
+<np>
+Receptor nexus analogicus
+Moderatio conexa
+<&industrial_switchlink_receiver_analog>Receptor conexus tabulis moderandis destinationem remotam visibilem dat.<br>
+<br>
+Usus: margaritam Ender tenens clicca ut margaritam conexam facias. Illa margarita furtim ambulans utere ut receptorem remote actives.<br>
+<br>
+Notae: hic receptor incitatus signum redstone plena vi emittit.
+<np>
+Repetitor nexus commutatorum
+Moderatio conexa
+<&industrial_switchlink_relay>Pars specie repetitoris tabulis punctum commutandi locale compactum dat.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva. Cubis receptoribus utere cum activatione margaritae conexae opus est.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Repetitor nexus analogicus
+Moderatio conexa
+<&industrial_switchlink_relay_analog>Pars specie repetitoris tabulis punctum commutandi locale compactum dat.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva. Cubis receptoribus utere cum activatione margaritae conexae opus est.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Margarita nexus commutatorum
+Moderatio conexa
+<&switchlink_pearl>Margarita conexa destinationem receptoris ad moderamina officinae remota servat.<br>
+<br>
+Usus: receptorem nexus commutatorum margaritam Ender tenens clicca ut unam facias. Margarita conexa furtim ambulans utere ut receptorem memoratum actives.<br>
+<br>
+Notae: destinatio in mundo onerata, in eadem dimensione et intra intervallum debet esse.
+<np>
+Vectis vetus ornatus
+Moderatio redstone
+<&oldfancy_bistableswitch1>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis vetus ornatus rotarius
+Moderatio redstone
+<&oldfancy_bistableswitch2>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis rusticus rotarius
+Moderatio redstone
+<&rustic_angular_lever>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis rusticus
+Moderatio redstone
+<&rustic_lever>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis rusticus clavi
+Moderatio redstone
+<&rustic_nail_lever>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.
+<np>
+Vectis rusticus duobus cardinibus
+Moderatio redstone
+<&rustic_two_hinge_lever>Moderamen compactum aedificiis officinae punctum redstone clare visibile praebet.<br>
+<br>
+Usus: dextro clicco emissionem plenae vis circuituum vicinorum activa aut deactiva.<br>
+<br>
+Notae: dum activum est, redstone plena vi emittit.

@@ -1,0 +1,161 @@
+Clinker và khối xây
+Vỏ gạch và bê tông
+Clinker, gạch xỉ, bê tông cốt thép và kính bọc giáp tạo các bề mặt nặng cho phòng nóng, xưởng và tầm nhìn được bảo vệ.<br>
+<br>
+Dùng phiến, cầu thang, lát và tường tương ứng để hoàn thiện mép mà vẫn giữ thống nhất vật liệu nhà máy.
+<np>
+Khối gạch clinker
+Tường gạch phủ muội đen
+<&clinker_brick_block>Khối này mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Phiến gạch clinker
+Tường gạch phủ muội đen
+<&clinker_brick_slab>Khối này mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Cầu thang gạch clinker
+Tường gạch phủ muội đen
+<&clinker_brick_stairs>Khối này mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Tường gạch clinker
+Tường gạch phủ muội đen
+<&clinker_brick_wall>Khối này mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Khối clinker lấm bẩn
+Tường gạch phủ muội đen
+<&clinker_brick_stained_block>Khối gạch clinker lấm bẩn mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Phiến clinker lấm bẩn
+Tường gạch phủ muội đen
+<&clinker_brick_stained_slab>Phiến gạch clinker lấm bẩn mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Cầu thang clinker lấm bẩn
+Tường gạch phủ muội đen
+<&clinker_brick_stained_stairs>Cầu thang gạch clinker lấm bẩn mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Gạch clinker trang trí
+Tường gạch phủ muội đen
+<&clinker_brick_sastor_corner_block>Gạch clinker trang trí sa thạch mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Gạch clinker lõm
+Tường gạch phủ muội đen
+<&clinker_brick_recessed>Khối này mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Gạch clinker có khe
+Tường gạch phủ muội đen
+<&clinker_brick_vertically_slit>Gạch clinker có khe dọc mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Phiến clinker đứng
+Tường gạch phủ muội đen
+<&clinker_brick_vertical_slab_structured>Phiến clinker đứng có hoa văn mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Nửa phiến gạch clinker
+Tường gạch phủ muội đen
+<&halfslab_clinker_brick>Khối này mang vẻ gạch sẫm màu vì muội đến gian lò, chân ống khói và tường kỹ thuật.<br>
+<br>
+Cách dùng: Dùng làm tường, viền hoặc vỏ vùng nóng quanh lò và nồi hơi.<br>
+<np>
+Khối gạch xỉ
+Khối xây nhà máy đặc
+<&slag_brick_block>Khối này thêm vật liệu xây xám nâu đặc cho móng, tường chắn và nhà xưởng cũ.<br>
+<br>
+Cách dùng: Dùng cho móng cũ, tường chắn và sàn nhà máy bám bẩn.<br>
+<np>
+Phiến gạch xỉ
+Khối xây nhà máy đặc
+<&slag_brick_slab>Khối này thêm vật liệu xây xám nâu đặc cho móng, tường chắn và nhà xưởng cũ.<br>
+<br>
+Cách dùng: Dùng cho móng cũ, tường chắn và sàn nhà máy bám bẩn.<br>
+<np>
+Cầu thang gạch xỉ
+Khối xây nhà máy đặc
+<&slag_brick_stairs>Khối này thêm vật liệu xây xám nâu đặc cho móng, tường chắn và nhà xưởng cũ.<br>
+<br>
+Cách dùng: Dùng cho móng cũ, tường chắn và sàn nhà máy bám bẩn.<br>
+<np>
+Tường gạch xỉ
+Khối xây nhà máy đặc
+<&slag_brick_wall>Khối này thêm vật liệu xây xám nâu đặc cho móng, tường chắn và nhà xưởng cũ.<br>
+<br>
+Cách dùng: Dùng cho móng cũ, tường chắn và sàn nhà máy bám bẩn.<br>
+<np>
+Khối bê tông cốt thép
+Bê tông gia cường
+<&rebar_concrete>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Phiến bê tông cốt thép
+Bê tông gia cường
+<&rebar_concrete_slab>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Cầu thang bê tông cốt thép
+Bê tông gia cường
+<&rebar_concrete_stairs>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Tường bê tông cốt thép
+Bê tông gia cường
+<&rebar_concrete_wall>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Lát bê tông cốt thép
+Bê tông gia cường
+<&halfslab_rebar_concrete>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Gạch lát bê tông cốt thép
+Bê tông gia cường
+<&rebar_concrete_tile>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Phiến gạch lát bê tông cốt thép
+Bê tông gia cường
+<&rebar_concrete_tile_slab>Khối này là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Gạch lát bê tông cốt thép
+Bê tông gia cường
+<&rebar_concrete_tile_stairs>Cầu thang gạch lát bê tông cốt thép là chi tiết bê tông cứng cho bệ máy, tường chống nổ và sàn khu bốc dỡ.<br>
+<br>
+Cách dùng: Đặt dưới máy, dọc hành lang kỹ thuật hoặc bất kỳ nơi nào cần nền gia cường.<br>
+<np>
+Khối kính bọc giáp
+Tầm nhìn được bảo vệ
+<&panzerglass_block>Khối này giữ tầm nhìn thông thoáng nhưng vẫn phù hợp với kết cấu nhà máy gia cường.<br>
+<br>
+Cách dùng: Dùng nơi người chơi cần nhìn máy móc qua lớp chắn bảo vệ.<br>
+<np>
+Phiến kính bọc giáp
+Tầm nhìn được bảo vệ
+<&panzerglass_slab>Khối này giữ tầm nhìn thông thoáng nhưng vẫn phù hợp với kết cấu nhà máy gia cường.<br>
+<br>
+Cách dùng: Dùng nơi người chơi cần nhìn máy móc qua lớp chắn bảo vệ.<br>

@@ -1,0 +1,101 @@
+Roofs & Yard
+Outdoor Fittings for the Manufactory
+Roof blocks, gritty yard surfaces and old manufactory wood fittings finish exterior sheds, work yards, loading grounds and weathered edges of the works.<br>
+<br>
+Mingle these fittings with masonry and passageways, that thy outdoor manufactory may be read clearly from afar.
+<np>
+Dark Shingle Roof
+Weathered Fitting for a Roof
+<&dark_shingle_roof>This block forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Snow Guard for a Roof
+Weathered Fitting for a Roof
+<&dark_shingle_roof_metallized>The Snow Guard for a Dark Shingle Roof forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Dark Shingle Roof
+Weathered Fitting for a Roof
+<&dark_shingle_roof_skylight>The Skylight for a Dark Shingle Roof forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Chimney Base for a Roof
+Weathered Fitting for a Roof
+<&dark_shingle_roof_chimneytrunk>The Dark Shingle Roof Chimney Base forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Wire Conduit for a Roof
+Weathered Fitting for a Roof
+<&dark_shingle_roof_wireconduit>The Wire Conduit for a Dark Shingle Roof forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Dark Shingle Roof
+Weathered Fitting for a Roof
+<&dark_shingle_roof_chimney>The Chimney for a Dark Shingle Roof forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Block of Dark Shingle Roofing
+Weathered Fitting for a Roof
+<&dark_shingle_roof_block>This block forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Slab of Dark Shingle Roofing
+Weathered Fitting for a Roof
+<&dark_shingle_roof_slab>This block forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Slab of Dark Shingle Roofing
+Weathered Fitting for a Roof
+<&dark_shingle_roof_slabslice>The Thin Slice of Dark Shingle Roofing forms dark and serviceable roof lines upon workshops and manufactory sheds.<br>
+<br>
+Use: Join these fittings to make roof shapes of credible construction.<br>
+<np>
+Compacted Gritty Earth
+Ground Cover for the Works
+<&dense_grit_dirt_block>This block gives outdoor working grounds a surface pressed down and trodden firm.<br>
+<br>
+Use: Lay it about loading doors, outdoor tanks and engine yards.<br>
+<np>
+Compacted Gritty Sand
+Ground Cover for the Works
+<&dense_grit_sand_block>This block gives outdoor working grounds a surface pressed down and trodden firm.<br>
+<br>
+Use: Lay it about loading doors, outdoor tanks and engine yards.<br>
+<np>
+Old Planks of Wood
+Aged Timber for the Workshop
+<&old_industrial_wood_planks>The Old Manufactory Wood Planks add aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>
+<np>
+Old Manufactory Wood Slab
+Aged Timber for the Workshop
+<&old_industrial_wood_slab>This block adds aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>
+<np>
+Old Stairs of Wood
+Aged Timber for the Workshop
+<&old_industrial_wood_stairs>The Old Manufactory Wood Stairs add aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>
+<np>
+Thin Slice of Old Wood
+Aged Timber for the Workshop
+<&old_industrial_wood_slabslice>The Thin Slice of Old Manufactory Wood adds aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>
+<np>
+Old Manufactory Wood Door
+Aged Timber for the Workshop
+<&old_industrial_wood_door>This block adds aged workshop timber for floors, steps, doors and warm-hued trim within.<br>
+<br>
+Use: Build old workshop floors, stairs, doors and trim.<br>

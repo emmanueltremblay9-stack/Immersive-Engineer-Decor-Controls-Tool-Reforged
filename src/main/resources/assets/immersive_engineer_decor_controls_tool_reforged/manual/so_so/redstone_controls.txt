@@ -1,0 +1,789 @@
+Xakamaynta redstone
+Cabbireyaasha iyo qaybaha calaamadda
+Qalabka xakamayntu wuxuu redstone qarsoon u beddelaa looxyo warshadeed oo la akhrin karo, dareemayaal, tusayaal, furayaal, digniino iyo qaybaha calaamadaha xiriirsan.<br>
+<br>
+Bogaggan isticmaal markaad dhisayso xarumaha hawlwadeenka, looxyada calaamadaha, wareegyada badbaadada iyo xakamaynta meel fog.
+<np>
+Bartilmaameedka fallaaraha
+Garaac muddo gaaban ah
+<&arrow_target>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Dareemaha albaabka
+Xakamaynta redstone
+<&door_sensor_switch>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka wiishka
+Xakamaynta redstone
+<&elevator_button>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Badhanka muraayadda
+Xakamaynta redstone
+<&glass_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka muraayadda
+Xakamaynta redstone
+<&glass_small_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka taabashada ee muraayadda
+Xakamaynta redstone
+<&glass_touch_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka mashiinka
+Xakamaynta redstone
+<&industrial_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhan
+Xakamaynta redstone
+<&industrial_double_pole_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka mashiinka ee deyran
+Xakamaynta redstone
+<&industrial_fenced_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka garaacidda
+Xakamaynta redstone
+<&industrial_knock_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka duugga ah ee quruxda badan
+Xakamaynta redstone
+<&oldfancy_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka duugga ah ee quruxda badan
+Xakamaynta redstone
+<&oldfancy_small_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka silsiladda ee duugga ah ee quruxda badan
+Garaac muddo gaaban ah
+<&oldfancy_spring_reset_chain>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka miyiga
+Xakamaynta redstone
+<&rustic_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka musmaarka ee miyiga
+Xakamaynta redstone
+<&rustic_nail_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka miyiga ee yar
+Xakamaynta redstone
+<&rustic_small_button>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Badhanka silsiladda ee miyiga
+Garaac muddo gaaban ah
+<&rustic_spring_reset_chain>Fure muddo-gaaban ah wuxuu bixiyaa garaac redstone oo nadiif ah, awooddiisuna buuxdo.<br>
+<br>
+Isticmaal: U adeegso bilaabidda mashiinnada, furidda albaabbada, digniinaha ama wareegyada hal mar shaqeeya.<br>
+<br>
+Ogeysiis: Wuxuu dib isu dejiyaa kaddib garaaciisa la jadwaleeyey.
+<np>
+Saxanka taabashada ee muraayadda
+Garaaca cadaadiska
+<&glass_contact_mat>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Taabashada albaabka ee muraayadda
+Garaaca cadaadiska
+<&glass_door_contact_mat>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Gogosha taabashada
+Garaaca cadaadiska
+<&industrial_contact_mat>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Gogosha taabashada albaabka
+Garaaca cadaadiska
+<&industrial_door_contact_mat>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Ogaadaha wax dhex dhaca
+Dareemidda calaamadda
+<&industrial_fallthrough_detector>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Badhanka lugta
+Xakamaynta redstone
+<&industrial_foot_button>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Albaabka warshadeed ee jug farsamo kiciso
+Garaaca cadaadiska
+<&industrial_high_sensitive_trapdoor>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Gogosha taabashada ee jugta farsamo
+Garaaca cadaadiska
+<&industrial_shock_sensitive_contact_mat>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Daboolka dabaqa ee jug farsamo kiciso
+Garaaca cadaadiska
+<&industrial_shock_sensitive_trapdoor>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Geedka tamarta cas
+Garaaca cadaadiska
+<&red_power_plant>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Saxanka cadaadiska ee miyiga
+Garaaca cadaadiska
+<&rustic_contact_plate>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Cadaadiska albaabka ee miyiga
+Garaaca cadaadiska
+<&rustic_door_contact_plate>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Ogaadaha wax dhacaya ee miyiga
+Dareemidda calaamadda
+<&rustic_fallthrough_detector>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Albaabka miyiga ee jug farsamo kiciso
+Garaaca cadaadiska
+<&rustic_high_sensitive_trapdoor>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Saxanka miyiga ee jugta farsamo
+Garaaca cadaadiska
+<&rustic_shock_sensitive_plate>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Albaabka miyiga ee jug farsamo kiciso
+Garaaca cadaadiska
+<&rustic_shock_sensitive_trapdoor>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Geedka tamarta jaallaha ah
+Garaaca cadaadiska
+<&yellow_power_plant>Furaha taabashadu wuxuu calaamad gaaban ka diraa dhaqdhaqaaqa sagxadda ama daboolka dabaqa.<br>
+<br>
+Isticmaal: Ku dhig halka jirayaashu maraan marin adeeg, rare ama jid la ilaaliyo.<br>
+<br>
+Ogeysiis: Garaac gaaban ayuu bixiyaa kaddib taabashada jira.
+<np>
+Saacadda maalinta ee muraayadda
+Calaamadda iftiinka maalinta
+<&glass_day_timer>Furaha saacaddu wuxuu raacaa qaybta maalinta ee wareegga dunida.<br>
+<br>
+Isticmaal: U adeegso nalalka barxadda, daboollada daaqadaha iyo xakamaynta warshadda ee maalintii oo keliya shaqaysa.<br>
+<br>
+Ogeysiis: Wuxuu u baahan yahay cabbir dunida ah oo leh iftiin cirka ka yimaadda.
+<np>
+Ogaadaha jirayaasha ee muraayadda
+Dareemidda calaamadda
+<&glass_entity_detector>Ogaadaha jirayaashu wuxuu ilaaliyaa dhaqdhaqaaqa dhow isagoo aan lahayn saxan sagxad oo muuqda.<br>
+<br>
+Isticmaal: Ku xir albaabbo, nalal, digniino ama is-xannibayaasha mashiinnada.<br>
+<br>
+Ogeysiis: Wuxuu baaraa aag yar oo ku wareegsan baloogga.
+<np>
+Calaamadda kala-joogsiga ee muraayadda
+Garaac waqtiyaysan
+<&glass_interval_timer>Fure saacad yar ah wuxuu bixiyaa garaac redstone ah oo la jadwaleeyey.<br>
+<br>
+Isticmaal: U adeegso meel farsamo yar uga baahan tahay xakamayn soo noqnoqota ama dib loo dhigay.<br>
+<br>
+Ogeysiis: Wuxuu adeegsadaa garaacyo redstone oo la jadwaleeyey.
+<np>
+Ogaadaha xariiqda ee muraayadda
+Dareemidda calaamadda
+<&glass_linear_entity_detector>Ogaadaha jirayaashu wuxuu ilaaliyaa dhaqdhaqaaqa dhow isagoo aan lahayn saxan sagxad oo muuqda.<br>
+<br>
+Isticmaal: Ku xir albaabbo, nalal, digniino ama is-xannibayaasha mashiinnada.<br>
+<br>
+Ogeysiis: Wuxuu baaraa aag yar oo ku wareegsan baloogga.
+<np>
+Ogaadaha baloogga
+Dareemidda calaamadda
+<&industrial_block_detector>Ogaadaha balooggu wuxuu hubiyaa in booska uu u jeedo wax ku jiraan.<br>
+<br>
+Isticmaal: U jeedi wejiga mashiinka, kaydka ama booska la ilaalinayo.<br>
+<br>
+Ogeysiis: Wuu shidmaa marka baloogga uu u jeedo uusan hawo ahayn.
+<np>
+Saacadda maalinta
+Calaamadda iftiinka maalinta
+<&industrial_day_timer>Furaha saacaddu wuxuu raacaa qaybta maalinta ee wareegga dunida.<br>
+<br>
+Isticmaal: U adeegso nalalka barxadda, daboollada daaqadaha iyo xakamaynta warshadda ee maalintii oo keliya shaqaysa.<br>
+<br>
+Ogeysiis: Wuxuu u baahan yahay cabbir dunida ah oo leh iftiin cirka ka yimaadda.
+<np>
+Ogaadaha jirayaasha
+Dareemidda calaamadda
+<&industrial_entity_detector>Ogaadaha jirayaashu wuxuu ilaaliyaa dhaqdhaqaaqa dhow isagoo aan lahayn saxan sagxad oo muuqda.<br>
+<br>
+Isticmaal: Ku xir albaabbo, nalal, digniino ama is-xannibayaasha mashiinnada.<br>
+<br>
+Ogeysiis: Wuxuu baaraa aag yar oo ku wareegsan baloogga.
+<np>
+Saacadda kala-joogsiga
+Garaac waqtiyaysan
+<&industrial_interval_timer>Fure saacad yar ah wuxuu bixiyaa garaac redstone ah oo la jadwaleeyey.<br>
+<br>
+Isticmaal: U adeegso meel farsamo yar uga baahan tahay xakamayn soo noqnoqota ama dib loo dhigay.<br>
+<br>
+Ogeysiis: Wuxuu adeegsadaa garaacyo redstone oo la jadwaleeyey.
+<np>
+Dareemaha iftiinka
+Dareemidda calaamadda
+<&industrial_light_sensor>Dareemaha iftiinku wuxuu dhalaalka goobta u beddelaa xakamayn redstone.<br>
+<br>
+Isticmaal: U adeegso nalalka tooska ah, daboollada daaqadaha iyo wareegyada aragtida.<br>
+<br>
+Ogeysiis: Wuu shidmaa marka dhalaalka aan la beddelin uu yahay 8 ama ka badan.
+<np>
+Ogaadaha duufaanta
+Dareemidda calaamadda
+<&industrial_lightning_sensor>Dareemaha duufaantu wuxuu kiciyaa digniino xilliga onkodka.<br>
+<br>
+Isticmaal: Dhig cirka furan hoostiisa, kuna xir nalal ama digniino.<br>
+<br>
+Ogeysiis: Wuxuu u baahan yahay onkod iyo cirka oo uu gaari karo.
+<np>
+Ogaadaha jirayaasha ee xariiqda
+Dareemidda calaamadda
+<&industrial_linear_entity_detector>Ogaadaha jirayaashu wuxuu ilaaliyaa dhaqdhaqaaqa dhow isagoo aan lahayn saxan sagxad oo muuqda.<br>
+<br>
+Isticmaal: Ku xir albaabbo, nalal, digniino ama is-xannibayaasha mashiinnada.<br>
+<br>
+Ogeysiis: Wuxuu baaraa aag yar oo ku wareegsan baloogga.
+<np>
+Dareemaha roobka
+Dareemidda calaamadda
+<&industrial_rain_sensor>Dareemaha cimiladu wuxuu roobka ka da’aya meesha uu joogo u beddelaa redstone.<br>
+<br>
+Isticmaal: Ku rakib halka baloogga ka sarreeyaa roob heli karo.<br>
+<br>
+Ogeysiis: Wuxuu hubiyaa roobka dareemaha ka sarreeya.
+<np>
+Furaha muraayadda ee laba xaaladood leh
+Xakamaynta redstone
+<&glass_rotary_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Taabashada muraayadda ee laba xaaladood leh
+Xakamaynta redstone
+<&glass_touch_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Muraayadda xasaasiga ah ee oranji
+Muraayadda calaamadda
+<&orange_sensitiveglass>Baloog muraayad ah oo redstone ka falceliya wuxuu ilaaliyaa aragtida isagoo muujinaya xaaladda calaamadda.<br>
+<br>
+Isticmaal: U adeegso daaqadaha qolka xakamaynta, looxyada iftiimaya iyo muraayadda warshadda ee la ilaaliyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda ku beddelaa awoodda redstone ee dhow.
+<np>
+Muraayadda xasaasiga ah ee iftiimaysa
+Muraayadda calaamadda
+<&sensitive_glass_block>Baloog muraayad ah oo redstone ka falceliya wuxuu ilaaliyaa aragtida isagoo muujinaya xaaladda calaamadda.<br>
+<br>
+Isticmaal: U adeegso daaqadaha qolka xakamaynta, looxyada iftiimaya iyo muraayadda warshadda ee la ilaaliyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda ku beddelaa awoodda redstone ee dhow.
+<np>
+Muraayadda xasaasiga ah ee midabaysan
+Muraayadda calaamadda
+<&stained_sensitiveglass>Baloog muraayad ah oo redstone ka falceliya wuxuu ilaaliyaa aragtida isagoo muujinaya xaaladda calaamadda.<br>
+<br>
+Isticmaal: U adeegso daaqadaha qolka xakamaynta, looxyada iftiimaya iyo muraayadda warshadda ee la ilaaliyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda ku beddelaa awoodda redstone ee dhow.
+<np>
+Cabbiraha baarka muraayadda
+Cabbiraha calaamadda
+<&glass_vertical_bar_gauge>Cabbire yar oo qolka xakamaynta ah wuxuu xoogga redstone ku soo bandhigaa akhris looxeed oo cad.<br>
+<br>
+Isticmaal: Ku rakib halka awoodda redstone ee dhow hal mar la eegi karo.<br>
+<br>
+Ogeysiis: Wuxuu akhriyaa xoogga redstone ee dhow laga bilaabo 0 ilaa 15.
+<np>
+Cabbiraha qiyaasan
+Cabbiraha calaamadda
+<&industrial_analog_angular_gauge>Cabbire yar oo qolka xakamaynta ah wuxuu xoogga redstone ku soo bandhigaa akhris looxeed oo cad.<br>
+<br>
+Isticmaal: Ku rakib halka awoodda redstone ee dhow hal mar la eegi karo.<br>
+<br>
+Ogeysiis: Wuxuu akhriyaa xoogga redstone ee dhow laga bilaabo 0 ilaa 15.
+<np>
+Cabbiraha voltmitirka
+Cabbiraha calaamadda
+<&industrial_analog_horizontal_gauge>Cabbire yar oo qolka xakamaynta ah wuxuu xoogga redstone ku soo bandhigaa akhris looxeed oo cad.<br>
+<br>
+Isticmaal: Ku rakib halka awoodda redstone ee dhow hal mar la eegi karo.<br>
+<br>
+Ogeysiis: Wuxuu akhriyaa xoogga redstone ee dhow laga bilaabo 0 ilaa 15.
+<np>
+Cabbiraha dijitaalka
+Xoogga calaamadda oo la akhrin karo
+<&industrial_small_digital_gauge>Cabbire yar oo qolka xakamaynta ah wuxuu xoogga redstone ku soo bandhigaa akhris looxeed oo cad.<br>
+<br>
+Isticmaal: Ku rakib halka awoodda redstone ee dhow hal mar la eegi karo.<br>
+<br>
+Ogeysiis: Wuxuu akhriyaa xoogga redstone ee dhow laga bilaabo 0 ilaa 15.
+<np>
+Cabbiraha tuubada muraayadda
+Cabbiraha calaamadda
+<&industrial_tube_gauge>Cabbire yar oo qolka xakamaynta ah wuxuu xoogga redstone ku soo bandhigaa akhris looxeed oo cad.<br>
+<br>
+Isticmaal: Ku rakib halka awoodda redstone ee dhow hal mar la eegi karo.<br>
+<br>
+Ogeysiis: Wuxuu akhriyaa xoogga redstone ee dhow laga bilaabo 0 ilaa 15.
+<np>
+Cabbiraha baarka qiyaasan
+Cabbiraha calaamadda
+<&industrial_vertical_bar_gauge>Cabbire yar oo qolka xakamaynta ah wuxuu xoogga redstone ku soo bandhigaa akhris looxeed oo cad.<br>
+<br>
+Isticmaal: Ku rakib halka awoodda redstone ee dhow hal mar la eegi karo.<br>
+<br>
+Ogeysiis: Wuxuu akhriyaa xoogga redstone ee dhow laga bilaabo 0 ilaa 15.
+<np>
+Nalka digniinta
+Jawaabta calaamadda
+<&industrial_alarm_lamp>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+Hoonka digniinta
+Jawaabta calaamadda
+<&industrial_alarm_siren>Seeriga digniintu waa tilmaame redstone oo lagu rakibo wejiga block. Xaaladda korontadu waxay raacdaa calaamadda block uu ku xiran yahay.<br>
+<br>
+Ku dheji weji adag oo koronto sii si aad ula socoto albaab, mashiin, digniin ama guddi.<br>
+<br>
+Seerigu wuxuu cusboonaadaa hal mar ilbiriqsigii inta calaamaddu shaqaynayso.
+<np>
+LED biligleeya
+Jawaabta calaamadda
+<&industrial_blinking_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED cagaaran oo biligleeya
+Jawaabta calaamadda
+<&industrial_green_blinking_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED cagaaran
+Jawaabta calaamadda
+<&industrial_green_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED cas
+Jawaabta calaamadda
+<&industrial_red_blinking_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED cas
+Jawaabta calaamadda
+<&industrial_red_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED cad oo biligleeya
+Jawaabta calaamadda
+<&industrial_white_blinking_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED cad
+Jawaabta calaamadda
+<&industrial_white_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED jaalle ah oo biligleeya
+Jawaabta calaamadda
+<&industrial_yellow_blinking_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+LED jaalle ah
+Jawaabta calaamadda
+<&industrial_yellow_led>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+Calaamadda gacanta ee miyiga
+Jawaabta calaamadda
+<&rustic_semaphore>Tuse yar ayaa redstone qarsoon u beddela jawaab warshadeed oo muuqata.<br>
+<br>
+Isticmaal: Ku xir dhinaca calaamadda si aad u ilaaliso albaabbo, mashiinno, digniino ama looxyo.<br>
+<br>
+Ogeysiis: Wuxuu xaaladda beddelaa marka awood redstone oo dhow ay jirto.
+<np>
+Furaha isbarbardhigaha
+Calaamadda ku xiran
+<&industrial_comparator_switch>Fure dareeme yar ah wuxuu akhriyaa baloogga uu ku rakiban yahay, akhriskaasna wuxuu u beddelaa wax-soo-saar looxeed oo fudud.<br>
+<br>
+Isticmaal: Ku rakib kaydadka, haamaha ama qalabka redstone. Marka baloogga ku xiran bixiyo wax-soo-saarka isbarbardhigaha, weelka ama redstone, furuhu wuxuu bixiyaa redstone awooddiisu buuxdo.<br>
+<br>
+Ogeysiis: U adeegso inaad heerarka kaydka ama fiilooyinka qarsoon u beddesho khadad xakamayn shid/dami oo cad.
+<np>
+Yareeyaha awoodda
+Calaamad is beddesha
+<&industrial_dimmer>Xakameeye wareega ayaa xoogga redstone laga wareejiyaa wejiga loox yar.<br>
+<br>
+Isticmaal: Midig guji si aad wax-soo-saarka tallaabo ugu kordhiso, kaddibna eber ugu celiso marka uu xoog buuxa gaaro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa awood laga bilaabo 0 ilaa 15.
+<np>
+Badhanka joogsiga degdegga ah
+Xakamaynta redstone
+<&industrial_estop_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Xannibaha ururiyaha
+Xakamaynta redstone
+<&industrial_hopper_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Furaha garaacidda
+Xakamaynta redstone
+<&industrial_knock_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaal
+Xakamaynta redstone
+<&industrial_lever>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Furaha mashiinka ee laba badhan leh
+Xakamaynta redstone
+<&industrial_machine_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Gacanta la jiido
+Xakamaynta redstone
+<&industrial_pull_handle>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaalka wareega
+Xakamaynta redstone
+<&industrial_rotary_lever>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Furaha mashiinka ee wareega
+Xakamaynta redstone
+<&industrial_rotary_machine_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaalka taabashada
+Xakamaynta redstone
+<&industrial_small_lever>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Fure
+Xakamaynta redstone
+<&industrialswitch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Furaha nalka
+Xakamaynta redstone
+<&light_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Furaha waalka
+Xakamaynta redstone
+<&valve_wheel_switch>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Qaataha garaaca ee sanduuqa ku jira
+Xakamayn xiriirsan
+<&industrial_switchlink_cased_pulse_receiver>Qaate garaac oo xiriirsan, sanduuqna ku jira, wuxuu looxyada fog siiyaa kicin redstone oo gaaban.<br>
+<br>
+Isticmaal: Ku guji luul Ender ah si aad u samayso luul xiriirsan. Midig guji ama kici luulka xiriirsan si uu garaac gaaban u bixiyo.<br>
+<br>
+Ogeysiis: Garaacu iskii ayuu isu dejiyaa marka muddadiisa la jadwaleeyey dhammaato.
+<np>
+Qaataha xiriirka ee sanduuqa ku jira
+Xakamayn xiriirsan
+<&industrial_switchlink_cased_receiver>Qaate xiriirsan oo sanduuq ku jira wuxuu looxyada fog siiyaa bartilmaameed redstone oo adag.<br>
+<br>
+Isticmaal: Ku guji luul Ender ah si aad u samayso luul xiriirsan. Si toos ah midig uga guji qaataha si aad gacanta ugu kala beddesho.<br>
+<br>
+Ogeysiis: Luul xiriirsan ayaa qaatahan kala beddela marka la isticmaalo iyadoo la dhuumaalaysanayo.
+<np>
+Qaataha xiriirka garaaca
+Xakamayn xiriirsan
+<&industrial_switchlink_pulse_receiver>Qaate garaac oo xiriirsan wuxuu looxyada fog siiyaa kicin redstone oo gaaban.<br>
+<br>
+Isticmaal: Ku guji luul Ender ah si aad u samayso luul xiriirsan. Midig guji ama kici luulka xiriirsan si uu garaac gaaban u bixiyo.<br>
+<br>
+Ogeysiis: Garaacu iskii ayuu isu dejiyaa marka muddadiisa la jadwaleeyey dhammaato.
+<np>
+Gudbiyaha xiriirka garaaca
+Xakamayn xiriirsan
+<&industrial_switchlink_pulse_relay>Qayb qaab gudbiye leh waxay looxyada siiyaa meel fure oo yar oo goobta ku shaqaysa.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro. Adeegso baloogyada qaatayaasha markaad u baahan tahay kicinta luulka xiriirsan.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Qaataha isku-xirka furayaasha
+Xakamayn xiriirsan
+<&industrial_switchlink_receiver>Qaate xiriirsan wuxuu looxyada fog siiyaa bartilmaameed redstone oo awooddiisu buuxdo.<br>
+<br>
+Isticmaal: Ku guji luul Ender ah si aad u samayso luul xiriirsan. Si toos ah midig uga guji qaataha si aad gacanta ugu kala beddesho.<br>
+<br>
+Ogeysiis: Luul xiriirsan ayaa qaatahan kala beddela marka la isticmaalo iyadoo la dhuumaalaysanayo.
+<np>
+Qaataha xiriirka qiyaasan
+Xakamayn xiriirsan
+<&industrial_switchlink_receiver_analog>Qaate xiriirsan wuxuu looxyada xakamaynta siiyaa bartilmaameed fog oo muuqda.<br>
+<br>
+Isticmaal: Ku guji luul Ender ah si aad u samayso luul xiriirsan. Adigoo dhuumaaleysanaya isticmaal luulkaas si aad qaataha meel fog uga kiciso.<br>
+<br>
+Ogeysiis: Qaatahani wuxuu bixiyaa calaamad redstone oo buuxda marka la kiciyo.
+<np>
+Gudbiyaha isku-xirka furayaasha
+Xakamayn xiriirsan
+<&industrial_switchlink_relay>Qayb qaab gudbiye leh waxay looxyada siiyaa meel fure oo yar oo goobta ku shaqaysa.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro. Adeegso baloogyada qaatayaasha markaad u baahan tahay kicinta luulka xiriirsan.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Gudbiyaha xiriirka qiyaasan
+Xakamayn xiriirsan
+<&industrial_switchlink_relay_analog>Qayb qaab gudbiye leh waxay looxyada siiyaa meel fure oo yar oo goobta ku shaqaysa.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro. Adeegso baloogyada qaatayaasha markaad u baahan tahay kicinta luulka xiriirsan.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Luulka isku-xirka furayaasha
+Xakamayn xiriirsan
+<&switchlink_pearl>Luul xiriirsan wuxuu xafidaa bartilmaameed qaate ah oo loogu talagalay xakamaynta warshadda ee meel fog.<br>
+<br>
+Isticmaal: Qaataha isku-xirka furayaasha ku guji luul Ender ah si aad mid u samayso. Adigoo dhuumaaleysanaya isticmaal luulka xiriirsan si aad u kiciso qaataha la xafiday.<br>
+<br>
+Ogeysiis: Bartilmaameedku waa inuu raran yahay, isla cabbirka dunida ku jiro, masaafadda la gaari karana ku jiro.
+<np>
+Kabaalka duugga ah ee quruxda badan
+Xakamaynta redstone
+<&oldfancy_bistableswitch1>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaalka wareega ee duugga ah ee quruxda badan
+Xakamaynta redstone
+<&oldfancy_bistableswitch2>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaalka wareega ee miyiga
+Xakamaynta redstone
+<&rustic_angular_lever>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaalka miyiga
+Xakamaynta redstone
+<&rustic_lever>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaalka musmaarka ee miyiga
+Xakamaynta redstone
+<&rustic_nail_lever>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.
+<np>
+Kabaalka miyiga ee laba laabato leh
+Xakamaynta redstone
+<&rustic_two_hinge_lever>Qayb xakamayn oo yar waxay dhismayaasha warshadda siisaa meel fure redstone ah oo cad.<br>
+<br>
+Isticmaal: Midig guji si aad u kala beddesho wax-soo-saar buuxa oo wareegyada dhow loo diro.<br>
+<br>
+Ogeysiis: Wuxuu bixiyaa redstone awooddiisu buuxdo inta uu shidan yahay.

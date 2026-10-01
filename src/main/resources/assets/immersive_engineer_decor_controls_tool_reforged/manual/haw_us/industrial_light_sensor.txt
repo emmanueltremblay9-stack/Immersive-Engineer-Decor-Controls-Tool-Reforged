@@ -1,0 +1,7 @@
+Mea ʻIke Mālamalama
+ʻIke hōʻailona
+<&recipe>Hoʻololi ka mea ʻike mālamalama i ka ʻōlinolino kūloko i hoʻomalu Redstone.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kukui ʻakomi, nā pani, a me nā kaapuni ʻike.<br>
+<br>
+Nā memo: Hoʻopuka i ka ikehu ma ka ʻōlinolino kumu 8 a ʻoi.

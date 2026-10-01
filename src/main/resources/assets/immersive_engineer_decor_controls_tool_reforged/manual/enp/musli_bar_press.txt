@@ -1,0 +1,7 @@
+Muslee Bar Press
+Food press
+<&recipe>Heed this: The Muslee Bar Press turns common food supplies into compact field rations.<br>
+<br>
+Usage: Carry bread, an apple, and wheat, melon, pumpkin, beetroot, or Industrial Hemp seeds, then use the press. A successful press consumes one of each ingredient, checks that the outcome can fit, creates four Muslee Melange Power Bars, and damages the press.<br>
+<br>
+If an ingredient is missing or the inholding has no room for the bars, nothing is consumed.

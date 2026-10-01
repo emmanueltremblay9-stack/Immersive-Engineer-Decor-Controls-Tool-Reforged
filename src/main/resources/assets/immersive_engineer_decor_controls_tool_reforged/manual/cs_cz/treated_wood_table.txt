@@ -1,0 +1,5 @@
+Stůl z impregnovaného dřeva
+Dílenský nábytek
+<&recipe>Tento blok je praktický dílenský nábytek pro pracovní místnosti a údržbové kouty.<br>
+<br>
+Použití: Postav jej vedle pracovních stolů, beden a kompaktních strojů.<br>

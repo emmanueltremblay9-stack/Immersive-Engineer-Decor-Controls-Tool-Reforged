@@ -1,0 +1,7 @@
+Detector de bloques
+Deteición de señales
+<&recipe>Un detector de bloques comprueba si l’espaciu que tien delantre ta ocupáu.<br>
+<br>
+Usu: apúntalu a la cara de máquina, reserva o espaciu protexíu que quieras vixilar.<br>
+<br>
+Notes: emite enerxía cuando’l bloque que tien delantre nun ye aire.

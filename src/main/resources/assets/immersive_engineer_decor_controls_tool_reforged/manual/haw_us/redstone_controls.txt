@@ -1,0 +1,789 @@
+Nā Hoʻomalu Redstone
+Nā ana a me nā lako hōʻailona
+Hoʻololi nā lako hoʻomalu i ka Redstone huna i nā papa halehana, nā mea ʻike, nā mea hōʻike, nā kuapo, nā leo hoʻōho, a me nā lako hōʻailona pili maʻalahi ke heluhelu.<br>
+<br>
+E hoʻohana i kēia mau ʻaoʻao i ke kūkulu ʻana i nā kahua mea hoʻokele, nā papa hōʻailona, nā kaapuni palekana, a me nā hoʻomalu mamao.
+<np>
+Māka Pua
+Koni manawa pōkole
+<&arrow_target>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Mea ʻike puka
+Hoʻomalu Redstone
+<&door_sensor_switch>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi ʻEleweka
+Hoʻomalu Redstone
+<&elevator_button>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Pihi Aniani
+Hoʻomalu Redstone
+<&glass_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Aniani
+Hoʻomalu Redstone
+<&glass_small_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Hoʻopā Aniani
+Hoʻomalu Redstone
+<&glass_touch_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Mīkini
+Hoʻomalu Redstone
+<&industrial_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi
+Hoʻomalu Redstone
+<&industrial_double_pole_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Mīkini Pale ʻIa
+Hoʻomalu Redstone
+<&industrial_fenced_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Kīkē
+Hoʻomalu Redstone
+<&industrial_knock_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Hoʻonani Kahiko
+Hoʻomalu Redstone
+<&oldfancy_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Hoʻonani Kahiko
+Hoʻomalu Redstone
+<&oldfancy_small_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Kaula Hoʻonani Kahiko
+Koni manawa pōkole
+<&oldfancy_spring_reset_chain>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Kuaʻāina
+Hoʻomalu Redstone
+<&rustic_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Kui Kuaʻāina
+Hoʻomalu Redstone
+<&rustic_nail_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Kuaʻāina Liʻiliʻi
+Hoʻomalu Redstone
+<&rustic_small_button>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Pihi Kaula Kuaʻāina
+Koni manawa pōkole
+<&rustic_spring_reset_chain>Hāʻawi ke kuapo manawa pōkole i ke koni Redstone maʻemaʻe me ka ikaika piha.<br>
+<br>
+Hoʻohana: E hoʻohana no ka hoʻomaka mīkini, ka wehe puka, ka hoʻōho, a i ʻole nā kaapuni hoʻokahi hoʻā.<br>
+<br>
+Nā memo: Hoʻi i ke kūlana mua ma hope o kona koni i hoʻonohonoho ʻia.
+<np>
+Papa Hoʻopā Aniani
+Koni kaomi
+<&glass_contact_mat>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Mea Hoʻopā Puka Aniani
+Koni kaomi
+<&glass_door_contact_mat>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Moena Hoʻopā
+Koni kaomi
+<&industrial_contact_mat>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Moena Hoʻopā Puka
+Koni kaomi
+<&industrial_door_contact_mat>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Mea ʻIke Hāʻule Ma Waena
+ʻIke hōʻailona
+<&industrial_fallthrough_detector>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Pihi Wāwae
+Hoʻomalu Redstone
+<&industrial_foot_button>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Puka Halehana Hoʻā Kuʻi Kino
+Koni kaomi
+<&industrial_high_sensitive_trapdoor>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Moena Hoʻopā Kuʻi Kino
+Koni kaomi
+<&industrial_shock_sensitive_contact_mat>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+ʻĪpuka ʻŪmiʻi Kuʻi Kino
+Koni kaomi
+<&industrial_shock_sensitive_trapdoor>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Lāʻau Hōʻailona ʻUlaʻula
+Koni kaomi
+<&red_power_plant>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Papa Kaumaha Kuaʻāina
+Koni kaomi
+<&rustic_contact_plate>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Papa Kaumaha Puka Kuaʻāina
+Koni kaomi
+<&rustic_door_contact_plate>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Mea ʻIke Hāʻule Kuaʻāina
+ʻIke hōʻailona
+<&rustic_fallthrough_detector>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Puka Kuaʻāina Hoʻā Kuʻi Kino
+Koni kaomi
+<&rustic_high_sensitive_trapdoor>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Papa Kuʻi Kino Kuaʻāina
+Koni kaomi
+<&rustic_shock_sensitive_plate>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Puka Kuaʻāina Hoʻā Kuʻi Kino
+Koni kaomi
+<&rustic_shock_sensitive_trapdoor>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Lāʻau Hōʻailona Melemele
+Koni kaomi
+<&yellow_power_plant>Hoʻouna ke kuapo hoʻopā i ka hōʻailona pōkole mai ka neʻe ʻana o ka papahele a i ʻole ka ʻīpuka ʻūmiʻi.<br>
+<br>
+Hoʻohana: E kau ma kahi e hele ai nā mea ma ke ala mālama, ka mea hoʻouka, a i ʻole ke ala kiaʻi ʻia.<br>
+<br>
+Nā memo: Koni pōkole ma hope o ka hoʻopā ʻana o kekahi mea.
+<np>
+Uaki Manawa Lā Aniani
+Hōʻailona mālamalama lā
+<&glass_day_timer>Hahai ke kuapo ana wā i ka māhele ao o ka pōʻai honua.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kukui pā hale, nā pani, a me nā hoʻomalu halehana o ke ao wale nō.<br>
+<br>
+Nā memo: Pono ke ao ana me ka mālamalama lani.
+<np>
+Mea ʻIke Mea Aniani
+ʻIke hōʻailona
+<&glass_entity_detector>Kiaʻi ka mea ʻike mea i ka neʻe kokoke me ka loaʻa ʻole o ka papa papahele ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui i nā puka, nā kukui, nā leo hoʻōho, a i ʻole nā pale pili mīkini.<br>
+<br>
+Nā memo: Nānā i kekahi wahi liʻiliʻi a puni ka palaka.
+<np>
+Hōʻailona Wā Aniani
+Koni i hoʻonohonoho ʻia
+<&glass_interval_timer>Hāʻawi ke kuapo ana wā paʻapu i ke koni Redstone i hoʻonohonoho ʻia.<br>
+<br>
+Hoʻohana: E hoʻohana ma kahi e pono ai kekahi mīkini liʻiliʻi i ka hoʻomalu pōʻai a i ʻole ka hoʻomalu hoʻopaneʻe.<br>
+<br>
+Nā memo: Hoʻohana i nā koni Redstone i hoʻonohonoho ʻia.
+<np>
+Mea ʻIke Laina Aniani
+ʻIke hōʻailona
+<&glass_linear_entity_detector>Kiaʻi ka mea ʻike mea i ka neʻe kokoke me ka loaʻa ʻole o ka papa papahele ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui i nā puka, nā kukui, nā leo hoʻōho, a i ʻole nā pale pili mīkini.<br>
+<br>
+Nā memo: Nānā i kekahi wahi liʻiliʻi a puni ka palaka.
+<np>
+Mea ʻIke Palaka
+ʻIke hōʻailona
+<&industrial_block_detector>Nānā ka mea ʻike palaka inā noho kekahi mea ma ka wahi e kū pono ana.<br>
+<br>
+Hoʻohana: E kuhikuhi i ke alo mīkini, ka waihona kali, a i ʻole ka wahi kiaʻi ʻia e nānā ai.<br>
+<br>
+Nā memo: Hoʻopuka i ka ikehu inā ʻaʻole ea ka palaka e kū pono ana.
+<np>
+Uaki Manawa Lā
+Hōʻailona mālamalama lā
+<&industrial_day_timer>Hahai ke kuapo ana wā i ka māhele ao o ka pōʻai honua.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kukui pā hale, nā pani, a me nā hoʻomalu halehana o ke ao wale nō.<br>
+<br>
+Nā memo: Pono ke ao ana me ka mālamalama lani.
+<np>
+Mea ʻIke Mea
+ʻIke hōʻailona
+<&industrial_entity_detector>Kiaʻi ka mea ʻike mea i ka neʻe kokoke me ka loaʻa ʻole o ka papa papahele ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui i nā puka, nā kukui, nā leo hoʻōho, a i ʻole nā pale pili mīkini.<br>
+<br>
+Nā memo: Nānā i kekahi wahi liʻiliʻi a puni ka palaka.
+<np>
+Mea Ana Wā
+Koni i hoʻonohonoho ʻia
+<&industrial_interval_timer>Hāʻawi ke kuapo ana wā paʻapu i ke koni Redstone i hoʻonohonoho ʻia.<br>
+<br>
+Hoʻohana: E hoʻohana ma kahi e pono ai kekahi mīkini liʻiliʻi i ka hoʻomalu pōʻai a i ʻole ka hoʻomalu hoʻopaneʻe.<br>
+<br>
+Nā memo: Hoʻohana i nā koni Redstone i hoʻonohonoho ʻia.
+<np>
+Mea ʻIke Mālamalama
+ʻIke hōʻailona
+<&industrial_light_sensor>Hoʻololi ka mea ʻike mālamalama i ka ʻōlinolino kūloko i hoʻomalu Redstone.<br>
+<br>
+Hoʻohana: E hoʻohana no nā kukui ʻakomi, nā pani, a me nā kaapuni ʻike.<br>
+<br>
+Nā memo: Hoʻopuka i ka ikehu ma ka ʻōlinolino kumu 8 a ʻoi.
+<np>
+Mea ʻIke ʻIno
+ʻIke hōʻailona
+<&industrial_lightning_sensor>Hoʻā ka mea ʻike ʻino i nā ʻōlelo aʻo ke hekili.<br>
+<br>
+Hoʻohana: E kau ma lalo o ka lani hāmama a hoʻohui i nā kukui a me nā leo hoʻōho.<br>
+<br>
+Nā memo: Pono ka hekili a me ka loaʻa ʻana o ka lani.
+<np>
+Mea ʻIke Mea Laina
+ʻIke hōʻailona
+<&industrial_linear_entity_detector>Kiaʻi ka mea ʻike mea i ka neʻe kokoke me ka loaʻa ʻole o ka papa papahele ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui i nā puka, nā kukui, nā leo hoʻōho, a i ʻole nā pale pili mīkini.<br>
+<br>
+Nā memo: Nānā i kekahi wahi liʻiliʻi a puni ka palaka.
+<np>
+Mea ʻIke Ua
+ʻIke hōʻailona
+<&industrial_rain_sensor>Hoʻololi ka mea ʻike anilā i ka ua ma kona wahi i Redstone.<br>
+<br>
+Hoʻohana: E kau ma kahi e hiki ai i ka palaka ma luna ke loaʻa i ka ua.<br>
+<br>
+Nā memo: Nānā i ka ua ma luna o ka mea ʻike.
+<np>
+Kuapo Aniani Kūlana ʻElua
+Hoʻomalu Redstone
+<&glass_rotary_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Mea Hoʻopā Aniani Kūlana ʻElua
+Hoʻomalu Redstone
+<&glass_touch_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Aniani Pane ʻĀlani
+Aniani hōʻailona
+<&orange_sensitiveglass>Mālama ka palaka aniani pane Redstone i nā ala nānā me ka hōʻike pū ʻana i ke kūlana hōʻailona.<br>
+<br>
+Hoʻohana: E hoʻohana ma nā puka aniani lumi hoʻomalu, nā papa hoʻomālamalama, a me nā aniani halehana pale ʻia.<br>
+<br>
+Nā memo: Loli ke kūlana ma muli o ka ikehu Redstone kokoke.
+<np>
+Aniani Pane Mālamalama
+Aniani hōʻailona
+<&sensitive_glass_block>Mālama ka palaka aniani pane Redstone i nā ala nānā me ka hōʻike pū ʻana i ke kūlana hōʻailona.<br>
+<br>
+Hoʻohana: E hoʻohana ma nā puka aniani lumi hoʻomalu, nā papa hoʻomālamalama, a me nā aniani halehana pale ʻia.<br>
+<br>
+Nā memo: Loli ke kūlana ma muli o ka ikehu Redstone kokoke.
+<np>
+Aniani Pane Kala
+Aniani hōʻailona
+<&stained_sensitiveglass>Mālama ka palaka aniani pane Redstone i nā ala nānā me ka hōʻike pū ʻana i ke kūlana hōʻailona.<br>
+<br>
+Hoʻohana: E hoʻohana ma nā puka aniani lumi hoʻomalu, nā papa hoʻomālamalama, a me nā aniani halehana pale ʻia.<br>
+<br>
+Nā memo: Loli ke kūlana ma muli o ka ikehu Redstone kokoke.
+<np>
+Ana Kaola Aniani
+Ana hōʻailona
+<&glass_vertical_bar_gauge>Hōʻike ke ana lumi hoʻomalu paʻapu i ka ikaika Redstone ma ke ʻano heluhelu papa mōakāka.<br>
+<br>
+Hoʻohana: E kau ma kahi e ʻike koke ai i ka ikehu Redstone pili.<br>
+<br>
+Nā memo: Heluhelu i ka ikaika Redstone kokoke mai 0 a 15.
+<np>
+Ana Loli Mau
+Ana hōʻailona
+<&industrial_analog_angular_gauge>Hōʻike ke ana lumi hoʻomalu paʻapu i ka ikaika Redstone ma ke ʻano heluhelu papa mōakāka.<br>
+<br>
+Hoʻohana: E kau ma kahi e ʻike koke ai i ka ikehu Redstone pili.<br>
+<br>
+Nā memo: Heluhelu i ka ikaika Redstone kokoke mai 0 a 15.
+<np>
+Ana Uila
+Ana hōʻailona
+<&industrial_analog_horizontal_gauge>Hōʻike ke ana lumi hoʻomalu paʻapu i ka ikaika Redstone ma ke ʻano heluhelu papa mōakāka.<br>
+<br>
+Hoʻohana: E kau ma kahi e ʻike koke ai i ka ikehu Redstone pili.<br>
+<br>
+Nā memo: Heluhelu i ka ikaika Redstone kokoke mai 0 a 15.
+<np>
+Ana Helu
+Ikaika hōʻailona maʻalahi ke heluhelu
+<&industrial_small_digital_gauge>Hōʻike ke ana lumi hoʻomalu paʻapu i ka ikaika Redstone ma ke ʻano heluhelu papa mōakāka.<br>
+<br>
+Hoʻohana: E kau ma kahi e ʻike koke ai i ka ikehu Redstone pili.<br>
+<br>
+Nā memo: Heluhelu i ka ikaika Redstone kokoke mai 0 a 15.
+<np>
+Ana Paipu Aniani
+Ana hōʻailona
+<&industrial_tube_gauge>Hōʻike ke ana lumi hoʻomalu paʻapu i ka ikaika Redstone ma ke ʻano heluhelu papa mōakāka.<br>
+<br>
+Hoʻohana: E kau ma kahi e ʻike koke ai i ka ikehu Redstone pili.<br>
+<br>
+Nā memo: Heluhelu i ka ikaika Redstone kokoke mai 0 a 15.
+<np>
+Ana Kaola Loli Mau
+Ana hōʻailona
+<&industrial_vertical_bar_gauge>Hōʻike ke ana lumi hoʻomalu paʻapu i ka ikaika Redstone ma ke ʻano heluhelu papa mōakāka.<br>
+<br>
+Hoʻohana: E kau ma kahi e ʻike koke ai i ka ikehu Redstone pili.<br>
+<br>
+Nā memo: Heluhelu i ka ikaika Redstone kokoke mai 0 a 15.
+<np>
+Kukui Hoʻōho
+Pane hōʻailona
+<&industrial_alarm_lamp>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+Leo Hoʻōho
+Pane hōʻailona
+<&industrial_alarm_siren>He hōʻailona redstone kau-maka ka Siren Hoʻāla. Hoʻololi kona kūlana mana ma muli o ka hōʻailona mai ka palaka i kau ʻia ai.<br>
+<br>
+Hoʻohana: E hoʻopaʻa ma ka ʻili paʻa a hoʻolako i ka ikehu e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Hoʻomaka hou ka leo hoʻokahi manawa i kēlā me kēia kekona ʻoiai e ʻā mau ana kona hōʻailona pili.
+<np>
+LED ʻŌlapa
+Pane hōʻailona
+<&industrial_blinking_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED ʻŌmaʻomaʻo ʻŌlapa
+Pane hōʻailona
+<&industrial_green_blinking_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED ʻŌmaʻomaʻo
+Pane hōʻailona
+<&industrial_green_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED ʻUlaʻula
+Pane hōʻailona
+<&industrial_red_blinking_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED ʻUlaʻula
+Pane hōʻailona
+<&industrial_red_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED Keʻokeʻo ʻŌlapa
+Pane hōʻailona
+<&industrial_white_blinking_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED Keʻokeʻo
+Pane hōʻailona
+<&industrial_white_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED Melemele ʻŌlapa
+Pane hōʻailona
+<&industrial_yellow_blinking_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+LED Melemele
+Pane hōʻailona
+<&industrial_yellow_led>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+Hae Hōʻike Kuaʻāina
+Pane hōʻailona
+<&rustic_semaphore>Hoʻololi ka mea hōʻike paʻapu i ka Redstone huna i pane halehana ʻike ʻia.<br>
+<br>
+Hoʻohana: E hoʻohui ma ka ʻaoʻao o ka hōʻailona e kiaʻi i nā puka, nā mīkini, nā leo hoʻōho, a me nā papa.<br>
+<br>
+Nā memo: Loli ke kūlana ke loaʻa ka ikehu Redstone kokoke.
+<np>
+Kuapo Ana Uila
+Hōʻailona pili
+<&industrial_comparator_switch>Heluhelu ke kuapo ʻike paʻapu i ka palaka i hoʻopaʻa ʻia ai a hoʻololi i ia heluhelu i huapuka papa maʻalahi.<br>
+<br>
+Hoʻohana: E kau ma nā waihona, nā pahu wai, a me nā lako Redstone. Ke hōʻike ka palaka pili i ka huapuka ana uila, ipu, a i ʻole Redstone, hoʻopuka ke kuapo i ka Redstone ikaika piha.<br>
+<br>
+Nā memo: E hoʻohana e hoʻololi i nā pae waihona a me nā uwea huna i nā laina hoʻomalu ʻā/pio mōakāka.
+<np>
+Mea Hoʻololi Ikaika
+Hōʻailona loli
+<&industrial_dimmer>Hoʻololi ka hoʻomalu kaʻapuni i ka ikaika Redstone mai ke alo papa paʻapu.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻonui ʻanuʻu i ka huapuka, a hoʻi i ka ʻole ma hope o ka ikaika piha.<br>
+<br>
+Nā memo: Hoʻopuka i ka ikaika mai 0 a 15.
+<np>
+Pihi Hoʻōki Pilikia
+Hoʻomalu Redstone
+<&industrial_estop_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Mea Kāohi Kānuku
+Hoʻomalu Redstone
+<&industrial_hopper_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Kuapo Kīkē
+Hoʻomalu Redstone
+<&industrial_knock_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une
+Hoʻomalu Redstone
+<&industrial_lever>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Kuapo Mīkini Pihi ʻElua
+Hoʻomalu Redstone
+<&industrial_machine_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Kūʻau Huki
+Hoʻomalu Redstone
+<&industrial_pull_handle>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une Kaʻapuni
+Hoʻomalu Redstone
+<&industrial_rotary_lever>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Kuapo Mīkini Kaʻapuni
+Hoʻomalu Redstone
+<&industrial_rotary_machine_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une Hoʻopā
+Hoʻomalu Redstone
+<&industrial_small_lever>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Kuapo
+Hoʻomalu Redstone
+<&industrialswitch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Kuapo Kukui
+Hoʻomalu Redstone
+<&light_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Kuapo Kiwikā
+Hoʻomalu Redstone
+<&valve_wheel_switch>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Mea Loaʻa Koni Pahu
+Hoʻomalu pili
+<&industrial_switchlink_cased_pulse_receiver>Hāʻawi ka mea loaʻa koni pili i loko o ka pahu i ka hoʻā Redstone pōkole no nā papa mamao.<br>
+<br>
+Hoʻohana: E kaomi me ka Momi-o-Ender e hana i ka momi pili. E kaomi ʻākau a i ʻole hoʻā i ka momi pili e hoʻopuka i ke koni pōkole.<br>
+<br>
+Nā memo: Hoʻi ke koni i kona kūlana mua ma hope o kona lōʻihi i hoʻonohonoho ʻia.
+<np>
+Mea Loaʻa Pili Pahu
+Hoʻomalu pili
+<&industrial_switchlink_cased_receiver>Hāʻawi ka mea loaʻa pili i loko o ka pahu i ka pahuhopu Redstone paʻa no nā papa mamao.<br>
+<br>
+Hoʻohana: E kaomi me ka Momi-o-Ender e hana i ka momi pili. E kaomi ʻākau pololei i ka mea loaʻa e hoʻololi iā ia me ka lima.<br>
+<br>
+Nā memo: Hoʻololi ka momi pili i kēia mea loaʻa ke hoʻohana me ka nihi.
+<np>
+Mea Loaʻa Koni Pili
+Hoʻomalu pili
+<&industrial_switchlink_pulse_receiver>Hāʻawi ka mea loaʻa koni pili i ka hoʻā Redstone pōkole no nā papa mamao.<br>
+<br>
+Hoʻohana: E kaomi me ka Momi-o-Ender e hana i ka momi pili. E kaomi ʻākau a i ʻole hoʻā i ka momi pili e hoʻopuka i ke koni pōkole.<br>
+<br>
+Nā memo: Hoʻi ke koni i kona kūlana mua ma hope o kona lōʻihi i hoʻonohonoho ʻia.
+<np>
+Mea Hoʻoili Koni Pili
+Hoʻomalu pili
+<&industrial_switchlink_pulse_relay>Hāʻawi ka lako ma ke ʻano mea hoʻoili i kahi kuapo kūloko paʻapu no nā kūkulu papa.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke. E hoʻohana i nā palaka mea loaʻa inā pono ka hoʻā me ka momi pili.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Mea Loaʻa Hoʻohui Kuapo
+Hoʻomalu pili
+<&industrial_switchlink_receiver>Hāʻawi ka mea loaʻa pili i ka pahuhopu Redstone ikaika piha no nā papa mamao.<br>
+<br>
+Hoʻohana: E kaomi me ka Momi-o-Ender e hana i ka momi pili. E kaomi ʻākau pololei i ka mea loaʻa e hoʻololi iā ia me ka lima.<br>
+<br>
+Nā memo: Hoʻololi ka momi pili i kēia mea loaʻa ke hoʻohana me ka nihi.
+<np>
+Mea Loaʻa Loli Mau Pili
+Hoʻomalu pili
+<&industrial_switchlink_receiver_analog>Hāʻawi ka mea loaʻa pili i ka pahuhopu mamao ʻike ʻia no nā papa hoʻomalu.<br>
+<br>
+Hoʻohana: E kaomi me ka Momi-o-Ender e hana i ka momi pili. E nihi a hoʻohana i ia momi e hoʻā mamao i ka mea loaʻa.<br>
+<br>
+Nā memo: Hoʻopuka kēia mea loaʻa i ka hōʻailona Redstone piha ke hoʻā ʻia.
+<np>
+Mea Hoʻoili Hoʻohui Kuapo
+Hoʻomalu pili
+<&industrial_switchlink_relay>Hāʻawi ka lako ma ke ʻano mea hoʻoili i kahi kuapo kūloko paʻapu no nā kūkulu papa.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke. E hoʻohana i nā palaka mea loaʻa inā pono ka hoʻā me ka momi pili.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Mea Hoʻoili Loli Mau Pili
+Hoʻomalu pili
+<&industrial_switchlink_relay_analog>Hāʻawi ka lako ma ke ʻano mea hoʻoili i kahi kuapo kūloko paʻapu no nā kūkulu papa.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke. E hoʻohana i nā palaka mea loaʻa inā pono ka hoʻā me ka momi pili.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Momi Hoʻohui Kuapo
+Hoʻomalu pili
+<&switchlink_pearl>Mālama ka momi pili i ka pahuhopu mea loaʻa no nā hoʻomalu halehana mamao.<br>
+<br>
+Hoʻohana: E kaomi i ka mea loaʻa Hoʻohui Kuapo me ka Momi-o-Ender e hana i kekahi. E nihi a hoʻohana i ka momi pili e hoʻā i ka mea loaʻa i mālama ʻia.<br>
+<br>
+Nā memo: Pono e hoʻouka ʻia ka pahuhopu, aia ma ke ao ana hoʻokahi, a i loko o ka laulā.
+<np>
+Une Hoʻonani Kahiko
+Hoʻomalu Redstone
+<&oldfancy_bistableswitch1>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une Kaʻapuni Hoʻonani Kahiko
+Hoʻomalu Redstone
+<&oldfancy_bistableswitch2>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une Kaʻapuni Kuaʻāina
+Hoʻomalu Redstone
+<&rustic_angular_lever>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une Kuaʻāina
+Hoʻomalu Redstone
+<&rustic_lever>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une Kui Kuaʻāina
+Hoʻomalu Redstone
+<&rustic_nail_lever>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.
+<np>
+Une Kuaʻāina Ami ʻElua
+Hoʻomalu Redstone
+<&rustic_two_hinge_lever>Hāʻawi ka lako hoʻomalu paʻapu i kahi kuapo Redstone maʻalahi ke ʻike no nā halehana.<br>
+<br>
+Hoʻohana: E kaomi ʻākau e hoʻā a hoʻopio i ka huapuka ikaika piha no nā kaapuni kokoke.<br>
+<br>
+Nā memo: Hoʻopuka i ka Redstone ikaika piha ʻoiai e ʻā ana.

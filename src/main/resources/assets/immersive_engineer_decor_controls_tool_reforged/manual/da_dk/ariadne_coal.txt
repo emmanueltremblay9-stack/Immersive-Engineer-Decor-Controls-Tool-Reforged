@@ -1,0 +1,7 @@
+Ariadnekul
+Rutemarkør til miner
+<&recipe>Ariadnekul markerer hurtigt ruter gennem skakte, forgrenede minegange og midlertidige arbejdssteder under jorden.<br>
+<br>
+Brug: Anvend det på en stabil blokflade for at placere en sort pilmarkør på fladen. Markøren aflæser det punkt, du klikker på, og understøtter otte retninger, også diagonalt. Du kan dermed markere sving, udgange, blindgyder og forsyningsruter uden at medbringe separate skilte.<br>
+<br>
+Ariadnekul er et genanvendeligt markeringsværktøj med 100 anvendelser. Hver vellykket markering koster ét holdbarhedspoint. Flader, der ikke understøttes, afvises uden at slide på genstanden.

@@ -1,0 +1,5 @@
+Schuidl „Frostwarnung
+Gfahrnmarkierung
+<&recipe>S'Schuidl „Frostwarnung“ markiert Gfahrn, Ausgäng und Arbeitsbereiche mit am guat erkennbaren Fabriksicherheitssymbol.<br>
+<br>
+So geht's: Setz's nebn Gfahrn, Ausgäng, Maschinen und gsperrte Bereiche.<br>

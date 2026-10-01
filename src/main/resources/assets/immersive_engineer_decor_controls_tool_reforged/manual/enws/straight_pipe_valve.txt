@@ -1,0 +1,5 @@
+One-Way Liquid Check Valve
+Fittings for Liquid Lines
+<&recipe>The One-Way Liquid Check Valve is a compact fitting for little tanks, pipe runs, gathering points and flow governed by redstone.<br>
+<br>
+Use: Align the valve with the direction in which thou wouldst have the liquid flow.<br>

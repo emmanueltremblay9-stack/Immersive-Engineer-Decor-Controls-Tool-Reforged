@@ -1,0 +1,127 @@
+Àwọn Ọ̀nà Ìwọlé
+Àwọn ọ̀nà ìrìn àti ìtìlẹ́yìn
+Àwọn òpó irin líle, òpó igi tí a tọ́jú, àwọ̀n ilẹ̀, ọ̀nà ìrìn, ọ̀pá ìdènà, àkàbà, ìlẹ̀kùn, fèrèsé, àti ẹnu ọ̀nà kékeré ń dá àwọn ọ̀nà iṣẹ́ kékeré sílẹ̀ láàárín àwọn ilé iṣẹ́.<br>
+<br>
+Àwọn apá ọ̀nà ìwọlé irin líle ń lo àwo irin líle. Ṣe Tábìlì Iṣẹ́ Ọwọ́ Irin tàbí gbé e kalẹ̀, fi òòlù Immersive Engineering sínú rẹ̀, lẹ́yìn náà lu àwọn ọ̀pá irin líle sí àwo irin líle fún àwọn òpó, ọ̀nà ìrìn, fèrèsé, ìlẹ̀kùn, ọ̀pá ìdènà, àti ọ̀ṣọ́ irin líle mìíràn.<br>
+<br>
+Gbé wọ́n níbi tí àwọn ẹ̀rọ ti nílò ọ̀nà ìtọ́jú, ọ̀nà gíga, kòtò ìtọ́jú, tàbí etí tó ní ààbò sí i.
+<np>
+Òpó Irin Líle Nínípọn
+Apá férémù ìkọ́lé
+<&thick_steel_pole>Òpó Irin Líle Nínípọn Tààrà, òpó irin líle nínípọn, ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Orí Òpó Nínípọn
+Apá férémù ìkọ́lé
+<&thick_steel_pole_head>Orí/Ẹsẹ̀ Òpó Irin Líle Nínípọn Tààrà, orí/ẹsẹ̀ òpó irin líle nínípọn, ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Òpó Irin Líle Tín-ín-rín
+Apá férémù ìkọ́lé
+<&thin_steel_pole>Òpó Irin Líle Tín-ín-rín Tààrà, òpó irin líle tín-ín-rín, ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Orí Òpó Tín-ín-rín
+Apá férémù ìkọ́lé
+<&thin_steel_pole_head>Orí/Ẹsẹ̀ Òpó Irin Líle Tín-ín-rín Tààrà, orí/ẹsẹ̀ òpó irin líle tín-ín-rín, ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Òpó Igi tí A Tọ́jú
+Apá férémù ìkọ́lé
+<&treated_wood_pole>Òpó Tààrà Igi tí A Tọ́jú, òpó igi tí a tọ́jú, ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Orí Òpó tí A Tọ́jú
+Apá férémù ìkọ́lé
+<&treated_wood_pole_head>Orí/Ẹsẹ̀ Òpó Tààrà Igi tí A Tọ́jú, orí/ẹsẹ̀ òpó igi tí a tọ́jú, ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Ìtìlẹ́yìn Òpó tí A Tọ́jú
+Apá férémù ìkọ́lé
+<&treated_wood_pole_support>Ìtìlẹ́yìn Òpó Tààrà Igi tí A Tọ́jú, ìtìlẹ́yìn òpó igi tí a tọ́jú, ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Ìtìlẹ́yìn Irin Líle T Méjì
+Apá férémù ìkọ́lé
+<&steel_double_t_support>Búlọ́ọ̀kù yìí ń pèsè ìkọ́lé tí a lè rí fún àwọn gbọ̀ngàn ẹ̀rọ àti férémù ìwọlé.<br>
+<br>
+Lílò: Yí i, kí o sì gbé e gẹ́gẹ́ bí ìtìlẹ́yìn tí a lè rí fún àwọn ọ̀pá ìtìlẹ́yìn gígùn, òpó, àti etí pẹpẹ.<br>
+<np>
+Àwọ̀n Ilẹ̀ Irin Líle
+Ohun èlò ọ̀nà ìtọ́jú
+<&steel_floor_grating>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Ọ̀nà Ìrìn Irin Líle
+Ohun èlò ọ̀nà ìtọ́jú
+<&steel_catwalk>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Àtẹ̀gùn Ọ̀nà Ìrìn Irin Líle
+Ohun èlò ọ̀nà ìtọ́jú
+<&steel_catwalk_stairs>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Ọ̀nà Ìrìn Irin Líle Gíga
+Ohun èlò ọ̀nà ìtọ́jú
+<&steel_catwalk_ta>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Ọ̀pá Ìdènà Irin Líle
+Ohun èlò ọ̀nà ìtọ́jú
+<&steel_railing>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Ọgbà Àwọ̀n Irin Líle
+Ohun èlò ọ̀nà ìtọ́jú
+<&steel_mesh_fence>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Ẹnubodè Ọgbà Àwọ̀n Irin Líle
+Ohun èlò ọ̀nà ìtọ́jú
+<&steel_mesh_fence_gate>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Àkàbà Ọ̀pá Irin
+Ohun èlò ọ̀nà ìtọ́jú
+<&metal_rung_ladder>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Ìgbésẹ̀ Irin Tí A Tò Ní Òsì àti Ọ̀tún Ní Àtẹ̀lé
+Ohun èlò ọ̀nà ìtọ́jú
+<&metal_rung_steps>Búlọ́ọ̀kù yìí ń dá àwọn ọ̀nà ìtọ́jú tí ó ṣe kedere sílẹ̀ yí ká àwọn ẹ̀rọ.<br>
+<br>
+Lílò: Gbé e gẹ́gẹ́ bí ọ̀nà ìtọ́jú lẹ́gbẹ̀ẹ́ àwọn ẹ̀rọ, ilẹ̀ òkè, àti kòtò iṣẹ́.<br>
+<np>
+Fèrèsé Oníférémù Irin Líle
+Ọ̀nà ìríran aláàbò
+<&steel_framed_window>Búlọ́ọ̀kù yìí ń jẹ́ kí ọ̀nà ìríran ṣí sílẹ̀, síbẹ̀ ó bá ìkọ́lé ilé iṣẹ́ aláfikún mu.<br>
+<br>
+Lílò: Gbé e sínú ààyè ògiri tí ìwọ̀n rẹ̀ jẹ́ búlọ́ọ̀kù 1, níbi tí àwọn olùṣeré gbọ́dọ̀ rí ẹ̀rọ kọjá ìdènà aláàbò.<br>
+<np>
+Ìlẹ̀kùn Irin Tí A Ń Yọ
+Ibi ìwọlé ilé iṣẹ́
+<&metal_sliding_door>Búlọ́ọ̀kù yìí ń pèsè ibi ìwọlé tó lágbára fún àwọn yàrá ìtọ́jú, kòtò, orùlé, àti àgọ́ ẹ̀rọ.<br>
+<br>
+Lílò: Fi síbi tí ìkọ́lé ti nílò ẹnu ọ̀nà ìtọ́jú tí a lè darí.<br>
+<np>
+Ìlẹ̀kùn Ihò Irin
+Ibi ìwọlé ilé iṣẹ́
+<&iron_hatch>Búlọ́ọ̀kù yìí ń pèsè ibi ìwọlé tó lágbára fún àwọn yàrá ìtọ́jú, kòtò, orùlé, àti àgọ́ ẹ̀rọ.<br>
+<br>
+Lílò: Fi síbi tí ìkọ́lé ti nílò ẹnu ọ̀nà ìtọ́jú tí a lè darí.<br>

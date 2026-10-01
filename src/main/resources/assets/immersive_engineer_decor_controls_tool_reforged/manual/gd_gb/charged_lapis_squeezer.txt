@@ -1,0 +1,7 @@
+Brùthadair inntinn
+Co-dhlùthadair eòlais
+<&recipe>Tionndaidhidh am Brùthadair inntinn clach-chopair agus eòlas gu Clach-chopair luchdaichte.<br>
+<br>
+Cleachdadh: giùlain clach-chopair agus co-dhiù aon ìre eòlais, agus cleachd an t-inneal. Cosgaidh brùthadh soirbheachail aon ìre agus aon chlach-chopair, goirtichidh e an cleachdaiche, nì e milleadh air a' bhrùthadair agus cruthaichidh e aon Chlach-chopair luchdaichte.<br>
+<br>
+Diùltaidh e ruith mura bheil clach-chopair no XP aig a' chleachdaiche, no ma tha an cleachdaiche ro fhaisg air bàs.

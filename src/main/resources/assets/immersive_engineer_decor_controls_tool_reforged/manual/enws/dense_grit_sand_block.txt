@@ -1,0 +1,5 @@
+Compacted Gritty Sand
+Ground Cover for the Works
+<&recipe>This block gives outdoor working grounds a surface pressed down and trodden firm.<br>
+<br>
+Use: Lay it about loading doors, outdoor tanks and engine yards.<br>

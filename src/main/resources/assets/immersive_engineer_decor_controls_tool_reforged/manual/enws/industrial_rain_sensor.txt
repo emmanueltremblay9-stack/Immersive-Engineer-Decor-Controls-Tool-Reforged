@@ -1,0 +1,7 @@
+Watcher of Rain
+Watching for Signals
+<&recipe>A weather watcher turns rainfall at its own place into redstone.<br>
+<br>
+Use: Mount it where rain may reach the block above.<br>
+<br>
+Note: It examines rain above the sensor.

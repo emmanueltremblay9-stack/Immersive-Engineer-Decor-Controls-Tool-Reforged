@@ -1,0 +1,5 @@
+Aurinkopaneeli
+Työpajan apulaite
+<&recipe>Pieni aurinkopaneeli on työpajan apukuutio valmistukseen, varastointiin, asettamiseen, rikkomiseen, keräämiseen tai pieneen automaatioon.<br>
+<br>
+Käyttö: Anna sille avoin näkymä taivaalle ja kytke vähän kuluttavia laitteita.<br>

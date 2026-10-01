@@ -1,0 +1,161 @@
+Clincher și zidărie
+Învelișuri din cărămidă și beton
+Clincherul, cărămizile de zgură, betonul armat și sticla blindată oferă suprafețe masive pentru încăperi fierbinți, ateliere și bariere transparente de protecție.<br>
+<br>
+Folosește lespezile, treptele, plăcile subțiri și zidurile asortate pentru a finisa marginile fără a schimba stilul materialelor fabricii.
+<np>
+Bloc de cărămizi de clincher
+Zidărie înnegrită de funingine
+<&clinker_brick_block>Acest bloc aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Lespede de cărămizi de clincher
+Zidărie înnegrită de funingine
+<&clinker_brick_slab>Acest bloc aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Trepte de cărămizi de clincher
+Zidărie înnegrită de funingine
+<&clinker_brick_stairs>Acest bloc aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Zid de cărămizi de clincher
+Zidărie înnegrită de funingine
+<&clinker_brick_wall>Acest bloc aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Bloc de clincher pătat
+Zidărie înnegrită de funingine
+<&clinker_brick_stained_block>Blocul de cărămizi de clincher pătate aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Lespede de clincher pătat
+Zidărie înnegrită de funingine
+<&clinker_brick_stained_slab>Lespedea de cărămizi de clincher pătate aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Trepte de clincher pătat
+Zidărie înnegrită de funingine
+<&clinker_brick_stained_stairs>Treptele de cărămizi de clincher pătate aduc aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Cărămidă de clincher ornamentată
+Zidărie înnegrită de funingine
+<&clinker_brick_sastor_corner_block>Cărămida de clincher ornamentată cu gresie aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Cărămidă de clincher adâncită
+Zidărie înnegrită de funingine
+<&clinker_brick_recessed>Acest bloc aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Cărămizi de clincher cu fante
+Zidărie înnegrită de funingine
+<&clinker_brick_vertically_slit>Cărămizile de clincher cu fante verticale aduc aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Lespede verticală de clincher
+Zidărie înnegrită de funingine
+<&clinker_brick_vertical_slab_structured>Lespedea verticală de clincher cu relief aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Placă subțire de cărămidă de clincher
+Zidărie înnegrită de funingine
+<&halfslab_clinker_brick>Acest bloc aduce aspectul cărămizilor înnegrite de funingine în halele cu cuptoare, la bazele coșurilor de fum și pe pereții spațiilor tehnice.<br>
+<br>
+Utilizare: Folosește-l pentru pereți, ornamente sau învelișuri ale zonelor fierbinți din jurul cuptoarelor și cazanelor.<br>
+<np>
+Bloc de cărămizi de zgură
+Zidărie industrială densă
+<&slag_brick_block>Acest bloc adaugă zidărie densă, cenușiu-maronie, pentru fundații, ziduri de sprijin și ateliere vechi.<br>
+<br>
+Utilizare: Folosește-l pentru fundații vechi, ziduri de sprijin și podele murdare de uzină.<br>
+<np>
+Lespede de cărămizi de zgură
+Zidărie industrială densă
+<&slag_brick_slab>Acest bloc adaugă zidărie densă, cenușiu-maronie, pentru fundații, ziduri de sprijin și ateliere vechi.<br>
+<br>
+Utilizare: Folosește-l pentru fundații vechi, ziduri de sprijin și podele murdare de uzină.<br>
+<np>
+Trepte de cărămizi de zgură
+Zidărie industrială densă
+<&slag_brick_stairs>Acest bloc adaugă zidărie densă, cenușiu-maronie, pentru fundații, ziduri de sprijin și ateliere vechi.<br>
+<br>
+Utilizare: Folosește-l pentru fundații vechi, ziduri de sprijin și podele murdare de uzină.<br>
+<np>
+Zid de cărămizi de zgură
+Zidărie industrială densă
+<&slag_brick_wall>Acest bloc adaugă zidărie densă, cenușiu-maronie, pentru fundații, ziduri de sprijin și ateliere vechi.<br>
+<br>
+Utilizare: Folosește-l pentru fundații vechi, ziduri de sprijin și podele murdare de uzină.<br>
+<np>
+Bloc de beton armat
+Beton armat
+<&rebar_concrete>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Lespede de beton armat
+Beton armat
+<&rebar_concrete_slab>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Trepte de beton armat
+Beton armat
+<&rebar_concrete_stairs>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Zid de beton armat
+Beton armat
+<&rebar_concrete_wall>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Placă subțire de beton armat
+Beton armat
+<&halfslab_rebar_concrete>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Dale de beton armat
+Beton armat
+<&rebar_concrete_tile>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Lespede din dale de beton armat
+Beton armat
+<&rebar_concrete_tile_slab>Acest bloc este o piesă din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Dale de beton armat
+Beton armat
+<&rebar_concrete_tile_stairs>Treptele din dale de beton armat sunt piese din beton întărit pentru socluri de mașini, ziduri de protecție la explozii și podele ale rampelor de încărcare.<br>
+<br>
+Utilizare: Folosește-l sub mașini, de-a lungul coridoarelor tehnice sau oriunde construcția are nevoie de o bază ranforsată.<br>
+<np>
+Bloc de sticlă blindată
+Vizibilitate printr-o barieră de protecție
+<&panzerglass_block>Acest bloc păstrează vizibilitatea și se încadrează totodată în construcțiile industriale ranforsate.<br>
+<br>
+Utilizare: Folosește-l acolo unde jucătorii trebuie să vadă mașinile printr-o barieră de protecție.<br>
+<np>
+Lespede de sticlă blindată
+Vizibilitate printr-o barieră de protecție
+<&panzerglass_slab>Acest bloc păstrează vizibilitatea și se încadrează totodată în construcțiile industriale ranforsate.<br>
+<br>
+Utilizare: Folosește-l acolo unde jucătorii trebuie să vadă mașinile printr-o barieră de protecție.<br>

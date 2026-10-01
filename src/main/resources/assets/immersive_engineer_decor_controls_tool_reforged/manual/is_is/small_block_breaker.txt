@@ -1,0 +1,5 @@
+Kubbabrjótur
+Verkstæðisbúnaður
+<&recipe>Litli kubbabrjóturinn er nytjakubbur á verkstæði fyrir smíði, geymslu, lagningu, brot, söfnun eða fyrirferðarlitla sjálfvirkni.<br>
+<br>
+Notkun: Beindu vinnuhliðinni að kubbnum sem á að fjarlægja.<br>

@@ -1,0 +1,5 @@
+Areia com cascalho compactada
+Cobertura de solo de canteiro
+<&recipe>Este bloco dá às áreas de trabalho externas uma superfície compactada e pisoteada.<br>
+<br>
+Uso: Coloque ao redor de portas de carga, tanques externos e pátios de máquinas.<br>

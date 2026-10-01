@@ -1,0 +1,7 @@
+Regnnemi
+Teknaskynjan
+<&recipe>Ein veðurnemi ger regn á sínum staði til reyðgrýti.<br>
+<br>
+Nýtsla: Fest hann, har regn kann raka kubban oman fyri hann.<br>
+<br>
+Viðmerking: Kannar regn oman fyri neman.

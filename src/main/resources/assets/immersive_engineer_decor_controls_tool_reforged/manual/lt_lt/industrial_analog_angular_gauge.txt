@@ -1,0 +1,7 @@
+Analoginis matuoklis
+Signalo matuoklis
+<&recipe>Kompaktiškas valdymo patalpos matuoklis aiškiai parodo redstono signalo stiprumą skydelyje.<br>
+<br>
+Naudojimas: montuok ten, kur gretimo redstono signalo stiprumą būtų galima patikrinti vienu žvilgsniu.<br>
+<br>
+Pastabos: rodo netoliese esančio redstono signalo stiprumą nuo 0 iki 15.

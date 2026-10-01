@@ -1,0 +1,108 @@
+Pramysłovaje budaŭnictva
+Fabryčnyja scieny i azdablennie
+Ahulnyja budaŭničyja elemienty achoplivajuć dzviery, vokny, sviacilni, papieradžalnyja znaki, azdablennie i kanstrukcyjnyja detali, jakija nie naležać da bolš vuzkaha razdzieła.<br>
+<br>
+Vykarystoŭvaj hetyja staronki dla fabryčnych pamiaškanniaŭ, słužbovych kalidoraŭ, paznačennia niebiaspieki i praktyčnych pramysłovych detalaŭ.
+<np>
+Žaleznaja sviacilnia z lampačkaj
+Kampaktnaja rabočaja sviacilnia
+<&iron_bulb_light>Hety błok daje kampaktnaje pramysłovaje asviatlennie dla kalidoraŭ, słužbovych mastkoŭ i rabočych adsiekaŭ.<br>
+<br>
+Vykarystannie: macuj jaho na stolach, scienach abo krajach tam, dzie pamiaškanniu patrebna vyraznaje rabočaje asviatlennie.<br>
+<np>
+Sviacilnia na kraj stoli
+Kampaktnaja rabočaja sviacilnia
+<&iron_ceiling_edge_light>Hety błok daje kampaktnaje pramysłovaje asviatlennie dla kalidoraŭ, słužbovych mastkoŭ i rabočych adsiekaŭ.<br>
+<br>
+Vykarystannie: macuj jaho na stolach, scienach abo krajach tam, dzie pamiaškanniu patrebna vyraznaje rabočaje asviatlennie.<br>
+<np>
+Ubudavanaja sviacilnia na kraj padłohi
+Kampaktnaja rabočaja sviacilnia
+<&iron_floor_edge_light>Hety błok daje kampaktnaje pramysłovaje asviatlennie dla kalidoraŭ, słužbovych mastkoŭ i rabočych adsiekaŭ.<br>
+<br>
+Vykarystannie: macuj jaho na stolach, scienach abo krajach tam, dzie pamiaškanniu patrebna vyraznaje rabočaje asviatlennie.<br>
+<np>
+Ubudavanaja sviacilnia
+Kampaktnaja rabočaja sviacilnia
+<&iron_inset_light>Hety błok daje kampaktnaje pramysłovaje asviatlennie dla kalidoraŭ, słužbovych mastkoŭ i rabočych adsiekaŭ.<br>
+<br>
+Vykarystannie: macuj jaho na stolach, scienach abo krajach tam, dzie pamiaškanniu patrebna vyraznaje rabočaje asviatlennie.<br>
+<np>
+Znak «Ahulnaja asciaroha»
+Markier niebiaspieki
+<&sign_caution>Znak «Ahulnaja asciaroha» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak niebiaspieki
+Markier niebiaspieki
+<&sign_danger>Znak «Uvaha, tut sapraŭdy niebiaspiečna» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Dekaratyŭny znak
+Markier niebiaspieki
+<&sign_decor>Płascina znaka (Inžynierski dekor) paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak abarony
+Markier niebiaspieki
+<&sign_defense>Znak «Uvaha, napieradzie abarončaja sistema» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak vychadu
+Markier niebiaspieki
+<&sign_exit>Hety znak paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak «Pažarnaja niebiaspieka»
+Markier niebiaspieki
+<&sign_firehazard>Znak «Pažarnaja niebiaspieka» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak «Asciarožna, maroz»
+Markier niebiaspieki
+<&sign_frost>Znak «Asciarožna, maroz» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak haračaj pavierchni
+Markier niebiaspieki
+<&sign_hotsurface>Znak «Asciarožna, haračaja pavierchnia» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak provadu pad napruhaj
+Markier niebiaspieki
+<&sign_hotwire>Znak «Asciarožna, provad pad napruhaj» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak «Łaziernaja niebiaspieka»
+Markier niebiaspieki
+<&sign_laser>Znak «Łaziernaja niebiaspieka» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak mahičnaj niebiaspieki
+Markier niebiaspieki
+<&sign_magichazard>Znak «Asciarožna, mahičnaja niebiaspieka» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak mahnitnaha pola
+Markier niebiaspieki
+<&sign_magneticfield>Znak «Asciarožna, mocnaje mahnitnaje pole» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>
+Znak «Radyjacyjnaja niebiaspieka»
+Markier niebiaspieki
+<&sign_radioactive>Znak «Radyjacyjnaja niebiaspieka» paznačaje niebiaspieku, vychady i rabočyja zony zrazumiełym vizualnym sihnałam dla biaspieki fabryki.<br>
+<br>
+Vykarystannie: staŭ jaho kala niebiaspiečnych miescaŭ, vychadaŭ, mašyn i zon abmiežavanaha dostupu.<br>
+<np>

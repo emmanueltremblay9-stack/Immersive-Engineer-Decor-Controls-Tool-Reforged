@@ -1,0 +1,5 @@
+Razbijač blokova
+Oprema fabričke hale
+<&recipe>Mali razbijač blokova je radionički blok za izradu, skladištenje, postavljanje, razbijanje, prikupljanje ili kompaktnu automatizaciju.<br>
+<br>
+Upotreba: Okrenite radnu stranu prema bloku koji želite ukloniti.<br>

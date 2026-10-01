@@ -1,0 +1,7 @@
+Nástroj REDIA
+Nástroj s diamantovým povlakom
+<&recipe>Nástroj REDIA je odolný viacúčelový nástroj diamantovej úrovne na prácu v teréne pri dočasných pracoviskách, dielňach a vchodoch do baní.<br>
+<br>
+Použitie: Ak máš pri sebe fakle, použi ho na položenie jednej z inventára bez opotrebovania REDIA. Pri zakrádaní strihá rastliny alebo postupne mení povrch medzi hlinou, zoranou pôdou, hrubou hlinou a udupanou zemou. Na spodnej strane sa ako záložná možnosť uplatní pôvodná funkcia sekery. Rozbíjaním kmeňov počas zakrádania zotneš spojené bloky stromu.<br>
+<br>
+Opravuj ho diamantmi. Oprava úplne opraveného nástroja REDIA nad maximum obnovuje pôvodný postup získavania Efektivity a Šťastia.

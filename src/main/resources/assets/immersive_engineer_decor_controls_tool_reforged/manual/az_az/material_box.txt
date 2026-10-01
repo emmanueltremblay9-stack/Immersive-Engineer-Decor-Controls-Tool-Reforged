@@ -1,0 +1,7 @@
+Material saxlama qutusu
+Tikinti təchizatı qutusu
+<&recipe>Material saxlama qutusu bir adi, dəyişdirilməmiş, yığıla bilən tikinti materialından böyük ehtiyat daşıyır.<br>
+<br>
+İstifadə: Qutunu əsas əldə, material yığınını digər əldə tutaraq yükləyin. Bir yığın çıxarmaq üçün digər əl boşkən qutudan istifadə edin.<br>
+<br>
+Qutu 512-dək əşya saxlayır, eyni anda yalnız bir material növü qəbul edir, iç-içə qutuları, yığılmayan avadanlığı və dəyişdirilmiş, adlandırılmış və ya məlumatlı yığınları rədd edir; məzmunu məsləhətdə göstərir.

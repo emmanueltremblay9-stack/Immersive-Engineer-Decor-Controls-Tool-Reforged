@@ -1,0 +1,7 @@
+Estruyador mental
+Condensador d’esperiencia
+<&recipe>L’estruyador mental convierte llapislázuli y esperiencia en llapislázuli cargáu.<br>
+<br>
+Usu: lleva llapislázuli y polo menos un nivel d’esperiencia, y usa la ferramienta. Cada extracción llograda consume un nivel y una unidá de llapislázuli, fai dañu al usuariu, desgasta l’estruyador y crea una unidá de llapislázuli cargáu.<br>
+<br>
+Nun funciona si al usuariu-y falta llapislázuli o XP, o si ta demasiáu cerca de morrer.

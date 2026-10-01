@@ -1,0 +1,5 @@
+Znak „Opći oprez”
+Oznaka opasnosti
+<&recipe>Znak „Opći oprez” označava opasnosti, izlaze i radne zone vizuelnom oznakom fabričke sigurnosti.<br>
+<br>
+Upotreba: Postavite ga uz opasnosti, izlaze, mašine i zone ograničenog pristupa.<br>

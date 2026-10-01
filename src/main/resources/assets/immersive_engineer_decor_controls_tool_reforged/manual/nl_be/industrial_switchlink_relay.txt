@@ -1,0 +1,7 @@
+Schakelkoppelingsrelais
+Gekoppelde bediening
+<&recipe>Een onderdeel in relaisstijl geeft bedieningspanelen een compact plaatselijk schakelpunt.<br>
+<br>
+Gebruik: rechtsklik om het uitgangssignaal op volle sterkte voor nabijgelegen schakelingen aan of uit te zetten. Gebruik ontvangerblokken voor activering met gekoppelde parels.<br>
+<br>
+Opmerking: geeft een redstonesignaal op volle sterkte af zolang hij ingeschakeld is.

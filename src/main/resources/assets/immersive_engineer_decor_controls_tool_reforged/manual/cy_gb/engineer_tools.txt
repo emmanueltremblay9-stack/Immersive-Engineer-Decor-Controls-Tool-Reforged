@@ -1,0 +1,99 @@
+Offer y Peiriannydd
+Offer gweithdy cludadwy
+Mae set Offer y Peiriannydd yn ychwanegu offer llaw, marcwyr mwyngloddiau, eitemau traul brys, bwyd maes a chymhorthion bach prosesu deunyddiau at yr un llawlyfr sy'n trafod y blociau addurnol a rheoli.<br>
+<br>
+Bwriedir yr offer hyn ar gyfer gweithio i ffwrdd o weithdy llawn offer: marcio'r llwybr, cario cyflenwadau, adfer ar ôl camgymeriadau a gorffen mân waith prosesu ar y safle.
+<np>
+Offeryn REDIA
+Offeryn wedi'i orchuddio â diemwnt
+<&redia_tool>Offeryn maes cadarn ar gyfer gwaith tir cyflym yw'r Offeryn REDIA. Defnyddiwch ef ar bridd addas i greu tir fferm.<br>
+<br>
+Defnyddiwch ef yn erbyn wyneb sefydlog wrth gario torsys i osod marciwr tors o'ch rhestr eiddo heb dreulio REDIA. Mae gwaith tir, cneifio, gwaith bwyell a thorri coed yn defnyddio cadernid.
+<np>
+Morthwyl malu mwyn
+Offeryn llaw
+<&crushing_hammer>Offeryn llaw ar gyfer gwaith haearn ac aur cynnar.<br>
+<br>
+Defnydd: Gyda haearn crai, aur crai, mwyn haearn, mwyn haearn llechen ddofn, mwyn aur neu fwyn aur llechen ddofn, mae'n gwneud llwch haearn neu aur Immersive Engineering. Mae'n colli gwydnwch ac yn dychwelyd i'r grid nes torri.<br>
+<br>
+Mae hefyd yn treulio wrth fwyngloddio ac yn gwthio targedau mewn ymladd agos.
+<np>
+Traciwr
+Marc safle wedi'i gadw
+<&tracker>Yn cadw safle bloc yn yr eitem.<br>
+<br>
+Defnydd: Cliciwch floc am y dimensiwn a'r cyfesurynnau. Mae'r awgrym yn dangos y safle. Defnyddio wrth gwrcwd sy'n ei glirio.<br>
+<br>
+Marciwch beiriannau, canghennau twnnel, rheolyddion pell neu safleoedd anorffenedig.
+<np>
+Glo Ariadne
+Marciwr llwybr mwynglawdd
+<&ariadne_coal>Mae Glo Ariadne yn gosod marcwyr llwybr saeth ddu yn gyflym ar wynebau mwynglawdd sefydlog. Defnyddiwch ef ar wyneb solet i farcio'r tro nesaf, allanfa neu gangen; mae'r marciwr yn cefnogi wyth cyfeiriad ar yr wyneb a gliciwyd, gan gynnwys croesliniau.<br>
+<br>
+Offeryn marcio ailddefnyddiadwy â 100 defnydd yw Glo Ariadne. Mae pob marciwr a osodir yn llwyddiannus yn costio un pwynt cadernid. Mae'n gwrthod wynebau anaddas yn hytrach na threulio'r eitem.
+<np>
+Pecyn stim awtomatig
+Chwistrellwr brys
+<&stimpack>Offeryn adfer brys ar gyfer cynnal a chadw peryglus.<br>
+<br>
+Defnydd: Â llaw mae'n iacháu, amddiffyn a chyflymu'n fyr. Yn y rhestr mae'n cychwyn ar iechyd isel ac yna'n oeri.<br>
+<br>
+Cariwch cyn uchderau, gwifrau agored neu fwyngloddiau peryglus.
+<np>
+Bag cysgu
+Pecyn gorffwys cludadwy
+<&sleeping_bag>Pecyn gwrth-dywydd ar gyfer gwaith ymhell o wely.<br>
+<br>
+Defnydd: Nos yn y Gorfyd, gorffwyswch tan y bore heb osod neu symud man ail-ymddangos.<br>
+<br>
+Yn gwrthod dydd, angenfilod cyfagos a dimensiynau anaddas. Mae pob gorffwys yn ei dreulio.
+<np>
+Blwch deunydd
+Cyflenwadau adeiladu
+<&material_box>Yn cario cronfa fawr o un deunydd cyffredin, heb ei newid ac y gellir ei bentyrru.<br>
+<br>
+Defnydd: Blwch yn y brif law a deunydd yn y llall i lwytho. Llaw arall wag i dynnu un stac.<br>
+<br>
+Yn dal 512 eitem o un math ac yn gwrthod blychau nythu, offer na ellir ei bentyrru a staciau wedi'u newid; mae'r cynnwys yn yr awgrym.
+<np>
+Capsiwl aer plymio
+Cronfa aer brys
+<&diving_capsule>Aer brys ar gyfer gwaith dan ddŵr.<br>
+<br>
+Defnydd: Adfer aer â llaw. Yn y rhestr mae'n cychwyn yn awtomatig pan fo aer bron ar ben, yna'n oeri.<br>
+<br>
+Cariwch i fwyngloddiau llifogydd, pibellau tanddwr ac ystafelloedd pwmp.
+<np>
+Gwasg Bar Muslee
+Gwasg fwyd
+<&musli_bar_press>Yn troi bwyd cyffredin yn ddognau maes cryno.<br>
+<br>
+Defnydd: Bara, afal a hedyn gwenith, melon, pwmpen, betys neu gywarch diwydiannol. Mae gwasgu llwyddiannus yn defnyddio un o bob un, yn gwirio lle, yn gwneud pedwar bar ac yn difrodi'r wasg.<br>
+<br>
+Os oes cynhwysyn neu le ar goll, ni ddefnyddir dim.
+<np>
+Bar egni Muslee Melange
+Byrbryd gweithdy cyflym
+<&musli_bar>Bwyd cryno o fara, hadau a ffrwythau.<br>
+<br>
+Defnydd: Bwytewch wrth osod rheolyddion, pibellau, llwyfannau neu linellau peiriannau hir.
+<np>
+Gwasg Meddwl
+Cyddwysydd profiad
+<&charged_lapis_squeezer>Mae'r Wasg Meddwl yn troi un Lapis-Laswli ac un lefel profiad o'ch rhestr eiddo yn Lapis wedi'i Wefru.<br>
+<br>
+Mae pob trosiad llwyddiannus yn brifo'r defnyddiwr, yn achosi blinder sy'n cynyddu newyn ac yn ei ddallu am gyfnod byr. Mae'n gwrthod gweithio heb lapis, heb brofiad neu pan fo'r defnyddiwr yn rhy agos at farw.
+<np>
+Lapis wedi'i Wefru
+Profiad wedi'i storio
+<&charged_lapis>Mae Lapis wedi'i Wefru yn storio un lefel profiad. Defnyddiwch ef i adfer y lefel, tynnu effeithiau gweithredol ac adennill ychydig o iechyd.<br>
+<br>
+Crefftiwch Wasg Meddwl yn gyntaf; cynhyrchir Lapis wedi'i Wefru drwy ddefnyddio'r offeryn hwnnw pan fo lapis a phrofiad ar gael.
+<np>
+Graean Haearn Garw
+Deunydd offer peiriannydd a ddefnyddir gan y set grefftio a ail-grewyd.
+<&iron_grit>Gellir ei fwyndoddi yn fariau<br>haearn, ond nid yw'n addas ar<br>gyfer prosesu deunyddiau datblygedig.
+<np>
+Graean Aur Garw
+Deunydd offer peiriannydd a ddefnyddir gan y set grefftio a ail-grewyd.
+<&gold_grit>Gellir ei fwyndoddi yn fariau<br>aur, ond nid yw'n addas ar gyfer<br>prosesu deunyddiau datblygedig.

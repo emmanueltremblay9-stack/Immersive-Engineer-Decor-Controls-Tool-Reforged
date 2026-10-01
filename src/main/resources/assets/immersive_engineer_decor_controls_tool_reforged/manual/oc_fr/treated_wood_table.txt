@@ -1,0 +1,5 @@
+Taula de fusta tractada
+Mòble d’obrador
+<&recipe>Aqueste blòc es un mòble practic pels locals de trabalh e los cantons d’entreten.<br>
+<br>
+Utilizacion : pausa-lo al costat dels bancs de trabalh, de las caissas e de las maquinas compactas.<br>

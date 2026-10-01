@@ -1,0 +1,7 @@
+Relais de liaizon a pouls
+Comande liée
+<&recipe>Eune pièce en forme de relais doune ao bâtisses de paniaos un petit pouint d'interruption local.<br>
+<br>
+Empllai : Fezéz un clic dret pour mettre ou ôter la sortie de plleine force pour les circuits d'a couté. Empllayéz des blloqes ercevous si vous avez besouin du décllanchement par perle liée.<br>
+<br>
+Notes : Sort de la redstone de plleine force tant q'il ét en marche.

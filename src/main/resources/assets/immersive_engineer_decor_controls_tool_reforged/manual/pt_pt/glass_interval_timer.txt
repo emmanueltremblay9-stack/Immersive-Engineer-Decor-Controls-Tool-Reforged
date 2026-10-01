@@ -1,0 +1,7 @@
+Sinal de intervalos de vidro
+Pulso temporizado
+<&recipe>Um interruptor temporizado compacto fornece um pulso programado de redstone.<br>
+<br>
+Uso: Usa-o onde um pequeno mecanismo precisa de controlo periódico ou com atraso.<br>
+<br>
+Observações: Usa pulsos programados de redstone.

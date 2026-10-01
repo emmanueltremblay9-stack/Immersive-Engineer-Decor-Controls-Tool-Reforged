@@ -1,0 +1,5 @@
+Pieč dla płaŭlennia minierałaŭ
+Kampaktnaja pierapracoŭčaja pryłada
+<&recipe>Pieč dla płaŭlennia minierałaŭ vykonvaje vysokatempieraturnuju pierapracoŭku minierałaŭ, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: padaj minieralnyja błoki i enierhiju dla vysokatempieraturnaha płaŭlennia.<br>

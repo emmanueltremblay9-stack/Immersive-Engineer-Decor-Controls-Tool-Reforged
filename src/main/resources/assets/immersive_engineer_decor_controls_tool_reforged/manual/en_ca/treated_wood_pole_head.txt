@@ -1,0 +1,5 @@
+Treated Pole Head
+Structural frame part
+<&recipe>The Straight Treated Wood Pole Head/Foot Treated Wood Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<br>
+Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>

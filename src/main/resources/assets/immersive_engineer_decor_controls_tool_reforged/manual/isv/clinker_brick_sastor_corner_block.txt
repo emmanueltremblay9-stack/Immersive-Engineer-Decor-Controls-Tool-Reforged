@@ -1,0 +1,5 @@
+Ozdobjena klinkerova cegla
+Mur počrněly sažeju
+<&recipe>Klinkerova cegla s ornamentom iz pěsočnogo kamnja prinosi mur počrněly sažeju v haly pečij, osnovy kominov i obslužne stěny.<br>
+<br>
+Upotrěbjenje: Upotrěbi go kak stěnu, obrobku ili obal gorečej zony okolo pečij i kotlov.<br>

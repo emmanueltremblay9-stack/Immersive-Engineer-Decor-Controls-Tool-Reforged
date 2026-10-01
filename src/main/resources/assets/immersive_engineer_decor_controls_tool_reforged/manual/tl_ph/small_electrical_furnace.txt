@@ -1,0 +1,5 @@
+De-kuryenteng Dapugan
+Maliit na yunit ng pagproseso
+<&recipe>Gumagawa ang De-kuryenteng Dapugan ng maliliit na gawaing pagtunaw gamit ang FE, sa maliit na lugar ng pagawaan.<br>
+<br>
+Paggamit: Magbigay ng FE at wastong bagay na tutunawin.<br>

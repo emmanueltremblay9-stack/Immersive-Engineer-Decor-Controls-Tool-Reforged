@@ -1,0 +1,7 @@
+Alarm WEE-OO Thing
+Signal peekz
+<&recipe>Alarm Siren iz face-mounted redstone indikatr. Its powered state followz da signal frum da bluk itz stuck to.<br>
+<br>
+How to: Attach to a solid face an gib powah fer watchin doorz, machinez, alarmz, or panelz, meow.<br>
+<br>
+Kitty note: Siren refreshes once each second while its attached signal stays active.

@@ -1,0 +1,7 @@
+Blokkérzékelő
+Jelérzékelés
+<&recipe>A blokkérzékelő ellenőrzi, hogy foglalt-e az előtte lévő hely.<br>
+<br>
+Használat: fordítsd a megfigyelendő gépfelület, puffer vagy védett tér felé.<br>
+<br>
+Megjegyzés: akkor ad jelet, ha az előtte lévő blokk nem levegő.

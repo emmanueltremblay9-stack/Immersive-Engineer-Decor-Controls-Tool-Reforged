@@ -1,0 +1,5 @@
+Cuptor de laborator
+Unitate compactă de prelucrare
+<&recipe>Cuptorul de laborator efectuează operații compacte de topire cu combustibil solid, ocupând puțin spațiu în atelier.<br>
+<br>
+Utilizare: Folosește combustibil solid pentru loturi mici de topire.<br>

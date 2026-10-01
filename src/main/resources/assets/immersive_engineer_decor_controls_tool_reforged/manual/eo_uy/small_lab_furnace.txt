@@ -1,0 +1,5 @@
+Laboratoria forno
+Kompakta prilabora unuo
+<&recipe>La laboratoria forno plenumas kompaktajn fandtaskojn per solida brulaĵo en malgranda metieja spaco.<br>
+<br>
+Uzado: uzu solidan brulaĵon por malgrandaj fandaroj.<br>

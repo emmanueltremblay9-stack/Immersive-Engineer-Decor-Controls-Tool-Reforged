@@ -1,0 +1,7 @@
+Sirena de alarm
+Risposta visibila del segnal
+<&recipe>La sirena d'allarme l'è un indicador redstone montaa su una faccia. El so stato alimentaa el va adree al segnal del bloch indove l'è tacada.<br>
+<br>
+Tachela a una faccia solida e dagh energia per tegnì d’oeucc porte, machine, allarmi o panei.<br>
+<br>
+La sirena la se torna a ativà una volta al segond fin che el segnal tacad el resta ativ.

@@ -1,0 +1,7 @@
+Boxed link receiver
+Orders through a link
+<&recipe>A boxed, linked receiver gives remote panels a stout redstone target, matey.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Right-click the receiver herself to toggle her by hand.<br>
+<br>
+Mind ye: Creep while usin' a linked pearl to toggle this receiver.

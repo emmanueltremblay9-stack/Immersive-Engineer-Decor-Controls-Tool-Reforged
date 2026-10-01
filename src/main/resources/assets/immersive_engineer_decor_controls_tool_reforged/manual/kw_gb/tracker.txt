@@ -1,0 +1,7 @@
+Holyour
+Merkyer le gwithys
+<&recipe>An holyour a with posityon stock yn unnfordh y'n tra.<br>
+<br>
+Devnydh: Klikya stock rag gwitha y vent ha'y gyd-leow. An tooltip a dhiskwedh an le. Devnydh an holyour ha ty ow kwedha rag dilea an amkan.<br>
+<br>
+Usya e rag merkya jynnys, garow tollborth, reolyow pell po leow drehevel anorfennys kyns dos arta gans daffar ha danvez.

@@ -1,0 +1,41 @@
+Lagerung und Transport
+Lager- und Durchflussbauteil
+Lager- und Transportbauteil umfassen Kistn, Fassln, Trichta und Ventile fia kloane Fabrikwege.<br>
+<br>
+Nutz de Seiten, wennst Lagerräum, Rohrstreckn, Wartungstanks und gsteuerte Flüssigkeitsleitungen planst.
+<np>
+Beschriftete Kistn
+Änderbare Lagerbeschriftung
+<&labeled_crate>De beschriftete Kistn is fia übersichtlichs Sortiern im Lager gmacht. Ihre Vorderplattn lasst si wia a kloans Werkstattschuidl beschriftn.<br>
+<br>
+So geht's: Rechtsklick auf d'Schuidlplattn zum Ändern vo da Kistnbeschriftung. Rechtsklick auf'n Rest vo da Kistn zum Öffnen vom Lager fia Anbauteil, Bauteil und Wartungsvorrat.<br>
+<np>
+Flüssigkeitsfassl
+Bauteil fia Flüssigkeitsleitungen
+<&fluid_barrel>Des Bauteil is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Setz's dorthin, wo Rohre oder Oama an d'Tankseit hinkemma.<br>
+<np>
+Flüssigkeitstrichta
+Bauteil fia Flüssigkeitsleitungen
+<&small_fluid_funnel>Da kloana Flüssigkeitssammeltrichta is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Setz'n unter de Flüssigkeitssammelstell und leit sein gspeicherten Inhalt an Tanks oder tiefer liegende Rohre weiter.<br>
+<np>
+Rückschlagventil fia Flüssigkeitsrohre
+Bauteil fia Flüssigkeitsleitungen
+<&straight_pipe_valve>S'Rückschlagventil fia Flüssigkeitsrohre is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Richt des Ventil in de vorgesehene Fließrichtung aus.<br>
+<np>
+Redstone-Flüssigkeitsventil
+Bauteil fia Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone>S'Redstone-gsteuerte Flüssigkeitsventil is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Richt des Ventil in de vorgesehene Fließrichtung aus.<br>
+<np>
+Analoges Flüssigkeitsventil
+Bauteil fia Flüssigkeitsleitungen
+<&straight_pipe_valve_redstone_analog>S'analoge Redstone-Flüssigkeitsventil is a kloans Flüssigkeitsleitungsteil fia kloane Tanks, Rohrstreckn, Sammelpunkte und Redstone-gsteuerten Durchfluss.<br>
+<br>
+So geht's: Richt des Ventil in de vorgesehene Fließrichtung aus.<br>

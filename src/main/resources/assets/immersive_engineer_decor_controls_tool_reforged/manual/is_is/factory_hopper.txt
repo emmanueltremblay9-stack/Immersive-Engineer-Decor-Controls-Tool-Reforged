@@ -1,0 +1,5 @@
+Verksmiðjutrekt
+Verkstæðisbúnaður
+<&recipe>Þessi kubbur flytur hlutastafla í gegnum þéttara iðnaðarhylki.<br>
+<br>
+Notkun: Beindu honum að geymslulínunni og stilltu síðan drægni, staflafjölda, tímasetningar og roðsteinsham í viðmótinu.<br>

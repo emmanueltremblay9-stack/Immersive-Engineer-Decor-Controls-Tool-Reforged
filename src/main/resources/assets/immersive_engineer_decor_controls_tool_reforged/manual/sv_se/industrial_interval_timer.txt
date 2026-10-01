@@ -1,0 +1,7 @@
+Intervalltimer
+Tidsstyrd puls
+<&recipe>En kompakt timerbrytare ger en tidsinställd redstonepuls.<br>
+<br>
+Användning: Använd den där en liten mekanism behöver regelbunden eller fördröjd styrning.<br>
+<br>
+Anmärkning: Använder tidsinställda redstonepulser.

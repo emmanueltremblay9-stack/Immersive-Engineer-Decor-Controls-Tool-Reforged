@@ -1,0 +1,7 @@
+Rautt LED-ljós
+Endurgjöf merkis
+<&recipe>Fyrirferðarlítill vísir gerir falinn roðstein að sýnilegri endurgjöf í verksmiðju.<br>
+<br>
+Notkun: Tengdu hann við hlið merkisins til að fylgjast með hurðum, vélum, viðvörunum eða stjórnborðum.<br>
+<br>
+Athugasemdir: Breytir um stöðu þegar roðsteinsafl er til staðar í nágrenninu.

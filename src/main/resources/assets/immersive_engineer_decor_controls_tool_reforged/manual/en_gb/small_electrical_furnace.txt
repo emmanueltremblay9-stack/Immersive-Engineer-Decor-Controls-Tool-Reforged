@@ -1,0 +1,5 @@
+Electrical Furnace
+Compact processing unit
+<&recipe>The Electrical Furnace handles compact FE-powered smelting jobs in a small workshop footprint.<br>
+<br>
+Usage: Supply FE and valid smelting input.<br>

@@ -1,0 +1,127 @@
+Jalur Akses
+Jalur jalan dan penyangga
+Tiang baja, tiang kayu olahan, kisi, jalur servis, pagar pengaman, tangga, pintu, jendela, dan palka membentuk jalur perawatan ringkas di dalam pabrik.<br>
+<br>
+Bagian jalur akses baja menggunakan pelat baja. Buat atau pasang meja kerajinan logam, masukkan palu Immersive Engineering, lalu tempa baja batangan menjadi pelat baja untuk tiang, jalur servis, jendela, pintu, pagar pengaman, dan hiasan baja lainnya.<br>
+<br>
+Pasang di tempat mesin memerlukan akses servis, jalur tinggi, lubang perawatan, atau tepi yang lebih aman.
+<np>
+Tiang Baja Tebal
+Bagian rangka struktur
+<&thick_steel_pole>Tiang baja tebal lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Kepala Tiang Tebal
+Bagian rangka struktur
+<&thick_steel_pole_head>Kepala/kaki tiang baja tebal lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Tiang Baja Tipis
+Bagian rangka struktur
+<&thin_steel_pole>Tiang baja tipis lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Kepala Tiang Tipis
+Bagian rangka struktur
+<&thin_steel_pole_head>Kepala/kaki tiang baja tipis lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Tiang Kayu Olahan
+Bagian rangka struktur
+<&treated_wood_pole>Tiang kayu olahan lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Kepala Tiang Olahan
+Bagian rangka struktur
+<&treated_wood_pole_head>Kepala/kaki tiang kayu olahan lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Penyangga Tiang Olahan
+Bagian rangka struktur
+<&treated_wood_pole_support>Penyangga tiang kayu olahan lurus memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Penyangga Baja T Ganda
+Bagian rangka struktur
+<&steel_double_t_support>Blok ini memberi struktur yang terlihat pada ruang mesin dan rangka akses.<br>
+<br>
+Penggunaan: putar dan pasang sebagai penguat yang terlihat untuk balok, tiang, dan tepi platform.<br>
+<np>
+Kisi Lantai Baja
+Komponen akses servis
+<&steel_floor_grating>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Jalur Servis Baja
+Komponen akses servis
+<&steel_catwalk>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Anak Tangga Jalur Servis Baja
+Komponen akses servis
+<&steel_catwalk_stairs>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Jalur Servis Baja Tinggi
+Komponen akses servis
+<&steel_catwalk_ta>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Pagar Pengaman Baja
+Komponen akses servis
+<&steel_railing>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Pagar Jaring Baja
+Komponen akses servis
+<&steel_mesh_fence>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Gerbang Pagar Jaring Baja
+Komponen akses servis
+<&steel_mesh_fence_gate>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Tangga Batang Logam
+Komponen akses servis
+<&metal_rung_ladder>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Pijakan Logam Berselang
+Komponen akses servis
+<&metal_rung_steps>Blok ini membentuk jalur servis yang jelas di sekitar mesin.<br>
+<br>
+Penggunaan: pasang sebagai akses perawatan di sekitar mesin, lantai atas, dan lubang servis.<br>
+<np>
+Jendela Berbingkai Baja
+Pandangan terlindungi
+<&steel_framed_window>Blok ini mempertahankan pandangan terbuka sambil tetap cocok dengan konstruksi pabrik yang diperkuat.<br>
+<br>
+Penggunaan: pasang pada lubang tembok sebesar satu blok agar pemain dapat melihat mesin melalui penghalang pelindung.<br>
+<np>
+Pintu Geser Logam
+Titik akses industri
+<&metal_sliding_door>Blok ini menyediakan titik akses kokoh untuk ruang servis, lubang, atap, dan selubung mesin.<br>
+<br>
+Penggunaan: pasang ketika bangunan membutuhkan bukaan perawatan yang terkendali.<br>
+<np>
+Palka Besi
+Titik akses industri
+<&iron_hatch>Blok ini menyediakan titik akses kokoh untuk ruang servis, lubang, atap, dan selubung mesin.<br>
+<br>
+Penggunaan: pasang ketika bangunan membutuhkan bukaan perawatan yang terkendali.<br>

@@ -1,0 +1,7 @@
+Cloc-ama làitheil
+Comharra solas an latha
+<&recipe>Leanaidh suidse cloc-ama a' chuid làitheil de chuairt an t-saoghail.<br>
+<br>
+Cleachdadh: cleachd i airson lampaichean clòis, còmhlaichean agus smachdan factaraidh nach obraich ach tron latha.<br>
+<br>
+Nòtaichean: tha toise le solas speura a dhìth.

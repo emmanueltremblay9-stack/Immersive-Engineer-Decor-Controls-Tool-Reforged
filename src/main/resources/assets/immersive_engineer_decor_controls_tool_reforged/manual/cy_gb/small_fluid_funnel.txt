@@ -1,0 +1,5 @@
+Twmffat Hylif
+Offer llinell hylif
+<&recipe>Rhan gryno o linell hylif yw'r Twmffat Hylif Bach, ar gyfer tanciau bach, rhediadau pibellau, mannau casglu a llif a reolir gan Redstone.<br>
+<br>
+Defnydd: Rhowch ef o dan y man casglu hylif a chyfeiriwch ei gynnwys wedi'i storio i danciau neu bibellau is.<br>

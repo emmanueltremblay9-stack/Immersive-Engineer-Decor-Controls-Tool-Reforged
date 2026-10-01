@@ -1,0 +1,7 @@
+Carbón d’Ariadna
+Marcador de rutes de mina
+<&recipe>El carbón d’Ariadna ye un marcador rápidu de rutes pa pozos, mines ramificaes y trabayos soterraños temporales.<br>
+<br>
+Usu: úsalu nuna cara firme d’un bloque pa colocar una marca de flecha prieta nesi borde. La marca llee’l puntu de la cara onde faigas clic y almite ocho direiciones, incluyíes les diagonales. Asina pues señalar xiros, salíes, caleyones ensin salida y rutes de suministru ensin llevar lletreros aparte.<br>
+<br>
+El carbón d’Ariadna ye una ferramienta de marcáu reutilizable de 100 usos. Cada marca colocada consume un puntu de durabilidá; les cares non compatibles refúguense ensin desgastar l’oxetu.

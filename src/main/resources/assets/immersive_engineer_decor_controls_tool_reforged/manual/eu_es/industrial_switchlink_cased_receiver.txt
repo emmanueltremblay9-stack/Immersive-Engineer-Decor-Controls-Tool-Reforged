@@ -1,0 +1,7 @@
+Karkasadun lotura-hargailua
+Lotutako agintea
+<&recipe>Karkasadun lotutako hargailuak redstone-helburu sendoa eskaintzen die urruneko panelei.<br>
+<br>
+Erabilera: egin klik Ender perla batekin lotutako perla sortzeko. Egin eskuineko klik zuzenean hargailuan eskuz piztu edo itzaltzeko.<br>
+<br>
+Oharrak: lotutako perlak hargailu hau piztu edo itzaltzen du makurtuta erabiltzean.

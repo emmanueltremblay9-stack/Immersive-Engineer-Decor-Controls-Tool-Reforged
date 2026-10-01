@@ -1,0 +1,5 @@
+Dəmir-beton plitə pilləsi
+Möhkəmləndirilmiş beton
+<&recipe>Bu blok maşın altlıqları, partlayış divarları və yükləmə bölməsi döşəmələri üçün bərkidilmiş beton hissədir.<br>
+<br>
+İstifadə: Maşınların altında, xidmət dəhlizləri boyunca və ya tikilidə möhkəmləndirilmiş əsas lazım olan hər yerdə istifadə edin.<br>

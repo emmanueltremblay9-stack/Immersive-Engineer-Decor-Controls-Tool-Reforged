@@ -1,0 +1,7 @@
+Fáiscire Intinne
+Comhdhlúthadán taithí
+<&recipe>Tiontaíonn an Fáiscire Intinne lapis agus taithí ina Lapis Luchtaithe.<br>
+<br>
+Úsáid: bíodh lapis lazuli agus leibhéal amháin taithí ar a laghad agat, agus úsáid an uirlis. Má éiríonn leis an bhfáscadh, ídítear leibhéal amháin agus lapis amháin, gortaítear an t-úsáideoir, déantar damáiste don fháiscire agus cruthaítear Lapis Luchtaithe amháin.<br>
+<br>
+Diúltaíonn sé oibriú mura bhfuil lapis nó XP ag an úsáideoir, nó má tá an t-úsáideoir róghar don bhás.

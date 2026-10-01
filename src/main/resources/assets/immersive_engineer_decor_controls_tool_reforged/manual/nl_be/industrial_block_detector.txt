@@ -1,0 +1,7 @@
+Blokdetector
+Signaaldetectie
+<&recipe>Een blokdetector controleert of de ruimte vóór hem bezet is.<br>
+<br>
+Gebruik: richt hem op de machinezijde, buffer of beveiligde ruimte die bewaakt moet worden.<br>
+<br>
+Opmerking: geeft een signaal af wanneer het blok vóór hem geen lucht is.

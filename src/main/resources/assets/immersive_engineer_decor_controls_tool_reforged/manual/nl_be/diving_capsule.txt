@@ -1,0 +1,5 @@
+Duikluchtcapsule
+Noodluchtvoorraad
+<&recipe>De duikluchtcapsule is een noodvoorraad voor werk onder water.<br>
+<br>
+Gebruik hem handmatig om lucht te herstellen. In de inventaris activeert hij ook automatisch wanneer de lucht bijna op is en gaat daarna op afkoeltijd. Neem hem mee naar ondergelopen mijnen, leidingen en pompkamers.

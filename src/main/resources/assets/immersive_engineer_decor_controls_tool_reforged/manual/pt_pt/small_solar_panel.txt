@@ -1,0 +1,5 @@
+Painel solar
+Utilidade de oficina
+<&recipe>O pequeno painel solar é uma utilidade de oficina para criação, armazenamento, colocação, quebra, recolha ou automação compacta.<br>
+<br>
+Uso: Coloca-o a céu aberto e liga equipamento de baixo consumo.<br>

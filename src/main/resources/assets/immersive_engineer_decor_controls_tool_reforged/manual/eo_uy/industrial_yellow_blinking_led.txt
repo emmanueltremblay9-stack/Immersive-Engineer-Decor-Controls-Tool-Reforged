@@ -1,0 +1,7 @@
+Flava palpebruma LED
+Signala montrado
+<&recipe>Kompakta indikilo transformas kaŝitan redstone’an signalon en videblan fabrikan indikon.<br>
+<br>
+Uzado: kabligu ĝin apud la signalo por observi pordojn, maŝinojn, alarmojn aŭ panelojn.<br>
+<br>
+Notoj: ĝi ŝanĝas staton kiam proksima redstone’a signalo ĉeestas.

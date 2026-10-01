@@ -1,0 +1,5 @@
+Cubus laterum scoriaceorum
+Structura officinae densa
+<&recipe>Hic cubus structuram densam cinereobrunneam fundamentis, muris sustinentibus et tuguriis laboris vetustioribus addit.<br>
+<br>
+Usus: pro fundamentis veteribus, muris sustinentibus et pavimentis officinae sordidis adhibe.<br>

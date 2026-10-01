@@ -1,0 +1,5 @@
+Horno de fusión de minerales
+Unidad compacta de procesamiento
+<&recipe>El horno de fusión de minerales procesa minerales a alta temperatura y ocupa poco espacio en el taller.<br>
+<br>
+Uso: Suministra bloques minerales y energía para realizar trabajos de fusión a alta temperatura.<br>

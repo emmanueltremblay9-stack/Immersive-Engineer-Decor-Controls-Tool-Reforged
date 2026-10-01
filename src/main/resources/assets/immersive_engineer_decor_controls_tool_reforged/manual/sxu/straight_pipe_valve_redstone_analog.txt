@@ -1,0 +1,5 @@
+Analoges Flissichgeedsvendil
+Flissichgeedsleidungsbaudeile
+<&recipe>Das analoge Redstone-Flissichgeedsvendil is ä gleenes Flissichgeedsleidungsdeil für gleene Tangs, Rohrwege, Sammelpläddze un Redstone-geschdeuordn Durchfluss.<br>
+<br>
+Nuddzung: Richd’s Vendil nach dor gewinschdn Flussrichdung aus.<br>

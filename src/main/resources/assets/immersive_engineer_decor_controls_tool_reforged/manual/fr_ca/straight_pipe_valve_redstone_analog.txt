@@ -1,0 +1,5 @@
+Vanne de fluide analogique
+Équipement de réseau de fluides
+<&recipe>La vanne de fluide à redstone analogique est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+<br>
+Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>

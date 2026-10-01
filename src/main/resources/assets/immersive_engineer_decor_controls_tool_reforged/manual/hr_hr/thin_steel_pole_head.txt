@@ -1,0 +1,5 @@
+Glava tankog stupa
+Dio nosivog okvira
+<&recipe>Glava/podnožje ravnog tankog čeličnog stupa daje vidljivu nosivu konstrukciju strojnim halama i pristupnim okvirima.<br>
+<br>
+Uporaba: zakreni i postavi ga kao vidljivo ojačanje greda, stupova i rubova platformi.<br>

@@ -1,0 +1,5 @@
+Nestesuppilo
+Nestelinjan laitteet
+<&recipe>Pieni nesteenkeruusuppilo on pieni nestelinjan osa pieniin säiliöihin, putkireitteihin, keräyspisteisiin ja redstone-ohjattuun virtaukseen.<br>
+<br>
+Käyttö: Aseta nesteen keräyspisteen alle ja ohjaa varastoitu sisältö säiliöihin tai alempiin putkiin.<br>

@@ -1,0 +1,7 @@
+Lyssensor
+Signalføling
+<&recipe>En lyssensor gjør lokal lysstyrke om til redstonestyring.<br>
+<br>
+Bruk: bruk den til automatiske lamper, luker og synlighetskretser.<br>
+<br>
+Merknad: gir signal ved rå lysstyrke 8 eller høyere.

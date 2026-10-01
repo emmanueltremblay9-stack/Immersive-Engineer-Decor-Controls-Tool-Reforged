@@ -1,0 +1,7 @@
+Ariadnekol
+Ruttmarkering för gruvor
+<&recipe>Ariadnekol markerar snabbt vägen genom schakt, förgrenade gruvgångar och tillfälliga arbetsplatser under jord.<br>
+<br>
+Användning: Använd kolet på en stabil blockyta för att placera en svart pilmarkering på den ytan. Markeringen läser av den punkt på ytan som du klickar på och stöder åtta riktningar, även diagonala. Du kan märka ut svängar, utgångar, återvändsgränder och försörjningsvägar utan att bära med dig separata skyltar.<br>
+<br>
+Ariadnekol är ett återanvändbart markeringsverktyg som räcker till 100 användningar. Varje lyckad markering förbrukar en hållbarhetspoäng. Ytor som inte stöds avvisas utan att föremålet slits.

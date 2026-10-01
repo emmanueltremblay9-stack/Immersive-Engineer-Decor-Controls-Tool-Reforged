@@ -1,0 +1,7 @@
+Sprejemnik povezave v ohišju
+Povezano krmiljenje
+<&recipe>Povezan sprejemnik v ohišju oddaljenim ploščam zagotavlja trpežen cilj redstone.<br>
+<br>
+Uporaba: Klikni ga z Enderovim biserom, da ustvariš povezan biser. Z neposrednim desnim klikom na sprejemnik ga preklopi ročno.<br>
+<br>
+Opombe: Povezan biser ob uporabi med tihotapljenjem preklopi ta sprejemnik.

@@ -1,0 +1,5 @@
+Capsula d’aire de cabussada
+Resèrva d’aire d’urgéncia
+<&recipe>La capsula daire es una resèrva durgéncia pel trabalh jos laiga.<br>
+<br>
+Emplegatz-la manualament per recuperar daire. Dins linventari se desencadena quand laire es gaireben agotat, puèi refreja. Portatz-la dins las minas negadas e prèp dels tudèls immergits.

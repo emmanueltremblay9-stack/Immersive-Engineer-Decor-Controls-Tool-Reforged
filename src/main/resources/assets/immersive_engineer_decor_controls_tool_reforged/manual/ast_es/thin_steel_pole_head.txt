@@ -1,0 +1,5 @@
+Cabeza de poste delgáu
+Pieza de bastidor estructural
+<&recipe>La cabeza/base de poste rectu delgáu d’aceru apurre una estructura visible a les naves de máquines y a los marcos d’accesu.<br>
+<br>
+Usu: xíralu y colócalu como refuerzu visible de vigues, postes y bordes de plataformes.<br>

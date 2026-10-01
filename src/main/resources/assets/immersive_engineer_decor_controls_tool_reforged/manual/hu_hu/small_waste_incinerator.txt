@@ -1,0 +1,5 @@
+Hulladékégető
+Kompakt feldolgozóegység
+<&recipe>A hulladékégető kis műhelyi helyigénnyel semmisíti meg a nem kívánt tárgyakat.<br>
+<br>
+Használat: kizárólag nem kívánt tárgyakat adagolj a várólistájába.<br>

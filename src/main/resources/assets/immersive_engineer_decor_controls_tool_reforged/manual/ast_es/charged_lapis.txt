@@ -1,0 +1,7 @@
+Llapislázuli cargáu
+Esperiencia almacenada
+<&recipe>El llapislázuli cargáu almacena un nivel d’esperiencia creáu per aciu de l’estruyador mental.<br>
+<br>
+Usu: consúmilu pa recuperar un nivel, eliminar los efeutos activos y restablecer una pequeña cantidá de salú.<br>
+<br>
+El visor de recetes amuesa l’estruyador mental porque’l llapislázuli cargáu produzse usando esa ferramienta cuando se dispón de llapislázuli y XP.

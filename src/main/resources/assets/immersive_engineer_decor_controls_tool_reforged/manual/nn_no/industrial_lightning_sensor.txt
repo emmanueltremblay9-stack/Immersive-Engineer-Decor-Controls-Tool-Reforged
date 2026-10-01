@@ -1,0 +1,7 @@
+Toredetektor
+Signalføling
+<&recipe>Ein toresensor styrer åtvaringar under torevêr.<br>
+<br>
+Bruk: plasser han under open himmel og kople han til lamper eller alarmar.<br>
+<br>
+Merknad: krev tore og tilgjenge til himmelen.

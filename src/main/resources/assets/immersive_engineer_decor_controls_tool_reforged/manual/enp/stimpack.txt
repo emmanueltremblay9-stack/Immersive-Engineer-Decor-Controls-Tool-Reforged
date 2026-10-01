@@ -1,0 +1,7 @@
+Auto Stim Pack
+Emergency injector
+<&recipe>Heed this: The Auto Stim Pack is an emergency recovery thing for dangerous maintenance work.<br>
+<br>
+Usage: Use it manually to heal, gain brief protection, and get a short movement boost. When carried in inholding, it can also trigger by itself at low health, then enters cooldown.<br>
+<br>
+Keep one available before testing high places, exposed wiring, or hostile mine routes.

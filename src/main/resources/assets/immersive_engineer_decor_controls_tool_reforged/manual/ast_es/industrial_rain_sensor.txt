@@ -1,0 +1,7 @@
+Sensor de lluvia
+Deteición de señales
+<&recipe>Un sensor meteorolóxicu convierte la lluvia na so posición en redstone.<br>
+<br>
+Usu: móntalu onde’l bloque d’enriba pueda recibir lluvia.<br>
+<br>
+Notes: comprueba la lluvia enriba del sensor.

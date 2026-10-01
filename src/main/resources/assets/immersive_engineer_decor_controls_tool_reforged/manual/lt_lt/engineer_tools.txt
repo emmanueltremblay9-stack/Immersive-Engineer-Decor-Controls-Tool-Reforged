@@ -1,0 +1,99 @@
+Inžinieriaus įrankiai
+Nešiojamoji dirbtuvių įranga
+Inžinieriaus įrankių rinkinys papildo tą patį dekoravimo ir valdymo blokų vadovą rankiniais įrankiais, kasyklų žymekliais, avarinėmis sunaudojamomis priemonėmis, maistu išvykoms ir mažais medžiagų apdorojimo pagalbininkais.<br>
+<br>
+Šie įrankiai skirti darbui toli nuo visiškai įrengtų dirbtuvių: žymėk kelią, nešk atsargas, atsitiesk po klaidų ir atlik smulkius apdorojimo darbus vietoje.
+<np>
+REDIA įrankis
+Deimantais dengtas pagalbininkas
+<&redia_tool>REDIA įrankis yra patvarus pagalbininkas greitiems žemės darbams. Naudok jį ant tinkamo dirvožemio, kad išartum žemę.<br>
+<br>
+Turėdamas deglų, panaudok jį ant tvirto paviršiaus, kad padėtum žymėjimo deglą iš inventoriaus nedėvėdamas REDIA. Žemės darbai, kirpimas, kapojimas ir medžių kirtimas sunaudoja patvarumą.
+<np>
+Rūdos smulkinimo plaktukas
+Rankinis smulkinimo įrankis
+<&crushing_hammer>Rūdos smulkinimo plaktukas yra rankinis įrankis ankstyvam geležies ir aukso apdorojimui.<br>
+<br>
+Naudojimas: Gamink jį su žalia geležimi, žaliu auksu, geležies rūda, gilūno geležies rūda, aukso rūda arba gilūno aukso rūda, kad gautum Immersive Engineering geležies ar aukso dulkių. Plaktuko patvarumas mažėja, o jis grįžta į gamybos tinklelį, kol sulūžta.<br>
+<br>
+Jis taip pat dėvisi kasant ir artimoje kovoje gali atstumti taikinius.
+<np>
+Sekiklis
+Išsaugotos vietos žymeklis
+<&tracker>Sekiklis išsaugo bloko vietą tiesiai daikte.<br>
+<br>
+Naudojimas: Spustelėk bloką, kad išsaugotum jo dimensiją ir koordinates. Paaiškinimas rodo vietą. Naudok sekiklį sėlindamas, kad išvalytum taikinį.<br>
+<br>
+Naudok jį mašinoms, tunelių atšakoms, nuotoliniams valdikliams arba nebaigtoms statybų vietoms pažymėti, prieš grįždamas su įrankiais ir medžiagomis.
+<np>
+Ariadnės anglis
+Kasyklos kelio žymeklis
+<&ariadne_coal>Ariadnės anglis greitai padeda juodas kelio rodykles ant tvirtų kasyklos paviršių. Naudok ant tvirto paviršiaus kitam posūkiui, išėjimui arba išsišakojimui pažymėti; pagal spustelėtą vietą parenkama viena iš aštuonių krypčių, įskaitant įstrižas.<br>
+<br>
+Ariadnės anglis yra daugkartinis žymėjimo įrankis, skirtas 100 naudojimų. Kiekvienas sėkmingas žymeklio padėjimas sunaudoja vieną patvarumo tašką. Netinkami paviršiai atmetami nedėvint įrankio.
+<np>
+Automatinis stimuliantų rinkinys
+Avarinis injektorius
+<&stimpack>Auto Stim Pack yra avarinė medicinos priemonė pavojingiems priežiūros darbams.<br>
+<br>
+Naudojimas: Naudok rankomis, kad išgytum, trumpam gautum apsaugą ir judėjimo pagreitį. Inventoriuje jis gali automatiškai suveikti esant mažai sveikatos, tada prasideda laukimo laikas.<br>
+<br>
+Turėk jį po ranka prieš bandymus aukštai, prie atvirų laidų arba pavojinguose kasyklų keliuose.
+<np>
+Miegmaišis
+Nešiojamasis poilsio rinkinys
+<&sleeping_bag>Miegmaišis yra oro sąlygoms atsparus poilsio rinkinys darbui toli nuo lovos.<br>
+<br>
+Naudojimas: Naudok naktį Overworld, kad pailsėtum iki ryto. Jis nenustato ir neperkelia atsiradimo vietos.<br>
+<br>
+Jis neveikia dieną, pavojingoje vietoje su netoliese esančiais monstrais ir saugiam poilsiui netinkamose dimensijose. Kiekvienas sėkmingas poilsis dėvi maišą.
+<np>
+Medžiagų dėžė
+Statybinių atsargų dėžė
+<&material_box>Medžiagų dėžė neša didelę vienos paprastos, nepakeistos ir kraunamos statybinės medžiagos atsargą.<br>
+<br>
+Naudojimas: Laikyk dėžę pagrindinėje rankoje, o medžiagų krūvą kitoje, kad ją pakrautum. Naudok dėžę tuščia kita ranka vienai krūvai išimti.<br>
+<br>
+Joje telpa iki 512 vienos rūšies daiktų. Ji nepriima įdėtų dėžių, nekraunamos įrangos ir pervadintų ar duomenimis pakeistų krūvų; paaiškinimas rodo turinį.
+<np>
+Nardymo oro kapsulė
+Avarinė oro atsarga
+<&diving_capsule>Nardymo oro kapsulė yra avarinė oro atsarga darbui po vandeniu.<br>
+<br>
+Naudojimas: Naudok rankomis orui atkurti. Būdama inventoriuje ji gali automatiškai suveikti, kai oras beveik baigėsi, tada prasideda laukimo laikas.<br>
+<br>
+Nešiok ją į užtvindytas kasyklas, povandenines vamzdynų trasas ir remontuodamas siurblines.
+<np>
+„Muslee“ batonėlių presas
+Maisto presas
+<&musli_bar_press>Muslee batonėlių presas įprastą maistą paverčia kompaktiškais lauko daviniais.<br>
+<br>
+Naudojimas: Turėk duonos, obuolį ir kviečių, meliono, moliūgo, burokėlio arba Industrial Hemp sėklą, tada naudok presą. Sėkmingas spaudimas sunaudoja po vieną, patikrina vietą, pagamina keturis Muslee Melange batonėlius ir pažeidžia presą.<br>
+<br>
+Jei trūksta sudedamosios dalies arba inventoriuje nėra vietos, niekas nesunaudojama.
+<np>
+„Muslee Melange“ energinis batonėlis
+Greitas dirbtuvių užkandis
+<&musli_bar>Muslee Melange energijos batonėlis yra kompaktiškas maistas iš duonos, sėklų ir vaisių.<br>
+<br>
+Naudojimas: valgyk jį išvykose montuodamas valdiklius, vamzdžius, platformas arba ilgas trasas mašinų patalpose.
+<np>
+Minčių spaustuvas
+Patirties kondensatorius
+<&charged_lapis_squeezer>Minčių spaustuvas paverčia vieną lazuritą ir vieną patirties lygį iš tavo inventoriaus įkrautu lazuritu.<br>
+<br>
+Kiekviena sėkminga transformacija sužeidžia naudotoją, didina alkio išsekimą ir trumpam jį apakina. Įrankis atsisako veikti be lazurito, be patirties arba kai naudotojas per arti mirties.
+<np>
+Įkrautas lazuritas
+Sukaupta patirtis
+<&charged_lapis>Įkrautas lazuritas saugo vieną patirties lygį. Suvartok jį, kad atgautum lygį, pašalintum aktyvius poveikius ir atkurtum šiek tiek gyvybių.<br>
+<br>
+Pirmiausia pasigamink minčių spaustuvą; įkrautas lazuritas gaunamas naudojant šį įrankį, kai turi lazurito ir patirties.
+<np>
+Stambūs geležies trupiniai
+Inžinieriaus įrankių medžiaga, naudojama atkurtame gaminimo rinkinyje.
+<&iron_grit>Galima išlydyti į geležies<br>liejinius, tačiau netinka<br>sudėtingesniam medžiagų apdorojimui.
+<np>
+Stambūs aukso trupiniai
+Inžinieriaus įrankių medžiaga, naudojama atkurtame gaminimo rinkinyje.
+<&gold_grit>Galima išlydyti į aukso<br>liejinius, tačiau netinka<br>sudėtingesniam medžiagų apdorojimui.

@@ -1,0 +1,3 @@
+Grof ijzergruis
+Materiaal voor ingenieursgereedschap uit de gereconstrueerde receptenset.
+<&recipe>Kan tot ijzerstaven worden<br>gesmolten, maar is niet geschikt<br>voor geavanceerde materiaalverwerking.

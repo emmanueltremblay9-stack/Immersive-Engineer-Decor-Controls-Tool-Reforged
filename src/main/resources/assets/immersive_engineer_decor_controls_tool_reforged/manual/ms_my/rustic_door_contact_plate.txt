@@ -1,0 +1,7 @@
+Tekanan Pintu Desa
+Denyutan tekanan
+<&recipe>Suis sentuh menghantar isyarat pendek daripada pergerakan lantai atau pintu kolong.<br>
+<br>
+Penggunaan: Letakkan di tempat entiti melalui lorong servis, pemuat atau laluan terkawal.<br>
+<br>
+Nota: Berdenyut seketika selepas sentuhan entiti.

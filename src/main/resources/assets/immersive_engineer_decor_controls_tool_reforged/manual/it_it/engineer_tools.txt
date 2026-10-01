@@ -1,0 +1,99 @@
+Utensili dell’ingegnere
+Attrezzatura portatile d’officina
+La serie di utensili dell’ingegnere aggiunge attrezzi portatili, indicatori per miniere, consumabili d’emergenza, viveri da campo e piccoli ausili per la lavorazione dei materiali allo stesso manuale delle decorazioni e dei comandi.<br>
+<br>
+Questi utensili servono lontano da un’officina attrezzata: segna il percorso, trasporta scorte, rimedia agli errori e completa piccole lavorazioni sul posto.
+<np>
+Utensile REDIA
+Utilità rivestita di diamante
+<&redia_tool>L’utensile REDIA è un attrezzo da campo resistente per rapidi lavori sul terreno. Usalo sul terreno lavorabile per ottenere terra zappata.<br>
+<br>
+Usalo su una faccia stabile mentre porti torce per posare una torcia di segnalazione dall’inventario senza usurare REDIA. Lavorare il terreno, tosare, usare l’ascia e abbattere alberi consumano durabilità.
+<np>
+Martello frantumaminerali
+Utensile di frantumazione manuale
+<&crushing_hammer>Il martello frantumatore di minerali è un utensile manuale per la prima lavorazione di ferro e oro.<br>
+<br>
+Uso: Combinalo con ferro grezzo, oro grezzo, minerale di ferro, minerale di ferro di ardesia profonda, minerale d'oro o minerale d'oro di ardesia profonda per produrre polvere di ferro o d'oro di Immersive Engineering. Il martello perde durabilità e torna nella griglia finché non si rompe.<br>
+<br>
+Si usura anche scavando e può respingere bersagli nel combattimento ravvicinato.
+<np>
+Localizzatore
+Indicatore di posizione memorizzata
+<&tracker>Il localizzatore salva la posizione di un blocco direttamente nell'oggetto.<br>
+<br>
+Uso: Fai clic su un blocco per salvarne dimensione e coordinate. Il suggerimento mostra la posizione memorizzata. Usa il localizzatore da accovacciato per cancellare il bersaglio.<br>
+<br>
+Usalo per segnare macchinari, diramazioni di gallerie, comandi remoti o cantieri incompleti prima di tornare con utensili e materiali.
+<np>
+Carbone di Arianna
+Indicatore di percorso in miniera
+<&ariadne_coal>Il carbone di Arianna posa rapidamente frecce nere sulle facce stabili della miniera. Usalo su una faccia solida per indicare la prossima svolta, l’uscita o una diramazione; supporta otto direzioni sulla faccia selezionata, comprese le diagonali.<br>
+<br>
+Il carbone di Arianna è un utensile riutilizzabile con 100 utilizzi. Ogni indicatore posato consuma un punto di durabilità. Le facce non supportate vengono rifiutate senza usurare l’oggetto.
+<np>
+Stimolatore automatico
+Iniettore d’emergenza
+<&stimpack>L'Auto Stim Pack è uno strumento medico d'emergenza per lavori di manutenzione pericolosi.<br>
+<br>
+Uso: Attivalo manualmente per curarti, ottenere una breve protezione e un breve aumento della velocità. Nell'inventario può anche attivarsi automaticamente quando la salute è bassa, quindi entra in ricarica.<br>
+<br>
+Tienine uno pronto prima di provare posti elevati, cablaggi esposti o percorsi pericolosi in miniera.
+<np>
+Sacco a pelo
+Kit portatile per riposare
+<&sleeping_bag>Il sacco a pelo è un kit da riposo resistente alle intemperie per lavorare lontano da un letto.<br>
+<br>
+Uso: Usalo di notte nell'Overworld per riposare fino al mattino. Non imposta né sposta il punto di generazione.<br>
+<br>
+Rifiuta l'uso diurno, luoghi pericolosi con mostri vicini e dimensioni inadatte a un riposo sicuro. Ogni riposo riuscito consuma il sacco.
+<np>
+Cassa portamateriali
+Cassa per materiali da costruzione
+<&material_box>La cassa dei materiali trasporta una grande scorta di un solo materiale da costruzione semplice, non modificato e impilabile.<br>
+<br>
+Uso: Tieni la cassa nella mano principale e una pila di materiale nella secondaria per caricarla. Usa la cassa con la mano secondaria vuota per estrarre una pila.<br>
+<br>
+Contiene fino a 512 oggetti di un solo tipo. Rifiuta casse annidate, equipaggiamento non impilabile e pile rinominate o con dati modificati; il suggerimento ne mostra il contenuto.
+<np>
+Capsula d’aria subacquea
+Riserva d’aria d’emergenza
+<&diving_capsule>La capsula d'aria da immersione è una riserva d'emergenza per il lavoro subacqueo.<br>
+<br>
+Uso: Usala manualmente per ripristinare l'aria. Se è nell'inventario, può anche attivarsi automaticamente quando l'aria è quasi esaurita, quindi entra in ricarica.<br>
+<br>
+Portala nelle miniere allagate, lungo le tubature sommerse e durante le riparazioni nelle sale pompe.
+<np>
+Pressa per barrette Muslee
+Pressa alimentare
+<&musli_bar_press>La pressa per barrette Muslee trasforma alimenti comuni in razioni da campo compatte.<br>
+<br>
+Uso: Porta pane, una mela e semi di grano, melone, zucca, barbabietola o Industrial Hemp, poi usa la pressa. Una pressatura riuscita consuma un elemento per ingrediente, controlla lo spazio, crea quattro barrette Muslee Melange e danneggia la pressa.<br>
+<br>
+Se manca un ingrediente o l'inventario non ha spazio, non viene consumato nulla.
+<np>
+Barretta energetica Muslee Melange
+Spuntino rapido d’officina
+<&musli_bar>La barretta energetica Muslee Melange è un alimento compatto fatto di pane, semi e frutta.<br>
+<br>
+Uso: mangiala come cibo da campo mentre posi comandi, tubi, piattaforme o lunghe linee nelle sale macchine.
+<np>
+Spremimente
+Condensatore d’esperienza
+<&charged_lapis_squeezer>Lo spremimente trasforma un lapislazzuli e un livello d’esperienza dell’inventario in un lapislazzuli caricato.<br>
+<br>
+Ogni conversione riuscita ferisce, affatica e acceca brevemente l’utilizzatore. Non funziona senza lapislazzuli, senza esperienza o quando l’utilizzatore è troppo vicino alla morte.
+<np>
+Lapislazzuli caricato
+Esperienza conservata
+<&charged_lapis>I lapislazzuli caricati conservano un livello d’esperienza. Consumali per recuperarlo, rimuovere gli effetti attivi e recuperare un po’ di salute.<br>
+<br>
+Fabbrica prima uno spremimente; i lapislazzuli caricati si producono usandolo con lapislazzuli ed esperienza disponibili.
+<np>
+Graniglia di ferro grossolana
+Materiale per utensili dell’ingegnere usato nelle ricette ricostruite.
+<&iron_grit>Si può fondere in lingotti di<br>ferro, ma non è adatta alla<br>lavorazione avanzata dei materiali.
+<np>
+Graniglia d’oro grossolana
+Materiale per utensili dell’ingegnere usato nelle ricette ricostruite.
+<&gold_grit>Si può fondere in lingotti<br>d’oro, ma non è adatta alla<br>lavorazione avanzata dei materiali.

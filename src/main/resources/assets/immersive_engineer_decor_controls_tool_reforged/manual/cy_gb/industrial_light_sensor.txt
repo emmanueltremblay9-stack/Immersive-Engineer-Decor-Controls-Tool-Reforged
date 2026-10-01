@@ -1,0 +1,7 @@
+Synhwyrydd Golau
+Synhwyro signal
+<&recipe>Mae synhwyrydd golau'n troi disgleirdeb lleol yn reolaeth Redstone.<br>
+<br>
+Defnydd: Defnyddiwch ef ar gyfer lampau awtomatig, caeadau a chylchedau gwelededd.<br>
+<br>
+Nodiadau: Mae'n rhoi pŵer ar ddisgleirdeb crai o 8 neu uwch.

@@ -1,0 +1,5 @@
+Sabai-ertzeko argia
+Laneko argi trinkoa
+<&recipe>Bloke honek industria-argiztapen trinkoa eskaintzen du korridoreetarako, pasabideetarako eta lan-guneetarako.<br>
+<br>
+Erabilera: muntatu sabaietan, hormetan edo ertzetan, gelak lanerako argiztapen argia behar duen tokian.<br>

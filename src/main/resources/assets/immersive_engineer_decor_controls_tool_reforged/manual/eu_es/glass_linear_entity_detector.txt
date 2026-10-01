@@ -1,0 +1,7 @@
+Beirazko lerro-detektagailua
+Seinaleak hautematea
+<&recipe>Entitate-detektagailuak inguruko mugimendua behatzen du ageriko zoru-plakarik gabe.<br>
+<br>
+Erabilera: konektatu ateekin, argiekin, alarmekin edo makinen segurtasun-blokeoekin.<br>
+<br>
+Oharrak: blokearen inguruko eremu txiki bat aztertzen du.

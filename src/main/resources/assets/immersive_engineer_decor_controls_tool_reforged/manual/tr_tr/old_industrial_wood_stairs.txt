@@ -1,0 +1,5 @@
+Eski Ahşap Merdiven
+Eskimiş atölye ahşabı
+<&recipe>Eski sanayi tipi ahşap merdiven; zeminler, basamaklar, kapılar ve sıcak görünümlü iç süslemeler için eskimiş atölye ahşabı ekler.<br>
+<br>
+Kullanım: Eski atölye zeminlerinde, merdivenlerde, kapılarda ve süslemelerde kullanın.<br>

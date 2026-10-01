@@ -1,0 +1,7 @@
+Turnolevero
+Redstonea regado
+<&recipe>Kompakta regilo donas klare identigebla redstonea komutopunkto a fabrikkonstrukti.<br>
+<br>
+Uzo: Klikez dextre por alternar ekiro ye plena forteso por apuda cirkuiti.<br>
+<br>
+Noti: Ol emisas redstoneo ye plena forteso dum aktigita.

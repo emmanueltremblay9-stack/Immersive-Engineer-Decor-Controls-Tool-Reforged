@@ -1,0 +1,5 @@
+"Şaxta xəbərdarlığı" nişanı
+Təhlükə nişanı
+<&recipe>"Şaxta xəbərdarlığı" nişanı təhlükələri, çıxışları və iş zonalarını zavod təhlükəsizliyinə uyğun vizual işarə ilə göstərir.<br>
+<br>
+İstifadə: Təhlükələrin, çıxışların, maşınların və məhdud girişli zonaların yanına qoyun.<br>

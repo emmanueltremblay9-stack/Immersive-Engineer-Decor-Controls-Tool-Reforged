@@ -1,0 +1,7 @@
+Linjär glasdetektor
+Signalavkänning
+<&recipe>En entitetsdetektor övervakar närliggande rörelser utan någon synlig golvplatta.<br>
+<br>
+Användning: Koppla den till dörrar, lampor, larm eller maskinförreglingar.<br>
+<br>
+Anmärkning: Söker av ett litet område runt blocket.

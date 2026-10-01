@@ -1,0 +1,5 @@
+Makinë mjeljeje
+Pajisje ndihmëse punishteje
+<&recipe>Makina e vogël e mjeljes është bllok ndihmës punishteje për punim, ruajtje, vendosje, thyerje, mbledhje ose automatizim kompakt.<br>
+<br>
+Përdorimi: vendose pranë lopëve dhe siguro një mënyrë për të nxjerrë enët e qumështit ose lëngun.<br>

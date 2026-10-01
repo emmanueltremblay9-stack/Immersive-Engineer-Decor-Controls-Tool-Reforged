@@ -1,0 +1,7 @@
+Pendeteksi Blok
+Pengindraan sinyal
+<&recipe>Pendeteksi blok memeriksa apakah ruang yang dihadapinya terisi.<br>
+<br>
+Penggunaan: arahkan ke sisi mesin, penampung sementara, atau ruang yang dijaga untuk diamati.<br>
+<br>
+Catatan: mengeluarkan daya ketika blok di depannya bukan udara.

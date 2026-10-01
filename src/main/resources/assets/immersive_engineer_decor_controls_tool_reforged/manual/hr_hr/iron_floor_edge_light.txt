@@ -1,0 +1,5 @@
+Ugradbeno svjetlo za rub poda
+Kompaktno radno svjetlo
+<&recipe>Ovaj blok daje kompaktnu industrijsku rasvjetu za hodnike, servisne staze i radne prostore.<br>
+<br>
+Uporaba: postavi ga na strop, zid ili rub gdje prostoriji treba jasna radna rasvjeta.<br>

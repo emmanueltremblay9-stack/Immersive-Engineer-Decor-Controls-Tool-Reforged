@@ -1,0 +1,5 @@
+Ceduľa „Nebezpečenstvo požiaru“
+Značka nebezpečenstva
+<&recipe>Ceduľa „Nebezpečenstvo požiaru“ označuje nebezpečenstvá, východy a pracovné zóny zrozumiteľným továrenským bezpečnostným značením.<br>
+<br>
+Použitie: Umiestni ju pri nebezpečných miestach, východoch, strojoch a zónach s obmedzeným vstupom.<br>

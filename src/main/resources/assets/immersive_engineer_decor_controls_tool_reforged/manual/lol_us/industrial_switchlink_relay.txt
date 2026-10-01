@@ -1,0 +1,7 @@
+Switchy Link Relay Thing
+Linky controlz
+<&recipe>Relay-shaped fitting gives panel buildz a lil local switch spot, kitty.<br>
+<br>
+How to: Right-click fer togglin full-strength output to nearby circuits. Use receiver blukz when u needs linked-perl activation, meow.<br>
+<br>
+Kitty note: Gives full-strength redstone while switched YISS.

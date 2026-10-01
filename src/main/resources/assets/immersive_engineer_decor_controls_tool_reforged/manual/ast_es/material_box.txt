@@ -1,0 +1,7 @@
+Caxa de materiales
+Suministros de construcción
+<&recipe>La Caxa de materiales lleva una gran reserva d'un únicu material de construcción normal, ensin modificar y apilable.<br>
+<br>
+Usu: Ten la caxa na mano principal y una pila del material na secundaria pa cargalu. Usa la caxa cola secundaria balera pa sacar una pila.<br>
+<br>
+Guarda hasta 512 oxetos, solo un tipu cada vegada, y refuga caxes anidiaes, equipu non apilable y piles modificaes, nomaes o con datos; la descripción amuesa'l conteníu.

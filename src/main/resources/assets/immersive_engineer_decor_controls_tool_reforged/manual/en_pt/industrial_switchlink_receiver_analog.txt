@@ -1,0 +1,7 @@
+Analog receiver fer links
+Orders through a link
+<&recipe>A linked receiver gives yer control panels a visible target to reach from afar.<br>
+<br>
+Orders: Click her with a pearl o' ender to make a linked pearl. Creep while usin' that pearl to trigger the receiver from afar.<br>
+<br>
+Mind ye: This receiver sends redstone at full strength when triggered.

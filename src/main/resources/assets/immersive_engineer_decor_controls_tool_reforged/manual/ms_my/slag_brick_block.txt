@@ -1,0 +1,5 @@
+Blok Bata Sanga
+Binaan batu kilang padat
+<&recipe>Blok ini menambah binaan batu kelabu perang padat untuk asas, tembok penahan dan bangsal kerja lama.<br>
+<br>
+Penggunaan: Gunakan untuk asas lama, tembok penahan dan lantai kilang kotor.<br>

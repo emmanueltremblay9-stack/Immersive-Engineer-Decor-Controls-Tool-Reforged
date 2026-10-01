@@ -1,0 +1,5 @@
+Molzni stroj
+Tovarniški pripomoček
+<&recipe>Majhen molzni stroj je tovarniški pripomoček za izdelavo, shranjevanje, postavljanje, razbijanje, zbiranje ali kompaktno avtomatizacijo.<br>
+<br>
+Uporaba: Postavi ga blizu krav in zagotovi odvajanje posod z mlekom ali fluida.<br>

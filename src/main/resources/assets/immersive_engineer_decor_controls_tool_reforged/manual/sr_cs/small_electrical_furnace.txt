@@ -1,0 +1,5 @@
+Električna peć
+Kompaktna jedinica za obradu
+<&recipe>Električna peć obavlja kompaktne poslove topljenja na FE energiju u malom radioničkom prostoru.<br>
+<br>
+Upotreba: obezbedi FE i valjan materijal za topljenje.<br>

@@ -1,0 +1,7 @@
+Pearl fer a switch link
+Orders through a link
+<&recipe>A linked pearl remembers a receiver target fer factory controls that reach afar.<br>
+<br>
+Orders: Click a switch-link receiver with a pearl o' ender to make one. Creep while usin' the linked pearl to trigger the receiver she's remembered.<br>
+<br>
+Mind ye: The target must be loaded, in yer own dimension and within range.

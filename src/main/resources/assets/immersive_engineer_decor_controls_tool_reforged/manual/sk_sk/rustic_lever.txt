@@ -1,0 +1,7 @@
+Rustikálna páka
+Redstonové riadenie
+<&recipe>Kompaktný ovládací prvok poskytuje továrenským stavbám prehľadné miesto redstonového spínania.<br>
+<br>
+Použitie: Pravým tlačidlom prepínaj výstup plnej sily pre blízke obvody.<br>
+<br>
+Poznámky: Keď je zapnutý, vysiela redstone plnej sily.

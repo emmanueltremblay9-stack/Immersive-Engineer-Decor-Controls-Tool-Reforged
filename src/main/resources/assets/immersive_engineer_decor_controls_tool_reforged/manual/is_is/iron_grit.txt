@@ -1,0 +1,3 @@
+Gróft járnkurl
+Verkfæraefni verkfræðings sem er notað í endurgerðu smíðasafni.
+<&recipe>Má bræða í járnhleifa,<br>en hentar ekki fyrir<br>háþróaða efnisvinnslu.

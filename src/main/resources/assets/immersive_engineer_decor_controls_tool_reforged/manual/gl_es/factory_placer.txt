@@ -1,0 +1,5 @@
+Colocador de bloques de fábrica
+Equipamento de planta
+<&recipe>Este bloque coloca bloques das existencias internas cando se activa.<br>
+<br>
+Uso: apunta a cara de traballo cara ao espazo de destino e introduce pilas que se poidan colocar.<br>

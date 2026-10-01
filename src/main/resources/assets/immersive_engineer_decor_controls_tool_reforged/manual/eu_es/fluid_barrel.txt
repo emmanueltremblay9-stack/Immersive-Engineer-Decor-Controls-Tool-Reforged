@@ -1,0 +1,5 @@
+Fluido-upela
+Fluido-lineako ekipamendua
+<&recipe>Osagarri hau fluido-lineako pieza trinkoa da depositu txikietarako, hodietarako, bilketa-puntuetarako eta redstonez kontrolatutako emarietarako.<br>
+<br>
+Erabilera: jarri hodiek edo ontziek deposituaren aurpegira iristeko modua duten tokian.<br>

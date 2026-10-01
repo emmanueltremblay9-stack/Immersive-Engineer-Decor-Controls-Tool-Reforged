@@ -1,0 +1,5 @@
+Labelled Crate
+Stock Label to Alter
+<&recipe>This labelled crate serves clear sorting in thy stockroom. Its front plate may be altered as a little workshop sign.<br>
+<br>
+Use: Right-click the label plate to alter the crate’s label. Right-click the rest of the crate to open storage for fittings, parts and supplies for upkeep.<br>

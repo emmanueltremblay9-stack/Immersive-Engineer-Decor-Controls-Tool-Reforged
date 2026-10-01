@@ -1,0 +1,7 @@
+Capsule d'ére de pllonjée
+Réserve d'ére de secours
+<&recipe>La capsule d'air de pllonjëe ét eune réserve d'urgence pour l'ouvraije dessou l'iao.<br>
+<br>
+Usaije : Servez-vous-en a la main pour remettr l'air. Den l'inventaire, elle peut etout se décllencher toute soule cant l'air ét presq'épuisë, pis elle entre en recharge.<br>
+<br>
+Portez-la pour les mines noyées, les lignes de tuyaux sous l'iao e les racomodaijes des salles de pompes.

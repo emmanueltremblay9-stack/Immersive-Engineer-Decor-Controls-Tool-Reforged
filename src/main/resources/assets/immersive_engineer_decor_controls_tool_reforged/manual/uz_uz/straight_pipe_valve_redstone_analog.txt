@@ -1,0 +1,5 @@
+Analog suyuqlik klapani
+Suyuqlik liniyasi jihozi
+<&recipe>Analog suyuqlik klapani kichik baklar, quvur yo'llari, yig'ish nuqtalari va redstone boshqaradigan oqim uchun ixcham suyuqlik liniyasi qismidir.<br>
+<br>
+Ishlatish: klapanni kerakli oqim yo'nalishiga tekislang.<br>

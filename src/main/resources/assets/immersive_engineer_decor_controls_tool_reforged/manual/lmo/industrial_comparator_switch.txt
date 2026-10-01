@@ -1,0 +1,7 @@
+Interutor comparador
+Segnal del bloch de suport
+<&recipe>Un interutor a sensor piscinin el legg el bloch in su indove l’è montad e el trasforma quella letura lì in una sortida sempliza del panell.<br>
+<br>
+Montel in su inventari, serbatoi o aparecc de prejarossa. Quand che el bloch de suport el dà una sortida de comparador, de contenidor o de prejarossa, l’interutor el manda prejarossa a piena potenza.<br>
+<br>
+Dovrel per trasformà i nivei di riserve o i fil scondud in linee de comand ciar de pizzà o smorzà.

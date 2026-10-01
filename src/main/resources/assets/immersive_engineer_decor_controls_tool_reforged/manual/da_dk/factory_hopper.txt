@@ -1,0 +1,5 @@
+Fabrikstragt
+Hjælpemiddel til værkstedsgulvet
+<&recipe>Denne blok flytter genstandsstakke gennem et mere kompakt industrikabinet.<br>
+<br>
+Brug: Ret den mod lagerlinjen, og indstil rækkevidde, stakantal, tidsforløb og redstonetilstand på skærmen.<br>

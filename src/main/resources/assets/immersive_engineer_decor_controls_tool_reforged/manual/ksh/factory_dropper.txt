@@ -1,0 +1,5 @@
+Fabrikusjevver
+Werkstatthölp
+<&recipe>Heh dä Block jit jelajerte Dinge durch en uusjerichte Sigg uß.<br>
+<br>
+Bruuch: Richt de Vürsigg op dä Ußjaavplätz, föll de ennere Fächer un stell Kraft, Winkel, Verzögerung, Filterlogik un Redstone-Aat em Menü en.<br>

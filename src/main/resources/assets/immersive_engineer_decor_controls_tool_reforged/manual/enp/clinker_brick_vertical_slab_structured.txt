@@ -1,0 +1,5 @@
+Upright Clinker Halfclot
+Soot-dark tilework
+<&recipe>The Grained Upright Clinker Halfclot brings soot-darkened tilework to kiln halls, smokestack feet and upkeep walls.<br>
+<br>
+Use: Build walls, edging or hot-area shells around kilns and boilers.<br>

@@ -1,0 +1,5 @@
+Sinal «Risco radioactivo»
+Marcador de risco
+<&recipe>O sinal «Risco radioactivo» marca riscos, saídas e zonas de traballo cunha indicación visual de seguridade industrial.<br>
+<br>
+Uso: colócao xunto a riscos, saídas, máquinas e zonas restrinxidas.<br>

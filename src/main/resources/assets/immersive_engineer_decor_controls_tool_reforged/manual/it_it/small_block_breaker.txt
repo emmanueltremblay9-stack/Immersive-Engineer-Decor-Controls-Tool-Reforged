@@ -1,0 +1,5 @@
+Demolitore di blocchi
+Attrezzatura per la fabbrica
+<&recipe>Il piccolo demolitore di blocchi appartiene alla famiglia di attrezzature da fabbrica per fabbricazione, deposito, posizionamento, demolizione, raccolta o automazione compatta.<br>
+<br>
+Uso: rivolgi la faccia operativa verso il blocco da rimuovere.<br>

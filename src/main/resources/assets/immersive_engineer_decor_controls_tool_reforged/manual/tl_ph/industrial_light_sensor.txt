@@ -1,0 +1,7 @@
+Pandama ng Liwanag
+Pagdama ng signal
+<&recipe>Ginagawang kontrol ng redstone ng pandama ng liwanag ang liwanag sa kinalalagyan nito.<br>
+<br>
+Paggamit: Gamitin para sa awtomatikong ilaw, takip ng bintana at mga sirkito para sa pagkakita.<br>
+<br>
+Tandaan: Nagbibigay ng signal kapag ang hilaw na antas ng liwanag ay 8 o mas mataas.

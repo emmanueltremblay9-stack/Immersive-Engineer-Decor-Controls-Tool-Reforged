@@ -1,0 +1,5 @@
+Piazzatore di blocchi industriale
+Attrezzatura per la fabbrica
+<&recipe>Questo blocco posa i blocchi delle scorte interne quando viene attivato.<br>
+<br>
+Uso: rivolgi la faccia operativa verso lo spazio bersaglio e carica pile di blocchi posabili.<br>

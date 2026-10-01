@@ -1,0 +1,5 @@
+Łabaratornaja pieč
+Kampaktnaja pierapracoŭčaja pryłada
+<&recipe>Łabaratornaja pieč vykonvaje kampaktnyja zadanni pierapłaŭki na cviordym palivie, zajmajučy mała miesca ŭ majsterni.<br>
+<br>
+Vykarystannie: užyvaj cviordaje paliva dla pierapłaŭki małych partyj.<br>

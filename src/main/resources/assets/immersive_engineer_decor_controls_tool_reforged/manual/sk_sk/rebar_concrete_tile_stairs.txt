@@ -1,0 +1,5 @@
+Železobetónová dlaždica
+Vystužený betón
+<&recipe>Schody zo železobetónových dlaždíc sú spevnené betónové diely na podstavce strojov, protivýbuchové steny a podlahy nakladacích priestorov.<br>
+<br>
+Použitie: Použi ho pod strojmi, pozdĺž servisných chodieb alebo všade tam, kde stavba potrebuje vystužený základ.<br>

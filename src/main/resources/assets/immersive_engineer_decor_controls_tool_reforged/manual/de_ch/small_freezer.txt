@@ -1,0 +1,5 @@
+Wassergefrierer
+Kompakti Verarbeitigseinheit
+<&recipe>De Wassergefrierer erledigt kompakti Chüelarbeite i energieversorgte Flüssigkeitsaalage.<br>
+<br>
+Verwendig: Gib em Wasser und Energie, demit Eis stuufewiis entsteht.<br>

@@ -1,0 +1,7 @@
+Vugolj Ariadne
+Označatelj puti v rudniku
+<&recipe>Vugolj Ariadne jest bystry označatelj putij dlja šaht, razvětvenyh rudničnyh hodnikov i vrěmennogo podzemnogo děla.<br>
+<br>
+Upotrěbjenje: Upotrěbi go na stabilnoj straně bloka dlja stavjanja črnoj strělnoj značky na toj straně. Značka čitaje kliknutu točku na povrhnosti i poddrživaje vosem směrov, uključajuči diagonalne. To pomagaje označati obraty, izhody, slěpe konce i dostavne puti bez nošenja osobnyh znakov.<br>
+<br>
+Vugolj Ariadne jest ponovno upotrěbimo označateljno orudje s 100 upotrěbjenjami. Vsako uspěšno stavjanje značky potrěbuje jednu jedinicu trajnosti; nepoddržane strany se odmětajut bez sniženja trajnosti prědmeta.

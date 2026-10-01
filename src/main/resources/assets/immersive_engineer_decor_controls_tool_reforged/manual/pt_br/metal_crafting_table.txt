@@ -1,0 +1,7 @@
+Bancada de trabalho de metal
+Estação de fabricação de placas
+<&recipe>A bancada de metal tem espaço para martelo, grade completa 3x3 e saída.<br>
+<br>
+Use a grade como uma bancada comum. Para placas IE, coloque o martelo do engenheiro no espaço da ferramenta, o material na grade e retire a placa na saída.<br>
+<br>
+Decorações de aço usam placas de aço formadas nesta bancada.

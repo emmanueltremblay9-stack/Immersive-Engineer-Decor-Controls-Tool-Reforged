@@ -1,0 +1,7 @@
+Switch Link Receiver
+Linked control
+<&recipe>A linked receiver gives remote panels a full-strength redstone target.<br>
+<br>
+Usage: Click it with an Ender Pearl to create a linked pearl. Right-click the receiver directly to toggle it by hand.<br>
+<br>
+Notes: A linked pearl toggles this receiver when sneak-used.

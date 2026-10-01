@@ -1,0 +1,5 @@
+Offal Burner
+Small working loom
+<&recipe>The Offal Burner destroys unwanted things in little workshop room.<br>
+<br>
+Use: Feed only unwanted things into its waiting row.<br>

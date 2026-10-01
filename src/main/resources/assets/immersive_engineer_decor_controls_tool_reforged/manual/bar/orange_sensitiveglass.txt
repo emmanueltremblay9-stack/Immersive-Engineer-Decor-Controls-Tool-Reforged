@@ -1,0 +1,7 @@
+Oranges empfindlichs Glos
+Signalglas
+<&recipe>A Glosblock, der auf Redstone reagiert, lasst den Durchblick frei und zeigt dabei den Signalzustand.<br>
+<br>
+So geht's: Nutz'n in Steuerraumfenster, leuchtenden Paneele und gschützten Fabrikverglosungen.<br>
+<br>
+Hinweis: Ändert sein Zustand durch Redstone-Energie in da Näh.

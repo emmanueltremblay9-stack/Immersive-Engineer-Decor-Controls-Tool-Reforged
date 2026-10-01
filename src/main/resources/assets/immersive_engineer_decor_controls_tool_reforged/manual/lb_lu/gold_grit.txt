@@ -1,0 +1,3 @@
+Graff Goldkären
+Ingenieursgeschiermaterial fir den rekonstruéierten Handwierkssaz.
+<&recipe>Kann zu Goldbarre geschmolt<br>ginn, eegent sech awer net fir<br>fortgeschratt Materialveraarbechtung.

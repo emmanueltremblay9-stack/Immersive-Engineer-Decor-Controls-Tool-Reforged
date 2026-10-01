@@ -1,0 +1,7 @@
+Impulsli aloqa qabul qilgichi
+Bog'langan boshqaruv
+<&recipe>Bog'langan impuls qabul qilgich masofaviy panellar uchun qisqa muddatli redstone ishga tushirish signalini beradi.<br>
+<br>
+Ishlatish: bog'langan inju yaratish uchun ender injusi bilan bosing. Qisqa impuls chiqarish uchun o'ng tugmani bosing yoki bog'langan injuni ishga tushiring.<br>
+<br>
+Eslatma: belgilangan muddat tugagach, impuls o'z-o'zidan dastlabki holatga qaytadi.

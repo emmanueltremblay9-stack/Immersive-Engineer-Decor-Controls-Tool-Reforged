@@ -1,0 +1,5 @@
+Blockbreker
+Wiärksteedhülp
+<&recipe>De lütte Blockbreker is en Wiärksteedhülpsblock för Handwiärk, Lagern, Setten, Breken, Sammeln oder lütte Automatisering.<br>
+<br>
+Bruuk: Richt de Wiärksiet op den Block, de wegschall.<br>

@@ -1,0 +1,5 @@
+Porta de madeira industrial vella
+Madeira envellecida de obradoiro
+<&recipe>Este bloque engade madeira envellecida de obradoiro para chans, chanzos, portas e remates interiores acolledores.<br>
+<br>
+Uso: úsao en chans, escaleiras, portas e remates de obradoiros antigos.<br>

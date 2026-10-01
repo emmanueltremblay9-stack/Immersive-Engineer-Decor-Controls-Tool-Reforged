@@ -1,0 +1,7 @@
+Orangë sensibelt Glas
+Signalglas
+<&recipe>E Glasblock, deen op Redstone reagéiert, léisst d'Vue fräi a weist gläichzäiteg de Signalzoustand.<br>
+<br>
+Benotzung: Benotz en a Kontrollraumfënsteren, beliichte Steierbrieder a geschütztem Fabrickglas.<br>
+<br>
+Hiweiser: Ännert den Zoustand duerch Redstone-Stroum an der Géigend.

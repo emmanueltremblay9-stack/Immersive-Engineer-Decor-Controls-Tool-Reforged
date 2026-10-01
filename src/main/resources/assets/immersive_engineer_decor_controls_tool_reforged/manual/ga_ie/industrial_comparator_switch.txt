@@ -1,0 +1,7 @@
+Lasc Comparadóra
+Comhartha ceangailte
+<&recipe>Léann lasc dlúth braiteora an bloc ar a bhfuil sé suite agus tiontaíonn sé an léamh sin ina aschur simplí painéil.<br>
+<br>
+Úsáid: suiteáil ar fhardail, umair nó crua-earraí Redstone é. Nuair a thuairiscíonn an bloc ceangailte aschur comparadóra, coimeádáin nó Redstone, astaíonn an lasc Redstone lán-neart.<br>
+<br>
+Nótaí: úsáid é chun leibhéil stórála nó sreangú ceilte a thiontú ina línte soiléire rialaithe air/as.

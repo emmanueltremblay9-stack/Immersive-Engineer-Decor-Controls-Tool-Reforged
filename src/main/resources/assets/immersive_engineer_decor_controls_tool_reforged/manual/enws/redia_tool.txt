@@ -1,0 +1,7 @@
+REDIA Tool
+Utility Clad in Diamond
+<&recipe>The REDIA Tool is a durable implement of diamond grade for many field labours about temporary sites, workshops and mine entrances.<br>
+<br>
+Use: Whilst bearing torches, set one torch from thy inventory without wearing REDIA. Sneak-use it to shear plants or change ground in turn through Dirt, Ploughed Dirt, Coarse Dirt and Path of Loose Soil. The original fallback to axe work applies from the bottom face. Sneak whilst breaking logs to fell the joined tree blocks.<br>
+<br>
+Mend it with diamonds. Mending a fully repaired REDIA Tool beyond full repair restores the original progression of Efficacy Charm and Nature’s Fortune.

@@ -1,0 +1,5 @@
+Gainmheach ghreabhail dhlùth
+Còmhdach talmhainn làraich-obrach
+<&recipe>Bheir am bloca seo uachdar dùmhlaichte, air a stampadh, do dh'àiteachan-obrach a-muigh.<br>
+<br>
+Cleachdadh: cuir e timcheall air dorsan luchdachaidh, tancaichean a-muigh agus clòsan innealan.<br>

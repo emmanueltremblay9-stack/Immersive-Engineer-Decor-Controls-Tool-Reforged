@@ -1,0 +1,7 @@
+Saco par dormir
+Equipamento par riposar in giro
+<&recipe>El saco a pelo xe un kit resistente al tempo par riposar distante da un leto.<br>
+<br>
+Doparalo de note nel Overworld par riposar fin matina senza cambiar el punto de rinascita.<br>
+<br>
+No el funsiona de giorno, co mostri visini o in dimension sbaglià. Ogni riposo lo consuma.

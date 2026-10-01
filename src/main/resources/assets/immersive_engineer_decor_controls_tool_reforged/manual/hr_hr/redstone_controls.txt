@@ -1,0 +1,789 @@
+Redstone upravljanje
+Mjerači i signalna oprema
+Upravljački uređaji pretvaraju skriveni redstone u pregledne tvorničke panele, senzore, pokazivače, prekidače, alarme i povezane signalne dijelove.<br>
+<br>
+Koristi ove stranice pri gradnji upravljačkih mjesta, signalnih ploča, sigurnosnih sklopova i daljinskih komandi.
+<np>
+Meta za strijele
+Kratkotrajni impuls
+<&arrow_target>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Senzor vrata
+Redstone upravljanje
+<&door_sensor_switch>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Tipka dizala
+Redstone upravljanje
+<&elevator_button>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Staklena tipka
+Redstone upravljanje
+<&glass_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Staklena tipka
+Redstone upravljanje
+<&glass_small_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Staklena dodirna tipka
+Redstone upravljanje
+<&glass_touch_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Strojna tipka
+Redstone upravljanje
+<&industrial_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Tipka
+Redstone upravljanje
+<&industrial_double_pole_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Zaštićena strojna tipka
+Redstone upravljanje
+<&industrial_fenced_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Tipka na kucanje
+Redstone upravljanje
+<&industrial_knock_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Starinska ukrasna tipka
+Redstone upravljanje
+<&oldfancy_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Starinska ukrasna tipka
+Redstone upravljanje
+<&oldfancy_small_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Starinska ukrasna lančana tipka
+Kratkotrajni impuls
+<&oldfancy_spring_reset_chain>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Rustikalna tipka
+Redstone upravljanje
+<&rustic_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Rustikalna tipka s čavlom
+Redstone upravljanje
+<&rustic_nail_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Mala rustikalna tipka
+Redstone upravljanje
+<&rustic_small_button>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Rustikalna lančana tipka
+Kratkotrajni impuls
+<&rustic_spring_reset_chain>Kratkotrajni prekidač daje jasan redstone impuls pune snage.<br>
+<br>
+Uporaba: koristi ga za pokretanje strojeva, otvaranje vrata, alarme ili jednokratne sklopove.<br>
+<br>
+Napomene: vraća se u početno stanje nakon zadanog impulsa.
+<np>
+Staklena kontaktna ploča
+Tlačni impuls
+<&glass_contact_mat>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Stakleni kontakt za vrata
+Tlačni impuls
+<&glass_door_contact_mat>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Kontaktna prostirka
+Tlačni impuls
+<&industrial_contact_mat>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Kontaktna prostirka za vrata
+Tlačni impuls
+<&industrial_door_contact_mat>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Detektor prolaska
+Otkrivanje signala
+<&industrial_fallthrough_detector>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Nožna tipka
+Redstone upravljanje
+<&industrial_foot_button>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Industrijski poklopac na udar
+Tlačni impuls
+<&industrial_high_sensitive_trapdoor>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Kontaktna prostirka na udar
+Tlačni impuls
+<&industrial_shock_sensitive_contact_mat>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Poklopac na udar
+Tlačni impuls
+<&industrial_shock_sensitive_trapdoor>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Crvena signalna biljka
+Tlačni impuls
+<&red_power_plant>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Rustikalna tlačna ploča
+Tlačni impuls
+<&rustic_contact_plate>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Rustikalni tlak za vrata
+Tlačni impuls
+<&rustic_door_contact_plate>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Rustikalni detektor pada
+Otkrivanje signala
+<&rustic_fallthrough_detector>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Rustikalni poklopac na udar
+Tlačni impuls
+<&rustic_high_sensitive_trapdoor>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Rustikalna ploča na udar
+Tlačni impuls
+<&rustic_shock_sensitive_plate>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Rustikalni poklopac na udar
+Tlačni impuls
+<&rustic_shock_sensitive_trapdoor>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Žuta signalna biljka
+Tlačni impuls
+<&yellow_power_plant>Kontaktni prekidač šalje kratki signal pri pomicanju na podu ili poklopcu.<br>
+<br>
+Uporaba: postavi ga gdje entiteti prolaze servisnim prolazom, utovarivačem ili zaštićenim putem.<br>
+<br>
+Napomene: kratko pulsira nakon dodira entiteta.
+<np>
+Stakleni dnevni vremenski prekidač
+Signal dnevnog svjetla
+<&glass_day_timer>Vremenski prekidač prati dnevni dio ciklusa svijeta.<br>
+<br>
+Uporaba: koristi ga za dvorišna svjetla, zatvarače i tvorničko upravljanje koje radi samo danju.<br>
+<br>
+Napomene: potrebna je dimenzija s nebeskim svjetlom.
+<np>
+Stakleni detektor entiteta
+Otkrivanje signala
+<&glass_entity_detector>Detektor entiteta promatra obližnje kretanje bez vidljive podne ploče.<br>
+<br>
+Uporaba: spoji ga na vrata, svjetla, alarme ili sigurnosne blokade strojeva.<br>
+<br>
+Napomene: pregledava malo područje oko bloka.
+<np>
+Stakleni intervalni signal
+Vremenski impuls
+<&glass_interval_timer>Kompaktni vremenski prekidač daje redstone impuls prema rasporedu.<br>
+<br>
+Uporaba: koristi ga gdje mali mehanizam treba povremeno ili odgođeno upravljanje.<br>
+<br>
+Napomene: koristi redstone impulse prema rasporedu.
+<np>
+Stakleni linijski detektor
+Otkrivanje signala
+<&glass_linear_entity_detector>Detektor entiteta promatra obližnje kretanje bez vidljive podne ploče.<br>
+<br>
+Uporaba: spoji ga na vrata, svjetla, alarme ili sigurnosne blokade strojeva.<br>
+<br>
+Napomene: pregledava malo područje oko bloka.
+<np>
+Detektor blokova
+Otkrivanje signala
+<&industrial_block_detector>Detektor blokova provjerava je li prostor ispred njega zauzet.<br>
+<br>
+Uporaba: usmjeri ga prema strani stroja, spremniku ili zaštićenom prostoru koji treba nadzirati.<br>
+<br>
+Napomene: uključuje se kada blok ispred njega nije zrak.
+<np>
+Dnevni vremenski prekidač
+Signal dnevnog svjetla
+<&industrial_day_timer>Vremenski prekidač prati dnevni dio ciklusa svijeta.<br>
+<br>
+Uporaba: koristi ga za dvorišna svjetla, zatvarače i tvorničko upravljanje koje radi samo danju.<br>
+<br>
+Napomene: potrebna je dimenzija s nebeskim svjetlom.
+<np>
+Detektor entiteta
+Otkrivanje signala
+<&industrial_entity_detector>Detektor entiteta promatra obližnje kretanje bez vidljive podne ploče.<br>
+<br>
+Uporaba: spoji ga na vrata, svjetla, alarme ili sigurnosne blokade strojeva.<br>
+<br>
+Napomene: pregledava malo područje oko bloka.
+<np>
+Intervalni vremenski prekidač
+Vremenski impuls
+<&industrial_interval_timer>Kompaktni vremenski prekidač daje redstone impuls prema rasporedu.<br>
+<br>
+Uporaba: koristi ga gdje mali mehanizam treba povremeno ili odgođeno upravljanje.<br>
+<br>
+Napomene: koristi redstone impulse prema rasporedu.
+<np>
+Senzor svjetlosti
+Otkrivanje signala
+<&industrial_light_sensor>Senzor svjetlosti pretvara lokalnu svjetlinu u redstone upravljanje.<br>
+<br>
+Uporaba: koristi ga za automatska svjetla, zatvarače i sklopove vidljivosti.<br>
+<br>
+Napomene: uključuje se pri neobrađenoj svjetlini od 8 ili više.
+<np>
+Detektor oluje
+Otkrivanje signala
+<&industrial_lightning_sensor>Senzor oluje aktivira upozorenja tijekom grmljavine.<br>
+<br>
+Uporaba: postavi ga pod otvoreno nebo i spoji na svjetla ili alarme.<br>
+<br>
+Napomene: potrebni su grmljavina i otvoren pristup nebu.
+<np>
+Linijski detektor entiteta
+Otkrivanje signala
+<&industrial_linear_entity_detector>Detektor entiteta promatra obližnje kretanje bez vidljive podne ploče.<br>
+<br>
+Uporaba: spoji ga na vrata, svjetla, alarme ili sigurnosne blokade strojeva.<br>
+<br>
+Napomene: pregledava malo područje oko bloka.
+<np>
+Senzor kiše
+Otkrivanje signala
+<&industrial_rain_sensor>Vremenski senzor pretvara kišu na svojem položaju u redstone signal.<br>
+<br>
+Uporaba: postavi ga gdje blok iznad može primati kišu.<br>
+<br>
+Napomene: provjerava kišu iznad senzora.
+<np>
+Bistabilni stakleni prekidač
+Redstone upravljanje
+<&glass_rotary_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Bistabilni stakleni dodir
+Redstone upravljanje
+<&glass_touch_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Narančasto osjetljivo staklo
+Signalno staklo
+<&orange_sensitiveglass>Stakleni blok osjetljiv na redstone zadržava pogled i prikazuje stanje signala.<br>
+<br>
+Uporaba: koristi ga za prozore upravljačke sobe, osvijetljene panele i zaštićeno tvorničko ostakljenje.<br>
+<br>
+Napomene: mijenja stanje prema obližnjem redstone signalu.
+<np>
+Svijetleće osjetljivo staklo
+Signalno staklo
+<&sensitive_glass_block>Stakleni blok osjetljiv na redstone zadržava pogled i prikazuje stanje signala.<br>
+<br>
+Uporaba: koristi ga za prozore upravljačke sobe, osvijetljene panele i zaštićeno tvorničko ostakljenje.<br>
+<br>
+Napomene: mijenja stanje prema obližnjem redstone signalu.
+<np>
+Obojeno osjetljivo staklo
+Signalno staklo
+<&stained_sensitiveglass>Stakleni blok osjetljiv na redstone zadržava pogled i prikazuje stanje signala.<br>
+<br>
+Uporaba: koristi ga za prozore upravljačke sobe, osvijetljene panele i zaštićeno tvorničko ostakljenje.<br>
+<br>
+Napomene: mijenja stanje prema obližnjem redstone signalu.
+<np>
+Stakleni stupčasti mjerač
+Mjerač signala
+<&glass_vertical_bar_gauge>Kompaktni mjerač za upravljačku sobu jasno prikazuje jačinu redstonea na panelu.<br>
+<br>
+Uporaba: postavi ga gdje se obližnji redstone signal treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: očitava obližnju jačinu redstonea od 0 do 15.
+<np>
+Analogni mjerač
+Mjerač signala
+<&industrial_analog_angular_gauge>Kompaktni mjerač za upravljačku sobu jasno prikazuje jačinu redstonea na panelu.<br>
+<br>
+Uporaba: postavi ga gdje se obližnji redstone signal treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: očitava obližnju jačinu redstonea od 0 do 15.
+<np>
+Voltmetarski mjerač
+Mjerač signala
+<&industrial_analog_horizontal_gauge>Kompaktni mjerač za upravljačku sobu jasno prikazuje jačinu redstonea na panelu.<br>
+<br>
+Uporaba: postavi ga gdje se obližnji redstone signal treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: očitava obližnju jačinu redstonea od 0 do 15.
+<np>
+Digitalni mjerač
+Jasan prikaz jačine signala
+<&industrial_small_digital_gauge>Kompaktni mjerač za upravljačku sobu jasno prikazuje jačinu redstonea na panelu.<br>
+<br>
+Uporaba: postavi ga gdje se obližnji redstone signal treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: očitava obližnju jačinu redstonea od 0 do 15.
+<np>
+Stakleni cijevni mjerač
+Mjerač signala
+<&industrial_tube_gauge>Kompaktni mjerač za upravljačku sobu jasno prikazuje jačinu redstonea na panelu.<br>
+<br>
+Uporaba: postavi ga gdje se obližnji redstone signal treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: očitava obližnju jačinu redstonea od 0 do 15.
+<np>
+Analogni stupčasti mjerač
+Mjerač signala
+<&industrial_vertical_bar_gauge>Kompaktni mjerač za upravljačku sobu jasno prikazuje jačinu redstonea na panelu.<br>
+<br>
+Uporaba: postavi ga gdje se obližnji redstone signal treba moći provjeriti jednim pogledom.<br>
+<br>
+Napomene: očitava obližnju jačinu redstonea od 0 do 15.
+<np>
+Alarmno svjetlo
+Povratna informacija o signalu
+<&industrial_alarm_lamp>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Alarmna sirena
+Povratna informacija o signalu
+<&industrial_alarm_siren>Alarmna sirena je redstone pokazivač koji se postavlja na plohu. Njezino napajanje prati signal bloka na koji je pričvršćena.<br>
+<br>
+Uporaba: pričvrsti je na čvrstu stranu i dovedi signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: sirena se ponovno oglašava svake sekunde dok povezani signal ostaje aktivan.
+<np>
+Trepereći LED
+Povratna informacija o signalu
+<&industrial_blinking_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Zeleni trepereći LED
+Povratna informacija o signalu
+<&industrial_green_blinking_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Zeleni LED
+Povratna informacija o signalu
+<&industrial_green_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Crveni LED
+Povratna informacija o signalu
+<&industrial_red_blinking_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Crveni LED
+Povratna informacija o signalu
+<&industrial_red_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Bijeli trepereći LED
+Povratna informacija o signalu
+<&industrial_white_blinking_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Bijeli LED
+Povratna informacija o signalu
+<&industrial_white_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Žuti trepereći LED
+Povratna informacija o signalu
+<&industrial_yellow_blinking_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Žuti LED
+Povratna informacija o signalu
+<&industrial_yellow_led>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Rustikalni semafor
+Povratna informacija o signalu
+<&rustic_semaphore>Kompaktni pokazivač pretvara skriveni redstone u vidljivu povratnu informaciju u tvornici.<br>
+<br>
+Uporaba: spoji ga uz signal za nadzor vrata, strojeva, alarma ili panela.<br>
+<br>
+Napomene: mijenja stanje kada je prisutan obližnji redstone signal.
+<np>
+Komparatorski prekidač
+Signal povezanog bloka
+<&industrial_comparator_switch>Kompaktni senzorski prekidač očitava blok na kojem je postavljen i pretvara očitanje u jednostavan izlaz panela.<br>
+<br>
+Uporaba: postavi ga na inventare, spremnike ili redstone uređaje. Kada povezani blok daje komparatorski, spremnički ili redstone izlaz, prekidač šalje redstone pune snage.<br>
+<br>
+Napomene: pretvara razine zaliha ili skriveno ožičenje u jasne vodove za uključivanje i isključivanje.
+<np>
+Regulator jačine
+Promjenjivi signal
+<&industrial_dimmer>Okretna kontrola podešava jačinu redstonea na kompaktnom panelu.<br>
+<br>
+Uporaba: desnim klikom povećavaj izlaz korak po korak; nakon pune snage vraća se na nulu.<br>
+<br>
+Napomene: izlazna snaga iznosi od 0 do 15.
+<np>
+Tipka za zaustavljanje u nuždi
+Redstone upravljanje
+<&industrial_estop_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Blokator lijevka
+Redstone upravljanje
+<&industrial_hopper_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Prekidač na kucanje
+Redstone upravljanje
+<&industrial_knock_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Poluga
+Redstone upravljanje
+<&industrial_lever>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Strojni prekidač s dvjema tipkama
+Redstone upravljanje
+<&industrial_machine_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Povlačna ručka
+Redstone upravljanje
+<&industrial_pull_handle>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Okretna poluga
+Redstone upravljanje
+<&industrial_rotary_lever>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Okretni strojni prekidač
+Redstone upravljanje
+<&industrial_rotary_machine_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Kontaktna poluga
+Redstone upravljanje
+<&industrial_small_lever>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Prekidač
+Redstone upravljanje
+<&industrialswitch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Prekidač za svjetlo
+Redstone upravljanje
+<&light_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Ventilski prekidač
+Redstone upravljanje
+<&valve_wheel_switch>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Impulsni prijamnik u kućištu
+Povezano upravljanje
+<&industrial_switchlink_cased_pulse_receiver>Povezani impulsni prijamnik u kućištu daje udaljenim panelima kratki redstone okidač.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Desnim klikom na prijamnik ili aktivacijom povezanog bisera pošalji kratki impuls.<br>
+<br>
+Napomene: impuls se sam poništava nakon zadanog trajanja.
+<np>
+Prijamnik poveznice u kućištu
+Povezano upravljanje
+<&industrial_switchlink_cased_receiver>Povezani prijamnik u kućištu daje udaljenim panelima čvrst redstone cilj.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Izravnim desnim klikom na prijamnik ručno ga uključi ili isključi.<br>
+<br>
+Napomene: povezani biser mijenja stanje ovog prijamnika kada ga koristiš dok čučiš.
+<np>
+Impulsni prijamnik poveznice
+Povezano upravljanje
+<&industrial_switchlink_pulse_receiver>Povezani impulsni prijamnik daje udaljenim panelima kratki redstone okidač.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Desnim klikom na prijamnik ili aktivacijom povezanog bisera pošalji kratki impuls.<br>
+<br>
+Napomene: impuls se sam poništava nakon zadanog trajanja.
+<np>
+Impulsni relej poveznice
+Povezano upravljanje
+<&industrial_switchlink_pulse_relay>Dio u obliku releja daje panelima kompaktno mjesto za lokalno prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove. Za aktivaciju povezanim biserom koristi prijamničke blokove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Prijamnik poveznice prekidača
+Povezano upravljanje
+<&industrial_switchlink_receiver>Povezani prijamnik daje udaljenim panelima redstone cilj pune snage.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Izravnim desnim klikom na prijamnik ručno ga uključi ili isključi.<br>
+<br>
+Napomene: povezani biser mijenja stanje ovog prijamnika kada ga koristiš dok čučiš.
+<np>
+Analogni prijamnik poveznice
+Povezano upravljanje
+<&industrial_switchlink_receiver_analog>Povezani prijamnik daje upravljačkim panelima vidljiv udaljeni cilj.<br>
+<br>
+Uporaba: klikni Ender biserom za izradu povezanog bisera. Upotrijebi taj biser dok čučiš za daljinsku aktivaciju prijamnika.<br>
+<br>
+Napomene: ovaj prijamnik pri aktivaciji šalje puni redstone signal.
+<np>
+Relej poveznice prekidača
+Povezano upravljanje
+<&industrial_switchlink_relay>Dio u obliku releja daje panelima kompaktno mjesto za lokalno prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove. Za aktivaciju povezanim biserom koristi prijamničke blokove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Analogni relej poveznice
+Povezano upravljanje
+<&industrial_switchlink_relay_analog>Dio u obliku releja daje panelima kompaktno mjesto za lokalno prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove. Za aktivaciju povezanim biserom koristi prijamničke blokove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Biser poveznice prekidača
+Povezano upravljanje
+<&switchlink_pearl>Povezani biser pohranjuje ciljni prijamnik za daljinsko tvorničko upravljanje.<br>
+<br>
+Uporaba: klikni Ender biserom na prijamnik poveznice prekidača za izradu povezanog bisera. Upotrijebi ga dok čučiš za aktivaciju spremljenog prijamnika.<br>
+<br>
+Napomene: cilj mora biti učitan, u istoj dimenziji i unutar dometa.
+<np>
+Starinska ukrasna poluga
+Redstone upravljanje
+<&oldfancy_bistableswitch1>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Starinska ukrasna okretna poluga
+Redstone upravljanje
+<&oldfancy_bistableswitch2>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Rustikalna okretna poluga
+Redstone upravljanje
+<&rustic_angular_lever>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Rustikalna poluga
+Redstone upravljanje
+<&rustic_lever>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Rustikalna poluga s čavlom
+Redstone upravljanje
+<&rustic_nail_lever>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.
+<np>
+Rustikalna poluga s dvjema šarkama
+Redstone upravljanje
+<&rustic_two_hinge_lever>Kompaktni upravljački dio daje tvorničkim građevinama jasno mjesto za redstone prebacivanje.<br>
+<br>
+Uporaba: desnim klikom uključi ili isključi izlaz pune snage za obližnje sklopove.<br>
+<br>
+Napomene: šalje redstone pune snage dok je uključen.

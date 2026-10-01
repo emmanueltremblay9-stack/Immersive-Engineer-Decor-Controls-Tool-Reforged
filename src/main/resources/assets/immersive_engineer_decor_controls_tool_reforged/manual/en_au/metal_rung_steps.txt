@@ -1,0 +1,5 @@
+Staggered Metal Steps
+Service access fitting
+<&recipe>This block forms readable service routes around machinery.<br>
+<br>
+Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>

@@ -1,0 +1,7 @@
+Minuterie d'intervalle
+Impulsion temporisée
+<&recipe>Une minuterie compacte fournit une impulsion de redstone programmée.<br>
+<br>
+Utilisation : commandez un petit mécanisme de manière périodique ou différée.<br>
+<br>
+Remarque : utilise des impulsions de redstone programmées.

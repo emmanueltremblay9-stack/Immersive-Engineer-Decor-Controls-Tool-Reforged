@@ -1,0 +1,5 @@
+Müllverbrennungsanlage
+Kompakte Verarbeitungseinheit
+<&recipe>Die Müllverbrennungsanlage vernichtet unerwünschte Gegenstände auf kleiner Werkstattfläche.<br>
+<br>
+Verwendung: Führe ihrer Warteschlange ausschließlich unerwünschte Gegenstände zu.<br>

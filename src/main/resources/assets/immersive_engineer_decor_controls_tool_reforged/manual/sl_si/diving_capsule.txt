@@ -1,0 +1,5 @@
+Kapsula z zrakom za potapljanje
+Zasilna zaloga zraka
+<&recipe>Potapljaška kapsula je zasilna zaloga zraka za delo pod vodo.<br>
+<br>
+Uporabite jo ročno za obnovo zraka. V inventarju se sproži samodejno, ko zraka skoraj zmanjka, nato se ohlaja. Vzemite jo v poplavljene rudnike in k potopljenim cevem.

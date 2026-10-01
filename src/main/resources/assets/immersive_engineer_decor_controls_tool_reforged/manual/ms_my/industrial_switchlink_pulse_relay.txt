@@ -1,0 +1,7 @@
+Geganti Pautan Denyutan
+Kawalan berpaut
+<&recipe>Kelengkapan bergaya geganti memberikan titik suis setempat padat untuk binaan panel.<br>
+<br>
+Penggunaan: Klik kanan untuk menukar hidup/mati output penuh bagi litar berdekatan. Gunakan blok penerima apabila perlu pengaktifan melalui mutiara berpaut.<br>
+<br>
+Nota: Mengeluarkan redstone berkekuatan penuh apabila dihidupkan.

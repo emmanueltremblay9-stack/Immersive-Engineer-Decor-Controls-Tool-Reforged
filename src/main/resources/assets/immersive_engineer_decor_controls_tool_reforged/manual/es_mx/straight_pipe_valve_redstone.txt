@@ -1,0 +1,5 @@
+Válvula de fluidos de redstone
+Equipamiento de tuberías de fluidos
+<&recipe>La válvula de fluidos de redstone es un elemento compacto para pequeños depósitos, tuberías, puntos de recogida y caudales controlados por redstone.<br>
+<br>
+Uso: Alinea la válvula con la dirección de flujo prevista.<br>

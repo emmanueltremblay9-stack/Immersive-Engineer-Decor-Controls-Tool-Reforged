@@ -1,0 +1,7 @@
+Bogsa stòraidh stuthan
+Bogsa solair togail
+<&recipe>Tha am bogsa stuthan a’ giùlan mòran de aon stuth-togail shìmplidh, gun atharrachadh agus so-chruachadh.<br>
+<br>
+Cleachdadh: Cum am bogsa sa phrìomh làimh agus cruach stuth sa làimh eile airson a luchdadh. Cleachd e leis an làimh eile falamh gus aon chruach a thoirt a-mach.<br>
+<br>
+Gabhaidh e suas ri 512 nì de aon seòrsa. Diùltaidh e bogsaichean neadaichte, uidheam nach cruachaich agus cruachan ath-ainmichte no dàta-atharraichte; seallaidh an gliocas an susbaint.

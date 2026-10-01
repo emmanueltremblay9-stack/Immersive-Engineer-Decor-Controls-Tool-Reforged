@@ -1,0 +1,41 @@
+Stòradh is giùlan
+Uidheam clàr-stuthan is srutha
+Làimhsichidh uidheam stòraidh is còmhdhail cisteachan-bathair, baraillean, funailean agus bhalbhaichean airson slighean dlùtha sa fhactaraidh.<br>
+<br>
+Cleachd na duilleagan seo nuair a bhios tu a' dealbhadh stòrasan, sreathan phìoban, tancaichean-seirbheis agus loidhnichean-lionna fo smachd.
+<np>
+Ciste-bathair le leubail
+Leubail stòrais a ghabhas deasachadh
+<&labeled_crate>Tha a' Chiste-bathair le leubail seo air a dealbhadh airson stuthan a sheòrsachadh gu soilleir sa stòras. Gabhaidh a pleata-aghaidh a dheasachadh mar shoidhne beag bùth-obrach.<br>
+<br>
+Cleachdadh: dèan briogadh deas air a' phleata-leubail gus leubail na ciste-bathair a dheasachadh. Dèan briogadh deas air a' chòrr den chiste-bathair gus stòras airson uidheam, pàirtean agus solar cumail suas fhosgladh.<br>
+<np>
+Baraille lionna
+Uidheam loidhne lionna
+<&fluid_barrel>Tha an uidheam seo na phàirt dhlùth loidhne lionna airson tancaichean beaga, pìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: cuir e far an ruig pìoban no bucaidean aghaidh an tanca.<br>
+<np>
+Funail lionna
+Uidheam loidhne lionna
+<&small_fluid_funnel>Tha an Funail bheag lionna na phàirt dhlùth de loidhne-lionna airson tancaichean beaga, sreathan phìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: cuir fo phuing cruinneachaidh an lionna i agus stiùir na stuthan a stòras i gu tancaichean no pìoban nas ìsle.<br>
+<np>
+Bhalbh aon-shligheach pìob lionna
+Uidheam loidhne lionna
+<&straight_pipe_valve>Tha am Bhalbh aon-shligheach lionna na phàirt dhlùth de loidhne-lionna airson tancaichean beaga, sreathan phìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: co-thaobhaich am bhalbh ris an treo srutha a tha thu ag iarraidh.<br>
+<np>
+Bhalbh lionna redstone
+Uidheam loidhne lionna
+<&straight_pipe_valve_redstone>Tha am Bhalbh lionna redstone na phàirt dhlùth de loidhne-lionna airson tancaichean beaga, sreathan phìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: co-thaobhaich am bhalbh ris an treo srutha a tha thu ag iarraidh.<br>
+<np>
+Bhalbh lionna analagach
+Uidheam loidhne lionna
+<&straight_pipe_valve_redstone_analog>Tha am Bhalbh lionna analagach na phàirt dhlùth de loidhne-lionna airson tancaichean beaga, sreathan phìoban, puingean cruinneachaidh agus sruth fo smachd redstone.<br>
+<br>
+Cleachdadh: co-thaobhaich am bhalbh ris an treo srutha a tha thu ag iarraidh.<br>
