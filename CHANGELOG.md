@@ -2,6 +2,20 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.56-reconstructed] - 2026-10-01 (unpublished candidate)
+
+### Added
+- Expanded localization from 12 to 120 locales, with 898 language keys and 223 manual pages per locale; added deterministic resource validation.
+
+### Fixed
+- Corrected selected tool descriptions, localized manual headings, GUI index/subtitles and Arabic word-preserving manual-body wrapping.
+- Stimpack and sleeping-bag recipes accept all 16 wool carpet colors; a required loaded-recipe GameTest raises the suite from 188 to 189.
+
+### Validation and limitations
+- Candidate qualification and provenance are recorded in release-evidence/1.1.56-reconstructed/SUMMARY.md and the external preparation evidence package.
+- Shared Hindi/Arabic/Thai rendering limitations remain confirmed by earlier sampled QA; exact component attribution, native fluency, exhaustive visual coverage and arbitrary-scale tooltip geometry remain unverified. No new client runtime, installation or publication is claimed.
+- Compatibility remains Minecraft 1.21.1, Java 21, NeoForge 21.1.230 minimum, required Immersive Engineering 12.4.2-194, and optional JEI 19.32.0.359.
+
 ## [1.1.55-reconstructed] - 2026-09-04
 
 ### Fixed
