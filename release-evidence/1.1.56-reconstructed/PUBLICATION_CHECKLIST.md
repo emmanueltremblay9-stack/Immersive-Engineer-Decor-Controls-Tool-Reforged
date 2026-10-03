@@ -1,11 +1,15 @@
-# Future publication prerequisites for 1.1.56-reconstructed
+# Completed publication/readback checklist for 1.1.56-reconstructed
 
-Publication is NOT_PERFORMED in this preparation task.
+GitHub and CurseForge publication are complete. This checklist closes the former preparation scaffold; detailed identities and retained receipts are in [SUMMARY.md](SUMMARY.md).
 
-- Review the preparation PR and its exact-head CI; merging requires separate authorization.
-- Bind a separately authorized immutable tag/release to the qualified source commit and JAR. Read back name, version, bytes and SHA-256 before any downstream upload.
-- Adapt the existing hash-pinned CurseForge publication configuration in a later authorized task. It currently targets only 1.1.55. Bind the new artifact, approved changelog and fresh public previous-file baseline; never reuse historical payload hashes.
-- CurseForge project: 1555214. The only required upload dependency is Immersive Engineering project 231951. Incorporated source-project attribution remains CREDITS.md, NOTICE.md and metadata; no Include relation is required by the established contract. JEI is optional.
-- Preserve duplicate detection, immutable intent, unknown-outcome stop and tokenless receipt recovery guards; inspect fresh public metadata and downloaded bytes after any separately authorized upload.
-- Modrinth: BLOCKED_BY_MISSING_CONFIGURATION. Obtain verified project/dependency configuration and publication authorization before preparing a submission. Historical guessed IDs are not operational configuration.
-- Retain linguistic and visual limitations. Do not describe resource parity, build or GameTests as exhaustive client rendering proof.
+- [x] Preparation PR #30 reviewed and merged before publication; immutable tag `v1.1.56-reconstructed` targets `527b6d1afbcb283d6ff08cc40bc7a92ec229c399`, qualified tree `963b564f803f8537fa89033a5b055a7d8e2aa72c`. Later main/publication-tooling/docs commits are maintenance only.
+- [x] Canonical JAR name, mod ID, version, 19,568,379-byte size, 29,748 entries and SHA-256 `fa7bde923433658a78dcf3792c9fc6af2e0b5212a7897e1b21c3323e7af809a4` verified by redownload/ZIP inspection.
+- [x] GitHub release `402228962` and asset `606766184` public, non-draft/non-prerelease; release body/tag/asset preserved.
+- [x] Post-release PR #31 binds the publisher to 1.1.56; current mocked suite 32/32, distinct from qualification 31/31. Merged dry-run passed.
+- [x] Actual intent persisted before the sole upload POST; positive file ID `9042960` durably recorded. Initial `UPLOADED_PROCESSING`/exit 4 retained; tokenless resume skipped upload steps, made no second POST and passed public verification.
+- [x] CurseForge project `1555214`, file `9042960` approved/public; correct Client/Server/Minecraft 1.21.1/NeoForge labels and release type. Anonymous JAR bytes equal GitHub exactly; exactly one current 1.1.56 file.
+- [x] Sole `RequiredDependency`: Immersive Engineering project `231951`. Incorporated projects remain attribution in CREDITS.md/NOTICE.md; no Include relation required. JEI optional.
+- [x] Duplicate detection, immutable intent, unknown-outcome stop and tokenless accepted-ID recovery guards retained; historical release evidence unchanged.
+- [ ] Modrinth remains `BLOCKED_BY_MISSING_CONFIGURATION`; no submission or mutation authorized/performed.
+- [ ] Native fluency, exhaustive visual coverage, arbitrary UI scales and exact Hindi/Arabic/Thai component attribution remain unresolved.
+- [ ] New client launch, Prism installation, packaged dedicated-server and higher-version dependency lanes remain `NOT_PERFORMED` for 1.1.56. Build/GameTests/public artifact verification do not establish these results.
