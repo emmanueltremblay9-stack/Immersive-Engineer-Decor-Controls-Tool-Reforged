@@ -8,7 +8,7 @@ on:
         description: Reviewed GitHub release tag
         required: true
         type: string
-        default: v1.1.55-reconstructed
+        default: v1.1.56-reconstructed
       dry_run:
         description: Validate all public inputs without uploading
         required: true
@@ -35,7 +35,7 @@ jobs:
     timeout-minutes: 30
     env:
       RUN_KEY: ${{ github.run_id }}-${{ github.run_attempt }}
-      MANIFEST_PATH: tools/release/curseforge_release_1.1.55.json
+      MANIFEST_PATH: tools/release/curseforge_release_1.1.56.json
 
     steps:
       - name: Checkout
