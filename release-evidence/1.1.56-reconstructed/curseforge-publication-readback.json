@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-03T02:47:50.473090+00:00",
+  "project": {
+    "id": 1555214,
+    "slug": "immersive-engineers-decor-controls-tools-reforged"
+  },
+  "file": {
+    "id": 9042960,
+    "name": "immersive_engineer_decor_controls_tool_reforged-1.1.56-reconstructed.jar",
+    "public_status": 4,
+    "release_type": 1,
+    "game_versions": [
+      "1.21.1",
+      "Client",
+      "NeoForge",
+      "Server"
+    ],
+    "size_bytes": 19568379,
+    "download_sha256": "fa7bde923433658a78dcf3792c9fc6af2e0b5212a7897e1b21c3323e7af809a4",
+    "canonical_hash_match": true,
+    "github_full_byte_identity": true,
+    "url": "https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9042960"
+  },
+  "relations": [
+    {
+      "project_id": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    }
+  ],
+  "automation": {
+    "dry_run": {
+      "run_id": 37086906569,
+      "conclusion": "success",
+      "status": "AUTOMATION_READY_DRY_RUN"
+    },
+    "upload": {
+      "run_id": 37087128090,
+      "run_attempt": 1,
+      "workflow_conclusion": "failure",
+      "publisher_exit_code": 4,
+      "publisher_status": "UPLOADED_PROCESSING",
+      "file_id": 9042960,
+      "post_count": 1,
+      "intent_artifact_id": 11260822153,
+      "result_artifact_id": 11261197546
+    },
+    "resume": {
+      "run_id": 37087857213,
+      "workflow_conclusion": "success",
+      "publisher_exit_code": 0,
+      "publisher_status": "RESUMED_PUBLICATION_VERIFIED",
+      "file_id": 9042960,
+      "post_required": false,
+      "post_count": 0,
+      "prepare_persist_submit": "skipped",
+      "result_artifact_id": 11261077915
+    },
+    "publication_tooling_commit": "c428f3be625a538a34abd30e340f61ef2903ac73",
+    "qualification_publisher_tests": 31,
+    "current_publisher_tests": 32
+  },
+  "public_jar_inspection": {
+    "mod_id": "immersive_engineer_decor_controls_tool_reforged",
+    "version": "1.1.56-reconstructed",
+    "loader": "NeoForge",
+    "minecraft": "1.21.1",
+    "entries": 29748
+  },
+  "verdict": "PASS"
+}

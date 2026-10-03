@@ -12,20 +12,18 @@ This workspace was rebuilt from the published `engineers_decor_reforged-1.1.jar`
 .\gradlew.bat clean build
 ```
 
-Latest qualified and publicly released version: `1.1.55-reconstructed`.
+Latest qualified and publicly released version: `1.1.56-reconstructed`.
 
-- `validateManualResources`, `validateProjectMetadata`, `validateSignItemModels`, compilation, and the final `main` CI gates passed.
-- Three NeoForge matrices passed all 188 required GameTests: minimum versions without JEI, minimum versions with JEI, and the reporter versions with JEI.
-- Three clean builds produced the same 2,689,752-byte runtime JAR with SHA-256 `956FC45E04675427AB98A79BB82F22E28F55E7D13EBDCD54F86260515A63167C`.
-- GitHub issues [#8](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/8), [#9](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/9), and [#10](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/10) are resolved and closed.
-- The [GitHub release](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/tag/v1.1.55-reconstructed) and [CurseForge file 8810946](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/8810946) are public and hash-verified. CurseForge declares Immersive Engineering as the sole `RequiredDependency`; the three fused source projects are provenance, not install dependencies.
-- Modrinth publication is `BLOCKED_BY_MISSING_CONFIGURATION`; no project or dependency identifier was guessed.
-- Runtime JAR inspection, reproducibility, Prism LAB installation, development dedicated-server smoke, CI provenance, publication, and issue-closure readbacks are recorded in `release-evidence/1.1.55-reconstructed`.
-- Patched-client inventory/JEI screenshots are `BLOCKED_BY_USER_INTERRUPTED_COMPUTER_USE` and remain unclaimed as visual proof. The original 1.1.55 release-install unrelated-Prism-JAR pre/post comparison remains `NOT_PERFORMED_AND_NOT_RETROACTIVELY_RECOVERABLE` because no contemporaneous full pre-install inventory exists; a distinct fresh postpublication comparison passed for all 50 unrelated JARs and the canonical target without replacing that missing historical baseline. The previously reported loopback incident is classified `SHARED_ENVIRONMENT_FAILURE` / `HOST_TEMP_DIRECTORY_AF_UNIX_CONNECT_FAILURE`, not an unresolved mod-runtime defect.
-- `clean build` passed; JVM unit tests are `NO-SOURCE` because regression coverage is implemented as NeoForge GameTests.
+- The [GitHub release](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/tag/v1.1.56-reconstructed) and [CurseForge file 9042960](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9042960) are public and independently hash-verified. Both serve the same 19,568,379-byte runtime JAR: SHA-256 `fa7bde923433658a78dcf3792c9fc6af2e0b5212a7897e1b21c3323e7af809a4`.
+- Release/tag commit `527b6d1afbcb283d6ff08cc40bc7a92ec229c399` has qualified source tree `963b564f803f8537fa89033a5b055a7d8e2aa72c`. Later publication-tooling and documentation commits on `main` are maintenance state, not the source identity of the published JAR.
+- Qualification passed all 189 required NeoForge GameTests, localization/manual/metadata/sign validators, and two byte-identical clean builds. The release publisher suite passed 31/31 mocked tests; after [PR #31](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/31), the current publication-tooling suite passes 32/32.
+- CurseForge declares Immersive Engineering project `231951` as the sole `RequiredDependency`; JEI remains optional. The three fused source projects are provenance, not install dependencies.
+- Modrinth publication remains `BLOCKED_BY_MISSING_CONFIGURATION`; no project or dependency identifier was guessed.
+- Native fluency across 120 locales, exhaustive visual coverage and arbitrary UI-scale tooltip geometry remain unverified. Earlier sampled Hindi/Arabic/Thai rendering limitations remain recorded, with exact component attribution unverified. No new client launch, Prism installation or packaged dedicated-server qualification is claimed for 1.1.56.
+- Qualification and publication readbacks are recorded in [the 1.1.56 evidence summary](release-evidence/1.1.56-reconstructed/SUMMARY.md), including the separate release and maintenance source identities.
 - `validateManualResources` rejects missing manual pages and crafting widgets that point at non-crafting recipes.
 - `validateProjectMetadata` checks version parity, public support links, issue templates, and root/packaged attribution parity.
-- The normal build workflow does not modify Prism; release qualification uses an explicit hash-verified LAB installation procedure.
+- The normal build workflow does not modify Prism; an installation requires its own verified procedure.
 
 ## Config status
 
