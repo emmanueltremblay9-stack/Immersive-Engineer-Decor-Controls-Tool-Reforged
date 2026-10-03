@@ -24,6 +24,8 @@ from publish_curseforge import (
     PublicationError,
     Publisher,
     build_multipart,
+    load_manifest,
+    parse_args,
 )
 
 
@@ -999,6 +1001,40 @@ class PublisherTests(unittest.TestCase):
         self.assertIs(False, report["postRequired"])
         self.assertEqual(0, self.state.post_count)
         self.assertEqual([], self.state.requested_page_indexes)
+
+
+class OperationalRoutingTests(unittest.TestCase):
+    def test_default_manifest_and_workflow_match_current_release(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+        properties = dict(
+            line.split("=", 1)
+            for line in (root / "gradle.properties").read_text(encoding="utf-8").splitlines()
+            if "=" in line and not line.startswith("#")
+        )
+        version = properties["mod_version"]
+        tag = f"v{version}"
+        manifest_path = Path(
+            f"tools/release/curseforge_release_{version.removesuffix('-reconstructed')}.json"
+        )
+        self.assertEqual(parse_args(["--dry-run", "--tag", tag]).manifest, manifest_path)
+        workflow = (root / ".github/workflows/publish-curseforge.yml").read_text(encoding="utf-8")
+        self.assertIn(f"        default: {tag}\n", workflow)
+        self.assertIn(f"      MANIFEST_PATH: {manifest_path.as_posix()}\n", workflow)
+        manifest = load_manifest(root / manifest_path)
+        release = manifest["release"]
+        self.assertEqual(release["tag"], tag)
+        self.assertEqual(release["version"], version)
+        self.assertEqual(release["modId"], properties["mod_id"])
+        self.assertEqual(release["assetName"], f"{properties['mod_id']}-{version}.jar")
+        self.assertEqual(
+            hashlib.sha256((root / release["changelogPath"]).read_bytes()).hexdigest(),
+            release["changelogSha256"],
+        )
+        self.assertEqual(manifest["curseforge"]["uploadRelations"], UPLOAD_RELATIONS)
+        self.assertEqual(
+            manifest["curseforge"]["expectedPublicRelations"],
+            [{"projectId": 231951, "slug": "immersive-engineering", "type": "RequiredDependency"}],
+        )
 
 
 if __name__ == "__main__":

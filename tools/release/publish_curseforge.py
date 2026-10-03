@@ -1487,7 +1487,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--manifest",
         type=Path,
-        default=Path("tools/release/curseforge_release_1.1.55.json"),
+        default=Path("tools/release/curseforge_release_1.1.56.json"),
     )
     parser.add_argument("--tag", required=True)
     parser.add_argument("--resume-file-id", type=int)
