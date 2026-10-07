@@ -110,6 +110,8 @@ public class ControlStateBlockEntity extends BlockEntity {
       this.sensorDebounceCounter = 0;
       this.sensorLightOn = 7;
       this.sensorLightOff = 6;
+      this.gaugeComparatorMode = false;
+      this.linkedInputPower = 0;
       this.links.clear();
       this.applyBlockDefaults(this.getBlockState());
       this.setChanged();
@@ -354,6 +356,24 @@ public class ControlStateBlockEntity extends BlockEntity {
       this.setChanged();
    }
 
+   public boolean gaugeComparatorMode() {
+      return this.gaugeComparatorMode;
+   }
+
+   public void gaugeComparatorMode(boolean value) {
+      this.gaugeComparatorMode = value;
+      this.setChanged();
+   }
+
+   public int linkedInputPower() {
+      return this.linkedInputPower;
+   }
+
+   public void linkedInputPower(int value) {
+      this.linkedInputPower = Mth.clamp(value, 0, 15);
+      this.setChanged();
+   }
+
    public List<LinkTarget> links() {
       return Collections.unmodifiableList(this.links);
    }
@@ -363,8 +383,7 @@ public class ControlStateBlockEntity extends BlockEntity {
          return false;
       }
       BlockState targetState = level.getBlockState(targetPos);
-      if (!(targetState.getBlock() instanceof ControlsBlockTypes.ToggleSwitchBlock target)
-         || !ControlProfile.has(target.config(), ControlProfile.LINK_TARGET_SUPPORT)) {
+      if (!ControlsBlockTypes.supportsSwitchLinkTarget(targetState)) {
          return false;
       }
       String blockId = BuiltInRegistries.BLOCK.getKey(targetState.getBlock()).toString();
@@ -438,6 +457,8 @@ public class ControlStateBlockEntity extends BlockEntity {
       if (tag.contains("sensor_debounce", Tag.TAG_INT)) this.sensorDebounce = Mth.clamp(tag.getInt("sensor_debounce"), 0, MAX_SENSOR_DEBOUNCE);
       if (tag.contains("sensor_light_on", Tag.TAG_INT)) this.sensorLightOn = Mth.clamp(tag.getInt("sensor_light_on"), 0, 15);
       if (tag.contains("sensor_light_off", Tag.TAG_INT)) this.sensorLightOff = Mth.clamp(tag.getInt("sensor_light_off"), 0, 15);
+      this.gaugeComparatorMode = tag.getBoolean("gauge_comparator");
+      if (tag.contains("linked_input", Tag.TAG_INT)) this.linkedInputPower = Mth.clamp(tag.getInt("linked_input"), 0, 15);
 
       this.links.clear();
       if (tag.contains("links", Tag.TAG_LIST)) {
@@ -477,6 +498,8 @@ public class ControlStateBlockEntity extends BlockEntity {
       tag.putInt("sensor_debounce", this.sensorDebounce);
       tag.putInt("sensor_light_on", this.sensorLightOn);
       tag.putInt("sensor_light_off", this.sensorLightOff);
+      tag.putBoolean("gauge_comparator", this.gaugeComparatorMode);
+      tag.putInt("linked_input", this.linkedInputPower);
 
       ListTag linksTag = new ListTag();
       for (LinkTarget link : this.links) {
