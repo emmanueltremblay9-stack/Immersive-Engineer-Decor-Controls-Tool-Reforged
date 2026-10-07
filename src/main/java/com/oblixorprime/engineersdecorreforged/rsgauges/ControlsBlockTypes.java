@@ -849,14 +849,24 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class ToggleSwitchBlock extends DirectionalBlock {
+   public static class ToggleSwitchBlock extends DirectionalBlock implements EntityBlock {
       public static final MapCodec<ControlsBlockTypes.ToggleSwitchBlock> CODEC = simpleCodec(ControlsBlockTypes.ToggleSwitchBlock::new);
+      private final long config;
 
       public ToggleSwitchBlock(Properties properties) {
+         this(properties, ControlProfile.BISTABLE);
+      }
+
+      public ToggleSwitchBlock(Properties properties, long config) {
          super(properties);
+         this.config = config;
          this.registerDefaultState(
             (BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWERED, false)
          );
+      }
+
+      public long config() {
+         return this.config;
       }
 
       protected MapCodec<? extends DirectionalBlock> codec() {
@@ -879,30 +889,278 @@ public final class ControlsBlockTypes {
          return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
       }
 
+      public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+         return new ControlStateBlockEntity(pos, state);
+      }
+
+      @SuppressWarnings({"unchecked", "rawtypes"})
+      public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+         if (level.isClientSide || type != ModBlockEntities.CONTROL_STATE.get()) {
+            return null;
+         }
+         return (BlockEntityTicker)(BlockEntityTicker<ControlStateBlockEntity>)ControlStateBlockEntity::serverTick;
+      }
+
+      protected ControlStateBlockEntity controlState(BlockGetter level, BlockPos pos) {
+         return level.getBlockEntity(pos) instanceof ControlStateBlockEntity control ? control : null;
+      }
+
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
          if (!level.isClientSide) {
             this.setPowered(level, pos, state, !(Boolean)state.getValue(ControlsBlockTypes.POWERED));
          }
-
          return InteractionResult.SUCCESS;
       }
 
-      protected void setPowered(Level level, BlockPos pos, BlockState state, boolean powered) {
-         level.setBlock(pos, (BlockState)state.setValue(ControlsBlockTypes.POWERED, powered), 3);
+      protected ItemInteractionResult useItemOn(
+         ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit
+      ) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+
+         if (stack.getItem() instanceof SwitchLinkPearlItem
+            && SwitchLinkPearlItem.hasLink(stack)
+            && ControlProfile.has(this.config, ControlProfile.LINK_SOURCE_SUPPORT)) {
+            if (!level.isClientSide && control != null) {
+               ResourceLocation dimension = SwitchLinkPearlItem.targetDimension(stack);
+               BlockPos target = SwitchLinkPearlItem.targetPos(stack);
+               if (dimension != null
+                  && dimension.equals(level.dimension().location())
+                  && control.addLink(level, pos, target, SwitchLinkPearlItem.mode(stack))) {
+                  if (!player.isCreative()) {
+                     stack.shrink(1);
+                  }
+                  if (SwitchLinkPearlItem.mode(stack) == ControlStateBlockEntity.LinkMode.AS_STATE
+                     || SwitchLinkPearlItem.mode(stack) == ControlStateBlockEntity.LinkMode.INV_STATE) {
+                     int analog = this.linkOutputPower(level, pos, state);
+                     int digital = state.getValue(ControlsBlockTypes.POWERED) ? 15 : 0;
+                     control.activateLinks(level, pos, analog, digital, true);
+                  }
+               }
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+
+         if (stack.is(Items.REDSTONE)
+            && control != null
+            && ControlProfile.has(this.config, ControlProfile.PULSE_TIME_CONFIGURABLE)) {
+            if (!level.isClientSide) {
+               control.configuredPulseTicks(Mth.clamp(stack.getCount() * 2, 2, 128));
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+
+         if (stack.is(CONFIG_WRENCHES)
+            && control != null
+            && (ControlProfile.has(this.config, ControlProfile.WEAKABLE) || ControlProfile.has(this.config, ControlProfile.INVERTABLE))) {
+            if (!level.isClientSide) {
+               this.cycleOutputConfiguration(level, pos, state, control);
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+
+         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+      }
+
+      protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+         if (!level.isClientSide && entity instanceof Projectile && ControlProfile.has(this.config, ControlProfile.PROJECTILE_SENSE)) {
+            boolean powered = state.getValue(ControlsBlockTypes.POWERED);
+            if ((!powered && ControlProfile.has(this.config, ControlProfile.PROJECTILE_SENSE_ON))
+               || (powered && ControlProfile.has(this.config, ControlProfile.PROJECTILE_SENSE_OFF))) {
+               this.setPowered(level, pos, state, !powered);
+            }
+         }
+         super.entityInside(state, level, pos, entity);
+      }
+
+      protected void cycleOutputConfiguration(Level level, BlockPos pos, BlockState state, ControlStateBlockEntity control) {
+         boolean canWeak = ControlProfile.has(this.config, ControlProfile.WEAKABLE);
+         boolean canInvert = ControlProfile.has(this.config, ControlProfile.INVERTABLE);
+         if (canWeak && canInvert) {
+            int mode = (control.weak() ? 1 : 0) | (control.inverted() ? 2 : 0) | (control.noOutput() ? 4 : 0);
+            switch (mode) {
+               case 0 -> {
+                  control.weak(true);
+                  control.inverted(false);
+                  control.noOutput(false);
+               }
+               case 1 -> {
+                  control.weak(false);
+                  control.inverted(true);
+                  control.noOutput(false);
+               }
+               case 2 -> {
+                  control.weak(true);
+                  control.inverted(true);
+                  control.noOutput(false);
+               }
+               case 3 -> {
+                  control.weak(false);
+                  control.inverted(false);
+                  control.noOutput(true);
+               }
+               default -> {
+                  control.weak(false);
+                  control.inverted(false);
+                  control.noOutput(false);
+               }
+            }
+         } else if (canWeak) {
+            if (!control.weak() && !control.noOutput()) {
+               control.weak(true);
+            } else if (control.weak()) {
+               control.weak(false);
+               control.noOutput(true);
+            } else {
+               control.noOutput(false);
+            }
+         } else if (canInvert) {
+            if (!control.inverted() && !control.noOutput()) {
+               control.inverted(true);
+            } else if (control.inverted()) {
+               control.inverted(false);
+               control.noOutput(true);
+            } else {
+               control.noOutput(false);
+            }
+         }
+
          level.updateNeighborsAt(pos, this);
-         level.updateNeighborsAt(pos.relative(((Direction)state.getValue(FACING)).getOpposite()), this);
+         for (Direction side : Direction.values()) {
+            level.updateNeighborsAt(pos.relative(side), this);
+         }
+      }
+
+      protected void setPowered(Level level, BlockPos pos, BlockState state, boolean powered) {
+         boolean wasPowered = state.getValue(ControlsBlockTypes.POWERED);
+         if (wasPowered == powered) {
+            return;
+         }
+         BlockState next = state.setValue(ControlsBlockTypes.POWERED, powered);
+         level.setBlock(pos, next, 3);
+         level.updateNeighborsAt(pos, this);
+         level.updateNeighborsAt(pos.relative(state.getValue(FACING).getOpposite()), this);
+
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control != null && ControlProfile.has(this.config, ControlProfile.LINK_SOURCE_SUPPORT)) {
+            int analog = powered ? control.outputPower() : 0;
+            control.activateLinks(level, pos, analog, powered ? 15 : 0, true);
+         }
       }
 
       protected boolean isSignalSource(BlockState state) {
-         return true;
+         return !ControlProfile.has(this.config, ControlProfile.LINK_SENDER);
       }
 
       protected int getSignal(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-         return state.getValue(ControlsBlockTypes.POWERED) ? 15 : 0;
+         return this.getConfiguredPower(state, level, pos, direction, false);
       }
 
       protected int getDirectSignal(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-         return this.getSignal(state, level, pos, direction);
+         return this.getConfiguredPower(state, level, pos, direction, true);
+      }
+
+      protected int getConfiguredPower(BlockState state, BlockGetter level, BlockPos pos, Direction direction, boolean strong) {
+         if (ControlProfile.has(this.config, ControlProfile.LINK_SENDER)) {
+            return 0;
+         }
+
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control == null) {
+            return state.getValue(ControlsBlockTypes.POWERED) ? 15 : 0;
+         }
+
+         Direction facing = state.getValue(FACING);
+         if (ControlProfile.has(this.config, ControlProfile.CONTACT)) {
+            if (direction != facing.getOpposite() && direction != Direction.UP) {
+               return 0;
+            }
+         } else if (!ControlProfile.has(this.config, ControlProfile.SIDES_CONFIGURABLE)) {
+            boolean mainDirection = direction == facing;
+            if (!mainDirection && (strong || control.weak())) {
+               return 0;
+            }
+         }
+
+         if (control.noOutput() || (strong && control.weak())) {
+            return 0;
+         }
+         boolean powered = state.getValue(ControlsBlockTypes.POWERED);
+         return control.inverted() == powered ? 0 : control.outputPower();
+      }
+
+      protected int linkOutputPower(Level level, BlockPos pos, BlockState state) {
+         return this.getConfiguredPower(state, level, pos, state.getValue(FACING), false);
+      }
+
+      protected boolean supportsAnalogLink() {
+         return false;
+      }
+
+      protected boolean receiveSwitchLink(
+         Level level,
+         BlockPos pos,
+         BlockState state,
+         ControlStateBlockEntity.LinkMode mode,
+         int analogPower,
+         int digitalPower,
+         boolean stateChanged
+      ) {
+         boolean pulse = ControlProfile.has(this.config, ControlProfile.PULSE);
+         boolean bistable = ControlProfile.has(this.config, ControlProfile.BISTABLE);
+         if (!pulse && !bistable) {
+            return false;
+         }
+
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control == null) {
+            return false;
+         }
+
+         int targetPower = this.linkOutputPower(level, pos, state);
+         int effectiveAnalog = mode == ControlStateBlockEntity.LinkMode.INV_STATE ? 15 - analogPower : analogPower;
+         boolean effectiveDigital = digitalPower > 0;
+         if (mode == ControlStateBlockEntity.LinkMode.INV_STATE) {
+            effectiveDigital = !effectiveDigital;
+         }
+
+         boolean shouldAct = switch (mode) {
+            case AS_STATE, INV_STATE -> this.supportsAnalogLink()
+               ? targetPower != effectiveAnalog
+               : stateChanged && ((targetPower > 0) != effectiveDigital);
+            case ACTIVATE -> stateChanged && digitalPower > 0;
+            case DEACTIVATE -> stateChanged && digitalPower == 0;
+            case TOGGLE -> stateChanged;
+         };
+         if (!shouldAct) {
+            return true;
+         }
+
+         if (pulse) {
+            if (this instanceof ControlsBlockTypes.PulseSwitchBlock pulseBlock) {
+               pulseBlock.triggerPulse(level, pos, state);
+               return true;
+            }
+            return false;
+         }
+
+         if (this.supportsAnalogLink() && (mode == ControlStateBlockEntity.LinkMode.AS_STATE || mode == ControlStateBlockEntity.LinkMode.INV_STATE)) {
+            if (effectiveAnalog > 0) {
+               control.outputPower(effectiveAnalog);
+            }
+            this.setPowered(level, pos, state, effectiveAnalog > 0);
+            return true;
+         }
+
+         boolean powered = state.getValue(ControlsBlockTypes.POWERED);
+         boolean desired = switch (mode) {
+            case AS_STATE -> digitalPower > 0;
+            case INV_STATE -> digitalPower == 0;
+            case ACTIVATE -> true;
+            case DEACTIVATE -> false;
+            case TOGGLE -> !powered;
+         };
+         this.setPowered(level, pos, state, desired);
+         return true;
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -912,5 +1170,4 @@ public final class ControlsBlockTypes {
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return Shapes.empty();
       }
-   }
-}
+   }}
