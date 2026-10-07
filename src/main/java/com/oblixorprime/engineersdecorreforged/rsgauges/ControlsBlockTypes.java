@@ -1505,17 +1505,17 @@ public final class ControlsBlockTypes {
             if (!level.isClientSide && control != null) {
                ResourceLocation dimension = SwitchLinkPearlItem.targetDimension(stack);
                BlockPos target = SwitchLinkPearlItem.targetPos(stack);
+               ControlStateBlockEntity.LinkMode mode = SwitchLinkPearlItem.mode(stack);
                if (dimension != null
                   && dimension.equals(level.dimension().location())
-                  && control.addLink(level, pos, target, SwitchLinkPearlItem.mode(stack))) {
-                  if (!player.isCreative()) {
-                     stack.shrink(1);
-                  }
-                  if (SwitchLinkPearlItem.mode(stack) == ControlStateBlockEntity.LinkMode.AS_STATE
-                     || SwitchLinkPearlItem.mode(stack) == ControlStateBlockEntity.LinkMode.INV_STATE) {
+                  && control.addLink(level, pos, target, mode)) {
+                  if (mode == ControlStateBlockEntity.LinkMode.AS_STATE || mode == ControlStateBlockEntity.LinkMode.INV_STATE) {
                      int analog = this.linkOutputPower(level, pos, state);
                      int digital = state.getValue(ControlsBlockTypes.POWERED) ? 15 : 0;
                      control.activateLinks(level, pos, analog, digital, true);
+                  }
+                  if (!player.isCreative()) {
+                     stack.shrink(1);
                   }
                }
             }
