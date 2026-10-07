@@ -57,6 +57,7 @@ public final class EngineersDecorReforged {
       ModBlocks.BLOCKS.register(modEventBus);
       ModItems.ITEMS.register(modEventBus);
       ModBlockEntities.BLOCK_ENTITY_TYPES.register(modEventBus);
+      ModSounds.SOUND_EVENTS.register(modEventBus);
       ModMenus.MENU_TYPES.register(modEventBus);
       ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
       CREATIVE_TABS.register(modEventBus);
