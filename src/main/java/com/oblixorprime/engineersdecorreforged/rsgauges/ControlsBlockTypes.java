@@ -1021,6 +1021,19 @@ public final class ControlsBlockTypes {
             return;
          }
 
+         if (this.kind == ControlsBlockTypes.SensorKind.DAY) {
+            int field = x < 4.0 ? 1 : x < 8.0 ? 2 : x < 12.0 ? 3 : 4;
+            switch (field) {
+               case 1 -> control.dayOnSlot(control.dayOnSlot() + direction);
+               case 2 -> control.dayOffSlot(control.dayOffSlot() + direction);
+               case 3 -> control.sensorDebounce(control.sensorDebounce() + direction);
+               case 4 -> control.outputPower(control.outputPower() + direction);
+               default -> {
+               }
+            }
+            return;
+         }
+
          if (this.kind == ControlsBlockTypes.SensorKind.RAIN || this.kind == ControlsBlockTypes.SensorKind.LIGHTNING) {
             control.outputPower(control.outputPower() + direction);
          }
@@ -1039,7 +1052,7 @@ public final class ControlsBlockTypes {
 
       private boolean evaluatePlacement(Level level, BlockPos pos, BlockState state) {
          return switch (this.kind) {
-            case DAY -> level.dimensionType().hasSkyLight() && level.getDayTime() % 24000L < 12000L;
+            case DAY -> this.evaluateDay(level, control);
             case RAIN -> level.isRainingAt(pos.above());
             case LIGHTNING -> level.isThundering() && level.canSeeSky(pos.above());
             case LIGHT -> level.getMaxLocalRawBrightness(pos) >= 7;
@@ -1057,6 +1070,30 @@ public final class ControlsBlockTypes {
             case ENTITY, LINEAR_ENTITY, PLAYER, VILLAGER, ANIMAL, MOB, LIVING -> this.hasConfiguredEntities(level, pos, state, control);
             case BLOCK -> this.hasConfiguredBlocks(level, pos, state, control);
          };
+      }
+
+      private boolean evaluateDay(ServerLevel level, ControlStateBlockEntity control) {
+         if (control == null || control.dayOnSlot() == control.dayOffSlot()) {
+            return false;
+         }
+         int slot = (int)((level.getDayTime() % 24000L) / 500L);
+         int on = control.dayOnSlot();
+         int off = control.dayOffSlot();
+         boolean active = on < off ? slot >= on && slot <= off : slot >= on || slot <= off;
+         if (control.sensorDebounce() <= 0) {
+            return active;
+         }
+         // Upstream day timer uses a configurable randomization/debounce. Keep the
+         // state stable most ticks and admit a transition with the same bias curve.
+         double chance = 1.0D - (double)control.sensorDebounce() / (ControlStateBlockEntity.MAX_SENSOR_DEBOUNCE * 0.9D);
+         chance = chance * chance * 0.7D;
+         boolean current = this.getBlockStatePower(level, control.getBlockPos());
+         return active == current || level.getRandom().nextDouble() <= chance ? active : current;
+      }
+
+      private boolean getBlockStatePower(Level level, BlockPos pos) {
+         BlockState current = level.getBlockState(pos);
+         return current.hasProperty(ControlsBlockTypes.POWERED) && current.getValue(ControlsBlockTypes.POWERED);
       }
 
       private boolean evaluateLight(ServerLevel level, BlockPos pos, BlockState state, ControlStateBlockEntity control) {
