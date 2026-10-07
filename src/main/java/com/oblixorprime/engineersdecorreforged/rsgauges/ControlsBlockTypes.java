@@ -607,6 +607,64 @@ public final class ControlsBlockTypes {
       }
    }
 
+   public static class IntervalTimerBlock extends ControlsBlockTypes.ToggleSwitchBlock {
+      public IntervalTimerBlock(Properties properties, long config) {
+         super(properties, config | ControlProfile.TIMER_INTERVAL);
+      }
+
+      @Override
+      protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (!level.isClientSide && control != null) {
+            double x = (hit.getLocation().x - pos.getX()) * 16.0;
+            double y = (hit.getLocation().y - pos.getY()) * 16.0;
+            int direction = y >= 13.0 ? 1 : y <= 2.0 ? -1 : 0;
+            int field = x >= 2.0 && x <= 3.95 ? 1
+               : x >= 4.25 && x <= 7.0 ? 2
+               : x >= 8.0 && x <= 10.0 ? 3
+               : x >= 11.0 && x <= 13.0 ? 4 : 0;
+            if (direction != 0 && field != 0) {
+               switch (field) {
+                  case 1 -> control.timerOnTicks(
+                     direction > 0 ? control.nextHigherInterval(control.timerOnTicks()) : control.nextLowerInterval(control.timerOnTicks())
+                  );
+                  case 2 -> control.timerOffTicks(
+                     direction > 0 ? control.nextHigherInterval(control.timerOffTicks()) : control.nextLowerInterval(control.timerOffTicks())
+                  );
+                  case 3 -> control.timerRamp(control.timerRamp() + direction);
+                  case 4 -> control.outputPower(control.outputPower() + direction);
+                  default -> {
+                  }
+               }
+               control.restartTimer();
+               return InteractionResult.SUCCESS;
+            }
+
+            boolean enabled = !state.getValue(ControlsBlockTypes.POWERED);
+            this.setPowered(level, pos, state, enabled);
+            control.restartTimer();
+         }
+         return InteractionResult.SUCCESS;
+      }
+
+      void serverTick(Level level, BlockPos pos, BlockState state, ControlStateBlockEntity control) {
+         control.intervalStep(level, pos, state);
+      }
+
+      @Override
+      protected int getConfiguredPower(BlockState state, BlockGetter level, BlockPos pos, Direction direction, boolean strong) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control == null || control.noOutput() || (strong && control.weak())) {
+            return 0;
+         }
+         Direction facing = state.getValue(FACING);
+         if (direction != facing && (strong || control.weak())) {
+            return 0;
+         }
+         return control.timerEffectivePower(state);
+      }
+   }
+
    public static class SensitiveGlassBlock extends Block {
       public SensitiveGlassBlock(Properties properties) {
          super(properties);
