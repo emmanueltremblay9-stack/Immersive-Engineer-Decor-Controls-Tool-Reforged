@@ -120,7 +120,7 @@ public class ControlStateBlockEntity extends BlockEntity {
    }
 
    public void outputPower(int value) {
-      this.outputPower = Mth.clamp(value, 1, 15);
+      this.outputPower = Mth.clamp(value, 0, 15);
       this.setChanged();
    }
 
@@ -417,7 +417,7 @@ public class ControlStateBlockEntity extends BlockEntity {
    @Override
    protected void loadAdditional(CompoundTag tag, Provider registries) {
       super.loadAdditional(tag, registries);
-      if (tag.contains("output_power", Tag.TAG_INT)) this.outputPower = Mth.clamp(tag.getInt("output_power"), 1, 15);
+      if (tag.contains("output_power", Tag.TAG_INT)) this.outputPower = Mth.clamp(tag.getInt("output_power"), 0, 15);
       this.inverted = tag.getBoolean("inverted");
       this.weak = tag.getBoolean("weak");
       this.noOutput = tag.getBoolean("no_output");
