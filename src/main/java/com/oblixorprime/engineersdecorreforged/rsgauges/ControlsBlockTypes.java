@@ -456,7 +456,14 @@ public final class ControlsBlockTypes {
 
    public static class ElevatorButtonBlock extends ControlsBlockTypes.PulseSwitchBlock {
       public ElevatorButtonBlock(Properties properties) {
-         super(properties, 20);
+         this(properties, ControlProfile.PULSE | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE
+            | ControlProfile.PULSE_EXTENDABLE | ControlProfile.PULSE_TIME_CONFIGURABLE
+            | ControlProfile.LEFT_CLICK_RESETTABLE | ControlProfile.PROJECTILE_SENSE
+            | ControlProfile.LINK_TARGET_SUPPORT | ControlProfile.LINK_SOURCE_SUPPORT);
+      }
+
+      public ElevatorButtonBlock(Properties properties, long config) {
+         super(properties, 20, config);
          this.registerDefaultState((BlockState)this.defaultBlockState().setValue(ControlsBlockTypes.VARIANT, 0));
       }
 
