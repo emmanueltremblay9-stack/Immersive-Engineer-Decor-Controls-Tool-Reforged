@@ -287,7 +287,7 @@ public final class ControlsModule {
       if (GAUGES.contains(name)) {
          return () -> new ControlsBlockTypes.GaugeBlock(controlProperties());
       } else if (INDICATORS.contains(name)) {
-         return () -> new ControlsBlockTypes.BooleanIndicatorBlock(indicatorProperties());
+         return () -> new ControlsBlockTypes.BooleanIndicatorBlock(indicatorProperties(), "industrial_alarm_siren".equals(name));
       } else {
          ControlsBlockTypes.ContactShape contactShape = contactShape(name);
          if (contactShape != null) {
