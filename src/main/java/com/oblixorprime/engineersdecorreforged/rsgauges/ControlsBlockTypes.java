@@ -427,7 +427,6 @@ public final class ControlsBlockTypes {
          if (this.requiresFloorSupport() && context.getClickedFace() != Direction.UP) {
             return null;
          }
-
          return super.getStateForPlacement(context);
       }
 
@@ -448,11 +447,37 @@ public final class ControlsBlockTypes {
 
       @Override
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         if (this.shape == ControlsBlockTypes.ContactShape.TRAPDOOR_PANEL && state.getValue(ControlsBlockTypes.POWERED)) {
+            return Shapes.empty();
+         }
          return switch (this.shape) {
             case ATTACHED_BUTTON, FALLTHROUGH_FRAME, POWER_PLANT -> Shapes.empty();
             case CONTACT_PLATE -> ControlsBlockTypes.CONTACT_PLATE_SHAPE;
             case TRAPDOOR_PANEL -> ControlsBlockTypes.trapdoorPanelShape(state);
          };
+      }
+
+      @Override
+      protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (!level.isClientSide && player.isShiftKeyDown() && control != null) {
+            double x = (hit.getLocation().x - pos.getX()) * 16.0;
+            double y = (hit.getLocation().y - pos.getY()) * 16.0;
+            int direction = y >= 12.0 ? 1 : y <= 4.0 ? -1 : 0;
+            if (direction != 0) {
+               int field = x < 4.0 ? 1 : x < 8.0 ? 2 : x < 12.0 ? 3 : 4;
+               switch (field) {
+                  case 1 -> control.contactHighSensitivity(direction > 0);
+                  case 2 -> control.contactThreshold(control.contactThreshold() + direction);
+                  case 3 -> control.contactFilter(control.contactFilter() + direction);
+                  case 4 -> control.outputPower(Mth.clamp(control.outputPower() + direction, 1, 15));
+                  default -> {
+                  }
+               }
+               return InteractionResult.SUCCESS;
+            }
+         }
+         return InteractionResult.CONSUME;
       }
 
       protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
@@ -461,21 +486,96 @@ public final class ControlsBlockTypes {
          }
       }
 
-      protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-         if (!level.isClientSide && !(Boolean)state.getValue(ControlsBlockTypes.POWERED)) {
-            this.setPowered(level, pos, state, true);
-            level.scheduleTick(pos, this, 12);
+      @Override
+      protected void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+         if (!level.isClientSide && ControlProfile.has(this.config(), ControlProfile.SHOCK_SENSITIVE)) {
+            this.refreshContact(level, pos, state);
          }
+         super.fallOn(level, state, pos, entity, fallDistance);
+      }
+
+      @Override
+      protected void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+         if (!level.isClientSide
+            && ControlProfile.has(this.config(), ControlProfile.SHOCK_SENSITIVE)
+            && ControlProfile.has(this.config(), ControlProfile.HIGH_SENSITIVE)
+            && !entity.isShiftKeyDown()) {
+            this.refreshContact(level, pos, state);
+         }
+         super.stepOn(level, pos, state, entity);
+      }
+
+      @Override
+      protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+         if (level.isClientSide) {
+            return;
+         }
+         if (ControlProfile.has(this.config(), ControlProfile.SHOCK_SENSITIVE) && entity.fallDistance < 0.2F) {
+            return;
+         }
+         this.refreshContact(level, pos, state);
       }
 
       @Override
       protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-         boolean occupied = !level.getEntitiesOfClass(Entity.class, new AABB(pos).inflate(0.05), Entity::isAlive).isEmpty();
-         if (occupied != (Boolean)state.getValue(ControlsBlockTypes.POWERED)) {
-            this.setPowered(level, pos, state, occupied);
+         boolean active = this.refreshContact(level, pos, state);
+         if (!active && state.getValue(ControlsBlockTypes.POWERED)) {
+            this.setPowered(level, pos, state, false);
+         }
+         level.scheduleTick(pos, this, 12);
+      }
+
+      private boolean refreshContact(Level level, BlockPos pos, BlockState state) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control == null) {
+            return false;
+         }
+         List<Entity> hits = level.getEntities((Entity)null, this.detectionVolume(pos), this::matchesConfiguredEntity);
+         boolean active = false;
+         if (hits.size() >= control.contactThreshold()) {
+            if (control.contactHighSensitivity()) {
+               active = true;
+            } else {
+               for (Entity hit : hits) {
+                  if (!hit.isIgnoringBlockTriggers()) {
+                     active = true;
+                     break;
+                  }
+               }
+            }
          }
 
-         level.scheduleTick(pos, this, 12);
+         if (active) {
+            control.startOrExtendPulse(level, 12, false);
+            if (!state.getValue(ControlsBlockTypes.POWERED)) {
+               this.setPowered(level, pos, state, true);
+            }
+         }
+         return active;
+      }
+
+      private boolean matchesConfiguredEntity(Entity entity) {
+         ControlStateBlockEntity control = entity.level().getBlockEntity(entity.blockPosition()) instanceof ControlStateBlockEntity be ? be : null;
+         return entity.isAlive();
+      }
+
+      private boolean matchesConfiguredEntity(Entity entity, ControlStateBlockEntity control) {
+         return switch (control.contactFilter()) {
+            case 1 -> entity instanceof LivingEntity;
+            case 2 -> entity instanceof Player;
+            case 3 -> entity instanceof Monster;
+            case 4 -> entity instanceof Animal;
+            case 5 -> entity instanceof Villager;
+            case 6 -> entity instanceof ItemEntity;
+            default -> true;
+         };
+      }
+
+      private AABB detectionVolume(BlockPos pos) {
+         if (ControlProfile.has(this.config(), ControlProfile.SHOCK_SENSITIVE) || ControlProfile.has(this.config(), ControlProfile.HIGH_SENSITIVE)) {
+            return new AABB(pos.getX() - 0.2, pos.getY(), pos.getZ() - 0.2, pos.getX() + 1.2, pos.getY() + 2.0, pos.getZ() + 1.2);
+         }
+         return new AABB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() + 2.0, pos.getZ() + 1.0);
       }
    }
 
