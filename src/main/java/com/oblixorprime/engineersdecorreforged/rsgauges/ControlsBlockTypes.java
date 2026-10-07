@@ -716,44 +716,140 @@ public final class ControlsBlockTypes {
    }
 
    public static class SensorSwitchBlock extends ControlsBlockTypes.ToggleSwitchBlock {
+      private static final String[] BLOCK_FILTERS = {
+         "any", "solid", "liquid", "air", "plant", "material_wood", "material_stone", "material_glass", "material_clay",
+         "material_water", "ore", "woodlog", "crop", "crop_mature", "sapling", "soil", "fertile", "planks", "slab"
+      };
       private final ControlsBlockTypes.SensorKind kind;
 
       public SensorSwitchBlock(Properties properties, ControlsBlockTypes.SensorKind kind) {
-         super(properties);
+         this(properties, kind, defaultSensorConfig(kind));
+      }
+
+      public SensorSwitchBlock(Properties properties, ControlsBlockTypes.SensorKind kind, long config) {
+         super(properties, config);
          this.kind = kind;
+      }
+
+      private static long defaultSensorConfig(ControlsBlockTypes.SensorKind kind) {
+         return switch (kind) {
+            case DAY -> ControlProfile.TIMER_DAYTIME | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE;
+            case RAIN -> ControlProfile.SENSOR_RAIN | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE;
+            case LIGHTNING -> ControlProfile.SENSOR_LIGHTNING | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE;
+            case LIGHT -> ControlProfile.SENSOR_LIGHT | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE;
+            case ENTITY, PLAYER, VILLAGER, ANIMAL, MOB, LIVING ->
+               ControlProfile.SENSOR_VOLUME | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE;
+            case LINEAR_ENTITY ->
+               ControlProfile.SENSOR_LINEAR | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE;
+            case BLOCK ->
+               ControlProfile.SENSOR_BLOCK | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE;
+         };
       }
 
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState state = super.getStateForPlacement(context);
-         return (BlockState)state.setValue(ControlsBlockTypes.POWERED, this.evaluatePlacement(context.getLevel(), context.getClickedPos(), state));
+         return state == null ? null : state.setValue(
+            ControlsBlockTypes.POWERED, this.evaluatePlacement(context.getLevel(), context.getClickedPos(), state)
+         );
       }
 
       protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
          if (!level.isClientSide) {
-            level.scheduleTick(pos, this, 20);
+            level.scheduleTick(pos, this, 4);
          }
       }
 
       @Override
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
          if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
+            ControlStateBlockEntity control = this.controlState(level, pos);
+            if (player.isShiftKeyDown() && control != null) {
+               this.configure(control, pos, hit);
+            }
             this.updateSensor(serverLevel, pos, state);
-            level.scheduleTick(pos, this, 20);
+            level.scheduleTick(pos, this, this.nextUpdateDelay(control));
          }
-
          return InteractionResult.SUCCESS;
       }
 
       protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
          this.updateSensor(level, pos, state);
-         level.scheduleTick(pos, this, 40);
+         level.scheduleTick(pos, this, this.nextUpdateDelay(control));
+      }
+
+      private int nextUpdateDelay(ControlStateBlockEntity control) {
+         if (this.kind == ControlsBlockTypes.SensorKind.LINEAR_ENTITY) {
+            return 4;
+         }
+         if (this.kind == ControlsBlockTypes.SensorKind.ENTITY
+            || this.kind == ControlsBlockTypes.SensorKind.PLAYER
+            || this.kind == ControlsBlockTypes.SensorKind.VILLAGER
+            || this.kind == ControlsBlockTypes.SensorKind.ANIMAL
+            || this.kind == ControlsBlockTypes.SensorKind.MOB
+            || this.kind == ControlsBlockTypes.SensorKind.LIVING) {
+            return 10;
+         }
+         if (this.kind == ControlsBlockTypes.SensorKind.BLOCK && control != null && control.sensorRange() > 1) {
+            return 10;
+         }
+         return 20;
+      }
+
+      private void configure(ControlStateBlockEntity control, BlockPos pos, BlockHitResult hit) {
+         double x = (hit.getLocation().x - pos.getX()) * 16.0;
+         double y = (hit.getLocation().y - pos.getY()) * 16.0;
+         int direction = y >= 12.0 ? 1 : y <= 4.0 ? -1 : 0;
+         if (direction == 0) {
+            return;
+         }
+
+         if (this.kind == ControlsBlockTypes.SensorKind.BLOCK
+            || this.kind == ControlsBlockTypes.SensorKind.ENTITY
+            || this.kind == ControlsBlockTypes.SensorKind.LINEAR_ENTITY) {
+            int field = x < 3.2 ? 1 : x < 6.4 ? 2 : x < 9.6 ? 3 : x < 12.8 ? 4 : 5;
+            switch (field) {
+               case 1 -> control.sensorRange(control.sensorRange() + direction, this.kind == ControlsBlockTypes.SensorKind.BLOCK);
+               case 2 -> control.sensorThreshold(control.sensorThreshold() + direction);
+               case 3 -> control.sensorDebounce(control.sensorDebounce() + direction);
+               case 4 -> control.outputPower(control.outputPower() + direction);
+               case 5 -> control.sensorFilter(
+                  control.sensorFilter() + direction,
+                  this.kind == ControlsBlockTypes.SensorKind.BLOCK ? BLOCK_FILTERS.length : 7
+               );
+               default -> {
+               }
+            }
+            return;
+         }
+
+         if (this.kind == ControlsBlockTypes.SensorKind.LIGHT) {
+            int field = x < 4.0 ? 1 : x < 8.0 ? 2 : x < 12.0 ? 3 : 4;
+            switch (field) {
+               case 1 -> control.sensorLightOn(control.sensorLightOn() + direction);
+               case 2 -> control.sensorLightOff(control.sensorLightOff() + direction);
+               case 3 -> control.outputPower(control.outputPower() + direction);
+               case 4 -> control.sensorDebounce(control.sensorDebounce() + direction);
+               default -> {
+               }
+            }
+            return;
+         }
+
+         if (this.kind == ControlsBlockTypes.SensorKind.RAIN || this.kind == ControlsBlockTypes.SensorKind.LIGHTNING) {
+            control.outputPower(control.outputPower() + direction);
+         }
       }
 
       private void updateSensor(ServerLevel level, BlockPos pos, BlockState state) {
-         boolean powered = this.evaluate(level, pos, state);
-         if (powered != (Boolean)state.getValue(ControlsBlockTypes.POWERED)) {
-            this.setPowered(level, pos, state, powered);
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         boolean active = this.evaluate(level, pos, state, control);
+         if (control != null && this.kind != ControlsBlockTypes.SensorKind.LIGHT) {
+            active = control.debounced(active);
+         }
+         if (active != state.getValue(ControlsBlockTypes.POWERED)) {
+            this.setPowered(level, pos, state, active);
          }
       }
 
@@ -762,48 +858,151 @@ public final class ControlsBlockTypes {
             case DAY -> level.dimensionType().hasSkyLight() && level.getDayTime() % 24000L < 12000L;
             case RAIN -> level.isRainingAt(pos.above());
             case LIGHTNING -> level.isThundering() && level.canSeeSky(pos.above());
-            case LIGHT -> level.getMaxLocalRawBrightness(pos) >= 8;
+            case LIGHT -> level.getMaxLocalRawBrightness(pos) >= 7;
             case ENTITY, LINEAR_ENTITY, PLAYER, VILLAGER, ANIMAL, MOB, LIVING -> false;
-            case BLOCK -> !level.getBlockState(pos.relative((Direction)state.getValue(FACING))).isAir();
+            case BLOCK -> !level.getBlockState(pos.relative(state.getValue(FACING))).isAir();
          };
       }
 
-      private boolean evaluate(ServerLevel level, BlockPos pos, BlockState state) {
+      private boolean evaluate(ServerLevel level, BlockPos pos, BlockState state, ControlStateBlockEntity control) {
          return switch (this.kind) {
             case DAY -> level.dimensionType().hasSkyLight() && level.getDayTime() % 24000L < 12000L;
             case RAIN -> level.isRainingAt(pos.above());
-            case LIGHTNING -> level.isThundering() && level.canSeeSky(pos.above());
-            case LIGHT -> level.getMaxLocalRawBrightness(pos) >= 8;
-            case ENTITY -> this.hasEntity(level, pos, Entity.class);
-            case LINEAR_ENTITY -> this.hasLinearEntity(level, pos, (Direction)state.getValue(FACING), Entity.class);
-            case PLAYER -> this.hasEntity(level, pos, Player.class);
-            case VILLAGER -> this.hasEntity(level, pos, Villager.class);
-            case ANIMAL -> this.hasEntity(level, pos, Animal.class);
-            case MOB -> this.hasEntity(level, pos, Mob.class);
-            case LIVING -> this.hasEntity(level, pos, LivingEntity.class);
-            case BLOCK -> !level.getBlockState(pos.relative((Direction)state.getValue(FACING))).isAir();
+            case LIGHTNING -> level.isThundering() && (level.isRainingAt(pos) || level.isRainingAt(pos.above(20)));
+            case LIGHT -> this.evaluateLight(level, pos, state, control);
+            case ENTITY, LINEAR_ENTITY, PLAYER, VILLAGER, ANIMAL, MOB, LIVING -> this.hasConfiguredEntities(level, pos, state, control);
+            case BLOCK -> this.hasConfiguredBlocks(level, pos, state, control);
          };
       }
 
-      private boolean hasEntity(ServerLevel level, BlockPos pos, Class<? extends Entity> type) {
-         AABB box = new AABB(pos).inflate(4.0);
-         return !level.getEntitiesOfClass(type, box, entity -> entity.isAlive()).isEmpty();
+      private boolean evaluateLight(ServerLevel level, BlockPos pos, BlockState state, ControlStateBlockEntity control) {
+         if (control == null) {
+            return level.getMaxLocalRawBrightness(pos) >= 7;
+         }
+         int value = level.getMaxLocalRawBrightness(pos);
+         boolean measured;
+         if (control.sensorLightOff() >= control.sensorLightOn()) {
+            measured = value == control.sensorLightOn();
+         } else if (state.getValue(ControlsBlockTypes.POWERED)) {
+            measured = value > control.sensorLightOff();
+         } else {
+            measured = value >= control.sensorLightOn();
+         }
+         return control.debounced(measured);
       }
 
-      private boolean hasLinearEntity(ServerLevel level, BlockPos pos, Direction facing, Class<? extends Entity> type) {
+      private boolean hasConfiguredEntities(ServerLevel level, BlockPos pos, BlockState state, ControlStateBlockEntity control) {
+         int range = control == null ? 5 : Math.max(1, control.sensorRange());
+         int threshold = control == null ? 1 : Math.max(1, control.sensorThreshold());
+         int filter = control == null ? 0 : control.sensorFilter();
+         Direction facing = state.getValue(FACING);
+         AABB area = this.kind == ControlsBlockTypes.SensorKind.LINEAR_ENTITY
+            ? linearArea(pos, facing, range)
+            : volumeArea(pos, facing, range);
+
+         int found = 0;
+         for (Entity entity : level.getEntities((Entity)null, area, Entity::isAlive)) {
+            if (this.matchesEntity(entity, filter) && ++found >= threshold) {
+               return true;
+            }
+         }
+         return false;
+      }
+
+      private boolean matchesEntity(Entity entity, int filter) {
+         if (this.kind == ControlsBlockTypes.SensorKind.PLAYER) return entity instanceof Player;
+         if (this.kind == ControlsBlockTypes.SensorKind.VILLAGER) return entity instanceof Villager;
+         if (this.kind == ControlsBlockTypes.SensorKind.ANIMAL) return entity instanceof Animal;
+         if (this.kind == ControlsBlockTypes.SensorKind.MOB) return entity instanceof Mob;
+         if (this.kind == ControlsBlockTypes.SensorKind.LIVING) return entity instanceof LivingEntity;
+
+         return switch (Mth.clamp(filter, 0, 6)) {
+            case 0 -> entity instanceof LivingEntity;
+            case 1 -> entity instanceof Player;
+            case 2 -> entity instanceof Monster;
+            case 3 -> entity instanceof Animal;
+            case 4 -> entity instanceof Villager;
+            case 5 -> entity instanceof ItemEntity;
+            default -> true;
+         };
+      }
+
+      private boolean hasConfiguredBlocks(ServerLevel level, BlockPos pos, BlockState state, ControlStateBlockEntity control) {
+         int configuredRange = control == null ? 0 : control.sensorRange();
+         int range = configuredRange < 2 ? 1 : Math.min(configuredRange, ControlStateBlockEntity.MAX_BLOCK_SENSOR_RANGE);
+         int threshold = control == null ? 1 : Math.min(control.sensorThreshold(), range);
+         int filter = control == null ? 0 : control.sensorFilter();
+         Direction facing = state.getValue(FACING);
+         int matched = 0;
+         for (int distance = 1; distance <= range; distance++) {
+            BlockPos target = pos.relative(facing, distance);
+            if (this.matchesBlockFilter(level, target, filter) && ++matched >= threshold) {
+               return true;
+            }
+         }
+         return false;
+      }
+
+      private boolean matchesBlockFilter(Level level, BlockPos pos, int filterIndex) {
+         BlockState state = level.getBlockState(pos);
+         String filter = BLOCK_FILTERS[Mth.clamp(filterIndex, 0, BLOCK_FILTERS.length - 1)];
+         return switch (filter) {
+            case "any" -> !state.isAir();
+            case "solid" -> state.isCollisionShapeFullBlock(level, pos);
+            case "liquid" -> !state.getFluidState().isEmpty();
+            case "air" -> state.isAir();
+            case "plant" -> state.getBlock() instanceof GrowingPlantBlock || state.getBlock() instanceof CropBlock
+               || state.is(BlockTags.FLOWERS) || state.is(BlockTags.SAPLINGS);
+            case "material_wood" -> state.is(BlockTags.LOGS) || state.is(BlockTags.PLANKS);
+            case "material_stone" -> state.is(BlockTags.BASE_STONE_OVERWORLD);
+            case "material_glass" -> state.getBlock() instanceof GlassBlock || state.getBlock() instanceof StainedGlassBlock;
+            case "material_clay" -> state.is(Blocks.CLAY) || state.is(Blocks.TERRACOTTA);
+            case "material_water" -> state.getFluidState().is(FluidTags.WATER);
+            case "ore" -> BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().contains("_ore");
+            case "woodlog" -> state.is(BlockTags.LOGS);
+            case "crop" -> state.getBlock() instanceof CropBlock;
+            case "crop_mature" -> state.getBlock() instanceof CropBlock crop && crop.isMaxAge(state);
+            case "sapling" -> state.is(BlockTags.SAPLINGS);
+            case "soil" -> state.is(BlockTags.DIRT);
+            case "fertile" -> state.getBlock() instanceof FarmBlock;
+            case "planks" -> state.is(BlockTags.PLANKS);
+            case "slab" -> state.getBlock() instanceof SlabBlock;
+            default -> false;
+         };
+      }
+
+      private static AABB linearArea(BlockPos pos, Direction facing, int range) {
          Vec3 center = Vec3.atCenterOf(pos);
          Vec3i normal = facing.getNormal();
-         Vec3 end = center.add(normal.getX() * 4.5, normal.getY() * 4.5, normal.getZ() * 4.5);
-         AABB box = new AABB(
-               Math.min(center.x, end.x),
-               Math.min(center.y, end.y),
-               Math.min(center.z, end.z),
-               Math.max(center.x, end.x),
-               Math.max(center.y, end.y),
-               Math.max(center.z, end.z)
-            )
-            .inflate(0.5);
-         return !level.getEntitiesOfClass(type, box, Entity::isAlive).isEmpty();
+         Vec3 end = center.add(normal.getX() * (range + 0.5), normal.getY() * (range + 0.5), normal.getZ() * (range + 0.5));
+         return new AABB(
+            Math.min(center.x, end.x),
+            Math.min(center.y, end.y),
+            Math.min(center.z, end.z),
+            Math.max(center.x, end.x),
+            Math.max(center.y, end.y),
+            Math.max(center.z, end.z)
+         ).inflate(0.5);
+      }
+
+      private static AABB volumeArea(BlockPos pos, Direction facing, int range) {
+         double x = pos.getX() + 0.5;
+         double y = pos.getY() + 0.5;
+         double z = pos.getZ() + 0.5;
+         return switch (facing.getAxis()) {
+            case X -> new AABB(
+               facing.getStepX() > 0 ? x : x - range, y - 2.0, z - range,
+               facing.getStepX() > 0 ? x + range : x, y + 2.0, z + range
+            );
+            case Y -> new AABB(
+               x - range, facing.getStepY() > 0 ? y : y - range, z - range,
+               x + range, facing.getStepY() > 0 ? y + range : y, z + range
+            );
+            case Z -> new AABB(
+               x - range, y - 2.0, facing.getStepZ() > 0 ? z : z - range,
+               x + range, y + 2.0, facing.getStepZ() > 0 ? z + range : z
+            );
+         };
       }
    }
 
