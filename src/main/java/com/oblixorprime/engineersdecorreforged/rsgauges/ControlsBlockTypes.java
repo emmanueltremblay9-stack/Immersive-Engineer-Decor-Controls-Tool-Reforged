@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.rsgauges;
 
 import com.mojang.serialization.MapCodec;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
+import com.oblixorprime.engineersdecorreforged.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
@@ -9,6 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
@@ -167,11 +169,17 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class BooleanIndicatorBlock extends DirectionalBlock {
+   public static class BooleanIndicatorBlock extends DirectionalBlock implements EntityBlock {
       public static final MapCodec<ControlsBlockTypes.BooleanIndicatorBlock> CODEC = simpleCodec(ControlsBlockTypes.BooleanIndicatorBlock::new);
+      private final boolean siren;
 
       public BooleanIndicatorBlock(Properties properties) {
+         this(properties, false);
+      }
+
+      public BooleanIndicatorBlock(Properties properties, boolean siren) {
          super(properties);
+         this.siren = siren;
          this.registerDefaultState(
             (BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWER_BOOL, false)
          );
@@ -187,7 +195,7 @@ public final class ControlsBlockTypes {
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState state = (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace());
-         return (BlockState)state.setValue(ControlsBlockTypes.POWER_BOOL, this.readPower(context.getLevel(), context.getClickedPos(), state));
+         return (BlockState)state.setValue(ControlsBlockTypes.POWER_BOOL, this.readAnalogPower(context.getLevel(), context.getClickedPos(), state) > 0);
       }
 
       protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -198,6 +206,14 @@ public final class ControlsBlockTypes {
          return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
       }
 
+      public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+         return new ControlStateBlockEntity(pos, state);
+      }
+
+      protected ControlStateBlockEntity controlState(BlockGetter level, BlockPos pos) {
+         return level.getBlockEntity(pos) instanceof ControlStateBlockEntity control ? control : null;
+      }
+
       protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
          if (!level.isClientSide) {
             this.updatePowered(level, pos, state);
@@ -206,24 +222,88 @@ public final class ControlsBlockTypes {
 
       protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
          if (!level.isClientSide) {
-            level.scheduleTick(pos, this, 20);
+            level.scheduleTick(pos, this, this.siren ? 8 : 20);
          }
       }
 
       protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
          this.updatePowered(level, pos, state);
-         level.scheduleTick(pos, this, 20);
+         if (this.siren && state.getValue(ControlsBlockTypes.POWER_BOOL) && (level.getGameTime() & 15L) < 8L) {
+            level.playSound(null, pos, ModSounds.ALARM_SIREN.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
+         }
+         level.scheduleTick(pos, this, this.siren ? 8 : 20);
+      }
+
+      protected ItemInteractionResult useItemOn(
+         ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit
+      ) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (stack.is(Items.ENDER_PEARL)) {
+            if (!level.isClientSide) {
+               ControlsBlockTypes.giveLinkedPearl(level, pos, stack, player, hand);
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         if (stack.is(CONFIG_WRENCHES) && control != null) {
+            if (!level.isClientSide) {
+               if (!control.inverted() && !control.gaugeComparatorMode()) {
+                  control.inverted(true);
+               } else if (control.inverted() && !control.gaugeComparatorMode()) {
+                  control.inverted(false);
+                  control.gaugeComparatorMode(true);
+               } else if (!control.inverted()) {
+                  control.inverted(true);
+               } else {
+                  control.inverted(false);
+                  control.gaugeComparatorMode(false);
+               }
+               this.updatePowered(level, pos, state);
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
       }
 
       private void updatePowered(Level level, BlockPos pos, BlockState state) {
-         boolean powered = this.readPower(level, pos, state);
+         boolean powered = this.readAnalogPower(level, pos, state) > 0;
          if (powered != (Boolean)state.getValue(ControlsBlockTypes.POWER_BOOL)) {
             level.setBlock(pos, (BlockState)state.setValue(ControlsBlockTypes.POWER_BOOL, powered), 3);
          }
       }
 
-      private boolean readPower(Level level, BlockPos pos, BlockState state) {
-         return ControlsBlockTypes.GaugeBlock.readAttachedSignal(level, pos, (Direction)state.getValue(FACING)) > 0;
+      private int readAnalogPower(Level level, BlockPos pos, BlockState state) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         BlockPos attachedPos = pos.relative(state.getValue(FACING).getOpposite());
+         BlockState attached = level.getBlockState(attachedPos);
+         int power;
+         if (control != null && control.gaugeComparatorMode()) {
+            power = attached.hasAnalogOutputSignal() ? attached.getAnalogOutputSignal(level, attachedPos) : 0;
+         } else {
+            power = ControlsBlockTypes.GaugeBlock.readAttachedSignal(level, pos, state.getValue(FACING));
+         }
+         if (control != null) {
+            if (control.inverted()) {
+               power = 15 - Mth.clamp(power, 0, 15);
+            }
+            power = Math.max(power, control.linkedInputPower());
+         }
+         return Mth.clamp(power, 0, 15);
+      }
+
+      protected boolean receiveSwitchLink(
+         Level level, BlockPos pos, BlockState state, ControlStateBlockEntity.LinkMode mode, int analogPower
+      ) {
+         if (mode != ControlStateBlockEntity.LinkMode.AS_STATE && mode != ControlStateBlockEntity.LinkMode.INV_STATE) {
+            return false;
+         }
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control == null) {
+            return false;
+         }
+         int power = mode == ControlStateBlockEntity.LinkMode.INV_STATE ? 15 - analogPower : analogPower;
+         control.linkedInputPower(power);
+         this.updatePowered(level, pos, state);
+         return true;
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
