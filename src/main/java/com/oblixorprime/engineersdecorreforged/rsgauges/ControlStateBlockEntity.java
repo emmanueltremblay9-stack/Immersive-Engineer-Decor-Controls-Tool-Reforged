@@ -215,6 +215,13 @@ public class ControlStateBlockEntity extends BlockEntity {
       return this.timerRawPower;
    }
 
+   public void restartTimer() {
+      this.timerRawPower = 0;
+      this.timerCountdown = 0;
+      this.timerHigh = false;
+      this.setChanged();
+   }
+
    public int timerEffectivePower(BlockState state) {
       if (!state.hasProperty(ControlsBlockTypes.POWERED) || !state.getValue(ControlsBlockTypes.POWERED) || this.noOutput) {
          return 0;
