@@ -75,6 +75,17 @@ public class ControlStateBlockEntity extends BlockEntity {
          this.weak = ControlProfile.has(config, ControlProfile.DATA_WEAK);
          this.noOutput = ControlProfile.has(config, ControlProfile.DATA_NO_OUTPUT);
          this.enabledSides = config & ControlProfile.DATA_SIDE_ALL;
+         if (ControlProfile.has(config, ControlProfile.SENSOR_BLOCK)) {
+            this.sensorRange = 0;
+            this.sensorThreshold = 1;
+         }
+         if (ControlProfile.has(config, ControlProfile.SENSOR_LIGHT)) {
+            this.sensorLightOn = 7;
+            this.sensorLightOff = 6;
+         }
+         if (ControlProfile.has(config, ControlProfile.SENSOR_RAIN) || ControlProfile.has(config, ControlProfile.SENSOR_LIGHTNING)) {
+            this.sensorDebounce = 4;
+         }
       }
    }
 
@@ -97,8 +108,8 @@ public class ControlStateBlockEntity extends BlockEntity {
       this.sensorFilter = 0;
       this.sensorDebounce = 0;
       this.sensorDebounceCounter = 0;
-      this.sensorLightOn = 8;
-      this.sensorLightOff = 7;
+      this.sensorLightOn = 7;
+      this.sensorLightOff = 6;
       this.links.clear();
       this.applyBlockDefaults(this.getBlockState());
       this.setChanged();
