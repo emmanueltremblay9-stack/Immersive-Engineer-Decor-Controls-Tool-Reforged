@@ -28,6 +28,7 @@ public class SwitchLinkPearlItem extends Item {
    private static final String TAG_X = "target_x";
    private static final String TAG_Y = "target_y";
    private static final String TAG_Z = "target_z";
+   private static final String TAG_MODE = "link_mode";
    private static final double MAX_REMOTE_DISTANCE = 128.0;
 
    public SwitchLinkPearlItem(Properties properties) {
@@ -41,6 +42,7 @@ public class SwitchLinkPearlItem extends Item {
       tag.putInt("target_x", pos.getX());
       tag.putInt("target_y", pos.getY());
       tag.putInt("target_z", pos.getZ());
+      tag.putInt(TAG_MODE, ControlStateBlockEntity.LinkMode.TOGGLE.id());
       stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
       return stack;
    }
@@ -62,13 +64,21 @@ public class SwitchLinkPearlItem extends Item {
 
    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
       ItemStack stack = player.getItemInHand(hand);
-      if (!hasLink(stack) || !player.isShiftKeyDown()) {
+      if (!hasLink(stack)) {
          return InteractionResultHolder.pass(stack);
-      } else if (level.isClientSide) {
-         return InteractionResultHolder.success(stack);
-      } else {
+      }
+      if (player.isShiftKeyDown()) {
+         if (level.isClientSide) {
+            return InteractionResultHolder.success(stack);
+         }
          return trigger(level, player, stack) ? InteractionResultHolder.success(stack) : InteractionResultHolder.fail(stack);
       }
+      if (!level.isClientSide) {
+         ControlStateBlockEntity.LinkMode next = mode(stack).next();
+         setMode(stack, next);
+         player.displayClientMessage(Component.literal("SwitchLink mode: " + next.name()), true);
+      }
+      return InteractionResultHolder.success(stack);
    }
 
    @Override
@@ -84,6 +94,7 @@ public class SwitchLinkPearlItem extends Item {
                   .withStyle(ChatFormatting.AQUA)
             );
             tooltip.add(Component.literal(dimension + " " + target.toShortString()).withStyle(ChatFormatting.DARK_AQUA));
+            tooltip.add(Component.literal("Mode: " + mode(stack).name()).withStyle(ChatFormatting.GRAY));
          }
       }
    }
@@ -122,7 +133,7 @@ public class SwitchLinkPearlItem extends Item {
       return Component.literal(target.toShortString());
    }
 
-   private static boolean hasLink(ItemStack stack) {
+   public static boolean hasLink(ItemStack stack) {
       CompoundTag tag = linkTag(stack);
       return tag.contains(TAG_DIMENSION, Tag.TAG_STRING)
          && tag.contains(TAG_X, Tag.TAG_INT)
@@ -130,8 +141,27 @@ public class SwitchLinkPearlItem extends Item {
          && tag.contains(TAG_Z, Tag.TAG_INT);
    }
 
-   private static BlockPos targetPos(CompoundTag tag) {
+   public static BlockPos targetPos(CompoundTag tag) {
       return new BlockPos(tag.getInt("target_x"), tag.getInt("target_y"), tag.getInt("target_z"));
+   }
+
+   public static ResourceLocation targetDimension(ItemStack stack) {
+      return ResourceLocation.tryParse(linkTag(stack).getString(TAG_DIMENSION));
+   }
+
+   public static BlockPos targetPos(ItemStack stack) {
+      return targetPos(linkTag(stack));
+   }
+
+   public static ControlStateBlockEntity.LinkMode mode(ItemStack stack) {
+      CompoundTag tag = linkTag(stack);
+      return ControlStateBlockEntity.LinkMode.byId(tag.contains(TAG_MODE, Tag.TAG_INT) ? tag.getInt(TAG_MODE) : ControlStateBlockEntity.LinkMode.TOGGLE.id());
+   }
+
+   public static void setMode(ItemStack stack, ControlStateBlockEntity.LinkMode mode) {
+      CompoundTag tag = linkTag(stack);
+      tag.putInt(TAG_MODE, mode.id());
+      stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
    }
 
    private static CompoundTag linkTag(ItemStack stack) {
