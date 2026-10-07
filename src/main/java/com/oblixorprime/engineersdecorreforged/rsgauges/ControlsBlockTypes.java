@@ -110,17 +110,23 @@ public final class ControlsBlockTypes {
    }
 
    public static boolean triggerSwitchLinkTarget(Level level, BlockPos pos) {
+      return applySwitchLink(level, pos, ControlStateBlockEntity.LinkMode.TOGGLE, 15, 15, true);
+   }
+
+   public static boolean applySwitchLink(
+      Level level,
+      BlockPos pos,
+      ControlStateBlockEntity.LinkMode mode,
+      int analogPower,
+      int digitalPower,
+      boolean stateChanged
+   ) {
       BlockState state = level.getBlockState(pos);
-      Block block = state.getBlock();
-      if (block instanceof ControlsBlockTypes.SwitchLinkReceiverBlock receiver) {
-         receiver.receiveSwitchLink(level, pos, state);
-         return true;
-      } else if (block instanceof ControlsBlockTypes.SwitchLinkPulseReceiverBlock receiver) {
-         receiver.receiveSwitchLink(level, pos, state);
-         return true;
-      } else {
-         return false;
+      if (state.getBlock() instanceof ControlsBlockTypes.ToggleSwitchBlock target
+         && ControlProfile.has(target.config(), ControlProfile.LINK_TARGET_SUPPORT)) {
+         return target.receiveSwitchLink(level, pos, state, mode, analogPower, digitalPower, stateChanged);
       }
+      return false;
    }
 
    private static void giveLinkedPearl(Level level, BlockPos pos, ItemStack stack, Player player, InteractionHand hand) {
