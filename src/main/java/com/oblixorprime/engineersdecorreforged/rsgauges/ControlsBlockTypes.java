@@ -510,7 +510,7 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class GaugeBlock extends DirectionalBlock {
+   public static class GaugeBlock extends DirectionalBlock implements EntityBlock {
       public static final MapCodec<ControlsBlockTypes.GaugeBlock> CODEC = simpleCodec(ControlsBlockTypes.GaugeBlock::new);
 
       public GaugeBlock(Properties properties) {
@@ -541,6 +541,14 @@ public final class ControlsBlockTypes {
          return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
       }
 
+      public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+         return new ControlStateBlockEntity(pos, state);
+      }
+
+      protected ControlStateBlockEntity controlState(BlockGetter level, BlockPos pos) {
+         return level.getBlockEntity(pos) instanceof ControlStateBlockEntity control ? control : null;
+      }
+
       protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
          this.updatePower(level, pos, state);
       }
@@ -556,6 +564,36 @@ public final class ControlsBlockTypes {
          level.scheduleTick(pos, this, 20);
       }
 
+      protected ItemInteractionResult useItemOn(
+         ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit
+      ) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (stack.is(Items.ENDER_PEARL)) {
+            if (!level.isClientSide) {
+               ControlsBlockTypes.giveLinkedPearl(level, pos, stack, player, hand);
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         if (stack.is(CONFIG_WRENCHES) && control != null) {
+            if (!level.isClientSide) {
+               if (!control.inverted() && !control.gaugeComparatorMode()) {
+                  control.inverted(true);
+               } else if (control.inverted() && !control.gaugeComparatorMode()) {
+                  control.inverted(false);
+                  control.gaugeComparatorMode(true);
+               } else if (!control.inverted()) {
+                  control.inverted(true);
+               } else {
+                  control.inverted(false);
+                  control.gaugeComparatorMode(false);
+               }
+               this.updatePower(level, pos, state);
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+      }
+
       protected void updatePower(Level level, BlockPos pos, BlockState state) {
          if (!level.isClientSide) {
             int power = this.readPower(level, pos, state);
@@ -566,7 +604,24 @@ public final class ControlsBlockTypes {
       }
 
       protected int readPower(Level level, BlockPos pos, BlockState state) {
-         return readAttachedSignal(level, pos, (Direction)state.getValue(FACING));
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         BlockPos attachedPos = pos.relative(state.getValue(FACING).getOpposite());
+         BlockState attached = level.getBlockState(attachedPos);
+         int power;
+
+         if (control != null && control.gaugeComparatorMode()) {
+            power = attached.hasAnalogOutputSignal() ? attached.getAnalogOutputSignal(level, attachedPos) : 0;
+         } else {
+            power = readAttachedSignal(level, pos, state.getValue(FACING));
+         }
+
+         if (control != null) {
+            if (control.inverted()) {
+               power = 15 - Mth.clamp(power, 0, 15);
+            }
+            power = Math.max(power, control.linkedInputPower());
+         }
+         return Mth.clamp(power, 0, 15);
       }
 
       protected static int readAttachedSignal(Level level, BlockPos pos, Direction facing) {
@@ -580,6 +635,22 @@ public final class ControlsBlockTypes {
          int indirect = level.getBestNeighborSignal(attachedPos);
          int analog = attachedState.hasAnalogOutputSignal() ? attachedState.getAnalogOutputSignal(level, attachedPos) : 0;
          return Mth.clamp(Math.max(Math.max(direct, indirect), analog), 0, 15);
+      }
+
+      protected boolean receiveSwitchLink(
+         Level level, BlockPos pos, BlockState state, ControlStateBlockEntity.LinkMode mode, int analogPower
+      ) {
+         if (mode != ControlStateBlockEntity.LinkMode.AS_STATE && mode != ControlStateBlockEntity.LinkMode.INV_STATE) {
+            return false;
+         }
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control == null) {
+            return false;
+         }
+         int power = mode == ControlStateBlockEntity.LinkMode.INV_STATE ? 15 - analogPower : analogPower;
+         control.linkedInputPower(power);
+         this.updatePower(level, pos, state);
+         return true;
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -598,7 +669,7 @@ public final class ControlsBlockTypes {
 
       @Override
       protected int readPower(Level level, BlockPos pos, BlockState state) {
-         return readAttachedSignal(level, pos, (Direction)state.getValue(FACING)) > 0 ? 15 : 0;
+         return super.readPower(level, pos, state) > 0 ? 15 : 0;
       }
    }
 
