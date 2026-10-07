@@ -225,7 +225,11 @@ public final class ControlsBlockTypes {
       public static final MapCodec<ControlsBlockTypes.ComparatorSwitchBlock> CODEC = simpleCodec(ControlsBlockTypes.ComparatorSwitchBlock::new);
 
       public ComparatorSwitchBlock(Properties properties) {
-         super(properties);
+         this(properties, ControlProfile.WEAKABLE | ControlProfile.INVERTABLE | ControlProfile.TOUCH_CONFIGURABLE | ControlProfile.LINK_SOURCE_SUPPORT);
+      }
+
+      public ComparatorSwitchBlock(Properties properties, long config) {
+         super(properties, config);
       }
 
       @Override
