@@ -312,11 +312,15 @@ public final class ControlsBlockTypes {
       private final ControlsBlockTypes.ContactShape shape;
 
       public ContactSwitchBlock(Properties properties) {
-         this(properties, ControlsBlockTypes.ContactShape.ATTACHED_BUTTON);
+         this(properties, ControlsBlockTypes.ContactShape.ATTACHED_BUTTON, ControlProfile.CONTACT);
       }
 
       public ContactSwitchBlock(Properties properties, ControlsBlockTypes.ContactShape shape) {
-         super(properties, 12);
+         this(properties, shape, ControlProfile.CONTACT);
+      }
+
+      public ContactSwitchBlock(Properties properties, ControlsBlockTypes.ContactShape shape, long config) {
+         super(properties, 12, config | ControlProfile.CONTACT);
          this.shape = shape;
       }
 
