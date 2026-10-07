@@ -563,22 +563,45 @@ public final class ControlsBlockTypes {
       private final int pulseTicks;
 
       public PulseSwitchBlock(Properties properties, int pulseTicks) {
-         super(properties);
+         this(properties, pulseTicks, ControlProfile.PULSE);
+      }
+
+      public PulseSwitchBlock(Properties properties, int pulseTicks, long config) {
+         super(properties, config | ControlProfile.PULSE);
          this.pulseTicks = pulseTicks;
       }
 
       @Override
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
          if (!level.isClientSide) {
-            this.setPowered(level, pos, state, true);
-            level.scheduleTick(pos, this, this.pulseTicks);
+            this.triggerPulse(level, pos, state);
          }
-
          return InteractionResult.SUCCESS;
       }
 
+      protected void triggerPulse(Level level, BlockPos pos, BlockState state) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         int duration = this.pulseTicks;
+         if (control != null) {
+            duration = control.startOrExtendPulse(
+               level, this.pulseTicks, ControlProfile.has(this.config(), ControlProfile.PULSE_EXTENDABLE)
+            );
+         }
+         if (!state.getValue(ControlsBlockTypes.POWERED)) {
+            this.setPowered(level, pos, state, true);
+         }
+         level.scheduleTick(pos, this, Math.max(1, duration));
+      }
+
       protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-         if ((Boolean)state.getValue(ControlsBlockTypes.POWERED)) {
+         if (!state.getValue(ControlsBlockTypes.POWERED)) {
+            return;
+         }
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         int remaining = control == null ? 0 : control.pulseRemaining(level);
+         if (remaining > 0) {
+            level.scheduleTick(pos, this, remaining);
+         } else {
             this.setPowered(level, pos, state, false);
          }
       }
