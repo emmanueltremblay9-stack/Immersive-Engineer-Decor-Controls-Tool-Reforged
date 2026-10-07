@@ -124,6 +124,14 @@ public final class ControlsBlockTypes {
       return applySwitchLink(level, pos, ControlStateBlockEntity.LinkMode.TOGGLE, 15, 15, true);
    }
 
+   public static boolean supportsSwitchLinkTarget(BlockState state) {
+      Block block = state.getBlock();
+      if (block instanceof ControlsBlockTypes.ToggleSwitchBlock target) {
+         return ControlProfile.has(target.config(), ControlProfile.LINK_TARGET_SUPPORT);
+      }
+      return block instanceof ControlsBlockTypes.GaugeBlock || block instanceof ControlsBlockTypes.BooleanIndicatorBlock;
+   }
+
    public static boolean applySwitchLink(
       Level level,
       BlockPos pos,
@@ -136,6 +144,12 @@ public final class ControlsBlockTypes {
       if (state.getBlock() instanceof ControlsBlockTypes.ToggleSwitchBlock target
          && ControlProfile.has(target.config(), ControlProfile.LINK_TARGET_SUPPORT)) {
          return target.receiveSwitchLink(level, pos, state, mode, analogPower, digitalPower, stateChanged);
+      }
+      if (state.getBlock() instanceof ControlsBlockTypes.GaugeBlock gauge) {
+         return gauge.receiveSwitchLink(level, pos, state, mode, analogPower);
+      }
+      if (state.getBlock() instanceof ControlsBlockTypes.BooleanIndicatorBlock indicator) {
+         return indicator.receiveSwitchLink(level, pos, state, mode, analogPower);
       }
       return false;
    }
