@@ -1,5 +1,7 @@
 package com.oblixorprime.engineersdecorreforged;
 
+import com.oblixorprime.engineersdecorreforged.rsgauges.ControlStateBlockEntity;
+import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsModule;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
@@ -16,6 +18,14 @@ public final class ModBlockEntities {
       "machine",
       () -> Builder.of(MachineBlockEntity::new, machineBlocks()).build(null)
    );
+   public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ControlStateBlockEntity>> CONTROL_STATE = BLOCK_ENTITY_TYPES.register(
+      "control_state",
+      () -> Builder.of(ControlStateBlockEntity::new, controlBlocks()).build(null)
+   );
+
+   private static Block[] controlBlocks() {
+      return ControlsModule.CONTROLS.stream().map(holder -> (Block)holder.get()).toArray(Block[]::new);
+   }
 
    private static Block[] machineBlocks() {
       return new Block[] {
