@@ -283,6 +283,7 @@ public final class ControlsModule {
    }
 
    private static Supplier<? extends Block> factory(String name) {
+      long profile = ControlProfile.forName(name);
       if (GAUGES.contains(name)) {
          return () -> new ControlsBlockTypes.GaugeBlock(controlProperties());
       } else if (INDICATORS.contains(name)) {
@@ -290,47 +291,51 @@ public final class ControlsModule {
       } else {
          ControlsBlockTypes.ContactShape contactShape = contactShape(name);
          if (contactShape != null) {
-            return () -> new ControlsBlockTypes.ContactSwitchBlock(controlProperties(), contactShape);
+            return () -> new ControlsBlockTypes.ContactSwitchBlock(controlProperties(), contactShape, profile);
          } else if ("door_sensor_switch".equals(name)) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.PLAYER);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.PLAYER, profile);
+         } else if ("industrial_switchlink_relay".equals(name) || "industrial_switchlink_relay_analog".equals(name)) {
+            return () -> new ControlsBlockTypes.SwitchLinkRelayBlock(controlProperties(), ControlProfile.analogSwitchLink(name), profile);
+         } else if ("industrial_switchlink_pulse_relay".equals(name)) {
+            return () -> new ControlsBlockTypes.SwitchLinkRelayBlock(controlProperties(), false, profile);
          } else if (PULSE_SWITCHES.contains(name)) {
-            return () -> new ControlsBlockTypes.PulseSwitchBlock(controlProperties(), 25);
+            return () -> new ControlsBlockTypes.PulseSwitchBlock(controlProperties(), 25, profile);
          } else if (SENSITIVE_GLASS.contains(name)) {
             return () -> new ControlsBlockTypes.SensitiveGlassBlock(glassProperties());
          } else if (SWITCHLINK_CASED_RECEIVERS.contains(name)) {
-            return () -> new ControlsBlockTypes.CasedSwitchLinkReceiverBlock(controlProperties());
+            return () -> new ControlsBlockTypes.CasedSwitchLinkReceiverBlock(controlProperties(), profile);
          } else if (SWITCHLINK_RECEIVERS.contains(name)) {
-            return () -> new ControlsBlockTypes.SwitchLinkReceiverBlock(controlProperties());
+            return () -> new ControlsBlockTypes.SwitchLinkReceiverBlock(controlProperties(), ControlProfile.analogSwitchLink(name), profile);
          } else if (SWITCHLINK_CASED_PULSE_RECEIVERS.contains(name)) {
-            return () -> new ControlsBlockTypes.CasedSwitchLinkPulseReceiverBlock(controlProperties());
+            return () -> new ControlsBlockTypes.CasedSwitchLinkPulseReceiverBlock(controlProperties(), profile);
          } else if (SWITCHLINK_PULSE_RECEIVERS.contains(name)) {
-            return () -> new ControlsBlockTypes.SwitchLinkPulseReceiverBlock(controlProperties());
+            return () -> new ControlsBlockTypes.SwitchLinkPulseReceiverBlock(controlProperties(), profile);
          } else if ("elevator_button".equals(name)) {
-            return () -> new ControlsBlockTypes.ElevatorButtonBlock(controlProperties());
+            return () -> new ControlsBlockTypes.ElevatorButtonBlock(controlProperties(), profile);
          } else if ("industrial_dimmer".equals(name)) {
-            return () -> new ControlsBlockTypes.DimmerBlock(controlProperties());
+            return () -> new ControlsBlockTypes.DimmerBlock(controlProperties(), profile);
          } else if ("industrial_comparator_switch".equals(name)) {
-            return () -> new ControlsBlockTypes.ComparatorSwitchBlock(controlProperties());
+            return () -> new ControlsBlockTypes.ComparatorSwitchBlock(controlProperties(), profile);
+         } else if (name.contains("interval_timer")) {
+            return () -> new ControlsBlockTypes.IntervalTimerBlock(controlProperties(), profile);
          } else if (name.contains("day_timer")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.DAY);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.DAY, profile);
          } else if (name.contains("rain_sensor")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.RAIN);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.RAIN, profile);
          } else if (name.contains("lightning_sensor")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.LIGHTNING);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.LIGHTNING, profile);
          } else if (name.contains("light_sensor")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.LIGHT);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.LIGHT, profile);
          } else if (name.contains("player_detector")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.PLAYER);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.PLAYER, profile);
          } else if (name.contains("linear_entity_detector")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.LINEAR_ENTITY);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.LINEAR_ENTITY, profile);
          } else if (name.contains("entity_detector")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.ENTITY);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.ENTITY, profile);
          } else if (name.contains("block_detector")) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.BLOCK);
+            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.BLOCK, profile);
          } else {
-            return name.contains("interval_timer")
-               ? () -> new ControlsBlockTypes.PulseSwitchBlock(controlProperties(), 40)
-               : () -> new ControlsBlockTypes.ToggleSwitchBlock(controlProperties());
+            return () -> new ControlsBlockTypes.ToggleSwitchBlock(controlProperties(), profile);
          }
       }
    }
