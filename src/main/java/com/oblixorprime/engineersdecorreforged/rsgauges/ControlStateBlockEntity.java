@@ -112,6 +112,9 @@ public class ControlStateBlockEntity extends BlockEntity {
       this.sensorLightOff = 6;
       this.dayOnSlot = 0;
       this.dayOffSlot = 0;
+      this.contactThreshold = 1;
+      this.contactFilter = 0;
+      this.contactHighSensitivity = false;
       this.gaugeComparatorMode = false;
       this.linkedInputPower = 0;
       this.links.clear();
@@ -376,6 +379,33 @@ public class ControlStateBlockEntity extends BlockEntity {
       this.setChanged();
    }
 
+   public int contactThreshold() {
+      return this.contactThreshold;
+   }
+
+   public void contactThreshold(int value) {
+      this.contactThreshold = Mth.clamp(value, 1, 64);
+      this.setChanged();
+   }
+
+   public int contactFilter() {
+      return this.contactFilter;
+   }
+
+   public void contactFilter(int value) {
+      this.contactFilter = Mth.clamp(value, 0, 6);
+      this.setChanged();
+   }
+
+   public boolean contactHighSensitivity() {
+      return this.contactHighSensitivity;
+   }
+
+   public void contactHighSensitivity(boolean value) {
+      this.contactHighSensitivity = value;
+      this.setChanged();
+   }
+
    public boolean gaugeComparatorMode() {
       return this.gaugeComparatorMode;
    }
@@ -479,6 +509,9 @@ public class ControlStateBlockEntity extends BlockEntity {
       if (tag.contains("sensor_light_off", Tag.TAG_INT)) this.sensorLightOff = Mth.clamp(tag.getInt("sensor_light_off"), 0, 15);
       if (tag.contains("day_on_slot", Tag.TAG_INT)) this.dayOnSlot = Math.floorMod(tag.getInt("day_on_slot"), 48);
       if (tag.contains("day_off_slot", Tag.TAG_INT)) this.dayOffSlot = Math.floorMod(tag.getInt("day_off_slot"), 48);
+      if (tag.contains("contact_threshold", Tag.TAG_INT)) this.contactThreshold = Mth.clamp(tag.getInt("contact_threshold"), 1, 64);
+      if (tag.contains("contact_filter", Tag.TAG_INT)) this.contactFilter = Mth.clamp(tag.getInt("contact_filter"), 0, 6);
+      this.contactHighSensitivity = tag.getBoolean("contact_high_sensitivity");
       this.gaugeComparatorMode = tag.getBoolean("gauge_comparator");
       if (tag.contains("linked_input", Tag.TAG_INT)) this.linkedInputPower = Mth.clamp(tag.getInt("linked_input"), 0, 15);
 
@@ -522,6 +555,9 @@ public class ControlStateBlockEntity extends BlockEntity {
       tag.putInt("sensor_light_off", this.sensorLightOff);
       tag.putInt("day_on_slot", this.dayOnSlot);
       tag.putInt("day_off_slot", this.dayOffSlot);
+      tag.putInt("contact_threshold", this.contactThreshold);
+      tag.putInt("contact_filter", this.contactFilter);
+      tag.putBoolean("contact_high_sensitivity", this.contactHighSensitivity);
       tag.putBoolean("gauge_comparator", this.gaugeComparatorMode);
       tag.putInt("linked_input", this.linkedInputPower);
 
