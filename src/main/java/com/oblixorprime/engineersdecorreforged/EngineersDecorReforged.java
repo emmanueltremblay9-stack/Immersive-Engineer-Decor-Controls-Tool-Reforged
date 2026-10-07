@@ -72,6 +72,10 @@ public final class EngineersDecorReforged {
          legacyId(ResourceLocation.fromNamespaceAndPath(MOD_ID, "machine")),
          ResourceLocation.fromNamespaceAndPath(MOD_ID, "machine")
       );
+      ModBlockEntities.BLOCK_ENTITY_TYPES.addAlias(
+         legacyId(ResourceLocation.fromNamespaceAndPath(MOD_ID, "control_state")),
+         ResourceLocation.fromNamespaceAndPath(MOD_ID, "control_state")
+      );
       ModMenus.machineTypes().values().forEach(holder -> ModMenus.MENU_TYPES.addAlias(legacyId(holder.getId()), holder.getId()));
       ModRecipeSerializers.RECIPE_SERIALIZERS.addAlias(legacyId(ModRecipeSerializers.REDIA_TOOL_REPAIR.getId()), ModRecipeSerializers.REDIA_TOOL_REPAIR.getId());
       CREATIVE_TABS.addAlias(legacyId(MAIN_TAB.getId()), MAIN_TAB.getId());
