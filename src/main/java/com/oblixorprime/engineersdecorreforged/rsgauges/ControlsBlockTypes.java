@@ -1011,7 +1011,12 @@ public final class ControlsBlockTypes {
       public static final MapCodec<ControlsBlockTypes.SwitchLinkPulseReceiverBlock> CODEC = simpleCodec(ControlsBlockTypes.SwitchLinkPulseReceiverBlock::new);
 
       public SwitchLinkPulseReceiverBlock(Properties properties) {
-         super(properties, 25);
+         this(properties, ControlProfile.PULSE | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE
+            | ControlProfile.PULSE_TIME_CONFIGURABLE | ControlProfile.LINK_TARGET_SUPPORT | ControlProfile.LINK_SOURCE_SUPPORT);
+      }
+
+      public SwitchLinkPulseReceiverBlock(Properties properties, long config) {
+         super(properties, 25, config);
       }
 
       @Override
@@ -1019,6 +1024,7 @@ public final class ControlsBlockTypes {
          return CODEC;
       }
 
+      @Override
       protected ItemInteractionResult useItemOn(
          ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit
       ) {
@@ -1026,16 +1032,9 @@ public final class ControlsBlockTypes {
             if (!level.isClientSide) {
                ControlsBlockTypes.giveLinkedPearl(level, pos, stack, player, hand);
             }
-
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
-         } else {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
          }
-      }
-
-      protected void receiveSwitchLink(Level level, BlockPos pos, BlockState state) {
-         this.setPowered(level, pos, state, true);
-         level.scheduleTick(pos, this, 25);
+         return super.useItemOn(stack, state, level, pos, player, hand, hit);
       }
    }
 
@@ -1045,7 +1044,13 @@ public final class ControlsBlockTypes {
       );
 
       public CasedSwitchLinkPulseReceiverBlock(Properties properties) {
-         super(properties);
+         this(properties, ControlProfile.PULSE | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE
+            | ControlProfile.PULSE_TIME_CONFIGURABLE | ControlProfile.DATA_SIDE_ALL | ControlProfile.SIDES_CONFIGURABLE
+            | ControlProfile.LINK_TARGET_SUPPORT | ControlProfile.LINK_SOURCE_SUPPORT);
+      }
+
+      public CasedSwitchLinkPulseReceiverBlock(Properties properties, long config) {
+         super(properties, config);
       }
 
       @Override
@@ -1076,9 +1081,16 @@ public final class ControlsBlockTypes {
 
    public static class SwitchLinkReceiverBlock extends ControlsBlockTypes.ToggleSwitchBlock {
       public static final MapCodec<ControlsBlockTypes.SwitchLinkReceiverBlock> CODEC = simpleCodec(ControlsBlockTypes.SwitchLinkReceiverBlock::new);
+      private final boolean analog;
 
       public SwitchLinkReceiverBlock(Properties properties) {
-         super(properties);
+         this(properties, false, ControlProfile.BISTABLE | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE
+            | ControlProfile.LINK_TARGET_SUPPORT | ControlProfile.LINK_SOURCE_SUPPORT);
+      }
+
+      public SwitchLinkReceiverBlock(Properties properties, boolean analog, long config) {
+         super(properties, config);
+         this.analog = analog;
       }
 
       @Override
@@ -1086,6 +1098,12 @@ public final class ControlsBlockTypes {
          return CODEC;
       }
 
+      @Override
+      protected boolean supportsAnalogLink() {
+         return this.analog;
+      }
+
+      @Override
       protected ItemInteractionResult useItemOn(
          ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit
       ) {
@@ -1093,15 +1111,9 @@ public final class ControlsBlockTypes {
             if (!level.isClientSide) {
                ControlsBlockTypes.giveLinkedPearl(level, pos, stack, player, hand);
             }
-
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
-         } else {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
          }
-      }
-
-      protected void receiveSwitchLink(Level level, BlockPos pos, BlockState state) {
-         this.setPowered(level, pos, state, !(Boolean)state.getValue(ControlsBlockTypes.POWERED));
+         return super.useItemOn(stack, state, level, pos, player, hand, hit);
       }
    }
 
@@ -1111,7 +1123,13 @@ public final class ControlsBlockTypes {
       );
 
       public CasedSwitchLinkReceiverBlock(Properties properties) {
-         super(properties);
+         this(properties, ControlProfile.BISTABLE | ControlProfile.WEAKABLE | ControlProfile.INVERTABLE
+            | ControlProfile.DATA_SIDE_ALL | ControlProfile.SIDES_CONFIGURABLE
+            | ControlProfile.LINK_TARGET_SUPPORT | ControlProfile.LINK_SOURCE_SUPPORT);
+      }
+
+      public CasedSwitchLinkReceiverBlock(Properties properties, long config) {
+         super(properties, false, config);
       }
 
       @Override
@@ -1137,6 +1155,96 @@ public final class ControlsBlockTypes {
       @Override
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return Shapes.block();
+      }
+   }
+
+   public static class SwitchLinkRelayBlock extends ControlsBlockTypes.ToggleSwitchBlock {
+      private final boolean analog;
+
+      public SwitchLinkRelayBlock(Properties properties, boolean analog, long config) {
+         super(properties, config | ControlProfile.LINK_SENDER | ControlProfile.LINK_TARGET_SUPPORT | ControlProfile.LINK_SOURCE_SUPPORT);
+         this.analog = analog;
+      }
+
+      @Override
+      protected boolean supportsAnalogLink() {
+         return this.analog;
+      }
+
+      @Override
+      protected int getConfiguredPower(BlockState state, BlockGetter level, BlockPos pos, Direction direction, boolean strong) {
+         return 0;
+      }
+
+      @Override
+      protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+         return InteractionResult.CONSUME;
+      }
+
+      @Override
+      protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+         if (!level.isClientSide) {
+            level.scheduleTick(pos, this, 1);
+         }
+      }
+
+      @Override
+      protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+         if (!level.isClientSide) {
+            this.refreshInput(level, pos, state);
+         }
+      }
+
+      @Override
+      protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+         if (ControlProfile.has(this.config(), ControlProfile.PULSE)) {
+            ControlStateBlockEntity control = this.controlState(level, pos);
+            int remaining = control == null ? 0 : control.pulseRemaining(level);
+            if (state.getValue(ControlsBlockTypes.POWERED) && remaining <= 0) {
+               this.setPowered(level, pos, state, false);
+            } else if (remaining > 0) {
+               level.scheduleTick(pos, this, remaining);
+            }
+         } else {
+            this.refreshInput(level, pos, state);
+         }
+      }
+
+      private void refreshInput(Level level, BlockPos pos, BlockState state) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control == null) {
+            return;
+         }
+         Direction supportDirection = state.getValue(FACING).getOpposite();
+         BlockPos supportPos = pos.relative(supportDirection);
+         BlockState support = level.getBlockState(supportPos);
+         int power = Math.max(
+            support.getSignal(level, supportPos, supportDirection.getOpposite()),
+            support.getDirectSignal(level, supportPos, supportDirection.getOpposite())
+         );
+         power = Math.max(power, level.getBestNeighborSignal(supportPos));
+         if (control.inverted() && ControlProfile.has(this.config(), ControlProfile.INVERTABLE)) {
+            power = 15 - power;
+         }
+
+         int previousAnalog = control.outputPower();
+         boolean wasPowered = state.getValue(ControlsBlockTypes.POWERED);
+         boolean powered = power > 0;
+         control.outputPower(power);
+
+         if (ControlProfile.has(this.config(), ControlProfile.PULSE)) {
+            if (powered && !wasPowered) {
+               int duration = control.startOrExtendPulse(level, 20, false);
+               this.setPowered(level, pos, state, true);
+               level.scheduleTick(pos, this, duration);
+            }
+         } else if (powered != wasPowered) {
+            this.setPowered(level, pos, state, powered);
+         }
+
+         if (this.analog && previousAnalog != power && powered == wasPowered) {
+            control.activateLinks(level, pos, power, powered ? 15 : 0, false);
+         }
       }
    }
 
