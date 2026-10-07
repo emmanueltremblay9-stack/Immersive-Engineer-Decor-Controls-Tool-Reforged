@@ -110,6 +110,8 @@ public class ControlStateBlockEntity extends BlockEntity {
       this.sensorDebounceCounter = 0;
       this.sensorLightOn = 7;
       this.sensorLightOff = 6;
+      this.dayOnSlot = 0;
+      this.dayOffSlot = 0;
       this.gaugeComparatorMode = false;
       this.linkedInputPower = 0;
       this.links.clear();
@@ -356,6 +358,24 @@ public class ControlStateBlockEntity extends BlockEntity {
       this.setChanged();
    }
 
+   public int dayOnSlot() {
+      return this.dayOnSlot;
+   }
+
+   public void dayOnSlot(int value) {
+      this.dayOnSlot = Math.floorMod(value, 48);
+      this.setChanged();
+   }
+
+   public int dayOffSlot() {
+      return this.dayOffSlot;
+   }
+
+   public void dayOffSlot(int value) {
+      this.dayOffSlot = Math.floorMod(value, 48);
+      this.setChanged();
+   }
+
    public boolean gaugeComparatorMode() {
       return this.gaugeComparatorMode;
    }
@@ -457,6 +477,8 @@ public class ControlStateBlockEntity extends BlockEntity {
       if (tag.contains("sensor_debounce", Tag.TAG_INT)) this.sensorDebounce = Mth.clamp(tag.getInt("sensor_debounce"), 0, MAX_SENSOR_DEBOUNCE);
       if (tag.contains("sensor_light_on", Tag.TAG_INT)) this.sensorLightOn = Mth.clamp(tag.getInt("sensor_light_on"), 0, 15);
       if (tag.contains("sensor_light_off", Tag.TAG_INT)) this.sensorLightOff = Mth.clamp(tag.getInt("sensor_light_off"), 0, 15);
+      if (tag.contains("day_on_slot", Tag.TAG_INT)) this.dayOnSlot = Math.floorMod(tag.getInt("day_on_slot"), 48);
+      if (tag.contains("day_off_slot", Tag.TAG_INT)) this.dayOffSlot = Math.floorMod(tag.getInt("day_off_slot"), 48);
       this.gaugeComparatorMode = tag.getBoolean("gauge_comparator");
       if (tag.contains("linked_input", Tag.TAG_INT)) this.linkedInputPower = Mth.clamp(tag.getInt("linked_input"), 0, 15);
 
@@ -498,6 +520,8 @@ public class ControlStateBlockEntity extends BlockEntity {
       tag.putInt("sensor_debounce", this.sensorDebounce);
       tag.putInt("sensor_light_on", this.sensorLightOn);
       tag.putInt("sensor_light_off", this.sensorLightOff);
+      tag.putInt("day_on_slot", this.dayOnSlot);
+      tag.putInt("day_off_slot", this.dayOffSlot);
       tag.putBoolean("gauge_comparator", this.gaugeComparatorMode);
       tag.putInt("linked_input", this.linkedInputPower);
 
