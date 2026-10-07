@@ -385,76 +385,79 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class DimmerBlock extends DirectionalBlock {
+   public static class DimmerBlock extends ControlsBlockTypes.ToggleSwitchBlock {
       public static final MapCodec<ControlsBlockTypes.DimmerBlock> CODEC = simpleCodec(ControlsBlockTypes.DimmerBlock::new);
 
       public DimmerBlock(Properties properties) {
-         super(properties);
-         this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH))
-                  .setValue(ControlsBlockTypes.POWERED, false))
-               .setValue(ControlsBlockTypes.POWER, 0)
-         );
+         this(properties, ControlProfile.WEAKABLE | ControlProfile.TOUCH_CONFIGURABLE | ControlProfile.LINK_SOURCE_SUPPORT);
+      }
+
+      public DimmerBlock(Properties properties, long config) {
+         super(properties, config);
+         this.registerDefaultState((BlockState)this.defaultBlockState().setValue(ControlsBlockTypes.POWER, 0));
       }
 
       protected MapCodec<? extends DirectionalBlock> codec() {
          return CODEC;
       }
 
+      @Override
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{FACING, ControlsBlockTypes.POWERED, ControlsBlockTypes.POWER});
+         super.createBlockStateDefinition(builder);
+         builder.add(new Property[]{ControlsBlockTypes.POWER});
       }
 
+      @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace());
+         BlockState state = super.getStateForPlacement(context);
+         return state == null ? null : state.setValue(ControlsBlockTypes.POWER, 0);
       }
 
-      protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-         return ControlsBlockTypes.hasAttachedSupport(state, level, pos);
-      }
-
-      protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-         return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
-      }
-
+      @Override
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
          if (!level.isClientSide) {
             int next = dimmerPowerFromHit(state, pos, hit);
-            level.setBlock(pos, (BlockState)((BlockState)state.setValue(ControlsBlockTypes.POWER, next)).setValue(ControlsBlockTypes.POWERED, next > 0), 3);
+            boolean wasPowered = state.getValue(ControlsBlockTypes.POWERED);
+            ControlStateBlockEntity control = this.controlState(level, pos);
+            if (control != null) {
+               control.outputPower(next);
+            }
+            BlockState nextState = state.setValue(ControlsBlockTypes.POWER, next).setValue(ControlsBlockTypes.POWERED, next > 0);
+            level.setBlock(pos, nextState, 3);
             level.updateNeighborsAt(pos, this);
-            level.updateNeighborsAt(pos.relative(((Direction)state.getValue(FACING)).getOpposite()), this);
+            level.updateNeighborsAt(pos.relative(state.getValue(FACING).getOpposite()), this);
+            if (control != null) {
+               control.activateLinks(level, pos, next, next > 0 ? 15 : 0, wasPowered != (next > 0));
+            }
          }
-
          return InteractionResult.SUCCESS;
       }
 
       private static int dimmerPowerFromHit(BlockState state, BlockPos pos, BlockHitResult hit) {
          Vec3 location = hit.getLocation();
-         double travel = switch ((Direction)state.getValue(FACING)) {
+         double travel = switch (state.getValue(FACING)) {
             case UP, DOWN -> location.z - pos.getZ();
             default -> location.y - pos.getY();
          };
          return Mth.clamp((int)Math.floor(travel * 16.0), 0, 15);
       }
 
-      protected boolean isSignalSource(BlockState state) {
-         return true;
+      @Override
+      protected int getConfiguredPower(BlockState state, BlockGetter level, BlockPos pos, Direction direction, boolean strong) {
+         ControlStateBlockEntity control = this.controlState(level, pos);
+         if (control != null && (control.noOutput() || (strong && control.weak()))) {
+            return 0;
+         }
+         Direction facing = state.getValue(FACING);
+         if (direction != facing && (strong || (control != null && control.weak()))) {
+            return 0;
+         }
+         return state.getValue(ControlsBlockTypes.POWER);
       }
 
-      protected int getSignal(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-         return (Integer)state.getValue(ControlsBlockTypes.POWER);
-      }
-
-      protected int getDirectSignal(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-         return this.getSignal(state, level, pos, direction);
-      }
-
-      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return ControlsBlockTypes.attachedDeviceShape((Direction)state.getValue(FACING), 4.0, 12.0, 4.0);
-      }
-
-      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return Shapes.empty();
+      @Override
+      protected int linkOutputPower(Level level, BlockPos pos, BlockState state) {
+         return state.getValue(ControlsBlockTypes.POWER);
       }
    }
 
