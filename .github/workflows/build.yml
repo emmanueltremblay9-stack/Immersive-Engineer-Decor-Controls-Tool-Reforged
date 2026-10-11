@@ -65,36 +65,13 @@ jobs:
           echo "MOD_VERSION=$mod_version" >> "$GITHUB_ENV"
 
       - name: Record runtime JAR SHA-256
-        id: runtime-jar
         shell: bash
         run: |
           jar="build/libs/${MOD_ID}-${MOD_VERSION}.jar"
           test -f "$jar"
           runtime_sha256="$(sha256sum "$jar" | awk '{print $1}')"
           test "${#runtime_sha256}" -eq 64
-          echo "sha256=$runtime_sha256" >> "$GITHUB_OUTPUT"
-          echo "path=$jar" >> "$GITHUB_OUTPUT"
           echo "Runtime JAR SHA-256: $runtime_sha256"
-
-      - name: Upload runtime jar
-        id: upload-runtime-jar
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: ${{ env.MOD_ID }}-${{ env.MOD_VERSION }}
-          path: build/libs/${{ env.MOD_ID }}-${{ env.MOD_VERSION }}.jar
-          if-no-files-found: error
-          retention-days: 30
-
-      - name: Record runtime and Actions archive digests
-        shell: bash
-        env:
-          ACTIONS_ARCHIVE_DIGEST: ${{ steps.upload-runtime-jar.outputs.artifact-digest }}
-          RUNTIME_JAR_SHA256: ${{ steps.runtime-jar.outputs.sha256 }}
-        run: |
-          test -n "$ACTIONS_ARCHIVE_DIGEST"
-          test -n "$RUNTIME_JAR_SHA256"
-          echo "Runtime JAR SHA-256: $RUNTIME_JAR_SHA256"
-          echo "Actions archive digest: $ACTIONS_ARCHIVE_DIGEST"
-          echo "### Uploaded artifact" >> "$GITHUB_STEP_SUMMARY"
-          echo "Runtime JAR SHA-256: \`$RUNTIME_JAR_SHA256\`" >> "$GITHUB_STEP_SUMMARY"
-          echo "Actions archive digest: \`$ACTIONS_ARCHIVE_DIGEST\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Local runtime build (not uploaded)" >> "$GITHUB_STEP_SUMMARY"
+          echo "JAR: \`$jar\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "SHA-256: \`$runtime_sha256\`" >> "$GITHUB_STEP_SUMMARY"

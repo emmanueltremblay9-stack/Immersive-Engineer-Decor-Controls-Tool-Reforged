@@ -123,7 +123,15 @@ public final class MachineBlocks {
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(MachineBlocks.FACING, context.getClickedFace());
+         Direction facing = context.getClickedFace();
+         if (this.kind() == MachineKind.FACTORY_HOPPER) {
+            facing = facing.getOpposite();
+            if (facing == Direction.UP) {
+               facing = Direction.DOWN;
+            }
+         }
+
+         return (BlockState)this.defaultBlockState().setValue(MachineBlocks.FACING, facing);
       }
 
       protected BlockState rotate(BlockState state, Rotation rotation) {

@@ -1,9 +1,14 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.ModItems;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -129,5 +134,41 @@ public final class ContentRegressionGameTests {
       DoorBlock woodDoor = (DoorBlock)ModBlocks.OLD_INDUSTRIAL_WOOD_DOOR.get();
       helper.assertTrue(woodDoor.type() == BlockSetType.OAK, "old industrial wood door should retain the oak sound family");
       helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void every_panzer_glass_slab_variant_uses_translucent_rendering(GameTestHelper helper) {
+      JsonObject blockstate = readJsonResource(
+         "/assets/immersive_engineer_decor_controls_tool_reforged/blockstates/panzerglass_slab.json"
+      );
+      JsonObject variants = blockstate.getAsJsonObject("variants");
+      for (var entry : variants.entrySet()) {
+         JsonObject variant = entry.getValue().getAsJsonObject();
+         String modelId = variant.get("model").getAsString();
+         int separator = modelId.indexOf(':');
+         helper.assertTrue(separator > 0 && separator < modelId.length() - 1, "Panzer Glass slab model id should be valid: " + modelId);
+
+         String modelResource = "/assets/" + modelId.substring(0, separator) + "/models/" + modelId.substring(separator + 1) + ".json";
+         JsonObject model = readJsonResource(modelResource);
+         helper.assertTrue(
+            model.has("render_type") && model.get("render_type").getAsString().equals("translucent"),
+            "Panzer Glass slab variant " + entry.getKey() + " should render translucently through " + modelId
+         );
+      }
+
+      helper.succeed();
+   }
+
+   private static JsonObject readJsonResource(String resourcePath) {
+      InputStream stream = ContentRegressionGameTests.class.getResourceAsStream(resourcePath);
+      if (stream == null) {
+         throw new IllegalStateException("Missing GameTest resource " + resourcePath);
+      }
+
+      try (InputStream input = stream; InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+         return JsonParser.parseReader(reader).getAsJsonObject();
+      } catch (Exception exception) {
+         throw new IllegalStateException("Could not read GameTest resource " + resourcePath, exception);
+      }
    }
 }
