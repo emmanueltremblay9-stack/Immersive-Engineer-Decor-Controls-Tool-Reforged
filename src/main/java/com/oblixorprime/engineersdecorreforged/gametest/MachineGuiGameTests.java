@@ -1996,6 +1996,83 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 120)
+   public static void factory_hopper_vertical_placement_extracts_from_inventory_above_and_outputs_down(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      BlockPos barrelPos = helper.absolutePos(TEST_POS);
+      BlockPos hopperPos = barrelPos.above();
+      BlockPos sourcePos = hopperPos.above();
+      helper.setBlock(TEST_POS, Blocks.BARREL.defaultBlockState());
+      helper.setBlock(TEST_POS.above(2), Blocks.CHEST.defaultBlockState());
+      Block hopperBlock = (Block)ModBlocks.FACTORY_HOPPER.get();
+      BlockHitResult topHit = new BlockHitResult(
+         new Vec3(barrelPos.getX() + 0.5, barrelPos.getY() + 1.0, barrelPos.getZ() + 0.5), Direction.UP, barrelPos, false
+      );
+      BlockPlaceContext topContext = new BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, new ItemStack(hopperBlock), topHit);
+      BlockState placedState = hopperBlock.getStateForPlacement(topContext);
+      helper.assertTrue(placedState != null, "factory hopper placement on a block top should produce a state");
+      helper.assertValueEqual(Direction.DOWN, placedState.getValue(MachineBlocks.FACING), "factory hopper placed on a top face should point down like a vanilla hopper");
+
+      BlockHitResult undersideHit = new BlockHitResult(
+         new Vec3(sourcePos.getX() + 0.5, sourcePos.getY(), sourcePos.getZ() + 0.5), Direction.DOWN, sourcePos, false
+      );
+      BlockPlaceContext undersideContext = new BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, new ItemStack(hopperBlock), undersideHit);
+      BlockState undersideState = hopperBlock.getStateForPlacement(undersideContext);
+      helper.assertTrue(undersideState != null, "factory hopper placement against a block underside should produce a state");
+      helper.assertValueEqual(Direction.DOWN, undersideState.getValue(MachineBlocks.FACING), "factory hopper placed on an underside should keep its output pointing down");
+
+      helper.setBlock(TEST_POS.above(), placedState);
+      BlockEntity hopperEntity = helper.getLevel().getBlockEntity(hopperPos);
+      BlockEntity sourceEntity = helper.getLevel().getBlockEntity(sourcePos);
+      BlockEntity targetEntity = helper.getLevel().getBlockEntity(barrelPos);
+      helper.assertTrue(hopperEntity instanceof MachineBlockEntity, "factory hopper should create a machine block entity");
+      helper.assertTrue(sourceEntity instanceof Container, "inventory above the hopper should expose a container");
+      helper.assertTrue(targetEntity instanceof Container, "barrel below the hopper should expose a container");
+      Container source = (Container)sourceEntity;
+      Container target = (Container)targetEntity;
+      source.setItem(0, new ItemStack(Items.COBBLESTONE));
+
+      MachineBlockEntity hopper = (MachineBlockEntity)hopperEntity;
+      hopper.handleGuiAction(player, 3, 4, 0);
+      tickMachine(helper, hopper, 12);
+      helper.assertTrue(source.getItem(0).isEmpty(), "factory hopper should extract from the inventory above its wide intake");
+      helper.assertTrue(target.getItem(0).is(Items.COBBLESTONE), "factory hopper should transfer the extracted item downward");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 120)
+   public static void factory_hopper_does_not_extract_when_internal_inventory_is_full(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      BlockPos hopperPos = helper.absolutePos(TEST_POS);
+      BlockPos sourcePos = hopperPos.above();
+      helper.setBlock(TEST_POS.below(), Blocks.STONE);
+      helper.setBlock(TEST_POS.above(), Blocks.CHEST);
+      helper.setBlock(
+         TEST_POS,
+         ((MachineBlocks.DirectionalMachineBlock)ModBlocks.FACTORY_HOPPER.get()).defaultBlockState().setValue(MachineBlocks.FACING, Direction.DOWN)
+      );
+
+      BlockEntity hopperEntity = helper.getLevel().getBlockEntity(hopperPos);
+      BlockEntity sourceEntity = helper.getLevel().getBlockEntity(sourcePos);
+      helper.assertTrue(hopperEntity instanceof MachineBlockEntity, "factory hopper should create a machine block entity");
+      helper.assertTrue(sourceEntity instanceof Container, "inventory above the hopper should expose a container");
+      MachineBlockEntity hopper = (MachineBlockEntity)hopperEntity;
+      Container source = (Container)sourceEntity;
+      source.setItem(0, new ItemStack(Items.COBBLESTONE));
+      for (int slot = 0; slot < hopper.getContainerSize(); slot++) {
+         hopper.setItem(slot, new ItemStack(Items.DIRT, 64));
+      }
+
+      hopper.handleGuiAction(player, 3, 4, 0);
+      tickMachine(helper, hopper, 12);
+      helper.assertValueEqual(1, source.getItem(0).getCount(), "factory hopper should leave source items untouched when its inventory has no capacity");
+      for (int slot = 0; slot < hopper.getContainerSize(); slot++) {
+         helper.assertValueEqual(64, hopper.getItem(slot).getCount(), "full internal inventory should remain unchanged after a failed pull");
+         helper.assertTrue(hopper.getItem(slot).is(Items.DIRT), "failed pull should not replace any full internal slot");
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 120)
    public static void factory_hopper_collection_updates_adjacent_comparator(GameTestHelper helper) {
       BlockPos comparatorPos = TEST_POS.east();
       helper.setBlock(TEST_POS, Blocks.AIR);

@@ -186,6 +186,24 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
+   public static void steel_floor_grating_and_double_t_support_collision_match_models(GameTestHelper helper) {
+      Block grating = (Block)ModBlocks.STEEL_FLOOR_GRATING.get();
+      VoxelShape gratingCollision = grating.defaultBlockState().getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+      assertShapeBounds(helper, gratingCollision, 0.0, 14.0, 0.0, 16.0, 16.0, 16.0, "steel floor grating collision should cover its raised model surface");
+      assertShapeDoesNotIntersect(helper, gratingCollision, 2.0, 0.0, 2.0, 14.0, 2.0, 14.0, "steel floor grating should not collide at the block bottom");
+
+      Block support = (Block)ModBlocks.STEEL_DOUBLE_T_SUPPORT.get();
+      VoxelShape northSouthCollision = support.defaultBlockState().getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+      assertShapeBounds(helper, northSouthCollision, 5.0, 11.0, 0.0, 11.0, 16.0, 16.0, "north-south steel double T support collision should follow its model");
+      assertShapeIntersects(helper, northSouthCollision, 7.0, 15.0, 2.0, 9.0, 16.0, 14.0, "steel double T support should collide at the model's top flange");
+
+      BlockState eastWest = support.defaultBlockState().setValue(PortedBlocks.EASTWEST, true);
+      VoxelShape eastWestCollision = eastWest.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+      assertShapeBounds(helper, eastWestCollision, 0.0, 11.0, 5.0, 16.0, 16.0, 11.0, "east-west steel double T support collision should follow its rotated model");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
    public static void slab_slices_select_vertical_part_from_click_height(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       Block slice = (Block)ModBlocks.OLD_INDUSTRIAL_WOOD_SLABSLICE.get();

@@ -75,7 +75,23 @@ public final class PortedBlocks {
       "pair_side", PortedBlocks.SlidingDoorPairSide.class
    );
    private static final double BORDER_PLACEMENT_BAND = 0.25D;
-   private static final VoxelShape FLOOR_GRATING_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
+   private static final VoxelShape FLOOR_GRATING_SHAPE = Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 16.0);
+   private static final VoxelShape SUPPORT_BEAM_NORTH_SOUTH_SHAPE = Shapes.or(
+      Block.box(5.0, 15.0, 0.0, 11.0, 16.0, 16.0),
+      new VoxelShape[]{
+         Block.box(5.0, 11.0, 0.0, 11.0, 12.0, 16.0),
+         Block.box(6.0, 12.0, 0.0, 7.0, 15.0, 16.0),
+         Block.box(9.0, 12.0, 0.0, 10.0, 15.0, 16.0)
+      }
+   );
+   private static final VoxelShape SUPPORT_BEAM_EAST_WEST_SHAPE = Shapes.or(
+      Block.box(0.0, 15.0, 5.0, 16.0, 16.0, 11.0),
+      new VoxelShape[]{
+         Block.box(0.0, 11.0, 5.0, 16.0, 12.0, 11.0),
+         Block.box(0.0, 12.0, 6.0, 16.0, 15.0, 7.0),
+         Block.box(0.0, 12.0, 9.0, 16.0, 15.0, 10.0)
+      }
+   );
    private static final VoxelShape CATWALK_FLOOR_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
    private static final VoxelShape RAISED_CATWALK_SHAPE = Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 16.0);
    private static final VoxelShape NORTH_RAIL_SHAPE = Block.box(0.0, 3.0, 0.0, 16.0, 16.0, 2.0);
@@ -955,9 +971,18 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         VoxelShape beam = state.getValue(PortedBlocks.EASTWEST) ? Block.box(0.0, 6.0, 6.0, 16.0, 10.0, 10.0) : Block.box(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
+         boolean eastWest = state.getValue(PortedBlocks.EASTWEST);
+         VoxelShape beam = eastWest ? PortedBlocks.SUPPORT_BEAM_EAST_WEST_SHAPE : PortedBlocks.SUPPORT_BEAM_NORTH_SOUTH_SHAPE;
+         if (state.getValue(PortedBlocks.LEFTBEAM)) {
+            beam = Shapes.or(beam, eastWest ? Block.box(5.0, 11.0, 0.0, 11.0, 16.0, 5.0) : Block.box(0.0, 11.0, 5.0, 5.0, 16.0, 11.0));
+         }
+
+         if (state.getValue(PortedBlocks.RIGHTBEAM)) {
+            beam = Shapes.or(beam, eastWest ? Block.box(5.0, 11.0, 11.0, 11.0, 16.0, 16.0) : Block.box(11.0, 11.0, 5.0, 16.0, 16.0, 11.0));
+         }
+
          if ((Integer)state.getValue(PortedBlocks.DOWNCONNECT) > 0) {
-            beam = Shapes.or(beam, Block.box(6.0, 0.0, 6.0, 10.0, 6.0, 10.0));
+            beam = Shapes.or(beam, Block.box(6.0, 0.0, 6.0, 10.0, 11.0, 10.0));
          }
 
          return beam;

@@ -1322,6 +1322,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
          if (this.cooldown <= 0) {
             if (trigger) {
                this.cooldown = 10 + this.hopperPeriod * 2;
+               this.pullItems(direction.getOpposite(), this.hopperTransferCount);
                this.pushItems(direction, this.hopperTransferCount);
             }
          }
@@ -2826,6 +2827,36 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
             }
 
             this.machineSlotCursor = (this.machineSlotCursor + 1) % this.accessibleSlots().length;
+         }
+      }
+   }
+
+   private void pullItems(Direction direction, int maxCount) {
+      if (this.level != null && this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container source) {
+         int remaining = Math.max(1, maxCount);
+         boolean movedAny = false;
+
+         for (int slot = 0; slot < source.getContainerSize() && remaining > 0; slot++) {
+            ItemStack stored = source.getItem(slot);
+            if (!stored.isEmpty() && source.canTakeItem(this, slot, stored)) {
+               ItemStack moving = stored.copyWithCount(Math.min(remaining, stored.getCount()));
+               ItemStack remainder = this.insertRemainder(moving);
+               int moved = moving.getCount() - remainder.getCount();
+               if (moved > 0) {
+                  stored.shrink(moved);
+                  if (stored.isEmpty()) {
+                     source.setItem(slot, ItemStack.EMPTY);
+                  }
+
+                  remaining -= moved;
+                  movedAny = true;
+               }
+            }
+         }
+
+         if (movedAny) {
+            source.setChanged();
+            this.setChanged();
          }
       }
    }
