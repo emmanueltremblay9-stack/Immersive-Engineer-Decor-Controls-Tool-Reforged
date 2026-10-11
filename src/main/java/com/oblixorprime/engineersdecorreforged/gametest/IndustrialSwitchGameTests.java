@@ -1,5 +1,12 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsBlockTypes;
 import com.oblixorprime.engineersdecorreforged.rsgauges.IndustrialSwitchBlock;
@@ -14,6 +21,8 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -22,6 +31,9 @@ import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import java.util.ArrayList;
+import java.util.List;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -101,7 +113,10 @@ public final class IndustrialSwitchGameTests {
       for (boolean creative : new boolean[]{false, true}) {
          for (int half = 0; half < 2; half++) {
             clear(helper);
+            AABB dropArea = new AABB(helper.absolutePos(CENTER)).inflate(2);
+            helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropArea).forEach(ItemEntity::discard);
             place(helper, Direction.UP, Direction.SOUTH);
+            helper.useBlock(CENTER, helper.makeMockPlayer(GameType.CREATIVE));
             BlockPos lower = helper.absolutePos(CENTER);
             BlockPos target = lower.above(half);
             BlockState lowerState = helper.getLevel().getBlockState(lower);
@@ -114,6 +129,9 @@ public final class IndustrialSwitchGameTests {
             helper.getLevel().destroyBlock(target, !creative);
             helper.assertTrue(helper.getLevel().getBlockState(lower).isAir(), "lower must be removed");
             helper.assertTrue(helper.getLevel().getBlockState(lower.above()).isAir(), "upper must be removed");
+            int drops = helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropArea,
+               item -> item.getItem().is(cabinet().asItem())).stream().mapToInt(item -> item.getItem().getCount()).sum();
+            helper.assertValueEqual(drops, creative ? 0 : 1, "actual break must drop exactly one in survival, none in creative");
          }
       }
       helper.succeed();
@@ -129,6 +147,7 @@ public final class IndustrialSwitchGameTests {
             var tag = NbtUtils.writeBlockState(original);
             tag.getCompound("Properties").remove("part");
             BlockState loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), tag);
+            helper.assertValueEqual(loaded, original, "old facing and power must survive loading");
             helper.assertValueEqual(BlockState.CODEC.parse(NbtOps.INSTANCE, tag).getOrThrow(), loaded, "codec must preserve old saves");
             helper.assertValueEqual(loaded.getValue(IndustrialSwitchBlock.PART), Part.LEGACY, "missing saved part must load as legacy");
             helper.getLevel().setBlock(pos, loaded, 3);
@@ -178,6 +197,7 @@ public final class IndustrialSwitchGameTests {
       for (int half = 0; half < 2; half++) {
          BlockState state = helper.getLevel().getBlockState(pos.above(half));
          helper.assertTrue(state.is(cabinet()), "cabinet half must exist");
+         helper.assertValueEqual(state.getPistonPushReaction(), PushReaction.BLOCK, "pistons must not split cabinet halves");
          helper.assertValueEqual(state.getValue(ControlsBlockTypes.FACING), facing, "indicator side must face outward");
          helper.assertValueEqual(state.getValue(IndustrialSwitchBlock.PART), half == 0 ? Part.LOWER : Part.UPPER, "paired part");
       }
@@ -198,4 +218,109 @@ public final class IndustrialSwitchGameTests {
          helper.getLevel().setBlock(pos.relative(direction), Blocks.AIR.defaultBlockState(), 3);
       }
    }
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void industrial_switch_outlines_match_shipped_models(GameTestHelper helper) {
+      for (Part part : new Part[]{Part.LEGACY, Part.LOWER}) {
+         for (Direction facing : Direction.values()) {
+            for (boolean powered : new boolean[]{false, true}) {
+               assertModelBounds(helper, cabinet().defaultBlockState().setValue(IndustrialSwitchBlock.PART, part)
+                  .setValue(ControlsBlockTypes.FACING, facing).setValue(ControlsBlockTypes.POWERED, powered), helper.absolutePos(CENTER));
+            }
+         }
+      }
+      helper.succeed();
+   }
+
+   private static void assertModelBounds(GameTestHelper helper, BlockState state, BlockPos pos) {
+      Direction facing = state.getValue(ControlsBlockTypes.FACING);
+      boolean powered = state.getValue(ControlsBlockTypes.POWERED);
+      String key = "facing=" + facing.getName() + ",powered=" + powered + ",part=" + state.getValue(IndustrialSwitchBlock.PART).getSerializedName();
+      JsonObject variant = readJson("/assets/" + EngineersDecorReforged.MOD_ID + "/blockstates/industrialswitch.json")
+         .getAsJsonObject("variants").getAsJsonObject(key);
+      helper.assertTrue(!variant.has("x") || variant.get("x").getAsInt() == 0, "model oracle requires no X rotation");
+      JsonObject model = readModel(variant.get("model").getAsString());
+      for (int depth = 0; !model.has("elements") && depth < 8; depth++) {
+         model = readModel(model.get("parent").getAsString());
+      }
+      AABB bounds = null;
+      for (JsonElement value : model.getAsJsonArray("elements")) {
+         JsonObject element = value.getAsJsonObject();
+         helper.assertTrue(!element.has("rotation") || element.getAsJsonObject("rotation").get("angle").getAsDouble() == 0,
+            "model oracle requires axis-aligned elements");
+         JsonArray from = element.getAsJsonArray("from");
+         JsonArray to = element.getAsJsonArray("to");
+         AABB box = new AABB(from.get(0).getAsDouble() / 16, from.get(1).getAsDouble() / 16, from.get(2).getAsDouble() / 16,
+            to.get(0).getAsDouble() / 16, to.get(1).getAsDouble() / 16, to.get(2).getAsDouble() / 16);
+         bounds = bounds == null ? box : bounds.minmax(box);
+      }
+      int degrees = variant.has("y") ? variant.get("y").getAsInt() : 0;
+      helper.assertTrue(degrees % 90 == 0, "model oracle requires quarter-turn Y rotation");
+      for (int step = 0; step < Math.floorMod(degrees / 90, 4); step++) {
+         bounds = new AABB(1 - bounds.maxZ, bounds.minY, bounds.minX, 1 - bounds.minZ, bounds.maxY, bounds.maxX);
+      }
+      AABB actual = state.getShape(helper.getLevel(), pos).bounds();
+      if (state.getValue(IndustrialSwitchBlock.PART) == Part.LOWER) {
+         AABB upper = state.setValue(IndustrialSwitchBlock.PART, Part.UPPER).getShape(helper.getLevel(), pos.above()).bounds().move(0, 1, 0);
+         actual = actual.minmax(upper);
+      }
+      helper.assertValueEqual(actual, bounds, "cabinet outline must match shipped model bounds for " + key);
+   }
+
+   private static JsonObject readModel(String id) {
+      String[] parts = id.split(":", 2);
+      return readJson("/assets/" + parts[0] + "/models/" + parts[1] + ".json");
+   }
+
+   private static JsonObject readJson(String path) {
+      InputStream stream = IndustrialSwitchGameTests.class.getResourceAsStream(path);
+      if (stream == null) {
+         throw new IllegalStateException("Missing GameTest resource " + path);
+      }
+      try (InputStream input = stream; InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+         return JsonParser.parseReader(reader).getAsJsonObject();
+      } catch (Exception exception) {
+         throw new IllegalStateException("Could not read GameTest resource " + path, exception);
+      }
+   }
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void industrial_switch_notifies_indirect_consumers_on_upper_toggle(GameTestHelper helper) {
+      assertIndirectConsumers(helper, false);
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void industrial_switch_notifies_indirect_consumers_on_powered_removal(GameTestHelper helper) {
+      assertIndirectConsumers(helper, true);
+   }
+
+   private static void assertIndirectConsumers(GameTestHelper helper, boolean remove) {
+      place(helper, Direction.UP, Direction.SOUTH);
+      BlockPos lower = helper.absolutePos(CENTER);
+      List<BlockPos> lamps = new ArrayList<>();
+      for (int half = 0; half < 2; half++) {
+         for (Direction side : Direction.values()) {
+            if (side == (half == 0 ? Direction.UP : Direction.DOWN)) { continue; }
+            BlockPos conductor = lower.above(half).relative(side);
+            BlockPos lamp = conductor.relative(side);
+            helper.getLevel().setBlock(conductor, Blocks.STONE.defaultBlockState(), 3);
+            helper.getLevel().setBlock(lamp, Blocks.REDSTONE_LAMP.defaultBlockState(), 3);
+            lamps.add(lamp);
+         }
+      }
+      helper.useBlock(CENTER.above(), helper.makeMockPlayer(GameType.CREATIVE));
+      for (BlockPos lamp : lamps) {
+         helper.assertTrue(helper.getLevel().getBlockState(lamp).getValue(BlockStateProperties.LIT), "indirect consumer must turn on");
+      }
+      if (remove) {
+         helper.getLevel().destroyBlock(lower.above(), true);
+      } else {
+         helper.useBlock(CENTER.above(), helper.makeMockPlayer(GameType.CREATIVE));
+      }
+      helper.runAfterDelay(6, () -> {
+         for (BlockPos lamp : lamps) {
+            helper.assertTrue(!helper.getLevel().getBlockState(lamp).getValue(BlockStateProperties.LIT), "indirect consumer must turn off");
+         }
+         helper.succeed();
+      });
+   }
+
 }

@@ -33,7 +33,8 @@ is performed. The item ID remains unchanged.
 Dedicated GameTests cover actual floor/wall item placement, all four horizontal
 orientations, lower and upper outline/collision, upper raycast selection, toggling
 and redstone, obstructed headroom, pair cleanup and loot ownership, saved-state
-round trips, old saves without `part`, and rotation synchronization. The existing
+round trips, old saves without `part`, rotation synchronization, resource-derived model bounds, actual drop counts and
+indirect consumers through conductors on both halves. The existing
 23-control toggle regression continues to include legacy Industrial Switches.
 
 CI runs compile/resources, tests, dedicated GameTests and build. This does not

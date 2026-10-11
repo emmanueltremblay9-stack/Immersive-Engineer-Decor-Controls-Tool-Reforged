@@ -95,11 +95,18 @@ public class IndustrialSwitchBlock extends ControlsBlockTypes.ToggleSwitchBlock 
          state = level.getBlockState(pos);
          if (!isPart(state, Part.LOWER)) { return; }
       }
-      super.setPowered(level, pos, state, powered);
-      // The upper state follows the lower through updateShape; notify its external neighbors too.
+      level.setBlock(pos, state.setValue(ControlsBlockTypes.POWERED, powered), 3);
+      notifySignalNeighbors(level, pos);
       if (state.getValue(PART) == Part.LOWER) {
-         level.updateNeighborsAt(pos.above(), this);
-         level.updateNeighborsAt(pos.above().relative(state.getValue(FACING).getOpposite()), this);
+         notifySignalNeighbors(level, pos.above());
+      }
+   }
+
+   private void notifySignalNeighbors(Level level, BlockPos pos) {
+      level.updateNeighborsAt(pos, this);
+      // Direct output is exposed on every side, so every adjacent conductor can relay it.
+      for (Direction side : Direction.values()) {
+         level.updateNeighborsAt(pos.relative(side), this);
       }
    }
 
@@ -107,8 +114,7 @@ public class IndustrialSwitchBlock extends ControlsBlockTypes.ToggleSwitchBlock 
    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState replacement, boolean moving) {
       super.onRemove(state, level, pos, replacement, moving);
       if (!state.is(replacement.getBlock()) && state.getValue(ControlsBlockTypes.POWERED)) {
-         level.updateNeighborsAt(pos, this);
-         level.updateNeighborsAt(pos.relative(state.getValue(FACING).getOpposite()), this);
+         notifySignalNeighbors(level, pos);
       }
    }
 
