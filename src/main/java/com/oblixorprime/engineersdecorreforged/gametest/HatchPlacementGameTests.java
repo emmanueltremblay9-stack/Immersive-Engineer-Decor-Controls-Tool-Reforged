@@ -51,28 +51,44 @@ public final class HatchPlacementGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void iron_hatch_replacing_grass_uses_vanilla_player_relative_hinge(GameTestHelper helper) {
+      for (Direction face : Direction.Plane.HORIZONTAL) {
+         for (Direction look : Direction.Plane.HORIZONTAL) {
+            placeAndAssert(helper, face, look, false, true);
+         }
+      }
+      helper.succeed();
+   }
+
    private static void assertPlacementOnFace(GameTestHelper helper, Direction clickedFace) {
       for (Direction look : Direction.Plane.HORIZONTAL) {
          for (boolean powered : new boolean[]{false, true}) {
-            placeAndAssert(helper, clickedFace, look, powered);
+            placeAndAssert(helper, clickedFace, look, powered, false);
          }
       }
    }
 
-   private static void placeAndAssert(GameTestHelper helper, Direction clickedFace, Direction look, boolean powered) {
+   private static void placeAndAssert(GameTestHelper helper, Direction clickedFace, Direction look, boolean powered, boolean replacing) {
       Block hatch = ModBlocks.IRON_HATCH.get();
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       player.setYRot(look.toYRot());
       BlockPos target = helper.absolutePos(CENTER);
-      BlockPos support = target.relative(clickedFace.getOpposite());
+      BlockPos support = replacing ? target : target.relative(clickedFace.getOpposite());
       helper.getLevel().setBlock(target, Blocks.AIR.defaultBlockState(), 3);
-      helper.getLevel().setBlock(support, (powered ? Blocks.REDSTONE_BLOCK : Blocks.STONE).defaultBlockState(), 3);
+      if (replacing) {
+         helper.getLevel().setBlock(target.below(), Blocks.DIRT.defaultBlockState(), 3);
+         helper.getLevel().setBlock(target, Blocks.SHORT_GRASS.defaultBlockState(), 3);
+      } else {
+         helper.getLevel().setBlock(support, (powered ? Blocks.REDSTONE_BLOCK : Blocks.STONE).defaultBlockState(), 3);
+      }
       Vec3 hitPos = Vec3.atCenterOf(support).add(
          clickedFace.getStepX() * 0.5, clickedFace.getStepY() * 0.5, clickedFace.getStepZ() * 0.5);
       ItemStack stack = new ItemStack(hatch);
       BlockPlaceContext context = new BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND,
          stack, new BlockHitResult(hitPos, clickedFace, support, false));
-      helper.assertValueEqual(context.getClickedPos(), target, "fixture must target the space beside the support");
+      helper.assertValueEqual(context.getClickedPos(), target, "fixture must target the intended hatch position");
+      helper.assertValueEqual(context.replacingClickedOnBlock(), replacing, "fixture must exercise the expected replacement branch");
       BlockState vanilla = Blocks.OAK_TRAPDOOR.getStateForPlacement(context);
       helper.assertTrue(vanilla != null, "vanilla reference must support this placement");
       helper.assertTrue(((BlockItem)stack.getItem()).place(context).consumesAction(), "actual hatch item placement must succeed");
@@ -98,6 +114,9 @@ public final class HatchPlacementGameTests {
          "open hatch leaf must occupy the same horizontal edge as the vanilla trapdoor");
       helper.getLevel().setBlock(target, Blocks.AIR.defaultBlockState(), 3);
       helper.getLevel().setBlock(support, Blocks.AIR.defaultBlockState(), 3);
+      if (replacing) {
+         helper.getLevel().setBlock(target.below(), Blocks.AIR.defaultBlockState(), 3);
+      }
    }
 
    private static boolean sameEdge(double min, double max, double expectedMin, double expectedMax) {
