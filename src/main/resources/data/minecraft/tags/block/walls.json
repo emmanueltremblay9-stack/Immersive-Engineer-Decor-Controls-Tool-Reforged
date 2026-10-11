@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "immersive_engineer_decor_controls_tool_reforged:clinker_brick_wall",
+    "immersive_engineer_decor_controls_tool_reforged:slag_brick_wall",
+    "immersive_engineer_decor_controls_tool_reforged:rebar_concrete_wall",
+    "immersive_engineer_decor_controls_tool_reforged:steel_mesh_fence"
+  ]
+}
