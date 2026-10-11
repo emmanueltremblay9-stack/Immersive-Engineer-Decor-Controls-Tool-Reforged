@@ -701,8 +701,12 @@ public final class PortedBlocks {
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          boolean powered = context.getLevel().hasNeighborSignal(context.getClickedPos());
+         // Our model faces the hinge edge, opposite to vanilla TrapDoorBlock.FACING.
+         Direction face = context.getClickedFace();
+         Direction hinge = !context.replacingClickedOnBlock() && face.getAxis().isHorizontal()
+            ? face.getOpposite() : context.getHorizontalDirection();
          return (BlockState)((BlockState)((BlockState)this.defaultBlockState()
-                  .setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()))
+                  .setValue(PortedBlocks.HORIZONTAL_FACING, hinge))
                .setValue(PortedBlocks.POWERED, powered))
             .setValue(PortedBlocks.OPEN, powered);
       }
