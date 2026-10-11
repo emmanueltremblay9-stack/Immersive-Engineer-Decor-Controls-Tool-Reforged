@@ -291,6 +291,8 @@ public final class ControlsModule {
          ControlsBlockTypes.ContactShape contactShape = contactShape(name);
          if (contactShape != null) {
             return () -> new ControlsBlockTypes.ContactSwitchBlock(controlProperties(), contactShape);
+         } else if ("industrialswitch".equals(name)) {
+            return () -> new IndustrialSwitchBlock(controlProperties());
          } else if ("door_sensor_switch".equals(name)) {
             return () -> new ControlsBlockTypes.DoorSensorSwitchBlock(controlProperties());
          } else if (PULSE_SWITCHES.contains(name)) {

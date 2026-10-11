@@ -12,6 +12,16 @@
       "conditions": [
         {
           "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "immersive_engineer_decor_controls_tool_reforged:industrialswitch",
+            "properties": {
+              "part": "upper"
+            }
+          }
         }
       ]
     }

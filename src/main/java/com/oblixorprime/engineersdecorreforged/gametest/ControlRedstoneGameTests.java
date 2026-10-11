@@ -56,7 +56,8 @@ public final class ControlRedstoneGameTests {
 
       for (DeferredBlock<? extends Block> entry : ControlsModule.CONTROLS) {
          Block block = (Block)entry.get();
-         if (ControlsBlockTypes.ToggleSwitchBlock.class.equals(block.getClass())) {
+         if ((ControlsBlockTypes.ToggleSwitchBlock.class.equals(block.getClass())
+            || block instanceof com.oblixorprime.engineersdecorreforged.rsgauges.IndustrialSwitchBlock)) {
             ResourceLocation id = entry.getId();
             tested.add(id);
             helper.setBlock(TEST_POS, Blocks.AIR);

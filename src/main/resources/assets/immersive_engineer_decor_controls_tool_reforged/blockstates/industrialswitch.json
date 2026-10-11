@@ -1,17 +1,130 @@
 {
   "variants": {
-    "facing=north,powered=false": { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch", "y": 180 },
-    "facing=east,powered=false":  { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch", "y": 270 },
-    "facing=south,powered=false": { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch" },
-    "facing=west,powered=false":  { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch", "y": 90 },
-    "facing=up,powered=false":    { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch" },
-    "facing=down,powered=false":  { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch" },
-
-    "facing=north,powered=true":  { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon", "y": 180 },
-    "facing=east,powered=true":   { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon", "y": 270 },
-    "facing=south,powered=true":  { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon" },
-    "facing=west,powered=true":   { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon", "y": 90 },
-    "facing=up,powered=true":     { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon" },
-    "facing=down,powered=true":   { "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon" }
+    "facing=north,powered=false,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 180
+    },
+    "facing=north,powered=false,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=north,powered=false,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 0
+    },
+    "facing=east,powered=false,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 270
+    },
+    "facing=east,powered=false,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=east,powered=false,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 90
+    },
+    "facing=south,powered=false,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch"
+    },
+    "facing=south,powered=false,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=south,powered=false,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 180
+    },
+    "facing=west,powered=false,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 90
+    },
+    "facing=west,powered=false,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=west,powered=false,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 270
+    },
+    "facing=up,powered=false,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch"
+    },
+    "facing=up,powered=false,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=up,powered=false,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 0
+    },
+    "facing=down,powered=false,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch"
+    },
+    "facing=down,powered=false,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=down,powered=false,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitch",
+      "y": 0
+    },
+    "facing=north,powered=true,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 180
+    },
+    "facing=north,powered=true,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=north,powered=true,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 0
+    },
+    "facing=east,powered=true,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 270
+    },
+    "facing=east,powered=true,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=east,powered=true,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 90
+    },
+    "facing=south,powered=true,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon"
+    },
+    "facing=south,powered=true,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=south,powered=true,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 180
+    },
+    "facing=west,powered=true,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 90
+    },
+    "facing=west,powered=true,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=west,powered=true,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 270
+    },
+    "facing=up,powered=true,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon"
+    },
+    "facing=up,powered=true,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=up,powered=true,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 0
+    },
+    "facing=down,powered=true,part=legacy": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon"
+    },
+    "facing=down,powered=true,part=upper": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/upper"
+    },
+    "facing=down,powered=true,part=lower": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/industrialswitch/industrialswitchon",
+      "y": 0
+    }
   }
 }
