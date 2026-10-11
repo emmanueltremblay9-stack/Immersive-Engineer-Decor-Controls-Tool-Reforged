@@ -605,6 +605,29 @@ public final class ControlsBlockTypes {
       BLOCK;
    }
 
+   public static class DoorSensorSwitchBlock extends ControlsBlockTypes.SensorSwitchBlock {
+      private static final VoxelShape NORTH_SHAPE = Block.box(5.0, 0.0, 0.0, 11.0, 1.0, 1.5);
+      private static final VoxelShape EAST_SHAPE = Block.box(14.5, 0.0, 5.0, 16.0, 1.0, 11.0);
+      private static final VoxelShape SOUTH_SHAPE = Block.box(5.0, 0.0, 14.5, 11.0, 1.0, 16.0);
+      private static final VoxelShape WEST_SHAPE = Block.box(0.0, 0.0, 5.0, 1.5, 1.0, 11.0);
+
+      public DoorSensorSwitchBlock(Properties properties) {
+         super(properties, ControlsBlockTypes.SensorKind.PLAYER);
+      }
+
+      @Override
+      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         // Match the shipped blockstate rotations. UP and DOWN deliberately use
+         // the unrotated model too; FACING still controls support and placement.
+         return switch (state.getValue(FACING)) {
+            case EAST -> EAST_SHAPE;
+            case SOUTH -> SOUTH_SHAPE;
+            case WEST -> WEST_SHAPE;
+            case NORTH, UP, DOWN -> NORTH_SHAPE;
+         };
+      }
+   }
+
    public static class SensorSwitchBlock extends ControlsBlockTypes.ToggleSwitchBlock {
       private final ControlsBlockTypes.SensorKind kind;
 

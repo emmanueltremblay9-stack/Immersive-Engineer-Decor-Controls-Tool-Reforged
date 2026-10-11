@@ -292,7 +292,7 @@ public final class ControlsModule {
          if (contactShape != null) {
             return () -> new ControlsBlockTypes.ContactSwitchBlock(controlProperties(), contactShape);
          } else if ("door_sensor_switch".equals(name)) {
-            return () -> new ControlsBlockTypes.SensorSwitchBlock(controlProperties(), ControlsBlockTypes.SensorKind.PLAYER);
+            return () -> new ControlsBlockTypes.DoorSensorSwitchBlock(controlProperties());
          } else if (PULSE_SWITCHES.contains(name)) {
             return () -> new ControlsBlockTypes.PulseSwitchBlock(controlProperties(), 25);
          } else if (SENSITIVE_GLASS.contains(name)) {
