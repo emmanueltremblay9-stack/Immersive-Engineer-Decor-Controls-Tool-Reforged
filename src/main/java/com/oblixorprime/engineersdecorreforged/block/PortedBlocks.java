@@ -1169,6 +1169,12 @@ public final class PortedBlocks {
          super(properties);
       }
 
+      @Override
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         // Facing identifies the occupied half; the structured face points back toward the player.
+         return this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection());
+      }
+
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return PortedBlocks.horizontalHalfShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING));
       }
