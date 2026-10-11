@@ -296,8 +296,8 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> SIGN_DEFENSE = registerWithItem(
       "sign_defense", () -> new PortedBlocks.SurfaceMountedBlock(sign(), 1.0, 15.0, 1.0, true)
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> SIGN_EXIT = registerWithItem(
-      "sign_exit", () -> new PortedBlocks.SurfaceMountedBlock(sign(), 1.0, 15.0, 1.0, true)
+   public static final DeferredBlock<PortedBlocks.ExitSignBlock> SIGN_EXIT = registerWithItem(
+      "sign_exit", () -> new PortedBlocks.ExitSignBlock(sign())
    );
    public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> SIGN_FIREHAZARD = registerWithItem(
       "sign_firehazard", () -> new PortedBlocks.SurfaceMountedBlock(sign(), 1.0, 15.0, 1.0, true)

@@ -1099,6 +1099,22 @@ public final class PortedBlocks {
       }
    }
 
+   public static class ExitSignBlock extends PortedBlocks.SurfaceMountedBlock {
+      public ExitSignBlock(Properties properties) {
+         super(properties, 1.0, 15.0, 1.0, true);
+      }
+
+      @Override
+      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return switch (state.getValue(FACING)) {
+            case NORTH -> Block.box(3.0, 7.0, 15.5, 13.0, 13.0, 16.0);
+            case SOUTH, UP, DOWN -> Block.box(3.0, 7.0, 0.0, 13.0, 13.0, 0.5);
+            case WEST -> Block.box(15.5, 7.0, 3.0, 16.0, 13.0, 13.0);
+            case EAST -> Block.box(0.0, 7.0, 3.0, 0.5, 13.0, 13.0);
+         };
+      }
+   }
+
    public static class TableBlock extends PortedBlocks.FixedShapeBlock {
       public TableBlock(Properties properties) {
          super(properties, PortedBlocks.TABLE_SHAPE);

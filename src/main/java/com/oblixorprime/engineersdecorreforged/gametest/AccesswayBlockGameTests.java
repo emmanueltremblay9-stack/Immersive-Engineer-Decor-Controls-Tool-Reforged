@@ -204,6 +204,27 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
+   public static void exit_sign_outline_matches_rendered_model_in_every_facing(GameTestHelper helper) {
+      Block sign = (Block)ModBlocks.SIGN_EXIT.get();
+      BlockPos pos = helper.absolutePos(LOWER_POS);
+      for (Direction facing : Direction.values()) {
+         BlockState state = sign.defaultBlockState().setValue(PortedBlocks.FACING, facing);
+         VoxelShape outline = state.getShape(helper.getLevel(), pos);
+         switch (facing) {
+            case NORTH -> assertShapeBounds(helper, outline, 3.0, 7.0, 15.5, 13.0, 13.0, 16.0, "north-facing exit sign outline should match its rotated model");
+            case SOUTH, UP, DOWN -> assertShapeBounds(helper, outline, 3.0, 7.0, 0.0, 13.0, 13.0, 0.5, "unrotated exit sign outline should match its model");
+            case WEST -> assertShapeBounds(helper, outline, 15.5, 7.0, 3.0, 16.0, 13.0, 13.0, "west-facing exit sign outline should match its rotated model");
+            case EAST -> assertShapeBounds(helper, outline, 0.0, 7.0, 3.0, 0.5, 13.0, 13.0, "east-facing exit sign outline should match its rotated model");
+         }
+         helper.assertTrue(
+            state.getCollisionShape(helper.getLevel(), pos).isEmpty(),
+            "exit sign should remain non-colliding for " + facing
+         );
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
    public static void slab_slices_select_vertical_part_from_click_height(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       Block slice = (Block)ModBlocks.OLD_INDUSTRIAL_WOOD_SLABSLICE.get();
