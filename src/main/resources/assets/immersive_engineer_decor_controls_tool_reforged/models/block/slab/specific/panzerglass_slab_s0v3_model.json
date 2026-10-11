@@ -1,1 +1,1 @@
-{"parent":"immersive_engineer_decor_controls_tool_reforged:block/slab/generic/slab_s0_model","textures":{"all":"immersive_engineer_decor_controls_tool_reforged:block/glass/panzerglass_block_texture3"}}
+{"render_type":"translucent","parent":"immersive_engineer_decor_controls_tool_reforged:block/slab/generic/slab_s0_model","textures":{"all":"immersive_engineer_decor_controls_tool_reforged:block/glass/panzerglass_block_texture3"}}
