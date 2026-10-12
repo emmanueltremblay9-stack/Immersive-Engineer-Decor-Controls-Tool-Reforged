@@ -9,9 +9,12 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
+import subprocess
 import sys
 import tempfile
 import time
+import tomllib
 from typing import Any
 import urllib.error
 import urllib.parse
@@ -32,6 +35,7 @@ OFFICIAL_CURSEFORGE_UPLOAD_API = "https://minecraft.curseforge.com"
 USER_AGENT = "IEDCT-CurseForge-Publisher/1"
 PUBLICATION_WORKFLOW_FILE = "publish-curseforge.yml"
 PERSIST_INTENT_STEP_NAME = "Persist upload intent before any POST"
+BUILD_WORKFLOW_PATH = ".github/workflows/build.yml"
 
 RELEASE_TYPE_NUMERIC = {"release": 1, "beta": 2, "alpha": 3}
 SUPPORTED_UPLOAD_RELATIONS = {
@@ -230,7 +234,7 @@ def load_manifest(path: Path) -> dict[str, Any]:
         manifest = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise PublicationError("MANIFEST_INVALID", "Release manifest is unreadable") from exc
-    if manifest.get("schemaVersion") != 1:
+    if not isinstance(manifest, dict) or manifest.get("schemaVersion") != 1:
         raise PublicationError("MANIFEST_SCHEMA_UNSUPPORTED", "Expected schemaVersion 1")
     for section in ("repository", "release", "curseforge"):
         if not isinstance(manifest.get(section), dict):
@@ -254,8 +258,13 @@ def load_manifest(path: Path) -> dict[str, Any]:
     for key in ("assetSha256", "changelogSha256"):
         if not re.fullmatch(r"[0-9a-f]{64}", str(release[key])):
             raise PublicationError("MANIFEST_INVALID", f"release.{key} is not lowercase SHA-256")
-    if not isinstance(release["assetSize"], int) or release["assetSize"] <= 0:
+    if type(release["assetSize"]) is not int or release["assetSize"] <= 0:
         raise PublicationError("MANIFEST_INVALID", "release.assetSize must be positive")
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*\.jar", str(release["assetName"])):
+        raise PublicationError("MANIFEST_INVALID", "release.assetName must be a safe JAR basename")
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", str(release["tag"])):
+        raise PublicationError("MANIFEST_INVALID", "release.tag must be a safe publication label")
+    validate_source_contract(manifest)
     if curseforge.get("releaseType") not in RELEASE_TYPE_NUMERIC:
         raise PublicationError("MANIFEST_INVALID", "Unsupported CurseForge releaseType")
     if not isinstance(curseforge.get("isMarkedForManualRelease"), bool):
@@ -301,6 +310,26 @@ def load_manifest(path: Path) -> dict[str, Any]:
     return manifest
 
 
+def validate_source_contract(manifest: dict[str, Any], *, require_local: bool = False) -> str:
+    # Only an absent source section selects the historical GitHub Release route.
+    # Invalid, incomplete, or unknown explicit sources must never fall back to it.
+    if "source" not in manifest:
+        if require_local:
+            raise PublicationError("LOCAL_SOURCE_REQUIRED", "This workflow requires a local-jar manifest")
+        return "github-release"
+    source = manifest["source"]
+    if not isinstance(source, dict) or source.get("mode") != "local-jar":
+        raise PublicationError("MANIFEST_SOURCE_INVALID", "Expected source.mode local-jar")
+    if set(source) != {"mode", "commit", "buildRunId", "buildRunAttempt"}:
+        raise PublicationError("MANIFEST_SOURCE_INVALID", "The local-jar source contract has missing or unknown fields")
+    if not re.fullmatch(r"[0-9a-f]{40}", str(source.get("commit", ""))):
+        raise PublicationError("MANIFEST_SOURCE_INVALID", "source.commit must be a full lowercase Git SHA")
+    for key in ("buildRunId", "buildRunAttempt"):
+        if type(source.get(key)) is not int or source[key] <= 0:
+            raise PublicationError("MANIFEST_SOURCE_INVALID", f"source.{key} must be a positive integer")
+    return "local-jar"
+
+
 def build_multipart(
     metadata: dict[str, Any], asset_name: str, asset_bytes: bytes, asset_sha256: str
 ) -> tuple[bytes, str]:
@@ -342,6 +371,9 @@ class Publisher:
         github_api: str = OFFICIAL_GITHUB_API,
         curseforge_public_api: str = OFFICIAL_CURSEFORGE_PUBLIC_API,
         curseforge_upload_api: str = OFFICIAL_CURSEFORGE_UPLOAD_API,
+        source_root: Path | None = None,
+        local_jar: Path | None = None,
+        require_local_source: bool = False,
     ):
         self.repo_root = repo_root.resolve()
         self.manifest = manifest
@@ -352,6 +384,11 @@ class Publisher:
         self.release = manifest["release"]
         self.cf = manifest["curseforge"]
         self.repository = manifest["repository"]
+        self.source_mode = validate_source_contract(manifest, require_local=require_local_source)
+        self.source_root = source_root.resolve() if source_root is not None else None
+        self.local_jar = local_jar
+        if self.source_mode != "local-jar" and (source_root is not None or local_jar is not None):
+            raise PublicationError("MANIFEST_SOURCE_INVALID", "Local source arguments require a local-jar manifest")
 
     def _github_headers(self, github_token: str) -> dict[str, str]:
         headers = {
@@ -421,20 +458,98 @@ class Publisher:
         self._validate_jar_identity(destination)
         return destination, asset, actual_sha
 
+    def validate_build_ci(self, github_token: str) -> dict[str, Any]:
+        """Check the current state of the exact reviewed run, never a nearby green commit."""
+        source = self.manifest["source"]
+        owner = urllib.parse.quote(self.repository["owner"], safe="")
+        name = urllib.parse.quote(self.repository["name"], safe="")
+        result = self.http.get_json(
+            f"{self.github_api}/repos/{owner}/{name}/actions/runs/{source['buildRunId']}",
+            label="Exact-source Build CI readback",
+            headers=self._github_headers(github_token),
+        )
+        expected = {
+            "id": source["buildRunId"],
+            "run_attempt": source["buildRunAttempt"],
+            "head_sha": source["commit"],
+            "name": "Build",
+            "path": BUILD_WORKFLOW_PATH,
+            "event": "push",
+            "status": "completed",
+            "conclusion": "success",
+        }
+        if not isinstance(result, dict) or any(result.get(key) != value for key, value in expected.items()):
+            raise PublicationError(
+                "SOURCE_BUILD_CI_NOT_VERIFIED",
+                "The pinned Build run/attempt must be a successful completed push for the exact source commit",
+            )
+        full_name = f"{self.repository['owner']}/{self.repository['name']}"
+        for key in ("repository", "head_repository"):
+            repository = result.get(key)
+            if not isinstance(repository, dict) or repository.get("full_name") != full_name:
+                raise PublicationError("SOURCE_BUILD_CI_NOT_VERIFIED", "Build CI repository identity mismatch")
+        return {**source, "buildWorkflow": BUILD_WORKFLOW_PATH}
+
+    def _validate_source_checkout(self) -> None:
+        if self.source_root is None:
+            raise PublicationError("LOCAL_SOURCE_CHECKOUT_REQUIRED", "A pinned source checkout is required")
+        try:
+            def git(*arguments: str) -> str:
+                return subprocess.run(
+                    ["git", "-C", str(self.source_root), *arguments],
+                    check=True, capture_output=True, text=True, timeout=30,
+                ).stdout.strip()
+
+            top = Path(git("rev-parse", "--show-toplevel")).resolve()
+            head = git("rev-parse", "HEAD")
+            dirty = git("status", "--porcelain", "--untracked-files=all")
+        except (OSError, subprocess.SubprocessError) as exc:
+            raise PublicationError("LOCAL_SOURCE_CHECKOUT_INVALID", "Source checkout could not be verified") from exc
+        if top != self.source_root or head != self.manifest["source"]["commit"]:
+            raise PublicationError("LOCAL_SOURCE_COMMIT_MISMATCH", "Source checkout HEAD differs from the manifest commit")
+        if dirty:
+            raise PublicationError("LOCAL_SOURCE_CHECKOUT_DIRTY", "Source checkout contains unreviewed changes")
+
+    def _validate_local_asset(self, work_dir: Path, github_token: str) -> tuple[Path, dict[str, Any]]:
+        self._validate_source_checkout()
+        if self.local_jar is None:
+            raise PublicationError("LOCAL_JAR_REQUIRED", "An explicit local runtime JAR is required")
+        assert self.source_root is not None
+        expected = self.source_root / "build" / "libs" / self.release["assetName"]
+        # Reject path traversal, symlinked directories/files, and arbitrary alternate bytes.
+        if self.local_jar.absolute() != expected or expected.resolve() != expected:
+            raise PublicationError("LOCAL_JAR_PATH_INVALID", "Local JAR must be the manifest-named build/libs output")
+        if not expected.is_file():
+            raise PublicationError("LOCAL_JAR_MISSING", "The pinned checkout runtime JAR does not exist")
+        destination = work_dir / self.release["assetName"]
+        try:
+            # Validate and upload this private snapshot, not a file that can change after validation.
+            shutil.copyfile(expected, destination)
+        except OSError as exc:
+            raise PublicationError("LOCAL_JAR_UNREADABLE", "The local runtime JAR could not be read") from exc
+        if destination.stat().st_size != self.release["assetSize"]:
+            raise PublicationError("LOCAL_JAR_SIZE_MISMATCH", "Local runtime JAR size differs from the manifest")
+        if sha256_file(destination) != self.release["assetSha256"]:
+            raise PublicationError("LOCAL_JAR_HASH_MISMATCH", "Local runtime JAR SHA-256 differs from the manifest")
+        self._validate_jar_identity(destination)
+        source_report = self.validate_build_ci(github_token)
+        source_report.update({"sourceHashMatch": True, "sourceCheckoutClean": True})
+        return destination, source_report
+
     def _validate_jar_identity(self, jar_path: Path) -> None:
         try:
             with zipfile.ZipFile(jar_path) as archive:
-                metadata = archive.read("META-INF/neoforge.mods.toml").decode("utf-8")
-        except (OSError, KeyError, UnicodeDecodeError, zipfile.BadZipFile) as exc:
+                metadata = tomllib.loads(archive.read("META-INF/neoforge.mods.toml").decode("utf-8"))
+        except (OSError, KeyError, UnicodeDecodeError, zipfile.BadZipFile, tomllib.TOMLDecodeError) as exc:
             raise PublicationError(
                 "JAR_METADATA_INVALID",
                 "Runtime JAR lacks readable NeoForge metadata",
             ) from exc
-        mod_ids = re.findall(r'^\s*modId\s*=\s*"([^"]+)"', metadata, re.MULTILINE)
-        versions = re.findall(r'^\s*version\s*=\s*"([^"]+)"', metadata, re.MULTILINE)
-        if self.release["modId"] not in mod_ids:
+        mods = metadata.get("mods", [])
+        matching = [mod for mod in mods if isinstance(mod, dict) and mod.get("modId") == self.release["modId"]] if isinstance(mods, list) else []
+        if len(matching) != 1:
             raise PublicationError("JAR_MOD_ID_MISMATCH", "Runtime JAR mod ID mismatch")
-        if self.release["version"] not in versions:
+        if matching[0].get("version") != self.release["version"]:
             raise PublicationError("JAR_VERSION_MISMATCH", "Runtime JAR version mismatch")
 
     def _changelog(self) -> str:
@@ -1160,6 +1275,14 @@ class Publisher:
             "multipartSize": multipart_size,
             "resolvedGameVersions": resolved_game_versions,
         }
+        if self.source_mode == "local-jar":
+            expected["source"] = {
+                **self.manifest["source"],
+                "buildWorkflow": BUILD_WORKFLOW_PATH,
+                "sourceHashMatch": True,
+                "sourceCheckoutClean": True,
+            }
+            expected["manifestSha256"] = sha256_bytes(canonical_json(self.manifest))
         for key, value in expected.items():
             if intent_report.get(key) != value:
                 raise PublicationError(
@@ -1284,15 +1407,20 @@ class Publisher:
         try:
             with tempfile.TemporaryDirectory(prefix="iedct-curseforge-") as temporary:
                 work_dir = Path(temporary)
-                jar_path, github_asset, source_sha = self._download_and_validate_asset(
-                    work_dir, github_token
-                )
+                if self.source_mode == "local-jar":
+                    jar_path, source_report = self._validate_local_asset(work_dir, github_token)
+                    report["source"] = source_report
+                    report["manifestSha256"] = sha256_bytes(canonical_json(self.manifest))
+                else:
+                    jar_path, github_asset, source_sha = self._download_and_validate_asset(
+                        work_dir, github_token
+                    )
+                    report["githubRelease"] = {
+                        "assetId": github_asset.get("id"),
+                        "assetDigest": github_asset.get("digest"),
+                        "sourceHashMatch": source_sha == self.release["assetSha256"],
+                    }
                 changelog = self._changelog()
-                report["githubRelease"] = {
-                    "assetId": github_asset.get("id"),
-                    "assetDigest": github_asset.get("digest"),
-                    "sourceHashMatch": source_sha == self.release["assetSha256"],
-                }
                 if resume_file_id is not None:
                     report["curseForgeBaseline"] = self._validate_previous_public_baseline(
                         validate_project_relations=False
@@ -1487,8 +1615,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--manifest",
         type=Path,
-        default=Path("tools/release/curseforge_release_1.1.56.json"),
+        required=True,
     )
+    parser.add_argument("--require-local-source", action="store_true")
+    parser.add_argument("--source-root", type=Path, help="Clean checkout of the manifest-pinned source commit")
+    parser.add_argument("--local-jar", type=Path, help="Private build/libs runtime JAR; never downloaded from GitHub")
     parser.add_argument("--tag", required=True)
     parser.add_argument("--resume-file-id", type=int)
     parser.add_argument("--run-key", default="")
@@ -1544,7 +1675,12 @@ def main(argv: list[str] | None = None) -> int:
                     "UPLOAD_INTENT_REPORT_INVALID",
                     "The upload intent report is unreadable",
                 ) from exc
-        publisher = Publisher(repo_root, manifest)
+        publisher = Publisher(
+            repo_root, manifest,
+            source_root=args.source_root,
+            local_jar=args.local_jar,
+            require_local_source=args.require_local_source,
+        )
         selected_mode = (
             "dry-run"
             if args.dry_run
