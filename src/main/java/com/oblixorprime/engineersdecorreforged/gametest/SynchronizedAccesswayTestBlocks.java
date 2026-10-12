@@ -9,6 +9,8 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
@@ -29,6 +31,10 @@ public final class SynchronizedAccesswayTestBlocks {
    public static final BooleanProperty REFUSE_ITEM = BooleanProperty.create("test_refuse_item");
    public static DoorBlock LOCKABLE_DOOR;
    public static DoorBlock INHERITED_DOOR;
+   public static DoorBlock CUSTOM_ITEM_DOOR;
+   public static DoorBlock CUSTOM_EMPTY_DOOR;
+   public static Item CUSTOM_FIRST_ITEM;
+   public static int customItemCalls;
 
    private SynchronizedAccesswayTestBlocks() {
    }
@@ -42,6 +48,24 @@ public final class SynchronizedAccesswayTestBlocks {
          INHERITED_DOOR = new InheritedDoor();
          return INHERITED_DOOR;
       });
+      event.register(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("iedctr_pair_test", "custom_item_door"), () -> {
+         CUSTOM_ITEM_DOOR = new CustomItemDoor();
+         return CUSTOM_ITEM_DOOR;
+      });
+      event.register(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("iedctr_pair_test", "custom_empty_door"), () -> {
+         CUSTOM_EMPTY_DOOR = new CustomEmptyDoor();
+         return CUSTOM_EMPTY_DOOR;
+      });
+      event.register(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("iedctr_pair_test", "custom_first_item"), () -> {
+         CUSTOM_FIRST_ITEM = new Item(new Item.Properties()) {
+            @Override
+            public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+               customItemCalls++;
+               return InteractionResult.PASS;
+            }
+         };
+         return CUSTOM_FIRST_ITEM;
+      });
       event.register(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("iedctr_pair_test", "lockable_door"), () -> {
          LOCKABLE_DOOR = new LockableDoor();
          return LOCKABLE_DOOR;
@@ -51,6 +75,29 @@ public final class SynchronizedAccesswayTestBlocks {
    private static final class InheritedDoor extends DoorBlock {
       private InheritedDoor() {
          super(BlockSetType.OAK, BlockBehaviour.Properties.of().noOcclusion());
+      }
+   }
+
+   private static final class CustomItemDoor extends DoorBlock {
+      private CustomItemDoor() {
+         super(BlockSetType.OAK, BlockBehaviour.Properties.of().noOcclusion());
+      }
+
+      @Override
+      protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+         Player player, InteractionHand hand, BlockHitResult hit) {
+         return super.useItemOn(stack, state, level, pos, player, hand, hit);
+      }
+   }
+
+   private static final class CustomEmptyDoor extends DoorBlock {
+      private CustomEmptyDoor() {
+         super(BlockSetType.OAK, BlockBehaviour.Properties.of().noOcclusion());
+      }
+
+      @Override
+      protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+         return super.useWithoutItem(state, level, pos, player, hit);
       }
    }
 

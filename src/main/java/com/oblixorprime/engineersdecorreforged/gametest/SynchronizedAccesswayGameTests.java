@@ -1,8 +1,10 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import net.minecraft.core.BlockPos;
@@ -31,6 +33,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.TriState;
+import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.VanillaGameEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.entity.player.UseItemOnBlockEvent;
@@ -441,9 +444,153 @@ public final class SynchronizedAccesswayGameTests {
       });
    }
 
-   @SuppressWarnings("removal")
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void unchanged_native_item_hooks_keep_normal_held_item_convenience(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (var item : List.of(Items.STICK, Items.STONE)) {
+         clear(helper);
+         doorPair(helper, Blocks.OAK_DOOR);
+         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(item, 5));
+         click(helper, player, FIRST, Direction.NORTH);
+         assertDoor(helper, FIRST, true);
+         assertDoor(helper, FIRST.east(), true);
+         helper.assertValueEqual(player.getMainHandItem().getCount(), 5, "pair interaction must not consume ordinary held items");
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void custom_interaction_overrides_fail_closed_even_when_currently_pass(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (Block door : List.of(SynchronizedAccesswayTestBlocks.CUSTOM_ITEM_DOOR, SynchronizedAccesswayTestBlocks.CUSTOM_EMPTY_DOOR)) {
+         clear(helper);
+         doorPair(helper, door);
+         click(helper, player, FIRST, Direction.NORTH);
+         assertDoor(helper, FIRST, true);
+         assertDoor(helper, FIRST.east(), false);
+      }
+      clear(helper);
+      doorPair(helper, Blocks.OAK_DOOR);
+      SynchronizedAccesswayTestBlocks.customItemCalls = 0;
+      player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(SynchronizedAccesswayTestBlocks.CUSTOM_FIRST_ITEM));
+      click(helper, player, FIRST, Direction.NORTH);
+      assertDoor(helper, FIRST, true);
+      assertDoor(helper, FIRST.east(), false);
+      helper.assertValueEqual(SynchronizedAccesswayTestBlocks.customItemCalls, 1, "custom item hook may run only for the real source click");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void companion_default_pass_cancellations_are_final_even_for_late_listeners(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (UseItemOnBlockEvent.UsePhase phase : List.of(UseItemOnBlockEvent.UsePhase.ITEM_BEFORE_BLOCK, UseItemOnBlockEvent.UsePhase.BLOCK)) {
+         for (EventPriority priority : List.of(EventPriority.HIGHEST, EventPriority.LOWEST)) {
+            clear(helper);
+            doorPair(helper, Blocks.OAK_DOOR);
+            BlockPos target = helper.absolutePos(FIRST.east());
+            Consumer<UseItemOnBlockEvent> listener = event -> {
+               if (event.getPlayer() == player && event.getPos().equals(target) && event.getUsePhase() == phase) {
+                  event.setCanceled(true); // Default result is PASS_TO_DEFAULT, not FAIL.
+               }
+            };
+            NeoForge.EVENT_BUS.addListener(priority, false, UseItemOnBlockEvent.class, listener);
+            try {
+               click(helper, player, FIRST, Direction.NORTH);
+               assertDoor(helper, FIRST, true);
+               assertDoor(helper, FIRST.east(), false);
+            } finally {
+               NeoForge.EVENT_BUS.unregister(listener);
+            }
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void nested_companion_phase_cannot_hide_an_outer_default_pass_veto(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (EventPriority priority : List.of(EventPriority.HIGHEST, EventPriority.LOWEST)) {
+         clear(helper);
+         doorPair(helper, Blocks.OAK_DOOR);
+         BlockPos target = helper.absolutePos(FIRST.east());
+         boolean[] nested = { false };
+         Consumer<UseItemOnBlockEvent> listener = event -> {
+            if (event.getPlayer() == player && event.getPos().equals(target)
+               && event.getUsePhase() == UseItemOnBlockEvent.UsePhase.BLOCK && !nested[0]) {
+               nested[0] = true;
+               helper.getLevel().getBlockState(target).useItemOn(player.getMainHandItem(), helper.getLevel(), player,
+                  InteractionHand.MAIN_HAND, new BlockHitResult(Vec3.atCenterOf(target), Direction.NORTH, target, false));
+               nested[0] = false;
+               event.setCanceled(true);
+            }
+         };
+         NeoForge.EVENT_BUS.addListener(priority, false, UseItemOnBlockEvent.class, listener);
+         try {
+            click(helper, player, FIRST, Direction.NORTH);
+            assertDoor(helper, FIRST, true);
+            assertDoor(helper, FIRST.east(), false);
+         } finally {
+            NeoForge.EVENT_BUS.unregister(listener);
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void cancelled_source_context_cannot_leak_to_same_tick_programmatic_open(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (UseItemOnBlockEvent.UsePhase phase : List.of(UseItemOnBlockEvent.UsePhase.ITEM_BEFORE_BLOCK, UseItemOnBlockEvent.UsePhase.BLOCK)) {
+         clear(helper);
+         doorPair(helper, Blocks.OAK_DOOR);
+         BlockPos source = helper.absolutePos(FIRST);
+         Consumer<UseItemOnBlockEvent> listener = event -> {
+            if (event.getPlayer() == player && event.getPos().equals(source) && event.getUsePhase() == phase) {
+               event.cancelWithResult(ItemInteractionResult.FAIL);
+            }
+         };
+         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, UseItemOnBlockEvent.class, listener);
+         try {
+            click(helper, player, FIRST, Direction.NORTH);
+            assertDoor(helper, FIRST, false);
+            ((DoorBlock)Blocks.OAK_DOOR).setOpen(player, helper.getLevel(), helper.getBlockState(FIRST), source, true);
+            assertDoor(helper, FIRST, true);
+            assertDoor(helper, FIRST.east(), false);
+         } finally {
+            NeoForge.EVENT_BUS.unregister(listener);
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void companion_hooks_cannot_recreate_removed_source_or_target_halves(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (boolean removeSource : List.of(true, false)) {
+         clear(helper);
+         doorPair(helper, Blocks.OAK_DOOR);
+         BlockPos target = helper.absolutePos(FIRST.east());
+         BlockPos removed = removeSource ? FIRST.above() : FIRST.east().above();
+         Consumer<UseItemOnBlockEvent> listener = event -> {
+            if (event.getPlayer() == player && event.getPos().equals(target) && event.getUsePhase() == UseItemOnBlockEvent.UsePhase.BLOCK) {
+               helper.getLevel().setBlock(helper.absolutePos(removed), Blocks.AIR.defaultBlockState(), 2);
+            }
+         };
+         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, false, UseItemOnBlockEvent.class, listener);
+         try {
+            click(helper, player, FIRST, Direction.NORTH);
+            helper.assertTrue(helper.getBlockState(removed).isAir(), "companion forwarding must not restore a removed half");
+            assertOpen(helper, FIRST.east(), false);
+         } finally {
+            NeoForge.EVENT_BUS.unregister(listener);
+         }
+      }
+      helper.succeed();
+   }
+
    private static ServerPlayer player(GameTestHelper helper) {
-      return helper.makeMockServerPlayerInLevel();
+      // A normal mock-player login fires IE custom-payload synchronization without a
+      // negotiated client. FakePlayer provides the native server game mode without login.
+      return new FakePlayer(helper.getLevel(), new GameProfile(UUID.randomUUID(), "PairTest"));
    }
 
    private static void clear(GameTestHelper helper) {
