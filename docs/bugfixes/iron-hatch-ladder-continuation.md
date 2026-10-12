@@ -71,3 +71,9 @@ Corrected-commit GREEN CI, actual player movement through the final packaged
 JAR, client visuals, and packaged dedicated-server checks remain separate
 qualification gates. This change does not claim publication or final artifact
 qualification.
+
+A subsequent metal-ladder-only physical obstruction was reproduced after this
+hook correction: see [metal ladder hatch clearance](metal-ladder-hatch-clearance.md).
+The original tests query climbing eligibility and do not establish unobstructed
+physical movement from below. The later regression uses collision-resolved entity
+movement and restores the metal ladders' vanilla wall clearance.

@@ -5,8 +5,8 @@ Observed 2026-10-12 UTC. Candidate version `1.1.57-reconstructed` is configured 
 the project metadata and changelog. No qualified candidate JAR, final source
 commit, publisher manifest, or candidate artifact hash is established here.
 
-The Iron Hatch ladder-continuation correction added after candidate preparation
-supersedes any earlier candidate JAR for final qualification, including JARs with
+The Iron Hatch ladder-continuation and subsequent metal-ladder wall-clearance
+corrections supersede any earlier candidate JAR for final qualification, including JARs with
 the same `1.1.57-reconstructed` version string. Repeat the exact-commit CI,
 byte-identity, client and packaged-server gates on the final fixed artifact.
 
@@ -56,6 +56,9 @@ This patch fixes several placement, collision, selection, and rendering problems
 - Ladder continuation into an open Iron Hatch when the ladder immediately below
   shares the leaf's support edge; includes vanilla ladders, Metal Rung Ladder,
   and Staggered Metal Steps, with no climbing through closed or misaligned hatches
+- Vanilla physical wall clearance for Metal Rung Ladder and Staggered Metal Steps,
+  preventing the player's head from catching below the open Iron Hatch when
+  pressing toward the supporting wall
 - Structured Vertical Clinker Slab orientation, removing the unwanted gap for
   placement against a wall directly ahead (#20)
 - Door Sensor selection outline aligned with its model (#25)
@@ -77,6 +80,10 @@ inventories; inventories exposing only NeoForge `IItemHandler` are not supported
 by this extraction path. Door Sensor mounting appearance and empty collision are
 unchanged. No exhaustive reporter-modpack compatibility claim is made.
 
+Existing metal ladders preserve facing and waterlogging but gain the same thin
+collision strip as vanilla ladders. Models, selection outlines, and placement
+remain unchanged. No re-placement or state migration is required for that fix.
+
 ## Remaining release gates
 
 1. Verify publication rights and authenticated upload authority for project
@@ -95,7 +102,9 @@ unchanged. No exhaustive reporter-modpack compatibility claim is made.
    and support traversal, hopper input/output, mixed wall connections, hatch and
    slab orientations, Door Sensor selection, and new/legacy Industrial Switches.
    For hatch traversal, climb from the ladder below through the open hatch on all
-   four support edges, then check closed, opposite/perpendicular, and missing
+   four support edges using vanilla ladders, Metal Rung Ladder, and Staggered
+   Metal Steps while pressing toward the wall; verify actual ascent/descent and
+   any collision-sensitive existing builds. Then check closed, opposite/perpendicular, and missing
    ladder arrangements, manual/redstone transitions, and existing saved hatches.
    Include save/reload and break/re-place behavior. Preserve logs/screenshots
    labelled with the exact JAR hash.
@@ -126,3 +135,22 @@ Corrected-commit GREEN CI and final-artifact client/server qualification must be
 recorded separately; the RED run does not qualify a release. See
 [`iron-hatch-ladder-continuation.md`](../bugfixes/iron-hatch-ladder-continuation.md)
 for the hook compatibility and test scope.
+
+## Metal ladder physical-clearance regression evidence
+
+Test-only commit `5d5093b48dac53829a0ca4f5b1adee94ca868402` compiled and ran all
+229 required GameTests in [Build run 38297973485](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/38297973485).
+Exactly four new metal-specific tests failed. Both metal ladder types permitted
+a zero wall gap and stopped the player's head at the hatch underside, with feet
+approximately 1.8 blocks below it. Vanilla ascent, closed-hatch blocking, and all
+223 prior GameTests passed.
+
+These tests use `Entity.move` collision resolution with prescribed displacements,
+not full `Player.travel`, client input, or gravity. NBT state round-tripping does
+not establish actual world reload behavior. The six tests are unchanged by the
+minimal two-registration correction. See
+[`metal-ladder-hatch-clearance.md`](../bugfixes/metal-ladder-hatch-clearance.md)
+for cause, collision impact, evidence, and limits. Corrected-commit GREEN CI and
+final-artifact client/server qualification remain separate gates. Earlier
+candidate bytes containing PR #43 alone must not be published or reused as final
+qualification evidence.
