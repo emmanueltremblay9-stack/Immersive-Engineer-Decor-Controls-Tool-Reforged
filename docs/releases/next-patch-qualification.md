@@ -5,8 +5,8 @@ Observed 2026-10-12 UTC. Candidate version `1.1.57-reconstructed` is configured 
 the project metadata and changelog. No qualified candidate JAR, final source
 commit, publisher manifest, or candidate artifact hash is established here.
 
-The Iron Hatch ladder-continuation and subsequent metal-ladder wall-clearance
-corrections supersede any earlier candidate JAR for final qualification, including JARs with
+The Iron Hatch ladder-continuation, metal-ladder wall-clearance and Steel Mesh
+Fence Gate passage/connection corrections supersede any earlier candidate JAR for final qualification, including JARs with
 the same `1.1.57-reconstructed` version string. Repeat the exact-commit CI,
 byte-identity, client and packaged-server gates on the final fixed artifact.
 
@@ -52,6 +52,8 @@ This patch fixes several placement, collision, selection, and rendering problems
   outline, retaining its empty collision (#33)
 - Connections between decorative walls and Steel Mesh Fence, including mixed
   connections and vanilla walls (#18)
+- Player passage through an open Steel Mesh Fence Gate, retaining post/folded-side
+  collision, and correctly aligned Steel Mesh Fence connections to the gate
 - Iron Hatch hinge selection when placing against floors, ceilings, and walls (#19)
 - Ladder continuation into an open Iron Hatch when the ladder immediately below
   shares the leaf's support edge; includes vanilla ladders, Metal Rung Ladder,
@@ -83,6 +85,14 @@ unchanged. No exhaustive reporter-modpack compatibility claim is made.
 Existing metal ladders preserve facing and waterlogging but gain the same thin
 collision strip as vanilla ladders. Models, selection outlines, and placement
 remain unchanged. No re-placement or state migration is required for that fix.
+
+Steel Mesh Fence Gate preserves its saved state schema and selection outline;
+open collision leaves a player-width corridor while retaining both structural
+sides. Models are unchanged, so the thin inward decorative leaf is intentionally
+excluded from movement collision. Existing manual-only redstone behavior is
+unchanged. See the [tests-first gate report](../bugfixes/steel-mesh-gate-passage-connections.md)
+for the ten added GameTests and exact RED evidence. Earlier candidate JARs are
+not qualified for these subsequent gate corrections.
 
 ## Remaining release gates
 

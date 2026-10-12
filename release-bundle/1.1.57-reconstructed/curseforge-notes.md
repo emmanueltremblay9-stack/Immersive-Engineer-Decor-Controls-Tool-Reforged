@@ -9,6 +9,7 @@ Draft candidate notes. This version is not yet published or fully qualified.
 - Restored Panzer Glass Slab translucent render declarations.
 - Aligned the Exit Sign selection outline while preserving its empty collision.
 - Restored connections between decorative walls, Steel Mesh Fence, and vanilla walls.
+- Restored walking through an open Steel Mesh Fence Gate while preserving collision on its posts and folded side. Steel Mesh Fence now connects to the gate on the correctly aligned sides.
 - Corrected Iron Hatch hinge selection when placing against floors, ceilings, and walls.
 - Restored climbing into an open Iron Hatch from a ladder directly below on the same support wall, including Metal Rung Ladder and Staggered Metal Steps. Closed hatches and ladders on another edge do not gain climbing.
 - Restored vanilla ladder collision for Metal Rung Ladder and Staggered Metal Steps so your head no longer catches below an open Iron Hatch when climbing against the wall.
@@ -24,6 +25,8 @@ Already placed hatches and vertical slabs are not automatically rotated. Existin
 
 Existing metal ladders keep their facing and waterlogged state but now have the same thin physical collision strip as vanilla ladders. Models, selection outlines, and placement rules are unchanged. No re-placement is needed for this correction.
 
+Steel Mesh Fence Gate preserves saved states, models and selection outlines. The thin inward decorative leaf no longer restricts the open collision corridor below player width. Gate connections may need a neighbor update. Manual interaction and the existing lack of automatic redstone opening are unchanged.
+
 ## Compatibility
 
 Minecraft **1.21.1**, Java **21**, and NeoForge **21.1.230** minimum. Immersive Engineering **1.21.1-12.4.2-194** is required; JEI **19.32.0.359** is optional. Engineer's Decor, Engineer's Tools, and Redstone Gauges and Switches are incorporated source projects, not additional runtime dependencies to install.
@@ -32,4 +35,4 @@ Minecraft **1.21.1**, Java **21**, and NeoForge **21.1.230** minimum. Immersive 
 
 The final candidate still requires exact-commit CI, independent JAR identity and packaged-notice checks, client inspection, and packaged dedicated-server validation. Earlier test results and artifact hashes do not qualify this differently versioned JAR. No exhaustive reporter-modpack compatibility claim is made.
 
-Candidate JARs built before both the hatch ladder-continuation and metal-ladder wall-clearance corrections are superseded for qualification, even when they have the same version string. Final checks must use the corrected source commit and exact JAR bytes.
+Candidate JARs built before all hatch ladder-continuation, metal-ladder wall-clearance and Steel Mesh Fence Gate passage/connection corrections are superseded for qualification, even when they have the same version string. Final checks must use the corrected source commit and exact JAR bytes.
