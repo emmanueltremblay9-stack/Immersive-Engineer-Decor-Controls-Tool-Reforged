@@ -1,12 +1,17 @@
 # Next patch: qualification record and draft release notes
 
-Status: preparation only, not a release authorization or completed qualification.
-Observed 2026-10-12 UTC. The proposed next patch number is
-`1.1.57-reconstructed`; it is not reserved, configured, or published here.
+Status: candidate preparation only, not completed qualification or publication.
+Observed 2026-10-12 UTC. Candidate version `1.1.57-reconstructed` is configured in
+the project metadata and changelog. No qualified candidate JAR, final source
+commit, publisher manifest, or candidate artifact hash is established here.
 
 ## Source and evidence boundary
 
-- Inspected main commit: `e9beae1ba5bc5c1800f59ba1787f77268b6555b5`, after PRs
+- Candidate preparation base: main commit
+  `e302e772d450a040ad97ed596f3b06cdef6db01f`, including the CurseForge-only
+  local-source publication tooling from PR
+  [41](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/41).
+- Earlier inspected fix-merge commit: `e9beae1ba5bc5c1800f59ba1787f77268b6555b5`, after PRs
   [35](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/35),
   [36](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/36),
   [37](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/37),
@@ -14,19 +19,23 @@ Observed 2026-10-12 UTC. The proposed next patch number is
   [39](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/39), and
   [40](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/40).
 - [Build run 38187269438](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/38187269438)
-  is verified completed/success for that exact main commit. Its reported results
+  is verified completed/success for the earlier fix-merge commit. Its reported results
   are 216 required GameTests and 32 publisher tests. These are CI observations,
   not a new local client or packaged-server run.
 - CI-reported runtime SHA-256:
   `b04793dbe9c2f705f8b2206f8843b9293e1d5f3ff9b8a3e9cfa2e4170c6d49b7`.
   The bytes were not obtained and independently hashed during this preparation.
-  The build still uses version `1.1.56-reconstructed`; this digest must not be
-  reused as the identity of a future differently versioned release.
+  That earlier build uses version `1.1.56-reconstructed`; this digest must not be
+  reused as the identity of this differently versioned candidate.
 - Latest public baseline observed on the [CurseForge project](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged)
   is [1.1.56, file 9042960](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9042960).
   No new upload, release, project edit, or issue closure is part of this work.
 
 ## Draft player-facing notes
+
+Candidate notes are also staged in
+[`release-bundle/1.1.57-reconstructed/curseforge-notes.md`](../../release-bundle/1.1.57-reconstructed/curseforge-notes.md).
+They remain a draft pending exact-artifact qualification and final review.
 
 This patch fixes several placement, collision, selection, and rendering problems:
 
@@ -62,14 +71,16 @@ unchanged. No exhaustive reporter-modpack compatibility claim is made.
 
 ## Remaining release gates
 
-1. Resolve the public license discrepancy before declaring rights verified:
-   repository `LICENSE`, packaged metadata, and README say MIT, while CurseForge
-   presently says All Rights Reserved. [Issue #34](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/34)
-   records the mismatch. Preserve all upstream notices; this patch does not change
-   licenses or establish legal clearance. Authenticated authority to upload to
-   project 1555214 also requires a separate actual verification.
-2. Select the final version and source commit; run the full Build workflow on that
-   exact commit. Independently hash the actual private release JAR, check size,
+1. Verify publication rights and authenticated upload authority for project
+   1555214. The official [CurseForge project page](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged)
+   displayed MIT License on 2026-10-12 at 04:29 UTC, matching the repository
+   `LICENSE`, packaged metadata, and README; the public label discrepancy recorded
+   in [issue #34](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/34)
+   is no longer observed. This public readback does not establish authenticated
+   upload authority or complete provenance clearance. Preserve all upstream
+   notices; this candidate preparation does not change licenses.
+2. Confirm the candidate version and final source commit; run the full Build
+   workflow on that exact commit. Independently hash the actual private release JAR, check size,
    embedded mod/version and packaged notices, and create the reviewed manifest
    from those bytes. Do not infer an artifact identity from an earlier CI log.
 3. Run client inspection using those bytes: transparent slab rendering, grating
