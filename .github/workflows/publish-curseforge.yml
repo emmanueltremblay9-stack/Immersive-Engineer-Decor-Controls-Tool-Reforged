@@ -5,10 +5,13 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Reviewed GitHub release tag
+        description: Reviewed publication label matching the manifest (no GitHub Release)
         required: true
         type: string
-        default: v1.1.56-reconstructed
+      manifest:
+        description: Reviewed local-jar manifest path in this workflow checkout
+        required: true
+        type: string
       dry_run:
         description: Validate all public inputs without uploading
         required: true
@@ -32,14 +35,16 @@ jobs:
   publish:
     name: Guarded CurseForge publication
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     env:
       RUN_KEY: ${{ github.run_id }}-${{ github.run_attempt }}
-      MANIFEST_PATH: tools/release/curseforge_release_1.1.56.json
+      MANIFEST_PATH: ${{ inputs.manifest }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
@@ -56,6 +61,67 @@ jobs:
         shell: bash
         run: python -W error::ResourceWarning -m unittest discover -s tools/release -p 'test_*.py' -v
 
+      - name: Require reviewed local source and exact successful Build CI
+        id: source
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          REQUESTED_TAG: ${{ inputs.tag }}
+        run: |
+          python - <<'PY'
+          import os
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, "tools/release")
+          from publish_curseforge import Publisher, load_manifest, safe_repo_path
+
+          root = Path(os.environ["GITHUB_WORKSPACE"])
+          manifest_path = safe_repo_path(root, os.environ["MANIFEST_PATH"])
+          manifest_path.relative_to(root / "tools/release")
+          manifest = load_manifest(manifest_path)
+          publisher = Publisher(root, manifest, require_local_source=True)
+          repository = manifest["repository"]
+          if f"{repository['owner']}/{repository['name']}" != os.environ["GITHUB_REPOSITORY"]:
+              raise SystemExit("Manifest repository differs from this workflow repository")
+          if manifest["release"]["tag"] != os.environ["REQUESTED_TAG"]:
+              raise SystemExit("Requested publication label differs from the reviewed manifest")
+          publisher.validate_build_ci(os.environ["GITHUB_TOKEN"])
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as stream:
+              stream.write(f"commit={manifest['source']['commit']}\n")
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as stream:
+              stream.write(f"LOCAL_JAR_PATH={root / 'runtime-source/build/libs' / manifest['release']['assetName']}\n")
+          PY
+
+      - name: Checkout exact runtime source separately
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ steps.source.outputs.commit }}
+          path: runtime-source
+          persist-credentials: false
+
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set up Gradle without persisting runtime outputs
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+        with:
+          cache-disabled: true
+
+      - name: Build private runtime JAR at the pinned commit
+        shell: bash
+        working-directory: runtime-source
+        env:
+          SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          test -z "$(git status --porcelain --untracked-files=all)"
+          bash ./gradlew clean build --no-build-cache --stacktrace
+          test -z "$(git status --porcelain --untracked-files=all)"
+          test -f "$LOCAL_JAR_PATH"
+
       - name: Validate public inputs without a CurseForge secret
         id: dry-run
         if: ${{ inputs.dry_run }}
@@ -69,6 +135,9 @@ jobs:
             --dry-run \
             --repo-root "$GITHUB_WORKSPACE" \
             --manifest "$MANIFEST_PATH" \
+            --require-local-source \
+            --source-root "$GITHUB_WORKSPACE/runtime-source" \
+            --local-jar "$LOCAL_JAR_PATH" \
             --tag "$REQUESTED_TAG" \
             --report "$RESULT_REPORT_PATH"
           status=$?
@@ -89,6 +158,9 @@ jobs:
             --prepare-publish \
             --repo-root "$GITHUB_WORKSPACE" \
             --manifest "$MANIFEST_PATH" \
+            --require-local-source \
+            --source-root "$GITHUB_WORKSPACE/runtime-source" \
+            --local-jar "$LOCAL_JAR_PATH" \
             --tag "$REQUESTED_TAG" \
             --run-key "$RUN_KEY" \
             --report "$PREPARE_REPORT_PATH"
@@ -144,6 +216,9 @@ jobs:
             --publish \
             --repo-root "$GITHUB_WORKSPACE" \
             --manifest "$MANIFEST_PATH" \
+            --require-local-source \
+            --source-root "$GITHUB_WORKSPACE/runtime-source" \
+            --local-jar "$LOCAL_JAR_PATH" \
             --tag "$REQUESTED_TAG" \
             --run-key "$RUN_KEY" \
             --intent-report "$PREPARE_REPORT_PATH" \
@@ -169,6 +244,9 @@ jobs:
             --publish \
             --repo-root "$GITHUB_WORKSPACE" \
             --manifest "$MANIFEST_PATH" \
+            --require-local-source \
+            --source-root "$GITHUB_WORKSPACE/runtime-source" \
+            --local-jar "$LOCAL_JAR_PATH" \
             --tag "$REQUESTED_TAG" \
             --resume-file-id "$RESUME_FILE_ID" \
             --report "$RESULT_REPORT_PATH"

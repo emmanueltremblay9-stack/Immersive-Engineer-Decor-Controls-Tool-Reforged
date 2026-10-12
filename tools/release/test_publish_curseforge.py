@@ -5,6 +5,9 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import io
 import json
 from pathlib import Path
+import shutil
+import subprocess
+import sys
 import tempfile
 import threading
 import unittest
@@ -26,6 +29,7 @@ from publish_curseforge import (
     build_multipart,
     load_manifest,
     parse_args,
+    validate_source_contract,
 )
 
 
@@ -103,6 +107,8 @@ class FakeState:
         self.upload_token = ""
         self.game_version_token = ""
         self.release_authorization = ""
+        self.requested_paths: list[str] = []
+        self.build_run: dict = {}
         self.asset_authorization = ""
         self.list_page_size = 0
         self.requested_page_indexes: list[int] = []
@@ -163,7 +169,11 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         parsed = urllib.parse.urlsplit(self.path)
         path = parsed.path
+        self.state.requested_paths.append(path)
         query = urllib.parse.parse_qs(parsed.query)
+        if path == "/repos/test-owner/test-repo/actions/runs/12345":
+            self._json(self.state.build_run)
+            return
         if path == f"/repos/test-owner/test-repo/releases/tags/{TAG}":
             self.state.release_authorization = self.headers.get("Authorization", "")
             digest = hashlib.sha256(self.state.jar_bytes).hexdigest()
@@ -1003,29 +1013,219 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual([], self.state.requested_page_indexes)
 
 
-class OperationalRoutingTests(unittest.TestCase):
-    def test_default_manifest_and_workflow_match_current_release(self) -> None:
-        root = Path(__file__).resolve().parents[2]
-        properties = dict(
-            line.split("=", 1)
-            for line in (root / "gradle.properties").read_text(encoding="utf-8").splitlines()
-            if "=" in line and not line.startswith("#")
+class LocalSourcePublisherTests(PublisherTests):
+    """Run every existing duplicate/intent/POST/resume regression in local mode too."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.source_root = self.repo_root / "runtime-source"
+        self.source_root.mkdir()
+        (self.source_root / ".gitignore").write_text("build/\n", encoding="utf-8")
+        self.git("init", "--quiet")
+        self.git("add", ".gitignore")
+        self.git("-c", "user.name=Test", "-c", "user.email=test@example.invalid", "commit", "--quiet", "-m", "Fixture")
+        self.commit = self.git("rev-parse", "HEAD")
+        self.manifest["source"] = {
+            "mode": "local-jar", "commit": self.commit,
+            "buildRunId": 12345, "buildRunAttempt": 1,
+        }
+        self.local_jar = self.source_root / "build/libs" / ASSET_NAME
+        self.local_jar.parent.mkdir(parents=True)
+        self.local_jar.write_bytes(self.jar_bytes)
+        self.state.build_run = {
+            "id": 12345, "run_attempt": 1, "head_sha": self.commit,
+            "name": "Build", "path": ".github/workflows/build.yml", "event": "push",
+            "status": "completed", "conclusion": "success",
+            "repository": {"full_name": "test-owner/test-repo"},
+            "head_repository": {"full_name": "test-owner/test-repo"},
+        }
+
+    def git(self, *arguments: str) -> str:
+        return subprocess.run(
+            ["git", "-C", str(self.source_root), *arguments],
+            check=True, capture_output=True, text=True,
+        ).stdout.strip()
+
+    def tearDown(self) -> None:
+        try:
+            self.assertFalse(any("/releases/" in path or path == "/github-asset" for path in self.state.requested_paths))
+        finally:
+            super().tearDown()
+
+    def publisher(self) -> Publisher:
+        return Publisher(
+            self.repo_root, self.manifest,
+            http=HttpClient(timeout=2, get_attempts=1),
+            github_api=self.base_url,
+            curseforge_public_api=self.base_url + "/api/v1",
+            curseforge_upload_api=self.base_url,
+            source_root=self.source_root,
+            local_jar=self.local_jar,
+            require_local_source=True,
         )
-        version = properties["mod_version"]
+
+    def assert_blocked(self, status: str) -> None:
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher()
+        self.assertEqual(status, raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_dry_run_is_deterministic_and_never_posts_or_uses_cf_token(self) -> None:
+        first = self.run_publisher(github_token="github-secret")
+        second = self.run_publisher()
+        self.assertEqual("AUTOMATION_READY_DRY_RUN", first["status"])
+        self.assertEqual(first["multipartSha256"], second["multipartSha256"])
+        self.assertEqual(self.commit, first["source"]["commit"])
+        self.assertTrue(first["source"]["sourceCheckoutClean"])
+        self.assertNotIn("githubRelease", first)
+        self.assertNotIn("github-secret", json.dumps(first))
+        self.assertEqual(0, self.state.post_count)
+        self.assertEqual("", self.state.game_version_token)
+
+    def test_missing_local_jar_blocks_without_a_download(self) -> None:
+        self.local_jar.unlink()
+        self.assert_blocked("LOCAL_JAR_MISSING")
+        self.assertEqual([], self.state.requested_paths)
+
+    def test_local_jar_is_required(self) -> None:
+        self.local_jar = None
+        self.assert_blocked("LOCAL_JAR_REQUIRED")
+
+    def test_local_source_checkout_is_required(self) -> None:
+        self.source_root = None
+        self.assert_blocked("LOCAL_SOURCE_CHECKOUT_REQUIRED")
+
+    def test_local_jar_wrong_size_blocks(self) -> None:
+        self.local_jar.write_bytes(self.jar_bytes + b"modified")
+        self.assert_blocked("LOCAL_JAR_SIZE_MISMATCH")
+
+    def test_local_jar_wrong_hash_blocks(self) -> None:
+        self.local_jar.write_bytes(b"X" + self.jar_bytes[1:])
+        self.assert_blocked("LOCAL_JAR_HASH_MISMATCH")
+
+    def test_local_jar_wrong_filename_blocks(self) -> None:
+        self.local_jar = self.local_jar.with_name("other.jar")
+        self.local_jar.write_bytes(self.jar_bytes)
+        self.assert_blocked("LOCAL_JAR_PATH_INVALID")
+
+    def test_local_jar_symlink_blocks(self) -> None:
+        target = self.repo_root / ASSET_NAME
+        target.write_bytes(self.jar_bytes)
+        self.local_jar.unlink()
+        self.local_jar.symlink_to(target)
+        self.assert_blocked("LOCAL_JAR_PATH_INVALID")
+
+    def replace_test_jar(self, raw: bytes) -> None:
+        self.local_jar.write_bytes(raw)
+        self.manifest["release"]["assetSize"] = len(raw)
+        self.manifest["release"]["assetSha256"] = hashlib.sha256(raw).hexdigest()
+
+    def test_local_jar_wrong_embedded_version_blocks(self) -> None:
+        self.replace_test_jar(make_jar("unreviewed-version"))
+        self.assert_blocked("JAR_VERSION_MISMATCH")
+
+    def test_local_jar_identity_cannot_borrow_another_mod_version(self) -> None:
+        stream = io.BytesIO()
+        with zipfile.ZipFile(stream, "w") as archive:
+            archive.writestr("META-INF/neoforge.mods.toml", (
+                f'[[mods]]\nmodId="{MOD_ID}"\nversion="wrong"\n'
+                f'[[mods]]\nmodId="different_mod"\nversion="{VERSION}"\n'
+            ))
+        self.replace_test_jar(stream.getvalue())
+        self.assert_blocked("JAR_VERSION_MISMATCH")
+
+    def test_local_jar_missing_neoforge_metadata_blocks(self) -> None:
+        self.replace_test_jar(b"not a zip")
+        self.assert_blocked("JAR_METADATA_INVALID")
+
+    def test_wrong_source_commit_blocks(self) -> None:
+        self.manifest["source"]["commit"] = "a" * 40
+        self.assert_blocked("LOCAL_SOURCE_COMMIT_MISMATCH")
+
+    def test_dirty_source_checkout_blocks(self) -> None:
+        (self.source_root / ".gitignore").write_text("build/\nchanged/\n", encoding="utf-8")
+        self.assert_blocked("LOCAL_SOURCE_CHECKOUT_DIRTY")
+
+    def test_untracked_source_file_blocks(self) -> None:
+        (self.source_root / "unreviewed.java").write_text("// extra source", encoding="utf-8")
+        self.assert_blocked("LOCAL_SOURCE_CHECKOUT_DIRTY")
+
+    def test_exact_successful_build_ci_is_required(self) -> None:
+        original = dict(self.state.build_run)
+        mutations = [
+            ("head_sha", "b" * 40), ("status", "in_progress"),
+            ("conclusion", "failure"), ("conclusion", "skipped"),
+            ("conclusion", "cancelled"), ("conclusion", None),
+            ("name", "Publish CurseForge"), ("path", ".github/workflows/other.yml"),
+            ("event", "pull_request"), ("id", 54321), ("run_attempt", 2),
+            ("repository", {"full_name": "other/repo"}),
+            ("head_repository", {"full_name": "fork/test-repo"}),
+            ("head_repository", None),
+        ]
+        for key, value in mutations:
+            with self.subTest(key=key, value=value):
+                self.state.build_run = {**original, key: value}
+                self.assert_blocked("SOURCE_BUILD_CI_NOT_VERIFIED")
+        self.state.build_run = {}
+        self.assert_blocked("SOURCE_BUILD_CI_NOT_VERIFIED")
+
+    def test_build_ci_is_rechecked_between_prepare_and_post(self) -> None:
+        intent, artifact_id = self.prepare_and_persist()
+        self.state.build_run["conclusion"] = "failure"
+        with self.assertRaises(PublicationError) as raised:
+            self.publish_from_intent(intent, artifact_id)
+        self.assertEqual("SOURCE_BUILD_CI_NOT_VERIFIED", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_manifest_and_source_are_bound_into_upload_intent(self) -> None:
+        intent, artifact_id = self.prepare_and_persist()
+        for key, value in (("source", {}), ("manifestSha256", "0" * 64)):
+            with self.subTest(key=key):
+                altered = {**intent, key: value}
+                with self.assertRaises(PublicationError) as raised:
+                    self.publish_from_intent(altered, artifact_id)
+                self.assertEqual("UPLOAD_INTENT_REPORT_MISMATCH", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_changed_jar_after_prepare_cannot_be_uploaded(self) -> None:
+        intent, artifact_id = self.prepare_and_persist()
+        self.local_jar.write_bytes(b"X" + self.jar_bytes[1:])
+        with self.assertRaises(PublicationError) as raised:
+            self.publish_from_intent(intent, artifact_id)
+        self.assertEqual("LOCAL_JAR_HASH_MISMATCH", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_explicit_invalid_source_never_falls_back_to_github_release(self) -> None:
+        original = self.manifest["source"]
+        invalid = [None, {}, {"mode": "github-release"}, {**original, "commit": "main"},
+                   {**original, "buildRunId": True}, {**original, "buildRunAttempt": 0},
+                   {**original, "extra": "unexpected"}]
+        for source in invalid:
+            with self.subTest(source=source):
+                self.manifest["source"] = source
+                self.assert_blocked("MANIFEST_SOURCE_INVALID")
+        del self.manifest["source"]
+        self.assert_blocked("LOCAL_SOURCE_REQUIRED")
+        self.assertEqual([], self.state.requested_paths)
+
+
+class OperationalRoutingTests(unittest.TestCase):
+    def test_historical_manifest_remains_unchanged_and_explicit(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+        # Historical regression, independent of the next runtime version. Its
+        # reviewed manifest is created only after source CI and byte qualification.
+        version = "1.1.56-reconstructed"
         tag = f"v{version}"
         manifest_path = Path(
             f"tools/release/curseforge_release_{version.removesuffix('-reconstructed')}.json"
         )
-        self.assertEqual(parse_args(["--dry-run", "--tag", tag]).manifest, manifest_path)
-        workflow = (root / ".github/workflows/publish-curseforge.yml").read_text(encoding="utf-8")
-        self.assertIn(f"        default: {tag}\n", workflow)
-        self.assertIn(f"      MANIFEST_PATH: {manifest_path.as_posix()}\n", workflow)
+        self.assertEqual(parse_args(["--dry-run", "--tag", tag, "--manifest", str(manifest_path)]).manifest, manifest_path)
         manifest = load_manifest(root / manifest_path)
         release = manifest["release"]
         self.assertEqual(release["tag"], tag)
         self.assertEqual(release["version"], version)
-        self.assertEqual(release["modId"], properties["mod_id"])
-        self.assertEqual(release["assetName"], f"{properties['mod_id']}-{version}.jar")
+        self.assertEqual(release["modId"], MOD_ID)
+        self.assertEqual(release["assetName"], f"{MOD_ID}-{version}.jar")
         self.assertEqual(
             hashlib.sha256((root / release["changelogPath"]).read_bytes()).hexdigest(),
             release["changelogSha256"],
@@ -1035,6 +1235,58 @@ class OperationalRoutingTests(unittest.TestCase):
             manifest["curseforge"]["expectedPublicRelations"],
             [{"projectId": 231951, "slug": "immersive-engineering", "type": "RequiredDependency"}],
         )
+
+    def test_version_bump_does_not_require_an_unqualified_next_manifest(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+        with tempfile.TemporaryDirectory(prefix="iedct-version-bootstrap-test-") as temporary:
+            fixture = Path(temporary)
+            for relative in (
+                "tools/release/publish_curseforge.py",
+                "tools/release/test_publish_curseforge.py",
+                "tools/release/curseforge_release_1.1.56.json",
+                "release-bundle/1.1.56-reconstructed/curseforge-notes.md",
+            ):
+                target = fixture / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(root / relative, target)
+            (fixture / "gradle.properties").write_text(
+                f"mod_id={MOD_ID}\nmod_version=9.9.99-test-fixture\n", encoding="utf-8"
+            )
+            self.assertFalse((fixture / "tools/release/curseforge_release_9.9.99.json").exists())
+            result = subprocess.run(
+                [sys.executable, "-m", "unittest",
+                 "test_publish_curseforge.OperationalRoutingTests.test_historical_manifest_remains_unchanged_and_explicit"],
+                cwd=fixture / "tools/release", capture_output=True, text=True, timeout=30,
+            )
+            self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+
+    def test_workflow_builds_local_only_and_uploads_only_json_state(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+        workflow = (root / ".github/workflows/publish-curseforge.yml").read_text(encoding="utf-8")
+        self.assertIn("MANIFEST_PATH: ${{ inputs.manifest }}", workflow)
+        self.assertNotIn("v1.1.56", workflow)
+        self.assertIn("Publisher(root, manifest, require_local_source=True)", workflow)
+        self.assertIn("ref: ${{ steps.source.outputs.commit }}", workflow)
+        self.assertIn("bash ./gradlew clean build --no-build-cache", workflow)
+        self.assertIn("publisher.validate_build_ci", workflow)
+        self.assertLess(workflow.index("publisher.validate_build_ci"), workflow.index("bash ./gradlew"))
+        self.assertEqual(4, workflow.count("--require-local-source"))
+        self.assertEqual(4, workflow.count('--source-root "$GITHUB_WORKSPACE/runtime-source"'))
+        self.assertEqual(4, workflow.count('--local-jar "$LOCAL_JAR_PATH"'))
+        upload_steps = workflow.split("uses: actions/upload-artifact@")[1:]
+        self.assertEqual(2, len(upload_steps))
+        paths = [step.split("path: ", 1)[1].splitlines()[0] for step in upload_steps]
+        self.assertEqual(["${{ env.PREPARE_REPORT_PATH }}", "${{ env.RESULT_REPORT_PATH }}"], paths)
+        self.assertIn("$RUNNER_TEMP/curseforge-upload-intent.json", workflow)
+        self.assertIn("$RUNNER_TEMP/curseforge-publication-result.json", workflow)
+        build = (root / ".github/workflows/build.yml").read_text(encoding="utf-8")
+        self.assertNotIn("upload-artifact", build)
+
+    def test_legacy_manifest_cannot_select_local_mode_implicitly(self) -> None:
+        self.assertEqual("github-release", validate_source_contract({}))
+        with self.assertRaises(PublicationError) as raised:
+            validate_source_contract({}, require_local=True)
+        self.assertEqual("LOCAL_SOURCE_REQUIRED", raised.exception.status)
 
 
 if __name__ == "__main__":
