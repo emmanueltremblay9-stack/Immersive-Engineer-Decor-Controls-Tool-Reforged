@@ -5,6 +5,11 @@ Observed 2026-10-12 UTC. Candidate version `1.1.57-reconstructed` is configured 
 the project metadata and changelog. No qualified candidate JAR, final source
 commit, publisher manifest, or candidate artifact hash is established here.
 
+The Iron Hatch ladder-continuation correction added after candidate preparation
+supersedes any earlier candidate JAR for final qualification, including JARs with
+the same `1.1.57-reconstructed` version string. Repeat the exact-commit CI,
+byte-identity, client and packaged-server gates on the final fixed artifact.
+
 ## Source and evidence boundary
 
 - Candidate preparation base: main commit
@@ -48,6 +53,9 @@ This patch fixes several placement, collision, selection, and rendering problems
 - Connections between decorative walls and Steel Mesh Fence, including mixed
   connections and vanilla walls (#18)
 - Iron Hatch hinge selection when placing against floors, ceilings, and walls (#19)
+- Ladder continuation into an open Iron Hatch when the ladder immediately below
+  shares the leaf's support edge; includes vanilla ladders, Metal Rung Ladder,
+  and Staggered Metal Steps, with no climbing through closed or misaligned hatches
 - Structured Vertical Clinker Slab orientation, removing the unwanted gap for
   placement against a wall directly ahead (#20)
 - Door Sensor selection outline aligned with its model (#25)
@@ -86,6 +94,9 @@ unchanged. No exhaustive reporter-modpack compatibility claim is made.
 3. Run client inspection using those bytes: transparent slab rendering, grating
    and support traversal, hopper input/output, mixed wall connections, hatch and
    slab orientations, Door Sensor selection, and new/legacy Industrial Switches.
+   For hatch traversal, climb from the ladder below through the open hatch on all
+   four support edges, then check closed, opposite/perpendicular, and missing
+   ladder arrangements, manual/redstone transitions, and existing saved hatches.
    Include save/reload and break/re-place behavior. Preserve logs/screenshots
    labelled with the exact JAR hash.
 4. Run an actual packaged dedicated server with the same JAR and required
@@ -100,3 +111,18 @@ The current cloud workspace has Java 21, but no installed Gradle distribution or
 populated Gradle dependency cache was found. No dependency installation or user
 computer access was attempted in this preparation. Client visuals and packaged
 server validation therefore remain unperformed here.
+
+## Hatch continuation regression evidence
+
+Test-only commit `7485e4f55fd6561f17ae48c8829aa58176049230` compiled and ran all
+223 GameTests in [Build run 38288241929](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/38288241929).
+Exactly four new positive-path tests failed at actual player climbing: aligned
+ladder, manual opening, loaded open state, and actual placement. The three new
+negative tests and all 216 prior tests passed. This establishes the missing
+ladder-to-hatch bridge on the previous implementation, not a reproduced
+wrong-side movement effect in a reporter modpack.
+
+Corrected-commit GREEN CI and final-artifact client/server qualification must be
+recorded separately; the RED run does not qualify a release. See
+[`iron-hatch-ladder-continuation.md`](../bugfixes/iron-hatch-ladder-continuation.md)
+for the hook compatibility and test scope.

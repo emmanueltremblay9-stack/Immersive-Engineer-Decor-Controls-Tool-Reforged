@@ -10,6 +10,7 @@ All notable reconstruction, repair, and validation changes for this project are 
 - Restored Panzer Glass Slab translucent render declarations (#21) and aligned the Exit Sign selection outline while retaining empty collision (#33).
 - Restored connections between decorative walls, Steel Mesh Fence, and vanilla walls (#18).
 - Corrected Iron Hatch hinge selection for floor, ceiling, and wall placement (#19), and Structured Vertical Clinker Slab orientation when placed against a wall directly ahead (#20).
+- Restored climbing from a ladder directly below an open Iron Hatch when the ladder and hatch leaf share the same support edge, including Metal Rung Ladder and Staggered Metal Steps. Closed hatches and misaligned ladders do not gain climbing.
 - Aligned the Door Sensor selection outline with its model (#25).
 - Corrected Industrial Switch cabinet placement and outward orientation, added paired two-block selection/collision and linked interaction/redstone, and ensured single-item survival drops (#26).
 
@@ -20,6 +21,7 @@ All notable reconstruction, repair, and validation changes for this project are 
 ### Candidate status
 - Synchronized candidate metadata to `1.1.57-reconstructed`. This candidate is not published or fully qualified. Earlier CI results for `1.1.56-reconstructed` builds do not identify or qualify a `1.1.57-reconstructed` JAR.
 - Exact-commit CI, actual JAR identity and packaged notices, client inspection, packaged dedicated-server validation, and publication checks remain required; see `docs/releases/next-patch-qualification.md`.
+- Any candidate JAR built before the hatch ladder-continuation fix is superseded for qualification, even if labelled `1.1.57-reconstructed`; the final fixed bytes and exact source commit must be qualified again.
 - Compatibility is unchanged: Minecraft 1.21.1, Java 21, NeoForge 21.1.230 minimum, required Immersive Engineering 12.4.2-194, and optional JEI 19.32.0.359. No exhaustive reporter-modpack compatibility claim is made.
 
 ## [1.1.56-reconstructed] - 2026-10-02

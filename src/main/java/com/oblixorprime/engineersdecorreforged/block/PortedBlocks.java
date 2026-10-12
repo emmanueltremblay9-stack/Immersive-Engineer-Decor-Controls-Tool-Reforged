@@ -711,6 +711,20 @@ public final class PortedBlocks {
             .setValue(PortedBlocks.OPEN, powered);
       }
 
+      @Override
+      public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, @Nullable LivingEntity entity) {
+         if (!state.getValue(PortedBlocks.OPEN)) {
+            return false;
+         }
+         BlockPos belowPos = pos.below();
+         BlockState below = level.getBlockState(belowPos);
+         // The ladder hook expects vanilla's facing convention, opposite our physical hinge edge.
+         // Translate only this query state; already placed hatches keep their saved orientation.
+         BlockState vanillaFacing = state.setValue(PortedBlocks.HORIZONTAL_FACING,
+            state.getValue(PortedBlocks.HORIZONTAL_FACING).getOpposite());
+         return below.getBlock().makesOpenTrapdoorAboveClimbable(below, level, belowPos, vanillaFacing);
+      }
+
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
          if (!level.isClientSide) {
             boolean open = (Boolean)state.getValue(PortedBlocks.POWERED) || !(Boolean)state.getValue(PortedBlocks.OPEN);
