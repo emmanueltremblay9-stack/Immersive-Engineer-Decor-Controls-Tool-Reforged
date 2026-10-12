@@ -177,10 +177,10 @@ public final class ModBlocks {
       "steel_mesh_fence_gate", () -> new PortedBlocks.FenceGateSegmentBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<LadderBlock> METAL_RUNG_LADDER = registerWithItem(
-      "metal_rung_ladder", () -> new LadderBlock(metal().noCollission().noOcclusion())
+      "metal_rung_ladder", () -> new LadderBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<LadderBlock> METAL_RUNG_STEPS = registerWithItem(
-      "metal_rung_steps", () -> new LadderBlock(metal().noCollission().noOcclusion())
+      "metal_rung_steps", () -> new LadderBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.TableBlock> STEEL_TABLE = registerWithItem(
       "steel_table", () -> new PortedBlocks.TableBlock(metal().noOcclusion())
