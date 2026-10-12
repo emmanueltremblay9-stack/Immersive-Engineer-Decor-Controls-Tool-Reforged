@@ -9,6 +9,7 @@ All notable reconstruction, repair, and validation changes for this project are 
 - Corrected Steel Floor Grating collision height (#23) and Steel Double T Support collision geometry (#24).
 - Restored Panzer Glass Slab translucent render declarations (#21) and aligned the Exit Sign selection outline while retaining empty collision (#33).
 - Restored connections between decorative walls, Steel Mesh Fence, and vanilla walls (#18).
+- Restored player passage through an open Steel Mesh Fence Gate while keeping its posts and folded side collidable, and restored correctly aligned Steel Mesh Fence connections to the gate.
 - Corrected Iron Hatch hinge selection for floor, ceiling, and wall placement (#19), and Structured Vertical Clinker Slab orientation when placed against a wall directly ahead (#20).
 - Restored climbing from a ladder directly below an open Iron Hatch when the ladder and hatch leaf share the same support edge, including Metal Rung Ladder and Staggered Metal Steps. Closed hatches and misaligned ladders do not gain climbing.
 - Restored vanilla ladder collision to Metal Rung Ladder and Staggered Metal Steps so players pressing against the supporting wall can clear the underside of an open Iron Hatch.
@@ -19,11 +20,12 @@ All notable reconstruction, repair, and validation changes for this project are 
 - Back up worlds before updating. Existing Industrial Switch cabinets retain their legacy state and are not automatically converted. Break and re-place an old cabinet in clear two-block space to obtain the paired layout and corrected outward orientation; upper-half selection requires a real upper block. No world scan or occupied-space overwrite is performed.
 - Already placed hatches and vertical slabs are not automatically rotated. Existing wall connections may need a neighbor update; Steel Mesh Fence remains wall-based. Hopper extraction supports adjacent vanilla `Container` inventories, not inventories exposing only NeoForge `IItemHandler`. Door Sensor mounting appearance and empty collision are unchanged.
 - Existing metal ladders keep their saved facing and waterlogged state, but now have the same thin physical collision strip as vanilla ladders. Their models, selection outline, and placement rules are unchanged; no re-placement or state migration is required for this collision correction.
+- Steel Mesh Fence Gate keeps its saved facing, open state, segment values, models and selection outline. Its thin inward decorative leaf no longer narrows the open collision corridor below player width. Fence connections may need a neighbor update; existing manual-only redstone behavior is unchanged.
 
 ### Candidate status
 - Synchronized candidate metadata to `1.1.57-reconstructed`. This candidate is not published or fully qualified. Earlier CI results for `1.1.56-reconstructed` builds do not identify or qualify a `1.1.57-reconstructed` JAR.
 - Exact-commit CI, actual JAR identity and packaged notices, client inspection, packaged dedicated-server validation, and publication checks remain required; see `docs/releases/next-patch-qualification.md`.
-- Any candidate JAR built before both the hatch ladder-continuation and metal-ladder wall-clearance fixes is superseded for qualification, even if labelled `1.1.57-reconstructed`; the final fixed bytes and exact source commit must be qualified again.
+- Any candidate JAR built before all hatch ladder-continuation, metal-ladder wall-clearance and Steel Mesh Fence Gate passage/connection fixes is superseded for qualification, even if labelled `1.1.57-reconstructed`; the final fixed bytes and exact source commit must be qualified again.
 - Compatibility is unchanged: Minecraft 1.21.1, Java 21, NeoForge 21.1.230 minimum, required Immersive Engineering 12.4.2-194, and optional JEI 19.32.0.359. No exhaustive reporter-modpack compatibility claim is made.
 
 ## [1.1.56-reconstructed] - 2026-10-02

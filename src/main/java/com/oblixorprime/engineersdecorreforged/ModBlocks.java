@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.SteelMeshFenceBlock;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import java.util.ArrayList;
@@ -171,7 +172,7 @@ public final class ModBlocks {
       "steel_railing", () -> new PortedBlocks.RailingBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<WallBlock> STEEL_MESH_FENCE = registerWithItem(
-      "steel_mesh_fence", () -> new WallBlock(metal().noOcclusion().forceSolidOn())
+      "steel_mesh_fence", () -> new SteelMeshFenceBlock(metal().noOcclusion().forceSolidOn())
    );
    public static final DeferredBlock<PortedBlocks.FenceGateSegmentBlock> STEEL_MESH_FENCE_GATE = registerWithItem(
       "steel_mesh_fence_gate", () -> new PortedBlocks.FenceGateSegmentBlock(metal().noOcclusion())

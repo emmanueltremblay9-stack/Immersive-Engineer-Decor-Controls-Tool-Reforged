@@ -544,6 +544,14 @@ public final class PortedBlocks {
       private static final VoxelShape OPEN_EAST_SHAPE = rotateClockwise(OPEN_NORTH_SHAPE);
       private static final VoxelShape OPEN_SOUTH_SHAPE = rotateClockwise(OPEN_EAST_SHAPE);
       private static final VoxelShape OPEN_WEST_SHAPE = rotateClockwise(OPEN_SOUTH_SHAPE);
+      // Keep the rendered/selection outline, but let a 0.6-wide player fit between the
+      // structural posts (3/16..13/16). The thin inward decorative leaf is not a barrier.
+      private static final VoxelShape OPEN_NORTH_COLLISION = Shapes.or(
+         Block.box(0.0, 0.0, 6.5, 3.0, 16.0, 10.5), Block.box(13.0, 0.0, 0.0, 16.0, 16.0, 10.5)
+      );
+      private static final VoxelShape OPEN_EAST_COLLISION = rotateClockwise(OPEN_NORTH_COLLISION);
+      private static final VoxelShape OPEN_SOUTH_COLLISION = rotateClockwise(OPEN_EAST_COLLISION);
+      private static final VoxelShape OPEN_WEST_COLLISION = rotateClockwise(OPEN_SOUTH_COLLISION);
 
       public FenceGateSegmentBlock(Properties properties) {
          super(properties);
@@ -623,7 +631,16 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         if (!state.getValue(PortedBlocks.OPEN)) {
+            return this.getShape(state, level, pos, context);
+         }
+         return switch (state.getValue(PortedBlocks.HORIZONTAL_FACING)) {
+            case NORTH -> OPEN_NORTH_COLLISION;
+            case EAST -> OPEN_EAST_COLLISION;
+            case SOUTH -> OPEN_SOUTH_COLLISION;
+            case WEST -> OPEN_WEST_COLLISION;
+            default -> OPEN_NORTH_COLLISION;
+         };
       }
 
       private static VoxelShape rotateClockwise(VoxelShape shape) {
