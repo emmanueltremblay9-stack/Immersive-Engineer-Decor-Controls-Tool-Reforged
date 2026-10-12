@@ -579,7 +579,13 @@ public final class SynchronizedAccesswayGameTests {
          try {
             click(helper, player, FIRST, Direction.NORTH);
             helper.assertTrue(helper.getBlockState(removed).isAir(), "companion forwarding must not restore a removed half");
-            assertOpen(helper, FIRST.east(), false);
+            // Vanilla removes the remaining lower half when its upper half disappears.
+            // Preserve that removal rather than requiring an invalid orphan door state.
+            helper.assertTrue(helper.getBlockState(removeSource ? FIRST : FIRST.east()).isAir(),
+               "companion forwarding must not recreate the lower half removed by vanilla");
+            if (removeSource) {
+               assertDoor(helper, FIRST.east(), false);
+            }
          } finally {
             NeoForge.EVENT_BUS.unregister(listener);
          }
