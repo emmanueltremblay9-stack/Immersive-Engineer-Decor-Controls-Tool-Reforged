@@ -74,10 +74,10 @@ The `Publish CurseForge` workflow is manual-only, label-scoped by a non-cancelli
 
 Passing publisher tests or a dry-run does not authorize or prove release readiness. In particular:
 
-- Review the distribution license and redistribution rights for the combined mod and bundled assets. Resolve the repository-MIT versus CurseForge-All-Rights-Reserved discrepancy tracked in [issue #34](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/34), and preserve `LICENSE`, `NOTICE.md`, and upstream credits. This publisher does not resolve or waive that review.
+- Review the distribution license and redistribution rights for the combined mod and bundled assets, preserving `LICENSE`, `NOTICE.md`, and upstream credits. The official [CurseForge project page](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged) displayed MIT License on 2026-10-12 at 04:29 UTC, matching the repository; the public label discrepancy recorded in [issue #34](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues/34) is no longer observed. This readback does not establish complete provenance clearance or waive the rights review.
 - Qualify the **exact final version/commit/JAR**, with successful exact-head Build CI, dedicated-server testing, and the applicable in-game client/visual checks. Headless GameTests do not prove client rendering, placement feedback, or the user's full gameplay checklist.
 - Privately identify the candidate bytes by SHA-256 and size, confirm its embedded NeoForge identity, prepare final release notes, and demonstrate that the workflow rebuild matches the reviewed bytes.
-- Verify authority for the existing CurseForge project and retain the approved dependency/platform metadata contract. No GitHub release, merge, license change, or access change is authorized by this tooling.
+- Verify authenticated upload authority for the existing CurseForge project and retain the approved dependency/platform metadata contract. A public license label does not establish that authority. No GitHub release, merge, license change, or access change is authorized by this tooling.
 
 See [the next-patch qualification checklist](releases/next-patch-qualification.md) for the current source evidence and remaining release gates. Do not copy an older runtime hash or reuse its published version as proof for the next patch.
 
