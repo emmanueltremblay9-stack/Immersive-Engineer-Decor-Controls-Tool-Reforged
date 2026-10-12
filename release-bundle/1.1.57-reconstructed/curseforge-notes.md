@@ -10,6 +10,7 @@ Draft candidate notes. This version is not yet published or fully qualified.
 - Aligned the Exit Sign selection outline while preserving its empty collision.
 - Restored connections between decorative walls, Steel Mesh Fence, and vanilla walls.
 - Corrected Iron Hatch hinge selection when placing against floors, ceilings, and walls.
+- Restored climbing into an open Iron Hatch from a ladder directly below on the same support wall, including Metal Rung Ladder and Staggered Metal Steps. Closed hatches and ladders on another edge do not gain climbing.
 - Corrected Structured Vertical Clinker Slab orientation when placed against a wall directly ahead, removing the unwanted gap.
 - Aligned the Door Sensor selection outline with its model.
 - Corrected Industrial Switch cabinet placement and outward orientation. New cabinets occupy two blocks with matching selection and collision; either half toggles the linked redstone output. Breaking either half in survival drops one cabinet item.
@@ -27,3 +28,5 @@ Minecraft **1.21.1**, Java **21**, and NeoForge **21.1.230** minimum. Immersive 
 ## Candidate validation status
 
 The final candidate still requires exact-commit CI, independent JAR identity and packaged-notice checks, client inspection, and packaged dedicated-server validation. Earlier test results and artifact hashes do not qualify this differently versioned JAR. No exhaustive reporter-modpack compatibility claim is made.
+
+Candidate JARs built before the hatch ladder-continuation correction are superseded for qualification, even when they have the same version string. Final checks must use the corrected source commit and exact JAR bytes.
