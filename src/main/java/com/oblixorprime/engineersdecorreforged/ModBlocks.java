@@ -1,6 +1,8 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.ChimneyBlock;
+import com.oblixorprime.engineersdecorreforged.block.ChimneyTrunkBlock;
 import com.oblixorprime.engineersdecorreforged.block.RoofWireConduitBlock;
 import com.oblixorprime.engineersdecorreforged.block.SteelMeshFenceBlock;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
@@ -99,13 +101,13 @@ public final class ModBlocks {
       "dark_shingle_roof_skylight", () -> stairs(glass().strength(0.5F, 6.0F))
    );
    public static final DeferredBlock<StairBlock> DARK_SHINGLE_ROOF_CHIMNEYTRUNK = registerWithItem(
-      "dark_shingle_roof_chimneytrunk", () -> stairs(stone(0.5F, 6.0F).noOcclusion())
+      "dark_shingle_roof_chimneytrunk", () -> new ChimneyTrunkBlock(stone(0.5F, 6.0F).noOcclusion())
    );
    public static final DeferredBlock<StairBlock> DARK_SHINGLE_ROOF_WIRECONDUIT = registerWithItem(
       "dark_shingle_roof_wireconduit", () -> new RoofWireConduitBlock(stone(0.5F, 6.0F).noOcclusion())
    );
-   public static final DeferredBlock<PortedBlocks.FixedShapeBlock> DARK_SHINGLE_ROOF_CHIMNEY = registerWithItem(
-      "dark_shingle_roof_chimney", () -> new PortedBlocks.FixedShapeBlock(stone(0.5F, 6.0F).noOcclusion(), Block.box(3.0, 0.0, 3.0, 13.0, 6.0, 13.0))
+   public static final DeferredBlock<ChimneyBlock> DARK_SHINGLE_ROOF_CHIMNEY = registerWithItem(
+      "dark_shingle_roof_chimney", () -> new ChimneyBlock(stone(0.5F, 6.0F).noOcclusion())
    );
    public static final DeferredBlock<Block> DARK_SHINGLE_ROOF_BLOCK = registerWithItem("dark_shingle_roof_block", () -> new Block(stone(0.5F, 6.0F)));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> DARK_SHINGLE_ROOF_SLAB = registerWithItem(
