@@ -9,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -42,7 +43,7 @@ public final class TreatedWoodStoolBlock extends PortedBlocks.StoolBlock {
       if (player.isShiftKeyDown() || player.isPassenger()) {
          return InteractionResult.PASS;
       }
-      if (player.isSpectator() || !player.isAlive() || !player.getAbilities().mayBuild
+      if (player.isSpectator() || !player.isAlive() || player.getPose() != Pose.STANDING || !player.getAbilities().mayBuild
          || !level.mayInteract(player, pos) || !player.canInteractWithBlock(pos, 0.0)) {
          return InteractionResult.FAIL;
       }

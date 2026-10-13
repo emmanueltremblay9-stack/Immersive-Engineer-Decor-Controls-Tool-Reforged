@@ -899,5 +899,7 @@
   "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Stim Pack injects",
   "key.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Open contextual Engineer Manual",
   "key.categories.immersive_engineer_decor_controls_tool_reforged": "IEDCTR",
-  "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Hold %s to open Engineer Manual"
+  "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Hold %s to open Engineer Manual",
+  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.sitting": "Right-click to sit; sneak to stand up.",
+  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.meal_bonus": "Food eaten while seated gives +20% of its normal saturation, capped at your hunger level."
 }

@@ -8,6 +8,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.level.Level;
@@ -35,7 +36,7 @@ public final class StoolSeatEntity extends Entity {
 
    public boolean hasRoomFor(Player player) {
       Vec3 feet = getPassengerRidingPosition(player).subtract(player.getVehicleAttachmentPoint(this));
-      AABB body = player.getDimensions(player.getPose()).makeBoundingBox(feet);
+      AABB body = player.getDimensions(Pose.STANDING).makeBoundingBox(feet);
       // The bent legs overlap the stool; only its own seated occupant ignores that collision.
       AABB headroom = new AABB(body.minX, Math.max(body.minY, getY() + 0.001), body.minZ,
          body.maxX, body.maxY, body.maxZ);
@@ -50,7 +51,8 @@ public final class StoolSeatEntity extends Entity {
    @Override
    protected boolean canAddPassenger(Entity passenger) {
       return passenger instanceof Player player && player.isAlive() && !player.isSpectator()
-         && getPassengers().isEmpty() && !isRemoved();
+         && player.getPose() == Pose.STANDING && getPassengers().isEmpty() && !isRemoved()
+         && level().getBlockState(blockPosition()).getBlock() instanceof TreatedWoodStoolBlock && hasRoomFor(player);
    }
 
    @Override
@@ -62,11 +64,13 @@ public final class StoolSeatEntity extends Entity {
    }
 
    @Override
-   protected void removePassenger(Entity passenger) {
-      super.removePassenger(passenger);
-      if (!level().isClientSide && getPassengers().isEmpty() && !isRemoved()) {
-         discard();
+   public void remove(RemovalReason reason) {
+      if (!level().isClientSide) {
+         // Native dismount skips the vehicle's safe-location helper once it is marked removed.
+         // Eject first, while it is alive; ordinary empty seats are cleaned on the next tick.
+         ejectPassengers();
       }
+      super.remove(reason);
    }
 
    @Override

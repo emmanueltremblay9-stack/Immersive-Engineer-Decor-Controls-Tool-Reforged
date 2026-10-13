@@ -371,7 +371,10 @@ public final class CatwalkStairPlacementGameTests {
       Vec3 point = Vec3.atLowerCornerOf(helper.absolutePos(pos)).add(0.5 + downhill.getStepX() * 0.25,
          2.0 / 16.0, 0.5 + downhill.getStepZ() * 0.25);
       Vec3 direction = Vec3.atLowerCornerOf(face.getNormal());
-      return ray(helper, player, point.add(direction.scale(1.5)), point, pos, face);
+      // Keep the eye outside the selected face but inside this 8-block-wide template.
+      // A 1.5-block westward ray from the second descending segment starts beyond
+      // the test bounds and hits the enclosure wall before reaching the stair.
+      return ray(helper, player, point.add(direction.scale(0.9)), point, pos, face);
    }
 
    private static BlockHitResult ray(GameTestHelper helper, ServerPlayer player, Vec3 from, Vec3 to, BlockPos expected, Direction face) {
