@@ -10,6 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionResult;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -51,6 +53,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -287,6 +290,70 @@ public final class PortedBlocks {
       return shape;
    }
 
+   /** A visible selectable component; a null side denotes the catwalk floor. */
+   public record RailingPart(@Nullable Direction side, VoxelShape shape) {}
+
+   /** Shared by native mining and the client highlight. World occlusion is authoritative. */
+   @Nullable
+   public static RailingPart selectRailingPart(Level level, BlockPos pos, Vec3 start, Vec3 end, Entity context) {
+      BlockState state = level.getBlockState(pos);
+      if (!(state.getBlock() instanceof CatwalkBlock block)) {
+         return null;
+      }
+      BlockHitResult worldHit = level.clip(new ClipContext(start, end, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, context));
+      if (worldHit.getType() != HitResult.Type.BLOCK || !worldHit.getBlockPos().equals(pos)) {
+         return null;
+      }
+      state = block.explicitSides(state);
+      RailingPart selected = null;
+      double distance = Double.POSITIVE_INFINITY;
+      if (!(block instanceof RailingBlock)) {
+         BlockHitResult floorHit = CATWALK_FLOOR_SHAPE.clip(start, end, pos);
+         if (floorHit != null) {
+            selected = new RailingPart(null, CATWALK_FLOOR_SHAPE);
+            distance = start.distanceToSqr(floorHit.getLocation());
+         }
+      }
+      // At shared boundaries the floor, then north/east/south/west, wins exact ties.
+      for (Direction side : new Direction[]{Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST}) {
+         if (!state.getValue(CatwalkBlock.connectionProperty(side))) {
+            continue;
+         }
+         VoxelShape shape = switch (side) {
+            case NORTH -> NORTH_RAIL_SHAPE;
+            case EAST -> EAST_RAIL_SHAPE;
+            case SOUTH -> SOUTH_RAIL_SHAPE;
+            case WEST -> WEST_RAIL_SHAPE;
+            default -> throw new IllegalStateException("Expected a horizontal rail side");
+         };
+         BlockHitResult hit = shape.clip(start, end, pos);
+         if (hit != null && start.distanceToSqr(hit.getLocation()) < distance - 1.0E-9) {
+            selected = new RailingPart(side, shape);
+            distance = start.distanceToSqr(hit.getLocation());
+         }
+      }
+      return selected;
+   }
+
+   private static VoxelShape railingCollision(BlockState state, boolean includeFloor) {
+      VoxelShape shape = includeFloor ? CATWALK_FLOOR_SHAPE : Shapes.empty();
+      double top = includeFloor ? 27.0 : 24.0; // Fence-height protection above each walking surface.
+      boolean legacyNorth = !includeFloor && CatwalkBlock.sideCount(state) == 0;
+      if (legacyNorth || state.getValue(NORTH)) {
+         shape = Shapes.or(shape, Block.box(0, 3, 0, 16, top, 2));
+      }
+      if (state.getValue(EAST)) {
+         shape = Shapes.or(shape, Block.box(14, 3, 0, 16, top, 16));
+      }
+      if (state.getValue(SOUTH)) {
+         shape = Shapes.or(shape, Block.box(0, 3, 14, 16, top, 16));
+      }
+      if (state.getValue(WEST)) {
+         shape = Shapes.or(shape, Block.box(0, 3, 0, 2, top, 16));
+      }
+      return shape;
+   }
+
    private static VoxelShape catwalkStairShape(Direction facing) {
       return switch (facing) {
          case NORTH -> Shapes.or(Block.box(0.0, 0.0, 8.0, 16.0, 5.0, 16.0), Block.box(0.0, 5.0, 0.0, 16.0, 10.0, 8.0));
@@ -516,6 +583,39 @@ public final class PortedBlocks {
       }
 
       @Override
+      public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
+                                         boolean willHarvest, FluidState fluid) {
+         if (player == null) {
+            return super.onDestroyedByPlayer(state, level, pos, null, willHarvest, fluid);
+         }
+         RailingMining.Completion completion = RailingMining.complete(player, level, pos, state);
+         if (completion == null) {
+            return false;
+         }
+         RailingPart part = completion.part();
+         BlockState explicit = explicitSides(state);
+         if (part.side() == null || this instanceof RailingBlock && sideCount(explicit) == 1) {
+            // Floor mining removes the catwalk normally; the final standalone side owns its base drop.
+            return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+         }
+
+         int paid = paidRailings(explicit);
+         BlockState changed = explicit.setValue(connectionProperty(part.side()), false)
+            .setValue(PAID_RAILINGS, Math.max(0, paid - 1));
+         if (level.setBlock(pos, changed, Block.UPDATE_ALL) && !level.isClientSide && !player.getAbilities().instabuild && willHarvest) {
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005F);
+            if (paid > 0) {
+               // Route one purchased rail through normal loot/drop hooks and doTileDrops.
+               Block.dropResources(ModBlocks.STEEL_RAILING.get().defaultBlockState(), level, pos, null,
+                  player, completion.tool());
+            }
+         }
+         // A partial removal must not invoke whole-block playerDestroy or duplicate its loot.
+         return false;
+      }
+
+      @Override
       protected BlockState rotate(BlockState state, Rotation rotation) {
          state = explicitSides(state);
          BlockState rotated = state;
@@ -540,7 +640,7 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         return PortedBlocks.railingCollision(state, true);
       }
    }
 
@@ -1023,7 +1123,7 @@ public final class PortedBlocks {
 
       @Override
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         return PortedBlocks.railingCollision(state, false);
       }
    }
 
