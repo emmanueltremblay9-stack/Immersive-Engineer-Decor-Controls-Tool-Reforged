@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -39,6 +40,18 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
    public static final BooleanProperty WATERLOGGED = PortedBlocks.WATERLOGGED;
    public static final BooleanProperty PAID_LIGHT = BooleanProperty.create("paid_light");
    private static final VoxelShape DECK = box(0, 14, 0, 16, 16, 16);
+   // The existing model's grate starts at Y=15; only its outer rim reaches Y=14.
+   // Keeping a full Y=14..16 outline would hide the recessed lamp from every eye ray.
+   private static final VoxelShape LIT_DECK = Shapes.or(box(0, 15, 0, 16, 16, 16),
+      box(0, 14, 0, 16, 15, 1), box(0, 14, 15, 16, 15, 16),
+      box(0, 14, 1, 1, 15, 15), box(15, 14, 1, 16, 15, 15)).optimize();
+   // Exact lamp glass and eight mounting tabs from steel_catwalk_ta4_model.json.
+   private static final VoxelShape INSET_LIGHT = Shapes.or(box(6, 14.75, 6, 10, 14.875, 10),
+      box(10, 14.625, 7, 11, 15, 9), box(5, 14.625, 7, 6, 15, 9),
+      box(7, 14.625, 10, 9, 15, 11), box(7, 14.625, 5, 9, 15, 6),
+      box(6, 14.625, 9, 7, 15, 10), box(6, 14.625, 6, 7, 15, 7),
+      box(9, 14.625, 6, 10, 15, 7), box(9, 14.625, 9, 10, 15, 10)).optimize();
+   private static final VoxelShape LIT_OUTLINE = Shapes.or(LIT_DECK, INSET_LIGHT).optimize();
    // Original Engineer's Decor shapes: Stefan Wilhelm / wile, MIT (see NOTICE.md).
    private static final VoxelShape[] SHAPES = {
       DECK,
@@ -134,12 +147,59 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
 
    @Override
    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-      return SHAPES[state.getValue(VARIANT)];
+      return state.getValue(VARIANT) == 4 ? LIT_OUTLINE : SHAPES[state.getValue(VARIANT)];
+   }
+
+   /** Shared highlight and mining selection, after the caller has checked world occlusion. */
+   PortedBlocks.RailingPart selectPart(BlockState state, BlockPos pos, Vec3 start, Vec3 end) {
+      boolean lit = state.getValue(VARIANT) == 4;
+      VoxelShape base = lit ? LIT_DECK : SHAPES[state.getValue(VARIANT)];
+      BlockHitResult baseHit = base.clip(start, end, pos);
+      PortedBlocks.RailingPart selected = baseHit == null ? null : new PortedBlocks.RailingPart(null, base);
+      if (lit) {
+         BlockHitResult lampHit = INSET_LIGHT.clip(start, end, pos);
+         if (lampHit != null && (baseHit == null
+            || start.distanceToSqr(lampHit.getLocation()) < start.distanceToSqr(baseHit.getLocation()) - 1.0E-9)) {
+            selected = new PortedBlocks.RailingPart(null, INSET_LIGHT, PortedBlocks.PartKind.INSET_LIGHT);
+         }
+      }
+      return selected;
    }
 
    @Override
    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-      return getShape(state, level, pos, context);
+      // Preserve the established continuous walking/headroom collision for every variant.
+      return SHAPES[state.getValue(VARIANT)];
+   }
+
+   @Override
+   public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
+                                      boolean willHarvest, FluidState fluid) {
+      if (player == null) {
+         return super.onDestroyedByPlayer(state, level, pos, null, willHarvest, fluid);
+      }
+      RailingMining.Completion completion = RailingMining.complete(player, level, pos, state);
+      if (completion == null) {
+         return false;
+      }
+      if (completion.part().kind() != PortedBlocks.PartKind.INSET_LIGHT) {
+         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+      }
+      BlockState changed = withPoleSupport(state.setValue(VARIANT, 0).setValue(PAID_LIGHT, false), level, pos);
+      if (level.setBlock(pos, changed, Block.UPDATE_ALL) && !level.isClientSide) {
+         if (!player.getAbilities().instabuild && willHarvest) {
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005F);
+            if (state.getValue(PAID_LIGHT)) {
+               // Native tool authorization, doTileDrops and BlockDropsEvent all remain authoritative.
+               Block.dropResources(ModBlocks.IRON_INSET_LIGHT.get().defaultBlockState(), level, pos, null,
+                  player, completion.tool());
+            }
+         }
+         level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+      }
+      // Keep the deck, its support and neighbors; suppress whole-catwalk playerDestroy/loot.
+      return false;
    }
 
    @Override

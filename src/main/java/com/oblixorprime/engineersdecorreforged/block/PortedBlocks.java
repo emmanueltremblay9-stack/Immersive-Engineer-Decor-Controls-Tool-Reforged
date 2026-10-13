@@ -292,8 +292,18 @@ public final class PortedBlocks {
       return shape;
    }
 
-   /** A visible selectable component; a null side denotes the catwalk floor. */
-   public record RailingPart(@Nullable Direction side, VoxelShape shape) {}
+   public enum PartKind { BASE, RAILING, INSET_LIGHT }
+
+   /** A visible selectable component; lamps are distinct from the base without inventing a rail side. */
+   public record RailingPart(@Nullable Direction side, VoxelShape shape, PartKind kind) {
+      public RailingPart(@Nullable Direction side, VoxelShape shape) {
+         this(side, shape, side == null ? PartKind.BASE : PartKind.RAILING);
+      }
+
+      public boolean sameComponent(RailingPart other) {
+         return kind == other.kind && side == other.side;
+      }
+   }
 
    /** Shared by native mining and the client highlight. World occlusion is authoritative. */
    @Nullable
@@ -308,6 +318,9 @@ public final class PortedBlocks {
       }
       if (state.getBlock() instanceof CatwalkStairsBlock) {
          return selectStairRailingPart(state, pos, start, end);
+      }
+      if (state.getBlock() instanceof RaisedCatwalkBlock raised) {
+         return raised.selectPart(state, pos, start, end);
       }
       CatwalkBlock block = (CatwalkBlock)state.getBlock();
       state = block.explicitSides(state);
@@ -342,7 +355,9 @@ public final class PortedBlocks {
    }
 
    public static boolean hasSelectableRailings(BlockState state) {
-      return state.getBlock() instanceof CatwalkBlock || state.getBlock() instanceof CatwalkStairsBlock;
+      // Include unlit raised decks too: an old lamp completion must never turn into a base break.
+      return state.getBlock() instanceof CatwalkBlock || state.getBlock() instanceof CatwalkStairsBlock
+         || state.getBlock() instanceof RaisedCatwalkBlock;
    }
 
    @Nullable
@@ -772,7 +787,7 @@ public final class PortedBlocks {
             return super.useItemOn(stack, state, level, pos, player, hand, hit);
          }
          if (player.isSpectator() || !player.getAbilities().mayBuild || !level.mayInteract(player, pos)
-            || !level.getWorldBorder().isWithinBounds(pos)) {
+            || !level.getWorldBorder().isWithinBounds(pos) || !player.mayUseItemAt(pos, hit.getDirection(), stack)) {
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
          }
          if (level.isClientSide) {

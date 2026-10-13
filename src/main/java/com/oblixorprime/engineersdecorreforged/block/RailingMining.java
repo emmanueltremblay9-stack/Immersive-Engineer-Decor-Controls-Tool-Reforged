@@ -112,7 +112,7 @@ public final class RailingMining {
          return null;
       }
       PortedBlocks.RailingPart current = aimedPart(player, level, pos);
-      return current != null && current.side() == intent.part().side() ? new Completion(current, intent.tool()) : null;
+      return current != null && current.sameComponent(intent.part()) ? new Completion(current, intent.tool()) : null;
    }
 
    /** Lets the client restart ordinary mining progress when the aimed component changes. */
@@ -120,11 +120,14 @@ public final class RailingMining {
       Intent intent = INTENTS.get(player);
       Level level = player.level();
       if (intent == null || intent.level() != level || !intent.pos().equals(pos) || level.getBlockState(pos) != intent.state()
-         || intent.creative() != player.getAbilities().instabuild || !startAllowed(intent) || !canMine(player, level, pos)) {
+         || intent.creative() != player.getAbilities().instabuild || !startAllowed(intent) || !canMine(player, level, pos)
+         // Match native client tool-reset policy (including mending/modded exceptions).
+         // After BreakEvent, native durability use may legitimately change or destroy it.
+         || intent.start() != null && intent.tool().shouldCauseBlockBreakReset(player.getMainHandItem())) {
          return false;
       }
       PortedBlocks.RailingPart current = aimedPart(player, level, pos);
-      return current != null && current.side() == intent.part().side();
+      return current != null && current.sameComponent(intent.part());
    }
 
    private static boolean canMine(Player player, Level level, BlockPos pos) {

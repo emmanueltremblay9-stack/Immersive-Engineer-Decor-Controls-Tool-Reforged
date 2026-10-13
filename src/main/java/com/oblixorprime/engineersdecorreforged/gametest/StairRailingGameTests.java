@@ -216,6 +216,28 @@ public final class StairRailingGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void stair_edit_respects_per_item_target_permission(GameTestHelper helper) {
+      BlockPos denied = helper.absolutePos(CENTER);
+      ServerPlayer player = new FakePlayer(helper.getLevel(), new GameProfile(UUID.randomUUID(), "DeniedStairEdit")) {
+         @Override
+         public boolean mayUseItemAt(BlockPos pos, Direction face, ItemStack stack) {
+            return !pos.equals(denied) && super.mayUseItemAt(pos, face, stack);
+         }
+      };
+      player.gameMode.changeGameModeForPlayer(GameType.SURVIVAL);
+      player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(rail(), 4));
+      for (boolean installed : new boolean[]{false, true}) {
+         BlockState before = state(Direction.NORTH, installed, false, installed ? 1 : 0);
+         put(helper, before);
+         click(helper, player, true);
+         helper.assertValueEqual(helper.getBlockState(CENTER), before, "per-item target denial must prevent both installation and removal");
+         helper.assertValueEqual(player.getMainHandItem().getCount(), 4, "denied edits must not charge or refund a rail");
+         helper.assertTrue(helper.getBlockState(CENTER.above()).isAir(), "denied integrated edit must not place a neighboring railing");
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void adventure_stair_mining_requires_exact_native_can_break_component(GameTestHelper helper) {
       ServerPlayer player = player(helper);
       player.gameMode.changeGameModeForPlayer(GameType.ADVENTURE);

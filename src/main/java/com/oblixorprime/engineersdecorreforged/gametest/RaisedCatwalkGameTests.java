@@ -19,6 +19,7 @@ import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.NbtUtils;
+import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -28,6 +29,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -35,6 +37,7 @@ import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -228,6 +231,18 @@ public final class RaisedCatwalkGameTests {
       ItemStack remaining = player.getMainHandItem();
       player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
       helper.assertTrue(player.getInventory().add(remaining), "fixture must retain the unspent lamp");
+      // Aim at the actual deck and enter native START before the completed whole-block mine.
+      player.setPos(pos.getX() + 0.5, pos.getY() + 2.5 - player.getEyeHeight(), pos.getZ() + 0.5);
+      player.setYRot(0);
+      player.setXRot(90);
+      Vec3 eye = player.getEyePosition();
+      BlockHitResult hit = helper.getLevel().clip(new ClipContext(eye,
+         eye.add(player.getViewVector(1).scale(player.blockInteractionRange())),
+         ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, player));
+      helper.assertValueEqual(hit.getType(), HitResult.Type.BLOCK, "whole-catwalk mining must hit the physical deck");
+      helper.assertValueEqual(hit.getBlockPos(), pos, "whole-catwalk mining must target the raised deck");
+      player.gameMode.handleBlockBreakAction(pos, ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,
+         hit.getDirection(), helper.getLevel().getMaxBuildHeight(), 0);
       helper.assertTrue(player.gameMode.destroyBlock(pos), "real survival game-mode break must succeed");
       helper.assertTrue(helper.getLevel().getBlockState(pos).isAir(), "the whole raised catwalk must be gone");
       helper.assertValueEqual(owned(helper, player, light()), 2, "mining must return the one paid lamp without duplication");
@@ -455,8 +470,9 @@ public final class RaisedCatwalkGameTests {
          var variants = JsonParser.parseReader(new InputStreamReader(input, StandardCharsets.UTF_8)).getAsJsonObject().getAsJsonObject("variants");
          for (BlockState state : catwalk().getStateDefinition().getPossibleStates()) {
             int variant = state.getValue(RaisedCatwalkBlock.VARIANT);
-            helper.assertFalse(Shapes.joinIsNotEmpty(state.getShape(helper.getLevel(), pos), expected[variant], BooleanOp.NOT_SAME),
-               "outline must match the selected deck, complete pole head, or frame geometry");
+            VoxelShape outline = variant == 4 ? litOutlineGeometry() : expected[variant];
+            helper.assertFalse(Shapes.joinIsNotEmpty(state.getShape(helper.getLevel(), pos), outline, BooleanOp.NOT_SAME),
+               "outline must match the selected deck, recessed lamp, complete pole head, or frame geometry");
             helper.assertFalse(Shapes.joinIsNotEmpty(state.getCollisionShape(helper.getLevel(), pos), expected[variant], BooleanOp.NOT_SAME),
                "collision must match the selected model's structural geometry");
             String model = variants.getAsJsonObject("variant=" + variant).get("model").getAsString();
@@ -468,6 +484,31 @@ public final class RaisedCatwalkGameTests {
                "codec save/load retains all state properties");
             assertDrops(helper, state, variant == 4 && state.getValue(RaisedCatwalkBlock.PAID_LIGHT) ? 1 : 0);
          }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void raised_catwalk_complete_heads_need_only_the_catwalk_item(GameTestHelper helper) {
+      BlockPos pos = helper.absolutePos(CENTER);
+      ServerPlayer player = player(helper);
+      Block[] supports = {ModBlocks.THICK_STEEL_POLE.get(), ModBlocks.THIN_STEEL_POLE.get(), ModBlocks.TREATED_WOOD_POLE.get()};
+      int[] variants = {1, 2, 5};
+      for (int i = 0; i < supports.length; i++) {
+         clearAround(helper, pos);
+         player.getInventory().clearContent();
+         player.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 3.0);
+         BlockState support = supports[i].defaultBlockState().setValue(DirectionalBlock.FACING, Direction.UP);
+         helper.getLevel().setBlock(pos.below(), support, 3);
+         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(catwalk(), 2));
+         player.gameMode.useItemOn(player, helper.getLevel(), player.getMainHandItem(), InteractionHand.MAIN_HAND,
+            new BlockHitResult(Vec3.atCenterOf(pos.below()).add(0, 0.5, 0), Direction.UP, pos.below(), false));
+         BlockState placed = helper.getLevel().getBlockState(pos);
+         helper.assertTrue(placed.is(catwalk()), "native survival placement on a pole must place the catwalk");
+         helper.assertValueEqual(placed.getValue(RaisedCatwalkBlock.VARIANT), variants[i], "the complete head matches its pole material");
+         helper.assertValueEqual(player.getMainHandItem().getCount(), 1, "the integrated head requires only one catwalk item");
+         helper.assertValueEqual(helper.getLevel().getBlockState(pos.below()), support, "the original support is retained");
+         assertDrops(helper, placed, 0);
       }
       helper.succeed();
    }
@@ -612,6 +653,20 @@ public final class RaisedCatwalkGameTests {
             }
          }
          shape = Shapes.or(shape, Block.box(min[0], min[1], min[2], max[0], max[1], max[2]));
+      }
+      return shape;
+   }
+
+   private static VoxelShape litOutlineGeometry() throws Exception {
+      // The existing grating has planes at Y=15 and Y=16; retain their solid upper envelope.
+      VoxelShape shape = Block.box(0, 15, 0, 16, 16, 16);
+      for (var element : readModel("furniture/steel_catwalk_ta4_model").getAsJsonArray("elements")) {
+         JsonArray from = element.getAsJsonObject().getAsJsonArray("from");
+         JsonArray to = element.getAsJsonObject().getAsJsonArray("to");
+         if (to.get(1).getAsDouble() > from.get(1).getAsDouble()) {
+            shape = Shapes.or(shape, Block.box(from.get(0).getAsDouble(), from.get(1).getAsDouble(), from.get(2).getAsDouble(),
+               to.get(0).getAsDouble(), to.get(1).getAsDouble(), to.get(2).getAsDouble()));
+         }
       }
       return shape;
    }

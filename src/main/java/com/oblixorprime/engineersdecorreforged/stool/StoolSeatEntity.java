@@ -8,6 +8,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
@@ -104,6 +105,11 @@ public final class StoolSeatEntity extends Entity {
    @Override
    public void setDeltaMovement(Vec3 movement) {
       // Explosions, currents and entity pushes must never move a stationary seat.
+   }
+
+   @Override
+   public void move(MoverType type, Vec3 movement) {
+      // Pistons may request direct movement without setting velocity.
    }
 
    @Override

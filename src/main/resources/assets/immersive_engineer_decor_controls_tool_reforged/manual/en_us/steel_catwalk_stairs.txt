@@ -3,5 +3,6 @@ Service access fitting
 <&recipe>This block forms readable service routes around machinery.<br>
 <br>
 Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
-
-
+<br>
+Hold Steel Railing and right-click the left or right side of the stairs to install or remove that side in place. Installing a side costs one railing in Survival; removing a purchased side returns it.<br>
+Mine the aimed railing to remove only that side. Mine the step itself to remove the stairs and their remaining purchased railings.<br>
