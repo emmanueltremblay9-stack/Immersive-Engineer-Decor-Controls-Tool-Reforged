@@ -1,5 +1,5 @@
 name: Publish CurseForge
-run-name: "CurseForge ${{ 'v1.1.58-reconstructed' }} :: ${{ false && 'dry-run' || ('' != '' && 'resume' || 'publish') }}"
+run-name: "CurseForge ${{ 'v1.1.58-reconstructed' }} :: ${{ false && 'dry-run' || ('9153502' != '' && 'resume' || 'publish') }}"
 
 on:
   # Routing tests validate this fixed branch/manifest contract before upload.
@@ -136,7 +136,7 @@ jobs:
 
       - name: Prepare exact upload intent without posting
         id: prepare
-        if: ${{ !false && '' == '' }}
+        if: ${{ !false && '9153502' == '' }}
         shell: bash
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
@@ -182,7 +182,7 @@ jobs:
 
       - name: Persist upload intent before any POST
         id: persist-intent
-        if: ${{ !false && '' == '' && steps.prepare.outputs.post_required == 'true' }}
+        if: ${{ !false && '9153502' == '' && steps.prepare.outputs.post_required == 'true' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: ${{ steps.prepare.outputs.artifact_name }}
@@ -192,7 +192,7 @@ jobs:
 
       - name: Submit exact persisted request once
         id: publish
-        if: ${{ !false && '' == '' && steps.prepare.outputs.post_required == 'true' && steps.persist-intent.outcome == 'success' }}
+        if: ${{ !false && '9153502' == '' && steps.prepare.outputs.post_required == 'true' && steps.persist-intent.outcome == 'success' }}
         shell: bash
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
@@ -220,12 +220,12 @@ jobs:
 
       - name: Resume an accepted file without a token or second POST
         id: resume
-        if: ${{ !false && '' != '' }}
+        if: ${{ !false && '9153502' != '' }}
         shell: bash
         env:
           GITHUB_TOKEN: ${{ github.token }}
           REQUESTED_TAG: ${{ 'v1.1.58-reconstructed' }}
-          RESUME_FILE_ID: ${{ '' }}
+          RESUME_FILE_ID: ${{ '9153502' }}
         run: |
           [[ "$RESUME_FILE_ID" =~ ^[1-9][0-9]*$ ]]
           set +e
