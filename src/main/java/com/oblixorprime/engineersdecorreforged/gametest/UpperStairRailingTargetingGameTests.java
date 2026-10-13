@@ -15,6 +15,7 @@ import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
@@ -190,13 +191,21 @@ public final class UpperStairRailingTargetingGameTests {
    @GameTest(template = "empty", timeoutTicks = 80)
    public static void upper_targeting_respects_actual_block_reach_and_does_not_select_empty_air_above_model(GameTestHelper helper) {
       ServerPlayer player = player(helper);
+      // Keep both reach-boundary eye positions inside this seven-block template.
+      // Default survival reach starts the westward fixture outside it, among other tests.
+      var range = player.getAttribute(Attributes.BLOCK_INTERACTION_RANGE);
+      helper.assertTrue(range != null, "the player must expose the native block interaction range attribute");
+      range.setBaseValue(2.0);
+      helper.assertValueEqual(player.blockInteractionRange(), 2.0, "the test must use the actual player reach attribute");
       put(helper, CENTER, stairs(Direction.NORTH));
       // Target point is 1/16 inside the outside face; add that to test actual hit distance.
       aim(helper, player, Direction.NORTH, true, player.blockInteractionRange() + 0.0625 + 0.05, 1.625);
       BlockHitResult original = vanillaBlock(player);
+      helper.assertValueEqual(original.getType(), HitResult.Type.MISS, "outside-reach fixture must have no ordinary blocker masking the reach check");
       helper.assertTrue(pick(player, original) == original, "upper selection cannot extend the player's reach");
       helper.assertTrue(part(helper, player) == null, "server upper selection must enforce the same eye-ray reach");
       aim(helper, player, Direction.NORTH, true, player.blockInteractionRange() + 0.0625 - 0.05, 1.625);
+      helper.assertValueEqual(vanillaBlock(player).getType(), HitResult.Type.MISS, "inside-reach fixture must remain an unobstructed upper-overhang ray");
       upperHit(helper, player, true);
       aim(helper, player, Direction.NORTH, true, 1.0, 1.95);
       original = vanillaBlock(player);
