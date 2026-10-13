@@ -62,6 +62,43 @@ public final class RoofWireConduitGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void one_ie_wire_passes_through_multiple_stacked_conduits(GameTestHelper helper) {
+      BlockPos bottom = helper.absolutePos(new BlockPos(2, 1, 2));
+      for (int count : new int[] {2, 3, 5}) {
+         for (Direction facing : Direction.Plane.HORIZONTAL) {
+            for (boolean wet : new boolean[] {false, true}) {
+               for (int i = 0; i <= 5; i++) {
+                  helper.getLevel().setBlock(bottom.above(i), Blocks.AIR.defaultBlockState(), 2);
+               }
+               for (int i = 0; i < count; i++) {
+                  BlockState state = ModBlocks.DARK_SHINGLE_ROOF_WIRECONDUIT.get().defaultBlockState()
+                     .setValue(StairBlock.FACING, (i % 2 == 0) ? facing : facing.getClockWise())
+                     .setValue(StairBlock.WATERLOGGED, wet);
+                  helper.getLevel().setBlock(bottom.above(i), state, 2);
+               }
+               for (WireType type : new WireType[] {WireType.COPPER, WireType.ELECTRUM, WireType.STEEL,
+                     WireType.COPPER_INSULATED, WireType.ELECTRUM_INSULATED, WireType.REDSTONE,
+                     WireType.STRUCTURE_ROPE, WireType.STRUCTURE_STEEL}) {
+                  // A single wire spans the entire stack; the fittings are not endpoints or relays.
+                  Connection connection = new Connection(type, new ConnectionPoint(bottom.below(), 0),
+                     new ConnectionPoint(bottom.above(count), 0), new Vec3(0.5, 0.5, 0.5), new Vec3(0.5, 0.5, 0.5));
+                  Set<BlockPos> ignoredEndpoints = Set.of(bottom.below(), bottom.above(count));
+                  helper.assertTrue(WireUtils.findObstructingBlocks(helper.getLevel(), connection, ignoredEndpoints).isEmpty(),
+                     "one " + type.getUniqueName() + " wire must traverse all " + count + " aligned conduits");
+                  BlockPos middle = bottom.above(count / 2);
+                  BlockState saved = helper.getLevel().getBlockState(middle);
+                  helper.getLevel().setBlock(middle, Blocks.STONE.defaultBlockState(), 2);
+                  helper.assertTrue(WireUtils.findObstructingBlocks(helper.getLevel(), connection, ignoredEndpoints).contains(middle),
+                     "a solid obstruction inside the stack must still be detected");
+                  helper.getLevel().setBlock(middle, saved, 2);
+               }
+            }
+         }
+      }
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void asymmetric_roof_slope_follows_model_rotation(GameTestHelper helper) {
       BlockPos pos = helper.absolutePos(CENTER);
