@@ -183,14 +183,23 @@ public final class ChimneyGameTests {
                new BlockHitResult(Vec3.atCenterOf(support).add(Vec3.atLowerCornerOf(clickedFace.getNormal()).scale(0.5)), clickedFace, support, false));
             BlockState placed = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEYTRUNK.get().getStateForPlacement(context);
             helper.assertTrue(placed != null, "placement state exists");
+            helper.assertValueEqual(placed.getValue(StairBlock.FACING), facing, "placement follows player direction");
             helper.assertValueEqual(placed.getValue(StairBlock.HALF), Half.BOTTOM, "trunk always places upright");
             helper.assertValueEqual(placed.getValue(StairBlock.SHAPE), StairsShape.STRAIGHT, "trunk keeps its fitting model");
-            for (Direction side : Direction.Plane.HORIZONTAL) {
-               var updated = placed.updateShape(side, Blocks.STONE_STAIRS.defaultBlockState().setValue(StairBlock.FACING, facing.getClockWise()),
-                  level, pos, pos.relative(side));
-               helper.assertValueEqual(updated.getValue(StairBlock.SHAPE), StairsShape.STRAIGHT, "neighbor must not erase the trunk into a plain roof corner");
-            }
             level.setBlock(support, Blocks.AIR.defaultBlockState(), 2);
+         }
+         for (Direction side : new Direction[] {facing, facing.getOpposite()}) {
+            for (Direction clear : Direction.Plane.HORIZONTAL) level.setBlock(pos.relative(clear), Blocks.AIR.defaultBlockState(), 2);
+            BlockState trunk = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEYTRUNK.get().defaultBlockState().setValue(StairBlock.FACING, facing);
+            level.setBlock(pos, trunk, 2);
+            BlockState neighbor = Blocks.STONE_STAIRS.defaultBlockState().setValue(StairBlock.FACING, facing.getClockWise());
+            level.setBlock(pos.relative(side), neighbor, 3);
+            BlockState ordinaryStair = Blocks.STONE_STAIRS.defaultBlockState().setValue(StairBlock.FACING, facing)
+               .updateShape(side, neighbor, level, pos, pos.relative(side));
+            helper.assertTrue(ordinaryStair.getValue(StairBlock.SHAPE) != StairsShape.STRAIGHT,
+               "regression fixture must turn an ordinary stair into an inner or outer corner");
+            helper.assertValueEqual(level.getBlockState(pos).getValue(StairBlock.SHAPE), StairsShape.STRAIGHT,
+               "real neighbor update must preserve the chimney fitting");
          }
       }
       helper.succeed();
