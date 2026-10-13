@@ -42,3 +42,6 @@ type="optional"
 versionRange="[19.32.0.359,)"
 ordering="AFTER"
 side="BOTH"
+
+[[mixins]]
+config="immersive_engineer_decor_controls_tool_reforged.mixins.json"

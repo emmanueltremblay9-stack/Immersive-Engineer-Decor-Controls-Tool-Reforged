@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -34,20 +35,53 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** Top-aligned catwalk with contextual pole supports and an optional inset light. */
 public final class RaisedCatwalkBlock extends Block implements SimpleWaterloggedBlock {
-   // Keep the recovered numeric states and model selectors compatible with existing saves.
-   public static final IntegerProperty VARIANT = PortedBlocks.VARIANT;
+   // Keep recovered states 0..4 unchanged and append wood without expanding other blocks' states.
+   public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 5);
    public static final BooleanProperty WATERLOGGED = PortedBlocks.WATERLOGGED;
    public static final BooleanProperty PAID_LIGHT = BooleanProperty.create("paid_light");
    private static final VoxelShape DECK = box(0, 14, 0, 16, 16, 16);
+   // The existing model's grate starts at Y=15; only its outer rim reaches Y=14.
+   // Keeping a full Y=14..16 outline would hide the recessed lamp from every eye ray.
+   private static final VoxelShape LIT_DECK = Shapes.or(box(0, 15, 0, 16, 16, 16),
+      box(0, 14, 0, 16, 15, 1), box(0, 14, 15, 16, 15, 16),
+      box(0, 14, 1, 1, 15, 15), box(15, 14, 1, 16, 15, 15)).optimize();
+   // Exact lamp glass and eight mounting tabs from steel_catwalk_ta4_model.json.
+   private static final VoxelShape INSET_LIGHT = Shapes.or(box(6, 14.75, 6, 10, 14.875, 10),
+      box(10, 14.625, 7, 11, 15, 9), box(5, 14.625, 7, 6, 15, 9),
+      box(7, 14.625, 10, 9, 15, 11), box(7, 14.625, 5, 9, 15, 6),
+      box(6, 14.625, 9, 7, 15, 10), box(6, 14.625, 6, 7, 15, 7),
+      box(9, 14.625, 6, 10, 15, 7), box(9, 14.625, 9, 10, 15, 10)).optimize();
+   private static final VoxelShape LIT_OUTLINE = Shapes.or(LIT_DECK, INSET_LIGHT).optimize();
    // Original Engineer's Decor shapes: Stefan Wilhelm / wile, MIT (see NOTICE.md).
    private static final VoxelShape[] SHAPES = {
       DECK,
-      Shapes.or(DECK, box(5, 0, 5, 11, 15, 11)).optimize(),
-      Shapes.or(DECK, box(6, 0, 6, 10, 15, 10)).optimize(),
+      steelHeadShape(5, 11, 3, 13),
+      steelHeadShape(6, 10, 4, 12),
       Shapes.or(DECK, box(0, 0, 0, 16, 2, 16), box(0, 0, 0, 1, 16, 1),
          box(15, 0, 0, 16, 16, 1), box(15, 0, 15, 16, 16, 16), box(0, 0, 15, 1, 16, 16)).optimize(),
-      DECK
+      DECK,
+      // Existing complete wooden pole head: chamfered shaft, plate, and four brace envelopes.
+      Shapes.or(DECK, box(5.75, 0, 5.5, 10.25, 12, 10.5),
+         box(5.5, 0, 5.75, 5.75, 12, 10.25), box(10.25, 0, 5.75, 10.5, 12, 10.25),
+         box(3, 12, 3, 13, 14, 13),
+         box(6.5, 7.39894339059327, 6.71663592228744, 9.5, 13.4093510306789, 12.7270435623731),
+         box(6.5, 7.39894339059327, 3.27295643762691, 9.5, 13.4093510306789, 9.28336407771256),
+         box(6.71663592228744, 7.39894339059327, 6.5, 12.7270435623731, 13.4093510306789, 9.5),
+         box(3.27295643762691, 7.39894339059327, 6.5, 9.28336407771256, 13.4093510306789, 9.5)).optimize()
    };
+
+   private static VoxelShape steelHeadShape(double min, double max, double plateMin, double plateMax) {
+      // Conservative bounds for the existing 45-degree steel head braces. The plate is
+      // directly beneath the deck, and the shaft remains solid for collision as before.
+      double radius = 1.25 / Math.sqrt(2.0);
+      double low = min - 0.25;
+      double high = max + 0.25;
+      return Shapes.or(DECK, box(min, 0, min, max, 12, max), box(plateMin, 12, plateMin, plateMax, 14, plateMax),
+         box(min + 1, 12 - radius, low - radius, max - 1, 12 + radius, low + radius),
+         box(min + 1, 12 - radius, high - radius, max - 1, 12 + radius, high + radius),
+         box(low - radius, 12 - radius, min + 1, low + radius, 12 + radius, max - 1),
+         box(high - radius, 12 - radius, min + 1, high + radius, 12 + radius, max - 1)).optimize();
+   }
 
    public RaisedCatwalkBlock(Properties properties) {
       // Match the standalone iron inset light's level, including vanilla's cached state emission.
@@ -85,6 +119,8 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
          variant = 1;
       } else if (below.is(ModBlocks.THIN_STEEL_POLE.get()) || below.is(ModBlocks.THIN_STEEL_POLE_HEAD.get())) {
          variant = 2;
+      } else if (below.is(ModBlocks.TREATED_WOOD_POLE.get()) || below.is(ModBlocks.TREATED_WOOD_POLE_HEAD.get())) {
+         variant = 5;
       }
       return state.setValue(VARIANT, variant);
    }
@@ -111,12 +147,59 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
 
    @Override
    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-      return SHAPES[state.getValue(VARIANT)];
+      return state.getValue(VARIANT) == 4 ? LIT_OUTLINE : SHAPES[state.getValue(VARIANT)];
+   }
+
+   /** Shared highlight and mining selection, after the caller has checked world occlusion. */
+   PortedBlocks.RailingPart selectPart(BlockState state, BlockPos pos, Vec3 start, Vec3 end) {
+      boolean lit = state.getValue(VARIANT) == 4;
+      VoxelShape base = lit ? LIT_DECK : SHAPES[state.getValue(VARIANT)];
+      BlockHitResult baseHit = base.clip(start, end, pos);
+      PortedBlocks.RailingPart selected = baseHit == null ? null : new PortedBlocks.RailingPart(null, base);
+      if (lit) {
+         BlockHitResult lampHit = INSET_LIGHT.clip(start, end, pos);
+         if (lampHit != null && (baseHit == null
+            || start.distanceToSqr(lampHit.getLocation()) < start.distanceToSqr(baseHit.getLocation()) - 1.0E-9)) {
+            selected = new PortedBlocks.RailingPart(null, INSET_LIGHT, PortedBlocks.PartKind.INSET_LIGHT);
+         }
+      }
+      return selected;
    }
 
    @Override
    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-      return getShape(state, level, pos, context);
+      // Preserve the established continuous walking/headroom collision for every variant.
+      return SHAPES[state.getValue(VARIANT)];
+   }
+
+   @Override
+   public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
+                                      boolean willHarvest, FluidState fluid) {
+      if (player == null) {
+         return super.onDestroyedByPlayer(state, level, pos, null, willHarvest, fluid);
+      }
+      RailingMining.Completion completion = RailingMining.complete(player, level, pos, state);
+      if (completion == null) {
+         return false;
+      }
+      if (completion.part().kind() != PortedBlocks.PartKind.INSET_LIGHT) {
+         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+      }
+      BlockState changed = withPoleSupport(state.setValue(VARIANT, 0).setValue(PAID_LIGHT, false), level, pos);
+      if (level.setBlock(pos, changed, Block.UPDATE_ALL) && !level.isClientSide) {
+         if (!player.getAbilities().instabuild && willHarvest) {
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005F);
+            if (state.getValue(PAID_LIGHT)) {
+               // Native tool authorization, doTileDrops and BlockDropsEvent all remain authoritative.
+               Block.dropResources(ModBlocks.IRON_INSET_LIGHT.get().defaultBlockState(), level, pos, null,
+                  player, completion.tool());
+            }
+         }
+         level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+      }
+      // Keep the deck, its support and neighbors; suppress whole-catwalk playerDestroy/loot.
+      return false;
    }
 
    @Override

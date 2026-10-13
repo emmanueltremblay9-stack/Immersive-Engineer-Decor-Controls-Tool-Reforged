@@ -22,7 +22,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -73,6 +72,8 @@ public final class PortedBlocks {
    public static final IntegerProperty PAID_RAILINGS = IntegerProperty.create("paid_railings", 0, 4);
    public static final BooleanProperty LEFT_RAILING = BooleanProperty.create("left_railing");
    public static final BooleanProperty RIGHT_RAILING = BooleanProperty.create("right_railing");
+   // Bit 0 is left, bit 1 is right. Unedited legacy sides retain automatic neighbor connections.
+   public static final IntegerProperty EDITED_STAIR_SIDES = IntegerProperty.create("edited_stair_sides", 0, 3);
    public static final BooleanProperty EASTWEST = BooleanProperty.create("eastwest");
    public static final BooleanProperty LEFTBEAM = BooleanProperty.create("leftbeam");
    public static final BooleanProperty RIGHTBEAM = BooleanProperty.create("rightbeam");
@@ -129,7 +130,7 @@ public final class PortedBlocks {
    }
 
    private static Direction catwalkStairPlacementFacing(BlockPlaceContext context) {
-      return resolveHorizontalFacingFromClickedFaceBorder(context, context.getHorizontalDirection());
+      return CatwalkStairsPlacement.facing(context);
    }
 
    private static Direction resolveHorizontalFacingFromClickedFaceBorder(BlockPlaceContext context, Direction fallback) {
@@ -290,20 +291,38 @@ public final class PortedBlocks {
       return shape;
    }
 
-   /** A visible selectable component; a null side denotes the catwalk floor. */
-   public record RailingPart(@Nullable Direction side, VoxelShape shape) {}
+   public enum PartKind { BASE, RAILING, INSET_LIGHT }
+
+   /** A visible selectable component; lamps are distinct from the base without inventing a rail side. */
+   public record RailingPart(@Nullable Direction side, VoxelShape shape, PartKind kind) {
+      public RailingPart(@Nullable Direction side, VoxelShape shape) {
+         this(side, shape, side == null ? PartKind.BASE : PartKind.RAILING);
+      }
+
+      public boolean sameComponent(RailingPart other) {
+         return kind == other.kind && side == other.side;
+      }
+   }
 
    /** Shared by native mining and the client highlight. World occlusion is authoritative. */
    @Nullable
    public static RailingPart selectRailingPart(Level level, BlockPos pos, Vec3 start, Vec3 end, Entity context) {
       BlockState state = level.getBlockState(pos);
-      if (!(state.getBlock() instanceof CatwalkBlock block)) {
+      if (!hasSelectableRailings(state)) {
          return null;
       }
-      BlockHitResult worldHit = level.clip(new ClipContext(start, end, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, context));
+      BlockHitResult worldHit = StairRailingTargeting.clipBlocks(level, start, end, context);
       if (worldHit.getType() != HitResult.Type.BLOCK || !worldHit.getBlockPos().equals(pos)) {
          return null;
       }
+      if (state.getBlock() instanceof CatwalkStairsBlock) {
+         return StairRailingTargeting.hasCloserEntity(context, start, end, worldHit)
+            ? null : selectStairRailingPart(state, pos, start, end);
+      }
+      if (state.getBlock() instanceof RaisedCatwalkBlock raised) {
+         return raised.selectPart(state, pos, start, end);
+      }
+      CatwalkBlock block = (CatwalkBlock)state.getBlock();
       state = block.explicitSides(state);
       RailingPart selected = null;
       double distance = Double.POSITIVE_INFINITY;
@@ -335,6 +354,33 @@ public final class PortedBlocks {
       return selected;
    }
 
+   public static boolean hasSelectableRailings(BlockState state) {
+      // Include unlit raised decks too: an old lamp completion must never turn into a base break.
+      return state.getBlock() instanceof CatwalkBlock || state.getBlock() instanceof CatwalkStairsBlock
+         || state.getBlock() instanceof RaisedCatwalkBlock;
+   }
+
+   @Nullable
+   static RailingPart selectStairRailingPart(BlockState state, BlockPos pos, Vec3 start, Vec3 end) {
+      Direction facing = state.getValue(HORIZONTAL_FACING);
+      VoxelShape floor = catwalkStairShape(facing);
+      BlockHitResult hit = floor.clip(start, end, pos);
+      RailingPart selected = hit == null ? null : new RailingPart(null, floor);
+      double distance = hit == null ? Double.POSITIVE_INFINITY : start.distanceToSqr(hit.getLocation());
+      for (boolean left : new boolean[]{true, false}) {
+         if (!state.getValue(left ? LEFT_RAILING : RIGHT_RAILING)) {
+            continue;
+         }
+         VoxelShape shape = sideRailShape(facing, left);
+         hit = shape.clip(start, end, pos);
+         if (hit != null && start.distanceToSqr(hit.getLocation()) < distance - 1.0E-9) {
+            selected = new RailingPart(left ? facing.getCounterClockWise() : facing.getClockWise(), shape);
+            distance = start.distanceToSqr(hit.getLocation());
+         }
+      }
+      return selected;
+   }
+
    private static VoxelShape railingCollision(BlockState state, boolean includeFloor) {
       VoxelShape shape = includeFloor ? CATWALK_FLOOR_SHAPE : Shapes.empty();
       double top = includeFloor ? 27.0 : 24.0; // Fence-height protection above each walking surface.
@@ -356,30 +402,38 @@ public final class PortedBlocks {
 
    private static VoxelShape catwalkStairShape(Direction facing) {
       return switch (facing) {
-         case NORTH -> Shapes.or(Block.box(0.0, 0.0, 8.0, 16.0, 5.0, 16.0), Block.box(0.0, 5.0, 0.0, 16.0, 10.0, 8.0));
-         case SOUTH -> Shapes.or(Block.box(0.0, 0.0, 0.0, 16.0, 5.0, 8.0), Block.box(0.0, 5.0, 8.0, 16.0, 10.0, 16.0));
-         case WEST -> Shapes.or(Block.box(8.0, 0.0, 0.0, 16.0, 5.0, 16.0), Block.box(0.0, 5.0, 0.0, 8.0, 10.0, 16.0));
-         case EAST -> Shapes.or(Block.box(0.0, 0.0, 0.0, 8.0, 5.0, 16.0), Block.box(8.0, 5.0, 0.0, 16.0, 10.0, 16.0));
+         case NORTH -> Shapes.or(Block.box(0, 0, 8, 16, 4, 16), Block.box(0, 4, 0, 16, 12, 8));
+         case SOUTH -> Shapes.or(Block.box(0, 0, 0, 16, 4, 8), Block.box(0, 4, 8, 16, 12, 16));
+         case WEST -> Shapes.or(Block.box(8, 0, 0, 16, 4, 16), Block.box(0, 4, 0, 8, 12, 16));
+         case EAST -> Shapes.or(Block.box(0, 0, 0, 8, 4, 16), Block.box(8, 4, 0, 16, 12, 16));
          default -> CATWALK_FLOOR_SHAPE;
       };
    }
 
-   private static VoxelShape sideRailShape(Direction facing, boolean left) {
-      Direction side = switch (facing) {
-         case NORTH -> left ? Direction.WEST : Direction.EAST;
-         case SOUTH -> left ? Direction.EAST : Direction.WEST;
-         case WEST -> left ? Direction.SOUTH : Direction.NORTH;
-         case EAST -> left ? Direction.NORTH : Direction.SOUTH;
-         default -> left ? Direction.WEST : Direction.EAST;
-      };
+   private static final VoxelShape[][] STAIR_RAIL_SHAPES = stairRailShapes(false);
+   private static final VoxelShape[][] STAIR_RAIL_COLLISIONS = stairRailShapes(true);
 
-      return switch (side) {
-         case NORTH -> NORTH_RAIL_SHAPE;
-         case SOUTH -> SOUTH_RAIL_SHAPE;
-         case WEST -> WEST_RAIL_SHAPE;
-         case EAST -> EAST_RAIL_SHAPE;
-         default -> Shapes.empty();
-      };
+   private static VoxelShape[][] stairRailShapes(boolean collision) {
+      VoxelShape[][] result = new VoxelShape[4][2];
+      for (int side = 0; side < 2; side++) {
+         VoxelShape north = Shapes.empty();
+         double minX = side == 0 ? 0 : 14;
+         for (int z = 0; z < 16; z++) {
+            double floor = z < 8 ? 12 : 4;
+            // Selection follows the unchanged sloped model; collision is fence-height above both treads.
+            double top = collision ? floor + 24 : 30.5 - z * 15.0 / 16.0;
+            north = Shapes.or(north, Block.box(minX, floor, z, minX + 2, top, z + 1));
+         }
+         for (Direction facing : Direction.Plane.HORIZONTAL) {
+            result[facing.get2DDataValue()][side] = orientedNorthShape(north, facing, true);
+         }
+      }
+      return result;
+   }
+
+   private static VoxelShape sideRailShape(Direction facing, boolean left) {
+      // StairRailingTargeting also discovers the unchanged upper model from the cell above.
+      return STAIR_RAIL_SHAPES[facing.get2DDataValue()][left ? 0 : 1];
    }
 
    public static class AriadneMarkerBlock extends PortedBlocks.DirectionalPortBlock {
@@ -654,7 +708,7 @@ public final class PortedBlocks {
                         .setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                      .setValue(PortedBlocks.LEFT_RAILING, false))
                   .setValue(PortedBlocks.RIGHT_RAILING, false))
-               .setValue(PortedBlocks.WATERLOGGED, false)
+               .setValue(PortedBlocks.WATERLOGGED, false).setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0)
          );
       }
 
@@ -663,7 +717,7 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED});
+         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED, EDITED_STAIR_SIDES, PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -686,10 +740,10 @@ public final class PortedBlocks {
          }
 
          Direction facing = (Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING);
-         if (direction == facing.getCounterClockWise()) {
+         if (direction == facing.getCounterClockWise() && (state.getValue(EDITED_STAIR_SIDES) & 1) == 0) {
             return (BlockState)state.setValue(PortedBlocks.LEFT_RAILING, this.connectsToSideRailing(neighborState));
          } else {
-            return direction == facing.getClockWise()
+            return direction == facing.getClockWise() && (state.getValue(EDITED_STAIR_SIDES) & 2) == 0
                ? (BlockState)state.setValue(PortedBlocks.RIGHT_RAILING, this.connectsToSideRailing(neighborState))
                : state;
          }
@@ -708,6 +762,105 @@ public final class PortedBlocks {
          return block instanceof PortedBlocks.RailingBlock || block instanceof PortedBlocks.FenceGateSegmentBlock;
       }
 
+      private static int paidRailings(BlockState state) {
+         int count = (state.getValue(LEFT_RAILING) ? 1 : 0) + (state.getValue(RIGHT_RAILING) ? 1 : 0);
+         return Math.min(state.getValue(PAID_RAILINGS), count);
+      }
+
+      private static boolean leftSide(BlockState state, BlockPos pos, BlockHitResult hit, Direction fallback) {
+         Direction left = state.getValue(HORIZONTAL_FACING).getCounterClockWise();
+         double offset = (hit.getLocation().x - pos.getX() - 0.5) * left.getStepX()
+            + (hit.getLocation().z - pos.getZ() - 0.5) * left.getStepZ();
+         return Math.abs(offset) < 1.0E-7 ? fallback == left : offset > 0;
+      }
+
+      private static BlockState editSide(BlockState state, boolean left, boolean present, int paid) {
+         return state.setValue(left ? LEFT_RAILING : RIGHT_RAILING, present)
+            .setValue(EDITED_STAIR_SIDES, state.getValue(EDITED_STAIR_SIDES) | (left ? 1 : 2))
+            .setValue(PAID_RAILINGS, paid);
+      }
+
+      @Override
+      protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                               Player player, InteractionHand hand, BlockHitResult hit) {
+         if (!stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return super.useItemOn(stack, state, level, pos, player, hand, hit);
+         }
+         if (player.isSpectator() || !player.getAbilities().mayBuild || !level.mayInteract(player, pos)
+            || !level.getWorldBorder().isWithinBounds(pos) || !player.mayUseItemAt(pos, hit.getDirection(), stack)) {
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         if (level.isClientSide) {
+            return ItemInteractionResult.sidedSuccess(true);
+         }
+         state = level.getBlockState(pos);
+         stack = player.getItemInHand(hand);
+         if (!state.is(this) || !stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return ItemInteractionResult.CONSUME;
+         }
+         boolean left = leftSide(state, pos, hit, player.getDirection());
+         boolean removing = state.getValue(left ? LEFT_RAILING : RIGHT_RAILING);
+         boolean creative = player.getAbilities().instabuild;
+         int paid = paidRailings(state);
+         int refund = removing && paid > 0 ? 1 : 0;
+         BlockState changed = editSide(state, left, !removing, removing ? paid - refund : paid + (creative ? 0 : 1));
+         if (!removing && !level.isUnobstructed(changed, pos, CollisionContext.of(player))) {
+            return ItemInteractionResult.CONSUME;
+         }
+         if (!level.setBlock(pos, changed, Block.UPDATE_ALL)) {
+            return ItemInteractionResult.CONSUME;
+         }
+         if (!creative) {
+            if (!removing) {
+               stack.shrink(1);
+            } else if (refund > 0) {
+               ItemStack returned = new ItemStack(ModBlocks.STEEL_RAILING.get());
+               if (!player.getInventory().add(returned)) {
+                  player.drop(returned, false);
+               }
+            }
+         }
+         level.playSound(null, pos, removing ? SoundEvents.METAL_BREAK : SoundEvents.METAL_PLACE, SoundSource.BLOCKS, 1, 1);
+         level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+         return ItemInteractionResult.sidedSuccess(false);
+      }
+
+      @Override
+      protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+         List<ItemStack> drops = new ArrayList<>(super.getDrops(state, params));
+         int paid = paidRailings(state);
+         if (paid > 0 && drops.stream().anyMatch(stack -> stack.is(this.asItem()))) {
+            drops.add(new ItemStack(ModBlocks.STEEL_RAILING.get(), paid));
+         }
+         return drops;
+      }
+
+      @Override
+      public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
+                                         boolean willHarvest, FluidState fluid) {
+         if (player == null) {
+            return super.onDestroyedByPlayer(state, level, pos, null, willHarvest, fluid);
+         }
+         RailingMining.Completion completion = RailingMining.complete(player, level, pos, state);
+         if (completion == null) {
+            return false;
+         }
+         if (completion.part().side() == null) {
+            return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+         }
+         boolean left = completion.part().side() == state.getValue(HORIZONTAL_FACING).getCounterClockWise();
+         int paid = paidRailings(state);
+         BlockState changed = editSide(state, left, false, Math.max(0, paid - 1));
+         if (level.setBlock(pos, changed, Block.UPDATE_ALL) && !level.isClientSide && !player.getAbilities().instabuild && willHarvest) {
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005F);
+            if (paid > 0) {
+               Block.dropResources(ModBlocks.STEEL_RAILING.get().defaultBlockState(), level, pos, null, player, completion.tool());
+            }
+         }
+         return false;
+      }
+
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          VoxelShape shape = PortedBlocks.catwalkStairShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING));
          if ((Boolean)state.getValue(PortedBlocks.LEFT_RAILING)) {
@@ -722,7 +875,15 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         Direction facing = state.getValue(HORIZONTAL_FACING);
+         VoxelShape shape = catwalkStairShape(facing);
+         if (state.getValue(LEFT_RAILING)) {
+            shape = Shapes.or(shape, STAIR_RAIL_COLLISIONS[facing.get2DDataValue()][0]);
+         }
+         if (state.getValue(RIGHT_RAILING)) {
+            shape = Shapes.or(shape, STAIR_RAIL_COLLISIONS[facing.get2DDataValue()][1]);
+         }
+         return shape;
       }
    }
 

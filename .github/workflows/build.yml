@@ -50,6 +50,15 @@ jobs:
         shell: bash
         run: ./gradlew runGameTestServer --stacktrace
 
+      - name: Test client smoke evidence gates
+        shell: bash
+        run: python -W error::ResourceWarning -m unittest discover -s tools/validation -p 'test_*.py' -v
+
+      - name: Verify client Mixin transformation and class loading
+        timeout-minutes: 15
+        shell: bash
+        run: python tools/validation/client_mixin_smoke.py --prepare-timeout 600 --timeout 180
+
       - name: Build
         shell: bash
         run: ./gradlew build --stacktrace

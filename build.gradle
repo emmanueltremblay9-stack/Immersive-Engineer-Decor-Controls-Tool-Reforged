@@ -70,6 +70,14 @@ dependencies {
     }
 }
 
+// These ordinary JUnit tests inspect mapped Minecraft/Mixin bytecode as resources.
+// ModDev attaches game libraries to main's classpaths, not testImplementation.
+// Reuse those resolved inputs without enabling the NeoForge bootstrapped test engine.
+sourceSets.test {
+    compileClasspath += sourceSets.main.compileClasspath
+    runtimeClasspath += sourceSets.main.runtimeClasspath
+}
+
 tasks.named('processResources', ProcessResources).configure {
     duplicatesStrategy = DuplicatesStrategy.FAIL
 }

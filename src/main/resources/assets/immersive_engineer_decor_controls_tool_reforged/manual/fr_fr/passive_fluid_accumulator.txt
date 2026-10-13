@@ -1,5 +1,7 @@
-Fluide passif
-Équipement de réseau de fluides
-<&recipe>L'accumulateur de fluide passif est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+Accumulateur de fluide passif
+Collecte passive d'eau
+<&recipe>L'accumulateur de fluide passif collecte 250 mB d'eau tous les 80 ticks lorsqu'au moins un de ses six blocs voisins contient une source d'eau. Son réservoir contient 4000 mB et ne consomme aucune énergie. La collecte conserve la source voisine ; l'eau qui coule et l'eau contenue dans le bloc de l'accumulateur ne comptent pas.<br>
 <br>
-Utilisation : placez-le contre des sources d'eau adaptées et laissez de la place pour extraire le fluide.<br>
+Placez-le directement dans une source d'eau pour conserver cette eau dans le bloc. L'utilisation normale d'un seau remplit ou vide le réservoir interne. Accroupissez-vous en utilisant un seau d'eau ou un seau vide pour ajouter ou retirer l'eau autour du bloc. Ces deux réserves d'eau sont indépendantes.<br>
+<br>
+Utilisez des conduites pour extraire l'eau stockée, ou placez des seaux vides dans l'emplacement d'entrée et récupérez les seaux remplis dans l'emplacement de sortie.<br>

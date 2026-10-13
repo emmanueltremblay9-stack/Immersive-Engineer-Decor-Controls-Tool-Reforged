@@ -3,3 +3,6 @@ Escaliers de passerelle en acier
 <&recipe>Ce bloc délimite clairement les voies de service autour des machines.<br>
 <br>
 Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+<br>
+Tenez une rambarde en acier et faites un clic droit sur le côté gauche ou droit de l’escalier pour ajouter ou retirer ce côté sur place. En Survie, la pose consomme une rambarde ; le retrait d’un côté ajouté la restitue.<br>
+Minez la rambarde visée pour retirer uniquement ce côté. Minez la marche pour retirer l’escalier et ses rambardes ajoutées restantes.<br>
