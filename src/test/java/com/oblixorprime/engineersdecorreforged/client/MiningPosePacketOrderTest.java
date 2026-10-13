@@ -19,6 +19,15 @@ public class MiningPosePacketOrderTest {
    private static final String MOVE = "net/minecraft/network/protocol/game/ServerboundMovePlayerPacket$Rot";
 
    @Test
+   public void nativeEntityEqualityAliasesClientAndServerNetworkIds() throws IOException {
+      String idField = "field:net/minecraft/world/entity/Entity.id";
+      List<String> equality = calls("net/minecraft/world/entity/Entity", "equals", "(Ljava/lang/Object;)Z");
+      List<String> hash = calls("net/minecraft/world/entity/Entity", "hashCode", "()I");
+      assertEquals("native equality compares both entity IDs", 2L, equality.stream().filter(idField::equals).count());
+      assertEquals("native hash is also based on that network ID", 1L, hash.stream().filter(idField::equals).count());
+   }
+
+   @Test
    public void neoForgeHeldAttackChecksItsActiveBindingContext() throws IOException {
       List<String> calls = calls("net/minecraft/client/KeyMapping", "isDown", "()Z");
       assertTrue("setDown(true) is insufficient while a GUI disables the native IN_GAME binding",

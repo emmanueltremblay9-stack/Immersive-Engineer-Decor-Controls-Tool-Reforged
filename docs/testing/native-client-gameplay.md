@@ -18,24 +18,30 @@ directory for diagnosis; no user save, options, resource pack or server is used.
 The ten required cases cover creative and survival mining from below and each
 horizontal direction. Each case:
 
-1. Uses the connected real LocalPlayer, ClientLevel and integrated ServerPlayer
+1. Uses the connected real LocalPlayer, ClientLevel and integrated ServerPlayer,
+   and verifies the two distinct players have equal network IDs, equality and
+   hashes, reproducing the shared-JVM intent-map collision that dedicated-server
+   tests alone cannot exercise
 2. Establishes a real previous client/server pose selecting the catwalk deck,
    then turns to its inset lamp in the same tick as the native START call
 3. Calls the normal NeoForge click-input hook before native
    MultiPlayerGameMode.startDestroyBlock/continueDestroyBlock
-4. Requires the lamp to be lit immediately before the native attack call, then
+4. Requires every survival HOLD to retain its client-side component intent and
+   native mining state despite equal-ID server START processing; records bounded
+   START/ABORT/STOP counters and native destroy stages for failure diagnosis
+5. Requires the lamp to be lit immediately before the native attack call, then
    checks its synchronous lit-to-unlit prediction and exactly one client lamp
    completion event inside that call; a later server update cannot qualify
-5. Freezes the exact completion action's original vanilla sequence (START in
+6. Freezes the exact completion action's original vanilla sequence (START in
    creative, STOP in survival), then waits until its native ACK handling has run
    on the client thread; an earlier survival START ACK cannot qualify completion
-6. Allows a temporary lit rollback after a legitimate early-STOP ACK while
+7. Allows a temporary lit rollback after a legitimate early-STOP ACK while
    preserving the same catwalk and held-input latch, and requires eventual
    authoritative and reconciled-client lamp-only completion within the deadline
-7. Holds attack beyond a full mining duration and verifies every input is
+8. Holds attack beyond a full mining duration and verifies every input is
    canceled, with no further START/STOP packets and no catwalk loss
-8. Checks authoritative server state, paid lamp loot and native tool wear
-9. Releases input, then proves a fresh attack can actually mine the retained
+9. Checks authoritative server state, paid lamp loot and native tool wear
+10. Releases input, then proves a fresh attack can actually mine the retained
    deck through prediction, normal packets, ACK and authoritative server state
 
 The packet observer is passive: packets are neither fabricated nor changed.

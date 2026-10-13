@@ -99,6 +99,12 @@ public final class NativeClientMiningValidation {
    private static boolean fixtureAttackContextVerified;
    private static int clientLampRemovals;
    private static Prediction prediction;
+   private static int caseStartPackets;
+   private static int caseAbortPackets;
+   private static int caseStopPackets;
+   private static int survivalLampHoldChecks;
+   private static int targetMismatchHolds;
+   private static int maxNativeDestroyStage;
 
    private NativeClientMiningValidation() {}
 
@@ -177,7 +183,10 @@ public final class NativeClientMiningValidation {
                if (awaitPending()) setup(mc);
             }
             case SETUP -> {
-               if (awaitPending()) enter(Phase.READY);
+               if (awaitPending()) {
+                  result.addProperty("equal_id_cross_side_players_verified", true);
+                  enter(Phase.READY);
+               }
             }
             case READY -> {
                if (!isLit(mc.level.getBlockState(POS)) || mc.gameMode.getPlayerMode() != mode()
@@ -224,6 +233,9 @@ public final class NativeClientMiningValidation {
                miningTicks = (int)Math.ceil(1.0F / progress) + 8;
                require(miningTicks < 350, "Fixture mining duration exceeds its bounded budget");
                baselineSequence = probe.latestSequence;
+               caseStartPackets = probe.startPackets;
+               caseAbortPackets = probe.abortPackets;
+               caseStopPackets = probe.stopPackets;
                completionSequence = -1;
                inspection = null;
                canceledHolds = 0;
@@ -398,6 +410,9 @@ public final class NativeClientMiningValidation {
       eye = Vec3.atLowerCornerOf(POS).add(offset);
       lampTarget = Vec3.atLowerCornerOf(POS).add(.5, 14.8 / 16, .5);
       clientLampRemovals = 0;
+      survivalLampHoldChecks = 0;
+      targetMismatchHolds = 0;
+      maxNativeDestroyStage = -1;
       prediction = null;
       result = new JsonObject();
       result.addProperty("case", mode().getName() + "-" + direction.getName());
@@ -406,6 +421,9 @@ public final class NativeClientMiningValidation {
       result.addProperty("temporary_lit_rollback_observed", false);
       pending = mc.getSingleplayerServer().submit(() -> {
          ServerPlayer player = serverPlayer(mc);
+         require(player != (Object)mc.player && player.getId() == mc.player.getId()
+            && player.equals(mc.player) && player.hashCode() == mc.player.hashCode(),
+            "Fixture must exercise distinct equal-ID client/server players sharing Entity equality");
          var level = player.serverLevel();
          level.getEntitiesOfClass(ItemEntity.class, new AABB(POS).inflate(12)).forEach(ItemEntity::discard);
          for (BlockPos pos : BlockPos.betweenClosed(POS.offset(-4, -4, -4), POS.offset(4, 4, 4))) {
@@ -467,6 +485,14 @@ public final class NativeClientMiningValidation {
          return;
       }
       BlockState before = mc.level.getBlockState(POS);
+      boolean matchesBefore = RailingMining.matchesCurrentTarget(mc.player, POS);
+      if (!start && !matchesBefore) targetMismatchHolds++;
+      recordMiningDiagnostic(mc, matchesBefore, "before native attack");
+      if (phase == Phase.MINE_LAMP && mode() == GameType.SURVIVAL) {
+         require(matchesBefore, "Stable survival lamp HOLD lost its client-side intent; " + result.get("native_mining_diagnostic"));
+         require(mc.gameMode.isDestroying(), "Survival native mining was stopped between held attacks; " + result.get("native_mining_diagnostic"));
+         survivalLampHoldChecks++;
+      }
       if (phase == Phase.STALE_POSE || phase == Phase.MINE_LAMP) {
          require(isLit(before), "A prior server update cannot qualify as native client lamp prediction");
       }
@@ -478,6 +504,26 @@ public final class NativeClientMiningValidation {
       if (start) mc.gameMode.startDestroyBlock(POS, hit.getDirection());
       else mc.gameMode.continueDestroyBlock(POS, hit.getDirection());
       prediction = new Prediction(before, mc.level.getBlockState(POS), clientLampRemovals - removalsBefore);
+      recordMiningDiagnostic(mc, matchesBefore, "after native attack");
+   }
+
+   private static void recordMiningDiagnostic(Minecraft mc, boolean matchesBefore, String point) {
+      maxNativeDestroyStage = Math.max(maxNativeDestroyStage, mc.gameMode.getDestroyStage());
+      JsonObject diagnostic = new JsonObject();
+      diagnostic.addProperty("point", point);
+      diagnostic.addProperty("ticks", ticks);
+      diagnostic.addProperty("start_packets", probe.startPackets - caseStartPackets);
+      diagnostic.addProperty("abort_packets", probe.abortPackets - caseAbortPackets);
+      diagnostic.addProperty("stop_packets", probe.stopPackets - caseStopPackets);
+      diagnostic.addProperty("target_matched_before", matchesBefore);
+      diagnostic.addProperty("target_matches_now", RailingMining.matchesCurrentTarget(mc.player, POS));
+      diagnostic.addProperty("native_is_destroying", mc.gameMode.isDestroying());
+      diagnostic.addProperty("native_destroy_stage", mc.gameMode.getDestroyStage());
+      diagnostic.addProperty("max_native_destroy_stage", maxNativeDestroyStage);
+      diagnostic.addProperty("target_mismatch_holds", targetMismatchHolds);
+      diagnostic.addProperty("survival_lamp_hold_checks", survivalLampHoldChecks);
+      // One rolling snapshot stays bounded even if a later run fails to progress.
+      result.add("native_mining_diagnostic", diagnostic);
    }
 
    private static void observeLampPrediction(Minecraft mc) {
@@ -491,6 +537,7 @@ public final class NativeClientMiningValidation {
          result.addProperty("synchronous_lamp_completion_event", true);
          result.addProperty("immediate_client_prediction_lamp_only", true);
          result.addProperty("native_mining_ticks", ticks);
+         result.addProperty("survival_lamp_hold_checks", survivalLampHoldChecks);
          enter(Phase.LAMP_ACK);
       }
    }
@@ -611,8 +658,19 @@ public final class NativeClientMiningValidation {
       private volatile int latestStopSequence = -1;
       private volatile int ackApplied = -1;
       private volatile int miningPackets;
+      private volatile int startPackets;
+      private volatile int abortPackets;
+      private volatile int stopPackets;
       private Probe(Minecraft minecraft) { this.minecraft = minecraft; }
       @Override public void write(ChannelHandlerContext context, Object message, ChannelPromise promise) throws Exception {
+         if (message instanceof ServerboundPlayerActionPacket action && action.getPos().equals(POS)) {
+            switch (action.getAction()) {
+               case START_DESTROY_BLOCK -> startPackets++;
+               case ABORT_DESTROY_BLOCK -> abortPackets++;
+               case STOP_DESTROY_BLOCK -> stopPackets++;
+               default -> { }
+            }
+         }
          if (message instanceof ServerboundPlayerActionPacket action && action.getPos().equals(POS)
             && (action.getAction() == ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK
                || action.getAction() == ServerboundPlayerActionPacket.Action.STOP_DESTROY_BLOCK)) {

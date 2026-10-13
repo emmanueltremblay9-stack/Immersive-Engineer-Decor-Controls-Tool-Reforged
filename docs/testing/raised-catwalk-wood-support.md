@@ -10,7 +10,7 @@
 
 ## Model and save compatibility
 
-The new `steel_catwalk_ta5_model.json` preserves the plain deck's elements and textures. Its added shaft reuses the existing treated-wood pole side/top textures and three-section chamfered profile, extending from the bottom of the catwalk block to the deck. Existing models 0–4 are unchanged. Outline and collision follow the wooden structural profile.
+The new `steel_catwalk_ta5_model.json` preserves the plain deck's elements and textures. Its connection reuses the complete treated-wood pole head, including its shaft, braces and plate. The thin-steel, thick-steel and wood connection plates extend to the grating underside at Y=15; all other geometry and textures are preserved. Models 0, 3 and 4 are unchanged. See [support plate contact](raised-catwalk-support-contact.md) for the exact resource checks. Outline and collision follow the wooden structural profile.
 
 ## Automated coverage
 
@@ -34,7 +34,7 @@ Run the full repository checks with Java 21:
 ## Client visual checklist
 
 1. Place vertical straight treated-wood poles and pole heads, then place raised catwalks above them. Inspect the join from all sides and below.
-2. Compare against thick/thin steel supports and the plain, frame, and inset-light variants. Confirm there are no missing textures, altered legacy models, or visual gaps in the wooden shaft.
+2. Compare against thick/thin steel supports and the plain, frame, and inset-light variants. Confirm there are no missing textures, unintended geometry changes, or a gap between the support plate and grating.
 3. Remove and replace wooden supports, save/reload the world, and repeat with waterlogged catwalks.
 4. Install a paid inset light before adding the wooden pole; remove it and confirm one refund and a wooden connection.
 

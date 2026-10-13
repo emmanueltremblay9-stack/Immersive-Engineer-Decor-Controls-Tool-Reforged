@@ -21,6 +21,7 @@ class NativeGameplayProofTests(unittest.TestCase):
                 "release_allows_native_deck_mining": True, "immediate_client_prediction_deck_removed": True,
                 "authoritative_deck_removed": True, "active_attack_binding": True,
                 "synchronous_lamp_completion_event": True, "client_lamp_removal_notifications": 1,
+                "equal_id_cross_side_players_verified": True, "survival_lamp_hold_checks": 20 * expected,
                 "lamp_completion_action": "STOP_DESTROY_BLOCK" if expected else "START_DESTROY_BLOCK",
                 "deck_completion_action": "STOP_DESTROY_BLOCK" if expected else "START_DESTROY_BLOCK",
                 "lamp_sequence": 2 * index + 1,
@@ -69,7 +70,8 @@ class NativeGameplayProofTests(unittest.TestCase):
                            ("held_extra_mining_packets", 1), ("lamp_drops_or_inventory", 1), ("lamp_tool_damage", 1),
                            ("native_mining_ticks", -1), ("active_attack_binding", False),
                            ("synchronous_lamp_completion_event", False), ("client_lamp_removal_notifications", 0),
-                           ("client_lamp_removal_notifications", 2), ("client_lamp_removal_notifications", True)):
+                           ("client_lamp_removal_notifications", 2), ("client_lamp_removal_notifications", True),
+                           ("equal_id_cross_side_players_verified", False), ("survival_lamp_hold_checks", 1)):
             proof = copy.deepcopy(self.proof)
             proof["cases"][0][key] = value
             with self.subTest(key=key), self.assertRaises(SmokeFailure): self.check(proof)
@@ -82,6 +84,13 @@ class NativeGameplayProofTests(unittest.TestCase):
         proof = copy.deepcopy(self.proof)
         del proof["fixture_attack_context_verified"]
         with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_requires_every_survival_hold_to_keep_its_side_intent(self):
+        for checks in (0, 1, True, 21):
+            proof = copy.deepcopy(self.proof)
+            case = next(case for case in proof["cases"] if case["mode"] == "survival")
+            case["survival_lamp_hold_checks"] = checks
+            with self.subTest(checks=checks), self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_survival_start_ack_cannot_qualify_completion(self):
         for stage in ("lamp", "deck"):

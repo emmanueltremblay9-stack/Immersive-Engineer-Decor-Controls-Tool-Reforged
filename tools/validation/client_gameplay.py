@@ -55,7 +55,8 @@ def validate_proof(proof: dict, nonce: str, logs: str, exit_code: int | None,
             raise SmokeFailure(f"Inconsistent scenario identity: {label}")
         for flag in ("immediate_client_prediction_lamp_only", "authoritative_lamp_only",
                      "release_allows_native_deck_mining", "immediate_client_prediction_deck_removed",
-                     "authoritative_deck_removed", "active_attack_binding", "synchronous_lamp_completion_event"):
+                     "authoritative_deck_removed", "active_attack_binding", "synchronous_lamp_completion_event",
+                     "equal_id_cross_side_players_verified"):
             if case.get(flag) is not True:
                 raise SmokeFailure(f"{label} lacks {flag}")
         notifications = case.get("client_lamp_removal_notifications")
@@ -81,6 +82,9 @@ def validate_proof(proof: dict, nonce: str, logs: str, exit_code: int | None,
             raise SmokeFailure(f"{label} has incorrect authoritative lamp loot/tool wear")
         if type(case.get("native_mining_ticks")) is not int or case["native_mining_ticks"] < expected:
             raise SmokeFailure(f"{label} did not exercise native mining duration")
+        checks = case.get("survival_lamp_hold_checks")
+        if type(checks) is not int or (checks != case["native_mining_ticks"] if expected else checks != 0):
+            raise SmokeFailure(f"{label} did not preserve its own intent on every survival lamp HOLD")
     marker = f"IEDCTR_CLIENT_GAMEPLAY PASSED nonce={nonce} cases={len(EXPECTED_CASES)}"
     if marker not in logs:
         raise SmokeFailure("Missing current-run successful gameplay completion marker")
