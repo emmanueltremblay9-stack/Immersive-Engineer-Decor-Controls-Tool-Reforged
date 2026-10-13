@@ -2,6 +2,7 @@ name: Publish CurseForge
 run-name: "CurseForge ${{ 'v1.1.58-reconstructed' }} :: ${{ false && 'dry-run' || ('' != '' && 'resume' || 'publish') }}"
 
 on:
+  # Routing tests validate this fixed branch/manifest contract before upload.
   # One explicitly authorized publication of the pinned 1.1.58 candidate, without a merge.
   push:
     branches: [dot/publish-curseforge-1.1.58]

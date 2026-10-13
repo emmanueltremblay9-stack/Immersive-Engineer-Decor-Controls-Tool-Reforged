@@ -1263,7 +1263,12 @@ class OperationalRoutingTests(unittest.TestCase):
     def test_workflow_builds_local_only_and_uploads_only_json_state(self) -> None:
         root = Path(__file__).resolve().parents[2]
         workflow = (root / ".github/workflows/publish-curseforge.yml").read_text(encoding="utf-8")
-        self.assertIn("MANIFEST_PATH: ${{ inputs.manifest }}", workflow)
+        self.assertIn("MANIFEST_PATH: ${{ 'tools/release/curseforge_release_1.1.58.json' }}", workflow)
+        self.assertIn("branches: [dot/publish-curseforge-1.1.58]", workflow)
+        self.assertIn("github.event_name == 'push' && github.ref == 'refs/heads/dot/publish-curseforge-1.1.58'", workflow)
+        self.assertIn("github.repository == 'emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged'", workflow)
+        self.assertNotIn("workflow_dispatch:", workflow)
+        self.assertNotIn("inputs.", workflow)
         self.assertNotIn("v1.1.56", workflow)
         self.assertIn("Publisher(root, manifest, require_local_source=True)", workflow)
         self.assertIn("ref: ${{ steps.source.outputs.commit }}", workflow)
