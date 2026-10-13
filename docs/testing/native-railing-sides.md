@@ -68,6 +68,19 @@ regression matrix covers every side and configuration, persistence, transforms,
 collision, existing model selection, and item accounting. Individual test names
 describe the covered cases.
 
+Persistence checks round-trip the saved state through NBT and the blockstate
+codec; they do not restart a server. Geometry-derived `level.clip` tests prove
+that the supporting surface and visible rails are selectable, followed by native
+server dispatch. Their controlled overhead rays are not a client eye/input
+playthrough. Cancellation tests distinguish a terminal block-phase `CONSUME`
+veto from NeoForge's nonterminal `FAIL`, which permits the later item phase.
+
+`NativeRailingContainmentGameTests` uses an actual adult zombie and
+`Entity.move` against each edge and corner, with ordinary stepping enabled.
+Open-side escape and center-movement controls check that the fixture is not
+merely immobilizing the mob. This is deterministic grounded movement coverage,
+not an autonomous mob-AI or jump-containment test.
+
 The blockstate JSON predicates omit `paid_railings`, so each of the 160 possible
 states per block still selects exactly one existing model. Static enumeration
 of both blockstate files confirms that property coverage. The models already

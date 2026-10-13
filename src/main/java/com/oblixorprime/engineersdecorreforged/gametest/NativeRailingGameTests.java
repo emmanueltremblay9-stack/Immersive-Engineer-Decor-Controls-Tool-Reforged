@@ -592,6 +592,128 @@ public final class NativeRailingGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void blocked_native_railing_additions_do_not_charge_or_fall_back_to_new_blocks(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (Block block : List.of(catwalk(), railing())) {
+         for (int edge = 0; edge < EDGES.length; edge++) {
+            clear(helper);
+            giveRailings(player, 16);
+            put(helper, CENTER, sides(block, block == railing() ? 1 << ((edge + 2) % 4) : 0));
+            BlockState original = helper.getBlockState(CENTER);
+            BlockPos pos = helper.absolutePos(CENTER);
+            var mob = EntityType.ZOMBIE.create(helper.getLevel());
+            helper.assertTrue(mob != null, "obstruction fixture must exist");
+            mob.setBaby(false);
+            mob.setNoAi(true);
+            mob.setPos(pos.getX() + 0.5 + EDGES[edge].getStepX() * 0.45,
+               pos.getY() + (block == catwalk() ? 3.0 / 16.0 : 0.0),
+               pos.getZ() + 0.5 + EDGES[edge].getStepZ() * 0.45);
+            helper.assertTrue(helper.getLevel().noCollision(mob), "obstruction must be clear before the proposed new railing");
+            helper.assertTrue(helper.getLevel().addFreshEntity(mob), "obstruction must be added to world collision checks");
+            try {
+               clickEdge(helper, player, CENTER, EDGES[edge], Direction.SOUTH);
+               helper.assertValueEqual(helper.getBlockState(CENTER), original, "occupied edge must reject the edit without changing paid state");
+               helper.assertValueEqual(owned(helper, player, railing().asItem()), 16, "rejected edit must neither consume nor refund");
+               helper.assertTrue(helper.getBlockState(CENTER.above()).isAir(), "rejected edit must not place an unrelated block above");
+               for (Direction neighbor : EDGES) {
+                  helper.assertTrue(helper.getBlockState(CENTER.relative(neighbor)).isAir(), "rejected edit must not place an unrelated adjacent block");
+               }
+            } finally {
+               mob.discard();
+            }
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void railing_rotations_and_mirrors_preserve_selected_edges_water_and_paid_drops(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (Block block : List.of(catwalk(), railing())) {
+         for (int mask = block == railing() ? 1 : 0; mask < 16; mask++) {
+            clear(helper);
+            giveRailings(player, 16);
+            if (block == catwalk()) {
+               put(helper, CENTER, sides(block, 0));
+            }
+            for (int edge = 0; edge < EDGES.length; edge++) {
+               if ((mask & (1 << edge)) != 0) {
+                  if (block == railing()) {
+                     raycastClickEdge(helper, player, EDGES[edge], Direction.SOUTH, CENTER.below());
+                  } else {
+                     clickEdge(helper, player, CENTER, EDGES[edge], Direction.SOUTH);
+                  }
+               }
+            }
+            assertSides(helper, block, mask, "transform fixture must be built through native interactions");
+            for (boolean waterlogged : new boolean[]{false, true}) {
+               BlockState original = helper.getBlockState(CENTER).setValue(PortedBlocks.WATERLOGGED, waterlogged);
+               for (Rotation rotation : Rotation.values()) {
+                  BlockState transformed = original.rotate(rotation);
+                  int expected = transformedMask(mask, rotation, Mirror.NONE);
+                  assertSides(helper, transformed, block, expected, "rotation " + rotation + " of mask " + mask);
+                  assertTransformedState(helper, original, transformed, Integer.bitCount(mask));
+               }
+               for (Mirror mirror : Mirror.values()) {
+                  BlockState transformed = original.mirror(mirror);
+                  int expected = transformedMask(mask, Rotation.NONE, mirror);
+                  assertSides(helper, transformed, block, expected, "mirror " + mirror + " of mask " + mask);
+                  assertTransformedState(helper, original, transformed, Integer.bitCount(mask));
+               }
+            }
+         }
+      }
+      // Legacy zero-property standalone visibly means north, including structure transforms.
+      BlockState legacy = legacyState(railing(), 0, true);
+      for (Rotation rotation : Rotation.values()) {
+         BlockState transformed = legacy.rotate(rotation);
+         assertSides(helper, transformed, railing(), transformedMask(1, rotation, Mirror.NONE), "legacy implicit north rotation");
+         assertTransformedState(helper, legacy, transformed, 1);
+      }
+      for (Mirror mirror : Mirror.values()) {
+         BlockState transformed = legacy.mirror(mirror);
+         assertSides(helper, transformed, railing(), transformedMask(1, Rotation.NONE, mirror), "legacy implicit north mirror");
+         assertTransformedState(helper, legacy, transformed, 1);
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void railing_blockstate_variants_cover_every_saved_state_including_economic_properties(GameTestHelper helper) {
+      for (Block block : List.of(catwalk(), railing())) {
+         String id = BuiltInRegistries.BLOCK.getKey(block).getPath();
+         JsonObject variants = readJson("/assets/immersive_engineer_decor_controls_tool_reforged/blockstates/" + id + ".json").getAsJsonObject("variants");
+         helper.assertTrue(variants != null, "railing blockstate must define variants");
+         for (BlockState state : block.getStateDefinition().getPossibleStates()) {
+            int matches = 0;
+            for (var variant : variants.entrySet()) {
+               boolean matchesState = true;
+               for (String condition : variant.getKey().split(",")) {
+                  String[] pair = condition.split("=", 2);
+                  if (pair.length != 2 || state.getValues().entrySet().stream().noneMatch(entry ->
+                     entry.getKey().getName().equals(pair[0]) && entry.getValue().toString().equals(pair[1]))) {
+                     matchesState = false;
+                     break;
+                  }
+               }
+               if (matchesState) {
+                  matches++;
+                  String model = variant.getValue().getAsJsonObject().get("model").getAsString();
+                  String[] resource = model.split(":", 2);
+                  readJson("/assets/" + resource[0] + "/models/" + resource[1] + ".json");
+                  if (state.getValue(PortedBlocks.NORTH) && state.getValue(PortedBlocks.EAST)
+                     && state.getValue(PortedBlocks.SOUTH) && state.getValue(PortedBlocks.WEST)) {
+                     helper.assertTrue(model.contains("nesw"), "four selected edges must use the four-sided model");
+                  }
+               }
+            }
+            helper.assertValueEqual(matches, 1, "exactly one existing model variant must cover " + state);
+         }
+      }
+      helper.succeed();
+   }
+
    private static ServerPlayer player(GameTestHelper helper) {
       // FakePlayer exercises the real game mode without IE login packet synchronization.
       ServerPlayer player = new FakePlayer(helper.getLevel(), new GameProfile(UUID.randomUUID(), "RailingTest"));
@@ -643,6 +765,45 @@ public final class NativeRailingGameTests {
          }
       }
       return NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved);
+   }
+
+   private static int transformedMask(int mask, Rotation rotation, Mirror mirror) {
+      int result = 0;
+      for (int edge = 0; edge < EDGES.length; edge++) {
+         if ((mask & (1 << edge)) != 0) {
+            Direction transformed = mirror.mirror(rotation.rotate(EDGES[edge]));
+            for (int target = 0; target < EDGES.length; target++) {
+               if (EDGES[target] == transformed) {
+                  result |= 1 << target;
+               }
+            }
+         }
+      }
+      return result;
+   }
+
+   private static void assertTransformedState(GameTestHelper helper, BlockState original, BlockState transformed, int railings) {
+      helper.assertValueEqual(transformed.getValue(PortedBlocks.WATERLOGGED), original.getValue(PortedBlocks.WATERLOGGED),
+         "structure transforms must preserve waterlogging");
+      assertDropCounts(helper, transformed, original.is(catwalk()) ? 1 : 0, railings);
+      var saved = NbtUtils.writeBlockState(transformed);
+      helper.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved), transformed,
+         "transformed side and paid state must survive NBT save/load");
+      helper.assertValueEqual(BlockState.CODEC.parse(NbtOps.INSTANCE, saved).getOrThrow(), transformed,
+         "transformed side and paid state must survive codec save/load");
+   }
+
+   private static JsonObject readJson(String path) {
+      try (InputStream input = NativeRailingGameTests.class.getResourceAsStream(path)) {
+         if (input == null) {
+            throw new IllegalStateException("Missing model resource: " + path);
+         }
+         try (InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+            return JsonParser.parseReader(reader).getAsJsonObject();
+         }
+      } catch (java.io.IOException exception) {
+         throw new IllegalStateException("Cannot read model resource: " + path, exception);
+      }
    }
 
    private static void roundTripAtCenter(GameTestHelper helper) {
