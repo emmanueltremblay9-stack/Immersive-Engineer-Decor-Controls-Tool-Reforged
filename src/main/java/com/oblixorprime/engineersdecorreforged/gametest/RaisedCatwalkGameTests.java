@@ -546,12 +546,15 @@ public final class RaisedCatwalkGameTests {
             JsonObject integrated = elements.get(deckElements.size() + i).getAsJsonObject();
             double[] from = integratedHeadPoint(original.getAsJsonArray("from"));
             double[] to = integratedHeadPoint(original.getAsJsonArray("to"));
+            boolean plate = !original.has("rotation") && original.getAsJsonArray("from").get(2).getAsDouble() == 14;
+            double underside = deckElements.get(5).getAsJsonObject().getAsJsonArray("from").get(1).getAsDouble();
             for (int axis = 0; axis < 3; axis++) {
                double lower = Math.min(from[axis], to[axis]);
                assertNear(helper, integrated.getAsJsonArray("from").get(axis).getAsDouble(), axis == 1 ? Math.max(0, lower) : lower,
                   "head geometry rotates upwards and trims only the shaft at the lower block boundary");
-               assertNear(helper, integrated.getAsJsonArray("to").get(axis).getAsDouble(), Math.max(from[axis], to[axis]),
-                  "plate and brace dimensions are retained");
+               assertNear(helper, integrated.getAsJsonArray("to").get(axis).getAsDouble(),
+                  plate && axis == 1 ? underside : Math.max(from[axis], to[axis]),
+                  "only the plate top extends to the actual grating underside; shaft and braces are retained");
             }
             helper.assertValueEqual(integrated.has("rotation"), original.has("rotation"), "all native angled braces are retained");
             if (original.has("rotation")) {
@@ -567,10 +570,10 @@ public final class RaisedCatwalkGameTests {
                for (int axis = 0; axis < 3; axis++) {
                   assertNear(helper, newRotation.getAsJsonArray("origin").get(axis).getAsDouble(), origin[axis], "brace pivot is preserved");
                }
-            } else if (original.getAsJsonArray("from").get(2).getAsDouble() == 14) {
+            } else if (plate) {
                plateCount++;
                assertNear(helper, integrated.getAsJsonArray("from").get(1).getAsDouble(), 12, "the plate is visibly below the deck");
-               assertNear(helper, integrated.getAsJsonArray("to").get(1).getAsDouble(), 14, "the plate meets the deck with no gap");
+               assertNear(helper, integrated.getAsJsonArray("to").get(1).getAsDouble(), underside, "the plate meets the actual deck underside with no gap");
             }
             var originalFaces = original.getAsJsonObject("faces");
             var integratedFaces = integrated.getAsJsonObject("faces");
