@@ -2,14 +2,19 @@ package com.oblixorprime.engineersdecorreforged.block;
 
 import com.mojang.serialization.MapCodec;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -26,6 +31,8 @@ import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
@@ -39,6 +46,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
@@ -58,6 +66,8 @@ public final class PortedBlocks {
    public static final BooleanProperty EAST = BooleanProperty.create("east");
    public static final BooleanProperty SOUTH = BooleanProperty.create("south");
    public static final BooleanProperty WEST = BooleanProperty.create("west");
+   // Legacy saves have no paid additions: their existing one-item loot remains valid.
+   public static final IntegerProperty PAID_RAILINGS = IntegerProperty.create("paid_railings", 0, 4);
    public static final BooleanProperty LEFT_RAILING = BooleanProperty.create("left_railing");
    public static final BooleanProperty RIGHT_RAILING = BooleanProperty.create("right_railing");
    public static final BooleanProperty EASTWEST = BooleanProperty.create("eastwest");
@@ -350,21 +360,18 @@ public final class PortedBlocks {
                         .setValue(PortedBlocks.EAST, false))
                      .setValue(PortedBlocks.SOUTH, false))
                   .setValue(PortedBlocks.WEST, false))
-               .setValue(PortedBlocks.WATERLOGGED, false)
+               .setValue(PortedBlocks.WATERLOGGED, false).setValue(PortedBlocks.PAID_RAILINGS, 0)
          );
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{PortedBlocks.NORTH, PortedBlocks.EAST, PortedBlocks.SOUTH, PortedBlocks.WEST, PortedBlocks.WATERLOGGED});
+         builder.add(new Property[]{PortedBlocks.NORTH, PortedBlocks.EAST, PortedBlocks.SOUTH, PortedBlocks.WEST,
+            PortedBlocks.WATERLOGGED, PortedBlocks.PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return this.connectedState(
-            (BlockState)this.defaultBlockState()
-               .setValue(PortedBlocks.WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER),
-            context.getLevel(),
-            context.getClickedPos()
-         );
+         return this.defaultBlockState()
+            .setValue(PortedBlocks.WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER);
       }
 
       public FluidState getFluidState(BlockState state) {
@@ -376,24 +383,31 @@ public final class PortedBlocks {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
          }
 
-         return direction.getAxis().isHorizontal() ? (BlockState)state.setValue(this.connectionProperty(direction), this.connectsTo(neighborState)) : state;
+         // These properties describe installed edge rails, not neighbor connections.
+         return state;
       }
 
-      protected BlockState connectedState(BlockState state, BlockGetter level, BlockPos pos) {
-         return (BlockState)((BlockState)((BlockState)((BlockState)state.setValue(PortedBlocks.NORTH, this.connectsTo(level.getBlockState(pos.north()))))
-                  .setValue(PortedBlocks.EAST, this.connectsTo(level.getBlockState(pos.east()))))
-               .setValue(PortedBlocks.SOUTH, this.connectsTo(level.getBlockState(pos.south()))))
-            .setValue(PortedBlocks.WEST, this.connectsTo(level.getBlockState(pos.west())));
+      protected BlockState explicitSides(BlockState state) {
+         // Old standalone all-false states visibly contain a north rail.
+         return this instanceof RailingBlock && sideCount(state) == 0 ? state.setValue(NORTH, true) : state;
       }
 
-      protected boolean connectsTo(BlockState neighborState) {
-         Block block = neighborState.getBlock();
-         return block instanceof PortedBlocks.CatwalkBlock
-            || block instanceof PortedBlocks.CatwalkStairsBlock
-            || block instanceof PortedBlocks.FenceGateSegmentBlock;
+      private static int sideCount(BlockState state) {
+         int count = 0;
+         for (Direction direction : Direction.Plane.HORIZONTAL) {
+            if (state.getValue(connectionProperty(direction))) {
+               ++count;
+            }
+         }
+         return count;
       }
 
-      private BooleanProperty connectionProperty(Direction direction) {
+      protected final int paidRailings(BlockState state) {
+         int capacity = Math.max(0, sideCount(state) - (this instanceof RailingBlock ? 1 : 0));
+         return Math.min(state.getValue(PAID_RAILINGS), capacity);
+      }
+
+      protected static BooleanProperty connectionProperty(Direction direction) {
          return switch (direction) {
             case NORTH -> PortedBlocks.NORTH;
             case SOUTH -> PortedBlocks.SOUTH;
@@ -401,6 +415,124 @@ public final class PortedBlocks {
             case EAST -> PortedBlocks.EAST;
             default -> PortedBlocks.NORTH;
          };
+      }
+
+      protected static Direction clickedEdge(Vec3 hit, BlockPos pos, Direction fallback) {
+         double x = Mth.clamp(hit.x - pos.getX(), 0.0, 1.0);
+         double z = Mth.clamp(hit.z - pos.getZ(), 0.0, 1.0);
+         Direction[] directions = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
+         double[] distances = {z, 1.0 - x, 1.0 - z, x};
+         double nearest = Math.min(Math.min(distances[0], distances[1]), Math.min(distances[2], distances[3]));
+         Direction result = null;
+         for (int i = 0; i < directions.length; ++i) {
+            if (Math.abs(distances[i] - nearest) < 1.0E-7) {
+               if (directions[i] == fallback) {
+                  return fallback;
+               }
+               if (result == null) {
+                  result = directions[i];
+               }
+            }
+         }
+         return result == null ? fallback : result;
+      }
+
+      @Override
+      protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                               Player player, InteractionHand hand, BlockHitResult hit) {
+         if (!stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return super.useItemOn(stack, state, level, pos, player, hand, hit);
+         }
+         if (player.isSpectator() || !player.getAbilities().mayBuild || !level.mayInteract(player, pos)
+            || !level.getWorldBorder().isWithinBounds(pos)) {
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         if (level.isClientSide) {
+            return ItemInteractionResult.sidedSuccess(true);
+         }
+
+         // Interaction listeners can replace the target or the held stack after dispatch.
+         // Never restore a stale block state or charge an item no longer held in this hand.
+         state = level.getBlockState(pos);
+         stack = player.getItemInHand(hand);
+         if (!state.is(this) || !stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return ItemInteractionResult.CONSUME;
+         }
+         state = explicitSides(state);
+         BooleanProperty side = connectionProperty(clickedEdge(hit.getLocation(), pos, player.getDirection()));
+         boolean removing = state.getValue(side);
+         boolean creative = player.getAbilities().instabuild;
+         int paid = paidRailings(state);
+         BlockState changed = state.setValue(side, !removing);
+         int refund = 0;
+         if (removing) {
+            // Credits are fungible: removing a legacy/free edge can release a paid credit,
+            // but never more items than were actually installed. Creative removal destroys it.
+            if (paid > 0) {
+               --paid;
+               refund = 1;
+            }
+            if (this instanceof RailingBlock && sideCount(changed) == 0) {
+               changed = state.getFluidState().createLegacyBlock();
+               ++refund; // The original standalone block owns one base railing item.
+            } else {
+               changed = changed.setValue(PAID_RAILINGS, paid);
+            }
+         } else {
+            changed = changed.setValue(PAID_RAILINGS, paid + (creative ? 0 : 1));
+            if (!level.isUnobstructed(changed, pos, CollisionContext.of(player))) {
+               // A recognized edit must not fall through to placing another block above it.
+               return ItemInteractionResult.CONSUME;
+            }
+         }
+
+         if (!level.setBlock(pos, changed, Block.UPDATE_ALL)) {
+            return ItemInteractionResult.CONSUME;
+         }
+         if (!creative) {
+            if (!removing) {
+               stack.shrink(1);
+            } else if (refund > 0) {
+               ItemStack returned = new ItemStack(ModBlocks.STEEL_RAILING.get(), refund);
+               if (!player.getInventory().add(returned)) {
+                  player.drop(returned, false);
+               }
+            }
+         }
+         level.playSound(null, pos, removing ? SoundEvents.METAL_BREAK : SoundEvents.METAL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+         level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+         return ItemInteractionResult.sidedSuccess(false);
+      }
+
+      @Override
+      protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+         List<ItemStack> drops = new ArrayList<>(super.getDrops(state, params));
+         int paid = paidRailings(state);
+         // Respect the original loot result, including explosion survival and custom tables.
+         if (paid > 0 && drops.stream().anyMatch(stack -> stack.is(this.asItem()))) {
+            drops.add(new ItemStack(ModBlocks.STEEL_RAILING.get(), paid));
+         }
+         return drops;
+      }
+
+      @Override
+      protected BlockState rotate(BlockState state, Rotation rotation) {
+         state = explicitSides(state);
+         BlockState rotated = state;
+         for (Direction direction : Direction.Plane.HORIZONTAL) {
+            rotated = rotated.setValue(connectionProperty(rotation.rotate(direction)), state.getValue(connectionProperty(direction)));
+         }
+         return rotated;
+      }
+
+      @Override
+      protected BlockState mirror(BlockState state, Mirror mirror) {
+         state = explicitSides(state);
+         BlockState mirrored = state;
+         for (Direction direction : Direction.Plane.HORIZONTAL) {
+            mirrored = mirrored.setValue(connectionProperty(mirror.mirror(direction)), state.getValue(connectionProperty(direction)));
+         }
+         return mirrored;
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -848,9 +980,40 @@ public final class PortedBlocks {
       }
 
       @Override
-      protected boolean connectsTo(BlockState neighborState) {
-         Block block = neighborState.getBlock();
-         return block instanceof PortedBlocks.RailingBlock || block instanceof PortedBlocks.FenceGateSegmentBlock;
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         BlockState current = context.getLevel().getBlockState(context.getClickedPos());
+         if (current.is(this)) {
+            if (context.replacingClickedOnBlock() || context.getClickedFace() != Direction.UP) {
+               return null;
+            }
+            Player player = context.getPlayer();
+            if (!context.getLevel().getWorldBorder().isWithinBounds(context.getClickedPos())
+               || player != null && (player.isSpectator() || !player.getAbilities().mayBuild
+                  || !context.getLevel().mayInteract(player, context.getClickedPos()))) {
+               return null;
+            }
+            current = explicitSides(current);
+            BooleanProperty side = connectionProperty(clickedEdge(context.getClickLocation(), context.getClickedPos(), context.getHorizontalDirection()));
+            if (current.getValue(side)) {
+               return null;
+            }
+            // Native BlockItem placement handles target permissions, obstruction, payment
+            // and canceled-placement rollback when the support below was actually clicked.
+            boolean creative = player != null && player.getAbilities().instabuild;
+            return current.setValue(side, true).setValue(PAID_RAILINGS, paidRailings(current) + (creative ? 0 : 1));
+         }
+         return super.getStateForPlacement(context).setValue(
+            connectionProperty(clickedEdge(context.getClickLocation(), context.getClickedPos(), context.getHorizontalDirection())), true);
+      }
+
+      @Override
+      protected boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+         if (context.replacingClickedOnBlock() || !context.getItemInHand().is(this.asItem()) || context.getClickedFace() != Direction.UP) {
+            return false;
+         }
+         state = explicitSides(state);
+         BooleanProperty side = connectionProperty(clickedEdge(context.getClickLocation(), context.getClickedPos(), context.getHorizontalDirection()));
+         return !state.getValue(side);
       }
 
       @Override
