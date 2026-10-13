@@ -3,7 +3,7 @@
 ## Behavior
 
 - Restores documented cosmetic smoke on Dark Shingle Roof Chimney, using the original Engineer's Decor vanilla smoke particles.
-- New heads start at intensity 5, or use the redstone strength already present when placed. Click to cycle 0–15; 0 is off. Held items are not consumed.
+- New heads start at intensity 5, or use the redstone strength already present when placed. Click to cycle 0–15; 0 is off. When holding another chimney head, an ordinary right-click places it instead, allowing stacking without sneaking. Smoke adjustment consumes no item.
 - A head alone retains its original 6/16-block height, footprint and textures. When another head is directly above, its four walls extend to 16/16, filling the former 10/16 gap. Only the exposed head at the top of each directly connected chain emits smoke. A gap starts a separate chain. Ordinary blocks above do not form a chimney chain or impose a new obstruction rule.
 - This uses the same existing item and registry ID, with an adaptive model/state; no new vertical-segment item is introduced. A chimney trunk can support the head stack in every orientation.
 - Intensity remains local to each head. Adding/removing heads preserves that head's manual setting; an exposed head resumes at its saved setting. The last observed redstone input is saved separately so only a true signal change overrides the chosen intensity, including an input change to 0. An explicit click can adjust a head under constant signal; no intensity propagates through the stack.

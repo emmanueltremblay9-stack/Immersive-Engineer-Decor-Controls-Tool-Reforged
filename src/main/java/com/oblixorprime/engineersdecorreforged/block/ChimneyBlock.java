@@ -94,6 +94,8 @@ public final class ChimneyBlock extends Block {
    @Override
    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
                                             Player player, InteractionHand hand, BlockHitResult hit) {
+      // Holding another head means build the stack; do not consume the click as a smoke adjustment.
+      if (stack.is(asItem())) return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
       cycleIntensity(state, level, pos);
       return ItemInteractionResult.sidedSuccess(level.isClientSide);
    }

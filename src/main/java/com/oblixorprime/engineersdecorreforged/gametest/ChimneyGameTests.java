@@ -4,6 +4,9 @@ import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyBlock;
 import com.google.gson.JsonParser;
+import com.mojang.authlib.GameProfile;
+import java.util.UUID;
+import net.neoforged.neoforge.common.util.FakePlayer;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import net.minecraft.core.BlockPos;
@@ -482,6 +485,53 @@ public final class ChimneyGameTests {
       helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 4, "changed analog input updates intensity");
       level.setBlock(source, Blocks.AIR.defaultBlockState(), 3);
       helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 0, "real signal removal still switches smoke off");
+      helper.succeed();
+   }
+
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void normal_held_head_click_places_a_stack_instead_of_adjusting_smoke(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos pos = helper.absolutePos(CENTER);
+      var cap = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get();
+      level.setBlock(pos, cap.defaultBlockState().setValue(ChimneyBlock.POWER, 9), 3);
+      var player = new FakePlayer(level, new GameProfile(UUID.randomUUID(), "ChimneyTest"));
+      player.gameMode.changeGameModeForPlayer(GameType.SURVIVAL);
+      player.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 2);
+      player.setShiftKeyDown(false);
+      player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(cap, 3));
+      BlockHitResult hit = level.getBlockState(pos).getShape(level, pos).clip(
+         Vec3.atLowerCornerOf(pos).add(0.25, 2, 0.25),
+         Vec3.atLowerCornerOf(pos).add(0.25, 0, 0.25), pos);
+      helper.assertTrue(hit != null, "real short-head rim can be selected");
+      var result = player.gameMode.useItemOn(player, level, player.getMainHandItem(), InteractionHand.MAIN_HAND, hit);
+      helper.assertTrue(result.consumesAction(), "normal non-sneaking right click places a held chimney");
+      helper.assertTrue(level.getBlockState(pos.above()).is(cap), "the game-mode interaction places the upper head");
+      helper.assertValueEqual(player.getMainHandItem().getCount(), 2, "survival placement consumes one head");
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 9, "placement does not also cycle the lower intensity");
+      helper.assertTrue(level.getBlockState(pos).getValue(ChimneyBlock.STACKED), "placed head extends lower walls");
+      player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+      player.gameMode.useItemOn(player, level, ItemStack.EMPTY, InteractionHand.MAIN_HAND,
+         new BlockHitResult(Vec3.atLowerCornerOf(pos.above()).add(0.25, 6.0 / 16, 0.25), Direction.UP, pos.above(), false));
+      helper.assertValueEqual(level.getBlockState(pos.above()).getValue(ChimneyBlock.POWER), 6, "empty-hand click still adjusts the top once");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void legacy_head_stack_suppresses_hidden_smoke_and_refreshes_on_notification(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos pos = helper.absolutePos(CENTER);
+      var cap = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get();
+      var old = NbtUtils.writeBlockState(cap.defaultBlockState());
+      old.remove("Properties");
+      BlockState legacy = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), old);
+      level.setBlock(pos.above(), legacy, 18);
+      level.setBlock(pos, legacy.setValue(ChimneyBlock.POWER, 9), 18);
+      helper.assertFalse(level.getBlockState(pos).getValue(ChimneyBlock.STACKED), "fixture represents a legacy missing adaptive state");
+      helper.assertFalse(ChimneyBlock.shouldEmitSmoke(level.getBlockState(pos), level, pos), "actual head above suppresses smoke even before refresh");
+      level.updateNeighborsAt(pos.above(), cap);
+      helper.assertTrue(level.getBlockState(pos).getValue(ChimneyBlock.STACKED), "normal neighbor notification refreshes old stack geometry");
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 9, "refresh preserves manual intensity without an input change");
       helper.succeed();
    }
 
