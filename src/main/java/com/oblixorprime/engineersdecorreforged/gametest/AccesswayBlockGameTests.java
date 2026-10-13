@@ -235,17 +235,18 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void raised_catwalk_placement_selects_reachable_model_variant(GameTestHelper helper) {
+   public static void raised_catwalk_plain_placement_is_independent_of_coordinates(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
-      Block catwalk = (Block)ModBlocks.STEEL_CATWALK_TA.get();
-      BlockPos pos = new BlockPos(3, 2, 4);
-      BlockState state = placementState(helper, player, catwalk, pos, 0.5);
-      helper.assertTrue(state != null, "raised catwalk placement state should not be null");
-      helper.assertValueEqual(
-         (Integer)state.getValue(PortedBlocks.VARIANT),
-         variantFor(helper.absolutePos(pos)),
-         "raised catwalk placement should select its position-based visual variant"
-      );
+      Block catwalk = ModBlocks.STEEL_CATWALK_TA.get();
+      for (int x = 1; x <= 5; x++) {
+         BlockPos pos = new BlockPos(x, 2, 4);
+         helper.setBlock(pos, Blocks.AIR);
+         helper.setBlock(pos.below(), Blocks.AIR);
+         BlockState state = placementState(helper, player, catwalk, pos, 0.5);
+         helper.assertTrue(state != null, "raised catwalk placement state should not be null");
+         helper.assertValueEqual(state.getValue(PortedBlocks.VARIANT), 0,
+            "unsupported placement must stay plain across every former coordinate residue");
+      }
       helper.succeed();
    }
 
@@ -928,10 +929,6 @@ public final class AccesswayBlockGameTests {
          }
          default -> throw new IllegalArgumentException("Unsupported catwalk stair facing " + facing);
       }
-   }
-
-   private static int variantFor(BlockPos pos) {
-      return Math.floorMod(pos.getX() * 31 + pos.getY() * 7 + pos.getZ(), 5);
    }
 
    private static void placeClosedDoor(GameTestHelper helper, Block door, BlockPos lowerPos) {
