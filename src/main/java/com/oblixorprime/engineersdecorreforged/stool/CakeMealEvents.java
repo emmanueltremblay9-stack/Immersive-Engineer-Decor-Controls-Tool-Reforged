@@ -5,11 +5,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
+import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.bus.api.EventPriority;
@@ -40,13 +42,13 @@ public final class CakeMealEvents {
       settleAt(player.serverLevel(), event.getPos());
       settle(player, ATTEMPTS.remove(player));
       BlockState state = event.getLevel().getBlockState(event.getPos());
-      if (event.getUseBlock() == TriState.FALSE || !state.is(Blocks.CAKE) || player.isSpectator()
+      if (event.getUseBlock() == TriState.FALSE || !isVanillaCake(state) || player.isSpectator()
          || !player.isAlive() || !event.getLevel().mayInteract(player, event.getPos())
          || !player.canInteractWithBlock(event.getPos(), 0.0)) {
          return;
       }
       ATTEMPTS.put(player, new SliceAttempt(player.serverLevel(), event.getPos().immutable(),
-         state.getValue(CakeBlock.BITES), cakeSlices(player), player.level().getGameTime()));
+         state, cakeSlices(player), player.level().getGameTime()));
    }
 
    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
@@ -62,7 +64,7 @@ public final class CakeMealEvents {
          return;
       }
       BlockState state = attempt.level.getBlockState(attempt.pos);
-      if (!state.is(Blocks.CAKE) || state.getValue(CakeBlock.BITES) != attempt.bitesBefore) {
+      if (!state.equals(attempt.stateBefore)) {
          return;
       }
       // At this event vanilla has updated the stat and FoodData, but has NOT changed BITES yet.
@@ -111,7 +113,7 @@ public final class CakeMealEvents {
 
    private static void settle(ServerPlayer player, SliceAttempt attempt) {
       if (attempt == null || !attempt.witnessed || player.isRemoved() || !player.isAlive()
-         || player.level() != attempt.level || cakeSlices(player) != attempt.statBefore + 1
+         || player.level() != attempt.level
          || attempt.level.getGameTime() > attempt.gameTime + 1 || !biteChanged(attempt)) {
          return;
       }
@@ -128,19 +130,27 @@ public final class CakeMealEvents {
       return player.getStats().getValue(Stats.CUSTOM.get(Stats.EAT_CAKE_SLICE));
    }
 
+   private static boolean isVanillaCake(BlockState state) {
+      return state.is(Blocks.CAKE) || state.getBlock().getClass() == CandleCakeBlock.class
+         && BuiltInRegistries.BLOCK.getKey(state.getBlock()).getNamespace().equals("minecraft");
+   }
+
    private static final class SliceAttempt {
       private final ServerLevel level;
       private final BlockPos pos;
+      private final BlockState stateBefore;
       private final int bitesBefore;
       private final int statBefore;
       private final long gameTime;
       private boolean witnessed;
       private float rate;
 
-      private SliceAttempt(ServerLevel level, BlockPos pos, int bitesBefore, int statBefore, long gameTime) {
+      private SliceAttempt(ServerLevel level, BlockPos pos, BlockState stateBefore, int statBefore, long gameTime) {
          this.level = level;
          this.pos = pos;
-         this.bitesBefore = bitesBefore;
+         this.stateBefore = stateBefore;
+         // Vanilla candle-cakes delegate their first slice to CakeBlock.eat with an unbitten plain cake.
+         this.bitesBefore = stateBefore.is(Blocks.CAKE) ? stateBefore.getValue(CakeBlock.BITES) : 0;
          this.statBefore = statBefore;
          this.gameTime = gameTime;
       }

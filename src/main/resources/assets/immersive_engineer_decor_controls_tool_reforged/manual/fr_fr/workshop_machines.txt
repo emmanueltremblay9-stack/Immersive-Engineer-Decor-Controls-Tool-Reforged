@@ -14,13 +14,16 @@ Table en bois traité
 Mobilier d'atelier
 <&treated_wood_table>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
 <br>
-Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>
+Placez-la directement au nord, au sud, à l’est ou à l’ouest d’un tabouret en bois traité, à la même hauteur de bloc : son bonus de saturation passe de 20 % à 30 %. Plusieurs tables ne cumulent pas le bonus.<br>
+Debout, seule une vraie part de gâteau vanilla posé directement sur cette table bénéficie du bonus de 10 % de saturation. Les autres aliments tenus en main ne donnent aucun bonus debout. Les tables en acier et les établis ne comptent pas.<br>
 <np>
 Tabouret en bois traité
 Mobilier d'atelier
 <&treated_wood_stool>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
 <br>
-Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>
+Utilisation : clic droit pour s’asseoir ; utilisez la touche pour vous accroupir afin de vous relever. Un tabouret accueille un seul joueur et nécessite de l’espace libre au-dessus.<br>
+Un aliment terminé assis apporte 20 % de saturation supplémentaire, ou 30 % à la place avec une table en bois traité directement au nord, au sud, à l’est ou à l’ouest, à la même hauteur de bloc. Aucun cumul. Le pain apporte 6 points, plus 1,2 seul ou plus 1,8 près de la table. La saturation ne dépasse pas la faim ; aliments, récipients et effets gardent leur fonctionnement habituel.<br>
+Rester assis seul n’apporte ni nourriture, ni soin, ni effet temporaire. Il n’y a aucun délai d’attente : vous devez réellement terminer l’aliment en étant encore assis. Accroupissez-vous pendant le clic droit pour construire sans vous asseoir.<br>
 <np>
 Établi de métallurgie
 Poste de fabrication de plaques

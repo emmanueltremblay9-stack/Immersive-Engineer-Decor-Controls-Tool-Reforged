@@ -10,11 +10,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Minecart;
@@ -25,6 +27,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.neoforge.common.NeoForge;
@@ -44,6 +47,66 @@ public final class StoolMealGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void treated_table_cardinal_adjacency_replaces_twenty_with_thirty_percent(GameTestHelper helper) {
+      for (Direction direction : Direction.Plane.HORIZONTAL) {
+         prepare(helper);
+         helper.setBlock(STOOL.relative(direction), ModBlocks.TREATED_WOOD_TABLE.get());
+         Player player = seated(helper, GameType.SURVIVAL);
+         consume(helper, player, new ItemStack(Items.BREAD), InteractionHand.MAIN_HAND);
+         close(helper, player.getFoodData().getSaturationLevel(), 7.8F, "cardinal treated table gives thirty percent instead of twenty");
+         helper.assertValueEqual(player.getFoodData().getFoodLevel(), 13, "table bonus never adds hunger");
+         player.stopRiding();
+      }
+      prepare(helper);
+      for (Direction direction : Direction.Plane.HORIZONTAL) {
+         helper.setBlock(STOOL.relative(direction), ModBlocks.TREATED_WOOD_TABLE.get());
+      }
+      Player player = seated(helper, GameType.SURVIVAL);
+      consume(helper, player, new ItemStack(Items.BREAD), InteractionHand.MAIN_HAND);
+      close(helper, player.getFoodData().getSaturationLevel(), 7.8F, "multiple tables must never stack bonuses");
+      resetFood(player, 19, 19.0F);
+      consume(helper, player, new ItemStack(Items.BREAD), InteractionHand.MAIN_HAND);
+      close(helper, player.getFoodData().getSaturationLevel(), 20.0F, "thirty percent remains capped at hunger");
+      player.stopRiding();
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void steel_other_remote_and_removed_tables_never_upgrade_stool_meals(GameTestHelper helper) {
+      for (var block : List.of(ModBlocks.STEEL_TABLE.get(), ModBlocks.METAL_CRAFTING_TABLE.get(), Blocks.CRAFTING_TABLE)) {
+         prepare(helper);
+         helper.setBlock(STOOL.east(), block);
+         Player player = seated(helper, GameType.SURVIVAL);
+         consume(helper, player, new ItemStack(Items.BREAD), InteractionHand.MAIN_HAND);
+         close(helper, player.getFoodData().getSaturationLevel(), 7.2F, "only the exact treated wood table upgrades a seated meal");
+         player.stopRiding();
+      }
+      for (BlockPos offset : List.of(new BlockPos(1, 0, 1), new BlockPos(1, 1, 0), new BlockPos(1, -1, 0), new BlockPos(2, 0, 0))) {
+         prepare(helper);
+         helper.setBlock(STOOL.offset(offset), ModBlocks.TREATED_WOOD_TABLE.get());
+         Player player = seated(helper, GameType.SURVIVAL);
+         consume(helper, player, new ItemStack(Items.BREAD), InteractionHand.MAIN_HAND);
+         close(helper, player.getFoodData().getSaturationLevel(), 7.2F, "diagonal, vertical and distant tables do not qualify");
+         player.stopRiding();
+         helper.setBlock(STOOL.offset(offset), Blocks.AIR);
+      }
+      prepare(helper);
+      helper.setBlock(STOOL.east(), ModBlocks.TREATED_WOOD_TABLE.get());
+      Player player = seated(helper, GameType.SURVIVAL);
+      beginUse(helper, player, new ItemStack(Items.BREAD), InteractionHand.MAIN_HAND);
+      helper.setBlock(STOOL.east(), Blocks.AIR);
+      finishUse(helper, player);
+      close(helper, player.getFoodData().getSaturationLevel(), 7.2F, "table must still exist when the meal actually finishes");
+      player.stopRiding();
+      helper.setBlock(STOOL.east(), ModBlocks.TREATED_WOOD_TABLE.get());
+      helper.setBlock(STOOL.east().above(), Blocks.CAKE);
+      Player standing = player(helper, GameType.SURVIVAL);
+      consume(helper, standing, new ItemStack(Items.BREAD), InteractionHand.MAIN_HAND);
+      close(helper, standing.getFoodData().getSaturationLevel(), 6.0F, "standing near cake on a treated table never boosts ordinary held food");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void stool_right_click_seats_one_player_and_dismount_removes_the_mount(GameTestHelper helper) {
       prepare(helper);
       Player player = player(helper, GameType.SURVIVAL);
@@ -52,6 +115,10 @@ public final class StoolMealGameTests {
       helper.setBlock(STOOL.above(2), Blocks.STONE);
       helper.assertTrue(helper.getLevel().noCollision(player, player.getBoundingBox()), "fixture ceiling must clear the original seated body");
       helper.assertTrue(!seat.isPickable() && !seat.isPushable() && !seat.canBeCollidedWith(), "seat must not add a selectable or collidable hitbox");
+      Vec3 seatedPosition = seat.position();
+      seat.setDeltaMovement(new Vec3(1.0, 1.0, 1.0));
+      seat.move(MoverType.PISTON, new Vec3(0.5, 0.0, 0.0));
+      helper.assertValueEqual(seat.position(), seatedPosition, "pistons and velocity must not move a stationary seat off its stool");
       helper.assertTrue(helper.getBlockState(STOOL).getCollisionShape(helper.getLevel(), helper.absolutePos(STOOL),
          CollisionContext.of(player)).isEmpty(), "bent legs must not collide with their own stool");
       Player other = player(helper, GameType.SURVIVAL);

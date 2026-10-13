@@ -518,8 +518,12 @@ public final class RaisedCatwalkLampGameTests {
       // FakePlayer is not ticked here, so synchronize it explicitly for real side rays.
       player.setYHeadRot(player.getYRot());
       player.setXRot((float)-Math.toDegrees(Math.atan2(delta.y, Math.sqrt(delta.x * delta.x + delta.z * delta.z))));
-      helper.assertTrue(player.getViewVector(1).dot(delta.normalize()) > 0.99999,
-         "fixture eye ray must point toward its requested target: eye=" + eye + ", target=" + target);
+      // Mth's float lookup table does not produce an exactly unit-length view vector.
+      // Normalize only this angular check; actual selection/mining keeps the native ray.
+      Vec3 view = player.getViewVector(1);
+      helper.assertTrue(view.normalize().dot(delta.normalize()) > 0.99999,
+         "fixture eye ray must point toward its requested target: eye=" + eye + ", target=" + target
+            + ", view=" + view + ", yaw=" + player.getYRot() + ", headYaw=" + player.getYHeadRot() + ", pitch=" + player.getXRot());
       BlockHitResult hit = eyeHit(helper, player);
       helper.assertValueEqual(hit.getType(), HitResult.Type.BLOCK, "the player's actual eye ray must hit visible geometry");
       helper.assertValueEqual(hit.getBlockPos(), helper.absolutePos(CENTER), "the eye ray must hit the intended raised catwalk");

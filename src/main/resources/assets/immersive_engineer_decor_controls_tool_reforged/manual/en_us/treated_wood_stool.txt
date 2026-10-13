@@ -2,6 +2,16 @@ Treated Wood Stool
 Workshop furnishing
 <&recipe>This block is a practical shop furnishing for work rooms and maintenance corners.<br>
 <br>
-Usage: Set it beside benches, crates, and compact machines.<br>
-
-
+Right-click to sit; sneak to stand up. One player can use a stool at a time, with clear headroom. Sneak-right-click bypasses seating when building.<br>
+<np>
+Meals while seated
+Instant saturation bonus
+Finish eating on this stool to gain an extra 20% of the food's normal saturation. If a Treated Wood Table is directly north, south, east or west of the stool at the same block height, the bonus is 30% instead. More tables never stack the bonus. Steel tables and crafting tables do not qualify.<br>
+<br>
+Bread grants its usual 6 saturation plus 1.2 alone, or plus 1.8 beside a qualifying table. Saturation still cannot exceed your current hunger level. Hunger, item consumption, containers and food effects keep their normal behavior. Sitting alone grants no food, healing or timed effect.<br>
+<np>
+Cake on the table
+Real slices only
+While on foot, eating an actual slice of vanilla cake placed directly on a Treated Wood Table gives 10% extra saturation. This does not apply to other foods held near the table. A slice normally gives 0.4 saturation, plus 0.04 in this case.<br>
+<br>
+Seated cake follows the same 20% or 30% rule as other meals, without adding the standing bonus. Vanilla candle cakes also qualify when a slice is eaten; adding or extinguishing a candle does not. All bonuses require real consumption and obey the normal saturation cap.<br>

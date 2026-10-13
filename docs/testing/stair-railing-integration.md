@@ -25,6 +25,19 @@ Run the full dedicated GameTest suite along with compilation and ordinary tests.
 5. Repeat for old standalone railing blocks already placed above or next to stairs, comparing their actual tooltip and outline
 6. Save/reload and apply neighbor changes, confirming deliberate edits persist without material duplication
 
-## Native picking limitation
+## Upper-overhang targeting
 
-The unchanged stair model extends its upper side rail beyond the stair block cell. Vanilla's block-cell traversal can discover that overhang on downward/oblique rays that enter the owning stair cell. A purely horizontal ray confined to the cell above cannot discover the lower owner. This patch does not install a global picking override or move the model; that limitation remains and must not be presented as validated upper-overhang targeting from every camera angle.
+The unchanged model extends its upper side rail above the owning stair cell. A focused shared helper traverses the ordinary eye ray and examines only the stair directly below each visited cell. It selects only an existing railing shape intersected above its owner, only within block reach, and only before the ordinary block/entity hit. Exact ties retain the ordinary block. No chunk is force-loaded, and `Level.clip`, model resources, collision, and server mining packets are not globally replaced.
+
+NeoForge 21.1.230 has no supported post-pick event. A single client-only RETURN Mixin in `GameRenderer.pick(Entity, double, double, float)` therefore preserves vanilla's existing result unless this narrow extension finds a nearer visible upper rail. NeoForge already supplies Mixin; no new external dependency is added. `minecraft.hitResult` and `crosshairPickEntity` are then assigned by vanilla itself, so highlight, press/hold/release mining and entity attacks use the same result. Dedicated servers load no client Mixin class. Native START/STOP progress, cancellation, permissions, tool use and drops remain in the existing mining path; the shared selector revalidates nearest world/entity occlusion at completion.
+
+`UpperStairRailingTargetingGameTests` exercises purely horizontal rays above the owner in all four rotations/both sides, the Y=1 boundary, inside-to-outside rays, nearer solid/standalone/competing stair targets, farther blocks/entities, exact solid overlap ties, nearer pickable entities, an entity-clamped MISS, actual reach, empty air above the model, native-duration mining, cancellation and a wall appearing after START. These are executable regression tests, not evidence of a client session or of runtime Mixin injection.
+
+Additional client acceptance checks:
+
+1. Verify startup applies the Mixin without missing-target errors, then stand level with the visible high rail and aim horizontally from both sides in all four rotations. The outline must select only the side and the tooltip must identify the owning stair
+2. Hold attack until completion, release/retarget during progress, and repeat in creative. Exactly the selected rail disappears; the stair/opposite side remain. There must be no repeated start reset while holding a steady target
+3. Place a wall/standalone railing/another upper stair closer to the camera and an entity between camera and rail. The nearer target wins; the stair cannot be mined through it. Place the same targets behind the upper rail and confirm the visible rail wins
+4. Check just inside/outside reach, the transition across Y=1, aiming above the rendered top, and first/third-person cameras. No invisible collision-height target or extended reach is allowed
+5. Repeat cancellation/protected-area checks and verify ordinary blocks, entities and existing standalone rails keep their usual targeting and mining. High overhang targeting does not relax native right-click packet validation; in-place side editing remains available by clicking the stair's lateral half
+6. Run the dedicated-server suite to verify client-only Mixin isolation. Review compatibility with any mod that also transforms `GameRenderer.pick` before calling client QA complete

@@ -22,7 +22,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -312,12 +311,13 @@ public final class PortedBlocks {
       if (!hasSelectableRailings(state)) {
          return null;
       }
-      BlockHitResult worldHit = level.clip(new ClipContext(start, end, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, context));
+      BlockHitResult worldHit = StairRailingTargeting.clipBlocks(level, start, end, context);
       if (worldHit.getType() != HitResult.Type.BLOCK || !worldHit.getBlockPos().equals(pos)) {
          return null;
       }
       if (state.getBlock() instanceof CatwalkStairsBlock) {
-         return selectStairRailingPart(state, pos, start, end);
+         return StairRailingTargeting.hasCloserEntity(context, start, end, worldHit)
+            ? null : selectStairRailingPart(state, pos, start, end);
       }
       if (state.getBlock() instanceof RaisedCatwalkBlock raised) {
          return raised.selectPart(state, pos, start, end);
@@ -361,7 +361,7 @@ public final class PortedBlocks {
    }
 
    @Nullable
-   private static RailingPart selectStairRailingPart(BlockState state, BlockPos pos, Vec3 start, Vec3 end) {
+   static RailingPart selectStairRailingPart(BlockState state, BlockPos pos, Vec3 start, Vec3 end) {
       Direction facing = state.getValue(HORIZONTAL_FACING);
       VoxelShape floor = catwalkStairShape(facing);
       BlockHitResult hit = floor.clip(start, end, pos);
@@ -432,7 +432,7 @@ public final class PortedBlocks {
    }
 
    private static VoxelShape sideRailShape(Direction facing, boolean left) {
-      // Native picking discovers an overhang only when its ray also visits this block cell.
+      // StairRailingTargeting also discovers the unchanged upper model from the cell above.
       return STAIR_RAIL_SHAPES[facing.get2DDataValue()][left ? 0 : 1];
    }
 

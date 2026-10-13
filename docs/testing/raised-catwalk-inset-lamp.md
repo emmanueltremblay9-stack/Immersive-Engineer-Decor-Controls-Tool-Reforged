@@ -25,7 +25,7 @@ Lamp removal runs only inside the completed native `onDestroyedByPlayer` path af
 - Water, air/thick-steel/thin-steel/wood supports, railings above, neighbor changes and NBT/codec reload without restored credits
 - Repeated genuine item installation and native lamp removal, followed by ordinary base mining without duplicate refunds
 
-The fake-player ray fixture sets both entity yaw and head yaw, since server-side `LivingEntity.getViewYRot(1)` uses the latter. It independently asserts the actual eye vector aligns with the intended target before testing any shape or mining outcome. This makes the north/east/south/west cases genuine distinct view directions.
+The fake-player ray fixture sets both entity yaw and head yaw, since server-side `LivingEntity.getViewYRot(1)` uses the latter. It independently asserts the normalized actual eye vector aligns with the intended target before testing any shape or mining outcome. Normalization applies only to this angular assertion: Minecraft's float trigonometry lookup can yield a view-vector magnitude slightly below one, and the real world/mining ray remains unchanged. This makes the north/east/south/west cases genuine distinct view directions.
 
 Existing `RaisedCatwalkGameTests` now starts its whole-deck paid-lamp mining through a real top-deck eye ray/native START. It still verifies one base item plus one paid lamp. Its lit outline expectation follows the model recess while its collision expectation remains unchanged.
 

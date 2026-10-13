@@ -99,5 +99,7 @@ public final class TreatedWoodStoolBlock extends PortedBlocks.StoolBlock {
          .withStyle(ChatFormatting.GRAY));
       tooltip.add(Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.meal_bonus")
          .withStyle(ChatFormatting.GRAY));
+      tooltip.add(Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.cake_bonus")
+         .withStyle(ChatFormatting.GRAY));
    }
 }

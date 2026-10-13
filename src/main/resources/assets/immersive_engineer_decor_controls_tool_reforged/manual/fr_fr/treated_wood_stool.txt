@@ -2,4 +2,16 @@ Tabouret en bois traité
 Mobilier d'atelier
 <&recipe>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
 <br>
-Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>
+Clic droit pour s’asseoir ; accroupissez-vous pour vous relever. Un seul joueur peut utiliser le tabouret, avec de l’espace libre au-dessus. Accroupissez-vous pendant le clic droit pour construire sans vous asseoir.<br>
+<np>
+Repas sur le tabouret
+Bonus de saturation immédiat
+Terminez un aliment sur ce tabouret pour obtenir 20 % de sa saturation habituelle en plus. Avec une table en bois traité directement au nord, au sud, à l’est ou à l’ouest, à la même hauteur de bloc, le bonus passe à 30 % à la place. Plusieurs tables ne cumulent pas les bonus. Les tables en acier et les établis ne comptent pas.<br>
+<br>
+Le pain apporte ses 6 points habituels, plus 1,2 seul ou plus 1,8 près de la bonne table. La saturation ne dépasse jamais votre niveau de faim. Faim, consommation, récipients et effets des aliments restent normaux. Rester assis seul n’apporte ni nourriture, ni soin, ni effet temporaire.<br>
+<np>
+Gâteau sur la table
+De vraies parts seulement
+Debout, manger une vraie part d’un gâteau vanilla posé directement sur une table en bois traité apporte 10 % de saturation supplémentaire. Cela ne concerne pas les autres aliments tenus près de la table. Une part apporte normalement 0,4 point de saturation, plus 0,04 dans ce cas.<br>
+<br>
+Assis, le gâteau suit la règle des 20 % ou 30 %, sans ajouter le bonus debout. Les gâteaux vanilla avec bougie comptent aussi lorsqu’une part est mangée ; ajouter ou éteindre la bougie ne compte pas. Chaque bonus exige une consommation réelle et respecte le plafond normal de saturation.<br>
