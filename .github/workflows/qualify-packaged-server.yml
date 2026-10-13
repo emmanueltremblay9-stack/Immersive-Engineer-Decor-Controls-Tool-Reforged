@@ -1,0 +1,82 @@
+name: Qualify packaged server
+run-name: "Packaged server 1.1.58 :: explicit opt-in"
+
+on:
+  # Temporary, exact branch opt-in permits qualification on the draft PR without a merge.
+  # Operator explicitly approved this isolated candidate test and linked terms.
+  push:
+    branches: [dot/qualify-server-1.1.58]
+    paths:
+      - '.github/workflows/qualify-packaged-server.yml'
+      - 'tools/server/**'
+  workflow_dispatch:
+    inputs:
+      eula_acknowledgment:
+        description: 'Only after reviewing https://www.minecraft.net/en-us/eula and https://www.microsoft.com/servicesagreement enter I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT'
+        required: true
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qualify-packaged-server-1.1.58
+  cancel-in-progress: false
+
+jobs:
+  qualify:
+    name: Packaged dedicated server (console-only)
+    if: >-
+      github.repository == 'emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'push' && github.ref == 'refs/heads/dot/qualify-server-1.1.58'))
+    env:
+      GRADLE_USER_HOME: ${{ runner.temp }}/iedctr-qualification-gradle
+      # The scoped push opt-in records the operator's explicit approval, not a general acceptance.
+      # All other refs require the manual typed acknowledgement; no PR/schedule trigger exists.
+      EULA_ACKNOWLEDGMENT: ${{ github.event_name == 'push' && 'I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT' || inputs.eula_acknowledgment }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Checkout reviewed qualification tools
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Require explicit consent before downloads or server setup
+        run: python3 tools/server/qualify_packaged_server.py --check-ack-only --eula-acknowledgment "$EULA_ACKNOWLEDGMENT"
+
+      - name: Test qualification safeguards without Minecraft
+        run: python3 -W error::ResourceWarning -m unittest discover -s tools/server -p 'test_*.py' -v
+
+      - name: Checkout exact runtime source separately
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: 19c6bc7f8322002fd1d4710885d13f4482b4cb45
+          path: runtime-source
+          persist-credentials: false
+
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set up Gradle without persisting runtime binaries
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+        with:
+          cache-disabled: true
+
+      - name: Build exact candidate privately
+        working-directory: runtime-source
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = 19c6bc7f8322002fd1d4710885d13f4482b4cb45
+          test -z "$(git status --porcelain --untracked-files=all)"
+          bash ./gradlew clean build --no-build-cache --stacktrace
+          test -z "$(git status --porcelain --untracked-files=all)"
+          echo 'bc77067f9f6e0c03f987123b490812d32aa9171ad388fcd87ecdf50777883fdb  build/libs/immersive_engineer_decor_controls_tool_reforged-1.1.58-reconstructed.jar' | sha256sum --check --strict
+
+      - name: Install isolated official server and qualify packaged JAR
+        run: python3 tools/server/qualify_packaged_server.py --source-root "$GITHUB_WORKSPACE/runtime-source" --eula-acknowledgment "$EULA_ACKNOWLEDGMENT"
