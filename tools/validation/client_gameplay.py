@@ -39,6 +39,8 @@ def validate_proof(proof: dict, nonce: str, logs: str, exit_code: int | None,
         raise SmokeFailure("Missing matching successful gameplay proof")
     if proof.get("actual_integrated_world") is not True or proof.get("expected_cases") != len(EXPECTED_CASES):
         raise SmokeFailure("Gameplay proof lacks its real integrated-world scope")
+    if proof.get("fixture_attack_context_verified") is not True:
+        raise SmokeFailure("Gameplay fixture did not verify an active attack binding under its isolation screen")
     cases = proof.get("cases")
     if not isinstance(cases, list) or len(cases) != len(EXPECTED_CASES):
         raise SmokeFailure("Incomplete native gameplay scenario matrix")
@@ -53,9 +55,12 @@ def validate_proof(proof: dict, nonce: str, logs: str, exit_code: int | None,
             raise SmokeFailure(f"Inconsistent scenario identity: {label}")
         for flag in ("immediate_client_prediction_lamp_only", "authoritative_lamp_only",
                      "release_allows_native_deck_mining", "immediate_client_prediction_deck_removed",
-                     "authoritative_deck_removed"):
+                     "authoritative_deck_removed", "active_attack_binding", "synchronous_lamp_completion_event"):
             if case.get(flag) is not True:
                 raise SmokeFailure(f"{label} lacks {flag}")
+        notifications = case.get("client_lamp_removal_notifications")
+        if type(notifications) is not int or notifications != 1:
+            raise SmokeFailure(f"{label} lacks exactly one synchronous native client lamp completion")
         for stage in ("lamp", "deck"):
             action = "START_DESTROY_BLOCK" if case["mode"] == "creative" else "STOP_DESTROY_BLOCK"
             if case.get(f"{stage}_completion_action") != action:

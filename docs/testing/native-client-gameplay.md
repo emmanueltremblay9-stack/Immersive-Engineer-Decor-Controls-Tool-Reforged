@@ -23,7 +23,9 @@ horizontal direction. Each case:
    then turns to its inset lamp in the same tick as the native START call
 3. Calls the normal NeoForge click-input hook before native
    MultiPlayerGameMode.startDestroyBlock/continueDestroyBlock
-4. Checks the immediate client prediction retains exactly the unlit catwalk
+4. Requires the lamp to be lit immediately before the native attack call, then
+   checks its synchronous lit-to-unlit prediction and exactly one client lamp
+   completion event inside that call; a later server update cannot qualify
 5. Freezes the exact completion action's original vanilla sequence (START in
    creative, STOP in survival), then waits until its native ACK handling has run
    on the client thread; an earlier survival START ACK cannot qualify completion
@@ -42,6 +44,13 @@ below the player catches legitimate gravity-affected loot for exact counting.
 
 A non-pausing screen blocks incidental OS input while the fixture invokes the
 same input gate and game mode methods used by Minecraft's attack handling.
+NeoForge's native attack binding uses the IN_GAME conflict context, so merely
+calling `setDown(true)` with any screen open still makes `isDown()` return false.
+The fixture first verifies this contract at runtime, then temporarily changes
+only its isolated attack mapping to UNIVERSAL, checks the active held binding on
+every attack, and restores its original context on exit. Production input and
+its release/retarget reset conditions are unchanged. Failures record the latch's
+last reset reason and the client completion-event count for diagnosis.
 Therefore this is initialized native client/server gameplay and reconciliation
 coverage, **not** a physical mouse/keyboard, visual-rendering, or native
 LocalPlayer auto-jump movement test. Auto-jump is enabled in the fixture options

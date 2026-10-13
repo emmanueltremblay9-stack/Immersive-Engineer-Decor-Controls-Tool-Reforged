@@ -12,14 +12,15 @@ class NativeGameplayProofTests(unittest.TestCase):
     def setUp(self):
         self.nonce = "a" * 32
         self.proof = {"suite": SUITE, "nonce": self.nonce, "status": "passed", "expected_cases": 10,
-                      "actual_integrated_world": True, "cases": []}
+                      "actual_integrated_world": True, "fixture_attack_context_verified": True, "cases": []}
         for index, name in enumerate(sorted(EXPECTED_CASES)):
             mode, approach = name.split("-")
             expected = 1 if mode == "survival" else 0
             self.proof["cases"].append({"case": name, "mode": mode, "approach": approach,
                 "immediate_client_prediction_lamp_only": True, "authoritative_lamp_only": True,
                 "release_allows_native_deck_mining": True, "immediate_client_prediction_deck_removed": True,
-                "authoritative_deck_removed": True,
+                "authoritative_deck_removed": True, "active_attack_binding": True,
+                "synchronous_lamp_completion_event": True, "client_lamp_removal_notifications": 1,
                 "lamp_completion_action": "STOP_DESTROY_BLOCK" if expected else "START_DESTROY_BLOCK",
                 "deck_completion_action": "STOP_DESTROY_BLOCK" if expected else "START_DESTROY_BLOCK",
                 "lamp_sequence": 2 * index + 1,
@@ -46,7 +47,8 @@ class NativeGameplayProofTests(unittest.TestCase):
 
     def test_rejects_load_only_stale_failed_and_wrong_scope(self):
         for patch in ({}, {"status": "running"}, {"status": "failed"}, {"nonce": "b" * 32},
-                      {"suite": "client-mixin-load"}, {"actual_integrated_world": False}):
+                      {"suite": "client-mixin-load"}, {"actual_integrated_world": False},
+                      {"fixture_attack_context_verified": False}):
             proof = copy.deepcopy(self.proof) if patch else {}
             proof.update(patch)
             with self.subTest(patch=patch), self.assertRaises(SmokeFailure): self.check(proof)
@@ -65,10 +67,21 @@ class NativeGameplayProofTests(unittest.TestCase):
                            ("authoritative_deck_removed", False), ("lamp_ack_applied", 0), ("deck_ack_applied", 0),
                            ("deck_sequence", 1), ("held_ticks", 0), ("held_attack_cancellations", 0),
                            ("held_extra_mining_packets", 1), ("lamp_drops_or_inventory", 1), ("lamp_tool_damage", 1),
-                           ("native_mining_ticks", -1)):
+                           ("native_mining_ticks", -1), ("active_attack_binding", False),
+                           ("synchronous_lamp_completion_event", False), ("client_lamp_removal_notifications", 0),
+                           ("client_lamp_removal_notifications", 2), ("client_lamp_removal_notifications", True)):
             proof = copy.deepcopy(self.proof)
             proof["cases"][0][key] = value
             with self.subTest(key=key), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_server_only_or_missing_input_context_evidence(self):
+        for key in ("active_attack_binding", "synchronous_lamp_completion_event", "client_lamp_removal_notifications"):
+            proof = copy.deepcopy(self.proof)
+            del proof["cases"][0][key]
+            with self.subTest(key=key), self.assertRaises(SmokeFailure): self.check(proof)
+        proof = copy.deepcopy(self.proof)
+        del proof["fixture_attack_context_verified"]
+        with self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_survival_start_ack_cannot_qualify_completion(self):
         for stage in ("lamp", "deck"):

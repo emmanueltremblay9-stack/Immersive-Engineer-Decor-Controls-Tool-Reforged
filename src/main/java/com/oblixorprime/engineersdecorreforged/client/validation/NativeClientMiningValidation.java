@@ -7,6 +7,8 @@ import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkBlock;
+import com.oblixorprime.engineersdecorreforged.block.RailingMining;
+import com.oblixorprime.engineersdecorreforged.client.ClientInsetLightMiningEvents;
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
@@ -51,6 +53,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.settings.IKeyConflictContext;
+import net.neoforged.neoforge.client.settings.KeyConflictContext;
 
 /**
  * Explicitly opt-in CI gameplay fixture. Never opens an existing world, changes
@@ -91,11 +95,24 @@ public final class NativeClientMiningValidation {
    private static Vec3 lampTarget;
    private static JsonObject result;
    private static boolean complete;
+   private static IKeyConflictContext originalAttackContext;
+   private static boolean fixtureAttackContextVerified;
+   private static int clientLampRemovals;
+   private static Prediction prediction;
 
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
       LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK }
+
+   @SubscribeEvent
+   public static void removed(RailingMining.InsetLightRemoved event) {
+      if (!ENABLED || complete) return;
+      Minecraft mc = Minecraft.getInstance();
+      if (event.player() == mc.player && event.player().level() == mc.level && event.pos().equals(POS)) {
+         clientLampRemovals++;
+      }
+   }
 
    @SubscribeEvent
    public static void tick(ClientTickEvent.Post event) {
@@ -122,6 +139,19 @@ public final class NativeClientMiningValidation {
                Connection connection = mc.player.connection.getConnection();
                require(connection.isMemoryConnection(), "Fixture must never connect to a remote server");
                mc.setScreen(new FixtureScreen());
+               originalAttackContext = mc.options.keyAttack.getKeyConflictContext();
+               // NeoForge gates isDown() by IN_GAME even after setDown(true).
+               // The isolation screen intentionally blocks vanilla/OS key handling,
+               // so simulate an active attack mapping only inside this fresh fixture.
+               require(originalAttackContext == KeyConflictContext.IN_GAME,
+                  "Fixture expects the native attack binding's IN_GAME conflict context");
+               mc.options.keyAttack.setDown(true);
+               require(!mc.options.keyAttack.isDown(),
+                  "An open fixture screen must disable the unmodified IN_GAME attack binding");
+               mc.options.keyAttack.setKeyConflictContext(KeyConflictContext.UNIVERSAL);
+               require(mc.options.keyAttack.isDown(), "Fixture attack mapping did not become active");
+               mc.options.keyAttack.setDown(false);
+               fixtureAttackContextVerified = true;
                probe = new Probe(mc);
                CompletableFuture<Void> installed = new CompletableFuture<>();
                pending = installed;
@@ -202,6 +232,9 @@ public final class NativeClientMiningValidation {
                attack(mc, true, false);
                if (mode() == GameType.SURVIVAL) {
                   require(isLit(mc.level.getBlockState(POS)), "Survival START must retain the lamp until native completion");
+               } else {
+                  require(!isLit(mc.level.getBlockState(POS)),
+                     "Creative START must predict lamp removal synchronously before any server update");
                }
                enter(Phase.MINE_LAMP);
                observeLampPrediction(mc);
@@ -262,6 +295,8 @@ public final class NativeClientMiningValidation {
                require(state.toolDamage() == expected, "Lamp mining must apply exactly the native tool wear: " + state);
                require(probe.miningPackets == heldPacketCount, "Input gate emitted an extra mining packet");
                result.addProperty("authoritative_lamp_only", true);
+               require(clientLampRemovals == 1, "Each case must complete exactly one native client lamp removal");
+               result.addProperty("client_lamp_removal_notifications", clientLampRemovals);
                result.addProperty("held_attack_cancellations", canceledHolds);
                result.addProperty("held_ticks", holdTicks);
                result.addProperty("held_extra_mining_packets", probe.miningPackets - heldPacketCount);
@@ -362,6 +397,8 @@ public final class NativeClientMiningValidation {
          : new Vec3(.5 + direction.getStepX() * 1.7, .2, .5 + direction.getStepZ() * 1.7);
       eye = Vec3.atLowerCornerOf(POS).add(offset);
       lampTarget = Vec3.atLowerCornerOf(POS).add(.5, 14.8 / 16, .5);
+      clientLampRemovals = 0;
+      prediction = null;
       result = new JsonObject();
       result.addProperty("case", mode().getName() + "-" + direction.getName());
       result.addProperty("mode", mode().getName());
@@ -412,26 +449,46 @@ public final class NativeClientMiningValidation {
    }
 
    private static void attack(Minecraft mc, boolean start, boolean canceled) {
+      require(mc.options.keyAttack.isDown(),
+         "Scripted held attack must be an active mapping, including its NeoForge conflict context: "
+            + mc.options.keyAttack.getKeyConflictContext());
+      result.addProperty("active_attack_binding", true);
       updateHit(mc);
       require(mc.hitResult instanceof BlockHitResult hit && hit.getType() == HitResult.Type.BLOCK
          && hit.getBlockPos().equals(POS), "Native eye ray must hit the test owner");
       var input = ClientHooks.onClickInput(0, mc.options.keyAttack, InteractionHand.MAIN_HAND);
-      require(input.isCanceled() == canceled, canceled ? "Continuous held attack was not suppressed" : "Fresh native attack was unexpectedly suppressed");
+      require(input.isCanceled() == canceled,
+         (canceled ? "Continuous held attack was not suppressed" : "Fresh native attack was unexpectedly suppressed")
+            + "; client removal notifications=" + clientLampRemovals
+            + "; " + ClientInsetLightMiningEvents.validationState());
       if (canceled) {
          require(!input.shouldSwingHand(), "Canceled held attack must suppress its swing");
          canceledHolds++;
          return;
       }
+      BlockState before = mc.level.getBlockState(POS);
+      if (phase == Phase.STALE_POSE || phase == Phase.MINE_LAMP) {
+         require(isLit(before), "A prior server update cannot qualify as native client lamp prediction");
+      }
+      if (phase == Phase.RELEASE || phase == Phase.MINE_DECK) {
+         assertUnlit(before, "Native deck prediction must begin with the retained client deck");
+      }
+      int removalsBefore = clientLampRemovals;
       BlockHitResult hit = (BlockHitResult)mc.hitResult;
       if (start) mc.gameMode.startDestroyBlock(POS, hit.getDirection());
       else mc.gameMode.continueDestroyBlock(POS, hit.getDirection());
+      prediction = new Prediction(before, mc.level.getBlockState(POS), clientLampRemovals - removalsBefore);
    }
 
    private static void observeLampPrediction(Minecraft mc) {
       BlockState state = mc.level.getBlockState(POS);
       require(state.is(ModBlocks.STEEL_CATWALK_TA.get()), "Native client prediction destroyed the catwalk while mining its lamp");
       if (!isLit(state)) {
+         require(prediction != null && isLit(prediction.before()) && !isLit(prediction.after())
+            && prediction.lampNotifications() == 1,
+            "Lamp-only prediction must change lit to unlit and emit its completion event inside the native attack call");
          assertUnlit(state, "Immediate native ClientLevel prediction");
+         result.addProperty("synchronous_lamp_completion_event", true);
          result.addProperty("immediate_client_prediction_lamp_only", true);
          result.addProperty("native_mining_ticks", ticks);
          enter(Phase.LAMP_ACK);
@@ -440,6 +497,9 @@ public final class NativeClientMiningValidation {
 
    private static void observeDeckPrediction(Minecraft mc) {
       if (mc.level.getBlockState(POS).isAir()) {
+         require(prediction != null && !prediction.before().isAir() && prediction.after().isAir()
+            && prediction.lampNotifications() == 0,
+            "Deck prediction must remove the block synchronously inside its native attack call");
          result.addProperty("immediate_client_prediction_deck_removed", true);
          mc.options.keyAttack.setDown(false);
          enter(Phase.DECK_ACK);
@@ -507,15 +567,22 @@ public final class NativeClientMiningValidation {
       proof.addProperty("phase", phase.name());
       proof.addProperty("expected_cases", 10);
       proof.addProperty("actual_integrated_world", true);
+      proof.addProperty("fixture_attack_context_verified", fixtureAttackContextVerified);
       proof.addProperty("scope", "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");
       proof.add("cases", RESULTS.deepCopy());
-      if (error != null) proof.addProperty("error", error.toString());
+      if (error != null) {
+         proof.addProperty("error", error.toString());
+         proof.addProperty("hold_diagnostic", ClientInsetLightMiningEvents.validationState());
+         proof.addProperty("client_lamp_removal_notifications", clientLampRemovals);
+         if (result != null) proof.add("in_progress_case", result.deepCopy());
+      }
       Files.writeString(evidence, new GsonBuilder().setPrettyPrinting().create().toJson(proof) + "\n");
    }
 
    private static void finish(Minecraft mc, Throwable error) {
       complete = true;
       mc.options.keyAttack.setDown(false);
+      if (originalAttackContext != null) mc.options.keyAttack.setKeyConflictContext(originalAttackContext);
       try {
          if (evidence != null) write(error == null ? "passed" : "failed", error);
       } catch (Exception writeError) {
@@ -525,6 +592,8 @@ public final class NativeClientMiningValidation {
       else EngineersDecorReforged.LOGGER.error("IEDCTR_CLIENT_GAMEPLAY FAILED at " + phase, error);
       mc.stop();
    }
+
+   private record Prediction(BlockState before, BlockState after, int lampNotifications) {}
 
    private record ServerEvidence(BlockState state, int lamps, int decks, int toolDamage) {}
 

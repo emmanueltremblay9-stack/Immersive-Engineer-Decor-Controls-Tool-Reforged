@@ -72,6 +72,11 @@ public final class ClientInsetLightMiningEvents {
       HOLD.reset();
    }
 
+   /** Bounded diagnostics for the explicitly enabled isolated client fixture only. */
+   public static String validationState() {
+      return Boolean.getBoolean("iedctr.clientGameplay") ? HOLD.diagnostic() : "validation disabled";
+   }
+
    private static boolean suppressHeldAttack() {
       Minecraft minecraft = Minecraft.getInstance();
       if (minecraft.level == null || minecraft.player == null) {

@@ -2,12 +2,15 @@ package com.oblixorprime.engineersdecorreforged.client;
 
 /** Pure input-latch regression tests; actual client prediction has a separate runtime test. */
 public final class InsetLightMiningHoldTest {
+   private static int assertions;
+
    @org.junit.Test
    public void completedLampHoldScenarios() {
       main(new String[0]);
    }
 
    public static void main(String[] args) {
+      assertions = 0;
       InsetLightMiningHold hold = new InsetLightMiningHold();
       Object world = new Object();
       Object player = new Object();
@@ -17,12 +20,14 @@ public final class InsetLightMiningHoldTest {
          check(hold.suppress(world, player, true, 12L, true), "held attack cannot fall through after native cooldown");
       }
       check(!hold.suppress(world, player, false, 12L, true), "physical release clears the latch");
+      check(hold.diagnostic().contains("attack released or binding context inactive"), "diagnostics identify inactive key context or release");
       check(!hold.suppress(world, player, true, 12L, true), "fresh deliberate click can mine the retained deck");
       hold.completed(world, player, 12L);
       hold.reset();
       check(!hold.suppress(world, player, true, 12L, true), "release/repress between ticks also permits a fresh click");
       hold.completed(world, player, 12L);
       check(!hold.suppress(world, player, true, 13L, true), "retargeting a different owner is never swallowed");
+      check(hold.diagnostic().contains("target changed"), "diagnostics distinguish retarget from release");
       check(!hold.suppress(world, player, true, 12L, true), "returning after retargeting permits a deliberate new mine");
       hold.completed(world, player, 12L);
       check(!hold.suppress(world, player, true, null, false), "looking into air clears the latch");
@@ -39,6 +44,7 @@ public final class InsetLightMiningHoldTest {
       check(!hold.suppress(world, player, true, 12L, true), "a fresh attempt after a protection denial is allowed");
       hold.completed(world, player, 12L);
       check(!hold.suppress(world, player, true, 12L, false), "an unrelated replacement block clears latch");
+      check(hold.diagnostic().contains("owner replaced"), "diagnostics identify owner replacement");
       check(!hold.suppress(world, player, true, 12L, true), "returning to a replacement cannot resurrect the old latch");
       hold.completed(world, player, 12L);
       check(!hold.suppress(new Object(), player, true, 12L, true), "world changes clear latch even at same coordinates");
@@ -50,10 +56,11 @@ public final class InsetLightMiningHoldTest {
       check(hold.suppress(world, player, true, Long.MAX_VALUE, true), "latest actual completion replaces the previous owner");
       hold.reset();
       check(!hold.suppress(world, player, true, Long.MAX_VALUE, true), "logout reset clears all state");
-      System.out.println("Inset light mining hold: 123 assertions passed");
+      System.out.println("Inset light mining hold: " + assertions + " assertions passed");
    }
 
    private static void check(boolean value, String message) {
+      assertions++;
       if (!value) throw new AssertionError(message);
    }
 }
