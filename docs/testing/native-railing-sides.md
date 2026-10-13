@@ -27,9 +27,11 @@ side flags, without a multipart dependency or additional model assets.
 Steel Catwalk Stairs and Raised Steel Catwalk are outside this change. Their
 existing behavior and assets are unchanged.
 
-Four sides form a continuous perimeter for ordinary ground-level movement, not
-a universal mob cage. The existing collision height is unchanged; jumping,
-flying, climbing or teleporting mobs can require different containment.
+Four sides form a continuous perimeter for ordinary ground movement and normal
+jumping. Physical guardrails now extend 1.5 blocks above the walking surface;
+their visible models and selection shapes remain at their original height.
+Flying, climbing, teleporting or enhanced-movement mobs can require different
+containment. See `selective-railing-mining.md` for targeting and verification.
 
 ## Survival, creative and old worlds
 
@@ -40,9 +42,11 @@ only these purchased additions.
 
 Removing a side refunds one recorded addition when available. Removing the final
 standalone side also returns its base item and removes the block; waterlogged
-railings leave source water behind. Breaking the block returns its ordinary
-base loot plus the recorded additions when the ordinary loot table allows the
-base drop. Full-inventory refunds fall back to a dropped item.
+railings leave source water behind. Left-click mining removes the aimed side
+after normal mining completion, with its ordinary mining/tool/drop restrictions.
+Mining the catwalk floor removes its base plus remaining purchased additions;
+mining the last standalone side removes its base. Full-inventory right-click
+refunds fall back to a dropped item.
 
 The credit count belongs to the whole block, rather than a particular side.
 Removing a formerly free side may release a purchased credit, but total refunds

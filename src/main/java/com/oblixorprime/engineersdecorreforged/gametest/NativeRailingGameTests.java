@@ -18,6 +18,7 @@ import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.NbtUtils;
+import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -851,9 +852,44 @@ public final class NativeRailingGameTests {
       ItemStack held = player.getMainHandItem();
       player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
       helper.assertTrue(player.getInventory().add(held), "test inventory must retain the previous held railings while equipping a tool");
-      helper.assertTrue(player.gameMode.destroyBlock(helper.absolutePos(CENTER)), "native game mode must break the block");
+      // Whole-assembly loot is now collected through its actual components: target the
+      // catwalk floor directly, or mine each standalone edge until the last one removes it.
+      for (int attempt = 0; attempt < 4; attempt++) {
+         BlockState state = helper.getBlockState(CENTER);
+         if (!state.is(catwalk()) && !state.is(railing())) {
+            break;
+         }
+         Direction edge = null;
+         if (state.is(railing())) {
+            edge = Direction.NORTH; // Legacy all-false states visibly contain north.
+            for (int index = 0; index < SIDES.length; index++) {
+               if (state.getValue(SIDES[index])) {
+                  edge = EDGES[index];
+                  break;
+               }
+            }
+         }
+         BlockPos pos = helper.absolutePos(CENTER);
+         double x = pos.getX() + 0.5 + (edge == null ? 0.0 : edge.getStepX() * 0.45);
+         double z = pos.getZ() + 0.5 + (edge == null ? 0.0 : edge.getStepZ() * 0.45);
+         player.setPos(x, pos.getY() + 2.5 - player.getEyeHeight(), z);
+         player.setYRot(0.0F);
+         player.setXRot(90.0F);
+         Vec3 eye = player.getEyePosition();
+         BlockHitResult hit = helper.getLevel().clip(new ClipContext(eye,
+            eye.add(player.getViewVector(1.0F).scale(player.blockInteractionRange())),
+            ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, player));
+         helper.assertValueEqual(hit.getType(), HitResult.Type.BLOCK, "whole-assembly mining needs a real physical target");
+         helper.assertValueEqual(hit.getBlockPos(), pos, "whole-assembly mining must target the current assembly");
+         player.gameMode.handleBlockBreakAction(pos, ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,
+            hit.getDirection(), helper.getLevel().getMaxBuildHeight(), 0);
+         if (!player.gameMode.isCreative()) {
+            helper.assertValueEqual(helper.getBlockState(CENTER), state, "survival START must not instantly mine a component");
+            player.gameMode.destroyBlock(pos);
+         }
+      }
       helper.assertTrue(helper.getBlockState(CENTER).isAir() || helper.getBlockState(CENTER).is(Blocks.WATER),
-         "breaking must remove the original block");
+         "mining the floor or every standalone side must remove the original block");
    }
 
    private static void clickEdge(GameTestHelper helper, ServerPlayer player, BlockPos relative, Direction edge, Direction facing) {
