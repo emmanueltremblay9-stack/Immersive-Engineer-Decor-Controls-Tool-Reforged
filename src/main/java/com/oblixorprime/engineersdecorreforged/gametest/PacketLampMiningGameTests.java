@@ -175,7 +175,14 @@ public final class PacketLampMiningGameTests {
       BlockPos pos = helper.absolutePos(CENTER);
       BlockState expected = fixture.lit().setValue(RaisedCatwalkBlock.VARIANT, fixture.variant()).setValue(RaisedCatwalkBlock.PAID_LIGHT, false);
       helper.assertValueEqual(helper.getBlockState(CENTER), expected, "native packet mining removes only the lamp, retaining the waterlogged deck");
-      helper.assertValueEqual(helper.getLevel().getBlockState(pos.below()), fixture.support(), "native lamp mining must preserve its support");
+      BlockState support = helper.getLevel().getBlockState(pos.below());
+      if (fixture.support().isAir()) {
+         // A waterlogged deck naturally fills the empty cell beneath it during
+         // survival's real mining duration. That fluid is not a removed support.
+         helper.assertTrue(support.isAir() || support.is(Blocks.WATER), "an unsupported deck may emit water but cannot create a solid support");
+      } else {
+         helper.assertValueEqual(support, fixture.support(), "native lamp mining must preserve its solid support exactly");
+      }
       helper.assertValueEqual(helper.getLevel().getBlockState(pos.above()), fixture.rail(), "native lamp mining must preserve railings");
       helper.assertValueEqual(expected.getLightEmission(helper.getLevel(), pos), 0, "removed lamp must stop emitting");
       BlockState reloaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), NbtUtils.writeBlockState(expected));
