@@ -12,8 +12,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.TriState;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -143,10 +145,38 @@ public final class RailingMining {
          && (intent.breakEvent() == null || !intent.breakEvent().isCanceled());
    }
 
+   /** Notify client input only after its lamp-only prediction actually changed the block. */
+   public static void clientInsetLightRemoved(Player player, BlockPos pos) {
+      if (player.level().isClientSide) {
+         NeoForge.EVENT_BUS.post(new InsetLightRemoved(player, pos));
+      }
+   }
+
+   /** No client classes are referenced from the common mining implementation. */
+   public static final class InsetLightRemoved extends Event {
+      private final Player player;
+      private final BlockPos pos;
+
+      private InsetLightRemoved(Player player, BlockPos pos) {
+         this.player = player;
+         this.pos = pos.immutable();
+      }
+
+      public Player player() { return player; }
+      public BlockPos pos() { return pos; }
+   }
+
    @Nullable
    private static PortedBlocks.RailingPart aimedPart(Player player, Level level, BlockPos pos) {
       Vec3 start = player.getEyePosition();
-      Vec3 end = start.add(player.getViewVector(1.0F).scale(player.blockInteractionRange()));
+      // LocalPlayer's camera follows its current yaw. ServerPlayer instead inherits
+      // LivingEntity.getViewYRot, which reads the render head yaw: movement packets
+      // update yRot/xRot before serverAiStep catches yHeadRot up on a later tick.
+      // A click in that interval must select the same lamp/rail as the client, not
+      // the deck intersected by the stale head pose. Keep the client's camera rules
+      // (including riding), but use the accepted packet rotation on the server.
+      Vec3 direction = level.isClientSide ? player.getViewVector(1.0F) : player.getLookAngle();
+      Vec3 end = start.add(direction.scale(player.blockInteractionRange()));
       return PortedBlocks.selectRailingPart(level, pos, start, end, player);
    }
 

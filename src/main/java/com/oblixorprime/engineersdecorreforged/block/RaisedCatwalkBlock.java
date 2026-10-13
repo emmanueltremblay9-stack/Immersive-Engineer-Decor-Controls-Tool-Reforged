@@ -186,17 +186,21 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
          return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
       }
       BlockState changed = withPoleSupport(state.setValue(VARIANT, 0).setValue(PAID_LIGHT, false), level, pos);
-      if (level.setBlock(pos, changed, Block.UPDATE_ALL) && !level.isClientSide) {
-         if (!player.getAbilities().instabuild && willHarvest) {
-            player.awardStat(Stats.BLOCK_MINED.get(this));
-            player.causeFoodExhaustion(0.005F);
-            if (state.getValue(PAID_LIGHT)) {
-               // Native tool authorization, doTileDrops and BlockDropsEvent all remain authoritative.
-               Block.dropResources(ModBlocks.IRON_INSET_LIGHT.get().defaultBlockState(), level, pos, null,
-                  player, completion.tool());
+      if (level.setBlock(pos, changed, Block.UPDATE_ALL)) {
+         if (level.isClientSide) {
+            RailingMining.clientInsetLightRemoved(player, pos);
+         } else {
+            if (!player.getAbilities().instabuild && willHarvest) {
+               player.awardStat(Stats.BLOCK_MINED.get(this));
+               player.causeFoodExhaustion(0.005F);
+               if (state.getValue(PAID_LIGHT)) {
+                  // Native tool authorization, doTileDrops and BlockDropsEvent all remain authoritative.
+                  Block.dropResources(ModBlocks.IRON_INSET_LIGHT.get().defaultBlockState(), level, pos, null,
+                     player, completion.tool());
+               }
             }
+            level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
          }
-         level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
       }
       // Keep the deck, its support and neighbors; suppress whole-catwalk playerDestroy/loot.
       return false;

@@ -6,7 +6,7 @@ Holding Steel Railing and using an ordinary right click on either lateral half o
 
 The existing `left_railing`, `right_railing`, `facing` and `waterlogged` properties and model files remain unchanged. New `edited_stair_sides` bits distinguish a deliberately installed/removed side from an untouched legacy automatic neighbor connection. Missing properties in older saves default to no edits/no paid credits, so legacy geometry does not mint items. `paid_railings` is a fungible purchased-material balance, capped at the number of visible sides, just as for flat catwalks.
 
-Both tread collision tops now match the unchanged stair model: 4/16 and 12/16. Selection follows a narrow, stepped approximation of the existing sloped railing side envelope. Side collision reaches 24/16 above each tread, with the center passage left clear.
+Both tread collision tops now match the unchanged stair model: 4/16 and 12/16. Selection follows a narrow, stepped approximation of the existing sloped railing side envelope. Side collision uses one cap at Y=36/16 along each complete installed side, 24/16 above the highest tread, with the center passage left clear. The visible outline remains sloped. A lower collision cap following each tread left the downhill half only one block above a player taking off from the upper tread, allowing a diagonal jump over it.
 
 ## Automated coverage
 
@@ -41,3 +41,7 @@ Additional client acceptance checks:
 4. Check just inside/outside reach, the transition across Y=1, aiming above the rendered top, and first/third-person cameras. No invisible collision-height target or extended reach is allowed
 5. Repeat cancellation/protected-area checks and verify ordinary blocks, entities and existing standalone rails keep their usual targeting and mining. High overhang targeting does not relax native right-click packet validation; in-place side editing remains available by clicking the stair's lateral half
 6. Run the dedicated-server suite to verify client-only Mixin isolation. Review compatibility with any mod that also transforms `GameRenderer.pick` before calling client QA complete
+
+## Elevated movement regression
+
+`ElevatedStairRailingMovementGameTests` adds a dedicated 11³ fixture containing a suspended stair, its bottom-mounted catwalk landings, and air outside the side barriers. It drives real server `Entity.move` with ordinary step resolution and a deterministic vanilla-strength jump trajectory from both tread heights, in all four orientations and on both sides. The high-to-low diagonal route crosses the tread seam while airborne; removing only the attempted side must allow the same route to exit. Every movement checks body containment, nonintersection, ground contact after landing, and unchanged block/payment state. These tests exercise collision, not the client's auto-jump input algorithm. Runtime pass/fail evidence must come from CI on the candidate commit.
