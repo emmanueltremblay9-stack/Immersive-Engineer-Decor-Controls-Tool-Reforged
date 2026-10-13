@@ -48,7 +48,10 @@ public final class EngineerManualShortcut {
    @SubscribeEvent(priority = EventPriority.LOWEST)
    public static void keyPressed(ScreenEvent.KeyPressed.Post event) {
       // Post is not fired for input consumed by a screen or a cancelled Pre event.
-      arm(event.getScreen(), InputConstants.getKey(event.getKeyCode(), event.getScanCode()), event.getKeyCode());
+      InputConstants.Key key = OPEN.getKey().getType() == InputConstants.Type.SCANCODE
+            ? InputConstants.Type.SCANCODE.getOrCreate(event.getScanCode())
+            : InputConstants.getKey(event.getKeyCode(), event.getScanCode());
+      arm(event.getScreen(), key, event.getKeyCode());
    }
 
    @SubscribeEvent(priority = EventPriority.LOWEST)
@@ -67,7 +70,10 @@ public final class EngineerManualShortcut {
 
    @SubscribeEvent
    public static void keyReleased(ScreenEvent.KeyReleased.Pre event) {
-      if (InputConstants.getKey(event.getKeyCode(), event.getScanCode()).equals(armedKey)) disarm();
+      InputConstants.Key key = armedKey != null && armedKey.getType() == InputConstants.Type.SCANCODE
+            ? InputConstants.Type.SCANCODE.getOrCreate(event.getScanCode())
+            : InputConstants.getKey(event.getKeyCode(), event.getScanCode());
+      if (key.equals(armedKey)) disarm();
    }
 
    @SubscribeEvent

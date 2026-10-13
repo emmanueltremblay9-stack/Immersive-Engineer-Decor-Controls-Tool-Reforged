@@ -27,10 +27,10 @@ strict parity for all older keys.
 
 ## Automated checks
 
-`./gradlew test` includes `validateManualShortcutHold`: 16 standalone assertions
+`./gradlew test` runs a JUnit hold-state regression suite: 16 assertions
 cover threshold timing, one-shot triggering, release/rearm, changing the hovered
 target, leaving the tooltip, interrupted input, and unmapped items. It has no
-Minecraft runtime dependency. `compileJava`, resource checks, dedicated
+Minecraft runtime dependency. JUnit 4.13.2 is test-only, not shipped in the mod. `compileJava`, resource checks, dedicated
 GameTests and aggregate `build` are also required in CI.
 
 ## Client validation still required before release

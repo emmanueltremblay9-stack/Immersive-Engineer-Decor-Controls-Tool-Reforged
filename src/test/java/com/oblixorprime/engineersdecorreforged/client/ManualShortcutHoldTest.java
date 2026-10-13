@@ -1,7 +1,12 @@
 package com.oblixorprime.engineersdecorreforged.client;
 
-/** Executed by validateManualShortcutHold; no Minecraft bootstrap needed. */
+/** JUnit entry point plus standalone runner; no Minecraft bootstrap needed. */
 public final class ManualShortcutHoldTest {
+   @org.junit.Test
+   public void holdScenarios() {
+      main(new String[0]);
+   }
+
    public static void main(String[] args) {
       ManualShortcutHold<String> hold = new ManualShortcutHold<>();
       check(!hold.update("a", false, 0), "not pressed");

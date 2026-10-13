@@ -62,6 +62,7 @@ neoForge {
 }
 
 dependencies {
+    testImplementation "junit:junit:4.13.2"
     implementation "blusunrize.immersiveengineering:ImmersiveEngineering:${immersive_engineering_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     if (providers.gradleProperty('include_jei_runtime').map { it.toBoolean() }.getOrElse(true)) {
@@ -316,12 +317,3 @@ idea {
         downloadJavadoc = true
     }
 }
-
-// Pure state-machine coverage, also executable without a Minecraft runtime.
-tasks.register('validateManualShortcutHold', JavaExec) {
-    group = 'verification'
-    dependsOn tasks.named('testClasses')
-    classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.oblixorprime.engineersdecorreforged.client.ManualShortcutHoldTest'
-}
-tasks.named('test') { dependsOn tasks.named('validateManualShortcutHold') }
