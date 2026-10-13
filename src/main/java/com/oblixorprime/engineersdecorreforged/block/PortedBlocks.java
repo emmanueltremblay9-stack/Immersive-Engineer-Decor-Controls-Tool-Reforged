@@ -583,7 +583,12 @@ public final class PortedBlocks {
 
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
          if (!level.isClientSide) {
-            this.setOpen(level, pos, state, !(Boolean)state.getValue(PortedBlocks.OPEN));
+            boolean open = !state.getValue(PortedBlocks.OPEN);
+            this.setOpen(level, pos, state, open);
+            BlockState changed = level.getBlockState(pos);
+            if (changed.is(this) && changed.getValue(PortedBlocks.OPEN) == open) {
+               level.gameEvent(player, open ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
+            }
          }
 
          return InteractionResult.SUCCESS;

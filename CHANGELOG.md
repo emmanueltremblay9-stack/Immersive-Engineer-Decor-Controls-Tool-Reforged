@@ -4,6 +4,9 @@ All notable reconstruction, repair, and validation changes for this project are 
 
 ## [1.1.57-reconstructed] - Unreleased candidate
 
+### Added
+- Added click synchronization for adjacent matching pairs of native-compatible doors and fence gates, including Old Industrial Wood Door and Steel Mesh Fence Gate. Supports inherited vanilla interaction methods; custom interaction overrides and custom early-use items are excluded. Respects companion interaction vetoes, limits synchronization to one valid pair, and does not add redstone propagation.
+
 ### Fixed
 - Corrected Factory Hopper placement/output direction and extraction from adjacent vanilla inventories (#22).
 - Corrected Steel Floor Grating collision height (#23) and Steel Double T Support collision geometry (#24).
