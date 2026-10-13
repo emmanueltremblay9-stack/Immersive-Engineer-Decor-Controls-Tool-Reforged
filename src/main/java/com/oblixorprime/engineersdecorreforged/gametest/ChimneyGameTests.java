@@ -305,6 +305,186 @@ public final class ChimneyGameTests {
       helper.succeed();
    }
 
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void chimney_heads_stack_without_gaps_and_emit_only_at_the_top(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos base = helper.absolutePos(CENTER);
+      var player = helper.makeMockPlayer(GameType.CREATIVE);
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         player.setYRot(facing.toYRot());
+         for (int height : new int[] {2, 3, 5}) {
+            for (int y = 0; y <= 6; y++) level.setBlock(base.above(y), Blocks.AIR.defaultBlockState(), 2);
+            BlockState trunk = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEYTRUNK.get().defaultBlockState().setValue(StairBlock.FACING, facing);
+            level.setBlock(base.below(), trunk, 2);
+            for (int y = 0; y < height; y++) {
+               BlockPos support = base.above(y - 1);
+               BlockState lower = level.getBlockState(support);
+               Vec3 rim = rotate(new Vec3(4.5 / 16, 1, 4.0 / 16), facing);
+               BlockHitResult hit = lower.getShape(level, support).clip(
+                  Vec3.atLowerCornerOf(support).add(rim.x, 2, rim.z),
+                  Vec3.atLowerCornerOf(support).add(rim.x, 0, rim.z), support);
+               helper.assertTrue(hit != null && hit.getDirection() == Direction.UP, "actual rim remains targetable while stacking heads");
+               ItemStack item = new ItemStack(ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get());
+               player.setItemInHand(InteractionHand.MAIN_HAND, item);
+               helper.assertTrue(((BlockItem)item.getItem()).place(
+                  new BlockPlaceContext(level, player, InteractionHand.MAIN_HAND, item, hit)).consumesAction(),
+                  "next head places directly above the existing short head");
+            }
+            VoxelShape combined = Shapes.empty();
+            for (int y = 0; y < height; y++) {
+               BlockPos pos = base.above(y);
+               BlockState state = level.getBlockState(pos);
+               helper.assertTrue(state.is(ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get()), "all stack elements use the same existing chimney item");
+               helper.assertValueEqual(state.getValue(ChimneyBlock.STACKED), y < height - 1, "only lower heads extend");
+               // All heads are deliberately enabled: suppression must be structural, not merely zero intensity.
+               state = state.setValue(ChimneyBlock.POWER, 7);
+               level.setBlock(pos, state, 2);
+               helper.assertValueEqual(ChimneyBlock.shouldEmitSmoke(state, level, pos), y == height - 1,
+                  "only the uppermost enabled head emits smoke");
+               combined = Shapes.or(combined, state.getCollisionShape(level, pos).move(0, y, 0));
+               var saved = NbtUtils.writeBlockState(state);
+               helper.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved), state,
+                  "stacked flag and per-head intensity survive NBT reload");
+            }
+            VoxelShape joinedWall = Shapes.box(0.249, 0, 0.249, 0.251, height - 1 + 6.0 / 16, 0.251);
+            helper.assertFalse(Shapes.joinIsNotEmpty(joinedWall, combined, BooleanOp.ONLY_FIRST),
+               "adaptive walls fill every former 10/16-block vertical gap");
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void head_extension_updates_when_upper_heads_are_added_or_removed(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos pos = helper.absolutePos(CENTER);
+      var cap = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get();
+      level.setBlock(pos, cap.defaultBlockState().setValue(ChimneyBlock.POWER, 6), 3);
+      helper.assertFalse(level.getBlockState(pos).getValue(ChimneyBlock.STACKED), "isolated head is short");
+      level.setBlock(pos.above(), cap.defaultBlockState().setValue(ChimneyBlock.POWER, 8), 3);
+      helper.assertTrue(level.getBlockState(pos).getValue(ChimneyBlock.STACKED), "placing an upper head extends lower walls");
+      helper.assertFalse(ChimneyBlock.shouldEmitSmoke(level.getBlockState(pos), level, pos), "covered head is silent");
+      level.setBlock(pos.above(2), cap.defaultBlockState().setValue(ChimneyBlock.POWER, 10), 3);
+      helper.assertTrue(level.getBlockState(pos.above()).getValue(ChimneyBlock.STACKED), "middle head extends too");
+      level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 3);
+      helper.assertFalse(level.getBlockState(pos).getValue(ChimneyBlock.STACKED), "a gap breaks the chain even if another head remains higher up");
+      level.setBlock(pos, level.getBlockState(pos).setValue(ChimneyBlock.POWER, 6), 2);
+      helper.assertTrue(ChimneyBlock.shouldEmitSmoke(level.getBlockState(pos), level, pos), "enabled lower chain has its own top after separation");
+      level.setBlock(pos.above(), cap.defaultBlockState().setValue(ChimneyBlock.POWER, 8), 3);
+      helper.assertTrue(level.getBlockState(pos).getValue(ChimneyBlock.STACKED), "reconnecting the middle restores extension");
+      helper.assertFalse(ChimneyBlock.shouldEmitSmoke(level.getBlockState(pos), level, pos), "reconnected lower head stops emitting");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void ordinary_blocks_do_not_form_a_chimney_chain(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos pos = helper.absolutePos(CENTER);
+      var cap = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get();
+      level.setBlock(pos, cap.defaultBlockState(), 3);
+      for (var other : new net.minecraft.world.level.block.Block[] {Blocks.STONE, Blocks.GLASS, Blocks.OAK_SLAB}) {
+         level.setBlock(pos.above(), other.defaultBlockState(), 3);
+         BlockState state = level.getBlockState(pos).setValue(ChimneyBlock.POWER, 5);
+         level.setBlock(pos, state, 2);
+         helper.assertFalse(state.getValue(ChimneyBlock.STACKED), "ordinary blocks do not extend a chimney head");
+         helper.assertTrue(ChimneyBlock.shouldEmitSmoke(state, level, pos), "ordinary obstructions do not introduce a new smoke rule");
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void adaptive_head_models_match_outline_collision_and_save_state(GameTestHelper helper) throws Exception {
+      var cap = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get();
+      for (boolean stacked : new boolean[] {false, true}) {
+         String suffix = stacked ? "extended_model" : "model";
+         String resource = "/assets/" + EngineersDecorReforged.MOD_ID + "/models/block/roof/dark_shingle_roof_chimney_" + suffix + ".json";
+         VoxelShape expected = Shapes.empty();
+         try (var input = ChimneyGameTests.class.getResourceAsStream(resource)) {
+            helper.assertTrue(input != null, "adaptive model exists");
+            var elements = JsonParser.parseReader(new InputStreamReader(input, StandardCharsets.UTF_8))
+               .getAsJsonObject().getAsJsonArray("elements");
+            for (var entry : elements) {
+               var a = entry.getAsJsonObject().getAsJsonArray("from");
+               var b = entry.getAsJsonObject().getAsJsonArray("to");
+               expected = Shapes.or(expected, Shapes.box(a.get(0).getAsDouble() / 16, a.get(1).getAsDouble() / 16, a.get(2).getAsDouble() / 16,
+                  b.get(0).getAsDouble() / 16, b.get(1).getAsDouble() / 16, b.get(2).getAsDouble() / 16));
+            }
+         }
+         for (int power = 0; power <= 15; power++) {
+            BlockState state = cap.defaultBlockState().setValue(ChimneyBlock.STACKED, stacked).setValue(ChimneyBlock.POWER, power);
+            var saved = NbtUtils.writeBlockState(state);
+            helper.assertValueEqual(BlockState.CODEC.parse(NbtOps.INSTANCE, saved).getOrThrow(), state, "adaptive geometry and independent intensity survive codec reload");
+            helper.assertFalse(Shapes.joinIsNotEmpty(expected, state.getShape(helper.getLevel(), helper.absolutePos(CENTER)), BooleanOp.NOT_SAME),
+               "selection follows the actual adaptive model");
+            helper.assertFalse(Shapes.joinIsNotEmpty(expected, state.getCollisionShape(helper.getLevel(), helper.absolutePos(CENTER)), BooleanOp.NOT_SAME),
+               "collision follows the actual adaptive model");
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void stacked_top_retains_click_and_redstone_controls(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos lower = helper.absolutePos(CENTER);
+      BlockPos top = lower.above();
+      var cap = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get();
+      level.setBlock(lower, cap.defaultBlockState().setValue(ChimneyBlock.POWER, 5), 3);
+      level.setBlock(top, cap.defaultBlockState().setValue(ChimneyBlock.POWER, 5), 3);
+      var player = helper.makeMockPlayer(GameType.CREATIVE);
+      var hit = new BlockHitResult(Vec3.atCenterOf(top), Direction.UP, top, false);
+      level.getBlockState(top).useWithoutItem(level, player, hit);
+      helper.assertValueEqual(level.getBlockState(top).getValue(ChimneyBlock.POWER), 6, "top remains adjustable by click");
+      helper.assertTrue(ChimneyBlock.shouldEmitSmoke(level.getBlockState(top), level, top), "enabled top emits");
+      level.setBlock(top.east(), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
+      helper.assertValueEqual(level.getBlockState(top).getValue(ChimneyBlock.POWER), 15, "top still responds to redstone");
+      level.setBlock(top.east(), Blocks.AIR.defaultBlockState(), 3);
+      helper.assertValueEqual(level.getBlockState(top).getValue(ChimneyBlock.POWER), 0, "removed signal switches top off");
+      helper.assertFalse(ChimneyBlock.shouldEmitSmoke(level.getBlockState(top), level, top), "off top emits nothing");
+      helper.assertFalse(ChimneyBlock.shouldEmitSmoke(level.getBlockState(lower), level, lower), "lower head does not take over when top is off");
+      helper.succeed();
+   }
+
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void stacking_preserves_manual_settings_but_real_redstone_changes_take_control(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos pos = helper.absolutePos(CENTER);
+      BlockPos source = pos.east();
+      var cap = ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get();
+      level.setBlock(pos, cap.defaultBlockState().setValue(ChimneyBlock.POWER, 9), 3);
+      for (int cycle = 0; cycle < 2; cycle++) {
+         level.setBlock(pos.above(), cap.defaultBlockState().setValue(ChimneyBlock.POWER, 5), 3);
+         helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 9, "adding a head does not erase the lower head's manual intensity");
+         level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 3);
+         helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 9, "uncovering restores emission at the retained intensity");
+         helper.assertTrue(ChimneyBlock.shouldEmitSmoke(level.getBlockState(pos), level, pos), "newly exposed top resumes smoke");
+      }
+      level.setBlock(source.below(), Blocks.STONE.defaultBlockState(), 2);
+      level.setBlock(source, Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE.defaultBlockState().setValue(BlockStateProperties.POWER, 12), 3);
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 12, "a true incoming signal change takes control");
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.INPUT_POWER), 12, "last input is tracked independently");
+      level.setBlock(pos.above(), cap.defaultBlockState(), 3);
+      level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 3);
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 12, "structural changes do not modify an active redstone setting");
+      var player = helper.makeMockPlayer(GameType.CREATIVE);
+      level.getBlockState(pos).useWithoutItem(level, player, new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false));
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 13, "explicit click can still adjust intensity as before");
+      BlockState beforeSave = level.getBlockState(pos);
+      var saved = NbtUtils.writeBlockState(beforeSave);
+      var loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved);
+      helper.assertValueEqual(loaded, beforeSave, "manual intensity and observed signal both survive reload");
+      level.setBlock(pos, loaded, 2);
+      level.updateNeighborsAt(source, Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 13, "unchanged signal after reload is not a new redstone command");
+      level.setBlock(source, Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE.defaultBlockState().setValue(BlockStateProperties.POWER, 4), 3);
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 4, "changed analog input updates intensity");
+      level.setBlock(source, Blocks.AIR.defaultBlockState(), 3);
+      helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), 0, "real signal removal still switches smoke off");
+      helper.succeed();
+   }
+
    private static Vec3 rotate(Vec3 point, Direction facing) {
       return switch (facing) {
          case EAST -> point;

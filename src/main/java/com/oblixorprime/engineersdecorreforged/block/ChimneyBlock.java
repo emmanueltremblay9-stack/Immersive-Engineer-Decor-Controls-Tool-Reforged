@@ -14,27 +14,38 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.SignalGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
 
 /** Restores Engineer's Decor's adjustable cosmetic chimney (Stefan Wilhelm / wile, MIT). */
 public final class ChimneyBlock extends Block {
    public static final MapCodec<ChimneyBlock> CODEC = simpleCodec(ChimneyBlock::new);
    public static final IntegerProperty POWER = BlockStateProperties.POWER;
-   private static final VoxelShape SHAPE = box(3, 0, 3, 13, 6, 13);
+   public static final BooleanProperty STACKED = BooleanProperty.create("stacked");
+   public static final IntegerProperty INPUT_POWER = IntegerProperty.create("input_power", 0, 15);
+   private static final VoxelShape SHORT_SHAPE = chimneyShape(6);
+   private static final VoxelShape EXTENDED_SHAPE = chimneyShape(16);
+
+   private static VoxelShape chimneyShape(double height) {
+      return Shapes.or(box(3, 0, 3, 13, height, 5), box(3, 0, 11, 13, height, 13),
+         box(3, 0, 5, 5, height, 11), box(11, 0, 5, 13, height, 11), box(5, 0, 5, 11, 1, 11));
+   }
 
    public ChimneyBlock(Properties properties) {
       super(properties);
       // Old saves have no power property: retain their silent state until clicked or powered.
       // Also avoids smoke in item/model previews, as in the original implementation.
-      registerDefaultState(stateDefinition.any().setValue(POWER, 0));
+      registerDefaultState(stateDefinition.any().setValue(POWER, 0).setValue(STACKED, false).setValue(INPUT_POWER, 0));
    }
 
    @Override
@@ -44,18 +55,34 @@ public final class ChimneyBlock extends Block {
 
    @Override
    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-      builder.add(POWER);
+      builder.add(POWER, STACKED, INPUT_POWER);
    }
 
    @Override
    public BlockState getStateForPlacement(BlockPlaceContext context) {
       int signal = context.getLevel().getBestNeighborSignal(context.getClickedPos());
-      return defaultBlockState().setValue(POWER, signal == 0 ? 5 : signal);
+      return defaultBlockState().setValue(POWER, signal == 0 ? 5 : signal).setValue(INPUT_POWER, signal)
+         .setValue(STACKED, hasChimneyAbove(context.getLevel(), context.getClickedPos()));
    }
 
    @Override
    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-      return SHAPE;
+      return state.getValue(STACKED) ? EXTENDED_SHAPE : SHORT_SHAPE;
+   }
+
+   @Override
+   public BlockState updateShape(BlockState state, Direction side, BlockState neighbor, LevelAccessor level,
+                                 BlockPos pos, BlockPos neighborPos) {
+      return side == Direction.UP ? state.setValue(STACKED, neighbor.getBlock() instanceof ChimneyBlock) : state;
+   }
+
+   private static boolean hasChimneyAbove(BlockGetter level, BlockPos pos) {
+      return level.getBlockState(pos.above()).getBlock() instanceof ChimneyBlock;
+   }
+
+   /** Uses the actual neighbor too, so legacy states cannot leak smoke through another chimney head. */
+   public static boolean shouldEmitSmoke(BlockState state, BlockGetter level, BlockPos pos) {
+      return state.getBlock() instanceof ChimneyBlock && state.getValue(POWER) > 0 && !hasChimneyAbove(level, pos);
    }
 
    @Override
@@ -73,7 +100,8 @@ public final class ChimneyBlock extends Block {
 
    private static void cycleIntensity(BlockState state, Level level, BlockPos pos) {
       if (!level.isClientSide) {
-         level.setBlock(pos, state.setValue(POWER, (state.getValue(POWER) + 1) & 15), UPDATE_ALL);
+         level.setBlock(pos, state.setValue(POWER, (state.getValue(POWER) + 1) & 15)
+            .setValue(STACKED, hasChimneyAbove(level, pos)).setValue(INPUT_POWER, level.getBestNeighborSignal(pos)), UPDATE_ALL);
       }
    }
 
@@ -81,8 +109,14 @@ public final class ChimneyBlock extends Block {
    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean moving) {
       if (level.isClientSide) return;
       int signal = level.getBestNeighborSignal(pos);
-      if (signal != state.getValue(POWER)) {
-         level.setBlock(pos, state.setValue(POWER, signal), UPDATE_CLIENTS);
+      // Structural notifications must not erase a manual setting. Only a changed
+      // incoming signal takes control again, including a change back to zero.
+      BlockState updated = state.setValue(STACKED, hasChimneyAbove(level, pos));
+      if (signal != state.getValue(INPUT_POWER)) {
+         updated = updated.setValue(POWER, signal).setValue(INPUT_POWER, signal);
+      }
+      if (updated != state) {
+         level.setBlock(pos, updated, UPDATE_CLIENTS);
       }
    }
 
@@ -93,7 +127,7 @@ public final class ChimneyBlock extends Block {
 
    @Override
    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-      if (level.isClientSide && state.is(this)) {
+      if (level.isClientSide && state.is(this) && shouldEmitSmoke(state, level, pos)) {
          emitSmoke(state.getValue(POWER), pos, random, level::addParticle);
       }
    }
