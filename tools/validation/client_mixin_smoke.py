@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -14,6 +15,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import zipfile
 
 
 TARGET = "net.minecraft.client.renderer.GameRenderer"
@@ -54,8 +56,81 @@ def invocations(body: str) -> list[tuple[str, str]]:
     return re.findall(r"\b(?:invokevirtual|invokespecial|invokestatic)\s+[^\n]*// Method (\S+?):(\S+)", body)
 
 
+def baseline_return_count(disassembly: str) -> int:
+    methods = method_bodies(disassembly)
+    pick = methods.get(("pick", PICK_DESCRIPTOR), "")
+    if not pick:
+        raise SmokeFailure("Mapped baseline lacks the exact native pick method")
+    if any(HANDLER_SUFFIX in name or any(HELPER in called for called, _ in invocations(body))
+           for (name, _), body in methods.items()):
+        raise SmokeFailure("Mapped baseline already contains the railing Mixin")
+    count = len(re.findall(r"^\s*\d+: areturn\b", pick, re.MULTILINE))
+    if count < 1:
+        raise SmokeFailure("Mapped baseline pick has no object return instructions")
+    return count
+
+
+def extract_baseline(artifacts: Path, destination: Path) -> dict:
+    """Require one unique untransformed class payload in the actual MDG artifacts."""
+    entry = TARGET.replace(".", "/") + ".class"
+    candidates = {}
+    for jar in sorted(artifacts.rglob("*.jar")):
+        try:
+            with zipfile.ZipFile(jar) as archive:
+                matches = [item for item in archive.infolist() if item.filename == entry]
+                if len(matches) > 1:
+                    raise SmokeFailure(f"Duplicate baseline class entry in {jar}")
+                if matches:
+                    payload = archive.read(matches[0])
+                    digest = hashlib.sha256(payload).hexdigest()
+                    candidates.setdefault(digest, {"payload": payload, "jars": []})["jars"].append(str(jar))
+        except zipfile.BadZipFile as error:
+            raise SmokeFailure(f"Invalid Minecraft artifact {jar}: {error}") from error
+    # A combined classes/sources JAR may duplicate the identical compiled class. It
+    # is still one baseline; differing candidates must never be selected by guesswork.
+    if len(candidates) != 1:
+        found = {digest: candidate["jars"] for digest, candidate in candidates.items()}
+        raise SmokeFailure(f"Expected one unique GameRenderer baseline in {artifacts}; found {found}")
+    digest, candidate = next(iter(candidates.items()))
+    destination.write_bytes(candidate["payload"])
+    return {"baseline_class_sha256": digest, "baseline_jars": candidate["jars"], "baseline_class_entry": entry}
+
+
+def evidence_diagnostics(disassembly: str, baseline: str = "", max_lines: int = 240) -> str:
+    """Expose bounded parsed and raw linkage evidence when an ephemeral CI proof fails."""
+    methods = method_bodies(disassembly)
+    pick = methods.get(("pick", PICK_DESCRIPTOR), "")
+    candidates = [(name, descriptor, body) for (name, descriptor), body in methods.items()
+                  if HANDLER_SUFFIX in name or descriptor == HANDLER_DESCRIPTOR
+                  or any(HELPER in called for called, _ in invocations(body))]
+    try:
+        baseline_count = baseline_return_count(baseline)
+    except SmokeFailure as error:
+        baseline_count = str(error)
+    summary = {"parsed_method_count": len(methods), "exact_pick_found": bool(pick),
+               "baseline_areturn_count": baseline_count,
+               "pick_calls": invocations(pick),
+               "pick_areturn_count": len(re.findall(r"^\s*\d+: areturn\b", pick, re.MULTILINE)),
+               "handler_candidates": [{"name": name, "descriptor": descriptor,
+                                       "calls": invocations(body)}
+                                      for name, descriptor, body in candidates[:4]]}
+    lines = ["--- Parsed GameRenderer linkage diagnostics ---", json.dumps(summary, sort_keys=True)]
+    lines.append("--- Raw handler/helper references (parser-independent) ---")
+    lines.extend([line for line in disassembly.splitlines() if HANDLER_SUFFIX in line or HELPER in line][:24])
+    if pick:
+        raw = pick.splitlines()
+        lines.append("--- Exact native pick disassembly (head/tail if bounded) ---")
+        lines.extend(raw if len(raw) <= 150 else raw[:50] + ["... middle omitted ..."] + raw[-100:])
+    for name, descriptor, body in candidates[:4]:
+        lines.append(f"--- Candidate {name}{descriptor} ---")
+        lines.extend(body.splitlines()[:60])
+    if len(lines) > max_lines:
+        lines = lines[:max_lines - 1] + ["... linkage diagnostics truncated ..."]
+    return "\n".join(lines)
+
+
 def validate_evidence(disassembly: str, class_log: str, client_log: str,
-                      return_code: int | None, timed_out: bool, crash_files: list[Path]) -> dict:
+                      return_code: int | None, timed_out: bool, crash_files: list[Path], baseline: str) -> dict:
     if not timed_out and return_code != 0:
         raise SmokeFailure(f"Client exited unsuccessfully before the smoke deadline: {return_code}")
     if crash_files:
@@ -72,9 +147,11 @@ def validate_evidence(disassembly: str, class_log: str, client_log: str,
         raise SmokeFailure("The transformed class lacks the exact native pick method")
     handlers = [(name.rsplit(".", 1)[-1], descriptor) for name, descriptor in invocations(pick)
                 if name.rsplit(".", 1)[-1].endswith(HANDLER_SUFFIX)]
-    # Minecraft 1.21.1 has both entity and block return branches. Both must be transformed.
-    if len(handlers) < 2:
-        raise SmokeFailure("Native pick must invoke the railing handler at both original return branches")
+    # NeoForm may recompile source branches to one shared return instruction. Require
+    # every actual return from this build's untransformed artifact, not a guessed count.
+    expected = baseline_return_count(baseline)
+    if len(handlers) != expected:
+        raise SmokeFailure(f"Native pick must invoke the railing handler at every mapped baseline return (matched {len(handlers)} calls; baseline {expected})")
     for name, descriptor in handlers:
         if descriptor != HANDLER_DESCRIPTOR:
             raise SmokeFailure("The merged railing handler has the wrong descriptor")
@@ -82,7 +159,7 @@ def validate_evidence(disassembly: str, class_log: str, client_log: str,
         if (HELPER, HELPER_DESCRIPTOR) not in invocations(body):
             raise SmokeFailure("The called railing handler does not invoke the exact targeting helper")
     return {"target": TARGET, "native_pick_descriptor": PICK_DESCRIPTOR,
-            "injected_return_calls": len(handlers), "jvm_class_defined": True,
+            "baseline_areturn_count": expected, "injected_return_calls": len(handlers), "jvm_class_defined": True,
             "scope": "Client transformation and class loading only; interactive gameplay is untested"}
 
 
@@ -212,6 +289,13 @@ gradle.projectsEvaluated {
                                     prepare_log, args.prepare_timeout)
         if expired or code != 0:
             raise SmokeFailure(f"Client preparation failed (exit={code}, deadline={expired}); see {prepare_log}")
+        baseline_class = evidence / "GameRenderer.baseline.class"
+        baseline_proof = extract_baseline(project / "build/moddev/artifacts", baseline_class)
+        baseline_result = subprocess.run(["javap", "-p", "-s", "-c", str(baseline_class)], text=True,
+                                         capture_output=True, check=True, timeout=30)
+        (evidence / "GameRenderer.baseline.javap.txt").write_text(baseline_result.stdout, encoding="utf-8")
+        baseline_proof["baseline_areturn_count"] = baseline_return_count(baseline_result.stdout)
+        print(json.dumps(baseline_proof, indent=2), flush=True)
         client_log = evidence / "client.log"
         code, expired = run_bounded(["xvfb-run", "-a", "-s", "-screen 0 1280x720x24"] + gradle + ["runClient"],
                                     project, env, client_log, args.timeout)
@@ -230,13 +314,19 @@ gradle.projectsEvaluated {
         crashes = list(game.glob("crash-reports/*")) + list(evidence.rglob("hs_err_pid*.log"))
         proof = validate_evidence(result.stdout,
                                   class_log.read_text(encoding="utf-8", errors="replace") if class_log.is_file() else "",
-                                  logs, code, expired, crashes)
+                                  logs, code, expired, crashes, baseline_result.stdout)
+        proof.update(baseline_proof)
         proof.update({"client_reached_deadline": expired, "client_exit_code": code})
         (evidence / "proof.json").write_text(json.dumps(proof, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(proof, indent=2))
         return 0
     except (SmokeFailure, OSError, subprocess.SubprocessError) as error:
         print(f"Client transformation/load smoke FAILED: {error}\nEvidence: {evidence}", file=sys.stderr)
+        disassembly = evidence / "GameRenderer.javap.txt"
+        baseline = evidence / "GameRenderer.baseline.javap.txt"
+        if disassembly.is_file() or baseline.is_file():
+            print(evidence_diagnostics(disassembly.read_text(encoding="utf-8", errors="replace") if disassembly.is_file() else "",
+                                       baseline.read_text(encoding="utf-8", errors="replace") if baseline.is_file() else ""), file=sys.stderr)
         # Surface bounded diagnostics in Actions; the ephemeral runner's paths alone are not actionable.
         for diagnostic in (prepare_log, evidence / "client.observed.log", game / "logs/latest.log"):
             if diagnostic.is_file():
