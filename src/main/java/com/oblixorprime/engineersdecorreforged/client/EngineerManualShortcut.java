@@ -37,6 +37,8 @@ public final class EngineerManualShortcut {
    private static final ManualShortcutHold<Target> HOLD = new ManualShortcutHold<>();
    private static Screen armedScreen;
    private static InputConstants.Key armedKey;
+   private static int armedKeyboardCode = GLFW.GLFW_KEY_UNKNOWN;
+   private static long retryManualAfter;
    private static Target hovered;
    private static ManualInstance.ManualLink hoveredLink;
    private static ManualScreen preparedScreen;
@@ -46,18 +48,19 @@ public final class EngineerManualShortcut {
    @SubscribeEvent(priority = EventPriority.LOWEST)
    public static void keyPressed(ScreenEvent.KeyPressed.Post event) {
       // Post is not fired for input consumed by a screen or a cancelled Pre event.
-      arm(event.getScreen(), InputConstants.getKey(event.getKeyCode(), event.getScanCode()));
+      arm(event.getScreen(), InputConstants.getKey(event.getKeyCode(), event.getScanCode()), event.getKeyCode());
    }
 
    @SubscribeEvent(priority = EventPriority.LOWEST)
    public static void mousePressed(ScreenEvent.MouseButtonPressed.Post event) {
-      if (!event.getClickResult()) arm(event.getScreen(), InputConstants.Type.MOUSE.getOrCreate(event.getButton()));
+      if (!event.getClickResult()) arm(event.getScreen(), InputConstants.Type.MOUSE.getOrCreate(event.getButton()), GLFW.GLFW_KEY_UNKNOWN);
    }
 
-   private static void arm(Screen screen, InputConstants.Key key) {
+   private static void arm(Screen screen, InputConstants.Key key, int keyboardCode) {
       if (armedScreen == null && eligible(screen) && OPEN.isActiveAndMatches(key)) {
          armedScreen = screen;
          armedKey = key;
+         armedKeyboardCode = keyboardCode;
          HOLD.reset();
       }
    }
@@ -77,13 +80,14 @@ public final class EngineerManualShortcut {
       disarm();
    }
 
-   @SubscribeEvent
+   @SubscribeEvent(receiveCanceled = true)
    public static void beforeRender(ScreenEvent.Render.Pre event) {
+      if (Minecraft.getInstance().screen != event.getScreen()) return;
       hovered = null;
       hoveredLink = null;
       preparedScreen = null;
       if (event.getScreen() != armedScreen || !eligible(event.getScreen())
-            || armedKey == null || !OPEN.isActiveAndMatches(armedKey)) disarm();
+            || armedKey == null || !OPEN.isActiveAndMatches(armedKey) || !physicallyDown()) disarm();
    }
 
    @SubscribeEvent
@@ -95,29 +99,35 @@ public final class EngineerManualShortcut {
       if (manual == null) return;
       // getManualLink alone can expose an uninitialized/stale index. IE owns reloads,
       // component matching, recipe alternatives and page/anchor selection.
+      if (Util.getMillis() < retryManualAfter) return;
       ManualScreen screen = manual.getGui(false);
-      if (screen == null) return;
+      if (screen == null) {
+         retryManualAfter = Util.getMillis() + 1000;
+         return;
+      }
       ManualInstance.ManualLink link = manual.getManualLink(event.getItemStack());
       if (link == null) return;
       event.getTooltipElements().add(Either.left(Component.translatable(
             "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual",
             OPEN.getTranslatedKeyMessage()).withStyle(ChatFormatting.GRAY)));
       hovered = new Target(link.getKey().getLocation(), link.getAnchor(), link.getOffset(),
-            event.getItemStack().getItem(), event.getItemStack().getComponents());
+            event.getItemStack().getItem(), event.getItemStack().copy().getComponents());
       hoveredLink = link;
       preparedScreen = screen;
    }
 
    @SubscribeEvent(priority = EventPriority.LOWEST)
    public static void afterRender(ScreenEvent.Render.Post event) {
+      if (Minecraft.getInstance().screen != event.getScreen()) return;
       if (!HOLD.update(hovered, armedScreen == event.getScreen() && eligible(event.getScreen()), Util.getMillis())) return;
       ManualScreen screen = preparedScreen;
       ManualInstance.ManualLink link = hoveredLink;
       disarm();
       if (screen == null || link == null) return;
       // setScreen initializes the screen before changePage invokes fullInit.
-      Minecraft.getInstance().setScreen(screen);
-      link.changePage(screen, false);
+      Minecraft minecraft = Minecraft.getInstance();
+      minecraft.setScreen(screen);
+      if (minecraft.screen == screen) link.changePage(screen, false);
    }
 
    private static boolean eligible(Screen screen) {
@@ -134,9 +144,20 @@ public final class EngineerManualShortcut {
       return true;
    }
 
+   private static boolean physicallyDown() {
+      if (armedKey == null) return false;
+      long window = Minecraft.getInstance().getWindow().getWindow();
+      if (armedKey.getType() == InputConstants.Type.MOUSE)
+         return GLFW.glfwGetMouseButton(window, armedKey.getValue()) == GLFW.GLFW_PRESS;
+      // GLFW does not expose polling by scan code; ordinary keyboard events supply
+      // a key code even for scan-code bindings. Release events remain authoritative.
+      return armedKeyboardCode == GLFW.GLFW_KEY_UNKNOWN || InputConstants.isKeyDown(window, armedKeyboardCode);
+   }
+
    private static void disarm() {
       armedScreen = null;
       armedKey = null;
+      armedKeyboardCode = GLFW.GLFW_KEY_UNKNOWN;
       HOLD.reset();
    }
 
