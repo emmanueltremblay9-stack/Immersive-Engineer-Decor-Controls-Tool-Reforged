@@ -514,7 +514,12 @@ public final class RaisedCatwalkLampGameTests {
       Vec3 delta = target.subtract(eye);
       player.setPos(origin.x + eye.x, origin.y + eye.y - player.getEyeHeight(), origin.z + eye.z);
       player.setYRot((float)Math.toDegrees(Math.atan2(-delta.x, delta.z)));
+      // Server-side LivingEntity.getViewYRot(1) reads head yaw, not entity/body yaw.
+      // FakePlayer is not ticked here, so synchronize it explicitly for real side rays.
+      player.setYHeadRot(player.getYRot());
       player.setXRot((float)-Math.toDegrees(Math.atan2(delta.y, Math.sqrt(delta.x * delta.x + delta.z * delta.z))));
+      helper.assertTrue(player.getViewVector(1).dot(delta.normalize()) > 0.99999,
+         "fixture eye ray must point toward its requested target: eye=" + eye + ", target=" + target);
       BlockHitResult hit = eyeHit(helper, player);
       helper.assertValueEqual(hit.getType(), HitResult.Type.BLOCK, "the player's actual eye ray must hit visible geometry");
       helper.assertValueEqual(hit.getBlockPos(), helper.absolutePos(CENTER), "the eye ray must hit the intended raised catwalk");
