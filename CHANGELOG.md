@@ -8,6 +8,7 @@ All notable reconstruction, repair, and validation changes for this project are 
 - Added click synchronization for adjacent matching pairs of native-compatible doors and fence gates, including Old Industrial Wood Door and Steel Mesh Fence Gate. Supports inherited vanilla interaction methods; custom interaction overrides and custom early-use items are excluded. Respects companion interaction vetoes, limits synchronization to one valid pair, and does not add redstone propagation.
 
 ### Fixed
+- Restored the Dark Shingle Roof Wire Conduit’s vertical center opening in collision and selection geometry. IE wires can pass between existing aligned connectors above and below the roof; walls remain solid. New fittings stay upright and straight, while saved properties and all models are preserved. Existing corner-shaped fittings retain their legacy state and need replacement to show a conduit.
 - Corrected Factory Hopper placement/output direction and extraction from adjacent vanilla inventories (#22).
 - Corrected Steel Floor Grating collision height (#23) and Steel Double T Support collision geometry (#24).
 - Restored Panzer Glass Slab translucent render declarations (#21) and aligned the Exit Sign selection outline while retaining empty collision (#33).
