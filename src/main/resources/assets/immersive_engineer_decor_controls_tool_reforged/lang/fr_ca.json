@@ -896,5 +896,8 @@
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.dimension.overworld": " dans le monde normal",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.distance": " | à %1$s blocs",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.entity": "Entité : %1$s",
-  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Injection de l'auto-injecteur stimulant"
+  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Injection de l'auto-injecteur stimulant",
+  "key.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Ouvrir la page du manuel de l’ingénieur",
+  "key.categories.immersive_engineer_decor_controls_tool_reforged": "IEDCTR",
+  "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Maintenez %s pour ouvrir le manuel de l’ingénieur"
 }

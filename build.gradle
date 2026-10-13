@@ -316,3 +316,12 @@ idea {
         downloadJavadoc = true
     }
 }
+
+// Pure state-machine coverage, also executable without a Minecraft runtime.
+tasks.register('validateManualShortcutHold', JavaExec) {
+    group = 'verification'
+    dependsOn tasks.named('testClasses')
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.oblixorprime.engineersdecorreforged.client.ManualShortcutHoldTest'
+}
+tasks.named('test') { dependsOn tasks.named('validateManualShortcutHold') }

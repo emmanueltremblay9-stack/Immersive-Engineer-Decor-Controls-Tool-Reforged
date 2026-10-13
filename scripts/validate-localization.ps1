@@ -152,6 +152,13 @@ if (-not $ParsedLocales.ContainsKey('en_us')) {
 }
 
 $English = $ParsedLocales['en_us']
+# Newly introduced shortcut labels intentionally use Minecraft's en_us fallback
+# outside the reviewed English/French translations. Existing keys remain strict.
+$ManualShortcutFallbackKeys = @(
+    "key.$ModId.engineer_manual",
+    "key.categories.$ModId",
+    "tooltip.$ModId.engineer_manual"
+)
 $EnglishKeys = @($English.Keys)
 [System.Array]::Sort($EnglishKeys, [System.StringComparer]::Ordinal)
 $SemanticValueMismatchCount = 0
@@ -178,7 +185,10 @@ foreach ($locale in @($ParsedLocales.Keys | Sort-Object)) {
     $map = $ParsedLocales[$locale]
     $KeyCounts.Add($map.Count)
 
-    $missing = @($EnglishKeys | Where-Object { -not $map.ContainsKey($_) })
+    $missing = @($EnglishKeys | Where-Object {
+        -not $map.ContainsKey($_) -and
+        ($locale -in @('en_us', 'fr_fr', 'fr_ca') -or $_ -notin $ManualShortcutFallbackKeys)
+    })
     $extra = @($map.Keys | Where-Object { -not $English.ContainsKey($_) })
     $MissingKeyCount += $missing.Count
     $ExtraKeyCount += $extra.Count
