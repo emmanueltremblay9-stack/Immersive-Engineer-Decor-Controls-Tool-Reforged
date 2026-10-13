@@ -1,21 +1,53 @@
-# Next patch: qualification record and draft release notes
+# Next patch: 1.1.58 qualification record and draft release notes
 
 Status: candidate preparation only, not completed qualification or publication.
-Observed 2026-10-12 UTC. Candidate version `1.1.57-reconstructed` is configured in
-the project metadata and changelog. No qualified candidate JAR, final source
-commit, publisher manifest, or candidate artifact hash is established here.
+Observed 2026-10-13 UTC. Active candidate version `1.1.58-reconstructed` is
+configured in project metadata and the changelog. `1.1.57-reconstructed` was
+deferred without publication. All fixes and functionality through PRs #43–46
+are carried forward; this increment changes metadata and documentation only.
+No qualified 1.1.58 JAR, final source commit, reviewed publisher manifest, or
+candidate artifact hash is established here.
 
-The Iron Hatch ladder-continuation, metal-ladder wall-clearance and Steel Mesh
-Fence Gate passage/connection corrections supersede any earlier candidate JAR for final qualification, including JARs with
-the same `1.1.57-reconstructed` version string. Repeat the exact-commit CI,
-byte-identity, client and packaged-server gates on the final fixed artifact.
+Every 1.1.57 JAR and hash remains historical evidence. Changing embedded version
+metadata produces different artifact bytes; repeat the exact-commit CI,
+byte-identity, client and packaged-server gates on the final 1.1.58 artifact.
+Do not carry an older hash into a new candidate manifest.
 
 ## Source and evidence boundary
 
-- Candidate preparation base: main commit
-  `e302e772d450a040ad97ed596f3b06cdef6db01f`, including the CurseForge-only
-  local-source publication tooling from PR
-  [41](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/41).
+### Active preparation base
+
+- Live main verified on 2026-10-13 at
+  `90548e2afc49feb7b6328d52e58db8fc3eebe0fd`. This is the preparation base,
+  not the final bumped source commit.
+- The base contains the earlier placement/collision/selection fixes and the
+  CurseForge-only local-source publication tooling from PR
+  [41](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/41), plus:
+  - [PR #43](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/43): Iron Hatch ladder continuation
+  - [PR #44](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/44): metal-ladder physical wall clearance
+  - [PR #45](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/45): Steel Mesh Fence Gate passage and connections
+  - [PR #46](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/46): accepted-click synchronization for adjacent matching accessways
+- Latest public baseline observed on the [CurseForge project](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged)
+  is [1.1.56, file 9042960](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9042960).
+  No new upload, release, project edit, or issue closure is part of this work.
+
+### Historical 1.1.57 candidate evidence
+
+- [Build run 38326979132](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/38326979132),
+  attempt 1, is verified completed/success for a push of the preparation-base
+  commit `90548e2afc49feb7b6328d52e58db8fc3eebe0fd`. Its reported results are
+  262 required GameTests and 84 publisher tests.
+- That run builds **1.1.57**, with reported runtime SHA-256
+  `bb635e2c85cc20bb4acc677313bec7d2de186f2dc4132774a9385067fc6c33fc`.
+  This digest must not be reused for 1.1.58. Earlier gameplay observations
+  likewise remain scoped to the earlier installed artifact, not the new version.
+- The [preserved 1.1.57 draft](../../release-bundle/1.1.57-reconstructed/curseforge-notes.md)
+  records an earlier notes snapshot. It is not evidence of a published release.
+
+### Earlier fix-merge observations
+
+- Earlier candidate preparation base:
+  `e302e772d450a040ad97ed596f3b06cdef6db01f`.
 - Earlier inspected fix-merge commit: `e9beae1ba5bc5c1800f59ba1787f77268b6555b5`, after PRs
   [35](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/35),
   [36](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/36),
@@ -24,25 +56,25 @@ byte-identity, client and packaged-server gates on the final fixed artifact.
   [39](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/39), and
   [40](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/40).
 - [Build run 38187269438](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/38187269438)
-  is verified completed/success for the earlier fix-merge commit. Its reported results
-  are 216 required GameTests and 32 publisher tests. These are CI observations,
-  not a new local client or packaged-server run.
-- CI-reported runtime SHA-256:
-  `b04793dbe9c2f705f8b2206f8843b9293e1d5f3ff9b8a3e9cfa2e4170c6d49b7`.
-  The bytes were not obtained and independently hashed during this preparation.
-  That earlier build uses version `1.1.56-reconstructed`; this digest must not be
-  reused as the identity of this differently versioned candidate.
-- Latest public baseline observed on the [CurseForge project](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged)
-  is [1.1.56, file 9042960](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9042960).
-  No new upload, release, project edit, or issue closure is part of this work.
+  was recorded completed/success for that earlier fix-merge commit, reporting
+  216 required GameTests and 32 publisher tests. Its CI-reported runtime SHA-256
+  was `b04793dbe9c2f705f8b2206f8843b9293e1d5f3ff9b8a3e9cfa2e4170c6d49b7`.
+  Those bytes were not obtained and independently hashed in that preparation.
+  That earlier build uses version `1.1.56-reconstructed`; it does not identify
+  either subsequent candidate.
 
 ## Draft player-facing notes
 
 Candidate notes are also staged in
-[`release-bundle/1.1.57-reconstructed/curseforge-notes.md`](../../release-bundle/1.1.57-reconstructed/curseforge-notes.md).
+[`release-bundle/1.1.58-reconstructed/curseforge-notes.md`](../../release-bundle/1.1.58-reconstructed/curseforge-notes.md).
 They remain a draft pending exact-artifact qualification and final review.
 
-This patch fixes several placement, collision, selection, and rendering problems:
+This patch adds accepted-click synchronization for adjacent matching doors and
+fence gates, including inherited vanilla interactions and IEDCTR Steel Mesh
+Fence Gates. Synchronization is restricted to one valid pair; rows do not chain.
+Existing sliding-door behavior is retained.
+
+It also fixes several placement, collision, selection, and rendering problems:
 
 - Factory Hopper placement/output direction and extraction from adjacent vanilla
   inventories (#22)
@@ -94,6 +126,12 @@ unchanged. See the [tests-first gate report](../bugfixes/steel-mesh-gate-passage
 for the ten added GameTests and exact RED evidence. Earlier candidate JARs are
 not qualified for these subsequent gate corrections.
 
+Synchronization does not propagate redstone, override refused interactions, or
+adapt custom block interaction methods and custom early-use items. Existing
+saved block states are preserved; no pair cache or migration is introduced.
+See the [synchronized-accessway report](../bugfixes/synchronized-accessway-pairs.md)
+for supported pair rules, interaction safeguards, tests and compatibility limits.
+
 ## Remaining release gates
 
 1. Verify publication rights and authenticated upload authority for project
@@ -104,7 +142,7 @@ not qualified for these subsequent gate corrections.
    is no longer observed. This public readback does not establish authenticated
    upload authority or complete provenance clearance. Preserve all upstream
    notices; this candidate preparation does not change licenses.
-2. Confirm the candidate version and final source commit; run the full Build
+2. Confirm candidate version `1.1.58-reconstructed` and the final bumped source commit; run the full Build
    workflow on that exact commit. Independently hash the actual private release JAR, check size,
    embedded mod/version and packaged notices, and create the reviewed manifest
    from those bytes. Do not infer an artifact identity from an earlier CI log.
@@ -116,8 +154,12 @@ not qualified for these subsequent gate corrections.
    Metal Steps while pressing toward the wall; verify actual ascent/descent and
    any collision-sensitive existing builds. Then check closed, opposite/perpendicular, and missing
    ladder arrangements, manual/redstone transitions, and existing saved hatches.
-   Include save/reload and break/re-place behavior. Preserve logs/screenshots
-   labelled with the exact JAR hash.
+   For Steel Mesh Fence Gates, check open passage, closed blocking and aligned
+   fence connections. For synchronized pairs, check opening/closing from either
+   leaf and side, door halves and gate segments, rows/singles, refused/iron/custom
+   interactions, held-item behavior and independent redstone behavior. Include
+   save/reload, partner removal and break/re-place behavior. Preserve
+   logs/screenshots labelled with the exact JAR hash.
 4. Run an actual packaged dedicated server with the same JAR and required
    Immersive Engineering dependency; check startup, placement/redstone/loot,
    save/restart, and absence of client-only class-loading failures. Development
@@ -126,10 +168,11 @@ not qualified for these subsequent gate corrections.
    dry-run using the reviewed source/CI/byte identities. A dry-run is not a
    publication or a client/server validation.
 
-The current cloud workspace has Java 21, but no installed Gradle distribution or
-populated Gradle dependency cache was found. No dependency installation or user
-computer access was attempted in this preparation. Client visuals and packaged
-server validation therefore remain unperformed here.
+This metadata preparation does not establish new client visuals, packaged-server
+validation or authenticated upload rights. No user-computer access, server
+installation, merge or publication is part of the version bump. Historical
+runtime results cannot silently satisfy the differently versioned artifact's
+gates.
 
 ## Hatch continuation regression evidence
 
