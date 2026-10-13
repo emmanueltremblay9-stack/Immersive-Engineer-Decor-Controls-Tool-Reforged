@@ -1,6 +1,8 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock;
+import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyTrunkBlock;
 import com.oblixorprime.engineersdecorreforged.block.RoofWireConduitBlock;
@@ -138,20 +140,20 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.CenteredPoleBlock> THICK_STEEL_POLE = registerWithItem(
       "thick_steel_pole", () -> new PortedBlocks.CenteredPoleBlock(metal().noOcclusion(), 4.0, 12.0)
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> THICK_STEEL_POLE_HEAD = registerWithItem(
-      "thick_steel_pole_head", () -> new PortedBlocks.SurfaceMountedBlock(metal().noOcclusion(), 4.0, 12.0, 4.0, false)
+   public static final DeferredBlock<PoleHeadBlock> THICK_STEEL_POLE_HEAD = registerWithItem(
+      "thick_steel_pole_head", () -> new PoleHeadBlock(metal().noOcclusion(), 5.0, 11.0, 3.0, 13.0)
    );
    public static final DeferredBlock<PortedBlocks.CenteredPoleBlock> THIN_STEEL_POLE = registerWithItem(
       "thin_steel_pole", () -> new PortedBlocks.CenteredPoleBlock(metal().noOcclusion(), 6.0, 10.0)
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> THIN_STEEL_POLE_HEAD = registerWithItem(
-      "thin_steel_pole_head", () -> new PortedBlocks.SurfaceMountedBlock(metal().noOcclusion(), 5.0, 11.0, 3.0, false)
+   public static final DeferredBlock<PoleHeadBlock> THIN_STEEL_POLE_HEAD = registerWithItem(
+      "thin_steel_pole_head", () -> new PoleHeadBlock(metal().noOcclusion(), 6.0, 10.0, 4.0, 12.0)
    );
    public static final DeferredBlock<PortedBlocks.CenteredPoleBlock> TREATED_WOOD_POLE = registerWithItem(
       "treated_wood_pole", () -> new PortedBlocks.CenteredPoleBlock(wood().noOcclusion(), 5.0, 11.0)
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> TREATED_WOOD_POLE_HEAD = registerWithItem(
-      "treated_wood_pole_head", () -> new PortedBlocks.SurfaceMountedBlock(wood().noOcclusion(), 4.0, 12.0, 4.0, false)
+   public static final DeferredBlock<PoleHeadBlock> TREATED_WOOD_POLE_HEAD = registerWithItem(
+      "treated_wood_pole_head", () -> new PoleHeadBlock(wood().noOcclusion(), 5.5, 10.5, 3.0, 13.0)
    );
    public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> TREATED_WOOD_POLE_SUPPORT = registerWithItem(
       "treated_wood_pole_support", () -> new PortedBlocks.SurfaceMountedBlock(wood().noOcclusion(), 3.0, 13.0, 5.0, false)
@@ -168,8 +170,8 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.CatwalkStairsBlock> STEEL_CATWALK_STAIRS = registerWithItem(
       "steel_catwalk_stairs", () -> new PortedBlocks.CatwalkStairsBlock(metal().noOcclusion())
    );
-   public static final DeferredBlock<PortedBlocks.VariantOnlyBlock> STEEL_CATWALK_TA = registerWithItem(
-      "steel_catwalk_ta", () -> new PortedBlocks.VariantOnlyBlock(metal().noOcclusion())
+   public static final DeferredBlock<RaisedCatwalkBlock> STEEL_CATWALK_TA = registerWithItem(
+      "steel_catwalk_ta", () -> new RaisedCatwalkBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.RailingBlock> STEEL_RAILING = registerWithItem(
       "steel_railing", () -> new PortedBlocks.RailingBlock(metal().noOcclusion())

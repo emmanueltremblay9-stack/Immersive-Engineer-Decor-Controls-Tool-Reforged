@@ -1,7 +1,9 @@
 Raised Steel Catwalk
-Service access fitting
-<&recipe>This block forms readable service routes around machinery.<br>
+Top-aligned service platform
+<&recipe>The raised catwalk sits at the top of its block space. It connects down to thick or thin steel poles and their heads. Changing or removing the pole updates the connection.<br>
 <br>
-Usage: Place it as maintenance access around machines, upper floors, and service shafts.<br>
-
-
+Click the top of a sturdy block to place the frame variant. Other placements use the plain deck unless a steel pole is directly below.<br>
+<br>
+Holding another raised catwalk, click its top or underside to extend the route in the direction you face. The new piece stays at the same height.<br>
+<br>
+Click the underside of a plain deck with an Iron Inset Light to install it. Click again while holding an inset light to remove it. A light installed in survival consumes one item and returns it when removed or when the catwalk is mined. Older automatically selected light variants and creative additions do not refund a light item.<br>

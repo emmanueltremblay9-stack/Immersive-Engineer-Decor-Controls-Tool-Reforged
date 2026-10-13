@@ -1,5 +1,9 @@
 Passerelle en acier surélevée
-Élément de voie de service
-<&recipe>Ce bloc délimite clairement les voies de service autour des machines.<br>
+Plateforme alignée en hauteur
+<&recipe>Cette passerelle occupe le haut de son bloc. Elle se raccorde aux poteaux en acier fins ou épais et à leurs têtes placés juste en dessous. Le raccord s'adapte au changement ou au retrait du poteau.<br>
 <br>
-Utilisation : créez des accès de maintenance autour des machines, des étages et des puits de service.<br>
+Cliquez sur le dessus d'un bloc solide pour obtenir la variante avec cadre. Les autres placements utilisent le plateau simple, sauf si un poteau en acier se trouve juste en dessous.<br>
+<br>
+En tenant une autre passerelle surélevée, cliquez sur le dessus ou le dessous pour prolonger la passerelle dans la direction regardée, à la même hauteur.<br>
+<br>
+Cliquez sous un plateau simple avec une lampe encastrée en fer pour l'installer. Cliquez à nouveau en tenant une telle lampe pour la retirer. En survie, l'installation consomme un objet, rendu au retrait ou au minage de la passerelle. Les anciennes variantes lumineuses choisies automatiquement et les ajouts en créatif ne rendent pas de lampe.<br>
