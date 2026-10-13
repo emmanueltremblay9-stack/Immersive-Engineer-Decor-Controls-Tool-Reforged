@@ -236,6 +236,34 @@ class ConsoleTests(unittest.TestCase):
         with self.assertRaisesRegex(q.QualificationError, "unclean"):
             server.stop()
 
+    def test_loot_assertion_requires_fresh_exact_drop_and_linked_removal(self):
+        server = Mock(unsafe=True)
+        q.assert_gate_destroy_loot(server)
+        calls = server.method_calls
+        self.assertEqual("barrier", calls[0][0])
+        self.assertTrue(calls[0].args[0].startswith("unless entity @e[type=minecraft:item,"))
+        self.assertEqual("setblock 10 80 2 minecraft:air destroy", calls[1].args[0])
+        self.assertEqual([("10 80 2", "minecraft:air"), ("10 81 2", "minecraft:air")],
+                         [call.args for call in calls if call[0] == "assert_block"])
+        commands = [call.args[0] for call in calls if call[0] == "send"]
+        self.assertIn("scoreboard players set #gate_entities iedctr_loot 0", commands)
+        self.assertTrue(any(command.startswith("execute as @e[type=minecraft:item,")
+                            and command.endswith("scoreboard players add #gate_entities iedctr_loot 1")
+                            for command in commands))
+        conditions = [call.args[0] for call in calls if call[0] == "barrier"]
+        self.assertIn("if score #gate_entities iedctr_loot matches 1", conditions)
+        self.assertTrue(conditions[-1].startswith("if items entity @e[type=minecraft:item,"))
+        self.assertTrue(conditions[-1].endswith("contents " + q.GATE + "[minecraft:count=1]"))
+        self.assertFalse(any(command.startswith(("summon ", "give ", "loot ", "item "))
+                             for command in commands))
+
+    def test_failed_empty_loot_area_aborts_before_destroy(self):
+        server = Mock(unsafe=True)
+        server.barrier.side_effect = q.QualificationError("old item exists")
+        with self.assertRaises(q.QualificationError):
+            q.assert_gate_destroy_loot(server)
+        server.send.assert_not_called()
+
     def test_restart_assertions_precede_any_world_mutation(self):
         servers = []
         def make_server(root, phase):
@@ -255,6 +283,9 @@ class ConsoleTests(unittest.TestCase):
         self.assertFalse(result["realPlayerClicksVerified"])
         self.assertFalse(result["clientRenderingVerified"])
         self.assertFalse(result["playerClimbingVerified"])
+        self.assertFalse(result["playerBreakingVerified"])
+        self.assertFalse(result["otherLootVerified"])
+        self.assertEqual(1, result["consoleGateLootVerified"]["stackCount"])
         self.assertEqual(2, len(result["phases"]))
         for server in servers:
             server.stop.assert_called_once()

@@ -334,6 +334,23 @@ def assert_persistent_states(server: ConsoleServer) -> None:
         server.assert_block(position, state)
 
 
+def assert_gate_destroy_loot(server: ConsoleServer) -> None:
+    """Verify one real drop from console destruction, not a simulated player break."""
+    nearby = "@e[type=minecraft:item,x=10.5,y=80,z=2.5,distance=..4]"
+    single = "@e[type=minecraft:item,x=10.5,y=80,z=2.5,distance=..4,limit=1]"
+    # Prove there was no old item that could satisfy the later drop assertion.
+    server.barrier("unless entity " + nearby)
+    server.send("setblock 10 80 2 minecraft:air destroy")
+    server.assert_block("10 80 2", "minecraft:air")
+    server.assert_block("10 81 2", "minecraft:air")
+    # Count all nearby item entities, then check the sole stack's exact ID/count.
+    server.send("scoreboard objectives add iedctr_loot dummy")
+    server.send("scoreboard players set #gate_entities iedctr_loot 0")
+    server.send(f"execute as {nearby} run scoreboard players add #gate_entities iedctr_loot 1")
+    server.barrier("if score #gate_entities iedctr_loot matches 1")
+    server.barrier(f"if items entity {single} contents {GATE}[minecraft:count=1]")
+
+
 def qualify(root: Path) -> dict:
     phases = []
     for phase in ("initial", "restart"):
@@ -348,16 +365,14 @@ def qualify(root: Path) -> dict:
                 assert_persistent_states(server)
                 server.send("setblock 3 80 2 minecraft:air")
                 server.assert_block("2 80 2", f"{MOD_ID}:iron_hatch[open=false,powered=false]")
-                server.send("setblock 10 80 2 minecraft:air")
-                server.assert_block("10 80 2", "minecraft:air")
-                server.assert_block("10 81 2", "minecraft:air")
+                assert_gate_destroy_loot(server)
             server.stop()
             # Retain auditable text in Actions logs; no world or runtime binaries are uploaded.
             print(f"--- BEGIN COMPLETE CONSOLE {phase} ---", flush=True)
             print("\n".join(server.lines), flush=True)
             print(f"--- END COMPLETE CONSOLE {phase} ---", flush=True)
             phases.append({"phase": phase, "cleanStop": True, "errorCount": 0,
-                           "consoleBlockAssertions": server.assertions,
+                           "consoleAssertions": server.assertions,
                            "consoleLogSha256": hashlib.sha256("\n".join(server.lines).encode()).hexdigest()})
         except Exception:
             # Console-only diagnostic text; never publish world/server/runtime binaries.
@@ -369,7 +384,11 @@ def qualify(root: Path) -> dict:
     return {"phases": phases, "persistentBlockStates": len(STATES),
             "nativeRedstoneAndLinkedRemoval": True, "realPlayerClicksVerified": False,
             "clientRenderingVerified": False, "playerClimbingVerified": False,
-            "lootVerified": False, "multiplayerSynchronizationVerified": False}
+            "consoleGateLootVerified": {"item": GATE, "entityCount": 1, "stackCount": 1,
+                                        "operation": "setblock lower segment air destroy",
+                                        "linkedSegmentsRemoved": True},
+            "playerBreakingVerified": False, "otherLootVerified": False,
+            "multiplayerSynchronizationVerified": False}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -414,7 +433,7 @@ def main(argv: list[str] | None = None) -> int:
         if summary := os.getenv("GITHUB_STEP_SUMMARY"):
             with open(summary, "a", encoding="utf-8") as stream:
                 stream.write("## Packaged dedicated-server smoke qualification\n\n```json\n" + text + "\n```\n")
-                stream.write("\nConsole-only evidence. Real client clicks, rendering, climbing, loot, and multiplayer synchronization remain unverified.\n")
+                stream.write("\nConsole-only evidence. Real client clicks/breaking, rendering, climbing, other loot, and multiplayer synchronization remain unverified.\n")
     return 0
 
 

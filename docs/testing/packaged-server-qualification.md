@@ -47,7 +47,7 @@ The job uses a standard `ubuntu-24.04` GitHub-hosted runner. This repository is
 public; standard public-repository runners are free under
 [GitHub's billing documentation](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
 It does not select a paid larger runner or buy a service. Permissions are
-`contents: read`; no secrets, persistent credentials, access changes, runtime
+`contents: read` and `actions: read`. Server steps use no secrets. The separately authorized read-only publisher preflight uses the existing CurseForge token only through its configured integration; it neither prints the token nor posts an upload. There are no new persistent credentials, access changes, runtime
 artifact uploads, world uploads, or Actions caches are requested. Gradle uses an
 isolated temporary cache with Actions cache saving disabled.
 
@@ -83,12 +83,21 @@ files are cleaned up; no existing server/world is touched.
 | Persistent fixtures | Five explicit hatch, ladder and two-segment gate states assert before saving |
 | Save and stop | `save-all flush` completes, stop is observed, process exits zero |
 | Same-world restart | Loaded query succeeds; all five saved states assert before any replacement |
-| Loaded native behavior | Removing redstone closes saved hatch; removing lower gate removes linked upper segment |
+| Loaded native behavior | Removing redstone closes saved hatch; console destruction of lower gate removes linked upper segment |
+| One specific gate loot path | Prove no nearby old item; destroy saved lower gate by console; observe exactly one nearby item entity holding exactly one gate item, with both gate segments absent |
 | Log health | Entire output scanned, including shutdown, for ERROR/FATAL, missing classes and client-on-server failures |
 
 Chunk loading is awaited before the fixture is created and again after restart.
-Assertions use unique `say` markers emitted only after `execute if block` succeeds.
+Assertions use unique `say` markers emitted only after the corresponding `execute` block/entity/score/item condition succeeds.
 A missing marker, echoed input, early EOF, timeout, error, or nonzero exit fails.
+The gate loot test uses the pinned block loot table (one gate item per destroyed
+block) and actual `setblock ... air destroy`; it never spawns/gives an expected
+item. A scoreboard counts all item entities within four blocks of the fixture,
+and `execute if items ... contents <gate>[minecraft:count=1]` verifies the sole
+stack. These command/item predicates are documented in the official
+[Minecraft 1.20.5 release notes](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-20-5)
+and are supported by the pinned 1.21.1 server. This proves only the lower-segment
+console-destruction drop path, not a real player's tool/harvest behavior.
 The summary includes successful assertion conditions and complete console-log
 hashes per phase. Complete successful phase logs are retained as Actions text output
 so those hashes and markers can be audited. On failure the last console lines are
@@ -97,7 +106,8 @@ Only text logs and summaries are retained; no runtime binaries are published.
 
 Still unverified by this harness: real-player clicks and protection hooks,
 client/server multiplayer synchronization, rendering, climbing/collision feel,
-loot/drop behavior, and behavior with NeoForge versions other than 21.1.230.
+player-breaking/tool-dependent or other loot/drop behavior, and behavior with
+NeoForge versions other than 21.1.230.
 A successful console smoke run must never close those client/manual gates or be
 presented as a full release qualification.
 

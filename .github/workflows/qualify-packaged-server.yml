@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: qualify-packaged-server-1.1.58
@@ -83,3 +84,16 @@ jobs:
 
       - name: Install isolated official server and qualify packaged JAR
         run: python3 tools/server/qualify_packaged_server.py --source-root "$GITHUB_WORKSPACE/runtime-source" --eula-acknowledgment "$EULA_ACKNOWLEDGMENT"
+
+      - name: Validate publication inputs without uploading
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/release/publish_curseforge.py --dry-run --repo-root "$GITHUB_WORKSPACE" --manifest tools/release/curseforge_release_1.1.58.json --require-local-source --source-root "$GITHUB_WORKSPACE/runtime-source" --local-jar "$GITHUB_WORKSPACE/runtime-source/build/libs/immersive_engineer_decor_controls_tool_reforged-1.1.58-reconstructed.jar" --tag v1.1.58-reconstructed --report "$RUNNER_TEMP/iedctr-dry-run.json"
+
+      - name: Check existing integration without posting an upload
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: |
+          python3 tools/release/publish_curseforge.py --prepare-publish --repo-root "$GITHUB_WORKSPACE" --manifest tools/release/curseforge_release_1.1.58.json --require-local-source --source-root "$GITHUB_WORKSPACE/runtime-source" --local-jar "$GITHUB_WORKSPACE/runtime-source/build/libs/immersive_engineer_decor_controls_tool_reforged-1.1.58-reconstructed.jar" --tag v1.1.58-reconstructed --run-key "${{ github.run_id }}-${{ github.run_attempt }}" --report "$RUNNER_TEMP/iedctr-preflight.json"
