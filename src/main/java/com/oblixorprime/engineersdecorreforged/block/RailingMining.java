@@ -52,7 +52,7 @@ public final class RailingMining {
       PortedBlocks.RailingPart part = aimedPart(player, level, pos);
       if (part != null) {
          INTENTS.put(player, new Intent(level, pos.immutable(), state, part, player.getAbilities().instabuild,
-            player.getMainHandItem().copy(), event));
+            player.getMainHandItem().copy(), event, null));
       }
    }
 
@@ -73,7 +73,7 @@ public final class RailingMining {
          }
          // The normal mining callback can break the tool before onDestroyedByPlayer runs.
          INTENTS.put(player, new Intent(intent.level(), intent.pos(), intent.state(), intent.part(), intent.creative(),
-            player.getMainHandItem().copy(), null));
+            player.getMainHandItem().copy(), null, event));
       }
    }
 
@@ -136,7 +136,8 @@ public final class RailingMining {
 
    private static boolean startAllowed(Intent intent) {
       PlayerInteractEvent.LeftClickBlock start = intent.start();
-      return start == null || !start.isCanceled() && (intent.creative() || start.getUseItem() != TriState.FALSE);
+      return (start == null || !start.isCanceled() && (intent.creative() || start.getUseItem() != TriState.FALSE))
+         && (intent.breakEvent() == null || !intent.breakEvent().isCanceled());
    }
 
    @Nullable
@@ -149,5 +150,6 @@ public final class RailingMining {
    record Completion(PortedBlocks.RailingPart part, ItemStack tool) {}
 
    private record Intent(Level level, BlockPos pos, BlockState state, PortedBlocks.RailingPart part, boolean creative,
-                         ItemStack tool, @Nullable PlayerInteractEvent.LeftClickBlock start) {}
+                         ItemStack tool, @Nullable PlayerInteractEvent.LeftClickBlock start,
+                         @Nullable BlockEvent.BreakEvent breakEvent) {}
 }

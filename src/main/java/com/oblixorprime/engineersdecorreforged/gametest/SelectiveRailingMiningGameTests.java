@@ -1,6 +1,9 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.mojang.authlib.GameProfile;
+import com.mojang.serialization.JsonOps;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import java.util.List;
@@ -34,6 +37,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.FakePlayer;
+import net.neoforged.neoforge.common.util.TriState;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
@@ -322,6 +326,117 @@ public final class SelectiveRailingMiningGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void late_lowest_start_denial_invalidates_the_already_captured_mining_target(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (Block block : List.of(catwalk(), railing())) {
+         for (boolean cancel : new boolean[]{false, true}) {
+            clearDrops(helper);
+            player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
+            put(helper, sides(block, 15).setValue(PortedBlocks.PAID_RAILINGS, block == catwalk() ? 4 : 3));
+            BlockState original = helper.getBlockState(CENTER);
+            int[] starts = {0};
+            Consumer<PlayerInteractEvent.LeftClickBlock> denyLate = event -> {
+               if (event.getEntity() == player && event.getAction() == PlayerInteractEvent.LeftClickBlock.Action.START) {
+                  starts[0]++;
+                  if (cancel) {
+                     event.setCanceled(true);
+                  } else {
+                     event.setUseItem(TriState.FALSE);
+                  }
+               }
+            };
+            // Registered after normal mod initialization, at the same LOWEST priority as
+            // target capture: denying START here must invalidate the captured event later.
+            NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, PlayerInteractEvent.LeftClickBlock.class, denyLate);
+            try {
+               mine(helper, player, Direction.NORTH);
+               helper.assertValueEqual(starts[0], 1, "the late listener must deny the exact native START event");
+               helper.assertValueEqual(helper.getBlockState(CENTER), original,
+                  "same-priority late START cancellation or useItem=FALSE must invalidate any previously captured intent");
+               helper.assertValueEqual(player.getMainHandItem().getDamageValue(), 0, "late START denial must prevent native tool wear");
+               helper.assertValueEqual(dropped(helper, railing().asItem()), 0, "late START denial must not release paid railing loot");
+               helper.assertValueEqual(dropped(helper, catwalk().asItem()), 0, "late START denial must not release a catwalk base");
+            } finally {
+               NeoForge.EVENT_BUS.unregister(denyLate);
+            }
+            mine(helper, player, Direction.EAST);
+            assertSides(helper, block, 13, "a fresh allowed START after a late denial must use the new target");
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void late_lowest_break_cancellation_cannot_be_reused_without_a_fresh_start(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (Block block : List.of(catwalk(), railing())) {
+         clearDrops(helper);
+         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
+         put(helper, sides(block, 15).setValue(PortedBlocks.PAID_RAILINGS, block == catwalk() ? 4 : 3));
+         BlockState original = helper.getBlockState(CENTER);
+         int[] breaks = {0};
+         Consumer<BlockEvent.BreakEvent> denyLate = event -> {
+            if (event.getPlayer() == player) {
+               breaks[0]++;
+               event.setCanceled(true);
+            }
+         };
+         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, BlockEvent.BreakEvent.class, denyLate);
+         try {
+            mine(helper, player, Direction.NORTH);
+            helper.assertValueEqual(breaks[0], 1, "the late listener must deny the completed native BreakEvent");
+            helper.assertValueEqual(helper.getBlockState(CENTER), original, "same-priority late BreakEvent cancellation must preserve the assembly");
+         } finally {
+            NeoForge.EVENT_BUS.unregister(denyLate);
+         }
+         // A previously accepted completion token must retain the final cancellation
+         // status of that exact event, even after its cancelling listener is removed.
+         player.gameMode.destroyBlock(helper.absolutePos(CENTER));
+         helper.assertValueEqual(helper.getBlockState(CENTER), original,
+            "a cancelled completion must not be reused by another direct destroyBlock without a fresh START");
+         helper.assertValueEqual(player.getMainHandItem().getDamageValue(), 0, "both denied completions must preserve tool durability");
+         helper.assertValueEqual(dropped(helper, railing().asItem()), 0, "a stale cancelled completion must not release a paid rail");
+         helper.assertValueEqual(dropped(helper, catwalk().asItem()), 0, "a stale cancelled completion must not release the catwalk floor");
+         mine(helper, player, Direction.EAST);
+         assertSides(helper, block, 13, "fresh native START must work after late BreakEvent cancellation");
+         helper.assertValueEqual(player.getMainHandItem().getDamageValue(), 1, "only the fresh successful mine must wear the tool");
+         helper.assertValueEqual(dropped(helper, railing().asItem()), 1, "only the fresh successful mine must drop a rail");
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void native_adventure_can_break_component_allows_only_authorized_railing_mining(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      player.gameMode.changeGameModeForPlayer(GameType.ADVENTURE);
+      for (Block block : List.of(catwalk(), railing())) {
+         for (boolean canBreak : new boolean[]{false, true}) {
+            clearDrops(helper);
+            player.setItemInHand(InteractionHand.MAIN_HAND,
+               canBreak ? adventurePickaxe(helper, block) : new ItemStack(Items.IRON_PICKAXE));
+            put(helper, sides(block, 15).setValue(PortedBlocks.PAID_RAILINGS, block == catwalk() ? 4 : 3));
+            BlockState original = helper.getBlockState(CENTER);
+            helper.assertTrue(!player.getAbilities().mayBuild, "the test must retain native adventure permissions without overriding mayBuild");
+            helper.assertValueEqual(player.blockActionRestricted(helper.getLevel(), helper.absolutePos(CENTER), GameType.ADVENTURE), !canBreak,
+               "native adventure authorization must come from the held tool's exact CAN_BREAK predicate");
+            mine(helper, player, Direction.NORTH);
+            if (canBreak) {
+               assertSides(helper, block, 14, "an adventure pickaxe authorized for this block must mine only the aimed rail");
+               helper.assertValueEqual(player.getMainHandItem().getDamageValue(), 1, "authorized adventure mining uses one tool durability");
+               helper.assertValueEqual(dropped(helper, railing().asItem()), 1, "authorized adventure mining harvests its one paid railing");
+            } else {
+               helper.assertValueEqual(helper.getBlockState(CENTER), original, "an ordinary pickaxe without CAN_BREAK must not edit adventure-mode railings");
+               helper.assertValueEqual(player.getMainHandItem().getDamageValue(), 0, "unauthorized adventure mining cannot damage the tool");
+               helper.assertValueEqual(dropped(helper, railing().asItem()), 0, "unauthorized adventure mining must not refund paid rails");
+            }
+            helper.assertValueEqual(dropped(helper, catwalk().asItem()), 0, "adventure rail mining must never release the catwalk floor");
+            helper.assertTrue(!player.getAbilities().mayBuild, "mining must not escalate the player's native adventure permissions");
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void stale_rail_target_cannot_become_a_floor_or_replacement_break(GameTestHelper helper) {
       ServerPlayer player = player(helper);
       for (BlockState replacement : List.of(sides(catwalk(), 14).setValue(PortedBlocks.PAID_RAILINGS, 3),
@@ -438,6 +553,24 @@ public final class SelectiveRailingMiningGameTests {
          }
       }
       helper.succeed();
+   }
+
+   private static ItemStack adventurePickaxe(GameTestHelper helper, Block allowedBlock) {
+      // Use the real data-component codec, including registry resolution, rather than
+      // faking a mayBuild ability or replacing the native adventure permission check.
+      JsonObject predicate = new JsonObject();
+      predicate.addProperty("blocks", BuiltInRegistries.BLOCK.getKey(allowedBlock).toString());
+      JsonArray predicates = new JsonArray();
+      predicates.add(predicate);
+      JsonObject canBreak = new JsonObject();
+      canBreak.add("predicates", predicates);
+      JsonObject components = new JsonObject();
+      components.add("minecraft:can_break", canBreak);
+      JsonObject stack = new JsonObject();
+      stack.addProperty("id", "minecraft:iron_pickaxe");
+      stack.addProperty("count", 1);
+      stack.add("components", components);
+      return ItemStack.CODEC.parse(helper.getLevel().registryAccess().createSerializationContext(JsonOps.INSTANCE), stack).getOrThrow();
    }
 
    private static ServerPlayer player(GameTestHelper helper) {

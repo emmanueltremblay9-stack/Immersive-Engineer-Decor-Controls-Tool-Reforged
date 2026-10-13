@@ -21,6 +21,8 @@
 side. Completed mining uses NeoForge's `onDestroyedByPlayer`, after native mining
 progress, permissions, BreakEvent and tool wear. The final START-event veto is
 checked again, including a listener that runs later at the same priority.
+The accepted BreakEvent is also retained until completion, so a later veto
+cannot leave a reusable token for a completion without a fresh mining start.
 
 The starting block state and component must still match at completion. An abort,
 retarget, concurrent edit or replacement cannot turn an intended rail break into
@@ -48,6 +50,9 @@ sides never acquire new refund credits.
 - `NativeRailingJumpBarrierGameTests`: actual `Entity.move` with deterministic
   normal jump impulses, ordinary stepping and bounded pushes at all four sides
   and corners; open-side controls and exact selection/collision shapes
+- `RailingSelectionGameTests`: inside/outside/top rays for every side, floor
+  top/bottom rays, solid occlusion, legacy north selection, original visual
+  height and deterministic single-component corner outlines
 - Existing walking-containment and contextual-manual tests remain required
 
 Headless jumping uses an ordinary 0.42 impulse, 0.08 gravity and 0.98 vertical
