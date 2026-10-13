@@ -71,7 +71,7 @@ public final class ChimneyGameTests {
          level.setBlock(source, Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE.defaultBlockState()
             .setValue(BlockStateProperties.POWER, power), 2);
          helper.assertValueEqual(level.getBestNeighborSignal(pos), power, "analog source fixture");
-         level.getBlockState(pos).neighborChanged(level, pos, Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE, source, false);
+         level.updateNeighborsAt(source, Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
          helper.assertValueEqual(level.getBlockState(pos).getValue(ChimneyBlock.POWER), power,
             "chimney must track incoming signal exactly");
       }
@@ -106,6 +106,8 @@ public final class ChimneyGameTests {
       old.remove("Properties");
       BlockState loadedOld = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), old);
       helper.assertTrue(loadedOld.is(block), "old cap registry ID must still load");
+      helper.assertValueEqual(BlockState.CODEC.parse(NbtOps.INSTANCE, old).getOrThrow(), loadedOld,
+         "property-less cap also loads through the block-state codec");
       helper.assertValueEqual(loadedOld.getValue(ChimneyBlock.POWER), 0, "old property-less cap stays silent until adjusted");
       for (int power = 0; power <= 15; power++) {
          BlockState original = block.defaultBlockState().setValue(ChimneyBlock.POWER, power);
