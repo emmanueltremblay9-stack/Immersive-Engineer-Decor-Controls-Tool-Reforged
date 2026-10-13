@@ -896,5 +896,8 @@
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.dimension.overworld": " in the Overworld",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.distance": " | %1$s blocks away",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.entity": "Entity: %1$s",
-  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Stim Pack injects"
+  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Stim Pack injects",
+  "key.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Open contextual Engineer Manual",
+  "key.categories.immersive_engineer_decor_controls_tool_reforged": "IEDCTR",
+  "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Hold %s to open Engineer Manual"
 }
