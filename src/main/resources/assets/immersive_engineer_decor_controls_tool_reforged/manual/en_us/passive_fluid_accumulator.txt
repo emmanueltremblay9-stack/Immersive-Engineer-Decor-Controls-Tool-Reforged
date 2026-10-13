@@ -1,6 +1,7 @@
-Passive Fluid
-Fluid line hardware
-<&recipe>The Passive Fluid Accumulator is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+Passive Fluid Accumulator
+Passive water collection
+<&recipe>The Passive Fluid Accumulator collects 250 mB of water every 80 ticks when at least one of its six neighboring blocks contains a water source. Its tank holds 4000 mB and needs no energy. Collection leaves the neighboring source in place; flowing water and the accumulator's own waterlogged cell do not count.<br>
 <br>
-Usage: Place it against suitable water sources and leave room for fluid removal.<br>
-
+Place it directly in source water to keep that water in the block. Normal bucket use fills or drains the internal tank. Sneak-use a water bucket or empty bucket to add or remove the block's surrounding water instead. These two water stores are independent.<br>
+<br>
+Use fluid pipes to extract stored water, or put empty buckets in the input slot and take the filled buckets from the output slot.<br>

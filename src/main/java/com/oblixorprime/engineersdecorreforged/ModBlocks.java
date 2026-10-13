@@ -239,7 +239,7 @@ public final class ModBlocks {
       "small_fluid_funnel", () -> new MachineBlocks.LevelOnlyMachineBlock(machineMetal(), MachineKind.SMALL_FLUID_FUNNEL)
    );
    public static final DeferredBlock<MachineBlocks.MachineBlock> PASSIVE_FLUID_ACCUMULATOR = registerWithItem(
-      "passive_fluid_accumulator", () -> new MachineBlocks.MachineBlock(machineMetal(), MachineKind.PASSIVE_FLUID_ACCUMULATOR)
+      "passive_fluid_accumulator", () -> new MachineBlocks.PassiveFluidAccumulatorBlock(machineMetal())
    );
    public static final DeferredBlock<MachineBlocks.SolarPanelBlock> SMALL_SOLAR_PANEL = registerWithItem(
       "small_solar_panel", () -> new MachineBlocks.SolarPanelBlock(machineMetal())

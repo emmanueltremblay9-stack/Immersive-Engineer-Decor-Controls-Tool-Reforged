@@ -14,12 +14,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -31,6 +33,8 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -365,6 +369,47 @@ public final class MachineBlocks {
 
       protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
          return level.getBlockEntity(pos) instanceof MachineBlockEntity machine ? machine.comparatorOutput() : 0;
+      }
+   }
+
+   /** Water in the block's world cell is independent of the existing machine tank. */
+   public static class PassiveFluidAccumulatorBlock extends MachineBlocks.MachineBlock implements SimpleWaterloggedBlock {
+      public static final MapCodec<MachineBlocks.PassiveFluidAccumulatorBlock> CODEC = simpleCodec(MachineBlocks.PassiveFluidAccumulatorBlock::new);
+      public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+      public PassiveFluidAccumulatorBlock(Properties properties) {
+         super(properties, MachineKind.PASSIVE_FLUID_ACCUMULATOR);
+         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+      }
+
+      @Override
+      protected MapCodec<? extends BaseEntityBlock> codec() {
+         return CODEC;
+      }
+
+      @Override
+      protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
+         builder.add(WATERLOGGED);
+      }
+
+      @Override
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         return this.defaultBlockState().setValue(WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER);
+      }
+
+      @Override
+      protected FluidState getFluidState(BlockState state) {
+         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+      }
+
+      @Override
+      protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbor,
+                                       LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         if (state.getValue(WATERLOGGED)) {
+            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+         }
+         return super.updateShape(state, direction, neighbor, level, pos, neighborPos);
       }
    }
 

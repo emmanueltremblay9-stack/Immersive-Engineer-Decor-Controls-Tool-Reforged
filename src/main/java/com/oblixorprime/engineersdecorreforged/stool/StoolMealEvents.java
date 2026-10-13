@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodData;
 import net.minecraft.world.food.FoodProperties;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -45,9 +44,8 @@ public final class StoolMealEvents {
       if (food == null || !Float.isFinite(food.saturation()) || food.saturation() <= 0.0F) {
          return;
       }
-      FoodData data = player.getFoodData();
       // In 1.21.1 saturation() already equals nutrition * saturationModifier * 2.
-      data.setSaturation(Math.min(data.getFoodLevel(), data.getSaturationLevel() + food.saturation() * 0.20F));
+      DiningSaturation.add(player, food.saturation(), DiningSaturation.seatedRate(player));
    }
 
    @SubscribeEvent

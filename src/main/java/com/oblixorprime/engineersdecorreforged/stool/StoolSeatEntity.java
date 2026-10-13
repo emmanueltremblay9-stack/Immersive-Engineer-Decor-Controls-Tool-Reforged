@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.stool;
 
+import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -32,7 +33,7 @@ public final class StoolSeatEntity extends Entity {
    public boolean isValidSeatFor(Player player) {
       return !isRemoved() && !loadedFromDisk && player.isAlive() && !player.isRemoved() && !player.isSpectator()
          && player.level() == level() && getPassengers().size() == 1 && hasPassenger(player)
-         && level().getBlockState(blockPosition()).getBlock() instanceof TreatedWoodStoolBlock;
+         && level().getBlockState(blockPosition()).is(ModBlocks.TREATED_WOOD_STOOL.get());
    }
 
    public boolean hasRoomFor(Player player) {
@@ -53,7 +54,7 @@ public final class StoolSeatEntity extends Entity {
    protected boolean canAddPassenger(Entity passenger) {
       return passenger instanceof Player player && player.isAlive() && !player.isSpectator()
          && player.getPose() == Pose.STANDING && getPassengers().isEmpty() && !isRemoved()
-         && level().getBlockState(blockPosition()).getBlock() instanceof TreatedWoodStoolBlock && hasRoomFor(player);
+         && level().getBlockState(blockPosition()).is(ModBlocks.TREATED_WOOD_STOOL.get()) && hasRoomFor(player);
    }
 
    @Override
