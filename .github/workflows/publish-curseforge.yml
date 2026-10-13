@@ -1,44 +1,32 @@
 name: Publish CurseForge
-run-name: "CurseForge ${{ inputs.tag }} :: ${{ inputs.dry_run && 'dry-run' || (inputs.resume_file_id != '' && 'resume' || 'publish') }}"
+run-name: "CurseForge ${{ 'v1.1.58-reconstructed' }} :: ${{ false && 'dry-run' || ('' != '' && 'resume' || 'publish') }}"
 
 on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Reviewed publication label matching the manifest (no GitHub Release)
-        required: true
-        type: string
-      manifest:
-        description: Reviewed local-jar manifest path in this workflow checkout
-        required: true
-        type: string
-      dry_run:
-        description: Validate all public inputs without uploading
-        required: true
-        type: boolean
-        default: true
-      resume_file_id:
-        description: Existing CurseForge file ID to poll without uploading again
-        required: false
-        type: string
-        default: ""
+  # One explicitly authorized publication of the pinned 1.1.58 candidate, without a merge.
+  push:
+    branches: [dot/publish-curseforge-1.1.58]
+    paths:
+      - '.github/workflows/publish-curseforge.yml'
+      - 'tools/release/curseforge_release_1.1.58.json'
+      - 'release-bundle/1.1.58-reconstructed/curseforge-notes.md'
 
 permissions:
   contents: read
   actions: read
 
 concurrency:
-  group: curseforge-${{ inputs.tag }}
+  group: curseforge-${{ 'v1.1.58-reconstructed' }}
   cancel-in-progress: false
 
 jobs:
   publish:
     name: Guarded CurseForge publication
+    if: github.event_name == 'push' && github.ref == 'refs/heads/dot/publish-curseforge-1.1.58' && github.repository == 'emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
       RUN_KEY: ${{ github.run_id }}-${{ github.run_attempt }}
-      MANIFEST_PATH: ${{ inputs.manifest }}
+      MANIFEST_PATH: ${{ 'tools/release/curseforge_release_1.1.58.json' }}
 
     steps:
       - name: Checkout
@@ -66,7 +54,7 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          REQUESTED_TAG: ${{ inputs.tag }}
+          REQUESTED_TAG: ${{ 'v1.1.58-reconstructed' }}
         run: |
           python - <<'PY'
           import os
@@ -124,11 +112,11 @@ jobs:
 
       - name: Validate public inputs without a CurseForge secret
         id: dry-run
-        if: ${{ inputs.dry_run }}
+        if: ${{ false }}
         shell: bash
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          REQUESTED_TAG: ${{ inputs.tag }}
+          REQUESTED_TAG: ${{ 'v1.1.58-reconstructed' }}
         run: |
           set +e
           python tools/release/publish_curseforge.py \
@@ -147,12 +135,12 @@ jobs:
 
       - name: Prepare exact upload intent without posting
         id: prepare
-        if: ${{ !inputs.dry_run && inputs.resume_file_id == '' }}
+        if: ${{ !false && '' == '' }}
         shell: bash
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
-          REQUESTED_TAG: ${{ inputs.tag }}
+          REQUESTED_TAG: ${{ 'v1.1.58-reconstructed' }}
         run: |
           python tools/release/publish_curseforge.py \
             --prepare-publish \
@@ -193,7 +181,7 @@ jobs:
 
       - name: Persist upload intent before any POST
         id: persist-intent
-        if: ${{ !inputs.dry_run && inputs.resume_file_id == '' && steps.prepare.outputs.post_required == 'true' }}
+        if: ${{ !false && '' == '' && steps.prepare.outputs.post_required == 'true' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: ${{ steps.prepare.outputs.artifact_name }}
@@ -203,13 +191,13 @@ jobs:
 
       - name: Submit exact persisted request once
         id: publish
-        if: ${{ !inputs.dry_run && inputs.resume_file_id == '' && steps.prepare.outputs.post_required == 'true' && steps.persist-intent.outcome == 'success' }}
+        if: ${{ !false && '' == '' && steps.prepare.outputs.post_required == 'true' && steps.persist-intent.outcome == 'success' }}
         shell: bash
         env:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
           INTENT_ARTIFACT_ID: ${{ steps.persist-intent.outputs.artifact-id }}
-          REQUESTED_TAG: ${{ inputs.tag }}
+          REQUESTED_TAG: ${{ 'v1.1.58-reconstructed' }}
         run: |
           set +e
           python tools/release/publish_curseforge.py \
@@ -231,12 +219,12 @@ jobs:
 
       - name: Resume an accepted file without a token or second POST
         id: resume
-        if: ${{ !inputs.dry_run && inputs.resume_file_id != '' }}
+        if: ${{ !false && '' != '' }}
         shell: bash
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          REQUESTED_TAG: ${{ inputs.tag }}
-          RESUME_FILE_ID: ${{ inputs.resume_file_id }}
+          REQUESTED_TAG: ${{ 'v1.1.58-reconstructed' }}
+          RESUME_FILE_ID: ${{ '' }}
         run: |
           [[ "$RESUME_FILE_ID" =~ ^[1-9][0-9]*$ ]]
           set +e
