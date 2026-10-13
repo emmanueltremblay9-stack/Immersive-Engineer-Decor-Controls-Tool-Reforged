@@ -85,7 +85,10 @@ public final class PoleHeadGameTests {
             helper.assertValueEqual(loaded, state, "legacy facing states round-trip without migration");
             helper.getLevel().setBlock(pos, loaded, 2);
             for (Direction neighbor : Direction.values()) {
+               helper.getLevel().setBlock(pos.relative(neighbor), Blocks.STONE.defaultBlockState(), 3);
                helper.getLevel().setBlock(pos.relative(neighbor), Blocks.AIR.defaultBlockState(), 3);
+               helper.assertValueEqual(helper.getLevel().getBlockState(pos), loaded,
+                  "actual world head state survives adding and removing each neighboring support");
                BlockState updated = loaded.updateShape(neighbor, Blocks.AIR.defaultBlockState(), helper.getLevel(), pos, pos.relative(neighbor));
                helper.assertValueEqual(updated, loaded, "structural pole ends must not disappear or reorient when support changes");
             }
@@ -93,6 +96,16 @@ public final class PoleHeadGameTests {
             var shape = loaded.getShape(helper.getLevel(), pos);
             helper.assertValueEqual((shape.max(facing.getAxis()) - shape.min(facing.getAxis())), 1.0, "selection spans the full pole length");
             helper.assertValueEqual(loaded.getCollisionShape(helper.getLevel(), pos), shape, "collision matches selectable shape");
+            Vec3 outward = Vec3.atLowerCornerOf(facing.getNormal());
+            Vec3 lateral = facing.getAxis() == Direction.Axis.X ? new Vec3(0, 0, -0.2) : new Vec3(-0.2, 0, 0);
+            Vec3 plateProbe = new Vec3(0.5, 0.5, 0.5).add(outward.scale(-0.45)).add(lateral);
+            Vec3 shaftSideProbe = new Vec3(0.5, 0.5, 0.5).add(outward.scale(0.45)).add(lateral);
+            helper.assertTrue(shape.toAabbs().stream().anyMatch(box -> box.contains(plateProbe)),
+               "wide plate must sit opposite facing, matching the model: " + facing);
+            helper.assertFalse(shape.toAabbs().stream().anyMatch(box -> box.contains(shaftSideProbe)),
+               "opposite end must remain a narrow shaft, not a second plate or full cube: " + facing);
+            helper.assertTrue(shape.toAabbs().stream().anyMatch(box -> box.contains(new Vec3(0.5, 0.5, 0.5))),
+               "middle of the visible shaft must be selectable");
             helper.assertValueEqual(NbtUtils.writeBlockState(loaded), saved, "shape and neighbor checks preserve saved facing");
          }
       }

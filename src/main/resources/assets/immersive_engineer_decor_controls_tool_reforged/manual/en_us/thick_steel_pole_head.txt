@@ -1,7 +1,5 @@
-Thick Pole Head
+Thick Steel Pole Head/Foot
 Structural frame part
-<&recipe>The Straight Thick Steel Pole Head/Foot Thick Steel Pole Head/Foot supplies visible structure for machine halls and access frames.<br>
+<&recipe>Place this end piece against a solid surface for a pole foot. Place it against a pole to turn the end plate outward as a head.<br>
 <br>
-Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
-
-
+The clicked face determines its direction, including floors, ceilings, and horizontal connections. Camera pitch alone does not choose the end.<br>

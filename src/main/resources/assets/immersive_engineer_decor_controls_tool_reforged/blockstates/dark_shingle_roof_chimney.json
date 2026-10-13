@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": { "model": "immersive_engineer_decor_controls_tool_reforged:block/roof/dark_shingle_roof_chimney_model" }
+    "stacked=false": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/roof/dark_shingle_roof_chimney_model"
+    },
+    "stacked=true": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/roof/dark_shingle_roof_chimney_extended_model"
+    }
   }
 }
