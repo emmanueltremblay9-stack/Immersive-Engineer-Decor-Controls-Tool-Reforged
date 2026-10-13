@@ -19,7 +19,10 @@ class NativeGameplayProofTests(unittest.TestCase):
             self.proof["cases"].append({"case": name, "mode": mode, "approach": approach,
                 "immediate_client_prediction_lamp_only": True, "authoritative_lamp_only": True,
                 "release_allows_native_deck_mining": True, "immediate_client_prediction_deck_removed": True,
-                "authoritative_deck_removed": True, "lamp_sequence": 2 * index + 1,
+                "authoritative_deck_removed": True,
+                "lamp_completion_action": "STOP_DESTROY_BLOCK" if expected else "START_DESTROY_BLOCK",
+                "deck_completion_action": "STOP_DESTROY_BLOCK" if expected else "START_DESTROY_BLOCK",
+                "lamp_sequence": 2 * index + 1,
                 "lamp_ack_applied": 2 * index + 1, "deck_sequence": 2 * index + 2,
                 "deck_ack_applied": 2 * index + 2, "held_ticks": 25, "held_attack_cancellations": 27,
                 "held_extra_mining_packets": 0, "lamp_drops_or_inventory": expected,
@@ -66,6 +69,13 @@ class NativeGameplayProofTests(unittest.TestCase):
             proof = copy.deepcopy(self.proof)
             proof["cases"][0][key] = value
             with self.subTest(key=key), self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_survival_start_ack_cannot_qualify_completion(self):
+        for stage in ("lamp", "deck"):
+            proof = copy.deepcopy(self.proof)
+            case = next(case for case in proof["cases"] if case["mode"] == "survival")
+            case[f"{stage}_completion_action"] = "START_DESTROY_BLOCK"
+            with self.subTest(stage=stage), self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_requires_real_sequences_not_boolean_json_values(self):
         proof = copy.deepcopy(self.proof)

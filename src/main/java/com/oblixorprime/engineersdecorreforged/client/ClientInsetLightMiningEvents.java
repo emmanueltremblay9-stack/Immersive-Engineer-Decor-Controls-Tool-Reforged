@@ -79,13 +79,16 @@ public final class ClientInsetLightMiningEvents {
          return false;
       }
       Long target = null;
-      boolean retainedDeck = false;
+      boolean retainedOwner = false;
       if (minecraft.hitResult instanceof BlockHitResult hit && hit.getType() == HitResult.Type.BLOCK) {
          target = hit.getBlockPos().asLong();
          BlockState state = minecraft.level.getBlockState(hit.getBlockPos());
-         // A server-side denial restores the lit state and must also release this latch.
-         retainedDeck = state.getBlock() instanceof RaisedCatwalkBlock && state.getValue(RaisedCatwalkBlock.VARIANT) != 4;
+         // An early STOP can be acknowledged while the server's delayed break is
+         // still pending. Its correction temporarily restores the lamp; retain
+         // the latch so the later server-only removal cannot expose the deck to
+         // the original held attack. A denied attempt can be retried after release.
+         retainedOwner = state.getBlock() instanceof RaisedCatwalkBlock;
       }
-      return HOLD.suppress(minecraft.level, minecraft.player, minecraft.options.keyAttack.isDown(), target, retainedDeck);
+      return HOLD.suppress(minecraft.level, minecraft.player, minecraft.options.keyAttack.isDown(), target, retainedOwner);
    }
 }

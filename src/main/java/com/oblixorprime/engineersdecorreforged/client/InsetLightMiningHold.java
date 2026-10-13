@@ -12,12 +12,12 @@ final class InsetLightMiningHold {
       this.owner = owner;
    }
 
-   boolean suppress(Object world, Object player, boolean attackDown, Long target, boolean retainedDeck) {
+   boolean suppress(Object world, Object player, boolean attackDown, Long target, boolean retainedOwner) {
       if (owner == null) {
          return false;
       }
       if (this.world != world || this.player != player || !attackDown
-         || !owner.equals(target) || !retainedDeck) {
+         || !owner.equals(target) || !retainedOwner) {
          reset();
          return false;
       }

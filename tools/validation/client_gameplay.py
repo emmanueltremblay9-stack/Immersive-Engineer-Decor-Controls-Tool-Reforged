@@ -57,6 +57,9 @@ def validate_proof(proof: dict, nonce: str, logs: str, exit_code: int | None,
             if case.get(flag) is not True:
                 raise SmokeFailure(f"{label} lacks {flag}")
         for stage in ("lamp", "deck"):
+            action = "START_DESTROY_BLOCK" if case["mode"] == "creative" else "STOP_DESTROY_BLOCK"
+            if case.get(f"{stage}_completion_action") != action:
+                raise SmokeFailure(f"{label} lacks the exact native {stage} completion action")
             sequence, ack = case.get(f"{stage}_sequence"), case.get(f"{stage}_ack_applied")
             if type(sequence) is not int or type(ack) is not int or sequence < 0 or ack < sequence:
                 raise SmokeFailure(f"{label} lacks processed native {stage} ACK evidence")

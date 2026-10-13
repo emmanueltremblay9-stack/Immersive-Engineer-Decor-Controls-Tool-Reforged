@@ -24,12 +24,16 @@ horizontal direction. Each case:
 3. Calls the normal NeoForge click-input hook before native
    MultiPlayerGameMode.startDestroyBlock/continueDestroyBlock
 4. Checks the immediate client prediction retains exactly the unlit catwalk
-5. Observes the original vanilla mining sequence and the corresponding ACK,
-   waiting until native ACK handling has run on the client thread
-6. Holds attack beyond a full mining duration and verifies every input is
+5. Freezes the exact completion action's original vanilla sequence (START in
+   creative, STOP in survival), then waits until its native ACK handling has run
+   on the client thread; an earlier survival START ACK cannot qualify completion
+6. Allows a temporary lit rollback after a legitimate early-STOP ACK while
+   preserving the same catwalk and held-input latch, and requires eventual
+   authoritative and reconciled-client lamp-only completion within the deadline
+7. Holds attack beyond a full mining duration and verifies every input is
    canceled, with no further START/STOP packets and no catwalk loss
-7. Checks authoritative server state, paid lamp loot and native tool wear
-8. Releases input, then proves a fresh attack can actually mine the retained
+8. Checks authoritative server state, paid lamp loot and native tool wear
+9. Releases input, then proves a fresh attack can actually mine the retained
    deck through prediction, normal packets, ACK and authoritative server state
 
 The packet observer is passive: packets are neither fabricated nor changed.

@@ -28,8 +28,18 @@ public final class InsetLightMiningHoldTest {
       check(!hold.suppress(world, player, true, null, false), "looking into air clears the latch");
       check(!hold.suppress(world, player, true, 12L, true), "returning from air permits a new mine");
       hold.completed(world, player, 12L);
-      check(!hold.suppress(world, player, true, 12L, false), "relit server correction or unrelated replacement clears latch");
-      check(!hold.suppress(world, player, true, 12L, true), "denied prediction cannot leave a stale latch");
+      check(hold.suppress(world, player, true, 12L, true), "successful client lamp prediction starts protection");
+      check(hold.suppress(world, player, true, 12L, true), "relit correction still names the retained catwalk owner");
+      check(hold.suppress(world, player, true, 12L, true), "later server-only lamp removal cannot expose the deck to held attack");
+      check(!hold.suppress(world, player, false, 12L, true), "release after correction permits an explicit retry");
+      check(!hold.suppress(world, player, true, 12L, true), "fresh click after correction is not swallowed");
+      hold.completed(world, player, 12L);
+      check(hold.suppress(world, player, true, 12L, true), "denied prediction keeps one held attack latched to its owner");
+      check(!hold.suppress(world, player, false, 12L, true), "release also clears a permanently denied prediction");
+      check(!hold.suppress(world, player, true, 12L, true), "a fresh attempt after a protection denial is allowed");
+      hold.completed(world, player, 12L);
+      check(!hold.suppress(world, player, true, 12L, false), "an unrelated replacement block clears latch");
+      check(!hold.suppress(world, player, true, 12L, true), "returning to a replacement cannot resurrect the old latch");
       hold.completed(world, player, 12L);
       check(!hold.suppress(new Object(), player, true, 12L, true), "world changes clear latch even at same coordinates");
       hold.completed(world, player, 12L);
@@ -40,7 +50,7 @@ public final class InsetLightMiningHoldTest {
       check(hold.suppress(world, player, true, Long.MAX_VALUE, true), "latest actual completion replaces the previous owner");
       hold.reset();
       check(!hold.suppress(world, player, true, Long.MAX_VALUE, true), "logout reset clears all state");
-      System.out.println("Inset light mining hold: 115 assertions passed");
+      System.out.println("Inset light mining hold: 123 assertions passed");
    }
 
    private static void check(boolean value, String message) {

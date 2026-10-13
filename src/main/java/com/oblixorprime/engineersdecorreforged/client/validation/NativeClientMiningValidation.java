@@ -80,6 +80,7 @@ public final class NativeClientMiningValidation {
    private static int holdTicks;
    private static int baselineSequence;
    private static int lampSequence;
+   private static int completionSequence = -1;
    private static int heldPacketCount;
    private static int canceledHolds;
    private static int stageTicks;
@@ -193,6 +194,8 @@ public final class NativeClientMiningValidation {
                miningTicks = (int)Math.ceil(1.0F / progress) + 8;
                require(miningTicks < 350, "Fixture mining duration exceeds its bounded budget");
                baselineSequence = probe.latestSequence;
+               completionSequence = -1;
+               inspection = null;
                canceledHolds = 0;
                ticks = 0;
                mc.options.keyAttack.setDown(true);
@@ -210,16 +213,34 @@ public final class NativeClientMiningValidation {
             }
             case LAMP_ACK -> {
                attack(mc, false, true);
-               assertUnlit(mc.level.getBlockState(POS), "Client while awaiting lamp ACK");
-               if (probe.latestSequence > baselineSequence && probe.ackApplied >= probe.latestSequence) {
-                  lampSequence = probe.latestSequence;
-                  heldPacketCount = probe.miningPackets;
-                  result.addProperty("lamp_sequence", lampSequence);
-                  result.addProperty("lamp_ack_applied", probe.ackApplied);
-                  ticks = 0;
-                  holdTicks = miningTicks + 12;
-                  enter(Phase.HOLD);
+               BlockState clientState = mc.level.getBlockState(POS);
+               require(clientState.is(ModBlocks.STEEL_CATWALK_TA.get()),
+                  "Lamp reconciliation must never remove the retained client catwalk");
+               if (isLit(clientState)) result.addProperty("temporary_lit_rollback_observed", true);
+               // Native early STOP can be acknowledged before delayed server mining
+               // finishes. Keep the input latch through that legitimate lit rollback,
+               // but require eventual client AND authoritative lamp-only completion.
+               if (!completionAcknowledged() || isLit(clientState)) return;
+               assertUnlit(clientState, "Reconciled client after lamp completion ACK");
+               if (inspection == null) {
+                  inspection = inspect(mc);
+                  return;
                }
+               if (!inspection.isDone()) return;
+               ServerEvidence state = inspection.join();
+               inspection = null;
+               require(state.state().is(ModBlocks.STEEL_CATWALK_TA.get()),
+                  "Lamp reconciliation must never remove the authoritative catwalk");
+               if (isLit(state.state())) return;
+               assertUnlit(state.state(), "Authoritative lamp completion after exact native ACK");
+               lampSequence = completionSequence;
+               heldPacketCount = probe.miningPackets;
+               result.addProperty("lamp_sequence", lampSequence);
+               result.addProperty("lamp_completion_action", completionAction().name());
+               result.addProperty("lamp_ack_applied", probe.ackApplied);
+               ticks = 0;
+               holdTicks = miningTicks + 12;
+               enter(Phase.HOLD);
             }
             case HOLD -> {
                attack(mc, false, true);
@@ -253,6 +274,8 @@ public final class NativeClientMiningValidation {
                // ClientTick.Pre has now observed release. The same target must be
                // mineable again; this also prevents a blanket-cancellation false pass.
                baselineSequence = probe.latestSequence;
+               completionSequence = -1;
+               inspection = null;
                mc.options.keyAttack.setDown(true);
                attack(mc, true, false);
                ticks = 0;
@@ -265,9 +288,14 @@ public final class NativeClientMiningValidation {
                observeDeckPrediction(mc);
             }
             case DECK_ACK -> {
-               if (probe.latestSequence > baselineSequence && probe.ackApplied >= probe.latestSequence) {
-                  require(mc.level.getBlockState(POS).isAir(), "Deck ACK restored an unexpected client state");
-                  result.addProperty("deck_sequence", probe.latestSequence);
+               BlockState clientState = mc.level.getBlockState(POS);
+               require(clientState.isAir() || clientState.is(ModBlocks.STEEL_CATWALK_TA.get()),
+                  "Deck reconciliation replaced the fixture with an unexpected block");
+               // A native early STOP may temporarily restore the deck as well.
+               // A permanent denial remains pending and fails the bounded deadline.
+               if (completionAcknowledged() && clientState.isAir()) {
+                  result.addProperty("deck_sequence", completionSequence);
+                  result.addProperty("deck_completion_action", completionAction().name());
                   result.addProperty("deck_ack_applied", probe.ackApplied);
                   inspection = inspect(mc);
                   enter(Phase.INSPECT_DECK);
@@ -276,7 +304,12 @@ public final class NativeClientMiningValidation {
             case INSPECT_DECK -> {
                if (!inspection.isDone()) return;
                ServerEvidence state = inspection.join();
-               require(state.state().isAir(), "Released input must remove the authoritative deck");
+               if (!state.state().isAir()) {
+                  require(state.state().is(ModBlocks.STEEL_CATWALK_TA.get()),
+                     "Authoritative deck was replaced with an unexpected block");
+                  enter(Phase.DECK_ACK);
+                  return;
+               }
                require(state.decks() == (mode() == GameType.SURVIVAL ? 1 : 0), "Deck native loot differs from game mode");
                result.addProperty("release_allows_native_deck_mining", true);
                result.addProperty("authoritative_deck_removed", true);
@@ -333,6 +366,7 @@ public final class NativeClientMiningValidation {
       result.addProperty("case", mode().getName() + "-" + direction.getName());
       result.addProperty("mode", mode().getName());
       result.addProperty("approach", direction.getName());
+      result.addProperty("temporary_lit_rollback_observed", false);
       pending = mc.getSingleplayerServer().submit(() -> {
          ServerPlayer player = serverPlayer(mc);
          var level = player.serverLevel();
@@ -441,6 +475,21 @@ public final class NativeClientMiningValidation {
       return true;
    }
 
+   private static ServerboundPlayerActionPacket.Action completionAction() {
+      return mode() == GameType.CREATIVE ? ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK
+         : ServerboundPlayerActionPacket.Action.STOP_DESTROY_BLOCK;
+   }
+
+   private static boolean completionAcknowledged() {
+      // The Netty observer is asynchronous. An already-ACKed survival START is
+      // never evidence that the later STOP/completion has even been written yet.
+      if (completionSequence < 0) {
+         int observed = mode() == GameType.CREATIVE ? probe.latestStartSequence : probe.latestStopSequence;
+         if (observed > baselineSequence) completionSequence = observed;
+      }
+      return completionSequence >= 0 && probe.ackApplied >= completionSequence;
+   }
+
    private static GameType mode() { return caseIndex < APPROACHES.size() ? GameType.CREATIVE : GameType.SURVIVAL; }
    private static boolean isLit(BlockState state) { return state.is(ModBlocks.STEEL_CATWALK_TA.get()) && state.getValue(RaisedCatwalkBlock.VARIANT) == 4; }
    private static void assertUnlit(BlockState state, String context) {
@@ -489,6 +538,8 @@ public final class NativeClientMiningValidation {
    private static final class Probe extends ChannelDuplexHandler {
       private final Minecraft minecraft;
       private volatile int latestSequence = -1;
+      private volatile int latestStartSequence = -1;
+      private volatile int latestStopSequence = -1;
       private volatile int ackApplied = -1;
       private volatile int miningPackets;
       private Probe(Minecraft minecraft) { this.minecraft = minecraft; }
@@ -496,8 +547,14 @@ public final class NativeClientMiningValidation {
          if (message instanceof ServerboundPlayerActionPacket action && action.getPos().equals(POS)
             && (action.getAction() == ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK
                || action.getAction() == ServerboundPlayerActionPacket.Action.STOP_DESTROY_BLOCK)) {
-            latestSequence = Math.max(latestSequence, action.getSequence());
             miningPackets++;
+            latestSequence = Math.max(latestSequence, action.getSequence());
+            // Publish the per-action completion sequence after its packet count.
+            if (action.getAction() == ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK) {
+               latestStartSequence = action.getSequence();
+            } else {
+               latestStopSequence = action.getSequence();
+            }
          }
          super.write(context, message, promise);
       }

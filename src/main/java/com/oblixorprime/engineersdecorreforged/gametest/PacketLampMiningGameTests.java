@@ -83,6 +83,7 @@ public final class PacketLampMiningGameTests {
          Fixture fixture = put(helper, index, true);
          player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
          BlockHitResult hit = turnByPacket(helper, player, APPROACHES[index]);
+         assertSolidSupport(helper, fixture, "before native START");
          float progress = fixture.lit().getDestroyProgress(player, helper.getLevel(), hit.getBlockPos());
          helper.assertTrue(progress > 0 && progress < 1, "fixture must exercise real survival duration");
          action(player, hit, ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK);
@@ -90,7 +91,7 @@ public final class PacketLampMiningGameTests {
          helper.assertValueEqual(helper.getBlockState(CENTER), fixture.lit(), "early native STOP must not instantly mine the lamp");
          helper.assertValueEqual(player.getMainHandItem().getDamageValue(), 0, "no wear before native mining completes");
          int ticks = (int)Math.ceil(1.0 / progress) + 2;
-         tickMining(helper, player, ticks, () -> {
+         tickMining(helper, player, fixture, ticks, () -> {
             assertRemoved(helper, player, fixture, 1, 1);
             // A duplicate network STOP cannot consume the deck or refund a second lamp.
             action(player, hit, ServerboundPlayerActionPacket.Action.STOP_DESTROY_BLOCK);
@@ -119,7 +120,13 @@ public final class PacketLampMiningGameTests {
       clearDrops(helper);
       Block[] supports = {Blocks.AIR, ModBlocks.THICK_STEEL_POLE.get(), ModBlocks.THIN_STEEL_POLE.get(), ModBlocks.TREATED_WOOD_POLE.get(), Blocks.AIR};
       int[] variants = {0, 1, 2, 5, 0};
-      helper.getLevel().setBlock(pos.below(), supports[index].defaultBlockState(), 2);
+      BlockState support = supports[index].defaultBlockState();
+      // Real top-face placement produces a vertical pole. The default NORTH
+      // state is horizontal and non-solid to vanilla fluids, so timed water flow
+      // can wash that incorrect fixture away before mining even completes.
+      if (support.hasProperty(PortedBlocks.FACING)) support = support.setValue(PortedBlocks.FACING, Direction.UP);
+      if (!support.isAir()) helper.assertTrue(support.blocksMotion(), "vertical support must resist ordinary fluid replacement");
+      helper.getLevel().setBlock(pos.below(), support, 2);
       BlockState lit = ModBlocks.STEEL_CATWALK_TA.get().defaultBlockState()
          .setValue(RaisedCatwalkBlock.VARIANT, 4).setValue(RaisedCatwalkBlock.PAID_LIGHT, paid)
          .setValue(RaisedCatwalkBlock.WATERLOGGED, true);
@@ -192,12 +199,20 @@ public final class PacketLampMiningGameTests {
       helper.assertValueEqual(player.getMainHandItem().getDamageValue(), wear, "native mining must apply tool wear exactly once only in survival");
    }
 
-   private static void tickMining(GameTestHelper helper, ServerPlayer player, int ticks, Runnable finished) {
+   private static void assertSolidSupport(GameTestHelper helper, Fixture fixture, String phase) {
+      if (!fixture.support().isAir()) {
+         helper.assertValueEqual(helper.getLevel().getBlockState(helper.absolutePos(CENTER).below()), fixture.support(),
+            "fixture's solid support must still exist " + phase);
+      }
+   }
+
+   private static void tickMining(GameTestHelper helper, ServerPlayer player, Fixture fixture, int ticks, Runnable finished) {
       helper.runAfterDelay(1, () -> {
          try {
+            assertSolidSupport(helper, fixture, "before native mining progress/completion");
             player.gameMode.tick();
             if (ticks <= 1) finished.run();
-            else tickMining(helper, player, ticks - 1, finished);
+            else tickMining(helper, player, fixture, ticks - 1, finished);
          } catch (RuntimeException | Error failure) {
             cleanup(helper, player);
             throw failure;
