@@ -1,7 +1,7 @@
 Roof Wire Conduit
-Weathered roof fitting
-<&recipe>The Dark Shingle Roof Wire Conduit builds dark, practical roof lines for workshops and industrial sheds.<br>
+Vertical cable passage
+<&recipe>The Dark Shingle Roof Wire Conduit has a small opening straight through its center, from top to bottom.<br>
 <br>
-Usage: Use the pieces together to make believable roof profiles.<br>
-
-
+Usage: Align two compatible Immersive Engineering connectors vertically above and below the opening, then connect them with the matching wire coil. The conduit lets the cable pass; it is not itself a connector or relay. Off-center or sideways cables can hit the solid walls.<br>
+<br>
+New placements keep the fitting upright and straight. Existing straight fittings gain the hollow collision without replacement. Replace an old corner-shaped fitting to restore its visible conduit.<br>

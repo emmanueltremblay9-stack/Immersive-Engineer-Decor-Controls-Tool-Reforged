@@ -8,6 +8,7 @@
 - The chimney remains decorative: no fuel, furnace, stack scanning or new obstruction rules are added.
 - The Chimney Trunk now has selection and collision following its preserved model, including the upper rim used to place the separate cap directly above it.
 - New trunks place upright and straight and no longer turn into plain roof corners when neighboring stairs change.
+- Stacks of 2, 3 or 5 upright trunks plus a final cap have tested rim placement and touching wall collision in all four orientations. The preserved trunk is a roof fitting, so every stacked trunk still shows its roof piece. Caps alone are only 6/16 block tall and are not full-height stack segments; no new vertical model is introduced.
 - Registry IDs, textures, models, recipes and drops are retained. Existing property-less caps load silently at 0 and can be activated by clicking or redstone; existing trunk facing, half, shape and waterlogging are preserved. Existing corner or inverted trunks are not migrated; re-place them for the normal upright fitting.
 
 ## Regression coverage

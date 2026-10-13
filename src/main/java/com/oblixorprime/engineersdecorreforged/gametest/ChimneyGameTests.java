@@ -255,6 +255,56 @@ public final class ChimneyGameTests {
       helper.succeed();
    }
 
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void multiple_trunks_stack_on_their_rims_and_join_a_final_cap(GameTestHelper helper) {
+      var level = helper.getLevel();
+      BlockPos base = helper.absolutePos(CENTER);
+      var player = helper.makeMockPlayer(GameType.CREATIVE);
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         player.setYRot(facing.toYRot());
+         for (int height : new int[] {2, 3, 5}) {
+            for (int y = 0; y <= 6; y++) level.setBlock(base.above(y), Blocks.AIR.defaultBlockState(), 2);
+            level.setBlock(base, ModBlocks.DARK_SHINGLE_ROOF_CHIMNEYTRUNK.get().defaultBlockState()
+               .setValue(StairBlock.FACING, facing), 2);
+            Vec3 rim = rotate(new Vec3(4.5 / 16, 1, 4.0 / 16), facing);
+            for (int y = 1; y <= height; y++) {
+               BlockPos support = base.above(y - 1);
+               BlockState lower = level.getBlockState(support);
+               BlockHitResult hit = lower.getShape(level, support).clip(
+                  Vec3.atLowerCornerOf(support).add(rim.x, 2, rim.z),
+                  Vec3.atLowerCornerOf(support).add(rim.x, 0, rim.z), support);
+               helper.assertTrue(hit != null && hit.getDirection() == Direction.UP, "each upper rim can be targeted");
+               ItemStack item = new ItemStack(y == height ? ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get()
+                  : ModBlocks.DARK_SHINGLE_ROOF_CHIMNEYTRUNK.get());
+               player.setItemInHand(InteractionHand.MAIN_HAND, item);
+               helper.assertTrue(((BlockItem)item.getItem()).place(
+                  new BlockPlaceContext(level, player, InteractionHand.MAIN_HAND, item, hit)).consumesAction(),
+                  "each trunk and the final cap place directly on the preceding rim");
+            }
+            VoxelShape combined = Shapes.empty();
+            for (int y = 0; y < height; y++) {
+               BlockState trunk = level.getBlockState(base.above(y));
+               helper.assertTrue(trunk.is(ModBlocks.DARK_SHINGLE_ROOF_CHIMNEYTRUNK.get()), "stack retains each trunk");
+               helper.assertValueEqual(trunk.getValue(StairBlock.FACING), facing, "stack orientations agree");
+               helper.assertValueEqual(trunk.getValue(StairBlock.HALF), Half.BOTTOM, "stack remains upright");
+               helper.assertValueEqual(trunk.getValue(StairBlock.SHAPE), StairsShape.STRAIGHT, "stack retains fitting models");
+               helper.assertFalse(trunk.hasProperty(ChimneyBlock.POWER), "trunk is not a smoke emitter");
+               combined = Shapes.or(combined, trunk.getCollisionShape(level, base.above(y)).move(0, y, 0));
+            }
+            BlockState cap = level.getBlockState(base.above(height));
+            helper.assertTrue(cap.is(ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get()), "one final cap closes the assembly");
+            helper.assertValueEqual(cap.getValue(ChimneyBlock.POWER), 5, "new final cap starts at intensity five");
+            combined = Shapes.or(combined, cap.getCollisionShape(level, base.above(height)).move(0, height, 0));
+            VoxelShape joinedWall = Shapes.box(rim.x - 0.001, 0, rim.z - 0.001,
+               rim.x + 0.001, height + 6.0 / 16, rim.z + 0.001);
+            helper.assertFalse(Shapes.joinIsNotEmpty(joinedWall, combined, BooleanOp.ONLY_FIRST),
+               "preserved wall geometry touches continuously across every trunk and cap boundary");
+         }
+      }
+      helper.succeed();
+   }
+
    private static Vec3 rotate(Vec3 point, Direction facing) {
       return switch (facing) {
          case EAST -> point;
