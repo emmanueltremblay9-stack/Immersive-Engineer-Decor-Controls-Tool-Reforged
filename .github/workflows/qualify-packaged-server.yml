@@ -32,7 +32,6 @@ jobs:
       (github.event_name == 'workflow_dispatch' ||
        (github.event_name == 'push' && github.ref == 'refs/heads/dot/qualify-server-1.1.58'))
     env:
-      GRADLE_USER_HOME: ${{ runner.temp }}/iedctr-qualification-gradle
       # The scoped push opt-in records the operator's explicit approval, not a general acceptance.
       # All other refs require the manual typed acknowledgement; no PR/schedule trigger exists.
       EULA_ACKNOWLEDGMENT: ${{ github.event_name == 'push' && 'I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT' || inputs.eula_acknowledgment }}
@@ -62,6 +61,10 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
+
+      - name: Initialize isolated Gradle cache path
+        shell: bash
+        run: echo "GRADLE_USER_HOME=$RUNNER_TEMP/iedctr-qualification-gradle" >> "$GITHUB_ENV"
 
       - name: Set up Gradle without persisting runtime binaries
         uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
