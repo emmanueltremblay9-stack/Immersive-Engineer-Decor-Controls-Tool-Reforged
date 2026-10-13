@@ -40,6 +40,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.util.FakePlayer;
@@ -604,7 +605,9 @@ public final class NativeRailingGameTests {
             BlockPos pos = helper.absolutePos(CENTER);
             var mob = EntityType.ZOMBIE.create(helper.getLevel());
             helper.assertTrue(mob != null, "obstruction fixture must exist");
-            mob.setBaby(false);
+            // Short enough to leave a separate railing in the block above unobstructed:
+            // otherwise a broken FAIL/fallback path could accidentally pass this test.
+            mob.setBaby(true);
             mob.setNoAi(true);
             mob.setPos(pos.getX() + 0.5 + EDGES[edge].getStepX() * 0.45,
                pos.getY() + (block == catwalk() ? 3.0 / 16.0 : 0.0),
@@ -612,6 +615,8 @@ public final class NativeRailingGameTests {
             helper.assertTrue(helper.getLevel().noCollision(mob), "obstruction must be clear before the proposed new railing");
             helper.assertTrue(helper.getLevel().addFreshEntity(mob), "obstruction must be added to world collision checks");
             try {
+               helper.assertTrue(helper.getLevel().isUnobstructed(sides(railing(), 1 << edge), pos.above(), CollisionContext.of(player)),
+                  "fixture must permit the unwanted fallback block above so the test detects fallthrough");
                clickEdge(helper, player, CENTER, EDGES[edge], Direction.SOUTH);
                helper.assertValueEqual(helper.getBlockState(CENTER), original, "occupied edge must reject the edit without changing paid state");
                helper.assertValueEqual(owned(helper, player, railing().asItem()), 16, "rejected edit must neither consume nor refund");
