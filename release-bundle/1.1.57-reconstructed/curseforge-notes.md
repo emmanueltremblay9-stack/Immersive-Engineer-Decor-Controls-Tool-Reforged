@@ -1,5 +1,7 @@
 # 1.1.57-reconstructed
 
+Historical draft: this candidate was deferred without publication. The text below is preserved as an earlier preparation snapshot. Active candidate notes are in [1.1.58-reconstructed](../1.1.58-reconstructed/curseforge-notes.md); do not publish or use this draft to qualify 1.1.58.
+
 Draft candidate notes. This version is not yet published or fully qualified.
 
 ## Fixes

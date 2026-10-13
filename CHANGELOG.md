@@ -2,7 +2,7 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
-## [1.1.57-reconstructed] - Unreleased candidate
+## [1.1.58-reconstructed] - Unreleased candidate
 
 ### Added
 - Added click synchronization for adjacent matching pairs of native-compatible doors and fence gates, including Old Industrial Wood Door and Steel Mesh Fence Gate. Supports inherited vanilla interaction methods; custom interaction overrides and custom early-use items are excluded. Respects companion interaction vetoes, limits synchronization to one valid pair, and does not add redstone propagation.
@@ -26,10 +26,17 @@ All notable reconstruction, repair, and validation changes for this project are 
 - Steel Mesh Fence Gate keeps its saved facing, open state, segment values, models and selection outline. Its thin inward decorative leaf no longer narrows the open collision corridor below player width. Fence connections may need a neighbor update; existing manual-only redstone behavior is unchanged.
 
 ### Candidate status
-- Synchronized candidate metadata to `1.1.57-reconstructed`. This candidate is not published or fully qualified. Earlier CI results for `1.1.56-reconstructed` builds do not identify or qualify a `1.1.57-reconstructed` JAR.
+- Synchronized active candidate metadata to `1.1.58-reconstructed`, retaining all fixes and synchronized-pair functionality through PRs #43–46. This version increment changes metadata and documentation only; dependencies and runtime behavior are unchanged.
+- `1.1.57-reconstructed` was deferred without publication. Its fixes are carried forward here; this candidate is not published or fully qualified.
 - Exact-commit CI, actual JAR identity and packaged notices, client inspection, packaged dedicated-server validation, and publication checks remain required; see `docs/releases/next-patch-qualification.md`.
-- Any candidate JAR built before all hatch ladder-continuation, metal-ladder wall-clearance and Steel Mesh Fence Gate passage/connection fixes is superseded for qualification, even if labelled `1.1.57-reconstructed`; the final fixed bytes and exact source commit must be qualified again.
+- All earlier `1.1.57-reconstructed` JARs and hashes remain historical evidence only. They cannot identify or qualify the differently versioned `1.1.58-reconstructed` JAR; the final source commit and rebuilt bytes must be qualified again.
 - Compatibility is unchanged: Minecraft 1.21.1, Java 21, NeoForge 21.1.230 minimum, required Immersive Engineering 12.4.2-194, and optional JEI 19.32.0.359. No exhaustive reporter-modpack compatibility claim is made.
+
+## [1.1.57-reconstructed] - Deferred, unpublished
+
+- This candidate was not published. Its planned fixes and additions are carried forward into `1.1.58-reconstructed` above.
+- The preserved draft in `release-bundle/1.1.57-reconstructed/curseforge-notes.md` and earlier CI/runtime observations are historical candidate evidence, not a release record or qualification of 1.1.58.
+- The latest qualified public baseline remains `1.1.56-reconstructed`.
 
 ## [1.1.56-reconstructed] - 2026-10-02
 

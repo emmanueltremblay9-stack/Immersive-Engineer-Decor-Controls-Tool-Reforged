@@ -25,6 +25,12 @@ Latest qualified and publicly released version: `1.1.56-reconstructed`.
 - `validateProjectMetadata` checks version parity, public support links, issue templates, and root/packaged attribution parity.
 - The normal build workflow does not modify Prism; an installation requires its own verified procedure.
 
+## Current candidate
+
+Active development version: `1.1.58-reconstructed`, an unpublished candidate carrying the placement, collision, selection and synchronized-accessway changes through PR #46. `1.1.57-reconstructed` was deferred without publication. The version increment preserves runtime behavior and dependencies; prior candidate hashes and gameplay observations do not qualify the newly versioned JAR.
+
+See the [candidate notes](release-bundle/1.1.58-reconstructed/curseforge-notes.md) and [qualification gates](docs/releases/next-patch-qualification.md). `1.1.56-reconstructed` remains the latest qualified public release until those gates and publication readback pass.
+
 ## Config status
 
 The COMMON config flags keep registry content stable and control which groups are shown in the mod's Creative tab. They do not remove registered blocks, items, menus, or saved-world content.
