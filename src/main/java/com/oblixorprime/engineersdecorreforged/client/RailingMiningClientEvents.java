@@ -42,8 +42,8 @@ public final class RailingMiningClientEvents {
       }
 
       BlockPos pos = event.getPos();
-      // RailingBlock extends CatwalkBlock, so this covers both kinds without other blocks.
-      if (!(minecraft.level.getBlockState(pos).getBlock() instanceof PortedBlocks.CatwalkBlock)
+      // Use the same block family as server completion and the shared component highlight.
+      if (!PortedBlocks.hasSelectableRailings(minecraft.level.getBlockState(pos))
          || RailingMining.matchesCurrentTarget(minecraft.player, pos)) {
          return;
       }

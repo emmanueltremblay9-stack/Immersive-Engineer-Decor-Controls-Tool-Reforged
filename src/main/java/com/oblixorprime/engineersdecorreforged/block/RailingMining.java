@@ -46,7 +46,7 @@ public final class RailingMining {
       Level level = player.level();
       BlockPos pos = event.getPos();
       BlockState state = level.getBlockState(pos);
-      if (!(state.getBlock() instanceof PortedBlocks.CatwalkBlock) || !canMine(player, level, pos)) {
+      if (!PortedBlocks.hasSelectableRailings(state) || !canMine(player, level, pos)) {
          return;
       }
       PortedBlocks.RailingPart part = aimedPart(player, level, pos);
@@ -62,7 +62,7 @@ public final class RailingMining {
       Intent intent = INTENTS.get(player);
       if (event.isCanceled()) {
          INTENTS.remove(player);
-      } else if (event.getState().getBlock() instanceof PortedBlocks.CatwalkBlock
+      } else if (PortedBlocks.hasSelectableRailings(event.getState())
          || intent != null && intent.pos().equals(event.getPos())) {
          if (intent == null || intent.state() != event.getState() || !matchesCurrentTarget(player, event.getPos())) {
             // Also protect a different block that replaced the originally targeted railing.

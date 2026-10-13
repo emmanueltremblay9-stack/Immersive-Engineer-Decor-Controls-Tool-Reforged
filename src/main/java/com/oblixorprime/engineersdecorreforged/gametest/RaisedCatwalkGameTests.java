@@ -1,5 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
@@ -29,6 +31,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -55,8 +58,9 @@ public final class RaisedCatwalkGameTests {
    public static void raised_catwalk_item_placement_uses_support_not_coordinates(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       Block[] supports = {Blocks.AIR, ModBlocks.THICK_STEEL_POLE.get(), ModBlocks.THIN_STEEL_POLE.get(),
-         ModBlocks.THICK_STEEL_POLE_HEAD.get(), ModBlocks.THIN_STEEL_POLE_HEAD.get()};
-      int[] expected = {0, 1, 2, 1, 2};
+         ModBlocks.THICK_STEEL_POLE_HEAD.get(), ModBlocks.THIN_STEEL_POLE_HEAD.get(),
+         ModBlocks.TREATED_WOOD_POLE.get(), ModBlocks.TREATED_WOOD_POLE_HEAD.get()};
+      int[] expected = {0, 1, 2, 1, 2, 5, 5};
       for (int x = 1; x <= 5; x++) {
          BlockPos pos = helper.absolutePos(new BlockPos(x, 2, 3));
          for (int support = 0; support < supports.length; support++) {
@@ -66,6 +70,45 @@ public final class RaisedCatwalkGameTests {
             place(helper, player, pos, Direction.SOUTH);
             helper.assertValueEqual(helper.getLevel().getBlockState(pos).getValue(RaisedCatwalkBlock.VARIANT),
                expected[support], "side placement must be determined by the support, at every former coordinate residue");
+         }
+         clearAround(helper, pos);
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void raised_catwalk_wood_support_works_for_every_placement_face_and_water_state(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      for (int x = 1; x <= 5; x++) {
+         BlockPos pos = helper.absolutePos(new BlockPos(x, 2, 3));
+         for (Block support : List.of(ModBlocks.TREATED_WOOD_POLE.get(), ModBlocks.TREATED_WOOD_POLE_HEAD.get())) {
+            for (boolean wet : new boolean[] {false, true}) {
+               for (Direction face : Direction.values()) {
+                  clearAround(helper, pos);
+                  helper.getLevel().setBlock(pos.relative(face.getOpposite()), Blocks.STONE.defaultBlockState(), 3);
+                  helper.getLevel().setBlock(pos.below(), support.defaultBlockState()
+                     .setValue(DirectionalBlock.FACING, Direction.UP), 3);
+                  if (wet) {
+                     helper.getLevel().setBlock(pos, Blocks.WATER.defaultBlockState(), 3);
+                  }
+                  place(helper, player, pos, face);
+                  BlockState state = helper.getLevel().getBlockState(pos);
+                  helper.assertValueEqual(state.getValue(RaisedCatwalkBlock.VARIANT), 5,
+                     "wood below must select the wooden connection for every click face and former coordinate residue");
+                  helper.assertValueEqual(state.getValue(RaisedCatwalkBlock.WATERLOGGED), wet,
+                     "wood-supported item placement must preserve water");
+                  helper.assertFalse(state.getValue(RaisedCatwalkBlock.PAID_LIGHT), "wood never creates paid light credit");
+                  helper.getLevel().setBlock(pos, NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(),
+                     NbtUtils.writeBlockState(state)), 3);
+                  helper.getLevel().setBlock(pos.east(), Blocks.STONE.defaultBlockState(), 3);
+                  helper.getLevel().setBlock(pos.east(), Blocks.AIR.defaultBlockState(), 3);
+                  helper.assertValueEqual(helper.getLevel().getBlockState(pos), state,
+                     "saved wooden connections survive unrelated side updates");
+                  helper.getLevel().setBlock(pos.below(), Blocks.AIR.defaultBlockState(), 3);
+                  helper.assertValueEqual(helper.getLevel().getBlockState(pos), state.setValue(RaisedCatwalkBlock.VARIANT, 0),
+                     "removing the wooden support after save/load restores the plain deck without losing water");
+               }
+            }
          }
          clearAround(helper, pos);
       }
@@ -113,8 +156,10 @@ public final class RaisedCatwalkGameTests {
       helper.getLevel().setBlock(pos, catwalk().defaultBlockState().setValue(RaisedCatwalkBlock.WATERLOGGED, true), 3);
       Block[] supports = {ModBlocks.THICK_STEEL_POLE.get(), ModBlocks.THIN_STEEL_POLE.get(),
          ModBlocks.THICK_STEEL_POLE_HEAD.get(), ModBlocks.THIN_STEEL_POLE_HEAD.get(),
-         ModBlocks.TREATED_WOOD_POLE.get(), Blocks.STONE, Blocks.AIR};
-      int[] expected = {1, 2, 1, 2, 0, 0, 0};
+         ModBlocks.TREATED_WOOD_POLE.get(), ModBlocks.THICK_STEEL_POLE.get(), ModBlocks.TREATED_WOOD_POLE_HEAD.get(),
+         ModBlocks.THIN_STEEL_POLE.get(), ModBlocks.TREATED_WOOD_POLE.get(), Blocks.AIR,
+         ModBlocks.TREATED_WOOD_POLE_HEAD.get(), Blocks.STONE, Blocks.AIR};
+      int[] expected = {1, 2, 1, 2, 5, 1, 5, 2, 5, 0, 5, 0, 0};
       for (int i = 0; i < supports.length; i++) {
          helper.getLevel().setBlock(pos.below(), supports[i].defaultBlockState(), 3);
          BlockState state = helper.getLevel().getBlockState(pos);
@@ -212,6 +257,40 @@ public final class RaisedCatwalkGameTests {
       helper.assertValueEqual(owned(helper, player, light()), 65,
          "full inventory must drop exactly the one refund instead of losing or duplicating it");
       assertDrops(helper, removed, 0);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void raised_catwalk_wood_connection_after_saved_paid_light_removal_conserves_items(GameTestHelper helper) {
+      BlockPos pos = helper.absolutePos(CENTER);
+      ServerPlayer player = player(helper);
+      for (Block support : List.of(ModBlocks.TREATED_WOOD_POLE.get(), ModBlocks.TREATED_WOOD_POLE_HEAD.get())) {
+         for (InteractionHand hand : InteractionHand.values()) {
+            clearAround(helper, pos);
+            player.getInventory().clearContent();
+            helper.getLevel().setBlock(pos, catwalk().defaultBlockState()
+               .setValue(RaisedCatwalkBlock.WATERLOGGED, true), 3);
+            player.setItemInHand(hand, new ItemStack(light(), 2));
+            click(helper, player, hand, Direction.DOWN);
+            helper.getLevel().setBlock(pos.below(), support.defaultBlockState()
+               .setValue(DirectionalBlock.FACING, Direction.UP), 3);
+            BlockState lit = helper.getLevel().getBlockState(pos);
+            helper.assertValueEqual(lit.getValue(RaisedCatwalkBlock.VARIANT), 4,
+               "a new wood support cannot discard the installed inset light");
+            assertDrops(helper, lit, 1);
+            helper.getLevel().setBlock(pos, NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(),
+               NbtUtils.writeBlockState(lit)), 3);
+            click(helper, player, hand, Direction.DOWN);
+            BlockState unlit = helper.getLevel().getBlockState(pos);
+            helper.assertValueEqual(unlit.getValue(RaisedCatwalkBlock.VARIANT), 5,
+               "removing the saved inset light must discover its new wooden support");
+            helper.assertFalse(unlit.getValue(RaisedCatwalkBlock.PAID_LIGHT), "the refund clears the paid-light credit");
+            helper.assertTrue(unlit.getValue(RaisedCatwalkBlock.WATERLOGGED), "the wooden connection retains water");
+            helper.assertValueEqual(owned(helper, player, light()), 2, "exactly the purchased inset light is returned");
+            helper.assertValueEqual(unlit.getLightEmission(helper.getLevel(), pos), 0, "wooden connections emit no light");
+            assertDrops(helper, unlit, 0);
+         }
+      }
       helper.succeed();
    }
 
@@ -332,13 +411,44 @@ public final class RaisedCatwalkGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void raised_catwalk_native_extension_discovers_wood_at_its_new_position(GameTestHelper helper) {
+      BlockPos pos = helper.absolutePos(CENTER);
+      ServerPlayer player = player(helper);
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         for (Direction face : List.of(Direction.UP, Direction.DOWN)) {
+            for (Block support : List.of(ModBlocks.TREATED_WOOD_POLE.get(), ModBlocks.TREATED_WOOD_POLE_HEAD.get())) {
+               clearAround(helper, pos);
+               helper.getLevel().setBlock(pos, catwalk().defaultBlockState(), 3);
+               BlockPos target = pos.relative(facing);
+               helper.getLevel().setBlock(target, Blocks.WATER.defaultBlockState(), 3);
+               helper.getLevel().setBlock(target.below(), support.defaultBlockState()
+                  .setValue(DirectionalBlock.FACING, Direction.UP), 3);
+               player.getInventory().clearContent();
+               player.setYRot(facing.toYRot());
+               player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(catwalk(), 3));
+               click(helper, player, InteractionHand.MAIN_HAND, face);
+               BlockState extended = helper.getLevel().getBlockState(target);
+               helper.assertTrue(extended.is(catwalk()), "native extension places the new catwalk at the same height");
+               helper.assertValueEqual(extended.getValue(RaisedCatwalkBlock.VARIANT), 5,
+                  "extension must discover the wooden support directly below its own destination");
+               helper.assertTrue(extended.getValue(RaisedCatwalkBlock.WATERLOGGED), "extension retains destination water");
+               helper.assertValueEqual(player.getMainHandItem().getCount(), 2, "wood-supported extension consumes one catwalk");
+               click(helper, player, InteractionHand.MAIN_HAND, face);
+               helper.assertValueEqual(player.getMainHandItem().getCount(), 2, "blocked wood-supported extension consumes no item");
+            }
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void raised_catwalk_variant_geometry_and_saved_economic_state_match_models(GameTestHelper helper) throws Exception {
       BlockPos pos = helper.absolutePos(CENTER);
       VoxelShape deck = Block.box(0, 14, 0, 16, 16, 16);
-      VoxelShape[] expected = {deck, Shapes.or(deck, Block.box(5, 0, 5, 11, 15, 11)),
-         Shapes.or(deck, Block.box(6, 0, 6, 10, 15, 10)),
+      VoxelShape[] expected = {deck, completeHeadGeometry(1), completeHeadGeometry(2),
          Shapes.or(deck, Block.box(0, 0, 0, 16, 2, 16), Block.box(0, 0, 0, 1, 16, 1),
-            Block.box(15, 0, 0, 16, 16, 1), Block.box(15, 0, 15, 16, 16, 16), Block.box(0, 0, 15, 1, 16, 16)), deck};
+            Block.box(15, 0, 0, 16, 16, 1), Block.box(15, 0, 15, 16, 16, 16), Block.box(0, 0, 15, 1, 16, 16)), deck,
+         completeHeadGeometry(5)};
       String path = "/assets/" + EngineersDecorReforged.MOD_ID + "/blockstates/steel_catwalk_ta.json";
       try (var input = RaisedCatwalkGameTests.class.getResourceAsStream(path)) {
          helper.assertTrue(input != null, "raised catwalk blockstate resource must exist");
@@ -346,11 +456,11 @@ public final class RaisedCatwalkGameTests {
          for (BlockState state : catwalk().getStateDefinition().getPossibleStates()) {
             int variant = state.getValue(RaisedCatwalkBlock.VARIANT);
             helper.assertFalse(Shapes.joinIsNotEmpty(state.getShape(helper.getLevel(), pos), expected[variant], BooleanOp.NOT_SAME),
-               "outline must match the original variant's deck, pole, or frame geometry");
+               "outline must match the selected deck, complete pole head, or frame geometry");
             helper.assertFalse(Shapes.joinIsNotEmpty(state.getCollisionShape(helper.getLevel(), pos), expected[variant], BooleanOp.NOT_SAME),
                "collision must match the selected model's structural geometry");
             String model = variants.getAsJsonObject("variant=" + variant).get("model").getAsString();
-            helper.assertTrue(model.endsWith("steel_catwalk_ta" + variant + "_model"), "every numeric variant retains its original model");
+            helper.assertTrue(model.endsWith("steel_catwalk_ta" + variant + "_model"), "every numeric variant retains its stable model selector");
             var saved = NbtUtils.writeBlockState(state);
             helper.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved), state,
                "NBT save/load retains variant, water and paid lamp credit");
@@ -360,6 +470,160 @@ public final class RaisedCatwalkGameTests {
          }
       }
       helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void raised_catwalk_connections_preserve_complete_native_pole_heads(GameTestHelper helper) throws Exception {
+      JsonObject deck = readModel("furniture/steel_catwalk_ta0_model");
+      int[] variants = {1, 2, 5};
+      String[] heads = {"straight_thick_metal_pole_head_model", "straight_thin_metal_pole_head_model", "straight_pole_head_model"};
+      String[] sourceFaces = {"north", "south", "east", "west", "up", "down"};
+      String[] targetFaces = {"down", "up", "east", "west", "north", "south"};
+      int[] uvRotations = {180, 0, 90, 270, 180, 0};
+      for (int variantIndex = 0; variantIndex < variants.length; variantIndex++) {
+         int variant = variants[variantIndex];
+         JsonObject connected = readModel("furniture/steel_catwalk_ta" + variant + "_model");
+         JsonObject head = readModel("pole/" + heads[variantIndex]);
+         var deckElements = deck.getAsJsonArray("elements");
+         var elements = connected.getAsJsonArray("elements");
+         var headElements = head.getAsJsonArray("elements");
+         helper.assertValueEqual(elements.size(), deckElements.size() + headElements.size(),
+            "each connection must retain every native pole-head element, including the plate and four braces");
+         for (int i = 0; i < deckElements.size(); i++) {
+            helper.assertValueEqual(elements.get(i), deckElements.get(i), "the steel deck must remain unchanged");
+         }
+         for (String texture : head.getAsJsonObject("textures").keySet()) {
+            if (!texture.equals("particle")) {
+               helper.assertValueEqual(connected.getAsJsonObject("textures").get(texture), head.getAsJsonObject("textures").get(texture),
+                  "the connection must use the complete native head's textures, including wooden plate and braces");
+            }
+         }
+         int plateCount = 0;
+         int braceCount = 0;
+         for (int i = 0; i < headElements.size(); i++) {
+            JsonObject original = headElements.get(i).getAsJsonObject();
+            JsonObject integrated = elements.get(deckElements.size() + i).getAsJsonObject();
+            double[] from = integratedHeadPoint(original.getAsJsonArray("from"));
+            double[] to = integratedHeadPoint(original.getAsJsonArray("to"));
+            for (int axis = 0; axis < 3; axis++) {
+               double lower = Math.min(from[axis], to[axis]);
+               assertNear(helper, integrated.getAsJsonArray("from").get(axis).getAsDouble(), axis == 1 ? Math.max(0, lower) : lower,
+                  "head geometry rotates upwards and trims only the shaft at the lower block boundary");
+               assertNear(helper, integrated.getAsJsonArray("to").get(axis).getAsDouble(), Math.max(from[axis], to[axis]),
+                  "plate and brace dimensions are retained");
+            }
+            helper.assertValueEqual(integrated.has("rotation"), original.has("rotation"), "all native angled braces are retained");
+            if (original.has("rotation")) {
+               braceCount++;
+               JsonObject oldRotation = original.getAsJsonObject("rotation");
+               JsonObject newRotation = integrated.getAsJsonObject("rotation");
+               String oldAxis = oldRotation.get("axis").getAsString();
+               String newAxis = switch (oldAxis) { case "x" -> "x"; case "y" -> "z"; default -> "y"; };
+               helper.assertValueEqual(newRotation.get("axis").getAsString(), newAxis, "brace rotation axis follows the vertical head");
+               assertNear(helper, newRotation.get("angle").getAsDouble(), oldRotation.get("angle").getAsDouble() * (oldAxis.equals("y") ? -1 : 1),
+                  "brace slope is preserved");
+               double[] origin = integratedHeadPoint(oldRotation.getAsJsonArray("origin"));
+               for (int axis = 0; axis < 3; axis++) {
+                  assertNear(helper, newRotation.getAsJsonArray("origin").get(axis).getAsDouble(), origin[axis], "brace pivot is preserved");
+               }
+            } else if (original.getAsJsonArray("from").get(2).getAsDouble() == 14) {
+               plateCount++;
+               assertNear(helper, integrated.getAsJsonArray("from").get(1).getAsDouble(), 12, "the plate is visibly below the deck");
+               assertNear(helper, integrated.getAsJsonArray("to").get(1).getAsDouble(), 14, "the plate meets the deck with no gap");
+            }
+            var originalFaces = original.getAsJsonObject("faces");
+            var integratedFaces = integrated.getAsJsonObject("faces");
+            helper.assertValueEqual(integratedFaces.size(), originalFaces.size(), "head faces must not disappear when oriented vertically");
+            for (int face = 0; face < sourceFaces.length; face++) {
+               if (originalFaces.has(sourceFaces[face])) {
+                  var originalFace = originalFaces.getAsJsonObject(sourceFaces[face]);
+                  var integratedFace = integratedFaces.getAsJsonObject(targetFaces[face]);
+                  helper.assertTrue(integratedFace != null, "the rotated face must exist");
+                  helper.assertValueEqual(integratedFace.get("uv"), originalFace.get("uv"), "native texture sampling is retained");
+                  helper.assertValueEqual(integratedFace.get("texture"), originalFace.get("texture"), "native face textures are retained");
+                  int originalRotation = originalFace.has("rotation") ? originalFace.get("rotation").getAsInt() : 0;
+                  int integratedRotation = integratedFace.has("rotation") ? integratedFace.get("rotation").getAsInt() : 0;
+                  helper.assertValueEqual(integratedRotation, (originalRotation + uvRotations[face]) % 360,
+                     "UV orientation follows each rotated head face");
+               }
+            }
+         }
+         helper.assertValueEqual(plateCount, 1, "each integrated head has exactly one visible plate");
+         helper.assertValueEqual(braceCount, 4, "each integrated head retains all four native braces");
+         BlockState state = catwalk().defaultBlockState().setValue(RaisedCatwalkBlock.VARIANT, variant);
+         VoxelShape outline = state.getShape(helper.getLevel(), helper.absolutePos(CENTER));
+         double plateMin = variant == 2 ? 4 : 3;
+         VoxelShape plate = Block.box(plateMin, 12, plateMin, 16 - plateMin, 14, 16 - plateMin);
+         helper.assertFalse(Shapes.joinIsNotEmpty(plate, outline, BooleanOp.ONLY_FIRST), "the visible plate must be fully selectable");
+         for (int height = 0; height < 16; height++) {
+            helper.assertFalse(Shapes.joinIsNotEmpty(Block.box(7.5, height, 7.5, 8.5, height + 1, 8.5), outline, BooleanOp.ONLY_FIRST),
+               "support, plate, and deck must remain continuously connected");
+         }
+         assertDrops(helper, state, 0);
+      }
+      helper.succeed();
+   }
+
+   private static double[] integratedHeadPoint(JsonArray point) {
+      return new double[] {point.get(0).getAsDouble(), point.get(2).getAsDouble() - 2, 16 - point.get(1).getAsDouble()};
+   }
+
+   private static void assertNear(GameTestHelper helper, double actual, double expected, String description) {
+      helper.assertTrue(Math.abs(actual - expected) < 1.0e-8, description + ": " + actual + " != " + expected);
+   }
+
+   private static VoxelShape completeHeadGeometry(int variant) throws Exception {
+      VoxelShape shape = Block.box(0, 14, 0, 16, 16, 16);
+      // Preserve the established solid collision of the hollow rendered steel shafts.
+      if (variant == 1 || variant == 2) {
+         double min = variant == 1 ? 5 : 6;
+         shape = Shapes.or(shape, Block.box(min, 0, min, 16 - min, 12, 16 - min));
+      }
+      var elements = readModel("furniture/steel_catwalk_ta" + variant + "_model").getAsJsonArray("elements");
+      for (int i = 6; i < elements.size(); i++) {
+         JsonObject element = elements.get(i).getAsJsonObject();
+         double[] min = {Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY};
+         double[] max = {Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY};
+         for (int corner = 0; corner < 8; corner++) {
+            double[] point = new double[3];
+            for (int axis = 0; axis < 3; axis++) {
+               point[axis] = element.getAsJsonArray((corner & (1 << axis)) == 0 ? "from" : "to").get(axis).getAsDouble();
+            }
+            if (element.has("rotation")) {
+               JsonObject rotation = element.getAsJsonObject("rotation");
+               var origin = rotation.getAsJsonArray("origin");
+               double x = point[0] - origin.get(0).getAsDouble();
+               double y = point[1] - origin.get(1).getAsDouble();
+               double z = point[2] - origin.get(2).getAsDouble();
+               double angle = Math.toRadians(rotation.get("angle").getAsDouble());
+               double c = Math.cos(angle), s = Math.sin(angle);
+               point = switch (rotation.get("axis").getAsString()) {
+                  case "x" -> new double[] {x, y * c - z * s, y * s + z * c};
+                  case "y" -> new double[] {x * c + z * s, y, -x * s + z * c};
+                  default -> new double[] {x * c - y * s, x * s + y * c, z};
+               };
+               for (int axis = 0; axis < 3; axis++) {
+                  point[axis] += origin.get(axis).getAsDouble();
+               }
+            }
+            for (int axis = 0; axis < 3; axis++) {
+               min[axis] = Math.min(min[axis], point[axis]);
+               max[axis] = Math.max(max[axis], point[axis]);
+            }
+         }
+         shape = Shapes.or(shape, Block.box(min[0], min[1], min[2], max[0], max[1], max[2]));
+      }
+      return shape;
+   }
+
+   private static JsonObject readModel(String name) throws Exception {
+      String path = "/assets/" + EngineersDecorReforged.MOD_ID + "/models/block/" + name + ".json";
+      try (var input = RaisedCatwalkGameTests.class.getResourceAsStream(path)) {
+         if (input == null) {
+            throw new IllegalStateException("Missing model " + path);
+         }
+         return JsonParser.parseReader(new InputStreamReader(input, StandardCharsets.UTF_8)).getAsJsonObject();
+      }
    }
 
    private static Block catwalk() {

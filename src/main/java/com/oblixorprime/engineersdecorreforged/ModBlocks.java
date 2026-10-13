@@ -1,6 +1,8 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.CatwalkStairsItem;
+import com.oblixorprime.engineersdecorreforged.stool.TreatedWoodStoolBlock;
 import com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyBlock;
@@ -194,8 +196,8 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.TableBlock> TREATED_WOOD_TABLE = registerWithItem(
       "treated_wood_table", () -> new PortedBlocks.TableBlock(wood().noOcclusion())
    );
-   public static final DeferredBlock<PortedBlocks.StoolBlock> TREATED_WOOD_STOOL = registerWithItem(
-      "treated_wood_stool", () -> new PortedBlocks.StoolBlock(wood().noOcclusion())
+   public static final DeferredBlock<TreatedWoodStoolBlock> TREATED_WOOD_STOOL = registerWithItem(
+      "treated_wood_stool", () -> new TreatedWoodStoolBlock(wood().noOcclusion())
    );
    public static final DeferredBlock<MachineBlocks.MetalCraftingTableBlock> METAL_CRAFTING_TABLE = registerWithItem(
       "metal_crafting_table", () -> new MachineBlocks.MetalCraftingTableBlock(machineMetal())
@@ -335,7 +337,11 @@ public final class ModBlocks {
 
    public static <T extends Block> DeferredBlock<T> registerWithItem(String name, Supplier<T> supplier) {
       DeferredBlock<T> block = register(name, supplier);
-      ModItems.registerBlockItem(name, block);
+      if (name.equals("steel_catwalk_stairs")) {
+         ModItems.registerItem(name, () -> new CatwalkStairsItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+      } else {
+         ModItems.registerBlockItem(name, block);
+      }
       return block;
    }
 

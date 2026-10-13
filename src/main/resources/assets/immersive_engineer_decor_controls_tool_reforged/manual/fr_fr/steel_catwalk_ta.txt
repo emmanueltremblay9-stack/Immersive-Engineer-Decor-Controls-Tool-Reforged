@@ -1,8 +1,8 @@
 Passerelle en acier surélevée
 Plateforme alignée en hauteur
-<&recipe>Cette passerelle occupe le haut de son bloc. Elle se raccorde aux poteaux en acier fins ou épais et à leurs têtes placés juste en dessous. Le raccord s'adapte au changement ou au retrait du poteau.<br>
+<&recipe>Cette passerelle occupe le haut de son bloc. Elle se raccorde aux poteaux en acier fins ou épais, aux poteaux droits en bois traité et à leurs têtes placés juste en dessous. Le raccord s'adapte au changement ou au retrait du poteau.<br>
 <br>
-Cliquez sur le dessus d'un bloc solide pour obtenir la variante avec cadre. Les autres placements utilisent le plateau simple, sauf si un poteau en acier se trouve juste en dessous.<br>
+Cliquez sur le dessus d'un bloc solide pour obtenir la variante avec cadre. Les autres placements utilisent le plateau simple, sauf si un poteau compatible se trouve juste en dessous.<br>
 <br>
 En tenant une autre passerelle surélevée, cliquez sur le dessus ou le dessous pour prolonger la passerelle dans la direction regardée, à la même hauteur.<br>
 <br>

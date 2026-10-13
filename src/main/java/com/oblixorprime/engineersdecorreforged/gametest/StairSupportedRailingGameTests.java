@@ -166,12 +166,17 @@ public final class StairSupportedRailingGameTests {
          : target.add(0, 1.75, 0);
       look(player, eye, target);
       helper.assertValueEqual(eyeHit(helper, player).getBlockPos(), helper.absolutePos(RAIL), "the actual eye ray must target the standalone rail rather than its supporting stair");
+      Vec3 start = player.getEyePosition();
+      PortedBlocks.RailingPart part = PortedBlocks.selectRailingPart(helper.getLevel(), helper.absolutePos(RAIL), start,
+         start.add(player.getViewVector(1).scale(player.blockInteractionRange())), player);
+      helper.assertTrue(part != null && part.side() == side, "the real ray must select the intended standalone side before mining");
    }
 
    private static void look(ServerPlayer player, Vec3 eye, Vec3 target) {
       player.setPos(eye.x, eye.y - player.getEyeHeight(), eye.z);
       Vec3 delta = target.subtract(eye);
       player.setYRot((float)Math.toDegrees(Math.atan2(-delta.x, delta.z)));
+      player.setYHeadRot(player.getYRot());
       player.setXRot((float)-Math.toDegrees(Math.atan2(delta.y, Math.sqrt(delta.x * delta.x + delta.z * delta.z))));
    }
 

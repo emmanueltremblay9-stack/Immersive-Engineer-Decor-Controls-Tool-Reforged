@@ -1,8 +1,8 @@
 Raised Steel Catwalk
 Top-aligned service platform
-<&recipe>The raised catwalk sits at the top of its block space. It connects down to thick or thin steel poles and their heads. Changing or removing the pole updates the connection.<br>
+<&recipe>The raised catwalk sits at the top of its block space. It connects down to thick or thin steel poles, straight treated-wood poles, and their heads. Changing or removing the pole updates the connection.<br>
 <br>
-Click the top of a sturdy block to place the frame variant. Other placements use the plain deck unless a steel pole is directly below.<br>
+Click the top of a sturdy block to place the frame variant. Other placements use the plain deck unless a compatible pole is directly below.<br>
 <br>
 Holding another raised catwalk, click its top or underside to extend the route in the direction you face. The new piece stays at the same height.<br>
 <br>

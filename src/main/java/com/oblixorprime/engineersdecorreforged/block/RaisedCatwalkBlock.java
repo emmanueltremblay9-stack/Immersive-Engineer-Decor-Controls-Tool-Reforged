@@ -34,20 +34,41 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** Top-aligned catwalk with contextual pole supports and an optional inset light. */
 public final class RaisedCatwalkBlock extends Block implements SimpleWaterloggedBlock {
-   // Keep the recovered numeric states and model selectors compatible with existing saves.
-   public static final IntegerProperty VARIANT = PortedBlocks.VARIANT;
+   // Keep recovered states 0..4 unchanged and append wood without expanding other blocks' states.
+   public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 5);
    public static final BooleanProperty WATERLOGGED = PortedBlocks.WATERLOGGED;
    public static final BooleanProperty PAID_LIGHT = BooleanProperty.create("paid_light");
    private static final VoxelShape DECK = box(0, 14, 0, 16, 16, 16);
    // Original Engineer's Decor shapes: Stefan Wilhelm / wile, MIT (see NOTICE.md).
    private static final VoxelShape[] SHAPES = {
       DECK,
-      Shapes.or(DECK, box(5, 0, 5, 11, 15, 11)).optimize(),
-      Shapes.or(DECK, box(6, 0, 6, 10, 15, 10)).optimize(),
+      steelHeadShape(5, 11, 3, 13),
+      steelHeadShape(6, 10, 4, 12),
       Shapes.or(DECK, box(0, 0, 0, 16, 2, 16), box(0, 0, 0, 1, 16, 1),
          box(15, 0, 0, 16, 16, 1), box(15, 0, 15, 16, 16, 16), box(0, 0, 15, 1, 16, 16)).optimize(),
-      DECK
+      DECK,
+      // Existing complete wooden pole head: chamfered shaft, plate, and four brace envelopes.
+      Shapes.or(DECK, box(5.75, 0, 5.5, 10.25, 12, 10.5),
+         box(5.5, 0, 5.75, 5.75, 12, 10.25), box(10.25, 0, 5.75, 10.5, 12, 10.25),
+         box(3, 12, 3, 13, 14, 13),
+         box(6.5, 7.39894339059327, 6.71663592228744, 9.5, 13.4093510306789, 12.7270435623731),
+         box(6.5, 7.39894339059327, 3.27295643762691, 9.5, 13.4093510306789, 9.28336407771256),
+         box(6.71663592228744, 7.39894339059327, 6.5, 12.7270435623731, 13.4093510306789, 9.5),
+         box(3.27295643762691, 7.39894339059327, 6.5, 9.28336407771256, 13.4093510306789, 9.5)).optimize()
    };
+
+   private static VoxelShape steelHeadShape(double min, double max, double plateMin, double plateMax) {
+      // Conservative bounds for the existing 45-degree steel head braces. The plate is
+      // directly beneath the deck, and the shaft remains solid for collision as before.
+      double radius = 1.25 / Math.sqrt(2.0);
+      double low = min - 0.25;
+      double high = max + 0.25;
+      return Shapes.or(DECK, box(min, 0, min, max, 12, max), box(plateMin, 12, plateMin, plateMax, 14, plateMax),
+         box(min + 1, 12 - radius, low - radius, max - 1, 12 + radius, low + radius),
+         box(min + 1, 12 - radius, high - radius, max - 1, 12 + radius, high + radius),
+         box(low - radius, 12 - radius, min + 1, low + radius, 12 + radius, max - 1),
+         box(high - radius, 12 - radius, min + 1, high + radius, 12 + radius, max - 1)).optimize();
+   }
 
    public RaisedCatwalkBlock(Properties properties) {
       // Match the standalone iron inset light's level, including vanilla's cached state emission.
@@ -85,6 +106,8 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
          variant = 1;
       } else if (below.is(ModBlocks.THIN_STEEL_POLE.get()) || below.is(ModBlocks.THIN_STEEL_POLE_HEAD.get())) {
          variant = 2;
+      } else if (below.is(ModBlocks.TREATED_WOOD_POLE.get()) || below.is(ModBlocks.TREATED_WOOD_POLE_HEAD.get())) {
+         variant = 5;
       }
       return state.setValue(VARIANT, variant);
    }
