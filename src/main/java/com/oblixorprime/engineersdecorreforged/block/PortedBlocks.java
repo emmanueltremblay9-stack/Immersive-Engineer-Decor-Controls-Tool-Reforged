@@ -420,8 +420,10 @@ public final class PortedBlocks {
          double minX = side == 0 ? 0 : 14;
          for (int z = 0; z < 16; z++) {
             double floor = z < 8 ? 12 : 4;
-            // Selection follows the unchanged sloped model; collision is fence-height above both treads.
-            double top = collision ? floor + 24 : 30.5 - z * 15.0 / 16.0;
+            // Keep the visible sloped outline, but guard the whole side above the highest tread.
+            // A locally lowered cap is only one block above the upper tread, allowing a diagonal
+            // normal/auto-jump over its lower half before the entity descends onto the lower tread.
+            double top = collision ? 12 + 24 : 30.5 - z * 15.0 / 16.0;
             north = Shapes.or(north, Block.box(minX, floor, z, minX + 2, top, z + 1));
          }
          for (Direction facing : Direction.Plane.HORIZONTAL) {

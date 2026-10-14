@@ -116,7 +116,7 @@
     },
     {
       "from": [4, 12, 4],
-      "to": [12, 14, 12],
+      "to": [12, 15, 12],
       "faces": {
         "down": {"uv": [4, 4, 12, 12], "texture": "#top", "rotation": 180},
         "east": {"uv": [5, 5, 7, 13], "texture": "#side", "rotation": 90},

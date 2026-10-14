@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import com.oblixorprime.engineersdecorreforged.block.RailingMining;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.protocol.game.ServerboundMovePlayerPacket;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -31,8 +32,9 @@ public final class RailingMiningClientEvents {
 
    @SubscribeEvent(priority = EventPriority.LOWEST)
    public static void continueMining(PlayerInteractEvent.LeftClickBlock event) {
-      if (event.getAction() != PlayerInteractEvent.LeftClickBlock.Action.CLIENT_HOLD
-         || event.isCanceled() || event.getUseItem() == TriState.FALSE) {
+      if (event.getAction() != PlayerInteractEvent.LeftClickBlock.Action.START
+         && event.getAction() != PlayerInteractEvent.LeftClickBlock.Action.CLIENT_HOLD
+         || event.isCanceled() || !event.getEntity().getAbilities().instabuild && event.getUseItem() == TriState.FALSE) {
          return;
       }
       Minecraft minecraft = Minecraft.getInstance();
@@ -43,7 +45,18 @@ public final class RailingMiningClientEvents {
 
       BlockPos pos = event.getPos();
       // Use the same block family as server completion and the shared component highlight.
-      if (!PortedBlocks.hasSelectableRailings(minecraft.level.getBlockState(pos))
+      if (!PortedBlocks.hasSelectableRailings(minecraft.level.getBlockState(pos))) {
+         return;
+      }
+
+      // Minecraft handles attack input before LocalPlayer sends this tick's rotation.
+      // START/STOP mining packets contain only the block and face, so without this
+      // ordinary pose update a turn-and-click can mine the deck behind the lamp.
+      // Send before native START, or before a HOLD can produce native STOP. The
+      // server still validates reach, occlusion, protection and the selected shape.
+      minecraft.player.connection.send(new ServerboundMovePlayerPacket.Rot(
+         minecraft.player.getViewYRot(1.0F), minecraft.player.getViewXRot(1.0F), minecraft.player.onGround()));
+      if (event.getAction() != PlayerInteractEvent.LeftClickBlock.Action.CLIENT_HOLD
          || RailingMining.matchesCurrentTarget(minecraft.player, pos)) {
          return;
       }
