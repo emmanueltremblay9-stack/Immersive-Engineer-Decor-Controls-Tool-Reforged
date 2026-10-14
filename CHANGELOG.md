@@ -2,6 +2,13 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.59-reconstructed] - Unreleased fluidlogging draft
+
+### Added
+- First native source-cell cycle for Steel Catwalk, Steel Catwalk Stairs, Elevated Steel Catwalk and Steel Railing: water, lava and IE creosote, actual bucket conservation, legacy waterlogged saves, native chunk/block synchronization and fluid rendering. Other blocks and machines retain their current behavior.
+- Nine server GameTests and a 24-case integrated client synchronization/tessellation matrix. Existing Passive Fluid Accumulator tank/world-cell and collection contracts remain unchanged.
+- Pinned Fluidloggable/PR15 source-license review and reference attribution; no Fluidloggable code or dependency is bundled.
+
 ## [1.1.58-reconstructed] - Unreleased candidate
 
 ### Added

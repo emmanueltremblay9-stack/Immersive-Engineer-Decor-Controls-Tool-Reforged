@@ -109,7 +109,7 @@ public final class NativeClientMiningValidation {
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
-      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK }
+      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING }
 
    @SubscribeEvent
    public static void removed(RailingMining.InsetLightRemoved event) {
@@ -364,8 +364,11 @@ public final class NativeClientMiningValidation {
                write("running", null);
                EngineersDecorReforged.LOGGER.info("IEDCTR_CLIENT_GAMEPLAY case {}/10 passed: {}", caseIndex + 1, result);
                mc.options.keyAttack.setDown(false);
-               if (++caseIndex == 10) finish(mc, null);
+               if (++caseIndex == 10) enter(Phase.FLUIDLOGGING);
                else setup(mc);
+            }
+            case FLUIDLOGGING -> {
+               if (NativeFluidloggingValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
             }
             default -> throw new IllegalStateException("Unexpected fixture phase " + phase);
          }

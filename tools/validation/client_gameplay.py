@@ -91,6 +91,33 @@ def validate_proof(proof: dict, nonce: str, logs: str, exit_code: int | None,
     return proof
 
 
+def validate_fluidlogging_proof(proof: dict, nonce: str) -> dict:
+    blocks = {f"immersive_engineer_decor_controls_tool_reforged:{name}"
+              for name in ("steel_catwalk", "steel_catwalk_stairs", "steel_catwalk_ta", "steel_railing")}
+    fluids = {"minecraft:water", "minecraft:lava", "immersiveengineering:creosote"}
+    expected = {(block, fluid, sync) for block in blocks for fluid in fluids for sync in ("update", "chunk")}
+    if (proof.get("suite") != "native-fluidlogging-client-v1" or proof.get("nonce") != nonce
+            or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
+        raise SmokeFailure("Missing matching native fluidlogging client proof")
+    cases = proof.get("cases")
+    if not isinstance(cases, list) or len(cases) != len(expected):
+        raise SmokeFailure("Incomplete native fluidlogging scenario matrix")
+    seen = set()
+    for case in cases:
+        if not isinstance(case, dict):
+            raise SmokeFailure("Invalid fluidlogging case")
+        identity = (case.get("block"), case.get("fluid"), case.get("sync"))
+        if identity not in expected or identity in seen:
+            raise SmokeFailure("Duplicate or unexpected fluidlogging case")
+        seen.add(identity)
+        vertices = case.get("native_textured_vertices")
+        if (case.get("client_world_and_chunk_source") is not True or case.get("client_drain_cleared") is not True
+                or type(vertices) is not int or vertices <= 0 or vertices % 4 != 0):
+            raise SmokeFailure(f"Fluidlogging case lacks synchronization or textured geometry: {identity}")
+    return proof
+
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
@@ -152,6 +179,9 @@ gradle.projectsEvaluated {
                 logs += "\n" + runtime.read_text(encoding="utf-8", errors="replace")
         crashes = list(game.glob("crash-reports/*")) + list(evidence.rglob("hs_err_pid*.log"))
         validate_proof(proof, nonce, logs, code, expired, crashes)
+        fluid_proof = json.loads((game / "client-fluidlogging-result.json").read_text(encoding="utf-8"))
+        validate_fluidlogging_proof(fluid_proof, nonce)
+        print(json.dumps(fluid_proof, indent=2), flush=True)
         print(json.dumps(proof, indent=2), flush=True)
         return 0
     except (SmokeFailure, OSError, ValueError, TypeError, subprocess.SubprocessError) as error:
