@@ -90,9 +90,12 @@ Reproduce with the checked-in wrapper and Java 21:
 ```powershell
 .\scripts\invoke-gradle.ps1 compileJava runGameTestServer
 .\scripts\invoke-gradle.ps1 clean build
-python -m unittest discover -s tools/validation -p 'test_*.py' -v
+python -m unittest discover -s tools/validation -p 'test_client_fluidlogging.py' -v
+python -m unittest discover -s tools/validation -p 'test_client_gameplay.py' -v
 ```
 
+The full Python evidence suite includes two Linux-only process teardown tests;
+run `python -m unittest discover -s tools/validation -p 'test_*.py' -v` on Linux.
 The Linux CI additionally runs `python tools/validation/client_gameplay.py` in
 its fresh temporary integrated world. That runner requires Xvfb and is not a
 Windows visual validation. Successful tessellation is not a human screenshot
