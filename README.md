@@ -27,7 +27,7 @@ Latest qualified and publicly released version: `1.1.56-reconstructed`.
 
 ## Current candidate
 
-Active development version: `1.1.58-reconstructed`, an unpublished candidate carrying the placement, collision, selection and synchronized-accessway changes through PR #46. `1.1.57-reconstructed` was deferred without publication. The version increment preserves runtime behavior and dependencies; prior candidate hashes and gameplay observations do not qualify the newly versioned JAR.
+Active development version: `1.1.59-reconstructed`, an unpublished native fluidlogging draft for four existing decorative waterloggable blocks. Source water, lava and IE creosote use independent native world-cell state while preserving legacy waterlogging and the Passive Fluid Accumulator. See [scope and validation](docs/testing/native-fluidlogging.md). The previous `1.1.58-reconstructed` candidate and `1.1.57-reconstructed` were not published; prior candidate hashes do not qualify this JAR.
 
 See the [candidate notes](release-bundle/1.1.58-reconstructed/curseforge-notes.md) and [qualification gates](docs/releases/next-patch-qualification.md). `1.1.56-reconstructed` remains the latest qualified public release until those gates and publication readback pass.
 

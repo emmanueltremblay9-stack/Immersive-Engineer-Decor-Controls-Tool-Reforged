@@ -27,3 +27,11 @@ Source reference:
 ## Runtime Dependency
 
 - BluSunrize and Immersive Engineering contributors: Immersive Engineering, required at runtime. This fork depends on IE for referenced industrial assets, manual behavior, and FE compatibility; IE remains a separate upstream project under its own license.
+
+## Reviewed fluidlogging reference
+
+- Leximon, NightEpiphany / MoreThanHidden, and KoalaNalle / PricelessKoala:
+  Fluidloggable and its PR15 modded-fluid synchronization corrections, reviewed
+  during the native implementation. No upstream code, assets or mixins are copied.
+- Exact commits, verified MIT license and reuse inventory:
+  [native-fluidlogging.md](docs/testing/native-fluidlogging.md).

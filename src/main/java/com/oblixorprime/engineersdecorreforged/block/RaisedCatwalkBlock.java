@@ -34,7 +34,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** Top-aligned catwalk with contextual pole supports and an optional inset light. */
-public final class RaisedCatwalkBlock extends Block implements SimpleWaterloggedBlock {
+public final class RaisedCatwalkBlock extends Block implements NativeFluidloggedBlock {
    // Keep recovered states 0..4 unchanged and append wood without expanding other blocks' states.
    public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 5);
    public static final BooleanProperty WATERLOGGED = PortedBlocks.WATERLOGGED;
@@ -85,22 +85,21 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
 
    public RaisedCatwalkBlock(Properties properties) {
       // Match the standalone iron inset light's level, including vanilla's cached state emission.
-      super(properties.noOcclusion().lightLevel(state -> state.getValue(VARIANT) == 4 ? 14 : 0));
+      super(properties.noOcclusion().lightLevel(state -> Math.max(state.getValue(VARIANT) == 4 ? 14 : 0, NativeFluidloggedBlock.light(state))));
       registerDefaultState(stateDefinition.any().setValue(VARIANT, 0)
-         .setValue(WATERLOGGED, false).setValue(PAID_LIGHT, false));
+         .setValue(WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(PAID_LIGHT, false));
    }
 
    @Override
    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-      builder.add(VARIANT, WATERLOGGED, PAID_LIGHT);
+      builder.add(VARIANT, WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, PAID_LIGHT);
    }
 
    @Override
    public BlockState getStateForPlacement(BlockPlaceContext context) {
       Level level = context.getLevel();
       BlockPos pos = context.getClickedPos();
-      BlockState placed = withPoleSupport(defaultBlockState()
-         .setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER), level, pos);
+      BlockState placed = withPoleSupport(NativeFluidloggedBlock.placement(defaultBlockState(), context), level, pos);
       if (placed.getValue(VARIANT) == 0 && context.getClickedFace() == Direction.UP
          && level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
          return placed.setValue(VARIANT, 3);
@@ -128,16 +127,14 @@ public final class RaisedCatwalkBlock extends Block implements SimpleWaterlogged
    @Override
    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbor,
                                     LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-      if (state.getValue(WATERLOGGED)) {
-         level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-      }
+      NativeFluidloggedBlock.schedule(state, level, pos);
       // Side/top updates must not silently reinterpret legacy saved variants.
       return direction == Direction.DOWN ? withPoleSupport(state, level, pos) : state;
    }
 
    @Override
    protected FluidState getFluidState(BlockState state) {
-      return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+      return NativeFluidloggedBlock.fluidState(state);
    }
 
    @Override

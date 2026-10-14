@@ -475,36 +475,33 @@ public final class PortedBlocks {
       }
    }
 
-   public static class CatwalkBlock extends Block implements SimpleWaterloggedBlock {
+   public static class CatwalkBlock extends Block implements NativeFluidloggedBlock {
       public CatwalkBlock(Properties properties) {
-         super(properties);
+         super(properties.lightLevel(NativeFluidloggedBlock::light));
          this.registerDefaultState(
             (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.NORTH, false))
                         .setValue(PortedBlocks.EAST, false))
                      .setValue(PortedBlocks.SOUTH, false))
                   .setValue(PortedBlocks.WEST, false))
-               .setValue(PortedBlocks.WATERLOGGED, false).setValue(PortedBlocks.PAID_RAILINGS, 0)
+               .setValue(PortedBlocks.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(PortedBlocks.PAID_RAILINGS, 0)
          );
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
          builder.add(new Property[]{PortedBlocks.NORTH, PortedBlocks.EAST, PortedBlocks.SOUTH, PortedBlocks.WEST,
-            PortedBlocks.WATERLOGGED, PortedBlocks.PAID_RAILINGS});
+            PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, PortedBlocks.PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return this.defaultBlockState()
-            .setValue(PortedBlocks.WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER);
+         return NativeFluidloggedBlock.placement(this.defaultBlockState(), context);
       }
 
       public FluidState getFluidState(BlockState state) {
-         return state.getValue(PortedBlocks.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+         return NativeFluidloggedBlock.fluidState(state);
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-         if ((Boolean)state.getValue(PortedBlocks.WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-         }
+         NativeFluidloggedBlock.schedule(state, level, pos);
 
          // These properties describe installed edge rails, not neighbor connections.
          return state;
@@ -700,17 +697,17 @@ public final class PortedBlocks {
       }
    }
 
-   public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+   public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements NativeFluidloggedBlock {
       public static final MapCodec<PortedBlocks.CatwalkStairsBlock> CODEC = simpleCodec(PortedBlocks.CatwalkStairsBlock::new);
 
       public CatwalkStairsBlock(Properties properties) {
-         super(properties);
+         super(properties.lightLevel(NativeFluidloggedBlock::light));
          this.registerDefaultState(
             (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any())
                         .setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                      .setValue(PortedBlocks.LEFT_RAILING, false))
                   .setValue(PortedBlocks.RIGHT_RAILING, false))
-               .setValue(PortedBlocks.WATERLOGGED, false).setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0)
+               .setValue(PortedBlocks.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0)
          );
       }
 
@@ -719,27 +716,24 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED, EDITED_STAIR_SIDES, PAID_RAILINGS});
+         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, EDITED_STAIR_SIDES, PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          Direction facing = PortedBlocks.catwalkStairPlacementFacing(context);
          return this.withSideRailings(
-            (BlockState)((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing))
-               .setValue(PortedBlocks.WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER),
+            NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing), context),
             context.getLevel(),
             context.getClickedPos()
          );
       }
 
       public FluidState getFluidState(BlockState state) {
-         return state.getValue(PortedBlocks.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+         return NativeFluidloggedBlock.fluidState(state);
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-         if ((Boolean)state.getValue(PortedBlocks.WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-         }
+         NativeFluidloggedBlock.schedule(state, level, pos);
 
          Direction facing = (Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING);
          if (direction == facing.getCounterClockWise() && (state.getValue(EDITED_STAIR_SIDES) & 1) == 0) {
