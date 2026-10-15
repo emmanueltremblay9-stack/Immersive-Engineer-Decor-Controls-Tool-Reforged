@@ -109,7 +109,7 @@ public final class NativeClientMiningValidation {
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
-      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING }
+      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL }
 
    @SubscribeEvent
    public static void removed(RailingMining.InsetLightRemoved event) {
@@ -368,7 +368,10 @@ public final class NativeClientMiningValidation {
                else setup(mc);
             }
             case FLUIDLOGGING -> {
-               if (NativeFluidloggingValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
+               if (NativeFluidloggingValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.WATER_CANAL);
+            }
+            case WATER_CANAL -> {
+               if (NativeWaterCanalValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
             }
             default -> throw new IllegalStateException("Unexpected fixture phase " + phase);
          }
@@ -649,6 +652,7 @@ public final class NativeClientMiningValidation {
 
    private static final class FixtureScreen extends Screen {
       private FixtureScreen() { super(Component.literal("Isolated native client gameplay validation")); }
+      @Override public void render(net.minecraft.client.gui.GuiGraphics graphics, int mouseX, int mouseY, float partialTick) { }
       @Override public boolean isPauseScreen() { return false; }
       @Override public boolean shouldCloseOnEsc() { return false; }
    }

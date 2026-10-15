@@ -118,6 +118,42 @@ def validate_fluidlogging_proof(proof: dict, nonce: str) -> dict:
 
 
 
+def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
+    import struct
+    expected = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet"}
+    if (proof.get("suite") != "native-water-canal-diagnostic-v1"
+            or proof.get("nonce") != nonce or proof.get("status") != "captured"):
+        raise SmokeFailure("Missing current canal scene proof")
+    cases = proof.get("cases")
+    if not isinstance(cases, list) or len(cases) != len(expected):
+        raise SmokeFailure("Incomplete canal scene matrix")
+    seen = set()
+    for case in cases:
+        name = case.get("case")
+        if name not in expected or name in seen:
+            raise SmokeFailure("Duplicate or unexpected canal scene")
+        seen.add(name)
+        wet = name != "stairs-dry-control"
+        if case.get("source") is not wet:
+            raise SmokeFailure(f"Canal source state mismatch: {name}")
+        quads = case.get("upper_horizontal_quads")
+        if type(quads) is not int or (quads < 1 if wet else quads != 0):
+            raise SmokeFailure(f"Canal lacks the expected exposed upper fluid surface: {name}")
+        for angle in ("oblique", "overhead"):
+            filename = f"{name}-{angle}.png"
+            if case.get(f"{angle}_screenshot") != filename:
+                raise SmokeFailure("Unexpected canal screenshot identity")
+            image = directory / "canal-screenshots" / filename
+            data = image.read_bytes()
+            if len(data) < 1000 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+                raise SmokeFailure("Canal screenshot is absent or invalid")
+            width, height = struct.unpack(">II", data[16:24])
+            if width < 600 or height < 400:
+                raise SmokeFailure("Canal screenshot is too small to inspect")
+    return proof
+
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
@@ -181,6 +217,9 @@ gradle.projectsEvaluated {
         validate_proof(proof, nonce, logs, code, expired, crashes)
         fluid_proof = json.loads((game / "client-fluidlogging-result.json").read_text(encoding="utf-8"))
         validate_fluidlogging_proof(fluid_proof, nonce)
+        canal_proof = json.loads((game / "client-water-canal-result.json").read_text(encoding="utf-8"))
+        validate_canal_proof(canal_proof, nonce, game)
+        print(json.dumps(canal_proof, indent=2), flush=True)
         print(json.dumps(fluid_proof, indent=2), flush=True)
         print(json.dumps(proof, indent=2), flush=True)
         return 0
