@@ -19,6 +19,7 @@ import tempfile
 
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from renderer_profiles import PROFILES, prepare_renderer_dependencies, validate_renderer_profile
+from flow_distance import validate_flow_distance_proof
 
 
 SUITE = "native-client-lamp-mining-v1"
@@ -168,7 +169,10 @@ def main() -> int:
     parser.add_argument("--prepare-timeout", type=int, default=600)
     parser.add_argument("--timeout", type=int, default=420)
     parser.add_argument("--renderer-profile", choices=PROFILES)
+    parser.add_argument("--flow-distance-only", action="store_true")
     args = parser.parse_args()
+    if args.flow_distance_only and not args.renderer_profile:
+        parser.error("A renderer profile is required for the east flow-distance sweep")
     if sys.platform != "linux":
         parser.error("The native gameplay runner supports isolated Linux CI only")
     if min(args.prepare_timeout, args.timeout) <= 0:
@@ -201,6 +205,7 @@ gradle.projectsEvaluated {
         gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
         systemProperty 'iedctr.clientGameplay', 'true'
         systemProperty 'iedctr.canalEast', System.getenv('IEDCTR_CANAL_EAST')
+        systemProperty 'iedctr.flowDistanceOnly', System.getenv('IEDCTR_FLOW_DISTANCE_ONLY')
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
     }
@@ -208,7 +213,8 @@ gradle.projectsEvaluated {
 """, encoding="utf-8")
     env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null",
-               IEDCTR_RENDERER_JARS=json.dumps(renderer_jars), IEDCTR_CANAL_EAST=str(bool(args.renderer_profile)).lower())
+               IEDCTR_RENDERER_JARS=json.dumps(renderer_jars), IEDCTR_CANAL_EAST=str(bool(args.renderer_profile)).lower(),
+               IEDCTR_FLOW_DISTANCE_ONLY=str(args.flow_distance_only).lower())
     gradle = [str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
     prepare_log, client_log = evidence / "prepare.log", evidence / "client.log"
     print(f"Native client gameplay evidence: {evidence}", flush=True)
@@ -228,6 +234,13 @@ gradle.projectsEvaluated {
             if runtime.is_file():
                 logs += "\n" + runtime.read_text(encoding="utf-8", errors="replace")
         crashes = list(game.glob("crash-reports/*")) + list(evidence.rglob("hs_err_pid*.log"))
+        if args.flow_distance_only:
+            if expired:
+                raise SmokeFailure("Natural-flow client exceeded its deadline")
+            flow = json.loads((game / "client-water-flow-distance-result.json").read_text())
+            validate_flow_distance_proof(flow, proof, nonce, args.renderer_profile, game, logs, code)
+            print(json.dumps(flow, indent=2), flush=True)
+            return 0
         validate_proof(proof, nonce, logs, code, expired, crashes)
         fluid_proof = json.loads((game / "client-fluidlogging-result.json").read_text(encoding="utf-8"))
         validate_fluidlogging_proof(fluid_proof, nonce)

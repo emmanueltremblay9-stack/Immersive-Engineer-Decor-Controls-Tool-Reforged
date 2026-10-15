@@ -109,7 +109,7 @@ public final class NativeClientMiningValidation {
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
-      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL }
+      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, WATER_DISTANCE }
 
    @SubscribeEvent
    public static void removed(RailingMining.InsetLightRemoved event) {
@@ -145,6 +145,10 @@ public final class NativeClientMiningValidation {
                Connection connection = mc.player.connection.getConnection();
                require(connection.isMemoryConnection(), "Fixture must never connect to a remote server");
                mc.setScreen(new FixtureScreen());
+               if (Boolean.getBoolean("iedctr.flowDistanceOnly")) {
+                  enter(Phase.WATER_DISTANCE);
+                  return;
+               }
                originalAttackContext = mc.options.keyAttack.getKeyConflictContext();
                // NeoForge gates isDown() by IN_GAME even after setDown(true).
                // The isolation screen intentionally blocks vanilla/OS key handling,
@@ -372,6 +376,9 @@ public final class NativeClientMiningValidation {
             }
             case WATER_CANAL -> {
                if (NativeWaterCanalValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
+            }
+            case WATER_DISTANCE -> {
+               if (NativeWaterFlowDistanceValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
             }
             default -> throw new IllegalStateException("Unexpected fixture phase " + phase);
          }
@@ -614,14 +621,14 @@ public final class NativeClientMiningValidation {
 
    private static void write(String status, Throwable error) throws Exception {
       JsonObject proof = new JsonObject();
-      proof.addProperty("suite", SUITE);
+      proof.addProperty("suite", Boolean.getBoolean("iedctr.flowDistanceOnly") ? "native-water-flow-session-v1" : SUITE);
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", status);
       proof.addProperty("phase", phase.name());
-      proof.addProperty("expected_cases", 10);
+      proof.addProperty("expected_cases", Boolean.getBoolean("iedctr.flowDistanceOnly") ? 9 : 10);
       proof.addProperty("actual_integrated_world", true);
       proof.addProperty("fixture_attack_context_verified", fixtureAttackContextVerified);
-      proof.addProperty("scope", "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");
+      proof.addProperty("scope", Boolean.getBoolean("iedctr.flowDistanceOnly") ? "Natural water flow observation only; no lamp mining qualification" : "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");
       proof.add("cases", RESULTS.deepCopy());
       if (error != null) {
          proof.addProperty("error", error.toString());
@@ -641,7 +648,9 @@ public final class NativeClientMiningValidation {
       } catch (Exception writeError) {
          EngineersDecorReforged.LOGGER.error("IEDCTR_CLIENT_GAMEPLAY cannot write evidence", writeError);
       }
-      if (error == null) EngineersDecorReforged.LOGGER.info("IEDCTR_CLIENT_GAMEPLAY PASSED nonce={} cases={}", nonce, RESULTS.size());
+      if (error == null && Boolean.getBoolean("iedctr.flowDistanceOnly"))
+         EngineersDecorReforged.LOGGER.info("IEDCTR_WATER_FLOW_SESSION PASSED nonce={}", nonce);
+      else if (error == null) EngineersDecorReforged.LOGGER.info("IEDCTR_CLIENT_GAMEPLAY PASSED nonce={} cases={}", nonce, RESULTS.size());
       else EngineersDecorReforged.LOGGER.error("IEDCTR_CLIENT_GAMEPLAY FAILED at " + phase, error);
       mc.stop();
    }

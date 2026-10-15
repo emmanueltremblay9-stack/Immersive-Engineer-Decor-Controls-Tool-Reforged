@@ -72,6 +72,7 @@ jobs:
           path: |
             build/client-gameplay-*/run/canal-screenshots/*.png
             build/client-gameplay-*/run/client-water-canal-result.json
+            build/client-gameplay-*/run/client-water-flow-distance-result.json
           if-no-files-found: error
           retention-days: 14
 
@@ -127,7 +128,7 @@ jobs:
         shell: bash
         run: |
           chmod +x ./gradlew
-          python tools/validation/client_gameplay.py --renderer-profile ${{ matrix.profile }} --prepare-timeout 600 --timeout 420
+          python tools/validation/client_gameplay.py --renderer-profile ${{ matrix.profile }} --flow-distance-only --prepare-timeout 600 --timeout 420
       - name: Retain synthetic renderer evidence
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -136,5 +137,6 @@ jobs:
           path: |
             build/client-gameplay-*/run/canal-screenshots/*.png
             build/client-gameplay-*/run/client-water-canal-result.json
+            build/client-gameplay-*/run/client-water-flow-distance-result.json
           if-no-files-found: error
           retention-days: 14

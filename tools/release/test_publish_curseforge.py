@@ -1292,6 +1292,7 @@ class OperationalRoutingTests(unittest.TestCase):
             self.assertEqual([
                 "build/client-gameplay-*/run/canal-screenshots/*.png",
                 "build/client-gameplay-*/run/client-water-canal-result.json",
+                "build/client-gameplay-*/run/client-water-flow-distance-result.json",
             ], [line.strip() for line in paths.splitlines() if line.strip()])
             self.assertIn("retention-days: 14", upload)
 
