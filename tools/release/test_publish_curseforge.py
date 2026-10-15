@@ -1280,7 +1280,21 @@ class OperationalRoutingTests(unittest.TestCase):
         self.assertIn("$RUNNER_TEMP/curseforge-upload-intent.json", workflow)
         self.assertIn("$RUNNER_TEMP/curseforge-publication-result.json", workflow)
         build = (root / ".github/workflows/build.yml").read_text(encoding="utf-8")
-        self.assertNotIn("upload-artifact", build)
+        # Build artifacts may contain only synthetic diagnostic screenshots/state,
+        # never a runtime binary or a broad directory glob.
+        uploads = build.split("uses: actions/upload-artifact@")[1:]
+        self.assertEqual(2, len(uploads))
+        for index, step in enumerate(uploads):
+            upload = step.split("\n      - name:", 1)[0]
+            self.assertTrue(upload.startswith("043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"))
+            self.assertIn("name: water-canal-scenes" if index == 0 else "name: renderer-${{ matrix.profile }}", upload)
+            paths = upload.split("          path: |\n", 1)[1].split("          if-no-files-found:", 1)[0]
+            self.assertEqual([
+                "build/client-gameplay-*/run/canal-screenshots/*.png",
+                "build/client-gameplay-*/run/client-water-canal-result.json",
+                "build/client-gameplay-*/run/client-water-flow-distance-result.json",
+            ], [line.strip() for line in paths.splitlines() if line.strip()])
+            self.assertIn("retention-days: 14", upload)
 
     def test_legacy_manifest_cannot_select_local_mode_implicitly(self) -> None:
         self.assertEqual("github-release", validate_source_contract({}))

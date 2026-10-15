@@ -45,3 +45,6 @@ side="BOTH"
 
 [[mixins]]
 config="immersive_engineer_decor_controls_tool_reforged.mixins.json"
+
+[[mixins]]
+config="immersive_engineer_decor_controls_tool_reforged.fluid.mixins.json"

@@ -27,7 +27,7 @@ Latest qualified and publicly released version: `1.1.56-reconstructed`.
 
 ## Current candidate
 
-Active development version: `1.1.59-reconstructed`, an unpublished native fluidlogging draft for four existing decorative waterloggable blocks. Source water, lava and IE creosote use independent native world-cell state while preserving legacy waterlogging and the Passive Fluid Accumulator. See [scope and validation](docs/testing/native-fluidlogging.md). The previous `1.1.58-reconstructed` candidate and `1.1.57-reconstructed` were not published; prior candidate hashes do not qualify this JAR.
+Active development version: `1.1.59-reconstructed`, an unpublished native fluidlogging draft for four existing decorative waterloggable blocks. Source water, lava and IE creosote use independent native world-cell state while preserving legacy waterlogging and the Passive Fluid Accumulator. Steel Catwalk Stairs additionally admit natural flowing water with its original level and recession; existing bucket-filled sources remain sources. See [scope and validation](docs/testing/native-fluidlogging.md). The previous `1.1.58-reconstructed` candidate and `1.1.57-reconstructed` were not published; prior candidate hashes do not qualify this JAR.
 
 See the [candidate notes](release-bundle/1.1.58-reconstructed/curseforge-notes.md) and [qualification gates](docs/releases/next-patch-qualification.md). `1.1.56-reconstructed` remains the latest qualified public release until those gates and publication readback pass.
 

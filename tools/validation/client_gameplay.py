@@ -18,6 +18,8 @@ import sys
 import tempfile
 
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
+from renderer_profiles import PROFILES, prepare_renderer_dependencies, validate_renderer_profile
+from flow_distance import validate_flow_distance_proof
 
 
 SUITE = "native-client-lamp-mining-v1"
@@ -118,12 +120,63 @@ def validate_fluidlogging_proof(proof: dict, nonce: str) -> dict:
 
 
 
+def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
+    import struct
+    expected = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet",
+                "stairs-railed-wet", "stairs-railed-reversed-wet",
+                "stairs-flow-adjacent-natural", "stairs-flow-adjacent-stored"}
+    if (proof.get("suite") != "native-water-canal-diagnostic-v2"
+            or proof.get("nonce") != nonce or proof.get("status") != "captured"):
+        raise SmokeFailure("Missing current canal scene proof")
+    cases = proof.get("cases")
+    if not isinstance(cases, list) or len(cases) != len(expected):
+        raise SmokeFailure("Incomplete canal scene matrix")
+    seen = set()
+    for case in cases:
+        name = case.get("case")
+        if name not in expected or name in seen:
+            raise SmokeFailure("Duplicate or unexpected canal scene")
+        seen.add(name)
+        wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-natural"}
+        if case.get("source") is not wet:
+            raise SmokeFailure(f"Canal source state mismatch: {name}")
+        quads = case.get("upper_surface_quads")
+        if type(quads) is not int or (quads != 0 if name=="stairs-dry-control" else quads < 1):
+            raise SmokeFailure(f"Canal lacks the expected exposed upper fluid surface: {name}")
+        if name=="stairs-flow-adjacent-natural":
+            height=case.get("cell_fluid_height")
+            if "minecraft:flowing_water" not in case.get("fluid_state", "") or type(height) not in (int,float) or not 0 < height < case.get("adjacent_fluid_height",0):
+                raise SmokeFailure("Natural stair cell lacks its lower non-source water level")
+        if name.startswith("stairs-flow-adjacent-"):
+            height = case.get("adjacent_fluid_height")
+            if (case.get("adjacent_water") is not True or case.get("adjacent_source") is not False
+                    or type(height) not in (int, float) or not 0 < height < 8/9):
+                raise SmokeFailure(f"Canal lacks actual lower flowing water beside stairs: {name}")
+        for angle in ("oblique", "overhead"):
+            filename = f"{name}-{angle}.png"
+            if case.get(f"{angle}_screenshot") != filename:
+                raise SmokeFailure("Unexpected canal screenshot identity")
+            image = directory / "canal-screenshots" / filename
+            data = image.read_bytes()
+            if len(data) < 1000 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+                raise SmokeFailure("Canal screenshot is absent or invalid")
+            width, height = struct.unpack(">II", data[16:24])
+            if width < 600 or height < 400:
+                raise SmokeFailure("Canal screenshot is too small to inspect")
+    return proof
+
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--prepare-timeout", type=int, default=600)
     parser.add_argument("--timeout", type=int, default=420)
+    parser.add_argument("--renderer-profile", choices=PROFILES)
+    parser.add_argument("--flow-distance-only", action="store_true")
     args = parser.parse_args()
+    if args.flow_distance_only and not args.renderer_profile:
+        parser.error("A renderer profile is required for the east flow-distance sweep")
     if sys.platform != "linux":
         parser.error("The native gameplay runner supports isolated Linux CI only")
     if min(args.prepare_timeout, args.timeout) <= 0:
@@ -146,19 +199,26 @@ def main() -> int:
     (game / "options.txt").write_text(
         "onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n"
         "maxFps:60\npauseOnLostFocus:false\nautoJump:true\nsoundCategory_master:0.0\n", encoding="utf-8")
+    renderer_jars = prepare_renderer_dependencies(evidence / "renderer-dependencies", args.renderer_profile) if args.renderer_profile else []
     init = evidence / "gameplay.init.gradle"
     init.write_text("""// Isolated, explicit, opt-in native gameplay fixture.
 gradle.projectsEvaluated {
+    def jars = new groovy.json.JsonSlurper().parseText(System.getenv('IEDCTR_RENDERER_JARS'))
+    if (jars) rootProject.dependencies.add('runtimeOnly', rootProject.files(jars))
     rootProject.extensions.getByName('neoForge').runs.named('client') {
         gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
         systemProperty 'iedctr.clientGameplay', 'true'
+        systemProperty 'iedctr.canalEast', System.getenv('IEDCTR_CANAL_EAST')
+        systemProperty 'iedctr.flowDistanceOnly', System.getenv('IEDCTR_FLOW_DISTANCE_ONLY')
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
     }
 }
 """, encoding="utf-8")
     env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
-               LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
+               LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null",
+               IEDCTR_RENDERER_JARS=json.dumps(renderer_jars), IEDCTR_CANAL_EAST=str(bool(args.renderer_profile)).lower(),
+               IEDCTR_FLOW_DISTANCE_ONLY=str(args.flow_distance_only).lower())
     gradle = [str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
     prepare_log, client_log = evidence / "prepare.log", evidence / "client.log"
     print(f"Native client gameplay evidence: {evidence}", flush=True)
@@ -178,9 +238,21 @@ gradle.projectsEvaluated {
             if runtime.is_file():
                 logs += "\n" + runtime.read_text(encoding="utf-8", errors="replace")
         crashes = list(game.glob("crash-reports/*")) + list(evidence.rglob("hs_err_pid*.log"))
+        if args.flow_distance_only:
+            if expired:
+                raise SmokeFailure("Natural-flow client exceeded its deadline")
+            flow = json.loads((game / "client-water-flow-distance-result.json").read_text())
+            validate_flow_distance_proof(flow, proof, nonce, args.renderer_profile, game, logs, code)
+            print(json.dumps(flow, indent=2), flush=True)
+            return 0
         validate_proof(proof, nonce, logs, code, expired, crashes)
         fluid_proof = json.loads((game / "client-fluidlogging-result.json").read_text(encoding="utf-8"))
         validate_fluidlogging_proof(fluid_proof, nonce)
+        canal_proof = json.loads((game / "client-water-canal-result.json").read_text(encoding="utf-8"))
+        validate_canal_proof(canal_proof, nonce, game)
+        if args.renderer_profile:
+            validate_renderer_profile(canal_proof, args.renderer_profile)
+        print(json.dumps(canal_proof, indent=2), flush=True)
         print(json.dumps(fluid_proof, indent=2), flush=True)
         print(json.dumps(proof, indent=2), flush=True)
         return 0
