@@ -23,6 +23,8 @@ import net.minecraft.world.phys.Vec3;
 
 /** Diagnostic fixture; runs only inside the existing nonce-guarded fresh client world. */
 final class NativeWaterCanalValidation {
+   private static final boolean EAST = Boolean.getBoolean("iedctr.canalEast");
+   private static final Direction UPSTREAM = EAST ? Direction.EAST : Direction.NORTH;
    private static final BlockPos POS = new BlockPos(5, 80, 5);
    private static final String[] NAMES = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet", "stairs-railed-wet", "stairs-railed-reversed-wet", "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"};
    private static final JsonArray RESULTS = new JsonArray();
@@ -35,7 +37,7 @@ final class NativeWaterCanalValidation {
    private static BlockState state() {
       BlockState state = switch (index) {
          case 0, 1, 4, 5, 6, 7 -> ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState()
-            .setValue(PortedBlocks.HORIZONTAL_FACING, index == 5 ? Direction.SOUTH : Direction.NORTH);
+            .setValue(PortedBlocks.HORIZONTAL_FACING, index == 5 ? UPSTREAM.getOpposite() : UPSTREAM);
          case 2 -> ModBlocks.STEEL_CATWALK.get().defaultBlockState();
          default -> ModBlocks.STEEL_CATWALK_TA.get().defaultBlockState();
       };
@@ -59,17 +61,18 @@ final class NativeWaterCanalValidation {
             level.setDayTime(6000);
             level.setWeatherParameters(100000, 0, false, false);
             for (BlockPos pos : BlockPos.betweenClosed(POS.offset(-4, -1, -5), POS.offset(4, 5, 5)))
-               level.setBlock(pos, pos.getY() == POS.getY() - 1 ? Blocks.STONE.defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
+               level.setBlock(rotate(pos), pos.getY() == POS.getY() - 1 ? Blocks.STONE.defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
             for (int z = -4; z <= 1; z++) {
-               level.setBlock(POS.offset(-1, 0, z), Blocks.BRICKS.defaultBlockState(), 3);
-               level.setBlock(POS.offset(1, 0, z), Blocks.BRICKS.defaultBlockState(), 3);
+               level.setBlock(POS.relative(UPSTREAM, -z).relative(UPSTREAM.getCounterClockWise()), Blocks.BRICKS.defaultBlockState(), 3);
+               level.setBlock(POS.relative(UPSTREAM, -z).relative(UPSTREAM.getClockWise()), Blocks.BRICKS.defaultBlockState(), 3);
             }
-            level.setBlock(POS.south(), Blocks.BRICKS.defaultBlockState(), 3);
-            level.setBlock(POS.north(4), Blocks.BRICKS.defaultBlockState(), 3);
+            level.setBlock(POS.relative(UPSTREAM.getOpposite()), Blocks.BRICKS.defaultBlockState(), 3);
+            level.setBlock(POS.relative(UPSTREAM, 4), Blocks.BRICKS.defaultBlockState(), 3);
             level.setBlock(POS, expected, 3);
-            if (index >= 6) level.setBlock(POS.north(3), Blocks.WATER.defaultBlockState(), 3);
-            else if (index != 1) for (int z = 1; z <= 3; z++) level.setBlock(POS.north(z), Blocks.WATER.defaultBlockState(), 3);
-            player.connection.teleport(POS.getX()+3.5, POS.getY()+2.0, POS.getZ()+4.5, 0, 0);
+            if (index >= 6) level.setBlock(POS.relative(UPSTREAM, 3), Blocks.WATER.defaultBlockState(), 3);
+            else if (index != 1) for (int z = 1; z <= 3; z++) level.setBlock(POS.relative(UPSTREAM, z), Blocks.WATER.defaultBlockState(), 3);
+            Vec3 camera = rotate(new Vec3(POS.getX()+3.5, POS.getY()+2.0, POS.getZ()+4.5));
+            player.connection.teleport(camera.x, camera.y, camera.z, 0, 0);
          });
          stage = 1;
          ticks = 0;
@@ -80,9 +83,9 @@ final class NativeWaterCanalValidation {
          pending.join();
          if (++ticks > 300) throw new IllegalStateException("Canal did not synchronize: " + NAMES[index]);
          if (!mc.level.getBlockState(POS).equals(state()) || mc.player.position().distanceTo(
-            new Vec3(POS.getX()+3.5,POS.getY()+2.0,POS.getZ()+4.5)) > 0.1) return false;
+            rotate(new Vec3(POS.getX()+3.5,POS.getY()+2.0,POS.getZ()+4.5))) > 0.1) return false;
          mc.options.hideGui = true;
-         look(mc, Vec3.atCenterOf(POS).add(0, 0.2, -0.5));
+         look(mc, rotate(Vec3.atCenterOf(POS).add(0, 0.2, -0.5)));
          mc.levelRenderer.allChanged();
          stage = 2;
          ticks = 0;
@@ -102,16 +105,17 @@ final class NativeWaterCanalValidation {
          result.addProperty("upper_surface_quads", mesh.upperSurfaceQuads);
          result.addProperty("source", client.getFluidState().isSource());
          result.addProperty("cell_fluid_height", client.getFluidState().getHeight(mc.level, POS));
-         var adjacent = mc.level.getFluidState(POS.north());
+         var adjacent = mc.level.getFluidState(POS.relative(UPSTREAM));
          result.addProperty("adjacent_fluid_state", adjacent.toString());
          result.addProperty("adjacent_source", adjacent.isSource());
          result.addProperty("adjacent_water", adjacent.is(net.minecraft.tags.FluidTags.WATER));
-         result.addProperty("adjacent_fluid_height", adjacent.getHeight(mc.level, POS.north()));
+         result.addProperty("adjacent_fluid_height", adjacent.getHeight(mc.level, POS.relative(UPSTREAM)));
          capture(mc, directory, NAMES[index]+"-oblique.png");
          result.addProperty("oblique_screenshot", NAMES[index]+"-oblique.png");
          pending = mc.getSingleplayerServer().submit(() -> {
             var player = mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID());
-            player.connection.teleport(POS.getX()+0.5, POS.getY()+1.5, POS.getZ()+0.8, 0, 90);
+            Vec3 camera = rotate(new Vec3(POS.getX()+0.5, POS.getY()+1.5, POS.getZ()+0.8));
+            player.connection.teleport(camera.x, camera.y, camera.z, 0, 90);
          });
          stage = 3;
          ticks = 0;
@@ -122,7 +126,7 @@ final class NativeWaterCanalValidation {
          pending.join();
          look(mc, Vec3.atCenterOf(POS));
          if (++ticks > 300) throw new IllegalStateException("Canal overhead camera did not synchronize");
-         if (mc.player.position().distanceTo(new Vec3(POS.getX()+0.5, POS.getY()+1.5, POS.getZ()+0.8)) > 0.1) return false;
+         if (mc.player.position().distanceTo(rotate(new Vec3(POS.getX()+0.5, POS.getY()+1.5, POS.getZ()+0.8))) > 0.1) return false;
          stage = 4;
          ticks = 0;
          return false;
@@ -139,6 +143,12 @@ final class NativeWaterCanalValidation {
             proof.addProperty("suite", "native-water-canal-diagnostic-v1");
             proof.addProperty("nonce", nonce);
             proof.addProperty("status", "captured");
+            proof.addProperty("orientation", UPSTREAM.getSerializedName());
+            JsonObject mods = new JsonObject();
+            for (String id : new String[]{"embeddium", "modernfix"})
+               net.neoforged.fml.ModList.get().getModContainerById(id).ifPresent(mod ->
+                  mods.addProperty(id, mod.getModInfo().getVersion().toString()));
+            proof.add("renderer_mods", mods);
             proof.add("cases", RESULTS);
             Files.writeString(directory.resolve("client-water-canal-result.json"),
                new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");
@@ -146,6 +156,14 @@ final class NativeWaterCanalValidation {
          }
       }
       return false;
+   }
+
+   private static BlockPos rotate(BlockPos pos) {
+      return EAST ? new BlockPos(POS.getX()-(pos.getZ()-POS.getZ()), pos.getY(), POS.getZ()+(pos.getX()-POS.getX())) : pos;
+   }
+   private static Vec3 rotate(Vec3 pos) {
+      Vec3 center = Vec3.atCenterOf(POS);
+      return EAST ? new Vec3(center.x-(pos.z-center.z), pos.y, center.z+(pos.x-center.x)) : pos;
    }
 
    private static void capture(Minecraft mc, Path directory, String name) throws Exception {

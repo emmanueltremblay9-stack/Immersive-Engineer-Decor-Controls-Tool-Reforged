@@ -18,6 +18,7 @@ import sys
 import tempfile
 
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
+from renderer_profiles import PROFILES, prepare_renderer_dependencies, validate_renderer_profile
 
 
 SUITE = "native-client-lamp-mining-v1"
@@ -166,6 +167,7 @@ def main() -> int:
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--prepare-timeout", type=int, default=600)
     parser.add_argument("--timeout", type=int, default=420)
+    parser.add_argument("--renderer-profile", choices=PROFILES)
     args = parser.parse_args()
     if sys.platform != "linux":
         parser.error("The native gameplay runner supports isolated Linux CI only")
@@ -189,19 +191,24 @@ def main() -> int:
     (game / "options.txt").write_text(
         "onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n"
         "maxFps:60\npauseOnLostFocus:false\nautoJump:true\nsoundCategory_master:0.0\n", encoding="utf-8")
+    renderer_jars = prepare_renderer_dependencies(evidence / "renderer-dependencies", args.renderer_profile) if args.renderer_profile else []
     init = evidence / "gameplay.init.gradle"
     init.write_text("""// Isolated, explicit, opt-in native gameplay fixture.
 gradle.projectsEvaluated {
+    def jars = new groovy.json.JsonSlurper().parseText(System.getenv('IEDCTR_RENDERER_JARS'))
+    if (jars) rootProject.dependencies.add('runtimeOnly', rootProject.files(jars))
     rootProject.extensions.getByName('neoForge').runs.named('client') {
         gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
         systemProperty 'iedctr.clientGameplay', 'true'
+        systemProperty 'iedctr.canalEast', System.getenv('IEDCTR_CANAL_EAST')
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
     }
 }
 """, encoding="utf-8")
     env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
-               LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null")
+               LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null",
+               IEDCTR_RENDERER_JARS=json.dumps(renderer_jars), IEDCTR_CANAL_EAST=str(bool(args.renderer_profile)).lower())
     gradle = [str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
     prepare_log, client_log = evidence / "prepare.log", evidence / "client.log"
     print(f"Native client gameplay evidence: {evidence}", flush=True)
@@ -226,6 +233,8 @@ gradle.projectsEvaluated {
         validate_fluidlogging_proof(fluid_proof, nonce)
         canal_proof = json.loads((game / "client-water-canal-result.json").read_text(encoding="utf-8"))
         validate_canal_proof(canal_proof, nonce, game)
+        if args.renderer_profile:
+            validate_renderer_profile(canal_proof, args.renderer_profile)
         print(json.dumps(canal_proof, indent=2), flush=True)
         print(json.dumps(fluid_proof, indent=2), flush=True)
         print(json.dumps(proof, indent=2), flush=True)

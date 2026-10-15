@@ -100,3 +100,41 @@ jobs:
           echo "### Local runtime build (not uploaded)" >> "$GITHUB_STEP_SUMMARY"
           echo "JAR: \`$jar\`" >> "$GITHUB_STEP_SUMMARY"
           echo "SHA-256: \`$runtime_sha256\`" >> "$GITHUB_STEP_SUMMARY"
+
+  renderer-matrix:
+    name: East canal renderer (${{ matrix.profile }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        profile: [native, embeddium, modernfix, both]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
+      - name: Run isolated east canal profile
+        timeout-minutes: 20
+        shell: bash
+        run: |
+          chmod +x ./gradlew
+          python tools/validation/client_gameplay.py --renderer-profile ${{ matrix.profile }} --prepare-timeout 600 --timeout 420
+      - name: Retain synthetic renderer evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: renderer-${{ matrix.profile }}
+          path: |
+            build/client-gameplay-*/run/canal-screenshots/*.png
+            build/client-gameplay-*/run/client-water-canal-result.json
+          if-no-files-found: error
+          retention-days: 14
