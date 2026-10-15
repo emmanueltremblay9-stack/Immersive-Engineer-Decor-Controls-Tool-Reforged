@@ -24,7 +24,7 @@ import net.minecraft.world.phys.Vec3;
 /** Diagnostic fixture; runs only inside the existing nonce-guarded fresh client world. */
 final class NativeWaterCanalValidation {
    private static final BlockPos POS = new BlockPos(5, 80, 5);
-   private static final String[] NAMES = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet"};
+   private static final String[] NAMES = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet", "stairs-railed-wet", "stairs-railed-reversed-wet"};
    private static final JsonArray RESULTS = new JsonArray();
    private static int index;
    private static int stage;
@@ -34,11 +34,13 @@ final class NativeWaterCanalValidation {
 
    private static BlockState state() {
       BlockState state = switch (index) {
-         case 0, 1 -> ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState()
-            .setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH);
+         case 0, 1, 4, 5 -> ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState()
+            .setValue(PortedBlocks.HORIZONTAL_FACING, index == 5 ? Direction.SOUTH : Direction.NORTH);
          case 2 -> ModBlocks.STEEL_CATWALK.get().defaultBlockState();
          default -> ModBlocks.STEEL_CATWALK_TA.get().defaultBlockState();
       };
+      if (index >= 4) state = state.setValue(PortedBlocks.LEFT_RAILING, true)
+         .setValue(PortedBlocks.RIGHT_RAILING, true).setValue(PortedBlocks.EDITED_STAIR_SIDES, 3);
       return state.setValue(BlockStateProperties.WATERLOGGED, index != 1);
    }
 
@@ -101,7 +103,7 @@ final class NativeWaterCanalValidation {
          result.addProperty("oblique_screenshot", NAMES[index]+"-oblique.png");
          pending = mc.getSingleplayerServer().submit(() -> {
             var player = mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID());
-            player.connection.teleport(POS.getX()+0.5, POS.getY()+4.0, POS.getZ()+0.8, 0, 90);
+            player.connection.teleport(POS.getX()+0.5, POS.getY()+1.5, POS.getZ()+0.8, 0, 90);
          });
          stage = 3;
          ticks = 0;
@@ -112,7 +114,7 @@ final class NativeWaterCanalValidation {
          pending.join();
          look(mc, Vec3.atCenterOf(POS));
          if (++ticks > 300) throw new IllegalStateException("Canal overhead camera did not synchronize");
-         if (mc.player.position().distanceTo(new Vec3(POS.getX()+0.5, POS.getY()+4.0, POS.getZ()+0.8)) > 0.1) return false;
+         if (mc.player.position().distanceTo(new Vec3(POS.getX()+0.5, POS.getY()+1.5, POS.getZ()+0.8)) > 0.1) return false;
          stage = 4;
          ticks = 0;
          return false;

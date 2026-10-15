@@ -17,7 +17,8 @@ class CanalProofTests(unittest.TestCase):
         images.mkdir()
         self.proof = {"suite": "native-water-canal-diagnostic-v1", "nonce": "current",
                       "status": "captured", "cases": []}
-        for name in ("stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet"):
+        for name in ("stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet",
+                     "stairs-railed-wet", "stairs-railed-reversed-wet"):
             wet = name != "stairs-dry-control"
             case = {"case": name, "source": wet, "upper_horizontal_quads": int(wet)}
             for angle in ("oblique", "overhead"):

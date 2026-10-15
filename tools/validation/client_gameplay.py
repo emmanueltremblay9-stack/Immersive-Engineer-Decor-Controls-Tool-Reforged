@@ -120,7 +120,8 @@ def validate_fluidlogging_proof(proof: dict, nonce: str) -> dict:
 
 def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
     import struct
-    expected = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet"}
+    expected = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet",
+                "stairs-railed-wet", "stairs-railed-reversed-wet"}
     if (proof.get("suite") != "native-water-canal-diagnostic-v1"
             or proof.get("nonce") != nonce or proof.get("status") != "captured"):
         raise SmokeFailure("Missing current canal scene proof")
