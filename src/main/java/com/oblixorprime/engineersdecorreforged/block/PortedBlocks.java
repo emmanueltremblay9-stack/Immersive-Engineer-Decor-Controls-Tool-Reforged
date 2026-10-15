@@ -698,6 +698,7 @@ public final class PortedBlocks {
    }
 
    public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements NativeFluidloggedBlock {
+      public static final net.minecraft.world.level.block.state.properties.IntegerProperty WATER_FLOW = net.minecraft.world.level.block.state.properties.IntegerProperty.create("water_flow", 0, 15);
       public static final MapCodec<PortedBlocks.CatwalkStairsBlock> CODEC = simpleCodec(PortedBlocks.CatwalkStairsBlock::new);
 
       public CatwalkStairsBlock(Properties properties) {
@@ -707,7 +708,7 @@ public final class PortedBlocks {
                         .setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                      .setValue(PortedBlocks.LEFT_RAILING, false))
                   .setValue(PortedBlocks.RIGHT_RAILING, false))
-               .setValue(PortedBlocks.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0)
+               .setValue(WATER_FLOW, 0).setValue(PortedBlocks.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0)
          );
       }
 
@@ -716,7 +717,7 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, EDITED_STAIR_SIDES, PAID_RAILINGS});
+         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, WATER_FLOW, EDITED_STAIR_SIDES, PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -729,7 +730,35 @@ public final class PortedBlocks {
       }
 
       public FluidState getFluidState(BlockState state) {
-         return NativeFluidloggedBlock.fluidState(state);
+         return StairWaterFlow.fluid(state);
+      }
+
+      @Override
+      public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, BlockGetter level, BlockPos pos, BlockState state, net.minecraft.world.level.material.Fluid fluid) {
+         if (fluid == net.minecraft.world.level.material.Fluids.FLOWING_WATER)
+            return !state.getValue(WATERLOGGED) && state.getValue(NativeFluidloggedBlock.FLUID_CELL) == NativeFluidloggedBlock.Cell.EMPTY;
+         if (StairWaterFlow.active(state) && fluid != net.minecraft.world.level.material.Fluids.WATER) return false;
+         return NativeFluidloggedBlock.super.canPlaceLiquid(player, level, pos, state, fluid);
+      }
+
+      @Override
+      public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluid) {
+         if (fluid.getType() == net.minecraft.world.level.material.Fluids.FLOWING_WATER
+               && canPlaceLiquid(null, level, pos, state, fluid.getType())) {
+            if (!level.isClientSide()) {
+               if (!level.setBlock(pos, StairWaterFlow.withFlow(state, fluid), 3)) return false;
+               level.scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(level));
+            }
+            return true;
+         }
+         if (!canPlaceLiquid(null, level, pos, state, fluid.getType())) return false;
+         return NativeFluidloggedBlock.super.placeLiquid(level, pos, state.setValue(WATER_FLOW, 0), fluid);
+      }
+
+      @Override
+      public net.minecraft.world.item.ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, LevelAccessor level, BlockPos pos, BlockState state) {
+         if (StairWaterFlow.active(state)) return net.minecraft.world.item.ItemStack.EMPTY;
+         return NativeFluidloggedBlock.super.pickupBlock(player, level, pos, state.setValue(WATER_FLOW, 0));
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {

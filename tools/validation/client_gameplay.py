@@ -124,8 +124,8 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
     import struct
     expected = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet",
                 "stairs-railed-wet", "stairs-railed-reversed-wet",
-                "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"}
-    if (proof.get("suite") != "native-water-canal-diagnostic-v1"
+                "stairs-flow-adjacent-natural", "stairs-flow-adjacent-stored"}
+    if (proof.get("suite") != "native-water-canal-diagnostic-v2"
             or proof.get("nonce") != nonce or proof.get("status") != "captured"):
         raise SmokeFailure("Missing current canal scene proof")
     cases = proof.get("cases")
@@ -137,12 +137,16 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
         if name not in expected or name in seen:
             raise SmokeFailure("Duplicate or unexpected canal scene")
         seen.add(name)
-        wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-dry"}
+        wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-natural"}
         if case.get("source") is not wet:
             raise SmokeFailure(f"Canal source state mismatch: {name}")
         quads = case.get("upper_surface_quads")
-        if type(quads) is not int or (quads < 1 if wet else quads != 0):
+        if type(quads) is not int or (quads != 0 if name=="stairs-dry-control" else quads < 1):
             raise SmokeFailure(f"Canal lacks the expected exposed upper fluid surface: {name}")
+        if name=="stairs-flow-adjacent-natural":
+            height=case.get("cell_fluid_height")
+            if "minecraft:flowing_water" not in case.get("fluid_state", "") or type(height) not in (int,float) or not 0 < height < case.get("adjacent_fluid_height",0):
+                raise SmokeFailure("Natural stair cell lacks its lower non-source water level")
         if name.startswith("stairs-flow-adjacent-"):
             height = case.get("adjacent_fluid_height")
             if (case.get("adjacent_water") is not True or case.get("adjacent_source") is not False

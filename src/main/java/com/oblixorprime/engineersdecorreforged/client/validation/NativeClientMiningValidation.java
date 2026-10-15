@@ -138,7 +138,7 @@ public final class NativeClientMiningValidation {
             return;
          }
          require(System.nanoTime() < deadline, "Gameplay suite deadline exceeded at " + phase);
-         require(++stageTicks < 2400, "Gameplay phase made no progress: " + phase);
+         require(++stageTicks < (phase == Phase.WATER_DISTANCE ? 4800 : 2400), "Gameplay phase made no progress: " + phase);
          if (phase == Phase.WORLD) {
             if (mc.level != null && mc.player != null && mc.gameMode != null && mc.screen == null) {
                require(mc.getSingleplayerServer() != null, "Fixture must use its own integrated server");
@@ -625,7 +625,7 @@ public final class NativeClientMiningValidation {
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", status);
       proof.addProperty("phase", phase.name());
-      proof.addProperty("expected_cases", Boolean.getBoolean("iedctr.flowDistanceOnly") ? 9 : 10);
+      proof.addProperty("expected_cases", 10);
       proof.addProperty("actual_integrated_world", true);
       proof.addProperty("fixture_attack_context_verified", fixtureAttackContextVerified);
       proof.addProperty("scope", Boolean.getBoolean("iedctr.flowDistanceOnly") ? "Natural water flow observation only; no lamp mining qualification" : "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");

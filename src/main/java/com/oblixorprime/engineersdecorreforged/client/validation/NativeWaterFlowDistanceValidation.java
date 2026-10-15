@@ -33,12 +33,12 @@ final class NativeWaterFlowDistanceValidation {
    private static CompletableFuture<?> pending;
    private static JsonObject result;
 
-   private static BlockPos target() { return SOURCE.west(distance == 0 ? 4 : distance); }
+   private static BlockPos target() { return SOURCE.west(distance == 0 || distance == 9 ? 4 : distance); }
    private static Vec3 overview() { return new Vec3(SOURCE.getX()-4.5, SOURCE.getY()+4.0, SOURCE.getZ()+8.5); }
    private static Vec3 close() { return Vec3.atCenterOf(target()).add(0, 3.0, 0.15); }
 
    static boolean tick(Minecraft mc, Path directory, String nonce) throws Exception {
-      if (distance > 8) return true;
+      if (distance > 9) return true;
       if (stage == 0) {
          final int current = distance;
          pending = mc.getSingleplayerServer().submit(() -> {
@@ -59,8 +59,9 @@ final class NativeWaterFlowDistanceValidation {
             }
             level.setBlock(SOURCE.east(), Blocks.BRICKS.defaultBlockState(), 3);
             level.setBlock(SOURCE.west(10), Blocks.BRICKS.defaultBlockState(), 3);
-            if (current > 0) level.setBlock(SOURCE.west(current),
+            if (current > 0) level.setBlock(SOURCE.west(current==9 ? 4 : current),
                ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.EAST), 3);
+            if (current == 9) level.setBlock(SOURCE.west(4), level.getBlockState(SOURCE.west(4)).setValue(PortedBlocks.WATERLOGGED,true),3);
             serverStarted = level.getGameTime();
             // Exactly one initial source; never call placeLiquid or set WATERLOGGED.
             level.setBlock(SOURCE, Blocks.WATER.defaultBlockState(), 3);
@@ -90,12 +91,12 @@ final class NativeWaterFlowDistanceValidation {
          previous = signature;
          if (mc.level.getGameTime()-started < 100 || stableTicks < 20) return false;
          result = new JsonObject();
-         result.addProperty("case", distance==0 ? "unobstructed-control" : "distance-"+distance);
+         result.addProperty("case", distance==0 ? "unobstructed-control" : distance==9 ? "existing-source-cell" : "distance-"+distance);
          result.addProperty("distance", distance);
          result.addProperty("settled_ticks", mc.level.getGameTime()-started);
          result.addProperty("unchanged_client_ticks", stableTicks);
-         result.addProperty("initial_sources_placed", 1);
-         result.addProperty("direct_cell_fill", false);
+         result.addProperty("initial_sources_placed", distance==9 ? 2 : 1);
+         result.addProperty("direct_cell_fill", distance==9);
          result.add("source", sample(mc.level, SOURCE));
          result.add("target", sample(mc.level, target()));
          result.add("upstream", sample(mc.level, target().east()));
@@ -150,11 +151,45 @@ final class NativeWaterFlowDistanceValidation {
          result.addProperty("close_yaw",mc.player.getYRot());
          result.addProperty("close_pitch",mc.player.getXRot());
          capture(mc, directory, name("close"));
+         pending = mc.getSingleplayerServer().submit(() -> {
+            var level=mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID()).serverLevel();
+            level.setBlock(SOURCE,Blocks.AIR.defaultBlockState(),3);
+            serverStarted=level.getGameTime();
+         });
+         stage=5; ticks=0; stableTicks=0; previous="";
+         return false;
+      }
+      if (stage == 5) {
+         if (!pending.isDone()) return false;
+         pending.join();
+         if (++ticks > 500) throw new IllegalStateException("Source removal did not stabilize");
+         JsonArray removed=channel(mc.level);
+         String signature=removed.toString();
+         stableTicks=signature.equals(previous) ? stableTicks+1 : 0; previous=signature;
+         if (ticks < 120 || stableTicks < 20) return false;
+         result.add("after_removal_channel",removed);
+         pending=mc.getSingleplayerServer().submit(() -> {
+            var level=mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID()).serverLevel();
+            JsonObject server=new JsonObject(); server.add("channel",channel(level));
+            server.addProperty("elapsed_ticks",level.getGameTime()-serverStarted); return server;
+         });
+         stage=6; return false;
+      }
+      if (stage == 6) {
+         if (!pending.isDone()) return false;
+         JsonObject server=(JsonObject)pending.join();
+         if(server.get("elapsed_ticks").getAsLong()<100) {stage=5; return false;}
+         if(!server.get("channel").equals(result.get("after_removal_channel"))) throw new IllegalStateException("Removal server/client disagreement");
+         result.add("after_removal_server_channel",server.get("channel"));
+         result.addProperty("after_removal_server_ticks",server.get("elapsed_ticks").getAsLong());
+         result.addProperty("after_removal_server_client_agree",true);
+         result.addProperty("removal_screenshot",name("removed"));
+         capture(mc,directory,name("removed"));
          RESULTS.add(result);
          distance++; stage = 0;
-         if (distance > 8) {
+         if (distance > 9) {
             JsonObject proof = new JsonObject();
-            proof.addProperty("suite","native-water-flow-distance-v1");
+            proof.addProperty("suite","native-water-flow-distance-v2");
             proof.addProperty("nonce",nonce);
             proof.addProperty("status","captured");
             proof.addProperty("actual_integrated_world",true);

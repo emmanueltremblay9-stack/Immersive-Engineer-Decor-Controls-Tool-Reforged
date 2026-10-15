@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.oblixorprime.engineersdecorreforged.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["StairWaterFlowMixin"],
+  "injectors": {"defaultRequire": 1}
+}

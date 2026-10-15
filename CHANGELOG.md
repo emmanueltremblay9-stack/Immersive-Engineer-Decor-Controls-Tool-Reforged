@@ -9,6 +9,9 @@ All notable reconstruction, repair, and validation changes for this project are 
 - Nine server GameTests and a 24-case integrated client synchronization/tessellation matrix. Existing Passive Fluid Accumulator tank/world-cell and collection contracts remain unchanged.
 - Pinned Fluidloggable/PR15 source-license review and reference attribution; no Fluidloggable code or dependency is bundled.
 
+### Fixed
+- Let natural water pass through initially dry Steel Catwalk Stairs without creating a stored source, extending its range or preventing recession after supply removal. Preserve existing bucket sources and exclude other blocks, lava and creosote.
+
 ## [1.1.58-reconstructed] - Unreleased candidate
 
 ### Added

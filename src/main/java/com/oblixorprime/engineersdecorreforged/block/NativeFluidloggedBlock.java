@@ -67,7 +67,7 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
    }
 
    static void schedule(BlockState state, LevelAccessor level, BlockPos pos) {
-      FluidState fluid = fluidState(state);
+      FluidState fluid = state.getFluidState();
       if (!fluid.isEmpty()) level.scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(level));
    }
 

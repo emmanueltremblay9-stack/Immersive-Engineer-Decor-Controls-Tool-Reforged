@@ -15,14 +15,15 @@ class CanalProofTests(unittest.TestCase):
         self.directory = Path(self.temp.name)
         images = self.directory / "canal-screenshots"
         images.mkdir()
-        self.proof = {"suite": "native-water-canal-diagnostic-v1", "nonce": "current",
+        self.proof = {"suite": "native-water-canal-diagnostic-v2", "nonce": "current",
                       "status": "captured", "cases": []}
         for name in ("stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet",
                      "stairs-railed-wet", "stairs-railed-reversed-wet",
-                     "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"):
-            wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-dry"}
-            case = {"case": name, "source": wet, "upper_horizontal_quads": int(wet), "upper_surface_quads": int(wet)}
-            case.update(adjacent_water=True, adjacent_source=False, adjacent_fluid_height=0.6)
+                     "stairs-flow-adjacent-natural", "stairs-flow-adjacent-stored"):
+            wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-natural"}
+            case = {"case": name, "source": wet, "upper_horizontal_quads": int(wet), "upper_surface_quads": int(name!="stairs-dry-control")}
+            case.update(adjacent_water=True, adjacent_source=False, adjacent_fluid_height=0.6,
+                        cell_fluid_height=0.5,fluid_state="minecraft:flowing_water")
             for angle in ("oblique", "overhead"):
                 filename = f"{name}-{angle}.png"
                 case[f"{angle}_screenshot"] = filename

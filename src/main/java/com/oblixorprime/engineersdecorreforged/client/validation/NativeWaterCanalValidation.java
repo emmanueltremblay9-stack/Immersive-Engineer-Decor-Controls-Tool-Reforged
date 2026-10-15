@@ -26,7 +26,7 @@ final class NativeWaterCanalValidation {
    private static final boolean EAST = Boolean.getBoolean("iedctr.canalEast");
    private static final Direction UPSTREAM = EAST ? Direction.EAST : Direction.NORTH;
    private static final BlockPos POS = new BlockPos(5, 80, 5);
-   private static final String[] NAMES = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet", "stairs-railed-wet", "stairs-railed-reversed-wet", "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"};
+   private static final String[] NAMES = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet", "stairs-railed-wet", "stairs-railed-reversed-wet", "stairs-flow-adjacent-natural", "stairs-flow-adjacent-stored"};
    private static final JsonArray RESULTS = new JsonArray();
    private static int index;
    private static int stage;
@@ -82,7 +82,9 @@ final class NativeWaterCanalValidation {
          if (!pending.isDone()) return false;
          pending.join();
          if (++ticks > 300) throw new IllegalStateException("Canal did not synchronize: " + NAMES[index]);
-         if (!mc.level.getBlockState(POS).equals(state()) || mc.player.position().distanceTo(
+         BlockState synchronizedState=mc.level.getBlockState(POS);
+         if (index==6 && synchronizedState.is(ModBlocks.STEEL_CATWALK_STAIRS.get())) synchronizedState=synchronizedState.setValue(PortedBlocks.CatwalkStairsBlock.WATER_FLOW,0);
+         if (!synchronizedState.equals(state()) || mc.player.position().distanceTo(
             rotate(new Vec3(POS.getX()+3.5,POS.getY()+2.0,POS.getZ()+4.5))) > 0.1) return false;
          mc.options.hideGui = true;
          look(mc, rotate(Vec3.atCenterOf(POS).add(0, 0.2, -0.5)));
@@ -140,7 +142,7 @@ final class NativeWaterCanalValidation {
          stage = 0;
          if (index == NAMES.length) {
             JsonObject proof = new JsonObject();
-            proof.addProperty("suite", "native-water-canal-diagnostic-v1");
+            proof.addProperty("suite", "native-water-canal-diagnostic-v2");
             proof.addProperty("nonce", nonce);
             proof.addProperty("status", "captured");
             proof.addProperty("orientation", UPSTREAM.getSerializedName());

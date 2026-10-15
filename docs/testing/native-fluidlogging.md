@@ -100,3 +100,8 @@ The Linux CI additionally runs `python tools/validation/client_gameplay.py` in
 its fresh temporary integrated world. That runner requires Xvfb and is not a
 Windows visual validation. Successful tessellation is not a human screenshot
 review. No installed Prism JAR or user world is part of any of these checks.
+
+
+## Targeted stair flow follow-up
+
+Steel Catwalk Stairs also accept transient naturally flowing water. Its amount and falling flag are stored separately from the legacy WATERLOGGED source and persist/synchronize as ordinary block state. It recedes when supply disappears and cannot fill an empty bucket. Intentional source filling remains available and clears transient state. Natural flow never promotes the stair to a permanent source. Other blocks and non-water cells retain the source-only scope above. See [distance and recession qualification](water-canal-visual-investigation.md).
