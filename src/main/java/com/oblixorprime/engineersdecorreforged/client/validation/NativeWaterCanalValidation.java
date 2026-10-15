@@ -24,7 +24,7 @@ import net.minecraft.world.phys.Vec3;
 /** Diagnostic fixture; runs only inside the existing nonce-guarded fresh client world. */
 final class NativeWaterCanalValidation {
    private static final BlockPos POS = new BlockPos(5, 80, 5);
-   private static final String[] NAMES = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet", "stairs-railed-wet", "stairs-railed-reversed-wet"};
+   private static final String[] NAMES = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet", "stairs-railed-wet", "stairs-railed-reversed-wet", "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"};
    private static final JsonArray RESULTS = new JsonArray();
    private static int index;
    private static int stage;
@@ -34,14 +34,14 @@ final class NativeWaterCanalValidation {
 
    private static BlockState state() {
       BlockState state = switch (index) {
-         case 0, 1, 4, 5 -> ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState()
+         case 0, 1, 4, 5, 6, 7 -> ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState()
             .setValue(PortedBlocks.HORIZONTAL_FACING, index == 5 ? Direction.SOUTH : Direction.NORTH);
          case 2 -> ModBlocks.STEEL_CATWALK.get().defaultBlockState();
          default -> ModBlocks.STEEL_CATWALK_TA.get().defaultBlockState();
       };
       if (index >= 4) state = state.setValue(PortedBlocks.LEFT_RAILING, true)
          .setValue(PortedBlocks.RIGHT_RAILING, true).setValue(PortedBlocks.EDITED_STAIR_SIDES, 3);
-      return state.setValue(BlockStateProperties.WATERLOGGED, index != 1);
+      return state.setValue(BlockStateProperties.WATERLOGGED, index != 1 && index != 6);
    }
 
    static boolean tick(Minecraft mc, Path directory, String nonce) throws Exception {
@@ -67,7 +67,8 @@ final class NativeWaterCanalValidation {
             level.setBlock(POS.south(), Blocks.BRICKS.defaultBlockState(), 3);
             level.setBlock(POS.north(4), Blocks.BRICKS.defaultBlockState(), 3);
             level.setBlock(POS, expected, 3);
-            if (index != 1) for (int z = 1; z <= 3; z++) level.setBlock(POS.north(z), Blocks.WATER.defaultBlockState(), 3);
+            if (index >= 6) level.setBlock(POS.north(3), Blocks.WATER.defaultBlockState(), 3);
+            else if (index != 1) for (int z = 1; z <= 3; z++) level.setBlock(POS.north(z), Blocks.WATER.defaultBlockState(), 3);
             player.connection.teleport(POS.getX()+3.5, POS.getY()+2.0, POS.getZ()+4.5, 0, 0);
          });
          stage = 1;
@@ -99,6 +100,12 @@ final class NativeWaterCanalValidation {
          result.addProperty("vertices", mesh.vertices);
          result.addProperty("upper_horizontal_quads", mesh.upperQuads);
          result.addProperty("source", client.getFluidState().isSource());
+         result.addProperty("cell_fluid_height", client.getFluidState().getHeight(mc.level, POS));
+         var adjacent = mc.level.getFluidState(POS.north());
+         result.addProperty("adjacent_fluid_state", adjacent.toString());
+         result.addProperty("adjacent_source", adjacent.isSource());
+         result.addProperty("adjacent_water", adjacent.is(net.minecraft.tags.FluidTags.WATER));
+         result.addProperty("adjacent_fluid_height", adjacent.getHeight(mc.level, POS.north()));
          capture(mc, directory, NAMES[index]+"-oblique.png");
          result.addProperty("oblique_screenshot", NAMES[index]+"-oblique.png");
          pending = mc.getSingleplayerServer().submit(() -> {

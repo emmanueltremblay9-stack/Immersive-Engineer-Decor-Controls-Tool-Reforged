@@ -18,9 +18,11 @@ class CanalProofTests(unittest.TestCase):
         self.proof = {"suite": "native-water-canal-diagnostic-v1", "nonce": "current",
                       "status": "captured", "cases": []}
         for name in ("stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet",
-                     "stairs-railed-wet", "stairs-railed-reversed-wet"):
-            wet = name != "stairs-dry-control"
+                     "stairs-railed-wet", "stairs-railed-reversed-wet",
+                     "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"):
+            wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-dry"}
             case = {"case": name, "source": wet, "upper_horizontal_quads": int(wet)}
+            case.update(adjacent_water=True, adjacent_source=False, adjacent_fluid_height=0.6)
             for angle in ("oblique", "overhead"):
                 filename = f"{name}-{angle}.png"
                 case[f"{angle}_screenshot"] = filename
@@ -55,3 +57,11 @@ class CanalProofTests(unittest.TestCase):
             image.write_bytes(data)
             with self.assertRaises(SmokeFailure):
                 validate_canal_proof(self.proof, "current", self.directory)
+
+    def test_requires_actual_flowing_adjacent_water(self):
+        for field, value in (("adjacent_water", False), ("adjacent_source", True),
+                             ("adjacent_fluid_height", 0), ("adjacent_fluid_height", 1)):
+            proof = copy.deepcopy(self.proof)
+            proof["cases"][-1][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure):
+                validate_canal_proof(proof, "current", self.directory)

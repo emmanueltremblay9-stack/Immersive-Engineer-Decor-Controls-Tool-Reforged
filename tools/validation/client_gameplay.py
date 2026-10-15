@@ -121,7 +121,8 @@ def validate_fluidlogging_proof(proof: dict, nonce: str) -> dict:
 def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
     import struct
     expected = {"stairs-wet", "stairs-dry-control", "catwalk-wet", "raised-wet",
-                "stairs-railed-wet", "stairs-railed-reversed-wet"}
+                "stairs-railed-wet", "stairs-railed-reversed-wet",
+                "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"}
     if (proof.get("suite") != "native-water-canal-diagnostic-v1"
             or proof.get("nonce") != nonce or proof.get("status") != "captured"):
         raise SmokeFailure("Missing current canal scene proof")
@@ -134,12 +135,17 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
         if name not in expected or name in seen:
             raise SmokeFailure("Duplicate or unexpected canal scene")
         seen.add(name)
-        wet = name != "stairs-dry-control"
+        wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-dry"}
         if case.get("source") is not wet:
             raise SmokeFailure(f"Canal source state mismatch: {name}")
         quads = case.get("upper_horizontal_quads")
         if type(quads) is not int or (quads < 1 if wet else quads != 0):
             raise SmokeFailure(f"Canal lacks the expected exposed upper fluid surface: {name}")
+        if name.startswith("stairs-flow-adjacent-"):
+            height = case.get("adjacent_fluid_height")
+            if (case.get("adjacent_water") is not True or case.get("adjacent_source") is not False
+                    or type(height) not in (int, float) or not 0 < height < 8/9):
+                raise SmokeFailure(f"Canal lacks actual lower flowing water beside stairs: {name}")
         for angle in ("oblique", "overhead"):
             filename = f"{name}-{angle}.png"
             if case.get(f"{angle}_screenshot") != filename:
