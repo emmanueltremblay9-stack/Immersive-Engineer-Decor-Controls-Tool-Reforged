@@ -21,7 +21,7 @@ class CanalProofTests(unittest.TestCase):
                      "stairs-railed-wet", "stairs-railed-reversed-wet",
                      "stairs-flow-adjacent-dry", "stairs-flow-adjacent-stored"):
             wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-dry"}
-            case = {"case": name, "source": wet, "upper_horizontal_quads": int(wet)}
+            case = {"case": name, "source": wet, "upper_horizontal_quads": int(wet), "upper_surface_quads": int(wet)}
             case.update(adjacent_water=True, adjacent_source=False, adjacent_fluid_height=0.6)
             for angle in ("oblique", "overhead"):
                 filename = f"{name}-{angle}.png"
@@ -41,8 +41,8 @@ class CanalProofTests(unittest.TestCase):
             elif mutation == "missing": proof["cases"].pop()
             elif mutation == "duplicate": proof["cases"][-1] = proof["cases"][0]
             elif mutation == "source": proof["cases"][0]["source"] = False
-            elif mutation == "surface": proof["cases"][0]["upper_horizontal_quads"] = 0
-            else: proof["cases"][1]["upper_horizontal_quads"] = 1
+            elif mutation == "surface": proof["cases"][0]["upper_surface_quads"] = 0
+            else: proof["cases"][1]["upper_surface_quads"] = 1
             with self.subTest(mutation=mutation), self.assertRaises(SmokeFailure):
                 validate_canal_proof(proof, "current", self.directory)
 
@@ -65,3 +65,11 @@ class CanalProofTests(unittest.TestCase):
             proof["cases"][-1][field] = value
             with self.subTest(field=field, value=value), self.assertRaises(SmokeFailure):
                 validate_canal_proof(proof, "current", self.directory)
+    def test_sloped_top_is_valid_without_horizontal_quads(self):
+        self.proof["cases"][-1]["upper_horizontal_quads"] = 0
+        self.proof["cases"][-1]["upper_surface_quads"] = 2
+        self.assertEqual(validate_canal_proof(self.proof, "current", self.directory), self.proof)
+    def test_side_vertices_cannot_replace_an_upper_surface(self):
+        self.proof["cases"][-1].update(vertices=16, upper_horizontal_quads=0, upper_surface_quads=0)
+        with self.assertRaises(SmokeFailure):
+            validate_canal_proof(self.proof, "current", self.directory)

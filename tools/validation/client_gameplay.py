@@ -138,7 +138,7 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
         wet = name not in {"stairs-dry-control", "stairs-flow-adjacent-dry"}
         if case.get("source") is not wet:
             raise SmokeFailure(f"Canal source state mismatch: {name}")
-        quads = case.get("upper_horizontal_quads")
+        quads = case.get("upper_surface_quads")
         if type(quads) is not int or (quads < 1 if wet else quads != 0):
             raise SmokeFailure(f"Canal lacks the expected exposed upper fluid surface: {name}")
         if name.startswith("stairs-flow-adjacent-"):

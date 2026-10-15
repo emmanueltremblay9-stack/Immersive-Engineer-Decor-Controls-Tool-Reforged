@@ -99,6 +99,7 @@ final class NativeWaterCanalValidation {
          result.addProperty("fluid_state", client.getFluidState().toString());
          result.addProperty("vertices", mesh.vertices);
          result.addProperty("upper_horizontal_quads", mesh.upperQuads);
+         result.addProperty("upper_surface_quads", mesh.upperSurfaceQuads);
          result.addProperty("source", client.getFluidState().isSource());
          result.addProperty("cell_fluid_height", client.getFluidState().getHeight(mc.level, POS));
          var adjacent = mc.level.getFluidState(POS.north());
@@ -161,13 +162,29 @@ final class NativeWaterCanalValidation {
    private static final class Mesh implements VertexConsumer {
       int vertices;
       int upperQuads;
+      int upperSurfaceQuads;
       private final int originY;
       private final float[] y = new float[4];
+      private final float[] xzX = new float[4];
+      private final float[] xzZ = new float[4];
       Mesh(int originY) { this.originY = originY; }
       @Override public VertexConsumer addVertex(float x, float height, float z) {
          y[vertices % 4] = height;
+         xzX[vertices % 4] = x;
+         xzZ[vertices % 4] = z;
          if (++vertices % 4 == 0 && y[0] > originY+0.5f && Math.abs(y[0]-y[1])<0.001
             && Math.abs(y[0]-y[2])<0.001 && Math.abs(y[0]-y[3])<0.001) upperQuads++;
+         if (vertices % 4 == 0) {
+            // A sloped top still projects an area onto XZ; a vertical side does not.
+            float area = 0;
+            boolean upper = true;
+            for (int i = 0; i < 4; i++) {
+               int next = (i + 1) % 4;
+               area += xzX[i] * xzZ[next] - xzX[next] * xzZ[i];
+               upper &= y[i] > originY + 0.5f;
+            }
+            if (upper && Math.abs(area) > 0.0001f) upperSurfaceQuads++;
+         }
          return this;
       }
       @Override public VertexConsumer setColor(int r,int g,int b,int a) { return this; }
