@@ -1482,16 +1482,65 @@ public final class PortedBlocks {
       }
    }
 
-   public abstract static class DirectionalShapeBlock extends PortedBlocks.DirectionalPortBlock {
+   public abstract static class DirectionalShapeBlock extends PortedBlocks.DirectionalPortBlock implements NativeFluidloggedBlock {
       private final VoxelShape[] shapes = new VoxelShape[Direction.values().length];
       private final boolean emptyCollision;
 
       protected DirectionalShapeBlock(Properties properties, VoxelShape northShape, boolean horizontalRotation, boolean emptyCollision) {
-         super(properties);
+         super(properties.lightLevel(state -> Math.max(14, NativeFluidloggedBlock.light(state))));
+         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false)
+            .setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY)
+            .setValue(CatwalkStairsBlock.WATER_FLOW, 0));
          this.emptyCollision = emptyCollision;
          for (Direction facing : Direction.values()) {
             this.shapes[facing.ordinal()] = PortedBlocks.orientedNorthShape(northShape, facing, horizontalRotation);
          }
+      }
+
+      @Override
+      protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, CatwalkStairsBlock.WATER_FLOW);
+      }
+
+      @Override
+      public FluidState getFluidState(BlockState state) {
+         return StairWaterFlow.fluid(state);
+      }
+
+      @Override
+      public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, BlockGetter level, BlockPos pos, BlockState state, net.minecraft.world.level.material.Fluid fluid) {
+         if (fluid == net.minecraft.world.level.material.Fluids.FLOWING_WATER)
+            return !state.getValue(WATERLOGGED) && state.getValue(NativeFluidloggedBlock.FLUID_CELL) == NativeFluidloggedBlock.Cell.EMPTY;
+         if (StairWaterFlow.active(state) && fluid != net.minecraft.world.level.material.Fluids.WATER) return false;
+         return NativeFluidloggedBlock.super.canPlaceLiquid(player, level, pos, state, fluid);
+      }
+
+      @Override
+      public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluid) {
+         if (fluid.getType() == net.minecraft.world.level.material.Fluids.FLOWING_WATER
+               && canPlaceLiquid(null, level, pos, state, fluid.getType())) {
+            if (!level.isClientSide()) {
+               if (!level.setBlock(pos, StairWaterFlow.withFlow(state, fluid), 3)) return false;
+               level.scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(level));
+            }
+            return true;
+         }
+         if (!canPlaceLiquid(null, level, pos, state, fluid.getType())) return false;
+         return NativeFluidloggedBlock.super.placeLiquid(level, pos, state.setValue(CatwalkStairsBlock.WATER_FLOW, 0), fluid);
+      }
+
+      @Override
+      public net.minecraft.world.item.ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, LevelAccessor level, BlockPos pos, BlockState state) {
+         if (StairWaterFlow.active(state)) return net.minecraft.world.item.ItemStack.EMPTY;
+         return NativeFluidloggedBlock.super.pickupBlock(player, level, pos, state.setValue(CatwalkStairsBlock.WATER_FLOW, 0));
+      }
+
+      @Override
+      protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1509,7 +1558,7 @@ public final class PortedBlocks {
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace().getOpposite());
+         return NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(FACING, context.getClickedFace().getOpposite()), context);
       }
    }
 
@@ -1519,7 +1568,7 @@ public final class PortedBlocks {
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
+         return NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()), context);
       }
    }
 

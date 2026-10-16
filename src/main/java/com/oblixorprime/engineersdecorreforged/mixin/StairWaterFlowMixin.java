@@ -26,7 +26,7 @@ public abstract class StairWaterFlowMixin {
 
    @Inject(method="getNewLiquid", at=@At("RETURN"), cancellable=true)
    private void iedctr$noNewStoredSource(Level level, BlockPos pos, BlockState state, CallbackInfoReturnable<FluidState> cir) {
-      if (state.getBlock() instanceof PortedBlocks.CatwalkStairsBlock && !state.getValue(PortedBlocks.WATERLOGGED)
+      if (StairWaterFlow.supported(state) && !state.getValue(PortedBlocks.WATERLOGGED)
             && state.getValue(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.FLUID_CELL) == com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.Cell.EMPTY
             && cir.getReturnValue().getType() == Fluids.WATER) {
          // Two neighboring sources must not turn a transient stair cell into an immortal source.

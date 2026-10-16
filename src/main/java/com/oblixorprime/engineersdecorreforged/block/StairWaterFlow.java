@@ -5,11 +5,15 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-/** Only transient water in catwalk stairs. Existing WATERLOGGED sources keep their contract. */
+/** Transient water in explicitly opted-in stairs and decorative lights. Legacy sources retain their contract. */
 public final class StairWaterFlow {
    private StairWaterFlow() {}
-   public static boolean active(BlockState state) {
+   public static boolean supported(BlockState state) {
       return state.getBlock() instanceof PortedBlocks.CatwalkStairsBlock
+         || state.getBlock() instanceof PortedBlocks.DirectionalShapeBlock;
+   }
+   public static boolean active(BlockState state) {
+      return supported(state)
          && !state.getValue(PortedBlocks.WATERLOGGED)
          && state.getValue(NativeFluidloggedBlock.FLUID_CELL) == NativeFluidloggedBlock.Cell.EMPTY
          && state.getValue(PortedBlocks.CatwalkStairsBlock.WATER_FLOW) != 0;

@@ -44,7 +44,9 @@ public final class NativeFluidloggingGameTests {
    private static final BlockPos CENTER = new BlockPos(3, 2, 3);
    private static List<Block> blocks() {
       return List.of(ModBlocks.STEEL_CATWALK.get(), ModBlocks.STEEL_CATWALK_STAIRS.get(),
-         ModBlocks.STEEL_CATWALK_TA.get(), ModBlocks.STEEL_RAILING.get());
+         ModBlocks.STEEL_CATWALK_TA.get(), ModBlocks.STEEL_RAILING.get(),
+         ModBlocks.IRON_BULB_LIGHT.get(), ModBlocks.IRON_CEILING_EDGE_LIGHT.get(),
+         ModBlocks.IRON_FLOOR_EDGE_LIGHT.get(), ModBlocks.IRON_INSET_LIGHT.get());
    }
    private static List<Fluid> fluids() {
       return List.of(Fluids.WATER, Fluids.LAVA, NativeFluidloggedBlock.creosote());
@@ -89,7 +91,7 @@ public final class NativeFluidloggingGameTests {
       var biomes = helper.getLevel().registryAccess().registryOrThrow(Registries.BIOME);
       LevelChunkSection sent = new LevelChunkSection(biomes);
       int x = 0;
-      for (Block block : blocks()) for (Fluid fluid : fluids()) sent.setBlockState(x++, 1, 1, filled(block, fluid));
+      for (Block block : blocks()) for (Fluid fluid : fluids()) sent.setBlockState(x % 16, 1, 1 + x++ / 16, filled(block, fluid));
       FriendlyByteBuf buffer = new FriendlyByteBuf(Unpooled.buffer());
       try {
          sent.write(buffer);
@@ -97,8 +99,8 @@ public final class NativeFluidloggingGameTests {
          received.read(buffer);
          x = 0;
          for (Block block : blocks()) for (Fluid fluid : fluids()) {
-            helper.assertValueEqual(received.getBlockState(x, 1, 1), filled(block, fluid), "initial section sync preserves every state");
-            helper.assertTrue(received.getFluidState(x++, 1, 1).getType() == fluid,
+            helper.assertValueEqual(received.getBlockState(x % 16, 1, 1 + x / 16), filled(block, fluid), "initial section sync preserves every state");
+            helper.assertTrue(received.getFluidState(x % 16, 1, 1 + x++ / 16).getType() == fluid,
                "initial client section fluid lookup sees vanilla and IE sources");
          }
          for (Block block : blocks()) for (Fluid fluid : fluids()) {
@@ -275,7 +277,7 @@ public final class NativeFluidloggingGameTests {
       var saved = new net.minecraft.world.level.chunk.LevelChunk(level, chunkPos);
       int x = 0;
       for (Block block : blocks()) for (Fluid fluid : fluids())
-         saved.setBlockState(new BlockPos(chunkPos.getMinBlockX() + x++, 80, chunkPos.getMinBlockZ()), filled(block, fluid), false);
+         saved.setBlockState(new BlockPos(chunkPos.getMinBlockX() + x % 16, 80, chunkPos.getMinBlockZ() + x++ / 16), filled(block, fluid), false);
       var tag = net.minecraft.world.level.chunk.storage.ChunkSerializer.write(level, saved);
       var compressed = new java.io.ByteArrayOutputStream();
       net.minecraft.nbt.NbtIo.writeCompressed(tag, compressed);
@@ -286,7 +288,7 @@ public final class NativeFluidloggingGameTests {
          chunkPos, diskTag);
       x = 0;
       for (Block block : blocks()) for (Fluid fluid : fluids()) {
-         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + x++, 80, chunkPos.getMinBlockZ());
+         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + x % 16, 80, chunkPos.getMinBlockZ() + x++ / 16);
          helper.assertValueEqual(loaded.getBlockState(pos), filled(block, fluid), "actual compressed chunk save/reload keeps decorative state");
          helper.assertTrue(loaded.getFluidState(pos).getType() == fluid, "reloaded chunk exposes exact vanilla/IE source");
       }
