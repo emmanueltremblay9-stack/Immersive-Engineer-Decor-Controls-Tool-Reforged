@@ -20,7 +20,7 @@ def rows(proof,nonce,suite,expected,key):
 def validate_generic(proof,nonce):
     expected={(fluid,kind,sync) for fluid in FLUIDS for kind in range(5) for sync in ('update','initial')}
     for c in rows(proof,nonce,'generic-fluid-client-v1',expected,lambda c:(c.get('fluid'),c.get('state'),c.get('sync'))):
-        if type(c.get('state')) is not int or c.get('server_client_region_agree') is not True or c.get('drain_cleared') is not True:
+        if type(c.get('state')) is not int or c.get('server_client_region_agree') is not True or c.get('drain_cleared') is not True or c.get('local_prediction_restore') is not True:
             raise SmokeFailure('Generic fluid state/snapshot/drain mismatch')
     return proof
 

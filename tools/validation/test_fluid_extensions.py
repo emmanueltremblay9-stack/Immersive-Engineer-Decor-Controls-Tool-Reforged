@@ -4,7 +4,7 @@ from fluid_extensions import FLUIDS,MODES,validate_generic,validate_submerged
 from client_mixin_smoke import SmokeFailure
 class FluidExtensionProofTests(unittest.TestCase):
     def setUp(self):
-        self.generic=dict(suite='generic-fluid-client-v1',nonce='current',status='passed',cases=[dict(fluid=f,state=k,sync=s,server_client_region_agree=True,drain_cleared=True) for f in FLUIDS for k in range(5) for s in ('update','initial')])
+        self.generic=dict(suite='generic-fluid-client-v1',nonce='current',status='passed',cases=[dict(fluid=f,state=k,sync=s,server_client_region_agree=True,drain_cleared=True,local_prediction_restore=True) for f in FLUIDS for k in range(5) for s in ('update','initial')])
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);(self.root/'submerged-catwalk-screenshots').mkdir()
         def chunk(k,p):return struct.pack('>I',len(p))+k+p+struct.pack('>I',zlib.crc32(k+p))
         image=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',1280,720,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(bytes(720*(1+1280*3))))+chunk(b'IEND',b'')
@@ -25,7 +25,7 @@ class FluidExtensionProofTests(unittest.TestCase):
                 else:p['cases'].pop()
                 with self.assertRaises(SmokeFailure):call(p,'current')
     def test_missing_sync_or_drain(self):
-        for field in ('server_client_region_agree','drain_cleared'):
+        for field in ('server_client_region_agree','drain_cleared','local_prediction_restore'):
             p=copy.deepcopy(self.generic);p['cases'][0][field]=False
             with self.assertRaises(SmokeFailure):validate_generic(p,'current')
     def test_camera_paid_and_source_identity(self):

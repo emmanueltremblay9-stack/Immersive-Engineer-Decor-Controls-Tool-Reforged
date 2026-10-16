@@ -24,21 +24,22 @@ public abstract class NativeFluidChunkMixin {
       if (previous == null || (!NativeFluidCells.supported(previous) && !NativeFluidCells.supported(state))) return;
       var chunk = (LevelChunk)(Object)this;
       var data = NativeFluidCells.snapshot(chunk);
-      if ((!NativeFluidCells.supported(state) || !state.getFluidState().isEmpty()) && data.contains(pos)) {
+      if (!chunk.getLevel().isClientSide && (!NativeFluidCells.supported(state) || !state.getFluidState().isEmpty()) && data.contains(pos)) {
          chunk.setData(NativeFluidCells.CELLS.get(), data.with(pos, net.minecraft.world.level.material.Fluids.EMPTY.defaultFluidState()));
          chunk.setUnsaved(true);
          NativeFluidCells.refreshRandomTicks(chunk, NativeFluidCells.snapshot(chunk));
-         NativeFluidCells.refreshLight(chunk,pos,NativeFluidCells.snapshot(chunk));
-      } else if (NativeFluidCells.supported(state) && !NativeFluidCells.supported(previous)) {
+      } else if (!chunk.getLevel().isClientSide && NativeFluidCells.supported(state) && !NativeFluidCells.supported(previous)) {
          var fluid = previous.getFluidState();
          if (NativeFluidCells.standard(fluid.getType()) && !fluid.isEmpty() && state.getFluidState().isEmpty()
                && (fluid.isSource() || (StairWaterFlow.supported(state) && !(state.getBlock() instanceof com.oblixorprime.engineersdecorreforged.utility.MachineBlocks.PassiveFluidAccumulatorBlock)))) {
             chunk.setData(NativeFluidCells.CELLS.get(), data.with(pos, fluid));
             chunk.setUnsaved(true);
             NativeFluidCells.refreshRandomTicks(chunk, NativeFluidCells.snapshot(chunk));
-         NativeFluidCells.refreshLight(chunk,pos,NativeFluidCells.snapshot(chunk));
             if (!chunk.getLevel().isClientSide) chunk.getLevel().scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(chunk.getLevel()));
          }
       }
+      // Client block packets may coalesce intermediate states; only the server mutates attachment cells.
+      // A cell packet can arrive before its block packet, so refresh light after either order.
+      NativeFluidCells.refreshLight(chunk,pos,NativeFluidCells.snapshot(chunk));
    }
 }

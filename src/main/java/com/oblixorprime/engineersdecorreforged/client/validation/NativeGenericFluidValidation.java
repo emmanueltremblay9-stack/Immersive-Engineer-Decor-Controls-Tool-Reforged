@@ -56,6 +56,11 @@ final class NativeGenericFluidValidation {
       if(stage==1){
          if(!mc.level.getFluidState(POS).equals(expected()) || !mc.level.getBlockState(POS).equals(state()))return false;
          check(mc.level.getChunkAt(POS).getFluidState(POS).equals(expected()),"client chunk differs");
+         // Exercise the client chunk path used when a predicted removal is later corrected.
+         mc.level.setBlock(POS,Blocks.AIR.defaultBlockState(),3);
+         check(mc.level.getFluidState(POS).isEmpty(),"removed client block must mask its cell");
+         mc.level.setBlock(POS,state(),3);
+         check(mc.level.getFluidState(POS).equals(expected()),"client prediction restore lost authoritative cell");
          var region=new net.minecraft.client.renderer.chunk.RenderRegionCache().createRegion(mc.level,SectionPos.of(POS),false);
          check(region!=null && region.getFluidState(POS).equals(expected()),"render snapshot differs");
          var mesh=new NativeFluidloggingValidation.Mesh();mc.getBlockRenderer().renderLiquid(POS,region,mesh,state(),expected());
@@ -66,7 +71,7 @@ final class NativeGenericFluidValidation {
          });stage=2;wait=0;return false;
       }
       if(!mc.level.getFluidState(POS).isEmpty())return false;
-      var row=new JsonObject();row.addProperty("fluid",FLUIDS[index%6]);row.addProperty("state",(index/6)%5);row.addProperty("sync",index<30?"update":"initial");row.addProperty("server_client_region_agree",true);row.addProperty("drain_cleared",true);RESULTS.add(row);
+      var row=new JsonObject();row.addProperty("fluid",FLUIDS[index%6]);row.addProperty("state",(index/6)%5);row.addProperty("sync",index<30?"update":"initial");row.addProperty("server_client_region_agree",true);row.addProperty("drain_cleared",true);row.addProperty("local_prediction_restore",true);RESULTS.add(row);
       index++;stage=0;wait=0;
       if(index==60){var proof=new JsonObject();proof.addProperty("suite","generic-fluid-client-v1");proof.addProperty("nonce",nonce);proof.addProperty("status","passed");proof.add("cases",RESULTS);Files.writeString(directory.resolve("client-generic-fluid-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");return true;}return false;
    }

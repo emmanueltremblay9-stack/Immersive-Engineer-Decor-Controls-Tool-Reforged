@@ -2,6 +2,17 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.60-reconstructed] - Unreleased generic fluidlogging draft
+
+### Added
+- Independent named chunk cells for standard world fluids on the existing 200 decorative opt-ins, preserving legacy source and transient-water saves, machine tanks and Passive Fluid Accumulator contracts.
+- Initial palette and per-cell update/removal synchronization, immutable native/Embeddium render snapshots, fluid ticking and auxiliary emission without loading chunks from light workers.
+- Twelve generic server GameTests, 60 exact-state client synchronization cases and 18 dry/source/current views across all six raised catwalk variants, with CI evidence gates.
+
+### Fixed
+- Keep client attachments authoritative to server synchronization when block packets coalesce intermediate states or client predictions are reverted.
+- Respect each fluid's drop-off and connected-above geometry when suppressing source creation inside transient cells.
+
 ## [1.1.59-reconstructed] - Unreleased fluidlogging draft
 
 ### Added
