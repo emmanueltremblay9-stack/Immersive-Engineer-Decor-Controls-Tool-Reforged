@@ -2,6 +2,14 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.61-reconstructed] - Unreleased lava surface correction
+
+### Fixed
+- Read exterior fluid cells at their actual neighbor, diagonal and upper positions when calculating native lava/fluid surface heights; use the same sampled-cell query in optional Embeddium rendering. Preserve block geometry and existing flow/storage rules.
+
+### Added
+- Isolated native/Embeddium stepped lava scenes with raw height, shared-corner continuity, server/client and screenshot evidence gates.
+
 ## [1.1.60-reconstructed] - Unreleased generic fluidlogging draft
 
 ### Added

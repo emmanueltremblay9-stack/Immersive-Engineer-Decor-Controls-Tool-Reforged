@@ -174,7 +174,10 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=1080)
     parser.add_argument("--renderer-profile", choices=PROFILES)
     parser.add_argument("--flow-distance-only", action="store_true")
+    parser.add_argument("--lava-surface-only", action="store_true")
     args = parser.parse_args()
+    if args.lava_surface_only and (not args.renderer_profile or args.flow_distance_only):
+        parser.error("Lava surface requires one renderer profile and its own session")
     if args.flow_distance_only and not args.renderer_profile:
         parser.error("A renderer profile is required for the east flow-distance sweep")
     if sys.platform != "linux":
@@ -210,6 +213,7 @@ gradle.projectsEvaluated {
         systemProperty 'iedctr.clientGameplay', 'true'
         systemProperty 'iedctr.canalEast', System.getenv('IEDCTR_CANAL_EAST')
         systemProperty 'iedctr.flowDistanceOnly', System.getenv('IEDCTR_FLOW_DISTANCE_ONLY')
+        systemProperty 'iedctr.lavaSurfaceOnly', System.getenv('IEDCTR_LAVA_SURFACE_ONLY')
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         programArgument '--width'
@@ -222,7 +226,8 @@ gradle.projectsEvaluated {
     env = dict(os.environ, IEDCTR_GAMEPLAY_DIR=str(game), IEDCTR_GAMEPLAY_NONCE=nonce,
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null",
                IEDCTR_RENDERER_JARS=json.dumps(renderer_jars), IEDCTR_CANAL_EAST=str(bool(args.renderer_profile)).lower(),
-               IEDCTR_FLOW_DISTANCE_ONLY=str(args.flow_distance_only).lower())
+               IEDCTR_FLOW_DISTANCE_ONLY=str(args.flow_distance_only).lower(),
+               IEDCTR_LAVA_SURFACE_ONLY=str(args.lava_surface_only).lower())
     gradle = [str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
     prepare_log, client_log = evidence / "prepare.log", evidence / "client.log"
     print(f"Native client gameplay evidence: {evidence}", flush=True)
@@ -245,6 +250,16 @@ gradle.projectsEvaluated {
         from fluid_extensions import validate_extensions
         if expired or code != 0 or crashes or FATAL_PATTERN.search(logs):
             raise SmokeFailure('Fluid extension client did not finish cleanly')
+        if args.lava_surface_only:
+            if (proof.get("suite")!="lava-surface-session-v1" or proof.get("status")!="passed"
+                    or proof.get("nonce")!=nonce or proof.get("actual_integrated_world") is not True
+                    or f"IEDCTR_LAVA_SURFACE PASSED nonce={nonce}" not in logs):
+                raise SmokeFailure("Missing complete isolated lava session")
+            from lava_surface import validate_lava
+            lava=json.loads((game/"client-lava-surface-result.json").read_text())
+            validate_lava(lava,nonce,args.renderer_profile,game)
+            print(json.dumps(lava,indent=2),flush=True)
+            return 0
         validate_extensions(game, nonce)
         if args.flow_distance_only:
             if expired:
