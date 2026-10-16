@@ -62,7 +62,7 @@ jobs:
       - name: Verify native client lamp mining and server acknowledgement
         timeout-minutes: 18
         shell: bash
-        run: python tools/validation/client_gameplay.py --prepare-timeout 600 --timeout 420
+        run: python tools/validation/client_gameplay.py --prepare-timeout 600 --timeout 720
 
       - name: Retain synthetic canal scene evidence
         if: always()

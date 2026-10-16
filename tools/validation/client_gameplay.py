@@ -212,6 +212,10 @@ gradle.projectsEvaluated {
         systemProperty 'iedctr.flowDistanceOnly', System.getenv('IEDCTR_FLOW_DISTANCE_ONLY')
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
+        programArgument '--width'
+        programArgument '1280'
+        programArgument '--height'
+        programArgument '720'
     }
 }
 """, encoding="utf-8")
