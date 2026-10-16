@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** Roof fitting with a selectable rim for placing its separate chimney cap. */
-public final class ChimneyTrunkBlock extends StairBlock {
+public final class ChimneyTrunkBlock extends NativeDecorativeBlocks.NativeStairBlock {
    // Geometry from the preserved dark_shingle_roof_chimneytrunk_model.json.
    // Original Engineer's Decor model: Stefan Wilhelm / wile, MIT (see NOTICE.md).
    // Preserve the visible rim at y=16 and the hollow center; an ordinary stair loses both.
@@ -67,9 +67,7 @@ public final class ChimneyTrunkBlock extends StairBlock {
    @Override
    public BlockState updateShape(BlockState state, Direction side, BlockState neighbor,
                                  LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-      if (state.getValue(WATERLOGGED)) {
-         level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-      }
+      NativeFluidloggedBlock.schedule(state, level, pos);
       // Never auto-convert this fitting to a corner: corner models have no chimney trunk.
       // Preserve existing serialized states rather than migrating old worlds implicitly.
       return state;

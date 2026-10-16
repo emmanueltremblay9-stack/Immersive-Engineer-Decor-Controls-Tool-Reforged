@@ -60,9 +60,9 @@ jobs:
         run: python tools/validation/client_mixin_smoke.py --prepare-timeout 600 --timeout 180
 
       - name: Verify native client lamp mining and server acknowledgement
-        timeout-minutes: 18
+        timeout-minutes: 30
         shell: bash
-        run: python tools/validation/client_gameplay.py --prepare-timeout 600 --timeout 420
+        run: python tools/validation/client_gameplay.py --prepare-timeout 600 --timeout 1080
 
       - name: Retain synthetic canal scene evidence
         if: always()
@@ -73,6 +73,8 @@ jobs:
             build/client-gameplay-*/run/canal-screenshots/*.png
             build/client-gameplay-*/run/client-water-canal-result.json
             build/client-gameplay-*/run/client-water-flow-distance-result.json
+            build/client-gameplay-*/run/catalogue-screenshots/*.png
+            build/client-gameplay-*/run/client-catalogue-result.json
           if-no-files-found: error
           retention-days: 14
 
@@ -138,5 +140,7 @@ jobs:
             build/client-gameplay-*/run/canal-screenshots/*.png
             build/client-gameplay-*/run/client-water-canal-result.json
             build/client-gameplay-*/run/client-water-flow-distance-result.json
+            build/client-gameplay-*/run/catalogue-screenshots/*.png
+            build/client-gameplay-*/run/client-catalogue-result.json
           if-no-files-found: error
           retention-days: 14

@@ -109,7 +109,7 @@ public final class NativeClientMiningValidation {
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
-      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, WATER_DISTANCE }
+      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, CATALOGUE, WATER_DISTANCE }
 
    @SubscribeEvent
    public static void removed(RailingMining.InsetLightRemoved event) {
@@ -129,7 +129,8 @@ public final class NativeClientMiningValidation {
       try {
          if (phase == Phase.BOOT) {
             if (deadline == 0) {
-               deadline = System.nanoTime() + 360_000_000_000L;
+               // The full catalogue fixture adds 8960 settling/recession ticks; retain the old flow-only bound.
+               deadline = System.nanoTime() + (Boolean.getBoolean("iedctr.flowDistanceOnly") ? 360_000_000_000L : 900_000_000_000L);
             }
             require(System.nanoTime() < deadline, "Timed out before the title screen");
             if (mc.screen instanceof TitleScreen && mc.getOverlay() == null) {
@@ -138,7 +139,7 @@ public final class NativeClientMiningValidation {
             return;
          }
          require(System.nanoTime() < deadline, "Gameplay suite deadline exceeded at " + phase);
-         require(++stageTicks < (phase == Phase.WATER_DISTANCE ? 4800 : 2400), "Gameplay phase made no progress: " + phase);
+         require(++stageTicks < (phase == Phase.WATER_DISTANCE ? 4800 : phase == Phase.CATALOGUE ? 14000 : 2400), "Gameplay phase made no progress: " + phase);
          if (phase == Phase.WORLD) {
             if (mc.level != null && mc.player != null && mc.gameMode != null && mc.screen == null) {
                require(mc.getSingleplayerServer() != null, "Fixture must use its own integrated server");
@@ -372,7 +373,10 @@ public final class NativeClientMiningValidation {
                else setup(mc);
             }
             case FLUIDLOGGING -> {
-               if (NativeFluidloggingValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.WATER_CANAL);
+               if (NativeFluidloggingValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.CATALOGUE);
+            }
+            case CATALOGUE -> {
+               if (NativeCatalogueValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.WATER_CANAL);
             }
             case WATER_CANAL -> {
                if (NativeWaterCanalValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);

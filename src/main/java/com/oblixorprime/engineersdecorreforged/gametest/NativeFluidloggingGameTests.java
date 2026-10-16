@@ -43,8 +43,8 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 public final class NativeFluidloggingGameTests {
    private static final BlockPos CENTER = new BlockPos(3, 2, 3);
    private static List<Block> blocks() {
-      return List.of(ModBlocks.STEEL_CATWALK.get(), ModBlocks.STEEL_CATWALK_STAIRS.get(),
-         ModBlocks.STEEL_CATWALK_TA.get(), ModBlocks.STEEL_RAILING.get());
+      return ModBlocks.ORDERED_BLOCKS.stream().map(entry -> (Block)entry.get())
+         .filter(block -> block instanceof NativeFluidloggedBlock).toList();
    }
    private static List<Fluid> fluids() {
       return List.of(Fluids.WATER, Fluids.LAVA, NativeFluidloggedBlock.creosote());
@@ -79,8 +79,8 @@ public final class NativeFluidloggingGameTests {
       }
       helper.assertFalse(Blocks.OAK_SLAB.defaultBlockState().hasProperty(NativeFluidloggedBlock.FLUID_CELL),
          "vanilla waterloggable blocks are outside native integration");
-      helper.assertFalse(ModBlocks.PASSIVE_FLUID_ACCUMULATOR.get().defaultBlockState().hasProperty(NativeFluidloggedBlock.FLUID_CELL),
-         "machine world water remains independent of its unchanged tank contract");
+      helper.assertTrue(ModBlocks.PASSIVE_FLUID_ACCUMULATOR.get().defaultBlockState().hasProperty(NativeFluidloggedBlock.FLUID_CELL),
+         "machine exterior cell is explicit and remains independent of its tank contract");
       helper.succeed();
    }
 
@@ -89,7 +89,7 @@ public final class NativeFluidloggingGameTests {
       var biomes = helper.getLevel().registryAccess().registryOrThrow(Registries.BIOME);
       LevelChunkSection sent = new LevelChunkSection(biomes);
       int x = 0;
-      for (Block block : blocks()) for (Fluid fluid : fluids()) sent.setBlockState(x++, 1, 1, filled(block, fluid));
+      for (Block block : blocks()) for (Fluid fluid : fluids()) sent.setBlockState(x % 16, 1 + x / 256, (1 + x++ / 16) % 16, filled(block, fluid));
       FriendlyByteBuf buffer = new FriendlyByteBuf(Unpooled.buffer());
       try {
          sent.write(buffer);
@@ -97,8 +97,8 @@ public final class NativeFluidloggingGameTests {
          received.read(buffer);
          x = 0;
          for (Block block : blocks()) for (Fluid fluid : fluids()) {
-            helper.assertValueEqual(received.getBlockState(x, 1, 1), filled(block, fluid), "initial section sync preserves every state");
-            helper.assertTrue(received.getFluidState(x++, 1, 1).getType() == fluid,
+            helper.assertValueEqual(received.getBlockState(x % 16, 1 + x / 256, (1 + x / 16) % 16), filled(block, fluid), "initial section sync preserves every state");
+            helper.assertTrue(received.getFluidState(x % 16, 1 + x / 256, (1 + x++ / 16) % 16).getType() == fluid,
                "initial client section fluid lookup sees vanilla and IE sources");
          }
          for (Block block : blocks()) for (Fluid fluid : fluids()) {
@@ -121,6 +121,7 @@ public final class NativeFluidloggingGameTests {
       BlockPos pos = helper.absolutePos(CENTER);
       ServerPlayer player = player(helper, pos);
       for (Block block : blocks()) for (Fluid fluid : fluids()) {
+         player.setShiftKeyDown(block instanceof com.oblixorprime.engineersdecorreforged.utility.MachineBlocks.MachineBlock);
          prepare(helper, pos);
          helper.getLevel().setBlock(pos, block.defaultBlockState(), 3);
          for (int cycle = 0; cycle < 3; cycle++) {
@@ -129,7 +130,7 @@ public final class NativeFluidloggingGameTests {
                "real filled bucket inserts " + fluid + " into " + block);
             helper.assertTrue(player.getMainHandItem().is(Items.BUCKET), "survival insertion returns exactly one empty bucket");
             BlockState wet = helper.getLevel().getBlockState(pos);
-            helper.assertTrue(wet.is(block) && wet.getFluidState().getType() == fluid, "bucket keeps decorative ID and exact source");
+            helper.assertTrue(wet.is(block) && wet.getFluidState().getType() == fluid, "bucket keeps decorative ID and exact source: "+block+" / "+fluid+" actual="+wet);
             helper.assertTrue(helper.getLevel().getFluidTicks().hasScheduledTick(pos, fluid), "insertion schedules source ticks");
             NativeFluidloggedBlock container = (NativeFluidloggedBlock)block;
             helper.assertFalse(container.canPlaceLiquid(player, helper.getLevel(), pos, wet, fluid), "occupied cell rejects a second bucket");
@@ -151,6 +152,8 @@ public final class NativeFluidloggingGameTests {
       BlockPos pos = helper.absolutePos(CENTER);
       ServerPlayer player = player(helper, pos);
       for (Block block : blocks()) for (Fluid fluid : fluids()) for (boolean source : new boolean[] {false, true}) {
+         // Ariadne is placed by its paid tool, tested separately; it has no BlockItem.
+         if (block.asItem() == Items.AIR) continue;
          prepare(helper, pos);
          FlowingFluid flowing = (FlowingFluid)fluid;
          helper.getLevel().setBlock(pos, (source ? flowing.getSource(false) : flowing.getFlowing(4, false)).createLegacyBlock(), 3);
@@ -275,7 +278,7 @@ public final class NativeFluidloggingGameTests {
       var saved = new net.minecraft.world.level.chunk.LevelChunk(level, chunkPos);
       int x = 0;
       for (Block block : blocks()) for (Fluid fluid : fluids())
-         saved.setBlockState(new BlockPos(chunkPos.getMinBlockX() + x++, 80, chunkPos.getMinBlockZ()), filled(block, fluid), false);
+         saved.setBlockState(new BlockPos(chunkPos.getMinBlockX() + x % 16, 80 + x / 256, chunkPos.getMinBlockZ() + (x++ / 16) % 16), filled(block, fluid), false);
       var tag = net.minecraft.world.level.chunk.storage.ChunkSerializer.write(level, saved);
       var compressed = new java.io.ByteArrayOutputStream();
       net.minecraft.nbt.NbtIo.writeCompressed(tag, compressed);
@@ -286,7 +289,7 @@ public final class NativeFluidloggingGameTests {
          chunkPos, diskTag);
       x = 0;
       for (Block block : blocks()) for (Fluid fluid : fluids()) {
-         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + x++, 80, chunkPos.getMinBlockZ());
+         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + x % 16, 80 + x / 256, chunkPos.getMinBlockZ() + (x++ / 16) % 16);
          helper.assertValueEqual(loaded.getBlockState(pos), filled(block, fluid), "actual compressed chunk save/reload keeps decorative state");
          helper.assertTrue(loaded.getFluidState(pos).getType() == fluid, "reloaded chunk exposes exact vanilla/IE source");
       }

@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** A hollow roof fitting, not an IE connector: wires retain their existing endpoints. */
-public final class RoofWireConduitBlock extends StairBlock {
+public final class RoofWireConduitBlock extends NativeDecorativeBlocks.NativeStairBlock {
    // Geometry from the preserved dark_shingle_roof_wireconduit_model.json.
    // Original Engineer's Decor model: Stefan Wilhelm / wile, MIT (see NOTICE.md).
    // Keep the 2-pixel vertical opening at x/z 7..9 clear, including at the roof base.
@@ -75,9 +75,7 @@ public final class RoofWireConduitBlock extends StairBlock {
    @Override
    public BlockState updateShape(BlockState state, Direction side, BlockState neighbor,
                                  LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-      if (state.getValue(WATERLOGGED)) {
-         level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-      }
+      NativeFluidloggedBlock.schedule(state, level, pos);
       // Never auto-convert this fitting to a corner: corner models have no conduit.
       // Preserve existing serialized states rather than migrating old worlds implicitly.
       return state;

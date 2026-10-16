@@ -28,7 +28,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 
 /** Restores Engineer's Decor's adjustable cosmetic chimney (Stefan Wilhelm / wile, MIT). */
-public final class ChimneyBlock extends Block {
+public final class ChimneyBlock extends NativeDecorativeBlocks.NativeOpenBlock {
    public static final MapCodec<ChimneyBlock> CODEC = simpleCodec(ChimneyBlock::new);
    public static final IntegerProperty POWER = BlockStateProperties.POWER;
    public static final BooleanProperty STACKED = BooleanProperty.create("stacked");
@@ -45,7 +45,7 @@ public final class ChimneyBlock extends Block {
       super(properties);
       // Old saves have no power property: retain their silent state until clicked or powered.
       // Also avoids smoke in item/model previews, as in the original implementation.
-      registerDefaultState(stateDefinition.any().setValue(POWER, 0).setValue(STACKED, false).setValue(INPUT_POWER, 0));
+      registerDefaultState(NativeFluidloggedBlock.dry(stateDefinition.any()).setValue(POWER, 0).setValue(STACKED, false).setValue(INPUT_POWER, 0));
    }
 
    @Override
@@ -55,14 +55,15 @@ public final class ChimneyBlock extends Block {
 
    @Override
    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+      super.createBlockStateDefinition(builder);
       builder.add(POWER, STACKED, INPUT_POWER);
    }
 
    @Override
    public BlockState getStateForPlacement(BlockPlaceContext context) {
       int signal = context.getLevel().getBestNeighborSignal(context.getClickedPos());
-      return defaultBlockState().setValue(POWER, signal == 0 ? 5 : signal).setValue(INPUT_POWER, signal)
-         .setValue(STACKED, hasChimneyAbove(context.getLevel(), context.getClickedPos()));
+      return NativeFluidloggedBlock.placement(defaultBlockState().setValue(POWER, signal == 0 ? 5 : signal).setValue(INPUT_POWER, signal)
+         .setValue(STACKED, hasChimneyAbove(context.getLevel(), context.getClickedPos())), context);
    }
 
    @Override
@@ -73,6 +74,7 @@ public final class ChimneyBlock extends Block {
    @Override
    public BlockState updateShape(BlockState state, Direction side, BlockState neighbor, LevelAccessor level,
                                  BlockPos pos, BlockPos neighborPos) {
+      NativeFluidloggedBlock.schedule(state, level, pos);
       return side == Direction.UP ? state.setValue(STACKED, neighbor.getBlock() instanceof ChimneyBlock) : state;
    }
 

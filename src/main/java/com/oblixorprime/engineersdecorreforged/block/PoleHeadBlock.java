@@ -25,6 +25,6 @@ public final class PoleHeadBlock extends PortedBlocks.DirectionalShapeBlock {
             || support.is(ModBlocks.TREATED_WOOD_POLE_SUPPORT.get())) {
          facing = facing.getOpposite();
       }
-      return defaultBlockState().setValue(FACING, facing);
+      return NativeFluidloggedBlock.placement(defaultBlockState().setValue(FACING, facing), context);
    }
 }

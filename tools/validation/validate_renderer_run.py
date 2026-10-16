@@ -25,6 +25,8 @@ if __name__ == "__main__":
     validate_proof(load("client-gameplay-result.json"), nonce, logs, args.exit_code, False,
                    list(args.game.glob("crash-reports/*")))
     validate_fluidlogging_proof(load("client-fluidlogging-result.json"), nonce)
+    from catalogue_visual import validate_catalogue
+    validate_catalogue(load("client-catalogue-result.json"), nonce, args.game)
     proof = load("client-water-canal-result.json")
     validate_canal_proof(proof, nonce, args.game)
     validate_renderer_profile(proof, args.profile)

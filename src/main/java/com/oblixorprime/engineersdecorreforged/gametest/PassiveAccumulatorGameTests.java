@@ -85,7 +85,8 @@ public final class PassiveAccumulatorGameTests {
          place(helper, player, pos, Direction.UP);
          helper.assertFalse(helper.getLevel().getBlockState(pos).getValue(PassiveFluidAccumulatorBlock.WATERLOGGED),
             "air, flowing water and lava must not mint a water source during placement");
-         helper.assertTrue(helper.getLevel().getFluidState(pos).isEmpty(), "dry state must expose no fluid");
+         helper.assertValueEqual(helper.getLevel().getFluidState(pos), replaced.getFluidState().isSource()
+            ? replaced.getFluidState() : Fluids.EMPTY.defaultFluidState(), "source lava remains lava externally; current never becomes source water");
       }
       helper.succeed();
    }
@@ -131,8 +132,8 @@ public final class PassiveAccumulatorGameTests {
          helper.assertTrue(wet.getValue(PassiveFluidAccumulatorBlock.WATERLOGGED), "sneak bucket use waterlogs the world block");
          helper.assertTrue(player.getMainHandItem().is(Items.BUCKET), "world placement consumes the water bucket");
          helper.assertTrue(helper.getLevel().getFluidTicks().hasScheduledTick(pos, Fluids.WATER), "water placement schedules a real water tick");
-         helper.assertTrue(waterlogged.canPlaceLiquid(player, helper.getLevel(), pos, wet, Fluids.WATER),
-            "vanilla waterlogging declares supported fluid types independently of the current fill state");
+         helper.assertFalse(waterlogged.canPlaceLiquid(player, helper.getLevel(), pos, wet, Fluids.WATER),
+            "native occupied exterior cell rejects duplicate insertion before bucket consumption");
          helper.assertFalse(waterlogged.placeLiquid(helper.getLevel(), pos, wet, Fluids.WATER.getSource(false)),
             "repeated liquid insertion must not manufacture another source");
          helper.getLevel().setBlock(pos.east(), Blocks.AIR.defaultBlockState(), 3);
@@ -146,8 +147,8 @@ public final class PassiveAccumulatorGameTests {
          helper.assertTrue(machine(helper, pos) == original, "water toggles and neighbors must retain the block entity");
          helper.assertValueEqual(amount(helper, pos), 750, "world bucket cycles never read or copy tank contents");
       }
-      helper.assertFalse(waterlogged.canPlaceLiquid(player, helper.getLevel(), pos, helper.getLevel().getBlockState(pos), Fluids.LAVA),
-         "only water can waterlog the accumulator");
+      helper.assertTrue(waterlogged.canPlaceLiquid(player, helper.getLevel(), pos, helper.getLevel().getBlockState(pos), Fluids.LAVA),
+         "sneaking accepts exterior lava without making it tank water");
       helper.succeed();
    }
 

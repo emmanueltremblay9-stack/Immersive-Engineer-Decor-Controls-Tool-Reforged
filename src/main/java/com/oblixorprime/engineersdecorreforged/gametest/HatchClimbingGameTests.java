@@ -153,7 +153,11 @@ public final class HatchClimbingGameTests {
                   var saved = NbtUtils.writeBlockState(original);
                   BlockState loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved);
                   helper.assertValueEqual(loaded, original, "saved facing/open/powered must load without migration");
-                  helper.assertTrue(loaded.getProperties().size() == 3, "the existing three-property state schema must remain unchanged");
+                  helper.assertTrue(loaded.getProperties().size() == 6, "only native water/cell/flow extend the existing hatch schema");
+                  var legacy = saved.copy();
+                  for (String key : java.util.List.of("waterlogged", "fluid_cell", "water_flow")) legacy.getCompound("Properties").remove(key);
+                  helper.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), legacy), original,
+                     "legacy hatch hinge/open/power load dry unchanged");
                   BlockPos pos = helper.absolutePos(CENTER);
                   helper.assertValueEqual(loaded.getCollisionShape(helper.getLevel(), pos).bounds(),
                      original.getCollisionShape(helper.getLevel(), pos).bounds(), "save/load must preserve collision geometry");

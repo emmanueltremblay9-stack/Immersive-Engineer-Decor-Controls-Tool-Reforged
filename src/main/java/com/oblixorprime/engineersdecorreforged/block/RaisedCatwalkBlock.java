@@ -34,7 +34,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** Top-aligned catwalk with contextual pole supports and an optional inset light. */
-public final class RaisedCatwalkBlock extends Block implements NativeFluidloggedBlock {
+public final class RaisedCatwalkBlock extends Block implements NativeTransientFluidBlock {
    // Keep recovered states 0..4 unchanged and append wood without expanding other blocks' states.
    public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 5);
    public static final BooleanProperty WATERLOGGED = PortedBlocks.WATERLOGGED;
@@ -92,7 +92,7 @@ public final class RaisedCatwalkBlock extends Block implements NativeFluidlogged
 
    @Override
    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-      builder.add(VARIANT, WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, PAID_LIGHT);
+      builder.add(VARIANT, WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, PAID_LIGHT, StairWaterFlow.WATER_FLOW);
    }
 
    @Override
@@ -134,7 +134,7 @@ public final class RaisedCatwalkBlock extends Block implements NativeFluidlogged
 
    @Override
    protected FluidState getFluidState(BlockState state) {
-      return NativeFluidloggedBlock.fluidState(state);
+      return StairWaterFlow.fluid(state);
    }
 
    @Override
