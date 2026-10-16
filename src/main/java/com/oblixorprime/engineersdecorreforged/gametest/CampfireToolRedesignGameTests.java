@@ -4,6 +4,8 @@ import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsModule;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
@@ -138,6 +140,25 @@ public class CampfireToolRedesignGameTests {
       assertRecipe(helper, "sleeping_bag", List.of(new ItemStack(Items.IRON_NUGGET), new ItemStack(Items.IRON_NUGGET), new ItemStack(Items.WHITE_CARPET),
             new ItemStack(Items.WHITE_CARPET), new ItemStack(Items.WHITE_CARPET), new ItemStack(Items.WHITE_CARPET),
             ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY), false);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void material_box_rejects_filled_crates_without_consuming_contents(GameTestHelper helper) {
+      for (int slot : List.of(4, 7)) {
+         var slots = new ArrayList<>(List.of(ie("wirecoil_structure_rope"), ie("plate_iron"), ie("wirecoil_structure_rope"),
+               ie("plate_iron"), ie("crate"), ie("plate_iron"),
+               ie("wirecoil_structure_rope"), ie("crate"), ie("wirecoil_structure_rope")));
+         ItemStack filled = slots.get(slot);
+         filled.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(List.of(new ItemStack(Items.DIAMOND, 64))));
+         List<ItemStack> before = slots.stream().map(ItemStack::copy).toList();
+         assertRecipe(helper, "material_box", slots, false);
+         for (int i = 0; i < slots.size(); i++) {
+            helper.assertTrue(ItemStack.matches(before.get(i), slots.get(i)), "refused recipe must preserve every input and component");
+         }
+         helper.assertValueEqual(64, filled.get(DataComponents.CONTAINER).stream().mapToInt(ItemStack::getCount).sum(),
+               "filled crate contents must remain intact in either recipe slot");
+      }
       helper.succeed();
    }
 

@@ -14,7 +14,10 @@
       "tag": "c:plates/iron"
     },
     "C": {
-      "item": "immersiveengineering:crate"
+      "type": "neoforge:components",
+      "items": "immersiveengineering:crate",
+      "components": {},
+      "strict": true
     }
   },
   "result": {
