@@ -10,7 +10,7 @@ class CatalogueVisualTests(unittest.TestCase):
         png=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',1280,720,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(bytes(720*(1+1280*3))))+chunk(b'IEND',b'')
         for b in BLOCKS:
             for m in MODES:
-                c=dict(block='immersive_engineer_decor_controls_tool_reforged:'+b,mode=m,source_before=m!='natural-water',amount_before=7 if m=='natural-water' else 8,fluid_vertices=16,server_client_agree=True,geometry_and_paid_state_preserved=True,after_empty=True)
+                c=dict(fluid_height_before=1 if m=='submerged-water' else .8,block='immersive_engineer_decor_controls_tool_reforged:'+b,mode=m,source_before=m!='natural-water',amount_before=7 if m=='natural-water' else 8,fluid_vertices=16,server_client_agree=True,geometry_and_paid_state_preserved=True,after_empty=True)
                 for phase in ('before','after'):
                     name=f'{b}-{m}-{phase}.png';c[phase]=name
                     (self.path/'catalogue-screenshots'/name).write_bytes(png)

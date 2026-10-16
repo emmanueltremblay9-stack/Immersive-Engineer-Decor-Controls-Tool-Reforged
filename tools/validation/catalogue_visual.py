@@ -4,7 +4,7 @@ import zlib
 from client_mixin_smoke import SmokeFailure
 BLOCKS = ('iron_bulb_light','iron_inset_light','iron_ceiling_edge_light','iron_floor_edge_light',
           'industrial_lever','industrial_button','industrial_contact_mat','steel_catwalk_ta')
-MODES = ('water','lava','creosote','natural-water')
+MODES = ('water','lava','creosote','natural-water','submerged-water')
 def validate_catalogue(proof, nonce, directory):
     expected={('immersive_engineer_decor_controls_tool_reforged:'+b,m) for b in BLOCKS for m in MODES}
     if (proof.get('suite')!='native-catalogue-visual-v1' or proof.get('nonce')!=nonce or proof.get('status')!='passed'):
@@ -20,6 +20,9 @@ def validate_catalogue(proof, nonce, directory):
             or case.get('geometry_and_paid_state_preserved') is not True
             or type(case.get('fluid_vertices')) is not int or case['fluid_vertices']<=0 or case['fluid_vertices']%4):
             raise SmokeFailure('Catalogue fluid, geometry or recession mismatch')
+        height=case.get('fluid_height_before')
+        if type(height) not in (int,float) or not 0<height<=1 or (mode=='submerged-water' and height!=1):
+            raise SmokeFailure('Catalogue source does not show the required submerged height')
         for phase in ('before','after'):
             name=f'{block}-{mode}-{phase}.png'
             if case.get(phase)!=name:raise SmokeFailure('Unexpected catalogue screenshot path')

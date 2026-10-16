@@ -24,7 +24,7 @@ import java.util.concurrent.CompletableFuture;
 /** Dedicated screenshots in the existing nonce-guarded synthetic integrated world only. */
 final class NativeCatalogueValidation {
    private static final BlockPos POS=new BlockPos(5,80,5);
-   private static final Vec3 CAMERA=new Vec3(7.5,82.7,1.5);
+   private static final Vec3 CAMERA=new Vec3(6.4,80.8,3.1);
    private static final JsonArray RESULTS=new JsonArray();
    private static int index,stage,ticks;
    private static CompletableFuture<?> pending;
@@ -37,17 +37,20 @@ final class NativeCatalogueValidation {
          list.add(ControlsModule.CONTROLS.stream().filter(e->e.getId().getPath().equals(name)).findFirst().orElseThrow().get());
       list.add(ModBlocks.STEEL_CATWALK_TA.get());return list;
    }
-   private static Block block(){return blocks().get(index/4);}
-   private static boolean natural(){return index%4==3;}
-   private static String mode(){return new String[]{"water","lava","creosote","natural-water"}[index%4];}
-   private static Fluid fluid(){return switch(index%4){case 1->Fluids.LAVA;case 2->NativeFluidloggedBlock.creosote();default->Fluids.WATER;};}
+   private static Block block(){return blocks().get(index/5);}
+   private static boolean natural(){return index%5==3;}
+   private static String mode(){return new String[]{"water","lava","creosote","natural-water","submerged-water"}[index%5];}
+   private static Fluid fluid(){return switch(index%5){case 1->Fluids.LAVA;case 2->NativeFluidloggedBlock.creosote();default->Fluids.WATER;};}
    private static BlockState dry(){
       var state=block().defaultBlockState();
+      // Light FACING identifies its backplate; controls use the outward face convention.
+      // Present both fronts to the same cutaway camera without changing gameplay placement.
+      if(block() instanceof PortedBlocks.NativeLightBlock)state=state.setValue(PortedBlocks.FACING,net.minecraft.core.Direction.SOUTH);
       if(block() instanceof RaisedCatwalkBlock)state=state.setValue(RaisedCatwalkBlock.VARIANT,4).setValue(RaisedCatwalkBlock.PAID_LIGHT,true);
       return state;
    }
    static boolean tick(Minecraft mc,Path directory,String nonce)throws Exception {
-      if(index==blocks().size()*4)return true;
+      if(index==blocks().size()*5)return true;
       if(stage==0){
          pending=mc.getSingleplayerServer().submit(()->{
             var server=mc.getSingleplayerServer();var player=server.getPlayerList().getPlayer(mc.player.getUUID());var level=player.serverLevel();
@@ -56,13 +59,17 @@ final class NativeCatalogueValidation {
             for(BlockPos p:BlockPos.betweenClosed(POS.offset(-3,-1,-3),POS.offset(4,4,3)))
                level.setBlock(p,p.getY()==79?Blocks.STONE.defaultBlockState():Blocks.AIR.defaultBlockState(),3);
             for(int x=-2;x<=3;x++){
-               level.setBlock(POS.east(x).north(),Blocks.BRICKS.defaultBlockState(),3);
+               level.setBlock(POS.east(x).north(),Blocks.GLASS.defaultBlockState(),3);
                level.setBlock(POS.east(x).south(),Blocks.BRICKS.defaultBlockState(),3);
             }
             level.setBlock(POS.west(2),Blocks.BRICKS.defaultBlockState(),3);level.setBlock(POS.east(3),Blocks.BRICKS.defaultBlockState(),3);
             var placed=natural()?dry():NativeFluidloggedBlock.placement(dry(),((net.minecraft.world.level.material.FlowingFluid)fluid()).getSource(false));
             level.setBlock(POS,placed,3);
             if(natural())level.setBlock(POS.west(),Blocks.WATER.defaultBlockState(),3);
+            if(index%5==4) {
+               for(var side:net.minecraft.core.Direction.Plane.HORIZONTAL)level.setBlock(POS.above().relative(side),Blocks.GLASS.defaultBlockState(),3);
+               level.setBlock(POS.above(),Blocks.WATER.defaultBlockState(),3);
+            }
             player.connection.teleport(CAMERA.x,CAMERA.y,CAMERA.z,0,0);
          });stage=1;ticks=0;return false;
       }
@@ -88,13 +95,19 @@ final class NativeCatalogueValidation {
             check(state.getValue(property).equals(dry().getValue(property)),"fluid changed geometry/paid lamp/signal property "+property);
          Mesh mesh=new Mesh();mc.getBlockRenderer().renderLiquid(POS,mc.level,mesh,state,flow);check(mesh.vertices>0,"catalogue fluid has no rendered surface");
          result=new JsonObject();result.addProperty("block",BuiltInRegistries.BLOCK.getKey(block()).toString());result.addProperty("mode",mode());
+         float height=flow.getHeight(mc.level,POS);
+         if(index%5==4)check(height==1,"submerged cell must have full water height under the independent upper source");
+         result.addProperty("fluid_height_before",height);
          result.addProperty("source_before",flow.isSource());result.addProperty("amount_before",flow.getAmount());result.addProperty("fluid_vertices",mesh.vertices);
          result.addProperty("server_client_agree",true);result.addProperty("geometry_and_paid_state_preserved",true);
          result.addProperty("before",capture(mc,directory,"before"));
          pending=mc.getSingleplayerServer().submit(()->{
             var level=mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID()).serverLevel();
             if(natural())level.setBlock(POS.west(),Blocks.AIR.defaultBlockState(),3);
-            else check(((NativeFluidloggedBlock)block()).pickupBlock(null,level,POS,level.getBlockState(POS)).is(fluid().getBucket()),"catalogue source pickup failed");
+            else {
+               check(((NativeFluidloggedBlock)block()).pickupBlock(null,level,POS,level.getBlockState(POS)).is(fluid().getBucket()),"catalogue source pickup failed");
+               if(index%5==4)level.setBlock(POS.above(),Blocks.AIR.defaultBlockState(),3);
+            }
          });stage=4;ticks=0;return false;
       }
       if(stage==4){
@@ -108,7 +121,7 @@ final class NativeCatalogueValidation {
       check(state.equals(serverState) && state.equals(dry()) && state.getFluidState().isEmpty(),"client catalogue recession changed geometry, signal or paid state");
       result.addProperty("after_empty",true);result.addProperty("after",capture(mc,directory,"after"));RESULTS.add(result);
       index++;stage=0;ticks=0;
-      if(index==blocks().size()*4){
+      if(index==blocks().size()*5){
          var proof=new JsonObject();proof.addProperty("suite","native-catalogue-visual-v1");proof.addProperty("nonce",nonce);proof.addProperty("status","passed");
          proof.add("cases",RESULTS);Files.writeString(directory.resolve("client-catalogue-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");return true;
       }
