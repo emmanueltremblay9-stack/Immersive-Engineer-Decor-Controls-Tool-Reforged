@@ -30,12 +30,15 @@ final class NativeSubmergedCatwalkValidation {
             var server=mc.getSingleplayerServer();var player=server.getPlayerList().getPlayer(mc.player.getUUID());var level=player.serverLevel();
             player.setGameMode(GameType.CREATIVE);player.getAbilities().flying=true;player.onUpdateAbilities();
             level.getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(false,server);level.setDayTime(6000);level.setWeatherParameters(100000,0,false,false);
+            // Remove sources left by earlier fixtures before rebuilding this enclosed scene.
+            for(var p:BlockPos.betweenClosed(POS.offset(-6,-3,-6),POS.offset(10,4,6))) level.setBlock(p,Blocks.AIR.defaultBlockState(),2);
+            level.getFluidTicks().clearArea(net.minecraft.world.level.levelgen.structure.BoundingBox.fromCorners(POS.offset(-6,-3,-6),POS.offset(10,4,6)));
             for(var p:BlockPos.betweenClosed(POS.offset(-4,-2,-4),POS.offset(4,3,4))) {
                boolean boundary=p.getX()==1 || p.getX()==9 || p.getZ()==1 || p.getZ()==9;
                var state=p.getY()==78?Blocks.STONE.defaultBlockState():boundary?Blocks.GLASS.defaultBlockState():index%3!=0 && p.getY()<=81?Blocks.WATER.defaultBlockState():Blocks.AIR.defaultBlockState();
                level.setBlock(p,state,3);
             }
-            var support=switch(variant()){case 1->ModBlocks.THICK_STEEL_POLE.get().defaultBlockState();case 2->ModBlocks.THIN_STEEL_POLE.get().defaultBlockState();case 3->Blocks.STONE.defaultBlockState();case 5->ModBlocks.TREATED_WOOD_POLE.get().defaultBlockState();default->index%3==0?Blocks.AIR.defaultBlockState():Blocks.WATER.defaultBlockState();};
+            var support=switch(variant()){case 1->ModBlocks.THICK_STEEL_POLE.get().defaultBlockState().setValue(DirectionalBlock.FACING,net.minecraft.core.Direction.UP);case 2->ModBlocks.THIN_STEEL_POLE.get().defaultBlockState().setValue(DirectionalBlock.FACING,net.minecraft.core.Direction.UP);case 3->Blocks.STONE.defaultBlockState();case 5->ModBlocks.TREATED_WOOD_POLE.get().defaultBlockState().setValue(DirectionalBlock.FACING,net.minecraft.core.Direction.UP);default->index%3==0?Blocks.AIR.defaultBlockState():Blocks.WATER.defaultBlockState();};
             if(index%3!=0 && support.getBlock() instanceof NativeFluidloggedBlock)support=NativeFluidloggedBlock.placement(support,Fluids.WATER.getSource(false));
             level.setBlock(POS.below(),support,3);
             var state=ModBlocks.STEEL_CATWALK_TA.get().defaultBlockState().setValue(RaisedCatwalkBlock.VARIANT,variant()).setValue(RaisedCatwalkBlock.PAID_LIGHT,variant()==4);
@@ -61,6 +64,7 @@ final class NativeSubmergedCatwalkValidation {
       check(state.getValue(RaisedCatwalkBlock.PAID_LIGHT)==(variant()==4),"paid lamp state changed");
       check(index%3==0?fluid.isEmpty():!fluid.isEmpty() && fluid.isSource()==(index%3==1),"source/current identity changed");
       if(index%3!=0)check(!mc.level.getFluidState(BlockPos.containing(mc.player.getEyePosition())).isEmpty(),"camera must actually be immersed");
+      else for(var p:BlockPos.betweenClosed(POS.offset(-3,-1,-3),POS.offset(3,2,3))) check(mc.level.getFluidState(p).isEmpty(),"dry scene retained fluid at "+p);
       var output=directory.resolve("submerged-catwalk-screenshots");Files.createDirectories(output);String filename="variant-"+variant()+"-"+mode()+".png";
       try(var image=Screenshot.takeScreenshot(mc.getMainRenderTarget())){image.writeToFile(output.resolve(filename));}
       var row=new JsonObject();row.addProperty("variant",variant());row.addProperty("mode",mode());row.addProperty("server_client_agree",true);row.addProperty("paid_state_preserved",true);row.addProperty("immersed_camera",index%3!=0);row.addProperty("amount",fluid.getAmount());row.addProperty("source",fluid.isSource());row.addProperty("screenshot",filename);RESULTS.add(row);

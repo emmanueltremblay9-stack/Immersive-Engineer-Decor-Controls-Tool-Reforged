@@ -1295,6 +1295,9 @@ class OperationalRoutingTests(unittest.TestCase):
                 "build/client-gameplay-*/run/client-water-flow-distance-result.json",
                 "build/client-gameplay-*/run/catalogue-screenshots/*.png",
                 "build/client-gameplay-*/run/client-catalogue-result.json",
+                "build/client-gameplay-*/run/client-generic-fluid-result.json",
+                "build/client-gameplay-*/run/client-submerged-catwalk-result.json",
+                "build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png",
             ], [line.strip() for line in paths.splitlines() if line.strip()])
             self.assertIn("retention-days: 14", upload)
 
