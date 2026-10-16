@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 /** Keeps vanilla wall topology while recognizing the mod's segmented mesh gate. */
-public final class SteelMeshFenceBlock extends WallBlock {
+public final class SteelMeshFenceBlock extends NativeDecorativeBlocks.NativeWallBlock {
    public static final MapCodec<WallBlock> CODEC = simpleCodec(SteelMeshFenceBlock::new);
 
    public SteelMeshFenceBlock(Properties properties) {
@@ -31,8 +31,8 @@ public final class SteelMeshFenceBlock extends WallBlock {
       }
       // Placement only calculates a candidate state. Avoid scheduling extra fluid ticks
       // while replaying vanilla's neighbor calculation, then restore its waterlogging.
-      boolean waterlogged = state.getValue(WATERLOGGED);
-      state = state.setValue(WATERLOGGED, false);
+      BlockState cell = state;
+      state = NativeFluidloggedBlock.dry(state);
       BlockPos pos = context.getClickedPos();
       for (Direction direction : Direction.Plane.HORIZONTAL) {
          BlockPos neighborPos = pos.relative(direction);
@@ -41,11 +41,11 @@ public final class SteelMeshFenceBlock extends WallBlock {
             state = super.updateShape(state, direction, connectionView(neighbor), context.getLevel(), pos, neighborPos);
          }
       }
-      return state.setValue(WATERLOGGED, waterlogged);
+      return NativeFluidloggedBlock.copyCell(state, cell);
    }
 
    @Override
-   protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+   public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
                                     LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
       BlockState connectionNeighbor = direction.getAxis().isHorizontal() ? connectionView(neighborState) : neighborState;
       return super.updateShape(state, direction, connectionNeighbor, level, pos, neighborPos);

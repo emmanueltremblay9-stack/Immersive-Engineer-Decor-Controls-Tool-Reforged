@@ -64,9 +64,15 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
    }
 
    static BlockState placement(BlockState state, FluidState replaced) {
+      if (state == null) return null;
       boolean source = replaced.isSource();
       return state.setValue(BlockStateProperties.WATERLOGGED, source && replaced.getType() == Fluids.WATER)
          .setValue(FLUID_CELL, source ? cell(replaced.getType()) : Cell.EMPTY);
+   }
+
+   static BlockState dry(BlockState state) {
+      state = state.setValue(BlockStateProperties.WATERLOGGED, false).setValue(FLUID_CELL, Cell.EMPTY);
+      return state.hasProperty(StairWaterFlow.WATER_FLOW) ? state.setValue(StairWaterFlow.WATER_FLOW, 0) : state;
    }
 
    static BlockState copyCell(BlockState target, BlockState cell) {
@@ -83,7 +89,7 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
    }
 
    static int light(BlockState state) {
-      return !state.getValue(BlockStateProperties.WATERLOGGED) && state.getValue(FLUID_CELL) == Cell.LAVA ? 15 : 0;
+      return state.hasProperty(FLUID_CELL) && !state.getValue(BlockStateProperties.WATERLOGGED) && state.getValue(FLUID_CELL) == Cell.LAVA ? 15 : 0;
    }
 
    @Override

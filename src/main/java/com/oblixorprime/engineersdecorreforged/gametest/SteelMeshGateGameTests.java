@@ -219,11 +219,11 @@ public final class SteelMeshGateGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
-   public static void gate_states_round_trip_without_new_properties(GameTestHelper helper) {
+   public static void gate_legacy_states_round_trip_with_empty_native_cells(GameTestHelper helper) {
       Set<String> wallProperties = ModBlocks.STEEL_MESH_FENCE.get().defaultBlockState().getProperties().stream()
          .map(Property::getName).collect(Collectors.toSet());
-      helper.assertValueEqual(wallProperties, Set.of("north", "east", "south", "west", "up", "waterlogged"),
-         "fix must preserve the mesh fence's six-property wall state schema");
+      helper.assertValueEqual(wallProperties, Set.of("north", "east", "south", "west", "up", "waterlogged", "fluid_cell", "water_flow"),
+         "native cells extend the six-property wall topology");
       for (Direction facing : Direction.Plane.HORIZONTAL) {
          for (boolean open : new boolean[]{false, true}) {
             for (int segment = 0; segment <= 1; segment++) {
@@ -231,9 +231,13 @@ public final class SteelMeshGateGameTests {
                var saved = NbtUtils.writeBlockState(state);
                BlockState loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved);
                helper.assertValueEqual(loaded, state, "all existing gate states must load without migration");
+               var legacy = saved.copy();
+               for (String key : java.util.List.of("waterlogged", "fluid_cell", "water_flow")) legacy.getCompound("Properties").remove(key);
+               helper.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), legacy), state,
+                  "legacy gate geometry loads with empty cells");
                Set<String> properties = loaded.getProperties().stream().map(Property::getName).collect(Collectors.toSet());
-               helper.assertValueEqual(properties, Set.of("facing", "open", "segment"),
-                  "fix must preserve the gate's three-property state schema");
+               helper.assertValueEqual(properties, Set.of("facing", "open", "segment", "waterlogged", "fluid_cell", "water_flow"),
+                  "native cells extend the three-property gate geometry");
                loaded.getShape(helper.getLevel(), helper.absolutePos(GATE));
                loaded.getCollisionShape(helper.getLevel(), helper.absolutePos(GATE));
                helper.assertValueEqual(NbtUtils.writeBlockState(loaded), saved, "shape queries must preserve saved values");

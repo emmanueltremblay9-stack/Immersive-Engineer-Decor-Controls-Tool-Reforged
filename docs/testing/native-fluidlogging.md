@@ -119,3 +119,25 @@ Raised catwalks now accept transient water as well as their existing sources. Pa
 The new `NativeCatalogueValidation` runs 40 scenes in the existing nonce-guarded synthetic integrated world: four standalone light types, lever, button, contact mat and inserted-light deck, each with three stored sources, natural water and a fully submerged water cell. It records matching server/client states, fluid mesh vertices and 80 before/after screenshots, retaining geometry, signal and paid-light state through source pickup or recession. These are eight visual representatives, not visual certification of every block. `catalogue_visual.py` checks exact scenario IDs, source/flow amount, recession, filenames and full-size PNG integrity; actual captures must still be inspected.
 
 The expanded full client fixture has a 10-minute internal deadline and 12-minute process bound, allowing its 4480 settling/recession ticks plus the earlier suites. The PR62 flow-only internal deadline remains 6 minutes. No test uses a personal world or installed Prism runtime. The exhaustive per-block plan and remaining families are in `catalogue-fluidlogging-matrix.md`.
+
+## Decorative catalogue extension
+
+All 180 non-machine registrations now opt into native water/lava/IE-creosote storage.
+The ten ordinary full cubes retain their collision and occlusion and store sources only;
+170 partial/custom registrations also expose transient water without source promotion.
+The remaining 20 machine/valve registrations are tracked explicitly in the matrix.
+
+Mod-owned subclasses retain vanilla stair, wall, ladder, slab and door geometry. Wall
+shape-cache keys project only fluid properties to their original canonical state. Slab
+merges retain the occupied cell and refund two paid slabs on destruction. Door halves,
+including sliding pairs, keep independent cells during synchronization and release each
+half's source/current during real survival and creative breaks. Ariadne has no BlockItem:
+its real tool preserves the replaced source and consumes exactly one tool charge.
+
+The 481-GameTest regression includes three-fluid survival bucket balances, legacy codecs,
+compressed chunk reload and initial/update palettes across all 180 native registrations;
+wall topologies, default selection/collision parity, wet slab merges and real door breaks
+are covered separately. Existing hatch/ladder/gate mechanics and packet-based paid-light
+mining remain regression gates. The earlier 40-scene client suite passed on `448ee647`
+(PR run 38848372248 and push run 38848366054); its 80 full-size captures were inspected.
+Those eight visual representatives do not certify every decorative model or orientation.

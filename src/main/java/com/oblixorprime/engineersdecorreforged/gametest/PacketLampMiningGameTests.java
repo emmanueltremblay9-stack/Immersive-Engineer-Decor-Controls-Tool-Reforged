@@ -188,7 +188,7 @@ public final class PacketLampMiningGameTests {
          // survival's real mining duration. That fluid is not a removed support.
          helper.assertTrue(support.isAir() || support.is(Blocks.WATER), "an unsupported deck may emit water but cannot create a solid support");
       } else {
-         helper.assertValueEqual(support, fixture.support(), "native lamp mining must preserve its solid support exactly");
+         assertSolidSupport(helper, fixture, "after native lamp mining");
       }
       helper.assertValueEqual(helper.getLevel().getBlockState(pos.above()), fixture.rail(), "native lamp mining must preserve railings");
       helper.assertValueEqual(expected.getLightEmission(helper.getLevel(), pos), 0, "removed lamp must stop emitting");
@@ -201,7 +201,12 @@ public final class PacketLampMiningGameTests {
 
    private static void assertSolidSupport(GameTestHelper helper, Fixture fixture, String phase) {
       if (!fixture.support().isAir()) {
-         helper.assertValueEqual(helper.getLevel().getBlockState(helper.absolutePos(CENTER).below()), fixture.support(),
+         var actual = helper.getLevel().getBlockState(helper.absolutePos(CENTER).below());
+         if (actual.hasProperty(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.FLUID_CELL)) {
+            helper.assertFalse(actual.getFluidState().isSource(), "falling deck water never promotes support to a source");
+            actual = com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.dry(actual);
+         }
+         helper.assertValueEqual(actual, fixture.support(),
             "fixture's solid support must still exist " + phase);
       }
    }

@@ -151,6 +151,8 @@ public final class NativeFluidloggingGameTests {
       BlockPos pos = helper.absolutePos(CENTER);
       ServerPlayer player = player(helper, pos);
       for (Block block : blocks()) for (Fluid fluid : fluids()) for (boolean source : new boolean[] {false, true}) {
+         // Ariadne is placed by its paid tool, tested separately; it has no BlockItem.
+         if (block.asItem() == Items.AIR) continue;
          prepare(helper, pos);
          FlowingFluid flowing = (FlowingFluid)fluid;
          helper.getLevel().setBlock(pos, (source ? flowing.getSource(false) : flowing.getFlowing(4, false)).createLegacyBlock(), 3);

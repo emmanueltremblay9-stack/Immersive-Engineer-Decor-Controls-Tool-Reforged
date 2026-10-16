@@ -36,7 +36,7 @@ public final class CatalogueFluidloggingGameTests {
       for (var entry : ModBlocks.ORDERED_BLOCKS) {
          if (entry.get() instanceof com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock) {
             var state = entry.get().defaultBlockState();
-            h.assertFalse(state.hasProperty(NativeFluidloggedBlock.FLUID_CELL), "structural heads must not inherit the first light lot");
+            h.assertTrue(state.hasProperty(NativeFluidloggedBlock.FLUID_CELL), "structural heads explicitly join the decorative native lot");
             h.assertValueEqual(state.getLightEmission(h.getLevel(), h.absolutePos(new BlockPos(3,2,3))), 0, "structural heads retain zero emission");
          }
       }

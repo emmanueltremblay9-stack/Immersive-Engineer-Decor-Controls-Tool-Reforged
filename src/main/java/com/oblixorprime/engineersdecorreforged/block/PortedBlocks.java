@@ -453,7 +453,8 @@ public final class PortedBlocks {
 
       @Override
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{FACING, PortedBlocks.ARIADNE_MARKER_ROTATION});
+         super.createBlockStateDefinition(builder);
+         builder.add(PortedBlocks.ARIADNE_MARKER_ROTATION);
       }
 
       protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -463,6 +464,7 @@ public final class PortedBlocks {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return direction == ((Direction)state.getValue(FACING)).getOpposite() && !this.canSurvive(state, level, pos) ? Blocks.AIR.defaultBlockState() : state;
       }
 
@@ -475,7 +477,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class CatwalkBlock extends Block implements NativeFluidloggedBlock {
+   public static class CatwalkBlock extends Block implements NativeTransientFluidBlock {
       public CatwalkBlock(Properties properties) {
          super(properties.lightLevel(NativeFluidloggedBlock::light));
          this.registerDefaultState(
@@ -489,7 +491,7 @@ public final class PortedBlocks {
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
          builder.add(new Property[]{PortedBlocks.NORTH, PortedBlocks.EAST, PortedBlocks.SOUTH, PortedBlocks.WEST,
-            PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, PortedBlocks.PAID_RAILINGS});
+            PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, PortedBlocks.PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -497,7 +499,7 @@ public final class PortedBlocks {
       }
 
       public FluidState getFluidState(BlockState state) {
-         return NativeFluidloggedBlock.fluidState(state);
+         return StairWaterFlow.fluid(state);
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
@@ -931,12 +933,12 @@ public final class PortedBlocks {
       }
    }
 
-   public static class DirectionalPortBlock extends DirectionalBlock {
+   public static class DirectionalPortBlock extends DirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.DirectionalPortBlock> CODEC = simpleCodec(PortedBlocks.DirectionalPortBlock::new);
 
       public DirectionalPortBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(FACING, Direction.NORTH));
       }
 
       protected MapCodec<? extends DirectionalBlock> codec() {
@@ -944,15 +946,22 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{FACING});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace());
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace()), context);
+      }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
       }
    }
 
-   public static class FenceGateSegmentBlock extends HorizontalDirectionalBlock {
+   public static class FenceGateSegmentBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.FenceGateSegmentBlock> CODEC = simpleCodec(PortedBlocks.FenceGateSegmentBlock::new);
       private static final VoxelShape CLOSED_NORTH_SOUTH_SHAPE = Block.box(0.0, 0.0, 7.0, 16.0, 16.0, 9.0);
       private static final VoxelShape CLOSED_EAST_WEST_SHAPE = Block.box(7.0, 0.0, 0.0, 9.0, 16.0, 16.0);
@@ -974,7 +983,7 @@ public final class PortedBlocks {
       public FenceGateSegmentBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
+            (BlockState)((BlockState)((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                   .setValue(PortedBlocks.OPEN, false))
                .setValue(PortedBlocks.SEGMENT, 0)
          );
@@ -985,18 +994,19 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.OPEN, PortedBlocks.SEGMENT});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState below = context.getLevel().getBlockState(context.getClickedPos().below());
-         return below.getBlock() instanceof PortedBlocks.FenceGateSegmentBlock && below.getValue(PortedBlocks.SEGMENT) == 0
+         return NativeFluidloggedBlock.placement(below.getBlock() instanceof PortedBlocks.FenceGateSegmentBlock && below.getValue(PortedBlocks.SEGMENT) == 0
             ? (BlockState)((BlockState)((BlockState)this.defaultBlockState()
                      .setValue(PortedBlocks.HORIZONTAL_FACING, (Direction)below.getValue(PortedBlocks.HORIZONTAL_FACING)))
                   .setValue(PortedBlocks.OPEN, (Boolean)below.getValue(PortedBlocks.OPEN)))
                .setValue(PortedBlocks.SEGMENT, 1)
             : (BlockState)((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()))
-               .setValue(PortedBlocks.SEGMENT, 0);
+               .setValue(PortedBlocks.SEGMENT, 0), context);
       }
 
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
@@ -1075,9 +1085,15 @@ public final class PortedBlocks {
 
          return rotated;
       }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+      }
    }
 
-   public static class FixedShapeBlock extends Block {
+   public static class FixedShapeBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public static final MapCodec<PortedBlocks.FixedShapeBlock> CODEC = simpleCodec(properties -> new PortedBlocks.FixedShapeBlock(properties, Shapes.block()));
       private final VoxelShape shape;
       private final boolean emptyCollision;
@@ -1111,7 +1127,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class HatchBlock extends HorizontalDirectionalBlock {
+   public static class HatchBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.HatchBlock> CODEC = simpleCodec(properties -> new PortedBlocks.HatchBlock(BlockSetType.IRON, properties));
       private static final VoxelShape CLOSED_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
       private static final double OPEN_SHAPE_THICKNESS = 2.875;
@@ -1121,7 +1137,7 @@ public final class PortedBlocks {
          super(properties);
          this.type = type;
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
+            (BlockState)((BlockState)((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                   .setValue(PortedBlocks.OPEN, false))
                .setValue(PortedBlocks.POWERED, false)
          );
@@ -1136,6 +1152,7 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.OPEN, PortedBlocks.POWERED});
       }
 
@@ -1145,10 +1162,10 @@ public final class PortedBlocks {
          Direction face = context.getClickedFace();
          Direction hinge = !context.replacingClickedOnBlock() && face.getAxis().isHorizontal()
             ? face.getOpposite() : context.getHorizontalDirection();
-         return (BlockState)((BlockState)((BlockState)this.defaultBlockState()
+         return NativeFluidloggedBlock.placement((BlockState)((BlockState)((BlockState)this.defaultBlockState()
                   .setValue(PortedBlocks.HORIZONTAL_FACING, hinge))
                .setValue(PortedBlocks.POWERED, powered))
-            .setValue(PortedBlocks.OPEN, powered);
+            .setValue(PortedBlocks.OPEN, powered), context);
       }
 
       @Override
@@ -1211,14 +1228,20 @@ public final class PortedBlocks {
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return this.getShape(state, level, pos, context);
       }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+      }
    }
 
-   public static class HorizontalFacingBlock extends HorizontalDirectionalBlock {
+   public static class HorizontalFacingBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.HorizontalFacingBlock> CODEC = simpleCodec(PortedBlocks.HorizontalFacingBlock::new);
 
       public HorizontalFacingBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH));
       }
 
       protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
@@ -1226,28 +1249,36 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()), context);
+      }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
       }
    }
 
-   public static class PartsBlock extends Block {
+   public static class PartsBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public PartsBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.PARTS, 0));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.PARTS, 0));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{PortedBlocks.PARTS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          double localY = context.getClickLocation().y - Math.floor(context.getClickLocation().y);
          int part = Mth.clamp((int)Math.floor(localY * 15.0), 0, 14);
-         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.PARTS, part);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(PortedBlocks.PARTS, part), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1409,11 +1440,11 @@ public final class PortedBlocks {
       }
    }
 
-   public static class SupportBlock extends Block {
+   public static class SupportBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public SupportBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.EASTWEST, false))
+            (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.EASTWEST, false))
                      .setValue(PortedBlocks.LEFTBEAM, false))
                   .setValue(PortedBlocks.RIGHTBEAM, false))
                .setValue(PortedBlocks.DOWNCONNECT, 0)
@@ -1421,17 +1452,19 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{PortedBlocks.EASTWEST, PortedBlocks.LEFTBEAM, PortedBlocks.RIGHTBEAM, PortedBlocks.DOWNCONNECT});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          Direction direction = context.getHorizontalDirection();
-         return this.connectedSupportState(
+         return NativeFluidloggedBlock.placement(this.connectedSupportState(
             (BlockState)this.defaultBlockState().setValue(PortedBlocks.EASTWEST, direction.getAxis() == Axis.X), context.getLevel(), context.getClickedPos()
-         );
+         ), context);
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return !direction.getAxis().isHorizontal() && direction != Direction.DOWN ? state : this.connectedSupportState(state, level, pos);
       }
 
@@ -1503,7 +1536,7 @@ public final class PortedBlocks {
       }
    }
 
-   /** Explicit light-only opt-in: structural pole heads also use DirectionalShapeBlock. */
+   /** Native decorative lights preserve their original emission independently of structural pole heads. */
    public abstract static class NativeLightBlock extends PortedBlocks.DirectionalShapeBlock implements NativeTransientFluidBlock {
       protected NativeLightBlock(Properties properties, VoxelShape northShape, boolean horizontalRotation, boolean emptyCollision) {
          super(properties.lightLevel(state -> Math.max(14, NativeFluidloggedBlock.light(state))), northShape, horizontalRotation, emptyCollision);
@@ -1515,7 +1548,6 @@ public final class PortedBlocks {
       @Override
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
          super.createBlockStateDefinition(builder);
-         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, CatwalkStairsBlock.WATER_FLOW);
       }
 
       @Override
@@ -1572,7 +1604,7 @@ public final class PortedBlocks {
             }
          }
 
-         return (BlockState)this.defaultBlockState().setValue(FACING, facing);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(FACING, facing), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1605,6 +1637,7 @@ public final class PortedBlocks {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return direction == ((Direction)state.getValue(FACING)).getOpposite() && !this.canSurvive(state, level, pos) ? Blocks.AIR.defaultBlockState() : state;
       }
 
@@ -1639,20 +1672,21 @@ public final class PortedBlocks {
       }
    }
 
-   public static class VariantOnlyBlock extends Block {
+   public static class VariantOnlyBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public VariantOnlyBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.VARIANT, 0));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.VARIANT, 0));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{PortedBlocks.VARIANT});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockPos pos = context.getClickedPos();
          int variant = Math.floorMod(pos.getX() * 31 + pos.getY() * 7 + pos.getZ(), 5);
-         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.VARIANT, variant);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(PortedBlocks.VARIANT, variant), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1664,7 +1698,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class VariantSlabBlock extends SlabBlock {
+   public static class VariantSlabBlock extends NativeDecorativeBlocks.NativeSlabBlock {
       public VariantSlabBlock(Properties properties) {
          super(properties);
          this.registerDefaultState((BlockState)this.defaultBlockState().setValue(PortedBlocks.TVARIANT, 0));
@@ -1690,7 +1724,7 @@ public final class PortedBlocks {
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          // Facing identifies the occupied half; the structured face points back toward the player.
-         return this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection());
+         return NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection()), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1702,7 +1736,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class SlidingDoorBlock extends DoorBlock {
+   public static class SlidingDoorBlock extends NativeDecorativeBlocks.NativeDoorBlock {
       public static final MapCodec<PortedBlocks.SlidingDoorBlock> CODEC = simpleCodec(properties -> new PortedBlocks.SlidingDoorBlock(BlockSetType.IRON, properties));
       private static final int UPDATE_FLAGS = 10;
       private static final VoxelShape LOWER_CLOSED_MODEL_SHAPE = Shapes.or(
@@ -1950,7 +1984,7 @@ public final class PortedBlocks {
          BlockPos upperPos = lowerPos.above();
          BlockState upperState = level.getBlockState(upperPos);
          if (upperState.is(this)) {
-            BlockState normalizedUpper = (BlockState)normalizedLower.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER);
+            BlockState normalizedUpper = NativeFluidloggedBlock.copyCell(normalizedLower.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER), upperState);
             if (!upperState.equals(normalizedUpper)) {
                level.setBlock(upperPos, normalizedUpper, UPDATE_FLAGS);
             }

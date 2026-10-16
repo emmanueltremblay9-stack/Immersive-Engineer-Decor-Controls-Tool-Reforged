@@ -6,73 +6,73 @@ Runtime inventory: all 200 registered IEDCTR blocks on main `e41a4b8a` plus the 
 
 Every pending row requires source placement, real survival bucket balance, legacy/default state load, compressed chunk reload and client updates for water/lava/creosote; natural water arrival/recession with no source promotion; shape/targeting/item drops retained. Test all meaningful orientations/variants, not only the default state. Controls additionally require signal strength, tick timing, support loss and switch behavior; multipart devices require independent cells. Machines require separate exterior cells and unchanged inventory/tank/capability contracts. The accumulator remains protected by its existing dedicated contract suite.
 
-Lighting and controls lot: native source contracts cover all opted-in blocks, including all 97 controls. Raised inserted-light install/removal tests cover water/lava/creosote and transient water. Dedicated client screenshots exercise four lights, lever/button/contact and inserted light before and after drain/recession; qualification is pending until the exact-commit client gate passes. Other catalogue families and full-block geometry qualifications remain pending.
+Lighting and controls lot: native source contracts cover all opted-in blocks, including all 97 controls. Raised inserted-light install/removal tests cover water/lava/creosote and transient water. Dedicated client screenshots exercise four lights, lever/button/contact and inserted light before and after drain/recession; the 40-scene client gate passed on `448ee647` and its 80 captures were inspected. All 180 decorative registrations now have source storage; full cubes retain occlusion and partial geometry gains transient water. Machines remain the next explicit lot. Per-model/orientation visual certification remains bounded to the representatives.
 
 | Block ID (mod namespace omitted) | Runtime class | States | Before | Current | Default collision | Next validation / lot |
 |---|---|---:|---|---|---|---|
-| `clinker_brick_block` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `clinker_brick_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `clinker_brick_stairs` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `clinker_brick_wall` | `WallBlock` | 324 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `clinker_brick_stained_block` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `clinker_brick_stained_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `clinker_brick_stained_stairs` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `clinker_brick_sastor_corner_block` | `PortedBlocks$DirectionalPortBlock` | 6 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `clinker_brick_recessed` | `PortedBlocks$HorizontalFacingBlock` | 4 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `clinker_brick_vertically_slit` | `PortedBlocks$HorizontalFacingBlock` | 4 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `clinker_brick_vertical_slab_structured` | `PortedBlocks$VerticalSlabBlock` | 4 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `halfslab_clinker_brick` | `PortedBlocks$PartsBlock` | 15 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `slag_brick_block` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `slag_brick_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `slag_brick_stairs` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `slag_brick_wall` | `WallBlock` | 324 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `rebar_concrete` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `rebar_concrete_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `rebar_concrete_stairs` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `rebar_concrete_wall` | `WallBlock` | 324 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `halfslab_rebar_concrete` | `PortedBlocks$PartsBlock` | 15 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `rebar_concrete_tile` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `rebar_concrete_tile_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `rebar_concrete_tile_stairs` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `panzerglass_block` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `panzerglass_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof_metallized` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof_skylight` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof_chimneytrunk` | `ChimneyTrunkBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof_wireconduit` | `RoofWireConduitBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof_chimney` | `ChimneyBlock` | 512 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof_block` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `dark_shingle_roof_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `dark_shingle_roof_slabslice` | `PortedBlocks$PartsBlock` | 15 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `dense_grit_dirt_block` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `dense_grit_sand_block` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `ariadne_marker` | `PortedBlocks$AriadneMarkerBlock` | 48 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `old_industrial_wood_planks` | `Block` | 1 | none | none | full | Geometry + variants; native storage pending; full-block storage/passage proof |
-| `old_industrial_wood_slab` | `PortedBlocks$VariantSlabBlock` | 24 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `old_industrial_wood_stairs` | `StairBlock` | 80 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `old_industrial_wood_slabslice` | `PortedBlocks$PartsBlock` | 15 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `old_industrial_wood_door` | `DoorBlock` | 64 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `thick_steel_pole` | `PortedBlocks$CenteredPoleBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `thick_steel_pole_head` | `PoleHeadBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `thin_steel_pole` | `PortedBlocks$CenteredPoleBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `thin_steel_pole_head` | `PoleHeadBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `treated_wood_pole` | `PortedBlocks$CenteredPoleBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `treated_wood_pole_head` | `PoleHeadBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `treated_wood_pole_support` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `steel_double_t_support` | `PortedBlocks$SupportBlock` | 24 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `steel_floor_grating` | `PortedBlocks$FloorGratingBlock` | 1 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `steel_catwalk` | `PortedBlocks$CatwalkBlock` | 480 | N | N | partial/empty | Retain regression + wet inserted-light test |
+| `clinker_brick_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `clinker_brick_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `clinker_brick_stairs` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `clinker_brick_wall` | `NativeDecorativeBlocks$NativeWallBlock` | 15552 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `clinker_brick_stained_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `clinker_brick_stained_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `clinker_brick_stained_stairs` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `clinker_brick_sastor_corner_block` | `PortedBlocks$DirectionalPortBlock` | 576 | none | N + T | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `clinker_brick_recessed` | `PortedBlocks$HorizontalFacingBlock` | 384 | none | N + T | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `clinker_brick_vertically_slit` | `PortedBlocks$HorizontalFacingBlock` | 384 | none | N + T | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `clinker_brick_vertical_slab_structured` | `PortedBlocks$VerticalSlabBlock` | 384 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `halfslab_clinker_brick` | `PortedBlocks$PartsBlock` | 1440 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `slag_brick_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `slag_brick_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `slag_brick_stairs` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `slag_brick_wall` | `NativeDecorativeBlocks$NativeWallBlock` | 15552 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `rebar_concrete` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `rebar_concrete_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `rebar_concrete_stairs` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `rebar_concrete_wall` | `NativeDecorativeBlocks$NativeWallBlock` | 15552 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `halfslab_rebar_concrete` | `PortedBlocks$PartsBlock` | 1440 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `rebar_concrete_tile` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `rebar_concrete_tile_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `rebar_concrete_tile_stairs` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `panzerglass_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `panzerglass_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof_metallized` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof_skylight` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof_chimneytrunk` | `ChimneyTrunkBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof_wireconduit` | `RoofWireConduitBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof_chimney` | `ChimneyBlock` | 49152 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `dark_shingle_roof_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dark_shingle_roof_slabslice` | `PortedBlocks$PartsBlock` | 1440 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `dense_grit_dirt_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `dense_grit_sand_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `ariadne_marker` | `PortedBlocks$AriadneMarkerBlock` | 4608 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `old_industrial_wood_planks` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Retain regression + wet inserted-light test; full-block storage/passage proof |
+| `old_industrial_wood_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `old_industrial_wood_stairs` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `old_industrial_wood_slabslice` | `PortedBlocks$PartsBlock` | 1440 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `old_industrial_wood_door` | `NativeDecorativeBlocks$NativeDoorBlock` | 6144 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `thick_steel_pole` | `PortedBlocks$CenteredPoleBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `thick_steel_pole_head` | `PoleHeadBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `thin_steel_pole` | `PortedBlocks$CenteredPoleBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `thin_steel_pole_head` | `PoleHeadBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `treated_wood_pole` | `PortedBlocks$CenteredPoleBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `treated_wood_pole_head` | `PoleHeadBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `treated_wood_pole_support` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `steel_double_t_support` | `PortedBlocks$SupportBlock` | 2304 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `steel_floor_grating` | `PortedBlocks$FloorGratingBlock` | 96 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `steel_catwalk` | `PortedBlocks$CatwalkBlock` | 7680 | N | N + T | partial/empty | Retain regression + wet inserted-light test |
 | `steel_catwalk_stairs` | `PortedBlocks$CatwalkStairsBlock` | 30720 | N + T | N + T | partial/empty | Retain regression + wet inserted-light test |
 | `steel_catwalk_ta` | `RaisedCatwalkBlock` | 1152 | N | N + T | partial/empty | Retain regression + wet inserted-light test |
-| `steel_railing` | `PortedBlocks$RailingBlock` | 480 | N | N | partial/empty | Retain regression + wet inserted-light test |
-| `steel_mesh_fence` | `SteelMeshFenceBlock` | 324 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `steel_mesh_fence_gate` | `PortedBlocks$FenceGateSegmentBlock` | 16 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `metal_rung_ladder` | `LadderBlock` | 8 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `metal_rung_steps` | `LadderBlock` | 8 | W | W | partial/empty | Geometry + variants; native storage pending |
-| `steel_table` | `PortedBlocks$TableBlock` | 1 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `treated_wood_table` | `PortedBlocks$TableBlock` | 1 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `treated_wood_stool` | `TreatedWoodStoolBlock` | 1 | none | none | partial/empty | Geometry + variants; native storage pending |
+| `steel_railing` | `PortedBlocks$RailingBlock` | 7680 | N | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `steel_mesh_fence` | `SteelMeshFenceBlock` | 15552 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `steel_mesh_fence_gate` | `PortedBlocks$FenceGateSegmentBlock` | 1536 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `metal_rung_ladder` | `NativeDecorativeBlocks$NativeLadderBlock` | 384 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `metal_rung_steps` | `NativeDecorativeBlocks$NativeLadderBlock` | 384 | W | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `steel_table` | `PortedBlocks$TableBlock` | 96 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `treated_wood_table` | `PortedBlocks$TableBlock` | 96 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `treated_wood_stool` | `TreatedWoodStoolBlock` | 96 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
 | `metal_crafting_table` | `MachineBlocks$MetalCraftingTableBlock` | 1 | none | none | full | Machines: exterior cell vs inventory/tank; full-block storage/passage proof |
 | `labeled_crate` | `MachineBlocks$LabeledCrateBlock` | 4 | none | none | full | Machines: exterior cell vs inventory/tank; full-block storage/passage proof |
 | `factory_hopper` | `MachineBlocks$DirectionalMachineBlock` | 6 | none | none | full | Machines: exterior cell vs inventory/tank; full-block storage/passage proof |
@@ -93,26 +93,26 @@ Lighting and controls lot: native source contracts cover all opted-in blocks, in
 | `straight_pipe_valve` | `MachineBlocks$PipeValveBlock` | 384 | none | none | partial/empty | Machines: exterior cell vs inventory/tank |
 | `straight_pipe_valve_redstone` | `MachineBlocks$PipeValveBlock` | 384 | none | none | partial/empty | Machines: exterior cell vs inventory/tank |
 | `straight_pipe_valve_redstone_analog` | `MachineBlocks$PipeValveBlock` | 384 | none | none | partial/empty | Machines: exterior cell vs inventory/tank |
-| `steel_framed_window` | `PortedBlocks$SteelFramedWindowBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `metal_sliding_door` | `PortedBlocks$SlidingDoorBlock` | 192 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `iron_hatch` | `PortedBlocks$HatchBlock` | 16 | none | none | partial/empty | Geometry + variants; native storage pending |
+| `steel_framed_window` | `PortedBlocks$SteelFramedWindowBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `metal_sliding_door` | `PortedBlocks$SlidingDoorBlock` | 18432 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `iron_hatch` | `PortedBlocks$HatchBlock` | 1536 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
 | `iron_bulb_light` | `PortedBlocks$OppositeFaceLightBlock` | 576 | none | N + T | partial/empty | Light: client render, all orientations |
 | `iron_ceiling_edge_light` | `PortedBlocks$HorizontalLookLightBlock` | 576 | none | N + T | partial/empty | Light: client render, all orientations |
 | `iron_floor_edge_light` | `PortedBlocks$HorizontalLookLightBlock` | 576 | none | N + T | partial/empty | Light: client render, all orientations |
 | `iron_inset_light` | `PortedBlocks$OppositeFaceLightBlock` | 576 | none | N + T | partial/empty | Light: client render, all orientations |
-| `sign_caution` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_danger` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_decor` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_defense` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_exit` | `PortedBlocks$ExitSignBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_firehazard` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_frost` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_hotsurface` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_hotwire` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_laser` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_magichazard` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_magneticfield` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `sign_radioactive` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
+| `sign_caution` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_danger` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_decor` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_defense` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_exit` | `PortedBlocks$ExitSignBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_firehazard` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_frost` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_hotsurface` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_hotwire` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_laser` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_magichazard` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_magneticfield` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `sign_radioactive` | `PortedBlocks$SurfaceMountedBlock` | 576 | none | N + T | partial/empty | Retain regression + wet inserted-light test |
 | `arrow_target` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
 | `door_sensor_switch` | `ControlsBlockTypes$DoorSensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
 | `elevator_button` | `ControlsBlockTypes$ElevatorButtonBlock` | 3456 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |

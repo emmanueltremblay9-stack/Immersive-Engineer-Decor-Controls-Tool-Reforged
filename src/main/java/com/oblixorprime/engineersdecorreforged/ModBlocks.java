@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeDecorativeBlocks;
 import com.oblixorprime.engineersdecorreforged.block.CatwalkStairsItem;
 import com.oblixorprime.engineersdecorreforged.stool.TreatedWoodStoolBlock;
 import com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock;
@@ -33,15 +34,15 @@ public final class ModBlocks {
    public static final Blocks BLOCKS = DeferredRegister.createBlocks("immersive_engineer_decor_controls_tool_reforged");
    private static final List<DeferredBlock<? extends Block>> MUTABLE_ORDERED_BLOCKS = new ArrayList<>();
    public static final List<DeferredBlock<? extends Block>> ORDERED_BLOCKS = Collections.unmodifiableList(MUTABLE_ORDERED_BLOCKS);
-   public static final DeferredBlock<Block> CLINKER_BRICK_BLOCK = registerWithItem("clinker_brick_block", () -> new Block(stone(0.5F, 7.0F)));
+   public static final DeferredBlock<Block> CLINKER_BRICK_BLOCK = registerWithItem("clinker_brick_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(stone(0.5F, 7.0F)));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> CLINKER_BRICK_SLAB = registerWithItem(
       "clinker_brick_slab", () -> new PortedBlocks.VariantSlabBlock(stone(0.5F, 7.0F))
    );
    public static final DeferredBlock<StairBlock> CLINKER_BRICK_STAIRS = registerWithItem("clinker_brick_stairs", () -> stairs(stone(0.5F, 7.0F)));
    public static final DeferredBlock<WallBlock> CLINKER_BRICK_WALL = registerWithItem(
-      "clinker_brick_wall", () -> new WallBlock(stone(0.5F, 7.0F).forceSolidOn())
+      "clinker_brick_wall", () -> new NativeDecorativeBlocks.NativeWallBlock(stone(0.5F, 7.0F).forceSolidOn())
    );
-   public static final DeferredBlock<Block> CLINKER_BRICK_STAINED_BLOCK = registerWithItem("clinker_brick_stained_block", () -> new Block(stone(0.5F, 7.0F)));
+   public static final DeferredBlock<Block> CLINKER_BRICK_STAINED_BLOCK = registerWithItem("clinker_brick_stained_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(stone(0.5F, 7.0F)));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> CLINKER_BRICK_STAINED_SLAB = registerWithItem(
       "clinker_brick_stained_slab", () -> new PortedBlocks.VariantSlabBlock(stone(0.5F, 7.0F))
    );
@@ -63,14 +64,14 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.PartsBlock> HALFSLAB_CLINKER_BRICK = registerWithItem(
       "halfslab_clinker_brick", () -> new PortedBlocks.PartsBlock(stone(0.5F, 7.0F).noOcclusion())
    );
-   public static final DeferredBlock<Block> SLAG_BRICK_BLOCK = registerWithItem("slag_brick_block", () -> new Block(stone(0.5F, 7.0F)));
+   public static final DeferredBlock<Block> SLAG_BRICK_BLOCK = registerWithItem("slag_brick_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(stone(0.5F, 7.0F)));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> SLAG_BRICK_SLAB = registerWithItem(
       "slag_brick_slab", () -> new PortedBlocks.VariantSlabBlock(stone(0.5F, 7.0F))
    );
    public static final DeferredBlock<StairBlock> SLAG_BRICK_STAIRS = registerWithItem("slag_brick_stairs", () -> stairs(stone(0.5F, 7.0F)));
-   public static final DeferredBlock<WallBlock> SLAG_BRICK_WALL = registerWithItem("slag_brick_wall", () -> new WallBlock(stone(0.5F, 7.0F).forceSolidOn()));
+   public static final DeferredBlock<WallBlock> SLAG_BRICK_WALL = registerWithItem("slag_brick_wall", () -> new NativeDecorativeBlocks.NativeWallBlock(stone(0.5F, 7.0F).forceSolidOn()));
    public static final DeferredBlock<Block> REBAR_CONCRETE = registerWithItem(
-      "rebar_concrete", () -> new Block(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
+      "rebar_concrete", () -> new NativeDecorativeBlocks.NativeSolidBlock(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
    );
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> REBAR_CONCRETE_SLAB = registerWithItem(
       "rebar_concrete_slab", () -> new PortedBlocks.VariantSlabBlock(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
@@ -79,13 +80,13 @@ public final class ModBlocks {
       "rebar_concrete_stairs", () -> stairs(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
    );
    public static final DeferredBlock<WallBlock> REBAR_CONCRETE_WALL = registerWithItem(
-      "rebar_concrete_wall", () -> new WallBlock(stone(1.0F, 2000.0F).requiresCorrectToolForDrops().forceSolidOn())
+      "rebar_concrete_wall", () -> new NativeDecorativeBlocks.NativeWallBlock(stone(1.0F, 2000.0F).requiresCorrectToolForDrops().forceSolidOn())
    );
    public static final DeferredBlock<PortedBlocks.PartsBlock> HALFSLAB_REBAR_CONCRETE = registerWithItem(
       "halfslab_rebar_concrete", () -> new PortedBlocks.PartsBlock(stone(1.0F, 2000.0F).noOcclusion().requiresCorrectToolForDrops())
    );
    public static final DeferredBlock<Block> REBAR_CONCRETE_TILE = registerWithItem(
-      "rebar_concrete_tile", () -> new Block(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
+      "rebar_concrete_tile", () -> new NativeDecorativeBlocks.NativeSolidBlock(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
    );
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> REBAR_CONCRETE_TILE_SLAB = registerWithItem(
       "rebar_concrete_tile_slab", () -> new PortedBlocks.VariantSlabBlock(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
@@ -93,7 +94,7 @@ public final class ModBlocks {
    public static final DeferredBlock<StairBlock> REBAR_CONCRETE_TILE_STAIRS = registerWithItem(
       "rebar_concrete_tile_stairs", () -> stairs(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
    );
-   public static final DeferredBlock<Block> PANZERGLASS_BLOCK = registerWithItem("panzerglass_block", () -> new Block(glass()));
+   public static final DeferredBlock<Block> PANZERGLASS_BLOCK = registerWithItem("panzerglass_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(glass()));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> PANZERGLASS_SLAB = registerWithItem(
       "panzerglass_slab", () -> new PortedBlocks.VariantSlabBlock(glass())
    );
@@ -113,22 +114,22 @@ public final class ModBlocks {
    public static final DeferredBlock<ChimneyBlock> DARK_SHINGLE_ROOF_CHIMNEY = registerWithItem(
       "dark_shingle_roof_chimney", () -> new ChimneyBlock(stone(0.5F, 6.0F).noOcclusion())
    );
-   public static final DeferredBlock<Block> DARK_SHINGLE_ROOF_BLOCK = registerWithItem("dark_shingle_roof_block", () -> new Block(stone(0.5F, 6.0F)));
+   public static final DeferredBlock<Block> DARK_SHINGLE_ROOF_BLOCK = registerWithItem("dark_shingle_roof_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(stone(0.5F, 6.0F)));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> DARK_SHINGLE_ROOF_SLAB = registerWithItem(
       "dark_shingle_roof_slab", () -> new PortedBlocks.VariantSlabBlock(stone(0.5F, 6.0F))
    );
    public static final DeferredBlock<PortedBlocks.PartsBlock> DARK_SHINGLE_ROOF_SLABSLICE = registerWithItem(
       "dark_shingle_roof_slabslice", () -> new PortedBlocks.PartsBlock(stone(0.5F, 6.0F).noOcclusion())
    );
-   public static final DeferredBlock<Block> DENSE_GRIT_DIRT_BLOCK = registerWithItem("dense_grit_dirt_block", () -> new Block(earth()));
-   public static final DeferredBlock<Block> DENSE_GRIT_SAND_BLOCK = registerWithItem("dense_grit_sand_block", () -> new Block(earth()));
+   public static final DeferredBlock<Block> DENSE_GRIT_DIRT_BLOCK = registerWithItem("dense_grit_dirt_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(earth()));
+   public static final DeferredBlock<Block> DENSE_GRIT_SAND_BLOCK = registerWithItem("dense_grit_sand_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(earth()));
    public static final DeferredBlock<PortedBlocks.AriadneMarkerBlock> ARIADNE_MARKER = register(
       "ariadne_marker",
       () -> new PortedBlocks.AriadneMarkerBlock(
          Properties.of().mapColor(MapColor.COLOR_BLACK).strength(0.1F, 0.1F).sound(SoundType.STONE).noCollission().noOcclusion()
       )
    );
-   public static final DeferredBlock<Block> OLD_INDUSTRIAL_WOOD_PLANKS = registerWithItem("old_industrial_wood_planks", () -> new Block(wood()));
+   public static final DeferredBlock<Block> OLD_INDUSTRIAL_WOOD_PLANKS = registerWithItem("old_industrial_wood_planks", () -> new NativeDecorativeBlocks.NativeSolidBlock(wood()));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> OLD_INDUSTRIAL_WOOD_SLAB = registerWithItem(
       "old_industrial_wood_slab", () -> new PortedBlocks.VariantSlabBlock(wood())
    );
@@ -137,7 +138,7 @@ public final class ModBlocks {
       "old_industrial_wood_slabslice", () -> new PortedBlocks.PartsBlock(wood().noOcclusion())
    );
    public static final DeferredBlock<DoorBlock> OLD_INDUSTRIAL_WOOD_DOOR = registerWithItem(
-      "old_industrial_wood_door", () -> new DoorBlock(BlockSetType.OAK, wood().noOcclusion())
+      "old_industrial_wood_door", () -> new NativeDecorativeBlocks.NativeDoorBlock(BlockSetType.OAK, wood().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.CenteredPoleBlock> THICK_STEEL_POLE = registerWithItem(
       "thick_steel_pole", () -> new PortedBlocks.CenteredPoleBlock(metal().noOcclusion(), 4.0, 12.0)
@@ -185,10 +186,10 @@ public final class ModBlocks {
       "steel_mesh_fence_gate", () -> new PortedBlocks.FenceGateSegmentBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<LadderBlock> METAL_RUNG_LADDER = registerWithItem(
-      "metal_rung_ladder", () -> new LadderBlock(metal().noOcclusion())
+      "metal_rung_ladder", () -> new NativeDecorativeBlocks.NativeLadderBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<LadderBlock> METAL_RUNG_STEPS = registerWithItem(
-      "metal_rung_steps", () -> new LadderBlock(metal().noOcclusion())
+      "metal_rung_steps", () -> new NativeDecorativeBlocks.NativeLadderBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.TableBlock> STEEL_TABLE = registerWithItem(
       "steel_table", () -> new PortedBlocks.TableBlock(metal().noOcclusion())
@@ -352,15 +353,15 @@ public final class ModBlocks {
    }
 
    private static StairBlock stairs(Properties properties) {
-      return new StairBlock(net.minecraft.world.level.block.Blocks.STONE.defaultBlockState(), properties);
+      return new NativeDecorativeBlocks.NativeStairBlock(net.minecraft.world.level.block.Blocks.STONE.defaultBlockState(), properties);
    }
 
    private static Properties stone(float strength, float resistance) {
-      return Properties.of().mapColor(MapColor.STONE).strength(strength, resistance).sound(SoundType.STONE);
+      return Properties.of().mapColor(MapColor.STONE).strength(strength, resistance).sound(SoundType.STONE).lightLevel(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock::light);
    }
 
    private static Properties metal() {
-      return Properties.of().mapColor(MapColor.METAL).strength(1.5F, 10.0F).sound(SoundType.METAL).requiresCorrectToolForDrops();
+      return Properties.of().mapColor(MapColor.METAL).strength(1.5F, 10.0F).sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock::light);
    }
 
    private static Properties machineMetal() {
@@ -372,15 +373,15 @@ public final class ModBlocks {
    }
 
    private static Properties wood() {
-      return Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 4.0F).sound(SoundType.WOOD);
+      return Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 4.0F).sound(SoundType.WOOD).lightLevel(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock::light);
    }
 
    private static Properties earth() {
-      return Properties.of().mapColor(MapColor.DIRT).strength(0.6F, 0.6F).sound(SoundType.GRAVEL);
+      return Properties.of().mapColor(MapColor.DIRT).strength(0.6F, 0.6F).sound(SoundType.GRAVEL).lightLevel(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock::light);
    }
 
    private static Properties glass() {
-      return Properties.of().mapColor(MapColor.NONE).strength(0.5F, 2000.0F).sound(SoundType.GLASS).noOcclusion().requiresCorrectToolForDrops();
+      return Properties.of().mapColor(MapColor.NONE).strength(0.5F, 2000.0F).sound(SoundType.GLASS).noOcclusion().requiresCorrectToolForDrops().lightLevel(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock::light);
    }
 
    private static Properties light() {
