@@ -595,7 +595,7 @@ public final class PortedBlocks {
                refund = 1;
             }
             if (this instanceof RailingBlock && sideCount(changed) == 0) {
-               changed = state.getFluidState().createLegacyBlock();
+               changed = level.getFluidState(pos).createLegacyBlock();
                ++refund; // The original standalone block owns one base railing item.
             } else {
                changed = changed.setValue(PAID_RAILINGS, paid);

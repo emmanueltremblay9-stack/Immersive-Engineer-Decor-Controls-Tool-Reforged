@@ -315,7 +315,7 @@ public final class NativeDecorativeBlocks {
             BlockPos lower=pos.below();BlockState bottom=level.getBlockState(lower);
             if(bottom.is(this) && bottom.getValue(HALF)==DoubleBlockHalf.LOWER) {
                // Vanilla's plant helper restores only water and promotes current to a source.
-               level.setBlock(lower,bottom.getFluidState().createLegacyBlock(),35);
+               level.setBlock(lower,level.getFluidState(lower).createLegacyBlock(),35);
                level.levelEvent(player,2001,lower,Block.getId(bottom));
             }
          }

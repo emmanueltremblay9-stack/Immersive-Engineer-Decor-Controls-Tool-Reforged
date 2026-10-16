@@ -242,6 +242,10 @@ gradle.projectsEvaluated {
             if runtime.is_file():
                 logs += "\n" + runtime.read_text(encoding="utf-8", errors="replace")
         crashes = list(game.glob("crash-reports/*")) + list(evidence.rglob("hs_err_pid*.log"))
+        from fluid_extensions import validate_extensions
+        if expired or code != 0 or crashes or FATAL_PATTERN.search(logs):
+            raise SmokeFailure('Fluid extension client did not finish cleanly')
+        validate_extensions(game, nonce)
         if args.flow_distance_only:
             if expired:
                 raise SmokeFailure("Natural-flow client exceeded its deadline")

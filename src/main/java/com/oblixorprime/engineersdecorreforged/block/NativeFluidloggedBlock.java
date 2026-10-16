@@ -28,7 +28,7 @@ import net.minecraft.world.level.material.Fluids;
  * Water retains its original property. Non-water fluid is carried by ordinary block
  * state palettes, save codecs and block/chunk packets; no numeric fluid-state IDs.
  */
-public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
+public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock, net.neoforged.neoforge.common.extensions.IBlockExtension {
    EnumProperty<Cell> FLUID_CELL = EnumProperty.create("fluid_cell", Cell.class);
 
    enum Cell implements StringRepresentable {
@@ -65,7 +65,7 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
 
    static BlockState placement(BlockState state, FluidState replaced) {
       if (state == null) return null;
-      boolean source = replaced.isSource();
+      boolean source = replaced.isSource() && replaced.getType() instanceof FlowingFluid flowing && replaced.equals(flowing.getSource(false));
       return state.setValue(BlockStateProperties.WATERLOGGED, source && replaced.getType() == Fluids.WATER)
          .setValue(FLUID_CELL, source ? cell(replaced.getType()) : Cell.EMPTY);
    }
@@ -84,7 +84,7 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
    }
 
    static void schedule(BlockState state, LevelAccessor level, BlockPos pos) {
-      FluidState fluid = state.getFluidState();
+      FluidState fluid = level.getFluidState(pos);
       if (!fluid.isEmpty()) level.scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(level));
    }
 
@@ -94,12 +94,19 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
 
    @Override
    default boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
-      return fluidState(state).isEmpty() && (fluid == Fluids.WATER || cell(fluid) != Cell.EMPTY);
+      FluidState current = level.getFluidState(pos);
+      if (com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.reserved(level, pos) && current.isEmpty()) return false;
+      return com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.standard(fluid)
+         && (current.isEmpty() || (!current.isSource() && current.getType().isSame(fluid)
+            && ((FlowingFluid)fluid).getSource() == fluid));
    }
 
    @Override
    default boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluid) {
       if (!fluid.isSource() || !canPlaceLiquid(null, level, pos, state, fluid.getType())) return false;
+      if (fluid.getType() != Fluids.WATER && cell(fluid.getType()) == Cell.EMPTY
+            || !fluid.equals(placement(state, fluid).getFluidState()))
+         return com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.place(level, pos, state, fluid);
       if (!level.isClientSide()) {
          BlockState filled = state.setValue(BlockStateProperties.WATERLOGGED, fluid.getType() == Fluids.WATER)
             .setValue(FLUID_CELL, cell(fluid.getType()));
@@ -111,12 +118,26 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
 
    @Override
    default ItemStack pickupBlock(@Nullable Player player, LevelAccessor level, BlockPos pos, BlockState state) {
-      FluidState fluid = fluidState(state);
-      if (fluid.isEmpty() || fluid.getType().getBucket() == Items.AIR) return ItemStack.EMPTY;
+      FluidState fluid = level.getFluidState(pos);
+      if (!fluid.isSource() || fluid.isEmpty() || fluid.getType().getBucket() == Items.AIR) return ItemStack.EMPTY;
+      if (com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.active(level, pos)) {
+         com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.set(level, pos, Fluids.EMPTY.defaultFluidState());
+         return new ItemStack(fluid.getType().getBucket());
+      }
       BlockState dry = state.setValue(BlockStateProperties.WATERLOGGED, false).setValue(FLUID_CELL, Cell.EMPTY);
       if (!level.setBlock(pos, dry, Block.UPDATE_ALL)) return ItemStack.EMPTY;
       if (!dry.canSurvive(level, pos)) level.destroyBlock(pos, true);
       return new ItemStack(fluid.getType().getBucket());
+   }
+
+   @Override
+   default boolean hasDynamicLightEmission(BlockState state) { return true; }
+
+   @Override
+   default int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+      // Lighting workers must never ask Level.getFluidState (which can block on a FULL chunk).
+      var auxiliary = level.getAuxLightManager(pos);
+      return Math.max(state.getLightEmission(), auxiliary == null ? 0 : auxiliary.getLightAt(pos));
    }
 
    @Override

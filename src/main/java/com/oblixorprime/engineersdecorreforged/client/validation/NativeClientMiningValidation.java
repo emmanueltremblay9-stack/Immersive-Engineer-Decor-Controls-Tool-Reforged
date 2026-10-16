@@ -109,7 +109,7 @@ public final class NativeClientMiningValidation {
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
-      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, CATALOGUE, WATER_DISTANCE }
+      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, CATALOGUE, SUBMERGED_CATWALK, GENERIC_FLUID, WATER_DISTANCE }
 
    @SubscribeEvent
    public static void removed(RailingMining.InsetLightRemoved event) {
@@ -373,7 +373,15 @@ public final class NativeClientMiningValidation {
                else setup(mc);
             }
             case FLUIDLOGGING -> {
-               if (NativeFluidloggingValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.CATALOGUE);
+               if (NativeFluidloggingValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.GENERIC_FLUID);
+            }
+            case GENERIC_FLUID -> {
+               if (NativeGenericFluidValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.SUBMERGED_CATWALK);
+            }
+            case SUBMERGED_CATWALK -> {
+               if (NativeSubmergedCatwalkValidation.tick(mc, evidence.getParent(), nonce)) {
+                  if(Boolean.getBoolean("iedctr.flowDistanceOnly")) finish(mc,null); else enter(Phase.CATALOGUE);
+               }
             }
             case CATALOGUE -> {
                if (NativeCatalogueValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.WATER_CANAL);
@@ -382,7 +390,7 @@ public final class NativeClientMiningValidation {
                if (NativeWaterCanalValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
             }
             case WATER_DISTANCE -> {
-               if (NativeWaterFlowDistanceValidation.tick(mc, evidence.getParent(), nonce)) finish(mc, null);
+               if (NativeWaterFlowDistanceValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.GENERIC_FLUID);
             }
             default -> throw new IllegalStateException("Unexpected fixture phase " + phase);
          }
