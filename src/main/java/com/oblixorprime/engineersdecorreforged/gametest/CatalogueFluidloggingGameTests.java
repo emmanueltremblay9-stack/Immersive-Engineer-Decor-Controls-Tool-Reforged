@@ -25,6 +25,7 @@ public final class CatalogueFluidloggingGameTests {
       h.assertValueEqual((long)ModBlocks.ORDERED_BLOCKS.size(), registered, "inventory includes every registered mod block");
       for (var entry : ModBlocks.ORDERED_BLOCKS) {
          var block = entry.get(); var state = block.defaultBlockState();
+         h.assertTrue(block instanceof NativeFluidloggedBlock, "every registered mod block is explicitly integrated: " + entry.getId());
          boolean full = net.minecraft.world.level.block.Block.isShapeFullBlock(state.getCollisionShape(h.getLevel(),h.absolutePos(new BlockPos(3,2,3))));
          rows.add(String.join("\t", entry.getId().toString(), block.getClass().getName(),
             Integer.toString(block.getStateDefinition().getPossibleStates().size()),

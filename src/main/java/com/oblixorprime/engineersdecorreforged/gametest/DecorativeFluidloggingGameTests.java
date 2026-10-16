@@ -23,15 +23,17 @@ public final class DecorativeFluidloggingGameTests {
       return NativeFluidloggedBlock.placement(state, ((FlowingFluid)fluid).getSource(false));
    }
    @GameTest(template="empty")
-   public static void decorative_cells_preserve_all_wall_and_default_geometry(GameTestHelper h) {
+   public static void native_cells_preserve_every_geometry_state(GameTestHelper h) {
       BlockPos pos=h.absolutePos(new BlockPos(3,2,3));
       for(var entry:ModBlocks.ORDERED_BLOCKS) {
          Block block=entry.get();if(!(block instanceof NativeFluidloggedBlock))continue;
          var defaults=block.defaultBlockState();h.assertTrue(defaults.getFluidState().isEmpty(),"default dry: "+entry.getId());
-         var states=block instanceof NativeDecorativeBlocks.NativeWallBlock?block.getStateDefinition().getPossibleStates().stream()
-            .filter(s->s.equals(NativeFluidloggedBlock.dry(s))).toList():java.util.List.of(defaults);
+         var states=block.getStateDefinition().getPossibleStates().stream()
+            .filter(s->s.equals(NativeFluidloggedBlock.dry(s))).toList();
          for(var dry:states)for(Fluid fluid:java.util.List.of(Fluids.WATER,Fluids.LAVA,NativeFluidloggedBlock.creosote())) {
             var filled=wet(dry,fluid);
+            h.assertValueEqual(filled.getLightEmission(h.getLevel(),pos), fluid==Fluids.LAVA?15:dry.getLightEmission(h.getLevel(),pos),
+               "lava emits15 while water/creosote preserve existing light and signal state: "+entry.getId());
             h.assertFalse(Shapes.joinIsNotEmpty(dry.getShape(h.getLevel(),pos),filled.getShape(h.getLevel(),pos),BooleanOp.NOT_SAME),"cell preserves selection: "+entry.getId());
             h.assertFalse(Shapes.joinIsNotEmpty(dry.getCollisionShape(h.getLevel(),pos),filled.getCollisionShape(h.getLevel(),pos),BooleanOp.NOT_SAME),"cell preserves collision: "+entry.getId());
          }

@@ -35,9 +35,14 @@ final class NativeCatalogueValidation {
          ModBlocks.IRON_CEILING_EDGE_LIGHT.get(),ModBlocks.IRON_FLOOR_EDGE_LIGHT.get()));
       for(String name:List.of("industrial_lever","industrial_button","industrial_contact_mat"))
          list.add(ControlsModule.CONTROLS.stream().filter(e->e.getId().getPath().equals(name)).findFirst().orElseThrow().get());
-      list.add(ModBlocks.STEEL_CATWALK_TA.get());return list;
+      list.add(ModBlocks.STEEL_CATWALK_TA.get());
+      list.addAll(List.of(ModBlocks.CLINKER_BRICK_BLOCK.get(),ModBlocks.CLINKER_BRICK_SLAB.get(),
+         ModBlocks.CLINKER_BRICK_STAIRS.get(),ModBlocks.DARK_SHINGLE_ROOF_WIRECONDUIT.get(),
+         ModBlocks.THICK_STEEL_POLE.get(),ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(),
+         ModBlocks.METAL_RUNG_LADDER.get(),ModBlocks.PASSIVE_FLUID_ACCUMULATOR.get()));return list;
    }
    private static Block block(){return blocks().get(index/5);}
+   private static boolean opaque(){return block()==ModBlocks.CLINKER_BRICK_BLOCK.get();}
    private static boolean natural(){return index%5==3;}
    private static String mode(){return new String[]{"water","lava","creosote","natural-water","submerged-water"}[index%5];}
    private static Fluid fluid(){return switch(index%5){case 1->Fluids.LAVA;case 2->NativeFluidloggedBlock.creosote();default->Fluids.WATER;};}
@@ -89,13 +94,20 @@ final class NativeCatalogueValidation {
       if(stage==3){
          if(!pending.isDone())return false;pending.join();var state=mc.level.getBlockState(POS);var flow=state.getFluidState();
          check(state.equals(serverState),"catalogue server/client disagreement");check(state.is(block()),"catalogue block replaced");
-         check(!flow.isEmpty() && flow.getType().isSame(fluid()),"catalogue expected fluid missing");
-         check(flow.isSource()!=natural(),"natural flow must not become stored source");check(flow.getAmount()==(natural()?7:8),"catalogue fluid amount differs from vanilla");
+         boolean blocked=opaque() && natural();
+         if(blocked)check(flow.isEmpty(),"solid geometry must block natural fluid arrival");
+         else {
+            check(!flow.isEmpty() && flow.getType().isSame(fluid()),"catalogue expected fluid missing");
+            check(flow.isSource()!=natural(),"natural flow must not become stored source");
+            check(flow.getAmount()==(natural()?7:8),"catalogue fluid amount differs from vanilla");
+         }
+         check((state.canOcclude() && Block.isShapeFullBlock(state.getOcclusionShape(mc.level,POS)))==opaque(),"catalogue occlusion changed");
          for(var property:dry().getProperties())if(!Set.of("waterlogged","fluid_cell","water_flow").contains(property.getName()))
             check(state.getValue(property).equals(dry().getValue(property)),"fluid changed geometry/paid lamp/signal property "+property);
-         Mesh mesh=new Mesh();mc.getBlockRenderer().renderLiquid(POS,mc.level,mesh,state,flow);check(mesh.vertices>0,"catalogue fluid has no rendered surface");
+         Mesh mesh=new Mesh();if(!flow.isEmpty())mc.getBlockRenderer().renderLiquid(POS,mc.level,mesh,state,flow);
+         check(opaque()?mesh.vertices==0:mesh.vertices>0,"catalogue fluid surface must respect solid occlusion");
          result=new JsonObject();result.addProperty("block",BuiltInRegistries.BLOCK.getKey(block()).toString());result.addProperty("mode",mode());
-         float height=flow.getHeight(mc.level,POS);
+         float height=flow.isEmpty()?0:flow.getHeight(mc.level,POS);
          if(index%5==4)check(height==1,"submerged cell must have full water height under the independent upper source");
          result.addProperty("fluid_height_before",height);
          result.addProperty("source_before",flow.isSource());result.addProperty("amount_before",flow.getAmount());result.addProperty("fluid_vertices",mesh.vertices);

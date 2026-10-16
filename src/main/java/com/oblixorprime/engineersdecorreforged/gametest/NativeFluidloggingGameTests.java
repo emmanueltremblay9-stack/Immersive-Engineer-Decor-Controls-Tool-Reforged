@@ -79,8 +79,8 @@ public final class NativeFluidloggingGameTests {
       }
       helper.assertFalse(Blocks.OAK_SLAB.defaultBlockState().hasProperty(NativeFluidloggedBlock.FLUID_CELL),
          "vanilla waterloggable blocks are outside native integration");
-      helper.assertFalse(ModBlocks.PASSIVE_FLUID_ACCUMULATOR.get().defaultBlockState().hasProperty(NativeFluidloggedBlock.FLUID_CELL),
-         "machine world water remains independent of its unchanged tank contract");
+      helper.assertTrue(ModBlocks.PASSIVE_FLUID_ACCUMULATOR.get().defaultBlockState().hasProperty(NativeFluidloggedBlock.FLUID_CELL),
+         "machine exterior cell is explicit and remains independent of its tank contract");
       helper.succeed();
    }
 
@@ -121,6 +121,7 @@ public final class NativeFluidloggingGameTests {
       BlockPos pos = helper.absolutePos(CENTER);
       ServerPlayer player = player(helper, pos);
       for (Block block : blocks()) for (Fluid fluid : fluids()) {
+         player.setShiftKeyDown(block instanceof com.oblixorprime.engineersdecorreforged.utility.MachineBlocks.MachineBlock);
          prepare(helper, pos);
          helper.getLevel().setBlock(pos, block.defaultBlockState(), 3);
          for (int cycle = 0; cycle < 3; cycle++) {

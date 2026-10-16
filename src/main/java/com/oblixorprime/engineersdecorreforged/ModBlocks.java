@@ -126,7 +126,7 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.AriadneMarkerBlock> ARIADNE_MARKER = register(
       "ariadne_marker",
       () -> new PortedBlocks.AriadneMarkerBlock(
-         Properties.of().mapColor(MapColor.COLOR_BLACK).strength(0.1F, 0.1F).sound(SoundType.STONE).noCollission().noOcclusion()
+         Properties.of().mapColor(MapColor.COLOR_BLACK).strength(0.1F, 0.1F).sound(SoundType.STONE).noCollission().noOcclusion().lightLevel(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock::light)
       )
    );
    public static final DeferredBlock<Block> OLD_INDUSTRIAL_WOOD_PLANKS = registerWithItem("old_industrial_wood_planks", () -> new NativeDecorativeBlocks.NativeSolidBlock(wood()));
@@ -369,7 +369,7 @@ public final class ModBlocks {
    }
 
    private static Properties litMachine() {
-      return machineMetal().lightLevel(state -> state.hasProperty(MachineBlocks.LIT) && state.getValue(MachineBlocks.LIT) ? 12 : 0);
+      return machineMetal().lightLevel(state -> Math.max(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.light(state), state.hasProperty(MachineBlocks.LIT) && state.getValue(MachineBlocks.LIT) ? 12 : 0));
    }
 
    private static Properties wood() {

@@ -3,7 +3,9 @@ import struct
 import zlib
 from client_mixin_smoke import SmokeFailure
 BLOCKS = ('iron_bulb_light','iron_inset_light','iron_ceiling_edge_light','iron_floor_edge_light',
-          'industrial_lever','industrial_button','industrial_contact_mat','steel_catwalk_ta')
+          'industrial_lever','industrial_button','industrial_contact_mat','steel_catwalk_ta',
+          'clinker_brick_block','clinker_brick_slab','clinker_brick_stairs','dark_shingle_roof_wireconduit',
+          'thick_steel_pole','steel_double_t_support','metal_rung_ladder','passive_fluid_accumulator')
 MODES = ('water','lava','creosote','natural-water','submerged-water')
 def validate_catalogue(proof, nonce, directory):
     expected={('immersive_engineer_decor_controls_tool_reforged:'+b,m) for b in BLOCKS for m in MODES}
@@ -14,14 +16,14 @@ def validate_catalogue(proof, nonce, directory):
     for case in cases:
         identity=(case.get('block'),case.get('mode'))
         if identity not in expected or identity in seen:raise SmokeFailure('Duplicate/unexpected catalogue case')
-        seen.add(identity);block,mode=identity;block=block.split(':',1)[1];natural=mode=='natural-water'
-        if (case.get('source_before') is not (not natural) or case.get('amount_before')!=(7 if natural else 8)
+        seen.add(identity);block,mode=identity;block=block.split(':',1)[1];natural=mode=='natural-water';opaque=block=='clinker_brick_block';blocked=opaque and natural
+        if (case.get('source_before') is not (not natural) or case.get('amount_before')!=(0 if blocked else 7 if natural else 8)
             or case.get('server_client_agree') is not True or case.get('after_empty') is not True
             or case.get('geometry_and_paid_state_preserved') is not True
-            or type(case.get('fluid_vertices')) is not int or case['fluid_vertices']<=0 or case['fluid_vertices']%4):
+            or type(case.get('fluid_vertices')) is not int or (case['fluid_vertices']!=0 if opaque else case['fluid_vertices']<=0) or case['fluid_vertices']%4):
             raise SmokeFailure('Catalogue fluid, geometry or recession mismatch')
         height=case.get('fluid_height_before')
-        if type(height) not in (int,float) or not 0<height<=1 or (mode=='submerged-water' and height!=1):
+        if type(height) not in (int,float) or (height!=0 if blocked else not 0<height<=1) or (mode=='submerged-water' and height!=1):
             raise SmokeFailure('Catalogue source does not show the required submerged height')
         for phase in ('before','after'):
             name=f'{block}-{mode}-{phase}.png'

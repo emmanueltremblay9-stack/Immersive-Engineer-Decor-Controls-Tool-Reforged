@@ -171,7 +171,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--prepare-timeout", type=int, default=600)
-    parser.add_argument("--timeout", type=int, default=720)
+    parser.add_argument("--timeout", type=int, default=1080)
     parser.add_argument("--renderer-profile", choices=PROFILES)
     parser.add_argument("--flow-distance-only", action="store_true")
     args = parser.parse_args()

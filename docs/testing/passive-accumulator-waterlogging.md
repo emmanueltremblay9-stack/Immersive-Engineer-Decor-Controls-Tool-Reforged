@@ -2,11 +2,18 @@
 
 ## Scope and compatibility
 
-The existing `passive_fluid_accumulator` registration now uses `MachineBlocks.PassiveFluidAccumulatorBlock`, a dedicated subclass of the existing machine block implementing vanilla `SimpleWaterloggedBlock`. Its ID, item, block entity, GUI/menu, tank, bucket slots, capabilities, collision shape and model are unchanged. Other machine kinds do not gain waterlogging.
+The existing `passive_fluid_accumulator` ID, item, block entity, GUI/menu, 4000 mB
+tank, bucket slots, capabilities, collision shape and model are preserved. The catalogue
+extension makes its existing machine subclass inherit the native exterior-cell protocol.
+All 17 entity machines and three entity-free valves are explicitly integrated separately.
 
-The only new block-state property is `waterlogged`, with a `false` default for old saves. Placement retains source water using the same source-only check as ordinary vanilla waterlogging. Flowing water and lava do not create a new source. Wet state exposes the vanilla water-source fluid state; neighbor changes schedule water ticks. Bucket placement/pickup and destruction use vanilla behavior.
+The original `waterlogged` boolean retains its name and false legacy default. New
+`fluid_cell` (empty/lava/creosote) and `water_flow` (0..15, default 0) properties use ordinary
+block-state save/palette/update codecs. Source water/lava/IE-creosote placement preserves
+the replaced source; flowing input never becomes a stored source. Natural transient
+water follows vanilla levels/recession. Lava and current never become tank water.
 
-The existing blockstate JSON has a single `""` variant, which matches both values of the new property. Both states therefore retain the existing `block/device/passive_fluid_accumulator_model`; no duplicate model, item or resource registration is required.
+The existing blockstate JSON has a single `""` variant, which matches all exterior-cell states. Both states therefore retain the existing `block/device/passive_fluid_accumulator_model`; no duplicate model, item or resource registration is required.
 
 ## Collection and interaction contract
 
@@ -19,7 +26,7 @@ Collection code is deliberately unchanged:
 - The accumulator's own cell is not checked, so waterlogging alone does not generate tank water
 - Existing passive collection does not consume the neighboring source and needs no FE
 
-Normal bucket use retains existing tank filling/draining. Sneaking bypasses the machine interaction and lets the real bucket item fill or drain the waterlogged world cell. World water and tank contents are independent. Repeated world pickup returns nothing when dry; pipe drainage never drains world water. Normal destruction leaves one source in the world, as with vanilla waterlogging.
+Normal bucket use retains existing tank filling/draining. Sneaking bypasses the machine interaction and lets the real bucket item fill or drain the exterior world cell. World water and tank contents are independent. Repeated world pickup returns nothing when dry; pipe drainage never drains world water. Normal destruction leaves the exact exterior source/current in the world. A normal empty bucket cannot fall back to draining that cell when the tank is empty or below 1000 mB.
 
 ## Automated coverage
 
@@ -40,10 +47,13 @@ The existing machine GUI/capability tests remain applicable because the new bloc
 
 ## Validation status
 
-- Java 21 parser check of the changed block and new GameTest source: passed
-- Static resource/ID check: both waterlogged values match the unchanged wildcard model variant
-- No local Gradle compile or GameTest execution was possible in this environment; exact-commit CI must compile and run the tests before this change is considered validated
-- No player's running Minecraft instance was accessed
+The ten original contracts remain required regression tests. Their old water-only
+assertions now distinguish exterior source lava from newly created water and reject
+occupied native cells before bucket consumption. The complete catalogue server suite
+passes 485 GameTests; additional machine tests cover full entity NBT/reload, occupied-cell
+machine ticks, normal-bucket fallback with0/750/1000/4000 mB, incompatible creosote buckets
+and own-cell/lava/current collection exclusions. Exact-commit CI remains the client gate.
+No installed Prism JAR or user's world was accessed.
 
 ## Manual in-game checks before release
 

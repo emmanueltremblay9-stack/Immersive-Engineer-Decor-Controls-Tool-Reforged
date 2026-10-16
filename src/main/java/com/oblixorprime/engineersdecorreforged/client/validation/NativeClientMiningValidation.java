@@ -129,8 +129,8 @@ public final class NativeClientMiningValidation {
       try {
          if (phase == Phase.BOOT) {
             if (deadline == 0) {
-               // The full catalogue fixture adds 3680 settling/recession ticks; retain the old flow-only bound.
-               deadline = System.nanoTime() + (Boolean.getBoolean("iedctr.flowDistanceOnly") ? 360_000_000_000L : 600_000_000_000L);
+               // The full catalogue fixture adds 8960 settling/recession ticks; retain the old flow-only bound.
+               deadline = System.nanoTime() + (Boolean.getBoolean("iedctr.flowDistanceOnly") ? 360_000_000_000L : 900_000_000_000L);
             }
             require(System.nanoTime() < deadline, "Timed out before the title screen");
             if (mc.screen instanceof TitleScreen && mc.getOverlay() == null) {
@@ -139,7 +139,7 @@ public final class NativeClientMiningValidation {
             return;
          }
          require(System.nanoTime() < deadline, "Gameplay suite deadline exceeded at " + phase);
-         require(++stageTicks < (phase == Phase.WATER_DISTANCE ? 4800 : phase == Phase.CATALOGUE ? 10000 : 2400), "Gameplay phase made no progress: " + phase);
+         require(++stageTicks < (phase == Phase.WATER_DISTANCE ? 4800 : phase == Phase.CATALOGUE ? 14000 : 2400), "Gameplay phase made no progress: " + phase);
          if (phase == Phase.WORLD) {
             if (mc.level != null && mc.player != null && mc.gameMode != null && mc.screen == null) {
                require(mc.getSingleplayerServer() != null, "Fixture must use its own integrated server");
