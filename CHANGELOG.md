@@ -2,6 +2,18 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.63-reconstructed] - Unreleased campfire and hemp tool recipes
+
+### Changed
+- Require one of the eight horizontal neighboring cells of a lit vanilla campfire for Sleeping Bag rest, preserving existing night and safety rules.
+- Craft Sleeping Bags from hemp fabric, hemp fiber and wool carpets; craft Material Boxes from hemp rope coils, iron plates and treated wooden crates. Preserve Material Box storage.
+
+### Fixed
+- Refuse modified or filled IE crates in the Material Box recipe so sealed crate inventories are never consumed.
+
+### Added
+- Campfire boundary and failure-conservation GameTests, exact recipe and rejected-ingredient tests, with all sixteen carpet colors retained.
+
 ## [1.1.61-reconstructed] - Unreleased lava surface correction
 
 ### Fixed
