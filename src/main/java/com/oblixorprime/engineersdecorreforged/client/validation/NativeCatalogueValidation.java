@@ -72,6 +72,9 @@ final class NativeCatalogueValidation {
             level.setBlock(POS,placed,3);
             if(natural())level.setBlock(POS.west(),Blocks.WATER.defaultBlockState(),3);
             if(index%5==4) {
+               // Keep the lateral interfaces exposed: matching adjacent water would hide every stair fluid face.
+               level.setBlock(POS.west(),Blocks.GLASS.defaultBlockState(),3);
+               level.setBlock(POS.east(),Blocks.GLASS.defaultBlockState(),3);
                for(var side:net.minecraft.core.Direction.Plane.HORIZONTAL)level.setBlock(POS.above().relative(side),Blocks.GLASS.defaultBlockState(),3);
                level.setBlock(POS.above(),Blocks.WATER.defaultBlockState(),3);
             }
@@ -104,6 +107,10 @@ final class NativeCatalogueValidation {
          check((state.canOcclude() && Block.isShapeFullBlock(state.getOcclusionShape(mc.level,POS)))==opaque(),"catalogue occlusion changed");
          for(var property:dry().getProperties())if(!Set.of("waterlogged","fluid_cell","water_flow").contains(property.getName()))
             check(state.getValue(property).equals(dry().getValue(property)),"fluid changed geometry/paid lamp/signal property "+property);
+         if(index%5==4)for(var side:List.of(net.minecraft.core.Direction.WEST,net.minecraft.core.Direction.EAST)) {
+            var neighbor=mc.level.getBlockState(POS.relative(side));
+            check(neighbor.is(Blocks.GLASS) && neighbor.getFluidState().isEmpty(),"submerged cutaway side must remain dry glass");
+         }
          Mesh mesh=new Mesh();if(!flow.isEmpty())mc.getBlockRenderer().renderLiquid(POS,mc.level,mesh,state,flow);
          // Vanilla may tessellate a top surface hidden below the opaque cube summit.
          check(opaque() ? mesh.contained && (!(natural() || index%5==4) || mesh.vertices==0) : mesh.vertices>0,"catalogue fluid surface must respect solid occlusion");
