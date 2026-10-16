@@ -127,7 +127,7 @@ final class NativeFluidloggingValidation {
       if (!condition) throw new IllegalStateException(message);
    }
 
-   private static final class Mesh implements VertexConsumer {
+   static final class Mesh implements VertexConsumer {
       int vertices;
       int uvs;
       @Override public VertexConsumer addVertex(float x, float y, float z) {

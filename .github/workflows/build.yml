@@ -75,6 +75,9 @@ jobs:
             build/client-gameplay-*/run/client-water-flow-distance-result.json
             build/client-gameplay-*/run/catalogue-screenshots/*.png
             build/client-gameplay-*/run/client-catalogue-result.json
+            build/client-gameplay-*/run/client-generic-fluid-result.json
+            build/client-gameplay-*/run/client-submerged-catwalk-result.json
+            build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png
           if-no-files-found: error
           retention-days: 14
 
@@ -125,7 +128,7 @@ jobs:
           python-version: "3.13"
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
-      - name: Run isolated east canal profile
+      - name: Run isolated flow, generic fluid and submerged support profile
         timeout-minutes: 20
         shell: bash
         run: |
@@ -142,5 +145,8 @@ jobs:
             build/client-gameplay-*/run/client-water-flow-distance-result.json
             build/client-gameplay-*/run/catalogue-screenshots/*.png
             build/client-gameplay-*/run/client-catalogue-result.json
+            build/client-gameplay-*/run/client-generic-fluid-result.json
+            build/client-gameplay-*/run/client-submerged-catwalk-result.json
+            build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png
           if-no-files-found: error
           retention-days: 14

@@ -123,8 +123,11 @@ public class StairRailingMixinConfigurationTest {
       assertTrue(config.get("required").getAsBoolean());
       assertEquals("JAVA_21", config.get("compatibilityLevel").getAsString());
       assertEquals("com.oblixorprime.engineersdecorreforged.mixin", config.get("package").getAsString());
-      assertEquals(1, config.getAsJsonArray("client").size());
-      assertEquals("client.StairRailingPickMixin", config.getAsJsonArray("client").get(0).getAsString());
+      List<String> clientMixins = new ArrayList<>();
+      config.getAsJsonArray("client").forEach(value -> clientMixins.add(value.getAsString()));
+      assertEquals("only explicitly reviewed client hooks may load", List.of(
+         "client.StairRailingPickMixin", "client.NativeFluidRegionMixin", "client.NativeFluidSectionMixin",
+         "client.EmbeddiumFluidCloneMixin", "client.EmbeddiumFluidSliceMixin", "client.EmbeddiumFluidMeshMixin"), clientMixins);
       assertFalse("no client classes may be listed on both distributions", config.has("mixins"));
       assertFalse("no client classes may be listed for the server", config.has("server"));
       assertEquals(1, config.getAsJsonObject("injectors").get("defaultRequire").getAsInt());

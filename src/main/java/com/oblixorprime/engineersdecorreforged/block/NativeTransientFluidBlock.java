@@ -11,10 +11,10 @@ import net.minecraft.world.level.material.FluidState;
 public interface NativeTransientFluidBlock extends NativeFluidloggedBlock {
    @Override
    default boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, BlockGetter level, BlockPos pos, BlockState state, net.minecraft.world.level.material.Fluid fluid) {
-         if (fluid == net.minecraft.world.level.material.Fluids.FLOWING_WATER)
-            return !state.getValue(BlockStateProperties.WATERLOGGED) && state.getValue(NativeFluidloggedBlock.FLUID_CELL) == NativeFluidloggedBlock.Cell.EMPTY;
-         if (StairWaterFlow.active(state) && fluid != net.minecraft.world.level.material.Fluids.WATER) return false;
-         return NativeFluidloggedBlock.super.canPlaceLiquid(player, level, pos, state, fluid);
+         var current = level.getFluidState(pos);
+         if (!com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.standard(fluid)) return false;
+         if (com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.reserved(level, pos) && current.isEmpty()) return false;
+         return current.isEmpty() || (!current.isSource() && current.getType().isSame(fluid));
       }
 
    @Override
@@ -28,6 +28,9 @@ public interface NativeTransientFluidBlock extends NativeFluidloggedBlock {
             return true;
          }
          if (!canPlaceLiquid(null, level, pos, state, fluid.getType())) return false;
+         if (!fluid.isSource() || (fluid.getType() != net.minecraft.world.level.material.Fluids.WATER
+               && NativeFluidloggedBlock.cell(fluid.getType()) == NativeFluidloggedBlock.Cell.EMPTY))
+            return com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.place(level, pos, state, fluid);
          return NativeFluidloggedBlock.super.placeLiquid(level, pos, state.setValue(StairWaterFlow.WATER_FLOW, 0), fluid);
       }
 
