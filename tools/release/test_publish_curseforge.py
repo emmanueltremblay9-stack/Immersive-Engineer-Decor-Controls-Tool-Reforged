@@ -1283,11 +1283,12 @@ class OperationalRoutingTests(unittest.TestCase):
         # Build artifacts may contain only synthetic diagnostic screenshots/state,
         # never a runtime binary or a broad directory glob.
         uploads = build.split("uses: actions/upload-artifact@")[1:]
-        self.assertEqual(2, len(uploads))
+        self.assertEqual(3, len(uploads))
         for index, step in enumerate(uploads):
             upload = step.split("\n      - name:", 1)[0]
             self.assertTrue(upload.startswith("043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"))
-            self.assertIn("name: water-canal-scenes" if index == 0 else "name: renderer-${{ matrix.profile }}", upload)
+            names = ("water-canal-scenes", "renderer-${{ matrix.profile }}", "lava-${{ matrix.profile }}")
+            self.assertIn("name: " + names[index], upload)
             paths = upload.split("          path: |\n", 1)[1].split("          if-no-files-found:", 1)[0]
             self.assertEqual([
                 "build/client-gameplay-*/run/canal-screenshots/*.png",
@@ -1298,6 +1299,9 @@ class OperationalRoutingTests(unittest.TestCase):
                 "build/client-gameplay-*/run/client-generic-fluid-result.json",
                 "build/client-gameplay-*/run/client-submerged-catwalk-result.json",
                 "build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png",
+            ] if index < 2 else [
+                "build/client-gameplay-*/run/client-lava-surface-result.json",
+                "build/client-gameplay-*/run/lava-surface-screenshots/*.png",
             ], [line.strip() for line in paths.splitlines() if line.strip()])
             self.assertIn("retention-days: 14", upload)
 
