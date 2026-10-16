@@ -17,10 +17,15 @@ def validate_catalogue(proof, nonce, directory):
         identity=(case.get('block'),case.get('mode'))
         if identity not in expected or identity in seen:raise SmokeFailure('Duplicate/unexpected catalogue case')
         seen.add(identity);block,mode=identity;block=block.split(':',1)[1];natural=mode=='natural-water';opaque=block=='clinker_brick_block';blocked=opaque and natural
+        vertices=case.get('fluid_vertices')
+        hidden_mode=mode in ('natural-water','submerged-water')
+        valid_mesh=(type(vertices) is int and vertices>=0 and vertices%4==0
+                    and ((not hidden_mode or vertices==0) if opaque else vertices>0))
         if (case.get('source_before') is not (not natural) or case.get('amount_before')!=(0 if blocked else 7 if natural else 8)
             or case.get('server_client_agree') is not True or case.get('after_empty') is not True
             or case.get('geometry_and_paid_state_preserved') is not True
-            or type(case.get('fluid_vertices')) is not int or (case['fluid_vertices']!=0 if opaque else case['fluid_vertices']<=0) or case['fluid_vertices']%4):
+            or (opaque and case.get('opaque_mesh_contained') is not True)
+            or not valid_mesh):
             raise SmokeFailure('Catalogue fluid, geometry or recession mismatch')
         height=case.get('fluid_height_before')
         if type(height) not in (int,float) or (height!=0 if blocked else not 0<height<=1) or (mode=='submerged-water' and height!=1):

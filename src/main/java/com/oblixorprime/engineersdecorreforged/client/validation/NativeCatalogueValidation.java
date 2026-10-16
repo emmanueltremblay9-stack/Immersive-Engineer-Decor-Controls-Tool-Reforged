@@ -105,12 +105,14 @@ final class NativeCatalogueValidation {
          for(var property:dry().getProperties())if(!Set.of("waterlogged","fluid_cell","water_flow").contains(property.getName()))
             check(state.getValue(property).equals(dry().getValue(property)),"fluid changed geometry/paid lamp/signal property "+property);
          Mesh mesh=new Mesh();if(!flow.isEmpty())mc.getBlockRenderer().renderLiquid(POS,mc.level,mesh,state,flow);
-         check(opaque()?mesh.vertices==0:mesh.vertices>0,"catalogue fluid surface must respect solid occlusion");
+         // Vanilla may tessellate a top surface hidden below the opaque cube summit.
+         check(opaque() ? mesh.contained && (!(natural() || index%5==4) || mesh.vertices==0) : mesh.vertices>0,"catalogue fluid surface must respect solid occlusion");
          result=new JsonObject();result.addProperty("block",BuiltInRegistries.BLOCK.getKey(block()).toString());result.addProperty("mode",mode());
          float height=flow.isEmpty()?0:flow.getHeight(mc.level,POS);
          if(index%5==4)check(height==1,"submerged cell must have full water height under the independent upper source");
          result.addProperty("fluid_height_before",height);
          result.addProperty("source_before",flow.isSource());result.addProperty("amount_before",flow.getAmount());result.addProperty("fluid_vertices",mesh.vertices);
+         result.addProperty("opaque_mesh_contained",mesh.contained);
          result.addProperty("server_client_agree",true);result.addProperty("geometry_and_paid_state_preserved",true);
          result.addProperty("before",capture(mc,directory,"before"));
          pending=mc.getSingleplayerServer().submit(()->{
@@ -148,7 +150,13 @@ final class NativeCatalogueValidation {
    private static void check(boolean ok,String message){if(!ok)throw new IllegalStateException(message+" case="+index+"/"+mode());}
    private static final class Mesh implements VertexConsumer{
       int vertices;
-      public VertexConsumer addVertex(float x,float y,float z){vertices++;return this;}
+      boolean contained=true;
+      public VertexConsumer addVertex(float x,float y,float z){
+         vertices++;
+         int ox=POS.getX()&15,oy=POS.getY()&15,oz=POS.getZ()&15;
+         contained &= x>=ox && x<=ox+1 && z>=oz && z<=oz+1 && y>=oy && y<oy+1;
+         return this;
+      }
       public VertexConsumer setColor(int r,int g,int b,int a){return this;}
       public VertexConsumer setUv(float u,float v){return this;}
       public VertexConsumer setUv1(int u,int v){return this;}

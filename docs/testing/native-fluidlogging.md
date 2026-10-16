@@ -159,8 +159,7 @@ The expanded server suite passes 485 GameTests, including selection/collision pa
 for every dry geometry state with each of the three sources. The expanded client fixture
 runs 80 scenes (16 representative registrations, five modes) and captures 160 PNGs.
 It includes slab/stair, hollow roof conduit, pole, beam/support, ladder, accumulator and
-an opaque full brick. The full brick must block natural arrival and generate zero liquid
-vertices while retaining source storage; partial representatives must render a liquid
+an opaque full brick. The full brick must block natural arrival and keep any generated liquid vertices confined below the opaque cube summit while retaining source storage (vanilla may tessellate a hidden top surface); natural and submerged cases must generate zero vertices; partial representatives must render a liquid
 surface. Fully submerged water must have height 1. The exact-commit client result is a
 required CI gate; per-model/per-orientation screenshot certification is not claimed.
 

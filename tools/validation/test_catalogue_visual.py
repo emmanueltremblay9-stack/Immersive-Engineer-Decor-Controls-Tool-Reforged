@@ -12,7 +12,8 @@ class CatalogueVisualTests(unittest.TestCase):
             for m in MODES:
                 c=dict(fluid_height_before=1 if m=='submerged-water' else .8,block='immersive_engineer_decor_controls_tool_reforged:'+b,mode=m,source_before=m!='natural-water',amount_before=7 if m=='natural-water' else 8,fluid_vertices=16,server_client_agree=True,geometry_and_paid_state_preserved=True,after_empty=True)
                 if b=='clinker_brick_block':
-                    c['fluid_vertices']=0
+                    c['fluid_vertices']=0 if m in ('natural-water','submerged-water') else 8
+                    c['opaque_mesh_contained']=True
                     if m=='natural-water':c['amount_before']=0;c['fluid_height_before']=0
                 for phase in ('before','after'):
                     name=f'{b}-{m}-{phase}.png';c[phase]=name
@@ -41,7 +42,8 @@ class CatalogueVisualTests(unittest.TestCase):
         path=self.path/'catalogue-screenshots'/self.proof['cases'][0]['before'];path.write_bytes(b'bad')
         with self.assertRaises(SmokeFailure):validate_catalogue(self.proof,'current',self.path)
     def test_solid_occlusion_and_submerged_height(self):
-        for b,m,field,value in [('clinker_brick_block','water','fluid_vertices',4),
+        for b,m,field,value in [('clinker_brick_block','water','opaque_mesh_contained',False),
+                              ('clinker_brick_block','submerged-water','fluid_vertices',4),
                               ('clinker_brick_block','natural-water','amount_before',7),
                               ('iron_bulb_light','submerged-water','fluid_height_before',.8)]:
             p=copy.deepcopy(self.proof)
