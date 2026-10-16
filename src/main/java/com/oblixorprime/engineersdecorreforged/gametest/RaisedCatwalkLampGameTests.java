@@ -419,10 +419,10 @@ public final class RaisedCatwalkLampGameTests {
       BlockPos pos = helper.absolutePos(CENTER);
       Block[] supports = {Blocks.AIR, ModBlocks.THICK_STEEL_POLE.get(), ModBlocks.THIN_STEEL_POLE.get(), ModBlocks.TREATED_WOOD_POLE.get()};
       int[] variants = {0, 1, 2, 5};
-      for (int index = 0; index < supports.length; index++) {
+      for (BlockState wetCell : wetCells()) for (int index = 0; index < supports.length; index++) {
          clearDrops(helper);
          helper.getLevel().setBlock(pos.below(), supports[index].defaultBlockState(), 2);
-         put(helper, lit(true).setValue(RaisedCatwalkBlock.WATERLOGGED, true));
+         put(helper, com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.copyCell(lit(true), wetCell));
          BlockState railing = ModBlocks.STEEL_RAILING.get().defaultBlockState().setValue(PortedBlocks.NORTH, true);
          helper.getLevel().setBlock(pos.above(), railing, 2);
          BlockState savedSupport = helper.getLevel().getBlockState(pos.below());
@@ -430,7 +430,7 @@ public final class RaisedCatwalkLampGameTests {
          assertUnlit(helper, variants[index]);
          helper.assertValueEqual(helper.getLevel().getBlockState(pos.below()), savedSupport, "mining the lamp cannot remove or alter its supporting pole");
          helper.assertValueEqual(helper.getLevel().getBlockState(pos.above()), railing, "mining the lamp cannot remove or alter railings above the deck");
-         helper.assertTrue(helper.getBlockState(CENTER).getValue(RaisedCatwalkBlock.WATERLOGGED), "selective lamp removal retains source water");
+         helper.assertValueEqual(helper.getBlockState(CENTER).getFluidState(), wetCell.getFluidState(), "selective lamp removal retains source or flowing cell exactly");
          BlockState unlit = helper.getBlockState(CENTER);
          var saved = NbtUtils.writeBlockState(unlit);
          BlockState loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved);
@@ -452,23 +452,38 @@ public final class RaisedCatwalkLampGameTests {
    @GameTest(template = "empty", timeoutTicks = 80)
    public static void inset_lamp_repeated_real_installations_and_native_removals_do_not_duplicate_items(GameTestHelper helper) {
       ServerPlayer player = player(helper);
-      put(helper, catwalk().defaultBlockState());
+      for (BlockState wetCell : wetCells()) {
+      clearDrops(helper);
+      put(helper, wetCell);
       for (int cycle = 0; cycle < 3; cycle++) {
          player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(light(), 1));
          BlockHitResult underside = aim(helper, player, new Vec3(0.5, 0.1, 0.5), new Vec3(0.5, 1, 0.5));
          helper.assertTrue(player.gameMode.useItemOn(player, helper.getLevel(), player.getMainHandItem(), InteractionHand.MAIN_HAND, underside).consumesAction(),
             "native underside item use installs a lamp");
          helper.assertTrue(player.getMainHandItem().isEmpty(), "survival installation consumes the one lamp");
-         helper.assertValueEqual(helper.getBlockState(CENTER), lit(true), "real installation creates exactly one paid lamp credit");
+         helper.assertValueEqual(helper.getBlockState(CENTER), com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.copyCell(lit(true), wetCell), "real installation creates exactly one paid lamp credit");
          player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
          mine(helper, player, lampAim(helper, player, Direction.DOWN));
          assertUnlit(helper, 0);
+         helper.assertValueEqual(helper.getBlockState(CENTER).getFluidState(), wetCell.getFluidState(), "paid lamp cycle preserves independent exterior fluid");
          helper.assertValueEqual(dropped(helper, light()), cycle + 1, "each independently purchased lamp returns once");
       }
       mine(helper, player, floorAim(helper, player));
       helper.assertValueEqual(dropped(helper, light()), 3, "final deck loot cannot recreate previously refunded lamps");
       helper.assertValueEqual(dropped(helper, catwalk().asItem()), 1, "the whole workflow returns the base catwalk once");
+      }
       helper.succeed();
+   }
+
+   private static java.util.List<BlockState> wetCells() {
+      var cells = new java.util.ArrayList<BlockState>();
+      for (var fluid : java.util.List.of(net.minecraft.world.level.material.Fluids.WATER,
+            net.minecraft.world.level.material.Fluids.LAVA, com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.creosote()))
+         cells.add(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.placement(catwalk().defaultBlockState(),
+            ((net.minecraft.world.level.material.FlowingFluid)fluid).getSource(false)));
+      cells.add(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.withFlow(catwalk().defaultBlockState(),
+         net.minecraft.world.level.material.Fluids.FLOWING_WATER.getFlowing(5, false)));
+      return cells;
    }
 
    private static ServerPlayer player(GameTestHelper helper) {
@@ -492,7 +507,7 @@ public final class RaisedCatwalkLampGameTests {
       helper.assertTrue(state.is(catwalk()), "removing the inset lamp must retain the raised catwalk");
       helper.assertValueEqual(state.getValue(RaisedCatwalkBlock.VARIANT), variant, "lamp removal restores the current pole-supported deck");
       helper.assertFalse(state.getValue(RaisedCatwalkBlock.PAID_LIGHT), "lamp removal consumes the paid-light credit");
-      helper.assertValueEqual(state.getLightEmission(helper.getLevel(), helper.absolutePos(CENTER)), 0, "lamp removal must immediately select a non-emitting state");
+      helper.assertValueEqual(state.getLightEmission(helper.getLevel(), helper.absolutePos(CENTER)), com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.light(state), "lamp removal retains only fluid emission");
    }
 
    private static BlockHitResult lampAim(GameTestHelper helper, ServerPlayer player, Direction approach) {

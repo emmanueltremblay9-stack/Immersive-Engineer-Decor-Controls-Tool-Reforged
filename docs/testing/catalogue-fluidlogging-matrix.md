@@ -1,12 +1,12 @@
 # Catalogue native-fluidlogging matrix
 
-Runtime inventory: all 200 registered IEDCTR blocks on main `e41a4b8a` plus the first light lot. The registry GameTest checks this list against the actual mod namespace. Item-only content is outside this block matrix. No block, including full bricks and sensitive glass, is silently excluded.
+Runtime inventory: all 200 registered IEDCTR blocks on main `e41a4b8a` plus the catalogue extension at this commit. The registry GameTest checks this list against the actual mod namespace. Item-only content is outside this block matrix. No block, including full bricks and sensitive glass, is silently excluded.
 
 `W` means existing water storage; `N` means water/lava/IE-creosote native source storage; `T` means transient water with vanilla levels/recession. Storage is independent of geometric passage. The collision column describes only the default state at the test fixture; it does not certify every orientation/variant or visible fluid surface. Full collision is a storage implementation requirement, not permission to remove collision or occlusion.
 
 Every pending row requires source placement, real survival bucket balance, legacy/default state load, compressed chunk reload and client updates for water/lava/creosote; natural water arrival/recession with no source promotion; shape/targeting/item drops retained. Test all meaningful orientations/variants, not only the default state. Controls additionally require signal strength, tick timing, support loss and switch behavior; multipart devices require independent cells. Machines require separate exterior cells and unchanged inventory/tank/capability contracts. The accumulator remains protected by its existing dedicated contract suite.
 
-First light lot: existing native source contract tests now exercise all four lights, with a dedicated natural-flow/recession GameTest. Client render/screenshot qualification and catalogue-wide implementation remain pending. Embedded/inserted lights on raised catwalks retain their existing behavior and still require dedicated wet insertion/removal proof in the next lot.
+Lighting and controls lot: native source contracts cover all opted-in blocks, including all 97 controls. Raised inserted-light install/removal tests cover water/lava/creosote and transient water. Dedicated client screenshots exercise four lights, lever/button/contact and inserted light before and after drain/recession; qualification is pending until the exact-commit client gate passes. Other catalogue families and full-block geometry qualifications remain pending.
 
 | Block ID (mod namespace omitted) | Runtime class | States | Before | Current | Default collision | Next validation / lot |
 |---|---|---:|---|---|---|---|
@@ -64,7 +64,7 @@ First light lot: existing native source contract tests now exercise all four lig
 | `steel_floor_grating` | `PortedBlocks$FloorGratingBlock` | 1 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `steel_catwalk` | `PortedBlocks$CatwalkBlock` | 480 | N | N | partial/empty | Retain regression + wet inserted-light test |
 | `steel_catwalk_stairs` | `PortedBlocks$CatwalkStairsBlock` | 30720 | N + T | N + T | partial/empty | Retain regression + wet inserted-light test |
-| `steel_catwalk_ta` | `RaisedCatwalkBlock` | 72 | N | N | partial/empty | Retain regression + wet inserted-light test |
+| `steel_catwalk_ta` | `RaisedCatwalkBlock` | 1152 | N | N + T | partial/empty | Retain regression + wet inserted-light test |
 | `steel_railing` | `PortedBlocks$RailingBlock` | 480 | N | N | partial/empty | Retain regression + wet inserted-light test |
 | `steel_mesh_fence` | `SteelMeshFenceBlock` | 324 | W | W | partial/empty | Geometry + variants; native storage pending |
 | `steel_mesh_fence_gate` | `PortedBlocks$FenceGateSegmentBlock` | 16 | none | none | partial/empty | Geometry + variants; native storage pending |
@@ -113,100 +113,100 @@ First light lot: existing native source contract tests now exercise all four lig
 | `sign_magichazard` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `sign_magneticfield` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `sign_radioactive` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `arrow_target` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `door_sensor_switch` | `ControlsBlockTypes$DoorSensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `elevator_button` | `ControlsBlockTypes$ElevatorButtonBlock` | 36 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_day_timer` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_door_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_interval_timer` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_linear_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_rotary_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_small_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_touch_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_touch_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `glass_vertical_bar_gauge` | `ControlsBlockTypes$GaugeBlock` | 96 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_alarm_lamp` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_alarm_siren` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_analog_angular_gauge` | `ControlsBlockTypes$GaugeBlock` | 96 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_analog_horizontal_gauge` | `ControlsBlockTypes$GaugeBlock` | 96 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_block_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_comparator_switch` | `ControlsBlockTypes$ComparatorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_day_timer` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_dimmer` | `ControlsBlockTypes$DimmerBlock` | 192 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_door_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_double_pole_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_estop_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_fallthrough_detector` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_fenced_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_foot_button` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_green_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_green_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_high_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_hopper_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_interval_timer` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_knock_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_knock_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_light_sensor` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_lightning_sensor` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_linear_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_machine_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_pull_handle` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_rain_sensor` | `ControlsBlockTypes$SensorSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_red_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_red_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_rotary_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_rotary_machine_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_shock_sensitive_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_shock_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_small_digital_gauge` | `ControlsBlockTypes$GaugeBlock` | 96 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_small_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_switchlink_cased_pulse_receiver` | `ControlsBlockTypes$CasedSwitchLinkPulseReceiverBlock` | 12 | none | none | full | Controls: signals/support/multipart; full-block storage/passage proof |
-| `industrial_switchlink_cased_receiver` | `ControlsBlockTypes$CasedSwitchLinkReceiverBlock` | 12 | none | none | full | Controls: signals/support/multipart; full-block storage/passage proof |
-| `industrial_switchlink_pulse_receiver` | `ControlsBlockTypes$SwitchLinkPulseReceiverBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_switchlink_pulse_relay` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_switchlink_receiver` | `ControlsBlockTypes$SwitchLinkReceiverBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_switchlink_receiver_analog` | `ControlsBlockTypes$SwitchLinkReceiverBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_switchlink_relay` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_switchlink_relay_analog` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_tube_gauge` | `ControlsBlockTypes$GaugeBlock` | 96 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_vertical_bar_gauge` | `ControlsBlockTypes$GaugeBlock` | 96 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_white_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_white_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_yellow_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrial_yellow_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `industrialswitch` | `IndustrialSwitchBlock` | 36 | none | none | partial/empty | Controls: signals/support/multipart |
-| `light_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `oldfancy_bistableswitch1` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `oldfancy_bistableswitch2` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `oldfancy_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `oldfancy_small_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `oldfancy_spring_reset_chain` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `orange_sensitiveglass` | `ControlsBlockTypes$SensitiveGlassBlock` | 2 | none | none | full | Controls: signals/support/multipart; full-block storage/passage proof |
-| `red_power_plant` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_angular_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_contact_plate` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_door_contact_plate` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_fallthrough_detector` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_high_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_nail_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_nail_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_semaphore` | `ControlsBlockTypes$BooleanIndicatorBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_shock_sensitive_plate` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_shock_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_small_button` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_spring_reset_chain` | `ControlsBlockTypes$PulseSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `rustic_two_hinge_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `sensitive_glass_block` | `ControlsBlockTypes$SensitiveGlassBlock` | 2 | none | none | full | Controls: signals/support/multipart; full-block storage/passage proof |
-| `stained_sensitiveglass` | `ControlsBlockTypes$SensitiveGlassBlock` | 2 | none | none | full | Controls: signals/support/multipart; full-block storage/passage proof |
-| `valve_wheel_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
-| `yellow_power_plant` | `ControlsBlockTypes$ContactSwitchBlock` | 12 | none | none | partial/empty | Controls: signals/support/multipart |
+| `arrow_target` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `door_sensor_switch` | `ControlsBlockTypes$DoorSensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `elevator_button` | `ControlsBlockTypes$ElevatorButtonBlock` | 3456 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_day_timer` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_door_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_interval_timer` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_linear_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_rotary_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_small_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_touch_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_touch_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `glass_vertical_bar_gauge` | `ControlsBlockTypes$GaugeBlock` | 9216 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_alarm_lamp` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_alarm_siren` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_analog_angular_gauge` | `ControlsBlockTypes$GaugeBlock` | 9216 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_analog_horizontal_gauge` | `ControlsBlockTypes$GaugeBlock` | 9216 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_block_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_comparator_switch` | `ControlsBlockTypes$ComparatorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_day_timer` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_dimmer` | `ControlsBlockTypes$DimmerBlock` | 18432 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_door_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_double_pole_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_estop_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_fallthrough_detector` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_fenced_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_foot_button` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_green_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_green_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_high_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_hopper_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_interval_timer` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_knock_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_knock_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_light_sensor` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_lightning_sensor` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_linear_entity_detector` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_machine_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_pull_handle` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_rain_sensor` | `ControlsBlockTypes$SensorSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_red_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_red_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_rotary_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_rotary_machine_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_shock_sensitive_contact_mat` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_shock_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_small_digital_gauge` | `ControlsBlockTypes$GaugeBlock` | 9216 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_small_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_switchlink_cased_pulse_receiver` | `ControlsBlockTypes$CasedSwitchLinkPulseReceiverBlock` | 1152 | none | N + T | full | Controls: wet signals/support/multipart covered; class visual proof; full-block storage/passage proof |
+| `industrial_switchlink_cased_receiver` | `ControlsBlockTypes$CasedSwitchLinkReceiverBlock` | 1152 | none | N + T | full | Controls: wet signals/support/multipart covered; class visual proof; full-block storage/passage proof |
+| `industrial_switchlink_pulse_receiver` | `ControlsBlockTypes$SwitchLinkPulseReceiverBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_switchlink_pulse_relay` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_switchlink_receiver` | `ControlsBlockTypes$SwitchLinkReceiverBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_switchlink_receiver_analog` | `ControlsBlockTypes$SwitchLinkReceiverBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_switchlink_relay` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_switchlink_relay_analog` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_tube_gauge` | `ControlsBlockTypes$GaugeBlock` | 9216 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_vertical_bar_gauge` | `ControlsBlockTypes$GaugeBlock` | 9216 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_white_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_white_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_yellow_blinking_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrial_yellow_led` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `industrialswitch` | `IndustrialSwitchBlock` | 3456 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `light_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `oldfancy_bistableswitch1` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `oldfancy_bistableswitch2` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `oldfancy_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `oldfancy_small_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `oldfancy_spring_reset_chain` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `orange_sensitiveglass` | `ControlsBlockTypes$SensitiveGlassBlock` | 192 | none | N + T | full | Controls: wet signals/support/multipart covered; class visual proof; full-block storage/passage proof |
+| `red_power_plant` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_angular_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_contact_plate` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_door_contact_plate` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_fallthrough_detector` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_high_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_nail_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_nail_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_semaphore` | `ControlsBlockTypes$BooleanIndicatorBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_shock_sensitive_plate` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_shock_sensitive_trapdoor` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_small_button` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_spring_reset_chain` | `ControlsBlockTypes$PulseSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `rustic_two_hinge_lever` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `sensitive_glass_block` | `ControlsBlockTypes$SensitiveGlassBlock` | 192 | none | N + T | full | Controls: wet signals/support/multipart covered; class visual proof; full-block storage/passage proof |
+| `stained_sensitiveglass` | `ControlsBlockTypes$SensitiveGlassBlock` | 192 | none | N + T | full | Controls: wet signals/support/multipart covered; class visual proof; full-block storage/passage proof |
+| `valve_wheel_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |
+| `yellow_power_plant` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Controls: wet signals/support/multipart covered; class visual proof |

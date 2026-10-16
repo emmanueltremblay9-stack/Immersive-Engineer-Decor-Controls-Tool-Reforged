@@ -73,6 +73,8 @@ jobs:
             build/client-gameplay-*/run/canal-screenshots/*.png
             build/client-gameplay-*/run/client-water-canal-result.json
             build/client-gameplay-*/run/client-water-flow-distance-result.json
+            build/client-gameplay-*/run/catalogue-screenshots/*.png
+            build/client-gameplay-*/run/client-catalogue-result.json
           if-no-files-found: error
           retention-days: 14
 
@@ -138,5 +140,7 @@ jobs:
             build/client-gameplay-*/run/canal-screenshots/*.png
             build/client-gameplay-*/run/client-water-canal-result.json
             build/client-gameplay-*/run/client-water-flow-distance-result.json
+            build/client-gameplay-*/run/catalogue-screenshots/*.png
+            build/client-gameplay-*/run/client-catalogue-result.json
           if-no-files-found: error
           retention-days: 14

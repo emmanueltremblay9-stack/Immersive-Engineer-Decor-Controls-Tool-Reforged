@@ -171,7 +171,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--prepare-timeout", type=int, default=600)
-    parser.add_argument("--timeout", type=int, default=420)
+    parser.add_argument("--timeout", type=int, default=720)
     parser.add_argument("--renderer-profile", choices=PROFILES)
     parser.add_argument("--flow-distance-only", action="store_true")
     args = parser.parse_args()
@@ -248,6 +248,9 @@ gradle.projectsEvaluated {
         validate_proof(proof, nonce, logs, code, expired, crashes)
         fluid_proof = json.loads((game / "client-fluidlogging-result.json").read_text(encoding="utf-8"))
         validate_fluidlogging_proof(fluid_proof, nonce)
+        from catalogue_visual import validate_catalogue
+        catalogue_proof = json.loads((game / "client-catalogue-result.json").read_text(encoding="utf-8"))
+        validate_catalogue(catalogue_proof, nonce, game)
         canal_proof = json.loads((game / "client-water-canal-result.json").read_text(encoding="utf-8"))
         validate_canal_proof(canal_proof, nonce, game)
         if args.renderer_profile:

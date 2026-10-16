@@ -698,7 +698,7 @@ public final class PortedBlocks {
    }
 
    public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements NativeFluidloggedBlock {
-      public static final net.minecraft.world.level.block.state.properties.IntegerProperty WATER_FLOW = net.minecraft.world.level.block.state.properties.IntegerProperty.create("water_flow", 0, 15);
+      public static final net.minecraft.world.level.block.state.properties.IntegerProperty WATER_FLOW = StairWaterFlow.WATER_FLOW;
       public static final MapCodec<PortedBlocks.CatwalkStairsBlock> CODEC = simpleCodec(PortedBlocks.CatwalkStairsBlock::new);
 
       public CatwalkStairsBlock(Properties properties) {
@@ -1504,7 +1504,7 @@ public final class PortedBlocks {
    }
 
    /** Explicit light-only opt-in: structural pole heads also use DirectionalShapeBlock. */
-   public abstract static class NativeLightBlock extends PortedBlocks.DirectionalShapeBlock implements NativeFluidloggedBlock {
+   public abstract static class NativeLightBlock extends PortedBlocks.DirectionalShapeBlock implements NativeTransientFluidBlock {
       protected NativeLightBlock(Properties properties, VoxelShape northShape, boolean horizontalRotation, boolean emptyCollision) {
          super(properties.lightLevel(state -> Math.max(14, NativeFluidloggedBlock.light(state))), northShape, horizontalRotation, emptyCollision);
          this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false)
@@ -1521,34 +1521,6 @@ public final class PortedBlocks {
       @Override
       public FluidState getFluidState(BlockState state) {
          return StairWaterFlow.fluid(state);
-      }
-
-      @Override
-      public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, BlockGetter level, BlockPos pos, BlockState state, net.minecraft.world.level.material.Fluid fluid) {
-         if (fluid == net.minecraft.world.level.material.Fluids.FLOWING_WATER)
-            return !state.getValue(WATERLOGGED) && state.getValue(NativeFluidloggedBlock.FLUID_CELL) == NativeFluidloggedBlock.Cell.EMPTY;
-         if (StairWaterFlow.active(state) && fluid != net.minecraft.world.level.material.Fluids.WATER) return false;
-         return NativeFluidloggedBlock.super.canPlaceLiquid(player, level, pos, state, fluid);
-      }
-
-      @Override
-      public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluid) {
-         if (fluid.getType() == net.minecraft.world.level.material.Fluids.FLOWING_WATER
-               && canPlaceLiquid(null, level, pos, state, fluid.getType())) {
-            if (!level.isClientSide()) {
-               if (!level.setBlock(pos, StairWaterFlow.withFlow(state, fluid), 3)) return false;
-               level.scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(level));
-            }
-            return true;
-         }
-         if (!canPlaceLiquid(null, level, pos, state, fluid.getType())) return false;
-         return NativeFluidloggedBlock.super.placeLiquid(level, pos, state.setValue(CatwalkStairsBlock.WATER_FLOW, 0), fluid);
-      }
-
-      @Override
-      public net.minecraft.world.item.ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, LevelAccessor level, BlockPos pos, BlockState state) {
-         if (StairWaterFlow.active(state)) return net.minecraft.world.item.ItemStack.EMPTY;
-         return NativeFluidloggedBlock.super.pickupBlock(player, level, pos, state.setValue(CatwalkStairsBlock.WATER_FLOW, 0));
       }
 
       @Override

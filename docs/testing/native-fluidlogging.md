@@ -105,3 +105,17 @@ review. No installed Prism JAR or user world is part of any of these checks.
 ## Targeted stair flow follow-up
 
 Steel Catwalk Stairs also accept transient naturally flowing water. Its amount and falling flag are stored separately from the legacy WATERLOGGED source and persist/synchronize as ordinary block state. It recedes when supply disappears and cannot fill an empty bucket. Intentional source filling remains available and clears transient state. Natural flow never promotes the stair to a permanent source. Other blocks and non-water cells retain the source-only scope above. See [distance and recession qualification](water-canal-visual-investigation.md).
+
+## Catalogue expansion: controls and inserted lights
+
+The native source contract now also applies to all 97 registered controls: water, lava and IE creosote are independent exterior cells, serialized with block-state palettes. Existing controls load dry when the three new fluid properties are absent. Signal strength, timers and support rules remain their original state-based operations; fluid ticks are scheduled in addition to block ticks.
+
+The two halves of `industrialswitch` initialize from their own world positions. Power/facing synchronization copies the upper half's own water/source/current properties back onto the synchronized geometry. Normal shape-based pair removal uses vanilla `Block.updateOrDestroy` and `Level.destroyBlock`, retaining drops and releasing each half's own fluid. Creative upper-part removal restores the lower fluid explicitly.
+
+Raised catwalks now accept transient water as well as their existing sources. Paid inset-light installation, selective mining, refund and final deck drops are tested with water/lava/creosote sources and level-5 current. Removing a lamp retains lava's own emission of 15 while removing the lamp's emission.
+
+`NativeFluidloggingGameTests` enumerates all opted-in registered blocks rather than a fixed sample. The controls lot brings this to 105 blocks; source survival bucket cycles, actual BlockItem placement, compressed chunk reload and initial/update palette roundtrips cover that entire set. Dedicated tests cover 23 wet latching controls, pulse reset while water recedes, asymmetric cabinet cells, and real server-player destruction of either wet half in survival/creative with exact item balance. Released vanilla lava/water may react normally; storage does not invent or suppress chemistry.
+
+The new `NativeCatalogueValidation` runs 32 scenes in the existing nonce-guarded synthetic integrated world: four standalone light types, lever, button, contact mat and inserted-light deck, each with three stored sources and natural water. It records matching server/client states, fluid mesh vertices and 64 before/after screenshots, retaining geometry, signal and paid-light state through source pickup or recession. These are eight visual representatives, not visual certification of every block. `catalogue_visual.py` checks exact scenario IDs, source/flow amount, recession, filenames and full-size PNG integrity; actual captures must still be inspected.
+
+The expanded full client fixture has a 10-minute internal deadline and 12-minute process bound, allowing its 3680 settling/recession ticks plus the earlier suites. The PR62 flow-only internal deadline remains 6 minutes. No test uses a personal world or installed Prism runtime. The exhaustive per-block plan and remaining families are in `catalogue-fluidlogging-matrix.md`.

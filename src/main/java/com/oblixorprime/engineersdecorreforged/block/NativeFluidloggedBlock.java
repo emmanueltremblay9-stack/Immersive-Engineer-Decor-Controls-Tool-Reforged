@@ -60,10 +60,21 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock {
    }
 
    static BlockState placement(BlockState state, BlockPlaceContext context) {
-      FluidState replaced = context.getLevel().getFluidState(context.getClickedPos());
+      return placement(state, context.getLevel().getFluidState(context.getClickedPos()));
+   }
+
+   static BlockState placement(BlockState state, FluidState replaced) {
       boolean source = replaced.isSource();
       return state.setValue(BlockStateProperties.WATERLOGGED, source && replaced.getType() == Fluids.WATER)
          .setValue(FLUID_CELL, source ? cell(replaced.getType()) : Cell.EMPTY);
+   }
+
+   static BlockState copyCell(BlockState target, BlockState cell) {
+      target = target.setValue(BlockStateProperties.WATERLOGGED, cell.getValue(BlockStateProperties.WATERLOGGED))
+         .setValue(FLUID_CELL, cell.getValue(FLUID_CELL));
+      if (target.hasProperty(StairWaterFlow.WATER_FLOW))
+         target = target.setValue(StairWaterFlow.WATER_FLOW, cell.hasProperty(StairWaterFlow.WATER_FLOW) ? cell.getValue(StairWaterFlow.WATER_FLOW) : 0);
+      return target;
    }
 
    static void schedule(BlockState state, LevelAccessor level, BlockPos pos) {
