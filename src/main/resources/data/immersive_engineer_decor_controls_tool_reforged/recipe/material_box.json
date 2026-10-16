@@ -2,19 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "SSS",
-    "III",
-    "CCI"
+    "RIR",
+    "ICI",
+    "RCR"
   ],
   "key": {
-    "S": {
-      "item": "minecraft:string"
+    "R": {
+      "item": "immersiveengineering:wirecoil_structure_rope"
     },
     "I": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:plates/iron"
     },
     "C": {
-      "item": "minecraft:chest"
+      "item": "immersiveengineering:crate"
     }
   },
   "result": {
