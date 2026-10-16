@@ -1482,19 +1482,34 @@ public final class PortedBlocks {
       }
    }
 
-   public abstract static class DirectionalShapeBlock extends PortedBlocks.DirectionalPortBlock implements NativeFluidloggedBlock {
+   public abstract static class DirectionalShapeBlock extends PortedBlocks.DirectionalPortBlock {
       private final VoxelShape[] shapes = new VoxelShape[Direction.values().length];
       private final boolean emptyCollision;
 
       protected DirectionalShapeBlock(Properties properties, VoxelShape northShape, boolean horizontalRotation, boolean emptyCollision) {
-         super(properties.lightLevel(state -> Math.max(14, NativeFluidloggedBlock.light(state))));
-         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false)
-            .setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY)
-            .setValue(CatwalkStairsBlock.WATER_FLOW, 0));
+         super(properties);
          this.emptyCollision = emptyCollision;
          for (Direction facing : Direction.values()) {
             this.shapes[facing.ordinal()] = PortedBlocks.orientedNorthShape(northShape, facing, horizontalRotation);
          }
+      }
+
+      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return this.shapes[((Direction)state.getValue(FACING)).ordinal()];
+      }
+
+      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return this.emptyCollision ? Shapes.empty() : this.getShape(state, level, pos, context);
+      }
+   }
+
+   /** Explicit light-only opt-in: structural pole heads also use DirectionalShapeBlock. */
+   public abstract static class NativeLightBlock extends PortedBlocks.DirectionalShapeBlock implements NativeFluidloggedBlock {
+      protected NativeLightBlock(Properties properties, VoxelShape northShape, boolean horizontalRotation, boolean emptyCollision) {
+         super(properties.lightLevel(state -> Math.max(14, NativeFluidloggedBlock.light(state))), northShape, horizontalRotation, emptyCollision);
+         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false)
+            .setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY)
+            .setValue(CatwalkStairsBlock.WATER_FLOW, 0));
       }
 
       @Override
@@ -1543,16 +1558,9 @@ public final class PortedBlocks {
          return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
       }
 
-      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.shapes[((Direction)state.getValue(FACING)).ordinal()];
-      }
-
-      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.emptyCollision ? Shapes.empty() : this.getShape(state, level, pos, context);
-      }
    }
 
-   public static class OppositeFaceLightBlock extends PortedBlocks.DirectionalShapeBlock {
+   public static class OppositeFaceLightBlock extends PortedBlocks.NativeLightBlock {
       public OppositeFaceLightBlock(Properties properties, VoxelShape northShape) {
          super(properties, northShape, false, true);
       }
@@ -1562,7 +1570,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class HorizontalLookLightBlock extends PortedBlocks.DirectionalShapeBlock {
+   public static class HorizontalLookLightBlock extends PortedBlocks.NativeLightBlock {
       public HorizontalLookLightBlock(Properties properties, VoxelShape northShape) {
          super(properties, northShape, true, true);
       }

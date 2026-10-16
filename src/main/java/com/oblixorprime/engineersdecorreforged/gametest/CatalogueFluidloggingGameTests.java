@@ -33,6 +33,13 @@ public final class CatalogueFluidloggingGameTests {
             Boolean.toString(state.hasProperty(PortedBlocks.CatwalkStairsBlock.WATER_FLOW)), Boolean.toString(full)));
       }
       java.nio.file.Files.write(java.nio.file.Path.of("catalogue-fluidlogging.tsv"), rows);
+      for (var entry : ModBlocks.ORDERED_BLOCKS) {
+         if (entry.get() instanceof com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock) {
+            var state = entry.get().defaultBlockState();
+            h.assertFalse(state.hasProperty(NativeFluidloggedBlock.FLUID_CELL), "structural heads must not inherit the first light lot");
+            h.assertValueEqual(state.getLightEmission(h.getLevel(), h.absolutePos(new BlockPos(3,2,3))), 0, "structural heads retain zero emission");
+         }
+      }
       h.succeed();
    }
 

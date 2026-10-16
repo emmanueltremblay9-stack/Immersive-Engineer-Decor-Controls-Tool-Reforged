@@ -10,7 +10,7 @@ public final class StairWaterFlow {
    private StairWaterFlow() {}
    public static boolean supported(BlockState state) {
       return state.getBlock() instanceof PortedBlocks.CatwalkStairsBlock
-         || state.getBlock() instanceof PortedBlocks.DirectionalShapeBlock;
+         || state.getBlock() instanceof PortedBlocks.NativeLightBlock;
    }
    public static boolean active(BlockState state) {
       return supported(state)

@@ -54,11 +54,11 @@ First light lot: existing native source contract tests now exercise all four lig
 | `old_industrial_wood_slabslice` | `PortedBlocks$PartsBlock` | 15 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `old_industrial_wood_door` | `DoorBlock` | 64 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `thick_steel_pole` | `PortedBlocks$CenteredPoleBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `thick_steel_pole_head` | `PoleHeadBlock` | 576 | N + T | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `thick_steel_pole_head` | `PoleHeadBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `thin_steel_pole` | `PortedBlocks$CenteredPoleBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `thin_steel_pole_head` | `PoleHeadBlock` | 576 | N + T | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `thin_steel_pole_head` | `PoleHeadBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `treated_wood_pole` | `PortedBlocks$CenteredPoleBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
-| `treated_wood_pole_head` | `PoleHeadBlock` | 576 | N + T | N + T | partial/empty | Retain regression + wet inserted-light test |
+| `treated_wood_pole_head` | `PoleHeadBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `treated_wood_pole_support` | `PortedBlocks$SurfaceMountedBlock` | 6 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `steel_double_t_support` | `PortedBlocks$SupportBlock` | 24 | none | none | partial/empty | Geometry + variants; native storage pending |
 | `steel_floor_grating` | `PortedBlocks$FloorGratingBlock` | 1 | none | none | partial/empty | Geometry + variants; native storage pending |
