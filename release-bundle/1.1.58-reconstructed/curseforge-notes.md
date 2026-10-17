@@ -41,6 +41,14 @@ Minecraft **1.21.1**, Java **21**, and NeoForge **21.1.230** minimum. Immersive 
 
 Draft only: publication qualification remains incomplete. Preparation starts from commit `90548e2afc49feb7b6328d52e58db8fc3eebe0fd`, which already contains the hatch-continuation, metal-ladder clearance, Steel Mesh Fence Gate passage/connection fixes, and adjacent-pair synchronization from PRs #43–46. That commit still builds 1.1.57 and is not the final source identity for 1.1.58.
 
-The final 1.1.58 source commit must pass exact-commit Build CI. Independently identify the rebuilt JAR by SHA-256, size and embedded mod/version, verify packaged notices, and record the applicable client and actual packaged dedicated-server save/restart checks before publication. No qualified 1.1.58 JAR, final source commit, hash or reviewed publisher manifest is established by these notes. GameTests alone do not replace those runtime checks.
+The final 1.1.58 source commit must pass exact-commit Build CI. Independently identify the rebuilt JAR by SHA-256, size and embedded mod/version, verify packaged notices, and record the applicable client checks before publication. The packaged dedicated-server smoke result and its limits are recorded below. The merged source, independently rebuilt byte identity and packaged-server smoke evidence are recorded below. Final client qualification and publication preflight are still pending. GameTests alone do not replace those runtime checks.
 
 Earlier 1.1.57 CI results, JAR hashes and gameplay observations are historical evidence only and must not be relabelled as 1.1.58 qualification. No exhaustive reporter-modpack compatibility claim is made. See [the qualification record](../../docs/releases/next-patch-qualification.md) for evidence boundaries and outstanding gates.
+
+## Current preparation evidence
+
+Merged runtime source: `19c6bc7f8322002fd1d4710885d13f4482b4cb45`. Build run `38332247766` passed 262 GameTests and 84 publisher tests. A separate clean cloud build and actual packaged-server run `38336616164` verified SHA-256 `bc77067f9f6e0c03f987123b490812d32aa9171ad388fcd87ecdf50777883fdb`, size 19,677,256 bytes, embedded version/mod ID and packaged attribution matching the source.
+
+The isolated NeoForge 21.1.230 server with Immersive Engineering 12.4.2-194 successfully started, saved, stopped and restarted. Five asserted block states survived restart; redstone response and linked gate removal passed. Both phases stopped cleanly with no detected errors. This was a console-driven packaged-server smoke test. Loot, real-player clicks/climbing/rendering and multiplayer synchronization were not exercised by it.
+
+Earlier owner permission to omit a dedicated-server test was superseded by the request to perform this test. No omitted check is reported as passing. Final client evidence on 1.1.58 and remaining publication preflight remain pending; 1.1.57 user-reported gameplay stays scoped to that older artifact.
