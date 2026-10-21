@@ -70,17 +70,20 @@ public final class MusleeWriteSetGateCases {
                 "distinct fence identities accepted");
     }
     private static void detachedProposalsStayDetached() {
-        MusleeRevisionFence f = newFence(2, new byte[]{1});
-        byte[] proposal = {2, 3};
-        Proposed detached = p(f, proposal);
-        proposal[0] = 0; proposal[1] = 0;
-        check(preflightOnly(List.of(detached)) == PREFLIGHT_ONLY, "proposal cloned at construction");
-        // Changing caller array to oversized proves the preflight sees its own copy.
-        byte[] allowed = {2, 3};
-        Proposed snapshot = p(f, allowed);
-        allowed = new byte[]{0, 1, 2};
-        check(preflightOnly(List.of(snapshot)) == PREFLIGHT_ONLY, "caller cannot alter stored proposal");
-        check(f.revision() == 0, "proposal never committed");
+        // At MAX revision even a one-byte change would disable tracking. A detached
+        // proposal must still preflight as a true no-op after caller mutation.
+        MusleeRevisionFence maximum = new MusleeRevisionFence(4, 2,
+                Long.MAX_VALUE, new byte[]{1});
+        byte[] input = {1};
+        Proposed detached = p(maximum, input);
+        input[0] = 2;
+        check(preflightOnly(List.of(detached)) == PREFLIGHT_ONLY,
+                "proposed byte snapshot must not alias caller input");
+        check(maximum.isUsable() && maximum.revision() == Long.MAX_VALUE,
+                "caller input mutation cannot falsely exhaust revision fence");
+        check(preflightOnly(List.of(p(maximum, input))) == REFUSED_OR_UNUSABLE,
+                "newly sampled changed bytes correctly trigger overflow fence");
+        check(!maximum.isUsable(), "counter exhaustion is targeted");
     }
     private static void failingStateInvalidatesOnlyTheTarget() {
         MusleeRevisionFence a = newFence(2, new byte[]{1}), b = newFence(2, new byte[]{2});
