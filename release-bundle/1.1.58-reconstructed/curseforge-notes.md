@@ -1,6 +1,6 @@
 # 1.1.58-reconstructed
 
-Draft candidate notes. This version is not yet published or fully qualified. The previous 1.1.57 candidate was deferred without publication; all of its fixes and synchronized-pair functionality are carried forward here. The version increment itself changes metadata and documentation only, preserving runtime behavior and dependencies.
+Historical candidate notes from the 1.1.58 preparation. This version was subsequently published on CurseForge on 13 October 2026 as [file 9153502](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9153502). Statements below about pending qualification describe that historical preparation, not the current publication status or qualification of later main. The previous 1.1.57 candidate was deferred without publication; all of its fixes and synchronized-pair functionality are carried forward here. The version increment itself changes metadata and documentation only, preserving runtime behavior and dependencies.
 
 ## Added
 
@@ -37,10 +37,24 @@ Synchronization does not forward redstone signals or bypass refused interactions
 
 Minecraft **1.21.1**, Java **21**, and NeoForge **21.1.230** minimum. Immersive Engineering **1.21.1-12.4.2-194** is required; JEI **19.32.0.359** is optional. Engineer's Decor, Engineer's Tools, and Redstone Gauges and Switches are incorporated source projects, not additional runtime dependencies to install.
 
-## Candidate validation status
+## Historical candidate validation status
 
-Draft only: publication qualification remains incomplete. Preparation starts from commit `90548e2afc49feb7b6328d52e58db8fc3eebe0fd`, which already contains the hatch-continuation, metal-ladder clearance, Steel Mesh Fence Gate passage/connection fixes, and adjacent-pair synchronization from PRs #43–46. That commit still builds 1.1.57 and is not the final source identity for 1.1.58.
+At the time of this preparation, publication qualification remained incomplete. Preparation starts from commit `90548e2afc49feb7b6328d52e58db8fc3eebe0fd`, which already contains the hatch-continuation, metal-ladder clearance, Steel Mesh Fence Gate passage/connection fixes, and adjacent-pair synchronization from PRs #43–46. That commit still builds 1.1.57 and is not the final source identity for 1.1.58.
 
-The final 1.1.58 source commit must pass exact-commit Build CI. Independently identify the rebuilt JAR by SHA-256, size and embedded mod/version, verify packaged notices, and record the applicable client and actual packaged dedicated-server save/restart checks before publication. No qualified 1.1.58 JAR, final source commit, hash or reviewed publisher manifest is established by these notes. GameTests alone do not replace those runtime checks.
+The final 1.1.58 source commit must pass exact-commit Build CI. Independently identify the rebuilt JAR by SHA-256, size and embedded mod/version, verify packaged notices, and record the applicable client checks before publication. The packaged dedicated-server smoke result and its limits are recorded below. The merged source, independently rebuilt byte identity and packaged-server smoke evidence are recorded below. Final client qualification and publication preflight are still pending. GameTests alone do not replace those runtime checks.
 
 Earlier 1.1.57 CI results, JAR hashes and gameplay observations are historical evidence only and must not be relabelled as 1.1.58 qualification. No exhaustive reporter-modpack compatibility claim is made. See [the qualification record](../../docs/releases/next-patch-qualification.md) for evidence boundaries and outstanding gates.
+
+## Historical 1.1.58 preparation evidence
+
+The evidence below applies only to the pinned 1.1.58 runtime. It does not qualify current main, later versions, or a new publication.
+
+Merged runtime source: `19c6bc7f8322002fd1d4710885d13f4482b4cb45`. Build run `38332247766` passed 262 GameTests and 84 publisher tests. A separate clean cloud build and actual packaged-server run `38336616164` verified SHA-256 `bc77067f9f6e0c03f987123b490812d32aa9171ad388fcd87ecdf50777883fdb`, size 19,677,256 bytes, embedded version/mod ID and packaged attribution matching the source.
+
+The isolated NeoForge 21.1.230 server with Immersive Engineering 12.4.2-194 successfully started, saved, stopped and restarted. Five asserted block states survived restart; redstone response and linked gate removal passed. Both phases stopped cleanly with no detected errors. This was a console-driven packaged-server smoke test. That initial run did not exercise loot, real-player clicks/climbing/rendering or multiplayer synchronization.
+
+The subsequent [packaged-server run 38337385481, job 115100442044](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/actions/runs/38337385481/job/115100442044) on qualification-tool commit `a799acf8f148119b9d02af20ef13b25f6ece9990` passed on 13 October 2026 using the same exact runtime source, JAR hash and size. After restart it verified an initially empty nearby drop area, destroyed the lower Steel Mesh Fence Gate segment through the native console command, verified both segments were absent, and observed exactly one nearby item entity containing exactly one gate item. Both server phases stopped cleanly with zero detected errors, and 30 offline harness tests passed. This proves only that console-destruction loot path. Other loot, player breaking, real-player clicks/climbing/rendering and multiplayer synchronization remain unverified.
+
+The same historical run returned `AUTOMATION_READY_DRY_RUN` and `UPLOAD_INTENT_READY` from the read-only publisher checks. No upload was performed. These results are not project-specific upload-permission proof, current publication preflight, or full release qualification.
+
+Earlier owner permission to omit a dedicated-server test was superseded by the request to perform this test. No omitted check is reported as passing. Final client evidence on 1.1.58 and remaining publication preflight remain pending; 1.1.57 user-reported gameplay stays scoped to that older artifact.
