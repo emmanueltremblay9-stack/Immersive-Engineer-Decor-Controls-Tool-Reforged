@@ -51,15 +51,18 @@ public final class EngineersDecorReforged {
    public EngineersDecorReforged(IEventBus modEventBus, ModContainer modContainer) {
       NeoForgeMod.enableMilkFluid();
       modContainer.registerConfig(Type.COMMON, ReforgedConfig.SPEC);
+      net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells::chunkLoaded);
       ControlsModule.init();
       EngineerToolsModule.init();
       addLegacyRegistryAliases();
       ModBlocks.BLOCKS.register(modEventBus);
       ModItems.ITEMS.register(modEventBus);
       ModBlockEntities.BLOCK_ENTITY_TYPES.register(modEventBus);
+      ModEntities.ENTITY_TYPES.register(modEventBus);
       ModMenus.MENU_TYPES.register(modEventBus);
       ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
       CREATIVE_TABS.register(modEventBus);
+      com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.TYPES.register(modEventBus);
       modEventBus.addListener(this::commonSetup);
       modEventBus.addListener(this::registerCapabilities);
       modEventBus.addListener(ModNetworking::register);

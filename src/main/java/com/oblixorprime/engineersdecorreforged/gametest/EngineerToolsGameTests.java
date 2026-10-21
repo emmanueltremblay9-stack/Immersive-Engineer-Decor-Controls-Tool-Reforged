@@ -454,6 +454,9 @@ public final class EngineerToolsGameTests {
       Player player = helper.makeMockPlayer(GameType.SURVIVAL);
       ItemStack bag = new ItemStack((ItemLike)EngineerToolsModule.SLEEPING_BAG.get());
       player.setItemInHand(InteractionHand.MAIN_HAND, bag);
+      BlockPos rest = helper.absolutePos(new BlockPos(2, 2, 2));
+      player.setPos(rest.getX() + 0.5, rest.getY(), rest.getZ() + 0.5);
+      helper.getLevel().setBlockAndUpdate(rest.east(), Blocks.CAMPFIRE.defaultBlockState());
       helper.getLevel().setDayTime(13000L);
       bag.use(helper.getLevel(), player, InteractionHand.MAIN_HAND);
       helper.assertValueEqual(0L, Math.floorMod(helper.getLevel().getDayTime(), 24000L), "sleeping bag should advance night to morning");
@@ -839,8 +842,9 @@ public final class EngineerToolsGameTests {
                new ItemStack(carpet), new ItemStack(Items.GLISTERING_MELON_SLICE), new ItemStack(Items.GOLDEN_APPLE),
                ItemStack.EMPTY, new ItemStack(Items.IRON_NUGGET), ItemStack.EMPTY
             )),
-            CraftingInput.of(3, 2, List.of(
-               new ItemStack(Items.IRON_NUGGET), new ItemStack(Items.IRON_NUGGET), new ItemStack(carpet),
+            CraftingInput.of(3, 3, List.of(
+               ieStack("hemp_fabric"), ieStack("hemp_fabric"), ieStack("hemp_fabric"),
+               ieStack("hemp_fiber"), ieStack("hemp_fiber"), ieStack("hemp_fiber"),
                new ItemStack(carpet), new ItemStack(carpet), new ItemStack(carpet)
             ))
          };
@@ -855,6 +859,10 @@ public final class EngineerToolsGameTests {
          }
       }
       helper.succeed();
+   }
+
+   private static ItemStack ieStack(String name) {
+      return new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", name)));
    }
 
    private static void assertRecipe(GameTestHelper helper, String name) {

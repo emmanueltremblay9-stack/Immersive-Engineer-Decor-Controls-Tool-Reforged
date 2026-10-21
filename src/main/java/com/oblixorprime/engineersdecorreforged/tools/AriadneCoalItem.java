@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.tools;
 
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -34,11 +35,13 @@ public class AriadneCoalItem extends TooltipItem {
             .defaultBlockState()
             .setValue(PortedBlocks.FACING, face))
          .setValue(PortedBlocks.ARIADNE_MARKER_ROTATION, markerDirection(context));
+      marker = NativeFluidloggedBlock.placement(marker, level.getFluidState(placePos));
       if (level.getBlockState(placePos).canBeReplaced()
          && level.getBlockState(clickedPos).isFaceSturdy(level, clickedPos, face)
          && marker.canSurvive(level, placePos)) {
          if (!level.isClientSide) {
-            level.setBlock(placePos, marker, 11);
+            if (!level.setBlock(placePos, marker, 11)) return InteractionResult.FAIL;
+            NativeFluidloggedBlock.schedule(marker, level, placePos);
             ItemStack stack = context.getItemInHand();
             boolean broke = false;
             if (!player.getAbilities().instabuild) {

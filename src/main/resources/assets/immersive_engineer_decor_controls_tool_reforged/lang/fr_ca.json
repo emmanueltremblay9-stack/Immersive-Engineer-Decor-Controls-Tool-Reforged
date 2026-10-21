@@ -504,7 +504,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.redia_tool.msg.badtarget": "L'outil REDIA n'a rien d'utile à faire ici.",
   "item.immersive_engineer_decor_controls_tool_reforged.redia_tool.msg.notorch": "Aucune torche disponible pour placer une balise.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag": "Sac de couchage",
-  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.help": "Le sac de couchage est un nécessaire de repos résistant\naux intempéries pour les travaux loin d’un lit.\nUtilisez-le la nuit dans l’Overworld pour vous reposer\njusqu’au matin. Il ne définit ni ne déplace votre point de réapparition.",
+  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.help": "Le sac de couchage est un nécessaire de repos résistant\naux intempéries pour les travaux loin d’un lit.\nUtilisez-le la nuit dans l’Overworld pour vous reposer\njusqu’au matin. Il ne définit ni ne déplace votre point de réapparition.\nLe repos exige l'une des huit cases voisines d'un feu de camp allumé.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.daytime": "Il est trop tôt pour se reposer.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.dimension": "Cet endroit ne permet pas de se reposer sans danger.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.rested": "Repos jusqu'au matin.",
@@ -862,7 +862,7 @@
   "jei.info.immersive_engineer_decor_controls_tool_reforged.tracker": "Le traqueur enregistre directement la position d’un bloc dans l’objet. Cliquez sur un bloc pour sauvegarder sa dimension et ses coordonnées. L’infobulle affiche la position. Utilisez le traqueur en vous accroupissant pour effacer la cible.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.ariadne_coal": "Outil de balisage non empilable offrant 100 utilisations. Un placement réussi ajoute une flèche sur une face solide et consomme de la durabilité ; un placement raté n'use pas l'objet.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.stimpack": "L’Auto Stim Pack est un outil médical d’urgence pour les travaux d’entretien dangereux. Activez-le manuellement pour vous soigner, obtenir une brève protection et une courte accélération. Dans l’inventaire, il peut aussi s’activer automatiquement quand la santé est faible, puis entre en recharge.",
-  "jei.info.immersive_engineer_decor_controls_tool_reforged.sleeping_bag": "Le sac de couchage est un nécessaire de repos résistant aux intempéries pour les travaux loin d’un lit. Utilisez-le la nuit dans l’Overworld pour vous reposer jusqu’au matin. Il ne définit ni ne déplace votre point de réapparition. Il refuse l’utilisation de jour, les environs dangereux avec des monstres proches et les dimensions impropres à un repos sûr.",
+  "jei.info.immersive_engineer_decor_controls_tool_reforged.sleeping_bag": "Le sac de couchage est un nécessaire de repos résistant aux intempéries pour les travaux loin d’un lit. Utilisez-le la nuit dans l’Overworld pour vous reposer jusqu’au matin. Il ne définit ni ne déplace votre point de réapparition. Il refuse l’utilisation de jour, les environs dangereux avec des monstres proches et les dimensions impropres à un repos sûr. Le repos exige l'une des huit cases voisines d'un feu de camp allumé.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.material_box": "La caisse de matériaux transporte une grande réserve d’un seul matériau de construction simple, non modifié et empilable. Tenez la caisse en main principale et une pile de matériau en main secondaire pour la charger. Utilisez-la avec la main secondaire vide pour retirer une pile. Elle contient jusqu’à 512 objets d’un seul type.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.diving_capsule": "La capsule d’air de plongée est une réserve d’urgence pour les travaux sous-marins. Utilisez-la manuellement pour restaurer votre air. Dans l’inventaire, elle peut aussi s’activer automatiquement quand l’air est presque épuisé, puis entre en recharge.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.musli_bar_press": "La presse à barres de muesli transforme des aliments courants en rations de terrain compactes. Emportez du pain, une pomme et des graines de blé, de pastèque, de citrouille, de betterave ou de chanvre industriel, puis utilisez la presse. Un pressage réussi consomme un exemplaire de chaque ingrédient, vérifie la place, crée quatre barres Muslee Melange et endommage la presse.",
@@ -896,5 +896,9 @@
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.dimension.overworld": " dans le monde normal",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.distance": " | à %1$s blocs",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.entity": "Entité : %1$s",
-  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Injection de l'auto-injecteur stimulant"
+  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Injection de l'auto-injecteur stimulant",
+  "key.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Ouvrir la page du manuel de l’ingénieur",
+  "key.categories.immersive_engineer_decor_controls_tool_reforged": "IEDCTR",
+  "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Maintenez %s pour ouvrir le manuel de l’ingénieur",
+  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.campfire": "Reposez-vous près d'un feu de camp allumé, dans l'une des huit cases voisines."
 }

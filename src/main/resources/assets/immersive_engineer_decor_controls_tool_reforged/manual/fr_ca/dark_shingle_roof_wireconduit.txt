@@ -1,5 +1,7 @@
 Conduit de câble de toit
-Élément de toiture patinée
-<&recipe>Le conduit de câble de toit en bardeaux foncés complète les toitures sombres et fonctionnelles des ateliers et hangars industriels.<br>
+Passage vertical de câble
+<&recipe>Le conduit de câble de toit en bardeaux foncés comporte une petite ouverture centrale traversant le bloc de haut en bas.<br>
 <br>
-Utilisation : combinez ces pièces pour créer des profils de toiture crédibles.<br>
+Utilisation : alignez verticalement deux connecteurs Immersive Engineering compatibles, au-dessus et au-dessous du trou, puis reliez-les avec la bobine correspondante. Le conduit laisse passer le câble ; il ne sert pas lui-même de connecteur ou de relais. Un câble décentré ou latéral peut heurter les parois.<br>
+<br>
+Les nouvelles poses gardent le conduit droit et à l’endroit. Les conduits droits déjà posés retrouvent leur passage sans remplacement. Replacez un ancien élément en angle pour retrouver son conduit visible.<br>

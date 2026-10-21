@@ -1,6 +1,9 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
 import com.mojang.serialization.MapCodec;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
+import com.oblixorprime.engineersdecorreforged.block.NativeTransientFluidBlock;
+import com.oblixorprime.engineersdecorreforged.block.StairWaterFlow;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -14,12 +17,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -31,6 +36,8 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -115,10 +122,11 @@ public final class MachineBlocks {
    public static class DirectionalMachineBlock extends MachineBlocks.MachineBlock {
       public DirectionalMachineBlock(Properties properties, MachineKind kind) {
          super(properties, kind);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(MachineBlocks.FACING, Direction.NORTH));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(MachineBlocks.FACING, Direction.NORTH));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{MachineBlocks.FACING});
       }
 
@@ -131,7 +139,7 @@ public final class MachineBlocks {
             }
          }
 
-         return (BlockState)this.defaultBlockState().setValue(MachineBlocks.FACING, facing);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(MachineBlocks.FACING, facing), context);
       }
 
       protected BlockState rotate(BlockState state, Rotation rotation) {
@@ -146,15 +154,16 @@ public final class MachineBlocks {
    public static class HorizontalMachineBlock extends MachineBlocks.MachineBlock {
       public HorizontalMachineBlock(Properties properties, MachineKind kind) {
          super(properties, kind);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{MachineBlocks.HORIZONTAL_FACING});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()), context);
       }
 
       protected BlockState rotate(BlockState state, Rotation rotation) {
@@ -209,7 +218,7 @@ public final class MachineBlocks {
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          Direction labelDirection = context.isSecondaryUseActive() ? context.getHorizontalDirection() : context.getHorizontalDirection().getOpposite();
-         return (BlockState)this.defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, labelDirection);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, labelDirection), context);
       }
 
       public static boolean isLabelHit(BlockState state, BlockHitResult hit) {
@@ -241,7 +250,7 @@ public final class MachineBlocks {
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          Direction direction = context.isSecondaryUseActive() ? context.getClickedFace() : Direction.UP;
-         return (BlockState)this.defaultBlockState().setValue(MachineBlocks.FACING, direction);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(MachineBlocks.FACING, direction), context);
       }
 
       @Override
@@ -254,10 +263,11 @@ public final class MachineBlocks {
    public static class LevelOnlyMachineBlock extends MachineBlocks.MachineBlock {
       public LevelOnlyMachineBlock(Properties properties, MachineKind kind) {
          super(properties, kind);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(MachineBlocks.LEVEL_0_3, 0));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(MachineBlocks.LEVEL_0_3, 0));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{MachineBlocks.LEVEL_0_3});
       }
    }
@@ -278,15 +288,16 @@ public final class MachineBlocks {
    public static class LitMachineBlock extends MachineBlocks.MachineBlock {
       public LitMachineBlock(Properties properties, MachineKind kind) {
          super(properties, kind);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(MachineBlocks.LIT, false));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(MachineBlocks.LIT, false));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{MachineBlocks.LIT});
       }
    }
 
-   public static class MachineBlock extends BaseEntityBlock {
+   public static class MachineBlock extends BaseEntityBlock implements NativeTransientFluidBlock {
       public static final MapCodec<MachineBlocks.MachineBlock> CODEC = simpleCodec(
          properties -> new MachineBlocks.MachineBlock(properties, MachineKind.LABELED_CRATE)
       );
@@ -295,6 +306,7 @@ public final class MachineBlocks {
       public MachineBlock(Properties properties, MachineKind kind) {
          super(properties);
          this.kind = kind;
+         registerDefaultState(NativeFluidloggedBlock.dry(defaultBlockState()));
       }
 
       public MachineKind kind() {
@@ -366,6 +378,49 @@ public final class MachineBlocks {
       protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
          return level.getBlockEntity(pos) instanceof MachineBlockEntity machine ? machine.comparatorOutput() : 0;
       }
+      @Override protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
+         builder.add(BlockStateProperties.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
+      }
+      @Override public BlockState getStateForPlacement(BlockPlaceContext context) {
+         return NativeFluidloggedBlock.placement(defaultBlockState(), context);
+      }
+      @Override protected FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbor,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighbor, level, pos, neighborPos);
+      }
+      @Override public boolean canPlaceLiquid(Player player, BlockGetter level, BlockPos pos, BlockState state, net.minecraft.world.level.material.Fluid fluid) {
+         return (player == null || player.isShiftKeyDown()) && NativeTransientFluidBlock.super.canPlaceLiquid(player, level, pos, state, fluid);
+      }
+      @Override public ItemStack pickupBlock(Player player, LevelAccessor level, BlockPos pos, BlockState state) {
+         return player != null && !player.isShiftKeyDown() ? ItemStack.EMPTY : NativeTransientFluidBlock.super.pickupBlock(player, level, pos, state);
+      }
+   }
+
+   /** Water in the block's world cell is independent of the existing machine tank. */
+   public static class PassiveFluidAccumulatorBlock extends MachineBlocks.MachineBlock {
+      public static final MapCodec<MachineBlocks.PassiveFluidAccumulatorBlock> CODEC = simpleCodec(MachineBlocks.PassiveFluidAccumulatorBlock::new);
+      public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+      public PassiveFluidAccumulatorBlock(Properties properties) {
+         super(properties, MachineKind.PASSIVE_FLUID_ACCUMULATOR);
+         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+      }
+
+      @Override
+      protected MapCodec<? extends BaseEntityBlock> codec() {
+         return CODEC;
+      }
+
+
+
+
+
+
+
+
    }
 
    public static class MetalCraftingTableBlock extends MachineBlocks.MachineBlock {
@@ -433,7 +488,7 @@ public final class MachineBlocks {
       }
    }
 
-   public static class PipeValveBlock extends DirectionalBlock {
+   public static class PipeValveBlock extends DirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<MachineBlocks.PipeValveBlock> CODEC = simpleCodec(MachineBlocks.PipeValveBlock::plain);
       private final boolean redstoneAware;
 
@@ -445,7 +500,7 @@ public final class MachineBlocks {
          super(properties);
          this.redstoneAware = redstoneAware;
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any())
+            (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any()))
                                  .setValue(FACING, Direction.NORTH))
                               .setValue(MachineBlocks.RS_N, false))
                            .setValue(MachineBlocks.RS_E, false))
@@ -461,6 +516,7 @@ public final class MachineBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(BlockStateProperties.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(
             new Property[]{FACING, MachineBlocks.RS_N, MachineBlocks.RS_E, MachineBlocks.RS_S, MachineBlocks.RS_W, MachineBlocks.RS_U, MachineBlocks.RS_D}
          );
@@ -468,7 +524,7 @@ public final class MachineBlocks {
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          Direction direction = context.isSecondaryUseActive() ? context.getClickedFace().getOpposite() : context.getClickedFace();
-         return this.withRedstoneConnectors(context.getLevel(), context.getClickedPos(), (BlockState)this.defaultBlockState().setValue(FACING, direction));
+         return NativeFluidloggedBlock.placement(this.withRedstoneConnectors(context.getLevel(), context.getClickedPos(), (BlockState)this.defaultBlockState().setValue(FACING, direction)), context);
       }
 
       protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
@@ -516,15 +572,22 @@ public final class MachineBlocks {
       protected BlockState mirror(BlockState state, Mirror mirror) {
          return state.rotate(mirror.getRotation((Direction)state.getValue(FACING)));
       }
+      @Override protected FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbor,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighbor, level, pos, neighborPos);
+      }
    }
 
    public static class SolarPanelBlock extends MachineBlocks.MachineBlock {
       public SolarPanelBlock(Properties properties) {
          super(properties, MachineKind.SMALL_SOLAR_PANEL);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(MachineBlocks.EXPOSITION, 0));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(MachineBlocks.EXPOSITION, 0));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{MachineBlocks.EXPOSITION});
       }
    }

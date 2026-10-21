@@ -2,12 +2,62 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## Unreleased - Sliding door sound recipient correction
+
+### Fixed
+- Include the initiating player in the Metal Sliding Door's server sound broadcast when opening or closing it manually. Preserve paired-door synchronization, redstone behavior, sound selection, and game-event attribution.
+
+### Added
+- Compiled-bytecode regression coverage for the actual sound exclusion argument and server GameTests capturing packets sent to the initiating player and a nearby observer, including paired doors, upper/lower clicks, redstone and powered no-op clicks. This is not physical audio or real multiplayer client acceptance.
+
+## [1.1.63-reconstructed] - Unreleased campfire and hemp tool recipes
+
+### Changed
+- Require one of the eight horizontal neighboring cells of a lit vanilla campfire for Sleeping Bag rest, preserving existing night and safety rules.
+- Craft Sleeping Bags from hemp fabric, hemp fiber and wool carpets; craft Material Boxes from hemp rope coils, iron plates and treated wooden crates. Preserve Material Box storage.
+
+### Fixed
+- Refuse modified or filled IE crates in the Material Box recipe so sealed crate inventories are never consumed.
+
+### Added
+- Campfire boundary and failure-conservation GameTests, exact recipe and rejected-ingredient tests, with all sixteen carpet colors retained.
+
+## [1.1.61-reconstructed] - Unreleased lava surface correction
+
+### Fixed
+- Read exterior fluid cells at their actual neighbor, diagonal and upper positions when calculating native lava/fluid surface heights; use the same sampled-cell query in optional Embeddium rendering. Preserve block geometry and existing flow/storage rules.
+
+### Added
+- Isolated native/Embeddium stepped lava scenes with raw height, shared-corner continuity, server/client and screenshot evidence gates.
+
+## [1.1.60-reconstructed] - Unreleased generic fluidlogging draft
+
+### Added
+- Independent named chunk cells for standard world fluids on the existing 200 decorative opt-ins, preserving legacy source and transient-water saves, machine tanks and Passive Fluid Accumulator contracts.
+- Initial palette and per-cell update/removal synchronization, immutable native/Embeddium render snapshots, fluid ticking and auxiliary emission without loading chunks from light workers.
+- Twelve generic server GameTests, 60 exact-state client synchronization cases and 18 dry/source/current views across all six raised catwalk variants, with CI evidence gates.
+
+### Fixed
+- Keep client attachments authoritative to server synchronization when block packets coalesce intermediate states or client predictions are reverted.
+- Respect each fluid's drop-off and connected-above geometry when suppressing source creation inside transient cells.
+
+## [1.1.59-reconstructed] - Unreleased fluidlogging draft
+
+### Added
+- First native source-cell cycle for Steel Catwalk, Steel Catwalk Stairs, Elevated Steel Catwalk and Steel Railing: water, lava and IE creosote, actual bucket conservation, legacy waterlogged saves, native chunk/block synchronization and fluid rendering. Other blocks and machines retain their current behavior.
+- Nine server GameTests and a 24-case integrated client synchronization/tessellation matrix. Existing Passive Fluid Accumulator tank/world-cell and collection contracts remain unchanged.
+- Pinned Fluidloggable/PR15 source-license review and reference attribution; no Fluidloggable code or dependency is bundled.
+
+### Fixed
+- Let natural water pass through initially dry Steel Catwalk Stairs without creating a stored source, extending its range or preventing recession after supply removal. Preserve existing bucket sources and exclude other blocks, lava and creosote.
+
 ## [1.1.58-reconstructed] - Unreleased candidate
 
 ### Added
 - Added click synchronization for adjacent matching pairs of native-compatible doors and fence gates, including Old Industrial Wood Door and Steel Mesh Fence Gate. Supports inherited vanilla interaction methods; custom interaction overrides and custom early-use items are excluded. Respects companion interaction vetoes, limits synchronization to one valid pair, and does not add redstone propagation.
 
 ### Fixed
+- Restored the Dark Shingle Roof Wire Conduit’s vertical center opening in collision and selection geometry. IE wires can pass between existing aligned connectors above and below the roof; walls remain solid. New fittings stay upright and straight, while saved properties and all models are preserved. Existing corner-shaped fittings retain their legacy state and need replacement to show a conduit.
 - Corrected Factory Hopper placement/output direction and extraction from adjacent vanilla inventories (#22).
 - Corrected Steel Floor Grating collision height (#23) and Steel Double T Support collision geometry (#24).
 - Restored Panzer Glass Slab translucent render declarations (#21) and aligned the Exit Sign selection outline while retaining empty collision (#33).

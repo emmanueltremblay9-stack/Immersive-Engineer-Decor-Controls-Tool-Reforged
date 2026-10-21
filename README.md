@@ -27,7 +27,7 @@ Latest qualified and publicly released version: `1.1.56-reconstructed`.
 
 ## Current candidate
 
-Active development version: `1.1.58-reconstructed`, an unpublished candidate carrying the placement, collision, selection and synchronized-accessway changes through PR #46. `1.1.57-reconstructed` was deferred without publication. The version increment preserves runtime behavior and dependencies; prior candidate hashes and gameplay observations do not qualify the newly versioned JAR.
+Active development version: `1.1.60-reconstructed`, an unpublished generic native fluidlogging draft for the 200 explicitly supported decorative blocks. Existing waterlogging and source cells remain compatible. Registered standard world fluids use independent chunk cells with named persistence, initial/update synchronization and renderer snapshots. The Passive Fluid Accumulator retains its separate exterior cell and tank. See [generic scope and qualification](docs/testing/generic-fluid-cells.md). No release or installation is implied.
 
 See the [candidate notes](release-bundle/1.1.58-reconstructed/curseforge-notes.md) and [qualification gates](docs/releases/next-patch-qualification.md). `1.1.56-reconstructed` remains the latest qualified public release until those gates and publication readback pass.
 

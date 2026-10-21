@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.rsgauges;
 
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.ModItems;
 import com.oblixorprime.engineersdecorreforged.ReforgedConfig;
 import java.util.ArrayList;
@@ -361,12 +362,12 @@ public final class ControlsModule {
          .mapColor(MapColor.METAL)
          .strength(0.4F, 1.0F)
          .sound(SoundType.METAL)
-         .noOcclusion();
+         .noOcclusion().lightLevel(NativeFluidloggedBlock::light);
    }
 
    private static net.minecraft.world.level.block.state.BlockBehaviour.Properties indicatorProperties() {
       return controlProperties()
-         .lightLevel(state -> state.hasProperty(ControlsBlockTypes.POWER_BOOL) && state.getValue(ControlsBlockTypes.POWER_BOOL) ? 10 : 0);
+         .lightLevel(state -> Math.max(NativeFluidloggedBlock.light(state), state.hasProperty(ControlsBlockTypes.POWER_BOOL) && state.getValue(ControlsBlockTypes.POWER_BOOL) ? 10 : 0));
    }
 
    private static net.minecraft.world.level.block.state.BlockBehaviour.Properties glassProperties() {
@@ -375,6 +376,6 @@ public final class ControlsModule {
          .strength(0.3F, 1.0F)
          .sound(SoundType.GLASS)
          .noOcclusion()
-         .lightLevel(state -> state.hasProperty(ControlsBlockTypes.POWERED) && state.getValue(ControlsBlockTypes.POWERED) ? 8 : 0);
+         .lightLevel(state -> Math.max(NativeFluidloggedBlock.light(state), state.hasProperty(ControlsBlockTypes.POWERED) && state.getValue(ControlsBlockTypes.POWERED) ? 8 : 0));
    }
 }

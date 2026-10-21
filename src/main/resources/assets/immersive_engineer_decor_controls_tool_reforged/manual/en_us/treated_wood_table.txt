@@ -2,5 +2,11 @@ Treated Wood Table
 Workshop furnishing
 <&recipe>This block is a practical shop furnishing for work rooms and maintenance corners.<br>
 <br>
-Usage: Set it beside benches, crates, and compact machines.<br>
+Place this table directly north, south, east or west of a Treated Wood Stool at the same block height. Meals finished on that stool gain 30% of their normal saturation instead of its usual 20%. Several tables do not stack the bonus.<br>
+<np>
+Cake service
+Ten percent while on foot
+Place a real vanilla cake on this table. A player on foot receives 10% extra saturation only when actually eating a slice from that cake. Holding other food near the table gives no standing bonus. Candle cakes qualify when eaten; adding or extinguishing their candles does not.<br>
+<br>
+Seated players use the stool's 20% or 30% rule without stacking the standing bonus. Saturation cannot exceed hunger. Steel tables, crafting tables and other furniture do not qualify.<br>
 

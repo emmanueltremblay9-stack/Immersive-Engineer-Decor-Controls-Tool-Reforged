@@ -15,6 +15,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 repositories {
     mavenCentral()
+    maven { url = "https://api.modrinth.com/maven"; content { includeGroup "maven.modrinth" } }
     maven {
         name = 'NeoForge'
         url = 'https://maven.neoforged.net/releases'
@@ -62,11 +63,22 @@ neoForge {
 }
 
 dependencies {
+    testImplementation "junit:junit:4.13.2"
+    // Optional renderer API only; never bundled or installed by the runtime dependency graph.
+    compileOnly "maven.modrinth:embeddium:J7b96IEd"
     implementation "blusunrize.immersiveengineering:ImmersiveEngineering:${immersive_engineering_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     if (providers.gradleProperty('include_jei_runtime').map { it.toBoolean() }.getOrElse(true)) {
         runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
     }
+}
+
+// These ordinary JUnit tests inspect mapped Minecraft/Mixin bytecode as resources.
+// ModDev attaches game libraries to main's classpaths, not testImplementation.
+// Reuse those resolved inputs without enabling the NeoForge bootstrapped test engine.
+sourceSets.test {
+    compileClasspath += sourceSets.main.compileClasspath
+    runtimeClasspath += sourceSets.main.runtimeClasspath
 }
 
 tasks.named('processResources', ProcessResources).configure {

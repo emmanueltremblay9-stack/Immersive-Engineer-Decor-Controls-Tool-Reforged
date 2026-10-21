@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/emmanueltremblay9-stack/Immersive-Engineer-D
 
 [[mods]]
 modId="immersive_engineer_decor_controls_tool_reforged"
-version="1.1.58-reconstructed"
+version="1.1.63-reconstructed"
 displayName="Immersive Engineer Decor&Controls&Tool Reforged"
 displayURL="https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged"
 logoFile="pack.png"
@@ -42,3 +42,9 @@ type="optional"
 versionRange="[19.32.0.359,)"
 ordering="AFTER"
 side="BOTH"
+
+[[mixins]]
+config="immersive_engineer_decor_controls_tool_reforged.mixins.json"
+
+[[mixins]]
+config="immersive_engineer_decor_controls_tool_reforged.fluid.mixins.json"

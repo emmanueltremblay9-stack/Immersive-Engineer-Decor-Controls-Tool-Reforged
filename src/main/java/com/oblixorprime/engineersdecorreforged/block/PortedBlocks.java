@@ -2,14 +2,20 @@ package com.oblixorprime.engineersdecorreforged.block;
 
 import com.mojang.serialization.MapCodec;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -26,6 +32,8 @@ import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
@@ -39,10 +47,12 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -58,8 +68,12 @@ public final class PortedBlocks {
    public static final BooleanProperty EAST = BooleanProperty.create("east");
    public static final BooleanProperty SOUTH = BooleanProperty.create("south");
    public static final BooleanProperty WEST = BooleanProperty.create("west");
+   // Legacy saves have no paid additions: their existing one-item loot remains valid.
+   public static final IntegerProperty PAID_RAILINGS = IntegerProperty.create("paid_railings", 0, 4);
    public static final BooleanProperty LEFT_RAILING = BooleanProperty.create("left_railing");
    public static final BooleanProperty RIGHT_RAILING = BooleanProperty.create("right_railing");
+   // Bit 0 is left, bit 1 is right. Unedited legacy sides retain automatic neighbor connections.
+   public static final IntegerProperty EDITED_STAIR_SIDES = IntegerProperty.create("edited_stair_sides", 0, 3);
    public static final BooleanProperty EASTWEST = BooleanProperty.create("eastwest");
    public static final BooleanProperty LEFTBEAM = BooleanProperty.create("leftbeam");
    public static final BooleanProperty RIGHTBEAM = BooleanProperty.create("rightbeam");
@@ -116,7 +130,7 @@ public final class PortedBlocks {
    }
 
    private static Direction catwalkStairPlacementFacing(BlockPlaceContext context) {
-      return resolveHorizontalFacingFromClickedFaceBorder(context, context.getHorizontalDirection());
+      return CatwalkStairsPlacement.facing(context);
    }
 
    private static Direction resolveHorizontalFacingFromClickedFaceBorder(BlockPlaceContext context, Direction fallback) {
@@ -277,32 +291,151 @@ public final class PortedBlocks {
       return shape;
    }
 
+   public enum PartKind { BASE, RAILING, INSET_LIGHT }
+
+   /** A visible selectable component; lamps are distinct from the base without inventing a rail side. */
+   public record RailingPart(@Nullable Direction side, VoxelShape shape, PartKind kind) {
+      public RailingPart(@Nullable Direction side, VoxelShape shape) {
+         this(side, shape, side == null ? PartKind.BASE : PartKind.RAILING);
+      }
+
+      public boolean sameComponent(RailingPart other) {
+         return kind == other.kind && side == other.side;
+      }
+   }
+
+   /** Shared by native mining and the client highlight. World occlusion is authoritative. */
+   @Nullable
+   public static RailingPart selectRailingPart(Level level, BlockPos pos, Vec3 start, Vec3 end, Entity context) {
+      BlockState state = level.getBlockState(pos);
+      if (!hasSelectableRailings(state)) {
+         return null;
+      }
+      BlockHitResult worldHit = StairRailingTargeting.clipBlocks(level, start, end, context);
+      if (worldHit.getType() != HitResult.Type.BLOCK || !worldHit.getBlockPos().equals(pos)) {
+         return null;
+      }
+      if (state.getBlock() instanceof CatwalkStairsBlock) {
+         return StairRailingTargeting.hasCloserEntity(context, start, end, worldHit)
+            ? null : selectStairRailingPart(state, pos, start, end);
+      }
+      if (state.getBlock() instanceof RaisedCatwalkBlock raised) {
+         return raised.selectPart(state, pos, start, end);
+      }
+      CatwalkBlock block = (CatwalkBlock)state.getBlock();
+      state = block.explicitSides(state);
+      RailingPart selected = null;
+      double distance = Double.POSITIVE_INFINITY;
+      if (!(block instanceof RailingBlock)) {
+         BlockHitResult floorHit = CATWALK_FLOOR_SHAPE.clip(start, end, pos);
+         if (floorHit != null) {
+            selected = new RailingPart(null, CATWALK_FLOOR_SHAPE);
+            distance = start.distanceToSqr(floorHit.getLocation());
+         }
+      }
+      // At shared boundaries the floor, then north/east/south/west, wins exact ties.
+      for (Direction side : new Direction[]{Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST}) {
+         if (!state.getValue(CatwalkBlock.connectionProperty(side))) {
+            continue;
+         }
+         VoxelShape shape = switch (side) {
+            case NORTH -> NORTH_RAIL_SHAPE;
+            case EAST -> EAST_RAIL_SHAPE;
+            case SOUTH -> SOUTH_RAIL_SHAPE;
+            case WEST -> WEST_RAIL_SHAPE;
+            default -> throw new IllegalStateException("Expected a horizontal rail side");
+         };
+         BlockHitResult hit = shape.clip(start, end, pos);
+         if (hit != null && start.distanceToSqr(hit.getLocation()) < distance - 1.0E-9) {
+            selected = new RailingPart(side, shape);
+            distance = start.distanceToSqr(hit.getLocation());
+         }
+      }
+      return selected;
+   }
+
+   public static boolean hasSelectableRailings(BlockState state) {
+      // Include unlit raised decks too: an old lamp completion must never turn into a base break.
+      return state.getBlock() instanceof CatwalkBlock || state.getBlock() instanceof CatwalkStairsBlock
+         || state.getBlock() instanceof RaisedCatwalkBlock;
+   }
+
+   @Nullable
+   static RailingPart selectStairRailingPart(BlockState state, BlockPos pos, Vec3 start, Vec3 end) {
+      Direction facing = state.getValue(HORIZONTAL_FACING);
+      VoxelShape floor = catwalkStairShape(facing);
+      BlockHitResult hit = floor.clip(start, end, pos);
+      RailingPart selected = hit == null ? null : new RailingPart(null, floor);
+      double distance = hit == null ? Double.POSITIVE_INFINITY : start.distanceToSqr(hit.getLocation());
+      for (boolean left : new boolean[]{true, false}) {
+         if (!state.getValue(left ? LEFT_RAILING : RIGHT_RAILING)) {
+            continue;
+         }
+         VoxelShape shape = sideRailShape(facing, left);
+         hit = shape.clip(start, end, pos);
+         if (hit != null && start.distanceToSqr(hit.getLocation()) < distance - 1.0E-9) {
+            selected = new RailingPart(left ? facing.getCounterClockWise() : facing.getClockWise(), shape);
+            distance = start.distanceToSqr(hit.getLocation());
+         }
+      }
+      return selected;
+   }
+
+   private static VoxelShape railingCollision(BlockState state, boolean includeFloor) {
+      VoxelShape shape = includeFloor ? CATWALK_FLOOR_SHAPE : Shapes.empty();
+      double top = includeFloor ? 27.0 : 24.0; // Fence-height protection above each walking surface.
+      boolean legacyNorth = !includeFloor && CatwalkBlock.sideCount(state) == 0;
+      if (legacyNorth || state.getValue(NORTH)) {
+         shape = Shapes.or(shape, Block.box(0, 3, 0, 16, top, 2));
+      }
+      if (state.getValue(EAST)) {
+         shape = Shapes.or(shape, Block.box(14, 3, 0, 16, top, 16));
+      }
+      if (state.getValue(SOUTH)) {
+         shape = Shapes.or(shape, Block.box(0, 3, 14, 16, top, 16));
+      }
+      if (state.getValue(WEST)) {
+         shape = Shapes.or(shape, Block.box(0, 3, 0, 2, top, 16));
+      }
+      return shape;
+   }
+
    private static VoxelShape catwalkStairShape(Direction facing) {
       return switch (facing) {
-         case NORTH -> Shapes.or(Block.box(0.0, 0.0, 8.0, 16.0, 5.0, 16.0), Block.box(0.0, 5.0, 0.0, 16.0, 10.0, 8.0));
-         case SOUTH -> Shapes.or(Block.box(0.0, 0.0, 0.0, 16.0, 5.0, 8.0), Block.box(0.0, 5.0, 8.0, 16.0, 10.0, 16.0));
-         case WEST -> Shapes.or(Block.box(8.0, 0.0, 0.0, 16.0, 5.0, 16.0), Block.box(0.0, 5.0, 0.0, 8.0, 10.0, 16.0));
-         case EAST -> Shapes.or(Block.box(0.0, 0.0, 0.0, 8.0, 5.0, 16.0), Block.box(8.0, 5.0, 0.0, 16.0, 10.0, 16.0));
+         case NORTH -> Shapes.or(Block.box(0, 0, 8, 16, 4, 16), Block.box(0, 4, 0, 16, 12, 8));
+         case SOUTH -> Shapes.or(Block.box(0, 0, 0, 16, 4, 8), Block.box(0, 4, 8, 16, 12, 16));
+         case WEST -> Shapes.or(Block.box(8, 0, 0, 16, 4, 16), Block.box(0, 4, 0, 8, 12, 16));
+         case EAST -> Shapes.or(Block.box(0, 0, 0, 8, 4, 16), Block.box(8, 4, 0, 16, 12, 16));
          default -> CATWALK_FLOOR_SHAPE;
       };
    }
 
-   private static VoxelShape sideRailShape(Direction facing, boolean left) {
-      Direction side = switch (facing) {
-         case NORTH -> left ? Direction.WEST : Direction.EAST;
-         case SOUTH -> left ? Direction.EAST : Direction.WEST;
-         case WEST -> left ? Direction.SOUTH : Direction.NORTH;
-         case EAST -> left ? Direction.NORTH : Direction.SOUTH;
-         default -> left ? Direction.WEST : Direction.EAST;
-      };
+   private static final VoxelShape[][] STAIR_RAIL_SHAPES = stairRailShapes(false);
+   private static final VoxelShape[][] STAIR_RAIL_COLLISIONS = stairRailShapes(true);
 
-      return switch (side) {
-         case NORTH -> NORTH_RAIL_SHAPE;
-         case SOUTH -> SOUTH_RAIL_SHAPE;
-         case WEST -> WEST_RAIL_SHAPE;
-         case EAST -> EAST_RAIL_SHAPE;
-         default -> Shapes.empty();
-      };
+   private static VoxelShape[][] stairRailShapes(boolean collision) {
+      VoxelShape[][] result = new VoxelShape[4][2];
+      for (int side = 0; side < 2; side++) {
+         VoxelShape north = Shapes.empty();
+         double minX = side == 0 ? 0 : 14;
+         for (int z = 0; z < 16; z++) {
+            double floor = z < 8 ? 12 : 4;
+            // Keep the visible sloped outline, but guard the whole side above the highest tread.
+            // A locally lowered cap is only one block above the upper tread, allowing a diagonal
+            // normal/auto-jump over its lower half before the entity descends onto the lower tread.
+            double top = collision ? 12 + 24 : 30.5 - z * 15.0 / 16.0;
+            north = Shapes.or(north, Block.box(minX, floor, z, minX + 2, top, z + 1));
+         }
+         for (Direction facing : Direction.Plane.HORIZONTAL) {
+            result[facing.get2DDataValue()][side] = orientedNorthShape(north, facing, true);
+         }
+      }
+      return result;
+   }
+
+   private static VoxelShape sideRailShape(Direction facing, boolean left) {
+      // StairRailingTargeting also discovers the unchanged upper model from the cell above.
+      return STAIR_RAIL_SHAPES[facing.get2DDataValue()][left ? 0 : 1];
    }
 
    public static class AriadneMarkerBlock extends PortedBlocks.DirectionalPortBlock {
@@ -320,7 +453,8 @@ public final class PortedBlocks {
 
       @Override
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{FACING, PortedBlocks.ARIADNE_MARKER_ROTATION});
+         super.createBlockStateDefinition(builder);
+         builder.add(PortedBlocks.ARIADNE_MARKER_ROTATION);
       }
 
       protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -330,6 +464,7 @@ public final class PortedBlocks {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return direction == ((Direction)state.getValue(FACING)).getOpposite() && !this.canSurvive(state, level, pos) ? Blocks.AIR.defaultBlockState() : state;
       }
 
@@ -342,58 +477,59 @@ public final class PortedBlocks {
       }
    }
 
-   public static class CatwalkBlock extends Block implements SimpleWaterloggedBlock {
+   public static class CatwalkBlock extends Block implements NativeTransientFluidBlock {
       public CatwalkBlock(Properties properties) {
-         super(properties);
+         super(properties.lightLevel(NativeFluidloggedBlock::light));
          this.registerDefaultState(
             (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.NORTH, false))
                         .setValue(PortedBlocks.EAST, false))
                      .setValue(PortedBlocks.SOUTH, false))
                   .setValue(PortedBlocks.WEST, false))
-               .setValue(PortedBlocks.WATERLOGGED, false)
+               .setValue(PortedBlocks.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(PortedBlocks.PAID_RAILINGS, 0)
          );
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{PortedBlocks.NORTH, PortedBlocks.EAST, PortedBlocks.SOUTH, PortedBlocks.WEST, PortedBlocks.WATERLOGGED});
+         builder.add(new Property[]{PortedBlocks.NORTH, PortedBlocks.EAST, PortedBlocks.SOUTH, PortedBlocks.WEST,
+            PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, PortedBlocks.PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return this.connectedState(
-            (BlockState)this.defaultBlockState()
-               .setValue(PortedBlocks.WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER),
-            context.getLevel(),
-            context.getClickedPos()
-         );
+         return NativeFluidloggedBlock.placement(this.defaultBlockState(), context);
       }
 
       public FluidState getFluidState(BlockState state) {
-         return state.getValue(PortedBlocks.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+         return StairWaterFlow.fluid(state);
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-         if ((Boolean)state.getValue(PortedBlocks.WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+         NativeFluidloggedBlock.schedule(state, level, pos);
+
+         // These properties describe installed edge rails, not neighbor connections.
+         return state;
+      }
+
+      protected BlockState explicitSides(BlockState state) {
+         // Old standalone all-false states visibly contain a north rail.
+         return this instanceof RailingBlock && sideCount(state) == 0 ? state.setValue(NORTH, true) : state;
+      }
+
+      private static int sideCount(BlockState state) {
+         int count = 0;
+         for (Direction direction : Direction.Plane.HORIZONTAL) {
+            if (state.getValue(connectionProperty(direction))) {
+               ++count;
+            }
          }
-
-         return direction.getAxis().isHorizontal() ? (BlockState)state.setValue(this.connectionProperty(direction), this.connectsTo(neighborState)) : state;
+         return count;
       }
 
-      protected BlockState connectedState(BlockState state, BlockGetter level, BlockPos pos) {
-         return (BlockState)((BlockState)((BlockState)((BlockState)state.setValue(PortedBlocks.NORTH, this.connectsTo(level.getBlockState(pos.north()))))
-                  .setValue(PortedBlocks.EAST, this.connectsTo(level.getBlockState(pos.east()))))
-               .setValue(PortedBlocks.SOUTH, this.connectsTo(level.getBlockState(pos.south()))))
-            .setValue(PortedBlocks.WEST, this.connectsTo(level.getBlockState(pos.west())));
+      protected final int paidRailings(BlockState state) {
+         int capacity = Math.max(0, sideCount(state) - (this instanceof RailingBlock ? 1 : 0));
+         return Math.min(state.getValue(PAID_RAILINGS), capacity);
       }
 
-      protected boolean connectsTo(BlockState neighborState) {
-         Block block = neighborState.getBlock();
-         return block instanceof PortedBlocks.CatwalkBlock
-            || block instanceof PortedBlocks.CatwalkStairsBlock
-            || block instanceof PortedBlocks.FenceGateSegmentBlock;
-      }
-
-      private BooleanProperty connectionProperty(Direction direction) {
+      protected static BooleanProperty connectionProperty(Direction direction) {
          return switch (direction) {
             case NORTH -> PortedBlocks.NORTH;
             case SOUTH -> PortedBlocks.SOUTH;
@@ -403,26 +539,178 @@ public final class PortedBlocks {
          };
       }
 
+      protected static Direction clickedEdge(Vec3 hit, BlockPos pos, Direction fallback) {
+         double x = Mth.clamp(hit.x - pos.getX(), 0.0, 1.0);
+         double z = Mth.clamp(hit.z - pos.getZ(), 0.0, 1.0);
+         Direction[] directions = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
+         double[] distances = {z, 1.0 - x, 1.0 - z, x};
+         double nearest = Math.min(Math.min(distances[0], distances[1]), Math.min(distances[2], distances[3]));
+         Direction result = null;
+         for (int i = 0; i < directions.length; ++i) {
+            if (Math.abs(distances[i] - nearest) < 1.0E-7) {
+               if (directions[i] == fallback) {
+                  return fallback;
+               }
+               if (result == null) {
+                  result = directions[i];
+               }
+            }
+         }
+         return result == null ? fallback : result;
+      }
+
+      @Override
+      protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                               Player player, InteractionHand hand, BlockHitResult hit) {
+         if (!stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return super.useItemOn(stack, state, level, pos, player, hand, hit);
+         }
+         if (player.isSpectator() || !player.getAbilities().mayBuild || !level.mayInteract(player, pos)
+            || !level.getWorldBorder().isWithinBounds(pos)) {
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         if (level.isClientSide) {
+            return ItemInteractionResult.sidedSuccess(true);
+         }
+
+         // Interaction listeners can replace the target or the held stack after dispatch.
+         // Never restore a stale block state or charge an item no longer held in this hand.
+         state = level.getBlockState(pos);
+         stack = player.getItemInHand(hand);
+         if (!state.is(this) || !stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return ItemInteractionResult.CONSUME;
+         }
+         state = explicitSides(state);
+         BooleanProperty side = connectionProperty(clickedEdge(hit.getLocation(), pos, player.getDirection()));
+         boolean removing = state.getValue(side);
+         boolean creative = player.getAbilities().instabuild;
+         int paid = paidRailings(state);
+         BlockState changed = state.setValue(side, !removing);
+         int refund = 0;
+         if (removing) {
+            // Credits are fungible: removing a legacy/free edge can release a paid credit,
+            // but never more items than were actually installed. Creative removal destroys it.
+            if (paid > 0) {
+               --paid;
+               refund = 1;
+            }
+            if (this instanceof RailingBlock && sideCount(changed) == 0) {
+               changed = level.getFluidState(pos).createLegacyBlock();
+               ++refund; // The original standalone block owns one base railing item.
+            } else {
+               changed = changed.setValue(PAID_RAILINGS, paid);
+            }
+         } else {
+            changed = changed.setValue(PAID_RAILINGS, paid + (creative ? 0 : 1));
+            if (!level.isUnobstructed(changed, pos, CollisionContext.of(player))) {
+               // A recognized edit must not fall through to placing another block above it.
+               return ItemInteractionResult.CONSUME;
+            }
+         }
+
+         if (!level.setBlock(pos, changed, Block.UPDATE_ALL)) {
+            return ItemInteractionResult.CONSUME;
+         }
+         if (!creative) {
+            if (!removing) {
+               stack.shrink(1);
+            } else if (refund > 0) {
+               ItemStack returned = new ItemStack(ModBlocks.STEEL_RAILING.get(), refund);
+               if (!player.getInventory().add(returned)) {
+                  player.drop(returned, false);
+               }
+            }
+         }
+         level.playSound(null, pos, removing ? SoundEvents.METAL_BREAK : SoundEvents.METAL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+         level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+         return ItemInteractionResult.sidedSuccess(false);
+      }
+
+      @Override
+      protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+         List<ItemStack> drops = new ArrayList<>(super.getDrops(state, params));
+         int paid = paidRailings(state);
+         // Respect the original loot result, including explosion survival and custom tables.
+         if (paid > 0 && drops.stream().anyMatch(stack -> stack.is(this.asItem()))) {
+            drops.add(new ItemStack(ModBlocks.STEEL_RAILING.get(), paid));
+         }
+         return drops;
+      }
+
+      @Override
+      public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
+                                         boolean willHarvest, FluidState fluid) {
+         if (player == null) {
+            return super.onDestroyedByPlayer(state, level, pos, null, willHarvest, fluid);
+         }
+         RailingMining.Completion completion = RailingMining.complete(player, level, pos, state);
+         if (completion == null) {
+            return false;
+         }
+         RailingPart part = completion.part();
+         BlockState explicit = explicitSides(state);
+         if (part.side() == null || this instanceof RailingBlock && sideCount(explicit) == 1) {
+            // Floor mining removes the catwalk normally; the final standalone side owns its base drop.
+            return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+         }
+
+         int paid = paidRailings(explicit);
+         BlockState changed = explicit.setValue(connectionProperty(part.side()), false)
+            .setValue(PAID_RAILINGS, Math.max(0, paid - 1));
+         if (level.setBlock(pos, changed, Block.UPDATE_ALL) && !level.isClientSide && !player.getAbilities().instabuild && willHarvest) {
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005F);
+            if (paid > 0) {
+               // Route one purchased rail through normal loot/drop hooks and doTileDrops.
+               Block.dropResources(ModBlocks.STEEL_RAILING.get().defaultBlockState(), level, pos, null,
+                  player, completion.tool());
+            }
+         }
+         // A partial removal must not invoke whole-block playerDestroy or duplicate its loot.
+         return false;
+      }
+
+      @Override
+      protected BlockState rotate(BlockState state, Rotation rotation) {
+         state = explicitSides(state);
+         BlockState rotated = state;
+         for (Direction direction : Direction.Plane.HORIZONTAL) {
+            rotated = rotated.setValue(connectionProperty(rotation.rotate(direction)), state.getValue(connectionProperty(direction)));
+         }
+         return rotated;
+      }
+
+      @Override
+      protected BlockState mirror(BlockState state, Mirror mirror) {
+         state = explicitSides(state);
+         BlockState mirrored = state;
+         for (Direction direction : Direction.Plane.HORIZONTAL) {
+            mirrored = mirrored.setValue(connectionProperty(mirror.mirror(direction)), state.getValue(connectionProperty(direction)));
+         }
+         return mirrored;
+      }
+
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return PortedBlocks.catwalkShape(state, true);
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         return PortedBlocks.railingCollision(state, true);
       }
    }
 
-   public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+   public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements NativeFluidloggedBlock {
+      public static final net.minecraft.world.level.block.state.properties.IntegerProperty WATER_FLOW = StairWaterFlow.WATER_FLOW;
       public static final MapCodec<PortedBlocks.CatwalkStairsBlock> CODEC = simpleCodec(PortedBlocks.CatwalkStairsBlock::new);
 
       public CatwalkStairsBlock(Properties properties) {
-         super(properties);
+         super(properties.lightLevel(NativeFluidloggedBlock::light));
          this.registerDefaultState(
             (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any())
                         .setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                      .setValue(PortedBlocks.LEFT_RAILING, false))
                   .setValue(PortedBlocks.RIGHT_RAILING, false))
-               .setValue(PortedBlocks.WATERLOGGED, false)
+               .setValue(WATER_FLOW, 0).setValue(PortedBlocks.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0)
          );
       }
 
@@ -431,33 +719,58 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED});
+         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, WATER_FLOW, EDITED_STAIR_SIDES, PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          Direction facing = PortedBlocks.catwalkStairPlacementFacing(context);
          return this.withSideRailings(
-            (BlockState)((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing))
-               .setValue(PortedBlocks.WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER),
+            NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing), context),
             context.getLevel(),
             context.getClickedPos()
          );
       }
 
       public FluidState getFluidState(BlockState state) {
-         return state.getValue(PortedBlocks.WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+         return StairWaterFlow.fluid(state);
+      }
+
+      @Override
+      public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, BlockGetter level, BlockPos pos, BlockState state, net.minecraft.world.level.material.Fluid fluid) {
+         if (fluid == net.minecraft.world.level.material.Fluids.FLOWING_WATER)
+            return !state.getValue(WATERLOGGED) && state.getValue(NativeFluidloggedBlock.FLUID_CELL) == NativeFluidloggedBlock.Cell.EMPTY;
+         if (StairWaterFlow.active(state) && fluid != net.minecraft.world.level.material.Fluids.WATER) return false;
+         return NativeFluidloggedBlock.super.canPlaceLiquid(player, level, pos, state, fluid);
+      }
+
+      @Override
+      public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluid) {
+         if (fluid.getType() == net.minecraft.world.level.material.Fluids.FLOWING_WATER
+               && canPlaceLiquid(null, level, pos, state, fluid.getType())) {
+            if (!level.isClientSide()) {
+               if (!level.setBlock(pos, StairWaterFlow.withFlow(state, fluid), 3)) return false;
+               level.scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(level));
+            }
+            return true;
+         }
+         if (!canPlaceLiquid(null, level, pos, state, fluid.getType())) return false;
+         return NativeFluidloggedBlock.super.placeLiquid(level, pos, state.setValue(WATER_FLOW, 0), fluid);
+      }
+
+      @Override
+      public net.minecraft.world.item.ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, LevelAccessor level, BlockPos pos, BlockState state) {
+         if (StairWaterFlow.active(state)) return net.minecraft.world.item.ItemStack.EMPTY;
+         return NativeFluidloggedBlock.super.pickupBlock(player, level, pos, state.setValue(WATER_FLOW, 0));
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-         if ((Boolean)state.getValue(PortedBlocks.WATERLOGGED)) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-         }
+         NativeFluidloggedBlock.schedule(state, level, pos);
 
          Direction facing = (Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING);
-         if (direction == facing.getCounterClockWise()) {
+         if (direction == facing.getCounterClockWise() && (state.getValue(EDITED_STAIR_SIDES) & 1) == 0) {
             return (BlockState)state.setValue(PortedBlocks.LEFT_RAILING, this.connectsToSideRailing(neighborState));
          } else {
-            return direction == facing.getClockWise()
+            return direction == facing.getClockWise() && (state.getValue(EDITED_STAIR_SIDES) & 2) == 0
                ? (BlockState)state.setValue(PortedBlocks.RIGHT_RAILING, this.connectsToSideRailing(neighborState))
                : state;
          }
@@ -476,6 +789,105 @@ public final class PortedBlocks {
          return block instanceof PortedBlocks.RailingBlock || block instanceof PortedBlocks.FenceGateSegmentBlock;
       }
 
+      private static int paidRailings(BlockState state) {
+         int count = (state.getValue(LEFT_RAILING) ? 1 : 0) + (state.getValue(RIGHT_RAILING) ? 1 : 0);
+         return Math.min(state.getValue(PAID_RAILINGS), count);
+      }
+
+      private static boolean leftSide(BlockState state, BlockPos pos, BlockHitResult hit, Direction fallback) {
+         Direction left = state.getValue(HORIZONTAL_FACING).getCounterClockWise();
+         double offset = (hit.getLocation().x - pos.getX() - 0.5) * left.getStepX()
+            + (hit.getLocation().z - pos.getZ() - 0.5) * left.getStepZ();
+         return Math.abs(offset) < 1.0E-7 ? fallback == left : offset > 0;
+      }
+
+      private static BlockState editSide(BlockState state, boolean left, boolean present, int paid) {
+         return state.setValue(left ? LEFT_RAILING : RIGHT_RAILING, present)
+            .setValue(EDITED_STAIR_SIDES, state.getValue(EDITED_STAIR_SIDES) | (left ? 1 : 2))
+            .setValue(PAID_RAILINGS, paid);
+      }
+
+      @Override
+      protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                               Player player, InteractionHand hand, BlockHitResult hit) {
+         if (!stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return super.useItemOn(stack, state, level, pos, player, hand, hit);
+         }
+         if (player.isSpectator() || !player.getAbilities().mayBuild || !level.mayInteract(player, pos)
+            || !level.getWorldBorder().isWithinBounds(pos) || !player.mayUseItemAt(pos, hit.getDirection(), stack)) {
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+         }
+         if (level.isClientSide) {
+            return ItemInteractionResult.sidedSuccess(true);
+         }
+         state = level.getBlockState(pos);
+         stack = player.getItemInHand(hand);
+         if (!state.is(this) || !stack.is(ModBlocks.STEEL_RAILING.get().asItem())) {
+            return ItemInteractionResult.CONSUME;
+         }
+         boolean left = leftSide(state, pos, hit, player.getDirection());
+         boolean removing = state.getValue(left ? LEFT_RAILING : RIGHT_RAILING);
+         boolean creative = player.getAbilities().instabuild;
+         int paid = paidRailings(state);
+         int refund = removing && paid > 0 ? 1 : 0;
+         BlockState changed = editSide(state, left, !removing, removing ? paid - refund : paid + (creative ? 0 : 1));
+         if (!removing && !level.isUnobstructed(changed, pos, CollisionContext.of(player))) {
+            return ItemInteractionResult.CONSUME;
+         }
+         if (!level.setBlock(pos, changed, Block.UPDATE_ALL)) {
+            return ItemInteractionResult.CONSUME;
+         }
+         if (!creative) {
+            if (!removing) {
+               stack.shrink(1);
+            } else if (refund > 0) {
+               ItemStack returned = new ItemStack(ModBlocks.STEEL_RAILING.get());
+               if (!player.getInventory().add(returned)) {
+                  player.drop(returned, false);
+               }
+            }
+         }
+         level.playSound(null, pos, removing ? SoundEvents.METAL_BREAK : SoundEvents.METAL_PLACE, SoundSource.BLOCKS, 1, 1);
+         level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+         return ItemInteractionResult.sidedSuccess(false);
+      }
+
+      @Override
+      protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+         List<ItemStack> drops = new ArrayList<>(super.getDrops(state, params));
+         int paid = paidRailings(state);
+         if (paid > 0 && drops.stream().anyMatch(stack -> stack.is(this.asItem()))) {
+            drops.add(new ItemStack(ModBlocks.STEEL_RAILING.get(), paid));
+         }
+         return drops;
+      }
+
+      @Override
+      public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
+                                         boolean willHarvest, FluidState fluid) {
+         if (player == null) {
+            return super.onDestroyedByPlayer(state, level, pos, null, willHarvest, fluid);
+         }
+         RailingMining.Completion completion = RailingMining.complete(player, level, pos, state);
+         if (completion == null) {
+            return false;
+         }
+         if (completion.part().side() == null) {
+            return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+         }
+         boolean left = completion.part().side() == state.getValue(HORIZONTAL_FACING).getCounterClockWise();
+         int paid = paidRailings(state);
+         BlockState changed = editSide(state, left, false, Math.max(0, paid - 1));
+         if (level.setBlock(pos, changed, Block.UPDATE_ALL) && !level.isClientSide && !player.getAbilities().instabuild && willHarvest) {
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005F);
+            if (paid > 0) {
+               Block.dropResources(ModBlocks.STEEL_RAILING.get().defaultBlockState(), level, pos, null, player, completion.tool());
+            }
+         }
+         return false;
+      }
+
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          VoxelShape shape = PortedBlocks.catwalkStairShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING));
          if ((Boolean)state.getValue(PortedBlocks.LEFT_RAILING)) {
@@ -490,7 +902,15 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         Direction facing = state.getValue(HORIZONTAL_FACING);
+         VoxelShape shape = catwalkStairShape(facing);
+         if (state.getValue(LEFT_RAILING)) {
+            shape = Shapes.or(shape, STAIR_RAIL_COLLISIONS[facing.get2DDataValue()][0]);
+         }
+         if (state.getValue(RIGHT_RAILING)) {
+            shape = Shapes.or(shape, STAIR_RAIL_COLLISIONS[facing.get2DDataValue()][1]);
+         }
+         return shape;
       }
    }
 
@@ -513,12 +933,12 @@ public final class PortedBlocks {
       }
    }
 
-   public static class DirectionalPortBlock extends DirectionalBlock {
+   public static class DirectionalPortBlock extends DirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.DirectionalPortBlock> CODEC = simpleCodec(PortedBlocks.DirectionalPortBlock::new);
 
       public DirectionalPortBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(FACING, Direction.NORTH));
       }
 
       protected MapCodec<? extends DirectionalBlock> codec() {
@@ -526,15 +946,22 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{FACING});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace());
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace()), context);
+      }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
       }
    }
 
-   public static class FenceGateSegmentBlock extends HorizontalDirectionalBlock {
+   public static class FenceGateSegmentBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.FenceGateSegmentBlock> CODEC = simpleCodec(PortedBlocks.FenceGateSegmentBlock::new);
       private static final VoxelShape CLOSED_NORTH_SOUTH_SHAPE = Block.box(0.0, 0.0, 7.0, 16.0, 16.0, 9.0);
       private static final VoxelShape CLOSED_EAST_WEST_SHAPE = Block.box(7.0, 0.0, 0.0, 9.0, 16.0, 16.0);
@@ -556,7 +983,7 @@ public final class PortedBlocks {
       public FenceGateSegmentBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
+            (BlockState)((BlockState)((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                   .setValue(PortedBlocks.OPEN, false))
                .setValue(PortedBlocks.SEGMENT, 0)
          );
@@ -567,18 +994,19 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.OPEN, PortedBlocks.SEGMENT});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState below = context.getLevel().getBlockState(context.getClickedPos().below());
-         return below.getBlock() instanceof PortedBlocks.FenceGateSegmentBlock && below.getValue(PortedBlocks.SEGMENT) == 0
+         return NativeFluidloggedBlock.placement(below.getBlock() instanceof PortedBlocks.FenceGateSegmentBlock && below.getValue(PortedBlocks.SEGMENT) == 0
             ? (BlockState)((BlockState)((BlockState)this.defaultBlockState()
                      .setValue(PortedBlocks.HORIZONTAL_FACING, (Direction)below.getValue(PortedBlocks.HORIZONTAL_FACING)))
                   .setValue(PortedBlocks.OPEN, (Boolean)below.getValue(PortedBlocks.OPEN)))
                .setValue(PortedBlocks.SEGMENT, 1)
             : (BlockState)((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()))
-               .setValue(PortedBlocks.SEGMENT, 0);
+               .setValue(PortedBlocks.SEGMENT, 0), context);
       }
 
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
@@ -657,9 +1085,15 @@ public final class PortedBlocks {
 
          return rotated;
       }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+      }
    }
 
-   public static class FixedShapeBlock extends Block {
+   public static class FixedShapeBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public static final MapCodec<PortedBlocks.FixedShapeBlock> CODEC = simpleCodec(properties -> new PortedBlocks.FixedShapeBlock(properties, Shapes.block()));
       private final VoxelShape shape;
       private final boolean emptyCollision;
@@ -693,7 +1127,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class HatchBlock extends HorizontalDirectionalBlock {
+   public static class HatchBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.HatchBlock> CODEC = simpleCodec(properties -> new PortedBlocks.HatchBlock(BlockSetType.IRON, properties));
       private static final VoxelShape CLOSED_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
       private static final double OPEN_SHAPE_THICKNESS = 2.875;
@@ -703,7 +1137,7 @@ public final class PortedBlocks {
          super(properties);
          this.type = type;
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
+            (BlockState)((BlockState)((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
                   .setValue(PortedBlocks.OPEN, false))
                .setValue(PortedBlocks.POWERED, false)
          );
@@ -718,6 +1152,7 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.OPEN, PortedBlocks.POWERED});
       }
 
@@ -727,10 +1162,10 @@ public final class PortedBlocks {
          Direction face = context.getClickedFace();
          Direction hinge = !context.replacingClickedOnBlock() && face.getAxis().isHorizontal()
             ? face.getOpposite() : context.getHorizontalDirection();
-         return (BlockState)((BlockState)((BlockState)this.defaultBlockState()
+         return NativeFluidloggedBlock.placement((BlockState)((BlockState)((BlockState)this.defaultBlockState()
                   .setValue(PortedBlocks.HORIZONTAL_FACING, hinge))
                .setValue(PortedBlocks.POWERED, powered))
-            .setValue(PortedBlocks.OPEN, powered);
+            .setValue(PortedBlocks.OPEN, powered), context);
       }
 
       @Override
@@ -793,14 +1228,20 @@ public final class PortedBlocks {
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return this.getShape(state, level, pos, context);
       }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+      }
    }
 
-   public static class HorizontalFacingBlock extends HorizontalDirectionalBlock {
+   public static class HorizontalFacingBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
       public static final MapCodec<PortedBlocks.HorizontalFacingBlock> CODEC = simpleCodec(PortedBlocks.HorizontalFacingBlock::new);
 
       public HorizontalFacingBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH));
       }
 
       protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
@@ -808,28 +1249,36 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()), context);
+      }
+      @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+      @Override protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
       }
    }
 
-   public static class PartsBlock extends Block {
+   public static class PartsBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public PartsBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.PARTS, 0));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.PARTS, 0));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{PortedBlocks.PARTS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          double localY = context.getClickLocation().y - Math.floor(context.getClickLocation().y);
          int part = Mth.clamp((int)Math.floor(localY * 15.0), 0, 14);
-         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.PARTS, part);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(PortedBlocks.PARTS, part), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -848,9 +1297,40 @@ public final class PortedBlocks {
       }
 
       @Override
-      protected boolean connectsTo(BlockState neighborState) {
-         Block block = neighborState.getBlock();
-         return block instanceof PortedBlocks.RailingBlock || block instanceof PortedBlocks.FenceGateSegmentBlock;
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         BlockState current = context.getLevel().getBlockState(context.getClickedPos());
+         if (current.is(this)) {
+            if (context.replacingClickedOnBlock() || context.getClickedFace() != Direction.UP) {
+               return null;
+            }
+            Player player = context.getPlayer();
+            if (!context.getLevel().getWorldBorder().isWithinBounds(context.getClickedPos())
+               || player != null && (player.isSpectator() || !player.getAbilities().mayBuild
+                  || !context.getLevel().mayInteract(player, context.getClickedPos()))) {
+               return null;
+            }
+            current = explicitSides(current);
+            BooleanProperty side = connectionProperty(clickedEdge(context.getClickLocation(), context.getClickedPos(), context.getHorizontalDirection()));
+            if (current.getValue(side)) {
+               return null;
+            }
+            // Native BlockItem placement handles target permissions, obstruction, payment
+            // and canceled-placement rollback when the support below was actually clicked.
+            boolean creative = player != null && player.getAbilities().instabuild;
+            return current.setValue(side, true).setValue(PAID_RAILINGS, paidRailings(current) + (creative ? 0 : 1));
+         }
+         return super.getStateForPlacement(context).setValue(
+            connectionProperty(clickedEdge(context.getClickLocation(), context.getClickedPos(), context.getHorizontalDirection())), true);
+      }
+
+      @Override
+      protected boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+         if (context.replacingClickedOnBlock() || !context.getItemInHand().is(this.asItem()) || context.getClickedFace() != Direction.UP) {
+            return false;
+         }
+         state = explicitSides(state);
+         BooleanProperty side = connectionProperty(clickedEdge(context.getClickLocation(), context.getClickedPos(), context.getHorizontalDirection()));
+         return !state.getValue(side);
       }
 
       @Override
@@ -860,7 +1340,7 @@ public final class PortedBlocks {
 
       @Override
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         return PortedBlocks.railingCollision(state, false);
       }
    }
 
@@ -960,11 +1440,11 @@ public final class PortedBlocks {
       }
    }
 
-   public static class SupportBlock extends Block {
+   public static class SupportBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public SupportBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.EASTWEST, false))
+            (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.EASTWEST, false))
                      .setValue(PortedBlocks.LEFTBEAM, false))
                   .setValue(PortedBlocks.RIGHTBEAM, false))
                .setValue(PortedBlocks.DOWNCONNECT, 0)
@@ -972,17 +1452,19 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{PortedBlocks.EASTWEST, PortedBlocks.LEFTBEAM, PortedBlocks.RIGHTBEAM, PortedBlocks.DOWNCONNECT});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          Direction direction = context.getHorizontalDirection();
-         return this.connectedSupportState(
+         return NativeFluidloggedBlock.placement(this.connectedSupportState(
             (BlockState)this.defaultBlockState().setValue(PortedBlocks.EASTWEST, direction.getAxis() == Axis.X), context.getLevel(), context.getClickedPos()
-         );
+         ), context);
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return !direction.getAxis().isHorizontal() && direction != Direction.DOWN ? state : this.connectedSupportState(state, level, pos);
       }
 
@@ -1054,23 +1536,51 @@ public final class PortedBlocks {
       }
    }
 
-   public static class OppositeFaceLightBlock extends PortedBlocks.DirectionalShapeBlock {
+   /** Native decorative lights preserve their original emission independently of structural pole heads. */
+   public abstract static class NativeLightBlock extends PortedBlocks.DirectionalShapeBlock implements NativeTransientFluidBlock {
+      protected NativeLightBlock(Properties properties, VoxelShape northShape, boolean horizontalRotation, boolean emptyCollision) {
+         super(properties.lightLevel(state -> Math.max(14, NativeFluidloggedBlock.light(state))), northShape, horizontalRotation, emptyCollision);
+         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false)
+            .setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY)
+            .setValue(CatwalkStairsBlock.WATER_FLOW, 0));
+      }
+
+      @Override
+      protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
+      }
+
+      @Override
+      public FluidState getFluidState(BlockState state) {
+         return StairWaterFlow.fluid(state);
+      }
+
+      @Override
+      protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+      }
+
+   }
+
+   public static class OppositeFaceLightBlock extends PortedBlocks.NativeLightBlock {
       public OppositeFaceLightBlock(Properties properties, VoxelShape northShape) {
          super(properties, northShape, false, true);
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace().getOpposite());
+         return NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(FACING, context.getClickedFace().getOpposite()), context);
       }
    }
 
-   public static class HorizontalLookLightBlock extends PortedBlocks.DirectionalShapeBlock {
+   public static class HorizontalLookLightBlock extends PortedBlocks.NativeLightBlock {
       public HorizontalLookLightBlock(Properties properties, VoxelShape northShape) {
          super(properties, northShape, true, true);
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
+         return NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()), context);
       }
    }
 
@@ -1094,7 +1604,7 @@ public final class PortedBlocks {
             }
          }
 
-         return (BlockState)this.defaultBlockState().setValue(FACING, facing);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(FACING, facing), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1127,6 +1637,7 @@ public final class PortedBlocks {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return direction == ((Direction)state.getValue(FACING)).getOpposite() && !this.canSurvive(state, level, pos) ? Blocks.AIR.defaultBlockState() : state;
       }
 
@@ -1161,20 +1672,21 @@ public final class PortedBlocks {
       }
    }
 
-   public static class VariantOnlyBlock extends Block {
+   public static class VariantOnlyBlock extends NativeDecorativeBlocks.NativeOpenBlock {
       public VariantOnlyBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(PortedBlocks.VARIANT, 0));
+         this.registerDefaultState((BlockState)((BlockState)NativeFluidloggedBlock.dry(this.stateDefinition.any())).setValue(PortedBlocks.VARIANT, 0));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         super.createBlockStateDefinition(builder);
          builder.add(new Property[]{PortedBlocks.VARIANT});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockPos pos = context.getClickedPos();
          int variant = Math.floorMod(pos.getX() * 31 + pos.getY() * 7 + pos.getZ(), 5);
-         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.VARIANT, variant);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(PortedBlocks.VARIANT, variant), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1186,7 +1698,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class VariantSlabBlock extends SlabBlock {
+   public static class VariantSlabBlock extends NativeDecorativeBlocks.NativeSlabBlock {
       public VariantSlabBlock(Properties properties) {
          super(properties);
          this.registerDefaultState((BlockState)this.defaultBlockState().setValue(PortedBlocks.TVARIANT, 0));
@@ -1212,7 +1724,7 @@ public final class PortedBlocks {
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          // Facing identifies the occupied half; the structured face points back toward the player.
-         return this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection());
+         return NativeFluidloggedBlock.placement(this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection()), context);
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -1224,7 +1736,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class SlidingDoorBlock extends DoorBlock {
+   public static class SlidingDoorBlock extends NativeDecorativeBlocks.NativeDoorBlock {
       public static final MapCodec<PortedBlocks.SlidingDoorBlock> CODEC = simpleCodec(properties -> new PortedBlocks.SlidingDoorBlock(BlockSetType.IRON, properties));
       private static final int UPDATE_FLAGS = 10;
       private static final VoxelShape LOWER_CLOSED_MODEL_SHAPE = Shapes.or(
@@ -1458,7 +1970,7 @@ public final class PortedBlocks {
          }
 
          if (openChanged) {
-            this.playSlidingDoorSound(entity, level, lowerPos, open);
+            this.playSlidingDoorSound(level, lowerPos, open);
             level.gameEvent(entity, open ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, lowerPos);
          }
       }
@@ -1472,7 +1984,7 @@ public final class PortedBlocks {
          BlockPos upperPos = lowerPos.above();
          BlockState upperState = level.getBlockState(upperPos);
          if (upperState.is(this)) {
-            BlockState normalizedUpper = (BlockState)normalizedLower.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER);
+            BlockState normalizedUpper = NativeFluidloggedBlock.copyCell(normalizedLower.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER), upperState);
             if (!upperState.equals(normalizedUpper)) {
                level.setBlock(upperPos, normalizedUpper, UPDATE_FLAGS);
             }
@@ -1591,9 +2103,11 @@ public final class PortedBlocks {
          };
       }
 
-      private void playSlidingDoorSound(@Nullable Entity entity, Level level, BlockPos pos, boolean open) {
+      private void playSlidingDoorSound(Level level, BlockPos pos, boolean open) {
+         // Manual interaction transitions run only on the server: include the clicking player in the broadcast.
+         // Passing the actor here excludes them, but there is no client-side predicted sound.
          level.playSound(
-            entity, pos, open ? this.type().doorOpen() : this.type().doorClose(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F
+            (Entity)null, pos, open ? this.type().doorOpen() : this.type().doorClose(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F
          );
       }
 

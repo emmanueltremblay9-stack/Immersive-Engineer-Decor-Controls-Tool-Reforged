@@ -72,7 +72,12 @@ public final class HatchLadderTravelGameTests {
                var saved = NbtUtils.writeBlockState(state);
                BlockState loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), saved);
                helper.assertValueEqual(loaded, state, "facing and waterlogged must load without migration");
-               helper.assertTrue(loaded.getProperties().size() == 2, "existing ladder state schema must stay unchanged");
+               helper.assertTrue(loaded.getProperties().size() == 4, "only native cell and transient level extend the existing ladder schema");
+               var legacy = saved.copy();
+               legacy.getCompound("Properties").remove("fluid_cell");
+               legacy.getCompound("Properties").remove("water_flow");
+               helper.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), legacy), loaded,
+                  "legacy ladder facing and waterlogging load with empty new properties");
                var actualCollision = loaded.getCollisionShape(helper.getLevel(), pos);
                var referenceCollision = vanilla.getCollisionShape(helper.getLevel(), pos);
                helper.assertTrue(!referenceCollision.isEmpty(), "vanilla reference must have physical wall clearance");

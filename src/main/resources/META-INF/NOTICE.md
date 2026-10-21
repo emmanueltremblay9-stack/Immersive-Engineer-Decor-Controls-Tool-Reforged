@@ -43,3 +43,10 @@ Modernization and fusion changes:
 Copyright (c) 2026 Emmanuel / OblixorPrime
 
 This project is not official and is not affiliated with the original author unless explicit permission is later obtained.
+
+Fluidlogging reference review:
+Fluidloggable v2-1.21-refilled and PR15 were independently inspected against their
+actual MIT LICENSE, Copyright (c) 2022 - 2023 Leximon. This cycle uses newly
+authored native block-state code; no Fluidloggable code/assets are bundled and no
+Fluidloggable dependency is added. See docs/testing/native-fluidlogging.md for
+the pinned references and file-level reuse inventory.

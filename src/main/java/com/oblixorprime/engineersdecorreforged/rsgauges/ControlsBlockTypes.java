@@ -1,6 +1,9 @@
 package com.oblixorprime.engineersdecorreforged.rsgauges;
 
 import com.mojang.serialization.MapCodec;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
+import com.oblixorprime.engineersdecorreforged.block.NativeTransientFluidBlock;
+import com.oblixorprime.engineersdecorreforged.block.StairWaterFlow;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
@@ -123,13 +126,16 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class BooleanIndicatorBlock extends DirectionalBlock {
+   public static class BooleanIndicatorBlock extends DirectionalBlock implements NativeTransientFluidBlock {
+      @Override
+      public net.minecraft.world.level.material.FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+
       public static final MapCodec<ControlsBlockTypes.BooleanIndicatorBlock> CODEC = simpleCodec(ControlsBlockTypes.BooleanIndicatorBlock::new);
 
       public BooleanIndicatorBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWER_BOOL, false)
+            (BlockState)((BlockState)((BlockState)this.stateDefinition.any().setValue(BlockStateProperties.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(StairWaterFlow.WATER_FLOW, 0)).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWER_BOOL, false)
          );
       }
 
@@ -138,12 +144,13 @@ public final class ControlsBlockTypes {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(BlockStateProperties.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{FACING, ControlsBlockTypes.POWER_BOOL});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState state = (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace());
-         return (BlockState)state.setValue(ControlsBlockTypes.POWER_BOOL, this.readPower(context.getLevel(), context.getClickedPos(), state));
+         return NativeFluidloggedBlock.placement((BlockState)state.setValue(ControlsBlockTypes.POWER_BOOL, this.readPower(context.getLevel(), context.getClickedPos(), state)), context);
       }
 
       protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -151,6 +158,7 @@ public final class ControlsBlockTypes {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
       }
 
@@ -206,7 +214,7 @@ public final class ControlsBlockTypes {
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState state = super.getStateForPlacement(context);
-         return (BlockState)state.setValue(ControlsBlockTypes.POWERED, readAttachedSignal(context.getLevel(), context.getClickedPos(), state) > 0);
+         return NativeFluidloggedBlock.placement((BlockState)state.setValue(ControlsBlockTypes.POWERED, readAttachedSignal(context.getLevel(), context.getClickedPos(), state) > 0), context);
       }
 
       @Override
@@ -296,7 +304,7 @@ public final class ControlsBlockTypes {
             return null;
          }
 
-         return super.getStateForPlacement(context);
+         return NativeFluidloggedBlock.placement(super.getStateForPlacement(context), context);
       }
 
       private boolean requiresFloorSupport() {
@@ -347,13 +355,16 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class DimmerBlock extends DirectionalBlock {
+   public static class DimmerBlock extends DirectionalBlock implements NativeTransientFluidBlock {
+      @Override
+      public net.minecraft.world.level.material.FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+
       public static final MapCodec<ControlsBlockTypes.DimmerBlock> CODEC = simpleCodec(ControlsBlockTypes.DimmerBlock::new);
 
       public DimmerBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH))
+            (BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any().setValue(BlockStateProperties.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(StairWaterFlow.WATER_FLOW, 0)).setValue(FACING, Direction.NORTH))
                   .setValue(ControlsBlockTypes.POWERED, false))
                .setValue(ControlsBlockTypes.POWER, 0)
          );
@@ -364,11 +375,12 @@ public final class ControlsBlockTypes {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(BlockStateProperties.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{FACING, ControlsBlockTypes.POWERED, ControlsBlockTypes.POWER});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace());
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace()), context);
       }
 
       protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -376,6 +388,7 @@ public final class ControlsBlockTypes {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
       }
 
@@ -430,7 +443,7 @@ public final class ControlsBlockTypes {
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState state = super.getStateForPlacement(context);
          double localY = context.getClickLocation().y - context.getClickedPos().getY();
-         return (BlockState)state.setValue(ControlsBlockTypes.VARIANT, elevatorVariantFromClickHeight(localY));
+         return NativeFluidloggedBlock.placement((BlockState)state.setValue(ControlsBlockTypes.VARIANT, elevatorVariantFromClickHeight(localY)), context);
       }
 
       private static int elevatorVariantFromClickHeight(double localY) {
@@ -448,13 +461,16 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class GaugeBlock extends DirectionalBlock {
+   public static class GaugeBlock extends DirectionalBlock implements NativeTransientFluidBlock {
+      @Override
+      public net.minecraft.world.level.material.FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+
       public static final MapCodec<ControlsBlockTypes.GaugeBlock> CODEC = simpleCodec(ControlsBlockTypes.GaugeBlock::new);
 
       public GaugeBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWER, 0)
+            (BlockState)((BlockState)((BlockState)this.stateDefinition.any().setValue(BlockStateProperties.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(StairWaterFlow.WATER_FLOW, 0)).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWER, 0)
          );
       }
 
@@ -463,12 +479,13 @@ public final class ControlsBlockTypes {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(BlockStateProperties.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{FACING, ControlsBlockTypes.POWER});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState state = (BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace());
-         return (BlockState)state.setValue(ControlsBlockTypes.POWER, this.readPower(context.getLevel(), context.getClickedPos(), state));
+         return NativeFluidloggedBlock.placement((BlockState)state.setValue(ControlsBlockTypes.POWER, this.readPower(context.getLevel(), context.getClickedPos(), state)), context);
       }
 
       protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -476,6 +493,7 @@ public final class ControlsBlockTypes {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
       }
 
@@ -565,19 +583,30 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class SensitiveGlassBlock extends Block {
+   public static class SensitiveGlassBlock extends Block implements NativeTransientFluidBlock {
+      @Override
+      public net.minecraft.world.level.material.FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+
+      @Override
+      protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbor,
+            LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
+         return super.updateShape(state, direction, neighbor, level, pos, neighborPos);
+      }
+
       public SensitiveGlassBlock(Properties properties) {
          super(properties);
-         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(ControlsBlockTypes.POWERED, false));
+         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any().setValue(BlockStateProperties.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(StairWaterFlow.WATER_FLOW, 0)).setValue(ControlsBlockTypes.POWERED, false));
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(BlockStateProperties.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{ControlsBlockTypes.POWERED});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState()
-            .setValue(ControlsBlockTypes.POWERED, context.getLevel().getBestNeighborSignal(context.getClickedPos()) > 0);
+         return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState()
+            .setValue(ControlsBlockTypes.POWERED, context.getLevel().getBestNeighborSignal(context.getClickedPos()) > 0), context);
       }
 
       protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
@@ -639,7 +668,7 @@ public final class ControlsBlockTypes {
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          BlockState state = super.getStateForPlacement(context);
-         return (BlockState)state.setValue(ControlsBlockTypes.POWERED, this.evaluatePlacement(context.getLevel(), context.getClickedPos(), state));
+         return NativeFluidloggedBlock.placement((BlockState)state.setValue(ControlsBlockTypes.POWERED, this.evaluatePlacement(context.getLevel(), context.getClickedPos(), state)), context);
       }
 
       protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
@@ -773,6 +802,7 @@ public final class ControlsBlockTypes {
 
       @Override
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return state;
       }
 
@@ -839,6 +869,7 @@ public final class ControlsBlockTypes {
 
       @Override
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return state;
       }
 
@@ -853,13 +884,16 @@ public final class ControlsBlockTypes {
       }
    }
 
-   public static class ToggleSwitchBlock extends DirectionalBlock {
+   public static class ToggleSwitchBlock extends DirectionalBlock implements NativeTransientFluidBlock {
+      @Override
+      public net.minecraft.world.level.material.FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
+
       public static final MapCodec<ControlsBlockTypes.ToggleSwitchBlock> CODEC = simpleCodec(ControlsBlockTypes.ToggleSwitchBlock::new);
 
       public ToggleSwitchBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWERED, false)
+            (BlockState)((BlockState)((BlockState)this.stateDefinition.any().setValue(BlockStateProperties.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(StairWaterFlow.WATER_FLOW, 0)).setValue(FACING, Direction.NORTH)).setValue(ControlsBlockTypes.POWERED, false)
          );
       }
 
@@ -868,11 +902,12 @@ public final class ControlsBlockTypes {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+         builder.add(BlockStateProperties.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
          builder.add(new Property[]{FACING, ControlsBlockTypes.POWERED});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)((BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace())).setValue(ControlsBlockTypes.POWERED, false);
+         return NativeFluidloggedBlock.placement((BlockState)((BlockState)this.defaultBlockState().setValue(FACING, context.getClickedFace())).setValue(ControlsBlockTypes.POWERED, false), context);
       }
 
       protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -880,6 +915,7 @@ public final class ControlsBlockTypes {
       }
 
       protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+         NativeFluidloggedBlock.schedule(state, level, pos);
          return ControlsBlockTypes.updateAttachedSupport(state, direction, level, pos);
       }
 

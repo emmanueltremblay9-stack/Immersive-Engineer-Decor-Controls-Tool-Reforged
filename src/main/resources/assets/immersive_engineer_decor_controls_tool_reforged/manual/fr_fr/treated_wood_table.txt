@@ -2,4 +2,10 @@ Table en bois traité
 Mobilier d'atelier
 <&recipe>Ce bloc est un meuble pratique pour les locaux de travail et les espaces de maintenance.<br>
 <br>
-Utilisation : placez-le à côté des établis, caisses et machines compactes.<br>
+Placez cette table directement au nord, au sud, à l’est ou à l’ouest d’un tabouret en bois traité, à la même hauteur de bloc. Les repas terminés sur ce tabouret gagnent 30 % de leur saturation habituelle au lieu des 20 % normaux. Plusieurs tables ne cumulent pas le bonus.<br>
+<np>
+Service du gâteau
+Dix pour cent debout
+Posez un vrai gâteau vanilla sur cette table. Un joueur debout reçoit 10 % de saturation supplémentaire uniquement lorsqu’il mange réellement une part de ce gâteau. Tenir un autre aliment près de la table ne donne aucun bonus debout. Les gâteaux à bougie comptent quand on les mange ; ajouter ou éteindre la bougie ne compte pas.<br>
+<br>
+Assis, le joueur suit la règle des 20 % ou 30 % du tabouret, sans cumuler le bonus debout. La saturation ne dépasse pas la faim. Les tables en acier, les établis et les autres meubles ne comptent pas.<br>

@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.rsgauges;
 
 import com.mojang.serialization.MapCodec;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
@@ -56,13 +57,14 @@ public class IndustrialSwitchBlock extends ControlsBlockTypes.ToggleSwitchBlock 
       }
       Direction face = context.getClickedFace();
       Direction facing = face.getAxis().isHorizontal() ? face : context.getHorizontalDirection().getOpposite();
-      return defaultBlockState().setValue(PART, Part.LOWER).setValue(FACING, facing);
+      return NativeFluidloggedBlock.placement(defaultBlockState().setValue(PART, Part.LOWER).setValue(FACING, facing), context);
    }
 
    @Override
    public void setPlacedBy(Level level, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
       if (state.getValue(PART) == Part.LOWER) {
-         level.setBlock(pos.above(), state.setValue(PART, Part.UPPER), 3);
+         level.setBlock(pos.above(), NativeFluidloggedBlock.placement(state.setValue(PART, Part.UPPER)
+            .setValue(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.WATER_FLOW, 0), level.getFluidState(pos.above())), 3);
       }
    }
 
@@ -74,9 +76,10 @@ public class IndustrialSwitchBlock extends ControlsBlockTypes.ToggleSwitchBlock 
    @Override
    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbor,
       LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+      NativeFluidloggedBlock.schedule(state, level, pos);
       Part part = state.getValue(PART);
       if (part == Part.UPPER && direction == Direction.DOWN) {
-         return isPart(neighbor, Part.LOWER) ? neighbor.setValue(PART, Part.UPPER) : Blocks.AIR.defaultBlockState();
+         return isPart(neighbor, Part.LOWER) ? NativeFluidloggedBlock.copyCell(neighbor.setValue(PART, Part.UPPER), state) : Blocks.AIR.defaultBlockState();
       }
       if (part == Part.LOWER && direction == Direction.UP && !isPart(neighbor, Part.UPPER)) {
          return Blocks.AIR.defaultBlockState();
@@ -123,7 +126,7 @@ public class IndustrialSwitchBlock extends ControlsBlockTypes.ToggleSwitchBlock 
       if (!level.isClientSide && player.isCreative() && state.getValue(PART) == Part.UPPER) {
          BlockPos lower = pos.below();
          if (isPart(level.getBlockState(lower), Part.LOWER)) {
-            level.setBlock(lower, Blocks.AIR.defaultBlockState(), 35);
+            level.setBlock(lower, level.getFluidState(lower).createLegacyBlock(), 35);
          }
       }
       return super.playerWillDestroy(level, pos, state, player);

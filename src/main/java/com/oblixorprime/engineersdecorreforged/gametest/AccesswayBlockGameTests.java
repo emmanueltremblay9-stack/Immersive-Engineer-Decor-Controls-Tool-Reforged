@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkBlock;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -235,17 +236,18 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void raised_catwalk_placement_selects_reachable_model_variant(GameTestHelper helper) {
+   public static void raised_catwalk_plain_placement_is_independent_of_coordinates(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
-      Block catwalk = (Block)ModBlocks.STEEL_CATWALK_TA.get();
-      BlockPos pos = new BlockPos(3, 2, 4);
-      BlockState state = placementState(helper, player, catwalk, pos, 0.5);
-      helper.assertTrue(state != null, "raised catwalk placement state should not be null");
-      helper.assertValueEqual(
-         (Integer)state.getValue(PortedBlocks.VARIANT),
-         variantFor(helper.absolutePos(pos)),
-         "raised catwalk placement should select its position-based visual variant"
-      );
+      Block catwalk = ModBlocks.STEEL_CATWALK_TA.get();
+      for (int x = 1; x <= 5; x++) {
+         BlockPos pos = new BlockPos(x, 2, 4);
+         helper.setBlock(pos, Blocks.AIR);
+         helper.setBlock(pos.below(), Blocks.AIR);
+         BlockState state = placementState(helper, player, catwalk, pos, 0.5);
+         helper.assertTrue(state != null, "raised catwalk placement state should not be null");
+         helper.assertValueEqual(state.getValue(RaisedCatwalkBlock.VARIANT), 0,
+            "unsupported placement must stay plain across every former coordinate residue");
+      }
       helper.succeed();
    }
 
@@ -907,31 +909,27 @@ public final class AccesswayBlockGameTests {
    private static void assertCatwalkStairTreads(GameTestHelper helper, VoxelShape shape, Direction facing) {
       switch (facing) {
          case NORTH -> {
-            assertShapeIntersects(helper, shape, 2.0, 4.5, 10.0, 14.0, 4.9, 14.0, "north catwalk stairs should have a low south entry tread");
-            assertShapeIntersects(helper, shape, 2.0, 9.5, 2.0, 14.0, 9.9, 6.0, "north catwalk stairs should have a high north exit tread");
-            assertShapeDoesNotIntersect(helper, shape, 2.0, 9.5, 10.0, 14.0, 9.9, 14.0, "north catwalk stairs should not put the high tread on the entry side");
+            assertShapeIntersects(helper, shape, 2.0, 3.5, 10.0, 14.0, 3.9, 14.0, "north catwalk stairs should have a low south entry tread");
+            assertShapeIntersects(helper, shape, 2.0, 11.5, 2.0, 14.0, 11.9, 6.0, "north catwalk stairs should have a high north exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 2.0, 11.5, 10.0, 14.0, 11.9, 14.0, "north catwalk stairs should not put the high tread on the entry side");
          }
          case SOUTH -> {
-            assertShapeIntersects(helper, shape, 2.0, 4.5, 2.0, 14.0, 4.9, 6.0, "south catwalk stairs should have a low north entry tread");
-            assertShapeIntersects(helper, shape, 2.0, 9.5, 10.0, 14.0, 9.9, 14.0, "south catwalk stairs should have a high south exit tread");
-            assertShapeDoesNotIntersect(helper, shape, 2.0, 9.5, 2.0, 14.0, 9.9, 6.0, "south catwalk stairs should not put the high tread on the entry side");
+            assertShapeIntersects(helper, shape, 2.0, 3.5, 2.0, 14.0, 3.9, 6.0, "south catwalk stairs should have a low north entry tread");
+            assertShapeIntersects(helper, shape, 2.0, 11.5, 10.0, 14.0, 11.9, 14.0, "south catwalk stairs should have a high south exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 2.0, 11.5, 2.0, 14.0, 11.9, 6.0, "south catwalk stairs should not put the high tread on the entry side");
          }
          case WEST -> {
-            assertShapeIntersects(helper, shape, 10.0, 4.5, 2.0, 14.0, 4.9, 14.0, "west catwalk stairs should have a low east entry tread");
-            assertShapeIntersects(helper, shape, 2.0, 9.5, 2.0, 6.0, 9.9, 14.0, "west catwalk stairs should have a high west exit tread");
-            assertShapeDoesNotIntersect(helper, shape, 10.0, 9.5, 2.0, 14.0, 9.9, 14.0, "west catwalk stairs should not put the high tread on the entry side");
+            assertShapeIntersects(helper, shape, 10.0, 3.5, 2.0, 14.0, 3.9, 14.0, "west catwalk stairs should have a low east entry tread");
+            assertShapeIntersects(helper, shape, 2.0, 11.5, 2.0, 6.0, 11.9, 14.0, "west catwalk stairs should have a high west exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 10.0, 11.5, 2.0, 14.0, 11.9, 14.0, "west catwalk stairs should not put the high tread on the entry side");
          }
          case EAST -> {
-            assertShapeIntersects(helper, shape, 2.0, 4.5, 2.0, 6.0, 4.9, 14.0, "east catwalk stairs should have a low west entry tread");
-            assertShapeIntersects(helper, shape, 10.0, 9.5, 2.0, 14.0, 9.9, 14.0, "east catwalk stairs should have a high east exit tread");
-            assertShapeDoesNotIntersect(helper, shape, 2.0, 9.5, 2.0, 6.0, 9.9, 14.0, "east catwalk stairs should not put the high tread on the entry side");
+            assertShapeIntersects(helper, shape, 2.0, 3.5, 2.0, 6.0, 3.9, 14.0, "east catwalk stairs should have a low west entry tread");
+            assertShapeIntersects(helper, shape, 10.0, 11.5, 2.0, 14.0, 11.9, 14.0, "east catwalk stairs should have a high east exit tread");
+            assertShapeDoesNotIntersect(helper, shape, 2.0, 11.5, 2.0, 6.0, 11.9, 14.0, "east catwalk stairs should not put the high tread on the entry side");
          }
          default -> throw new IllegalArgumentException("Unsupported catwalk stair facing " + facing);
       }
-   }
-
-   private static int variantFor(BlockPos pos) {
-      return Math.floorMod(pos.getX() * 31 + pos.getY() * 7 + pos.getZ(), 5);
    }
 
    private static void placeClosedDoor(GameTestHelper helper, Block door, BlockPos lowerPos) {
