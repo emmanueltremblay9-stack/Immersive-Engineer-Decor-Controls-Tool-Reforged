@@ -11,6 +11,7 @@ import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
+import org.objectweb.asm.tree.InsnList;
 import org.objectweb.asm.tree.analysis.Analyzer;
 import org.objectweb.asm.tree.analysis.Frame;
 import org.objectweb.asm.tree.analysis.SourceInterpreter;
@@ -52,10 +53,21 @@ public class SlidingDoorSoundBroadcastTest {
          assertNotNull("sound invocation must be reachable", frame);
          int argumentCount = Type.getArgumentTypes(call.desc).length;
          SourceValue excludedEntity = frame.getStack(frame.getStackSize() - argumentCount);
-         assertEquals("the exclusion argument must have one source", 1, excludedEntity.insns.size());
-         assertEquals("broadcast to everyone, including the initiating player",
-            Opcodes.ACONST_NULL, excludedEntity.insns.iterator().next().getOpcode());
+         assertTrue("broadcast to everyone, including the initiating player",
+            isLiteralNull(excludedEntity, helper.instructions, frames));
       }
       assertEquals("one sound dispatch per helper invocation", 1, soundCalls);
+   }
+   private static boolean isLiteralNull(SourceValue value, InsnList instructions, Frame<SourceValue>[] frames) {
+      if (value.insns.isEmpty()) return false;
+      for (AbstractInsnNode source : value.insns) {
+         if (source.getOpcode() == Opcodes.ACONST_NULL) continue;
+         // javac emits CHECKCAST for the explicit Entity null used to select the overload.
+         if (source.getOpcode() != Opcodes.CHECKCAST) return false;
+         Frame<SourceValue> input = frames[instructions.indexOf(source)];
+         if (input == null || input.getStackSize() == 0
+            || !isLiteralNull(input.getStack(input.getStackSize() - 1), instructions, frames)) return false;
+      }
+      return true;
    }
 }

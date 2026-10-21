@@ -2104,7 +2104,7 @@ public final class PortedBlocks {
       }
 
       private void playSlidingDoorSound(Level level, BlockPos pos, boolean open) {
-         // The transition runs only on the server: include the clicking player in the broadcast.
+         // Manual interaction transitions run only on the server: include the clicking player in the broadcast.
          // Passing the actor here excludes them, but there is no client-side predicted sound.
          level.playSound(
             (Entity)null, pos, open ? this.type().doorOpen() : this.type().doorClose(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F

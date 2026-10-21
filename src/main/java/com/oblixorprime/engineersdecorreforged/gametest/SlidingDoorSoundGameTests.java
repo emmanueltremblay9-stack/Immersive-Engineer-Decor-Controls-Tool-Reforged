@@ -20,6 +20,7 @@ import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,6 +42,7 @@ public final class SlidingDoorSoundGameTests {
       Fixture fixture = new Fixture(helper);
       try {
          fixture.addPlayers();
+         fixture.assertNativeExclusionControl();
          for (boolean paired : List.of(false, true)) {
             for (Direction facing : Direction.Plane.HORIZONTAL) {
                for (int half = 0; half < 2; half++) {
@@ -149,13 +151,26 @@ public final class SlidingDoorSoundGameTests {
          }
       }
 
+      private void assertNativeExclusionControl() {
+         clearPackets();
+         helper.getLevel().playSound((Entity)actor, helper.absolutePos(FIRST),
+            SoundEvents.IRON_DOOR_OPEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+         // This is the old exclusion behavior as a control, not a run of the old mod.
+         assertSoundFor(0, SoundEvents.IRON_DOOR_OPEN, 0, "native excluded actor control");
+         assertSoundFor(1, SoundEvents.IRON_DOOR_OPEN, 1, "native observer control");
+         clearPackets();
+      }
+
       private void clearPackets() {
          listeners.forEach(listener -> listener.sounds.clear());
       }
 
       private void assertSound(SoundEvent expected, int count, String phase) {
-         BlockPos origin = helper.absolutePos(FIRST);
-         for (int index = 0; index < listeners.size(); index++) {
+         for (int index = 0; index < listeners.size(); index++) assertSoundFor(index, expected, count, phase);
+      }
+
+      private void assertSoundFor(int index, SoundEvent expected, int count, String phase) {
+            BlockPos origin = helper.absolutePos(FIRST);
             List<ClientboundSoundPacket> sounds = listeners.get(index).sounds.stream()
                .filter(packet -> packet.getSource() == SoundSource.BLOCKS
                   && Math.abs(packet.getX() - origin.getX()) <= 2.0
@@ -169,7 +184,6 @@ public final class SlidingDoorSoundGameTests {
                helper.assertTrue(packet.getSound().value() == expected, phase + ": correct open/close sound");
                helper.assertTrue(packet.getVolume() == 1.0F, phase + ": preserve volume");
             }
-         }
       }
 
       private void cleanup() {
