@@ -5,10 +5,8 @@ import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutput;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -138,13 +136,11 @@ public final class MusleeItemStackCapture implements AutoCloseable {
             root.put("stack", stack.save(registries));
             root.put("effective", effective);
         }
-        LimitedOutput bytes = new LimitedOutput();
-        DataOutputStream output = new DataOutputStream(bytes);
-        output.writeByte(Tag.TAG_COMPOUND);
-        output.writeUTF("");
-        writeCanonical(root, output, 0);
-        output.flush();
-        return bytes.toByteArray();
+        return MusleeExactDataOutput.encode(MAX_ENCODED_BYTES, output -> {
+            output.writeByte(Tag.TAG_COMPOUND);
+            output.writeUTF("");
+            writeCanonical(root, output, 0);
+        });
     }
 
     static void requireSafePrototype(net.minecraft.core.component.DataComponentMap prototype) {
@@ -231,11 +227,4 @@ public final class MusleeItemStackCapture implements AutoCloseable {
         }
     }
 
-    private static final class LimitedOutput extends ByteArrayOutputStream {
-        private void check(int amount) {
-            if (amount < 0 || amount > MAX_ENCODED_BYTES - count) throw new IllegalArgumentException("Capture encoding limit");
-        }
-        @Override public synchronized void write(int value) { check(1); super.write(value); }
-        @Override public synchronized void write(byte[] bytes, int offset, int length) { check(length); super.write(bytes, offset, length); }
-    }
 }
