@@ -128,7 +128,8 @@ public final class MusliBarPressReserve {
 
    /** Pure admission simulation. A different seed variety or incompatible component set fails. */
    public static Optional<Plan> planInsert(State current, ItemStack offered) {
-      if (current == null || !current.isValid() || offered == null || offered.isEmpty()) {
+      if (current == null || !current.isValid() || offered == null || offered.isEmpty()
+         || offered.getMaxStackSize() < 1 || offered.getCount() > offered.getMaxStackSize()) {
          return Optional.empty();
       }
       Compartment kind = classify(offered);
@@ -139,7 +140,9 @@ public final class MusliBarPressReserve {
       if (!existing.isEmpty() && !ItemStack.isSameItemSameComponents(existing, offered)) {
          return Optional.empty();
       }
-      int amount = Math.min(offered.getCount(), CAPACITY_PER_COMPARTMENT - existing.getCount());
+      // Component overrides may lower a normally stackable ingredient's native maximum.
+      int effectiveCapacity = Math.min(CAPACITY_PER_COMPARTMENT, offered.getMaxStackSize());
+      int amount = Math.min(offered.getCount(), effectiveCapacity - existing.getCount());
       if (amount <= 0) {
          return Optional.empty();
       }
@@ -241,7 +244,8 @@ public final class MusliBarPressReserve {
       if (stack.isEmpty()) {
          return true;
       }
-      if (stack.getCount() < 1 || stack.getCount() > CAPACITY_PER_COMPARTMENT) {
+      if (stack.getCount() < 1 || stack.getMaxStackSize() < 1
+         || stack.getCount() > Math.min(CAPACITY_PER_COMPARTMENT, stack.getMaxStackSize())) {
          return false;
       }
       return switch (compartment) {
