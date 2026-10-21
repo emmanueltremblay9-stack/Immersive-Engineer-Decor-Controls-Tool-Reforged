@@ -135,6 +135,24 @@ public final class MusleeCommandQueue {
         refreshSchedule();
         return count;
     }
+    /**
+     * Immediately invalidate exactly one waiting lease by object identity. Other
+     * commands of the same session retain their FIFO order. Null, foreign, engaged
+     * and terminal tickets are inert; repeated invalidation cannot release twice.
+     * This is a bounded (at most 32 entries) mandatory invalidation, not an expiry pass.
+     *
+     * For a dependency set, the adapter must hold its common authoritative lock
+     * across every affected queue/fence invalidation and safe capture-store release.
+     * This method does not discover dependencies or release actual external captures.
+     */
+    public synchronized boolean invalidateWaiting(Ticket ticket) {
+        outsidePass();
+        if (ticket == null || ticket.queue != this || ticket.state != State.WAITING) return false;
+        if (!waiting.remove(ticket)) return false;
+        retireWaiting(ticket, State.INVALIDATED);
+        refreshSchedule();
+        return true;
+    }
     /** Explicit loss of clock proof invalidates all nonengaged leases, never the active one. */
     public synchronized void invalidateUncertainClock() {
         outsidePass(); invalidateClock();
