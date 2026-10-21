@@ -4,8 +4,10 @@ import java.util.Optional;
 import java.util.Set;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CustomData;
@@ -25,6 +27,7 @@ public final class MusliBarPressReserve {
    private static final String APPLE = "apple";
    private static final String SEEDS = "seeds";
    private static final Set<String> ALLOWED_KEYS = Set.of(VERSION, BREAD, APPLE, SEEDS);
+   private static final ResourceLocation BASE_HEMP_SEED = ResourceLocation.fromNamespaceAndPath("immersiveengineering", "seed");
 
    public enum Compartment { BREAD, APPLE, SEEDS }
 
@@ -254,10 +257,20 @@ public final class MusliBarPressReserve {
       };
    }
 
-   /** Current admission only; never use this to validate persisted stock. */
+   /** Current admission is the five approved base seeds plus live tag extensions. */
    public static boolean isSeedAdmissible(ItemStack ingredient) {
-      return ingredient != null && !ingredient.isEmpty()
-         && ingredient.is(MusliBarPressItem.ACCEPTED_SEEDS);
+      if (ingredient == null || ingredient.isEmpty()) {
+         return false;
+      }
+      // TOOLS-192/193 allow extensions, not revocation of the original five seeds.
+      // Exact registry identity avoids admitting an unrelated hemp-looking item.
+      // Never use admission eligibility to validate already-persisted seed stock.
+      return ingredient.is(Items.WHEAT_SEEDS)
+         || ingredient.is(Items.MELON_SEEDS)
+         || ingredient.is(Items.PUMPKIN_SEEDS)
+         || ingredient.is(Items.BEETROOT_SEEDS)
+         || BASE_HEMP_SEED.equals(BuiltInRegistries.ITEM.getKey(ingredient.getItem()))
+         || ingredient.is(MusliBarPressItem.ACCEPTED_SEEDS);
    }
 
    /**
