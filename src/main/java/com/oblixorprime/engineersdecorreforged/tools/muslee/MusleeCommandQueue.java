@@ -7,7 +7,8 @@ import java.util.UUID;
 /**
  * Inactive, in-memory FIFO accounting foundation for ONE durable press UUID.
  * No registration, inventory access, network handler, persistence or execution is provided.
- * A ticket represents one indivisible capture lease, NOT an allocated snapshot. The caller
+ * Legacy scalar admission models a lease only. Concrete captured admission stays blocked
+ * until a qualified total-memory bound exists; the internal lifecycle is exercised by tests. The caller
  * must prove its maximum footprint (including nested data, copies and overheads) BEFORE
  * admission; a numeric value here does not establish that proof. Actual capture-store
  * allocation, atomic authoritative validation and transaction integration remain required.
@@ -37,6 +38,8 @@ public final class MusleeCommandQueue {
         private State state = State.WAITING;
         private Owner owner = Owner.FIFO;
         private int releases;
+        private MusleeItemStackCapture capture;
+        private Object captureOwner;
         private Ticket(MusleeCommandQueue queue, UUID commandId, UUID sessionId, long now, long bytes) {
             this.queue = queue; this.commandId = commandId; this.sessionId = sessionId;
             this.admittedAt = now; this.reservedBytes = bytes;
@@ -122,6 +125,44 @@ public final class MusleeCommandQueue {
         return new Admission(AdmissionStatus.ADMITTED, ticket);
     }
 
+    /**
+     * Concrete runtime admission is deliberately refused: no qualified retained-memory
+     * profile exists yet. Encoded byte length is NOT the TOOLS-351 memory bound.
+     * Consume/release only an unowned candidate; never disrupt another queue's owner.
+     * No caller-provided number or boolean can enable this production path.
+     */
+    public synchronized Admission admitCapture(UUID commandId, UUID sessionId,
+                                               boolean sessionValid, MusleeItemStackCapture capture) {
+        outsidePass();
+        if (capture != null) capture.close();
+        return rejected(AdmissionStatus.INVALID_BOUND);
+    }
+
+    /**
+     * Package-private lifecycle fixture, NOT a qualified runtime admission API.
+     * The test's scalar accounting value proves no JVM allocation bound. It exists to
+     * exercise actual ownership with the same queue transitions before activation.
+     */
+    synchronized Admission admitCaptureForOwnershipTest(UUID commandId, UUID sessionId,
+            boolean sessionValid, long fixtureBytes, MusleeItemStackCapture capture) {
+        outsidePass();
+        if (capture == null) return rejected(AdmissionStatus.INVALID_BOUND);
+        Object initialOwner = new Object();
+        if (!capture.claim(initialOwner)) return rejected(AdmissionStatus.INVALID_BOUND);
+        boolean adopted = false;
+        try {
+            Admission result = admit(commandId, sessionId, sessionValid, fixtureBytes);
+            if (result.ticket != null) {
+                result.ticket.capture = capture;
+                result.ticket.captureOwner = initialOwner;
+                adopted = true;
+            }
+            return result;
+        } finally {
+            if (!adopted) capture.release(initialOwner);
+        }
+    }
+
     /** Mandatory targeted invalidation is immediate, bounded by 32, not a purge pass. */
     public synchronized int invalidateSession(UUID sessionId) {
         outsidePass();
@@ -143,7 +184,9 @@ public final class MusleeCommandQueue {
      *
      * For a dependency set, the adapter must hold its common authoritative lock
      * across every affected queue/fence invalidation and safe capture-store release.
-     * This method does not discover dependencies or release actual external captures.
+     * This method releases a concrete capture owned by the removed ticket through
+     * retireWaiting/release. It does not discover dependencies or release separately
+     * owned revision-fence captures or other external resources.
      */
     public synchronized boolean invalidateWaiting(Ticket ticket) {
         outsidePass();
@@ -219,6 +262,16 @@ public final class MusleeCommandQueue {
                 if (now == null) break;
                 if (expired(head, now)) { discardHead(State.EXPIRED); continue; }
                 if (verdict == Verdict.ENGAGE_RETAIN_CAPTURE || verdict == Verdict.ENGAGE_RELEASE_CAPTURE) {
+                    // Transfer the real capture before the indivisible state/accounting
+                    // transition. No copy and no user callback occurs under this lock.
+                    if (head.capture != null) {
+                        Object transactionOwner = new Object();
+                        if (!head.capture.transfer(head.captureOwner, transactionOwner)) {
+                            discardHead(State.REJECTED);
+                            continue;
+                        }
+                        head.captureOwner = transactionOwner;
+                    }
                     waiting.removeFirst(); reserved -= head.reservedBytes;
                     head.state = State.ENGAGED;
                     head.owner = Owner.TRANSACTION;
@@ -265,6 +318,14 @@ public final class MusleeCommandQueue {
         reserved -= ticket.reservedBytes; ticket.state = state; release(ticket);
     }
     private void release(Ticket ticket) {
-        if (ticket.owner != Owner.RELEASED) { ticket.owner = Owner.RELEASED; ticket.releases++; }
+        if (ticket.owner != Owner.RELEASED) {
+            if (ticket.capture != null) {
+                ticket.capture.release(ticket.captureOwner);
+                ticket.capture = null;
+                ticket.captureOwner = null;
+            }
+            ticket.owner = Owner.RELEASED;
+            ticket.releases++;
+        }
     }
 }
