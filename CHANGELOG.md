@@ -2,6 +2,14 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## Unreleased - Sliding door sound recipient correction
+
+### Fixed
+- Include the initiating player in the Metal Sliding Door's server sound broadcast when opening or closing it manually. Preserve paired-door synchronization, redstone behavior, sound selection, and game-event attribution.
+
+### Added
+- Compiled-bytecode regression coverage for the actual sound exclusion argument. This is not a physical audio or multiplayer client acceptance test.
+
 ## [1.1.61-reconstructed] - Unreleased lava surface correction
 
 ### Fixed
