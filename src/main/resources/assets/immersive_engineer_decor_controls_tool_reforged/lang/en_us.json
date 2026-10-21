@@ -504,7 +504,7 @@
   "item.immersive_engineer_decor_controls_tool_reforged.redia_tool.msg.badtarget": "The REDIA Tool has no useful work there.",
   "item.immersive_engineer_decor_controls_tool_reforged.redia_tool.msg.notorch": "No torch available for marker placement.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag": "Sleeping Bag",
-  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.help": "Weatherproof portable rest kit.\n Use it at night in the Overworld\n to skip to morning without setting\n a spawn point.",
+  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.help": "Weatherproof portable rest kit.\n Use it at night in the Overworld\n to skip to morning without setting\n a spawn point.\nRest requires one of the eight blocks beside a lit campfire.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.daytime": "It is not late enough to rest.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.dimension": "This place will not hold a safe rest.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.rested": "Rested until morning.",
@@ -862,7 +862,7 @@
   "jei.info.immersive_engineer_decor_controls_tool_reforged.tracker": "Stores a target dimension and block position on use. Sneak-use clears the stored target, and the tooltip shows the saved location when one is complete.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.ariadne_coal": "Single-stack marker tool with 100 uses. Successful placement adds an arrow marker on a sturdy face and costs durability; failed placement does not wear the item.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.stimpack": "Emergency medical tool. It can be used manually, and it can auto-trigger at low health to grant short survival effects before entering cooldown.",
-  "jei.info.immersive_engineer_decor_controls_tool_reforged.sleeping_bag": "Portable overworld sleep tool. It advances a safe night to morning without setting spawn and refuses unsafe or non-night use.",
+  "jei.info.immersive_engineer_decor_controls_tool_reforged.sleeping_bag": "Portable overworld sleep tool. It advances a safe night to morning without setting spawn and refuses unsafe or non-night use. Rest requires one of the eight blocks beside a lit campfire.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.material_box": "Stores up to 512 of one plain, stackable material type. Hold the box in main hand with matching material in off hand to load it, or use it with an empty off hand to retrieve material.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.diving_capsule": "Emergency air capsule. It can refill air manually or auto-trigger at low air, then enters cooldown.",
   "jei.info.immersive_engineer_decor_controls_tool_reforged.musli_bar_press": "Hand tool for compact rations. It consumes bread, an apple, and an accepted seed to create four Muslee Bars when output space is available.",
@@ -902,5 +902,6 @@
   "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Hold %s to open Engineer Manual",
   "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.sitting": "Right-click to sit; sneak to stand up.",
   "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.meal_bonus": "Meals: +20% saturation; +30% instead beside a Treated Wood Table. Capped at hunger.",
-  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.cake_bonus": "On foot: +10% only for cake slices eaten from a Treated Wood Table."
+  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.cake_bonus": "On foot: +10% only for cake slices eaten from a Treated Wood Table.",
+  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.campfire": "Rest beside a lit campfire (one of its eight neighboring blocks)."
 }
