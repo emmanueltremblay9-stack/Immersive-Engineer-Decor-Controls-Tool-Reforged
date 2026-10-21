@@ -8,7 +8,10 @@ NeoForge GameTest logic on **one exact commit** after PR #82 became part of `mai
 Do not merge this carrier; integrate each owning PR individually after its own
 review, and rerun target CI after every real integration.
 
-**Base implementation `main`:** `934024f2b313624c0053e3571e0c88d3553e88bc`.
+**Requalification base implementation `main`:**
+`6d159f045dc442de3414e89e81af8616e6be4ad8`.
+**Original carrier base (historical):**
+`934024f2b313624c0053e3571e0c88d3553e88bc`.
 The root `AGENTS.md` safeguards apply. The source PRs and exact HEADs selected are:
 
 - **PR #80** — targeted FIFO invalidation, HEAD
@@ -32,6 +35,25 @@ engaged ownership on invalidation/clock uncertainty, FIFO survivors, expiry at
 30 real seconds, public capture-admission fail-closed, and 128 races between
 engagement and targeted invalidation. The package-private ownership fixture is
 used solely within tests; its scalar number is **not** a memory proof.
+
+## Requalification after main advanced
+
+The previous carrier HEAD was `678a46f7eac40ef2313ff3593a057311cb717c16`.
+The new QA-only merge preserves that carrier's production and test blobs exactly,
+including the queue's PR #82 ownership and PR #80 targeted invalidation. It imports
+all 16 added files from the new main base unchanged: the press-batch, repair,
+withdrawal and rotation plan/policy helpers, their Cases/JUnit wrappers and docs.
+The main delta and the carrier's 14 changed paths do not intersect. The only
+newly authored change is this scope note; there is no new runtime implementation.
+
+Previous CI success is historical evidence for its original tested base, not a
+PASS for this requalification. New push and pull-request runs must identify the
+new carrier HEAD and their actual checkout SHA. A pull-request synthetic merge
+must not be silently equated with the branch HEAD. Record terminal conclusions,
+GameTest counts, JAR digest and remaining gaps in the review receipt. If main or
+a source PR advances again, report that drift instead of promoting this pinned
+composition to a current-main qualification. No local Java/NeoForge execution
+was performed during this requalification preparation.
 
 ## Validation distinctions
 
