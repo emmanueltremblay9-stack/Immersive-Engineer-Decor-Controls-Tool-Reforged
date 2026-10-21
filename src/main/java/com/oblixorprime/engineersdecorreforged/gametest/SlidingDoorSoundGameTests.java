@@ -4,6 +4,7 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,6 +27,9 @@ import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
@@ -105,12 +109,26 @@ public final class SlidingDoorSoundGameTests {
 
       private void addPlayers() {
          for (int index = 0; index < 2; index++) {
-            // The helper performs normal PlayerList registration. getPlayers() is read-only.
-            ServerPlayer player = helper.makeMockServerPlayerInLevel();
-            players.add(player);
-            SoundListener listener = new SoundListener(helper, player);
-            player.connection = listener;
-            listeners.add(listener);
+            // Install capture before IE's login sync: the embedded test transport has no
+            // negotiated client channels. Registration and sound routing remain native.
+            Consumer<PlayerEvent.PlayerLoggedInEvent> captureLogin = event -> {
+               if (event.getEntity() instanceof ServerPlayer joining
+                  && joining.serverLevel() == helper.getLevel()
+                  && joining.getGameProfile().getName().equals("test-mock-player")) {
+                  players.add(joining);
+                  SoundListener listener = new SoundListener(helper, joining);
+                  joining.connection = listener;
+                  listeners.add(listener);
+               }
+            };
+            NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, false, PlayerEvent.PlayerLoggedInEvent.class, captureLogin);
+            ServerPlayer player;
+            try {
+               player = helper.makeMockServerPlayerInLevel();
+            } finally {
+               NeoForge.EVENT_BUS.unregister(captureLogin);
+            }
+            helper.assertTrue(players.contains(player), "native login must install packet capture");
             BlockPos origin = helper.absolutePos(FIRST);
             player.setPos(origin.getX() + 0.5, origin.getY(), origin.getZ() + 2.5 + index);
             if (index == 0) actor = player;
