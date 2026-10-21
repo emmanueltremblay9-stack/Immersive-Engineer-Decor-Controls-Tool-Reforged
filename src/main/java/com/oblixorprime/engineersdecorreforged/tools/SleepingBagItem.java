@@ -1,5 +1,9 @@
 package com.oblixorprime.engineersdecorreforged.tools;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -43,6 +47,10 @@ public class SleepingBagItem extends TooltipItem {
 
       long dayTime = Math.floorMod(level.getDayTime(), 24000L);
       if (dayTime >= 12542L && dayTime <= 23459L) {
+         if (!hasAdjacentLitCampfire(level, player.blockPosition())) {
+            return fail(player, stack, "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.campfire");
+         }
+
          AABB area = AABB.ofSize(player.position(), 16.0, 8.0, 16.0);
          if (!level.getEntitiesOfClass(Monster.class, area, LivingEntity::isAlive).isEmpty()) {
             return fail(player, stack, "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.unsafe");
@@ -64,6 +72,22 @@ public class SleepingBagItem extends TooltipItem {
       } else {
          return fail(player, stack, "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.daytime");
       }
+   }
+
+   private static boolean hasAdjacentLitCampfire(Level level, BlockPos position) {
+      for (int dx = -1; dx <= 1; dx++) {
+         for (int dz = -1; dz <= 1; dz++) {
+            if (dx == 0 && dz == 0) {
+               continue;
+            }
+            BlockState state = level.getBlockState(position.offset(dx, 0, dz));
+            if (state.is(Blocks.CAMPFIRE) && state.hasProperty(BlockStateProperties.LIT)
+                  && state.getValue(BlockStateProperties.LIT)) {
+               return true;
+            }
+         }
+      }
+      return false;
    }
 
    private static InteractionResultHolder<ItemStack> fail(Player player, ItemStack stack, String key) {

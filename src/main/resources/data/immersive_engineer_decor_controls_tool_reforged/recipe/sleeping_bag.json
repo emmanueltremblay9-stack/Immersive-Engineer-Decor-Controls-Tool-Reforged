@@ -2,12 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "NNC",
+    "FFF",
+    "HHH",
     "CCC"
   ],
   "key": {
-    "N": {
-      "item": "minecraft:iron_nugget"
+    "F": {
+      "tag": "c:fabric_hemp"
+    },
+    "H": {
+      "tag": "c:fiber_hemp"
     },
     "C": {
       "tag": "minecraft:wool_carpets"
