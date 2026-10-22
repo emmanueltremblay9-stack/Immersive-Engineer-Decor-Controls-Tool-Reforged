@@ -88,6 +88,14 @@ public final class NativeFluidCells {
       world.getChunkSource().getLightEngine().checkBlock(pos);
       if (!world.isClientSide) {
          world.updateNeighborsAt(pos, state.getBlock());
+         // Attachment-only changes do not call updateShape on adjacent decorative blocks.
+         // Wake their existing fluids at the normal delay so changed levels and removal propagate.
+         for (var direction : net.minecraft.core.Direction.values()) {
+            var neighbor = pos.relative(direction);
+            if (!world.hasChunkAt(neighbor)) continue;
+            var neighborState = world.getBlockState(neighbor);
+            if (supported(neighborState)) NativeFluidloggedBlock.schedule(neighborState, world, neighbor);
+         }
          if (!fluid.isEmpty()) world.scheduleTick(pos, fluid.getType(), fluid.getType().getTickDelay(world));
       }
    }
