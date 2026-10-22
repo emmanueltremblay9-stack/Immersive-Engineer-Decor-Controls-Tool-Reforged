@@ -2,6 +2,23 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.64-reconstructed] - Unreleased corrective candidate
+
+### Fixed
+- Let naturally flowing lava and supported standard mod fluids enter Steel Catwalk Stairs through the transient-cell path, while preserving source-only bucket placement. Notify supported neighboring fluid cells when an attachment changes so chained stairs can drain after source removal (#89).
+- Restore the original Engineer's Tools 1.1.6 geometry, UVs and display transforms for Diving Capsule, Material Box and Muslee Bar Press, and the handheld parent and hand transforms for Crushing Hammer. Only texture namespaces change; existing texture bytes are retained (#90).
+- Restore the Tracker's original body and rotating pointer through the NeoForge 1.21.1 client renderer, including its auxiliary models and textures. Preserve the original renderer's omission in both first-person hand contexts and retain current target data, saved-data format and gameplay logic (#91).
+
+### Regression coverage and qualification limits
+- Coverage includes six stair-flow/bucket GameTests: natural water, lava, IE creosote and IE ethanol with unobstructed controls; chained lava stairs and source removal; and survival bucket round trips.
+- Resource checks compare complete pinned upstream models, unchanged textures and packaged JAR entries. Tracker coverage includes five math tests and thirteen client-render cases per renderer execution; these checks are not Windows screenshot-based visual acceptance.
+- This candidate needs its own exact-commit CI result and runtime JAR hash. Earlier `1.1.63-reconstructed` binaries and hashes remain evidence for their original commits only.
+- Windows/Prism visual and gameplay qualification remains pending. The reporter's exact liquid/block scene is still unspecified and is not claimed reproduced. No stable-release or exhaustive modpack-compatibility claim is made.
+
+### Candidate identity
+- Synchronize Gradle, NeoForge metadata and the current-candidate documentation to `1.1.64-reconstructed`; the runtime filename and manifest version derive from the same Gradle version.
+- This version increment adds no gameplay, recipe, durability, GUI, dependency or workflow changes. Muslee reserve/capture activation remains unchanged; publication manifests and earlier release evidence are preserved.
+
 ## Unreleased - Sliding door sound recipient correction
 
 ### Fixed
