@@ -1,0 +1,73 @@
+// Pinned source and adaptation details: docs/testing/tracker-render-parity.md.
+def trackerModelPins = [
+        tracker: 'bcee4bd256c9dfbd9560c0921ea721af71b7040e',
+        tracker_model: '3526404b4a5b1e2ca4ea1085fe5a32c3de8aa78d',
+        tracker_pointer_model: '149dd22819a7861fbfa044fc9b1c55dec1018729'
+]
+def trackerTexturePins = [
+        'tracker.png': 'd181d51b583819bf1f8e223be0a15a143b041cf3',
+        'tracker_pointer_back.png': 'c9ea1afd61b573f409cfe711c85364a232e6c7f8',
+        'tracker_pointer_front.png': '64061f3b791b5871be115e123ab788e773f2075b',
+        'tracker_pointer_side1.png': '236c0982f3326fb3871b5776724b901089e2381d',
+        'tracker_pointer_side2.png': 'fcf17893fdebf73a1356d31d285d4f0b8fc52831',
+        'tracker_side.png': '61c1b087546b40b1ffb3ae13e7a42ec88b382d6f'
+]
+tasks.register('validateTrackerModels') {
+    group = 'verification'
+    description = 'Checks full upstream Tracker model parity, unchanged PNGs, and runtime JAR entries.'
+    dependsOn tasks.named('jar'), tasks.named('test')
+    inputs.dir('tools/validation/fixtures/tracker_1_1_6')
+    inputs.files(trackerModelPins.keySet().collect { "src/main/resources/assets/${mod_id}/models/item/${it}.json" })
+    inputs.files(trackerTexturePins.keySet().collect { "src/main/resources/assets/${mod_id}/textures/item/${it}" })
+    inputs.file(tasks.named('jar', Jar).flatMap { it.archiveFile })
+    doLast {
+        def report = layout.buildDirectory.file('test-results/test/TEST-com.oblixorprime.engineersdecorreforged.client.TrackerRenderStateTest.xml').get().asFile
+        if (!report.isFile()) throw new GradleException('Tracker render math tests were not discovered')
+        def suite = new groovy.xml.XmlSlurper().parse(report)
+        if (suite.@tests.text() != '5' || suite.@failures.text() != '0'
+                || suite.@errors.text() != '0' || suite.@skipped.text() != '0') {
+            throw new GradleException('All five Tracker render math tests must execute and pass')
+        }
+        logger.lifecycle('TRACKER_MATH_TESTS_PASS cases=5')
+        def json = new groovy.json.JsonSlurper()
+        def gitBlobSha = { byte[] bytes ->
+            def digest = java.security.MessageDigest.getInstance('SHA-1')
+            digest.update(("blob " + bytes.length).getBytes('UTF-8'))
+            digest.update((byte) 0)
+            digest.update(bytes)
+            digest.digest().encodeHex().toString()
+        }
+        new java.util.zip.ZipFile(tasks.named('jar', Jar).get().archiveFile.get().asFile).withCloseable { archive ->
+            def verifyEntry = { String entryPath ->
+                def entries = java.util.Collections.list(archive.entries()).findAll { it.name == entryPath }
+                if (entries.size() != 1) throw new GradleException("Expected one Tracker JAR entry: ${entryPath}")
+                byte[] packaged = archive.getInputStream(entries[0]).withCloseable { it.bytes }
+                if (!java.util.Arrays.equals(packaged, file("src/main/resources/${entryPath}").bytes)) {
+                    throw new GradleException("Tracker packaged bytes differ: ${entryPath}")
+                }
+            }
+            trackerModelPins.each { String name, String pin ->
+                def fixture = file("tools/validation/fixtures/tracker_1_1_6/${name}.json")
+                if (gitBlobSha(fixture.bytes) != pin) throw new GradleException("Tracker reference model changed: ${name}")
+                def expectedText = fixture.getText('UTF-8').replace('engineerstools:', "${mod_id}:")
+                def modelPath = "assets/${mod_id}/models/item/${name}.json"
+                def actual = file("src/main/resources/${modelPath}")
+                if (json.parse(actual) != json.parseText(expectedText)
+                        || !java.util.Arrays.equals(actual.bytes, expectedText.getBytes('UTF-8'))) {
+                    throw new GradleException("Tracker model differs beyond namespace remapping: ${name}")
+                }
+                verifyEntry(modelPath)
+                logger.lifecycle("TRACKER_MODEL_PARITY_PASS model=${name} sourceBlob=${pin} packaged=true")
+            }
+            trackerTexturePins.each { String name, String pin ->
+                def texturePath = "assets/${mod_id}/textures/item/${name}"
+                if (gitBlobSha(file("src/main/resources/${texturePath}").bytes) != pin) {
+                    throw new GradleException("Tracker texture differs from upstream: ${name}")
+                }
+                verifyEntry(texturePath)
+            }
+            logger.lifecycle('TRACKER_TEXTURE_PARITY_PASS textures=6 packaged=true')
+        }
+    }
+}
+tasks.named('check').configure { dependsOn tasks.named('validateTrackerModels') }

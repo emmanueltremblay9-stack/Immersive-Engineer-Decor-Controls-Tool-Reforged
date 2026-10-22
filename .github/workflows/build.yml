@@ -76,6 +76,7 @@ jobs:
             build/client-gameplay-*/run/catalogue-screenshots/*.png
             build/client-gameplay-*/run/client-catalogue-result.json
             build/client-gameplay-*/run/client-generic-fluid-result.json
+            build/client-gameplay-*/run/client-tracker-render-result.json
             build/client-gameplay-*/run/client-submerged-catwalk-result.json
             build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png
           if-no-files-found: error
@@ -146,6 +147,7 @@ jobs:
             build/client-gameplay-*/run/catalogue-screenshots/*.png
             build/client-gameplay-*/run/client-catalogue-result.json
             build/client-gameplay-*/run/client-generic-fluid-result.json
+            build/client-gameplay-*/run/client-tracker-render-result.json
             build/client-gameplay-*/run/client-submerged-catwalk-result.json
             build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png
           if-no-files-found: error
@@ -186,6 +188,7 @@ jobs:
           name: lava-${{ matrix.profile }}
           path: |
             build/client-gameplay-*/run/client-lava-surface-result.json
+            build/client-gameplay-*/run/client-tracker-render-result.json
             build/client-gameplay-*/run/lava-surface-screenshots/*.png
           if-no-files-found: error
           retention-days: 14

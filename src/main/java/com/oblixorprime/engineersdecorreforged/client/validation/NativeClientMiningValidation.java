@@ -145,6 +145,7 @@ public final class NativeClientMiningValidation {
                require(mc.getSingleplayerServer() != null, "Fixture must use its own integrated server");
                Connection connection = mc.player.connection.getConnection();
                require(connection.isMemoryConnection(), "Fixture must never connect to a remote server");
+               TrackerRenderValidation.verify(mc, evidence.getParent(), nonce);
                mc.setScreen(new FixtureScreen());
                if (Boolean.getBoolean("iedctr.lavaSurfaceOnly")) { enter(Phase.LAVA_SURFACE); return; }
                if (Boolean.getBoolean("iedctr.flowDistanceOnly")) {
