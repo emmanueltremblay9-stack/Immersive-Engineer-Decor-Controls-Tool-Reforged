@@ -298,10 +298,78 @@ tasks.register('validateProjectMetadata') {
     }
 }
 
+
+// Pinned Engineer's Tools 1.1.6 assets; see docs/testing/engineers-tools-static-model-parity.md.
+def restoredToolsItems = [
+        diving_capsule: [model: 'd3676f8eaac86902ac05ef2dcc35e98ae7942a9c', texture: '696a1a80f756aecc264b46868eba80d87a85e653'],
+        material_box: [model: 'a78dc81fc07325e96b49ca691bdbbef1592ee2e0', texture: '0c8446c4638ddca67fd62a6d5ebbd3677732c601'],
+        musli_bar_press: [model: '07b544b9571a1f796fd7d03a8e65a57aec326382', texture: 'cd94fe28d72199df78e7d5fb9c7c3571e0093d78'],
+        crushing_hammer: [model: 'c5a41eb8d9ccd4c2a79a090e4ab71f92ae679ab6', texture: '23fab9c877f06602768edac3ca69f0289f37878b']
+]
+tasks.register('validateToolsItemModels') {
+    group = 'verification'
+    description = 'Verifies complete upstream model parity, provenance, unchanged textures and runtime JAR entries.'
+    dependsOn tasks.named('jar')
+    inputs.dir('tools/validation/fixtures/engineers_tools_1_1_6')
+    inputs.files(restoredToolsItems.keySet().collectMany { itemId -> [
+            "src/main/resources/assets/${mod_id}/models/item/${itemId}.json",
+            "src/main/resources/assets/${mod_id}/textures/item/${itemId}.png"
+    ] })
+    inputs.file(tasks.named('jar', Jar).flatMap { it.archiveFile })
+
+    doLast {
+        def json = new groovy.json.JsonSlurper()
+        def gitBlobSha = { byte[] bytes ->
+            def digest = java.security.MessageDigest.getInstance('SHA-1')
+            digest.update(("blob " + bytes.length).getBytes('UTF-8'))
+            digest.update((byte) 0)
+            digest.update(bytes)
+            digest.digest().encodeHex().toString()
+        }
+        def runtimeJar = tasks.named('jar', Jar).get().archiveFile.get().asFile
+        new java.util.zip.ZipFile(runtimeJar).withCloseable { archive ->
+            restoredToolsItems.each { String itemId, Map pins ->
+                def fixture = file("tools/validation/fixtures/engineers_tools_1_1_6/${itemId}.json")
+                if (gitBlobSha(fixture.bytes) != pins.model) {
+                    throw new GradleException("Pinned upstream model changed: ${itemId}")
+                }
+                def expectedText = fixture.getText('UTF-8').replace('engineerstools:', "${mod_id}:")
+                def expected = json.parseText(expectedText)
+                def modelPath = "assets/${mod_id}/models/item/${itemId}.json"
+                def texturePath = "assets/${mod_id}/textures/item/${itemId}.png"
+                def modelFile = file("src/main/resources/${modelPath}")
+                def textureFile = file("src/main/resources/${texturePath}")
+                // Full parsed equality covers all geometry, faces, UVs, display contexts and absent keys.
+                if (json.parse(modelFile) != expected) {
+                    throw new GradleException("Upstream model parity lost: ${itemId}")
+                }
+                if (!java.util.Arrays.equals(modelFile.bytes, expectedText.getBytes('UTF-8'))) {
+                    throw new GradleException("Only the upstream texture namespace may change: ${itemId}")
+                }
+                if (gitBlobSha(textureFile.bytes) != pins.texture) {
+                    throw new GradleException("Original texture bytes changed: ${itemId}")
+                }
+                [modelPath, texturePath].each { String entryPath ->
+                    def entries = java.util.Collections.list(archive.entries()).findAll { it.name == entryPath }
+                    if (entries.size() != 1) {
+                        throw new GradleException("Expected one runtime JAR entry: ${entryPath}")
+                    }
+                    byte[] packaged = archive.getInputStream(entries[0]).withCloseable { it.bytes }
+                    if (!java.util.Arrays.equals(packaged, file("src/main/resources/${entryPath}").bytes)) {
+                        throw new GradleException("Packaged resource differs from validated source: ${entryPath}")
+                    }
+                }
+                logger.lifecycle("TOOLS_MODEL_PARITY_PASS item=${itemId} sourceBlob=${pins.model} textureBlob=${pins.texture} packaged=true")
+            }
+        }
+    }
+}
+
 tasks.named('check').configure {
     dependsOn tasks.named('validateManualResources')
     dependsOn tasks.named('validateProjectMetadata')
     dependsOn tasks.named('validateSignItemModels')
+    dependsOn tasks.named('validateToolsItemModels')
 }
 
 tasks.named('jar', Jar).configure {
