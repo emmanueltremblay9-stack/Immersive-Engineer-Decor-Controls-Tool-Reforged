@@ -29,6 +29,8 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 @GameTestHolder(EngineersDecorReforged.MOD_ID)
 @PrefixGameTestTemplate(false)
 public final class StairGenericFluidFlowGameTests {
+   private static final org.slf4j.Logger LOGGER = com.mojang.logging.LogUtils.getLogger();
+
    @GameTest(template = "empty", timeoutTicks = 1100)
    public static void stair_natural_water_matches_control_and_recedes(GameTestHelper helper) {
       channel(helper, "minecraft:water", 1);
@@ -132,6 +134,7 @@ public final class StairGenericFluidFlowGameTests {
                   "decorative channel fully recedes at " + distance + " for " + id);
                if (distance > 0 && distance <= stairCount) assertStairPreserved(helper, source.east(distance));
             }
+            LOGGER.info("IEDCTR_STAIR_FLOW_PASS fluid={} stairs={} matchedPositions=3 recession=true", id, stairCount);
             helper.succeed();
          });
       });
@@ -169,6 +172,7 @@ public final class StairGenericFluidFlowGameTests {
          assertStairPreserved(helper, pos);
          helper.assertTrue(stair.pickupBlock(null, level, pos, level.getBlockState(pos)).isEmpty(), "source pickup cannot duplicate a bucket");
       }
+      LOGGER.info("IEDCTR_GAME_TEST_PASS stair_source_buckets_still_roundtrip fluids=water,lava,creosote,ethanol");
       helper.succeed();
    }
 }
