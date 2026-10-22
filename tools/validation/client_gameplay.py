@@ -250,6 +250,8 @@ gradle.projectsEvaluated {
         from fluid_extensions import validate_extensions
         if expired or code != 0 or crashes or FATAL_PATTERN.search(logs):
             raise SmokeFailure('Fluid extension client did not finish cleanly')
+        from tracker_render import validate_tracker
+        validate_tracker(game, nonce)
         if args.lava_surface_only:
             if (proof.get("suite")!="lava-surface-session-v1" or proof.get("status")!="passed"
                     or proof.get("nonce")!=nonce or proof.get("actual_integrated_world") is not True

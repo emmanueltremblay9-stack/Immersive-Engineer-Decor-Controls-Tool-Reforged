@@ -328,3 +328,5 @@ idea {
         downloadJavadoc = true
     }
 }
+
+apply from: 'gradle/validate-tracker-models.gradle'
