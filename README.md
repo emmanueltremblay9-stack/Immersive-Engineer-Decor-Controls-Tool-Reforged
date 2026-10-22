@@ -27,9 +27,11 @@ Latest qualified and publicly released version: `1.1.56-reconstructed`.
 
 ## Current candidate
 
-Active development version: `1.1.60-reconstructed`, an unpublished generic native fluidlogging draft for the 200 explicitly supported decorative blocks. Existing waterlogging and source cells remain compatible. Registered standard world fluids use independent chunk cells with named persistence, initial/update synchronization and renderer snapshots. The Passive Fluid Accumulator retains its separate exterior cell and tank. See [generic scope and qualification](docs/testing/generic-fluid-cells.md). No release or installation is implied.
+Active development version: `1.1.64-reconstructed`, an unpublished corrective candidate containing the Steel Catwalk Stairs natural-fluid-flow fix and the Engineer's Tools item-model and Tracker-rendering corrections from PRs #89–91. See the [candidate changelog](CHANGELOG.md#1164-reconstructed---unreleased-corrective-candidate). Existing generic fluidlogging scope and saved-data contracts remain documented in [generic scope and qualification](docs/testing/generic-fluid-cells.md).
 
-See the [candidate notes](release-bundle/1.1.58-reconstructed/curseforge-notes.md) and [qualification gates](docs/releases/next-patch-qualification.md). `1.1.56-reconstructed` remains the latest qualified public release until those gates and publication readback pass.
+The versioned candidate requires its own exact-commit CI and JAR identity; earlier `1.1.63-reconstructed` hashes do not identify this JAR. Windows/Prism visual and gameplay qualification remains pending. Linux CI resource, server and client-render checks do not establish Windows visual acceptance or reproduce the reporter's still-unspecified liquid/block scene.
+
+The [qualification gates](docs/releases/next-patch-qualification.md) remain applicable; the older `1.1.58-reconstructed` notes and publication manifest are historical and are not activated by this version increment. `1.1.56-reconstructed` remains the latest qualified public release recorded here until qualification and publication readback pass.
 
 ## Config status
 
