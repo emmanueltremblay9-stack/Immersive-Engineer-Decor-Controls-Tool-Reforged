@@ -2,6 +2,16 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.65-reconstructed] - Unreleased Lithium corrective candidate
+
+### Fixed
+- Resolve the startup Mixin conflict with Lithium mc1.21.1-0.15.4 on NeoForge 1.21.1. Apply the native fluid-neighbor redirects before Lithium replaces its flow method, preserving the required injection checks and leaving Lithium's fluid optimization enabled (#96).
+
+### Qualification and scope
+- PR #96 adds a natural-flow/source-removal/chunk-reload regression and a pinned Lithium server/client CI profile. Its merged 1.1.64 development artifact passed all 540 required GameTests with and without Lithium; final 1.1.65 artifact qualification is tracked separately.
+- Increment version metadata and prepare CurseForge release notes. This version increment changes no runtime Java, assets, save format, recipes or dependency versions.
+- The unmerged shape-cache PR #94, external-fluidlogging PR #95 and isolated chimney-state investigation are not part of this candidate. Other Lithium versions and arbitrary modpacks are not claimed qualified.
+
 ## [1.1.64-reconstructed] - Unreleased corrective candidate
 
 ### Fixed

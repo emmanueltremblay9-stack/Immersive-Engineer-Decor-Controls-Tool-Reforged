@@ -12,7 +12,9 @@ This workspace was rebuilt from the published `engineers_decor_reforged-1.1.jar`
 .\gradlew.bat clean build
 ```
 
-Latest qualified and publicly released version: `1.1.56-reconstructed`.
+Latest public CurseForge version: [`1.1.64-reconstructed`, file 9291194](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9291194), published on 22 October 2026.
+
+The following qualification record describes the historical `1.1.56-reconstructed` release:
 
 - The [GitHub release](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/releases/tag/v1.1.56-reconstructed) and [CurseForge file 9042960](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9042960) are public and independently hash-verified. Both serve the same 19,568,379-byte runtime JAR: SHA-256 `fa7bde923433658a78dcf3792c9fc6af2e0b5212a7897e1b21c3323e7af809a4`.
 - Release/tag commit `527b6d1afbcb283d6ff08cc40bc7a92ec229c399` has qualified source tree `963b564f803f8537fa89033a5b055a7d8e2aa72c`. Later publication-tooling and documentation commits on `main` are maintenance state, not the source identity of the published JAR.
@@ -27,11 +29,9 @@ Latest qualified and publicly released version: `1.1.56-reconstructed`.
 
 ## Current candidate
 
-Active development version: `1.1.64-reconstructed`, an unpublished corrective candidate containing the Steel Catwalk Stairs natural-fluid-flow fix and the Engineer's Tools item-model and Tracker-rendering corrections from PRs #89–91. See the [candidate changelog](CHANGELOG.md#1164-reconstructed---unreleased-corrective-candidate). Existing generic fluidlogging scope and saved-data contracts remain documented in [generic scope and qualification](docs/testing/generic-fluid-cells.md).
+Active development version: `1.1.65-reconstructed`, a corrective candidate for the startup conflict with Lithium **mc1.21.1-0.15.4 NeoForge** fixed in [PR #96](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/96). Lithium remains optional and its fluid optimization remains enabled. This version increment changes metadata and release documentation only; runtime code and assets match merged commit `8a51986cb3bfc577f79c86ed4fb29937d3d72cc6`.
 
-The versioned candidate requires its own exact-commit CI and JAR identity; earlier `1.1.63-reconstructed` hashes do not identify this JAR. Windows/Prism visual and gameplay qualification remains pending. Linux CI resource, server and client-render checks do not establish Windows visual acceptance or reproduce the reporter's still-unspecified liquid/block scene.
-
-The [qualification gates](docs/releases/next-patch-qualification.md) remain applicable; the older `1.1.58-reconstructed` notes and publication manifest are historical and are not activated by this version increment. `1.1.56-reconstructed` remains the latest qualified public release recorded here until qualification and publication readback pass.
+The candidate needs its own exact-commit CI, runtime JAR hash and applicable client/server qualification before publication. The previously validated 1.1.64 development JAR is not the 1.1.65 artifact. See [the 1.1.65 qualification record](docs/releases/1.1.65-reconstructed.md), [release notes](release-bundle/1.1.65-reconstructed/curseforge-notes.md) and [publication procedure](docs/CURSEFORGE_RELEASE.md). Existing fluidlogging scope and saved-data contracts remain documented in [generic scope and qualification](docs/testing/generic-fluid-cells.md).
 
 ## Config status
 
