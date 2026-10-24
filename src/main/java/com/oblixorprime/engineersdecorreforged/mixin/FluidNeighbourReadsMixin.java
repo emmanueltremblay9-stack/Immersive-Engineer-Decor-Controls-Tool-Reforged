@@ -9,7 +9,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 
 /** Keep vanilla level/delay/occlusion calculations; read fluid cells at their actual positions. */
-@Mixin(FlowingFluid.class)
+// Permit strict positional-read injections into Lithium 0.15.4's
+// priority-1000 isWaterHole overwrite as well as the vanilla implementation.
+@Mixin(value=FlowingFluid.class, priority=1100)
 public abstract class FluidNeighbourReadsMixin {
    @Redirect(method="getNewLiquid", at=@At(value="INVOKE", target="Lnet/minecraft/world/level/block/state/BlockState;getFluidState()Lnet/minecraft/world/level/material/FluidState;", ordinal=0))
    private FluidState iedctr$neighbor(BlockState state, Level level, BlockPos origin, BlockState current, @Local(ordinal=1) BlockPos neighbor) { return level.getFluidState(neighbor); }
