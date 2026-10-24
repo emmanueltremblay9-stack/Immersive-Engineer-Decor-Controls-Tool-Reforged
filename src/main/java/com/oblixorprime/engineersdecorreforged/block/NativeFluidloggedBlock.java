@@ -136,6 +136,8 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock, net.neof
    @Override
    default int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
       // Lighting workers must never ask Level.getFluidState (which can block on a FULL chunk).
+      // Preview views can implement LevelAccessor without providing a chunk source.
+      if (level instanceof LevelAccessor accessor && accessor.getChunkSource() == null) return state.getLightEmission();
       var auxiliary = level.getAuxLightManager(pos);
       return Math.max(state.getLightEmission(), auxiliary == null ? 0 : auxiliary.getLightAt(pos));
    }
