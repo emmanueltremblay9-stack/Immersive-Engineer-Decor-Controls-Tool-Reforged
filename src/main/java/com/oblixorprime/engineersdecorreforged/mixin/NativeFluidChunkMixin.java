@@ -30,8 +30,8 @@ public abstract class NativeFluidChunkMixin {
          NativeFluidCells.refreshRandomTicks(chunk, NativeFluidCells.snapshot(chunk));
       } else if (!chunk.getLevel().isClientSide && NativeFluidCells.supported(state) && !NativeFluidCells.supported(previous)) {
          var fluid = previous.getFluidState();
-         if (NativeFluidCells.standard(fluid.getType()) && !fluid.isEmpty() && state.getFluidState().isEmpty()
-               && (fluid.isSource() || (StairWaterFlow.supported(state) && !(state.getBlock() instanceof com.oblixorprime.engineersdecorreforged.utility.MachineBlocks.PassiveFluidAccumulatorBlock)))) {
+         if (NativeFluidCells.acceptsCaptured(state, fluid) && !fluid.isEmpty() && state.getFluidState().isEmpty()
+               && (fluid.isSource() || (NativeFluidCells.transientSupported(state) && !(state.getBlock() instanceof com.oblixorprime.engineersdecorreforged.utility.MachineBlocks.PassiveFluidAccumulatorBlock)))) {
             chunk.setData(NativeFluidCells.CELLS.get(), data.with(pos, fluid));
             chunk.setUnsaved(true);
             NativeFluidCells.refreshRandomTicks(chunk, NativeFluidCells.snapshot(chunk));

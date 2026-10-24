@@ -1,6 +1,6 @@
 # Generic native fluid cells (work in progress)
 
-This extension applies only to the 200 explicitly registered decorative blocks already covered by native fluidlogging. Ten full cubes accept sources; the other190 accept transient fluid. It does not opt in vanilla or other-mod blocks.
+The original native adapter applies to the 200 explicitly registered decorative blocks already covered by native fluidlogging. Ten full cubes accept sources; the other190 accept transient fluid. A separate [qualified external adapter](external-fluidlogging.md) extends selected vanilla families and ten pinned Immersive Engineering IDs without adding blockstate properties; it does not broaden the native adapter's property assumptions.
 
 Supported fluids must be FlowingFluid instances whose normal world block actually exposes that fluid. Water, lava, IE creosote, ethanol, biodiesel and plant oil are qualification samples. NeoForge milk has no world liquid block and is rejected. Fluid-specific third-party reactions are not universally qualified.
 
