@@ -145,7 +145,11 @@ jobs:
           path: |
             build/lithium-compatibility/identity.json
             build/lithium-compatibility/gametest-run/logs/*.log
-            build/client-gameplay-*/run/*result.json
+            build/client-gameplay-*/run/client-gameplay-result.json
+            build/client-gameplay-*/run/client-water-flow-distance-result.json
+            build/client-gameplay-*/run/client-generic-fluid-result.json
+            build/client-gameplay-*/run/client-submerged-catwalk-result.json
+            build/client-gameplay-*/run/client-tracker-render-result.json
             build/client-gameplay-*/run/logs/*.log
             build/client-gameplay-*/run/canal-screenshots/*.png
             build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png
