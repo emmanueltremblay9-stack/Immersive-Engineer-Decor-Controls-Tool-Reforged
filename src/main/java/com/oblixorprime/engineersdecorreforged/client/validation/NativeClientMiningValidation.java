@@ -416,6 +416,13 @@ public final class NativeClientMiningValidation {
          }
       }
       require(mc.level == null && mc.getSingleplayerServer() == null, "Refusing to replace a loaded world");
+      if (Boolean.getBoolean("iedctr.requireLithiumFluidBfs")) {
+         var lithium = net.neoforged.fml.ModList.get().getModContainerById("lithium").orElseThrow();
+         require(lithium.getModInfo().getVersion().toString().equals("0.15.4+mc1.21.1"), "Exact Lithium version required");
+         require(java.util.Arrays.stream(net.minecraft.world.level.material.FlowingFluid.class.getDeclaredMethods())
+            .anyMatch(m -> m.getName().contains("calculateComplexFluidFlowDirections")), "Lithium fluid BFS must remain enabled");
+         EngineersDecorReforged.LOGGER.info("IEDCTR_LITHIUM_COMPAT version=0.15.4+mc1.21.1 bfs=true nonce={}", nonce);
+      }
       evidence = game.resolve("client-gameplay-result.json");
       write("running", null);
       mc.options.pauseOnLostFocus = false;
