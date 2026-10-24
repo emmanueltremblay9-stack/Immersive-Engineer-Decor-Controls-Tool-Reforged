@@ -29,7 +29,8 @@ public abstract class NativeFluidRegionMixin {
    @Inject(method="getFluidState", at=@At("RETURN"), cancellable=true)
    private void iedctr$read(BlockPos pos, CallbackInfoReturnable<FluidState> cir) {
       if (cir.getReturnValue().isEmpty() && NativeFluidCells.supported(((RenderChunkRegion)(Object)this).getBlockState(pos))) {
-         var cell = iedctr$cells.get(pos.asLong()); if (cell != null) cir.setReturnValue(cell);
+         var cell = iedctr$cells.get(pos.asLong());
+         if (cell != null && NativeFluidCells.visible(((RenderChunkRegion)(Object)this).getBlockState(pos),cell)) cir.setReturnValue(cell);
       }
    }
 }
