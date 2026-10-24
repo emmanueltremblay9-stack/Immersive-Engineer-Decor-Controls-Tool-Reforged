@@ -259,6 +259,51 @@ public final class ExternalFluidloggingGameTests {
    }
 
    @GameTest(template="empty")
+   public static void external_real_block_placement_preserves_world_fluid(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(new BlockPos(3,2,3));var player=player(h,pos,false);
+      for(var block:List.of(Blocks.OAK_STAIRS,Blocks.STONE_SLAB,Blocks.GLASS_PANE,ie("slab_treated_wood_horizontal")))
+         for(var fluid:List.of(Fluids.WATER.getSource(false),Fluids.FLOWING_WATER.getFlowing(5,false),
+               Fluids.FLOWING_WATER.getFlowing(8,true),Fluids.LAVA.getSource(false),Fluids.FLOWING_LAVA.getFlowing(5,false))) {
+            prepare(h,pos,block);level.setBlock(pos,fluid.createLegacyBlock(),3);
+            var expected=level.getFluidState(pos);player.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(block.asItem(),2));
+            var hit=new BlockHitResult(new Vec3(pos.getX()+.5,pos.getY(),pos.getZ()+.5),Direction.UP,pos.below(),false);
+            var context=new UseOnContext(player,InteractionHand.MAIN_HAND,hit);
+            h.assertTrue(block.asItem().useOn(context).consumesAction(),"real block item placed into fluid "+block+" / "+expected);
+            h.assertTrue(level.getBlockState(pos).is(block),"placement retains expected block");
+            h.assertValueEqual(player.getMainHandItem().getCount(),1,"placement consumes exactly one item");
+            h.assertValueEqual(level.getFluidState(pos),expected,"placement retains exact world level and falling");
+            h.assertValueEqual(level.getBlockState(pos).getValue(BlockStateProperties.WATERLOGGED),expected.equals(Fluids.WATER.getSource(false)),"placement never promotes currents");
+         }
+      h.succeed();
+   }
+
+   @GameTest(template="empty",timeoutTicks=180)
+   public static void external_natural_mixing_conserves_container_and_native_products(GameTestHelper h) {
+      var level=h.getLevel();var water=h.absolutePos(new BlockPos(2,2,2));var lava=water.south(3);
+      for(var pos:List.of(water,lava)) {
+         prepare(h,pos,Blocks.IRON_BARS);
+         for(int x=-1;x<=2;x++) {
+            level.setBlock(pos.offset(x,-1,0),Blocks.STONE.defaultBlockState(),3);
+            level.setBlock(pos.offset(x,0,-1),Blocks.STONE.defaultBlockState(),3);
+            level.setBlock(pos.offset(x,0,1),Blocks.STONE.defaultBlockState(),3);
+         }
+         level.setBlock(pos.west(),Blocks.STONE.defaultBlockState(),3);level.setBlock(pos.east(2),Blocks.STONE.defaultBlockState(),3);
+      }
+      ExternalFluidAdapter.place(level,water,level.getBlockState(water),Fluids.WATER.getSource(false));
+      level.setBlock(water.east(),Blocks.LAVA.defaultBlockState(),3);
+      h.assertTrue(level.getBlockState(water.east()).is(Blocks.OBSIDIAN),"free lava keeps native contact reaction beside stored water");
+      ExternalFluidAdapter.place(level,lava,level.getBlockState(lava),Fluids.LAVA.getSource(false));
+      level.setBlock(lava.east(),Blocks.WATER.defaultBlockState(),3);
+      h.runAfterDelay(120,()->{
+         h.assertTrue(level.getBlockState(water).is(Blocks.IRON_BARS) && level.getFluidState(water).equals(Fluids.WATER.getSource(false)),"external water survives neighboring native reaction");
+         h.assertTrue(level.getBlockState(lava).is(Blocks.IRON_BARS) && level.getFluidState(lava).equals(Fluids.LAVA.getSource(false)),"incoming water does not overwrite resident lava or its container");
+         h.assertTrue(ExternalFluidAdapter.pickup(level,lava,level.getBlockState(lava)).is(Items.LAVA_BUCKET),"resident lava remains recoverable once");
+         h.assertTrue(ExternalFluidAdapter.pickup(level,lava,level.getBlockState(lava)).isEmpty(),"mixing produces no second bucket");
+         h.succeed();
+      });
+   }
+
+   @GameTest(template="empty")
    public static void external_compressed_reload_palette_delta_and_light(GameTestHelper h)throws Exception {
       var level=h.getLevel();var cp=level.getChunkAt(h.absolutePos(new BlockPos(3,2,3))).getPos();var saved=new LevelChunk(level,cp);
       var cells=FluidCellData.EMPTY;int i=0;
