@@ -155,10 +155,19 @@ public final class ExternalFluidloggingGameTests {
    @GameTest(template="empty",timeoutTicks=160)
    public static void external_no_source_promotion_and_legacy_source_preserved(GameTestHelper h) {
       var level=h.getLevel(); var pos=h.absolutePos(new BlockPos(3,2,3));prepare(h,pos,Blocks.IRON_BARS);
-      level.setBlock(pos.below(),Blocks.STONE.defaultBlockState(),3);
+      // Keep both source cells on a solid floor: an open downward outlet makes vanilla prefer falling
+      // and would never exercise the horizontal two-source promotion path.
+      for(int x=-1;x<=1;x++) {
+         level.setBlock(pos.offset(x,-1,0),Blocks.STONE.defaultBlockState(),3);
+         level.setBlock(pos.offset(x,0,-1),Blocks.STONE.defaultBlockState(),3);
+         level.setBlock(pos.offset(x,0,1),Blocks.STONE.defaultBlockState(),3);
+      }
+      level.setBlock(pos.west(2),Blocks.STONE.defaultBlockState(),3);level.setBlock(pos.east(2),Blocks.STONE.defaultBlockState(),3);
       level.setBlock(pos.west(),Blocks.WATER.defaultBlockState(),3); level.setBlock(pos.east(),Blocks.WATER.defaultBlockState(),3);
       h.runAfterDelay(30,()->{
-         h.assertTrue(!level.getFluidState(pos).isEmpty() && !level.getFluidState(pos).isSource(),"two neighbors do not promote current");
+         h.assertTrue(level.getFluidState(pos.west()).isSource() && level.getFluidState(pos.east()).isSource(),"both source controls remain supplied");
+         h.assertFalse(level.getFluidState(pos).isEmpty(),"two sources feed the enclosed cell");
+         h.assertFalse(level.getFluidState(pos).isSource(),"two neighbors do not promote current");
          level.setBlock(pos.west(),Blocks.STONE.defaultBlockState(),3);level.setBlock(pos.east(),Blocks.STONE.defaultBlockState(),3);
          // This is the exact pre-existing waterlogged save representation, with no attachment migration.
          var legacy=Blocks.STONE_SLAB.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED,true);
