@@ -1893,6 +1893,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
                this.addFluid("water", 250, 3000);
             } else if (this.level.getFluidState(source).getType() == Fluids.LAVA) {
                this.addFluid("lava", 250, 3000);
+            } else if (this.tickCounter % 80 == 0) {
+               this.collectWeatherWater(50, 100, 3000);
             }
          }
 
@@ -1919,6 +1921,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
                return;
             }
          }
+
+         this.collectWeatherWater(100, 200, 4000);
+      }
+   }
+
+   private void collectWeatherWater(int rainAmount, int thunderAmount, int capacity) {
+      BlockPos opening = this.worldPosition.above();
+      if (this.level != null && this.level.hasChunkAt(opening) && this.level.isRainingAt(opening)) {
+         this.addFluid("water", this.level.isThundering() ? thunderAmount : rainAmount, capacity);
       }
    }
 
