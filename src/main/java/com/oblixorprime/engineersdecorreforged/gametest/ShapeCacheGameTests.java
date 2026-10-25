@@ -20,7 +20,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
-/** Issue 93: frozen pre-cache geometry oracle from release 1.1.64, not the new cache builder. */
+/** Frozen pre-cache collision/support oracle, plus the explicit packaged-model landing alignment delta. */
 @GameTestHolder(EngineersDecorReforged.MOD_ID)
 @PrefixGameTestTemplate(false)
 public final class ShapeCacheGameTests {
@@ -41,6 +41,7 @@ public final class ShapeCacheGameTests {
       h.assertTrue(properties.equals(expectedProperties), "legacy state property schema retained");
       var states = block.getStateDefinition().getPossibleStates();
       h.assertValueEqual(states.size(), count, "save-compatible state count");
+      double[] caps = stairs ? packagedStairCaps() : null;
       var outlines = new VoxelShape[16];
       var collisions = new VoxelShape[16];
       var expectedOutlines = new VoxelShape[16];
@@ -56,11 +57,11 @@ public final class ShapeCacheGameTests {
          if (outlines[key] == null) {
             outlines[key] = outline;
             collisions[key] = collision;
-            expectedOutlines[key] = stairs ? legacyStairOutline(state, h.getLevel(), pos, context) : legacySupport(state, h.getLevel(), pos, context);
+            expectedOutlines[key] = stairs ? alignedStairOutline(state, h.getLevel(), pos, context, caps) : legacySupport(state, h.getLevel(), pos, context);
             expectedCollisions[key] = stairs ? legacyStairCollision(state, h.getLevel(), pos, context) : expectedOutlines[key];
          }
          h.assertTrue(outlines[key] == outline && collisions[key] == collision, "reuse across every fluid/payment/history state: " + key);
-         h.assertTrue(!Shapes.joinIsNotEmpty(outline, expectedOutlines[key], BooleanOp.NOT_SAME), "legacy outline parity: " + key);
+         h.assertTrue(!Shapes.joinIsNotEmpty(outline, expectedOutlines[key], BooleanOp.NOT_SAME), "frozen geometry plus explicit landing outline band: " + key);
          h.assertTrue(!Shapes.joinIsNotEmpty(collision, expectedCollisions[key], BooleanOp.NOT_SAME), "legacy collision parity: " + key);
          h.assertTrue(outline == state.getShape(h.getLevel(), pos, context), "repeated outline query reuses cache");
          h.assertTrue(collision == state.getCollisionShape(h.getLevel(), pos, context), "repeated collision query reuses cache");
@@ -143,6 +144,33 @@ public final class ShapeCacheGameTests {
          case EAST -> new AABB(1.0 - box.maxZ, box.minY, box.minX, 1.0 - box.minZ, box.maxY, box.maxX);
       };
    }
+   private static double[] packagedStairCaps() {
+      String path = "/assets/immersive_engineer_decor_controls_tool_reforged/models/block/furniture/steel_catwalk_stairs_lr_model.json";
+      try (var input = ShapeCacheGameTests.class.getResourceAsStream(path)) {
+         if (input == null) throw new AssertionError("Missing packaged stair resource");
+         var model = com.google.gson.JsonParser.parseReader(new java.io.InputStreamReader(input, java.nio.charset.StandardCharsets.UTF_8)).getAsJsonObject();
+         var elements = model.getAsJsonArray("elements");
+         return new double[]{elements.get(13).getAsJsonObject().getAsJsonArray("to").get(1).getAsDouble(),
+            elements.get(11).getAsJsonObject().getAsJsonArray("to").get(1).getAsDouble()};
+      } catch (java.io.IOException error) { throw new AssertionError("Cannot read packaged stair caps", error); }
+   }
+
+   private static VoxelShape alignedStairOutline(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, double[] caps) {
+      // Retain the independent frozen outline; only add the band between its old
+      // cap profile and the actual packaged model endpoints. Collision oracle stays frozen.
+      VoxelShape result = legacyStairOutline(state, level, pos, context);
+      for (int side = 0; side < 2; side++) {
+         if (!state.getValue(side == 0 ? LEFT_RAILING : RIGHT_RAILING)) continue;
+         double x = side == 0 ? 0 : 14;
+         for (int z = 0; z < 16; z++) {
+            double before = 30.5 - z * 15.0 / 16.0;
+            double after = caps[0] + (caps[1] - caps[0]) * z / 16.0;
+            result = Shapes.or(result, orientedNorthShape(Block.box(x, before, z, x + 2, after, z + 1), state.getValue(HORIZONTAL_FACING), true));
+         }
+      }
+      return result.optimize();
+   }
+
       private static VoxelShape legacyStairOutline(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          VoxelShape shape = catwalkStairShape((Direction)state.getValue(HORIZONTAL_FACING));
          if ((Boolean)state.getValue(LEFT_RAILING)) {

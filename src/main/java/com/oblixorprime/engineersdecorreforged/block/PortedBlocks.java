@@ -471,7 +471,8 @@ public final class PortedBlocks {
             // Keep the visible sloped outline, but guard the whole side above the highest tread.
             // A locally lowered cap is only one block above the upper tread, allowing a diagonal
             // normal/auto-jump over its lower half before the entity descends onto the lower tread.
-            double top = collision ? 12 + 24 : 30.5 - z * 15.0 / 16.0;
+            // Match unchanged landing caps at 32/16 and 16/16; keep the existing collision.
+            double top = collision ? 12 + 24 : 32.0 - z;
             north = Shapes.or(north, Block.box(minX, floor, z, minX + 2, top, z + 1));
          }
          for (Direction facing : Direction.Plane.HORIZONTAL) {

@@ -2,7 +2,7 @@
 
 ## Contract
 
-The existing stair models and saved `facing` values are unchanged: `facing` points uphill. A click on an open platform edge places the stair's high end against that edge. The flight extends downhill away from the platform. Clicking the low end adds the next high end one horizontal block and one vertical block lower, preserving the same facing.
+The existing tread/structural connectors and saved `facing` values are unchanged: `facing` points uphill. Railing height alignment is documented separately in [the landing junction correction](../fixes/catwalk-stair-landing-junction.md). A click on an open platform edge places the stair's high end against that edge. The flight extends downhill away from the platform. Clicking the low end adds the next high end one horizontal block and one vertical block lower, preserving the same facing.
 
 - Bottom-mounted Steel Catwalk: first stair is adjacent and one cell below
 - Top-Aligned Steel Catwalk / Steel Floor Grating: first stair is adjacent at the same cell height

@@ -109,7 +109,7 @@ public final class NativeClientMiningValidation {
    private NativeClientMiningValidation() {}
 
    private enum Phase { BOOT, WORLD, PROBE, SETUP, READY, STALE_POSE, MINE_LAMP,
-      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, CATALOGUE, SUBMERGED_CATWALK, GENERIC_FLUID, WATER_DISTANCE, LAVA_SURFACE, DOOR_SENSOR, PANZER_GLASS }
+      LAMP_ACK, HOLD, INSPECT_LAMP, RELEASE, MINE_DECK, DECK_ACK, INSPECT_DECK, FLUIDLOGGING, WATER_CANAL, CATALOGUE, SUBMERGED_CATWALK, GENERIC_FLUID, WATER_DISTANCE, LAVA_SURFACE, DOOR_SENSOR, PANZER_GLASS, CATWALK_JUNCTION }
 
    @SubscribeEvent
    public static void removed(RailingMining.InsetLightRemoved event) {
@@ -145,6 +145,11 @@ public final class NativeClientMiningValidation {
                require(mc.getSingleplayerServer() != null, "Fixture must use its own integrated server");
                Connection connection = mc.player.connection.getConnection();
                require(connection.isMemoryConnection(), "Fixture must never connect to a remote server");
+               if (Boolean.getBoolean("iedctr.catwalkJunctionOnly")) {
+                  mc.setScreen(new FixtureScreen());
+                  enter(Phase.CATWALK_JUNCTION);
+                  return;
+               }
                if (Boolean.getBoolean("iedctr.panzerGlassOnly")) {
                   mc.setScreen(new FixtureScreen());
                   enter(Phase.PANZER_GLASS);
@@ -403,6 +408,7 @@ public final class NativeClientMiningValidation {
             }
             case DOOR_SENSOR -> { if (NativeDoorSensorValidation.tick(mc, evidence.getParent(), nonce)) finish(mc,null); }
             case PANZER_GLASS -> { if (NativePanzerGlassValidation.tick(mc, evidence.getParent(), nonce)) finish(mc,null); }
+            case CATWALK_JUNCTION -> { if (NativeCatwalkJunctionValidation.tick(mc, evidence.getParent(), nonce)) finish(mc,null); }
             case LAVA_SURFACE -> { if (NativeLavaSurfaceValidation.tick(mc, evidence.getParent(), nonce)) finish(mc,null); }
             case WATER_DISTANCE -> {
                if (NativeWaterFlowDistanceValidation.tick(mc, evidence.getParent(), nonce)) enter(Phase.GENERIC_FLUID);
@@ -655,14 +661,14 @@ public final class NativeClientMiningValidation {
 
    private static void write(String status, Throwable error) throws Exception {
       JsonObject proof = new JsonObject();
-      proof.addProperty("suite", Boolean.getBoolean("iedctr.panzerGlassOnly") ? "panzer-glass-session-v1" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "door-sensor-session-v1" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "lava-surface-session-v1" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "native-water-flow-session-v1" : SUITE);
+      proof.addProperty("suite", Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "catwalk-junction-capture-session-v1" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "panzer-glass-session-v1" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "door-sensor-session-v1" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "lava-surface-session-v1" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "native-water-flow-session-v1" : SUITE);
       proof.addProperty("nonce", nonce);
       proof.addProperty("status", status);
       proof.addProperty("phase", phase.name());
-      proof.addProperty("expected_cases", Boolean.getBoolean("iedctr.panzerGlassOnly") || Boolean.getBoolean("iedctr.doorSensorOnly") || Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? 0 : 10);
+      proof.addProperty("expected_cases", Boolean.getBoolean("iedctr.catwalkJunctionOnly") || Boolean.getBoolean("iedctr.panzerGlassOnly") || Boolean.getBoolean("iedctr.doorSensorOnly") || Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? 0 : 10);
       proof.addProperty("actual_integrated_world", true);
       proof.addProperty("fixture_attack_context_verified", fixtureAttackContextVerified);
-      proof.addProperty("scope", Boolean.getBoolean("iedctr.panzerGlassOnly") ? "Isolated Panzer Glass scene captures and face visibility checks; no mining qualification" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "Isolated native Door Sensor placement and captures; no mining qualification" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "Isolated lava height and mesh diagnostic; no mining qualification" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "Natural water flow observation only; no lamp mining qualification" : "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");
+      proof.addProperty("scope", Boolean.getBoolean("iedctr.catwalkJunctionOnly") ? "Landing/stair scene capture and packaged-model measurements only; no alignment or survival qualification" : Boolean.getBoolean("iedctr.panzerGlassOnly") ? "Isolated Panzer Glass scene captures and face visibility checks; no mining qualification" : Boolean.getBoolean("iedctr.doorSensorOnly") ? "Isolated native Door Sensor placement and captures; no mining qualification" : Boolean.getBoolean("iedctr.lavaSurfaceOnly") ? "Isolated lava height and mesh diagnostic; no mining qualification" : Boolean.getBoolean("iedctr.flowDistanceOnly") ? "Natural water flow observation only; no lamp mining qualification" : "Native gameMode and input-gate gameplay; no physical OS input or visual rendering assertions");
       proof.add("cases", RESULTS.deepCopy());
       if (error != null) {
          proof.addProperty("error", error.toString());
@@ -682,7 +688,9 @@ public final class NativeClientMiningValidation {
       } catch (Exception writeError) {
          EngineersDecorReforged.LOGGER.error("IEDCTR_CLIENT_GAMEPLAY cannot write evidence", writeError);
       }
-      if (error == null && Boolean.getBoolean("iedctr.panzerGlassOnly"))
+      if (error == null && Boolean.getBoolean("iedctr.catwalkJunctionOnly"))
+         EngineersDecorReforged.LOGGER.info("IEDCTR_CATWALK_JUNCTION_CAPTURE PASSED nonce={}", nonce);
+      else if (error == null && Boolean.getBoolean("iedctr.panzerGlassOnly"))
          EngineersDecorReforged.LOGGER.info("IEDCTR_PANZER_GLASS_SESSION PASSED nonce={}", nonce);
       else if (error == null && Boolean.getBoolean("iedctr.doorSensorOnly"))
          EngineersDecorReforged.LOGGER.info("IEDCTR_DOOR_SENSOR_SESSION PASSED nonce={}", nonce);
