@@ -18,6 +18,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -118,7 +119,9 @@ public final class RaisedCatwalkBlock extends Block implements NativeTransientFl
          variant = 1;
       } else if (below.is(ModBlocks.THIN_STEEL_POLE.get()) || below.is(ModBlocks.THIN_STEEL_POLE_HEAD.get())) {
          variant = 2;
-      } else if (below.is(ModBlocks.TREATED_WOOD_POLE.get()) || below.is(ModBlocks.TREATED_WOOD_POLE_HEAD.get())) {
+      } else if (below.is(ModBlocks.TREATED_WOOD_POLE.get()) || below.is(ModBlocks.TREATED_WOOD_POLE_HEAD.get())
+         // Only the floor-mounted straight support extends its shaft up to this deck.
+         || (below.is(ModBlocks.TREATED_WOOD_POLE_SUPPORT.get()) && below.getValue(DirectionalBlock.FACING) == Direction.UP)) {
          variant = 5;
       }
       return state.setValue(VARIANT, variant);
