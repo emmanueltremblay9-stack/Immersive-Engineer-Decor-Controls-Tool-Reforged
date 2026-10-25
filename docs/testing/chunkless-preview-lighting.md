@@ -1,0 +1,7 @@
+# Chunkless native preview lighting
+
+Native fluidlogged blocks retain intrinsic emission when a preview LevelAccessor has no ChunkSource and inherits both NeoForge auxiliary-light lookup overloads. A cached per-class metadata check distinguishes that default from a custom manager, including the documented ChunkPos override. Custom auxiliary values and exceptions remain authoritative; no render exception is caught. An override that itself delegates to an unsafe default is not masked. No chunk/world data reads, fluid-map reads or dependency are added.
+
+PreviewLightingGameTests uses a concrete LevelAccessor inheriting NeoForge defaults, plus custom proxy and ChunkPos implementations. It covers dry/water/lava Clinker Brick, native lamp emission, custom light15/0, exact propagation of lookup/manager failures and normal-world lava flow/drain. Unexpected preview world reads or chunk requests throw AssertionError. A proxy alone cannot model method-declaration inheritance because it supplies its own methods.
+
+These fixtures establish the API regression, not rendered Building Gadgets compatibility. The user's exact BG2 binary/modpack and its preview remain unqualified. Existing native screenshots belong to their recorded older JARs; no screenshot is attributed to this change without a separate client run. CI must validate the exact refreshed commit before merge; test definitions alone are not pass evidence.
