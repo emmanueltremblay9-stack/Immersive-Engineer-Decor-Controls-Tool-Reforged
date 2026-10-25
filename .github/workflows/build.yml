@@ -1,8 +1,17 @@
 name: Build
 
 on:
+  # Feature branches use PR validation or an explicit diagnostic run.
+  # Main/tag pushes retain the exact-source CI required by the publisher.
   push:
+    branches: [main]
+    tags: ['**']
   pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('run-{0}', github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
@@ -241,3 +250,23 @@ jobs:
             build/client-gameplay-*/run/lava-surface-screenshots/*.png
           if-no-files-found: error
           retention-days: 14
+
+  ci-required:
+    name: IEDCTR CI required
+    # Informational until separately selected in repository branch protection.
+    if: ${{ always() }}
+    needs: [build, lithium-compatibility, renderer-matrix, lava-surfaces]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout tested revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Require all validation families and summarize tested identity
+        env:
+          CI_NEEDS_JSON: ${{ toJSON(needs) }}
+          CI_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python tools/validation/ci_required.py
