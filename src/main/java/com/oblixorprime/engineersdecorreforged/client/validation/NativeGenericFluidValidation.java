@@ -32,7 +32,7 @@ final class NativeGenericFluidValidation {
       return fluid.getType().isSame(Fluids.WATER)?StairWaterFlow.withFlow(dry,fluid):dry;
    }
    static boolean tick(Minecraft mc,Path directory,String nonce)throws Exception {
-      if(index==60)return true;check(++wait<400,"sync fixture stalled");
+      if(index==60)return ExternalFluidClientValidation.tick(mc,directory,nonce);check(++wait<400,"sync fixture stalled");
       if(stage==0){
          if(index>=30){mc.level.getChunkAt(POS).removeData(NativeFluidCells.CELLS.get());check(!NativeFluidCells.snapshot(mc.level.getChunkAt(POS)).contains(POS),"initial case must start without cached data");}
          pending=mc.getSingleplayerServer().submit(()->{
@@ -73,7 +73,7 @@ final class NativeGenericFluidValidation {
       if(!mc.level.getFluidState(POS).isEmpty())return false;
       var row=new JsonObject();row.addProperty("fluid",FLUIDS[index%6]);row.addProperty("state",(index/6)%5);row.addProperty("sync",index<30?"update":"initial");row.addProperty("server_client_region_agree",true);row.addProperty("drain_cleared",true);row.addProperty("local_prediction_restore",true);RESULTS.add(row);
       index++;stage=0;wait=0;
-      if(index==60){var proof=new JsonObject();proof.addProperty("suite","generic-fluid-client-v1");proof.addProperty("nonce",nonce);proof.addProperty("status","passed");proof.add("cases",RESULTS);Files.writeString(directory.resolve("client-generic-fluid-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");return true;}return false;
+      if(index==60){var proof=new JsonObject();proof.addProperty("suite","generic-fluid-client-v1");proof.addProperty("nonce",nonce);proof.addProperty("status","passed");proof.add("cases",RESULTS);Files.writeString(directory.resolve("client-generic-fluid-result.json"),new GsonBuilder().setPrettyPrinting().create().toJson(proof)+"\n");}return false;
    }
    private static void check(boolean ok,String text){if(!ok)throw new IllegalStateException(text+" case="+index);}
 }

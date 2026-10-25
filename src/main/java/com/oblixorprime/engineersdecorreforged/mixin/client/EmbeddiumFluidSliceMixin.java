@@ -21,7 +21,8 @@ public abstract class EmbeddiumFluidSliceMixin {
    @Inject(method="getFluidState", at=@At("RETURN"), cancellable=true)
    private void iedctr$read(BlockPos pos, CallbackInfoReturnable<FluidState> cir) {
       if(cir.getReturnValue().isEmpty() && NativeFluidCells.supported(((net.minecraft.world.level.BlockGetter)(Object)this).getBlockState(pos))) {
-         var fluid=iedctr$cells.get(pos.asLong());if(fluid!=null)cir.setReturnValue(fluid);
+         var fluid=iedctr$cells.get(pos.asLong());
+         if(fluid!=null && NativeFluidCells.visible(((net.minecraft.world.level.BlockGetter)(Object)this).getBlockState(pos),fluid))cir.setReturnValue(fluid);
       }
    }
    @Inject(method="reset", at=@At("RETURN"))

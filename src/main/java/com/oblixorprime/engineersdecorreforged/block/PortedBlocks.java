@@ -413,6 +413,54 @@ public final class PortedBlocks {
    private static final VoxelShape[][] STAIR_RAIL_SHAPES = stairRailShapes(false);
    private static final VoxelShape[][] STAIR_RAIL_COLLISIONS = stairRailShapes(true);
 
+   // Geometry keys deliberately exclude fluid, edit-history and paid-item properties.
+   // Retain the complete state definition for existing saves and network palettes.
+   private static final VoxelShape[] STAIR_OUTLINES = stairShapes(false);
+   private static final VoxelShape[] STAIR_COLLISIONS = stairShapes(true);
+   private static final VoxelShape[] SUPPORT_SHAPES = supportShapes();
+
+   private static int stairShapeKey(BlockState state) {
+      return (state.getValue(HORIZONTAL_FACING).get2DDataValue() << 2)
+         | (state.getValue(LEFT_RAILING) ? 1 : 0) | (state.getValue(RIGHT_RAILING) ? 2 : 0);
+   }
+
+   private static VoxelShape[] stairShapes(boolean collision) {
+      VoxelShape[] result = new VoxelShape[16];
+      VoxelShape[][] rails = collision ? STAIR_RAIL_COLLISIONS : STAIR_RAIL_SHAPES;
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         VoxelShape floor = catwalkStairShape(facing);
+         for (int sides = 0; sides < 4; sides++) {
+            VoxelShape shape = floor;
+            if ((sides & 1) != 0) shape = Shapes.or(shape, rails[facing.get2DDataValue()][0]);
+            if ((sides & 2) != 0) shape = Shapes.or(shape, rails[facing.get2DDataValue()][1]);
+            result[(facing.get2DDataValue() << 2) | sides] = shape;
+         }
+      }
+      return result;
+   }
+
+   private static int supportShapeKey(BlockState state) {
+      return (state.getValue(EASTWEST) ? 8 : 0) | (state.getValue(LEFTBEAM) ? 4 : 0)
+         | (state.getValue(RIGHTBEAM) ? 2 : 0) | (state.getValue(DOWNCONNECT) > 0 ? 1 : 0);
+   }
+
+   private static VoxelShape[] supportShapes() {
+      VoxelShape[] result = new VoxelShape[16];
+      for (int key = 0; key < result.length; key++) {
+         boolean eastWest = (key & 8) != 0;
+         VoxelShape beam = eastWest ? SUPPORT_BEAM_EAST_WEST_SHAPE : SUPPORT_BEAM_NORTH_SOUTH_SHAPE;
+         if ((key & 4) != 0) {
+            beam = Shapes.or(beam, eastWest ? Block.box(5.0, 11.0, 0.0, 11.0, 16.0, 5.0) : Block.box(0.0, 11.0, 5.0, 5.0, 16.0, 11.0));
+         }
+         if ((key & 2) != 0) {
+            beam = Shapes.or(beam, eastWest ? Block.box(5.0, 11.0, 11.0, 11.0, 16.0, 16.0) : Block.box(11.0, 11.0, 5.0, 16.0, 16.0, 11.0));
+         }
+         if ((key & 1) != 0) beam = Shapes.or(beam, Block.box(6.0, 0.0, 6.0, 10.0, 11.0, 10.0));
+         result[key] = beam;
+      }
+      return result;
+   }
+
    private static VoxelShape[][] stairRailShapes(boolean collision) {
       VoxelShape[][] result = new VoxelShape[4][2];
       for (int side = 0; side < 2; side++) {
@@ -861,29 +909,13 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         VoxelShape shape = PortedBlocks.catwalkStairShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING));
-         if ((Boolean)state.getValue(PortedBlocks.LEFT_RAILING)) {
-            shape = Shapes.or(shape, PortedBlocks.sideRailShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING), true));
-         }
-
-         if ((Boolean)state.getValue(PortedBlocks.RIGHT_RAILING)) {
-            shape = Shapes.or(shape, PortedBlocks.sideRailShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING), false));
-         }
-
-         return shape;
+         return STAIR_OUTLINES[stairShapeKey(state)];
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         Direction facing = state.getValue(HORIZONTAL_FACING);
-         VoxelShape shape = catwalkStairShape(facing);
-         if (state.getValue(LEFT_RAILING)) {
-            shape = Shapes.or(shape, STAIR_RAIL_COLLISIONS[facing.get2DDataValue()][0]);
-         }
-         if (state.getValue(RIGHT_RAILING)) {
-            shape = Shapes.or(shape, STAIR_RAIL_COLLISIONS[facing.get2DDataValue()][1]);
-         }
-         return shape;
+         return STAIR_COLLISIONS[stairShapeKey(state)];
       }
+
    }
 
    public static class CenteredPoleBlock extends PortedBlocks.DirectionalPortBlock {
@@ -1465,21 +1497,7 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         boolean eastWest = state.getValue(PortedBlocks.EASTWEST);
-         VoxelShape beam = eastWest ? PortedBlocks.SUPPORT_BEAM_EAST_WEST_SHAPE : PortedBlocks.SUPPORT_BEAM_NORTH_SOUTH_SHAPE;
-         if (state.getValue(PortedBlocks.LEFTBEAM)) {
-            beam = Shapes.or(beam, eastWest ? Block.box(5.0, 11.0, 0.0, 11.0, 16.0, 5.0) : Block.box(0.0, 11.0, 5.0, 5.0, 16.0, 11.0));
-         }
-
-         if (state.getValue(PortedBlocks.RIGHTBEAM)) {
-            beam = Shapes.or(beam, eastWest ? Block.box(5.0, 11.0, 11.0, 11.0, 16.0, 16.0) : Block.box(11.0, 11.0, 5.0, 16.0, 16.0, 11.0));
-         }
-
-         if ((Integer)state.getValue(PortedBlocks.DOWNCONNECT) > 0) {
-            beam = Shapes.or(beam, Block.box(6.0, 0.0, 6.0, 10.0, 11.0, 10.0));
-         }
-
-         return beam;
+         return SUPPORT_SHAPES[supportShapeKey(state)];
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {

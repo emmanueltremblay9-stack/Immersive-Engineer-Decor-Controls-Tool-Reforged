@@ -33,7 +33,7 @@ public abstract class StairWaterFlowMixin {
    @Inject(method="getNewLiquid", at=@At("RETURN"), cancellable=true)
    private void iedctr$noNewStoredSource(Level level, BlockPos pos, BlockState state, CallbackInfoReturnable<FluidState> cir) {
       var candidate = cir.getReturnValue();
-      if (StairWaterFlow.supported(state) && !level.getFluidState(pos).isSource() && candidate.isSource()) {
+      if (com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.transientSupported(state) && !level.getFluidState(pos).isSource() && candidate.isSource()) {
          var fluid = (FlowingFluid)(Object)this;
          boolean above = level.getFluidState(pos.above()).getType().isSame(fluid)
             && canPassThroughWall(net.minecraft.core.Direction.UP, level, pos, state, pos.above(), level.getBlockState(pos.above()));
