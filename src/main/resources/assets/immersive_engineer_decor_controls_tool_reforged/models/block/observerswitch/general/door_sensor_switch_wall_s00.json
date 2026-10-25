@@ -1,0 +1,275 @@
+{
+  "render_type": "cutout",
+  "parent": "immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s00",
+  "elements": [
+    {
+      "from": [
+        5,
+        0,
+        15.5
+      ],
+      "to": [
+        11,
+        1,
+        16.0
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          10,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#m"
+        },
+        "east": {
+          "texture": "#m"
+        },
+        "south": {
+          "texture": "#m"
+        },
+        "west": {
+          "texture": "#m"
+        },
+        "up": {
+          "texture": "#m"
+        },
+        "down": {
+          "texture": "#m"
+        }
+      }
+    },
+    {
+      "from": [
+        10,
+        0,
+        14.5
+      ],
+      "to": [
+        11,
+        0.25,
+        15.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          10,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#m"
+        },
+        "east": {
+          "texture": "#m"
+        },
+        "south": {
+          "texture": "#m"
+        },
+        "west": {
+          "texture": "#m"
+        },
+        "up": {
+          "texture": "#m"
+        },
+        "down": {
+          "texture": "#m"
+        }
+      }
+    },
+    {
+      "from": [
+        7,
+        0,
+        14.5
+      ],
+      "to": [
+        9,
+        0.25,
+        15.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          10,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#m"
+        },
+        "east": {
+          "texture": "#m"
+        },
+        "south": {
+          "texture": "#m"
+        },
+        "west": {
+          "texture": "#m"
+        },
+        "up": {
+          "texture": "#m"
+        },
+        "down": {
+          "texture": "#m"
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        0,
+        14.5
+      ],
+      "to": [
+        6,
+        0.25,
+        15.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          10,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#m"
+        },
+        "east": {
+          "texture": "#m"
+        },
+        "south": {
+          "texture": "#m"
+        },
+        "west": {
+          "texture": "#m"
+        },
+        "up": {
+          "texture": "#m"
+        },
+        "down": {
+          "texture": "#m"
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        0.25,
+        14.5
+      ],
+      "to": [
+        11,
+        1,
+        15.5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          10,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#m"
+        },
+        "east": {
+          "texture": "#m"
+        },
+        "south": {
+          "texture": "#m"
+        },
+        "west": {
+          "texture": "#m"
+        },
+        "up": {
+          "texture": "#m"
+        },
+        "down": {
+          "texture": "#m"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        0.125,
+        14.5
+      ],
+      "to": [
+        7,
+        0.25,
+        15.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#redstone"
+        },
+        "east": {
+          "texture": "#redstone"
+        },
+        "south": {
+          "texture": "#redstone"
+        },
+        "west": {
+          "texture": "#redstone"
+        },
+        "up": {
+          "texture": "#redstone"
+        },
+        "down": {
+          "texture": "#redstone"
+        }
+      }
+    },
+    {
+      "from": [
+        9,
+        0.125,
+        14.5
+      ],
+      "to": [
+        10,
+        0.25,
+        15.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#redstone"
+        },
+        "east": {
+          "texture": "#redstone"
+        },
+        "south": {
+          "texture": "#redstone"
+        },
+        "west": {
+          "texture": "#redstone"
+        },
+        "up": {
+          "texture": "#redstone"
+        },
+        "down": {
+          "texture": "#redstone"
+        }
+      }
+    }
+  ]
+}
