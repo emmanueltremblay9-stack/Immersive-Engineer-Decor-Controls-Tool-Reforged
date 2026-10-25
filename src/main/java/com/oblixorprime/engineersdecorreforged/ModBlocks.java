@@ -94,7 +94,7 @@ public final class ModBlocks {
    public static final DeferredBlock<StairBlock> REBAR_CONCRETE_TILE_STAIRS = registerWithItem(
       "rebar_concrete_tile_stairs", () -> stairs(stone(1.0F, 2000.0F).requiresCorrectToolForDrops())
    );
-   public static final DeferredBlock<Block> PANZERGLASS_BLOCK = registerWithItem("panzerglass_block", () -> new NativeDecorativeBlocks.NativeSolidBlock(glass()));
+   public static final DeferredBlock<Block> PANZERGLASS_BLOCK = registerWithItem("panzerglass_block", () -> new com.oblixorprime.engineersdecorreforged.block.PanzerGlassBlock(glass()));
    public static final DeferredBlock<PortedBlocks.VariantSlabBlock> PANZERGLASS_SLAB = registerWithItem(
       "panzerglass_slab", () -> new PortedBlocks.VariantSlabBlock(glass())
    );
