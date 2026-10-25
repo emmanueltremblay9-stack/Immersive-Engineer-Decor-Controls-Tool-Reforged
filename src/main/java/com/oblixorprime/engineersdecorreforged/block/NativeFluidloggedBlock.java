@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.block;
 
+import com.oblixorprime.engineersdecorreforged.fluid.PreviewLightAccess;
 import java.util.Optional;
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
@@ -136,7 +137,7 @@ public interface NativeFluidloggedBlock extends SimpleWaterloggedBlock, net.neof
    @Override
    default int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
       // Lighting workers must never ask Level.getFluidState (which can block on a FULL chunk).
-      var auxiliary = level.getAuxLightManager(pos);
+      var auxiliary = PreviewLightAccess.auxiliaryLight(level, pos);
       return Math.max(state.getLightEmission(), auxiliary == null ? 0 : auxiliary.getLightAt(pos));
    }
 
