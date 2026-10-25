@@ -4,7 +4,7 @@
   "group": "immersive_engineer_decor_controls_tool_reforged_machines",
   "pattern": [
     "CFC",
-    "BCB",
+    "SCP",
     "CFC"
   ],
   "key": {
@@ -14,8 +14,11 @@
     "F": {
       "item": "immersive_engineer_decor_controls_tool_reforged:small_fluid_funnel"
     },
-    "B": {
-      "item": "minecraft:bucket"
+    "S": {
+      "item": "minecraft:sponge"
+    },
+    "P": {
+      "item": "minecraft:piston"
     }
   },
   "result": {
