@@ -20,6 +20,7 @@ import tempfile
 from client_mixin_smoke import FATAL_PATTERN, SmokeFailure, run_bounded
 from renderer_profiles import PROFILES, prepare_renderer_dependencies, validate_renderer_profile
 from flow_distance import validate_flow_distance_proof
+from lithium_profile import prepare_lithium_dependency, validate_lithium_runtime
 
 
 SUITE = "native-client-lamp-mining-v1"
@@ -175,6 +176,7 @@ def main() -> int:
     parser.add_argument("--renderer-profile", choices=PROFILES)
     parser.add_argument("--flow-distance-only", action="store_true")
     parser.add_argument("--lava-surface-only", action="store_true")
+    parser.add_argument("--lithium", action="store_true", help="Test the pinned official Lithium build with its fluid BFS enabled")
     args = parser.parse_args()
     if args.lava_surface_only and (not args.renderer_profile or args.flow_distance_only):
         parser.error("Lava surface requires one renderer profile and its own session")
@@ -203,6 +205,8 @@ def main() -> int:
         "onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n"
         "maxFps:60\npauseOnLostFocus:false\nautoJump:true\nsoundCategory_master:0.0\n", encoding="utf-8")
     renderer_jars = prepare_renderer_dependencies(evidence / "renderer-dependencies", args.renderer_profile) if args.renderer_profile else []
+    if args.lithium:
+        renderer_jars.append(prepare_lithium_dependency(evidence / "lithium-dependency"))
     init = evidence / "gameplay.init.gradle"
     init.write_text("""// Isolated, explicit, opt-in native gameplay fixture.
 gradle.projectsEvaluated {
@@ -211,6 +215,7 @@ gradle.projectsEvaluated {
     rootProject.extensions.getByName('neoForge').runs.named('client') {
         gameDirectory.set(rootProject.file(System.getenv('IEDCTR_GAMEPLAY_DIR')))
         systemProperty 'iedctr.clientGameplay', 'true'
+        systemProperty 'iedctr.requireLithiumFluidBfs', System.getenv('IEDCTR_EXPECT_LITHIUM')
         systemProperty 'iedctr.canalEast', System.getenv('IEDCTR_CANAL_EAST')
         systemProperty 'iedctr.flowDistanceOnly', System.getenv('IEDCTR_FLOW_DISTANCE_ONLY')
         systemProperty 'iedctr.lavaSurfaceOnly', System.getenv('IEDCTR_LAVA_SURFACE_ONLY')
@@ -227,7 +232,8 @@ gradle.projectsEvaluated {
                LIBGL_ALWAYS_SOFTWARE="1", ALSOFT_DRIVERS="null",
                IEDCTR_RENDERER_JARS=json.dumps(renderer_jars), IEDCTR_CANAL_EAST=str(bool(args.renderer_profile)).lower(),
                IEDCTR_FLOW_DISTANCE_ONLY=str(args.flow_distance_only).lower(),
-               IEDCTR_LAVA_SURFACE_ONLY=str(args.lava_surface_only).lower())
+               IEDCTR_LAVA_SURFACE_ONLY=str(args.lava_surface_only).lower(),
+               IEDCTR_EXPECT_LITHIUM=str(args.lithium).lower())
     gradle = [str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
     prepare_log, client_log = evidence / "prepare.log", evidence / "client.log"
     print(f"Native client gameplay evidence: {evidence}", flush=True)
@@ -250,6 +256,10 @@ gradle.projectsEvaluated {
         from fluid_extensions import validate_extensions
         if expired or code != 0 or crashes or FATAL_PATTERN.search(logs):
             raise SmokeFailure('Fluid extension client did not finish cleanly')
+        from tracker_render import validate_tracker
+        validate_tracker(game, nonce)
+        if args.lithium:
+            validate_lithium_runtime(logs, nonce)
         if args.lava_surface_only:
             if (proof.get("suite")!="lava-surface-session-v1" or proof.get("status")!="passed"
                     or proof.get("nonce")!=nonce or proof.get("actual_integrated_world") is not True
