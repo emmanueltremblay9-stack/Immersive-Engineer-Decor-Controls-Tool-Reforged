@@ -3,4 +3,6 @@ Fluid line hardware
 <&recipe>The Small Fluid Funnel is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
 <br>
 Usage: Put it below the fluid collection point and route its stored contents into tanks or lower pipework.<br>
+<br>
+With no water or lava source directly above it, the funnel also collects rainfall through its open top: 50 mB every 80 ticks in rain, or 100 mB during a thunderstorm. At 20 ticks per second, this fills one bucket in 80 or 40 seconds respectively. Roofs, dry biomes, and snow-only precipitation prevent rain collection. Weather adds only water to an empty or water-filled tank; it never mixes with lava or milk. Source collection takes priority, and the existing downward transfer still applies.<br>
 
