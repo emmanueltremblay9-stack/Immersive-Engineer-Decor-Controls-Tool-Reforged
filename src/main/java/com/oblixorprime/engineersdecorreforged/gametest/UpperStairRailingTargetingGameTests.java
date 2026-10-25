@@ -47,6 +47,43 @@ public final class UpperStairRailingTargetingGameTests {
    private UpperStairRailingTargetingGameTests() {}
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void aligned_landing_caps_remain_selectable_and_paid_in_every_rotation(GameTestHelper helper) {
+      ServerPlayer player = player(helper);
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         for (boolean left : new boolean[]{true, false}) {
+            for (boolean wet : new boolean[]{false, true}) {
+               BlockState state = stairs(facing).setValue(PortedBlocks.WATERLOGGED, wet);
+               put(helper, CENTER, state); clearDrops(helper);
+               BlockPos pos = helper.absolutePos(CENTER);
+               helper.assertValueEqual(state.getShape(helper.getLevel(), pos).bounds().maxY, 2.0,
+                  "selection reaches the aligned visible cap at 32/16");
+               helper.assertValueEqual(state.getCollisionShape(helper.getLevel(), pos).bounds().maxY, 2.25,
+                  "existing 36/16 fence collision is retained");
+               Vec3 cap = Vec3.atLowerCornerOf(pos).add(.5, 31.5/16.0, .5)
+                  .add(step(facing, .48)).add(step(side(facing, left), .4375));
+               look(player, cap.add(step(side(facing, left), 1.0)), cap);
+               BlockHitResult hit = upperHit(helper, player, left);
+               BlockState before = helper.getBlockState(CENTER);
+               action(helper, player, hit, ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK);
+               helper.assertValueEqual(helper.getBlockState(CENTER), before, "aligned cap START retains ordinary mining duration");
+               player.gameMode.destroyBlock(hit.getBlockPos());
+               assertRemoved(helper, left);
+               helper.assertValueEqual(drops(helper), 1, "new cap targeting refunds exactly the purchased side");
+               helper.assertValueEqual(helper.getBlockState(CENTER).getValue(PortedBlocks.WATERLOGGED), wet,
+                  "cap mining preserves the existing water state");
+               put(helper, CENTER, state);
+               Vec3 above = cap.add(0, 1.0/16.0, 0);
+               look(player, above.add(step(side(facing, left), 1.0)), above);
+               HitResult outside = pick(player, vanillaBlock(player));
+               helper.assertTrue(!(outside instanceof BlockHitResult block && block.getType()==HitResult.Type.BLOCK
+                  && block.getBlockPos().equals(pos)), "no target above the new visible cap");
+            }
+         }
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void horizontal_upper_rail_rays_select_and_mine_both_sides_in_all_rotations(GameTestHelper helper) {
       ServerPlayer player = player(helper);
       for (Direction facing : Direction.Plane.HORIZONTAL) {
