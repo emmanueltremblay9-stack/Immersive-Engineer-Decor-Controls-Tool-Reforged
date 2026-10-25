@@ -1,10 +1,11 @@
 import copy,struct,tempfile,unittest,zlib
 from pathlib import Path
-from fluid_extensions import FLUIDS,MODES,validate_generic,validate_submerged
+from fluid_extensions import EXTERNAL_BLOCKS,FLUIDS,MODES,validate_generic,validate_submerged
 from client_mixin_smoke import SmokeFailure
 class FluidExtensionProofTests(unittest.TestCase):
     def setUp(self):
         self.generic=dict(suite='generic-fluid-client-v1',nonce='current',status='passed',cases=[dict(fluid=f,state=k,sync=s,server_client_region_agree=True,drain_cleared=True,local_prediction_restore=True) for f in FLUIDS for k in range(5) for s in ('update','initial')])
+        self.generic['external']=dict(suite='external-fluid-client-v1',nonce='current',status='passed',cases=[dict(block=b,state=k,sync=s,server_client_region_agree=True,drain_cleared=True,local_prediction_restore=True,textured_mesh=True,light_cleared=True) for b in EXTERNAL_BLOCKS for k in range(6) for s in ('update','initial')])
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);(self.root/'submerged-catwalk-screenshots').mkdir()
         def chunk(k,p):return struct.pack('>I',len(p))+k+p+struct.pack('>I',zlib.crc32(k+p))
         image=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',1280,720,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(bytes(720*(1+1280*3))))+chunk(b'IEND',b'')
@@ -32,6 +33,18 @@ class FluidExtensionProofTests(unittest.TestCase):
         for field,value in [('immersed_camera',False),('paid_state_preserved',False),('source',False),('amount',0)]:
             p=copy.deepcopy(self.submerged);p['cases'][1][field]=value
             with self.assertRaises(SmokeFailure):validate_submerged(p,'current',self.root)
+    def test_external_missing_duplicate_stale_or_failed(self):
+        p=copy.deepcopy(self.generic);del p['external']
+        with self.assertRaises(SmokeFailure):validate_generic(p,'current')
+        for mutation in ('missing','duplicate','stale','mesh','light','bool_state'):
+            p=copy.deepcopy(self.generic);external=p['external']
+            if mutation=='missing':external['cases'].pop()
+            elif mutation=='duplicate':external['cases'][-1]=external['cases'][0]
+            elif mutation=='stale':external['nonce']='old'
+            elif mutation=='mesh':external['cases'][0]['textured_mesh']=False
+            elif mutation=='light':external['cases'][0]['light_cleared']=False
+            else:external['cases'][0]['state']=False
+            with self.assertRaises(SmokeFailure):validate_generic(p,'current')
     def test_image_missing_or_wrong_path(self):
         p=copy.deepcopy(self.submerged);p['cases'][0]['screenshot']='../other.png'
         with self.assertRaises(SmokeFailure):validate_submerged(p,'current',self.root)

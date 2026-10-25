@@ -4,6 +4,12 @@ from catalogue_visual import valid_png
 from client_mixin_smoke import SmokeFailure
 FLUIDS=('minecraft:water','minecraft:lava','immersiveengineering:creosote','immersiveengineering:ethanol','immersiveengineering:biodiesel','immersiveengineering:plantoil')
 MODES=('dry','source-submerged','flow-submerged')
+EXTERNAL_BLOCKS = tuple('minecraft:'+name for name in (
+    'oak_stairs','stone_slab','oak_fence','cobblestone_wall','glass_pane','red_stained_glass_pane',
+    'iron_bars','ladder','oak_trapdoor','cut_copper_stairs','cut_copper_slab','copper_trapdoor')) + tuple(
+    'immersiveengineering:'+name for name in ('stairs_treated_wood_horizontal','stairs_treated_wood_vertical',
+    'stairs_treated_wood_packaged','slab_treated_wood_horizontal','slab_treated_wood_vertical','slab_treated_wood_packaged',
+    'wall_clinker_brick','treated_trapdoor','treated_trapdoor_framed','steel_trapdoor'))
 def rows(proof,nonce,suite,expected,key):
     if proof.get('suite')!=suite or proof.get('nonce')!=nonce or proof.get('status')!='passed':
         raise SmokeFailure('Missing current '+suite+' proof')
@@ -22,6 +28,13 @@ def validate_generic(proof,nonce):
     for c in rows(proof,nonce,'generic-fluid-client-v1',expected,lambda c:(c.get('fluid'),c.get('state'),c.get('sync'))):
         if type(c.get('state')) is not int or c.get('server_client_region_agree') is not True or c.get('drain_cleared') is not True or c.get('local_prediction_restore') is not True:
             raise SmokeFailure('Generic fluid state/snapshot/drain mismatch')
+    external=proof.get('external')
+    if not isinstance(external,dict):raise SmokeFailure('Missing external fluid qualification')
+    expected_external={(block,kind,sync) for block in EXTERNAL_BLOCKS for kind in range(6) for sync in ('update','initial')}
+    for c in rows(external,nonce,'external-fluid-client-v1',expected_external,lambda c:(c.get('block'),c.get('state'),c.get('sync'))):
+        if type(c.get('state')) is not int or any(c.get(field) is not True for field in (
+                'server_client_region_agree','drain_cleared','local_prediction_restore','textured_mesh','light_cleared')):
+            raise SmokeFailure('External fluid state/mesh/light mismatch')
     return proof
 
 def validate_submerged(proof,nonce,directory):

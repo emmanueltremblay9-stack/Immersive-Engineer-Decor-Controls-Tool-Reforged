@@ -44,7 +44,7 @@ public final class NativeFluidCells {
    }
    public static void refreshLight(LevelChunk chunk,BlockPos pos,FluidCellData cells) {
       var state=chunk.getBlockState(pos);
-      var fluid=supported(state) && state.getFluidState().isEmpty()?cells.get(pos):Fluids.EMPTY.defaultFluidState();
+      var fluid=visible(state,cells.get(pos))?cells.get(pos):Fluids.EMPTY.defaultFluidState();
       chunk.getAuxLightManager(chunk.getPos()).setLightAt(pos,fluid.isEmpty()?0:fluid.getFluidType().getLightLevel());
    }
    public static void refreshRandomTicks(LevelChunk chunk, FluidCellData data) {
@@ -55,7 +55,15 @@ public final class NativeFluidCells {
       }
       for (int i=0; i<ticking.length; i++) ((FluidTickSection)(Object)chunk.getSections()[i]).iedctr$randomFluid(ticking[i]);
    }
-   public static boolean supported(BlockState state) { return state.getBlock() instanceof NativeFluidloggedBlock; }
+   public static boolean supported(BlockState state) { return state.getBlock() instanceof NativeFluidloggedBlock || ExternalFluidAdapter.supported(state); }
+   public static boolean transientSupported(BlockState state) { return StairWaterFlow.supported(state) || ExternalFluidAdapter.supported(state); }
+   public static boolean visible(BlockState state, FluidState fluid) {
+      return !fluid.isEmpty() && supported(state) && state.getFluidState().isEmpty()
+         && (!ExternalFluidAdapter.supported(state) || ExternalFluidAdapter.supportsFluid(fluid.getType()));
+   }
+   public static boolean acceptsCaptured(BlockState state, FluidState fluid) {
+      return standard(fluid.getType()) && (!ExternalFluidAdapter.supported(state) || ExternalFluidAdapter.supportsFluid(fluid.getType()));
+   }
    public static boolean standard(Fluid fluid) {
       if (!(fluid instanceof FlowingFluid)) return false;
       var worldState=fluid.defaultFluidState().createLegacyBlock().getFluidState();
@@ -66,7 +74,7 @@ public final class NativeFluidCells {
       var data=snapshot(chunk);
       if(data.isEmpty())return Fluids.EMPTY.defaultFluidState();
       var state = chunk.getBlockState(pos);
-      return supported(state) && state.getFluidState().isEmpty() ? data.get(pos) : Fluids.EMPTY.defaultFluidState();
+      return visible(state,data.get(pos)) ? data.get(pos) : Fluids.EMPTY.defaultFluidState();
    }
    public static boolean reserved(BlockGetter level, BlockPos pos) {
       return level instanceof Level world && snapshot(world.getChunkAt(pos)).contains(pos);
@@ -100,10 +108,13 @@ public final class NativeFluidCells {
       }
    }
    public static boolean place(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluid) {
-      if (!(level instanceof Level) || !standard(fluid.getType()) || !supported(state)) return false;
-      if (!fluid.isSource() && !StairWaterFlow.supported(state)) return false;
+      if (!(level instanceof Level) || !acceptsCaptured(state, fluid) || !supported(state)) return false;
+      if (ExternalFluidAdapter.supported(state) && !ExternalFluidAdapter.canPlace(level, pos, state, fluid.getType())) return false;
+      if (!fluid.isSource() && !transientSupported(state)) return false;
       if (!level.isClientSide()) {
-         var dry = NativeFluidloggedBlock.dry(state);
+         var dry = ExternalFluidAdapter.supported(state)
+            ? state.setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.WATERLOGGED, false)
+            : NativeFluidloggedBlock.dry(state);
          if (dry != state && !level.setBlock(pos, dry, Block.UPDATE_ALL)) return false;
          set(level, pos, fluid);
       }

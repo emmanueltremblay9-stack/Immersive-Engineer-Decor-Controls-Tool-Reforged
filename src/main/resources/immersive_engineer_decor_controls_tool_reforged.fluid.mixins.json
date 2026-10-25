@@ -3,6 +3,6 @@
   "minVersion": "0.8",
   "package": "com.oblixorprime.engineersdecorreforged.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["StairWaterFlowMixin", "NativeFluidChunkMixin", "FluidNeighbourReadsMixin", "NativeFluidRandomSectionMixin", "NativeFluidRandomTickMixin"],
+  "mixins": ["StairWaterFlowMixin", "NativeFluidChunkMixin", "FluidNeighbourReadsMixin", "NativeFluidRandomSectionMixin", "NativeFluidRandomTickMixin", "ExternalFluidContainerMixin", "ExternalFluidStateMixin", "ExternalFluidPlacementMixin"],
   "injectors": {"defaultRequire": 1}
 }
