@@ -26,7 +26,7 @@ public abstract class ExternalFluidStateMixin implements IBlockStateExtension {
       int nativeLight = IBlockStateExtension.super.getLightEmission(level, pos);
       if (!ExternalFluidAdapter.supported((BlockState)(Object)this)) return nativeLight;
       // Light workers must never request a FULL chunk or a live fluid map.
-      var auxiliary = level.getAuxLightManager(pos);
+      var auxiliary = ExternalFluidAdapter.auxiliaryLight(level, pos);
       return Math.max(nativeLight, auxiliary == null ? 0 : auxiliary.getLightAt(pos));
    }
 

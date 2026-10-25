@@ -11,6 +11,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
@@ -18,6 +19,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.material.*;
+import net.neoforged.neoforge.common.extensions.IBlockGetterExtension;
+import net.neoforged.neoforge.common.world.AuxiliaryLightManager;
+import org.jetbrains.annotations.Nullable;
 
 /** Qualified external containers. No extra blockstate properties and no subclass-wide opt-in. */
 public final class ExternalFluidAdapter {
@@ -38,7 +42,29 @@ public final class ExternalFluidAdapter {
       Map.entry("steel_trapdoor", IETrapDoorBlock.class));
    private static final Set<String> IE_FLUIDS = Set.of("creosote", "ethanol", "biodiesel", "plantoil");
 
+   // Inspect only chunkless preview classes, once per class. Custom managers need no ChunkSource.
+   private static final ClassValue<Boolean> DEFAULT_AUXILIARY_LOOKUP = new ClassValue<>() {
+      @Override
+      protected Boolean computeValue(Class<?> type) {
+         try {
+            return type.getMethod("getAuxLightManager", BlockPos.class).getDeclaringClass() == IBlockGetterExtension.class
+               && type.getMethod("getAuxLightManager", ChunkPos.class).getDeclaringClass() == IBlockGetterExtension.class;
+         } catch (NoSuchMethodException impossible) {
+            throw new IllegalStateException("Missing NeoForge auxiliary-light API", impossible);
+         }
+      }
+   };
+
    private ExternalFluidAdapter() {}
+
+   @Nullable
+   public static AuxiliaryLightManager auxiliaryLight(BlockGetter level, BlockPos pos) {
+      // Only NeoForge's inherited implementation dereferences the absent ChunkSource.
+      // Overrides remain authoritative, including their failures; do not catch render exceptions.
+      if (level instanceof LevelAccessor accessor && accessor.getChunkSource() == null
+            && DEFAULT_AUXILIARY_LOOKUP.get(level.getClass())) return null;
+      return level.getAuxLightManager(pos);
+   }
 
    public static boolean supported(BlockState state) {
       if (!state.hasProperty(BlockStateProperties.WATERLOGGED) || state.hasBlockEntity()) return false;

@@ -1,14 +1,14 @@
 {"variants":{
- "facing=down,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s00" },
- "facing=down,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s15" },
- "facing=east,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s00", "y":90 },
- "facing=east,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s15", "y":90 },
- "facing=north,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s00" },
- "facing=north,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s15" },
- "facing=south,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s00", "y":180 },
- "facing=south,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s15", "y":180 },
+ "facing=down,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_ceiling_s00" },
+ "facing=down,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_ceiling_s15" },
+ "facing=east,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s00", "y":90 },
+ "facing=east,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s15", "y":90 },
+ "facing=north,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s00" },
+ "facing=north,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s15" },
+ "facing=south,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s00", "y":180 },
+ "facing=south,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s15", "y":180 },
  "facing=up,powered=false":  { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s00" },
  "facing=up,powered=true":   { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s15" },
- "facing=west,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s00", "y":-90 },
- "facing=west,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_model_s15", "y":-90 }
+ "facing=west,powered=false": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s00", "y":-90 },
+ "facing=west,powered=true": { "model":"immersive_engineer_decor_controls_tool_reforged:block/observerswitch/general/door_sensor_switch_wall_s15", "y":-90 }
 }}
