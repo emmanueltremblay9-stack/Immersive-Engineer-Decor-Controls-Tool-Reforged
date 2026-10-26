@@ -904,5 +904,6 @@
   "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.meal_bonus": "Meals: +20% saturation; +30% instead beside a Treated Wood Table. Capped at hunger.",
   "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.cake_bonus": "On foot: +10% only for cake slices eaten from a Treated Wood Table.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.campfire": "Rest beside a lit campfire (one of its eight neighboring blocks).",
+  "block.immersive_engineer_decor_controls_tool_reforged.raised_steel_catwalk_stairs": "Raised Steel Catwalk Stair",
   "block.immersive_engineer_decor_controls_tool_reforged.vertical_steel_double_t_support": "Vertical Steel Double T Support"
 }

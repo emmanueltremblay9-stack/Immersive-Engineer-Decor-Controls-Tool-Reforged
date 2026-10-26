@@ -1,0 +1,9 @@
+newmtl side
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #side
+
+newmtl end
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #end
