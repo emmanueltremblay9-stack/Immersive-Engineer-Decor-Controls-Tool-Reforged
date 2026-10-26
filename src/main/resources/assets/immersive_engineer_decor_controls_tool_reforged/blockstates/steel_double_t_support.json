@@ -15,5 +15,8 @@
               "apply": { "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_xconnect_thin_pole_model" }
   },{ "when": { "downconnect" : "2"  },
               "apply": { "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_xconnect_thick_pole_model" }
+  },
+  { "when": { "bulb_light": "creative|paid" },
+    "apply": { "model": "immersive_engineer_decor_controls_tool_reforged:block/light/bulb_under_double_t_model", "x": 270 }
   }
 ]}

@@ -3,5 +3,5 @@ Structural frame part
 <&recipe>This block supplies visible structure for machine halls and access frames.<br>
 <br>
 Usage: Rotate and place it as visible bracing for beams, poles, and platform edges.<br>
-
-
+<br>
+An Iron Bulb can mount flush beneath a free center. A mounted bulb and a steel pole connector cannot occupy the same center; placement of the conflicting part is rejected without spending its item. The bulb can be mined separately, or returned with the beam under normal tool and loot rules.<br>

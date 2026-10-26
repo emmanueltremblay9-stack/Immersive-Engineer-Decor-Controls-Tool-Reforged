@@ -7,6 +7,7 @@ import com.oblixorprime.engineersdecorreforged.stool.TreatedWoodStoolBlock;
 import com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkBlock;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkStairsBlock;
+import com.oblixorprime.engineersdecorreforged.block.VerticalDoubleTSupportBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyTrunkBlock;
 import com.oblixorprime.engineersdecorreforged.block.RoofWireConduitBlock;
@@ -162,8 +163,11 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> TREATED_WOOD_POLE_SUPPORT = registerWithItem(
       "treated_wood_pole_support", () -> new PortedBlocks.SurfaceMountedBlock(wood().noOcclusion(), 3.0, 13.0, 5.0, false)
    );
+   public static final DeferredBlock<VerticalDoubleTSupportBlock> VERTICAL_STEEL_DOUBLE_T_SUPPORT = registerWithItem(
+      "vertical_steel_double_t_support", () -> new VerticalDoubleTSupportBlock(metal().noOcclusion())
+   );
    public static final DeferredBlock<PortedBlocks.SupportBlock> STEEL_DOUBLE_T_SUPPORT = registerWithItem(
-      "steel_double_t_support", () -> new PortedBlocks.SupportBlock(metal().noOcclusion())
+      "steel_double_t_support", () -> new com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.FloorGratingBlock> STEEL_FLOOR_GRATING = registerWithItem(
       "steel_floor_grating", () -> new PortedBlocks.FloorGratingBlock(metal().noOcclusion())
@@ -344,6 +348,8 @@ public final class ModBlocks {
       DeferredBlock<T> block = register(name, supplier);
       if (name.equals("steel_catwalk_stairs") || name.equals("raised_steel_catwalk_stairs")) {
          ModItems.registerItem(name, () -> new CatwalkStairsItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+      } else if (name.equals("iron_bulb_light")) {
+         ModItems.registerItem(name, () -> new com.oblixorprime.engineersdecorreforged.block.IronBulbItem(block.get(), new net.minecraft.world.item.Item.Properties()));
       } else {
          ModItems.registerBlockItem(name, block);
       }

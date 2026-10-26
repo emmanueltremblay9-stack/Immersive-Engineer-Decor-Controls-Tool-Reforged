@@ -291,7 +291,7 @@ public final class PortedBlocks {
       return shape;
    }
 
-   public enum PartKind { BASE, RAILING, INSET_LIGHT }
+   public enum PartKind { BASE, RAILING, INSET_LIGHT, BULB_LIGHT }
 
    /** A visible selectable component; lamps are distinct from the base without inventing a rail side. */
    public record RailingPart(@Nullable Direction side, VoxelShape shape, PartKind kind) {
@@ -321,6 +321,9 @@ public final class PortedBlocks {
       }
       if (state.getBlock() instanceof RaisedCatwalkBlock raised) {
          return raised.selectPart(state, pos, start, end);
+      }
+      if (state.getBlock() instanceof SteelDoubleTBulbBlock support) {
+         return StairRailingTargeting.hasCloserEntity(context, start, end, worldHit) ? null : support.selectPart(state, pos, start, end);
       }
       CatwalkBlock block = (CatwalkBlock)state.getBlock();
       state = block.explicitSides(state);
@@ -357,7 +360,8 @@ public final class PortedBlocks {
    public static boolean hasSelectableRailings(BlockState state) {
       // Include unlit raised decks too: an old lamp completion must never turn into a base break.
       return state.getBlock() instanceof CatwalkBlock || state.getBlock() instanceof CatwalkStairsBlock
-         || state.getBlock() instanceof RaisedCatwalkBlock;
+         || state.getBlock() instanceof RaisedCatwalkBlock
+         || state.getBlock() instanceof SteelDoubleTBulbBlock;
    }
 
    @Nullable
