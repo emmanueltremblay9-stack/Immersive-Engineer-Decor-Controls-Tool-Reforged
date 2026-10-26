@@ -6,6 +6,7 @@ import com.oblixorprime.engineersdecorreforged.block.CatwalkStairsItem;
 import com.oblixorprime.engineersdecorreforged.stool.TreatedWoodStoolBlock;
 import com.oblixorprime.engineersdecorreforged.block.PoleHeadBlock;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkBlock;
+import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkStairsBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyBlock;
 import com.oblixorprime.engineersdecorreforged.block.ChimneyTrunkBlock;
 import com.oblixorprime.engineersdecorreforged.block.RoofWireConduitBlock;
@@ -173,6 +174,9 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.CatwalkStairsBlock> STEEL_CATWALK_STAIRS = registerWithItem(
       "steel_catwalk_stairs", () -> new PortedBlocks.CatwalkStairsBlock(metal().noOcclusion())
    );
+   public static final DeferredBlock<RaisedCatwalkStairsBlock> RAISED_STEEL_CATWALK_STAIRS = registerWithItem(
+      "raised_steel_catwalk_stairs", () -> new RaisedCatwalkStairsBlock(metal().noOcclusion())
+   );
    public static final DeferredBlock<RaisedCatwalkBlock> STEEL_CATWALK_TA = registerWithItem(
       "steel_catwalk_ta", () -> new RaisedCatwalkBlock(metal().noOcclusion())
    );
@@ -338,7 +342,7 @@ public final class ModBlocks {
 
    public static <T extends Block> DeferredBlock<T> registerWithItem(String name, Supplier<T> supplier) {
       DeferredBlock<T> block = register(name, supplier);
-      if (name.equals("steel_catwalk_stairs")) {
+      if (name.equals("steel_catwalk_stairs") || name.equals("raised_steel_catwalk_stairs")) {
          ModItems.registerItem(name, () -> new CatwalkStairsItem(block.get(), new net.minecraft.world.item.Item.Properties()));
       } else {
          ModItems.registerBlockItem(name, block);

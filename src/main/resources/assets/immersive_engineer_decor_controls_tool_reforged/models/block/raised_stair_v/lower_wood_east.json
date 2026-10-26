@@ -1,0 +1,13 @@
+{
+  "loader": "neoforge:obj",
+  "model": "immersive_engineer_decor_controls_tool_reforged:models/block/raised_stair_v/lower_east.obj",
+  "automatic_culling": false,
+  "shade_quads": true,
+  "emissive_ambient": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "side": "immersive_engineer_decor_controls_tool_reforged:block/pole/treated_wood_pole_side_texture",
+    "end": "immersive_engineer_decor_controls_tool_reforged:block/pole/treated_wood_pole_top_texture",
+    "particle": "immersive_engineer_decor_controls_tool_reforged:block/pole/treated_wood_pole_side_texture"
+  }
+}

@@ -1,0 +1,77 @@
+package com.oblixorprime.engineersdecorreforged.client;
+
+import com.google.gson.JsonParser;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.HexFormat;
+import java.util.List;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/** Geometry conservation and native resource wiring, independent of renderer implementation. */
+public final class RaisedStairMeshTest {
+   private static final Path ASSETS=Path.of("src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged");
+   private static final Path MODELS=ASSETS.resolve("models/block/raised_stair_v");
+   private static double area(double[] a,double[] b,double[] c) {
+      double x=(b[1]-a[1])*(c[2]-a[2])-(b[2]-a[2])*(c[1]-a[1]);
+      double y=(b[2]-a[2])*(c[0]-a[0])-(b[0]-a[0])*(c[2]-a[2]);
+      double z=(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]);
+      return Math.sqrt(x*x+y*y+z*z)/2;
+   }
+   private static double[] vec(String[] fields,int offset) {
+      return new double[]{Double.parseDouble(fields[offset]),Double.parseDouble(fields[offset+1]),Double.parseDouble(fields[offset+2])};
+   }
+   private static double objArea(String name,boolean bounded) throws Exception {
+      List<double[]> vertices=new ArrayList<>();double result=0;
+      for(String line:Files.readAllLines(MODELS.resolve(name+".obj"))) {
+         String[] f=line.split(" ");
+         if(f[0].equals("v")) {
+            double[] v=vec(f,1);vertices.add(v);
+            if(bounded)for(double x:v)assertTrue("rendered part stays within its owner cell",x>=-1e-9&&x<=1+1e-9);
+         } else if(f[0].equals("vt")) {
+            for(int i=1;i<=2;i++)assertTrue("UV stays within its own atlas sprite",Double.parseDouble(f[i])>=-1e-9&&Double.parseDouble(f[i])<=1+1e-9);
+         } else if(f[0].equals("f")) {
+            assertEquals("triangulation remains explicit",4,f.length);
+            double[][] p=new double[3][];
+            for(int i=0;i<3;i++)p[i]=vertices.get(Integer.parseInt(f[i+1].split("/")[0])-1);
+            double a=area(p[0],p[1],p[2]);assertTrue("no degenerate emitted triangle",a>1e-12);result+=a;
+         }
+      }
+      assertFalse(vertices.isEmpty());return result;
+   }
+
+   @Test public void split_and_uv_tiling_preserve_the_approved_surface() throws Exception {
+      var mesh=JsonParser.parseString(Files.readString(Path.of("tools/models/raised_stair_v_approved.json"))).getAsJsonObject();
+      var vertices=mesh.getAsJsonArray("vertices");double area=0;
+      for(var element:mesh.getAsJsonArray("triangles")) {
+         var ids=element.getAsJsonArray();double[][] p=new double[3][];
+         for(int i=0;i<3;i++) {
+            var v=vertices.get(ids.get(i).getAsInt()).getAsJsonArray();p[i]=new double[]{v.get(0).getAsDouble()/16,v.get(1).getAsDouble()/16,v.get(2).getAsDouble()/16};
+         }
+         area+=area(p[0],p[1],p[2]);
+      }
+      assertEquals(area,objArea("full",false),1e-9);
+      for(String facing:List.of("north","east","south","west"))
+         assertEquals("split adds no caps, removes no surface and preserves every rotation",area,
+            objArea("upper_"+facing,true)+objArea("lower_"+facing,true),1e-9);
+   }
+
+   @Test public void metal_stair_and_existing_state_resolution_are_exact() throws Exception {
+      byte[] metal=Files.readAllBytes(ASSETS.resolve("models/block/furniture/steel_catwalk_stairs_model.json"));
+      assertEquals("704f5cbc2249d4418e70b6cb067ae08dce2f0ed116f2f0d844d0f652ec3cdb37",HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(metal)));
+      assertEquals(JsonParser.parseString(Files.readString(ASSETS.resolve("blockstates/steel_catwalk_stairs.json"))),
+         JsonParser.parseString(Files.readString(ASSETS.resolve("blockstates/raised_steel_catwalk_stairs.json"))));
+   }
+
+   @Test public void both_materials_reference_the_same_native_mesh() throws Exception {
+      for(String part:List.of("upper","lower"))for(String facing:List.of("north","east","south","west")) {
+         var wood=JsonParser.parseString(Files.readString(MODELS.resolve(part+"_wood_"+facing+".json"))).getAsJsonObject();
+         var steel=JsonParser.parseString(Files.readString(MODELS.resolve(part+"_steel_"+facing+".json"))).getAsJsonObject();
+         assertEquals(wood.get("model"),steel.get("model"));assertEquals("neoforge:obj",wood.get("loader").getAsString());
+         assertNotEquals(wood.get("textures"),steel.get("textures"));
+      }
+      assertFalse("no unapproved crafting recipe",Files.exists(Path.of("src/main/resources/data/immersive_engineer_decor_controls_tool_reforged/recipe/raised_steel_catwalk_stairs.json")));
+   }
+}

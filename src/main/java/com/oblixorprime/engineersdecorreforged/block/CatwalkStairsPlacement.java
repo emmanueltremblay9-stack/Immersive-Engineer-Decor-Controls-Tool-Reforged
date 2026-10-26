@@ -31,7 +31,7 @@ public final class CatwalkStairsPlacement {
    public static Attachment attachment(UseOnContext context) {
       BlockPos source = context.getClickedPos();
       BlockState state = context.getLevel().getBlockState(source);
-      if (state.is(ModBlocks.STEEL_CATWALK_STAIRS.get())) {
+      if (state.getBlock() instanceof PortedBlocks.CatwalkStairsBlock) {
          Direction uphill = state.getValue(PortedBlocks.HORIZONTAL_FACING);
          Direction end = stairEnd(context.getClickedFace(), context.getClickLocation(), source, uphill);
          if (end == null) {

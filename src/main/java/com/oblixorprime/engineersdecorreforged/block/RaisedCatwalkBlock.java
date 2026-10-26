@@ -115,16 +115,18 @@ public final class RaisedCatwalkBlock extends Block implements NativeTransientFl
       }
       BlockState below = level.getBlockState(pos.below());
       int variant = state.getValue(VARIANT) == 3 ? 3 : 0;
-      if (below.is(ModBlocks.THICK_STEEL_POLE.get()) || below.is(ModBlocks.THICK_STEEL_POLE_HEAD.get())) {
-         variant = 1;
-      } else if (below.is(ModBlocks.THIN_STEEL_POLE.get()) || below.is(ModBlocks.THIN_STEEL_POLE_HEAD.get())) {
-         variant = 2;
-      } else if (below.is(ModBlocks.TREATED_WOOD_POLE.get()) || below.is(ModBlocks.TREATED_WOOD_POLE_HEAD.get())
-         // Only the floor-mounted straight support extends its shaft up to this deck.
-         || (below.is(ModBlocks.TREATED_WOOD_POLE_SUPPORT.get()) && below.getValue(DirectionalBlock.FACING) == Direction.UP)) {
-         variant = 5;
-      }
+      int detected = poleVariant(below);
+      if (detected != 0) variant = detected;
       return state.setValue(VARIANT, variant);
+   }
+
+   /** Shared exact material classification; never consumes or changes the pole below. */
+   public static int poleVariant(BlockState below) {
+      if (below.is(ModBlocks.THICK_STEEL_POLE.get()) || below.is(ModBlocks.THICK_STEEL_POLE_HEAD.get())) return 1;
+      if (below.is(ModBlocks.THIN_STEEL_POLE.get()) || below.is(ModBlocks.THIN_STEEL_POLE_HEAD.get())) return 2;
+      if (below.is(ModBlocks.TREATED_WOOD_POLE.get()) || below.is(ModBlocks.TREATED_WOOD_POLE_HEAD.get())
+            || (below.is(ModBlocks.TREATED_WOOD_POLE_SUPPORT.get()) && below.getValue(DirectionalBlock.FACING) == Direction.UP)) return 5;
+      return 0;
    }
 
    @Override
