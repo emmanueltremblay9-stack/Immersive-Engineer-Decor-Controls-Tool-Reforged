@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+      "y": 270
+    }
+  }
+}

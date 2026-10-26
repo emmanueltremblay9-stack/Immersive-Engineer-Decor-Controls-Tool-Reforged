@@ -159,9 +159,12 @@ public final class NativeFluidloggingGameTests {
          helper.getLevel().setBlock(pos, (source ? flowing.getSource(false) : flowing.getFlowing(4, false)).createLegacyBlock(), 3);
          ItemStack stack = new ItemStack(block);
          player.setItemInHand(InteractionHand.MAIN_HAND, stack);
-         BlockPos support = pos.below();
+         boolean wallMounted = block instanceof com.oblixorprime.engineersdecorreforged.block.VerticalDoubleTSupportBlock;
+         BlockPos support = wallMounted ? pos.south() : pos.below();
+         Direction face = wallMounted ? Direction.NORTH : Direction.UP;
+         helper.getLevel().setBlock(support, Blocks.STONE.defaultBlockState(), 3);
          BlockPlaceContext context = new BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, stack,
-            new BlockHitResult(Vec3.atCenterOf(support).add(0, 0.5, 0), Direction.UP, support, false));
+            new BlockHitResult(Vec3.atCenterOf(support).add(Vec3.atLowerCornerOf(face.getNormal()).scale(0.5)), face, support, false));
          helper.assertTrue(((BlockItem)stack.getItem()).place(context).consumesAction(), "native block item placement succeeds");
          BlockState placed = helper.getLevel().getBlockState(pos);
          helper.assertTrue(placed.is(block), "placement retains existing block registration");
