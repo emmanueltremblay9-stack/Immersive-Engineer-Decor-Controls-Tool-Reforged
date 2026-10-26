@@ -27,7 +27,7 @@ public final class ShapeCacheGameTests {
    @GameTest(template = "empty", timeoutTicks = 1200)
    public static void shape_caches_preserve_all_states(GameTestHelper h) {
       verify(h, ModBlocks.STEEL_CATWALK_STAIRS.get(), true, 30720);
-      verify(h, ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(), false, 2304);
+      verify(h, ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(), false, 6912);
       h.succeed();
    }
 
@@ -37,28 +37,31 @@ public final class ShapeCacheGameTests {
          ? java.util.Set.of(HORIZONTAL_FACING, LEFT_RAILING, RIGHT_RAILING, WATERLOGGED,
             NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, EDITED_STAIR_SIDES, PAID_RAILINGS)
          : java.util.Set.of(EASTWEST, LEFTBEAM, RIGHTBEAM, DOWNCONNECT, WATERLOGGED,
-            NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
-      h.assertTrue(properties.equals(expectedProperties), "legacy state property schema retained");
+            NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock.BULB_LIGHT);
+      h.assertTrue(properties.equals(expectedProperties), "legacy properties plus explicit beam bulb attachment property");
       var states = block.getStateDefinition().getPossibleStates();
       h.assertValueEqual(states.size(), count, "save-compatible state count");
       double[] caps = stairs ? packagedStairCaps() : null;
-      var outlines = new VoxelShape[16];
-      var collisions = new VoxelShape[16];
-      var expectedOutlines = new VoxelShape[16];
-      var expectedCollisions = new VoxelShape[16];
+      var outlines = new VoxelShape[stairs ? 16 : 32];
+      var collisions = new VoxelShape[stairs ? 16 : 32];
+      var expectedOutlines = new VoxelShape[stairs ? 16 : 32];
+      var expectedCollisions = new VoxelShape[stairs ? 16 : 32];
       var pos = h.absolutePos(new BlockPos(2, 2, 2));
       var context = CollisionContext.empty();
       for (BlockState state : states) {
          int key = stairs
             ? (state.getValue(HORIZONTAL_FACING).get2DDataValue() << 2) | (state.getValue(LEFT_RAILING) ? 1 : 0) | (state.getValue(RIGHT_RAILING) ? 2 : 0)
             : (state.getValue(EASTWEST) ? 8 : 0) | (state.getValue(LEFTBEAM) ? 4 : 0) | (state.getValue(RIGHTBEAM) ? 2 : 0) | (state.getValue(DOWNCONNECT) > 0 ? 1 : 0);
+         boolean bulb = !stairs && com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock.hasBulb(state);
+         if (bulb) key |= 16;
          var outline = state.getShape(h.getLevel(), pos, context);
          var collision = state.getCollisionShape(h.getLevel(), pos, context);
          if (outlines[key] == null) {
             outlines[key] = outline;
             collisions[key] = collision;
             expectedOutlines[key] = stairs ? alignedStairOutline(state, h.getLevel(), pos, context, caps) : legacySupport(state, h.getLevel(), pos, context);
-            expectedCollisions[key] = stairs ? legacyStairCollision(state, h.getLevel(), pos, context) : expectedOutlines[key];
+            expectedCollisions[key] = stairs ? legacyStairCollision(state, h.getLevel(), pos, context) : legacySupport(state, h.getLevel(), pos, context);
+            if (bulb) expectedOutlines[key] = Shapes.or(expectedOutlines[key], Block.box(6, 6.75, 6, 10, 11, 10)).optimize();
          }
          h.assertTrue(outlines[key] == outline && collisions[key] == collision, "reuse across every fluid/payment/history state: " + key);
          h.assertTrue(!Shapes.joinIsNotEmpty(outline, expectedOutlines[key], BooleanOp.NOT_SAME), "frozen geometry plus explicit landing outline band: " + key);
@@ -66,7 +69,7 @@ public final class ShapeCacheGameTests {
          h.assertTrue(outline == state.getShape(h.getLevel(), pos, context), "repeated outline query reuses cache");
          h.assertTrue(collision == state.getCollisionShape(h.getLevel(), pos, context), "repeated collision query reuses cache");
       }
-      for (int key = 0; key < 16; key++) h.assertTrue(outlines[key] != null, "every geometry key covered: " + key);
+      for (int key = 0; key < (stairs ? 16 : 32); key++) h.assertTrue(outlines[key] != null, "every geometry key covered: " + key);
    }
 
    private static final VoxelShape CATWALK_FLOOR_SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);

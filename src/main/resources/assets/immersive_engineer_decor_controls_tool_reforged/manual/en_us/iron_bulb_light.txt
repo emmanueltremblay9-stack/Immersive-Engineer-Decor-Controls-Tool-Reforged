@@ -3,5 +3,5 @@ Compact work light
 <&recipe>This block provides compact industrial lighting for corridors, catwalks, and work bays.<br>
 <br>
 Usage: Mount it on ceilings, walls, or edges where the room needs clear work lighting.<br>
-
-
+<br>
+Steel Double T mounting: use the Iron Bulb on the beam's underside to mount it centered against the metal. The center must be free of a steel pole connector. Aim at the bulb and mine with a suitable pickaxe to dismantle it without breaking the beam; release attack before mining the beam. Purchased bulbs are returned once through normal tool, loot, and gamerule handling when dismantled or when their beam is mined.<br>

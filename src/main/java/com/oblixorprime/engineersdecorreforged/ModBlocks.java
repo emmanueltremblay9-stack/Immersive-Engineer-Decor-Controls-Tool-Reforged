@@ -166,7 +166,7 @@ public final class ModBlocks {
       "vertical_steel_double_t_support", () -> new VerticalDoubleTSupportBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.SupportBlock> STEEL_DOUBLE_T_SUPPORT = registerWithItem(
-      "steel_double_t_support", () -> new PortedBlocks.SupportBlock(metal().noOcclusion())
+      "steel_double_t_support", () -> new com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock(metal().noOcclusion())
    );
    public static final DeferredBlock<PortedBlocks.FloorGratingBlock> STEEL_FLOOR_GRATING = registerWithItem(
       "steel_floor_grating", () -> new PortedBlocks.FloorGratingBlock(metal().noOcclusion())
@@ -344,6 +344,8 @@ public final class ModBlocks {
       DeferredBlock<T> block = register(name, supplier);
       if (name.equals("steel_catwalk_stairs")) {
          ModItems.registerItem(name, () -> new CatwalkStairsItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+      } else if (name.equals("iron_bulb_light")) {
+         ModItems.registerItem(name, () -> new com.oblixorprime.engineersdecorreforged.block.IronBulbItem(block.get(), new net.minecraft.world.item.Item.Properties()));
       } else {
          ModItems.registerBlockItem(name, block);
       }
