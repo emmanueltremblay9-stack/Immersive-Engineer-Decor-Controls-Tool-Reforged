@@ -1,5 +1,11 @@
 Clapet anti-retour de tuyau de fluide
-Équipement de réseau de fluides
-<&recipe>Le clapet anti-retour de tuyau de fluide est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+Passage unidirectionnel permanent
+<&recipe>Le clapet anti-retour laisse passer le fluide dans un seul sens. Il reste toujours ouvert et n'a pas besoin de redstone. Il limite chaque appel à 1000 mB au maximum.<br>
 <br>
-Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+Exemple : une source propose 1500 mB vers un réservoir vide ; le clapet peut en transmettre au plus 1000 mB dans cet appel. Si la destination n'en accepte que 200 mB, seuls 200 mB passent. Un transfert présenté par la sortie est refusé.<br>
+<br>
+Raccordement : seuls les deux ports dans l'axe de la vanne transportent le fluide. La face orientée (FACING) est la sortie ; la face opposée est l'entrée. Reliez une source qui pousse le fluide à l'entrée et une conduite IE menant à une destination capable de l'accepter à la sortie.<br>
+<br>
+La vanne ne pompe pas et ne stocke aucun fluide. La limite s'applique à chaque appel de transfert : ce n'est pas un débit garanti par tick. Le volume réel dépend de la source, des tuyaux et de la place disponible à destination.<br>
+<br>
+Placement : la face cliquée détermine la sortie ; s'accroupir inverse ce sens. Pour tourner une vanne horizontale déjà posée, utilisez l'action Utiliser avec l'Engineer's Hammer. Le bouton dépend de vos commandes.<br>

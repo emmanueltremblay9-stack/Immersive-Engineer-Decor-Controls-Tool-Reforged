@@ -1,5 +1,11 @@
 Vanne de fluide analogique
-Équipement de réseau de fluides
-<&recipe>La vanne de fluide à redstone analogique est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+Limite proportionnelle au signal
+<&recipe>Cette vanne règle la limite de chaque appel selon la puissance redstone. Signal 0 : fermée. Signaux 1 à 14 : 66 fois le signal en mB par appel. Signal 15 : 1000 mB par appel.<br>
 <br>
-Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+Exemples : signal 1 = 66 mB ; signal 7 = 462 mB ; signal 14 = 924 mB ; signal 15 = 1000 mB au maximum par appel. Une destination qui accepte moins réduit encore le volume transmis. Raccordez la commande sur un côté distinct des deux ports de fluide.<br>
+<br>
+Raccordement : seuls les deux ports dans l'axe de la vanne transportent le fluide. La face orientée (FACING) est la sortie ; la face opposée est l'entrée. Reliez une source qui pousse le fluide à l'entrée et une conduite IE menant à une destination capable de l'accepter à la sortie.<br>
+<br>
+La vanne ne pompe pas et ne stocke aucun fluide. La limite s'applique à chaque appel de transfert : ce n'est pas un débit garanti par tick. Le volume réel dépend de la source, des tuyaux et de la place disponible à destination.<br>
+<br>
+Placement : la face cliquée détermine la sortie ; s'accroupir inverse ce sens. Pour tourner une vanne horizontale déjà posée, utilisez l'action Utiliser avec l'Engineer's Hammer. Le bouton dépend de vos commandes.<br>

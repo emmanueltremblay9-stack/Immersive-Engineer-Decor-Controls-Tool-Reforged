@@ -118,7 +118,7 @@ public final class WeatherWaterCollectionGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
-   public static void weather_collection_keeps_source_priority_and_leaves_sources_in_place(GameTestHelper h) {
+   public static void weather_collection_keeps_native_exposure_and_accumulator_source_priority(GameTestHelper h) {
       try (var f = new WeatherFixture(h)) {
          for (boolean thunder : new boolean[] {false, true}) {
             for (Block source : new Block[] {Blocks.WATER, Blocks.LAVA}) {
@@ -128,12 +128,10 @@ public final class WeatherWaterCollectionGameTests {
                f.level.setBlock(f.pos.above(), source.defaultBlockState(), Block.UPDATE_ALL);
                var before = f.level.getBlockState(f.pos.above());
                tick(f, funnel, 40);
-               h.assertValueEqual(amount(funnel), 250, "funnel source collection keeps its 40-tick cadence");
+               h.assertValueEqual(amount(funnel), 0, "a source directly above is not the Funnel's moving-fluid inlet");
                tick(f, funnel, 40);
-               h.assertValueEqual(amount(funnel), 500, "source collection does not add a weather quantum at tick 80");
-               h.assertTrue(tank(funnel).getFluidInTank(0).is(source == Blocks.WATER ? Fluids.WATER : Fluids.LAVA),
-                  "funnel source fluid identity is preserved");
-               h.assertValueEqual(f.level.getBlockState(f.pos.above()), before, "funnel never removes its source");
+               h.assertValueEqual(amount(funnel), 0, "native rain exposure does not manufacture water under a full fluid cell");
+               h.assertValueEqual(f.level.getBlockState(f.pos.above()), before, "rejected direct source is not consumed");
             }
             for (Direction direction : Direction.values()) {
                f.reset();
