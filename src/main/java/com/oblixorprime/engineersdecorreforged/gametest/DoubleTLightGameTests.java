@@ -70,6 +70,8 @@ public final class DoubleTLightGameTests {
          h.assertFalse(Shapes.joinIsNotEmpty(base,data.shape(),BooleanOp.AND),"light does not overlap structural metal");
          h.assertTrue(changed.getLightEmission(level,pos)>=14,"attachment emits without overriding brighter fluid");
          use(p,front(pos));h.assertValueEqual(p.getMainHandItem().getCount(),2,"occupied host cannot buy a second lamp");
+         h.assertTrue(level.getBlockState(pos.north()).isAir(),"internal occupied slot must not fall back to a second adjacent lamp");
+         h.assertTrue(SupportLights.entity(level,pos).attachment()==data,"rejected second attachment retains the original ownership token");
       }
       h.succeed();
    }
@@ -104,6 +106,66 @@ public final class DoubleTLightGameTests {
          finally{NeoForge.EVENT_BUS.unregister(listener);}
          h.assertTrue(fired[0],"normal NeoForge event covers actual target cell");h.assertValueEqual(level.getBlockState(pos),old,"full previous block/fluid restored");
          h.assertValueEqual(p.getMainHandItem().getCount(),3,"no cancellation cost");var be=SupportLights.entity(level,pos);h.assertTrue(be==null||!be.occupied(),"rollback cannot retain a paid ghost attachment");
+      }
+      h.succeed();
+   }
+
+   private static void ordinaryAdjacent(GameTestHelper h,FakePlayer p,BlockPos pos,Block lamp,Direction face,Vec3 point){
+      var level=h.getLevel();var before=level.getBlockState(pos);var owner=SupportLights.entity(level,pos);
+      var data=owner==null?null:owner.attachment();var target=pos.relative(face);
+      h.assertTrue(level.getBlockState(target).isAir(),"ordinary adjacent target starts empty");
+      p.setYRot(0);p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(lamp,3));
+      var context=new UseOnContext(p,InteractionHand.MAIN_HAND,new BlockHitResult(point,face,pos,false));
+      var ordinary=lamp.getStateForPlacement(new net.minecraft.world.item.context.BlockPlaceContext(context));
+      h.assertTrue(ordinary!=null,"original lamp permits its ordinary placement");
+      p.getMainHandItem().useOn(context);
+      h.assertValueEqual(level.getBlockState(target),ordinary,"occupied support preserves ordinary adjacent lamp placement/facing; host="+before+" face="+face);
+      h.assertValueEqual(p.getMainHandItem().getCount(),2,"only the ordinary lamp is paid once");
+      h.assertValueEqual(level.getBlockState(pos),before,"existing support/lamp/fluid state is retained");
+      h.assertTrue(SupportLights.entity(level,pos)==owner&&owner.attachment()==data,"ordinary placement does not replace existing lamp data");
+      h.assertValueEqual(drops(h,pos,lamp),0,"ordinary placement emits no duplicate lamp item");
+   }
+
+   @GameTest(template="empty",timeoutTicks=120)
+   public static void occupied_supports_keep_ordinary_boundary_face_placement(GameTestHelper h){
+      var level=h.getLevel();var pos=h.absolutePos(P);var p=player(h,pos);
+      for(boolean across:List.of(false,true))for(Block lamp:lamps()){
+         clear(h,pos);level.setBlock(pos,NativeFluidloggedBlock.placement(wall(across),Fluids.WATER.getSource(false)),Block.UPDATE_ALL);
+         p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ModBlocks.IRON_INSET_LIGHT.get()));use(p,front(pos));
+         h.assertTrue(SupportLights.attached(level.getBlockState(pos)),"first paid attachment established");
+         if(across&&lamp==ModBlocks.IRON_BULB_LIGHT.get()){
+            p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(lamp,3));
+            use(p,new BlockHitResult(Vec3.atLowerCornerOf(pos).add(.5,11./16,15.5/16),Direction.UP,pos,false));
+            h.assertValueEqual(p.getMainHandItem().getCount(),3,"top of a horizontal wall beam is an occupied internal mount, not the cell boundary");
+            h.assertTrue(level.getBlockState(pos.above()).isAir(),"occupied internal top mount does not place an adjacent bulb");
+         }
+         var face=across?Direction.EAST:Direction.UP;
+         var state=level.getBlockState(pos);
+         h.assertValueEqual(((DoubleTLightHost)state.getBlock()).mountingShape(state,level,pos).max(face.getAxis()),1.,"ordinary test clicks an actual cell-boundary structural face");
+         ordinaryAdjacent(h,p,pos,lamp,face,Vec3.atLowerCornerOf(pos).add(across?1:.5,across?.5:1,15.5/16));
+      }
+      for(boolean eastWest:List.of(false,true))for(Block lamp:lamps()){
+         clear(h,pos);var state=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(PortedBlocks.EASTWEST,eastWest).setValue(SteelDoubleTBulbBlock.BULB_LIGHT,SteelDoubleTBulbBlock.Bulb.PAID);
+         level.setBlock(pos.above(),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);level.setBlock(pos,state,Block.UPDATE_ALL);
+         var face=eastWest?Direction.EAST:Direction.SOUTH;
+         ordinaryAdjacent(h,p,pos,lamp,face,Vec3.atLowerCornerOf(pos).add(eastWest?1:.5,15.5/16,eastWest?.5:1));
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty",timeoutTicks=120)
+   public static void occupied_supports_keep_incompatible_face_and_legacy_bulb_normal_placement(GameTestHelper h){
+      var level=h.getLevel();var pos=h.absolutePos(P);var p=player(h,pos);
+      for(boolean across:List.of(false,true))for(Block lamp:List.of(ModBlocks.IRON_CEILING_EDGE_LIGHT.get(),ModBlocks.IRON_FLOOR_EDGE_LIGHT.get())){
+         clear(h,pos);level.setBlock(pos,wall(across),Block.UPDATE_ALL);
+         p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ModBlocks.IRON_INSET_LIGHT.get()));use(p,front(pos));
+         ordinaryAdjacent(h,p,pos,lamp,Direction.WEST,Vec3.atLowerCornerOf(pos).add(5./16,.5,15.5/16));
+      }
+      for(boolean eastWest:List.of(false,true))for(Block lamp:List.of(ModBlocks.IRON_CEILING_EDGE_LIGHT.get(),ModBlocks.IRON_FLOOR_EDGE_LIGHT.get(),ModBlocks.IRON_INSET_LIGHT.get())){
+         clear(h,pos);var state=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(PortedBlocks.EASTWEST,eastWest).setValue(SteelDoubleTBulbBlock.BULB_LIGHT,SteelDoubleTBulbBlock.Bulb.PAID);
+         level.setBlock(pos.above(),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);level.setBlock(pos,state,Block.UPDATE_ALL);
+         ordinaryAdjacent(h,p,pos,lamp,Direction.DOWN,Vec3.atLowerCornerOf(pos).add(eastWest?.1:.5,11./16,eastWest?.5:.1));
+         h.assertTrue(SteelDoubleTBulbBlock.paidBulb(level.getBlockState(pos)),"legacy paid bulb remains independent and unchanged");
       }
       h.succeed();
    }

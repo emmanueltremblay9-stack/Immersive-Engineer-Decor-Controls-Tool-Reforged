@@ -17,11 +17,12 @@ public class SupportLightItem extends BlockItem {
    @Override public InteractionResult useOn(UseOnContext context){
       var level=context.getLevel();var pos=context.getClickedPos();var host=level.getBlockState(pos);
       if(!(host.getBlock() instanceof DoubleTLightHost))return super.useOn(context);
-      if(SupportLights.attached(host)||SupportLights.legacy(host))return InteractionResult.FAIL;
       var ordinary=getBlock().getStateForPlacement(new BlockPlaceContext(context));
       if(ordinary==null)return super.useOn(context);
       var player=context.getPlayer();var plan=SupportLights.pose(host,level,pos,ordinary,context.getClickedFace(),player==null||!player.getAbilities().instabuild);
       if(plan==null)return super.useOn(context);
+      // Occupancy rejects an internal attachment, not ordinary adjacent placement.
+      if(SupportLights.attached(host)||SupportLights.legacy(host))return InteractionResult.FAIL;
       if(!allowed(context))return InteractionResult.FAIL;
       return super.place(new AttachedContext(context,host,plan));
    }
