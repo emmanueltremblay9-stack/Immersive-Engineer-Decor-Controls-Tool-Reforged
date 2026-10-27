@@ -76,10 +76,23 @@ public final class TreatedWoodBeamBlock extends NativeDecorativeBlocks.NativeOpe
    private static boolean connects(BlockState neighbor,BlockState state) {
       Mount mount=state.getValue(MOUNT);
       if(mount==Mount.CEILING&&neighbor.getBlock() instanceof PortedBlocks.SupportBlock)return true;
+      if(mount!=Mount.CEILING)return orthogonalWall(state,neighbor);
       if(!(neighbor.getBlock() instanceof TreatedWoodBeamBlock))return false;
-      if(mount==Mount.CEILING)return neighbor.getValue(MOUNT)==Mount.CEILING;
-      return neighbor.getValue(MOUNT)!=Mount.CEILING
-         &&neighbor.getValue(BlockStateProperties.HORIZONTAL_FACING)==state.getValue(BlockStateProperties.HORIZONTAL_FACING);
+      return neighbor.getValue(MOUNT)==Mount.CEILING;
+   }
+   /** A half-cross ends on a perpendicular core in the same physical wall plane. */
+   static boolean orthogonalWall(BlockState state,BlockState neighbor) {
+      if(!wallBeam(state)||!wallBeam(neighbor))return false;
+      return state.getValue(BlockStateProperties.HORIZONTAL_FACING)==neighbor.getValue(BlockStateProperties.HORIZONTAL_FACING)
+         &&wallHorizontal(state)!=wallHorizontal(neighbor);
+   }
+   private static boolean wallBeam(BlockState state) {
+      return state.getBlock() instanceof VerticalDoubleTSupportBlock
+         ||state.getBlock() instanceof TreatedWoodBeamBlock&&state.getValue(MOUNT)!=Mount.CEILING;
+   }
+   private static boolean wallHorizontal(BlockState state) {
+      return state.getBlock() instanceof VerticalDoubleTSupportBlock
+         ?state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL):state.getValue(MOUNT)==Mount.WALL_HORIZONTAL;
    }
    public static boolean ceilingBeam(BlockState state){return state.getBlock() instanceof TreatedWoodBeamBlock&&state.getValue(MOUNT)==Mount.CEILING;}
    @Override protected BlockState updateShape(BlockState state,Direction face,BlockState neighbor,LevelAccessor level,BlockPos pos,BlockPos neighborPos) {

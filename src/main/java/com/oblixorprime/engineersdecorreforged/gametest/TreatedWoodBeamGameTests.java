@@ -115,7 +115,8 @@ public final class TreatedWoodBeamGameTests {
       for(Mount mount:Mount.values())for(Direction facing:Direction.Plane.HORIZONTAL) {
          clear(h,pos);var base=state(mount,facing).setValue(BlockStateProperties.WATERLOGGED,true);
          level.setBlock(pos,base,3);Direction positive=mount==Mount.WALL_HORIZONTAL?Direction.UP:facing.getClockWise();
-         level.setBlock(pos.relative(positive),state(mount,facing),3);var joined=level.getBlockState(pos);
+         Mount other=mount==Mount.CEILING?mount:mount==Mount.WALL_HORIZONTAL?Mount.WALL_VERTICAL:Mount.WALL_HORIZONTAL;
+         level.setBlock(pos.relative(positive),state(other,facing),3);var joined=level.getBlockState(pos);
          h.assertTrue(joined.getValue(TreatedWoodBeamBlock.JOIN_POSITIVE),"one-sided joint is active");
          var first=joined.getCollisionShape(level,pos).getFaceShape(positive);
          var neighbor=level.getBlockState(pos.relative(positive));var second=neighbor.getCollisionShape(level,pos.relative(positive)).getFaceShape(positive.getOpposite());

@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.util.HexFormat;
+import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -64,7 +65,7 @@ public final class VerticalDoubleTModelTest {
    }
 
    @Test public void resource_chain_covers_every_wall_mount_facing_and_connection()throws Exception {
-      var parts=read("blockstates/vertical_steel_double_t_support.json").getAsJsonArray("multipart");assertEquals(24,parts.size());
+      var parts=read("blockstates/vertical_steel_double_t_support.json").getAsJsonArray("multipart");assertEquals(28,parts.size());
       for(boolean across:new boolean[]{false,true})for(String face:new String[]{"north","east","south","west"})for(boolean negative:new boolean[]{false,true})for(boolean positive:new boolean[]{false,true}) {
          var values=Map.of("wall_horizontal",Boolean.toString(across),"facing",face,"join_negative",Boolean.toString(negative),"join_positive",Boolean.toString(positive));
          int count=0;
@@ -82,6 +83,29 @@ public final class VerticalDoubleTModelTest {
       }
       assertEquals("immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",read("models/item/vertical_steel_double_t_support.json").get("parent").getAsString());
       assertFalse(Files.exists(Path.of("src/main/resources/data/immersive_engineer_decor_controls_tool_reforged/recipe/vertical_steel_double_t_support.json")));
+   }
+
+   @Test public void ceiling_join_adds_only_the_aligned_upright_terminal_piece()throws Exception {
+      var parts=read("blockstates/vertical_steel_double_t_support.json").getAsJsonArray("multipart");
+      var expected=Map.of("north",0,"east",90,"south",180,"west",270);var seen=new boolean[4];int count=0;
+      String modelName="immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_ceiling_end";
+      for(var element:parts) {
+         var part=element.getAsJsonObject();var when=part.getAsJsonObject("when");
+         if(!when.has("ceiling_join"))continue;
+         assertEquals("true",when.get("ceiling_join").getAsString());
+         assertEquals("false",when.get("wall_horizontal").getAsString());
+         String facing=when.get("facing").getAsString();int index=List.of("north","east","south","west").indexOf(facing);
+         assertTrue("one terminal piece for each horizontal facing",index>=0&&!seen[index]);seen[index]=true;count++;
+         var apply=part.getAsJsonObject("apply");assertEquals(modelName,apply.get("model").getAsString());
+         assertEquals(expected.get(facing).intValue(),apply.get("y").getAsInt());
+      }
+      assertEquals(4,count);for(boolean present:seen)assertTrue(present);
+      var model=read("models/block/hsupport/wall_vertical_double_t_ceiling_end.json");
+      assertEquals(read(BASE).get("textures"),model.get("textures"));var elements=model.getAsJsonArray("elements");assertEquals(4,elements.size());
+      for(var element:elements) {
+         var box=element.getAsJsonObject();assertEquals(16,box.getAsJsonArray("from").get(1).getAsInt());
+         assertEquals(27,box.getAsJsonArray("to").get(1).getAsInt());
+      }
    }
 
    @Test public void horizontal_model_is_the_same_upright_model_turned_in_wall_with_uvs()throws Exception {

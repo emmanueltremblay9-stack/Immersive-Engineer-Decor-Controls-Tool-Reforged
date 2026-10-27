@@ -25,6 +25,7 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    public static final BooleanProperty WALL_HORIZONTAL=BooleanProperty.create("wall_horizontal");
    public static final BooleanProperty JOIN_NEGATIVE=BooleanProperty.create("join_negative");
    public static final BooleanProperty JOIN_POSITIVE=BooleanProperty.create("join_positive");
+   public static final BooleanProperty CEILING_JOIN=BooleanProperty.create("ceiling_join");
    private static final VoxelShape NORTH=Shapes.or(
       Block.box(5,0,15,11,16,16),Block.box(9,0,12,10,16,15),
       Block.box(6,0,12,7,16,15),Block.box(5,0,11,11,16,12)).optimize();
@@ -32,12 +33,17 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    private static final VoxelShape POSITIVE=Shapes.or(
       Block.box(11,5,15,16,11,16),Block.box(11,5,11,16,11,12),
       Block.box(10,6,12,16,7,15),Block.box(10,9,12,16,10,15)).optimize();
-   private static final VoxelShape[][][] SHAPES=new VoxelShape[2][4][4];
+   // Extends the upright only into its directly adjacent aligned ceiling beam.
+   private static final VoxelShape CEILING_END=Shapes.or(
+      Block.box(5,16,15,11,27,16),Block.box(9,16,12,10,27,15),
+      Block.box(6,16,12,7,27,15),Block.box(5,16,11,11,27,12));
+   private static final VoxelShape[][][] SHAPES=new VoxelShape[2][4][8];
    static {
-      for(int mount=0;mount<2;mount++)for(int joins=0;joins<4;joins++) {
+      for(int mount=0;mount<2;mount++)for(int joins=0;joins<8;joins++) {
          VoxelShape shape=NORTH;
          if((joins&1)!=0)shape=Shapes.or(shape,inWallHalfTurn(POSITIVE));
          if((joins&2)!=0)shape=Shapes.or(shape,POSITIVE);
+         if((joins&4)!=0&&mount==0)shape=Shapes.or(shape,CEILING_END);
          if(mount==1)shape=inWallClockwise(shape);
          for(int facing=0;facing<4;facing++){SHAPES[mount][facing][joins]=shape.optimize();shape=clockwise(shape);}
       }
@@ -46,11 +52,12 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    public VerticalDoubleTSupportBlock(Properties properties) {
       super(properties.lightLevel(state->Math.max(NativeFluidloggedBlock.light(state),SupportLights.attached(state)?14:0)));
       registerDefaultState(NativeFluidloggedBlock.dry(defaultBlockState()).setValue(FACING,Direction.NORTH)
-         .setValue(WALL_HORIZONTAL,false).setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false).setValue(SupportLights.ATTACHED,false));
+         .setValue(WALL_HORIZONTAL,false).setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false)
+         .setValue(CEILING_JOIN,false).setValue(SupportLights.ATTACHED,false));
    }
    @Override protected MapCodec<? extends HorizontalDirectionalBlock> codec(){return CODEC;}
    @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> builder) {
-      builder.add(FACING,WALL_HORIZONTAL,JOIN_NEGATIVE,JOIN_POSITIVE,SupportLights.ATTACHED,
+      builder.add(FACING,WALL_HORIZONTAL,JOIN_NEGATIVE,JOIN_POSITIVE,CEILING_JOIN,SupportLights.ATTACHED,
          BlockStateProperties.WATERLOGGED,NativeFluidloggedBlock.FLUID_CELL,StairWaterFlow.WATER_FLOW);
    }
    public static boolean horizontalAt(double horizontal,double vertical) {
@@ -70,12 +77,19 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
       return state.getValue(WALL_HORIZONTAL)?Direction.DOWN:state.getValue(FACING).getClockWise();
    }
    private static boolean compatible(BlockState state,BlockState neighbor) {
-      return neighbor.getBlock() instanceof VerticalDoubleTSupportBlock&&neighbor.getValue(FACING)==state.getValue(FACING);
+      return TreatedWoodBeamBlock.orthogonalWall(state,neighbor);
    }
    private static BlockState connected(BlockState state,BlockGetter level,BlockPos pos) {
       Direction direction=positive(state);
       return state.setValue(JOIN_NEGATIVE,compatible(state,level.getBlockState(pos.relative(direction.getOpposite()))))
-         .setValue(JOIN_POSITIVE,compatible(state,level.getBlockState(pos.relative(direction))));
+         .setValue(JOIN_POSITIVE,compatible(state,level.getBlockState(pos.relative(direction))))
+         .setValue(CEILING_JOIN,!state.getValue(WALL_HORIZONTAL)&&alignedCeiling(state,level.getBlockState(pos.above())));
+   }
+   private static boolean alignedCeiling(BlockState state,BlockState above) {
+      Direction.Axis axis=state.getValue(FACING).getAxis();
+      if(above.getBlock() instanceof PortedBlocks.SupportBlock)
+         return above.getValue(PortedBlocks.EASTWEST)==(axis==Direction.Axis.X);
+      return TreatedWoodBeamBlock.ceilingBeam(above)&&above.getValue(FACING).getAxis()==axis;
    }
    @Override protected BlockState rotate(BlockState state,Rotation rotation){return state.setValue(FACING,rotation.rotate(state.getValue(FACING)));}
    @Override protected BlockState mirror(BlockState state,Mirror mirror) {
@@ -89,11 +103,11 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
       NativeFluidloggedBlock.schedule(state,level,pos);
       return connected(state,level,pos);
    }
-   @Override public VoxelShape mountingShape(BlockState state,BlockGetter level,BlockPos pos){return supportShape(state.setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false),level,pos);}
+   @Override public VoxelShape mountingShape(BlockState state,BlockGetter level,BlockPos pos){return supportShape(state.setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false).setValue(CEILING_JOIN,false),level,pos);}
    @Override protected VoxelShape getShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context){return SupportLights.outline(state,level,pos,supportShape(state,level,pos));}
    @Override public VoxelShape supportShape(BlockState state,BlockGetter level,BlockPos pos) {
       int facing=switch(state.getValue(FACING)){case EAST->1;case SOUTH->2;case WEST->3;default->0;};
-      int joins=(state.getValue(JOIN_NEGATIVE)?1:0)|(state.getValue(JOIN_POSITIVE)?2:0);
+      int joins=(state.getValue(JOIN_NEGATIVE)?1:0)|(state.getValue(JOIN_POSITIVE)?2:0)|(state.getValue(CEILING_JOIN)?4:0);
       return SHAPES[state.getValue(WALL_HORIZONTAL)?1:0][facing][joins];
    }
    @Override protected VoxelShape getCollisionShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context){return supportShape(state,level,pos);}

@@ -91,7 +91,7 @@ public final class VerticalDoubleTGameTests {
       for(Direction face:Direction.Plane.HORIZONTAL)for(boolean across:List.of(false,true))for(var fluid:List.of(Fluids.WATER.getSource(false),Fluids.LAVA.getSource(false),Fluids.FLOWING_WATER.getFlowing(4,false))) {
          clear(h,pos);var base=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,face).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,across);
          var state=fluid.isSource()?NativeFluidloggedBlock.placement(base,fluid):StairWaterFlow.withFlow(base,fluid);
-         level.setBlock(pos,state,Block.UPDATE_ALL);Direction cross=across?Direction.DOWN:face.getClockWise();level.setBlock(pos.relative(cross),base,Block.UPDATE_ALL);
+         level.setBlock(pos,state,Block.UPDATE_ALL);Direction cross=across?Direction.DOWN:face.getClockWise();level.setBlock(pos.relative(cross),base.setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,!across),Block.UPDATE_ALL);
          state=level.getBlockState(pos);h.assertTrue(state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"joined fixture established");
          h.assertValueEqual(level.getFluidState(pos),fluid,"new mount and connection retain fluid");
          var saved=NbtUtils.writeBlockState(state);h.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(),saved),state,"mount, connector and fluid survive state save/read");
