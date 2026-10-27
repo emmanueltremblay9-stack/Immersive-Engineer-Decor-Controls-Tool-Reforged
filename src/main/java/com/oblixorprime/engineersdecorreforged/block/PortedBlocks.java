@@ -202,7 +202,7 @@ public final class PortedBlocks {
       };
    }
 
-   private static VoxelShape orientedNorthShape(VoxelShape northShape, Direction facing, boolean horizontalRotation) {
+   static VoxelShape orientedNorthShape(VoxelShape northShape, Direction facing, boolean horizontalRotation) {
       VoxelShape oriented = Shapes.empty();
       for (AABB box : northShape.toAabbs()) {
          oriented = Shapes.or(oriented, Shapes.create(orientedNorthBox(box, facing, horizontalRotation)));
@@ -291,16 +291,17 @@ public final class PortedBlocks {
       return shape;
    }
 
-   public enum PartKind { BASE, RAILING, INSET_LIGHT, BULB_LIGHT }
+   public enum PartKind { BASE, RAILING, INSET_LIGHT, BULB_LIGHT, SUPPORT_LIGHT }
 
    /** A visible selectable component; lamps are distinct from the base without inventing a rail side. */
-   public record RailingPart(@Nullable Direction side, VoxelShape shape, PartKind kind) {
+   public record RailingPart(@Nullable Direction side, VoxelShape shape, PartKind kind, @Nullable Object token) {
+      public RailingPart(@Nullable Direction side,VoxelShape shape,PartKind kind){this(side,shape,kind,null);}
       public RailingPart(@Nullable Direction side, VoxelShape shape) {
          this(side, shape, side == null ? PartKind.BASE : PartKind.RAILING);
       }
 
       public boolean sameComponent(RailingPart other) {
-         return kind == other.kind && side == other.side;
+         return kind == other.kind && side == other.side && token == other.token;
       }
    }
 
@@ -321,6 +322,12 @@ public final class PortedBlocks {
       }
       if (state.getBlock() instanceof RaisedCatwalkBlock raised) {
          return raised.selectPart(state, pos, start, end);
+      }
+      if (state.getBlock() instanceof DoubleTLightHost && SupportLights.attached(state)) {
+         return StairRailingTargeting.hasCloserEntity(context,start,end,worldHit)?null:SupportLights.select(state,level,pos,start,end);
+      }
+      if (state.getBlock() instanceof VerticalDoubleTSupportBlock wall) {
+         return StairRailingTargeting.hasCloserEntity(context,start,end,worldHit)?null:SupportLights.select(state,level,pos,start,end);
       }
       if (state.getBlock() instanceof SteelDoubleTBulbBlock support) {
          return StairRailingTargeting.hasCloserEntity(context, start, end, worldHit) ? null : support.selectPart(state, pos, start, end);
@@ -361,7 +368,7 @@ public final class PortedBlocks {
       // Include unlit raised decks too: an old lamp completion must never turn into a base break.
       return state.getBlock() instanceof CatwalkBlock || state.getBlock() instanceof CatwalkStairsBlock
          || state.getBlock() instanceof RaisedCatwalkBlock
-         || state.getBlock() instanceof SteelDoubleTBulbBlock;
+         || state.getBlock() instanceof DoubleTLightHost;
    }
 
    @Nullable

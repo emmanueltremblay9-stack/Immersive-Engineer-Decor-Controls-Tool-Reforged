@@ -1,20 +1,260 @@
 {
-  "variants": {
-    "facing=north": {
-      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
-      "y": 0
+  "multipart": [
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+        "y": 0
+      }
     },
-    "facing=east": {
-      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
-      "y": 90
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "north",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_negative",
+        "y": 0
+      }
     },
-    "facing=south": {
-      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
-      "y": 180
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "north",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_positive",
+        "y": 0
+      }
     },
-    "facing=west": {
-      "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
-      "y": 270
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "east",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_negative",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "east",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_positive",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "south",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_negative",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "south",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_positive",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "west",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_negative",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "false",
+        "facing": "west",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_vertical_double_t_positive",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_steel_double_t_model",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "north",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_negative",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "north",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_positive",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_steel_double_t_model",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "east",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_negative",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "east",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_positive",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_steel_double_t_model",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "south",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_negative",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "south",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_positive",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_steel_double_t_model",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "west",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_negative",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "wall_horizontal": "true",
+        "facing": "west",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/wall_horizontal_double_t_positive",
+        "y": 270
+      }
     }
-  }
+  ]
 }

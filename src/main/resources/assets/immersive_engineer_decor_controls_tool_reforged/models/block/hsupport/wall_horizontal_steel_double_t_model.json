@@ -1,0 +1,263 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "end": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_end_texture",
+    "particle": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_end_texture",
+    "side": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_side_texture",
+    "top": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_top_texture"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        5,
+        15
+      ],
+      "to": [
+        16,
+        11,
+        16
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            5,
+            0,
+            11,
+            1
+          ],
+          "texture": "#end",
+          "rotation": 270
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            1
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            5,
+            0,
+            11,
+            1
+          ],
+          "texture": "#end",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            1
+          ],
+          "texture": "#side",
+          "rotation": 180
+        },
+        "south": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#top",
+          "rotation": 90
+        },
+        "north": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#top",
+          "rotation": 90
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        6,
+        12
+      ],
+      "to": [
+        16,
+        7,
+        15
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            6,
+            1,
+            7,
+            4
+          ],
+          "texture": "#end",
+          "rotation": 270
+        },
+        "down": {
+          "uv": [
+            0,
+            1,
+            16,
+            4
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            9,
+            1,
+            10,
+            4
+          ],
+          "texture": "#end",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            0,
+            1,
+            16,
+            4
+          ],
+          "texture": "#side",
+          "rotation": 180
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        9,
+        12
+      ],
+      "to": [
+        16,
+        10,
+        15
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            9,
+            1,
+            10,
+            4
+          ],
+          "texture": "#end",
+          "rotation": 270
+        },
+        "down": {
+          "uv": [
+            0,
+            1,
+            16,
+            4
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            6,
+            1,
+            7,
+            4
+          ],
+          "texture": "#end",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            0,
+            1,
+            16,
+            4
+          ],
+          "texture": "#side",
+          "rotation": 180
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        5,
+        11
+      ],
+      "to": [
+        16,
+        11,
+        12
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            5,
+            4,
+            11,
+            5
+          ],
+          "texture": "#end",
+          "rotation": 270
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            16,
+            5
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            5,
+            4,
+            11,
+            5
+          ],
+          "texture": "#end",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            16,
+            5
+          ],
+          "texture": "#side",
+          "rotation": 180
+        },
+        "south": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#top",
+          "rotation": 90
+        },
+        "north": {
+          "uv": [
+            5,
+            0,
+            11,
+            16
+          ],
+          "texture": "#top",
+          "rotation": 90
+        }
+      }
+    }
+  ]
+}

@@ -33,7 +33,7 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 
 /** The existing beam can own one separately selectable, purchased Iron Bulb. */
 @EventBusSubscriber(modid = EngineersDecorReforged.MOD_ID)
-public final class SteelDoubleTBulbBlock extends PortedBlocks.SupportBlock {
+public final class SteelDoubleTBulbBlock extends PortedBlocks.SupportBlock implements DoubleTLightHost {
    public enum Bulb implements StringRepresentable {
       NONE("none"), CREATIVE("creative"), PAID("paid");
       private final String name;
@@ -48,8 +48,8 @@ public final class SteelDoubleTBulbBlock extends PortedBlocks.SupportBlock {
    private final VoxelShape[] litOutlines = new VoxelShape[16];
 
    public SteelDoubleTBulbBlock(Properties properties) {
-      super(properties.lightLevel(state -> Math.max(NativeFluidloggedBlock.light(state), hasBulb(state) ? 14 : 0)));
-      registerDefaultState(defaultBlockState().setValue(BULB_LIGHT, Bulb.NONE));
+      super(properties.lightLevel(state -> Math.max(NativeFluidloggedBlock.light(state), hasBulb(state) || SupportLights.attached(state) ? 14 : 0)));
+      registerDefaultState(defaultBlockState().setValue(BULB_LIGHT, Bulb.NONE).setValue(SupportLights.ATTACHED,false));
       for (int key = 0; key < litOutlines.length; key++) {
          BlockState state = defaultBlockState().setValue(PortedBlocks.EASTWEST, (key & 1) != 0)
             .setValue(PortedBlocks.LEFTBEAM, (key & 2) != 0).setValue(PortedBlocks.RIGHTBEAM, (key & 4) != 0)
@@ -61,16 +61,18 @@ public final class SteelDoubleTBulbBlock extends PortedBlocks.SupportBlock {
    @Override
    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
       super.createBlockStateDefinition(builder);
-      builder.add(BULB_LIGHT);
+      builder.add(BULB_LIGHT,SupportLights.ATTACHED);
    }
 
+   @Override public VoxelShape supportShape(BlockState state,BlockGetter level,BlockPos pos){return baseShape(state);}
+   @Override public VoxelShape mountingShape(BlockState state,BlockGetter level,BlockPos pos){return baseShape(state.setValue(PortedBlocks.DOWNCONNECT,0).setValue(PortedBlocks.LEFTBEAM,false).setValue(PortedBlocks.RIGHTBEAM,false));}
    private VoxelShape baseShape(BlockState state) {
       return super.getShape(state, EmptyBlockGetter.INSTANCE, BlockPos.ZERO, CollisionContext.empty());
    }
 
    @Override
    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-      if (!hasBulb(state)) return baseShape(state);
+      if (!hasBulb(state)) return SupportLights.outline(state,level,pos,baseShape(state));
       int key = (state.getValue(PortedBlocks.EASTWEST) ? 1 : 0) | (state.getValue(PortedBlocks.LEFTBEAM) ? 2 : 0)
          | (state.getValue(PortedBlocks.RIGHTBEAM) ? 4 : 0) | (state.getValue(PortedBlocks.DOWNCONNECT) > 0 ? 8 : 0);
       return litOutlines[key];
@@ -100,6 +102,7 @@ public final class SteelDoubleTBulbBlock extends PortedBlocks.SupportBlock {
       }
       RailingMining.Completion completion = RailingMining.complete(player, level, pos, state);
       if (completion == null) return false;
+      if(completion.part().kind()==PortedBlocks.PartKind.SUPPORT_LIGHT)return SupportLights.remove(state,level,pos,player,willHarvest,completion);
       if (completion.part().kind() != PortedBlocks.PartKind.BULB_LIGHT) {
          return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
       }
@@ -130,7 +133,7 @@ public final class SteelDoubleTBulbBlock extends PortedBlocks.SupportBlock {
          && drops.stream().anyMatch(stack -> stack.is(asItem()))) {
          drops.add(new ItemStack(ModBlocks.IRON_BULB_LIGHT.get()));
       }
-      return drops;
+      return SupportLights.drops(state,params,drops);
    }
 
    public static boolean isPole(BlockState state) {

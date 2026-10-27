@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.VerticalDoubleTSupportBlock;
+import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -46,9 +47,10 @@ public final class NativeVerticalDoubleTValidation {
    private static int scene,stage,ticks;
    private static boolean guarded,finished;
    private NativeVerticalDoubleTValidation(){}
+   private static boolean wallMode(){return Boolean.getBoolean("iedctr.wallDoubleTValidation");}
 
    @SubscribeEvent public static void tick(ClientTickEvent.Post event) {
-      if(!Boolean.getBoolean("iedctr.verticalDoubleTValidation")||finished)return;
+      if(!(Boolean.getBoolean("iedctr.verticalDoubleTValidation")||wallMode())||finished)return;
       var mc=Minecraft.getInstance();if(mc.level==null||mc.player==null||mc.getSingleplayerServer()==null)return;
       try {
          if(!guarded) {
@@ -63,13 +65,14 @@ public final class NativeVerticalDoubleTValidation {
                   var level=mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID()).serverLevel();
                   require(level.hasChunkAt(POS),"saved chunk unavailable");var state=level.getBlockState(POS);
                   require(state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&state.getValue(VerticalDoubleTSupportBlock.FACING)==Direction.WEST,"saved beam/facing missing on server");
+                  if(wallMode())require(state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL)&&state.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE),"saved horizontal mount/join missing on server");
                });stage=1;ticks=0;return;
             }
             if(!pending.isDone())return;pending.join();require(++ticks<300,"saved state failed to synchronize");
             if(!mc.level.hasChunkAt(POS)||!mc.level.getBlockState(POS).is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())||ticks<80)return;
             var proof=inspect(mc,Direction.WEST);proof.addProperty("actual_process_restart",true);SCENES.add(proof);capture(mc,"reload.png");finish(mc,null);return;
          }
-         Direction face=FACINGS[scene],side=face.getClockWise();
+         Direction face=FACINGS[scene%4],side=face.getClockWise();boolean across=wallMode()&&scene>=4;
          if(stage==0) {
             target=Vec3.atCenterOf(POS).add(-face.getStepX()*.34375,0,-face.getStepZ()*.34375);
             Vec3 eye=target.add(face.getStepX()*3+side.getStepX()*1.8,.55,face.getStepZ()*3+side.getStepZ()*1.8);
@@ -83,12 +86,18 @@ public final class NativeVerticalDoubleTValidation {
                player.setGameMode(GameType.CREATIVE);player.setNoGravity(true);player.getAbilities().flying=true;player.onUpdateAbilities();
                level.setDayTime(6000);level.setWeatherParameters(100000,0,false,false);player.connection.teleport(camera.x,camera.y,camera.z,0,0);
                Vec3 wallPoint=Vec3.atCenterOf(wall).add(face.getStepX()*.49,0,face.getStepZ()*.49);
+               if(across)wallPoint=wallPoint.add(side.getStepX()*.4,0,side.getStepZ()*.4);
                var hit=level.clip(new ClipContext(player.getEyePosition(),wallPoint,ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,player));
                require(hit.getType()==HitResult.Type.BLOCK&&hit.getBlockPos().equals(wall)&&hit.getDirection()==face,"real eye ray did not select intended wall face");
                var stack=new ItemStack(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get(),2);player.setItemInHand(InteractionHand.MAIN_HAND,stack);
                require(player.gameMode.useItemOn(player,level,stack,InteractionHand.MAIN_HAND,hit).consumesAction(),"native placement failed");
                var placed=level.getBlockState(POS);require(placed.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&placed.getValue(VerticalDoubleTSupportBlock.FACING)==face,"wrong adjacent cell or facing");
                require(level.getBlockState(wall).is(Blocks.BRICKS)&&stack.getCount()==2,"creative placement altered wall/stack");
+               require(placed.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL)==across,"native wall click chose wrong mount");
+               if(wallMode()){
+                  var other=POS.relative(across?Direction.UP:side);
+                  level.setBlock(other,ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,face).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,!across),Block.UPDATE_ALL);
+               }
             });stage=1;ticks=0;return;
          }
          if(stage==1) {
@@ -100,28 +109,30 @@ public final class NativeVerticalDoubleTValidation {
          mc.player.setNoGravity(true);mc.player.setDeltaMovement(Vec3.ZERO);Vec3 delta=target.subtract(mc.player.getEyePosition());
          mc.player.setYRot((float)Math.toDegrees(Math.atan2(-delta.x,delta.z)));mc.player.setXRot((float)-Math.toDegrees(Math.atan2(delta.y,Math.hypot(delta.x,delta.z))));
          if(++ticks<60)return;
-         var proof=inspect(mc,face);proof.addProperty("native_game_mode_placement",true);proof.addProperty("actual_wall_face_ray",true);SCENES.add(proof);capture(mc,face.getName()+".png");
-         if(++scene==4){finish(mc,null);return;}stage=0;ticks=0;
+         var proof=inspect(mc,face);proof.addProperty("native_game_mode_placement",true);proof.addProperty("actual_wall_face_ray",true);SCENES.add(proof);capture(mc,(across?"horizontal-":"vertical-")+face.getName()+".png");
+         if(++scene==(wallMode()?8:4)){finish(mc,null);return;}stage=0;ticks=0;
       }catch(Throwable error){finish(mc,error);}
    }
 
    private static JsonObject inspect(Minecraft mc,Direction face) {
       var state=mc.level.getBlockState(POS);require(state.getValue(VerticalDoubleTSupportBlock.FACING)==face,"saved/client direction mismatch");
       var shaper=mc.getBlockRenderer().getBlockModelShaper();var actual=shaper.getBlockModel(state).getQuads(state,null,RandomSource.create(0),ModelData.EMPTY,null);
-      var old=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState();var original=shaper.getBlockModel(old).getQuads(old,null,RandomSource.create(0),ModelData.EMPTY,null);
-      require(actual.size()==20&&original.size()==20,"unexpected source/model face count");
-      require(vertices(original,face,true).equals(vertices(actual,face,false)),"native baked UV/texture/geometry is not the rigid source rotation");
+      boolean across=state.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL);
+      var old=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState();
+      if(wallMode())old=old.setValue(PortedBlocks.LEFTBEAM,across).setValue(PortedBlocks.RIGHTBEAM,!across);var original=shaper.getBlockModel(old).getQuads(old,null,RandomSource.create(0),ModelData.EMPTY,null);
+      require(actual.size()==(wallMode()?36:20)&&original.size()==(wallMode()?36:20),"unexpected source/model face count");
+      require(vertices(original,face,true,across).equals(vertices(actual,face,false,across)),"native baked UV/texture/geometry is not the rigid source rotation");
       var box=state.getShape(mc.level,POS).bounds();double contact=switch(face){case NORTH->box.maxZ;case EAST->box.minX;case SOUTH->box.minZ;default->box.maxX;};
       require(contact==(face==Direction.NORTH||face==Direction.WEST?1.:0.),"back flange gap at wall");
-      var result=new JsonObject();result.addProperty("facing",face.getName());result.addProperty("baked_quads",actual.size());result.addProperty("source_uv_and_geometry_rigid_rotation",true);result.addProperty("back_flange_wall_gap",0);return result;
+      var result=new JsonObject();result.addProperty("wall_horizontal",across);result.addProperty("facing",face.getName());result.addProperty("baked_quads",actual.size());result.addProperty("source_uv_and_geometry_rigid_rotation",true);result.addProperty("back_flange_wall_gap",0);return result;
    }
-   private static List<String> vertices(List<BakedQuad> quads,Direction facing,boolean rotate) {
+   private static List<String> vertices(List<BakedQuad> quads,Direction facing,boolean rotate,boolean across) {
       List<String> result=new ArrayList<>();
       for(var quad:quads) {
          String texture=quad.getSprite().contents().name().toString();require(!texture.endsWith("missingno"),"missing source texture");int[] data=quad.getVertices();
          for(int i=0;i<4;i++) {
             double x=Float.intBitsToFloat(data[i*8]),y=Float.intBitsToFloat(data[i*8+1]),z=Float.intBitsToFloat(data[i*8+2]);
-            if(rotate){double a=x,b=1-z,c=y;switch(facing){case EAST:x=1-c;y=b;z=a;break;case SOUTH:x=1-a;y=b;z=1-c;break;case WEST:x=c;y=b;z=1-a;break;default:x=a;y=b;z=c;}}
+            if(rotate){double a=across?1-z:x,b=across?1-x:1-z,c=y;switch(facing){case EAST:x=1-c;y=b;z=a;break;case SOUTH:x=1-a;y=b;z=1-c;break;case WEST:x=c;y=b;z=1-a;break;default:x=a;y=b;z=c;}}
             result.add(String.format(Locale.ROOT,"%s:%.6f,%.6f,%.6f:%.6f,%.6f",texture,x,y,z,Float.intBitsToFloat(data[i*8+4]),Float.intBitsToFloat(data[i*8+5])));
          }
       }

@@ -27,7 +27,7 @@ public final class ShapeCacheGameTests {
    @GameTest(template = "empty", timeoutTicks = 1200)
    public static void shape_caches_preserve_all_states(GameTestHelper h) {
       verify(h, ModBlocks.STEEL_CATWALK_STAIRS.get(), true, 30720);
-      verify(h, ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(), false, 6912);
+      verify(h, ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(), false, 13824);
       h.succeed();
    }
 
@@ -37,8 +37,8 @@ public final class ShapeCacheGameTests {
          ? java.util.Set.of(HORIZONTAL_FACING, LEFT_RAILING, RIGHT_RAILING, WATERLOGGED,
             NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, EDITED_STAIR_SIDES, PAID_RAILINGS)
          : java.util.Set.of(EASTWEST, LEFTBEAM, RIGHTBEAM, DOWNCONNECT, WATERLOGGED,
-            NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock.BULB_LIGHT);
-      h.assertTrue(properties.equals(expectedProperties), "legacy properties plus explicit beam bulb attachment property");
+            NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock.BULB_LIGHT, com.oblixorprime.engineersdecorreforged.block.SupportLights.ATTACHED);
+      h.assertTrue(properties.equals(expectedProperties), "legacy properties plus explicit legacy bulb and native attachment marker");
       var states = block.getStateDefinition().getPossibleStates();
       h.assertValueEqual(states.size(), count, "save-compatible state count");
       double[] caps = stairs ? packagedStairCaps() : null;

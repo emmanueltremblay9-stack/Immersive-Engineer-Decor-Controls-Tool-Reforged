@@ -1,0 +1,225 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "end": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_end_texture",
+    "particle": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_end_texture",
+    "side": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_side_texture",
+    "top": "immersive_engineer_decor_controls_tool_reforged:block/hsupport/steel_double_t_support_top_texture"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        11,
+        15
+      ],
+      "to": [
+        11,
+        16,
+        16
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            0,
+            0,
+            5,
+            1
+          ],
+          "texture": "#side",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            5,
+            0,
+            11,
+            1
+          ],
+          "texture": "#end",
+          "rotation": 180
+        },
+        "east": {
+          "uv": [
+            11,
+            0,
+            16,
+            1
+          ],
+          "texture": "#side",
+          "rotation": 270
+        },
+        "south": {
+          "uv": [
+            5,
+            10,
+            11,
+            16
+          ],
+          "rotation": 180,
+          "texture": "#top"
+        },
+        "north": {
+          "uv": [
+            11,
+            5,
+            16,
+            11
+          ],
+          "texture": "#top"
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        11,
+        11
+      ],
+      "to": [
+        11,
+        16,
+        12
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            0,
+            4,
+            5,
+            5
+          ],
+          "texture": "#side",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            5,
+            4,
+            11,
+            5
+          ],
+          "texture": "#end",
+          "rotation": 180
+        },
+        "east": {
+          "uv": [
+            11,
+            4,
+            16,
+            5
+          ],
+          "texture": "#side",
+          "rotation": 270
+        },
+        "south": {
+          "uv": [
+            11,
+            5,
+            16,
+            11
+          ],
+          "rotation": 180,
+          "texture": "#top"
+        },
+        "north": {
+          "uv": [
+            5,
+            10,
+            11,
+            16
+          ],
+          "texture": "#top"
+        }
+      }
+    },
+    {
+      "from": [
+        9,
+        10,
+        12
+      ],
+      "to": [
+        10,
+        16,
+        15
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            0,
+            1,
+            6,
+            4
+          ],
+          "texture": "#side",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            6,
+            1,
+            7,
+            4
+          ],
+          "texture": "#end",
+          "rotation": 180
+        },
+        "east": {
+          "uv": [
+            10,
+            1,
+            16,
+            4
+          ],
+          "texture": "#side",
+          "rotation": 270
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        10,
+        12
+      ],
+      "to": [
+        7,
+        16,
+        15
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            0,
+            1,
+            6,
+            4
+          ],
+          "texture": "#side",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            9,
+            1,
+            10,
+            4
+          ],
+          "texture": "#end",
+          "rotation": 180
+        },
+        "east": {
+          "uv": [
+            10,
+            1,
+            16,
+            4
+          ],
+          "texture": "#side",
+          "rotation": 270
+        }
+      }
+    }
+  ]
+}

@@ -63,13 +63,64 @@ public final class VerticalDoubleTModelTest {
       }
    }
 
-   @Test public void resource_chain_is_four_wall_facings_without_an_invented_recipe()throws Exception {
-      var variants=read("blockstates/vertical_steel_double_t_support.json").getAsJsonObject("variants");assertEquals(4,variants.size());
-      for(var entry:Map.of("north",0,"east",90,"south",180,"west",270).entrySet()) {
-         var model=variants.getAsJsonObject("facing="+entry.getKey());assertEquals(entry.getValue().intValue(),model.get("y").getAsInt());
-         assertEquals("immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",model.get("model").getAsString());
+   @Test public void resource_chain_covers_every_wall_mount_facing_and_connection()throws Exception {
+      var parts=read("blockstates/vertical_steel_double_t_support.json").getAsJsonArray("multipart");assertEquals(24,parts.size());
+      for(boolean across:new boolean[]{false,true})for(String face:new String[]{"north","east","south","west"})for(boolean negative:new boolean[]{false,true})for(boolean positive:new boolean[]{false,true}) {
+         var values=Map.of("wall_horizontal",Boolean.toString(across),"facing",face,"join_negative",Boolean.toString(negative),"join_positive",Boolean.toString(positive));
+         int count=0;
+         for(var element:parts) {
+            var part=element.getAsJsonObject();boolean match=true;
+            for(var entry:part.getAsJsonObject("when").entrySet())match&=entry.getValue().getAsString().equals(values.get(entry.getKey()));
+            if(!match)continue;count++;
+            var apply=part.getAsJsonObject("apply");String model=apply.get("model").getAsString();
+            assertTrue(model.startsWith("immersive_engineer_decor_controls_tool_reforged:block/hsupport/"));
+            var resource=read("models/"+model.split(":",2)[1]+".json");assertEquals(4,resource.getAsJsonArray("elements").size());
+            assertEquals(read(BASE).get("textures"),resource.get("textures"));
+            assertEquals(Map.of("north",0,"east",90,"south",180,"west",270).get(face).intValue(),apply.get("y").getAsInt());
+         }
+         assertEquals("one core plus the selected existing half-cross arms",1+(negative?1:0)+(positive?1:0),count);
       }
       assertEquals("immersive_engineer_decor_controls_tool_reforged:block/hsupport/vertical_steel_double_t_support_model",read("models/item/vertical_steel_double_t_support.json").get("parent").getAsString());
       assertFalse(Files.exists(Path.of("src/main/resources/data/immersive_engineer_decor_controls_tool_reforged/recipe/vertical_steel_double_t_support.json")));
    }
+
+   @Test public void horizontal_model_is_the_same_upright_model_turned_in_wall_with_uvs()throws Exception {
+      var source=read(VERTICAL).getAsJsonArray("elements");var target=read("models/block/hsupport/wall_horizontal_steel_double_t_model.json").getAsJsonArray("elements");
+      var normals=Map.of("north","north","south","south","up","east","down","west","east","down","west","up");
+      for(int i=0;i<source.size();i++) {
+         var a=source.get(i).getAsJsonObject();var b=target.get(i).getAsJsonObject();
+         double[] lo=vector(a.getAsJsonArray("from")),hi=vector(a.getAsJsonArray("to"));
+         double[] nl=vector(b.getAsJsonArray("from")),nh=vector(b.getAsJsonArray("to"));
+         assertArrayEquals(new double[]{lo[1],16-hi[0],lo[2]},nl,1e-9);assertArrayEquals(new double[]{hi[1],16-lo[0],hi[2]},nh,1e-9);
+         for(var entry:a.getAsJsonObject("faces").entrySet()) {
+            String face=entry.getKey(),next=normals.get(face);var af=entry.getValue().getAsJsonObject();var bf=b.getAsJsonObject("faces").getAsJsonObject(next);assertEquals(af.get("texture"),bf.get("texture"));
+            for(int corner=0;corner<8;corner++) {
+               double[] p={((corner&1)==0?lo:hi)[0],((corner&2)==0?lo:hi)[1],((corner&4)==0?lo:hi)[2]};
+               int axis=face.equals("east")||face.equals("west")?0:face.equals("up")||face.equals("down")?1:2;
+               boolean positive=face.equals("east")||face.equals("up")||face.equals("south");if(p[axis]!=(positive?hi:lo)[axis])continue;
+               assertArrayEquals("same texture coordinate at every rotated physical corner",uv(af,face,p,lo,hi),uv(bf,next,new double[]{p[1],16-p[0],p[2]},nl,nh),1e-9);
+            }
+         }
+      }
+   }
+   @Test public void connector_cuboids_are_not_stretched_by_a_pole_specific_clip()throws Exception {
+      var old=read("models/block/hsupport/steel_double_t_support_xconnect_model.json").getAsJsonArray("elements");
+      var next=read("models/block/hsupport/wall_vertical_double_t_positive.json").getAsJsonArray("elements");
+      var normals=Map.of("north","up","south","down","up","south","down","north","east","east","west","west");
+      for(int i=0;i<old.size();i++) {
+         var a=old.get(i).getAsJsonObject();var b=next.get(i).getAsJsonObject();double[] lo=vector(a.getAsJsonArray("from")),hi=vector(a.getAsJsonArray("to"));
+         double[] nl=vector(b.getAsJsonArray("from")),nh=vector(b.getAsJsonArray("to"));
+         assertArrayEquals(new double[]{lo[0],16-hi[2],lo[1]},nl,1e-9);assertArrayEquals(new double[]{hi[0],16-lo[2],hi[1]},nh,1e-9);
+         for(var entry:a.getAsJsonObject("faces").entrySet()) {
+            String face=entry.getKey(),target=normals.get(face);var af=entry.getValue().getAsJsonObject();var bf=b.getAsJsonObject("faces").getAsJsonObject(target);
+            for(int corner=0;corner<8;corner++) {
+               double[] point={((corner&1)==0?lo:hi)[0],((corner&2)==0?lo:hi)[1],((corner&4)==0?lo:hi)[2]};
+               int axis=face.equals("east")||face.equals("west")?0:face.equals("up")||face.equals("down")?1:2;
+               boolean positive=face.equals("east")||face.equals("up")||face.equals("south");if(point[axis]!=(positive?hi:lo)[axis])continue;
+               assertArrayEquals("connector UV at the exact rotated physical corner",uv(af,face,point,lo,hi),uv(bf,target,turn(point),nl,nh),1e-9);
+            }
+         }
+      }
+   }
+
 }
