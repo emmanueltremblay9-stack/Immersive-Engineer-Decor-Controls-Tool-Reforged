@@ -31,6 +31,8 @@ import net.neoforged.neoforge.fluids.FluidUtil;
 
 /** Loaded-cell search only. A result is a snapshot, never a reservation of world fluid. */
 public final class FlowingFluidIntake {
+   /** Approved connected-fluid path limit, measured from the moving inlet cell above the Funnel. */
+   public static final int MAX_PATH_DISTANCE = 16;
    private FlowingFluidIntake() {}
    public record Source(BlockPos pos, BlockState block, FluidState fluid, int distance) {
       public FluidStack volume() { return new FluidStack(fluid.getType(), 1000); }
@@ -40,12 +42,14 @@ public final class FlowingFluidIntake {
       .thenComparingInt(BlockPos::getY).thenComparingInt(BlockPos::getZ);
 
    public static Search search(ServerLevel level, BlockPos opening, int maxDistance) {
-      if (maxDistance < 0 || maxDistance > 32 || !level.hasChunkAt(opening)) return new Search(null, true, 0);
+      if (maxDistance < 0 || maxDistance > MAX_PATH_DISTANCE || !level.hasChunkAt(opening)) return new Search(null, true, 0);
       FluidState intake=level.getFluidState(opening);
       if (intake.isEmpty() || intake.isSource()) return new Search(null, false, 0);
+      BlockGetter view=loadedView(level);
+      if(Block.isFaceFull(level.getBlockState(opening).getCollisionShape(view,opening,CollisionContext.empty()),Direction.DOWN))
+         return new Search(null,false,0);
       var visited=new HashSet<BlockPos>();visited.add(opening);
       List<BlockPos> layer=List.of(opening);
-      BlockGetter view=loadedView(level);
       for(int distance=0;distance<=maxDistance;distance++) {
          var sources=new ArrayList<BlockPos>();
          for(var pos:layer) if(level.getFluidState(pos).isSource()) sources.add(pos);
@@ -77,7 +81,7 @@ public final class FlowingFluidIntake {
 
    /** Integer lattice L1 ball: 833 cells at 8 edges, 6017 at 16; each has at most six neighbours. */
    public static int maximumVisitedCells(int distance) {
-      if(distance<0||distance>32)throw new IllegalArgumentException("Unsupported search bound");
+      if(distance<0||distance>MAX_PATH_DISTANCE)throw new IllegalArgumentException("Unsupported search bound");
       return (4*distance*distance*distance+6*distance*distance+8*distance+3)/3;
    }
 
@@ -91,7 +95,7 @@ public final class FlowingFluidIntake {
 
    /** Conservative adapters: never replace an arbitrary fluidlogged block with air. */
    public static boolean canDrain(ServerLevel level, Source source) {
-      if(!current(level,source)) return false;
+      if(!current(level,source)||!removalNeighborhoodLoaded(level,source.pos())) return false;
       var block=source.block().getBlock();
       if(NativeFluidCells.supported(source.block()) && NativeFluidCells.active(level,source.pos())) return bucketMatches(source);
       if(block instanceof LiquidBlock && level.getBlockEntity(source.pos())!=null) return false;
@@ -114,6 +118,13 @@ public final class FlowingFluidIntake {
       if(!level.hasChunkAt(source.pos()))return false;
       var remaining=level.getFluidState(source.pos());
       return !remaining.isSource()||!remaining.getType().isSame(source.fluid().getType());
+   }
+
+   /** Keep standard neighbour/shape reads around a source removal away from absent chunks. */
+   private static boolean removalNeighborhoodLoaded(ServerLevel level,BlockPos pos) {
+      for(int dx=-2;dx<=2;dx++)for(int dz=-2;dz<=2;dz++)
+         if(Math.abs(dx)+Math.abs(dz)<=2&&!level.hasChunkAt(pos.offset(dx,0,dz)))return false;
+      return true;
    }
 
    private static boolean current(ServerLevel level,Source source) {

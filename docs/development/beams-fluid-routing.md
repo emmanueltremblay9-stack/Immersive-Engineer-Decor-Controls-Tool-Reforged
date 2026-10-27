@@ -1,5 +1,9 @@
 # Wood beams and fluid routing: development contract
 
+# Historical PR111 checkpoint
+
+The unfinished Funnel scheduling described below is the historical PR111 state. The subsequent Funnel-only runtime and valve-manual follow-up is documented in [funnel-connected-source-drain.md](funnel-connected-source-drain.md). The other three feature families are unchanged by that follow-up.
+
 ## Current completion boundary
 
 This is an unfinished four-part development lot. It must not be presented as a released feature.

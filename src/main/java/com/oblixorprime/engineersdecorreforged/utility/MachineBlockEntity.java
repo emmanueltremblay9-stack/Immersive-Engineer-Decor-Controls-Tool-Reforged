@@ -517,6 +517,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
    public static void serverTick(Level level, BlockPos pos, BlockState state, MachineBlockEntity machine) {
       MachineKind kind = machine.kind();
+      if (kind == MachineKind.SMALL_FLUID_FUNNEL && machine.funnelTransferLocked) return;
       if (kind != null) {
          machine.tickCounter++;
          if (machine.cooldown > 0) {
@@ -531,7 +532,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
             machine.guiSignalFlashTicks--;
          }
 
-         boolean powered = level.hasNeighborSignal(pos);
+         // The Funnel has no redstone input; avoid unrelated neighbour reads at chunk edges.
+         boolean powered = kind != MachineKind.SMALL_FLUID_FUNNEL && level.hasNeighborSignal(pos);
          boolean powerChanged = powered != machine.previousPowered;
          if (powerChanged) {
             machine.redstoneUpdated = true;
@@ -1982,7 +1984,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       }
    }
 
-   /** Range is supplied by the pending gameplay contract; this transaction is not yet scheduled. */
+   /** One virtual250mB work quantum; no extractible credit until a whole source is consumed. */
    private boolean collectFlowingSource(int maxDistance) {
       if (!(this.level instanceof ServerLevel server) || this.funnelTransferLocked || this.unreadableFunnelFluid != null) return false;
       this.funnelTransferLocked = true;
@@ -2046,21 +2048,14 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
    private void tickFluidFunnel() {
       if (this.level != null && this.tickCounter % 40 == 0) {
-         if (this.fluidAmount < 3000) {
-            BlockPos source = this.worldPosition.above();
-            if (this.level.getFluidState(source).getType() == Fluids.WATER) {
-               this.addFluid("water", 250, 3000);
-            } else if (this.level.getFluidState(source).getType() == Fluids.LAVA) {
-               this.addFluid("lava", 250, 3000);
-            } else if (this.tickCounter % 80 == 0) {
-               this.collectWeatherWater(50, 100, 3000);
-            }
+         boolean collectingSource = this.collectFlowingSource(FlowingFluidIntake.MAX_PATH_DISTANCE);
+         if (!collectingSource && this.tickCounter % 80 == 0) {
+            this.collectWeatherWater(50, 100, FUNNEL_CAPACITY);
          }
-
-         this.pushFluid(Direction.DOWN, 250);
-         this.syncFluidLevel(MachineBlocks.LEVEL_0_3, 3000);
+         this.pushFluid(Direction.DOWN, FUNNEL_TRANSFER);
+         this.syncFluidLevel(MachineBlocks.LEVEL_0_3, FUNNEL_CAPACITY);
       } else {
-         this.syncFluidLevel(MachineBlocks.LEVEL_0_3, 3000);
+         this.syncFluidLevel(MachineBlocks.LEVEL_0_3, FUNNEL_CAPACITY);
       }
    }
 

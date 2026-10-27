@@ -1,5 +1,11 @@
 Vanne de fluide redstone
-Équipement de réseau de fluides
-<&recipe>La vanne de fluide contrôlée par redstone est un élément compact de réseau de fluides pour les petits réservoirs, conduites, points de collecte et débits commandés par redstone.<br>
+Commande tout ou rien
+<&recipe>Cette vanne ouvre ou ferme le passage selon le signal redstone reçu. Signal 0 : fermée. Signaux 1 à 15 : ouverte, avec la même limite de 1000 mB par appel. Augmenter le signal ne change pas cette limite.<br>
 <br>
-Utilisation : alignez la vanne sur le sens d'écoulement voulu.<br>
+Exemple : un levier éteint bloque le passage ; allumé, il autorise jusqu'à 1000 mB par appel si la destination les accepte. Cette vanne convient à un simple interrupteur. Raccordez la commande redstone sur un côté distinct des deux ports de fluide.<br>
+<br>
+Raccordement : seuls les deux ports dans l'axe de la vanne transportent le fluide. La face orientée (FACING) est la sortie ; la face opposée est l'entrée. Reliez une source qui pousse le fluide à l'entrée et une conduite IE menant à une destination capable de l'accepter à la sortie.<br>
+<br>
+La vanne ne pompe pas et ne stocke aucun fluide. La limite s'applique à chaque appel de transfert : ce n'est pas un débit garanti par tick. Le volume réel dépend de la source, des tuyaux et de la place disponible à destination.<br>
+<br>
+Placement : la face cliquée détermine la sortie ; s'accroupir inverse ce sens. Pour tourner une vanne horizontale déjà posée, utilisez l'action Utiliser avec l'Engineer's Hammer. Le bouton dépend de vos commandes.<br>

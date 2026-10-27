@@ -1,6 +1,11 @@
 Fluid Pipe Check Valve
-Fluid line hardware
-<&recipe>Fluid Check Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+Always-open one-way passage
+<&recipe>The Check Valve passes fluid in one direction only. It is always enabled and needs no redstone signal. Each transfer call is limited to at most 1000 mB.<br>
 <br>
-Usage: Align the valve with the intended flow direction.<br>
-
+Example: a source offers 1500 mB toward an empty tank; the valve can forward at most 1000 mB in that call. If the destination accepts only 200 mB, only 200 mB pass. Fluid offered from the outlet is rejected.<br>
+<br>
+Connections: only the two ports along the valve axis carry fluid. The facing side (FACING) is the outlet; the opposite side is the inlet. Connect an actively pushing source to the inlet and an IE pipe leading to a destination that can accept the fluid to the outlet.<br>
+<br>
+The valve does not pump or store fluid. Its limit applies to each transfer call, not to a guaranteed amount per tick. Actual flow depends on the source, pipes and available destination capacity.<br>
+<br>
+Placement: the clicked face determines the outlet; sneaking reverses it. To rotate an already placed horizontal valve, use the Use action with the Engineer's Hammer. The mouse button depends on your controls.<br>

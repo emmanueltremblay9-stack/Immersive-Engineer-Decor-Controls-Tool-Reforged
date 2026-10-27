@@ -246,7 +246,7 @@ public final class FunnelDrainGameTests {
       h.succeed();
    }
 
-   // Transaction prototype coverage only. The selected range and real 40-tick scheduler are not yet wired.
+   // Focused transaction coverage complements the real server-tick scenarios in FunnelRuntimeGameTests.
    private static boolean collect(MachineBlockEntity machine,int fixtureRange) throws Exception {
       var method=MachineBlockEntity.class.getDeclaredMethod("collectFlowingSource",int.class);
       method.setAccessible(true);return (boolean)method.invoke(machine,fixtureRange);

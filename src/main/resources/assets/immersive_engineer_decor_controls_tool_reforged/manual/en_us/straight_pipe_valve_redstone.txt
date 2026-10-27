@@ -1,6 +1,11 @@
 Redstone Fluid Valve
-Fluid line hardware
-<&recipe>The Redstone Fluid Valve is a compact fluid-line part for small tanks, pipe runs, collection points, and redstone-controlled flow.<br>
+On/off control
+<&recipe>This valve opens or closes according to its redstone signal. Signal 0 closes it. Signals 1 through 15 open it with the same limit of 1000 mB per call. A stronger signal does not increase that limit.<br>
 <br>
-Usage: Align the valve with the intended flow direction.<br>
-
+Example: a lever switched off blocks the flow; switched on, it permits up to 1000 mB per call if the destination accepts it. Use this valve as an on/off switch. Apply the redstone control on a side other than the two fluid ports.<br>
+<br>
+Connections: only the two ports along the valve axis carry fluid. The facing side (FACING) is the outlet; the opposite side is the inlet. Connect an actively pushing source to the inlet and an IE pipe leading to a destination that can accept the fluid to the outlet.<br>
+<br>
+The valve does not pump or store fluid. Its limit applies to each transfer call, not to a guaranteed amount per tick. Actual flow depends on the source, pipes and available destination capacity.<br>
+<br>
+Placement: the clicked face determines the outlet; sneaking reverses it. To rotate an already placed horizontal valve, use the Use action with the Engineer's Hammer. The mouse button depends on your controls.<br>
