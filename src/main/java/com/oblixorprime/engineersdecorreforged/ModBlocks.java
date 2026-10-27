@@ -351,6 +351,10 @@ public final class ModBlocks {
       DeferredBlock<T> block = register(name, supplier);
       if (name.equals("steel_catwalk_stairs") || name.equals("raised_steel_catwalk_stairs")) {
          ModItems.registerItem(name, () -> new CatwalkStairsItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+      } else if (name.equals("steel_double_t_support") || name.equals("vertical_steel_double_t_support")) {
+         ModItems.registerItem(name, () -> new com.oblixorprime.engineersdecorreforged.block.DoubleTSupportItem(block.get(), new net.minecraft.world.item.Item.Properties()));
+      } else if (name.equals("iron_ceiling_edge_light") || name.equals("iron_floor_edge_light") || name.equals("iron_inset_light")) {
+         ModItems.registerItem(name, () -> new com.oblixorprime.engineersdecorreforged.block.SupportLightItem(block.get(), new net.minecraft.world.item.Item.Properties()));
       } else if (name.equals("iron_bulb_light")) {
          ModItems.registerItem(name, () -> new com.oblixorprime.engineersdecorreforged.block.IronBulbItem(block.get(), new net.minecraft.world.item.Item.Properties()));
       } else {

@@ -93,7 +93,7 @@ public final class ClientInsetLightMiningEvents {
          // the latch so the later server-only removal cannot expose the deck to
          // the original held attack. A denied attempt can be retried after release.
          retainedOwner = state.getBlock() instanceof RaisedCatwalkBlock
-            || state.getBlock() instanceof com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock;
+            || state.getBlock() instanceof com.oblixorprime.engineersdecorreforged.block.DoubleTLightHost;
       }
       return HOLD.suppress(minecraft.level, minecraft.player, minecraft.options.keyAttack.isDown(), target, retainedOwner);
    }

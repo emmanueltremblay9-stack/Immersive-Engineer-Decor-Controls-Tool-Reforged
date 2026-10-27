@@ -1,6 +1,6 @@
 # Steel Double T wall placement and junctions
 
-This change extends the existing `vertical_steel_double_t_support` item; it adds no block, recipe, texture, diagonal or connector design. The original ceiling support and its paid Iron Bulb attachment remain unchanged. The separate four-light extension is not implemented by this prerequisite.
+This change extends the existing `vertical_steel_double_t_support` item; it adds no block, recipe, texture, diagonal or connector design. The original ceiling support and its paid Iron Bulb attachment remain unchanged. This section describes the original wall prerequisite; the same PR now includes the [four-light extension](double-t-light-attachments.md), qualified separately on its updated commit.
 
 ## Placement and geometry
 
@@ -24,4 +24,4 @@ The first native bake check exposed a pole-specific helper stretching connector 
 
 `python3 tools/models/generate_vertical_double_t.py --check` verifies the generated resources. All32 geometric property combinations resolve exactly one core plus the requested existing arms; the fluid properties do not affect model selection. Registered Cartesian state count is3072 (previously384), not a performance claim.
 
-Native screenshots/restart and exact-commit CI results are reported with the PR. A server-side NBT round trip is distinguished from an actual process restart. No modpack, alternative renderer or four-light qualification is inferred from these tests.
+Native screenshots/restart and exact-commit CI results are reported with the PR. A server-side NBT round trip is distinguished from an actual process restart. No modpack or alternative-renderer qualification is inferred from these wall-only tests; the four-light extension has its own tests and exact-artifact native proof.

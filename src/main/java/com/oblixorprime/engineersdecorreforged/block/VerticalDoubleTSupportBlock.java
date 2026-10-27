@@ -20,7 +20,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /** Original Double T profile and half-cross arms, rigidly oriented in the clicked wall plane. */
-public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
+public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock,DoubleTLightHost {
    public static final MapCodec<VerticalDoubleTSupportBlock> CODEC=simpleCodec(VerticalDoubleTSupportBlock::new);
    public static final BooleanProperty WALL_HORIZONTAL=BooleanProperty.create("wall_horizontal");
    public static final BooleanProperty JOIN_NEGATIVE=BooleanProperty.create("join_negative");
@@ -44,13 +44,13 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
    }
 
    public VerticalDoubleTSupportBlock(Properties properties) {
-      super(properties);
+      super(properties.lightLevel(state->Math.max(NativeFluidloggedBlock.light(state),SupportLights.attached(state)?14:0)));
       registerDefaultState(NativeFluidloggedBlock.dry(defaultBlockState()).setValue(FACING,Direction.NORTH)
-         .setValue(WALL_HORIZONTAL,false).setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false));
+         .setValue(WALL_HORIZONTAL,false).setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false).setValue(SupportLights.ATTACHED,false));
    }
    @Override protected MapCodec<? extends HorizontalDirectionalBlock> codec(){return CODEC;}
    @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> builder) {
-      builder.add(FACING,WALL_HORIZONTAL,JOIN_NEGATIVE,JOIN_POSITIVE,
+      builder.add(FACING,WALL_HORIZONTAL,JOIN_NEGATIVE,JOIN_POSITIVE,SupportLights.ATTACHED,
          BlockStateProperties.WATERLOGGED,NativeFluidloggedBlock.FLUID_CELL,StairWaterFlow.WATER_FLOW);
    }
    public static boolean horizontalAt(double horizontal,double vertical) {
@@ -89,12 +89,20 @@ public final class VerticalDoubleTSupportBlock extends HorizontalDirectionalBloc
       NativeFluidloggedBlock.schedule(state,level,pos);
       return connected(state,level,pos);
    }
-   @Override protected VoxelShape getShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context) {
+   @Override public VoxelShape mountingShape(BlockState state,BlockGetter level,BlockPos pos){return supportShape(state.setValue(JOIN_NEGATIVE,false).setValue(JOIN_POSITIVE,false),level,pos);}
+   @Override protected VoxelShape getShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context){return SupportLights.outline(state,level,pos,supportShape(state,level,pos));}
+   @Override public VoxelShape supportShape(BlockState state,BlockGetter level,BlockPos pos) {
       int facing=switch(state.getValue(FACING)){case EAST->1;case SOUTH->2;case WEST->3;default->0;};
       int joins=(state.getValue(JOIN_NEGATIVE)?1:0)|(state.getValue(JOIN_POSITIVE)?2:0);
       return SHAPES[state.getValue(WALL_HORIZONTAL)?1:0][facing][joins];
    }
-   @Override protected VoxelShape getCollisionShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context){return getShape(state,level,pos,context);}
+   @Override protected VoxelShape getCollisionShape(BlockState state,BlockGetter level,BlockPos pos,CollisionContext context){return supportShape(state,level,pos);}
+   @Override public boolean onDestroyedByPlayer(BlockState state,net.minecraft.world.level.Level level,BlockPos pos,net.minecraft.world.entity.player.Player player,boolean harvest,FluidState fluid){
+      if(player==null)return super.onDestroyedByPlayer(state,level,pos,player,harvest,fluid);
+      var completion=RailingMining.complete(player,level,pos,state);if(completion==null)return false;
+      return completion.part().kind()==PortedBlocks.PartKind.SUPPORT_LIGHT?SupportLights.remove(state,level,pos,player,harvest,completion):super.onDestroyedByPlayer(state,level,pos,player,harvest,fluid);
+   }
+   @Override protected java.util.List<net.minecraft.world.item.ItemStack> getDrops(BlockState state,net.minecraft.world.level.storage.loot.LootParams.Builder params){return SupportLights.drops(state,params,super.getDrops(state,params));}
    private static VoxelShape inWallHalfTurn(VoxelShape shape) {
       VoxelShape result=Shapes.empty();for(var b:shape.toAabbs())result=Shapes.or(result,Shapes.box(1-b.maxX,1-b.maxY,b.minZ,1-b.minX,1-b.minY,b.maxZ));return result;
    }

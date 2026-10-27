@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
 /** Uses the ordinary NeoForge placement transaction for an attachment in the clicked beam. */
-public final class IronBulbItem extends BlockItem {
+public final class IronBulbItem extends SupportLightItem {
    public IronBulbItem(Block block, Properties properties) {
       super(block, properties);
    }
@@ -55,7 +55,7 @@ public final class IronBulbItem extends BlockItem {
       @Override
       public boolean canPlace() {
          return getLevel().getBlockState(getClickedPos()) == original
-            && !SteelDoubleTBulbBlock.hasBulb(original)
+            && !SupportLights.attached(original) && !SteelDoubleTBulbBlock.hasBulb(original)
             && original.getValue(PortedBlocks.DOWNCONNECT) == 0
             && !SteelDoubleTBulbBlock.isPole(getLevel().getBlockState(getClickedPos().below()));
       }

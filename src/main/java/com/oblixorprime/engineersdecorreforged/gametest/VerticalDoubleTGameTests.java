@@ -113,6 +113,7 @@ public final class VerticalDoubleTGameTests {
       var player=player(h,pos);player.setPos(pos.getX()+.5,pos.getY()+.5-player.getEyeHeight(),pos.getZ()-2);player.setYRot(0);player.setXRot(0);player.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(Items.IRON_PICKAXE));
       var eye=player.getEyePosition();var ray=level.clip(new ClipContext(eye,eye.add(player.getLookAngle().scale(player.blockInteractionRange())),ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,player));
       h.assertValueEqual(ray.getBlockPos(),pos,"horizontal flange can be selected before wall");
+      player.gameMode.handleBlockBreakAction(pos,ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,ray.getDirection(),level.getMaxBuildHeight(),0);
       h.assertTrue(player.gameMode.destroyBlock(pos),"native survival mining succeeds");h.assertTrue(level.getBlockState(pos.south()).is(Blocks.BRICKS),"supporting wall untouched");
       int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();
       h.assertValueEqual(count,1,"one unchanged beam item, no connector drop or duplication");h.succeed();
@@ -230,4 +231,39 @@ public final class VerticalDoubleTGameTests {
       h.assertTrue(p.gameMode.destroyBlock(pos),"native survival removal succeeds");h.assertTrue(level.getBlockState(pos.south()).is(Blocks.BRICKS),"wall survives");
       int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();h.assertValueEqual(count,1,"exactly one beam item");h.succeed();
    }
+   @GameTest(template="empty")
+   public static void wall_double_t_single_mirrors_match_physical_shapes_for_asymmetric_arms(GameTestHelper h){
+      var pos=h.absolutePos(CENTER);
+      for(Direction facing:Direction.Plane.HORIZONTAL)for(boolean across:List.of(false,true))for(boolean positive:List.of(false,true))for(Mirror mirror:List.of(Mirror.LEFT_RIGHT,Mirror.FRONT_BACK)){
+         var state=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,facing).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,across)
+            .setValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE,positive).setValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE,!positive);
+         var expected=Shapes.empty();for(var box:state.getCollisionShape(h.getLevel(),pos).toAabbs())expected=Shapes.or(expected,mirror==Mirror.FRONT_BACK?
+            Shapes.box(1-box.maxX,box.minY,box.minZ,1-box.minX,box.maxY,box.maxZ):Shapes.box(box.minX,box.minY,1-box.maxZ,box.maxX,box.maxY,1-box.minZ));
+         var changed=state.mirror(mirror);h.assertFalse(Shapes.joinIsNotEmpty(changed.getCollisionShape(h.getLevel(),pos),expected,BooleanOp.NOT_SAME),"one mirror maps the asymmetric actual shape, not just an involutive state round trip");
+         h.assertValueEqual(changed.getValue(VerticalDoubleTSupportBlock.FACING),mirror.mirror(facing),"one mirror has the correct wall normal");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
+   public static void wall_double_t_native_negative_and_double_arms_update_independently(GameTestHelper h){
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);var player=player(h,pos);
+      for(Direction facing:Direction.Plane.HORIZONTAL)for(boolean across:List.of(false,true)){
+         clear(h,pos);Direction axis=across?Direction.DOWN:facing.getClockWise();
+         var neighbor=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,facing).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,!across);
+         level.setBlock(pos.relative(axis),neighbor,Block.UPDATE_ALL);level.setBlock(pos.relative(axis.getOpposite()),neighbor,Block.UPDATE_ALL);
+         var wall=pos.relative(facing.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+         var point=Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(facing.getNormal()).scale(.5));
+         if(across)point=facing.getAxis()==Direction.Axis.Z?point.add(-.4,0,0):point.add(0,0,-.4);
+         player.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()));
+         player.getMainHandItem().useOn(new net.minecraft.world.item.context.UseOnContext(player,InteractionHand.MAIN_HAND,new BlockHitResult(point,facing,wall,false)));
+         var state=level.getBlockState(pos);h.assertTrue(state.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE)&&state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"native placement resolves both independent arms");
+         level.setBlock(pos.relative(axis),Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);state=level.getBlockState(pos);
+         h.assertTrue(state.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE)&&!state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"negative-only arm remains after positive removal");
+         level.setBlock(pos.relative(axis.getOpposite()),Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);state=level.getBlockState(pos);
+         h.assertFalse(state.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE)||state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"both removals restore original profile");
+      }
+      h.succeed();
+   }
+
 }
