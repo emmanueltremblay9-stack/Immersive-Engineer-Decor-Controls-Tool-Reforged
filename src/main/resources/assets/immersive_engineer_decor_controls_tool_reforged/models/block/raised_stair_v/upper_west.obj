@@ -1,4 +1,4 @@
-# Exact approved V mesh; split/UV tiling only.
+# Section-matched continuous stem; approved V at y >= -4 unchanged.
 mtllib raised_stair_v.mtl
 o continuous_v
 v 0.3886007085 0 0.59375
