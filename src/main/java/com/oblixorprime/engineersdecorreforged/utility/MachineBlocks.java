@@ -488,7 +488,7 @@ public final class MachineBlocks {
       }
    }
 
-   public static class PipeValveBlock extends DirectionalBlock implements NativeTransientFluidBlock {
+   public static class PipeValveBlock extends DirectionalBlock implements NativeTransientFluidBlock, net.minecraft.world.level.block.EntityBlock {
       public static final MapCodec<MachineBlocks.PipeValveBlock> CODEC = simpleCodec(MachineBlocks.PipeValveBlock::plain);
       private final boolean redstoneAware;
 
@@ -536,17 +536,35 @@ public final class MachineBlocks {
          }
       }
 
+      @Override
+      public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+         return new PipeValveBlockEntity(pos, state);
+      }
+
+      @Override
+      public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, Direction side) {
+         return this.redstoneAware && (side == null || side.getAxis() != state.getValue(FACING).getAxis());
+      }
+
+      @Override
+      protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean moved) {
+         super.onPlace(state, level, pos, oldState, moved);
+         if (!level.isClientSide && this.redstoneAware) {
+            BlockState updated = this.withRedstoneConnectors(level, pos, state);
+            if (updated != state) level.setBlock(pos, updated, Block.UPDATE_ALL);
+         }
+      }
+
       private BlockState withRedstoneConnectors(Level level, BlockPos pos, BlockState state) {
-         return !this.redstoneAware
-            ? state
-            : (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)state.setValue(
-                              MachineBlocks.RS_N, level.getSignal(pos.north(), Direction.SOUTH) > 0
-                           ))
-                           .setValue(MachineBlocks.RS_E, level.getSignal(pos.east(), Direction.WEST) > 0))
-                        .setValue(MachineBlocks.RS_S, level.getSignal(pos.south(), Direction.NORTH) > 0))
-                     .setValue(MachineBlocks.RS_W, level.getSignal(pos.west(), Direction.EAST) > 0))
-                  .setValue(MachineBlocks.RS_U, level.getSignal(pos.above(), Direction.DOWN) > 0))
-               .setValue(MachineBlocks.RS_D, level.getSignal(pos.below(), Direction.UP) > 0);
+         if (!this.redstoneAware) return state;
+         Direction.Axis axis = state.getValue(FACING).getAxis();
+         BooleanProperty[] properties = {RS_D, RS_U, RS_N, RS_S, RS_W, RS_E};
+         boolean loaded = LoadedValveSignals.available(level, pos);
+         for (Direction face : Direction.values()) {
+            state = state.setValue(properties[face.ordinal()], loaded && face.getAxis() != axis
+               && level.getSignal(pos.relative(face), face.getOpposite()) > 0);
+         }
+         return state;
       }
 
       protected boolean hasAnalogOutputSignal(BlockState state) {
@@ -554,7 +572,7 @@ public final class MachineBlocks {
       }
 
       protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
-         return this.redstoneAware ? level.getBestNeighborSignal(pos) : 0;
+         return this.redstoneAware ? LoadedValveSignals.best(level, pos) : 0;
       }
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {

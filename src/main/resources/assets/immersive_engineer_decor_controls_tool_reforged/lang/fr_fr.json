@@ -905,5 +905,7 @@
   "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_stool.cake_bonus": "Debout : +10 % seulement pour une part de gâteau mangée sur une table en bois traité.",
   "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.campfire": "Reposez-vous près d'un feu de camp allumé, dans l'une des huit cases voisines.",
   "block.immersive_engineer_decor_controls_tool_reforged.raised_steel_catwalk_stairs": "Escalier de passerelle en acier surélevée",
-  "block.immersive_engineer_decor_controls_tool_reforged.vertical_steel_double_t_support": "Support en acier double T vertical"
+  "block.immersive_engineer_decor_controls_tool_reforged.vertical_steel_double_t_support": "Support en acier double T vertical",
+  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam": "Poutre en bois traité",
+  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam.help": "Profil du poteau droit en bois traité. Sur un mur, le bord cliqué choisit la pose horizontale ou verticale ; centre et égalité donnent une pose verticale. Recette non définie."
 }

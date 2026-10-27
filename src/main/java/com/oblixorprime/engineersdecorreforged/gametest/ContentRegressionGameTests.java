@@ -38,7 +38,7 @@ public final class ContentRegressionGameTests {
       "old_industrial_wood_stairs",
       "old_industrial_wood_slabslice",
       "old_industrial_wood_door",
-      "treated_wood_pole",
+      "treated_wood_beam", "treated_wood_pole",
       "treated_wood_pole_head",
       "treated_wood_pole_support",
       "treated_wood_table",

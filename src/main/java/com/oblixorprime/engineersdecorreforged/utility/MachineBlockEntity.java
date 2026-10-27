@@ -16,6 +16,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
@@ -65,6 +66,8 @@ import net.neoforged.neoforge.capabilities.Capabilities.FluidHandler;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.items.IItemHandler;
@@ -75,7 +78,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private static final TagKey<Item> IE_HAMMERS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("immersiveengineering", "tools/hammers"));
    private static final ResourceLocation IE_FURNACE_HEATER = ResourceLocation.fromNamespaceAndPath("immersiveengineering", "furnace_heater");
    private static final int BUCKET_AMOUNT = 1000;
-   private static final int BARREL_CAPACITY = 4000;
+   private static final int BARREL_CAPACITY = 32000;
    private static final int FUNNEL_CAPACITY = 3000;
    private static final int FUNNEL_TRANSFER = 250;
    private static final int SOLAR_CAPACITY = 64000;
@@ -152,6 +155,38 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private int fluidAmount;
    private int energy;
    private String fluidType = "";
+   private boolean funnelTransferLocked;
+   private int funnelCaptureProgress;
+   private BlockPos funnelCaptureSource;
+   private BlockState funnelCaptureBlock;
+   private FluidStack funnelCaptureFluid = FluidStack.EMPTY;
+   private Tag unreadableFunnelFluid;
+   private int unreadableFunnelLegacyAmount;
+   private String unreadableFunnelLegacyType = "";
+   private final FluidTank funnelTank = new FluidTank(FUNNEL_CAPACITY) {
+      @Override public int fill(FluidStack stack, FluidAction action) {
+         return funnelTransferLocked || unreadableFunnelFluid != null ? 0 : super.fill(stack, action);
+      }
+      @Override public FluidStack drain(int amount, FluidAction action) {
+         return funnelTransferLocked || unreadableFunnelFluid != null ? FluidStack.EMPTY : super.drain(amount, action);
+      }
+      @Override public FluidStack drain(FluidStack stack, FluidAction action) {
+         return funnelTransferLocked || unreadableFunnelFluid != null ? FluidStack.EMPTY : super.drain(stack, action);
+      }
+      @Override public FluidStack getFluidInTank(int tank) { return tank == 0 ? getFluid().copy() : FluidStack.EMPTY; }
+      @Override public int getTankCapacity(int tank) { return tank == 0 ? getCapacity() : 0; }
+      @Override public boolean isFluidValid(int tank, FluidStack stack) { return tank == 0 && !stack.isEmpty(); }
+      @Override protected void onContentsChanged() { syncFunnelTank(); }
+   };
+
+   private void syncFunnelTank() {
+      this.fluidAmount = this.funnelTank.getFluidAmount();
+      this.fluidType = this.typeForFluid(this.funnelTank.getFluid().getFluid());
+      this.syncFluidLevel(MachineBlocks.LEVEL_0_3, FUNNEL_CAPACITY);
+      this.setChanged();
+      this.updateComparator();
+   }
+
    private boolean previousPowered;
    private boolean redstoneUpdated;
    private boolean manualTrigger;
@@ -457,6 +492,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    }
 
    public IFluidHandler fluidHandler(Direction side) {
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) return this.unreadableFunnelFluid == null ? this.funnelTank : null;
+      if (this.kind() == MachineKind.FLUID_BARREL && side != null && side.getAxis() != Direction.Axis.Y) {
+         return null;
+      }
       return this.canHandleFluids(this.kind()) ? this.fluidHandler : null;
    }
 
@@ -536,7 +575,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
             case FLUID_BARREL:
                machine.tickFluidBarrel();
                machine.tickFluidBucketSlots(kind);
-               machine.syncFluidLevel(MachineBlocks.LEVEL_0_4, 4000);
+               machine.syncFluidLevel(MachineBlocks.LEVEL_0_4, BARREL_CAPACITY);
                break;
             case SMALL_FLUID_FUNNEL:
                machine.tickFluidFunnel();
@@ -1206,6 +1245,46 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       this.fluidAmount = tag.getInt("FluidAmount");
       this.energy = tag.getInt("Energy");
       this.fluidType = tag.getString("FluidType");
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         this.unreadableFunnelFluid = null;
+         this.funnelCaptureProgress = 0;
+         this.funnelCaptureSource = null;
+         this.funnelCaptureBlock = null;
+         this.funnelCaptureFluid = FluidStack.EMPTY;
+         if (tag.contains("FunnelFluid") && !tag.contains("FunnelFluid", Tag.TAG_COMPOUND)) {
+            this.unreadableFunnelFluid = tag.get("FunnelFluid").copy();
+            this.funnelTank.setFluid(FluidStack.EMPTY);
+         } else if (tag.contains("FunnelFluid", Tag.TAG_COMPOUND)) {
+            CompoundTag savedFluid = tag.getCompound("FunnelFluid");
+            FluidStack parsed = FluidStack.parseOptional(registries, savedFluid.getCompound("Fluid"));
+            if (savedFluid.getInt("Version") != 1 || parsed.getAmount() > FUNNEL_CAPACITY
+                  || (savedFluid.contains("Fluid") && !savedFluid.contains("Fluid", Tag.TAG_COMPOUND))
+                  || (!savedFluid.getCompound("Fluid").isEmpty() && parsed.isEmpty())) {
+               this.unreadableFunnelFluid = savedFluid.copy(); // Preserve unknown data and refuse operation.
+               this.funnelTank.setFluid(FluidStack.EMPTY);
+            } else {
+               this.funnelTank.setFluid(parsed.copyWithAmount(Math.min(FUNNEL_CAPACITY, parsed.getAmount())));
+               CompoundTag pending = savedFluid.getCompound("Pending");
+               int work = pending.getInt("Progress");
+               FluidStack resource = FluidStack.parseOptional(registries, pending.getCompound("Fluid"));
+               if (work > 0 && work < BUCKET_AMOUNT && work % FUNNEL_TRANSFER == 0
+                     && pending.contains("Source", Tag.TAG_LONG) && pending.contains("Block", Tag.TAG_COMPOUND) && !resource.isEmpty()) {
+                  this.funnelCaptureProgress = work;
+                  this.funnelCaptureSource = BlockPos.of(pending.getLong("Source"));
+                  this.funnelCaptureBlock = NbtUtils.readBlockState(registries.lookupOrThrow(Registries.BLOCK), pending.getCompound("Block"));
+                  this.funnelCaptureFluid = resource.copyWithAmount(BUCKET_AMOUNT);
+               }
+            }
+         } else {
+            Fluid legacy = this.fluidForType(this.fluidType);
+            this.funnelTank.setFluid(legacy == Fluids.EMPTY || this.fluidAmount <= 0 ? FluidStack.EMPTY
+               : new FluidStack(legacy, Math.min(FUNNEL_CAPACITY, this.fluidAmount)));
+         }
+      }
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL && this.unreadableFunnelFluid != null) {
+         this.unreadableFunnelLegacyAmount = tag.getInt("FluidAmount");
+         this.unreadableFunnelLegacyType = tag.getString("FluidType");
+      }
       this.previousPowered = tag.getBoolean("PreviousPowered");
       this.redstoneUpdated = tag.getBoolean("RedstoneUpdated");
       this.manualTrigger = tag.getBoolean("ManualTrigger");
@@ -1262,9 +1341,27 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       tag.putInt("Cooldown", this.cooldown);
       tag.putInt("BurnTicks", this.burnTicks);
       tag.putInt("FuelBurnTime", this.fuelBurnTime);
-      tag.putInt("FluidAmount", this.fluidAmount);
+      tag.putInt("FluidAmount", this.kind() == MachineKind.SMALL_FLUID_FUNNEL && this.unreadableFunnelFluid != null
+         ? this.unreadableFunnelLegacyAmount : this.fluidAmount);
       tag.putInt("Energy", this.energy);
-      tag.putString("FluidType", this.fluidType);
+      tag.putString("FluidType", this.kind() == MachineKind.SMALL_FLUID_FUNNEL && this.unreadableFunnelFluid != null
+         ? this.unreadableFunnelLegacyType : this.fluidType);
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         if (this.unreadableFunnelFluid != null) tag.put("FunnelFluid", this.unreadableFunnelFluid.copy());
+         else {
+            CompoundTag savedFluid = this.funnelTank.writeToNBT(registries, new CompoundTag());
+            savedFluid.putInt("Version", 1);
+            if (this.funnelCaptureProgress > 0 && this.funnelCaptureSource != null && this.funnelCaptureBlock != null && !this.funnelCaptureFluid.isEmpty()) {
+               CompoundTag pending = new CompoundTag();
+               pending.putInt("Progress", this.funnelCaptureProgress);
+               pending.putLong("Source", this.funnelCaptureSource.asLong());
+               pending.put("Block", NbtUtils.writeBlockState(this.funnelCaptureBlock));
+               pending.put("Fluid", this.funnelCaptureFluid.save(registries));
+               savedFluid.put("Pending", pending);
+            }
+            tag.put("FunnelFluid", savedFluid);
+         }
+      }
       tag.putBoolean("PreviousPowered", this.previousPowered);
       tag.putBoolean("RedstoneUpdated", this.redstoneUpdated);
       tag.putBoolean("ManualTrigger", this.manualTrigger);
@@ -1885,6 +1982,68 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       }
    }
 
+   /** Range is supplied by the pending gameplay contract; this transaction is not yet scheduled. */
+   private boolean collectFlowingSource(int maxDistance) {
+      if (!(this.level instanceof ServerLevel server) || this.funnelTransferLocked || this.unreadableFunnelFluid != null) return false;
+      this.funnelTransferLocked = true;
+      try {
+         FlowingFluidIntake.Search search = FlowingFluidIntake.search(server, this.worldPosition.above(), maxDistance);
+         FlowingFluidIntake.Source source = search.source();
+         if (search.incomplete() || source == null || !FlowingFluidIntake.canDrain(server, source) || !this.fitsFunnelSource(source.volume())) {
+            this.resetFunnelCapture();
+            return false;
+         }
+         if (!this.sameFunnelSource(source)) {
+            this.funnelCaptureSource = source.pos();
+            this.funnelCaptureBlock = source.block();
+            this.funnelCaptureFluid = source.volume();
+            this.funnelCaptureProgress = 0;
+         }
+         if (this.funnelCaptureProgress + FUNNEL_TRANSFER < BUCKET_AMOUNT) {
+            this.funnelCaptureProgress += FUNNEL_TRANSFER;
+            this.setChanged();
+            return true;
+         }
+         // Re-run the graph before consuming: a different nearest source must not inherit old work.
+         FlowingFluidIntake.Search checked = FlowingFluidIntake.search(server, this.worldPosition.above(), maxDistance);
+         source = checked.source();
+         if (checked.incomplete() || source == null || !this.sameFunnelSource(source) || !this.fitsFunnelSource(source.volume())) {
+            this.resetFunnelCapture();
+            return false;
+         }
+         FluidStack previous = this.funnelTank.getFluid().copy();
+         if (!FlowingFluidIntake.drain(server, source)) {
+            this.resetFunnelCapture();
+            return false;
+         }
+         this.funnelTank.setFluid(previous.isEmpty() ? source.volume() : previous.copyWithAmount(previous.getAmount() + BUCKET_AMOUNT));
+         this.resetFunnelCapture();
+         this.syncFunnelTank();
+         return true;
+      } finally {
+         this.funnelTransferLocked = false;
+      }
+   }
+
+   private boolean fitsFunnelSource(FluidStack source) {
+      FluidStack stored = this.funnelTank.getFluid();
+      return source.getAmount() == BUCKET_AMOUNT && stored.getAmount() <= FUNNEL_CAPACITY - BUCKET_AMOUNT
+         && (stored.isEmpty() || FluidStack.isSameFluidSameComponents(stored, source));
+   }
+
+   private boolean sameFunnelSource(FlowingFluidIntake.Source source) {
+      return source.pos().equals(this.funnelCaptureSource) && source.block().equals(this.funnelCaptureBlock)
+         && FluidStack.isSameFluidSameComponents(source.volume(), this.funnelCaptureFluid);
+   }
+
+   private void resetFunnelCapture() {
+      if (this.funnelCaptureProgress != 0 || this.funnelCaptureSource != null) this.setChanged();
+      this.funnelCaptureProgress = 0;
+      this.funnelCaptureSource = null;
+      this.funnelCaptureBlock = null;
+      this.funnelCaptureFluid = FluidStack.EMPTY;
+   }
+
    private void tickFluidFunnel() {
       if (this.level != null && this.tickCounter % 40 == 0) {
          if (this.fluidAmount < 3000) {
@@ -1934,6 +2093,24 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    }
 
    private void tickFluidBucketSlots(MachineKind kind) {
+      if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
+         if (this.funnelTransferLocked || this.unreadableFunnelFluid != null || this.funnelTank.getFluidAmount() < BUCKET_AMOUNT
+               || !this.items.get(0).is(Items.BUCKET)) return;
+         ItemStack filled = this.bucketForFluid();
+         if (filled.isEmpty() || !this.canInsertIntoSlots(filled, 1)) return;
+         this.funnelTransferLocked = true;
+         try {
+            FluidStack remaining = this.funnelTank.getFluid().copy();
+            remaining.shrink(BUCKET_AMOUNT);
+            this.funnelTank.setFluid(remaining);
+            this.items.get(0).shrink(1);
+            this.insertIntoSlots(filled, 1);
+            this.syncFunnelTank();
+         } finally {
+            this.funnelTransferLocked = false;
+         }
+         return;
+      }
       if (hasBucketFillSlots(kind) && this.fluidAmount >= 1000 && ((ItemStack)this.items.get(0)).is(Items.BUCKET)) {
          ItemStack filledBucket = this.bucketForFluid();
          if (!filledBucket.isEmpty() && this.canInsertIntoSlots(filledBucket, 1)) {
@@ -2142,6 +2319,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    }
 
    private boolean handleFluidBucket(ItemStack stack, Player player, InteractionHand hand, int capacity) {
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         // A plain bucket cannot represent arbitrary FluidStack components.
+         if (stack.is(Items.BUCKET) && this.bucketForFluid().isEmpty()) return false;
+         return this.unreadableFunnelFluid == null && FluidUtil.interactWithFluidHandler(player, hand, this.funnelTank);
+      }
       if (stack.is(Items.WATER_BUCKET)) {
          return this.addHeldFluid(stack, player, hand, "water", capacity);
       }
@@ -2226,6 +2408,13 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    }
 
    private boolean addFluid(String type, int amount, int capacity) {
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         Fluid fluid = this.fluidForType(type);
+         if (fluid == Fluids.EMPTY || amount <= 0) return false;
+         FluidStack offered = new FluidStack(fluid, amount);
+         return this.funnelTank.fill(offered, FluidAction.SIMULATE) == amount
+            && this.funnelTank.fill(offered, FluidAction.EXECUTE) == amount;
+      }
       if (!this.canAddFluid(type, amount, capacity)) {
          return false;
       }
@@ -2238,10 +2427,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    }
 
    private boolean canAddFluid(String type, int amount, int capacity) {
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         Fluid fluid = this.fluidForType(type);
+         return fluid != Fluids.EMPTY && amount > 0 && this.funnelTank.fill(new FluidStack(fluid, amount), FluidAction.SIMULATE) == amount;
+      }
       return this.canStoreFluidType(this.kind(), type) && (this.fluidType.isEmpty() || this.fluidType.equals(type)) && this.fluidAmount + amount <= capacity;
    }
 
    private void pushFluid(Direction direction, int maxTransfer) {
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         this.pushFunnelFluid(direction, maxTransfer);
+         return;
+      }
       if (this.level != null && this.fluidAmount > 0 && maxTransfer > 0) {
          Fluid fluid = this.fluidForType(this.fluidType);
          if (fluid != Fluids.EMPTY) {
@@ -2263,7 +2460,36 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       }
    }
 
+   private void pushFunnelFluid(Direction direction, int maxTransfer) {
+      if (this.level == null || this.funnelTransferLocked || this.unreadableFunnelFluid != null || maxTransfer <= 0) return;
+      BlockPos targetPos = this.worldPosition.relative(direction);
+      if (!this.level.hasChunkAt(targetPos)) return;
+      IFluidHandler target = this.level.getCapability(FluidHandler.BLOCK, targetPos, direction.getOpposite());
+      if (target == null) return;
+      FluidStack stored = this.funnelTank.getFluid().copy();
+      if (stored.isEmpty()) return;
+      FluidStack offered = stored.copyWithAmount(Math.min(maxTransfer, stored.getAmount()));
+      this.funnelTransferLocked = true;
+      try {
+         int accepted = Math.max(0, Math.min(offered.getAmount(), target.fill(offered.copy(), FluidAction.SIMULATE)));
+         if (accepted <= 0) return;
+         int filled = Math.max(0, Math.min(accepted, target.fill(offered.copyWithAmount(accepted), FluidAction.EXECUTE)));
+         // Reserve the tank against re-entry; debit only what the destination actually accepted.
+         if (filled > 0) this.funnelTank.setFluid(stored.copyWithAmount(stored.getAmount() - filled));
+         this.syncFunnelTank();
+      } finally {
+         this.funnelTransferLocked = false;
+      }
+   }
+
    private ItemStack bucketForFluid() {
+      if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         FluidStack fluid = this.funnelTank.getFluid();
+         if (this.unreadableFunnelFluid != null || fluid.getAmount() < BUCKET_AMOUNT) return ItemStack.EMPTY;
+         ItemStack bucket = FluidUtil.getFilledBucket(fluid.copyWithAmount(BUCKET_AMOUNT));
+         FluidStack contained = FluidUtil.getFluidContained(bucket).orElse(FluidStack.EMPTY);
+         return contained.getAmount() == BUCKET_AMOUNT && FluidStack.isSameFluidSameComponents(contained, fluid) ? bucket : ItemStack.EMPTY;
+      }
       return switch (this.fluidType) {
          case "water" -> new ItemStack(Items.WATER_BUCKET);
          case "lava" -> new ItemStack(Items.LAVA_BUCKET);
@@ -2335,7 +2561,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
          return 3000;
       } else {
-         return kind == MachineKind.SMALL_MINERAL_SMELTER ? 4000 : 4000;
+         return kind == MachineKind.FLUID_BARREL ? BARREL_CAPACITY : 4000;
       }
    }
 
@@ -3257,7 +3483,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
          this.powerConsumptionField = 0;
       }
 
-      if (this.canHandleFluids(kind)) {
+      if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
+         this.syncFunnelTank();
+      } else if (this.canHandleFluids(kind)) {
          int capacity = this.capacityFor(kind);
          if (this.fluidAmount <= 0 || !this.canStoreFluidType(kind, this.fluidType)) {
             this.fluidAmount = 0;
