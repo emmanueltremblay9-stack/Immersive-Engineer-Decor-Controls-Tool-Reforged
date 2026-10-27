@@ -55,6 +55,89 @@ public final class VerticalDoubleTGameTests {
    }
 
    @GameTest(template="empty")
+   public static void wall_double_t_same_plane_joins_both_orders_and_updates(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);
+      for(Direction face:Direction.Plane.HORIZONTAL)for(boolean across:List.of(false,true))for(boolean reverse:List.of(false,true)) {
+         clear(h,pos);Direction cross=across?Direction.DOWN:face.getClockWise();var other=pos.relative(cross);
+         var a=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,face).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,across);
+         var b=a.setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,!across);
+         var player=player(h,pos);
+         for(int step=0;step<2;step++) {
+            boolean placeOther=(step==0)==reverse;var target=placeOther?other:pos;boolean horizontal=placeOther?!across:across;
+            var wall=target.relative(face.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+            var point=Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(face.getNormal()).scale(.5));
+            if(horizontal)point=face.getAxis()==Direction.Axis.Z?point.add(-.4,0,0):point.add(0,0,-.4);
+            var stack=new ItemStack(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get(),2);player.setItemInHand(InteractionHand.MAIN_HAND,stack);
+            h.assertTrue(stack.useOn(new net.minecraft.world.item.context.UseOnContext(player,InteractionHand.MAIN_HAND,new BlockHitResult(point,face,wall,false))).consumesAction(),"native item path establishes each placement order");
+         }
+         var joined=level.getBlockState(pos);
+         h.assertTrue(joined.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"same-wall perpendicular neighbour creates original half-cross in either placement order");
+         var shape=joined.getShape(level,pos);h.assertFalse(Shapes.joinIsNotEmpty(shape,joined.getCollisionShape(level,pos),BooleanOp.NOT_SAME),"connector has matching outline/collision");
+         double[] point={15.99/16,.5,11.5/16};if(across){point=new double[]{point[1],1-point[0],point[2]};}
+         for(int turns=0;turns<switch(face){case EAST->1;case SOUTH->2;case WEST->3;default->0;};turns++)point=new double[]{1-point[2],point[1],point[0]};
+         final double x=point[0],y=point[1],z=point[2];
+         h.assertTrue(shape.toAabbs().stream().anyMatch(box->box.contains(x,y,z)),"existing flange reaches the shared cell boundary without a gap");
+         level.setBlock(other,b.setValue(VerticalDoubleTSupportBlock.FACING,face.getOpposite()),Block.UPDATE_ALL);
+         h.assertFalse(level.getBlockState(pos).getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"opposite wall plane is not joined");
+         level.setBlock(other,Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);
+         h.assertValueEqual(level.getBlockState(pos),a,"removal restores original lone profile");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
+   public static void wall_double_t_saved_mount_fluid_join_and_legacy_defaults(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);
+      for(Direction face:Direction.Plane.HORIZONTAL)for(boolean across:List.of(false,true))for(var fluid:List.of(Fluids.WATER.getSource(false),Fluids.LAVA.getSource(false),Fluids.FLOWING_WATER.getFlowing(4,false))) {
+         clear(h,pos);var base=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.FACING,face).setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,across);
+         var state=fluid.isSource()?NativeFluidloggedBlock.placement(base,fluid):StairWaterFlow.withFlow(base,fluid);
+         level.setBlock(pos,state,Block.UPDATE_ALL);Direction cross=across?Direction.DOWN:face.getClockWise();level.setBlock(pos.relative(cross),base,Block.UPDATE_ALL);
+         state=level.getBlockState(pos);h.assertTrue(state.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"joined fixture established");
+         h.assertValueEqual(level.getFluidState(pos),fluid,"new mount and connection retain fluid");
+         var saved=NbtUtils.writeBlockState(state);h.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(),saved),state,"mount, connector and fluid survive state save/read");
+         h.assertValueEqual(state.mirror(Mirror.LEFT_RIGHT).mirror(Mirror.LEFT_RIGHT),state,"mirror round trip preserves asymmetric connector");
+         h.assertValueEqual(state.rotate(Rotation.CLOCKWISE_90).rotate(Rotation.COUNTERCLOCKWISE_90),state,"rotation round trip preserves fluid/mount");
+         var legacy=NbtUtils.writeBlockState(base);var properties=legacy.getCompound("Properties");properties.remove("wall_horizontal");properties.remove("join_negative");properties.remove("join_positive");
+         var read=NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(),legacy);
+         h.assertFalse(read.getValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL)||read.getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE)||read.getValue(VerticalDoubleTSupportBlock.JOIN_POSITIVE),"old saves default to upright and unjoined; no migration rewrite");
+         h.assertValueEqual(read.getValue(VerticalDoubleTSupportBlock.FACING),face,"old facing preserved");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
+   public static void wall_double_t_horizontal_native_ray_drop_keeps_support_and_wall(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);clear(h,pos);
+      level.setBlock(pos.south(),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+      level.setBlock(pos,ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().setValue(VerticalDoubleTSupportBlock.WALL_HORIZONTAL,true),Block.UPDATE_ALL);
+      var player=player(h,pos);player.setPos(pos.getX()+.5,pos.getY()+.5-player.getEyeHeight(),pos.getZ()-2);player.setYRot(0);player.setXRot(0);player.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(Items.IRON_PICKAXE));
+      var eye=player.getEyePosition();var ray=level.clip(new ClipContext(eye,eye.add(player.getLookAngle().scale(player.blockInteractionRange())),ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,player));
+      h.assertValueEqual(ray.getBlockPos(),pos,"horizontal flange can be selected before wall");
+      h.assertTrue(player.gameMode.destroyBlock(pos),"native survival mining succeeds");h.assertTrue(level.getBlockState(pos.south()).is(Blocks.BRICKS),"supporting wall untouched");
+      int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();
+      h.assertValueEqual(count,1,"one unchanged beam item, no connector drop or duplication");h.succeed();
+   }
+
+   @GameTest(template="empty")
+   public static void wall_double_t_native_horizontal_edge_and_vertical_centre(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);var player=player(h,pos);
+      double[][] clicks={{.1,.5,1},{.9,.5,1},{.5,.1,0},{.5,.9,0},{.1,.2,1},{.2,.1,0},{.1,.1,0},{.5,.5,0},{.6,.5,0},{.25,.5,0}};
+      for(Direction face:Direction.Plane.HORIZONTAL)for(InteractionHand hand:InteractionHand.values())for(double[] click:clicks) {
+         clear(h,pos);var wall=pos.relative(face.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+         var centre=Vec3.atCenterOf(wall).add(Vec3.atLowerCornerOf(face.getNormal()).scale(.5));
+         var point=face.getAxis()==Direction.Axis.Z?centre.add(click[0]-.5,click[1]-.5,0):centre.add(0,click[1]-.5,click[0]-.5);
+         var stack=new ItemStack(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get(),2);player.setItemInHand(hand,stack);
+         h.assertTrue(stack.useOn(new net.minecraft.world.item.context.UseOnContext(player,hand,new BlockHitResult(point,face,wall,false))).consumesAction(),"native item placement succeeds");
+         var state=level.getBlockState(pos);var box=state.getShape(level,pos).bounds();
+         double length=face.getAxis()==Direction.Axis.Z?box.getXsize():box.getZsize();
+         h.assertValueEqual(length,click[2]==1?1.:6./16,"left/right outer quarter chooses horizontal; nearest edge at corners; centre/ties vertical");
+         h.assertValueEqual(box.getYsize(),click[2]==1?6./16:1.,"only rigid in-wall rotation, no new length");
+         h.assertValueEqual(stack.getCount(),1,"one item consumed");h.assertTrue(level.getBlockState(wall).is(Blocks.BRICKS),"clicked wall preserved");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
    public static void vertical_double_t_native_wall_item_placement_all_faces_and_hands(GameTestHelper h) {
       var level=h.getLevel();var pos=h.absolutePos(CENTER);var player=player(h,pos);
       for(Direction face:Direction.Plane.HORIZONTAL)for(InteractionHand hand:InteractionHand.values()) {
