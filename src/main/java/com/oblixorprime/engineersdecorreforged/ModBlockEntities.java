@@ -17,6 +17,11 @@ public final class ModBlockEntities {
       () -> Builder.of(MachineBlockEntity::new, machineBlocks()).build(null)
    );
 
+   public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.oblixorprime.engineersdecorreforged.utility.PipeValveBlockEntity>> PIPE_VALVE = BLOCK_ENTITY_TYPES.register(
+      "pipe_valve", () -> Builder.of(com.oblixorprime.engineersdecorreforged.utility.PipeValveBlockEntity::new,
+         ModBlocks.STRAIGHT_PIPE_VALVE.get(), ModBlocks.STRAIGHT_PIPE_VALVE_REDSTONE.get(),
+         ModBlocks.STRAIGHT_PIPE_VALVE_REDSTONE_ANALOG.get()).build(null));
+
    private static Block[] machineBlocks() {
       return new Block[] {
          ModBlocks.METAL_CRAFTING_TABLE.get(),

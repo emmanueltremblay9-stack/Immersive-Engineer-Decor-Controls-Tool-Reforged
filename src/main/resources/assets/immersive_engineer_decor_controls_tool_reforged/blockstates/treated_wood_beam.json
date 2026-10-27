@@ -1,0 +1,397 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_core",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "north",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_negative",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "north",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_positive",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_core",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "east",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_negative",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "east",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_positive",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_core",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "south",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_negative",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "south",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_positive",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_core",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "west",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_negative",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "facing": "west",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_ceiling_positive",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_core",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "north",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_negative",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "north",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_positive",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_core",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "east",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_negative",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "east",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_positive",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_core",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "south",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_negative",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "south",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_positive",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_core",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "west",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_negative",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_vertical",
+        "facing": "west",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_vertical_positive",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_core",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "north",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_negative",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "north",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_positive",
+        "y": 0
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_core",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "east",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_negative",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "east",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_positive",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_core",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "south",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_negative",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "south",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_positive",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_core",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "west",
+        "join_negative": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_negative",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "wall_horizontal",
+        "facing": "west",
+        "join_positive": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_wall_horizontal_positive",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "mount": "ceiling",
+        "pole": "true"
+      },
+      "apply": {
+        "model": "immersive_engineer_decor_controls_tool_reforged:block/beam/treated_wood_pole"
+      }
+    }
+  ]
+}

@@ -126,7 +126,8 @@ public class MachineMenu extends AbstractContainerMenu {
    public int fluidCapacity() {
       return switch (this.kind) {
          case SMALL_FLUID_FUNNEL -> SMALL_FLUID_FUNNEL_CAPACITY;
-         case FLUID_BARREL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE, SMALL_MINERAL_SMELTER -> DEFAULT_FLUID_CAPACITY;
+         case FLUID_BARREL -> 32000;
+         case PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE, SMALL_MINERAL_SMELTER -> DEFAULT_FLUID_CAPACITY;
          default -> 0;
       };
    }

@@ -1489,7 +1489,7 @@ public final class PortedBlocks {
       }
 
       private boolean connectsToSupport(BlockState neighborState) {
-         return neighborState.getBlock() instanceof PortedBlocks.SupportBlock;
+         return neighborState.getBlock() instanceof PortedBlocks.SupportBlock || TreatedWoodBeamBlock.ceilingBeam(neighborState);
       }
 
       private int downConnection(BlockState neighborState) {

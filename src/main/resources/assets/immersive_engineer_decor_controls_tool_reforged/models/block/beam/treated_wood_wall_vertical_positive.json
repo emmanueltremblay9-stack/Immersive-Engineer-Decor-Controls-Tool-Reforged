@@ -1,0 +1,213 @@
+{
+  "parent": "block/block",
+  "gui_light": "front",
+  "textures": {
+    "side": "immersive_engineer_decor_controls_tool_reforged:block/pole/treated_wood_pole_side_texture",
+    "particle": "immersive_engineer_decor_controls_tool_reforged:block/pole/treated_wood_pole_side_texture",
+    "top": "immersive_engineer_decor_controls_tool_reforged:block/pole/treated_wood_pole_top_texture"
+  },
+  "elements": [
+    {
+      "from": [
+        10.5,
+        5.75,
+        11.0
+      ],
+      "to": [
+        16,
+        10.25,
+        16.0
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            5.75,
+            5.5,
+            10.25,
+            10.5
+          ],
+          "texture": "#top",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            5.0,
+            10.5,
+            11.0,
+            16.0
+          ],
+          "texture": "#side",
+          "rotation": 270
+        },
+        "east": {
+          "uv": [
+            5.75,
+            5.5,
+            10.25,
+            10.5
+          ],
+          "texture": "#top",
+          "rotation": 270
+        },
+        "down": {
+          "uv": [
+            5.0,
+            0.0,
+            11.0,
+            5.5
+          ],
+          "texture": "#side",
+          "rotation": 90
+        },
+        "south": {
+          "uv": [
+            5.75,
+            10.5,
+            10.25,
+            16.0
+          ],
+          "texture": "#side",
+          "rotation": 270
+        },
+        "north": {
+          "uv": [
+            5.75,
+            0.0,
+            10.25,
+            5.5
+          ],
+          "texture": "#side",
+          "rotation": 270
+        }
+      }
+    },
+    {
+      "from": [
+        10.5,
+        10.25,
+        11.25
+      ],
+      "to": [
+        16,
+        10.5,
+        15.75
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            10.75,
+            5.25,
+            11.0,
+            10.75
+          ],
+          "texture": "#top",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            5.25,
+            10.5,
+            10.75,
+            16.0
+          ],
+          "texture": "#side",
+          "rotation": 270
+        },
+        "east": {
+          "uv": [
+            10.0,
+            5.25,
+            10.25,
+            10.75
+          ],
+          "texture": "#top",
+          "rotation": 270
+        },
+        "south": {
+          "uv": [
+            5.0,
+            10.5,
+            5.25,
+            16.0
+          ],
+          "texture": "#side",
+          "rotation": 270
+        },
+        "north": {
+          "uv": [
+            10.75,
+            10.5,
+            11.0,
+            16.0
+          ],
+          "texture": "#side",
+          "rotation": 90
+        }
+      }
+    },
+    {
+      "from": [
+        10.5,
+        5.5,
+        11.25
+      ],
+      "to": [
+        16,
+        5.75,
+        15.75
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            5.0,
+            5.25,
+            5.25,
+            10.75
+          ],
+          "texture": "#top",
+          "rotation": 90
+        },
+        "east": {
+          "uv": [
+            5.5,
+            6.0,
+            5.75,
+            10.5
+          ],
+          "texture": "#top",
+          "rotation": 270
+        },
+        "down": {
+          "uv": [
+            5.25,
+            0.0,
+            10.75,
+            5.5
+          ],
+          "texture": "#side",
+          "rotation": 90
+        },
+        "south": {
+          "uv": [
+            10.75,
+            10.5,
+            11.0,
+            16.0
+          ],
+          "texture": "#side",
+          "rotation": 270
+        },
+        "north": {
+          "uv": [
+            5.0,
+            10.5,
+            5.25,
+            16.0
+          ],
+          "texture": "#side",
+          "rotation": 90
+        }
+      }
+    }
+  ]
+}

@@ -163,6 +163,9 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> TREATED_WOOD_POLE_SUPPORT = registerWithItem(
       "treated_wood_pole_support", () -> new PortedBlocks.SurfaceMountedBlock(wood().noOcclusion(), 3.0, 13.0, 5.0, false)
    );
+   public static final DeferredBlock<com.oblixorprime.engineersdecorreforged.block.TreatedWoodBeamBlock> TREATED_WOOD_BEAM = registerWithItem(
+      "treated_wood_beam", () -> new com.oblixorprime.engineersdecorreforged.block.TreatedWoodBeamBlock(wood().noOcclusion())
+   );
    public static final DeferredBlock<VerticalDoubleTSupportBlock> VERTICAL_STEEL_DOUBLE_T_SUPPORT = registerWithItem(
       "vertical_steel_double_t_support", () -> new VerticalDoubleTSupportBlock(metal().noOcclusion())
    );

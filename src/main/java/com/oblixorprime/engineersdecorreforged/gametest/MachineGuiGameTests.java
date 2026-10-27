@@ -1645,7 +1645,7 @@ public final class MachineGuiGameTests {
       MachineMenu barrelMenu = new MachineMenu(MachineKind.FLUID_BARREL, 1, player.getInventory(), barrel, barrel.dataAccessForTests());
       barrel.dataAccessForTests().set(2, 1000);
       helper.assertValueEqual(1000, barrelMenu.fluidAmount(), "fluid barrel menu should report synced tank amount");
-      helper.assertValueEqual(4000, barrelMenu.fluidCapacity(), "fluid barrel menu should expose its full tank capacity");
+      helper.assertValueEqual(32000, barrelMenu.fluidCapacity(), "fluid barrel menu should expose its full tank capacity");
       barrelMenu.removed(player);
       MachineBlockEntity funnel = placeMachineAt(helper, TEST_POS.offset(3, 0, 0), ModBlocks.SMALL_FLUID_FUNNEL, MachineKind.SMALL_FLUID_FUNNEL);
       MachineMenu funnelMenu = new MachineMenu(MachineKind.SMALL_FLUID_FUNNEL, 2, player.getInventory(), funnel, funnel.dataAccessForTests());
@@ -1761,7 +1761,7 @@ public final class MachineGuiGameTests {
       helper.assertTrue(machine.canPreviewItemUse(new ItemStack(Items.WATER_BUCKET)), "part-filled water barrel should preview matching water insertion");
       helper.assertTrue(!machine.canPreviewItemUse(new ItemStack(Items.LAVA_BUCKET)), "part-filled water barrel should not preview mixed lava insertion");
       helper.assertValueEqual(
-         3000, fluidHandler.fill(new FluidStack(Fluids.WATER, 3000), FluidAction.EXECUTE), "fluid barrel should fill the remaining water capacity"
+         31000, fluidHandler.fill(new FluidStack(Fluids.WATER, 31000), FluidAction.EXECUTE), "fluid barrel should fill the remaining water capacity"
       );
       helper.assertTrue(!machine.canPreviewItemUse(new ItemStack(Items.WATER_BUCKET)), "full fluid barrel should not preview another filled bucket insertion");
       helper.succeed();
@@ -2175,7 +2175,7 @@ public final class MachineGuiGameTests {
       IFluidHandler handler = (IFluidHandler)helper.getLevel().getCapability(FluidHandler.BLOCK, helper.absolutePos(TEST_POS), Direction.UP);
       helper.assertTrue(handler != null, "fluid barrel should expose a fluid handler capability for modded pipes");
       helper.assertValueEqual(1, handler.getTanks(), "fluid barrel should expose one tank");
-      helper.assertValueEqual(4000, handler.getTankCapacity(0), "fluid barrel tank should expose its internal capacity");
+      helper.assertValueEqual(32000, handler.getTankCapacity(0), "fluid barrel tank should expose its internal capacity");
       helper.assertValueEqual(
          1000, handler.fill(new FluidStack(Fluids.WATER, 1000), FluidAction.EXECUTE), "fluid barrel should accept water through the fluid capability"
       );
