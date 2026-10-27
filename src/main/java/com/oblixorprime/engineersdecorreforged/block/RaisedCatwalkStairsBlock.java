@@ -19,6 +19,34 @@ public final class RaisedCatwalkStairsBlock extends PortedBlocks.CatwalkStairsBl
       };
    }
 
+   /** Geometry identity is finer than material: the steel poles have different sections. */
+   public static Section section(BlockState pole) {
+      return switch (RaisedCatwalkBlock.poleVariant(pole)) {
+         case 1 -> Section.THICK_STEEL;
+         case 2 -> Section.THIN_STEEL;
+         case 5 -> Section.WOOD;
+         default -> Section.NONE;
+      };
+   }
+
+   public static boolean matchesStraightSection(BlockState pole, Section section) {
+      if (!pole.hasProperty(net.minecraft.world.level.block.DirectionalBlock.FACING)
+            || !pole.getValue(net.minecraft.world.level.block.DirectionalBlock.FACING).getAxis().isVertical()) return false;
+      return switch(section) {
+         case WOOD -> pole.is(com.oblixorprime.engineersdecorreforged.ModBlocks.TREATED_WOOD_POLE.get());
+         case THIN_STEEL -> pole.is(com.oblixorprime.engineersdecorreforged.ModBlocks.THIN_STEEL_POLE.get());
+         case THICK_STEEL -> pole.is(com.oblixorprime.engineersdecorreforged.ModBlocks.THICK_STEEL_POLE.get());
+         default -> false;
+      };
+   }
+
+   public enum Section implements StringRepresentable {
+      NONE("none"), WOOD("wood"), THIN_STEEL("thin_steel"), THICK_STEEL("steel");
+      private final String name;
+      Section(String name) { this.name=name; }
+      @Override public String getSerializedName() { return name; }
+   }
+
    public enum Support implements StringRepresentable {
       NONE("none"), WOOD("wood"), STEEL("steel");
       private final String name;

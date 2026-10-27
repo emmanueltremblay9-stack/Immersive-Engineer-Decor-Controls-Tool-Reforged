@@ -45,6 +45,25 @@ public final class RaisedStairVGameTests {
    private RaisedStairVGameTests() {}
 
    @GameTest(template="empty")
+   public static void raised_stair_v_section_identity_and_neighbor_cap_guard(GameTestHelper h) {
+      for(var block:List.of(ModBlocks.TREATED_WOOD_POLE.get(),ModBlocks.TREATED_WOOD_POLE_HEAD.get(),ModBlocks.TREATED_WOOD_POLE_SUPPORT.get(),
+            ModBlocks.THIN_STEEL_POLE.get(),ModBlocks.THIN_STEEL_POLE_HEAD.get(),ModBlocks.THICK_STEEL_POLE.get(),ModBlocks.THICK_STEEL_POLE_HEAD.get())) {
+         var state=block.defaultBlockState().setValue(net.minecraft.world.level.block.DirectionalBlock.FACING,Direction.UP);
+         var section=RaisedCatwalkStairsBlock.section(state);
+         var expected=block==ModBlocks.THIN_STEEL_POLE.get()||block==ModBlocks.THIN_STEEL_POLE_HEAD.get()?RaisedCatwalkStairsBlock.Section.THIN_STEEL:
+            block==ModBlocks.THICK_STEEL_POLE.get()||block==ModBlocks.THICK_STEEL_POLE_HEAD.get()?RaisedCatwalkStairsBlock.Section.THICK_STEEL:RaisedCatwalkStairsBlock.Section.WOOD;
+         h.assertValueEqual(section,expected,"existing admissible heads select the actual pole section");
+         for(var lower:List.of(ModBlocks.TREATED_WOOD_POLE.get(),ModBlocks.THIN_STEEL_POLE.get(),ModBlocks.THICK_STEEL_POLE.get()))for(Direction face:Direction.values()) {
+            var next=lower.defaultBlockState().setValue(net.minecraft.world.level.block.DirectionalBlock.FACING,face);
+            h.assertValueEqual(RaisedCatwalkStairsBlock.matchesStraightSection(next,section),face.getAxis().isVertical()&&RaisedCatwalkStairsBlock.section(next)==section,
+               "open bottom only for a matching full-length vertical pole");
+         }
+         h.assertFalse(RaisedCatwalkStairsBlock.matchesStraightSection(Blocks.AIR.defaultBlockState(),section),"exposed end keeps its cap");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
    public static void raised_stair_v_native_item_placement_preserves_independent_poles(GameTestHelper h) {
       var level=h.getLevel();var pos=h.absolutePos(CENTER);
       var player=new FakePlayer(level,new GameProfile(UUID.randomUUID(),"VStairPlacement"));

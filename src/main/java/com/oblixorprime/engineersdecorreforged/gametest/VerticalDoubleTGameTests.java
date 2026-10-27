@@ -133,8 +133,17 @@ public final class VerticalDoubleTGameTests {
       var level=h.getLevel();var pos=h.absolutePos(CENTER);clear(h,pos);
       level.setBlock(pos.south(),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);level.setBlock(pos,ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState(),Block.UPDATE_ALL);
       var p=player(h,pos);p.setPos(pos.getX()+.5,pos.getY()+.5-p.getEyeHeight(),pos.getZ()-2);p.setYRot(0);p.setXRot(0);p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(Items.IRON_PICKAXE));
-      var eye=p.getEyePosition();var hit=level.clip(new ClipContext(eye,eye.add(p.getViewVector(1).scale(p.blockInteractionRange())),ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,p));
-      h.assertValueEqual(hit.getBlockPos(),pos,"actual ray selects beam before wall; eye="+eye+" direction="+p.getViewVector(1)+" shape="+level.getBlockState(pos).getShape(level,pos).bounds());p.gameMode.handleBlockBreakAction(pos,ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,hit.getDirection(),level.getMaxBuildHeight(),0);
+      // ServerPlayer's visual head pose can lag its accepted packet rotation.
+      // Deliberately retain that discrepancy: the old camera ray misses here,
+      // while the authoritative server look ray must still select and mine it.
+      p.setYHeadRot(10);
+      var eye=p.getEyePosition();
+      var cameraHit=level.clip(new ClipContext(eye,eye.add(p.getViewVector(1).scale(p.blockInteractionRange())),ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,p));
+      h.assertFalse(cameraHit.getBlockPos().equals(pos),"negative control reproduces the stale-head camera-ray miss");
+      var direction=p.getLookAngle();
+      h.assertTrue(direction.distanceTo(new Vec3(0,0,1))<1e-6,"server ray follows accepted body yaw rather than the render head pose");
+      var hit=level.clip(new ClipContext(eye,eye.add(direction.scale(p.blockInteractionRange())),ClipContext.Block.OUTLINE,ClipContext.Fluid.NONE,p));
+      h.assertValueEqual(hit.getBlockPos(),pos,"actual server eye ray selects beam before wall; eye="+eye+" direction="+direction+" shape="+level.getBlockState(pos).getShape(level,pos).bounds());p.gameMode.handleBlockBreakAction(pos,ServerboundPlayerActionPacket.Action.START_DESTROY_BLOCK,hit.getDirection(),level.getMaxBuildHeight(),0);
       h.assertTrue(p.gameMode.destroyBlock(pos),"native survival removal succeeds");h.assertTrue(level.getBlockState(pos.south()).is(Blocks.BRICKS),"wall survives");
       int count=level.getEntitiesOfClass(ItemEntity.class,new AABB(pos).inflate(1)).stream().filter(e->e.getItem().is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().asItem())).mapToInt(e->e.getItem().getCount()).sum();h.assertValueEqual(count,1,"exactly one beam item");h.succeed();
    }

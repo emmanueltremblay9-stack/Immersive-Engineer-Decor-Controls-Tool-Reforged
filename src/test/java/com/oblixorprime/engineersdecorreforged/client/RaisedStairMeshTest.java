@@ -52,10 +52,13 @@ public final class RaisedStairMeshTest {
          }
          area+=area(p[0],p[1],p[2]);
       }
-      assertEquals(area,objArea("full",false),1e-9);
+      // The approved source is immutable; only its stem below -4 is now adapted.
+      // The closed wood surface still splits exactly between its two owner cells.
+      double adapted=objArea("full",false);
       for(String facing:List.of("north","east","south","west"))
-         assertEquals("split adds no caps, removes no surface and preserves every rotation",area,
+         assertEquals("split adds no caps or surface at the ownership boundary",adapted,
             objArea("upper_"+facing,true)+objArea("lower_"+facing,true),1e-9);
+      assertNotEquals("stem contour is intentionally no longer the old diagonal chamfer",area,adapted,1e-8);
    }
 
    @Test public void metal_stair_and_existing_state_resolution_are_exact() throws Exception {
@@ -65,12 +68,17 @@ public final class RaisedStairMeshTest {
          JsonParser.parseString(Files.readString(ASSETS.resolve("blockstates/raised_steel_catwalk_stairs.json"))));
    }
 
-   @Test public void both_materials_reference_the_same_native_mesh() throws Exception {
-      for(String part:List.of("upper","lower"))for(String facing:List.of("north","east","south","west")) {
-         var wood=JsonParser.parseString(Files.readString(MODELS.resolve(part+"_wood_"+facing+".json"))).getAsJsonObject();
-         var steel=JsonParser.parseString(Files.readString(MODELS.resolve(part+"_steel_"+facing+".json"))).getAsJsonObject();
-         assertEquals(wood.get("model"),steel.get("model"));assertEquals("neoforge:obj",wood.get("loader").getAsString());
-         assertNotEquals(wood.get("textures"),steel.get("textures"));
+   @Test public void section_models_use_distinct_lower_meshes_and_preserve_upper_shape() throws Exception {
+      for(String facing:List.of("north","east","south","west")) {
+         String previous=null;
+         for(String section:List.of("wood","thin_steel","steel")) {
+            var model=JsonParser.parseString(Files.readString(MODELS.resolve("lower_"+section+"_"+facing+".json"))).getAsJsonObject();
+            assertEquals("neoforge:obj",model.get("loader").getAsString());
+            if(previous!=null)assertNotEquals("section must not alias another lower mesh",previous,model.get("model").getAsString());
+            previous=model.get("model").getAsString();
+         }
+         assertEquals(objArea("upper_"+facing,true),objArea("upper_thin_steel_"+facing,true),1e-9);
+         assertEquals(objArea("upper_"+facing,true),objArea("upper_steel_"+facing,true),1e-9);
       }
       assertFalse("no unapproved crafting recipe",Files.exists(Path.of("src/main/resources/data/immersive_engineer_decor_controls_tool_reforged/recipe/raised_steel_catwalk_stairs.json")));
    }

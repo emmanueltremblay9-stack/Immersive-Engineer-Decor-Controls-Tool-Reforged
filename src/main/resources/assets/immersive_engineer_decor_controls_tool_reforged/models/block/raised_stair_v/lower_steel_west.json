@@ -1,6 +1,6 @@
 {
   "loader": "neoforge:obj",
-  "model": "immersive_engineer_decor_controls_tool_reforged:models/block/raised_stair_v/lower_west.obj",
+  "model": "immersive_engineer_decor_controls_tool_reforged:models/block/raised_stair_v/lower_steel_west.obj",
   "automatic_culling": false,
   "shade_quads": true,
   "emissive_ambient": false,

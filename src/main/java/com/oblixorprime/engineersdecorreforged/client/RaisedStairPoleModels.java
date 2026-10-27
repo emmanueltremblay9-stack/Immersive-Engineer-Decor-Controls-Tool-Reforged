@@ -4,7 +4,7 @@ import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkStairsBlock;
-import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkStairsBlock.Support;
+import com.oblixorprime.engineersdecorreforged.block.RaisedCatwalkStairsBlock.Section;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.List;
@@ -36,22 +36,22 @@ public final class RaisedStairPoleModels {
    private static final ModelProperty<BakedModel> CONNECTION = new ModelProperty<>();
    private RaisedStairPoleModels() {}
 
-   public static ModelResourceLocation partModel(String part, Support material, Direction facing) {
+   public static ModelResourceLocation partModel(String part, Section material, Direction facing) {
       return ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(EngineersDecorReforged.MOD_ID,
          "block/raised_stair_v/" + part + "_" + material.getSerializedName() + "_" + facing.getName()));
    }
 
    @SubscribeEvent public static void register(ModelEvent.RegisterAdditional event) {
-      for (Support material : List.of(Support.WOOD, Support.STEEL))
+      for (Section material : List.of(Section.WOOD, Section.THIN_STEEL, Section.THICK_STEEL))
          for (Direction facing : Direction.Plane.HORIZONTAL)
-            for (String part : List.of("lower", "upper")) event.register(partModel(part, material, facing));
+            for (String part : List.of("lower", "lower_open", "upper")) event.register(partModel(part, material, facing));
    }
 
    @SubscribeEvent public static void wrap(ModelEvent.ModifyBakingResult event) {
-      Map<String, Map<Support, Map<Direction, BakedModel>>> parts = new HashMap<>();
-      for (String part : List.of("lower", "upper")) {
-      Map<Support, Map<Direction, BakedModel>> replacements = new HashMap<>();
-      for (Support material : List.of(Support.WOOD, Support.STEEL)) {
+      Map<String, Map<Section, Map<Direction, BakedModel>>> parts = new HashMap<>();
+      for (String part : List.of("lower", "lower_open", "upper")) {
+      Map<Section, Map<Direction, BakedModel>> replacements = new HashMap<>();
+      for (Section material : List.of(Section.WOOD, Section.THIN_STEEL, Section.THICK_STEEL)) {
          Map<Direction, BakedModel> rotations = new HashMap<>();
          for (Direction facing : Direction.Plane.HORIZONTAL) {
             BakedModel model = event.getModels().get(partModel(part, material, facing));
@@ -70,7 +70,7 @@ public final class RaisedStairPoleModels {
             ModelResourceLocation key = BlockModelShaper.stateToModelLocation(state);
             BakedModel original = event.getModels().get(key);
             if (original == null) throw new IllegalStateException("Missing existing pole model: " + key);
-            event.getModels().put(key, wrappers.computeIfAbsent(original, model -> new PoleModel(model, parts.get("lower"), false)));
+            event.getModels().put(key, wrappers.computeIfAbsent(original, model -> new PoleModel(model, parts, false)));
          }
       }
       Map<BakedModel, BakedModel> stairWrappers = new IdentityHashMap<>();
@@ -78,14 +78,14 @@ public final class RaisedStairPoleModels {
          ModelResourceLocation key = BlockModelShaper.stateToModelLocation(state);
          BakedModel original = event.getModels().get(key);
          if (original == null) throw new IllegalStateException("Missing raised stair model: " + key);
-         event.getModels().put(key, stairWrappers.computeIfAbsent(original, model -> new PoleModel(model, parts.get("upper"), true)));
+         event.getModels().put(key, stairWrappers.computeIfAbsent(original, model -> new PoleModel(model, parts, true)));
       }
    }
 
    public static final class PoleModel extends BakedModelWrapper<BakedModel> {
-      private final Map<Support, Map<Direction, BakedModel>> replacements;
+      private final Map<String, Map<Section, Map<Direction, BakedModel>>> replacements;
       private final boolean stair;
-      private PoleModel(BakedModel original, Map<Support, Map<Direction, BakedModel>> replacements, boolean stair) {
+      private PoleModel(BakedModel original, Map<String, Map<Section, Map<Direction, BakedModel>>> replacements, boolean stair) {
          super(original);
          this.replacements = Map.copyOf(replacements);
          this.stair = stair;
@@ -94,10 +94,11 @@ public final class RaisedStairPoleModels {
       @Override public ModelData getModelData(BlockAndTintGetter level, BlockPos pos, BlockState state, ModelData data) {
          ModelData original = originalModel.getModelData(level, pos, state, data);
          BlockState above = stair ? state : level.getBlockState(pos.above());
-         Support material = RaisedCatwalkStairsBlock.support(stair ? level.getBlockState(pos.below()) : state);
+         Section material = RaisedCatwalkStairsBlock.section(stair ? level.getBlockState(pos.below()) : state);
          BakedModel replacement = null;
-         if (above.is(ModBlocks.RAISED_STEEL_CATWALK_STAIRS.get()) && material != Support.NONE) {
-            replacement = replacements.get(material).get(above.getValue(PortedBlocks.HORIZONTAL_FACING));
+         if (above.is(ModBlocks.RAISED_STEEL_CATWALK_STAIRS.get()) && material != Section.NONE) {
+            String part = stair ? "upper" : RaisedCatwalkStairsBlock.matchesStraightSection(level.getBlockState(pos.below()), material) ? "lower_open" : "lower";
+            replacement = replacements.get(part).get(material).get(above.getValue(PortedBlocks.HORIZONTAL_FACING));
          }
          // Explicitly clear stale contextual data when the stair/support changes.
          return original.derive().with(CONNECTION, replacement).build();
