@@ -47,6 +47,21 @@ JEI is optional in NeoForge metadata and is not submitted as a CurseForge projec
 
 ## Reviewed local source contract
 
+### Separate historical and target dependency contracts
+
+`curseforge.expectedPublicRelations` describes only the new file's required public readback. It does not describe every earlier file or the project's pre-upload dependency aggregation. `uploadRelations` continues to define the exact new request; neither field is changed implicitly from historical observations.
+
+When the contracts differ, pin two additional non-empty lists of `{projectId, slug, type}` records in the reviewed manifest:
+
+- `expectedPreviousPublicRelations`: the observed relations of `previousPublicFileId`.
+- `expectedProjectRelations`: the separately observed pre-upload project dependency aggregation.
+
+Both historical comparisons remain exact and fail closed on missing, extra or changed relations. The new file still must exactly match `expectedPublicRelations`; historical Includes, Curios or optional JEI cannot leak into its accepted readback. Malformed, empty or duplicate-project contracts are rejected. These fields are covered by the existing canonical manifest hash bound to the persisted local-source upload intent.
+
+For backwards compatibility, an absent historical field uses the original `expectedPublicRelations` contract. Historical manifests are not rewritten. Accepted-file resume and exact-duplicate detection continue to validate the prior file and new file while skipping only the mutable project aggregation, with no second POST.
+
+For 1.1.65, public file 9291194 and the pre-upload project each expose six historical relations: IE/Curios required, JEI optional, and three source-project Includes. The new file's reviewed contract remains **IE only**. The separate snapshot is in `release-evidence/1.1.65-reconstructed/public-dependency-baseline.json`; refreshing or changing any expectation requires review, not automatic adoption of arbitrary remote data.
+
 Keep `schemaVersion: 1` and the existing `repository`, `release`, and `curseforge` sections. Add a top-level `source` object with exactly these fields:
 
 - `mode`: the literal `local-jar`

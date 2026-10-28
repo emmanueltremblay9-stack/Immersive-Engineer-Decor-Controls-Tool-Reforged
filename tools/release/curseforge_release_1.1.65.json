@@ -12,7 +12,7 @@
     "assetSize": 21076644,
     "assetSha256": "c8b5b2768a3139fec4663368310b29a5b3c106653e05b8df8c356846316c8d9e",
     "changelogPath": "release-bundle/1.1.65-reconstructed/curseforge-notes.md",
-    "changelogSha256": "cbda6d31ad06f0dcf5c9381e23085d8849df42a923a62f92145c307ae5e08356"
+    "changelogSha256": "36f625bc8b56752c6b42761b8e50a8f2bf9e3fbfd933919f065c4854e7961a1a"
   },
   "curseforge": {
     "projectId": 1555214,
@@ -41,6 +41,70 @@
         "projectId": 231951,
         "slug": "immersive-engineering",
         "type": "RequiredDependency"
+      }
+    ],
+    "expectedPreviousPublicRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 238222,
+        "slug": "jei",
+        "type": "OptionalDependency"
+      },
+      {
+        "projectId": 296686,
+        "slug": "redstone-gauges-and-switches",
+        "type": "Include"
+      },
+      {
+        "projectId": 309927,
+        "slug": "curios",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 313866,
+        "slug": "engineers-decor",
+        "type": "Include"
+      },
+      {
+        "projectId": 319716,
+        "slug": "engineers-tools",
+        "type": "Include"
+      }
+    ],
+    "expectedProjectRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 238222,
+        "slug": "jei",
+        "type": "OptionalDependency"
+      },
+      {
+        "projectId": 296686,
+        "slug": "redstone-gauges-and-switches",
+        "type": "Include"
+      },
+      {
+        "projectId": 309927,
+        "slug": "curios",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 313866,
+        "slug": "engineers-decor",
+        "type": "Include"
+      },
+      {
+        "projectId": 319716,
+        "slug": "engineers-tools",
+        "type": "Include"
       }
     ]
   },

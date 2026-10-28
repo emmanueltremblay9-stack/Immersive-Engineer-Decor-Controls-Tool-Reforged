@@ -1,0 +1,96 @@
+{
+  "observedAtUtc": "2026-10-28T23:51:21.581112+00:00",
+  "projectId": 1555214,
+  "previousPublicFileId": 9291194,
+  "previousFileEndpoint": "https://www.curseforge.com/api/v1/mods/1555214/files/9291194/dependencies",
+  "projectEndpoint": "https://www.curseforge.com/api/v1/mods/1555214/dependencies?pageIndex=0&pageSize=50",
+  "previousFileRelations": [
+    {
+      "projectId": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    },
+    {
+      "projectId": 238222,
+      "slug": "jei",
+      "type": "OptionalDependency"
+    },
+    {
+      "projectId": 296686,
+      "slug": "redstone-gauges-and-switches",
+      "type": "Include"
+    },
+    {
+      "projectId": 309927,
+      "slug": "curios",
+      "type": "RequiredDependency"
+    },
+    {
+      "projectId": 313866,
+      "slug": "engineers-decor",
+      "type": "Include"
+    },
+    {
+      "projectId": 319716,
+      "slug": "engineers-tools",
+      "type": "Include"
+    }
+  ],
+  "previousFilePagination": {
+    "index": 0,
+    "pageSize": 20,
+    "totalCount": 6
+  },
+  "projectRelations": [
+    {
+      "projectId": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    },
+    {
+      "projectId": 238222,
+      "slug": "jei",
+      "type": "OptionalDependency"
+    },
+    {
+      "projectId": 296686,
+      "slug": "redstone-gauges-and-switches",
+      "type": "Include"
+    },
+    {
+      "projectId": 309927,
+      "slug": "curios",
+      "type": "RequiredDependency"
+    },
+    {
+      "projectId": 313866,
+      "slug": "engineers-decor",
+      "type": "Include"
+    },
+    {
+      "projectId": 319716,
+      "slug": "engineers-tools",
+      "type": "Include"
+    }
+  ],
+  "projectPagination": {
+    "index": 0,
+    "pageSize": 50,
+    "totalCount": 6
+  },
+  "targetUploadRelationsUnchanged": [
+    {
+      "projectID": 231951,
+      "slug": "immersive-engineering",
+      "type": "requiredDependency"
+    }
+  ],
+  "targetPublicRelationsUnchanged": [
+    {
+      "projectId": 231951,
+      "slug": "immersive-engineering",
+      "type": "RequiredDependency"
+    }
+  ],
+  "uploadPerformed": false
+}
