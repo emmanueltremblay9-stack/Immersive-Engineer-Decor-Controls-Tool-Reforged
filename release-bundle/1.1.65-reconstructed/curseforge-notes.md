@@ -1,22 +1,46 @@
 # IEDCTR 1.1.65-reconstructed
 
-Corrective update for the startup crash with **Lithium mc1.21.1-0.15.4 on NeoForge**.
+Draft release notes for source `52639384ea90aebe9d563b966027421cebe52b45`.
+These notes are not evidence of publication or completed final-JAR qualification.
 
-## Fix
+## Compatibility and rendering
 
-- Correct the Mixin application order between IEDCTR's fluid-neighbor hooks and Lithium's fluid-flow optimization. Lithium's optimization remains enabled; the mandatory injection checks remain active.
-- Preserve existing fluid storage, natural flow, source removal, chunk reload and client synchronization behavior. This update adds no block-state or saved-data migration.
+- Correct the startup Mixin conflict with Lithium `mc1.21.1-0.15.4` NeoForge, retaining its fluid-flow optimization and the mandatory injection checks (#96).
+- Extend fluidlogging to the explicitly supported vanilla and Immersive Engineering blocks, not every third-party block (#95).
+- Cache final catwalk-stair and Double-T shapes (#94), preserve lighting in chunkless block previews (#98), and remove internal seams between adjacent Panzer Glass blocks (#102).
 
-The correction is [PR #96](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/96). The separate shape-cache and external-fluidlogging proposals are not included.
+## Construction and lights
 
-## Compatibility
+- Correct Door Sensor wall and ceiling contact with the clicked supporting face; sensing behavior and collision-free placement remain unchanged (#101).
+- Correct raised-catwalk support selection for the upright treated-wood support (#99) and catwalk-stair railing junction heights (#105).
+- Add V-supported Steel Catwalk Stairs and correct their joins for wood, thin-steel and thick-steel poles (#107, #110). No crafting recipe was added by that feature.
+- Add wall-mounted Steel Double T supports, horizontal/vertical wall placement, and compatible same-plane junctions (#108, #114).
+- Support internal attachment of the four existing light types: Iron Bulb Light, Ceiling Edge Light, Inset Floor Edge Light and Inset Light. An attached light can be selected and removed separately. This does not mean four lights occupy one attachment slot (#106, #114).
+- Preserve ordinary adjacent lamp placement beside occupied supports and correct perpendicular wood/steel support junctions (#115, #116).
+- Add the Treated Wood Beam with ceiling and wall placement. It remains creative-only pending a crafting-recipe decision (#111).
 
-Minecraft **1.21.1**, Java **21**, NeoForge **21.1.230 or later**. Required: **Immersive Engineering 12.4.2-194 or later**. JEI **19.32.0.359 or later** is optional. Lithium is optional; the specific compatibility target is **mc1.21.1-0.15.4 NeoForge**. Other Lithium versions and complete third-party modpacks have not been exhaustively qualified.
+## Fluids and machinery
 
-Replace the previous IEDCTR JAR with this version; keep only one IEDCTR JAR installed. Existing worlds retain their current format. Back up a world before updating.
+- Add exposed rain/thunder water collection to the Small Fluid Collection Funnel and Passive Fluid Accumulator, retaining their exposure, fluid-compatibility and capacity checks (#103).
+- Connect the Funnel's actual source-drain transaction to its server ticker. Flow must reach the top inlet; the search follows a connected path for at most 16 edges. A real source is removed before one bucket is credited. Unpaid virtual work is not extractable fluid (#112).
+- Increase Fluid Barrel capacity to 32,000 mB. Its recipe uses eight steel plates around an Immersive Engineering metal barrel; vertical fluid access and existing manual bucket handling are retained (#111).
+- Add axial, one-way fluid capabilities to the three existing valves. The valves are not pumps and have no transit tank; the analog limit is per call, not a guaranteed per-tick throughput (#111, #112).
+- Update the Passive Fluid Accumulator recipe to use sponge and piston (#100).
+
+## Requirements and update precautions
+
+Minecraft **1.21.1**, **Java 21**, NeoForge **21.1.230 minimum**.
+Immersive Engineering **12.4.2-194 minimum** is required; JEI **19.32.0.359 minimum** is optional.
+These are declared dependency ranges, not proof that every later dependency version has been tested.
+The specifically exercised Lithium target is **mc1.21.1-0.15.4 NeoForge**; Lithium remains optional.
+
+Back up worlds and replace the prior IEDCTR JAR; keep only one IEDCTR version installed.
+Do not assume exhaustive compatibility with arbitrary modpacks, renderers, legacy saves or all fluid/block combinations.
+Final-artifact client and packaged-server acceptance must be recorded separately from source-level automated tests.
 
 ## Provenance and support
 
-MIT notices and credits for Stefan Wilhelm's Engineer's Decor, RsGauges and Engineer's Tools, and the attributed RsGauges port contributors, remain packaged in `LICENSE`, `NOTICE.md` and `CREDITS.md`. Immersive Engineering is a separate required dependency and is not bundled.
+Preserve `LICENSE`, `NOTICE.md` and `CREDITS.md`, including the original Engineer's Decor, RsGauges and Engineer's Tools credits and the credited RsGauges port contributors.
+Immersive Engineering remains a separate required dependency, not an included mod.
 
-For a remaining crash, submit the full crash report or `latest.log`, exact loader/mod versions and reproduction steps through [GitHub Issues](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues). A startup fix does not establish compatibility with every mod combination.
+Report problems at [GitHub Issues](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/issues), with the crash report or `latest.log`, exact loader/mod versions and reproduction steps.

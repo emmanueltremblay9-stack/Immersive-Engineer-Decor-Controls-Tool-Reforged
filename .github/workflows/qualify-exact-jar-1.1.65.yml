@@ -1,0 +1,148 @@
+name: Qualify exact JAR 1.1.65
+run-name: "IEDCTR 1.1.65 :: binary qualification, no publication"
+
+on:
+  # One named repair branch only. This never opts in to Minecraft server terms.
+  push:
+    branches: [repair/iedctr-1.1.65-release-qualification]
+    paths:
+      - '.github/workflows/qualify-exact-jar-1.1.65.yml'
+      - 'tools/qualification/**'
+  workflow_dispatch:
+    inputs:
+      run_server:
+        description: 'Also run the baseline packaged-server smoke test (separate explicit consent required)'
+        required: true
+        type: boolean
+        default: false
+      eula_acknowledgment:
+        description: 'Only after reviewing Minecraft EULA and Microsoft Services Agreement: I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: iedctr-exact-jar-1.1.65
+  cancel-in-progress: false
+
+jobs:
+  qualify:
+    if: github.repository == 'emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged'
+    name: Exact-byte qualification (not release acceptance)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - name: Checkout qualification tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          path: tooling
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.13'
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Initialize unique report directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          reports="$(mktemp -d "$RUNNER_TEMP/iedctr-qualification.XXXXXX")"
+          echo "QUALIFICATION_REPORTS=$reports" >> "$GITHUB_ENV"
+          python - "$reports" <<'PY'
+          import json, os, pathlib, subprocess, sys
+          report = {
+              "status": "STARTED", "publicationReady": False,
+              "workflowRunId": os.environ["GITHUB_RUN_ID"],
+              "workflowRunAttempt": os.environ["GITHUB_RUN_ATTEMPT"],
+              "toolingCommit": subprocess.check_output(["git", "-C", "tooling", "rev-parse", "HEAD"], text=True).strip(),
+              "runtimeSourceCommit": "52639384ea90aebe9d563b966027421cebe52b45"
+          }
+          (pathlib.Path(sys.argv[1]) / "run.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+          PY
+      - name: Test qualification safeguards without Minecraft
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -W error::ResourceWarning -m unittest discover -s tooling/tools/qualification -p 'test_*.py' -v 2>&1 | tee "$QUALIFICATION_REPORTS/unit-tests.txt"
+      - name: Require separate explicit server consent
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_server }}
+        shell: bash
+        env:
+          EULA_ACKNOWLEDGMENT: ${{ inputs.eula_acknowledgment }}
+        run: test "$EULA_ACKNOWLEDGMENT" = 'I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT'
+      - name: Verify pinned successful push Build before compilation
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python tooling/tools/qualification/qualify_1_1_65.py ci --report "$QUALIFICATION_REPORTS/ci.json"
+      - name: Checkout exact runtime source A
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 52639384ea90aebe9d563b966027421cebe52b45
+          path: runtime-a
+          persist-credentials: false
+      - name: Checkout exact runtime source B
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 52639384ea90aebe9d563b966027421cebe52b45
+          path: runtime-b
+          persist-credentials: false
+      - name: Set up Gradle without a persisted build cache
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+        with:
+          cache-disabled: true
+      - name: Clean private build A
+        working-directory: runtime-a
+        shell: bash
+        env:
+          GRADLE_USER_HOME: ${{ runner.temp }}/iedctr-gradle-a
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 52639384ea90aebe9d563b966027421cebe52b45
+          test -z "$(git status --porcelain --untracked-files=all)"
+          bash ./gradlew clean build --no-build-cache --rerun-tasks --stacktrace
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - name: Clean private build B with a separate cache
+        working-directory: runtime-b
+        shell: bash
+        env:
+          GRADLE_USER_HOME: ${{ runner.temp }}/iedctr-gradle-b
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 52639384ea90aebe9d563b966027421cebe52b45
+          test -z "$(git status --porcelain --untracked-files=all)"
+          bash ./gradlew clean build --no-build-cache --rerun-tasks --stacktrace
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - name: Inspect both JARs and recheck exact-source CI
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python tooling/tools/qualification/qualify_1_1_65.py compare --source-a "$GITHUB_WORKSPACE/runtime-a" --source-b "$GITHUB_WORKSPACE/runtime-b" --report "$QUALIFICATION_REPORTS/binary.json"
+      - name: Baseline packaged-server smoke using the inspected JAR
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_server }}
+        env:
+          EULA_ACKNOWLEDGMENT: ${{ inputs.eula_acknowledgment }}
+        run: python tooling/tools/qualification/qualify_1_1_65.py server --source-a "$GITHUB_WORKSPACE/runtime-a" --gradle-home "$RUNNER_TEMP/iedctr-gradle-a" --eula-acknowledgment "$EULA_ACKNOWLEDGMENT" --report "$QUALIFICATION_REPORTS/server.json"
+      - name: Persist text evidence only, never runtime binaries
+        if: ${{ always() && env.QUALIFICATION_REPORTS != '' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: iedctr-1.1.65-qualification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ env.QUALIFICATION_REPORTS }}/*.json
+            ${{ env.QUALIFICATION_REPORTS }}/unit-tests.txt
+          if-no-files-found: error
+          retention-days: 90
+      - name: Report the evidence boundary
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          echo '## Exact JAR qualification' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Read the binary.json/server.json reports. A green binary job is NOT release acceptance.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Client gameplay, all new-feature scenarios and publication remain separate gates. No CurseForge token or mod upload is used here.' >> "$GITHUB_STEP_SUMMARY"
