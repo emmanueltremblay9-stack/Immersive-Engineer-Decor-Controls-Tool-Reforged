@@ -1,7 +1,7 @@
 # IEDCTR 1.1.65-reconstructed
 
-Draft release notes for source `52639384ea90aebe9d563b966027421cebe52b45`.
-These notes are not evidence of publication or completed final-JAR qualification.
+Release candidate from source `52639384ea90aebe9d563b966027421cebe52b45`, following public 1.1.64.
+Automated source GameTests, reproducible JAR builds and a packaged-server baseline smoke passed. Full client-gameplay and visual acceptance of this packaged JAR remains unverified.
 
 ## Compatibility and rendering
 
@@ -36,7 +36,7 @@ The specifically exercised Lithium target is **mc1.21.1-0.15.4 NeoForge**; Lithi
 
 Back up worlds and replace the prior IEDCTR JAR; keep only one IEDCTR version installed.
 Do not assume exhaustive compatibility with arbitrary modpacks, renderers, legacy saves or all fluid/block combinations.
-Final-artifact client and packaged-server acceptance must be recorded separately from source-level automated tests.
+The exact packaged JAR passed a dedicated-server baseline smoke. The source CI also exercises native client gameplay paths, but full in-game client rendering and new-feature acceptance of the packaged JAR have not been independently completed.
 
 ## Provenance and support
 
