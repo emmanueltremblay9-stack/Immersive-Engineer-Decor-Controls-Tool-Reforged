@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.gametest;
 
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import com.oblixorprime.engineersdecorreforged.block.StairWaterFlow;
 import net.minecraft.core.BlockPos;
@@ -104,14 +105,14 @@ public final class StairWaterFlowGameTests {
       var level=h.getLevel(); var chunkPos=new net.minecraft.world.level.ChunkPos(h.absolutePos(new BlockPos(3,2,3)));
       var saved=new net.minecraft.world.level.chunk.LevelChunk(level,chunkPos);
       var stair=ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState();
-      for(int value=0;value<16;value++) saved.setBlockState(new BlockPos(chunkPos.getMinBlockX()+value,80,chunkPos.getMinBlockZ()),stair.setValue(PortedBlocks.CatwalkStairsBlock.WATER_FLOW,value),false);
+      for(int value=0;value<16;value++) saved.setBlockState(new BlockPos(chunkPos.getMinBlockX()+value,80,chunkPos.getMinBlockZ()),stateWithFlow(stair,value),false);
       var tag=net.minecraft.world.level.chunk.storage.ChunkSerializer.write(level,saved);
       var bytes=new java.io.ByteArrayOutputStream(); net.minecraft.nbt.NbtIo.writeCompressed(tag,bytes);
       var disk=net.minecraft.nbt.NbtIo.readCompressed(new java.io.ByteArrayInputStream(bytes.toByteArray()),net.minecraft.nbt.NbtAccounter.unlimitedHeap());
       var loaded=net.minecraft.world.level.chunk.storage.ChunkSerializer.read(level,level.getPoiManager(),new net.minecraft.world.level.chunk.storage.RegionStorageInfo("stair-water-test",level.dimension(),"chunk"),chunkPos,disk);
       for(int value=0;value<16;value++) {
          var pos=new BlockPos(chunkPos.getMinBlockX()+value,80,chunkPos.getMinBlockZ());
-         h.assertValueEqual(loaded.getBlockState(pos),stair.setValue(PortedBlocks.CatwalkStairsBlock.WATER_FLOW,value),"compressed reload preserves exact transient level/falling state");
+         h.assertValueEqual(loaded.getBlockState(pos),stateWithFlow(stair,value),"compressed reload preserves exact transient level/falling state");
       }
       h.succeed();
    }
@@ -136,12 +137,17 @@ public final class StairWaterFlowGameTests {
       h.assertTrue(stair.pickupBlock(null,h.getLevel(),p,flowing).isEmpty(),"flow cannot fill bucket");
       h.assertTrue(stair.placeLiquid(h.getLevel(),p,flowing,Fluids.WATER.getSource(false)),"normal bucket can replace transient water with intentional source");
       var filled=h.getLevel().getBlockState(p);
-      h.assertTrue(filled.getValue(PortedBlocks.WATERLOGGED),"existing source contract");
-      var legacy=NbtUtils.writeBlockState(filled); legacy.getCompound("Properties").remove("water_flow");
-      h.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(),legacy),filled,"old source saves lacking water_flow retain source and default transient0");
-      h.assertValueEqual(filled.getValue(PortedBlocks.CatwalkStairsBlock.WATER_FLOW),0,"no hidden old current");
+      h.assertValueEqual(filled.getValue(NativeFluidloggedBlock.FLUID_CONTENT),NativeFluidloggedBlock.FluidContent.WATER,"bucket source uses normalized water content");
+      h.assertValueEqual(NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(),NbtUtils.writeBlockState(filled)),filled,"new source schema round-trips without hidden current");
       h.assertTrue(stair.pickupBlock(null,h.getLevel(),p,filled).is(Items.WATER_BUCKET),"source yields one bucket");
       h.assertTrue(h.getLevel().getFluidState(p).isEmpty(),"drained source reveals no hidden flow");
       h.succeed();
+   }
+
+   private static net.minecraft.world.level.block.state.BlockState stateWithFlow(net.minecraft.world.level.block.state.BlockState state,int value) {
+      if(value==0)return StairWaterFlow.withFlow(state,Fluids.EMPTY.defaultFluidState());
+      boolean falling=value>=8;
+      int amount=falling?16-value:value;
+      return StairWaterFlow.withFlow(state,Fluids.FLOWING_WATER.getFlowing(amount,falling));
    }
 }

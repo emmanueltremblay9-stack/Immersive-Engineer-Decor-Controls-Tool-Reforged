@@ -28,7 +28,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 
 /** Restores Engineer's Decor's adjustable cosmetic chimney (Stefan Wilhelm / wile, MIT). */
-public final class ChimneyBlock extends NativeDecorativeBlocks.NativeOpenBlock {
+public final class ChimneyBlock extends NativeDecorativeBlocks.NativeOpenBlock implements NativeFluidloggedBlock.CompactState {
    public static final MapCodec<ChimneyBlock> CODEC = simpleCodec(ChimneyBlock::new);
    public static final IntegerProperty POWER = BlockStateProperties.POWER;
    public static final BooleanProperty STACKED = BooleanProperty.create("stacked");

@@ -26,21 +26,21 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 public final class ShapeCacheGameTests {
    @GameTest(template = "empty", timeoutTicks = 1200)
    public static void shape_caches_preserve_all_states(GameTestHelper h) {
-      verify(h, ModBlocks.STEEL_CATWALK_STAIRS.get(), true, 30720);
-      verify(h, ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(), false, 13824);
+      verify(h, ModBlocks.STEEL_CATWALK_STAIRS.get(), true, 6080);
+      verify(h, ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(), false, 2736);
       h.succeed();
    }
 
    private static void verify(GameTestHelper h, Block block, boolean stairs, int count) {
       var properties = new java.util.HashSet<>(block.getStateDefinition().getProperties());
       var expectedProperties = stairs
-         ? java.util.Set.of(HORIZONTAL_FACING, LEFT_RAILING, RIGHT_RAILING, WATERLOGGED,
-            NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, EDITED_STAIR_SIDES, PAID_RAILINGS)
-         : java.util.Set.of(EASTWEST, LEFTBEAM, RIGHTBEAM, DOWNCONNECT, WATERLOGGED,
-            NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW, com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock.BULB_LIGHT, com.oblixorprime.engineersdecorreforged.block.SupportLights.ATTACHED);
-      h.assertTrue(properties.equals(expectedProperties), "legacy properties plus explicit legacy bulb and native attachment marker");
+         ? java.util.Set.of(HORIZONTAL_FACING, LEFT_RAILING, RIGHT_RAILING,
+            NativeFluidloggedBlock.FLUID_CONTENT, EDITED_STAIR_SIDES, PAID_RAILINGS)
+         : java.util.Set.of(EASTWEST, LEFTBEAM, RIGHTBEAM, DOWNCONNECT, NativeFluidloggedBlock.FLUID_CONTENT,
+            com.oblixorprime.engineersdecorreforged.block.SteelDoubleTBulbBlock.BULB_LIGHT, com.oblixorprime.engineersdecorreforged.block.SupportLights.ATTACHED);
+      h.assertTrue(properties.equals(expectedProperties), "compact fluid property plus explicit bulb and attachment marker");
       var states = block.getStateDefinition().getPossibleStates();
-      h.assertValueEqual(states.size(), count, "save-compatible state count");
+      h.assertValueEqual(states.size(), count, "normalized compact state count");
       double[] caps = stairs ? packagedStairCaps() : null;
       var outlines = new VoxelShape[stairs ? 16 : 32];
       var collisions = new VoxelShape[stairs ? 16 : 32];

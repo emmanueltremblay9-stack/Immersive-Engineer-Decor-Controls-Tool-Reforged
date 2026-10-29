@@ -200,7 +200,7 @@ public final class IronBulbAttachmentGameTests {
       BlockHitResult lamp = aim(h, p, false); start(h, p, lamp); aim(h, p, true); p.gameMode.destroyBlock(lamp.getBlockPos());
       h.assertValueEqual(h.getBlockState(P), before, "lamp START cannot finish as beam break after retarget");
       lamp = aim(h, p, false); start(h, p, lamp);
-      BlockState wet = before.setValue(PortedBlocks.WATERLOGGED, true); put(h, P, wet); p.gameMode.destroyBlock(lamp.getBlockPos());
+      BlockState wet = NativeFluidloggedBlock.withFluidContent(before, NativeFluidloggedBlock.FluidContent.WATER); put(h, P, wet); p.gameMode.destroyBlock(lamp.getBlockPos());
       h.assertValueEqual(h.getBlockState(P), wet, "changed fluid state invalidates old snapshot");
       h.assertValueEqual(drops(h, bulb()) + drops(h, beam().asItem()), 0, "stale targets do not pay drops"); h.succeed();
    }
@@ -251,10 +251,10 @@ public final class IronBulbAttachmentGameTests {
 
    private static BlockState cell(BlockState state, int kind) {
       return switch (kind) {
-         case 1 -> state.setValue(PortedBlocks.WATERLOGGED, true);
-         case 2 -> state.setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.LAVA);
-         case 3 -> state.setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.CREOSOTE);
-         case 4 -> state.setValue(StairWaterFlow.WATER_FLOW, 5);
+         case 1 -> NativeFluidloggedBlock.withFluidContent(state, NativeFluidloggedBlock.FluidContent.WATER);
+         case 2 -> NativeFluidloggedBlock.withFluidContent(state, NativeFluidloggedBlock.FluidContent.LAVA);
+         case 3 -> NativeFluidloggedBlock.withFluidContent(state, NativeFluidloggedBlock.FluidContent.CREOSOTE);
+         case 4 -> StairWaterFlow.withFlow(state, net.minecraft.world.level.material.Fluids.FLOWING_WATER.getFlowing(5, false));
          default -> state;
       };
    }

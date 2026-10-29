@@ -9,6 +9,9 @@ import net.minecraft.world.level.block.state.BlockState;
 public final class RaisedCatwalkStairsBlock extends PortedBlocks.CatwalkStairsBlock {
    public static final MapCodec<RaisedCatwalkStairsBlock> CODEC = simpleCodec(RaisedCatwalkStairsBlock::new);
    public RaisedCatwalkStairsBlock(Properties properties) { super(properties); }
+
+   @Override
+   protected boolean usesCompactFluidState() { return false; }
    @Override protected MapCodec<? extends HorizontalDirectionalBlock> codec() { return CODEC; }
 
    public static Support support(BlockState pole) {

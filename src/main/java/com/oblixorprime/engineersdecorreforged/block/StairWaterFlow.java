@@ -15,19 +15,17 @@ public final class StairWaterFlow {
          || state.getBlock() instanceof NativeTransientFluidBlock;
    }
    public static boolean active(BlockState state) {
-      return supported(state)
-         && !state.getValue(PortedBlocks.WATERLOGGED)
+      if (!supported(state)) return false;
+      if (state.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT))
+         return NativeFluidloggedBlock.fluidContent(state).isFlowingWater();
+      return !state.getValue(PortedBlocks.WATERLOGGED)
          && state.getValue(NativeFluidloggedBlock.FLUID_CELL) == NativeFluidloggedBlock.Cell.EMPTY
          && state.getValue(WATER_FLOW) != 0;
    }
    public static FluidState fluid(BlockState state) {
-      FluidState stored = NativeFluidloggedBlock.fluidState(state);
-      if (!stored.isEmpty()) return stored;
-      int value = state.getValue(WATER_FLOW);
-      return value == 0 ? stored : Fluids.FLOWING_WATER.getFlowing(value < 8 ? value : 16-value, value >= 8);
+      return NativeFluidloggedBlock.fluidState(state);
    }
    public static BlockState withFlow(BlockState state, FluidState fluid) {
-      int value = fluid.isEmpty() ? 0 : fluid.getValue(FlowingFluid.FALLING) ? 16-fluid.getAmount() : fluid.getAmount();
-      return state.setValue(WATER_FLOW, value);
+      return NativeFluidloggedBlock.withFluidContent(state, NativeFluidloggedBlock.FluidContent.fromFluidState(fluid));
    }
 }

@@ -19,7 +19,7 @@ public final class CatalogueFluidloggingGameTests {
    @GameTest(template="empty")
    public static void catalogue_registry_inventory(GameTestHelper h) throws Exception {
       var rows = new java.util.ArrayList<String>();
-      rows.add("id\tclass\tstates\twaterlogged\tnative_cell\ttransient_water\tdefault_full_collision");
+      rows.add("id\tclass\tstates\twaterlogged\tnative_cell\ttransient_water\tcompact_fluid\tdefault_full_collision");
       long registered = BuiltInRegistries.BLOCK.keySet().stream()
          .filter(id -> id.getNamespace().equals(EngineersDecorReforged.MOD_ID)).count();
       h.assertValueEqual((long)ModBlocks.ORDERED_BLOCKS.size(), registered, "inventory includes every registered mod block");
@@ -31,7 +31,8 @@ public final class CatalogueFluidloggingGameTests {
             Integer.toString(block.getStateDefinition().getPossibleStates().size()),
             Boolean.toString(state.hasProperty(BlockStateProperties.WATERLOGGED)),
             Boolean.toString(state.hasProperty(NativeFluidloggedBlock.FLUID_CELL)),
-            Boolean.toString(state.hasProperty(PortedBlocks.CatwalkStairsBlock.WATER_FLOW)), Boolean.toString(full)));
+            Boolean.toString(state.hasProperty(com.oblixorprime.engineersdecorreforged.block.StairWaterFlow.WATER_FLOW)),
+            Boolean.toString(state.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT)), Boolean.toString(full)));
       }
       java.nio.file.Files.write(java.nio.file.Path.of("catalogue-fluidlogging.tsv"), rows);
       for (var entry : ModBlocks.ORDERED_BLOCKS) {

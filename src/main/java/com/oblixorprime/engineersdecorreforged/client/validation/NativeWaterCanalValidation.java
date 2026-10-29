@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
@@ -43,7 +44,8 @@ final class NativeWaterCanalValidation {
       };
       if (index >= 4) state = state.setValue(PortedBlocks.LEFT_RAILING, true)
          .setValue(PortedBlocks.RIGHT_RAILING, true).setValue(PortedBlocks.EDITED_STAIR_SIDES, 3);
-      return state.setValue(BlockStateProperties.WATERLOGGED, index != 1 && index != 6);
+      return NativeFluidloggedBlock.withFluidContent(state, index != 1 && index != 6
+         ? NativeFluidloggedBlock.FluidContent.WATER : NativeFluidloggedBlock.FluidContent.EMPTY);
    }
 
    static boolean tick(Minecraft mc, Path directory, String nonce) throws Exception {
@@ -83,7 +85,8 @@ final class NativeWaterCanalValidation {
          pending.join();
          if (++ticks > 300) throw new IllegalStateException("Canal did not synchronize: " + NAMES[index]);
          BlockState synchronizedState=mc.level.getBlockState(POS);
-         if (index==6 && synchronizedState.is(ModBlocks.STEEL_CATWALK_STAIRS.get())) synchronizedState=synchronizedState.setValue(PortedBlocks.CatwalkStairsBlock.WATER_FLOW,0);
+         if (index==6 && synchronizedState.is(ModBlocks.STEEL_CATWALK_STAIRS.get()))
+            synchronizedState=synchronizedState.setValue(NativeFluidloggedBlock.FLUID_CONTENT,NativeFluidloggedBlock.FluidContent.EMPTY);
          if (!synchronizedState.equals(state()) || mc.player.position().distanceTo(
             rotate(new Vec3(POS.getX()+3.5,POS.getY()+2.0,POS.getZ()+4.5))) > 0.1) return false;
          mc.options.hideGui = true;

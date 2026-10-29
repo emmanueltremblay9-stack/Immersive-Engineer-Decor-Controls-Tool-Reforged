@@ -64,8 +64,17 @@ public final class RaisedStairMeshTest {
    @Test public void metal_stair_and_existing_state_resolution_are_exact() throws Exception {
       byte[] metal=Files.readAllBytes(ASSETS.resolve("models/block/furniture/steel_catwalk_stairs_model.json"));
       assertEquals("704f5cbc2249d4418e70b6cb067ae08dce2f0ed116f2f0d844d0f652ec3cdb37",HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(metal)));
-      assertEquals(JsonParser.parseString(Files.readString(ASSETS.resolve("blockstates/steel_catwalk_stairs.json"))),
-         JsonParser.parseString(Files.readString(ASSETS.resolve("blockstates/raised_steel_catwalk_stairs.json"))));
+      var compact=JsonParser.parseString(Files.readString(ASSETS.resolve("blockstates/steel_catwalk_stairs.json"))).getAsJsonObject().getAsJsonObject("variants");
+      var raised=JsonParser.parseString(Files.readString(ASSETS.resolve("blockstates/raised_steel_catwalk_stairs.json"))).getAsJsonObject().getAsJsonObject("variants");
+      for(String facing:List.of("north","east","south","west"))for(boolean left:List.of(false,true))
+         for(boolean right:List.of(false,true)) {
+            String base="facing="+facing+",left_railing="+left+",right_railing="+right;
+            var compactVariant=compact.getAsJsonObject(base);
+            var raisedVariant=raised.getAsJsonObject(base+",waterlogged=false");
+            assertNotNull("compact stair model mapping "+base,compactVariant);
+            assertNotNull("raised stair model mapping "+base,raisedVariant);
+            assertEquals("fluid schema change keeps identical geometry mapping",raisedVariant,compactVariant);
+         }
    }
 
    @Test public void section_models_use_distinct_lower_meshes_and_preserve_upper_shape() throws Exception {
