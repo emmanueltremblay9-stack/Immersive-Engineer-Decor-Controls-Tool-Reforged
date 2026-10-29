@@ -1075,6 +1075,7 @@ class Publisher:
         owner = urllib.parse.quote(self.repository["owner"], safe="")
         name = urllib.parse.quote(self.repository["name"], safe="")
         artifacts: list[dict[str, Any]] = []
+        artifact_ids: set[int] = set()
         total_count: int | None = None
         for page in range(1, MAX_STATE_ARTIFACT_PAGES + 1):
             result = self.http.get_json(
@@ -1087,7 +1088,7 @@ class Publisher:
                     "GITHUB_STATE_RESPONSE_INVALID",
                     "GitHub Actions artifact state response is invalid",
                 )
-            if not isinstance(result.get("total_count"), int):
+            if type(result.get("total_count")) is not int or result["total_count"] < 0:
                 raise PublicationError(
                     "GITHUB_STATE_RESPONSE_INVALID",
                     "GitHub Actions artifact state omitted total_count",
@@ -1099,8 +1100,18 @@ class Publisher:
                     "GITHUB_STATE_RESPONSE_DRIFTED",
                     "GitHub Actions artifact state changed during pagination",
                 )
-            artifacts.extend(result["artifacts"])
-            if len(artifacts) >= total_count:
+            page_artifacts = result["artifacts"]
+            if len(page_artifacts) > 100 or (not page_artifacts and len(artifacts) < total_count):
+                raise PublicationError("GITHUB_STATE_RESPONSE_INVALID", "GitHub artifact pagination made no progress or exceeded page size")
+            for artifact in page_artifacts:
+                artifact_id = artifact.get("id") if isinstance(artifact, dict) else None
+                if type(artifact_id) is not int or artifact_id <= 0 or artifact_id in artifact_ids:
+                    raise PublicationError("GITHUB_STATE_RESPONSE_INVALID", "GitHub artifact pagination contains invalid or repeated identities")
+                artifact_ids.add(artifact_id)
+            artifacts.extend(page_artifacts)
+            if len(artifacts) > total_count:
+                raise PublicationError("GITHUB_STATE_RESPONSE_INVALID", "GitHub artifact count exceeds reported total")
+            if len(artifacts) == total_count:
                 break
         if total_count is None or len(artifacts) < total_count:
             raise PublicationError(

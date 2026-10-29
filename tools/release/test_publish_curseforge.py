@@ -898,6 +898,28 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual("GITHUB_STATE_PAGINATION_LIMIT", raised.exception.status)
         self.assertEqual(0, self.state.post_count)
 
+    def test_artifact_pagination_rejects_duplicates_truncation_and_drift(self) -> None:
+        first_page = [{"id": i + 1} for i in range(100)]
+        cases = [
+            ([{"total_count": 101, "artifacts": first_page},
+              {"total_count": 101, "artifacts": [first_page[0]]}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": 101, "artifacts": first_page},
+              {"total_count": 101, "artifacts": []}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": 101, "artifacts": first_page},
+              {"total_count": 102, "artifacts": [{"id": 101}]}], "GITHUB_STATE_RESPONSE_DRIFTED"),
+            ([{"total_count": -1, "artifacts": []}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": True, "artifacts": []}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": 0, "artifacts": [{"id": 1}]}], "GITHUB_STATE_RESPONSE_INVALID"),
+        ]
+        for responses, expected_status in cases:
+            with self.subTest(expected=expected_status, responses=responses):
+                publisher = self.publisher()
+                with mock.patch.object(publisher.http, "get_json", side_effect=responses):
+                    with self.assertRaises(PublicationError) as raised:
+                        publisher._prior_durable_state_resume_id("github-secret", "100-1")
+                self.assertEqual(expected_status, raised.exception.status)
+                self.assertEqual(0, self.state.post_count)
+
     def test_prior_persisted_state_for_another_tag_does_not_block(self) -> None:
         prior_tag = "v1.1.53-reconstructed"
         run_key = "99-1"
