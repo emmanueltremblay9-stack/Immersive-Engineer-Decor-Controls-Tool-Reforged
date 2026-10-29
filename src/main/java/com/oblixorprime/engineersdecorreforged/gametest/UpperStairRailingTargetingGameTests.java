@@ -3,6 +3,7 @@ package com.oblixorprime.engineersdecorreforged.gametest;
 import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import com.oblixorprime.engineersdecorreforged.block.StairRailingTargeting;
 import java.util.UUID;
