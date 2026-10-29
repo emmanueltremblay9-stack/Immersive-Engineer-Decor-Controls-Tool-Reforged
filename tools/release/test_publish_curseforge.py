@@ -113,6 +113,8 @@ class FakeState:
         self.list_page_size = 0
         self.requested_page_indexes: list[int] = []
         self.project_relations = public_relations()
+        self.previous_relations = public_relations()
+        self.current_relations = public_relations()
         self.game_versions = [
             {"id": 33, "gameVersionTypeID": 2, "name": "1.21.1"},
             {"id": 3, "gameVersionTypeID": 1, "name": "1.21.1"},
@@ -295,7 +297,7 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"data": self.state.prior_file()})
             return
         if path == f"{prefix}/{PREVIOUS_FILE_ID}/dependencies":
-            self._json({"data": public_relations()})
+            self._json({"data": self.state.previous_relations})
             return
         if path.startswith(prefix + "/"):
             tail = path[len(prefix) + 1 :]
@@ -304,7 +306,7 @@ class Handler(BaseHTTPRequestHandler):
                 if file_id in self.state.files or (
                     file_id == NEW_FILE_ID and self.state.publish_visible
                 ):
-                    self._json({"data": public_relations()})
+                    self._json({"data": self.state.current_relations})
                 else:
                     self._json({"error": "not found"}, 404)
                 return
@@ -359,10 +361,11 @@ class Handler(BaseHTTPRequestHandler):
         self._json(self.state.upload_response)
 
 
-def public_relations() -> list[dict]:
+def public_relations(relations: list[dict] | None = None) -> list[dict]:
+    expected = EXPECTED_RELATIONS if relations is None else relations
     return [
         {"id": item["projectId"], "slug": item["slug"], "type": item["type"]}
-        for item in EXPECTED_RELATIONS
+        for item in expected
     ]
 
 
@@ -687,6 +690,94 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(EXIT_CONFLICT, raised.exception.exit_code)
         self.assertEqual(0, self.state.post_count)
 
+    def configure_distinct_relation_contracts(self) -> None:
+        historical = EXPECTED_RELATIONS + [
+            {"projectId": 309927, "slug": "curios", "type": "RequiredDependency"},
+            {"projectId": 238222, "slug": "jei", "type": "OptionalDependency"},
+        ]
+        target = [EXPECTED_RELATIONS[-1]]
+        self.manifest["curseforge"]["expectedPreviousPublicRelations"] = historical
+        self.manifest["curseforge"]["expectedProjectRelations"] = historical
+        self.manifest["curseforge"]["expectedPublicRelations"] = target
+        self.state.previous_relations = public_relations(historical)
+        self.state.project_relations = public_relations(historical)
+        self.state.current_relations = public_relations(target)
+
+    def test_distinct_historical_relations_pass_without_changing_upload_target(self) -> None:
+        self.configure_distinct_relation_contracts()
+        report = self.run_publisher()
+        self.assertEqual("AUTOMATION_READY_DRY_RUN", report["status"])
+        self.assertEqual(6, len(report["curseForgeBaseline"]["previousFileRelations"]))
+        self.assertEqual(6, len(report["curseForgeBaseline"]["projectRelations"]))
+        self.assertEqual({"projects": UPLOAD_RELATIONS}, self.publisher()._metadata("# Notes")["relations"])
+        self.assertEqual(0, self.state.post_count)
+        self.assertEqual("", self.state.game_version_token)
+
+    def test_distinct_previous_file_relation_drift_still_blocks(self) -> None:
+        self.configure_distinct_relation_contracts()
+        self.state.previous_relations = self.state.previous_relations[:-1]
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher()
+        self.assertEqual("CURSEFORGE_RELATION_MISMATCH", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_distinct_project_relation_drift_still_blocks(self) -> None:
+        self.configure_distinct_relation_contracts()
+        self.state.project_relations = self.state.project_relations[:-1]
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher()
+        self.assertEqual("CURSEFORGE_PROJECT_RELATION_MISMATCH", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_distinct_target_missing_or_extra_relations_are_rejected(self) -> None:
+        self.configure_distinct_relation_contracts()
+        self.state.files[NEW_FILE_ID] = self.state.current_file()
+        self.state.downloads[NEW_FILE_ID] = self.jar_bytes
+        for observed in ([], self.state.previous_relations):
+            with self.subTest(relations=observed):
+                self.state.current_relations = observed
+                with self.assertRaises(PublicationError) as raised:
+                    self.run_publisher()
+                self.assertEqual("CURSEFORGE_RELATION_MISMATCH", raised.exception.status)
+                self.assertEqual(0, self.state.post_count)
+
+    def test_distinct_contracts_publish_once_and_verify_only_target_relations(self) -> None:
+        self.configure_distinct_relation_contracts()
+        intent, artifact_id = self.prepare_and_persist()
+        self.state.publish_visible = True
+        report = self.publish_from_intent(intent, artifact_id)
+        self.assertEqual("PUBLISHED_VERIFIED", report["status"])
+        self.assertEqual([EXPECTED_RELATIONS[-1]], report["publicReadback"]["relations"])
+        metadata = parse_metadata(self.state.upload_body, self.state.upload_content_type)
+        self.assertEqual({"projects": UPLOAD_RELATIONS}, metadata["relations"])
+        self.assertEqual(1, self.state.post_count)
+
+    def test_distinct_contract_resume_keeps_file_checks_without_project_aggregation(self) -> None:
+        self.configure_distinct_relation_contracts()
+        self.state.publish_visible = True
+        self.state.project_relations = self.state.current_relations
+        report = self.run_publisher(mode="publish", resume_file_id=NEW_FILE_ID)
+        self.assertEqual("RESUMED_PUBLICATION_VERIFIED", report["status"])
+        self.assertEqual(6, len(report["curseForgeBaseline"]["previousFileRelations"]))
+        self.assertEqual([EXPECTED_RELATIONS[-1]], report["publicReadback"]["relations"])
+        self.assertEqual(0, self.state.post_count)
+
+    def test_malformed_relation_contracts_fail_manifest_validation(self) -> None:
+        valid = EXPECTED_RELATIONS[-1]
+        invalid = [None, [], {}, [None], [valid, valid],
+                   [{**valid, "projectId": 0}], [{**valid, "projectId": True}],
+                   [{**valid, "slug": " "}], [{**valid, "type": ""}]]
+        path = self.repo_root / "invalid-manifest.json"
+        for field in ("expectedPreviousPublicRelations", "expectedProjectRelations", "expectedPublicRelations"):
+            for value in invalid:
+                with self.subTest(field=field, value=value):
+                    candidate = json.loads(json.dumps(self.manifest))
+                    candidate["curseforge"][field] = value
+                    path.write_text(json.dumps(candidate), encoding="utf-8")
+                    with self.assertRaises(PublicationError) as raised:
+                        load_manifest(path)
+                    self.assertEqual("MANIFEST_INVALID", raised.exception.status)
+
     def test_successful_upload_uses_official_schema_and_full_public_readback(self) -> None:
         secret = "valid-secret-value"
         intent, artifact_id = self.prepare_and_persist(token=secret)
@@ -779,6 +870,55 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual("UPLOAD_OUTCOME_UNKNOWN", raised.exception.status)
         self.assertEqual(EXIT_CONFLICT, raised.exception.exit_code)
         self.assertEqual(0, self.state.post_count)
+
+    def test_prior_intent_beyond_first_thousand_artifacts_still_blocks(self) -> None:
+        self.state.artifacts.extend(
+            {"id": 10000 + i, "name": f"unrelated-build-{i}", "expired": False}
+            for i in range(1100)
+        )
+        self.state.artifacts.append({
+            "id": 7000, "name": f"{ARTIFACT_PREFIX}99-1--intent--abcdef123456",
+            "expired": False,
+        })
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher(mode="prepare-publish", token="valid-secret",
+                               github_token="github-secret", run_key="100-1")
+        self.assertEqual("UPLOAD_OUTCOME_UNKNOWN", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_artifact_pagination_still_fails_closed_at_its_bound(self) -> None:
+        self.state.artifacts.extend(
+            {"id": 10000 + i, "name": f"unrelated-build-{i}", "expired": False}
+            for i in range(101)
+        )
+        with mock.patch("publish_curseforge.MAX_STATE_ARTIFACT_PAGES", 1):
+            with self.assertRaises(PublicationError) as raised:
+                self.run_publisher(mode="prepare-publish", token="valid-secret",
+                                   github_token="github-secret", run_key="100-1")
+        self.assertEqual("GITHUB_STATE_PAGINATION_LIMIT", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_artifact_pagination_rejects_duplicates_truncation_and_drift(self) -> None:
+        first_page = [{"id": i + 1} for i in range(100)]
+        cases = [
+            ([{"total_count": 101, "artifacts": first_page},
+              {"total_count": 101, "artifacts": [first_page[0]]}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": 101, "artifacts": first_page},
+              {"total_count": 101, "artifacts": []}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": 101, "artifacts": first_page},
+              {"total_count": 102, "artifacts": [{"id": 101}]}], "GITHUB_STATE_RESPONSE_DRIFTED"),
+            ([{"total_count": -1, "artifacts": []}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": True, "artifacts": []}], "GITHUB_STATE_RESPONSE_INVALID"),
+            ([{"total_count": 0, "artifacts": [{"id": 1}]}], "GITHUB_STATE_RESPONSE_INVALID"),
+        ]
+        for responses, expected_status in cases:
+            with self.subTest(expected=expected_status, responses=responses):
+                publisher = self.publisher()
+                with mock.patch.object(publisher.http, "get_json", side_effect=responses):
+                    with self.assertRaises(PublicationError) as raised:
+                        publisher._prior_durable_state_resume_id("github-secret", "100-1")
+                self.assertEqual(expected_status, raised.exception.status)
+                self.assertEqual(0, self.state.post_count)
 
     def test_prior_persisted_state_for_another_tag_does_not_block(self) -> None:
         prior_tag = "v1.1.53-reconstructed"
@@ -1086,6 +1226,16 @@ class LocalSourcePublisherTests(PublisherTests):
         self.local_jar.unlink()
         self.assert_blocked("LOCAL_JAR_MISSING")
         self.assertEqual([], self.state.requested_paths)
+
+    def test_baseline_manifest_change_invalidates_persisted_local_intent(self) -> None:
+        self.configure_distinct_relation_contracts()
+        intent, artifact_id = self.prepare_and_persist()
+        self.manifest["curseforge"]["expectedPreviousPublicRelations"] = self.manifest["curseforge"]["expectedPreviousPublicRelations"][:-1]
+        self.state.previous_relations = self.state.previous_relations[:-1]
+        with self.assertRaises(PublicationError) as raised:
+            self.publish_from_intent(intent, artifact_id)
+        self.assertEqual("UPLOAD_INTENT_REPORT_MISMATCH", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
 
     def test_local_jar_is_required(self) -> None:
         self.local_jar = None

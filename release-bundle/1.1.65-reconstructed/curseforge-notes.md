@@ -1,7 +1,7 @@
 # IEDCTR 1.1.65-reconstructed
 
-Draft release notes for source `52639384ea90aebe9d563b966027421cebe52b45`.
-These notes are not evidence of publication or completed final-JAR qualification.
+Release candidate from source `52639384ea90aebe9d563b966027421cebe52b45`, following public 1.1.64.
+Automated source GameTests, reproducible JAR builds and a packaged-server baseline smoke passed. Full client-gameplay and visual acceptance of this packaged JAR remains unverified.
 
 ## Compatibility and rendering
 
@@ -29,6 +29,10 @@ These notes are not evidence of publication or completed final-JAR qualification
 
 ## Requirements and update precautions
 
+- The owner's separate Prism gameplay report confirms a corner connection only when starting from the vertical support. Placement-order-dependent connection behavior remains a known follow-up; that report used local JAR SHA-256 `5a0455957d69d818d850c18a0eb99c9e6013c5be495c6f5473c18bfd8b6de2c1`, not this canonical packaged JAR (`c8b5b2768a3139fec4663368310b29a5b3c106653e05b8df8c356846316c8d9e`). It is not full three-case or exact-JAR client acceptance.
+- F004: affected supports are currently immobile to pistons. No data loss has been demonstrated by the available evidence.
+- Additional connection screenshots and associated corrections are reserved for a later PR; they do not expand this release or establish missing acceptance results.
+
 Minecraft **1.21.1**, **Java 21**, NeoForge **21.1.230 minimum**.
 Immersive Engineering **12.4.2-194 minimum** is required; JEI **19.32.0.359 minimum** is optional.
 These are declared dependency ranges, not proof that every later dependency version has been tested.
@@ -36,7 +40,7 @@ The specifically exercised Lithium target is **mc1.21.1-0.15.4 NeoForge**; Lithi
 
 Back up worlds and replace the prior IEDCTR JAR; keep only one IEDCTR version installed.
 Do not assume exhaustive compatibility with arbitrary modpacks, renderers, legacy saves or all fluid/block combinations.
-Final-artifact client and packaged-server acceptance must be recorded separately from source-level automated tests.
+The exact packaged JAR passed a dedicated-server baseline smoke. The source CI also exercises native client gameplay paths, but full in-game client rendering and new-feature acceptance of the packaged JAR have not been independently completed.
 
 ## Provenance and support
 

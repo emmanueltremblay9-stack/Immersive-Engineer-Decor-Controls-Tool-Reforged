@@ -36,6 +36,9 @@ USER_AGENT = "IEDCT-CurseForge-Publisher/1"
 PUBLICATION_WORKFLOW_FILE = "publish-curseforge.yml"
 PERSIST_INTENT_STEP_NAME = "Persist upload intent before any POST"
 BUILD_WORKFLOW_PATH = ".github/workflows/build.yml"
+# Repository-wide artifacts include unrelated Build evidence. Keep complete,
+# bounded reconciliation rather than silently ignoring older publication state.
+MAX_STATE_ARTIFACT_PAGES = 100
 
 RELEASE_TYPE_NUMERIC = {"release": 1, "beta": 2, "alpha": 3}
 SUPPORTED_UPLOAD_RELATIONS = {
@@ -304,9 +307,28 @@ def load_manifest(path: Path) -> dict[str, Any]:
             )
         if not relation.get("projectID") or not relation.get("slug"):
             raise PublicationError("MANIFEST_INVALID", "Upload relation is incomplete")
-    expected = curseforge.get("expectedPublicRelations")
-    if not isinstance(expected, list) or not expected:
-        raise PublicationError("MANIFEST_INVALID", "Expected public relations are required")
+    for field in ("expectedPublicRelations", "expectedPreviousPublicRelations", "expectedProjectRelations"):
+        if field != "expectedPublicRelations" and field not in curseforge:
+            continue  # Historical manifests retain their original shared contract.
+        expected = curseforge.get(field)
+        if not isinstance(expected, list) or not expected:
+            raise PublicationError("MANIFEST_INVALID", f"{field} must be a non-empty relation list")
+        seen_projects: set[int] = set()
+        for relation in expected:
+            if (
+                not isinstance(relation, dict)
+                or set(relation) != {"projectId", "slug", "type"}
+                or type(relation.get("projectId")) is not int
+                or relation["projectId"] <= 0
+                or not isinstance(relation.get("slug"), str)
+                or not relation["slug"].strip()
+                or not isinstance(relation.get("type"), str)
+                or not relation["type"].strip()
+            ):
+                raise PublicationError("MANIFEST_INVALID", f"{field} contains an invalid relation")
+            if relation["projectId"] in seen_projects:
+                raise PublicationError("MANIFEST_INVALID", f"{field} repeats a project")
+            seen_projects.add(relation["projectId"])
     return manifest
 
 
@@ -622,15 +644,19 @@ class Publisher:
             str(relation.get("type", "")),
         )
 
-    def _validate_expected_relations(self, file_id: int) -> list[dict[str, Any]]:
+    def _validate_expected_relations(
+        self, file_id: int, *, expected_relations: list[dict[str, Any]] | None = None
+    ) -> list[dict[str, Any]]:
         actual = sorted(self._relation_key(item, True) for item in self._public_relations(file_id))
+        if expected_relations is None:
+            expected_relations = self.cf["expectedPublicRelations"]
         expected = sorted(
-            self._relation_key(item, False) for item in self.cf["expectedPublicRelations"]
+            self._relation_key(item, False) for item in expected_relations
         )
         if actual != expected:
             raise PublicationError(
                 "CURSEFORGE_RELATION_MISMATCH",
-                "CurseForge dependency relation readback differs from the approved baseline",
+                f"CurseForge dependency relations for file {file_id} differ from its reviewed contract",
             )
         return [
             {"projectId": project_id, "slug": slug, "type": relation_type}
@@ -642,7 +668,8 @@ class Publisher:
             self._relation_key(item, True) for item in self._public_project_relations()
         )
         expected = sorted(
-            self._relation_key(item, False) for item in self.cf["expectedPublicRelations"]
+            self._relation_key(item, False)
+            for item in self.cf.get("expectedProjectRelations", self.cf["expectedPublicRelations"])
         )
         if actual != expected:
             raise PublicationError(
@@ -673,7 +700,12 @@ class Publisher:
             )
         baseline = {
             "previousFileId": previous_id,
-            "previousFileRelations": self._validate_expected_relations(previous_id),
+            "previousFileRelations": self._validate_expected_relations(
+                previous_id,
+                expected_relations=self.cf.get(
+                    "expectedPreviousPublicRelations", self.cf["expectedPublicRelations"]
+                ),
+            ),
         }
         if validate_project_relations:
             baseline["projectRelations"] = self._validate_expected_project_relations()
@@ -1043,8 +1075,9 @@ class Publisher:
         owner = urllib.parse.quote(self.repository["owner"], safe="")
         name = urllib.parse.quote(self.repository["name"], safe="")
         artifacts: list[dict[str, Any]] = []
+        artifact_ids: set[int] = set()
         total_count: int | None = None
-        for page in range(1, 11):
+        for page in range(1, MAX_STATE_ARTIFACT_PAGES + 1):
             result = self.http.get_json(
                 f"{self.github_api}/repos/{owner}/{name}/actions/artifacts?per_page=100&page={page}",
                 label=f"GitHub durable publication state page {page}",
@@ -1055,7 +1088,7 @@ class Publisher:
                     "GITHUB_STATE_RESPONSE_INVALID",
                     "GitHub Actions artifact state response is invalid",
                 )
-            if not isinstance(result.get("total_count"), int):
+            if type(result.get("total_count")) is not int or result["total_count"] < 0:
                 raise PublicationError(
                     "GITHUB_STATE_RESPONSE_INVALID",
                     "GitHub Actions artifact state omitted total_count",
@@ -1067,8 +1100,18 @@ class Publisher:
                     "GITHUB_STATE_RESPONSE_DRIFTED",
                     "GitHub Actions artifact state changed during pagination",
                 )
-            artifacts.extend(result["artifacts"])
-            if len(artifacts) >= total_count:
+            page_artifacts = result["artifacts"]
+            if len(page_artifacts) > 100 or (not page_artifacts and len(artifacts) < total_count):
+                raise PublicationError("GITHUB_STATE_RESPONSE_INVALID", "GitHub artifact pagination made no progress or exceeded page size")
+            for artifact in page_artifacts:
+                artifact_id = artifact.get("id") if isinstance(artifact, dict) else None
+                if type(artifact_id) is not int or artifact_id <= 0 or artifact_id in artifact_ids:
+                    raise PublicationError("GITHUB_STATE_RESPONSE_INVALID", "GitHub artifact pagination contains invalid or repeated identities")
+                artifact_ids.add(artifact_id)
+            artifacts.extend(page_artifacts)
+            if len(artifacts) > total_count:
+                raise PublicationError("GITHUB_STATE_RESPONSE_INVALID", "GitHub artifact count exceeds reported total")
+            if len(artifacts) == total_count:
                 break
         if total_count is None or len(artifacts) < total_count:
             raise PublicationError(
