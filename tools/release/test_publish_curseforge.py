@@ -871,6 +871,33 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(EXIT_CONFLICT, raised.exception.exit_code)
         self.assertEqual(0, self.state.post_count)
 
+    def test_prior_intent_beyond_first_thousand_artifacts_still_blocks(self) -> None:
+        self.state.artifacts.extend(
+            {"id": 10000 + i, "name": f"unrelated-build-{i}", "expired": False}
+            for i in range(1100)
+        )
+        self.state.artifacts.append({
+            "id": 7000, "name": f"{ARTIFACT_PREFIX}99-1--intent--abcdef123456",
+            "expired": False,
+        })
+        with self.assertRaises(PublicationError) as raised:
+            self.run_publisher(mode="prepare-publish", token="valid-secret",
+                               github_token="github-secret", run_key="100-1")
+        self.assertEqual("UPLOAD_OUTCOME_UNKNOWN", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_artifact_pagination_still_fails_closed_at_its_bound(self) -> None:
+        self.state.artifacts.extend(
+            {"id": 10000 + i, "name": f"unrelated-build-{i}", "expired": False}
+            for i in range(101)
+        )
+        with mock.patch("publish_curseforge.MAX_STATE_ARTIFACT_PAGES", 1):
+            with self.assertRaises(PublicationError) as raised:
+                self.run_publisher(mode="prepare-publish", token="valid-secret",
+                                   github_token="github-secret", run_key="100-1")
+        self.assertEqual("GITHUB_STATE_PAGINATION_LIMIT", raised.exception.status)
+        self.assertEqual(0, self.state.post_count)
+
     def test_prior_persisted_state_for_another_tag_does_not_block(self) -> None:
         prior_tag = "v1.1.53-reconstructed"
         run_key = "99-1"

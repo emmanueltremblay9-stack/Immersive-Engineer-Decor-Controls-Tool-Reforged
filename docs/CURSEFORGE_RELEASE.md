@@ -98,6 +98,11 @@ See [the next-patch qualification checklist](releases/next-patch-qualification.m
 
 ## Local verification
 
+Durable artifact reconciliation reads at most 100 pages of 100 repository artifacts
+(10,000 records), including unrelated build evidence. Exhausting this bound or
+observing a changing total count still fails closed; old publication intents must
+never be dropped merely because newer Build artifacts fill the first 1,000 records.
+
 Run the dependency-free tests with Python 3.11 or newer:
 
 ```sh

@@ -36,6 +36,9 @@ USER_AGENT = "IEDCT-CurseForge-Publisher/1"
 PUBLICATION_WORKFLOW_FILE = "publish-curseforge.yml"
 PERSIST_INTENT_STEP_NAME = "Persist upload intent before any POST"
 BUILD_WORKFLOW_PATH = ".github/workflows/build.yml"
+# Repository-wide artifacts include unrelated Build evidence. Keep complete,
+# bounded reconciliation rather than silently ignoring older publication state.
+MAX_STATE_ARTIFACT_PAGES = 100
 
 RELEASE_TYPE_NUMERIC = {"release": 1, "beta": 2, "alpha": 3}
 SUPPORTED_UPLOAD_RELATIONS = {
@@ -1073,7 +1076,7 @@ class Publisher:
         name = urllib.parse.quote(self.repository["name"], safe="")
         artifacts: list[dict[str, Any]] = []
         total_count: int | None = None
-        for page in range(1, 11):
+        for page in range(1, MAX_STATE_ARTIFACT_PAGES + 1):
             result = self.http.get_json(
                 f"{self.github_api}/repos/{owner}/{name}/actions/artifacts?per_page=100&page={page}",
                 label=f"GitHub durable publication state page {page}",
