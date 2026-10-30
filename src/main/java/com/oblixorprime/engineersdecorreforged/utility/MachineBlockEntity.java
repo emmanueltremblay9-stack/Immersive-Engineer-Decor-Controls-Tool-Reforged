@@ -31,8 +31,10 @@ import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.WorldlyContainer;
-import net.minecraft.world.entity.animal.Cow;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -77,6 +79,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int SLOT_COUNT = 27;
    private static final String IE_NAMESPACE = "immersiveengineering";
    private static final TagKey<Item> IE_HAMMERS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("immersiveengineering", "tools/hammers"));
+   private static final TagKey<EntityType<?>> MILCH_COWS = TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath("c", "milch_cows"));
    private static final ResourceLocation IE_FURNACE_HEATER = ResourceLocation.fromNamespaceAndPath("immersiveengineering", "furnace_heater");
    private static final int BUCKET_AMOUNT = 1000;
    private static final int BARREL_CAPACITY = 32000;
@@ -2533,7 +2536,13 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             }
 
             AABB box = new AABB(this.worldPosition.relative(direction)).inflate(2.0, 1.5, 2.0);
-            if (this.level.getEntitiesOfClass(Cow.class, box, cow -> cow.isAlive() && !cow.isBaby()).isEmpty()) {
+            if (this.level.getEntitiesOfClass(
+               LivingEntity.class,
+               box,
+               entity -> entity.getType().is(MILCH_COWS)
+                  && entity.isAlive()
+                  && (!(entity instanceof AgeableMob ageable) || !ageable.isBaby())
+            ).isEmpty()) {
                this.setBooleanProperty(MachineBlocks.ACTIVE, false);
             } else {
                if (canFillBucket) {
