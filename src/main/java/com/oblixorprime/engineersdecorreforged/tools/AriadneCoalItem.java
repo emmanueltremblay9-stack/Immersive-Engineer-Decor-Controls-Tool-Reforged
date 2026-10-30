@@ -4,7 +4,6 @@ import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -15,56 +14,47 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
-public class AriadneCoalItem extends TooltipItem {
+public class AriadneCoalItem extends NonEnchantableTooltipItem {
    public AriadneCoalItem(Properties properties) {
       super("ariadne_coal", properties);
    }
 
-   public InteractionResult useOn(UseOnContext context) {
+   @Override
+   public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+      Level level = context.getLevel();
+      if (level.isClientSide) {
+         return InteractionResult.PASS;
+      }
       Player player = context.getPlayer();
       if (player == null) {
          return InteractionResult.PASS;
       }
 
-      Level level = context.getLevel();
       Direction face = context.getClickedFace();
       BlockPos clickedPos = context.getClickedPos();
       BlockPos placePos = context.getClickedPos().relative(face);
+      BlockState clickedState = level.getBlockState(clickedPos);
       BlockState marker = (BlockState)((BlockState)((PortedBlocks.AriadneMarkerBlock)ModBlocks.ARIADNE_MARKER.get())
             .defaultBlockState()
             .setValue(PortedBlocks.FACING, face))
          .setValue(PortedBlocks.ARIADNE_MARKER_ROTATION, markerDirection(context));
-      if (level.getBlockState(placePos).canBeReplaced()
-         && level.getBlockState(clickedPos).isFaceSturdy(level, clickedPos, face)
+      if ((level.getBlockState(placePos).canBeReplaced() || clickedState.is(ModBlocks.ARIADNE_MARKER.get()))
+         && clickedState.isFaceSturdy(level, clickedPos, face)
          && marker.canSurvive(level, placePos)) {
-         if (!level.isClientSide) {
-            level.setBlock(placePos, marker, 11);
-            ItemStack stack = context.getItemInHand();
+         if (level.setBlock(placePos, marker, 3)) {
             boolean broke = false;
-            if (!player.getAbilities().instabuild) {
-               stack.setDamageValue(stack.getDamageValue() + 1);
-               if (stack.getDamageValue() >= stack.getMaxDamage()) {
-                  player.setItemInHand(context.getHand(), ItemStack.EMPTY);
-                  broke = true;
-               }
+            stack.setDamageValue(stack.getDamageValue() + 1);
+            if (stack.getDamageValue() >= stack.getMaxDamage()) {
+               player.setItemInHand(context.getHand(), ItemStack.EMPTY);
+               broke = true;
             }
 
-            level.playSound(null, placePos, broke ? SoundEvents.WOOD_BREAK : SoundEvents.GRAVEL_HIT, player.getSoundSource(), 0.4F, 2.0F);
-            player.displayClientMessage(Component.translatable("item.immersive_engineer_decor_controls_tool_reforged.ariadne_coal.msg.placed"), true);
+            level.playSound(null, clickedPos, broke ? SoundEvents.WOOD_BREAK : SoundEvents.GRAVEL_HIT, player.getSoundSource(), 0.4F, 2.0F);
+            return InteractionResult.SUCCESS;
          }
-
-         return InteractionResult.SUCCESS;
-      } else {
-         return fail(level, player);
+         return InteractionResult.FAIL;
       }
-   }
-
-   private static InteractionResult fail(Level level, Player player) {
-      if (!level.isClientSide) {
-         player.displayClientMessage(Component.translatable("item.immersive_engineer_decor_controls_tool_reforged.ariadne_coal.msg.badtarget"), true);
-      }
-
-      return InteractionResult.FAIL;
+      return InteractionResult.PASS;
    }
 
    private static int markerDirection(UseOnContext context) {

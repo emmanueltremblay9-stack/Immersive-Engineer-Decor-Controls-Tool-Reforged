@@ -4,12 +4,12 @@ import com.oblixorprime.engineersdecorreforged.ModRecipeSerializers;
 import java.util.List;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.Tags;
 
 public final class RediaToolRepairRecipe extends CustomRecipe {
    private static final int REPAIR_PERCENT = 65;
@@ -56,7 +56,7 @@ public final class RediaToolRepairRecipe extends CustomRecipe {
             }
 
             tool = stack;
-         } else if (stack.is(Items.DIAMOND)) {
+         } else if (stack.is(Tags.Items.GEMS_DIAMOND)) {
             if (!diamond.isEmpty()) {
                return null;
             }

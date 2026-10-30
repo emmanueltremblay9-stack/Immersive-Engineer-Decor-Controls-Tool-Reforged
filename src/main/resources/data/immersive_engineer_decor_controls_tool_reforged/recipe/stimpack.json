@@ -1,9 +1,15 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "immersive_engineer_decor_controls_tool_reforged:engineer_tools_item_enabled",
+      "item": "immersive_engineer_decor_controls_tool_reforged:stimpack"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
     "FPI",
-    "FGA",
+    "FNA",
     " N "
   ],
   "key": {
@@ -15,9 +21,6 @@
     },
     "I": {
       "item": "minecraft:iron_ingot"
-    },
-    "G": {
-      "item": "minecraft:glistering_melon_slice"
     },
     "A": {
       "item": "minecraft:golden_apple"

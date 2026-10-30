@@ -1,0 +1,13 @@
+{
+  "type": "immersive_engineer_decor_controls_tool_reforged:metal_crafting",
+  "tool": {
+    "tag": "immersiveengineering:tools/wirecutters"
+  },
+  "material": {
+    "tag": "c:plates/copper"
+  },
+  "result": {
+    "id": "immersiveengineering:wire_copper",
+    "count": 1
+  }
+}

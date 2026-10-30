@@ -1,7 +1,7 @@
 Auto Stim Pack
 Emergency injector
-<&recipe>The Auto Stim Pack is an emergency recovery item for dangerous maintenance work.<br>
+<&recipe>The Auto Stim Pack begins a 20-tick injection sequence automatically when health falls to three hearts or less. It then heals three hearts and briefly grants movement speed, regeneration, resistance, and fire resistance.<br>
 <br>
-Usage: Use it manually to heal, gain brief protection, and get a short movement boost. When carried in inventory, it can also trigger automatically at low health, then enters cooldown.<br>
+Usage: Carry it in inventory or a supported Curios slot. It contains two injections and cannot be activated manually.<br>
 <br>
 Keep one available before testing high places, exposed wiring, or hostile mine routes.

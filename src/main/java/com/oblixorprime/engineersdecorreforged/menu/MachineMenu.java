@@ -4,10 +4,8 @@ import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.recipe.MetalCraftingRecipe;
 import java.util.Locale;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,7 +16,6 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -37,8 +34,6 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int DEFAULT_FLUID_CAPACITY = 4000;
    private static final int SMALL_FLUID_FUNNEL_CAPACITY = 3000;
    private static final int TEMPERATURE_PROCESS_TICKS = 180;
-   private static final String IE_NAMESPACE = "immersiveengineering";
-   private static final TagKey<Item> IE_HAMMERS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("immersiveengineering", "tools/hammers"));
    private static final int METAL_TABLE_HAMMER = 0;
    private static final int METAL_TABLE_GRID_FIRST = 1;
    private static final int METAL_TABLE_GRID_END = 10;
@@ -233,7 +228,9 @@ public class MachineMenu extends AbstractContainerMenu {
 
    private boolean movePlayerStackToMachine(Player player, ItemStack stack) {
       return switch (this.kind) {
-         case METAL_CRAFTING_TABLE -> isHammer(stack) ? this.moveToMachineContainerSlots(stack, 0) : this.moveToMachineContainerRange(stack, 1, 10);
+         case METAL_CRAFTING_TABLE -> MetalCraftingRecipe.isTableTool(stack)
+            ? this.moveToMachineContainerSlots(stack, 0)
+            : this.moveToMachineContainerRange(stack, 1, 10);
          case SMALL_LAB_FURNACE -> this.isSmeltable(player, stack)
             ? this.moveToMachineContainerSlots(stack, 0, 3, 4)
             : (AbstractFurnaceBlockEntity.isFuel(stack) ? this.moveToMachineContainerSlots(stack, 1, 5, 6) : this.moveToMachineContainerSlots(stack, 9, 10));
@@ -340,10 +337,6 @@ public class MachineMenu extends AbstractContainerMenu {
          : player.level().getRecipeManager().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput(stack), player.level()).isPresent();
    }
 
-   private static boolean isHammer(ItemStack stack) {
-      return !stack.isEmpty() && stack.is(IE_HAMMERS);
-   }
-
    private static final class MetalCraftingInputSlot extends MachineMenu.ValidatedMachineSlot {
       private final Container container;
 
@@ -366,6 +359,12 @@ public class MachineMenu extends AbstractContainerMenu {
       MetalCraftingResultSlot(Container container, int slot, int x, int y) {
          super(container, slot, x, y);
          this.container = container;
+      }
+
+      @Override
+      public ItemStack remove(int amount) {
+         ItemStack result = this.getItem();
+         return result.isEmpty() ? ItemStack.EMPTY : super.remove(result.getCount());
       }
 
       public void onTake(Player player, ItemStack stack) {

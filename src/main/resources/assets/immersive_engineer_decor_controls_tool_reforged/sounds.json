@@ -1,7 +1,12 @@
 {
   "alarm_siren": {
     "category": "block",
-    "subtitle": "rsgauges.subtitle.soundindicator1",
+    "subtitle": "rsgauges.subtitle.industrial_alarm_siren",
     "sounds": [ "immersive_engineer_decor_controls_tool_reforged:soundindicator1" ]
+  },
+  "stimpack_inject_sound": {
+    "category": "block",
+    "subtitle": "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject",
+    "sounds": [ "immersive_engineer_decor_controls_tool_reforged:stimpack_inject" ]
   }
 }

@@ -1,25 +1,23 @@
 package com.oblixorprime.engineersdecorreforged.tools;
 
-import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
+import com.mojang.datafixers.util.Either;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Unit;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Player.BedSleepingProblem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item.Properties;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.phys.AABB;
+import net.neoforged.neoforge.event.entity.player.CanContinueSleepingEvent;
+import net.neoforged.neoforge.event.EventHooks;
 
-public class SleepingBagItem extends TooltipItem {
+public class SleepingBagItem extends NonEnchantableTooltipItem {
    public static final int MAX_DAMAGE = 4096;
-   private static final long DAY_LENGTH = 24000L;
-   private static final long REST_START = 12542L;
-   private static final long REST_END = 23459L;
-   private static final int COOLDOWN_TICKS = 400;
 
    public SleepingBagItem(Properties properties) {
       super("sleeping_bag", properties);
@@ -31,43 +29,80 @@ public class SleepingBagItem extends TooltipItem {
    }
 
    @Override
-   public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-      ItemStack stack = player.getItemInHand(hand);
-      if (level.isClientSide) {
-         return InteractionResultHolder.success(stack);
+   public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+      if (context.getLevel().getBlockState(context.getClickedPos()).isBed(context.getLevel(), context.getClickedPos(), context.getPlayer())) {
+         return InteractionResult.PASS;
+      }
+      if (context.getLevel().isClientSide) {
+         return InteractionResult.SUCCESS;
+      }
+      if (context.getClickedFace() != Direction.UP || !(context.getPlayer() instanceof ServerPlayer player)) {
+         return InteractionResult.CONSUME;
       }
 
-      if (level.dimension() != Level.OVERWORLD) {
-         return fail(player, stack, "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.dimension");
+      BlockPos sleepPos = context.getClickedPos().above();
+      if (player.isSpectator() || player.isCreative() || player.isSleeping()) {
+         return InteractionResult.CONSUME;
       }
 
-      long dayTime = Math.floorMod(level.getDayTime(), 24000L);
-      if (dayTime >= 12542L && dayTime <= 23459L) {
-         AABB area = AABB.ofSize(player.position(), 16.0, 8.0, 16.0);
-         if (!level.getEntitiesOfClass(Monster.class, area, LivingEntity::isAlive).isEmpty()) {
-            return fail(player, stack, "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.unsafe");
-         }
+      BedSleepingProblem problem = null;
+      if (!player.isAlive()) {
+         problem = BedSleepingProblem.OTHER_PROBLEM;
+      } else if (!player.level().dimensionType().natural()) {
+         problem = BedSleepingProblem.NOT_POSSIBLE_HERE;
+      } else if (!player.level()
+         .getEntitiesOfClass(
+            Monster.class,
+            new AABB(
+               sleepPos.getX() - 8.0,
+               sleepPos.getY() - 5.0,
+               sleepPos.getZ() - 8.0,
+               sleepPos.getX() + 8.0,
+               sleepPos.getY() + 5.0,
+               sleepPos.getZ() + 8.0
+            ),
+            monster -> monster.isPreventingPlayerRest(player)
+         )
+         .isEmpty()) {
+         problem = BedSleepingProblem.NOT_SAFE;
+      } else if (player.level().isDay()) {
+         problem = BedSleepingProblem.NOT_POSSIBLE_NOW;
+      }
+      if (problem != null && problem != BedSleepingProblem.NOT_POSSIBLE_NOW) {
+         player.displayClientMessage(problem.getMessage(), true);
+         return InteractionResult.CONSUME;
+      }
 
-         if (level instanceof ServerLevel serverLevel) {
-            long nextMorning = (serverLevel.getDayTime() / 24000L + 1L) * 24000L;
-            serverLevel.setDayTime(nextMorning);
-         }
-
-         player.getCooldowns().addCooldown(this, 400);
-         if (!player.getAbilities().instabuild) {
-            stack.hurtAndBreak(1, player, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-         }
-
-         level.playSound(null, player.blockPosition(), SoundEvents.WOOL_PLACE, player.getSoundSource(), 0.8F, 0.8F);
-         player.displayClientMessage(Component.translatable("item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.rested"), true);
-         return InteractionResultHolder.success(stack);
+      var sleepResult = EventHooks.canPlayerStartSleeping(
+         player,
+         sleepPos,
+         problem == null ? Either.<BedSleepingProblem, Unit>right(Unit.INSTANCE) : Either.<BedSleepingProblem, Unit>left(problem)
+      );
+      BedSleepingProblem rejected = sleepResult.left().orElse(null);
+      if (rejected != null) {
+         player.displayClientMessage(rejected.getMessage(), true);
       } else {
-         return fail(player, stack, "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.daytime");
+         player.startSleeping(sleepPos);
+         player.serverLevel().updateSleepingPlayerList();
+      }
+      return InteractionResult.CONSUME;
+   }
+
+   @Override
+   public InteractionResult useOn(UseOnContext context) {
+      return InteractionResult.FAIL;
+   }
+
+   public static void onCanContinueSleeping(CanContinueSleepingEvent event) {
+      if (event.getProblem() == BedSleepingProblem.NOT_POSSIBLE_HERE
+         && event.getEntity() instanceof Player player
+         && isHeldSleepingBag(player)) {
+         event.setContinueSleeping(true);
       }
    }
 
-   private static InteractionResultHolder<ItemStack> fail(Player player, ItemStack stack, String key) {
-      player.displayClientMessage(Component.translatable(key), true);
-      return InteractionResultHolder.fail(stack);
+   private static boolean isHeldSleepingBag(Player player) {
+      return player.getMainHandItem().getItem() instanceof SleepingBagItem
+         || player.getOffhandItem().getItem() instanceof SleepingBagItem;
    }
 }

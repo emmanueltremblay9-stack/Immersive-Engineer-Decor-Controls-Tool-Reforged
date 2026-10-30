@@ -2,6 +2,98 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.49-reconstructed] - 2026-07-16
+
+### Fixed
+
+- Prevented the Factory Placer from bypassing vanilla entity-collision checks when placing block items.
+- Preserved the remaining Steel Mesh Fence Gate segment when its independently placed neighbor is removed.
+- Restored offhand Sleeping Bag continuation, exact one-shot Labeled Crate label authorization with logout/server-stop cleanup, and powered Alarm Siren audio.
+- Corrected stale Engineer's Manual and JEI descriptions and removed invalid Muslee Bar crafting-recipe references.
+
+### Validation
+
+- Added GameTests for placement collision, gate-segment preservation, offhand sleeping, label authorization, and siren registration/scheduling.
+- Extended resource parity auditing to reject Engineer's Manual references to missing local recipes.
+- Preserved the intentional grit-to-dust recipe conversion; no direct Muslee Bar recipe or invented Material Box scroll behavior was added.
+
+## [1.1.48-reconstructed] - 2026-07-16
+
+### Fixed
+
+- Preserved full REDIA durability after diamond over-repair when a reduced initial-durability setting is configured.
+- Preserved repaired REDIA stacks carrying enchantments, custom names, or other non-damage components, matching the original 1.16.5 crafting-data guard.
+- Restored the original sneak-use face routing, Diamond-tier anvil repair ingredient, and Silk Touch compatibility.
+- Routed carried-torch placement through the vanilla Torch Item behavior and restored the original handled result for already-sheared targets.
+
+## [1.1.46-reconstructed] - 2026-07-16
+
+### Restored
+
+- Restored all ten published Engineer's Tools configuration settings, including durability, repair, enchantment curves, safe attacking, recipe filtering, chest loot, and diagnostic logging.
+- Restored the original 16 chest-loot targets and probabilities while keeping the intentional modern grit-to-dust conversion for metal rewards.
+- Restored Curios charm-slot support for Auto Stim Pack and Diving Capsule, including the player slot assignment required for their normal inventory-tick behavior.
+- Restored the compact Tracker tooltip with target, integer distance, and dimension fallback behavior from the published artifact.
+
+### Corrected
+
+- Added recipe conditions so Engineer's Tools include/exclude patterns consistently affect crafting visibility and the creative tab.
+- Declared Curios 9.5.1 as an optional NeoForge dependency and added the exact development runtime used by the integration tests.
+
+## [1.1.45-reconstructed] - 2026-07-16
+
+### Restored
+
+- Restored the original 54-slot persistent Material Box menu and the original persistent Muslee Bar Press input/output menu.
+- Restored Auto Stim Pack arming, two-use durability, original buffs, and injection audio; restored Diving Capsule ten-use and 70-percent-air behavior.
+- Restored Sleeping Bag integration with the normal sleep process and Tracker block/entity tracking with its dynamic 3D pointer models.
+- Restored original 3D item models, GUI textures, tracker textures, Ariadne marker pixels, Stim Pack audio, and Engineer's Tools localization in English, German, and Chinese.
+- Restored normal-grid crushing for all ten original metal families, with optional Mekanism conditions for osmium/tin and exact per-metal hammer wear.
+
+### Corrected
+
+- Corrected the Tracker, Stim Pack, and Muslee Bar Press crafting recipes and removed the non-upstream direct Muslee Bar recipe.
+- Restored original Muslee Bar nutrition/saturation and creative-mode consumption/wear behavior for Engineer's Tools consumables and tools.
+- Added the exact Engineer's Tools 1.1.7 artifact filename and SHA-256 to reconstruction provenance and built-JAR metadata.
+
+## [1.1.44-reconstructed] - 2026-07-16
+
+### Added
+
+- Added a dedicated Metal Crafting recipe type and JEI category whose sole workstation is the Metal Crafting Table.
+- Added table-only plate cutting with Immersive Engineering Engineer's Wire Cutters for aluminum, copper, electrum, lead, and steel wire.
+
+### Changed
+
+- Moved all Ore Crushing Hammer iron and gold dust recipes out of vanilla crafting and into the Metal Crafting Table's dedicated tool workflow.
+- Moved Immersive Engineering's five plate-to-wire crafting recipes out of vanilla crafting while retaining their original recipe identifiers.
+- Kept IE hammer-to-plate processing and ordinary 3x3 crafting behavior in the Metal Crafting Table unchanged.
+- Synchronized user-visible mod version metadata to `1.1.44-reconstructed`.
+
+## [1.1.43-reconstructed] - 2026-07-16
+
+### Changed
+
+- Removed the legacy Coarse Iron Grit and Coarse Gold Grit entries from the Engineer's Manual, the mod creative tab, and JEI's ingredient and recipe displays.
+- Retained both legacy item identifiers plus their smelting and blasting recipes so existing worlds can still convert old stacks into ingots.
+- Kept every current Ore Crushing Hammer recipe pointed at Immersive Engineering iron or gold dust.
+- Synchronized user-visible mod version metadata to `1.1.43-reconstructed`.
+
+## [1.1.42-reconstructed] - 2026-07-15
+
+### Fixed
+
+- Replaced the Engineer's Manual crafting widgets for Coarse Iron Grit and Coarse Gold Grit with supported item-display widgets. Immersive Engineering can now initialize the `engineer_tools`, `iron_grit`, and `gold_grit` entries without casting smelting recipes to crafting recipes.
+
+### Confirmed existing integration
+
+- Confirmed the dedicated creative tab exports all 214 registered mod items to JEI in the current LAB runtime.
+- Confirmed the optional JEI plugin is discovered and participates in JEI's catalyst, recipe-info, and GUI-handler registration callbacks.
+
+### Changed
+
+- Synchronized user-visible mod version metadata to `1.1.42-reconstructed`.
+
 ## [1.1.41-reconstructed] - 2026-07-09
 
 ### Validation

@@ -1,0 +1,15 @@
+{
+  "type": "immersive_engineer_decor_controls_tool_reforged:crushing",
+  "group": "dust",
+  "tool": {
+    "item": "immersive_engineer_decor_controls_tool_reforged:crushing_hammer"
+  },
+  "material": {
+    "tag": "c:ores/aluminum"
+  },
+  "result": {
+    "id": "immersiveengineering:dust_aluminum",
+    "count": 2
+  },
+  "tool_damage": 10
+}

@@ -1,5 +1,0 @@
-Coarse Iron Grit
-Legacy crushed iron feed
-<&recipe>Coarse Iron Grit is retained for existing worlds that already contain the old hammer output.<br>
-<br>
-Usage: Smelt or blast it into iron ingots. New Ore Crushing Hammer recipes now produce Immersive Engineering iron dust instead.

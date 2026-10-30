@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "immersive_engineer_decor_controls_tool_reforged:crushing",
+  "group": "dust",
+  "tool": {
+    "item": "immersive_engineer_decor_controls_tool_reforged:crushing_hammer"
+  },
+  "material": {
+    "tag": "c:ores/tin"
+  },
+  "result": {
+    "id": "mekanism:dust_tin",
+    "count": 2
+  },
+  "tool_damage": 10
+}

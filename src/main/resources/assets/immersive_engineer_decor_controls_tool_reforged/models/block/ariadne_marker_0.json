@@ -1,5 +1,5 @@
 {
-	"render_type": "cutout",
+	"render_type": "translucent",
 	"parent": "block/cube",
 	"textures": {
 		"s": "immersive_engineer_decor_controls_tool_reforged:block/ariadne_marker_0",

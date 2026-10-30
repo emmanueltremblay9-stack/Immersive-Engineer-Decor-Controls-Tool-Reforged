@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.oblixorprime.engineersdecorreforged.ModSounds;
 import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsBlockTypes;
 import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsModule;
 import com.oblixorprime.engineersdecorreforged.rsgauges.SwitchLinkPearlItem;
@@ -8,6 +9,7 @@ import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.CompoundTag;
@@ -547,6 +549,33 @@ public final class ControlRedstoneGameTests {
       helper.succeedWhen(() -> {
          helper.assertBlockProperty(TEST_POS, ControlsBlockTypes.POWERED, true);
          helper.assertValueEqual(15, signal(helper, TEST_POS), "door sensor switch should emit when a player is inside its detection range");
+      });
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 60)
+   public static void industrial_alarm_siren_uses_registered_sound_and_reschedules_while_powered(GameTestHelper helper) {
+      Block siren = control("industrial_alarm_siren");
+      helper.assertTrue(siren instanceof ControlsBlockTypes.AlarmSirenBlock, "industrial alarm siren should use its sound-producing block implementation");
+      helper.assertValueEqual(
+         ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", "alarm_siren"),
+         BuiltInRegistries.SOUND_EVENT.getKey(ModSounds.ALARM_SIREN.get()),
+         "industrial alarm siren should bind the alarm_siren sound event"
+      );
+      helper.setBlock(TEST_POS.south(), Blocks.REDSTONE_BLOCK);
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((BlockState)siren.defaultBlockState().setValue(ControlsBlockTypes.FACING, Direction.NORTH))
+            .setValue(ControlsBlockTypes.POWER_BOOL, false)
+      );
+      helper.assertTrue(
+         helper.getLevel().getBlockTicks().hasScheduledTick(helper.absolutePos(TEST_POS), siren), "powered alarm siren should schedule its first sound update"
+      );
+      helper.runAfterDelay(21L, () -> {
+         helper.assertBlockProperty(TEST_POS, ControlsBlockTypes.POWER_BOOL, true);
+         helper.assertTrue(
+            helper.getLevel().getBlockTicks().hasScheduledTick(helper.absolutePos(TEST_POS), siren), "powered alarm siren should keep scheduling sound updates"
+         );
+         helper.succeed();
       });
    }
 

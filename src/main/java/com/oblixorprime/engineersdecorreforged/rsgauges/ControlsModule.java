@@ -285,6 +285,8 @@ public final class ControlsModule {
    private static Supplier<? extends Block> factory(String name) {
       if (GAUGES.contains(name)) {
          return () -> new ControlsBlockTypes.GaugeBlock(controlProperties());
+      } else if ("industrial_alarm_siren".equals(name)) {
+         return () -> new ControlsBlockTypes.AlarmSirenBlock(indicatorProperties());
       } else if (INDICATORS.contains(name)) {
          return () -> new ControlsBlockTypes.BooleanIndicatorBlock(indicatorProperties());
       } else {

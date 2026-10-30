@@ -1,0 +1,95 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "immersive_engineer_decor_controls_tool_reforged:redia_tool"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "immersive_engineer_decor_controls_tool_reforged:musli_bar_press"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "immersive_engineer_decor_controls_tool_reforged:material_box"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "immersive_engineer_decor_controls_tool_reforged:diving_capsule"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "immersive_engineer_decor_controls_tool_reforged:stimpack"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "immersive_engineer_decor_controls_tool_reforged:crushing_hammer"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "immersiveengineering:dust_gold",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "immersiveengineering:dust_iron",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 4,
+                "max": 16
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.35
+        }
+      ]
+    }
+  ]
+}

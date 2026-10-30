@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.gametest;
 
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTest;
@@ -16,10 +17,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraft.world.level.block.state.properties.WallSide;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -61,7 +65,7 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void stacked_steel_mesh_fence_gate_segments_remove_together(GameTestHelper helper) {
+   public static void stacked_steel_mesh_fence_gate_segments_preserve_remaining_segment(GameTestHelper helper) {
       Block gate = (Block)ModBlocks.STEEL_MESH_FENCE_GATE.get();
       BlockState lower = (BlockState)((BlockState)((BlockState)gate.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
             .setValue(PortedBlocks.OPEN, false))
@@ -73,13 +77,15 @@ public final class AccesswayBlockGameTests {
       helper.setBlock(UPPER_POS, upper);
       helper.setBlock(LOWER_POS, Blocks.AIR.defaultBlockState());
       helper.assertTrue(
-         helper.getLevel().getBlockState(helper.absolutePos(UPPER_POS)).isAir(), "removing lower steel mesh fence gate segment should remove upper segment"
+         helper.getLevel().getBlockState(helper.absolutePos(UPPER_POS)).is(gate),
+         "removing lower steel mesh fence gate segment should preserve the independently placed upper segment"
       );
       helper.setBlock(LOWER_POS, lower);
       helper.setBlock(UPPER_POS, upper);
       helper.setBlock(UPPER_POS, Blocks.AIR.defaultBlockState());
       helper.assertTrue(
-         helper.getLevel().getBlockState(helper.absolutePos(LOWER_POS)).isAir(), "removing upper steel mesh fence gate segment should remove lower segment"
+         helper.getLevel().getBlockState(helper.absolutePos(LOWER_POS)).is(gate),
+         "removing upper steel mesh fence gate segment should preserve the independently placed lower segment"
       );
       helper.succeed();
    }
@@ -95,17 +101,168 @@ public final class AccesswayBlockGameTests {
       VoxelShape openNorthCollision = openNorth.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
 
       assertShapeIntersects(helper, closedNorthCollision, 4.0, 4.0, 7.25, 12.0, 12.0, 8.75, "closed fence gate should block its center panel");
+      BlockState closedEast = (BlockState)closedNorth.setValue(PortedBlocks.HORIZONTAL_FACING, Direction.EAST);
+      VoxelShape closedEastCollision = closedEast.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+      assertShapeIntersects(
+         helper, closedEastCollision, 7.25, 4.0, 4.0, 8.75, 12.0, 12.0, "rotated closed fence gate should block its center panel"
+      );
       assertShapeDoesNotIntersect(
          helper, openNorthCollision, 4.0, 4.0, 7.25, 12.0, 12.0, 8.75, "open fence gate should clear the center passage"
       );
-      assertShapeIntersects(helper, openNorthCollision, 12.5, 4.0, 1.0, 15.5, 12.0, 9.0, "open fence gate should keep collision on the folded side leaf");
+      helper.assertTrue(openNorthCollision.isEmpty(), "open fence gate collision should be empty so players can pass through");
 
       BlockState openEast = (BlockState)((BlockState)openNorth.setValue(PortedBlocks.HORIZONTAL_FACING, Direction.EAST)).setValue(PortedBlocks.OPEN, true);
       VoxelShape openEastCollision = openEast.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
       assertShapeDoesNotIntersect(
          helper, openEastCollision, 7.25, 4.0, 4.0, 8.75, 12.0, 12.0, "rotated open fence gate should clear its center passage"
       );
-      assertShapeIntersects(helper, openEastCollision, 7.0, 4.0, 12.5, 9.0, 12.0, 15.5, "rotated open fence gate should keep collision on its folded side leaf");
+      helper.assertTrue(openEastCollision.isEmpty(), "rotated open fence gate collision should also be empty");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void steel_mesh_fence_connects_in_all_cardinal_directions_and_updates(GameTestHelper helper) {
+      Block fence = (Block)ModBlocks.STEEL_MESH_FENCE.get();
+      BlockPos center = new BlockPos(2, 1, 2);
+      helper.setBlock(center, fence.defaultBlockState());
+      helper.setBlock(center.north(), fence.defaultBlockState());
+      helper.setBlock(center.east(), fence.defaultBlockState());
+      helper.setBlock(center.south(), fence.defaultBlockState());
+      helper.setBlock(center.west(), fence.defaultBlockState());
+      assertWallConnected(helper, center, WallBlock.NORTH_WALL, "steel mesh fence should connect north");
+      assertWallConnected(helper, center, WallBlock.EAST_WALL, "steel mesh fence should connect to adjacent mesh fence");
+      assertWallConnected(helper, center, WallBlock.SOUTH_WALL, "steel mesh fence should connect south");
+      assertWallConnected(helper, center, WallBlock.WEST_WALL, "steel mesh fence should connect west");
+      assertWallConnected(helper, center.north(), WallBlock.SOUTH_WALL, "north steel mesh fence should connect back");
+      assertWallConnected(helper, center.east(), WallBlock.WEST_WALL, "east steel mesh fence should connect back");
+      assertWallConnected(helper, center.south(), WallBlock.NORTH_WALL, "south steel mesh fence should connect back");
+      assertWallConnected(helper, center.west(), WallBlock.EAST_WALL, "west steel mesh fence should connect back");
+
+      helper.setBlock(center.north(), Blocks.AIR.defaultBlockState());
+      assertWallDisconnected(helper, center, WallBlock.NORTH_WALL, "steel mesh fence should disconnect north when neighbor is removed");
+      helper.setBlock(center.east(), Blocks.AIR.defaultBlockState());
+      assertWallDisconnected(helper, center, WallBlock.EAST_WALL, "steel mesh fence should disconnect east when neighbor is removed");
+      helper.setBlock(center.south(), Blocks.AIR.defaultBlockState());
+      assertWallDisconnected(helper, center, WallBlock.SOUTH_WALL, "steel mesh fence should disconnect south when neighbor is removed");
+      helper.setBlock(center.west(), Blocks.AIR.defaultBlockState());
+      assertWallDisconnected(helper, center, WallBlock.WEST_WALL, "steel mesh fence should disconnect west when neighbor is removed");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void steel_mesh_fence_supports_straight_lines_and_corners(GameTestHelper helper) {
+      Block fence = (Block)ModBlocks.STEEL_MESH_FENCE.get();
+      BlockPos center = new BlockPos(2, 1, 2);
+      helper.setBlock(center, fence.defaultBlockState());
+      helper.setBlock(center.north(), fence.defaultBlockState());
+      helper.setBlock(center.south(), fence.defaultBlockState());
+      assertWallConnected(helper, center, WallBlock.NORTH_WALL, "steel mesh fence should form a north-south line");
+      assertWallConnected(helper, center, WallBlock.SOUTH_WALL, "steel mesh fence should form a north-south line");
+      assertWallDisconnected(helper, center, WallBlock.EAST_WALL, "steel mesh fence line should not create an east connection");
+      assertWallDisconnected(helper, center, WallBlock.WEST_WALL, "steel mesh fence line should not create a west connection");
+
+      helper.setBlock(center.north(), Blocks.AIR.defaultBlockState());
+      helper.setBlock(center.south(), Blocks.AIR.defaultBlockState());
+      helper.setBlock(center.east(), fence.defaultBlockState());
+      helper.setBlock(center.south(), fence.defaultBlockState());
+      assertWallConnected(helper, center, WallBlock.EAST_WALL, "steel mesh fence should form an east-south corner");
+      assertWallConnected(helper, center, WallBlock.SOUTH_WALL, "steel mesh fence should form an east-south corner");
+      assertWallDisconnected(helper, center, WallBlock.NORTH_WALL, "steel mesh fence corner should not keep a north connection");
+      assertWallDisconnected(helper, center, WallBlock.WEST_WALL, "steel mesh fence corner should not create a west connection");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void steel_mesh_fence_connects_to_gate_and_centered_pole(GameTestHelper helper) {
+      Block fence = (Block)ModBlocks.STEEL_MESH_FENCE.get();
+      Block gate = (Block)ModBlocks.STEEL_MESH_FENCE_GATE.get();
+      Block pole = (Block)ModBlocks.THIN_STEEL_POLE.get();
+      BlockPos center = new BlockPos(2, 1, 2);
+      helper.setBlock(center, fence.defaultBlockState());
+      helper.setBlock(center.east(), ((BlockState)gate.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH)).setValue(PortedBlocks.SEGMENT, 0));
+      helper.setBlock(center.west(), (BlockState)pole.defaultBlockState().setValue(PortedBlocks.FACING, Direction.UP));
+      assertWallConnected(helper, center, WallBlock.EAST_WALL, "steel mesh fence should connect to steel mesh fence gate");
+      assertWallConnected(helper, center, WallBlock.WEST_WALL, "steel mesh fence should connect to centered steel poles");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void accessway_blocks_have_vanilla_identity_tags(GameTestHelper helper) {
+      helper.assertTrue(ModBlocks.STEEL_MESH_FENCE.get().defaultBlockState().is(BlockTags.WALLS), "steel mesh fence should be a minecraft:wall");
+      helper.assertTrue(
+         ModBlocks.STEEL_MESH_FENCE_GATE.get().defaultBlockState().is(BlockTags.FENCE_GATES), "steel mesh fence gate should be a minecraft:fence_gate"
+      );
+      helper.assertTrue(ModBlocks.IRON_HATCH.get().defaultBlockState().is(BlockTags.TRAPDOORS), "iron hatch should be a minecraft:trapdoor");
+      helper.assertTrue(ModBlocks.OLD_INDUSTRIAL_WOOD_DOOR.get().defaultBlockState().is(BlockTags.DOORS), "old industrial wood door should be a minecraft:door");
+      helper.assertTrue(
+         ModBlocks.OLD_INDUSTRIAL_WOOD_DOOR.get().defaultBlockState().is(BlockTags.WOODEN_DOORS),
+         "old industrial wood door should be a minecraft:wooden_door"
+      );
+      helper.assertTrue(
+         ModBlocks.OLD_INDUSTRIAL_WOOD_DOOR.get().defaultBlockState().is(BlockTags.MOB_INTERACTABLE_DOORS),
+         "old industrial wood door should be mob-interactable like vanilla wooden doors"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void decorated_metal_and_rebar_blocks_are_pickaxe_mineable(GameTestHelper helper) {
+      List<Block> representativeBlocks = List.of(
+         ModBlocks.REBAR_CONCRETE.get(),
+         ModBlocks.REBAR_CONCRETE_TILE_STAIRS.get(),
+         ModBlocks.PANZERGLASS_BLOCK.get(),
+         ModBlocks.STEEL_FLOOR_GRATING.get(),
+         ModBlocks.STEEL_MESH_FENCE_GATE.get(),
+         ModBlocks.METAL_CRAFTING_TABLE.get(),
+         ModBlocks.STEEL_FRAMED_WINDOW.get(),
+         ModBlocks.IRON_HATCH.get(),
+         ModBlocks.IRON_BULB_LIGHT.get(),
+         ModBlocks.SIGN_CAUTION.get()
+      );
+      for (Block block : representativeBlocks) {
+         helper.assertTrue(
+            block.defaultBlockState().is(BlockTags.MINEABLE_WITH_PICKAXE),
+            "decorative block should be mineable with a normal pickaxe: " + block
+         );
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void horizontal_accessway_placement_uses_clicked_cardinal_face(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      assertHorizontalPlacementFacing(
+         helper, player, (Block)ModBlocks.STEEL_MESH_FENCE_GATE.get(), Direction.NORTH, "steel mesh fence gate should face the clicked north side"
+      );
+      assertHorizontalPlacementFacing(helper, player, (Block)ModBlocks.IRON_HATCH.get(), Direction.EAST, "iron hatch should face the clicked east side");
+      assertHorizontalPlacementFacing(
+         helper, player, (Block)ModBlocks.STEEL_FRAMED_WINDOW.get(), Direction.SOUTH, "steel framed window should face the clicked south side"
+      );
+      assertHorizontalPlacementFacing(
+         helper, player, (Block)ModBlocks.STEEL_CATWALK_STAIRS.get(), Direction.WEST, "steel catwalk stairs should face the clicked west side"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void horizontal_accessway_placement_uses_top_face_border_band(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      assertHorizontalPlacementBorder(
+         helper, player, (Block)ModBlocks.STEEL_MESH_FENCE_GATE.get(), 0.5, 0.05, Direction.NORTH, "north top-face border should place a north-facing gate"
+      );
+      assertHorizontalPlacementBorder(
+         helper, player, (Block)ModBlocks.IRON_HATCH.get(), 0.5, 0.95, Direction.SOUTH, "south top-face border should place a south-facing hatch"
+      );
+      assertHorizontalPlacementBorder(
+         helper, player, (Block)ModBlocks.STEEL_FRAMED_WINDOW.get(), 0.05, 0.5, Direction.WEST, "west top-face border should place a west-facing window"
+      );
+      assertHorizontalPlacementBorder(
+         helper, player, (Block)ModBlocks.STEEL_CATWALK_STAIRS.get(), 0.95, 0.5, Direction.EAST, "east top-face border should place east-facing catwalk stairs"
+      );
+      assertHorizontalPlacementBorder(
+         helper, player, (Block)ModBlocks.IRON_HATCH.get(), 0.10, 0.20, Direction.WEST, "corner hits should choose the nearest top-face border"
+      );
+      assertHorizontalPlacementCenterFallback(helper, player, (Block)ModBlocks.IRON_HATCH.get(), "center top-face hit should keep yaw fallback placement");
       helper.succeed();
    }
 
@@ -149,6 +306,75 @@ public final class AccesswayBlockGameTests {
          );
       }
 
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void horizontal_accessway_placement_uses_bottom_face_border_band(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      assertHorizontalPlacementBorderOnFace(
+         helper,
+         player,
+         (Block)ModBlocks.STEEL_MESH_FENCE_GATE.get(),
+         0.5,
+         0.05,
+         Direction.DOWN,
+         Direction.NORTH,
+         "north bottom-face border should place a north-facing gate"
+      );
+      assertHorizontalPlacementBorderOnFace(
+         helper,
+         player,
+         (Block)ModBlocks.IRON_HATCH.get(),
+         0.5,
+         0.95,
+         Direction.DOWN,
+         Direction.SOUTH,
+         "south bottom-face border should place a south-facing hatch"
+      );
+      assertHorizontalPlacementBorderOnFace(
+         helper,
+         player,
+         (Block)ModBlocks.STEEL_CATWALK_STAIRS.get(),
+         0.95,
+         0.5,
+         Direction.DOWN,
+         Direction.EAST,
+         "east bottom-face border should place east-facing catwalk stairs"
+      );
+      assertHorizontalPlacementBorderOnFace(
+         helper,
+         player,
+         (Block)ModBlocks.STEEL_FRAMED_WINDOW.get(),
+         0.05,
+         0.5,
+         Direction.DOWN,
+         Direction.WEST,
+         "west bottom-face border should place a west-facing window"
+      );
+      assertHorizontalPlacementBorderOnFace(
+         helper,
+         player,
+         (Block)ModBlocks.IRON_HATCH.get(),
+         0.10,
+         0.20,
+         Direction.DOWN,
+         Direction.WEST,
+         "corner bottom-face hits should choose the nearest border"
+      );
+      assertHorizontalPlacementBorderOnFace(
+         helper,
+         player,
+         (Block)ModBlocks.IRON_HATCH.get(),
+         0.125,
+         0.125,
+         Direction.DOWN,
+         Direction.NORTH,
+         "equal north/west bottom-face corner should keep the north-first tie convention"
+      );
+      assertHorizontalPlacementCenterFallbackOnFace(
+         helper, player, (Block)ModBlocks.IRON_HATCH.get(), Direction.DOWN, "center bottom-face hit should keep yaw fallback placement"
+      );
       helper.succeed();
    }
 
@@ -224,14 +450,33 @@ public final class AccesswayBlockGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void open_iron_hatch_collision_matches_visible_side_plate(GameTestHelper helper) {
+   public static void iron_hatch_collision_blocks_when_closed_and_opens_passage(GameTestHelper helper) {
       Block hatch = (Block)ModBlocks.IRON_HATCH.get();
+      BlockState closedNorth = (BlockState)((BlockState)hatch.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
+         .setValue(PortedBlocks.OPEN, false);
       BlockState openNorth = (BlockState)((BlockState)hatch.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
          .setValue(PortedBlocks.OPEN, true);
-      VoxelShape collision = openNorth.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
-      assertShapeBounds(helper, collision, 0.0, 0.0, 0.0, 16.0, 16.0, 2.0, "open north iron hatch collision should match its visible side plate");
-      assertShapeIntersects(helper, collision, 1.0, 4.0, 0.25, 15.0, 12.0, 1.75, "open iron hatch should collide with its visible side plate");
-      assertShapeDoesNotIntersect(helper, collision, 1.0, 4.0, 4.0, 15.0, 12.0, 12.0, "open iron hatch should not block the center passage");
+      BlockState openSouth = (BlockState)((BlockState)openNorth.setValue(PortedBlocks.HORIZONTAL_FACING, Direction.SOUTH));
+      BlockState openWest = (BlockState)((BlockState)openNorth.setValue(PortedBlocks.HORIZONTAL_FACING, Direction.WEST));
+      BlockState openEast = (BlockState)((BlockState)openNorth.setValue(PortedBlocks.HORIZONTAL_FACING, Direction.EAST));
+      VoxelShape openCollision = openNorth.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+      for (Direction facing : Direction.Plane.HORIZONTAL) {
+         BlockState closed = (BlockState)((BlockState)hatch.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, facing))
+            .setValue(PortedBlocks.OPEN, false);
+         assertShapeBounds(helper, closed.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)), 0.0, 0.0, 0.0, 16.0, 3.0, 16.0, "closed " + facing + " iron hatch outline should match the model");
+         assertShapeBounds(helper, closed.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS)), 0.0, 0.0, 0.0, 16.0, 3.0, 16.0, "closed " + facing + " iron hatch collision should match the model");
+      }
+      assertShapeBounds(helper, openNorth.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)), 0.0, 0.0, 0.0, 16.0, 16.0, 2.875, "open north iron hatch outline should match the moving model");
+      assertShapeBounds(helper, openSouth.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)), 0.0, 0.0, 13.125, 16.0, 16.0, 16.0, "open south iron hatch outline should match the moving model");
+      assertShapeBounds(helper, openWest.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)), 0.0, 0.0, 0.0, 2.875, 16.0, 16.0, "open west iron hatch outline should match the moving model");
+      assertShapeBounds(helper, openEast.getShape(helper.getLevel(), helper.absolutePos(LOWER_POS)), 13.125, 0.0, 0.0, 16.0, 16.0, 16.0, "open east iron hatch outline should match the moving model");
+      helper.assertTrue(openCollision.isEmpty(), "open iron hatch collision should leave the passage clear");
+      helper.assertTrue(!closedNorth.isPathfindable(PathComputationType.LAND), "closed iron hatch should block land pathfinding");
+      helper.assertTrue(!closedNorth.isPathfindable(PathComputationType.AIR), "closed iron hatch should block air pathfinding");
+      helper.assertTrue(!closedNorth.isPathfindable(PathComputationType.WATER), "closed iron hatch should block water pathfinding");
+      helper.assertTrue(openNorth.isPathfindable(PathComputationType.LAND), "open iron hatch should allow land pathfinding");
+      helper.assertTrue(openNorth.isPathfindable(PathComputationType.AIR), "open iron hatch should allow air pathfinding");
+      helper.assertTrue(!openNorth.isPathfindable(PathComputationType.WATER), "open iron hatch should block water pathfinding");
       helper.succeed();
    }
 
@@ -306,6 +551,32 @@ public final class AccesswayBlockGameTests {
       });
    }
 
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void old_industrial_wood_door_uses_standard_double_height_behavior(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      DoorBlock door = (DoorBlock)ModBlocks.OLD_INDUSTRIAL_WOOD_DOOR.get();
+      BlockPos lowerPos = new BlockPos(2, 1, 2);
+      placeDoorFromItem(helper, player, door, lowerPos);
+      helper.assertBlockProperty(lowerPos, DoorBlock.HALF, DoubleBlockHalf.LOWER);
+      helper.assertBlockProperty(lowerPos.above(), DoorBlock.HALF, DoubleBlockHalf.UPPER);
+
+      helper.useBlock(lowerPos.above(), player);
+      assertDoorState(helper, lowerPos, true, false, "old industrial wood door should open from upper-half use");
+      helper.useBlock(lowerPos, player);
+      assertDoorState(helper, lowerPos, false, false, "old industrial wood door should close from lower-half use");
+
+      helper.setBlock(lowerPos.above(), Blocks.AIR.defaultBlockState());
+      helper.runAfterDelay(1L, () -> {
+         helper.assertTrue(helper.getBlockState(lowerPos).isAir(), "removing upper old industrial wood door half should remove lower half");
+         placeDoorFromItem(helper, player, door, lowerPos);
+         helper.setBlock(lowerPos, Blocks.AIR.defaultBlockState());
+         helper.runAfterDelay(1L, () -> {
+            helper.assertTrue(helper.getBlockState(lowerPos.above()).isAir(), "removing lower old industrial wood door half should remove upper half");
+            helper.succeed();
+         });
+      });
+   }
+
    @GameTest(template = "empty", timeoutTicks = 40)
    public static void metal_sliding_door_hitbox_matches_sliding_panel_model(GameTestHelper helper) {
       DoorBlock door = (DoorBlock)ModBlocks.METAL_SLIDING_DOOR.get();
@@ -315,8 +586,10 @@ public final class AccesswayBlockGameTests {
          .setValue(DoorBlock.HINGE, DoorHingeSide.RIGHT);
 
       VoxelShape closedNorth = ((BlockState)base.setValue(DoorBlock.OPEN, false)).getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+      VoxelShape closedNorthCollision = ((BlockState)base.setValue(DoorBlock.OPEN, false)).getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
       assertShapeBounds(helper, closedNorth, 0.0, 0.0, 6.0, 16.0, 16.0, 10.0, "closed north sliding door shape should be centered on the visible model");
       assertShapeIntersects(helper, closedNorth, 0.0, 4.0, 7.25, 16.0, 12.0, 8.75, "closed sliding door should contain the centered main panel");
+      assertShapeIntersects(helper, closedNorthCollision, 0.0, 4.0, 7.25, 16.0, 12.0, 8.75, "closed sliding door collision should block the centered main panel");
       assertShapeDoesNotIntersect(helper, closedNorth, 0.0, 4.0, 0.0, 16.0, 12.0, 3.0, "closed sliding door should not keep the vanilla edge hitbox");
 
       VoxelShape closedEast = ((BlockState)((BlockState)base.setValue(DoorBlock.FACING, Direction.EAST)).setValue(DoorBlock.OPEN, false))
@@ -324,10 +597,20 @@ public final class AccesswayBlockGameTests {
       assertShapeBounds(helper, closedEast, 6.0, 0.0, 0.0, 10.0, 16.0, 16.0, "closed east sliding door shape should rotate with the model");
 
       VoxelShape openNorthRight = ((BlockState)base.setValue(DoorBlock.OPEN, true)).getShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
+      VoxelShape openNorthRightCollision = ((BlockState)base.setValue(DoorBlock.OPEN, true)).getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS));
       assertShapeIntersects(helper, openNorthRight, 15.25, 4.0, 7.0, 15.75, 12.0, 9.0, "open right-hinged sliding door should keep its side stack on the east rail");
       assertShapeIntersects(helper, openNorthRight, 7.0, 0.0, 7.0, 9.0, 0.2, 9.0, "open sliding door should keep its low floor track");
+      assertShapeIntersects(
+         helper, openNorthRightCollision, 15.25, 4.0, 7.0, 15.75, 12.0, 9.0, "open right-hinged sliding door collision should keep the side stack"
+      );
+      assertShapeDoesNotIntersect(
+         helper, openNorthRightCollision, 7.0, 0.0, 7.0, 9.0, 0.2, 9.0, "open sliding door collision should not include the low floor track"
+      );
       assertShapeDoesNotIntersect(
          helper, openNorthRight, 7.0, 4.0, 7.0, 9.0, 12.0, 9.0, "open sliding door should clear the human-height center passage"
+      );
+      assertShapeDoesNotIntersect(
+         helper, openNorthRightCollision, 7.0, 4.0, 7.0, 9.0, 12.0, 9.0, "open sliding door collision should clear the human-height center passage"
       );
 
       VoxelShape openWestLeft = ((BlockState)((BlockState)((BlockState)base.setValue(DoorBlock.FACING, Direction.WEST))
@@ -338,6 +621,47 @@ public final class AccesswayBlockGameTests {
       assertShapeDoesNotIntersect(
          helper, openWestLeft, 7.0, 4.0, 7.0, 9.0, 12.0, 9.0, "rotated open sliding door should also clear the human-height center passage"
       );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void steel_framed_window_places_as_centered_wall_pane_without_support(GameTestHelper helper) {
+      Block window = (Block)ModBlocks.STEEL_FRAMED_WINDOW.get();
+      BlockState north = (BlockState)window.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH);
+      BlockState east = (BlockState)window.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.EAST);
+      helper.assertTrue(north.canSurvive(helper.getLevel(), helper.absolutePos(LOWER_POS)), "steel framed window should not require a backing support block");
+      assertShapeBounds(
+         helper,
+         north.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         0.0,
+         0.0,
+         7.5,
+         16.0,
+         16.0,
+         8.5,
+         "north/south steel framed window collision should be a centered pane"
+      );
+      assertShapeBounds(
+         helper,
+         east.getCollisionShape(helper.getLevel(), helper.absolutePos(LOWER_POS)),
+         7.5,
+         0.0,
+         0.0,
+         8.5,
+         16.0,
+         16.0,
+         "east/west steel framed window collision should rotate as a centered pane"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void steel_plate_accessway_recipes_are_registered(GameTestHelper helper) {
+      assertRecipe(helper, "thin_steel_pole");
+      assertRecipe(helper, "steel_framed_window");
+      assertRecipe(helper, "metal_sliding_door");
+      assertRecipe(helper, "steel_catwalk");
+      assertRecipe(helper, "steel_railing");
       helper.succeed();
    }
 
@@ -417,11 +741,13 @@ public final class AccesswayBlockGameTests {
    }
 
    private static BlockState placementState(GameTestHelper helper, Player player, Block block, BlockPos pos, double localY, Direction face) {
-      BlockPos absolutePos = helper.absolutePos(pos);
-      Vec3 hitLocation = new Vec3(absolutePos.getX() + 0.5, absolutePos.getY() + localY, absolutePos.getZ() + 0.5);
-      BlockHitResult hit = new BlockHitResult(hitLocation, face, absolutePos, false);
-      BlockPlaceContext context = new BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, new ItemStack(block), hit);
-      return block.getStateForPlacement(context);
+      return placementState(helper, player, block, pos, 0.5, localY, 0.5, face);
+   }
+
+   private static BlockState placementState(
+      GameTestHelper helper, Player player, Block block, BlockPos pos, double localX, double localY, double localZ, Direction face
+   ) {
+      return block.getStateForPlacement(placementContext(helper, player, block, pos, localX, localY, localZ, face));
    }
 
    private static BlockPlaceContext placementContext(
@@ -440,7 +766,7 @@ public final class AccesswayBlockGameTests {
       ItemStack stack = new ItemStack(door);
       BlockPlaceContext context = new BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, stack, hit);
       BlockState state = door.getStateForPlacement(context);
-      helper.assertTrue(state != null, "metal sliding door placement state should not be null");
+      helper.assertTrue(state != null, "door placement state should not be null");
       helper.getLevel().setBlock(absolutePos, state, 3);
       door.setPlacedBy(helper.getLevel(), absolutePos, state, player, stack);
       return helper.getBlockState(lowerPos);
@@ -448,6 +774,51 @@ public final class AccesswayBlockGameTests {
 
    private static void assertClimbable(GameTestHelper helper, Block block, String name) {
       helper.assertTrue(block.defaultBlockState().is(BlockTags.CLIMBABLE), name + " should be in minecraft:climbable for ladder movement");
+   }
+
+   private static void assertWallConnected(GameTestHelper helper, BlockPos pos, net.minecraft.world.level.block.state.properties.EnumProperty<WallSide> property, String message) {
+      helper.assertTrue(helper.getBlockState(pos).getValue(property) != WallSide.NONE, message);
+   }
+
+   private static void assertWallDisconnected(
+      GameTestHelper helper, BlockPos pos, net.minecraft.world.level.block.state.properties.EnumProperty<WallSide> property, String message
+   ) {
+      helper.assertValueEqual(helper.getBlockState(pos).getValue(property), WallSide.NONE, message);
+   }
+
+   private static void assertHorizontalPlacementFacing(GameTestHelper helper, Player player, Block block, Direction clickedFace, String message) {
+      BlockState state = placementState(helper, player, block, LOWER_POS, 0.5, clickedFace);
+      helper.assertTrue(state != null, "horizontal placement state should not be null");
+      helper.assertValueEqual(state.getValue(PortedBlocks.HORIZONTAL_FACING), clickedFace, message);
+   }
+
+   private static void assertHorizontalPlacementBorder(
+      GameTestHelper helper, Player player, Block block, double localX, double localZ, Direction expectedFacing, String message
+   ) {
+      assertHorizontalPlacementBorderOnFace(helper, player, block, localX, localZ, Direction.UP, expectedFacing, message);
+   }
+
+   private static void assertHorizontalPlacementBorderOnFace(
+      GameTestHelper helper, Player player, Block block, double localX, double localZ, Direction clickedFace, Direction expectedFacing, String message
+   ) {
+      BlockState state = placementState(helper, player, block, LOWER_POS, localX, horizontalFaceLocalY(clickedFace), localZ, clickedFace);
+      helper.assertTrue(state != null, "horizontal border placement state should not be null");
+      helper.assertValueEqual(state.getValue(PortedBlocks.HORIZONTAL_FACING), expectedFacing, message);
+   }
+
+   private static void assertHorizontalPlacementCenterFallback(GameTestHelper helper, Player player, Block block, String message) {
+      assertHorizontalPlacementCenterFallbackOnFace(helper, player, block, Direction.UP, message);
+   }
+
+   private static void assertHorizontalPlacementCenterFallbackOnFace(GameTestHelper helper, Player player, Block block, Direction clickedFace, String message) {
+      BlockPlaceContext context = placementContext(helper, player, block, LOWER_POS, 0.5, horizontalFaceLocalY(clickedFace), 0.5, clickedFace);
+      BlockState state = block.getStateForPlacement(context);
+      helper.assertTrue(state != null, "horizontal center placement state should not be null");
+      helper.assertValueEqual(state.getValue(PortedBlocks.HORIZONTAL_FACING), context.getHorizontalDirection().getOpposite(), message);
+   }
+
+   private static double horizontalFaceLocalY(Direction clickedFace) {
+      return clickedFace == Direction.DOWN ? 0.0 : 1.0;
    }
 
    private static void assertCatwalkStairTreads(GameTestHelper helper, VoxelShape shape, Direction facing) {
@@ -505,6 +876,16 @@ public final class AccesswayBlockGameTests {
    ) {
       helper.assertBlockProperty(lowerPos, PortedBlocks.PAIR_SIDE, pairSide);
       helper.assertBlockProperty(lowerPos.above(), PortedBlocks.PAIR_SIDE, pairSide);
+   }
+
+   private static void assertRecipe(GameTestHelper helper, String name) {
+      helper.assertTrue(
+         helper.getLevel()
+            .getRecipeManager()
+            .byKey(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", name))
+            .isPresent(),
+         "missing recipe immersive_engineer_decor_controls_tool_reforged:" + name
+      );
    }
 
    private static void assertShapeBounds(

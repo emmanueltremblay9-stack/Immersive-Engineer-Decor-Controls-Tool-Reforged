@@ -35,10 +35,6 @@
     "type": "crafting",
     "recipe": "immersive_engineer_decor_controls_tool_reforged:musli_bar_press"
   },
-  "musli_bar": {
-    "type": "crafting",
-    "recipe": "immersive_engineer_decor_controls_tool_reforged:musli_bar"
-  },
   "charged_lapis_squeezer": {
     "type": "crafting",
     "recipe": "immersive_engineer_decor_controls_tool_reforged:charged_lapis_squeezer"
@@ -46,13 +42,5 @@
   "charged_lapis": {
     "type": "crafting",
     "recipe": "immersive_engineer_decor_controls_tool_reforged:charged_lapis_squeezer"
-  },
-  "iron_grit": {
-    "type": "crafting",
-    "recipe": "immersive_engineer_decor_controls_tool_reforged:iron_grit_smelting"
-  },
-  "gold_grit": {
-    "type": "crafting",
-    "recipe": "immersive_engineer_decor_controls_tool_reforged:gold_grit_smelting"
   }
 }

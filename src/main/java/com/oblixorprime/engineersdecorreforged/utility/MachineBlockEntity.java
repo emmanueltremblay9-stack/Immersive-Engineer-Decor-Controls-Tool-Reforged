@@ -2,7 +2,10 @@ package com.oblixorprime.engineersdecorreforged.utility;
 
 import blusunrize.immersiveengineering.api.utils.ItemUtils;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
+import com.oblixorprime.engineersdecorreforged.ModRecipeTypes;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.recipe.MetalCraftingRecipe;
+import com.oblixorprime.engineersdecorreforged.recipe.CrushingRecipe;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +16,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
@@ -23,7 +25,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
@@ -71,8 +72,6 @@ import net.neoforged.neoforge.items.IItemHandler;
 
 public class MachineBlockEntity extends BaseContainerBlockEntity {
    private static final int SLOT_COUNT = 27;
-   private static final String IE_NAMESPACE = "immersiveengineering";
-   private static final TagKey<Item> IE_HAMMERS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("immersiveengineering", "tools/hammers"));
    private static final ResourceLocation IE_FURNACE_HEATER = ResourceLocation.fromNamespaceAndPath("immersiveengineering", "furnace_heater");
    private static final int BUCKET_AMOUNT = 1000;
    private static final int BARREL_CAPACITY = 4000;
@@ -80,10 +79,6 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private static final int FUNNEL_TRANSFER = 250;
    private static final int SOLAR_CAPACITY = 64000;
    private static final int SOLAR_ITEM_TRANSFER = 256;
-   private static final int METAL_TABLE_HAMMER = 0;
-   private static final int METAL_TABLE_GRID_FIRST = 1;
-   private static final int METAL_TABLE_GRID_END = 10;
-   private static final int METAL_TABLE_OUTPUT = 10;
    private static final int LAB_INPUT = 0;
    private static final int LAB_FUEL = 1;
    private static final int LAB_OUTPUT = 2;
@@ -654,7 +649,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
          case METAL_CRAFTING_TABLE -> {
             switch (index) {
                case 0:
-                  yield isHammer(stack);
+                  yield MetalCraftingRecipe.isTableTool(stack);
                case 10:
                   yield false;
                default:
@@ -1418,10 +1413,6 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
                         DirectionalPlaceContext context = new DirectionalPlaceContext(this.level, target, direction.getOpposite(), placing, direction);
                         InteractionResult result = blockItem.place(context);
                         placed = result.consumesAction();
-                        if (!placed && this.level.getBlockState(target).canBeReplaced()) {
-                           BlockState fallback = blockItem.getBlock().defaultBlockState();
-                           placed = !fallback.isAir() && fallback.canSurvive(this.level, target) && this.level.setBlock(target, fallback, 3);
-                        }
                      } else {
                         BlockState crop = cropForSeed(slot);
                         if (crop != null && this.level.getBlockState(target.below()).is(Blocks.FARMLAND) && crop.canSurvive(this.level, target)) {
@@ -1641,13 +1632,14 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
             this.setChanged();
          } else {
             MachineBlockEntity.MetalCraftingResult crafting = result.get();
-            if (crafting.plateRecipe()) {
-               ItemStack material = (ItemStack)this.items.get(crafting.plateMaterialSlot());
+            if (crafting.toolRecipe()) {
+               ItemStack material = (ItemStack)this.items.get(crafting.materialSlot());
                if (!material.isEmpty()) {
                   material.shrink(1);
                }
 
-               ItemUtils.damageDirect((ItemStack)this.items.get(0), 1);
+               ItemStack tool = (ItemStack)this.items.get(0);
+               this.items.set(0, crafting.toolDamage() >= 0 ? damageCraftingTool(tool, crafting.toolDamage()) : tool.hasCraftingRemainingItem() ? tool.getCraftingRemainingItem() : ItemStack.EMPTY);
             } else if (crafting.recipe().isPresent()) {
                this.consumeVanillaCraftingGrid(crafting.input(), crafting.recipe().get());
             }
@@ -1665,6 +1657,16 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          this.items.set(10, ItemStack.EMPTY);
       }
+   }
+
+   private static ItemStack damageCraftingTool(ItemStack tool, int damage) {
+      ItemStack remaining = tool.copyWithCount(1);
+      int nextDamage = remaining.getDamageValue() + damage;
+      if (nextDamage >= remaining.getMaxDamage()) {
+         return ItemStack.EMPTY;
+      }
+      remaining.setDamageValue(nextDamage);
+      return remaining;
    }
 
    private void tickLabFurnace() {
@@ -2401,6 +2403,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       }
 
       CraftingInput grid = this.metalTableGridInput();
+      Optional<MachineBlockEntity.MetalCraftingResult> dedicatedRecipe = this.metalTableDedicatedCraftingResult(grid);
+      if (dedicatedRecipe.isPresent()) {
+         return dedicatedRecipe;
+      }
+
       Optional<MachineBlockEntity.MetalCraftingResult> plateRecipe = this.metalTablePlateCraftingResult(grid);
       if (plateRecipe.isPresent()) {
          return plateRecipe;
@@ -2413,16 +2420,56 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       if (vanillaRecipe.isPresent()) {
          ItemStack output = ((CraftingRecipe)vanillaRecipe.get().value()).assemble(grid, this.level.registryAccess());
          if (!output.isEmpty()) {
-            return Optional.of(new MachineBlockEntity.MetalCraftingResult(output, vanillaRecipe, grid, false, -1));
+            return Optional.of(new MachineBlockEntity.MetalCraftingResult(output, vanillaRecipe, grid, false, -1, -1));
          }
       }
 
       return Optional.empty();
    }
 
+   private Optional<MachineBlockEntity.MetalCraftingResult> metalTableDedicatedCraftingResult(CraftingInput grid) {
+      ItemStack tool = (ItemStack)this.items.get(0);
+      if (!MetalCraftingRecipe.isTableTool(tool)) {
+         return Optional.empty();
+      }
+
+      int materialSlot = this.singleGridMaterialSlot();
+      if (materialSlot < 0) {
+         return Optional.empty();
+      }
+
+      ItemStack material = (ItemStack)this.items.get(materialSlot);
+      CraftingInput dedicatedInput = CraftingInput.of(2, 1, List.of(tool.copyWithCount(1), material.copyWithCount(1)));
+      Optional<MachineBlockEntity.MetalCraftingResult> dedicatedResult = this.level
+         .getRecipeManager()
+         .getRecipeFor(ModRecipeTypes.METAL_CRAFTING.get(), dedicatedInput, this.level)
+         .map(RecipeHolder::value)
+         .map(recipe -> new MachineBlockEntity.MetalCraftingResult(
+            recipe.assemble(dedicatedInput, this.level.registryAccess()), Optional.empty(), grid, true, materialSlot, recipe.toolDamage()
+         ))
+         .filter(result -> !result.output().isEmpty());
+      if (dedicatedResult.isPresent()) {
+         return dedicatedResult;
+      }
+
+      CraftingInput input = CraftingInput.of(2, 1, List.of(tool.copyWithCount(1), material.copyWithCount(1)));
+      return this.level
+         .getRecipeManager()
+         .getAllRecipesFor(RecipeType.CRAFTING)
+         .stream()
+         .filter(recipe -> recipe.value() instanceof CrushingRecipe)
+         .map(recipe -> (CrushingRecipe)recipe.value())
+         .filter(recipe -> recipe.matches(input, this.level))
+         .map(recipe -> new MachineBlockEntity.MetalCraftingResult(
+            recipe.assemble(input, this.level.registryAccess()), Optional.empty(), grid, true, materialSlot, recipe.toolDamage()
+         ))
+         .findFirst()
+         .filter(result -> !result.output().isEmpty());
+   }
+
    private Optional<MachineBlockEntity.MetalCraftingResult> metalTablePlateCraftingResult(CraftingInput grid) {
       ItemStack hammer = (ItemStack)this.items.get(0);
-      if (!isHammer(hammer)) {
+      if (!MetalCraftingRecipe.isPlateHammer(hammer)) {
          return Optional.empty();
       }
 
@@ -2445,7 +2492,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
                Optional.of((RecipeHolder<CraftingRecipe>)recipe),
                grid,
                true,
-               materialSlot
+               materialSlot,
+               -1
             )
          )
          .filter(result -> isIePlateStack(result.output()))
@@ -2468,7 +2516,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       for (int slot = 1; slot < 10; slot++) {
          ItemStack stack = (ItemStack)this.items.get(slot);
          if (!stack.isEmpty()) {
-            if (isHammer(stack) || foundSlot != -1) {
+            if (MetalCraftingRecipe.isTableTool(stack) || foundSlot != -1) {
                return -1;
             }
 
@@ -2518,10 +2566,6 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
       }
 
       return slots;
-   }
-
-   private static boolean isHammer(ItemStack stack) {
-      return !stack.isEmpty() && stack.is(IE_HAMMERS);
    }
 
    private static boolean isExternalHeater(ItemStack stack) {
@@ -3373,7 +3417,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    }
 
    private record MetalCraftingResult(
-      ItemStack output, Optional<RecipeHolder<CraftingRecipe>> recipe, CraftingInput input, boolean plateRecipe, int plateMaterialSlot
+      ItemStack output, Optional<RecipeHolder<CraftingRecipe>> recipe, CraftingInput input, boolean toolRecipe, int materialSlot, int toolDamage
    ) {
    }
 }

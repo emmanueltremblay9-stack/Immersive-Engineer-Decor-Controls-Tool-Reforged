@@ -1,7 +1,7 @@
 Muslee Bar Press
 Food press
-<&recipe>The Muslee Bar Press turns common food supplies into compact field rations.<br>
+<&recipe>The reusable Muslee Bar Press stores up to 512 accepted seeds and 768 hunger points from ordinary food.<br>
 <br>
-Usage: Carry bread, an apple, and wheat, melon, pumpkin, beetroot, or Industrial Hemp seeds, then use the press. A successful press consumes one of each ingredient, checks that the output can fit, creates four Muslee Melange Power Bars, and damages the press.<br>
+Usage: Open its original input/output screen and insert wheat, melon, pumpkin, or beetroot seeds plus safe edible food. Each bar costs one seed and eight hunger points; unused points remain stored in the press.<br>
 <br>
-If an ingredient is missing or the inventory has no room for the bars, nothing is consumed.
+The press is reusable and does not consume durability.

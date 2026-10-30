@@ -628,14 +628,6 @@
         {
           "source": "immersive_engineer_decor_controls_tool_reforged:charged_lapis",
           "weight": 12
-        },
-        {
-          "source": "immersive_engineer_decor_controls_tool_reforged:iron_grit",
-          "weight": 13
-        },
-        {
-          "source": "immersive_engineer_decor_controls_tool_reforged:gold_grit",
-          "weight": 14
         }
       ]
     },

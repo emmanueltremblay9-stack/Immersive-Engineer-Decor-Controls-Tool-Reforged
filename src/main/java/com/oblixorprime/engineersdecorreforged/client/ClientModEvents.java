@@ -13,6 +13,7 @@ import net.neoforged.fml.common.EventBusSubscriber.Bus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers;
+import net.neoforged.neoforge.client.event.ModelEvent;
 
 @EventBusSubscriber(modid = "immersive_engineer_decor_controls_tool_reforged", bus = Bus.MOD, value = Dist.CLIENT)
 public final class ClientModEvents {
@@ -45,10 +46,18 @@ public final class ClientModEvents {
       event.register((MenuType)ModMenus.SMALL_SOLAR_PANEL.get(), MachineScreen.SmallSolarPanelScreen::new);
       event.register((MenuType)ModMenus.SMALL_MILKING_MACHINE.get(), MachineScreen.SmallMilkingMachineScreen::new);
       event.register((MenuType)ModMenus.SMALL_TREE_CUTTER.get(), MachineScreen.SmallTreeCutterScreen::new);
+      event.register((MenuType)ModMenus.MATERIAL_BOX.get(), MaterialBoxScreen::new);
+      event.register((MenuType)ModMenus.MUSLI_BAR_PRESS.get(), MusliBarPressScreen::new);
    }
 
    @SubscribeEvent
    public static void registerBlockEntityRenderers(RegisterRenderers event) {
       event.registerBlockEntityRenderer((BlockEntityType)ModBlockEntities.MACHINE.get(), LabeledCrateBlockEntityRenderer::new);
+   }
+
+   @SubscribeEvent
+   public static void registerAdditionalModels(ModelEvent.RegisterAdditional event) {
+      event.register(TrackerItemRenderer.BODY_MODEL);
+      event.register(TrackerItemRenderer.POINTER_MODEL);
    }
 }

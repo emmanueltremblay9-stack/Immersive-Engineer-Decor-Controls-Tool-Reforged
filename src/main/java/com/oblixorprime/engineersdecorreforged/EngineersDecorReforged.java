@@ -4,6 +4,10 @@ import com.mojang.logging.LogUtils;
 import com.oblixorprime.engineersdecorreforged.network.ModNetworking;
 import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsModule;
 import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsModule;
+import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsConfig;
+import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsItemEnabledCondition;
+import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsLoot;
+import com.oblixorprime.engineersdecorreforged.tools.SleepingBagItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -21,6 +25,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig.Type;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.capabilities.Capabilities.EnergyStorage;
 import net.neoforged.neoforge.capabilities.Capabilities.FluidHandler;
@@ -51,18 +56,35 @@ public final class EngineersDecorReforged {
    public EngineersDecorReforged(IEventBus modEventBus, ModContainer modContainer) {
       NeoForgeMod.enableMilkFluid();
       modContainer.registerConfig(Type.COMMON, ReforgedConfig.SPEC);
+      modContainer.registerConfig(
+         Type.COMMON,
+         EngineerToolsConfig.COMMON_SPEC,
+         MOD_ID + "-engineer-tools-common.toml"
+      );
+      modContainer.registerConfig(
+         Type.SERVER,
+         EngineerToolsConfig.SERVER_SPEC,
+         MOD_ID + "-engineer-tools-server.toml"
+      );
       ControlsModule.init();
       EngineerToolsModule.init();
+      EngineerToolsItemEnabledCondition.register(modEventBus);
       addLegacyRegistryAliases();
       ModBlocks.BLOCKS.register(modEventBus);
       ModItems.ITEMS.register(modEventBus);
       ModBlockEntities.BLOCK_ENTITY_TYPES.register(modEventBus);
       ModMenus.MENU_TYPES.register(modEventBus);
+      ModSounds.SOUND_EVENTS.register(modEventBus);
+      ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
       ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
       CREATIVE_TABS.register(modEventBus);
       modEventBus.addListener(this::commonSetup);
       modEventBus.addListener(this::registerCapabilities);
       modEventBus.addListener(ModNetworking::register);
+      NeoForge.EVENT_BUS.addListener(ModNetworking::onPlayerLoggedOut);
+      NeoForge.EVENT_BUS.addListener(ModNetworking::onServerStopped);
+      NeoForge.EVENT_BUS.addListener(SleepingBagItem::onCanContinueSleeping);
+      NeoForge.EVENT_BUS.addListener(EngineerToolsLoot::onLootTableLoad);
    }
 
    private static void addLegacyRegistryAliases() {
@@ -73,6 +95,8 @@ public final class EngineersDecorReforged {
          ResourceLocation.fromNamespaceAndPath(MOD_ID, "machine")
       );
       ModMenus.machineTypes().values().forEach(holder -> ModMenus.MENU_TYPES.addAlias(legacyId(holder.getId()), holder.getId()));
+      ModMenus.MENU_TYPES.addAlias(legacyId(ModMenus.MATERIAL_BOX.getId()), ModMenus.MATERIAL_BOX.getId());
+      ModMenus.MENU_TYPES.addAlias(legacyId(ModMenus.MUSLI_BAR_PRESS.getId()), ModMenus.MUSLI_BAR_PRESS.getId());
       ModRecipeSerializers.RECIPE_SERIALIZERS.addAlias(legacyId(ModRecipeSerializers.REDIA_TOOL_REPAIR.getId()), ModRecipeSerializers.REDIA_TOOL_REPAIR.getId());
       CREATIVE_TABS.addAlias(legacyId(MAIN_TAB.getId()), MAIN_TAB.getId());
    }
@@ -82,6 +106,7 @@ public final class EngineersDecorReforged {
    }
 
    private void commonSetup(FMLCommonSetupEvent event) {
+      EngineerToolsConfig.logAppliedValues();
       LOGGER.info(
          "Loaded Engineer's Decor & Controls Reforged with {} registered blocks and {} registered items.",
          ModBlocks.ORDERED_BLOCKS.size(),
@@ -107,6 +132,12 @@ public final class EngineersDecorReforged {
 
    private static boolean shouldShowInCreativeTab(DeferredItem<? extends Item> item) {
       String name = item.getId().getPath();
+      if (EngineerToolsModule.isLegacyCompatibilityItem(name)) {
+         return false;
+      }
+      if (EngineerToolsModule.isEngineerToolsItem(name) && !EngineerToolsConfig.isItemEnabled(name)) {
+         return false;
+      }
       if (ControlsModule.isControlContent(name)) {
          return ControlsModule.shouldShowInCreativeTab(name);
       }

@@ -1,10 +1,12 @@
 package com.oblixorprime.engineersdecorreforged.rsgauges;
 
 import com.mojang.serialization.MapCodec;
+import com.oblixorprime.engineersdecorreforged.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
@@ -188,6 +190,28 @@ public final class ControlsBlockTypes {
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return Shapes.empty();
+      }
+   }
+
+   public static class AlarmSirenBlock extends ControlsBlockTypes.BooleanIndicatorBlock {
+      public static final MapCodec<ControlsBlockTypes.AlarmSirenBlock> CODEC = simpleCodec(ControlsBlockTypes.AlarmSirenBlock::new);
+
+      public AlarmSirenBlock(Properties properties) {
+         super(properties);
+      }
+
+      @Override
+      protected MapCodec<? extends DirectionalBlock> codec() {
+         return CODEC;
+      }
+
+      @Override
+      protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+         super.tick(state, level, pos, random);
+         BlockState currentState = level.getBlockState(pos);
+         if (currentState.is(this) && currentState.getValue(ControlsBlockTypes.POWER_BOOL)) {
+            level.playSound(null, pos, ModSounds.ALARM_SIREN.get(), SoundSource.BLOCKS, 2.0F, 1.0F);
+         }
       }
    }
 

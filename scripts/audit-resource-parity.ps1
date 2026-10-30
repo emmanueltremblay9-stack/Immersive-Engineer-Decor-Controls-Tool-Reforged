@@ -62,13 +62,39 @@ $blockstates = Get-Names (Join-Path $currentAssetRoot "blockstates")
 $lootTables = Get-Names (Join-Path $currentDataRoot "loot_table\blocks")
 $itemModels = Get-Names (Join-Path $currentAssetRoot "models\item")
 $recipes = Get-Names (Join-Path $currentDataRoot "recipe")
+$recipeRoot = Join-Path $currentDataRoot "recipe"
+$recipeIds = @(
+   if (Test-Path -LiteralPath $recipeRoot) {
+      Get-ChildItem -LiteralPath $recipeRoot -Recurse -File -Filter "*.json" | ForEach-Object {
+         $relativePath = [System.IO.Path]::GetRelativePath($recipeRoot, $_.FullName)
+         ($relativePath.Substring(0, $relativePath.Length - $_.Extension.Length) -replace "\\", "/")
+      }
+   }
+)
+$manualRoot = Join-Path $currentAssetRoot "manual"
+$manualRecipePattern = '"recipe"\s*:\s*"' + [regex]::Escape($CurrentNamespace) + ':([^\"]+)"'
+$manualRecipeReferences = @(
+   if (Test-Path -LiteralPath $manualRoot) {
+      Get-ChildItem -LiteralPath $manualRoot -Recurse -File -Filter "*.json" | ForEach-Object {
+         $manualFile = $_
+         $manualText = Get-Content -LiteralPath $manualFile.FullName -Raw
+         [regex]::Matches($manualText, $manualRecipePattern) | ForEach-Object {
+            [pscustomobject]@{
+               File = [System.IO.Path]::GetRelativePath($ProjectRoot, $manualFile.FullName)
+               Recipe = $_.Groups[1].Value
+            }
+         }
+      }
+   }
+)
+$missingManualRecipeReferences = @($manualRecipeReferences | Where-Object { $_.Recipe -notin $recipeIds })
 $langPath = Join-Path $currentAssetRoot "lang\en_us.json"
 $langText = if (Test-Path -LiteralPath $langPath) { Get-Content -LiteralPath $langPath -Raw } else { "" }
 
 $expectedNoLoot = @("industrialswitch_top")
 $expectedNoItemModel = @("ariadne_marker", "industrialswitch_top")
 $expectedNoBlockLang = @("industrialswitch_top")
-$internalItemModels = @("qube", "rustic_circular_gauge")
+$internalItemModels = @("qube", "rustic_circular_gauge", "tracker_model", "tracker_pointer_model")
 $allowedNoRecipe = @(
    "charged_lapis",
    "dark_shingle_roof_block",
@@ -80,8 +106,11 @@ $allowedNoRecipe = @(
    "halfslab_sheetmetal_steel",
    "halfslab_treated_wood",
    "iron_grit",
+   "musli_bar",
    "qube",
-   "rustic_circular_gauge"
+   "rustic_circular_gauge",
+   "tracker_model",
+   "tracker_pointer_model"
 )
 
 $missingLoot = @($blockstates | Where-Object { $_ -notin $lootTables -and $_ -notin $expectedNoLoot })
@@ -106,6 +135,8 @@ $summary = [pscustomobject]@{
    BlockLootTables = $lootTables.Count
    ItemModels = $itemModels.Count
    Recipes = $recipes.Count
+   ManualRecipeReferences = $manualRecipeReferences.Count
+   MissingManualRecipeReferences = $missingManualRecipeReferences.Count
    MissingBlockLootTables = $missingLoot.Count
    MissingBlockItemModels = $missingItemModel.Count
    MissingBlockLangKeys = $missingBlockLang.Count
@@ -146,6 +177,11 @@ if ($missingItemLang.Count -gt 0) {
    $missingItemLang | Sort-Object
 }
 
+if ($missingManualRecipeReferences.Count -gt 0) {
+   Write-Host "Manual references to missing local recipes:"
+   $missingManualRecipeReferences | Sort-Object File, Recipe | Format-Table -AutoSize
+}
+
 if ($StrictRecipeParity -and $unexpectedItemModelsWithoutRecipe.Count -gt 0) {
    Write-Host "Unexpected item models without same-name recipes:"
    $unexpectedItemModelsWithoutRecipe | Sort-Object
@@ -156,7 +192,8 @@ $hardErrorCount = $missingReplacements.Count +
    $missingLoot.Count +
    $missingItemModel.Count +
    $missingBlockLang.Count +
-   $missingItemLang.Count
+   $missingItemLang.Count +
+   $missingManualRecipeReferences.Count
 
 if ($StrictRecipeParity) {
    $hardErrorCount += $unexpectedItemModelsWithoutRecipe.Count

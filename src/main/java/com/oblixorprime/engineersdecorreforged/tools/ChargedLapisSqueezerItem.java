@@ -26,18 +26,18 @@ public class ChargedLapisSqueezerItem extends TooltipItem {
       }
 
       if (player.experienceLevel < 1) {
-         message(player, "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.noxp");
+         failure(level, player, "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.noxp");
          return InteractionResultHolder.fail(stack);
       }
 
       if (player.getHealth() <= player.getMaxHealth() / 10.0F) {
-         message(player, "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.lowhealth");
+         failure(level, player, "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.lowhealth");
          return InteractionResultHolder.fail(stack);
       }
 
       ItemStack lapis = findLapis(player.getInventory());
       if (lapis.isEmpty()) {
-         message(player, "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.nolapis");
+         failure(level, player, "item.immersive_engineer_decor_controls_tool_reforged.charged_lapis_squeezer.msg.nolapis");
          return InteractionResultHolder.fail(stack);
       }
 
@@ -56,6 +56,11 @@ public class ChargedLapisSqueezerItem extends TooltipItem {
       return InteractionResultHolder.success(stack);
    }
 
+   @Override
+   public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+      return false;
+   }
+
    private static ItemStack findLapis(Inventory inventory) {
       for (int i = 0; i < inventory.getContainerSize(); i++) {
          ItemStack stack = inventory.getItem(i);
@@ -67,7 +72,8 @@ public class ChargedLapisSqueezerItem extends TooltipItem {
       return ItemStack.EMPTY;
    }
 
-   private static void message(Player player, String key) {
+   private static void failure(Level level, Player player, String key) {
       player.displayClientMessage(Component.translatable(key), true);
+      level.playSound(null, player.blockPosition(), SoundEvents.NOTE_BLOCK_BASS.value(), player.getSoundSource(), 1.0F, 0.6F);
    }
 }

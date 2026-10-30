@@ -1,7 +1,7 @@
 Tracker
 Stored position marker
-<&recipe>The Tracker stores a block position directly in the item.<br>
+<&recipe>Click a block or living entity with the Tracker to store it as the target. Its 3D pointer follows tracked entities as they move and points toward targets in the current dimension.<br>
 <br>
-Usage: Click a block to save its dimension and coordinates. The tooltip shows the stored position. Sneak-use the Tracker to clear the target.<br>
+Usage: To clear an existing target, look almost straight down and click a block or entity. The tooltip shows the target and its dimension.<br>
 <br>
 Use it to mark machines, tunnel branches, remote controls, or unfinished construction sites before returning with tools and materials.

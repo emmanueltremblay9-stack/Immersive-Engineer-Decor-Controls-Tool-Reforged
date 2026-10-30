@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "immersive_engineer_decor_controls_tool_reforged:engineer_tools_item_enabled",
+      "item": "immersive_engineer_decor_controls_tool_reforged:ariadne_coal"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [

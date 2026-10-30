@@ -3,7 +3,6 @@
     "minecraft:wheat_seeds",
     "minecraft:melon_seeds",
     "minecraft:pumpkin_seeds",
-    "minecraft:beetroot_seeds",
-    "immersiveengineering:seed"
+    "minecraft:beetroot_seeds"
   ]
 }

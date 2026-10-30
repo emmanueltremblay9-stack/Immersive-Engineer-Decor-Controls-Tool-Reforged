@@ -2,9 +2,11 @@ package com.oblixorprime.engineersdecorreforged.utility;
 
 import com.mojang.serialization.MapCodec;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
+import com.oblixorprime.engineersdecorreforged.network.ModNetworking;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -175,6 +177,8 @@ public final class MachineBlocks {
          if (isLabelHit(state, hit)) {
             if (level.isClientSide && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
                LabeledCrateLabelClientBridge.open(pos, machine.labelLines());
+            } else if (player instanceof ServerPlayer serverPlayer) {
+               ModNetworking.authorizeLabeledCrateEdit(serverPlayer, pos);
             }
 
             return InteractionResult.SUCCESS;
@@ -190,6 +194,8 @@ public final class MachineBlocks {
          if (isLabelHit(state, hit)) {
             if (level.isClientSide && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
                LabeledCrateLabelClientBridge.open(pos, machine.labelLines());
+            } else if (player instanceof ServerPlayer serverPlayer) {
+               ModNetworking.authorizeLabeledCrateEdit(serverPlayer, pos);
             }
 
             return ItemInteractionResult.sidedSuccess(level.isClientSide);

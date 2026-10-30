@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "immersive_engineer_decor_controls_tool_reforged:engineer_tools_item_enabled",
+      "item": "immersive_engineer_decor_controls_tool_reforged:musli_bar_press"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
@@ -11,7 +17,7 @@
       "item": "minecraft:iron_ingot"
     },
     "S": {
-      "tag": "immersive_engineer_decor_controls_tool_reforged:musli_bar_press_seeds"
+      "item": "minecraft:wheat_seeds"
     },
     "F": {
       "item": "minecraft:apple"

@@ -8,21 +8,21 @@ REDIA Tool
 Diamond-covered utility
 <&redia_tool>The REDIA Tool is a durable field utility for quick ground work. Use it on workable soil to till farmland.<br>
 <br>
-Sneak-use it against a stable face while carrying torches to place a torch marker from your inventory. Each successful operation wears the tool.
+Use it against a stable face while carrying torches to place a torch marker from your inventory without wearing REDIA. Ground work, shearing, axe work, and tree felling consume durability.
 <np>
 Ore Crushing Hammer
 Hand crushing tool
-<&crushing_hammer>The Ore Crushing Hammer crushes raw iron, raw gold, iron ore, deepslate iron ore, gold ore, and deepslate gold ore into Immersive Engineering dust through crafting recipes.<br>
+<&crushing_hammer>The Ore Crushing Hammer crushes aluminum, copper, gold, iron, lead, nickel, silver, and uranium ore into two Immersive Engineering dusts. Optional Mekanism support also restores osmium and tin crushing.<br>
 <br>
-The resulting iron and gold dust can be used anywhere Immersive Engineering dusts are accepted.<br>
+Use the hammer and ore together in a normal crafting grid, or put the hammer in the Metal Crafting Table tool slot and one ore in the grid.<br>
 <br>
-The hammer takes durability damage and returns to the grid until it breaks. It also wears from hard mining and can shove close threats away.
+The hammer takes durability damage and remains in the table's tool slot until it breaks. It also wears from hard mining and can shove close threats away.
 <np>
 Tracker
 Stored position marker
-<&tracker>Click a block with the Tracker to store that block position and dimension in the item. Sneak-use the Tracker to clear the stored target.<br>
+<&tracker>Click a block or living entity with the Tracker to store it as the target. The 3D pointer follows tracked entities as they move and points toward targets in the current dimension.<br>
 <br>
-The tooltip reports the saved coordinates, which makes it useful for marking machines, shafts, or cable endpoints before returning with materials.
+To clear an existing target, look almost straight down and click a block or entity. The tooltip reports the target and dimension.
 <np>
 Ariadne Coal
 Mine route marker
@@ -32,37 +32,37 @@ Ariadne Coal is a reusable 100-use marker tool. Each successful marker placement
 <np>
 Auto Stim Pack
 Emergency injector
-<&stimpack>The Auto Stim Pack heals, briefly protects, and boosts movement when used manually. It can also trigger from inventory when health is low, then goes on cooldown.<br>
+<&stimpack>The Auto Stim Pack begins a 20-tick injection sequence automatically when health falls to three hearts or less. It then heals three hearts and briefly grants movement speed, regeneration, resistance, and fire resistance.<br>
 <br>
-Keep one in your kit for emergency recovery during mine or factory work.
+It works from inventory or a supported Curios slot and contains two injections. It cannot be activated manually.
 <np>
 Sleeping Bag
 Portable rest kit
-<&sleeping_bag>The Sleeping Bag lets an engineer rest through the night in the Overworld without setting a spawn point.<br>
+<&sleeping_bag>Use the Sleeping Bag on the top of a non-bed block to enter Minecraft's normal sleep process without setting a spawn point.<br>
 <br>
-Use it at night in a safe area. It refuses daytime use, unsafe monster-filled surroundings, and dimensions where a field rest would not be stable.
+Normal time, dimension, monster-safety, and multiplayer sleeping rules still apply. The bag is reusable and does not consume durability.
 <np>
 Material Storage Box
 Construction supply box
-<&material_box>The Material Storage Box stores one plain, unmodified stackable material type for construction runs.<br>
+<&material_box>The Material Storage Box is a portable 54-slot inventory for construction runs. It preserves arbitrary item stacks and their components.<br>
 <br>
-Hold the box in the main hand and a plain material stack in the offhand to store that material. Use the box again with an empty offhand to retrieve a stack. It holds up to 512 items and refuses mixed or modified stacks.
+Use the box to open its original six-row storage screen. Filled boxes cannot be nested inside other Material Boxes.
 <np>
 Diving Air Capsule
 Emergency air reserve
-<&diving_capsule>The Diving Air Capsule restores air when used manually. It can also trigger from inventory when air is nearly gone, then goes on cooldown.<br>
+<&diving_capsule>The Diving Air Capsule activates automatically when air falls to 30 percent or less and restores 70 percent of maximum air.<br>
 <br>
-Carry it for underwater repairs, flooded mines, or compact pump rooms.
+It works from inventory or a supported Curios slot, contains ten uses, and cannot be activated manually.
 <np>
 Muslee Bar Press
 Food press
-<&musli_bar_press>The Muslee Bar Press makes field rations from compact ingredients.<br>
+<&musli_bar_press>The reusable Muslee Bar Press stores up to 512 accepted seeds and 768 hunger points from ordinary food.<br>
 <br>
-Use it with bread, an apple, and wheat, melon, pumpkin, beetroot, or Industrial Hemp seeds in your inventory to press four Muslee Melange Power Bars. The press consumes the ingredients atomically, checks for output space, and wears with each batch.
+Open its original input/output screen and insert wheat, melon, pumpkin, or beetroot seeds plus safe edible food. Each bar costs one seed and eight hunger points; unused points remain stored in the press.
 <np>
 Muslee Melange Power Bar
 Fast shop snack
-<&musli_bar>The Muslee Melange Power Bar is a fast food item made from bread, seeds, and fruit.<br>
+The Muslee Melange Power Bar is a fast, always-edible six-point food made in the portable press.<br>
 <br>
 Use it as compact field food while installing long cable runs, pipes, and factory fixtures.
 <np>
@@ -77,15 +77,3 @@ Stored experience
 <&charged_lapis>Charged Lapis stores one experience level. Consume it to restore the level, clear active effects, and recover a small amount of health.<br>
 <br>
 Craft a Mind Squeezer first; Charged Lapis is produced by using that tool with lapis and XP available.
-<np>
-Coarse Iron Grit
-Legacy crushed iron feed
-<&iron_grit>Coarse Iron Grit is kept for existing worlds that already contain the old hammer output.<br>
-<br>
-Smelt or blast legacy grit into iron ingots.
-<np>
-Coarse Gold Grit
-Legacy crushed gold feed
-<&gold_grit>Coarse Gold Grit is kept for existing worlds that already contain the old hammer output.<br>
-<br>
-Smelt or blast legacy grit into gold ingots.

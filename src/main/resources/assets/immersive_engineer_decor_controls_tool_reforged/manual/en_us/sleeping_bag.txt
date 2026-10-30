@@ -1,7 +1,7 @@
 Sleeping Bag
 Portable rest kit
-<&recipe>The Sleeping Bag is a weatherproof rest kit for field work far from a bed.<br>
+<&recipe>Use the Sleeping Bag on the top of a non-bed block to enter Minecraft's normal sleep process without setting a spawn point.<br>
 <br>
-Usage: Use it at night in the Overworld to rest until morning. It does not set or move your spawn point.<br>
+Usage: Normal time, dimension, monster-safety, and multiplayer sleeping rules still apply.<br>
 <br>
-The bag refuses daytime use, unsafe surroundings with nearby monsters, and dimensions that are not suitable for a safe field rest. Each successful rest wears the bag.
+The bag is reusable and does not consume durability. It works from either hand.

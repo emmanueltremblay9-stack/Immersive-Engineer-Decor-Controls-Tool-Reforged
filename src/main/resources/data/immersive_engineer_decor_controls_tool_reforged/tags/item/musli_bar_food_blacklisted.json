@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "immersive_engineer_decor_controls_tool_reforged:musli_bar",
+    "minecraft:rotten_flesh",
+    "minecraft:pufferfish",
+    "minecraft:golden_apple",
+    "minecraft:chicken",
+    "minecraft:poisonous_potato",
+    "minecraft:enchanted_golden_apple"
+  ]
+}

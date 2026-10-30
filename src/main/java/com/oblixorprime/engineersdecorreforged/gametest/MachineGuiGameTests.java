@@ -1,21 +1,28 @@
 package com.oblixorprime.engineersdecorreforged.gametest;
 
+import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.ModItems;
 import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.ModRecipeSerializers;
+import com.oblixorprime.engineersdecorreforged.ModRecipeTypes;
 import com.oblixorprime.engineersdecorreforged.ReforgedConfig;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.LabeledCrateLabelPayload;
+import com.oblixorprime.engineersdecorreforged.network.ModNetworking;
 import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsModule;
+import com.oblixorprime.engineersdecorreforged.recipe.CrushingRecipe;
+import com.oblixorprime.engineersdecorreforged.recipe.MetalCraftingRecipe;
+import com.oblixorprime.engineersdecorreforged.tools.EngineerToolsModule;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import io.netty.buffer.Unpooled;
 import java.util.List;
+import java.util.UUID;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -26,6 +33,7 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.MenuProvider;
@@ -34,12 +42,16 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -59,6 +71,7 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import net.neoforged.neoforge.items.IItemHandler;
@@ -247,6 +260,38 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_label_authorization_is_exact_and_one_shot(GameTestHelper helper) {
+      ServerPlayer player = FakePlayerFactory.get(
+         helper.getLevel(), new GameProfile(UUID.fromString("9a0399a8-dcf1-4b78-a1e4-cb9d782b539b"), "labeled-crate-auth-test")
+      );
+      BlockPos cratePos = helper.absolutePos(TEST_POS);
+      helper.assertFalse(
+         ModNetworking.consumeLabeledCrateEditAuthorization(player, cratePos), "a label packet should be rejected without a matching server interaction"
+      );
+      ModNetworking.authorizeLabeledCrateEdit(player, cratePos);
+      helper.assertFalse(
+         ModNetworking.consumeLabeledCrateEditAuthorization(player, cratePos.east()), "a label packet should be rejected for a different crate position"
+      );
+      helper.assertTrue(
+         ModNetworking.consumeLabeledCrateEditAuthorization(player, cratePos), "a mismatched label packet should not consume the valid crate authorization"
+      );
+      ModNetworking.authorizeLabeledCrateEdit(player, cratePos);
+      helper.assertTrue(
+         ModNetworking.consumeLabeledCrateEditAuthorization(player, cratePos), "the exact crate interaction should authorize one label packet"
+      );
+      helper.assertFalse(
+         ModNetworking.consumeLabeledCrateEditAuthorization(player, cratePos), "the crate label authorization should be consumed after one packet"
+      );
+      long originalGameTime = helper.getLevel().getGameTime();
+      ModNetworking.authorizeLabeledCrateEdit(player, cratePos);
+      helper.assertFalse(
+         ModNetworking.consumeLabeledCrateEditAuthorization(player, cratePos, originalGameTime + 2401L),
+         "an unused crate label authorization should expire after its server window"
+      );
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 80)
    public static void metal_crafting_table_opens_plate_workstation_menu(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
@@ -289,6 +334,141 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_table_forms_ie_steel_plates_for_decorations(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      Item hammer = (Item)BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", "hammer"));
+      Item steelIngot = (Item)BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", "ingot_steel"));
+      Item steelPlate = (Item)BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", "plate_steel"));
+      helper.assertTrue(hammer != Items.AIR, "IE hammer item should be registered");
+      helper.assertTrue(steelIngot != Items.AIR, "IE steel ingot item should be registered");
+      helper.assertTrue(steelPlate != Items.AIR, "IE steel plate item should be registered");
+      machine.setItem(0, new ItemStack(hammer));
+      machine.setItem(1, new ItemStack(steelIngot));
+      helper.succeedWhen(() -> {
+         tickMachine(helper, machine, 5);
+         helper.assertTrue(machine.getItem(10).is(steelPlate), "metal crafting table should preview IE steel plates for steel decoration recipes");
+         machine.consumeMetalCraftingResult();
+         helper.assertTrue(machine.getItem(10).isEmpty(), "steel plate output should clear after taking the result");
+         helper.assertTrue(machine.getItem(1).isEmpty(), "steel plate crafting should consume one steel ingot");
+      });
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_table_crushes_ores_into_ie_dusts(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      Item hammer = EngineerToolsModule.CRUSHING_HAMMER.get();
+      Item ironDust = item("immersiveengineering", "dust_iron");
+      Item goldDust = item("immersiveengineering", "dust_gold");
+      assertMetalToolOperation(helper, machine, hammer, Items.IRON_ORE, ironDust, 2, 10);
+      assertMetalToolOperation(helper, machine, hammer, Items.DEEPSLATE_IRON_ORE, ironDust, 2, 10);
+      assertMetalToolOperation(helper, machine, hammer, Items.GOLD_ORE, goldDust, 2, 8);
+      assertMetalToolOperation(helper, machine, hammer, Items.DEEPSLATE_GOLD_ORE, goldDust, 2, 8);
+
+      ItemStack lastUseHammer = new ItemStack(hammer);
+      lastUseHammer.setDamageValue(lastUseHammer.getMaxDamage() - 10);
+      machine.setItem(0, lastUseHammer);
+      machine.setItem(1, new ItemStack(Items.IRON_ORE));
+      machine.refreshMetalCraftingResult();
+      helper.assertTrue(machine.getItem(10).is(ironDust), "last valid crushing hammer use should still produce dust");
+      machine.consumeMetalCraftingResult();
+      helper.assertTrue(machine.getItem(0).isEmpty(), "crushing hammer should leave the tool slot when its final table use breaks it");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_table_right_click_takes_the_full_dust_result(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      MachineMenu menu = new MachineMenu(MachineKind.METAL_CRAFTING_TABLE, 12, player.getInventory(), machine, machine.dataAccessForTests());
+      Item ironDust = item("immersiveengineering", "dust_iron");
+      machine.setItem(0, new ItemStack(EngineerToolsModule.CRUSHING_HAMMER.get()));
+      machine.setItem(1, new ItemStack(Items.IRON_ORE));
+      machine.refreshMetalCraftingResult();
+      helper.assertValueEqual(2, machine.getItem(10).getCount(), "dust recipe should preview the complete two-item result");
+
+      menu.clicked(1, 1, ClickType.PICKUP, player);
+
+      helper.assertTrue(menu.getCarried().is(ironDust), "right-clicking the virtual output should put dust on the cursor");
+      helper.assertValueEqual(2, menu.getCarried().getCount(), "right-clicking the virtual output must take the complete dust result");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "taking the full dust result should consume exactly one ore");
+      helper.assertValueEqual(10, machine.getItem(0).getDamageValue(), "taking the full dust result should wear the crushing hammer once");
+      menu.setCarried(ItemStack.EMPTY);
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_table_cuts_ie_plates_into_wires(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      Item wirecutter = item("immersiveengineering", "wirecutter");
+      assertMetalToolOperation(helper, machine, wirecutter, item("immersiveengineering", "plate_aluminum"), item("immersiveengineering", "wire_aluminum"), 1, 1);
+      assertMetalToolOperation(helper, machine, wirecutter, item("immersiveengineering", "plate_copper"), item("immersiveengineering", "wire_copper"), 1, 1);
+      assertMetalToolOperation(helper, machine, wirecutter, item("immersiveengineering", "plate_electrum"), item("immersiveengineering", "wire_electrum"), 1, 1);
+      assertMetalToolOperation(helper, machine, wirecutter, item("immersiveengineering", "plate_lead"), item("immersiveengineering", "wire_lead"), 1, 1);
+      assertMetalToolOperation(helper, machine, wirecutter, item("immersiveengineering", "plate_steel"), item("immersiveengineering", "wire_steel"), 1, 1);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void metal_crafting_recipes_require_the_dedicated_tool_slot(GameTestHelper helper) {
+      var recipeManager = helper.getLevel().getRecipeManager();
+      List<ResourceLocation> crushingRecipeIds = List.of(
+         currentId("iron_grit_from_iron_ore"),
+         currentId("gold_grit_from_gold_ore")
+      );
+      List<ResourceLocation> tableOnlyRecipeIds = List.of(
+         ResourceLocation.fromNamespaceAndPath("immersiveengineering", "crafting/wire_aluminum"),
+         ResourceLocation.fromNamespaceAndPath("immersiveengineering", "crafting/wire_copper"),
+         ResourceLocation.fromNamespaceAndPath("immersiveengineering", "crafting/wire_electrum"),
+         ResourceLocation.fromNamespaceAndPath("immersiveengineering", "crafting/wire_lead"),
+         ResourceLocation.fromNamespaceAndPath("immersiveengineering", "crafting/wire_steel")
+      );
+      helper.assertValueEqual(5, recipeManager.getAllRecipesFor(ModRecipeTypes.METAL_CRAFTING.get()).size(), "metal crafting recipe type should contain the five table-only wire recipes");
+      for (ResourceLocation id : tableOnlyRecipeIds) {
+         var recipe = recipeManager.byKey(id);
+         helper.assertTrue(recipe.isPresent(), "missing table-only metal crafting recipe " + id);
+         helper.assertTrue(recipe.get().value() instanceof MetalCraftingRecipe, "recipe should use the dedicated metal crafting serializer: " + id);
+         helper.assertTrue(recipe.get().value() instanceof CraftingRecipe, "IE manual recipe lookup requires a CraftingRecipe: " + id);
+         helper.assertTrue(recipe.get().value().getType() == ModRecipeTypes.METAL_CRAFTING.get(), "recipe must not remain in vanilla crafting: " + id);
+      }
+      for (ResourceLocation id : crushingRecipeIds) {
+         var recipe = recipeManager.byKey(id);
+         helper.assertTrue(recipe.isPresent(), "missing original-grid crushing recipe " + id);
+         helper.assertTrue(recipe.get().value() instanceof CrushingRecipe, "crushing recipe should use the wear-aware crafting serializer: " + id);
+         helper.assertTrue(recipe.get().value().getType() == RecipeType.CRAFTING, "crushing recipe should remain available in normal crafting: " + id);
+      }
+
+      Item wirecutter = item("immersiveengineering", "wirecutter");
+      Item copperPlate = item("immersiveengineering", "plate_copper");
+      CraftingInput vanillaInput = CraftingInput.of(2, 1, List.of(new ItemStack(wirecutter), new ItemStack(copperPlate)));
+      helper.assertTrue(
+         recipeManager.getRecipeFor(RecipeType.CRAFTING, vanillaInput, helper.getLevel()).isEmpty(),
+         "wirecutter and plate must not match a player or vanilla crafting recipe"
+      );
+      CraftingInput crushingInput = CraftingInput.of(
+         2,
+         1,
+         List.of(new ItemStack(EngineerToolsModule.CRUSHING_HAMMER.get()), new ItemStack(Items.IRON_ORE))
+      );
+      helper.assertTrue(
+         recipeManager.getRecipeFor(RecipeType.CRAFTING, crushingInput, helper.getLevel()).map(holder -> holder.value() instanceof CrushingRecipe).orElse(false),
+         "the original crushing recipe should work in normal crafting as well as the metal crafting table"
+      );
+
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
+      machine.setItem(1, new ItemStack(wirecutter));
+      machine.setItem(2, new ItemStack(copperPlate));
+      machine.refreshMetalCraftingResult();
+      helper.assertTrue(machine.getItem(10).isEmpty(), "putting both tool and plate in the 3x3 grid must not bypass the dedicated tool slot");
+      machine.setItem(0, new ItemStack(wirecutter));
+      machine.setItem(1, new ItemStack(copperPlate));
+      machine.setItem(2, new ItemStack(item("immersiveengineering", "plate_steel")));
+      machine.refreshMetalCraftingResult();
+      helper.assertTrue(machine.getItem(10).isEmpty(), "metal crafting should reject multiple grid materials");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
    public static void metal_crafting_table_grid_accepts_normal_ingredients(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE);
       IItemHandler handler = machine.itemHandler(Direction.UP);
@@ -296,6 +476,16 @@ public final class MachineGuiGameTests {
       ItemStack rejectedJunk = handler.insertItem(0, new ItemStack(Items.COBBLESTONE), false);
       helper.assertValueEqual(1, rejectedJunk.getCount(), "hammer slot should reject non-hammer items");
       helper.assertTrue(machine.getItem(0).isEmpty(), "hammer slot should stay empty after rejecting non-hammer items");
+      ItemStack rejectedShears = handler.insertItem(0, new ItemStack(Items.SHEARS), false);
+      helper.assertValueEqual(1, rejectedShears.getCount(), "tool slot should reject vanilla shears");
+      ItemStack rejectedRedia = handler.insertItem(0, new ItemStack(EngineerToolsModule.REDIA_TOOL.get()), false);
+      helper.assertValueEqual(1, rejectedRedia.getCount(), "tool slot should reject the REDIA Tool even though it can perform shearing actions");
+      ItemStack acceptedWirecutter = handler.insertItem(0, new ItemStack(item("immersiveengineering", "wirecutter")), false);
+      helper.assertTrue(acceptedWirecutter.isEmpty(), "tool slot should accept Immersive Engineering Engineer's Wire Cutters");
+      machine.setItem(0, ItemStack.EMPTY);
+      ItemStack acceptedCrushingHammer = handler.insertItem(0, new ItemStack(EngineerToolsModule.CRUSHING_HAMMER.get()), false);
+      helper.assertTrue(acceptedCrushingHammer.isEmpty(), "tool slot should accept the Ore Crushing Hammer");
+      machine.setItem(0, ItemStack.EMPTY);
       ItemStack acceptedIngredient = handler.insertItem(1, new ItemStack(Items.COBBLESTONE), false);
       helper.assertTrue(acceptedIngredient.isEmpty(), "crafting grid should accept normal crafting ingredients");
       helper.assertTrue(machine.getItem(1).is(Items.COBBLESTONE), "crafting grid should store normal crafting ingredients");
@@ -1198,6 +1388,35 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 120)
+   public static void factory_placer_does_not_place_blocks_through_entities(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      BlockPos placerPos = new BlockPos(1, 1, 1);
+      BlockPos targetPos = placerPos.east();
+      helper.setBlock(targetPos, Blocks.AIR);
+      helper.setBlock(
+         placerPos,
+         (BlockState)((MachineBlocks.DirectionalMachineBlock)ModBlocks.FACTORY_PLACER.get()).defaultBlockState().setValue(MachineBlocks.FACING, Direction.EAST)
+      );
+      helper.spawn(EntityType.ARMOR_STAND, targetPos);
+      BlockEntity blockEntity = helper.getLevel().getBlockEntity(helper.absolutePos(placerPos));
+      helper.assertTrue(blockEntity instanceof MachineBlockEntity, "factory placer should create a machine block entity");
+      MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
+      machine.setItem(0, new ItemStack(Items.DIRT));
+      MachineMenu menu = new MachineMenu(MachineKind.FACTORY_PLACER, 8, player.getInventory(), machine, machine.dataAccessForTests());
+      menu.handleAction(player, 21, 1, 0);
+      tickMachine(helper, machine, 12);
+      helper.assertTrue(helper.getBlockState(targetPos).isAir(), "factory placer should honor entity collision and leave the target empty");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "failed collision placement should eject the blocked stock item");
+      AABB dropSearch = new AABB(helper.absolutePos(placerPos)).inflate(3.0);
+      boolean dirtDropFound = helper.getLevel()
+         .getEntitiesOfClass(ItemEntity.class, dropSearch, item -> item.getItem().is(Items.DIRT))
+         .stream()
+         .anyMatch(item -> item.getItem().getCount() == 1);
+      helper.assertTrue(dirtDropFound, "factory placer should return the collision-blocked item as an item entity");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 120)
    public static void factory_placer_manual_trigger_spits_blocked_stock(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.CREATIVE);
       helper.setBlock(TEST_POS.east(), Blocks.STONE);
@@ -2040,6 +2259,31 @@ public final class MachineGuiGameTests {
    private static void assertRecipe(GameTestHelper helper, String name) {
       ResourceLocation id = ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", name);
       helper.assertTrue(helper.getLevel().getRecipeManager().byKey(id).isPresent(), "missing recipe " + id);
+   }
+
+   private static Item item(String namespace, String path) {
+      Item item = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath(namespace, path));
+      if (item == Items.AIR) {
+         throw new IllegalStateException("Missing required item " + namespace + ":" + path);
+      }
+
+      return item;
+   }
+
+   private static void assertMetalToolOperation(
+      GameTestHelper helper, MachineBlockEntity machine, Item tool, Item material, Item expectedOutput, int expectedCount, int expectedToolDamage
+   ) {
+      machine.setItem(0, new ItemStack(tool));
+      machine.setItem(1, new ItemStack(material));
+      machine.refreshMetalCraftingResult();
+      helper.assertTrue(machine.getItem(10).is(expectedOutput), "metal crafting table should preview " + BuiltInRegistries.ITEM.getKey(expectedOutput));
+      helper.assertValueEqual(expectedCount, machine.getItem(10).getCount(), "metal crafting table preview should have the expected count");
+      helper.assertTrue(machine.getItem(1).is(material), "metal crafting material should remain until the output is taken");
+      helper.assertValueEqual(0, machine.getItem(0).getDamageValue(), "metal crafting tool should not wear before the output is taken");
+      machine.consumeMetalCraftingResult();
+      helper.assertTrue(machine.getItem(1).isEmpty(), "taking metal crafting output should consume one material");
+      helper.assertValueEqual(expectedToolDamage, machine.getItem(0).getDamageValue(), "taking metal crafting output should apply exact tool wear");
+      machine.setItem(0, ItemStack.EMPTY);
    }
 
    private static void assertLabeledCrateLabelBehavior(GameTestHelper helper, MachineBlockEntity machine) {

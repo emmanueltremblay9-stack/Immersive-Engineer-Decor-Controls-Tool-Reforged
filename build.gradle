@@ -23,6 +23,13 @@ repositories {
         name = 'BlameJared'
         url = 'https://maven.blamejared.com'
     }
+    maven {
+        name = 'Curios'
+        url = 'https://maven.theillusivec4.top/'
+        content {
+            includeGroup 'top.theillusivec4.curios'
+        }
+    }
 }
 
 neoForge {
@@ -65,6 +72,7 @@ dependencies {
     implementation "blusunrize.immersiveengineering:ImmersiveEngineering:${immersive_engineering_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -79,7 +87,9 @@ tasks.named('jar', Jar).configure {
                 'Implementation-Title'  : mod_name,
                 'Implementation-Version': mod_version,
                 'Implementation-Vendor' : mod_authors,
-                'Reconstruction-Source' : 'CurseForge artifact engineers_decor_reforged-1.1.jar'
+                'Reconstruction-Source' : 'CurseForge artifact engineers_decor_reforged-1.1.jar',
+                'Engineers-Tools-Source': 'engineerstools-1.16.5-1.1.7.jar',
+                'Engineers-Tools-SHA256': '62A63DE173FA74F447C390AD32FB80D0DEC7C4B6B19CA04876AE59049C68C9CE'
         ])
     }
 }

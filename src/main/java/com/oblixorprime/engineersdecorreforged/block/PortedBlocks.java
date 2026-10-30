@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionResult;
@@ -26,6 +27,7 @@ import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
@@ -38,9 +40,11 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.WallSide;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -97,6 +101,10 @@ public final class PortedBlocks {
    );
 
    private PortedBlocks() {
+   }
+
+   private static Direction horizontalPlacementFacing(BlockPlaceContext context) {
+      return resolveHorizontalFacingFromClickedFaceBorder(context, context.getHorizontalDirection().getOpposite());
    }
 
    private static Direction catwalkStairPlacementFacing(BlockPlaceContext context) {
@@ -515,10 +523,10 @@ public final class PortedBlocks {
          BlockState below = context.getLevel().getBlockState(context.getClickedPos().below());
          return below.getBlock() instanceof PortedBlocks.FenceGateSegmentBlock && below.getValue(PortedBlocks.SEGMENT) == 0
             ? (BlockState)((BlockState)((BlockState)this.defaultBlockState()
-                     .setValue(PortedBlocks.HORIZONTAL_FACING, (Direction)below.getValue(PortedBlocks.HORIZONTAL_FACING)))
-                  .setValue(PortedBlocks.OPEN, (Boolean)below.getValue(PortedBlocks.OPEN)))
-               .setValue(PortedBlocks.SEGMENT, 1)
-            : (BlockState)((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()))
+                  .setValue(PortedBlocks.HORIZONTAL_FACING, (Direction)below.getValue(PortedBlocks.HORIZONTAL_FACING)))
+                   .setValue(PortedBlocks.OPEN, (Boolean)below.getValue(PortedBlocks.OPEN)))
+                .setValue(PortedBlocks.SEGMENT, 1)
+            : (BlockState)((BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, PortedBlocks.horizontalPlacementFacing(context)))
                .setValue(PortedBlocks.SEGMENT, 0);
       }
 
@@ -543,19 +551,6 @@ public final class PortedBlocks {
          level.updateNeighborsAt(pos, this);
       }
 
-      protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-         if (!state.is(newState.getBlock())) {
-            BlockPos linkedPos = state.getValue(PortedBlocks.SEGMENT) == 0 ? pos.above() : pos.below();
-            BlockState linkedState = level.getBlockState(linkedPos);
-            if (linkedState.getBlock() instanceof PortedBlocks.FenceGateSegmentBlock
-               && linkedState.getValue(PortedBlocks.SEGMENT) != state.getValue(PortedBlocks.SEGMENT)) {
-               level.removeBlock(linkedPos, false);
-            }
-         }
-
-         super.onRemove(state, level, pos, newState, movedByPiston);
-      }
-
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          Direction facing = (Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING);
          if ((Boolean)state.getValue(PortedBlocks.OPEN)) {
@@ -572,7 +567,16 @@ public final class PortedBlocks {
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         return (Boolean)state.getValue(PortedBlocks.OPEN)
+            ? Shapes.empty()
+            : (((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING)).getAxis() == Axis.Z ? CLOSED_NORTH_SOUTH_SHAPE : CLOSED_EAST_WEST_SHAPE);
+      }
+
+      protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
+         return switch (pathComputationType) {
+            case LAND, AIR -> (Boolean)state.getValue(PortedBlocks.OPEN);
+            case WATER -> false;
+         };
       }
 
       private static VoxelShape rotateClockwise(VoxelShape shape) {
@@ -643,7 +647,7 @@ public final class PortedBlocks {
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          boolean powered = context.getLevel().hasNeighborSignal(context.getClickedPos());
          return (BlockState)((BlockState)((BlockState)this.defaultBlockState()
-                  .setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()))
+                  .setValue(PortedBlocks.HORIZONTAL_FACING, PortedBlocks.horizontalPlacementFacing(context)))
                .setValue(PortedBlocks.POWERED, powered))
             .setValue(PortedBlocks.OPEN, powered);
       }
@@ -675,12 +679,23 @@ public final class PortedBlocks {
 
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return state.getValue(PortedBlocks.OPEN)
-            ? PortedBlocks.horizontalPlateShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING), 2.0)
-            : Block.box(0.0, 14.0, 0.0, 16.0, 16.0, 16.0);
+            ? PortedBlocks.horizontalPlateShape((Direction)state.getValue(PortedBlocks.HORIZONTAL_FACING), 2.875)
+            : Block.box(0.0, 0.0, 0.0, 16.0, 3.0, 16.0);
       }
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-         return this.getShape(state, level, pos, context);
+         return state.getValue(PortedBlocks.OPEN) ? Shapes.empty() : this.getShape(state, level, pos, context);
+      }
+
+      protected VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
+         return Shapes.empty();
+      }
+
+      protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
+         return switch (pathComputationType) {
+            case LAND, AIR -> state.getValue(PortedBlocks.OPEN);
+            case WATER -> false;
+         };
       }
    }
 
@@ -701,7 +716,7 @@ public final class PortedBlocks {
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
-         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
+         return (BlockState)this.defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, PortedBlocks.horizontalPlacementFacing(context));
       }
    }
 
@@ -753,6 +768,61 @@ public final class PortedBlocks {
       }
    }
 
+   public static class SteelMeshFenceBlock extends WallBlock {
+      public SteelMeshFenceBlock(Properties properties) {
+         super(properties);
+      }
+
+      @Override
+      public BlockState getStateForPlacement(BlockPlaceContext context) {
+         return this.withSteelMeshConnections(super.getStateForPlacement(context), context.getLevel(), context.getClickedPos());
+      }
+
+      @Override
+      protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+         BlockState updated = super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+         return facing.getAxis().isHorizontal() ? this.withSteelMeshConnection(updated, facing, facingState) : updated;
+      }
+
+      private BlockState withSteelMeshConnections(BlockState state, BlockGetter level, BlockPos pos) {
+         return this.withSteelMeshConnection(
+               this.withSteelMeshConnection(
+                  this.withSteelMeshConnection(this.withSteelMeshConnection(state, Direction.NORTH, level.getBlockState(pos.north())), Direction.EAST, level.getBlockState(pos.east())),
+                  Direction.SOUTH,
+                  level.getBlockState(pos.south())
+               ),
+               Direction.WEST,
+               level.getBlockState(pos.west())
+            );
+      }
+
+      private BlockState withSteelMeshConnection(BlockState state, Direction direction, BlockState neighborState) {
+         if (this.connectsToDecorNeighbor(neighborState)) {
+            return (BlockState)((BlockState)state.setValue(wallProperty(direction), WallSide.TALL)).setValue(UP, true);
+         }
+
+         return state;
+      }
+
+      private boolean connectsToDecorNeighbor(BlockState neighborState) {
+         Block neighborBlock = neighborState.getBlock();
+         return neighborBlock instanceof PortedBlocks.SteelMeshFenceBlock
+            || neighborBlock instanceof PortedBlocks.FenceGateSegmentBlock
+            || neighborBlock instanceof PortedBlocks.CenteredPoleBlock
+            || neighborState.is(BlockTags.WALLS);
+      }
+
+      private static EnumProperty<WallSide> wallProperty(Direction direction) {
+         return switch (direction) {
+            case NORTH -> NORTH_WALL;
+            case SOUTH -> SOUTH_WALL;
+            case WEST -> WEST_WALL;
+            case EAST -> EAST_WALL;
+            default -> NORTH_WALL;
+         };
+      }
+   }
+
    public static class SimpleDoorLikeBlock extends HorizontalDirectionalBlock {
       public static final MapCodec<PortedBlocks.SimpleDoorLikeBlock> CODEC = simpleCodec(PortedBlocks.SimpleDoorLikeBlock::new);
 
@@ -779,7 +849,7 @@ public final class PortedBlocks {
       public BlockState getStateForPlacement(BlockPlaceContext context) {
          boolean powered = context.getLevel().hasNeighborSignal(context.getClickedPos());
          return (BlockState)((BlockState)((BlockState)this.defaultBlockState()
-                  .setValue(PortedBlocks.HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite()))
+                  .setValue(PortedBlocks.HORIZONTAL_FACING, PortedBlocks.horizontalPlacementFacing(context)))
                .setValue(PortedBlocks.POWERED, powered))
             .setValue(PortedBlocks.OPEN, powered);
       }
@@ -946,6 +1016,31 @@ public final class PortedBlocks {
       }
    }
 
+   public static class SteelFramedWindowBlock extends PortedBlocks.HorizontalFacingBlock {
+      public static final MapCodec<PortedBlocks.SteelFramedWindowBlock> CODEC = simpleCodec(PortedBlocks.SteelFramedWindowBlock::new);
+      private static final VoxelShape NORTH_SOUTH_SHAPE = Block.box(0.0, 0.0, 7.5, 16.0, 16.0, 8.5);
+      private static final VoxelShape EAST_WEST_SHAPE = Block.box(7.5, 0.0, 0.0, 8.5, 16.0, 16.0);
+
+      public SteelFramedWindowBlock(Properties properties) {
+         super(properties);
+      }
+
+      @Override
+      protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+         return CODEC;
+      }
+
+      @Override
+      protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return state.getValue(PortedBlocks.HORIZONTAL_FACING).getAxis() == Axis.X ? EAST_WEST_SHAPE : NORTH_SOUTH_SHAPE;
+      }
+
+      @Override
+      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return this.getShape(state, level, pos, context);
+      }
+   }
+
    public static class TableBlock extends PortedBlocks.FixedShapeBlock {
       public TableBlock(Properties properties) {
          super(properties, PortedBlocks.TABLE_SHAPE);
@@ -1026,6 +1121,10 @@ public final class PortedBlocks {
       private static final VoxelShape OPEN_SOUTH_STACK_SHAPE = rotateClockwise(OPEN_EAST_STACK_SHAPE);
       private static final VoxelShape OPEN_WEST_STACK_SHAPE = rotateClockwise(OPEN_SOUTH_STACK_SHAPE);
       private static final VoxelShape OPEN_NORTH_STACK_SHAPE = rotateClockwise(OPEN_WEST_STACK_SHAPE);
+      private static final VoxelShape OPEN_EAST_COLLISION_SHAPE = Block.box(14.75, 0.0, 6.0, 16.0, 16.0, 10.0);
+      private static final VoxelShape OPEN_SOUTH_COLLISION_SHAPE = rotateClockwise(OPEN_EAST_COLLISION_SHAPE);
+      private static final VoxelShape OPEN_WEST_COLLISION_SHAPE = rotateClockwise(OPEN_SOUTH_COLLISION_SHAPE);
+      private static final VoxelShape OPEN_NORTH_COLLISION_SHAPE = rotateClockwise(OPEN_WEST_COLLISION_SHAPE);
 
       public SlidingDoorBlock(BlockSetType type, Properties properties) {
          super(type, properties);
@@ -1151,6 +1250,11 @@ public final class PortedBlocks {
       @Override
       protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return state.getValue(OPEN) ? openShape(state) : closedShape(state);
+      }
+
+      @Override
+      protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+         return state.getValue(OPEN) ? openCollisionShape(state) : closedShape(state);
       }
 
       private void finishPairingAfterPlacement(Level level, BlockPos lowerPos, BlockState lowerState) {
@@ -1363,6 +1467,16 @@ public final class PortedBlocks {
             case WEST -> OPEN_WEST_STACK_SHAPE;
             case EAST -> OPEN_EAST_STACK_SHAPE;
             default -> OPEN_EAST_STACK_SHAPE;
+         };
+      }
+
+      private static VoxelShape openCollisionShape(BlockState state) {
+         return switch (openStackSide(state)) {
+            case NORTH -> OPEN_NORTH_COLLISION_SHAPE;
+            case SOUTH -> OPEN_SOUTH_COLLISION_SHAPE;
+            case WEST -> OPEN_WEST_COLLISION_SHAPE;
+            case EAST -> OPEN_EAST_COLLISION_SHAPE;
+            default -> OPEN_EAST_COLLISION_SHAPE;
          };
       }
 

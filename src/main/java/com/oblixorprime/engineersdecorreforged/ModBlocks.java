@@ -169,8 +169,8 @@ public final class ModBlocks {
    public static final DeferredBlock<PortedBlocks.RailingBlock> STEEL_RAILING = registerWithItem(
       "steel_railing", () -> new PortedBlocks.RailingBlock(metal().noOcclusion())
    );
-   public static final DeferredBlock<WallBlock> STEEL_MESH_FENCE = registerWithItem(
-      "steel_mesh_fence", () -> new WallBlock(metal().noOcclusion().forceSolidOn())
+   public static final DeferredBlock<PortedBlocks.SteelMeshFenceBlock> STEEL_MESH_FENCE = registerWithItem(
+      "steel_mesh_fence", () -> new PortedBlocks.SteelMeshFenceBlock(metal().noOcclusion().forceSolidOn())
    );
    public static final DeferredBlock<PortedBlocks.FenceGateSegmentBlock> STEEL_MESH_FENCE_GATE = registerWithItem(
       "steel_mesh_fence_gate", () -> new PortedBlocks.FenceGateSegmentBlock(metal().noOcclusion())
@@ -250,8 +250,8 @@ public final class ModBlocks {
    public static final DeferredBlock<MachineBlocks.PipeValveBlock> STRAIGHT_PIPE_VALVE_REDSTONE_ANALOG = registerWithItem(
       "straight_pipe_valve_redstone_analog", () -> new MachineBlocks.PipeValveBlock(machineMetal(), true)
    );
-   public static final DeferredBlock<PortedBlocks.SurfaceMountedBlock> STEEL_FRAMED_WINDOW = registerWithItem(
-      "steel_framed_window", () -> new PortedBlocks.SurfaceMountedBlock(glass(), 0.0, 16.0, 2.0, false)
+   public static final DeferredBlock<PortedBlocks.SteelFramedWindowBlock> STEEL_FRAMED_WINDOW = registerWithItem(
+      "steel_framed_window", () -> new PortedBlocks.SteelFramedWindowBlock(glass())
    );
    public static final DeferredBlock<DoorBlock> METAL_SLIDING_DOOR = registerWithItem(
       "metal_sliding_door", () -> new PortedBlocks.SlidingDoorBlock(BlockSetType.OAK, metal().noOcclusion())

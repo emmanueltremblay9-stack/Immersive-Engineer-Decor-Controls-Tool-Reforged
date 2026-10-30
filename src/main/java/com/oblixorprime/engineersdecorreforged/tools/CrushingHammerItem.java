@@ -12,30 +12,9 @@ import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CrushingHammerItem extends TooltipItem {
-   private static final int CRAFTING_DAMAGE = 10;
-
+public class CrushingHammerItem extends NonEnchantableTooltipItem {
    public CrushingHammerItem(Properties properties) {
       super("crushing_hammer", properties);
-   }
-
-   public boolean hasCraftingRemainingItem(ItemStack stack) {
-      return true;
-   }
-
-   public ItemStack getCraftingRemainingItem(ItemStack stack) {
-      ItemStack remaining = stack.copyWithCount(1);
-      int nextDamage = remaining.getDamageValue() + 10;
-      if (nextDamage >= remaining.getMaxDamage()) {
-         return ItemStack.EMPTY;
-      }
-
-      remaining.setDamageValue(nextDamage);
-      return remaining;
-   }
-
-   public boolean isEnchantable(ItemStack stack) {
-      return false;
    }
 
    @Override
@@ -54,9 +33,7 @@ public class CrushingHammerItem extends TooltipItem {
          boolean hard = target instanceof Monster monster && monster.getTarget() != null;
          living.knockback(hard ? 1.2F : 0.3F, Math.sin(Math.toRadians(player.getYRot())), -Math.cos(Math.toRadians(player.getYRot())));
          if (hard) {
-            if (!player.getAbilities().instabuild) {
-               stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
-            }
+            stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 
             level.playSound(null, player.blockPosition(), SoundEvents.ANVIL_PLACE, player.getSoundSource(), 0.2F, 0.05F);
          } else {

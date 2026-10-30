@@ -3,14 +3,24 @@ package com.oblixorprime.engineersdecorreforged.network;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.server.ServerStoppedEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 public final class ModNetworking {
+   private static final long LABELED_CRATE_EDIT_WINDOW_TICKS = 2400L;
+   private static final Map<UUID, LabeledCrateEditAuthorization> LABELED_CRATE_EDIT_AUTHORIZATIONS = new ConcurrentHashMap<>();
    public static final int HOPPER_RANGE = 1;
    public static final int HOPPER_TRANSFER_COUNT = 2;
    public static final int HOPPER_LOGIC = 3;
@@ -50,6 +60,9 @@ public final class ModNetworking {
    private static void handleLabeledCrateLabel(LabeledCrateLabelPayload payload, IPayloadContext context) {
       context.enqueueWork(() -> {
          if (context.player() instanceof ServerPlayer serverPlayer) {
+            if (!consumeLabeledCrateEditAuthorization(serverPlayer, payload.pos())) {
+               return;
+            }
             if (!(serverPlayer.distanceToSqr(Vec3.atCenterOf(payload.pos())) > 64.0)) {
                if (serverPlayer.serverLevel().isLoaded(payload.pos())) {
                   if (serverPlayer.serverLevel().getBlockState(payload.pos()).is((Block)ModBlocks.LABELED_CRATE.get())) {
@@ -61,5 +74,42 @@ public final class ModNetworking {
             }
          }
       });
+   }
+
+   public static void authorizeLabeledCrateEdit(ServerPlayer player, BlockPos pos) {
+      LABELED_CRATE_EDIT_AUTHORIZATIONS.put(
+         player.getUUID(),
+         new LabeledCrateEditAuthorization(pos.immutable(), player.serverLevel().dimension(), player.serverLevel().getGameTime() + LABELED_CRATE_EDIT_WINDOW_TICKS)
+      );
+   }
+
+   public static boolean consumeLabeledCrateEditAuthorization(ServerPlayer player, BlockPos pos) {
+      return consumeLabeledCrateEditAuthorization(player, pos, player.serverLevel().getGameTime());
+   }
+
+   public static boolean consumeLabeledCrateEditAuthorization(ServerPlayer player, BlockPos pos, long currentGameTime) {
+      LabeledCrateEditAuthorization authorization = LABELED_CRATE_EDIT_AUTHORIZATIONS.get(player.getUUID());
+      if (authorization == null) {
+         return false;
+      }
+      if (currentGameTime > authorization.expiresAt()) {
+         LABELED_CRATE_EDIT_AUTHORIZATIONS.remove(player.getUUID(), authorization);
+         return false;
+      }
+      if (!authorization.pos().equals(pos) || !authorization.dimension().equals(player.serverLevel().dimension())) {
+         return false;
+      }
+      return LABELED_CRATE_EDIT_AUTHORIZATIONS.remove(player.getUUID(), authorization);
+   }
+
+   public static void onPlayerLoggedOut(PlayerEvent.PlayerLoggedOutEvent event) {
+      LABELED_CRATE_EDIT_AUTHORIZATIONS.remove(event.getEntity().getUUID());
+   }
+
+   public static void onServerStopped(ServerStoppedEvent event) {
+      LABELED_CRATE_EDIT_AUTHORIZATIONS.clear();
+   }
+
+   private record LabeledCrateEditAuthorization(BlockPos pos, ResourceKey<Level> dimension, long expiresAt) {
    }
 }

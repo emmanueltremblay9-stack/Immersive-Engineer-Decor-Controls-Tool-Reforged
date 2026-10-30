@@ -1,5 +1,0 @@
-Coarse Gold Grit
-Legacy crushed gold feed
-<&recipe>Coarse Gold Grit is retained for existing worlds that already contain the old hammer output.<br>
-<br>
-Usage: Smelt or blast it into gold ingots. New Ore Crushing Hammer recipes now produce Immersive Engineering gold dust instead.

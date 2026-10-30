@@ -1,6 +1,8 @@
 package com.oblixorprime.engineersdecorreforged;
 
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
+import com.oblixorprime.engineersdecorreforged.menu.MaterialBoxMenu;
+import com.oblixorprime.engineersdecorreforged.menu.MusliBarPressMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -10,6 +12,8 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.minecraft.world.InteractionHand;
 
 public final class ModMenus {
    public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(Registries.MENU, "immersive_engineer_decor_controls_tool_reforged");
@@ -52,6 +56,26 @@ public final class ModMenus {
    );
    public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> SMALL_TREE_CUTTER = registerMachine(
       "small_tree_cutter_menu", MachineKind.SMALL_TREE_CUTTER
+   );
+   public static final DeferredHolder<MenuType<?>, MenuType<MaterialBoxMenu>> MATERIAL_BOX = MENU_TYPES.register(
+      "material_box_menu",
+      () -> IMenuTypeExtension.create(
+         (id, inventory, data) -> new MaterialBoxMenu(
+            id,
+            inventory,
+            data != null && data.readBoolean() ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND
+         )
+      )
+   );
+   public static final DeferredHolder<MenuType<?>, MenuType<MusliBarPressMenu>> MUSLI_BAR_PRESS = MENU_TYPES.register(
+      "musli_bar_press_menu",
+      () -> IMenuTypeExtension.create(
+         (id, inventory, data) -> new MusliBarPressMenu(
+            id,
+            inventory,
+            data != null && data.readBoolean() ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND
+         )
+      )
    );
 
    private ModMenus() {

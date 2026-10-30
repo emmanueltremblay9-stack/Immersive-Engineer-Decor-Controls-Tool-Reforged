@@ -42,9 +42,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.WallTorchBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.neoforge.common.IShearable;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
@@ -52,8 +52,6 @@ import net.neoforged.neoforge.common.ItemAbility;
 public class RediaToolItem extends TooltipItem {
    public static final int MAX_DAMAGE = 3000;
    private static final float MINING_SPEED = Tiers.DIAMOND.getSpeed();
-   private static final int[] EFFICIENCY_DECAY = new int[]{0, 1, 1, 2, 2, 3, 3, 3, 3, 4};
-   private static final int[] FORTUNE_DECAY = new int[]{0, 0, 0, 0, 1, 1, 1, 1, 2, 3};
    private static final List<BlockPos> HORIZONTAL_OFFSETS = List.of(
       new BlockPos(1, 0, 0),
       new BlockPos(1, 0, 1),
@@ -104,6 +102,11 @@ public class RediaToolItem extends TooltipItem {
    }
 
    @Override
+   public int getMaxDamage(ItemStack stack) {
+      return EngineerToolsConfig.rediaToolDurability();
+   }
+
+   @Override
    public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {
       return true;
    }
@@ -121,6 +124,11 @@ public class RediaToolItem extends TooltipItem {
    @Override
    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
       return true;
+   }
+
+   @Override
+   public boolean isValidRepairItem(ItemStack toRepair, ItemStack repairCandidate) {
+      return repairCandidate.is(Items.DIAMOND) || super.isValidRepairItem(toRepair, repairCandidate);
    }
 
    @Override
@@ -145,14 +153,23 @@ public class RediaToolItem extends TooltipItem {
          || enchantment.is(Enchantments.UNBREAKING)
          || enchantment.is(Enchantments.MENDING)
          || enchantment.is(Enchantments.EFFICIENCY)
-         || enchantment.is(Enchantments.FORTUNE);
+         || enchantment.is(Enchantments.FORTUNE)
+         || enchantment.is(Enchantments.SILK_TOUCH);
    }
 
    @Override
    public void onCraftedBy(ItemStack stack, Level level, Player player) {
       super.onCraftedBy(stack, level, player);
-      if (stack.getDamageValue() == 0) {
-         stack.setDamageValue(absoluteDamage(100));
+      applyInitialCraftingDamage(stack, EngineerToolsConfig.rediaInitialDurabilityPercent());
+   }
+
+   private static void applyInitialCraftingDamage(ItemStack stack, int durabilityPercent) {
+      boolean hasNonDamageCraftingData = stack.getComponentsPatch()
+         .entrySet()
+         .stream()
+         .anyMatch(entry -> entry.getKey() != DataComponents.DAMAGE);
+      if (stack.getDamageValue() == 0 && !hasNonDamageCraftingData) {
+         stack.setDamageValue(absoluteDamage(stack, durabilityPercent));
       }
    }
 
@@ -168,6 +185,9 @@ public class RediaToolItem extends TooltipItem {
 
    @Override
    public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
+      if (!EngineerToolsConfig.withSafeAttacking()) {
+         return false;
+      }
       if (entity instanceof Villager) {
          return true;
       }
@@ -197,11 +217,13 @@ public class RediaToolItem extends TooltipItem {
             if (result != InteractionResult.PASS) {
                return result;
             }
+            return InteractionResult.PASS;
          } else if (context.getClickedFace().getAxis().isHorizontal()) {
             result = tryTorchPlacing(context, player);
             if (result != InteractionResult.PASS) {
                return result;
             }
+            return InteractionResult.PASS;
          }
 
          return tryAxeUse(context, player);
@@ -233,23 +255,22 @@ public class RediaToolItem extends TooltipItem {
          return InteractionResult.PASS;
       }
 
-      BlockPos pos = entity.blockPosition();
-      boolean client = entity.level().isClientSide();
-      if (!target.isShearable(player, tool, entity.level(), pos)) {
+      if (entity.level().isClientSide()) {
          return InteractionResult.PASS;
       }
 
-      List<ItemStack> drops = target.onSheared(player, tool, entity.level(), pos);
-      if (!client) {
+      BlockPos pos = entity.blockPosition();
+      if (target.isShearable(player, tool, entity.level(), pos)) {
+         List<ItemStack> drops = target.onSheared(player, tool, entity.level(), pos);
          for (ItemStack drop : drops) {
             target.spawnShearedDrop(entity.level(), pos, drop);
          }
 
          tool.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+         entity.gameEvent(GameEvent.SHEAR, player);
       }
 
-      entity.gameEvent(GameEvent.SHEAR, player);
-      return InteractionResult.sidedSuccess(client);
+      return InteractionResult.SUCCESS;
    }
 
    @Override
@@ -298,9 +319,9 @@ public class RediaToolItem extends TooltipItem {
       return stack;
    }
 
-   private static int absoluteDamage(int durabilityPercent) {
+   private static int absoluteDamage(ItemStack stack, int durabilityPercent) {
       int clamped = Math.max(1, Math.min(100, durabilityPercent));
-      return MAX_DAMAGE * (100 - clamped) / 100;
+      return stack.getMaxDamage() * (100 - clamped) / 100;
    }
 
    private static double relativeDurability(ItemStack stack) {
@@ -312,13 +333,15 @@ public class RediaToolItem extends TooltipItem {
    }
 
    private static int durabilityDependentEfficiency(ItemStack stack) {
-      int index = Math.max(0, Math.min(EFFICIENCY_DECAY.length - 1, (int)(relativeDurability(stack) * EFFICIENCY_DECAY.length)));
-      return EFFICIENCY_DECAY[index];
+      int[] curve = EngineerToolsConfig.rediaEfficiencyCurve();
+      int index = Math.max(0, Math.min(curve.length - 1, (int)(relativeDurability(stack) * curve.length)));
+      return curve[index];
    }
 
    private static int durabilityDependentFortune(ItemStack stack) {
-      int index = Math.max(0, Math.min(FORTUNE_DECAY.length - 1, (int)(relativeDurability(stack) * FORTUNE_DECAY.length)));
-      return FORTUNE_DECAY[index];
+      int[] curve = EngineerToolsConfig.rediaFortuneCurve();
+      int index = Math.max(0, Math.min(curve.length - 1, (int)(relativeDurability(stack) * curve.length)));
+      return curve[index];
    }
 
    private static void decayEnchantments(ItemStack stack, Level level) {
@@ -387,39 +410,21 @@ public class RediaToolItem extends TooltipItem {
    }
 
    private static InteractionResult tryTorchPlacing(UseOnContext context, Player player) {
-      Direction face = context.getClickedFace();
-      if (face == Direction.DOWN) {
-         return InteractionResult.PASS;
-      }
-
       ItemStack torch = findTorch(player.getInventory());
       if (torch.isEmpty()) {
          return InteractionResult.PASS;
       }
 
-      Level level = context.getLevel();
-      BlockPos clickedPos = context.getClickedPos();
-      BlockPos placePos = clickedPos.relative(face);
-      BlockState marker = face == Direction.UP
-         ? Blocks.TORCH.defaultBlockState()
-         : Blocks.WALL_TORCH.defaultBlockState().setValue(WallTorchBlock.FACING, face);
-      if (!level.getBlockState(placePos).canBeReplaced()
-         || !level.getBlockState(clickedPos).isFaceSturdy(level, clickedPos, face)
-         || !marker.canSurvive(level, placePos)) {
-         return InteractionResult.PASS;
+      ItemStack tool = player.getItemInHand(context.getHand());
+      player.setItemInHand(context.getHand(), torch);
+      try {
+         BlockHitResult hit = new BlockHitResult(
+            context.getClickLocation(), context.getClickedFace(), context.getClickedPos(), context.isInside()
+         );
+         return torch.getItem().useOn(new UseOnContext(player, context.getHand(), hit));
+      } finally {
+         player.setItemInHand(context.getHand(), tool);
       }
-
-      if (!level.isClientSide) {
-         level.setBlock(placePos, marker, 11);
-         if (!player.getAbilities().instabuild) {
-            torch.shrink(1);
-         }
-
-         level.playSound(null, placePos, SoundEvents.WOOD_PLACE, player.getSoundSource(), 0.7F, 1.0F);
-         level.gameEvent(GameEvent.BLOCK_PLACE, placePos, GameEvent.Context.of(player, marker));
-      }
-
-      return InteractionResult.sidedSuccess(level.isClientSide);
    }
 
    private static InteractionResult tryDigOver(UseOnContext context, Player player) {
@@ -444,10 +449,6 @@ public class RediaToolItem extends TooltipItem {
       if (replacement == null) {
          return InteractionResult.PASS;
       }
-      if ((replacement.is(Blocks.FARMLAND) || replacement.is(Blocks.DIRT_PATH)) && !level.getBlockState(pos.above()).isAir()) {
-         return InteractionResult.PASS;
-      }
-
       level.playSound(player, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 0.8F, 1.1F);
       if (!level.isClientSide) {
          level.setBlock(pos, replacement, 3);
@@ -673,6 +674,9 @@ public class RediaToolItem extends TooltipItem {
          damage = 1;
       }
 
+      if (player instanceof Player user) {
+         user.causeFoodExhaustion(Math.clamp(damage / 8.0F, 0.5F, 20.0F));
+      }
       tool.hurtAndBreak(damage, player, EquipmentSlot.MAINHAND);
    }
 }
