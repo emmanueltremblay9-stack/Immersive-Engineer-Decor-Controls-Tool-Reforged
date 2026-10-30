@@ -1,0 +1,28 @@
+{
+  "artwork_origin": "Owner-supplied/generated concept from the Block Breaker v0.8 conversation; not verified as authentic Engineer's Decor texture bytes.",
+  "owner_approved_reference": {
+    "conversation_file": "IEDCTR_BLOCK_BREAKER_REFERENCE_MATCH_v0.8.zip",
+    "library_file_id": "libfile_945889d66ab48191830c27995fedb0de",
+    "approved_composite_sha256": "40c1f343dff0e1f249f034d036d87bea63e736a1b9436e69a0dcbc084a106e83",
+    "approved_composite_dimensions": [1254, 1410]
+  },
+  "runtime_background": {
+    "source_layer": "background.png from the owner-approved v0.8 package",
+    "source_sha256": "0D39C6131234F3D9B63F8FB9954B11D53395981BBDC900D988C64A4D75B87FA7",
+    "processing": "Nearest-neighbor reduction from 1254 x 1410 to the 209 x 235 logical canvas.",
+    "runtime_sha256": "C7C2911D7E176B4D60A9B7E6B8DDD6BD695F5FA612759D31205DEEFB231F8255"
+  },
+  "visual_pipeline": {
+    "toolkit_repository": "https://github.com/emmanueltremblay9-stack/pixel-art-skill-toolkit",
+    "toolkit_commit": "2356465dd88f9ff2c62361eb85cce17a8ed61c06",
+    "renderer_git_blob_sha": "aa13d4d8cdadf8775efdaa9a4aa125e36d52286b",
+    "runtime_uses_toolkit": false,
+    "runtime_uses_composite_or_example_state_layer": false
+  },
+  "logical_canvas": [209, 235],
+  "texture_canvas": [1254, 1410],
+  "runtime_integration": "Java client menu, server-backed ContainerData telemetry, one vanilla output slot, 27 player inventory slots, 9 hotbar slots, and a rear extraction capability.",
+  "owner_approved_visual_target": true,
+  "in_game_screenshot_verified": false,
+  "important": "The owner-approved composite contains sample values. Only its background layer is a runtime texture; all labels, target item, hardness, energy, redstone, and progress are rendered from live menu/world state."
+}

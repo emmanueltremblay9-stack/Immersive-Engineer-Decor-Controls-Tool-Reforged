@@ -2,6 +2,13 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## Unreleased - Block Breaker GUI and FE integration (#121)
+
+### Added
+- Connect the owner-approved v0.8 screen to the Small Block Breaker with a vanilla single output, live target/work/status data, and an underside-only FE inlet.
+- Make FE mandatory: charge `round(160 + 160 × max(hardness, 0))` FE per completed block, apportioned over its hardness-based work ticks; cap storage at 32,000 FE and input at 256 FE per machine tick.
+- Pause work when energy is insufficient or the output cannot accept drops. Do not spend FE for a blocked output or unbreakable target; test exact per-block cost, output-blocked pauses, side access, capacity, and transfer limits.
+
 ## Unreleased - compact fluid state draft (#93)
 
 ### Changed

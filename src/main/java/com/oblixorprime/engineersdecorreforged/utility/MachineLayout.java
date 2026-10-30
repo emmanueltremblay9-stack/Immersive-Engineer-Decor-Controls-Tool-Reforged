@@ -66,8 +66,24 @@ public record MachineLayout(
          case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> processor(kind);
          case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> fluid(kind);
          case SMALL_SOLAR_PANEL -> energy();
-         case SMALL_BLOCK_BREAKER, SMALL_TREE_CUTTER -> automation(kind);
+         case SMALL_BLOCK_BREAKER -> blockBreaker();
+         case SMALL_TREE_CUTTER -> automation(kind);
       };
+   }
+
+   private static MachineLayout blockBreaker() {
+      return new MachineLayout(
+         209,
+         235,
+         23,
+         144,
+         23,
+         202,
+         List.of(new MachineLayout.MachineSlot(0, 118, 38, "Collected output")),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "block_breaker_v08/background"
+      );
    }
 
    private static MachineLayout crate() {

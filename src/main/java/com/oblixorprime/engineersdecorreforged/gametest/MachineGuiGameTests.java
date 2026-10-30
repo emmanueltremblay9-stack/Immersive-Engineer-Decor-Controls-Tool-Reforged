@@ -29,6 +29,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -75,7 +76,9 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER, 18, "factory_hopper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 10, null),
+      new MachineGuiGameTests.MachineEntry(
+         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_v08/background"
+      ),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "small_electrical_furnace_gui"),
@@ -196,6 +199,15 @@ public final class MachineGuiGameTests {
             );
             helper.assertValueEqual(
                entry.textureName(), menu.layout().textureName(), entry.kind().registryName() + " should use the supplied parent GUI texture"
+            );
+         }
+         if (entry.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+            helper.assertValueEqual(209, menu.layout().imageWidth(), "Block Breaker should use the approved v0.8 logical width");
+            helper.assertValueEqual(235, menu.layout().imageHeight(), "Block Breaker should use the approved v0.8 logical height");
+            helper.assertValueEqual(0, menu.layout().machineSlots().get(0).containerIndex(), "single visible output should use vanilla slot index 0");
+            helper.assertTrue(
+               menu.layout().machineSlots().get(0).role().toLowerCase(java.util.Locale.ROOT).contains("output"),
+               "the only Block Breaker machine slot should be a result slot"
             );
          }
 
@@ -1768,7 +1780,7 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 140)
-   public static void small_block_breaker_processing_time_depends_on_target_hardness(GameTestHelper helper) {
+   public static void small_block_breaker_requires_fe_and_syncs_target_hardness(GameTestHelper helper) {
       helper.setBlock(TEST_POS, Blocks.AIR);
       helper.setBlock(
          TEST_POS,
@@ -1782,29 +1794,141 @@ public final class MachineGuiGameTests {
       BlockPos target = TEST_POS.east();
       helper.setBlock(target, Blocks.DIRT);
       tickMachine(helper, machine, 30);
-      helper.assertTrue(helper.getBlockState(target).isAir(), "small block breaker should finish soft targets quickly");
-      helper.assertValueEqual(
-         1,
-         countItems(machine, Items.DIRT, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-         "small block breaker should route block drops into its internal drop buffer"
-      );
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "small block breaker must not break a target without its required FE policy");
+      helper.assertValueEqual(2, machine.dataAccessForTests().get(6), "small block breaker should report that it is waiting for FE");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "unpaid work must not advance progress");
+      helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "dirt hardness should still synchronize its existing work time");
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertTrue(input != null, "Block Breaker should expose its approved underside FE input");
+      helper.assertTrue(machine.energyStorage(Direction.UP) == null, "Block Breaker should not expose FE input on top");
+      helper.assertTrue(machine.energyStorage(Direction.NORTH) == null, "Block Breaker should not expose FE input on its front");
+      helper.assertTrue(machine.energyStorage(Direction.SOUTH) == null, "Block Breaker should not expose FE input on its rear");
+      helper.assertTrue(machine.energyStorage(null) == null, "Block Breaker should not expose unsided FE input");
+      helper.assertValueEqual(32000, input.getMaxEnergyStored(), "Block Breaker should use the approved 32,000 FE capacity");
+      helper.assertTrue(input.canReceive(), "Block Breaker FE input should accept energy");
+      helper.assertValueEqual(160, MachineBlockEntity.blockBreakerEnergyCostPerBlock(0.0F), "zero-hardness cost should include the 160 FE base");
+      helper.assertValueEqual(240, MachineBlockEntity.blockBreakerEnergyCostPerBlock(0.5F), "dirt hardness should cost 240 FE per block");
+      helper.assertValueEqual(400, MachineBlockEntity.blockBreakerEnergyCostPerBlock(1.5F), "stone hardness should cost 400 FE per block");
       AABB dropSearch = new AABB(helper.absolutePos(TEST_POS)).inflate(3.0);
       helper.assertTrue(
          helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropSearch, item -> item.getItem().is(Items.DIRT)).isEmpty(),
          "small block breaker should not spawn buffered drops into the world"
       );
       helper.setBlock(target, Blocks.STONE);
-      tickMachine(helper, machine, 35);
-      helper.assertTrue(
-         helper.getBlockState(target).is(Blocks.STONE), "small block breaker should still be processing harder targets after the soft-target duration"
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.STONE), "small block breaker must wait rather than break without FE");
+      helper.assertValueEqual(150, machine.dataAccessForTests().get(7), "stone hardness should synchronize as 1.50");
+      helper.assertValueEqual(50, machine.dataAccessForTests().get(3), "stone should require more work than dirt");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 180)
+   public static void small_block_breaker_caps_underside_energy_input_and_stores_32000_fe(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
       );
-      tickMachine(helper, machine, 30);
-      helper.assertTrue(helper.getBlockState(target).isAir(), "small block breaker should break harder targets after the hardness-scaled work time");
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(256, input.receiveEnergy(1024, false), "the underside input should cap each machine tick at 256 FE");
+      helper.assertValueEqual(0, input.receiveEnergy(1, false), "additional same-tick input must not exceed 256 FE");
+      helper.assertValueEqual(0, input.receiveEnergy(256, true), "simulated input beyond the current tick budget should report no available transfer");
+      helper.assertValueEqual(256, input.getEnergyStored(), "the first tick should store only the transfer limit");
+
+      for (int tick = 1; tick < 125; tick++) {
+         tickMachine(helper, machine, 1);
+         helper.assertValueEqual(256, input.receiveEnergy(256, false), "each new machine tick should reset the input budget");
+      }
+      helper.assertValueEqual(32000, input.getEnergyStored(), "125 ticks of 256 FE should fill the approved reserve exactly");
+      helper.assertValueEqual(0, input.receiveEnergy(256, false), "a full 32,000 FE reserve should reject more energy");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_block_breaker_spends_exact_hardness_cost_while_working(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      BlockPos target = TEST_POS.east();
+      helper.setBlock(target, Blocks.DIRT);
+      tickMachine(helper, machine, 1);
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(240, input.receiveEnergy(240, false), "dirt should be chargeable with the exact 240 FE block cost");
+
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_BLOCK_BREAKER, 1, player.getInventory(), machine, machine.dataAccessForTests());
+      helper.assertValueEqual(240, menu.energyStored(), "Block Breaker energy sync should preserve exact FE values");
+      helper.assertValueEqual(32000, menu.energyCapacity(), "Block Breaker menu should show the full FE capacity");
+      helper.assertValueEqual(240, menu.blockBreakerEnergyCostPerBlock(), "Block Breaker menu should display the target's FE/block cost");
+
+      tickMachine(helper, machine, 29);
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).is(Blocks.DIRT), "the target should remain until all hardness-scaled work is complete");
+      helper.assertValueEqual(
+         29,
+         machine.dataAccessForTests().get(1),
+         "29 of 30 dirt work ticks should leave one tick of progress (energy="
+            + input.getEnergyStored()
+            + ", status="
+            + machine.dataAccessForTests().get(6)
+            + ", work="
+            + machine.dataAccessForTests().get(3)
+            + ")"
+      );
+      helper.assertValueEqual(8, input.getEnergyStored(), "the first 29 work ticks should consume 232 of 240 FE");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).isAir(), "the Block Breaker should remove dirt after the last paid work tick");
+      helper.assertTrue(machine.getItem(0).is(Items.DIRT), "the resulting dirt drop should occupy the single output slot");
+      helper.assertValueEqual(0, input.getEnergyStored(), "a completed dirt break should consume exactly 240 FE");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_block_breaker_pauses_for_full_output_without_extra_fe_and_skips_unbreakable_targets(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      BlockPos target = TEST_POS.east();
+      helper.setBlock(target, Blocks.DIRT);
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(240, input.receiveEnergy(240, false), "test setup should charge exactly one dirt break");
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE, 64));
+
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).is(Blocks.DIRT), "a full output must stop the breaker before work starts");
+      helper.assertValueEqual(240, input.getEnergyStored(), "a full output must not spend FE before work begins");
+      helper.assertValueEqual(3, machine.dataAccessForTests().get(6), "a full output should report the blocked status");
+
+      machine.setItem(0, ItemStack.EMPTY);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(232, input.getEnergyStored(), "one active work tick should consume its proportional 8 FE");
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "one active work tick should advance progress once");
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE, 64));
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(232, input.getEnergyStored(), "a newly full output should pause work without further FE loss");
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "output blockage should preserve already completed work");
+
+      machine.setItem(0, ItemStack.EMPTY);
+      helper.setBlock(target, Blocks.BEDROCK);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(232, input.getEnergyStored(), "an unbreakable target must not consume FE");
+      helper.assertValueEqual(6, machine.dataAccessForTests().get(6), "an unbreakable target should report its distinct status");
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).is(Blocks.BEDROCK), "an unbreakable target must remain intact");
       helper.succeed();
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
-   public static void small_block_breaker_clears_active_state_when_drop_buffer_full(GameTestHelper helper) {
+   public static void small_block_breaker_preserves_legacy_inventory_when_output_is_full(GameTestHelper helper) {
       helper.setBlock(TEST_POS, Blocks.AIR);
       helper.setBlock(
          TEST_POS,
@@ -1816,22 +1940,211 @@ public final class MachineGuiGameTests {
       helper.assertTrue(blockEntity instanceof MachineBlockEntity, "small block breaker should create a machine block entity");
       MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
 
-      for (int slot = 0; slot < 10; slot++) {
+      for (int slot = 0; slot < 27; slot++) {
          machine.setItem(slot, new ItemStack(Items.COBBLESTONE, 64));
       }
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(256, input.receiveEnergy(1024, false), "test setup should fill the per-tick FE budget");
 
       BlockPos target = TEST_POS.east();
       helper.setBlock(target, Blocks.DIRT);
       tickMachine(helper, machine, 31);
-      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "full drop buffer should leave the target block intact");
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "a full output must leave the target block intact");
       helper.assertBlockProperty(TEST_POS, MachineBlocks.ACTIVE, false);
-      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "blocked small block breaker should clear stale progress");
-      helper.assertValueEqual(0, machine.dataAccessForTests().get(3), "blocked small block breaker should clear stale required work time");
+      helper.assertValueEqual(3, machine.dataAccessForTests().get(6), "small block breaker should report a full output");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "a blocked output must not accumulate progress");
+      helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "target work time remains visible while the machine is blocked");
+      helper.assertValueEqual(256, input.getEnergyStored(), "a full output must leave stored FE untouched");
+      for (int slot = 0; slot < 27; slot++) {
+         helper.assertValueEqual(64, machine.getItem(slot).getCount(), "upgrade must preserve every legacy inventory stack");
+      }
       AABB dropSearch = new AABB(helper.absolutePos(TEST_POS)).inflate(3.0);
       helper.assertTrue(
          helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropSearch, item -> item.getItem().is(Items.DIRT)).isEmpty(),
          "full drop buffer should not spill blocked target drops into the world"
       );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_new_drops_use_only_the_visible_output_slot(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      BlockPos target = helper.absolutePos(TEST_POS.east());
+      helper.setBlock(TEST_POS.east(), Blocks.DIRT);
+      BlockState targetState = helper.getLevel().getBlockState(target);
+
+      helper.assertTrue(
+         invokeBlockBreakerPreflight(machine, target, targetState),
+         "a fresh breaker should preflight a dirt drop into its empty visible output"
+      );
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE, 64));
+      machine.setItem(1, new ItemStack(Items.DIRT));
+      machine.setItem(10, new ItemStack(Items.STONE));
+      helper.assertTrue(
+         !invokeBlockBreakerPreflight(machine, target, targetState),
+         "a full visible output must block new drops even when old hidden backing slots have room"
+      );
+      helper.assertTrue(
+         !invokeBlockBreakerDropStorage(machine, target, targetState),
+         "failed output storage must not destroy the target block"
+      );
+      helper.assertTrue(helper.getLevel().getBlockState(target).is(Blocks.DIRT), "a blocked target must remain intact");
+      helper.assertTrue(machine.getItem(1).is(Items.DIRT), "legacy visible-slot contents must not receive new drops");
+      helper.assertTrue(machine.getItem(10).is(Items.STONE), "unexposed backing-slot contents must not receive new drops");
+
+      machine.setItem(0, ItemStack.EMPTY);
+      helper.assertTrue(
+         invokeBlockBreakerDropStorage(machine, target, targetState),
+         "with output space available, the target should be destroyed and stored directly in slot 0"
+      );
+      helper.assertTrue(helper.getLevel().getBlockState(target).isAir(), "successful output storage should destroy the target");
+      helper.assertTrue(machine.getItem(0).is(Items.DIRT), "newly collected drops should occupy only visible slot 0");
+      helper.assertTrue(machine.getItem(1).is(Items.DIRT), "legacy visible-slot contents should remain separate from new drops");
+      helper.assertTrue(machine.getItem(10).is(Items.STONE), "unexposed legacy data should remain untouched");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_has_one_vanilla_output_rear_extraction_and_preserved_legacy_slots(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      helper.setBlock(TEST_POS.east(), Blocks.DIRT);
+      machine.setItem(1, new ItemStack(Items.DIRT));
+      machine.setItem(9, new ItemStack(Items.STONE));
+      machine.setItem(26, new ItemStack(Items.COBBLESTONE));
+
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      MachineBlockEntity reloaded = new MachineBlockEntity(machine.getBlockPos(), machine.getBlockState());
+      reloaded.loadWithComponents(saved, helper.getLevel().registryAccess());
+      helper.assertTrue(reloaded.getItem(1).is(Items.DIRT), "legacy collection slot 1 must survive NBT load before it is drained");
+      helper.assertTrue(reloaded.getItem(9).is(Items.STONE), "legacy visible I/O slot 9 must survive NBT load before it is drained");
+      helper.assertTrue(reloaded.getItem(26).is(Items.COBBLESTONE), "unexposed backing slot 26 must survive NBT load unchanged");
+
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_BLOCK_BREAKER, 3, player.getInventory(), machine, machine.dataAccessForTests());
+      int synchronizedTargetId = machine.dataAccessForTests().get(11)
+         | (machine.dataAccessForTests().get(12) << 15)
+         | (machine.dataAccessForTests().get(13) << 30);
+      helper.assertValueEqual(
+         BuiltInRegistries.BLOCK.getId(Blocks.DIRT),
+         synchronizedTargetId,
+         "the target block registry id should synchronize through signed-short-safe menu data fields"
+      );
+      helper.assertTrue(menu.blockBreakerTargetStack().is(Items.DIRT), "the server menu should resolve its synchronized target icon");
+      SimpleContainerData remoteData = new SimpleContainerData(MachineMenu.DATA_COUNT);
+      setBlockBreakerTargetData(remoteData, BuiltInRegistries.BLOCK.getId(Blocks.DIRT));
+      MachineMenu remoteMenu = new MachineMenu(
+         MachineKind.SMALL_BLOCK_BREAKER, 4, player.getInventory(), new SimpleContainer(MachineMenu.MACHINE_SLOT_COUNT), remoteData
+      );
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().is(Items.DIRT), "a client-style menu without a block entity should still show the target icon");
+      helper.assertValueEqual(
+         net.minecraft.network.chat.Component.translatable(Blocks.DIRT.getDescriptionId()).getString(),
+         remoteMenu.blockBreakerTargetName(),
+         "a client-style menu should resolve the synchronized target name"
+      );
+      setBlockBreakerTargetData(remoteData, BuiltInRegistries.BLOCK.getId(Blocks.STONE));
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().is(Items.STONE), "target icon should update when synchronized menu data changes");
+      setBlockBreakerTargetData(remoteData, -1);
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().isEmpty(), "invalid target registry ids should safely render as no target");
+      setBlockBreakerTargetData(remoteData, 0x7FFFFFFF);
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().isEmpty(), "oversized registry ids should safely render as no target");
+      remoteMenu.removed(player);
+      helper.assertValueEqual(1, menu.visibleMachineSlots(), "menu should expose exactly one machine output slot");
+      helper.assertValueEqual(37, menu.slots.size(), "menu should contain one output plus the player's 27 inventory and 9 hotbar slots");
+      helper.assertTrue(!menu.slots.get(0).mayPlace(new ItemStack(Items.COBBLESTONE)), "the output slot must reject player insertion");
+      player.getInventory().setItem(0, new ItemStack(Items.COBBLESTONE));
+      helper.assertTrue(menu.quickMoveStack(player, 28).isEmpty(), "shift-click from player inventory must not insert into the output");
+      helper.assertTrue(player.getInventory().getItem(0).is(Items.COBBLESTONE), "failed player shift-click must retain the source stack");
+
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(machine.getItem(0).is(Items.DIRT), "legacy collection slot 1 should drain to the visible output first");
+      ItemStack quickMoved = menu.quickMoveStack(player, 0);
+      helper.assertTrue(quickMoved.is(Items.DIRT), "shift-click should take the vanilla output into player inventory");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "taking the output should clear only its visible slot");
+
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(machine.getItem(0).is(Items.STONE), "legacy slot 9 should drain to the visible output after slot 1");
+      helper.assertTrue(machine.getItem(1).isEmpty() && machine.getItem(9).isEmpty(), "drained legacy slots should clear after their items move to output");
+      for (Direction side : Direction.values()) {
+         if (side != Direction.WEST) {
+            helper.assertTrue(machine.itemHandler(side) == null, "item capability must be absent from non-rear side " + side);
+            helper.assertValueEqual(0, machine.getSlotsForFace(side).length, "vanilla sided container must hide output from non-rear side " + side);
+         }
+      }
+      helper.assertTrue(machine.itemHandler(null) == null, "unsided item capability must not bypass the rear port");
+      helper.assertValueEqual(0, machine.getSlotsForFace(null).length, "unsided vanilla container access must not bypass the rear port");
+
+      IItemHandler rear = machine.itemHandler(Direction.WEST);
+      helper.assertTrue(rear != null, "the rear should expose the passive output capability");
+      helper.assertValueEqual(1, rear.getSlots(), "rear capability should expose one vanilla output slot");
+      helper.assertValueEqual(1, machine.getSlotsForFace(Direction.WEST).length, "the rear sided-container view should expose one output slot");
+      helper.assertValueEqual(0, machine.getSlotsForFace(Direction.WEST)[0], "the rear sided-container view should map to output slot zero");
+      helper.assertTrue(
+         machine.canTakeItemThroughFace(0, new ItemStack(Items.STONE), Direction.WEST),
+         "the rear sided-container view should allow output extraction"
+      );
+      helper.assertTrue(
+         !machine.canTakeItemThroughFace(0, new ItemStack(Items.STONE), Direction.DOWN),
+         "the bottom sided-container view should not allow item extraction"
+      );
+      helper.assertTrue(
+         !machine.canPlaceItemThroughFace(0, new ItemStack(Items.COBBLESTONE), Direction.WEST),
+         "the rear sided-container view must remain output-only"
+      );
+      ItemStack simulated = rear.extractItem(0, 1, true);
+      helper.assertTrue(simulated.is(Items.STONE) && machine.getItem(0).is(Items.STONE), "simulated extraction must not mutate the output");
+      ItemStack rejected = rear.insertItem(0, new ItemStack(Items.COBBLESTONE), false);
+      helper.assertTrue(rejected.is(Items.COBBLESTONE), "rear output capability must reject insertion");
+      helper.assertTrue(rear.extractItem(0, 1, false).is(Items.STONE), "rear extraction should remove only the exposed output stack");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "rear extraction should clear the output slot");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(machine.getItem(0).isEmpty(), "an unexposed backing item must not be migrated to the visible output");
+      helper.assertTrue(machine.getItem(26).is(Items.COBBLESTONE), "unexposed backing data must remain preserved, not treated as a queue");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_output_respects_rear_for_factory_hopper_transfer(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity breaker = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      breaker.setItem(0, new ItemStack(Items.STONE));
+
+      BlockPos sideHopperPos = TEST_POS.north();
+      helper.setBlock(
+         sideHopperPos,
+         ModBlocks.FACTORY_HOPPER.get().defaultBlockState().setValue(MachineBlocks.FACING, Direction.NORTH)
+      );
+      MachineBlockEntity sideHopper = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(sideHopperPos));
+      invokeFactoryHopperPull(sideHopper, Direction.SOUTH);
+      helper.assertTrue(breaker.getItem(0).is(Items.STONE), "Factory Hopper pull from a non-rear side must leave Block Breaker output intact");
+      helper.assertTrue(sideHopper.getItem(0).isEmpty(), "Factory Hopper must not receive output through a forbidden face");
+
+      BlockPos rearHopperPos = TEST_POS.west();
+      helper.setBlock(
+         rearHopperPos,
+         ModBlocks.FACTORY_HOPPER.get().defaultBlockState().setValue(MachineBlocks.FACING, Direction.WEST)
+      );
+      MachineBlockEntity rearHopper = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(rearHopperPos));
+      invokeFactoryHopperPull(rearHopper, Direction.EAST);
+      helper.assertTrue(breaker.getItem(0).isEmpty(), "Factory Hopper pull from the rear should extract the visible output");
+      helper.assertTrue(rearHopper.getItem(0).is(Items.STONE), "rear Factory Hopper pull should transfer the output stack exactly once");
       helper.succeed();
    }
 
@@ -2306,6 +2619,45 @@ public final class MachineGuiGameTests {
    private static void tickMachine(GameTestHelper helper, MachineBlockEntity machine, int times) {
       for (int i = 0; i < times; i++) {
          MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      }
+   }
+
+   private static void setBlockBreakerTargetData(SimpleContainerData data, int blockId) {
+      int safeBlockId = Math.max(0, blockId);
+      data.set(11, safeBlockId & 0x7FFF);
+      data.set(12, (safeBlockId >>> 15) & 0x7FFF);
+      data.set(13, safeBlockId >>> 30);
+   }
+
+   private static boolean invokeBlockBreakerPreflight(MachineBlockEntity machine, BlockPos target, BlockState targetState) {
+      return invokeBlockBreakerStorageMethod(machine, "canBlockBreakerStoreDrops", target, targetState);
+   }
+
+   private static boolean invokeBlockBreakerDropStorage(MachineBlockEntity machine, BlockPos target, BlockState targetState) {
+      return invokeBlockBreakerStorageMethod(machine, "destroyBlockIntoDropBuffer", target, targetState);
+   }
+
+   private static boolean invokeBlockBreakerStorageMethod(MachineBlockEntity machine, String methodName, BlockPos target, BlockState targetState) {
+      try {
+         java.lang.reflect.Method method = MachineBlockEntity.class.getDeclaredMethod(methodName, BlockPos.class, BlockState.class);
+         if (!method.trySetAccessible()) {
+            throw new AssertionError("Could not access Block Breaker storage method " + methodName);
+         }
+         return (boolean)method.invoke(machine, target, targetState);
+      } catch (ReflectiveOperationException exception) {
+         throw new AssertionError("Could not run Block Breaker storage method " + methodName, exception);
+      }
+   }
+
+   private static void invokeFactoryHopperPull(MachineBlockEntity hopper, Direction sourceDirection) {
+      try {
+         java.lang.reflect.Method method = MachineBlockEntity.class.getDeclaredMethod("pullItems", Direction.class, int.class);
+         if (!method.trySetAccessible()) {
+            throw new AssertionError("Could not access Factory Hopper item transfer");
+         }
+         method.invoke(hopper, sourceDirection, 1);
+      } catch (ReflectiveOperationException exception) {
+         throw new AssertionError("Could not run Factory Hopper item transfer", exception);
       }
    }
 

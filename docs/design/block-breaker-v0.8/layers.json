@@ -1,0 +1,665 @@
+{
+  "note": "Reference-cropped overlays are artwork examples, not a font or authoritative game state. Use runtime Minecraft text and items for integration.",
+  "fields": [
+    {
+      "id": "title",
+      "layer": "static_text",
+      "rect_px": [
+        331,
+        39,
+        603,
+        57
+      ],
+      "logical_bounds": [
+        55.166666666666664,
+        6.5,
+        100.5,
+        9.5
+      ],
+      "patch_source_rect_px": [
+        340,
+        810,
+        1140,
+        846
+      ]
+    },
+    {
+      "id": "target_heading",
+      "layer": "static_text",
+      "rect_px": [
+        102,
+        149,
+        336,
+        46
+      ],
+      "logical_bounds": [
+        17.0,
+        24.833333333333332,
+        56.0,
+        7.666666666666667
+      ],
+      "patch_source_rect_px": [
+        340,
+        810,
+        1140,
+        846
+      ]
+    },
+    {
+      "id": "output_heading",
+      "layer": "static_text",
+      "rect_px": [
+        656,
+        150,
+        181,
+        45
+      ],
+      "logical_bounds": [
+        109.33333333333333,
+        25.0,
+        30.166666666666668,
+        7.5
+      ],
+      "patch_source_rect_px": [
+        861,
+        150,
+        1100,
+        190
+      ]
+    },
+    {
+      "id": "behavior_heading",
+      "layer": "static_text",
+      "rect_px": [
+        635,
+        389,
+        514,
+        50
+      ],
+      "logical_bounds": [
+        105.83333333333333,
+        64.83333333333333,
+        85.66666666666667,
+        8.333333333333334
+      ],
+      "patch_source_rect_px": [
+        863,
+        150,
+        1100,
+        190
+      ]
+    },
+    {
+      "id": "inventory_heading",
+      "layer": "static_text",
+      "rect_px": [
+        90,
+        810,
+        196,
+        39
+      ],
+      "logical_bounds": [
+        15.0,
+        135.0,
+        32.666666666666664,
+        6.5
+      ],
+      "patch_source_rect_px": [
+        340,
+        810,
+        1140,
+        846
+      ]
+    },
+    {
+      "id": "target_preview",
+      "layer": "example_state",
+      "rect_px": [
+        91,
+        231,
+        169,
+        185
+      ],
+      "logical_bounds": [
+        15.166666666666666,
+        38.5,
+        28.166666666666668,
+        30.833333333333332
+      ],
+      "patch_source_rect_px": [
+        100,
+        232,
+        112,
+        412
+      ]
+    },
+    {
+      "id": "target_name",
+      "layer": "example_state",
+      "rect_px": [
+        289,
+        235,
+        257,
+        35
+      ],
+      "logical_bounds": [
+        48.166666666666664,
+        39.166666666666664,
+        42.833333333333336,
+        5.833333333333333
+      ],
+      "patch_source_rect_px": [
+        290,
+        536,
+        552,
+        577
+      ]
+    },
+    {
+      "id": "target_facing",
+      "layer": "example_state",
+      "rect_px": [
+        291,
+        278,
+        261,
+        36
+      ],
+      "logical_bounds": [
+        48.5,
+        46.333333333333336,
+        43.5,
+        6.0
+      ],
+      "patch_source_rect_px": [
+        290,
+        536,
+        552,
+        577
+      ]
+    },
+    {
+      "id": "target_hardness",
+      "layer": "example_state",
+      "rect_px": [
+        290,
+        326,
+        262,
+        37
+      ],
+      "logical_bounds": [
+        48.333333333333336,
+        54.333333333333336,
+        43.666666666666664,
+        6.166666666666667
+      ],
+      "patch_source_rect_px": [
+        290,
+        536,
+        552,
+        577
+      ]
+    },
+    {
+      "id": "target_eligibility",
+      "layer": "example_state",
+      "rect_px": [
+        289,
+        371,
+        263,
+        37
+      ],
+      "logical_bounds": [
+        48.166666666666664,
+        61.833333333333336,
+        43.833333333333336,
+        6.166666666666667
+      ],
+      "patch_source_rect_px": [
+        290,
+        536,
+        552,
+        577
+      ]
+    },
+    {
+      "id": "work_requirement",
+      "layer": "example_state",
+      "rect_px": [
+        70,
+        452,
+        482,
+        35
+      ],
+      "logical_bounds": [
+        11.666666666666666,
+        75.33333333333333,
+        80.33333333333333,
+        5.833333333333333
+      ],
+      "patch_source_rect_px": [
+        290,
+        536,
+        552,
+        577
+      ]
+    },
+    {
+      "id": "energy_requirement",
+      "layer": "example_state",
+      "rect_px": [
+        70,
+        498,
+        483,
+        37
+      ],
+      "logical_bounds": [
+        11.666666666666666,
+        83.0,
+        80.5,
+        6.166666666666667
+      ],
+      "patch_source_rect_px": [
+        290,
+        536,
+        552,
+        577
+      ]
+    },
+    {
+      "id": "progress_fill",
+      "layer": "example_state",
+      "rect_px": [
+        82,
+        595,
+        378,
+        34
+      ],
+      "logical_bounds": [
+        13.666666666666666,
+        99.16666666666667,
+        63.0,
+        5.666666666666667
+      ],
+      "patch_source_rect_px": [
+        349,
+        599,
+        456,
+        623
+      ]
+    },
+    {
+      "id": "progress_percent",
+      "layer": "example_state",
+      "rect_px": [
+        487,
+        592,
+        68,
+        40
+      ],
+      "logical_bounds": [
+        81.16666666666667,
+        98.66666666666667,
+        11.333333333333334,
+        6.666666666666667
+      ],
+      "patch_source_rect_px": [
+        290,
+        536,
+        552,
+        577
+      ]
+    },
+    {
+      "id": "target_explanation",
+      "layer": "example_state",
+      "rect_px": [
+        99,
+        682,
+        424,
+        37
+      ],
+      "logical_bounds": [
+        16.5,
+        113.66666666666667,
+        70.66666666666667,
+        6.166666666666667
+      ],
+      "patch_source_rect_px": [
+        104,
+        672,
+        513,
+        681
+      ]
+    },
+    {
+      "id": "output_stack",
+      "layer": "example_state",
+      "rect_px": [
+        720,
+        239,
+        97,
+        100
+      ],
+      "logical_bounds": [
+        120.0,
+        39.833333333333336,
+        16.166666666666668,
+        16.666666666666668
+      ],
+      "patch_source_rect_px": [
+        720,
+        229,
+        807,
+        239
+      ]
+    },
+    {
+      "id": "rear_output_description",
+      "layer": "static_text",
+      "rect_px": [
+        987,
+        249,
+        188,
+        62
+      ],
+      "logical_bounds": [
+        164.5,
+        41.5,
+        31.333333333333332,
+        10.333333333333334
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "machine_label",
+      "layer": "static_text",
+      "rect_px": [
+        636,
+        477,
+        126,
+        33
+      ],
+      "logical_bounds": [
+        106.0,
+        79.5,
+        21.0,
+        5.5
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "manual_on_state",
+      "layer": "example_state",
+      "rect_px": [
+        839,
+        470,
+        154,
+        47
+      ],
+      "logical_bounds": [
+        139.83333333333334,
+        78.33333333333333,
+        25.666666666666668,
+        7.833333333333333
+      ],
+      "patch_source_rect_px": [
+        1006,
+        472,
+        1118,
+        479
+      ]
+    },
+    {
+      "id": "manual_off_label",
+      "layer": "static_text",
+      "rect_px": [
+        1018,
+        477,
+        105,
+        32
+      ],
+      "logical_bounds": [
+        169.66666666666666,
+        79.5,
+        17.5,
+        5.333333333333333
+      ],
+      "patch_source_rect_px": [
+        1006,
+        472,
+        1118,
+        479
+      ]
+    },
+    {
+      "id": "redstone_mode_label",
+      "layer": "static_text",
+      "rect_px": [
+        636,
+        550,
+        201,
+        39
+      ],
+      "logical_bounds": [
+        106.0,
+        91.66666666666667,
+        33.5,
+        6.5
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "redstone_mode_value",
+      "layer": "example_state",
+      "rect_px": [
+        916,
+        551,
+        195,
+        35
+      ],
+      "logical_bounds": [
+        152.66666666666666,
+        91.83333333333333,
+        32.5,
+        5.833333333333333
+      ],
+      "patch_source_rect_px": [
+        921,
+        544,
+        1109,
+        551
+      ]
+    },
+    {
+      "id": "redstone_signal_label",
+      "layer": "static_text",
+      "rect_px": [
+        636,
+        612,
+        223,
+        38
+      ],
+      "logical_bounds": [
+        106.0,
+        102.0,
+        37.166666666666664,
+        6.333333333333333
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "redstone_signal_icon",
+      "layer": "example_state",
+      "rect_px": [
+        862,
+        606,
+        53,
+        50
+      ],
+      "logical_bounds": [
+        143.66666666666666,
+        101.0,
+        8.833333333333334,
+        8.333333333333334
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "redstone_signal_value",
+      "layer": "example_state",
+      "rect_px": [
+        928,
+        614,
+        67,
+        37
+      ],
+      "logical_bounds": [
+        154.66666666666666,
+        102.33333333333333,
+        11.166666666666666,
+        6.166666666666667
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "energy_label",
+      "layer": "static_text",
+      "rect_px": [
+        636,
+        665,
+        196,
+        36
+      ],
+      "logical_bounds": [
+        106.0,
+        110.83333333333333,
+        32.666666666666664,
+        6.0
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "energy_fill",
+      "layer": "example_state",
+      "rect_px": [
+        843,
+        679,
+        134,
+        21
+      ],
+      "logical_bounds": [
+        140.5,
+        113.16666666666667,
+        22.333333333333332,
+        3.5
+      ],
+      "patch_source_rect_px": [
+        887,
+        683,
+        973,
+        695
+      ]
+    },
+    {
+      "id": "energy_value",
+      "layer": "example_state",
+      "rect_px": [
+        994,
+        671,
+        176,
+        30
+      ],
+      "logical_bounds": [
+        165.66666666666666,
+        111.83333333333333,
+        29.333333333333332,
+        5.0
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "status_label",
+      "layer": "static_text",
+      "rect_px": [
+        636,
+        719,
+        120,
+        34
+      ],
+      "logical_bounds": [
+        106.0,
+        119.83333333333333,
+        20.0,
+        5.666666666666667
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    },
+    {
+      "id": "status_value",
+      "layer": "example_state",
+      "rect_px": [
+        769,
+        716,
+        369,
+        38
+      ],
+      "logical_bounds": [
+        128.16666666666666,
+        119.33333333333333,
+        61.5,
+        6.333333333333333
+      ],
+      "patch_source_rect_px": [
+        650,
+        750,
+        1155,
+        771
+      ]
+    }
+  ]
+}
