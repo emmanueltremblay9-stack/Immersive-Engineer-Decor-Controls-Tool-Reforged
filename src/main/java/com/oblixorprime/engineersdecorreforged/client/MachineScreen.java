@@ -774,10 +774,16 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       } else if (this.isHovering(133, 49, 9, 9, mouseX, mouseY)) {
          return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.tooltips.rssignal");
       } else if (this.isHovering(145, 49, 9, 9, mouseX, mouseY)) {
-         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.tooltips.inversion");
+         int logic = ((MachineMenu)this.menu).field(2);
+         String state = (logic & 4) != 0 ? "ignored" : (logic & 1) != 0 ? "inverted" : "normal";
+         return Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.tooltips.inversion")
+            .append("\n").append(Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state." + state));
       } else {
+         int logic = ((MachineMenu)this.menu).field(2);
+         String state = (logic & 4) != 0 ? "ignore_trigger" : (logic & 2) != 0 ? "continuous" : "pulse";
          return this.isHovering(159, 49, 7, 9, mouseX, mouseY)
             ? Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.tooltips.triggermode")
+               .append("\n").append(Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state." + state))
             : null;
       }
    }
