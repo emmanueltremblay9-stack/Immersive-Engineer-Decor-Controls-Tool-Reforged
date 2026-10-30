@@ -29,6 +29,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -75,7 +76,9 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER, 18, "factory_hopper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 10, null),
+      new MachineGuiGameTests.MachineEntry(
+         ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 1, "block_breaker_v08/background"
+      ),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "small_electrical_furnace_gui"),
@@ -196,6 +199,15 @@ public final class MachineGuiGameTests {
             );
             helper.assertValueEqual(
                entry.textureName(), menu.layout().textureName(), entry.kind().registryName() + " should use the supplied parent GUI texture"
+            );
+         }
+         if (entry.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+            helper.assertValueEqual(209, menu.layout().imageWidth(), "Block Breaker should use the approved v0.8 logical width");
+            helper.assertValueEqual(235, menu.layout().imageHeight(), "Block Breaker should use the approved v0.8 logical height");
+            helper.assertValueEqual(0, menu.layout().machineSlots().get(0).containerIndex(), "single visible output should use vanilla slot index 0");
+            helper.assertTrue(
+               menu.layout().machineSlots().get(0).role().toLowerCase(java.util.Locale.ROOT).contains("output"),
+               "the only Block Breaker machine slot should be a result slot"
             );
          }
 
@@ -1768,7 +1780,7 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 140)
-   public static void small_block_breaker_processing_time_depends_on_target_hardness(GameTestHelper helper) {
+   public static void small_block_breaker_requires_fe_and_syncs_target_hardness(GameTestHelper helper) {
       helper.setBlock(TEST_POS, Blocks.AIR);
       helper.setBlock(
          TEST_POS,
@@ -1782,29 +1794,26 @@ public final class MachineGuiGameTests {
       BlockPos target = TEST_POS.east();
       helper.setBlock(target, Blocks.DIRT);
       tickMachine(helper, machine, 30);
-      helper.assertTrue(helper.getBlockState(target).isAir(), "small block breaker should finish soft targets quickly");
-      helper.assertValueEqual(
-         1,
-         countItems(machine, Items.DIRT, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-         "small block breaker should route block drops into its internal drop buffer"
-      );
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "small block breaker must not break a target without its required FE policy");
+      helper.assertValueEqual(2, machine.dataAccessForTests().get(6), "small block breaker should report that it is waiting for FE");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "unpaid work must not advance progress");
+      helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "dirt hardness should still synchronize its existing work time");
+      helper.assertTrue(machine.energyStorage(Direction.DOWN) == null, "FE input must remain disabled until its balance values are selected");
       AABB dropSearch = new AABB(helper.absolutePos(TEST_POS)).inflate(3.0);
       helper.assertTrue(
          helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropSearch, item -> item.getItem().is(Items.DIRT)).isEmpty(),
          "small block breaker should not spawn buffered drops into the world"
       );
       helper.setBlock(target, Blocks.STONE);
-      tickMachine(helper, machine, 35);
-      helper.assertTrue(
-         helper.getBlockState(target).is(Blocks.STONE), "small block breaker should still be processing harder targets after the soft-target duration"
-      );
-      tickMachine(helper, machine, 30);
-      helper.assertTrue(helper.getBlockState(target).isAir(), "small block breaker should break harder targets after the hardness-scaled work time");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.STONE), "small block breaker must wait rather than break without FE");
+      helper.assertValueEqual(150, machine.dataAccessForTests().get(7), "stone hardness should synchronize as 1.50");
+      helper.assertValueEqual(50, machine.dataAccessForTests().get(3), "stone should require more work than dirt");
       helper.succeed();
    }
 
    @GameTest(template = "empty", timeoutTicks = 80)
-   public static void small_block_breaker_clears_active_state_when_drop_buffer_full(GameTestHelper helper) {
+   public static void small_block_breaker_preserves_legacy_inventory_and_waits_for_fe_policy(GameTestHelper helper) {
       helper.setBlock(TEST_POS, Blocks.AIR);
       helper.setBlock(
          TEST_POS,
@@ -1816,22 +1825,109 @@ public final class MachineGuiGameTests {
       helper.assertTrue(blockEntity instanceof MachineBlockEntity, "small block breaker should create a machine block entity");
       MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
 
-      for (int slot = 0; slot < 10; slot++) {
+      for (int slot = 0; slot < 27; slot++) {
          machine.setItem(slot, new ItemStack(Items.COBBLESTONE, 64));
       }
 
       BlockPos target = TEST_POS.east();
       helper.setBlock(target, Blocks.DIRT);
       tickMachine(helper, machine, 31);
-      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "full drop buffer should leave the target block intact");
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "an unpowered FE policy must leave the target block intact");
       helper.assertBlockProperty(TEST_POS, MachineBlocks.ACTIVE, false);
-      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "blocked small block breaker should clear stale progress");
-      helper.assertValueEqual(0, machine.dataAccessForTests().get(3), "blocked small block breaker should clear stale required work time");
+      helper.assertValueEqual(2, machine.dataAccessForTests().get(6), "small block breaker should remain in the no-FE status");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "unpaid small block breaker should not accumulate progress");
+      helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "target work time remains visible while the machine waits for FE");
+      for (int slot = 0; slot < 27; slot++) {
+         helper.assertValueEqual(64, machine.getItem(slot).getCount(), "upgrade must preserve every legacy inventory stack");
+      }
       AABB dropSearch = new AABB(helper.absolutePos(TEST_POS)).inflate(3.0);
       helper.assertTrue(
          helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropSearch, item -> item.getItem().is(Items.DIRT)).isEmpty(),
          "full drop buffer should not spill blocked target drops into the world"
       );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_has_one_vanilla_output_rear_extraction_and_preserved_queue(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      helper.setBlock(TEST_POS.east(), Blocks.DIRT);
+      machine.setItem(1, new ItemStack(Items.DIRT));
+      machine.setItem(26, new ItemStack(Items.STONE));
+
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      MachineBlockEntity reloaded = new MachineBlockEntity(machine.getBlockPos(), machine.getBlockState());
+      reloaded.loadWithComponents(saved, helper.getLevel().registryAccess());
+      helper.assertTrue(reloaded.getItem(1).is(Items.DIRT), "legacy buffered output in slot 1 must survive NBT load");
+      helper.assertTrue(reloaded.getItem(26).is(Items.STONE), "hidden legacy slot 26 must survive NBT load");
+
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_BLOCK_BREAKER, 3, player.getInventory(), machine, machine.dataAccessForTests());
+      int synchronizedTargetId = machine.dataAccessForTests().get(11)
+         | (machine.dataAccessForTests().get(12) << 15)
+         | (machine.dataAccessForTests().get(13) << 30);
+      helper.assertValueEqual(
+         BuiltInRegistries.BLOCK.getId(Blocks.DIRT),
+         synchronizedTargetId,
+         "the target block registry id should synchronize through signed-short-safe menu data fields"
+      );
+      helper.assertTrue(menu.blockBreakerTargetStack().is(Items.DIRT), "the server menu should resolve its synchronized target icon");
+      SimpleContainerData remoteData = new SimpleContainerData(MachineMenu.DATA_COUNT);
+      setBlockBreakerTargetData(remoteData, BuiltInRegistries.BLOCK.getId(Blocks.DIRT));
+      MachineMenu remoteMenu = new MachineMenu(
+         MachineKind.SMALL_BLOCK_BREAKER, 4, player.getInventory(), new SimpleContainer(MachineMenu.MACHINE_SLOT_COUNT), remoteData
+      );
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().is(Items.DIRT), "a client-style menu without a block entity should still show the target icon");
+      helper.assertValueEqual(
+         net.minecraft.network.chat.Component.translatable(Blocks.DIRT.getDescriptionId()).getString(),
+         remoteMenu.blockBreakerTargetName(),
+         "a client-style menu should resolve the synchronized target name"
+      );
+      setBlockBreakerTargetData(remoteData, BuiltInRegistries.BLOCK.getId(Blocks.STONE));
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().is(Items.STONE), "target icon should update when synchronized menu data changes");
+      setBlockBreakerTargetData(remoteData, -1);
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().isEmpty(), "invalid target registry ids should safely render as no target");
+      setBlockBreakerTargetData(remoteData, 0x7FFFFFFF);
+      helper.assertTrue(remoteMenu.blockBreakerTargetStack().isEmpty(), "oversized registry ids should safely render as no target");
+      remoteMenu.removed(player);
+      helper.assertValueEqual(1, menu.visibleMachineSlots(), "menu should expose exactly one machine output slot");
+      helper.assertValueEqual(37, menu.slots.size(), "menu should contain one output plus the player's 27 inventory and 9 hotbar slots");
+      helper.assertTrue(!menu.slots.get(0).mayPlace(new ItemStack(Items.COBBLESTONE)), "the output slot must reject player insertion");
+      player.getInventory().setItem(0, new ItemStack(Items.COBBLESTONE));
+      helper.assertTrue(menu.quickMoveStack(player, 28).isEmpty(), "shift-click from player inventory must not insert into the output");
+      helper.assertTrue(player.getInventory().getItem(0).is(Items.COBBLESTONE), "failed player shift-click must retain the source stack");
+
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(machine.getItem(0).is(Items.DIRT), "the first queued stack should advance to the visible output");
+      ItemStack quickMoved = menu.quickMoveStack(player, 0);
+      helper.assertTrue(quickMoved.is(Items.DIRT), "shift-click should take the vanilla output into player inventory");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "taking the output should clear only its visible slot");
+
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(machine.getItem(0).is(Items.STONE), "later legacy queue entries should advance without being lost");
+      for (Direction side : Direction.values()) {
+         if (side != Direction.WEST) {
+            helper.assertTrue(machine.itemHandler(side) == null, "item capability must be absent from non-rear side " + side);
+         }
+      }
+      helper.assertTrue(machine.itemHandler(null) == null, "unsided item capability must not bypass the rear port");
+
+      IItemHandler rear = machine.itemHandler(Direction.WEST);
+      helper.assertTrue(rear != null, "the rear should expose the passive output capability");
+      helper.assertValueEqual(1, rear.getSlots(), "rear capability should expose one vanilla output slot");
+      ItemStack simulated = rear.extractItem(0, 1, true);
+      helper.assertTrue(simulated.is(Items.STONE) && machine.getItem(0).is(Items.STONE), "simulated extraction must not mutate the output");
+      ItemStack rejected = rear.insertItem(0, new ItemStack(Items.COBBLESTONE), false);
+      helper.assertTrue(rejected.is(Items.COBBLESTONE), "rear output capability must reject insertion");
+      helper.assertTrue(rear.extractItem(0, 1, false).is(Items.STONE), "rear extraction should remove only the exposed output stack");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "rear extraction should clear the output slot");
+      menu.removed(player);
       helper.succeed();
    }
 
@@ -2307,6 +2403,13 @@ public final class MachineGuiGameTests {
       for (int i = 0; i < times; i++) {
          MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
       }
+   }
+
+   private static void setBlockBreakerTargetData(SimpleContainerData data, int blockId) {
+      int safeBlockId = Math.max(0, blockId);
+      data.set(11, safeBlockId & 0x7FFF);
+      data.set(12, (safeBlockId >>> 15) & 0x7FFF);
+      data.set(13, safeBlockId >>> 30);
    }
 
    private static int countItems(MachineBlockEntity machine, Item item, int... slots) {

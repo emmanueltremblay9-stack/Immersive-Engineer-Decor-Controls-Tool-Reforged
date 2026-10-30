@@ -1,0 +1,881 @@
+{
+  "version": "0.8.0",
+  "status": "ASSET_CANDIDATE_NOT_RUNTIME_TESTED",
+  "logical_canvas": [
+    209,
+    235
+  ],
+  "texture_canvas": [
+    1254,
+    1410
+  ],
+  "texels_per_logical_unit": 6,
+  "gui_scale_is_separate": true,
+  "inventory_count": 27,
+  "hotbar_count": 9,
+  "machine_output_count": 1,
+  "player_slot_pitch": 18,
+  "item_render_size": [
+    16,
+    16
+  ],
+  "player_slots": [
+    {
+      "id": "player_9",
+      "menu_index": 1,
+      "container": "player",
+      "player_inventory_index": 9,
+      "group": "inventory",
+      "row": 0,
+      "column": 0,
+      "frame": [
+        23,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        24,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_10",
+      "menu_index": 2,
+      "container": "player",
+      "player_inventory_index": 10,
+      "group": "inventory",
+      "row": 0,
+      "column": 1,
+      "frame": [
+        41,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        42,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_11",
+      "menu_index": 3,
+      "container": "player",
+      "player_inventory_index": 11,
+      "group": "inventory",
+      "row": 0,
+      "column": 2,
+      "frame": [
+        59,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        60,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_12",
+      "menu_index": 4,
+      "container": "player",
+      "player_inventory_index": 12,
+      "group": "inventory",
+      "row": 0,
+      "column": 3,
+      "frame": [
+        77,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        78,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_13",
+      "menu_index": 5,
+      "container": "player",
+      "player_inventory_index": 13,
+      "group": "inventory",
+      "row": 0,
+      "column": 4,
+      "frame": [
+        95,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        96,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_14",
+      "menu_index": 6,
+      "container": "player",
+      "player_inventory_index": 14,
+      "group": "inventory",
+      "row": 0,
+      "column": 5,
+      "frame": [
+        113,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        114,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_15",
+      "menu_index": 7,
+      "container": "player",
+      "player_inventory_index": 15,
+      "group": "inventory",
+      "row": 0,
+      "column": 6,
+      "frame": [
+        131,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        132,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_16",
+      "menu_index": 8,
+      "container": "player",
+      "player_inventory_index": 16,
+      "group": "inventory",
+      "row": 0,
+      "column": 7,
+      "frame": [
+        149,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        150,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_17",
+      "menu_index": 9,
+      "container": "player",
+      "player_inventory_index": 17,
+      "group": "inventory",
+      "row": 0,
+      "column": 8,
+      "frame": [
+        167,
+        144,
+        18,
+        18
+      ],
+      "item": [
+        168,
+        145,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_18",
+      "menu_index": 10,
+      "container": "player",
+      "player_inventory_index": 18,
+      "group": "inventory",
+      "row": 1,
+      "column": 0,
+      "frame": [
+        23,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        24,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_19",
+      "menu_index": 11,
+      "container": "player",
+      "player_inventory_index": 19,
+      "group": "inventory",
+      "row": 1,
+      "column": 1,
+      "frame": [
+        41,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        42,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_20",
+      "menu_index": 12,
+      "container": "player",
+      "player_inventory_index": 20,
+      "group": "inventory",
+      "row": 1,
+      "column": 2,
+      "frame": [
+        59,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        60,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_21",
+      "menu_index": 13,
+      "container": "player",
+      "player_inventory_index": 21,
+      "group": "inventory",
+      "row": 1,
+      "column": 3,
+      "frame": [
+        77,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        78,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_22",
+      "menu_index": 14,
+      "container": "player",
+      "player_inventory_index": 22,
+      "group": "inventory",
+      "row": 1,
+      "column": 4,
+      "frame": [
+        95,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        96,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_23",
+      "menu_index": 15,
+      "container": "player",
+      "player_inventory_index": 23,
+      "group": "inventory",
+      "row": 1,
+      "column": 5,
+      "frame": [
+        113,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        114,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_24",
+      "menu_index": 16,
+      "container": "player",
+      "player_inventory_index": 24,
+      "group": "inventory",
+      "row": 1,
+      "column": 6,
+      "frame": [
+        131,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        132,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_25",
+      "menu_index": 17,
+      "container": "player",
+      "player_inventory_index": 25,
+      "group": "inventory",
+      "row": 1,
+      "column": 7,
+      "frame": [
+        149,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        150,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_26",
+      "menu_index": 18,
+      "container": "player",
+      "player_inventory_index": 26,
+      "group": "inventory",
+      "row": 1,
+      "column": 8,
+      "frame": [
+        167,
+        162,
+        18,
+        18
+      ],
+      "item": [
+        168,
+        163,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_27",
+      "menu_index": 19,
+      "container": "player",
+      "player_inventory_index": 27,
+      "group": "inventory",
+      "row": 2,
+      "column": 0,
+      "frame": [
+        23,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        24,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_28",
+      "menu_index": 20,
+      "container": "player",
+      "player_inventory_index": 28,
+      "group": "inventory",
+      "row": 2,
+      "column": 1,
+      "frame": [
+        41,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        42,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_29",
+      "menu_index": 21,
+      "container": "player",
+      "player_inventory_index": 29,
+      "group": "inventory",
+      "row": 2,
+      "column": 2,
+      "frame": [
+        59,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        60,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_30",
+      "menu_index": 22,
+      "container": "player",
+      "player_inventory_index": 30,
+      "group": "inventory",
+      "row": 2,
+      "column": 3,
+      "frame": [
+        77,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        78,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_31",
+      "menu_index": 23,
+      "container": "player",
+      "player_inventory_index": 31,
+      "group": "inventory",
+      "row": 2,
+      "column": 4,
+      "frame": [
+        95,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        96,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_32",
+      "menu_index": 24,
+      "container": "player",
+      "player_inventory_index": 32,
+      "group": "inventory",
+      "row": 2,
+      "column": 5,
+      "frame": [
+        113,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        114,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_33",
+      "menu_index": 25,
+      "container": "player",
+      "player_inventory_index": 33,
+      "group": "inventory",
+      "row": 2,
+      "column": 6,
+      "frame": [
+        131,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        132,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_34",
+      "menu_index": 26,
+      "container": "player",
+      "player_inventory_index": 34,
+      "group": "inventory",
+      "row": 2,
+      "column": 7,
+      "frame": [
+        149,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        150,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_35",
+      "menu_index": 27,
+      "container": "player",
+      "player_inventory_index": 35,
+      "group": "inventory",
+      "row": 2,
+      "column": 8,
+      "frame": [
+        167,
+        180,
+        18,
+        18
+      ],
+      "item": [
+        168,
+        181,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_0",
+      "menu_index": 28,
+      "container": "player",
+      "player_inventory_index": 0,
+      "group": "hotbar",
+      "row": 0,
+      "column": 0,
+      "frame": [
+        23,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        24,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_1",
+      "menu_index": 29,
+      "container": "player",
+      "player_inventory_index": 1,
+      "group": "hotbar",
+      "row": 0,
+      "column": 1,
+      "frame": [
+        41,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        42,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_2",
+      "menu_index": 30,
+      "container": "player",
+      "player_inventory_index": 2,
+      "group": "hotbar",
+      "row": 0,
+      "column": 2,
+      "frame": [
+        59,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        60,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_3",
+      "menu_index": 31,
+      "container": "player",
+      "player_inventory_index": 3,
+      "group": "hotbar",
+      "row": 0,
+      "column": 3,
+      "frame": [
+        77,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        78,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_4",
+      "menu_index": 32,
+      "container": "player",
+      "player_inventory_index": 4,
+      "group": "hotbar",
+      "row": 0,
+      "column": 4,
+      "frame": [
+        95,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        96,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_5",
+      "menu_index": 33,
+      "container": "player",
+      "player_inventory_index": 5,
+      "group": "hotbar",
+      "row": 0,
+      "column": 5,
+      "frame": [
+        113,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        114,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_6",
+      "menu_index": 34,
+      "container": "player",
+      "player_inventory_index": 6,
+      "group": "hotbar",
+      "row": 0,
+      "column": 6,
+      "frame": [
+        131,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        132,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_7",
+      "menu_index": 35,
+      "container": "player",
+      "player_inventory_index": 7,
+      "group": "hotbar",
+      "row": 0,
+      "column": 7,
+      "frame": [
+        149,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        150,
+        203,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_8",
+      "menu_index": 36,
+      "container": "player",
+      "player_inventory_index": 8,
+      "group": "hotbar",
+      "row": 0,
+      "column": 8,
+      "frame": [
+        167,
+        202,
+        18,
+        18
+      ],
+      "item": [
+        168,
+        203,
+        16,
+        16
+      ]
+    }
+  ],
+  "machine_slots": [
+    {
+      "id": "machine_output",
+      "menu_index": 0,
+      "container": "machine",
+      "container_index": 0,
+      "group": "output",
+      "frame": [
+        117,
+        37,
+        21,
+        21
+      ],
+      "item": [
+        119,
+        39,
+        16,
+        16
+      ],
+      "insertion": "forbidden (proposed runtime contract)",
+      "extraction": "player and rear item port (requires runtime implementation)",
+      "max_stack_size": "actual item stack limit; no fixed universal 64"
+    }
+  ],
+  "groups": [
+    {
+      "id": "target",
+      "source_px": [
+        42,
+        136,
+        537,
+        653
+      ],
+      "read_only": true
+    },
+    {
+      "id": "output",
+      "source_px": [
+        596,
+        136,
+        612,
+        231
+      ],
+      "read_only": false
+    },
+    {
+      "id": "behavior",
+      "source_px": [
+        596,
+        378,
+        612,
+        412
+      ],
+      "read_only": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "manual_on",
+      "logical_bounds": [
+        139,
+        78,
+        27,
+        9
+      ]
+    },
+    {
+      "id": "manual_off",
+      "logical_bounds": [
+        167,
+        78,
+        24,
+        9
+      ]
+    },
+    {
+      "id": "redstone_prev",
+      "logical_bounds": [
+        142,
+        90,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "redstone_next",
+      "logical_bounds": [
+        188,
+        90,
+        9,
+        10
+      ]
+    }
+  ],
+  "preserved_reference_region_px": [
+    0,
+    0,
+    1254,
+    852
+  ],
+  "example_values": "All visible values in the comparison preview are copied from the reference, not approved balance or live telemetry."
+}

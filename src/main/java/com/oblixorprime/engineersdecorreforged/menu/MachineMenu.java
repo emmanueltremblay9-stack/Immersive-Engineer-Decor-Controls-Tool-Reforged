@@ -5,7 +5,9 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import java.util.Locale;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Container;
@@ -17,12 +19,15 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class MachineMenu extends AbstractContainerMenu {
    public static final int MACHINE_SLOT_COUNT = 27;
@@ -137,6 +142,7 @@ public class MachineMenu extends AbstractContainerMenu {
          case SMALL_ELECTRICAL_FURNACE -> this.data.get(ELECTRICAL_FURNACE_ENERGY_FIELD);
          case SMALL_LAB_FURNACE -> this.data.get(LAB_FURNACE_ENERGY_FIELD);
          case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR, SMALL_MINERAL_SMELTER, SMALL_FREEZER -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
+         case SMALL_BLOCK_BREAKER -> this.data.get(10) * ENERGY_FIELD_SCALE;
          default -> 0;
       };
    }
@@ -156,6 +162,47 @@ public class MachineMenu extends AbstractContainerMenu {
 
    public int activityTicks() {
       return this.data.get(5);
+   }
+
+   public int blockBreakerStatus() {
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER ? this.data.get(6) : 0;
+   }
+
+   public float blockBreakerHardness() {
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER ? this.data.get(7) / 100.0F : 0.0F;
+   }
+
+   public int blockBreakerPendingItems() {
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER ? this.data.get(8) : 0;
+   }
+
+   public boolean blockBreakerRedstonePowered() {
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && this.data.get(9) != 0;
+   }
+
+   public String blockBreakerTargetName() {
+      Block target = this.blockBreakerTargetBlock();
+      return target == Blocks.AIR ? "No target" : Component.translatable(target.getDescriptionId()).getString();
+   }
+
+   public ItemStack blockBreakerTargetStack() {
+      Item item = this.blockBreakerTargetBlock().asItem();
+      return item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
+   }
+
+   private Block blockBreakerTargetBlock() {
+      if (this.kind != MachineKind.SMALL_BLOCK_BREAKER) {
+         return Blocks.AIR;
+      }
+      // The three positive 15-bit components survive short-based container-data sync without truncation.
+      int registryId = (this.data.get(11) & 0x7FFF)
+         | ((this.data.get(12) & 0x7FFF) << 15)
+         | ((this.data.get(13) & 0x7FFF) << 30);
+      if (registryId < 0 || registryId >= BuiltInRegistries.BLOCK.size()) {
+         return Blocks.AIR;
+      }
+      Block target = BuiltInRegistries.BLOCK.byId(registryId);
+      return target == null ? Blocks.AIR : target;
    }
 
    public int field(int index) {

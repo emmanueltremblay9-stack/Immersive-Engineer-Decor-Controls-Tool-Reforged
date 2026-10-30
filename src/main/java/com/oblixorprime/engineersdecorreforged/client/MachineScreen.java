@@ -62,8 +62,15 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
          this.drawOriginalTextureBackdrop(graphics, x, y);
-         graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+            graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+         } else {
+            graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
+         }
          this.drawOriginalWidgets(graphics, texture, x, y);
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+            this.drawBlockBreakerTarget(graphics, x, y);
+         }
       } else {
          this.drawFrame(graphics, x, y);
          this.drawPanels(graphics, layout, x, y);
@@ -81,12 +88,70 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
       MachineLayout layout = ((MachineMenu)this.menu).layout();
-      if (layout.style() != MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
+      if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         this.drawBlockBreakerLabels(graphics);
+      } else if (layout.style() != MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          this.drawBoundedString(graphics, this.profile.title(), this.titleLabelX, this.titleLabelY, this.imageWidth - this.titleLabelX - 6, -1646126, false);
          this.drawTinyString(graphics, "Inv", this.inventoryLabelX, this.inventoryLabelY + 1, 28, -3949142, false);
          this.drawPanelLabels(graphics, layout);
          this.drawStatusText(graphics, layout);
       }
+   }
+
+   private void drawBlockBreakerTarget(GuiGraphics graphics, int x, int y) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      if (!menu.blockBreakerTargetStack().isEmpty()) {
+         graphics.renderItem(menu.blockBreakerTargetStack(), x + 22, y + 46);
+      }
+
+      int total = menu.field(3);
+      int elapsed = menu.field(1);
+      int fill = total > 0 ? Mth.clamp(elapsed * 65 / total, 0, 65) : 0;
+      if (fill > 0) {
+         graphics.fill(x + 15, y + 100, x + 15 + fill, y + 103, 0xFF7FA77A);
+      }
+   }
+
+   private void drawBlockBreakerLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      this.drawTinyCenteredString(graphics, "Small Block Breaker", 105, 7, 144, -1646126);
+      this.drawTinyString(graphics, "Target Block", 16, 25, 77, -1646126, false);
+      this.drawTinyString(graphics, "Output", 109, 25, 34, -1646126, false);
+      this.drawTinyString(graphics, menu.blockBreakerTargetName(), 48, 39, 46, -1646126, false);
+      this.drawTinyString(graphics, "Front face", 48, 46, 44, -3949142, false);
+
+      float hardness = menu.blockBreakerHardness();
+      String hardnessText = hardness < 0.0F ? "Hardness: unbreakable" : String.format(java.util.Locale.ROOT, "Hardness: %.2f", hardness);
+      this.drawTinyString(graphics, hardnessText, 15, 55, 78, hardness < 0.0F ? 0xFFFF7777 : -3949142, false);
+      this.drawTinyString(graphics, "Work: " + menu.field(1) + "/" + Math.max(0, menu.field(3)) + " ticks", 15, 76, 80, -1646126, false);
+      this.drawTinyString(graphics, menu.progress() + "%", 81, 99, 12, -1646126, false);
+      this.drawTinyString(graphics, "Hardness-scaled work", 16, 114, 78, -3949142, false);
+
+      this.drawTinyString(graphics, "Behavior & Operation", 106, 65, 87, -1646126, false);
+      this.drawTinyString(graphics, "Redstone:", 106, 79, 39, -3949142, false);
+      this.drawTinyString(graphics, menu.blockBreakerRedstonePowered() ? "HIGH" : "LOW", 151, 79, 26,
+         menu.blockBreakerRedstonePowered() ? 0xFFFF7777 : 0xFF9BCB83, false);
+      this.drawTinyString(graphics, "HIGH stops work", 106, 89, 75, -3949142, false);
+      this.drawTinyString(graphics, "Energy:", 106, 100, 31, -3949142, false);
+      this.drawTinyString(graphics, menu.energyStored() + " FE", 140, 100, 43, -1646126, false);
+      this.drawTinyString(graphics, "FE inlet: underside", 106, 110, 80, -3949142, false);
+      this.drawTinyString(graphics, "Status:", 106, 120, 30, -3949142, false);
+      this.drawTinyString(graphics, blockBreakerStatus(menu.blockBreakerStatus()), 139, 120, 52, -1646126, false);
+      this.drawTinyString(graphics, "Rear only", 163, 44, 34, -3949142, false);
+      this.drawTinyString(graphics, "Q " + menu.blockBreakerPendingItems(), 163, 54, 35, -3949142, false);
+      this.drawTinyString(graphics, "Inventory", 15, 135, 42, -1646126, false);
+   }
+
+   private static String blockBreakerStatus(int state) {
+      return switch (state) {
+         case 1 -> "Stopped";
+         case 2 -> "Waiting for FE";
+         case 3 -> "Output full";
+         case 4 -> "Working";
+         case 5 -> "Cooldown";
+         case 6 -> "Unbreakable";
+         default -> "No target";
+      };
    }
 
    private void renderOriginalHoverOverlay(GuiGraphics graphics, int mouseX, int mouseY) {

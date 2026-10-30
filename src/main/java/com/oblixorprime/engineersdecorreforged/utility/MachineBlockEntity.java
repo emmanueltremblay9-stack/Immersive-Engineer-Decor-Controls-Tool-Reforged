@@ -140,6 +140,13 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private static final int FREEZER_PROCESS_TICKS = 180;
    private static final int FREEZER_ENERGY_PER_TICK = 8;
    private static final int FREEZER_BUCKET_ENERGY = 1440;
+   private static final int BREAKER_STATUS_NO_TARGET = 0;
+   private static final int BREAKER_STATUS_REDSTONE_STOP = 1;
+   private static final int BREAKER_STATUS_WAITING_FOR_ENERGY = 2;
+   private static final int BREAKER_STATUS_OUTPUT_BLOCKED = 3;
+   private static final int BREAKER_STATUS_WORKING = 4;
+   private static final int BREAKER_STATUS_COOLDOWN = 5;
+   private static final int BREAKER_STATUS_UNBREAKABLE = 6;
    public static final int LABEL_LINE_COUNT = 2;
    public static final int LABEL_MAX_LINE_LENGTH = 24;
    public static final int LABEL_MAX_UTF16_UNITS = LABEL_MAX_LINE_LENGTH * 2;
@@ -154,6 +161,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private int fuelBurnTime;
    private int fluidAmount;
    private int energy;
+   private int blockBreakerStatus;
+   private int blockBreakerHardnessHundredths;
+   private int blockBreakerPendingItemCount;
    private String fluidType = "";
    private boolean funnelTransferLocked;
    private int funnelCaptureProgress;
@@ -293,6 +303,37 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
       public boolean isItemValid(int slot, ItemStack stack) {
          return MachineBlockEntity.this.validAutomationSlot(slot) && MachineBlockEntity.this.canPlaceItem(slot, stack);
+      }
+   };
+   private final IItemHandler blockBreakerOutputHandler = new IItemHandler() {
+      public int getSlots() {
+         return MachineBlockEntity.this.kind() == MachineKind.SMALL_BLOCK_BREAKER ? 1 : 0;
+      }
+
+      public ItemStack getStackInSlot(int slot) {
+         return slot == 0 && MachineBlockEntity.this.kind() == MachineKind.SMALL_BLOCK_BREAKER
+            ? MachineBlockEntity.this.items.get(0).copy()
+            : ItemStack.EMPTY;
+      }
+
+      public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+         return stack;
+      }
+
+      public ItemStack extractItem(int slot, int amount, boolean simulate) {
+         return slot == 0 && amount > 0 && MachineBlockEntity.this.kind() == MachineKind.SMALL_BLOCK_BREAKER
+            ? MachineBlockEntity.this.extractBlockBreakerOutput(amount, simulate)
+            : ItemStack.EMPTY;
+      }
+
+      public int getSlotLimit(int slot) {
+         return slot == 0 && MachineBlockEntity.this.kind() == MachineKind.SMALL_BLOCK_BREAKER
+            ? MachineBlockEntity.this.getMaxStackSize((ItemStack)MachineBlockEntity.this.items.get(0))
+            : 0;
+      }
+
+      public boolean isItemValid(int slot, ItemStack stack) {
+         return false;
       }
    };
    private final IFluidHandler fluidHandler = new IFluidHandler() {
@@ -488,7 +529,61 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    }
 
    public IItemHandler itemHandler(Direction side) {
+      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         return side != null && side == this.facing(this.getBlockState()).getOpposite()
+            ? this.blockBreakerOutputHandler
+            : null;
+      }
       return this.itemHandler;
+   }
+
+   private ItemStack extractBlockBreakerOutput(int amount, boolean simulate) {
+      ItemStack output = (ItemStack)this.items.get(0);
+      if (output.isEmpty()) {
+         return ItemStack.EMPTY;
+      }
+
+      int extracted = Math.min(amount, Math.min(output.getCount(), output.getMaxStackSize()));
+      ItemStack result = output.copyWithCount(extracted);
+      if (!simulate) {
+         output.shrink(extracted);
+         if (output.isEmpty()) {
+            this.items.set(0, ItemStack.EMPTY);
+         }
+         this.fillBlockBreakerOutput();
+         this.blockBreakerPendingItemCount = this.blockBreakerPendingItemCount();
+         this.setChanged();
+         this.updateComparator();
+      }
+      return result;
+   }
+
+   public String blockBreakerTargetName() {
+      ItemStack target = this.blockBreakerTargetStack();
+      if (target.isEmpty()) {
+         return "No target";
+      }
+      return target.getHoverName().getString();
+   }
+
+   public ItemStack blockBreakerTargetStack() {
+      if (this.level == null || this.kind() != MachineKind.SMALL_BLOCK_BREAKER) {
+         return ItemStack.EMPTY;
+      }
+      Direction front = this.facing(this.getBlockState());
+      BlockState target = this.level.getBlockState(this.worldPosition.relative(front));
+      Item item = target.getBlock().asItem();
+      return target.isAir() || item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
+   }
+
+   private int blockBreakerTargetBlockId() {
+      if (this.level == null || this.kind() != MachineKind.SMALL_BLOCK_BREAKER) {
+         return BuiltInRegistries.BLOCK.getId(Blocks.AIR);
+      }
+
+      Direction front = this.facing(this.getBlockState());
+      BlockState target = this.level.getBlockState(this.worldPosition.relative(front));
+      return BuiltInRegistries.BLOCK.getId(target.getBlock());
    }
 
    public IFluidHandler fluidHandler(Direction side) {
@@ -990,6 +1085,23 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
                   yield this.comparatorOutput();
                case 5:
                   yield this.cooldown;
+               case 6:
+                  yield this.blockBreakerStatus;
+               case 7:
+                  yield this.blockBreakerHardnessHundredths;
+               case 8:
+                  yield this.blockBreakerPendingItemCount;
+               case 9:
+                  yield this.previousPowered ? 1 : 0;
+                case 10:
+                   yield this.energy / 100;
+                // Keep each registry-ID component within the positive signed-short range used by menu data sync.
+                case 11:
+                   yield this.blockBreakerTargetBlockId() & 0x7FFF;
+                case 12:
+                   yield (this.blockBreakerTargetBlockId() >>> 15) & 0x7FFF;
+                case 13:
+                   yield this.blockBreakerTargetBlockId() >>> 30;
                default:
                   yield 0;
             }
@@ -1177,6 +1289,21 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
                      return;
                   case 5:
                      this.cooldown = value;
+                     return;
+                  case 6:
+                     this.blockBreakerStatus = Mth.clamp(value, BREAKER_STATUS_NO_TARGET, BREAKER_STATUS_UNBREAKABLE);
+                     return;
+                  case 7:
+                     this.blockBreakerHardnessHundredths = value;
+                     return;
+                  case 8:
+                     this.blockBreakerPendingItemCount = Math.max(0, value);
+                     return;
+                  case 9:
+                     this.previousPowered = value != 0;
+                     return;
+                  case 10:
+                     this.energy = Math.max(0, value) * 100;
                      return;
                   default:
                      return;
@@ -1573,48 +1700,150 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
    private void tickBlockBreaker(boolean powered) {
       if (this.level != null) {
+         this.fillBlockBreakerOutput();
+         this.blockBreakerPendingItemCount = this.blockBreakerPendingItemCount();
+         Direction direction = this.facing(this.getBlockState());
+         BlockPos target = this.worldPosition.relative(direction);
+         BlockState targetState = this.level.getBlockState(target);
+         float hardness = targetState.isAir() ? 0.0F : targetState.getDestroySpeed(this.level, target);
+         this.blockBreakerHardnessHundredths = targetState.isAir() ? 0 : Math.round(hardness * 100.0F);
          if (powered) {
+            this.blockBreakerStatus = BREAKER_STATUS_REDSTONE_STOP;
             this.progress = 0;
             this.processTimeNeeded = 0;
             this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-         } else if (this.cooldown <= 0) {
-            Direction direction = this.facing(this.getBlockState());
-            BlockPos target = this.worldPosition.relative(direction);
-            BlockState targetState = this.level.getBlockState(target);
+         } else if (this.cooldown > 0) {
+            this.blockBreakerStatus = BREAKER_STATUS_COOLDOWN;
+            this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+         } else if (targetState.isAir()) {
+            this.blockBreakerStatus = BREAKER_STATUS_NO_TARGET;
+            this.progress = 0;
+            this.processTimeNeeded = 0;
+            this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+         } else if (hardness < 0.0F) {
+            this.blockBreakerStatus = BREAKER_STATUS_UNBREAKABLE;
+            this.progress = 0;
+            this.processTimeNeeded = 0;
+            this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+         } else {
             int requiredTicks = this.blockBreakerProcessTicks(targetState, target);
-            if (requiredTicks <= 0) {
+            if (this.processTimeNeeded != requiredTicks) {
+               this.processTimeNeeded = requiredTicks;
                this.progress = 0;
-               this.processTimeNeeded = 0;
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-            } else {
-               if (this.processTimeNeeded != requiredTicks) {
-                  this.processTimeNeeded = requiredTicks;
-                  this.progress = 0;
-               }
+            }
 
-               this.progress++;
-               this.setBooleanProperty(MachineBlocks.ACTIVE, true);
-               if (this.progress < this.processTimeNeeded) {
+            int energyCost = this.blockBreakerEnergyCostPerTick(hardness);
+            if (energyCost <= 0) {
+               // Fail closed until the owner-selected FE curve and storage parameters are implemented.
+               this.progress = 0;
+               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
+               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+               return;
+            }
+            if (this.energy < energyCost) {
+               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
+               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+               return;
+            }
+            if (this.progress == 0 && !this.canBlockBreakerStoreDrops(target, targetState)) {
+               this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;
+               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+               return;
+            }
+
+            this.blockBreakerStatus = BREAKER_STATUS_WORKING;
+            this.energy -= energyCost;
+            this.progress++;
+            this.setBooleanProperty(MachineBlocks.ACTIVE, true);
+            if (this.progress < this.processTimeNeeded) {
+               this.setChanged();
+            } else {
+               if (this.destroyBlockIntoDropBuffer(target, targetState)) {
+                  this.progress = 0;
+                  this.processTimeNeeded = 0;
+                  this.cooldown = 12;
+                  this.fillBlockBreakerOutput();
+                  this.blockBreakerPendingItemCount = this.blockBreakerPendingItemCount();
                   this.setChanged();
+                  this.updateComparator();
                } else {
-                  if (this.destroyBlockIntoDropBuffer(target, targetState)) {
-                     this.progress = 0;
-                     this.processTimeNeeded = 0;
-                     this.cooldown = 12;
-                     this.setChanged();
-                     this.updateComparator();
-                  } else {
-                     this.progress = 0;
-                     this.processTimeNeeded = 0;
-                     this.cooldown = 12;
-                     this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-                     this.setChanged();
-                     this.updateComparator();
-                  }
+                  this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;
+                  this.progress = 0;
+                  this.processTimeNeeded = 0;
+                  this.cooldown = 12;
+                  this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+                  this.energy = Math.min(this.energyCapacity(this.kind()), this.energy + energyCost);
+                  this.setChanged();
+                  this.updateComparator();
                }
             }
          }
       }
+   }
+
+   private int blockBreakerEnergyCostPerTick(float hardness) {
+      // Deliberately unset: FE is owner-confirmed, but its hardness curve has not been approved.
+      return 0;
+   }
+
+   private boolean canBlockBreakerStoreDrops(BlockPos target, BlockState targetState) {
+      if (!(this.level instanceof ServerLevel serverLevel) || targetState.isAir()) {
+         return false;
+      }
+      BlockEntity targetEntity = this.level.getBlockEntity(target);
+      List<ItemStack> drops = Block.getDrops(targetState, serverLevel, target, targetEntity);
+      return this.canInsertAllIntoSlots(drops, this.accessibleSlots());
+   }
+
+   private boolean fillBlockBreakerOutput() {
+      if (this.kind() != MachineKind.SMALL_BLOCK_BREAKER || this.items.isEmpty()) {
+         return false;
+      }
+
+      ItemStack output = (ItemStack)this.items.get(0);
+      boolean changed = false;
+      for (int slot = 1; slot < this.items.size(); slot++) {
+         ItemStack queued = (ItemStack)this.items.get(slot);
+         if (queued.isEmpty()) {
+            continue;
+         }
+
+         if (output.isEmpty()) {
+            int move = Math.min(queued.getCount(), Math.min(queued.getMaxStackSize(), this.getMaxStackSize(queued)));
+            this.items.set(0, queued.copyWithCount(move));
+            queued.shrink(move);
+            if (queued.isEmpty()) {
+               this.items.set(slot, ItemStack.EMPTY);
+            }
+            output = (ItemStack)this.items.get(0);
+            changed = true;
+         } else if (ItemStack.isSameItemSameComponents(output, queued)) {
+            int limit = Math.min(output.getMaxStackSize(), this.getMaxStackSize(output));
+            int move = Math.min(queued.getCount(), Math.max(0, limit - output.getCount()));
+            if (move > 0) {
+               output.grow(move);
+               queued.shrink(move);
+               if (queued.isEmpty()) {
+                  this.items.set(slot, ItemStack.EMPTY);
+               }
+               changed = true;
+            }
+         }
+      }
+
+      if (changed) {
+         this.setChanged();
+         this.updateComparator();
+      }
+      return changed;
+   }
+
+   private int blockBreakerPendingItemCount() {
+      int count = 0;
+      for (int slot = 1; slot < this.items.size(); slot++) {
+         count = Math.min(32767, count + ((ItemStack)this.items.get(slot)).getCount());
+      }
+      return count;
    }
 
    private boolean destroyBlockIntoDropBuffer(BlockPos target, BlockState targetState) {
@@ -2820,7 +3049,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
    private int[] accessibleSlots() {
       MachineKind kind = this.kind();
-      return kind == null ? this.slotsUpTo(this.items.size()) : this.slotsUpTo(this.visibleSlotCount(kind));
+      return kind == null || kind == MachineKind.SMALL_BLOCK_BREAKER
+         ? this.slotsUpTo(this.items.size())
+         : this.slotsUpTo(this.visibleSlotCount(kind));
    }
 
    private int[] slotsUpTo(int count) {
