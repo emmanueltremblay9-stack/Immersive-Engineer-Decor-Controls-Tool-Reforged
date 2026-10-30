@@ -72,7 +72,8 @@ coverage. The separate TFC workflow runs twelve real GameTests in both profiles:
 ./gradlew runGameTestServer -Pinclude_tfc_milking_runtime=true -Pinclude_tfc_crossover_runtime=true
 ```
 
-The development profile adds `src/tfcGameTest/java` and selects the
+The development profile adds `src/tfcGameTest/java`, copies the existing 110-byte
+empty structure into its dedicated template namespace, and selects the
 `immersive_engineer_decor_controls_tool_reforged_tfc` test namespace.
 The workflow also requires evidence of the twelve-test `tfc_milking` batch and
 successful required tests, so discovering zero native tests cannot count as success.

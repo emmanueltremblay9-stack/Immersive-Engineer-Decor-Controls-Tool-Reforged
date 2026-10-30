@@ -121,6 +121,12 @@ sourceSets.test {
 
 tasks.named('processResources', ProcessResources).configure {
     duplicatesStrategy = DuplicatesStrategy.FAIL
+    inputs.property('tfcMilkingRuntime', tfcMilkingRuntime)
+    if (tfcMilkingRuntime) {
+        from("src/main/resources/data/${project.mod_id}/structure/empty.nbt") {
+            into("data/${project.mod_id}_tfc/structure")
+        }
+    }
 }
 
 tasks.register('validateSignItemModels') {
