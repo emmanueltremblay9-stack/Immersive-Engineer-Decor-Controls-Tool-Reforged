@@ -73,6 +73,14 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.items.IItemHandler;
 
+import net.minecraft.world.Containers;
+
+import net.neoforged.neoforge.capabilities.Capabilities.ItemHandler;
+
+import net.neoforged.neoforge.items.wrapper.InvWrapper;
+
+import net.neoforged.neoforge.items.wrapper.SidedInvWrapper;
+
 public class MachineBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer {
    private static final int SLOT_COUNT = 27;
    private static final String IE_NAMESPACE = "immersiveengineering";
@@ -3356,118 +3364,23 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
-   private IItemHandler neighborItemHandler(Direction direction) {
-      if (this.level == null) {
-         return null;
-      }
-
-      BlockPos neighborPos = this.worldPosition.relative(direction);
-      return this.level.getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, neighborPos, direction.getOpposite());
-   }
-
-   private void pushItemsToHandler(IItemHandler target, int maxCount) {
-      int remainingCount = Math.max(1, maxCount);
-
-      for (int tries = 0; tries < this.accessibleSlots().length && remainingCount > 0; tries++) {
-         int slotIndex = this.machineSlotCursor % this.accessibleSlots().length;
-         ItemStack stack = (ItemStack)this.items.get(slotIndex);
-         if (!stack.isEmpty()) {
-            ItemStack moving = stack.copyWithCount(Math.min(remainingCount, stack.getCount()));
-            int before = moving.getCount();
-            ItemStack remainder = net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(target, moving, false);
-            int inserted = before - remainder.getCount();
-            if (inserted > 0) {
-               stack.shrink(inserted);
-               remainingCount -= inserted;
-               this.setChanged();
-               this.updateComparator();
-            }
-         }
-
-         this.machineSlotCursor = (this.machineSlotCursor + 1) % this.accessibleSlots().length;
-      }
-   }
-
-   private int acceptableCount(ItemStack stack) {
-      int capacity = 0;
-
-      for (int slotIndex : this.accessibleSlots()) {
-         ItemStack slot = (ItemStack)this.items.get(slotIndex);
-         if (slot.isEmpty()) {
-            capacity += Math.min(stack.getMaxStackSize(), this.getMaxStackSize(stack));
-         } else if (ItemStack.isSameItemSameComponents(slot, stack)) {
-            capacity += Math.max(0, Math.min(slot.getMaxStackSize(), this.getMaxStackSize(slot)) - slot.getCount());
-         }
-      }
-
-      return capacity;
-   }
-
-   // Only extracts what the hopper can hold, so a blocked transfer never touches the source. Handlers whose real
-   // extraction diverges from the simulation are not atomic; leftovers are returned to the source slot, and only
-   // dropped if that source refuses them.
-   private void pullItemsFromHandler(IItemHandler source, int maxCount) {
-      int remaining = Math.max(1, maxCount);
-
-      for (int slot = 0; slot < source.getSlots() && remaining > 0; slot++) {
-         ItemStack simulated = source.extractItem(slot, remaining, true);
-         if (simulated.isEmpty()) {
-            continue;
-         }
-
-         int amount = Math.min(simulated.getCount(), this.acceptableCount(simulated));
-         if (amount <= 0) {
-            continue;
-         }
-
-         ItemStack extracted = source.extractItem(slot, amount, false);
-         if (extracted.isEmpty()) {
-            continue;
-         }
-
-         ItemStack remainder = this.insertRemainder(extracted);
-         int moved = extracted.getCount() - remainder.getCount();
-         if (!remainder.isEmpty()) {
-            ItemStack leftover = source.insertItem(slot, remainder, false);
-            if (!leftover.isEmpty()) {
-               net.minecraft.world.Containers.dropItemStack(
-                  this.level, this.worldPosition.getX() + 0.5, this.worldPosition.getY() + 0.5, this.worldPosition.getZ() + 0.5, leftover
-               );
-            }
-         }
-
-         remaining -= moved;
-         if (moved > 0) {
-            this.setChanged();
-         }
-      }
-   }
-
    private void pushItems(Direction direction, int maxCount) {
-      if (this.level != null && !(this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container)) {
-         IItemHandler handler = this.neighborItemHandler(direction);
-         if (handler != null) {
-            this.pushItemsToHandler(handler, maxCount);
-         }
-
-         return;
-      }
-
-      if (this.level != null && this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container target) {
+      IItemHandler target = this.hopperInventory(direction);
+      if (target != null) {
          int var11 = Math.max(1, maxCount);
 
          for (int tries = 0; tries < this.accessibleSlots().length && var11 > 0; tries++) {
-            int slotIndex = this.machineSlotCursor % this.accessibleSlots().length;
+            int slotIndex = this.accessibleSlots()[this.machineSlotCursor % this.accessibleSlots().length];
             ItemStack stack = (ItemStack)this.items.get(slotIndex);
             if (!stack.isEmpty()) {
                int count = Math.min(var11, stack.getCount());
                ItemStack moving = stack.copyWithCount(count);
-               int inserted = this.insertIntoContainerCount(target, moving);
+               ItemStack remainder = ItemHandlerHelper.insertItem(target, moving, false);
+               int inserted = count - remainder.getCount();
                if (inserted > 0) {
                   stack.shrink(inserted);
                   var11 -= inserted;
                   this.setChanged();
-                  target.setChanged();
                   this.updateComparator();
                }
             }
@@ -3478,42 +3391,59 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void pullItems(Direction direction, int maxCount) {
-      if (this.level != null && !(this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container)) {
-         IItemHandler handler = this.neighborItemHandler(direction);
-         if (handler != null) {
-            this.pullItemsFromHandler(handler, maxCount);
-         }
-
-         return;
-      }
-
-      if (this.level != null && this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container source) {
+      IItemHandler source = this.hopperInventory(direction);
+      if (source != null) {
          int remaining = Math.max(1, maxCount);
-         boolean movedAny = false;
 
-         for (int slot = 0; slot < source.getContainerSize() && remaining > 0; slot++) {
-            ItemStack stored = source.getItem(slot);
-            if (!stored.isEmpty() && source.canTakeItem(this, slot, stored)) {
-               ItemStack moving = stored.copyWithCount(Math.min(remaining, stored.getCount()));
-               ItemStack remainder = this.insertRemainder(moving);
-               int moved = moving.getCount() - remainder.getCount();
-               if (moved > 0) {
-                  stored.shrink(moved);
-                  if (stored.isEmpty()) {
-                     source.setItem(slot, ItemStack.EMPTY);
+         for (int slot = 0; slot < source.getSlots() && remaining > 0; slot++) {
+            ItemStack candidate = source.extractItem(slot, remaining, true);
+            if (!candidate.isEmpty()) {
+               ItemStack simulatedRemainder = ItemHandlerHelper.insertItem(this.itemHandler, candidate, true);
+               int accepted = candidate.getCount() - simulatedRemainder.getCount();
+               if (accepted > 0) {
+                  // Only account for the real extraction result; never mutate a handler's slot view.
+                  ItemStack extracted = source.extractItem(slot, accepted, false);
+                  remaining -= extracted.getCount();
+                  ItemStack remainder = this.insertRemainder(extracted);
+                  if (!remainder.isEmpty()) {
+                     // A handler that changes item type during execution must not destroy its output.
+                     Containers.dropItemStack(this.level, this.worldPosition.getX() + 0.5,
+                        this.worldPosition.getY() + 0.5, this.worldPosition.getZ() + 0.5, remainder);
                   }
-
-                  remaining -= moved;
-                  movedAny = true;
                }
             }
          }
-
-         if (movedAny) {
-            source.setChanged();
-            this.setChanged();
-         }
       }
+   }
+
+   private IItemHandler hopperInventory(Direction direction) {
+      if (this.level == null) return null;
+      BlockPos pos = this.worldPosition.relative(direction);
+      if (!this.level.hasChunkAt(pos)) return null;
+      Direction side = direction.getOpposite();
+      IItemHandler handler = this.level.getCapability(ItemHandler.BLOCK, pos, side);
+      if (handler != null) return handler;
+
+      // Preserve legacy Container-only inventories, including their sided access rules.
+      BlockEntity neighbor = this.level.getBlockEntity(pos);
+      if (neighbor instanceof WorldlyContainer container) {
+         return new SidedInvWrapper(container, side) {
+            @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {
+               int actualSlot = SidedInvWrapper.getSlot(container, slot, side);
+               return actualSlot >= 0 && container.canTakeItem(MachineBlockEntity.this, actualSlot, container.getItem(actualSlot))
+                  ? super.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
+            }
+         };
+      }
+      if (neighbor instanceof Container container) {
+         return new InvWrapper(container) {
+            @Override public ItemStack extractItem(int slot, int amount, boolean simulate) {
+               return container.canTakeItem(MachineBlockEntity.this, slot, container.getItem(slot))
+                  ? super.extractItem(slot, amount, simulate) : ItemStack.EMPTY;
+            }
+         };
+      }
+      return null;
    }
 
    private int insertIntoContainerCount(Container target, ItemStack stack) {

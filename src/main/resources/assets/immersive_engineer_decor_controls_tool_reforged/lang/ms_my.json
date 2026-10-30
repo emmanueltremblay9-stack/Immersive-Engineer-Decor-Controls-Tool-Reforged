@@ -896,5 +896,11 @@
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.dimension.overworld": " di Permukaan",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.distance": " | berjarak %1$s blok",
   "item.immersive_engineer_decor_controls_tool_reforged.tracker.tip.target.entity": "Entiti: %1$s",
-  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Pek perangsang sedang menyuntik"
+  "immersive_engineer_decor_controls_tool_reforged.subtitle.stimpack_inject": "Pek perangsang sedang menyuntik",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.continuous": "Current: continuous — repeat while enabled, respecting the insertion delay.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.ignore_trigger": "Current: repeat after each insertion delay while redstone is ignored; the pulse toggle has no effect.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.ignored": "Current: redstone ignored — always enabled.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.inverted": "Current: inverted — enabled by an unpowered signal (default).",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.normal": "Current: normal — enabled by a powered signal.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.pulse": "Current: pulse — one cycle on OFF→ON (normal) or ON→OFF (inverted), when the delay has expired."
 }
