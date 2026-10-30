@@ -3,6 +3,7 @@ package com.oblixorprime.engineersdecorreforged.gametest;
 import com.mojang.authlib.GameProfile;
 import com.oblixorprime.engineersdecorreforged.EngineersDecorReforged;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import com.oblixorprime.engineersdecorreforged.block.StairRailingTargeting;
 import java.util.UUID;
@@ -52,7 +53,8 @@ public final class UpperStairRailingTargetingGameTests {
       for (Direction facing : Direction.Plane.HORIZONTAL) {
          for (boolean left : new boolean[]{true, false}) {
             for (boolean wet : new boolean[]{false, true}) {
-               BlockState state = stairs(facing).setValue(PortedBlocks.WATERLOGGED, wet);
+                BlockState state = NativeFluidloggedBlock.withFluidContent(stairs(facing),
+                   wet ? NativeFluidloggedBlock.FluidContent.WATER : NativeFluidloggedBlock.FluidContent.EMPTY);
                put(helper, CENTER, state); clearDrops(helper);
                BlockPos pos = helper.absolutePos(CENTER);
                helper.assertValueEqual(state.getShape(helper.getLevel(), pos).bounds().maxY, 2.0,
@@ -69,7 +71,7 @@ public final class UpperStairRailingTargetingGameTests {
                player.gameMode.destroyBlock(hit.getBlockPos());
                assertRemoved(helper, left);
                helper.assertValueEqual(drops(helper), 1, "new cap targeting refunds exactly the purchased side");
-               helper.assertValueEqual(helper.getBlockState(CENTER).getValue(PortedBlocks.WATERLOGGED), wet,
+                helper.assertValueEqual(NativeFluidloggedBlock.fluidContent(helper.getBlockState(CENTER)) == NativeFluidloggedBlock.FluidContent.WATER, wet,
                   "cap mining preserves the existing water state");
                put(helper, CENTER, state);
                Vec3 above = cap.add(0, 1.0/16.0, 0);

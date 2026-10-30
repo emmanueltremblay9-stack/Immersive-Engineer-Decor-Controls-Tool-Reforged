@@ -105,7 +105,7 @@ final class NativeCatalogueValidation {
             check(flow.getAmount()==(natural()?7:8),"catalogue fluid amount differs from vanilla");
          }
          check((state.canOcclude() && Block.isShapeFullBlock(state.getOcclusionShape(mc.level,POS)))==opaque(),"catalogue occlusion changed");
-         for(var property:dry().getProperties())if(!Set.of("waterlogged","fluid_cell","water_flow").contains(property.getName()))
+         for(var property:dry().getProperties())if(!Set.of("waterlogged","fluid_cell","water_flow","fluid_content").contains(property.getName()))
             check(state.getValue(property).equals(dry().getValue(property)),"fluid changed geometry/paid lamp/signal property "+property);
          if(index%5==4)for(var side:List.of(net.minecraft.core.Direction.WEST,net.minecraft.core.Direction.EAST)) {
             var neighbor=mc.level.getBlockState(POS.relative(side));

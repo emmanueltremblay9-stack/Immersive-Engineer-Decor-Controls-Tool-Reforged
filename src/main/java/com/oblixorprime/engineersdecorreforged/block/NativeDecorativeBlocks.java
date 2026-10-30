@@ -71,8 +71,12 @@ public final class NativeDecorativeBlocks {
       @Override protected MapCodec<? extends Block> codec() { return CODEC; }
       @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
          super.createBlockStateDefinition(builder);
-         builder.add(NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
-         builder.add(BlockStateProperties.WATERLOGGED);
+         if (this instanceof NativeFluidloggedBlock.CompactState) {
+            builder.add(NativeFluidloggedBlock.FLUID_CONTENT);
+         } else {
+            builder.add(NativeFluidloggedBlock.FLUID_CELL, StairWaterFlow.WATER_FLOW);
+            builder.add(BlockStateProperties.WATERLOGGED);
+         }
       }
       @Override public FluidState getFluidState(BlockState state) { return StairWaterFlow.fluid(state); }
       @Override public boolean canPlaceLiquid(@Nullable Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {

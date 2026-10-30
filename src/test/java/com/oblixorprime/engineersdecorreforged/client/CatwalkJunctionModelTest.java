@@ -73,10 +73,10 @@ public class CatwalkJunctionModelTest {
 
    @Test public void everyRotationSideAndWaterVariantKeepsItsExistingModel() throws Exception {
       var variants=resource("blockstates/steel_catwalk_stairs.json").getAsJsonObject("variants");
-      assertEquals(32,variants.size());
+      assertEquals(16,variants.size());
       for(String facing:new String[]{"north","east","south","west"})for(boolean l:new boolean[]{false,true})
-         for(boolean right:new boolean[]{false,true})for(boolean wet:new boolean[]{false,true}) {
-            String key="facing="+facing+",left_railing="+l+",right_railing="+right+",waterlogged="+wet;
+         for(boolean right:new boolean[]{false,true}) {
+            String key="facing="+facing+",left_railing="+l+",right_railing="+right;
             var mapping=variants.getAsJsonObject(key);assertNotNull(key,mapping);
             String suffix=l?(right?"_br":"_lr"):(right?"_rr":"");
             assertEquals("immersive_engineer_decor_controls_tool_reforged:block/furniture/steel_catwalk_stairs"+suffix+"_model",mapping.get("model").getAsString());

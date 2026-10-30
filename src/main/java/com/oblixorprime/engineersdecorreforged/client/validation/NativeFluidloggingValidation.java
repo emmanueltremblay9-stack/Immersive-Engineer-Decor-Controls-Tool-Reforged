@@ -43,8 +43,8 @@ final class NativeFluidloggingValidation {
    private static Block block() { return blocks().get((index % 12) / 3); }
    private static Fluid fluid() { return fluids().get(index % 3); }
    private static BlockState filled() {
-      return block().defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, fluid() == Fluids.WATER)
-         .setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.cell(fluid()));
+      return NativeFluidloggedBlock.withFluidContent(block().defaultBlockState(),
+         NativeFluidloggedBlock.FluidContent.fromFluidState(((net.minecraft.world.level.material.FlowingFluid)fluid()).getSource(false)));
    }
 
    static boolean tick(Minecraft mc, Path directory, String nonce) throws Exception {

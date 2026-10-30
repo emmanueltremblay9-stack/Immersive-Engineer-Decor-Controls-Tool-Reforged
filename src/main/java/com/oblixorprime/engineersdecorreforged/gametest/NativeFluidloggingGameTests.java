@@ -50,12 +50,13 @@ public final class NativeFluidloggingGameTests {
       return List.of(Fluids.WATER, Fluids.LAVA, NativeFluidloggedBlock.creosote());
    }
    private static BlockState filled(Block block, Fluid fluid) {
-      return block.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, fluid == Fluids.WATER)
-         .setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.cell(fluid));
+      FlowingFluid flowing = (FlowingFluid)fluid;
+      return NativeFluidloggedBlock.withFluidContent(block.defaultBlockState(),
+         NativeFluidloggedBlock.FluidContent.fromFluidState(flowing.getSource(false)));
    }
 
    @GameTest(template = "empty")
-   public static void native_fluidlogging_legacy_states_and_save_codecs(GameTestHelper helper) {
+   public static void native_fluidlogging_source_states_and_save_codecs(GameTestHelper helper) {
       helper.assertTrue(NativeFluidloggedBlock.creosote() != Fluids.EMPTY, "IE source fluid must actually be registered");
       for (Block block : blocks()) {
          for (Fluid fluid : fluids()) {
@@ -69,6 +70,7 @@ public final class NativeFluidloggingGameTests {
                "block state exposes the exact stored source");
          }
          for (boolean water : new boolean[] {false, true}) {
+            if (block.defaultBlockState().hasProperty(NativeFluidloggedBlock.FLUID_CONTENT)) break;
             var legacy = NbtUtils.writeBlockState(block.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, water));
             legacy.getCompound("Properties").remove("fluid_cell");
             BlockState loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), legacy);

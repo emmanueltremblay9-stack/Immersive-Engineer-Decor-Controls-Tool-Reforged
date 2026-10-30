@@ -759,19 +759,18 @@ public final class PortedBlocks {
       }
    }
 
-   public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock {
+   public static class CatwalkStairsBlock extends HorizontalDirectionalBlock implements NativeTransientFluidBlock, NativeFluidloggedBlock.CompactState {
       public static final net.minecraft.world.level.block.state.properties.IntegerProperty WATER_FLOW = StairWaterFlow.WATER_FLOW;
       public static final MapCodec<PortedBlocks.CatwalkStairsBlock> CODEC = simpleCodec(PortedBlocks.CatwalkStairsBlock::new);
 
       public CatwalkStairsBlock(Properties properties) {
          super(properties.lightLevel(NativeFluidloggedBlock::light));
-         this.registerDefaultState(
-            (BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateDefinition.any())
-                        .setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH))
-                     .setValue(PortedBlocks.LEFT_RAILING, false))
-                  .setValue(PortedBlocks.RIGHT_RAILING, false))
-               .setValue(WATER_FLOW, 0).setValue(PortedBlocks.WATERLOGGED, false).setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY).setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0)
-         );
+         this.registerDefaultState(this.stateDefinition.any()
+            .setValue(PortedBlocks.HORIZONTAL_FACING, Direction.NORTH)
+            .setValue(PortedBlocks.LEFT_RAILING, false)
+            .setValue(PortedBlocks.RIGHT_RAILING, false)
+            .setValue(NativeFluidloggedBlock.FLUID_CONTENT, NativeFluidloggedBlock.FluidContent.EMPTY)
+            .setValue(EDITED_STAIR_SIDES, 0).setValue(PAID_RAILINGS, 0));
       }
 
       protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
@@ -779,7 +778,8 @@ public final class PortedBlocks {
       }
 
       protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING, PortedBlocks.WATERLOGGED, NativeFluidloggedBlock.FLUID_CELL, WATER_FLOW, EDITED_STAIR_SIDES, PAID_RAILINGS});
+         builder.add(new Property[]{PortedBlocks.HORIZONTAL_FACING, PortedBlocks.LEFT_RAILING, PortedBlocks.RIGHT_RAILING,
+            NativeFluidloggedBlock.FLUID_CONTENT, EDITED_STAIR_SIDES, PAID_RAILINGS});
       }
 
       public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -1456,7 +1456,7 @@ public final class PortedBlocks {
       }
    }
 
-   public static class SupportBlock extends NativeDecorativeBlocks.NativeOpenBlock {
+   public static class SupportBlock extends NativeDecorativeBlocks.NativeOpenBlock implements NativeFluidloggedBlock.CompactState {
       public SupportBlock(Properties properties) {
          super(properties);
          this.registerDefaultState(
@@ -1544,7 +1544,7 @@ public final class PortedBlocks {
          super(properties.lightLevel(state -> Math.max(14, NativeFluidloggedBlock.light(state))), northShape, horizontalRotation, emptyCollision);
          this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false)
             .setValue(NativeFluidloggedBlock.FLUID_CELL, NativeFluidloggedBlock.Cell.EMPTY)
-            .setValue(CatwalkStairsBlock.WATER_FLOW, 0));
+            .setValue(StairWaterFlow.WATER_FLOW, 0));
       }
 
       @Override

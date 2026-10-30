@@ -65,7 +65,7 @@ def validate_flow_distance_proof(proof: dict, session: dict, nonce: str, profile
             if any(sample.get("water") or sample.get("source") or sample.get("amount") for sample in removed):
                 raise SmokeFailure("Water remains after upstream source removal")
         elif (samples[4].get("source") is not True or removed[4].get("source") is not True
-              or 'waterlogged:"true"' not in removed[4].get("block_state", "")):
+              or 'fluid_content:"water"' not in removed[4].get("block_state", "")):
             raise SmokeFailure("Existing filled source cell was lost")
         removal_name=f"flow-distance-{distance}-removed.png"
         if case.get("removal_screenshot")!=removal_name or not (directory/"canal-screenshots"/removal_name).is_file():

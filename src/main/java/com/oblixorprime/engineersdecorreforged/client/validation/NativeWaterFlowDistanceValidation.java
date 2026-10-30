@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
@@ -61,7 +62,8 @@ final class NativeWaterFlowDistanceValidation {
             level.setBlock(SOURCE.west(10), Blocks.BRICKS.defaultBlockState(), 3);
             if (current > 0) level.setBlock(SOURCE.west(current==9 ? 4 : current),
                ModBlocks.STEEL_CATWALK_STAIRS.get().defaultBlockState().setValue(PortedBlocks.HORIZONTAL_FACING, Direction.EAST), 3);
-            if (current == 9) level.setBlock(SOURCE.west(4), level.getBlockState(SOURCE.west(4)).setValue(PortedBlocks.WATERLOGGED,true),3);
+            if (current == 9) level.setBlock(SOURCE.west(4), NativeFluidloggedBlock.withFluidContent(
+               level.getBlockState(SOURCE.west(4)), NativeFluidloggedBlock.FluidContent.WATER),3);
             serverStarted = level.getGameTime();
             // Exactly one initial source; never call placeLiquid or set WATERLOGGED.
             level.setBlock(SOURCE, Blocks.WATER.defaultBlockState(), 3);

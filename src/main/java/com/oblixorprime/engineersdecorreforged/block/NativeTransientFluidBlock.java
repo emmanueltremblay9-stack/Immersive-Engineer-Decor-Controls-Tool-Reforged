@@ -31,13 +31,13 @@ public interface NativeTransientFluidBlock extends NativeFluidloggedBlock {
          if (!fluid.isSource() || (fluid.getType() != net.minecraft.world.level.material.Fluids.WATER
                && NativeFluidloggedBlock.cell(fluid.getType()) == NativeFluidloggedBlock.Cell.EMPTY))
             return com.oblixorprime.engineersdecorreforged.fluid.NativeFluidCells.place(level, pos, state, fluid);
-         return NativeFluidloggedBlock.super.placeLiquid(level, pos, state.setValue(StairWaterFlow.WATER_FLOW, 0), fluid);
+         return NativeFluidloggedBlock.super.placeLiquid(level, pos, state, fluid);
       }
 
    @Override
    default net.minecraft.world.item.ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, LevelAccessor level, BlockPos pos, BlockState state) {
          if (StairWaterFlow.active(state)) return net.minecraft.world.item.ItemStack.EMPTY;
-         return NativeFluidloggedBlock.super.pickupBlock(player, level, pos, state.setValue(StairWaterFlow.WATER_FLOW, 0));
+         return NativeFluidloggedBlock.super.pickupBlock(player, level, pos, state);
       }
 
 }

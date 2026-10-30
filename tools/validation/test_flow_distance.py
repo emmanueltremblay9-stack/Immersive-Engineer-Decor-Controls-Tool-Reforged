@@ -23,7 +23,7 @@ class FlowDistanceTests(unittest.TestCase):
                                 "water":water,"source":i==0 or (d==9 and i==4),"amount":(8 if d==9 and i==4 else max(1,8-i)) if water else 0,
                                 "height":max(1,8-i)/9 if water else 0})
             target = copy.deepcopy(samples[4 if d in (0,9) else d])
-            if d: target["block_state"]='steel_catwalk_stairs,facing:"east",waterlogged:"true"' if d==9 else 'steel_catwalk_stairs,facing:"east",waterlogged:"false"'
+            if d: target["block_state"]='steel_catwalk_stairs,facing:"east",fluid_content:"water"' if d==9 else 'steel_catwalk_stairs,facing:"east",fluid_content:"empty"'
             if d: samples[4 if d==9 else d] = copy.deepcopy(target)
             case={"distance":d,"direct_cell_fill":d==9,"initial_sources_placed":2 if d==9 else 1,
                   "settled_ticks":100,"unchanged_client_ticks":20,"source":samples[0],

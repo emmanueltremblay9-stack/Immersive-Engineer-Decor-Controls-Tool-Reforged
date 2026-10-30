@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.mojang.authlib.GameProfile;
 import com.mojang.serialization.JsonOps;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock;
 import com.oblixorprime.engineersdecorreforged.block.PortedBlocks;
 import java.util.List;
 import java.util.UUID;
@@ -124,7 +125,8 @@ public final class StairRailingGameTests {
    @GameTest(template = "empty", timeoutTicks = 80)
    public static void stair_edits_survive_neighbor_changes_waterlogging_and_real_save_reload(GameTestHelper helper) {
       ServerPlayer player = player(helper);
-      put(helper, state(Direction.NORTH, true, true, 2).setValue(PortedBlocks.WATERLOGGED, true));
+      put(helper, NativeFluidloggedBlock.withFluidContent(state(Direction.NORTH, true, true, 2),
+         NativeFluidloggedBlock.FluidContent.WATER));
       mine(helper, player, true);
       BlockState before = helper.getBlockState(CENTER);
       for (Direction direction : Direction.Plane.HORIZONTAL) {

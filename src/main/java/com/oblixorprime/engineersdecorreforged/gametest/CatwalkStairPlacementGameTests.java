@@ -144,7 +144,8 @@ public final class CatwalkStairPlacementGameTests {
          click(helper, player, platformHit(helper, player, downhill, Direction.UP, ModBlocks.STEEL_CATWALK.get()),
             downhill, InteractionHand.MAIN_HAND);
          assertStair(helper, first, downhill.getOpposite());
-         helper.assertBlockProperty(first, PortedBlocks.WATERLOGGED, true);
+         helper.assertValueEqual(helper.getBlockState(first).getValue(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.FLUID_CONTENT),
+            com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.FluidContent.WATER, "new stair schema retains source water");
          BlockState original = helper.getBlockState(first);
          BlockState loaded = NbtUtils.readBlockState(BuiltInRegistries.BLOCK.asLookup(), NbtUtils.writeBlockState(original));
          helper.assertValueEqual(loaded, original, "saved stair rotation, water and railings round-trip unchanged");
@@ -153,7 +154,8 @@ public final class CatwalkStairPlacementGameTests {
          put(helper, next, Blocks.WATER.defaultBlockState());
          click(helper, player, lowEndHit(helper, player, first, downhill, Direction.UP), downhill.getClockWise(), InteractionHand.MAIN_HAND);
          assertStair(helper, next, downhill.getOpposite());
-         helper.assertBlockProperty(next, PortedBlocks.WATERLOGGED, true);
+         helper.assertValueEqual(helper.getBlockState(next).getValue(com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.FLUID_CONTENT),
+            com.oblixorprime.engineersdecorreforged.block.NativeFluidloggedBlock.FluidContent.WATER, "chained stair retains source water");
          helper.assertValueEqual(player.getMainHandItem().getCount(), 6, "reload and fluids must not affect item cost");
       }
       helper.succeed();
@@ -326,7 +328,7 @@ public final class CatwalkStairPlacementGameTests {
          return from.get(1).getAsDouble() == -1 && to.get(1).getAsDouble() == 1 && to.get(2).getAsDouble() == 17;
       }), "preserved south low-end connector straddles the bottom mounting plane");
       for (Direction facing : Direction.Plane.HORIZONTAL) {
-         String key = "facing=" + facing.getName() + ",left_railing=false,right_railing=false,waterlogged=false";
+          String key = "facing=" + facing.getName() + ",left_railing=false,right_railing=false";
          JsonObject variant = variants.getAsJsonObject(key);
          int rotation = variant.has("y") ? variant.get("y").getAsInt() : 0;
          int expectedRotation = switch (facing) { case NORTH -> 0; case EAST -> 90; case SOUTH -> 180; case WEST -> 270; default -> -1; };
