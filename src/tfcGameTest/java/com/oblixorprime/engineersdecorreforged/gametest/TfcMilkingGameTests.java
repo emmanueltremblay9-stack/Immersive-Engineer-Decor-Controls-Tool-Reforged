@@ -47,10 +47,10 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 @GameTestHolder(EngineersDecorReforged.MOD_ID + "_tfc")
 @PrefixGameTestTemplate(false)
 public final class TfcMilkingGameTests {
-   private static final String TEMPLATE = EngineersDecorReforged.MOD_ID + ":empty";
+   private static final String TEMPLATE = "empty";
    private static final BlockPos POS = new BlockPos(3, 2, 3);
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void ready_native_cow_fills_tank_and_cooldown_prevents_replay(GameTestHelper h) {
       try (Fixture f = fixture(h)) {
          tick(f, 120);
@@ -65,7 +65,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void native_age_sex_familiarity_and_cooldown_rejections(GameTestHelper h) {
       List<Consumer<DairyAnimal>> rejected = List.of(c -> c.setGender(Gender.MALE),
             DairyAnimal::setBirthTickNow, c -> c.setOldTick(-2),
@@ -82,7 +82,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void familiarity_threshold_is_strict(GameTestHelper h) {
       var supplier = TFCConfig.SERVER.cowConfig.produceFamiliarity();
       h.assertTrue(supplier instanceof ConfigBuilder.ServerValue<?>, "native server configuration wrapper");
@@ -104,7 +104,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void protection_and_product_cancellation_do_not_consume(GameTestHelper h) {
       for (boolean protection : new boolean[]{true, false}) try (Fixture f = fixture(h)) {
          AtomicInteger interactions = new AtomicInteger(), products = new AtomicInteger();
@@ -130,7 +130,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void modified_amount_and_uses_are_exact_without_partial_acceptance(GameTestHelper h) {
       for (int product : new int[]{500, 1500, 4000, 4001, Integer.MAX_VALUE, 0}) try (Fixture f = fixture(h)) {
          try (var listener = product(f, event -> {
@@ -155,7 +155,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void incompatible_fluid_components_or_item_product_are_refused(GameTestHelper h) {
       List<Consumer<AnimalProductEvent>> modifications = List.of(
             event -> event.setProduct(new FluidStack(Fluids.WATER, 1000)),
@@ -176,7 +176,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void callbacks_revalidate_capacity_power_and_animal_position(GameTestHelper h) {
       for (int mode = 0; mode < 4; mode++) try (Fixture f = fixture(h)) {
          final int selected = mode;
@@ -194,7 +194,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void reentrant_two_machine_attempt_is_exactly_once(GameTestHelper h) {
       try (Fixture f = fixture(h)) {
          MachineBlockEntity other = place(h, POS.east());
@@ -212,7 +212,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void bucket_priority_and_full_tank_keep_products_conserved(GameTestHelper h) {
       for (int initial : new int[]{0, 4000}) try (Fixture f = fixture(h)) {
          if (initial > 0) tank(f).fill(new FluidStack(NeoForgeMod.MILK.get(), initial), FluidAction.EXECUTE);
@@ -226,7 +226,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking", timeoutTicks = 100)
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking", timeoutTicks = 100)
    public static void save_reload_preserves_tank_and_native_cooldown(GameTestHelper h) {
       Fixture f = fixture(h);
       tick(f, 120);
@@ -251,7 +251,7 @@ public final class TfcMilkingGameTests {
       });
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void redstone_range_and_vanilla_behavior_remain_unchanged(GameTestHelper h) {
       try (Fixture f = fixture(h)) {
          h.getLevel().setBlock(f.pos.east(), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
@@ -273,7 +273,7 @@ public final class TfcMilkingGameTests {
       h.succeed();
    }
 
-   @GameTest(template = TEMPLATE, batch = "tfc_milking")
+   @GameTest(template = TEMPLATE, templateNamespace = EngineersDecorReforged.MOD_ID, batch = "tfc_milking")
    public static void foreign_actor_outputs_are_preserved_without_a_free_bucket(GameTestHelper h) {
       try (Fixture f = fixture(h)) {
          try (var listener = product(f, event -> {
