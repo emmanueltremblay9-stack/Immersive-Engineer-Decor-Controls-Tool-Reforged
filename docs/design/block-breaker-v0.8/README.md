@@ -6,8 +6,8 @@ This branch connects the owner-approved v0.8 concept to the existing Block Break
 
 - The screen uses the original 209 x 235 concept background. Labels, target item, hardness, progress, redstone signal, stored energy, and status are rendered from Minecraft/runtime data. The target block's registry ID is sent in three 15-bit menu-data components so remote clients do not depend on a client-side block entity reference or a single truncated value. The static sample-state image and label overlay are not used.
 - The menu exposes one vanilla output slot and the normal 27 player inventory slots plus the 9-slot hotbar.
-- Existing Block Breaker block entities persist 27 item stacks. Container index 0 is now the visible output; indices 1–26 remain saved as a pending output queue. The queue advances into the visible slot as it is emptied. No legacy stack is discarded or rewritten during load/save.
-- The item capability is exposed only at the rear and allows extraction from the output. Automatic pushing is not enabled.
+- The block entity has a 27-stack backing list, while the pre-change GUI exposed 10 machine slots: collection slots 0-8 and an I/O slot at 9. The new menu exposes only output slot 0. On upgrade, saved legacy items in slots 1-9 are drained into slot 0 in ascending slot order; newly generated drops are inserted only into slot 0 and are never stored in hidden slots. Backing slots 10-26 are preserved in NBT but remain untouched and are not treated as a collection queue.
+- The item capability and sided `Container` view expose the output only at the rear; hopper pulls verify the source-to-destination side as well. Automatic pushing is not enabled.
 - Existing redstone behavior is shown as live state: a high signal stops and resets work; a low signal permits it.
 - FE being mandatory is owner-confirmed. The underside input face is the planned connection. The per-tick/hardness cost, storage capacity, and transfer limit remain unresolved, so the energy capability and paid breaking behavior must not be treated as complete until the user selects those values.
 

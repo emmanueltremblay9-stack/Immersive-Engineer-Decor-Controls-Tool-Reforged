@@ -30,6 +30,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -72,7 +73,7 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.items.IItemHandler;
 
-public class MachineBlockEntity extends BaseContainerBlockEntity {
+public class MachineBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer {
    private static final int SLOT_COUNT = 27;
    private static final String IE_NAMESPACE = "immersiveengineering";
    private static final TagKey<Item> IE_HAMMERS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("immersiveengineering", "tools/hammers"));
@@ -147,6 +148,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
    private static final int BREAKER_STATUS_WORKING = 4;
    private static final int BREAKER_STATUS_COOLDOWN = 5;
    private static final int BREAKER_STATUS_UNBREAKABLE = 6;
+   private static final int BREAKER_LEGACY_OUTPUT_SLOT_END = 9;
    public static final int LABEL_LINE_COUNT = 2;
    public static final int LABEL_MAX_LINE_LENGTH = 24;
    public static final int LABEL_MAX_UTF16_UNITS = LABEL_MAX_LINE_LENGTH * 2;
@@ -758,6 +760,42 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
    public int getContainerSize() {
       return this.items.size();
+   }
+
+   @Override
+   public int[] getSlotsForFace(Direction side) {
+      if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         return this.isBlockBreakerRearSide(side) ? new int[]{0} : new int[0];
+      }
+      // Keep the preexisting unsided Container slot visibility for other machine types.
+      return this.slotsUpTo(this.items.size());
+   }
+
+   @Override
+   public boolean canPlaceItemThroughFace(int slot, ItemStack stack, Direction side) {
+      return this.kind() != MachineKind.SMALL_BLOCK_BREAKER && this.canPlaceItem(slot, stack);
+   }
+
+   @Override
+   public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) {
+      return this.kind() != MachineKind.SMALL_BLOCK_BREAKER
+         || slot == 0 && this.isBlockBreakerRearSide(side);
+   }
+
+   @Override
+   public boolean canTakeItem(Container destination, int slot, ItemStack stack) {
+      if (this.kind() != MachineKind.SMALL_BLOCK_BREAKER) {
+         return true;
+      }
+      return slot == 0 && destination instanceof BlockEntity destinationBlockEntity
+         && destinationBlockEntity.getLevel() == this.level
+         && this.worldPosition.relative(this.facing(this.getBlockState()).getOpposite()).equals(destinationBlockEntity.getBlockPos());
+   }
+
+   private boolean isBlockBreakerRearSide(Direction side) {
+      return side != null
+         && this.kind() == MachineKind.SMALL_BLOCK_BREAKER
+         && side == this.facing(this.getBlockState()).getOpposite();
    }
 
    protected NonNullList<ItemStack> getItems() {
@@ -1802,7 +1840,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
       ItemStack output = (ItemStack)this.items.get(0);
       boolean changed = false;
-      for (int slot = 1; slot < this.items.size(); slot++) {
+      // Slots 1-9 were visible in the old ten-slot GUI; drain only this legacy range after upgrade.
+      for (int slot = 1; slot <= BREAKER_LEGACY_OUTPUT_SLOT_END && slot < this.items.size(); slot++) {
          ItemStack queued = (ItemStack)this.items.get(slot);
          if (queued.isEmpty()) {
             continue;
@@ -1840,7 +1879,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
    private int blockBreakerPendingItemCount() {
       int count = 0;
-      for (int slot = 1; slot < this.items.size(); slot++) {
+      for (int slot = 1; slot <= BREAKER_LEGACY_OUTPUT_SLOT_END && slot < this.items.size(); slot++) {
          count = Math.min(32767, count + ((ItemStack)this.items.get(slot)).getCount());
       }
       return count;
@@ -3049,9 +3088,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity {
 
    private int[] accessibleSlots() {
       MachineKind kind = this.kind();
-      return kind == null || kind == MachineKind.SMALL_BLOCK_BREAKER
-         ? this.slotsUpTo(this.items.size())
-         : this.slotsUpTo(this.visibleSlotCount(kind));
+      if (kind == null) {
+         return this.slotsUpTo(this.items.size());
+      }
+      // New drops have one real output slot; legacy slots are handled only by fillBlockBreakerOutput().
+      return this.slotsUpTo(kind == MachineKind.SMALL_BLOCK_BREAKER ? 1 : this.visibleSlotCount(kind));
    }
 
    private int[] slotsUpTo(int count) {
