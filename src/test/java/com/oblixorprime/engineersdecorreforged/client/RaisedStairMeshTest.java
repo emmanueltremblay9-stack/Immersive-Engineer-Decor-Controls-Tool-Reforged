@@ -70,7 +70,7 @@ public final class RaisedStairMeshTest {
          for(boolean right:List.of(false,true)) {
             String base="facing="+facing+",left_railing="+left+",right_railing="+right;
             var compactVariant=compact.getAsJsonObject(base);
-            var raisedVariant=raised.getAsJsonObject(base+",waterlogged=false");
+            var raisedVariant=raised.getAsJsonObject(base);
             assertNotNull("compact stair model mapping "+base,compactVariant);
             assertNotNull("raised stair model mapping "+base,raisedVariant);
             assertEquals("fluid schema change keeps identical geometry mapping",raisedVariant,compactVariant);

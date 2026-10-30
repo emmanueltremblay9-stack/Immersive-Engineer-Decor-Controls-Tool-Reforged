@@ -33,9 +33,10 @@ public final class CompactFluidStateGameTests {
    private static final Block[] BLOCKS = {
       ModBlocks.DARK_SHINGLE_ROOF_CHIMNEY.get(),
       ModBlocks.STEEL_CATWALK_STAIRS.get(),
+      ModBlocks.RAISED_STEEL_CATWALK_STAIRS.get(),
       ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()
    };
-   private static final int[] EXPECTED_STATE_COUNTS = {9728, 6080, 2736};
+   private static final int[] EXPECTED_STATE_COUNTS = {9728, 6080, 6080, 2736};
 
    @GameTest(template = "empty", timeoutTicks = 1200)
    public static void compact_fluid_domain_roundtrips_and_has_expected_cardinality(GameTestHelper h) {
@@ -73,13 +74,6 @@ public final class CompactFluidStateGameTests {
                "new data codec JSON roundtrip: " + block + "/" + content);
          }
       }
-      BlockState raisedStairs = ModBlocks.RAISED_STEEL_CATWALK_STAIRS.get().defaultBlockState();
-      h.assertFalse(raisedStairs.hasProperty(NativeFluidloggedBlock.FLUID_CONTENT),
-         "raised stairs retain their existing fluid schema outside this optimization");
-      h.assertTrue(raisedStairs.hasProperty(BlockStateProperties.WATERLOGGED)
-            && raisedStairs.hasProperty(NativeFluidloggedBlock.FLUID_CELL)
-            && raisedStairs.hasProperty(StairWaterFlow.WATER_FLOW),
-         "raised stairs keep all original source and transient-fluid properties");
       h.succeed();
    }
 

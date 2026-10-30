@@ -5,11 +5,11 @@ All notable reconstruction, repair, and validation changes for this project are 
 ## Unreleased - compact fluid state draft (#93)
 
 ### Changed
-- Replace the redundant `waterlogged`, `fluid_cell` and `water_flow` properties with one normalized `fluid_content` property on Dark Shingle Roof Chimney, standard Steel Catwalk Stairs and Steel Double-T Support. The 19 values preserve empty, source water, all 15 flowing-water levels, lava and IE creosote. `INPUT_POWER`, geometry, rotations, railings, support attachments, raised stairs and external-fluid chunk cells remain separate.
-- Exact blockstate cardinalities fall from 49,152 to 9,728 for the chimney, 30,720 to 6,080 for stairs, and 13,824 to 2,736 for the support: 93,696 to 18,544 combined. These are state counts only; no RAM or startup-time gain is claimed without profiling.
+- Replace the redundant `waterlogged`, `fluid_cell` and `water_flow` properties with one normalized `fluid_content` property on Dark Shingle Roof Chimney, both Steel Catwalk Stairs blocks, and Steel Double-T Support. The 19 values preserve empty, source water, all 15 flowing-water levels, lava and IE creosote. `INPUT_POWER`, geometry, rotations, railings, support attachments and external-fluid chunk cells remain separate.
+- Exact blockstate cardinalities fall from 49,152 to 9,728 for the chimney, 30,720 to 6,080 for each stair block, and 13,824 to 2,736 for the support: 124,416 to 24,624 combined. These are state counts only; no RAM or startup-time gain is claimed without profiling.
 
 ### Save compatibility
-- This draft intentionally has no migration for the three changed blocks. In old worlds, the removed fluid property values are not restored into `fluid_content`; stored water, lava, creosote and transient stair currents may load as empty. Back up worlds before using a build that includes this change. Other block schemas and external chunk-fluid attachments are not changed by this draft.
+- This draft intentionally has no migration for the four changed block IDs. In old worlds, the removed fluid property values are not restored into `fluid_content`; stored water, lava, creosote and transient stair currents may load as empty. Back up worlds before using a build that includes this change. Other block schemas and external chunk-fluid attachments are not changed by this draft.
 - The compact state and fluid behavior GameTests are added, but local Gradle execution was blocked by the existing sandbox refusal to create the authorized Java temporary directory. CI must qualify the exact draft commit before merge or release.
 
 ## [1.1.65-reconstructed] - Unreleased Lithium corrective candidate
