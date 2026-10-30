@@ -319,7 +319,7 @@ public final class TfcMilkingGameTests {
    private static MachineBlockEntity place(GameTestHelper h, BlockPos relative) {
       h.setBlock(relative, Blocks.AIR);
       h.setBlock(relative.below(), Blocks.STONE);
-      h.setBlock(relative, ModBlocks.SMALL_MILKING_MACHINE.get().defaultBlockState().setValue(MachineBlocks.FACING, Direction.NORTH));
+      h.setBlock(relative, ModBlocks.SMALL_MILKING_MACHINE.get().defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, Direction.NORTH));
       return (MachineBlockEntity)h.getLevel().getBlockEntity(h.absolutePos(relative));
    }
    private static IFluidHandler tank(GameTestHelper h, MachineBlockEntity machine) {
