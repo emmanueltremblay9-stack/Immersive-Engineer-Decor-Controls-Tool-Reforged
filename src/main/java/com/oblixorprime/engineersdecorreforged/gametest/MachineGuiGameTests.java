@@ -1876,7 +1876,7 @@ public final class MachineGuiGameTests {
          !invokeBlockBreakerDropStorage(machine, target, targetState),
          "failed output storage must not destroy the target block"
       );
-      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "a blocked target must remain intact");
+      helper.assertTrue(helper.getLevel().getBlockState(target).is(Blocks.DIRT), "a blocked target must remain intact");
       helper.assertTrue(machine.getItem(1).is(Items.DIRT), "legacy visible-slot contents must not receive new drops");
       helper.assertTrue(machine.getItem(10).is(Items.STONE), "unexposed backing-slot contents must not receive new drops");
 
@@ -1885,7 +1885,7 @@ public final class MachineGuiGameTests {
          invokeBlockBreakerDropStorage(machine, target, targetState),
          "with output space available, the target should be destroyed and stored directly in slot 0"
       );
-      helper.assertTrue(helper.getBlockState(target).isAir(), "successful output storage should destroy the target");
+      helper.assertTrue(helper.getLevel().getBlockState(target).isAir(), "successful output storage should destroy the target");
       helper.assertTrue(machine.getItem(0).is(Items.DIRT), "newly collected drops should occupy only visible slot 0");
       helper.assertTrue(machine.getItem(1).is(Items.DIRT), "legacy visible-slot contents should remain separate from new drops");
       helper.assertTrue(machine.getItem(10).is(Items.STONE), "unexposed legacy data should remain untouched");
