@@ -1,5 +1,9 @@
 {
   "values": [
-    "minecraft:cow"
+    "minecraft:cow",
+    {
+      "id": "tfc:cow",
+      "required": false
+    }
   ]
 }

@@ -1483,6 +1483,43 @@ public final class MachineGuiGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 180)
+   public static void small_milking_machine_rejects_baby_cows_and_non_cows(GameTestHelper helper) {
+      helper.setBlock(TEST_POS, Blocks.AIR);
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.MilkingMachineBlock)ModBlocks.SMALL_MILKING_MACHINE.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      BlockEntity blockEntity = helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      helper.assertTrue(blockEntity instanceof MachineBlockEntity, "small milking machine should create a machine block entity");
+      MachineBlockEntity machine = (MachineBlockEntity)blockEntity;
+      machine.setItem(0, new ItemStack(Items.BUCKET));
+
+      var babyCow = EntityType.COW.create(helper.getLevel());
+      helper.assertTrue(babyCow != null, "baby cow fixture should be created");
+      babyCow.setBaby(true);
+      babyCow.setNoAi(true);
+      BlockPos entityPos = helper.absolutePos(TEST_POS.east());
+      babyCow.setPos(entityPos.getX() + 0.5, entityPos.getY(), entityPos.getZ() + 0.5);
+      helper.assertTrue(helper.getLevel().addFreshEntity(babyCow), "baby cow fixture should join the test level");
+      tickMachine(helper, machine, 120);
+      helper.assertTrue(machine.getItem(0).is(Items.BUCKET), "small milking machine should not consume a bucket for a baby cow");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "small milking machine should not produce milk from a baby cow");
+
+      babyCow.discard();
+      var pig = EntityType.PIG.create(helper.getLevel());
+      helper.assertTrue(pig != null, "non-cow fixture should be created");
+      pig.setNoAi(true);
+      pig.setPos(entityPos.getX() + 0.5, entityPos.getY(), entityPos.getZ() + 0.5);
+      helper.assertTrue(helper.getLevel().addFreshEntity(pig), "non-cow fixture should join the test level");
+      tickMachine(helper, machine, 120);
+      helper.assertTrue(machine.getItem(0).is(Items.BUCKET), "small milking machine should not consume a bucket for a non-cow");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "small milking machine should not produce milk from a non-cow");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 180)
    public static void small_milking_machine_bucket_output_is_not_blocked_by_full_tank(GameTestHelper helper) {
       helper.assertTrue(NeoForgeMod.MILK.isBound(), "NeoForge milk fluid should be enabled for milking machine tests");
       helper.setBlock(TEST_POS, Blocks.AIR);
