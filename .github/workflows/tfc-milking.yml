@@ -1,0 +1,67 @@
+name: TFC milking compatibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || format('run-{0}', github.run_id) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  native-milking:
+    name: Native TFC milking (crossover=${{ matrix.crossover }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        crossover: [false, true]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.13"
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+      - name: Run real TFC cow and event regressions
+        shell: bash
+        run: |
+          chmod +x ./gradlew
+          ./gradlew runGameTestServer -Pinclude_tfc_milking_runtime=true -Pinclude_tfc_crossover_runtime=${{ matrix.crossover }} --stacktrace 2>&1 | tee tfc-runtime.log
+      - name: Require the native regression batch and successful required tests
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          log = Path("tfc-runtime.log").read_text(encoding="utf-8")
+          if not re.search(r"Running test batch 'tfc_milking:0' \(12 tests\)", log):
+              raise SystemExit("The twelve real TFC regressions did not execute.")
+          passed = re.findall(r"All (\d+) required tests passed", log)
+          if not passed or int(passed[-1]) < 12:
+              raise SystemExit("No complete successful native regression evidence.")
+          PY
+      - name: Retain dependency and server evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: tfc-milking-crossover-${{ matrix.crossover }}
+          path: |
+            tfc-runtime.log
+            run/logs/latest.log
+            build/reports/
+          if-no-files-found: warn
+          retention-days: 14

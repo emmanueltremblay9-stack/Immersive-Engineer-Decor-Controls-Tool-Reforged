@@ -13,6 +13,12 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+def tfcMilkingRuntime = providers.gradleProperty('include_tfc_milking_runtime').map { it.toBoolean() }.getOrElse(false)
+def tfcCrossoverRuntime = providers.gradleProperty('include_tfc_crossover_runtime').map { it.toBoolean() }.getOrElse(false)
+if (tfcCrossoverRuntime && !tfcMilkingRuntime) throw new GradleException('Crossover test profile requires include_tfc_milking_runtime=true')
+configurations { tfcMilkingApi; tfcMilkingCrossover }
+if (tfcMilkingRuntime) sourceSets.main.java.srcDir('src/tfcGameTest/java')
+
 repositories {
     mavenCentral()
     maven { url = "https://api.modrinth.com/maven"; content { includeGroup "maven.modrinth" } }
@@ -27,7 +33,8 @@ repositories {
 }
 
 neoForge {
-    version = project.neo_version
+    // Official TFC 4.2.12 metadata requires >=21.1.234; default runtime stays unchanged.
+    version = tfcMilkingRuntime ? '21.1.234' : project.neo_version
 
     parchment {
         mappingsVersion = project.parchment_mappings_version
@@ -46,7 +53,7 @@ neoForge {
 
         gameTestServer {
             type = 'gameTestServer'
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enabledGameTestNamespaces', tfcMilkingRuntime ? "${project.mod_id}_tfc" : project.mod_id
         }
 
         configureEach {
@@ -63,6 +70,17 @@ neoForge {
 }
 
 dependencies {
+    // Official release 4.2.12, fixed Modrinth version ID, never bundled or required at runtime.
+    tfcMilkingApi('maven.modrinth:JaCEZUhg:2gXJo8Ol') { transitive = false }
+    compileOnly files(configurations.tfcMilkingApi)
+    if (tfcMilkingRuntime) {
+        runtimeOnly files(configurations.tfcMilkingApi)
+        runtimeOnly 'vazkii.patchouli:Patchouli:1.21.1-92-NEOFORGE'
+    }
+    if (tfcCrossoverRuntime) {
+        tfcMilkingCrossover('maven.modrinth:IsYwQTKM:q5cvg8JU') { transitive = false }
+        runtimeOnly files(configurations.tfcMilkingCrossover)
+    }
     testImplementation "junit:junit:4.13.2"
     // Optional renderer API only; never bundled or installed by the runtime dependency graph.
     compileOnly "maven.modrinth:embeddium:J7b96IEd"
@@ -72,6 +90,26 @@ dependencies {
         runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
     }
 }
+
+tasks.register('verifyTfcMilkingDependencies') {
+    inputs.files(configurations.tfcMilkingApi)
+    if (tfcCrossoverRuntime) inputs.files(configurations.tfcMilkingCrossover)
+    doLast {
+        def verify = { configuration, expected ->
+            def artifact = configuration.singleFile
+            def digest = java.security.MessageDigest.getInstance('SHA-256')
+            artifact.withInputStream { input ->
+                byte[] buffer = new byte[65536]
+                for (int count; (count = input.read(buffer)) != -1;) digest.update(buffer, 0, count)
+            }
+            def actual = digest.digest().encodeHex().toString()
+            if (actual != expected) throw new GradleException("Unexpected compatibility artifact SHA-256: ${artifact.name}")
+        }
+        verify(configurations.tfcMilkingApi, '3c2d80e47c78cfbd617823ebe0d3d5e2f9ba9e7f04c1b34867dbab3894584440')
+        if (tfcCrossoverRuntime) verify(configurations.tfcMilkingCrossover, '9c10394225be5e9cdab845cfb6192b88beb4cb6b21b66e3caeedf9c4982b486b')
+    }
+}
+tasks.named('compileJava') { dependsOn('verifyTfcMilkingDependencies') }
 
 // These ordinary JUnit tests inspect mapped Minecraft/Mixin bytecode as resources.
 // ModDev attaches game libraries to main's classpaths, not testImplementation.
