@@ -1,10 +1,12 @@
 # Engineer's Decor & Controls Reforged Reconstruction
 
-This is a separate reconstruction workspace created from the published CurseForge `engineers_decor_reforged-1.1.jar` artifact.
+This is a separate reconstruction and fusion workspace created from published MIT artifacts, including `engineers_decor_reforged-1.1.jar` and Engineer's Tools `engineerstools-1.16.5-1.1.7.jar`.
+
+The Engineer's Tools 1.1.7 evidence artifact used for the fidelity pass has SHA-256 `62A63DE173FA74F447C390AD32FB80D0DEC7C4B6B19CA04876AE59049C68C9CE` and embedded git version `1afec45`.
 
 Original recovered artifacts remain untouched in:
 
-`C:\Users\Emmanuel Tremblay\AI Depot\Codex Documents\Engineer Decor Controls Reforged Recovery\artifacts`
+[local workspace path omitted]
 
 Status:
 
@@ -29,7 +31,7 @@ Automation I/O fix:
 - Small electrical furnace input slots are insertion-only for automation.
 - Automation extraction is limited to layout result slots when a machine layout defines result slots.
 - Regression coverage was added to `MachineGuiGameTests`.
-- `runGameTestServer` now completes successfully; the latest local run passed 148 required GameTests.
+- `runGameTestServer` is the required regression gate; the current Engineer's Tools fidelity suite contributes to 192 registered required GameTests.
 
 Additional bug hunt fixes:
 
@@ -65,7 +67,7 @@ Additional bug hunt fixes:
 - REDIA Tool behavior was reimplemented against the original MIT Engineer's Tools source: multi-tool action exposure, torch placement, sneak-use ground cycling and shearing, safe attack, tree felling, and diamond over-repair Efficiency/Fortune progression.
 - Mind Squeezer behavior now matches the original MIT Engineer's Tools source: stackable to 64, no durability or breaking, no creative cost bypass, original `maxHealth / 10` low-health threshold and health cost, hunger exhaustion, and short blindness on successful conversion.
 - Ariadne Coal behavior now matches the original MIT Engineer's Tools source: a single-stack 100-use marker tool that wears on successful placement, does not wear on failed placement, and breaks on the final use.
-- Muslee Bar Press now accepts wheat, melon, pumpkin, beetroot, and Immersive Engineering Industrial Hemp seeds through a shared item tag for both inventory use and direct recipes.
+- Muslee Bar Press now accepts the exact upstream seed set: wheat, melon, pumpkin, and beetroot seeds through a shared item tag.
 - Machine menu shift-click handling now ignores negative and out-of-range slot indices instead of throwing from malformed menu input.
 - REDIA Tool now uses the original MIT Engineer's Tools 3D item model instead of a flat generated item model.
 - REDIA Tool durability-dependent Efficiency and Fortune decay curves now match the effective original 1.16 config defaults.
