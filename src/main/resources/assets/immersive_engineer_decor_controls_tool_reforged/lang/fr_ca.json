@@ -900,5 +900,11 @@
   "key.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Ouvrir la page du manuel de l’ingénieur",
   "key.categories.immersive_engineer_decor_controls_tool_reforged": "IEDCTR",
   "tooltip.immersive_engineer_decor_controls_tool_reforged.engineer_manual": "Maintenez %s pour ouvrir le manuel de l’ingénieur",
-  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.campfire": "Reposez-vous près d'un feu de camp allumé, dans l'une des huit cases voisines."
+  "item.immersive_engineer_decor_controls_tool_reforged.sleeping_bag.msg.campfire": "Reposez-vous près d'un feu de camp allumé, dans l'une des huit cases voisines.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.continuous": "État : continu — répète tant que le signal le permet, en respectant le délai d'insertion.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.ignore_trigger": "État : répète après chaque délai lorsque la redstone est ignorée ; le bouton impulsion n'a aucun effet.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.ignored": "État : redstone ignorée — toujours activé.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.inverted": "État : inversé — activé sans signal (par défaut).",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.normal": "État : normal — activé par un signal alimenté.",
+  "block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.state.pulse": "État : impulsion — un cycle sur OFF→ON (normal) ou ON→OFF (inversé), après expiration du délai."
 }

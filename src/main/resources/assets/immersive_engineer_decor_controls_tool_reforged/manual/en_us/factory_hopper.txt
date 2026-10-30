@@ -3,4 +3,8 @@ Shop-floor utility
 <&recipe>This block moves item stacks through a tighter industrial casing.<br>
 <br>
 Usage: Face it toward the inventory line, then set range, stack count, timing, and redstone mode in its screen.<br>
+The output follows the narrow end; inventory input is on the opposite face. Vanilla inventories and NeoForge item handlers are supported, respecting the contacted inventory face.<br>
+<br>
+The default is inverted and continuous: transfer while unpowered. Normal mode enables transfer while powered; ignored mode repeats regardless of the signal. Continuous repeats after the insertion delay. Pulse runs once on a rising edge in normal mode or a falling edge in inverted mode, only when the delay has expired. Edges during the delay are not queued. Ignored mode overrides the pulse toggle.<br>
+Hover over the redstone controls to see their current state. Click the signal indicator to run one manual cycle; this bypasses redstone and shortens the remaining delay. The stack count limits both extraction and insertion per cycle.<br>
 
