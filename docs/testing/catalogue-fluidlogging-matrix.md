@@ -41,7 +41,7 @@ All 200 registrations store water/lava/IE-creosote sources; 190 also expose tran
 | `dark_shingle_roof_skylight` | `NativeDecorativeBlocks$NativeStairBlock` | 3840 | W | N + T | partial/empty | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions |
 | `dark_shingle_roof_chimneytrunk` | `ChimneyTrunkBlock` | 3840 | W | N + T | partial/empty | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions |
 | `dark_shingle_roof_wireconduit` | `RoofWireConduitBlock` | 3840 | W | N + T | partial/empty | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions |
-| `dark_shingle_roof_chimney` | `ChimneyBlock` | 49152 | none | N + T | partial/empty | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions |
+| `dark_shingle_roof_chimney` | `ChimneyBlock` | 9728 | none | N + T | partial/empty | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions |
 | `dark_shingle_roof_block` | `NativeDecorativeBlocks$NativeSolidBlock` | 6 | none | N | full | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions; full geometry retained, storage distinct from passage |
 | `dark_shingle_roof_slab` | `PortedBlocks$VariantSlabBlock` | 1152 | W | N + T | partial/empty | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions |
 | `dark_shingle_roof_slabslice` | `PortedBlocks$PartsBlock` | 1440 | none | N + T | partial/empty | Sources/save/palette + every geometry-state shape parity; paid mechanics regressions |
@@ -210,3 +210,7 @@ All 200 registrations store water/lava/IE-creosote sources; 190 also expose tran
 | `stained_sensitiveglass` | `ControlsBlockTypes$SensitiveGlassBlock` | 192 | none | N + T | full | Sources/save/palette + inherited wet control regression; full geometry retained, storage distinct from passage |
 | `valve_wheel_switch` | `ControlsBlockTypes$ToggleSwitchBlock` | 1152 | none | N + T | partial/empty | Sources/save/palette + inherited wet control regression |
 | `yellow_power_plant` | `ControlsBlockTypes$ContactSwitchBlock` | 1152 | none | N + T | partial/empty | Sources/save/palette + inherited wet control regression |
+
+## State count and performance qualification (#93)
+
+The chimney count above follows the normalized compact-state cardinality asserted by CompactFluidStateGameTests after PR #120. Catwalk stairs have 6080 states each; the double-T support has 2736. These counts and reuse of geometry-key shape caches do not measure retained heap, peak heap, startup duration or join duration. No RAM or timing gain is claimed without a version-pinned before/after profile using the same modpack, JVM settings and measurement procedure. The reporter's current-build reproduction remains outstanding.
