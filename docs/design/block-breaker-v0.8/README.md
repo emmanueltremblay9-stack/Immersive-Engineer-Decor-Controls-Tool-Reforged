@@ -1,6 +1,6 @@
 # Block Breaker machine GUI integration
 
-This branch connects the owner-approved v0.8 concept to the existing Block Breaker menu and block entity. It is a work in progress until the mandatory FE balance values are selected and the resulting server-side energy path is implemented and tested.
+This branch connects the owner-approved v0.8 concept to the existing Block Breaker menu and block entity. The owner-approved FE balance is 160 + 160 × positive block hardness FE per completed block, a 32,000 FE reserve, and a 256 FE/t input limit.
 
 ## Runtime behavior in this branch
 
@@ -9,7 +9,9 @@ This branch connects the owner-approved v0.8 concept to the existing Block Break
 - The block entity has a 27-stack backing list, while the pre-change GUI exposed 10 machine slots: collection slots 0-8 and an I/O slot at 9. The new menu exposes only output slot 0. On upgrade, saved legacy items in slots 1-9 are drained into slot 0 in ascending slot order; newly generated drops are inserted only into slot 0 and are never stored in hidden slots. Backing slots 10-26 are preserved in NBT but remain untouched and are not treated as a collection queue.
 - The item capability and sided `Container` view expose the output only at the rear; hopper pulls verify the source-to-destination side as well. Automatic pushing is not enabled.
 - Existing redstone behavior is shown as live state: a high signal stops and resets work; a low signal permits it.
-- FE being mandatory is owner-confirmed. The underside input face is the planned connection. The per-tick/hardness cost, storage capacity, and transfer limit remain unresolved, so the energy capability and paid breaking behavior must not be treated as complete until the user selects those values.
+- FE is mandatory to break blocks. Cost is `round(160 + 160 × max(hardness, 0))` FE per block; it is apportioned across the existing hardness-based work ticks so a completed block consumes exactly that amount. Work pauses when the next work tick cannot be paid or the single output cannot accept the target's drops. No FE is spent on a blocked output or an unbreakable target.
+- The breaker stores at most 32,000 FE and accepts at most 256 FE per machine tick through its underside. Other sides and unsided access expose no breaker FE capability. The GUI shows the exact stored FE and the target's FE/block cost.
+- Balancing is implementation-tested, not a claim of broad modpack compatibility or full client/runtime release qualification.
 
 ## Artwork provenance
 

@@ -125,7 +125,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       this.drawTinyString(graphics, hardnessText, 15, 55, 78, hardness < 0.0F ? 0xFFFF7777 : -3949142, false);
       this.drawTinyString(graphics, "Work: " + menu.field(1) + "/" + Math.max(0, menu.field(3)) + " ticks", 15, 76, 80, -1646126, false);
       this.drawTinyString(graphics, menu.progress() + "%", 81, 99, 12, -1646126, false);
-      this.drawTinyString(graphics, "Hardness-scaled work", 16, 114, 78, -3949142, false);
+      String energyCost = menu.blockBreakerEnergyCostPerBlock() > 0 ? menu.blockBreakerEnergyCostPerBlock() + " FE/block" : "FE/block: —";
+      this.drawTinyString(graphics, energyCost, 16, 114, 78, -3949142, false);
 
       this.drawTinyString(graphics, "Behavior & Operation", 106, 65, 87, -1646126, false);
       this.drawTinyString(graphics, "Redstone:", 106, 79, 39, -3949142, false);

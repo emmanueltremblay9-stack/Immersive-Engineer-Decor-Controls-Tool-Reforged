@@ -1798,7 +1798,17 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(2, machine.dataAccessForTests().get(6), "small block breaker should report that it is waiting for FE");
       helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "unpaid work must not advance progress");
       helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "dirt hardness should still synchronize its existing work time");
-      helper.assertTrue(machine.energyStorage(Direction.DOWN) == null, "FE input must remain disabled until its balance values are selected");
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertTrue(input != null, "Block Breaker should expose its approved underside FE input");
+      helper.assertTrue(machine.energyStorage(Direction.UP) == null, "Block Breaker should not expose FE input on top");
+      helper.assertTrue(machine.energyStorage(Direction.NORTH) == null, "Block Breaker should not expose FE input on its front");
+      helper.assertTrue(machine.energyStorage(Direction.SOUTH) == null, "Block Breaker should not expose FE input on its rear");
+      helper.assertTrue(machine.energyStorage(null) == null, "Block Breaker should not expose unsided FE input");
+      helper.assertValueEqual(32000, input.getMaxEnergyStored(), "Block Breaker should use the approved 32,000 FE capacity");
+      helper.assertTrue(input.canReceive(), "Block Breaker FE input should accept energy");
+      helper.assertValueEqual(160, MachineBlockEntity.blockBreakerEnergyCostPerBlock(0.0F), "zero-hardness cost should include the 160 FE base");
+      helper.assertValueEqual(240, MachineBlockEntity.blockBreakerEnergyCostPerBlock(0.5F), "dirt hardness should cost 240 FE per block");
+      helper.assertValueEqual(400, MachineBlockEntity.blockBreakerEnergyCostPerBlock(1.5F), "stone hardness should cost 400 FE per block");
       AABB dropSearch = new AABB(helper.absolutePos(TEST_POS)).inflate(3.0);
       helper.assertTrue(
          helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropSearch, item -> item.getItem().is(Items.DIRT)).isEmpty(),
@@ -1812,8 +1822,113 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 180)
+   public static void small_block_breaker_caps_underside_energy_input_and_stores_32000_fe(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(256, input.receiveEnergy(1024, false), "the underside input should cap each machine tick at 256 FE");
+      helper.assertValueEqual(0, input.receiveEnergy(1, false), "additional same-tick input must not exceed 256 FE");
+      helper.assertValueEqual(0, input.receiveEnergy(256, true), "simulated input beyond the current tick budget should report no available transfer");
+      helper.assertValueEqual(256, input.getEnergyStored(), "the first tick should store only the transfer limit");
+
+      for (int tick = 1; tick < 125; tick++) {
+         tickMachine(helper, machine, 1);
+         helper.assertValueEqual(256, input.receiveEnergy(256, false), "each new machine tick should reset the input budget");
+      }
+      helper.assertValueEqual(32000, input.getEnergyStored(), "125 ticks of 256 FE should fill the approved reserve exactly");
+      helper.assertValueEqual(0, input.receiveEnergy(256, false), "a full 32,000 FE reserve should reject more energy");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_block_breaker_spends_exact_hardness_cost_while_working(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      BlockPos target = TEST_POS.east();
+      helper.setBlock(target, Blocks.DIRT);
+      tickMachine(helper, machine, 1);
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(240, input.receiveEnergy(240, false), "dirt should be chargeable with the exact 240 FE block cost");
+
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_BLOCK_BREAKER, 1, player.getInventory(), machine, machine.dataAccessForTests());
+      helper.assertValueEqual(240, menu.energyStored(), "Block Breaker energy sync should preserve exact FE values");
+      helper.assertValueEqual(32000, menu.energyCapacity(), "Block Breaker menu should show the full FE capacity");
+      helper.assertValueEqual(240, menu.blockBreakerEnergyCostPerBlock(), "Block Breaker menu should display the target's FE/block cost");
+
+      tickMachine(helper, machine, 29);
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).is(Blocks.DIRT), "the target should remain until all hardness-scaled work is complete");
+      helper.assertValueEqual(
+         29,
+         machine.dataAccessForTests().get(1),
+         "29 of 30 dirt work ticks should leave one tick of progress (energy="
+            + input.getEnergyStored()
+            + ", status="
+            + machine.dataAccessForTests().get(6)
+            + ", work="
+            + machine.dataAccessForTests().get(3)
+            + ")"
+      );
+      helper.assertValueEqual(8, input.getEnergyStored(), "the first 29 work ticks should consume 232 of 240 FE");
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).isAir(), "the Block Breaker should remove dirt after the last paid work tick");
+      helper.assertTrue(machine.getItem(0).is(Items.DIRT), "the resulting dirt drop should occupy the single output slot");
+      helper.assertValueEqual(0, input.getEnergyStored(), "a completed dirt break should consume exactly 240 FE");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_block_breaker_pauses_for_full_output_without_extra_fe_and_skips_unbreakable_targets(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      BlockPos target = TEST_POS.east();
+      helper.setBlock(target, Blocks.DIRT);
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(240, input.receiveEnergy(240, false), "test setup should charge exactly one dirt break");
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE, 64));
+
+      tickMachine(helper, machine, 1);
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).is(Blocks.DIRT), "a full output must stop the breaker before work starts");
+      helper.assertValueEqual(240, input.getEnergyStored(), "a full output must not spend FE before work begins");
+      helper.assertValueEqual(3, machine.dataAccessForTests().get(6), "a full output should report the blocked status");
+
+      machine.setItem(0, ItemStack.EMPTY);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(232, input.getEnergyStored(), "one active work tick should consume its proportional 8 FE");
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "one active work tick should advance progress once");
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE, 64));
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(232, input.getEnergyStored(), "a newly full output should pause work without further FE loss");
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "output blockage should preserve already completed work");
+
+      machine.setItem(0, ItemStack.EMPTY);
+      helper.setBlock(target, Blocks.BEDROCK);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(232, input.getEnergyStored(), "an unbreakable target must not consume FE");
+      helper.assertValueEqual(6, machine.dataAccessForTests().get(6), "an unbreakable target should report its distinct status");
+      helper.assertTrue(helper.getLevel().getBlockState(helper.absolutePos(target)).is(Blocks.BEDROCK), "an unbreakable target must remain intact");
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 80)
-   public static void small_block_breaker_preserves_legacy_inventory_and_waits_for_fe_policy(GameTestHelper helper) {
+   public static void small_block_breaker_preserves_legacy_inventory_when_output_is_full(GameTestHelper helper) {
       helper.setBlock(TEST_POS, Blocks.AIR);
       helper.setBlock(
          TEST_POS,
@@ -1828,15 +1943,18 @@ public final class MachineGuiGameTests {
       for (int slot = 0; slot < 27; slot++) {
          machine.setItem(slot, new ItemStack(Items.COBBLESTONE, 64));
       }
+      IEnergyStorage input = machine.energyStorage(Direction.DOWN);
+      helper.assertValueEqual(256, input.receiveEnergy(1024, false), "test setup should fill the per-tick FE budget");
 
       BlockPos target = TEST_POS.east();
       helper.setBlock(target, Blocks.DIRT);
       tickMachine(helper, machine, 31);
-      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "an unpowered FE policy must leave the target block intact");
+      helper.assertTrue(helper.getBlockState(target).is(Blocks.DIRT), "a full output must leave the target block intact");
       helper.assertBlockProperty(TEST_POS, MachineBlocks.ACTIVE, false);
-      helper.assertValueEqual(2, machine.dataAccessForTests().get(6), "small block breaker should remain in the no-FE status");
-      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "unpaid small block breaker should not accumulate progress");
-      helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "target work time remains visible while the machine waits for FE");
+      helper.assertValueEqual(3, machine.dataAccessForTests().get(6), "small block breaker should report a full output");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "a blocked output must not accumulate progress");
+      helper.assertValueEqual(30, machine.dataAccessForTests().get(3), "target work time remains visible while the machine is blocked");
+      helper.assertValueEqual(256, input.getEnergyStored(), "a full output must leave stored FE untouched");
       for (int slot = 0; slot < 27; slot++) {
          helper.assertValueEqual(64, machine.getItem(slot).getCount(), "upgrade must preserve every legacy inventory stack");
       }

@@ -130,6 +130,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int DROPPER_LOGIC_IGNORE_EXT = 32;
    private static final int DROPPER_LOGIC_MASK = DROPPER_LOGIC_FILTER_ANDGATE | DROPPER_LOGIC_EXTERN_ANDGATE | DROPPER_LOGIC_CONTINUOUS | DROPPER_LOGIC_IGNORE_EXT;
    private static final int ELECTRIC_MAX_ENERGY = 32000;
+   private static final int BLOCK_BREAKER_ENERGY_CAPACITY = 32000;
+   private static final int BLOCK_BREAKER_MAX_ENERGY_INPUT_PER_TICK = 256;
+   private static final int BLOCK_BREAKER_BASE_ENERGY_COST = 160;
+   private static final int BLOCK_BREAKER_ENERGY_COST_PER_HARDNESS = 160;
    private static final int ELECTRIC_HEAT_CAPACITY = 200;
    private static final int ELECTRIC_HEAT_INCREMENT = 20;
    private static final int ELECTRIC_ENERGY_PER_TICK = 16;
@@ -166,6 +170,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int blockBreakerStatus;
    private int blockBreakerHardnessHundredths;
    private int blockBreakerPendingItemCount;
+   private int blockBreakerEnergyInputTick = Integer.MIN_VALUE;
+   private int blockBreakerEnergyInputThisTick;
    private String fluidType = "";
    private boolean funnelTransferLocked;
    private int funnelCaptureProgress;
@@ -447,9 +453,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          MachineKind kind = MachineBlockEntity.this.kind();
          if (MachineBlockEntity.this.canReceiveEnergy(kind) && maxReceive > 0) {
             int capacity = MachineBlockEntity.this.energyCapacity(kind);
-            int received = Math.min(maxReceive, Math.max(0, capacity - MachineBlockEntity.this.energy));
+            int transferLimit = kind == MachineKind.SMALL_BLOCK_BREAKER
+               ? Math.min(maxReceive, MachineBlockEntity.this.blockBreakerEnergyInputRemaining())
+               : maxReceive;
+            int received = Math.min(transferLimit, Math.max(0, capacity - MachineBlockEntity.this.energy));
             if (!simulate && received > 0) {
                MachineBlockEntity.this.energy += received;
+               if (kind == MachineKind.SMALL_BLOCK_BREAKER) {
+                  MachineBlockEntity.this.recordBlockBreakerEnergyInput(received);
+               }
                MachineBlockEntity.this.setChanged();
             }
 
@@ -598,6 +610,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    public IEnergyStorage energyStorage(Direction side) {
       MachineKind kind = this.kind();
+      if (kind == MachineKind.SMALL_BLOCK_BREAKER) {
+         return side == Direction.DOWN ? this.energyHandler : null;
+      }
       return kind != MachineKind.SMALL_ELECTRICAL_FURNACE
             && kind != MachineKind.SMALL_WASTE_INCINERATOR
             && kind != MachineKind.SMALL_SOLAR_PANEL
@@ -1131,8 +1146,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield this.blockBreakerPendingItemCount;
                case 9:
                   yield this.previousPowered ? 1 : 0;
-                case 10:
-                   yield this.energy / 100;
+                 case 10:
+                    yield this.energy;
                 // Keep each registry-ID component within the positive signed-short range used by menu data sync.
                 case 11:
                    yield this.blockBreakerTargetBlockId() & 0x7FFF;
@@ -1341,7 +1356,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                      this.previousPowered = value != 0;
                      return;
                   case 10:
-                     this.energy = Math.max(0, value) * 100;
+                      this.energy = Mth.clamp(value, 0, this.energyCapacity(kind));
                      return;
                   default:
                      return;
@@ -1770,21 +1785,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                this.progress = 0;
             }
 
-            int energyCost = this.blockBreakerEnergyCostPerTick(hardness);
-            if (energyCost <= 0) {
-               // Fail closed until the owner-selected FE curve and storage parameters are implemented.
-               this.progress = 0;
-               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-               return;
-            }
-            if (this.energy < energyCost) {
-               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-               return;
-            }
-            if (this.progress == 0 && !this.canBlockBreakerStoreDrops(target, targetState)) {
+            if (!this.canBlockBreakerStoreDrops(target, targetState)) {
                this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;
+               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
+               return;
+            }
+
+            int energyCost = this.blockBreakerEnergyCostPerTick(hardness, this.progress, requiredTicks);
+            if (energyCost <= 0 || this.energy < energyCost) {
+               this.blockBreakerStatus = BREAKER_STATUS_WAITING_FOR_ENERGY;
                this.setBooleanProperty(MachineBlocks.ACTIVE, false);
                return;
             }
@@ -1806,9 +1815,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   this.updateComparator();
                } else {
                   this.blockBreakerStatus = BREAKER_STATUS_OUTPUT_BLOCKED;
-                  this.progress = 0;
-                  this.processTimeNeeded = 0;
-                  this.cooldown = 12;
+                  this.progress = Math.max(0, this.progress - 1);
                   this.setBooleanProperty(MachineBlocks.ACTIVE, false);
                   this.energy = Math.min(this.energyCapacity(this.kind()), this.energy + energyCost);
                   this.setChanged();
@@ -1819,9 +1826,44 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
-   private int blockBreakerEnergyCostPerTick(float hardness) {
-      // Deliberately unset: FE is owner-confirmed, but its hardness curve has not been approved.
-      return 0;
+   public static int blockBreakerEnergyCostPerBlock(float hardness) {
+      if (Float.isNaN(hardness) || hardness <= 0.0F) {
+         return BLOCK_BREAKER_BASE_ENERGY_COST;
+      }
+
+      double cost = BLOCK_BREAKER_BASE_ENERGY_COST + BLOCK_BREAKER_ENERGY_COST_PER_HARDNESS * (double)hardness;
+      if (!Double.isFinite(cost) || cost >= Integer.MAX_VALUE) {
+         return Integer.MAX_VALUE;
+      }
+      return Math.max(BLOCK_BREAKER_BASE_ENERGY_COST, (int)Math.round(cost));
+   }
+
+   private int blockBreakerEnergyCostPerTick(float hardness, int elapsedTicks, int totalTicks) {
+      if (totalTicks <= 0) {
+         return 0;
+      }
+
+      int elapsed = Mth.clamp(elapsedTicks, 0, totalTicks - 1);
+      long totalCost = blockBreakerEnergyCostPerBlock(hardness);
+      long costBefore = totalCost * elapsed / totalTicks;
+      long costAfter = totalCost * (elapsed + 1L) / totalTicks;
+      return (int)(costAfter - costBefore);
+   }
+
+   private int blockBreakerEnergyInputRemaining() {
+      int usedThisTick = this.blockBreakerEnergyInputTick == this.tickCounter ? this.blockBreakerEnergyInputThisTick : 0;
+      return Math.max(0, BLOCK_BREAKER_MAX_ENERGY_INPUT_PER_TICK - usedThisTick);
+   }
+
+   private void recordBlockBreakerEnergyInput(int received) {
+      if (this.blockBreakerEnergyInputTick != this.tickCounter) {
+         this.blockBreakerEnergyInputTick = this.tickCounter;
+         this.blockBreakerEnergyInputThisTick = 0;
+      }
+      this.blockBreakerEnergyInputThisTick = Math.min(
+         BLOCK_BREAKER_MAX_ENERGY_INPUT_PER_TICK,
+         this.blockBreakerEnergyInputThisTick + received
+      );
    }
 
    private boolean canBlockBreakerStoreDrops(BlockPos target, BlockState targetState) {
@@ -1907,7 +1949,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int blockBreakerProcessTicks(BlockState targetState, BlockPos target) {
       if (this.level != null && !targetState.isAir()) {
          float hardness = targetState.getDestroySpeed(this.level, target);
-         return hardness < 0.0F ? 0 : Mth.clamp(20 + Math.round(hardness * 20.0F), 20, 200);
+         if (hardness < 0.0F) {
+            return 0;
+         }
+         long ticks = 20L + Math.round(hardness * 20.0F);
+         return (int)Math.max(20L, Math.min(200L, ticks));
       } else {
          return 0;
       }
@@ -3698,7 +3744,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          || kind == MachineKind.SMALL_WASTE_INCINERATOR
          || kind == MachineKind.SMALL_MINERAL_SMELTER
          || kind == MachineKind.SMALL_FREEZER
-         || kind == MachineKind.SMALL_LAB_FURNACE;
+         || kind == MachineKind.SMALL_LAB_FURNACE
+         || kind == MachineKind.SMALL_BLOCK_BREAKER;
    }
 
    private boolean canStoreEnergy(MachineKind kind) {
@@ -3773,6 +3820,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int energyCapacity(MachineKind kind) {
       if (kind == MachineKind.SMALL_SOLAR_PANEL) {
          return 64000;
+      } else if (kind == MachineKind.SMALL_BLOCK_BREAKER) {
+         return BLOCK_BREAKER_ENERGY_CAPACITY;
       } else {
          return kind != MachineKind.SMALL_WASTE_INCINERATOR && kind != MachineKind.SMALL_MINERAL_SMELTER && kind != MachineKind.SMALL_FREEZER ? 32000 : 16000;
       }

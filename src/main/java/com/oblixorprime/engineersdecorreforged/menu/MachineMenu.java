@@ -142,7 +142,7 @@ public class MachineMenu extends AbstractContainerMenu {
          case SMALL_ELECTRICAL_FURNACE -> this.data.get(ELECTRICAL_FURNACE_ENERGY_FIELD);
          case SMALL_LAB_FURNACE -> this.data.get(LAB_FURNACE_ENERGY_FIELD);
          case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR, SMALL_MINERAL_SMELTER, SMALL_FREEZER -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
-         case SMALL_BLOCK_BREAKER -> this.data.get(10) * ENERGY_FIELD_SCALE;
+          case SMALL_BLOCK_BREAKER -> this.data.get(10);
          default -> 0;
       };
    }
@@ -152,6 +152,7 @@ public class MachineMenu extends AbstractContainerMenu {
          case SMALL_SOLAR_PANEL -> SOLAR_PANEL_ENERGY_CAPACITY;
          case SMALL_WASTE_INCINERATOR, SMALL_MINERAL_SMELTER, SMALL_FREEZER -> COMPACT_MACHINE_ENERGY_CAPACITY;
          case SMALL_LAB_FURNACE, SMALL_ELECTRICAL_FURNACE -> STANDARD_MACHINE_ENERGY_CAPACITY;
+          case SMALL_BLOCK_BREAKER -> 32000;
          default -> 0;
       };
    }
@@ -170,6 +171,12 @@ public class MachineMenu extends AbstractContainerMenu {
 
    public float blockBreakerHardness() {
       return this.kind == MachineKind.SMALL_BLOCK_BREAKER ? this.data.get(7) / 100.0F : 0.0F;
+   }
+
+   public int blockBreakerEnergyCostPerBlock() {
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER && !this.blockBreakerTargetStack().isEmpty() && this.blockBreakerHardness() >= 0.0F
+         ? MachineBlockEntity.blockBreakerEnergyCostPerBlock(this.blockBreakerHardness())
+         : 0;
    }
 
    public int blockBreakerPendingItems() {
