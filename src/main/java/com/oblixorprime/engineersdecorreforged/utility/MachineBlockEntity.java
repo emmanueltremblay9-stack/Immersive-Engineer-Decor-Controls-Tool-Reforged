@@ -3388,6 +3388,24 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
+   private int acceptableCount(ItemStack stack) {
+      int capacity = 0;
+
+      for (int slotIndex : this.accessibleSlots()) {
+         ItemStack slot = (ItemStack)this.items.get(slotIndex);
+         if (slot.isEmpty()) {
+            capacity += Math.min(stack.getMaxStackSize(), this.getMaxStackSize(stack));
+         } else if (ItemStack.isSameItemSameComponents(slot, stack)) {
+            capacity += Math.max(0, Math.min(slot.getMaxStackSize(), this.getMaxStackSize(slot)) - slot.getCount());
+         }
+      }
+
+      return capacity;
+   }
+
+   // Only extracts what the hopper can hold, so a blocked transfer never touches the source. Handlers whose real
+   // extraction diverges from the simulation are not atomic; leftovers are returned to the source slot, and only
+   // dropped if that source refuses them.
    private void pullItemsFromHandler(IItemHandler source, int maxCount) {
       int remaining = Math.max(1, maxCount);
 
@@ -3397,7 +3415,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             continue;
          }
 
-         ItemStack extracted = source.extractItem(slot, simulated.getCount(), false);
+         int amount = Math.min(simulated.getCount(), this.acceptableCount(simulated));
+         if (amount <= 0) {
+            continue;
+         }
+
+         ItemStack extracted = source.extractItem(slot, amount, false);
          if (extracted.isEmpty()) {
             continue;
          }
