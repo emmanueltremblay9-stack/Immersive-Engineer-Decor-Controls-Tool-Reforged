@@ -3356,7 +3356,80 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
+   private IItemHandler neighborItemHandler(Direction direction) {
+      if (this.level == null) {
+         return null;
+      }
+
+      BlockPos neighborPos = this.worldPosition.relative(direction);
+      return this.level.getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, neighborPos, direction.getOpposite());
+   }
+
+   private void pushItemsToHandler(IItemHandler target, int maxCount) {
+      int remainingCount = Math.max(1, maxCount);
+
+      for (int tries = 0; tries < this.accessibleSlots().length && remainingCount > 0; tries++) {
+         int slotIndex = this.machineSlotCursor % this.accessibleSlots().length;
+         ItemStack stack = (ItemStack)this.items.get(slotIndex);
+         if (!stack.isEmpty()) {
+            ItemStack moving = stack.copyWithCount(Math.min(remainingCount, stack.getCount()));
+            int before = moving.getCount();
+            ItemStack remainder = net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(target, moving, false);
+            int inserted = before - remainder.getCount();
+            if (inserted > 0) {
+               stack.shrink(inserted);
+               remainingCount -= inserted;
+               this.setChanged();
+               this.updateComparator();
+            }
+         }
+
+         this.machineSlotCursor = (this.machineSlotCursor + 1) % this.accessibleSlots().length;
+      }
+   }
+
+   private void pullItemsFromHandler(IItemHandler source, int maxCount) {
+      int remaining = Math.max(1, maxCount);
+
+      for (int slot = 0; slot < source.getSlots() && remaining > 0; slot++) {
+         ItemStack simulated = source.extractItem(slot, remaining, true);
+         if (simulated.isEmpty()) {
+            continue;
+         }
+
+         ItemStack extracted = source.extractItem(slot, simulated.getCount(), false);
+         if (extracted.isEmpty()) {
+            continue;
+         }
+
+         ItemStack remainder = this.insertRemainder(extracted);
+         int moved = extracted.getCount() - remainder.getCount();
+         if (!remainder.isEmpty()) {
+            ItemStack leftover = source.insertItem(slot, remainder, false);
+            if (!leftover.isEmpty()) {
+               net.minecraft.world.Containers.dropItemStack(
+                  this.level, this.worldPosition.getX() + 0.5, this.worldPosition.getY() + 0.5, this.worldPosition.getZ() + 0.5, leftover
+               );
+            }
+         }
+
+         remaining -= moved;
+         if (moved > 0) {
+            this.setChanged();
+         }
+      }
+   }
+
    private void pushItems(Direction direction, int maxCount) {
+      if (this.level != null && !(this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container)) {
+         IItemHandler handler = this.neighborItemHandler(direction);
+         if (handler != null) {
+            this.pushItemsToHandler(handler, maxCount);
+         }
+
+         return;
+      }
+
       if (this.level != null && this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container target) {
          int var11 = Math.max(1, maxCount);
 
@@ -3382,6 +3455,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private void pullItems(Direction direction, int maxCount) {
+      if (this.level != null && !(this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container)) {
+         IItemHandler handler = this.neighborItemHandler(direction);
+         if (handler != null) {
+            this.pullItemsFromHandler(handler, maxCount);
+         }
+
+         return;
+      }
+
       if (this.level != null && this.level.getBlockEntity(this.worldPosition.relative(direction)) instanceof Container source) {
          int remaining = Math.max(1, maxCount);
          boolean movedAny = false;
