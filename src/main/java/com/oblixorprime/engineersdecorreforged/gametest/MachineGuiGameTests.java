@@ -82,7 +82,7 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "small_electrical_furnace_gui"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 2, null),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 2, "small_mineral_smelter_hybrid_v05/background"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FLUID_BARREL, MachineKind.FLUID_BARREL, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FLUID_FUNNEL, MachineKind.SMALL_FLUID_FUNNEL, 2, null),
@@ -211,6 +211,24 @@ public final class MachineGuiGameTests {
             );
          }
 
+         if (entry.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
+            helper.assertValueEqual(234, menu.layout().imageWidth(), "Smelter v0.5 panel logical width");
+            helper.assertValueEqual(270, menu.layout().imageHeight(), "Smelter v0.5 panel logical height");
+            helper.assertValueEqual(0, menu.layout().machineSlots().get(0).containerIndex(), "Smelter input backing index");
+            helper.assertValueEqual(126, menu.slots.get(0).x, "Smelter mineral input x");
+            helper.assertValueEqual(46, menu.slots.get(0).y, "Smelter mineral input y");
+            helper.assertValueEqual(2, menu.layout().machineSlots().get(1).containerIndex(), "Smelter output backing index");
+            helper.assertTrue(menu.slots.get(1).isActive(), "Server output slot stays active with client drawer closed");
+            int[] smelterColumns = {27, 48, 68, 88, 109, 129, 150, 170, 191};
+            for (int column = 0; column < 9; column++) {
+               helper.assertValueEqual(smelterColumns[column], menu.slots.get(2 + column).x, "Smelter inventory x " + column);
+               helper.assertValueEqual(smelterColumns[column], menu.slots.get(29 + column).x, "Smelter hotbar x " + column);
+            }
+            helper.assertValueEqual(171, menu.slots.get(2).y, "Smelter inventory first row y");
+            helper.assertValueEqual(189, menu.slots.get(11).y, "Smelter inventory second row y");
+            helper.assertValueEqual(207, menu.slots.get(20).y, "Smelter inventory third row y");
+            helper.assertValueEqual(231, menu.slots.get(29).y, "Smelter hotbar y");
+         }
          menu.removed(player);
          if (entry.kind() == MachineKind.LABELED_CRATE) {
             assertLabeledCrateLabelBehavior(helper, machine);

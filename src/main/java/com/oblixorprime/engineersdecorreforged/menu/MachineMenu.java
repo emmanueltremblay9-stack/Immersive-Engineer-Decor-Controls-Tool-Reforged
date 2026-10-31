@@ -53,6 +53,9 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int PLAYER_INVENTORY_START = 27;
    private static final int PLAYER_INVENTORY_END = 54;
    private static final int HOTBAR_END = 63;
+   private static final int[] SMELTER_PLAYER_SLOT_X = {27, 48, 68, 88, 109, 129, 150, 170, 191};
+   private final Player menuPlayer;
+   private boolean smelterOutputDrawerOpen;
    private final MachineKind kind;
    private final MachineLayout layout;
    private final int visibleMachineSlots;
@@ -72,6 +75,7 @@ public class MachineMenu extends AbstractContainerMenu {
       checkContainerSize(container, 27);
       checkContainerDataCount(data, 16);
       this.kind = kind;
+      this.menuPlayer = inventory.player;
       this.layout = MachineLayout.forKind(kind);
       this.visibleMachineSlots = this.layout.machineSlots().size();
       this.container = container;
@@ -84,12 +88,16 @@ public class MachineMenu extends AbstractContainerMenu {
 
       for (int row = 0; row < 3; row++) {
          for (int column = 0; column < 9; column++) {
-            this.addSlot(new Slot(inventory, column + row * 9 + 9, this.layout.playerInventoryX() + column * 18, this.layout.playerInventoryY() + row * 18));
+            int x = kind == MachineKind.SMALL_MINERAL_SMELTER
+               ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerInventoryX() + column * 18;
+            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, this.layout.playerInventoryY() + row * 18));
          }
       }
 
       for (int column = 0; column < 9; column++) {
-         this.addSlot(new Slot(inventory, column, this.layout.hotbarX() + column * 18, this.layout.hotbarY()));
+         int x = kind == MachineKind.SMALL_MINERAL_SMELTER
+            ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarX() + column * 18;
+         this.addSlot(new Slot(inventory, column, x, this.layout.hotbarY()));
       }
 
       this.addDataSlots(data);
@@ -113,6 +121,11 @@ public class MachineMenu extends AbstractContainerMenu {
 
    public int visibleMachineSlots() {
       return this.visibleMachineSlots;
+   }
+
+   /** Only client presentation is gated; the server always exposes the output slot. */
+   public void setSmelterOutputDrawerOpen(boolean open) {
+      this.smelterOutputDrawerOpen = this.kind == MachineKind.SMALL_MINERAL_SMELTER && open;
    }
 
    public int progress() {
@@ -277,11 +290,19 @@ public class MachineMenu extends AbstractContainerMenu {
          return slot.containerIndex() == 10
             ? new MachineMenu.MetalCraftingResultSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
             : new MachineMenu.MetalCraftingInputSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
-      } else {
-         return isResultRole(slot.role())
-            ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
-            : new MachineMenu.ValidatedMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
       }
+      if (this.kind == MachineKind.SMALL_MINERAL_SMELTER && slot.containerIndex() == 2) {
+         return new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y()) {
+            @Override
+            public boolean isActive() {
+               // The drawer is only a client-side visual gate, not a server permission.
+               return !MachineMenu.this.menuPlayer.level().isClientSide || MachineMenu.this.smelterOutputDrawerOpen;
+            }
+         };
+      }
+      return isResultRole(slot.role())
+         ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
+         : new MachineMenu.ValidatedMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
    }
 
    private static boolean isResultRole(String role) {
