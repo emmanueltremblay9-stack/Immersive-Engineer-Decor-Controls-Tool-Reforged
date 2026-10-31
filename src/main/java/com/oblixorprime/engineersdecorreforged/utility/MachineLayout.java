@@ -82,7 +82,7 @@ public record MachineLayout(
          List.of(new MachineLayout.MachineSlot(0, 118, 38, "Collected output")),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
-         "block_breaker_v08/background"
+         "block_breaker_v081/background"
       );
    }
 
