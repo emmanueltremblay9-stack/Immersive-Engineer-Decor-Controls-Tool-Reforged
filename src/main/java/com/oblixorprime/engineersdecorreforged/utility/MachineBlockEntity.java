@@ -89,6 +89,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final ResourceLocation IE_FURNACE_HEATER = ResourceLocation.fromNamespaceAndPath("immersiveengineering", "furnace_heater");
    private static final int BUCKET_AMOUNT = 1000;
    private static final int BARREL_CAPACITY = 32000;
+   private boolean milkingTransactionActive;
    private static final int FUNNEL_CAPACITY = 3000;
    private static final int FUNNEL_TRANSFER = 250;
    private static final int SOLAR_CAPACITY = 64000;
@@ -712,8 +713,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                machine.tickSolarPanel();
                break;
             case SMALL_MILKING_MACHINE:
-               machine.tickFluidBucketSlots(kind);
-               machine.tickMilkingMachine(powered);
+               if (!machine.milkingTransactionActive) {
+                  machine.tickFluidBucketSlots(kind);
+                  machine.tickMilkingMachine(powered);
+               }
             case LABELED_CRATE:
          }
       }
@@ -2535,16 +2538,16 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             ItemStack milkBucket = new ItemStack(Items.MILK_BUCKET);
             boolean canFillBucket = ((ItemStack)this.items.get(0)).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1);
             boolean canStoreFluid = this.canAddFluid("milk", 1000, 4000);
-            if (!canFillBucket && !canStoreFluid) {
+            if (!canFillBucket && !this.canAddFluid("milk", 1, 4000)) {
                this.setBooleanProperty(MachineBlocks.ACTIVE, false);
                this.syncMilkingFilled();
                return;
             }
 
             AABB box = new AABB(this.worldPosition.relative(direction)).inflate(2.0, 1.5, 2.0);
-            if (this.level.getEntitiesOfClass(Cow.class, box, cow -> cow.isAlive() && !cow.isBaby()).isEmpty()) {
-               this.setBooleanProperty(MachineBlocks.ACTIVE, false);
-            } else {
+            boolean produced = false;
+            if ((canFillBucket || canStoreFluid)
+                  && !this.level.getEntitiesOfClass(Cow.class, box, cow -> cow.isAlive() && !cow.isBaby()).isEmpty()) {
                if (canFillBucket) {
                   ((ItemStack)this.items.get(0)).shrink(1);
                   this.insertIntoSlots(milkBucket, 1);
@@ -2552,9 +2555,19 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                } else {
                   this.addFluid("milk", 1000, 4000);
                }
-
-               this.setBooleanProperty(MachineBlocks.ACTIVE, true);
-               this.syncMilkingFilled();
+               produced = true;
+            } else if (this.level instanceof ServerLevel serverLevel) {
+               this.milkingTransactionActive = true;
+               try {
+                  produced = com.oblixorprime.engineersdecorreforged.compat.TfcMilkingCompat.tryMilk(
+                        serverLevel, this.worldPosition, box, product -> this.commitTfcMilk(serverLevel, direction, product));
+               } finally {
+                  this.milkingTransactionActive = false;
+               }
+            }
+            this.setBooleanProperty(MachineBlocks.ACTIVE, produced);
+            this.syncMilkingFilled();
+            if (produced) {
                this.setChanged();
                this.updateComparator();
             }
@@ -2563,6 +2576,30 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             this.syncMilkingFilled();
          }
       }
+   }
+
+   /** Commit local storage only: native cooldown/uses must precede any neighbor callbacks. */
+   private boolean commitTfcMilk(ServerLevel serverLevel, Direction direction, FluidStack product) {
+      int amount = product.getAmount();
+      if (this.isRemoved() || this.level != serverLevel || !serverLevel.hasChunkAt(this.worldPosition)
+            || serverLevel.getBlockEntity(this.worldPosition) != this || this.kind() != MachineKind.SMALL_MILKING_MACHINE
+            || this.facing(this.getBlockState()) != direction || serverLevel.hasNeighborSignal(this.worldPosition)
+            || amount <= 0 || amount > 4000
+            || !FluidStack.isSameFluidSameComponents(product, new FluidStack(NeoForgeMod.MILK.get(), amount))) return false;
+      ItemStack milkBucket = new ItemStack(Items.MILK_BUCKET);
+      if (amount == 1000 && this.items.get(0).is(Items.BUCKET) && this.canInsertIntoSlots(milkBucket, 1)) {
+         this.items.get(0).shrink(1);
+         if (this.items.get(1).isEmpty()) this.items.set(1, milkBucket);
+         else this.items.get(1).grow(1);
+         return true;
+      }
+      // Subtraction avoids integer overflow from an event-modified amount. The legacy
+      // storage can represent only plain milk, so incompatible products fail before consumption.
+      if (!(this.fluidType.isEmpty() || this.fluidType.equals("milk"))
+            || amount > 4000 - this.fluidAmount) return false;
+      this.fluidType = "milk";
+      this.fluidAmount += amount;
+      return true;
    }
 
    private void tickMilkingMachineContainerIo(Direction direction) {
