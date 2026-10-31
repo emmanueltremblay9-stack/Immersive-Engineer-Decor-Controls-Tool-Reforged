@@ -63,7 +63,8 @@ public record MachineLayout(
          case FACTORY_HOPPER -> hopper();
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
-         case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> processor(kind);
+         case SMALL_MINERAL_SMELTER -> mineralHybrid();
+         case SMALL_FREEZER -> processor(kind);
          case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> fluid(kind);
          case SMALL_SOLAR_PANEL -> energy();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
@@ -84,6 +85,14 @@ public record MachineLayout(
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
          "block_breaker_v08/background"
       );
+   }
+
+   /** Two physical item slots; old Heat index 1 stays in NBT but is never shown as fuel. */
+   private static MachineLayout mineralHybrid() {
+      return new MachineLayout(209, 235, 23, 144, 23, 202,
+         List.of(new MachineLayout.MachineSlot(0, 109, 38, "Mineral input"),
+                 new MachineLayout.MachineSlot(2, 132, 38, "Product output")),
+         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "block_breaker_v08/background");
    }
 
    private static MachineLayout crate() {
