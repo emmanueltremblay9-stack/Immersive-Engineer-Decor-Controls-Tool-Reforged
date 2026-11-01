@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.menu;
 
 import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import java.util.Locale;
@@ -35,7 +36,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int SCALED_ENERGY_FIELD = 3;
    private static final int ELECTRICAL_FURNACE_ENERGY_FIELD = 1;
    private static final int LAB_FURNACE_ENERGY_FIELD = 8;
-   private static final int ENERGY_FIELD_SCALE = 100;
+   private static final int ENERGY_FIELD_SCALE = MachineEnergySync.SCALED_FIELD_STEP_FE;
    private static final int SOLAR_PANEL_ENERGY_CAPACITY = 64000;
    private static final int STANDARD_MACHINE_ENERGY_CAPACITY = 32000;
    private static final int COMPACT_MACHINE_ENERGY_CAPACITY = 16000;
@@ -158,7 +159,7 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public int energyDisplayGranularity() {
-      return this.kind == MachineKind.SMALL_SOLAR_PANEL ? ENERGY_FIELD_SCALE : 1;
+      return MachineEnergySync.displayGranularity(this.kind);
    }
 
    public int comparatorOutput() {
