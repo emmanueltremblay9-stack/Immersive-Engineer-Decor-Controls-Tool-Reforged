@@ -10,6 +10,7 @@ import com.oblixorprime.engineersdecorreforged.ReforgedConfig;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.LabeledCrateLabelPayload;
 import com.oblixorprime.engineersdecorreforged.rsgauges.ControlsModule;
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlockBreakerDataSync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
@@ -2173,7 +2174,20 @@ public final class MachineGuiGameTests {
       helper.setBlock(target, Blocks.STONE);
       tickMachine(helper, machine, 1);
       helper.assertTrue(helper.getBlockState(target).is(Blocks.STONE), "small block breaker must wait rather than break without FE");
-      helper.assertValueEqual(150, machine.dataAccessForTests().get(7), "stone hardness should synchronize as 1.50");
+      float synchronizedHardness = MachineBlockBreakerDataSync.hardnessFromFields(
+         machine.dataAccessForTests().get(MachineBlockBreakerDataSync.HARDNESS_LOW_FIELD),
+         machine.dataAccessForTests().get(MachineBlockBreakerDataSync.HARDNESS_MIDDLE_FIELD),
+         machine.dataAccessForTests().get(MachineBlockBreakerDataSync.HARDNESS_HIGH_FIELD)
+      );
+      helper.assertTrue(
+         Float.floatToIntBits(1.5F) == Float.floatToIntBits(synchronizedHardness),
+         "stone hardness should synchronize exactly as 1.50"
+      );
+      helper.assertValueEqual(
+         400,
+         MachineBlockEntity.blockBreakerEnergyCostPerBlock(synchronizedHardness),
+         "stone menu cost should match server billing for synchronized hardness"
+      );
       helper.assertValueEqual(50, machine.dataAccessForTests().get(3), "stone should require more work than dirt");
       helper.succeed();
    }
