@@ -50,3 +50,4 @@ The Toolkit CLI reported `941×1672 RGBA`. Native RGBA comparison reports **0 di
 | Toolkit render PNG | `549EE41995F32F1811389F11718358372294F67C1F5886ED9ADD0E3DC0F4308C` |
 
 The reference and Toolkit render above are visual evidence of the exact design reproduction. They are not an in-game capture; please inspect the runtime GUI visually before merging this draft.
+

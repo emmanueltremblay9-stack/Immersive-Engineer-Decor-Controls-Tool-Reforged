@@ -47,5 +47,4 @@ The Toolkit CLI reported `941×1672 RGBA`. Native RGBA comparison reports **0 di
 | Toolkit JSON | `95BB04D98B88CE2074163D345B0D032B06C732F4ABD9239B6FA236A23227599A` |
 | Toolkit render PNG | `A72019F695FD2F16B6F8DBE249C7351C7344737C41C766E47F072318F76E0E9F` |
 
-The reference and Toolkit render above are visual evidence of the exact design reproduction. They are not an in-game capture; please inspect the runtime GUI visually before merging this draft.
-
+The reference and Toolkit render above are visual evidence of the exact design reproduction. They are not an in-game capture. Perform grouped in-game visual validation after integration and before publication.
