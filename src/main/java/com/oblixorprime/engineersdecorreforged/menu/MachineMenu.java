@@ -32,7 +32,16 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 public class MachineMenu extends AbstractContainerMenu {
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
+   public static final int FREEZER_STATUS_IDLE = MachineBlockEntity.FREEZER_STATUS_IDLE;
+   public static final int FREEZER_STATUS_READY = MachineBlockEntity.FREEZER_STATUS_READY;
+   public static final int FREEZER_STATUS_PROCESSING = MachineBlockEntity.FREEZER_STATUS_PROCESSING;
+   public static final int FREEZER_STATUS_REDSTONE_PAUSED = MachineBlockEntity.FREEZER_STATUS_REDSTONE_PAUSED;
+   public static final int FREEZER_STATUS_WAITING_FOR_ENERGY = MachineBlockEntity.FREEZER_STATUS_WAITING_FOR_ENERGY;
+   public static final int FREEZER_STATUS_OUTPUT_BLOCKED = MachineBlockEntity.FREEZER_STATUS_OUTPUT_BLOCKED;
+   public static final int FREEZER_STATUS_INVALID_INPUT = MachineBlockEntity.FREEZER_STATUS_INVALID_INPUT;
+   public static final int FREEZER_REDSTONE_FLAG = MachineBlockEntity.FREEZER_REDSTONE_FLAG;
    private static final int SCALED_ENERGY_FIELD = 3;
+   private static final int FREEZER_ENERGY_FIELD = 3;
    private static final int ELECTRICAL_FURNACE_ENERGY_FIELD = 1;
    private static final int LAB_FURNACE_ENERGY_FIELD = 8;
    private static final int ENERGY_FIELD_SCALE = MachineEnergySync.SCALED_FIELD_STEP_FE;
@@ -142,8 +151,9 @@ public class MachineMenu extends AbstractContainerMenu {
       return switch (this.kind) {
          case SMALL_ELECTRICAL_FURNACE -> this.data.get(ELECTRICAL_FURNACE_ENERGY_FIELD);
          case SMALL_LAB_FURNACE -> this.data.get(LAB_FURNACE_ENERGY_FIELD);
-         case SMALL_MINERAL_SMELTER -> this.data.get(6);
-         case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR, SMALL_FREEZER -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
+case SMALL_MINERAL_SMELTER -> this.data.get(6);
+case SMALL_FREEZER -> this.data.get(FREEZER_ENERGY_FIELD);
+case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
           case SMALL_BLOCK_BREAKER -> this.data.get(10);
          default -> 0;
       };
@@ -157,6 +167,30 @@ public class MachineMenu extends AbstractContainerMenu {
           case SMALL_BLOCK_BREAKER -> 32000;
          default -> 0;
       };
+   }
+
+   public int freezerProgressTicks() {
+      return this.kind == MachineKind.SMALL_FREEZER
+         ? Math.max(0, Math.min(MachineBlockEntity.FREEZER_PROCESS_TICKS, this.data.get(1)))
+         : 0;
+   }
+
+   public int freezerPhase() {
+      return this.kind == MachineKind.SMALL_FREEZER ? Math.max(0, Math.min(4, this.data.get(14))) : 0;
+   }
+
+   public int freezerStatus() {
+      return this.kind == MachineKind.SMALL_FREEZER ? this.data.get(15) & 0xFF : FREEZER_STATUS_IDLE;
+   }
+
+   public boolean freezerRedstonePowered() {
+      return this.kind == MachineKind.SMALL_FREEZER && (this.data.get(15) & FREEZER_REDSTONE_FLAG) != 0;
+   }
+
+   public ItemStack freezerPreviewStack() {
+      return this.kind == MachineKind.SMALL_FREEZER && this.visibleMachineSlots > 0
+         ? MachineBlockEntity.freezerResultForDisplay(((Slot)this.slots.get(0)).getItem())
+         : ItemStack.EMPTY;
    }
 
    public int energyDisplayGranularity() {
@@ -284,7 +318,13 @@ public class MachineMenu extends AbstractContainerMenu {
       } else {
          return slot.output()
             ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
-            : new MachineMenu.ValidatedMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
+            : new MachineMenu.ValidatedMachineSlot(
+               this.container,
+               slot.containerIndex(),
+               slot.x(),
+               slot.y(),
+               this.kind == MachineKind.SMALL_FREEZER && slot.containerIndex() == 1
+            );
       }
    }
 
@@ -445,12 +485,19 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    private static class ValidatedMachineSlot extends Slot {
+      private final boolean insertionDisabled;
+
       ValidatedMachineSlot(Container container, int slot, int x, int y) {
+         this(container, slot, x, y, false);
+      }
+
+      ValidatedMachineSlot(Container container, int slot, int x, int y, boolean insertionDisabled) {
          super(container, slot, x, y);
+         this.insertionDisabled = insertionDisabled;
       }
 
       public boolean mayPlace(ItemStack stack) {
-         return this.container.canPlaceItem(this.getSlotIndex(), stack);
+         return !this.insertionDisabled && this.container.canPlaceItem(this.getSlotIndex(), stack);
       }
    }
 }

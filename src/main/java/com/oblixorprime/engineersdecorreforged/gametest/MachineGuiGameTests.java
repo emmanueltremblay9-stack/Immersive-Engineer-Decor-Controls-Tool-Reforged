@@ -84,6 +84,10 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "small_electrical_furnace_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, null),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 3, null),
+      new MachineGuiGameTests.MachineEntry(
+         ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, "small_water_freezer/background"
+      ),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FLUID_BARREL, MachineKind.FLUID_BARREL, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FLUID_FUNNEL, MachineKind.SMALL_FLUID_FUNNEL, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.PASSIVE_FLUID_ACCUMULATOR, MachineKind.PASSIVE_FLUID_ACCUMULATOR, 2, null),
@@ -1239,6 +1243,70 @@ public final class MachineGuiGameTests {
       tickMachine(helper, machine, 10);
       helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the batch resumes after output space is freed");
       helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_freezer_menu_syncs_exact_energy_progress_phase_and_status(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+      machine.setItem(0, new ItemStack(Items.WATER_BUCKET));
+      machine.energyStorage(null).receiveEnergy(12345, false);
+      MachineMenu menu = new MachineMenu(
+         MachineKind.SMALL_FREEZER, 1, player.getInventory(), machine, machine.dataAccessForTests()
+      );
+
+      helper.assertValueEqual(12345, menu.energyStored(), "freezer menu should sync exact stored FE, not 100-FE buckets");
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_READY, menu.freezerStatus(), "valid freezer input should report ready");
+      tickMachine(helper, machine, 45);
+      helper.assertValueEqual(45, menu.freezerProgressTicks(), "freezer menu should sync the exact server progress tick count");
+      helper.assertValueEqual(1, menu.freezerPhase(), "freezer menu should sync PHASE_0_4 from the live block state");
+      helper.assertValueEqual(12345 - 45 * 8, menu.energyStored(), "freezer energy should reflect the server's 8-FE/tick processing cost");
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_PROCESSING, menu.freezerStatus(), "active freezer should report processing");
+      helper.assertTrue(!menu.freezerRedstonePowered(), "unpowered freezer should report a LOW redstone input");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_freezer_menu_reports_live_states_and_preserves_cold_slot(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+      MachineMenu menu = new MachineMenu(
+         MachineKind.SMALL_FREEZER, 1, player.getInventory(), machine, machine.dataAccessForTests()
+      );
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_IDLE, menu.freezerStatus(), "empty freezer should report idle");
+
+      machine.setItem(0, new ItemStack(Items.DIRT));
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_INVALID_INPUT, menu.freezerStatus(), "unsupported input should report invalid input");
+      machine.setItem(0, new ItemStack(Items.ICE));
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_WAITING_FOR_ENERGY, menu.freezerStatus(), "valid input without FE should report waiting");
+      machine.energyStorage(null).receiveEnergy(8, false);
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_READY, menu.freezerStatus(), "valid input with enough FE should report ready");
+      machine.setItem(2, new ItemStack(Items.PACKED_ICE, 64));
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_OUTPUT_BLOCKED, menu.freezerStatus(), "a full output stack should report blocked");
+      machine.setItem(2, ItemStack.EMPTY);
+      machine.setItem(0, new ItemStack(Items.WATER_BUCKET));
+      helper.setBlock(TEST_POS.west(), Blocks.REDSTONE_BLOCK);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_REDSTONE_PAUSED, menu.freezerStatus(), "HIGH redstone should pause freezer work");
+      helper.assertTrue(menu.freezerRedstonePowered(), "freezer menu should sync the live HIGH redstone input");
+      helper.assertValueEqual(0, menu.freezerProgressTicks(), "redstone pause should preserve the existing progress reset behavior");
+
+      machine.setItem(1, new ItemStack(Items.DIRT));
+      helper.assertValueEqual(3, menu.visibleMachineSlots(), "freezer menu should preserve the three historical machine slots");
+      helper.assertValueEqual(39, menu.slots.size(), "three machine slots should be followed by 27 inventory and 9 hotbar slots");
+      helper.assertTrue(menu.slots.get(1).getItem().is(Items.DIRT), "legacy Cold-slot contents should remain visible and extractable");
+      helper.assertTrue(!menu.slots.get(1).mayPlace(new ItemStack(Items.DIRT)), "Cold slot should continue rejecting new insertions");
+      ItemStack extracted = menu.quickMoveStack(player, 1);
+      helper.assertTrue(extracted.is(Items.DIRT), "legacy Cold-slot contents should still quick-move to the player inventory");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "extracting a legacy Cold-slot item should clear only slot 1");
+      player.getInventory().setItem(0, new ItemStack(Items.DIRT));
+      ItemStack rejectedShiftClick = menu.quickMoveStack(player, 30);
+      helper.assertTrue(rejectedShiftClick.isEmpty(), "shift-click should not insert a new item into the reserved Cold slot");
+      helper.assertTrue(player.getInventory().getItem(0).is(Items.DIRT), "rejected shift-click should preserve the player stack");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "new GUI insertion should leave the reserved Cold slot empty");
+      menu.removed(player);
       helper.succeed();
    }
 

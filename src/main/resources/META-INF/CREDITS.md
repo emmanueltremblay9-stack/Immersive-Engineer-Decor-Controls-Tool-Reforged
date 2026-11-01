@@ -35,3 +35,10 @@ Source reference:
   during the native implementation. No upstream code, assets or mixins are copied.
 - Exact commits, verified MIT license and reuse inventory:
   [native-fluidlogging.md](docs/testing/native-fluidlogging.md).
+
+## Small Water Freezer GUI artwork
+
+- Artwork: `Small Water Freezer.png`, supplied in the local IEDCTR image folder, 941×1672, SHA-256 `be8066887498aa01d029123da7a33ad32a1e935907ae3a3e706ccdd09bfaa3eb`. The resource copy is byte-for-byte identical; the source file was left unchanged.
+- Design reference: [GUI Architect Designer DEV PR #3](https://github.com/emmanueltremblay9-stack/Master-Generalist-GUI-Architect-Designer-DEV/pull/3), observed source commit `42215126e1c777073644658518af1ef7840b00c9`.
+- The panel crop is `(259, 614, 422, 443)` from the source image and is mapped into the 209×235 Freezer menu. Example item art, text, values, and gauge fills are replaced with live menu data.
+- No separate artwork license was present in the accessible source material; this integration follows the project owner’s explicit request.
