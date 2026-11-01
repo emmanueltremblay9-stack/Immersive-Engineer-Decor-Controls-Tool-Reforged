@@ -965,7 +965,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.energy": "Stored FE: %1$s of %2$s FE capacity.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.input": "FE is accepted from the bottom face only, up to 256 FE per tick.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.status": "Current state: %1$s. %2$s",
-"gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.amount": "%1$s / %2$s mB",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.amount": "%1$s / %2$s mB",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input": "Empty bucket",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output": "Filled bucket",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid.empty": "Empty",
