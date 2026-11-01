@@ -438,6 +438,10 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       super.mouseMoved(localX(mouseX), localY(mouseY));
    }
 
+   public float validationViewScale() { return viewScale; }
+
+   public boolean validationOutputDrawerOpen() { return outputDrawerOpen; }
+
    @Override
    public void removed() {
       menu.setSmelterOutputDrawerOpen(false);

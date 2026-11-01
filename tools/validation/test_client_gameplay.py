@@ -4,7 +4,7 @@ import copy
 from pathlib import Path
 import unittest
 
-from client_gameplay import EXPECTED_CASES, SUITE, validate_proof
+from client_gameplay import EXPECTED_CASES, SUITE, validate_proof, validate_smelter_gui_proof
 from client_mixin_smoke import SmokeFailure
 
 
@@ -108,6 +108,135 @@ class NativeGameplayProofTests(unittest.TestCase):
         for args in ({"crash_files": [Path("crash.txt")]}, {"logs": self.logs + "\nNoSuchMethodError"},
                      {"logs": "Loaded Engineer's Decor"}, {"logs": self.logs.replace(self.nonce, "b" * 32)}):
             with self.subTest(args=args), self.assertRaises(SmokeFailure): self.check(**args)
+
+
+class NativeSmelterGuiProofTests(unittest.TestCase):
+    def setUp(self):
+        import hashlib
+        import struct
+        import tempfile
+
+        self.hashlib = hashlib
+        self.struct = struct
+        self.temp = tempfile.TemporaryDirectory()
+        self.directory = Path(self.temp.name)
+        self.image_dir = self.directory / "smelter-gui-screenshots"
+        self.image_dir.mkdir()
+        self.nonce = "a" * 32
+        self.source_sha = "1" * 40
+        self.pr_head_sha = "2" * 40
+        self.window_width = 1280
+        self.window_height = 260
+        gui_width, gui_height = 1280, 260
+        scale = max(0.1, min(1.0, (gui_width - 12.0) / 234.0, (gui_height - 12.0) / 270.0))
+        self.proof = {
+            "suite": "native-smelter-gui-v1", "nonce": self.nonce, "status": "passed",
+            "actual_integrated_world": True, "executed_source_sha": self.source_sha,
+            "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "translated_lava_mode": "LAVE",
+            "screen_identity": "com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen",
+            "client_menu_identity": "com.oblixorprime.engineersdecorreforged.menu.MachineMenu",
+            "server_menu_identity": "com.oblixorprime.engineersdecorreforged.menu.MachineMenu",
+            "machine_kind": "SMALL_MINERAL_SMELTER", "client_menu_id": 4, "server_menu_id": 4,
+            "server_menu_context_valid": True, "visible_machine_slots": 2, "total_slots": 38,
+            "machine_slot_backing_indices": [0, 2], "data_fields": 17,
+            "live_state": {
+                "selected_mode": 0, "batch_mode": 0, "batch_progress": 12, "thermal": 12,
+                "input_item": "minecraft:cobblestone", "output_item": "minecraft:magma_block",
+                "output_count": 2, "tank_amount": 2500, "tank_capacity": 4000,
+                "energy": 10000, "energy_capacity": 16000, "fe_rate": 16, "status": 1,
+            },
+            "window_width": self.window_width, "window_height": self.window_height,
+            "screen": {
+                "gui_width": gui_width, "gui_height": gui_height, "panel_width": 234, "panel_height": 270,
+                "view_scale": scale, "drawer_closed_capture": True, "drawer_open_capture": True,
+                "output_slot_hidden_when_closed": True, "output_slot_visible_when_open": True,
+            },
+            "screenshots": [],
+        }
+        for name in ("screen-closed.png", "drawer-open.png"):
+            data = (bytes((137, 80, 78, 71, 13, 10, 26, 10)) + bytes((0, 0, 0, 13)) + b"IHDR"
+                    + struct.pack(">II", self.window_width, self.window_height)
+                    + bytes((8, 6, 0, 0, 0)) + bytes(4) + bytes(1100))
+            (self.image_dir / name).write_bytes(data)
+            self.proof["screenshots"].append({
+                "name": name, "sha256": hashlib.sha256(data).hexdigest(),
+                "width": self.window_width, "height": self.window_height,
+            })
+        self.logs = f"IEDCTR_SMELTER_GUI PASSED nonce={self.nonce}"
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    def check(self, proof=None, **overrides):
+        args = dict(proof=self.proof if proof is None else proof, nonce=self.nonce,
+                    executed_sha=self.source_sha, pr_head_sha=self.pr_head_sha,
+                    directory=self.directory, window_width=self.window_width,
+                    window_height=self.window_height, language="fr_fr", logs=self.logs)
+        args.update(overrides)
+        return validate_smelter_gui_proof(**args)
+
+    def test_accepts_current_native_proof_and_two_fresh_captures(self):
+        self.assertEqual(self.check(), self.proof)
+
+    def test_rejects_wrong_nonce_or_source_or_pr_head(self):
+        for patch in ({"nonce": "b" * 32}, {"executed_source_sha": "3" * 40},
+                      {"pull_request_head_sha": "4" * 40}):
+            proof = copy.deepcopy(self.proof)
+            proof.update(patch)
+            with self.subTest(patch=patch), self.assertRaises(SmokeFailure):
+                self.check(proof)
+
+    def test_rejects_wrong_screen_menu_or_slots(self):
+        for patch in ({"screen_identity": "FixtureScreen"}, {"client_menu_identity": "FixtureMenu"},
+                      {"server_menu_context_valid": False}, {"machine_slot_backing_indices": [0, 1]},
+                      {"data_fields": 16}):
+            proof = copy.deepcopy(self.proof)
+            proof.update(patch)
+            with self.subTest(patch=patch), self.assertRaises(SmokeFailure):
+                self.check(proof)
+
+    def test_rejects_empty_live_state(self):
+        proof = copy.deepcopy(self.proof)
+        proof["live_state"]["batch_progress"] = 0
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+
+    def test_rejects_bad_locale_or_translation(self):
+        proof = copy.deepcopy(self.proof)
+        proof["translated_lava_mode"] = "LAVA"
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+        with self.assertRaises(SmokeFailure):
+            self.check(language="en_us")
+
+    def test_rejects_wrong_window_scale_or_clipping(self):
+        proof = copy.deepcopy(self.proof)
+        proof["screen"]["view_scale"] = 1.0
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+        with self.assertRaises(SmokeFailure):
+            self.check(window_height=720)
+
+    def test_rejects_stale_missing_bad_hash_and_extra_screenshots(self):
+        (self.image_dir / "stale.png").write_bytes(b"stale")
+        with self.assertRaises(SmokeFailure):
+            self.check()
+        (self.image_dir / "stale.png").unlink()
+        proof = copy.deepcopy(self.proof)
+        proof["screenshots"][0]["sha256"] = "0" * 64
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+        (self.image_dir / "drawer-open.png").unlink()
+        with self.assertRaises(SmokeFailure):
+            self.check()
+
+    def test_rejects_wrong_capture_size_and_missing_marker(self):
+        proof = copy.deepcopy(self.proof)
+        proof["window_height"] = 720
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+        with self.assertRaises(SmokeFailure):
+            self.check(logs="")
 
 
 if __name__ == "__main__":
