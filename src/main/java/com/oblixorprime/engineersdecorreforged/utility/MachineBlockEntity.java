@@ -236,6 +236,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int mineralQueuedMode = -1;
    private int mineralModeRevision;
    private int mineralTemperature;
+   private int mineralHeatTickRemainder;
    private int mineralStatus;
    private int mineralActualFeRate;
    private boolean mineralBatchActive;
@@ -1653,10 +1654,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.mineralModeRevision = Mth.clamp(tag.getInt("MineralModeRevision"), 0, 29999);
          this.mineralTemperature = Mth.clamp(tag.getInt("MineralTemperature"), 0, 100);
          this.mineralBatchActive = tag.getBoolean("MineralBatchActive");
+         int savedHeatTickRemainder = tag.getInt("MineralHeatTickRemainder");
+         this.mineralHeatTickRemainder = this.mineralBatchActive && !this.mineralCooling
+            && savedHeatTickRemainder >= 0 && savedHeatTickRemainder < MINERAL_HEAT_TICK_PERIOD
+            ? savedHeatTickRemainder : 0;
          this.mineralBatchInput = ItemStack.parseOptional(registries, tag.getCompound("MineralBatchInput"));
       } else if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
          this.progress = 0;
          this.mineralCooling = false;
+         this.mineralHeatTickRemainder = 0;
          this.mineralBatchInput = ItemStack.EMPTY;
       }
       this.hopperRange = Mth.clamp(tag.getInt("HopperRange"), 0, 4);
@@ -1744,6 +1750,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          tag.putInt("MineralModeRevision", this.mineralModeRevision);
          tag.putInt("MineralTemperature", this.mineralTemperature);
          tag.putBoolean("MineralBatchActive", this.mineralBatchActive);
+         tag.putInt("MineralHeatTickRemainder", this.mineralHeatTickRemainder);
          if (!this.mineralBatchInput.isEmpty()) tag.put("MineralBatchInput", this.mineralBatchInput.save(registries));
       }
       tag.putInt("HopperRange", this.hopperRange);
@@ -2396,6 +2403,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.mineralCooling = true;
          this.mineralBatchInput = ItemStack.EMPTY;
          this.progress = 0;
+         this.mineralHeatTickRemainder = 0;
          this.setMineralTemperature(100);
          this.setChanged();
       }
@@ -2434,6 +2442,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.mineralBatchActive = true;
          this.mineralBatchMode = this.mineralMode;
          this.mineralBatchInput = mineral.copyWithCount(1);
+         this.mineralHeatTickRemainder = 0;
          this.progress = 0;
          this.setChanged();
       }
@@ -2463,7 +2472,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.energy -= MINERAL_SMELTER_ENERGY_PER_TICK;
       this.mineralActualFeRate = MINERAL_SMELTER_ENERGY_PER_TICK;
       this.mineralStatus = 1; // HEATING
-      if (this.tickCounter % MINERAL_HEAT_TICK_PERIOD == 0) {
+      this.mineralHeatTickRemainder++;
+      if (this.mineralHeatTickRemainder >= MINERAL_HEAT_TICK_PERIOD) {
+         this.mineralHeatTickRemainder = 0;
          this.progress = Math.min(100, this.progress + 1);
          this.setMineralTemperature(Math.max(this.mineralTemperature, this.progress));
       }
@@ -2483,6 +2494,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             this.mineralCooling = true;
             this.mineralBatchInput = ItemStack.EMPTY;
             this.progress = 0;
+            this.mineralHeatTickRemainder = 0;
             this.mineralStatus = 2; // Cooling now; no free Magma item.
          } else this.finishMineralBatch();
       }
@@ -2503,6 +2515,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.progress = 0;
       this.mineralCooling = false;
       this.mineralBatchActive = false;
+      this.mineralHeatTickRemainder = 0;
       this.mineralBatchInput = ItemStack.EMPTY;
       this.mineralStatus = 0;
       this.setChanged();
@@ -2522,6 +2535,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       this.progress = 0;
       this.mineralBatchActive = false;
       this.mineralCooling = false;
+      this.mineralHeatTickRemainder = 0;
       this.mineralBatchInput = ItemStack.EMPTY;
       this.applyQueuedMineralMode();
       this.setChanged();
