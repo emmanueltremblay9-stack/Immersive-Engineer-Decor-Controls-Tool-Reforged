@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.utility;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public record MachineLayout(
    int imageWidth,
@@ -64,7 +65,8 @@ public record MachineLayout(
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
          case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> processor(kind);
-         case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> fluid(kind);
+         case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
+         case SMALL_MILKING_MACHINE -> smallMilkingMachine();
          case SMALL_SOLAR_PANEL -> solarPanelArtwork();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
          case SMALL_TREE_CUTTER -> treeCutterArtwork();
@@ -230,6 +232,24 @@ public record MachineLayout(
       );
    }
 
+   private static MachineLayout smallMilkingMachine() {
+      return new MachineLayout(
+         216,
+         210,
+         27,
+         136,
+         27,
+         190,
+         List.of(
+            new MachineLayout.MachineSlot(0, 46, 101, "Bucket input", false),
+            new MachineLayout.MachineSlot(1, 156, 101, "Milk output", true)
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_milking_machine_gui"
+      );
+   }
+
    private static MachineLayout fluid(MachineKind kind) {
       String source = kind == MachineKind.SMALL_MILKING_MACHINE ? "Bucket" : "Empty";
       String result = kind == MachineKind.SMALL_MILKING_MACHINE ? "Milk" : "Filled";
@@ -357,7 +377,15 @@ public record MachineLayout(
       AUTOMATION;
    }
 
-   public record MachineSlot(int containerIndex, int x, int y, String role) {
+   public record MachineSlot(int containerIndex, int x, int y, String role, boolean output) {
+      public MachineSlot(int containerIndex, int x, int y, String role) {
+         this(containerIndex, x, y, role, isOutputRole(role));
+      }
+
+      private static boolean isOutputRole(String role) {
+         String normalized = role.toLowerCase(Locale.ROOT);
+         return normalized.contains("output") || normalized.equals("filled") || normalized.equals("milk");
+      }
    }
 
    public record Panel(String label, int x, int y, int width, int height) {

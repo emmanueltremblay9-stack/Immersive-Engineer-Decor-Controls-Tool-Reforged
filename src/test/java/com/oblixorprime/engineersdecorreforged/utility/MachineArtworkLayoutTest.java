@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -41,9 +42,11 @@ public class MachineArtworkLayoutTest {
       for (int index = 0; index < 9; index++) {
          assertEquals(index, layout.machineSlots().get(index).containerIndex());
          assertEquals("Drops", layout.machineSlots().get(index).role());
+         assertFalse(layout.machineSlots().get(index).output());
       }
       assertEquals(9, layout.machineSlots().get(9).containerIndex());
       assertEquals("I/O", layout.machineSlots().get(9).role());
+      assertFalse(layout.machineSlots().get(9).output());
 
       for (int i = 0; i < layout.machineSlots().size(); i++) {
          MachineLayout.MachineSlot first = layout.machineSlots().get(i);
