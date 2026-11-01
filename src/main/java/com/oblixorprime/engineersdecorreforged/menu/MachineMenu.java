@@ -5,6 +5,8 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
+import java.util.Locale;
 import java.util.function.IntFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -150,6 +152,12 @@ public class MachineMenu extends AbstractContainerMenu {
       };
    }
 
+   public int smallFluidFunnelFluidCode() {
+      return this.kind == MachineKind.SMALL_FLUID_FUNNEL
+         ? SmallFluidFunnelFluidSync.normalize(this.data.get(11))
+         : 0;
+   }
+
    public Fluid storedFluid() {
       return decodeStoredFluid(this.kind, this.fluidAmount(), this.data.get(11), this.data.get(12), this.data.get(13));
    }
@@ -174,6 +182,7 @@ public class MachineMenu extends AbstractContainerMenu {
    static int decodeFluidRegistryId(int low, int middle, int high) {
       return (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
    }
+
 
    public int energyStored() {
       return switch (this.kind) {
