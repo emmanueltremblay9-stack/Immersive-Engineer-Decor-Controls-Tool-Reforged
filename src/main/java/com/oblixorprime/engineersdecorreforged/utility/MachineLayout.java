@@ -16,7 +16,7 @@ public record MachineLayout(
    MachineLayout.LayoutStyle style,
    String textureName
 ) {
-   public static final int BACKING_SLOT_COUNT = 27;
+   public static final int BACKING_SLOT_COUNT = 55;
 
    public MachineLayout(
       int imageWidth,
@@ -37,7 +37,7 @@ public record MachineLayout(
       }
 
       for (MachineLayout.MachineSlot slot : machineSlots) {
-         if (slot.containerIndex() < 0 || slot.containerIndex() >= 27) {
+         if (slot.containerIndex() < 0 || slot.containerIndex() >= BACKING_SLOT_COUNT) {
             throw new IllegalArgumentException("Machine slot index out of range: " + slot.containerIndex());
          }
       }
@@ -122,7 +122,15 @@ public record MachineLayout(
    }
 
    private static MachineLayout crate() {
-      return base(grid(0, 8, 18, 9, 3, "Storage"), List.of(new MachineLayout.Panel("Storage", 6, 15, 164, 59)), MachineLayout.LayoutStyle.STORAGE, null);
+      List<MachineLayout.MachineSlot> slots = new ArrayList<>(55);
+      for (int row = 0; row < 6; row++) {
+         for (int column = 0; column < 9; column++) {
+            slots.add(new MachineLayout.MachineSlot(column + row * 9, 28 + column * 18, 10 + row * 18, "Storage"));
+         }
+      }
+      slots.add(new MachineLayout.MachineSlot(54, 191, 100, "Frame hint"));
+      return new MachineLayout(213, 206, 28, 125, 28, 183, slots, List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "labeled_crate_gui");
    }
 
    private static MachineLayout metalCraftingTable() {

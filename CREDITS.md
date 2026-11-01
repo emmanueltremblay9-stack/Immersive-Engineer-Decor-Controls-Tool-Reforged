@@ -3,6 +3,7 @@
 ## Original Projects
 
 - Stefan Wilhelm / wilechaote / Wile / stfwi: original Engineer's Decor, original Gauges and Switches / RsGauges, and original Engineer's Tools.
+- Labeled Storage Crate GUI, block model/state and textures are restored from Engineer's Decor 1.1.28 at commit 837b8678f4fb5ebd818d14c5cbb476273be8405b; the original MIT attribution is retained.
 
 Source references:
 
