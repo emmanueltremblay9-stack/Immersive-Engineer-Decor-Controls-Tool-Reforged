@@ -925,6 +925,56 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 200)
+   public static void small_mineral_smelter_charges_every_sparse_active_heat_tick(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      int acceptedFe = 0;
+      for (int tick = 0; tick < 10000; tick++) {
+         if ((tick + 1) % 10 == 0) {
+            acceptedFe += machine.energyStorage(null).receiveEnergy(16, false);
+         }
+         MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      }
+      helper.assertValueEqual(16000, acceptedFe, "the simulation supplied exactly 1000 paid active heat ticks");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "the mineral completes after 1000 paid active heat ticks");
+      helper.assertValueEqual(1000, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+         "sparse FE does not shorten or alter the Lava yield");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(),
+         "the complete batch still costs 16000 FE when active ticks are separated by pauses");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 200)
+   public static void small_mineral_smelter_heat_tick_remainder_survives_redstone_pause_and_reload(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      for (int tick = 0; tick < 9; tick++) {
+         helper.assertValueEqual(16, machine.energyStorage(null).receiveEnergy(16, false), "one active FE tick is accepted");
+         MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      }
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "nine paid active ticks do not make a full progress point");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "each active tick costs 16 FE");
+
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      saved.putInt("TickCounter", 9); // Put the legacy global timer at its boundary after saving the paid remainder.
+      helper.assertValueEqual(9, saved.getInt("MineralHeatTickRemainder"), "the paid active-tick remainder is saved");
+      machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+
+      helper.setBlock(TEST_POS.east(), Blocks.REDSTONE_BLOCK.defaultBlockState());
+      MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "redstone inhibition does not add heat progress");
+      helper.assertValueEqual(8, machine.dataAccessForTests().get(12), "the real server status reports redstone inhibition");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "redstone inhibition does not charge FE");
+
+      helper.setBlock(TEST_POS.east(), Blocks.AIR);
+      helper.assertValueEqual(16, machine.energyStorage(null).receiveEnergy(16, false), "FE can resume after redstone inhibition");
+      MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the tenth paid active tick advances exactly one point after reload");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "the resumed active tick costs 16 FE");
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 240)
    public static void small_mineral_smelter_waits_when_lava_tank_is_full(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
@@ -940,6 +990,12 @@ public final class MachineGuiGameTests {
       helper.assertTrue(machine.getItem(2).isEmpty(), "full lava tank should prevent magma output");
       helper.assertValueEqual(4000, fluidHandler.getFluidInTank(0).getAmount(), "full lava tank should keep all stored lava");
       helper.assertValueEqual(4000, machine.energyStorage(null).getEnergyStored(), "full lava tank should prevent wasting FE");
+      helper.assertValueEqual(5, machine.dataAccessForTests().get(12), "full tank status is synchronized from the server");
+      FluidStack drained = machine.fluidHandler(Direction.DOWN).drain(1000, FluidAction.EXECUTE);
+      helper.assertValueEqual(1000, drained.getAmount(), "bottom automation can free tank capacity");
+      tickMachine(helper, machine, 10);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the blocked batch resumes after tank space is freed");
+      helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
       helper.succeed();
    }
 
@@ -1034,6 +1090,11 @@ public final class MachineGuiGameTests {
       helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "blocked output cannot consume input");
       helper.assertValueEqual(64, machine.getItem(2).getCount(), "unrelated output stack is unchanged");
       helper.assertValueEqual(4000, machine.energyStorage(null).getEnergyStored(), "blocked job does not burn FE");
+      helper.assertValueEqual(6, machine.dataAccessForTests().get(12), "blocked item output status is synchronized from the server");
+      machine.setItem(2, ItemStack.EMPTY);
+      tickMachine(helper, machine, 10);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the batch resumes after output space is freed");
+      helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
       helper.succeed();
    }
 

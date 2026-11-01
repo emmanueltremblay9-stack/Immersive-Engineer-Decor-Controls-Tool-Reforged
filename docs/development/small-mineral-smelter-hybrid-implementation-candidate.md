@@ -15,7 +15,9 @@ Status: **PROPOSED / DRAFT PR**. This branch implements a playable candidate bas
 
 ## Balancing still proposed, not canon
 
-The work cadence is **1 progress unit every 10 game ticks**, 16 FE per active heat tick, with output at 90 (Magma) or 100 (Lava); cooling advances 1 unit every 10 ticks without FE. Up to 16,000 FE and 4,000 mB lava follow the existing IEDCTR scale. Contact damage is 1 health point (half a heart) no faster than once per 20 entity ticks. These values require owner review and actual-world balancing. Fluids/items must not be lost or duplicated under simultaneous transfers.
+The work cadence is **1 progress unit per 10 paid active heat ticks**, at 16 FE per paid tick, with output at 90 (Magma) or 100 (Lava); cooling advances 1 unit every 10 game ticks without FE. Up to 16,000 FE and 4,000 mB lava follow the existing IEDCTR scale. Contact damage is 1 health point (half a heart) no faster than once per 20 entity ticks. These values require owner review and actual-world balancing. Fluids/items must not be lost or duplicated under simultaneous transfers.
+
+Each heat progress unit now requires ten successfully paid, unredstoned active ticks. Pauses do not advance that counter, and its partial remainder is saved with an active batch so reloads cannot shorten the proposed cost or duration.
 
 ## GUI artwork and provenance — outstanding integration gate
 
