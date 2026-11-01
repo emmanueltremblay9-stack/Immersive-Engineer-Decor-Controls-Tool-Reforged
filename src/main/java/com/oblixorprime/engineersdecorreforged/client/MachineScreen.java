@@ -915,6 +915,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+      Component solarEnergyTooltip = this.solarPanelEnergyTooltip(mouseX, mouseY);
+      if (solarEnergyTooltip != null) {
+         graphics.renderTooltip(this.font, solarEnergyTooltip, mouseX, mouseY);
+         return;
+      }
+
       Component blockBreakerTooltip = this.blockBreakerTooltip(mouseX, mouseY);
       if (blockBreakerTooltip != null) {
          graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);
@@ -932,6 +938,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             }
          }
       }
+   }
+
+   private Component solarPanelEnergyTooltip(int mouseX, int mouseY) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      if (menu.kind() != MachineKind.SMALL_SOLAR_PANEL || !this.isHovering(24, 104, 194, 17, mouseX, mouseY)) {
+         return null;
+      }
+
+      return Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.energy_tooltip",
+         menu.energyStored(), menu.energyCapacity(), menu.energyDisplayGranularity()
+      );
    }
 
    private Component slotTooltip(MachineLayout.MachineSlot slot) {
