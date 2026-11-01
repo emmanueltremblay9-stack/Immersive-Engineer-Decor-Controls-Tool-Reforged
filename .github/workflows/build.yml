@@ -253,7 +253,7 @@ jobs:
 
   native-smelter-gui:
     name: Native Small Mineral Smelter GUI
-    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.number == 133 }}
+    if: ${{ github.event_name == 'pull_request' && (github.event.pull_request.number == 133 || github.event.pull_request.number == 144) }}
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
@@ -281,7 +281,7 @@ jobs:
           python tools/validation/client_gameplay.py --smelter-gui-only --smelter-language en_us --smelter-window-height 720 --prepare-timeout 600 --timeout 600
           python tools/validation/client_gameplay.py --smelter-gui-only --smelter-language fr_fr --smelter-window-height 260 --prepare-timeout 600 --timeout 600
       - name: Retain native Small Mineral Smelter GUI proof
-        if: ${{ always() && github.event_name == 'pull_request' && github.event.pull_request.number == 133 }}
+        if: ${{ always() && github.event_name == 'pull_request' && (github.event.pull_request.number == 133 || github.event.pull_request.number == 144) }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: native-small-mineral-smelter-gui

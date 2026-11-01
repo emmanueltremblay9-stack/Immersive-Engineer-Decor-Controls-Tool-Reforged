@@ -31,7 +31,7 @@ def invalid_constant(value: str) -> None:
 
 
 def evaluate_needs(raw: str, require_native_gui: bool = False) -> tuple[dict[str, str], list[str]]:
-    """Require the four base families and the targeted GUI job only on PR #133."""
+    """Require the native GUI capture on the Smelter implementation and integration PRs."""
     results = dict.fromkeys(ALL_JOBS, "missing")
     try:
         needs = json.loads(raw, object_pairs_hook=unique_object, parse_constant=invalid_constant)
@@ -100,7 +100,7 @@ def identity_lines(env: Mapping[str, str], checkout_sha: str) -> list[str]:
 def summarize(raw: str, env: Mapping[str, str], checkout_sha: str) -> tuple[bool, str]:
     require_native_gui = (
         env.get("GITHUB_EVENT_NAME") == "pull_request"
-        and env.get("CI_PR_NUMBER") == "133"
+        and env.get("CI_PR_NUMBER") in {"133", "144"}
     )
     results, errors = evaluate_needs(raw, require_native_gui=require_native_gui)
     try:
@@ -119,7 +119,7 @@ def summarize(raw: str, env: Mapping[str, str], checkout_sha: str) -> tuple[bool
         lines += ["Validation errors:", "", *(f"- {error}" for error in errors), ""]
     lines += [
         "The four required families cover eight validation jobs, including both matrices. "
-        "Native Smelter GUI capture is required only for PR #133; the workflow may skip it on other PRs or events, but a failure never passes.",
+        "Native Smelter GUI capture is required only for PR #133 and #144; the workflow may skip it on other PRs or events, but a failure never passes.",
         "Diagnostic artifacts retain the existing 14-day lifetime; this summary does not upload a runtime JAR.",
         "This aggregate is informational until separately configured in branch protection. "
         "It does not authorize a merge or establish release readiness.",
