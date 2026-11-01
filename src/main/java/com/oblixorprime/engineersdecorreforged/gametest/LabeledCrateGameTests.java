@@ -28,6 +28,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -162,6 +164,8 @@ public final class LabeledCrateGameTests {
       helper.assertValueEqual(1, drops.size(), "normal break should preserve the imported crate as one Labeled Crate item");
       helper.assertTrue(sourceEnchantments.equals(drops.get(0).get(DataComponents.ENCHANTMENTS)),
          "normal break should reattach imported enchantments to the Labeled Crate item");
+      helper.assertTrue(ItemStack.matches(sourceItems.get(26), placed.getItem(26)),
+         "previewing crate loot should not drain its stored inventory");
       helper.succeed();
    }
 
@@ -366,23 +370,39 @@ public final class LabeledCrateGameTests {
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
-   public static void labeled_crate_explosion_releases_items_without_crate_drop(GameTestHelper helper) {
+   public static void labeled_crate_explosion_releases_items_without_drop_decay(GameTestHelper helper) {
+      assertCrateExplosionReleasesContents(helper, false);
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_explosion_releases_items_with_drop_decay(GameTestHelper helper) {
+      assertCrateExplosionReleasesContents(helper, true);
+   }
+
+   private static void assertCrateExplosionReleasesContents(GameTestHelper helper, boolean dropDecay) {
       MachineBlockEntity crate = placeCrate(helper, TEST_POS);
       crate.setItem(0, new ItemStack(Items.IRON_INGOT, 4));
       crate.setItem(54, new ItemStack(Items.COMPASS));
-      BlockState state = crate.getBlockState();
-      LootParams.Builder params = new LootParams.Builder(helper.getLevel())
-         .withParameter(LootContextParams.BLOCK_ENTITY, crate)
-         .withParameter(LootContextParams.EXPLOSION_RADIUS, 1.0F);
-      List<ItemStack> drops = ModBlocks.LABELED_CRATE.get().getDrops(state, params);
-      helper.assertValueEqual(drops.size(), 2, "explosion should release storage and hint items");
-      helper.assertTrue(drops.stream().noneMatch(stack -> stack.is(ModBlocks.LABELED_CRATE.get().asItem())),
-         "explosion should not drop the crate block");
-      helper.assertTrue(drops.stream().anyMatch(stack -> stack.is(Items.IRON_INGOT) && stack.getCount() == 4),
-         "explosion should release stored item stacks intact");
-      helper.assertTrue(drops.stream().anyMatch(stack -> stack.is(Items.COMPASS)),
-         "explosion should release the hint item too");
-      helper.assertTrue(crate.getItem(0).isEmpty() && crate.getItem(54).isEmpty(), "explosion extraction should clear contents once");
+      GameRules.BooleanValue dropDecayRule = helper.getLevel().getGameRules().getRule(GameRules.RULE_TNT_EXPLOSION_DROP_DECAY);
+      boolean previousDropDecay = dropDecayRule.get();
+      dropDecayRule.set(dropDecay, helper.getLevel().getServer());
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+      try {
+         helper.getLevel().explode(
+            null, absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 0.5, 4.0F, false, Level.ExplosionInteraction.TNT
+         );
+         List<ItemEntity> drops = helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0));
+         helper.assertValueEqual(2, drops.size(), "explosion should release storage and hint items");
+         helper.assertTrue(drops.stream().noneMatch(entity -> entity.getItem().is(ModBlocks.LABELED_CRATE.get().asItem())),
+            "explosion should not drop the crate block");
+         helper.assertTrue(drops.stream().anyMatch(entity -> entity.getItem().is(Items.IRON_INGOT) && entity.getItem().getCount() == 4),
+            "explosion should release stored item stacks intact");
+         helper.assertTrue(drops.stream().anyMatch(entity -> entity.getItem().is(Items.COMPASS)),
+            "explosion should release the hint item too");
+         helper.assertTrue(crate.getItem(0).isEmpty() && crate.getItem(54).isEmpty(), "explosion extraction should clear contents once");
+      } finally {
+         dropDecayRule.set(previousDropDecay, helper.getLevel().getServer());
+      }
       helper.succeed();
    }
 

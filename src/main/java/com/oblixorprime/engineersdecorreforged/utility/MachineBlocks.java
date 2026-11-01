@@ -25,6 +25,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -247,6 +249,23 @@ public final class MachineBlocks {
       }
 
       @Override
+      public boolean dropFromExplosion(Explosion explosion) {
+         return false;
+      }
+
+      @Override
+      public void onBlockExploded(BlockState state, ServerLevel level, BlockPos pos, Explosion explosion) {
+         if (level.getBlockEntity(pos) instanceof MachineBlockEntity machine
+               && machine.kind() == MachineKind.LABELED_CRATE
+               && machine.beginLabeledCrateDropHandling()) {
+            for (ItemStack drop : machine.drainLabeledCrateContents()) {
+               Block.popResource(level, pos, drop);
+            }
+         }
+         super.onBlockExploded(state, level, pos, explosion);
+      }
+
+      @Override
       public void setPlacedBy(Level level, BlockPos pos, BlockState state, net.minecraft.world.entity.LivingEntity placer, ItemStack stack) {
          super.setPlacedBy(level, pos, state, placer, stack);
          if (!level.isClientSide) {
@@ -271,12 +290,8 @@ public final class MachineBlocks {
                || machine.kind() != MachineKind.LABELED_CRATE || machine.getLevel() == null || machine.getLevel().isClientSide) {
             return super.getDrops(state, params);
          }
-         if (!machine.beginLabeledCrateDropHandling()) {
+         if (machine.isLabeledCrateDropHandled()) {
             return List.of();
-         }
-
-         if (params.getOptionalParameter(LootContextParams.EXPLOSION_RADIUS) != null) {
-            return machine.drainLabeledCrateContents();
          }
 
          CompoundTag crateData = machine.saveWithoutMetadata(machine.getLevel().registryAccess());
@@ -288,7 +303,6 @@ public final class MachineBlocks {
          if (!machine.labeledCrateItemEnchantments().isEmpty()) {
             crate.set(DataComponents.ENCHANTMENTS, machine.labeledCrateItemEnchantments());
          }
-         machine.drainLabeledCrateContents();
          return List.of(crate);
       }
 

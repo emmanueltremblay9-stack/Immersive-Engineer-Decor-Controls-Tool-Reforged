@@ -52,8 +52,10 @@ public final class ModNetworking {
    private static void handleLabeledCrateQuickMove(LabeledCrateQuickMovePayload payload, IPayloadContext context) {
       context.enqueueWork(() -> {
          if (context.player() instanceof ServerPlayer serverPlayer
-               && serverPlayer.containerMenu instanceof LabeledCrateMenu menu
-               && menu.containerId == payload.containerId()) {
+              && !serverPlayer.isSpectator()
+              && serverPlayer.containerMenu instanceof LabeledCrateMenu menu
+              && menu.containerId == payload.containerId()
+              && menu.stillValid(serverPlayer)) {
             menu.quickMoveAll(serverPlayer, payload.slotId());
          }
       });

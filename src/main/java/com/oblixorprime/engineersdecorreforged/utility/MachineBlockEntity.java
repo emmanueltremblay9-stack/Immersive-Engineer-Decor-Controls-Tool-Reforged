@@ -545,6 +545,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return handled;
    }
 
+   public boolean isLabeledCrateDropHandled() {
+      return this.labeledCrateDropHandled;
+   }
+
    public void beginLabeledCratePlayerBreak() {
       if (this.kind() == MachineKind.LABELED_CRATE) {
          this.labeledCratePlayerBreakPending = true;
@@ -866,7 +870,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             stack = stack.copyWithCount(1);
          }
       }
+      boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
+      ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
       super.setItem(slot, stack);
+      if (updateFrame && !ItemStack.matches(previousFrame, this.getItem(slot)) && this.level != null && !this.level.isClientSide) {
+         this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), Block.UPDATE_CLIENTS);
+      }
    }
 
    @Override
@@ -2056,7 +2065,20 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       BlockEntity targetEntity = this.level.getBlockEntity(target);
       List<ItemStack> drops = Block.getDrops(targetState, serverLevel, target, targetEntity);
       int[] slots = this.accessibleSlots();
-      if (!this.canInsertAllIntoSlots(drops, slots) || !this.level.destroyBlock(target, false, null, 512)) {
+      if (!this.canInsertAllIntoSlots(drops, slots)) {
+         return false;
+      }
+
+      MachineBlockEntity crate = targetEntity instanceof MachineBlockEntity machine && machine.kind() == MachineKind.LABELED_CRATE
+         ? machine
+         : null;
+      if (crate != null && !crate.beginLabeledCrateDropHandling()) {
+         return false;
+      }
+      if (!this.level.destroyBlock(target, false, null, 512)) {
+         if (crate != null) {
+            crate.consumeLabeledCrateDropHandling();
+         }
          return false;
       }
 

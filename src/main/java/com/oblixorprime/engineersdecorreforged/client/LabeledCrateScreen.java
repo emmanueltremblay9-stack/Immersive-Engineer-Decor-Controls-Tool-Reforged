@@ -28,6 +28,12 @@ public final class LabeledCrateScreen extends AbstractContainerScreen<LabeledCra
    }
 
    @Override
+   public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+      super.render(graphics, mouseX, mouseY, partialTick);
+      this.renderTooltip(graphics, mouseX, mouseY);
+   }
+
+   @Override
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
       graphics.blit(BACKGROUND, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
    }
