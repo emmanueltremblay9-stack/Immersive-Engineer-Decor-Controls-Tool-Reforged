@@ -525,15 +525,29 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             return input ? MachineBlockEntity.this.fluidHandler.fill(resource, action) : 0;
          }
          public FluidStack drain(FluidStack resource, FluidAction action) {
-            return input ? FluidStack.EMPTY : MachineBlockEntity.this.fluidHandler.drain(resource, action);
+            if (input || resource.isEmpty()) return FluidStack.EMPTY;
+            int available = MachineBlockEntity.this.availableMineralFluidForExternalDrain();
+            if (available <= 0) return FluidStack.EMPTY;
+            FluidStack bounded = resource.copy();
+            bounded.setAmount(Math.min(bounded.getAmount(), available));
+            return MachineBlockEntity.this.fluidHandler.drain(bounded, action);
          }
          public FluidStack drain(int maxDrain, FluidAction action) {
-            return input ? FluidStack.EMPTY : MachineBlockEntity.this.fluidHandler.drain(maxDrain, action);
+            if (input) return FluidStack.EMPTY;
+            int available = MachineBlockEntity.this.availableMineralFluidForExternalDrain();
+            return available <= 0 ? FluidStack.EMPTY
+               : MachineBlockEntity.this.fluidHandler.drain(Math.min(maxDrain, available), action);
          }
       };
    }
+
+   private int availableMineralFluidForExternalDrain() {
+      if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER || !this.mineralCooling) return this.fluidAmount;
+      return Math.max(0, this.fluidAmount - BUCKET_AMOUNT);
+   }
    private final IFluidHandler mineralTopFluid = this.mineralPort(true);
    private final IFluidHandler mineralBottomFluid = this.mineralPort(false);
+
 
    private final ContainerData dataAccess = new ContainerData() {
       public int get(int index) {
@@ -740,6 +754,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    public ContainerData dataAccessForTests() {
       return this.dataAccess;
    }
+
+
 
    public static void serverTick(Level level, BlockPos pos, BlockState state, MachineBlockEntity machine) {
       MachineKind kind = machine.kind();
@@ -2557,7 +2573,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          int accepted = sent.getCount() - remainder.getCount();
          if (accepted > 0) this.extractMineralOutput(accepted, false);
       }
-      if (this.fluidAmount > 0) this.pushFluid(Direction.DOWN, 100);
+      int extractable = this.availableMineralFluidForExternalDrain();
+      if (extractable > 0) this.pushFluid(Direction.DOWN, Math.min(100, extractable));
    }
 
    private void tickFreezer(boolean powered) {
@@ -2988,7 +3005,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          return this.addHeldFluid(stack, player, hand, "milk", capacity);
       }
 
-      if (stack.is(Items.BUCKET) && this.fluidAmount >= 1000) {
+      if (stack.is(Items.BUCKET) && this.availableMineralFluidForExternalDrain() >= 1000) {
          ItemStack filledBucket = this.bucketForFluid();
          if (filledBucket.isEmpty()) {
             return false;
@@ -3017,7 +3034,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       } else {
          return stack.is(Items.MILK_BUCKET)
             ? this.canAddFluid("milk", 1000, capacity)
-            : stack.is(Items.BUCKET) && this.fluidAmount >= 1000 && !this.bucketForFluid().isEmpty();
+            : stack.is(Items.BUCKET) && this.availableMineralFluidForExternalDrain() >= 1000 && !this.bucketForFluid().isEmpty();
       }
    }
 

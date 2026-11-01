@@ -1009,6 +1009,44 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 1200)
+   public static void small_mineral_smelter_reserves_obsidian_lava_from_all_external_outputs(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineBlockEntity receiver = placeMachineAt(helper, TEST_POS.below(), ModBlocks.FLUID_BARREL, MachineKind.FLUID_BARREL);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      IFluidHandler tank = receiver.fluidHandler(Direction.UP);
+      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      IFluidHandler bottom = machine.fluidHandler(Direction.DOWN);
+      helper.assertTrue(tank != null && top != null && bottom != null, "Smelter and receiver expose their expected fluid handlers");
+      helper.assertValueEqual(1500, top.fill(new FluidStack(Fluids.LAVA, 1500), FluidAction.EXECUTE),
+         "top input accepts the test lava plus an extractable surplus");
+      machine.handleGuiAction(null, 31, 2, 0);
+      tickMachine(helper, machine, 20);
+
+      helper.assertValueEqual(100, tank.getFluidInTank(0).getAmount(), "the bottom push transfers one bounded interval of surplus");
+      helper.assertValueEqual(1400, top.getFluidInTank(0).getAmount(), "automatic output keeps the committed 1000 mB reserve");
+      helper.assertValueEqual(250, bottom.drain(new FluidStack(Fluids.LAVA, 250), FluidAction.EXECUTE).getAmount(),
+         "fluid-stack extraction may withdraw part of the surplus");
+      helper.assertValueEqual(150, bottom.drain(1000, FluidAction.EXECUTE).getAmount(),
+         "amount extraction is capped at the remaining surplus");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "simultaneous output paths cannot consume the reserved bucket");
+
+      CompoundTag coolingSave = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      machine.loadWithComponents(coolingSave, helper.getLevel().registryAccess());
+      ItemStack emptyBucket = new ItemStack(Items.BUCKET);
+      player.setItemInHand(InteractionHand.MAIN_HAND, emptyBucket);
+      helper.assertTrue(!machine.canPreviewItemUse(emptyBucket), "bucket preview respects the active cooling reserve");
+      helper.assertTrue(!machine.handleItemUse(emptyBucket, player, InteractionHand.MAIN_HAND),
+         "bucket extraction cannot withdraw the active Obsidian lot");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "rejected bucket use preserves the full reserve");
+
+      tickMachine(helper, machine, 1000);
+      helper.assertTrue(machine.getItem(2).is(Items.OBSIDIAN), "the reserved bucket completes the active Obsidian lot");
+      helper.assertValueEqual(0, top.getFluidInTank(0).getAmount(), "the completed lot consumes its reserved lava once");
+      helper.assertValueEqual(100, tank.getFluidInTank(0).getAmount(), "only the earlier surplus transfer reached the receiver");
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 1050)
    public static void small_mineral_smelter_selected_magma_has_no_lava_byproduct(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);

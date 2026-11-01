@@ -19,11 +19,15 @@ The work cadence is **1 progress unit per 10 paid active heat ticks**, at 16 FE 
 
 Each heat progress unit now requires ten successfully paid, unredstoned active ticks. Pauses do not advance that counter, and its partial remainder is saved with an active batch so reloads cannot shorten the proposed cost or duration.
 
-## GUI artwork and provenance — outstanding integration gate
+## GUI handoff
 
-The original conversation-generated **1168×1346** faceplate (`Small Mineral Smelter Control Panel(1).png`) and the 44 MB v0.5 artifact package exist in the ChatGPT conversation, but their binary bytes were **not imported in this GitHub PR**. This draft uses the already committed IEDCTR steel texture `textures/gui/block_breaker_v08/background.png` to keep the screen runnable. The per-machine panel geometry, modes, server values and vanilla slots are real Java GUI work; **the exact custom faceplate is still missing** and must not be described as pixel-perfect in Minecraft until the 1168×1346 artwork is committed, visually reviewed and rendered at several GUI scales. Do not silently substitute a lower-fidelity generic screenshot as "exact original".
+The v0.5 GUI contract and dedicated server projection are tracked in dependent draft PR #133. This PR remains focused on the hybrid mechanics.
 
-Toolkit used for source-format guidance: `emmanueltremblay9-stack/pixel-art-skill-toolkit@98eecf77190d5716820ec659f8aeb790513c8e93`, `skill/pixel-art-json/SKILL.md`. The toolkit is an **authoring dependency**, not a runtime library added to the mod.
+## Obsidian fluid reservation — proposal pending owner decision
+
+The v0.4 draft requires an atomic 1,000 mB lava-to-Obsidian lot and conservation under simultaneous extraction, but does not define whether a pipe or bucket may withdraw fluid during cooling. This candidate reserves the committed 1,000 mB while that lot cools and permits bottom automation, direct fluid drains and buckets to extract only the surplus. This is the least restrictive implementation that protects the active transaction; the transfer policy remains a product proposal for owner review, not an approved v0.4/v0.5 rule.
+
+
 
 ## Save compatibility
 
