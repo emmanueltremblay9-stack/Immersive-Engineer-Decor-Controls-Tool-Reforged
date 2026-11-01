@@ -29,6 +29,10 @@ Source reference:
 
 - BluSunrize and Immersive Engineering contributors: Immersive Engineering, required at runtime. This fork depends on IE for referenced industrial assets, manual behavior, and FE compatibility; IE remains a separate upstream project under its own license.
 
+## User-provided GUI artwork
+
+- Passive Fluid Accumulator reference artwork supplied by the repository owner for this integration. No separate artwork license statement accompanied the PNG; this records provenance without asserting a separate license.
+
 ## Reviewed fluidlogging reference
 
 - Leximon, NightEpiphany / MoreThanHidden, and KoalaNalle / PricelessKoala:

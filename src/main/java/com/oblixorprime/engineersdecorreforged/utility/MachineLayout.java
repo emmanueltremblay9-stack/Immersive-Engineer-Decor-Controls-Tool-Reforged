@@ -78,10 +78,11 @@ public record MachineLayout(
          case FACTORY_HOPPER -> hopper();
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
-            case SMALL_MINERAL_SMELTER -> mineralHybrid();
-            case SMALL_FREEZER -> freezer();
-            case FLUID_BARREL -> fluidBarrel();
-            case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
+         case SMALL_MINERAL_SMELTER -> mineralHybrid();
+         case SMALL_FREEZER -> freezer();
+         case FLUID_BARREL -> fluidBarrel();
+         case SMALL_FLUID_FUNNEL -> fluid(kind);
+         case PASSIVE_FLUID_ACCUMULATOR -> passiveFluidAccumulator();
          case SMALL_MILKING_MACHINE -> smallMilkingMachine();
          case SMALL_SOLAR_PANEL -> solarPanelArtwork();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
@@ -327,6 +328,24 @@ public record MachineLayout(
          ),
          MachineLayout.LayoutStyle.FLUID,
          null
+      );
+   }
+
+   private static MachineLayout passiveFluidAccumulator() {
+      return new MachineLayout(
+         209,
+         238,
+         24,
+         150,
+         24,
+         205,
+         List.of(
+            new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket", false),
+            new MachineLayout.MachineSlot(1, 149, 106, "Filled", true)
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "passive_fluid_accumulator"
       );
    }
 
