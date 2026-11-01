@@ -62,7 +62,7 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
    protected void init() {
       super.init();
       outputDrawerButton = addRenderableWidget(Button.builder(
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.accessible"),
+         outputDrawerAccessibleComponent(),
          button -> toggleOutputDrawer())
          .bounds(leftPos + 162, topPos + 35, 54, 8)
          .tooltip(Tooltip.create(Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.tooltip")))
@@ -92,6 +92,12 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       outputDrawerOpen = !outputDrawerOpen;
       menu.setSmelterOutputDrawerOpen(outputDrawerOpen);
       updateModeButtonAvailability();
+   }
+
+   private Component outputDrawerAccessibleComponent() {
+      return Component.translatable(outputDrawerOpen
+         ? "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.close_accessible"
+         : "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.open_accessible");
    }
 
    private void updateModeButtonAvailability() {
