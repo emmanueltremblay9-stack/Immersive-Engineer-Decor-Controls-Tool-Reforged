@@ -1162,7 +1162,7 @@ public final class MachineGuiGameTests {
       helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), "top item port cannot extract the input");
       helper.assertValueEqual(1, bottomItems.insertItem(0, new ItemStack(Items.COBBLESTONE), true).getCount(),
          "bottom item port rejects insertion");
-      Direction back = machine.getBlockState().getValue(MachineBlocks.FACING).getOpposite();
+      Direction back = machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
       IEnergyStorage rearEnergy = helper.getLevel().getCapability(EnergyStorage.BLOCK, pos, back);
       helper.assertTrue(rearEnergy != null && rearEnergy.canReceive() && !rearEnergy.canExtract(), "rear FE port receives energy without extraction");
       helper.assertTrue(helper.getLevel().getCapability(EnergyStorage.BLOCK, pos, back.getOpposite()) == null,
