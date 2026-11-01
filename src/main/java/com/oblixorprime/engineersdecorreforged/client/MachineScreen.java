@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelArtworkMask;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import java.util.Locale;
 import net.minecraft.client.gui.GuiGraphics;
@@ -1093,6 +1094,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          graphics.fill(x0 + slot.x(), y0 + slot.y(), x0 + slot.x() + 18, y0 + slot.y() + 18, mask);
       }
 
+      // Cover the complete printed bucket art while keeping each illustration's outer metal bezel visible.
+      for (SmallFluidFunnelArtworkMask bucketMask : SmallFluidFunnelArtworkMask.sampleBucketMasks()) {
+         graphics.fill(x0 + bucketMask.left(), y0 + bucketMask.top(), x0 + bucketMask.right(), y0 + bucketMask.bottom(), mask);
+      }
+
       graphics.fill(x0 + 21, y0 + 63, x0 + 66, y0 + 76, mask);
       graphics.fill(x0 + 143, y0 + 63, x0 + 188, y0 + 76, mask);
       graphics.fill(x0 + 80, y0 + 80, x0 + 131, y0 + 91, mask);
@@ -1172,6 +1178,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case 1 -> "water";
          case 2 -> "lava";
          case 3 -> "milk";
+         case 4 -> "other";
          default -> "empty";
       };
       return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid." + state);
@@ -1182,6 +1189,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case 1 -> 0xFF3F76E4;
          case 2 -> 0xFFF06A28;
          case 3 -> 0xFFE6E1D5;
+         case 4 -> 0xFF8296A0;
          default -> 0xFF142028;
       };
    }

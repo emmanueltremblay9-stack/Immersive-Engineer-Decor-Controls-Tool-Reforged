@@ -12,8 +12,8 @@
 
 - The native 385×439 crop is blitted to the separate 209×238 logical destination using the full 385×439 source region and texture dimensions. A shared geometry record keeps source and destination sizes distinct and rejects out-of-bounds source regions; a pure unit test covers the mapping. The near-uniform fit preserves the 18-pixel Minecraft slot pitch, with about 0.13% relative aspect difference.
 - The existing Small Fluid Funnel machine menu remains authoritative: machine slot 0 is the empty-bucket input, slot 1 is the filled-bucket output, player inventory remains 27 slots plus 9 hotbar slots, fluid amount is the existing field 2 and capacity is 3000 mB.
-- The existing server fluid type (water, lava, or milk) is sent in unused funnel-only field 11 as a bounded code. It controls the displayed fluid label and tank fill tint. No new tank, fluid support, temperature, redstone behavior, recipe, or gameplay rule is added.
-- The illustrative bucket icons, French text and 1 500 / 3 000 mB sample are masked in the runtime screen; current item stacks, localized labels, amount, capacity and fill are drawn over the reference.
+- Known server fluid types (water, lava, and milk) use their existing codes in funnel-only field 11. Any positive tank amount with an unrecognized legacy fluid type uses a separate generic “Other fluid” code and neutral fill tint; only a zero amount displays as empty. This is a display fallback and does not add fluid acceptance or transfer behavior.
+- The runtime screen masks the complete sample bucket icons independently of slot geometry while keeping the outer metal bezels visible. French sample text and the 1 500 / 3 000 mB value are also masked; live slots, localized labels, amount, capacity, and fill remain tied to current menu data.
 - UI asset provenance is recorded in both credits files. The source PR describes the image as owner-provided but supplies no separate artwork license statement; this PR records provenance and does not claim a distinct artwork license.
 
 ## Validation state

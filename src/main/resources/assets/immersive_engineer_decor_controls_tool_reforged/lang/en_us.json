@@ -971,6 +971,7 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid.empty": "Empty",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid.lava": "Lava",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid.milk": "Milk",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid.other": "Other fluid",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid.water": "Water",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory": "Inventory",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output": "Bottom outlet",
