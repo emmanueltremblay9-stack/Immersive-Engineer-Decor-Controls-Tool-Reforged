@@ -54,17 +54,18 @@ public record MachineLayout(
       this.textureName = textureName;
    }
 
+   public boolean isOutputSlot(int containerIndex) {
+      return this.machineSlots.stream().anyMatch(slot -> slot.containerIndex() == containerIndex && slot.output());
+   }
+
    public boolean allowsAutomationExtraction(int containerIndex) {
       boolean hasOutputSlots = false;
       for (MachineLayout.MachineSlot slot : this.machineSlots) {
          if (slot.output()) {
             hasOutputSlots = true;
-            if (slot.containerIndex() == containerIndex) {
-               return true;
-            }
          }
       }
-      return !hasOutputSlots;
+      return !hasOutputSlots || this.isOutputSlot(containerIndex);
    }
 
    public static MachineLayout forKind(MachineKind kind) {

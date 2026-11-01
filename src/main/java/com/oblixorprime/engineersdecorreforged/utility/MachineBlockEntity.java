@@ -849,7 +849,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          return false;
       }
 
-      if (isLayoutResultSlot(kind, index)) {
+      if (MachineLayout.forKind(kind).isOutputSlot(index)) {
          return false;
       }
 

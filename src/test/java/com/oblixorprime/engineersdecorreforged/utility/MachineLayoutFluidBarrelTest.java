@@ -22,6 +22,8 @@ public class MachineLayoutFluidBarrelTest {
       assertEquals("Filled", layout.machineSlots().get(1).role());
       assertFalse(layout.machineSlots().get(0).output());
       assertTrue(layout.machineSlots().get(1).output());
+      assertFalse(layout.isOutputSlot(0));
+      assertTrue(layout.isOutputSlot(1));
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
       assertEquals("fluid_barrel/background", layout.textureName());
    }
