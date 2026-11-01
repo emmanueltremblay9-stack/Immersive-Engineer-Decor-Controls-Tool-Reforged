@@ -151,7 +151,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int LAB_HEATER_ENERGY_PER_TICK = 8;
    private static final int MINERAL_SMELTER_ENERGY_PER_TICK = 16;
    private static final int MINERAL_SMELTER_PROCESS_TICKS = 180;
-   private static final int FREEZER_PROCESS_TICKS = 180;
+   public static final int FREEZER_PROCESS_TICKS = 180;
+   public static final int FREEZER_STATUS_IDLE = 0;
+   public static final int FREEZER_STATUS_READY = 1;
+   public static final int FREEZER_STATUS_PROCESSING = 2;
+   public static final int FREEZER_STATUS_REDSTONE_PAUSED = 3;
+   public static final int FREEZER_STATUS_WAITING_FOR_ENERGY = 4;
+   public static final int FREEZER_STATUS_OUTPUT_BLOCKED = 5;
+   public static final int FREEZER_STATUS_INVALID_INPUT = 6;
+   public static final int FREEZER_REDSTONE_FLAG = 1 << 8;
    private static final int FREEZER_ENERGY_PER_TICK = 8;
    private static final int FREEZER_BUCKET_ENERGY = 1440;
    private static final int BREAKER_STATUS_NO_TARGET = 0;
@@ -1158,6 +1166,24 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield 0;
             }
          }
+         case SMALL_FREEZER -> {
+            switch (index) {
+               case 0:
+                  yield kind.ordinal();
+               case 1:
+                  yield this.progress;
+               case 3:
+                  yield this.energy;
+               case 4:
+                  yield this.comparatorOutput();
+               case 14:
+                  yield Mth.clamp(this.propertyValue(MachineBlocks.PHASE_0_4), 0, 4);
+               case 15:
+                  yield this.freezerStatusSyncValue();
+               default:
+                  yield 0;
+            }
+         }
          default -> {
             switch (index) {
                case 0:
@@ -1381,6 +1407,17 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                      this.processTimeNeeded = value;
                      return;
                   case LAB_ENERGY_SYNC_FIELD:
+                     this.energy = Mth.clamp(value, 0, this.energyCapacity(kind));
+                     return;
+                  default:
+                     return;
+               }
+            case SMALL_FREEZER:
+               switch (index) {
+                  case 1:
+                     this.progress = Mth.clamp(value, 0, FREEZER_PROCESS_TICKS);
+                     return;
+                  case 3:
                      this.energy = Mth.clamp(value, 0, this.energyCapacity(kind));
                      return;
                   default:
@@ -3958,7 +3995,36 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return !this.freezerResult((ItemStack)this.items.get(0)).isEmpty() ? 0 : -1;
    }
 
-   private ItemStack freezerResult(ItemStack stack) {
+   private int freezerStatusSyncValue() {
+      int status;
+      if (this.previousPowered) {
+         status = FREEZER_STATUS_REDSTONE_PAUSED;
+      } else {
+         ItemStack input = (ItemStack)this.items.get(0);
+         if (input.isEmpty()) {
+            status = FREEZER_STATUS_IDLE;
+         } else {
+            ItemStack result = this.freezerResult(input);
+            if (result.isEmpty()) {
+               status = FREEZER_STATUS_INVALID_INPUT;
+            } else if (!this.canInsertIntoSlots(result, 2)) {
+               status = FREEZER_STATUS_OUTPUT_BLOCKED;
+            } else if (this.energy < FREEZER_ENERGY_PER_TICK) {
+               status = FREEZER_STATUS_WAITING_FOR_ENERGY;
+            } else {
+               status = this.progress > 0 ? FREEZER_STATUS_PROCESSING : FREEZER_STATUS_READY;
+            }
+         }
+      }
+
+      return status | (this.previousPowered ? FREEZER_REDSTONE_FLAG : 0);
+   }
+
+   public static ItemStack freezerResultForDisplay(ItemStack stack) {
+      if (stack == null || stack.isEmpty()) {
+         return ItemStack.EMPTY;
+      }
+
       if (stack.is(Items.WATER_BUCKET)) {
          return new ItemStack(Items.ICE);
       } else if (stack.is(Items.ICE)) {
@@ -3966,6 +4032,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       } else {
          return stack.is(Items.PACKED_ICE) ? new ItemStack(Items.BLUE_ICE) : ItemStack.EMPTY;
       }
+   }
+
+   private ItemStack freezerResult(ItemStack stack) {
+      return freezerResultForDisplay(stack);
    }
 
    private boolean canAddItem(ItemStack stack) {
