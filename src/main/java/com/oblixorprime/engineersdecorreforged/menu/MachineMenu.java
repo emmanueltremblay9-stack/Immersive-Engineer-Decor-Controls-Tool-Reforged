@@ -2,9 +2,9 @@ package com.oblixorprime.engineersdecorreforged.menu;
 
 import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
-import java.util.Locale;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -35,7 +35,7 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int SCALED_ENERGY_FIELD = 3;
    private static final int ELECTRICAL_FURNACE_ENERGY_FIELD = 1;
    private static final int LAB_FURNACE_ENERGY_FIELD = 8;
-   private static final int ENERGY_FIELD_SCALE = 100;
+   private static final int ENERGY_FIELD_SCALE = MachineEnergySync.SCALED_FIELD_STEP_FE;
    private static final int SOLAR_PANEL_ENERGY_CAPACITY = 64000;
    private static final int STANDARD_MACHINE_ENERGY_CAPACITY = 32000;
    private static final int COMPACT_MACHINE_ENERGY_CAPACITY = 16000;
@@ -157,6 +157,10 @@ public class MachineMenu extends AbstractContainerMenu {
       };
    }
 
+   public int energyDisplayGranularity() {
+      return MachineEnergySync.displayGranularity(this.kind);
+   }
+
    public int comparatorOutput() {
       return this.data.get(4);
    }
@@ -275,15 +279,10 @@ public class MachineMenu extends AbstractContainerMenu {
             ? new MachineMenu.MetalCraftingResultSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
             : new MachineMenu.MetalCraftingInputSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
       } else {
-         return isResultRole(slot.role())
+         return slot.output()
             ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
             : new MachineMenu.ValidatedMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
       }
-   }
-
-   private static boolean isResultRole(String role) {
-      String normalized = role.toLowerCase(Locale.ROOT);
-      return normalized.contains("output") || normalized.equals("filled") || normalized.equals("milk");
    }
 
    private boolean movePlayerStackToMachine(Player player, ItemStack stack) {

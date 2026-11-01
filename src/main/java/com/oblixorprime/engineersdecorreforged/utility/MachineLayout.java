@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.utility;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public record MachineLayout(
    int imageWidth,
@@ -64,11 +65,20 @@ public record MachineLayout(
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
          case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> processor(kind);
-         case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> fluid(kind);
-         case SMALL_SOLAR_PANEL -> energy();
+         case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
+         case SMALL_MILKING_MACHINE -> smallMilkingMachine();
+         case SMALL_SOLAR_PANEL -> solarPanelArtwork();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
-         case SMALL_TREE_CUTTER -> automation(kind);
+         case SMALL_TREE_CUTTER -> treeCutterArtwork();
       };
+   }
+
+   public GuiTextureBlit artworkBlit() {
+      if (this.style != MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
+         throw new IllegalStateException("Only artwork layouts define a cropped texture blit");
+      }
+
+      return GuiTextureBlit.forMachineArtwork(this.textureName, this.imageWidth, this.imageHeight);
    }
 
    private static MachineLayout blockBreaker() {
@@ -222,6 +232,24 @@ public record MachineLayout(
       );
    }
 
+   private static MachineLayout smallMilkingMachine() {
+      return new MachineLayout(
+         216,
+         210,
+         27,
+         136,
+         27,
+         190,
+         List.of(
+            new MachineLayout.MachineSlot(0, 46, 101, "Bucket input", false),
+            new MachineLayout.MachineSlot(1, 156, 101, "Milk output", true)
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_milking_machine_gui"
+      );
+   }
+
    private static MachineLayout fluid(MachineKind kind) {
       String source = kind == MachineKind.SMALL_MILKING_MACHINE ? "Bucket" : "Empty";
       String result = kind == MachineKind.SMALL_MILKING_MACHINE ? "Milk" : "Filled";
@@ -235,12 +263,55 @@ public record MachineLayout(
       );
    }
 
-   private static MachineLayout energy() {
-      return base(
-         List.of(new MachineLayout.MachineSlot(0, 80, 53, "Cell")),
-         List.of(new MachineLayout.Panel("Array", 36, 18, 104, 24), new MachineLayout.Panel("Cell", 74, 48, 30, 25)),
-         MachineLayout.LayoutStyle.ENERGY,
-         null
+   private static MachineLayout solarPanelArtwork() {
+      return new MachineLayout(
+         228,
+         212,
+         33,
+         132,
+         33,
+         188,
+         List.of(new MachineLayout.MachineSlot(0, 179, 62, "Cell")),
+         List.of(
+            new MachineLayout.Panel("solar-cell-mask", 176, 58, 26, 26),
+            new MachineLayout.Panel("solar-energy-bar", 26, 108, 114, 9),
+            new MachineLayout.Panel("solar-energy-readout-mask", 146, 104, 76, 17),
+            new MachineLayout.Panel("solar-comparator", 179, 88, 43, 8),
+            new MachineLayout.Panel("inventory-panel", 22, 125, 184, 81)
+         ),
+         MachineLayout.LayoutStyle.ARTWORK_TEXTURE,
+         "small_solar_panel_art"
+      );
+   }
+
+   private static MachineLayout treeCutterArtwork() {
+      return new MachineLayout(
+         228,
+         212,
+         33,
+         130,
+         33,
+         188,
+         List.of(
+            new MachineLayout.MachineSlot(0, 122, 42, "Drops"),
+            new MachineLayout.MachineSlot(1, 144, 42, "Drops"),
+            new MachineLayout.MachineSlot(2, 166, 42, "Drops"),
+            new MachineLayout.MachineSlot(3, 122, 64, "Drops"),
+            new MachineLayout.MachineSlot(4, 144, 64, "Drops"),
+            new MachineLayout.MachineSlot(5, 166, 64, "Drops"),
+            new MachineLayout.MachineSlot(6, 122, 86, "Drops"),
+            new MachineLayout.MachineSlot(7, 144, 86, "Drops"),
+            new MachineLayout.MachineSlot(8, 166, 86, "Drops"),
+            new MachineLayout.MachineSlot(9, 188, 86, "I/O")
+         ),
+         List.of(
+            new MachineLayout.Panel("tree-collection-mask", 116, 39, 100, 69),
+            new MachineLayout.Panel("tree-status-mask", 25, 119, 179, 9),
+            new MachineLayout.Panel("tree-comparator", 145, 119, 60, 9),
+            new MachineLayout.Panel("inventory-panel", 22, 129, 184, 77)
+         ),
+         MachineLayout.LayoutStyle.ARTWORK_TEXTURE,
+         "small_tree_cutter_art"
       );
    }
 
@@ -299,13 +370,22 @@ public record MachineLayout(
       STORAGE,
       CRAFTING,
       ORIGINAL_TEXTURE,
+      ARTWORK_TEXTURE,
       PROCESSOR,
       FLUID,
       ENERGY,
       AUTOMATION;
    }
 
-   public record MachineSlot(int containerIndex, int x, int y, String role) {
+   public record MachineSlot(int containerIndex, int x, int y, String role, boolean output) {
+      public MachineSlot(int containerIndex, int x, int y, String role) {
+         this(containerIndex, x, y, role, isOutputRole(role));
+      }
+
+      private static boolean isOutputRole(String role) {
+         String normalized = role.toLowerCase(Locale.ROOT);
+         return normalized.contains("output") || normalized.equals("filled") || normalized.equals("milk");
+      }
    }
 
    public record Panel(String label, int x, int y, int width, int height) {
