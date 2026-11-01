@@ -3,7 +3,10 @@ package com.oblixorprime.engineersdecorreforged.client;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.network.ModNetworking;
+import net.minecraft.Util;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -22,8 +25,29 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       "immersive_engineer_decor_controls_tool_reforged", "textures/gui/small_mineral_smelter_hybrid_v05/background.png");
    private static final int WHITE = 0xFFE8E1CE, MUTED = 0xFFB1AFA8, AMBER = 0xFFFFB348,
       STEEL_DARK = 0xFF24272A, INSET = 0xFF151718, EDGE = 0xFF656462, RED = 0xFFFF6343;
+   private static final String[] MODE_KEYS = {
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.lava",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.magma",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.obsidian"
+   };
+   private static final String[] STATUS_KEYS = {
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.ready",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.heating",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.cooling",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.no_input",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.invalid_input",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.tank_full",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.output_full",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.wait_lava",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.redstone_inhibited",
+      "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.wait_fe"
+   };
    private int lastSentRevision = -1;
+   private long lastModeClickMillis;
    private boolean outputDrawerOpen;
+   private Button outputDrawerButton;
+   private final Button[] modeButtons = new Button[3];
+   private Button statusButton;
 
    public SmallMineralSmelterHybridScreen(MachineMenu menu, Inventory inventory, Component title) {
       super(menu, inventory, title);
@@ -32,6 +56,68 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       inventoryLabelX = -1000;
       titleLabelX = -1000;
       menu.setSmelterOutputDrawerOpen(false);
+   }
+
+   @Override
+   protected void init() {
+      super.init();
+      outputDrawerButton = addRenderableWidget(Button.builder(
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.accessible"),
+         button -> toggleOutputDrawer())
+         .bounds(leftPos + 162, topPos + 35, 54, 8)
+         .tooltip(Tooltip.create(Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.tooltip")))
+         .build());
+      outputDrawerButton.setAlpha(0.0F);
+      for (int mode = 0; mode < modeButtons.length; mode++) {
+         final int selectedMode = mode;
+         modeButtons[mode] = addRenderableWidget(Button.builder(
+            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.accessible",
+               Component.translatable(MODE_KEYS[mode]), Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.unselected")),
+            button -> sendModeSelection(selectedMode))
+            .bounds(leftPos + 176, topPos + 42 + mode * 11, 39, 9)
+            .tooltip(Tooltip.create(Component.translatable(MODE_KEYS[mode])))
+            .build());
+         modeButtons[mode].setAlpha(0.0F);
+      }
+      statusButton = addRenderableWidget(Button.builder(
+         statusAccessibleComponent(), button -> { })
+         .bounds(leftPos + 18, topPos + 157, 116, 12)
+         .tooltip(Tooltip.create(statusComponent()))
+         .build());
+      statusButton.setAlpha(0.0F);
+      updateModeButtonAvailability();
+   }
+
+   private void toggleOutputDrawer() {
+      outputDrawerOpen = !outputDrawerOpen;
+      menu.setSmelterOutputDrawerOpen(outputDrawerOpen);
+      updateModeButtonAvailability();
+   }
+
+   private void updateModeButtonAvailability() {
+      for (Button button : modeButtons) {
+         if (button != null) button.active = !outputDrawerOpen;
+      }
+   }
+
+   private void sendModeSelection(int mode) {
+      long now = Util.getMillis();
+      int revision = menu.field(14);
+      if ((lastSentRevision == revision && now - lastModeClickMillis < 1000L) || now - lastModeClickMillis < 250L) return;
+      PacketDistributor.sendToServer(new MachineActionPayload(
+         menu.containerId, ModNetworking.MINERAL_SMELTER_SELECT_MODE, mode, revision));
+      lastSentRevision = revision;
+      lastModeClickMillis = now;
+   }
+
+   private Component statusComponent() {
+      int status = Mth.clamp(menu.field(12), 0, STATUS_KEYS.length - 1);
+      return Component.translatable(STATUS_KEYS[status]);
+   }
+
+   private Component statusAccessibleComponent() {
+      return Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.accessible", statusComponent());
    }
 
    @Override
@@ -79,7 +165,16 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
             int top = y + 42 + i * 11;
             graphics.fill(x + 176, top, x + 215, top + 1, mode == i ? AMBER : EDGE);
             graphics.fill(x + 176, top + 8, x + 215, top + 9, mode == i ? AMBER : EDGE);
+            if (modeButtons[i] != null && (modeButtons[i].isFocused() || modeButtons[i].isHovered())) {
+               outline(graphics, x + 174, top - 1, 43, 11, WHITE);
+            }
          }
+      }
+      if (outputDrawerButton != null && (outputDrawerButton.isFocused() || outputDrawerButton.isHovered())) {
+         outline(graphics, x + 160, y + 33, 58, 11, WHITE);
+      }
+      if (statusButton != null && (statusButton.isFocused() || statusButton.isHovered())) {
+         outline(graphics, x + 17, y + 156, 118, 14, AMBER);
       }
    }
 
@@ -91,13 +186,20 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       graphics.fill(x2 - 5, y2 - 5, x2 - 3, y2 - 3, 0xFFB7AEA2);
    }
 
+   private static void outline(GuiGraphics graphics, int x, int y, int width, int height, int color) {
+      graphics.fill(x, y, x + width, y + 1, color);
+      graphics.fill(x, y + height - 1, x + width, y + height, color);
+      graphics.fill(x, y, x + 1, y + height, color);
+      graphics.fill(x + width - 1, y, x + width, y + height, color);
+   }
+
    private static void gauge(GuiGraphics graphics, int x, int y, int w, int h, int value, int max, int color) {
       graphics.fill(x, y, x + w, y + h, 0xFF080A0C);
       int filled = max <= 0 ? 0 : Mth.clamp(value * w / max, 0, w);
       if (filled > 0) graphics.fill(x, y, x + filled, y + h, color);
    }
 
-   private void drawSmall(GuiGraphics graphics, String value, int x, int y, int color, float scale) {
+   private void drawSmall(GuiGraphics graphics, Component value, int x, int y, int color, float scale) {
       graphics.pose().pushPose();
       graphics.pose().translate(x, y, 0);
       graphics.pose().scale(scale, scale, 1.0F);
@@ -109,57 +211,81 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
       int thermal = Mth.clamp(menu.field(10), 0, 100);
       int phase = thermal >= 100 ? 3 : thermal >= 90 ? 2 : thermal >= 5 ? 1 : 0;
-      String[] phases = {"COLD", "HOT", "MAGMA", "LAVA"};
-      drawSmall(graphics, thermal + "%  " + phases[phase], 20, 107, AMBER, 0.65F);
-      drawSmall(graphics, "COMPARATOR " + menu.comparatorOutput(), 36, 127, WHITE, 0.58F);
-      drawSmall(graphics, thermal >= 5 ? "HOT SURFACE" : "SURFACE COOL", 20, 140,
-         thermal >= 5 ? RED : MUTED, 0.68F);
+      String[] phases = {
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.phase.cold",
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.phase.hot",
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.phase.magma",
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.phase.lava"
+      };
+      drawSmall(graphics, Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.thermal", thermal,
+         Component.translatable(phases[phase])), 20, 107, AMBER, 0.65F);
+      drawSmall(graphics, Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.comparator", menu.comparatorOutput()),
+         36, 127, WHITE, 0.58F);
+      drawSmall(graphics, Component.translatable(thermal >= 5
+         ? "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.surface.hot"
+         : "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.surface.cool"),
+         20, 140, thermal >= 5 ? RED : MUTED, 0.68F);
       int queued = menu.field(9);
       if (queued >= 0 && queued <= 2) {
-         drawSmall(graphics, "NEXT: " + new String[]{"LAVA", "MAGMA", "OBSIDIAN"}[queued], 20, 152, AMBER, 0.57F);
+         drawSmall(graphics, Component.translatable(
+            "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.next",
+            Component.translatable(MODE_KEYS[queued])), 20, 152, AMBER, 0.57F);
       }
-      drawSmall(graphics, menu.fluidAmount() + " mB", 148, 102, WHITE, 0.63F);
-      drawSmall(graphics, "/ " + menu.fluidCapacity() + " mB", 148, 110, MUTED, 0.52F);
-      drawSmall(graphics, menu.energyStored() + " FE", 185, 102, WHITE, 0.53F);
-      drawSmall(graphics, menu.field(13) + " FE/t", 191, 120, WHITE, 0.58F);
-      drawSmall(graphics, menu.field(11) != 0 ? "HIGH" : "LOW", 190, 141,
-         menu.field(11) != 0 ? RED : 0xFF81D77B, 0.65F);
+      Component status = statusComponent();
+      drawSmall(graphics, Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.label", status),
+         20, 163, statusColor(menu.field(12)), 0.57F);
+      if (statusButton != null) {
+         statusButton.setMessage(statusAccessibleComponent());
+         statusButton.setTooltip(Tooltip.create(status));
+      }
+      drawSmall(graphics, Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.fluid", menu.fluidAmount()),
+         148, 102, WHITE, 0.63F);
+      drawSmall(graphics, Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.capacity", menu.fluidCapacity()),
+         148, 110, MUTED, 0.52F);
+      drawSmall(graphics, Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.energy", menu.energyStored()),
+         185, 102, WHITE, 0.53F);
+      drawSmall(graphics, Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.fe_rate", menu.field(13)),
+         191, 120, WHITE, 0.58F);
+      drawSmall(graphics, Component.translatable(menu.field(11) != 0
+         ? "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.redstone.high"
+         : "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.redstone.low"),
+         190, 141, menu.field(11) != 0 ? RED : 0xFF81D77B, 0.65F);
       if (outputDrawerOpen) {
-         drawSmall(graphics, "ITEM OUTPUT", 191, 49, AMBER, 0.54F);
-         drawSmall(graphics, "CLICK HEADER TO CLOSE", 158, 71, MUTED, 0.47F);
+         drawSmall(graphics, Component.translatable(
+            "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.title"),
+            191, 49, AMBER, 0.54F);
+         drawSmall(graphics, Component.translatable(
+            "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.drawer.close"),
+            158, 71, MUTED, 0.47F);
       } else {
          int selected = Mth.clamp(menu.field(7), 0, 2);
-         String[] names = {"LAVA", "MAGMA BLOCK", "OBSIDIAN"};
-         for (int i = 0; i < 3; i++) {
-            drawSmall(graphics, names[i], 183, 44 + i * 11,
-               selected == i ? AMBER : WHITE, 0.60F);
+         for (int i = 0; i < MODE_KEYS.length; i++) {
+            Component mode = Component.translatable(MODE_KEYS[i]);
+            drawSmall(graphics, mode, 183, 44 + i * 11, selected == i ? AMBER : WHITE, 0.60F);
+            if (modeButtons[i] != null) {
+               modeButtons[i].setMessage(Component.translatable(
+                  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.accessible",
+                  mode, Component.translatable(selected == i
+                     ? "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.selected"
+                     : "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.unselected")));
+            }
          }
       }
    }
 
-   @Override
-   public boolean mouseClicked(double mouseX, double mouseY, int button) {
-      if (button == 0) {
-         if (isHovering(162, 35, 54, 8, mouseX, mouseY)) {
-            outputDrawerOpen = !outputDrawerOpen;
-            menu.setSmelterOutputDrawerOpen(outputDrawerOpen);
-            return true;
-         }
-         if (!outputDrawerOpen) {
-            for (int mode = 0; mode < 3; mode++) {
-               if (isHovering(176, 42 + mode * 11, 39, 9, mouseX, mouseY)) {
-                  int revision = menu.field(14);
-                  if (lastSentRevision != revision) {
-                     PacketDistributor.sendToServer(new MachineActionPayload(
-                        menu.containerId, ModNetworking.MINERAL_SMELTER_SELECT_MODE, mode, revision));
-                     lastSentRevision = revision;
-                  }
-                  return true;
-               }
-            }
-         }
-      }
-      return super.mouseClicked(mouseX, mouseY, button);
+   private static int statusColor(int status) {
+      return switch (status) {
+         case 0 -> 0xFF81D77B;
+         case 1, 2 -> AMBER;
+         default -> RED;
+      };
    }
 
    @Override
