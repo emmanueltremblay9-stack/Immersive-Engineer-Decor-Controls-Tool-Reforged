@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import java.util.function.IntFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -26,13 +27,24 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class MachineMenu extends AbstractContainerMenu {
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
+   public static final int FREEZER_STATUS_IDLE = MachineBlockEntity.FREEZER_STATUS_IDLE;
+   public static final int FREEZER_STATUS_READY = MachineBlockEntity.FREEZER_STATUS_READY;
+   public static final int FREEZER_STATUS_PROCESSING = MachineBlockEntity.FREEZER_STATUS_PROCESSING;
+   public static final int FREEZER_STATUS_REDSTONE_PAUSED = MachineBlockEntity.FREEZER_STATUS_REDSTONE_PAUSED;
+   public static final int FREEZER_STATUS_WAITING_FOR_ENERGY = MachineBlockEntity.FREEZER_STATUS_WAITING_FOR_ENERGY;
+   public static final int FREEZER_STATUS_OUTPUT_BLOCKED = MachineBlockEntity.FREEZER_STATUS_OUTPUT_BLOCKED;
+   public static final int FREEZER_STATUS_INVALID_INPUT = MachineBlockEntity.FREEZER_STATUS_INVALID_INPUT;
+   public static final int FREEZER_REDSTONE_FLAG = MachineBlockEntity.FREEZER_REDSTONE_FLAG;
    private static final int SCALED_ENERGY_FIELD = 3;
+   private static final int FREEZER_ENERGY_FIELD = 3;
    private static final int ELECTRICAL_FURNACE_ENERGY_FIELD = 1;
    private static final int LAB_FURNACE_ENERGY_FIELD = 8;
    private static final int ENERGY_FIELD_SCALE = MachineEnergySync.SCALED_FIELD_STEP_FE;
@@ -119,7 +131,8 @@ public class MachineMenu extends AbstractContainerMenu {
       return switch (this.kind) {
          case SMALL_LAB_FURNACE, SMALL_ELECTRICAL_FURNACE -> scaledProgress(this.data.get(2), this.data.get(3));
          case SMALL_BLOCK_BREAKER -> scaledProgress(this.data.get(1), this.data.get(3));
-         case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> scaledProgress(this.data.get(1), TEMPERATURE_PROCESS_TICKS);
+         case SMALL_MINERAL_SMELTER -> clampPercent(this.data.get(1));
+         case SMALL_FREEZER -> scaledProgress(this.data.get(1), TEMPERATURE_PROCESS_TICKS);
          default -> clampPercent(this.data.get(1));
       };
    }
@@ -137,11 +150,38 @@ public class MachineMenu extends AbstractContainerMenu {
       };
    }
 
+   public Fluid storedFluid() {
+      return decodeStoredFluid(this.kind, this.fluidAmount(), this.data.get(11), this.data.get(12), this.data.get(13));
+   }
+
+   static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high) {
+      return decodeStoredFluid(kind, amount, low, middle, high, BuiltInRegistries.FLUID.size(), BuiltInRegistries.FLUID::byId, Fluids.EMPTY);
+   }
+
+   static <T> T decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high, int registrySize, IntFunction<T> valueById, T emptyValue) {
+      if (kind != MachineKind.FLUID_BARREL || amount <= 0) {
+         return emptyValue;
+      }
+
+      int registryId = decodeFluidRegistryId(low, middle, high);
+      if (registryId < 0 || registryId >= registrySize) {
+         return emptyValue;
+      }
+      T value = valueById.apply(registryId);
+      return value == null ? emptyValue : value;
+   }
+
+   static int decodeFluidRegistryId(int low, int middle, int high) {
+      return (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
+   }
+
    public int energyStored() {
       return switch (this.kind) {
          case SMALL_ELECTRICAL_FURNACE -> this.data.get(ELECTRICAL_FURNACE_ENERGY_FIELD);
          case SMALL_LAB_FURNACE -> this.data.get(LAB_FURNACE_ENERGY_FIELD);
-         case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR, SMALL_MINERAL_SMELTER, SMALL_FREEZER -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
+case SMALL_MINERAL_SMELTER -> this.data.get(6);
+case SMALL_FREEZER -> this.data.get(FREEZER_ENERGY_FIELD);
+case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
           case SMALL_BLOCK_BREAKER -> this.data.get(10);
          default -> 0;
       };
@@ -155,6 +195,30 @@ public class MachineMenu extends AbstractContainerMenu {
           case SMALL_BLOCK_BREAKER -> 32000;
          default -> 0;
       };
+   }
+
+   public int freezerProgressTicks() {
+      return this.kind == MachineKind.SMALL_FREEZER
+         ? Math.max(0, Math.min(MachineBlockEntity.FREEZER_PROCESS_TICKS, this.data.get(1)))
+         : 0;
+   }
+
+   public int freezerPhase() {
+      return this.kind == MachineKind.SMALL_FREEZER ? Math.max(0, Math.min(4, this.data.get(14))) : 0;
+   }
+
+   public int freezerStatus() {
+      return this.kind == MachineKind.SMALL_FREEZER ? this.data.get(15) & 0xFF : FREEZER_STATUS_IDLE;
+   }
+
+   public boolean freezerRedstonePowered() {
+      return this.kind == MachineKind.SMALL_FREEZER && (this.data.get(15) & FREEZER_REDSTONE_FLAG) != 0;
+   }
+
+   public ItemStack freezerPreviewStack() {
+      return this.kind == MachineKind.SMALL_FREEZER && this.visibleMachineSlots > 0
+         ? MachineBlockEntity.freezerResultForDisplay(((Slot)this.slots.get(0)).getItem())
+         : ItemStack.EMPTY;
    }
 
    public int energyDisplayGranularity() {
@@ -221,6 +285,7 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public void handleAction(Player player, int action, int valueA, int valueB) {
+      if (action == 31 && (this.kind != MachineKind.SMALL_MINERAL_SMELTER || !this.stillValid(player) || player.isSpectator())) return;
       if (this.container instanceof MachineBlockEntity machine) {
          machine.handleGuiAction(player, action, valueA, valueB);
       }
@@ -281,9 +346,16 @@ public class MachineMenu extends AbstractContainerMenu {
       } else {
          return slot.output()
             ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
-            : new MachineMenu.ValidatedMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
+            : new MachineMenu.ValidatedMachineSlot(
+               this.container,
+               slot.containerIndex(),
+               slot.x(),
+               slot.y(),
+               this.kind == MachineKind.SMALL_FREEZER && slot.containerIndex() == 1
+            );
       }
    }
+
 
    private boolean movePlayerStackToMachine(Player player, ItemStack stack) {
       return switch (this.kind) {
@@ -442,12 +514,19 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    private static class ValidatedMachineSlot extends Slot {
+      private final boolean insertionDisabled;
+
       ValidatedMachineSlot(Container container, int slot, int x, int y) {
+         this(container, slot, x, y, false);
+      }
+
+      ValidatedMachineSlot(Container container, int slot, int x, int y, boolean insertionDisabled) {
          super(container, slot, x, y);
+         this.insertionDisabled = insertionDisabled;
       }
 
       public boolean mayPlace(ItemStack stack) {
-         return this.container.canPlaceItem(this.getSlotIndex(), stack);
+         return !this.insertionDisabled && this.container.canPlaceItem(this.getSlotIndex(), stack);
       }
    }
 }

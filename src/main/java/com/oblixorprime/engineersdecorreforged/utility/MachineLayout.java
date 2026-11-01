@@ -54,6 +54,20 @@ public record MachineLayout(
       this.textureName = textureName;
    }
 
+   public boolean isOutputSlot(int containerIndex) {
+      return this.machineSlots.stream().anyMatch(slot -> slot.containerIndex() == containerIndex && slot.output());
+   }
+
+   public boolean allowsAutomationExtraction(int containerIndex) {
+      boolean hasOutputSlots = false;
+      for (MachineLayout.MachineSlot slot : this.machineSlots) {
+         if (slot.output()) {
+            hasOutputSlots = true;
+         }
+      }
+      return !hasOutputSlots || this.isOutputSlot(containerIndex);
+   }
+
    public static MachineLayout forKind(MachineKind kind) {
       return switch (kind) {
          case METAL_CRAFTING_TABLE -> metalCraftingTable();
@@ -64,8 +78,10 @@ public record MachineLayout(
          case FACTORY_HOPPER -> hopper();
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
-         case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> processor(kind);
-         case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
+            case SMALL_MINERAL_SMELTER -> mineralHybrid();
+            case SMALL_FREEZER -> freezer();
+            case FLUID_BARREL -> fluidBarrel();
+            case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
          case SMALL_MILKING_MACHINE -> smallMilkingMachine();
          case SMALL_SOLAR_PANEL -> solarPanelArtwork();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
@@ -94,6 +110,14 @@ public record MachineLayout(
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
          "block_breaker_v081/background"
       );
+   }
+
+   /** Two physical item slots; old Heat index 1 stays in NBT but is never shown as fuel. */
+   private static MachineLayout mineralHybrid() {
+      return new MachineLayout(209, 235, 23, 144, 23, 202,
+         List.of(new MachineLayout.MachineSlot(0, 109, 38, "Mineral input"),
+                 new MachineLayout.MachineSlot(2, 132, 38, "Product output")),
+         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "block_breaker_v08/background");
    }
 
    private static MachineLayout crate() {
@@ -232,6 +256,40 @@ public record MachineLayout(
       );
    }
 
+   private static MachineLayout fluidBarrel() {
+      return new MachineLayout(
+         201,
+         226,
+         24,
+         144,
+         24,
+         202,
+         List.of(new MachineLayout.MachineSlot(0, 27, 66, "Empty bucket", false), new MachineLayout.MachineSlot(1, 150, 66, "Filled", true)),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "fluid_barrel/background"
+      );
+   }
+
+   private static MachineLayout freezer() {
+      return new MachineLayout(
+         209,
+         235,
+         24,
+         145,
+         24,
+         203,
+         List.of(
+            new MachineLayout.MachineSlot(0, 22, 57, "Input"),
+            new MachineLayout.MachineSlot(1, 22, 84, "Cold reserved"),
+            new MachineLayout.MachineSlot(2, 170, 57, "Output")
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_water_freezer/background"
+      );
+   }
+
    private static MachineLayout smallMilkingMachine() {
       return new MachineLayout(
          216,
@@ -249,6 +307,7 @@ public record MachineLayout(
          "small_milking_machine_gui"
       );
    }
+
 
    private static MachineLayout fluid(MachineKind kind) {
       String source = kind == MachineKind.SMALL_MILKING_MACHINE ? "Bucket" : "Empty";

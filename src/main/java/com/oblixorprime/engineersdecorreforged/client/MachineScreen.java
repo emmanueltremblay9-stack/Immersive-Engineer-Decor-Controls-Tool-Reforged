@@ -6,15 +6,20 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.SmallFreezerArtworkMasks;
 import java.text.NumberFormat;
 import java.util.Locale;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu> {
@@ -29,6 +34,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private static final int HOVER = -1917873;
    private static final int LABEL_BACKDROP = -1441327079;
    private static final String BLOCK_BREAKER_GUI_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.";
+   private static final String SMALL_FREEZER_GUI_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.";
    private static final String MILKING_GUI_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.";
    private static final int SLOT_FACE = -12236470;
    private static final int SLOT_INNER = -14276310;
@@ -59,6 +65,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       } else {
          this.renderBackground(graphics, mouseX, mouseY, partialTick);
       }
+   }
+
+   static boolean usesExplicitTextureDimensions(MachineKind kind) {
+      return kind == MachineKind.SMALL_BLOCK_BREAKER || kind == MachineKind.FLUID_BARREL;
    }
 
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
@@ -92,7 +102,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             return;
          }
          this.drawOriginalTextureBackdrop(graphics, x, y);
-         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         MachineKind kind = ((MachineMenu)this.menu).kind();
+         if (kind == MachineKind.SMALL_FREEZER) {
+            this.drawSmallFreezerTexture(graphics, texture, x, y);
+         } else if (usesExplicitTextureDimensions(kind)) {
             graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
          } else {
             graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
@@ -100,6 +113,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          this.drawOriginalWidgets(graphics, texture, x, y);
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
             this.drawBlockBreakerTarget(graphics, x, y);
+         } else if (((MachineMenu)this.menu).kind() == MachineKind.FLUID_BARREL) {
+            this.drawFluidBarrelWidgets(graphics, x, y);
          }
       } else {
          this.drawFrame(graphics, x, y);
@@ -122,6 +137,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          this.drawSmallMilkingMachineLabels(graphics);
       } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          this.drawBlockBreakerLabels(graphics);
+       } else if (((MachineMenu)this.menu).kind() == MachineKind.FLUID_BARREL) {
+          this.drawFluidBarrelLabels(graphics);
+       } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FREEZER) {
+          this.drawSmallFreezerLabels(graphics);
       } else if (layout.style() == MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
          this.drawArtworkLabels(graphics);
       } else if (layout.style() != MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
@@ -130,6 +149,110 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          this.drawPanelLabels(graphics, layout);
          this.drawStatusText(graphics, layout);
       }
+   }
+
+   private void drawSmallFreezerTexture(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
+      graphics.pose().pushPose();
+      graphics.pose().translate((double)x0, (double)y0, 0.0);
+      graphics.pose().scale((float)this.imageWidth / 422.0F, (float)this.imageHeight / 443.0F, 1.0F);
+      graphics.blit(texture, 0, 0, 259, 614, 422, 443, 941, 1672);
+      graphics.pose().popPose();
+   }
+
+   private void drawSmallFreezerWidgets(GuiGraphics graphics, int x0, int y0) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      graphics.fill(x0 + 49, y0 + 10, x0 + 194, y0 + 27, 0xFF000000);
+      graphics.fill(x0 + 18, y0 + 42, x0 + 57, y0 + 53, 0xFF1D2123);
+      graphics.fill(x0 + 159, y0 + 42, x0 + 198, y0 + 53, 0xFF202426);
+      graphics.fill(x0 + 21, y0 + 74, x0 + 51, y0 + 82, 0xFF1D2123);
+      graphics.fill(x0 + 15, y0 + 106, x0 + 72, y0 + 119, 0xFF101719);
+      graphics.fill(x0 + 15, y0 + 117, x0 + 65, y0 + 130, 0xFF1A2122);
+      graphics.fill(x0 + 143, y0 + 117, x0 + 197, y0 + 130, 0xFF101415);
+      graphics.fill(x0 + 16, y0 + 132, x0 + 78, y0 + 143, 0xFF202628);
+      graphics.fill(x0 + 15, y0 + 98, x0 + 205, y0 + 108, 0xAA0D151A);
+
+      graphics.fill(x0 + 22, y0 + 57, x0 + 38, y0 + 73, SLOT_INNER);
+      graphics.fill(x0 + 22, y0 + 84, x0 + 38, y0 + 100, SLOT_INNER);
+      graphics.fill(x0 + 170, y0 + 57, x0 + 186, y0 + 73, SLOT_INNER);
+      graphics.fill(x0 + 91, y0 + 55, x0 + 119, y0 + 88, 0xFF19313D);
+      graphics.fill(x0 + 92, y0 + 56, x0 + 118, y0 + 87, 0xFF1D3746);
+      graphics.fill(x0 + 21, y0 + 83, x0 + 39, y0 + 101, SLOT_FACE);
+      graphics.fill(x0 + 22, y0 + 84, x0 + 38, y0 + 100, SLOT_INNER);
+
+      for (SmallFreezerArtworkMasks.MaskRegion mask : SmallFreezerArtworkMasks.regions(this.imageWidth, this.imageHeight)) {
+         graphics.fill(x0 + mask.x(), y0 + mask.y(), x0 + mask.right(), y0 + mask.bottom(), SLOT_INNER);
+      }
+      // Restore every live slot frame intersected by a mask, including the reserved Cold slot.
+      for (MachineLayout.MachineSlot slot :
+         SmallFreezerArtworkMasks.slotsIntersectingMasks(menu.layout(), this.imageWidth, this.imageHeight)) {
+         this.drawSlot(graphics, x0 + slot.x(), y0 + slot.y());
+      }
+      int progress = Mth.clamp(menu.freezerProgressTicks(), 0, MachineBlockEntity.FREEZER_PROCESS_TICKS);
+      int progressPixels = progress * 117 / MachineBlockEntity.FREEZER_PROCESS_TICKS;
+      for (int segment = 0; segment < 5; segment++) {
+         int segmentX = x0 + 75 + segment * 24;
+         graphics.fill(segmentX, y0 + 110, segmentX + 21, y0 + 117, 0xFF14252C);
+         int segmentFill = Mth.clamp(progressPixels - segment * 24, 0, 21);
+         if (segmentFill > 0) {
+            graphics.fill(segmentX, y0 + 110, segmentX + segmentFill, y0 + 117, 0xFF79C9F3);
+         }
+      }
+
+      int energyCapacity = Math.max(1, menu.energyCapacity());
+      int energy = Mth.clamp(menu.energyStored(), 0, energyCapacity);
+      int energyPixels = energy * 74 / energyCapacity;
+      graphics.fill(x0 + 67, y0 + 121, x0 + 141, y0 + 128, 0xFF171B1D);
+      if (energyPixels > 0) {
+         graphics.fill(x0 + 67, y0 + 121, x0 + 67 + energyPixels, y0 + 128, 0xFFFFB33F);
+      }
+
+      boolean redstonePowered = menu.freezerRedstonePowered();
+      graphics.fill(x0 + 16, y0 + 100, x0 + 23, y0 + 107, 0xFF777B7B);
+      graphics.fill(x0 + 17, y0 + 101, x0 + 22, y0 + 106, redstonePowered ? 0xFFFF5656 : 0xFF75B77A);
+      if (menu.freezerStatus() == MachineMenu.FREEZER_STATUS_OUTPUT_BLOCKED) {
+         this.drawHoverOutline(graphics, x0 + 169, y0 + 56, 18, 18, 0xFFFF6262);
+      }
+      if (!menu.freezerPreviewStack().isEmpty()) {
+         graphics.renderItem(menu.freezerPreviewStack(), x0 + 97, y0 + 63);
+      }
+   }
+
+   private void drawSmallFreezerLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      this.drawScaledBoundedString(graphics,
+         Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_freezer").getString(),
+         50, 16, 141, TEXT, false, 0.72F);
+      this.drawScaledBoundedString(graphics, smallFreezerText("label.input").getString(), 19, 45, 35, TEXT, false, 0.58F);
+      this.drawScaledBoundedString(graphics, smallFreezerText("label.output").getString(), 160, 45, 35, TEXT, false, 0.58F);
+      this.drawScaledBoundedString(graphics, smallFreezerText("label.cold").getString(), 22, 76, 27, MUTED, false, 0.50F);
+      this.drawScaledBoundedString(graphics, smallFreezerText("label.progress").getString(), 16, 109, 55, TEXT, false, 0.58F);
+      this.drawScaledBoundedString(graphics, smallFreezerText("label.energy").getString(), 16, 120, 48, TEXT, false, 0.58F);
+      this.drawScaledBoundedString(graphics,
+         smallFreezerText("energy.value", menu.energyStored(), menu.energyCapacity()).getString(),
+         144, 120, 52, TEXT, false, 0.50F);
+      this.drawScaledBoundedString(graphics, smallFreezerText("label.inventory").getString(), 17, 134, 100, TEXT, false, 0.58F);
+
+      String status = smallFreezerText("status." + smallFreezerStatusKey(menu.freezerStatus())).getString();
+      String redstone = smallFreezerText(menu.freezerRedstonePowered() ? "redstone.high_short" : "redstone.low_short").getString();
+      this.drawScaledBoundedString(graphics,
+         smallFreezerText("label.runtime_state", status, menu.freezerPhase(), redstone).getString(),
+         24, 99, 179, TEXT, false, 0.52F);
+   }
+
+   private static String smallFreezerStatusKey(int status) {
+      return switch (status) {
+         case MachineMenu.FREEZER_STATUS_READY -> "ready";
+         case MachineMenu.FREEZER_STATUS_PROCESSING -> "processing";
+         case MachineMenu.FREEZER_STATUS_REDSTONE_PAUSED -> "redstone_paused";
+         case MachineMenu.FREEZER_STATUS_WAITING_FOR_ENERGY -> "waiting_for_energy";
+         case MachineMenu.FREEZER_STATUS_OUTPUT_BLOCKED -> "output_blocked";
+         case MachineMenu.FREEZER_STATUS_INVALID_INPUT -> "invalid_input";
+         default -> "idle";
+      };
+   }
+
+   private static Component smallFreezerText(String key, Object... arguments) {
+      return Component.translatable(SMALL_FREEZER_GUI_PREFIX + key, arguments);
    }
 
    private void drawArtworkBackgroundOverlays(GuiGraphics graphics, MachineLayout layout, int x, int y) {
@@ -478,6 +601,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             break;
          case SMALL_ELECTRICAL_FURNACE:
             this.drawElectricalFurnaceWidgets(graphics, texture, x0, y0);
+            break;
+         case SMALL_FREEZER:
+            this.drawSmallFreezerWidgets(graphics, x0, y0);
       }
    }
 
@@ -1008,6 +1134,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+      Component fluidBarrelTooltip = this.fluidBarrelTooltip(mouseX, mouseY);
+      if (fluidBarrelTooltip != null) {
+         graphics.renderTooltip(this.font, fluidBarrelTooltip, mouseX, mouseY);
+         return;
+      }
+
       Component milkingTooltip = this.smallMilkingMachineTooltip(mouseX, mouseY);
       if (milkingTooltip != null) {
          graphics.renderTooltip(this.font, milkingTooltip, mouseX, mouseY);
@@ -1019,7 +1151,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          graphics.renderTooltip(this.font, solarEnergyTooltip, mouseX, mouseY);
          return;
       }
-
       Component blockBreakerTooltip = this.blockBreakerTooltip(mouseX, mouseY);
       if (blockBreakerTooltip != null) {
          graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);
@@ -1053,6 +1184,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private Component slotTooltip(MachineLayout.MachineSlot slot) {
       return (Component)(switch (((MachineMenu)this.menu).kind()) {
+         case FLUID_BARREL -> Component.translatable(
+            slot.containerIndex() == 0
+               ? "gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input"
+               : "gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.output"
+         );
          case FACTORY_HOPPER -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.slots.storage");
          case FACTORY_DROPPER -> Component.translatable(
             slot.containerIndex() < 12
@@ -1062,6 +1198,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case FACTORY_PLACER -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_placer.slots.blocks");
          case SMALL_LAB_FURNACE -> this.labFurnaceSlotTooltip(slot.containerIndex());
          case SMALL_ELECTRICAL_FURNACE -> this.electricalFurnaceSlotTooltip(slot.containerIndex());
+         case SMALL_FREEZER -> this.smallFreezerSlotTooltip(slot.containerIndex());
          case METAL_CRAFTING_TABLE -> this.metalCraftingTableSlotTooltip(slot.containerIndex());
          case SMALL_WASTE_INCINERATOR -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_waste_incinerator.slots.queue");
          case SMALL_MILKING_MACHINE -> Component.translatable(MILKING_GUI_PREFIX + (slot.containerIndex() == 0 ? "tooltip.slot.bucket" : "tooltip.slot.output"));
@@ -1112,8 +1249,50 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case FACTORY_PLACER -> this.factoryPlacerTooltip(mouseX, mouseY);
          case SMALL_LAB_FURNACE -> this.labFurnaceTooltip(mouseX, mouseY);
          case SMALL_ELECTRICAL_FURNACE -> this.electricalFurnaceTooltip(mouseX, mouseY);
+         case SMALL_FREEZER -> this.smallFreezerTooltip(mouseX, mouseY);
          default -> null;
          case SMALL_WASTE_INCINERATOR -> this.wasteIncineratorTooltip(mouseX, mouseY);
+      };
+   }
+
+   private Component smallFreezerTooltip(double mouseX, double mouseY) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      if (menu.kind() != MachineKind.SMALL_FREEZER) {
+         return null;
+      }
+      if (this.isHovering(75, 110, 117, 7, mouseX, mouseY)) {
+         return smallFreezerText("tooltip.progress", menu.freezerProgressTicks(), MachineBlockEntity.FREEZER_PROCESS_TICKS);
+      }
+      if (this.isHovering(67, 121, 74, 7, mouseX, mouseY)) {
+         return smallFreezerText("tooltip.energy", menu.energyStored(), menu.energyCapacity());
+      }
+      if (this.isHovering(24, 98, 105, 11, mouseX, mouseY)) {
+         return smallFreezerText("tooltip.status",
+            smallFreezerText("status." + smallFreezerStatusKey(menu.freezerStatus())),
+            smallFreezerText(menu.freezerRedstonePowered() ? "redstone.high" : "redstone.low"));
+      }
+      if (this.isHovering(129, 98, 30, 11, mouseX, mouseY)) {
+         return smallFreezerText("tooltip.phase", menu.freezerPhase());
+      }
+      if (this.isHovering(159, 98, 46, 11, mouseX, mouseY)) {
+         return smallFreezerText("tooltip.redstone",
+            smallFreezerText(menu.freezerRedstonePowered() ? "redstone.high" : "redstone.low"));
+      }
+      if (this.isHovering(94, 55, 24, 24, mouseX, mouseY)) {
+         ItemStack preview = menu.freezerPreviewStack();
+         return preview.isEmpty()
+            ? smallFreezerText("tooltip.preview_empty")
+            : smallFreezerText("tooltip.preview", preview.getHoverName());
+      }
+      return null;
+   }
+
+   private Component smallFreezerSlotTooltip(int index) {
+      return switch (index) {
+         case 0 -> smallFreezerText("slot.input");
+         case 1 -> smallFreezerText("slot.cold_reserved");
+         case 2 -> smallFreezerText("slot.output");
+         default -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.machine.slots.generic");
       };
    }
 
@@ -1279,6 +1458,102 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x + 1, y + 1, x + width - 1, y + height - 1, -14276310);
       graphics.fill(x + 2, y + height - 1 - fill, x + width - 2, y + height - 2, -11753768);
       graphics.fill(x + 2, y + 2, x + width - 2, y + 6, 1442840575);
+   }
+
+   private void drawFluidBarrelWidgets(GuiGraphics graphics, int x0, int y0) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      graphics.fill(x0 + 25, y0 + 9, x0 + 43, y0 + 17, 0xFF897D70);
+      graphics.fill(x0 + 49, y0 + 5, x0 + 196, y0 + 20, 0xFF242729);
+      graphics.fill(x0 + 14, y0 + 47, x0 + 63, y0 + 60, 0xFF202426);
+      graphics.fill(x0 + 137, y0 + 47, x0 + 198, y0 + 60, 0xFF202426);
+      graphics.fill(x0 + 68, y0 + 103, x0 + 137, y0 + 127, 0xFF202426);
+      graphics.fill(x0 + 20, y0 + 131, x0 + 80, y0 + 143, 0xFF35393B);
+
+      for (MachineLayout.MachineSlot slot : menu.layout().machineSlots()) {
+         graphics.fill(x0 + slot.x() + 2, y0 + slot.y() + 2, x0 + slot.x() + 14, y0 + slot.y() + 14, 0xFF303638);
+      }
+
+      int tankX = x0 + 92;
+      int tankY = y0 + 49;
+      int tankWidth = 22;
+      int tankHeight = 51;
+      graphics.fill(tankX, tankY, tankX + tankWidth, tankY + tankHeight, 0xFF142028);
+      int capacity = Math.max(1, menu.fluidCapacity());
+      int fill = Mth.clamp((int)((long)menu.fluidAmount() * (tankHeight - 4) / capacity), 0, tankHeight - 4);
+      if (fill > 0 && menu.storedFluid() != Fluids.EMPTY) {
+         int fluidTop = tankY + tankHeight - 2 - fill;
+         graphics.fill(tankX + 2, fluidTop, tankX + tankWidth - 2, tankY + tankHeight - 2, this.fluidBarrelTint(menu.storedFluid()));
+         graphics.fill(tankX + 3, fluidTop, tankX + tankWidth - 3, fluidTop + 1, 0x99FFFFFF);
+      }
+      graphics.fill(tankX + 1, tankY + 2, tankX + 2, tankY + tankHeight - 2, 0xFF77858B);
+      graphics.fill(tankX + tankWidth - 2, tankY + 2, tankX + tankWidth - 1, tankY + tankHeight - 2, 0xFF526067);
+      graphics.fill(tankX + 3, tankY + 2, tankX + 5, tankY + tankHeight - 4, 0x66FFFFFF);
+   }
+
+   private void drawFluidBarrelLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      this.drawBoundedString(graphics, Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.fluid_barrel").getString(), 53, 8, 140, TEXT, false);
+      this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input").getString(), 38, 49, 48, TEXT);
+      this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.output").getString(), 168, 49, 60, TEXT);
+      this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.tank").getString(), 102, 103, 64, TEXT);
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.amount", menu.fluidAmount(), menu.fluidCapacity()).getString(),
+         102, 115, 126, TEXT
+      );
+      this.drawTinyString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.inventory").getString(),
+         24, 132, 70, TEXT, false
+      );
+   }
+
+   private Component fluidBarrelTooltip(double mouseX, double mouseY) {
+      if (((MachineMenu)this.menu).kind() != MachineKind.FLUID_BARREL || !this.isHovering(90, 48, 26, 53, mouseX, mouseY)) {
+         return null;
+      }
+
+      MachineMenu menu = (MachineMenu)this.menu;
+      return Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.tank.tooltip",
+         this.fluidBarrelFluidName(menu.storedFluid()), menu.fluidAmount(), menu.fluidCapacity()
+      );
+   }
+
+   private Component fluidBarrelFluidName(Fluid fluid) {
+      if (fluid == Fluids.WATER) {
+         return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.fluid.water");
+      } else if (fluid == Fluids.LAVA) {
+         return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.fluid.lava");
+      } else if (fluid == Fluids.EMPTY) {
+         return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.fluid.empty");
+      } else {
+         ResourceLocation id = BuiltInRegistries.FLUID.getKey(fluid);
+         return isMilkFluidId(id)
+            ? Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.fluid.milk")
+            : Component.literal(id == null ? "fluid" : id.toString());
+      }
+   }
+
+   private int fluidBarrelTint(Fluid fluid) {
+      if (fluid == Fluids.WATER) {
+         return 0xFF3F76E4;
+      } else if (fluid == Fluids.LAVA) {
+         return 0xFFF06A28;
+      } else {
+         ResourceLocation id = BuiltInRegistries.FLUID.getKey(fluid);
+         return fluidBarrelMilkTint(id);
+      }
+   }
+
+   static boolean isMilkFluidId(ResourceLocation id) {
+      return id != null
+         && id.getNamespace().equals("minecraft")
+         && id.getPath().equals("milk");
+   }
+
+   static int fluidBarrelMilkTint(ResourceLocation id) {
+      return isMilkFluidId(id) ? 0xFFE6E1D5 : 0xFF7FAFC2;
    }
 
    private void drawSolarCells(GuiGraphics graphics, int x, int y) {

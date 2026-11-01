@@ -82,8 +82,10 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_WASTE_INCINERATOR, MachineKind.SMALL_WASTE_INCINERATOR, 16, "small_waste_incinerator_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "small_electrical_furnace_gui"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 3, null),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, null),
+      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 2, null),
+      new MachineGuiGameTests.MachineEntry(
+         ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, "small_water_freezer/background"
+      ),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FLUID_BARREL, MachineKind.FLUID_BARREL, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FLUID_FUNNEL, MachineKind.SMALL_FLUID_FUNNEL, 2, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.PASSIVE_FLUID_ACCUMULATOR, MachineKind.PASSIVE_FLUID_ACCUMULATOR, 2, null),
@@ -725,7 +727,7 @@ public final class MachineGuiGameTests {
       assertMenuProgress(
          helper, player, TEST_POS.offset(2, 0, 0), ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 75, 150, 50
       );
-      assertMenuProgress(helper, player, TEST_POS.offset(4, 0, 0), ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 90, 180, 50);
+      assertMenuProgress(helper, player, TEST_POS.offset(4, 0, 0), ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 50, 100, 50);
       assertMenuProgress(helper, player, TEST_POS.offset(6, 0, 0), ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 45, 180, 25);
       assertMenuProgress(helper, player, TEST_POS.offset(8, 0, 0), ModBlocks.SMALL_BLOCK_BREAKER, MachineKind.SMALL_BLOCK_BREAKER, 20, 80, 25);
       helper.succeed();
@@ -876,7 +878,7 @@ public final class MachineGuiGameTests {
       tickMachine(helper, smelter, 1);
       helper.assertTrue(smelter.getItem(0).is(Items.COBBLESTONE), "loaded mineral smelter should not consume input from impossible saved progress");
       helper.assertTrue(smelter.getItem(2).isEmpty(), "loaded mineral smelter should not finish after one tick from impossible saved progress");
-      helper.assertValueEqual(smelter.dataAccessForTests().get(1), 1, "loaded mineral smelter should restart invalid progress from the first tick");
+      helper.assertValueEqual(0, smelter.dataAccessForTests().get(1), "legacy hybrid migration should reset obsolete work without consuming mineral");
 
       MachineBlockEntity freezer = placeMachineAt(helper, TEST_POS.offset(3, 0, 0), ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
       freezer.setItem(0, new ItemStack(Items.ICE));
@@ -891,18 +893,125 @@ public final class MachineGuiGameTests {
       helper.succeed();
    }
 
-   @GameTest(template = "empty", timeoutTicks = 220)
+   @GameTest(template = "empty", timeoutTicks = 1200)
    public static void small_mineral_smelter_outputs_to_parent_output_slot(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
       machine.setItem(0, new ItemStack(Items.COBBLESTONE));
-      machine.energyStorage(null).receiveEnergy(4000, false);
-      helper.succeedWhen(() -> {
-         tickMachine(helper, machine, 10);
-         helper.assertTrue(machine.getItem(0).isEmpty(), "small mineral smelter should consume one mineral input");
-         helper.assertTrue(machine.getItem(2).is(Items.MAGMA_BLOCK), "small mineral smelter should place magma in the parent output slot");
-         helper.assertTrue(machine.getItem(1).isEmpty(), "small mineral smelter heat slot should not receive output items");
-         helper.assertTrue(machine.energyStorage(null).getEnergyStored() < 4000, "small mineral smelter should consume FE while melting");
-      });
+      machine.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, machine, 1000);
+      helper.assertTrue(machine.getItem(0).isEmpty(), "a completed mineral batch consumes one input");
+      helper.assertTrue(machine.getItem(2).isEmpty(), "Lava mode must not award a free Magma Block");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "legacy Heat slot stays unchanged");
+      helper.assertValueEqual(1000, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+         "Lava mode generates exactly one bucket per mineral");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(),
+         "a fully paid 1000-tick heat batch consumes 16000 FE");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 200)
+   public static void small_mineral_smelter_charges_every_sparse_active_heat_tick(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      int acceptedFe = 0;
+      for (int tick = 0; tick < 10000; tick++) {
+         if ((tick + 1) % 10 == 0) {
+            acceptedFe += machine.energyStorage(null).receiveEnergy(16, false);
+         }
+         MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      }
+      helper.assertValueEqual(16000, acceptedFe, "the simulation supplied exactly 1000 paid active heat ticks");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "the mineral completes after 1000 paid active heat ticks");
+      helper.assertValueEqual(1000, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+         "sparse FE does not shorten or alter the Lava yield");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(),
+         "the complete batch still costs 16000 FE when active ticks are separated by pauses");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 160)
+   public static void small_mineral_smelter_cools_when_magma_output_is_blocked(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.handleGuiAction(null, 31, 1, 0);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      helper.assertValueEqual(1600, machine.energyStorage(null).receiveEnergy(1600, false), "initial FE is accepted");
+      tickMachine(helper, machine, 100);
+      int warmTemperature = machine.dataAccessForTests().get(10);
+      int paidProgress = machine.dataAccessForTests().get(1);
+      helper.assertTrue(warmTemperature > 0, "paid heating raises the thermal core");
+      helper.assertValueEqual(10, paidProgress, "100 paid ticks yield ten progress points");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "the initial FE is fully consumed");
+
+      machine.setItem(2, new ItemStack(Items.MAGMA_BLOCK, 64));
+      helper.assertValueEqual(1600, machine.energyStorage(null).receiveEnergy(1600, false), "FE remains available while the output is blocked");
+      int energyBeforeBlockedTicks = machine.energyStorage(null).getEnergyStored();
+      tickMachine(helper, machine, 10);
+
+      helper.assertValueEqual(6, machine.dataAccessForTests().get(12), "the server reports the blocked item output");
+      helper.assertTrue(machine.dataAccessForTests().get(10) < warmTemperature, "temperature cools when the blocked output stops heating");
+      helper.assertValueEqual(paidProgress, machine.dataAccessForTests().get(1), "blocked output preserves paid progress");
+      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "blocked output preserves the mineral input");
+      helper.assertValueEqual(64, machine.getItem(2).getCount(), "blocked output preserves the full result stack");
+      helper.assertValueEqual(energyBeforeBlockedTicks, machine.energyStorage(null).getEnergyStored(), "blocked output consumes no FE");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(11), "redstone remains LOW during the blocked output");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 160)
+   public static void small_mineral_smelter_cools_when_lava_tank_is_full_during_heating(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      helper.assertValueEqual(1600, machine.energyStorage(null).receiveEnergy(1600, false), "initial FE is accepted");
+      tickMachine(helper, machine, 100);
+      int warmTemperature = machine.dataAccessForTests().get(10);
+      int paidProgress = machine.dataAccessForTests().get(1);
+      helper.assertTrue(warmTemperature > 0, "paid heating raises the thermal core");
+      helper.assertValueEqual(10, paidProgress, "100 paid ticks yield ten progress points");
+
+      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      helper.assertValueEqual(4000, top.fill(new FluidStack(Fluids.LAVA, 4000), FluidAction.EXECUTE), "tank can be filled to capacity");
+      helper.assertValueEqual(1600, machine.energyStorage(null).receiveEnergy(1600, false), "FE remains available while the tank is full");
+      int energyBeforeBlockedTicks = machine.energyStorage(null).getEnergyStored();
+      tickMachine(helper, machine, 10);
+
+      helper.assertValueEqual(5, machine.dataAccessForTests().get(12), "the server reports the full tank");
+      helper.assertTrue(machine.dataAccessForTests().get(10) < warmTemperature, "temperature cools when the full tank stops heating");
+      helper.assertValueEqual(paidProgress, machine.dataAccessForTests().get(1), "a full tank preserves paid progress");
+      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "a full tank preserves the mineral input");
+      helper.assertValueEqual(4000, top.getFluidInTank(0).getAmount(), "a full tank loses no lava");
+      helper.assertValueEqual(energyBeforeBlockedTicks, machine.energyStorage(null).getEnergyStored(), "a full tank consumes no FE");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(11), "redstone remains LOW while the tank is full");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 200)
+   public static void small_mineral_smelter_heat_tick_remainder_survives_redstone_pause_and_reload(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      for (int tick = 0; tick < 9; tick++) {
+         helper.assertValueEqual(16, machine.energyStorage(null).receiveEnergy(16, false), "one active FE tick is accepted");
+         MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      }
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "nine paid active ticks do not make a full progress point");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "each active tick costs 16 FE");
+
+      CompoundTag saved = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      saved.putInt("TickCounter", 9); // Put the legacy global timer at its boundary after saving the paid remainder.
+      helper.assertValueEqual(9, saved.getInt("MineralHeatTickRemainder"), "the paid active-tick remainder is saved");
+      machine.loadWithComponents(saved, helper.getLevel().registryAccess());
+
+      helper.setBlock(TEST_POS.east(), Blocks.REDSTONE_BLOCK.defaultBlockState());
+      MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "redstone inhibition does not add heat progress");
+      helper.assertValueEqual(8, machine.dataAccessForTests().get(12), "the real server status reports redstone inhibition");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "redstone inhibition does not charge FE");
+
+      helper.setBlock(TEST_POS.east(), Blocks.AIR);
+      helper.assertValueEqual(16, machine.energyStorage(null).receiveEnergy(16, false), "FE can resume after redstone inhibition");
+      MachineBlockEntity.serverTick(helper.getLevel(), machine.getBlockPos(), machine.getBlockState(), machine);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the tenth paid active tick advances exactly one point after reload");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "the resumed active tick costs 16 FE");
+      helper.succeed();
    }
 
    @GameTest(template = "empty", timeoutTicks = 240)
@@ -920,36 +1029,283 @@ public final class MachineGuiGameTests {
       helper.assertTrue(machine.getItem(2).isEmpty(), "full lava tank should prevent magma output");
       helper.assertValueEqual(4000, fluidHandler.getFluidInTank(0).getAmount(), "full lava tank should keep all stored lava");
       helper.assertValueEqual(4000, machine.energyStorage(null).getEnergyStored(), "full lava tank should prevent wasting FE");
+      helper.assertValueEqual(5, machine.dataAccessForTests().get(12), "full tank status is synchronized from the server");
+      FluidStack drained = machine.fluidHandler(Direction.DOWN).drain(1000, FluidAction.EXECUTE);
+      helper.assertValueEqual(1000, drained.getAmount(), "bottom automation can free tank capacity");
+      tickMachine(helper, machine, 10);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the blocked batch resumes after tank space is freed");
+      helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
       helper.succeed();
    }
 
-   @GameTest(template = "empty", timeoutTicks = 220)
+   @GameTest(template = "empty", timeoutTicks = 1200)
    public static void small_mineral_smelter_clears_processing_phase_after_successful_melt(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
       machine.setItem(0, new ItemStack(Items.COBBLESTONE));
-      machine.energyStorage(null).receiveEnergy(4000, false);
-      tickMachine(helper, machine, 180);
-      helper.assertTrue(machine.getItem(0).isEmpty(), "successful mineral melt should consume one mineral input");
-      helper.assertTrue(machine.getItem(2).is(Items.MAGMA_BLOCK), "successful mineral melt should create magma output");
-      helper.assertBlockProperty(TEST_POS, MachineBlocks.PHASE_0_3, 0);
-      helper.assertValueEqual(0, machine.comparatorOutput(), "successful mineral melt should clear the finished processing phase");
+      machine.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, machine, 1000);
+      helper.assertTrue(machine.getItem(0).isEmpty(), "completed mineral melt consumes input");
+      helper.assertTrue(machine.getItem(2).isEmpty(), "Lava phase only creates tank fluid");
+      helper.assertBlockProperty(TEST_POS, MachineBlocks.PHASE_0_3, 3);
+      helper.assertValueEqual(15, machine.comparatorOutput(), "hot liquid thermal phase remains 15 until cooling");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "paid batch progress resets");
       helper.succeed();
    }
 
-   @GameTest(template = "empty", timeoutTicks = 220)
+   @GameTest(template = "empty", timeoutTicks = 1200)
    public static void small_mineral_smelter_cools_lava_to_obsidian_when_disabled(GameTestHelper helper) {
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      IFluidHandler fluidHandler = machine.fluidHandler(Direction.UP);
-      helper.assertTrue(fluidHandler != null, "small mineral smelter should expose a lava fluid handler");
-      helper.assertValueEqual(
-         1000, fluidHandler.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), "small mineral smelter should accept one bucket of lava for cooling"
+      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      helper.assertValueEqual(1000, top.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE),
+         "top lava port accepts one bucket");
+      machine.handleGuiAction(null, 31, 2, 0); // Obsidian selected with current server revision.
+      tickMachine(helper, machine, 1000);
+      helper.assertTrue(machine.getItem(2).is(Items.OBSIDIAN), "Obsidian mode converts one cooled bucket into one solid item");
+      helper.assertValueEqual(0, top.getFluidInTank(0).getAmount(), "Obsidian conversion debits 1000 mB once");
+      helper.assertTrue(machine.getItem(0).isEmpty(), "direct lava-to-obsidian uses no free mineral");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 1200)
+   public static void small_mineral_smelter_reserves_obsidian_lava_from_all_external_outputs(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineBlockEntity receiver = placeMachineAt(helper, TEST_POS.below(), ModBlocks.FLUID_BARREL, MachineKind.FLUID_BARREL);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      IFluidHandler tank = receiver.fluidHandler(Direction.UP);
+      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      IFluidHandler bottom = machine.fluidHandler(Direction.DOWN);
+      helper.assertTrue(tank != null && top != null && bottom != null, "Smelter and receiver expose their expected fluid handlers");
+      helper.assertValueEqual(1500, top.fill(new FluidStack(Fluids.LAVA, 1500), FluidAction.EXECUTE),
+         "top input accepts the test lava plus an extractable surplus");
+      machine.handleGuiAction(null, 31, 2, 0);
+      tickMachine(helper, machine, 20);
+
+      helper.assertValueEqual(100, tank.getFluidInTank(0).getAmount(), "the bottom push transfers one bounded interval of surplus");
+      helper.assertValueEqual(1400, top.getFluidInTank(0).getAmount(), "automatic output keeps the committed 1000 mB reserve");
+      helper.assertValueEqual(250, bottom.drain(new FluidStack(Fluids.LAVA, 250), FluidAction.EXECUTE).getAmount(),
+         "fluid-stack extraction may withdraw part of the surplus");
+      helper.assertValueEqual(150, bottom.drain(1000, FluidAction.EXECUTE).getAmount(),
+         "amount extraction is capped at the remaining surplus");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "simultaneous output paths cannot consume the reserved bucket");
+
+      CompoundTag coolingSave = machine.saveWithFullMetadata(helper.getLevel().registryAccess());
+      machine.loadWithComponents(coolingSave, helper.getLevel().registryAccess());
+      ItemStack emptyBucket = new ItemStack(Items.BUCKET);
+      player.setItemInHand(InteractionHand.MAIN_HAND, emptyBucket);
+      helper.assertTrue(!machine.canPreviewItemUse(emptyBucket), "bucket preview respects the active cooling reserve");
+      helper.assertTrue(!machine.handleItemUse(emptyBucket, player, InteractionHand.MAIN_HAND),
+         "bucket extraction cannot withdraw the active Obsidian lot");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "rejected bucket use preserves the full reserve");
+
+      tickMachine(helper, machine, 1000);
+      helper.assertTrue(machine.getItem(2).is(Items.OBSIDIAN), "the reserved bucket completes the active Obsidian lot");
+      helper.assertValueEqual(0, top.getFluidInTank(0).getAmount(), "the completed lot consumes its reserved lava once");
+      helper.assertValueEqual(100, tank.getFluidInTank(0).getAmount(), "only the earlier surplus transfer reached the receiver");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_mineral_smelter_blocked_obsidian_cooling_never_reheats(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      IFluidHandler top = machine.fluidHandler(Direction.UP);
+      helper.assertValueEqual(1000, top.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), "one bucket is accepted");
+      machine.handleGuiAction(null, 31, 2, 0);
+      machine.setItem(2, new ItemStack(Items.OBSIDIAN, 64));
+      tickMachine(helper, machine, 21);
+
+      int blockedTemperature = machine.dataAccessForTests().get(10);
+      helper.assertTrue(blockedTemperature < 100, "blocked cooling still lowers the thermal core");
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(1), "the blocked result prevents cooling progress");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "blocked output preserves the committed lava");
+      helper.assertValueEqual(64, machine.getItem(2).getCount(), "blocked cooling preserves the full output stack");
+
+      machine.setItem(2, ItemStack.EMPTY);
+      int previousTemperature = blockedTemperature;
+      for (int tick = 0; tick < 30; tick++) {
+         tickMachine(helper, machine, 1);
+         int currentTemperature = machine.dataAccessForTests().get(10);
+         helper.assertTrue(currentTemperature <= previousTemperature, "resuming Obsidian cooling never raises temperature");
+         previousTemperature = currentTemperature;
+      }
+      helper.assertTrue(machine.dataAccessForTests().get(1) > 0, "cooling progress resumes after the result is unblocked");
+      helper.assertValueEqual(1000, top.getFluidInTank(0).getAmount(), "the bucket remains reserved until the batch completes");
+      helper.assertTrue(machine.getItem(2).isEmpty(), "the result is not created before the full cooling cycle");
+      helper.assertValueEqual(0, machine.energyStorage(null).getEnergyStored(), "Obsidian cooling consumes no FE");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void small_mineral_smelter_unsided_capabilities_preserve_port_guards(GameTestHelper helper) {
+      BlockPos pos = helper.absolutePos(TEST_POS);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      IFluidHandler topFluid = helper.getLevel().getCapability(FluidHandler.BLOCK, pos, Direction.UP);
+      helper.assertTrue(topFluid != null, "the public top fluid input remains available");
+      helper.assertValueEqual(1000, topFluid.fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE), "top input accepts one bucket");
+      machine.handleGuiAction(null, 31, 2, 0);
+      tickMachine(helper, machine, 1);
+
+      IFluidHandler unsidedFluid = helper.getLevel().getCapability(FluidHandler.BLOCK, pos, null);
+      helper.assertTrue(unsidedFluid != null, "the public unsided fluid handler remains available");
+      helper.assertValueEqual(0, unsidedFluid.drain(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE).getAmount(),
+         "unsided fluid capability cannot drain the committed Obsidian bucket");
+      helper.assertValueEqual(0, unsidedFluid.drain(1000, FluidAction.EXECUTE).getAmount(),
+         "amount-based unsided drains also preserve the committed bucket");
+      helper.assertValueEqual(1000, topFluid.getFluidInTank(0).getAmount(), "the reserved lava remains stored");
+
+      IItemHandler unsidedItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, null);
+      helper.assertTrue(unsidedItems == null, "unsided item capability cannot bypass the top and bottom ports");
+      IEnergyStorage unsidedEnergy = helper.getLevel().getCapability(EnergyStorage.BLOCK, pos, null);
+      helper.assertTrue(unsidedEnergy == null, "unsided FE capability cannot bypass the rear input port");
+
+      IItemHandler topItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, Direction.UP);
+      IItemHandler bottomItems = helper.getLevel().getCapability(ItemHandler.BLOCK, pos, Direction.DOWN);
+      helper.assertTrue(topItems != null && bottomItems != null, "physical item ports remain available");
+      helper.assertTrue(topItems.extractItem(0, 1, true).isEmpty(), "top item port cannot extract the input");
+      helper.assertValueEqual(1, bottomItems.insertItem(0, new ItemStack(Items.COBBLESTONE), true).getCount(),
+         "bottom item port rejects insertion");
+      Direction back = machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
+      IEnergyStorage rearEnergy = helper.getLevel().getCapability(EnergyStorage.BLOCK, pos, back);
+      helper.assertTrue(rearEnergy != null && rearEnergy.canReceive() && !rearEnergy.canExtract(), "rear FE port receives energy without extraction");
+      helper.assertTrue(helper.getLevel().getCapability(EnergyStorage.BLOCK, pos, back.getOpposite()) == null,
+         "front face does not expose the rear-only FE port");
+      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "capability lookups preserve the mineral input");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 1050)
+   public static void small_mineral_smelter_selected_magma_has_no_lava_byproduct(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.handleGuiAction(null, 31, 1, 0); // Magma; server-validated value range.
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      machine.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, machine, 900);
+      helper.assertTrue(machine.getItem(0).isEmpty(), "Magma batch consumes one input");
+      helper.assertTrue(machine.getItem(2).is(Items.MAGMA_BLOCK), "Magma batch creates one item");
+      helper.assertValueEqual(0, machine.fluidHandler(Direction.UP).getFluidInTank(0).getAmount(),
+         "Magma mode does not create free lava");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_mineral_smelter_faces_reject_unrelated_automation(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      helper.assertTrue(machine.itemHandler(Direction.UP) != null && machine.itemHandler(Direction.UP).getSlots() == 1,
+         "top item handler maps only the mineral input");
+      helper.assertTrue(machine.itemHandler(Direction.DOWN) != null && machine.itemHandler(Direction.DOWN).getSlots() == 1,
+         "bottom item handler maps only the product output");
+      helper.assertTrue(machine.itemHandler(Direction.EAST) == null, "sides expose no item port");
+      helper.assertTrue(machine.fluidHandler(Direction.EAST) == null, "sides expose no fluid port");
+      helper.assertValueEqual(0, machine.fluidHandler(Direction.DOWN).fill(new FluidStack(Fluids.LAVA, 1000), FluidAction.EXECUTE),
+         "bottom fluid port does not permit insertion");
+      helper.assertTrue(machine.fluidHandler(Direction.UP).drain(1000, FluidAction.EXECUTE).isEmpty(),
+         "top fluid port does not permit extraction");
+      helper.assertTrue(machine.energyStorage(Direction.UP) == null, "top is not a FE port");
+      Direction back = machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING).getOpposite();
+      helper.assertTrue(machine.energyStorage(back) != null, "rear is the sole directional FE input");
+      helper.assertValueEqual(0, machine.getSlotsForFace(Direction.WEST).length, "vanilla sided inventories also block lateral access");
+      helper.assertValueEqual(1, machine.getSlotsForFace(Direction.UP).length, "top exposes one input slot");
+      helper.assertValueEqual(2, machine.getSlotsForFace(Direction.DOWN)[0], "bottom exposes the product backing index 2");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 140)
+   public static void small_mineral_smelter_queued_mode_and_hot_contact_state(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      machine.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, machine, 100);
+      helper.assertTrue(machine.mineralHotSurface(), "active thermal core must be hot after work");
+      helper.assertValueEqual(5, machine.comparatorOutput(), "HOT phase produces comparator strength 5");
+      machine.handleGuiAction(null, 31, 1, 0);
+      helper.assertValueEqual(0, machine.dataAccessForTests().get(7), "active lot keeps Lava as the current selection");
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(9), "new product mode is queued for next batch");
+      machine.handleGuiAction(null, 31, 2, 0); // stale revision must be rejected
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(9), "stale mode request cannot replace queued intent");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 120)
+   public static void small_mineral_smelter_magma_output_full_holds_input_and_fe(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      machine.handleGuiAction(null, 31, 1, 0);
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      machine.setItem(2, new ItemStack(Items.DIRT, 64));
+      machine.energyStorage(null).receiveEnergy(4000, false);
+      tickMachine(helper, machine, 80);
+      helper.assertTrue(machine.getItem(0).is(Items.COBBLESTONE), "blocked output cannot consume input");
+      helper.assertValueEqual(64, machine.getItem(2).getCount(), "unrelated output stack is unchanged");
+      helper.assertValueEqual(4000, machine.energyStorage(null).getEnergyStored(), "blocked job does not burn FE");
+      helper.assertValueEqual(6, machine.dataAccessForTests().get(12), "blocked item output status is synchronized from the server");
+      machine.setItem(2, ItemStack.EMPTY);
+      tickMachine(helper, machine, 10);
+      helper.assertValueEqual(1, machine.dataAccessForTests().get(1), "the batch resumes after output space is freed");
+      helper.assertValueEqual(3840, machine.energyStorage(null).getEnergyStored(), "resumed heating charges ten paid active ticks");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_freezer_menu_syncs_exact_energy_progress_phase_and_status(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+      machine.setItem(0, new ItemStack(Items.WATER_BUCKET));
+      machine.energyStorage(null).receiveEnergy(12345, false);
+      MachineMenu menu = new MachineMenu(
+         MachineKind.SMALL_FREEZER, 1, player.getInventory(), machine, machine.dataAccessForTests()
       );
-      helper.setBlock(TEST_POS.east(), Blocks.REDSTONE_BLOCK.defaultBlockState());
-      helper.succeedWhen(() -> {
-         tickMachine(helper, machine, 10);
-         helper.assertTrue(machine.getItem(2).is(Items.OBSIDIAN), "disabled small mineral smelter should cool lava into output-slot obsidian");
-         helper.assertValueEqual(0, fluidHandler.getFluidInTank(0).getAmount(), "small mineral smelter should drain one bucket of lava while cooling");
-      });
+
+      helper.assertValueEqual(12345, menu.energyStored(), "freezer menu should sync exact stored FE, not 100-FE buckets");
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_READY, menu.freezerStatus(), "valid freezer input should report ready");
+      tickMachine(helper, machine, 45);
+      helper.assertValueEqual(45, menu.freezerProgressTicks(), "freezer menu should sync the exact server progress tick count");
+      helper.assertValueEqual(1, menu.freezerPhase(), "freezer menu should sync PHASE_0_4 from the live block state");
+      helper.assertValueEqual(12345 - 45 * 8, menu.energyStored(), "freezer energy should reflect the server's 8-FE/tick processing cost");
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_PROCESSING, menu.freezerStatus(), "active freezer should report processing");
+      helper.assertTrue(!menu.freezerRedstonePowered(), "unpowered freezer should report a LOW redstone input");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void small_freezer_menu_reports_live_states_and_preserves_cold_slot(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.CREATIVE);
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER);
+      MachineMenu menu = new MachineMenu(
+         MachineKind.SMALL_FREEZER, 1, player.getInventory(), machine, machine.dataAccessForTests()
+      );
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_IDLE, menu.freezerStatus(), "empty freezer should report idle");
+
+      machine.setItem(0, new ItemStack(Items.DIRT));
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_INVALID_INPUT, menu.freezerStatus(), "unsupported input should report invalid input");
+      machine.setItem(0, new ItemStack(Items.ICE));
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_WAITING_FOR_ENERGY, menu.freezerStatus(), "valid input without FE should report waiting");
+      machine.energyStorage(null).receiveEnergy(8, false);
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_READY, menu.freezerStatus(), "valid input with enough FE should report ready");
+      machine.setItem(2, new ItemStack(Items.PACKED_ICE, 64));
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_OUTPUT_BLOCKED, menu.freezerStatus(), "a full output stack should report blocked");
+      machine.setItem(2, ItemStack.EMPTY);
+      machine.setItem(0, new ItemStack(Items.WATER_BUCKET));
+      helper.setBlock(TEST_POS.west(), Blocks.REDSTONE_BLOCK);
+      tickMachine(helper, machine, 1);
+      helper.assertValueEqual(MachineMenu.FREEZER_STATUS_REDSTONE_PAUSED, menu.freezerStatus(), "HIGH redstone should pause freezer work");
+      helper.assertTrue(menu.freezerRedstonePowered(), "freezer menu should sync the live HIGH redstone input");
+      helper.assertValueEqual(0, menu.freezerProgressTicks(), "redstone pause should preserve the existing progress reset behavior");
+
+      machine.setItem(1, new ItemStack(Items.DIRT));
+      helper.assertValueEqual(3, menu.visibleMachineSlots(), "freezer menu should preserve the three historical machine slots");
+      helper.assertValueEqual(39, menu.slots.size(), "three machine slots should be followed by 27 inventory and 9 hotbar slots");
+      helper.assertTrue(menu.slots.get(1).getItem().is(Items.DIRT), "legacy Cold-slot contents should remain visible and extractable");
+      helper.assertTrue(!menu.slots.get(1).mayPlace(new ItemStack(Items.DIRT)), "Cold slot should continue rejecting new insertions");
+      ItemStack extracted = menu.quickMoveStack(player, 1);
+      helper.assertTrue(extracted.is(Items.DIRT), "legacy Cold-slot contents should still quick-move to the player inventory");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "extracting a legacy Cold-slot item should clear only slot 1");
+      player.getInventory().setItem(0, new ItemStack(Items.DIRT));
+      ItemStack rejectedShiftClick = menu.quickMoveStack(player, 30);
+      helper.assertTrue(rejectedShiftClick.isEmpty(), "shift-click should not insert a new item into the reserved Cold slot");
+      helper.assertTrue(player.getInventory().getItem(0).is(Items.DIRT), "rejected shift-click should preserve the player stack");
+      helper.assertTrue(machine.getItem(1).isEmpty(), "new GUI insertion should leave the reserved Cold slot empty");
+      menu.removed(player);
+      helper.succeed();
    }
 
    @GameTest(template = "empty", timeoutTicks = 220)
