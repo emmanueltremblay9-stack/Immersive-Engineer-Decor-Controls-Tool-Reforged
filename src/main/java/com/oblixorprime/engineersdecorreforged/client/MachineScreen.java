@@ -3,7 +3,9 @@ package com.oblixorprime.engineersdecorreforged.client;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import java.util.Locale;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
@@ -24,6 +26,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private static final int MUTED = -3949142;
    private static final int HOVER = -1917873;
    private static final int LABEL_BACKDROP = -1441327079;
+   private static final String BLOCK_BREAKER_GUI_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.";
    private static final int SLOT_FACE = -12236470;
    private static final int SLOT_INNER = -14276310;
    private final MachineScreen.Profile profile;
@@ -114,45 +117,174 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawBlockBreakerLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
-      this.drawTinyCenteredString(graphics, "Small Block Breaker", 105, 7, 144, -1646126);
-      this.drawTinyString(graphics, "Target Block", 16, 25, 77, -1646126, false);
-      this.drawTinyString(graphics, "Output", 109, 25, 34, -1646126, false);
-      this.drawTinyString(graphics, menu.blockBreakerTargetName(), 48, 39, 46, -1646126, false);
-      this.drawTinyString(graphics, "Front face", 48, 46, 44, -3949142, false);
-
+      String targetName = menu.blockBreakerTargetName();
+      boolean hasTarget = blockBreakerHasTarget(targetName);
       float hardness = menu.blockBreakerHardness();
-      String hardnessText = hardness < 0.0F ? "Hardness: unbreakable" : String.format(java.util.Locale.ROOT, "Hardness: %.2f", hardness);
-      this.drawTinyString(graphics, hardnessText, 15, 55, 78, hardness < 0.0F ? 0xFFFF7777 : -3949142, false);
-      this.drawTinyString(graphics, "Work: " + menu.field(1) + "/" + Math.max(0, menu.field(3)) + " ticks", 15, 76, 80, -1646126, false);
-      this.drawTinyString(graphics, menu.progress() + "%", 81, 99, 12, -1646126, false);
-      String energyCost = menu.blockBreakerEnergyCostPerBlock() > 0 ? menu.blockBreakerEnergyCostPerBlock() + " FE/block" : "FE/block: —";
-      this.drawTinyString(graphics, energyCost, 16, 114, 78, -3949142, false);
+      String displayedTargetName = hasTarget ? targetName : blockBreakerText("target.none").getString();
+      String hardnessKey = blockBreakerHardnessKey(hardness, hasTarget);
+      Component hardnessText = hardnessKey.equals("hardness.value")
+         ? blockBreakerText(hardnessKey, this.formatBlockBreakerHardness(hardness))
+         : blockBreakerText(hardnessKey);
+      boolean redstonePowered = menu.blockBreakerRedstonePowered();
+      int progress = Mth.clamp(menu.progress(), 0, 100);
+      int state = menu.blockBreakerStatus();
+      int estimatedCost = blockBreakerEstimatedCost(hardness, hasTarget,
+         !menu.blockBreakerTargetStack().isEmpty(), menu.blockBreakerEnergyCostPerBlock());
+      boolean hasEstimatedCost = estimatedCost >= 0;
 
-      this.drawTinyString(graphics, "Behavior & Operation", 106, 65, 87, -1646126, false);
-      this.drawTinyString(graphics, "Redstone:", 106, 79, 39, -3949142, false);
-      this.drawTinyString(graphics, menu.blockBreakerRedstonePowered() ? "HIGH" : "LOW", 151, 79, 26,
-         menu.blockBreakerRedstonePowered() ? 0xFFFF7777 : 0xFF9BCB83, false);
-      this.drawTinyString(graphics, "HIGH stops work", 106, 89, 75, -3949142, false);
-      this.drawTinyString(graphics, "Energy:", 106, 100, 31, -3949142, false);
-      this.drawTinyString(graphics, menu.energyStored() + " FE", 140, 100, 43, -1646126, false);
-      this.drawTinyString(graphics, "FE inlet: underside", 106, 110, 80, -3949142, false);
-      this.drawTinyString(graphics, "Status:", 106, 120, 30, -3949142, false);
-      this.drawTinyString(graphics, blockBreakerStatus(menu.blockBreakerStatus()), 139, 120, 52, -1646126, false);
-      this.drawTinyString(graphics, "Rear only", 163, 44, 34, -3949142, false);
-      this.drawTinyString(graphics, "Q " + menu.blockBreakerPendingItems(), 163, 54, 35, -3949142, false);
-      this.drawTinyString(graphics, "Inventory", 15, 135, 42, -1646126, false);
+      this.drawTinyCenteredString(graphics,
+         Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker").getString(),
+         105, 7, 144, -1646126);
+      this.drawTinyString(graphics, blockBreakerText("target.heading").getString(), 16, 25, 77, -1646126, false);
+      this.drawTinyString(graphics, blockBreakerText("output.heading").getString(), 109, 25, 42, -1646126, false);
+      this.drawTinyString(graphics, displayedTargetName, 48, 39, 53, -1646126, false);
+      this.drawTinyString(graphics, blockBreakerText("target.front_face").getString(), 48, 51, 53, -3949142, false);
+      this.drawTinyString(graphics, hardnessText.getString(), 48, 62, 53,
+         hardness < 0.0F ? 0xFFFF7777 : -3949142, false);
+      this.drawTinyString(graphics,
+         blockBreakerText("work.ticks", Math.max(0, menu.field(1)), Math.max(0, menu.field(3))).getString(),
+         15, 76, 82, -1646126, false);
+      this.drawTinyString(graphics, blockBreakerText("progress.percent", progress).getString(), 81, 98, 25, -1646126, false);
+      this.drawTinyString(graphics,
+         (hasEstimatedCost
+            ? blockBreakerText("cost.approximate", estimatedCost)
+            : blockBreakerText("cost.unavailable")).getString(),
+         16, 114, 86, -3949142, false);
+
+      this.drawTinyString(graphics, blockBreakerText("behavior.heading").getString(), 106, 65, 89, -1646126, false);
+      this.drawTinyString(graphics,
+         blockBreakerText("redstone.signal", blockBreakerText(redstonePowered ? "signal.high" : "signal.low")).getString(),
+         106, 78, 89, redstonePowered ? 0xFFFF7777 : 0xFF9BCB83, false);
+      this.drawTinyString(graphics, blockBreakerText("redstone.rule").getString(), 106, 88, 89, -3949142, false);
+      this.drawTinyString(graphics, blockBreakerText("energy.stored", menu.energyStored(), menu.energyCapacity()).getString(),
+         106, 98, 89, -1646126, false);
+      this.drawTinyString(graphics, blockBreakerText("input.bottom").getString(), 106, 108, 89, -3949142, false);
+      this.drawTinyString(graphics,
+         blockBreakerText("status.label", blockBreakerText(blockBreakerStatusLabelKey(state))).getString(),
+         106, 116, 89, -1646126, false);
+      this.drawTinyString(graphics, blockBreakerText(blockBreakerStatusDetailKey(state)).getString(),
+         106, 123, 89, -3949142, false);
+      this.drawTinyString(graphics, blockBreakerText("output.rear_only").getString(), 153, 43, 43, -3949142, false);
+      this.drawTinyString(graphics, blockBreakerText("legacy.pending", menu.blockBreakerPendingItems()).getString(),
+         153, 54, 43, -3949142, false);
+      this.drawTinyString(graphics, blockBreakerText("inventory").getString(), 15, 135, 45, -1646126, false);
    }
 
-   private static String blockBreakerStatus(int state) {
+   static String blockBreakerStatusLabelKey(int state) {
       return switch (state) {
-         case 1 -> "Stopped";
-         case 2 -> "Waiting for FE";
-         case 3 -> "Output full";
-         case 4 -> "Working";
-         case 5 -> "Cooldown";
-         case 6 -> "Unbreakable";
-         default -> "No target";
+         case 0 -> "target.none";
+         case 1 -> "state.redstone_stop";
+         case 2 -> "state.waiting_for_fe";
+         case 3 -> "state.output_blocked";
+         case 4 -> "state.working";
+         case 5 -> "state.cooldown";
+         case 6 -> "state.unbreakable";
+         default -> "state.unknown";
       };
+   }
+
+   static boolean blockBreakerHasTarget(String targetName) {
+      return !"No target".equals(targetName);
+   }
+
+   static int blockBreakerEstimatedCost(float hardness, boolean hasTarget, boolean hasPreviewItem, int menuEstimate) {
+      if (!hasTarget || !Float.isFinite(hardness) || hardness < 0.0F) {
+         return -1;
+      }
+      return hasPreviewItem ? menuEstimate : MachineBlockEntity.blockBreakerEnergyCostPerBlock(hardness);
+   }
+
+   static String formatBlockBreakerHardness(float hardness, Locale locale) {
+      return String.format(locale, "%.2f", hardness);
+   }
+
+   private String formatBlockBreakerHardness(float hardness) {
+      String selectedLanguage = this.minecraft.getLanguageManager().getSelected();
+      Locale locale = Locale.forLanguageTag(selectedLanguage.replace('_', '-'));
+      return formatBlockBreakerHardness(hardness, locale);
+   }
+
+   static String blockBreakerStatusDetailKey(int state) {
+      return switch (state) {
+         case 0 -> "detail.no_target";
+         case 1 -> "detail.redstone_stop";
+         case 2 -> "detail.waiting_for_fe";
+         case 3 -> "detail.output_blocked";
+         case 4 -> "detail.working";
+         case 5 -> "detail.cooldown";
+         case 6 -> "detail.unbreakable";
+         default -> "detail.unknown";
+      };
+   }
+
+   static String blockBreakerHardnessKey(float hardness, boolean hasTarget) {
+      if (!hasTarget) {
+         return "hardness.unavailable";
+      }
+      if (!Float.isFinite(hardness)) {
+         return "hardness.unknown";
+      }
+      return hardness < 0.0F ? "hardness.unbreakable" : "hardness.value";
+   }
+
+   private static Component blockBreakerText(String key, Object... arguments) {
+      return Component.translatable(BLOCK_BREAKER_GUI_PREFIX + key, arguments);
+   }
+
+   private Component blockBreakerTooltip(int mouseX, int mouseY) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      if (menu.kind() != MachineKind.SMALL_BLOCK_BREAKER) {
+         return null;
+      }
+
+      String targetName = menu.blockBreakerTargetName();
+      boolean hasTarget = blockBreakerHasTarget(targetName);
+      float hardness = menu.blockBreakerHardness();
+      String hardnessKey = blockBreakerHardnessKey(hardness, hasTarget);
+      int estimatedCost = blockBreakerEstimatedCost(hardness, hasTarget,
+         !menu.blockBreakerTargetStack().isEmpty(), menu.blockBreakerEnergyCostPerBlock());
+      boolean hasEstimatedCost = estimatedCost >= 0;
+
+      if (this.isHovering(22, 46, 16, 16, mouseX, mouseY) || this.isHovering(48, 38, 53, 12, mouseX, mouseY)) {
+         return hasTarget ? blockBreakerText("tooltip.target", targetName) : blockBreakerText("target.none");
+      }
+      if (this.isHovering(48, 50, 53, 11, mouseX, mouseY)) {
+         return blockBreakerText("tooltip.front_face");
+      }
+      if (this.isHovering(48, 61, 53, 11, mouseX, mouseY)) {
+         return switch (hardnessKey) {
+            case "hardness.value" -> blockBreakerText("tooltip.hardness",
+               blockBreakerText(hardnessKey, this.formatBlockBreakerHardness(hardness)));
+            case "hardness.unbreakable" -> blockBreakerText("tooltip.unbreakable");
+            default -> blockBreakerText("tooltip.hardness_unavailable");
+         };
+      }
+      if (this.isHovering(16, 113, 86, 12, mouseX, mouseY)) {
+         return hasEstimatedCost
+            ? blockBreakerText("tooltip.cost", estimatedCost)
+            : blockBreakerText("tooltip.cost_unavailable");
+      }
+      if (this.isHovering(153, 42, 43, 11, mouseX, mouseY)) {
+         return blockBreakerText("tooltip.rear_output");
+      }
+      if (this.isHovering(153, 53, 43, 11, mouseX, mouseY)) {
+         return blockBreakerText("tooltip.legacy_pending", menu.blockBreakerPendingItems());
+      }
+      if (this.isHovering(106, 78, 89, 20, mouseX, mouseY)) {
+         return blockBreakerText("tooltip.redstone");
+      }
+      if (this.isHovering(106, 98, 89, 10, mouseX, mouseY)) {
+         return blockBreakerText("tooltip.energy", menu.energyStored(), menu.energyCapacity());
+      }
+      if (this.isHovering(106, 108, 89, 8, mouseX, mouseY)) {
+         return blockBreakerText("tooltip.input");
+      }
+      if (this.isHovering(106, 116, 89, 15, mouseX, mouseY)) {
+         return blockBreakerText("tooltip.status",
+            blockBreakerText(blockBreakerStatusLabelKey(menu.blockBreakerStatus())),
+            blockBreakerText(blockBreakerStatusDetailKey(menu.blockBreakerStatus())));
+      }
+      return null;
    }
 
    private void renderOriginalHoverOverlay(GuiGraphics graphics, int mouseX, int mouseY) {
@@ -684,6 +816,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+      Component blockBreakerTooltip = this.blockBreakerTooltip(mouseX, mouseY);
+      if (blockBreakerTooltip != null) {
+         graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);
+         return;
+      }
+
       Component controlTooltip = this.originalControlTooltip(mouseX, mouseY);
       if (controlTooltip != null) {
          graphics.renderTooltip(this.font, controlTooltip, mouseX, mouseY);
