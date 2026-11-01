@@ -1,25 +1,4 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "immersive_engineer_decor_controls_tool_reforged_machines",
-  "pattern": [
-    "PPP",
-    "PCP",
-    "PRP"
-  ],
-  "key": {
-    "P": {
-      "tag": "immersiveengineering:treated_wood"
-    },
-    "C": {
-      "item": "minecraft:chest"
-    },
-    "R": {
-      "item": "minecraft:paper"
-    }
-  },
-  "result": {
-    "count": 1,
-    "id": "immersive_engineer_decor_controls_tool_reforged:labeled_crate"
-  }
+  "type": "immersive_engineer_decor_controls_tool_reforged:labeled_crate_upgrade",
+  "category": "misc"
 }

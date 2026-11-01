@@ -3,6 +3,7 @@ package com.oblixorprime.engineersdecorreforged.utility;
 import blusunrize.immersiveengineering.api.utils.ItemUtils;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +17,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -40,6 +42,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.DirectionalPlaceContext;
 import net.minecraft.world.item.crafting.CraftingInput;
@@ -90,6 +93,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int BUCKET_AMOUNT = 1000;
    private static final int BARREL_CAPACITY = 32000;
    private boolean milkingTransactionActive;
+   private boolean labeledCrateDropHandled;
+   private boolean labeledCratePlayerBreakPending;
+   private ItemEnchantments labeledCrateItemEnchantments = ItemEnchantments.EMPTY;
    private static final int FUNNEL_CAPACITY = 3000;
    private static final int FUNNEL_TRANSFER = 250;
    private static final int SOLAR_CAPACITY = 64000;
@@ -636,6 +642,59 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    public MachineBlockEntity(BlockPos pos, BlockState state) {
       super((BlockEntityType)ModBlockEntities.MACHINE.get(), pos, state);
+      if (isLabeledCrateState(state)) {
+         this.items = NonNullList.withSize(LabeledCrateMenu.CRATE_SLOT_COUNT, ItemStack.EMPTY);
+      }
+   }
+
+   private static boolean isLabeledCrateState(BlockState state) {
+      return state.getBlock() instanceof MachineBlocks.MachineBlock machineBlock && machineBlock.kind() == MachineKind.LABELED_CRATE;
+   }
+
+   public boolean beginLabeledCrateDropHandling() {
+      if (this.labeledCrateDropHandled) {
+         return false;
+      }
+      this.labeledCrateDropHandled = true;
+      return true;
+   }
+
+   public boolean consumeLabeledCrateDropHandling() {
+      boolean handled = this.labeledCrateDropHandled;
+      this.labeledCrateDropHandled = false;
+      return handled;
+   }
+
+   public boolean isLabeledCrateDropHandled() {
+      return this.labeledCrateDropHandled;
+   }
+
+   public void beginLabeledCratePlayerBreak() {
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         this.labeledCratePlayerBreakPending = true;
+      }
+   }
+
+   public boolean consumeLabeledCratePlayerBreak() {
+      boolean pending = this.labeledCratePlayerBreakPending;
+      this.labeledCratePlayerBreakPending = false;
+      return pending;
+   }
+
+   public List<ItemStack> drainLabeledCrateContents() {
+      if (this.kind() != MachineKind.LABELED_CRATE) {
+         return List.of();
+      }
+      List<ItemStack> contents = new ArrayList<>();
+      for (int slot = 0; slot < LabeledCrateMenu.CRATE_SLOT_COUNT && slot < this.items.size(); slot++) {
+         ItemStack stack = this.items.get(slot);
+         if (!stack.isEmpty()) {
+            contents.add(stack.copy());
+            this.items.set(slot, ItemStack.EMPTY);
+         }
+      }
+      this.setChanged();
+      return contents;
    }
 
    public List<String> labelLines() {
@@ -660,6 +719,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             }
          }
       }
+   }
+
+   public ItemEnchantments labeledCrateItemEnchantments() {
+      return this.kind() == MachineKind.LABELED_CRATE ? this.labeledCrateItemEnchantments : ItemEnchantments.EMPTY;
+   }
+
+   public void setLabeledCrateItemEnchantments(ItemEnchantments enchantments) {
+      if (this.kind() != MachineKind.LABELED_CRATE) {
+         return;
+      }
+      this.labeledCrateItemEnchantments = enchantments == null ? ItemEnchantments.EMPTY : enchantments;
+      this.setChanged();
    }
 
    public static String sanitizeLabelLine(String value) {
@@ -946,11 +1017,63 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return this.items.size();
    }
 
+   private void syncLabeledCrateFrameClients(ItemStack previousFrame) {
+      if (this.kind() == MachineKind.LABELED_CRATE
+            && !ItemStack.matches(previousFrame, this.getItem(LabeledCrateMenu.FRAME_SLOT))
+            && this.level != null
+            && !this.level.isClientSide) {
+         this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), Block.UPDATE_CLIENTS);
+      }
+   }
+
+   @Override
+   public ItemStack removeItem(int slot, int amount) {
+      boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
+      ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
+      ItemStack removed = super.removeItem(slot, amount);
+      if (updateFrame) {
+         this.syncLabeledCrateFrameClients(previousFrame);
+      }
+      return removed;
+   }
+
+   @Override
+   public ItemStack removeItemNoUpdate(int slot) {
+      boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
+      ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
+      ItemStack removed = super.removeItemNoUpdate(slot);
+      if (updateFrame) {
+         this.syncLabeledCrateFrameClients(previousFrame);
+      }
+      return removed;
+   }
+
+   @Override
+   public void setItem(int slot, ItemStack stack) {
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         if (slot < 0 || slot >= LabeledCrateMenu.CRATE_SLOT_COUNT || !LabeledCrateItemRules.canStore(stack)) {
+            return;
+         }
+         if (slot == LabeledCrateMenu.FRAME_SLOT && stack.getCount() > 1) {
+            stack = stack.copyWithCount(1);
+         }
+      }
+      boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
+      ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
+      super.setItem(slot, stack);
+      if (updateFrame) {
+         this.syncLabeledCrateFrameClients(previousFrame);
+      }
+   }
+
    @Override
    public int[] getSlotsForFace(Direction side) {
-      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
-         return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2} : new int[0];
-      }
+        if (this.kind() == MachineKind.LABELED_CRATE) {
+            return this.slotsUpTo(LabeledCrateMenu.STORAGE_SLOT_COUNT);
+        }
+        if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
+            return side == Direction.UP ? new int[]{0} : side == Direction.DOWN ? new int[]{2} : new int[0];
+        }
       if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          return this.isBlockBreakerRearSide(side) ? new int[]{0} : new int[0];
       }
@@ -966,17 +1089,25 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    @Override
    public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) {
-      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) return side == Direction.DOWN && slot == 2;
+        if (this.kind() == MachineKind.LABELED_CRATE) {
+            return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
+        }
+        if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
+            return side == Direction.DOWN && slot == 2;
+        }
       return this.kind() != MachineKind.SMALL_BLOCK_BREAKER
          || slot == 0 && this.isBlockBreakerRearSide(side);
    }
 
    @Override
    public boolean canTakeItem(Container destination, int slot, ItemStack stack) {
-      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
-         return slot == 2 && destination instanceof BlockEntity block && block.getLevel() == this.level
-            && block.getBlockPos().equals(this.worldPosition.below());
-      }
+        if (this.kind() == MachineKind.LABELED_CRATE) {
+            return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
+        }
+        if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
+            return slot == 2 && destination instanceof BlockEntity block && block.getLevel() == this.level
+                && block.getBlockPos().equals(this.worldPosition.below());
+        }
       if (this.kind() != MachineKind.SMALL_BLOCK_BREAKER) {
          return true;
       }
@@ -1007,14 +1138,20 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected AbstractContainerMenu createMenu(int id, Inventory inventory) {
       MachineKind kind = this.kind();
-      if (kind == MachineKind.SMALL_MINERAL_SMELTER) {
-         return new MachineMenu(kind, id, inventory, this, this.mineralSmelterUiDataAccess);
-      }
+        if (kind == MachineKind.SMALL_MINERAL_SMELTER) {
+            return new MachineMenu(kind, id, inventory, this, this.mineralSmelterUiDataAccess);
+        }
+        if (kind == MachineKind.LABELED_CRATE) {
+            return new LabeledCrateMenu(id, inventory, this);
+        }
       return new MachineMenu(kind == null ? MachineKind.LABELED_CRATE : kind, id, inventory, this, this.dataAccess);
    }
 
    public boolean canPlaceItem(int index, ItemStack stack) {
       MachineKind kind = this.kind();
+      if (kind == MachineKind.LABELED_CRATE) {
+         return index >= 0 && index < LabeledCrateMenu.STORAGE_SLOT_COUNT && LabeledCrateItemRules.canStore(stack);
+      }
       if (kind == null || index < 0 || index >= this.visibleSlotCount(kind)) {
          return false;
       }
@@ -1454,12 +1591,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield this.comparatorOutput();
                case 5:
                   yield Math.max(this.cooldown, this.burnTicks);
-               case 11:
-                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() & 0x7FFF : 0;
-               case 12:
-                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 15 & 0x7FFF : 0;
-               case 13:
-                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 30 : 0;
+                case 11:
+                   if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
+                      yield SmallFluidFunnelFluidSync.encode(this.fluidType, this.fluidAmount);
+                   } else if (kind == MachineKind.FLUID_BARREL) {
+                      yield this.fluidRegistryId() & 0x7FFF;
+                   } else {
+                      yield 0;
+                   }
+                case 12:
+                   yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 15 & 0x7FFF : 0;
+                case 13:
+                   yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 30 : 0;
                default:
                   yield 0;
             }
@@ -1718,10 +1861,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected void loadAdditional(CompoundTag tag, Provider registries) {
       super.loadAdditional(tag, registries);
-      this.items = NonNullList.withSize(27, ItemStack.EMPTY);
+      this.items = NonNullList.withSize(
+         this.kind() == MachineKind.LABELED_CRATE ? LabeledCrateMenu.CRATE_SLOT_COUNT : SLOT_COUNT, ItemStack.EMPTY
+      );
       ContainerHelper.loadAllItems(tag, this.items, registries);
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          this.items.set(10, ItemStack.EMPTY);
+      }
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         this.labeledCrateItemEnchantments = tag.contains("LabeledCrateEnchantments")
+            ? ItemEnchantments.CODEC.parse(registries.createSerializationContext(NbtOps.INSTANCE), tag.get("LabeledCrateEnchantments"))
+               .result().orElse(ItemEnchantments.EMPTY)
+            : ItemEnchantments.EMPTY;
       }
 
       this.tickCounter = tag.getInt("TickCounter");
@@ -1840,6 +1991,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.items.set(10, result);
       } else {
          ContainerHelper.saveAllItems(tag, this.items, registries);
+      }
+
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         if (this.labeledCrateItemEnchantments.isEmpty()) {
+            tag.remove("LabeledCrateEnchantments");
+         } else {
+            ItemEnchantments.CODEC.encodeStart(registries.createSerializationContext(NbtOps.INSTANCE), this.labeledCrateItemEnchantments)
+               .result().ifPresent(value -> tag.put("LabeledCrateEnchantments", value));
+         }
       }
 
       tag.putInt("TickCounter", this.tickCounter);
@@ -2273,7 +2433,20 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       BlockEntity targetEntity = this.level.getBlockEntity(target);
       List<ItemStack> drops = Block.getDrops(targetState, serverLevel, target, targetEntity);
       int[] slots = this.accessibleSlots();
-      if (!this.canInsertAllIntoSlots(drops, slots) || !this.level.destroyBlock(target, false, null, 512)) {
+      if (!this.canInsertAllIntoSlots(drops, slots)) {
+         return false;
+      }
+
+      MachineBlockEntity crate = targetEntity instanceof MachineBlockEntity machine && machine.kind() == MachineKind.LABELED_CRATE
+         ? machine
+         : null;
+      if (crate != null && !crate.beginLabeledCrateDropHandling()) {
+         return false;
+      }
+      if (!this.level.destroyBlock(target, false, null, 512)) {
+         if (crate != null) {
+            crate.consumeLabeledCrateDropHandling();
+         }
          return false;
       }
 
@@ -3626,7 +3799,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private int visibleSlotCount(MachineKind kind) {
-      return MachineLayout.forKind(kind).machineSlots().size();
+      return kind == MachineKind.LABELED_CRATE
+         ? LabeledCrateMenu.STORAGE_SLOT_COUNT
+         : MachineLayout.forKind(kind).machineSlots().size();
    }
 
    private int[] accessibleSlots() {

@@ -271,7 +271,10 @@ tasks.register('validateManualResources') {
                             throw new GradleException("Manual crafting recipe is missing in ${entryFile}: ${recipeId}")
                         }
                         def recipeType = json.parse(recipeFile)['type']
-                        if (!(recipeType instanceof String) || !recipeType.startsWith('minecraft:crafting_')) {
+                        boolean isVanillaCraftingRecipe = recipeType instanceof String && recipeType.startsWith('minecraft:crafting_')
+                        // The labeled-crate upgrade is a registered CraftingRecipe serializer that must copy the input inventory safely.
+                        boolean isSafeLabeledCrateUpgrade = recipeId == "${mod_id}:labeled_crate" && recipeType == "${mod_id}:labeled_crate_upgrade"
+                        if (!isVanillaCraftingRecipe && !isSafeLabeledCrateUpgrade) {
                             throw new GradleException("Manual crafting widget points at non-crafting recipe ${recipeId} (${recipeType}) in ${entryFile}")
                         }
                     }

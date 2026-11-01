@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.network;
 
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import net.minecraft.server.level.ServerPlayer;
@@ -38,6 +39,7 @@ public final class ModNetworking {
       registrar.playToServer(MachineActionPayload.TYPE, MachineActionPayload.STREAM_CODEC, ModNetworking::handleMachineAction);
       registrar.playToServer(SmelterModePayload.TYPE, SmelterModePayload.STREAM_CODEC, ModNetworking::handleSmelterMode);
       registrar.playToServer(LabeledCrateLabelPayload.TYPE, LabeledCrateLabelPayload.STREAM_CODEC, ModNetworking::handleLabeledCrateLabel);
+      registrar.playToServer(LabeledCrateQuickMovePayload.TYPE, LabeledCrateQuickMovePayload.STREAM_CODEC, ModNetworking::handleLabeledCrateQuickMove);
    }
 
    private static void handleSmelterMode(SmelterModePayload payload, IPayloadContext context) {
@@ -56,6 +58,18 @@ public final class ModNetworking {
             if (serverPlayer.containerMenu instanceof MachineMenu menu && menu.containerId == payload.containerId()) {
                menu.handleAction(serverPlayer, payload.action(), payload.valueA(), payload.valueB());
             }
+         }
+      });
+   }
+
+   private static void handleLabeledCrateQuickMove(LabeledCrateQuickMovePayload payload, IPayloadContext context) {
+      context.enqueueWork(() -> {
+         if (context.player() instanceof ServerPlayer serverPlayer
+              && !serverPlayer.isSpectator()
+              && serverPlayer.containerMenu instanceof LabeledCrateMenu menu
+              && menu.containerId == payload.containerId()
+              && menu.stillValid(serverPlayer)) {
+            menu.quickMoveAll(serverPlayer, payload.slotId());
          }
       });
    }
