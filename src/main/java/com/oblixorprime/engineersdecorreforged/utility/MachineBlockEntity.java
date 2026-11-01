@@ -6,7 +6,6 @@ import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -1086,16 +1085,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private static boolean isLayoutResultSlot(MachineKind kind, int index) {
-      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> slot.containerIndex() == index && isResultRole(slot.role()));
+      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> slot.containerIndex() == index && slot.output());
    }
 
    private static boolean hasLayoutResultSlots(MachineKind kind) {
-      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> isResultRole(slot.role()));
-   }
-
-   private static boolean isResultRole(String role) {
-      String normalized = role.toLowerCase(Locale.ROOT);
-      return normalized.contains("output") || normalized.equals("filled") || normalized.equals("milk");
+      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> slot.output());
    }
 
    public void handleGuiAction(Player player, int action, int valueA, int valueB) {
