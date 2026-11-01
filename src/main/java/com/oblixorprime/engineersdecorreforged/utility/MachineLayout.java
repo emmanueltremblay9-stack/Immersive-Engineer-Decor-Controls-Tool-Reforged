@@ -64,8 +64,8 @@ public record MachineLayout(
          case FACTORY_HOPPER -> hopper();
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
-         case SMALL_MINERAL_SMELTER -> mineralHybrid();
-         case SMALL_FREEZER -> processor(kind);
+            case SMALL_MINERAL_SMELTER -> mineralHybrid();
+            case SMALL_FREEZER -> freezer();
          case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
          case SMALL_MILKING_MACHINE -> smallMilkingMachine();
          case SMALL_SOLAR_PANEL -> solarPanelArtwork();
@@ -240,6 +240,25 @@ public record MachineLayout(
          ),
          MachineLayout.LayoutStyle.PROCESSOR,
          null
+      );
+   }
+
+   private static MachineLayout freezer() {
+      return new MachineLayout(
+         209,
+         235,
+         24,
+         145,
+         24,
+         203,
+         List.of(
+            new MachineLayout.MachineSlot(0, 22, 57, "Input"),
+            new MachineLayout.MachineSlot(1, 22, 84, "Cold reserved"),
+            new MachineLayout.MachineSlot(2, 170, 57, "Output")
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_water_freezer/background"
       );
    }
 
