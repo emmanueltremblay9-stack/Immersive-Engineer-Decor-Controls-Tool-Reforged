@@ -1,11 +1,13 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.component.CustomData;
 
 public final class LabeledCrateItemRules {
@@ -36,6 +38,16 @@ public final class LabeledCrateItemRules {
 
       CompoundTag customData = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
       return !hasStoredItems(customData.getCompound("BlockEntityTag"));
+   }
+
+   public static boolean canImportContents(ItemContainerContents contents) {
+      if (contents == null) {
+         return true;
+      }
+      if (contents.getSlots() > LabeledCrateMenu.STORAGE_SLOT_COUNT) {
+         return false;
+      }
+      return contents.nonEmptyStream().allMatch(LabeledCrateItemRules::canStore);
    }
 
    private static boolean hasStoredItems(CompoundTag tag) {

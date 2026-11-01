@@ -43,6 +43,16 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.state.BlockState;
+import java.util.Optional;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 
 @GameTestHolder("immersive_engineer_decor_controls_tool_reforged")
 @PrefixGameTestTemplate(false)
@@ -50,6 +60,127 @@ public final class LabeledCrateGameTests {
    private static final BlockPos TEST_POS = new BlockPos(1, 1, 1);
 
    private LabeledCrateGameTests() {
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_upgrade_crafts_empty_standard_ie_crate(GameTestHelper helper) {
+      List<ItemStack> slots = labeledCrateUpgradeSlots(ie("crate"));
+      CraftingInput input = CraftingInput.of(3, 3, slots);
+      var recipe = findLabeledCrateUpgrade(helper, slots);
+      helper.assertTrue(recipe.isPresent(), "empty standard IE crate should match the Labeled Crate upgrade");
+      ItemStack result = recipe.orElseThrow().value().assemble(input, helper.getLevel().registryAccess());
+      helper.assertTrue(result.is(ModBlocks.LABELED_CRATE.get().asItem()), "empty upgrade should produce a Labeled Crate");
+      ItemContainerContents contents = result.get(DataComponents.CONTAINER);
+      helper.assertTrue(contents == null || contents.nonEmptyStream().findAny().isEmpty(),
+         "empty standard crate must remain empty after crafting");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_upgrade_transfers_full_named_ie_crate_components_and_survives_reload(GameTestHelper helper) {
+      NonNullList<ItemStack> sourceItems = NonNullList.withSize(27, ItemStack.EMPTY);
+      for (int slot = 0; slot < sourceItems.size(); slot++) {
+         sourceItems.set(slot, new ItemStack(Items.IRON_INGOT, slot + 1));
+      }
+      CompoundTag storedItemData = new CompoundTag();
+      storedItemData.putString("grade", "A");
+      sourceItems.set(13, new ItemStack(Items.IRON_INGOT, 14));
+      sourceItems.get(13).set(DataComponents.CUSTOM_DATA, CustomData.of(storedItemData));
+      ItemContainerContents sourceContents = ItemContainerContents.fromItems(sourceItems);
+      ItemStack sourceCrate = ie("crate");
+      sourceCrate.set(DataComponents.CONTAINER, sourceContents);
+      sourceCrate.set(DataComponents.CUSTOM_NAME, Component.literal("Named IE crate"));
+      ItemEnchantments.Mutable enchantments = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY);
+      enchantments.set(
+         helper.getLevel().registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.UNBREAKING),
+         2
+      );
+      ItemEnchantments sourceEnchantments = enchantments.toImmutable();
+      sourceCrate.set(DataComponents.ENCHANTMENTS, sourceEnchantments);
+      ItemStack sourceBeforeAssembly = sourceCrate.copy();
+
+      List<ItemStack> slots = labeledCrateUpgradeSlots(sourceCrate);
+      CraftingInput input = CraftingInput.of(3, 3, slots);
+      var recipe = findLabeledCrateUpgrade(helper, slots);
+      helper.assertTrue(recipe.isPresent(), "full standard IE crate with supported contents should match");
+      ItemStack result = recipe.orElseThrow().value().assemble(input, helper.getLevel().registryAccess());
+      helper.assertTrue(result.is(ModBlocks.LABELED_CRATE.get().asItem()), "full upgrade should produce a Labeled Crate");
+      helper.assertTrue(sourceContents.equals(result.get(DataComponents.CONTAINER)),
+         "craft output should retain all source crate container contents");
+      helper.assertTrue(sourceEnchantments.equals(result.get(DataComponents.ENCHANTMENTS)),
+         "craft output should retain the source crate enchantment component");
+      helper.assertTrue(result.get(DataComponents.CUSTOM_NAME) != null
+            && result.get(DataComponents.CUSTOM_NAME).getString().equals("Named IE crate"),
+         "craft output should retain the source crate custom name");
+      helper.assertTrue(ItemStack.matches(sourceBeforeAssembly, sourceCrate),
+         "assembling the output should not mutate the source crate item");
+
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+      FakePlayer player = fakePlayer(helper, GameType.SURVIVAL, TEST_POS);
+      player.setItemInHand(InteractionHand.MAIN_HAND, result);
+      BlockHitResult hit = new BlockHitResult(Vec3.atCenterOf(absolutePos), Direction.UP, absolutePos, false);
+      InteractionResult placement = ((BlockItem)result.getItem()).place(
+         new net.minecraft.world.item.context.BlockPlaceContext(
+            helper.getLevel(), player, InteractionHand.MAIN_HAND, result, hit
+         )
+      );
+      helper.assertTrue(placement.consumesAction(), "crafted Labeled Crate with source contents should place");
+      helper.assertTrue(player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty(),
+         "placing the crafted result should consume exactly that result item");
+      BlockEntity entity = helper.getLevel().getBlockEntity(absolutePos);
+      helper.assertTrue(entity instanceof MachineBlockEntity, "placed upgrade should create its machine block entity");
+      MachineBlockEntity placed = (MachineBlockEntity)entity;
+      for (int slot = 0; slot < sourceItems.size(); slot++) {
+         helper.assertTrue(ItemStack.matches(sourceItems.get(slot), placed.getItem(slot)),
+            "source crate slot " + slot + " should transfer to the same Labeled Crate slot");
+      }
+      for (int slot = 27; slot < LabeledCrateMenu.STORAGE_SLOT_COUNT; slot++) {
+         helper.assertTrue(placed.getItem(slot).isEmpty(), "unused Labeled Crate storage slot should remain empty");
+      }
+      helper.assertTrue(placed.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "source crate storage should not be copied into the item-frame hint slot");
+      helper.assertTrue(placed.getCustomName() != null && placed.getCustomName().getString().equals("Named IE crate"),
+         "source crate name should be applied to the placed Labeled Crate");
+      helper.assertTrue(sourceEnchantments.equals(placed.labeledCrateItemEnchantments()),
+         "source crate enchantments should be stored with the placed Labeled Crate");
+
+      CompoundTag saved = placed.saveWithoutMetadata(helper.getLevel().registryAccess());
+      MachineBlockEntity reloaded = new MachineBlockEntity(absolutePos, placed.getBlockState());
+      reloaded.loadWithComponents(saved, helper.getLevel().registryAccess());
+      for (int slot = 0; slot < sourceItems.size(); slot++) {
+         helper.assertTrue(ItemStack.matches(sourceItems.get(slot), reloaded.getItem(slot)),
+            "reloaded Labeled Crate should retain source slot " + slot);
+      }
+      helper.assertTrue(reloaded.getCustomName() != null && reloaded.getCustomName().getString().equals("Named IE crate"),
+         "reloaded Labeled Crate should retain the source name");
+      helper.assertTrue(sourceEnchantments.equals(reloaded.labeledCrateItemEnchantments()),
+         "reloaded Labeled Crate should retain the source enchantment component");
+
+      LootParams.Builder dropsContext = new LootParams.Builder(helper.getLevel())
+         .withParameter(LootContextParams.BLOCK_ENTITY, placed);
+      List<ItemStack> drops = ModBlocks.LABELED_CRATE.get().getDrops(placed.getBlockState(), dropsContext);
+      helper.assertValueEqual(1, drops.size(), "normal break should preserve the imported crate as one Labeled Crate item");
+      helper.assertTrue(sourceEnchantments.equals(drops.get(0).get(DataComponents.ENCHANTMENTS)),
+         "normal break should reattach imported enchantments to the Labeled Crate item");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_upgrade_rejects_nested_source_contents_without_consuming_them(GameTestHelper helper) {
+      ItemStack nestedBox = new ItemStack(Items.SHULKER_BOX);
+      nestedBox.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(List.of(new ItemStack(Items.DIAMOND))));
+      NonNullList<ItemStack> sourceItems = NonNullList.withSize(27, ItemStack.EMPTY);
+      sourceItems.set(13, nestedBox);
+      ItemStack sourceCrate = ie("crate");
+      sourceCrate.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(sourceItems));
+      ItemStack sourceBefore = sourceCrate.copy();
+
+      List<ItemStack> slots = labeledCrateUpgradeSlots(sourceCrate);
+      helper.assertTrue(findLabeledCrateUpgrade(helper, slots).isEmpty(),
+         "crate containing a forbidden nested container must not match the upgrade recipe");
+      helper.assertTrue(ItemStack.matches(sourceBefore, sourceCrate),
+         "refusing the upgrade must leave the IE crate and its nested contents unchanged");
+      helper.succeed();
    }
 
    @GameTest(template = "empty", timeoutTicks = 40)
@@ -269,6 +400,35 @@ public final class LabeledCrateGameTests {
       }
       helper.succeed();
    }
+
+   private static List<ItemStack> labeledCrateUpgradeSlots(ItemStack crate) {
+      return List.of(
+         ie("stick_steel"), ie("plate_steel"), ie("stick_steel"),
+         ie("plate_steel"), crate, ie("plate_steel"),
+         ie("stick_steel"), ie("plate_steel"), ie("stick_steel")
+      );
+   }
+
+   private static Optional<RecipeHolder<CraftingRecipe>> findLabeledCrateUpgrade(GameTestHelper helper, List<ItemStack> slots) {
+      CraftingInput input = CraftingInput.of(3, 3, slots);
+      ResourceLocation target = ResourceLocation.fromNamespaceAndPath(
+         "immersive_engineer_decor_controls_tool_reforged", "labeled_crate"
+      );
+      return helper.getLevel().getRecipeManager()
+         .getRecipeFor(RecipeType.CRAFTING, input, helper.getLevel())
+         .filter(recipe -> recipe.id().equals(target));
+   }
+
+   private static ItemStack ie(String id) {
+      ItemStack stack = new ItemStack(
+         BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", id))
+      );
+      if (stack.isEmpty()) {
+         throw new IllegalStateException("Missing verified IE item: " + id);
+      }
+      return stack;
+   }
+
 
    private static MachineBlockEntity placeNamedCrate(GameTestHelper helper, BlockPos position, Component name) {
       BlockPos absolutePos = helper.absolutePos(position);

@@ -1,22 +1,4 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "immersive_engineer_decor_controls_tool_reforged_machines",
-  "pattern": [
-    "RCR",
-    "C C",
-    "RCR"
-  ],
-  "key": {
-    "R": {
-      "item": "immersiveengineering:steel_fence"
-    },
-    "C": {
-      "item": "immersive_engineer_decor_controls_tool_reforged:old_industrial_wood_planks"
-    }
-  },
-  "result": {
-    "count": 1,
-    "id": "immersive_engineer_decor_controls_tool_reforged:labeled_crate"
-  }
+  "type": "immersive_engineer_decor_controls_tool_reforged:labeled_crate_upgrade",
+  "category": "misc"
 }

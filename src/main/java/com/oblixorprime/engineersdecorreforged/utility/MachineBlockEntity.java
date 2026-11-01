@@ -17,6 +17,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -41,6 +42,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.DirectionalPlaceContext;
 import net.minecraft.world.item.crafting.CraftingInput;
@@ -93,6 +95,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private boolean milkingTransactionActive;
    private boolean labeledCrateDropHandled;
    private boolean labeledCratePlayerBreakPending;
+   private ItemEnchantments labeledCrateItemEnchantments = ItemEnchantments.EMPTY;
    private static final int FUNNEL_CAPACITY = 3000;
    private static final int FUNNEL_TRANSFER = 250;
    private static final int SOLAR_CAPACITY = 64000;
@@ -592,6 +595,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             }
          }
       }
+   }
+
+   public ItemEnchantments labeledCrateItemEnchantments() {
+      return this.kind() == MachineKind.LABELED_CRATE ? this.labeledCrateItemEnchantments : ItemEnchantments.EMPTY;
+   }
+
+   public void setLabeledCrateItemEnchantments(ItemEnchantments enchantments) {
+      if (this.kind() != MachineKind.LABELED_CRATE) {
+         return;
+      }
+      this.labeledCrateItemEnchantments = enchantments == null ? ItemEnchantments.EMPTY : enchantments;
+      this.setChanged();
    }
 
    public static String sanitizeLabelLine(String value) {
@@ -1506,6 +1521,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          this.items.set(10, ItemStack.EMPTY);
       }
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         this.labeledCrateItemEnchantments = tag.contains("LabeledCrateEnchantments")
+            ? ItemEnchantments.CODEC.parse(registries.createSerializationContext(NbtOps.INSTANCE), tag.get("LabeledCrateEnchantments"))
+               .result().orElse(ItemEnchantments.EMPTY)
+            : ItemEnchantments.EMPTY;
+      }
 
       this.tickCounter = tag.getInt("TickCounter");
       this.fifoTimer = tag.getInt("FifoTimer");
@@ -1604,6 +1625,15 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.items.set(10, result);
       } else {
          ContainerHelper.saveAllItems(tag, this.items, registries);
+      }
+
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         if (this.labeledCrateItemEnchantments.isEmpty()) {
+            tag.remove("LabeledCrateEnchantments");
+         } else {
+            ItemEnchantments.CODEC.encodeStart(registries.createSerializationContext(NbtOps.INSTANCE), this.labeledCrateItemEnchantments)
+               .result().ifPresent(value -> tag.put("LabeledCrateEnchantments", value));
+         }
       }
 
       tag.putInt("TickCounter", this.tickCounter);

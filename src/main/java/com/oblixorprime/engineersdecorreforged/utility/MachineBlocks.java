@@ -15,6 +15,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import java.util.List;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -224,6 +226,9 @@ public final class MachineBlocks {
 
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
+         if (!LabeledCrateItemRules.canImportContents(context.getItemInHand().get(DataComponents.CONTAINER))) {
+            return null;
+         }
          Direction labelDirection = context.isSecondaryUseActive() ? context.getHorizontalDirection() : context.getHorizontalDirection().getOpposite();
          return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, labelDirection), context);
       }
@@ -248,6 +253,15 @@ public final class MachineBlocks {
             net.minecraft.world.item.BlockItem.updateCustomBlockEntityTag(
                level, placer instanceof Player player ? player : null, pos, stack
             );
+            if (level.getBlockEntity(pos) instanceof MachineBlockEntity machine && machine.kind() == MachineKind.LABELED_CRATE) {
+               ItemContainerContents imported = stack.get(DataComponents.CONTAINER);
+               if (imported != null) {
+                  for (int slot = 0; slot < imported.getSlots(); slot++) {
+                     machine.setItem(slot, imported.getStackInSlot(slot));
+                  }
+               }
+               machine.setLabeledCrateItemEnchantments(stack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY));
+            }
          }
       }
 
@@ -270,6 +284,9 @@ public final class MachineBlocks {
          BlockItem.setBlockEntityData(crate, ModBlockEntities.MACHINE.get(), crateData);
          if (machine.getCustomName() != null) {
             crate.set(DataComponents.CUSTOM_NAME, machine.getCustomName());
+         }
+         if (!machine.labeledCrateItemEnchantments().isEmpty()) {
+            crate.set(DataComponents.ENCHANTMENTS, machine.labeledCrateItemEnchantments());
          }
          machine.drainLabeledCrateContents();
          return List.of(crate);

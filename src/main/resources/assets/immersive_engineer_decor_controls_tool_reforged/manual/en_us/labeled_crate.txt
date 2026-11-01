@@ -4,4 +4,4 @@ Labeled Crate
 <br>
 Usage: Right-click the crate to open storage. Shift-right-click the front plate to edit any preserved stock label. Shift-click moves items; Ctrl+Shift-click moves matching item stacks with the same components.<br>
 <br>
-Recipe: 4 Immersive Engineering Steel Fences and 4 Old Industrial Wood Planks.<br>
+Recipe: RPR / PCP / RPR. R = Immersive Engineering Steel Rod, P = Immersive Engineering Steel Plate, C = standard treated-wood crate. Contents, name, and enchantments transfer when upgrading a supported crate.<br>
