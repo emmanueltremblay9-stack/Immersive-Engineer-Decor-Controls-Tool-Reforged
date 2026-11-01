@@ -1,0 +1,43 @@
+package com.oblixorprime.engineersdecorreforged.utility;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class MachineArtworkLayoutTest {
+   @Test
+   public void solarArtworkMapsTheNativeCropToTheGuiCanvasAndKeepsCellSlotZero() {
+      MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_SOLAR_PANEL);
+      GuiTextureBlit blit = layout.artworkBlit();
+
+      assertEquals(MachineLayout.LayoutStyle.ARTWORK_TEXTURE, layout.style());
+      assertEquals("small_solar_panel_art", layout.textureName());
+      assertEquals(228, layout.imageWidth());
+      assertEquals(212, layout.imageHeight());
+      assertEquals(455, blit.textureWidth());
+      assertEquals(424, blit.textureHeight());
+      assertEquals(layout.imageWidth(), blit.destinationWidth());
+      assertEquals(layout.imageHeight(), blit.destinationHeight());
+      assertEquals(1, layout.machineSlots().size());
+      assertEquals(0, layout.machineSlots().get(0).containerIndex());
+      assertEquals("Cell", layout.machineSlots().get(0).role());
+      assertSlotsInsideCanvas(layout);
+   }
+
+   private static void assertSlotsInsideCanvas(MachineLayout layout) {
+      assertNotNull(layout.artworkBlit());
+      for (MachineLayout.MachineSlot slot : layout.machineSlots()) {
+         assertTrue(slot.x() >= 0);
+         assertTrue(slot.y() >= 0);
+         assertTrue(slot.x() + 18 <= layout.imageWidth());
+         assertTrue(slot.y() + 18 <= layout.imageHeight());
+      }
+      assertTrue(layout.playerInventoryX() + 8 * 18 + 18 <= layout.imageWidth());
+      assertTrue(layout.hotbarX() + 8 * 18 + 18 <= layout.imageWidth());
+      assertTrue(layout.playerInventoryY() + 2 * 18 + 18 <= layout.hotbarY());
+      assertTrue(layout.hotbarY() + 18 <= layout.imageHeight());
+   }
+
+}
