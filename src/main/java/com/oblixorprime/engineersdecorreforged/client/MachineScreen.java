@@ -1135,6 +1135,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
+   private Component solarPanelEnergyTooltip(int mouseX, int mouseY) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      if (menu.kind() != MachineKind.SMALL_SOLAR_PANEL || !this.isHovering(24, 104, 194, 17, mouseX, mouseY)) {
+         return null;
+      }
+
+      return Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.energy_tooltip",
+         menu.energyStored(), menu.energyCapacity(), menu.energyDisplayGranularity()
+      );
+   }
+
    private Component slotTooltip(MachineLayout.MachineSlot slot) {
       return (Component)(switch (((MachineMenu)this.menu).kind()) {
          case FACTORY_HOPPER -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_hopper.slots.storage");
