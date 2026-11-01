@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact-byte IEDCTR 1.1.65 qualification. Never uploads a mod or accepts terms implicitly."""
+"""Exact-byte IEDCTR qualification. Never uploads a mod or accepts terms implicitly."""
 from __future__ import annotations
 
 import argparse
@@ -59,10 +59,59 @@ def git(root: Path, *args: str) -> str:
     return subprocess.check_output(["git", "-C", str(root), *args], text=True).strip()
 
 
+def load_spec(path: Path) -> dict:
+    raw = path.read_bytes()
+    require(0 < len(raw) <= 64 * 1024, "Qualification spec has invalid size")
+    data = json.loads(raw.decode("utf-8"))
+    required = {"schemaVersion", "repository", "sourceCommit", "buildRunId",
+                "buildRunAttempt", "modId", "version", "ciReportedJarSha256"}
+    require(isinstance(data, dict) and set(data) in (required, required | {"sourceTree"}),
+            "Qualification spec has missing or unknown fields")
+    require(type(data.get("schemaVersion")) is int and data["schemaVersion"] == 1,
+            "Unsupported qualification spec schema")
+    require(data.get("repository") == REPOSITORY, "Qualification spec repository mismatch")
+    require(isinstance(data.get("sourceCommit"), str)
+            and re.fullmatch(r"[0-9a-f]{40}", data["sourceCommit"]),
+            "Qualification spec source commit must be a full lowercase Git SHA")
+    if "sourceTree" in data:
+        require(isinstance(data["sourceTree"], str)
+                and re.fullmatch(r"[0-9a-f]{40}", data["sourceTree"]),
+                "Qualification spec source tree must be a full lowercase Git SHA")
+    for key in ("buildRunId", "buildRunAttempt"):
+        require(type(data.get(key)) is int and data[key] > 0,
+                f"Qualification spec {key} must be a positive integer")
+    require(isinstance(data.get("modId"), str)
+            and re.fullmatch(r"[a-z][a-z0-9_]{1,63}", data["modId"]),
+            "Qualification spec mod ID is invalid")
+    require(isinstance(data.get("version"), str)
+            and re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9][A-Za-z0-9._-]*)?", data["version"]),
+            "Qualification spec version is invalid")
+    require(isinstance(data.get("ciReportedJarSha256"), str)
+            and re.fullmatch(r"[0-9a-f]{64}", data["ciReportedJarSha256"]),
+            "Qualification spec CI digest is invalid")
+    return data
+
+
+def apply_spec(data: dict) -> None:
+    global SOURCE_COMMIT, SOURCE_TREE, BUILD_RUN_ID, BUILD_ATTEMPT
+    global MOD_ID, VERSION, JAR_NAME, EXPECTED_SHA256, PROPERTIES
+    SOURCE_COMMIT = data["sourceCommit"]
+    SOURCE_TREE = data.get("sourceTree")
+    BUILD_RUN_ID = data["buildRunId"]
+    BUILD_ATTEMPT = data["buildRunAttempt"]
+    MOD_ID = data["modId"]
+    VERSION = data["version"]
+    JAR_NAME = f"{MOD_ID}-{VERSION}.jar"
+    # This CI-reported expectation is checked against digests of the rebuilt JAR bytes below.
+    EXPECTED_SHA256 = data["ciReportedJarSha256"]
+    PROPERTIES = {**PROPERTIES, "mod_id": MOD_ID, "mod_version": VERSION}
+
+
 def check_source(root: Path) -> Path:
     root = root.resolve(strict=True)
     require(git(root, "rev-parse", "HEAD") == SOURCE_COMMIT, "Wrong source commit")
-    require(git(root, "rev-parse", "HEAD^{tree}") == SOURCE_TREE, "Wrong source tree")
+    if SOURCE_TREE is not None:
+        require(git(root, "rev-parse", "HEAD^{tree}") == SOURCE_TREE, "Wrong source tree")
     require(not git(root, "status", "--porcelain", "--untracked-files=all"), "Dirty source checkout")
     properties = dict(line.split("=", 1) for line in (root / "gradle.properties").read_text(
         encoding="utf-8").splitlines() if "=" in line and not line.startswith("#"))
@@ -72,7 +121,7 @@ def check_source(root: Path) -> Path:
 
 def validate_ci(data: dict) -> dict:
     expected = {"id": BUILD_RUN_ID, "run_attempt": BUILD_ATTEMPT,
-                "head_sha": SOURCE_COMMIT, "event": "push", "status": "completed",
+                "head_sha": SOURCE_COMMIT, "head_branch": "main", "event": "push", "status": "completed",
                 "conclusion": "success", "path": ".github/workflows/build.yml", "name": "Build"}
     require(isinstance(data, dict), "Malformed Build response")
     require(all(data.get(k) == v for k, v in expected.items()), "Exact-source Build CI mismatch")
@@ -192,15 +241,29 @@ def inspect_source(root: Path) -> dict:
     return result
 
 
-def compare_sources(a: Path, b: Path) -> dict:
+def compare_sources(a: Path, b: Path, jar_artifact: Path | None = None) -> dict:
     require(a.resolve() != b.resolve(), "Independent source directories required")
     first, second = inspect_source(a), inspect_source(b)
     require(first == second, "Independent JAR builds differ")
+    if jar_artifact is not None:
+        destination = jar_artifact.absolute()
+        require(not destination.exists() and not destination.is_symlink(),
+                "Inspection artifact destination already exists")
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        source_jar = a.resolve() / "build" / "libs" / JAR_NAME
+        require(source_jar.is_file() and not source_jar.is_symlink(),
+                "Inspected source JAR is missing or symlinked")
+        shutil.copyfile(source_jar, destination)
+        require(destination.stat().st_size == first["assetSize"]
+                and digest(destination) == first["assetSha256"],
+                "Staged inspection artifact differs from the inspected JAR")
     return {"status": "BINARY_REPRODUCED", "sourceCommit": SOURCE_COMMIT, "sourceTree": SOURCE_TREE,
+            "ciReportedJarSha256": EXPECTED_SHA256, "ciReportedDigestMatchedRebuiltBytes": True,
             "artifact": first, "buildDirectories": 2, "sameSourceIndependentBuilds": True,
+            "inspectionJarStaged": jar_artifact is not None,
             "packagedServer": "NOT_RUN", "exactJarClient": "NOT_RUN",
             "publication": "NOT_PERFORMED", "publicationReady": False,
-            "scope": "Binary identity and two-build reproducibility; not gameplay acceptance"}
+            "scope": "Two clean independent builds; inspected bytes match each other and the pinned CI digest; not gameplay acceptance"}
 
 
 def server_smoke(source: Path, gradle_home: Path, acknowledgment: str) -> dict:
@@ -270,7 +333,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--gradle-home", type=Path)
     parser.add_argument("--eula-acknowledgment", default="")
     parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument("--spec", type=Path, help="Explicit source/version/Build identity JSON for a candidate")
+    parser.add_argument("--jar-artifact", type=Path, help="Stage the inspected JAR bytes for reviewer inspection")
     args = parser.parse_args(argv)
+    if args.spec is not None:
+        require(args.mode != "server", "Explicit candidate specs do not enable packaged-server runs")
+        apply_spec(load_spec(args.spec))
+    require(args.jar_artifact is None or args.mode == "compare",
+            "--jar-artifact is available only for a successful two-build comparison")
     # Server consent is checked before even writing a report for an unapproved run.
     if args.mode == "server":
         require(args.eula_acknowledgment == EULA_ACK, "Explicit server consent required")
@@ -287,7 +357,7 @@ def main(argv: list[str] | None = None) -> int:
             result = {"status": "BINARY_INSPECTED", "sourceCommit": SOURCE_COMMIT,
                       "artifact": inspect_source(args.source_a), "publicationReady": False}
         elif args.mode == "compare":
-            result = compare_sources(args.source_a, args.source_b)
+            result = compare_sources(args.source_a, args.source_b, args.jar_artifact)
             result["ci"] = check_ci()
         else:
             result = server_smoke(args.source_a, args.gradle_home, args.eula_acknowledgment)
