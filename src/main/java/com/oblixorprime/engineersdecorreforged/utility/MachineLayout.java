@@ -333,6 +333,37 @@ public record MachineLayout(
 
 
 
+   private static MachineLayout smallFluidFunnel() {
+      return new MachineLayout(
+         209, 238, 26, 151, 26, 208,
+         List.of(
+            new MachineLayout.MachineSlot(0, 33, 85, "Empty bucket"),
+            new MachineLayout.MachineSlot(1, 155, 85, "Filled")
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_fluid_funnel"
+      );
+   }
+
+   private static MachineLayout passiveFluidAccumulator() {
+      return new MachineLayout(
+         209,
+         238,
+         24,
+         150,
+         24,
+         205,
+         List.of(
+            new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket", false),
+            new MachineLayout.MachineSlot(1, 149, 106, "Filled", true)
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "passive_fluid_accumulator"
+      );
+   }
+
    private static MachineLayout solarPanelArtwork() {
       return new MachineLayout(
          228,
