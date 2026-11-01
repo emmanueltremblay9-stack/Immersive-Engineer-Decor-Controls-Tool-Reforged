@@ -96,19 +96,36 @@ public class MachineScreenBlockBreakerTextTest {
    }
 
    @Test
-   public void synchronizedHardnessCanProduceAnApproximateCostOneFeBelowServerBilling() {
-      float actualHardness = 0.504F;
-      float synchronizedHardness = (int)(actualHardness * 100.0F) / 100.0F;
-      int displayedCost = MachineScreen.blockBreakerEstimatedCost(
-         synchronizedHardness,
+   public void synchronizedHardnessRoundingCanEstimateAboveOrBelowServerBilling() {
+      float lowerActualHardness = 0.504F;
+      int lowerSerializedHundredths = Math.round(lowerActualHardness * 100.0F);
+      float lowerSynchronizedHardness = Math.round(lowerActualHardness * 100.0F) / 100.0F;
+      int lowerDisplayedCost = MachineScreen.blockBreakerEstimatedCost(
+         lowerSynchronizedHardness,
          true,
          true,
-         MachineBlockEntity.blockBreakerEnergyCostPerBlock(synchronizedHardness)
+         MachineBlockEntity.blockBreakerEnergyCostPerBlock(lowerSynchronizedHardness)
       );
 
-      assertEquals(0.50F, synchronizedHardness, 0.0F);
-      assertEquals(240, displayedCost);
-      assertEquals(241, MachineBlockEntity.blockBreakerEnergyCostPerBlock(actualHardness));
+      assertEquals(50, lowerSerializedHundredths);
+      assertEquals(0.50F, lowerSynchronizedHardness, 0.0F);
+      assertEquals(240, lowerDisplayedCost);
+      assertEquals(241, MachineBlockEntity.blockBreakerEnergyCostPerBlock(lowerActualHardness));
+
+      float higherActualHardness = 0.506F;
+      int higherSerializedHundredths = Math.round(higherActualHardness * 100.0F);
+      float higherSynchronizedHardness = Math.round(higherActualHardness * 100.0F) / 100.0F;
+      int higherDisplayedCost = MachineScreen.blockBreakerEstimatedCost(
+         higherSynchronizedHardness,
+         true,
+         true,
+         MachineBlockEntity.blockBreakerEnergyCostPerBlock(higherSynchronizedHardness)
+      );
+
+      assertEquals(51, higherSerializedHundredths);
+      assertEquals(0.51F, higherSynchronizedHardness, 0.0F);
+      assertEquals(242, higherDisplayedCost);
+      assertEquals(241, MachineBlockEntity.blockBreakerEnergyCostPerBlock(higherActualHardness));
    }
 
    @Test
