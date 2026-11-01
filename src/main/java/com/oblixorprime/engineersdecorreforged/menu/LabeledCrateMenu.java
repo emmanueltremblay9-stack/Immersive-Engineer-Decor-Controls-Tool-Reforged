@@ -179,6 +179,11 @@ public final class LabeledCrateMenu extends AbstractContainerMenu {
       }
 
       @Override
+      public boolean mayPickup(Player player) {
+         return true;
+      }
+
+      @Override
       public boolean mayPlace(ItemStack stack) {
          return LabeledCrateItemRules.canStore(stack);
       }

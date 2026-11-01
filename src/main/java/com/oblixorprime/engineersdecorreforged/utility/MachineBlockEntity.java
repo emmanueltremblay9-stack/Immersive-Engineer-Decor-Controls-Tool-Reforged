@@ -905,6 +905,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    @Override
    public boolean canTakeItem(Container destination, int slot, ItemStack stack) {
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
+      }
       if (this.kind() != MachineKind.SMALL_BLOCK_BREAKER) {
          return true;
       }

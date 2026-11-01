@@ -205,6 +205,13 @@ public final class LabeledCrateGameTests {
       helper.assertTrue(!crate.canTakeItemThroughFace(54, new ItemStack(Items.DIRT), Direction.UP), "automation must not extract the hint slot");
       helper.assertTrue(crate.canPlaceItem(53, new ItemStack(Items.DIRT)), "last storage slot should remain accessible");
       helper.assertTrue(!crate.canPlaceItem(54, new ItemStack(Items.DIRT)), "frame slot should not be part of storage input");
+      crate.setItem(LabeledCrateMenu.STORAGE_SLOT_COUNT - 1, new ItemStack(Items.DIRT));
+      ItemStack frameItem = new ItemStack(Items.COMPASS);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, frameItem.copy());
+      helper.assertTrue(crate.canTakeItem(crate, LabeledCrateMenu.STORAGE_SLOT_COUNT - 1, crate.getItem(LabeledCrateMenu.STORAGE_SLOT_COUNT - 1)),
+         "internal consumers should still be able to take from the final storage slot");
+      helper.assertTrue(!crate.canTakeItem(crate, LabeledCrateMenu.FRAME_SLOT, crate.getItem(LabeledCrateMenu.FRAME_SLOT)),
+         "internal consumers must not extract the frame slot");
       helper.assertValueEqual(menu.slots.size(), 91, "crate menu should include 55 crate slots and 36 player slots");
       helper.assertValueEqual(menu.getSlot(0).x, 28, "first storage slot should match original x");
       helper.assertValueEqual(menu.getSlot(0).y, 10, "first storage slot should match original y");
@@ -214,7 +221,56 @@ public final class LabeledCrateGameTests {
       helper.assertValueEqual(menu.getSlot(55).y, 125, "first player inventory row should match original y");
       helper.assertValueEqual(menu.getSlot(82).y, 183, "hotbar should follow the main inventory rows");
       helper.assertTrue(menu.getSlot(54).mayPlace(new ItemStack(Items.DIAMOND)), "hint slot should accept a safe item");
+      helper.assertTrue(menu.getSlot(LabeledCrateMenu.FRAME_SLOT).mayPickup(player),
+         "player should be able to remove the hint item intentionally through the GUI");
+      ItemStack movedFrameItem = menu.quickMoveStack(player, LabeledCrateMenu.FRAME_SLOT);
+      helper.assertTrue(ItemStack.matches(frameItem, movedFrameItem), "GUI shift-click should return the removed frame item");
+      helper.assertTrue(crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(), "GUI shift-click should clear the frame slot");
       menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_bucket_cannot_be_pulled_by_milking_consumer(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      MachineBlockEntity milker = placeMachine(helper, TEST_POS.east(), ModBlocks.SMALL_MILKING_MACHINE.get().defaultBlockState());
+      ItemStack bucket = new ItemStack(Items.BUCKET);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, bucket.copy());
+
+      helper.assertTrue(helper.getLevel().getBlockEntity(milker.getBlockPos().relative(Direction.WEST)) == crate,
+         "milking consumer should point directly to the adjacent crate");
+      helper.assertTrue(milker.canPlaceItem(0, bucket), "milking consumer should accept a bucket in its input slot");
+      helper.assertTrue(!crate.canTakeItem(milker, LabeledCrateMenu.FRAME_SLOT, bucket),
+         "crate policy should reject the frame slot for the milking consumer");
+      helper.assertTrue(!invokeMachineBoolean(
+         milker, "pullEmptyBucketFromContainer", new Class<?>[]{Direction.class}, Direction.WEST
+      ), "internal milking pull should not consume a bucket from the frame slot");
+      helper.assertTrue(ItemStack.matches(bucket, crate.getItem(LabeledCrateMenu.FRAME_SLOT)),
+         "bucket should remain in the crate frame after the internal pull");
+      helper.assertTrue(milker.getItem(0).isEmpty(), "milking input should remain empty after refusing the frame slot");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_smeltable_cannot_be_pulled_by_electrical_furnace(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      MachineBlockEntity furnace = placeMachine(helper, TEST_POS.east(), ModBlocks.SMALL_ELECTRICAL_FURNACE.get().defaultBlockState());
+      ItemStack rawIron = new ItemStack(Items.RAW_IRON, 2);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, rawIron.copy());
+
+      helper.assertTrue(helper.getLevel().getBlockEntity(furnace.getBlockPos().relative(Direction.WEST)) == crate,
+         "electrical furnace should point directly to the adjacent crate");
+      helper.assertTrue(invokeMachineBoolean(furnace, "canSmelt", new Class<?>[]{ItemStack.class}, rawIron.copy()),
+         "raw iron should be smeltable in the test recipe registry");
+      helper.assertTrue(furnace.canPlaceItem(0, rawIron), "electrical furnace should accept raw iron in its input slot");
+      helper.assertTrue(!crate.canTakeItem(furnace, LabeledCrateMenu.FRAME_SLOT, rawIron),
+         "crate policy should reject the frame slot for the electrical furnace");
+      helper.assertTrue(!invokeMachineBoolean(
+         furnace, "pullSmeltableFromContainer", new Class<?>[]{Direction.class, int.class}, Direction.WEST, 64
+      ), "internal smelting pull should not consume raw iron from the frame slot");
+      helper.assertTrue(ItemStack.matches(rawIron, crate.getItem(LabeledCrateMenu.FRAME_SLOT)),
+         "raw iron should remain in the crate frame after the internal pull");
+      helper.assertTrue(furnace.getItem(0).isEmpty(), "electrical furnace input should remain empty after refusing the frame slot");
       helper.succeed();
    }
 
@@ -558,6 +614,27 @@ public final class LabeledCrateGameTests {
       player.gameMode.changeGameModeForPlayer(gameType);
       player.setPos(absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 1.5);
       return player;
+   }
+
+   private static MachineBlockEntity placeMachine(GameTestHelper helper, BlockPos position, BlockState state) {
+      helper.setBlock(position, state);
+      BlockEntity entity = helper.getLevel().getBlockEntity(helper.absolutePos(position));
+      if (!(entity instanceof MachineBlockEntity machine)) {
+         throw new AssertionError("Expected a machine block entity at " + position);
+      }
+      return machine;
+   }
+
+   private static boolean invokeMachineBoolean(
+      MachineBlockEntity machine, String methodName, Class<?>[] parameterTypes, Object... arguments
+   ) {
+      try {
+         java.lang.reflect.Method method = MachineBlockEntity.class.getDeclaredMethod(methodName, parameterTypes);
+         method.setAccessible(true);
+         return (Boolean)method.invoke(machine, arguments);
+      } catch (ReflectiveOperationException exception) {
+         throw new AssertionError("Could not invoke internal machine consumer " + methodName, exception);
+      }
    }
 
    private static MachineBlockEntity placeCrate(GameTestHelper helper, BlockPos position) {
