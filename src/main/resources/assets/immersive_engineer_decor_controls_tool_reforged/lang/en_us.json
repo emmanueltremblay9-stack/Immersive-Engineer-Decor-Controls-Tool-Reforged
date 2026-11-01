@@ -995,5 +995,13 @@
 "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.slot.cold_reserved": "Reserved Cold GUI slot. Existing legacy items remain extractable; new player insertion is disabled.",
 "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.slot.output": "Freezer output slot.",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.label.cold": "Cold",
-  "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.label.runtime_state": "State: %1$s · Phase %2$s/4 · RS %3$s"
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.label.runtime_state": "State: %1$s · Phase %2$s/4 · RS %3$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Milk",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line2": "collection",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.tank": "Tank",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.output": "Milk",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.inventory": "Inventory",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.tank": "Stored milk: %1$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.bucket": "Bucket input",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Milk output"
 }

@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -18,13 +19,16 @@ public class MachineLayoutSmallFreezerTest {
       assertEquals(203, layout.hotbarY());
       assertEquals(3, layout.machineSlots().size());
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
+      assertFalse(layout.machineSlots().get(0).output());
       assertEquals(22, layout.machineSlots().get(0).x());
       assertEquals(57, layout.machineSlots().get(0).y());
       assertEquals(1, layout.machineSlots().get(1).containerIndex());
+      assertFalse(layout.machineSlots().get(1).output());
       assertEquals(22, layout.machineSlots().get(1).x());
       assertEquals(84, layout.machineSlots().get(1).y());
       assertTrue(layout.machineSlots().get(1).role().toLowerCase().contains("cold"));
       assertEquals(2, layout.machineSlots().get(2).containerIndex());
+      assertTrue(layout.machineSlots().get(2).output());
       assertEquals(170, layout.machineSlots().get(2).x());
       assertEquals(57, layout.machineSlots().get(2).y());
       assertTrue(layout.machineSlots().get(2).role().toLowerCase().contains("output"));
@@ -37,14 +41,14 @@ public class MachineLayoutSmallFreezerTest {
       java.util.List<SmallFreezerArtworkMasks.MaskRegion> masks = SmallFreezerArtworkMasks.regions(209, 235);
 
       assertEquals(2, masks.size());
-      assertEquals(28, masks.get(0).x());
-      assertEquals(64, masks.get(0).y());
-      assertEquals(22, masks.get(0).width());
-      assertEquals(21, masks.get(0).height());
-      assertEquals(161, masks.get(1).x());
-      assertEquals(64, masks.get(1).y());
-      assertEquals(22, masks.get(1).width());
-      assertEquals(22, masks.get(1).height());
+      assertEquals(26, masks.get(0).x());
+      assertEquals(61, masks.get(0).y());
+      assertEquals(27, masks.get(0).width());
+      assertEquals(28, masks.get(0).height());
+      assertEquals(158, masks.get(1).x());
+      assertEquals(60, masks.get(1).y());
+      assertEquals(30, masks.get(1).width());
+      assertEquals(31, masks.get(1).height());
       assertTrue(masks.get(0).right() <= 209);
       assertTrue(masks.get(1).right() <= 209);
       assertTrue(masks.get(0).bottom() <= 235);

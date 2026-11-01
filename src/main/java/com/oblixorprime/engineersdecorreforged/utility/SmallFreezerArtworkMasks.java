@@ -7,9 +7,9 @@ public final class SmallFreezerArtworkMasks {
    private static final int SOURCE_CROP_WIDTH = 422;
    private static final int SOURCE_CROP_HEIGHT = 443;
 
-   // Pixel bounds measured from the native 422 x 443 crop; right/bottom are exclusive.
-   private static final SourceBounds INPUT_BUCKET = new SourceBounds(58, 121, 100, 160);
-   private static final SourceBounds OUTPUT_ICE = new SourceBounds(326, 121, 369, 161);
+   // Bounds include each illustrative item area in the native 422 x 443 crop; right/bottom are exclusive.
+   private static final SourceBounds INPUT_BUCKET = new SourceBounds(54, 116, 106, 166);
+   private static final SourceBounds OUTPUT_ICE = new SourceBounds(320, 114, 378, 170);
 
    private SmallFreezerArtworkMasks() {
    }

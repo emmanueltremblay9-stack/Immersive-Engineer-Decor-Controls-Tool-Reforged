@@ -995,5 +995,13 @@
 "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.slot.cold_reserved": "Emplacement Cold réservé. Les anciens objets restent extractibles; l’insertion par le joueur est désactivée.",
 "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.slot.output": "Sortie du congélateur.",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.label.cold": "Froid",
-  "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.label.runtime_state": "État : %1$s · Phase %2$s/4 · RS %3$s"
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_freezer.label.runtime_state": "État : %1$s · Phase %2$s/4 · RS %3$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Collecte",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line2": "du lait",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.tank": "Réservoir",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.output": "Lait",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.inventory": "Inventaire",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.tank": "Lait stocké : %1$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.bucket": "Entrée de seau",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Sortie de lait"
 }
