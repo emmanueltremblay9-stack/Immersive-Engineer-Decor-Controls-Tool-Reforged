@@ -1,12 +1,18 @@
 package com.oblixorprime.engineersdecorreforged.menu;
 
 import static org.junit.Assert.assertEquals;
+import net.minecraft.SharedConstants;
+import net.minecraft.server.Bootstrap;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluids;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import org.junit.Test;
 
 public class MachineMenuFluidBarrelDataTest {
+   static {
+      SharedConstants.tryDetectVersion();
+      Bootstrap.bootStrap();
+   }
    @Test
    public void fluidBarrelDecodesTheServerSyncedFluidRegistryId() {
       int waterId = BuiltInRegistries.FLUID.getId(Fluids.WATER);
