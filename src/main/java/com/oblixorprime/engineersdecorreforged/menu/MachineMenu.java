@@ -133,7 +133,8 @@ public class MachineMenu extends AbstractContainerMenu {
       return switch (this.kind) {
          case SMALL_LAB_FURNACE, SMALL_ELECTRICAL_FURNACE -> scaledProgress(this.data.get(2), this.data.get(3));
          case SMALL_BLOCK_BREAKER -> scaledProgress(this.data.get(1), this.data.get(3));
-         case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> scaledProgress(this.data.get(1), TEMPERATURE_PROCESS_TICKS);
+         case SMALL_MINERAL_SMELTER -> clampPercent(this.data.get(1));
+         case SMALL_FREEZER -> scaledProgress(this.data.get(1), TEMPERATURE_PROCESS_TICKS);
          default -> clampPercent(this.data.get(1));
       };
    }
@@ -187,8 +188,9 @@ public class MachineMenu extends AbstractContainerMenu {
       return switch (this.kind) {
          case SMALL_ELECTRICAL_FURNACE -> this.data.get(ELECTRICAL_FURNACE_ENERGY_FIELD);
          case SMALL_LAB_FURNACE -> this.data.get(LAB_FURNACE_ENERGY_FIELD);
-         case SMALL_FREEZER -> this.data.get(FREEZER_ENERGY_FIELD);
-         case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR, SMALL_MINERAL_SMELTER -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
+case SMALL_MINERAL_SMELTER -> this.data.get(6);
+case SMALL_FREEZER -> this.data.get(FREEZER_ENERGY_FIELD);
+case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
           case SMALL_BLOCK_BREAKER -> this.data.get(10);
          default -> 0;
       };
@@ -292,6 +294,7 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public void handleAction(Player player, int action, int valueA, int valueB) {
+      if (action == 31 && (this.kind != MachineKind.SMALL_MINERAL_SMELTER || !this.stillValid(player) || player.isSpectator())) return;
       if (this.container instanceof MachineBlockEntity machine) {
          machine.handleGuiAction(player, action, valueA, valueB);
       }
