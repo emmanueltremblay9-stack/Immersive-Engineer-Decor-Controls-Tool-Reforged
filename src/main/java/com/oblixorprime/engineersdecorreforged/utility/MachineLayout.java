@@ -81,8 +81,8 @@ public record MachineLayout(
          case SMALL_MINERAL_SMELTER -> mineralHybrid();
          case SMALL_FREEZER -> freezer();
          case FLUID_BARREL -> fluidBarrel();
-         case SMALL_FLUID_FUNNEL -> smallFluidFunnel();
-         case PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
+            case SMALL_FLUID_FUNNEL -> smallFluidFunnel();
+            case PASSIVE_FLUID_ACCUMULATOR -> passiveFluidAccumulator();
          case SMALL_MILKING_MACHINE -> smallMilkingMachine();
          case SMALL_SOLAR_PANEL -> solarPanelArtwork();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
@@ -323,18 +323,7 @@ public record MachineLayout(
       );
    }
 
-   private static MachineLayout smallFluidFunnel() {
-      return new MachineLayout(
-         209, 238, 26, 151, 26, 208,
-         List.of(
-            new MachineLayout.MachineSlot(0, 33, 85, "Empty bucket"),
-            new MachineLayout.MachineSlot(1, 155, 85, "Filled")
-         ),
-         List.of(),
-         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
-         "small_fluid_funnel"
-      );
-   }
+
 
    private static MachineLayout solarPanelArtwork() {
       return new MachineLayout(

@@ -36,5 +36,4 @@ public record GuiTextureBlit(
          default -> throw new IllegalArgumentException("Unknown machine artwork texture: " + textureName);
       };
    }
-
 }

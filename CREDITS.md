@@ -31,6 +31,7 @@ Source reference:
 ## User-provided GUI artwork
 
 - Small Fluid Funnel reference artwork supplied by the repository owner for this integration. The Toolkit code is MIT-licensed at the pinned commit, but no separate artwork license statement was supplied; this attribution records provenance without claiming a separate license.
+- Passive Fluid Accumulator reference artwork supplied by the repository owner for this integration. No separate artwork license statement accompanied the PNG; this records provenance without asserting a separate license.
 
 ## Reviewed fluidlogging reference
 
