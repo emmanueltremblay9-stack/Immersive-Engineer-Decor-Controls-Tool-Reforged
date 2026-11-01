@@ -25,6 +25,29 @@ public final class SmallFreezerArtworkMasks {
       );
    }
 
+   /**
+    * Returns machine slot frames touched by an artwork mask. The screen must redraw these frames
+    * after filling the masks so illustrative pixels do not cut through live slot borders.
+    */
+   public static List<MachineLayout.MachineSlot> slotsIntersectingMasks(
+      MachineLayout layout, int destinationWidth, int destinationHeight
+   ) {
+      List<MaskRegion> masks = regions(destinationWidth, destinationHeight);
+      return layout.machineSlots().stream()
+         .filter(slot -> masks.stream().anyMatch(mask ->
+            overlaps(
+               mask.x(), mask.y(), mask.right(), mask.bottom(),
+               slot.x() - 1, slot.y() - 1, slot.x() + 17, slot.y() + 17
+            )
+         ))
+         .toList();
+   }
+
+   private static boolean overlaps(int leftA, int topA, int rightA, int bottomA,
+                                   int leftB, int topB, int rightB, int bottomB) {
+      return leftA < rightB && rightA > leftB && topA < bottomB && bottomA > topB;
+   }
+
    private static MaskRegion project(SourceBounds bounds, int destinationWidth, int destinationHeight) {
       int left = floorScale(bounds.left(), destinationWidth, SOURCE_CROP_WIDTH);
       int top = floorScale(bounds.top(), destinationHeight, SOURCE_CROP_HEIGHT);
