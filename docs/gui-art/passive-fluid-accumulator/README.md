@@ -15,7 +15,14 @@
 - Machine item slots remain container indices 0 (empty bucket input) and 1 (filled water bucket output); their positions are fitted to the two illustrated frames. Player inventory remains 27 slots plus 9 hotbar slots.
 - The static sample amount and blue tank fill are covered by the server-backed value and proportional water fill. Bucket illustrations, sample labels, and inventory caption are covered by actual localized labels or the interactive slots. The passive collection/rain artwork remains explanatory and adds no state or mechanic.
 
-## Toolkit and visual QA status
+## Toolkit proof and visual QA status
 
-- Exact Toolkit JSON and native Toolkit render for this PNG have not been found. The available v0.2 Library candidate is marked procedural and non-pixel-identical, so it is not used as proof or as an approved exact source. No CLI validation, render, or zero-difference result is claimed for this GUI.
-- No Minecraft client was launched. In-game visual QA and owner approval remain pending. The source image is shown here for review; it is not a runtime screenshot.
+| Canonical owner-supplied reference | Pinned Toolkit native render (`--scale 1`) |
+| --- | --- |
+| ![Accumulator reference](passive-fluid-accumulator.reference.png) | ![Accumulator Toolkit render](passive-fluid-accumulator.native-exact.png) |
+
+- Lossless source: [`passive-fluid-accumulator.native-exact.json`](passive-fluid-accumulator.native-exact.json), representing 169,015 visible pixels in 32,608 RGBA colors as Toolkit `pixels` operations. Fully transparent source pixels are `(0,0,0,0)`.
+- Verified Toolkit source commit: `98eecf77190d5716820ec659f8aeb790513c8e93`. Commands run from that source tree: `PYTHONPATH=src python -m pixel_art_skill_toolkit validate <json>` and `PYTHONPATH=src python -m pixel_art_skill_toolkit render <json> -o <png> --scale 1`. Validation returned 941x1672 RGBA.
+- Owner reference, branch reference copy, runtime texture, and Toolkit render all decode to RGBA SHA-256 `384c8f2f6c85bb4372a0761b8dee03cf45f74775be2c00bf56e676213b94612f`. A direct pixel-by-pixel comparison found 0 differing pixels out of 1,573,352, including alpha. The rendered PNG file SHA-256 is `a47a4a9557073d56d8df0416699db5a529811f3ee57d1474c2d1eb4e63e70566`; its encoded-file hash differs from the source while decoded pixels match.
+- The available v0.2 Library candidate remains procedural and non-pixel-identical; it was not used.
+- No Minecraft client was launched. This proves native PNG-to-Toolkit fidelity only; runtime UI QA and owner visual approval remain pending. Please review the reference and Toolkit output above and provide visual approval or requested corrections before merge. Neither image is a game screenshot.
