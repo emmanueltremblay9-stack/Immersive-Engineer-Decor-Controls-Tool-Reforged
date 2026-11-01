@@ -24,4 +24,24 @@ public class MachineLayoutSmallFluidFunnelTest {
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
       assertEquals("small_fluid_funnel", layout.textureName());
    }
+
+   @Test
+   public void funnelBlitMapsWholeNativeTextureToLogicalCanvas() {
+      MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_FLUID_FUNNEL);
+      GuiTextureBlit geometry = GuiTextureBlit.stretchFullTexture(layout.imageWidth(), layout.imageHeight(), 385, 439);
+
+      assertEquals(209, geometry.destinationWidth());
+      assertEquals(238, geometry.destinationHeight());
+      assertEquals(0, geometry.sourceX());
+      assertEquals(0, geometry.sourceY());
+      assertEquals(385, geometry.sourceWidth());
+      assertEquals(439, geometry.sourceHeight());
+      assertEquals(385, geometry.textureWidth());
+      assertEquals(439, geometry.textureHeight());
+   }
+
+   @Test(expected = IllegalArgumentException.class)
+   public void textureBlitRejectsSourceRegionLargerThanTexture() {
+      new GuiTextureBlit(209, 238, 0, 0, 385, 439, 384, 439);
+   }
 }

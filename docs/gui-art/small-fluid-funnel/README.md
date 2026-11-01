@@ -10,7 +10,7 @@
 
 ## Runtime mapping
 
-- The crop is drawn into a 209×238 logical screen. X scale is 209/385 and Y scale is 238/439; this is a near-uniform fit chosen to preserve the 18-pixel Minecraft slot pitch, with about 0.13% relative aspect difference.
+- The native 385×439 crop is blitted to the separate 209×238 logical destination using the full 385×439 source region and texture dimensions. A shared geometry record keeps source and destination sizes distinct and rejects out-of-bounds source regions; a pure unit test covers the mapping. The near-uniform fit preserves the 18-pixel Minecraft slot pitch, with about 0.13% relative aspect difference.
 - The existing Small Fluid Funnel machine menu remains authoritative: machine slot 0 is the empty-bucket input, slot 1 is the filled-bucket output, player inventory remains 27 slots plus 9 hotbar slots, fluid amount is the existing field 2 and capacity is 3000 mB.
 - The existing server fluid type (water, lava, or milk) is sent in unused funnel-only field 11 as a bounded code. It controls the displayed fluid label and tank fill tint. No new tank, fluid support, temperature, redstone behavior, recipe, or gameplay rule is added.
 - The illustrative bucket icons, French text and 1 500 / 3 000 mB sample are masked in the runtime screen; current item stacks, localized labels, amount, capacity and fill are drawn over the reference.

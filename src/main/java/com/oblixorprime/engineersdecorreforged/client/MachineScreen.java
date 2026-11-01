@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import java.util.Locale;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -69,7 +70,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
          } else {
             if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL) {
-               graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, 385, 439);
+               GuiTextureBlit geometry = GuiTextureBlit.stretchFullTexture(this.imageWidth, this.imageHeight, 385, 439);
+               graphics.blit(texture, x, y, geometry.destinationWidth(), geometry.destinationHeight(), (float)geometry.sourceX(), (float)geometry.sourceY(), geometry.sourceWidth(), geometry.sourceHeight(), geometry.textureWidth(), geometry.textureHeight());
             } else {
                graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
             }
