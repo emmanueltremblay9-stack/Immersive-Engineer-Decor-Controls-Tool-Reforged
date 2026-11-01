@@ -61,6 +61,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
+   static boolean usesExplicitTextureDimensions(MachineKind kind) {
+      return kind == MachineKind.SMALL_BLOCK_BREAKER || kind == MachineKind.FLUID_BARREL;
+   }
+
    protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       int x = this.leftPos;
@@ -68,7 +72,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
          this.drawOriginalTextureBackdrop(graphics, x, y);
-         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+         if (usesExplicitTextureDimensions(((MachineMenu)this.menu).kind())) {
             graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
          } else {
             graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);

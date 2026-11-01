@@ -153,12 +153,16 @@ public class MachineMenu extends AbstractContainerMenu {
          return emptyValue;
       }
 
-      int registryId = (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
+      int registryId = decodeFluidRegistryId(low, middle, high);
       if (registryId < 0 || registryId >= registrySize) {
          return emptyValue;
       }
       T value = valueById.apply(registryId);
       return value == null ? emptyValue : value;
+   }
+
+   static int decodeFluidRegistryId(int low, int middle, int high) {
+      return (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
    }
 
    public int energyStored() {

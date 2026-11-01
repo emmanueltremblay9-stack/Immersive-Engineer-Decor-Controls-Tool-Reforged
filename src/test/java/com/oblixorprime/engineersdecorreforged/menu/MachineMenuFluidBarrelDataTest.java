@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.menu;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import java.util.function.IntFunction;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
@@ -31,6 +32,15 @@ public class MachineMenuFluidBarrelDataTest {
       ));
       assertSame(empty, MachineMenu.decodeStoredFluid(
          MachineKind.SMALL_FLUID_FUNNEL, 1000, lavaId & 0x7FFF, lavaId >>> 15 & 0x7FFF, lavaId >>> 30, registrySize, valueById, empty
+      ));
+   }
+
+   @Test
+   public void fluidRegistryIdSurvivesTheContainerDataFieldPacking() {
+      int registryId = 0x52345678;
+
+      assertEquals(registryId, MachineMenu.decodeFluidRegistryId(
+         registryId & 0x7FFF, registryId >>> 15 & 0x7FFF, registryId >>> 30
       ));
    }
 }
