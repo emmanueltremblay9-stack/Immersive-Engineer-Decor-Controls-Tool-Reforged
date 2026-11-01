@@ -8,7 +8,7 @@ import sys
 import tempfile
 import unittest
 
-from ci_required import REQUIRED_JOBS, evaluate_needs, summarize
+from ci_required import ALL_JOBS, OPTIONAL_JOB, REQUIRED_JOBS, evaluate_needs, summarize
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -17,13 +17,16 @@ HEAD = "a" * 40
 MERGE = "b" * 40
 
 
-def successful_needs():
-    return {job: {"result": "success", "outputs": {}} for job in REQUIRED_JOBS}
+def successful_needs(native_gui="skipped"):
+    needs = {job: {"result": "success", "outputs": {}} for job in REQUIRED_JOBS}
+    needs[OPTIONAL_JOB] = {"result": native_gui, "outputs": {}}
+    return needs
 
 
-def environment(event="pull_request", sha=MERGE):
+def environment(event="pull_request", sha=MERGE, pr_number="132"):
     return {"GITHUB_EVENT_NAME": event, "GITHUB_SHA": sha,
-            "CI_PR_HEAD_SHA": HEAD, "GITHUB_SERVER_URL": "https://github.com",
+            "CI_PR_HEAD_SHA": HEAD, "CI_PR_NUMBER": pr_number,
+            "GITHUB_SERVER_URL": "https://github.com",
             "GITHUB_REPOSITORY": "owner/repo", "GITHUB_RUN_ID": "123",
             "GITHUB_RUN_ATTEMPT": "2"}
 
@@ -47,19 +50,42 @@ def meaningful(text):
 
 
 class RequiredGateTests(unittest.TestCase):
-    def test_exact_four_successful_results_pass(self):
+    def test_non_target_pr_accepts_conditional_native_gui_skip(self):
+        passed, summary = summarize(json.dumps(successful_needs("skipped")), environment(pr_number="132"), MERGE)
+        self.assertTrue(passed)
+        self.assertIn("| `native-smelter-gui` | skipped (conditional; skip allowed when not applicable) |", summary)
+
+    def test_four_required_success_and_non_target_gui_skip_pass(self):
+        self.assertEqual("skipped", successful_needs()[OPTIONAL_JOB]["result"])
         self.assertEqual([], evaluate_needs(json.dumps(successful_needs()))[1])
+
+    def test_native_gui_is_required_only_for_pr_133(self):
+        proof = successful_needs()
+        passed, summary = summarize(json.dumps(proof), environment(pr_number="133"), MERGE)
+        self.assertFalse(passed)
+        self.assertIn("native-smelter-gui: skipped (required: success)", summary)
+
+        proof[OPTIONAL_JOB]["result"] = "success"
+        self.assertTrue(summarize(json.dumps(proof), environment(pr_number="133"), MERGE)[0])
+        proof[OPTIONAL_JOB]["result"] = "failure"
+        passed, summary = summarize(json.dumps(proof), environment(pr_number="133"), MERGE)
+        self.assertFalse(passed)
+        self.assertIn("native-smelter-gui: failure (required: success)", summary)
+        passed, summary = summarize(json.dumps(proof), environment(pr_number="132"), MERGE)
+        self.assertFalse(passed)
+        self.assertIn("native-smelter-gui: failure (required: success or skipped)", summary)
 
     def test_all_256_documented_result_combinations_fail_except_all_success(self):
         for states in itertools.product(("success", "failure", "cancelled", "skipped"), repeat=4):
             with self.subTest(states=states):
                 proof = {job: {"result": state} for job, state in zip(REQUIRED_JOBS, states)}
+                proof[OPTIONAL_JOB] = {"result": "success"}
                 results, errors = evaluate_needs(json.dumps(proof))
-                self.assertEqual(states, tuple(results.values()))
+                self.assertEqual(states, tuple(results[job] for job in REQUIRED_JOBS))
                 self.assertEqual(all(state == "success" for state in states), not errors)
 
     def test_missing_dependency_and_extra_dependency_fail(self):
-        for job in REQUIRED_JOBS:
+        for job in ALL_JOBS:
             proof = successful_needs()
             del proof[job]
             with self.subTest(job=job):
@@ -69,18 +95,18 @@ class RequiredGateTests(unittest.TestCase):
         self.assertTrue(evaluate_needs(json.dumps(proof))[1])
 
     def test_missing_unknown_and_wrong_type_results_fail_for_every_job(self):
-        for job in REQUIRED_JOBS:
+        for job in ALL_JOBS:
             for value in ("unknown", "neutral", "timed_out", "Success", "success ", "", None,
                           True, 1, [], {}, ["success"]):
                 proof = successful_needs()
                 proof[job]["result"] = value
                 with self.subTest(job=job, value=value):
-                    self.assertTrue(evaluate_needs(json.dumps(proof))[1])
+                    self.assertTrue(evaluate_needs(json.dumps(proof), require_native_gui=True)[1])
             for entry in ({}, {"outputs": {"result": "success"}}, "success", None, []):
                 proof = successful_needs()
                 proof[job] = entry
                 with self.subTest(job=job, entry=entry):
-                    self.assertTrue(evaluate_needs(json.dumps(proof))[1])
+                    self.assertTrue(evaluate_needs(json.dumps(proof), require_native_gui=True)[1])
 
     def test_malformed_non_object_ambiguous_or_non_json_evidence_fails(self):
         raw = json.dumps(successful_needs())
@@ -114,6 +140,7 @@ class RequiredGateTests(unittest.TestCase):
         for event in ("push", "workflow_dispatch"):
             env = environment(event)
             del env["CI_PR_HEAD_SHA"]
+            del env["CI_PR_NUMBER"]
             passed, summary = summarize(json.dumps(successful_needs()), env, MERGE)
             self.assertTrue(passed)
             self.assertIn("PR head: not applicable", summary)
@@ -129,7 +156,8 @@ class RequiredGateTests(unittest.TestCase):
                            ("GITHUB_RUN_ID", "0"), ("GITHUB_RUN_ATTEMPT", "-1"),
                            ("GITHUB_SERVER_URL", "https://example.invalid"),
                            ("GITHUB_REPOSITORY", "owner/repo\n::error::injected"),
-                           ("CI_PR_HEAD_SHA", "not a sha")):
+                           ("CI_PR_HEAD_SHA", "not a sha"),
+                           ("CI_PR_NUMBER", "133\n::error::injected")):
             env = environment()
             env[key] = value
             with self.subTest(key=key, value=value):
@@ -211,7 +239,7 @@ class BuildWorkflowContractTests(unittest.TestCase):
         gate = mapping_block(self.jobs, "ci-required", indent=2)
         self.assertIn("    name: IEDCTR CI required\n", gate)
         self.assertIn("    if: ${{ always() }}\n", gate)
-        self.assertIn("    needs: [build, lithium-compatibility, renderer-matrix, lava-surfaces]\n", gate)
+        self.assertIn("    needs: [build, lithium-compatibility, renderer-matrix, lava-surfaces, native-smelter-gui]\n", gate)
         self.assertEqual(1, gate.count("if:"))
         self.assertNotIn("continue-on-error", self.workflow)
         self.assertIn("    timeout-minutes: 5\n", gate)
@@ -220,12 +248,14 @@ class BuildWorkflowContractTests(unittest.TestCase):
         gate = mapping_block(self.jobs, "ci-required", indent=2)
         self.assertIn("          CI_NEEDS_JSON: ${{ toJSON(needs) }}\n", gate)
         self.assertIn("          CI_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}\n", gate)
+        self.assertIn("          CI_PR_NUMBER: " + chr(36) + "{{ github.event.pull_request.number }}\n", gate)
         self.assertEqual(["python tools/validation/ci_required.py"],
                          re.findall(r"^        run: (.+)$", gate, re.M))
         self.assertNotIn("ref:", gate)  # Default checkout must remain the tested PR merge ref.
 
     def test_exact_job_families_and_all_eight_matrix_entries_are_preserved(self):
-        self.assertEqual([*REQUIRED_JOBS, "ci-required"], re.findall(r"^  ([\w-]+):$", self.jobs, re.M))
+        self.assertEqual([*REQUIRED_JOBS, OPTIONAL_JOB, "ci-required"],
+                         re.findall(r"^  ([\w-]+):$", self.jobs, re.M))
         for job, profile in (("renderer-matrix", "native, embeddium, modernfix, both"),
                              ("lava-surfaces", "native, embeddium")):
             block = mapping_block(self.jobs, job, indent=2)
@@ -234,6 +264,9 @@ class BuildWorkflowContractTests(unittest.TestCase):
         for job in REQUIRED_JOBS:
             block = mapping_block(self.jobs, job, indent=2)
             self.assertNotRegex(block, r"(?m)^    if:")
+        native_gui = mapping_block(self.jobs, OPTIONAL_JOB, indent=2)
+        self.assertIn("    if: " + chr(36) + "{{ github.event_name == 'pull_request' && github.event.pull_request.number == 133 }}\n",
+                      native_gui)
         build = mapping_block(self.jobs, "build", indent=2)
         for command in ("./gradlew compileJava processResources --stacktrace", "./gradlew test --stacktrace",
                         "./gradlew runGameTestServer --stacktrace", "./gradlew build --stacktrace",
@@ -243,18 +276,18 @@ class BuildWorkflowContractTests(unittest.TestCase):
     def test_read_only_permissions_and_pinned_actions_are_preserved(self):
         self.assertEqual("  contents: read", meaningful(mapping_block(self.workflow, "permissions")))
         self.assertEqual(1, self.workflow.count("permissions:"))
-        pins = {"actions/checkout": ("3d3c42e5aac5ba805825da76410c181273ba90b1", 5),
-                "actions/setup-java": ("b6effb05e454b25005698d916606bdc6ffcbf961", 4),
-                "actions/setup-python": ("5fda3b95a4ea91299a34e894583c3862153e4b97", 5),
-                "gradle/actions/setup-gradle": ("9c971963bec38e04b3d30dcc455b5382be2fdbfb", 4),
-                "actions/upload-artifact": ("043fb46d1a93c77aae656e7c1c64a875d1fc6a0a", 4)}
+        pins = {"actions/checkout": ("3d3c42e5aac5ba805825da76410c181273ba90b1", 6),
+                "actions/setup-java": ("b6effb05e454b25005698d916606bdc6ffcbf961", 5),
+                "actions/setup-python": ("5fda3b95a4ea91299a34e894583c3862153e4b97", 6),
+                "gradle/actions/setup-gradle": ("9c971963bec38e04b3d30dcc455b5382be2fdbfb", 5),
+                "actions/upload-artifact": ("043fb46d1a93c77aae656e7c1c64a875d1fc6a0a", 5)}
         actions = re.findall(r"uses: ([^@\s]+)@([^\s]+)", self.workflow)
         self.assertEqual(set(pins), {action for action, _ in actions})
         for action, (sha, count) in pins.items():
             self.assertEqual([sha] * count, [version for name, version in actions if name == action])
 
     def test_existing_diagnostic_artifact_retention_and_missing_file_failure(self):
-        for job in REQUIRED_JOBS:
+        for job in (*REQUIRED_JOBS, OPTIONAL_JOB):
             block = mapping_block(self.jobs, job, indent=2)
             self.assertEqual(1, block.count("uses: actions/upload-artifact@"))
             self.assertEqual(1, block.count("          retention-days: 14"))

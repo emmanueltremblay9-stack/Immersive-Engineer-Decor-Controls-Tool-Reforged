@@ -297,7 +297,7 @@ jobs:
     name: IEDCTR CI required
     # Informational until separately selected in repository branch protection.
     if: ${{ always() }}
-    needs: [build, lithium-compatibility, renderer-matrix, lava-surfaces]
+    needs: [build, lithium-compatibility, renderer-matrix, lava-surfaces, native-smelter-gui]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -311,4 +311,5 @@ jobs:
         env:
           CI_NEEDS_JSON: ${{ toJSON(needs) }}
           CI_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          CI_PR_NUMBER: ${{ github.event.pull_request.number }}
         run: python tools/validation/ci_required.py

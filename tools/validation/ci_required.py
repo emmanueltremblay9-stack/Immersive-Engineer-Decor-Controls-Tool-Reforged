@@ -11,6 +11,8 @@ from typing import Mapping
 
 
 REQUIRED_JOBS = ("build", "lithium-compatibility", "renderer-matrix", "lava-surfaces")
+OPTIONAL_JOB = "native-smelter-gui"
+ALL_JOBS = REQUIRED_JOBS + (OPTIONAL_JOB,)
 RESULTS = {"success", "failure", "cancelled", "skipped"}
 SHA = re.compile(r"[0-9a-f]{40}")
 
@@ -28,9 +30,9 @@ def invalid_constant(value: str) -> None:
     raise ValueError("Non-JSON numeric constant")
 
 
-def evaluate_needs(raw: str) -> tuple[dict[str, str], list[str]]:
-    """Only the exact four dependencies, each with literal success, can pass."""
-    results = dict.fromkeys(REQUIRED_JOBS, "missing")
+def evaluate_needs(raw: str, require_native_gui: bool = False) -> tuple[dict[str, str], list[str]]:
+    """Require the four base families and the targeted GUI job only on PR #133."""
+    results = dict.fromkeys(ALL_JOBS, "missing")
     try:
         needs = json.loads(raw, object_pairs_hook=unique_object, parse_constant=invalid_constant)
     except (ValueError, TypeError):
@@ -39,17 +41,23 @@ def evaluate_needs(raw: str) -> tuple[dict[str, str], list[str]]:
         return results, ["Dependency evidence must be an object."]
 
     errors = []
-    if set(needs) != set(REQUIRED_JOBS):
-        errors.append("Dependency evidence must contain exactly the four required job IDs.")
-    for job in REQUIRED_JOBS:
+    if set(needs) != set(ALL_JOBS):
+        errors.append("Dependency evidence must contain exactly the four required families and the conditional native GUI job.")
+    for job in ALL_JOBS:
         if job in needs:
             entry = needs[job]
             value = entry.get("result") if isinstance(entry, dict) else None
             results[job] = value if isinstance(value, str) and value in RESULTS else "unknown"
+    for job in REQUIRED_JOBS:
         if results[job] != "success":
             errors.append(f"{job}: {results[job]} (required: success).")
-    return results, errors
 
+    native_gui = results[OPTIONAL_JOB]
+    accepted_native_gui_results = {"success"} if require_native_gui else {"success", "skipped"}
+    if native_gui not in accepted_native_gui_results:
+        requirement = "success" if require_native_gui else "success or skipped"
+        errors.append(f"{OPTIONAL_JOB}: {native_gui} (required: {requirement}).")
+    return results, errors
 
 def identity_lines(env: Mapping[str, str], checkout_sha: str) -> list[str]:
     """Validate identity before emitting links; PR head is not the merge checkout."""
@@ -71,6 +79,9 @@ def identity_lines(env: Mapping[str, str], checkout_sha: str) -> list[str]:
     run = f"{base}/actions/runs/{run_id}"
     lines = [f"Event: `{event}`."]
     if event == "pull_request":
+        number = env.get("CI_PR_NUMBER", "")
+        if not re.fullmatch(r"[1-9][0-9]*", number):
+            raise ValueError("Missing or invalid PR number.")
         head = env.get("CI_PR_HEAD_SHA", "")
         if not SHA.fullmatch(head):
             raise ValueError("Missing or invalid PR head SHA.")
@@ -87,7 +98,11 @@ def identity_lines(env: Mapping[str, str], checkout_sha: str) -> list[str]:
 
 
 def summarize(raw: str, env: Mapping[str, str], checkout_sha: str) -> tuple[bool, str]:
-    results, errors = evaluate_needs(raw)
+    require_native_gui = (
+        env.get("GITHUB_EVENT_NAME") == "pull_request"
+        and env.get("CI_PR_NUMBER") == "133"
+    )
+    results, errors = evaluate_needs(raw, require_native_gui=require_native_gui)
     try:
         identity = identity_lines(env, checkout_sha)
     except ValueError as error:
@@ -97,12 +112,14 @@ def summarize(raw: str, env: Mapping[str, str], checkout_sha: str) -> tuple[bool
     lines = ["## IEDCTR CI required", "", "PASS" if passed else "FAIL", ""]
     lines += ["| Validation family | Result |", "| --- | --- |"]
     lines += [f"| `{job}` | {results[job]} |" for job in REQUIRED_JOBS]
+    expectation = "required" if require_native_gui else "conditional; skip allowed when not applicable"
+    lines.append(f"| `{OPTIONAL_JOB}` | {results[OPTIONAL_JOB]} ({expectation}) |")
     lines += ["", *identity, ""]
     if errors:
         lines += ["Validation errors:", "", *(f"- {error}" for error in errors), ""]
     lines += [
-        "The four families cover eight validation jobs, including both matrices. "
-        "A failed, missing, skipped, cancelled or unknown result cannot pass.",
+        "The four required families cover eight validation jobs, including both matrices. "
+        "Native Smelter GUI capture is required only for PR #133; the workflow may skip it on other PRs or events, but a failure never passes.",
         "Diagnostic artifacts retain the existing 14-day lifetime; this summary does not upload a runtime JAR.",
         "This aggregate is informational until separately configured in branch protection. "
         "It does not authorize a merge or establish release readiness.",

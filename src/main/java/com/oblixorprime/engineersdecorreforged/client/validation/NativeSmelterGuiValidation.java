@@ -24,7 +24,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
-import net.neoforged.neoforge.fluids.FluidAction;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 /** Opt-in native-client fixture for the real Small Mineral Smelter screen and menu. */
@@ -65,7 +65,9 @@ final class NativeSmelterGuiValidation {
       require(language.equals("en_us") || language.equals("fr_fr"), "Fixture language must be en_us or fr_fr");
       screenshots = gameDirectory.resolve("smelter-gui-screenshots");
       require(!Files.exists(screenshots), "Refusing stale Smelter screenshots");
-      CAPTURES.removeAll();
+      while (CAPTURES.size() > 0) {
+         CAPTURES.remove(CAPTURES.size() - 1);
+      }
       ticks = 0;
       serverMenuId = -1;
       serverMenuContextValid = false;
