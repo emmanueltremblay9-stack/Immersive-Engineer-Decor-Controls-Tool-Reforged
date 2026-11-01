@@ -54,6 +54,20 @@ public record MachineLayout(
       this.textureName = textureName;
    }
 
+   public boolean isOutputSlot(int containerIndex) {
+      return this.machineSlots.stream().anyMatch(slot -> slot.containerIndex() == containerIndex && slot.output());
+   }
+
+   public boolean allowsAutomationExtraction(int containerIndex) {
+      boolean hasOutputSlots = false;
+      for (MachineLayout.MachineSlot slot : this.machineSlots) {
+         if (slot.output()) {
+            hasOutputSlots = true;
+         }
+      }
+      return !hasOutputSlots || this.isOutputSlot(containerIndex);
+   }
+
    public static MachineLayout forKind(MachineKind kind) {
       return switch (kind) {
          case METAL_CRAFTING_TABLE -> metalCraftingTable();
@@ -64,9 +78,10 @@ public record MachineLayout(
          case FACTORY_HOPPER -> hopper();
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
-         case SMALL_MINERAL_SMELTER -> processor(kind);
-         case SMALL_FREEZER -> freezer();
-         case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
+          case SMALL_MINERAL_SMELTER -> processor(kind);
+          case SMALL_FREEZER -> freezer();
+          case FLUID_BARREL -> fluidBarrel();
+          case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
          case SMALL_MILKING_MACHINE -> smallMilkingMachine();
          case SMALL_SOLAR_PANEL -> solarPanelArtwork();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
@@ -233,6 +248,21 @@ public record MachineLayout(
       );
    }
 
+   private static MachineLayout fluidBarrel() {
+      return new MachineLayout(
+         201,
+         226,
+         24,
+         144,
+         24,
+         202,
+         List.of(new MachineLayout.MachineSlot(0, 27, 66, "Empty bucket", false), new MachineLayout.MachineSlot(1, 150, 66, "Filled", true)),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "fluid_barrel/background"
+      );
+   }
+
    private static MachineLayout freezer() {
       return new MachineLayout(
          209,
@@ -269,6 +299,7 @@ public record MachineLayout(
          "small_milking_machine_gui"
       );
    }
+
 
    private static MachineLayout fluid(MachineKind kind) {
       String source = kind == MachineKind.SMALL_MILKING_MACHINE ? "Bucket" : "Empty";
