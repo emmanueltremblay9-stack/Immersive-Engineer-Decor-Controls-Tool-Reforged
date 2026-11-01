@@ -246,7 +246,7 @@ public record MachineLayout(
          205,
          List.of(
             new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket"),
-            new MachineLayout.MachineSlot(1, 149, 106, "Filled water bucket")
+            new MachineLayout.MachineSlot(1, 149, 106, "Filled")
          ),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,

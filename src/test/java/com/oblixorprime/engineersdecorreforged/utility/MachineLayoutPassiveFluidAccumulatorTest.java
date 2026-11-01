@@ -21,6 +21,7 @@ public class MachineLayoutPassiveFluidAccumulatorTest {
       assertEquals(1, layout.machineSlots().get(1).containerIndex());
       assertEquals(149, layout.machineSlots().get(1).x());
       assertEquals(106, layout.machineSlots().get(1).y());
+      assertEquals("Filled", layout.machineSlots().get(1).role());
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
       assertEquals("passive_fluid_accumulator", layout.textureName());
    }
