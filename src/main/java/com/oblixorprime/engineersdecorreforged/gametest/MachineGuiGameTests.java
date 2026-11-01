@@ -1052,8 +1052,14 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(-1, data.get(16), "inactive batch progress remains unknown");
 
       Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      player.setPos(
+         machine.getBlockPos().getX() + 0.5,
+         machine.getBlockPos().getY() + 0.5,
+         machine.getBlockPos().getZ() + 0.5
+      );
       MachineMenu menu = new MachineMenu(MachineKind.SMALL_MINERAL_SMELTER, 80, player.getInventory(), machine, data);
       player.containerMenu = menu;
+      helper.assertTrue(menu.stillValid(player), "the simulated player is in range of the Smelter menu");
       menu.handleAction(player, 31, 1, 0);
       helper.assertValueEqual(0, data.get(1), "legacy generic action 31 cannot change Smelter mode");
       helper.assertTrue(!menu.clickMenuButton(player, 1), "vanilla menu buttons cannot bypass the dedicated payload");
