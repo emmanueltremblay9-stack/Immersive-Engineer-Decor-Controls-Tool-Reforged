@@ -1,17 +1,18 @@
-name: Qualify exact JAR 1.1.65
-run-name: "IEDCTR 1.1.65 :: binary qualification, no publication"
+name: Qualify exact JAR
+run-name: "IEDCTR ${{ github.ref_name }} :: exact-byte review, no publication"
 
 on:
-  # One named repair branch only. This never opts in to Minecraft server terms.
+  # The scoped release-candidate branch qualifies an explicit JSON source spec.
+  # The historical 1.1.65 branch and manual EULA-gated server path remain available.
   push:
-    branches: [repair/iedctr-1.1.65-release-qualification]
+    branches: [repair/iedctr-1.1.65-release-qualification, codex/qualify-iedctr-1.1.66]
     paths:
       - '.github/workflows/qualify-exact-jar-1.1.65.yml'
       - 'tools/qualification/**'
   workflow_dispatch:
     inputs:
       run_server:
-        description: 'Also run the baseline packaged-server smoke test (separate explicit consent required)'
+        description: 'Also run the legacy 1.1.65 baseline packaged-server smoke (separate explicit consent required)'
         required: true
         type: boolean
         default: false
@@ -26,44 +27,104 @@ permissions:
   actions: read
 
 concurrency:
-  group: iedctr-exact-jar-1.1.65
+  group: iedctr-exact-jar
   cancel-in-progress: false
 
 jobs:
   qualify:
-    if: github.repository == 'emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged'
+    if: >-
+      github.repository == 'emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'push' &&
+        (github.ref == 'refs/heads/repair/iedctr-1.1.65-release-qualification' ||
+         github.ref == 'refs/heads/codex/qualify-iedctr-1.1.66')))
     name: Exact-byte qualification (not release acceptance)
     runs-on: ubuntu-24.04
     timeout-minutes: 75
+    env:
+      QUALIFICATION_SPEC: ${{ github.ref == 'refs/heads/codex/qualify-iedctr-1.1.66' && 'tools/qualification/iedctr-1.1.66.json' || '' }}
     steps:
       - name: Checkout qualification tooling
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: tooling
           persist-credentials: false
       - name: Set up Python
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.13'
-      - name: Set up Java
-        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961
-        with:
-          distribution: temurin
-          java-version: '21'
+      - name: Resolve exact source and version identity
+        id: identity
+        shell: bash
+        env:
+          SPEC_RELATIVE_PATH: ${{ env.QUALIFICATION_SPEC }}
+        run: |
+          set -euo pipefail
+          python - "$GITHUB_WORKSPACE/tooling" "$SPEC_RELATIVE_PATH" "$GITHUB_OUTPUT" <<'PY'
+          import json
+          import re
+          import sys
+          from pathlib import Path
+          tooling = Path(sys.argv[1]).resolve(strict=True)
+          sys.path.insert(0, str(tooling / "tools/qualification"))
+          import qualify_1_1_65 as qualification
+          relative = sys.argv[2]
+          if relative:
+              spec_path = (tooling / relative).resolve(strict=True)
+              spec_path.relative_to(tooling)
+              identity = qualification.load_spec(spec_path)
+          else:
+              identity = {
+                  "sourceCommit": qualification.SOURCE_COMMIT,
+                  "buildRunId": qualification.BUILD_RUN_ID,
+                  "buildRunAttempt": qualification.BUILD_ATTEMPT,
+                  "modId": qualification.MOD_ID,
+                  "version": qualification.VERSION,
+              }
+          source = identity["sourceCommit"]
+          version = identity["version"]
+          mod_id = identity["modId"]
+          if not re.fullmatch(r"[0-9a-f]{40}", source):
+              raise SystemExit("Invalid pinned source commit")
+          if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9][A-Za-z0-9._-]*)?", version):
+              raise SystemExit("Invalid pinned candidate version")
+          if not re.fullmatch(r"[a-z][a-z0-9_]{1,63}", mod_id):
+              raise SystemExit("Invalid pinned mod ID")
+          values = {
+              "source_commit": source,
+              "build_run_id": str(identity["buildRunId"]),
+              "build_run_attempt": str(identity["buildRunAttempt"]),
+              "version": version,
+              "jar_name": f"{mod_id}-{version}.jar",
+          }
+          with open(sys.argv[3], "a", encoding="utf-8") as out:
+              for key, value in values.items():
+                  if "\n" in value or "\r" in value:
+                      raise SystemExit("Newline in candidate identity")
+                  out.write(f"{key}={value}\n")
+          PY
       - name: Initialize unique report directory
         shell: bash
+        env:
+          CANDIDATE_SOURCE: ${{ steps.identity.outputs.source_commit }}
+          CANDIDATE_VERSION: ${{ steps.identity.outputs.version }}
+          CANDIDATE_BUILD_RUN_ID: ${{ steps.identity.outputs.build_run_id }}
+          CANDIDATE_BUILD_RUN_ATTEMPT: ${{ steps.identity.outputs.build_run_attempt }}
         run: |
           set -euo pipefail
           reports="$(mktemp -d "$RUNNER_TEMP/iedctr-qualification.XXXXXX")"
           echo "QUALIFICATION_REPORTS=$reports" >> "$GITHUB_ENV"
-          python - "$reports" <<'PY'
+          python - "$reports" "$GITHUB_WORKSPACE/tooling" <<'PY'
           import json, os, pathlib, subprocess, sys
           report = {
               "status": "STARTED", "publicationReady": False,
               "workflowRunId": os.environ["GITHUB_RUN_ID"],
               "workflowRunAttempt": os.environ["GITHUB_RUN_ATTEMPT"],
-              "toolingCommit": subprocess.check_output(["git", "-C", "tooling", "rev-parse", "HEAD"], text=True).strip(),
-              "runtimeSourceCommit": "52639384ea90aebe9d563b966027421cebe52b45"
+              "toolingCommit": subprocess.check_output(["git", "-C", sys.argv[2], "rev-parse", "HEAD"], text=True).strip(),
+              "runtimeSourceCommit": os.environ["CANDIDATE_SOURCE"],
+              "candidateVersion": os.environ["CANDIDATE_VERSION"],
+              "buildRunId": int(os.environ["CANDIDATE_BUILD_RUN_ID"]),
+              "buildRunAttempt": int(os.environ["CANDIDATE_BUILD_RUN_ATTEMPT"]),
           }
           (pathlib.Path(sys.argv[1]) / "run.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
           PY
@@ -77,25 +138,39 @@ jobs:
         shell: bash
         env:
           EULA_ACKNOWLEDGMENT: ${{ inputs.eula_acknowledgment }}
-        run: test "$EULA_ACKNOWLEDGMENT" = 'I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT'
-      - name: Verify pinned successful push Build before compilation
+        run: |
+          test -z "$QUALIFICATION_SPEC"
+          test "$EULA_ACKNOWLEDGMENT" = 'I_ACCEPT_MINECRAFT_EULA_AND_MICROSOFT_SERVICES_AGREEMENT'
+      - name: Verify exact successful main push Build before compilation
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python tooling/tools/qualification/qualify_1_1_65.py ci --report "$QUALIFICATION_REPORTS/ci.json"
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(ci --report "$QUALIFICATION_REPORTS/ci.json")
+          if [[ -n "$QUALIFICATION_SPEC" ]]; then
+            args+=(--spec "$GITHUB_WORKSPACE/tooling/$QUALIFICATION_SPEC")
+          fi
+          python tooling/tools/qualification/qualify_1_1_65.py "${args[@]}"
       - name: Checkout exact runtime source A
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: 52639384ea90aebe9d563b966027421cebe52b45
+          ref: ${{ steps.identity.outputs.source_commit }}
           path: runtime-a
           persist-credentials: false
       - name: Checkout exact runtime source B
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: 52639384ea90aebe9d563b966027421cebe52b45
+          ref: ${{ steps.identity.outputs.source_commit }}
           path: runtime-b
           persist-credentials: false
+      - name: Set up Java
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: '21'
       - name: Set up Gradle without a persisted build cache
-        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6.3.0
         with:
           cache-disabled: true
       - name: Clean private build A
@@ -103,46 +178,73 @@ jobs:
         shell: bash
         env:
           GRADLE_USER_HOME: ${{ runner.temp }}/iedctr-gradle-a
+          EXPECTED_SOURCE_COMMIT: ${{ steps.identity.outputs.source_commit }}
+          EXPECTED_JAR_NAME: ${{ steps.identity.outputs.jar_name }}
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = 52639384ea90aebe9d563b966027421cebe52b45
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_COMMIT"
           test -z "$(git status --porcelain --untracked-files=all)"
           bash ./gradlew clean build --no-build-cache --rerun-tasks --stacktrace
           test -z "$(git status --porcelain --untracked-files=all)"
+          test -f "build/libs/$EXPECTED_JAR_NAME"
       - name: Clean private build B with a separate cache
         working-directory: runtime-b
         shell: bash
         env:
           GRADLE_USER_HOME: ${{ runner.temp }}/iedctr-gradle-b
+          EXPECTED_SOURCE_COMMIT: ${{ steps.identity.outputs.source_commit }}
+          EXPECTED_JAR_NAME: ${{ steps.identity.outputs.jar_name }}
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = 52639384ea90aebe9d563b966027421cebe52b45
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_COMMIT"
           test -z "$(git status --porcelain --untracked-files=all)"
           bash ./gradlew clean build --no-build-cache --rerun-tasks --stacktrace
           test -z "$(git status --porcelain --untracked-files=all)"
+          test -f "build/libs/$EXPECTED_JAR_NAME"
       - name: Inspect both JARs and recheck exact-source CI
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python tooling/tools/qualification/qualify_1_1_65.py compare --source-a "$GITHUB_WORKSPACE/runtime-a" --source-b "$GITHUB_WORKSPACE/runtime-b" --report "$QUALIFICATION_REPORTS/binary.json"
-      - name: Baseline packaged-server smoke using the inspected JAR
+          SPEC_RELATIVE_PATH: ${{ env.QUALIFICATION_SPEC }}
+          EXPECTED_JAR_NAME: ${{ steps.identity.outputs.jar_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(compare --source-a "$GITHUB_WORKSPACE/runtime-a" --source-b "$GITHUB_WORKSPACE/runtime-b" --report "$QUALIFICATION_REPORTS/binary.json")
+          if [[ -n "$SPEC_RELATIVE_PATH" ]]; then
+            args+=(--spec "$GITHUB_WORKSPACE/tooling/$SPEC_RELATIVE_PATH" --jar-artifact "$QUALIFICATION_REPORTS/$EXPECTED_JAR_NAME")
+          fi
+          python tooling/tools/qualification/qualify_1_1_65.py "${args[@]}"
+      - name: Legacy packaged-server smoke using the inspected JAR
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_server }}
         env:
           EULA_ACKNOWLEDGMENT: ${{ inputs.eula_acknowledgment }}
         run: python tooling/tools/qualification/qualify_1_1_65.py server --source-a "$GITHUB_WORKSPACE/runtime-a" --gradle-home "$RUNNER_TEMP/iedctr-gradle-a" --eula-acknowledgment "$EULA_ACKNOWLEDGMENT" --report "$QUALIFICATION_REPORTS/server.json"
-      - name: Persist text evidence only, never runtime binaries
+      - name: Persist sanitized text qualification evidence
         if: ${{ always() && env.QUALIFICATION_REPORTS != '' }}
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: iedctr-1.1.65-qualification-${{ github.run_id }}-${{ github.run_attempt }}
+          name: iedctr-${{ steps.identity.outputs.version }}-qualification-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             ${{ env.QUALIFICATION_REPORTS }}/*.json
             ${{ env.QUALIFICATION_REPORTS }}/unit-tests.txt
           if-no-files-found: error
           retention-days: 90
+      - name: Retain exact inspected runtime JAR for review
+        if: ${{ success() && env.QUALIFICATION_SPEC != '' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: iedctr-${{ steps.identity.outputs.version }}-review-jar-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.QUALIFICATION_REPORTS }}/${{ steps.identity.outputs.jar_name }}
+          if-no-files-found: error
+          retention-days: 14
       - name: Report the evidence boundary
         if: ${{ always() }}
         shell: bash
         run: |
-          echo '## Exact JAR qualification' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Read the binary.json/server.json reports. A green binary job is NOT release acceptance.' >> "$GITHUB_STEP_SUMMARY"
-          echo 'Client gameplay, all new-feature scenarios and publication remain separate gates. No CurseForge token or mod upload is used here.' >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo '## Exact JAR qualification'
+            echo
+            echo 'Read binary.json for actual JAR size/hash and archive checks. The candidate JAR artifact is staged only after two clean builds match the pinned CI digest and each other.'
+            echo 'The artifact contains only the inspected runtime JAR; there are no publication secrets, server installs, or CurseForge uploads in this workflow.'
+            echo 'A green binary job is NOT release acceptance. Client gameplay, all new-feature scenarios, packaged-server review and publication remain separate gates.'
+          } >> "$GITHUB_STEP_SUMMARY"

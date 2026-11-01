@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "repository": {
+    "owner": "emmanueltremblay9-stack",
+    "name": "Immersive-Engineer-Decor-Controls-Tool-Reforged"
+  },
+  "release": {
+    "tag": "v1.1.66-reconstructed",
+    "version": "1.1.66-reconstructed",
+    "modId": "immersive_engineer_decor_controls_tool_reforged",
+    "assetName": "immersive_engineer_decor_controls_tool_reforged-1.1.66-reconstructed.jar",
+    "assetSize": 25850718,
+    "assetSha256": "f399e489543383c22602fa33ecc922dbb290d7dc0dfe7ed003057116797febc0",
+    "changelogPath": "release-bundle/1.1.66-reconstructed/curseforge-notes.md",
+    "changelogSha256": "a1c5621d2293bb530e8e4c27c39cfe60a4de0abf17a02033478488fda1f09731"
+  },
+  "curseforge": {
+    "projectId": 1555214,
+    "previousPublicFileId": 9358045,
+    "displayName": "immersive_engineer_decor_controls_tool_reforged-1.1.66-reconstructed.jar",
+    "releaseType": "release",
+    "isMarkedForManualRelease": false,
+    "gameVersionNames": [
+      "Client",
+      "Server",
+      "1.21.1",
+      "NeoForge"
+    ],
+    "gameVersionLookupNames": [
+      "1.21.1"
+    ],
+    "uploadRelations": [
+      {
+        "projectID": 231951,
+        "slug": "immersive-engineering",
+        "type": "requiredDependency"
+      }
+    ],
+    "expectedPublicRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      }
+    ],
+    "expectedPreviousPublicRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      }
+    ],
+    "expectedProjectRelations": [
+      {
+        "projectId": 231951,
+        "slug": "immersive-engineering",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 238222,
+        "slug": "jei",
+        "type": "OptionalDependency"
+      },
+      {
+        "projectId": 296686,
+        "slug": "redstone-gauges-and-switches",
+        "type": "Include"
+      },
+      {
+        "projectId": 309927,
+        "slug": "curios",
+        "type": "RequiredDependency"
+      },
+      {
+        "projectId": 313866,
+        "slug": "engineers-decor",
+        "type": "Include"
+      },
+      {
+        "projectId": 319716,
+        "slug": "engineers-tools",
+        "type": "Include"
+      }
+    ]
+  },
+  "source": {
+    "mode": "local-jar",
+    "commit": "dbab8a48b263ea38e3e291b5ef9b15d939e5dd04",
+    "buildRunId": 41356578796,
+    "buildRunAttempt": 1
+  }
+}

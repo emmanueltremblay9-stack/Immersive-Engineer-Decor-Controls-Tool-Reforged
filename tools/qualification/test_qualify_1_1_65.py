@@ -1,6 +1,7 @@
 """Synthetic unit tests. These never build Minecraft or qualify a real distribution JAR."""
 from __future__ import annotations
 import json
+import os
 from pathlib import Path
 import struct
 import tempfile
@@ -59,7 +60,7 @@ class QualificationTests(unittest.TestCase):
     def ci(self):
         repo = {"id": q.REPOSITORY_ID, "full_name": q.REPOSITORY}
         return {"id": q.BUILD_RUN_ID, "run_attempt": q.BUILD_ATTEMPT, "head_sha": q.SOURCE_COMMIT,
-                "event": "push", "status": "completed", "conclusion": "success",
+                "head_branch": "main", "event": "push", "status": "completed", "conclusion": "success",
                 "path": ".github/workflows/build.yml", "name": "Build",
                 "repository": repo.copy(), "head_repository": repo.copy()}
 
@@ -149,7 +150,11 @@ class QualificationTests(unittest.TestCase):
             q.inspect_archive(self.jar, self.root)
 
     def test_unsafe_zip_paths(self):
-        for name in ("../bad", "/absolute", "a\\b", "C:/drive"):
+        unsafe_paths = ("../bad", "/absolute", "C:/drive")
+        # zipfile normalizes backslashes to slashes on Windows before writing a member.
+        if os.sep != "\\":
+            unsafe_paths += ("a\\b",)
+        for name in unsafe_paths:
             with self.subTest(path=name):
                 self.entries[name] = b"x"
                 self.assert_bad_archive()
@@ -166,7 +171,10 @@ class QualificationTests(unittest.TestCase):
     def test_file_symlink(self):
         self.archive()
         link = self.root / "link.jar"
-        link.symlink_to(self.jar)
+        try:
+            link.symlink_to(self.jar)
+        except (OSError, NotImplementedError):
+            self.skipTest("This environment does not permit symlink creation")
         with self.assertRaises(q.QualificationError):
             q.inspect_archive(link, self.root)
 
@@ -191,7 +199,7 @@ class QualificationTests(unittest.TestCase):
 
     def test_ci_all_identity_and_status_fields(self):
         for field, wrong in {"id": 1, "run_attempt": 2, "head_sha": "0"*40,
-                             "event": "pull_request", "status": "in_progress", "conclusion": "failure",
+                             "head_branch": "feature", "event": "pull_request", "status": "in_progress", "conclusion": "failure",
                              "path": ".github/workflows/other.yml", "name": "Other"}.items():
             with self.subTest(field=field), self.assertRaises(q.QualificationError):
                 data = self.ci()
@@ -246,6 +254,33 @@ class QualificationTests(unittest.TestCase):
         self.assertEqual(report["exactJarClient"], "NOT_RUN")
         self.assertEqual(report["packagedServer"], "NOT_RUN")
 
+    def test_compare_stages_only_the_inspected_jar_bytes(self):
+        artifact = self.inspect()
+        source_a = self.root / "a"
+        source_b = self.root / "b"
+        jar_a = source_a / "build" / "libs" / q.JAR_NAME
+        jar_b = source_b / "build" / "libs" / q.JAR_NAME
+        jar_a.parent.mkdir(parents=True)
+        jar_b.parent.mkdir(parents=True)
+        jar_a.write_bytes(self.jar.read_bytes())
+        jar_b.write_bytes(self.jar.read_bytes())
+        staged = self.root / "report" / q.JAR_NAME
+        with patch.object(q, "inspect_source", return_value=artifact):
+            report = q.compare_sources(source_a, source_b, staged)
+        self.assertTrue(report["inspectionJarStaged"])
+        self.assertEqual(staged.stat().st_size, artifact["assetSize"])
+        self.assertEqual(q.digest(staged), artifact["assetSha256"])
+
+    def test_compare_does_not_stage_bytes_when_independent_builds_differ(self):
+        source_a = self.root / "a"
+        source_b = self.root / "b"
+        staged = self.root / "report" / q.JAR_NAME
+        with patch.object(q, "inspect_source",
+                          side_effect=[{"assetSha256": "a"}, {"assetSha256": "b"}]):
+            with self.assertRaises(q.QualificationError):
+                q.compare_sources(source_a, source_b, staged)
+        self.assertFalse(staged.exists())
+
     def test_server_consent_before_any_operations(self):
         with patch.object(q, "inspect_source") as inspect:
             for value in ("", "true", "yes", q.EULA_ACK + " "):
@@ -278,15 +313,105 @@ class QualificationTests(unittest.TestCase):
         self.assertFalse(json.loads(data)["publicationReady"])
 
 
+class ExplicitCandidateSpecTests(unittest.TestCase):
+    def setUp(self):
+        self.root = Path(__file__).resolve().parents[2]
+
+    def test_load_spec_rejects_missing_and_unknown_fields(self):
+        required = {
+            "schemaVersion": 1,
+            "repository": q.REPOSITORY,
+            "sourceCommit": "a" * 40,
+            "buildRunId": 123,
+            "buildRunAttempt": 1,
+            "modId": q.MOD_ID,
+            "version": "1.1.66-reconstructed",
+            "ciReportedJarSha256": "b" * 64,
+        }
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "spec.json"
+            path.write_text(json.dumps(required), encoding="utf-8")
+            self.assertEqual(q.load_spec(path), required)
+            for key, value in (("version", "../escape"), ("sourceCommit", "short"),
+                               ("buildRunAttempt", True), ("ciReportedJarSha256", "f" * 63),
+                               ("repository", "other/repo")):
+                with self.subTest(key=key):
+                    invalid = dict(required)
+                    invalid[key] = value
+                    path.write_text(json.dumps(invalid), encoding="utf-8")
+                    with self.assertRaises(q.QualificationError):
+                        q.load_spec(path)
+            invalid = dict(required)
+            invalid["unreviewed"] = True
+            path.write_text(json.dumps(invalid), encoding="utf-8")
+            with self.assertRaises(q.QualificationError):
+                q.load_spec(path)
+
+    def test_apply_spec_updates_source_version_and_ci_expectation(self):
+        candidate = {
+            "schemaVersion": 1,
+            "repository": q.REPOSITORY,
+            "sourceCommit": "d" * 40,
+            "buildRunId": 123,
+            "buildRunAttempt": 2,
+            "modId": q.MOD_ID,
+            "version": "1.1.66-reconstructed",
+            "ciReportedJarSha256": "e" * 64,
+        }
+        names = ("SOURCE_COMMIT", "SOURCE_TREE", "BUILD_RUN_ID", "BUILD_ATTEMPT",
+                 "MOD_ID", "VERSION", "JAR_NAME", "EXPECTED_SHA256", "PROPERTIES")
+        old = {name: getattr(q, name) for name in names}
+        try:
+            with tempfile.TemporaryDirectory() as folder:
+                path = Path(folder) / "spec.json"
+                path.write_text(json.dumps(candidate), encoding="utf-8")
+                q.apply_spec(q.load_spec(path))
+            self.assertEqual(q.SOURCE_COMMIT, "d" * 40)
+            self.assertIsNone(q.SOURCE_TREE)
+            self.assertEqual(q.BUILD_RUN_ID, 123)
+            self.assertEqual(q.BUILD_ATTEMPT, 2)
+            self.assertEqual(q.VERSION, "1.1.66-reconstructed")
+            self.assertEqual(q.JAR_NAME, q.MOD_ID + "-" + q.VERSION + ".jar")
+            self.assertEqual(q.PROPERTIES["mod_version"], q.VERSION)
+            self.assertEqual(q.EXPECTED_SHA256, "e" * 64)
+        finally:
+            for name, value in old.items():
+                setattr(q, name, value)
+
+    def test_candidate_spec_matches_successful_main_source(self):
+        candidate = q.load_spec(self.root / "tools/qualification/iedctr-1.1.66.json")
+        self.assertEqual(candidate["sourceCommit"], "dbab8a48b263ea38e3e291b5ef9b15d939e5dd04")
+        self.assertEqual(candidate["version"], "1.1.66-reconstructed")
+        self.assertEqual(candidate["buildRunId"], 41356578796)
+        self.assertEqual(candidate["buildRunAttempt"], 1)
+        self.assertEqual(candidate["ciReportedJarSha256"],
+                         "f399e489543383c22602fa33ecc922dbb290d7dc0dfe7ed003057116797febc0")
+
+
 class WorkflowContractTests(unittest.TestCase):
     def setUp(self):
         self.root = Path(__file__).resolve().parents[2]
         self.workflow = (self.root / ".github/workflows/qualify-exact-jar-1.1.65.yml").read_text(encoding="utf-8")
 
-    def test_source_is_pinned_twice(self):
-        self.assertEqual(self.workflow.count("ref: " + q.SOURCE_COMMIT), 2)
+    def test_setup_python_uses_verified_release_pin(self):
+        self.assertIn("actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0", self.workflow)
+        self.assertNotIn("actions/setup-python@5fda3b95e4ea91299a34e894583c3862153e4b97 # v7.0.0", self.workflow)
+
+    def test_source_is_resolved_from_explicit_candidate_spec(self):
+        self.assertIn("tools/qualification/iedctr-1.1.66.json", self.workflow)
+        self.assertIn("steps.identity.outputs.source_commit", self.workflow)
         self.assertIn("path: runtime-a", self.workflow)
         self.assertIn("path: runtime-b", self.workflow)
+
+    def test_candidate_spec_is_pinned_to_exact_main_build(self):
+        candidate = q.load_spec(self.root / "tools/qualification/iedctr-1.1.66.json")
+        self.assertEqual(candidate["sourceCommit"], "dbab8a48b263ea38e3e291b5ef9b15d939e5dd04")
+        self.assertEqual(candidate["version"], "1.1.66-reconstructed")
+        self.assertEqual(candidate["buildRunId"], 41356578796)
+        self.assertEqual(candidate["buildRunAttempt"], 1)
+        self.assertEqual(candidate["ciReportedJarSha256"],
+                         "f399e489543383c22602fa33ecc922dbb290d7dc0dfe7ed003057116797febc0")
+        self.assertNotIn("token", json.dumps(candidate).lower())
 
     def test_independent_build_caches(self):
         for value in ("iedctr-gradle-a", "iedctr-gradle-b", "cache-disabled: true"):
@@ -298,6 +423,7 @@ class WorkflowContractTests(unittest.TestCase):
             self.assertNotIn(value, self.workflow)
         self.assertIn("contents: read", self.workflow)
         self.assertIn("actions: read", self.workflow)
+        self.assertIn("codex/qualify-iedctr-1.1.66", self.workflow)
 
     def test_server_requires_dispatch_and_explicit_consent(self):
         self.assertEqual(self.workflow.count("github.event_name == 'workflow_dispatch' && inputs.run_server"), 2)
@@ -305,10 +431,14 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertIn(q.EULA_ACK, self.workflow)
         self.assertNotIn("eula=true", self.workflow)
 
-    def test_only_text_evidence_uploaded(self):
+    def test_text_evidence_and_review_jar_are_scoped(self):
         self.assertIn("${{ env.QUALIFICATION_REPORTS }}/*.json", self.workflow)
         self.assertIn("${{ env.QUALIFICATION_REPORTS }}/unit-tests.txt", self.workflow)
-        self.assertNotIn("build/libs", self.workflow)
+        self.assertIn("Retain exact inspected runtime JAR for review", self.workflow)
+        self.assertIn("${{ env.QUALIFICATION_REPORTS }}/${{ steps.identity.outputs.jar_name }}", self.workflow)
+        self.assertIn("if: ${{ success() && env.QUALIFICATION_SPEC != '' }}", self.workflow)
+        self.assertNotIn("runtime-source/**", self.workflow)
+        self.assertNotIn("CURSEFORGE_API_TOKEN", self.workflow)
 
     def test_legacy_harness_not_retargeted(self):
         source = (self.root / "tools/qualification/qualify_1_1_65.py").read_text(encoding="utf-8")
