@@ -964,5 +964,14 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.redstone": "HIGH stops work and resets progress. LOW permits work only when existing conditions are met.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.energy": "Stored FE: %1$s of %2$s FE capacity.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.input": "FE is accepted from the bottom face only, up to 256 FE per tick.",
-  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.status": "Current state: %1$s. %2$s"
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.status": "Current state: %1$s. %2$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.amount": "%1$s / %2$s mB",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.input": "Empty bucket",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.output": "Filled bucket",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.collection": "Passive collection",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.collection.tooltip": "Every 80 ticks, it collects 250 mB from adjacent water. Otherwise, rain adds 100 mB or thunder adds 200 mB.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.inventory": "Inventory",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.title": "Passive Fluid Accumulator",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.tank.tooltip": "Stored water: %1$s / %2$s mB",
+  "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.water": "Water"
 }
