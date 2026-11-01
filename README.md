@@ -12,7 +12,7 @@ This workspace was rebuilt from the published `engineers_decor_reforged-1.1.jar`
 .\gradlew.bat clean build
 ```
 
-Latest public CurseForge version: [`1.1.64-reconstructed`, file 9291194](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9291194), published on 22 October 2026.
+Latest public CurseForge version: [`1.1.65-reconstructed`, file 9358045](https://www.curseforge.com/minecraft/mc-mods/immersive-engineers-decor-controls-tools-reforged/files/9358045), approved on 28 October 2026.
 
 The following qualification record describes the historical `1.1.56-reconstructed` release:
 
@@ -29,9 +29,9 @@ The following qualification record describes the historical `1.1.56-reconstructe
 
 ## Current candidate
 
-Active development version: `1.1.65-reconstructed`, a corrective candidate for the startup conflict with Lithium **mc1.21.1-0.15.4 NeoForge** fixed in [PR #96](https://github.com/emmanueltremblay9-stack/Immersive-Engineer-Decor-Controls-Tool-Reforged/pull/96). Lithium remains optional and its fluid optimization remains enabled. This version increment changes metadata and release documentation only; runtime code and assets match merged commit `8a51986cb3bfc577f79c86ed4fb29937d3d72cc6`.
+Active development version: `1.1.66-reconstructed`, proposed for the next CurseForge upload. CurseForge Authors currently lists `1.1.65-reconstructed` (file 9358045) as the latest approved release. The `main` baseline at the start of this preparation was `5115bf35b15d63296de35305109d7f945cff2dea`; it contains work newer than the public 1.1.65 file.
 
-The candidate needs its own exact-commit CI, runtime JAR hash and applicable client/server qualification before publication. The previously validated 1.1.64 development JAR is not the 1.1.65 artifact. See [the 1.1.65 qualification record](docs/releases/1.1.65-reconstructed.md), [release notes](release-bundle/1.1.65-reconstructed/curseforge-notes.md) and [publication procedure](docs/CURSEFORGE_RELEASE.md). Existing fluidlogging scope and saved-data contracts remain documented in [generic scope and qualification](docs/testing/generic-fluid-cells.md).
+This version bump is not a final release artifact. Publication remains blocked on the owner decision about the Small Mineral Smelter's hybrid recipes and exact-JAR client/server/visual qualification. See [the 1.1.66 preparation record](docs/releases/1.1.66-preparation.md) and the [CurseForge publication procedure](docs/CURSEFORGE_RELEASE.md). The historical 1.1.65 qualification record and notes remain available at [qualification record](docs/releases/1.1.65-reconstructed.md) and [release notes](release-bundle/1.1.65-reconstructed/curseforge-notes.md). Existing fluidlogging scope and saved-data contracts remain documented in [generic scope and qualification](docs/testing/generic-fluid-cells.md).
 
 ## Config status
 
