@@ -386,6 +386,34 @@ public final class LabeledCrateGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_container_removal_syncs_world_hint(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      ItemStack hint = new ItemStack(Items.COMPASS);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, hint.copy());
+
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      AbstractContainerMenu opened = helper.getBlockState(TEST_POS).getMenuProvider(
+         helper.getLevel(), helper.absolutePos(TEST_POS)
+      ).createMenu(5, player.getInventory(), player);
+      helper.assertTrue(opened instanceof LabeledCrateMenu, "crate should open its dedicated menu for the frame removal test");
+      LabeledCrateMenu menu = (LabeledCrateMenu)opened;
+
+      ItemStack removedThroughSlot = menu.getSlot(LabeledCrateMenu.FRAME_SLOT).remove(1);
+      helper.assertTrue(ItemStack.matches(hint, removedThroughSlot), "ordinary slot pickup should return the frame item");
+      helper.assertTrue(crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "ordinary slot pickup should clear the backing block entity frame slot");
+
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, hint.copy());
+      ItemStack removedWithoutUpdate = crate.removeItemNoUpdate(LabeledCrateMenu.FRAME_SLOT);
+      helper.assertTrue(ItemStack.matches(hint, removedWithoutUpdate), "removeItemNoUpdate should return the frame item");
+      helper.assertTrue(crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "removeItemNoUpdate should clear the backing block entity frame slot");
+
+      menu.removed(player);
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 100)
    public static void labeled_crate_survival_break_replaces_contents_with_named_crate_and_reloads(GameTestHelper helper) {
       MachineBlockEntity crate = placeNamedCrate(helper, TEST_POS, Component.literal("Named Crate"));
