@@ -195,7 +195,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private int fluidAmount;
    private int energy;
    private int blockBreakerStatus;
-   private int blockBreakerHardnessHundredths;
+   private int blockBreakerHardnessBits;
    private int blockBreakerPendingItemCount;
    private int blockBreakerEnergyInputTick = Integer.MIN_VALUE;
    private int blockBreakerEnergyInputThisTick;
@@ -1332,8 +1332,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield this.cooldown;
                case 6:
                   yield this.blockBreakerStatus;
-               case 7:
-                  yield this.blockBreakerHardnessHundredths;
+               case MachineBlockBreakerDataSync.HARDNESS_LOW_FIELD:
+               case MachineBlockBreakerDataSync.HARDNESS_MIDDLE_FIELD:
+               case MachineBlockBreakerDataSync.HARDNESS_HIGH_FIELD:
+                  yield MachineBlockBreakerDataSync.hardnessFieldValue(this.blockBreakerHardnessBits, index);
                case 8:
                   yield this.blockBreakerPendingItemCount;
                case 9:
@@ -1572,8 +1574,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   case 6:
                      this.blockBreakerStatus = Mth.clamp(value, BREAKER_STATUS_NO_TARGET, BREAKER_STATUS_UNBREAKABLE);
                      return;
-                  case 7:
-                     this.blockBreakerHardnessHundredths = value;
+                  case MachineBlockBreakerDataSync.HARDNESS_LOW_FIELD:
+                  case MachineBlockBreakerDataSync.HARDNESS_MIDDLE_FIELD:
+                  case MachineBlockBreakerDataSync.HARDNESS_HIGH_FIELD:
+                     this.blockBreakerHardnessBits = MachineBlockBreakerDataSync.withHardnessField(this.blockBreakerHardnessBits, index, value);
                      return;
                   case 8:
                      this.blockBreakerPendingItemCount = Math.max(0, value);
@@ -2026,7 +2030,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          BlockPos target = this.worldPosition.relative(direction);
          BlockState targetState = this.level.getBlockState(target);
          float hardness = targetState.isAir() ? 0.0F : targetState.getDestroySpeed(this.level, target);
-         this.blockBreakerHardnessHundredths = targetState.isAir() ? 0 : Math.round(hardness * 100.0F);
+         this.blockBreakerHardnessBits = Float.floatToIntBits(targetState.isAir() ? 0.0F : hardness);
          if (powered) {
             this.blockBreakerStatus = BREAKER_STATUS_REDSTONE_STOP;
             this.progress = 0;

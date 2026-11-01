@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlockBreakerDataSync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import java.io.IOException;
 import java.io.InputStream;
@@ -96,36 +97,54 @@ public class MachineScreenBlockBreakerTextTest {
    }
 
    @Test
-   public void synchronizedHardnessRoundingCanEstimateAboveOrBelowServerBilling() {
+   public void synchronizedHardnessKeepsDisplayedCostEqualToServerBilling() {
       float lowerActualHardness = 0.504F;
-      int lowerSerializedHundredths = Math.round(lowerActualHardness * 100.0F);
-      float lowerSynchronizedHardness = Math.round(lowerActualHardness * 100.0F) / 100.0F;
-      int lowerDisplayedCost = MachineScreen.blockBreakerEstimatedCost(
-         lowerSynchronizedHardness,
-         true,
-         true,
-         MachineBlockEntity.blockBreakerEnergyCostPerBlock(lowerSynchronizedHardness)
-      );
-
-      assertEquals(50, lowerSerializedHundredths);
-      assertEquals(0.50F, lowerSynchronizedHardness, 0.0F);
-      assertEquals(240, lowerDisplayedCost);
-      assertEquals(241, MachineBlockEntity.blockBreakerEnergyCostPerBlock(lowerActualHardness));
-
       float higherActualHardness = 0.506F;
-      int higherSerializedHundredths = Math.round(higherActualHardness * 100.0F);
-      float higherSynchronizedHardness = Math.round(higherActualHardness * 100.0F) / 100.0F;
-      int higherDisplayedCost = MachineScreen.blockBreakerEstimatedCost(
-         higherSynchronizedHardness,
-         true,
-         true,
-         MachineBlockEntity.blockBreakerEnergyCostPerBlock(higherSynchronizedHardness)
-      );
+      assertEquals(240, MachineBlockEntity.blockBreakerEnergyCostPerBlock(0.50F));
+      assertEquals(242, MachineBlockEntity.blockBreakerEnergyCostPerBlock(0.51F));
 
-      assertEquals(51, higherSerializedHundredths);
-      assertEquals(0.51F, higherSynchronizedHardness, 0.0F);
-      assertEquals(242, higherDisplayedCost);
-      assertEquals(241, MachineBlockEntity.blockBreakerEnergyCostPerBlock(higherActualHardness));
+      assertSynchronizedCostMatchesServer(lowerActualHardness, 241);
+      assertSynchronizedCostMatchesServer(higherActualHardness, 241);
+      assertSynchronizedCostMatchesServer(0.5F, 240);
+   }
+
+   private static void assertSynchronizedCostMatchesServer(float actualHardness, int expectedCost) {
+      float synchronizedHardness = roundTripHardness(actualHardness);
+      assertEquals(expectedCost, MachineBlockEntity.blockBreakerEnergyCostPerBlock(actualHardness));
+      int menuCost = MachineBlockEntity.blockBreakerEnergyCostPerBlock(synchronizedHardness);
+      assertEquals(expectedCost, menuCost);
+      assertEquals(expectedCost, MachineScreen.blockBreakerEstimatedCost(synchronizedHardness, true, true, menuCost));
+      assertEquals(expectedCost, MachineScreen.blockBreakerEstimatedCost(synchronizedHardness, true, false, 0));
+   }
+
+   private static float roundTripHardness(float actualHardness) {
+      int hardnessBits = Float.floatToIntBits(actualHardness);
+      int low = MachineBlockBreakerDataSync.hardnessFieldValue(hardnessBits, MachineBlockBreakerDataSync.HARDNESS_LOW_FIELD);
+      int middle = MachineBlockBreakerDataSync.hardnessFieldValue(hardnessBits, MachineBlockBreakerDataSync.HARDNESS_MIDDLE_FIELD);
+      int high = MachineBlockBreakerDataSync.hardnessFieldValue(hardnessBits, MachineBlockBreakerDataSync.HARDNESS_HIGH_FIELD);
+
+      int receivedBits = 0;
+      receivedBits = MachineBlockBreakerDataSync.withHardnessField(receivedBits, MachineBlockBreakerDataSync.HARDNESS_LOW_FIELD, low);
+      receivedBits = MachineBlockBreakerDataSync.withHardnessField(receivedBits, MachineBlockBreakerDataSync.HARDNESS_MIDDLE_FIELD, middle);
+      receivedBits = MachineBlockBreakerDataSync.withHardnessField(receivedBits, MachineBlockBreakerDataSync.HARDNESS_HIGH_FIELD, high);
+      assertEquals(hardnessBits, receivedBits);
+
+      float synchronizedHardness = MachineBlockBreakerDataSync.hardnessFromFields(low, middle, high);
+      assertEquals(actualHardness, synchronizedHardness, 0.0F);
+      return synchronizedHardness;
+   }
+
+   @Test
+   public void synchronizedHardnessPreservesTheUnbreakableSentinel() {
+      float synchronizedHardness = roundTripHardness(-1.0F);
+
+      assertEquals(-1.0F, synchronizedHardness, 0.0F);
+      assertEquals(-1, MachineScreen.blockBreakerEstimatedCost(
+         synchronizedHardness,
+         true,
+         true,
+         MachineBlockEntity.blockBreakerEnergyCostPerBlock(synchronizedHardness)
+      ));
    }
 
    @Test
