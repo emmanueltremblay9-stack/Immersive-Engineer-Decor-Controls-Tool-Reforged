@@ -393,6 +393,10 @@ class WorkflowContractTests(unittest.TestCase):
         self.root = Path(__file__).resolve().parents[2]
         self.workflow = (self.root / ".github/workflows/qualify-exact-jar-1.1.65.yml").read_text(encoding="utf-8")
 
+    def test_setup_python_uses_verified_release_pin(self):
+        self.assertIn("actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0", self.workflow)
+        self.assertNotIn("actions/setup-python@5fda3b95e4ea91299a34e894583c3862153e4b97 # v7.0.0", self.workflow)
+
     def test_source_is_resolved_from_explicit_candidate_spec(self):
         self.assertIn("tools/qualification/iedctr-1.1.66.json", self.workflow)
         self.assertIn("steps.identity.outputs.source_commit", self.workflow)
