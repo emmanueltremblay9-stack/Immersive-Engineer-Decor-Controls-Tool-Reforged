@@ -26,6 +26,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -135,6 +137,23 @@ public class MachineMenu extends AbstractContainerMenu {
          case PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE, SMALL_MINERAL_SMELTER -> DEFAULT_FLUID_CAPACITY;
          default -> 0;
       };
+   }
+
+   public Fluid storedFluid() {
+      return decodeStoredFluid(this.kind, this.fluidAmount(), this.data.get(11), this.data.get(12), this.data.get(13));
+   }
+
+   static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high) {
+      if (kind != MachineKind.FLUID_BARREL || amount <= 0) {
+         return Fluids.EMPTY;
+      }
+
+      int registryId = (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
+      if (registryId < 0 || registryId >= BuiltInRegistries.FLUID.size()) {
+         return Fluids.EMPTY;
+      }
+      Fluid fluid = BuiltInRegistries.FLUID.byId(registryId);
+      return fluid == null ? Fluids.EMPTY : fluid;
    }
 
    public int energyStored() {

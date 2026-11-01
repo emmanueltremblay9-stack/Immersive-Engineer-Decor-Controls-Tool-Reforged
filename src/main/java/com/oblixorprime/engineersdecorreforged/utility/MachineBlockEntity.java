@@ -1185,6 +1185,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield this.comparatorOutput();
                case 5:
                   yield Math.max(this.cooldown, this.burnTicks);
+               case 11:
+                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() & 0x7FFF : 0;
+               case 12:
+                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 15 & 0x7FFF : 0;
+               case 13:
+                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 30 : 0;
                default:
                   yield 0;
             }
@@ -2910,6 +2916,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          case "milk" -> NeoForgeMod.MILK.isBound() ? NeoForgeMod.MILK.value() : Fluids.EMPTY;
          default -> Fluids.EMPTY;
       });
+   }
+
+   private int fluidRegistryId() {
+      Fluid fluid = this.fluidForType(this.fluidType);
+      return fluid == Fluids.EMPTY ? 0 : BuiltInRegistries.FLUID.getId(fluid);
    }
 
    private int capacityFor(MachineKind kind) {

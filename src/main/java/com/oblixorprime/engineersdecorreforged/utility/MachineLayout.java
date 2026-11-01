@@ -64,7 +64,8 @@ public record MachineLayout(
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
          case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> processor(kind);
-         case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> fluid(kind);
+         case FLUID_BARREL -> fluidBarrel();
+         case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> fluid(kind);
          case SMALL_SOLAR_PANEL -> energy();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
          case SMALL_TREE_CUTTER -> automation(kind);
@@ -219,6 +220,21 @@ public record MachineLayout(
          ),
          MachineLayout.LayoutStyle.PROCESSOR,
          null
+      );
+   }
+
+   private static MachineLayout fluidBarrel() {
+      return new MachineLayout(
+         201,
+         226,
+         24,
+         144,
+         24,
+         202,
+         List.of(new MachineLayout.MachineSlot(0, 27, 66, "Empty bucket"), new MachineLayout.MachineSlot(1, 150, 66, "Filled bucket")),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "fluid_barrel/background"
       );
    }
 
