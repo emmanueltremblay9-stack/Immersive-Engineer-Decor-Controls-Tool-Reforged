@@ -780,7 +780,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             this.drawSignal(graphics, x + 115, y + 52);
             break;
          case AUTOMATION:
-            this.drawArrow(graphics, x + 80, y + 45, this.workWidth(24));
+            // The cutter does not sync work progress; its comparator is the available live readout.
+            if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_TREE_CUTTER) {
+               this.drawArrow(graphics, x + 80, y + 45, this.workWidth(24));
+            }
             this.drawSignal(graphics, x + 91, y + 33);
       }
    }
