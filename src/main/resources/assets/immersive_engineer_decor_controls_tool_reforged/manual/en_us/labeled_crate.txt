@@ -1,6 +1,7 @@
 Labeled Crate
-Editable stock label
-<&recipe>This labeled crate is built for clear stockroom sorting. Its front plate can be edited like a small workshop sign.<br>
+54-slot storage with a content hint
+<&recipe>This storage crate restores the original 9 by 6 inventory and front-mounted content hint. The hint slot holds one item and is hidden from hoppers and other automation.<br>
 <br>
-Usage: Right-click the label plate to edit the crate label. Right-click the rest of the crate to open storage for fittings, parts, and maintenance supplies.<br>
-
+Usage: Right-click the crate to open storage. Shift-right-click the front plate to edit any preserved stock label. Shift-click moves items; Ctrl+Shift-click moves matching item stacks with the same components.<br>
+<br>
+Recipe: 4 Immersive Engineering Steel Fences and 4 Old Industrial Wood Planks.<br>

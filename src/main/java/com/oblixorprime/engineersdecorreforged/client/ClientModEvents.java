@@ -34,7 +34,7 @@ public final class ClientModEvents {
    @SubscribeEvent
    public static void registerMenuScreens(RegisterMenuScreensEvent event) {
       event.register((MenuType)ModMenus.METAL_CRAFTING_TABLE.get(), MachineScreen.MetalCraftingTableScreen::new);
-      event.register((MenuType)ModMenus.LABELED_CRATE.get(), MachineScreen.LabeledCrateScreen::new);
+      event.register((MenuType)ModMenus.LABELED_CRATE.get(), LabeledCrateScreen::new);
       event.register((MenuType)ModMenus.FACTORY_HOPPER.get(), MachineScreen.FactoryHopperScreen::new);
       event.register((MenuType)ModMenus.FACTORY_DROPPER.get(), MachineScreen.FactoryDropperScreen::new);
       event.register((MenuType)ModMenus.FACTORY_PLACER.get(), MachineScreen.FactoryPlacerScreen::new);

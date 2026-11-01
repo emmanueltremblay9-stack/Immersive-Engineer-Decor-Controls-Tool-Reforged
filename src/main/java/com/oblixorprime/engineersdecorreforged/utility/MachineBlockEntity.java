@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.utility;
 
 import blusunrize.immersiveengineering.api.utils.ItemUtils;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
+import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -90,6 +91,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private static final int BUCKET_AMOUNT = 1000;
    private static final int BARREL_CAPACITY = 32000;
    private boolean milkingTransactionActive;
+   private boolean labeledCrateDropHandled;
+   private boolean labeledCratePlayerBreakPending;
    private static final int FUNNEL_CAPACITY = 3000;
    private static final int FUNNEL_TRANSFER = 250;
    private static final int SOLAR_CAPACITY = 64000;
@@ -516,6 +519,55 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    public MachineBlockEntity(BlockPos pos, BlockState state) {
       super((BlockEntityType)ModBlockEntities.MACHINE.get(), pos, state);
+      if (isLabeledCrateState(state)) {
+         this.items = NonNullList.withSize(LabeledCrateMenu.CRATE_SLOT_COUNT, ItemStack.EMPTY);
+      }
+   }
+
+   private static boolean isLabeledCrateState(BlockState state) {
+      return state.getBlock() instanceof MachineBlocks.MachineBlock machineBlock && machineBlock.kind() == MachineKind.LABELED_CRATE;
+   }
+
+   public boolean beginLabeledCrateDropHandling() {
+      if (this.labeledCrateDropHandled) {
+         return false;
+      }
+      this.labeledCrateDropHandled = true;
+      return true;
+   }
+
+   public boolean consumeLabeledCrateDropHandling() {
+      boolean handled = this.labeledCrateDropHandled;
+      this.labeledCrateDropHandled = false;
+      return handled;
+   }
+
+   public void beginLabeledCratePlayerBreak() {
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         this.labeledCratePlayerBreakPending = true;
+      }
+   }
+
+   public boolean consumeLabeledCratePlayerBreak() {
+      boolean pending = this.labeledCratePlayerBreakPending;
+      this.labeledCratePlayerBreakPending = false;
+      return pending;
+   }
+
+   public List<ItemStack> drainLabeledCrateContents() {
+      if (this.kind() != MachineKind.LABELED_CRATE) {
+         return List.of();
+      }
+      List<ItemStack> contents = new ArrayList<>();
+      for (int slot = 0; slot < LabeledCrateMenu.CRATE_SLOT_COUNT && slot < this.items.size(); slot++) {
+         ItemStack stack = this.items.get(slot);
+         if (!stack.isEmpty()) {
+            contents.add(stack.copy());
+            this.items.set(slot, ItemStack.EMPTY);
+         }
+      }
+      this.setChanged();
+      return contents;
    }
 
    public List<String> labelLines() {
@@ -790,7 +842,23 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    @Override
+   public void setItem(int slot, ItemStack stack) {
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         if (slot < 0 || slot >= LabeledCrateMenu.CRATE_SLOT_COUNT || !LabeledCrateItemRules.canStore(stack)) {
+            return;
+         }
+         if (slot == LabeledCrateMenu.FRAME_SLOT && stack.getCount() > 1) {
+            stack = stack.copyWithCount(1);
+         }
+      }
+      super.setItem(slot, stack);
+   }
+
+   @Override
    public int[] getSlotsForFace(Direction side) {
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         return this.slotsUpTo(LabeledCrateMenu.STORAGE_SLOT_COUNT);
+      }
       if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          return this.isBlockBreakerRearSide(side) ? new int[]{0} : new int[0];
       }
@@ -805,6 +873,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    @Override
    public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) {
+      if (this.kind() == MachineKind.LABELED_CRATE) {
+         return slot >= 0 && slot < LabeledCrateMenu.STORAGE_SLOT_COUNT;
+      }
       return this.kind() != MachineKind.SMALL_BLOCK_BREAKER
          || slot == 0 && this.isBlockBreakerRearSide(side);
    }
@@ -841,11 +912,17 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected AbstractContainerMenu createMenu(int id, Inventory inventory) {
       MachineKind kind = this.kind();
+      if (kind == MachineKind.LABELED_CRATE) {
+         return new LabeledCrateMenu(id, inventory, this);
+      }
       return new MachineMenu(kind == null ? MachineKind.LABELED_CRATE : kind, id, inventory, this, this.dataAccess);
    }
 
    public boolean canPlaceItem(int index, ItemStack stack) {
       MachineKind kind = this.kind();
+      if (kind == MachineKind.LABELED_CRATE) {
+         return index >= 0 && index < LabeledCrateMenu.STORAGE_SLOT_COUNT && LabeledCrateItemRules.canStore(stack);
+      }
       if (kind == null || index < 0 || index >= this.visibleSlotCount(kind)) {
          return false;
       }
@@ -1422,7 +1499,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected void loadAdditional(CompoundTag tag, Provider registries) {
       super.loadAdditional(tag, registries);
-      this.items = NonNullList.withSize(27, ItemStack.EMPTY);
+      this.items = NonNullList.withSize(
+         this.kind() == MachineKind.LABELED_CRATE ? LabeledCrateMenu.CRATE_SLOT_COUNT : SLOT_COUNT, ItemStack.EMPTY
+      );
       ContainerHelper.loadAllItems(tag, this.items, registries);
       if (this.kind() == MachineKind.METAL_CRAFTING_TABLE) {
          this.items.set(10, ItemStack.EMPTY);
@@ -3175,7 +3254,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    }
 
    private int visibleSlotCount(MachineKind kind) {
-      return MachineLayout.forKind(kind).machineSlots().size();
+      return kind == MachineKind.LABELED_CRATE
+         ? LabeledCrateMenu.STORAGE_SLOT_COUNT
+         : MachineLayout.forKind(kind).machineSlots().size();
    }
 
    private int[] accessibleSlots() {

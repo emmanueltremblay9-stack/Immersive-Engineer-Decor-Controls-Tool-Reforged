@@ -3,19 +3,16 @@
   "category": "misc",
   "group": "immersive_engineer_decor_controls_tool_reforged_machines",
   "pattern": [
-    "PPP",
-    "PCP",
-    "PRP"
+    "RCR",
+    "C C",
+    "RCR"
   ],
   "key": {
-    "P": {
-      "tag": "immersiveengineering:treated_wood"
+    "R": {
+      "item": "immersiveengineering:steel_fence"
     },
     "C": {
-      "item": "minecraft:chest"
-    },
-    "R": {
-      "item": "minecraft:paper"
+      "item": "immersive_engineer_decor_controls_tool_reforged:old_industrial_wood_planks"
     }
   },
   "result": {

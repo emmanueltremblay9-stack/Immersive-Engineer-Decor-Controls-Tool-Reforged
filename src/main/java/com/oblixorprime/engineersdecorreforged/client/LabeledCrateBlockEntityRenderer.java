@@ -6,12 +6,15 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import java.util.List;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.Font.DisplayMode;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider.Context;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 
 public final class LabeledCrateBlockEntityRenderer implements BlockEntityRenderer<MachineBlockEntity> {
@@ -24,6 +27,10 @@ public final class LabeledCrateBlockEntityRenderer implements BlockEntityRendere
 
    public void render(MachineBlockEntity machine, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
       if (machine.kind() == MachineKind.LABELED_CRATE) {
+         ItemStack frameStack = machine.getItem(54);
+         if (!frameStack.isEmpty() && machine.getLevel() != null) {
+            this.renderFrameItem(machine, frameStack, poseStack, buffer, packedLight, packedOverlay);
+         }
          List<String> lines = machine.labelLines();
          if (!lines.stream().allMatch(String::isBlank)) {
             BlockState state = machine.getBlockState();
@@ -43,6 +50,51 @@ public final class LabeledCrateBlockEntityRenderer implements BlockEntityRendere
             poseStack.popPose();
          }
       }
+   }
+
+   private void renderFrameItem(
+      MachineBlockEntity machine, ItemStack stack, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay
+   ) {
+      Direction facing = machine.getBlockState().hasProperty(MachineBlocks.HORIZONTAL_FACING)
+         ? machine.getBlockState().getValue(MachineBlocks.HORIZONTAL_FACING)
+         : Direction.NORTH;
+      double offsetX;
+      double offsetZ;
+      float rotation;
+      switch (facing) {
+         case SOUTH -> {
+            offsetX = 8.0 / 32.0;
+            offsetZ = 15.5 / 32.0;
+            rotation = 180.0F;
+         }
+         case WEST -> {
+            offsetX = -15.5 / 32.0;
+            offsetZ = 8.0 / 32.0;
+            rotation = 90.0F;
+         }
+         case NORTH -> {
+            offsetX = -8.0 / 32.0;
+            offsetZ = -15.5 / 32.0;
+            rotation = 0.0F;
+         }
+         default -> {
+            offsetX = 15.5 / 32.0;
+            offsetZ = -8.0 / 32.0;
+            rotation = 270.0F;
+         }
+      }
+
+      poseStack.pushPose();
+      poseStack.translate(0.5 + offsetX, 0.5 - 8.0 / 32.0, 0.5 + offsetZ);
+      poseStack.mulPose(Axis.YP.rotationDegrees(rotation));
+      poseStack.scale(0.35F, 0.35F, 0.35F);
+      Minecraft minecraft = Minecraft.getInstance();
+      var itemRenderer = minecraft.getItemRenderer();
+      itemRenderer.render(
+         stack, ItemDisplayContext.FIXED, false, poseStack, buffer, packedLight, packedOverlay,
+         itemRenderer.getModel(stack, machine.getLevel(), null, 0)
+      );
+      poseStack.popPose();
    }
 
    private void drawCentered(String text, float y, PoseStack poseStack, MultiBufferSource buffer) {
