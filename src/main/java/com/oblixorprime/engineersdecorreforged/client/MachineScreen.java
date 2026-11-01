@@ -170,10 +170,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       for (SmallFreezerArtworkMasks.MaskRegion mask : SmallFreezerArtworkMasks.regions(this.imageWidth, this.imageHeight)) {
          graphics.fill(x0 + mask.x(), y0 + mask.y(), x0 + mask.right(), y0 + mask.bottom(), SLOT_INNER);
       }
-      for (MachineLayout.MachineSlot slot : menu.layout().machineSlots()) {
-         if (slot.containerIndex() == 0 || slot.containerIndex() == 2) {
-            this.drawSlot(graphics, x0 + slot.x(), y0 + slot.y());
-         }
+      // Restore every live slot frame intersected by a mask, including the reserved Cold slot.
+      for (MachineLayout.MachineSlot slot :
+         SmallFreezerArtworkMasks.slotsIntersectingMasks(menu.layout(), this.imageWidth, this.imageHeight)) {
+         this.drawSlot(graphics, x0 + slot.x(), y0 + slot.y());
       }
       int progress = Mth.clamp(menu.freezerProgressTicks(), 0, MachineBlockEntity.FREEZER_PROCESS_TICKS);
       int progressPixels = progress * 117 / MachineBlockEntity.FREEZER_PROCESS_TICKS;
