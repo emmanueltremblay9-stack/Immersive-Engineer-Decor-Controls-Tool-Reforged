@@ -16,7 +16,7 @@ public record MachineLayout(
    MachineLayout.LayoutStyle style,
    String textureName
 ) {
-   public static final int BACKING_SLOT_COUNT = 27;
+   public static final int BACKING_SLOT_COUNT = 55;
 
    public MachineLayout(
       int imageWidth,
@@ -37,7 +37,7 @@ public record MachineLayout(
       }
 
       for (MachineLayout.MachineSlot slot : machineSlots) {
-         if (slot.containerIndex() < 0 || slot.containerIndex() >= 27) {
+         if (slot.containerIndex() < 0 || slot.containerIndex() >= BACKING_SLOT_COUNT) {
             throw new IllegalArgumentException("Machine slot index out of range: " + slot.containerIndex());
          }
       }
@@ -78,10 +78,11 @@ public record MachineLayout(
          case FACTORY_HOPPER -> hopper();
          case FACTORY_DROPPER -> dropper();
          case FACTORY_PLACER -> placer();
-            case SMALL_MINERAL_SMELTER -> mineralHybrid();
-            case SMALL_FREEZER -> freezer();
-            case FLUID_BARREL -> fluidBarrel();
-            case SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR -> fluid(kind);
+         case SMALL_MINERAL_SMELTER -> mineralHybrid();
+         case SMALL_FREEZER -> freezer();
+         case FLUID_BARREL -> fluidBarrel();
+            case SMALL_FLUID_FUNNEL -> smallFluidFunnel();
+            case PASSIVE_FLUID_ACCUMULATOR -> passiveFluidAccumulator();
          case SMALL_MILKING_MACHINE -> smallMilkingMachine();
          case SMALL_SOLAR_PANEL -> solarPanelArtwork();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
@@ -114,14 +115,24 @@ public record MachineLayout(
 
    /** Two physical item slots; old Heat index 1 stays in NBT but is never shown as fuel. */
    private static MachineLayout mineralHybrid() {
-      return new MachineLayout(209, 235, 23, 144, 23, 202,
-         List.of(new MachineLayout.MachineSlot(0, 109, 38, "Mineral input"),
-                 new MachineLayout.MachineSlot(2, 132, 38, "Product output")),
-         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "block_breaker_v08/background");
+      // v0.5 source faceplate: 1168x1346 -> logical 234x270.
+      return new MachineLayout(234, 270, 27, 171, 27, 231,
+         List.of(new MachineLayout.MachineSlot(0, 126, 46, "Mineral input"),
+                 new MachineLayout.MachineSlot(2, 170, 49, "Product output")),
+         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_mineral_smelter_hybrid_v05/background");
    }
 
    private static MachineLayout crate() {
-      return base(grid(0, 8, 18, 9, 3, "Storage"), List.of(new MachineLayout.Panel("Storage", 6, 15, 164, 59)), MachineLayout.LayoutStyle.STORAGE, null);
+      List<MachineLayout.MachineSlot> slots = new ArrayList<>(55);
+      for (int row = 0; row < 6; row++) {
+         for (int column = 0; column < 9; column++) {
+            slots.add(new MachineLayout.MachineSlot(column + row * 9, 28 + column * 18, 10 + row * 18, "Storage"));
+         }
+      }
+      slots.add(new MachineLayout.MachineSlot(54, 191, 100, "Frame hint"));
+      return new MachineLayout(213, 206, 28, 125, 28, 183, slots, List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "labeled_crate_gui");
    }
 
    private static MachineLayout metalCraftingTable() {
@@ -319,6 +330,39 @@ public record MachineLayout(
          ),
          MachineLayout.LayoutStyle.FLUID,
          null
+      );
+   }
+
+
+
+   private static MachineLayout smallFluidFunnel() {
+      return new MachineLayout(
+         209, 238, 26, 151, 26, 208,
+         List.of(
+            new MachineLayout.MachineSlot(0, 33, 85, "Empty bucket"),
+            new MachineLayout.MachineSlot(1, 155, 85, "Filled")
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_fluid_funnel"
+      );
+   }
+
+   private static MachineLayout passiveFluidAccumulator() {
+      return new MachineLayout(
+         209,
+         238,
+         24,
+         150,
+         24,
+         205,
+         List.of(
+            new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket", false),
+            new MachineLayout.MachineSlot(1, 149, 106, "Filled", true)
+         ),
+         List.of(),
+         MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "passive_fluid_accumulator"
       );
    }
 

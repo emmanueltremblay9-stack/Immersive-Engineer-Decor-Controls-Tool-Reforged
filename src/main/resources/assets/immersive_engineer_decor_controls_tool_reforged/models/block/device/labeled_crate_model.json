@@ -1,31 +1,77 @@
 {
-  "parent": "minecraft:block/block",
-  "textures": {
-    "particle": "immersiveengineering:block/wooden_device/crate",
-    "crate": "immersiveengineering:block/wooden_device/crate",
-    "label": "immersiveengineering:block/metal_decoration/sign/base_front"
-  },
-  "elements": [
-    {
-      "name": "crate_body",
-      "from": [0, 0, 0],
-      "to": [16, 16, 16],
-      "faces": {
-        "down": { "uv": [0, 0, 16, 16], "texture": "#crate" },
-        "up": { "uv": [0, 0, 16, 16], "texture": "#crate" },
-        "north": { "uv": [0, 0, 16, 16], "texture": "#crate" },
-        "south": { "uv": [0, 0, 16, 16], "texture": "#crate" },
-        "east": { "uv": [0, 0, 16, 16], "texture": "#crate" },
-        "west": { "uv": [0, 0, 16, 16], "texture": "#crate" }
-      }
-    },
-    {
-      "name": "front_label_plate",
-      "from": [2.5, 4, -0.04],
-      "to": [13.5, 11.5, 0],
-      "faces": {
-        "north": { "uv": [3, 3, 13, 13], "texture": "#label" }
-      }
-    }
-  ]
+  "parent": "block/block",
+	"textures": {
+		"f": "immersive_engineer_decor_controls_tool_reforged:block/misc/labeled_crate_front_texture",
+		"particle": "immersive_engineer_decor_controls_tool_reforged:block/misc/labeled_crate_side_texture",
+		"s": "immersive_engineer_decor_controls_tool_reforged:block/misc/labeled_crate_side_texture"
+	},
+	"elements": [
+		{
+			"from": [0, 7, 0],
+			"to": [16, 16, 0.25],
+			"faces": {
+				"north": {"texture": "#f"},
+				"east": {"texture": "#s"},
+				"west": {"texture": "#s"},
+				"up": {"texture": "#s"},
+				"down": {"texture": "#s"}
+			}
+		},
+		{
+			"from": [0, 0, 0.25],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"texture": "#f"},
+				"east": {"texture": "#s"},
+				"south": {"texture": "#s"},
+				"west": {"texture": "#s"},
+				"up": {"texture": "#s"},
+				"down": {"texture": "#s"}
+			}
+		},
+		{
+			"from": [7, 0, 0],
+			"to": [16, 7, 0.25],
+			"faces": {
+				"north": {"texture": "#f"},
+				"east": {"texture": "#s"},
+				"south": {"texture": "#s"},
+				"west": {"texture": "#s"},
+				"down": {"texture": "#s"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [1, 7, 0.375],
+			"faces": {
+				"north": {"texture": "#f"},
+				"east": {"texture": "#s"},
+				"south": {"texture": "#s"},
+				"west": {"texture": "#s"},
+				"down": {"texture": "#s"}
+			}
+		},
+		{
+			"from": [1, 0, 0],
+			"to": [7, 1, 0.25],
+			"faces": {
+				"north": {"texture": "#f"},
+				"up": {"texture": "#s"},
+				"down": {"texture": "#s"}
+			}
+		}
+	],
+	"display": {
+		"ground": {
+			"translation": [0, 1.75, 0],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
 }

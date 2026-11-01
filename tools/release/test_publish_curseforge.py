@@ -1432,25 +1432,21 @@ class OperationalRoutingTests(unittest.TestCase):
         build = (root / ".github/workflows/build.yml").read_text(encoding="utf-8")
         # Build artifacts may contain only synthetic diagnostic screenshots/state/logs,
         # never a runtime binary or a broad directory glob.
-        uploads = build.split("uses: actions/upload-artifact@")[1:]
-        self.assertEqual(4, len(uploads))
-        for index, step in enumerate(uploads):
-            upload = step.split("\n      - name:", 1)[0]
-            self.assertTrue(upload.startswith("043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"))
-            names = ("water-canal-scenes", "lithium-compatibility", "renderer-${{ matrix.profile }}", "lava-${{ matrix.profile }}")
-            self.assertIn("name: " + names[index], upload)
-            paths = upload.split("          path: |\n", 1)[1].split("          if-no-files-found:", 1)[0]
-            self.assertEqual([
-                "build/client-gameplay-*/run/canal-screenshots/*.png",
-                "build/client-gameplay-*/run/client-water-canal-result.json",
-                "build/client-gameplay-*/run/client-water-flow-distance-result.json",
-                "build/client-gameplay-*/run/catalogue-screenshots/*.png",
-                "build/client-gameplay-*/run/client-catalogue-result.json",
-                "build/client-gameplay-*/run/client-generic-fluid-result.json",
-                "build/client-gameplay-*/run/client-tracker-render-result.json",
-                "build/client-gameplay-*/run/client-submerged-catwalk-result.json",
-                "build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png",
-            ] if index in (0, 2) else [
+        scene_paths = [
+            "build/client-gameplay-*/run/canal-screenshots/*.png",
+            "build/client-gameplay-*/run/client-water-canal-result.json",
+            "build/client-gameplay-*/run/client-water-flow-distance-result.json",
+            "build/client-gameplay-*/run/catalogue-screenshots/*.png",
+            "build/client-gameplay-*/run/client-catalogue-result.json",
+            "build/client-gameplay-*/run/client-generic-fluid-result.json",
+            "build/client-gameplay-*/run/client-tracker-render-result.json",
+            "build/client-gameplay-*/run/client-submerged-catwalk-result.json",
+            "build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png",
+        ]
+        expected_paths = {
+            "water-canal-scenes": scene_paths,
+            "renderer-${{ matrix.profile }}": scene_paths,
+            "lithium-compatibility": [
                 "build/lithium-compatibility/identity.json",
                 "build/lithium-compatibility/gametest-run/logs/*.log",
                 "build/client-gameplay-*/run/client-gameplay-result.json",
@@ -1462,12 +1458,32 @@ class OperationalRoutingTests(unittest.TestCase):
                 "build/client-gameplay-*/run/canal-screenshots/*.png",
                 "build/client-gameplay-*/run/submerged-catwalk-screenshots/*.png",
                 "build/client-gameplay-*/lithium-dependency/identity.json",
-            ] if index == 1 else [
+            ],
+            "lava-${{ matrix.profile }}": [
                 "build/client-gameplay-*/run/client-lava-surface-result.json",
                 "build/client-gameplay-*/run/client-tracker-render-result.json",
                 "build/client-gameplay-*/run/lava-surface-screenshots/*.png",
-            ], [line.strip() for line in paths.splitlines() if line.strip()])
+            ],
+            "native-small-mineral-smelter-gui": [
+                "build/client-gameplay-*/run/client-gameplay-result.json",
+                "build/client-gameplay-*/run/client-smelter-gui-result.json",
+                "build/client-gameplay-*/run/smelter-gui-screenshots/*.png",
+            ],
+        }
+        uploads = build.split("uses: actions/upload-artifact@")[1:]
+        seen = set()
+        for step in uploads:
+            upload = step.split("\n      - name:", 1)[0]
+            self.assertTrue(upload.startswith("043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"))
+            name = upload.split("          name: ", 1)[1].splitlines()[0]
+            self.assertIn(name, expected_paths)
+            self.assertNotIn(name, seen, "Duplicate artifact upload")
+            seen.add(name)
+            paths = upload.split("          path: |\n", 1)[1].split("          if-no-files-found:", 1)[0]
+            self.assertEqual(expected_paths[name], [line.strip() for line in paths.splitlines() if line.strip()])
+            self.assertIn("          if-no-files-found: error", upload)
             self.assertIn("retention-days: 14", upload)
+        self.assertEqual(set(expected_paths), seen)
 
     def test_legacy_manifest_cannot_select_local_mode_implicitly(self) -> None:
         self.assertEqual("github-release", validate_source_contract({}))

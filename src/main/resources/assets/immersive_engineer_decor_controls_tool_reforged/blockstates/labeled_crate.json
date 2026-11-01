@@ -1,8 +1,8 @@
 {
   "variants": {
-    "facing=north": { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model" },
-    "facing=east": { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model", "y": 90 },
-    "facing=south": { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model", "y": 180 },
-    "facing=west": { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model", "y": 270 }
+    "facing=north": { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model"          },
+    "facing=south": { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model", "y":180 },
+    "facing=west":  { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model", "y":270 },
+    "facing=east":  { "model": "immersive_engineer_decor_controls_tool_reforged:block/device/labeled_crate_model", "y":90  }
   }
 }

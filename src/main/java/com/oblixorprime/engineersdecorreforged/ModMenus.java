@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged;
 
+import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import java.util.Collections;
@@ -17,7 +18,7 @@ public final class ModMenus {
    public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> METAL_CRAFTING_TABLE = registerMachine(
       "metal_crafting_table_menu", MachineKind.METAL_CRAFTING_TABLE
    );
-   public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> LABELED_CRATE = registerMachine("labeled_crate_menu", MachineKind.LABELED_CRATE);
+   public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> LABELED_CRATE = registerLabeledCrate();
    public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> FACTORY_HOPPER = registerMachine("factory_hopper_menu", MachineKind.FACTORY_HOPPER);
    public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> FACTORY_DROPPER = registerMachine("factory_dropper_menu", MachineKind.FACTORY_DROPPER);
    public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> FACTORY_PLACER = registerMachine("factory_placer_menu", MachineKind.FACTORY_PLACER);
@@ -63,6 +64,16 @@ public final class ModMenus {
 
    public static Map<MachineKind, DeferredHolder<MenuType<?>, MenuType<MachineMenu>>> machineTypes() {
       return Collections.unmodifiableMap(MACHINE_TYPES);
+   }
+
+   @SuppressWarnings({"rawtypes", "unchecked"})
+   private static DeferredHolder<MenuType<?>, MenuType<MachineMenu>> registerLabeledCrate() {
+      DeferredHolder<MenuType<?>, MenuType<MachineMenu>> holder = (DeferredHolder)MENU_TYPES.register(
+         "labeled_crate_menu",
+         () -> new MenuType((id, inventory) -> LabeledCrateMenu.client(id, inventory), FeatureFlags.DEFAULT_FLAGS)
+      );
+      MACHINE_TYPES.put(MachineKind.LABELED_CRATE, holder);
+      return holder;
    }
 
    private static DeferredHolder<MenuType<?>, MenuType<MachineMenu>> registerMachine(String name, MachineKind kind) {

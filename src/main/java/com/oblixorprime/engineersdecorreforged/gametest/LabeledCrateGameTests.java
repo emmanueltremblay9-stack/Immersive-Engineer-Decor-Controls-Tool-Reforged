@@ -1,0 +1,692 @@
+package com.oblixorprime.engineersdecorreforged.gametest;
+
+import com.oblixorprime.engineersdecorreforged.ModBlocks;
+import com.oblixorprime.engineersdecorreforged.menu.LabeledCrateMenu;
+import com.oblixorprime.engineersdecorreforged.network.LabeledCrateQuickMovePayload;
+import com.oblixorprime.engineersdecorreforged.utility.LabeledCrateItemRules;
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlocks;
+import io.netty.buffer.Unpooled;
+import java.util.List;
+import java.util.UUID;
+import com.mojang.authlib.GameProfile;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.util.FakePlayer;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.gametest.framework.GameTest;
+import net.minecraft.gametest.framework.GameTestHelper;
+import net.neoforged.neoforge.gametest.GameTestHolder;
+import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.level.block.state.BlockState;
+import java.util.Optional;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
+
+@GameTestHolder("immersive_engineer_decor_controls_tool_reforged")
+@PrefixGameTestTemplate(false)
+public final class LabeledCrateGameTests {
+   private static final BlockPos TEST_POS = new BlockPos(1, 1, 1);
+
+   private LabeledCrateGameTests() {
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_upgrade_crafts_empty_standard_ie_crate(GameTestHelper helper) {
+      List<ItemStack> slots = labeledCrateUpgradeSlots(ie("crate"));
+      CraftingInput input = CraftingInput.of(3, 3, slots);
+      var recipe = findLabeledCrateUpgrade(helper, slots);
+      helper.assertTrue(recipe.isPresent(), "empty standard IE crate should match the Labeled Crate upgrade");
+      ItemStack result = recipe.orElseThrow().value().assemble(input, helper.getLevel().registryAccess());
+      helper.assertTrue(result.is(ModBlocks.LABELED_CRATE.get().asItem()), "empty upgrade should produce a Labeled Crate");
+      ItemContainerContents contents = result.get(DataComponents.CONTAINER);
+      helper.assertTrue(contents == null || contents.nonEmptyStream().findAny().isEmpty(),
+         "empty standard crate must remain empty after crafting");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_upgrade_transfers_full_named_ie_crate_components_and_survives_reload(GameTestHelper helper) {
+      NonNullList<ItemStack> sourceItems = NonNullList.withSize(27, ItemStack.EMPTY);
+      for (int slot = 0; slot < sourceItems.size(); slot++) {
+         sourceItems.set(slot, new ItemStack(Items.IRON_INGOT, slot + 1));
+      }
+      CompoundTag storedItemData = new CompoundTag();
+      storedItemData.putString("grade", "A");
+      sourceItems.set(13, new ItemStack(Items.IRON_INGOT, 14));
+      sourceItems.get(13).set(DataComponents.CUSTOM_DATA, CustomData.of(storedItemData));
+      ItemContainerContents sourceContents = ItemContainerContents.fromItems(sourceItems);
+      ItemStack sourceCrate = ie("crate");
+      sourceCrate.set(DataComponents.CONTAINER, sourceContents);
+      sourceCrate.set(DataComponents.CUSTOM_NAME, Component.literal("Named IE crate"));
+      ItemEnchantments.Mutable enchantments = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY);
+      enchantments.set(
+         helper.getLevel().registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.UNBREAKING),
+         2
+      );
+      ItemEnchantments sourceEnchantments = enchantments.toImmutable();
+      sourceCrate.set(DataComponents.ENCHANTMENTS, sourceEnchantments);
+      ItemStack sourceBeforeAssembly = sourceCrate.copy();
+
+      List<ItemStack> slots = labeledCrateUpgradeSlots(sourceCrate);
+      CraftingInput input = CraftingInput.of(3, 3, slots);
+      var recipe = findLabeledCrateUpgrade(helper, slots);
+      helper.assertTrue(recipe.isPresent(), "full standard IE crate with supported contents should match");
+      ItemStack result = recipe.orElseThrow().value().assemble(input, helper.getLevel().registryAccess());
+      helper.assertTrue(result.is(ModBlocks.LABELED_CRATE.get().asItem()), "full upgrade should produce a Labeled Crate");
+      helper.assertTrue(sourceContents.equals(result.get(DataComponents.CONTAINER)),
+         "craft output should retain all source crate container contents");
+      helper.assertTrue(sourceEnchantments.equals(result.get(DataComponents.ENCHANTMENTS)),
+         "craft output should retain the source crate enchantment component");
+      helper.assertTrue(result.get(DataComponents.CUSTOM_NAME) != null
+            && result.get(DataComponents.CUSTOM_NAME).getString().equals("Named IE crate"),
+         "craft output should retain the source crate custom name");
+      helper.assertTrue(ItemStack.matches(sourceBeforeAssembly, sourceCrate),
+         "assembling the output should not mutate the source crate item");
+
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+      FakePlayer player = fakePlayer(helper, GameType.SURVIVAL, TEST_POS);
+      player.setItemInHand(InteractionHand.MAIN_HAND, result);
+      BlockHitResult hit = new BlockHitResult(Vec3.atCenterOf(absolutePos), Direction.UP, absolutePos, false);
+      InteractionResult placement = ((BlockItem)result.getItem()).place(
+         new net.minecraft.world.item.context.BlockPlaceContext(
+            helper.getLevel(), player, InteractionHand.MAIN_HAND, result, hit
+         )
+      );
+      helper.assertTrue(placement.consumesAction(), "crafted Labeled Crate with source contents should place");
+      helper.assertTrue(player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty(),
+         "placing the crafted result should consume exactly that result item");
+      BlockEntity entity = helper.getLevel().getBlockEntity(absolutePos);
+      helper.assertTrue(entity instanceof MachineBlockEntity, "placed upgrade should create its machine block entity");
+      MachineBlockEntity placed = (MachineBlockEntity)entity;
+      for (int slot = 0; slot < sourceItems.size(); slot++) {
+         helper.assertTrue(ItemStack.matches(sourceItems.get(slot), placed.getItem(slot)),
+            "source crate slot " + slot + " should transfer to the same Labeled Crate slot");
+      }
+      for (int slot = 27; slot < LabeledCrateMenu.STORAGE_SLOT_COUNT; slot++) {
+         helper.assertTrue(placed.getItem(slot).isEmpty(), "unused Labeled Crate storage slot should remain empty");
+      }
+      helper.assertTrue(placed.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "source crate storage should not be copied into the item-frame hint slot");
+      helper.assertTrue(placed.getCustomName() != null && placed.getCustomName().getString().equals("Named IE crate"),
+         "source crate name should be applied to the placed Labeled Crate");
+      helper.assertTrue(sourceEnchantments.equals(placed.labeledCrateItemEnchantments()),
+         "source crate enchantments should be stored with the placed Labeled Crate");
+
+      CompoundTag saved = placed.saveWithoutMetadata(helper.getLevel().registryAccess());
+      MachineBlockEntity reloaded = new MachineBlockEntity(absolutePos, placed.getBlockState());
+      reloaded.loadWithComponents(saved, helper.getLevel().registryAccess());
+      for (int slot = 0; slot < sourceItems.size(); slot++) {
+         helper.assertTrue(ItemStack.matches(sourceItems.get(slot), reloaded.getItem(slot)),
+            "reloaded Labeled Crate should retain source slot " + slot);
+      }
+      helper.assertTrue(reloaded.getCustomName() != null && reloaded.getCustomName().getString().equals("Named IE crate"),
+         "reloaded Labeled Crate should retain the source name");
+      helper.assertTrue(sourceEnchantments.equals(reloaded.labeledCrateItemEnchantments()),
+         "reloaded Labeled Crate should retain the source enchantment component");
+
+      LootParams.Builder dropsContext = new LootParams.Builder(helper.getLevel())
+         .withParameter(LootContextParams.BLOCK_ENTITY, placed);
+      List<ItemStack> drops = ModBlocks.LABELED_CRATE.get().getDrops(placed.getBlockState(), dropsContext);
+      helper.assertValueEqual(1, drops.size(), "normal break should preserve the imported crate as one Labeled Crate item");
+      helper.assertTrue(sourceEnchantments.equals(drops.get(0).get(DataComponents.ENCHANTMENTS)),
+         "normal break should reattach imported enchantments to the Labeled Crate item");
+      helper.assertTrue(ItemStack.matches(sourceItems.get(26), placed.getItem(26)),
+         "previewing crate loot should not drain its stored inventory");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_upgrade_rejects_nested_source_contents_without_consuming_them(GameTestHelper helper) {
+      ItemStack nestedBox = new ItemStack(Items.SHULKER_BOX);
+      nestedBox.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(List.of(new ItemStack(Items.DIAMOND))));
+      NonNullList<ItemStack> sourceItems = NonNullList.withSize(27, ItemStack.EMPTY);
+      sourceItems.set(13, nestedBox);
+      ItemStack sourceCrate = ie("crate");
+      sourceCrate.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(sourceItems));
+      ItemStack sourceBefore = sourceCrate.copy();
+
+      List<ItemStack> slots = labeledCrateUpgradeSlots(sourceCrate);
+      helper.assertTrue(findLabeledCrateUpgrade(helper, slots).isEmpty(),
+         "crate containing a forbidden nested container must not match the upgrade recipe");
+      helper.assertTrue(ItemStack.matches(sourceBefore, sourceCrate),
+         "refusing the upgrade must leave the IE crate and its nested contents unchanged");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_exposes_original_slots_and_automation_boundary(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      AbstractContainerMenu opened = helper.getBlockState(TEST_POS).getMenuProvider(
+         helper.getLevel(), helper.absolutePos(TEST_POS)
+      ).createMenu(1, player.getInventory(), player);
+      helper.assertTrue(opened instanceof LabeledCrateMenu, "crate block should create its dedicated 55-slot menu");
+      LabeledCrateMenu menu = (LabeledCrateMenu)opened;
+      IItemHandler handler = crate.itemHandler(null);
+      helper.assertValueEqual(crate.getContainerSize(), 55, "crate backing store should include 54 storage slots and one frame slot");
+      helper.assertValueEqual(handler.getSlots(), 54, "item capability should expose storage slots only");
+      helper.assertValueEqual(crate.getSlotsForFace(Direction.UP).length, 54, "sided automation should expose exactly 54 slots");
+      helper.assertTrue(!crate.canPlaceItemThroughFace(54, new ItemStack(Items.DIRT), Direction.UP), "automation must not insert into the hint slot");
+      helper.assertTrue(!crate.canTakeItemThroughFace(54, new ItemStack(Items.DIRT), Direction.UP), "automation must not extract the hint slot");
+      helper.assertTrue(crate.canPlaceItem(53, new ItemStack(Items.DIRT)), "last storage slot should remain accessible");
+      helper.assertTrue(!crate.canPlaceItem(54, new ItemStack(Items.DIRT)), "frame slot should not be part of storage input");
+      crate.setItem(LabeledCrateMenu.STORAGE_SLOT_COUNT - 1, new ItemStack(Items.DIRT));
+      ItemStack frameItem = new ItemStack(Items.COMPASS);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, frameItem.copy());
+      helper.assertTrue(crate.canTakeItem(crate, LabeledCrateMenu.STORAGE_SLOT_COUNT - 1, crate.getItem(LabeledCrateMenu.STORAGE_SLOT_COUNT - 1)),
+         "internal consumers should still be able to take from the final storage slot");
+      helper.assertTrue(!crate.canTakeItem(crate, LabeledCrateMenu.FRAME_SLOT, crate.getItem(LabeledCrateMenu.FRAME_SLOT)),
+         "internal consumers must not extract the frame slot");
+      helper.assertValueEqual(menu.slots.size(), 91, "crate menu should include 55 crate slots and 36 player slots");
+      helper.assertValueEqual(menu.getSlot(0).x, 28, "first storage slot should match original x");
+      helper.assertValueEqual(menu.getSlot(0).y, 10, "first storage slot should match original y");
+      helper.assertValueEqual(menu.getSlot(54).x, 191, "hint slot should match original x");
+      helper.assertValueEqual(menu.getSlot(54).y, 100, "hint slot should match original y");
+      helper.assertValueEqual(menu.getSlot(54).getMaxStackSize(), 1, "hint slot should limit stacks to one");
+      helper.assertValueEqual(menu.getSlot(55).y, 125, "first player inventory row should match original y");
+      helper.assertValueEqual(menu.getSlot(82).y, 183, "hotbar should follow the main inventory rows");
+      helper.assertTrue(menu.getSlot(54).mayPlace(new ItemStack(Items.DIAMOND)), "hint slot should accept a safe item");
+      helper.assertTrue(menu.getSlot(LabeledCrateMenu.FRAME_SLOT).mayPickup(player),
+         "player should be able to remove the hint item intentionally through the GUI");
+      ItemStack movedFrameItem = menu.quickMoveStack(player, LabeledCrateMenu.FRAME_SLOT);
+      helper.assertTrue(ItemStack.matches(frameItem, movedFrameItem), "GUI shift-click should return the removed frame item");
+      helper.assertTrue(crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(), "GUI shift-click should clear the frame slot");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_bucket_cannot_be_pulled_by_milking_consumer(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      MachineBlockEntity milker = placeMachine(helper, TEST_POS.east(), ModBlocks.SMALL_MILKING_MACHINE.get().defaultBlockState());
+      ItemStack bucket = new ItemStack(Items.BUCKET);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, bucket.copy());
+
+      helper.assertTrue(helper.getLevel().getBlockEntity(milker.getBlockPos().relative(Direction.WEST)) == crate,
+         "milking consumer should point directly to the adjacent crate");
+      helper.assertTrue(milker.canPlaceItem(0, bucket), "milking consumer should accept a bucket in its input slot");
+      helper.assertTrue(!crate.canTakeItem(milker, LabeledCrateMenu.FRAME_SLOT, bucket),
+         "crate policy should reject the frame slot for the milking consumer");
+      helper.assertTrue(!invokeMachineBoolean(
+         milker, "pullEmptyBucketFromContainer", new Class<?>[]{Direction.class}, Direction.WEST
+      ), "internal milking pull should not consume a bucket from the frame slot");
+      helper.assertTrue(ItemStack.matches(bucket, crate.getItem(LabeledCrateMenu.FRAME_SLOT)),
+         "bucket should remain in the crate frame after the internal pull");
+      helper.assertTrue(milker.getItem(0).isEmpty(), "milking input should remain empty after refusing the frame slot");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_smeltable_cannot_be_pulled_by_electrical_furnace(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      MachineBlockEntity furnace = placeMachine(helper, TEST_POS.east(), ModBlocks.SMALL_ELECTRICAL_FURNACE.get().defaultBlockState());
+      ItemStack rawIron = new ItemStack(Items.RAW_IRON);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, rawIron.copy());
+
+      helper.assertTrue(helper.getLevel().getBlockEntity(furnace.getBlockPos().relative(Direction.WEST)) == crate,
+         "electrical furnace should point directly to the adjacent crate");
+      helper.assertTrue(invokeMachineBoolean(furnace, "canSmelt", new Class<?>[]{ItemStack.class}, rawIron.copy()),
+         "raw iron should be smeltable in the test recipe registry");
+      helper.assertTrue(furnace.canPlaceItem(0, rawIron), "electrical furnace should accept raw iron in its input slot");
+      helper.assertTrue(!crate.canTakeItem(furnace, LabeledCrateMenu.FRAME_SLOT, rawIron),
+         "crate policy should reject the frame slot for the electrical furnace");
+      helper.assertTrue(!invokeMachineBoolean(
+         furnace, "pullSmeltableFromContainer", new Class<?>[]{Direction.class, int.class}, Direction.WEST, 64
+      ), "internal smelting pull should not consume raw iron from the frame slot");
+      helper.assertTrue(ItemStack.matches(rawIron, crate.getItem(LabeledCrateMenu.FRAME_SLOT)),
+         "raw iron should remain in the crate frame after the internal pull");
+      helper.assertTrue(furnace.getItem(0).isEmpty(), "electrical furnace input should remain empty after refusing the frame slot");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_migrates_27_items_and_preserves_legacy_labels(GameTestHelper helper) {
+      BlockState state = ModBlocks.LABELED_CRATE.get().defaultBlockState();
+      NonNullList<ItemStack> oldItems = NonNullList.withSize(27, ItemStack.EMPTY);
+      oldItems.set(0, new ItemStack(Items.IRON_INGOT, 5));
+      oldItems.set(26, new ItemStack(Items.REDSTONE, 7));
+      CompoundTag legacy = new CompoundTag();
+      ContainerHelper.saveAllItems(legacy, oldItems, helper.getLevel().registryAccess());
+      legacy.putString("LabelLine0", "Old stock label");
+      legacy.putString("LabelLine1", "Second line");
+
+      MachineBlockEntity migrated = new MachineBlockEntity(helper.absolutePos(TEST_POS), state);
+      migrated.loadWithComponents(legacy, helper.getLevel().registryAccess());
+      helper.assertValueEqual(migrated.getContainerSize(), 55, "legacy crate NBT should load into the expanded inventory");
+      helper.assertValueEqual(migrated.getItem(0).getCount(), 5, "legacy slot 0 should remain intact");
+      helper.assertValueEqual(migrated.getItem(26).getCount(), 7, "legacy slot 26 should remain intact");
+      helper.assertTrue(migrated.getItem(54).isEmpty(), "old crate NBT should not invent hint-slot contents");
+      helper.assertValueEqual(migrated.labelLine(0), "Old stock label", "legacy first label should be preserved");
+      helper.assertValueEqual(migrated.labelLine(1), "Second line", "legacy second label should be preserved");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_rejects_nested_containers_safely(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      IItemHandler handler = crate.itemHandler(null);
+      ItemStack shulker = new ItemStack(Items.SHULKER_BOX);
+      helper.assertTrue(!LabeledCrateItemRules.canStore(shulker), "crate should reject shulker boxes");
+
+      ItemStack filledContainer = new ItemStack(Items.CHEST);
+      filledContainer.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(List.of(new ItemStack(Items.DIAMOND))));
+      helper.assertTrue(!LabeledCrateItemRules.canStore(filledContainer), "crate should reject nonempty modern container components");
+
+      CompoundTag blockEntityData = new CompoundTag();
+      ListTag storedItems = new ListTag();
+      storedItems.add(new CompoundTag());
+      blockEntityData.put("Items", storedItems);
+      ItemStack legacyContainer = new ItemStack(Items.CHEST);
+      legacyContainer.set(DataComponents.BLOCK_ENTITY_DATA, CustomData.of(blockEntityData));
+      helper.assertTrue(!LabeledCrateItemRules.canStore(legacyContainer), "crate should reject nested block-entity inventories");
+
+      helper.assertTrue(!handler.insertItem(0, filledContainer, false).isEmpty(), "automation should reject nested container contents");
+      helper.assertTrue(crate.getItem(0).isEmpty(), "rejected nested item should not enter the crate");
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      LabeledCrateMenu menu = new LabeledCrateMenu(2, player.getInventory(), crate);
+      helper.assertTrue(!menu.getSlot(0).mayPlace(legacyContainer), "the player menu should share nested-container protection");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_shift_click_and_ctrl_shift_click_preserve_components(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      LabeledCrateMenu menu = new LabeledCrateMenu(3, player.getInventory(), crate);
+      CompoundTag gradeData = new CompoundTag();
+      gradeData.putString("grade", "A");
+      ItemStack first = new ItemStack(Items.IRON_INGOT, 16);
+      first.set(DataComponents.CUSTOM_DATA, CustomData.of(gradeData));
+      ItemStack second = new ItemStack(Items.IRON_INGOT, 5);
+      second.set(DataComponents.CUSTOM_DATA, CustomData.of(gradeData));
+      CompoundTag otherGrade = new CompoundTag();
+      otherGrade.putString("grade", "B");
+      ItemStack distinct = new ItemStack(Items.IRON_INGOT, 9);
+      distinct.set(DataComponents.CUSTOM_DATA, CustomData.of(otherGrade));
+      player.getInventory().setItem(9, first);
+      player.getInventory().setItem(10, second);
+      player.getInventory().setItem(11, distinct);
+
+      helper.assertTrue(menu.quickMoveAll(player, 55), "Ctrl+Shift should move matching stacks from the selected player slot");
+      helper.assertValueEqual(crate.getItem(0).getCount(), 21, "matching stacks with identical components should combine");
+      helper.assertTrue(player.getInventory().getItem(9).isEmpty(), "first matching player stack should move");
+      helper.assertTrue(player.getInventory().getItem(10).isEmpty(), "second matching player stack should move");
+      helper.assertValueEqual(player.getInventory().getItem(11).getCount(), 9, "same item with different components should stay behind");
+
+      crate.setItem(1, new ItemStack(Items.DIRT, 4));
+      ItemStack shifted = menu.quickMoveStack(player, 1);
+      helper.assertTrue(shifted.is(Items.DIRT), "ordinary shift-click should transfer a stored stack");
+      helper.assertTrue(player.getInventory().getItem(8).is(Items.DIRT), "ordinary shift-click should reach the player's hotbar");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_shift_click_updates_rendered_hint(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      FrameTrackingContainer container = new FrameTrackingContainer();
+      ItemStack hint = new ItemStack(Items.COMPASS);
+      hint.set(DataComponents.CUSTOM_NAME, Component.literal("Crate Hint"));
+      container.setItem(LabeledCrateMenu.FRAME_SLOT, hint.copy());
+      LabeledCrateMenu menu = new LabeledCrateMenu(4, player.getInventory(), container);
+
+      ItemStack moved = menu.quickMoveStack(player, LabeledCrateMenu.FRAME_SLOT);
+
+      helper.assertTrue(ItemStack.isSameItemSameComponents(moved, hint), "shift-click should transfer the displayed frame item");
+      helper.assertTrue(
+         ItemStack.matches(container.frameBeforeClear, hint),
+         "frame removal should reach Container.setItem before mutating the stored hint so the block entity can update the renderer"
+      );
+      helper.assertTrue(container.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(), "shift-click should clear the frame slot");
+      int transferredCount = 0;
+      for (int slot = 0; slot < 36; slot++) {
+         ItemStack inventoryStack = player.getInventory().getItem(slot);
+         if (ItemStack.isSameItemSameComponents(inventoryStack, hint)) {
+            transferredCount += inventoryStack.getCount();
+         }
+      }
+      helper.assertValueEqual(1, transferredCount, "the frame item should transfer exactly once into player inventory");
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_container_removal_syncs_world_hint(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      ItemStack hint = new ItemStack(Items.COMPASS);
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, hint.copy());
+
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      AbstractContainerMenu opened = helper.getBlockState(TEST_POS).getMenuProvider(
+         helper.getLevel(), helper.absolutePos(TEST_POS)
+      ).createMenu(5, player.getInventory(), player);
+      helper.assertTrue(opened instanceof LabeledCrateMenu, "crate should open its dedicated menu for the frame removal test");
+      LabeledCrateMenu menu = (LabeledCrateMenu)opened;
+
+      ItemStack removedThroughSlot = menu.getSlot(LabeledCrateMenu.FRAME_SLOT).remove(1);
+      helper.assertTrue(ItemStack.matches(hint, removedThroughSlot), "ordinary slot pickup should return the frame item");
+      helper.assertTrue(crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "ordinary slot pickup should clear the backing block entity frame slot");
+
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, hint.copy());
+      ItemStack removedWithoutUpdate = crate.removeItemNoUpdate(LabeledCrateMenu.FRAME_SLOT);
+      helper.assertTrue(ItemStack.matches(hint, removedWithoutUpdate), "removeItemNoUpdate should return the frame item");
+      helper.assertTrue(crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "removeItemNoUpdate should clear the backing block entity frame slot");
+
+      menu.removed(player);
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 100)
+   public static void labeled_crate_survival_break_replaces_contents_with_named_crate_and_reloads(GameTestHelper helper) {
+      MachineBlockEntity crate = placeNamedCrate(helper, TEST_POS, Component.literal("Named Crate"));
+      FakePlayer player = fakePlayer(helper, GameType.SURVIVAL, TEST_POS);
+      helper.assertTrue(!player.getAbilities().instabuild, "survival test player must not use creative break handling");
+      player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
+      ItemStack preserved = new ItemStack(Items.DIAMOND, 3);
+      CompoundTag component = new CompoundTag();
+      component.putString("source", "kept");
+      preserved.set(DataComponents.CUSTOM_DATA, CustomData.of(component));
+      crate.setItem(26, preserved);
+      crate.setItem(54, new ItemStack(Items.COMPASS));
+      crate.setLabeledCrateLabel("Old label", "Second line");
+      helper.assertTrue(!crate.saveWithoutMetadata(helper.getLevel().registryAccess()).getList("Items", net.minecraft.nbt.Tag.TAG_COMPOUND).isEmpty(),
+         "crate should serialize its contents before a normal break");
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+
+      helper.assertTrue(player.gameMode.destroyBlock(absolutePos), "survival should break the labeled crate");
+      List<ItemEntity> drops = helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0));
+      List<ItemStack> crateDrops = drops.stream().map(ItemEntity::getItem)
+         .filter(stack -> stack.is(ModBlocks.LABELED_CRATE.get().asItem())).toList();
+      helper.assertValueEqual(crateDrops.size(), 1, "normal break should produce exactly one crate drop");
+      ItemStack droppedCrate = crateDrops.get(0);
+      CompoundTag storedData = droppedCrate.getOrDefault(DataComponents.BLOCK_ENTITY_DATA, CustomData.EMPTY).copyTag();
+      helper.assertTrue(storedData.contains("Items"), "normal crate drop should retain the inventory data");
+      helper.assertTrue(!storedData.getList("Items", net.minecraft.nbt.Tag.TAG_COMPOUND).isEmpty(),
+         "normal crate drop should preserve the stored stacks");
+      helper.assertValueEqual(storedData.getString("LabelLine0"), "Old label", "normal crate drop should retain the old label");
+      helper.assertTrue(droppedCrate.has(DataComponents.CUSTOM_NAME), "normal crate drop should retain the crate name");
+
+      BlockPos replacementPos = TEST_POS.east(3);
+      BlockHitResult hit = new BlockHitResult(Vec3.atCenterOf(helper.absolutePos(replacementPos)), Direction.UP, helper.absolutePos(replacementPos), false);
+      player.setItemInHand(InteractionHand.MAIN_HAND, droppedCrate.copy());
+      InteractionResult result = ((BlockItem)droppedCrate.getItem()).place(
+         new net.minecraft.world.item.context.BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, droppedCrate.copy(), hit)
+      );
+      helper.assertTrue(result.consumesAction(), "the saved crate item should place again");
+      BlockEntity placedEntity = helper.getLevel().getBlockEntity(helper.absolutePos(replacementPos));
+      helper.assertTrue(placedEntity instanceof MachineBlockEntity, "placed crate item should restore its machine block entity");
+      MachineBlockEntity restored = (MachineBlockEntity)placedEntity;
+      helper.assertValueEqual(restored.getItem(26).getCount(), 3, "placed crate should reload the stored item");
+      helper.assertValueEqual(restored.getItem(26).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("source"), "kept",
+         "stored item components should survive break and place");
+      helper.assertTrue(restored.getItem(54).is(Items.COMPASS), "placed crate should restore its hint item");
+      helper.assertValueEqual(restored.labelLine(0), "Old label", "placed crate should restore the legacy label");
+      helper.assertTrue(restored.getCustomName() != null, "placed crate should restore its custom name");
+      helper.assertValueEqual(restored.getCustomName().getString(), "Named Crate", "placed crate should restore the original custom name");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_programmatic_destroy_drops_single_intact_crate(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      crate.setItem(0, new ItemStack(Items.IRON_INGOT, 4));
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, new ItemStack(Items.COMPASS));
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+
+      for (int preview = 0; preview < 2; preview++) {
+         LootParams.Builder lootContext = new LootParams.Builder(helper.getLevel())
+            .withParameter(LootContextParams.BLOCK_ENTITY, crate);
+         List<ItemStack> previewDrops = ModBlocks.LABELED_CRATE.get().getDrops(crate.getBlockState(), lootContext);
+         helper.assertValueEqual(1, previewDrops.size(), "a loot preview should describe one intact crate");
+         helper.assertTrue(previewDrops.get(0).is(ModBlocks.LABELED_CRATE.get().asItem()), "a loot preview should contain the crate item");
+         helper.assertTrue(crate.getItem(0).getCount() == 4 && crate.getItem(LabeledCrateMenu.FRAME_SLOT).is(Items.COMPASS),
+            "repeated loot previews must leave the backing inventory untouched");
+         helper.assertTrue(!crate.isLabeledCrateDropHandled(), "a loot preview must not leave a stale drop-handling flag");
+      }
+      helper.assertTrue(helper.getLevel().destroyBlock(absolutePos, true), "programmatic block destruction should remove the crate");
+      List<ItemEntity> drops = helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0));
+      helper.assertValueEqual(1, drops.size(), "programmatic destruction should emit one intact crate and no loose inventory drops");
+      ItemStack droppedCrate = drops.get(0).getItem();
+      helper.assertTrue(droppedCrate.is(ModBlocks.LABELED_CRATE.get().asItem()), "programmatic destruction should drop the crate block");
+      CompoundTag storedData = droppedCrate.getOrDefault(DataComponents.BLOCK_ENTITY_DATA, CustomData.EMPTY).copyTag();
+      helper.assertTrue(storedData.contains("Items"), "the single crate drop should carry its block-entity inventory");
+      NonNullList<ItemStack> restored = NonNullList.withSize(LabeledCrateMenu.CRATE_SLOT_COUNT, ItemStack.EMPTY);
+      ContainerHelper.loadAllItems(storedData, restored, helper.getLevel().registryAccess());
+      helper.assertValueEqual(4, restored.get(0).getCount(), "the dropped crate should retain its four iron ingots exactly once");
+      helper.assertTrue(restored.get(LabeledCrateMenu.FRAME_SLOT).is(Items.COMPASS), "the dropped crate should retain the frame item");
+      helper.assertTrue(helper.getLevel().getBlockEntity(absolutePos) == null, "the source block entity should be removed");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_programmatic_destroy_without_drops_clears_contents_without_spilling(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      crate.setItem(0, new ItemStack(Items.IRON_INGOT, 4));
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, new ItemStack(Items.COMPASS));
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+
+      helper.assertTrue(helper.getLevel().destroyBlock(absolutePos, false), "programmatic no-drop destruction should remove the crate");
+      helper.assertTrue(helper.getLevel().getBlockState(absolutePos).isAir(), "no-drop destruction should remove the source block");
+      helper.assertTrue(helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0)).isEmpty(),
+         "no-drop destruction should not spill a crate or loose contents");
+      helper.assertTrue(crate.getItem(0).isEmpty() && crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "removed no-drop crate should not retain a live backing inventory");
+      helper.assertTrue(!crate.isLabeledCrateDropHandled() && !crate.consumeLabeledCrateDropHandling(),
+         "no-drop destruction should not leave a stale crate-drop flag");
+      helper.assertTrue(!crate.consumeLabeledCratePlayerBreak(), "programmatic destruction should not leave a player-break flag");
+      helper.succeed();
+   }
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void labeled_crate_creative_break_discards_contents(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      FakePlayer player = fakePlayer(helper, GameType.CREATIVE, TEST_POS);
+      player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.IRON_PICKAXE));
+      crate.setItem(0, new ItemStack(Items.DIAMOND, 4));
+      crate.setItem(54, new ItemStack(Items.COMPASS));
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+
+      helper.assertTrue(player.gameMode.destroyBlock(absolutePos), "creative should remove the crate");
+      helper.assertTrue(helper.getLevel().getBlockState(absolutePos).isAir(), "creative break should remove the block");
+      helper.assertTrue(crate.getItem(0).isEmpty() && crate.getItem(54).isEmpty(), "creative break should not spill crate contents");
+      helper.assertTrue(
+         helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0)).isEmpty(),
+         "creative break should not create crate or contents drops"
+      );
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_explosion_releases_items_without_drop_decay(GameTestHelper helper) {
+      assertCrateExplosionReleasesContents(helper, false);
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_explosion_releases_items_with_drop_decay(GameTestHelper helper) {
+      assertCrateExplosionReleasesContents(helper, true);
+   }
+
+   private static void assertCrateExplosionReleasesContents(GameTestHelper helper, boolean dropDecay) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      crate.setItem(0, new ItemStack(Items.IRON_INGOT, 4));
+      crate.setItem(54, new ItemStack(Items.COMPASS));
+      GameRules.BooleanValue dropDecayRule = helper.getLevel().getGameRules().getRule(GameRules.RULE_TNT_EXPLOSION_DROP_DECAY);
+      boolean previousDropDecay = dropDecayRule.get();
+      dropDecayRule.set(dropDecay, helper.getLevel().getServer());
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+      try {
+         helper.getLevel().explode(
+            null, absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 0.5, 4.0F, false, Level.ExplosionInteraction.TNT
+         );
+         List<ItemEntity> drops = helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0));
+         helper.assertValueEqual(2, drops.size(), "explosion should release storage and hint items");
+         helper.assertTrue(drops.stream().noneMatch(entity -> entity.getItem().is(ModBlocks.LABELED_CRATE.get().asItem())),
+            "explosion should not drop the crate block");
+         helper.assertTrue(drops.stream().anyMatch(entity -> entity.getItem().is(Items.IRON_INGOT) && entity.getItem().getCount() == 4),
+            "explosion should release stored item stacks intact");
+         helper.assertTrue(drops.stream().anyMatch(entity -> entity.getItem().is(Items.COMPASS)),
+            "explosion should release the hint item too");
+         helper.assertTrue(crate.getItem(0).isEmpty() && crate.getItem(54).isEmpty(), "explosion extraction should clear contents once");
+      } finally {
+         dropDecayRule.set(previousDropDecay, helper.getLevel().getServer());
+      }
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_quick_move_payload_round_trips_container_and_slot(GameTestHelper helper) {
+      LabeledCrateQuickMovePayload payload = new LabeledCrateQuickMovePayload(12, 64);
+      RegistryFriendlyByteBuf buffer = new RegistryFriendlyByteBuf(Unpooled.buffer(), helper.getLevel().registryAccess());
+      try {
+         LabeledCrateQuickMovePayload.STREAM_CODEC.encode(buffer, payload);
+         LabeledCrateQuickMovePayload decoded = LabeledCrateQuickMovePayload.STREAM_CODEC.decode(buffer);
+      helper.assertValueEqual(decoded.containerId(), 12, "quick-move packet should retain the open container id");
+      helper.assertValueEqual(decoded.slotId(), 64, "quick-move packet should retain the selected slot");
+      } finally {
+         buffer.release();
+      }
+      helper.succeed();
+   }
+
+   private static List<ItemStack> labeledCrateUpgradeSlots(ItemStack crate) {
+      return List.of(
+         ie("stick_steel"), ie("plate_steel"), ie("stick_steel"),
+         ie("plate_steel"), crate, ie("plate_steel"),
+         ie("stick_steel"), ie("plate_steel"), ie("stick_steel")
+      );
+   }
+
+   private static Optional<RecipeHolder<CraftingRecipe>> findLabeledCrateUpgrade(GameTestHelper helper, List<ItemStack> slots) {
+      CraftingInput input = CraftingInput.of(3, 3, slots);
+      ResourceLocation target = ResourceLocation.fromNamespaceAndPath(
+         "immersive_engineer_decor_controls_tool_reforged", "labeled_crate"
+      );
+      return helper.getLevel().getRecipeManager()
+         .getRecipeFor(RecipeType.CRAFTING, input, helper.getLevel())
+         .filter(recipe -> recipe.id().equals(target));
+   }
+
+   private static ItemStack ie(String id) {
+      ItemStack stack = new ItemStack(
+         BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("immersiveengineering", id))
+      );
+      if (stack.isEmpty()) {
+         throw new IllegalStateException("Missing verified IE item: " + id);
+      }
+      return stack;
+   }
+
+
+   private static MachineBlockEntity placeNamedCrate(GameTestHelper helper, BlockPos position, Component name) {
+      BlockPos absolutePos = helper.absolutePos(position);
+      FakePlayer player = fakePlayer(helper, GameType.CREATIVE, position);
+      ItemStack stack = new ItemStack(ModBlocks.LABELED_CRATE.get());
+      stack.set(DataComponents.CUSTOM_NAME, name);
+      player.setItemInHand(InteractionHand.MAIN_HAND, stack);
+      BlockHitResult hit = new BlockHitResult(Vec3.atCenterOf(absolutePos), Direction.UP, absolutePos, false);
+      InteractionResult result = ((BlockItem)stack.getItem()).place(
+         new net.minecraft.world.item.context.BlockPlaceContext(helper.getLevel(), player, InteractionHand.MAIN_HAND, stack, hit)
+      );
+      if (!result.consumesAction()) {
+         throw new AssertionError("Named labeled crate placement failed");
+      }
+      BlockEntity entity = helper.getLevel().getBlockEntity(absolutePos);
+      if (!(entity instanceof MachineBlockEntity machine)) {
+         throw new AssertionError("Named labeled crate did not create its machine block entity");
+      }
+      return machine;
+   }
+
+   private static FakePlayer fakePlayer(GameTestHelper helper, GameType gameType, BlockPos position) {
+      BlockPos absolutePos = helper.absolutePos(position);
+      FakePlayer player = new FakePlayer(
+         helper.getLevel(), new GameProfile(UUID.randomUUID(), "LabeledCrateGameTest")
+      );
+      player.gameMode.changeGameModeForPlayer(gameType);
+      player.setPos(absolutePos.getX() + 0.5, absolutePos.getY() + 0.5, absolutePos.getZ() + 1.5);
+      return player;
+   }
+
+   private static MachineBlockEntity placeMachine(GameTestHelper helper, BlockPos position, BlockState state) {
+      helper.setBlock(position, state);
+      BlockEntity entity = helper.getLevel().getBlockEntity(helper.absolutePos(position));
+      if (!(entity instanceof MachineBlockEntity machine)) {
+         throw new AssertionError("Expected a machine block entity at " + position);
+      }
+      return machine;
+   }
+
+   private static boolean invokeMachineBoolean(
+      MachineBlockEntity machine, String methodName, Class<?>[] parameterTypes, Object... arguments
+   ) {
+      try {
+         java.lang.reflect.Method method = MachineBlockEntity.class.getDeclaredMethod(methodName, parameterTypes);
+         method.setAccessible(true);
+         return (Boolean)method.invoke(machine, arguments);
+      } catch (ReflectiveOperationException exception) {
+         throw new AssertionError("Could not invoke internal machine consumer " + methodName, exception);
+      }
+   }
+
+   private static MachineBlockEntity placeCrate(GameTestHelper helper, BlockPos position) {
+      helper.setBlock(position, ModBlocks.LABELED_CRATE.get().defaultBlockState());
+      BlockEntity entity = helper.getLevel().getBlockEntity(helper.absolutePos(position));
+      if (!(entity instanceof MachineBlockEntity machine)) {
+         throw new AssertionError("Labeled crate did not create its machine block entity");
+      }
+      return machine;
+   }
+
+   private static final class FrameTrackingContainer extends SimpleContainer {
+      private ItemStack frameBeforeClear = ItemStack.EMPTY;
+
+      private FrameTrackingContainer() {
+         super(LabeledCrateMenu.CRATE_SLOT_COUNT);
+      }
+
+      @Override
+      public void setItem(int slot, ItemStack stack) {
+         if (slot == LabeledCrateMenu.FRAME_SLOT && stack.isEmpty()) {
+            this.frameBeforeClear = this.getItem(slot).copy();
+         }
+         super.setItem(slot, stack);
+      }
+   }
+}
