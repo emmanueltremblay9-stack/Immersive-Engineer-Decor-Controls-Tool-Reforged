@@ -255,7 +255,7 @@ public final class LabeledCrateGameTests {
    public static void labeled_crate_frame_smeltable_cannot_be_pulled_by_electrical_furnace(GameTestHelper helper) {
       MachineBlockEntity crate = placeCrate(helper, TEST_POS);
       MachineBlockEntity furnace = placeMachine(helper, TEST_POS.east(), ModBlocks.SMALL_ELECTRICAL_FURNACE.get().defaultBlockState());
-      ItemStack rawIron = new ItemStack(Items.RAW_IRON, 2);
+      ItemStack rawIron = new ItemStack(Items.RAW_IRON);
       crate.setItem(LabeledCrateMenu.FRAME_SLOT, rawIron.copy());
 
       helper.assertTrue(helper.getLevel().getBlockEntity(furnace.getBlockPos().relative(Direction.WEST)) == crate,
