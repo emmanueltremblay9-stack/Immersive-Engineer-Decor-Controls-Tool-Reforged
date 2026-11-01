@@ -93,10 +93,10 @@ public final class EngineersDecorReforged {
    }
 
    private void registerCapabilities(RegisterCapabilitiesEvent event) {
-      event.registerBlockEntity(ItemHandler.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.itemHandler(side));
-      event.registerBlockEntity(FluidHandler.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.fluidHandler(side));
+      event.registerBlockEntity(ItemHandler.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.itemCapability(side));
+      event.registerBlockEntity(FluidHandler.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.fluidCapability(side));
       event.registerBlockEntity(FluidHandler.BLOCK, ModBlockEntities.PIPE_VALVE.get(), (valve, side) -> valve.fluidHandler(side));
-      event.registerBlockEntity(EnergyStorage.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.energyStorage(side));
+      event.registerBlockEntity(EnergyStorage.BLOCK, ModBlockEntities.MACHINE.get(), (machine, side) -> machine.energyCapability(side));
    }
 
    private static ItemStack creativeTabIcon() {

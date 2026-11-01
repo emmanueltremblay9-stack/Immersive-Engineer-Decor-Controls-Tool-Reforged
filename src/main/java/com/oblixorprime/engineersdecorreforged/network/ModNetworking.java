@@ -28,6 +28,8 @@ public final class ModNetworking {
    public static final int PLACER_MANUAL_TRIGGER = 21;
    public static final int PLACER_STOCK_ROW = 22;
    public static final int ELECTRICAL_FURNACE_SPEED = 30;
+   /** Server-validated mode (0 Lava, 1 Magma, 2 Obsidian), revision in valueB. */
+   public static final int MINERAL_SMELTER_SELECT_MODE = 31;
 
    private ModNetworking() {
    }
