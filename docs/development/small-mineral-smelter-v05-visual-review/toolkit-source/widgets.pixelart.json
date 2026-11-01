@@ -1,0 +1,293 @@
+{
+  "version": "0.1",
+  "canvas": {
+    "width": 234,
+    "height": 270,
+    "background": null
+  },
+  "palette": {
+    "focus": "#FFD270",
+    "item": "#DADADA",
+    "pending": "#80CDE8",
+    "off": "#383B39",
+    "outline": "#0D1113"
+  },
+  "components": {
+    "slot_focus": [
+      {
+        "op": "outline_rect",
+        "x": 0,
+        "y": 0,
+        "w": 18,
+        "h": 18,
+        "color": "focus",
+        "width": 1
+      }
+    ],
+    "pin": [
+      {
+        "op": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 4,
+        "h": 4,
+        "color": "outline"
+      },
+      {
+        "op": "rect",
+        "x": 1,
+        "y": 1,
+        "w": 2,
+        "h": 2,
+        "color": "item"
+      }
+    ]
+  },
+  "layers": [
+    {
+      "name": "player_slot_focus_map",
+      "operations": [
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 26,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 47,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 67,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 87,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 108,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 128,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 149,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 169,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 190,
+          "y": 170
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 26,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 47,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 67,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 87,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 108,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 128,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 149,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 169,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 190,
+          "y": 188
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 26,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 47,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 67,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 87,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 108,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 128,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 149,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 169,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 190,
+          "y": 206
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 26,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 47,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 67,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 87,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 108,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 128,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 149,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 169,
+          "y": 230
+        },
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 190,
+          "y": 230
+        }
+      ]
+    },
+    {
+      "name": "machine_slot_focus_map",
+      "operations": [
+        {
+          "op": "stamp",
+          "component": "slot_focus",
+          "x": 125,
+          "y": 45
+        }
+      ]
+    },
+    {
+      "name": "mode_focus",
+      "operations": [
+        {
+          "op": "outline_rect",
+          "color": "focus",
+          "x": 175,
+          "y": 42,
+          "w": 40,
+          "h": 9
+        }
+      ]
+    }
+  ]
+}

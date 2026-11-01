@@ -8,9 +8,12 @@ No external world, user options or installed Minecraft directory is used.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
+import re
+import struct
 import secrets
 import shutil
 import subprocess
@@ -168,6 +171,116 @@ def validate_canal_proof(proof: dict, nonce: str, directory: Path) -> dict:
 
 
 
+
+def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
+                               directory: Path, window_width: int, window_height: int,
+                               language: str, logs: str) -> dict:
+    """Validate live-menu identity/state and exact fresh Minecraft framebuffer captures."""
+    if (proof.get("suite") != "native-smelter-gui-v1" or proof.get("nonce") != nonce
+            or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
+        raise SmokeFailure("Missing matching successful native Smelter GUI proof")
+    if (not re.fullmatch(r"[0-9a-f]{40}", executed_sha)
+            or proof.get("executed_source_sha") != executed_sha):
+        raise SmokeFailure("Smelter GUI proof does not identify the exact executed source revision")
+    if (not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha)
+            or proof.get("pull_request_head_sha") != pr_head_sha):
+        raise SmokeFailure("Smelter GUI proof does not identify the checked PR head")
+
+    if proof.get("language") != language or language not in {"en_us", "fr_fr"}:
+        raise SmokeFailure("Smelter GUI proof locale does not match the requested locale")
+    expected_label = {"en_us": "LAVA", "fr_fr": "LAVE"}[language]
+    if proof.get("translated_lava_mode") != expected_label:
+        raise SmokeFailure("Smelter GUI did not load the expected localized mode label")
+
+    expected_identity = "com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen"
+    expected_menu = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+    if proof.get("screen_identity") != expected_identity:
+        raise SmokeFailure("The real Small Mineral Smelter screen is absent")
+    if proof.get("client_menu_identity") != expected_menu or proof.get("server_menu_identity") != expected_menu:
+        raise SmokeFailure("The real registered Smelter menu is absent on client or server")
+    if proof.get("machine_kind") != "SMALL_MINERAL_SMELTER":
+        raise SmokeFailure("The menu is not bound to the Small Mineral Smelter kind")
+    client_id, server_id = proof.get("client_menu_id"), proof.get("server_menu_id")
+    if (type(client_id) is not int or type(server_id) is not int or client_id < 0 or client_id != server_id
+            or proof.get("server_menu_context_valid") is not True):
+        raise SmokeFailure("Client and server do not share a valid live Smelter menu context")
+    if (proof.get("visible_machine_slots") != 2 or proof.get("total_slots") != 38
+            or proof.get("machine_slot_backing_indices") != [0, 2]
+            or proof.get("data_fields") != 17):
+        raise SmokeFailure("Smelter GUI slot backing or v0.5 data projection is incorrect")
+
+    state = proof.get("live_state")
+    if not isinstance(state, dict):
+        raise SmokeFailure("Smelter GUI lacks live server-projected state")
+    if (state.get("selected_mode") != 0 or state.get("batch_mode") != 0
+            or type(state.get("batch_progress")) is not int or state["batch_progress"] <= 0
+            or type(state.get("thermal")) is not int or state["thermal"] <= 0
+            or state.get("input_item") != "minecraft:cobblestone"
+            or state.get("output_item") != "minecraft:magma_block" or state.get("output_count") != 2
+            or type(state.get("tank_amount")) is not int or state["tank_amount"] <= 0
+            or type(state.get("tank_capacity")) is not int or state["tank_capacity"] < state["tank_amount"]
+            or type(state.get("energy")) is not int or state["energy"] <= 0
+            or type(state.get("energy_capacity")) is not int or state["energy_capacity"] < state["energy"]
+            or state.get("fe_rate") != 16 or state.get("status") != 1):
+        raise SmokeFailure("Smelter menu did not synchronize the fixture's non-empty, actively heating state")
+
+    screen = proof.get("screen")
+    if not isinstance(screen, dict):
+        raise SmokeFailure("Smelter GUI lacks native screen geometry")
+    if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
+            or screen.get("panel_width") != 234 or screen.get("panel_height") != 270):
+        raise SmokeFailure("Smelter GUI window or logical panel dimensions differ from the requested fixture")
+    gui_width, gui_height, scale = screen.get("gui_width"), screen.get("gui_height"), screen.get("view_scale")
+    if (type(gui_width) is not int or type(gui_height) is not int
+            or gui_width <= 0 or gui_height <= 0
+            or type(scale) not in (int, float) or not 0.1 <= scale <= 1.0):
+        raise SmokeFailure("Smelter GUI scale measurements are invalid")
+    expected_scale = max(0.1, min(1.0, (gui_width - 12.0) / 234.0, (gui_height - 12.0) / 270.0))
+    if abs(scale - expected_scale) > 0.002:
+        raise SmokeFailure("Recorded viewScale differs from the live screen's scale rule")
+    origin_x, origin_y = (gui_width - 234.0 * scale) / 2.0, (gui_height - 270.0 * scale) / 2.0
+    if (origin_x < -0.01 or origin_y < -0.01
+            or origin_x + 234.0 * scale > gui_width + 0.01
+            or origin_y + 270.0 * scale > gui_height + 0.01):
+        raise SmokeFailure("Smelter faceplate does not fit inside the active GUI viewport")
+    if window_height < 300 and scale >= 1.0:
+        raise SmokeFailure("The reduced-height capture did not exercise viewScale")
+
+    if (screen.get("drawer_closed_capture") is not True
+            or screen.get("drawer_open_capture") is not True
+            or screen.get("output_slot_hidden_when_closed") is not True
+            or screen.get("output_slot_visible_when_open") is not True):
+        raise SmokeFailure("The native screen did not verify the real output-drawer interaction")
+
+    captures = proof.get("screenshots")
+    expected_names = {"screen-closed.png", "drawer-open.png"}
+    if not isinstance(captures, list) or len(captures) != len(expected_names):
+        raise SmokeFailure("Native Smelter GUI must provide both closed and open drawer captures")
+    if {item.get("name") for item in captures if isinstance(item, dict)} != expected_names:
+        raise SmokeFailure("Native Smelter GUI capture names are missing, duplicated, or unexpected")
+    image_dir = directory / "smelter-gui-screenshots"
+    if not image_dir.is_dir() or {path.name for path in image_dir.glob("*.png")} != expected_names:
+        raise SmokeFailure("Smelter screenshots are stale or contain unexpected files")
+    png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
+    for capture in captures:
+        name = capture["name"]
+        image = image_dir / name
+        data = image.read_bytes()
+        if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
+            raise SmokeFailure(f"Native Smelter screenshot is absent or invalid: {name}")
+        width, height = struct.unpack(">II", data[16:24])
+        if (width, height) != (window_width, window_height):
+            raise SmokeFailure(f"Native Smelter screenshot has stale or unexpected dimensions: {name}")
+        digest = hashlib.sha256(data).hexdigest()
+        if capture.get("sha256") != digest:
+            raise SmokeFailure(f"Native Smelter screenshot hash does not match its proof: {name}")
+        if (capture.get("width"), capture.get("height")) != (window_width, window_height):
+            raise SmokeFailure(f"Native Smelter screenshot dimensions do not match its proof: {name}")
+    if f"IEDCTR_SMELTER_GUI PASSED nonce={nonce}" not in logs:
+        raise SmokeFailure("Missing current-run native Smelter GUI completion marker")
+    return proof
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
@@ -177,11 +290,21 @@ def main() -> int:
     parser.add_argument("--flow-distance-only", action="store_true")
     parser.add_argument("--lava-surface-only", action="store_true")
     parser.add_argument("--lithium", action="store_true", help="Test the pinned official Lithium build with its fluid BFS enabled")
+    parser.add_argument("--smelter-gui-only", action="store_true", help="Capture the real Smelter menu in an isolated native client")
+    parser.add_argument("--smelter-language", choices=("en_us", "fr_fr"), default="en_us")
+    parser.add_argument("--smelter-window-height", type=int, choices=(260, 720), default=720)
+    parser.add_argument("--smelter-pr-head-sha", default=os.environ.get("IEDCTR_PR_HEAD_SHA", ""))
     args = parser.parse_args()
     if args.lava_surface_only and (not args.renderer_profile or args.flow_distance_only):
         parser.error("Lava surface requires one renderer profile and its own session")
     if args.flow_distance_only and not args.renderer_profile:
         parser.error("A renderer profile is required for the east flow-distance sweep")
+    if args.smelter_gui_only and (args.renderer_profile or args.flow_distance_only or args.lava_surface_only or args.lithium):
+        parser.error("Smelter GUI capture requires its own isolated native-client session")
+    if args.smelter_gui_only and not re.fullmatch(r"[0-9a-fA-F]{40}", args.smelter_pr_head_sha):
+        parser.error("Smelter GUI capture requires the exact pull-request head SHA")
+    if not args.smelter_gui_only and (args.smelter_language != "en_us" or args.smelter_window_height != 720):
+        parser.error("Smelter language and window-height options require --smelter-gui-only")
     if sys.platform != "linux":
         parser.error("The native gameplay runner supports isolated Linux CI only")
     if min(args.prepare_timeout, args.timeout) <= 0:
@@ -191,6 +314,13 @@ def main() -> int:
         print("Native gameplay prerequisites missing: " + ", ".join(missing), file=sys.stderr)
         return 1
     project = args.project.resolve()
+    executed_source_sha = ""
+    if args.smelter_gui_only:
+        revision = subprocess.run(["git", "rev-parse", "HEAD"], cwd=project, check=True, capture_output=True, text=True)
+        executed_source_sha = revision.stdout.strip().lower()
+        if not re.fullmatch(r"[0-9a-f]{40}", executed_source_sha):
+            parser.error("Unable to identify the exact source revision executed by this fixture")
+        args.smelter_pr_head_sha = args.smelter_pr_head_sha.lower()
     if not (project / "gradlew").is_file():
         parser.error("Project must contain the checked-in Gradle wrapper")
     (project / "build").mkdir(exist_ok=True)
@@ -201,12 +331,17 @@ def main() -> int:
     (game / ".iedctr-client-gameplay-nonce").write_text(nonce, encoding="utf-8")
     # These options apply only to this empty fixture directory. No user data or
     # resource packs are imported; onboarding cannot hide the title screen.
-    (game / "options.txt").write_text(
+    options_text = (
         "onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n"
-        "maxFps:60\npauseOnLostFocus:false\nautoJump:true\nsoundCategory_master:0.0\n", encoding="utf-8")
+        "maxFps:60\npauseOnLostFocus:false\nautoJump:true\nsoundCategory_master:0.0\n")
+    if args.smelter_gui_only:
+        options_text += f"guiScale:1\nlang:{args.smelter_language}\n"
+    (game / "options.txt").write_text(options_text, encoding="utf-8")
     renderer_jars = prepare_renderer_dependencies(evidence / "renderer-dependencies", args.renderer_profile) if args.renderer_profile else []
     if args.lithium:
         renderer_jars.append(prepare_lithium_dependency(evidence / "lithium-dependency"))
+    window_width = 1280
+    window_height = args.smelter_window_height if args.smelter_gui_only else 720
     init = evidence / "gameplay.init.gradle"
     init.write_text("""// Isolated, explicit, opt-in native gameplay fixture.
 gradle.projectsEvaluated {
@@ -221,10 +356,14 @@ gradle.projectsEvaluated {
         systemProperty 'iedctr.lavaSurfaceOnly', System.getenv('IEDCTR_LAVA_SURFACE_ONLY')
         systemProperty 'iedctr.clientGameplayNonce', System.getenv('IEDCTR_GAMEPLAY_NONCE')
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
+        systemProperty 'iedctr.smelterGuiOnly', System.getenv('IEDCTR_SMELTER_GUI_ONLY')
+        systemProperty 'iedctr.smelterLanguage', System.getenv('IEDCTR_SMELTER_LANGUAGE')
+        systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
+        systemProperty 'iedctr.pullRequestHeadSha', System.getenv('IEDCTR_PR_HEAD_SHA')
         programArgument '--width'
-        programArgument '1280'
+        programArgument System.getenv('IEDCTR_SCREEN_WIDTH')
         programArgument '--height'
-        programArgument '720'
+        programArgument System.getenv('IEDCTR_SCREEN_HEIGHT')
     }
 }
 """, encoding="utf-8")
@@ -233,7 +372,12 @@ gradle.projectsEvaluated {
                IEDCTR_RENDERER_JARS=json.dumps(renderer_jars), IEDCTR_CANAL_EAST=str(bool(args.renderer_profile)).lower(),
                IEDCTR_FLOW_DISTANCE_ONLY=str(args.flow_distance_only).lower(),
                IEDCTR_LAVA_SURFACE_ONLY=str(args.lava_surface_only).lower(),
-               IEDCTR_EXPECT_LITHIUM=str(args.lithium).lower())
+               IEDCTR_EXPECT_LITHIUM=str(args.lithium).lower(),
+               IEDCTR_SMELTER_GUI_ONLY=str(args.smelter_gui_only).lower(),
+               IEDCTR_SMELTER_LANGUAGE=args.smelter_language if args.smelter_gui_only else '',
+               IEDCTR_EXECUTED_SOURCE_SHA=executed_source_sha,
+               IEDCTR_PR_HEAD_SHA=args.smelter_pr_head_sha if args.smelter_gui_only else '',
+               IEDCTR_SCREEN_WIDTH=str(window_width), IEDCTR_SCREEN_HEIGHT=str(window_height))
     gradle = [str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
     prepare_log, client_log = evidence / "prepare.log", evidence / "client.log"
     print(f"Native client gameplay evidence: {evidence}", flush=True)
@@ -241,9 +385,9 @@ gradle.projectsEvaluated {
         code, expired = run_bounded(gradle + ["prepareClientRun"], project, env, prepare_log, args.prepare_timeout)
         if expired or code != 0:
             raise SmokeFailure(f"Native client preparation failed (exit={code}, deadline={expired})")
-        code, expired = run_bounded(["xvfb-run", "-a", "-s", "-screen 0 1280x720x24"] + gradle + ["runClient"],
+        code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {window_width}x{window_height}x24"] + gradle + ["runClient"],
                                     project, env, client_log, args.timeout)
-        path = game / "client-gameplay-result.json"
+        path = game / ("client-smelter-gui-result.json" if args.smelter_gui_only else "client-gameplay-result.json")
         if not path.is_file():
             raise SmokeFailure("No native gameplay proof was produced; loading alone cannot pass")
         proof = json.loads(path.read_text(encoding="utf-8"))
@@ -253,6 +397,20 @@ gradle.projectsEvaluated {
             if runtime.is_file():
                 logs += "\n" + runtime.read_text(encoding="utf-8", errors="replace")
         crashes = list(game.glob("crash-reports/*")) + list(evidence.rglob("hs_err_pid*.log"))
+        if args.smelter_gui_only:
+            if expired or code != 0 or crashes or FATAL_PATTERN.search(logs):
+                raise SmokeFailure("Native Smelter GUI client did not finish cleanly")
+            main_proof_path = game / "client-gameplay-result.json"
+            if not main_proof_path.is_file():
+                raise SmokeFailure("Native Smelter GUI fixture did not write its isolated-world result")
+            main_proof = json.loads(main_proof_path.read_text(encoding="utf-8"))
+            if (main_proof.get("suite") != "native-smelter-gui-v1" or main_proof.get("nonce") != nonce
+                    or main_proof.get("status") != "passed" or main_proof.get("actual_integrated_world") is not True):
+                raise SmokeFailure("The isolated native-client fixture did not complete successfully")
+            validate_smelter_gui_proof(proof, nonce, executed_source_sha, args.smelter_pr_head_sha,
+                                       game, window_width, window_height, args.smelter_language, logs)
+            print(json.dumps(proof, indent=2), flush=True)
+            return 0
         from fluid_extensions import validate_extensions
         if expired or code != 0 or crashes or FATAL_PATTERN.search(logs):
             raise SmokeFailure('Fluid extension client did not finish cleanly')
@@ -295,7 +453,8 @@ gradle.projectsEvaluated {
     except (SmokeFailure, OSError, ValueError, TypeError, subprocess.SubprocessError) as error:
         print(f"Native client gameplay FAILED: {error}\nEvidence: {evidence}", file=sys.stderr)
         for diagnostic in (prepare_log, client_log.with_suffix(".observed.log"),
-                           game / "logs/latest.log", game / "client-gameplay-result.json"):
+                           game / "logs/latest.log", game / "client-gameplay-result.json",
+                           game / "client-smelter-gui-result.json"):
             if diagnostic.is_file():
                 print(f"--- {diagnostic.name}: last 100 lines ---", file=sys.stderr)
                 print("\n".join(diagnostic.read_text(encoding="utf-8", errors="replace").splitlines()[-100:]), file=sys.stderr)

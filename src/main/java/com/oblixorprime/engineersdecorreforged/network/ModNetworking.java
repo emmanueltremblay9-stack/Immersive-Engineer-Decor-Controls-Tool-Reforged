@@ -28,7 +28,7 @@ public final class ModNetworking {
    public static final int PLACER_MANUAL_TRIGGER = 21;
    public static final int PLACER_STOCK_ROW = 22;
    public static final int ELECTRICAL_FURNACE_SPEED = 30;
-   /** Server-validated mode (0 Lava, 1 Magma, 2 Obsidian), revision in valueB. */
+   /** Retained generic action ID; v0.5 Smelter selection uses SmelterModePayload. */
    public static final int MINERAL_SMELTER_SELECT_MODE = 31;
 
    private ModNetworking() {
@@ -37,8 +37,19 @@ public final class ModNetworking {
    public static void register(RegisterPayloadHandlersEvent event) {
       PayloadRegistrar registrar = event.registrar("1");
       registrar.playToServer(MachineActionPayload.TYPE, MachineActionPayload.STREAM_CODEC, ModNetworking::handleMachineAction);
+      registrar.playToServer(SmelterModePayload.TYPE, SmelterModePayload.STREAM_CODEC, ModNetworking::handleSmelterMode);
       registrar.playToServer(LabeledCrateLabelPayload.TYPE, LabeledCrateLabelPayload.STREAM_CODEC, ModNetworking::handleLabeledCrateLabel);
       registrar.playToServer(LabeledCrateQuickMovePayload.TYPE, LabeledCrateQuickMovePayload.STREAM_CODEC, ModNetworking::handleLabeledCrateQuickMove);
+   }
+
+   private static void handleSmelterMode(SmelterModePayload payload, IPayloadContext context) {
+      context.enqueueWork(() -> {
+         if (context.player() instanceof ServerPlayer serverPlayer
+            && serverPlayer.containerMenu instanceof MachineMenu menu
+            && menu.containerId == payload.menuId()) {
+            menu.handleMineralModeRequest(serverPlayer, payload.expectedRevision(), payload.modeId());
+         }
+      });
    }
 
    private static void handleMachineAction(MachineActionPayload payload, IPayloadContext context) {
