@@ -13,6 +13,9 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -335,6 +338,19 @@ public final class MachineBlocks {
 
       protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
          return this.getShape(state, level, pos, context);
+      }
+
+      /** A hot casing is dangerous only on actual contact, never as a remote GUI aura. */
+      @Override
+      public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+         if (this.kind == MachineKind.SMALL_MINERAL_SMELTER && !level.isClientSide
+            && entity.tickCount % 20 == 0 && entity instanceof LivingEntity living
+            && !entity.fireImmune() && !living.hasEffect(MobEffects.FIRE_RESISTANCE)
+            && !(entity instanceof Player player && (player.isSpectator() || player.getAbilities().instabuild))
+            && level.getBlockEntity(pos) instanceof MachineBlockEntity machine && machine.mineralHotSurface()) {
+            entity.hurt(level.damageSources().hotFloor(), 1.0F); // Candidate 1 damage per second.
+         }
+         super.stepOn(level, pos, state, entity);
       }
 
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
