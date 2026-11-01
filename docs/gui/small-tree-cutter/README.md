@@ -8,9 +8,15 @@ The first image is a byte-for-byte copy of the user-provided reference. The seco
 
 ## Runtime slots and state
 
-The reference art depicts six collection cells (3×2), two sample logs, and a “Tronc détecté” label. The runtime menu contract exposes nine real Drops slots at indices 0–8 in a 3×3 grid plus the I/O slot at index 9. All ten slots and their server-backed item interactions remain available; sample logs and the tree-detected label are not displayed as live state. The existing comparator readout remains server-backed. The generic work-progress arrow is omitted because this machine does not synchronize a work-progress value.
+The reference art depicts six collection cells (3x2), three sample logs, and a "Tronc détecté" label. The runtime menu contract exposes nine real Drops slots at indices 0-8 in a 3x3 grid plus the I/O slot at index 9. All ten slots and their server-backed item interactions remain available; sample logs and the tree-detected label are not displayed as live state. The comparator text shows the synchronized comparator value. The generic work-progress arrow is omitted because this machine does not synchronize a work-progress value.
 
-This is an intentional runtime adaptation to preserve the actual inventory contract. It does not alter storage, slot indices, automation, or tree-cutting behavior. The displayed 3×3 Drops grid is runtime layout; the exact reference JSON remains unchanged.
+The runtime background is a native-size crop of the canonical PNG at `src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/small_tree_cutter_art.png`. All 446x418 crop pixels match the canonical alpha-bounds crop; `MachineLayout` maps that source region explicitly to the 228x212 GUI canvas. Runtime crop SHA-256: `B5AD2BCBBFE334BDA03F2842245B54DA0BB45A068E0F123CE5D0839CA4EB56F7`. The reference's six-cell collection panel is adapted to a 3x3 Drops grid with the I/O slot beside the third row. The lower panel is adapted to Minecraft's live 3x9 inventory and hotbar geometry. These are display-only layout changes: they do not alter storage, slot indices, automation, or tree-cutting behavior. The exact reference JSON remains unchanged.
+
+Regenerate the runtime crop without external Python packages:
+
+```powershell
+python scripts/generate_gui_art_texture.py --reference docs/gui/small-tree-cutter/reference.png --output src/main/resources/assets/immersive_engineer_decor_controls_tool_reforged/textures/gui/small_tree_cutter_art.png
+```
 
 ## Exact pixel reproduction
 
@@ -41,5 +47,5 @@ The Toolkit CLI reported `941×1672 RGBA`. Native RGBA comparison reports **0 di
 | Toolkit JSON | `95BB04D98B88CE2074163D345B0D032B06C732F4ABD9239B6FA236A23227599A` |
 | Toolkit render PNG | `A72019F695FD2F16B6F8DBE249C7351C7344737C41C766E47F072318F76E0E9F` |
 
-Please inspect the reference/render and the runtime GUI visually before merging this draft. The runtime GUI has not been captured in-game.
+The reference and Toolkit render above are visual evidence of the exact design reproduction. They are not an in-game capture; please inspect the runtime GUI visually before merging this draft.
 

@@ -67,8 +67,16 @@ public record MachineLayout(
          case FLUID_BARREL, SMALL_FLUID_FUNNEL, PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> fluid(kind);
          case SMALL_SOLAR_PANEL -> energy();
          case SMALL_BLOCK_BREAKER -> blockBreaker();
-         case SMALL_TREE_CUTTER -> automation(kind);
+         case SMALL_TREE_CUTTER -> treeCutterArtwork();
       };
+   }
+
+   public GuiTextureBlit artworkBlit() {
+      if (this.style != MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
+         throw new IllegalStateException("Only artwork layouts define a cropped texture blit");
+      }
+
+      return GuiTextureBlit.forMachineArtwork(this.textureName, this.imageWidth, this.imageHeight);
    }
 
    private static MachineLayout blockBreaker() {
@@ -244,6 +252,37 @@ public record MachineLayout(
       );
    }
 
+   private static MachineLayout treeCutterArtwork() {
+      return new MachineLayout(
+         228,
+         212,
+         33,
+         130,
+         33,
+         188,
+         List.of(
+            new MachineLayout.MachineSlot(0, 122, 42, "Drops"),
+            new MachineLayout.MachineSlot(1, 144, 42, "Drops"),
+            new MachineLayout.MachineSlot(2, 166, 42, "Drops"),
+            new MachineLayout.MachineSlot(3, 122, 64, "Drops"),
+            new MachineLayout.MachineSlot(4, 144, 64, "Drops"),
+            new MachineLayout.MachineSlot(5, 166, 64, "Drops"),
+            new MachineLayout.MachineSlot(6, 122, 86, "Drops"),
+            new MachineLayout.MachineSlot(7, 144, 86, "Drops"),
+            new MachineLayout.MachineSlot(8, 166, 86, "Drops"),
+            new MachineLayout.MachineSlot(9, 188, 86, "I/O")
+         ),
+         List.of(
+            new MachineLayout.Panel("tree-collection-mask", 116, 39, 100, 69),
+            new MachineLayout.Panel("tree-status-mask", 25, 119, 179, 9),
+            new MachineLayout.Panel("tree-comparator", 145, 119, 60, 9),
+            new MachineLayout.Panel("inventory-panel", 22, 129, 184, 77)
+         ),
+         MachineLayout.LayoutStyle.ARTWORK_TEXTURE,
+         "small_tree_cutter_art"
+      );
+   }
+
    private static MachineLayout automation(MachineKind kind) {
       String input = kind == MachineKind.FACTORY_PLACER
          ? "Blocks"
@@ -299,6 +338,7 @@ public record MachineLayout(
       STORAGE,
       CRAFTING,
       ORIGINAL_TEXTURE,
+      ARTWORK_TEXTURE,
       PROCESSOR,
       FLUID,
       ENERGY,

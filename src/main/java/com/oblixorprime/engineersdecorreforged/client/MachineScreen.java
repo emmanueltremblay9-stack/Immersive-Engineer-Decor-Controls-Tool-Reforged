@@ -4,6 +4,7 @@ import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
+import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import java.util.Locale;
 import net.minecraft.client.gui.GuiGraphics;
@@ -62,7 +63,26 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       int x = this.leftPos;
       int y = this.topPos;
-      if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
+      if (layout.style() == MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
+         ResourceLocation texture = this.backgroundTexture(layout);
+         GuiTextureBlit geometry = layout.artworkBlit();
+         graphics.blit(
+            texture,
+            x,
+            y,
+            geometry.destinationWidth(),
+            geometry.destinationHeight(),
+            (float)geometry.sourceX(),
+            (float)geometry.sourceY(),
+            geometry.sourceWidth(),
+            geometry.sourceHeight(),
+            geometry.textureWidth(),
+            geometry.textureHeight()
+         );
+         this.drawArtworkBackgroundOverlays(graphics, layout, x, y);
+         this.drawMachineSlots(graphics, layout, x, y);
+         this.drawPlayerSlots(graphics, layout, x, y);
+      } else if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
          this.drawOriginalTextureBackdrop(graphics, x, y);
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
@@ -93,11 +113,87 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          this.drawBlockBreakerLabels(graphics);
+      } else if (layout.style() == MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
+         this.drawArtworkLabels(graphics);
       } else if (layout.style() != MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          this.drawBoundedString(graphics, this.profile.title(), this.titleLabelX, this.titleLabelY, this.imageWidth - this.titleLabelX - 6, -1646126, false);
          this.drawTinyString(graphics, "Inv", this.inventoryLabelX, this.inventoryLabelY + 1, 28, -3949142, false);
          this.drawPanelLabels(graphics, layout);
          this.drawStatusText(graphics, layout);
+      }
+   }
+
+   private void drawArtworkBackgroundOverlays(GuiGraphics graphics, MachineLayout layout, int x, int y) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      for (MachineLayout.Panel panel : layout.panels()) {
+         int left = x + panel.x();
+         int top = y + panel.y();
+         switch (panel.label()) {
+            case "solar-cell-mask", "solar-energy-readout-mask", "tree-collection-mask" ->
+               graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF202629);
+            case "solar-energy-bar" -> this.drawArtworkEnergyMeter(
+               graphics, left, top, panel.width(), panel.height(), menu.energyStored(), menu.energyCapacity()
+            );
+            case "tree-status-mask" -> graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF102015);
+            case "inventory-panel" -> {
+               graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF5D6263);
+               graphics.fill(left, top, left + panel.width(), top + 2, 0xFF74797A);
+               graphics.fill(left, top + panel.height() - 2, left + panel.width(), top + panel.height(), 0xFF444A4B);
+            }
+            default -> {
+            }
+         }
+      }
+   }
+
+   private void drawArtworkEnergyMeter(GuiGraphics graphics, int x, int y, int width, int height, int stored, int capacity) {
+      int innerWidth = Math.max(0, width - 4);
+      int fill = capacity > 0 ? Mth.clamp((int)((long)Math.max(0, stored) * innerWidth / capacity), 0, innerWidth) : 0;
+      graphics.fill(x, y, x + width, y + height, 0xFF17191A);
+      graphics.fill(x + 1, y + 1, x + width - 1, y + height - 1, 0xFF33291A);
+      graphics.fill(x + 2, y + 2, x + 2 + fill, y + height - 2, 0xFFF2A432);
+      if (fill > 1) {
+         graphics.fill(x + 2, y + 2, x + 2 + fill, y + 3, 0xFFFFD06A);
+      }
+   }
+
+   private void drawArtworkLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      MachineLayout layout = menu.layout();
+      this.drawTinyString(
+         graphics,
+         Component.translatable("container.inventory").getString(),
+         layout.playerInventoryX(),
+         layout.playerInventoryY() - 10,
+         92,
+         TEXT,
+         false
+      );
+
+      for (MachineLayout.Panel panel : layout.panels()) {
+         if (panel.label().equals("solar-energy-readout-mask")) {
+            this.drawTinyString(
+               graphics,
+               menu.energyStored() + " / " + menu.energyCapacity() + " FE",
+               panel.x() + 1,
+               panel.y() + 5,
+               panel.width() - 2,
+               TEXT,
+               false
+            );
+         } else if (panel.label().equals("solar-comparator")) {
+            this.drawTinyString(graphics, "Cmp " + menu.comparatorOutput(), panel.x(), panel.y(), panel.width(), MUTED, false);
+         } else if (panel.label().equals("tree-comparator")) {
+            this.drawTinyCenteredString(
+               graphics, "Cmp " + menu.comparatorOutput(), panel.x() + panel.width() / 2, panel.y() + 1, panel.width(), 0xFF74E85C
+            );
+         }
+      }
+
+      for (MachineLayout.MachineSlot slot : layout.machineSlots()) {
+         if (slot.role().equals("I/O")) {
+            this.drawTinyCenteredString(graphics, "I/O", slot.x() + 9, slot.y() - 9, 28, TEXT);
+         }
       }
    }
 
