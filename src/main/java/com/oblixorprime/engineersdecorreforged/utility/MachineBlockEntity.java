@@ -1520,12 +1520,18 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield this.comparatorOutput();
                case 5:
                   yield Math.max(this.cooldown, this.burnTicks);
-               case 11:
-                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() & 0x7FFF : 0;
-               case 12:
-                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 15 & 0x7FFF : 0;
-               case 13:
-                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 30 : 0;
+                case 11:
+                   if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
+                      yield SmallFluidFunnelFluidSync.encode(this.fluidType, this.fluidAmount);
+                   } else if (kind == MachineKind.FLUID_BARREL) {
+                      yield this.fluidRegistryId() & 0x7FFF;
+                   } else {
+                      yield 0;
+                   }
+                case 12:
+                   yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 15 & 0x7FFF : 0;
+                case 13:
+                   yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 30 : 0;
                default:
                   yield 0;
             }

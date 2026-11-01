@@ -6,6 +6,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelArtworkMask;
 import com.oblixorprime.engineersdecorreforged.utility.PassiveFluidAccumulatorGauge;
 import com.oblixorprime.engineersdecorreforged.utility.SmallFreezerArtworkMasks;
 import java.text.NumberFormat;
@@ -103,36 +104,41 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             return;
          }
          this.drawOriginalTextureBackdrop(graphics, x, y);
-         MachineKind kind = ((MachineMenu)this.menu).kind();
-         if (kind == MachineKind.SMALL_FREEZER) {
-            this.drawSmallFreezerTexture(graphics, texture, x, y);
-         } else if (usesExplicitTextureDimensions(kind)) {
-            graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-        } else if (((MachineMenu)this.menu).kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
-            GuiTextureBlit geometry = new GuiTextureBlit(this.imageWidth, this.imageHeight, 278, 616, 385, 439, 941, 1672);
-            graphics.blit(
-               texture,
-               x,
-               y,
-               geometry.destinationWidth(),
-               geometry.destinationHeight(),
-               (float)geometry.sourceX(),
-               (float)geometry.sourceY(),
-               geometry.sourceWidth(),
-               geometry.sourceHeight(),
-               geometry.textureWidth(),
-               geometry.textureHeight()
-            );
-         } else {
-            graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
-         }
-         this.drawOriginalWidgets(graphics, texture, x, y);
-         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
-            this.drawBlockBreakerTarget(graphics, x, y);
-         } else if (((MachineMenu)this.menu).kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
-            this.drawPassiveFluidAccumulatorBackgroundOverlays(graphics, x, y);
-         } else if (((MachineMenu)this.menu).kind() == MachineKind.FLUID_BARREL) {
-            this.drawFluidBarrelWidgets(graphics, x, y);
+            MachineKind kind = ((MachineMenu)this.menu).kind();
+            if (kind == MachineKind.SMALL_FREEZER) {
+                this.drawSmallFreezerTexture(graphics, texture, x, y);
+            } else if (usesExplicitTextureDimensions(kind)) {
+                graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+            } else if (kind == MachineKind.SMALL_FLUID_FUNNEL
+                    || kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+                GuiTextureBlit geometry = kind == MachineKind.SMALL_FLUID_FUNNEL
+                    ? GuiTextureBlit.stretchFullTexture(this.imageWidth, this.imageHeight, 385, 439)
+                    : new GuiTextureBlit(this.imageWidth, this.imageHeight, 278, 616, 385, 439, 941, 1672);
+                graphics.blit(
+                    texture,
+                    x,
+                    y,
+                    geometry.destinationWidth(),
+                    geometry.destinationHeight(),
+                    (float)geometry.sourceX(),
+                    (float)geometry.sourceY(),
+                    geometry.sourceWidth(),
+                    geometry.sourceHeight(),
+                    geometry.textureWidth(),
+                    geometry.textureHeight()
+                );
+            } else {
+                graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
+            }
+            this.drawOriginalWidgets(graphics, texture, x, y);
+            if (kind == MachineKind.SMALL_BLOCK_BREAKER) {
+                this.drawBlockBreakerTarget(graphics, x, y);
+            } else if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
+                this.drawSmallFluidFunnelBackgroundOverlays(graphics, x, y);
+            } else if (kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
+                this.drawPassiveFluidAccumulatorBackgroundOverlays(graphics, x, y);
+            } else if (kind == MachineKind.FLUID_BARREL) {
+                this.drawFluidBarrelWidgets(graphics, x, y);
          }
       } else {
          this.drawFrame(graphics, x, y);
@@ -155,6 +161,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          this.drawSmallMilkingMachineLabels(graphics);
       } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          this.drawBlockBreakerLabels(graphics);
+       } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+          this.drawSmallFluidFunnelLabels(graphics);
        } else if (((MachineMenu)this.menu).kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
           this.drawPassiveFluidAccumulatorLabels(graphics);
        } else if (((MachineMenu)this.menu).kind() == MachineKind.FLUID_BARREL) {
@@ -1227,11 +1235,16 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
-      Component accumulatorTooltip = this.passiveFluidAccumulatorTooltip(mouseX, mouseY);
-      if (accumulatorTooltip != null) {
-         graphics.renderTooltip(this.font, accumulatorTooltip, mouseX, mouseY);
-         return;
-      }
+        Component funnelTooltip = this.smallFluidFunnelTooltip(mouseX, mouseY);
+        if (funnelTooltip != null) {
+            graphics.renderTooltip(this.font, funnelTooltip, mouseX, mouseY);
+            return;
+        }
+        Component accumulatorTooltip = this.passiveFluidAccumulatorTooltip(mouseX, mouseY);
+        if (accumulatorTooltip != null) {
+            graphics.renderTooltip(this.font, accumulatorTooltip, mouseX, mouseY);
+            return;
+        }
 
       Component fluidBarrelTooltip = this.fluidBarrelTooltip(mouseX, mouseY);
       if (fluidBarrelTooltip != null) {
@@ -1297,11 +1310,16 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case FACTORY_PLACER -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_placer.slots.blocks");
          case SMALL_LAB_FURNACE -> this.labFurnaceSlotTooltip(slot.containerIndex());
          case SMALL_ELECTRICAL_FURNACE -> this.electricalFurnaceSlotTooltip(slot.containerIndex());
-          case PASSIVE_FLUID_ACCUMULATOR -> Component.translatable(
-             slot.containerIndex() == 0
-                ? "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.input"
-                : "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.output"
-          );
+            case SMALL_FLUID_FUNNEL -> Component.translatable(
+                slot.containerIndex() == 0
+                    ? "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input"
+                    : "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output"
+            );
+            case PASSIVE_FLUID_ACCUMULATOR -> Component.translatable(
+                slot.containerIndex() == 0
+                    ? "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.input"
+                    : "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.bucket.output"
+            );
           case SMALL_FREEZER -> this.smallFreezerSlotTooltip(slot.containerIndex());
          case METAL_CRAFTING_TABLE -> this.metalCraftingTableSlotTooltip(slot.containerIndex());
          case SMALL_WASTE_INCINERATOR -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_waste_incinerator.slots.queue");
@@ -1563,6 +1581,115 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x + 2, y + height - 1 - fill, x + width - 2, y + height - 2, -11753768);
       graphics.fill(x + 2, y + 2, x + width - 2, y + 6, 1442840575);
    }
+
+   private void drawSmallFluidFunnelBackgroundOverlays(GuiGraphics graphics, int x0, int y0) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      int mask = 0xFF202629;
+
+      for (MachineLayout.MachineSlot slot : menu.layout().machineSlots()) {
+         graphics.fill(x0 + slot.x(), y0 + slot.y(), x0 + slot.x() + 18, y0 + slot.y() + 18, mask);
+      }
+
+      // Cover the complete printed bucket art while keeping each illustration's outer metal bezel visible.
+      for (SmallFluidFunnelArtworkMask bucketMask : SmallFluidFunnelArtworkMask.sampleBucketMasks()) {
+         graphics.fill(x0 + bucketMask.left(), y0 + bucketMask.top(), x0 + bucketMask.right(), y0 + bucketMask.bottom(), mask);
+      }
+
+      graphics.fill(x0 + 21, y0 + 63, x0 + 66, y0 + 76, mask);
+      graphics.fill(x0 + 143, y0 + 63, x0 + 188, y0 + 76, mask);
+      graphics.fill(x0 + 80, y0 + 80, x0 + 131, y0 + 91, mask);
+      graphics.fill(x0 + 72, y0 + 91, x0 + 140, y0 + 102, mask);
+      graphics.fill(x0 + 122, y0 + 124, x0 + 185, y0 + 138, mask);
+      graphics.fill(x0 + 23, y0 + 139, x0 + 77, y0 + 151, mask);
+
+      int tankLeft = x0 + 79;
+      int tankTop = y0 + 105;
+      int tankRight = x0 + 132;
+      int tankBottom = y0 + 119;
+      graphics.fill(tankLeft, tankTop, tankRight, tankBottom, 0xFF142028);
+
+      int capacity = Math.max(1, menu.fluidCapacity());
+      int fill = Mth.clamp((int)((long)Math.max(0, menu.fluidAmount()) * (tankBottom - tankTop - 2) / capacity), 0, tankBottom - tankTop - 2);
+      int fluidCode = menu.smallFluidFunnelFluidCode();
+      if (fill > 0 && fluidCode > 0) {
+         int fluidTop = tankBottom - 1 - fill;
+         graphics.fill(tankLeft + 1, fluidTop, tankRight - 1, tankBottom - 1, this.smallFluidFunnelFluidColor(fluidCode));
+         graphics.fill(tankLeft + 2, fluidTop, tankRight - 2, fluidTop + 1, 0x99FFFFFF);
+      }
+   }
+
+   private void drawSmallFluidFunnelLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input").getString(),
+         43, 66, 45, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output").getString(),
+         165, 66, 48, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         this.smallFluidFunnelFluidName(menu.smallFluidFunnelFluidCode()).getString(),
+         105, 82, 78, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable(
+            "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.amount",
+            menu.fluidAmount(), menu.fluidCapacity()
+         ).getString(),
+         105, 93, 78, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output").getString(),
+         154, 126, 65, TEXT
+      );
+      this.drawTinyString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory").getString(),
+         27, 141, 60, TEXT, false
+      );
+   }
+
+   private Component smallFluidFunnelTooltip(double mouseX, double mouseY) {
+      if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_FLUID_FUNNEL || !this.isHovering(73, 102, 65, 21, mouseX, mouseY)) {
+         return null;
+      }
+
+      MachineMenu menu = (MachineMenu)this.menu;
+      return Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.tank.tooltip",
+         this.smallFluidFunnelFluidName(menu.smallFluidFunnelFluidCode()),
+         menu.fluidAmount(),
+         menu.fluidCapacity()
+      );
+   }
+
+   private Component smallFluidFunnelFluidName(int code) {
+      String state = switch (code) {
+         case 1 -> "water";
+         case 2 -> "lava";
+         case 3 -> "milk";
+         case 4 -> "other";
+         default -> "empty";
+      };
+      return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid." + state);
+   }
+
+   private int smallFluidFunnelFluidColor(int code) {
+      return switch (code) {
+         case 1 -> 0xFF3F76E4;
+         case 2 -> 0xFFF06A28;
+         case 3 -> 0xFFE6E1D5;
+         case 4 -> 0xFF8296A0;
+         default -> 0xFF142028;
+      };
+   }
+
 
    private void drawFluidBarrelWidgets(GuiGraphics graphics, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
