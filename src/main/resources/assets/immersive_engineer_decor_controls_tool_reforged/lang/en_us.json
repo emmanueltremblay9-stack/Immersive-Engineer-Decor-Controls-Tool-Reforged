@@ -965,5 +965,13 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.redstone": "HIGH stops work and resets progress. LOW permits work only when existing conditions are met.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.energy": "Stored FE: %1$s of %2$s FE capacity.",
   "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.input": "FE is accepted from the bottom face only, up to 256 FE per tick.",
-  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.status": "Current state: %1$s. %2$s"
+  "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.tooltip.status": "Current state: %1$s. %2$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Milk",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line2": "collection",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.tank": "Tank",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.output": "Milk",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.inventory": "Inventory",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.tank": "Stored milk: %1$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.bucket": "Bucket input",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Milk output"
 }
