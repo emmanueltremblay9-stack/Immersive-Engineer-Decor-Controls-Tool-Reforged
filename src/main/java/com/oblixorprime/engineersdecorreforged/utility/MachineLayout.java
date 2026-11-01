@@ -241,9 +241,9 @@ public record MachineLayout(
       return new MachineLayout(
          209,
          238,
-         18,
+         24,
          150,
-         18,
+         24,
          205,
          List.of(
             new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket", false),

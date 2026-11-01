@@ -589,8 +589,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x0 + 137, y0 + 86, x0 + 197, y0 + 97, dark);
       graphics.fill(x0 + 132, y0 + 43, x0 + 198, y0 + 66, dark);
       graphics.fill(x0 + 17, y0 + 142, x0 + 78, y0 + 152, dark);
-      graphics.fill(x0 + 27, y0 + 108, x0 + 46, y0 + 126, 0xFF22292D);
-      graphics.fill(x0 + 149, y0 + 108, x0 + 169, y0 + 126, 0xFF22292D);
+      graphics.fill(x0 + 27, y0 + 102, x0 + 46, y0 + 126, 0xFF22292D);
+      graphics.fill(x0 + 149, y0 + 102, x0 + 169, y0 + 126, 0xFF22292D);
 
       int tankLeft = x0 + 82;
       int tankTop = y0 + 74;
@@ -605,6 +605,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          graphics.fill(tankLeft + 1, fluidTop, tankRight - 1, tankBottom - 1, 0xFF218CCB);
          graphics.fill(tankLeft + 2, fluidTop, tankRight - 2, fluidTop + 1, 0xFF65C7EF);
       }
+
+      // Replace the illustrative grid with cells matching the menu's actual 18-pixel player-slot lattice.
+      graphics.fill(x0 + 21, y0 + 149, x0 + 188, y0 + 224, 0xFF25292D);
+      this.drawPlayerSlots(graphics, menu.layout(), x0, y0);
    }
 
    private void drawPassiveFluidAccumulatorLabels(GuiGraphics graphics) {

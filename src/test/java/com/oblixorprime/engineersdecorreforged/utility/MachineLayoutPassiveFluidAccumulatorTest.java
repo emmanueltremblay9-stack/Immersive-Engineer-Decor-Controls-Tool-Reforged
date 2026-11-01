@@ -12,10 +12,13 @@ public class MachineLayoutPassiveFluidAccumulatorTest {
 
       assertEquals(209, layout.imageWidth());
       assertEquals(238, layout.imageHeight());
-      assertEquals(18, layout.playerInventoryX());
+      assertEquals(24, layout.playerInventoryX());
       assertEquals(150, layout.playerInventoryY());
-      assertEquals(18, layout.hotbarX());
+      assertEquals(24, layout.hotbarX());
       assertEquals(205, layout.hotbarY());
+      assertEquals(layout.playerInventoryX(), layout.hotbarX());
+      assertEquals(185, layout.playerInventoryX() + 8 * 18 + 17);
+      assertEquals(223, layout.hotbarY() + 18);
       assertEquals(2, layout.machineSlots().size());
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
       assertFalse(layout.machineSlots().get(0).output());

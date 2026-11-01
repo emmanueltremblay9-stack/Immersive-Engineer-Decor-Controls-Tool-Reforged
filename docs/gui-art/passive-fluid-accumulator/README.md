@@ -13,6 +13,7 @@
 - The runtime texture is a byte-for-byte copy of the canonical PNG. The client blits source region (278,616,385,439) from the full 941×1672 texture onto a 209×238 logical canvas. Source and destination dimensions remain separate; tests check source bounds and mapping.
 - Existing machine behavior and server synchronization are unchanged. MachineMenu already receives exact fluid amount in data field 2 and reports 4000 mB capacity. Only water is supported by the existing accumulator logic.
 - Machine item slots remain container indices 0 (empty bucket input) and 1 (filled water bucket output); their positions are fitted to the two illustrated frames. Output behavior is stored separately from the role text, so localized labels cannot change slot validation or shift-click semantics. Player inventory remains 27 slots plus 9 hotbar slots.
+- The reference's illustrative 9×4 inventory grid is covered and redrawn on the same 18-pixel lattice as the real menu slots, at x=24. Full example bucket sprites are masked before the live slots render.
 - The static sample amount and blue tank fill are covered by the server-backed value and proportional water fill. Bucket illustrations, sample labels, and inventory caption are covered by actual localized labels or the interactive slots. The passive collection/rain artwork remains explanatory and adds no state or mechanic.
 
 ## Toolkit proof and visual QA status
