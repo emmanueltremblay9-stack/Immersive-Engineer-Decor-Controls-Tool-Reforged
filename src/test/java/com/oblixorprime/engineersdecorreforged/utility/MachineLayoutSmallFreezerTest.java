@@ -31,4 +31,23 @@ public class MachineLayoutSmallFreezerTest {
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
       assertEquals("small_water_freezer/background", layout.textureName());
    }
+
+   @Test
+   public void runtimeArtworkMasksCoverTheIllustrativeItemsAtTheLogicalCanvasScale() {
+      java.util.List<SmallFreezerArtworkMasks.MaskRegion> masks = SmallFreezerArtworkMasks.regions(209, 235);
+
+      assertEquals(2, masks.size());
+      assertEquals(28, masks.get(0).x());
+      assertEquals(64, masks.get(0).y());
+      assertEquals(22, masks.get(0).width());
+      assertEquals(21, masks.get(0).height());
+      assertEquals(161, masks.get(1).x());
+      assertEquals(64, masks.get(1).y());
+      assertEquals(22, masks.get(1).width());
+      assertEquals(22, masks.get(1).height());
+      assertTrue(masks.get(0).right() <= 209);
+      assertTrue(masks.get(1).right() <= 209);
+      assertTrue(masks.get(0).bottom() <= 235);
+      assertTrue(masks.get(1).bottom() <= 235);
+   }
 }

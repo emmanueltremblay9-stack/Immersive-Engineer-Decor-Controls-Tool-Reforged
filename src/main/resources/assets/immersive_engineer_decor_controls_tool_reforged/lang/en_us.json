@@ -221,6 +221,7 @@
   "block.immersive_engineer_decor_controls_tool_reforged.small_solar_panel": "Small Solar Panel",
   "block.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.help": "Produces a small amount of power\n when exposed to sunlight. Useful\n for charging LF capacitors in remote\n systems with low consumption. The\n internal charge pump circuit\n accumulates and frequently\n transfers RF. Production depends\n on day time and the weather.\nClick to see State Of Charge,\n production, and progress.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.status": "SOC: %1$s%% of %2$sRF§r | producing %3$sRF/t | feeding %4$sRF/t",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.energy_tooltip": "Stored: %1$s / %2$s FE; server display updates in %3$s FE steps.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_tree_cutter": "Small Tree Cutter",
   "block.immersive_engineer_decor_controls_tool_reforged.small_tree_cutter.help": "Cuts grown trees in front of its working face. It does not collect the drops. Disable it with a redstone signal.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_tree_cutter.status": "SOC: %1$s%% of %2$sRF§r | progress: %3$s%% (%4$ss)",
