@@ -54,4 +54,17 @@ public class MachineLayoutSmallFreezerTest {
       assertTrue(masks.get(0).bottom() <= 235);
       assertTrue(masks.get(1).bottom() <= 235);
    }
+
+   @Test
+   public void everySlotFrameIntersectingArtworkMasksIsRedrawnAfterMasking() {
+      MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_FREEZER);
+
+      java.util.List<MachineLayout.MachineSlot> intersected =
+         SmallFreezerArtworkMasks.slotsIntersectingMasks(layout, layout.imageWidth(), layout.imageHeight());
+
+      assertEquals(
+         java.util.List.of(0, 1, 2),
+         intersected.stream().map(MachineLayout.MachineSlot::containerIndex).toList()
+      );
+   }
 }
