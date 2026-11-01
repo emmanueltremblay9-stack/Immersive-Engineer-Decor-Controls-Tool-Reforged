@@ -289,7 +289,6 @@ jobs:
             build/client-gameplay-*/run/client-gameplay-result.json
             build/client-gameplay-*/run/client-smelter-gui-result.json
             build/client-gameplay-*/run/smelter-gui-screenshots/*.png
-            build/client-gameplay-*/run/logs/latest.log
           if-no-files-found: error
           retention-days: 14
 
