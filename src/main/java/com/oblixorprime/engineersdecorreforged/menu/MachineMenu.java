@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import java.util.Locale;
+import java.util.function.IntFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -144,15 +145,19 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high) {
+      return decodeStoredFluid(kind, amount, low, middle, high, BuiltInRegistries.FLUID.size(), BuiltInRegistries.FLUID::byId);
+   }
+
+   static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high, int registrySize, IntFunction<Fluid> fluidById) {
       if (kind != MachineKind.FLUID_BARREL || amount <= 0) {
          return Fluids.EMPTY;
       }
 
       int registryId = (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
-      if (registryId < 0 || registryId >= BuiltInRegistries.FLUID.size()) {
+      if (registryId < 0 || registryId >= registrySize) {
          return Fluids.EMPTY;
       }
-      Fluid fluid = BuiltInRegistries.FLUID.byId(registryId);
+      Fluid fluid = fluidById.apply(registryId);
       return fluid == null ? Fluids.EMPTY : fluid;
    }
 
