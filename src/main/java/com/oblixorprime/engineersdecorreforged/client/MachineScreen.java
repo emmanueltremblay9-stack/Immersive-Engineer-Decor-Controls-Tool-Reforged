@@ -68,11 +68,17 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
             graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
          } else {
-            graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
+            if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+               graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, 385, 439);
+            } else {
+               graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight);
+            }
          }
          this.drawOriginalWidgets(graphics, texture, x, y);
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
             this.drawBlockBreakerTarget(graphics, x, y);
+         } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+            this.drawSmallFluidFunnelBackgroundOverlays(graphics, x, y);
          }
       } else {
          this.drawFrame(graphics, x, y);
@@ -93,6 +99,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          this.drawBlockBreakerLabels(graphics);
+      } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_FLUID_FUNNEL) {
+         this.drawSmallFluidFunnelLabels(graphics);
       } else if (layout.style() != MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          this.drawBoundedString(graphics, this.profile.title(), this.titleLabelX, this.titleLabelY, this.imageWidth - this.titleLabelX - 6, -1646126, false);
          this.drawTinyString(graphics, "Inv", this.inventoryLabelX, this.inventoryLabelY + 1, 28, -3949142, false);
@@ -816,6 +824,12 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void renderMachineTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+      Component funnelTooltip = this.smallFluidFunnelTooltip(mouseX, mouseY);
+      if (funnelTooltip != null) {
+         graphics.renderTooltip(this.font, funnelTooltip, mouseX, mouseY);
+         return;
+      }
+
       Component blockBreakerTooltip = this.blockBreakerTooltip(mouseX, mouseY);
       if (blockBreakerTooltip != null) {
          graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);
@@ -846,6 +860,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          case FACTORY_PLACER -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.factory_placer.slots.blocks");
          case SMALL_LAB_FURNACE -> this.labFurnaceSlotTooltip(slot.containerIndex());
          case SMALL_ELECTRICAL_FURNACE -> this.electricalFurnaceSlotTooltip(slot.containerIndex());
+         case SMALL_FLUID_FUNNEL -> Component.translatable(
+            slot.containerIndex() == 0
+               ? "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input"
+               : "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output"
+         );
          case METAL_CRAFTING_TABLE -> this.metalCraftingTableSlotTooltip(slot.containerIndex());
          case SMALL_WASTE_INCINERATOR -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_waste_incinerator.slots.queue");
          default -> Component.literal(slot.role());
@@ -1062,6 +1081,107 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x + 1, y + 1, x + width - 1, y + height - 1, -14276310);
       graphics.fill(x + 2, y + height - 1 - fill, x + width - 2, y + height - 2, -11753768);
       graphics.fill(x + 2, y + 2, x + width - 2, y + 6, 1442840575);
+   }
+
+   private void drawSmallFluidFunnelBackgroundOverlays(GuiGraphics graphics, int x0, int y0) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      int mask = 0xFF202629;
+
+      for (MachineLayout.MachineSlot slot : menu.layout().machineSlots()) {
+         graphics.fill(x0 + slot.x(), y0 + slot.y(), x0 + slot.x() + 18, y0 + slot.y() + 18, mask);
+      }
+
+      graphics.fill(x0 + 21, y0 + 63, x0 + 66, y0 + 76, mask);
+      graphics.fill(x0 + 143, y0 + 63, x0 + 188, y0 + 76, mask);
+      graphics.fill(x0 + 80, y0 + 80, x0 + 131, y0 + 91, mask);
+      graphics.fill(x0 + 72, y0 + 91, x0 + 140, y0 + 102, mask);
+      graphics.fill(x0 + 122, y0 + 124, x0 + 185, y0 + 138, mask);
+      graphics.fill(x0 + 23, y0 + 139, x0 + 77, y0 + 151, mask);
+
+      int tankLeft = x0 + 79;
+      int tankTop = y0 + 105;
+      int tankRight = x0 + 132;
+      int tankBottom = y0 + 119;
+      graphics.fill(tankLeft, tankTop, tankRight, tankBottom, 0xFF142028);
+
+      int capacity = Math.max(1, menu.fluidCapacity());
+      int fill = Mth.clamp((int)((long)Math.max(0, menu.fluidAmount()) * (tankBottom - tankTop - 2) / capacity), 0, tankBottom - tankTop - 2);
+      int fluidCode = menu.smallFluidFunnelFluidCode();
+      if (fill > 0 && fluidCode > 0) {
+         int fluidTop = tankBottom - 1 - fill;
+         graphics.fill(tankLeft + 1, fluidTop, tankRight - 1, tankBottom - 1, this.smallFluidFunnelFluidColor(fluidCode));
+         graphics.fill(tankLeft + 2, fluidTop, tankRight - 2, fluidTop + 1, 0x99FFFFFF);
+      }
+   }
+
+   private void drawSmallFluidFunnelLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input").getString(),
+         43, 66, 45, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output").getString(),
+         165, 66, 48, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         this.smallFluidFunnelFluidName(menu.smallFluidFunnelFluidCode()).getString(),
+         105, 82, 78, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable(
+            "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.amount",
+            menu.fluidAmount(), menu.fluidCapacity()
+         ).getString(),
+         105, 93, 78, TEXT
+      );
+      this.drawTinyCenteredString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output").getString(),
+         154, 126, 65, TEXT
+      );
+      this.drawTinyString(
+         graphics,
+         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory").getString(),
+         27, 141, 60, TEXT, false
+      );
+   }
+
+   private Component smallFluidFunnelTooltip(double mouseX, double mouseY) {
+      if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_FLUID_FUNNEL || !this.isHovering(73, 102, 65, 21, mouseX, mouseY)) {
+         return null;
+      }
+
+      MachineMenu menu = (MachineMenu)this.menu;
+      return Component.translatable(
+         "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.tank.tooltip",
+         this.smallFluidFunnelFluidName(menu.smallFluidFunnelFluidCode()),
+         menu.fluidAmount(),
+         menu.fluidCapacity()
+      );
+   }
+
+   private Component smallFluidFunnelFluidName(int code) {
+      String state = switch (code) {
+         case 1 -> "water";
+         case 2 -> "lava";
+         case 3 -> "milk";
+         default -> "empty";
+      };
+      return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.fluid." + state);
+   }
+
+   private int smallFluidFunnelFluidColor(int code) {
+      return switch (code) {
+         case 1 -> 0xFF3F76E4;
+         case 2 -> 0xFFF06A28;
+         case 3 -> 0xFFE6E1D5;
+         default -> 0xFF142028;
+      };
    }
 
    private void drawSolarCells(GuiGraphics graphics, int x, int y) {

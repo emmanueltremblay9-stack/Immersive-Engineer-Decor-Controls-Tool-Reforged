@@ -28,6 +28,10 @@ Source reference:
 
 - BluSunrize and Immersive Engineering contributors: Immersive Engineering, required at runtime. This fork depends on IE for referenced industrial assets, manual behavior, and FE compatibility; IE remains a separate upstream project under its own license.
 
+## User-provided GUI artwork
+
+- Small Fluid Funnel reference artwork supplied by the repository owner for this integration. The Toolkit code is MIT-licensed at the pinned commit, but no separate artwork license statement was supplied; this attribution records provenance without claiming a separate license.
+
 ## Reviewed fluidlogging reference
 
 - Leximon, NightEpiphany / MoreThanHidden, and KoalaNalle / PricelessKoala:

@@ -4,6 +4,7 @@ import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import com.oblixorprime.engineersdecorreforged.utility.SmallFluidFunnelFluidSync;
 import java.util.Locale;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -135,6 +136,12 @@ public class MachineMenu extends AbstractContainerMenu {
          case PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE, SMALL_MINERAL_SMELTER -> DEFAULT_FLUID_CAPACITY;
          default -> 0;
       };
+   }
+
+   public int smallFluidFunnelFluidCode() {
+      return this.kind == MachineKind.SMALL_FLUID_FUNNEL
+         ? SmallFluidFunnelFluidSync.normalize(this.data.get(11))
+         : 0;
    }
 
    public int energyStored() {
