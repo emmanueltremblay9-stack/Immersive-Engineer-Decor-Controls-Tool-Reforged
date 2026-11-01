@@ -950,5 +950,19 @@
   "block.immersive_engineer_decor_controls_tool_reforged.raised_steel_catwalk_stairs": "Raised Steel Catwalk Stair",
   "block.immersive_engineer_decor_controls_tool_reforged.vertical_steel_double_t_support": "Vertical Steel Double T Support",
   "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam": "Treated Wood Beam",
-  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam.help": "Straight treated-wood pole profile. Wall edges select horizontal or vertical placement; centre and ties select vertical. No crafting recipe is defined yet."
+  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam.help": "Straight treated-wood pole profile. Wall edges select horizontal or vertical placement; centre and ties select vertical. No crafting recipe is defined yet.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.redstone.unknown": "UNKNOWN",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.mode_queued": "MODE QUEUED",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.surface.unknown": "HEAT UNKNOWN",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.thermal.unknown": "--  UNKNOWN",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.batch.idle": "BATCH: --",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.pending": "request pending",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.energy_capacity": "/ %1$s FE",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.unknown": "--",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.syncing": "SYNCING",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.batch.progress": "BATCH: %1$s %2$s%%",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.accessible_timeout": "Machine status: %1$s; mode request timed out.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.rejected": "REQUEST REJECTED — %1$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.accessible_rejected": "Machine status: %1$s; mode request rejected.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.timeout": "REQUEST TIMED OUT — %1$s"
 }

@@ -24,3 +24,9 @@ Status: DRAFT GUI IMPLEMENTATION stacked on the Small Mineral Smelter Hybrid PR 
 Validate compilation, resources, unit tests and GameTests at the exact PR head. Client screenshots are still needed at multiple GUI scales for font legibility, output drawer, mode hit targets, shift-click, keyboard input, asset alignment and resource-pack loading. FE/cable, fluid and item automation, save migration and gameplay balancing remain outside this UI-only patch and are NOT_PERFORMED until directly tested.
 
 Using the v0.5 source asset does not prove pixel-perfect rendered output: the UI downsamples the source and paints live overlays. The mechanical contract v0.4 and its numbers remain PROPOSED. This PR must remain Draft, with no merge, tag, release or publication.
+
+## Implemented v0.5 projection adapter
+
+The dependent GUI PR now supplies a dedicated 17-field ContainerData: fields 0–15 retain the meanings and stable status enum in docs/INTEGRATION.md; field 16 is a lot-progress extension for the v0.4 mechanics proposal. It does not reuse the legacy 16-field bus. Mode selection uses the v0.5 client-to-server SmelterModePayload(menuId, expectedRevision, modeId), and the server validates the open menu, range, block, player state, enum and revision. Client clicks remain disabled until synchronized and while one request awaits a revision update; the server permits at most one accepted mode request per game tick, and stale/rejected or timed-out requests receive localized feedback.
+
+The GUI work is tracked in the visual review evidence at small-mineral-smelter-v05-visual-review.md. The package previews and canonical PNG are included there. Full-image Toolkit JSON/CLI reproduction and native Minecraft visual validation remain open gates.

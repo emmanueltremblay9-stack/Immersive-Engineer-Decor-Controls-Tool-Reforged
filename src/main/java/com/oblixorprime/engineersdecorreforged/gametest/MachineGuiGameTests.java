@@ -182,7 +182,8 @@ public final class MachineGuiGameTests {
 
       for (MachineGuiGameTests.MachineEntry entry : MACHINE_ENTRIES) {
          MachineBlockEntity machine = placeMachine(helper, entry.block(), entry.kind());
-         MachineMenu menu = new MachineMenu(entry.kind(), 0, player.getInventory(), machine, new SimpleContainerData(16));
+         MachineMenu menu = new MachineMenu(entry.kind(), 0, player.getInventory(), machine,
+            new SimpleContainerData(entry.kind() == MachineKind.SMALL_MINERAL_SMELTER ? MachineMenu.SMALL_MINERAL_SMELTER_V05_DATA_COUNT : MachineMenu.DATA_COUNT));
          helper.assertValueEqual(entry.kind(), menu.kind(), entry.kind().registryName() + " menu should sync the matching machine kind");
          helper.assertValueEqual(
             (MenuType)ModMenus.typeFor(entry.kind()).get(), menu.getType(), entry.kind().registryName() + " should use its dedicated machine menu type"
@@ -385,7 +386,7 @@ public final class MachineGuiGameTests {
    public static void shift_click_does_not_merge_player_items_into_output_slots(GameTestHelper helper) {
       Player player = helper.makeMockPlayer(GameType.SURVIVAL);
       MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
-      MachineMenu menu = new MachineMenu(MachineKind.SMALL_MINERAL_SMELTER, 10, player.getInventory(), machine, machine.dataAccessForTests());
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_MINERAL_SMELTER, 10, player.getInventory(), machine, machine.mineralSmelterUiDataAccessForTests());
       machine.setItem(2, new ItemStack(Items.MAGMA_BLOCK));
       player.getInventory().setItem(9, new ItemStack(Items.MAGMA_BLOCK, 5));
       ItemStack refused = menu.quickMoveStack(player, menu.visibleMachineSlots());
@@ -1025,6 +1026,69 @@ public final class MachineGuiGameTests {
       helper.assertValueEqual(0, top.getFluidInTank(0).getAmount(), "Obsidian conversion debits 1000 mB once");
       helper.assertTrue(machine.getItem(0).isEmpty(), "direct lava-to-obsidian uses no free mineral");
       helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 180)
+   public static void small_mineral_smelter_v05_projection_and_mode_requests_use_dedicated_fields(GameTestHelper helper) {
+      MachineBlockEntity machine = placeMachine(helper, ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER);
+      var data = machine.mineralSmelterUiDataAccessForTests();
+      helper.assertValueEqual(17, data.getCount(), "v0.5 fields 0-15 and the explicit lot-progress extension are present");
+      helper.assertValueEqual(3, data.get(0), "flags advertise synchronized data and supported mode selection");
+      helper.assertValueEqual(0, data.get(1), "revision is field 1");
+      helper.assertValueEqual(0, data.get(2), "selected mode is field 2");
+      helper.assertValueEqual(-1, data.get(3), "inactive batch mode stays unknown");
+      helper.assertValueEqual(-1, data.get(4), "no queued mode uses -1");
+      helper.assertValueEqual(0, data.get(5), "thermal begins at its actual cold value");
+      helper.assertValueEqual(0, data.get(6), "phase is field 6");
+      helper.assertValueEqual(0, data.get(7), "tank amount is field 7");
+      helper.assertValueEqual(4000, data.get(8), "tank capacity is field 8");
+      helper.assertValueEqual(0, data.get(9), "stored FE is field 9");
+      helper.assertValueEqual(16000, data.get(10), "FE capacity is field 10");
+      helper.assertValueEqual(0, data.get(11), "FE rate is the actual measured rate");
+      helper.assertValueEqual(0, data.get(12), "redstone is field 12");
+      helper.assertValueEqual(0, data.get(13), "comparator is field 13");
+      helper.assertValueEqual(0, data.get(14), "server hazard is field 14");
+      helper.assertValueEqual(9, data.get(15), "ready maps to the v0.5 stable status");
+      helper.assertValueEqual(-1, data.get(16), "inactive batch progress remains unknown");
+
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      MachineMenu menu = new MachineMenu(MachineKind.SMALL_MINERAL_SMELTER, 80, player.getInventory(), machine, data);
+      player.containerMenu = menu;
+      menu.handleAction(player, 31, 1, 0);
+      helper.assertValueEqual(0, data.get(1), "legacy generic action 31 cannot change Smelter mode");
+      helper.assertTrue(!menu.clickMenuButton(player, 1), "vanilla menu buttons cannot bypass the dedicated payload");
+      helper.assertTrue(!menu.handleMineralModeRequest(player, 0, 3), "unsupported mode IDs are rejected");
+      helper.assertTrue(menu.handleMineralModeRequest(player, 0, 1), "current valid mode request is accepted by the server");
+      helper.assertValueEqual(1, data.get(1), "accepted mode request advances the revision");
+      helper.assertValueEqual(1, data.get(2), "selected mode is projected from the server");
+      helper.assertValueEqual(-1, data.get(4), "uncommitted request does not fabricate a queued batch");
+
+      machine.setItem(0, new ItemStack(Items.COBBLESTONE));
+      machine.energyStorage(null).receiveEnergy(16000, false);
+      tickMachine(helper, machine, 100);
+      helper.assertValueEqual(1, data.get(3), "active batch retains the selected Magma mode");
+      helper.assertValueEqual(10, menu.progress(), "the extension reports active lot progress");
+      helper.assertValueEqual(10, data.get(5), "thermal field reports server temperature");
+      helper.assertValueEqual(1, data.get(6), "phase is independently projected");
+      helper.assertValueEqual(14400, data.get(9), "stored FE is field 9");
+      helper.assertValueEqual(16, data.get(11), "FE rate is last actual paid tick rate");
+      helper.assertValueEqual(1, data.get(14), "hazard is server-confirmed");
+      helper.assertValueEqual(1, data.get(15), "heating uses the v0.5 stable status");
+
+      helper.runAfterDelay(1L, () -> {
+         helper.assertTrue(!menu.handleMineralModeRequest(player, 0, 2), "stale revision is rejected");
+         helper.assertTrue(menu.handleMineralModeRequest(player, 1, 2), "current request queues a mode for the next lot");
+         helper.assertValueEqual(1, data.get(3), "an in-flight batch mode is not changed by a GUI request");
+         helper.assertValueEqual(2, data.get(4), "queued mode is field 4");
+         helper.assertValueEqual(2, data.get(1), "the accepted queued request advances the revision");
+         helper.assertTrue(!menu.handleMineralModeRequest(player, 2, 0), "multiple mode requests in one server tick are rate limited");
+         helper.runAfterDelay(1L, () -> {
+            helper.assertTrue(menu.handleMineralModeRequest(player, 2, 0), "a mode request after the server advances one tick is accepted");
+            helper.assertValueEqual(3, data.get(1), "the next-tick mode request advances the revision");
+            menu.removed(player);
+            helper.succeed();
+         });
+      });
    }
 
    @GameTest(template = "empty", timeoutTicks = 1200)
@@ -2735,7 +2799,8 @@ public final class MachineGuiGameTests {
       int expectedCapacity
    ) {
       MachineBlockEntity machine = placeMachineAt(helper, pos, block, kind);
-      MachineMenu menu = new MachineMenu(kind, 1, player.getInventory(), machine, machine.dataAccessForTests());
+      MachineMenu menu = new MachineMenu(kind, 1, player.getInventory(), machine,
+         kind == MachineKind.SMALL_MINERAL_SMELTER ? machine.mineralSmelterUiDataAccessForTests() : machine.dataAccessForTests());
       helper.assertValueEqual(expectedCapacity, menu.energyCapacity(), kind.registryName() + " menu should expose its full FE capacity");
       menu.removed(player);
    }
@@ -2752,7 +2817,8 @@ public final class MachineGuiGameTests {
       IEnergyStorage energyStorage = machine.energyStorage(null);
       helper.assertTrue(energyStorage != null, kind.registryName() + " should expose FE storage");
       helper.assertValueEqual(storedEnergy, energyStorage.receiveEnergy(storedEnergy, false), kind.registryName() + " test setup should charge FE storage");
-      MachineMenu menu = new MachineMenu(kind, 1, player.getInventory(), machine, machine.dataAccessForTests());
+      MachineMenu menu = new MachineMenu(kind, 1, player.getInventory(), machine,
+         kind == MachineKind.SMALL_MINERAL_SMELTER ? machine.mineralSmelterUiDataAccessForTests() : machine.dataAccessForTests());
       helper.assertValueEqual(storedEnergy, menu.energyStored(), kind.registryName() + " menu should expose its synced stored FE");
       menu.removed(player);
    }
@@ -2768,18 +2834,26 @@ public final class MachineGuiGameTests {
       int expectedPercent
    ) {
       MachineBlockEntity machine = placeMachineAt(helper, pos, block, kind);
-      MachineMenu menu = new MachineMenu(kind, 1, player.getInventory(), machine, machine.dataAccessForTests());
-      switch (kind) {
-         case SMALL_LAB_FURNACE, SMALL_ELECTRICAL_FURNACE -> {
-            machine.dataAccessForTests().set(2, elapsed);
-            machine.dataAccessForTests().set(3, total);
+      MachineMenu menu;
+      if (kind == MachineKind.SMALL_MINERAL_SMELTER) {
+         SimpleContainerData guiData = new SimpleContainerData(MachineMenu.SMALL_MINERAL_SMELTER_V05_DATA_COUNT);
+         guiData.set(MachineMenu.SMS_UI_FLAGS, 3);
+         guiData.set(MachineMenu.SMS_UI_BATCH_PROGRESS, elapsed);
+         menu = new MachineMenu(kind, 1, player.getInventory(), machine, guiData);
+      } else {
+         menu = new MachineMenu(kind, 1, player.getInventory(), machine, machine.dataAccessForTests());
+         switch (kind) {
+            case SMALL_LAB_FURNACE, SMALL_ELECTRICAL_FURNACE -> {
+               machine.dataAccessForTests().set(2, elapsed);
+               machine.dataAccessForTests().set(3, total);
+            }
+            case SMALL_BLOCK_BREAKER -> {
+               machine.dataAccessForTests().set(1, elapsed);
+               machine.dataAccessForTests().set(3, total);
+            }
+            case SMALL_FREEZER -> machine.dataAccessForTests().set(1, elapsed);
+            default -> throw new IllegalArgumentException("Unsupported progress test kind " + kind);
          }
-         case SMALL_BLOCK_BREAKER -> {
-            machine.dataAccessForTests().set(1, elapsed);
-            machine.dataAccessForTests().set(3, total);
-         }
-         case SMALL_MINERAL_SMELTER, SMALL_FREEZER -> machine.dataAccessForTests().set(1, elapsed);
-         default -> throw new IllegalArgumentException("Unsupported progress test kind " + kind);
       }
 
       helper.assertValueEqual(expectedPercent, menu.progress(), kind.registryName() + " menu should report normalized progress percent");

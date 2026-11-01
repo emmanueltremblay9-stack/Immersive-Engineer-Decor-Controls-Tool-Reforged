@@ -950,5 +950,19 @@
   "block.immersive_engineer_decor_controls_tool_reforged.raised_steel_catwalk_stairs": "Escalier de passerelle en acier surélevée",
   "block.immersive_engineer_decor_controls_tool_reforged.vertical_steel_double_t_support": "Support en acier double T vertical",
   "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam": "Poutre en bois traité",
-  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam.help": "Profil du poteau droit en bois traité. Sur un mur, le bord cliqué choisit la pose horizontale ou verticale ; centre et égalité donnent une pose verticale. Recette non définie."
+  "block.immersive_engineer_decor_controls_tool_reforged.treated_wood_beam.help": "Profil du poteau droit en bois traité. Sur un mur, le bord cliqué choisit la pose horizontale ou verticale ; centre et égalité donnent une pose verticale. Recette non définie.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.redstone.unknown": "INCONNU",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.mode_queued": "MODE EN ATTENTE",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.surface.unknown": "CHALEUR INCONNUE",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.thermal.unknown": "--  INCONNU",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.batch.idle": "LOT : --",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.mode.pending": "demande en attente",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.energy_capacity": "/ %1$s FE",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.unknown": "--",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.syncing": "SYNCHRONISATION",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.batch.progress": "LOT : %1$s %2$s%%",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.accessible_timeout": "État de la machine : %1$s ; délai de demande du mode dépassé.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.rejected": "DEMANDE REFUSÉE — %1$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.accessible_rejected": "État de la machine : %1$s ; demande de mode refusée.",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.timeout": "DEMANDE EXPIRÉE — %1$s"
 }
