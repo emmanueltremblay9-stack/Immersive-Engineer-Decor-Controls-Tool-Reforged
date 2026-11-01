@@ -35,3 +35,7 @@ Source reference:
   during the native implementation. No upstream code, assets or mixins are copied.
 - Exact commits, verified MIT license and reuse inventory:
   [native-fluidlogging.md](docs/testing/native-fluidlogging.md).
+
+## User-provided GUI artwork
+
+- The Fluid Barrel reference image (`fluid barrel.png`) was supplied by the repository owner for exact GUI integration. No separate artwork license statement accompanied the source. The original reference, pixel-exact Toolkit JSON, native Toolkit render, and validation record are kept in `docs/gui-art/fluid-barrel/`.
