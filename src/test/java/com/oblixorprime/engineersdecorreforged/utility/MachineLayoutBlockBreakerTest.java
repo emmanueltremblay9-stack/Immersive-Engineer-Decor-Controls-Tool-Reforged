@@ -21,7 +21,7 @@ public class MachineLayoutBlockBreakerTest {
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
       assertTrue(layout.machineSlots().get(0).role().toLowerCase().contains("output"));
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
-      assertEquals("block_breaker_v08/background", layout.textureName());
+      assertEquals("block_breaker_v081/background", layout.textureName());
    }
 
    @Test
