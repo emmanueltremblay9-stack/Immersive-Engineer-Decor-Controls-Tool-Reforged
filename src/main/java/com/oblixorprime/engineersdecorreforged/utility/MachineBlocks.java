@@ -25,7 +25,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -254,7 +253,7 @@ public final class MachineBlocks {
       }
 
       @Override
-      public void onBlockExploded(BlockState state, ServerLevel level, BlockPos pos, Explosion explosion) {
+      public void onBlockExploded(BlockState state, Level level, BlockPos pos, Explosion explosion) {
          if (level.getBlockEntity(pos) instanceof MachineBlockEntity machine
                && machine.kind() == MachineKind.LABELED_CRATE
                && machine.beginLabeledCrateDropHandling()) {
@@ -454,11 +453,9 @@ public final class MachineBlocks {
             boolean blockDropsEnabled = level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS);
             if (!crateDropsAlreadyHandled && !(cratePlayerBreakPending && blockDropsEnabled)) {
                if (this.kind == MachineKind.LABELED_CRATE) {
-                  if (blockDropsEnabled) {
-                     Containers.dropContents(level, pos, machine);
-                  } else {
-                     machine.drainLabeledCrateContents();
-                  }
+                  // Generic block-destruction paths already emitted the intact crate from getDrops().
+                  // Clear this backing inventory instead of spilling a second loose copy during onRemove.
+                  machine.drainLabeledCrateContents();
                } else {
                   Containers.dropContents(level, pos, machine);
                }

@@ -350,6 +350,56 @@ public final class LabeledCrateGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_programmatic_destroy_drops_single_intact_crate(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      crate.setItem(0, new ItemStack(Items.IRON_INGOT, 4));
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, new ItemStack(Items.COMPASS));
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+
+      for (int preview = 0; preview < 2; preview++) {
+         LootParams.Builder lootContext = new LootParams.Builder(helper.getLevel())
+            .withParameter(LootContextParams.BLOCK_ENTITY, crate);
+         List<ItemStack> previewDrops = ModBlocks.LABELED_CRATE.get().getDrops(crate.getBlockState(), lootContext);
+         helper.assertValueEqual(1, previewDrops.size(), "a loot preview should describe one intact crate");
+         helper.assertTrue(previewDrops.get(0).is(ModBlocks.LABELED_CRATE.get().asItem()), "a loot preview should contain the crate item");
+         helper.assertTrue(crate.getItem(0).getCount() == 4 && crate.getItem(LabeledCrateMenu.FRAME_SLOT).is(Items.COMPASS),
+            "repeated loot previews must leave the backing inventory untouched");
+         helper.assertTrue(!crate.isLabeledCrateDropHandled(), "a loot preview must not leave a stale drop-handling flag");
+      }
+      helper.assertTrue(helper.getLevel().destroyBlock(absolutePos, true), "programmatic block destruction should remove the crate");
+      List<ItemEntity> drops = helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0));
+      helper.assertValueEqual(1, drops.size(), "programmatic destruction should emit one intact crate and no loose inventory drops");
+      ItemStack droppedCrate = drops.get(0).getItem();
+      helper.assertTrue(droppedCrate.is(ModBlocks.LABELED_CRATE.get().asItem()), "programmatic destruction should drop the crate block");
+      CompoundTag storedData = droppedCrate.getOrDefault(DataComponents.BLOCK_ENTITY_DATA, CustomData.EMPTY).copyTag();
+      helper.assertTrue(storedData.contains("Items"), "the single crate drop should carry its block-entity inventory");
+      NonNullList<ItemStack> restored = NonNullList.withSize(LabeledCrateMenu.CRATE_SLOT_COUNT, ItemStack.EMPTY);
+      ContainerHelper.loadAllItems(storedData, restored, helper.getLevel().registryAccess());
+      helper.assertValueEqual(4, restored.get(0).getCount(), "the dropped crate should retain its four iron ingots exactly once");
+      helper.assertTrue(restored.get(LabeledCrateMenu.FRAME_SLOT).is(Items.COMPASS), "the dropped crate should retain the frame item");
+      helper.assertTrue(helper.getLevel().getBlockEntity(absolutePos) == null, "the source block entity should be removed");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_programmatic_destroy_without_drops_clears_contents_without_spilling(GameTestHelper helper) {
+      MachineBlockEntity crate = placeCrate(helper, TEST_POS);
+      crate.setItem(0, new ItemStack(Items.IRON_INGOT, 4));
+      crate.setItem(LabeledCrateMenu.FRAME_SLOT, new ItemStack(Items.COMPASS));
+      BlockPos absolutePos = helper.absolutePos(TEST_POS);
+
+      helper.assertTrue(helper.getLevel().destroyBlock(absolutePos, false), "programmatic no-drop destruction should remove the crate");
+      helper.assertTrue(helper.getLevel().getBlockState(absolutePos).isAir(), "no-drop destruction should remove the source block");
+      helper.assertTrue(helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(absolutePos).inflate(4.0)).isEmpty(),
+         "no-drop destruction should not spill a crate or loose contents");
+      helper.assertTrue(crate.getItem(0).isEmpty() && crate.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(),
+         "removed no-drop crate should not retain a live backing inventory");
+      helper.assertTrue(!crate.isLabeledCrateDropHandled() && !crate.consumeLabeledCrateDropHandling(),
+         "no-drop destruction should not leave a stale crate-drop flag");
+      helper.assertTrue(!crate.consumeLabeledCratePlayerBreak(), "programmatic destruction should not leave a player-break flag");
+      helper.succeed();
+   }
    @GameTest(template = "empty", timeoutTicks = 80)
    public static void labeled_crate_creative_break_discards_contents(GameTestHelper helper) {
       MachineBlockEntity crate = placeCrate(helper, TEST_POS);
