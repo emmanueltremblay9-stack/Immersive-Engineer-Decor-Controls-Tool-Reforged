@@ -8,7 +8,16 @@ import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Containers;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
+import java.util.List;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -19,6 +28,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -192,7 +202,7 @@ public final class MachineBlocks {
 
       @Override
       protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-         if (isLabelHit(state, hit)) {
+         if (player.isShiftKeyDown() && isLabelHit(state, hit)) {
             if (level.isClientSide && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
                LabeledCrateLabelClientBridge.open(pos, machine.labelLines());
             }
@@ -207,7 +217,7 @@ public final class MachineBlocks {
       protected ItemInteractionResult useItemOn(
          ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit
       ) {
-         if (isLabelHit(state, hit)) {
+         if (player.isShiftKeyDown() && isLabelHit(state, hit)) {
             if (level.isClientSide && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
                LabeledCrateLabelClientBridge.open(pos, machine.labelLines());
             }
@@ -220,8 +230,82 @@ public final class MachineBlocks {
 
       @Override
       public BlockState getStateForPlacement(BlockPlaceContext context) {
+         if (!LabeledCrateItemRules.canImportContents(context.getItemInHand().get(DataComponents.CONTAINER))) {
+            return null;
+         }
          Direction labelDirection = context.isSecondaryUseActive() ? context.getHorizontalDirection() : context.getHorizontalDirection().getOpposite();
          return NativeFluidloggedBlock.placement((BlockState)this.defaultBlockState().setValue(MachineBlocks.HORIZONTAL_FACING, labelDirection), context);
+      }
+
+      @Override
+      public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+         if (level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
+            if (player.getAbilities().instabuild) {
+               machine.beginLabeledCrateDropHandling();
+               machine.drainLabeledCrateContents();
+            } else {
+               machine.beginLabeledCratePlayerBreak();
+            }
+         }
+         return super.playerWillDestroy(level, pos, state, player);
+      }
+
+      @Override
+      public boolean dropFromExplosion(Explosion explosion) {
+         return false;
+      }
+
+      @Override
+      public void onBlockExploded(BlockState state, Level level, BlockPos pos, Explosion explosion) {
+         if (level.getBlockEntity(pos) instanceof MachineBlockEntity machine
+               && machine.kind() == MachineKind.LABELED_CRATE
+               && machine.beginLabeledCrateDropHandling()) {
+            for (ItemStack drop : machine.drainLabeledCrateContents()) {
+               Block.popResource(level, pos, drop);
+            }
+         }
+         super.onBlockExploded(state, level, pos, explosion);
+      }
+
+      @Override
+      public void setPlacedBy(Level level, BlockPos pos, BlockState state, net.minecraft.world.entity.LivingEntity placer, ItemStack stack) {
+         super.setPlacedBy(level, pos, state, placer, stack);
+         if (!level.isClientSide) {
+            net.minecraft.world.item.BlockItem.updateCustomBlockEntityTag(
+               level, placer instanceof Player player ? player : null, pos, stack
+            );
+            if (level.getBlockEntity(pos) instanceof MachineBlockEntity machine && machine.kind() == MachineKind.LABELED_CRATE) {
+               ItemContainerContents imported = stack.get(DataComponents.CONTAINER);
+               if (imported != null) {
+                  for (int slot = 0; slot < imported.getSlots(); slot++) {
+                     machine.setItem(slot, imported.getStackInSlot(slot));
+                  }
+               }
+               machine.setLabeledCrateItemEnchantments(stack.getOrDefault(DataComponents.ENCHANTMENTS, ItemEnchantments.EMPTY));
+            }
+         }
+      }
+
+      @Override
+      public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+         if (!(params.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof MachineBlockEntity machine)
+               || machine.kind() != MachineKind.LABELED_CRATE || machine.getLevel() == null || machine.getLevel().isClientSide) {
+            return super.getDrops(state, params);
+         }
+         if (machine.isLabeledCrateDropHandled()) {
+            return List.of();
+         }
+
+         CompoundTag crateData = machine.saveWithoutMetadata(machine.getLevel().registryAccess());
+         ItemStack crate = new ItemStack(this);
+         BlockItem.setBlockEntityData(crate, ModBlockEntities.MACHINE.get(), crateData);
+         if (machine.getCustomName() != null) {
+            crate.set(DataComponents.CUSTOM_NAME, machine.getCustomName());
+         }
+         if (!machine.labeledCrateItemEnchantments().isEmpty()) {
+            crate.set(DataComponents.ENCHANTMENTS, machine.labeledCrateItemEnchantments());
+         }
+         return List.of(crate);
       }
 
       public static boolean isLabelHit(BlockState state, BlockHitResult hit) {
@@ -380,7 +464,18 @@ public final class MachineBlocks {
       protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
          if (!state.is(newState.getBlock()) && level.getBlockEntity(pos) instanceof MachineBlockEntity machine) {
             machine.clearMetalCraftingResultForDrop();
-            Containers.dropContents(level, pos, machine);
+            boolean crateDropsAlreadyHandled = this.kind == MachineKind.LABELED_CRATE && machine.consumeLabeledCrateDropHandling();
+            boolean cratePlayerBreakPending = this.kind == MachineKind.LABELED_CRATE && machine.consumeLabeledCratePlayerBreak();
+            boolean blockDropsEnabled = level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS);
+            if (!crateDropsAlreadyHandled && !(cratePlayerBreakPending && blockDropsEnabled)) {
+               if (this.kind == MachineKind.LABELED_CRATE) {
+                  // Generic block-destruction paths already emitted the intact crate from getDrops().
+                  // Clear this backing inventory instead of spilling a second loose copy during onRemove.
+                  machine.drainLabeledCrateContents();
+               } else {
+                  Containers.dropContents(level, pos, machine);
+               }
+            }
             level.updateNeighbourForOutputSignal(pos, this);
          }
 

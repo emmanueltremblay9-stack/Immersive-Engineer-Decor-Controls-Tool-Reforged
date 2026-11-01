@@ -18,6 +18,7 @@ import io.netty.buffer.Unpooled;
 import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
@@ -72,7 +73,6 @@ public final class MachineGuiGameTests {
    private static final BlockPos TEST_POS = new BlockPos(1, 1, 1);
    private static final List<MachineGuiGameTests.MachineEntry> MACHINE_ENTRIES = List.of(
       new MachineGuiGameTests.MachineEntry(ModBlocks.METAL_CRAFTING_TABLE, MachineKind.METAL_CRAFTING_TABLE, 11, null),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.LABELED_CRATE, MachineKind.LABELED_CRATE, 27, null),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_HOPPER, MachineKind.FACTORY_HOPPER, 18, "factory_hopper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_DROPPER, MachineKind.FACTORY_DROPPER, 15, "factory_dropper_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.FACTORY_PLACER, MachineKind.FACTORY_PLACER, 18, "factory_placer_gui"),
@@ -2363,6 +2363,34 @@ public final class MachineGuiGameTests {
       helper.assertTrue(machine.getItem(0).is(Items.DIRT), "newly collected drops should occupy only visible slot 0");
       helper.assertTrue(machine.getItem(1).is(Items.DIRT), "legacy visible-slot contents should remain separate from new drops");
       helper.assertTrue(machine.getItem(10).is(Items.STONE), "unexposed legacy data should remain untouched");
+      helper.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 80)
+   public static void small_block_breaker_loot_preview_preserves_labeled_crate_contents(GameTestHelper helper) {
+      helper.setBlock(
+         TEST_POS,
+         (BlockState)((MachineBlocks.ActiveHorizontalMachineBlock)ModBlocks.SMALL_BLOCK_BREAKER.get())
+            .defaultBlockState()
+            .setValue(MachineBlocks.HORIZONTAL_FACING, Direction.EAST)
+      );
+      MachineBlockEntity machine = (MachineBlockEntity)helper.getLevel().getBlockEntity(helper.absolutePos(TEST_POS));
+      BlockPos target = helper.absolutePos(TEST_POS.east());
+      helper.setBlock(TEST_POS.east(), ModBlocks.LABELED_CRATE.get());
+      MachineBlockEntity crate = (MachineBlockEntity)helper.getLevel().getBlockEntity(target);
+      crate.setItem(0, new ItemStack(Items.IRON_INGOT, 4));
+      BlockState targetState = helper.getLevel().getBlockState(target);
+
+      helper.assertTrue(invokeBlockBreakerPreflight(machine, target, targetState), "a filled crate should fit in the empty breaker output");
+      helper.assertValueEqual(4, crate.getItem(0).getCount(), "checking crate loot should not drain its contents");
+      helper.assertTrue(invokeBlockBreakerDropStorage(machine, target, targetState), "the breaker should store the intact crate item");
+      helper.assertTrue(machine.getItem(0).is(ModBlocks.LABELED_CRATE.get().asItem()), "the breaker output should contain the labeled crate");
+      helper.assertTrue(machine.getItem(0).has(DataComponents.BLOCK_ENTITY_DATA), "the breaker output should preserve the crate inventory data");
+      AABB dropSearch = new AABB(target).inflate(3.0);
+      helper.assertTrue(
+         helper.getLevel().getEntitiesOfClass(ItemEntity.class, dropSearch, item -> item.getItem().is(Items.IRON_INGOT)).isEmpty(),
+         "breaking the crate into breaker storage should not spill its contents"
+      );
       helper.succeed();
    }
 

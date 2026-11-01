@@ -9,6 +9,7 @@ It includes modernization work based on:
 3. Engineer's Tools by Stefan Wilhelm / wilechaote / Wile / stfwi, licensed under the MIT License.
 4. RsGauges 1.20.1 port work by Waffle / ialwaysaskedforthat, used through the attribution lineage of the 1.21.1 port resources.
 5. RsGauges 1.21.1 NeoForge port resources by MCFabikDE / MCFabik, licensed under the MIT License.
+6. Labeled Storage Crate GUI, block model/state and textures restored from Engineer's Decor 1.1.28 by Stefan Wilhelm, licensed under the MIT License; source commit 837b8678f4fb5ebd818d14c5cbb476273be8405b.
 
 Source references:
 
