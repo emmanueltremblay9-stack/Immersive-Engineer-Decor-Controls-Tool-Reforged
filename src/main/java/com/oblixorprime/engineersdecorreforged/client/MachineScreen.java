@@ -1155,7 +1155,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          return Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.fluid.empty");
       } else {
          ResourceLocation id = BuiltInRegistries.FLUID.getKey(fluid);
-         return id != null && id.getNamespace().equals("neoforge") && id.getPath().equals("milk")
+         return isMilkFluidId(id)
             ? Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.fluid.milk")
             : Component.literal(id == null ? "fluid" : id.toString());
       }
@@ -1168,8 +1168,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          return 0xFFF06A28;
       } else {
          ResourceLocation id = BuiltInRegistries.FLUID.getKey(fluid);
-         return id != null && id.getNamespace().equals("neoforge") && id.getPath().equals("milk") ? 0xFFE6E1D5 : 0xFF7FAFC2;
+         return fluidBarrelMilkTint(id);
       }
+   }
+
+   static boolean isMilkFluidId(ResourceLocation id) {
+      return id != null
+         && id.getNamespace().equals("minecraft")
+         && id.getPath().equals("milk");
+   }
+
+   static int fluidBarrelMilkTint(ResourceLocation id) {
+      return isMilkFluidId(id) ? 0xFFE6E1D5 : 0xFF7FAFC2;
    }
 
    private void drawSolarCells(GuiGraphics graphics, int x, int y) {

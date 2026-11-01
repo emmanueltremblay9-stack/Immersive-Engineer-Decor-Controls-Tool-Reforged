@@ -1,6 +1,8 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class MachineLayoutFluidBarrelTest {
@@ -17,6 +19,8 @@ public class MachineLayoutFluidBarrelTest {
       assertEquals(2, layout.machineSlots().size());
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
       assertEquals(1, layout.machineSlots().get(1).containerIndex());
+      assertFalse(layout.machineSlots().get(0).output());
+      assertTrue(layout.machineSlots().get(1).output());
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
       assertEquals("fluid_barrel/background", layout.textureName());
    }

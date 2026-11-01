@@ -4,7 +4,6 @@ import com.oblixorprime.engineersdecorreforged.ModMenus;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
-import java.util.Locale;
 import java.util.function.IntFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -303,16 +302,12 @@ public class MachineMenu extends AbstractContainerMenu {
             ? new MachineMenu.MetalCraftingResultSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
             : new MachineMenu.MetalCraftingInputSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
       } else {
-         return isResultRole(slot.role())
+         return slot.output()
             ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
             : new MachineMenu.ValidatedMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
       }
    }
 
-   private static boolean isResultRole(String role) {
-      String normalized = role.toLowerCase(Locale.ROOT);
-      return normalized.contains("output") || normalized.equals("filled") || normalized.equals("milk");
-   }
 
    private boolean movePlayerStackToMachine(Player player, ItemStack stack) {
       return switch (this.kind) {
