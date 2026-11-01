@@ -221,6 +221,7 @@
   "block.immersive_engineer_decor_controls_tool_reforged.small_solar_panel": "Petit panneau solaire",
   "block.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.help": "Produit une petite quantité d'énergie\n lorsqu'il est exposé à la lumière du soleil. Utile\n pour charger les condensateurs LF dans les systèmes distants\n à faible consommation. Le\n circuit de pompe de charge interne\n accumule et\n transfère fréquemment les RF. La production dépend\n de l'heure du jour et de la météo.\nCliquez pour voir l'état de charge,\n la production et la progression.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.status": "SOC: %1$s%% sur %2$sRF§r | produit %3$sRF/t | transfert %4$sRF/t",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_solar_panel.energy_tooltip": "Stockage : %1$s / %2$s FE ; l’affichage serveur évolue par pas de %3$s FE.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_tree_cutter": "Petit coupe-arbre",
   "block.immersive_engineer_decor_controls_tool_reforged.small_tree_cutter.help": "Coupe les arbres adultes devant sa face de travail. Ne ramasse pas les objets lâchés. Désactivez-le avec un signal de redstone.",
   "block.immersive_engineer_decor_controls_tool_reforged.small_tree_cutter.status": "SOC: %1$s%% sur %2$sRF§r | progression: %3$s%% (%4$ss)",
@@ -1016,5 +1017,13 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.accessible_timeout": "État de la machine : %1$s ; délai de demande du mode dépassé.",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.rejected": "DEMANDE REFUSÉE — %1$s",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.accessible_rejected": "État de la machine : %1$s ; demande de mode refusée.",
-  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.timeout": "DEMANDE EXPIRÉE — %1$s"
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter.status.timeout": "DEMANDE EXPIRÉE — %1$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line1": "Collecte",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.collection.line2": "du lait",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.tank": "Réservoir",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.output": "Lait",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.inventory": "Inventaire",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.tank": "Lait stocké : %1$s",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.bucket": "Entrée de seau",
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Sortie de lait"
 }
