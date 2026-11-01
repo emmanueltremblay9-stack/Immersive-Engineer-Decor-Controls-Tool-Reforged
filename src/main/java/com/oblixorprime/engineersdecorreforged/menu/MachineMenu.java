@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.menu;
 
 import com.oblixorprime.engineersdecorreforged.ModMenus;
+import com.oblixorprime.engineersdecorreforged.utility.MachineBlockBreakerDataSync;
 import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
@@ -304,7 +305,13 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    public float blockBreakerHardness() {
-      return this.kind == MachineKind.SMALL_BLOCK_BREAKER ? this.data.get(7) / 100.0F : 0.0F;
+      return this.kind == MachineKind.SMALL_BLOCK_BREAKER
+         ? MachineBlockBreakerDataSync.hardnessFromFields(
+            this.data.get(MachineBlockBreakerDataSync.HARDNESS_LOW_FIELD),
+            this.data.get(MachineBlockBreakerDataSync.HARDNESS_MIDDLE_FIELD),
+            this.data.get(MachineBlockBreakerDataSync.HARDNESS_HIGH_FIELD)
+         )
+         : 0.0F;
    }
 
    public int blockBreakerEnergyCostPerBlock() {

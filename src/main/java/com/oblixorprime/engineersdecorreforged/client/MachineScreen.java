@@ -403,7 +403,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       this.drawTinyString(graphics, blockBreakerText("progress.percent", progress).getString(), 81, 98, 25, -1646126, false);
       this.drawTinyString(graphics,
          (hasEstimatedCost
-            ? blockBreakerText("cost.approximate", estimatedCost)
+            ? blockBreakerText("cost.per_block", estimatedCost)
             : blockBreakerText("cost.unavailable")).getString(),
          16, 114, 86, -3949142, false);
 
