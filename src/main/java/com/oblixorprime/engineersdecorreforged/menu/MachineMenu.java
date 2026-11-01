@@ -157,6 +157,10 @@ public class MachineMenu extends AbstractContainerMenu {
       };
    }
 
+   public int energyDisplayGranularity() {
+      return this.kind == MachineKind.SMALL_SOLAR_PANEL ? ENERGY_FIELD_SCALE : 1;
+   }
+
    public int comparatorOutput() {
       return this.data.get(4);
    }
