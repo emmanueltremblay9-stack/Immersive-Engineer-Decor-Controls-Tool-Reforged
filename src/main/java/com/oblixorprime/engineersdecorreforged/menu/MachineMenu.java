@@ -145,20 +145,20 @@ public class MachineMenu extends AbstractContainerMenu {
    }
 
    static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high) {
-      return decodeStoredFluid(kind, amount, low, middle, high, BuiltInRegistries.FLUID.size(), BuiltInRegistries.FLUID::byId);
+      return decodeStoredFluid(kind, amount, low, middle, high, BuiltInRegistries.FLUID.size(), BuiltInRegistries.FLUID::byId, Fluids.EMPTY);
    }
 
-   static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high, int registrySize, IntFunction<Fluid> fluidById) {
+   static <T> T decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high, int registrySize, IntFunction<T> valueById, T emptyValue) {
       if (kind != MachineKind.FLUID_BARREL || amount <= 0) {
-         return Fluids.EMPTY;
+         return emptyValue;
       }
 
       int registryId = (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
       if (registryId < 0 || registryId >= registrySize) {
-         return Fluids.EMPTY;
+         return emptyValue;
       }
-      Fluid fluid = fluidById.apply(registryId);
-      return fluid == null ? Fluids.EMPTY : fluid;
+      T value = valueById.apply(registryId);
+      return value == null ? emptyValue : value;
    }
 
    public int energyStored() {
