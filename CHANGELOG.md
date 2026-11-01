@@ -2,6 +2,16 @@
 
 All notable reconstruction, repair, and validation changes for this project are recorded here.
 
+## [1.1.66-reconstructed] - Candidate release notes (not yet published)
+
+### Added
+- Add distinct Small Mineral Smelter modes for Lava, Magma Block, and Obsidian, keeping the current separated-mode behavior.
+- Add live, localized interfaces for the Small Mineral Smelter, Small Water Freezer, Fluid Barrel, Small Fluid Funnel, Passive Fluid Accumulator, Small Solar Panel, Small Tree Cutter, and Small Milking Machine.
+- Restore the Labeled Storage Crate with its 54 storage slots and safe handling of stored items.
+
+### Fixed
+- Display the Small Block Breaker's exact synchronized FE cost without changing its server-side cost formula.
+
 ## Unreleased - Block Breaker GUI and FE integration (#121)
 
 ### Added
