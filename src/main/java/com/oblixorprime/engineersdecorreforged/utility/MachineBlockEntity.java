@@ -867,6 +867,37 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return this.items.size();
    }
 
+   private void syncLabeledCrateFrameClients(ItemStack previousFrame) {
+      if (this.kind() == MachineKind.LABELED_CRATE
+            && !ItemStack.matches(previousFrame, this.getItem(LabeledCrateMenu.FRAME_SLOT))
+            && this.level != null
+            && !this.level.isClientSide) {
+         this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), Block.UPDATE_CLIENTS);
+      }
+   }
+
+   @Override
+   public ItemStack removeItem(int slot, int amount) {
+      boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
+      ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
+      ItemStack removed = super.removeItem(slot, amount);
+      if (updateFrame) {
+         this.syncLabeledCrateFrameClients(previousFrame);
+      }
+      return removed;
+   }
+
+   @Override
+   public ItemStack removeItemNoUpdate(int slot) {
+      boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
+      ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
+      ItemStack removed = super.removeItemNoUpdate(slot);
+      if (updateFrame) {
+         this.syncLabeledCrateFrameClients(previousFrame);
+      }
+      return removed;
+   }
+
    @Override
    public void setItem(int slot, ItemStack stack) {
       if (this.kind() == MachineKind.LABELED_CRATE) {
@@ -880,8 +911,8 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       boolean updateFrame = this.kind() == MachineKind.LABELED_CRATE && slot == LabeledCrateMenu.FRAME_SLOT;
       ItemStack previousFrame = updateFrame ? this.getItem(slot).copy() : ItemStack.EMPTY;
       super.setItem(slot, stack);
-      if (updateFrame && !ItemStack.matches(previousFrame, this.getItem(slot)) && this.level != null && !this.level.isClientSide) {
-         this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), Block.UPDATE_CLIENTS);
+      if (updateFrame) {
+         this.syncLabeledCrateFrameClients(previousFrame);
       }
    }
 
