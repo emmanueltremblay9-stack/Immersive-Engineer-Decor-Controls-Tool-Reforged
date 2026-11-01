@@ -1,9 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
-/**
- * Describes a texture blit with destination canvas dimensions kept separate from its source region.
- * This prevents a native source crop from being mistaken for its logical GUI size.
- */
+/** Describes a blit with its destination canvas separate from the native source crop. */
 public record GuiTextureBlit(
    int destinationWidth,
    int destinationHeight,
@@ -30,5 +27,13 @@ public record GuiTextureBlit(
 
    public static GuiTextureBlit stretchFullTexture(int destinationWidth, int destinationHeight, int textureWidth, int textureHeight) {
       return new GuiTextureBlit(destinationWidth, destinationHeight, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+   }
+
+   public static GuiTextureBlit forMachineArtwork(String textureName, int destinationWidth, int destinationHeight) {
+      return switch (textureName) {
+         case "small_solar_panel_art" -> stretchFullTexture(destinationWidth, destinationHeight, 455, 424);
+         case "small_tree_cutter_art" -> stretchFullTexture(destinationWidth, destinationHeight, 446, 418);
+         default -> throw new IllegalArgumentException("Unknown machine artwork texture: " + textureName);
+      };
    }
 }

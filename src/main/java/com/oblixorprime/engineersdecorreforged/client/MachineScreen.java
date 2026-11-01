@@ -4,9 +4,10 @@ import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import com.oblixorprime.engineersdecorreforged.network.MachineActionPayload;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
-import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.GuiTextureBlit;
+import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
 import com.oblixorprime.engineersdecorreforged.utility.PassiveFluidAccumulatorGauge;
+import java.text.NumberFormat;
 import java.util.Locale;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -29,6 +30,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private static final int HOVER = -1917873;
    private static final int LABEL_BACKDROP = -1441327079;
    private static final String BLOCK_BREAKER_GUI_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.block_breaker.";
+   private static final String MILKING_GUI_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.";
    private static final int SLOT_FACE = -12236470;
    private static final int SLOT_INNER = -14276310;
    private final MachineScreen.Profile profile;
@@ -64,8 +66,32 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineLayout layout = ((MachineMenu)this.menu).layout();
       int x = this.leftPos;
       int y = this.topPos;
-      if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
+      if (layout.style() == MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
+         GuiTextureBlit geometry = layout.artworkBlit();
+         graphics.blit(
+            texture,
+            x,
+            y,
+            geometry.destinationWidth(),
+            geometry.destinationHeight(),
+            (float)geometry.sourceX(),
+            (float)geometry.sourceY(),
+            geometry.sourceWidth(),
+            geometry.sourceHeight(),
+            geometry.textureWidth(),
+            geometry.textureHeight()
+         );
+         this.drawArtworkBackgroundOverlays(graphics, layout, x, y);
+         this.drawMachineSlots(graphics, layout, x, y);
+         this.drawPlayerSlots(graphics, layout, x, y);
+      } else if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
+         ResourceLocation texture = this.backgroundTexture(layout);
+         if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
+            this.drawSmallMilkingMachineTexture(graphics, texture, x, y);
+            this.drawSmallMilkingMachineWidgets(graphics, layout, x, y);
+            return;
+         }
          this.drawOriginalTextureBackdrop(graphics, x, y);
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
             graphics.blit(texture, x, y, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
@@ -110,15 +136,93 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
       MachineLayout layout = ((MachineMenu)this.menu).layout();
-      if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
+      if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
+         this.drawSmallMilkingMachineLabels(graphics);
+      } else if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          this.drawBlockBreakerLabels(graphics);
       } else if (((MachineMenu)this.menu).kind() == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
          this.drawPassiveFluidAccumulatorLabels(graphics);
+      } else if (layout.style() == MachineLayout.LayoutStyle.ARTWORK_TEXTURE) {
+         this.drawArtworkLabels(graphics);
       } else if (layout.style() != MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          this.drawBoundedString(graphics, this.profile.title(), this.titleLabelX, this.titleLabelY, this.imageWidth - this.titleLabelX - 6, -1646126, false);
          this.drawTinyString(graphics, "Inv", this.inventoryLabelX, this.inventoryLabelY + 1, 28, -3949142, false);
          this.drawPanelLabels(graphics, layout);
          this.drawStatusText(graphics, layout);
+      }
+   }
+
+   private void drawArtworkBackgroundOverlays(GuiGraphics graphics, MachineLayout layout, int x, int y) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      for (MachineLayout.Panel panel : layout.panels()) {
+         int left = x + panel.x();
+         int top = y + panel.y();
+         switch (panel.label()) {
+            case "solar-cell-mask", "solar-energy-readout-mask", "tree-collection-mask" ->
+               graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF202629);
+            case "solar-energy-bar" -> this.drawArtworkEnergyMeter(
+               graphics, left, top, panel.width(), panel.height(), menu.energyStored(), menu.energyCapacity()
+            );
+            case "tree-status-mask" -> graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF102015);
+            case "inventory-panel" -> {
+               graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF5D6263);
+               graphics.fill(left, top, left + panel.width(), top + 2, 0xFF74797A);
+               graphics.fill(left, top + panel.height() - 2, left + panel.width(), top + panel.height(), 0xFF444A4B);
+            }
+            default -> {
+            }
+         }
+      }
+   }
+
+   private void drawArtworkEnergyMeter(GuiGraphics graphics, int x, int y, int width, int height, int stored, int capacity) {
+      int innerWidth = Math.max(0, width - 4);
+      int fill = capacity > 0 ? Mth.clamp((int)((long)Math.max(0, stored) * innerWidth / capacity), 0, innerWidth) : 0;
+      graphics.fill(x, y, x + width, y + height, 0xFF17191A);
+      graphics.fill(x + 1, y + 1, x + width - 1, y + height - 1, 0xFF33291A);
+      graphics.fill(x + 2, y + 2, x + 2 + fill, y + height - 2, 0xFFF2A432);
+      if (fill > 1) {
+         graphics.fill(x + 2, y + 2, x + 2 + fill, y + 3, 0xFFFFD06A);
+      }
+   }
+
+   private void drawArtworkLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      MachineLayout layout = menu.layout();
+      this.drawTinyString(
+         graphics,
+         Component.translatable("container.inventory").getString(),
+         layout.playerInventoryX(),
+         layout.playerInventoryY() - 10,
+         92,
+         TEXT,
+         false
+      );
+
+      for (MachineLayout.Panel panel : layout.panels()) {
+         if (panel.label().equals("solar-energy-readout-mask")) {
+            this.drawTinyString(
+               graphics,
+               menu.energyStored() + " / " + menu.energyCapacity() + " FE",
+               panel.x() + 1,
+               panel.y() + 5,
+               panel.width() - 2,
+               TEXT,
+               false
+            );
+         } else if (panel.label().equals("solar-comparator")) {
+            this.drawTinyString(graphics, "Cmp " + menu.comparatorOutput(), panel.x(), panel.y(), panel.width(), MUTED, false);
+         } else if (panel.label().equals("tree-comparator")) {
+            this.drawTinyCenteredString(
+               graphics, "Cmp " + menu.comparatorOutput(), panel.x() + panel.width() / 2, panel.y() + 1, panel.width(), 0xFF74E85C
+            );
+         }
+      }
+
+      for (MachineLayout.MachineSlot slot : layout.machineSlots()) {
+         if (slot.role().equals("I/O")) {
+            this.drawTinyCenteredString(graphics, "I/O", slot.x() + 9, slot.y() - 9, 28, TEXT);
+         }
       }
    }
 
@@ -708,6 +812,90 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 
+   private void drawSmallMilkingMachineTexture(GuiGraphics graphics, ResourceLocation texture, int x, int y) {
+      graphics.pose().pushPose();
+      graphics.pose().translate((double)x, (double)y, 0.0);
+      graphics.pose().scale(0.5F, 0.5F, 1.0F);
+      graphics.blit(texture, 0, 0, 255, 626, 431, 420, 941, 1672);
+      graphics.pose().popPose();
+   }
+
+   private void drawSmallMilkingMachineWidgets(GuiGraphics graphics, MachineLayout layout, int x, int y) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      graphics.fill(x + 63, y + 8, x + 202, y + 22, 0xFF2D2C2B);
+      graphics.fill(x + 24, y + 79, x + 77, y + 90, 0xFF121212);
+      graphics.fill(x + 146, y + 40, x + 208, y + 64, 0xFF151D1C);
+      graphics.fill(x + 151, y + 84, x + 201, y + 95, 0xFF242829);
+      graphics.fill(x + 26, y + 127, x + 99, y + 138, 0xFF080909);
+      this.drawSmallMilkingMachineTank(graphics, x, y, menu.fluidAmount(), menu.fluidCapacity());
+      this.drawMachineSlots(graphics, layout, x, y);
+      this.drawPlayerSlots(graphics, layout, x, y);
+   }
+
+   private void drawSmallMilkingMachineTank(GuiGraphics graphics, int x, int y, int amount, int capacity) {
+      int tankX = x + 98;
+      int tankY = y + 49;
+      int tankWidth = 34;
+      int tankHeight = 56;
+      int tankBottom = tankY + tankHeight - 2;
+      graphics.fill(tankX, tankY, tankX + tankWidth, tankY + tankHeight, 0xFF172124);
+      int fill = smallMilkingMachineFillPixels(amount, capacity, tankHeight - 5);
+      if (fill > 0) {
+         int fillTop = tankBottom - fill;
+         graphics.fill(tankX + 3, fillTop, tankX + tankWidth - 3, tankBottom, 0xFFE2D8B8);
+         graphics.fill(tankX + 3, fillTop, tankX + tankWidth - 3, fillTop + 1, 0xFFF3E8C9);
+         graphics.fill(tankX + 4, tankBottom - 2, tankX + tankWidth - 4, tankBottom, 0xFFC9BEA1);
+      }
+      graphics.fill(tankX + 1, tankY + 2, tankX + 2, tankY + tankHeight - 2, 0xFF687477);
+      graphics.fill(tankX + tankWidth - 2, tankY + 2, tankX + tankWidth - 1, tankY + tankHeight - 2, 0xFF344448);
+      graphics.fill(tankX + 4, tankY + 3, tankX + 5, tankY + 14, 0xFF728083);
+   }
+
+   private void drawSmallMilkingMachineLabels(GuiGraphics graphics) {
+      MachineMenu menu = (MachineMenu)this.menu;
+      String title = Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_milking_machine").getString();
+      this.drawTinyCenteredString(graphics, title, 133, 11, 133, TEXT);
+      this.drawTinyString(graphics, smallMilkingText("label.collection.line1").getString(), 26, 80, 49, TEXT, false);
+      this.drawTinyString(graphics, smallMilkingText("label.collection.line2").getString(), 26, 86, 49, TEXT, false);
+      this.drawTinyString(graphics, smallMilkingText("label.tank").getString(), 148, 42, 58, TEXT, false);
+      this.drawTinyString(graphics, formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()), 148, 51, 60, TEXT, false);
+      this.drawTinyString(graphics, smallMilkingText("label.output").getString(), 159, 86, 39, TEXT, false);
+      this.drawTinyString(graphics, smallMilkingText("label.inventory").getString(), 29, 129, 65, TEXT, false);
+   }
+
+   private Component smallMilkingMachineTooltip(int mouseX, int mouseY) {
+      if (((MachineMenu)this.menu).kind() != MachineKind.SMALL_MILKING_MACHINE
+            || !(this.isHovering(96, 48, 38, 59, mouseX, mouseY) || this.isHovering(145, 39, 64, 26, mouseX, mouseY))) {
+         return null;
+      }
+      MachineMenu menu = (MachineMenu)this.menu;
+      String amount = formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale());
+      return smallMilkingText("tooltip.tank", amount);
+   }
+
+   private Locale smallMilkingLocale() {
+      String selected = this.minecraft == null ? "en_us" : this.minecraft.getLanguageManager().getSelected();
+      return Locale.forLanguageTag(selected.replace('_', '-'));
+   }
+
+   private static Component smallMilkingText(String key, Object... arguments) {
+      return Component.translatable(MILKING_GUI_PREFIX + key, arguments);
+   }
+
+   static int smallMilkingMachineFillPixels(int amount, int capacity, int height) {
+      if (capacity <= 0 || height <= 0) {
+         return 0;
+      }
+      return Mth.clamp(amount, 0, capacity) * height / capacity;
+   }
+
+   static String formatSmallMilkingMachineAmount(int amount, int capacity, Locale locale) {
+      int safeCapacity = Math.max(0, capacity);
+      int safeAmount = Mth.clamp(amount, 0, safeCapacity);
+      NumberFormat format = NumberFormat.getIntegerInstance(locale);
+      return format.format(safeAmount) + " / " + format.format(safeCapacity) + " mB";
+   }
+
    private ResourceLocation backgroundTexture(MachineLayout layout) {
       return ResourceLocation.fromNamespaceAndPath("immersive_engineer_decor_controls_tool_reforged", "textures/gui/" + layout.textureName() + ".png");
    }
@@ -916,6 +1104,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          return;
       }
 
+      Component milkingTooltip = this.smallMilkingMachineTooltip(mouseX, mouseY);
+      if (milkingTooltip != null) {
+         graphics.renderTooltip(this.font, milkingTooltip, mouseX, mouseY);
+         return;
+      }
+
+      Component solarEnergyTooltip = this.solarPanelEnergyTooltip(mouseX, mouseY);
+      if (solarEnergyTooltip != null) {
+         graphics.renderTooltip(this.font, solarEnergyTooltip, mouseX, mouseY);
+         return;
+      }
+
       Component blockBreakerTooltip = this.blockBreakerTooltip(mouseX, mouseY);
       if (blockBreakerTooltip != null) {
          graphics.renderTooltip(this.font, blockBreakerTooltip, mouseX, mouseY);
@@ -953,6 +1153,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          );
          case METAL_CRAFTING_TABLE -> this.metalCraftingTableSlotTooltip(slot.containerIndex());
          case SMALL_WASTE_INCINERATOR -> Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_waste_incinerator.slots.queue");
+         case SMALL_MILKING_MACHINE -> Component.translatable(MILKING_GUI_PREFIX + (slot.containerIndex() == 0 ? "tooltip.slot.bucket" : "tooltip.slot.output"));
          default -> Component.literal(slot.role());
       });
    }
