@@ -1004,7 +1004,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          return false;
       }
 
-      if (isLayoutResultSlot(kind, index)) {
+      if (MachineLayout.forKind(kind).isOutputSlot(index)) {
          return false;
       }
 
@@ -1092,13 +1092,6 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       };
    }
 
-   private static boolean isLayoutResultSlot(MachineKind kind, int index) {
-      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> slot.containerIndex() == index && slot.output());
-   }
-
-   private static boolean hasLayoutResultSlots(MachineKind kind) {
-      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> slot.output());
-   }
 
    public void handleGuiAction(Player player, int action, int valueA, int valueB) {
       MachineKind kind = this.kind();
@@ -1390,6 +1383,12 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
                   yield this.comparatorOutput();
                case 5:
                   yield Math.max(this.cooldown, this.burnTicks);
+               case 11:
+                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() & 0x7FFF : 0;
+               case 12:
+                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 15 & 0x7FFF : 0;
+               case 13:
+                  yield kind == MachineKind.FLUID_BARREL ? this.fluidRegistryId() >>> 30 : 0;
                default:
                   yield 0;
             }
@@ -3288,6 +3287,11 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       });
    }
 
+   private int fluidRegistryId() {
+      Fluid fluid = this.fluidForType(this.fluidType);
+      return fluid == Fluids.EMPTY ? 0 : BuiltInRegistries.FLUID.getId(fluid);
+   }
+
    private int capacityFor(MachineKind kind) {
       if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
          return 3000;
@@ -4310,7 +4314,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          return false;
       }
 
-      return !hasLayoutResultSlots(kind) || isLayoutResultSlot(kind, slot);
+      return MachineLayout.forKind(kind).allowsAutomationExtraction(slot);
    }
 
    private int firstSlotWith(Item item) {

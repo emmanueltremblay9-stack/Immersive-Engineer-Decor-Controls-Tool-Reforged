@@ -5,6 +5,7 @@ import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
 import com.oblixorprime.engineersdecorreforged.utility.MachineLayout;
+import java.util.function.IntFunction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -26,6 +27,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -145,6 +148,31 @@ public class MachineMenu extends AbstractContainerMenu {
          case PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE, SMALL_MINERAL_SMELTER -> DEFAULT_FLUID_CAPACITY;
          default -> 0;
       };
+   }
+
+   public Fluid storedFluid() {
+      return decodeStoredFluid(this.kind, this.fluidAmount(), this.data.get(11), this.data.get(12), this.data.get(13));
+   }
+
+   static Fluid decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high) {
+      return decodeStoredFluid(kind, amount, low, middle, high, BuiltInRegistries.FLUID.size(), BuiltInRegistries.FLUID::byId, Fluids.EMPTY);
+   }
+
+   static <T> T decodeStoredFluid(MachineKind kind, int amount, int low, int middle, int high, int registrySize, IntFunction<T> valueById, T emptyValue) {
+      if (kind != MachineKind.FLUID_BARREL || amount <= 0) {
+         return emptyValue;
+      }
+
+      int registryId = decodeFluidRegistryId(low, middle, high);
+      if (registryId < 0 || registryId >= registrySize) {
+         return emptyValue;
+      }
+      T value = valueById.apply(registryId);
+      return value == null ? emptyValue : value;
+   }
+
+   static int decodeFluidRegistryId(int low, int middle, int high) {
+      return (low & 0x7FFF) | ((middle & 0x7FFF) << 15) | ((high & 0x7FFF) << 30);
    }
 
    public int energyStored() {
@@ -327,6 +355,7 @@ case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_F
             );
       }
    }
+
 
    private boolean movePlayerStackToMachine(Player player, ItemStack stack) {
       return switch (this.kind) {
