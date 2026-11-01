@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.utility;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public record MachineLayout(
    int imageWidth,
@@ -245,8 +246,8 @@ public record MachineLayout(
          18,
          205,
          List.of(
-            new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket"),
-            new MachineLayout.MachineSlot(1, 149, 106, "Filled")
+            new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket", false),
+            new MachineLayout.MachineSlot(1, 149, 106, "Filled", true)
          ),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
@@ -324,7 +325,15 @@ public record MachineLayout(
       AUTOMATION;
    }
 
-   public record MachineSlot(int containerIndex, int x, int y, String role) {
+   public record MachineSlot(int containerIndex, int x, int y, String role, boolean output) {
+      public MachineSlot(int containerIndex, int x, int y, String role) {
+         this(containerIndex, x, y, role, isOutputRole(role));
+      }
+
+      private static boolean isOutputRole(String role) {
+         String normalized = role.toLowerCase(Locale.ROOT);
+         return normalized.contains("output") || normalized.equals("filled") || normalized.equals("milk");
+      }
    }
 
    public record Panel(String label, int x, int y, int width, int height) {
