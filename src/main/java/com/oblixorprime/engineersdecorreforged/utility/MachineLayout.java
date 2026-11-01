@@ -54,6 +54,19 @@ public record MachineLayout(
       this.textureName = textureName;
    }
 
+   public boolean allowsAutomationExtraction(int containerIndex) {
+      boolean hasOutputSlots = false;
+      for (MachineLayout.MachineSlot slot : this.machineSlots) {
+         if (slot.output()) {
+            hasOutputSlots = true;
+            if (slot.containerIndex() == containerIndex) {
+               return true;
+            }
+         }
+      }
+      return !hasOutputSlots;
+   }
+
    public static MachineLayout forKind(MachineKind kind) {
       return switch (kind) {
          case METAL_CRAFTING_TABLE -> metalCraftingTable();
@@ -232,7 +245,7 @@ public record MachineLayout(
          144,
          24,
          202,
-         List.of(new MachineLayout.MachineSlot(0, 27, 66, "Empty bucket", false), new MachineLayout.MachineSlot(1, 150, 66, "Filled bucket", true)),
+         List.of(new MachineLayout.MachineSlot(0, 27, 66, "Empty bucket", false), new MachineLayout.MachineSlot(1, 150, 66, "Filled", true)),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
          "fluid_barrel/background"

@@ -937,14 +937,6 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       };
    }
 
-   private static boolean isLayoutResultSlot(MachineKind kind, int index) {
-      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> slot.containerIndex() == index && slot.output());
-   }
-
-   private static boolean hasLayoutResultSlots(MachineKind kind) {
-      return MachineLayout.forKind(kind).machineSlots().stream().anyMatch(slot -> slot.output());
-   }
-
 
    public void handleGuiAction(Player player, int action, int valueA, int valueB) {
       MachineKind kind = this.kind();
@@ -3933,7 +3925,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          return false;
       }
 
-      return !hasLayoutResultSlots(kind) || isLayoutResultSlot(kind, slot);
+      return MachineLayout.forKind(kind).allowsAutomationExtraction(slot);
    }
 
    private int firstSlotWith(Item item) {

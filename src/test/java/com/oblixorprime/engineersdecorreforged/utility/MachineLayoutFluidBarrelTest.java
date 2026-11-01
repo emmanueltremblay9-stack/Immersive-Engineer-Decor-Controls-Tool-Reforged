@@ -19,9 +19,18 @@ public class MachineLayoutFluidBarrelTest {
       assertEquals(2, layout.machineSlots().size());
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
       assertEquals(1, layout.machineSlots().get(1).containerIndex());
+      assertEquals("Filled", layout.machineSlots().get(1).role());
       assertFalse(layout.machineSlots().get(0).output());
       assertTrue(layout.machineSlots().get(1).output());
       assertEquals(MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, layout.style());
       assertEquals("fluid_barrel/background", layout.textureName());
+   }
+
+   @Test
+   public void automationExtractionRefusesBucketInputAndAllowsFilledOutput() {
+      MachineLayout layout = MachineLayout.forKind(MachineKind.FLUID_BARREL);
+
+      assertFalse(layout.allowsAutomationExtraction(0));
+      assertTrue(layout.allowsAutomationExtraction(1));
    }
 }

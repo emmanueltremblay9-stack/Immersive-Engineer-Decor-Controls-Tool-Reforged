@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class MachineScreenFluidBarrelMilkIdTest {
    @Test
-   public void recognizesNeoForgeMilkRegistryIdsAndUsesCreamTint() {
+   public void recognizesMinecraftMilkFluidIdFromNeoForgeRegistrationAndUsesCreamTint() {
       ResourceLocation milk = ResourceLocation.fromNamespaceAndPath("minecraft", "milk");
       assertTrue(MachineScreen.isMilkFluidId(milk));
       assertEquals(0xFFE6E1D5, MachineScreen.fluidBarrelMilkTint(milk));
