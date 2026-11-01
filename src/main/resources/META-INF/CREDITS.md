@@ -40,6 +40,9 @@ Source reference:
 - Exact commits, verified MIT license and reuse inventory:
   [native-fluidlogging.md](docs/testing/native-fluidlogging.md).
 
+## User-provided GUI artwork
+
+- The Fluid Barrel reference image (`fluid barrel.png`) was supplied by the repository owner for exact GUI integration. No separate artwork license statement accompanied the source. The original reference, pixel-exact Toolkit JSON, native Toolkit render, and validation record are kept in `docs/gui-art/fluid-barrel/`.
 ## Small Water Freezer GUI artwork
 
 - Artwork: `Small Water Freezer.png`, supplied in the local IEDCTR image folder, 941×1672, SHA-256 `be8066887498aa01d029123da7a33ad32a1e935907ae3a3e706ccdd09bfaa3eb`. The resource copy is byte-for-byte identical; the source file was left unchanged.
