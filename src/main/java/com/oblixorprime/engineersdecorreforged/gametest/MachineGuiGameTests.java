@@ -83,8 +83,6 @@ public final class MachineGuiGameTests {
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_LAB_FURNACE, MachineKind.SMALL_LAB_FURNACE, 11, "small_lab_furnace_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_ELECTRICAL_FURNACE, MachineKind.SMALL_ELECTRICAL_FURNACE, 7, "small_electrical_furnace_gui"),
       new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 2, "small_mineral_smelter_hybrid_v05/background"),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, null),
-      new MachineGuiGameTests.MachineEntry(ModBlocks.SMALL_MINERAL_SMELTER, MachineKind.SMALL_MINERAL_SMELTER, 3, null),
       new MachineGuiGameTests.MachineEntry(
          ModBlocks.SMALL_FREEZER, MachineKind.SMALL_FREEZER, 3, "small_water_freezer/background"
       ),
