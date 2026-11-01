@@ -24,7 +24,7 @@ Both PNGs decoded successfully. A pixel comparison found 1,590 changed pixels in
 
 ## Validation evidence
 
-Validation ran on the task branch from base `a2518ea013eee52082af3e3cdb4b2d9741ab99c0`. The Task A follow-up test correction was validated from prior PR head `be9eced502eaf22822d9aa648434e0f30f6eadb5`. Candidate implementation inputs are identified by a SHA-256 manifest over the eight changed source, resource, and test files (sorted repository-relative path, NUL separator, per-file SHA-256; this README is excluded):
+Validation ran in the issue-131 worktree based on prior PR head `be9eced502eaf22822d9aa648434e0f30f6eadb5`, with the Task A test correction present in the working tree. The passing compile, focused/full JUnit, and GameTest results were produced before the corrected test was committed as `3cae852a39db1e4540e05f1f97100a5b9828b3f5`; the test content is unchanged in that commit. Candidate implementation inputs are identified by a SHA-256 manifest over the eight changed source, resource, and test files (sorted repository-relative path, NUL separator, per-file SHA-256; this README is excluded):
 
 - Change-set content manifest SHA-256: `C46AAA09381824318AB263EA4A351A5E5618F97525E3AACD09A1CACFBDA2126E`
 
