@@ -510,7 +510,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          }
       }
    };
-   private IFluidHandler mineralPort(boolean input) {
+   private IFluidHandler mineralPort(boolean input, boolean output) {
       return new IFluidHandler() {
          public int getTanks() { return 1; }
          public FluidStack getFluidInTank(int tank) {
@@ -526,7 +526,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             return input ? MachineBlockEntity.this.fluidHandler.fill(resource, action) : 0;
          }
          public FluidStack drain(FluidStack resource, FluidAction action) {
-            if (input || resource.isEmpty()) return FluidStack.EMPTY;
+            if (!output || resource.isEmpty()) return FluidStack.EMPTY;
             int available = MachineBlockEntity.this.availableMineralFluidForExternalDrain();
             if (available <= 0) return FluidStack.EMPTY;
             FluidStack bounded = resource.copy();
@@ -534,7 +534,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             return MachineBlockEntity.this.fluidHandler.drain(bounded, action);
          }
          public FluidStack drain(int maxDrain, FluidAction action) {
-            if (input) return FluidStack.EMPTY;
+            if (!output) return FluidStack.EMPTY;
             int available = MachineBlockEntity.this.availableMineralFluidForExternalDrain();
             return available <= 0 ? FluidStack.EMPTY
                : MachineBlockEntity.this.fluidHandler.drain(Math.min(maxDrain, available), action);
@@ -546,8 +546,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER || !this.mineralCooling) return this.fluidAmount;
       return Math.max(0, this.fluidAmount - BUCKET_AMOUNT);
    }
-   private final IFluidHandler mineralTopFluid = this.mineralPort(true);
-   private final IFluidHandler mineralBottomFluid = this.mineralPort(false);
+   private final IFluidHandler mineralTopFluid = this.mineralPort(true, false);
+   private final IFluidHandler mineralBottomFluid = this.mineralPort(false, true);
+   private final IFluidHandler mineralUnsidedFluid = this.mineralPort(true, true);
 
    /** Dedicated v0.5 Smelter GUI projection; the legacy generic bus keeps its original meanings. */
    private final ContainerData mineralSmelterUiDataAccess = new ContainerData() {
@@ -668,7 +669,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
          if (side == Direction.UP) return this.mineralTopItems;
          if (side == Direction.DOWN) return this.mineralBottomItems;
-         return side == null ? this.itemHandler : null; // Internal unsided test/container access.
+         return side == null ? this.itemHandler : null; // Direct access; registered public capabilities guard unsided requests.
       }
       if (this.kind() == MachineKind.SMALL_BLOCK_BREAKER) {
          return side != null && side == this.facing(this.getBlockState()).getOpposite()
@@ -731,7 +732,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER) {
          if (side == Direction.UP) return this.mineralTopFluid;
          if (side == Direction.DOWN) return this.mineralBottomFluid;
-         return side == null ? this.fluidHandler : null; // Internal diagnostic access.
+         return side == null ? this.fluidHandler : null; // Direct diagnostic access; public routing uses fluidCapability().
       }
       if (this.kind() == MachineKind.SMALL_FLUID_FUNNEL) return this.unreadableFunnelFluid == null ? this.funnelTank : null;
       if (this.kind() == MachineKind.FLUID_BARREL && side != null && side.getAxis() != Direction.Axis.Y) {
@@ -743,7 +744,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    public IEnergyStorage energyStorage(Direction side) {
       MachineKind kind = this.kind();
       if (kind == MachineKind.SMALL_MINERAL_SMELTER) {
-         // Null is the non-world-facing internal test hook. No lateral capability exists.
+         // Direct test access; registered public capability rejects a null side for this machine.
          return side == null || side == this.facing(this.getBlockState()).getOpposite() ? this.energyHandler : null;
       }
       if (kind == MachineKind.SMALL_BLOCK_BREAKER) {
@@ -757,6 +758,22 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
             && kind != MachineKind.SMALL_LAB_FURNACE
          ? null
          : this.energyHandler;
+   }
+
+   /** Registered capability entry points keep Smelter side-null access distinct from test hooks. */
+   public IItemHandler itemCapability(Direction side) {
+      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER && side == null) return null;
+      return this.itemHandler(side);
+   }
+
+   public IFluidHandler fluidCapability(Direction side) {
+      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER && side == null) return this.mineralUnsidedFluid;
+      return this.fluidHandler(side);
+   }
+
+   public IEnergyStorage energyCapability(Direction side) {
+      if (this.kind() == MachineKind.SMALL_MINERAL_SMELTER && side == null) return null;
+      return this.energyStorage(side);
    }
 
    public ContainerData dataAccessForTests() {
@@ -2471,6 +2488,20 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
    }
 
+   private boolean mineralHeatingUnavailable(boolean powered) {
+      if (powered || this.energy < MINERAL_SMELTER_ENERGY_PER_TICK || this.mineralCooling || !this.mineralBatchActive) {
+         return true;
+      }
+      ItemStack mineral = this.items.get(0);
+      if (!this.isMineralInput(mineral) || !ItemStack.isSameItemSameComponents(mineral, this.mineralBatchInput)) {
+         return true;
+      }
+      if (this.mineralBatchMode == MINERAL_MODE_MAGMA) {
+         return !this.canInsertIntoSlots(new ItemStack(Items.MAGMA_BLOCK), 2);
+      }
+      return !this.canAddFluid("lava", MINERAL_LAVA_PER_INPUT, this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER));
+   }
+
    /** Hybrid mineral process. Each lot is checked before consumption; product and input
     * are changed only on the authoritative server tick after capacity preflight.
     * Balancing remains candidate until reviewed in the draft PR. */
@@ -2479,7 +2510,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       if (this.level == null) return;
       if (!this.mineralBatchActive && this.mineralQueuedMode >= 0) this.applyQueuedMineralMode();
       if (this.tickCounter % MINERAL_COOL_TICK_PERIOD == 0 && this.mineralTemperature > 0
-         && (powered || this.energy < MINERAL_SMELTER_ENERGY_PER_TICK || this.mineralCooling || !this.mineralBatchActive)) {
+         && this.mineralHeatingUnavailable(powered)) {
          this.setMineralTemperature(this.mineralTemperature - 1);
       }
 
@@ -2507,7 +2538,7 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
          this.mineralStatus = 2; // COOLING
          if (this.tickCounter % MINERAL_COOL_TICK_PERIOD == 0) {
             this.progress = Math.min(100, this.progress + 1);
-            this.setMineralTemperature(Math.max(0, 100 - this.progress));
+            this.setMineralTemperature(Math.min(this.mineralTemperature, Math.max(0, 100 - this.progress)));
             this.setChanged();
          }
          if (this.progress >= 100) {
