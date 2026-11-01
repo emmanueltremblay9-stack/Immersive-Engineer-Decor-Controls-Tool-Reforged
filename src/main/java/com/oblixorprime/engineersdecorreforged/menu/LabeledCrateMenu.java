@@ -83,6 +83,11 @@ public final class LabeledCrateMenu extends AbstractContainerMenu {
 
       ItemStack original = source.getItem().copy();
       ItemStack moving = source.getItem();
+      boolean frameSource = index == FRAME_SLOT;
+      if (frameSource) {
+         // Keep the backing frame stack intact until setByPlayer notifies the block entity.
+         moving = moving.copy();
+      }
       boolean moved;
       if (index < CRATE_SLOT_COUNT) {
          moved = this.moveItemStackTo(moving, PLAYER_SLOT_START, PLAYER_SLOT_END, true);
@@ -95,6 +100,8 @@ public final class LabeledCrateMenu extends AbstractContainerMenu {
 
       if (moving.isEmpty()) {
          source.setByPlayer(ItemStack.EMPTY);
+      } else if (frameSource) {
+         source.setByPlayer(moving);
       } else {
          source.setChanged();
       }

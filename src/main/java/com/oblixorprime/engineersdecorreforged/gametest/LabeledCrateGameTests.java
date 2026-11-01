@@ -16,6 +16,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -300,6 +301,35 @@ public final class LabeledCrateGameTests {
       helper.succeed();
    }
 
+   @GameTest(template = "empty", timeoutTicks = 40)
+   public static void labeled_crate_frame_shift_click_updates_rendered_hint(GameTestHelper helper) {
+      Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+      FrameTrackingContainer container = new FrameTrackingContainer();
+      ItemStack hint = new ItemStack(Items.COMPASS);
+      hint.set(DataComponents.CUSTOM_NAME, Component.literal("Crate Hint"));
+      container.setItem(LabeledCrateMenu.FRAME_SLOT, hint.copy());
+      LabeledCrateMenu menu = new LabeledCrateMenu(4, player.getInventory(), container);
+
+      ItemStack moved = menu.quickMoveStack(player, LabeledCrateMenu.FRAME_SLOT);
+
+      helper.assertTrue(ItemStack.isSameItemSameComponents(moved, hint), "shift-click should transfer the displayed frame item");
+      helper.assertTrue(
+         ItemStack.matches(container.frameBeforeClear, hint),
+         "frame removal should reach Container.setItem before mutating the stored hint so the block entity can update the renderer"
+      );
+      helper.assertTrue(container.getItem(LabeledCrateMenu.FRAME_SLOT).isEmpty(), "shift-click should clear the frame slot");
+      int transferredCount = 0;
+      for (int slot = 0; slot < 36; slot++) {
+         ItemStack inventoryStack = player.getInventory().getItem(slot);
+         if (ItemStack.isSameItemSameComponents(inventoryStack, hint)) {
+            transferredCount += inventoryStack.getCount();
+         }
+      }
+      helper.assertValueEqual(1, transferredCount, "the frame item should transfer exactly once into player inventory");
+      menu.removed(player);
+      helper.succeed();
+   }
+
    @GameTest(template = "empty", timeoutTicks = 100)
    public static void labeled_crate_survival_break_replaces_contents_with_named_crate_and_reloads(GameTestHelper helper) {
       MachineBlockEntity crate = placeNamedCrate(helper, TEST_POS, Component.literal("Named Crate"));
@@ -537,5 +567,21 @@ public final class LabeledCrateGameTests {
          throw new AssertionError("Labeled crate did not create its machine block entity");
       }
       return machine;
+   }
+
+   private static final class FrameTrackingContainer extends SimpleContainer {
+      private ItemStack frameBeforeClear = ItemStack.EMPTY;
+
+      private FrameTrackingContainer() {
+         super(LabeledCrateMenu.CRATE_SLOT_COUNT);
+      }
+
+      @Override
+      public void setItem(int slot, ItemStack stack) {
+         if (slot == LabeledCrateMenu.FRAME_SLOT && stack.isEmpty()) {
+            this.frameBeforeClear = this.getItem(slot).copy();
+         }
+         super.setItem(slot, stack);
+      }
    }
 }
