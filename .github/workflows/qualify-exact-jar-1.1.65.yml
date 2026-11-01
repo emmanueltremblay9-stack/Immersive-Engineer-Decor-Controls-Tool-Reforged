@@ -1,5 +1,5 @@
 name: Qualify exact JAR
-run-name: "IEDCTR ${{ github.ref_name }} :: binary qualification, no publication"
+run-name: "IEDCTR ${{ github.ref_name }} :: exact-byte review, no publication"
 
 on:
   # The scoped release-candidate branch qualifies an explicit JSON source spec.
