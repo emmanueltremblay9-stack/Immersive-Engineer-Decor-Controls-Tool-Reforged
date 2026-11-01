@@ -1,6 +1,7 @@
 package com.oblixorprime.engineersdecorreforged.menu;
 
 import com.oblixorprime.engineersdecorreforged.ModMenus;
+import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.utility.MachineBlockEntity;
 import com.oblixorprime.engineersdecorreforged.utility.MachineEnergySync;
 import com.oblixorprime.engineersdecorreforged.utility.MachineKind;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
@@ -35,6 +37,24 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 public class MachineMenu extends AbstractContainerMenu {
    public static final int MACHINE_SLOT_COUNT = 27;
    public static final int DATA_COUNT = 16;
+   public static final int SMALL_MINERAL_SMELTER_V05_DATA_COUNT = 17;
+   public static final int SMS_UI_FLAGS = 0;
+   public static final int SMS_UI_REVISION = 1;
+   public static final int SMS_UI_SELECTED_MODE = 2;
+   public static final int SMS_UI_BATCH_MODE = 3;
+   public static final int SMS_UI_QUEUED_MODE = 4;
+   public static final int SMS_UI_THERMAL = 5;
+   public static final int SMS_UI_PHASE = 6;
+   public static final int SMS_UI_TANK_AMOUNT = 7;
+   public static final int SMS_UI_TANK_CAPACITY = 8;
+   public static final int SMS_UI_ENERGY = 9;
+   public static final int SMS_UI_ENERGY_CAPACITY = 10;
+   public static final int SMS_UI_FE_RATE = 11;
+   public static final int SMS_UI_REDSTONE = 12;
+   public static final int SMS_UI_COMPARATOR = 13;
+   public static final int SMS_UI_HAZARD = 14;
+   public static final int SMS_UI_STATUS = 15;
+   public static final int SMS_UI_BATCH_PROGRESS = 16;
    public static final int FREEZER_STATUS_IDLE = MachineBlockEntity.FREEZER_STATUS_IDLE;
    public static final int FREEZER_STATUS_READY = MachineBlockEntity.FREEZER_STATUS_READY;
    public static final int FREEZER_STATUS_PROCESSING = MachineBlockEntity.FREEZER_STATUS_PROCESSING;
@@ -65,29 +85,51 @@ public class MachineMenu extends AbstractContainerMenu {
    private static final int PLAYER_INVENTORY_START = 27;
    private static final int PLAYER_INVENTORY_END = 54;
    private static final int HOTBAR_END = 63;
+   private static final int[] SMELTER_PLAYER_SLOT_X = {27, 48, 68, 88, 109, 129, 150, 170, 191};
+   private final Player menuPlayer;
+   private boolean smelterOutputDrawerOpen;
    private final MachineKind kind;
    private final MachineLayout layout;
    private final int visibleMachineSlots;
    private final Container container;
    private final ContainerData data;
+   private final boolean smelterV05Projection;
+   private final ContainerLevelAccess menuAccess;
+   private final Block expectedMenuBlock;
+   private final boolean hasServerMenuAccess;
+   private long lastMineralModeRequestTick = Long.MIN_VALUE;
 
    public MachineMenu(int id, Inventory inventory) {
       this(MachineKind.LABELED_CRATE, id, inventory, new SimpleContainer(27), new SimpleContainerData(16));
    }
 
    public static MachineMenu client(int id, Inventory inventory, MachineKind kind) {
-      return new MachineMenu(kind, id, inventory, new SimpleContainer(27), new SimpleContainerData(16));
+      return new MachineMenu(kind, id, inventory, new SimpleContainer(27),
+         new SimpleContainerData(kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT));
    }
 
    public MachineMenu(MachineKind kind, int id, Inventory inventory, Container container, ContainerData data) {
       super((MenuType)resolveMenuType(kind), id);
       checkContainerSize(container, 27);
-      checkContainerDataCount(data, 16);
+      checkContainerDataCount(data, kind == MachineKind.SMALL_MINERAL_SMELTER ? SMALL_MINERAL_SMELTER_V05_DATA_COUNT : DATA_COUNT);
       this.kind = kind;
+      this.menuPlayer = inventory.player;
       this.layout = MachineLayout.forKind(kind);
       this.visibleMachineSlots = this.layout.machineSlots().size();
       this.container = container;
       this.data = data;
+      this.smelterV05Projection = kind == MachineKind.SMALL_MINERAL_SMELTER
+         && data.getCount() == SMALL_MINERAL_SMELTER_V05_DATA_COUNT;
+      if (kind == MachineKind.SMALL_MINERAL_SMELTER && container instanceof MachineBlockEntity machine
+         && machine.getLevel() != null) {
+         this.menuAccess = ContainerLevelAccess.create(machine.getLevel(), machine.getBlockPos());
+         this.expectedMenuBlock = ModBlocks.SMALL_MINERAL_SMELTER.get();
+         this.hasServerMenuAccess = true;
+      } else {
+         this.menuAccess = ContainerLevelAccess.NULL;
+         this.expectedMenuBlock = Blocks.AIR;
+         this.hasServerMenuAccess = false;
+      }
       container.startOpen(inventory.player);
 
       for (MachineLayout.MachineSlot slot : this.layout.machineSlots()) {
@@ -96,12 +138,16 @@ public class MachineMenu extends AbstractContainerMenu {
 
       for (int row = 0; row < 3; row++) {
          for (int column = 0; column < 9; column++) {
-            this.addSlot(new Slot(inventory, column + row * 9 + 9, this.layout.playerInventoryX() + column * 18, this.layout.playerInventoryY() + row * 18));
+            int x = kind == MachineKind.SMALL_MINERAL_SMELTER
+               ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerInventoryX() + column * 18;
+            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, this.layout.playerInventoryY() + row * 18));
          }
       }
 
       for (int column = 0; column < 9; column++) {
-         this.addSlot(new Slot(inventory, column, this.layout.hotbarX() + column * 18, this.layout.hotbarY()));
+         int x = kind == MachineKind.SMALL_MINERAL_SMELTER
+            ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarX() + column * 18;
+         this.addSlot(new Slot(inventory, column, x, this.layout.hotbarY()));
       }
 
       this.addDataSlots(data);
@@ -127,25 +173,34 @@ public class MachineMenu extends AbstractContainerMenu {
       return this.visibleMachineSlots;
    }
 
+   /** Only client presentation is gated; the server always exposes the output slot. */
+   public void setSmelterOutputDrawerOpen(boolean open) {
+      this.smelterOutputDrawerOpen = this.kind == MachineKind.SMALL_MINERAL_SMELTER && open;
+   }
+
    public int progress() {
       return switch (this.kind) {
          case SMALL_LAB_FURNACE, SMALL_ELECTRICAL_FURNACE -> scaledProgress(this.data.get(2), this.data.get(3));
          case SMALL_BLOCK_BREAKER -> scaledProgress(this.data.get(1), this.data.get(3));
-         case SMALL_MINERAL_SMELTER -> clampPercent(this.data.get(1));
+         case SMALL_MINERAL_SMELTER -> this.smelterV05Projection
+            ? this.data.get(SMS_UI_BATCH_PROGRESS) < 0 ? -1 : clampPercent(this.data.get(SMS_UI_BATCH_PROGRESS))
+            : clampPercent(this.data.get(1));
          case SMALL_FREEZER -> scaledProgress(this.data.get(1), TEMPERATURE_PROCESS_TICKS);
          default -> clampPercent(this.data.get(1));
       };
    }
 
    public int fluidAmount() {
-      return this.data.get(2);
+      return this.kind == MachineKind.SMALL_MINERAL_SMELTER && this.smelterV05Projection
+         ? this.data.get(SMS_UI_TANK_AMOUNT) : this.data.get(2);
    }
 
    public int fluidCapacity() {
       return switch (this.kind) {
          case SMALL_FLUID_FUNNEL -> SMALL_FLUID_FUNNEL_CAPACITY;
          case FLUID_BARREL -> 32000;
-         case PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE, SMALL_MINERAL_SMELTER -> DEFAULT_FLUID_CAPACITY;
+         case SMALL_MINERAL_SMELTER -> this.smelterV05Projection ? this.data.get(SMS_UI_TANK_CAPACITY) : DEFAULT_FLUID_CAPACITY;
+         case PASSIVE_FLUID_ACCUMULATOR, SMALL_MILKING_MACHINE -> DEFAULT_FLUID_CAPACITY;
          default -> 0;
       };
    }
@@ -179,9 +234,9 @@ public class MachineMenu extends AbstractContainerMenu {
       return switch (this.kind) {
          case SMALL_ELECTRICAL_FURNACE -> this.data.get(ELECTRICAL_FURNACE_ENERGY_FIELD);
          case SMALL_LAB_FURNACE -> this.data.get(LAB_FURNACE_ENERGY_FIELD);
-case SMALL_MINERAL_SMELTER -> this.data.get(6);
-case SMALL_FREEZER -> this.data.get(FREEZER_ENERGY_FIELD);
-case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
+            case SMALL_MINERAL_SMELTER -> this.smelterV05Projection ? this.data.get(SMS_UI_ENERGY) : this.data.get(6);
+            case SMALL_FREEZER -> this.data.get(FREEZER_ENERGY_FIELD);
+            case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_FIELD) * ENERGY_FIELD_SCALE;
           case SMALL_BLOCK_BREAKER -> this.data.get(10);
          default -> 0;
       };
@@ -190,7 +245,8 @@ case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_F
    public int energyCapacity() {
       return switch (this.kind) {
          case SMALL_SOLAR_PANEL -> SOLAR_PANEL_ENERGY_CAPACITY;
-         case SMALL_WASTE_INCINERATOR, SMALL_MINERAL_SMELTER, SMALL_FREEZER -> COMPACT_MACHINE_ENERGY_CAPACITY;
+         case SMALL_MINERAL_SMELTER -> this.smelterV05Projection ? this.data.get(SMS_UI_ENERGY_CAPACITY) : COMPACT_MACHINE_ENERGY_CAPACITY;
+         case SMALL_WASTE_INCINERATOR, SMALL_FREEZER -> COMPACT_MACHINE_ENERGY_CAPACITY;
          case SMALL_LAB_FURNACE, SMALL_ELECTRICAL_FURNACE -> STANDARD_MACHINE_ENERGY_CAPACITY;
           case SMALL_BLOCK_BREAKER -> 32000;
          default -> 0;
@@ -226,7 +282,8 @@ case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_F
    }
 
    public int comparatorOutput() {
-      return this.data.get(4);
+      return this.kind == MachineKind.SMALL_MINERAL_SMELTER && this.smelterV05Projection
+         ? this.data.get(SMS_UI_COMPARATOR) : this.data.get(4);
    }
 
    public int activityTicks() {
@@ -285,13 +342,45 @@ case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_F
    }
 
    public void handleAction(Player player, int action, int valueA, int valueB) {
-      if (action == 31 && (this.kind != MachineKind.SMALL_MINERAL_SMELTER || !this.stillValid(player) || player.isSpectator())) return;
+      if (action == 31) return; // Smelter mode changes use the v0.5 dedicated payload only.
       if (this.container instanceof MachineBlockEntity machine) {
          machine.handleGuiAction(player, action, valueA, valueB);
       }
    }
 
+   public boolean handleMineralModeRequest(Player player, int expectedRevision, int modeId) {
+      if (player == null || this.kind != MachineKind.SMALL_MINERAL_SMELTER || !this.smelterV05Projection
+         || player.containerMenu != this || player.isSpectator() || !this.stillValid(player)
+         || expectedRevision < 0 || expectedRevision >= 30000 || modeId < 0 || modeId > 2
+         || (this.data.get(SMS_UI_FLAGS) & 2) == 0) {
+         return false;
+      }
+      long currentTick = player.level().getGameTime();
+      if (this.lastMineralModeRequestTick != Long.MIN_VALUE
+         && currentTick - this.lastMineralModeRequestTick < 1L) {
+         this.broadcastChanges();
+         return false;
+      }
+      boolean accepted = this.container instanceof MachineBlockEntity machine
+         && machine.requestMineralModeFromGui(player, modeId, expectedRevision);
+      if (accepted) this.lastMineralModeRequestTick = currentTick;
+      else this.broadcastChanges();
+      return accepted;
+   }
+
+   public boolean isMineralSmelterMenuFor(MachineBlockEntity machine) {
+      return this.kind == MachineKind.SMALL_MINERAL_SMELTER && this.smelterV05Projection && this.container == machine;
+   }
+
+   @Override
+   public boolean clickMenuButton(Player player, int id) {
+      return this.kind == MachineKind.SMALL_MINERAL_SMELTER ? false : super.clickMenuButton(player, id);
+   }
+
    public boolean stillValid(Player player) {
+      if (this.kind == MachineKind.SMALL_MINERAL_SMELTER) {
+         return this.hasServerMenuAccess && AbstractContainerMenu.stillValid(this.menuAccess, player, this.expectedMenuBlock);
+      }
       return this.container.stillValid(player);
    }
 
@@ -343,17 +432,26 @@ case SMALL_SOLAR_PANEL, SMALL_WASTE_INCINERATOR -> this.data.get(SCALED_ENERGY_F
          return slot.containerIndex() == 10
             ? new MachineMenu.MetalCraftingResultSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
             : new MachineMenu.MetalCraftingInputSlot(this.container, slot.containerIndex(), slot.x(), slot.y());
-      } else {
-         return slot.output()
-            ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
-            : new MachineMenu.ValidatedMachineSlot(
-               this.container,
-               slot.containerIndex(),
-               slot.x(),
-               slot.y(),
-               this.kind == MachineKind.SMALL_FREEZER && slot.containerIndex() == 1
-            );
+
       }
+      if (this.kind == MachineKind.SMALL_MINERAL_SMELTER && slot.containerIndex() == 2) {
+         return new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y()) {
+            @Override
+            public boolean isActive() {
+               // The drawer is only a client-side visual gate, not a server permission.
+               return !MachineMenu.this.menuPlayer.level().isClientSide || MachineMenu.this.smelterOutputDrawerOpen;
+            }
+         };
+      }
+      return slot.output()
+         ? new MachineMenu.OutputMachineSlot(this.container, slot.containerIndex(), slot.x(), slot.y())
+            : new MachineMenu.ValidatedMachineSlot(
+                this.container,
+                slot.containerIndex(),
+                slot.x(),
+                slot.y(),
+                this.kind == MachineKind.SMALL_FREEZER && slot.containerIndex() == 1
+            );
    }
 
 

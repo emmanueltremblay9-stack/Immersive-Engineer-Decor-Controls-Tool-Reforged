@@ -1,0 +1,879 @@
+{
+  "version": "0.5.0",
+  "identity": "IEDCTR-SMELTER-EXACT-REFERENCE-V05",
+  "source_pixels": [
+    1168,
+    1346
+  ],
+  "logical_canvas": [
+    234,
+    270
+  ],
+  "source_sha256": "d48c7e0ea4ba0851280813166393678a6f7151f6e1e05d3c51ebd55646b6943d",
+  "reference_mode": "pixel-identical supplied image; frozen example data",
+  "runtime_mode": "same static faceplate; localized live overlays, item icons and truthful gauges",
+  "logical_mapping": "x_px*234/1168; y_px*270/1346; no old 209x235 assumptions",
+  "inventory_spacing": "Custom source-matched horizontal spacing 20/21 logical units; vertical pitch 18. Real item regions 16x16. Counts 27+9. Artwork cells remain unchanged.",
+  "machine_menu_slots": [
+    {
+      "id": "input",
+      "menu_index": 0,
+      "container_index": 0,
+      "minecraft_item": [
+        126,
+        46,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "output",
+      "menu_index": 1,
+      "container_index": 2,
+      "minecraft_item": [
+        170,
+        49,
+        16,
+        16
+      ],
+      "visibility": "output drawer only; backend slot preserved and shift-click accessible",
+      "insert_allowed": false
+    }
+  ],
+  "legacy_slot_1": "Never displayed as fuel. Backing inventory remains untouched; migration not implemented.",
+  "player_slots": [
+    {
+      "id": "player_9",
+      "kind": "player",
+      "menu_index": 2,
+      "container_index": 9,
+      "source_frame": [
+        124,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        27,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_10",
+      "kind": "player",
+      "menu_index": 3,
+      "container_index": 10,
+      "source_frame": [
+        226,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        48,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_11",
+      "kind": "player",
+      "menu_index": 4,
+      "container_index": 11,
+      "source_frame": [
+        328,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        68,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_12",
+      "kind": "player",
+      "menu_index": 5,
+      "container_index": 12,
+      "source_frame": [
+        430,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        88,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_13",
+      "kind": "player",
+      "menu_index": 6,
+      "container_index": 13,
+      "source_frame": [
+        532,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        109,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_14",
+      "kind": "player",
+      "menu_index": 7,
+      "container_index": 14,
+      "source_frame": [
+        634,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        129,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_15",
+      "kind": "player",
+      "menu_index": 8,
+      "container_index": 15,
+      "source_frame": [
+        736,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        150,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_16",
+      "kind": "player",
+      "menu_index": 9,
+      "container_index": 16,
+      "source_frame": [
+        838,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        170,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_17",
+      "kind": "player",
+      "menu_index": 10,
+      "container_index": 17,
+      "source_frame": [
+        940,
+        849,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        191,
+        171,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_18",
+      "kind": "player",
+      "menu_index": 11,
+      "container_index": 18,
+      "source_frame": [
+        124,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        27,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_19",
+      "kind": "player",
+      "menu_index": 12,
+      "container_index": 19,
+      "source_frame": [
+        226,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        48,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_20",
+      "kind": "player",
+      "menu_index": 13,
+      "container_index": 20,
+      "source_frame": [
+        328,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        68,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_21",
+      "kind": "player",
+      "menu_index": 14,
+      "container_index": 21,
+      "source_frame": [
+        430,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        88,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_22",
+      "kind": "player",
+      "menu_index": 15,
+      "container_index": 22,
+      "source_frame": [
+        532,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        109,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_23",
+      "kind": "player",
+      "menu_index": 16,
+      "container_index": 23,
+      "source_frame": [
+        634,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        129,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_24",
+      "kind": "player",
+      "menu_index": 17,
+      "container_index": 24,
+      "source_frame": [
+        736,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        150,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_25",
+      "kind": "player",
+      "menu_index": 18,
+      "container_index": 25,
+      "source_frame": [
+        838,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        170,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_26",
+      "kind": "player",
+      "menu_index": 19,
+      "container_index": 26,
+      "source_frame": [
+        940,
+        939,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        191,
+        189,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_27",
+      "kind": "player",
+      "menu_index": 20,
+      "container_index": 27,
+      "source_frame": [
+        124,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        27,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_28",
+      "kind": "player",
+      "menu_index": 21,
+      "container_index": 28,
+      "source_frame": [
+        226,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        48,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_29",
+      "kind": "player",
+      "menu_index": 22,
+      "container_index": 29,
+      "source_frame": [
+        328,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        68,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_30",
+      "kind": "player",
+      "menu_index": 23,
+      "container_index": 30,
+      "source_frame": [
+        430,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        88,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_31",
+      "kind": "player",
+      "menu_index": 24,
+      "container_index": 31,
+      "source_frame": [
+        532,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        109,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_32",
+      "kind": "player",
+      "menu_index": 25,
+      "container_index": 32,
+      "source_frame": [
+        634,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        129,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_33",
+      "kind": "player",
+      "menu_index": 26,
+      "container_index": 33,
+      "source_frame": [
+        736,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        150,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_34",
+      "kind": "player",
+      "menu_index": 27,
+      "container_index": 34,
+      "source_frame": [
+        838,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        170,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "player_35",
+      "kind": "player",
+      "menu_index": 28,
+      "container_index": 35,
+      "source_frame": [
+        940,
+        1029,
+        101,
+        88
+      ],
+      "minecraft_item": [
+        191,
+        207,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_0",
+      "kind": "hotbar",
+      "menu_index": 29,
+      "container_index": 0,
+      "source_frame": [
+        124,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        27,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_1",
+      "kind": "hotbar",
+      "menu_index": 30,
+      "container_index": 1,
+      "source_frame": [
+        226,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        48,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_2",
+      "kind": "hotbar",
+      "menu_index": 31,
+      "container_index": 2,
+      "source_frame": [
+        328,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        68,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_3",
+      "kind": "hotbar",
+      "menu_index": 32,
+      "container_index": 3,
+      "source_frame": [
+        430,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        88,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_4",
+      "kind": "hotbar",
+      "menu_index": 33,
+      "container_index": 4,
+      "source_frame": [
+        532,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        109,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_5",
+      "kind": "hotbar",
+      "menu_index": 34,
+      "container_index": 5,
+      "source_frame": [
+        634,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        129,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_6",
+      "kind": "hotbar",
+      "menu_index": 35,
+      "container_index": 6,
+      "source_frame": [
+        736,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        150,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_7",
+      "kind": "hotbar",
+      "menu_index": 36,
+      "container_index": 7,
+      "source_frame": [
+        838,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        170,
+        231,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "hotbar_8",
+      "kind": "hotbar",
+      "menu_index": 37,
+      "container_index": 8,
+      "source_frame": [
+        940,
+        1147,
+        101,
+        94
+      ],
+      "minecraft_item": [
+        191,
+        231,
+        16,
+        16
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "LAVA",
+      "rect": [
+        877,
+        211,
+        195,
+        43
+      ],
+      "label": "Produce lava"
+    },
+    {
+      "id": "MAGMA_BLOCK",
+      "rect": [
+        877,
+        267,
+        195,
+        43
+      ],
+      "label": "Produce a magma block"
+    },
+    {
+      "id": "OBSIDIAN",
+      "rect": [
+        877,
+        323,
+        195,
+        43
+      ],
+      "label": "Produce obsidian"
+    },
+    {
+      "id": "output_drawer",
+      "rect": [
+        808,
+        174,
+        265,
+        30
+      ],
+      "label": "Open single item-output tray"
+    }
+  ],
+  "fields": {
+    "input_item": [
+      630,
+      222,
+      89,
+      98
+    ],
+    "phase_lamps": [
+      443,
+      222,
+      40,
+      203
+    ],
+    "phase_pointer": [
+      419,
+      283,
+      23,
+      33
+    ],
+    "thermal_text": [
+      94,
+      531,
+      320,
+      29
+    ],
+    "thermal_bar": [
+      94,
+      567,
+      433,
+      25
+    ],
+    "comparator": [
+      179,
+      630,
+      328,
+      30
+    ],
+    "hazard": [
+      95,
+      686,
+      424,
+      67
+    ],
+    "tank_viewport": [
+      606,
+      509,
+      94,
+      221
+    ],
+    "tank_amount": [
+      743,
+      510,
+      86,
+      31
+    ],
+    "tank_capacity": [
+      744,
+      546,
+      86,
+      20
+    ],
+    "tank_scale": [
+      716,
+      573,
+      56,
+      162
+    ],
+    "energy_amount": [
+      923,
+      510,
+      162,
+      25
+    ],
+    "energy_bar": [
+      867,
+      553,
+      216,
+      26
+    ],
+    "energy_rate": [
+      955,
+      600,
+      118,
+      29
+    ],
+    "redstone": [
+      946,
+      706,
+      106,
+      31
+    ],
+    "mode_lava": [
+      877,
+      211,
+      195,
+      43
+    ],
+    "mode_magma": [
+      877,
+      267,
+      195,
+      43
+    ],
+    "mode_obsidian": [
+      877,
+      323,
+      195,
+      43
+    ]
+  },
+  "output_drawer": {
+    "source_rect": [
+      775,
+      210,
+      303,
+      174
+    ],
+    "logical_rect": [
+      155,
+      42,
+      61,
+      35
+    ],
+    "reason": "Supplied picture has product selectors but no physical output inventory socket. Drawer is a UI-only proposed access path; closed faceplate is exact."
+  },
+  "data_fields": [
+    "revision",
+    "mode",
+    "batch_mode",
+    "queued_mode",
+    "thermal_percent",
+    "phase",
+    "tank_mb",
+    "tank_capacity",
+    "energy_fe",
+    "energy_capacity",
+    "fe_per_tick",
+    "redstone",
+    "comparator",
+    "hazard",
+    "status",
+    "mode_selection_supported"
+  ]
+}

@@ -114,10 +114,12 @@ public record MachineLayout(
 
    /** Two physical item slots; old Heat index 1 stays in NBT but is never shown as fuel. */
    private static MachineLayout mineralHybrid() {
-      return new MachineLayout(209, 235, 23, 144, 23, 202,
-         List.of(new MachineLayout.MachineSlot(0, 109, 38, "Mineral input"),
-                 new MachineLayout.MachineSlot(2, 132, 38, "Product output")),
-         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE, "block_breaker_v08/background");
+      // v0.5 source faceplate: 1168x1346 -> logical 234x270.
+      return new MachineLayout(234, 270, 27, 171, 27, 231,
+         List.of(new MachineLayout.MachineSlot(0, 126, 46, "Mineral input"),
+                 new MachineLayout.MachineSlot(2, 170, 49, "Product output")),
+         List.of(), MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
+         "small_mineral_smelter_hybrid_v05/background");
    }
 
    private static MachineLayout crate() {

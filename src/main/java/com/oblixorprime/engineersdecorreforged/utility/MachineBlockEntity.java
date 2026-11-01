@@ -2,6 +2,7 @@ package com.oblixorprime.engineersdecorreforged.utility;
 
 import blusunrize.immersiveengineering.api.utils.ItemUtils;
 import com.oblixorprime.engineersdecorreforged.ModBlockEntities;
+import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import com.oblixorprime.engineersdecorreforged.menu.MachineMenu;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -556,6 +557,13 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
    private final IFluidHandler mineralBottomFluid = this.mineralPort(false, true);
    private final IFluidHandler mineralUnsidedFluid = this.mineralPort(true, true);
 
+   /** Dedicated v0.5 Smelter GUI projection; the legacy generic bus keeps its original meanings. */
+   private final ContainerData mineralSmelterUiDataAccess = new ContainerData() {
+      public int get(int index) { return MachineBlockEntity.this.mineralSmelterUiField(index); }
+      public void set(int index, int value) { }
+      public int getCount() { return 17; } // v0.5 fields 0..15 plus active-lot progress extension 16.
+   };
+
 
    private final ContainerData dataAccess = new ContainerData() {
       public int get(int index) {
@@ -779,6 +787,10 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       return this.dataAccess;
    }
 
+   public ContainerData mineralSmelterUiDataAccessForTests() {
+      return this.mineralSmelterUiDataAccess;
+   }
+
 
 
    public static void serverTick(Level level, BlockPos pos, BlockState state, MachineBlockEntity machine) {
@@ -995,6 +1007,9 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
 
    protected AbstractContainerMenu createMenu(int id, Inventory inventory) {
       MachineKind kind = this.kind();
+      if (kind == MachineKind.SMALL_MINERAL_SMELTER) {
+         return new MachineMenu(kind, id, inventory, this, this.mineralSmelterUiDataAccess);
+      }
       return new MachineMenu(kind == null ? MachineKind.LABELED_CRATE : kind, id, inventory, this, this.dataAccess);
    }
 
@@ -1221,6 +1236,62 @@ public class MachineBlockEntity extends BaseContainerBlockEntity implements Worl
       }
       this.mineralModeRevision = (this.mineralModeRevision + 1) % 30000;
       this.setChanged();
+   }
+
+   private int mineralSmelterUiField(int index) {
+      if (this.kind() != MachineKind.SMALL_MINERAL_SMELTER) return 0;
+      return switch (index) {
+         case 0 -> 3;
+         case 1 -> this.mineralModeRevision;
+         case 2 -> this.mineralMode;
+         case 3 -> this.mineralBatchActive ? this.mineralBatchMode : -1;
+         case 4 -> this.mineralQueuedMode;
+         case 5 -> this.mineralTemperature;
+         case 6 -> this.mineralTemperature >= 100 ? 3 : this.mineralTemperature >= 90 ? 2 : this.mineralTemperature >= 5 ? 1 : 0;
+         case 7 -> this.fluidAmount;
+         case 8 -> this.capacityFor(MachineKind.SMALL_MINERAL_SMELTER);
+         case 9 -> this.energy;
+         case 10 -> this.energyCapacity(MachineKind.SMALL_MINERAL_SMELTER);
+         case 11 -> this.mineralActualFeRate;
+         case 12 -> this.previousPowered ? 1 : 0;
+         case 13 -> this.comparatorOutput();
+         case 14 -> this.mineralHotSurface() ? 1 : 0;
+         case 15 -> this.mineralSmelterUiStatus();
+         case 16 -> this.mineralBatchActive ? this.progress : -1;
+         default -> 0;
+      };
+   }
+
+   private int mineralSmelterUiStatus() {
+      // v0.5 stable enum; WAIT_LAVA is an appended v0.4 mechanics extension at 11.
+      if (this.mineralStatus == 0) return this.mineralQueuedMode >= 0 ? 10 : 9;
+      return switch (this.mineralStatus) {
+         case 1 -> 1;  // HEATING
+         case 2 -> 2;  // COOLING
+         case 3 -> 7;  // NO_INPUT
+         case 4 -> 8;  // INVALID_INPUT
+         case 5 -> 5;  // TANK_FULL
+         case 6 -> 6;  // OUTPUT_FULL
+         case 7 -> 11; // WAIT_LAVA extension
+         case 8 -> 4;  // REDSTONE_INHIBITED
+         case 9 -> 3;  // WAIT_FE
+         default -> 0; // SYNCING
+      };
+   }
+
+   public boolean requestMineralModeFromGui(Player player, int requested, int expectedRevision) {
+      if (player == null || player.isSpectator() || this.level == null || this.level.isClientSide
+         || this.kind() != MachineKind.SMALL_MINERAL_SMELTER
+         || !(player.containerMenu instanceof MachineMenu menu)
+         || !menu.isMineralSmelterMenuFor(this) || !menu.stillValid(player)
+         || this.level.getBlockEntity(this.worldPosition) != this
+         || !this.level.getBlockState(this.worldPosition).is(ModBlocks.SMALL_MINERAL_SMELTER.get())
+         || requested < MINERAL_MODE_LAVA || requested > MINERAL_MODE_OBSIDIAN
+         || expectedRevision != this.mineralModeRevision) {
+         return false;
+      }
+      this.selectMineralMode(requested, expectedRevision);
+      return true;
    }
 
    private int fieldValue(MachineKind kind, int index) {
