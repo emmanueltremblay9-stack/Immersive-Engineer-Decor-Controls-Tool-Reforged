@@ -59,7 +59,7 @@ class RequiredGateTests(unittest.TestCase):
         self.assertEqual("skipped", successful_needs()[OPTIONAL_JOB]["result"])
         self.assertEqual([], evaluate_needs(json.dumps(successful_needs()))[1])
 
-    def test_native_gui_is_required_for_pr_133_and_144(self):
+    def test_native_gui_is_required_for_pr_133_144_and_147(self):
         proof = successful_needs()
         passed, summary = summarize(json.dumps(proof), environment(pr_number="133"), MERGE)
         self.assertFalse(passed)
@@ -79,6 +79,17 @@ class RequiredGateTests(unittest.TestCase):
         self.assertTrue(summarize(json.dumps(proof), environment(pr_number="144"), MERGE)[0])
         proof[OPTIONAL_JOB]["result"] = "failure"
         passed, summary = summarize(json.dumps(proof), environment(pr_number="144"), MERGE)
+        self.assertFalse(passed)
+        self.assertIn("native-smelter-gui: failure (required: success)", summary)
+
+        proof[OPTIONAL_JOB]["result"] = "skipped"
+        passed, summary = summarize(json.dumps(proof), environment(pr_number="147"), MERGE)
+        self.assertFalse(passed)
+        self.assertIn("native-smelter-gui: skipped (required: success)", summary)
+        proof[OPTIONAL_JOB]["result"] = "success"
+        self.assertTrue(summarize(json.dumps(proof), environment(pr_number="147"), MERGE)[0])
+        proof[OPTIONAL_JOB]["result"] = "failure"
+        passed, summary = summarize(json.dumps(proof), environment(pr_number="147"), MERGE)
         self.assertFalse(passed)
         self.assertIn("native-smelter-gui: failure (required: success)", summary)
 
@@ -276,7 +287,7 @@ class BuildWorkflowContractTests(unittest.TestCase):
             block = mapping_block(self.jobs, job, indent=2)
             self.assertNotRegex(block, r"(?m)^    if:")
         native_gui = mapping_block(self.jobs, OPTIONAL_JOB, indent=2)
-        self.assertIn("    if: " + chr(36) + "{{ github.event_name == 'pull_request' && (github.event.pull_request.number == 133 || github.event.pull_request.number == 144) }}\n",
+        self.assertIn("    if: " + chr(36) + "{{ github.event_name == 'pull_request' && (github.event.pull_request.number == 133 || github.event.pull_request.number == 144 || github.event.pull_request.number == 147) }}\n",
                       native_gui)
         build = mapping_block(self.jobs, "build", indent=2)
         for command in ("./gradlew compileJava processResources --stacktrace", "./gradlew test --stacktrace",

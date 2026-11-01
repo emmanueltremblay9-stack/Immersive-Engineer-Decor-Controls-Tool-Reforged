@@ -100,7 +100,7 @@ def identity_lines(env: Mapping[str, str], checkout_sha: str) -> list[str]:
 def summarize(raw: str, env: Mapping[str, str], checkout_sha: str) -> tuple[bool, str]:
     require_native_gui = (
         env.get("GITHUB_EVENT_NAME") == "pull_request"
-        and env.get("CI_PR_NUMBER") in {"133", "144"}
+        and env.get("CI_PR_NUMBER") in {"133", "144", "147"}
     )
     results, errors = evaluate_needs(raw, require_native_gui=require_native_gui)
     try:
@@ -119,7 +119,7 @@ def summarize(raw: str, env: Mapping[str, str], checkout_sha: str) -> tuple[bool
         lines += ["Validation errors:", "", *(f"- {error}" for error in errors), ""]
     lines += [
         "The four required families cover eight validation jobs, including both matrices. "
-        "Native Smelter GUI capture is required only for PR #133 and #144; the workflow may skip it on other PRs or events, but a failure never passes.",
+        "Native Smelter GUI capture is required only for PR #133, #144, and #147; the workflow may skip it on other PRs or events, but a failure never passes.",
         "Diagnostic artifacts retain the existing 14-day lifetime; this summary does not upload a runtime JAR.",
         "This aggregate is informational until separately configured in branch protection. "
         "It does not authorize a merge or establish release readiness.",
