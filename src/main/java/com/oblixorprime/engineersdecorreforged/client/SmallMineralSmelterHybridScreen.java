@@ -209,7 +209,7 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
 
    @Override
    public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-      // The game world is dimmed by the panel backdrop below.
+      renderBg(graphics, partialTick, mouseX, mouseY);
    }
 
    @Override
