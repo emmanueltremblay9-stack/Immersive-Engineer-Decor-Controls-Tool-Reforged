@@ -300,7 +300,8 @@ final class NativeCorrectedMachineGuiValidation {
             "Live hotbar lattice differs from layout for " + spec.id());
       }
       if (spec.kind() == MachineKind.SMALL_FREEZER) {
-         require(!menu.getSlot(1).isActive(), "Reserved Freezer Cold slot must remain disabled");
+         require(!menu.getSlot(1).mayPlace(new ItemStack(Items.STONE)),
+            "Reserved Freezer Cold slot must reject insertion");
       }
    }
 
