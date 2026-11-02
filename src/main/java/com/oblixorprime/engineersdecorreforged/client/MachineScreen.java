@@ -60,6 +60,13 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       this.renderMachineTooltip(graphics, mouseX, mouseY);
    }
 
+   /** Exposes the vanilla slot-sized hover check to the isolated native GUI validation fixture. */
+   public boolean isMachineSlotHoveredAt(int slotListIndex, double mouseX, double mouseY) {
+      if (slotListIndex < 0 || slotListIndex >= this.menu.slots.size()) return false;
+      var slot = this.menu.getSlot(slotListIndex);
+      return slot.isActive() && this.isHovering(slot.x, slot.y, 16, 16, mouseX, mouseY);
+   }
+
    private void renderSoftBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
       if (this.minecraft != null && this.minecraft.level != null) {
          graphics.fill(0, 0, this.width, this.height, 855638016);

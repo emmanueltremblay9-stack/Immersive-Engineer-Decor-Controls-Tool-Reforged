@@ -158,7 +158,9 @@ final class NativeCorrectedMachineGuiValidation {
             hover.addProperty("slot_index", target.containerIndex());
             hover.addProperty("slot_local_x", target.x());
             hover.addProperty("slot_local_y", target.y());
-            hover.addProperty("slot_hitbox_center_verified", menu.getSlot(0).isMouseOver(target.x() + 8, target.y() + 8));
+            double centerX = (mc.getWindow().getGuiScaledWidth() - menu.layout().imageWidth()) / 2.0 + target.x() + 8;
+            double centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + target.y() + 8;
+            hover.addProperty("slot_hitbox_center_verified", screen.isMachineSlotHoveredAt(0, centerX, centerY));
             require(hover.get("slot_hitbox_center_verified").getAsBoolean(), "First machine slot does not hover at its center");
             capture(mc, screen, menu, "full-hover", hover);
             JsonObject result = caseProof(mc, screen, menu, SPECS.get(specIndex));
@@ -398,8 +400,9 @@ final class NativeCorrectedMachineGuiValidation {
          slot.addProperty("layout_x", layoutSlot.x());
          slot.addProperty("layout_y", layoutSlot.y());
          slot.addProperty("active", liveSlot.isActive());
-         slot.addProperty("center_hit_test", liveSlot.isActive()
-            && liveSlot.isMouseOver(liveSlot.x + 8, liveSlot.y + 8));
+         double centerX = (mc.getWindow().getGuiScaledWidth() - menu.layout().imageWidth()) / 2.0 + liveSlot.x + 8;
+         double centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + liveSlot.y + 8;
+         slot.addProperty("center_hit_test", screen.isMachineSlotHoveredAt(index, centerX, centerY));
          slots.add(slot);
       }
       result.add("machine_slots", slots);
