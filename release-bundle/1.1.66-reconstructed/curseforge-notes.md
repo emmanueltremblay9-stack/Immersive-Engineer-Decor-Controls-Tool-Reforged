@@ -1,11 +1,9 @@
-# IEDCTR 1.1.66-reconstructed — draft CurseForge notes
-
-Draft for review only. Do not upload these notes until the final source, JAR identity, dependencies, and qualification gates are pinned in the publication manifest.
+# IEDCTR 1.1.66-reconstructed — CurseForge release notes
 
 ## Machines and interfaces
 
 - Add separate Small Mineral Smelter modes for Lava, Magma Block, and Obsidian.
-- Add live, localized machine interfaces for the Small Mineral Smelter, Small Water Freezer, Fluid Barrel, Small Fluid Funnel, Passive Fluid Accumulator, Small Solar Panel, Small Tree Cutter, and Small Milking Machine.
+- Add localized machine interfaces for the Small Mineral Smelter, Small Water Freezer, Fluid Barrel, Small Fluid Funnel, Passive Fluid Accumulator, Small Solar Panel, Small Tree Cutter, and Small Milking Machine.
 - Restore the Labeled Storage Crate with its 54 storage slots and safe handling of stored items.
 
 ## Display correction
