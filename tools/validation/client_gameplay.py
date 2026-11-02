@@ -253,15 +253,19 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
         raise SmokeFailure("The native screen did not verify the real output-drawer interaction")
 
     captures = proof.get("screenshots")
-    expected_names = {"screen-closed.png", "drawer-open.png"}
+    expected_names = {
+        "progress-empty.png", "progress-mid.png", "progress-full.png",
+        "screen-closed.png", "drawer-open.png",
+    }
     if not isinstance(captures, list) or len(captures) != len(expected_names):
-        raise SmokeFailure("Native Smelter GUI must provide both closed and open drawer captures")
+        raise SmokeFailure("Native Smelter GUI must provide three progress states plus both drawer views")
     if {item.get("name") for item in captures if isinstance(item, dict)} != expected_names:
         raise SmokeFailure("Native Smelter GUI capture names are missing, duplicated, or unexpected")
     image_dir = directory / "smelter-gui-screenshots"
     if not image_dir.is_dir() or {path.name for path in image_dir.glob("*.png")} != expected_names:
         raise SmokeFailure("Smelter screenshots are stale or contain unexpected files")
     png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
+    captures_by_name = {item["name"]: item for item in captures}
     for capture in captures:
         name = capture["name"]
         image = image_dir / name
@@ -276,6 +280,17 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
             raise SmokeFailure(f"Native Smelter screenshot hash does not match its proof: {name}")
         if (capture.get("width"), capture.get("height")) != (window_width, window_height):
             raise SmokeFailure(f"Native Smelter screenshot dimensions do not match its proof: {name}")
+    for name, progress in (("progress-empty.png", 0), ("progress-mid.png", 50), ("progress-full.png", 90)):
+        capture = captures_by_name[name]
+        if (capture.get("batch_progress") != progress or capture.get("energy") != 0
+                or capture.get("status") != 9):
+            raise SmokeFailure(f"Native Smelter progress frame does not show its frozen live state: {name}")
+    for name in ("screen-closed.png", "drawer-open.png"):
+        capture = captures_by_name[name]
+        if (type(capture.get("batch_progress")) is not int or capture["batch_progress"] <= 0
+                or type(capture.get("energy")) is not int or capture["energy"] <= 0
+                or capture.get("status") != 1):
+            raise SmokeFailure(f"Native Smelter drawer view did not resume active heating: {name}")
     if f"IEDCTR_SMELTER_GUI PASSED nonce={nonce}" not in logs:
         raise SmokeFailure("Missing current-run native Smelter GUI completion marker")
     return proof
@@ -305,7 +320,7 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if proof.get("selected_language") != language:
         raise SmokeFailure("Minecraft did not load the requested corrected-machine GUI locale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or proof.get("screenshot_method") != "Native Minecraft panel crops for every state plus full-window hover captures to retain tooltips"):
+            or proof.get("screenshot_method") != "Native Minecraft panel crops with the cursor outside plus separate full-window hover captures"):
         raise SmokeFailure("Corrected-machine GUI proof lacks panel crops and tooltip-preserving captures")
 
     cases = proof.get("cases")
@@ -321,10 +336,11 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
 
     capture_names = {f"{machine}-{state}.png" for machine in expected
                      for state in ("empty", "mid", "full-hover")}
+    capture_names.add("small_freezer-near-end.png")
     tooltip_names = {f"{machine}-full-hover-window.png" for machine in expected}
     captures = proof.get("screenshots")
     if not isinstance(captures, list) or len(captures) != len(capture_names):
-        raise SmokeFailure("Corrected-machine GUI proof requires 18 state and hover captures")
+        raise SmokeFailure("Corrected-machine GUI proof requires 19 panel states and six separate hover captures")
     if {capture.get("name") for capture in captures if isinstance(capture, dict)} != capture_names:
         raise SmokeFailure("Corrected-machine GUI screenshot names are missing, duplicated, or unexpected")
     image_dir = directory / "corrected-machine-gui-screenshots"
@@ -372,6 +388,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             expected_capture_size = (panel_width, panel_height)
             if ((width, height) != expected_capture_size or capture.get("capture_mode") != "gui_panel"):
                 raise SmokeFailure(f"Native screenshot is not a clean panel crop: {name}")
+            if capture.get("panel_cursor_outside") is not True:
+                raise SmokeFailure(f"Native panel crop was not captured with its cursor outside: {name}")
             if capture.get("sha256") != hashlib.sha256(data).hexdigest():
                 raise SmokeFailure(f"Native corrected-machine screenshot hash does not match proof: {name}")
             if (capture.get("width"), capture.get("height"), capture.get("kind"),
@@ -412,6 +430,22 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         if (not isinstance(hover, dict) or hover.get("slot_hitbox_center_verified") is not True
                 or type(hover.get("slot_index")) is not int):
             raise SmokeFailure(f"Native corrected-machine hover capture lacks hitbox evidence: {machine}")
+
+    near_end = captures_by_name["small_freezer-near-end.png"]
+    near_end_image = image_dir / "small_freezer-near-end.png"
+    near_end_data = near_end_image.read_bytes()
+    if (len(near_end_data) < 1000 or near_end_data[:8] != png_signature
+            or near_end_data[12:16] != b"IHDR"):
+        raise SmokeFailure("Native Freezer near-end screenshot is absent or invalid")
+    near_end_size = struct.unpack(">II", near_end_data[16:24])
+    if (near_end_size != (209, 235) or near_end.get("capture_mode") != "gui_panel"
+            or near_end.get("panel_cursor_outside") is not True
+            or near_end.get("kind") != "SMALL_FREEZER"
+            or near_end.get("sha256") != hashlib.sha256(near_end_data).hexdigest()
+            or (near_end.get("width"), near_end.get("height")) != near_end_size
+            or type(near_end.get("progress")) is not int
+            or not 178 <= near_end["progress"] < 180):
+        raise SmokeFailure("Native Freezer near-end frame does not prove progress immediately before completion")
 
     if f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={nonce}" not in logs:
         raise SmokeFailure("Missing current-run corrected-machine GUI completion marker")

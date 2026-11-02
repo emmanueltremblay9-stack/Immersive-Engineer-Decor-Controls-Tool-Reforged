@@ -42,6 +42,13 @@ public class MachineScreenSolarPanelBoundsTest {
       assertEquals(0.0F, MachineScreen.fittedTextScale(92, 0, 0.72F), 0.0F);
    }
 
+   @Test
+   public void solarMeterClearsOnlyThePrintedSampleFillBands() {
+      assertEquals(70, MachineScreen.solarArtworkBakedFillWidth(114));
+      assertEquals(0, MachineScreen.solarArtworkBakedFillWidth(4));
+      assertEquals(0, MachineScreen.solarArtworkBakedFillWidth(3));
+   }
+
    private static MachineLayout.Panel panel(MachineLayout layout, String label) {
       return layout.panels().stream().filter(candidate -> candidate.label().equals(label)).findFirst().orElseThrow();
    }

@@ -49,7 +49,7 @@ final class NativeCorrectedMachineGuiValidation {
    );
    private static final String[] STATES = {"empty", "mid", "full"};
 
-   private enum Stage { WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_HOVER, DONE }
+   private enum Stage { WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_HOVER, DONE }
 
    private static Stage stage;
    private static CompletableFuture<?> pending;
@@ -133,13 +133,52 @@ final class NativeCorrectedMachineGuiValidation {
             if (SPECS.get(specIndex).kind() == MachineKind.SMALL_FREEZER && stateIndex == 1
                && menu.freezerProgressTicks() < 30) return false;
             if (ticks < 6) return false;
+            moveCursorOutsidePanel(mc);
+            stage = Stage.WAIT_PANEL_CAPTURE;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_PANEL_CAPTURE -> {
+            if (++ticks < 3) return false;
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != SPECS.get(specIndex).kind()
+               || menu.containerId != serverMenuId
+               || !stateIsVisible(menu, SPECS.get(specIndex), stateIndex)) {
+               throw new IllegalStateException("Corrected GUI changed before its clean panel capture");
+            }
+            String state = stateIndex == 2 ? "full-hover" : STATES[stateIndex];
+            capture(mc, screen, menu, state);
             if (stateIndex == 2) {
                moveCursorToFirstSlot(mc, menu);
                stage = Stage.WAIT_HOVER;
                ticks = 0;
                return false;
             }
-            capture(mc, screen, menu, STATES[stateIndex], null);
+            if (menu.kind() == MachineKind.SMALL_FREEZER && stateIndex == 1) {
+               scheduleFreezerNearEnd(mc);
+               stage = Stage.WAIT_FREEZER_NEAR_END;
+               ticks = 0;
+               return false;
+            }
+            stateIndex++;
+            scheduleState(mc, stateIndex);
+            stage = Stage.WAIT_STATE;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_FREEZER_NEAR_END -> {
+            if (++ticks > 60) throw new IllegalStateException("Freezer near-end GUI state did not synchronize");
+            if (!pending.isDone()) return false;
+            pending.join();
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != MachineKind.SMALL_FREEZER
+               || menu.containerId != serverMenuId) return false;
+            if (menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS - 2) return false;
+            require(menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
+               "Freezer fixture completed before its near-end frame could be captured");
+            capture(mc, screen, menu, "near-end");
             stateIndex++;
             scheduleState(mc, stateIndex);
             stage = Stage.WAIT_STATE;
@@ -162,7 +201,8 @@ final class NativeCorrectedMachineGuiValidation {
             double centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + target.y() + 8;
             hover.addProperty("slot_hitbox_center_verified", screen.isMachineSlotHoveredAt(0, centerX, centerY));
             require(hover.get("slot_hitbox_center_verified").getAsBoolean(), "First machine slot does not hover at its center");
-            capture(mc, screen, menu, "full-hover", hover);
+            JsonObject panelCapture = CAPTURES.get(CAPTURES.size() - 1).getAsJsonObject();
+            captureHoverWindow(mc, panelCapture, hover);
             JsonObject result = caseProof(mc, screen, menu, SPECS.get(specIndex));
             CASES.add(result);
             specIndex++;
@@ -234,6 +274,19 @@ final class NativeCorrectedMachineGuiValidation {
             serverMachine.setItem(0, ItemStack.EMPTY);
             serverMachine.dataAccessForTests().set(1, 0);
          }
+         if (player.containerMenu instanceof MachineMenu menu) menu.broadcastChanges();
+      });
+   }
+
+   private static void scheduleFreezerNearEnd(Minecraft mc) {
+      UUID playerId = mc.player.getUUID();
+      var server = mc.getSingleplayerServer();
+      pending = server.submit(() -> {
+         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
+         require(player != null && serverMachine != null, "Freezer fixture lost its live machine");
+         serverMachine.dataAccessForTests().set(1, MachineBlockEntity.FREEZER_PROCESS_TICKS - 2);
+         serverMachine.dataAccessForTests().set(3, 8);
+         serverMachine.setChanged();
          if (player.containerMenu instanceof MachineMenu menu) menu.broadcastChanges();
       });
    }
@@ -317,8 +370,11 @@ final class NativeCorrectedMachineGuiValidation {
       GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), x, y);
    }
 
-   private static void capture(Minecraft mc, MachineScreen screen, MachineMenu menu, String state,
-                               JsonObject hover) throws Exception {
+   private static void moveCursorOutsidePanel(Minecraft mc) {
+      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getWidth() - 3, mc.getWindow().getHeight() - 3);
+   }
+
+   private static void capture(Minecraft mc, MachineScreen screen, MachineMenu menu, String state) throws Exception {
       MachineLayout layout = menu.layout();
       int guiWidth = mc.getWindow().getGuiScaledWidth();
       int guiHeight = mc.getWindow().getGuiScaledHeight();
@@ -332,11 +388,6 @@ final class NativeCorrectedMachineGuiValidation {
       Files.createDirectories(screenshots);
       Path output = screenshots.resolve(name);
       require(!Files.exists(output), "Refusing to overwrite a corrected GUI capture");
-      String tooltipName = hover == null ? null : SPECS.get(specIndex).id() + "-" + state + "-window.png";
-      Path tooltipOutput = tooltipName == null ? null : screenshots.resolve(tooltipName);
-      if (tooltipOutput != null) {
-         require(!Files.exists(tooltipOutput), "Refusing to overwrite a corrected GUI tooltip capture");
-      }
       try (NativeImage full = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
          require(cropX >= 0 && cropY >= 0 && cropX + cropWidth <= full.getWidth()
             && cropY + cropHeight <= full.getHeight(), "GUI-only screenshot crop exceeds the live framebuffer");
@@ -348,24 +399,15 @@ final class NativeCorrectedMachineGuiValidation {
             }
             crop.writeToFile(output);
          }
-         if (tooltipOutput != null) {
-            full.writeToFile(tooltipOutput);
-         }
       }
       JsonObject capture = new JsonObject();
       capture.addProperty("name", name);
       capture.addProperty("state", state);
       capture.addProperty("capture_mode", "gui_panel");
+      capture.addProperty("panel_cursor_outside", true);
       capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
       capture.addProperty("width", cropWidth);
       capture.addProperty("height", cropHeight);
-      if (tooltipOutput != null) {
-         capture.addProperty("tooltip_name", tooltipName);
-         capture.addProperty("tooltip_capture_mode", "full_window_tooltip");
-         capture.addProperty("tooltip_sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(tooltipOutput))));
-         capture.addProperty("tooltip_width", mc.getWindow().getWidth());
-         capture.addProperty("tooltip_height", mc.getWindow().getHeight());
-      }
       capture.addProperty("kind", SPECS.get(specIndex).kind().name());
       capture.addProperty("screen_identity", screen.getClass().getName());
       capture.addProperty("menu_id", menu.containerId);
@@ -373,8 +415,23 @@ final class NativeCorrectedMachineGuiValidation {
       capture.addProperty("fluid_amount", menu.fluidAmount());
       capture.addProperty("energy", menu.energyStored());
       capture.addProperty("progress", menu.progress());
-      if (hover != null) capture.add("hover", hover);
       CAPTURES.add(capture);
+   }
+
+   private static void captureHoverWindow(Minecraft mc, JsonObject panelCapture, JsonObject hover) throws Exception {
+      String tooltipName = SPECS.get(specIndex).id() + "-full-hover-window.png";
+      Path output = screenshots.resolve(tooltipName);
+      require(!Files.exists(output), "Refusing to overwrite a corrected GUI hover capture");
+      try (NativeImage full = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+         full.writeToFile(output);
+      }
+      panelCapture.addProperty("tooltip_name", tooltipName);
+      panelCapture.addProperty("tooltip_capture_mode", "full_window_tooltip");
+      panelCapture.addProperty("tooltip_sha256", HexFormat.of().formatHex(
+         MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
+      panelCapture.addProperty("tooltip_width", mc.getWindow().getWidth());
+      panelCapture.addProperty("tooltip_height", mc.getWindow().getHeight());
+      panelCapture.add("hover", hover);
    }
 
    private static JsonObject caseProof(Minecraft mc, MachineScreen screen, MachineMenu menu, Spec spec) {
@@ -445,7 +502,7 @@ final class NativeCorrectedMachineGuiValidation {
       proof.addProperty("selected_language", selectedLanguage);
       proof.addProperty("window_width", mc.getWindow().getWidth());
       proof.addProperty("window_height", mc.getWindow().getHeight());
-      proof.addProperty("screenshot_method", "Native Minecraft panel crops for every state plus full-window hover captures to retain tooltips");
+      proof.addProperty("screenshot_method", "Native Minecraft panel crops with the cursor outside plus separate full-window hover captures");
       proof.addProperty("fixture_state_source", "Live MachineBlockEntity fluid handlers and test data synced through the registered MachineMenu");
       proof.add("cases", CASES.deepCopy());
       proof.add("screenshots", CAPTURES.deepCopy());

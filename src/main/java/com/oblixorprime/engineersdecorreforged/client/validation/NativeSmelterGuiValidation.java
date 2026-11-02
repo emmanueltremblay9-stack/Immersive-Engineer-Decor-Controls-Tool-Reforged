@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.FluidStack;
+import org.lwjgl.glfw.GLFW;
 
 /** Opt-in native-client fixture for the real Small Mineral Smelter screen and menu. */
 final class NativeSmelterGuiValidation {
@@ -35,11 +36,15 @@ final class NativeSmelterGuiValidation {
    private static final int PANEL_WIDTH = 234;
    private static final int PANEL_HEIGHT = 270;
 
-   private enum Stage { WAIT_SERVER, WAIT_SCREEN, WAIT_DRAWER_RENDER }
+   private enum Stage {
+      WAIT_SERVER, WAIT_SCREEN, WAIT_PROGRESS_ZERO, WAIT_PROGRESS_MID, WAIT_PROGRESS_FULL,
+      WAIT_PROGRESS_RESTORE, WAIT_DRAWER_RENDER
+   }
    private static Stage stage;
    private static CompletableFuture<?> pending;
    private static int ticks;
    private static int serverMenuId = -1;
+   private static MachineBlockEntity serverMachine;
    private static boolean serverMenuContextValid;
    private static boolean outputSlotHiddenWhenClosed;
    private static String serverMenuClass;
@@ -70,6 +75,7 @@ final class NativeSmelterGuiValidation {
       }
       ticks = 0;
       serverMenuId = -1;
+      serverMachine = null;
       serverMenuContextValid = false;
       outputSlotHiddenWhenClosed = false;
       serverMenuClass = "";
@@ -88,6 +94,7 @@ final class NativeSmelterGuiValidation {
             || machine.kind() == null || !machine.getBlockState().is(ModBlocks.SMALL_MINERAL_SMELTER.get())) {
             throw new IllegalStateException("Fixture did not create the Small Mineral Smelter block entity");
          }
+         serverMachine = machine;
          ItemStack input = new ItemStack(Items.COBBLESTONE);
          require(machine.canPlaceItem(0, input), "Fixture mineral input is not accepted");
          machine.setItem(0, input);
@@ -151,11 +158,60 @@ final class NativeSmelterGuiValidation {
             || menu.getSlot(1).getItem().getCount() != 2) {
             return false;
          }
-         if (++ticks < 30) return false;
+         if (ticks < 30) return false;
+         moveCursorOutsidePanel(mc);
+         scheduleProgressFixture(mc, 0, 0, Stage.WAIT_PROGRESS_ZERO);
+         return false;
+      }
+      if (stage == Stage.WAIT_PROGRESS_ZERO) {
+         if (++ticks > 120) throw new IllegalStateException("Smelter zero-progress fixture did not synchronize");
+         if (!pending.isDone()) return false;
+         pending.join();
+         MachineMenu menu = currentFixtureMenu(mc);
+         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 0
+            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 9) return false;
+         moveCursorOutsidePanel(mc);
+         capture(mc, menu, "progress-empty.png");
+         scheduleProgressFixture(mc, 50, 0, Stage.WAIT_PROGRESS_MID);
+         return false;
+      }
+      if (stage == Stage.WAIT_PROGRESS_MID) {
+         if (++ticks > 120) throw new IllegalStateException("Smelter intermediate-progress fixture did not synchronize");
+         if (!pending.isDone()) return false;
+         pending.join();
+         MachineMenu menu = currentFixtureMenu(mc);
+         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 50
+            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 9) return false;
+         capture(mc, menu, "progress-mid.png");
+         scheduleProgressFixture(mc, 90, 0, Stage.WAIT_PROGRESS_FULL);
+         return false;
+      }
+      if (stage == Stage.WAIT_PROGRESS_FULL) {
+         if (++ticks > 120) throw new IllegalStateException("Smelter full-progress fixture did not synchronize");
+         if (!pending.isDone()) return false;
+         pending.join();
+         MachineMenu menu = currentFixtureMenu(mc);
+         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 90
+            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 9) return false;
+         capture(mc, menu, "progress-full.png");
+         scheduleProgressFixture(mc, 50, 12000, Stage.WAIT_PROGRESS_RESTORE);
+         return false;
+      }
+      if (stage == Stage.WAIT_PROGRESS_RESTORE) {
+         if (++ticks > 180) throw new IllegalStateException("Smelter active fixture did not resume after progress captures");
+         if (!pending.isDone()) return false;
+         pending.join();
+         if (!(mc.screen instanceof SmallMineralSmelterHybridScreen screen)) return false;
+         MachineMenu menu = currentFixtureMenu(mc);
+         if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) <= 0
+            || menu.field(MachineMenu.SMS_UI_ENERGY) <= 0
+            || menu.field(MachineMenu.SMS_UI_FE_RATE) != 16 || menu.field(MachineMenu.SMS_UI_STATUS) != 1) return false;
+         if (ticks < 30) return false;
          outputSlotHiddenWhenClosed = !menu.getSlot(1).isActive();
          require(outputSlotHiddenWhenClosed, "Output item slot is not hidden while the drawer is closed");
          mc.options.hideGui = false;
-         capture(mc, "screen-closed.png");
+         moveCursorOutsidePanel(mc);
+         capture(mc, menu, "screen-closed.png");
          double scale = screen.validationViewScale();
          double guiWidth = mc.getWindow().getGuiScaledWidth();
          double guiHeight = mc.getWindow().getGuiScaledHeight();
@@ -180,14 +236,39 @@ final class NativeSmelterGuiValidation {
             || menu.getSlot(1).getItem().getCount() != 2) {
             throw new IllegalStateException("Output drawer lost its real item or visible slot before capture");
          }
-         capture(mc, "drawer-open.png");
+         capture(mc, menu, "drawer-open.png");
          writeProof(mc, screen, menu, runNonce);
          return true;
       }
       throw new IllegalStateException("Unexpected Smelter GUI fixture stage: " + stage);
    }
 
-   private static void capture(Minecraft mc, String name) throws Exception {
+   private static MachineMenu currentFixtureMenu(Minecraft mc) {
+      if (mc.player == null || !(mc.player.containerMenu instanceof MachineMenu menu)
+         || !menu.kind().name().equals("SMALL_MINERAL_SMELTER") || menu.containerId != serverMenuId) return null;
+      return menu;
+   }
+
+   private static void scheduleProgressFixture(Minecraft mc, int progress, int energy, Stage waitStage) {
+      UUID playerId = mc.player.getUUID();
+      var server = mc.getSingleplayerServer();
+      pending = server.submit(() -> {
+         ServerPlayer player = server.getPlayerList().getPlayer(playerId);
+         require(player != null && serverMachine != null, "Smelter fixture lost its live machine");
+         serverMachine.dataAccessForTests().set(1, progress);
+         serverMachine.dataAccessForTests().set(6, energy);
+         serverMachine.setChanged();
+         if (player.containerMenu instanceof MachineMenu menu) menu.broadcastChanges();
+      });
+      stage = waitStage;
+      ticks = 0;
+   }
+
+   private static void moveCursorOutsidePanel(Minecraft mc) {
+      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getWidth() - 3, mc.getWindow().getHeight() - 3);
+   }
+
+   private static void capture(Minecraft mc, MachineMenu menu, String name) throws Exception {
       Files.createDirectories(screenshots);
       Path output = screenshots.resolve(name);
       if (Files.exists(output)) throw new IllegalStateException("Refusing to overwrite a Smelter capture");
@@ -200,6 +281,9 @@ final class NativeSmelterGuiValidation {
          MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
       capture.addProperty("width", mc.getWindow().getWidth());
       capture.addProperty("height", mc.getWindow().getHeight());
+      capture.addProperty("batch_progress", menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS));
+      capture.addProperty("energy", menu.field(MachineMenu.SMS_UI_ENERGY));
+      capture.addProperty("status", menu.field(MachineMenu.SMS_UI_STATUS));
       CAPTURES.add(capture);
    }
 

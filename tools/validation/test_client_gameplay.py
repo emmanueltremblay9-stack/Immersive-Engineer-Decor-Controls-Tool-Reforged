@@ -157,7 +157,13 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             },
             "screenshots": [],
         }
-        for name in ("screen-closed.png", "drawer-open.png"):
+        for name, progress, energy, status in (
+            ("progress-empty.png", 0, 0, 9),
+            ("progress-mid.png", 50, 0, 9),
+            ("progress-full.png", 90, 0, 9),
+            ("screen-closed.png", 52, 11984, 1),
+            ("drawer-open.png", 52, 11984, 1),
+        ):
             data = (bytes((137, 80, 78, 71, 13, 10, 26, 10)) + bytes((0, 0, 0, 13)) + b"IHDR"
                     + struct.pack(">II", self.window_width, self.window_height)
                     + bytes((8, 6, 0, 0, 0)) + bytes(4) + bytes(1100))
@@ -165,6 +171,7 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             self.proof["screenshots"].append({
                 "name": name, "sha256": hashlib.sha256(data).hexdigest(),
                 "width": self.window_width, "height": self.window_height,
+                "batch_progress": progress, "energy": energy, "status": status,
             })
         self.logs = f"IEDCTR_SMELTER_GUI PASSED nonce={self.nonce}"
 
@@ -179,7 +186,7 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
         args.update(overrides)
         return validate_smelter_gui_proof(**args)
 
-    def test_accepts_current_native_proof_and_two_fresh_captures(self):
+    def test_accepts_native_progress_states_and_two_fresh_drawer_views(self):
         self.assertEqual(self.check(), self.proof)
 
     def test_rejects_wrong_nonce_or_source_or_pr_head(self):
@@ -202,6 +209,13 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
     def test_rejects_empty_live_state(self):
         proof = copy.deepcopy(self.proof)
         proof["live_state"]["batch_progress"] = 0
+        with self.assertRaises(SmokeFailure):
+            self.check(proof)
+
+    def test_rejects_progress_frame_with_wrong_server_state(self):
+        proof = copy.deepcopy(self.proof)
+        full = next(item for item in proof["screenshots"] if item["name"] == "progress-full.png")
+        full["batch_progress"] = 0
         with self.assertRaises(SmokeFailure):
             self.check(proof)
 
@@ -269,7 +283,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
             "window_width": self.window_width, "window_height": self.window_height,
-            "screenshot_method": "Native Minecraft panel crops for every state plus full-window hover captures to retain tooltips",
+            "screenshot_method": "Native Minecraft panel crops with the cursor outside plus separate full-window hover captures",
             "cases": [], "screenshots": [],
         }
         for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
@@ -310,6 +324,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                            "fluid_amount": fluid_amount, "energy": energy,
                            "progress": 25 if machine == "small_freezer" and state == "mid" else 0}
                 capture["capture_mode"] = "gui_panel"
+                capture["panel_cursor_outside"] = True
                 capture_width, capture_height = panel_width, panel_height
                 if state == "full-hover":
                     capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
@@ -327,6 +342,17 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                     capture["tooltip_width"] = self.window_width
                     capture["tooltip_height"] = self.window_height
                     capture["tooltip_sha256"] = hashlib.sha256(tooltip.read_bytes()).hexdigest()
+                self.proof["screenshots"].append(capture)
+            if machine == "small_freezer":
+                name = "small_freezer-near-end.png"
+                capture = {"name": name, "state": "near-end", "kind": kind,
+                           "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
+                           "fluid_amount": 0, "energy": 8, "progress": 178,
+                           "capture_mode": "gui_panel", "panel_cursor_outside": True,
+                           "width": panel_width, "height": panel_height}
+                image = self.image_dir / name
+                image.write_bytes(self._png(panel_width, panel_height))
+                capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
                 self.proof["screenshots"].append(capture)
         self.logs = f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={self.nonce}"
 
@@ -365,6 +391,17 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         bad_slot = copy.deepcopy(self.proof)
         bad_slot["cases"][1]["machine_slots"][0]["x"] += 1
         with self.assertRaises(SmokeFailure): self.check(bad_slot)
+
+    def test_rejects_panel_capture_with_cursor_over_the_gui(self):
+        proof = copy.deepcopy(self.proof)
+        proof["screenshots"][0]["panel_cursor_outside"] = False
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_freezer_frame_that_did_not_capture_near_completion(self):
+        proof = copy.deepcopy(self.proof)
+        near_end = next(item for item in proof["screenshots"] if item["name"] == "small_freezer-near-end.png")
+        near_end["progress"] = 0
+        with self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_rejects_wrong_locale_or_missing_freezer_progress(self):
         bad_locale = copy.deepcopy(self.proof)
