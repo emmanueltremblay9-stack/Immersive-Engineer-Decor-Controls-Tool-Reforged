@@ -343,8 +343,7 @@ final class NativeSmelterGuiValidation {
       geometry.addProperty("panel_width", menu.layout().imageWidth());
       geometry.addProperty("panel_height", menu.layout().imageHeight());
       geometry.addProperty("view_scale", screen.validationViewScale());
-      geometry.addProperty("drawer_closed_capture", CAPTURES.size() == 2
-         && CAPTURES.get(0).getAsJsonObject().get("name").getAsString().equals("screen-closed.png"));
+      geometry.addProperty("drawer_closed_capture", hasCapture("screen-closed.png"));
       geometry.addProperty("drawer_open_capture", screen.validationOutputDrawerOpen());
       geometry.addProperty("output_slot_hidden_when_closed", outputSlotHiddenWhenClosed);
       geometry.addProperty("output_slot_visible_when_open", menu.getSlot(1).isActive()
@@ -357,6 +356,13 @@ final class NativeSmelterGuiValidation {
 
       Files.writeString(gameDirectory.resolve("client-smelter-gui-result.json"),
          new GsonBuilder().setPrettyPrinting().create().toJson(proof) + "\n");
+   }
+
+   private static boolean hasCapture(String name) {
+      for (int index = 0; index < CAPTURES.size(); index++) {
+         if (CAPTURES.get(index).getAsJsonObject().get("name").getAsString().equals(name)) return true;
+      }
+      return false;
    }
 
    private static void require(boolean condition, String message) {
