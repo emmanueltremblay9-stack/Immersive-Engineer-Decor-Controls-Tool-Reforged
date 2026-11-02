@@ -611,30 +611,6 @@ class Publisher:
             )
         return data
 
-    def _public_project_relations(self) -> list[dict[str, Any]]:
-        project = self.cf["projectId"]
-        result = self.http.get_json(
-            f"{self.public_api}/mods/{project}/dependencies?pageIndex=0&pageSize=50",
-            label="CurseForge public project dependencies",
-        )
-        data = result.get("data") if isinstance(result, dict) else None
-        pagination = result.get("pagination") if isinstance(result, dict) else None
-        if not isinstance(data, list) or not isinstance(pagination, dict):
-            raise PublicationError(
-                "CURSEFORGE_PROJECT_DEPENDENCIES_INVALID",
-                "Public project dependency response is invalid",
-            )
-        if (
-            pagination.get("index") != 0
-            or pagination.get("totalCount") != len(data)
-            or len(data) > 50
-        ):
-            raise PublicationError(
-                "CURSEFORGE_PROJECT_DEPENDENCIES_PAGINATION_INVALID",
-                "Public project dependency pagination is incomplete or inconsistent",
-            )
-        return data
-
     @staticmethod
     def _relation_key(relation: dict[str, Any], public: bool) -> tuple[int, str, str]:
         project_key = "id" if public else "projectId"
@@ -663,27 +639,29 @@ class Publisher:
             for project_id, slug, relation_type in actual
         ]
 
-    def _validate_expected_project_relations(self) -> list[dict[str, Any]]:
-        actual = sorted(
-            self._relation_key(item, True) for item in self._public_project_relations()
-        )
+    def _confirm_expected_project_relations(
+        self, *, confirmed_by_owner: bool
+    ) -> list[dict[str, Any]]:
+        if confirmed_by_owner is not True:
+            raise PublicationError(
+                "CURSEFORGE_PROJECT_RELATION_CONFIRMATION_REQUIRED",
+                "Confirm the manifest's project Default Relations in CurseForge Authors before continuing",
+                EXIT_CONFLICT,
+            )
         expected = sorted(
             self._relation_key(item, False)
             for item in self.cf.get("expectedProjectRelations", self.cf["expectedPublicRelations"])
         )
-        if actual != expected:
-            raise PublicationError(
-                "CURSEFORGE_PROJECT_RELATION_MISMATCH",
-                "CurseForge project dependency relations differ from the approved baseline",
-                EXIT_CONFLICT,
-            )
         return [
             {"projectId": project_id, "slug": slug, "type": relation_type}
-            for project_id, slug, relation_type in actual
+            for project_id, slug, relation_type in expected
         ]
 
     def _validate_previous_public_baseline(
-        self, *, validate_project_relations: bool = True
+        self,
+        *,
+        validate_project_relations: bool = True,
+        confirm_project_relations: bool = False,
     ) -> dict[str, Any]:
         previous_id = int(self.cf["previousPublicFileId"])
         previous = self._public_file(previous_id)
@@ -708,8 +686,10 @@ class Publisher:
             ),
         }
         if validate_project_relations:
-            baseline["projectRelations"] = self._validate_expected_project_relations()
-            baseline["projectRelationsCheck"] = "MATCHED"
+            baseline["projectRelations"] = self._confirm_expected_project_relations(
+                confirmed_by_owner=confirm_project_relations
+            )
+            baseline["projectRelationsCheck"] = "OWNER_CONFIRMED_AUTHORS_DEFAULTS"
         else:
             baseline["projectRelations"] = None
             baseline["projectRelationsCheck"] = "SKIPPED_ACCEPTED_FILE_RESUME"
@@ -1432,6 +1412,7 @@ class Publisher:
         run_key: str = "",
         intent_report: dict[str, Any] | None = None,
         intent_artifact_id: int | None = None,
+        confirm_project_relations: bool = False,
     ) -> dict[str, Any]:
         report: dict[str, Any] = {
             "schemaVersion": 1,
@@ -1522,7 +1503,9 @@ class Publisher:
                     }
                 )
                 if mode == "dry-run":
-                    report["curseForgeBaseline"] = self._validate_previous_public_baseline()
+                    report["curseForgeBaseline"] = self._validate_previous_public_baseline(
+                        confirm_project_relations=confirm_project_relations
+                    )
                     report.update(
                         {
                             "status": "AUTOMATION_READY_DRY_RUN",
@@ -1560,7 +1543,9 @@ class Publisher:
                             }
                         )
                         return report
-                    report["curseForgeBaseline"] = self._validate_previous_public_baseline()
+                    report["curseForgeBaseline"] = self._validate_previous_public_baseline(
+                        confirm_project_relations=confirm_project_relations
+                    )
                     if not curseforge_token:
                         raise PublicationError(
                             "BLOCKED_BY_MISSING_CURSEFORGE_API_TOKEN",
@@ -1578,7 +1563,9 @@ class Publisher:
                     )
                     return report
 
-                report["curseForgeBaseline"] = self._validate_previous_public_baseline()
+                report["curseForgeBaseline"] = self._validate_previous_public_baseline(
+                    confirm_project_relations=confirm_project_relations
+                )
                 if not curseforge_token:
                     raise PublicationError(
                         "BLOCKED_BY_MISSING_CURSEFORGE_API_TOKEN",
@@ -1666,6 +1653,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--tag", required=True)
     parser.add_argument("--resume-file-id", type=int)
     parser.add_argument("--run-key", default="")
+    parser.add_argument(
+        "--confirm-project-relations",
+        action="store_true",
+        help="Attest that CurseForge Authors Default Relations match the reviewed manifest",
+    )
     parser.add_argument("--intent-report", type=Path)
     parser.add_argument("--intent-artifact-id", type=int)
     parser.add_argument("--poll-attempts", type=int, default=30)
@@ -1741,6 +1733,7 @@ def main(argv: list[str] | None = None) -> int:
             run_key=args.run_key,
             intent_report=intent_report,
             intent_artifact_id=args.intent_artifact_id,
+            confirm_project_relations=args.confirm_project_relations,
         )
         exit_code = EXIT_OK
     except PublicationError as exc:

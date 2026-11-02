@@ -432,6 +432,7 @@ class PublisherTests(unittest.TestCase):
         self,
         *,
         mode: str = "dry-run",
+        confirm_project_relations: bool = True,
         token: str = "",
         github_token: str = "",
         resume_file_id: int | None = None,
@@ -450,6 +451,7 @@ class PublisherTests(unittest.TestCase):
             run_key=run_key,
             intent_report=intent_report,
             intent_artifact_id=intent_artifact_id,
+            confirm_project_relations=confirm_project_relations,
         )
 
     def prepare_and_persist(
@@ -682,12 +684,37 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(EXIT_CONFLICT, raised.exception.exit_code)
         self.assertEqual(0, self.state.post_count)
 
-    def test_project_relation_drift_blocks_before_upload(self) -> None:
-        self.state.project_relations = self.state.project_relations[:-1]
+    def test_project_relation_confirmation_is_required_before_upload(self) -> None:
         with self.assertRaises(PublicationError) as raised:
-            self.run_publisher(mode="dry-run")
-        self.assertEqual("CURSEFORGE_PROJECT_RELATION_MISMATCH", raised.exception.status)
+            self.run_publisher(mode="dry-run", confirm_project_relations=False)
+        self.assertEqual(
+            "CURSEFORGE_PROJECT_RELATION_CONFIRMATION_REQUIRED",
+            raised.exception.status,
+        )
         self.assertEqual(EXIT_CONFLICT, raised.exception.exit_code)
+        self.assertEqual(0, self.state.post_count)
+
+    def test_project_defaults_are_owner_attested_not_read_from_public_aggregation(self) -> None:
+        expected_defaults = EXPECTED_RELATIONS + [
+            {"projectId": 309927, "slug": "curios", "type": "RequiredDependency"},
+            {"projectId": 238222, "slug": "jei", "type": "OptionalDependency"},
+        ]
+        self.manifest["curseforge"]["expectedProjectRelations"] = expected_defaults
+        self.state.project_relations = public_relations([EXPECTED_RELATIONS[-1]])
+        report = self.run_publisher(mode="dry-run")
+        baseline = report["curseForgeBaseline"]
+        self.assertEqual("AUTOMATION_READY_DRY_RUN", report["status"])
+        self.assertEqual("OWNER_CONFIRMED_AUTHORS_DEFAULTS", baseline["projectRelationsCheck"])
+        self.assertEqual(
+            sorted(expected_defaults, key=lambda item: item["projectId"]),
+            baseline["projectRelations"],
+        )
+        self.assertEqual(1, len(self.state.project_relations))
+        self.assertEqual(6, len(baseline["projectRelations"]))
+        self.assertNotIn(
+            f"/api/v1/mods/{PROJECT_ID}/dependencies",
+            self.state.requested_paths,
+        )
         self.assertEqual(0, self.state.post_count)
 
     def configure_distinct_relation_contracts(self) -> None:
@@ -721,12 +748,19 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual("CURSEFORGE_RELATION_MISMATCH", raised.exception.status)
         self.assertEqual(0, self.state.post_count)
 
-    def test_distinct_project_relation_drift_still_blocks(self) -> None:
+    def test_distinct_project_relations_use_exact_manifest_attestation(self) -> None:
         self.configure_distinct_relation_contracts()
-        self.state.project_relations = self.state.project_relations[:-1]
-        with self.assertRaises(PublicationError) as raised:
-            self.run_publisher()
-        self.assertEqual("CURSEFORGE_PROJECT_RELATION_MISMATCH", raised.exception.status)
+        self.state.project_relations = public_relations([EXPECTED_RELATIONS[-1]])
+        report = self.run_publisher()
+        self.assertEqual("AUTOMATION_READY_DRY_RUN", report["status"])
+        self.assertEqual(
+            sorted(self.manifest["curseforge"]["expectedProjectRelations"], key=lambda item: item["projectId"]),
+            report["curseForgeBaseline"]["projectRelations"],
+        )
+        self.assertEqual(
+            "OWNER_CONFIRMED_AUTHORS_DEFAULTS",
+            report["curseForgeBaseline"]["projectRelationsCheck"],
+        )
         self.assertEqual(0, self.state.post_count)
 
     def test_distinct_target_missing_or_extra_relations_are_rejected(self) -> None:
@@ -1417,6 +1451,27 @@ class OperationalRoutingTests(unittest.TestCase):
         self.assertNotIn("v1.1.56", workflow)
         self.assertIn("Publisher(root, manifest, require_local_source=True)", workflow)
         self.assertIn("ref: ${{ steps.source.outputs.commit }}", workflow)
+        self.assertIn("confirm_project_relations:", workflow)
+        self.assertIn(
+            "CONFIRM_PROJECT_RELATIONS: ${{ inputs.confirm_project_relations }}",
+            workflow,
+        )
+        self.assertEqual(3, workflow.count("--confirm-project-relations"))
+        default_confirmation = parse_args(
+            ["--dry-run", "--tag", TAG, "--manifest", "manifest.json"]
+        )
+        self.assertFalse(default_confirmation.confirm_project_relations)
+        explicit_confirmation = parse_args(
+            [
+                "--dry-run",
+                "--tag",
+                TAG,
+                "--manifest",
+                "manifest.json",
+                "--confirm-project-relations",
+            ]
+        )
+        self.assertTrue(explicit_confirmation.confirm_project_relations)
         self.assertIn("bash ./gradlew clean build --no-build-cache", workflow)
         self.assertIn("publisher.validate_build_ci", workflow)
         self.assertLess(workflow.index("publisher.validate_build_ci"), workflow.index("bash ./gradlew"))
