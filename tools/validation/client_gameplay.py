@@ -299,7 +299,7 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
 def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                          directory: Path, window_width: int, window_height: int,
                                          language: str, logs: str) -> dict:
-    """Fail closed unless all six live screens produced panel crops and tooltip-preserving window captures."""
+    """Fail closed unless six live screens and the Tree Cutter badge-only panel were captured."""
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
         "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 216, 210),
@@ -320,7 +320,7 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if proof.get("selected_language") != language:
         raise SmokeFailure("Minecraft did not load the requested corrected-machine GUI locale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or proof.get("screenshot_method") != "Native Minecraft panel crops with the cursor outside plus separate full-window hover captures"):
+            or proof.get("screenshot_method") != "Native Minecraft panel crops with cursor outside, separate full-window hover captures, and a Tree Cutter badge-only crop"):
         raise SmokeFailure("Corrected-machine GUI proof lacks panel crops and tooltip-preserving captures")
 
     cases = proof.get("cases")
@@ -337,10 +337,11 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     capture_names = {f"{machine}-{state}.png" for machine in expected
                      for state in ("empty", "mid", "full-hover")}
     capture_names.add("small_freezer-near-end.png")
+    capture_names.add("small_tree_cutter-badge-only.png")
     tooltip_names = {f"{machine}-full-hover-window.png" for machine in expected}
     captures = proof.get("screenshots")
     if not isinstance(captures, list) or len(captures) != len(capture_names):
-        raise SmokeFailure("Corrected-machine GUI proof requires 19 panel states and six separate hover captures")
+        raise SmokeFailure("Corrected-machine GUI proof requires 20 panel captures and six separate hover captures")
     if {capture.get("name") for capture in captures if isinstance(capture, dict)} != capture_names:
         raise SmokeFailure("Corrected-machine GUI screenshot names are missing, duplicated, or unexpected")
     image_dir = directory / "corrected-machine-gui-screenshots"
@@ -446,9 +447,33 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             or near_end.get("kind") != "SMALL_FREEZER"
             or near_end.get("sha256") != hashlib.sha256(near_end_data).hexdigest()
             or (near_end.get("width"), near_end.get("height")) != near_end_size
-            or type(near_end.get("progress")) is not int
-            or not 178 <= near_end["progress"] < 180):
+            or type(near_end.get("freezer_progress_ticks")) is not int
+            or not 178 <= near_end["freezer_progress_ticks"] < 180):
         raise SmokeFailure("Native Freezer near-end frame does not prove progress immediately before completion")
+
+    tree_badge = proof.get("tree_cutter_badge_only_capture")
+    tree_capture = captures_by_name["small_tree_cutter-badge-only.png"]
+    tree_image = image_dir / "small_tree_cutter-badge-only.png"
+    tree_data = tree_image.read_bytes()
+    if (not isinstance(tree_badge, dict) or len(tree_data) < 1000
+            or tree_data[:8] != png_signature or tree_data[12:16] != b"IHDR"):
+        raise SmokeFailure("Tree Cutter badge-only native panel capture is absent or invalid")
+    tree_size = struct.unpack(">II", tree_data[16:24])
+    if (tree_badge.get("machine_id") != "small_tree_cutter"
+            or tree_badge.get("state") != "badge-only"
+            or tree_badge.get("capture_mode") != "gui_panel"
+            or tree_badge.get("panel_cursor_outside") is not True
+            or tree_badge.get("panel_tooltips_suppressed") is not True
+            or tree_badge.get("kind") != "SMALL_TREE_CUTTER"
+            or "MachineScreen$" not in str(tree_badge.get("screen_identity", ""))
+            or type(tree_badge.get("menu_id")) is not int
+            or tree_badge.get("menu_id") != tree_badge.get("server_menu_id")
+            or type(tree_badge.get("width")) is not int or tree_badge["width"] <= 0
+            or type(tree_badge.get("height")) is not int or tree_badge["height"] <= 0
+            or tree_size != (tree_badge["width"], tree_badge["height"])
+            or tree_badge.get("sha256") != hashlib.sha256(tree_data).hexdigest()
+            or tree_capture != tree_badge):
+        raise SmokeFailure("Tree Cutter badge-only screenshot does not match its live panel proof")
 
     if f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={nonce}" not in logs:
         raise SmokeFailure("Missing current-run corrected-machine GUI completion marker")

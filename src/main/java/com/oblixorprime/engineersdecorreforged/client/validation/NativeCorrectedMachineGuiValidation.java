@@ -36,7 +36,7 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.BufferUtils;
 
-/** Native integrated-client captures for the six MachineScreen GUIs corrected in this batch. */
+/** Native integrated-client captures for six corrected GUIs and the Tree Cutter badge only. */
 final class NativeCorrectedMachineGuiValidation {
    private static final String SUITE = "native-corrected-machine-gui-v1";
    private static final BlockPos POS = new BlockPos(0, 80, 0);
@@ -48,9 +48,15 @@ final class NativeCorrectedMachineGuiValidation {
       new Spec(MachineKind.SMALL_FLUID_FUNNEL, "small_fluid_funnel", ModBlocks.SMALL_FLUID_FUNNEL.get(), Fluids.WATER),
       new Spec(MachineKind.PASSIVE_FLUID_ACCUMULATOR, "passive_fluid_accumulator", ModBlocks.PASSIVE_FLUID_ACCUMULATOR.get(), Fluids.WATER)
    );
+   private static final Spec TREE_CUTTER_BADGE_SPEC = new Spec(
+      MachineKind.SMALL_TREE_CUTTER, "small_tree_cutter", ModBlocks.SMALL_TREE_CUTTER.get(), null
+   );
    private static final String[] STATES = {"empty", "mid", "full"};
 
-   private enum Stage { WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_HOVER, DONE }
+   private enum Stage {
+      WAIT_SETUP, WAIT_MENU, WAIT_STATE, WAIT_PANEL_CAPTURE, WAIT_FREEZER_NEAR_END, WAIT_HOVER,
+      WAIT_BADGE_SETUP, WAIT_BADGE_MENU, WAIT_BADGE_CAPTURE, DONE
+   }
 
    private static Stage stage;
    private static CompletableFuture<?> pending;
@@ -150,7 +156,7 @@ final class NativeCorrectedMachineGuiValidation {
                throw new IllegalStateException("Corrected GUI changed before its clean panel capture");
             }
             String state = stateIndex == 2 ? "full-hover" : STATES[stateIndex];
-            capture(mc, screen, menu, state);
+            capture(mc, screen, menu, SPECS.get(specIndex), state);
             if (stateIndex == 2) {
                screen.setSuppressTooltipsForPanelCapture(false);
                moveCursorToFirstSlot(mc, menu);
@@ -181,7 +187,7 @@ final class NativeCorrectedMachineGuiValidation {
             if (menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS - 2) return false;
             require(menu.freezerProgressTicks() < MachineBlockEntity.FREEZER_PROCESS_TICKS,
                "Freezer fixture completed before its near-end frame could be captured");
-            capture(mc, screen, menu, "near-end");
+            capture(mc, screen, menu, SPECS.get(specIndex), "near-end");
             stateIndex++;
             scheduleState(mc, stateIndex);
             stage = Stage.WAIT_STATE;
@@ -210,14 +216,50 @@ final class NativeCorrectedMachineGuiValidation {
             CASES.add(result);
             specIndex++;
             if (specIndex >= SPECS.size()) {
-               writeProof(mc, runNonce);
-               stage = Stage.DONE;
-               return true;
+               scheduleMachine(mc, TREE_CUTTER_BADGE_SPEC);
+               stage = Stage.WAIT_BADGE_SETUP;
+               ticks = 0;
+               return false;
             }
             scheduleMachine(mc, specIndex);
             stage = Stage.WAIT_SETUP;
             ticks = 0;
             return false;
+         }
+         case WAIT_BADGE_SETUP -> {
+            if (++ticks > 300) throw new IllegalStateException("Tree Cutter badge-only fixture did not prepare");
+            if (!pending.isDone()) return false;
+            pending.join();
+            ticks = 0;
+            stage = Stage.WAIT_BADGE_MENU;
+            return false;
+         }
+         case WAIT_BADGE_MENU -> {
+            if (++ticks > 300) throw new IllegalStateException("Tree Cutter badge-only screen did not open");
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != TREE_CUTTER_BADGE_SPEC.kind()
+               || menu.containerId != serverMenuId) return false;
+            if (ticks < 15) return false;
+            screen.setSuppressTooltipsForPanelCapture(true);
+            moveCursorOutsidePanel(mc);
+            stage = Stage.WAIT_BADGE_CAPTURE;
+            ticks = 0;
+            return false;
+         }
+         case WAIT_BADGE_CAPTURE -> {
+            if (++ticks < 3) return false;
+            if (!(mc.screen instanceof MachineScreen screen)
+               || !(mc.player.containerMenu instanceof MachineMenu menu)
+               || menu.kind() != TREE_CUTTER_BADGE_SPEC.kind()
+               || menu.containerId != serverMenuId) {
+               throw new IllegalStateException("Tree Cutter screen changed before its badge-only capture");
+            }
+            JsonObject badgeCapture = capture(mc, screen, menu, TREE_CUTTER_BADGE_SPEC, "badge-only");
+            badgeCapture.addProperty("machine_id", TREE_CUTTER_BADGE_SPEC.id());
+            writeProof(mc, runNonce, badgeCapture);
+            stage = Stage.DONE;
+            return true;
          }
          case DONE -> { return true; }
       }
@@ -225,8 +267,11 @@ final class NativeCorrectedMachineGuiValidation {
    }
 
    private static void scheduleMachine(Minecraft mc, int index) {
+      scheduleMachine(mc, SPECS.get(index));
+   }
+
+   private static void scheduleMachine(Minecraft mc, Spec spec) {
       UUID playerId = mc.player.getUUID();
-      Spec spec = SPECS.get(index);
       var server = mc.getSingleplayerServer();
       pending = server.submit(() -> {
          ServerPlayer player = server.getPlayerList().getPlayer(playerId);
@@ -249,9 +294,10 @@ final class NativeCorrectedMachineGuiValidation {
          setState(machine, spec, 0);
          if (player.openMenu(machine).isEmpty()) throw new IllegalStateException("Server refused " + spec.kind() + " menu");
          if (!(player.containerMenu instanceof MachineMenu menu)
-            || menu.kind() != spec.kind() || menu.visibleMachineSlots() != menu.layout().machineSlots().size()
-            || menu.slots.size() != menu.visibleMachineSlots() + 36
-            || !menu.stillValid(player)) {
+            || menu.kind() != spec.kind() || !menu.stillValid(player)
+            || (spec != TREE_CUTTER_BADGE_SPEC
+               && (menu.visibleMachineSlots() != menu.layout().machineSlots().size()
+                  || menu.slots.size() != menu.visibleMachineSlots() + 36))) {
             throw new IllegalStateException("Server opened the wrong menu or slot lattice for " + spec.kind());
          }
          serverMenuId = menu.containerId;
@@ -378,7 +424,7 @@ final class NativeCorrectedMachineGuiValidation {
          mc.getWindow().getScreenHeight() - 3);
    }
 
-   private static void capture(Minecraft mc, MachineScreen screen, MachineMenu menu, String state) throws Exception {
+   private static JsonObject capture(Minecraft mc, MachineScreen screen, MachineMenu menu, Spec spec, String state) throws Exception {
       MachineLayout layout = menu.layout();
       int guiWidth = mc.getWindow().getGuiScaledWidth();
       int guiHeight = mc.getWindow().getGuiScaledHeight();
@@ -396,7 +442,7 @@ final class NativeCorrectedMachineGuiValidation {
       int cropY = (int)Math.round((guiHeight - layout.imageHeight()) / 2.0 * scaleY);
       int cropWidth = (int)Math.round(layout.imageWidth() * scaleX);
       int cropHeight = (int)Math.round(layout.imageHeight() * scaleY);
-      String name = SPECS.get(specIndex).id() + "-" + state + ".png";
+      String name = spec.id() + "-" + state + ".png";
       Files.createDirectories(screenshots);
       Path output = screenshots.resolve(name);
       require(!Files.exists(output), "Refusing to overwrite a corrected GUI capture");
@@ -423,14 +469,18 @@ final class NativeCorrectedMachineGuiValidation {
       capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
       capture.addProperty("width", cropWidth);
       capture.addProperty("height", cropHeight);
-      capture.addProperty("kind", SPECS.get(specIndex).kind().name());
+      capture.addProperty("kind", spec.kind().name());
       capture.addProperty("screen_identity", screen.getClass().getName());
       capture.addProperty("menu_id", menu.containerId);
       capture.addProperty("server_menu_id", serverMenuId);
       capture.addProperty("fluid_amount", menu.fluidAmount());
       capture.addProperty("energy", menu.energyStored());
       capture.addProperty("progress", menu.progress());
+      if (menu.kind() == MachineKind.SMALL_FREEZER) {
+         capture.addProperty("freezer_progress_ticks", menu.freezerProgressTicks());
+      }
       CAPTURES.add(capture);
+      return capture;
    }
 
    private static void captureHoverWindow(Minecraft mc, JsonObject panelCapture, JsonObject hover) throws Exception {
@@ -500,10 +550,11 @@ final class NativeCorrectedMachineGuiValidation {
       return result;
    }
 
-   private static void writeProof(Minecraft mc, String runNonce) throws Exception {
+   private static void writeProof(Minecraft mc, String runNonce, JsonObject treeCutterBadgeCapture) throws Exception {
       require(nonce.equals(runNonce) && CASES.size() == SPECS.size()
-         && CAPTURES.size() == SPECS.size() * STATES.length + 1
-         && hasCapture("small_freezer-near-end.png"),
+         && CAPTURES.size() == SPECS.size() * STATES.length + 2
+         && hasCapture("small_freezer-near-end.png")
+         && hasCapture("small_tree_cutter-badge-only.png"),
          "Corrected GUI capture matrix is incomplete");
       String selectedLanguage = mc.getLanguageManager().getSelected();
       require(language.equals(selectedLanguage), "Minecraft did not load the requested GUI language");
@@ -519,10 +570,11 @@ final class NativeCorrectedMachineGuiValidation {
       proof.addProperty("selected_language", selectedLanguage);
       proof.addProperty("window_width", mc.getWindow().getWidth());
       proof.addProperty("window_height", mc.getWindow().getHeight());
-      proof.addProperty("screenshot_method", "Native Minecraft panel crops with the cursor outside plus separate full-window hover captures");
+      proof.addProperty("screenshot_method", "Native Minecraft panel crops with cursor outside, separate full-window hover captures, and a Tree Cutter badge-only crop");
       proof.addProperty("fixture_state_source", "Live MachineBlockEntity fluid handlers and test data synced through the registered MachineMenu");
       proof.add("cases", CASES.deepCopy());
       proof.add("screenshots", CAPTURES.deepCopy());
+      proof.add("tree_cutter_badge_only_capture", treeCutterBadgeCapture.deepCopy());
       Files.writeString(gameDirectory.resolve("client-corrected-machine-gui-result.json"),
          new GsonBuilder().setPrettyPrinting().create().toJson(proof) + "\n");
    }

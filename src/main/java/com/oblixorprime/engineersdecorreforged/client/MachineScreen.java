@@ -1046,21 +1046,30 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawSmallMilkingMachineWidgets(GuiGraphics graphics, ResourceLocation texture, int x, int y) {
       MachineMenu menu = (MachineMenu)this.menu;
-      this.drawRepeatedTexturePatch(graphics, texture, x + 17, y + 4, 33, 19,
-         356, 634, 26, 38, 941, 1672, 0.5F);
-      // Tile a clean strip from the title plate's blank right margin over its baked title.
-      // This preserves the plate grain without sampling the neighboring "MACHINE" letters.
-      this.drawRepeatedTexturePatch(graphics, texture, x + 66, y + 10, 133, 9,
-         375, 640, 12, 26, 941, 1672, 0.5F);
-      this.maskTinyString(graphics, smallMilkingText("label.collection.line1").getString(), 26, 80, 49, 0xFF121212);
-      this.maskTinyString(graphics, smallMilkingText("label.collection.line2").getString(), 26, 86, 49, 0xFF121212);
-      this.drawTexturePatch(graphics, texture, x + 145, y + 40, 64, 10,
-         530, 690, 110, 18, 941, 1672);
-      this.drawTexturePatch(graphics, texture, x + 145, y + 50, 64, 10,
-         530, 690, 110, 18, 941, 1672);
-      this.drawRepeatedTexturePatch(graphics, texture, x + 158, y + 84, 41, 9,
-         635, 756, 30, 18, 941, 1672, 0.5F);
-      this.maskTinyString(graphics, smallMilkingText("label.inventory").getString(), 29, 129, 65, 0xFF080909);
+      this.drawTexturePatch(graphics, texture, x + 17, y + 4, 33, 19,
+         356, 634, 26, 38, 941, 1672);
+
+      boolean frenchArtwork = this.isFrenchArtworkLocale();
+      boolean englishArtwork = this.isEnglishArtworkLocale();
+      if (!englishArtwork) {
+         // The clean end of the title plate replaces the full baked English title.
+         this.drawTexturePatch(graphics, texture, x + 63, y + 8, 132, 13,
+            620, 640, 22, 18, 941, 1672);
+      }
+      if (!frenchArtwork) {
+         // The original left label sits on a black inset plate; keep the patch inside that plate.
+         graphics.fill(x + 23, y + 78, x + 94, y + 91, 0xFF111314);
+         this.drawTexturePatch(graphics, texture, x + 145, y + 40, 64, 21,
+            620, 680, 26, 24, 941, 1672);
+         this.drawTexturePatch(graphics, texture, x + 157, y + 84, 43, 11,
+            620, 780, 26, 20, 941, 1672);
+         this.drawTexturePatch(graphics, texture, x + 28, y + 127, 70, 13,
+            422, 866, 88, 20, 941, 1672);
+      } else {
+         // The embedded French captions match the artwork; replace only its stale sample amount.
+         this.drawTexturePatch(graphics, texture, x + 145, y + 50, 64, 11,
+            620, 680, 26, 24, 941, 1672);
+      }
       this.drawSmallMilkingMachineTank(graphics, x, y, menu.fluidAmount(), menu.fluidCapacity());
    }
 
@@ -1086,13 +1095,19 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawSmallMilkingMachineLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
       String title = Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_milking_machine").getString();
-      this.drawTinyCenteredString(graphics, title, 133, 11, 133, TEXT);
-      this.drawTinyString(graphics, smallMilkingText("label.collection.line1").getString(), 26, 80, 49, TEXT, false);
-      this.drawTinyString(graphics, smallMilkingText("label.collection.line2").getString(), 26, 86, 49, TEXT, false);
-      this.drawTinyString(graphics, smallMilkingText("label.tank").getString(), 148, 42, 58, TEXT, false);
+      if (!this.isEnglishArtworkLocale()) {
+         this.drawTinyCenteredString(graphics, title, 129, 11, 132, TEXT);
+      }
+      if (!this.isFrenchArtworkLocale()) {
+         this.drawTinyString(graphics, smallMilkingText("label.collection.line1").getString(), 26, 80, 66, TEXT, false);
+         this.drawTinyString(graphics, smallMilkingText("label.collection.line2").getString(), 26, 86, 66, TEXT, false);
+         this.drawTinyString(graphics, smallMilkingText("label.tank").getString(), 148, 42, 58, TEXT, false);
+      }
       this.drawTinyString(graphics, formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()), 148, 51, 60, TEXT, false);
-      this.drawTinyString(graphics, smallMilkingText("label.output").getString(), 159, 86, 39, TEXT, false);
-      this.drawTinyString(graphics, smallMilkingText("label.inventory").getString(), 29, 129, 65, TEXT, false);
+      if (!this.isFrenchArtworkLocale()) {
+         this.drawTinyString(graphics, smallMilkingText("label.output").getString(), 159, 86, 41, TEXT, false);
+         this.drawTinyString(graphics, smallMilkingText("label.inventory").getString(), 29, 129, 68, TEXT, false);
+      }
    }
 
    private void maskTinyString(GuiGraphics graphics, String text, int x, int y, int maxWidth, int color) {
@@ -1172,6 +1187,16 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private Locale smallMilkingLocale() {
       String selected = this.minecraft == null ? "en_us" : this.minecraft.getLanguageManager().getSelected();
       return Locale.forLanguageTag(selected.replace('_', '-'));
+   }
+
+   private boolean isEnglishArtworkLocale() {
+      String selected = this.minecraft == null ? "en_us" : this.minecraft.getLanguageManager().getSelected();
+      return selected.toLowerCase(Locale.ROOT).startsWith("en");
+   }
+
+   private boolean isFrenchArtworkLocale() {
+      String selected = this.minecraft == null ? "en_us" : this.minecraft.getLanguageManager().getSelected();
+      return selected.toLowerCase(Locale.ROOT).startsWith("fr");
    }
 
    private static Component smallMilkingText(String key, Object... arguments) {
@@ -1776,29 +1801,37 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawSmallFluidFunnelBackgroundOverlays(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
       int mask = 0xFF202629;
-      float textureScale = (float)this.imageWidth / 385.0F;
 
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 17, y0 + 4, 34, 20,
-         98, 8, 24, 38, 385, 439, textureScale);
+      this.drawTexturePatch(graphics, texture, x0 + 17, y0 + 4, 34, 20,
+         94, 12, 23, 32, 385, 439);
+      if (!this.isEnglishArtworkLocale()) {
+         this.drawTexturePatch(graphics, texture, x0 + 53, y0 + 6, 105, 16,
+            306, 14, 24, 28, 385, 439);
+      }
 
       // Clear only each sample item interior; the source PNG owns the surrounding slot bezel.
       for (SmallFluidFunnelArtworkMask bucketMask : SmallFluidFunnelArtworkMask.sampleBucketMasks()) {
          graphics.fill(x0 + bucketMask.left(), y0 + bucketMask.top(), x0 + bucketMask.right(), y0 + bucketMask.bottom(), mask);
       }
 
-      // Mask only the baked text rows with nearby blank panel texture; keep arrows and trough bezel visible.
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 20, y0 + 64, 46, 10,
-         107, 119, 20, 18, 385, 439, textureScale);
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 142, y0 + 64, 48, 10,
-         343, 119, 20, 18, 385, 439, textureScale);
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 81, y0 + 79, 47, 10,
-         107, 147, 20, 18, 385, 439, textureScale);
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 78, y0 + 92, 55, 8,
-         107, 169, 20, 16, 385, 439, textureScale);
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 121, y0 + 125, 65, 10,
-         332, 235, 20, 18, 385, 439, textureScale);
-      this.drawRepeatedTexturePatch(graphics, texture, x0 + 22, y0 + 139, 61, 10,
-         200, 260, 26, 16, 385, 439, textureScale);
+      boolean frenchArtwork = this.isFrenchArtworkLocale();
+      // The baked fluid name is a fixed example; replace it in every locale. Fixed French
+      // bucket/outlet captions remain as authored in fr_fr and are patched only for other locales.
+      if (!frenchArtwork) {
+         this.drawTexturePatch(graphics, texture, x0 + 20, y0 + 64, 46, 12,
+            240, 140, 28, 24, 385, 439);
+         this.drawTexturePatch(graphics, texture, x0 + 142, y0 + 64, 48, 12,
+            240, 140, 28, 24, 385, 439);
+         this.drawTexturePatch(graphics, texture, x0 + 121, y0 + 125, 65, 13,
+            240, 140, 28, 24, 385, 439);
+         this.drawTexturePatch(graphics, texture, x0 + 22, y0 + 141, 61, 14,
+            170, 265, 50, 22, 385, 439);
+      }
+      this.drawTexturePatch(graphics, texture, x0 + 81, y0 + 78, 47, 13,
+         240, 140, 28, 24, 385, 439);
+      // The static numeric sample sits above the trough lip; clear its full ink bounds.
+      this.drawTexturePatch(graphics, texture, x0 + 71, y0 + 90, 68, 12,
+         240, 140, 28, 24, 385, 439);
 
       int tankLeft = x0 + 79;
       int tankTop = y0 + 105;
@@ -1818,16 +1851,25 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawSmallFluidFunnelLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
-      this.drawTinyCenteredString(
-         graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input").getString(),
-         43, 66, 45, TEXT
-      );
-      this.drawTinyCenteredString(
-         graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output").getString(),
-         165, 66, 48, TEXT
-      );
+      if (!this.isEnglishArtworkLocale()) {
+         this.drawTinyCenteredString(
+            graphics,
+            Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel").getString(),
+            105, 9, 105, TEXT
+         );
+      }
+      if (!this.isFrenchArtworkLocale()) {
+         this.drawTinyCenteredString(
+            graphics,
+            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input").getString(),
+            43, 66, 45, TEXT
+         );
+         this.drawTinyCenteredString(
+            graphics,
+            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output").getString(),
+            165, 66, 48, TEXT
+         );
+      }
       this.drawTinyCenteredString(
          graphics,
          this.smallFluidFunnelFluidName(menu.smallFluidFunnelFluidCode()).getString(),
@@ -1841,16 +1883,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          ).getString(),
          105, 93, 78, TEXT
       );
-      this.drawTinyCenteredString(
-         graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output").getString(),
-         154, 126, 65, TEXT
-      );
-      this.drawTinyString(
-         graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory").getString(),
-         27, 141, 60, TEXT, false
-      );
+      if (!this.isFrenchArtworkLocale()) {
+         this.drawTinyCenteredString(
+            graphics,
+            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output").getString(),
+            154, 126, 65, TEXT
+         );
+         this.drawTinyString(
+            graphics,
+            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory").getString(),
+            27, 143, 60, TEXT, false
+         );
+      }
    }
 
    private Component smallFluidFunnelTooltip(double mouseX, double mouseY) {
@@ -1891,26 +1935,27 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawFluidBarrelWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
-       this.drawRepeatedTexturePatch(graphics, texture, x0 + 15, y0 + 5, 42, 20,
-          58, 5, 17, 20, 201, 226, 1.0F);
-      // Copy the blank right end of the title plate over the PNG's fixed English title.
-       this.drawTexturePatch(graphics, texture, x0 + 72, y0 + 5, 78, 14,
-          148, 5, 42, 14, 201, 226);
-      this.maskTinyCenteredString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input").getString(),
-         38, 49, 48, 0xFF202426);
-      this.maskTinyCenteredString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.output").getString(),
-         168, 49, 60, 0xFF202426);
-      this.maskTinyCenteredString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.tank").getString(),
-         102, 103, 64, 0xFF202426);
-      this.maskTinyCenteredString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.amount",
-            menu.fluidAmount(), menu.fluidCapacity()).getString(), 102, 115, 126, 0xFF202426);
-      this.maskTinyString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.inventory").getString(),
-         24, 132, 70, 0xFF35393B);
+      boolean englishArtwork = this.isEnglishArtworkLocale();
+      this.drawTexturePatch(graphics, texture, x0 + 15, y0 + 5, 42, 20,
+         58, 5, 17, 20, 201, 226);
+      if (!englishArtwork) {
+         // Clear the complete baked title while keeping its inset plate and outer frame.
+         this.drawTexturePatch(graphics, texture, x0 + 60, y0 + 6, 102, 15,
+            148, 5, 30, 14, 201, 226);
+      }
+      if (!englishArtwork) {
+         this.drawTexturePatch(graphics, texture, x0 + 20, y0 + 47, 45, 13,
+            20, 34, 26, 14, 201, 226);
+         this.drawTexturePatch(graphics, texture, x0 + 140, y0 + 47, 46, 13,
+            20, 34, 26, 14, 201, 226);
+         this.drawTexturePatch(graphics, texture, x0 + 70, y0 + 101, 65, 13,
+            20, 34, 26, 14, 201, 226);
+         this.drawTexturePatch(graphics, texture, x0 + 20, y0 + 132, 56, 14,
+            84, 134, 38, 12, 201, 226);
+      }
+      // Always replace the baked sample amount; it is stale in every language.
+      this.drawTexturePatch(graphics, texture, x0 + 68, y0 + 116, 68, 13,
+         20, 34, 26, 14, 201, 226);
 
       for (MachineLayout.MachineSlot slot : menu.layout().machineSlots()) {
          graphics.fill(x0 + slot.x() + 1, y0 + slot.y() + 1, x0 + slot.x() + 17, y0 + slot.y() + 17, 0xFF303638);
@@ -1935,22 +1980,28 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawFluidBarrelLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
-      this.drawTinyCenteredString(graphics,
-         Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.fluid_barrel").getString(),
-         111, 8, 76, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input").getString(), 38, 49, 48, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.output").getString(), 168, 49, 60, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.tank").getString(), 102, 103, 64, TEXT);
+      if (!this.isEnglishArtworkLocale()) {
+         this.drawTinyCenteredString(graphics,
+            Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.fluid_barrel").getString(),
+            111, 8, 102, TEXT);
+      }
+      if (!this.isEnglishArtworkLocale()) {
+         this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input").getString(), 38, 49, 48, TEXT);
+         this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.output").getString(), 168, 49, 60, TEXT);
+         this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.tank").getString(), 102, 107, 64, TEXT);
+      }
       this.drawTinyCenteredString(
          graphics,
          Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.amount", menu.fluidAmount(), menu.fluidCapacity()).getString(),
-         102, 115, 126, TEXT
+         102, 118, 68, TEXT
       );
-      this.drawTinyString(
-         graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.inventory").getString(),
-         24, 132, 70, TEXT, false
-      );
+      if (!this.isEnglishArtworkLocale()) {
+         this.drawTinyString(
+            graphics,
+            Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.inventory").getString(),
+            24, 132, 56, TEXT, false
+         );
+      }
    }
 
    private Component fluidBarrelTooltip(double mouseX, double mouseY) {
