@@ -22,7 +22,7 @@ public class MachineLayoutPassiveFluidAccumulatorTest {
       assertEquals(2, layout.machineSlots().size());
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
       assertFalse(layout.machineSlots().get(0).output());
-      assertEquals(26, layout.machineSlots().get(0).x());
+      assertEquals(30, layout.machineSlots().get(0).x());
       assertEquals(106, layout.machineSlots().get(0).y());
       assertEquals(1, layout.machineSlots().get(1).containerIndex());
       assertTrue(layout.machineSlots().get(1).output());
@@ -51,5 +51,15 @@ public class MachineLayoutPassiveFluidAccumulatorTest {
    @Test(expected = IllegalArgumentException.class)
    public void accumulatorTextureGeometryRejectsCropOutsideSourceImage() {
       new GuiTextureBlit(209, 238, 278, 616, 385, 439, 662, 1672);
+   }
+
+   @Test
+   public void liveTankFillProjectsEmptyIntermediateFullAndClampedAmounts() {
+      assertEquals(0, PassiveFluidAccumulatorGauge.filledHeight(0, 4000, 50));
+      assertEquals(25, PassiveFluidAccumulatorGauge.filledHeight(2000, 4000, 50));
+      assertEquals(50, PassiveFluidAccumulatorGauge.filledHeight(4000, 4000, 50));
+      assertEquals(50, PassiveFluidAccumulatorGauge.filledHeight(4500, 4000, 50));
+      assertEquals(0, PassiveFluidAccumulatorGauge.filledHeight(-1, 4000, 50));
+      assertEquals(0, PassiveFluidAccumulatorGauge.filledHeight(500, 0, 50));
    }
 }

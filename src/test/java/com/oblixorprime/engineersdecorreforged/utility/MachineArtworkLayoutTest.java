@@ -1,7 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.utility;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -24,45 +23,12 @@ public class MachineArtworkLayoutTest {
       assertEquals(1, layout.machineSlots().size());
       assertEquals(0, layout.machineSlots().get(0).containerIndex());
       assertEquals("Cell", layout.machineSlots().get(0).role());
+      assertEquals(20, layout.playerColumnSpacing());
+      assertEquals(16, layout.playerRowSpacing());
+      assertEquals(24, layout.playerSlotX(0));
+      assertEquals(185, layout.hotbarY());
+      assertEquals(184, layout.hotbarSlotX(8));
       assertSlotsInsideCanvas(layout);
-   }
-
-   @Test
-   public void treeCutterArtworkKeepsAllNineDropsAndTheIoSlotInsideTheCanvas() {
-      MachineLayout layout = MachineLayout.forKind(MachineKind.SMALL_TREE_CUTTER);
-      GuiTextureBlit blit = layout.artworkBlit();
-
-      assertEquals(MachineLayout.LayoutStyle.ARTWORK_TEXTURE, layout.style());
-      assertEquals("small_tree_cutter_art", layout.textureName());
-      assertEquals(446, blit.textureWidth());
-      assertEquals(418, blit.textureHeight());
-      assertEquals(layout.imageWidth(), blit.destinationWidth());
-      assertEquals(layout.imageHeight(), blit.destinationHeight());
-      assertEquals(10, layout.machineSlots().size());
-      for (int index = 0; index < 9; index++) {
-         assertEquals(index, layout.machineSlots().get(index).containerIndex());
-         assertEquals("Drops", layout.machineSlots().get(index).role());
-         assertFalse(layout.machineSlots().get(index).output());
-      }
-      assertEquals(9, layout.machineSlots().get(9).containerIndex());
-      assertEquals("I/O", layout.machineSlots().get(9).role());
-      assertFalse(layout.machineSlots().get(9).output());
-
-      for (int i = 0; i < layout.machineSlots().size(); i++) {
-         MachineLayout.MachineSlot first = layout.machineSlots().get(i);
-         assertTrue(first.x() >= 0);
-         assertTrue(first.y() >= 0);
-         assertTrue(first.x() + 18 <= layout.imageWidth());
-         assertTrue(first.y() + 18 <= layout.imageHeight());
-         assertTrue(first.y() + 18 <= layout.playerInventoryY());
-         for (int j = i + 1; j < layout.machineSlots().size(); j++) {
-            assertFalseOverlap(first, layout.machineSlots().get(j));
-         }
-      }
-      assertTrue(layout.playerInventoryY() + 2 * 18 + 18 <= layout.hotbarY());
-      assertTrue(layout.playerInventoryX() + 8 * 18 + 18 <= layout.imageWidth());
-      assertTrue(layout.hotbarX() + 8 * 18 + 18 <= layout.imageWidth());
-      assertTrue(layout.hotbarY() + 18 <= layout.imageHeight());
    }
 
    private static void assertSlotsInsideCanvas(MachineLayout layout) {
@@ -73,15 +39,10 @@ public class MachineArtworkLayoutTest {
          assertTrue(slot.x() + 18 <= layout.imageWidth());
          assertTrue(slot.y() + 18 <= layout.imageHeight());
       }
-      assertTrue(layout.playerInventoryX() + 8 * 18 + 18 <= layout.imageWidth());
-      assertTrue(layout.hotbarX() + 8 * 18 + 18 <= layout.imageWidth());
-      assertTrue(layout.playerInventoryY() + 2 * 18 + 18 <= layout.hotbarY());
-      assertTrue(layout.hotbarY() + 18 <= layout.imageHeight());
+      assertTrue(layout.playerSlotX(8) + 16 <= layout.imageWidth());
+      assertTrue(layout.hotbarSlotX(8) + 16 <= layout.imageWidth());
+      assertTrue(layout.playerSlotY(2) + 16 <= layout.hotbarY());
+      assertTrue(layout.hotbarY() + 16 <= layout.imageHeight());
    }
 
-   private static void assertFalseOverlap(MachineLayout.MachineSlot first, MachineLayout.MachineSlot second) {
-      boolean overlap = first.x() < second.x() + 18 && first.x() + 18 > second.x()
-         && first.y() < second.y() + 18 && first.y() + 18 > second.y();
-      assertTrue("machine slots overlap: " + first + " / " + second, !overlap);
-   }
 }

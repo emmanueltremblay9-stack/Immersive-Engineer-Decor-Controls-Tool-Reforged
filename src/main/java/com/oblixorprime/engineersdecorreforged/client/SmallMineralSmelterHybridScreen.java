@@ -303,7 +303,15 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       if (filled > 0) graphics.fill(x, y, x + filled, y + height, color);
    }
 
-   private void drawSmall(GuiGraphics graphics, Component value, int x, int y, int color, float scale) {
+   static float fittedTextScale(int textWidth, int maximumWidth, float preferredScale) {
+      if (textWidth <= 0 || maximumWidth <= 0 || preferredScale <= 0.0F) return 0.0F;
+      return Math.min(preferredScale, maximumWidth / (float)textWidth);
+   }
+
+   private void drawSmall(GuiGraphics graphics, Component value, int x, int y,
+                          int maximumWidth, int color, float preferredScale) {
+      float scale = fittedTextScale(font.width(value), maximumWidth, preferredScale);
+      if (scale <= 0.0F) return;
       graphics.pose().pushPose();
       graphics.pose().translate(x, y, 0);
       graphics.pose().scale(scale, scale, 1.0F);
@@ -320,16 +328,16 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       Component thermalLabel = thermal < 0
          ? Component.translatable(PREFIX + "thermal.unknown")
          : Component.translatable(PREFIX + "thermal", thermal, phaseName);
-      drawSmall(graphics, thermalLabel, 20, 107, thermal < 0 ? MUTED : AMBER, 0.65F);
+      drawSmall(graphics, thermalLabel, 20, 107, 84, thermal < 0 ? MUTED : AMBER, 0.65F);
 
       int comparator = projectedField(MachineMenu.SMS_UI_COMPARATOR);
       drawSmall(graphics, Component.translatable(PREFIX + "comparator", numberComponent(comparator)),
-         36, 127, comparator < 0 ? MUTED : WHITE, 0.58F);
+         36, 127, 68, comparator < 0 ? MUTED : WHITE, 0.58F);
 
       int hazard = projectedField(MachineMenu.SMS_UI_HAZARD);
       String surfaceKey = hazard < 0 ? "surface.unknown" : hazard == 1 ? "surface.hot" : "surface.cool";
       drawSmall(graphics, Component.translatable(PREFIX + surfaceKey),
-         20, 140, hazard == 1 ? RED : hazard < 0 ? MUTED : 0xFF81D77B, 0.68F);
+         20, 140, 84, hazard == 1 ? RED : hazard < 0 ? MUTED : 0xFF81D77B, 0.68F);
 
       int batchMode = projectedField(MachineMenu.SMS_UI_BATCH_MODE);
       int batchProgress = projectedField(MachineMenu.SMS_UI_BATCH_PROGRESS);
@@ -337,17 +345,17 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
          ? Component.translatable(PREFIX + "batch.progress",
             modeComponent(batchMode), numberComponent(batchProgress))
          : Component.translatable(PREFIX + "batch.idle");
-      drawSmall(graphics, batchLabel, 20, 150, batchMode >= 0 ? AMBER : MUTED, 0.52F);
+      drawSmall(graphics, batchLabel, 20, 150, 114, batchMode >= 0 ? AMBER : MUTED, 0.52F);
 
       int queued = projectedField(MachineMenu.SMS_UI_QUEUED_MODE);
       if (queued >= 0 && queued < MODE_KEYS.length) {
          drawSmall(graphics, Component.translatable(PREFIX + "next", modeComponent(queued)),
-            20, 158, AMBER, 0.52F);
+            20, 158, 114, AMBER, 0.52F);
       }
 
       int statusId = isUiSynchronized() ? menu.field(MachineMenu.SMS_UI_STATUS) : 0;
       drawSmall(graphics, statusLabelComponent(),
-         20, 165, requestFeedback == 0 ? statusColor(statusId) : RED, 0.52F);
+         20, 163, 114, requestFeedback == 0 ? statusColor(statusId) : RED, 0.52F);
       if (statusButton != null) {
          statusButton.setMessage(statusAccessibleComponent());
          statusButton.setTooltip(Tooltip.create(statusLabelComponent()));
@@ -356,35 +364,35 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       int fluid = projectedField(MachineMenu.SMS_UI_TANK_AMOUNT);
       int fluidCapacity = projectedField(MachineMenu.SMS_UI_TANK_CAPACITY);
       drawSmall(graphics, Component.translatable(PREFIX + "fluid", numberComponent(fluid)),
-         148, 102, fluid < 0 ? MUTED : WHITE, 0.63F);
+         148, 102, 34, fluid < 0 ? MUTED : WHITE, 0.63F);
       drawSmall(graphics, Component.translatable(PREFIX + "capacity", numberComponent(fluidCapacity)),
-         148, 110, MUTED, 0.52F);
+         148, 110, 34, MUTED, 0.52F);
 
       int energy = projectedField(MachineMenu.SMS_UI_ENERGY);
       int energyCapacity = projectedField(MachineMenu.SMS_UI_ENERGY_CAPACITY);
       drawSmall(graphics, Component.translatable(PREFIX + "energy", numberComponent(energy)),
-         185, 102, energy < 0 ? MUTED : WHITE, 0.53F);
+         185, 102, 39, energy < 0 ? MUTED : WHITE, 0.53F);
       drawSmall(graphics, Component.translatable(PREFIX + "energy_capacity", numberComponent(energyCapacity)),
-         185, 110, MUTED, 0.49F);
+         185, 110, 39, MUTED, 0.49F);
 
       int feRate = projectedField(MachineMenu.SMS_UI_FE_RATE);
       Component feRateValue = feRate < 0 ? Component.translatable(PREFIX + "unknown") : Component.literal(Integer.toString(feRate));
       drawSmall(graphics, Component.translatable(PREFIX + "fe_rate", feRateValue),
-         191, 120, feRate < 0 ? MUTED : WHITE, 0.58F);
+         191, 120, 39, feRate < 0 ? MUTED : WHITE, 0.58F);
 
       int redstone = projectedField(MachineMenu.SMS_UI_REDSTONE);
       String redstoneKey = redstone < 0 ? "redstone.unknown" : redstone == 1 ? "redstone.high" : "redstone.low";
       drawSmall(graphics, Component.translatable(PREFIX + redstoneKey),
-         190, 141, redstone == 1 ? RED : redstone < 0 ? MUTED : 0xFF81D77B, 0.65F);
+         190, 141, 44, redstone == 1 ? RED : redstone < 0 ? MUTED : 0xFF81D77B, 0.65F);
 
       if (outputDrawerOpen) {
-         drawSmall(graphics, Component.translatable(PREFIX + "drawer.title"), 191, 49, AMBER, 0.54F);
-         drawSmall(graphics, Component.translatable(PREFIX + "drawer.close"), 158, 71, MUTED, 0.47F);
+         drawSmall(graphics, Component.translatable(PREFIX + "drawer.title"), 191, 49, 25, AMBER, 0.54F);
+         drawSmall(graphics, Component.translatable(PREFIX + "drawer.close"), 158, 71, 58, MUTED, 0.47F);
       } else {
          int selected = selectedMode();
          for (int i = 0; i < MODE_KEYS.length; i++) {
             Component mode = Component.translatable(MODE_KEYS[i]);
-            drawSmall(graphics, mode, 183, 44 + i * 11, selected == i ? AMBER : WHITE, 0.60F);
+            drawSmall(graphics, mode, 183, 44 + i * 11, 32, selected == i ? AMBER : WHITE, 0.60F);
             if (modeButtons[i] != null) modeButtons[i].setMessage(modeAccessibleComponent(i));
          }
       }

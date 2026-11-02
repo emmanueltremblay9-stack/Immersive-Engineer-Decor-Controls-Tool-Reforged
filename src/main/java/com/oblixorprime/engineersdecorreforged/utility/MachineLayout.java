@@ -14,7 +14,10 @@ public record MachineLayout(
    List<MachineLayout.MachineSlot> machineSlots,
    List<MachineLayout.Panel> panels,
    MachineLayout.LayoutStyle style,
-   String textureName
+   String textureName,
+   int playerColumnSpacing,
+   int playerRowSpacing,
+   int hotbarColumnSpacing
 ) {
    public static final int BACKING_SLOT_COUNT = 55;
 
@@ -30,10 +33,32 @@ public record MachineLayout(
       MachineLayout.LayoutStyle style,
       String textureName
    ) {
+      this(imageWidth, imageHeight, playerInventoryX, playerInventoryY, hotbarX, hotbarY,
+         machineSlots, panels, style, textureName, 18, 18, 18);
+   }
+
+   public MachineLayout(
+      int imageWidth,
+      int imageHeight,
+      int playerInventoryX,
+      int playerInventoryY,
+      int hotbarX,
+      int hotbarY,
+      List<MachineLayout.MachineSlot> machineSlots,
+      List<MachineLayout.Panel> panels,
+      MachineLayout.LayoutStyle style,
+      String textureName,
+      int playerColumnSpacing,
+      int playerRowSpacing,
+      int hotbarColumnSpacing
+   ) {
       machineSlots = List.copyOf(machineSlots);
       panels = List.copyOf(panels);
       if (machineSlots.isEmpty()) {
          throw new IllegalArgumentException("Machine layouts must expose at least one machine slot");
+      }
+      if (playerColumnSpacing < 16 || playerRowSpacing < 16 || hotbarColumnSpacing < 16) {
+         throw new IllegalArgumentException("Player slot spacing must not overlap 16x16 interaction regions");
       }
 
       for (MachineLayout.MachineSlot slot : machineSlots) {
@@ -52,6 +77,24 @@ public record MachineLayout(
       this.panels = panels;
       this.style = style;
       this.textureName = textureName;
+      this.playerColumnSpacing = playerColumnSpacing;
+      this.playerRowSpacing = playerRowSpacing;
+      this.hotbarColumnSpacing = hotbarColumnSpacing;
+   }
+
+   public int playerSlotX(int column) {
+      if (column < 0 || column >= 9) throw new IllegalArgumentException("Player inventory column out of range");
+      return this.playerInventoryX + column * this.playerColumnSpacing;
+   }
+
+   public int playerSlotY(int row) {
+      if (row < 0 || row >= 3) throw new IllegalArgumentException("Player inventory row out of range");
+      return this.playerInventoryY + row * this.playerRowSpacing;
+   }
+
+   public int hotbarSlotX(int column) {
+      if (column < 0 || column >= 9) throw new IllegalArgumentException("Hotbar column out of range");
+      return this.hotbarX + column * this.hotbarColumnSpacing;
    }
 
    public boolean isOutputSlot(int containerIndex) {
@@ -275,7 +318,7 @@ public record MachineLayout(
          144,
          24,
          202,
-         List.of(new MachineLayout.MachineSlot(0, 27, 66, "Empty bucket", false), new MachineLayout.MachineSlot(1, 150, 66, "Filled", true)),
+         List.of(new MachineLayout.MachineSlot(0, 34, 73, "Empty bucket", false), new MachineLayout.MachineSlot(1, 158, 73, "Filled", true)),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
          "fluid_barrel/background"
@@ -283,6 +326,12 @@ public record MachineLayout(
    }
 
    private static MachineLayout freezer() {
+      SmallFreezerArtworkMasks.SlotOrigin input = SmallFreezerArtworkMasks.slotOriginForFrame(
+         46, 106, 106, 174, 209, 235
+      );
+      SmallFreezerArtworkMasks.SlotOrigin output = SmallFreezerArtworkMasks.slotOriginForFrame(
+         315, 108, 380, 174, 209, 235
+      );
       return new MachineLayout(
          209,
          235,
@@ -291,9 +340,9 @@ public record MachineLayout(
          24,
          203,
          List.of(
-            new MachineLayout.MachineSlot(0, 22, 57, "Input"),
+            new MachineLayout.MachineSlot(0, input.x(), input.y(), "Input"),
             new MachineLayout.MachineSlot(1, 22, 84, "Cold reserved"),
-            new MachineLayout.MachineSlot(2, 170, 57, "Output")
+            new MachineLayout.MachineSlot(2, output.x(), output.y(), "Output")
          ),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
@@ -308,14 +357,17 @@ public record MachineLayout(
          27,
          136,
          27,
-         190,
+         184,
          List.of(
             new MachineLayout.MachineSlot(0, 46, 101, "Bucket input", false),
-            new MachineLayout.MachineSlot(1, 156, 101, "Milk output", true)
+            new MachineLayout.MachineSlot(1, 162, 101, "Milk output", true)
          ),
          List.of(),
          MachineLayout.LayoutStyle.ORIGINAL_TEXTURE,
-         "small_milking_machine_gui"
+         "small_milking_machine_gui",
+         18,
+         16,
+         18
       );
    }
 
@@ -357,7 +409,7 @@ public record MachineLayout(
          24,
          205,
          List.of(
-            new MachineLayout.MachineSlot(0, 26, 106, "Empty bucket", false),
+            new MachineLayout.MachineSlot(0, 30, 106, "Empty bucket", false),
             new MachineLayout.MachineSlot(1, 149, 106, "Filled", true)
          ),
          List.of(),
@@ -370,20 +422,23 @@ public record MachineLayout(
       return new MachineLayout(
          228,
          212,
-         33,
-         132,
-         33,
-         188,
+         24,
+         137,
+         24,
+         185,
          List.of(new MachineLayout.MachineSlot(0, 179, 62, "Cell")),
          List.of(
             new MachineLayout.Panel("solar-cell-mask", 176, 58, 26, 26),
             new MachineLayout.Panel("solar-energy-bar", 26, 108, 114, 9),
-            new MachineLayout.Panel("solar-energy-readout-mask", 146, 104, 76, 17),
+            new MachineLayout.Panel("solar-energy-readout-mask", 146, 104, 60, 17),
             new MachineLayout.Panel("solar-comparator", 179, 88, 43, 8),
             new MachineLayout.Panel("inventory-panel", 22, 125, 184, 81)
          ),
          MachineLayout.LayoutStyle.ARTWORK_TEXTURE,
-         "small_solar_panel_art"
+         "small_solar_panel_art",
+         20,
+         16,
+         20
       );
    }
 

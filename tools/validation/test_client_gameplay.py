@@ -1,10 +1,14 @@
 """Evidence-gate regressions, separate from the actual native gameplay run."""
 
 import copy
+import hashlib
 from pathlib import Path
+import struct
 import unittest
+import zlib
 
-from client_gameplay import EXPECTED_CASES, SUITE, validate_proof, validate_smelter_gui_proof
+from client_gameplay import (EXPECTED_CASES, SUITE, validate_corrected_machine_gui_proof,
+                             validate_proof, validate_smelter_gui_proof)
 from client_mixin_smoke import SmokeFailure
 
 
@@ -237,6 +241,127 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             self.check(proof)
         with self.assertRaises(SmokeFailure):
             self.check(logs="")
+
+
+class CorrectedMachineGuiProofTests(unittest.TestCase):
+    MACHINES = {
+        "fluid_barrel": ("FLUID_BARREL", 2, 201, 226, 32000, 0),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 216, 210, 4000, 0),
+        "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212, 0, 64000),
+        "small_freezer": ("SMALL_FREEZER", 3, 209, 235, 0, 16000),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238, 3000, 0),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238, 4000, 0),
+    }
+
+    def setUp(self):
+        import tempfile
+        self.temp = tempfile.TemporaryDirectory()
+        self.directory = Path(self.temp.name)
+        self.image_dir = self.directory / "corrected-machine-gui-screenshots"
+        self.image_dir.mkdir()
+        self.nonce = "a" * 32
+        self.source_sha = "b" * 40
+        self.pr_head_sha = "c" * 40
+        self.window_width = 1280
+        self.window_height = 260
+        self.proof = {
+            "suite": "native-corrected-machine-gui-v1", "nonce": self.nonce, "status": "passed",
+            "actual_integrated_world": True, "executed_source_sha": self.source_sha,
+            "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
+            "window_width": self.window_width, "window_height": self.window_height,
+            "screenshot_method": "Native Minecraft framebuffer cropped to the live GUI panel",
+            "cases": [], "screenshots": [],
+        }
+        for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
+            screen_identity = f"com.oblixorprime.engineersdecorreforged.client.MachineScreen${machine.title().replace('_', '')}Screen"
+            menu_identity = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+            slots = []
+            for index in range(slot_count):
+                active = not (machine == "small_freezer" and index == 1)
+                slots.append({"container_index": index, "x": 20 + index * 18, "y": 30,
+                              "layout_x": 20 + index * 18, "layout_y": 30,
+                              "active": active, "center_hit_test": active})
+            self.proof["cases"].append({
+                "machine_id": machine, "machine_kind": kind, "screen_identity": screen_identity,
+                "client_menu_identity": menu_identity, "server_menu_identity": menu_identity,
+                "client_menu_id": 2, "server_menu_id": 2, "menu_context_matches": True,
+                "visible_machine_slots": slot_count, "total_slots": slot_count + 36,
+                "panel_width": panel_width, "panel_height": panel_height, "gui_width": 1280,
+                "gui_height": self.window_height, "geometry_matches_layout": True,
+                "fluid_amount": fluid_capacity, "fluid_capacity": fluid_capacity,
+                "energy": energy_capacity, "energy_capacity": energy_capacity,
+                "progress": 25 if machine == "small_freezer" else 0,
+                "freezer_progress_ticks": 45 if machine == "small_freezer" else 0,
+                "language": "fr_fr", "captured_states": ["empty", "mid", "full-hover"],
+                "machine_slots": slots,
+            })
+            states = ("empty", "mid", "full-hover")
+            for state in states:
+                name = f"{machine}-{state}.png"
+                if fluid_capacity:
+                    fluid_amount = 0 if state == "empty" else fluid_capacity // 2 if state == "mid" else fluid_capacity
+                    energy = 0
+                else:
+                    energy = 0 if state == "empty" else energy_capacity // 2 if state == "mid" else energy_capacity
+                    fluid_amount = 0
+                capture = {"name": name, "state": state, "kind": kind,
+                           "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
+                           "fluid_amount": fluid_amount, "energy": energy,
+                           "progress": 25 if machine == "small_freezer" and state == "mid" else 0}
+                if state == "full-hover":
+                    capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
+                image = self.image_dir / name
+                image.write_bytes(self._png(panel_width, panel_height))
+                capture["width"] = panel_width
+                capture["height"] = panel_height
+                capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
+                self.proof["screenshots"].append(capture)
+        self.logs = f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={self.nonce}"
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    @staticmethod
+    def _png(width, height):
+        def chunk(kind, payload):
+            return struct.pack(">I", len(payload)) + kind + payload + struct.pack(">I", zlib.crc32(kind + payload) & 0xFFFFFFFF)
+        header = struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)
+        pixels = (b"\x00" + b"\x20\x30\x40\xff" * width) * height
+        image_data = zlib.compress(pixels, 1)
+        return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", header)
+                + chunk(b"tEXt", b"fixture\x00" + b"x" * 1200)
+                + chunk(b"IDAT", image_data) + chunk(b"IEND", b""))
+
+    def check(self, proof=None, **overrides):
+        args = dict(proof=self.proof if proof is None else proof, nonce=self.nonce,
+                    executed_sha=self.source_sha, pr_head_sha=self.pr_head_sha,
+                    directory=self.directory, window_width=self.window_width,
+                    window_height=self.window_height, language="fr_fr", logs=self.logs)
+        args.update(overrides)
+        return validate_corrected_machine_gui_proof(**args)
+
+    def test_accepts_six_live_menus_and_eighteen_cropped_state_captures(self):
+        self.assertEqual(self.check(), self.proof)
+
+    def test_rejects_missing_capture_bad_hash_or_wrong_live_slot_geometry(self):
+        missing = copy.deepcopy(self.proof)
+        missing["screenshots"].pop()
+        with self.assertRaises(SmokeFailure): self.check(missing)
+        bad_hash = copy.deepcopy(self.proof)
+        bad_hash["screenshots"][0]["sha256"] = "0" * 64
+        with self.assertRaises(SmokeFailure): self.check(bad_hash)
+        bad_slot = copy.deepcopy(self.proof)
+        bad_slot["cases"][1]["machine_slots"][0]["x"] += 1
+        with self.assertRaises(SmokeFailure): self.check(bad_slot)
+
+    def test_rejects_wrong_locale_or_missing_freezer_progress(self):
+        bad_locale = copy.deepcopy(self.proof)
+        bad_locale["selected_language"] = "en_us"
+        with self.assertRaises(SmokeFailure): self.check(bad_locale)
+        freezer = next(case for case in self.proof["cases"] if case["machine_id"] == "small_freezer")
+        freezer_mid = next(image for image in self.proof["screenshots"] if image["name"] == "small_freezer-mid.png")
+        freezer_mid["progress"] = 0
+        with self.assertRaises(SmokeFailure): self.check()
 
 
 if __name__ == "__main__":

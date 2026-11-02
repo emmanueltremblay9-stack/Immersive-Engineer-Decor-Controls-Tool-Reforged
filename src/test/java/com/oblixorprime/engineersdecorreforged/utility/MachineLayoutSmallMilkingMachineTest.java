@@ -21,13 +21,16 @@ public class MachineLayoutSmallMilkingMachineTest {
       assertFalse(layout.machineSlots().get(0).output());
       assertTrue(layout.machineSlots().get(1).output());
       assertEquals(46, layout.machineSlots().get(0).x());
-      assertEquals(156, layout.machineSlots().get(1).x());
+      assertEquals(162, layout.machineSlots().get(1).x());
       assertTrue(layout.machineSlots().get(0).role().toLowerCase().contains("bucket"));
       assertTrue(layout.machineSlots().get(1).role().toLowerCase().contains("output"));
       assertEquals(27, layout.playerInventoryX());
       assertEquals(136, layout.playerInventoryY());
       assertEquals(27, layout.hotbarX());
-      assertEquals(190, layout.hotbarY());
+      assertEquals(184, layout.hotbarY());
+      assertEquals(16, layout.playerRowSpacing());
+      assertEquals(136, layout.playerSlotY(0));
+      assertEquals(168, layout.playerSlotY(2));
       assertTrue(layout.hotbarY() + 16 <= layout.imageHeight());
    }
 }

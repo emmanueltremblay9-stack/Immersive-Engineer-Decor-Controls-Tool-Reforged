@@ -142,14 +142,14 @@ public class MachineMenu extends AbstractContainerMenu {
       for (int row = 0; row < 3; row++) {
          for (int column = 0; column < 9; column++) {
             int x = kind == MachineKind.SMALL_MINERAL_SMELTER
-               ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerInventoryX() + column * 18;
-            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, this.layout.playerInventoryY() + row * 18));
+               ? SMELTER_PLAYER_SLOT_X[column] : this.layout.playerSlotX(column);
+            this.addSlot(new Slot(inventory, column + row * 9 + 9, x, this.layout.playerSlotY(row)));
          }
       }
 
       for (int column = 0; column < 9; column++) {
          int x = kind == MachineKind.SMALL_MINERAL_SMELTER
-            ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarX() + column * 18;
+            ? SMELTER_PLAYER_SLOT_X[column] : this.layout.hotbarSlotX(column);
          this.addSlot(new Slot(inventory, column, x, this.layout.hotbarY()));
       }
 

@@ -281,6 +281,123 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
     return proof
 
 
+def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
+                                         directory: Path, window_width: int, window_height: int,
+                                         language: str, logs: str) -> dict:
+    """Fail closed unless all six live MachineScreen menus produced fresh panel-only captures."""
+    expected = {
+        "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
+        "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 216, 210),
+        "small_solar_panel": ("SMALL_SOLAR_PANEL", 1, 228, 212),
+        "small_freezer": ("SMALL_FREEZER", 3, 209, 235),
+        "small_fluid_funnel": ("SMALL_FLUID_FUNNEL", 2, 209, 238),
+        "passive_fluid_accumulator": ("PASSIVE_FLUID_ACCUMULATOR", 2, 209, 238),
+    }
+    if (proof.get("suite") != "native-corrected-machine-gui-v1" or proof.get("nonce") != nonce
+            or proof.get("status") != "passed" or proof.get("actual_integrated_world") is not True):
+        raise SmokeFailure("Missing matching successful native corrected-machine GUI proof")
+    if not re.fullmatch(r"[0-9a-f]{40}", executed_sha) or proof.get("executed_source_sha") != executed_sha:
+        raise SmokeFailure("Corrected-machine GUI proof does not identify the exact executed source revision")
+    if not re.fullmatch(r"[0-9a-f]{40}", pr_head_sha) or proof.get("pull_request_head_sha") != pr_head_sha:
+        raise SmokeFailure("Corrected-machine GUI proof does not identify the checked PR head")
+    if proof.get("language") != language or language not in {"en_us", "fr_fr"}:
+        raise SmokeFailure("Corrected-machine GUI proof locale does not match the requested locale")
+    if proof.get("selected_language") != language:
+        raise SmokeFailure("Minecraft did not load the requested corrected-machine GUI locale")
+    if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
+            or proof.get("screenshot_method") != "Native Minecraft framebuffer cropped to the live GUI panel"):
+        raise SmokeFailure("Corrected-machine GUI proof lacks the requested native window and GUI-only crop")
+
+    cases = proof.get("cases")
+    if not isinstance(cases, list) or len(cases) != len(expected):
+        raise SmokeFailure("Corrected-machine GUI proof does not cover all six registered screens")
+    by_id = {}
+    for case in cases:
+        if not isinstance(case, dict) or case.get("machine_id") not in expected or case["machine_id"] in by_id:
+            raise SmokeFailure("Corrected-machine GUI proof has a duplicate or unexpected machine")
+        by_id[case["machine_id"]] = case
+    if set(by_id) != set(expected):
+        raise SmokeFailure("Corrected-machine GUI proof is missing a corrected screen")
+
+    capture_names = {f"{machine}-{state}.png" for machine in expected
+                     for state in ("empty", "mid", "full-hover")}
+    captures = proof.get("screenshots")
+    if not isinstance(captures, list) or len(captures) != len(capture_names):
+        raise SmokeFailure("Corrected-machine GUI proof requires 18 state and hover captures")
+    if {capture.get("name") for capture in captures if isinstance(capture, dict)} != capture_names:
+        raise SmokeFailure("Corrected-machine GUI screenshot names are missing, duplicated, or unexpected")
+    image_dir = directory / "corrected-machine-gui-screenshots"
+    if not image_dir.is_dir() or {path.name for path in image_dir.glob("*.png")} != capture_names:
+        raise SmokeFailure("Corrected-machine GUI screenshots are stale or contain unexpected files")
+    png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
+    captures_by_name = {capture["name"]: capture for capture in captures}
+    for machine, (kind, slots, panel_width, panel_height) in expected.items():
+        case = by_id[machine]
+        if (case.get("machine_kind") != kind or case.get("client_menu_identity") != "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
+                or case.get("server_menu_identity") != case.get("client_menu_identity")
+                or case.get("menu_context_matches") is not True
+                or type(case.get("client_menu_id")) is not int
+                or case.get("client_menu_id") != case.get("server_menu_id")
+                or not isinstance(case.get("screen_identity"), str)
+                or "MachineScreen$" not in case["screen_identity"]
+                or case.get("visible_machine_slots") != slots or case.get("total_slots") != slots + 36
+                or case.get("panel_width") != panel_width or case.get("panel_height") != panel_height
+                or case.get("gui_height") != window_height or case.get("geometry_matches_layout") is not True
+                or case.get("captured_states") != ["empty", "mid", "full-hover"]):
+            raise SmokeFailure(f"Live menu, panel or layout geometry is incorrect for {machine}")
+        slot_proofs = case.get("machine_slots")
+        if not isinstance(slot_proofs, list) or len(slot_proofs) != slots:
+            raise SmokeFailure(f"Live machine-slot hitboxes are missing for {machine}")
+        for slot in slot_proofs:
+            if not isinstance(slot, dict) or type(slot.get("container_index")) is not int:
+                raise SmokeFailure(f"Invalid machine-slot hitbox proof for {machine}")
+            active = not (machine == "small_freezer" and slot["container_index"] == 1)
+            if (slot.get("container_index") < 0 or slot.get("x") != slot.get("layout_x")
+                    or slot.get("y") != slot.get("layout_y") or slot.get("active") is not active
+                    or slot.get("center_hit_test") is not active):
+                raise SmokeFailure(f"Live slot click/hover geometry differs from its layout for {machine}")
+        expected_meter_capacity = (32000 if machine == "fluid_barrel" else 4000 if machine in {
+            "small_milking_machine", "passive_fluid_accumulator"} else 3000 if machine == "small_fluid_funnel" else 0)
+        expected_energy_capacity = 64000 if machine == "small_solar_panel" else 16000 if machine == "small_freezer" else 0
+        for state in ("empty", "mid", "full-hover"):
+            name = f"{machine}-{state}.png"
+            capture = captures_by_name[name]
+            image = image_dir / name
+            data = image.read_bytes()
+            if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
+                raise SmokeFailure(f"Native corrected-machine screenshot is absent or invalid: {name}")
+            width, height = struct.unpack(">II", data[16:24])
+            if (width, height) != (panel_width, panel_height):
+                raise SmokeFailure(f"Native screenshot is not cropped to the exact GUI panel: {name}")
+            if capture.get("sha256") != hashlib.sha256(data).hexdigest():
+                raise SmokeFailure(f"Native corrected-machine screenshot hash does not match proof: {name}")
+            if (capture.get("width"), capture.get("height"), capture.get("kind"),
+                    capture.get("screen_identity"), capture.get("menu_id")) != (
+                    panel_width, panel_height, kind, case.get("screen_identity"), case.get("client_menu_id")):
+                raise SmokeFailure(f"Native corrected-machine screenshot identity differs from proof: {name}")
+            stage = "full" if state == "full-hover" else state
+            if expected_meter_capacity:
+                expected_amount = 0 if stage == "empty" else expected_meter_capacity // 2 if stage == "mid" else expected_meter_capacity
+                if capture.get("fluid_amount") != expected_amount:
+                    raise SmokeFailure(f"Native fluid gauge did not show {stage} state: {machine}")
+            elif expected_energy_capacity:
+                energy = capture.get("energy")
+                if (stage == "empty" and energy != 0) or (stage == "full" and energy != expected_energy_capacity):
+                    raise SmokeFailure(f"Native energy gauge did not show {stage} state: {machine}")
+                if stage == "mid" and (type(energy) is not int or not 0 < energy < expected_energy_capacity):
+                    raise SmokeFailure(f"Native energy gauge did not show a live intermediate state: {machine}")
+                if machine == "small_freezer" and stage == "mid" and capture.get("progress", 0) <= 0:
+                    raise SmokeFailure("Freezer native middle frame lacks active progress")
+        hover = captures_by_name[f"{machine}-full-hover.png"].get("hover")
+        if (not isinstance(hover, dict) or hover.get("slot_hitbox_center_verified") is not True
+                or type(hover.get("slot_index")) is not int):
+            raise SmokeFailure(f"Native corrected-machine hover capture lacks hitbox evidence: {machine}")
+
+    if f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={nonce}" not in logs:
+        raise SmokeFailure("Missing current-run corrected-machine GUI completion marker")
+    return proof
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=Path(__file__).resolve().parents[2])
@@ -294,6 +411,11 @@ def main() -> int:
     parser.add_argument("--smelter-language", choices=("en_us", "fr_fr"), default="en_us")
     parser.add_argument("--smelter-window-height", type=int, choices=(260, 720), default=720)
     parser.add_argument("--smelter-pr-head-sha", default=os.environ.get("IEDCTR_PR_HEAD_SHA", ""))
+    parser.add_argument("--corrected-machine-gui-only", action="store_true",
+                        help="Capture all six corrected MachineScreen menus in an isolated native client")
+    parser.add_argument("--machine-gui-language", choices=("en_us", "fr_fr"), default="en_us")
+    parser.add_argument("--machine-gui-window-height", type=int, choices=(260, 720), default=720)
+    parser.add_argument("--machine-gui-pr-head-sha", default=os.environ.get("IEDCTR_PR_HEAD_SHA", ""))
     args = parser.parse_args()
     if args.lava_surface_only and (not args.renderer_profile or args.flow_distance_only):
         parser.error("Lava surface requires one renderer profile and its own session")
@@ -301,10 +423,18 @@ def main() -> int:
         parser.error("A renderer profile is required for the east flow-distance sweep")
     if args.smelter_gui_only and (args.renderer_profile or args.flow_distance_only or args.lava_surface_only or args.lithium):
         parser.error("Smelter GUI capture requires its own isolated native-client session")
+    if args.smelter_gui_only and args.corrected_machine_gui_only:
+        parser.error("Each native GUI fixture requires its own isolated client session")
     if args.smelter_gui_only and not re.fullmatch(r"[0-9a-fA-F]{40}", args.smelter_pr_head_sha):
         parser.error("Smelter GUI capture requires the exact pull-request head SHA")
+    if args.corrected_machine_gui_only and (args.renderer_profile or args.flow_distance_only or args.lava_surface_only or args.lithium):
+        parser.error("Corrected-machine GUI capture requires its own isolated native-client session")
+    if args.corrected_machine_gui_only and not re.fullmatch(r"[0-9a-fA-F]{40}", args.machine_gui_pr_head_sha):
+        parser.error("Corrected-machine GUI capture requires the exact pull-request head SHA")
     if not args.smelter_gui_only and (args.smelter_language != "en_us" or args.smelter_window_height != 720):
         parser.error("Smelter language and window-height options require --smelter-gui-only")
+    if not args.corrected_machine_gui_only and (args.machine_gui_language != "en_us" or args.machine_gui_window_height != 720):
+        parser.error("Corrected-machine language and window-height options require --corrected-machine-gui-only")
     if sys.platform != "linux":
         parser.error("The native gameplay runner supports isolated Linux CI only")
     if min(args.prepare_timeout, args.timeout) <= 0:
@@ -315,12 +445,13 @@ def main() -> int:
         return 1
     project = args.project.resolve()
     executed_source_sha = ""
-    if args.smelter_gui_only:
+    if args.smelter_gui_only or args.corrected_machine_gui_only:
         revision = subprocess.run(["git", "rev-parse", "HEAD"], cwd=project, check=True, capture_output=True, text=True)
         executed_source_sha = revision.stdout.strip().lower()
         if not re.fullmatch(r"[0-9a-f]{40}", executed_source_sha):
             parser.error("Unable to identify the exact source revision executed by this fixture")
         args.smelter_pr_head_sha = args.smelter_pr_head_sha.lower()
+        args.machine_gui_pr_head_sha = args.machine_gui_pr_head_sha.lower()
     if not (project / "gradlew").is_file():
         parser.error("Project must contain the checked-in Gradle wrapper")
     (project / "build").mkdir(exist_ok=True)
@@ -334,14 +465,16 @@ def main() -> int:
     options_text = (
         "onboardAccessibility:false\ntutorialStep:none\nrenderDistance:2\nsimulationDistance:2\n"
         "maxFps:60\npauseOnLostFocus:false\nautoJump:true\nsoundCategory_master:0.0\n")
-    if args.smelter_gui_only:
-        options_text += f"guiScale:1\nlang:{args.smelter_language}\n"
+    if args.smelter_gui_only or args.corrected_machine_gui_only:
+        selected_language = args.smelter_language if args.smelter_gui_only else args.machine_gui_language
+        options_text += f"guiScale:1\nlang:{selected_language}\n"
     (game / "options.txt").write_text(options_text, encoding="utf-8")
     renderer_jars = prepare_renderer_dependencies(evidence / "renderer-dependencies", args.renderer_profile) if args.renderer_profile else []
     if args.lithium:
         renderer_jars.append(prepare_lithium_dependency(evidence / "lithium-dependency"))
     window_width = 1280
-    window_height = args.smelter_window_height if args.smelter_gui_only else 720
+    window_height = (args.smelter_window_height if args.smelter_gui_only
+                     else args.machine_gui_window_height if args.corrected_machine_gui_only else 720)
     init = evidence / "gameplay.init.gradle"
     init.write_text("""// Isolated, explicit, opt-in native gameplay fixture.
 gradle.projectsEvaluated {
@@ -358,6 +491,8 @@ gradle.projectsEvaluated {
         systemProperty 'iedctr.clientGameplayDirectory', System.getenv('IEDCTR_GAMEPLAY_DIR')
         systemProperty 'iedctr.smelterGuiOnly', System.getenv('IEDCTR_SMELTER_GUI_ONLY')
         systemProperty 'iedctr.smelterLanguage', System.getenv('IEDCTR_SMELTER_LANGUAGE')
+        systemProperty 'iedctr.correctedMachineGuiOnly', System.getenv('IEDCTR_CORRECTED_MACHINE_GUI_ONLY')
+        systemProperty 'iedctr.machineGuiLanguage', System.getenv('IEDCTR_MACHINE_GUI_LANGUAGE')
         systemProperty 'iedctr.executedSourceSha', System.getenv('IEDCTR_EXECUTED_SOURCE_SHA')
         systemProperty 'iedctr.pullRequestHeadSha', System.getenv('IEDCTR_PR_HEAD_SHA')
         programArgument '--width'
@@ -375,8 +510,10 @@ gradle.projectsEvaluated {
                IEDCTR_EXPECT_LITHIUM=str(args.lithium).lower(),
                IEDCTR_SMELTER_GUI_ONLY=str(args.smelter_gui_only).lower(),
                IEDCTR_SMELTER_LANGUAGE=args.smelter_language if args.smelter_gui_only else '',
+               IEDCTR_CORRECTED_MACHINE_GUI_ONLY=str(args.corrected_machine_gui_only).lower(),
+               IEDCTR_MACHINE_GUI_LANGUAGE=args.machine_gui_language if args.corrected_machine_gui_only else '',
                IEDCTR_EXECUTED_SOURCE_SHA=executed_source_sha,
-               IEDCTR_PR_HEAD_SHA=args.smelter_pr_head_sha if args.smelter_gui_only else '',
+               IEDCTR_PR_HEAD_SHA=args.smelter_pr_head_sha if args.smelter_gui_only else args.machine_gui_pr_head_sha if args.corrected_machine_gui_only else '',
                IEDCTR_SCREEN_WIDTH=str(window_width), IEDCTR_SCREEN_HEIGHT=str(window_height))
     gradle = [str(project / "gradlew"), "--no-daemon", "--init-script", str(init), "--stacktrace"]
     prepare_log, client_log = evidence / "prepare.log", evidence / "client.log"
@@ -387,7 +524,10 @@ gradle.projectsEvaluated {
             raise SmokeFailure(f"Native client preparation failed (exit={code}, deadline={expired})")
         code, expired = run_bounded(["xvfb-run", "-a", "-s", f"-screen 0 {window_width}x{window_height}x24"] + gradle + ["runClient"],
                                     project, env, client_log, args.timeout)
-        path = game / ("client-smelter-gui-result.json" if args.smelter_gui_only else "client-gameplay-result.json")
+        result_name = ("client-smelter-gui-result.json" if args.smelter_gui_only else
+                       "client-corrected-machine-gui-result.json" if args.corrected_machine_gui_only else
+                       "client-gameplay-result.json")
+        path = game / result_name
         if not path.is_file():
             raise SmokeFailure("No native gameplay proof was produced; loading alone cannot pass")
         proof = json.loads(path.read_text(encoding="utf-8"))
@@ -409,6 +549,20 @@ gradle.projectsEvaluated {
                 raise SmokeFailure("The isolated native-client fixture did not complete successfully")
             validate_smelter_gui_proof(proof, nonce, executed_source_sha, args.smelter_pr_head_sha,
                                        game, window_width, window_height, args.smelter_language, logs)
+            print(json.dumps(proof, indent=2), flush=True)
+            return 0
+        if args.corrected_machine_gui_only:
+            if expired or code != 0 or crashes or FATAL_PATTERN.search(logs):
+                raise SmokeFailure("Native corrected-machine GUI client did not finish cleanly")
+            main_proof_path = game / "client-gameplay-result.json"
+            if not main_proof_path.is_file():
+                raise SmokeFailure("Corrected-machine fixture did not write its isolated-world result")
+            main_proof = json.loads(main_proof_path.read_text(encoding="utf-8"))
+            if (main_proof.get("suite") != "native-corrected-machine-gui-v1" or main_proof.get("nonce") != nonce
+                    or main_proof.get("status") != "passed" or main_proof.get("actual_integrated_world") is not True):
+                raise SmokeFailure("The isolated corrected-machine client did not complete successfully")
+            validate_corrected_machine_gui_proof(proof, nonce, executed_source_sha, args.machine_gui_pr_head_sha,
+                                                  game, window_width, window_height, args.machine_gui_language, logs)
             print(json.dumps(proof, indent=2), flush=True)
             return 0
         from fluid_extensions import validate_extensions
@@ -454,7 +608,7 @@ gradle.projectsEvaluated {
         print(f"Native client gameplay FAILED: {error}\nEvidence: {evidence}", file=sys.stderr)
         for diagnostic in (prepare_log, client_log.with_suffix(".observed.log"),
                            game / "logs/latest.log", game / "client-gameplay-result.json",
-                           game / "client-smelter-gui-result.json"):
+                           game / "client-smelter-gui-result.json", game / "client-corrected-machine-gui-result.json"):
             if diagnostic.is_file():
                 print(f"--- {diagnostic.name}: last 100 lines ---", file=sys.stderr)
                 print("\n".join(diagnostic.read_text(encoding="utf-8", errors="replace").splitlines()[-100:]), file=sys.stderr)
