@@ -1108,8 +1108,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          // The clean end of the title plate replaces the full baked English title.
          // Use the full blank upper band of the same title plate. The former source rectangle
          // copied the last letters of the baked English heading into the localized title.
-      this.drawTexturePatch(graphics, texture, x + 62, y + 8, 96, 13,
-         381, 634, 192, 12, 941, 1672);
+      this.drawTexturePatch(graphics, texture, x + 62, y + 8, 119, 13,
+         381, 634, 238, 12, 941, 1672);
       }
       if (!frenchArtwork) {
          // The original left label sits on a black inset plate; keep the patch inside that plate.
