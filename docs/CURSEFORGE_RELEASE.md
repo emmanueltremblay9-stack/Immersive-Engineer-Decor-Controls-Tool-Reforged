@@ -12,6 +12,7 @@ No next-release manifest, version bump, candidate hash, or qualification result 
 - The canonical manifest SHA-256 and exact source/CI identity are bound into the local-mode upload intent as well as the existing multipart hashes.
 - The UTF-8 changelog is hash-pinned.
 - All public CurseForge file pages are checked with the service's zero-based `pageIndex` contract. An exact existing file is idempotent success; divergent or ambiguous version reuse is blocked.
+- The public `/mods/{projectId}/dependencies` response has been observed to disagree with the owner's saved **Authors > Default Relations**. The [documented CurseForge API](https://support.curseforge.com/support/solutions/articles/9000197321-curseforge-upload-api) does not define that public route as a readback for these project defaults. Before a dry-run or new upload, the workflow therefore requires the owner to confirm the current Authors UI list matches the exact `expectedProjectRelations` contract. Reports label this `OWNER_CONFIRMED_AUTHORS_DEFAULTS`; it is a human attestation, not live API readback. Previous-file and newly uploaded file relations continue to be checked against their exact contracts using file-specific public readbacks.
 - Dry-run does not receive, resolve, or transmit the CurseForge secret.
 - A production run first authenticates and constructs the exact deterministic multipart request without posting. GitHub Actions must persist that upload intent as an immutable artifact. Intent and result use different files, so an interrupted publish step cannot overwrite or relabel the intent as a result.
 - The publish phase reconstructs the request, verifies the persisted artifact ID/name and all request hashes, repeats public duplicate checks, then sends one non-retried POST.
@@ -54,9 +55,9 @@ JEI is optional in NeoForge metadata and is not submitted as a CurseForge projec
 When the contracts differ, pin two additional non-empty lists of `{projectId, slug, type}` records in the reviewed manifest:
 
 - `expectedPreviousPublicRelations`: the observed relations of `previousPublicFileId`.
-- `expectedProjectRelations`: the separately observed pre-upload project dependency aggregation.
+- `expectedProjectRelations`: the reviewed CurseForge Authors **Default Relations** list for the project.
 
-Both historical comparisons remain exact and fail closed on missing, extra or changed relations. The new file still must exactly match `expectedPublicRelations`; historical Includes, Curios or optional JEI cannot leak into its accepted readback. Malformed, empty or duplicate-project contracts are rejected. These fields are covered by the existing canonical manifest hash bound to the persisted local-source upload intent.
+The previous-file comparison remains an exact live readback and fails closed on missing, extra or changed relations. The owner must manually compare CurseForge Authors **Default Relations** with the exact `expectedProjectRelations` list and set `confirm_project_relations=true` for a dry-run or new upload; the workflow records that attestation and does not infer project defaults from the public aggregation endpoint. The new file still must exactly match `expectedPublicRelations`; historical Includes, Curios or optional JEI cannot leak into its accepted readback. Malformed, empty or duplicate-project contracts are rejected. These fields are covered by the existing canonical manifest hash bound to the persisted local-source upload intent.
 
 For backwards compatibility, an absent historical field uses the original `expectedPublicRelations` contract. Historical manifests are not rewritten. Accepted-file resume and exact-duplicate detection continue to validate the prior file and new file while skipping only the mutable project aggregation, with no second POST.
 
@@ -77,9 +78,9 @@ The manifest/publisher revision and runtime source revision are intentionally se
 
 The `Publish CurseForge` workflow is manual-only, label-scoped by a non-cancelling concurrency lock, and uses read-only `contents` and `actions` permissions. Third-party actions are pinned to full commit SHAs. Its run title distinguishes dry-run, publish, and resume attempts. The repository secret is injected only into prepare and one-POST publish steps; repository-administrator control of that secret, administrative deletion of workflow history, and GitHub's lack of an indefinite run/job-metadata retention guarantee remain external trust boundaries.
 
-1. Select the reviewed workflow/manifest revision and provide its repository-relative `manifest` path under `tools/release/` and the matching `tag`. Neither input has a release-specific default. The workflow rejects another repository, a legacy manifest, or unverified exact-source CI before building.
+1. Select the reviewed workflow/manifest revision and provide its repository-relative `manifest` path under `tools/release/` and the matching `tag`. Neither input has a release-specific default. Before dispatch, open CurseForge Authors > Default Relations, compare every project and relation type with `expectedProjectRelations`, and set `confirm_project_relations=true` only when the saved list matches. The input defaults to `false`; an unconfirmed run fails closed. The workflow also rejects another repository, a legacy manifest, or unverified exact-source CI before building.
 2. The workflow checks out the pinned runtime SHA separately into `runtime-source`, disables credential persistence and Gradle output caching for this job, and runs `bash ./gradlew clean build --no-build-cache`. No CurseForge token is available to this build step. Only a clean checkout's exact, manifest-matching JAR can proceed.
-3. Run first with `dry_run=true`. This still rebuilds/validates private local bytes and live public inputs, but receives no CurseForge secret. Rebuilding must reproduce the reviewed hash and size; any drift blocks rather than silently replacing the manifest. This pipeline does not establish reproducibility by itself.
+3. Run first with `dry_run=true` and `confirm_project_relations=true` after checking the saved Authors defaults. This still rebuilds/validates private local bytes and live public file inputs, but receives no CurseForge secret. Rebuilding must reproduce the reviewed hash and size; any drift blocks rather than silently replacing the manifest. This pipeline does not establish reproducibility by itself.
 4. Before a real publication, complete the qualification gates below. The existing repository secret must be named `CURSEFORGE_API_TOKEN`; never paste its value into an issue, log, prompt, or workflow input.
 5. Run with `dry_run=false`. The workflow rebuilds and verifies the same candidate, persists a JSON intent before the one-POST phase, then validates public CurseForge readback. The runtime JAR remains ephemeral on the runner.
 6. If the result is `UPLOADED_PROCESSING`, rerun the same reviewed manifest with that positive `resume_file_id`; this route rebuilds/revalidates source and receives no CurseForge token, so it cannot post.
@@ -126,13 +127,13 @@ This performs read-only GitHub Actions/CurseForge checks without uploading. The 
 ## Proof levels
 
 - `MOCKED`: local HTTP tests prove program logic and controlled failure handling only.
-- `LIVE_DRY_RUN`: configured source/byte validation, exact CI where required, and live CurseForge preflight passed; no upload occurred.
+- `LIVE_DRY_RUN`: configured source/byte validation, exact CI where required, live CurseForge file/duplicate preflight, and owner confirmation of project defaults passed; no upload occurred.
 - `UPLOAD_ACCEPTED`: CurseForge returned a positive file ID; public state may still be processing.
 - `PUBLICATION_VERIFIED`: the public metadata, dependencies, approved status, redownload size/hash, mod ID, and version all passed.
 
 ## Controlled statuses
 
-- `AUTOMATION_READY_DRY_RUN`: live public preflight passed; no upload occurred.
+- `AUTOMATION_READY_DRY_RUN`: live file/duplicate preflight and owner confirmation of project defaults passed; no upload occurred.
 - `UPLOAD_INTENT_READY`: token and game-version access passed and the exact request is ready to persist; no upload occurred.
 - `ALREADY_PUBLISHED`: one exact public file already matches; no upload occurred.
 - `PUBLISHED_VERIFIED`: the one POST returned an ID and complete public readback passed.

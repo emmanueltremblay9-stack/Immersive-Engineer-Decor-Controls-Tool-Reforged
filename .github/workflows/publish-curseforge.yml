@@ -17,6 +17,11 @@ on:
         required: true
         type: boolean
         default: true
+      confirm_project_relations:
+        description: Confirm Authors > Default Relations match the reviewed manifest
+        required: true
+        type: boolean
+        default: false
       resume_file_id:
         description: Existing CurseForge file ID to poll without uploading again
         required: false
@@ -129,7 +134,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           REQUESTED_TAG: ${{ inputs.tag }}
+          CONFIRM_PROJECT_RELATIONS: ${{ inputs.confirm_project_relations }}
         run: |
+          confirmation_args=()
+          if [[ "$CONFIRM_PROJECT_RELATIONS" == "true" ]]; then
+            confirmation_args+=(--confirm-project-relations)
+          fi
           set +e
           python tools/release/publish_curseforge.py \
             --dry-run \
@@ -139,6 +149,7 @@ jobs:
             --source-root "$GITHUB_WORKSPACE/runtime-source" \
             --local-jar "$LOCAL_JAR_PATH" \
             --tag "$REQUESTED_TAG" \
+            "${confirmation_args[@]}" \
             --report "$RESULT_REPORT_PATH"
           status=$?
           set -e
@@ -153,7 +164,12 @@ jobs:
           CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
           REQUESTED_TAG: ${{ inputs.tag }}
+          CONFIRM_PROJECT_RELATIONS: ${{ inputs.confirm_project_relations }}
         run: |
+          confirmation_args=()
+          if [[ "$CONFIRM_PROJECT_RELATIONS" == "true" ]]; then
+            confirmation_args+=(--confirm-project-relations)
+          fi
           python tools/release/publish_curseforge.py \
             --prepare-publish \
             --repo-root "$GITHUB_WORKSPACE" \
@@ -162,6 +178,7 @@ jobs:
             --source-root "$GITHUB_WORKSPACE/runtime-source" \
             --local-jar "$LOCAL_JAR_PATH" \
             --tag "$REQUESTED_TAG" \
+            "${confirmation_args[@]}" \
             --run-key "$RUN_KEY" \
             --report "$PREPARE_REPORT_PATH"
           python - <<'PY'
@@ -210,7 +227,12 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           INTENT_ARTIFACT_ID: ${{ steps.persist-intent.outputs.artifact-id }}
           REQUESTED_TAG: ${{ inputs.tag }}
+          CONFIRM_PROJECT_RELATIONS: ${{ inputs.confirm_project_relations }}
         run: |
+          confirmation_args=()
+          if [[ "$CONFIRM_PROJECT_RELATIONS" == "true" ]]; then
+            confirmation_args+=(--confirm-project-relations)
+          fi
           set +e
           python tools/release/publish_curseforge.py \
             --publish \
@@ -221,6 +243,7 @@ jobs:
             --local-jar "$LOCAL_JAR_PATH" \
             --tag "$REQUESTED_TAG" \
             --run-key "$RUN_KEY" \
+            "${confirmation_args[@]}" \
             --intent-report "$PREPARE_REPORT_PATH" \
             --intent-artifact-id "$INTENT_ARTIFACT_ID" \
             --report "$RESULT_REPORT_PATH"
@@ -307,6 +330,7 @@ jobs:
           result_path = Path(os.environ["RESULT_REPORT_PATH"])
           prepare_path = Path(os.environ["PREPARE_REPORT_PATH"])
           report_path = result_path if result_path.is_file() else prepare_path
+          report = {}
           if not report_path.is_file():
               summary = {"status": "REPORT_NOT_PRODUCED", "verdict": "FAIL"}
           else:
@@ -323,6 +347,9 @@ jobs:
                   )
                   if key in report
               }
+          baseline = report.get("curseForgeBaseline")
+          if isinstance(baseline, dict) and "projectRelationsCheck" in baseline:
+              summary["projectRelationsCheck"] = baseline["projectRelationsCheck"]
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as stream:
               stream.write("### CurseForge publication\n\n")
               stream.write("```json\n")
