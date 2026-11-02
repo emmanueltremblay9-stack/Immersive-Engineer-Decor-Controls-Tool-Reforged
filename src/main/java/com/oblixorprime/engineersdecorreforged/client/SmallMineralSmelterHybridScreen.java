@@ -243,6 +243,7 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       graphics.pose().scale(imageWidth / 1168.0F, imageHeight / 1346.0F, 1.0F);
       graphics.blit(FACEPLATE, 0, 0, 0, 0, 1168, 1346, 1168, 1346);
       graphics.pose().popPose();
+      drawTitleArtworkPatch(graphics, x, y);
 
       int thermal = projectedField(MachineMenu.SMS_UI_THERMAL);
       int phase = projectedField(MachineMenu.SMS_UI_PHASE);
@@ -297,6 +298,30 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
       graphics.fill(x + width - 1, y, x + width, y + height, color);
    }
 
+   private void drawTitleArtworkPatch(GuiGraphics graphics, int x, int y) {
+      int targetX = x + 34;
+      int targetY = y + 7;
+      int targetWidth = 166;
+      int targetHeight = 16;
+      int targetTileWidth = 10;
+      for (int offset = 0; offset < targetWidth; offset += targetTileWidth) {
+         int tileWidth = Math.min(targetTileWidth, targetWidth - offset);
+         int sourceWidth = Mth.ceil(tileWidth * 1168.0F / imageWidth);
+         graphics.blit(FACEPLATE, targetX + offset, targetY, tileWidth, targetHeight,
+            822, 27, sourceWidth, 46, 1168, 1346);
+      }
+   }
+
+   private void drawLocalizedMachineTitle(GuiGraphics graphics) {
+      Component title = Component.translatable(
+         "block.immersive_engineer_decor_controls_tool_reforged.small_mineral_smelter"
+      );
+      float scale = fittedTextScale(font.width(title), 164, 0.82F);
+      if (scale <= 0.0F) return;
+      int centeredX = 117 - Mth.ceil(font.width(title) * scale) / 2;
+      drawSmall(graphics, title, centeredX, 9, 164, 0xFF171614, 0.82F);
+   }
+
    private static void gauge(GuiGraphics graphics, int x, int y, int width, int height, int value, int max, int color) {
       graphics.fill(x, y, x + width, y + height, 0xFF080A0C);
       int filled = value < 0 || max <= 0 ? 0 : Mth.clamp((int)((long)Math.min(value, max) * width / max), 0, width);
@@ -321,6 +346,7 @@ public final class SmallMineralSmelterHybridScreen extends AbstractContainerScre
 
    @Override
    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
+      drawLocalizedMachineTitle(graphics);
       int thermal = projectedField(MachineMenu.SMS_UI_THERMAL);
       int phase = projectedField(MachineMenu.SMS_UI_PHASE);
       Component phaseName = phase >= 0 && phase < PHASE_KEYS.length

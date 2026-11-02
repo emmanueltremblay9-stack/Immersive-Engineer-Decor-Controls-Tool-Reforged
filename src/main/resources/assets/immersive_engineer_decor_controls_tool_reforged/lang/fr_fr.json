@@ -1085,5 +1085,5 @@
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.label.inventory": "Inventaire",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.tank": "Lait stocké : %1$s",
   "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.bucket": "Entrée de seau",
-  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Sortie de lait"
+  "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.tooltip.slot.output": "Sortie de lait",
 }
