@@ -1,5 +1,6 @@
 package com.oblixorprime.engineersdecorreforged.block;
 
+import com.oblixorprime.engineersdecorreforged.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
@@ -22,7 +23,7 @@ public final class DoubleTSupportItem extends BlockItem {
          if(!SupportLights.supported(old.getBlock()))return super.useOn(context);
       }
       if(!SupportLightItem.allowed(context)||!SupportLightItem.allowedAt(context,target))return InteractionResult.FAIL;
-      var merged=new MergedContext(context,target,old);var state=getBlock().getStateForPlacement(merged);
+      var merged=new MergedContext(context,target,old);var state=placementState(merged);
       if(state==null)return InteractionResult.FAIL;
       var face=old.getValue(PortedBlocks.FACING).getOpposite();
       var plan=SupportLights.pose(state,context.getLevel(),target,old,face,true);
@@ -32,8 +33,15 @@ public final class DoubleTSupportItem extends BlockItem {
       return super.place(merged);
    }
    @Override protected BlockState getPlacementState(BlockPlaceContext context){
-      if(!(context instanceof MergedContext merged))return super.getPlacementState(context);
+      if(!(context instanceof MergedContext merged))return placementState(context);
       return merged.canPlace()&&canPlace(context,merged.state)?merged.state:null;
+   }
+   private BlockState placementState(BlockPlaceContext context){
+      // The original horizontal registry item is the shared orientation-aware entry point.
+      // The separately registered vertical item remains available with its original wall-only behavior.
+      if(getBlock()==ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()&&context.getClickedFace().getAxis().isHorizontal())
+         return ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().getStateForPlacement(context);
+      return getBlock().getStateForPlacement(context);
    }
    @Override protected boolean placeBlock(BlockPlaceContext context,BlockState state){
       if(!(context instanceof MergedContext merged))return super.placeBlock(context,state);

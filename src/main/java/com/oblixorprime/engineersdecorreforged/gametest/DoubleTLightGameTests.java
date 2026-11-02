@@ -94,6 +94,26 @@ public final class DoubleTLightGameTests {
    }
 
    @GameTest(template="empty",timeoutTicks=120)
+   public static void common_horizontal_item_merges_lamp_first_as_wall_support(GameTestHelper h){
+      var level=h.getLevel();var pos=h.absolutePos(P);var p=player(h,pos);
+      for(Block lamp:lamps()){
+         clear(h,pos);var old=lamp.defaultBlockState().setValue(PortedBlocks.FACING,Direction.SOUTH);level.setBlock(pos,old,Block.UPDATE_ALL);
+         level.setBlock(pos.south(),Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+         p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(),2));
+         var point=Vec3.atLowerCornerOf(pos).add(.3,.5,1);
+         use(p,new BlockHitResult(point,Direction.NORTH,pos.south(),false));
+         var state=level.getBlockState(pos);var be=SupportLights.entity(level,pos);
+         h.assertTrue(state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&SupportLights.attached(state),
+            "the existing horizontal support item selects the wall ID when merging a lamp-first placement");
+         h.assertTrue(be!=null&&be.attachment().lamp.is(lamp)&&be.attachment().paid,
+            "lamp identity and paid ownership survive common-item dispatch");
+         h.assertValueEqual(p.getMainHandItem().getCount(),1,"common wall support consumes once");
+         h.assertValueEqual(drops(h,pos,lamp),0,"common placement does not duplicate the original lamp drop");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty",timeoutTicks=120)
    public static void support_lamp_snapshot_cancellation_restores_original_data_and_items_both_orders(GameTestHelper h){
       var level=h.getLevel();var pos=h.absolutePos(P);var p=player(h,pos);
       for(boolean reverse:List.of(false,true))for(Block lamp:lamps()){

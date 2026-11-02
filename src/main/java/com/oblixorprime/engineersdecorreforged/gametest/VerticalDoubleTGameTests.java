@@ -171,6 +171,33 @@ public final class VerticalDoubleTGameTests {
    }
 
    @GameTest(template="empty")
+   public static void common_steel_double_t_item_selects_mount_from_clicked_face(GameTestHelper h) {
+      var level=h.getLevel();var pos=h.absolutePos(CENTER);var player=player(h,pos);
+      for(Direction face:Direction.Plane.HORIZONTAL) {
+         clear(h,pos);var wall=pos.relative(face.getOpposite());level.setBlock(wall,Blocks.BRICKS.defaultBlockState(),Block.UPDATE_ALL);
+         var stack=new ItemStack(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(),2);player.setItemInHand(InteractionHand.MAIN_HAND,stack);
+         var hit=hit(pos,face);player.setYRot(face.getOpposite().toYRot());
+         var result=stack.useOn(new net.minecraft.world.item.context.UseOnContext(player,InteractionHand.MAIN_HAND,hit));
+         var state=level.getBlockState(pos);
+         h.assertTrue(result.consumesAction()&&state.is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get()),"existing horizontal steel item chooses the wall profile on a wall face");
+         h.assertValueEqual(state.getValue(VerticalDoubleTSupportBlock.FACING),face,"wall profile faces the clicked wall normal");
+         h.assertValueEqual(stack.getCount(),1,"wall placement consumes one existing common item");
+      }
+      for(Direction face:List.of(Direction.UP,Direction.DOWN))for(Direction look:Direction.Plane.HORIZONTAL) {
+         clear(h,pos);level.setBlock(pos.relative(face.getOpposite()),Blocks.STONE.defaultBlockState(),Block.UPDATE_ALL);
+         var stack=new ItemStack(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get(),2);player.setItemInHand(InteractionHand.MAIN_HAND,stack);
+         player.setYRot(look.toYRot());var hit=hit(pos,face);
+         var expected=new BlockPlaceContext(level,player,InteractionHand.MAIN_HAND,stack,hit).getHorizontalDirection();
+         var result=stack.useOn(new net.minecraft.world.item.context.UseOnContext(player,InteractionHand.MAIN_HAND,hit));
+         var state=level.getBlockState(pos);
+         h.assertTrue(result.consumesAction()&&state.is(ModBlocks.STEEL_DOUBLE_T_SUPPORT.get()),"existing horizontal steel item keeps its ceiling/floor profile on a vertical click face");
+         h.assertValueEqual(state.getValue(PortedBlocks.EASTWEST),expected.getAxis()==Direction.Axis.X,"ceiling/floor profile follows the player's horizontal placement direction");
+         h.assertValueEqual(stack.getCount(),1,"horizontal placement consumes one existing common item");
+      }
+      h.succeed();
+   }
+
+   @GameTest(template="empty")
    public static void vertical_double_t_shapes_are_exact_rotated_four_box_profile(GameTestHelper h) {
       var pos=h.absolutePos(CENTER);var base=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState().getCollisionShape(h.getLevel(),pos);
       var expected=Shapes.empty();for(var b:base.toAabbs())expected=Shapes.or(expected,Shapes.create(b.minX,1-b.maxZ,b.minY,b.maxX,1-b.minZ,b.maxY));
@@ -201,13 +228,14 @@ public final class VerticalDoubleTGameTests {
    }
 
    @GameTest(template="empty")
-   public static void vertical_double_t_neighbor_changes_preserve_horizontal_and_add_no_connectors(GameTestHelper h) {
+   public static void vertical_double_t_neighbor_changes_preserve_horizontal_and_join_touching_supports(GameTestHelper h) {
       var level=h.getLevel();var pos=h.absolutePos(CENTER);clear(h,pos);
       var vertical=ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState();level.setBlock(pos,vertical,Block.UPDATE_ALL);
       var horizontal=ModBlocks.STEEL_DOUBLE_T_SUPPORT.get().defaultBlockState();level.setBlock(pos.west(),horizontal,Block.UPDATE_ALL);
-      h.assertValueEqual(level.getBlockState(pos.west()),horizontal,"new block does not add a cross connector to horizontal beam");
+      h.assertTrue(level.getBlockState(pos).getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE),"directly touching horizontal support joins the upright beam");
+      h.assertTrue(level.getBlockState(pos.west()).getValue(PortedBlocks.RIGHTBEAM),"horizontal support updates its existing side connector");
       level.setBlock(pos.south(),Blocks.STONE.defaultBlockState(),Block.UPDATE_ALL);level.setBlock(pos.south(),Blocks.AIR.defaultBlockState(),Block.UPDATE_ALL);
-      h.assertValueEqual(level.getBlockState(pos),vertical,"no invented wall-loss destruction mechanic");
+      h.assertTrue(level.getBlockState(pos).is(ModBlocks.VERTICAL_STEEL_DOUBLE_T_SUPPORT.get())&&level.getBlockState(pos).getValue(VerticalDoubleTSupportBlock.JOIN_NEGATIVE),"wall changes do not destroy or detach the existing joined support");
       h.assertFalse(vertical.hasProperty(PortedBlocks.LEFTBEAM)||vertical.hasProperty(PortedBlocks.DOWNCONNECT),"no inferred connector/lamp properties");
       h.succeed();
    }
