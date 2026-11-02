@@ -390,6 +390,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                 raise SmokeFailure(f"Native screenshot is not a clean panel crop: {name}")
             if capture.get("panel_cursor_outside") is not True:
                 raise SmokeFailure(f"Native panel crop was not captured with its cursor outside: {name}")
+            if capture.get("panel_tooltips_suppressed") is not True:
+                raise SmokeFailure(f"Native panel crop may contain a clipped pointer tooltip: {name}")
             if capture.get("sha256") != hashlib.sha256(data).hexdigest():
                 raise SmokeFailure(f"Native corrected-machine screenshot hash does not match proof: {name}")
             if (capture.get("width"), capture.get("height"), capture.get("kind"),
@@ -440,6 +442,7 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     near_end_size = struct.unpack(">II", near_end_data[16:24])
     if (near_end_size != (209, 235) or near_end.get("capture_mode") != "gui_panel"
             or near_end.get("panel_cursor_outside") is not True
+            or near_end.get("panel_tooltips_suppressed") is not True
             or near_end.get("kind") != "SMALL_FREEZER"
             or near_end.get("sha256") != hashlib.sha256(near_end_data).hexdigest()
             or (near_end.get("width"), near_end.get("height")) != near_end_size

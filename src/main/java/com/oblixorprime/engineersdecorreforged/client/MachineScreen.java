@@ -40,6 +40,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private static final String MILKING_GUI_PREFIX = "gui.immersive_engineer_decor_controls_tool_reforged.small_milking_machine.";
    private static final int SLOT_INNER = -14276310;
    private final MachineScreen.Profile profile;
+   private boolean suppressTooltipsForPanelCapture;
 
    protected MachineScreen(MachineMenu menu, Inventory inventory, Component title, MachineScreen.Profile profile) {
       super(menu, inventory, title);
@@ -55,9 +56,29 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
       this.renderSoftBackground(graphics, mouseX, mouseY, partialTick);
       super.render(graphics, mouseX, mouseY, partialTick);
+      if (this.suppressTooltipsForPanelCapture) return;
       this.renderOriginalHoverOverlay(graphics, mouseX, mouseY);
       this.renderTooltip(graphics, mouseX, mouseY);
       this.renderMachineTooltip(graphics, mouseX, mouseY);
+   }
+
+   @Override
+   protected void renderTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
+      if (!this.suppressTooltipsForPanelCapture) super.renderTooltip(graphics, mouseX, mouseY);
+   }
+
+   /** Hides pointer tooltips only while taking clean native panel crops. */
+   public void setSuppressTooltipsForPanelCapture(boolean suppress) {
+      this.suppressTooltipsForPanelCapture = suppress;
+   }
+
+   public boolean isSuppressTooltipsForPanelCapture() {
+      return this.suppressTooltipsForPanelCapture;
+   }
+
+   public boolean isPanelPointerOutsideAt(double mouseX, double mouseY) {
+      return mouseX < this.leftPos || mouseX >= this.leftPos + this.imageWidth
+         || mouseY < this.topPos || mouseY >= this.topPos + this.imageHeight;
    }
 
    /** Exposes the vanilla slot-sized hover check to the isolated native GUI validation fixture. */
@@ -191,8 +212,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.pose().popPose();
    }
 
-   private void drawSmallFreezerWidgets(GuiGraphics graphics, int x0, int y0) {
+   private void drawSmallFreezerWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 17, y0 + 3, 32, 21,
+         358, 621, 16, 38, 941, 1672, (float)this.imageWidth / 422.0F);
       graphics.fill(x0 + 22, y0 + 42, x0 + 51, y0 + 51, 0xFF1D2123);
       graphics.fill(x0 + 160, y0 + 42, x0 + 189, y0 + 51, 0xFF202426);
       // The baked progress caption occupies the narrow strip immediately before its frame.
@@ -285,6 +308,13 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       GuiGraphics graphics, MachineLayout layout, ResourceLocation texture, int x, int y
    ) {
       MachineMenu menu = (MachineMenu)this.menu;
+      if (menu.kind() == MachineKind.SMALL_SOLAR_PANEL) {
+         this.drawRepeatedTexturePatch(graphics, texture, x + 20, y + 4, 30, 21,
+            100, 8, 20, 42, 455, 424, (float)this.imageWidth / 455.0F);
+      } else if (menu.kind() == MachineKind.SMALL_TREE_CUTTER) {
+         this.drawRepeatedTexturePatch(graphics, texture, x + 17, y + 4, 33, 21,
+            99, 8, 24, 42, 446, 418, (float)this.imageWidth / 446.0F);
+      }
       for (MachineLayout.Panel panel : layout.panels()) {
          int left = x + panel.x();
          int top = y + panel.y();
@@ -682,7 +712,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             this.drawElectricalFurnaceWidgets(graphics, texture, x0, y0);
             break;
          case SMALL_FREEZER:
-            this.drawSmallFreezerWidgets(graphics, x0, y0);
+            this.drawSmallFreezerWidgets(graphics, texture, x0, y0);
       }
    }
 
@@ -872,6 +902,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    ) {
       MachineMenu menu = (MachineMenu)this.menu;
       String prefix = "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.";
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 12, y0 + 4, 33, 20,
+         361, 624, 17, 38, 941, 1672, (float)this.imageWidth / 385.0F);
       // Mask baked French rows at their printed PNG positions with clean panel texture, then draw live labels.
       this.maskAccumulatorLabel(graphics, texture, x0, y0,
          Component.translatable(prefix + "collection").getString(), 40, 66, 60, 48, 304, 94);
@@ -1014,17 +1046,20 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawSmallMilkingMachineWidgets(GuiGraphics graphics, ResourceLocation texture, int x, int y) {
       MachineMenu menu = (MachineMenu)this.menu;
+      this.drawRepeatedTexturePatch(graphics, texture, x + 17, y + 4, 33, 19,
+         356, 634, 26, 38, 941, 1672, 0.5F);
       // Tile a clean strip from the title plate's blank right margin over its baked title.
       // This preserves the plate grain without sampling the neighboring "MACHINE" letters.
       this.drawRepeatedTexturePatch(graphics, texture, x + 66, y + 10, 133, 9,
-         620, 646, 12, 18, 941, 1672, 0.5F);
+         375, 640, 12, 26, 941, 1672, 0.5F);
       this.maskTinyString(graphics, smallMilkingText("label.collection.line1").getString(), 26, 80, 49, 0xFF121212);
       this.maskTinyString(graphics, smallMilkingText("label.collection.line2").getString(), 26, 86, 49, 0xFF121212);
-      this.drawTexturePatch(graphics, texture, x + 147, y + 41, 60, 9,
+      this.drawTexturePatch(graphics, texture, x + 145, y + 40, 64, 10,
          530, 690, 110, 18, 941, 1672);
-      this.drawTexturePatch(graphics, texture, x + 147, y + 50, 60, 9,
+      this.drawTexturePatch(graphics, texture, x + 145, y + 50, 64, 10,
          530, 690, 110, 18, 941, 1672);
-      this.maskTinyString(graphics, smallMilkingText("label.output").getString(), 159, 86, 39, 0xFF242829);
+      this.drawRepeatedTexturePatch(graphics, texture, x + 158, y + 84, 41, 9,
+         635, 756, 30, 18, 941, 1672, 0.5F);
       this.maskTinyString(graphics, smallMilkingText("label.inventory").getString(), 29, 129, 65, 0xFF080909);
       this.drawSmallMilkingMachineTank(graphics, x, y, menu.fluidAmount(), menu.fluidCapacity());
    }
@@ -1741,29 +1776,29 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawSmallFluidFunnelBackgroundOverlays(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
       int mask = 0xFF202629;
+      float textureScale = (float)this.imageWidth / 385.0F;
+
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 17, y0 + 4, 34, 20,
+         98, 8, 24, 38, 385, 439, textureScale);
 
       // Clear only each sample item interior; the source PNG owns the surrounding slot bezel.
       for (SmallFluidFunnelArtworkMask bucketMask : SmallFluidFunnelArtworkMask.sampleBucketMasks()) {
          graphics.fill(x0 + bucketMask.left(), y0 + bucketMask.top(), x0 + bucketMask.right(), y0 + bucketMask.bottom(), mask);
       }
 
-      this.maskTinyCenteredString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input").getString(),
-         43, 66, 45, mask);
-      this.maskTinyCenteredString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output").getString(),
-         165, 66, 48, mask);
-      // Replace only the baked caption/value glyphs with matching panel texture; keep both arrows and the trough bezel.
-      this.drawTexturePatch(graphics, texture, x0 + 81, y0 + 79, 47, 10,
-         78, 238, 87, 18, 385, 439);
-      this.drawTexturePatch(graphics, texture, x0 + 78, y0 + 93, 55, 9,
-         65, 238, 101, 17, 385, 439);
-      this.maskTinyCenteredString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output").getString(),
-         154, 126, 65, mask);
-      this.maskTinyString(graphics,
-         Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory").getString(),
-         27, 141, 60, mask);
+      // Mask only the baked text rows with nearby blank panel texture; keep arrows and trough bezel visible.
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 20, y0 + 64, 46, 10,
+         107, 119, 20, 18, 385, 439, textureScale);
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 142, y0 + 64, 48, 10,
+         343, 119, 20, 18, 385, 439, textureScale);
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 81, y0 + 79, 47, 10,
+         107, 147, 20, 18, 385, 439, textureScale);
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 78, y0 + 92, 55, 8,
+         107, 169, 20, 16, 385, 439, textureScale);
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 121, y0 + 125, 65, 10,
+         332, 235, 20, 18, 385, 439, textureScale);
+      this.drawRepeatedTexturePatch(graphics, texture, x0 + 22, y0 + 139, 61, 10,
+         200, 260, 26, 16, 385, 439, textureScale);
 
       int tankLeft = x0 + 79;
       int tankTop = y0 + 105;
@@ -1856,9 +1891,11 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawFluidBarrelWidgets(GuiGraphics graphics, ResourceLocation texture, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
+       this.drawRepeatedTexturePatch(graphics, texture, x0 + 15, y0 + 5, 42, 20,
+          58, 5, 17, 20, 201, 226, 1.0F);
       // Copy the blank right end of the title plate over the PNG's fixed English title.
-      this.drawTexturePatch(graphics, texture, x0 + 73, y0 + 7, 76, 10,
-         148, 7, 42, 10, 201, 226);
+       this.drawTexturePatch(graphics, texture, x0 + 72, y0 + 5, 78, 14,
+          148, 5, 42, 14, 201, 226);
       this.maskTinyCenteredString(graphics,
          Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input").getString(),
          38, 49, 48, 0xFF202426);

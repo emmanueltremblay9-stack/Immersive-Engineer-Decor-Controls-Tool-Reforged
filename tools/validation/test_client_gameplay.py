@@ -325,6 +325,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                            "progress": 25 if machine == "small_freezer" and state == "mid" else 0}
                 capture["capture_mode"] = "gui_panel"
                 capture["panel_cursor_outside"] = True
+                capture["panel_tooltips_suppressed"] = True
                 capture_width, capture_height = panel_width, panel_height
                 if state == "full-hover":
                     capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
@@ -349,6 +350,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                            "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
                            "fluid_amount": 0, "energy": 8, "progress": 178,
                            "capture_mode": "gui_panel", "panel_cursor_outside": True,
+                           "panel_tooltips_suppressed": True,
                            "width": panel_width, "height": panel_height}
                 image = self.image_dir / name
                 image.write_bytes(self._png(panel_width, panel_height))
@@ -395,6 +397,11 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
     def test_rejects_panel_capture_with_cursor_over_the_gui(self):
         proof = copy.deepcopy(self.proof)
         proof["screenshots"][0]["panel_cursor_outside"] = False
+        with self.assertRaises(SmokeFailure): self.check(proof)
+
+    def test_rejects_panel_capture_with_tooltips_visible(self):
+        proof = copy.deepcopy(self.proof)
+        proof["screenshots"][0]["panel_tooltips_suppressed"] = False
         with self.assertRaises(SmokeFailure): self.check(proof)
 
     def test_rejects_freezer_frame_that_did_not_capture_near_completion(self):

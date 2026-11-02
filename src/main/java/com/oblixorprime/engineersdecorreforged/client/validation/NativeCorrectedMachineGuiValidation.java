@@ -34,6 +34,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.BufferUtils;
 
 /** Native integrated-client captures for the six MachineScreen GUIs corrected in this batch. */
 final class NativeCorrectedMachineGuiValidation {
@@ -133,6 +134,7 @@ final class NativeCorrectedMachineGuiValidation {
             if (SPECS.get(specIndex).kind() == MachineKind.SMALL_FREEZER && stateIndex == 1
                && menu.freezerProgressTicks() < 30) return false;
             if (ticks < 6) return false;
+            screen.setSuppressTooltipsForPanelCapture(true);
             moveCursorOutsidePanel(mc);
             stage = Stage.WAIT_PANEL_CAPTURE;
             ticks = 0;
@@ -150,6 +152,7 @@ final class NativeCorrectedMachineGuiValidation {
             String state = stateIndex == 2 ? "full-hover" : STATES[stateIndex];
             capture(mc, screen, menu, state);
             if (stateIndex == 2) {
+               screen.setSuppressTooltipsForPanelCapture(false);
                moveCursorToFirstSlot(mc, menu);
                stage = Stage.WAIT_HOVER;
                ticks = 0;
@@ -363,21 +366,30 @@ final class NativeCorrectedMachineGuiValidation {
       int guiWidth = mc.getWindow().getGuiScaledWidth();
       int guiHeight = mc.getWindow().getGuiScaledHeight();
       MachineLayout.MachineSlot target = layout.machineSlots().get(0);
-      double scaleX = mc.getWindow().getWidth() / (double)guiWidth;
-      double scaleY = mc.getWindow().getHeight() / (double)guiHeight;
+      double scaleX = mc.getWindow().getScreenWidth() / (double)guiWidth;
+      double scaleY = mc.getWindow().getScreenHeight() / (double)guiHeight;
       double x = ((guiWidth - layout.imageWidth()) / 2.0 + target.x() + 8) * scaleX;
       double y = ((guiHeight - layout.imageHeight()) / 2.0 + target.y() + 8) * scaleY;
       GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), x, y);
    }
 
    private static void moveCursorOutsidePanel(Minecraft mc) {
-      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getWidth() - 3, mc.getWindow().getHeight() - 3);
+      GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), mc.getWindow().getScreenWidth() - 3,
+         mc.getWindow().getScreenHeight() - 3);
    }
 
    private static void capture(Minecraft mc, MachineScreen screen, MachineMenu menu, String state) throws Exception {
       MachineLayout layout = menu.layout();
       int guiWidth = mc.getWindow().getGuiScaledWidth();
       int guiHeight = mc.getWindow().getGuiScaledHeight();
+      var cursorX = BufferUtils.createDoubleBuffer(1);
+      var cursorY = BufferUtils.createDoubleBuffer(1);
+      GLFW.glfwGetCursorPos(mc.getWindow().getWindow(), cursorX, cursorY);
+      double cursorGuiX = cursorX.get(0) * guiWidth / mc.getWindow().getScreenWidth();
+      double cursorGuiY = cursorY.get(0) * guiHeight / mc.getWindow().getScreenHeight();
+      require(screen.isSuppressTooltipsForPanelCapture(), "Panel crop did not suppress pointer tooltips");
+      require(screen.isPanelPointerOutsideAt(cursorGuiX, cursorGuiY),
+         "Panel crop cursor is still over the machine GUI");
       double scaleX = mc.getWindow().getWidth() / (double)guiWidth;
       double scaleY = mc.getWindow().getHeight() / (double)guiHeight;
       int cropX = (int)Math.round((guiWidth - layout.imageWidth()) / 2.0 * scaleX);
@@ -404,7 +416,10 @@ final class NativeCorrectedMachineGuiValidation {
       capture.addProperty("name", name);
       capture.addProperty("state", state);
       capture.addProperty("capture_mode", "gui_panel");
-      capture.addProperty("panel_cursor_outside", true);
+      capture.addProperty("panel_cursor_outside", screen.isPanelPointerOutsideAt(cursorGuiX, cursorGuiY));
+      capture.addProperty("panel_cursor_gui_x", cursorGuiX);
+      capture.addProperty("panel_cursor_gui_y", cursorGuiY);
+      capture.addProperty("panel_tooltips_suppressed", screen.isSuppressTooltipsForPanelCapture());
       capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
       capture.addProperty("width", cropWidth);
       capture.addProperty("height", cropHeight);
@@ -486,7 +501,9 @@ final class NativeCorrectedMachineGuiValidation {
    }
 
    private static void writeProof(Minecraft mc, String runNonce) throws Exception {
-      require(nonce.equals(runNonce) && CASES.size() == SPECS.size() && CAPTURES.size() == SPECS.size() * STATES.length,
+      require(nonce.equals(runNonce) && CASES.size() == SPECS.size()
+         && CAPTURES.size() == SPECS.size() * STATES.length + 1
+         && hasCapture("small_freezer-near-end.png"),
          "Corrected GUI capture matrix is incomplete");
       String selectedLanguage = mc.getLanguageManager().getSelected();
       require(language.equals(selectedLanguage), "Minecraft did not load the requested GUI language");
@@ -512,6 +529,13 @@ final class NativeCorrectedMachineGuiValidation {
 
    private static void require(boolean condition, String message) {
       if (!condition) throw new IllegalStateException(message);
+   }
+
+   private static boolean hasCapture(String name) {
+      for (int index = 0; index < CAPTURES.size(); index++) {
+         if (CAPTURES.get(index).getAsJsonObject().get("name").getAsString().equals(name)) return true;
+      }
+      return false;
    }
 
    private record Spec(MachineKind kind, String id, Block block, Fluid fluid) {}
