@@ -72,10 +72,10 @@ public class MachineLayoutSmallFreezerTest {
       assertEquals(104, progress.y());
       assertEquals(89, progress.width());
       assertEquals(12, progress.height());
-      assertEquals(62, energy.x());
-      assertEquals(124, energy.y());
-      assertEquals(87, energy.width());
-      assertEquals(19, energy.height());
+      assertEquals(59, energy.x());
+      assertEquals(118, energy.y());
+      assertEquals(76, energy.width());
+      assertEquals(17, energy.height());
       assertTrue(progress.bottom() < energy.y());
    }
 

@@ -269,7 +269,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
             "window_width": self.window_width, "window_height": self.window_height,
-            "screenshot_method": "Native Minecraft framebuffer cropped to the live GUI panel",
+            "screenshot_method": "Native Minecraft panel crops plus full-window hover captures to retain tooltips",
             "cases": [], "screenshots": [],
         }
         for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
@@ -310,11 +310,16 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                            "fluid_amount": fluid_amount, "energy": energy,
                            "progress": 25 if machine == "small_freezer" and state == "mid" else 0}
                 if state == "full-hover":
+                    capture["capture_mode"] = "full_window_tooltip"
                     capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
+                    capture_width, capture_height = self.window_width, self.window_height
+                else:
+                    capture["capture_mode"] = "gui_panel"
+                    capture_width, capture_height = panel_width, panel_height
                 image = self.image_dir / name
-                image.write_bytes(self._png(panel_width, panel_height))
-                capture["width"] = panel_width
-                capture["height"] = panel_height
+                image.write_bytes(self._png(capture_width, capture_height))
+                capture["width"] = capture_width
+                capture["height"] = capture_height
                 capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
                 self.proof["screenshots"].append(capture)
         self.logs = f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={self.nonce}"
@@ -341,7 +346,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         args.update(overrides)
         return validate_corrected_machine_gui_proof(**args)
 
-    def test_accepts_six_live_menus_and_eighteen_cropped_state_captures(self):
+    def test_accepts_six_live_menus_and_tooltip_preserving_state_captures(self):
         self.assertEqual(self.check(), self.proof)
 
     def test_rejects_missing_capture_bad_hash_or_wrong_live_slot_geometry(self):

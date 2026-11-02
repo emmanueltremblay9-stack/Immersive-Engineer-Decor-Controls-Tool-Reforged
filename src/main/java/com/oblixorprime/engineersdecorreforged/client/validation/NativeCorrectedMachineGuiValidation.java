@@ -332,23 +332,38 @@ final class NativeCorrectedMachineGuiValidation {
       Files.createDirectories(screenshots);
       Path output = screenshots.resolve(name);
       require(!Files.exists(output), "Refusing to overwrite a corrected GUI capture");
-      try (NativeImage full = Screenshot.takeScreenshot(mc.getMainRenderTarget());
-           NativeImage crop = new NativeImage(cropWidth, cropHeight, false)) {
-         require(cropX >= 0 && cropY >= 0 && cropX + cropWidth <= full.getWidth()
-            && cropY + cropHeight <= full.getHeight(), "GUI-only screenshot crop exceeds the live framebuffer");
-         for (int py = 0; py < cropHeight; py++) {
-            for (int px = 0; px < cropWidth; px++) {
-               crop.setPixelRGBA(px, py, full.getPixelRGBA(cropX + px, cropY + py));
+      int captureWidth;
+      int captureHeight;
+      try (NativeImage full = Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+         if (hover != null) {
+            // Keep the real tooltip in frame; panel-only crops cut it at the artwork edge.
+            captureWidth = full.getWidth();
+            captureHeight = full.getHeight();
+            full.writeToFile(output);
+         } else {
+            try (NativeImage crop = new NativeImage(cropWidth, cropHeight, false)) {
+               require(cropX >= 0 && cropY >= 0 && cropX + cropWidth <= full.getWidth()
+                  && cropY + cropHeight <= full.getHeight(), "GUI-only screenshot crop exceeds the live framebuffer");
+               for (int py = 0; py < cropHeight; py++) {
+                  for (int px = 0; px < cropWidth; px++) {
+                     crop.setPixelRGBA(px, py, full.getPixelRGBA(cropX + px, cropY + py));
+                  }
+               }
+               cropWidth = crop.getWidth();
+               cropHeight = crop.getHeight();
+               crop.writeToFile(output);
             }
          }
-         crop.writeToFile(output);
       }
       JsonObject capture = new JsonObject();
       capture.addProperty("name", name);
       capture.addProperty("state", state);
+      capture.addProperty("capture_mode", hover == null ? "gui_panel" : "full_window_tooltip");
       capture.addProperty("sha256", HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(output))));
-      capture.addProperty("width", cropWidth);
-      capture.addProperty("height", cropHeight);
+      captureWidth = hover == null ? cropWidth : mc.getWindow().getWidth();
+      captureHeight = hover == null ? cropHeight : mc.getWindow().getHeight();
+      capture.addProperty("width", captureWidth);
+      capture.addProperty("height", captureHeight);
       capture.addProperty("kind", SPECS.get(specIndex).kind().name());
       capture.addProperty("screen_identity", screen.getClass().getName());
       capture.addProperty("menu_id", menu.containerId);
@@ -428,7 +443,7 @@ final class NativeCorrectedMachineGuiValidation {
       proof.addProperty("selected_language", selectedLanguage);
       proof.addProperty("window_width", mc.getWindow().getWidth());
       proof.addProperty("window_height", mc.getWindow().getHeight());
-      proof.addProperty("screenshot_method", "Native Minecraft framebuffer cropped to the live GUI panel");
+      proof.addProperty("screenshot_method", "Native Minecraft panel crops plus full-window hover captures to retain tooltips");
       proof.addProperty("fixture_state_source", "Live MachineBlockEntity fluid handlers and test data synced through the registered MachineMenu");
       proof.add("cases", CASES.deepCopy());
       proof.add("screenshots", CAPTURES.deepCopy());

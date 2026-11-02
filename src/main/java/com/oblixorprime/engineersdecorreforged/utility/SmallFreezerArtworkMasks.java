@@ -11,7 +11,9 @@ public final class SmallFreezerArtworkMasks {
    private static final SourceBounds INPUT_BUCKET = new SourceBounds(58, 120, 98, 164);
    private static final SourceBounds OUTPUT_ICE = new SourceBounds(331, 122, 369, 164);
    private static final SourceBounds PROGRESS_BAR = new SourceBounds(125, 197, 301, 218);
-   private static final SourceBounds ENERGY_BAR = new SourceBounds(126, 234, 300, 268);
+   // The live mask follows the baked frame itself. The old bounds ran below and
+   // into the numeric readout, leaving the sample orange fill visible above it.
+   private static final SourceBounds ENERGY_BAR = new SourceBounds(121, 224, 272, 253);
 
    private SmallFreezerArtworkMasks() {
    }

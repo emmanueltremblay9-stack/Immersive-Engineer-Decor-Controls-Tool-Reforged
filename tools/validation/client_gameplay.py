@@ -305,8 +305,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if proof.get("selected_language") != language:
         raise SmokeFailure("Minecraft did not load the requested corrected-machine GUI locale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or proof.get("screenshot_method") != "Native Minecraft framebuffer cropped to the live GUI panel"):
-        raise SmokeFailure("Corrected-machine GUI proof lacks the requested native window and GUI-only crop")
+            or proof.get("screenshot_method") != "Native Minecraft panel crops plus full-window hover captures to retain tooltips"):
+        raise SmokeFailure("Corrected-machine GUI proof lacks native panel and tooltip-preserving captures")
 
     cases = proof.get("cases")
     if not isinstance(cases, list) or len(cases) != len(expected):
@@ -368,13 +368,18 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
                 raise SmokeFailure(f"Native corrected-machine screenshot is absent or invalid: {name}")
             width, height = struct.unpack(">II", data[16:24])
-            if (width, height) != (panel_width, panel_height):
-                raise SmokeFailure(f"Native screenshot is not cropped to the exact GUI panel: {name}")
+            expected_capture_size = ((window_width, window_height) if state == "full-hover"
+                                     else (panel_width, panel_height))
+            expected_capture_mode = "full_window_tooltip" if state == "full-hover" else "gui_panel"
+            if ((width, height) != expected_capture_size
+                    or capture.get("capture_mode") != expected_capture_mode):
+                raise SmokeFailure(f"Native screenshot has the wrong panel/tooltip capture bounds: {name}")
             if capture.get("sha256") != hashlib.sha256(data).hexdigest():
                 raise SmokeFailure(f"Native corrected-machine screenshot hash does not match proof: {name}")
             if (capture.get("width"), capture.get("height"), capture.get("kind"),
                     capture.get("screen_identity"), capture.get("menu_id")) != (
-                    panel_width, panel_height, kind, case.get("screen_identity"), case.get("client_menu_id")):
+                    expected_capture_size[0], expected_capture_size[1], kind,
+                    case.get("screen_identity"), case.get("client_menu_id")):
                 raise SmokeFailure(f"Native corrected-machine screenshot identity differs from proof: {name}")
             stage = "full" if state == "full-hover" else state
             if expected_meter_capacity:

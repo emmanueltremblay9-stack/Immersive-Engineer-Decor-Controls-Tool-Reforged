@@ -99,7 +99,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             geometry.textureWidth(),
             geometry.textureHeight()
          );
-         this.drawArtworkBackgroundOverlays(graphics, layout, x, y);
+         this.drawArtworkBackgroundOverlays(graphics, layout, texture, x, y);
       } else if (layout.style() == MachineLayout.LayoutStyle.ORIGINAL_TEXTURE) {
          ResourceLocation texture = this.backgroundTexture(layout);
          if (((MachineMenu)this.menu).kind() == MachineKind.SMALL_MILKING_MACHINE) {
@@ -140,7 +140,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             } else if (kind == MachineKind.SMALL_FLUID_FUNNEL) {
                 this.drawSmallFluidFunnelBackgroundOverlays(graphics, x, y);
             } else if (kind == MachineKind.PASSIVE_FLUID_ACCUMULATOR) {
-                this.drawPassiveFluidAccumulatorBackgroundOverlays(graphics, x, y);
+               this.drawPassiveFluidAccumulatorBackgroundOverlays(graphics, texture, x, y);
             } else if (kind == MachineKind.FLUID_BARREL) {
                 this.drawFluidBarrelWidgets(graphics, x, y);
          }
@@ -193,9 +193,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawSmallFreezerWidgets(GuiGraphics graphics, int x0, int y0) {
       MachineMenu menu = (MachineMenu)this.menu;
-      graphics.fill(x0 + 49, y0 + 10, x0 + 194, y0 + 27, 0xFF000000);
       graphics.fill(x0 + 22, y0 + 42, x0 + 51, y0 + 51, 0xFF1D2123);
       graphics.fill(x0 + 160, y0 + 42, x0 + 189, y0 + 51, 0xFF202426);
+      // The baked progress caption occupies the narrow strip immediately before its frame.
+      graphics.fill(x0 + 16, y0 + 102, x0 + 61, y0 + 111, 0xFF1A2122);
       graphics.fill(x0 + 16, y0 + 120, x0 + 61, y0 + 130, 0xFF1A2122);
       graphics.fill(x0 + 151, y0 + 120, x0 + 201, y0 + 130, 0xFF101415);
       graphics.fill(x0 + 21, y0 + 137, x0 + 63, y0 + 147, 0xFF202628);
@@ -246,9 +247,7 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
 
    private void drawSmallFreezerLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
-      this.drawScaledBoundedString(graphics,
-         Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_freezer").getString(),
-         50, 16, 141, TEXT, false, 0.72F);
+      // Keep the integrated English title in the PNG; painting a whole header over it hid the frame.
       this.drawScaledBoundedString(graphics, smallFreezerText("label.input").getString(), 19, 45, 35, TEXT, false, 0.58F);
       this.drawScaledBoundedString(graphics, smallFreezerText("label.output").getString(), 160, 45, 35, TEXT, false, 0.58F);
       this.drawScaledBoundedString(graphics, smallFreezerText("label.cold").getString(), 22, 76, 27, MUTED, false, 0.50F);
@@ -282,7 +281,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       return Component.translatable(SMALL_FREEZER_GUI_PREFIX + key, arguments);
    }
 
-   private void drawArtworkBackgroundOverlays(GuiGraphics graphics, MachineLayout layout, int x, int y) {
+   private void drawArtworkBackgroundOverlays(
+      GuiGraphics graphics, MachineLayout layout, ResourceLocation texture, int x, int y
+   ) {
       MachineMenu menu = (MachineMenu)this.menu;
       for (MachineLayout.Panel panel : layout.panels()) {
          int left = x + panel.x();
@@ -292,14 +293,20 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
                MachineLayout.MachineSlot cell = layout.machineSlots().get(0);
                graphics.fill(x + cell.x() + 1, y + cell.y() + 1, x + cell.x() + 17, y + cell.y() + 17, 0xFF202629);
             }
-            case "solar-energy-readout-mask" ->
-               graphics.fill(left, top + 4, left + panel.width(), top + 13, 0xFF202629);
+            case "solar-energy-readout-mask" -> this.drawTexturePatch(
+               graphics, texture, left, top + 4, panel.width(), 9, 290, 230, 120, 18, 455, 424
+            );
             case "tree-collection-mask" -> graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF202629);
             case "solar-energy-bar" -> this.drawArtworkEnergyMeter(
                graphics, left, top, panel.width(), panel.height(), menu.energyStored(), menu.energyCapacity()
             );
             case "tree-status-mask" -> graphics.fill(left, top, left + panel.width(), top + panel.height(), 0xFF102015);
-            case "inventory-panel" -> { }
+            case "inventory-panel" -> {
+               if (menu.kind() == MachineKind.SMALL_SOLAR_PANEL) {
+                  // Copy the adjacent clean metal strip over the PNG's French label before localizing it.
+                  this.drawTexturePatch(graphics, texture, left, top + 1, 44, 10, 132, 254, 88, 20, 455, 424);
+               }
+            }
             default -> {
             }
          }
@@ -330,7 +337,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineLayout layout = menu.layout();
       String inventoryLabel = Component.translatable("container.inventory").getString();
       int labelWidth = Math.min(64, Math.max(24, Mth.ceil(this.font.width(inventoryLabel) * 0.72F) + 2));
-      this.drawLabelBackdrop(graphics, layout.playerInventoryX(), layout.playerInventoryY() - 11, labelWidth, 9);
+      if (menu.kind() != MachineKind.SMALL_SOLAR_PANEL) {
+         this.drawLabelBackdrop(graphics, layout.playerInventoryX(), layout.playerInventoryY() - 11, labelWidth, 9);
+      }
       this.drawTinyString(
          graphics,
          inventoryLabel,
@@ -848,19 +857,21 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       graphics.fill(x + 1, y + 1, x + 2, y + 2, -7697016);
    }
 
-   private void drawPassiveFluidAccumulatorBackgroundOverlays(GuiGraphics graphics, int x0, int y0) {
+   private void drawPassiveFluidAccumulatorBackgroundOverlays(
+      GuiGraphics graphics, ResourceLocation texture, int x0, int y0
+   ) {
       MachineMenu menu = (MachineMenu)this.menu;
       int dark = 0xFF20282D;
 
       String prefix = "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.";
-      this.maskTinyCenteredString(graphics, Component.translatable(prefix + "title").getString(), 122, 11, 138, 0xFF292D31);
-      this.maskTinyCenteredString(graphics, Component.translatable(prefix + "collection").getString(), 44, 71, 60, dark);
-      this.maskTinyCenteredString(graphics, Component.translatable(prefix + "bucket.input").getString(), 44, 88, 53, dark);
-      this.maskTinyCenteredString(graphics, Component.translatable(prefix + "bucket.output").getString(), 167, 88, 59, dark);
-      this.maskTinyCenteredString(graphics, Component.translatable(prefix + "water").getString(), 165, 45, 63, dark);
-      this.maskTinyCenteredString(graphics,
-         Component.translatable(prefix + "amount", menu.fluidAmount(), menu.fluidCapacity()).getString(), 165, 56, 67, dark);
-      this.maskTinyString(graphics, Component.translatable(prefix + "inventory").getString(), 21, 143, 58, dark);
+      // These widths include the longest baked French glyph row, independent of the live locale.
+      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "collection").getString(), 44, 71, 60, 48, dark);
+      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "bucket.input").getString(), 44, 88, 53, 36, dark);
+      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "bucket.output").getString(), 167, 88, 59, 43, dark);
+      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "water").getString(), 165, 45, 63, 15, dark);
+      this.maskTinyCenteredStringAtLeast(graphics,
+         Component.translatable(prefix + "amount", menu.fluidAmount(), menu.fluidCapacity()).getString(), 165, 56, 67, 56, dark);
+      this.drawTexturePatch(graphics, texture, x0 + 20, y0 + 141, 48, 9, 416, 876, 88, 18, 941, 1672);
 
       for (MachineLayout.MachineSlot slot : menu.layout().machineSlots()) {
          graphics.fill(x0 + slot.x() + 1, y0 + slot.y() + 1, x0 + slot.x() + 17, y0 + slot.y() + 17, 0xFF22292D);
@@ -885,7 +896,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawPassiveFluidAccumulatorLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
       String prefix = "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.";
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "title").getString(), 122, 11, 138, TEXT);
       this.drawTinyCenteredString(graphics, Component.translatable(prefix + "collection").getString(), 44, 71, 60, TEXT);
       this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.input").getString(), 44, 88, 53, TEXT);
       this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.output").getString(), 167, 88, 59, TEXT);
@@ -1044,6 +1054,21 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void maskTinyCenteredString(GuiGraphics graphics, String text, int centerX, int y, int maxWidth, int color) {
       int width = this.tinyTextWidth(text, maxWidth);
       if (width > 0) graphics.fill(centerX - width / 2 - 1, y - 1, centerX + (width + 1) / 2 + 1, y + 8, color);
+   }
+
+   private void maskTinyCenteredStringAtLeast(
+      GuiGraphics graphics, String text, int centerX, int y, int maxWidth, int minimumWidth, int color
+   ) {
+      int width = Math.max(this.tinyTextWidth(text, maxWidth), Math.min(maxWidth, minimumWidth));
+      if (width > 0) graphics.fill(centerX - width / 2 - 1, y - 1, centerX + (width + 1) / 2 + 1, y + 8, color);
+   }
+
+   private void drawTexturePatch(
+      GuiGraphics graphics, ResourceLocation texture, int x, int y, int width, int height,
+      int sourceX, int sourceY, int sourceWidth, int sourceHeight, int textureWidth, int textureHeight
+   ) {
+      graphics.blit(texture, x, y, width, height, (float)sourceX, (float)sourceY,
+         sourceWidth, sourceHeight, textureWidth, textureHeight);
    }
 
    private int tinyTextWidth(String text, int maxWidth) {
