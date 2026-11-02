@@ -1137,8 +1137,6 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
        this.drawTexturePatch(graphics, texture, x + 28, y + 127, 70, 9,
           460, 880, 88, 18, 941, 1672);
        }
-      this.drawMachineSlotInteriorsFromArtwork(graphics, texture, x, y,
-         255, 626, 431, 420, 941, 1672, this.imageWidth, this.imageHeight);
       this.drawSmallMilkingMachineTank(graphics, x, y, menu.fluidAmount(), menu.fluidCapacity());
    }
 
