@@ -401,6 +401,7 @@ final class NativeCorrectedMachineGuiValidation {
          slot.addProperty("layout_x", layoutSlot.x());
          slot.addProperty("layout_y", layoutSlot.y());
          slot.addProperty("active", liveSlot.isActive());
+       slot.addProperty("insertion_allowed", liveSlot.mayPlace(new ItemStack(Items.STONE)));
          double centerX = (mc.getWindow().getGuiScaledWidth() - menu.layout().imageWidth()) / 2.0 + liveSlot.x + 8;
          double centerY = (mc.getWindow().getGuiScaledHeight() - menu.layout().imageHeight()) / 2.0 + liveSlot.y + 8;
          slot.addProperty("center_hit_test", screen.isMachineSlotHoveredAt(index, centerX, centerY));

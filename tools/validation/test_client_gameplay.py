@@ -277,10 +277,11 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
             menu_identity = "com.oblixorprime.engineersdecorreforged.menu.MachineMenu"
             slots = []
             for index in range(slot_count):
-                active = not (machine == "small_freezer" and index == 1)
+                insertion_allowed = not (machine == "small_freezer" and index == 1)
                 slots.append({"container_index": index, "x": 20 + index * 18, "y": 30,
                               "layout_x": 20 + index * 18, "layout_y": 30,
-                              "active": active, "center_hit_test": active})
+                              "active": True, "center_hit_test": True,
+                              "insertion_allowed": insertion_allowed})
             self.proof["cases"].append({
                 "machine_id": machine, "machine_kind": kind, "screen_identity": screen_identity,
                 "client_menu_identity": menu_identity, "server_menu_identity": menu_identity,

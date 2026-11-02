@@ -351,10 +351,11 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
         for slot in slot_proofs:
             if not isinstance(slot, dict) or type(slot.get("container_index")) is not int:
                 raise SmokeFailure(f"Invalid machine-slot hitbox proof for {machine}")
-            active = not (machine == "small_freezer" and slot["container_index"] == 1)
+            reserved_cold_slot = machine == "small_freezer" and slot["container_index"] == 1
             if (slot.get("container_index") < 0 or slot.get("x") != slot.get("layout_x")
-                    or slot.get("y") != slot.get("layout_y") or slot.get("active") is not active
-                    or slot.get("center_hit_test") is not active):
+                    or slot.get("y") != slot.get("layout_y") or slot.get("active") is not True
+                    or slot.get("center_hit_test") is not True
+                    or (reserved_cold_slot and slot.get("insertion_allowed") is not False)):
                 raise SmokeFailure(f"Live slot click/hover geometry differs from its layout for {machine}")
         expected_meter_capacity = (32000 if machine == "fluid_barrel" else 4000 if machine in {
             "small_milking_machine", "passive_fluid_accumulator"} else 3000 if machine == "small_fluid_funnel" else 0)
