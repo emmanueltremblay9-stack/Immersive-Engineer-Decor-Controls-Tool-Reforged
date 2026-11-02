@@ -647,6 +647,59 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       this.drawTinyString(graphics, fitted, centerX - scaledWidth / 2, y, maxWidth, color, false);
    }
 
+   private void drawCompactMachineTitle(GuiGraphics graphics, String text, int centerX, int y, int maxWidth, int color) {
+      String normalized = text.trim();
+      int maximumFontWidth = Math.max(1, (int)(maxWidth / 0.72F));
+      if (this.font.width(normalized) <= maximumFontWidth) {
+         this.drawTinyCenteredString(graphics, normalized, centerX, y, maxWidth, color);
+         return;
+      }
+
+      String[] words = normalized.split("\\s+");
+      int bestSplit = -1;
+      int bestLineWidth = Integer.MAX_VALUE;
+      for (int split = 1; split < words.length; split++) {
+         String first = joinWords(words, 0, split);
+         String second = joinWords(words, split, words.length);
+         int firstWidth = this.font.width(first);
+         int secondWidth = this.font.width(second);
+         int widest = Math.max(firstWidth, secondWidth);
+         if (firstWidth <= maximumFontWidth && secondWidth <= maximumFontWidth && widest < bestLineWidth) {
+            bestSplit = split;
+            bestLineWidth = widest;
+         }
+      }
+
+      if (bestSplit >= 0) {
+         this.drawTinyCenteredString(graphics, joinWords(words, 0, bestSplit), centerX, y - 3, maxWidth, color);
+         this.drawTinyCenteredString(graphics, joinWords(words, bestSplit, words.length), centerX, y + 4, maxWidth, color);
+      } else {
+         this.drawScaledCenteredString(graphics, normalized, centerX, y, maxWidth, color, 0.72F);
+      }
+   }
+
+   private static String joinWords(String[] words, int start, int end) {
+      StringBuilder result = new StringBuilder();
+      for (int index = start; index < end; index++) {
+         if (result.length() > 0) result.append(' ');
+         result.append(words[index]);
+      }
+      return result.toString();
+   }
+
+   private void drawScaledCenteredString(GuiGraphics graphics, String text, int centerX, int y, int maxWidth,
+                                         int color, float preferredScale) {
+      int fontWidth = this.font.width(text);
+      if (fontWidth <= 0 || maxWidth <= 0 || preferredScale <= 0.0F) return;
+      float scale = Math.min(preferredScale, (float)maxWidth / fontWidth);
+      int scaledWidth = Mth.ceil(fontWidth * scale);
+      graphics.pose().pushPose();
+      graphics.pose().scale(scale, scale, 1.0F);
+      graphics.drawString(this.font, text, Mth.floor((centerX - scaledWidth / 2.0F) / scale),
+         Mth.floor(y / scale), color, false);
+      graphics.pose().popPose();
+   }
+
    private void drawScaledBoundedString(GuiGraphics graphics, String text, int x, int y, int maxWidth, int color, boolean shadow, float scale) {
       if (maxWidth > 0 && !text.isEmpty()) {
          String fitted = this.fitText(text, Math.max(1, (int)(maxWidth / scale)));
@@ -1053,8 +1106,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       boolean englishArtwork = this.isEnglishArtworkLocale();
       if (!englishArtwork) {
          // The clean end of the title plate replaces the full baked English title.
-         this.drawTexturePatch(graphics, texture, x + 63, y + 8, 132, 13,
-            620, 640, 22, 18, 941, 1672);
+         // Use the full blank upper band of the same title plate. The former source rectangle
+         // copied the last letters of the baked English heading into the localized title.
+      this.drawTexturePatch(graphics, texture, x + 62, y + 8, 96, 13,
+         381, 634, 192, 12, 941, 1672);
       }
       if (!frenchArtwork) {
          // The original left label sits on a black inset plate; keep the patch inside that plate.
@@ -1063,8 +1118,10 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
             620, 680, 26, 24, 941, 1672);
          this.drawTexturePatch(graphics, texture, x + 157, y + 84, 43, 11,
             620, 780, 26, 20, 941, 1672);
-         this.drawTexturePatch(graphics, texture, x + 28, y + 127, 70, 13,
-            422, 866, 88, 20, 941, 1672);
+          // Sample an empty part of the same inventory band. The old sample crossed the
+          // embedded "Inventaire" caption and copied its final glyphs into the mask.
+          this.drawTexturePatch(graphics, texture, x + 28, y + 127, 70, 13,
+             460, 880, 88, 26, 941, 1672);
       } else {
          // The embedded French captions match the artwork; replace only its stale sample amount.
          this.drawTexturePatch(graphics, texture, x + 145, y + 50, 64, 11,
@@ -1096,17 +1153,21 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       MachineMenu menu = (MachineMenu)this.menu;
       String title = Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_milking_machine").getString();
       if (!this.isEnglishArtworkLocale()) {
-         this.drawTinyCenteredString(graphics, title, 129, 11, 132, TEXT);
+         this.drawCompactMachineTitle(graphics, title, 110, 11, 96, TEXT);
       }
       if (!this.isFrenchArtworkLocale()) {
-         this.drawTinyString(graphics, smallMilkingText("label.collection.line1").getString(), 26, 80, 66, TEXT, false);
-         this.drawTinyString(graphics, smallMilkingText("label.collection.line2").getString(), 26, 86, 66, TEXT, false);
-         this.drawTinyString(graphics, smallMilkingText("label.tank").getString(), 148, 42, 58, TEXT, false);
+         this.drawScaledCenteredString(graphics, smallMilkingText("label.collection.line1").getString(), 59, 80, 66, TEXT, 0.72F);
+         this.drawScaledCenteredString(graphics, smallMilkingText("label.collection.line2").getString(), 59, 86, 66, TEXT, 0.72F);
+         this.drawScaledCenteredString(graphics, smallMilkingText("label.tank").getString(), 177, 42, 58, TEXT, 0.72F);
       }
-      this.drawTinyString(graphics, formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()), 148, 51, 60, TEXT, false);
+       this.drawScaledCenteredString(
+          graphics,
+          formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale()),
+          177, 51, 60, TEXT, 0.72F
+       );
       if (!this.isFrenchArtworkLocale()) {
-         this.drawTinyString(graphics, smallMilkingText("label.output").getString(), 159, 86, 41, TEXT, false);
-         this.drawTinyString(graphics, smallMilkingText("label.inventory").getString(), 29, 129, 68, TEXT, false);
+         this.drawScaledCenteredString(graphics, smallMilkingText("label.output").getString(), 179, 86, 41, TEXT, 0.72F);
+         this.drawScaledCenteredString(graphics, smallMilkingText("label.inventory").getString(), 63, 129, 68, TEXT, 0.72F);
       }
    }
 
@@ -1805,8 +1866,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       this.drawTexturePatch(graphics, texture, x0 + 17, y0 + 4, 34, 20,
          94, 12, 23, 32, 385, 439);
       if (!this.isEnglishArtworkLocale()) {
-         this.drawTexturePatch(graphics, texture, x0 + 53, y0 + 6, 105, 16,
-            306, 14, 24, 28, 385, 439);
+         this.drawTexturePatch(graphics, texture, x0 + 64, y0 + 6, 104, 16,
+          320, 14, 30, 16, 385, 439);
       }
 
       // Clear only each sample item interior; the source PNG owns the surrounding slot bezel.
@@ -1827,11 +1888,13 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          this.drawTexturePatch(graphics, texture, x0 + 22, y0 + 141, 61, 14,
             170, 265, 50, 22, 385, 439);
       }
-      this.drawTexturePatch(graphics, texture, x0 + 81, y0 + 78, 47, 13,
-         240, 140, 28, 24, 385, 439);
+       // The former source rectangle covered the baked down-arrow, which leaked into the
+       // dynamic fluid-name row. Use clean wall texture from below the input-bucket frame.
+       this.drawTexturePatch(graphics, texture, x0 + 78, y0 + 77, 53, 17,
+          80, 215, 28, 24, 385, 439);
       // The static numeric sample sits above the trough lip; clear its full ink bounds.
-      this.drawTexturePatch(graphics, texture, x0 + 71, y0 + 90, 68, 12,
-         240, 140, 28, 24, 385, 439);
+       this.drawTexturePatch(graphics, texture, x0 + 71, y0 + 92, 68, 13,
+          80, 215, 28, 24, 385, 439);
 
       int tankLeft = x0 + 79;
       int tankTop = y0 + 105;
@@ -1852,47 +1915,47 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawSmallFluidFunnelLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
       if (!this.isEnglishArtworkLocale()) {
-         this.drawTinyCenteredString(
+         this.drawCompactMachineTitle(
             graphics,
-            Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel").getString(),
-            105, 9, 105, TEXT
+             Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel").getString(),
+             116, 10, 104, TEXT
          );
       }
       if (!this.isFrenchArtworkLocale()) {
-         this.drawTinyCenteredString(
+         this.drawScaledCenteredString(
             graphics,
             Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.input").getString(),
-            43, 66, 45, TEXT
+            43, 66, 45, TEXT, 0.72F
          );
-         this.drawTinyCenteredString(
+         this.drawScaledCenteredString(
             graphics,
             Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.bucket.output").getString(),
-            165, 66, 48, TEXT
+            165, 66, 48, TEXT, 0.72F
          );
       }
-      this.drawTinyCenteredString(
+      this.drawScaledCenteredString(
          graphics,
          this.smallFluidFunnelFluidName(menu.smallFluidFunnelFluidCode()).getString(),
-         105, 82, 78, TEXT
+         105, 82, 78, TEXT, 0.72F
       );
-      this.drawTinyCenteredString(
+      this.drawScaledCenteredString(
          graphics,
          Component.translatable(
             "gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.amount",
             menu.fluidAmount(), menu.fluidCapacity()
          ).getString(),
-         105, 93, 78, TEXT
+         105, 93, 78, TEXT, 0.72F
       );
       if (!this.isFrenchArtworkLocale()) {
-         this.drawTinyCenteredString(
+         this.drawScaledCenteredString(
             graphics,
             Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.output").getString(),
-            154, 126, 65, TEXT
+            154, 126, 65, TEXT, 0.72F
          );
-         this.drawTinyString(
+         this.drawScaledCenteredString(
             graphics,
             Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.small_fluid_funnel.inventory").getString(),
-            27, 143, 60, TEXT, false
+            57, 143, 60, TEXT, 0.72F
          );
       }
    }
@@ -1940,8 +2003,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
          58, 5, 17, 20, 201, 226);
       if (!englishArtwork) {
          // Clear the complete baked title while keeping its inset plate and outer frame.
-         this.drawTexturePatch(graphics, texture, x0 + 60, y0 + 6, 102, 15,
-            148, 5, 30, 14, 201, 226);
+       this.drawTexturePatch(graphics, texture, x0 + 50, y0 + 6, 100, 15,
+          155, 5, 22, 14, 201, 226);
       }
       if (!englishArtwork) {
          this.drawTexturePatch(graphics, texture, x0 + 20, y0 + 47, 45, 13,
@@ -1981,25 +2044,25 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawFluidBarrelLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
       if (!this.isEnglishArtworkLocale()) {
-         this.drawTinyCenteredString(graphics,
+         this.drawCompactMachineTitle(graphics,
             Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.fluid_barrel").getString(),
-            111, 8, 102, TEXT);
+            100, 8, 100, TEXT);
       }
       if (!this.isEnglishArtworkLocale()) {
-         this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input").getString(), 38, 49, 48, TEXT);
-         this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.output").getString(), 168, 49, 60, TEXT);
-         this.drawTinyCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.tank").getString(), 102, 107, 64, TEXT);
+         this.drawScaledCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.input").getString(), 38, 49, 48, TEXT, 0.72F);
+         this.drawScaledCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.bucket.output").getString(), 168, 49, 60, TEXT, 0.72F);
+         this.drawScaledCenteredString(graphics, Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.tank").getString(), 102, 107, 64, TEXT, 0.72F);
       }
-      this.drawTinyCenteredString(
+      this.drawScaledCenteredString(
          graphics,
          Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.amount", menu.fluidAmount(), menu.fluidCapacity()).getString(),
-         102, 118, 68, TEXT
+         102, 118, 68, TEXT, 0.72F
       );
       if (!this.isEnglishArtworkLocale()) {
-         this.drawTinyString(
+         this.drawScaledCenteredString(
             graphics,
             Component.translatable("gui.immersive_engineer_decor_controls_tool_reforged.fluid_barrel.inventory").getString(),
-            24, 132, 56, TEXT, false
+            52, 132, 56, TEXT, 0.72F
          );
       }
    }
@@ -2221,3 +2284,4 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       }
    }
 }
+
