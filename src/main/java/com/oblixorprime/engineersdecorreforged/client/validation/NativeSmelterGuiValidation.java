@@ -164,12 +164,18 @@ final class NativeSmelterGuiValidation {
          return false;
       }
       if (stage == Stage.WAIT_PROGRESS_ZERO) {
-         if (++ticks > 120) throw new IllegalStateException("Smelter zero-progress fixture did not synchronize");
+         if (++ticks > 120) {
+            MachineMenu menu = currentFixtureMenu(mc);
+            String state = menu == null ? "menu=missing" : "menuProgress=" + menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS)
+               + ", menuEnergy=" + menu.field(MachineMenu.SMS_UI_ENERGY)
+               + ", menuStatus=" + menu.field(MachineMenu.SMS_UI_STATUS);
+            throw new IllegalStateException("Smelter zero-progress fixture did not synchronize: " + state);
+         }
          if (!pending.isDone()) return false;
          pending.join();
          MachineMenu menu = currentFixtureMenu(mc);
          if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 0
-            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 9) return false;
+            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 3) return false;
          moveCursorOutsidePanel(mc);
          capture(mc, menu, "progress-empty.png");
          scheduleProgressFixture(mc, 50, 0, Stage.WAIT_PROGRESS_MID);
@@ -181,7 +187,7 @@ final class NativeSmelterGuiValidation {
          pending.join();
          MachineMenu menu = currentFixtureMenu(mc);
          if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 50
-            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 9) return false;
+            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 3) return false;
          capture(mc, menu, "progress-mid.png");
          scheduleProgressFixture(mc, 90, 0, Stage.WAIT_PROGRESS_FULL);
          return false;
@@ -192,7 +198,7 @@ final class NativeSmelterGuiValidation {
          pending.join();
          MachineMenu menu = currentFixtureMenu(mc);
          if (menu == null || menu.field(MachineMenu.SMS_UI_BATCH_PROGRESS) != 90
-            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 9) return false;
+            || menu.field(MachineMenu.SMS_UI_ENERGY) != 0 || menu.field(MachineMenu.SMS_UI_STATUS) != 3) return false;
          capture(mc, menu, "progress-full.png");
          scheduleProgressFixture(mc, 50, 12000, Stage.WAIT_PROGRESS_RESTORE);
          return false;

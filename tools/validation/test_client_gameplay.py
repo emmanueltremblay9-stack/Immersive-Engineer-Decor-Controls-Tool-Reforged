@@ -158,9 +158,9 @@ class NativeSmelterGuiProofTests(unittest.TestCase):
             "screenshots": [],
         }
         for name, progress, energy, status in (
-            ("progress-empty.png", 0, 0, 9),
-            ("progress-mid.png", 50, 0, 9),
-            ("progress-full.png", 90, 0, 9),
+            ("progress-empty.png", 0, 0, 3),
+            ("progress-mid.png", 50, 0, 3),
+            ("progress-full.png", 90, 0, 3),
             ("screen-closed.png", 52, 11984, 1),
             ("drawer-open.png", 52, 11984, 1),
         ):

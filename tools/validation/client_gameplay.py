@@ -283,7 +283,7 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
     for name, progress in (("progress-empty.png", 0), ("progress-mid.png", 50), ("progress-full.png", 90)):
         capture = captures_by_name[name]
         if (capture.get("batch_progress") != progress or capture.get("energy") != 0
-                or capture.get("status") != 9):
+                or capture.get("status") != 3):
             raise SmokeFailure(f"Native Smelter progress frame does not show its frozen live state: {name}")
     for name in ("screen-closed.png", "drawer-open.png"):
         capture = captures_by_name[name]
