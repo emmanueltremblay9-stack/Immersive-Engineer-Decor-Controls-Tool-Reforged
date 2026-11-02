@@ -269,7 +269,7 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
             "actual_integrated_world": True, "executed_source_sha": self.source_sha,
             "pull_request_head_sha": self.pr_head_sha, "language": "fr_fr", "selected_language": "fr_fr",
             "window_width": self.window_width, "window_height": self.window_height,
-            "screenshot_method": "Native Minecraft panel crops plus full-window hover captures to retain tooltips",
+            "screenshot_method": "Native Minecraft panel crops for every state plus full-window hover captures to retain tooltips",
             "cases": [], "screenshots": [],
         }
         for machine, (kind, slot_count, panel_width, panel_height, fluid_capacity, energy_capacity) in self.MACHINES.items():
@@ -309,18 +309,24 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
                            "screen_identity": screen_identity, "menu_id": 2, "server_menu_id": 2,
                            "fluid_amount": fluid_amount, "energy": energy,
                            "progress": 25 if machine == "small_freezer" and state == "mid" else 0}
+                capture["capture_mode"] = "gui_panel"
+                capture_width, capture_height = panel_width, panel_height
                 if state == "full-hover":
-                    capture["capture_mode"] = "full_window_tooltip"
                     capture["hover"] = {"slot_index": 0, "slot_hitbox_center_verified": True}
-                    capture_width, capture_height = self.window_width, self.window_height
-                else:
-                    capture["capture_mode"] = "gui_panel"
-                    capture_width, capture_height = panel_width, panel_height
                 image = self.image_dir / name
                 image.write_bytes(self._png(capture_width, capture_height))
                 capture["width"] = capture_width
                 capture["height"] = capture_height
                 capture["sha256"] = hashlib.sha256(image.read_bytes()).hexdigest()
+                if state == "full-hover":
+                    tooltip_name = f"{machine}-full-hover-window.png"
+                    tooltip = self.image_dir / tooltip_name
+                    tooltip.write_bytes(self._png(self.window_width, self.window_height))
+                    capture["tooltip_name"] = tooltip_name
+                    capture["tooltip_capture_mode"] = "full_window_tooltip"
+                    capture["tooltip_width"] = self.window_width
+                    capture["tooltip_height"] = self.window_height
+                    capture["tooltip_sha256"] = hashlib.sha256(tooltip.read_bytes()).hexdigest()
                 self.proof["screenshots"].append(capture)
         self.logs = f"IEDCTR_CORRECTED_MACHINE_GUI PASSED nonce={self.nonce}"
 
@@ -368,6 +374,16 @@ class CorrectedMachineGuiProofTests(unittest.TestCase):
         freezer_mid = next(image for image in self.proof["screenshots"] if image["name"] == "small_freezer-mid.png")
         freezer_mid["progress"] = 0
         with self.assertRaises(SmokeFailure): self.check()
+
+    def test_rejects_missing_or_mismatched_full_window_tooltip_capture(self):
+        proof = copy.deepcopy(self.proof)
+        hovered = next(item for item in proof["screenshots"] if item["name"] == "fluid_barrel-full-hover.png")
+        tooltip = self.image_dir / hovered["tooltip_name"]
+        tooltip.unlink()
+        with self.assertRaises(SmokeFailure): self.check(proof)
+        tooltip.write_bytes(self._png(self.window_width, self.window_height))
+        hovered["tooltip_sha256"] = "0" * 64
+        with self.assertRaises(SmokeFailure): self.check(proof)
 
 
 if __name__ == "__main__":

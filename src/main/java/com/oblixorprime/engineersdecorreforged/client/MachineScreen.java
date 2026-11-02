@@ -861,16 +861,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       GuiGraphics graphics, ResourceLocation texture, int x0, int y0
    ) {
       MachineMenu menu = (MachineMenu)this.menu;
-      int dark = 0xFF20282D;
-
       String prefix = "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.";
-      // These widths include the longest baked French glyph row, independent of the live locale.
-      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "collection").getString(), 44, 71, 60, 48, dark);
-      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "bucket.input").getString(), 44, 88, 53, 36, dark);
-      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "bucket.output").getString(), 167, 88, 59, 43, dark);
-      this.maskTinyCenteredStringAtLeast(graphics, Component.translatable(prefix + "water").getString(), 165, 45, 63, 15, dark);
-      this.maskTinyCenteredStringAtLeast(graphics,
-         Component.translatable(prefix + "amount", menu.fluidAmount(), menu.fluidCapacity()).getString(), 165, 56, 67, 56, dark);
+      // Mask baked French rows at their printed PNG positions with clean panel texture, then draw live labels.
+      this.maskAccumulatorLabel(graphics, texture, x0, y0,
+         Component.translatable(prefix + "collection").getString(), 40, 66, 60, 48, 304, 94);
+      this.maskAccumulatorLabel(graphics, texture, x0, y0,
+         Component.translatable(prefix + "bucket.input").getString(), 38, 86, 53, 36, 304, 94);
+      this.maskAccumulatorLabel(graphics, texture, x0, y0,
+         Component.translatable(prefix + "bucket.output").getString(), 157, 86, 59, 43, 529, 90);
+      this.maskAccumulatorLabel(graphics, texture, x0, y0,
+         Component.translatable(prefix + "water").getString(), 146, 47, 63, 15, 529, 90);
+      this.maskAccumulatorLabel(graphics, texture, x0, y0,
+         Component.translatable(prefix + "amount", menu.fluidAmount(), menu.fluidCapacity()).getString(), 167, 57, 67, 56, 529, 90);
       this.drawTexturePatch(graphics, texture, x0 + 20, y0 + 141, 48, 9, 416, 876, 88, 18, 941, 1672);
 
       for (MachineLayout.MachineSlot slot : menu.layout().machineSlots()) {
@@ -896,15 +898,15 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    private void drawPassiveFluidAccumulatorLabels(GuiGraphics graphics) {
       MachineMenu menu = (MachineMenu)this.menu;
       String prefix = "gui.immersive_engineer_decor_controls_tool_reforged.passive_fluid_accumulator.";
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "collection").getString(), 44, 71, 60, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.input").getString(), 44, 88, 53, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.output").getString(), 167, 88, 59, TEXT);
-      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "water").getString(), 165, 45, 63, TEXT);
+      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "collection").getString(), 40, 66, 60, TEXT);
+      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.input").getString(), 38, 86, 53, TEXT);
+      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "bucket.output").getString(), 157, 86, 59, TEXT);
+      this.drawTinyCenteredString(graphics, Component.translatable(prefix + "water").getString(), 146, 47, 63, TEXT);
       this.drawTinyCenteredString(
          graphics,
          Component.translatable(prefix + "amount", menu.fluidAmount(), menu.fluidCapacity()).getString(),
-         165,
-         56,
+         167,
+         57,
          67,
          TEXT
       );
@@ -1061,6 +1063,18 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    ) {
       int width = Math.max(this.tinyTextWidth(text, maxWidth), Math.min(maxWidth, minimumWidth));
       if (width > 0) graphics.fill(centerX - width / 2 - 1, y - 1, centerX + (width + 1) / 2 + 1, y + 8, color);
+   }
+
+   private void maskAccumulatorLabel(
+      GuiGraphics graphics, ResourceLocation texture, int x0, int y0, String text,
+      int centerX, int y, int maxWidth, int minimumWidth, int patchSourceX, int patchSourceWidth
+   ) {
+      int textWidth = Math.max(this.tinyTextWidth(text, maxWidth), Math.min(maxWidth, minimumWidth));
+      if (textWidth <= 0) return;
+      int left = centerX - textWidth / 2 - 1;
+      int width = centerX + (textWidth + 1) / 2 + 1 - left;
+      this.drawTexturePatch(graphics, texture, x0 + left, y0 + y - 1, width, 9,
+         patchSourceX, 754, patchSourceWidth, 18, 941, 1672);
    }
 
    private void drawTexturePatch(

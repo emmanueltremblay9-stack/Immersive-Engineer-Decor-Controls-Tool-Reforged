@@ -284,7 +284,7 @@ def validate_smelter_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_he
 def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: str, pr_head_sha: str,
                                          directory: Path, window_width: int, window_height: int,
                                          language: str, logs: str) -> dict:
-    """Fail closed unless all six live MachineScreen menus produced fresh panel-only captures."""
+    """Fail closed unless all six live screens produced panel crops and tooltip-preserving window captures."""
     expected = {
         "fluid_barrel": ("FLUID_BARREL", 2, 201, 226),
         "small_milking_machine": ("SMALL_MILKING_MACHINE", 2, 216, 210),
@@ -305,8 +305,8 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
     if proof.get("selected_language") != language:
         raise SmokeFailure("Minecraft did not load the requested corrected-machine GUI locale")
     if (proof.get("window_width") != window_width or proof.get("window_height") != window_height
-            or proof.get("screenshot_method") != "Native Minecraft panel crops plus full-window hover captures to retain tooltips"):
-        raise SmokeFailure("Corrected-machine GUI proof lacks native panel and tooltip-preserving captures")
+            or proof.get("screenshot_method") != "Native Minecraft panel crops for every state plus full-window hover captures to retain tooltips"):
+        raise SmokeFailure("Corrected-machine GUI proof lacks panel crops and tooltip-preserving captures")
 
     cases = proof.get("cases")
     if not isinstance(cases, list) or len(cases) != len(expected):
@@ -321,13 +321,14 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
 
     capture_names = {f"{machine}-{state}.png" for machine in expected
                      for state in ("empty", "mid", "full-hover")}
+    tooltip_names = {f"{machine}-full-hover-window.png" for machine in expected}
     captures = proof.get("screenshots")
     if not isinstance(captures, list) or len(captures) != len(capture_names):
         raise SmokeFailure("Corrected-machine GUI proof requires 18 state and hover captures")
     if {capture.get("name") for capture in captures if isinstance(capture, dict)} != capture_names:
         raise SmokeFailure("Corrected-machine GUI screenshot names are missing, duplicated, or unexpected")
     image_dir = directory / "corrected-machine-gui-screenshots"
-    if not image_dir.is_dir() or {path.name for path in image_dir.glob("*.png")} != capture_names:
+    if not image_dir.is_dir() or {path.name for path in image_dir.glob("*.png")} != (capture_names | tooltip_names):
         raise SmokeFailure("Corrected-machine GUI screenshots are stale or contain unexpected files")
     png_signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
     captures_by_name = {capture["name"]: capture for capture in captures}
@@ -368,12 +369,9 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
             if len(data) < 1000 or data[:8] != png_signature or data[12:16] != b"IHDR":
                 raise SmokeFailure(f"Native corrected-machine screenshot is absent or invalid: {name}")
             width, height = struct.unpack(">II", data[16:24])
-            expected_capture_size = ((window_width, window_height) if state == "full-hover"
-                                     else (panel_width, panel_height))
-            expected_capture_mode = "full_window_tooltip" if state == "full-hover" else "gui_panel"
-            if ((width, height) != expected_capture_size
-                    or capture.get("capture_mode") != expected_capture_mode):
-                raise SmokeFailure(f"Native screenshot has the wrong panel/tooltip capture bounds: {name}")
+            expected_capture_size = (panel_width, panel_height)
+            if ((width, height) != expected_capture_size or capture.get("capture_mode") != "gui_panel"):
+                raise SmokeFailure(f"Native screenshot is not a clean panel crop: {name}")
             if capture.get("sha256") != hashlib.sha256(data).hexdigest():
                 raise SmokeFailure(f"Native corrected-machine screenshot hash does not match proof: {name}")
             if (capture.get("width"), capture.get("height"), capture.get("kind"),
@@ -381,6 +379,22 @@ def validate_corrected_machine_gui_proof(proof: dict, nonce: str, executed_sha: 
                     expected_capture_size[0], expected_capture_size[1], kind,
                     case.get("screen_identity"), case.get("client_menu_id")):
                 raise SmokeFailure(f"Native corrected-machine screenshot identity differs from proof: {name}")
+            if state == "full-hover":
+                tooltip_name = f"{machine}-full-hover-window.png"
+                tooltip = image_dir / tooltip_name
+                tooltip_data = tooltip.read_bytes()
+                if (len(tooltip_data) < 1000 or tooltip_data[:8] != png_signature
+                        or tooltip_data[12:16] != b"IHDR"):
+                    raise SmokeFailure(f"Native full-window tooltip screenshot is absent or invalid: {tooltip_name}")
+                tooltip_size = struct.unpack(">II", tooltip_data[16:24])
+                if (tooltip_size != (window_width, window_height)
+                        or capture.get("tooltip_name") != tooltip_name
+                        or capture.get("tooltip_capture_mode") != "full_window_tooltip"
+                        or capture.get("tooltip_sha256") != hashlib.sha256(tooltip_data).hexdigest()
+                        or (capture.get("tooltip_width"), capture.get("tooltip_height")) != tooltip_size):
+                    raise SmokeFailure(f"Native tooltip screenshot bounds or hash do not match proof: {tooltip_name}")
+            elif any(key in capture for key in ("tooltip_name", "tooltip_capture_mode", "tooltip_sha256")):
+                raise SmokeFailure(f"Unexpected tooltip screenshot metadata for panel-only state: {name}")
             stage = "full" if state == "full-hover" else state
             if expected_meter_capacity:
                 expected_amount = 0 if stage == "empty" else expected_meter_capacity // 2 if stage == "mid" else expected_meter_capacity
