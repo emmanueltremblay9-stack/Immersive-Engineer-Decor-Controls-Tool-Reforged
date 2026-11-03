@@ -451,9 +451,9 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
    }
 
    private void drawBlockBreakerLabels(GuiGraphics graphics) {
-      this.drawCompactMachineTitle(graphics,
+      this.drawScaledCenteredString(graphics,
          Component.translatable("block.immersive_engineer_decor_controls_tool_reforged.small_block_breaker").getString(),
-         128, 13, 155, TEXT);
+         128, 13, 155, 0xFF24180F, 1.0F);
    }
 
    static String blockBreakerStatusLabelKey(int state) {
@@ -1103,8 +1103,8 @@ public abstract class MachineScreen extends AbstractContainerScreen<MachineMenu>
       // Minecraft font strokes disappear in the 260-pixel stress-test window.
       String amount = formatSmallMilkingMachineAmount(menu.fluidAmount(), menu.fluidCapacity(), this.smallMilkingLocale());
       String[] parts = amount.split("/", 2);
-      this.drawScaledCenteredString(graphics, parts[0].trim() + " mB", 178, 75, 64, TEXT, 1.0F);
-      if (parts.length == 2) this.drawScaledCenteredString(graphics, "/ " + parts[1].trim(), 178, 84, 64, TEXT, 1.0F);
+      this.drawScaledCenteredString(graphics, parts[0].trim() + " mB", 178, 72, 64, TEXT, 1.0F);
+      if (parts.length == 2) this.drawScaledCenteredString(graphics, "/ " + parts[1].trim(), 178, 80, 64, TEXT, 1.0F);
    }
 
    private void maskAccumulatorLabel(
