@@ -1,0 +1,100 @@
+{
+  "suite": "native-smelter-gui-v1",
+  "nonce": "155d1fc05543e91afc0995c6a6672d42",
+  "status": "passed",
+  "actual_integrated_world": true,
+  "executed_source_sha": "795912d4eb406a6430577a0c7074b7ab1f4ab86e",
+  "pull_request_head_sha": "05a7f5961174b63b2265bacc2843a5239eef540a",
+  "language": "en_us",
+  "translated_lava_mode": "LAVA",
+  "screen_identity": "com.oblixorprime.engineersdecorreforged.client.SmallMineralSmelterHybridScreen",
+  "client_menu_identity": "com.oblixorprime.engineersdecorreforged.menu.MachineMenu",
+  "server_menu_identity": "com.oblixorprime.engineersdecorreforged.menu.MachineMenu",
+  "machine_kind": "SMALL_MINERAL_SMELTER",
+  "client_menu_id": 1,
+  "server_menu_id": 1,
+  "server_menu_context_valid": true,
+  "visible_machine_slots": 2,
+  "total_slots": 38,
+  "machine_slot_backing_indices": [
+    0,
+    2
+  ],
+  "data_fields": 17,
+  "live_state": {
+    "selected_mode": 0,
+    "batch_mode": 0,
+    "batch_progress": 54,
+    "thermal": 54,
+    "input_item": "minecraft:cobblestone",
+    "output_item": "minecraft:magma_block",
+    "output_count": 2,
+    "tank_amount": 2500,
+    "tank_capacity": 4000,
+    "energy": 11264,
+    "energy_capacity": 16000,
+    "fe_rate": 16,
+    "status": 1
+  },
+  "window_width": 1280,
+  "window_height": 720,
+  "screen": {
+    "gui_width": 1280,
+    "gui_height": 720,
+    "panel_width": 234,
+    "panel_height": 270,
+    "view_scale": 1.0,
+    "drawer_closed_capture": true,
+    "drawer_open_capture": true,
+    "output_slot_hidden_when_closed": true,
+    "output_slot_visible_when_open": true
+  },
+  "screenshots": [
+    {
+      "name": "progress-empty.png",
+      "sha256": "742c1287664ac72d53774c0828cbb2e6fae3718653fbee8a28e5d9206de3efa0",
+      "width": 1280,
+      "height": 720,
+      "batch_progress": 0,
+      "energy": 0,
+      "status": 3
+    },
+    {
+      "name": "progress-mid.png",
+      "sha256": "b1097c6fa87f8d1b7853aac5bee23e4d1e0ea52a95b70ecc87d86bfd16e4f751",
+      "width": 1280,
+      "height": 720,
+      "batch_progress": 50,
+      "energy": 0,
+      "status": 3
+    },
+    {
+      "name": "progress-full.png",
+      "sha256": "6940cce6f217eded91e14904a75f6603195dc170ff622d471ce2f088479d83f4",
+      "width": 1280,
+      "height": 720,
+      "batch_progress": 90,
+      "energy": 0,
+      "status": 3
+    },
+    {
+      "name": "screen-closed.png",
+      "sha256": "11c863118e1ea1fc3eb2c9d90b0f6c74f36a3e9dcc0f367b27b5d08141e8256e",
+      "width": 1280,
+      "height": 720,
+      "batch_progress": 52,
+      "energy": 11584,
+      "status": 1
+    },
+    {
+      "name": "drawer-open.png",
+      "sha256": "42858a1d17d2ec48c0f92e667beca1e1b3ae67e20d40dbed1cd83cef2ac9d164",
+      "width": 1280,
+      "height": 720,
+      "batch_progress": 54,
+      "energy": 11264,
+      "status": 1
+    }
+  ],
+  "screenshot_method": "Minecraft Screenshot.takeScreenshot(getMainRenderTarget())"
+}
